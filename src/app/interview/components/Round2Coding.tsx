@@ -27,6 +27,7 @@ export interface Round2CodingProps {
   showHint: boolean;
   setShowHint: React.Dispatch<React.SetStateAction<boolean>>;
   onProceed: () => void;
+  codeSubmitted: boolean;
   selectedLang: 'python' | 'javascript' | 'java' | 'sql';
   setSelectedLang: (lang: 'python' | 'javascript' | 'java' | 'sql') => void;
   runCodeAndTests: () => void;
@@ -48,6 +49,7 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
   showHint,
   setShowHint,
   onProceed,
+  codeSubmitted,
   selectedLang,
   setSelectedLang,
   runCodeAndTests,
@@ -63,7 +65,7 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
   setTerminalLogs,
 }) => {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '1.4fr 0.6fr', gap: 16, alignItems: 'stretch' }}>
+    <div className="iv-round-layout iv-round-layout--coding">
       {/* Left 70%: Code Workspace with Monaco Editor */}
       <div className="iv-panel" style={{ padding: 18, display: 'flex', flexDirection: 'column', gap: 10 }}>
         <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -83,8 +85,8 @@ export const Round2Coding: React.FC<Round2CodingProps> = ({
             >
               💡 {showHint ? 'Hide Hint' : 'Show Hint'}
             </button>
-            <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
-              Proceed to Round 3 ➔
+            <button onClick={onProceed} disabled={!codeSubmitted || isRunning} title={!codeSubmitted ? 'Pass every test before continuing.' : undefined} style={{ background: codeSubmitted && !isRunning ? 'var(--accent)' : 'var(--bg3)', border: 'none', color: codeSubmitted && !isRunning ? 'var(--text)' : 'var(--t3)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: codeSubmitted && !isRunning ? 'pointer' : 'not-allowed' }}>
+              {codeSubmitted ? 'Proceed to Round 3 ➔' : 'Pass all tests to continue'}
             </button>
           </div>
         </div>

@@ -25,6 +25,7 @@ export interface Round1BehavioralProps {
   isVoiceListening: boolean;
   lastInterviewerSpeech: string;
   onProceed: () => void;
+  canProceed?: boolean;
   fillerWordCount: number;
   messages: Message[];
   messagesEndRef: React.RefObject<HTMLDivElement>;
@@ -55,6 +56,7 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
   isVoiceListening,
   lastInterviewerSpeech,
   onProceed,
+  canProceed = false,
   fillerWordCount,
   messages,
   messagesEndRef,
@@ -78,7 +80,7 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
   }, [liveSpeechTranscript]);
 
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '6fr 4fr', gap: 16, alignItems: 'stretch' }}>
+    <div className="iv-round-layout iv-round-layout--behavioral">
       {/* Left 60%: 3D VRoid Avatar Viewport */}
       <div style={{
         height: isAssistModeActive ? 640 : 500,
@@ -148,8 +150,8 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
             <span style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--accent-mid)' }}>ROUND 1 OF 4</span>
             <h2 style={{ fontSize: 15.5, fontWeight: 900, margin: 0, color: 'var(--t1)' }}>Behavioral & Background Intro</h2>
           </div>
-          <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
-            Proceed to Round 2 ➔
+          <button onClick={onProceed} disabled={!canProceed} title={!canProceed ? 'Share at least one answer to continue.' : undefined} style={{ background: canProceed ? 'var(--accent)' : 'var(--bg3)', border: 'none', color: canProceed ? 'var(--text)' : 'var(--t3)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: canProceed ? 'pointer' : 'not-allowed' }}>
+            {canProceed ? 'Proceed to Round 2 ➔' : 'Answer to continue'}
           </button>
         </div>
 

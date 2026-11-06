@@ -50,7 +50,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/quests':        'Quests & Courses',
   '/arena':         'Challenging Arena',
   '/projects':      'Projects & Squads',
-  '/attention-span': 'Attention Span',
+  '/attention-span': 'Cognitive Intelligence',
   '/qr-confirm':    'Confirm QR Login',
   '/onboarding':    'Setup',         '/qr-login':      'QR Login',
   '/reset-password':'Reset Password',

@@ -5,6 +5,7 @@ import { GameComponentProps, playSound } from './types';
 import { DifficultyPicker, CompletionBanner } from './DifficultyPicker';
 import { CountdownOverlay } from './CountdownOverlay';
 import { GameShell } from './GameShell';
+import { useSprintClock } from './useSprintClock';
 
 type ProductId =
   | 'tokens'
@@ -86,8 +87,8 @@ export function StoreSimGame({
   onComplete,
   onExit,
 }: GameComponentProps) {
-  const rounds = difficulty === 'hard' ? 8 : difficulty === 'normal' ? 6 : 4;
-  const patienceMax = difficulty === 'hard' ? 9 : difficulty === 'normal' ? 13 : 18;
+  const rounds = difficulty === 'hard' ? 4 : difficulty === 'normal' ? 3 : 2;
+  const patienceMax = difficulty === 'hard' ? 5 : difficulty === 'normal' ? 6 : 7;
 
   const [phase, setPhase] = useState<'ready' | 'countdown' | 'playing' | 'done'>('ready');
   const [queue, setQueue] = useState<Buyer[]>([]);
@@ -105,10 +106,19 @@ export function StoreSimGame({
   const roundRef = useRef(0);
   const queueRef = useRef<Buyer[]>([]);
   const lockedRef = useRef(false);
+  const advanceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const sprintTime = useSprintClock(phase === 'playing', () => {
+    if (advanceTimerRef.current) clearTimeout(advanceTimerRef.current);
+    setPhase('done');
+  });
+  useEffect(() => () => {
+    if (advanceTimerRef.current) clearTimeout(advanceTimerRef.current);
+  }, []);
 
   const buyer = queue[round];
 
   const openShop = useCallback(() => {
+    if (advanceTimerRef.current) clearTimeout(advanceTimerRef.current);
     const nextQueue = shuffleBuyers(rounds);
     queueRef.current = nextQueue;
     roundRef.current = 0;
@@ -128,6 +138,7 @@ export function StoreSimGame({
   }, [patienceMax, rounds]);
 
   const advanceBuyer = useCallback(() => {
+    advanceTimerRef.current = null;
     const nextRound = roundRef.current + 1;
     if (nextRound >= queueRef.current.length) {
       setPhase('done');
@@ -153,7 +164,7 @@ export function StoreSimGame({
           playSound('wrong', soundMuted);
           setNote('They left. Patience ran out.');
           setLocked(true);
-          setTimeout(advanceBuyer, 900);
+          advanceTimerRef.current = setTimeout(advanceBuyer, 600);
           return 0;
         }
         return p - 1;
@@ -171,13 +182,13 @@ export function StoreSimGame({
     if (!match) {
       playSound('wrong', soundMuted);
       setNote('Wrong brief. They wanted something else.');
-      setTimeout(advanceBuyer, 900);
+      advanceTimerRef.current = setTimeout(advanceBuyer, 600);
       return;
     }
     if (band === 'high' && buyer.budget !== 'high') {
       playSound('wrong', soundMuted);
       setNote('Too expensive. They walked.');
-      setTimeout(advanceBuyer, 900);
+      advanceTimerRef.current = setTimeout(advanceBuyer, 600);
       return;
     }
 
@@ -198,7 +209,7 @@ export function StoreSimGame({
     soldRef.current += 1;
     setScore(scoreRef.current);
     setSold(soldRef.current);
-    setTimeout(advanceBuyer, 850);
+    advanceTimerRef.current = setTimeout(advanceBuyer, 550);
   };
 
   const accuracyEarned = Math.min(100, Math.round((sold / Math.max(1, rounds)) * 100));
@@ -239,6 +250,7 @@ export function StoreSimGame({
               <b>{score}</b>
             </div>
             <div className="att-phase">Buyer {round + 1} / {rounds}</div>
+            <div className="att-sprint-clock" aria-label={`${sprintTime} seconds remaining`}><span>Time</span><b>{sprintTime}s</b></div>
             <div>
               <span>Patience</span>
               <b className={patience <= 4 ? 'att-warn' : undefined}>{patience}s</b>

@@ -23,7 +23,7 @@ export function FocusFireGame({
   onComplete: (score: number, accuracyEarned: number) => void;
   onExit: () => void;
 }) {
-  const DURATION = difficulty === 'easy' ? 45 : 30;
+  const DURATION = 15;
   const GRID = 4;
   const [phase, setPhase] = useState<'ready' | 'countdown' | 'playing' | 'done'>('ready');
   const [score, setScore] = useState(0);
@@ -41,26 +41,26 @@ export function FocusFireGame({
   const getStageInfo = useCallback((timeRemaining: number) => {
     const total = DURATION;
     const elapsed = total - timeRemaining;
-    const p1Time = difficulty === 'easy' ? 15 : 10;
-    const p2Time = difficulty === 'easy' ? 30 : 20;
+    const p1Time = 5;
+    const p2Time = 10;
 
     if (elapsed < p1Time) {
       return {
         stage: 1,
         label: 'Phase 1 · steady',
-        duration: difficulty === 'easy' ? 2400 : difficulty === 'hard' ? 1400 : 2000,
+        duration: difficulty === 'easy' ? 1500 : difficulty === 'hard' ? 800 : 1100,
       };
     } else if (elapsed < p2Time) {
       return {
         stage: 2,
         label: 'Phase 2 · faster',
-        duration: difficulty === 'easy' ? 1600 : difficulty === 'hard' ? 900 : 1300,
+        duration: difficulty === 'easy' ? 1050 : difficulty === 'hard' ? 600 : 800,
       };
     } else {
       return {
         stage: 3,
         label: 'Phase 3 · peak',
-        duration: difficulty === 'easy' ? 1000 : difficulty === 'hard' ? 500 : 750,
+        duration: difficulty === 'easy' ? 800 : difficulty === 'hard' ? 400 : 550,
       };
     }
   }, [DURATION, difficulty]);
@@ -178,7 +178,7 @@ export function FocusFireGame({
             <div><span>Time</span><b className={timeLeft <= 5 ? 'att-warn' : undefined}>{timeLeft}s</b></div>
           </div>
           <div className="att-arena">
-            <div className="att-board" style={{ gridTemplateColumns: `repeat(${GRID}, 72px)` }}>
+            <div className="att-board att-focus-board">
               {Array.from({ length: GRID * GRID }).map((_, i) => {
                 const isTarget = i === targetIdx;
                 const isDecoy = decoyIdxs.includes(i);
@@ -191,7 +191,13 @@ export function FocusFireGame({
                   isFb && !feedback?.correct ? 'is-bad' : '',
                 ].filter(Boolean).join(' ');
                 return (
-                  <button key={i} type="button" className={cls} onClick={() => handleTileClick(i)}>
+                  <button
+                    key={i}
+                    type="button"
+                    className={cls}
+                    onClick={() => handleTileClick(i)}
+                    aria-label={`Tile ${i + 1}${isTarget ? ', target' : isDecoy ? ', decoy' : ''}`}
+                  >
                     {(isTarget || isDecoy) && <span className="att-tile-dot" />}
                   </button>
                 );

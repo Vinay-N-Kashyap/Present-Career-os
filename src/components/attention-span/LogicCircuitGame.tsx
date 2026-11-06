@@ -5,6 +5,7 @@ import { GameId, Difficulty, playSound } from './types';
 import { DifficultyPicker, CompletionBanner } from './DifficultyPicker';
 import { CountdownOverlay } from './CountdownOverlay';
 import { GameShell } from './GameShell';
+import { useSprintClock } from './useSprintClock';
 
 interface LogicProblem {
   level: number;
@@ -102,6 +103,15 @@ const LOGIC_PROBLEMS: LogicProblem[] = [
   },
 ];
 
+function pickSprintProblems<T>(pool: T[], count: number): T[] {
+  const shuffled = [...pool];
+  for (let index = shuffled.length - 1; index > 0; index -= 1) {
+    const swap = Math.floor(Math.random() * (index + 1));
+    [shuffled[index], shuffled[swap]] = [shuffled[swap], shuffled[index]];
+  }
+  return shuffled.slice(0, count);
+}
+
 export function LogicCircuitGame({
   gameId,
   difficulty,
@@ -120,17 +130,31 @@ export function LogicCircuitGame({
   onExit: () => void;
 }) {
   const [phase, setPhase] = useState<'ready' | 'countdown' | 'playing' | 'done'>('ready');
+  const [problemSet, setProblemSet] = useState<LogicProblem[]>(() => pickSprintProblems(LOGIC_PROBLEMS, 3));
   const [problemIdx, setProblemIdx] = useState(0);
   const [score, setScore] = useState(0);
   const [correctCount, setCorrectCount] = useState(0);
   const [totalAttempts, setTotalAttempts] = useState(0);
   const [timeLeft, setTimeLeft] = useState(10);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const advanceLockedRef = useRef(false);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const currentProb = LOGIC_PROBLEMS[problemIdx] || LOGIC_PROBLEMS[LOGIC_PROBLEMS.length - 1];
+  const transitionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const sprintRemaining = useSprintClock(phase === 'playing', () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+    setPhase('done');
+  });
+  useEffect(() => () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    if (transitionTimerRef.current) clearTimeout(transitionTimerRef.current);
+  }, []);
+  const currentProb = problemSet[problemIdx] || problemSet[problemSet.length - 1];
 
   const advanceLevel = useCallback((wasCorrect: boolean, optIdx: number) => {
+    if (advanceLockedRef.current) return;
+    advanceLockedRef.current = true;
     if (timerRef.current) clearInterval(timerRef.current);
     setSelectedOption(optIdx);
 
@@ -143,29 +167,30 @@ export function LogicCircuitGame({
       playSound('wrong', soundMuted);
     }
 
-    setTimeout(() => {
+    transitionTimerRef.current = setTimeout(() => {
+      transitionTimerRef.current = null;
       setSelectedOption(null);
-      if (problemIdx + 1 < LOGIC_PROBLEMS.length) {
+      if (problemIdx + 1 < problemSet.length) {
         setProblemIdx(prev => prev + 1);
-        const nextProb = LOGIC_PROBLEMS[problemIdx + 1];
-        const mult = difficulty === 'hard' ? 0.7 : difficulty === 'easy' ? 1.2 : 1.0;
-        const timeSec = Math.max(4, Math.round(nextProb.timeLimitSec * mult));
+        const timeSec = difficulty === 'easy' ? 5 : 4;
         setTimeLeft(timeSec);
+        advanceLockedRef.current = false;
       } else {
         playSound('win', soundMuted);
         setPhase('done');
       }
     }, 600);
-  }, [problemIdx, difficulty, soundMuted]);
+  }, [problemIdx, problemSet, difficulty, soundMuted]);
 
   const startGame = () => {
     setPhase('playing');
+    setProblemSet(pickSprintProblems(LOGIC_PROBLEMS, 3));
     setProblemIdx(0);
+    advanceLockedRef.current = false;
     setScore(0);
     setCorrectCount(0);
     setTotalAttempts(0);
-    const mult = difficulty === 'hard' ? 0.7 : difficulty === 'easy' ? 1.2 : 1.0;
-    const timeSec = Math.max(4, Math.round(LOGIC_PROBLEMS[0].timeLimitSec * mult));
+    const timeSec = difficulty === 'easy' ? 5 : 4;
     setTimeLeft(timeSec);
   };
 
@@ -187,9 +212,9 @@ export function LogicCircuitGame({
     };
   }, [phase, advanceLevel]);
 
-  const accuracyPct = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 100;
+  const accuracyPct = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0;
   const finalScore = score + (correctCount * 20);
-  const accuracyEarned = Math.min(100, Math.round((correctCount / LOGIC_PROBLEMS.length) * 100));
+  const accuracyEarned = totalAttempts > 0 ? Math.round((correctCount / totalAttempts) * 100) : 0;
 
   return (
     <GameShell
@@ -204,7 +229,7 @@ export function LogicCircuitGame({
       onStart={() => setPhase('countdown')}
       doneTitle="Circuit closed"
       doneScore={`${finalScore} pts`}
-      doneHint={`${correctCount} / ${LOGIC_PROBLEMS.length} proofs · ${accuracyPct}%`}
+      doneHint={`${correctCount} correct across ${totalAttempts} attempts · ${accuracyPct}%`}
       doneExtra={
         <CompletionBanner
           difficulty={difficulty}
@@ -222,7 +247,8 @@ export function LogicCircuitGame({
         <>
           <div className="att-hud">
             <div className="att-hud-key"><span>{currentProb.title}</span><b>{score}</b></div>
-            <div><span>Time</span><b className={timeLeft <= 3 ? 'att-warn' : undefined}>{timeLeft}s</b></div>
+            <div><span>Rule</span><b className={timeLeft <= 3 ? 'att-warn' : undefined}>{timeLeft}s</b></div>
+            <div className="att-sprint-clock" aria-label={`${sprintRemaining} seconds remaining`}><span>Sprint</span><b>{sprintRemaining}s</b></div>
           </div>
           <div className="att-arena">
             <div className="att-board" style={{ display: 'block', width: '100%', transform: 'rotateX(6deg)' }}>
@@ -252,6 +278,7 @@ export function LogicCircuitGame({
                   type="button"
                   className={`att-choice-btn${isSelected ? (isCorrect ? ' is-good' : ' is-bad') : ''}`}
                   onClick={() => advanceLevel(isCorrect, idx)}
+                  disabled={selectedOption !== null}
                 >
                   {opt}
                 </button>

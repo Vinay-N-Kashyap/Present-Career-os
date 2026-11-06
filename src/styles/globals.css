@@ -1485,6 +1485,38 @@ body[data-interview-active="true"] .main-content-area {
   color: var(--t1);
 }
 
+.iv-round-layout {
+  display: grid;
+  gap: 16px;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.iv-round-layout--behavioral { grid-template-columns: minmax(0, 6fr) minmax(320px, 4fr); }
+.iv-round-layout--coding { grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr); }
+.iv-round-layout--systems { grid-template-columns: minmax(0, 7.2fr) minmax(280px, 2.8fr); }
+.iv-results-summary { grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr); }
+
+@media (max-width: 900px) {
+  .iv-round-layout,
+  .iv-round-layout--behavioral,
+  .iv-round-layout--coding,
+  .iv-round-layout--systems,
+  .iv-results-summary {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .iv-round-layout--behavioral > :first-child { min-height: 360px !important; }
+  .iv-round-layout--behavioral .iv-panel { height: auto !important; min-height: 420px; }
+}
+
+@media (max-width: 560px) {
+  .iv-round-layout { gap: 10px; }
+  .iv-round-layout--behavioral > :first-child { min-height: 300px !important; }
+  .iv-round-layout--coding .iv-panel,
+  .iv-round-layout--systems .iv-panel { padding: 12px !important; }
+}
+
 .iv-text-primary {
   color: var(--t1) !important;
 }

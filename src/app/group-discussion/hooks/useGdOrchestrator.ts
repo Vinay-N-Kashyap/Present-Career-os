@@ -81,15 +81,20 @@ export function useGdOrchestrator({
   const callTimerRef = useRef<any>(null);
   const recognitionRef = useRef<any>(null);
   const silenceTimerRef = useRef<any>(null);
+  const startIntroTimerRef = useRef<any>(null);
   const turnTimeoutRef = useRef<any>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const reportRef = useRef<HTMLDivElement>(null);
   const turnSequenceRef = useRef<'user' | 'avatar_first' | 'avatar_second'>('user');
   const isCallActiveRef = useRef(false);
+  const endSummaryStartedRef = useRef(false);
   const handRaisedRef = useRef(false);
   const preloadedAvatarBDataRef = useRef<{ avatarB_Id: string; cleanReply: string; nextMessages: GdChatMessage[] } | null>(null);
   const avatarBPromiseRef = useRef<Promise<any> | null>(null);
   const consecutiveSilenceCountRef = useRef<number>(0);
+  const candidateTranscriptRef = useRef<string>('');
+  const recognitionWantedRef = useRef(false);
+  const recognitionRunningRef = useRef(false);
   const handleUserFinishSpeakingRef = useRef<(userText?: string) => void>(() => {});
   const handleSendVoiceMessageRef = useRef<(text: string) => void>(() => {});
   const hostIdRef = useRef<string>(gdHostId);
@@ -141,6 +146,7 @@ export function useGdOrchestrator({
       if (callTimerRef.current) clearInterval(callTimerRef.current);
       if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
       if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+      if (startIntroTimerRef.current) clearTimeout(startIntroTimerRef.current);
 
       if (recognitionRef.current) {
         recognitionRef.current.onresult = null;
@@ -202,16 +208,28 @@ export function useGdOrchestrator({
         rec.interimResults = true;
         rec.lang = 'en-US';
 
+        rec.onstart = () => {
+          recognitionRunningRef.current = true;
+          setMicActive(true);
+        };
+
         rec.onresult = (event: any) => {
-          let currentTranscript = '';
+          let interimTranscript = '';
           for (let i = event.resultIndex; i < event.results.length; i++) {
-            currentTranscript += event.results[i][0].transcript;
+            const result = event.results[i];
+            if (result.isFinal) {
+              candidateTranscriptRef.current = `${candidateTranscriptRef.current} ${result[0].transcript}`.trim();
+            } else {
+              interimTranscript += ` ${result[0].transcript}`;
+            }
           }
 
-          if (currentTranscript.trim() && isCallActiveRef.current) {
+          const currentTranscript = `${candidateTranscriptRef.current} ${interimTranscript}`.trim();
+          if (currentTranscript && isCallActiveRef.current && recognitionWantedRef.current && turnSequenceRef.current === 'user') {
             if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
             silenceTimerRef.current = setTimeout(() => {
-              const finalTranscript = currentTranscript.trim();
+              const finalTranscript = candidateTranscriptRef.current.trim();
+              silenceTimerRef.current = null;
               if (finalTranscript) {
                 try { rec.stop(); } catch {}
                 handleSendVoiceMessageRef.current(finalTranscript);
@@ -223,12 +241,19 @@ export function useGdOrchestrator({
         rec.onerror = (e: any) => {
           console.warn('[SpeechRec] error:', e.error);
           if (e.error === 'no-speech') return;
+          recognitionRunningRef.current = false;
           setMicActive(false);
         };
 
         rec.onend = () => {
-          if (isCallActiveRef.current && turnSequenceRef.current === 'user') {
-            try { rec.start(); } catch {}
+          recognitionRunningRef.current = false;
+          if (isCallActiveRef.current && recognitionWantedRef.current && turnSequenceRef.current === 'user') {
+            try {
+              rec.start();
+            } catch {
+              recognitionRunningRef.current = false;
+              setMicActive(false);
+            }
           } else {
             setMicActive(false);
           }
@@ -272,7 +297,12 @@ export function useGdOrchestrator({
 
   const startCandidateTurnPrompt = useCallback(() => {
     if (!isCallActiveRef.current) return;
+    turnSequenceRef.current = 'user';
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
+    if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
+    silenceTimerRef.current = null;
+    candidateTranscriptRef.current = '';
+    recognitionWantedRef.current = true;
     setSuggestedHelperText('');
     setIsUserTurn(true);
 
@@ -285,12 +315,16 @@ export function useGdOrchestrator({
     setCandidateTurnTimer(25);
 
     // Auto start microphone capture for candidate turn
-    if (recognitionRef.current && !micActive) {
-      try {
-        recognitionRef.current.start();
+    if (recognitionRef.current) {
+      if (recognitionRunningRef.current) {
         setMicActive(true);
-      } catch (err) {
-        console.warn('Auto Speech recognition start error:', err);
+      } else {
+        try {
+          recognitionRef.current.start();
+          setMicActive(true);
+        } catch (err) {
+          console.warn('Auto Speech recognition start error:', err);
+        }
       }
     }
 
@@ -324,13 +358,14 @@ export function useGdOrchestrator({
         return prev - 1;
       });
     }, 1000);
-  }, [micActive]);
+  }, []);
 
   const handleCandidateSilenceTimeout = () => {
     if (!isCallActiveRef.current) return;
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
     setCandidateTurnTimer(null);
     setIsUserTurn(false);
+    recognitionWantedRef.current = false;
 
     if (recognitionRef.current) {
       try { recognitionRef.current.stop(); } catch {}
@@ -612,6 +647,7 @@ export function useGdOrchestrator({
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
     setCandidateTurnTimer(null);
     setIsUserTurn(false);
+    recognitionWantedRef.current = false;
 
     if (recognitionRef.current) {
       try { recognitionRef.current.stop(); } catch {}
@@ -621,7 +657,8 @@ export function useGdOrchestrator({
     avatarBPromiseRef.current = null;
     preloadedAvatarBDataRef.current = null;
 
-    const spokenContent = userText || inputText.trim();
+    const spokenContent = userText || candidateTranscriptRef.current.trim() || inputText.trim();
+    candidateTranscriptRef.current = '';
     setInputText('');
 
     if (!spokenContent) {
@@ -671,6 +708,7 @@ export function useGdOrchestrator({
 
       speakWithAvatar(midText, hostId,
         () => {
+          recognitionWantedRef.current = false;
           if (recognitionRef.current) {
             try { recognitionRef.current.stop(); } catch {}
           }
@@ -713,6 +751,7 @@ export function useGdOrchestrator({
 
       speakWithAvatar(warningText, hostId,
         () => {
+          recognitionWantedRef.current = false;
           if (recognitionRef.current) {
             try { recognitionRef.current.stop(); } catch {}
           }
@@ -743,7 +782,10 @@ export function useGdOrchestrator({
   };
 
   const triggerHostEndSummary = async () => {
-    if (!isCallActiveRef.current) return;
+    if (!isCallActiveRef.current || endSummaryStartedRef.current) return;
+    endSummaryStartedRef.current = true;
+    if (callTimerRef.current) clearInterval(callTimerRef.current);
+    callTimerRef.current = null;
     const hostId = hostIdRef.current;
     const hostAvatar = AVATARS.find(a => a.id === hostId) || AVATARS[0];
     const hostName = gdDisplayName(hostId);
@@ -755,6 +797,7 @@ export function useGdOrchestrator({
 
       speakWithAvatar(endText, hostId,
         () => {
+          recognitionWantedRef.current = false;
           if (recognitionRef.current) {
             try { recognitionRef.current.stop(); } catch {}
           }
@@ -804,6 +847,7 @@ export function useGdOrchestrator({
     setHandRaised(false);
     setStep('call_grid');
     setCallActive(true);
+    endSummaryStartedRef.current = false;
     setCallDuration(0);
     setIsUserTurn(false);
 
@@ -820,6 +864,10 @@ export function useGdOrchestrator({
         } else if (nextSec === warningSec) {
           triggerHostTimeWarning();
         } else if (nextSec >= totalTargetSeconds) {
+          // Stop the master clock before speaking the closing script. Otherwise every
+          // subsequent tick interrupts and restarts the host until report generation.
+          if (callTimerRef.current) clearInterval(callTimerRef.current);
+          callTimerRef.current = null;
           triggerHostEndSummary();
         }
         return nextSec;
@@ -845,9 +893,11 @@ export function useGdOrchestrator({
     const hostName = gdDisplayName(hostId);
     const introText = hostIntroScript(hostName, roomName, roomDesc || selectedConcept);
 
-    setTimeout(() => {
+    startIntroTimerRef.current = setTimeout(() => {
+      startIntroTimerRef.current = null;
       speakWithAvatar(introText, hostId,
         () => {
+          recognitionWantedRef.current = false;
           if (recognitionRef.current) {
             try { recognitionRef.current.stop(); } catch {}
           }
@@ -962,17 +1012,19 @@ export function useGdOrchestrator({
       toast.error("Speech Recognition Unsupported", "This browser does not support the webkitSpeechRecognition API.");
       return;
     }
-    if (micActive) {
+    if (recognitionRunningRef.current || micActive) {
+      recognitionWantedRef.current = false;
       if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
       recognitionRef.current.stop();
       setMicActive(false);
     } else {
+      recognitionWantedRef.current = true;
       stopSpeaking();
       if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
       setCandidateTurnTimer(null);
 
       try {
-        recognitionRef.current.start();
+        if (!recognitionRunningRef.current) recognitionRef.current.start();
         setMicActive(true);
         toast.success("Microphone Active", "Start speaking to debate...");
       } catch (err) {
@@ -993,7 +1045,10 @@ export function useGdOrchestrator({
   };
 
   const handleForceExitCall = () => {
+    recognitionWantedRef.current = false;
     stopSpeaking();
+    if (startIntroTimerRef.current) clearTimeout(startIntroTimerRef.current);
+    startIntroTimerRef.current = null;
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
     if (callTimerRef.current) clearInterval(callTimerRef.current);
     if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);
@@ -1014,7 +1069,10 @@ export function useGdOrchestrator({
   };
 
   const executeReportGeneration = async () => {
+    recognitionWantedRef.current = false;
     stopSpeaking();
+    if (startIntroTimerRef.current) clearTimeout(startIntroTimerRef.current);
+    startIntroTimerRef.current = null;
     if (turnTimeoutRef.current) clearInterval(turnTimeoutRef.current);
     if (callTimerRef.current) clearInterval(callTimerRef.current);
     if (silenceTimerRef.current) clearTimeout(silenceTimerRef.current);

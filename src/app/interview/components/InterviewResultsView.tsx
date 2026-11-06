@@ -34,7 +34,7 @@ export const InterviewResultsView: React.FC<InterviewResultsViewProps> = ({
 }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-      <div className="iv-panel" style={{ padding: 24, display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 20, alignItems: 'center' }}>
+      <div className="iv-panel iv-results-summary" style={{ padding: 24, display: 'grid', gap: 20, alignItems: 'center' }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <span style={{ fontSize: 11, fontWeight: 900, letterSpacing: '1px', color: 'var(--accent-mid)', textTransform: 'uppercase' }}>

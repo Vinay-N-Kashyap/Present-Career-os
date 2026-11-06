@@ -15,12 +15,17 @@ import { PrivacySettingsModal } from '@/components/friends/PrivacySettingsModal'
 import { ReportStudentModal } from '@/components/friends/ReportStudentModal';
 import { computeStudentMatch, CURRENT_STUDENT_PROFILE, MatchStudentProfile, MatchBreakdown } from '@/lib/friends/matching';
 
+type FriendsTab = 'discover' | 'network' | 'requests' | 'messages' | 'challenges' | 'projects';
+const FRIENDS_TAB_ORDER: FriendsTab[] = ['discover', 'network', 'requests', 'messages', 'challenges', 'projects'];
+
 function FriendsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   // Navigation Tabs
-  const [activeTab, setActiveTab] = useState<'discover' | 'network' | 'requests' | 'messages' | 'challenges' | 'projects'>('discover');
+  const [activeTab, setActiveTab] = useState<FriendsTab>('discover');
+  const tabRefs = useRef<Partial<Record<FriendsTab, HTMLButtonElement | null>>>({});
+  const suggestionsRequestRef = useRef(0);
 
   // Filter Chips
   const [activeFilter, setActiveFilter] = useState<'all' | 'college' | 'skills' | 'course' | 'nearby' | 'goals'>('all');
@@ -52,19 +57,54 @@ function FriendsContent() {
   const [blockedIds, setBlockedIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isSearching, setIsSearching] = useState<boolean>(false);
+  const [suggestionsError, setSuggestionsError] = useState<string | null>(null);
 
   // Chat View Active Friend
   const [activeChatFriendId, setActiveChatFriendId] = useState<string | undefined>(undefined);
 
+  const navigateToTab = (tab: FriendsTab) => {
+    setActiveTab(tab);
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', tab);
+    if (tab !== 'messages') params.delete('friendId');
+    router.replace(`/friends?${params.toString()}`, { scroll: false });
+  };
+
+  const navigateToChat = (studentId: string) => {
+    setActiveChatFriendId(studentId);
+    setActiveTab('messages');
+    const params = new URLSearchParams(searchParams.toString());
+    params.set('tab', 'messages');
+    params.set('friendId', studentId);
+    router.replace(`/friends?${params.toString()}`, { scroll: false });
+  };
+
+  const handleTabKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, currentTab: FriendsTab) => {
+    const currentIndex = FRIENDS_TAB_ORDER.indexOf(currentTab);
+    let nextIndex = currentIndex;
+    if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % FRIENDS_TAB_ORDER.length;
+    else if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + FRIENDS_TAB_ORDER.length) % FRIENDS_TAB_ORDER.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = FRIENDS_TAB_ORDER.length - 1;
+    else return;
+
+    event.preventDefault();
+    const nextTab = FRIENDS_TAB_ORDER[nextIndex];
+    navigateToTab(nextTab);
+    tabRefs.current[nextTab]?.focus();
+  };
+
   // ── Sync URL Search Parameters (e.g. ?tab=messages&friendId=...) ─────────
   useEffect(() => {
     const tabParam = searchParams.get('tab');
-    if (tabParam && ['discover', 'network', 'requests', 'messages', 'challenges', 'projects'].includes(tabParam)) {
-      setActiveTab(tabParam as any);
+    if (tabParam && FRIENDS_TAB_ORDER.includes(tabParam as FriendsTab)) {
+      setActiveTab(tabParam as FriendsTab);
     }
     const friendIdParam = searchParams.get('friendId');
     if (friendIdParam) {
       setActiveChatFriendId(friendIdParam);
+    } else {
+      setActiveChatFriendId(undefined);
     }
   }, [searchParams]);
 
@@ -95,11 +135,11 @@ function FriendsContent() {
         const incoming = (data.incomingRequests || []).map((r: any) => ({
           id: r.requestId,
           studentId: r.sender?.id,
-          name: r.sender?.name || 'Student Peer',
+          name: r.sender?.name || 'Classmate',
           avatar: r.sender?.avatar || 'https://api.dicebear.com/7.x/avataaars/svg?seed=' + r.requestId,
-          college: r.sender?.college || 'Engineering Campus',
-          course: 'Undergraduate',
-          skills: ['Coding', 'Engineering']
+          college: r.sender?.college || 'College not listed',
+          course: r.sender?.course || 'Course not listed',
+          skills: Array.isArray(r.sender?.skills) ? r.sender.skills : []
         }));
         setIncomingRequestsList(incoming);
 
@@ -124,8 +164,10 @@ function FriendsContent() {
 
   // ── 2. Fetch Live Student Suggestions & Search Results ───────────────────
   const fetchSuggestions = async () => {
+    const requestId = ++suggestionsRequestRef.current;
     try {
       setIsSearching(true);
+      setSuggestionsError(null);
       const url = `/api/friends/suggestions?filter=${activeFilter}${debouncedSearch ? `&q=${encodeURIComponent(debouncedSearch)}` : ''}`;
       console.log(`[FriendsHub] Fetching student suggestions from Supabase: ${url}`);
       
@@ -133,17 +175,26 @@ function FriendsContent() {
       const data = await res.json();
       console.log('[FriendsHub] /api/friends/suggestions response:', data);
 
-      if (data.ok && Array.isArray(data.suggestions)) {
+      // Search requests can finish out of order; only let the newest query update the page.
+      if (requestId !== suggestionsRequestRef.current) return;
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Could not load classmates.');
+
+      if (Array.isArray(data.suggestions)) {
         setSuggestedStudents(data.suggestions);
       } else {
         setSuggestedStudents([]);
       }
     } catch (err) {
       console.error('[FriendsHub] Error fetching suggestions:', err);
-      setSuggestedStudents([]);
+      if (requestId === suggestionsRequestRef.current) {
+        setSuggestedStudents([]);
+        setSuggestionsError(err instanceof Error ? err.message : 'Could not load classmates.');
+      }
     } finally {
-      setIsSearching(false);
-      setIsLoading(false);
+      if (requestId === suggestionsRequestRef.current) {
+        setIsSearching(false);
+        setIsLoading(false);
+      }
     }
   };
 
@@ -173,7 +224,6 @@ function FriendsContent() {
   const handleAddFriend = async (targetStudentId: string, studentName: string) => {
     // Optimistic UI update
     setSentRequests(prev => ({ ...prev, [targetStudentId]: true }));
-    toast.success('Friend Request Sent', `Invite sent to ${studentName}!`);
 
     try {
       console.log(`[FriendsHub] Sending friend request to ${studentName} (${targetStudentId})...`);
@@ -185,12 +235,19 @@ function FriendsContent() {
       const data = await res.json();
       console.log('[FriendsHub] Add friend response:', data);
 
-      if (!data.ok) {
+      if (!res.ok || !data.ok) {
         throw new Error(data.error || 'Failed to send friend request');
       }
       if (data.status === 'accepted') {
+        setSentRequests(prev => {
+          const next = { ...prev };
+          delete next[targetStudentId];
+          return next;
+        });
         toast.success('Connected!', `You and ${studentName} are now connected as friends!`);
         fetchNetworkData();
+      } else {
+        toast.success('Request sent', `Your classmate ${studentName} can now accept your connection.`);
       }
     } catch (err: any) {
       console.error('[FriendsHub] Error adding friend:', err);
@@ -204,9 +261,9 @@ function FriendsContent() {
   };
 
   const handleAcceptRequest = async (reqId: string, name: string) => {
+    const request = incomingRequestsList.find(r => r.id === reqId);
     setIncomingRequestsList(prev => prev.filter(r => r.id !== reqId));
     setNetworkStats(prev => ({ ...prev, pendingCount: Math.max(0, prev.pendingCount - 1), friendsCount: prev.friendsCount + 1 }));
-    toast.success('Friend Request Accepted', `Connected with ${name}!`);
 
     try {
       console.log(`[FriendsHub] Accepting friend request ${reqId}...`);
@@ -217,9 +274,14 @@ function FriendsContent() {
       });
       const data = await res.json();
       console.log('[FriendsHub] Accept request response:', data);
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Could not accept this request.');
+      toast.success('Classmate connected', `You and ${name} are now connected.`);
       fetchNetworkData();
     } catch (e) {
       console.error('[FriendsHub] Error accepting friend request:', e);
+      if (request) setIncomingRequestsList(prev => [request, ...prev]);
+      setNetworkStats(prev => ({ ...prev, pendingCount: prev.pendingCount + 1, friendsCount: Math.max(0, prev.friendsCount - 1) }));
+      toast.error('Could not accept request', e instanceof Error ? e.message : 'Please try again.');
     }
   };
 
@@ -228,34 +290,45 @@ function FriendsContent() {
     const reqId = matchingReq ? matchingReq.id : undefined;
     setIncomingRequestsList(prev => prev.filter(r => r.studentId !== studentId));
     setNetworkStats(prev => ({ ...prev, pendingCount: Math.max(0, prev.pendingCount - 1), friendsCount: prev.friendsCount + 1 }));
-    toast.success('Friend Request Accepted', `Connected with ${name}!`);
 
     try {
-      await fetch('/api/friends', {
+      const res = await fetch('/api/friends', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ requestId: reqId, studentId, action: 'accept' })
       });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Could not accept this request.');
+      toast.success('Classmate connected', `You and ${name} are now connected.`);
       fetchNetworkData();
     } catch (e) {
       console.error('[FriendsHub] Error accepting friend request:', e);
+      if (matchingReq) setIncomingRequestsList(prev => [matchingReq, ...prev]);
+      setNetworkStats(prev => ({ ...prev, pendingCount: prev.pendingCount + (matchingReq ? 1 : 0), friendsCount: Math.max(0, prev.friendsCount - 1) }));
+      toast.error('Could not accept request', e instanceof Error ? e.message : 'Please try again.');
     }
   };
 
   const handleDeclineRequest = async (reqId: string) => {
+    const request = incomingRequestsList.find(r => r.id === reqId);
     setIncomingRequestsList(prev => prev.filter(r => r.id !== reqId));
     setNetworkStats(prev => ({ ...prev, pendingCount: Math.max(0, prev.pendingCount - 1) }));
-    toast.info('Request Dismissed', 'Friend request removed.');
 
     try {
       console.log(`[FriendsHub] Declining friend request ${reqId}...`);
-      await fetch('/api/friends', {
+      const res = await fetch('/api/friends', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ requestId: reqId, action: 'decline' })
       });
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Could not dismiss this request.');
+      toast.info('Request dismissed', 'The connection request was declined.');
     } catch (e) {
       console.error('[FriendsHub] Error declining friend request:', e);
+      if (request) setIncomingRequestsList(prev => [request, ...prev]);
+      setNetworkStats(prev => ({ ...prev, pendingCount: prev.pendingCount + 1 }));
+      toast.error('Could not dismiss request', e instanceof Error ? e.message : 'Please try again.');
     }
   };
 
@@ -335,9 +408,9 @@ function FriendsContent() {
       {/* ── Top Header / Branding ── */}
       <div className="friends-top-header">
         <div>
-          <h2 className="friends-title">Friends & Campus Network</h2>
+              <h2 className="friends-title">Learning Network</h2>
           <p className="friends-subtitle">
-            Find peers, match by skills, collaborate on squad projects, and compete in the arena.
+            Find classmates, connect around shared courses and skills, and learn together.
           </p>
         </div>
 
@@ -361,16 +434,14 @@ function FriendsContent() {
           {/* Hero Banner with Custom Lettering & Graphic */}
           <div className="friends-hero-ref">
             <div className="friends-hero-text-wrap">
-              <h1 className="friends-hero-title-ref">
-                Frien<span>ds</span>
-              </h1>
+              <h1 className="friends-hero-title-ref">Learn<span> together</span></h1>
               <p className="friends-hero-subtitle-ref">
-                Find your people. Live Supabase student matching, collaborate, and level up together.
+                Meet classmates with similar goals, practice together, and turn shared interests into projects.
               </p>
             </div>
 
             <div className="friends-hero-graphic-wrap">
-              <div className="hero-cursive-quote">Good Friends Better Future</div>
+              <div className="hero-cursive-quote">Good friends, better futures</div>
               <div className="hero-tagline-caps">
                 SAME LEARNING<br />
                 DIFFERENT PATHS<br />
@@ -380,25 +451,50 @@ function FriendsContent() {
           </div>
 
           {/* Navigation Tabs Bar */}
-          <div className="friends-tabs-bar-ref">
+          <div className="friends-tabs-bar-ref" role="tablist" aria-label="Learning network" aria-orientation="horizontal">
             <button
+              ref={(node) => { tabRefs.current.discover = node; }}
+              id="friends-tab-discover"
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'discover'}
+              aria-controls="friends-tabpanel"
+              tabIndex={activeTab === 'discover' ? 0 : -1}
               className={`friends-tab-pill ${activeTab === 'discover' ? 'active' : ''}`}
-              onClick={() => setActiveTab('discover')}
+              onClick={() => navigateToTab('discover')}
+              onKeyDown={(event) => handleTabKeyDown(event, 'discover')}
             >
-              <span>🔍</span> Discover
+              <span aria-hidden="true">🔍</span> Find classmates
             </button>
             <button
+              ref={(node) => { tabRefs.current.network = node; }}
+              id="friends-tab-network"
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'network'}
+              aria-controls="friends-tabpanel"
+              tabIndex={activeTab === 'network' ? 0 : -1}
               className={`friends-tab-pill ${activeTab === 'network' ? 'active' : ''}`}
-              onClick={() => setActiveTab('network')}
+              onClick={() => navigateToTab('network')}
+              onKeyDown={(event) => handleTabKeyDown(event, 'network')}
             >
-              <span>👥</span> My Friends
+              <span aria-hidden="true">👥</span> My network
               {networkStats.friendsCount > 0 && (
                 <span className="tab-counter-badge">{networkStats.friendsCount}</span>
               )}
             </button>
             <button
+              ref={(node) => { tabRefs.current.requests = node; }}
+              id="friends-tab-requests"
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'requests'}
+              aria-controls="friends-tabpanel"
+              tabIndex={activeTab === 'requests' ? 0 : -1}
+              aria-label={`Requests${networkStats.pendingCount > 0 ? `, ${networkStats.pendingCount} pending` : ''}`}
               className={`friends-tab-pill ${activeTab === 'requests' ? 'active' : ''}`}
-              onClick={() => setActiveTab('requests')}
+              onClick={() => navigateToTab('requests')}
+              onKeyDown={(event) => handleTabKeyDown(event, 'requests')}
             >
               <span>👤+</span> Requests
               {networkStats.pendingCount > 0 && (
@@ -406,25 +502,50 @@ function FriendsContent() {
               )}
             </button>
             <button
+              ref={(node) => { tabRefs.current.messages = node; }}
+              id="friends-tab-messages"
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'messages'}
+              aria-controls="friends-tabpanel"
+              tabIndex={activeTab === 'messages' ? 0 : -1}
               className={`friends-tab-pill ${activeTab === 'messages' ? 'active' : ''}`}
-              onClick={() => setActiveTab('messages')}
+              onClick={() => navigateToTab('messages')}
+              onKeyDown={(event) => handleTabKeyDown(event, 'messages')}
             >
-              <span>💬</span> Messages
+              <span aria-hidden="true">💬</span> Study messages
             </button>
             <button
+              ref={(node) => { tabRefs.current.challenges = node; }}
+              id="friends-tab-challenges"
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'challenges'}
+              aria-controls="friends-tabpanel"
+              tabIndex={activeTab === 'challenges' ? 0 : -1}
               className={`friends-tab-pill ${activeTab === 'challenges' ? 'active' : ''}`}
-              onClick={() => setActiveTab('challenges')}
+              onClick={() => navigateToTab('challenges')}
+              onKeyDown={(event) => handleTabKeyDown(event, 'challenges')}
             >
-              <span>🏆</span> Challenges
+              <span aria-hidden="true">🏆</span> Practice challenges
             </button>
             <button
+              ref={(node) => { tabRefs.current.projects = node; }}
+              id="friends-tab-projects"
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'projects'}
+              aria-controls="friends-tabpanel"
+              tabIndex={activeTab === 'projects' ? 0 : -1}
               className={`friends-tab-pill ${activeTab === 'projects' ? 'active' : ''}`}
-              onClick={() => setActiveTab('projects')}
+              onClick={() => navigateToTab('projects')}
+              onKeyDown={(event) => handleTabKeyDown(event, 'projects')}
             >
-              <span>👥</span> Group Projects
+              <span aria-hidden="true">👥</span> Team projects
             </button>
           </div>
 
+          <div id="friends-tabpanel" role="tabpanel" aria-labelledby={`friends-tab-${activeTab}`} tabIndex={0} className="friends-tabpanel">
           {/* ── TAB 1: DISCOVER ── */}
           {activeTab === 'discover' && (
             <>
@@ -438,7 +559,8 @@ function FriendsContent() {
                   ref={searchInputRef}
                   type="text"
                   className="friends-live-search-input"
-                  placeholder="Find friends by name, college, skills (e.g. React, Python, UI/UX)..."
+                  aria-label="Search classmates by name, college, course, or skill"
+                  placeholder="Search classmates by name, course, college, or skill..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
@@ -469,31 +591,41 @@ function FriendsContent() {
               <div className="friends-filters-row">
                 <div className="filter-chips-left">
                   <button
+                    type="button"
                     className={`ref-filter-chip ${activeFilter === 'all' ? 'active' : ''}`}
+                    aria-pressed={activeFilter === 'all'}
                     onClick={() => setActiveFilter('all')}
                   >
                     All Students
                   </button>
                   <button
+                    type="button"
                     className={`ref-filter-chip ${activeFilter === 'college' ? 'active' : ''}`}
+                    aria-pressed={activeFilter === 'college'}
                     onClick={() => setActiveFilter('college')}
                   >
                     Same College
                   </button>
                   <button
+                    type="button"
                     className={`ref-filter-chip ${activeFilter === 'skills' ? 'active' : ''}`}
+                    aria-pressed={activeFilter === 'skills'}
                     onClick={() => setActiveFilter('skills')}
                   >
                     Same Skills
                   </button>
                   <button
+                    type="button"
                     className={`ref-filter-chip ${activeFilter === 'course' ? 'active' : ''}`}
+                    aria-pressed={activeFilter === 'course'}
                     onClick={() => setActiveFilter('course')}
                   >
-                    Same Degree/Track
+                    Course or track
                   </button>
                   <button
+                    type="button"
                     className={`ref-filter-chip ${activeFilter === 'goals' ? 'active' : ''}`}
+                    aria-pressed={activeFilter === 'goals'}
                     onClick={() => setActiveFilter('goals')}
                   >
                     Similar Goals
@@ -506,37 +638,47 @@ function FriendsContent() {
                 <div className="section-header-row">
                   <div>
                     <h2 className="section-heading-title">
-                      {searchQuery ? `Search Results (${activeSuggested.length})` : 'Suggested for you'}
+                      {searchQuery ? `Classmate matches (${activeSuggested.length})` : 'Classmates to learn with'}
                     </h2>
                     <div className="section-heading-sub">
                       {searchQuery
-                        ? `Live students from Supabase matching "${searchQuery}"`
-                        : 'Live registered students ranked by Career DNA & skill affinity'}
+                        ? `Classmates whose profiles match "${searchQuery}"`
+                        : 'Suggested using shared courses, skills, and learning goals'}
                     </div>
                   </div>
                   {activeSuggested.length > 0 && (
-                    <div
+                    <button
+                      type="button"
                       className="see-all-link"
                       onClick={() => handleOpenSmartMatch(activeSuggested[0])}
                     >
                       AI Match Breakdown →
-                    </div>
+                    </button>
                   )}
                 </div>
 
                 {isLoading ? (
-                  <div style={{ padding: '40px', textAlign: 'center', color: '#94a3b8' }}>
+                    <div role="status" aria-live="polite" style={{ padding: '40px', textAlign: 'center', color: '#94a3b8' }}>
                     <div style={{ fontSize: 31, marginBottom: 10 }}>⚡</div>
-                    <div>Querying Supabase campus directory...</div>
+                      <div>Finding classmates…</div>
+                  </div>
+                ) : suggestionsError ? (
+                  <div className="friends-empty-state-card" role="alert">
+                    <span className="empty-state-icon">⚠️</span>
+                    <h3 className="empty-state-title">Classmates could not be loaded</h3>
+                    <p className="empty-state-desc">{suggestionsError}</p>
+                    <button type="button" className="friends-btn friends-btn-primary" onClick={fetchSuggestions}>
+                      Try again
+                    </button>
                   </div>
                 ) : activeSuggested.length === 0 ? (
                   <div className="friends-empty-state-card">
                     <span className="empty-state-icon">🔍</span>
-                    <h3 className="empty-state-title">No Students Found</h3>
+                    <h3 className="empty-state-title">No classmates found</h3>
                     <p className="empty-state-desc">
                       {searchQuery
-                        ? `We couldn't find any students matching "${searchQuery}". Try searching by another skill (like "React", "Python"), degree, or clear the search.`
-                        : 'No students currently match this filter criteria. Try selecting "All Students" to see the full campus directory.'}
+                        ? `We couldn't find classmates matching "${searchQuery}". Try another course or skill, or clear the search.`
+                        : 'No classmates match this filter right now. Try selecting "All Students" to see the full campus directory.'}
                     </p>
                     {searchQuery && (
                       <button
@@ -553,7 +695,9 @@ function FriendsContent() {
                     {activeSuggested.slice(0, 6).map((peer) => (
                       <div key={peer.id} className="suggested-peer-card">
                         <div className="suggested-card-top">
-                          <div
+                          <button
+                            type="button"
+                            aria-label={`View ${peer.name}'s profile`}
                             className="suggested-avatar-box"
                             style={{ cursor: 'pointer' }}
                             onClick={() => handleNavigateToProfile(peer.id)}
@@ -561,8 +705,10 @@ function FriendsContent() {
                           >
                             <img src={peer.avatar} alt={peer.name} />
                             {peer.online && <span className="online-beacon" />}
-                          </div>
-                          <div
+                          </button>
+                          <button
+                            type="button"
+                            aria-label={`${peer.matchPct}% learning match with ${peer.name}; view why`}
                             className="match-percentage-badge"
                             style={{ cursor: 'pointer' }}
                             title="Click for AI Affinity Breakdown"
@@ -570,17 +716,18 @@ function FriendsContent() {
                           >
                             <span className="match-percentage-val">{peer.matchPct}%</span>
                             <span className="match-percentage-label">Match</span>
-                          </div>
+                          </button>
                         </div>
 
-                        <div
+                        <button
+                          type="button"
                           className="suggested-peer-name"
                           title={peer.name}
                           style={{ cursor: 'pointer' }}
                           onClick={() => handleNavigateToProfile(peer.id)}
                         >
                           {peer.name}
-                        </div>
+                        </button>
                         <div className="suggested-peer-degree">{peer.course} • {peer.college}</div>
 
                         <div className="suggested-skills-pills">
@@ -615,7 +762,7 @@ function FriendsContent() {
                               onClick={() => handleAddFriend(peer.id, peer.name)}
                               style={{ padding: '7px 12px', fontSize: 13 }}
                             >
-                              + Add Friend
+                              + Connect
                             </button>
                           )}
                         </div>
@@ -629,7 +776,7 @@ function FriendsContent() {
               {activeSuggested.length > 6 && (
                 <div className="all-students-section">
                   <div className="all-students-controls-row">
-                    <h2 className="section-heading-title">All Campus Students ({activeSuggested.length})</h2>
+                  <h2 className="section-heading-title">More classmates ({activeSuggested.length})</h2>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                       <div className="view-mode-toggle-group">
                         <button
@@ -654,7 +801,8 @@ function FriendsContent() {
                     <div className="students-list-view-container">
                       {activeSuggested.slice(6).map((student) => (
                         <div key={student.id} className="student-list-item-row">
-                          <div
+                          <button
+                            type="button"
                             className="student-list-identity"
                             style={{ cursor: 'pointer' }}
                             onClick={() => handleNavigateToProfile(student.id)}
@@ -667,7 +815,7 @@ function FriendsContent() {
                               <div className="student-list-name">{student.name}</div>
                               <div className="student-list-college">{student.course} • {student.college}</div>
                             </div>
-                          </div>
+                          </button>
 
                           <div className="student-list-skills">
                             {student.skills.map((sk, idx) => (
@@ -691,7 +839,7 @@ function FriendsContent() {
                                 className="friends-btn friends-btn-primary"
                                 onClick={() => handleAddFriend(student.id, student.name)}
                               >
-                                + Add Friend
+                                + Connect
                               </button>
                             )}
                           </div>
@@ -703,25 +851,28 @@ function FriendsContent() {
                       {activeSuggested.slice(6).map((student) => (
                         <div key={student.id} className="suggested-peer-card">
                           <div className="suggested-card-top">
-                            <div
+                            <button
+                              type="button"
+                              aria-label={`View ${student.name}'s profile`}
                               className="suggested-avatar-box"
                               style={{ cursor: 'pointer' }}
                               onClick={() => handleNavigateToProfile(student.id)}
                             >
                               <img src={student.avatar} alt={student.name} />
                               {student.online && <span className="online-beacon" />}
-                            </div>
+                            </button>
                             <div className="match-percentage-badge">
                               <span className="match-percentage-val">{student.matchPct}%</span>
                             </div>
                           </div>
-                          <div
+                          <button
+                            type="button"
                             className="suggested-peer-name"
                             style={{ cursor: 'pointer' }}
                             onClick={() => handleNavigateToProfile(student.id)}
                           >
                             {student.name}
-                          </div>
+                          </button>
                           <div className="suggested-peer-degree">{student.course} • {student.college}</div>
                           <div className="suggested-skills-pills">
                             {student.skills.map((s, i) => (
@@ -746,7 +897,7 @@ function FriendsContent() {
                                 onClick={() => handleAddFriend(student.id, student.name)}
                                 style={{ padding: '7px 12px', fontSize: 13 }}
                               >
-                                + Add Friend
+                                + Connect
                               </button>
                             )}
                           </div>
@@ -765,13 +916,13 @@ function FriendsContent() {
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 20px', background: 'rgba(15, 23, 42, 0.7)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: 14 }}>
                 <div>
                   <h2 style={{ fontSize: 20, fontWeight: 800, color: '#ffffff', margin: 0 }}>
-                    My Friends ({friendsNetwork.length})
+                    My learning network ({friendsNetwork.length})
                   </h2>
                   <p style={{ fontSize: 13, color: '#94a3b8', margin: '4px 0 0' }}>
-                    Active campus connections for collaboration, practice duels, and squad builds.
+                    Find study partners, practice new skills, and build team projects together.
                   </p>
                 </div>
-                <button className="friends-btn friends-btn-primary" onClick={() => setActiveTab('discover')}>
+                <button className="friends-btn friends-btn-primary" onClick={() => navigateToTab('discover')}>
                   + Discover Peers
                 </button>
               </div>
@@ -779,14 +930,14 @@ function FriendsContent() {
               {friendsNetwork.length === 0 ? (
                 <div className="friends-empty-state-card">
                   <span className="empty-state-icon">👥</span>
-                  <h3 className="empty-state-title">No Friends Connected Yet</h3>
+                  <h3 className="empty-state-title">Your learning network starts here</h3>
                   <p className="empty-state-desc">
-                    Your campus circle is just getting started. Explore the Discover tab to send requests to classmates, project partners, and arena rivals.
+                    Find classmates in your course or with shared skills, then connect to study, practice, and build together.
                   </p>
                   <button
                     className="friends-btn friends-btn-primary"
                     style={{ marginTop: 12 }}
-                    onClick={() => setActiveTab('discover')}
+                    onClick={() => navigateToTab('discover')}
                   >
                     Browse Students
                   </button>
@@ -824,16 +975,16 @@ function FriendsContent() {
                         <button
                           className="friends-btn friends-btn-secondary"
                           style={{ fontSize: 12.5, padding: '7px' }}
-                          onClick={() => { setActiveChatFriendId(friend.id); setActiveTab('messages'); }}
+                          onClick={() => navigateToChat(friend.id)}
                         >
-                          💬 Chat
+                          💬 Study chat
                         </button>
                         <button
                           className="friends-btn friends-btn-secondary"
                           style={{ fontSize: 12.5, padding: '7px' }}
                           onClick={() => setChallengeStudent(friend)}
                         >
-                          ⚔️ Duel
+                          🧩 Practice
                         </button>
                         <button
                           className="friends-btn friends-btn-secondary"
@@ -862,7 +1013,7 @@ function FriendsContent() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
               <div>
                 <h3 style={{ fontSize: 17.5, fontWeight: 700, color: '#ffffff', marginBottom: 12 }}>
-                  Incoming Friend Requests ({incomingRequestsList.length})
+                  Classmate connection requests ({incomingRequestsList.length})
                 </h3>
                 {incomingRequestsList.length === 0 ? (
                   <div className="friends-empty-state-card">
@@ -952,6 +1103,7 @@ function FriendsContent() {
             />
           )}
 
+          </div>
         </div>
 
         {/* ── RIGHT COLUMN: NETWORK SUMMARY & QUICK ACTIONS ── */}
@@ -960,65 +1112,68 @@ function FriendsContent() {
           {/* 1. "Your Network" Card (LIVE DYNAMIC COUNTS) */}
           <div className="ref-sidebar-card">
             <div className="ref-sidebar-header">
-              <span>Your Network</span>
-              <span
+              <span>Learning network</span>
+              <button
+                type="button"
+                className="friends-side-link"
                 style={{ fontSize: 14.5, color: '#818cf8', cursor: 'pointer', fontWeight: 600 }}
-                onClick={() => setActiveTab('network')}
+                onClick={() => navigateToTab('network')}
               >
                 View all ›
-              </span>
+              </button>
             </div>
 
             <div className="network-stats-row">
-              <div
+              <button
+                type="button"
                 className="network-stat-box"
-                style={{ cursor: 'pointer' }}
-                onClick={() => setActiveTab('network')}
+                onClick={() => navigateToTab('network')}
               >
                 <span className="network-stat-icon" style={{ color: '#818cf8' }}>👥</span>
                 <div>
                   <div className="network-stat-num">{networkStats.friendsCount}</div>
                   <div className="network-stat-text">Friends</div>
                 </div>
-              </div>
+              </button>
 
-              <div
+              <button
+                type="button"
                 className="network-stat-box"
-                style={{ cursor: 'pointer' }}
-                onClick={() => setActiveTab('requests')}
+                onClick={() => navigateToTab('requests')}
               >
                 <span className="network-stat-icon" style={{ color: '#f87171' }}>🚀</span>
                 <div>
                   <div className="network-stat-num">{networkStats.pendingCount}</div>
                   <div className="network-stat-text">Requests</div>
                 </div>
-              </div>
+              </button>
             </div>
           </div>
 
           {/* 2. "Connected Peers" / Messages Preview */}
           <div className="ref-sidebar-card">
             <div className="ref-sidebar-header">
-              <span>Direct Chat</span>
-              <span className="see-all-link" style={{ fontSize: 12.5 }} onClick={() => setActiveTab('messages')}>
+              <span>Study partners</span>
+              <button type="button" className="see-all-link" style={{ fontSize: 12.5 }} onClick={() => navigateToTab('messages')}>
                 Open chat →
-              </span>
+              </button>
             </div>
 
             {friendsNetwork.length === 0 ? (
               <div style={{ padding: '16px 8px', textAlign: 'center', fontSize: 13, color: '#94a3b8' }}>
-                No active conversations yet.<br />
-                Connect with peers to unlock 1v1 chat!
+                No classmates connected yet.<br />
+                Find a learning partner to start a study conversation.
               </div>
             ) : (
               <div className="recent-messages-list">
                 {friendsNetwork.slice(0, 4).map((friend) => (
-                  <div
+                  <button
                     key={friend.id}
+                    type="button"
                     className="recent-msg-item"
+                    aria-label={`Open study messages with ${friend.name}`}
                     onClick={() => {
-                      setActiveChatFriendId(friend.id);
-                      setActiveTab('messages');
+                      navigateToChat(friend.id);
                     }}
                   >
                     <div className="recent-msg-avatar-wrap">
@@ -1027,10 +1182,10 @@ function FriendsContent() {
                     </div>
                     <div className="recent-msg-meta">
                       <div className="recent-msg-author">{friend.name}</div>
-                      <div className="recent-msg-snippet">{friend.college}</div>
+                      <div className="recent-msg-snippet">{friend.course} • {friend.college}</div>
                     </div>
-                    <span className="recent-msg-time">Chat</span>
-                  </div>
+                    <span className="recent-msg-time">Message</span>
+                  </button>
                 ))}
               </div>
             )}
@@ -1043,52 +1198,56 @@ function FriendsContent() {
             </div>
 
             <div className="quick-actions-grid">
-              <div
+              <button
+                type="button"
                 className="quick-action-tile purple"
-                onClick={() => setChallengeStudent(suggestedStudents[0] || null)}
+                onClick={() => navigateToTab('challenges')}
               >
                 <div className="tile-icon-title">
                   <span className="tile-icon">🏆</span>
-                  <span className="tile-label">Invite to<br />Challenge</span>
+                  <span className="tile-label">Practice<br />challenges</span>
                 </div>
                 <span className="tile-arrow">›</span>
-              </div>
+              </button>
 
-              <div
+              <button
+                type="button"
                 className="quick-action-tile green"
-                onClick={() => setProjectStudent(suggestedStudents[0] || null)}
+                onClick={() => navigateToTab('projects')}
               >
                 <div className="tile-icon-title">
                   <span className="tile-icon">👥</span>
-                  <span className="tile-label">Invite to<br />Project</span>
+                  <span className="tile-label">Team<br />projects</span>
                 </div>
                 <span className="tile-arrow">›</span>
-              </div>
+              </button>
 
-              <div
+              <button
+                type="button"
                 className="quick-action-tile blue"
                 onClick={() => {
-                  setActiveTab('discover');
-                  searchInputRef.current?.focus();
+                  navigateToTab('discover');
+                  requestAnimationFrame(() => searchInputRef.current?.focus());
                 }}
               >
                 <div className="tile-icon-title">
                   <span className="tile-icon">👤+</span>
-                  <span className="tile-label">Find<br />Friends</span>
+                  <span className="tile-label">Find<br />classmates</span>
                 </div>
                 <span className="tile-arrow">›</span>
-              </div>
+              </button>
 
-              <div
+              <button
+                type="button"
                 className="quick-action-tile amber"
-                onClick={() => setActiveTab('network')}
+                onClick={() => navigateToTab('network')}
               >
                 <div className="tile-icon-title">
                   <span className="tile-icon">👥</span>
-                  <span className="tile-label">View<br />My Friends</span>
+                  <span className="tile-label">My learning<br />network</span>
                 </div>
                 <span className="tile-arrow">›</span>
-              </div>
+              </button>
             </div>
           </div>
 
@@ -1117,8 +1276,7 @@ function FriendsContent() {
         }}
         onOpenMessage={(s) => {
           setSelectedStudent(null);
-          setActiveChatFriendId(s.id);
-          setActiveTab('messages');
+          navigateToChat(s.id);
         }}
         onOpenProjectInvite={(s) => {
           setSelectedStudent(null);

@@ -272,7 +272,7 @@ const ROUTE_VOCABULARY: RouteEntry[] = [
   },
   {
     path: '/attention-span',
-    displayName: 'Attention Span',
+    displayName: 'Cognitive Intelligence',
     synonyms: [
       'attention span', 'focus trainer', 'cognitive endurance',
       'attention tab', 'focus tab', 'brain drills'

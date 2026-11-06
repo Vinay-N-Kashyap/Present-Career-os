@@ -64,6 +64,8 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
   fetchAssistScript,
   liveSpeechTranscript = '',
 }) => {
+  const lastMessage = messages[messages.length - 1] as { role?: string } | undefined;
+  const canFinish = starStep >= 4 && lastMessage?.role === 'assistant';
   const spokenWordSet = React.useMemo(() => {
     return new Set(liveSpeechTranscript.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean));
   }, [liveSpeechTranscript]);
@@ -153,8 +155,8 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
             {isVoiceListening ? '🎙️ Listening to Your Voice... (Speak Now)' : '🎤 Click to Speak STAR Response'}
           </button>
 
-          <button onClick={finishInterview} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 12, padding: '12px 18px', fontSize: 14, fontWeight: 900, cursor: 'pointer' }}>
-            View Results ➔
+          <button onClick={finishInterview} disabled={!canFinish} title={!canFinish ? 'Complete all four STAR sections and wait for the interviewer response.' : undefined} style={{ background: canFinish ? 'var(--accent)' : 'var(--bg3)', border: 'none', color: canFinish ? 'var(--text)' : 'var(--t3)', borderRadius: 12, padding: '12px 18px', fontSize: 14, fontWeight: 900, cursor: canFinish ? 'pointer' : 'not-allowed' }}>
+            {canFinish ? 'View Results ➔' : `Complete STAR (${Math.min(starStep, 4)}/4)`}
           </button>
         </div>
 

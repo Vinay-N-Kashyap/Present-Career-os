@@ -39,6 +39,7 @@ export function useInterviewVoice({
   const lastSentTranscriptRef = useRef<string>('');
   const isStartingRef = useRef<boolean>(false);
   const isStoppingRef = useRef<boolean>(false);
+  const manualStopRef = useRef<boolean>(false);
 
   const isMountedRef = useRef<boolean>(true);
   const isInterviewActiveRef = useRef<boolean>(false);
@@ -58,10 +59,6 @@ export function useInterviewVoice({
   useEffect(() => {
     isInterviewActiveRef.current = isInterviewActive;
   }, [isInterviewActive]);
-
-  useEffect(() => {
-    autoVoiceLoopRef.current = autoVoiceLoop;
-  }, [autoVoiceLoop]);
 
   // Cleanly clear unsubmitted utterances on round transitions
   useEffect(() => {
@@ -121,6 +118,7 @@ export function useInterviewVoice({
   }, [onFinalTranscript]);
 
   const stopVoiceListening = useCallback(() => {
+    manualStopRef.current = true;
     if (utteranceDebounceTimerRef.current) {
       clearTimeout(utteranceDebounceTimerRef.current);
       utteranceDebounceTimerRef.current = null;
@@ -142,6 +140,7 @@ export function useInterviewVoice({
     if (!isInterviewActiveRef.current && !isInterviewActive) return;
 
     if (isStartingRef.current || isAvatarSpeakingRef.current) return;
+    manualStopRef.current = false;
 
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) {
@@ -296,6 +295,11 @@ export function useInterviewVoice({
         // If candidate spoke and mic stopped before debounce fired, flush immediately
         if (accumulatedTranscriptRef.current.trim()) {
           flushAndSubmitTranscript();
+          if (manualStopRef.current) return;
+        }
+
+        if (manualStopRef.current) {
+          manualStopRef.current = false;
           return;
         }
 
@@ -324,6 +328,17 @@ export function useInterviewVoice({
       }
     }
   }, [activeStage, activeTopicName, onSilenceNudge, isInterviewActive, flushAndSubmitTranscript]);
+
+  // The visible voice-loop switch is also the microphone pause control: turning it off
+  // must stop an active recognition session, not merely suppress its next restart.
+  useEffect(() => {
+    autoVoiceLoopRef.current = autoVoiceLoop;
+    if (!autoVoiceLoop || !isInterviewActive || activeStage === 'results') {
+      stopVoiceListening();
+    } else if (isInterviewActiveRef.current && !isAvatarSpeakingRef.current) {
+      startVoiceListening();
+    }
+  }, [autoVoiceLoop, isInterviewActive, activeStage, startVoiceListening, stopVoiceListening]);
 
   const speakWithAvatar = useCallback((text: string, teacherId: string, onStart: () => void, onEnd: () => void) => {
     isAvatarSpeakingRef.current = true;

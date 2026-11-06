@@ -4,83 +4,92 @@ import { useState, useEffect, useRef } from 'react';
 import { GameId, Difficulty, playSound } from './types';
 import { DifficultyPicker, CompletionBanner } from './DifficultyPicker';
 import { CountdownOverlay } from './CountdownOverlay';
+import { useSprintClock } from './useSprintClock';
 
 export function PrecisionPointerGame({ gameId, difficulty, onDifficultyChange, completedDifficulties, soundMuted, onComplete, onExit }: { gameId: GameId; difficulty: Difficulty; onDifficultyChange: (d: Difficulty) => void; completedDifficulties?: Record<string, Difficulty[]>; soundMuted: boolean; onComplete: (score: number, accuracyEarned: number) => void; onExit: () => void }) {
-  const DURATION = 20;
+  const DURATION = 15;
 
   const [phase, setPhase] = useState<'ready' | 'countdown' | 'playing' | 'done'>('ready');
-  const [timeLeft, setTimeLeft] = useState(DURATION);
   const [lockOnMs, setLockOnMs] = useState(0);
   const [targetPos, setTargetPos] = useState({ x: 50, y: 50 }); // percentages
   const [isHovered, setIsHovered] = useState(false);
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const animRef = useRef<number | null>(null);
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const lockTimeRef = useRef(0);
+  const pointerPositionRef = useRef<{ x: number; y: number } | null>(null);
+  const isHoveredRef = useRef(false);
+  const lastFrameAtRef = useRef(0);
+  const lastScorePaintAtRef = useRef(0);
+  const timeLeft = useSprintClock(phase === 'playing', () => {
+    if (animRef.current) cancelAnimationFrame(animRef.current);
+    animRef.current = null;
+    setPhase('done');
+  });
 
   const startGame = () => {
     setPhase('playing');
-    setTimeLeft(DURATION);
     setLockOnMs(0);
     lockTimeRef.current = 0;
+    pointerPositionRef.current = null;
+    isHoveredRef.current = false;
+    lastFrameAtRef.current = 0;
+    lastScorePaintAtRef.current = 0;
 
     let t = 0;
     const speed = difficulty === 'hard' ? 0.08 : difficulty === 'normal' ? 0.05 : 0.03;
     const animate = () => {
+      const now = performance.now();
+      const deltaMs = lastFrameAtRef.current ? Math.min(100, now - lastFrameAtRef.current) : 0;
+      lastFrameAtRef.current = now;
       t += speed;
       const x = 50 + Math.sin(t) * 30 + Math.cos(t * 1.5) * 10;
       const y = 50 + Math.cos(t * 0.8) * 25 + Math.sin(t * 2) * 10;
-      setTargetPos({ x: Math.max(15, Math.min(85, x)), y: Math.max(15, Math.min(85, y)) });
+      const nextPosition = { x: Math.max(15, Math.min(85, x)), y: Math.max(15, Math.min(85, y)) };
+      setTargetPos(nextPosition);
+
+      const pointer = pointerPositionRef.current;
+      const rect = containerRef.current?.getBoundingClientRect();
+      if (pointer && rect) {
+        const targetX = (nextPosition.x / 100) * rect.width;
+        const targetY = (nextPosition.y / 100) * rect.height;
+        const distance = Math.hypot(pointer.x - targetX, pointer.y - targetY);
+        const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+        const touchBonus = isTouchDevice ? 10 : 0;
+        const baseMargin = difficulty === 'easy' ? 45 : difficulty === 'hard' ? 25 : 35;
+        const locked = distance <= baseMargin + touchBonus;
+        if (locked !== isHoveredRef.current) {
+          isHoveredRef.current = locked;
+          setIsHovered(locked);
+          if (locked) playSound('click', soundMuted);
+        }
+        if (locked) {
+          lockTimeRef.current = Math.min(DURATION * 1000, lockTimeRef.current + deltaMs);
+          if (now - lastScorePaintAtRef.current >= 100) {
+            lastScorePaintAtRef.current = now;
+            setLockOnMs(Math.round(lockTimeRef.current));
+          }
+        }
+      } else if (isHoveredRef.current) {
+        isHoveredRef.current = false;
+        setIsHovered(false);
+      }
       animRef.current = requestAnimationFrame(animate);
     };
     animRef.current = requestAnimationFrame(animate);
 
-    timerRef.current = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev <= 1) {
-          clearInterval(timerRef.current!);
-          if (animRef.current) cancelAnimationFrame(animRef.current);
-          setPhase('done');
-          return 0;
-        }
-        return prev - 1;
-      });
-    }, 1000);
   };
 
   useEffect(() => {
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
       if (animRef.current) cancelAnimationFrame(animRef.current);
     };
   }, []);
 
-  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+  const updatePointerPosition = (e: React.PointerEvent<HTMLDivElement>) => {
     if (phase !== 'playing' || !containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    const mx = e.clientX - rect.left;
-    const my = e.clientY - rect.top;
-
-    const targetPxX = (targetPos.x / 100) * rect.width;
-    const targetPxY = (targetPos.y / 100) * rect.height;
-
-    const dist = Math.hypot(mx - targetPxX, my - targetPxY);
-
-    // Dynamic Mobile Touch Area Expansion (+10px margin on mobile devices)
-    const isTouchDevice = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-    const touchBonus = isTouchDevice ? 10 : 0;
-    const baseMargin = difficulty === 'easy' ? 45 : difficulty === 'hard' ? 25 : 35;
-    const hitMargin = baseMargin + touchBonus;
-
-    if (dist <= hitMargin) {
-      if (!isHovered) playSound('click', soundMuted);
-      setIsHovered(true);
-      lockTimeRef.current += 100;
-      setLockOnMs(lockTimeRef.current);
-    } else {
-      setIsHovered(false);
-    }
+    pointerPositionRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
   };
 
   const accuracyEarned = Math.min(100, Math.round((lockOnMs / (DURATION * 1000)) * 250));
@@ -95,7 +104,7 @@ export function PrecisionPointerGame({ gameId, difficulty, onDifficultyChange, c
         <div style={{ animation: 'attFadeIn 0.4s ease' }}>
           <div style={{ fontSize: 61.5, marginBottom: 16 }}>🎯</div>
           <h2 style={{ color: '#f0f0f0', fontSize: 31, fontWeight: 800, margin: '0 0 8px' }}>Precision Pointer</h2>
-          <p style={{ color: '#aaa', fontSize: 15.5, margin: '0 0 12px', maxWidth: 420 }}>Maintain laser crosshair lock-on over the target as it maneuvers along erratic paths!</p>
+          <p style={{ color: '#aaa', fontSize: 15.5, margin: '0 0 12px', maxWidth: 420 }}>Hold your pointer over the moving target. Can you keep lock for a 15-second sprint?</p>
 
           <DifficultyPicker gameId={gameId} difficulty={difficulty} onChange={onDifficultyChange} completedDifficulties={completedDifficulties} />
 
@@ -112,7 +121,14 @@ export function PrecisionPointerGame({ gameId, difficulty, onDifficultyChange, c
 
           <div
             ref={containerRef}
-            onPointerMove={handlePointerMove}
+            onPointerMove={updatePointerPosition}
+            onPointerDown={updatePointerPosition}
+            onPointerLeave={() => {
+              pointerPositionRef.current = null;
+              isHoveredRef.current = false;
+              setIsHovered(false);
+            }}
+            aria-label="Move your pointer or finger to keep the target in lock-on range"
             style={{
               width: '100%',
               maxWidth: 440,

@@ -143,19 +143,25 @@ export default function InterviewPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [starStep, setStarStep] = useState<number>(0);
 
-  // Maintain consistent avatar across all rounds
+  // Give each assessment round a fresh interviewer; the floating mentor is not in this pool.
   const [activeTeacher, setActiveTeacher] = useState(AVATAR_POOL[0]);
+  const teacherSequenceRef = useRef<string[]>([]);
 
   useEffect(() => {
     preloadAvatarGLB([activeTeacher.id, 'priya', 'anish']);
   }, [activeTeacher.id]);
 
+  const floatingMentorId = (user as any)?.guidanceMentorId || (user as any)?.selectedTeacherId;
   const selectRandomTeacherForSession = useCallback(() => {
-    const randomIndex = Math.floor(Math.random() * AVATAR_POOL.length);
-    const chosen = AVATAR_POOL[randomIndex];
+    const eligible = AVATAR_POOL.filter(teacher => teacher.id !== floatingMentorId);
+    const available = eligible.filter(teacher => !teacherSequenceRef.current.includes(teacher.id));
+    const pool = available.length ? available : eligible.length ? eligible : AVATAR_POOL;
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    const chosen = pool[randomIndex];
+    teacherSequenceRef.current.push(chosen.id);
     setActiveTeacher(chosen);
     return chosen;
-  }, []);
+  }, [floatingMentorId]);
 
   // Elapsed Session Timer
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
@@ -332,6 +338,7 @@ export default function InterviewPage() {
   });
 
   const handleSendMessageWithTextRef = useRef<(text: string) => Promise<void>>((async () => {}) as any);
+  const interviewReplyPendingRef = useRef(false);
   const speakWithAvatarRef = useRef<(text: string, teacherId: string, onStart: () => void, onEnd: () => void) => void>(() => {});
 
   // Speech Recognition & TTS Hook
@@ -378,9 +385,17 @@ export default function InterviewPage() {
   const [isFetchingAssist, setIsFetchingAssist] = useState(false);
   const [assistScriptLevel, setAssistScriptLevel] = useState<'standard' | 'advanced'>('standard');
   const [assistTab, setAssistTab] = useState<'script' | 'bullets' | 'delivery'>('script');
+  const assistRequestSequenceRef = useRef(0);
 
-  const fetchAssistScript = useCallback(async (questionText: string, level?: 'standard' | 'advanced') => {
+  const fetchAssistScript = useCallback(async (
+    questionText: string,
+    level?: 'standard' | 'advanced',
+    stageOverride?: Stage,
+    topicOverride?: string
+  ) => {
+    const requestSequence = ++assistRequestSequenceRef.current;
     setIsFetchingAssist(true);
+    setAssistData(null);
     try {
       const headers = await getAuthHeaders();
       const res = await fetch('/api/interview/assist', {
@@ -388,8 +403,8 @@ export default function InterviewPage() {
         headers,
         body: JSON.stringify({
           question: questionText,
-          stage: activeStage,
-          topic: activeTopicName,
+          stage: stageOverride || activeStage,
+          topic: topicOverride || activeTopicName,
           domainStream,
           difficulty,
           scriptLevel: level || assistScriptLevel,
@@ -397,9 +412,11 @@ export default function InterviewPage() {
         })
       });
       const data = await res.json();
-      if (data?.script) setAssistData(data);
-    } catch {} finally {
-      setIsFetchingAssist(false);
+      if (requestSequence === assistRequestSequenceRef.current && data?.script) setAssistData(data);
+    } catch {
+      // Keep the current prompt visible instead of allowing an older request to replace it.
+    } finally {
+      if (requestSequence === assistRequestSequenceRef.current) setIsFetchingAssist(false);
     }
   }, [isInterviewActive, activeStage, activeTopicName, domainStream, difficulty, assistScriptLevel]);
 
@@ -430,7 +447,10 @@ export default function InterviewPage() {
         .catch(() => {});
     }
     const foundTeacher = AVATAR_POOL.find(a => a.id === activeSessionDraft.activeTeacherId);
-    if (foundTeacher) setActiveTeacher(foundTeacher);
+    if (foundTeacher) {
+      setActiveTeacher(foundTeacher);
+      teacherSequenceRef.current = [foundTeacher.id];
+    }
     setIsInterviewActive(true);
     toast.success('Interview Session Restored', `Resumed in ${activeSessionDraft.activeTopicName}`);
   }, [activeSessionDraft, setLiveSessionId]);
@@ -453,6 +473,7 @@ export default function InterviewPage() {
       }
     }
 
+    teacherSequenceRef.current = [];
     const sessionTeacher = selectRandomTeacherForSession();
     setActiveTopicName(topic);
     setIsInterviewActive(true);
@@ -490,7 +511,7 @@ export default function InterviewPage() {
     speakWithAvatar(greeting, sessionTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
 
     if (isAssistModeActive) {
-      fetchAssistScript(greeting, assistScriptLevel);
+      fetchAssistScript(greeting, assistScriptLevel, 'round1_behavioral', topic);
     }
   };
 
@@ -519,6 +540,7 @@ export default function InterviewPage() {
   };
 
   const proceedToNextStage = (next: Stage) => {
+    const nextTeacher = next === 'results' ? activeTeacher : selectRandomTeacherForSession();
     setActiveStage(next);
     setShowHint(false);
     if (next === 'results') {
@@ -538,9 +560,9 @@ export default function InterviewPage() {
     if (stagePrompt) {
       postLiveEvent('stage', next);
       setMessages(prev => [...prev, { role: 'assistant', content: stagePrompt }]);
-      speakWithAvatar(stagePrompt, activeTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
+      speakWithAvatar(stagePrompt, nextTeacher.id, () => setAnimState('talking'), () => setAnimState('idle'));
       if (isAssistModeActive) {
-        fetchAssistScript(stagePrompt, assistScriptLevel);
+        fetchAssistScript(stagePrompt, assistScriptLevel, next, activeTopicName);
       }
     }
   };
@@ -554,7 +576,8 @@ export default function InterviewPage() {
   };
 
   const handleSendMessageWithText = async (text: string) => {
-    if (!text.trim()) return;
+    if (!text.trim() || interviewReplyPendingRef.current) return;
+    interviewReplyPendingRef.current = true;
     const newMsgs: Message[] = [...messages, { role: 'user', content: text.trim() }];
     setMessages(newMsgs);
     if (activeStage === 'round4_star') setStarStep(prev => prev + 1);
@@ -602,6 +625,8 @@ export default function InterviewPage() {
       if (isAssistModeActive) {
         fetchAssistScript(fallback, assistScriptLevel);
       }
+    } finally {
+      interviewReplyPendingRef.current = false;
     }
   };
   handleSendMessageWithTextRef.current = handleSendMessageWithText;
@@ -660,9 +685,12 @@ export default function InterviewPage() {
       });
       setTerminalLogs(prev => [...prev, ...result.terminalLogs]);
       void recordCodeSubmission();
-      if (result.allPassed || result.passedTests > 0) {
+      if (result.allPassed) {
         setCodeSubmitted(true);
         setTerminalLogs(prev => [...prev, `\n✅ [PASSED] ${result.passedTests} tests verified!`]);
+      } else {
+        setCodeSubmitted(false);
+        setTerminalLogs(prev => [...prev, `\n⚠️ [INCOMPLETE] ${result.passedTests} of ${result.totalTests} tests passed. Fix the remaining cases before continuing.`]);
       }
     } catch (e: any) {
       setTerminalLogs(prev => [...prev, `[ERROR] Execution failed: ${e?.message || 'Syntax error'}`]);
@@ -972,6 +1000,7 @@ export default function InterviewPage() {
               isAvatarSpeaking={isAvatarSpeaking}
               isVoiceListening={isVoiceListening}
               lastInterviewerSpeech={lastInterviewerSpeech}
+              canProceed={messages.some(message => message.role === 'user' && message.content.trim().length > 0) && messages[messages.length - 1]?.role === 'assistant'}
               onProceed={() => proceedToNextStage('round2_coding')}
               fillerWordCount={fillerWordCount}
               messages={messages}
@@ -1000,13 +1029,20 @@ export default function InterviewPage() {
               currentCodingProb={currentCodingProb}
               showHint={showHint}
               setShowHint={setShowHint}
+              codeSubmitted={codeSubmitted}
               onProceed={() => proceedToNextStage('round3_systems')}
               selectedLang={selectedLang}
-              setSelectedLang={setSelectedLang}
+              setSelectedLang={(lang) => {
+                setSelectedLang(lang);
+                setCodeSubmitted(false);
+              }}
               runCodeAndTests={runCodeAndTests}
               isRunning={isRunning}
               codeContent={codeContent}
-              setCodeContent={setCodeContent}
+              setCodeContent={(value) => {
+                setCodeContent(value);
+                setCodeSubmitted(false);
+              }}
               codeModifiedRef={codeModifiedRef}
               activeTeacher={activeTeacher}
               animState={animState}
@@ -1023,9 +1059,13 @@ export default function InterviewPage() {
               domainStream={domainStream}
               activeTopicName={activeTopicName}
               onProceed={() => proceedToNextStage('round4_star')}
-              setLatestTopology={setLatestTopology}
+              setLatestTopology={(topology) => {
+                setLatestTopology(topology);
+                setArchitectureEvaluation(null);
+              }}
               analyzeSystemArchitecture={analyzeSystemArchitecture}
               isAnalyzingArchitecture={isAnalyzingArchitecture}
+              canProceed={Boolean(latestTopology && latestTopology.nodeCount >= 2 && latestTopology.linkCount >= 1 && latestTopology.isFullyConnected && architectureEvaluation)}
               activeTeacher={activeTeacher}
               animState={animState}
               isVoiceListening={isVoiceListening}

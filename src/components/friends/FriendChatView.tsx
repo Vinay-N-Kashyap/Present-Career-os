@@ -39,8 +39,14 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [loadingMessages, setLoadingMessages] = useState(false);
+  const [messageError, setMessageError] = useState<string | null>(null);
+  const [isSending, setIsSending] = useState(false);
   const [searchFilter, setSearchFilter] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesRequestRef = useRef(0);
+  const activeFriendIdRef = useRef(activeFriend?.id);
+  const sendInFlightRef = useRef(false);
+  activeFriendIdRef.current = activeFriend?.id;
 
   useEffect(() => {
     if (initialFriendId) {
@@ -68,26 +74,38 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
   };
 
   const fetchMessages = async (friendId: string, silent = false) => {
+    const requestId = ++messagesRequestRef.current;
     try {
       if (!silent) setLoadingMessages(true);
+      if (!silent) setMessageError(null);
       const res = await fetch(`/api/friends/messages?friendId=${encodeURIComponent(friendId)}`);
       const data = await res.json();
+      if (requestId !== messagesRequestRef.current) return;
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Could not load this conversation.');
       if (data.ok && Array.isArray(data.messages)) {
         setMessages(data.messages);
+        setMessageError(null);
       }
       markAsRead(friendId);
     } catch (err) {
       console.error('Failed to load chat messages:', err);
+      if (requestId === messagesRequestRef.current) {
+        setMessageError(err instanceof Error ? err.message : 'Could not load this conversation.');
+      }
     } finally {
-      if (!silent) setLoadingMessages(false);
+      if (requestId === messagesRequestRef.current) setLoadingMessages(false);
     }
   };
 
   useEffect(() => {
     if (!activeFriend) {
+      messagesRequestRef.current += 1;
       setMessages([]);
+      setMessageError(null);
       return;
     }
+    setMessages([]);
+    setMessageError(null);
     fetchMessages(activeFriend.id);
     const interval = setInterval(() => {
       fetchMessages(activeFriend.id, true);
@@ -100,9 +118,11 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
   }, [messages]);
 
   const handleSendMessage = async () => {
-    if (!inputText.trim() || !activeFriend) return;
+    if (!inputText.trim() || !activeFriend || sendInFlightRef.current) return;
     const text = inputText.trim();
     setInputText('');
+    sendInFlightRef.current = true;
+    setIsSending(true);
 
     const optimisticMsg: Message = {
       id: `temp-${Date.now()}`,
@@ -122,16 +142,20 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
         body: JSON.stringify({ receiverId: activeFriend.id, message: text })
       });
       const data = await res.json();
-      if (!data.ok) {
-        toast.error('Failed to send', data.error || 'Message error');
-      } else {
-        const serverMsg = data.message || data.messageRecord;
-        if (serverMsg) {
-          setMessages(prev => prev.map(m => m.id === optimisticMsg.id ? serverMsg : m));
-        }
+      if (!res.ok || !data.ok) throw new Error(data.error || 'Message could not be sent.');
+      const serverMsg = data.message || data.messageRecord;
+      if (serverMsg && activeFriendIdRef.current === activeFriend.id) {
+        setMessages(prev => prev.map(m => m.id === optimisticMsg.id ? serverMsg : m));
       }
     } catch (err) {
-      toast.error('Network Error', 'Could not send message');
+      if (activeFriendIdRef.current === activeFriend.id) {
+        setMessages(prev => prev.filter(m => m.id !== optimisticMsg.id));
+        setInputText(prev => prev || text);
+      }
+      toast.error('Message not sent', err instanceof Error ? err.message : 'Check your connection and try again.');
+    } finally {
+      sendInFlightRef.current = false;
+      setIsSending(false);
     }
   };
 
@@ -192,17 +216,26 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
             filteredFriends.map((friend) => {
               const isActive = activeFriend?.id === friend.id;
               return (
-                <div
+                <button
                   key={friend.id}
+                  type="button"
                   onClick={() => setActiveFriend(friend)}
+                  aria-pressed={isActive}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: 10,
+                    width: '100%',
                     padding: '12px 16px',
                     cursor: 'pointer',
                     background: isActive ? 'rgba(99, 102, 241, 0.18)' : 'transparent',
                     borderLeft: isActive ? '3px solid #818cf8' : '3px solid transparent',
+                    borderTop: 0,
+                    borderRight: 0,
+                    borderBottom: 0,
+                    color: 'inherit',
+                    font: 'inherit',
+                    textAlign: 'left',
                     transition: 'background 0.15s ease'
                   }}
                 >
@@ -223,7 +256,7 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
                       {friend.course} • {friend.college}
                     </div>
                   </div>
-                </div>
+                </button>
               );
             })
           )}
@@ -296,6 +329,10 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
             <div style={{ textAlign: 'center', padding: '40px 0', color: '#94a3b8', fontSize: 14.5 }}>
               Loading conversation...
             </div>
+          ) : messageError && messages.length === 0 ? (
+            <div role="alert" style={{ textAlign: 'center', padding: '40px 20px', color: '#fca5a5', fontSize: 14.5 }}>
+              {messageError} You can switch conversations or try again shortly.
+            </div>
           ) : messages.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '50px 20px', color: '#94a3b8' }}>
               <div style={{ fontSize: 35, marginBottom: 8 }}>👋</div>
@@ -366,7 +403,7 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
         {/* Quick Prompts */}
         <div style={{ display: 'flex', gap: 8, padding: '6px 20px', overflowX: 'auto' }}>
           <button
-            onClick={() => setInputText("Are you free to do an Arena duel on algorithms?")}
+            onClick={() => setInputText(`Would you like to study ${activeFriend.course || 'our current course'} together this week?`)}
             style={{
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -378,10 +415,10 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
               whiteSpace: 'nowrap'
             }}
           >
-            ⚔️ &quot;Up for an Arena duel?&quot;
+            📚 &quot;Study together this week?&quot;
           </button>
           <button
-            onClick={() => setInputText("Would love to collaborate on a squad project with you!")}
+            onClick={() => setInputText(`Want to do a 25-minute focus session on ${activeFriend.course || 'our current course'}?`)}
             style={{
               background: 'rgba(255, 255, 255, 0.05)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
@@ -393,7 +430,7 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
               whiteSpace: 'nowrap'
             }}
           >
-            👥 &quot;Want to join our project squad?&quot;
+            ⏱️ &quot;Plan a focus session?&quot;
           </button>
         </div>
 
@@ -407,11 +444,15 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
         }}>
           <input
             type="text"
-            placeholder={`Message ${(activeFriend?.name || 'Friend').split(' ')[0]}...`}
+            placeholder={`Message ${(activeFriend?.name || 'classmate').split(' ')[0]}...`}
+            aria-label={`Message ${activeFriend.name}`}
             value={inputText}
             onChange={(e) => setInputText(e.target.value)}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') handleSendMessage();
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSendMessage();
+              }
             }}
             style={{
               flex: 1,
@@ -425,11 +466,13 @@ export const FriendChatView: React.FC<FriendChatViewProps> = ({
             }}
           />
           <button
+            type="button"
             className="friends-btn friends-btn-primary"
             onClick={handleSendMessage}
+            disabled={!inputText.trim() || isSending}
             style={{ padding: '10px 16px', fontSize: 14.5 }}
           >
-            Send ➤
+            {isSending ? 'Sending…' : 'Send ➤'}
           </button>
         </div>
       </div>

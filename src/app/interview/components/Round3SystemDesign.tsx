@@ -27,6 +27,7 @@ export interface Round3SystemDesignProps {
   startVoiceListening: () => void;
   lastInterviewerSpeech: string;
   architectureEvaluation?: any;
+  canProceed?: boolean;
   manualTextInput?: string;
   setManualTextInput?: (val: string) => void;
   onSendMessage?: (text: string) => void;
@@ -55,6 +56,7 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
   startVoiceListening,
   lastInterviewerSpeech,
   architectureEvaluation,
+  canProceed = false,
   manualTextInput = '',
   setManualTextInput,
   onSendMessage,
@@ -73,7 +75,7 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
     return new Set(liveSpeechTranscript.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean));
   }, [liveSpeechTranscript]);
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '7.2fr 2.8fr', gap: 16, alignItems: 'stretch' }}>
+    <div className="iv-round-layout iv-round-layout--systems">
       <div className="iv-panel" style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
         <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
@@ -82,8 +84,8 @@ export const Round3SystemDesign: React.FC<Round3SystemDesignProps> = ({
               {domainStream === 'non_tech' ? 'Business Workflow Canvas:' : 'System Architecture Canvas:'} {activeTopicName}
             </h2>
           </div>
-          <button onClick={onProceed} style={{ background: 'var(--accent)', border: 'none', color: 'var(--text)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>
-            Proceed to Round 4 ➔
+          <button onClick={onProceed} disabled={!canProceed || isAnalyzingArchitecture} title={!canProceed ? 'Build and evaluate your architecture before continuing.' : undefined} style={{ background: canProceed && !isAnalyzingArchitecture ? 'var(--accent)' : 'var(--bg3)', border: 'none', color: canProceed && !isAnalyzingArchitecture ? 'var(--text)' : 'var(--t3)', borderRadius: 8, padding: '6px 12px', fontSize: 12, fontWeight: 800, cursor: canProceed && !isAnalyzingArchitecture ? 'pointer' : 'not-allowed' }}>
+            {canProceed ? 'Proceed to Round 4 ➔' : 'Evaluate your system to continue'}
           </button>
         </div>
 

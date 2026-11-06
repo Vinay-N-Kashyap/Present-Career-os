@@ -22,7 +22,7 @@ export const STUDENT_NAV: NavSection[] = [
     { href: '/interview', icon: '🎙', label: 'AI Interview' },
     { href: '/group-discussion', icon: '💬', label: 'GD Practice' },
     { href: '/learning', icon: '📖', label: 'Learning & Twin' },
-    { href: '/attention-span', icon: '🧠', label: 'Attention Span' }
+    { href: '/attention-span', icon: '🧠', label: 'Cognitive Intelligence' }
   ]}
 ];
 

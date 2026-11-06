@@ -5,6 +5,7 @@ import { GameId, Difficulty, playSound } from './types';
 import { DifficultyPicker, CompletionBanner } from './DifficultyPicker';
 import { CountdownOverlay } from './CountdownOverlay';
 import { GameShell } from './GameShell';
+import { useSprintClock } from './useSprintClock';
 
 export function ReflexRushGame({
   gameId,
@@ -33,13 +34,19 @@ export function ReflexRushGame({
 
   const startTimeRef = useRef<number>(0);
   const waitTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const retryTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const sprintTime = useSprintClock(phase === 'waiting' || phase === 'active', () => {
+    if (waitTimerRef.current) clearTimeout(waitTimerRef.current);
+    if (retryTimerRef.current) clearTimeout(retryTimerRef.current);
+    setPhase('done');
+  });
 
   const startRound = useCallback(() => {
     setPhase('waiting');
     setEarlyTap(false);
 
-    // Random wait delay between 1.5s and 4.0s
-    const delay = 1500 + Math.random() * 2500;
+    // Keep each signal snappy so the full run fits the short-sprint format.
+    const delay = 650 + Math.random() * 1250;
     waitTimerRef.current = setTimeout(() => {
       // 25% chance of Red Decoy on Normal/Hard modes
       const isRed = (difficulty !== 'easy') && Math.random() < 0.25;
@@ -52,12 +59,16 @@ export function ReflexRushGame({
   const handleTap = () => {
     setPressed(true);
     setTimeout(() => setPressed(false), 150);
+    if (retryTimerRef.current) return;
 
     if (phase === 'waiting') {
       playSound('wrong', soundMuted);
       setEarlyTap(true);
       if (waitTimerRef.current) clearTimeout(waitTimerRef.current);
-      setTimeout(() => startRound(), 1200);
+      retryTimerRef.current = setTimeout(() => {
+        retryTimerRef.current = null;
+        startRound();
+      }, 700);
       return;
     }
 
@@ -66,7 +77,10 @@ export function ReflexRushGame({
       if (targetType === 'red') {
         playSound('wrong', soundMuted);
         setEarlyTap(true);
-        setTimeout(() => startRound(), 1200);
+        retryTimerRef.current = setTimeout(() => {
+          retryTimerRef.current = null;
+          startRound();
+        }, 700);
         return;
       }
 
@@ -97,7 +111,11 @@ export function ReflexRushGame({
       }
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      if (waitTimerRef.current) clearTimeout(waitTimerRef.current);
+      if (retryTimerRef.current) clearTimeout(retryTimerRef.current);
+    };
   }, []);
 
   const avgReaction = reactionTimes.length > 0
@@ -140,13 +158,14 @@ export function ReflexRushGame({
           <div className="att-hud">
             <div className="att-hud-key"><span>Round</span><b>{round + 1} / {TOTAL_ROUNDS}</b></div>
             <div className="att-phase">Space</div>
+          <div className="att-sprint-clock" aria-label={`${sprintTime} seconds remaining`}><span>Time</span><b>{sprintTime}s</b></div>
           </div>
           <div className="att-arena">
-            <div
+            <button
+              type="button"
               className={`att-trigger${pressed ? ' is-down' : ''}${phase === 'active' ? (targetType === 'green' ? ' is-go' : ' is-no') : ''}`}
               onClick={handleTap}
-              role="button"
-              tabIndex={0}
+              aria-label={phase === 'active' && targetType === 'green' ? 'Green signal. Tap now.' : phase === 'active' ? 'Red signal. Do not tap.' : 'Wait for the green signal.'}
             >
               {earlyTap ? (
                 <>
@@ -164,7 +183,7 @@ export function ReflexRushGame({
                   <p>{targetType === 'green' ? 'Tap the pad' : 'That was a decoy'}</p>
                 </>
               )}
-            </div>
+            </button>
           </div>
         </>
       )}

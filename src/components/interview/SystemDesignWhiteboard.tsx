@@ -102,6 +102,25 @@ export default function SystemDesignWhiteboard({
   // ─── Generate & Propagate Topology Snapshot ──────────────────────────────
   const emitTopology = useCallback((currentNodes: BoardNode[], currentLinks: BoardLink[]) => {
     const nodeTypeMap = new Map(currentNodes.map(n => [n.id, n.type]));
+    const neighbors = new Map(currentNodes.map(node => [node.id, new Set<string>()]));
+    currentLinks.forEach(link => {
+      if (!neighbors.has(link.from) || !neighbors.has(link.to)) return;
+      neighbors.get(link.from)?.add(link.to);
+      neighbors.get(link.to)?.add(link.from);
+    });
+    const visited = new Set<string>();
+    const firstNodeId = currentNodes[0]?.id;
+    if (firstNodeId) {
+      const pending = [firstNodeId];
+      while (pending.length) {
+        const id = pending.pop()!;
+        if (visited.has(id)) continue;
+        visited.add(id);
+        neighbors.get(id)?.forEach(neighbor => {
+          if (!visited.has(neighbor)) pending.push(neighbor);
+        });
+      }
+    }
     
     const serializedLinks = currentLinks.map(l => ({
       fromType: nodeTypeMap.get(l.from) || 'Unknown',
@@ -118,7 +137,7 @@ export default function SystemDesignWhiteboard({
       hasCachingLayer: currentNodes.some(n => n.type.toLowerCase().includes('redis') || n.type.toLowerCase().includes('cache')),
       hasDatabase: currentNodes.some(n => n.type.toLowerCase().includes('db') || n.type.toLowerCase().includes('postgres') || n.type.toLowerCase().includes('mongo')),
       hasQueue: currentNodes.some(n => n.type.toLowerCase().includes('kafka') || n.type.toLowerCase().includes('queue')),
-      isFullyConnected: currentNodes.length > 0 && currentLinks.length >= currentNodes.length - 1
+      isFullyConnected: currentNodes.length > 0 && visited.size === currentNodes.length
     };
 
     if (onTopologyChange) {

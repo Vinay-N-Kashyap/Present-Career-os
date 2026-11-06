@@ -67,6 +67,7 @@ export function GameShell({
           <GameMark kind={mark} />
           <h2 className="att-title">{title}</h2>
           <p className="att-sub">{description}</p>
+            <div className="att-session-note"><span aria-hidden="true">✦</span> 15-second sprint <small>· one focused game</small></div>
           {readyExtra}
           {onStart && (
             <button type="button" className="att-btn att-btn-primary" onClick={onStart}>
