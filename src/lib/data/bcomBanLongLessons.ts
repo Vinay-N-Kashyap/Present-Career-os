@@ -12632,3 +12632,10 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
     }
   }
 ];
+
+// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): bcom_ban ---
+import { BCOM_BAN_LONG_LESSONS_FIXED_DAYS as _BCOM_BAN_LONG_LESSONS_FIXED_DAYS } from './bcomBanLongLessonsPatches';
+for (let _i = 0; _i < BCOM_BAN_LONG_LESSONS.length; _i++) {
+  const _fixed = _BCOM_BAN_LONG_LESSONS_FIXED_DAYS[BCOM_BAN_LONG_LESSONS[_i].day];
+  if (_fixed) (BCOM_BAN_LONG_LESSONS as unknown as import("./longLessonTypes").LongLesson[])[_i] = _fixed;
+}
