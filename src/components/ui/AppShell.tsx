@@ -59,6 +59,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/projects':      'Projects',
   '/innovation-hub':'Innovation Hub',
   '/attention-span': 'Attention Span',
+  '/shop':          'Item Shop',
   '/qr-confirm':    'Confirm QR Login',
   '/onboarding':    'Setup',         '/qr-login':      'QR Login',
   '/reset-password':'Reset Password',
@@ -596,7 +597,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         '/opportunities', '/applications', '/placement', '/internships', '/verify',
         '/pins',
         // Innovation Hub & Collaborative Squads
-        '/innovation-hub', '/innovation'
+        '/innovation-hub', '/innovation',
+        // Item Shop
+        '/shop'
       ];
       const isAllowedTab = allowedStudentTabs.some(tab => pathname === tab || pathname.startsWith(tab + '/'));
       if (!isAllowedTab) {

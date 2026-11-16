@@ -64,7 +64,6 @@ describe('BRUTAL VALIDATION — STUDENT LEFT SIDEBAR (Perspectives 3, 4, 5)', ()
         { href: '/interview', label: 'AI Interview' },
         { href: '/mirror', label: 'Mirror' },
         { href: '/attention-span', label: 'Attention Span' },
-        { href: '/vault', label: 'Proof Vault' },
         { href: '/shop', label: 'Item Shop' },
       ];
 
@@ -75,15 +74,17 @@ describe('BRUTAL VALIDATION — STUDENT LEFT SIDEBAR (Perspectives 3, 4, 5)', ()
         assert.ok(found, `STUDENT_NAV must include route ${expected.href}`);
         assert.equal(found.label, expected.label, `Route ${expected.href} label must be "${expected.label}"`);
       }
+      assert.equal(actualLeaves.some(({ href }) => href === '/vault'), false, 'Proof Vault must be removed from student sidebar');
       assert.equal(actualLeaves.some(({ href }) => href === '/leaderboard'), false, 'Leaderboard must share the Arena destination');
     });
 
     it('BOTTOM_NAV contains required secondary student utilities', () => {
-      const expectedFooterRoutes = ['/friends', '/arena', '/pins', '/notifications', '/profile'];
+      const expectedFooterRoutes = ['/friends', '/arena', '/notifications', '/profile'];
       for (const route of expectedFooterRoutes) {
         const found = BOTTOM_NAV.find(b => b.href === route);
         assert.ok(found, `BOTTOM_NAV must contain ${route}`);
       }
+      assert.equal(BOTTOM_NAV.some(b => b.href === '/pins'), false, 'Pins & Wallet must be removed from BOTTOM_NAV');
     });
 
     it('getNav strictly isolates student from other institutional roles', () => {
@@ -259,8 +260,9 @@ describe('BRUTAL VALIDATION — FULL SSR RENDERING OF APPSIDEBAR', () => {
 
     // Footer items
     assert.ok(html.includes('href="/friends"'), 'Friends link must be in student footer');
-    assert.ok(html.includes('href="/pins"'), 'Pins & Wallet link must be in student footer');
-    assert.ok(html.includes('350'), 'Safe pins count must be displayed');
+    assert.ok(html.includes('href="/arena"'), 'Arena & Leaderboard link must be in student footer under My Network');
+    assert.ok(!html.includes('href="/vault"'), 'Proof Vault must NOT be in student sidebar');
+    assert.ok(!html.includes('href="/pins"'), 'Pins & Wallet link must NOT be in student sidebar');
     assert.ok(html.includes('Aarav Patel'), 'Student display name must be rendered');
     assert.ok(html.includes('student') && html.includes('Profile'), 'Role badge must be rendered');
 

@@ -124,7 +124,7 @@ describe('BRUTAL 3RD-PERSON AUDIT: STUDENT NAVIGATION & HUB UNIFICATION', () => 
   // Master Architecture: Canonical Item Integrity
   // ─────────────────────────────────────────────────────────────────────────
   describe('Master Architecture: Canonical Student Navigation', () => {
-    it('has all canonical flagship items in STUDENT_NAV', () => {
+    it('has all canonical flagship items in STUDENT_NAV (Proof Vault removed)', () => {
       assert.ok(STUDENT_NAV[0].items.length >= 9, 'STUDENT_NAV must have streamlined hubs');
       const hrefs = STUDENT_NAV[0].items.map((it: any) => it.href);
       assert.ok(hrefs.includes('/dashboard'));
@@ -135,19 +135,18 @@ describe('BRUTAL 3RD-PERSON AUDIT: STUDENT NAVIGATION & HUB UNIFICATION', () => 
       assert.ok(hrefs.includes('/interview'));
       assert.ok(hrefs.includes('/mirror'));
       assert.ok(hrefs.includes('/attention-span'));
-      assert.ok(hrefs.includes('/vault'));
       assert.ok(hrefs.includes('/shop'));
+      assert.equal(hrefs.includes('/vault'), false, 'Proof Vault must be removed from student sidebar');
       assert.equal(hrefs.includes('/leaderboard'), false, 'Leaderboard must share the Arena sidebar destination');
       assert.equal(isPathActive('/leaderboard', '/arena'), true, 'Leaderboard deep links should activate the Arena sidebar destination');
     });
 
-    it('has persistent bottom utility items in BOTTOM_NAV with Arena relocated under My Network', () => {
-      assert.equal(BOTTOM_NAV.length, 5);
+    it('has persistent bottom utility items in BOTTOM_NAV with Arena relocated under My Network (Pins removed)', () => {
+      assert.equal(BOTTOM_NAV.length, 4);
       const bottomHrefs = BOTTOM_NAV.map((it: any) => it.href);
       assert.deepEqual(bottomHrefs, [
         '/friends',
         '/arena',
-        '/pins',
         '/notifications',
         '/profile'
       ]);

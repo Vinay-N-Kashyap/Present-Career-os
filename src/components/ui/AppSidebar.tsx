@@ -111,7 +111,6 @@ export const STUDENT_NAV: NavSection[] = [
     { href: '/interview', icon: '🎙', label: 'AI Interview' },
     { href: '/mirror', icon: '🪞', label: 'Mirror' },
     { href: '/attention-span', icon: '🧠', label: 'Attention Span' },
-    { href: '/vault', icon: '🗄️', label: 'Proof Vault' },
     { href: '/shop', icon: '🛍️', label: 'Item Shop' }
   ]}
 ];
@@ -233,7 +232,6 @@ export const TEACHER_NAV: NavSection[] = [
 export const BOTTOM_NAV: NavLeaf[] = [
   { href: '/friends',       icon: '👥', label: 'My Network'                 },
   { href: '/arena',         icon: '⚔️', label: 'Arena & Leaderboard'        },
-  { href: '/pins',          icon: '⚡', label: 'Pins & Wallet'              },
   { href: '/notifications', icon: '🔔', label: 'Notifications', badge: true },
   { href: '/profile',       icon: '👤', label: 'Profile'                    },
 ];
@@ -345,7 +343,6 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
   const isCompact = collapsed && !mobileOpen;
   const isHiddenByRoute = effectiveFocusMode || pathname.startsWith('/admin/teacher') || pathname.startsWith('/teacher');
 
-  const safePins = Number.isFinite(Number(pins)) ? Math.max(0, Number(pins)) : 0;
   const safeUnread = Number.isFinite(Number(unread)) ? Math.max(0, Number(unread)) : 0;
 
   const rawDisp = typeof user?.displayName === 'string' ? user.displayName : (typeof user?.name === 'string' ? user.name : '');
@@ -546,7 +543,6 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
     );
   }
 
-  const pinsActive = isNavActive('/pins');
   const profileActive = isNavActive('/profile');
   const homeHref = isStudent || roleLabel === 'student' || roleLabel === 'member' || roleLabel === 'alumni'
     ? '/dashboard'
@@ -706,97 +702,6 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
 
         {/* 2. Arena & Leaderboard (Relocated under My Network) */}
         {isStudent && <NavLink href="/arena" icon="⚔️" label="Arena & Leaderboard" />}
-
-        {/* 3. Pins & Wallet (Student Workspace with Live Balance) */}
-        {isStudent && (
-          isCompact ? (
-            <Link
-              href="/pins"
-              title={`Pins & Wallet (${safePins.toLocaleString()} pins)`}
-              onClick={() => handleNavSelect('/pins')}
-              className={`nav-item${pinsActive ? ' active' : ''}`}
-              style={{ position: 'relative' }}
-            >
-              <span className="nav-icon">⚡</span>
-              {safePins < 20 && (
-                <span
-                  style={{
-                    position: 'absolute',
-                    top: 5,
-                    right: 8,
-                    width: 7,
-                    height: 7,
-                    borderRadius: '50%',
-                    background: 'var(--coral)',
-                  }}
-                />
-              )}
-            </Link>
-          ) : (
-            <Link
-              href="/pins"
-              onClick={() => handleNavSelect('/pins')}
-              className={`nav-item${pinsActive ? ' active' : ''}`}
-              style={{
-                textDecoration: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                gap: 8,
-                padding: '7px 10px',
-                borderRadius: 9,
-                background: pinsActive
-                  ? 'var(--accent-light)'
-                  : safePins < 20
-                    ? 'var(--coral-light)'
-                    : 'var(--bg3)',
-                border: `1px solid ${
-                  pinsActive ? 'var(--accent)' : safePins < 20 ? 'var(--coral)' : 'var(--border)'
-                }`,
-                transition: 'all 0.18s ease',
-                marginBottom: 3,
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: 9, minWidth: 0 }}>
-                <span className="nav-icon" style={{ fontSize: 16.5, color: pinsActive ? 'var(--accent)' : undefined }}>
-                  ⚡
-                </span>
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 600,
-                    color: pinsActive ? 'var(--accent)' : 'var(--t1)',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                  }}
-                >
-                  Pins &amp; Wallet
-                </span>
-              </div>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: 3,
-                  padding: '2px 7px',
-                  borderRadius: 10,
-                  background: safePins < 20 ? 'var(--coral-light)' : 'var(--accent-light)',
-                  border: `1px solid ${safePins < 20 ? 'var(--coral)' : 'color-mix(in srgb, var(--accent) 40%, transparent)'}`,
-                  fontSize: 11.5,
-                  fontWeight: 800,
-                  color: safePins < 20 ? 'var(--coral)' : 'var(--accent)',
-                  fontFamily: 'var(--font-mono)',
-                  lineHeight: 1.2,
-                  flexShrink: 0,
-                }}
-              >
-                <span>{safePins.toLocaleString()}</span>
-                <span style={{ fontSize: 10.5, opacity: 0.85 }}>+</span>
-              </div>
-            </Link>
-          )
-        )}
 
         {/* 3. Notifications */}
         <NavLink href="/notifications" icon="🔔" label="Notifications" badge={true} />

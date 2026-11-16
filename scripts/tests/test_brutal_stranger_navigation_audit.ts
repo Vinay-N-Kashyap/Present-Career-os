@@ -158,8 +158,8 @@ describe('COLD-EYES BRUTAL AUDIT: ZERO-PRIOR-STAKE INDEPENDENT VERIFICATION', ()
   // CHECK 4: EXACT CANONICAL SIDEBAR STRUCTURE & IMMUTABLE INVARIANTS
   // =========================================================================
   describe('Brutal Check 4: Exact Canonical Sidebar Structure', () => {
-    it('STUDENT_NAV has exactly 10 flagship hubs in exact sequence', () => {
-      assert.equal(STUDENT_NAV[0].items.length, 10);
+    it('STUDENT_NAV has exactly 9 flagship hubs in exact sequence (Vault removed)', () => {
+      assert.equal(STUDENT_NAV[0].items.length, 9);
       const expectedSequence = [
         { href: '/dashboard', label: 'Dashboard' },
         { href: '/quests', label: 'Quests & Courses' },
@@ -169,7 +169,6 @@ describe('COLD-EYES BRUTAL AUDIT: ZERO-PRIOR-STAKE INDEPENDENT VERIFICATION', ()
         { href: '/interview', label: 'AI Interview' },
         { href: '/mirror', label: 'Mirror' },
         { href: '/attention-span', label: 'Attention Span' },
-        { href: '/vault', label: 'Proof Vault' },
         { href: '/shop', label: 'Item Shop' },
       ];
 
@@ -180,13 +179,12 @@ describe('COLD-EYES BRUTAL AUDIT: ZERO-PRIOR-STAKE INDEPENDENT VERIFICATION', ()
       }
     });
 
-    it('BOTTOM_NAV has items (Friends, Arena relocated under Friends, Pins, Notifications, Profile)', () => {
-      assert.equal(BOTTOM_NAV.length, 5);
+    it('BOTTOM_NAV has items (Friends, Arena relocated under Friends, Notifications, Profile)', () => {
+      assert.equal(BOTTOM_NAV.length, 4);
       assert.equal(BOTTOM_NAV[0].href, '/friends');
       assert.equal(BOTTOM_NAV[1].href, '/arena');
-      assert.equal(BOTTOM_NAV[2].href, '/pins');
-      assert.equal(BOTTOM_NAV[3].href, '/notifications');
-      assert.equal(BOTTOM_NAV[4].href, '/profile');
+      assert.equal(BOTTOM_NAV[2].href, '/notifications');
+      assert.equal(BOTTOM_NAV[3].href, '/profile');
     });
 
     it('SSR render of student sidebar produces zero HTML errors or unescaped fragments', () => {
