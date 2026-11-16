@@ -11570,3 +11570,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
     }
   }
 ];
+
+// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): bcom_fin ---
+import { BCOM_FINANCE_LONG_LESSONS_FIXED_DAYS as _BCOM_FINANCE_LONG_LESSONS_FIXED_DAYS } from './bcomFinanceLongLessonsPatches';
+for (let _i = 0; _i < BCOM_FINANCE_LONG_LESSONS.length; _i++) {
+  const _fixed = _BCOM_FINANCE_LONG_LESSONS_FIXED_DAYS[BCOM_FINANCE_LONG_LESSONS[_i].day];
+  if (_fixed) (BCOM_FINANCE_LONG_LESSONS as unknown as import("./longLessonTypes").LongLesson[])[_i] = _fixed;
+}
