@@ -85,7 +85,7 @@ export function LearningFilters({
             { id: 'twin', label: '🧬 Career Twin Simulator' },
             { id: 'gaps', label: '🎯 Curriculum Gaps' },
             { id: 'memory', label: '🧠 Spaced Memory (FSRS)' }
-          ].map(t => (
+          ].filter(t => !embedded || t.id !== 'roadmap').map(t => (
             <button
               key={t.id}
               data-testid={`subtab-${t.id}`}

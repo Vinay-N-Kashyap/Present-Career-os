@@ -77,8 +77,8 @@ function MirrorPageInner() {
             transition: 'all 0.18s ease',
           }}
         >
-          <span>🛠️</span>
-          <span>Career Builder & ATS Studio</span>
+          <span>📄</span>
+          <span>ATS Resume Studio & Score</span>
         </button>
         <button
           type="button"
@@ -100,7 +100,7 @@ function MirrorPageInner() {
           }}
         >
           <span>🧬</span>
-          <span>Digital Career Twin</span>
+          <span>Digital Career Twin Simulator</span>
         </button>
         <button
           type="button"
@@ -121,15 +121,15 @@ function MirrorPageInner() {
             transition: 'all 0.18s ease',
           }}
         >
-          <span>📖</span>
-          <span>Learning Roadmap & Gaps</span>
+          <span>🎯</span>
+          <span>Curriculum Skill Gaps & Radar</span>
         </button>
       </div>
 
       {/* Render Active View */}
       {activeTab === 'career-builder' && (
         <div data-testid="mirror-view-career-builder">
-          <CareerBuilderPage embedded={true} />
+          <CareerBuilderPage embedded={true} initialView="resume" hideTabSwitcher={true} />
         </div>
       )}
       {activeTab === 'twin' && (
@@ -139,7 +139,7 @@ function MirrorPageInner() {
       )}
       {activeTab === 'roadmap' && (
         <div data-testid="mirror-view-learning-roadmap">
-          <LearningPage initialTab="roadmap" embedded={true} />
+          <LearningPage initialTab="gaps" embedded={true} />
         </div>
       )}
     </div>

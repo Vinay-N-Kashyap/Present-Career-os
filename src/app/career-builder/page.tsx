@@ -129,7 +129,15 @@ Requirements:
   }
 };
 
-export default function CareerBuilderPage({ embedded = false }: { embedded?: boolean } = {}) {
+export default function CareerBuilderPage({
+  embedded = false,
+  initialView = 'roadmap',
+  hideTabSwitcher = false,
+}: {
+  embedded?: boolean;
+  initialView?: 'roadmap' | 'resume';
+  hideTabSwitcher?: boolean;
+} = {}) {
   const router = useRouter();
   const { user } = useAuth();
   const userId = user?.id || 'guest';
@@ -146,7 +154,7 @@ export default function CareerBuilderPage({ embedded = false }: { embedded?: boo
   } = cOS;
 
   // View & Filter States
-  const [activeView, setActiveView] = useState<'roadmap' | 'resume'>('roadmap');
+  const [activeView, setActiveView] = useState<'roadmap' | 'resume'>(initialView);
   const [selectedDomain, setSelectedDomain] = useState<DomainCategory>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTrajectoryId, setSelectedTrajectoryId] = useState<string>('fullstack-developer');
@@ -609,50 +617,52 @@ export default function CareerBuilderPage({ embedded = false }: { embedded?: boo
       )}
 
       {/* ── Main Tab Switcher ───────────────────────────────────────────── */}
-      <div style={{ display: 'flex', gap: 12, marginBottom: 26 }}>
-        <button
-          onClick={() => setActiveView('roadmap')}
-          style={{
-            padding: '12px 22px',
-            borderRadius: 12,
-            border: `2px solid ${activeView === 'roadmap' ? 'var(--accent)' : 'var(--border)'}`,
-            background: activeView === 'roadmap' ? 'rgba(99, 102, 241, 0.15)' : 'var(--bg2)',
-            color: activeView === 'roadmap' ? 'var(--accent)' : 'var(--t2)',
-            fontWeight: 900,
-            fontSize: 14.5,
-            cursor: 'pointer',
-            fontFamily: 'var(--font-mono)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            boxShadow: activeView === 'roadmap' ? '0 0 16px rgba(99, 102, 241, 0.25)' : 'none',
-            transition: 'all 0.2s ease',
-          }}
-        >
-          <span>🧬</span> Custom Roadmap Fuser
-        </button>
-        <button
-          onClick={() => setActiveView('resume')}
-          style={{
-            padding: '12px 22px',
-            borderRadius: 12,
-            border: `2px solid ${activeView === 'resume' ? 'var(--accent)' : 'var(--border)'}`,
-            background: activeView === 'resume' ? 'rgba(99, 102, 241, 0.15)' : 'var(--bg2)',
-            color: activeView === 'resume' ? 'var(--accent)' : 'var(--t2)',
-            fontWeight: 900,
-            fontSize: 14.5,
-            cursor: 'pointer',
-            fontFamily: 'var(--font-mono)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-            boxShadow: activeView === 'resume' ? '0 0 16px rgba(99, 102, 241, 0.25)' : 'none',
-            transition: 'all 0.2s ease',
-          }}
-        >
-          <span>📄</span> AI Resume & ATS Gap Loop
-        </button>
-      </div>
+      {!hideTabSwitcher && (
+        <div style={{ display: 'flex', gap: 12, marginBottom: 26 }}>
+          <button
+            onClick={() => setActiveView('roadmap')}
+            style={{
+              padding: '12px 22px',
+              borderRadius: 12,
+              border: `2px solid ${activeView === 'roadmap' ? 'var(--accent)' : 'var(--border)'}`,
+              background: activeView === 'roadmap' ? 'rgba(99, 102, 241, 0.15)' : 'var(--bg2)',
+              color: activeView === 'roadmap' ? 'var(--accent)' : 'var(--t2)',
+              fontWeight: 900,
+              fontSize: 14.5,
+              cursor: 'pointer',
+              fontFamily: 'var(--font-mono)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              boxShadow: activeView === 'roadmap' ? '0 0 16px rgba(99, 102, 241, 0.25)' : 'none',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            <span>🧬</span> Custom Roadmap Fuser
+          </button>
+          <button
+            onClick={() => setActiveView('resume')}
+            style={{
+              padding: '12px 22px',
+              borderRadius: 12,
+              border: `2px solid ${activeView === 'resume' ? 'var(--accent)' : 'var(--border)'}`,
+              background: activeView === 'resume' ? 'rgba(99, 102, 241, 0.15)' : 'var(--bg2)',
+              color: activeView === 'resume' ? 'var(--accent)' : 'var(--t2)',
+              fontWeight: 900,
+              fontSize: 14.5,
+              cursor: 'pointer',
+              fontFamily: 'var(--font-mono)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
+              boxShadow: activeView === 'resume' ? '0 0 16px rgba(99, 102, 241, 0.25)' : 'none',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            <span>📄</span> AI Resume & ATS Gap Loop
+          </button>
+        </div>
+      )}
 
       {/* ── TAB 1: CUSTOM ROADMAP FUSER ─────────────────────────────────── */}
       {activeView === 'roadmap' ? (
