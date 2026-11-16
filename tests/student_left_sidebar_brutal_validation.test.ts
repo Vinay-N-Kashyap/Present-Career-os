@@ -59,7 +59,6 @@ describe('BRUTAL VALIDATION — STUDENT LEFT SIDEBAR (Perspectives 3, 4, 5)', ()
         { href: '/dashboard', label: 'Dashboard' },
         { href: '/quests', label: 'Quests & Courses' },
         { href: '/missions', label: 'Daily Missions' },
-        { href: '/arena', label: 'Arena & Leaderboard' },
         { href: '/projects', label: 'Projects' },
         { href: '/innovation-hub', label: 'Innovation Hub' },
         { href: '/interview', label: 'AI Interview' },
@@ -80,7 +79,7 @@ describe('BRUTAL VALIDATION — STUDENT LEFT SIDEBAR (Perspectives 3, 4, 5)', ()
     });
 
     it('BOTTOM_NAV contains required secondary student utilities', () => {
-      const expectedFooterRoutes = ['/friends', '/pins', '/notifications', '/profile'];
+      const expectedFooterRoutes = ['/friends', '/arena', '/pins', '/notifications', '/profile'];
       for (const route of expectedFooterRoutes) {
         const found = BOTTOM_NAV.find(b => b.href === route);
         assert.ok(found, `BOTTOM_NAV must contain ${route}`);

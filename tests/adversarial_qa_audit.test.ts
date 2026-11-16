@@ -62,15 +62,17 @@ describe('ADVERSARIAL SENIOR QA & UI/UX DESIGN AUDIT', () => {
       { path: '/career-builder', label: 'Career Builder' },
     ];
 
-    it('keeps the merged Arena and Leaderboard as one of 11 primary workspace items', () => {
+    it('keeps the merged Arena and Leaderboard relocated under My Network in BOTTOM_NAV', () => {
       const items = STUDENT_NAV[0].items;
-      assert.equal(items.length, 11);
-      assert.equal(items.filter((item: any) => item.href === '/arena').length, 1);
+      assert.equal(items.length, 10);
+      assert.equal(items.filter((item: any) => item.href === '/arena').length, 0);
       assert.equal(items.some((item: any) => item.href === '/leaderboard'), false);
+      const bottomArena = BOTTOM_NAV.find((item: any) => item.href === '/arena');
+      assert.ok(bottomArena, 'Arena must be in BOTTOM_NAV under My Network');
     });
 
-    it('has exactly 4 persistent footer items in BOTTOM_NAV', () => {
-      assert.equal(BOTTOM_NAV.length, 4);
+    it('has persistent footer items in BOTTOM_NAV including relocated Arena', () => {
+      assert.equal(BOTTOM_NAV.length, 5);
     });
 
     it('conditionally exposes the optional /career-builder route when enabled', () => {

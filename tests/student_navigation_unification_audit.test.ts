@@ -130,7 +130,6 @@ describe('BRUTAL 3RD-PERSON AUDIT: STUDENT NAVIGATION & HUB UNIFICATION', () => 
       assert.ok(hrefs.includes('/dashboard'));
       assert.ok(hrefs.includes('/quests'));
       assert.ok(hrefs.includes('/missions'));
-      assert.ok(hrefs.includes('/arena'));
       assert.ok(hrefs.includes('/projects'));
       assert.ok(hrefs.includes('/innovation-hub'));
       assert.ok(hrefs.includes('/interview'));
@@ -142,11 +141,12 @@ describe('BRUTAL 3RD-PERSON AUDIT: STUDENT NAVIGATION & HUB UNIFICATION', () => 
       assert.equal(isPathActive('/leaderboard', '/arena'), true, 'Leaderboard deep links should activate the Arena sidebar destination');
     });
 
-    it('has exactly 4 persistent bottom utility items in BOTTOM_NAV', () => {
-      assert.equal(BOTTOM_NAV.length, 4);
+    it('has persistent bottom utility items in BOTTOM_NAV with Arena relocated under My Network', () => {
+      assert.equal(BOTTOM_NAV.length, 5);
       const bottomHrefs = BOTTOM_NAV.map((it: any) => it.href);
       assert.deepEqual(bottomHrefs, [
         '/friends',
+        '/arena',
         '/pins',
         '/notifications',
         '/profile'

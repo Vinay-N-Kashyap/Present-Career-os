@@ -87,10 +87,10 @@ describe('COLD-EYES BRUTAL AUDIT: ZERO-PRIOR-STAKE INDEPENDENT VERIFICATION', ()
   // CHECK 2: THE UNIFIED MIRROR TAB & ZERO BROKEN ROUTE INTEGRITY
   // =========================================================================
   describe('Brutal Check 2: The Unified Mirror Hub (/mirror)', () => {
-    it('STUDENT_NAV has Mirror at item index 7 with icon 🪞 and href /mirror', () => {
+    it('STUDENT_NAV has Mirror at item index 6 with icon 🪞 and href /mirror', () => {
       const items = STUDENT_NAV[0].items;
-      const mirror = items[7] as any;
-      assert.ok(mirror, 'Item 7 must exist in STUDENT_NAV');
+      const mirror = items[6] as any;
+      assert.ok(mirror, 'Item 6 must exist in STUDENT_NAV');
       assert.equal(mirror.href, '/mirror');
       assert.equal(mirror.label, 'Mirror');
       assert.equal(mirror.icon, '🪞');
@@ -158,18 +158,19 @@ describe('COLD-EYES BRUTAL AUDIT: ZERO-PRIOR-STAKE INDEPENDENT VERIFICATION', ()
   // CHECK 4: EXACT CANONICAL SIDEBAR STRUCTURE & IMMUTABLE INVARIANTS
   // =========================================================================
   describe('Brutal Check 4: Exact Canonical Sidebar Structure', () => {
-    it('STUDENT_NAV has exactly 9 flagship hubs in exact sequence', () => {
-      assert.equal(STUDENT_NAV[0].items.length, 9);
+    it('STUDENT_NAV has exactly 10 flagship hubs in exact sequence', () => {
+      assert.equal(STUDENT_NAV[0].items.length, 10);
       const expectedSequence = [
         { href: '/dashboard', label: 'Dashboard' },
         { href: '/quests', label: 'Quests & Courses' },
         { href: '/missions', label: 'Daily Missions' },
-        { href: '/arena', label: 'Challenging Arena' },
-        { href: '/projects', label: 'Projects & Squads' },
-        { href: '/leaderboard', label: 'Leaderboard & Leagues' },
+        { href: '/projects', label: 'Projects' },
+        { href: '/innovation-hub', label: 'Innovation Hub' },
         { href: '/interview', label: 'AI Interview' },
         { href: '/mirror', label: 'Mirror' },
         { href: '/attention-span', label: 'Attention Span' },
+        { href: '/vault', label: 'Proof Vault' },
+        { href: '/shop', label: 'Item Shop' },
       ];
 
       for (let i = 0; i < expectedSequence.length; i++) {
@@ -179,12 +180,13 @@ describe('COLD-EYES BRUTAL AUDIT: ZERO-PRIOR-STAKE INDEPENDENT VERIFICATION', ()
       }
     });
 
-    it('BOTTOM_NAV has exactly 4 items (Friends, Pins, Notifications, Profile)', () => {
-      assert.equal(BOTTOM_NAV.length, 4);
+    it('BOTTOM_NAV has items (Friends, Arena relocated under Friends, Pins, Notifications, Profile)', () => {
+      assert.equal(BOTTOM_NAV.length, 5);
       assert.equal(BOTTOM_NAV[0].href, '/friends');
-      assert.equal(BOTTOM_NAV[1].href, '/pins');
-      assert.equal(BOTTOM_NAV[2].href, '/notifications');
-      assert.equal(BOTTOM_NAV[3].href, '/profile');
+      assert.equal(BOTTOM_NAV[1].href, '/arena');
+      assert.equal(BOTTOM_NAV[2].href, '/pins');
+      assert.equal(BOTTOM_NAV[3].href, '/notifications');
+      assert.equal(BOTTOM_NAV[4].href, '/profile');
     });
 
     it('SSR render of student sidebar produces zero HTML errors or unescaped fragments', () => {

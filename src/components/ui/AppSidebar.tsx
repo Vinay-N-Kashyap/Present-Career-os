@@ -106,7 +106,6 @@ export const STUDENT_NAV: NavSection[] = [
     { href: '/dashboard', icon: '🏠', label: 'Dashboard' },
     { href: '/quests', icon: '🗺', label: 'Quests & Courses' },
     { href: '/missions', icon: '⚡', label: 'Daily Missions' },
-    { href: '/arena', icon: '⚔️', label: 'Arena & Leaderboard' },
     { href: '/projects', icon: '📁', label: 'Projects' },
     { href: '/innovation-hub', icon: '💡', label: 'Innovation Hub' },
     { href: '/interview', icon: '🎙', label: 'AI Interview' },
@@ -233,6 +232,7 @@ export const TEACHER_NAV: NavSection[] = [
 
 export const BOTTOM_NAV: NavLeaf[] = [
   { href: '/friends',       icon: '👥', label: 'My Network'                 },
+  { href: '/arena',         icon: '⚔️', label: 'Arena & Leaderboard'        },
   { href: '/pins',          icon: '⚡', label: 'Pins & Wallet'              },
   { href: '/notifications', icon: '🔔', label: 'Notifications', badge: true },
   { href: '/profile',       icon: '👤', label: 'Profile'                    },
@@ -704,7 +704,10 @@ export const AppSidebar: React.FC<AppSidebarProps> = ({
         {/* 1. Friends (Student Workspace) */}
         {isStudent && <NavLink href="/friends" icon="👥" label="My Network" />}
 
-        {/* 2. Pins & Wallet (Student Workspace with Live Balance) */}
+        {/* 2. Arena & Leaderboard (Relocated under My Network) */}
+        {isStudent && <NavLink href="/arena" icon="⚔️" label="Arena & Leaderboard" />}
+
+        {/* 3. Pins & Wallet (Student Workspace with Live Balance) */}
         {isStudent && (
           isCompact ? (
             <Link

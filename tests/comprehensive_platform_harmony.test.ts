@@ -167,15 +167,14 @@ describe('COMPREHENSIVE PLATFORM HARMONIZATION & ADVERSARIAL INTEGRATION AUDIT',
   });
 
   describe('Auditor 4 (Defensive Invariants & Role Gate Cleanliness)', () => {
-    it('C4.1: STUDENT_NAV merges Arena and Leaderboard into one destination', () => {
+    it('C4.1: STUDENT_NAV merges Arena and Leaderboard into one destination relocated under My Network', () => {
       const items = STUDENT_NAV[0].items;
-      assert.strictEqual(items.length, 11, 'STUDENT_NAV includes the 11 current primary destinations');
+      assert.strictEqual(items.length, 10, 'STUDENT_NAV includes the 10 current primary destinations');
       const hrefs = items.map((i: any) => i.href);
       assert.deepStrictEqual(hrefs, [
         '/dashboard',
         '/quests',
         '/missions',
-        '/arena',
         '/projects',
         '/innovation-hub',
         '/interview',
