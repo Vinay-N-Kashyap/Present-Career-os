@@ -735,6 +735,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           wsConnected={wsConnected}
           unread={unread}
           userId={user?.id}
+          toggleRightSidebar={toggleRightSidebar}
+          isRightSidebarOpen={!rightCollapsed}
         />
 
         {/* Content */}
@@ -788,17 +790,17 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </main>
       </div>
 
-      {/* Right Sidebar - hidden on all Quest routes so Quest workspace has 100% full screen space */}
-      {isStudent && !effectiveFocusMode && !cleanPath.startsWith('/quests') && isCollegeConnected && (
+      {/* Right Sidebar - completely invisible by default; toggled on demand via Circle 'A' beside Settings Gear */}
+      {isStudent && !effectiveFocusMode && !cleanPath.startsWith('/quests') && !rightCollapsed && (
         <aside
-          className={`sidebar right-sidebar${rightCollapsed ? ' collapsed' : ''}`}
+          className="sidebar right-sidebar"
           style={{
-            width: rightCollapsed ? 'var(--sidebar-collapsed-w, 64px)' : 'var(--sidebar-right-w, 228px)',
+            width: 'var(--sidebar-right-w, 240px)',
             background: 'radial-gradient(ellipse 180% 60% at 100% 0%, rgba(168, 85, 247, 0.16) 0%, transparent 65%), linear-gradient(270deg, transparent 0%, transparent 90%, rgba(168, 85, 247, 0.08) 100%), linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, color-mix(in srgb, var(--bg-sidebar) 94%, transparent) 100%)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
             borderLeft: '1.5px solid rgba(99, 102, 241, 0.18)',
-            transition: 'width 0.25s cubic-bezier(0.4, 0, 0.2, 1), border 0.25s',
+            transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
             overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
@@ -809,64 +811,75 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
             zIndex: 10
           }}
         >
-          {/* Header */}
-          {!rightCollapsed ? (
-            <div style={{ padding: '16px 14px 12px', borderBottom: '1px solid var(--border)' }}>
+          {/* Header with Close ✕ */}
+          <div style={{ padding: '16px 14px 12px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div>
               <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)' }}>{institutionName}</div>
               <div style={{ fontSize: 11, color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase' }}>Services &amp; Life</div>
             </div>
-          ) : (
-            <div style={{ padding: '16px 0 12px', borderBottom: '1px solid var(--border)', textAlign: 'center', fontSize: 13, fontWeight: 900, color: 'var(--accent)' }}>
-              {institutionInitials}
-            </div>
-          )}
+            <button
+              type="button"
+              onClick={() => toggleRightSidebar(true)}
+              aria-label="Close Academic Tabs"
+              title="Close Academic Tabs"
+              style={{
+                width: 26,
+                height: 26,
+                borderRadius: 6,
+                background: 'var(--bg3)',
+                border: '1px solid var(--border)',
+                color: 'var(--t2)',
+                fontSize: 13,
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                lineHeight: 1,
+              }}
+            >
+              ✕
+            </button>
+          </div>
 
           {/* Student Info Card */}
-          {!rightCollapsed ? (
-            <div style={{ padding: '14px', borderBottom: '1px solid var(--border)', background: 'linear-gradient(135deg, var(--accent-light), var(--bg2))', textAlign: 'center' }}>
-              <div style={{ width: 50, height: 50, borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), var(--purple))', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 8px', fontSize: 22, color: 'white', border: '2px solid var(--bg-sidebar)', boxShadow: '0 2px 10px color-mix(in srgb, var(--accent) 20%, transparent)', overflow: 'hidden' }}>
-                👤
-              </div>
-              {(() => {
-                const rawDisp = typeof user?.displayName === 'string' ? user.displayName : (typeof user?.name === 'string' ? user.name : '');
-                const rawReal = (user as any)?.fullName || (user as any)?.full_name || (user as any)?.candidateName || (user as any)?.onboardingAnswers?.candidateName || (user as any)?.onboardingAnswers?.fullName;
-                const realName = typeof rawReal === 'string' ? rawReal : '';
-                const studentName = (rawDisp && !rawDisp.startsWith('usr_') && rawDisp.toLowerCase() !== 'student') ? rawDisp : (realName || rawDisp || 'Student');
-                const rawUName = typeof user?.username === 'string' ? user.username : '';
-                const pinitId = (user as any)?.pinitId || (user as any)?.pinit_id || (user as any)?.registerNumber || (user as any)?.register_number || '';
-                const handleOrRoll = (rawUName && !rawUName.startsWith('usr_')) ? rawUName : (user?.registerNumber || (typeof user?.email === 'string' ? user.email.split('@')[0] : ''));
-                return (
-                  <>
-                    <div style={{ fontSize: 14.5, fontWeight: 700, marginBottom: 2, color: 'var(--t1)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{studentName}</div>
-                    {pinitId && typeof pinitId === 'string' && pinitId.startsWith('PIN-') ? (
-                      <div style={{ fontSize: 10.5, color: 'var(--accent)', marginBottom: 6, fontFamily: 'var(--font-mono)', fontWeight: 800, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', letterSpacing: '0.5px' }}>
-                        {pinitId}
-                      </div>
-                    ) : handleOrRoll ? (
-                      <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 6, fontFamily: 'var(--font-mono)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{handleOrRoll}</div>
-                    ) : null}
-                  </>
-                );
-              })()}
-              {(() => {
-                const batchName = (user as any)?.batch || 'General Batch';
-                const rawColor = colorMap[batchName] || 'var(--brand)';
-                const safeColor = typeof rawColor === 'string' && rawColor.startsWith('#') ? rawColor : 'var(--brand)';
-                return (
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: `${safeColor}18`, border: `1px solid ${safeColor}33`, borderRadius: 20, padding: '3px 10px' }}>
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: safeColor, display: 'inline-block' }} />
-                    <span style={{ fontSize: 12, fontWeight: 700, color: safeColor }}>{batchName}</span>
-                  </div>
-                );
-              })()}
+          <div style={{ padding: '14px', borderBottom: '1px solid var(--border)', background: 'linear-gradient(135deg, var(--accent-light), var(--bg2))', textAlign: 'center' }}>
+            <div style={{ width: 50, height: 50, borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), var(--purple))', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 8px', fontSize: 22, color: 'white', border: '2px solid var(--bg-sidebar)', boxShadow: '0 2px 10px color-mix(in srgb, var(--accent) 20%, transparent)', overflow: 'hidden' }}>
+              👤
             </div>
-          ) : (
-            <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), var(--purple))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15.5, color: 'white', boxShadow: '0 2px 8px color-mix(in srgb, var(--accent) 18%, transparent)' }}>
-                👤
-              </div>
-            </div>
-          )}
+            {(() => {
+              const rawDisp = typeof user?.displayName === 'string' ? user.displayName : (typeof user?.name === 'string' ? user.name : '');
+              const rawReal = (user as any)?.fullName || (user as any)?.full_name || (user as any)?.candidateName || (user as any)?.onboardingAnswers?.candidateName || (user as any)?.onboardingAnswers?.fullName;
+              const realName = typeof rawReal === 'string' ? rawReal : '';
+              const studentName = (rawDisp && !rawDisp.startsWith('usr_') && rawDisp.toLowerCase() !== 'student') ? rawDisp : (realName || rawDisp || 'Student');
+              const rawUName = typeof user?.username === 'string' ? user.username : '';
+              const pinitId = (user as any)?.pinitId || (user as any)?.pinit_id || (user as any)?.registerNumber || (user as any)?.register_number || '';
+              const handleOrRoll = (rawUName && !rawUName.startsWith('usr_')) ? rawUName : (user?.registerNumber || (typeof user?.email === 'string' ? user.email.split('@')[0] : ''));
+              return (
+                <>
+                  <div style={{ fontSize: 14.5, fontWeight: 700, marginBottom: 2, color: 'var(--t1)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{studentName}</div>
+                  {pinitId && typeof pinitId === 'string' && pinitId.startsWith('PIN-') ? (
+                    <div style={{ fontSize: 10.5, color: 'var(--accent)', marginBottom: 6, fontFamily: 'var(--font-mono)', fontWeight: 800, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', letterSpacing: '0.5px' }}>
+                      {pinitId}
+                    </div>
+                  ) : handleOrRoll ? (
+                    <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 6, fontFamily: 'var(--font-mono)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{handleOrRoll}</div>
+                  ) : null}
+                </>
+              );
+            })()}
+            {(() => {
+              const batchName = (user as any)?.batch || 'General Batch';
+              const rawColor = colorMap[batchName] || 'var(--brand)';
+              const safeColor = typeof rawColor === 'string' && rawColor.startsWith('#') ? rawColor : 'var(--brand)';
+              return (
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: `${safeColor}18`, border: `1px solid ${safeColor}33`, borderRadius: 20, padding: '3px 10px' }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: safeColor, display: 'inline-block' }} />
+                  <span style={{ fontSize: 12, fontWeight: 700, color: safeColor }}>{batchName}</span>
+                </div>
+              );
+            })()}
+          </div>
 
           {/* Navigation Links */}
           <nav style={{ flex: 1, padding: '8px 7px', display: 'flex', flexDirection: 'column', gap: 2, overflowY: 'auto' }}>
@@ -891,14 +904,13 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                       url.searchParams.set('tab', item.id);
                       window.history.pushState({}, '', url.toString());
                     }
-                    toggleRightSidebar(false);
                   }}
                   style={{
                     width: '100%',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: rightCollapsed ? 'center' : 'flex-start',
-                    gap: rightCollapsed ? 0 : 9,
+                    justifyContent: 'flex-start',
+                    gap: 9,
                     padding: '9px 10px',
                     background: isTourSpotlight ? 'rgba(var(--brand-rgb), 0.18)' : (active ? 'rgba(37,99,235,0.08)' : 'transparent'),
                     border: isTourSpotlight ? '1.5px solid var(--accent)' : '1px solid transparent',
@@ -917,32 +929,35 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                   title={item.label}
                 >
                   <span style={{ fontSize: 17.5, flexShrink: 0, transform: isTourSpotlight ? 'scale(1.15)' : undefined }}>{item.icon}</span>
-                  {!rightCollapsed && <span>{item.label}</span>}
+                  <span>{item.label}</span>
                 </button>
               );
             })}
           </nav>
 
-          {/* Sidebar Collapse Toggle Button */}
+          {/* Sidebar Close Button */}
           <div style={{ padding: '8px 7px', borderTop: '1px solid var(--border)' }}>
             <button
-              onClick={() => toggleRightSidebar()}
+              onClick={() => toggleRightSidebar(true)}
+              title="Close Academic Tabs"
               style={{
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                gap: 6,
                 padding: '9px 10px',
                 background: 'var(--bg3)',
                 border: '1px solid var(--border)',
                 borderRadius: 9,
                 cursor: 'pointer',
-                color: 'var(--t3)',
-                fontSize: 15.5,
+                color: 'var(--t2)',
+                fontSize: 13.5,
+                fontWeight: 700,
                 outline: 'none'
               }}
             >
-              {rightCollapsed ? '‹' : '›'}
+              <span>✕</span> Close Academic Tabs
             </button>
           </div>
         </aside>
