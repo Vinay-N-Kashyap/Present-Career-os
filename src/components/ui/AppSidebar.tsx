@@ -69,6 +69,11 @@ export const ROUTE_TOOLTIPS: Record<string, { label: string; tooltip: string; de
     tooltip: 'Focus & Attention: Cognitive Focus Tracking & Calibration',
     description: 'Cognitive load assessments, pomodoro focus calibration, and attention span analytics.'
   },
+  '/shop': {
+    label: 'Pins & Shop',
+    tooltip: 'Pins Economy & Item Shop: Power Passes, Avatars & Wallet Ledger',
+    description: 'Recharge Pins, inspect ledger transactions, and equip avatar cosmetics & AI power passes.'
+  },
   '/friends': {
     label: 'My Network',
     tooltip: 'Campus Network: Peer Directory, Study Groups & Network',
@@ -111,7 +116,7 @@ export const STUDENT_NAV: NavSection[] = [
     { href: '/interview', icon: '🎙', label: 'AI Interview' },
     { href: '/mirror', icon: '🪞', label: 'Mirror' },
     { href: '/attention-span', icon: '🧠', label: 'Attention Span' },
-    { href: '/shop', icon: '🛍️', label: 'Item Shop' }
+    { href: '/shop', icon: '🛍️', label: 'Pins & Shop' }
   ]}
 ];
 
@@ -290,6 +295,10 @@ export function isPathActive(pathname: string, href: string, currentSearch = '')
 
   // Unified Mirror hub: /mirror also activates on /learning, /career-builder, /career_builder
   if (hrefPath === '/mirror' && (cleanPathname === '/learning' || cleanPathname === '/career-builder' || cleanPathname === '/career_builder')) return true;
+
+  // Unified Pins & Shop hub: /shop and /pins activate each other
+  if (hrefPath === '/shop' && cleanPathname === '/pins') return true;
+  if (hrefPath === '/pins' && cleanPathname === '/shop') return true;
 
   return cleanPathname === hrefPath || cleanPathname.startsWith(hrefPath + '/');
 }

@@ -53,13 +53,13 @@ const PAGE_TITLES: Record<string, string> = {
   '/pricing':       'Pins & Plans',  '/profile':       'Profile',
   '/notifications': 'Notifications', '/leaderboard':   'Arena & Leaderboard',
   '/applications':  'My Applications',
-  '/pins':          'Pins & Wallet',
+  '/pins':          'Pins & Shop',
   '/quests':        'Quests & Courses',
   '/arena':         'Arena & Leaderboard',
   '/projects':      'Projects',
   '/innovation-hub':'Innovation Hub',
   '/attention-span': 'Attention Span',
-  '/shop':          'Item Shop',
+  '/shop':          'Pins & Shop',
   '/qr-confirm':    'Confirm QR Login',
   '/onboarding':    'Setup',         '/qr-login':      'QR Login',
   '/reset-password':'Reset Password',
@@ -142,6 +142,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const [isGdCall, setIsGdCall] = useState(false);
   const [isRoleplayParamActive, setIsRoleplayParamActive] = useState(false);
   const [isArenaDuelActive, setIsArenaDuelActive] = useState(false);
+  const [isInterviewActiveState, setIsInterviewActiveState] = useState(false);
   const [activeTourRoute, setActiveTourRoute] = useState<string | null>(null);
   const [activeTourTabKey, setActiveTourTabKey] = useState<string | null>(null);
 
@@ -311,15 +312,23 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         : (Boolean((window as any).__pinitArenaDuelActive) || (window.location.pathname.startsWith('/arena') && window.location.search.includes('duel=true')));
       const activeDuel = window.location.pathname.startsWith('/arena') && isDuel;
       setIsArenaDuelActive(activeDuel);
+
+      const isInterview = e?.detail !== undefined && e.detail.active !== undefined
+        ? Boolean(e.detail.active)
+        : (Boolean((window as any).__pinitInterviewActive) || (typeof document !== 'undefined' && document.body.getAttribute('data-interview-active') === 'true'));
+      const activeInterview = window.location.pathname.startsWith('/interview') && isInterview;
+      setIsInterviewActiveState(activeInterview);
     };
     checkCallAndRoleplay();
     window.addEventListener('popstate', checkCallAndRoleplay);
     window.addEventListener('pinit-roleplay-toggle', checkCallAndRoleplay);
     window.addEventListener('pinit-arena-duel-toggle', checkCallAndRoleplay);
+    window.addEventListener('pinit-interview-toggle', checkCallAndRoleplay);
     return () => {
       window.removeEventListener('popstate', checkCallAndRoleplay);
       window.removeEventListener('pinit-roleplay-toggle', checkCallAndRoleplay);
       window.removeEventListener('pinit-arena-duel-toggle', checkCallAndRoleplay);
+      window.removeEventListener('pinit-interview-toggle', checkCallAndRoleplay);
     };
   }, [pathname, searchParams]);
 
@@ -356,7 +365,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const isLessonOrDetail = cleanPath.startsWith('/quests/') && cleanPath !== '/quests';
   const isGroupDiscussionCall = isGdCall;
   const isRoleplayActive = isRoleplayParamActive;
-  const effectiveFocusMode = focusMode || isLessonOrDetail || isGroupDiscussionCall || isRoleplayActive || isArenaDuelActive;
+  const effectiveFocusMode = focusMode || isLessonOrDetail || isGroupDiscussionCall || isRoleplayActive || isArenaDuelActive || isInterviewActiveState;
 
   useEffect(() => {
     if (typeof window !== 'undefined' && user) {
@@ -717,7 +726,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <AppHeader
           isLessonOrDetail={isLessonOrDetail}
           isGroupDiscussionCall={isGroupDiscussionCall}
-          isRoleplayActive={isRoleplayActive || isArenaDuelActive}
+          isRoleplayActive={isRoleplayActive || isArenaDuelActive || isInterviewActiveState}
           effectiveFocusMode={effectiveFocusMode}
           toggleFocusMode={toggleFocusMode}
           mobileOpen={mobileOpen}
@@ -743,9 +752,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <main 
           className="page-content animate-fade-in"
           style={{
-            padding: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive) ? '0px' : (isGroupDiscussionCall ? '16px' : (effectiveFocusMode ? '32px 48px' : undefined)),
-            maxWidth: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive) ? '100%' : (isGroupDiscussionCall ? '95%' : (effectiveFocusMode ? 960 : '100%')),
-            margin: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive) ? '0' : (isGroupDiscussionCall ? '0 auto' : (effectiveFocusMode ? '0 auto' : '0')),
+            padding: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive || isInterviewActiveState) ? '0px' : (isGroupDiscussionCall ? '16px' : (effectiveFocusMode ? '32px 48px' : undefined)),
+            maxWidth: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive || isInterviewActiveState) ? '100%' : (isGroupDiscussionCall ? '95%' : (effectiveFocusMode ? 960 : '100%')),
+            margin: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive || isInterviewActiveState) ? '0' : (isGroupDiscussionCall ? '0 auto' : (effectiveFocusMode ? '0 auto' : '0')),
             width: '100%',
             transition: 'padding 0.25s, max-width 0.25s'
           }}
@@ -1001,7 +1010,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </button>
       )}
 
-      {isStudent && !isLandingPage && !isLessonOrDetail && !effectiveFocusMode && !isRoleplayActive && !isArenaDuelActive && (
+      {isStudent && !isLandingPage && !isLessonOrDetail && !effectiveFocusMode && !isRoleplayActive && !isArenaDuelActive && !isInterviewActiveState && (
         <GlobalAvatar
           user={user}
           profile={profile}
