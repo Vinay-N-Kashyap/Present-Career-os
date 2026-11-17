@@ -13309,3 +13309,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
     }
   }
 ];
+
+// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): bcom_dmkt ---
+import { BCOM_DMKT_LONG_LESSONS_FIXED_DAYS as _BCOM_DMKT_LONG_LESSONS_FIXED_DAYS } from './bcomDmktLongLessonsPatches';
+for (let _i = 0; _i < BCOM_DMKT_LONG_LESSONS.length; _i++) {
+  const _fixed = _BCOM_DMKT_LONG_LESSONS_FIXED_DAYS[BCOM_DMKT_LONG_LESSONS[_i].day];
+  if (_fixed) (BCOM_DMKT_LONG_LESSONS as unknown as import("./longLessonTypes").LongLesson[])[_i] = _fixed;
+}
