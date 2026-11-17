@@ -11857,3 +11857,10 @@ for (const _lesson of BCOM_MKT_LONG_LESSONS as import('./longLessonTypes').LongL
     if (_p.projectStep && (!_lesson.projectStep || !_lesson.projectStep.steps?.length)) (_lesson as any).projectStep = _p.projectStep;
   }
 }
+
+// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): bcom_mkt ---
+import { BCOM_MKT_LONG_LESSONS_FIXED_DAYS as _BCOM_MKT_LONG_LESSONS_FIXED_DAYS } from './bcomMktLongLessonsPatches';
+for (let _i = 0; _i < BCOM_MKT_LONG_LESSONS.length; _i++) {
+  const _fixed = _BCOM_MKT_LONG_LESSONS_FIXED_DAYS[BCOM_MKT_LONG_LESSONS[_i].day];
+  if (_fixed) (BCOM_MKT_LONG_LESSONS as unknown as import("./longLessonTypes").LongLesson[])[_i] = _fixed;
+}
