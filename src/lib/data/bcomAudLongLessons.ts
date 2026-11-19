@@ -10814,3 +10814,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
     }
   }
 ];
+
+// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): bcom_aud ---
+import { BCOM_AUD_LONG_LESSONS_FIXED_DAYS as _BCOM_AUD_LONG_LESSONS_FIXED_DAYS } from './bcomAudLongLessonsPatches';
+for (let _i = 0; _i < BCOM_AUD_LONG_LESSONS.length; _i++) {
+  const _fixed = _BCOM_AUD_LONG_LESSONS_FIXED_DAYS[BCOM_AUD_LONG_LESSONS[_i].day];
+  if (_fixed) (BCOM_AUD_LONG_LESSONS as unknown as import("./longLessonTypes").LongLesson[])[_i] = _fixed;
+}
