@@ -11791,3 +11791,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
     }
   }
 ];
+
+// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): bcom_acc ---
+import { BCOM_ACCOUNTING_LONG_LESSONS_FIXED_DAYS as _BCOM_ACCOUNTING_LONG_LESSONS_FIXED_DAYS } from './bcomAccountingLongLessonsPatches';
+for (let _i = 0; _i < BCOM_ACCOUNTING_LONG_LESSONS.length; _i++) {
+  const _fixed = _BCOM_ACCOUNTING_LONG_LESSONS_FIXED_DAYS[BCOM_ACCOUNTING_LONG_LESSONS[_i].day];
+  if (_fixed) (BCOM_ACCOUNTING_LONG_LESSONS as unknown as import("./longLessonTypes").LongLesson[])[_i] = _fixed;
+}
