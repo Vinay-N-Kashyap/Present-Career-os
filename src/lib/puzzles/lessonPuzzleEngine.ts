@@ -242,8 +242,11 @@ function buildPerLesson3DPuzzleFromParts(
 
     // Extract meaningful executable code line for fast readers
     let codeLine = '';
-    if (p.code) {
-      const candidateLines = String(p.code)
+    // Self-contained capstones start with a hidden setup block that re-runs earlier parts; skip it.
+    const CAPSTONE_MARKER = '# ---- Capstone starts here ----';
+    const codeBody = p.code && String(p.code).includes(CAPSTONE_MARKER) ? String(p.code).split(CAPSTONE_MARKER)[1].replace(/^\n+/, '') : p.code ? String(p.code) : '';
+    if (codeBody) {
+      const candidateLines = codeBody
         .split('\n')
         .map((l: string) => l.trim())
         .filter(
@@ -255,7 +258,8 @@ function buildPerLesson3DPuzzleFromParts(
             !l.startsWith('*') &&
             !l.startsWith('import ') &&
             !l.startsWith('from ') &&
-            !l.startsWith('#include')
+            !l.startsWith('#include') &&
+            !l.startsWith('@')
         );
       codeLine = candidateLines[0] || '';
       if (codeLine.length > 68) codeLine = codeLine.slice(0, 65) + '…';
@@ -288,7 +292,7 @@ function buildPerLesson3DPuzzleFromParts(
       color: colors[idx % colors.length],
       category,
       badge: badges[idx % badges.length],
-      codeSnippet: p.code ? String(p.code).split('\n').slice(0, 6).join('\n') : undefined,
+      codeSnippet: codeBody ? codeBody.split('\n').slice(0, 6).join('\n') : undefined,
       analogy: analogyText,
       explanation: p.check?.why || p.check?.explanation || firstSentence,
     });

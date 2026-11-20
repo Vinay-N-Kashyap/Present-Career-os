@@ -3,6 +3,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import type { LessonPuzzleSpec, PuzzleBlock } from '@/lib/puzzles/lessonPuzzleEngine';
 
+/** Block labels are authored as "1. Title"; showing the number would give away the correct order. */
+const displayLabel = (label: string): string => label.replace(/^\d+\.\s*/, '');
+
 interface LessonPuzzleStageProps {
   puzzle: LessonPuzzleSpec;
   teacherAccent?: string;
@@ -502,7 +505,7 @@ export function LessonPuzzleStage({
                     }}
                     title={
                       block
-                        ? `${block.label} — Click to inspect in 3D drawer, double-click to remove`
+                        ? `${displayLabel(block.label)} — Click to inspect in 3D drawer, double-click to remove`
                         : `Empty 3D Slot ${slotIdx + 1} — Click a cube below to snap here`
                     }
                     style={{
@@ -574,7 +577,7 @@ export function LessonPuzzleStage({
                             overflow: 'hidden',
                           }}
                         >
-                          {block.label.replace(/^\d+\.\s*/, '')}
+                          {displayLabel(block.label)}
                         </div>
                         <div
                           style={{
@@ -644,7 +647,7 @@ export function LessonPuzzleStage({
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ fontSize: 12, fontWeight: 900, color: '#38bdf8' }}>
-                  🔍 3D Cube Inspector: {inspectedBlock.label}
+                  🔍 3D Cube Inspector: {displayLabel(inspectedBlock.label)}
                 </span>
                 {inspectedBlock.badge && (
                   <span
@@ -851,7 +854,7 @@ export function LessonPuzzleStage({
                               textOverflow: 'ellipsis',
                             }}
                           >
-                            {block.label}
+                            {displayLabel(block.label)}
                           </span>
                           {block.badge && (
                             <span
@@ -1011,7 +1014,7 @@ export function LessonPuzzleStage({
                   >
                     <div style={{ minWidth: 0, flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                        <span style={{ fontSize: 12.5, fontWeight: 800, color: cStyle.text }}>{block.label}</span>
+                        <span style={{ fontSize: 12.5, fontWeight: 800, color: cStyle.text }}>{displayLabel(block.label)}</span>
                         {block.badge && (
                           <span
                             style={{
