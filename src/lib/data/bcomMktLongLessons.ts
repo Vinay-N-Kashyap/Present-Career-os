@@ -30,10 +30,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Harvard Professor Theodore Levitt argue that premier railroad companies suffered massive economic decline in the 20th century?",
           "options": [
-            "Because consumers completely stopped traveling between domestic cities.",
-            "Because government regulators prohibited railroads from operating on weekends.",
-            "They suffered from Marketing Myopia by defining themselves as being in the railroad business rather than the broader transportation business.",
-            "Because steel prices increased faster than ticket inflation rates."
+            "They suffered from Pricing Rigidity by holding fares above airline levels rather than adapting to competitive transportation prices",
+            "They suffered from Market Saturation by serving only freight customers rather than expanding into passenger rail services",
+            "They suffered from Marketing Myopia by defining themselves as being in the railroad business rather than the broader transportation business",
+            "They suffered from Channel Conflict by selling tickets only through their own stations rather than through travel agents"
           ],
           "answer": 2,
           "why": "Levitt identified that the railroads let others take their customers away because they assumed people wanted passenger trains, whereas people actually wanted fast, comfortable transportation (which cars and airplanes satisfied).",
@@ -57,10 +57,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In B2B enterprise procurement, why might a vendor with a 50% higher sticker price easily beat a low-cost competitor on customer value?",
           "options": [
-            "Because higher prices automatically trigger federal tax write-offs for the buying company.",
-            "Total Customer Cost includes non-monetary time, energy, and psychic risk costs; eliminating setup delays and downtime yields a higher net benefit surplus.",
-            "Because low-price products do not generate receipts.",
-            "Procurement officers are legally prohibited from purchasing from low-price vendors."
+            "Total Customer Cost is measured by the purchase price alone; the premium vendor wins because buyers equate higher prices with greater net benefit",
+            "Total Customer Cost includes time, energy, and psychic risk costs beyond price; removing setup delays and downtime yields a higher net benefit",
+            "Total Customer Cost includes only monetary outlays such as price, shipping, and financing; removing delays and downtime does not change net benefit",
+            "Customer Perceived Value rises with the sticker price because benefit is judged relative to the list price, not to the costs the buyer bears"
           ],
           "answer": 1,
           "why": "Total Customer Cost is multidimensional: monetary price is only one component. If a cheaper tool creates high friction, setup delay, and implementation failure risk, its Total Cost exceeds its benefits.",
@@ -86,10 +86,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Oliver's Expectation-Disconfirmation Theory, why is achieving mere customer satisfaction (P = E) dangerous for corporate strategy?",
           "options": [
-            "Merely satisfied customers lack an emotional attachment to the brand and will readily switch to competitors who offer minor pricing incentives.",
-            "Because satisfied customers are legally barred from writing online product reviews.",
-            "Because zero disconfirmation always triggers automatic product returns.",
-            "Because satisfaction causes employees to stop working on product updates."
+            "Merely satisfied customers have no emotional attachment to the brand and readily switch to competitors offering small price incentives.",
+            "Merely satisfied customers demand continuous discounts from the brand, which erodes margins even when they never consider switching.",
+            "Merely satisfied customers generate negative word of mouth about the brand, which damages acquisition even when they stay.",
+            "Merely satisfied customers expect the next purchase to exceed this one, and permanently abandon a brand that only matches it."
           ],
           "answer": 0,
           "why": "When expectations are merely met (P = E), customers feel no special delight or emotional debt to the brand. They remain passive and highly susceptible to competitor promotions.",
@@ -115,10 +115,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic role of Points-of-Parity (POPs) in positioning a brand against established market leaders?",
           "options": [
-            "POPs ensure that the product is manufactured in the exact same facility as the competitor.",
-            "POPs require that all marketing campaigns use the exact same color scheme as rival brands.",
-            "POPs legally force competitors to share their customer database.",
-            "POPs negate competitor advantages by demonstrating category legitimacy, ensuring the brand is not dismissed before its Points-of-Difference can be evaluated."
+            "POPs replicate the leader's advantages in full, so the brand removes every difference between itself and the market leader.",
+            "POPs set the brand's price premium over rivals, so buyers evaluate its Points-of-Difference only after seeing the price.",
+            "POPs cut the brand's costs by matching competitors' processes, so its Points-of-Difference can be funded profitably.",
+            "POPs establish category legitimacy, so the brand is not dismissed before its Points-of-Difference can be evaluated."
           ],
           "answer": 3,
           "why": "Points-of-Parity are essential category credentials. Without establishing acceptable performance in core category expectations, buyers will not even consider the brand's unique Points-of-Difference.",
@@ -144,10 +144,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Kevin Lane Keller's Customer-Based Brand Equity (CBBE) Pyramid, what defines the highest pinnacle (Tier 4: Brand Resonance)?",
           "options": [
-            "Filing trademark applications in more than twenty foreign countries.",
-            "Offering the lowest price discounts among all retail competitors.",
-            "Intense active loyalty, behavioral repeat purchase, community belonging, and active brand advocacy beyond mere functional satisfaction.",
-            "Running television commercials during the international championship games."
+            "Strong brand awareness, recognition by most target buyers, and recall in the category beyond mere familiarity.",
+            "Positive judgments of quality, credibility, and superiority formed through personal experience beyond mere awareness.",
+            "Intense active loyalty, repeat purchase, community belonging, and active advocacy beyond mere functional satisfaction.",
+            "Clear functional performance, imagery, and a differentiated meaning established through the product's features."
           ],
           "answer": 2,
           "why": "Brand Resonance is the apex of the CBBE pyramid: it occurs when customers experience a profound emotional bond, community identification, and unconditional active advocacy for the brand.",
@@ -215,10 +215,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamentally distinguishes macro-environmental forces (PESTLE) from micro-environmental industry forces (such as competitors and suppliers)?",
           "options": [
-            "Micro forces only exist in agricultural and manufacturing sectors.",
-            "Macro forces only affect non-profit charitable organizations.",
-            "Macro forces are completely predictable and remain constant for multiple decades.",
-            "Macro forces are broad societal factors that individual companies cannot control or alter, whereas micro forces directly interact with the firm in its specific market."
+            "Macro forces are factors in the firm's home country only, whereas micro forces apply to the firm's overseas operations.",
+            "Macro forces can be controlled through lobbying and trade associations, whereas micro forces cannot be influenced by the firm.",
+            "Macro forces affect only large corporations in the industry, whereas micro forces affect every firm in the marketplace.",
+            "Macro forces are broad societal factors no single company can control, whereas micro forces interact directly with the firm in its market."
           ],
           "answer": 3,
           "why": "Macro-environmental forces (Political, Economic, Socio-Cultural, Technological, Legal, Environmental) originate at the societal level and affect all market players without being controllable by any single individual business.",
@@ -263,10 +263,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Michael Porter's Five Forces framework, what is the primary consequence when an industry exhibits low barriers to entry and negligible customer switching costs?",
           "options": [
-            "New competitors flood into the market whenever returns are positive, expanding supply and eroding industry margins down toward marginal cost.",
-            "Incumbents are legally guaranteed a monopoly by federal regulators.",
-            "Customers permanently cease purchasing all products in that category.",
-            "Suppliers are forced to distribute their raw materials free of charge."
+            "New competitors enter whenever returns are positive, expanding supply and eroding industry margins toward marginal cost.",
+            "Incumbents gain pricing power because easy entry signals a growing market, which lifts margins above marginal cost.",
+            "Entrants must charge more than incumbents to cover their setup costs, which lifts industry margins above marginal cost.",
+            "Suppliers gain bargaining power because entrants compete for inputs, which lifts industry margins at the buyers' expense."
           ],
           "answer": 0,
           "why": "Low entry barriers and zero switching costs invite rapid new entrant proliferation, preventing incumbent firms from sustaining pricing power and driving economic profits down.",
@@ -309,10 +309,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In competitive market analysis, what does a high positive Cross-Price Elasticity of Demand (Exy > 1.0) between two offerings indicate?",
           "options": [
-            "The products operate in completely disconnected industries with zero consumer overlap.",
-            "The offerings are close substitutes; price hikes in one product will cause consumers to readily defect to the alternative.",
-            "Both offerings violate antitrust trade regulations.",
-            "The offerings are strictly complementary goods that must always be purchased together in identical quantities."
+            "The offerings are strong complements; a price hike in one reduces demand for the other as well.",
+            "The offerings are close substitutes; a price hike in one pushes consumers to defect to the other.",
+            "The offerings are unrelated products; a price hike in one leaves demand for the other unchanged.",
+            "The offerings are inferior goods; a price hike in one raises demand for both as incomes fall."
           ],
           "answer": 1,
           "why": "A positive cross-price elasticity signifies that when the price of one product increases, demand for the other rises, demonstrating that consumers treat them as viable functional substitutes.",
@@ -355,10 +355,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following conditions most effectively shields a manufacturer from aggressive buyer and retailer pricing pressure?",
           "options": [
-            "Selling 100% of all factory output to a single massive big-box discount retailer.",
-            "Refusing to patent proprietary inventions or register corporate trademarks.",
-            "Building high procedural, financial, and relational customer switching costs through proprietary ecosystems and strong brand differentiation.",
-            "Manufacturing identical, generic commodity goods that can be produced by dozens of competitors."
+            "Offering uniform commodity products at the lowest list price, so that retailers have no reason to negotiate on price.",
+            "Concentrating sales on a few large retailers under exclusive contracts that guarantee them large volume discounts and rebates.",
+            "Building high procedural, financial, and relational switching costs through proprietary ecosystems and strong brand differentiation.",
+            "Expanding production capacity beyond market demand, so that retailers can always source additional units quickly."
           ],
           "answer": 2,
           "why": "High switching costs and strong brand resonance prevent buyers and retailers from easily defecting to alternative suppliers, locking in healthy profit margins for the manufacturer.",
@@ -403,10 +403,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the TOWS Strategic Matrix, what is the core objective of a Maxi-Mini (ST) strategy?",
           "options": [
-            "Using external market opportunities to mask internal accounting fraud.",
-            "Liquidating all company assets and declaring commercial bankruptcy.",
-            "Borrowing money from predatory lenders to artificially inflate short-term earnings.",
-            "Using internal organizational Strengths to neutralize, bypass, or defend against external environmental Threats."
+            "Using external Opportunities to overcome or compensate for internal Weaknesses.",
+            "Using internal Strengths to exploit and capture external Opportunities in the market.",
+            "Minimizing internal Weaknesses in order to avoid or limit external Threats.",
+            "Using internal Strengths to neutralize, bypass, or defend against external Threats."
           ],
           "answer": 3,
           "why": "ST (Maxi-Mini) strategies mobilize the firm's internal strengths to shield against, deflect, or neutralize external macro and competitive threats in the marketplace.",
@@ -475,10 +475,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Even after a consumer forms a firm Purchase Intention to buy a specific brand, which of the following intervening factors can prevent the transaction from occurring?",
           "options": [
-            "The negative attitudes of significant others (such as a spouse objecting to the price) or unanticipated situational events (such as sudden shipping fees or job loss).",
-            "Government agencies automatically confiscating credit cards.",
-            "The consumer permanently forgetting the English language.",
-            "The manufacturer doubling factory output."
+            "Attitudes of significant others (such as a spouse objecting to the price) or unanticipated situational events (such as job loss).",
+            "The consumer's selective retention of earlier ads (such as forgetting the slogan) or perceptual defense against new information.",
+            "Changes in how the consumer weighs attribute importance (such as reweighting price) or a fall in brand awareness.",
+            "The consumer's cognitive dissonance about rejected alternatives, or the pace of the product's diffusion in the market."
           ],
           "answer": 0,
           "why": "Philip Kotler identified two critical intervening factors between Purchase Intention and Purchase Decision: the attitudes of influential others and unanticipated situational events.",
@@ -523,10 +523,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is \"Selective Distortion\" in consumer perceptual psychology?",
           "options": [
-            "A federal regulatory rule banning deceptive advertising.",
-            "A mechanical failure in television broadcast transmission cables.",
-            "The complete inability of human beings to remember prices.",
-            "The psychological tendency of consumers to twist or interpret incoming brand information so that it fits their existing beliefs and brand loyalties."
+            "Consumers notice only ads that match their current needs and screen out all other brand messages.",
+            "Consumers remember the good points of brands they like and forget the strengths of competing brands.",
+            "Consumers misjudge price gaps between brands by anchoring on the first price they happen to see.",
+            "Consumers twist incoming brand information so that it fits their existing beliefs and brand loyalties."
           ],
           "answer": 3,
           "why": "Selective Distortion occurs when consumers interpret commercial information in a manner that supports rather than challenges their established attitudes and preconceptions.",
@@ -570,10 +570,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In reference group sociology, what is a \"Dissociative Group\"?",
           "options": [
-            "A group that has formally dissolved its legal incorporation.",
-            "A group of consumers who only purchase goods during holiday clearance sales.",
-            "A social group whose values, lifestyles, and behavioral norms an individual actively rejects and avoids identifying with.",
-            "A focus group organized by an advertising research agency."
+            "A group the individual belongs to and whose norms they follow in everyday purchase decisions.",
+            "A group the individual aspires to join and whose values they admire without belonging to it.",
+            "A group whose values, lifestyles, and norms an individual actively rejects and avoids being identified with.",
+            "A group the individual belongs to but whose members have no influence on each other's buying."
           ],
           "answer": 2,
           "why": "Dissociative groups are negative reference groups whose values or behaviors consumers deliberately shun, motivating them to avoid purchasing brands associated with that group.",
@@ -617,10 +617,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Fishbein Multi-Attribute Attitude Model (Ao = Sum(bi * ei)), how can a marketer improve a brand's overall attitude score without physically changing the product itself?",
           "options": [
-            "By secretly deleting all competitor websites from the internet.",
-            "By using persuasive advertising to shift consumer importance weights (ei) toward attributes where the brand is already superior, or by strengthening consumer beliefs (bi) regarding existing features.",
-            "By bribing retail store clerks to hide competing inventory under the counter.",
-            "By declaring bankruptcy and reincorporating under an anonymous shell company."
+            "Lower the price so that all belief scores (bi) rise, since attitude depends only on how affordable consumers judge the brand to be, not on features.",
+            "Use persuasive advertising to shift importance weights (ei) toward attributes where the brand is strong, or strengthen beliefs (bi) about existing features.",
+            "Remove the strongest competitor's brand from shelves, since the attitude score (Ao) depends on the brand's relative market share in stores.",
+            "Increase advertising frequency so that every importance weight (ei) rises equally, since the attitude score (Ao) depends on exposure count."
           ],
           "answer": 1,
           "why": "The Fishbein model demonstrates that attitude is cognitive; marketers can improve scores by reshaping consumer perceptions of brand attributes (beliefs bi) or convincing consumers that their strong attributes matter most (weights ei).",
@@ -665,10 +665,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary psychological driver of Cognitive Dissonance (Buyer's Remorse) following a major purchase?",
           "options": [
-            "The discomfort of having given up the attractive, desirable features of the rejected competing alternatives.",
-            "The product immediately breaking the moment it is plugged into electrical power.",
-            "The credit card company charging exorbitant annual interest rates.",
-            "The delivery courier taking two days longer than estimated."
+            "Discomfort over having given up the attractive features of the rejected alternatives.",
+            "Discomfort over having paid more than the brand's published list price at the store.",
+            "Discomfort over the salesperson's pressure tactics used during the purchase decision.",
+            "Discomfort over having received a worse deal than a friend or colleague did earlier."
           ],
           "answer": 0,
           "why": "Cognitive dissonance arises because choosing one brand inherently requires relinquishing the desirable benefits of the non-chosen alternatives, generating internal self-doubt about whether the optimal choice was made.",
@@ -737,10 +737,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In marketing research design, what is the primary role of \"Exploratory Research\"?",
           "options": [
-            "To calculate exact decimal market share percentages across thirty national territories.",
-            "To gather preliminary qualitative insights, discover fresh ideas, and clarify the nature of ambiguous, poorly understood market problems.",
-            "To print final accounting tax returns for statutory filing.",
-            "To prove causality in a double-blind clinical trial under laboratory isolation."
+            "To test specific hypotheses about cause and effect using controlled experiments with large representative samples.",
+            "To gather preliminary qualitative insights, discover ideas, and clarify the nature of ambiguous, poorly understood problems.",
+            "To describe market characteristics such as demographics and purchase frequency using structured surveys of customers.",
+            "To forecast future sales by applying statistical models to historical transaction data for the company's products."
           ],
           "answer": 1,
           "why": "Exploratory research is conducted when a problem is broad or undefined; it utilizes focus groups, in-depth interviews, and observational studies to shed light on latent customer dynamics before investing in expensive quantitative surveys.",
@@ -786,10 +786,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the survey question \"How satisfied are you with the speed and reliability of our cloud platform?\" methodologically defective?",
           "options": [
-            "It fails to mention the company's chief executive officer by name.",
-            "It uses the English language instead of Latin terminology.",
-            "It is a double-barreled question combining two separate attributes (speed and reliability); a respondent whose system is fast but unreliable cannot answer accurately.",
-            "It does not offer cash cryptocurrency prizes for completion."
+            "It is a leading question: it suggests that the platform is fast and reliable, so respondents are pushed toward satisfied ratings.",
+            "It is a loaded question: it asks about satisfaction without a time frame, so respondents compare different periods of use and features.",
+            "It is double-barreled: it combines two attributes (speed and reliability), so a respondent with a fast but unreliable system cannot answer accurately.",
+            "It is an open-ended question: it gives no rating scale, so respondents cannot score the platform consistently across attributes."
           ],
           "answer": 2,
           "why": "A double-barreled question forces respondents to provide a single composite rating for two independent attributes, destroying data validity when performance diverges across the two dimensions.",
@@ -833,10 +833,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In exponential smoothing demand forecasting, what does a high smoothing constant alpha (such as alpha = 0.8) indicate?",
           "options": [
-            "The product is legally restricted from being sold across state borders.",
-            "Relying solely on static hardcoded defaults for Quantitative without reconciling Demand against live boundary conditions.",
-            "The enterprise has run out of physical inventory in all distribution centers.",
-            "The forecast places dominant weight on the most recent period's actual sales, responding swiftly to immediate market fluctuations."
+            "The forecast puts dominant weight on the oldest observations, so it smooths out short-term fluctuations in sales.",
+            "The forecast puts equal weight on all past periods, so it ignores the most recent changes in demand.",
+            "The forecast adds a long-term trend adjustment, so it reacts mainly to seasonal patterns rather than latest sales.",
+            "The forecast puts dominant weight on the latest actual sales, so it responds quickly to immediate fluctuations."
           ],
           "answer": 3,
           "why": "The smoothing constant alpha weights the most recent observation; as alpha approaches 1.0, the forecast reacts rapidly to recent changes, whereas lower alpha values smooth out short-term fluctuations by anchoring to historical trend.",
@@ -880,10 +880,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental difference between SAM (Serviceable Available Market) and SOM (Serviceable Obtainable Market)?",
           "options": [
-            "SAM represents the market segment that matches your product profile and territory, while SOM is the specific, realistic portion of SAM your company can actually capture with its existing sales and marketing resources.",
-            "SAM applies only to software companies, while SOM applies only to agricultural farms.",
-            "SAM is calculated in Japanese Yen, while SOM is calculated in US Dollars.",
-            "There is no difference; SAM and SOM are identical synonyms."
+            "SAM is the segment matching your product profile and territory; SOM is the realistic portion of SAM you can capture with your resources.",
+            "SAM is the total worldwide demand for your product category; SOM is the portion of SAM already held by the largest competitor.",
+            "SAM is the portion of the market you currently serve; SOM is the share you expect competitors to lose to you next year.",
+            "SAM is the realistic portion of the market you can capture; SOM is the broader segment matching your product profile and territory."
           ],
           "answer": 0,
           "why": "SAM reflects your total serviceable territory and fit, whereas SOM represents your realistic near-term target given sales capacity, marketing budget, and competitor resistance.",
@@ -929,10 +929,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Delphi Method require strict anonymity among participating experts throughout all survey rounds?",
           "options": [
-            "Because the experts do not speak the same language.",
-            "To prevent dominant personalities, organizational hierarchy, and social groupthink from biasing or intimidating other panelists into conformity.",
-            "Because expert identities are classified state secrets under international maritime law.",
-            "To avoid paying expert consulting honorariums."
+            "To prevent experts from checking each other's data, so each panelist's forecast rests on private information only.",
+            "To prevent dominant personalities, hierarchy, and groupthink from biasing or intimidating other panelists into conformity.",
+            "To prevent the facilitator from learning individual forecasts, so the aggregate results cannot be manipulated.",
+            "To prevent experts from revising their answers between rounds, so each opinion stays independent of feedback."
           ],
           "answer": 1,
           "why": "Anonymity insulates experts from social pressure, executive hierarchy, and bandwagon bias, enabling participants to evaluate ideas purely on empirical and logical merit.",
@@ -1002,10 +1002,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Behavioral Segmentation typically generate significantly higher marketing conversion rates compared to demographic segmentation alone?",
           "options": [
-            "Because demographic data changes every five seconds.",
-            "Because demographic surveys are illegal under federal trade guidelines.",
-            "Because actual observed purchasing actions, product usage frequencies, and buying recency are far more predictive of future commercial intent than broad biographical labels like age or gender.",
-            "Applying unverified default parameters in The STP Paradigm & 4 Primary Segmentation Vectors (Option 3) without validating boundary constraints or reconciling state transitions."
+            "Behavioral data is cheaper to collect than demographic data, so more of the budget remains available for conversion media.",
+            "Behavioral segments are larger than demographic segments, so each campaign reaches a broader audience and converts more buyers.",
+            "Observed purchase actions, usage frequency, and recency predict future commercial intent far better than broad labels such as age or gender.",
+            "Behavioral segmentation captures what customers say they will buy in surveys, which predicts purchase intent better than age or gender."
           ],
           "answer": 2,
           "why": "Past behavioral patterns (frequency, spend, basket additions) reflect genuine revealed preferences and immediate purchasing readiness, whereas demographic attributes merely suggest broad probabilities.",
@@ -1050,10 +1050,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Kotler's MASDA framework, what occurs if two customer demographic groups respond identically to marketing campaigns and price promotions?",
           "options": [
-            "The marketing research firm should be immediately sued for negligence.",
-            "They fail the Differentiable criterion and should be combined into a single unified segment rather than treated as separate targets.",
-            "The product price should be increased by 500% to separate them.",
-            "The company should double its advertising budget to force them to react differently."
+            "They fail the Accessible criterion and should be reached through separate media rather than combined into one target.",
+            "They fail the Differentiable criterion and should be combined into a single segment rather than treated as separate targets.",
+            "They fail the Substantial criterion and should be dropped because each group is too small to be profitable.",
+            "They fail the Measurable criterion and should be re-sized with better data before being treated as targets."
           ],
           "answer": 1,
           "why": "Segments are differentiable only if they are conceptually distinguishable and respond differently to different marketing mix elements. Identical responses indicate a single homogeneous market.",
@@ -1096,10 +1096,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational vulnerability associated with a Concentrated (Niche) Targeting Strategy?",
           "options": [
-            "Severe company vulnerability if the single target segment experiences an unexpected macroeconomic downturn, consumer preference shift, or aggressive entry by a larger rival.",
-            "Having too many product variants that confuse factory workers.",
-            "Excessive global advertising costs across thousands of television channels.",
-            "Inability to register patents with national intellectual property offices."
+            "Severe vulnerability if the single segment suffers a downturn, a shift in preferences, or entry by a larger rival.",
+            "Severe cost disadvantage because a niche firm cannot afford any promotion channel that reaches its single segment.",
+            "Severe brand dilution because a niche firm must stretch its name across unrelated product categories to grow.",
+            "Severe channel dependence because a niche firm loses control of pricing when distributors carry its narrow line."
           ],
           "answer": 0,
           "why": "Because a niche firm puts all its eggs in one basket, any disruption to that specific micro-segment (e.g. shift in tastes or entry of an industry giant) threatens corporate survival.",
@@ -1143,10 +1143,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the minimum industry benchmark for the CLV: CAC ratio required to confirm a commercially healthy, venture-scale customer segment?",
           "options": [
-            "Exactly 0.5x (meaning acquisition costs are double lifetime revenues).",
-            "Minus 10.0x.",
-            "Zero, because marketing acquisition costs should always be ignored.",
-            "At least 3.0x (meaning customer lifetime profit covers acquisition costs threefold within acceptable payback windows)."
+            "At least 1.0x (lifetime customer profit just covers acquisition cost within an acceptable payback window).",
+            "At least 5.0x (lifetime customer profit covers acquisition cost fivefold within an acceptable payback window).",
+            "At least 2.0x (lifetime customer profit covers acquisition cost twofold within an acceptable payback window).",
+            "At least 3.0x (lifetime customer profit covers acquisition cost threefold within an acceptable payback window)."
           ],
           "answer": 3,
           "why": "A CLV:CAC ratio of at least 3.0x ensures sufficient buffer to absorb operating overhead, ongoing engineering development, and unforeseen market friction.",
@@ -1190,10 +1190,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is feature scaling/normalization (e.g. z-score or min-max standardization) mandatory before running K-Means clustering on customer behavior data?",
           "options": [
-            "Because Python will throw an unhandled syntax exception if raw numbers exceed 100.",
-            "Because customer names cannot be converted to binary strings without normalization.",
-            "Because features with large raw numerical scales (such as annual dollar spend in thousands) would dominate the Euclidean distance calculation, completely drowning out lower-scale but critical features like transaction frequency.",
-            "Because machine learning servers shut down if features are not multiplied by zero."
+            "K-Means can only process features between 0 and 1, so unscaled features cause the algorithm to fail with an error before clustering begins.",
+            "Scaling converts categorical features into numeric ones, so unscaled variables such as region cannot enter the distance calculation at all.",
+            "Features with large raw scales (such as annual dollar spend) would dominate the Euclidean distance and drown out low-scale features like transaction frequency.",
+            "Scaling removes outliers from the data, so unscaled features would let a few extreme customers pull the cluster centers away from the core."
           ],
           "answer": 2,
           "why": "Euclidean distance is sensitive to measurement scales; without normalization, high-magnitude variables dominate the distance metric, distorting cluster formation.",
@@ -1244,10 +1244,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does relying solely on demographic segmentation frequently cause marketing budget failure?",
           "options": [
-            "Because government census bureaus intentionally falsify income statistics to mislead private commercial enterprises.",
-            "Because demographic variables can only be stored in relational databases and cannot be parsed by machine learning clustering algorithms.",
-            "Because demographic segmentation is illegal under standard international antitrust trade treaties.",
-            "Because demographic data is subject to the ecological fallacy, assuming all individuals in a statistical group share identical psychological motivations and purchase readiness."
+            "Demographic data goes out of date within a year, so budgets are aimed at customers who have already moved to other segments by launch.",
+            "Demographic data is too costly to purchase at scale, so budgets are consumed before campaigns can reach enough target customers.",
+            "Demographic data is restricted by privacy laws, so budgets are lost to regulatory fines whenever campaigns target by age or gender.",
+            "Demographic data invites the ecological fallacy, assuming everyone in a statistical group shares the same motivations and purchase readiness."
           ],
           "answer": 3,
           "why": "Demographic traits measure physical characteristics and income capacity, not underlying psychological purchase intent; assuming homogeneous behavior across demographic brackets creates the ecological fallacy.",
@@ -1303,10 +1303,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does an RFM score of 155 indicate about a customer's behavioral status?",
           "options": [
-            "An unprofitable customer who has never spent significant money with the enterprise.",
-            "A high-value customer who historically transacted frequently and spent heavily, but has not purchased recently and is at severe risk of churn.",
-            "A bot account that should be immediately removed from the customer relationship management database.",
-            "A brand-new customer who completed their very first transaction this morning."
+            "A top customer who bought very recently, buys frequently, and spends heavily, making them one of the best accounts.",
+            "A high-value customer who bought often and spent heavily, but has not purchased recently and is at risk of churn.",
+            "A new customer who purchased lately, but has bought rarely and spent little so far, with an uncertain future value.",
+            "A lapsed low-value customer who last bought long ago, bought rarely, and spent very little in total."
           ],
           "answer": 1,
           "why": "An RFM score of 155 signifies bottom-quintile Recency (1) combined with top-quintile Frequency (5) and Monetary spend (5), characterizing a high-value customer slipping into dormancy.",
@@ -1332,10 +1332,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Kotler's MASDA framework, what occurs when a candidate market segment responds identically to marketing campaigns as the broader mass market?",
           "options": [
-            "It fails the Measurable criterion because elasticity is zero.",
-            "It automatically qualifies for concentrated niche targeting.",
-            "It fails the Differentiable criterion and should not be treated as an isolated segment.",
-            "It requires an immediate increase in top-of-funnel paid advertising spend."
+            "It fails the Accessible criterion and should be reached through different media.",
+            "It fails the Substantial criterion and should be dropped as too small to be profitable.",
+            "It fails the Differentiable criterion and should not be treated as a separate segment.",
+            "It fails the Actionable criterion and should be redesigned as the firm lacks staff."
           ],
           "answer": 2,
           "why": "The Differentiable criterion dictates that viable segments must be conceptually distinguishable and demonstrate divergent responses to distinct marketing mix configurations.",
@@ -1362,10 +1362,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core marketing failure caused Levi Strauss's Personal Pair mass customization initiative to be decommissioned despite high consumer satisfaction?",
           "options": [
-            "The custom jeans tore easily along the seams because robotic cutting was less accurate than manual cutting.",
-            "Federal regulators banned digital scanning kiosks due to early retail biometric privacy statutes.",
-            "Competitors patented denim fabric, legally preventing Levi's from shipping cotton pants.",
-            "The segment failed the Substantiality hurdle: the addressable audience willing to pay a steep premium was too small to amortize the massive fixed capital expenditures within an acceptable timeframe."
+            "The segment failed the Accessibility hurdle: the buyers who would pay the premium could not be reached through the firm's available media channels.",
+            "The segment failed the Differentiability hurdle: custom jeans buyers responded to marketing in the same way as mass-market buyers did.",
+            "The segment failed the Measurability hurdle: the firm could not estimate how many buyers would pay for personalized fit and sizing.",
+            "The segment failed the Substantiality hurdle: too few buyers would pay the steep premium to recover the large fixed investment in a reasonable time."
           ],
           "answer": 3,
           "why": "The initiative suffered from inadequate segment size relative to fixed overhead costs, resulting in a 10+ year payback period that failed the Substantiality viability gate.",
@@ -1415,10 +1415,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a concentrated niche marketing posture particularly advantageous for capital-constrained market entrants?",
           "options": [
-            "Because it allows the firm to focus limited resources on capturing a dominant, defensible share of a single high-margin vertical rather than diluting capital across broad mass markets.",
-            "Because niche markets are legally exempt from government corporate income taxes and consumer protection laws.",
-            "Because concentrated marketing guarantees that competitors are legally prohibited from entering the same industry.",
-            "Because niche products require zero advertising spend and achieve 100% organic viral adoption automatically."
+            "It lets the firm focus limited resources on a dominant, defensible share of one high-margin vertical instead of spreading capital over mass markets.",
+            "It lets the firm spread limited resources across several small verticals so that no single downturn damages its total revenue.",
+            "It lets the firm use the mass-market leader's distribution network at lower cost, because niche products need little shelf space in stores.",
+            "It lets the firm avoid investing in customer relationships, because niche buyers choose between products on price alone and ignore service."
           ],
           "answer": 0,
           "why": "Concentrated marketing consolidates limited organizational capital into commanding leadership over a specialized segment, erecting high customer intimacy barriers against generic mass competitors.",
@@ -1443,10 +1443,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why might a large, rapidly growing market segment be rated as structurally unattractive by senior marketing strategists?",
           "options": [
-            "Because consumers in growing markets inherently have zero willingness to pay for any branded products.",
-            "Because enterprise software cannot process data sets from markets that exceed one billion dollars in annual volume.",
-            "Because government tax authorities impose double taxation on segments with more than five active competitors.",
-            "Because high competitive rivalry, low entry barriers, and powerful buyers can trigger severe price wars that destroy operating profit margins despite high revenue volume."
+            "High growth attracts government price controls on the whole sector, which limit margins and returns despite high revenue.",
+            "High growth raises the cost of capital for every firm in the segment, which erodes returns despite high revenue.",
+            "High growth raises customers' quality expectations, which forces all firms into costly redesigns despite high revenue.",
+            "High rivalry, low entry barriers, and powerful buyers can trigger price wars that destroy profit margins despite high revenue."
           ],
           "answer": 3,
           "why": "High competitive intensity and low entry barriers compress industry margins, meaning high revenue growth does not translate into economic profits or return on invested capital.",
@@ -1470,10 +1470,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In commercial niche targeting, why is the CAC Payback Period often more operationally urgent than the long-term CLV:CAC ratio?",
           "options": [
-            "Because the Securities and Exchange Commission mandates that all advertising expenses must be repaid by customers within sixty days.",
-            "Because CLV cannot be computed in spreadsheets without violating international accounting rules.",
-            "Because extended payback periods exhaust working capital reserves and trigger cash flow insolvencies long before theoretical lifetime profits materialize.",
-            "Because customers in niche markets legally cancel all software subscriptions after precisely twelve months."
+            "A short payback period signals a high CLV, so tracking it makes lifetime profit ratios unnecessary for niche firms.",
+            "Payback period determines the tax treatment of acquisition spend, so it must be set before any ratio can be reported.",
+            "Extended payback periods drain working capital and can cause cash flow insolvency long before lifetime profits materialize.",
+            "Long payback periods raise CLV through higher retention, so they matter more than the ratio only when churn is low."
           ],
           "answer": 2,
           "why": "Even with high projected lifetime value, an excessively long payback period starves the company of working capital, causing insolvency before lifetime value can be realized.",
@@ -1497,10 +1497,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does predatory targeting of vulnerable consumer cohorts ultimately destroy enterprise shareholder value?",
           "options": [
-            "Because consumers in vulnerable segments are legally prohibited from owning paper currency or digital payment cards.",
-            "Because short-term revenue gains are rapidly overwhelmed by regulatory fines, class-action litigation, and catastrophic permanent brand equity destruction.",
-            "Because Google and Meta ban all companies that make more than ten percent net profit margins.",
-            "Because advertising software servers crash when processing campaigns targeted at low-income demographics."
+            "Short-term revenue gains are overwhelmed by higher production costs, because vulnerable cohorts need specialized product versions.",
+            "Short-term revenue gains are overwhelmed by regulatory fines, class-action lawsuits, and lasting damage to brand equity.",
+            "Short-term revenue gains are overwhelmed by lower retention, because vulnerable cohorts switch to rivals once their income grows.",
+            "Short-term revenue gains are overwhelmed by rising media costs, because vulnerable cohorts need far more advertising per sale."
           ],
           "answer": 1,
           "why": "Exploitative targeting invites severe statutory penalties, legal actions, and irrevocable damage to corporate reputation, completely destroying enterprise market capitalization.",
@@ -1525,10 +1525,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental strategic principle did Schlitz Brewing Company violate that triggered the collapse of its market share?",
           "options": [
-            "Target market betrayal: sacrificing core product quality and authentic value expectations of loyal heavy buyers to chase short-term marginal cost reductions.",
-            "Failing to file international trademark protections for the word 'beer'.",
-            "Deploying digital search engine marketing before consumer broadband was invented.",
-            "Refusing to sell their company to foreign beverage conglomerates."
+            "Target market betrayal: cutting the core product quality that loyal heavy buyers valued to chase short-term cost savings.",
+            "Over-segmentation: launching too many brand variants for each regional taste to chase short-term growth.",
+            "Late entry: waiting for rivals to prove the light-beer market before launching its own products to stay safe.",
+            "Premium repositioning: raising prices well above rivals to signal quality and chase higher short-term margins."
           ],
           "answer": 0,
           "why": "Schlitz compromised core product integrity to lower manufacturing costs, alienating their core target segment and precipitating an irreversible 88% collapse in market share.",
@@ -1578,10 +1578,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Al Ries and Jack Trout's positioning theory, what is the most effective way for a market entrant to establish a defensible brand position?",
           "options": [
-            "Change the company logo and color palette every quarter to maintain novelty.",
-            "Create and define a brand-new product category or mental ladder where the firm can be first, rather than attacking an entrenched leader head-on.",
-            "Spend twice as much on television advertising as the leading competitor.",
-            "File trademark lawsuits against all other competitors in the industry."
+            "Attack the market leader's core product directly with a lower price, since consumers remember the cheapest brand in a category.",
+            "Create a new product category or mental ladder where the firm can be first, instead of attacking an entrenched leader head-on.",
+            "Copy the leader's positioning and advertise heavily, since consumers remember the brand with the greatest advertising volume.",
+            "Position across every attribute at once, since consumers remember the brand that offers the most benefits in a category."
           ],
           "answer": 1,
           "why": "Ries and Trout prove that consumer memory strongly retains the first brand in a mental category; establishing a new mental category ladder is vastly more effective than attempting to displace an incumbent leader.",
@@ -1634,10 +1634,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In multi-brand portfolio management, what does an excessively small Euclidean distance between two internal company brands indicate?",
           "options": [
-            "That the advertising agency deserves a performance bonus for brand synergy.",
-            "That both brands should be merged into a single registered copyright.",
-            "That the company has legally monopolized the entire national industry.",
-            "Severe internal self-cannibalization risk, where the new brand leaches revenue from the existing flagship without capturing incremental market share."
+            "Strong portfolio synergy: the two brands reinforce each other, which expands the total category share held by the firm.",
+            "Healthy market coverage: the two brands target distinct segments, which captures incremental market share for the firm.",
+            "Weak brand equity: the two brands are unknown to consumers, which prevents either one from gaining market share.",
+            "Severe self-cannibalization risk: the new brand takes revenue from the flagship without capturing incremental market share."
           ],
           "answer": 3,
           "why": "Brands positioned in close Euclidean proximity in perceptual space are perceived as identical substitutes, causing internal brands to cannibalize each other's sales and margins.",
@@ -1662,10 +1662,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic consequence of launching a product with brilliant Points-of-Difference (PODs) that fails to satisfy critical Category Points-of-Parity (POPs)?",
           "options": [
-            "Immediate consumer rejection: consumers disqualify the product on basic hygiene grounds before ever evaluating its unique differentiators.",
-            "Automatic market monopoly because consumers only care about novelty.",
-            "Exemption from all federal advertising truth-in-lending standards.",
-            "Competitors are legally forced to license the company's patents."
+            "Immediate consumer rejection: shoppers disqualify the product on basic category grounds before evaluating its differentiators.",
+            "Niche acceptance: shoppers tolerate the product's weaknesses on basic category needs because of its differentiators.",
+            "Premium pricing power: shoppers pay extra for its differentiators and treat missing category basics as trivial.",
+            "Delayed rejection: shoppers try the product, then reject it only after comparing its differentiators with rivals."
           ],
           "answer": 0,
           "why": "Points-of-Parity are essential table stakes required for category legitimacy; failure in basic parity causes consumers to disqualify the offering regardless of its points-of-difference.",
@@ -1690,10 +1690,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core operational measure allowed Burberry to reverse its brand dilution crisis and restore its luxury market positioning?",
           "options": [
-            "Relocating the corporate headquarters to an offshore tax haven.",
-            "Terminating third-party licensing agreements, stripping the check pattern off mass accessories, and re-anchoring on digital innovation and British heritage.",
-            "Discontinuing trench coats entirely to focus exclusively on digital smartphone apps.",
-            "Cutting retail prices by fifty percent to compete directly with fast-fashion retailers."
+            "Expanding licensing deals into more categories, adding the check pattern to more products, and re-anchoring on lower prices and wider distribution.",
+            "Ending third-party licensing deals, removing the check pattern from mass accessories, and re-anchoring on digital innovation and British heritage.",
+            "Closing flagship stores, moving to wholesale-only sales, and re-anchoring on discount channels and global celebrity endorsements.",
+            "Raising the check pattern's visibility on all products, outsourcing design to partners, and re-anchoring on lower manufacturing costs."
           ],
           "answer": 1,
           "why": "Reclaiming control over licensing and eliminating ubiquitous brand display restored exclusivity and points-of-parity, enabling a successful luxury repositioning.",
@@ -1743,10 +1743,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In mature competitive markets, why do leading enterprises increasingly focus their differentiation on the Augmented Product level rather than the Core Value level?",
           "options": [
-            "Because software code can only be written for augmented services, not actual hardware.",
-            "Because consumer protection agencies make it illegal to advertise core product benefits.",
-            "Because multiple competitors can easily manufacture equivalent actual products, making peripheral warranties, service ecosystems, and support the primary drivers of customer switching costs and pricing power.",
-            "Because the Augmented Product level is the only part of a product covered by international patent law."
+            "Core value is fixed by customer needs and cannot be changed, so firms compete only on peripheral packaging, styling, and cosmetic features.",
+            "The Augmented Product is cheaper to produce than the Core Value, so firms favor it to expand margins in mature, saturated markets.",
+            "Competitors can easily match actual products, so warranties, services, and support become the main drivers of switching costs and pricing power.",
+            "Regulation in mature markets standardizes core benefits, so firms can differentiate only through advertising and sales promotion spending."
           ],
           "answer": 2,
           "why": "Actual products quickly reach functional parity in mature markets; augmented services create structural switching barriers and superior customer retention.",
@@ -1798,10 +1798,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When a premium luxury brand executes a downward line stretch into the economy segment, what is the primary strategic hazard it must mitigate?",
           "options": [
-            "Brand dilution and internal cannibalization, where the economy offering tarnishes the flagship prestige aura and induces existing high-margin buyers to trade down.",
-            "Antitrust regulators seizing the company's manufacturing facilities.",
-            "An immediate worldwide shortage of raw manufacturing components.",
-            "The Federal Communications Commission canceling the company's radio licenses."
+            "Brand dilution and cannibalization: the economy offer tarnishes the flagship's prestige and lets high-margin buyers trade down.",
+            "Channel conflict and stockouts: the economy offer overloads luxury retailers and lets competitors capture shelf space.",
+            "Production capacity shortages: the economy offer diverts craftsmen from flagship output and slows premium sales.",
+            "Price war retaliation: the economy offer provokes rivals to cut prices and lowers margins for the whole segment."
           ],
           "answer": 0,
           "why": "Downward stretching using the flagship brand name risks alienating luxury buyers and diluting premium margins as high-end customers trade down to cheaper items.",
@@ -1825,10 +1825,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what mathematical condition does introducing a lower-margin line extension destroy enterprise gross profits?",
           "options": [
-            "Whenever the advertising agency charges an hourly retainer fee.",
-            "Whenever the product packaging contains more than three primary colors.",
-            "Only when the company borrows debt capital from foreign banking institutions.",
-            "When the actual cannibalization rate exceeds the ratio of the new product's unit margin to the existing product's unit margin (C > M_new / M_existing)."
+            "When the cannibalization rate is below the new product's unit margin divided by the existing product's unit margin (C < M_new / M_existing).",
+            "When the cannibalization rate exceeds the existing product's unit margin divided by the new product's unit margin (C > M_existing / M_new).",
+            "When the cannibalization rate equals the new product's gross margin percentage, regardless of the unit margins on either product (C = GM%).",
+            "When the cannibalization rate exceeds the new product's unit margin divided by the existing product's unit margin (C > M_new / M_existing)."
           ],
           "answer": 3,
           "why": "If the cannibalization rate exceeds the margin ratio (M_new / M_existing), the margin lost on cannibalized existing units outweighs the margin earned on the new units, causing net profit destruction.",
@@ -1853,10 +1853,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core lesson in product line management does Steve Jobs's 1997 Apple portfolio pruning demonstrate?",
           "options": [
-            "Product managers should be given unilateral power to launch unlimited SKUs without executive review.",
-            "A computer company should never sell laptops to consumers.",
-            "Ruthlessly pruning overlapping, mediocre SKUs eliminates inventory drag, focuses engineering excellence, and restores corporate profitability.",
-            "Every computer should be painted beige to minimize retail channel confusion."
+            "Expanding the SKU range to cover every price point spreads fixed costs, boosts volume, and restores profitability.",
+            "Licensing the operating system to many hardware makers spreads fixed costs, boosts volume, and restores profitability.",
+            "Pruning overlapping, mediocre SKUs removes inventory drag, focuses engineering effort, and restores profitability.",
+            "Outsourcing engineering to suppliers cuts research costs, frees management time, and restores profitability."
           ],
           "answer": 2,
           "why": "Excessive SKU proliferation bloats inventory costs and confuses consumers; focusing on a disciplined core grid concentrates resources on category-defining products.",
@@ -1906,10 +1906,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "At which stage of the classical Product Life Cycle does net operating profit margin typically reach its peak percentage?",
           "options": [
-            "During the Growth phase, because economies of scale compress unit costs while price competition has not yet intensified to commoditize margins.",
-            "During the Introduction phase, because early-adopter customers pay infinitely high initial prices.",
-            "During the Decline phase, because manufacturing tooling has been fully depreciated on the corporate balance sheet.",
-            "During the Maturity phase, because top-line sales revenue reaches its highest absolute numerical dollar value."
+            "The Growth phase, because economies of scale cut unit costs while price competition has not yet commoditized margins.",
+            "The Introduction phase, because early adopters pay premium prices while production costs are still at their lowest.",
+            "The Maturity phase, because sales volume peaks and promotion spending falls to its lowest level in the cycle.",
+            "The Decline phase, because the firm cuts all investment and sells remaining stock at full margins to buyers."
           ],
           "answer": 0,
           "why": "Although absolute sales peak during Maturity, percentage profit margins peak during Growth due to rapid fixed cost absorption and scale economies prior to aggressive price-cutting wars.",
@@ -1934,10 +1934,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary capital allocation rule governing Cash Cows in the BCG Growth-Share Matrix?",
           "options": [
-            "Slash product prices to zero to drive the relative market share to infinity.",
-            "Reinvest 100% of their operating earnings back into expanding factory capacity within their own slow-growth category.",
-            "Immediately shut down Cash Cow operations because slow market growth indicates inevitable insolvency.",
-            "Extract their surplus cash flows and reinvest them into high-growth Question Marks or Stars rather than reinvesting heavily in their own mature market."
+            "Reinvest all surplus cash in the Cash Cow itself, to keep its market share growing at the market rate.",
+            "Divest the Cash Cow quickly at its peak value, and use the sale proceeds to fund new units in other markets.",
+            "Distribute the surplus as dividends, and avoid funding any other business units in the portfolio.",
+            "Harvest surplus cash flow and reinvest it in Question Marks or Stars rather than heavily in the mature market."
           ],
           "answer": 3,
           "why": "Cash Cows produce substantial surplus cash with low capital reinvestment requirements; those funds must be harvested to finance the high-growth business units that secure the firm's future.",
@@ -1961,10 +1961,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between short-run Economies of Scale and the Experience Curve?",
           "options": [
-            "There is zero distinction; both terms describe the identical financial accounting transaction.",
-            "Economies of scale only apply to service industries, whereas the Experience Curve only applies to software algorithms.",
-            "Economies of scale represent static volume efficiencies at a single point in time, whereas the Experience Curve reflects dynamic, cumulative organizational learning across total historical output.",
-            "Economies of scale cause unit costs to increase, whereas the Experience Curve causes unit costs to remain perfectly constant."
+            "Economies of scale reflect cumulative learning across total output, whereas the Experience Curve measures static volume efficiencies at one point in time.",
+            "Economies of scale apply only to manufacturing activity, whereas the Experience Curve applies only to marketing and distribution activity.",
+            "Economies of scale are static volume efficiencies at one point in time, whereas the Experience Curve reflects cumulative learning over total past output.",
+            "Economies of scale lower costs as plant capacity shrinks in a market, whereas the Experience Curve lowers costs as selling prices fall over time."
           ],
           "answer": 2,
           "why": "Scale economies are static efficiencies from plant size, whereas the experience curve is a cumulative historical function of learning, engineering improvements, and scrap reduction over time.",
@@ -1989,10 +1989,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did General Electric and McKinsey & Company develop the 9-box matrix to replace the BCG matrix?",
           "options": [
-            "Because the BCG matrix was declared illegal under United States securities trade laws.",
-            "Because real-world business strategy involves multi-factor criteria beyond single-variable metrics like industry growth rate and relative market share.",
-            "Because General Electric wanted a matrix that completely ignored financial balance sheets.",
-            "Because 9 boxes require less spreadsheet memory than 4 quadrants."
+            "The BCG matrix could not be used for diversified groups, so GE needed a model covering only its mature core businesses.",
+            "Real strategy involves multi-factor criteria beyond single metrics like industry growth rate and relative market share.",
+            "Antitrust regulators required diversified firms to report units on a standard nine-category grid instead of growth and share.",
+            "The BCG matrix recommended divesting every low-share unit, so GE wanted a model that justified holding all units permanently."
           ],
           "answer": 1,
           "why": "The GE-McKinsey model expands beyond BCG's one-dimensional axes by evaluating multi-factor composite scores for industry attractiveness and business unit competitive strength.",
@@ -2016,10 +2016,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the 'Cash Cow Trap' in enterprise portfolio governance?",
           "options": [
-            "Relying on mature cash cows for short-term earnings while failing to reinvest their cash surpluses into emerging stars and question marks, leading to catastrophic obsolescence when the legacy market declines.",
-            "Selling cash cows to buy livestock ranches in agricultural regions.",
-            "Allowing cash cow division managers to pay zero corporate income tax.",
-            "Investing all corporate research funds exclusively into products with negative market share."
+            "Relying on cash cows for current earnings while failing to fund stars and question marks, so the firm is obsolete when the legacy market declines.",
+            "Over-investing surplus cash in cash cows to defend their share, leaving the firm with falling returns and little growth as the legacy market matures.",
+            "Selling cash cows too early to fund new ventures, leaving the firm without stable earnings when the new ventures fail to scale up in time.",
+            "Treating cash cows as dogs and divesting them, leaving the firm without surplus to fund its stars while the question marks slowly mature."
           ],
           "answer": 0,
           "why": "The cash cow trap occurs when leadership becomes complacent with high legacy cash flow, neglecting to fund the next generation of products before category transition renders the cash cow obsolete.",
@@ -2069,10 +2069,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the 'Volume Circularity Trap' inherent in cost-plus and target-return pricing models?",
           "options": [
-            "It refers to retail packaging that uses round cylindrical containers instead of square boxes.",
-            "It is an antitrust violation where competitors rotate pricing in circular geographic rings.",
-            "It causes computer spreadsheet formulas to loop infinitely and freeze financial servers.",
-            "You cannot calculate unit cost until you know sales volume, but sales volume depends on the price you charge, creating a circular dependency where falling volume artificially inflates unit costs."
+            "Unit cost rises with volume because of overtime and capacity strain, so higher prices are needed to cover costs as demand grows.",
+            "Price cannot be set until competitor costs are known, but competitor costs depend on the prices charged by the firm itself.",
+            "Target return cannot be calculated until the asset base is known, but the asset base depends on the profits earned each period.",
+            "Unit cost cannot be calculated until sales volume is known, but volume depends on the price charged, so falling volume inflates unit costs."
           ],
           "answer": 3,
           "why": "Unit fixed costs vary inversely with volume; basing price on unit cost assumes volume is fixed, leading to disastrous price hikes when demand softens.",
@@ -2097,10 +2097,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the True Economic Value (TEV) pricing framework, what constitutes the differentiation value of a product?",
           "options": [
-            "The net quantifiable financial benefits (cost savings, uptime, revenue gains) delivered to the customer above and beyond the next-best reference alternative.",
-            "The amount of money the marketing department spent on social media influencer advertisements.",
-            "The difference between wholesale invoice prices and retail inventory storage costs.",
-            "The patent registration fees paid to national intellectual property offices."
+            "The net quantifiable benefit (cost savings, uptime, revenue gains) the customer gets above the next-best reference alternative.",
+            "The total value of the reference alternative, including its price plus the cost to the customer of switching to your product.",
+            "The price premium customers say they would pay in surveys for your brand's reputation compared with competing rivals' brands.",
+            "The cost savings from your product's lower manufacturing cost relative to the competitor's reference product in the same market."
           ],
           "answer": 0,
           "why": "Differentiation value measures the incremental economic value created by your product's superior performance relative to the competitor's reference alternative.",
@@ -2125,10 +2125,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Conjoint Analysis determine consumer willingness-to-pay without asking biased direct questions?",
           "options": [
-            "By averaging the suggested retail prices of the five largest competitors in the grocery aisle.",
-            "By presenting respondents with trade-off choices between multi-attribute product bundles, decomposing their selections into part-worth utilities and price sensitivity ratios.",
-            "By assuming every human being values every feature at exactly ten dollars per pound.",
-            "By auditing their bank statements using illegal financial software cookies."
+            "It asks respondents to state the price they would pay for each attribute separately, then adds the stated values together into totals.",
+            "It presents trade-off choices between multi-attribute product bundles, then derives part-worth utilities and price sensitivity from the choices.",
+            "It tracks actual sales across stores at different prices, then derives price sensitivity from the observed price changes over time.",
+            "It averages competitor price points for similar products, then assumes consumers value each feature at the average market price."
           ],
           "answer": 1,
           "why": "Conjoint analysis isolates latent preference values by forcing realistic trade-offs between features and prices, avoiding direct questioning biases.",
@@ -2153,10 +2153,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a firm selling a product for $100 with $60 variable costs (CM = $40) cuts price by 10% to $90, why does unit sales volume need to increase by 33.3% just to break even on profit?",
           "options": [
-            "Because sales commissions must be increased to reward marketing reps.",
-            "Because tax authorities charge double fees on discounted invoices.",
-            "Because the unit contribution margin dropped from $40 to $30 (a 25% margin compression), requiring 33.3% more units (40 / 30 = 1.333) to generate the identical total dollar contribution.",
-            "Because production machinery automatically decelerates when prices are lowered."
+            "Unit contribution margin falls from $40 to $30, so 10% more units are needed to earn the same total contribution.",
+            "Unit contribution margin falls from $40 to $30, so 25% more units (10 / 40) are needed to earn the same total contribution.",
+            "Unit contribution margin falls from $40 to $30, so 33.3% more units (40 / 30) are needed to earn the same total contribution.",
+            "Unit revenue falls from $100 to $90, so 11.1% more units (100 / 90) are needed to earn the same total contribution."
           ],
           "answer": 2,
           "why": "Price cuts drop directly out of contribution margin; when margin shrinks from $40 to $30, volume must expand by 33.3% just to produce the same total contribution dollars.",
@@ -2181,10 +2181,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the McKinsey Price Waterfall reveal to senior corporate leadership?",
           "options": [
-            "The speed at which stock market share prices crash during economic recessions.",
-            "The total number of customer service complaints received through website ticket forms.",
-            "The amount of water required to operate factory cooling towers.",
-            "The progressive erosion of realized profit margins between published list prices and actual cash pocket prices caused by unmonitored discounts, rebates, freight concessions, and payment terms."
+            "How production costs build up from raw materials to finished goods through labor, overhead, and logistics charges.",
+            "How competitor prices compare with list prices across channels through promotions, loyalty points, and financing offers.",
+            "How customer demand falls as the list price rises through successive price increases, tiers, and regional adjustments.",
+            "How realized profit erodes from list price down to pocket price through unmonitored discounts, rebates, freight, and payment terms."
           ],
           "answer": 3,
           "why": "The price waterfall visualizes each cumulative discount and concession between list price and pocket price, exposing unseen pocket margin leakage.",
@@ -2234,10 +2234,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Total Revenue Test, what occurs when a firm raises the selling price of a product operating in an INELASTIC market (|E| < 1.0)?",
           "options": [
-            "Total revenue remains mathematically identical to the penny.",
-            "The company is immediately delisted from national stock exchanges.",
-            "Total revenue increases, because the percentage gain in price per unit exceeds the percentage contraction in quantity demanded.",
-            "Total revenue immediately drops to zero as all buyers defect to black-market substitutes."
+            "Total revenue decreases, because the percentage fall in quantity demanded is larger than the percentage rise in price.",
+            "Total revenue stays the same, because the percentage rise in price exactly offsets the percentage fall in quantity.",
+            "Total revenue increases, because the percentage rise in price is larger than the percentage fall in quantity demanded.",
+            "Total revenue increases, because quantity demanded rises in line with the percentage gain in price per unit."
           ],
           "answer": 2,
           "why": "In inelastic demand, buyers do not reduce consumption proportionally to price increases; thus, higher unit prices yield higher overall revenue.",
@@ -2262,10 +2262,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a Veblen Good violate the classical law of demand by experiencing higher sales volume at higher prices?",
           "options": [
-            "Because luxury buyers cannot read numerical price tags.",
-            "Because high prices serve as an explicit social signaling mechanism of wealth and exclusivity; lowering the price destroys its prestige utility and alienates luxury buyers.",
-            "Because luxury goods are manufactured using heavier metal atoms that attract gravity.",
-            "Because governments subsidize purchases of products that cost more than one hundred thousand dollars."
+            "The good is an inferior staple with no close substitutes; a price rise cuts real income and forces buyers to purchase more of it.",
+            "High prices act as a social signal of wealth and exclusivity; cutting the price destroys prestige and alienates luxury buyers.",
+            "Buyers expect prices to rise further, so they stockpile the good today; a price cut signals that supply is abundant.",
+            "High prices signal better quality to uninformed buyers; cutting the price lowers perceived performance and reduces sales."
           ],
           "answer": 1,
           "why": "Veblen goods derive psychological value from conspicuous consumption; lower prices dilute brand exclusivity and status signaling.",
@@ -2290,10 +2290,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a negative Cross-Price Elasticity of Demand (XED < 0) between two products indicate?",
           "options": [
-            "The products are complementary goods; an increase in the price of one reduces demand for both because they are consumed together.",
-            "The products are direct rivals and price competition will trigger immediate antitrust litigation.",
-            "Both products have negative gross profit margins.",
-            "The sales figures were corrupted by database calculation errors."
+            "The products are complements; a price rise in one cuts demand for both because they are consumed together.",
+            "The products are substitutes; a price rise in one raises demand for the other because buyers switch between them.",
+            "The products are unrelated; a price rise in one has no effect on demand for the other, since their uses differ.",
+            "The products are inferior goods; a price rise in one cuts demand for both because buyers trade up to other goods."
           ],
           "answer": 0,
           "why": "Complements exhibit negative cross-elasticity because a price hike in one good suppresses overall category usage, dragging down complementary sales.",
@@ -2318,10 +2318,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is dynamic yield management particularly critical for industries with perishable capacity?",
           "options": [
-            "Because airlines are prohibited by law from operating flights with empty seats.",
-            "Because credit card processors refuse transactions made more than 48 hours in advance.",
-            "Because computer algorithms require electricity that expires at the end of each day.",
-            "Because unsold capacity cannot be stored in inventory; once the departure time or date passes, the marginal revenue of that unsold unit is permanently lost."
+            "Capacity costs are fully variable; once the departure date passes, the cost of that unsold unit can be fully recovered.",
+            "Demand is perfectly predictable for perishable services; once the departure date passes, forecasting errors disappear.",
+            "Perishable capacity can be resold at full price later; once the departure date passes, unsold units return to stock.",
+            "Unsold capacity cannot be stored; once the departure date passes, the revenue from that unsold unit is permanently lost."
           ],
           "answer": 3,
           "why": "Perishable capacity (such as hotel rooms or airline seats) has zero salvage value after the service moment passes, requiring real-time yield balancing to capture maximum revenue.",
@@ -2346,10 +2346,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must dynamic pricing engines implement automated emergency circuit breakers?",
           "options": [
-            "Because emergency sirens emit sonic frequencies that corrupt database index caches.",
-            "Because computer algorithms overheat when calculating numbers above 5.0.",
-            "To prevent unconstrained algorithms from price-gouging during disasters, which destroys brand equity and violates criminal consumer protection laws.",
-            "To ensure that all corporate profits during emergencies are converted into digital cryptocurrency."
+            "To stop algorithms from matching competitor prices too slowly in disasters, which lowers market share and breaches antitrust rules.",
+            "To stop algorithms from lowering prices below cost in disasters, which destroys margins and breaches predatory pricing laws.",
+            "To stop unconstrained algorithms from price-gouging in disasters, which destroys brand equity and breaches consumer protection laws.",
+            "To stop algorithms from sharing customer data with rivals in disasters, which destroys brand equity and breaches privacy laws."
           ],
           "answer": 2,
           "why": "Unchecked algorithmic pricing during crises triggers severe consumer outrage, brand boycotts, and criminal prosecution for price gouging.",
@@ -2399,10 +2399,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what market conditions is a Market-Skimming launch pricing strategy most viable?",
           "options": [
-            "When the market is completely commoditized and consumer demand is hyper-elastic.",
-            "When the product commands strong technological differentiation protected by patent or operational barriers, with enough price-inelastic early adopters to justify small initial batch volumes.",
-            "When competitors can replicate the product within 48 hours using cheap generic parts.",
-            "When government regulations mandate that all tech products must be sold at cost."
+            "When the product is a commodity with many close substitutes, and enough price-sensitive buyers exist to justify large initial volumes.",
+            "When the product has strong differentiation protected by patents or barriers, and enough price-inelastic early adopters justify small volumes.",
+            "When the firm has large unused capacity and steep economies of scale, and buyers react strongly to small price changes.",
+            "When competitors can copy the product quickly, and enough price-inelastic buyers exist to cover its entire development cost in one quarter."
           ],
           "answer": 1,
           "why": "Skimming requires premium perceived value and strong entry barriers; without protection, competitors will immediately undercut the high skimming price.",
@@ -2427,10 +2427,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the economic logic of a Two-Part Tariff or Captive-Product pricing model?",
           "options": [
-            "Charging customers two separate credit cards simultaneously to avoid bank transaction fees.",
-            "Requiring customers to buy two identical physical products at the cash register.",
-            "Subsidizing the initial durable hardware access fee to eliminate adoption friction, while capturing compounding, high-margin profits on ongoing consumable usage.",
-            "Charging double prices during national holidays."
+            "Pricing the consumables low to remove adoption friction, then earning compounding high margins on the durable hardware itself.",
+            "Pricing hardware and consumables at cost, then earning high margins on a one-time installation service for the customer.",
+            "Pricing the durable hardware low to remove adoption friction, then earning compounding high margins on ongoing consumable use.",
+            "Pricing hardware at a premium to signal quality, then earning high margins from extended warranty contracts."
           ],
           "answer": 2,
           "why": "Two-part tariffs lower the barrier to entry with cheap upfront hardware, locking in customers for recurring, highly profitable consumable purchases.",
@@ -2455,10 +2455,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Stigler's Bundling Theorem, under what consumer preference condition is product bundling most effective at expanding revenue?",
           "options": [
-            "When government anti-monopoly regulators mandate that goods must be wrapped in plastic shrink-wrap.",
-            "When all consumers in the market share identical, perfectly uniform valuations for every product.",
-            "When the physical products are manufactured in the same geographical zip code.",
-            "When consumer reservation prices (willingness-to-pay) for the individual goods are negatively correlated, allowing the bundle to smooth out individual valuation differences."
+            "When consumer reservation prices for the individual goods are positively correlated, so bundling widens differences in valuation.",
+            "When consumer reservation prices for the goods are identical across buyers, so bundling lets the firm raise each separate price.",
+            "When consumer reservation prices for the goods are unrelated to cost, so bundling cuts differences in production cost.",
+            "When consumer reservation prices for the individual goods are negatively correlated, so bundling smooths out differences in valuation."
           ],
           "answer": 3,
           "why": "Negatively correlated valuations mean buyers who value product A highly value product B less, and vice versa; bundling captures both buyers at a single combined price.",
@@ -2483,10 +2483,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Decoy Effect (Asymmetric Dominance) influence consumer choice architecture?",
           "options": [
-            "By introducing a third option that is clearly inferior to the targeted premium option, making the premium option appear vastly superior and shifting customer choice toward it.",
-            "By employing actors in retail stores to whisper recommendations to shoppers.",
-            "By altering barcode scanners to charge higher prices at checkout counters.",
-            "By playing ultrasonic sound frequencies that hypnotize retail store customers."
+            "Adding a third option that is clearly inferior to the target premium option, so the premium looks far better and gains share.",
+            "Adding a third option that is cheaper than all the others, so the premium option looks expensive and buyers trade down.",
+            "Adding a third option identical to the premium option, so buyers split their choices equally between the two of them.",
+            "Removing the cheapest option from the menu, so buyers must choose a higher price point and the premium gains share."
           ],
           "answer": 0,
           "why": "The decoy is asymmetrically dominated by the target option, creating an obvious perceptual comparison that dramatically increases preference for the target.",
@@ -2511,10 +2511,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Robinson-Patman Act, what is required for an enterprise to legally offer different wholesale prices to competing retail distributors?",
           "options": [
-            "The buyer must agree to pay exclusively in gold bullion.",
-            "The price differential must be justified by documented cost savings in manufacturing/shipping, or offered in good faith to meet a competitor's equally low price.",
-            "Price discrimination is always strictly illegal under all circumstances with zero exceptions.",
-            "The seller must register all corporate executives with the Federal Trade Commission."
+            "The price difference must be approved in advance by the FTC, or offered only to distributors that exceed a minimum annual purchase volume.",
+            "The price difference must be justified by documented cost savings in manufacturing or shipping, or offered in good faith to meet a competitor's price.",
+            "The price difference must be disclosed publicly in the company's annual report, or offered only to distributors located in different states.",
+            "The price difference must be limited to 5% of the list price, or offered only on products that are sold to government and public buyers."
           ],
           "answer": 1,
           "why": "The Robinson-Patman Act allows price differentials if they are supported by cost justification, meeting competition, or changing market conditions.",
@@ -2564,10 +2564,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary economic justification for utilizing independent wholesalers and retail intermediaries in distribution?",
           "options": [
-            "They resolve discrepancies of quantity and assortment, collapsing the total number of transactions required from (M * C) to (M + C) and drastically reducing overall logistics costs.",
-            "They are required by international maritime shipping treaties to sign bill-of-lading forms.",
-            "They eliminate the need for manufacturers to register trademarks in consumer markets.",
-            "They guarantee that physical products will never expire or spoil on store shelves."
+            "They resolve mismatches of quantity and assortment, cutting the transactions needed from (M × C) to (M + C) and reducing logistics costs.",
+            "They give manufacturers direct control over consumer pricing and promotion, which reduces channel conflict and logistics costs.",
+            "They hold finished-goods inventory for manufacturers at no charge, which transfers all demand risk away from producers.",
+            "They narrow the assortment offered to consumers, which cuts transaction counts and logistics costs for manufacturers."
           ],
           "answer": 0,
           "why": "Intermediaries aggregate diverse products from multiple manufacturers, dramatically reducing the transactions and freight costs needed to reach mass consumers.",
@@ -2592,10 +2592,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is 'Double Marginalization' in conventional distribution channels, and how does a Vertical Marketing System (VMS) resolve it?",
           "options": [
-            "It refers to accounting ledger software printing margins twice on invoice receipts.",
-            "It occurs when retailers charge twice as much sales tax as permitted by local law.",
-            "It is when two factory machines stamp identical serial numbers on a product.",
-            "Independent channel members each add successive profit markups above their own costs, driving final retail prices too high and destroying sales volume; a VMS coordinates pricing to maximize unified channel profit at lower retail prices."
+            "Independent members each negotiate lower purchase prices from suppliers, pushing manufacturer margins too low and cutting supply; a VMS coordinates ordering to maximize total channel profit at higher wholesale prices.",
+            "Two members hold exclusive rights to the same territory, pushing retail prices too low and cutting profits; a VMS allocates territories to maximize total channel profit at higher retail prices.",
+            "Independent members each add profit markups above their own costs, pushing retail prices too high; a VMS removes the retailer's margin so the manufacturer sets prices to maximize its own profit.",
+            "Independent members each add profit markups above their own costs, pushing retail prices too high and cutting volume; a VMS coordinates pricing to maximize total channel profit at lower prices."
           ],
           "answer": 3,
           "why": "Independent markup stacking causes double marginalization; integrating the channel under a VMS lowers consumer prices, expands volume, and increases total system profit.",
@@ -2620,10 +2620,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary cause of Multichannel Conflict when a traditional manufacturer launches an online DTC e-commerce store?",
           "options": [
-            "Web servers use different electrical voltage than retail store cash registers.",
-            "Credit card companies refuse to process payments from both online and physical stores.",
-            "Existing retail dealers feel directly cannibalized and threatened by the manufacturer competing against them for the same end customers at identical or lower prices.",
-            "The Federal Trade Commission mandates that manufacturers may only sell one product per century."
+            "Existing dealers lose access to the manufacturer's advertising support because the DTC store takes over all promotional spending.",
+            "Existing dealers face higher wholesale prices after the DTC store raises the manufacturer's costs for online order fulfillment.",
+            "Existing dealers feel cannibalized by the manufacturer competing with them for the same end customers at identical or lower prices.",
+            "Existing dealers receive too few leads from the manufacturer's website because online sales are routed to one central warehouse."
           ],
           "answer": 2,
           "why": "Independent retailers view direct-to-consumer websites as unfair channel cannibalization, triggering retail backlash and threats to de-list the manufacturer's products.",
@@ -2649,10 +2649,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical mathematical distinction between Markup on Cost and Margin on Selling Price?",
           "options": [
-            "Markup is calculated in euros, while margin is calculated in US dollars.",
-            "Markup is calculated as dollar profit divided by cost, whereas Margin is calculated as dollar profit divided by selling price; thus a 100% markup on cost equals a 50% margin on price.",
-            "There is zero difference; both terms are 100% synonymous in accounting ledgers.",
-            "Markup applies only to hardware goods, while margin applies only to software services."
+            "Markup is profit divided by selling price, whereas Margin is profit divided by cost; a 100% markup equals a 200% margin.",
+            "Markup is profit divided by cost, whereas Margin is profit divided by selling price; a 100% markup on cost equals a 50% margin.",
+            "Markup is profit divided by cost, whereas Margin is profit divided by selling price; a 100% markup on cost equals a 100% margin.",
+            "Markup is profit divided by cost, whereas Margin is profit divided by selling price; a 100% markup on cost equals a 25% margin."
           ],
           "answer": 1,
           "why": "Margin evaluates profit relative to the selling price; markup evaluates profit relative to purchase cost. Confusing them causes severe under-pricing.",
@@ -2678,10 +2678,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Buy-Online-Pick-Up-in-Store (BOPIS) create dual financial benefits for omnichannel retailers?",
           "options": [
-            "It eliminates expensive parcel courier shipping costs while driving high-margin in-store impulse purchases from visiting digital shoppers.",
-            "It allows retailers to avoid charging sales taxes on digital orders.",
-            "It requires customers to stock physical shelves before collecting their order.",
-            "It replaces physical cashiers with automated banking robots."
+            "It removes expensive parcel shipping costs and drives high-margin in-store impulse purchases from online shoppers who visit.",
+            "It removes the need for physical store inventory and drives high-margin online add-on sales from shoppers who browse the site.",
+            "It removes expensive store staffing costs and drives high-margin shipping fees from shoppers who choose home delivery.",
+            "It removes expensive returns processing costs and drives high-margin loyalty sign-ups from shoppers who collect orders."
           ],
           "answer": 0,
           "why": "BOPIS eliminates last-mile shipping freight expenses while driving physical retail foot traffic that yields substantial impulse add-on sales.",
@@ -2731,10 +2731,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of Tier 1 in the Milestone 3 integrated commercial architecture?",
           "options": [
-            "Replacing every customer quote with one flat price set by the sales team.",
-            "Negotiating international currency exchange rates with central banks.",
-            "Printing glossy sales catalogs for trade show marketing booths.",
-            "Anchoring initial list prices to quantified True Economic Value (TEV) and auditing the price waterfall to enforce minimum pocket margin hurdles."
+            "Anchoring list prices to competitor price lists and auditing channel inventory to enforce minimum stock levels.",
+            "Anchoring list prices to full unit cost plus a target return and auditing dealer margins to enforce maximum retail prices.",
+            "Anchoring list prices to cross-price elasticity of demand and auditing advertising spend to enforce minimum ROAS.",
+            "Anchoring list prices to quantified True Economic Value (TEV) and auditing the price waterfall to enforce minimum pocket margins."
           ],
           "answer": 3,
           "why": "Tier 1 anchors pricing to customer economic value and gates price waterfall leaks to guarantee operating margin preservation.",
@@ -2759,10 +2759,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Tier 2 Dynamic Yield Allocation maximize enterprise revenue across perishable capacity?",
           "options": [
-            "By offering discounted capacity early to price-elastic buyers when utilization is low, while withholding remaining capacity for high-paying price-inelastic buyers as deadlines approach.",
-            "By deleting half of the inventory database every morning at 6:00 AM.",
-            "By charging all buyers an identical flat price regardless of time or demand.",
-            "By giving away 100% of capacity for free to boost website page views."
+            "By discounting capacity early for price-elastic buyers while holding the remaining capacity for price-inelastic buyers at higher prices near the deadline.",
+            "By offering full-price capacity early to price-inelastic buyers while discounting the remaining capacity to price-elastic buyers near the deadline.",
+            "By charging every buyer a single average price throughout the whole booking window, so that demand forecasting stays simple, stable, and predictable.",
+            "By auctioning all remaining capacity to the highest bidder on the final day while refusing early reservations from price-elastic buyers entirely."
           ],
           "answer": 0,
           "why": "Dynamic yield optimization segments demand over time, capturing both price-sensitive early volume and high-value late bookings.",
@@ -2787,10 +2787,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of implementing a mixed bundling strategy across enterprise product portfolios?",
           "options": [
-            "It guarantees that all physical software packaging can be printed on a single sheet of paper.",
-            "It captures high standalone margins from single-category specialists while converting multi-product buyers at an optimized bundle package price.",
-            "It allows companies to avoid paying corporate income tax on bundled software.",
-            "It forces competitors to withdraw from the market within twenty-four hours."
+            "It forces all buyers to purchase every product together at one bundle price, extracting maximum surplus from each of them.",
+            "It captures high standalone margins from single-category buyers while converting multi-product buyers at a bundle price.",
+            "It sells each product only separately but adds a loyalty discount on repeat purchases, capturing margin from frequent buyers.",
+            "It sells bundles only to distributors while single products go directly to end consumers at the full list prices."
           ],
           "answer": 1,
           "why": "Mixed bundling caters to both single-product buyers and multi-product customers, maximizing aggregate consumer surplus extraction.",
@@ -2815,10 +2815,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do progressive manufacturers pay a localized dealer attribution commission on direct DTC online sales?",
           "options": [
-            "Because direct-to-consumer websites are illegal in most metropolitan jurisdictions.",
-            "Because manufacturers are legally required to share their profit margins with every retailer in the country.",
-            "To pacify channel conflict and align local dealers with the manufacturer's e-commerce strategy, incentivizing dealers to provide local test drives, support, and returns.",
-            "Because physical retailers own 100% of all internet fiber-optic cables."
+            "To meet franchise law that requires manufacturers to share all online profits equally with every dealer located in the sales territory.",
+            "To offset dealers' inventory financing costs by rewarding dealers who carry more physical stock than the online customers actually order.",
+            "To ease channel conflict and align local dealers with the e-commerce strategy, rewarding dealers who provide test drives, support, and returns.",
+            "To reduce online prices to dealers' levels by rewarding dealers who match the manufacturer's website discounts on all comparable models."
           ],
           "answer": 2,
           "why": "Attribution commissions mitigate channel conflict, turning independent dealers into cooperative fulfillment partners rather than hostile rivals.",
@@ -2842,10 +2842,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is matching an aggressive competitor price cut during an inflationary cost surge considered an executive failure in commercial pricing strategy?",
           "options": [
-            "Because the Federal Reserve prohibits retail stores from cutting prices.",
-            "Because price cuts automatically trigger corporate bank account closures.",
-            "Because inflation makes paper money completely worthless within 24 hours.",
-            "Because unit costs are rising while prices are falling, creating a lethal margin squeeze that destroys operating profits even if unit volume expands slightly."
+            "Matching prices signals weakness to suppliers, who then raise input prices further and destroy operating profit.",
+            "Customers read the price cut as a quality decline, so volume falls sharply and destroys operating profit despite costs.",
+            "Fixed cost per unit falls as volume grows, so the price cut is unnecessary and merely hands margin to customers.",
+            "Costs are rising while prices fall, creating a margin squeeze that destroys operating profit even if unit volume expands slightly."
           ],
           "answer": 3,
           "why": "Rising costs paired with discounted prices compress contribution margins from both directions, causing severe profit destruction.",
@@ -2897,10 +2897,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core strategic principle underlying Integrated Marketing Communications (IMC)?",
           "options": [
-            "Hiring five separate advertising agencies and forbidding them from speaking to one another.",
-            "Spending 100% of the corporate budget exclusively on television commercials.",
-            "Ensuring that all promotional mix touchpoints across advertising, PR, sales promotion, and direct channels deliver a unified, consistent, and reinforcing brand message.",
-            "Replacing human sales representatives with recorded megaphone announcements."
+            "Assigning each promotional mix element to a separate agency so that every touchpoint delivers its own specialized message.",
+            "Concentrating the promotional budget in the single channel with the highest ROAS so that touchpoints deliver measurable results.",
+            "Making all promotional mix touchpoints (advertising, PR, sales promotion, direct) deliver a unified, consistent, reinforcing message.",
+            "Running the same advertisement at the same frequency in every channel so that all touchpoints deliver identical content."
           ],
           "answer": 2,
           "why": "IMC mandates total synergy and cross-channel alignment; uncoordinated communications confuse consumers and dilute marketing ROI.",
@@ -2926,10 +2926,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Keller's 6Cs framework for evaluating integrated communications, what does 'Complementarity' measure?",
           "options": [
-            "The percentage of free sample products distributed to social media influencers.",
-            "The extent to which different media channels emphasize mutually reinforcing, non-overlapping dimensions of the brand value proposition.",
-            "The total number of colors used in the corporate logo.",
-            "Whether marketing team members give verbal compliments to one another during meetings."
+            "How far different media share and repeat the same brand associations so the message is identical everywhere.",
+            "How far different media emphasize mutually reinforcing, non-overlapping dimensions of the brand value proposition.",
+            "How much of the target audience each medium reaches, and how much of that audience overlaps with other media.",
+            "How much each medium contributes to the brand's message at the lowest possible cost per impression."
           ],
           "answer": 1,
           "why": "Complementarity measures synergy: ensuring media channels work in concert by highlighting different beneficial facets of the offering.",
@@ -2953,10 +2953,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between a Push and a Pull promotional strategy?",
           "options": [
-            "Push directs marketing incentives toward channel dealers to stock and sell the product; Pull directs advertising toward end consumers to create demand that draws goods through the channel.",
-            "Push uses email marketing; Pull uses printed postcards.",
-            "Push is legal in North America; Pull is only legal in European jurisdictions.",
-            "Push requires manual labor; Pull is automated by factory conveyor belts."
+            "Push directs incentives at dealers to stock and sell the product; Pull directs advertising at consumers to create demand that draws goods through the channel.",
+            "Push directs advertising at consumers to create demand that draws goods through the channel; Pull directs incentives at dealers to stock and sell the product.",
+            "Push uses only personal selling to reach end consumers directly in their homes; Pull uses only trade discounts to persuade retailers who buy in volume.",
+            "Push targets new customers with promotions to build awareness quickly; Pull targets existing customers with loyalty rewards to drive repeat sales."
           ],
           "answer": 0,
           "why": "Push targets intermediaries to push inventory down the channel; Pull targets consumers to pull inventory through retail stores via active consumer demand.",
@@ -2981,10 +2981,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Russell Colley formulate the DAGMAR model advocating that advertising be measured by communication goals rather than sales revenue?",
           "options": [
-            "Because the Federal Communications Commission bans the use of sales figures in marketing studies.",
-            "Because corporate accountants refuse to count advertising expenses on income balance sheets.",
-            "Because sales revenue is always recorded six years after an advertising campaign ends.",
-            "Because sales outcomes depend on multiple variables outside advertising's control (price, product quality, distributor stocking); advertising can only be held strictly accountable for shifting mental states like awareness and comprehension."
+            "Sales results arrive too late for agencies to adjust campaigns, so communication goals provide quicker feedback that supports creative testing and media planning.",
+            "Sales are driven mainly by advertising spend, so communication goals are needed only to compare media costs across competing agencies, formats, and campaigns.",
+            "Sales cannot be measured for advertising that runs on television or radio, so communication goals are the only data that broadcast media are able to supply to clients.",
+            "Sales depend on many variables beyond advertising's control (price, quality, stocking), so advertising can be held accountable only for shifting mental states such as awareness."
           ],
           "answer": 3,
           "why": "DAGMAR separates communication effects from macroeconomic and operational sales variables, measuring advertising by mental movement through the response hierarchy.",
@@ -3010,10 +3010,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Objective-and-Task budgeting method considered mathematically superior to the Percentage-of-Sales method in corporate marketing?",
           "options": [
-            "Because it guarantees 100% click-through rates on all internet banner ads.",
-            "Because it is the only budgeting method allowed by international banking laws.",
-            "Because it builds the budget backward from explicit, quantified communication goals and conversion economics, whereas Percentage-of-Sales treats sales as the cause of promotion rather than the result.",
-            "Because it automatically reduces corporate payroll taxes."
+            "It sets the budget by matching the spending levels of the largest competitors, whereas Percentage-of-Sales ignores rival activity and the state of the wider market.",
+            "It sets the budget as whatever the firm can afford after other expenses are paid, whereas Percentage-of-Sales ties spending to a fixed share of profit instead.",
+            "It builds the budget backward from quantified communication goals and conversion economics, whereas Percentage-of-Sales treats sales as the cause of promotion rather than the result.",
+            "It sets the budget by testing spending levels across regional markets, whereas Percentage-of-Sales applies the same budget to every region regardless of results."
           ],
           "answer": 2,
           "why": "Objective-and-task connects funding directly to the marketing tasks required to achieve strategic objectives, avoiding circularity traps.",
@@ -3092,10 +3092,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core premise of Herbert Krugman's Three-Exposure Hypothesis regarding effective advertising frequency?",
           "options": [
-            "Consumers forget 100% of all information if they see an ad more than twice.",
-            "An advertisement must feature exactly three actors dressed in business suits.",
-            "A consumer requires three distinct psychological exposures: Exposure 1 creates cognitive recognition, Exposure 2 evaluates personal relevance, and Exposure 3 triggers behavioral purchase reminder.",
-            "Advertisements must be broadcast in three different sovereign languages simultaneously."
+            "Exposure 1 creates awareness, Exposure 2 builds emotional attachment, and Exposure 3 triggers the immediate purchase decision.",
+            "Exposure 1 creates interest, Exposure 2 compares the brand with rivals, and Exposure 3 triggers repeat purchase loyalty.",
+            "Exposure 1 creates recognition, Exposure 2 evaluates personal relevance, and Exposure 3 triggers a reminder that prompts purchase.",
+            "Exposure 1 creates recall, Exposure 2 tests brand credibility, and Exposure 3 triggers word of mouth sharing among friends."
           ],
           "answer": 2,
           "why": "Krugman established that cognitive response evolves across three distinct stages: recognition, evaluation, and action reminder.",
@@ -3122,10 +3122,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Return on Ad Spend (ROAS) of 5.0x indicate to a performance marketing executive?",
           "options": [
-            "The campaign was delivered across five independent satellite networks.",
-            "The advertising agency took a 500% commission fee.",
-            "Five out of every ten website visitors clicked on the ad.",
-            "Every dollar deployed in advertising generated five dollars in gross top-line commercial revenue."
+            "Each dollar spent on advertising generated five dollars of net profit.",
+            "Each dollar spent on advertising generated four dollars of profit after ad cost.",
+            "Five percent of ad impressions converted into completed purchases.",
+            "Each dollar spent on advertising generated five dollars of gross revenue."
           ],
           "answer": 3,
           "why": "ROAS measures gross revenue divided by advertising spend; 5.0x indicates five dollars in revenue for every dollar spent.",
@@ -3150,10 +3150,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Last-Touch Attribution considered a dangerous analytical bias in modern digital marketing?",
           "options": [
-            "Because it awards 100% of conversion credit exclusively to the final channel clicked before purchase, completely undervaluing and starving top-of-funnel brand discovery and awareness channels.",
-            "Because last-touch algorithms can only be programmed in assembly code.",
-            "Because Google and Facebook prohibit companies from using last-touch reporting.",
-            "Because it causes website landing pages to crash during weekend traffic."
+            "It gives 100% of conversion credit to the final channel clicked before purchase, undervaluing and starving top-of-funnel discovery channels.",
+            "It splits conversion credit equally across every channel touched, overvaluing minor channels and starving the final conversion channels.",
+            "It gives all credit to the first channel that introduced the customer, overvaluing discovery and starving closing channels like search and email.",
+            "It assigns credit in proportion to advertising spend by channel, overvaluing large budgets and starving small but effective channels."
           ],
           "answer": 0,
           "why": "Last-touch attribution ignores discovery touchpoints that initiated the journey, incentivizing teams to overspend on brand search and email while starving growth channels.",
@@ -3178,10 +3178,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Media Rating Council (MRC) standards, what is required for a digital display advertisement to be classified as 'Viewable'?",
           "options": [
-            "The user must print out a physical paper copy of the website.",
-            "At least 50% of the advertisement's physical pixels must be in the active browser viewport for at least one continuous second.",
-            "The consumer must click on the advertisement and type their social security number.",
-            "The webpage must remain open for over twenty-four hours."
+            "At least 100% of the ad's pixels must be in the active browser viewport for at least one continuous second.",
+            "At least 50% of the ad's pixels must be in the active browser viewport for at least one continuous second.",
+            "At least 50% of the ad's pixels must be in the active browser viewport for at least five cumulative seconds.",
+            "At least 30% of the ad's pixels must be in the active browser viewport for at least two continuous seconds."
           ],
           "answer": 1,
           "why": "The MRC standard mandates at least 50% pixels visible in the active window for at least one second for display ads.",
@@ -3230,10 +3230,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the POEM framework, why is Earned Media considered vastly more credible than Paid Media in establishing brand trust?",
           "options": [
-            "Because earned media represents independent, third-party editorial validation by journalists or consumers rather than self-interested paid corporate advertisements.",
-            "Because earned media requires buying billboard space on international space stations.",
-            "Because paid media is strictly illegal in democratic countries.",
-            "Because owned media can only be viewed on desktop computers manufactured prior to 1995."
+            "Earned media is independent third-party validation by journalists or consumers, not a self-interested paid advertisement.",
+            "Earned media is directly controlled by the brand's PR team, so its message is more consistent than paid advertisements.",
+            "Earned media reaches a larger audience than paid ads do, and wider reach is by itself proof of greater credibility.",
+            "Earned media is produced on the brand's own social channels, so its content is more authentic than paid advertisements."
           ],
           "answer": 0,
           "why": "Earned media carries third-party editorial objectivity, which consumers trust far more than paid corporate promotional claims.",
@@ -3259,10 +3259,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Coombs' Situational Crisis Communication Theory (SCCT), which crisis cluster triggers the most severe reputational threat and stakeholder outrage?",
           "options": [
-            "The Victim Cluster, where an earthquake damages an offshore warehouse.",
-            "The Accident Cluster, where an unintended technical failure occurs despite reasonable precautions.",
-            "The Weather Cluster, where an outdoor product launch is rained out.",
-            "The Preventable Cluster, where the organization knowingly took improper risks, violated safety protocols, or engaged in management misconduct."
+            "The Victim Cluster, where the organization suffered damage from natural disasters, rumors, or workplace violence by outsiders.",
+            "The Accidental Cluster, where the organization caused harm unintentionally through technical failures or product harm.",
+            "The Intensifier Cluster, where the organization faced earlier similar crises and already held a poor prior reputation.",
+            "The Preventable Cluster, where the organization knowingly took improper risks, violated safety rules, or committed management misconduct."
           ],
           "answer": 3,
           "why": "Preventable crises stem from human negligence or managerial wrongdoing, generating maximum attribution of blame and reputational damage.",
@@ -3288,10 +3288,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of a Media Holding Statement issued during the 'Golden Hour' of a corporate crisis?",
           "options": [
-            "To blame competitors and sue all local newspaper reporters.",
-            "To announce an immediate fifty percent discount on all consumer merchandise.",
-            "To acknowledge the incident, express genuine human concern, confirm active emergency remediation, and prevent speculation while verified facts are gathered.",
-            "To permanently cancel all future press interviews and erase company records."
+            "To assign responsibility, announce disciplinary action, outline legal liability, and prevent lawsuits while claims are reviewed.",
+            "To publish full technical findings, name the root cause, confirm compensation amounts, and end media interest once facts are verified.",
+            "To acknowledge the incident, show human concern, confirm active remediation, and prevent speculation while facts are verified.",
+            "To deny wrongdoing, defend the firm's record, challenge media reports, and prevent damage while an investigation is completed."
           ],
           "answer": 2,
           "why": "Holding statements establish communication control within the first hour, demonstrating concern and buying time for fact-finding without leaving an information vacuum.",
@@ -3314,10 +3314,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to corporate reputation finance models, how does a swift, unconditional Rebuild apology affect equity valuation recovery compared to defensive stonewalling?",
           "options": [
-            "An apology instantly bankrupts the company under international trade treaties.",
-            "A transparent rebuild apology dramatically accelerates the recovery half-life, restoring market capitalization in weeks rather than leaving prolonged stock discounts.",
-            "An apology makes all customers permanently forget that the company ever existed.",
-            "Defensive stonewalling always results in a doubling of corporate share prices."
+            "A rebuild apology admits liability, which deepens the stock discount and prolongs recovery compared with defensive stonewalling.",
+            "A transparent rebuild apology speeds recovery, restoring market capitalization in weeks instead of leaving prolonged stock discounts.",
+            "A rebuild apology has no effect on valuation, since recovery depends only on the industry's market return after the crisis.",
+            "A rebuild apology speeds recovery only for private firms, since public investors judge crises solely on quarterly earnings."
           ],
           "answer": 1,
           "why": "Transparent accountability and restitution resolve investor and customer uncertainty, stabilizing brand equity and equity valuation rapidly.",
@@ -3347,10 +3347,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the RepTrak 7-pillar corporate reputation framework, what danger arises when an enterprise achieves strong financial performance but demonstrates weak governance and citizenship?",
           "options": [
-            "The firm possesses an average or vulnerable reputation index because high profitability cannot compensate for ethical deficiencies, leaving the brand exposed to severe crisis damage.",
-            "The company is immediately forced to convert all cash into physical gold bullion.",
-            "The company is exempt from paying corporate income taxes.",
-            "All television advertisements for the company are broadcast in black and white."
+            "The firm has an average or vulnerable reputation, because high profitability cannot offset ethical deficiencies, leaving it exposed in a crisis.",
+            "The firm has a strong reputation, because financial performance is the pillar that carries the most weight with all stakeholders.",
+            "The firm has an excellent reputation, because strong financials offset governance weaknesses under the RepTrak weighting system.",
+            "The firm has a neutral reputation, because the pillars are averaged equally and weaker pillars are offset by stronger ones."
           ],
           "answer": 0,
           "why": "Governance and ethics carry high weight in stakeholder trust; profitability alone cannot shield a brand from ethical scandals.",
@@ -3402,10 +3402,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In direct marketing customer analytics, what do the three dimensions of RFM Segmentation stand for?",
           "options": [
-            "Radio, Film, and Magazine advertising volume.",
-            "Regional Financial Margin calculated by certified accountants.",
-            "Retail Floor Management and employee scheduling metrics.",
-            "Recency (time since last purchase), Frequency (purchase volume count), and Monetary Value (total spend amount)."
+            "Retention (share of customers kept), Frequency (number of purchases), and Margin (profit per sale).",
+            "Recency (time since last purchase), Reach (audience size), and Revenue (total sales to date).",
+            "Referral (customers recommended), Frequency (number of purchases), and Monetary Value (total spend).",
+            "Recency (time since last purchase), Frequency (number of purchases), and Monetary Value (total spend)."
           ],
           "answer": 3,
           "why": "RFM measures Recency, Frequency, and Monetary value, the three fundamental behavioral indicators of customer lifetime value and churn risk.",
@@ -3432,10 +3432,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of SPF, DKIM, and DMARC protocols in enterprise email marketing?",
           "options": [
-            "To cryptographically authenticate the sender domain, prevent spoofing/phishing, and verify message integrity so mailbox algorithms route emails to the user's primary inbox rather than the spam folder.",
-            "To automatically generate AI marketing poems inside emails.",
-            "To convert all images in emails into black-and-white drawings.",
-            "To legally prohibit customers from ever unsubscribing from corporate marketing lists."
+            "To authenticate the sender domain, prevent spoofing and phishing, and verify message integrity so providers route mail to the inbox instead of spam.",
+            "To encrypt message contents end to end, hide recipient lists, and compress attachments so mailbox providers deliver mail faster.",
+            "To track opens and clicks, score subscriber engagement, and personalize send times so mailbox providers route mail to the inbox.",
+            "To verify subscriber consent, manage unsubscribe requests, and remove inactive contacts so mailbox providers see fewer complaints."
           ],
           "answer": 0,
           "why": "SPF, DKIM, and DMARC provide cryptographic domain validation, protecting sender reputation and preventing spam placement.",
@@ -3461,10 +3461,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the MEDDIC framework considered superior to the traditional BANT framework for complex enterprise software sales?",
           "options": [
-            "Because MEDDIC requires sales representatives to speak French during discovery calls.",
-            "Because enterprise buyers frequently lack pre-allocated budget until a compelling business case is proven, and MEDDIC rigorously verifies access to the Economic Buyer, internal Champions, and quantified pain metrics.",
-            "Because BANT is prohibited under Federal Trade Commission consumer protection rules.",
-            "Because MEDDIC automatically signs legal procurement contracts without human intervention."
+            "Enterprise deals usually close within one quarter, so MEDDIC verifies Metrics, Deadlines, and Delivery terms ahead of contract review.",
+            "Enterprise buyers often have no budget until a business case is proven, and MEDDIC verifies the Economic Buyer, Champions, and quantified pain.",
+            "Enterprise buyers have fixed budgets and clear authority from the start, and MEDDIC verifies the budget, discount rate, and delivery date.",
+            "Enterprise buyers mostly decide through marketing leads, and MEDDIC scores inbound lead volume, demographics, and content downloads."
           ],
           "answer": 1,
           "why": "MEDDIC verifies access to Economic Buyers, Champions, and quantified value metrics, reflecting how modern enterprise committees make purchasing decisions.",
@@ -3518,10 +3518,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational operational difference between traditional inbound lead generation and Account-Based Marketing (ABM)?",
           "options": [
-            "Traditional inbound requires sales representatives to visit every home in person.",
-            "Traditional inbound is free, whereas ABM requires purchasing physical radio towers.",
-            "ABM is only legal in sovereign maritime territories.",
-            "Traditional inbound casts a wide net for high individual lead volume, whereas ABM inverts the funnel to treat high-value target accounts as individual markets of one with coordinated multi-persona outreach."
+            "Inbound targets named accounts one by one using sales calls, whereas ABM casts a wide net for high lead volume using automated mass outreach to many contacts.",
+            "Inbound relies on content and search to attract buyers, whereas ABM relies on mass advertising to reach every account in a whole market segment at once.",
+            "Inbound targets individual leads within the sales team's region, whereas ABM targets the single decision-maker in each account with one standard message.",
+            "Inbound casts a wide net for high lead volume, whereas ABM inverts the funnel and treats high-value accounts as markets of one with coordinated multi-persona outreach."
           ],
           "answer": 3,
           "why": "ABM targets a curated list of high-value accounts, orchestrating tailored communications to the entire buying center rather than chasing fragmented individual leads.",
@@ -3572,10 +3572,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of organizing modern enterprise communications into a 5-Tier IMC Strategic Command Platform?",
           "options": [
-            "To ensure that only five employees are permitted to work in the marketing department.",
-            "To automatically double corporate executive bonuses every quarter.",
-            "To require five separate software passwords to send a single marketing email.",
-            "To eliminate organizational silos and coordinate strategy, media flighting, PR protection, direct sales demand, and econometric attribution into a unified, reinforcing system."
+            "To centralize all marketing spending under the finance department and coordinate budget approval, vendor contracts, and invoicing in one control system.",
+            "To replace human marketing managers with automated tools and coordinate creative production, media buying, and reporting in one automated system.",
+            "To standardize one brand message across all countries and coordinate translation, local legal review, and media placement in one reinforcing system.",
+            "To eliminate organizational silos and coordinate strategy, media flighting, PR protection, direct demand, and econometric attribution in one reinforcing system."
           ],
           "answer": 3,
           "why": "A 5-tier architecture unifies positioning, media, PR, direct response, and attribution into a coherent, high-synergy operational platform.",
@@ -3599,10 +3599,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate marketing financial governance, what is the 'Working Media Ratio' and what is the typical executive benchmark?",
           "options": [
-            "The percentage of promotional budget spent directly on customer-facing media impressions versus agency and production fees; high-performing organizations target at least 80% working media.",
-            "The percentage of employees who work at their desks versus remote locations.",
-            "The number of hours media planners spend watching television each week.",
-            "The number of agencies on the roster divided by the number of campaigns launched each quarter."
+            "The share of promotional budget spent on customer-facing media impressions rather than agency and production fees; top performers target at least 80%.",
+            "The share of promotional budget spent on agency and production fees rather than media impressions; top performers target at least 80%.",
+            "The share of promotional budget spent on customer-facing media impressions rather than agency and production fees; top performers target at least 50%.",
+            "The share of media impressions that reach active viewers rather than bots and invalid traffic; top performers target at least 95%."
           ],
           "answer": 0,
           "why": "Working media represents capital deployed directly into market-facing impressions; capping agency overhead and production below 20% ensures maximum commercial impact.",
@@ -3627,10 +3627,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Econometric Media Mix Modeling (MMM) resilient to third-party cookie deprecation and mobile privacy regulations like Apple iOS ATT?",
           "options": [
-            "Because MMM relies on secret government satellite surveillance.",
-            "Because MMM operates exclusively on top-down aggregate historical time-series data (spend, sales, pricing) rather than tracking individual user device cookies.",
-            "Because MMM is only calculated on paper ledgers using fountain pens.",
-            "Because MMM is exempt from privacy laws by presidential executive order."
+            "MMM uses probabilistic fingerprinting of individual devices rather than cookies, which privacy rules still permit.",
+            "MMM uses top-down aggregate time-series data (spend, sales, pricing) rather than tracking individual user device cookies.",
+            "MMM uses first-party login data of individual customers rather than third-party cookies, which privacy rules still permit.",
+            "MMM relies on browser-based tracking pixels placed on conversion pages rather than cookies, which privacy rules still allow."
           ],
           "answer": 1,
           "why": "MMM uses top-down econometric aggregation across historical business time-series, requiring zero individual-level tracking cookies or device identifiers.",
@@ -3656,10 +3656,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic advantage of synthesizing promotional mix allocation, media GRPs, ABM pipeline physics, and ROMI into an integrated Python orchestrator?",
           "options": [
-            "It replaces all corporate attorneys with automated chatbot scripts.",
-            "It eliminates the need for any corporate product development.",
-            "It provides a deterministic, data-driven framework linking every marketing dollar spent directly to customer conversion physics, GRP reach thresholds, and boardroom financial returns.",
-            "It automatically prints paper coupons for all retail grocery stores."
+            "It replaces human judgment by predicting creative winners, media rates, and consumer sentiment in advance without any live testing of campaigns.",
+            "It raises sales by automating bidding, creative rotation, and audience selection across all digital channels without needing a financial model.",
+            "It gives a deterministic, data-driven framework linking every marketing dollar to conversion physics, GRP reach thresholds, and boardroom financial returns.",
+            "It reduces agency fees by automating contract negotiation, media invoicing, and creative approval across all vendors used by the marketing team."
           ],
           "answer": 2,
           "why": "The integrated orchestrator unifies multi-channel variables into a rigorous econometric simulation model, ensuring closed-loop marketing ROI.",
@@ -3686,10 +3686,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When presenting a multi-million-dollar marketing campaign to the Board of Directors and CFO, what constitutes an unassailable executive defense?",
           "options": [
-            "Arguing that marketing is a creative art form that can never be measured with numbers.",
-            "Promising that every board member will receive a free company t-shirt.",
-            "Presenting a PowerPoint slide filled with colorful stock photos of smiling consumers.",
-            "Demonstrating rigorous unit economics (CLV:CAC >= 3:1), cash payback within 12 months, econometric adstock protection, working media discipline (>=80%), and verified viewability governance."
+            "Rigorous brand metrics (awareness above 90%), cash payback within 36 months, survey-based tracking protection, working media discipline (>=40%), and verified creative governance.",
+            "Rigorous unit economics (CLV:CAC >= 1:1), cash payback within 24 months, last-click attribution protection, working media discipline (>=50%), and verified viewability governance.",
+            "Rigorous reach metrics (GRPs above 500), cash payback within 12 months, agency award protection, working media discipline (>=80%), and verified creative governance.",
+            "Rigorous unit economics (CLV:CAC >= 3:1), cash payback within 12 months, adstock-based econometric protection, working media discipline (>=80%), and verified viewability governance."
           ],
           "answer": 3,
           "why": "Boardrooms require disciplined financial and econometric metrics linking marketing capital to incremental gross margin, payback velocity, and governance compliance.",
@@ -3741,10 +3741,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary economic catalyst drives technology and pharmaceutical firms toward international global marketing expansion?",
           "options": [
-            "The necessity of amortizing massive fixed research and development expenditures across global consumer populations to achieve sustainable unit cost economics.",
-            "The desire to pay higher international shipping tariffs to foreign governments.",
-            "International treaties mandating that all software be written in three time zones.",
-            "The requirement that all corporate CEOs visit every continent annually."
+            "The need to spread massive fixed R&D costs across global consumer populations to reach sustainable unit costs.",
+            "The need to avoid domestic price regulation by selling in countries where regulators set no limits on drug and device prices.",
+            "The need to exploit lower labor costs abroad by manufacturing locally in order to reach sustainable unit costs.",
+            "The need to follow domestic competitors that have already entered foreign markets in order to protect their market share."
           ],
           "answer": 0,
           "why": "High fixed development costs require global scale to dilute R&D burden across millions of consumers, driving down unit cost.",
@@ -3769,10 +3769,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial flaw of a purely Polycentric organizational orientation in multinational corporations?",
           "options": [
-            "It prevents the corporation from ever hiring local host-country citizens.",
-            "It is strictly prohibited under international maritime treaties.",
-            "It forces all foreign employees to wear home-country national costumes.",
-            "It causes massive operational and R&D cost duplication across autonomous national subsidiaries, destroying global purchasing scale and creating conflicting brand identities."
+            "It centralizes all decisions at headquarters, ignoring local tastes and creating products that fit no single national market well.",
+            "It applies home-market practices in every country, ignoring local rules and creating repeated conflicts with host governments.",
+            "It sells identical products worldwide, ignoring local preferences and creating uniform offerings that many national markets reject.",
+            "It duplicates operations and R&D across autonomous national subsidiaries, losing global purchasing scale and creating conflicting brand identities."
           ],
           "answer": 3,
           "why": "Polycentricity over-decentralizes operations, reinventing wheels in every country and sacrificing global procurement and manufacturing scale economies.",
@@ -3799,10 +3799,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Geert Hofstede's Cultural Dimensions, how should marketing communications be adapted when advertising in a high Uncertainty Avoidance (UAI) nation such as Germany or Japan?",
           "options": [
-            "By using completely vague poetry that never mentions what the product actually does.",
-            "By stating that the product might malfunction randomly for fun.",
-            "By providing explicit technical specifications, verified clinical research, structured warranties, and authoritative quality certifications to minimize perceived purchase risk.",
-            "By requiring all advertisements to be broadcast in complete silence."
+            "Emphasize prestige, status symbols, and executive endorsements to show the buyer's position in a steep social hierarchy.",
+            "Emphasize individual achievement, personal freedom, and unique self-expression to appeal to self-directed independent buyers.",
+            "Give explicit technical specifications, verified research, warranties, and certifications to reduce perceived risk.",
+            "Emphasize family harmony, group belonging, and community testimonials to appeal to collectively minded buyers."
           ],
           "answer": 2,
           "why": "High-UAI consumers feel acute anxiety regarding ambiguity; factual documentation, technical certifications, and warranties alleviate purchase risk.",
@@ -3827,10 +3827,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the multi-gate international market screening sieve, why does the presence of strict Capital Repatriation Controls severely penalize a country's attractiveness score?",
           "options": [
-            "Because capital controls require all business meetings to be held inside bank vaults.",
-            "Because capital controls legally prevent foreign corporations from transferring earned profits and dividends back to headquarters, trapping shareholder capital inside the host country.",
-            "Because capital controls make international travel completely illegal.",
-            "Because capital controls automatically convert all corporate inventory into paper postage stamps."
+            "Capital controls raise the host country's tariffs on foreign goods, trapping the firm's products inside customs warehouses at the border.",
+            "Capital controls legally prevent foreign firms from sending profits and dividends to headquarters, trapping shareholder capital inside the host country.",
+            "Capital controls limit the number of foreign staff a firm can employ, trapping its management plans inside the host country's labor rules.",
+            "Capital controls require foreign firms to sell products below cost, trapping their margins inside the host country's pricing rules."
           ],
           "answer": 1,
           "why": "Capital controls trap earned profits inside the host nation, preventing multinationals from converting earnings into home currency or distributing dividends to shareholders.",
@@ -3856,10 +3856,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the World Trade Organization (WTO) National Treatment Principle, what legal obligation is imposed on host member states?",
           "options": [
-            "Once foreign goods have cleared customs and paid standard tariffs, they must be treated identically to domestic goods without discriminatory internal taxes or regulations.",
-            "Host countries must provide free national healthcare to all foreign corporate executives.",
-            "All imported goods must be placed in national museums for 30 days before sale.",
-            "Host governments are required to purchase 50% of all foreign corporate inventory."
+            "Once foreign goods clear customs and pay standard tariffs, they must be treated like domestic goods, without discriminatory internal taxes or rules.",
+            "Foreign goods must receive the lowest tariff granted to any trading partner, without discriminatory duties at the border.",
+            "Foreign goods must be admitted without any tariff once they cross the border, without discriminatory customs rules of any kind.",
+            "Foreign goods must be given priority over domestic goods in public procurement, without discriminatory purchasing rules."
           ],
           "answer": 0,
           "why": "National Treatment prohibits internal discrimination (taxes, rules) against imported goods once they have entered the domestic market.",
@@ -3909,10 +3909,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial trade-off between International Licensing and Wholly-Owned Foreign Direct Investment (FDI)?",
           "options": [
-            "Licensing requires all foreign employees to work without monetary compensation.",
-            "Licensing requires minimal capital expenditure and carries low risk but sacrifices operational control and full profit capture; Wholly-Owned FDI provides absolute control and 100% profits but requires massive capital outlay and bears high financial and political risk.",
-            "Licensing is strictly prohibited by the United Nations for consumer goods.",
-            "Wholly-Owned FDI guarantees that the firm will never pay corporate taxes anywhere in the world."
+            "Licensing needs heavy capital and carries high political risk but gives full control and all profits; wholly-owned FDI needs little capital and gives up control and part of the profit to local partners.",
+            "Licensing needs little capital and carries low risk but gives up control and part of the profit; wholly-owned FDI gives full control and all profits but needs heavy capital and bears high financial and political risk.",
+            "Licensing needs moderate capital and gives full operational control with shared profits; wholly-owned FDI needs little capital and carries low political risk but passes the profit stream to the host country.",
+            "Licensing and wholly-owned FDI both give full control and all profits, but licensing needs heavy capital and bears high financial risk while FDI needs little capital and carries low political risk."
           ],
           "answer": 1,
           "why": "Licensing trades control and profit share for low capital risk; FDI provides total control and profit capture at the cost of high capital commitment and risk.",
@@ -3937,10 +3937,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core premise of Jan Johanson and Jan-Erik Vahlne's Uppsala Internationalization Model regarding foreign market expansion?",
           "options": [
-            "Firms must always launch television commercials in fifty countries simultaneously on their first day of business.",
-            "Firms can only expand into countries that share the exact same national flag colors.",
-            "Firms expand internationally in gradual, sequential stages—starting with sporadic exports to psychically close neighboring markets before establishing foreign subsidiaries as experiential learning accumulates.",
-            "Firms must sell 100% of their equity to foreign sovereign wealth funds before exporting."
+            "Firms enter many distant markets at once with large investments, then retreat from the least profitable ones as experience accumulates over time.",
+            "Firms begin with foreign subsidiaries in the most profitable markets, then add exports to nearby markets once their cash flow allows it.",
+            "Firms expand in gradual stages, starting with sporadic exports to psychically close markets before setting up foreign subsidiaries as experiential learning builds.",
+            "Firms expand according to market size, entering the largest economies first, then smaller psychically close markets as their budgets allow."
           ],
           "answer": 2,
           "why": "The Uppsala model shows firms manage the liability of foreignness through gradual incremental commitment, expanding first into psychically close nations.",
@@ -3966,10 +3966,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the 3C Partner Screening Framework for international joint ventures, why does a partner operating competing business entities outside the venture trigger a severe risk penalty?",
           "options": [
-            "Because antitrust laws mandate that all partners must wear identical suits.",
-            "Because having multiple businesses makes it impossible to file annual tax returns.",
-            "Because competing companies are required to share the same physical office telephone.",
-            "Because the partner faces a severe conflict of interest, risking the diversion of shared corporate opportunities, intellectual property, and sales to their independent operations."
+            "The partner faces high debt levels, risking the venture's access to financing, supplier credit, and working capital from lenders.",
+            "The partner faces cultural distance, risking misaligned communication styles, decision speeds, and management routines in the venture.",
+            "The partner faces regulatory scrutiny, risking venture approval delays, tariff reviews, and local ownership caps in the host country.",
+            "The partner faces a conflict of interest, risking diversion of shared opportunities, IP, and sales to its independent operations."
           ],
           "answer": 3,
           "why": "Parallel competing operations incentivize opportunism, trademark dilution, and IP siphoning, destroying joint venture trust.",
@@ -3996,10 +3996,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does high proprietary intellectual property (IP) sensitivity strongly disqualify International Licensing as an entry mode in cross-border strategy?",
           "options": [
-            "Because licensing transfers technical specifications and operational know-how to an independent foreign licensee, risking technology leakage or the creation of an entrenched future global competitor.",
-            "Because licensing requires that all patents be translated into Latin.",
-            "Because licensing automatically dissolves the parent company under corporate law.",
-            "Because foreign licensees are legally obligated to destroy all technology within 30 days."
+            "Licensing hands technical specifications and know-how to an independent licensee, risking technology leakage or an entrenched future global competitor.",
+            "Licensing requires heavy investment in foreign plants and equipment, risking stranded assets and write-offs if the licensee fails.",
+            "Licensing gives the licensee permanent ownership of the brand from the first day, risking loss of the trademark once the contract starts.",
+            "Licensing needs the host government to hold equity in the licensee, risking forced disclosure of the licensor's financial results."
           ],
           "answer": 0,
           "why": "Licensing exposes core trade secrets to a third party who may misappropriate know-how and become a direct competitor once the contract expires.",
@@ -4026,10 +4026,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial advantage of Cross-Border M&A over Greenfield Investment in international market entry?",
           "options": [
-            "M&A makes the acquiring company immune to currency exchange fluctuations.",
-            "Immediate speed-to-market on Day 1, acquiring pre-existing retail distribution, customer brand loyalty, and operating cash flow without waiting years for construction.",
-            "M&A allows corporations to operate without any executive management.",
-            "M&A guarantees that corporate legal disputes will never occur."
+            "Full control over plant design and company culture, building new operations to the firm's own standards without any integration problems.",
+            "Immediate speed to market on Day 1, acquiring existing distribution, brand loyalty, and operating cash flow without waiting years for construction.",
+            "Lower purchase cost, since the buyer pays only for land and equipment and avoids any control premium or goodwill over book value.",
+            "Lower political risk, since host governments welcome acquisitions more than they welcome new local jobs and new investment."
           ],
           "answer": 1,
           "why": "Acquisitions deliver instantaneous speed-to-market, providing immediate cash flow, customer base, and distribution access.",
@@ -4077,10 +4077,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core premise of 'Modular Glocalization' in modern international product strategy?",
           "options": [
-            "Creating a completely new corporate company name every two weeks.",
-            "Translating all product manuals exclusively into ancient hieroglyphics.",
-            "Standardizing the high-cost functional core technological platform across all countries to achieve scale economies, while adapting peripheral features and messaging to fit local market needs.",
-            "Forbidding foreign customers from modifying their home languages."
+            "Standardizing the peripheral features and messaging across countries for scale economies, while adapting the costly technology core to local needs.",
+            "Adapting the whole product to each country for the best local fit, while standardizing only the corporate logo and brand name worldwide.",
+            "Standardizing the costly functional technology core across countries for scale economies, while adapting peripheral features and messaging to local needs.",
+            "Standardizing every product attribute across countries for scale economies, while adapting only prices and payment terms to local conditions."
           ],
           "answer": 2,
           "why": "Modular glocalization captures global scale through a standardized core technological platform while allowing local cultural adaptation of outer attributes.",
@@ -4105,10 +4105,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Warren Keegan's Global Product-Promotion Matrix, what defines Strategy 3: Product Extension, Communication Adaptation?",
           "options": [
-            "Selling products only to foreign government officials.",
-            "Maintaining the identical physical product while tailoring advertising narratives and positioning to the host nation's unique cultural perceptions and use-cases.",
-            "Changing the product every day while keeping the advertising in secret Morse code.",
-            "Shipping empty product boxes to foreign markets."
+            "Adapting the physical product to local needs while keeping the same worldwide advertising and positioning message in every market.",
+            "Keeping the same physical product while tailoring advertising and positioning to the host nation's cultural perceptions and use-cases.",
+            "Adapting both the physical product and the communication to each local market's needs and cultural context in every country.",
+            "Keeping both the same physical product and the same communication in every country, with no change for any local market."
           ],
           "answer": 1,
           "why": "Strategy 3 keeps the physical product standardized but adapts the promotional narrative to fit local cultural use-cases.",
@@ -4132,10 +4132,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary economic catalyst creates Gray Market Parallel Imports in international commerce?",
           "options": [
-            "Large international price differentials between countries that exceed cross-border shipping, tariff, and transaction costs, allowing unauthorized traders to profit from price arbitrage.",
-            "A shortage of cardboard boxes at international manufacturing facilities.",
-            "Strict international treaties requiring all products to be painted gray.",
-            "Consumer demands for counterfeit software on public television."
+            "Large price differences between countries that exceed shipping, tariff, and transaction costs, letting unauthorized traders profit from arbitrage.",
+            "Strict quality rules in the importing country that exceed manufacturing costs, letting unauthorized traders profit from lower standards.",
+            "Currency devaluation in the importing country that exceeds local inflation, letting authorized dealers profit from stockpiling stock.",
+            "Product shortages in the importing country that exceed supply forecasts, letting unauthorized traders profit from local scarcity."
           ],
           "answer": 0,
           "why": "Gray markets arise when manufacturers maintain large cross-border price disparities, enabling arbitrageurs to buy low in one market and undercut authorized dealers in another.",
@@ -4160,10 +4160,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical objective of testing food and pharmaceutical packaging under WHO Zone IV climatic conditions (30°C and 75% relative humidity)?",
           "options": [
-            "To test whether the packaging can survive inside an active volcanic crater.",
-            "To measure how fast packaging burns when exposed to laser beams.",
-            "To ensure that packages float on ocean water indefinitely.",
-            "To verify accelerated shelf-life stability and moisture barrier integrity under hot, humid tropical environments, preventing premature chemical breakdown or spoilage during international transit."
+            "To verify cold-chain stability and freeze resistance in sub-zero conditions, preventing cracking or leakage during winter transit shipments.",
+            "To verify drop resistance and stacking strength under heavy pallet loads, preventing crushing or tearing during international transit.",
+            "To verify resistance to altitude pressure changes in air cargo holds, preventing swelling or leakage during long air transit journeys.",
+            "To verify accelerated shelf-life stability and moisture barrier integrity in hot, humid tropical conditions, preventing premature breakdown or spoilage in transit."
           ],
           "answer": 3,
           "why": "WHO Zone IV simulates extreme hot, humid tropical climates, verifying moisture barrier efficacy to prevent chemical and microbial degradation.",
@@ -4188,10 +4188,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic vulnerability of a pure 'Branded House' (monolithic) global brand architecture?",
           "options": [
-            "It is legally prohibited under international trademark registration conventions.",
-            "It makes it impossible to advertise on digital social media platforms.",
-            "High reputation contagion risk: if a single product suffers a catastrophic recall, scandal, or safety failure, the negative publicity spills over to contaminate all other products bearing the global masterbrand name.",
-            "It requires the corporation to change its corporate logo every twenty-four hours."
+            "High localization cost: each country needs its own brand name and packaging, so the global masterbrand loses its scale economies across all of its markets.",
+            "High cannibalization risk: products under the same name compete for the same buyers, so the masterbrand loses its share in every product category it enters.",
+            "High reputation contagion risk: if one product suffers a recall, scandal, or safety failure, the negative publicity spills over to every product under the global masterbrand.",
+            "High legal registration risk: the masterbrand name must be registered in each product category and country, so brand protection becomes very costly."
           ],
           "answer": 2,
           "why": "In a Branded House, all products share a single masterbrand name, leaving the entire portfolio vulnerable to brand contagion if one product fails.",
@@ -4249,10 +4249,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational cause of International Price Escalation in cross-border trade?",
           "options": [
-            "International legal rules requiring all exports to be printed in pure gold ink.",
-            "Secret international banking fees that automatically double product prices every month.",
-            "Foreign consumers demanding to pay higher prices for fun.",
-            "The compounding of sequential percentage markups by international freight carriers, customs tariffs on CIF value, importer wholesalers, and retail distributors upon an expanding cost base."
+            "Sequential fixed fees added once to the original price by freight carriers, importers, wholesalers, and retailers, with no tariff effect on the cost base.",
+            "Currency swings on the exporter's invoice, which pass the exchange loss directly to consumers through retailers at the same percentage rate throughout.",
+            "Higher production costs abroad that exporters charge back through a single added premium on the invoice when the goods reach the port.",
+            "Sequential percentage markups compounding on an expanding cost base from freight carriers, customs tariffs on CIF value, importers, wholesalers, and retailers."
           ],
           "answer": 3,
           "why": "Price escalation is caused by the cumulative compounding of freight, tariffs, importer margins, retailer markups, and VAT taxes across cross-border channels.",
@@ -4279,10 +4279,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under WTO Article VI regulations, what three legal criteria must be proven before an importing nation can impose punitive Anti-Dumping Duties on foreign goods?",
           "options": [
-            "Empirical proof of dumping (export price below normal value), proof of material economic injury to domestic industry, and a direct causal link between the dumped goods and the injury.",
-            "The foreign company must refuse to hire local television actors.",
-            "The imported goods must be shipped during a leap year.",
-            "The foreign country must have a larger geographic land area than the importing nation."
+            "Proof of dumping (export price below normal value), material injury to the domestic industry, and a causal link between the dumped goods and the injury.",
+            "Proof of dumping (export price below normal value), material injury to domestic consumers, and a link between the dumping and rising import volumes.",
+            "Proof of government subsidies to the exporter, material injury to the domestic industry, and a causal link between the subsidies and the injury.",
+            "Proof of dumping (export price below domestic production cost), a drop in importer profits, and a causal link between the dumping and those profits."
           ],
           "answer": 0,
           "why": "WTO law requires proving dumping below normal value, material economic injury to domestic industry, and a direct causal nexus.",
@@ -4311,10 +4311,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core mandate of the OECD 'Arm's-Length Principle' in international corporate transfer pricing?",
           "options": [
-            "All intra-company products must be sold at exactly zero dollars.",
-            "Intra-group transactions between related corporate entities must be priced as if they had occurred between completely independent, unrelated commercial enterprises operating under open-market conditions.",
-            "Corporate executives must sit at least six feet apart during annual general meetings.",
-            "Multinational corporations are legally prohibited from owning foreign bank accounts."
+            "Transactions between related group entities must be priced at full cost plus a fixed markup set by the parent company's head office.",
+            "Transactions between related group entities must be priced as if they were between independent, unrelated firms under open-market conditions.",
+            "Transactions between related group entities must be priced at the lowest rate that any subsidiary charges to buyers outside the group.",
+            "Transactions between related group entities must be priced equally in every country, so that exchange rate effects are avoided."
           ],
           "answer": 1,
           "why": "The Arm's-Length Principle requires related-party transactions to mirror open-market commercial pricing between independent firms.",
@@ -4342,10 +4342,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference in risk profile between a Forward Exchange Contract and a Currency Option when hedging international transaction exposure?",
           "options": [
-            "Forward contracts require paying 100% of the contract value in physical gold bullion.",
-            "Forward contracts are only legal for agricultural grain products.",
-            "A Forward Contract obligates the firm to exchange currency at a fixed rate (locking in cash flow but forfeiting upside); a Currency Option grants the right without obligation, capping downside losses while allowing the firm to profit if the foreign currency appreciates.",
-            "Currency options guarantee that foreign exchange rates will never fluctuate."
+            "A forward gives a right without obligation at a fixed rate, capping downside while keeping gains; an option obliges the firm to exchange, locking in cash flow but forfeiting upside.",
+            "A forward requires an upfront premium and caps downside while keeping upside gains; an option costs nothing at the start and locks in cash flow but forfeits upside.",
+            "A forward obliges the firm to exchange at a fixed rate, locking in cash flow but forfeiting upside; an option gives a right without obligation, capping downside while keeping gains.",
+            "A forward removes all counterparty risk by trading on an exchange and locking the rate; an option carries credit risk since it is private and caps downside only."
           ],
           "answer": 2,
           "why": "Forwards lock in fixed exchange rates with zero flexibility; options provide downside protection while preserving upside participation.",
@@ -4372,10 +4372,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In international business, what is the defining operational characteristic of a 'Counterpurchase' trade agreement?",
           "options": [
-            "A contract where the buyer pays in counterfeit currency.",
-            "An agreement where the exporter buys back its own products immediately.",
-            "A treaty requiring that all international trade be conducted without written contracts.",
-            "Two separate, parallel contracts where the exporter receives cash for its goods, but legally commits to spend a specified percentage of that revenue purchasing local goods from the host country over a defined timeframe."
+            "Two parallel contracts: the exporter is paid in local goods only, and commits to resell them in third countries for cash within a stated period.",
+            "One contract in which the exporter delivers equipment and is repaid with the products that the equipment later produces over several years.",
+            "One contract in which goods are swapped for an equal value of goods, with no cash exchanged between the exporter and the buyer.",
+            "Two parallel contracts: the exporter is paid cash for its goods, but commits to spend a stated percentage of that revenue buying local goods from the host country."
           ],
           "answer": 3,
           "why": "Counterpurchase involves parallel contracts where export revenue is partially or fully recycled into purchasing domestic host goods.",
@@ -4426,10 +4426,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of unifying cross-border strategy into a 5-Tier Global Expansion Command Platform?",
           "options": [
-            "To coordinate executive positioning, cultural market screening, entry mode selection, product adaptation, and pricing/FX risk hedging into an interconnected, closed-loop decision system.",
-            "To require five separate passports for international airline travel.",
-            "To legally avoid all customs tariffs in democratic nations.",
-            "To force all foreign employees to speak the home-country language."
+            "To coordinate positioning, cultural screening, entry mode, product adaptation, and pricing and FX hedging in one closed-loop system.",
+            "To centralize all subsidiary decisions at headquarters and coordinate reporting, budgeting, staffing, and approvals in one command structure.",
+            "To standardize one product and brand worldwide and coordinate manufacturing, logistics, distribution, and pricing in one global plan.",
+            "To rank countries by market size alone and coordinate sales forecasts, quotas, incentives, and targets in one common scoreboard."
           ],
           "answer": 0,
           "why": "The 5-tier architecture unifies strategy, cultural screening, entry modes, product adaptation, and financial risk hedging into a single synchronized operational framework.",
@@ -4454,10 +4454,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Foreign Corrupt Practices Act (FCPA) and UK Bribery Act, what legal liability is imposed on multinational corporate executives?",
           "options": [
-            "A mandatory requirement that all corporate executives play golf with foreign ambassadors.",
-            "An exemption from paying any international customs tariffs.",
-            "A legal obligation to write all commercial contracts in three languages.",
-            "Executives and the corporation face extraterritorial criminal and civil liability for bribing foreign officials, including through third-party intermediaries, even where the bribe is customary locally."
+            "Executives are liable only for bribes paid directly by the company, and local custom is accepted as a legal defense against any charges of bribery.",
+            "Executives and the company face liability only inside the home country, and payments made through foreign agents or intermediaries are excluded from it.",
+            "Executives face civil fines only and no criminal charges, and small facilitation payments to officials are excluded from any form of liability.",
+            "Executives and the company face extraterritorial criminal and civil liability for bribing foreign officials, even where bribes are customary."
           ],
           "answer": 3,
           "why": "The FCPA enforces extraterritorial criminal liability for bribing foreign officials to secure or retain international business.",
@@ -4482,10 +4482,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In international trade logistics, what is the primary operational advantage of utilizing a Free Trade Zone (FTZ) or Bonded Warehouse for imported components?",
           "options": [
-            "FTZs automatically convert all physical components into software files.",
-            "FTZs allow corporations to ignore all labor safety regulations.",
-            "Customs tariffs and duties on imported materials are deferred, reduced, or eliminated entirely if finished goods are re-exported to third-party international markets.",
-            "FTZs make products weigh fifty percent less for shipping."
+            "Domestic sales taxes on imported materials are removed, but customs duties remain fully payable when the materials arrive at the port.",
+            "Import quotas on materials are lifted, and duties apply equally whether the finished goods are re-exported or sold locally.",
+            "Duties on imported materials are deferred, reduced, or eliminated if finished goods are re-exported to third-country markets.",
+            "Customs inspections on imported materials are skipped entirely, and duties are paid by the host government instead of the company."
           ],
           "answer": 2,
           "why": "Free Trade Zones allow companies to assemble and process goods duty-free, paying tariffs only if and when goods enter the domestic host market.",
@@ -4511,10 +4511,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic value of deploying an integrated Python orchestrator to evaluate cross-border international market expansion?",
           "options": [
-            "It translates corporate logos into international nautical flags.",
-            "It links macroeconomic screening, cultural fit, entry mode decision logic, Keegan adaptation strategies, and FX-hedged 5-year NPV into a closed-loop empirical decision model.",
-            "It automatically buys airline tickets for all corporate employees.",
-            "It eliminates the need for any corporate accounting."
+            "It links social media trends, brand awareness surveys, distributor interviews, pricing tests, and a one-year revenue forecast in one reporting dashboard.",
+            "It links macroeconomic screening, cultural fit, entry mode logic, Keegan adaptation strategies, and an FX-hedged 5-year NPV in one closed-loop decision model.",
+            "It replaces executive judgment by ranking markets on GDP alone, with a single exchange rate forecast feeding a one-year scoring model.",
+            "It automates customs filings, tariff classification, freight booking, and supplier invoicing for each country in one logistics model."
           ],
           "answer": 1,
           "why": "The integrated orchestrator provides an empirical decision framework connecting country screening, entry mode selection, product adaptation, and currency risk management.",
@@ -4540,10 +4540,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When presenting an international market expansion dossier to the Board of Directors and CFO, what constitutes an unassailable executive defense?",
           "options": [
-            "Demonstrating rigorous five-year NPV modeling, FX hedging coverage, OECD transfer-pricing documentation, FCPA anti-bribery compliance, and a closed gray-market arbitrage corridor.",
-            "Presenting photos of foreign tourist attractions.",
-            "Promising that foreign exchange rates will never fluctuate.",
-            "Asserting that corporate compliance laws do not apply outside the home country."
+            "Rigorous five-year NPV modeling, FX hedging coverage, OECD transfer-pricing documentation, FCPA anti-bribery compliance, and a closed gray-market arbitrage corridor.",
+            "Rigorous one-year revenue modeling, FX hedging coverage, internal transfer-pricing memos, FCPA anti-bribery compliance, and a closed gray-market arbitrage corridor.",
+            "Rigorous five-year NPV modeling, FX hedging coverage, OECD transfer-pricing documentation, local agents' assurances on gifts, and a closed gray-market corridor.",
+            "Rigorous five-year NPV modeling, natural currency exposure, OECD transfer-pricing documentation, FCPA anti-bribery compliance, and open parallel import channels."
           ],
           "answer": 0,
           "why": "Boardrooms require rigorous financial NPV modeling, currency hedging protection, transfer pricing compliance, and anti-corruption certification.",
@@ -4592,10 +4592,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational cause of the 'Point-Solution Silo Tax' in enterprise marketing organizations?",
           "options": [
-            "The mandatory legal requirement that all customer records be physically printed on archival paper.",
-            "Maintaining dozens of disconnected departmental tools that each possess isolated database schemas, proprietary cookies, and uncoordinated customer identifiers.",
-            "Failing to purchase at least twenty new marketing SaaS tools every fiscal quarter.",
-            "Using desktop computers instead of exclusively using mobile tablets for executive board presentations."
+            "Maintaining one centralized platform used by every department, with a single database schema that locks all teams into one vendor.",
+            "Maintaining dozens of disconnected departmental tools, each with isolated database schemas, proprietary cookies, and uncoordinated customer identifiers.",
+            "Hiring too many specialist agencies, each billing separately for creative production, media buying, and reporting services.",
+            "Storing customer data in cloud servers abroad, each subject to separate data residency fees and local tax rules."
           ],
           "answer": 1,
           "why": "Disconnected departmental databases with incompatible schemas and cookies prevent the creation of a single source of customer truth, causing massive ad waste and fragmented experiences.",
@@ -4619,10 +4619,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Grand Central Dispatch analogy, what is the equivalent function of stitching the subway token, cafe card hash, and mobile app ID into a single manifest?",
           "options": [
-            "Deleting all passenger travel records to comply with international train schedule formatting standards.",
-            "Canceling all regional train departures whenever a passenger purchases an espresso at a kiosk.",
-            "Deterministic identity resolution within a Customer Data Platform unifying fragmented cookie, device, and email identifiers into a persistent Customer 360 profile.",
-            "Forcing every subway commuter to purchase three identical plastic transit cards."
+            "Probabilistic audience modeling in a DMP, grouping anonymous cookies into lookalike segments for third-party ad targeting.",
+            "Data warehouse normalization, converting separate departmental tables into a single schema for finance reporting teams.",
+            "Deterministic identity resolution in a CDP, unifying fragmented cookie, device, and email identifiers into a persistent Customer 360 profile.",
+            "Consent management in a CMP, collecting opt-in preferences from each channel into a persistent privacy register."
           ],
           "answer": 2,
           "why": "Identity resolution joins disparate anonymous and authenticated identifiers across channels into a single unified record, preventing fragmented customer interactions.",
@@ -4647,10 +4647,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical privacy and technical advantage of using a Data Clean Room with Private Set Intersection over traditional CSV list sharing?",
           "options": [
-            "It converts all customer records into uncompressed audio files that can only be played on vinyl records.",
-            "It guarantees that neither company has to pay cloud hosting fees to Amazon Web Services.",
-            "It automatically deletes both companies' customer databases to eliminate corporate liability.",
-            "It allows two commercial entities to match customer cohorts cryptographically using irreversible SHA-256 hashes without either party ever exposing or transferring raw personally identifiable information (PII)."
+            "It lets two firms exchange full customer lists through an encrypted channel so both can match the raw personal data directly.",
+            "It lets one firm upload raw customer data to the other's servers, where it is deleted after the campaign has ended.",
+            "It lets two firms merge their databases permanently into one shared record, with consent obtained from each individual.",
+            "It lets two firms match customer cohorts cryptographically using irreversible hashes without either party exposing or transferring raw PII."
           ],
           "answer": 3,
           "why": "Data Clean Rooms allow secure cryptographic intersection of datasets without sharing plain-text emails, phone numbers, or PII, preserving strict regulatory compliance.",
@@ -4674,10 +4674,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an enterprise Customer Data Platform (CDP) resolves an anonymous mobile app visitor to an authenticated paying customer, what primary marketing efficiency is triggered?",
           "options": [
-            "Automated audience suppression that immediately halts wasteful paid retargeting ads and reallocates capital to post-purchase retention workflows.",
-            "Increasing the price of the product by 500% to punish the customer for browsing anonymously.",
-            "Deleting the customer's mobile application to free up corporate cloud storage.",
-            "Dispatching a postal letter requesting that the user stop using smartphones."
+            "Automated audience suppression that halts wasteful paid retargeting ads and reallocates spend to post-purchase retention workflows.",
+            "Automated audience expansion that scales paid retargeting ads and reallocates spend from retention workflows to acquisition.",
+            "Automated price personalization that raises offers shown to known customers and reallocates spend to premium retargeting.",
+            "Automated survey requests that gather feedback from the new customer and reallocate spend to paid awareness campaigns."
           ],
           "answer": 0,
           "why": "Audience suppression halts unnecessary acquisition ads for already-converted customers, immediately cutting wasted ad spend and improving customer satisfaction.",
@@ -4704,10 +4704,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must deterministic identity matching adhere to a 100% confidence threshold before merging sensitive financial or customer account records?",
           "options": [
-            "Because internet routers cannot transmit data packets if confidence is below ninety-nine percent.",
-            "Because merging accounts probabilistically risks exposing confidential customer transactions, personal data, and credit balances to unrelated third parties, causing severe legal and regulatory liability.",
-            "Because database servers automatically shut down when probabilistic algorithms are executed.",
-            "Because marketing teams prefer guessing customer names rather than using verified emails."
+            "Deterministic matching on partial data produces duplicate profiles, so account balances are counted twice in revenue reporting and finance dashboards.",
+            "Probabilistic merging of sensitive financial records risks exposing transactions, personal data, and balances to unrelated people, creating legal liability.",
+            "Matching below full confidence slows the CDP's processing speed, so customer segments take longer to refresh across all of the marketing channels.",
+            "Regulators require all customer records to be merged, so any unmerged record breaches the data retention rules that apply to financial firms."
           ],
           "answer": 1,
           "why": "Zero-error deterministic matching prevents catastrophic data leakage and account compromise by ensuring only verified primary keys unify customer records.",
@@ -4757,10 +4757,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an enterprise that relies exclusively on paid search face long-term customer acquisition cost (CAC) expansion?",
           "options": [
-            "Because paid search requires hiring twelve external attorneys for every published keyword.",
-            "Because customers refuse to click on paid ads if they are using Wi-Fi connections.",
-            "Because paid search operates as a linear variable tollbooth with zero equity compounding, where annual CPC inflation and competitor bidding scale costs in lockstep with revenue growth.",
-            "Because search engines automatically delete all paid advertisements after sixty days."
+            "Paid search builds domain authority slowly, so traffic compounds only after years while CPC deflation lowers acquisition cost for the brand.",
+            "Paid search is limited by branded keyword volume, so new customer reach shrinks as the brand matures and the audience becomes saturated.",
+            "Paid search is a linear variable tollbooth with no equity compounding: CPC inflation and competitor bidding raise costs in step with revenue growth.",
+            "Paid search needs large creative budgets, so acquisition cost rises with each new ad format and campaign type that the firm introduces."
           ],
           "answer": 2,
           "why": "Paid search provides no persistent domain authority or traffic equity; traffic ceases when spending stops, and CPC inflation compounds acquisition costs.",
@@ -4786,10 +4786,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical consequence of having millions of uncanonicalized faceted navigation filter URLs on an enterprise e-commerce website?",
           "options": [
-            "Search engines fine the corporation $50 per duplicate URL under the Digital Millennium Copyright Act.",
-            "Googlebot exhausts its allocated daily crawl budget indexing duplicate parameter variations, leaving new commercial product pages unindexed for months.",
-            "Web hosting servers permanently delete the product catalog database.",
-            "Credit card processing networks automatically decline all customer purchases."
+            "Googlebot penalizes the whole domain with a manual action for duplicate content, removing all product pages from search results.",
+            "Googlebot spends its limited daily crawl budget on duplicate parameter variants, leaving new product pages unindexed for months.",
+            "Googlebot treats each filter URL as a new site, splitting domain authority equally among them and lowering all page rankings.",
+            "Googlebot stops rendering JavaScript on the site, leaving product descriptions blank in the index for most commercial pages."
           ],
           "answer": 1,
           "why": "Unchecked faceted URLs squander Googlebot's finite crawl budget on low-value duplicates, preventing the discovery and indexation of revenue-generating product pages.",
@@ -4816,10 +4816,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Google Ads Generalized Second Price (GSP) auctions, how does an advertiser with an elite Quality Score of 10 achieve higher position while paying less than a higher bidder?",
           "options": [
-            "Because Ad Rank equals Bid multiplied by Quality Score, allowing high-quality ads to achieve higher total Ad Rank and pay an effective CPC calculated by dividing the lower competitor's rank by 10.",
-            "Because Google waives all ad fees for companies whose corporate headquarters are located in California.",
-            "Because Quality Score acts as an exemption from sales tax in European Union nations.",
-            "Because search algorithms automatically penalize any company that bids more than twenty dollars."
+            "Ad Rank equals Bid × Quality Score, so a high-quality ad earns a higher rank and pays a CPC based on the competitor's rank divided by its own Quality Score.",
+            "Ad Rank equals Bid + Quality Score, so a high-quality ad earns a higher rank and pays the full bid amount of the competitor placed below it.",
+            "Ad Rank equals Quality Score alone, so a high-quality ad earns a higher rank and pays a flat CPC set by Google's published floor price.",
+            "Ad Rank equals Bid ÷ Quality Score, so a high-quality ad earns a higher rank and pays a CPC based on its own bid amount."
           ],
           "answer": 0,
           "why": "Ad Rank determines placement via Bid x Quality Score, and the GSP pricing formula calculates actual CPC by dividing the competitor below's Ad Rank by your own Quality Score.",
@@ -4873,10 +4873,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is deploying a website redesign with pure client-side JavaScript and no Server-Side Rendering (SSR) extremely hazardous to organic search equity?",
           "options": [
-            "Because client-side JavaScript is illegal under United States trade law.",
-            "Because computers manufactured prior to 2018 cannot display JavaScript code.",
-            "Because search engine crawlers encounter rendering queue delays and timeouts when executing complex JavaScript, causing pages to be indexed as blank screens and dropped from rankings.",
-            "Because Google requires that all corporate websites be authored exclusively in plain text ASCII format."
+            "Crawlers cannot read JavaScript at all, so the site is excluded from the index and removed from search results entirely.",
+            "Crawlers penalize JavaScript sites with slower ranking signals, so rankings drop through a permanent site speed penalty.",
+            "Crawlers face rendering delays and timeouts on complex JavaScript, so pages may be indexed as blank and dropped from rankings.",
+            "Crawlers ignore internal links created by JavaScript, so only the home page is indexed and product pages are orphaned."
           ],
           "answer": 2,
           "why": "Heavy client-side rendering introduces rendering queue delays and execution timeouts for search crawlers, resulting in partial or failed indexation of commercial content.",
@@ -4925,10 +4925,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between a legacy Social Graph and a modern Algorithmic Interest Graph in social media distribution?",
           "options": [
-            "An interest graph automatically charges users fifty dollars for every video they view.",
-            "A social graph is exclusively used by government postal services.",
-            "A social graph only functions on desktop computers, while an interest graph requires television broadcast signals.",
-            "A social graph distributes content based on pre-established follower connections, whereas an interest graph distributes content algorithmically based on real-time content engagement telemetry and topic relevance."
+            "A social graph distributes content algorithmically by real-time engagement and topic relevance; an interest graph distributes it by existing follower connections.",
+            "A social graph distributes content by chronological posting order to followers; an interest graph distributes it by paid promotion budgets of advertisers.",
+            "A social graph distributes content by the geographic location of users; an interest graph distributes it by account verification status and follower count.",
+            "A social graph distributes content by existing follower connections; an interest graph distributes it algorithmically by real-time engagement and topic relevance."
           ],
           "answer": 3,
           "why": "Interest graphs decouple reach from follower count, distributing content to users who demonstrate behavioral interest in the topic regardless of follower connections.",
@@ -4953,10 +4953,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the attention exchange model, why does a direct social share carry significantly higher algorithmic weight than a simple like?",
           "options": [
-            "Because sharing requires personal social capital investment and explicitly signals extraordinary content value, triggering exponential multi-user distribution loops.",
-            "Because social media platforms charge advertisers twenty cents for every like.",
-            "Because liking a post automatically disconnects the user's internet browser.",
-            "Because shares can only be executed by verified government accounts."
+            "Sharing costs personal social capital and signals strong content value, triggering multiplying multi-user distribution loops.",
+            "Sharing takes more clicks than liking, and the algorithm rewards that effort rather than any signal about content value.",
+            "Shares are counted from verified accounts only, and the algorithm weights them by follower size rather than by user intent.",
+            "Shares are easier to detect than likes, and the algorithm trusts them because bots rarely perform that particular action."
           ],
           "answer": 0,
           "why": "Direct shares represent high-intent endorsement and active distribution into external networks, making them the strongest signal of content virality.",
@@ -4980,10 +4980,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical condition must be satisfied for a product to achieve self-sustaining viral growth without paid customer acquisition?",
           "options": [
-            "The company must have at least ten million followers on TikTok.",
-            "The Viral Coefficient K must be strictly greater than 1.0 (K > 1.0), meaning each active user brings in more than one new converting user on average.",
-            "The Viral Coefficient K must equal exactly zero.",
-            "The company must purchase at least one Super Bowl television commercial."
+            "The Viral Coefficient K must equal 0.5, meaning each active user brings in half a new converting user on average.",
+            "The Viral Coefficient K must exceed 1.0, meaning each active user brings in more than one new converting user on average.",
+            "The Viral Coefficient K must exceed 10.0, meaning each active user brings in ten new converting users on average.",
+            "The Viral Cycle Time must exceed 30 days, meaning each user invites new users only after a full month has passed."
           ],
           "answer": 1,
           "why": "When K > 1.0, each user cohort branches into an exponentially larger successor cohort, creating compounding organic growth without paid media.",
@@ -5009,10 +5009,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a decentralized fleet of micro-influencers consistently achieve higher ROAS and lower eCPA than celebrity influencers?",
           "options": [
-            "Because social media algorithms permanently delete any video featuring a celebrity.",
-            "Because micro-influencers are exempt from paying taxes to local governments.",
-            "Because micro-influencers possess deeper community trust, higher authentic engagement rates (3-5% vs <1%), and lower creator fees per conversion.",
-            "Because celebrity influencers refuse to accept wire transfers."
+            "Micro-influencers have broader national reach, higher video view counts (30-50% vs 10%), and lower creator fees per post published.",
+            "Micro-influencers have stricter contract terms, higher content approval rates (90% vs 50%), and lower regulatory risk per post published.",
+            "Micro-influencers have deeper community trust, higher authentic engagement (3-5% vs under 1%), and lower creator fees per conversion.",
+            "Micro-influencers have larger follower counts, higher organic reach (20-30% vs 5%), and lower platform fees per impression served."
           ],
           "answer": 2,
           "why": "Micro-influencers command higher trust and audience engagement in specific niches, yielding substantially higher click-through and conversion rates at lower cost.",
@@ -5038,10 +5038,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Federal Trade Commission (FTC) guidelines, what constitutes an illegal and deceptive influencer commercial disclosure?",
           "options": [
-            "Placing a clear and conspicuous '#ad' label in the first line of the video caption.",
-            "Using the platform's official 'Paid Partnership with Brand' sponsorship tag.",
-            "Verbally stating that the video is sponsored within the first five seconds of audio.",
-            "Burying an ambiguous tag like '#collab' or '#partner' inside a block of twenty hashtags below the 'See More' truncation line where users cannot see it without clicking."
+            "Placing a clear '#ad' tag in the first line of the caption, before the 'See More' cut-off, in a readable size and plain wording.",
+            "Stating the sponsorship in the video's audio and in on-screen text, close to the first mention of the sponsored product.",
+            "Using the platform's built-in paid partnership label on the post, alongside a clear '#sponsored' tag in the opening caption line.",
+            "Burying an ambiguous tag like '#collab' or '#partner' among many hashtags below the 'See More' cut-off, where users cannot see it without clicking."
           ],
           "answer": 3,
           "why": "FTC rules mandate that commercial disclosures must be unavoidable, clear, conspicuous, and placed above the fold before any interaction is required.",
@@ -5091,10 +5091,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is last-touch attribution fundamentally flawed when evaluating branded search advertising campaigns for established corporations?",
           "options": [
-            "Because it credits 100% of sales to the final branded click, ignoring the fact that over 65% of those consumers were already committed to buying and would have clicked the free organic search result anyway.",
-            "Because search engines deliberately tamper with conversion tracking pixels on weekends.",
-            "Because last-touch attribution cannot calculate multiplication formulas.",
-            "Because branded search advertising is illegal for Fortune 500 corporations."
+            "It credits 100% of sales to the final branded click, ignoring that most of those consumers were already committed and would have clicked the organic result anyway.",
+            "It credits sales to the first click only, ignoring that most branded clicks come from consumers who found the brand earlier through paid ads.",
+            "It splits credit equally across branded and non-branded clicks, ignoring that branded clicks cost much more than organic clicks do.",
+            "It credits sales to branded clicks at half value, ignoring that branded clicks reach new customers who had never heard of the brand."
           ],
           "answer": 0,
           "why": "Last-touch models mistake demand harvesting for demand creation, ignoring organic search cannibalization and inflating apparent performance.",
@@ -5121,10 +5121,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In customer retention analytics, why are telemetry leading indicators superior to lagging contract renewal metrics?",
           "options": [
-            "Because customer success teams are legally barred from contacting customers during renewal windows.",
-            "Because lagging metrics can only be calculated using paper ledger books.",
-            "Because leading indicators are exempt from federal data privacy regulations.",
-            "Because leading indicators detect behavioral disengagement and product abandonment weeks before contract expiration, enabling proactive operational intervention before churn becomes irreversible."
+            "Leading indicators are audited financial records, so they are more reliable than renewal metrics that depend on customer surveys alone.",
+            "Leading indicators predict competitor pricing weeks before contract expiration, allowing a price match before the customer asks for one.",
+            "Leading indicators measure contract value growth, so they show account expansion earlier than lagging renewal dates can reveal.",
+            "Leading indicators detect disengagement and product abandonment weeks before contract expiration, allowing intervention before churn becomes irreversible."
           ],
           "answer": 3,
           "why": "Leading indicators reveal decaying customer engagement while there is still time to diagnose product friction and salvage the account relationship.",
@@ -5150,10 +5150,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary scientific purpose of running a Matched-Market Geo-Lift experiment rather than relying on digital tracking cookies?",
           "options": [
-            "Because geographic maps are more visually appealing than tabular spreadsheets in boardroom meetings.",
-            "Because federal law mandates that television advertisements only be broadcast in three cities simultaneously.",
-            "To establish genuine causal incrementality by isolating net new sales generated by marketing from baseline organic demand through randomized geographic control groups.",
-            "To avoid paying internet service providers for broadband connection bandwidth."
+            "To measure total attributed sales by tracking each user across regions using device identifiers and last-click credit.",
+            "To measure brand awareness by surveying consumers in test cities against national benchmarks of recall and favorability.",
+            "To establish causal incrementality by isolating net new sales from baseline organic demand using randomized geographic control groups.",
+            "To forecast seasonal demand by comparing historical sales across the regions with the highest and lowest advertising spend."
           ],
           "answer": 2,
           "why": "Matched-market tests isolate true causal incremental revenue from background macroeconomic and organic trends without relying on fragile tracking cookies.",
@@ -5178,10 +5178,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does an asymptotic retention plateau indicate in a triangular cohort retention grid?",
           "options": [
-            "It proves that the marketing department has run out of advertising budget.",
-            "It indicates that customer retention decay has flattened out, leaving a stable core of loyal, perpetual customers who generate recurring revenue with near-zero ongoing acquisition cost.",
-            "It means that all customers have canceled their subscriptions simultaneously.",
-            "It is a database error indicating that customer records must be deleted."
+            "Retention decay is accelerating, leaving a shrinking core of customers who generate declining revenue at a high ongoing retention cost.",
+            "Retention decay has flattened, leaving a stable core of loyal customers who generate recurring revenue with near-zero ongoing acquisition cost.",
+            "Retention is complete in every cohort, leaving every acquired customer active and generating recurring revenue with zero marketing spend.",
+            "The grid has too little data, leaving the cohorts too young to show any pattern in retention or in recurring revenue per customer."
           ],
           "answer": 1,
           "why": "A retention plateau proves that product-market fit has been achieved and that a stable percentage of users remain active indefinitely, driving compounding customer lifetime value.",
@@ -5207,10 +5207,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an experiment exhibiting a Sample Ratio Mismatch (SRM) considered fundamentally invalid regardless of its reported p-value?",
           "options": [
-            "Because an SRM indicates that the underlying randomization algorithm failed or that specific user segments were systematically dropped, biasing the treatment and control samples and rendering all statistical conclusions unreliable.",
-            "Because search engines will refuse to index any website with an SRM error.",
-            "Because experiments must always have exactly seven users in the test group.",
-            "Because marketing managers cannot view reports if traffic ratios differ by more than one percent."
+            "SRM signals a failure of randomization or systematic loss of user segments, biasing treatment and control groups and making all conclusions unreliable.",
+            "SRM signals an underpowered sample, so the p-value is unreliable only until the experiment runs long enough to reach significance.",
+            "SRM signals a novelty effect, so results are biased toward short-term behavior and become valid only after a two-week cooling period.",
+            "SRM signals multiple testing across many metrics, so the p-value is inflated and becomes valid only after a Bonferroni correction."
           ],
           "answer": 0,
           "why": "Sample Ratio Mismatch proves that assignment bias or data loss occurred, violating the foundational assumption of randomized controlled trials.",
@@ -5260,10 +5260,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the empirical findings of Les Binet and Peter Field, what is the optimal budget split between long-term brand building and short-term performance marketing?",
           "options": [
-            "95% allocated to printed corporate merchandise pens and stationery.",
-            "10% to brand marketing and 90% to executive travel expenses.",
-            "Approximately 60% allocated to long-term brand building (Demand Creation) and 40% allocated to short-term performance marketing (Demand Capture).",
-            "100% allocated to performance retargeting with zero brand marketing."
+            "About 40% to long-term brand building (demand creation) and 60% to short-term performance marketing (demand capture).",
+            "About 80% to long-term brand building (demand creation) and 20% to short-term performance marketing (demand capture).",
+            "About 60% to long-term brand building (demand creation) and 40% to short-term performance marketing (demand capture).",
+            "About 50% to long-term brand building (demand creation) and 50% to short-term performance marketing (demand capture)."
           ],
           "answer": 2,
           "why": "The 60/40 rule establishes that long-term brand building creates future commercial demand while performance marketing harvests existing demand, maximizing sustained profitability.",
@@ -5290,10 +5290,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the aerospace mission control analogy, what catastrophic structural failure occurs if marketing scales performance propulsion while life-support retention is leaking?",
           "options": [
-            "Search engines permanently ban the company from publishing blog articles.",
-            "The enterprise pours millions of dollars into acquiring new customers who immediately churn through broken product onboarding, burning capital until cash reserves are exhausted.",
-            "The company is legally forced to rebrand all products as agricultural machinery.",
-            "The spacecraft engine automatically converts into an electric solar vehicle."
+            "The enterprise saturates its addressable market, so acquired customers stop responding to ads until the media budget is exhausted.",
+            "The enterprise pours capital into acquiring new customers who churn through broken onboarding, burning cash until reserves run out.",
+            "The enterprise grows brand awareness faster than its capacity, so new customers wait for products until the supply runs out.",
+            "The enterprise over-invests in retention programs, so loyal customers accept price rises until the profit margins are exhausted."
           ],
           "answer": 1,
           "why": "Scaling acquisition while churn is high creates a leaky bucket failure, rapidly destroying capital without building persistent enterprise value.",
@@ -5322,10 +5322,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic rationale behind enforcing an 80% minimum Working Media Ratio in enterprise marketing governance?",
           "options": [
-            "To ensure that at least 80% of total marketing capital is deployed directly into consumer-facing media that drives business impact, capping non-working agency, consulting, and production fees at 20%.",
-            "To mandate that all marketing employees work eighty hours per week.",
-            "Because media broadcast stations refuse to transmit advertisements on Thursdays.",
-            "To comply with international postal packaging thickness regulations."
+            "At least 80% of total marketing spend goes to consumer-facing media, capping non-working agency, consulting, and production fees at 20%.",
+            "At most 80% of total marketing spend goes to consumer-facing media, with agency, consulting, and production fees required to take 20%.",
+            "At least 80% of total marketing spend goes to agency retainers, capping consumer-facing media at 20% for reasons of brand safety.",
+            "At least 80% of media spend goes to digital channels, capping traditional channels such as television and print at 20%."
           ],
           "answer": 0,
           "why": "High working media ratios prevent capital leakage into excessive agency retainers and production overhead, maximizing frontline media reach and commercial impact.",
@@ -5351,10 +5351,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate financial test of a boardroom-grade Marketing Operating System (MOS)?",
           "options": [
-            "Exhausting 100% of the annual budget on television commercials.",
-            "Winning the most creative trophies at international advertising festivals.",
-            "Accumulating twenty million followers on corporate social media channels.",
-            "Demonstrating verified shareholder value creation by generating incremental gross profits that exceed capital investment outlays while compounding enterprise valuation multiples."
+            "Verified brand popularity: higher awareness scores that exceed competitor levels while compounding social media follower counts.",
+            "Verified cost savings: lower agency fees that exceed prior-year budgets while compounding media buying discounts over time.",
+            "Verified revenue growth: higher top-line sales that exceed prior targets while compounding market share points year on year.",
+            "Verified shareholder value creation: incremental gross profit that exceeds the capital invested while compounding enterprise valuation multiples."
           ],
           "answer": 3,
           "why": "Boardrooms judge marketing exclusively on incremental economic profit, unit economic health (CLV:CAC and payback), and compounding enterprise valuation.",
@@ -5379,10 +5379,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate lesson demonstrated by the 30-Day Marketing Operating System (MOS)?",
           "options": [
-            "Marketing should only be conducted when a company has extra cash to waste.",
-            "Marketing can be completely replaced by sending automated email spam.",
-            "Marketing is not a discretionary artistic expense, but a strategic, mathematically governed capital allocation engine that creates sustainable brand equity, customer lifetime value, and compounding enterprise valuation.",
-            "Marketing is strictly limited to designing logos on business cards."
+            "Marketing is a creative function that works best with minimal financial constraints, building brand equity through bold artistic risks and storytelling.",
+            "Marketing is a cost center to be minimized each year, since brand equity and customer lifetime value cannot be measured with reliable accuracy.",
+            "Marketing is a mathematically governed capital allocation engine that builds brand equity, lifetime value, and enterprise valuation, not an artistic expense.",
+            "Marketing is a short-term sales function whose value is judged by quarterly revenue, not by brand equity or enterprise valuation."
           ],
           "answer": 2,
           "why": "The modern Marketing Operating System proves that uniting brand equity, customer retention, and econometric discipline drives enduring shareholder wealth.",
@@ -5432,10 +5432,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Aaker & Joachimsthaler Brand Relationship Spectrum, what is the primary strategic trade-off of adopting a House of Brands architecture?",
           "options": [
-            "It guarantees the lowest marketing expense by combining all advertising under a single corporate logo.",
-            "It eliminates cross-brand reputational contagion and enables distinct segment targeting, but requires substantial marketing capital due to the absence of promotional synergies across brand entities.",
-            "It automatically transfers customer trust from luxury segments into budget commodities without consumer resistance.",
-            "It forces all sub-brands to share an identical visual design and pricing structure across all markets."
+            "It builds cross-brand reputational synergy and lowers advertising cost, but exposes the whole portfolio when one brand fails publicly.",
+            "It avoids cross-brand reputational contagion and allows distinct segment targeting, but needs more marketing capital without promotional synergies.",
+            "It lets the corporate name endorse every brand and share promotion, but limits the segments that each brand can target effectively.",
+            "It gives each brand its own audience and needs no extra capital, but weakens the parent company's legal protection of its trademarks."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5459,10 +5459,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the psychological root cause of catastrophic brand extension failures, such as Colgate Kitchen Entrees?",
           "options": [
-            "An excessively high advertising budget that overwhelmed retail distribution partners.",
-            "The failure to patent the product's underlying industrial chemical formulation.",
-            "A severe cognitive category distance and association clash where existing parent brand associations directly conflict with consumer expectations in the extension category.",
-            "Pricing the extension product exactly five percent below the industry median."
+            "A pricing mismatch in which the extension was priced far above rival brands that already compete in the extension category.",
+            "A distribution gap in which the extension was stocked in far fewer stores than the rival brands in the extension category.",
+            "A cognitive category clash in which the parent brand's associations conflict with consumer expectations in the extension category.",
+            "A quality shortfall in which the extension used cheaper ingredients than the rival brands in the extension category."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5486,10 +5486,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mandate for managing a 'Cash Cow' brand in an enterprise portfolio?",
           "options": [
-            "Transfer all customer data to third-party marketing brokers to generate one-time licensing fees.",
-            "Quadruple the advertising budget to stimulate high double-digit customer acquisition in mature markets.",
-            "Immediately alter the brand's core logo and packaging every quarter to confuse competitors.",
-            "Strictly minimize promotional and growth capital expenditures while harvesting reliable operating cash flows to fund strategic growth brands."
+            "Maximize promotion and growth spending to defend its share while its cash flow pays for the further expansion of the brand.",
+            "Divest it quickly at its peak and use the proceeds to fund new growth brands in other categories of the portfolio.",
+            "Reposition it into a high-growth market with heavy investment while reducing the cash it contributes to the portfolio.",
+            "Minimize promotion and growth spending while harvesting reliable operating cash flow to fund strategic growth brands."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5514,10 +5514,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Keller's Brand Hierarchy framework, what is the specific strategic function of the 'Modifier' tier?",
           "options": [
-            "To designate specific functional configurations, trim levels, or technical capabilities, facilitating consumer navigation and price discrimination within an individual product line.",
-            "To replace the corporate legal name for global tax avoidance filings.",
-            "To guarantee that all products in the company are sold at exactly the same retail price.",
-            "To hide manufacturing defects behind technical alphanumeric codes."
+            "To designate functional configurations, trim levels, or technical capabilities, helping consumers navigate and enabling price tiers.",
+            "To designate the parent company that stands behind the product, helping consumers judge trust across the different product lines.",
+            "To designate the product category itself, helping consumers recognize what the product is across all of the different brands.",
+            "To designate the legal owner of the trademark, helping regulators identify the licensing terms across the different markets."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5543,10 +5543,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When does launching a new product line extension or flanker brand destroy net enterprise operating profits, even if top-line revenue increases?",
           "options": [
-            "Whenever the corporate website receives fewer than one million monthly visitors.",
-            "Whenever the total gross margin lost on cannibalized existing sales exceeds the incremental gross margin gained from new conquest buyers minus fixed overhead costs.",
-            "Whenever retail distribution partners demand a standard thirty-day payment invoice.",
-            "Whenever the product is manufactured in a facility with more than one hundred factory workers."
+            "When the extension's fixed overhead is lower than the gross margin earned from conquest buyers and cannibalized buyers combined.",
+            "When the gross margin lost on cannibalized existing sales exceeds the incremental gross margin from new conquest buyers minus fixed overhead.",
+            "When the extension's total revenue is lower than the flagship's total revenue, whatever the margin on each of the products.",
+            "When the cannibalization rate is below 50% of the extension's sales, whatever the unit margin on each of the products."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5596,10 +5596,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Kahneman's Dual-Process Cognitive Theory, why does excessive visual clutter and complex technical jargon on consumer packaging lead to low conversion rates?",
           "options": [
-            "It forces the brain to activate the slow, metabolically expensive System 2, inducing cognitive friction and decision fatigue that prompts the cognitive miser brain to abandon the choice.",
-            "It causes the product's barcode to become unscannable at electronic retail registers.",
-            "It violates Federal Trade Commission guidelines regarding ink density on corrugated cardboard.",
-            "It automatically lowers the physical durability of the product during shipping transit."
+            "It forces the brain to engage slow, effortful System 2, creating cognitive friction and decision fatigue so the brain abandons the choice.",
+            "It engages fast, automatic System 1, creating emotional overload and impulse errors so the brain buys the wrong product.",
+            "It forces the brain to store the package in long-term memory, creating recall interference so the brand name is forgotten.",
+            "It raises the perceived quality of the product, creating a premium expectation so that buyers hesitate over the price."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5624,10 +5624,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core psychological premise of Daniel Kahneman and Amos Tversky's Prospect Theory regarding loss aversion?",
           "options": [
-            "People are universally risk-seeking when evaluating potential cash bonuses.",
-            "Consumers always calculate linear algebraic equations in their heads before purchasing routine household goods.",
-            "Financial decisions are evaluated entirely based on total lifetime net worth rather than changes from a reference point.",
-            "Losses loom larger than gains: the psychological pain of losing a specific financial amount is approximately 2 to 2.5 times more intense than the pleasure of gaining that exact same amount."
+            "Gains loom larger than losses: gaining a given amount pleases roughly 2 to 2.5 times more than losing the same amount hurts.",
+            "Losses and gains are felt equally: losing a given amount hurts as much as gaining the same amount pleases, at any reference point.",
+            "Losses loom larger than gains only for small sums: losing a given amount hurts about 10 times more than gaining the same amount.",
+            "Losses loom larger than gains: losing a given amount hurts roughly 2 to 2.5 times more than gaining the same amount pleases."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5652,10 +5652,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial mechanism of the Decoy Effect (Asymmetric Dominance) in pricing architecture?",
           "options": [
-            "Reducing all product prices by twenty percent across the entire catalog during weekend holidays.",
-            "Hiding shipping fees until the final payment step to surprise consumers.",
-            "Introducing an inferior third choice that is dominated by the target product, altering the cognitive preference structure and steering the majority of consumers toward the higher-margin target.",
-            "Forcing customers to sign multi-year binding contracts before seeing product specifications."
+            "Adding a cheaper third choice that undercuts the target product, which shifts preferences and steers most consumers toward the lowest price.",
+            "Removing the target product's rivals from the menu, which shifts preferences and steers most consumers toward the only remaining option.",
+            "Adding an inferior third choice dominated by the target product, which shifts preferences and steers most consumers toward the higher-margin target.",
+            "Adding a superior third choice that dominates the target product, which shifts preferences and steers most consumers toward the third option."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5680,10 +5680,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In EEG neuromarketing research, what does a positive Frontal Asymmetry Index (greater left-frontal cortical activity relative to right-frontal activity) signify?",
           "options": [
-            "An automatic refusal to pay for goods with digital debit cards.",
-            "Positive emotional valence and approach motivation, indicating genuine subconscious attraction and desire toward the marketing stimulus.",
-            "A complete lack of cognitive attention and impending participant sleep.",
-            "Severe visual eye strain and acute clinical headache onset."
+            "Negative emotional valence and withdrawal motivation, indicating subconscious aversion and rejection of the stimulus.",
+            "Positive emotional valence and approach motivation, indicating subconscious attraction and desire toward the stimulus.",
+            "High cognitive workload and memory encoding, indicating sustained effortful attention to the content of the stimulus.",
+            "Low arousal and boredom, indicating subconscious disinterest and a lack of attention to the stimulus."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5710,10 +5710,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In computational neuromarketing simulation models, why is objective economic utility replaced by Behavioral Perceived Utility (BPU)?",
           "options": [
-            "To incorporate real-world psychological phenomena like Prospect Theory loss aversion, transaction utility anchoring, and comparative decoy effects that govern actual human purchasing choices.",
-            "To simplify the mathematical calculations so they can run on basic eight-bit microprocessors.",
-            "To satisfy European Union accounting regulations regarding corporate asset depreciation.",
-            "To guarantee that all simulated consumers buy the cheapest product on the market."
+            "To include real-world psychology such as loss aversion, transaction utility anchoring, and decoy effects that govern actual purchase choices.",
+            "To include real-world supply constraints such as stock-outs, delivery delays, and price changes that govern actual purchase timing.",
+            "To include real-world demographics such as age, income, and location that govern actual purchase capacity and frequency.",
+            "To include real-world competition such as rival promotions, shelf placement, and advertising that govern actual brand switching."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5763,10 +5763,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining structural distinction between Michael Porter's traditional competitive strategy and Kim & Mauborgne's Value Innovation?",
           "options": [
-            "Traditional strategy requires using digital spreadsheets, whereas Value Innovation relies exclusively on handwritten chalk diagrams.",
-            "Value Innovation guarantees that a company will never have to pay corporate income taxes.",
-            "Traditional strategy only applies to retail clothing stores, while Value Innovation only applies to software startups.",
-            "Traditional competitive strategy views differentiation and low cost as a mutually exclusive trade-off within static market boundaries, whereas Value Innovation pursues differentiation and low cost simultaneously by reconstructing market boundaries."
+            "Traditional strategy pursues differentiation and low cost simultaneously within fixed market boundaries; Value Innovation treats them as a trade-off in new markets.",
+            "Traditional strategy focuses on non-customers and new demand; Value Innovation focuses on beating rivals within the existing market boundaries and industry structures.",
+            "Traditional strategy relies on technology leadership to create demand; Value Innovation relies on deep price cuts to win share within existing market boundaries.",
+            "Traditional strategy treats differentiation and low cost as a trade-off within fixed market boundaries; Value Innovation pursues both at once by reconstructing boundaries."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5791,10 +5791,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What diagnostic pattern on a Strategy Canvas indicates that an entire industry is trapped in destructive, commoditized Red Ocean competition?",
           "options": [
-            "Competitive Convergence: when the value curves of competing firms overlap almost identically across all factors, indicating slavish benchmarking and zero genuine differentiation.",
-            "The presence of more than five colors on the physical presentation slide.",
-            "An uneven number of horizontal competitive factors.",
-            "A value curve that terminates exactly at the zero axis."
+            "Competitive convergence: rival value curves overlap almost identically across all factors, showing benchmarking and no genuine differentiation.",
+            "Competitive divergence: rival value curves spread widely across the factors, showing distinct niches and heavy differentiation.",
+            "Competitive concentration: a few value curves sit far above all rivals on every factor, showing market dominance and high prices.",
+            "Competitive stability: rival value curves stay flat over time across all factors, showing mature demand and steady prices."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5819,10 +5819,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an ERRC Grid that only populates the 'Raise' and 'Create' quadrants strategically flawed in Blue Ocean design?",
           "options": [
-            "Because it prevents software engineers from writing unit tests.",
-            "Because it merely pursues expensive product differentiation, driving operational costs upward without breaking the cost-value trade-off through deliberate factor eliminations and reductions.",
-            "Because international shipping ports refuse to load cargo with created product features.",
-            "Because it produces an odd number of bullet points on corporate marketing posters."
+            "It pursues cost cutting only, lowering prices without raising buyer value through factor increases and the creation of new factors.",
+            "It pursues costly differentiation only, raising operating costs without breaking the cost-value trade-off through factor eliminations and reductions.",
+            "It pursues new markets only, ignoring existing buyers without testing the cost-value trade-off through small market pilots.",
+            "It pursues many factors at once, spreading resources thinly without a focus, a divergence, or a clear tagline for buyers."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5848,10 +5848,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Who are 'Tier Two Refusing Non-Customers' in Kim & Mauborgne's Three Tiers of Non-Customers framework?",
           "options": [
-            "Individuals who do not possess electricity or internet connectivity in rural mountain regions.",
-            "Children under the age of six who do not possess independent financial purchasing power.",
-            "Consumers who have consciously examined the industry's product offerings and intentionally chosen not to use them because the solutions are perceived as too complex, expensive, or mismatched to their lifestyle.",
-            "Government regulators who audit corporate antitrust compliance."
+            "Consumers on the edge of the market who minimally use the offering while ready to switch to a rival as soon as a better option appears.",
+            "Consumers in distant markets who have never considered the offering and have never been targeted by the industry's marketing efforts.",
+            "Consumers who have examined the industry offerings and chosen not to use them because they seem too complex, expensive, or mismatched.",
+            "Consumers who use the offering rarely and review it negatively online, preferring to buy through second-hand channels at lower prices."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5879,10 +5879,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary computational objective of an Algorithmic Value Curve Optimization Engine in strategic marketing?",
           "options": [
-            "To reduce all corporate marketing budgets to zero by firing the entire sales department.",
-            "To guarantee that all factory machinery operates at 100% capacity regardless of demand.",
-            "To automatically generate spam emails to competitors' executive leadership.",
-            "To identify an ERRC factor vector that maximizes Euclidean divergence from the incumbent competitor cluster while maximizing utility alignment with non-customer preference weights under structural cost constraints."
+            "To find an ERRC factor vector that minimizes divergence from the incumbent cluster and alignment with current customers' preferences without cost limits.",
+            "To find a pricing vector that maximizes margin from the incumbent customers and alignment with competitor price points under demand constraints.",
+            "To find an ERRC factor vector that maximizes the number of factors in the incumbent cluster and alignment with industry standards under cost constraints.",
+            "To find an ERRC factor vector that maximizes divergence from the incumbent cluster and alignment with non-customer preferences under cost constraints."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5932,10 +5932,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the ISO 10668 brand valuation standard, why is the Cost Approach generally considered the least reliable methodology for valuing established commercial brands?",
           "options": [
-            "Because software programs cannot add historical ledger numbers together.",
-            "Because the Cost Approach requires physical inspection of customer bank accounts.",
-            "Because there is zero economic correlation between historical marketing expenditures and the future discounted cash flows generated by brand equity.",
-            "Because international tax authorities have legally banned the use of historical costs in all corporate filings."
+            "Historical costs are not audited, so they cannot be checked against the brand's future discounted cash flows reported to investors.",
+            "Historical costs are inflated by taxes, so they overstate the cash flows that brand equity will generate in future years.",
+            "There is no reliable economic link between historical marketing expenditure and the future discounted cash flows generated by brand equity.",
+            "Historical costs ignore replacement values, so they understate the cash flows that brand equity will generate in future years."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5959,10 +5959,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Royalty Relief brand valuation method, why must the pre-tax hypothetical royalty savings be reduced by the corporate tax rate?",
           "options": [
-            "Because all corporate bank accounts automatically deduct twenty-five percent on Friday afternoon.",
-            "Because if the enterprise had actually paid the royalty to a third party, it would have been a tax-deductible expense; saving it results in higher taxable operating income, requiring a tax deduction to find true cash flow.",
-            "Because intellectual property trademarks expire immediately if corporate taxes are not deducted.",
-            "Because the United States Treasury requires all marketing departments to forfeit their cash reserves."
+            "The royalty would have been paid from retained earnings; saving it lowers book value, so tax must be added back to get true cash flow.",
+            "Had the company paid the royalty it would have been tax-deductible; saving it raises taxable income, so tax must be deducted to get true cash flow.",
+            "The royalty is taxed in the licensor's country; saving it shifts the tax to the licensee, so tax must be deducted to get a fair market rate.",
+            "Tax rates change over the forecast period; saving the royalty removes that uncertainty, so tax must be deducted to get a risk-free cash flow."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5988,10 +5988,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Interbrand Economic Use methodology, what does the Role of Brand Index (RBI) measure?",
           "options": [
-            "The specific percentage of consumer purchase decisions directly driven by the brand name and reputation, relative to other drivers such as raw price, physical convenience, or technical specifications.",
-            "The number of times the corporate logo appears on social media video reels.",
-            "The total quantity of cardboard boxes ordered from packaging suppliers.",
-            "The statutory interest rate charged by central banks on corporate bonds."
+            "The percentage of purchase decisions driven by the brand name and reputation, versus drivers such as price or convenience.",
+            "The percentage of the brand's revenue earned from repeat customers, versus the new customers acquired through advertising.",
+            "The percentage of the brand's market share held in its home country, versus the foreign markets in which it also sells.",
+            "The percentage of brand awareness among target consumers, versus the awareness of competitors in the same category."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6016,10 +6016,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 36 and ASC 350, what occurs when the Carrying Value of an indefinite-lived brand asset on a corporate balance sheet exceeds its Recoverable Amount?",
           "options": [
-            "The brand name is revoked by the World Intellectual Property Organization.",
-            "The marketing department is legally forced to double its advertising spending within thirty days.",
-            "The corporate tax authority automatically refunds the difference in physical gold bullion.",
-            "The enterprise is legally required to record an immediate, non-cash Brand Impairment Loss on its income statement, reducing carrying value to recoverable amount."
+            "The company must record a cash payment to shareholders on the balance sheet, restoring the carrying value to the recoverable amount.",
+            "The company may defer the loss on the balance sheet, amortizing the carrying value down to recoverable amount over ten years.",
+            "The company must record an unrealized gain in equity, increasing the carrying value up to the recoverable amount.",
+            "The company must record an immediate non-cash Brand Impairment Loss on the income statement, reducing carrying value to recoverable amount."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6046,10 +6046,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance advantage of 'Valuation Triangulation' in enterprise brand asset appraisals?",
           "options": [
-            "Ensuring that all products are manufactured in a single geographic facility.",
-            "Guaranteeing that all corporate taxes are eliminated in perpetuity.",
-            "Synthesizing multiple independent valuation methodologies (Royalty Relief, Economic Use, and Market Multiples) to establish a statistically corroborated, audit-defensible valuation range that withstands regulatory, tax, and M&A due diligence scrutiny.",
-            "Eliminating the need to hire independent accountants or lawyers during corporate acquisitions."
+            "Using one method with several scenarios gives the lowest valuation, which minimizes the taxes and regulatory fees owed by the enterprise to authorities.",
+            "Averaging the three methods gives a single exact number, which removes the need for audit or due diligence scrutiny of the brand asset.",
+            "Combining independent methods (Royalty Relief, Economic Use, Market Multiples) gives a corroborated, audit-defensible range that withstands scrutiny.",
+            "Applying all methods to a peer brand gives a competitor-based range, which withstands scrutiny without needing any firm-specific data on the brand."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6100,10 +6100,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Phase 1 of the ACB enterprise simulation, why was the flanker brand 'Verdant Pure' generating negative true economic contribution despite reporting $180M in top-line revenue?",
           "options": [
-            "Because retail grocery stores refused to stock green-colored packaging bottles.",
-            "Because 65% of its sales were cannibalized from the flagship brand Lumina Botanical; the gross margin lost on cannibalized 42% flagship sales ($49.14M) far exceeded the total gross margin earned by the 24% flanker ($43.20M).",
-            "Because Verdant Pure's manufacturing plant suffered an uninsurable fire loss.",
-            "Because foreign exchange currency controls in Switzerland prevented payment transfers."
+            "Its sales were all new to the portfolio, but fixed overhead of $49.14M far exceeded the gross margin the flanker earned ($43.20M).",
+            "65% of its sales were cannibalized from the flagship; the margin lost on flagship sales ($49.14M) far exceeded the margin the flanker earned ($43.20M).",
+            "35% of its sales were cannibalized from the flagship, but returns of $49.14M far exceeded the gross margin the flanker earned ($43.20M).",
+            "65% of its sales came from rival brands, but the margin gained from conquest buyers ($49.14M) was far below its costs ($43.20M)."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6130,10 +6130,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Phase 2 of the ACB simulation, why did introducing the Tier 2 Decoy ($89 for two bottles) cause seventy-six percent of consumers to purchase the Tier 3 Bundle ($99 for three bottles)?",
           "options": [
-            "Because consumers are legally obligated to purchase the most expensive item on any digital screen.",
-            "Because Tier 1 and Tier 2 were completely out of stock in the physical warehouse.",
-            "Because Tier 2 was an asymmetrically dominated decoy; compared directly against $89 for two bottles, paying just $10 more to receive a third bottle plus diagnostic testing represented undeniable transaction utility, eliminating choice paralysis.",
-            "Because the checkout website automatically crashed if consumers clicked on Tier 1."
+            "Tier 2 was a cheaper entry option; next to $89 for two bottles, paying $10 less for one bottle plus diagnostics was an obvious gain.",
+            "Tier 2 was a loss-leader; next to $89 for two bottles, paying $10 more for a third bottle and a free product was a clear discount.",
+            "Tier 2 was an asymmetrically dominated decoy; next to $89 for two bottles, paying $10 more for a third bottle plus diagnostics was an obvious gain.",
+            "Tier 2 was a scarcity offer; next to $89 for two bottles, a limited-time $99 for three bottles created urgency and fear of missing out."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6160,10 +6160,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How did ACB's PureSphere brand concept break the cost-value trade-off in the home cleaning market?",
           "options": [
-            "By purchasing television commercials during the Super Bowl at an exorbitant cost.",
-            "By lowering product quality to toxic industrial cleaning standards.",
-            "By firing all customer support personnel and shutting down corporate email.",
-            "By eliminating water shipping weight and plastic packaging (reducing freight and packaging costs by 84%) while creating an eco-friendly dissolvable system with smart refills, unlocking higher margins at a lower retail price."
+            "By adding premium glass bottles and fragrance lines (raising packaging cost 84%) and adding eco-friendly claims, it raised margin at a higher retail price.",
+            "By outsourcing manufacturing to the lowest-cost region (cutting production cost 84%) and keeping standard jugs, it raised margin at the same retail price.",
+            "By selling larger refill jugs in bulk (cutting packaging cost 84%) and dropping the green claims, it raised margin at a lower retail price.",
+            "By removing water shipping weight and plastic packaging (cutting freight and packaging costs 84%) and adding dissolvable refills, it raised margin at a lower retail price."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6190,10 +6190,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Phase 4 of the ACB simulation, why did the Big Four statutory auditors issue an unqualified clean opinion with zero impairment write-down on Lumina Botanical?",
           "options": [
-            "Because the ISO 10668 Royalty Relief DCF valuation established a Recoverable Amount of $557.28M, exceeding the balance sheet Carrying Value of $380.0M by a massive $177.28M (46.7%) headroom cushion.",
-            "Because corporate accountants are prohibited from reviewing brand intangible assets under federal privacy statutes.",
-            "Because Lumina Botanical had never registered trademarks with the patent office.",
-            "Because all balance sheet write-downs are legally forbidden in consumer goods companies."
+            "The ISO 10668 Royalty Relief valuation gave a Recoverable Amount of $557.28M, above the $380.0M Carrying Value by $177.28M of headroom.",
+            "The Recoverable Amount of $380.0M was below the Carrying Value of $557.28M, but the auditors allowed a $177.28M deferral of the loss.",
+            "The Carrying Value of $557.28M matched the cost approach, so the auditors accepted it without any test of the Recoverable Amount.",
+            "The Recoverable Amount of $557.28M was below the Carrying Value of $734.56M, but the gap was within a 10% audit tolerance."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6273,10 +6273,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Shannon-Weaver and Belch & Belch IMC frameworks, why does semantic noise inflict more strategic damage on a brand than simple channel transmission noise?",
           "options": [
-            "Because semantic noise alters the decoded meaning of the message in the consumer's mind, creating cognitive dissonance, unintended brand associations, and severe skepticism that cannot be corrected simply by increasing media volume.",
-            "Because semantic noise completely silences the physical broadcast signal, rendering linear television and radio transmitters inoperable across regional markets.",
-            "Because semantic noise is strictly regulated by government telecommunication agencies, resulting in immediate statutory fines for the sponsoring enterprise.",
-            "Because semantic noise automatically doubles the media buying costs on programmatic digital platforms without affecting organic consumer recall."
+            "Semantic noise changes the decoded meaning in the consumer's mind, creating unintended associations and skepticism that more media volume cannot fix.",
+            "Semantic noise degrades the signal during transmission, creating missed impressions and low reach that more media volume can fix.",
+            "Semantic noise reflects the competitors' messages, creating message clutter and confusion that more media volume can drown out.",
+            "Semantic noise arises from the channel's technical faults, creating blurred delivery and incomplete reach that better equipment can fix."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6300,10 +6300,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic rationale for using Paid Media to amplify Earned Media press coverage rather than simply running direct product advertisements?",
           "options": [
-            "Because paid media ads cannot legally showcase product pricing unless verified by an independent third-party news publication.",
-            "Because media broadcast regulations require all press releases to be converted into television advertisements within thirty days of publication.",
-            "Because advertising networks charge a 50% lower cost-per-click rate when the destination URL belongs to a mainstream journalistic news agency.",
-            "Because third-party journalistic validation overcomes consumer skepticism, allowing the brand to combine high objective credibility with the controlled, scalable reach of paid distribution."
+            "Paid distribution gives the brand full control over journalists' wording, letting the brand edit the credibility of coverage at scale.",
+            "Paid amplification replaces the cost of public relations, letting the brand cut agency fees while keeping the same overall reach.",
+            "Earned coverage is short-lived, letting the brand extend the story by repeating its own advertisements on the same channel.",
+            "Third-party journalistic validation overcomes skepticism, letting the brand combine high credibility with the scalable reach of paid media."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6327,10 +6327,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Brehm's theory of Psychological Reactance, what occurs when a brand employs excessively coercive or manipulative fear-based message framing?",
           "options": [
-            "The Federal Trade Commission automatically freezes the enterprise's advertising bank accounts within twenty-four hours.",
-            "The message transitions automatically into the Central Route of the Elaboration Likelihood Model, elevating brand loyalty.",
-            "Consumers perceive a direct threat to their autonomy and free will, triggering cognitive resistance, counter-arguing, and frequently the Boomerang Effect where they actively reject the brand.",
-            "Consumers instantly succumb to the message due to cognitive paralysis, resulting in an immediate 100% surge in impulse purchase volume."
+            "Consumers see a signal of urgency, triggering quick decisions, fewer comparisons, and often a Bandwagon Effect in which they follow others.",
+            "Consumers see a sign of expertise, triggering trust, deeper attention, and often a Halo Effect in which they admire the brand.",
+            "Consumers see a threat to their autonomy, triggering resistance, counter-arguing, and often a Boomerang Effect in which they reject the brand.",
+            "Consumers see a lack of information, triggering searching, extra research, and often a Zeigarnik Effect in which they recall the brand."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6354,10 +6354,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial consequence of failing to implement centralized cross-channel frequency capping across programmatic ad channels?",
           "options": [
-            "The search engine will permanently delist the enterprise's primary corporate domain from organic search results.",
-            "Individual consumers are subjected to uncoordinated, excessive exposures across multiple platforms, driving ad wear-out, banner fatigue, brand resentment, and massive budget waste on redundant impressions.",
-            "The ad creative file formats automatically become corrupted due to bandwidth constraints on digital exchanges.",
-            "The enterprise is legally required to refund all sales generated during the active advertising window."
+            "Individuals get too few exposures across the platforms, causing weak recall, low awareness, and lost sales from reach gaps.",
+            "Individuals get uncoordinated, excessive exposures across platforms, causing ad wear-out, banner fatigue, brand resentment, and wasted budget.",
+            "Individuals get exposures at the wrong times across platforms, causing poor timing, low relevance, and wasted creative effort.",
+            "Individuals get exposures on blocked devices across platforms, causing invalid traffic, fraud flags, and wasted verification costs."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6381,10 +6381,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Last-Touch Attribution create a dangerous structural bias when used for enterprise marketing budget allocation?",
           "options": [
-            "It credits 100% of conversion value to the final navigational or search touchpoint, systematically under-funding top-of-funnel brand building that originally created consumer demand.",
-            "It mathematically overvalues print newspapers and radio advertising while ignoring all digital click-through data.",
-            "It violates international accounting standards by treating marketing expenditures as tangible balance sheet assets.",
-            "It causes advertising servers to double-count every impression delivered across social media channels."
+            "It credits 100% of conversion value to the final navigational or search touchpoint, underfunding the top-of-funnel brand building that created demand.",
+            "It credits 100% of conversion value to the first touchpoint, underfunding the closing channels that capture demand at the end of the journey.",
+            "It splits conversion value equally across all touchpoints, underfunding the high-impact channels that drive most of the real demand.",
+            "It credits conversion value to the touchpoint with the most spend, underfunding the small channels that create demand for the brand."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6436,10 +6436,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary economic trade-off an enterprise accepts when adopting a Corporate Vertical Marketing System over an Administered Wholesale system?",
           "options": [
-            "The enterprise legally forfeits all intellectual property rights and patents to regional retail operators in exchange for guaranteed shelf placement.",
-            "The enterprise is prohibited by antitrust law from selling products outside of its domestic headquarters nation.",
-            "The enterprise eliminates all production costs by transferring raw material fabrication obligations to end consumers.",
-            "The enterprise captures 100% of retail margins and exercises absolute control over brand presentation, but assumes massive capital expenditure, fixed real estate overhead, and operational risk."
+            "It captures all wholesale margins and shared control of brand presentation, but takes on heavy inventory costs, supplier fees, and credit risk.",
+            "It lowers capital spending and operating risk, but loses control of pricing and brand presentation to independent retailers.",
+            "It captures retail margins through contracts, but takes on heavy legal costs, licensing fees, and exclusivity risk.",
+            "It captures all retail margins and absolute control of brand presentation, but takes on heavy capital spending, fixed real estate costs, and operating risk."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6463,10 +6463,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an omnichannel commission-sharing mechanism resolve vertical channel conflict between a manufacturer's DTC website and physical retail partners?",
           "options": [
-            "By crediting a percentage of digital direct sales back to local retail dealers whose geographic showrooming supported customer discovery, aligning financial incentives across physical and digital channels.",
-            "By legally prohibiting end consumers from accessing digital websites if they reside within twenty miles of a physical retail storefront.",
-            "By requiring retail stores to match digital discount prices while paying double the wholesale cost for inventory.",
-            "By forcing online shoppers to sign non-disclosure agreements before viewing manufacturer product specifications."
+            "By crediting part of digital direct sales to local dealers whose showrooms supported discovery, aligning incentives across channels.",
+            "By lowering the DTC website's prices to match dealer prices, aligning incentives across physical and digital channels for buyers.",
+            "By limiting the DTC website to products that dealers do not stock, aligning incentives across physical and digital channels.",
+            "By paying dealers a fixed annual fee unrelated to sales results, aligning incentives across physical and digital channels."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6490,10 +6490,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are gray market (parallel import) goods distinct from counterfeit goods under international intellectual property law?",
           "options": [
-            "Because gray market goods carry zero intellectual property protection in any country worldwide.",
-            "Because gray market goods are genuine, authentic products manufactured under license by the trademark owner, but diverted through unauthorized distribution channels outside established dealer networks.",
-            "Because gray market goods are manufactured by government military contractors rather than private commercial corporations.",
-            "Because gray market goods are strictly required by law to be sold at higher retail prices than authorized domestic inventory."
+            "Gray market goods are lawful copies made by a former licensee after the contract expired and sold through channels outside the dealer network.",
+            "Gray market goods are genuine products made under license by the trademark owner but diverted through unauthorized channels outside the dealer network.",
+            "Gray market goods are genuine products that were stolen from the factory by employees and then sold through channels outside the dealer network.",
+            "Gray market goods are refurbished products altered by third parties and relabeled with the trademark outside the authorized dealer network."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6517,10 +6517,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under United States trademark jurisprudence, how can a brand owner successfully defeat the First Sale Doctrine to prevent unauthorized parallel imports?",
           "options": [
-            "By unilaterally declaring that all resale of manufactured goods is illegal under international maritime law.",
-            "By filing criminal felony charges against the retail consumer who purchased the discounted item.",
-            "By proving that the gray market goods possess 'Material Differences' (such as differing warranty terms, power configurations, or quality control standards) that create consumer confusion.",
-            "By shutting down all manufacturing plants located outside the continental United States."
+            "By proving the gray market goods were sold below the brand's minimum advertised price, which breaches the dealer's contract with the brand owner.",
+            "By proving the gray market goods were imported without paying the correct customs duties, which breaches the importer's obligations to the state.",
+            "By proving the gray market goods have Material Differences (such as warranty terms, power configurations, or quality control standards) that confuse consumers.",
+            "By proving the gray market goods were first sold outside the United States, which cancels the First Sale Doctrine for every foreign product."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6545,10 +6545,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of integrating cryptographic 2D DataMatrix serial numbers into an automated channel governance platform?",
           "options": [
-            "It converts physical hardware products into digital non-fungible tokens on the Ethereum blockchain.",
-            "It automatically raises the consumer's credit card limit by the amount of the manufacturer's suggested retail price.",
-            "It physically electrocutes unauthorized retail customers if they attempt to open the product packaging.",
-            "It enables brand protection teams to trace test-purchased gray market units back to the exact authorized distributor who leaked inventory, providing indisputable evidence for contract termination and rebate clawbacks."
+            "It lets brand protection teams block gray market listings on online marketplaces automatically, giving proof for takedown notices and customs seizures worldwide.",
+            "It lets brand protection teams verify the product's warranty status at the retail checkout, giving proof for customer service claims and repair approvals.",
+            "It lets brand protection teams detect counterfeit packaging at the factory gate, giving proof for supplier audits and quality control penalties.",
+            "It lets brand protection teams trace test-purchased gray market units back to the exact distributor who leaked them, giving proof for termination and rebate clawbacks."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6600,10 +6600,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Vargo and Lusch's Service-Dominant Logic, what is the fundamental flaw of treating value as being manufactured inside a factory?",
           "options": [
-            "Customers refuse to pay money for tangible goods unless accompanied by a written apology from corporate executives.",
-            "Physical factories are illegal in modern post-industrial economies under WTO environmental statutes.",
-            "Value is never unilaterally created inside a factory; value is always co-created through the ongoing interaction between provider and customer as 'value-in-use' during actual consumption.",
-            "Manufactured products automatically depreciate to zero value within seven days of leaving the warehouse."
+            "Value is made inside the factory but is lost during distribution; it is destroyed through handling and storage before it reaches the customer.",
+            "Value is made inside the factory but is measured only by price; it is fixed by production cost and a standard profit markup on that cost.",
+            "Value is not made unilaterally inside a factory; it is co-created through provider-customer interaction as value-in-use during consumption.",
+            "Value is made inside the factory by suppliers; it is added by each firm in the chain in a sequence from raw materials to the final customer."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6628,10 +6628,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Booms and Bitner expand the traditional 4Ps marketing mix into the 7Ps by adding People, Process, and Physical Evidence?",
           "options": [
-            "Because international tax accounting laws require all corporate marketing expenses to be divided across exactly seven distinct ledgers.",
-            "Because services are intangible, heterogeneous, and simultaneously produced and consumed, meaning customer perceptions are heavily dictated by frontline staff behavior, delivery workflows, and tangible environmental cues.",
-            "Because physical manufactured goods no longer exist in any commercial retail market worldwide.",
-            "Because advertising agencies charge a mandatory 7% surcharge on any marketing campaign that utilizes four or fewer components."
+            "Services are standardized, storable, and produced before consumption, so perceptions depend on price, product features, and distribution coverage.",
+            "Services are intangible, heterogeneous, and produced and consumed together, so perceptions depend on staff behavior, delivery workflows, and tangible cues.",
+            "Services are regulated, licensed, and delivered by professionals, so perceptions depend on credentials, legal compliance, and insurance cover.",
+            "Services are digital, scalable, and delivered online, so perceptions depend on software speed, server uptime, and mobile app design."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6657,10 +6657,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Parasuraman, Zeithaml, and Berry's SERVQUAL model, what is Gap 4 (The Communication Gap) and why is it particularly destructive to customer satisfaction?",
           "options": [
-            "It is the discrepancy between what the service actually delivers and what external marketing communications promised, causing severe customer disillusionment when reality falls short of hyped expectations.",
-            "It is the technical bandwidth bottleneck preventing email servers from sending marketing newsletters on weekend mornings.",
-            "It is the statutory requirement that all customer complaints be transcribed onto magnetic tape storage within twelve hours.",
-            "It is the inability of frontline employees to speak more than three international languages simultaneously."
+            "The gap between what the service delivers and what external marketing promised, causing disillusionment when reality falls short of hyped expectations.",
+            "The gap between what management believes customers expect and what customers actually expect, causing misdirected investment in unwanted features.",
+            "The gap between the service quality standards set by management and the service actually delivered by employees, causing inconsistent delivery.",
+            "The gap between the service customers expected and the service they perceived they received, causing overall dissatisfaction with the provider."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6684,10 +6684,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the decisive operational function of the Line of Visibility in Lynn Shostack's Service Blueprinting methodology?",
           "options": [
-            "It specifies the minimum font size permitted on corporate printed invoices and contracts.",
-            "It establishes the optical focal distance required for retail store security surveillance cameras.",
-            "It determines the statutory legal boundary between domestic waters and international airspace.",
-            "It delineates frontstage actions that the customer directly sees and experiences from backstage actions and support processes that are hidden from customer sight."
+            "It separates actions the customer performs themselves from actions the employees perform on the customer's behalf at the point of service.",
+            "It separates actions that interact with the customer from actions that interact with the firm's suppliers and subcontractors.",
+            "It separates actions that can fail without consequence from actions whose failure causes a service breakdown and customer complaints.",
+            "It separates frontstage actions the customer sees and experiences from backstage actions and support processes that are hidden from the customer."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6713,10 +6713,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the Service Recovery Paradox and why is it vital for customer retention strategy?",
           "options": [
-            "It is the legal requirement that any customer experiencing a delayed flight must be given ownership of the airline.",
-            "It is the mathematical proof that computer software code cannot contain programming bugs if written in Python.",
-            "It is the phenomenon where a customer whose service failure is resolved swiftly, generously, and empathetically often exhibits higher long-term loyalty and satisfaction than a customer who never experienced an issue.",
-            "It is the economic rule stating that spending money on customer support guarantees instant bankruptcy within ninety days."
+            "A customer whose failure is resolved slowly but fully often shows higher loyalty than a customer whose problem was resolved quickly with an apology.",
+            "A customer who never experienced a failure often shows lower loyalty than a customer who received a small refund, whatever the service quality.",
+            "A customer whose failure is resolved quickly, generously, and empathetically often shows higher loyalty than a customer who never had a problem.",
+            "A customer whose failure is resolved by a manager often shows higher loyalty than a customer whose failure is resolved by a frontline employee."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6768,10 +6768,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic hazard of using an International Licensing agreement to enter a foreign market with proprietary technology?",
           "options": [
-            "The licensor's domestic patents automatically become null and void in all countries upon signing a foreign license.",
-            "The foreign licensee may master the proprietary manufacturing process and customer relationships, subsequently emerging as a formidable independent global competitor once the contract expires.",
-            "The licensee is legally obligated to convert all corporate trademarks into the Greek alphabet.",
-            "International law requires the licensor to pay 100% of the licensee's domestic income taxes in perpetuity."
+            "The licensee may fail to invest in local marketing and distribution, then damage the licensor's brand equity when the contract term finally ends.",
+            "The licensee may master the proprietary process and customer relationships, then emerge as a strong independent global competitor after the contract ends.",
+            "The licensor must invest heavily in local plants and equipment, then absorb large exit costs if the licensee ends the contract early.",
+            "The licensor may lose control of its local pricing and advertising, then face antitrust charges when the licensee fixes prices with rivals."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6795,10 +6795,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary conceptual principle underpinning the 'Glocal' marketing strategy in multinational corporate management?",
           "options": [
-            "Selling products only at airports and duty-free international border transit zones.",
-            "Translating all corporate marketing materials exclusively into Esperanto to ensure global linguistic neutrality.",
-            "Standardizing the high-cost product core and global brand essence to capture R&D and manufacturing scale, while strategically adapting marketing mix execution, sizing, and messaging to match local cultural nuances.",
-            "Requiring all international branch offices to be operated exclusively by robotic artificial intelligence systems."
+            "Adapting the costly product core and brand essence to each country for local fit, while standardizing marketing execution, sizing, and messaging worldwide.",
+            "Standardizing every element of the product and marketing mix worldwide for scale economies, while adapting only the corporate language of annual reports.",
+            "Standardizing the costly product core and global brand essence for scale economies, while adapting marketing execution, sizing, and messaging to local culture.",
+            "Delegating the whole product and marketing mix to local managers for local fit, while standardizing only the financial reporting and budgets worldwide."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6822,10 +6822,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a market characterized by high Uncertainty Avoidance (UAI) under Hofstede's model (such as Germany or Japan), what advertising approach is most effective?",
           "options": [
-            "Claiming that the product was designed by anonymous space aliens to heighten mystical intrigue.",
-            "Using ambiguous, surreal humor and loose creative metaphors with zero factual product information.",
-            "Encouraging consumers to break all social rules and engage in chaotic impulse buying without reading terms.",
-            "Providing detailed technical evidence, independent engineering certifications, and explicit quality guarantees that reduce perceived consumer risk and provide cognitive structure."
+            "Humorous, ambiguous storytelling and playful improvisation that reduce perceived formality and give consumers room for their own interpretation.",
+            "Status symbols, executive endorsements, and prestige cues that reinforce a respect for hierarchy and give consumers social reassurance.",
+            "Individual achievement, personal freedom, and self-expression themes that reinforce independence and give consumers a sense of autonomy.",
+            "Detailed technical evidence, independent engineering certifications, and explicit quality guarantees that reduce perceived risk and give cognitive structure."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6848,10 +6848,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is Price Escalation in international marketing, and why does it represent a major barrier for direct exporters?",
           "options": [
-            "It is the compounding accumulation of shipping costs, import tariffs, customs fees, local taxes, and multi-tier distributor markups that makes a domestically affordable product excessively expensive in foreign markets.",
-            "It is the mandatory federal regulation requiring all exported software code to be recompiled every twenty-four hours.",
-            "It is the physical expansion of metal shipping containers when crossing tropical equatorial ocean routes.",
-            "It is the automatic doubling of executive salaries whenever an enterprise opens a foreign subsidiary."
+            "The compounding accumulation of shipping, tariffs, customs fees, local taxes, and multi-tier distributor markups that makes a product too expensive abroad.",
+            "The sudden rise of the exporter's prices after the currency of the importing country falls, which makes a product too expensive for foreign buyers.",
+            "The deliberate raising of prices in foreign markets above domestic prices to signal premium quality, which makes a product too expensive abroad.",
+            "The gradual rise of a firm's production costs as export volumes grow and plants run at capacity, which makes a product too expensive abroad."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6877,10 +6877,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Kogut and Singh Cultural Distance Index critical in algorithmic global market screening models?",
           "options": [
-            "Because it measures the physical mileage between international airport runways in kilometers.",
-            "Because it mathematically quantifies the total variance across cultural dimensions between the home and target country, providing an objective proxy for psychic distance, managerial friction, and adaptation costs.",
-            "Because it predicts whether local television stations broadcast in high-definition or standard definition.",
-            "Because it calculates the exact volume of crude oil imported by foreign maritime tankers."
+            "It quantifies the total difference in income and purchasing power between home and target country, giving an objective proxy for market size and pricing.",
+            "It quantifies the total variance across cultural dimensions between home and target country, giving an objective proxy for psychic distance and adaptation costs.",
+            "It quantifies the total difference in tariffs and regulations between home and target country, giving an objective proxy for trade barriers and compliance costs.",
+            "It quantifies the total geographic distance and transport time between home and target country, giving an objective proxy for freight cost and delivery speed."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6932,10 +6932,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did AuraHealth Technologies replace its Last-Touch Attribution model with Shapley Value Attribution prior to committing its $45M international launch budget?",
           "options": [
-            "Because Swiss banking regulations prohibit pharmaceutical companies from purchasing search engine advertising without written parliamentary approval.",
-            "Because Last-Touch Attribution falsely over-credited bottom-funnel search engines that merely captured existing demand, while Shapley Value game theory accurately measured the true incremental causality of top-of-funnel medical PR and clinical thought leadership.",
-            "Because Shapley Value models are legally required under the European General Data Protection Regulation (GDPR) for all hardware devices.",
-            "Because Last-Touch attribution math results in division by zero whenever a consumer visits more than two websites."
+            "Last-Touch under-credited bottom-funnel search that closed existing demand, while Shapley Value game theory ignored the incremental effect of top-of-funnel PR.",
+            "Last-Touch over-credited bottom-funnel search that captured existing demand, while Shapley Value game theory measured the true incremental effect of top-of-funnel PR.",
+            "Last-Touch required cookie consent in each target country, while Shapley Value game theory worked from aggregated sales data with no consent needed.",
+            "Last-Touch was too slow to report conversions, while Shapley Value game theory gave real-time bidding signals to the search engines."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6960,10 +6960,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How did AuraHealth Technologies convert antagonistic retail pharmacy partners into motivated omnichannel advocates while launching its DTC portal?",
           "options": [
-            "By legally suing all 1,200 retail pharmacies for anti-competitive breach of contract.",
-            "By forcing retail pharmacies to buy AHT stock at a 50% premium above market value.",
-            "By crediting a 12% omnichannel showrooming allowance on local digital sales to geographic retail partners and providing exclusive 'Clinical Edition' physical SKUs that cannot be bought online.",
-            "By disabling the corporate DTC website whenever a customer connects to pharmacy store Wi-Fi."
+            "By crediting a 2% omnichannel marketing allowance on all national digital sales to every retail partner and offering exclusive online-only 'Clinical Edition' SKUs.",
+            "By cutting wholesale prices to retail partners by 12% on local pharmacy stock and offering the same 'Clinical Edition' SKUs on the DTC website.",
+            "By crediting a 12% omnichannel showrooming allowance on local digital sales to nearby retail partners and offering exclusive physical 'Clinical Edition' SKUs.",
+            "By closing the DTC portal in regions with strong pharmacy partners and offering a 12% commission on referrals to the national website."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6988,10 +6988,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the AuraCare service blueprint, how did integrating an optical impedance sensor into the biosensor applicator act as a classic Poka-Yoke mechanism?",
           "options": [
-            "It erased all patient medical records from the hospital server to prevent regulatory audits.",
-            "It transmitted electrical shocks to the user's wrist if they forgot to take their morning vitamins.",
-            "It automatically increased the customer's monthly subscription fee by 50% whenever an error occurred.",
-            "It physically and cryptographically prevented Bluetooth pairing until correct skin contact and operating temperature were achieved, eliminating customer execution errors before they could occur."
+            "It sent an alert to the customer service center when a pairing error happened, allowing agents to fix user errors after they had occurred.",
+            "It showed a tutorial video in the app when a pairing error happened, helping customers to correct user errors after they had occurred.",
+            "It collected failure data from every unit shipped when a pairing error happened, helping engineers to reduce user errors in later versions.",
+            "It blocked Bluetooth pairing until correct skin contact and temperature were achieved, preventing user errors before they occurred."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7015,10 +7015,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did AuraHealth Technologies adapt its advertising in Germany to emphasize clinical trials and engineering certifications rather than the US 'personal empowerment' theme?",
           "options": [
-            "Because German consumer culture exhibits high Uncertainty Avoidance (UAI), demanding objective technical proof, independent certifications, and clinical validation to overcome skepticism.",
-            "Because German law prohibits the display of human beings in television advertisements.",
-            "Because German consumers cannot understand English words under international copyright agreements.",
-            "Because sports and fitness activities are strictly banned in Central Europe."
+            "German consumers show high Uncertainty Avoidance (UAI), demanding objective technical proof, independent certifications, and clinical validation to overcome skepticism.",
+            "German consumers show high Individualism, demanding personal control, self-reliance, and customizable features to match their own independent goals.",
+            "German consumers show high Power Distance, demanding authoritative endorsements, status signals, and recommendations from senior experts.",
+            "German consumers show high Indulgence, demanding enjoyment, emotional appeals, and playful brand stories to match their pursuit of fun."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7045,10 +7045,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which combination of strategic governance initiatives enabled AuraHealth Technologies to achieve executive board accreditation for the AuraVital Pro launch?",
           "options": [
-            "Filing corporate bankruptcy in every jurisdiction to avoid paying manufacturing suppliers.",
-            "Shapley attribution budget optimization, dual-channel retail commission sharing with MAP serialization enforcement, poka-yoke service blueprinting, and Hofstede glocal market adaptation.",
-            "Discontinuing all international operations and selling exclusively through flea markets in Zurich.",
-            "Replacing all human employees with automated spam bots on social media platforms."
+            "Last-touch attribution budget optimization, dual-channel retail commission sharing with MAP serialization, poka-yoke service blueprinting, and Hofstede glocal adaptation.",
+            "Shapley attribution budget optimization, dual-channel retail commission sharing with MAP serialization, poka-yoke service blueprinting, and Hofstede glocal adaptation.",
+            "Shapley attribution budget optimization, uniform global pricing with MAP serialization, poka-yoke service blueprinting, and standardized global advertising.",
+            "Shapley attribution budget optimization, dual-channel retail commission sharing with MAP serialization, service recovery scripts, and local licensing."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7100,10 +7100,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the infinite-horizon Customer Lifetime Value equation CLV = (m * r) / (1 + d - r), why does an incremental 5% increase in retention rate produce a disproportionately large surge in customer equity?",
           "options": [
-            "Because government banking regulations require corporate tax rates to be slashed in half whenever retention improves.",
-            "Because customer acquisition costs automatically drop to exactly zero dollars whenever a contract is renewed.",
-            "Because as the retention rate r increases toward unity, the denominator (1 + d - r) contracts rapidly toward the discount rate, creating a non-linear compounding multiplier on cumulative lifetime cash flows.",
-            "Because the equation automatically switches from United States Dollars to gold bullion denominations."
+            "As retention r rises toward 1, the numerator (m × r) grows toward the discount rate, creating a linear multiplier on lifetime margin per customer.",
+            "As retention r rises toward 1, the denominator (1 + d − r) grows toward the margin m, creating a constant multiplier on lifetime cash flows per period.",
+            "As retention r rises toward 1, the denominator (1 + d − r) shrinks toward the discount rate, creating a non-linear compounding multiplier on lifetime cash flows.",
+            "As retention r rises toward 1, the discount rate d falls automatically toward zero, creating a non-linear multiplier on the discounted lifetime cash flows."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7127,10 +7127,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical analytical advantage of utilizing the Kaplan-Meier estimator over simple average churn calculations when analyzing subscription customer lifecycles?",
           "options": [
-            "It guarantees that computer servers never experience hardware memory leaks.",
-            "It mathematically accounts for right-censored data, incorporating currently active accounts whose ultimate defection timestamp lies in the future without biasing retention downward.",
-            "It automatically executes legal lawsuits against customers who cancel subscriptions before twelve months.",
-            "It forces all customers to pay their subscriptions exclusively in government treasury bills."
+            "It accounts for left-truncated data, including accounts acquired before the study period began, without biasing retention upward.",
+            "It accounts for right-censored data, including active accounts whose defection date lies in the future, without biasing retention downward.",
+            "It corrects the price sensitivity of subscribers, including accounts on discounted plans whose list price is higher, without biasing churn upward.",
+            "It adjusts for seasonal subscription patterns, including accounts that pause during holidays and restart later, without biasing churn downward."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7154,10 +7154,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is calculating the CAC Payback Period against gross contribution margin rather than top-line revenue mandatory for accurate corporate financial governance?",
           "options": [
-            "Because top-line revenue ignores the direct cost of goods sold and continuous operational servicing costs required to deliver the product, creating an artificially optimistic payback timeline that conceals cash flow drain.",
-            "Because international maritime law prohibits accountants from dividing numbers by gross revenue.",
-            "Because top-line revenue numbers are classified as trade secrets by the Federal Trade Commission.",
-            "Because software engineering salaries can only be paid using gross margin dollars under GAAP."
+            "Revenue ignores the cost of goods sold and ongoing servicing needed to deliver the product, creating an optimistic payback timeline that hides cash drain.",
+            "Revenue includes taxes collected for governments and ongoing refunds paid to customers, creating a pessimistic payback timeline that hides actual profit.",
+            "Revenue is recognized over the contract term rather than at billing, creating a delayed payback timeline that hides actual cash receipts from customers.",
+            "Revenue is reported before currency conversion in multinational firms, creating an unstable payback timeline that hides exchange rate gains and losses."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7182,10 +7182,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic operational purpose of identifying 'At-Risk' accounts in an RFM customer segmentation matrix (e.g., cell score 255)?",
           "options": [
-            "To report the customer to international credit rating agencies for breach of contract.",
-            "To increase product prices by 40% on all future transactions.",
-            "To permanently delete the customer's login credentials from the corporate database.",
-            "To immediately dispatch proactive customer success interventions to historically high-value, high-frequency accounts whose purchasing recency has stalled before they defect permanently to competitors."
+            "To send discount coupons to historically low-value, low-frequency accounts whose recency has stalled, before they drift away from the brand.",
+            "To send premium loyalty rewards to historically high-value, high-frequency accounts who bought recently, before they move to a competitor.",
+            "To send onboarding guides to newly acquired accounts with low frequency and low spend, before they become inactive in the first month.",
+            "To send proactive customer success help to historically high-value, high-frequency accounts whose recency has stalled, before they defect to competitors."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7208,10 +7208,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a relatively modest 60-basis-point (0.6%) reduction in monthly customer churn yield millions of dollars in discounted customer equity over a 36-month horizon?",
           "options": [
-            "Because all customer support staff salaries are reimbursed by federal government small business grants.",
-            "Because enterprise clients agree to waive all software warranty protections in exchange for lower churn.",
-            "Because retention compounding operates exponentially across active accounts, retaining a larger revenue-generating customer base in every successive period whose compounding cash flows multiply future cohort equity.",
-            "Because the Federal Reserve automatically reduces commercial interest rates whenever churn declines."
+            "Retention reduces acquisition cost per customer in every successive period, so the saved marketing budget is invested in new cohorts and grows equity.",
+            "Retention raises the average price paid by customers in every successive period, so the price premium multiplies the margin of each cohort.",
+            "Retention compounds across active accounts, keeping a larger revenue-generating base in every successive period, so cash flows multiply cohort equity.",
+            "Retention raises the discount rate applied to future cash flows in every successive period, so the present value of each cohort increases."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7263,10 +7263,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the microeconomic Lerner Index (L = (P - MC) / P = 1 / |epsilon|), what occurs to a company's profit-maximizing gross margin as its brand differentiation successfully lowers consumer price elasticity?",
           "options": [
-            "The firm is legally forced by antitrust regulators to lower its prices to match the lowest cost competitor in the market.",
-            "The enterprise's marginal cost of manufacturing automatically doubles within sixty days.",
-            "Total gross revenue declines to zero because consumers refuse to buy products with high margins.",
-            "The Lerner Index expands, empowering the enterprise to command a significantly higher gross profit margin above marginal cost without triggering destructive customer volume loss."
+            "The Lerner Index shrinks, forcing the firm to accept a lower gross margin above marginal cost to avoid a destructive loss of customer volume.",
+            "The Lerner Index stays fixed, so the firm must cut marginal cost instead to earn a higher gross margin without a loss of customer volume.",
+            "The Lerner Index expands, but the firm must cut its price toward marginal cost to avoid a destructive loss of customer volume.",
+            "The Lerner Index expands, letting the firm earn a much higher gross margin above marginal cost without a destructive loss of customer volume."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7290,10 +7290,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational operational logic of Littlewood's Rule in revenue management and capacity allocation?",
           "options": [
-            "It calculates the exact inventory protection level for high-fare customers by selling discount inventory only as long as discount price equals or exceeds the expected marginal revenue of reserving that capacity.",
-            "It mandates that all customers must pay the exact same price regardless of booking timestamp.",
-            "It legally prohibits commercial airlines from selling tickets online.",
-            "It requires hotel chains to refund 100% of booking fees if it rains during a guest's stay."
+            "It sets a protection level for high-fare customers: sell discount inventory only while the discount fare is at least the expected marginal revenue of holding the capacity.",
+            "It sets a maximum discount for high-fare customers: sell discount inventory only while the discount fare is at least the average cost of the capacity sold.",
+            "It sets a booking deadline for discount customers: sell discount inventory only until the departure date is within the airline's fixed cutoff window.",
+            "It sets an overbooking limit for all customers: sell inventory only while the expected no-show cost is at least the expected marginal revenue per seat."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7317,10 +7317,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Van Westendorp Price Sensitivity Meter (PSM), what does the Optimal Price Point (OPP) represent?",
           "options": [
-            "The price at which 100% of customers receive free lifetime hardware warranties.",
-            "The price point where the proportion of consumers viewing the product as 'Too Cheap' intersects with the proportion viewing it as 'Too Expensive,' minimizing consumer purchase resistance and maximizing transaction velocity.",
-            "The statutory retail price dictated by the United Nations World Intellectual Property Organization.",
-            "The exact point where corporate production costs equal corporate advertising expenditures."
+            "The price where the share saying 'Cheap' meets the share saying 'Expensive', maximizing the expected profit per unit sold.",
+            "The price where the share saying 'Too Cheap' meets the share saying 'Too Expensive', minimizing purchase resistance.",
+            "The price where the share saying 'Too Cheap' meets the share saying 'Cheap', setting the lower bound of acceptable prices.",
+            "The price where the share saying 'Expensive' meets the share saying 'Too Expensive', setting the upper bound of acceptable prices."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7344,10 +7344,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Single Sign-On (SSO / SAML) almost universally gated behind the most expensive 'Enterprise / Best' tier in SaaS pricing models?",
           "options": [
-            "Because credit card companies charge a 20% fine on any enterprise transaction that does not utilize SSO.",
-            "Because software servers consume 90% more electricity whenever an employee logs in using Google Authenticator.",
-            "Because enterprise IT security mandates require SSO for regulatory compliance, establishing high willingness-to-pay that allows software providers to price-discriminate without alienating price-sensitive small businesses.",
-            "Because international telecommunications treaties make it illegal for small businesses to use passwords."
+            "SSO costs the provider far more to build and run than other features, so providers recover the cost only from the largest enterprise customers.",
+            "SSO is a legal requirement for software sold to enterprise buyers, so providers must charge enterprise rates to cover the compliance cost involved.",
+            "Enterprise IT security rules require SSO for compliance, creating high willingness-to-pay that lets providers price-discriminate without losing small businesses.",
+            "SSO is rarely used by small businesses, so providers include it in the top tier to reduce the support burden of their smallest customers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7373,10 +7373,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational safeguard implemented in enterprise dynamic pricing algorithms to prevent brand erosion during periods of excess inventory?",
           "options": [
-            "A policy requiring retail customers to pay for goods using government food stamps.",
-            "A mandatory requirement that all unsold inventory be destroyed at midnight.",
-            "An automated script that files for corporate bankruptcy whenever inventory exceeds sixty days.",
-            "An algorithmic hard price floor anchored to the Point of Marginal Cheapness (PMC), preventing the engine from discounting into price zones where consumers infer poor quality or counterfeit goods."
+            "An algorithmic price ceiling at the Point of Marginal Expensiveness (PME), stopping increases into zones where consumers infer price gouging or exploitation.",
+            "An algorithmic discount schedule tied to inventory age, stopping markdowns until stock has been held for a fixed number of days before being reduced.",
+            "An algorithmic price match against the lowest rival, stopping discounts only when the rival's price rises above the firm's own list price.",
+            "An algorithmic hard price floor at the Point of Marginal Cheapness (PMC), stopping discounts into zones where consumers infer poor quality or counterfeits."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7428,9 +7428,9 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "According to the Webster and Wind buying center framework, which organizational role holds the functional authority to control the flow of technical, legal, and operational information to key deciders?",
           "options": [
             "Gatekeepers, such as IT security officers, administrative assistants, and procurement compliance screeners who filter vendor access.",
-            "Users, who work exclusively with the software interface on a daily basis.",
-            "Initiators, who first notice operational friction within a departmental workflow.",
-            "Deciders, who hold final fiduciary and budget sign-off power."
+            "Influencers, such as technical evaluators, engineers, and external consultants whose specifications shape the criteria for vendor choice.",
+            "Deciders, such as senior executives and budget holders who hold the formal authority to approve the final vendor contract.",
+            "Users, such as operational staff and department managers who will work with the product daily after the purchase is completed."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7453,10 +7453,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining operational characteristic of Tier 1: 1-to-1 Strategic Account-Based Marketing compared to Programmatic ABM?",
           "options": [
-            "Relying entirely on unpaid organic TikTok videos to attract Fortune 500 chief information security officers.",
-            "Automated generic email blasting sent indiscriminately to over fifty thousand scraped LinkedIn contacts.",
-            "A mandatory requirement that all sales meetings occur exclusively over unencrypted public social media channels.",
-            "Bespoke, account-specific research, highly customized content assets, and dedicated marketing managers assigned to a small group of high-value enterprise accounts."
+            "Standardized industry research, templated content, and shared marketing managers for a large group of mid-sized accounts across many sectors.",
+            "Automated lookalike audiences, dynamic content, and programmatic advertising technology for a large group of accounts defined by firmographics.",
+            "Event-based lead capture, gated content, and inside sales development reps for a large group of inbound prospects in the funnel.",
+            "Bespoke account-specific research, highly customized content, and dedicated marketing managers for a small group of high-value enterprise accounts."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7479,10 +7479,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do modern B2B demand generation engines incorporate exponential time decay into their behavioral lead scoring algorithms?",
           "options": [
-            "To penalize prospects who refuse to follow company executives on personal social media accounts.",
-            "To artificially inflate executive bonus calculations at the conclusion of each fiscal quarter.",
-            "To degrade older engagement points over time, ensuring sales teams prioritize accounts demonstrating surging, present-moment buying intent rather than stale historical activity.",
-            "To automatically wipe customer relationship management databases every quarter to save cloud storage costs."
+            "To increase older engagement points over time, so sales teams prioritize accounts with long engagement histories rather than recent surges in activity.",
+            "To remove duplicate engagement points over time, so sales teams prioritize accounts with unique contacts rather than repeated visits by one person.",
+            "To degrade older engagement points over time, so sales teams prioritize accounts with surging present-moment intent rather than stale historical activity.",
+            "To weight engagement by job title over time, so sales teams prioritize accounts with senior contacts rather than activity from junior staff."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7505,10 +7505,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial danger of aggressively bidding on unsolicited corporate RFPs when an enterprise had zero involvement in drafting the specifications?",
           "options": [
-            "Violating federal securities laws that bar corporations from responding to public tenders.",
-            "Being exploited as 'Column Fodder' to satisfy corporate procurement rules while an entrenched incumbent or favored competitor wins the deal.",
-            "Triggering an automated reduction in the enterprise's corporate bond credit rating.",
-            "Causing an immediate malfunction in the organization's cloud hosting database."
+            "Being exposed to 'Scope Creep' that adds unpaid requirements after the award while the vendor's margin steadily shrinks during delivery.",
+            "Being exploited as 'Column Fodder' to satisfy procurement rules while an entrenched incumbent or favored competitor wins the deal.",
+            "Being locked into 'Price Anchoring' by the lowest bidder while the buyer demands the same discount from every other vendor.",
+            "Being bound by 'Liquidated Damages' written into the draft contract while the vendor carries delivery risk without any matching reward."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7531,10 +7531,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In W-Shaped multi-touch attribution modeling, how is revenue credit mathematically distributed across the prospective buyer's journey?",
           "options": [
-            "30% to First Touch, 30% to Lead Creation, 30% to Opportunity Creation, and 10% distributed across intermediate nurturing touchpoints.",
-            "100% to the final email click received before contract signing.",
-            "100% to the initial organic blog post that introduced the company brand.",
-            "Evenly distributed across all touchpoints without distinguishing key milestone conversions."
+            "30% to First Touch, 30% to Lead Creation, 30% to Opportunity Creation, and 10% spread across intermediate nurturing touches.",
+            "40% to First Touch, 40% to Opportunity Creation, and 20% spread across all intermediate nurturing touches in the journey.",
+            "20% each to First Touch, Lead Creation, Opportunity Creation, Closed Won, and the intermediate nurturing touches in the journey.",
+            "30% to First Touch, 30% to Lead Creation, 10% to Opportunity Creation, and 30% spread across intermediate nurturing touches."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7581,10 +7581,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to W. Timothy Coombs' Situational Crisis Communication Theory (SCCT), what is the mandatory communications posture when an organization faces a Preventable Cluster crisis?",
           "options": [
-            "An aggressive social media counter-campaign blaming consumers for misinterpreting company terms of service.",
-            "The Rebuild Posture, consisting of an unqualified public apology, transparent corrective remediation, and tangible compensation to affected stakeholders.",
-            "The Deny Posture, attacking journalists and aggressively scapegoating frontline suppliers to avoid legal civil liability.",
-            "A policy of total media silence, ordering corporate spokespeople to disconnect all company phone lines."
+            "The Deny posture: a firm public statement, legal action against accusers, and public evidence that the organization is not responsible.",
+            "The Rebuild posture: an unqualified public apology, transparent corrective action, and tangible compensation to affected stakeholders.",
+            "The Diminish posture: a limited public statement, context about mitigating factors, and evidence that the harm was less severe than reported.",
+            "The Bolster posture: a reminder of past good deeds, public praise for stakeholders, and evidence of the organization's strong record."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7607,10 +7607,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic objective of issuing a Holding Statement during the PR Golden Hour following a corporate operational failure?",
           "options": [
-            "To blame lower-level contracted software engineers and announce their immediate termination.",
-            "To announce an immediate corporate stock buyback to distract Wall Street financial analysts.",
-            "To establish communication command, express empathy, and state ongoing corrective actions without committing to unverified technical speculation that could damage executive credibility.",
-            "To publish a legally binding guarantee that no customer will ever experience a service interruption again."
+            "To establish legal protection, assign responsibility, and state the cause of failure without admitting liability that could damage insurance claims.",
+            "To establish a media blackout, restrict staff comments, and delay all statements until the investigation could be completed in full.",
+            "To establish communication command, show empathy, and state corrective actions without unverified technical speculation that could damage credibility.",
+            "To establish a compensation scheme, announce payment amounts, and state the settlement process without public discussion of the failure."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7633,10 +7633,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the 'Streisand Effect' in corporate brand crisis management, and how should PR teams prevent it?",
           "options": [
-            "A statutory requirement that all corporate PR budgets increase by fifteen percent following a celebrity endorsement.",
-            "An automated algorithmic crash on Wall Street triggered by simultaneous press releases from competing tech firms.",
-            "A design flaw in social media marketing banners that causes mobile smartphones to overheat.",
-            "The phenomenon where aggressive attempts to suppress, censor, or sue critics inadvertently amplifies the negative publicity exponentially; prevented through radical transparency and dignified communication."
+            "Aggressive advertising to counter critics unintentionally amplifies their reach on search engines; prevent it by buying more paid media space.",
+            "Public apologies for minor issues unintentionally invite more complaints from customers; prevent it by answering only formal legal claims.",
+            "Rapid removal of negative reviews unintentionally lowers the star rating of the brand; prevent it by hiring agencies to post new reviews.",
+            "Aggressive attempts to suppress, censor, or sue critics unintentionally amplify negative publicity; prevent it through transparency and dignified communication."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7685,10 +7685,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the RepTrak model of corporate reputational equity, what constitutes the most credible and durable foundation for post-crisis brand rehabilitation?",
           "options": [
-            "Launching an aggressive million-dollar television advertising campaign featuring smiling actors.",
-            "Structural restitution, tangible financial investments in systemic prevention, independent governance oversight, and authentic accountability that addresses root causes.",
-            "Suing dissatisfied customers and investigative journalists in federal court for trade libel.",
-            "Changing the company logo color palette and scrubbing historical Wikipedia articles."
+            "A rebranded identity, new advertising slogans, a refreshed logo, and celebrity endorsements that replace the old image of the company.",
+            "Structural restitution, real investment in systemic prevention, independent governance oversight, and authentic accountability for root causes.",
+            "Short-term price discounts, loyalty bonuses, extended warranties, and sponsorship deals that distract customers from the earlier failure.",
+            "Strong legal defense, expert witnesses, public relations counsel, and lobbying that limits the financial penalties after the failure."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7739,10 +7739,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise SaaS financial economics, what is the strategic significance of lifting Net Retention Rate (NRR) above 100 percent?",
           "options": [
-            "It triggers an automated stock split on the New York Stock Exchange.",
-            "It proves that the company has legally monopolized the entire logistics market and can eliminate its sales department.",
-            "It indicates that annual expansion revenue from existing accounts exceeds the revenue lost from customer churn, enabling the enterprise to grow even with zero new customer acquisition.",
-            "It automatically exempts the enterprise from paying federal corporate income taxes under IRS regulations."
+            "Annual new-customer revenue exceeds revenue lost to churn, so the company grows only as long as acquisition spending continues at the current pace.",
+            "Annual revenue from existing accounts is more than 100% of the budget, so the company meets its plan even with no new customers.",
+            "Annual expansion revenue from existing accounts exceeds revenue lost to churn, so the company grows even with zero new customer acquisition.",
+            "Annual gross margin from existing accounts exceeds acquisition cost, so the company recovers its investment even with high churn."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7765,10 +7765,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did ApexLogix anchor its subscription pricing tiers to processed shipment tonnage rather than individual software user seat licenses?",
           "options": [
-            "Because the New York Stock Exchange mandates tonnage-based pricing for all enterprise software companies.",
-            "Because modern enterprise logistics is automated via IoT devices and APIs, making shipment tonnage the true metric of customer operational value and enabling frictionless revenue expansion as clients scale.",
-            "Because federal labor laws make it illegal to count employee software user accounts in commercial contracts.",
-            "Because user seat licensing algorithms are technically impossible to program in cloud databases."
+            "Enterprise logistics is staffed by large teams of dispatchers, so the number of seats is the true measure of customer value and lets revenue expand as clients hire.",
+            "Enterprise logistics is automated through IoT and APIs, so shipment tonnage is the true measure of customer value and lets revenue expand as clients scale.",
+            "Enterprise logistics is regulated by tonnage taxes, so shipment tonnage is a compliance measure of customer value and lets providers pass the tax to clients.",
+            "Enterprise logistics is billed by carriers per kilometer, so shipping distance is the true measure of customer value and lets revenue track carrier costs."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7791,10 +7791,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational mechanism enabled ApexLogix to compress enterprise sales cycles from 240 days down to 135 days in Phase 3?",
           "options": [
-            "Multi-threaded buying center orchestration that proactively engaged all six Webster-Wind roles simultaneously with tailored content, preventing single-point-of-failure stalls.",
-            "Slashing software subscription prices by eighty percent across all commercial proposals.",
-            "Refusing to allow prospective customers to test the software prior to contract signing.",
-            "Outsourcing all enterprise sales negotiations to offshore automated robocall centers."
+            "Multi-threaded buying center orchestration that engaged all six Webster-Wind roles at once with tailored content, avoiding single-point-of-failure stalls.",
+            "Single-threaded executive selling that engaged only the economic buyer with personal meetings, avoiding delays caused by technical evaluations.",
+            "Automated email nurturing that engaged all leads in the database at once with generic content, avoiding delays caused by manual follow-up.",
+            "Deep discounting at the end of each quarter that engaged procurement teams at once with price offers, avoiding delays caused by negotiations."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7817,10 +7817,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why was Coombs' Rebuild Posture (apology and restitution) mandatory for ApexLogix during the Black Friday database blackout rather than a defensive posture?",
           "options": [
-            "Because defensive statements are illegal under the United States Uniform Commercial Code.",
-            "Because apologizing automatically forces competitors to reimburse ALS for all server hosting expenses.",
-            "Because the Federal Communications Commission requires all software companies to apologize on television twice a year.",
-            "Because ALS neglected redundant failover maintenance, making the event a Preventable Cluster crisis where defensive excuses inflame stakeholder rage and accelerate customer contract termination."
+            "ALS suffered a cyberattack by outside criminals, making this a Victim Cluster crisis where an apology implies liability and invites lawsuits from customers.",
+            "ALS had a record of earlier outages with customers, making this an Intensifier Cluster crisis where a defense of past reliability convinces stakeholders.",
+            "ALS had a minor accidental fault in a vendor's cloud system, making this an Accidental Cluster crisis where a short explanation satisfies the customers.",
+            "ALS neglected redundant failover maintenance, making this a Preventable Cluster crisis where defensive excuses inflame stakeholders and speed up contract terminations."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7843,10 +7843,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core strategic lesson is validated by ApexLogix Systems' successful corporate turnaround in Milestone 9?",
           "options": [
-            "Customer retention is irrelevant so long as top-of-funnel web traffic continues to increase.",
-            "Boardrooms only care about executive golf handicaps rather than net revenue retention metrics.",
-            "Strategic marketing and crisis communication are disciplined economic growth drivers that protect enterprise valuation, expand cohort net retention, and build resilient competitive moats.",
-            "Corporations can safely ignore cybersecurity maintenance if they spend enough money on print advertising."
+            "Strategic marketing and crisis communication are discretionary brand expenses that help to boost awareness, reduce media costs, and win creative awards.",
+            "Strategic marketing and crisis communication are separate departmental functions that help to boost lead volume, reduce legal exposure, and cut agency fees.",
+            "Strategic marketing and crisis communication are disciplined economic growth drivers that protect valuation, expand cohort net retention, and build competitive moats.",
+            "Strategic marketing and crisis communication are short-term sales tools that help to boost quarterly revenue, protect pricing, and recover lost deals."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7902,10 +7902,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the neurobiology of human visual attention, what is the critical operational distinction between bottom-up and top-down attentional processing?",
           "options": [
-            "Bottom-up attention requires conscious logical reasoning, while top-down attention is an involuntary reflex.",
-            "Bottom-up attention is governed exclusively by auditory soundwaves rather than retinal sensory input.",
-            "Bottom-up attention operates exclusively when a user is reading printed books, while top-down attention operates exclusively on mobile phones.",
-            "Bottom-up attention is involuntary, stimulus-driven, and occurs within 50 milliseconds based on low-level feature contrasts, whereas top-down attention is conscious, goal-directed, and requires 200 to 300 milliseconds of cognitive control."
+            "Bottom-up attention is goal-directed and conscious, occurring within about 300 ms from task relevance; top-down attention is involuntary and takes about 50 ms.",
+            "Bottom-up attention is involuntary and stimulus-driven, occurring within about 500 ms from low-level contrasts; top-down attention is goal-directed and takes about 50 ms.",
+            "Bottom-up attention is involuntary and learned from memory, occurring within about 50 ms from past experience; top-down attention is driven by color and takes 200 ms.",
+            "Bottom-up attention is involuntary and stimulus-driven, occurring within about 50 ms from low-level contrasts; top-down attention is goal-directed and takes 200 to 300 ms."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7928,10 +7928,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When interpreting eye-tracking biometric telemetry within a functional digital checkout form, what does an elevated Total Fixation Duration (TFD) coupled with a high revisitation rate indicate?",
           "options": [
-            "Acute cognitive friction, ambiguity, and user struggle, indicating that the customer is having difficulty understanding or completing the form input field.",
-            "Overwhelming brand love and aesthetic delight with the color palette of the input box.",
-            "That the user's computer monitor has malfunctioned and frozen the screen display.",
-            "That the customer is legally required to verify their biometric iris scan under federal banking statutes."
+            "Acute cognitive friction and ambiguity, showing the customer is struggling to understand or complete the form field.",
+            "High engagement and interest, showing the customer is reading the field carefully before choosing to complete the form.",
+            "Strong purchase intent and trust, showing the customer is reviewing the order details before choosing to submit the form.",
+            "Low visual contrast and weak layout, showing the customer is unable to see the form field before attempting to complete it."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7955,10 +7955,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In behavioral choice architecture, what is the primary economic mechanism of an Asymmetrically Dominated Decoy in subscription pricing?",
           "options": [
-            "It forces competitors to lower their retail prices across all third-party platforms.",
-            "It introduces an option that is clearly inferior to the target premium tier while priced nearly identically, altering the comparative frame to make the target tier appear extraordinarily valuable.",
-            "It automatically charges the customer's credit card twice without their knowledge.",
-            "It creates a counterfeit product option to deceive government tax auditors."
+            "It adds an option clearly cheaper than all other tiers at a much lower price, shifting the comparison so the entry tier looks far more attractive.",
+            "It adds an option clearly inferior to the target premium tier at a nearly identical price, shifting the comparison so the target looks far more valuable.",
+            "It adds an option clearly superior to the target premium tier at a much higher price, shifting the comparison so the target looks far more affordable.",
+            "It adds an option identical to the target premium tier at the same price, shifting the comparison so the target looks far more familiar."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7982,10 +7982,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the psychological explanation for why pre-populating an onboarding checklist with completed steps (the Endowed Progress Effect) dramatically increases user completion rates?",
           "options": [
-            "Because pre-populated checklists permanently reduce internet service provider connection fees.",
-            "Because artificial intelligence takes control of the user's mouse pointer and forces them to click.",
-            "Because users perceive that task momentum has already been established, harnessing the Goal Gradient Effect and Zeigarnik cognitive tension to motivate task completion.",
-            "Because software users believe that uncompleted checklists will trigger criminal prosecution."
+            "Users sense that the task is already finished, which draws on the Sunk Cost Effect and Anchoring to motivate leaving the task early.",
+            "Users sense that other people are watching them, which draws on the Bandwagon Effect and Social Proof to motivate finishing the task.",
+            "Users sense that momentum is already established, which draws on the Goal Gradient Effect and Zeigarnik tension to motivate finishing the task.",
+            "Users sense that the reward is larger than the effort, which draws on Loss Aversion and Scarcity to motivate finishing the task."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8010,10 +8010,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of a 'Saliency Parasite' in digital user interface design?",
           "options": [
-            "A computer virus that downloads illegal malware onto the user's hard drive.",
-            "A software bug that causes web pages to display upside down.",
-            "An automated script that cancels the user's bank account.",
-            "A non-essential visual element (such as high-contrast decorative photography or prominent social icons) that captures pre-attentive user gaze, draining attention away from the primary conversion action."
+            "A primary action button placed below the fold of the page that grabs late attention and delays the user's decision to complete the conversion action.",
+            "A long block of body copy that fills the page and slows conscious reading, which delays the user's decision to complete the conversion action.",
+            "A pop-up consent banner that blocks the page content on arrival, which pushes the user to leave without seeing the conversion action.",
+            "A non-essential visual element (such as high-contrast decoration or prominent social icons) that grabs pre-attentive gaze and pulls attention from the conversion action."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8065,10 +8065,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural advantage of transitioning from a monolithic marketing cloud to a composable MarTech stack anchored on a cloud data warehouse?",
           "options": [
-            "It decouples data storage from activation, eliminating vendor lock-in, slashing licensing costs, reducing data sync latency from hours to seconds, and establishing a single source of truth in the warehouse.",
-            "It eliminates the need for human software engineers and marketing managers entirely.",
-            "It guarantees that all digital advertising impressions will be completely free of charge on Google and Meta.",
-            "It automatically registers corporate trademarks in every international jurisdiction without legal filings."
+            "It decouples data storage from activation, avoiding vendor lock-in, cutting licensing costs, reducing sync latency to seconds, and making the warehouse the single source of truth.",
+            "It combines data storage and activation in one vendor suite, avoiding integration work, raising licensing discounts, and making the vendor the single source of truth.",
+            "It decouples data storage from activation, avoiding warehouse costs, ending identity resolution, and making each marketing tool its own source of truth.",
+            "It moves data storage to each marketing tool, avoiding duplicate pipelines, cutting licensing costs, and making every channel manager the source of truth."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8092,10 +8092,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational difference between deterministic and probabilistic identity resolution in Customer Data Platforms?",
           "options": [
-            "Deterministic resolution works only on Apple Mac computers, while probabilistic resolution works only on Windows PCs.",
-            "Deterministic resolution requires a court order from a federal judge, while probabilistic resolution does not.",
-            "Deterministic resolution permanently deletes customer data after twenty-four hours.",
-            "Deterministic resolution matches users with 100% certainty using verified first-party unique keys like hashed emails, while probabilistic resolution uses statistical matching on circumstantial telemetry like shared IP subnets and geolocations."
+            "Deterministic resolution matches users with statistical likelihood using shared IP subnets and locations; probabilistic resolution uses verified first-party keys such as hashed emails.",
+            "Deterministic resolution matches users within one device using first-party cookies; probabilistic resolution matches users across devices using verified hashed emails and phone numbers.",
+            "Deterministic resolution matches users in real time using streaming data; probabilistic resolution matches users in nightly batches using the same verified first-party keys.",
+            "Deterministic resolution matches users with certainty using verified first-party keys such as hashed emails; probabilistic resolution uses statistical matching on signals like IP subnets."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8119,10 +8119,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational function of Reverse-ETL in modern composable marketing technology stacks?",
           "options": [
-            "Translating corporate press releases into foreign languages using automated bots.",
-            "Creating fraudulent web user accounts to inflate digital analytics traffic.",
-            "Extracting enriched customer cohorts and machine learning attributes from the central data warehouse and syncing them directly into frontline operational tools like ad networks and marketing automation systems.",
-            "Permanently deleting the company's financial accounting spreadsheets to save disk space."
+            "Extracting raw event logs and click data from ad networks and marketing tools and loading them into the central data warehouse for storage.",
+            "Extracting transformed financial records from the data warehouse and syncing them into the accounting systems and the regulatory reporting tools.",
+            "Extracting enriched customer cohorts and machine learning attributes from the data warehouse and syncing them into ad networks and marketing automation tools.",
+            "Extracting enriched customer cohorts from the data warehouse and archiving them into cold storage for long-term backup and compliance purposes."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8147,10 +8147,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a First-Order Markov Chain Multi-Touch Attribution engine, what does the Removal Effect of a marketing channel represent?",
           "options": [
-            "The total number of unsubscribed email contacts deleted from the database.",
-            "The fractional reduction in overall customer conversion probability that occurs when that specific channel is mathematically removed from the touchpoint state graph.",
-            "The price discount applied to physical retail inventory clearance items.",
-            "The legal penalty charged by Google for violating digital advertising policies."
+            "The fractional rise in overall conversion probability when that channel is mathematically added to the touchpoint state graph.",
+            "The fractional drop in overall conversion probability when that channel is mathematically removed from the touchpoint state graph.",
+            "The share of total conversions credited to that channel when it is the last state visited before a conversion in the graph.",
+            "The fractional drop in channel spend when that channel is mathematically removed from the budget of the touchpoint state graph."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8176,10 +8176,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an enterprise composable MarTech streaming pipeline, what is the operational purpose of a Dead Letter Queue (DLQ)?",
           "options": [
-            "A dedicated storage queue that isolates malformed, invalid, or corrupted event payloads for forensic analysis and debugging without interrupting or stalling the primary event stream.",
-            "A government regulatory archive where tax evasion records are stored.",
-            "An email inbox where customer complaint messages are automatically deleted.",
-            "A physical warehouse where returned consumer electronics hardware is dismantled."
+            "A dedicated queue that isolates malformed or corrupted event payloads for analysis and debugging without stalling the primary event stream.",
+            "A dedicated queue that stores duplicate event payloads for deduplication and replay without slowing down the primary event stream.",
+            "A dedicated queue that holds delayed event payloads for later delivery and ordering without dropping any event from the primary stream.",
+            "A dedicated queue that archives completed event payloads for audit and billing without exposing personal data in the primary event stream."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8232,10 +8232,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under FTC ROSCA enforcement and modern deceptive design jurisprudence, what constitutes unlawful 'Asymmetric Friction' (Roach Motel)?",
           "options": [
-            "Offering customer support in more than three international languages.",
-            "Requiring substantially more steps, obstacles, delay tactics, or manual friction to cancel a subscription service than was required to enroll in it initially.",
-            "Providing a digital receipt immediately following a credit card purchase.",
-            "Allowing users to customize their profile picture on a mobile application."
+            "Requiring a clear confirmation screen and a reminder of the benefits before a subscription is canceled by the customer.",
+            "Requiring substantially more steps, obstacles, or delay tactics to cancel a subscription than were required to enroll in it.",
+            "Requiring the same number of steps to cancel a subscription as to enroll, but offering the cancellation by phone only.",
+            "Requiring annual rather than monthly billing for a subscription, with a refund of the unused portion if it is canceled."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8259,10 +8259,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under modern California Privacy Rights Act (CPRA) enforcement, what is the legal obligation of a commercial enterprise regarding Global Privacy Control (GPC) signals?",
           "options": [
-            "The enterprise is permitted to completely ignore the GPC signal unless the user sends a notarized letter by certified mail.",
-            "The enterprise must immediately shut down its website whenever a GPC signal is detected.",
-            "The enterprise is legally mandated to automatically recognize and honor the GPC signal as a valid consumer opt-out request from the sale or sharing of personal data without requiring manual banner clicks.",
-            "The enterprise can charge consumers a $50 administrative fee to honor the signal."
+            "The enterprise may treat the GPC signal as advisory only and must show a consent banner to confirm the opt-out of sale or sharing of personal data.",
+            "The enterprise must honor the GPC signal only for registered account holders, and may ignore it for anonymous visitors to the website.",
+            "The enterprise must automatically recognize and honor the GPC signal as a valid opt-out of sale or sharing of personal data without manual banner clicks.",
+            "The enterprise must honor the GPC signal only for sale of data to third parties, and may ignore it for sharing data across its own brands."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8287,10 +8287,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In algorithmic marketing compliance, what is the Four-Fifths (80%) Rule of Disparate Impact?",
           "options": [
-            "A mandate that corporate boards must contain exactly 80% software engineers.",
-            "A requirement that marketing teams must spend 80% of their budget on television advertisements.",
-            "A rule that digital marketing websites must load within 0.80 seconds.",
-            "A quantitative standard holding that if the selection, approval, or targeting rate for a protected demographic group is less than 80% of the rate for the highest group, the algorithm exhibits evidence of adverse disparate impact."
+            "If the selection or targeting rate for a protected group is above 80% of the rate for the lowest group, the algorithm shows evidence of adverse impact.",
+            "If the selection or targeting rate for a protected group is below 20% of the rate for the highest group, the algorithm shows evidence of adverse impact.",
+            "If four-fifths of the model's features correlate with a protected attribute, the algorithm shows evidence of adverse impact on that group.",
+            "If the selection or targeting rate for a protected group is below 80% of the rate for the highest group, the algorithm shows evidence of adverse impact."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8314,10 +8314,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a Data Clean Room utilizing Differential Privacy, what is the role of the Epsilon (ε) parameter?",
           "options": [
-            "A mathematical metric governing the privacy-accuracy tradeoff; smaller Epsilon injects more noise for stronger privacy, while larger Epsilon provides higher analytical precision with less noise.",
-            "The monthly hosting fee charged by Amazon Web Services for running cloud databases.",
-            "The number of marketing executives who have permission to log into the dashboard.",
-            "The total number of unsubscribed customer email addresses."
+            "A metric governing the privacy-accuracy tradeoff: smaller Epsilon adds more noise for stronger privacy, while larger Epsilon gives higher precision with less noise.",
+            "A metric governing the privacy-accuracy tradeoff: smaller Epsilon adds less noise for stronger privacy, while larger Epsilon gives lower precision with more noise.",
+            "A metric governing the size of the dataset: smaller Epsilon removes more records for stronger privacy, while larger Epsilon keeps more records for higher precision.",
+            "A metric governing the speed of the query: smaller Epsilon returns results more slowly for stronger privacy, while larger Epsilon returns them faster."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8342,10 +8342,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of integrating automated dark pattern and privacy compliance linters into enterprise CI/CD deployment pipelines?",
           "options": [
-            "It permanently eliminates the need for software code repositories like GitHub.",
-            "It automatically intercepts deceptive design patterns, asymmetrical consent banners, and privacy violations before code deploys to production, protecting the enterprise from catastrophic regulatory fines and brand erosion.",
-            "It automatically doubles the company's stock price on the New York Stock Exchange.",
-            "It allows marketers to secretly steal competitor pricing algorithms without detection."
+            "It rewrites deceptive design patterns, consent banners, and privacy notices automatically after code reaches production, avoiding the need for legal review.",
+            "It catches deceptive design patterns, asymmetrical consent banners, and privacy violations before code reaches production, avoiding regulatory fines and brand damage.",
+            "It speeds up deployment of design patterns, consent banners, and privacy notices after code reaches production, avoiding the need for manual testing.",
+            "It blocks competitors from copying design patterns, consent banners, and privacy notices once code reaches production, avoiding brand dilution."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8398,10 +8398,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Henry Jenkins' transmedia storytelling framework, what distinguishes authentic transmedia narrative from conventional multi-channel advertising repetition?",
           "options": [
-            "Conventional multi-channel advertising is always 100% free of charge.",
-            "Transmedia advertising requires the CEO of the company to appear in every marketing video.",
-            "Each medium provides a distinct, unique, and integral contribution to expanding the overarching narrative universe, rather than merely broadcasting identical marketing copy across platforms.",
-            "Transmedia campaigns are legally prohibited from utilizing digital internet technologies."
+            "Each medium repeats the same core story with matching visuals to reinforce the narrative, rather than adding new content for each platform.",
+            "Each medium is owned and produced by the brand itself to keep the narrative consistent, rather than relying on fan-made content.",
+            "Each medium makes a distinct, integral contribution to expanding the narrative universe, instead of broadcasting identical marketing copy across platforms.",
+            "Each medium is released on the same day worldwide to build the narrative momentum, rather than staggering the releases by platform."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8426,10 +8426,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Douglas Holt's Cultural Branding framework, what transforms a standard functional brand into an enduring Iconic Brand?",
           "options": [
-            "Offering unconditional 90% price discounts on all products indefinitely.",
-            "Performing cultural mythologies that resolve acute societal contradictions and identity anxieties of a specific historical moment, anchoring the brand into the consumer's social identity.",
-            "Increasing the quarterly programmatic advertising budget by 500% across all social media networks.",
-            "Changing the corporate logo every six months to match trending fashion colors."
+            "Delivering superior functional performance that solves consumer problems better than any rival, anchoring the brand in product quality.",
+            "Performing cultural myths that resolve societal contradictions and identity anxieties of a historical moment, anchoring the brand in identity.",
+            "Repeating a consistent brand promise and visual identity through heavy advertising over many years, anchoring the brand in memory.",
+            "Building a loyalty program and personalized service that rewards frequent buyers across all touchpoints, anchoring the brand in habit."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8455,9 +8455,9 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What are the three core sociological markers of a Brand Community identified by Albert Muniz and Thomas O'Guinn?",
           "options": [
             "Shared Consciousness (Consciousness of Kind), Shared Rituals and Traditions, and a felt sense of Moral Responsibility to fellow members.",
-            "A registered trademark, a physical office address, and a paid television commercial.",
-            "A mandatory subscription fee, a corporate credit card, and an automated chatbot.",
-            "A legal non-disclosure agreement, a discount coupon, and a quarterly printed newsletter."
+            "Shared Demographics (Age and Income Bands), Shared Purchase Habits, and a felt sense of Financial Obligation to the brand's owners.",
+            "Shared Ownership (Product Collection), Shared Discounts and Perks, and a felt sense of Competitive Rivalry with other brand communities.",
+            "Shared Geography (Local Clubs), Shared Events and Meetups, and a felt sense of Formal Duty to the brand's company representatives."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -8482,10 +8482,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Prahalad and Ramaswamy's co-creation paradigm, how is commercial value generated in modern digital commerce?",
           "options": [
-            "Value is created exclusively by the government printing paper currency.",
-            "Value is generated only when a company fires all human workers and replaces them with robots.",
-            "Value is created by forcing consumers to pay mandatory monthly membership dues.",
-            "Value is co-created through interactive, ongoing collaborative engagements between the firm and active consumer networks, rather than created solely within isolated corporate laboratories."
+            "Value is created solely by the firm's R&D and delivered to passive consumers, who capture it through the price they pay at purchase.",
+            "Value is created by consumers alone through online reviews and sharing, with the firm acting only as the platform that hosts the content.",
+            "Value is created by suppliers and distributors in a linear chain, with the firm and consumers each capturing value at fixed margins.",
+            "Value is co-created through ongoing interactive collaboration between the firm and active consumer networks, not solely inside corporate laboratories."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -8511,10 +8511,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an active, highly engaged brand community with a deep cultural moat impact enterprise corporate valuation?",
           "options": [
-            "It has zero impact on financial valuation and is purely a public relations metric.",
-            "It automatically forces the government to subsidize the company's manufacturing payroll.",
-            "It expands the enterprise EBITDA valuation multiple by reducing churn, lowering customer acquisition costs via organic virality, and conferring extraordinary crisis resilience and pricing power.",
-            "It requires the enterprise to convert into a non-profit charity organization."
+            "It lowers the EBITDA valuation multiple by raising community management costs, increasing moderation risk, and exposing the firm to public criticism.",
+            "It raises the EBITDA valuation multiple by increasing short-term sales volume, boosting advertising reach, and adding temporary seasonal revenue.",
+            "It raises the EBITDA valuation multiple by reducing churn, lowering acquisition costs through organic virality, and adding crisis resilience and pricing power.",
+            "It leaves the EBITDA valuation multiple unchanged because brand communities do not affect profit, churn, acquisition cost, or pricing power."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -8568,10 +8568,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Phase 1 of CogniSphere's turnaround, how did introducing Dan Ariely's Asymmetric Dominance Decoy Effect optimize subscription conversion?",
           "options": [
-            "By presenting an asymmetrically dominated decoy tier (Hardware Only at $39) that makes the comprehensive bundle ($44) appear dramatically superior in value, channeling consumer choice toward the high-margin bundle.",
-            "By making all products entirely free of charge for ten years.",
-            "By threatening consumers with legal action if they fail to purchase within five minutes.",
-            "By shutting down the website and selling products exclusively via door-to-door sales representatives."
+            "By adding a dominated decoy tier (Hardware Only at $39) that makes the full bundle ($44) look far better in value, steering choice to the high-margin bundle.",
+            "By adding a cheaper entry tier (Hardware Only at $19) that makes the full bundle ($44) look expensive, steering choice to the lowest-priced option.",
+            "By removing the middle tier (Hardware Only at $39) so the full bundle ($44) seems the only choice, steering choice to the high-margin bundle.",
+            "By adding a superior tier (Hardware Plus at $59) that dominates the full bundle ($44) in value, steering choice to the highest-priced option."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8597,10 +8597,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mechanism by which Reverse-ETL activates warehouse customer data into downstream operational tools in Phase 2?",
           "options": [
-            "Deleting all inactive customer records from the corporate database permanently.",
-            "Printing physical customer invoices on paper and mailing them via international postal service.",
-            "Manually exporting Excel spreadsheets every Friday afternoon and uploading them via FTP.",
-            "Using Change Data Capture (CDC) based on row-level cryptographic SHA-256 hashes to detect modified customer traits in Snowflake and incrementally syncing them to ad networks and marketing platforms in seconds."
+            "Using full-table nightly exports to copy every customer record in Snowflake and overwriting the data in ad and marketing platforms once each day.",
+            "Using client-side tracking pixels to collect changed customer traits from the website and sending them to ad and marketing platforms in seconds.",
+            "Using manual CSV uploads prepared by analysts to move changed customer traits from Snowflake into the ad and marketing platforms each week.",
+            "Using row-level SHA-256 hash Change Data Capture to detect changed customer traits in Snowflake and incrementally syncing them to ad and marketing platforms in seconds."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8626,10 +8626,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What was the strategic business impact of eliminating the deceptive 6-step subscription cancellation flow in Phase 3?",
           "options": [
-            "It forced CogniSphere to declare Chapter 11 corporate bankruptcy.",
-            "It made the company's computer servers permanently overheat.",
-            "It satisfied FTC Click-to-Cancel legal standards, averted $120M in regulatory penalties, and boosted new customer trial conversion by 31% by eliminating consumer fear of recurring billing traps.",
-            "It caused all customers to cancel their subscriptions within forty-eight hours."
+            "It met FTC Click-to-Cancel standards, avoided $120M in regulatory penalties, but cut new customer trial conversion by 31% as more users canceled early.",
+            "It met FTC Click-to-Cancel standards, avoided $12M in regulatory penalties, and lifted churn among subscribers by 31% as more users left the service.",
+            "It met FTC Click-to-Cancel standards, avoided $120M in regulatory penalties, and lifted new customer trial conversion by 31% by removing fear of billing traps.",
+            "It breached FTC Click-to-Cancel standards, risked $120M in regulatory penalties, and lifted new customer trial conversion by 31% by adding more offers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8655,10 +8655,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Douglas Holt's Cultural Branding model, what fundamental shift allowed CogniSphere to defeat cheap commodity clone competitors in Phase 4?",
           "options": [
-            "Dropping prices by 95% and operating the business at an astronomical permanent loss.",
-            "Transitioning from utilitarian, feature-led hardware advertising to performing an authentic cultural mythology anchored in the Hero/Sage archetype, resolving societal burnout anxieties and building an impregnable community moat.",
-            "Suing every customer who purchased a competitor's product in small claims court.",
-            "Ceasing all manufacturing operations and becoming an exclusive real estate holding company."
+            "Moving from premium pricing to deep discounting anchored in the lowest-price promise, resolving price sensitivity and building a volume advantage over the clones.",
+            "Moving from feature-led hardware advertising to performing an authentic cultural myth anchored in the Hero/Sage archetype, resolving burnout anxieties and building a community moat.",
+            "Moving from direct sales to retail distribution anchored in wide shelf presence, resolving visibility gaps and building a reach advantage over the clones.",
+            "Moving from hardware to software features anchored in a bigger technical specification list, resolving performance gaps and building a spec advantage over the clones."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8684,10 +8684,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the final Boardroom Defense of CogniSphere Consumer Cloud, what mathematical dynamic generated over $4.1 billion in shareholder value creation?",
           "options": [
-            "Expanding corporate EBITDA from $320M to $412M while simultaneously re-rating the enterprise EV/EBITDA multiple from 8.2x to 16.4x by replacing commoditized hardware with high-margin recurring subscriptions, cultural moats, and audit-proof MarTech.",
-            "Selling all corporate offices and holding the proceeds in physical cash inside a bank vault.",
-            "Filing an insurance claim for lost profits due to bad weather.",
-            "Printing counterfeit shares of common stock and distributing them to employees."
+            "Corporate EBITDA rose from $320M to $412M while the EV/EBITDA multiple re-rated from 8.2x to 16.4x as hardware gave way to high-margin recurring subscriptions.",
+            "Corporate EBITDA rose from $320M to $412M while the EV/EBITDA multiple fell from 16.4x to 8.2x as hardware gave way to high-margin recurring subscriptions.",
+            "Corporate EBITDA stayed at $320M while the EV/EBITDA multiple re-rated from 8.2x to 16.4x as hardware gave way to high-margin recurring subscriptions.",
+            "Corporate EBITDA rose from $320M to $412M while the EV/EBITDA multiple stayed at 8.2x as hardware gave way to high-margin recurring subscriptions."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8739,10 +8739,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of utilizing the WIPO Madrid System over direct national trademark applications?",
           "options": [
-            "It completely exempts the enterprise from paying corporate income taxes worldwide.",
-            "It eliminates the requirement to ever manufacture or sell commercial products.",
-            "It guarantees that competitor brands will automatically go bankrupt within thirty days.",
-            "It allows an enterprise to file a single international application in one language and pay one set of fees to secure and manage trademark protection across over one hundred and thirty member countries."
+            "It lets an enterprise file one international application in one language and gain an automatic worldwide trademark registration without national review.",
+            "It lets an enterprise file national applications in each language and pay a single fee to the WIPO, which then bills the member countries.",
+            "It lets an enterprise file one application with the home trademark office and gain unlimited protection across 130+ countries at no further cost.",
+            "It lets an enterprise file one international application in one language and pay one set of fees to protect a trademark across 130+ member countries."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8766,10 +8766,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate trademark law, what constitutes 'Genericide' (e.g., Escalator, Cellophane, Aspirin)?",
           "options": [
-            "The legal death and cancellation of a trademark registration that occurs when a proprietary brand name becomes the common generic noun used by the public to describe the entire product category.",
-            "A trademark registration that is renewed every five years instead of ten years.",
-            "The process of translating a corporate trademark into Chinese or Japanese characters.",
-            "A mandatory tax paid to the World Intellectual Property Organization on annual sales."
+            "The cancellation of a trademark when a proprietary brand name becomes the common noun the public uses for the whole product category.",
+            "The cancellation of a trademark when its owner fails to renew the registration and pay fees to the trademark office on time.",
+            "The cancellation of a trademark when it is used by a competitor in a different country and the owner does not file a challenge.",
+            "The cancellation of a trademark when its owner sells the business and the new owner changes the product the brand covers."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8794,10 +8794,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISO 10668 and international financial accounting standards, what is the core economic principle of the Relief-from-Royalty brand valuation method?",
           "options": [
-            "Counting the total number of paper invoices stored in the company archives.",
-            "Valuing the brand by calculating the net present value of hypothetical royalty payments that the enterprise avoids paying to a third party because it owns the proprietary trademark outright.",
-            "Dividing the company's gross manufacturing costs by the number of active employees.",
-            "Assuming that brand value is always equal to 50% of the company's physical equipment assets."
+            "Valuing the brand as the sum of historical advertising spending that the owner paid to build awareness since the trademark was first launched.",
+            "Valuing the brand as the net present value of hypothetical royalties the owner avoids paying a third party because it owns the trademark.",
+            "Valuing the brand as the net present value of royalties the owner actually collects from licensees that use the trademark under contract.",
+            "Valuing the brand as the price premium over private-label products multiplied by annual unit sales, discounted over the brand's remaining life."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8822,10 +8822,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In international trademark licensing law, what is the consequence of 'Naked Licensing' (licensing a trademark without exercising ongoing quality control over the licensee)?",
           "options": [
-            "The licensee is legally required to double their annual royalty payments to the licensor.",
-            "The government awards the licensor an exclusive tax credit for thirty years.",
-            "The trademark is deemed to have lost its significance as an indicator of consistent commercial origin, resulting in the judicial cancellation and forfeiture of the trademark registration.",
-            "The trademark automatically converts into a non-profit charity foundation."
+            "The trademark is transferred to the licensee, who gains ownership of the mark after using it for the statutory period of the license.",
+            "The trademark remains valid but the owner loses the right to collect royalties, since no quality terms were written into the license.",
+            "The trademark loses its meaning as an indicator of consistent origin, leading to judicial cancellation and forfeiture of the registration.",
+            "The trademark is converted into a collective mark, which the licensee and other users may share for the products in the same category."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8853,10 +8853,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing an algorithmic global trademark valuation simulator?",
           "options": [
-            "It guarantees that currency exchange rates will remain completely static forever.",
-            "It automatically files lawsuits against all competitors without human legal review.",
-            "It replaces all marketing staff with an automated spreadsheet.",
-            "It continuously synthesizes real-time trademark registry health, behavioral Brand Strength Index scores, and multi-currency discounted cash flows into an audit-proof monetary brand asset valuation."
+            "It combines static annual survey scores, a national advertising budget, and a single-currency revenue figure into a rough estimate of brand awareness.",
+            "It combines past litigation outcomes, legal fee totals, and registry filing dates into a record of the cost of building the trademark portfolio.",
+            "It combines social media follower counts, search engine rankings, and customer review ratings into an index of digital brand popularity.",
+            "It combines real-time trademark registry health, Brand Strength Index scores, and multi-currency discounted cash flows into an audit-ready monetary brand valuation."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8910,10 +8910,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core organizational reality is articulated by Scott Brinker's MarTech Law?",
           "options": [
-            "All software code must be written in the English language exclusively.",
-            "Marketing budgets must automatically double every six months regardless of sales.",
-            "Technology changes at an exponential rate, while human organizations and operational processes change logarithmically, creating a growing operational gap that Marketing Operations must bridge.",
-            "Digital computers will completely replace consumer purchasing decisions by the year 2030."
+            "Technology changes logarithmically, while human organizations and processes change exponentially, creating a narrowing gap that Marketing Operations must monitor.",
+            "Technology and human organizations both change exponentially, creating a shared acceleration that Marketing Operations must manage through hiring.",
+            "Technology changes exponentially, while human organizations and processes change logarithmically, creating a widening gap that Marketing Operations must bridge.",
+            "Technology changes exponentially, while marketing budgets change linearly, creating a growing funding gap that Marketing Operations must close with vendor cuts."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8966,10 +8966,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational and legal function of Rights Metadata and automated Digital Rights Management (DRM) in an enterprise DAM?",
           "options": [
-            "Tracking talent contracts, usage scopes, and expiration dates, and automatically revoking public CDN access when licenses expire to prevent catastrophic copyright infringement lawsuits.",
-            "Permanently deleting the company's financial balance sheet records.",
-            "Translating video files into Spanish subtitles automatically.",
-            "Encrypting employee passwords so human managers cannot read them."
+            "Tracking talent contracts, usage scopes, and expiry dates, and automatically revoking CDN access to expired licenses to avoid copyright lawsuits.",
+            "Tracking file sizes, formats, and resolution settings, and automatically compressing assets for the CDN to avoid page speed penalties.",
+            "Tracking campaign performance, audience reach, and click-through rates, and automatically promoting top assets on the CDN to raise conversion.",
+            "Tracking agency invoices, production costs, and approval dates, and automatically archiving old assets on the CDN to avoid storage fees."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8995,10 +8995,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate marketing operations, what distinguishes Zero-Based Budgeting (ZBB) from traditional historical budgeting?",
           "options": [
-            "ZBB mandates that marketing departments must operate without spending any money whatsoever.",
-            "ZBB allows employees to submit unverified expense receipts without executive approval.",
-            "ZBB is an accounting method used exclusively by bankrupt companies.",
-            "ZBB requires every marketing line item to begin at zero dollars each fiscal year and be justified from scratch based on projected ROI, rather than automatically rolling over historical budgets with minor percentage adjustments."
+            "ZBB requires every marketing line to start at last year's actual spend and be cut by a fixed percentage, instead of being justified on projected ROI.",
+            "ZBB requires only new marketing programs to start at zero and be justified on ROI, while existing programs keep their prior-year funding levels.",
+            "ZBB requires the total marketing budget to start at zero and be set as a fixed percentage of sales, instead of being justified line by line.",
+            "ZBB requires every marketing line to start at zero each fiscal year and be justified from scratch on projected ROI, instead of rolling over last year's budget."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9024,10 +9024,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an algorithmic Marketing Operations sprint velocity model, how does a Work-in-Progress (WIP) queue bottleneck impact annual marketing output?",
           "options": [
-            "It has zero impact because marketing campaigns do not depend on execution timing.",
-            "It automatically doubles the company's annual advertising budget.",
-            "It inflates campaign lead times under Little's Law, creating velocity drag that reduces realized story points and costs millions of dollars in delayed commercial revenue.",
-            "It forces all marketing software to be rewritten in assembly language."
+            "It shortens campaign lead times under Little's Law, creating velocity gain that adds realized story points and speeds commercial revenue.",
+            "It inflates campaign quality scores under Little's Law, creating review depth that cuts defect rates and protects commercial revenue.",
+            "It inflates campaign lead times under Little's Law, creating velocity drag that cuts realized story points and delays commercial revenue.",
+            "It reduces campaign costs under Little's Law, creating idle capacity that cuts realized story points but leaves commercial revenue unchanged."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9082,10 +9082,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In causal uplift modeling, why is marketing outreach to 'Sleeping Dogs' (Do-Not-Disturbs) commercially damaging?",
           "options": [
-            "Because Sleeping Dogs are computer bots that exhaust the marketing server's memory.",
-            "Because Sleeping Dogs would have retained their subscription if left alone, but marketing contact triggers dissatisfaction or reminds them to cancel, producing negative incremental lift.",
-            "Because Sleeping Dogs buy too many products and overload shipping warehouses.",
-            "Because Sleeping Dogs always file trademark infringement lawsuits against the company."
+            "Sleeping Dogs would have left anyway, and contact only wastes budget on customers who cannot be saved, producing zero incremental lift.",
+            "Sleeping Dogs would have stayed if left alone, but contact triggers dissatisfaction or a reminder to cancel, producing negative incremental lift.",
+            "Sleeping Dogs would have bought anyway, and contact only gives away discounts to customers who need none, producing small positive lift.",
+            "Sleeping Dogs are unreachable by marketing channels, so contact never arrives, producing no measurable response or incremental lift."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9109,10 +9109,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical advantage of the X-Learner architecture over a basic Two-Model T-Learner in marketing uplift estimation?",
           "options": [
-            "The X-Learner guarantees that every customer in the database will purchase every product.",
-            "The X-Learner runs exclusively on quantum supercomputers without CPU or GPU support.",
-            "The X-Learner is specifically designed for unbalanced treatment assignments and small treatment effects by imputing counterfactuals and training second-stage models on imputed effects.",
-            "The X-Learner eliminates the need to collect any customer data or run control groups."
+            "The X-Learner suits perfectly balanced treatment assignment and large effects by fitting one pooled model with the treatment flag as a feature.",
+            "The X-Learner suits very small datasets and simple effects by fitting a single linear regression with the treatment and control means.",
+            "The X-Learner suits unbalanced treatment assignment and small effects by imputing counterfactuals and training second-stage models on the imputed effects.",
+            "The X-Learner suits randomized controlled trials only and skips counterfactuals by comparing treatment and control group averages directly."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9138,10 +9138,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary statistical advantage of Cox Survival Analysis and DeepSurv over standard binary classification in customer churn modeling?",
           "options": [
-            "Survival models only require one single data point to achieve 100% perfect prediction accuracy.",
-            "Survival models can only be used by life insurance companies and cannot be applied to SaaS or commerce.",
-            "Survival models delete all customer records that have unsubscribed.",
-            "Survival models account for right-censored active subscribers and model the continuous instantaneous hazard rate over time, rather than collapsing churn into an arbitrary binary 30-day window."
+            "Survival models drop right-censored active subscribers and model a fixed churn probability for the cohort, instead of tracking the timing of each defection.",
+            "Survival models handle only customers who have already churned and model the revenue lost per defection, instead of predicting which customers will defect.",
+            "Survival models apply only to hardware products and model the failure rate of devices over time, instead of subscriber defection behavior.",
+            "Survival models handle right-censored active subscribers and model the continuous hazard rate over time, instead of forcing churn into a binary 30-day window."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9167,10 +9167,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary decision criterion in Dynamic Intervention Policy Optimization when evaluating a marketing retention action?",
           "options": [
-            "An intervention is deployed if and only if its Net Incremental Value is positive (incremental retention probability times residual CLV exceeds the cost of intervention).",
-            "The company must always offer the maximum discount to every customer who visits the website.",
-            "Interventions are assigned based on the customer's alphabetical order in the database.",
-            "Retention interventions are only deployed after the customer's account is permanently deleted."
+            "Deploy an intervention only if its Net Incremental Value is positive: incremental retention probability times residual CLV exceeds the cost of intervention.",
+            "Deploy an intervention whenever the customer's predicted churn probability exceeds 50%, whatever the incremental effect or the cost of intervention.",
+            "Deploy an intervention only if the customer's CLV ranks in the top decile, whatever the incremental retention effect or the cost of intervention.",
+            "Deploy an intervention only if its cost is below a fixed per-customer cap, whatever the incremental retention effect or the residual CLV."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9198,10 +9198,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Causal Uplift targeting vastly outperform traditional Propensity targeting in campaign net profitability?",
           "options": [
-            "Causal Uplift models automatically falsify customer transaction receipts to inflate reported revenue.",
-            "Causal Uplift isolates customers whose behavior changes specifically because of marketing (Persuadables) while suppressing wasteful outreach to Sure Things and churn-inducing Sleeping Dogs.",
-            "Causal Uplift models are required by the Federal Trade Commission for all retail companies.",
-            "Causal Uplift models guarantee that all advertising inventory can be purchased completely free of cost."
+            "Uplift targets customers with the highest predicted purchase probability (Sure Things) and suppresses outreach to Lost Causes and low-value Persuadables.",
+            "Uplift isolates customers whose behavior changes because of marketing (Persuadables) and suppresses wasteful outreach to Sure Things and churn-prone Sleeping Dogs.",
+            "Uplift targets customers with the highest past spend (Whales) and suppresses outreach to low-spend Persuadables and rarely active Sleeping Dogs.",
+            "Uplift targets customers with the lowest churn probability (Loyalists) and suppresses outreach to likely churners among the Lost Causes."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9254,10 +9254,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational architectural distinction between the Biological Cycle and the Technical Cycle in Cradle-to-Cradle circular design?",
           "options": [
-            "Biological nutrients safely biodegrade and replenish soil ecosystems, while technical nutrients are durable industrial materials designed for infinite closed-loop remanufacturing without material degradation.",
-            "Biological cycles apply exclusively to living house pets, while technical cycles apply to personal computers.",
-            "Biological cycles are illegal under international trade agreements.",
-            "Technical nutrients are designed to be incinerated in municipal waste power plants."
+            "Biological nutrients safely biodegrade and return to soil ecosystems, while technical nutrients are durable materials designed for endless closed-loop remanufacturing.",
+            "Biological nutrients are burned for energy at end of life, while technical nutrients are durable materials designed for one cycle of reuse before disposal.",
+            "Biological nutrients come from recycled plastics and metals, while technical nutrients are natural fibers designed for composting in industrial facilities.",
+            "Biological nutrients apply only to food packaging, while technical nutrients apply only to electronics designed for repair by the original manufacturer."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9282,10 +9282,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the EU Green Claims Directive and Directive 2024/825/EU, why are marketing claims of 'carbon neutrality' based on carbon offset credits prohibited?",
           "options": [
-            "Because European regulators do not believe that carbon dioxide exists.",
-            "Because all tree planting programs are illegal in the European Union.",
-            "Because carbon offsets are strictly reserved for government military vehicles.",
-            "Because offsetting claims mislead consumers into believing products have no environmental impact while unabated emissions continue, demanding verified direct supply chain reductions (insetting) instead."
+            "Offset claims are too costly for small brands to verify, so only large companies with certified registries may use them in their marketing.",
+            "Offset claims overstate the volume of carbon removed in one year, so firms must report them in multi-year averages instead of single-year totals.",
+            "Offset claims confuse consumers about product origin, so firms must label the country where each offset project is located on the packaging.",
+            "Offset claims mislead consumers into thinking products have no environmental impact while emissions continue, so verified supply chain reductions (insetting) are needed."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9310,10 +9310,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Greenhouse Gas Protocol (GHG Protocol), into which scope do digital advertising campaigns and programmatic media distribution fall?",
           "options": [
-            "Scope 2, representing municipal tap water consumption in the corporate cafeteria.",
-            "Digital advertising has zero emissions because computer pixels do not have physical mass.",
-            "Scope 3 (Category 1: Purchased Goods and Services), representing indirect value chain emissions from data centers, ad exchanges, and user devices.",
-            "Scope 1, representing direct emissions from company-owned factory smokestacks."
+            "Scope 1: direct emissions from company-owned sources, including servers and offices operated by the advertiser and its agencies.",
+            "Scope 2: indirect emissions from purchased electricity, including power used by the advertiser's own offices and its owned data centers.",
+            "Scope 3 (Category 1: Purchased Goods and Services): indirect value chain emissions from data centers, ad exchanges, and user devices.",
+            "Scope 3 (Category 6: Business Travel): indirect emissions from flights, hotels, and ground transport used by campaign teams."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9338,10 +9338,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core principle distinguishes the 'Double Materiality' framework mandated by the EU Corporate Sustainability Reporting Directive (CSRD)?",
           "options": [
-            "Companies are required to donate fifty percent of their annual profits to global non-profits.",
-            "Companies must evaluate both Impact Materiality (how the company impacts society and the environment) and Financial Materiality (how external sustainability factors impact the company's financial balance sheet).",
-            "Companies must print all corporate financial reports on double-thick recycled paper.",
-            "Companies must maintain two completely different sets of accounting books for tax inspectors."
+            "Companies must assess both Historical Materiality (past effects reported in audited accounts) and Forward Materiality (expected effects in the next fiscal year).",
+            "Companies must assess both Impact Materiality (their effect on society and environment) and Financial Materiality (the effect of sustainability factors on their finances).",
+            "Companies must assess both Stakeholder Materiality (concerns raised by customers and staff) and Shareholder Materiality (concerns raised by investors and lenders).",
+            "Companies must assess both Regional Materiality (effects in the home market) and Global Materiality (effects across all markets in which they operate)."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9368,10 +9368,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational function of an Algorithmic Ad Carbon Footprint & Green Claims Compliance Simulator in enterprise MOps?",
           "options": [
-            "Automatically auditing ad copy for illegal greenwashing buzzwords, verifying LCA documentation, and calculating digital media Scope 3 carbon emissions to block non-compliant campaigns prior to broadcast.",
-            "Generating fake carbon offset certificates to bypass government regulatory inspections.",
-            "Permanently deleting the company's public environmental sustainability reports.",
-            "Automatically increasing the price of consumer products by two hundred percent."
+            "It audits ad copy for greenwashing buzzwords, verifies LCA documentation, and calculates digital media Scope 3 emissions to block non-compliant campaigns before broadcast.",
+            "It writes ad copy with the most persuasive sustainability buzzwords, selects LCA statistics, and calculates the media cost per impression to maximize campaign reach.",
+            "It audits media invoices for billing errors, verifies agency contracts, and calculates the payment due dates to protect the cash flow of the marketing department.",
+            "It audits ad copy for trademark conflicts, verifies copyright licenses, and calculates the international filing costs to protect the brand's intellectual property."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9424,10 +9424,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Phase 1 of the Capstone, how does the Relief-from-Royalty method under ISO 10668 quantify the enterprise value of VerdantCore's trademark portfolio?",
           "options": [
-            "By multiplying the company's total social media follower count by twenty dollars.",
-            "By adding up the historical cost of all billboard advertisements printed over the past fifty years.",
-            "By calculating the physical weight of all packaged goods stored in company warehouses.",
-            "By calculating the present value of post-tax hypothetical licensing royalties the enterprise avoids paying because it owns the proprietary trademark outright."
+            "By calculating the present value of pre-tax royalties the company actually collects from licensees because it owns the trademark outright.",
+            "By calculating the replacement cost of rebuilding the trademark portfolio today because the company owns the trademark outright.",
+            "By calculating the price premium over unbranded products multiplied by unit sales because the company owns the trademark outright.",
+            "By calculating the present value of post-tax hypothetical royalties the company avoids paying a third party because it owns the trademark outright."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9453,10 +9453,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How did applying Little's Law and Work-in-Progress (WIP) Limits in VerdantCore's marketing Kanban boards accelerate campaign lead times?",
           "options": [
-            "By restricting the number of concurrent tasks in review and QA stages, eliminating context-switching friction and allowing cross-functional pods to finish active campaigns before starting new ones.",
-            "By firing all copywriters and replacing them with interns.",
-            "By canceling all marketing review stages and publishing unapproved ads.",
-            "By mandating that all employees work eighty hours per week."
+            "By limiting concurrent tasks in review and QA, removing context-switching and letting pods finish active campaigns before starting new ones.",
+            "By adding more concurrent tasks in review and QA, raising utilization and letting pods start new campaigns before finishing active ones.",
+            "By limiting the number of team members on each board, removing hand-offs and letting managers approve campaigns before pods start them.",
+            "By extending the sprint length from two to four weeks, removing planning meetings and letting pods batch several campaigns for review."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9482,10 +9482,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did VerdantCore's legacy propensity-based retention campaign generate a massive net loss despite targeting users with high churn risk?",
           "options": [
-            "Because customers were legally prohibited from reading corporate emails.",
-            "It spent millions of dollars giving unnecessary discounts to Sure Things while contacting Sleeping Dogs who were triggered to cancel their auto-renewals.",
-            "Because credit card companies refuse to process recurring subscription transactions.",
-            "Because all subscription software code was written in Python 2 instead of Python 3."
+            "It spent millions on advertising to Lost Causes who ignored all offers while ignoring Persuadables who would have stayed after contact.",
+            "It spent millions on unnecessary discounts to Sure Things while contacting Sleeping Dogs who were triggered to cancel their auto-renewals.",
+            "It spent millions on a retention team that handled complaints too slowly while competitors approached the same customers with lower prices.",
+            "It spent millions on loyalty bonuses for Persuadables who would have stayed anyway while Sure Things canceled because of the low rewards."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9512,10 +9512,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary statutory legal hazard was resolved by eliminating voluntary carbon offset claims in VerdantCore's European marketing copy?",
           "options": [
-            "Allowing the company to stop paying European corporate income taxes.",
-            "Mandating that all digital ads be translated into ancient Latin.",
-            "Avoiding regulatory penalties up to 4% of annual EU turnover under the EU Green Claims Directive and Directive 2024/825/EU, which prohibit carbon-neutral claims based on external offsets.",
-            "Requiring the company to permanently disconnect from the public internet."
+            "Avoiding fines of up to 10% of annual global turnover under the EU Emissions Trading System, which bars firms from selling carbon credits to consumers.",
+            "Avoiding tariffs of up to 4% of EU import value under the Carbon Border Adjustment Mechanism, which taxes products shipped from outside the EU.",
+            "Avoiding penalties of up to 4% of annual EU turnover under the Green Claims Directive and Directive 2024/825/EU, which bar carbon-neutral claims based on offsets.",
+            "Avoiding penalties of up to 4% of annual EU turnover under the GDPR, which bars carbon claims that rely on the personal data of consumers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9541,10 +9541,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic lesson demonstrated by the VerdantCore Milestone 11 Capstone transformation?",
           "options": [
-            "Environmental regulations have zero relevance to corporate marketing departments.",
-            "Marketing departments should spend 100% of their annual budget on unmeasured celebrity endorsements without financial accounting.",
-            "Agile marketing methods only work in software startups with fewer than five employees.",
-            "Modern enterprise marketing leadership requires the harmonious synthesis of legal IP governance, agile operational engineering, causal artificial intelligence, and verified statutory sustainability to maximize long-term enterprise valuation."
+            "Modern marketing leadership requires a focus on creative awards, large media budgets, brand awareness scores, and short-term sales to maximize quarterly earnings.",
+            "Modern marketing leadership requires separate silos for legal, operations, analytics, and sustainability teams to maximize each function's own performance targets.",
+            "Modern marketing leadership requires full automation of campaigns, data, and compliance with human oversight removed to maximize speed and cut labor costs.",
+            "Modern marketing leadership requires a synthesis of IP governance, agile operations, causal AI, and verified statutory sustainability to maximize long-term enterprise value."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9596,10 +9596,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Low-Rank Adaptation (LoRA) preferred over full-parameter fine-tuning for enterprise marketing brand voice alignment?",
           "options": [
-            "Full-parameter fine-tuning is illegal under international copyright law for all corporate entities.",
-            "LoRA eliminates the need for any training data or stylebook guidelines.",
-            "LoRA freezes the base model and trains low-rank decomposition matrices, reducing trainable parameters by over 99% while avoiding catastrophic forgetting and enabling modular adapter swapping.",
-            "LoRA deletes 99% of the base model parameters permanently to save hard drive disk storage space."
+            "LoRA retrains every weight of the base model on a small brand dataset, increasing trainable parameters while avoiding overfitting and allowing faster inference.",
+            "LoRA compresses the base model into a smaller version, cutting inference cost by over 99% while avoiding hardware limits and allowing on-device deployment.",
+            "LoRA freezes the base model and trains low-rank matrices, cutting trainable parameters by over 99% while avoiding catastrophic forgetting and allowing adapter swapping.",
+            "LoRA adds brand rules to the prompt at inference time, cutting training cost to zero while avoiding model updates and allowing quick adapter switching."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9623,10 +9623,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary scientific reason for conditioning synthetic consumer personas on empirical census distributions and psychometric priors rather than simple role-play prompts?",
           "options": [
-            "To ensure that all synthetic agents produce identical, unanimous responses for easier executive presentations.",
-            "To prevent algorithmic sycophancy and stereotyping, ensuring statistically valid, heterogeneous decision-making that mirrors real-world population behaviors.",
-            "Because language models cannot generate text unless they are provided with an official government identification number.",
-            "To eliminate the need for computational power during simulation runs."
+            "To avoid token limits and latency, giving shorter, faster responses that mirror the style of a typical survey respondent.",
+            "To avoid sycophancy and stereotyping, giving statistically valid, heterogeneous decisions that mirror real-world population behavior.",
+            "To avoid hallucination of facts, giving verified, citation-backed answers that mirror the content of published market reports.",
+            "To avoid privacy risks and consent, giving anonymized, aggregated answers that mirror the structure of real customer records."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9650,10 +9650,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical advantage does Contextual Thompson Sampling provide over fixed fifty-fifty A/B testing in dynamic creative optimization?",
           "options": [
-            "It continuously minimizes cumulative conversion regret by dynamically shifting impression volume toward higher-performing creative variants while maintaining Bayesian exploration.",
-            "It guarantees that every single creative receives exactly equal impressions regardless of performance.",
-            "It eliminates the need for tracking conversions, relying entirely on visual aesthetic ratings.",
-            "It forces all users to see every creative variant in sequential alphabetical order."
+            "It continuously cuts cumulative conversion regret by shifting impressions toward better-performing creatives while still exploring through Bayesian sampling.",
+            "It continuously raises cumulative conversion regret by shifting impressions toward untested creatives while ignoring the results of earlier impressions.",
+            "It fixes the traffic split at the start of the test, so the winning creative is declared only after the fixed sample size has been reached.",
+            "It removes all exploration after the first thousand impressions, so the highest early performer receives the whole budget for the campaign."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9677,10 +9677,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under current US Copyright Office and EU intellectual property guidelines, what is the legal status of an advertising asset generated entirely by a foundation AI model without human modification?",
           "options": [
-            "The foundation model vendor owns 100% of the brand's corporate trademarks permanently.",
-            "The asset is legally classified as physical real estate property.",
-            "It automatically receives 100 years of global patent and copyright protection without registration.",
-            "It lacks human authorship, cannot be registered for copyright protection, and immediately falls into the public domain, leaving the brand vulnerable to competitor replication."
+            "It belongs to the AI developer, can be registered by the developer, and remains under the developer's license, leaving the brand dependent on a vendor.",
+            "It belongs to the brand as work for hire, can be registered by the brand, and remains protected for life plus 70 years, leaving the brand secure.",
+            "It is protected automatically for five years, cannot be renewed, and then falls into the public domain, leaving the brand open to copying.",
+            "It lacks human authorship, cannot be registered for copyright, and falls into the public domain, leaving the brand open to competitor copying."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9705,10 +9705,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does contextual segmentation enhance Thompson Sampling performance in multi-audience dynamic creative campaigns?",
           "options": [
-            "By merging all audience segments into a single monolithic group to eliminate statistical variability.",
-            "By restricting advertising strictly to users who have already purchased the product five times.",
-            "By maintaining independent posterior Beta distributions for each audience context, allowing the algorithm to learn distinct creative winners for different user segments simultaneously.",
-            "By turning off creative optimization entirely on weekends."
+            "By keeping one shared posterior Beta distribution across all audiences, so the algorithm learns a single winning creative for the whole market.",
+            "By keeping separate prior Beta distributions fixed for each audience, so the algorithm tests the same creatives on every segment in sequence.",
+            "By keeping separate posterior Beta distributions for each audience context, so the algorithm learns different winning creatives for different segments at once.",
+            "By keeping separate budget caps for each audience context, so the algorithm shows each creative an equal number of times to every segment."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9761,10 +9761,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary economic mechanism does the EIP-2981 smart contract standard provide to corporate brand managers?",
           "options": [
-            "A legal filing that converts the brand into a sovereign national government.",
-            "A standardized on-chain interface that reports the royalty percentage and receiver for secondary market resales, so that marketplaces can route the royalty directly to the enterprise treasury.",
-            "An encryption method that hides product prices from all retail consumers.",
-            "A mechanism that automatically deletes customer loyalty points if they are not spent within seven days."
+            "A standard on-chain interface enforcing a fixed resale price ceiling for tokens, so marketplaces cannot list items above the price set by the brand.",
+            "A standard on-chain interface reporting the royalty percentage and receiver for secondary resales, so marketplaces can route royalties to the enterprise treasury.",
+            "A standard on-chain interface verifying the identity of each token buyer, so marketplaces can block resales to wallets not approved by the brand.",
+            "A standard on-chain interface minting new tokens for each resale, so marketplaces can add supply to the brand's treasury automatically."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9788,10 +9788,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical principle allows Quadratic Voting to prevent wealthy 'whales' from dominating decentralized brand community governance?",
           "options": [
-            "Only voters located within a five-mile radius of corporate headquarters are permitted to vote.",
-            "Quadratic voting prohibits anyone from voting on more than one proposal per year.",
-            "Voting influence scales with the square root of tokens allocated, making each additional vote quadratically more expensive and empowering broad community consensus over concentrated wealth.",
-            "The smart contract randomly burns 90% of the wealthiest voter's tokens before every election."
+            "Voting power grows with the square of tokens allocated, so each extra vote costs quadratically less and concentrated wealth beats broad consensus.",
+            "Voting power grows linearly with tokens held for the longest, so each extra vote costs the same and long-term holders beat short-term traders.",
+            "Voting power grows with the square root of tokens allocated, so each extra vote costs quadratically more and broad consensus beats concentrated wealth.",
+            "Voting power is capped at a fixed number of tokens per wallet, so each extra token adds no vote and a single wallet cannot beat the community."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9815,10 +9815,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core strategic and legal advantage do zk-SNARKs provide to enterprise marketing data systems?",
           "options": [
-            "They allow the brand to legally sell customer home addresses to third-party telemarketers without consent.",
-            "They automatically increase customer credit card limits by fifty percent.",
-            "They replace all digital media advertising with direct-mail postal letters.",
-            "They allow mathematical verification that a consumer satisfies specific eligibility criteria (e.g., age or income) without revealing, transferring, or storing any underlying raw PII, eliminating regulatory breach liabilities."
+            "They encrypt the consumer's full profile so that only the brand holds the key, and the data is stored securely on the enterprise's own servers.",
+            "They anonymize the consumer's identity by replacing names with random tokens, and the data is stored in a shared industry database.",
+            "They record each consumer consent on a public blockchain ledger, and the data is transferred to partners that verify the consent hash.",
+            "They mathematically verify that a consumer meets eligibility criteria (such as age or income) without revealing, transferring, or storing any raw PII."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9842,10 +9842,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do W3C Verifiable Credentials and smart contract escrows resolve the historical limitations of corporate loyalty partnerships?",
           "options": [
-            "They allow consumers to carry cryptographically verifiable brand equity across non-competing partner ecosystems and execute atomic benefits without central clearinghouses or shared databases.",
-            "They force all partner brands to merge into a single legal corporation.",
-            "They make all products completely free for any consumer holding a cryptocurrency wallet.",
-            "They require users to print physical coupons at bank branches before making a purchase."
+            "They let consumers carry verifiable brand equity across non-competing partner ecosystems and execute atomic benefits without central clearinghouses or shared databases.",
+            "They let partners pool all member points into one central clearinghouse database and execute settlements in monthly batches between the brands.",
+            "They let consumers convert loyalty points into cryptocurrency on public exchanges and execute purchases at the market price without brand approval.",
+            "They let brands copy member profiles across partner CRMs and execute joint promotions using a shared database run by an intermediary."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9870,10 +9870,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key conclusion demonstrated by the enterprise Web3 brand ecosystem simulator?",
           "options": [
-            "Blockchains should only be used to process internal corporate payroll for executive leadership.",
-            "Tokenized loyalty programs unlock sustainable secondary royalty revenues under EIP-2981, while Quadratic Voting robustly preserves consumer community consensus against plutocratic takeover.",
-            "Quadratic voting ensures that corporate boards can ignore all consumer feedback permanently.",
-            "Secondary market royalties are legally prohibited across all international jurisdictions."
+            "Tokenized loyalty creates one-time primary sales revenue under EIP-2981, while Quadratic Voting gives large holders the controlling influence over the community.",
+            "Tokenized loyalty creates lasting secondary royalty revenue under EIP-2981, while Quadratic Voting keeps community consensus safe from plutocratic takeover.",
+            "Tokenized loyalty creates lasting secondary royalty revenue under Quadratic Voting, while EIP-2981 keeps community consensus safe from plutocratic takeover.",
+            "Tokenized loyalty removes secondary market trading under EIP-2981, while Quadratic Voting replaces community consensus with brand-appointed delegates."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9926,10 +9926,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the combination of Weibull/geometric adstock and the non-linear Hill saturation function essential in econometric media mix modeling?",
           "options": [
-            "It mathematically captures both the multi-week carryover memory of advertising (adstock) and diminishing marginal returns (saturation), preventing severe over-allocation to saturated channels.",
-            "It forces all marketing channels to have exactly identical return on ad spend at all budget levels.",
-            "It eliminates the need to track corporate sales or marketing expenditures.",
-            "It guarantees that print magazine advertising will always outperform digital search."
+            "It captures both the multi-week carryover memory of advertising (adstock) and diminishing marginal returns (saturation), preventing over-allocation to saturated channels.",
+            "It captures both the immediate same-day effect of advertising (adstock) and constant marginal returns (linearity), preventing under-allocation to new channels.",
+            "It captures both the seasonal pattern of advertising (adstock) and rising marginal returns (scale effects), preventing under-allocation to growing channels.",
+            "It captures both the competitor reaction to advertising (adstock) and flat marginal returns (saturation), preventing over-allocation to the brand channels."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9953,10 +9953,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the No-U-Turn Sampler (NUTS) with informative priors superior to traditional OLS regression in Media Mix Modeling?",
           "options": [
-            "OLS regression is legally prohibited by the Securities and Exchange Commission for marketing accounting.",
-            "NUTS deletes all historical data that does not fit a straight linear line.",
-            "NUTS automatically increases corporate quarterly revenues by twenty-five percent without requiring marketing expenditure.",
-            "NUTS prevents negative elasticity estimates, resolves severe multicollinearity by incorporating causal lift priors, and quantifies full parameter uncertainty through posterior credible intervals."
+            "NUTS guarantees the largest R-squared on historical data, removes the need for priors, and reports a single point estimate for each channel coefficient.",
+            "NUTS runs faster than OLS on small datasets, removes the need for adstock transforms, and reports confidence intervals based on large-sample normality.",
+            "NUTS allows negative elasticity estimates, ignores multicollinearity among channels, and reports parameter uncertainty only through p-values.",
+            "NUTS prevents negative elasticity estimates, handles multicollinearity with causal lift priors, and quantifies parameter uncertainty through posterior credible intervals."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9980,10 +9980,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of causal holdout lift experiments in a Unified Marketing Measurement (UMM) architecture?",
           "options": [
-            "To replace the corporate finance department with an automated bot.",
-            "To generate random promotional discounts for executive employees.",
-            "To provide an indisputable empirical anchor that calibrates top-down Bayesian MMM priors and discounts inflated bottom-up MTA conversion metrics.",
-            "To permanently eliminate all marketing channels except email newsletters."
+            "To give a faster replacement for Bayesian MMM that removes the need for priors and reports channel returns weekly from user-level logs.",
+            "To give a legal record for privacy audits that proves consent for tracking and discounts conversions from users who declined cookies.",
+            "To give an empirical anchor that calibrates top-down Bayesian MMM priors and discounts the inflated bottom-up MTA conversion metrics.",
+            "To give a creative score for each ad that calibrates brand lift surveys and discounts impressions that were not viewable by users."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10007,10 +10007,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under microeconomic equimarginal principles and Karush-Kuhn-Tucker optimization, how should a Chief Marketing Officer allocate a multi-channel budget to maximize total sales?",
           "options": [
-            "By giving 100% of the budget to whichever channel had the highest average historical ROAS.",
-            "By allocating capital such that the marginal return on ad spend (mROAS) is equalized across all channels, taking into account diminishing returns saturation and boundary constraints.",
-            "By dividing the budget equally into exact thirds regardless of channel performance.",
-            "By cutting the marketing budget to zero whenever interest rates increase."
+            "Allocate capital so that average return on ad spend (ROAS) is equalized across all channels, allowing for diminishing returns and boundary constraints.",
+            "Allocate capital so that marginal return on ad spend (mROAS) is equalized across all channels, allowing for diminishing returns and boundary constraints.",
+            "Allocate capital in proportion to each channel's past revenue share, allowing for diminishing returns and boundary constraints.",
+            "Allocate capital to the channel with the highest average ROAS until it is saturated, then move to the next highest, ignoring boundary constraints."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10035,10 +10035,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary strategic lesson is proven by the consolidated enterprise Bayesian MMM simulator?",
           "options": [
-            "Rebalancing corporate marketing spend by equalizing marginal ROAS across calibrated response curves captures millions of dollars in incremental revenue with zero increase in total marketing budget.",
-            "Marketing budget allocation should be decided solely by whichever agency presents the flashiest video reel.",
-            "All digital marketing channels inevitably produce zero revenue over time.",
-            "Traditional last-click attribution models are superior to Bayesian econometric models in all respects."
+            "Rebalancing spend by equalizing marginal ROAS across calibrated response curves captures millions in incremental revenue with no increase in total budget.",
+            "Increasing total spend in the highest-ROAS channel captures millions in incremental revenue, but needs a matching increase in the total marketing budget.",
+            "Cutting spend equally across all channels saves millions in cost with no loss of revenue, since response curves are flat at current spend levels.",
+            "Shifting spend toward the channels with the highest average ROAS captures millions in revenue, but lowers returns in every channel over time."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10091,10 +10091,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Economic Value Added (EVA) a superior metric for corporate boards to evaluate CMO performance compared to gross revenue or ad impressions?",
           "options": [
-            "EVA automatically awards cash bonuses to all marketing agencies regardless of performance.",
-            "EVA eliminates the need for corporate tax filings with the internal revenue service.",
-            "EVA measures how many people watched the company's Super Bowl commercial on television.",
-            "EVA explicitly deducts the corporate cost of capital (WACC * Capital Employed) from marketing-driven operating profits (NOPAT), proving true economic value creation above the hurdle rate."
+            "EVA adds the cost of capital (WACC × Capital Employed) back to marketing-driven operating profit (NOPAT), proving revenue growth above the prior year.",
+            "EVA deducts only the interest on debt (Debt × Rate) from marketing-driven operating profit (EBIT), proving profit creation above the lenders' return.",
+            "EVA divides marketing-driven operating profit (NOPAT) by total revenue, proving margin creation above the average of the industry peers.",
+            "EVA deducts the cost of capital (WACC × Capital Employed) from marketing-driven operating profit (NOPAT), proving value creation above the hurdle rate."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10118,10 +10118,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 805 / IFRS 3 and ASC 350, what is the primary corporate financial risk of executing an immediate, aggressive brand elimination following an acquisition?",
           "options": [
-            "Destroying acquired customer brand equity and triggering customer churn, which forces the enterprise to recognize massive, earnings-destroying intangible brand asset impairment write-downs.",
-            "The acquiring company is legally forced to change its corporate logo to an animal drawing.",
-            "The Federal Reserve will seize all corporate cash accounts permanently.",
-            "The acquisition purchase price automatically doubles overnight."
+            "It destroys acquired brand equity and triggers churn, forcing large earnings-destroying impairment write-downs on the acquired intangible brand assets.",
+            "It creates duplicate brand costs and delays synergies, forcing large restructuring charges on the integration budgets of the acquiring company.",
+            "It raises the amortization expense of acquired brands and lowers net income, forcing large annual deductions from the goodwill of the acquirer.",
+            "It triggers antitrust review of the combined brand portfolio and delays the closing, forcing large breakup fees to be paid to the target."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10145,10 +10145,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the US DOJ/FTC Merger Guidelines, what occurs when a proposed merger increases the market Herfindahl-Hirschman Index (HHI) by over 100 points in a market where post-merger HHI exceeds 1,800?",
           "options": [
-            "All marketing advertising becomes tax-exempt across all fifty states.",
-            "It triggers a statutory presumption of anticompetitive harm, subjecting the acquisition to intense regulatory scrutiny, Second Request subpoenas, and potential federal injunctions.",
-            "The merger is automatically approved within twenty-four hours without review.",
-            "The acquiring corporation is automatically awarded a Nobel Peace Prize."
+            "It triggers an automatic approval of the merger, bringing only a short filing review, no subpoenas, and no possible federal injunctions.",
+            "It triggers a presumption of anticompetitive harm, bringing intense scrutiny, Second Request subpoenas, and possible federal injunctions.",
+            "It triggers a presumption of procompetitive efficiency, bringing a fast clearance, reduced filing fees, and possible tax benefits for the firms.",
+            "It triggers a mandatory divestiture of half the target's assets, bringing a forced sale, state level review, and possible private lawsuits."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10174,10 +10174,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary governance benefit of incorporating SOX 404 audit compliance and multi-dimensional EVA/NRR metrics into executive marketing compensation?",
           "options": [
-            "It eliminates all federal taxes on corporate executive salaries.",
-            "It forces marketing departments to outsource all advertising to offshore agencies.",
-            "It prevents short-term revenue manipulation (such as destructive promotional price discounting) and aligns CMO incentives directly with long-term economic profit, brand equity preservation, and statutory financial compliance.",
-            "It ensures that marketing executives never have to attend board meetings."
+            "It encourages short-term revenue growth (such as aggressive price discounting) and ties CMO incentives to quarterly sales, market share, and media efficiency.",
+            "It prevents hiring of external agencies (such as creative consultancies) and ties CMO incentives to headcount savings, in-house capacity, and cost control.",
+            "It prevents short-term revenue manipulation (such as damaging price discounting) and ties CMO incentives to long-term economic profit, brand equity, and compliance.",
+            "It lowers the audit fees of the company (such as external review costs) and ties CMO incentives to budget underspend, tax savings, and vendor discounts."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10203,10 +10203,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary conclusion does the M&A Brand Portfolio and Financial Governance Simulator demonstrate to the Board of Directors?",
           "options": [
-            "All brand acquisitions should immediately be renamed after the CEO's personal pet.",
-            "Antitrust regulatory agencies never review transactions in consumer goods industries.",
-            "Economic Value Added is identical to gross sales revenue.",
-            "A phased endorsed brand architecture preserves customer equity (preventing ASC 350 goodwill impairment) while capturing millions in media procurement synergies and generating substantial positive Economic Value Added (EVA)."
+            "An immediate single-brand architecture preserves cost synergies (avoiding duplicate spend) while capturing customer migration gains and positive EVA.",
+            "A permanent house of brands architecture preserves target brand autonomy (avoiding ASC 805 revaluation) while capturing local pricing power and positive EVA.",
+            "A phased endorsed brand architecture preserves customer equity (avoiding ASC 350 impairment) but loses media procurement synergies and generates negative EVA.",
+            "A phased endorsed brand architecture preserves customer equity (avoiding ASC 350 impairment) while capturing media procurement synergies and positive EVA."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10260,10 +10260,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational and financial breakthrough achieved in Capstone Phase 1?",
           "options": [
-            "Deleting all corporate customer data and relying on handwritten billboard advertisements.",
-            "Outsourcing 100% of marketing creative production to offshore freelancers with zero oversight.",
-            "Replacing digital media budgets with unmeasured radio sponsorships.",
-            "Pairing QLoRA brand-adapted generative AI with contextual Thompson Sampling DCO lifts conversion rates by 2.7x, while in silico synthetic panels eliminate months of pre-testing delays and C2PA manifests secure statutory IP rights."
+            "QLoRA brand-adapted generative AI with fixed 50/50 split testing lifts conversion 2.7x, live panels add pre-testing delays, and C2PA manifests secure IP rights.",
+            "QLoRA brand-adapted generative AI with contextual Thompson Sampling DCO lifts conversion 27%, synthetic panels cut costs, and C2PA manifests secure data privacy.",
+            "Full fine-tuning of a generative model with contextual Thompson Sampling DCO lifts conversion 2.7x, synthetic panels need months, and C2PA manifests secure IP.",
+            "QLoRA brand-adapted generative AI with contextual Thompson Sampling DCO lifts conversion 2.7x, synthetic panels cut pre-testing delays, and C2PA manifests secure IP rights."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10288,10 +10288,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the integration of EIP-2981 smart contracts and Quadratic Voting transform customer loyalty in Capstone Phase 2?",
           "options": [
-            "EIP-2981 captures perpetual recurring royalties on secondary peer-to-peer market trades for the brand treasury, while Quadratic Voting empowers grassroots customer consensus over plutocratic token whales.",
-            "It converts all customer loyalty points into physical paper postage stamps.",
-            "It requires customers to forfeit their property rights to the enterprise.",
-            "It eliminates all customer discounts permanently."
+            "EIP-2981 captures recurring royalties on secondary trades for the brand treasury, while Quadratic Voting gives grassroots customers consensus power over token whales.",
+            "EIP-2981 captures one-time royalties on primary sales for the brand treasury, while Quadratic Voting gives token whales decisive power over grassroots customers.",
+            "EIP-2981 caps resale prices of tokens on secondary markets for the brand treasury, while Quadratic Voting gives grassroots customers one vote per wallet.",
+            "EIP-2981 captures recurring royalties on secondary trades for the brand treasury, while Quadratic Voting gives voting power in proportion to tokens held."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10316,10 +10316,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core economic principle guided the $32M capital reallocation in Capstone Phase 3?",
           "options": [
-            "Spending exactly equal amounts on every advertising channel regardless of diminishing returns.",
-            "Microeconomic equimarginal theory and KKT optimization, which reallocates capital from saturated channels with low marginal ROAS into high-headroom channels until marginal return per dollar is equalized across the portfolio.",
-            "Allocating all capital to whichever advertising channel has the most humorous television mascot.",
-            "Cutting media spend randomly until the corporate stock price increases."
+            "Average-return ranking with linear programming, moving capital from low-ROAS channels into the single highest-ROAS channel until its budget cap is reached.",
+            "Equimarginal theory with KKT optimization, moving capital from saturated low-mROAS channels into high-headroom channels until marginal return per dollar is equalized.",
+            "Proportional budgeting with historical shares, moving capital from underspent channels into overspent channels until each share matches last year's.",
+            "Marginal cost pricing with Lagrange multipliers, moving capital from high-cost media into low-cost media until the cost per impression is equalized."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10344,10 +10344,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did VerdantCore adopt a phased endorsed brand architecture rather than an immediate brand elimination following the $1.8B acquisition in Capstone Phase 4?",
           "options": [
-            "To confuse competitors by operating under twelve different names at once.",
-            "Because the target company's CEO refused to sign the employment agreement.",
-            "To protect acquired customer brand equity and maintain a 96.4% retention rate, preventing catastrophic goodwill and intangible asset impairment write-downs under ASC 350 while capturing media synergies.",
-            "Because international trademark laws prohibit companies from ever changing a brand name."
+            "To protect acquired supplier contracts and keep a 96.4% on-time delivery rate, avoiding penalty clauses and early termination fees while capturing procurement synergies.",
+            "To satisfy antitrust regulators and keep a 96.4% market share cap, avoiding forced divestitures and blocking orders under the merger guidelines while capturing price synergies.",
+            "To protect acquired customer equity and keep a 96.4% retention rate, avoiding goodwill and intangible impairment write-downs under ASC 350 while capturing media synergies.",
+            "To speed up integration and reach a 96.4% cost savings target, avoiding duplicate brand spend and restructuring charges under ASC 420 while capturing media synergies."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10372,10 +10372,10 @@ export const BCOM_MKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic lesson demonstrated by the VerdantCore Milestone 12 Grand Capstone transformation?",
           "options": [
-            "Marketing leadership should solely focus on designing appealing social media logos without financial accountability.",
-            "Corporations should never use econometrics or statistics in marketing decision-making.",
-            "Mergers and acquisitions have zero impact on customer brand equity.",
-            "Modern enterprise marketing leadership requires the harmonious synthesis of generative artificial intelligence, decentralized Web3 tokenomics, econometric Bayesian capital allocation, and statutory financial governance to maximize corporate Economic Value Added (EVA) and Return on Equity (ROE)."
+            "Modern marketing leadership requires focusing on creative storytelling, traditional media, large promotions, and brand awareness to maximize revenue and market share.",
+            "Modern marketing leadership requires choosing one core technology, such as generative AI, and applying it across all functions to maximize speed and cost savings.",
+            "Modern marketing leadership requires separating technology, finance, and legal teams from marketing to maximize independence and avoid conflicts with the board.",
+            "Modern marketing leadership requires synthesizing generative AI, Web3 tokenomics, Bayesian capital allocation, and statutory governance to maximize EVA and ROE."
           ],
           "answer": 3,
           "answerIndex": 3,

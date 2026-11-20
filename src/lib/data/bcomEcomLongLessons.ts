@@ -31,10 +31,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must e-commerce platforms distinguish between Gross Merchandise Value (GMV) and GAAP Net Revenue in financial disclosures?",
           "options": [
-            "Because the platform acts as an agent rather than a principal, only the take-rate commission belongs to the platform under ASC 606 revenue recognition.",
-            "Because GMV includes government sales tax that the platform is legally forbidden from calculating.",
-            "Because 3P marketplace transactions are exempt from all federal banking regulations.",
-            "Because GMV only counts items that are returned by customers within 30 days."
+            "Because the platform acts as an agent, only its take-rate commission counts as its own revenue under ASC 606.",
+            "Because the platform acts as a principal, so the full GMV is recognised as its revenue under ASC 606 in every case.",
+            "Because GMV is measured on a cash basis while GAAP revenue is accrual-based, so the two differ only in timing.",
+            "Because ASC 606 requires the platform to deduct its own marketing spend from GMV to reach its reported revenue."
           ],
           "answerIndex": 0,
           "explanation": "Under ASC 606 (Principal vs Agent guidance), if a platform does not hold inventory risk or control the goods before transfer, it cannot report the full transaction value as revenue. Only its net take rate commission qualifies as platform revenue.",
@@ -61,10 +61,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of deploying an unconstrained competitive repricer bot in an e-commerce catalog?",
           "options": [
-            "Dynamic repricing violates international treaties on ocean shipping tariffs.",
-            "Competitor prices are mathematically impossible to detect using web APIs.",
-            "The repricer bot will automatically convert customer shopping carts into common stock.",
-            "A \"race to the bottom\" price war where two competing bots undercut each other down to $0.01 unless hard margin floor guardrails are enforced."
+            "Repricer bots raise prices in lockstep until demand collapses, so only a price ceiling guardrail can protect sales.",
+            "The bot can only change prices once a month, so it reacts too slowly to competitor moves and loses market share.",
+            "Marketplaces block all automated repricing, so the bot's changes are ignored and the listings are suspended.",
+            "A price war in which competing bots undercut each other toward $0.01 unless hard margin-floor guardrails are set."
           ],
           "answerIndex": 3,
           "explanation": "Without strict floor prices (e.g., Cost + 20% margin), opposing algorithmic repricers will continuously undercut each other in an infinite decrement loop, destroying operating margins and causing catastrophic financial loss.",
@@ -91,10 +91,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does implementing 1-Click Express Checkout (e.g., Apple Pay, Shop Pay, Google Pay) dramatically reduce cart abandonment?",
           "options": [
-            "It automatically refunds 50% of the product cost to the consumer.",
-            "It prevents the consumer from comparing prices on other search engines.",
-            "It eliminates manual form entry of 16-digit credit card numbers, billing addresses, and shipping details, removing friction at the highest-drop-off step.",
-            "It guarantees that shipping carriers deliver the packages for free."
+            "It adds an extra identity verification page, so only serious buyers continue and casual browsers drop out earlier.",
+            "It lowers the product price at checkout by the amount of the wallet's fee saving, which persuades hesitant shoppers to buy.",
+            "It removes manual entry of card numbers, billing addresses and shipping details, cutting friction at the biggest drop-off step.",
+            "It moves payment to a step after delivery, so shoppers no longer have to commit card details to place their order."
           ],
           "answerIndex": 2,
           "explanation": "Typing addresses and card details on a mobile screen is the single largest friction point in digital commerce. 1-Click wallets pull pre-saved credentials in one biometric tap, slashing drop-off rates at the final checkout step.",
@@ -120,10 +120,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do sophisticated e-commerce fulfillment engines aggressively avoid split shipments whenever possible?",
           "options": [
-            "Because split shipments require separate merchant banking accounts for each package.",
-            "Because splitting an order across multiple warehouses incurs duplicate carrier base fees, box costs, and packaging labor that severely degrade transaction margins.",
-            "Because federal postal regulations prohibit shipping two boxes to the same physical address on the same calendar day.",
-            "Because split shipments automatically void customer payment transactions at checkout."
+            "Splitting an order delays payment capture, which raises the merchant's days sales outstanding and its working capital needs.",
+            "Splitting an order across warehouses duplicates carrier base fees, boxes and packing labor, eroding the order's margin.",
+            "Splitting an order lowers inventory record accuracy, because each warehouse must separately reconcile its own stock counts.",
+            "Splitting an order makes each package taxable separately, which raises the total sales tax collected from the customer."
           ],
           "answerIndex": 1,
           "explanation": "Each separate box shipped requires its own shipping label, carton, packing material, and carrier base rate. A split shipment often doubles fulfillment costs, frequently wiping out the entire operating margin on that customer order.",
@@ -150,10 +150,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is \"bracketing\" in consumer e-commerce behavior and why is it dangerous for retail unit economics?",
           "options": [
-            "When customers purchase multiple sizes or colors of the same item with the premeditated plan to keep only one and return the rest, drastically inflating reverse logistics costs.",
-            "When customers split an order across two different credit cards to circumvent fraud detection.",
-            "When automated bots buy out limited sneaker inventory in bulk.",
-            "When shipping carriers bundle multiple parcels into a single container for customs clearance."
+            "Customers buy several sizes or colors of an item planning to keep one and return the rest, inflating reverse logistics costs.",
+            "Customers buy the same item from several retailers at once and keep only the one with the lowest delivered price.",
+            "Customers add items to a cart and leave, planning to return after a retargeting discount, which delays the retailer's revenue.",
+            "Customers buy items to resell online at a higher price, using the retailer's return window as a safety net if resale fails."
           ],
           "answerIndex": 0,
           "explanation": "Bracketing turns every intended purchase into 2 to 3 shipments and returns, incurring return shipping labels, inspection labor, and markdown losses that destroy the retailer's net delivered margin.",
@@ -224,10 +224,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an increase in an e-commerce retailer's Inventory Turnover Ratio directly enhance corporate return on equity (ROE)?",
           "options": [
-            "Because the company no longer needs to maintain financial accounting records.",
-            "Because generating equivalent sales volume with less average inventory frees up cash flow, reduces inventory holding/warehousing costs, and lowers markdown obsolescence write-downs.",
-            "Because higher inventory turnover allows the company to eliminate corporate income taxes.",
-            "Because shipping carriers legally discount parcel shipping rates by 90% for high-turnover retailers."
+            "Higher turnover means more stock is held per sale, which raises sales volume and so lifts earnings per share and ROE.",
+            "Making the same sales with less average inventory frees cash, cuts holding costs and lowers markdown write-downs, lifting ROE.",
+            "Higher turnover lowers revenue relative to assets, which shrinks the equity base and mechanically increases the ROE ratio.",
+            "Higher turnover lets the retailer defer supplier payments, which is booked as equity and raises ROE without any profit change."
           ],
           "answer": 1,
           "why": "Faster inventory turnover reduces tied-up working capital and minimizes annual holding and obsolescence costs, directly accelerating capital velocity and return on invested capital.",
@@ -273,10 +273,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following operational practices is most effective at dampening the Bullwhip Effect in multi-echelon retail supply chains?",
           "options": [
-            "Ordering inventory exclusively once every two years in gigantic ocean containers.",
-            "Refusing to share sales figures with manufacturers to protect trade secrets.",
-            "Sharing real-time retail Point-of-Sale (POS) demand data transparently with upstream suppliers and implementing Vendor-Managed Inventory (VMI).",
-            "Offering frequent, unannounced 50% discount flash sales that artificially create demand spikes."
+            "Placing larger and less frequent bulk orders at every tier so that supplier lead times are covered by big safety buffers.",
+            "Letting each tier forecast demand from the orders it receives from the tier below, using its own smoothed averages.",
+            "Sharing real-time point-of-sale (POS) demand data with upstream suppliers and using Vendor-Managed Inventory (VMI).",
+            "Running temporary price promotions at each tier to pull demand forward, which evens out the order pattern upstream."
           ],
           "answer": 2,
           "why": "When all supply chain tiers base replenishment decisions on genuine end-consumer checkout data rather than distorted intermediate orders, artificial variance amplification is eliminated.",
@@ -323,10 +323,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a negative Contribution Margin 3 (CM3) indicate about a Direct-to-Consumer (DTC) e-commerce business model?",
           "options": [
-            "The company is generating infinite shareholder returns through tax shelters.",
-            "The website domain has expired and requires renewal.",
-            "The delivery carrier has lost all parcels in transit.",
-            "The company is losing money on every initial customer order after factoring in product costs, warehouse fulfillment, shipping, and digital ad acquisition spend."
+            "The business earns less profit per order than its competitors, although each order still covers all of its variable costs.",
+            "The business pays more in fixed overhead such as rent and salaries than the total gross profit it earns across all orders.",
+            "The business has negative cash from financing, because loans and investor funds exceed the profits earned in the period.",
+            "The business loses money on a customer's first order after product, fulfillment, shipping and ad acquisition costs."
           ],
           "answer": 3,
           "why": "Negative CM3 proves that customer acquisition costs exceed first-order contribution margin; the company destroys capital unless repeat repurchase rates are exceptionally high.",
@@ -372,10 +372,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial benefit of implementing \"Markdown Avoidance\" logic in an omnichannel Distributed Order Management (DOM) routing engine?",
           "options": [
-            "Fulfilling full-price online customer orders directly from retail store locations that hold excess aging inventory, thereby preventing costly clearance markdowns and preserving merchandise margin.",
-            "Eliminating all local and state sales tax obligations on online purchases.",
-            "Forcing customers to pick up orders in person regardless of their selected delivery preference.",
-            "Replacing third-party parcel carriers with in-store employees on bicycles."
+            "Fulfilling full-price online orders from stores holding excess aging stock, avoiding clearance markdowns and protecting margin.",
+            "Routing every online order to the cheapest warehouse regardless of stock age, to minimise per-parcel freight cost alone.",
+            "Marking down aging store inventory online first, so that the discounted units sell faster than they would in the store.",
+            "Shipping new-season stock from the central warehouse to stores, so that stores can refresh displays before clearance."
           ],
           "answer": 0,
           "why": "Shipping from stores with slow-moving inventory monetizes aging units at full retail prices before end-of-season clearance markdowns destroy product margins.",
@@ -422,10 +422,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical commercial danger for an online merchant if their credit card chargeback-to-transaction ratio exceeds 1.0%?",
           "options": [
-            "The merchant's physical retail stores are immediately seized by local municipal councils.",
-            "Payment networks (Visa/Mastercard) place the merchant in Excessive Chargeback Monitoring Programs, imposing heavy monthly fines, increased processing fees, and potential termination of credit card processing abilities.",
-            "All existing customer accounts are automatically converted to cash-on-delivery.",
-            "The merchant is legally required to provide free merchandise to all customers for thirty days."
+            "The merchant loses the right to dispute chargebacks, so every later dispute is decided in the cardholder's favor automatically.",
+            "Card networks place the merchant in chargeback monitoring programs with heavy fines, higher fees and possible loss of card processing.",
+            "Cardholders are barred from filing further disputes against the merchant, which then lowers its refund and return costs.",
+            "The merchant is moved to a lower fee tier, because high dispute volume signals a large customer base to the card networks."
           ],
           "answer": 1,
           "why": "Crossing the 1% chargeback threshold threatens payment gateway connectivity; card networks penalize excessive chargebacks with steep fines and eventual merchant account revocation.",
@@ -493,10 +493,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between Contribution Margin 2 (CM2) and Contribution Margin 3 (CM3) in D2C e-commerce?",
           "options": [
-            "CM2 includes executive salaries, while CM3 reflects only physical warehouse rent.",
-            "CM2 is an accounting metric required exclusively for physical department stores.",
-            "CM2 reflects profit after deducting variable fulfillment and merchant fees, while CM3 subtracts paid media customer acquisition cost (CAC).",
-            "CM3 excludes all product manufacturing costs and inbound freight."
+            "CM2 is profit after product cost only, while CM3 adds back shipping revenue and subtracts the fixed overhead of the business.",
+            "CM2 is revenue less returns and discounts, while CM3 subtracts payment fees and cost of goods sold from that figure.",
+            "CM2 is profit after variable fulfillment and payment fees, while CM3 further subtracts paid-media customer acquisition cost (CAC).",
+            "CM2 includes advertising spend but excludes fulfillment, while CM3 includes fulfillment but excludes payment processing fees."
           ],
           "answer": 2,
           "why": "CM2 evaluates order economics after physical fulfillment and payment processing; CM3 further deducts paid advertising spend to evaluate true net marketing profitability.",
@@ -537,10 +537,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must customer lifetime value (LTV) in D2C e-commerce be calculated using Contribution Margin 2 (CM2) rather than Gross Revenue?",
           "options": [
-            "Because Shopify stores do not record gross transaction values in order databases.",
-            "Because Gross Revenue ignores COGS, shipping, and payment gateway costs, creating a false impression of marketing profitability when repeat orders consume significant fulfillment cash.",
-            "Because customers always demand full refunds on all repeat purchases.",
-            "Because federal trade regulations mandate that all revenue figures be discounted by statutory corporate income tax."
+            "Gross revenue is hard to measure per customer, whereas CM2 is the only figure accounting standards allow for cohort analysis.",
+            "Gross revenue ignores COGS, shipping and payment costs, so LTV based on it overstates how profitable marketing really is.",
+            "Gross revenue captures only the first order, so LTV based on it understates the value of loyal repeat buyers.",
+            "Gross revenue is already net of advertising cost, so using it would double count CAC, whereas CM2 omits all variable costs."
           ],
           "answer": 1,
           "why": "Measuring LTV in Gross Revenue overstates profitability; true LTV must reflect net contribution profit after subtracting product manufacturing, shipping, and payment processing costs.",
@@ -585,10 +585,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do automated cart recovery sequences achieve exceptional Return on Ad Spend (ROAS) exceeding 30x compared to prospecting ad campaigns?",
           "options": [
-            "Because the audience has already demonstrated high purchase intent by entering the checkout funnel, requiring minimal incremental messaging cost to convert.",
-            "Because SMS carriers provide free cellular bandwidth for commercial retail promotions.",
-            "Because shopping cart abandonment is completely illegal under consumer protection statutes.",
-            "Because web browsers automatically deduct the purchase amount from user credit cards upon cart abandonment."
+            "The audience has already shown high purchase intent by entering the checkout funnel, so little extra messaging cost is needed.",
+            "Recovery emails reach cold audiences at huge scale, so their cost per impression is far lower than any prospecting ad.",
+            "Recovery messages carry no platform fees and are excluded from attribution, so the ROAS denominator is tiny.",
+            "Recovery sequences go only to customers who bought before, and repeat buyers convert at higher rates than new ones."
           ],
           "answer": 0,
           "why": "Cart abandoners are at the very bottom of the funnel; because intent is already validated, low-cost reminder messaging converts at high rates with immense marginal ROI.",
@@ -633,10 +633,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is Marketing Efficiency Ratio (MER) and why is it preferred over platform-reported ROAS for executive financial planning?",
           "options": [
-            "MER measures only offline billboard advertising and television campaigns.",
-            "MER is an inventory accounting formula used exclusively by customs import brokers.",
-            "MER reflects the percentage of website visitors who leave a 5-star customer review.",
-            "MER is Total Store Net Revenue divided by Total Marketing Ad Spend; it cannot be inflated by overlapping platform attribution windows and reflects true bank account revenue."
+            "MER is one platform's ad spend divided by its attributed revenue, adjusting that platform's claims for view-through windows.",
+            "MER is contribution margin divided by total revenue, which shows the share of each sale left after variable costs are paid.",
+            "MER is revenue from new customers divided by revenue from returning customers, showing how dependent the store is on acquisition.",
+            "MER is total store net revenue divided by total ad spend, so it avoids overlapping attribution claims and reflects real revenue."
           ],
           "answer": 3,
           "why": "MER measures macro marketing efficiency by dividing total store revenue by total ad spend, eliminating duplicate attribution claims across advertising networks.",
@@ -681,10 +681,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic advantage of synchronizing order unit economics, cohort LTV, and blended MER inside an integrated control tower?",
           "options": [
-            "It guarantees that postal carrier delays will never impact customer delivery satisfaction.",
-            "It automatically waives all credit card processing fees charged by merchant banking networks.",
-            "It prevents capital exhaustion by aligning paid advertising spend with true contribution margin profitability and customer cash payback dynamics.",
-            "It allows the enterprise to cease paying manufacturing costs to physical suppliers."
+            "It lets the company scale ad spend as fast as platform ROAS allows, treating reported revenue growth as the key health signal.",
+            "It replaces the monthly accounting close with live dashboards, so financial statements no longer need an external audit.",
+            "It prevents capital exhaustion by aligning ad spend with true contribution margin profit and the customer's cash payback period.",
+            "It ranks channels by gross sales volume, directing more budget to whichever channel reports the highest revenue."
           ],
           "answer": 2,
           "why": "An integrated control tower provides complete visibility across customer acquisition, fulfillment costs, and repeat cohort cash generation, preventing premature scaling and cash burn.",
@@ -750,10 +750,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do high-volume Amazon sellers frequently accept steep FBA platform fees instead of fulfilling orders from their own warehouses?",
           "options": [
-            "FBM requires merchants to pay double the standard 15% platform referral commission.",
-            "FBA completely waives all corporate tax obligations for registered sellers.",
-            "Amazon legally prohibits merchant-fulfilled shipping in the United States and Canada.",
-            "FBA confers Prime badge eligibility, which heavily weights the Amazon Buy Box algorithm and dramatically boosts conversion velocity."
+            "FBA removes all marketplace referral fees on the sold items, so the higher fulfillment fee is offset by lower commission.",
+            "FBA lets the seller set a price above competitors, since Amazon guarantees the Buy Box to any FBA-enrolled listing.",
+            "FBA transfers ownership of the inventory to Amazon at purchase, so the seller carries no stock risk after shipping it in.",
+            "FBA gives Prime badge eligibility, which strongly weights the Buy Box algorithm and boosts conversion velocity."
           ],
           "answer": 3,
           "why": "Prime badge eligibility granted by FBA unlocks dominant Buy Box rotation, accelerating order conversion and sales velocity far beyond typical FBM performance.",
@@ -802,10 +802,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational hazard facing e-commerce drop-shipping merchants operating with 14-21 day international shipping times?",
           "options": [
-            "Extended delivery latency triggers high return rates and customer payment chargebacks that breach the 1.0% threshold, risking payment gateway termination.",
-            "International air freight carriers confiscate 50% of all packages for customs training.",
-            "Wholesale suppliers are legally required to convert into non-profit charities after 100 orders.",
-            "Search engines permanently de-index websites that do not own physical warehouses."
+            "Long delivery times trigger returns and payment chargebacks that can breach the 1.0% threshold and risk gateway termination.",
+            "Long delivery times force the merchant to pre-pay customs duty on every order, which makes the unit margin negative.",
+            "Long delivery times cause customers to be double charged by the gateway, which creates a legal liability for the merchant.",
+            "Long delivery times push the merchant out of the marketplace's search results, since delivery speed is the only ranking factor."
           ],
           "answer": 0,
           "why": "Long delivery windows frustrate customers, driving payment disputes and chargebacks above the critical 1.0% threshold where payment processors freeze or terminate accounts.",
@@ -850,10 +850,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Gross Margin Return on Investment (GMROI) of 9.00x indicate about an e-commerce brand's inventory productivity?",
           "options": [
-            "The business loses $9.00 on every transaction before deducting shipping costs.",
-            "For every $1.00 of capital tied up in average inventory cost, the business generates $9.00 in annual gross profit.",
-            "The brand must discount all products by 90% during clearance sales.",
-            "The enterprise operates with a 9-year cash conversion cycle."
+            "The retailer sells through its entire average inventory nine times a year, regardless of its profit on each sale.",
+            "Each $1.00 of average inventory cost generates $9.00 of gross profit over the year, showing highly productive inventory.",
+            "The retailer earns a net profit of $9.00 for every $1.00 of sales after all operating expenses are deducted.",
+            "The retailer holds nine months of stock on hand, so inventory is turning slowly and is tying up too much cash."
           ],
           "answer": 1,
           "why": "GMROI measures gross profit generated per dollar of inventory investment; 9.00x indicates exceptional inventory capital productivity.",
@@ -898,10 +898,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage for cross-border e-commerce brands utilizing the US Section 321 de minimis exemption?",
           "options": [
-            "It allows merchants to ship dangerous contraband without customs declaration.",
-            "It eliminates all commercial parcel shipping charges across international postal carriers.",
-            "It allows direct-to-consumer imported shipments with a fair retail value under $800 to enter the United States duty-free and tax-free with expedited customs clearance.",
-            "It forces foreign manufacturers to provide inventory at zero wholesale cost."
+            "Section 321 lets any shipment under $2,500 enter the US duty-free, but only when it is sent through a licensed customs broker.",
+            "Section 321 exempts goods from import duty but requires full import tax on each shipment of any value, with a slower customs release.",
+            "Section 321 lets shipments with fair retail value under $800 enter the US duty-free and tax-free with faster customs clearance.",
+            "Section 321 gives shipments under $800 a flat 5% duty rate in place of the tariff schedule, with clearance in the usual timeframe."
           ],
           "answer": 2,
           "why": "Section 321 exempts qualifying shipments under $800 from import duties and federal taxes, providing a substantial cost and speed advantage for direct cross-border e-commerce.",
@@ -946,10 +946,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core strategic purpose of the Global Marketplace & Supply Chain Operations Control Tower in digital retail?",
           "options": [
-            "To prevent international courier aircraft from requiring aviation fuel during flight.",
-            "To eliminate the need for paying sales commissions to independent advertising affiliates.",
-            "To convert all physical retail stores into non-profit historical museums.",
-            "To synthesize marketplace fee cascades, supplier delivery SLAs, inventory turnover productivity, and international customs compliance into a unified executive operating dashboard."
+            "It replaces each marketplace's seller account with one unified storefront, so the company no longer pays platform referral fees.",
+            "It automatically negotiates supplier prices every month, using the delivery SLA score as the sole basis for price changes.",
+            "It tracks only customer-facing metrics like page speed and ad clicks, leaving cost and compliance to the finance team.",
+            "It combines marketplace fee cascades, supplier delivery SLAs, inventory productivity and customs compliance into one executive dashboard."
           ],
           "answer": 3,
           "why": "The control tower unifies logistics, marketplace economics, and trade compliance, preventing operational blind spots and protecting profitability.",
@@ -1015,10 +1015,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic rationale for building a multi-channel e-commerce flywheel rather than relying solely on Amazon or Shopify?",
           "options": [
-            "It insulates the enterprise against platform fee increases, account suspensions, and ad auction volatility while accessing diverse consumer intent pools.",
-            "It automatically exempts the business from state sales tax nexus obligations.",
-            "It allows the enterprise to cease paying manufacturing costs to physical suppliers.",
-            "It eliminates all parcel packaging and shipping expenses across the supply chain."
+            "It protects against platform fee increases, account suspensions and ad auction volatility while reaching diverse buyer intent pools.",
+            "It lets the company avoid paying marketplace fees entirely, since each extra channel carries a lower commission rate than the last.",
+            "It guarantees stable revenue because demand on each channel is perfectly correlated with the others across the year.",
+            "It allows the company to use one catalog and one price everywhere, which removes the need for channel-specific management."
           ],
           "answer": 0,
           "why": "Diversifying across direct web, marketplaces, social commerce, and wholesale mitigates single-platform de-platforming risk and lowers customer acquisition vulnerability.",
@@ -1063,10 +1063,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a distributed 3PL node fulfillment network generate hundreds of thousands of dollars in annual parcel shipping savings?",
           "options": [
-            "By forcing customer recipients to drive to the central sorting terminal to pick up their orders.",
-            "By replacing commercial cardboard parcel boxes with reused shopping bags.",
-            "By transferring all shipping costs directly to municipal city governments.",
-            "By fulfilling orders from regional nodes closest to end consumers, skipping high-cost cross-country postal zones (Zones 7-8) and utilizing inexpensive short-haul ground transit."
+            "Consolidating all inventory in one central hub lets the company negotiate bulk shipping rates, which beat regional parcel prices.",
+            "Shipping everything by air from regional nodes gets the order to the customer quicker, and the speed premium is covered by lower damages.",
+            "Using regional nodes only for returns, so outbound parcels travel the same zones as before but avoid the return freight fees.",
+            "Fulfilling from regional nodes near customers avoids expensive cross-country postal zones (Zones 7-8) and uses cheap short-haul ground transit."
           ],
           "answer": 3,
           "why": "Zone-skipping routes parcels through local postal zones (Zones 2-3) rather than cross-country long-haul zones (Zones 7-8), dramatically lowering carrier parcel rates while accelerating transit.",
@@ -1111,10 +1111,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary management benefit of decomposing an e-commerce income statement into distinct CM1, CM2, and CM3 contribution tiers?",
           "options": [
-            "It enables the business to report gross merchandise volume as taxable income.",
-            "It automatically waives all employee payroll tax obligations.",
-            "It isolates product manufacturing, physical fulfillment, and customer acquisition costs into modular tiers, allowing leadership to pinpoint exactly where margin erosion occurs.",
-            "It guarantees that the enterprise will never be audited by tax authorities."
+            "It merges all costs into a single profit figure so that managers focus on one number at the end of each quarter.",
+            "It lets the company move marketing costs into the cost of goods sold, which increases the reported gross margin.",
+            "It separates product, fulfillment and customer acquisition costs into tiers, showing leadership exactly where margin is eroding.",
+            "It is required by GAAP for every e-commerce company, so the tiers are used mainly for the tax return and audit filings."
           ],
           "answer": 2,
           "why": "Tiered contribution waterfalls separate manufacturing costs, logistics fulfillment expenses, and marketing acquisition spend, providing granular diagnostic visibility into business drivers.",
@@ -1159,10 +1159,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing 3D Secure 2.0 (3DS2) dynamic challenge rules in enterprise digital checkout?",
           "options": [
-            "It guarantees that postal carriers will deliver packages in under 12 hours.",
-            "It applies friction-free approval to low-risk orders and triggers step-up challenges (such as a one-time passcode or biometric) only for higher-risk ones, shifting liability for fraud chargebacks on authenticated transactions to the card issuer.",
-            "It allows merchants to avoid paying sales tax on all international consumer orders.",
-            "It automatically converts digital currency transactions into gold bullion."
+            "3DS2 challenges every order with a one-time code, and in exchange the merchant gets lower interchange fees on each transaction.",
+            "3DS2 challenges only risky orders with a one-time code or biometric, and shifts fraud chargeback liability on authenticated orders to the issuer.",
+            "3DS2 replaces the card network's fraud rules, so the merchant takes full chargeback liability only when the order was not challenged.",
+            "3DS2 stores the customer's card number on the merchant's server for one-click reuse, and the processor takes fraud liability for it."
           ],
           "answer": 1,
           "why": "3DS2 provides dynamic risk-based authentication; when an order passes 3DS2 challenge, fraud liability shifts away from the merchant to the card issuer, protecting the business against fraudulent chargebacks.",
@@ -1207,10 +1207,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic achievement validated by the Milestone 1 Capstone in B.Com E-Commerce?",
           "options": [
-            "The synthesis of omnichannel distribution, distributed 3PL logistics, multi-tiered contribution margin P&L, and payment resilience into a profitable, scalable retail enterprise.",
-            "The automated creation of 500 spam dropshipping blogs with no inventory or payment systems.",
-            "The immediate shutdown of all physical retail and digital operations.",
-            "The total elimination of all customer service communication channels."
+            "Integrating omnichannel distribution, distributed 3PL logistics, tiered contribution margin P&L and payment resilience into a scalable retail business.",
+            "Mastering a single marketplace channel with the highest sales volume, since multi-channel complexity usually lowers profitability.",
+            "Building a paid-advertising engine that lifts platform ROAS above a target, with fulfillment and payments left to outside partners.",
+            "Reaching a fixed revenue target in the capstone simulation, regardless of the margins, logistics costs or payment risks involved."
           ],
           "answer": 0,
           "why": "The capstone validates executive mastery over omnichannel retail, distributed supply chains, full-income-statement profitability, and payment infrastructure required to lead as a Chief Commerce Officer.",
@@ -1281,10 +1281,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does forcing prospective e-commerce buyers to create a user account and password before purchase severely degrade checkout conversion?",
           "options": [
-            "Because modern web browsers automatically delete shopping carts when a user types an email address.",
-            "Because forced registration introduces immediate cognitive friction, extra form fields, and password fatigue, causing up to 30% of high-intent buyers to abandon their purchase.",
-            "Because user account databases are illegal under international trade and maritime law.",
-            "Because credit card companies refuse to process payments from registered accounts."
+            "Forced registration slows the site's page load, so the checkout times out on mobile before the buyer can enter an address.",
+            "Forced registration adds friction, extra form fields and password fatigue, so up to 30% of high-intent buyers abandon the purchase.",
+            "Forced registration breaches payment card rules, so the gateway declines orders from buyers who have no saved account.",
+            "Forced registration shows the buyer the final tax and shipping costs late, which is the main reason carts are abandoned."
           ],
           "answer": 1,
           "why": "Mandatory account creation creates friction and delays gratification; enabling guest checkout preserves spontaneous buying intent."
@@ -1325,10 +1325,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary trade-off an e-commerce merchant makes when enabling Buy Now Pay Later (BNPL) payment methods at checkout?",
           "options": [
-            "BNPL completely eliminates customer returns and product defects.",
-            "BNPL requires the merchant to physically ship products using maritime ocean freight rather than air couriers.",
-            "Accepting significantly higher payment processing MDR fees (4-6% vs standard 1.5-2.5%) in exchange for higher Average Order Value (AOV) and conversion from younger demographic cohorts.",
-            "BNPL forces the merchant to forfeit their trademark and intellectual property rights."
+            "The merchant pays no processing fee at all, but takes on the full credit risk of every customer who misses a repayment.",
+            "The merchant gets paid only after the customer finishes repaying the installments, trading a slower cash flow for lower fees.",
+            "The merchant accepts higher MDR fees (4-6% versus 1.5-2.5%) in return for larger order values and conversion among younger shoppers.",
+            "The merchant pays a lower fee than for cards (below 1%), but loses the right to dispute any fraudulent order that is placed."
           ],
           "answer": 2,
           "why": "BNPL carries premium merchant fees (4-6%), which merchants willingly pay because it boosts cart size and customer purchasing power."
@@ -1368,10 +1368,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial and legal benefit of the 'Liability Shift' conferred by 3DS2 authentication?",
           "options": [
-            "The shipping carrier is forced to deliver the package free of charge.",
-            "The customer's credit card limit is permanently increased by $10,000.",
-            "The merchant is exempted from paying corporate income tax for that fiscal quarter.",
-            "If an authenticated transaction turns out to be fraudulent, the financial liability for the chargeback shifts entirely from the merchant to the card-issuing bank."
+            "If an authenticated transaction proves fraudulent, the merchant keeps the liability, but the card network reimburses the processing fee.",
+            "If any transaction is fraudulent, the liability shifts to the customer once they pass the authentication, whatever the circumstances.",
+            "If an authenticated transaction proves fraudulent, the liability moves to the payment gateway, which then recovers it from the acquirer.",
+            "If an authenticated transaction proves fraudulent, liability for the chargeback shifts from the merchant to the card-issuing bank."
           ],
           "answer": 3,
           "why": "3DS2 compliance shifts fraudulent chargeback liability from the merchant to the card issuer, protecting against stolen card losses."
@@ -1411,10 +1411,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is multi-gateway smart routing considered mandatory infrastructure for high-volume enterprise e-commerce platforms?",
           "options": [
-            "It eliminates reliance on a single point of failure (SPOF) by dynamically failing over to backup processors during outages and routing transactions to lowest-cost acquiring rails.",
-            "It allows the e-commerce merchant to operate without needing an internet connection.",
-            "It automatically refunds all customer purchases at the end of each fiscal month.",
-            "It prevents customers from using paper currency in physical brick-and-mortar stores."
+            "It removes a single point of failure by failing over to backup processors during outages and routing to the lowest-cost acquirer.",
+            "It encrypts card data twice as it passes through each gateway, which is required by the card networks for any volume above a threshold.",
+            "It lets the merchant avoid chargebacks, since disputes are only raised on the first gateway that handles a given order.",
+            "It combines every gateway's fees into one flat monthly price, so the merchant no longer pays per-transaction processing costs."
           ],
           "answer": 0,
           "why": "Multi-gateway routing prevents single-point-of-failure revenue loss and optimizes payment authorization rates across banking switches."
@@ -1454,10 +1454,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What occurs if an e-commerce merchant's monthly chargeback dispute ratio exceeds the card network threshold of 0.90% of settled transactions?",
           "options": [
-            "The merchant is automatically awarded a government innovation grant.",
-            "The merchant is placed into excessive dispute monitoring programs, facing heavy per-dispute penalty fines ($50/chargeback), elevated processing surcharges, and eventual termination of their acquiring merchant account.",
-            "The merchant's customer service team is required to work from a naval submarine.",
-            "All website visitors are permanently given 50% discount coupons."
+            "The merchant is placed under a warning and its next 90 days of chargebacks are waived, provided the ratio falls below the threshold.",
+            "The merchant is placed in dispute monitoring programs, facing per-dispute fines, higher fees and possible loss of its merchant account.",
+            "The merchant's customers are blocked from using credit cards on the site, but debit cards and wallets continue to work normally.",
+            "The merchant must hold a cash reserve equal to one year of sales, but its account continues without any monitoring or fines."
           ],
           "answer": 1,
           "why": "Breaching 0.90% chargebacks triggers card network dispute monitoring programs, punitive fees, and risk of merchant account termination."
@@ -1526,10 +1526,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an Order Management System (OMS) state machine reject a customer's cancellation request once an order enters the 'PROCESSING_PICK_PACK' or 'SHIPPED' state?",
           "options": [
-            "Because cancelling a shipped order automatically causes the carrier's truck to explode.",
-            "Because customer support software cannot process refunds on Tuesdays.",
-            "Because warehouse pickers have already physically retrieved the items or the courier has loaded the sealed carton, making automated cancellation physically unexecutable and causing inventory reconciliation defects.",
-            "Because digital retail contracts become legally irreversible after 30 seconds under maritime law."
+            "The payment has already settled with the issuer, and the card network does not allow a settled payment to be refunded in full.",
+            "The customer's contract becomes final at checkout, so any later cancellation is a breach that the OMS must always reject.",
+            "The picker has already pulled the items or the courier has loaded the carton, so automated cancellation is physically impossible.",
+            "The inventory has already been deducted from the system, and the OMS cannot add stock back once it has been reduced."
           ],
           "answer": 2,
           "why": "Once an item is picked, packed, or manifested with a courier, the order cannot be halted electronically; it must proceed to delivery and follow standard RMA returns."
@@ -1569,10 +1569,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary economic advantage of pre-positioning high-velocity inventory across multiple regional fulfillment warehouses?",
           "options": [
-            "It enables warehouses to operate without electrical power.",
-            "It allows orders to be fulfilled from local delivery zones, cutting shipping transit times to under 24 hours and reducing carrier freight expenses by up to 40-50%.",
-            "It permanently eliminates the need for shipping boxes and tape.",
-            "It forces customers to pay triple shipping fees on every order."
+            "It lets the company hold less total safety stock, because demand in each region is perfectly correlated with the others.",
+            "It lets orders ship from local zones, cutting transit time to under 24 hours and carrier freight costs by roughly 40-50%.",
+            "It removes the need for demand forecasting, because each regional warehouse holds a full copy of the whole catalog.",
+            "It eliminates storage costs, since warehouse space is billed per order shipped rather than per unit stored."
           ],
           "answer": 1,
           "why": "Local zone shipping is drastically cheaper and faster than cross-country national shipping, expanding margins and customer satisfaction."
@@ -1612,10 +1612,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of allowing split shipment rates to rise uncontrolled in an e-commerce fulfillment operation?",
           "options": [
-            "Every split shipment duplicates base courier freight and packaging costs while driving up customer 'Where Is My Order?' (WISMO) support inquiries, severely eroding transaction operating profit.",
-            "Split shipments automatically invalidate the merchant's corporate bank accounts.",
-            "Split shipments force the customer to pay their credit card bill twice.",
-            "Split shipments cause shipping boxes to shrink during transit."
+            "Each split shipment duplicates base freight and packaging costs and adds WISMO support inquiries, eroding transaction profit.",
+            "Each split shipment means the customer is charged separately by the gateway, which raises the rate of declined payments.",
+            "Each split shipment forces the merchant to refund shipping fees, which cuts the order's revenue but not its costs.",
+            "Each split shipment lowers the order's average value, which makes the customer ineligible for the free shipping threshold."
           ],
           "answer": 0,
           "why": "Splitting an order into multiple packages doubles freight, packaging, and handling costs while frustrating customers, destroying net contribution margins."
@@ -1656,10 +1656,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of a Dead Letter Queue (DLQ) in an event-driven e-commerce order management pipeline?",
           "options": [
-            "To automatically mark all failed orders as delivered to prevent customer complaints.",
-            "To send angry emails to customers whose credit cards failed.",
-            "To permanently delete customer data from the corporate database.",
-            "To safely isolate malformed or repeatedly failing order messages so they can be investigated manually by operations engineers without blocking or crashing the main fulfillment queue."
+            "A DLQ stores completed orders for long-term archive, so they can be retrieved for audits after the main queue is cleared.",
+            "A DLQ retries every failed message indefinitely at the front of the main queue, so no message is ever lost or delayed.",
+            "A DLQ encrypts order messages in transit between services, so that customer payment data is hidden from other consumers.",
+            "A DLQ isolates malformed or repeatedly failing order messages for manual review, without blocking or crashing the main fulfillment queue."
           ],
           "answer": 3,
           "why": "A DLQ quarantines unprocessable order messages for forensic troubleshooting while allowing legitimate order traffic to continue processing unimpeded."
@@ -1698,10 +1698,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of the Enterprise Order Management Command Gateway?",
           "options": [
-            "To prevent customers from tracking their orders on mobile devices.",
-            "To automatically double the price of all items in warehouse storage.",
-            "To monitor unified fulfillment telemetry—enforcing same-day dispatch SLAs, suppressing costly split shipments, maintaining 99.9%+ barcode picking accuracy, and resolving exception queues in real time.",
-            "To shut down warehouse operations during peak shopping hours."
+            "It handles customer service chats and refund approvals for the support team, leaving fulfillment metrics to the warehouse.",
+            "It sets product prices and promotions across channels, using the dispatch speed of each warehouse to choose the price.",
+            "It monitors fulfillment telemetry: same-day dispatch SLAs, split shipment suppression, 99.9%+ picking accuracy and exception queues.",
+            "It reconciles supplier invoices and pays vendors on time, with the aim of minimising the working capital tied up in stock."
           ],
           "answer": 2,
           "why": "The OMS command gateway coordinates distributed nodes to maximize fulfillment speed, eliminate shipping defects, and preserve unit margins."
@@ -1769,10 +1769,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the true cost of an e-commerce product stockout significantly greater than merely the gross margin of the immediate missed sale?",
           "options": [
-            "Because suppliers legally fine merchants $10,000 every time a warehouse shelf is empty.",
-            "Because warehouse workers must be paid triple wages when an item is not in stock.",
-            "Because out-of-stock products automatically trigger criminal tax audits from the central government.",
-            "Because stockouts waste the paid ad spend (CAC) used to acquire the visitor, permanently drive up to 70% of shoppers to competitors, and cause marketplace search algorithms to strip the product's Buy Box and organic ranking."
+            "A stockout costs only the margin of the missed sale, because shoppers wait for restocking and buy the same item later.",
+            "A stockout leaves a lasting sales loss only for low-priced items, since higher-priced items are always bought elsewhere.",
+            "A stockout triggers a chargeback on each missed sale, so the merchant faces card network penalties as well as lost sales.",
+            "A stockout wastes the CAC paid to acquire the visitor, can push shoppers to competitors, and costs the listing its Buy Box and ranking."
           ],
           "answer": 3,
           "why": "Stockouts squander customer acquisition cost, trigger permanent customer churn to competitors, and degrade algorithmic search rankings."
@@ -1813,10 +1813,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does attempting to achieve a 99.9% Cycle Service Level (zero stockouts) create extreme financial inefficiency for an e-commerce retailer?",
           "options": [
-            "Because normal distribution Z-scores scale exponentially at high percentiles, requiring nearly double the safety stock buffer units and massively inflating working capital carrying costs for diminishing returns.",
-            "Because suppliers refuse to manufacture products if a retailer has a 99.9% service level.",
-            "Because consumers become suspicious and refuse to buy items that are always in stock.",
-            "Because credit card companies penalize merchants that maintain accurate inventory records."
+            "Z-scores rise steeply at high percentiles, requiring far more safety stock and inflating carrying costs for tiny gains.",
+            "The company needs a safety stock of exactly zero at 99.9%, so the cost comes from lost sales rather than any extra stock.",
+            "The supplier's lead time doubles for each additional percentage point of service level, so the company pays rush fees.",
+            "The service level formula assumes constant demand, so higher percentiles only add forecasting costs rather than stock."
           ],
           "answer": 0,
           "why": "High Z-scores demand exponential inventory buffers, locking up excessive working capital and incurring heavy carrying costs for minimal incremental sales."
@@ -1857,10 +1857,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical condition that confirms an inventory order batch size has achieved the optimal Economic Order Quantity (EOQ)?",
           "options": [
-            "The warehouse is 100% full to the ceiling with zero empty space.",
-            "Annual order setup costs exactly balance annual inventory holding costs, producing the global minimum of the total annual inventory cost curve.",
-            "The supplier agrees to deliver the merchandise by helicopter.",
-            "The order quantity matches the exact number of calendar days in that fiscal year."
+            "Annual purchase cost equals annual holding cost, giving the minimum point of the total inventory cost curve.",
+            "Annual ordering (setup) costs equal annual holding costs, giving the minimum point of the total annual inventory cost curve.",
+            "Annual stockout cost equals annual ordering cost, which sets the point at which the lead time demand is covered.",
+            "Annual ordering cost is minimised at its lowest, which occurs when the company orders only once per year in one large batch."
           ],
           "answer": 1,
           "why": "EOQ identifies the exact minimum where the marginal cost of placing orders equals the marginal cost of holding inventory."
@@ -1901,10 +1901,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must a continuous review inventory replenishment engine calculate 'Net Available Inventory' (On-Hand + On-Order - Allocated) rather than simply checking physical on-hand stock?",
           "options": [
-            "Because on-order inventory is exempt from sales tax.",
-            "Because the computer system requires double accounting to run faster.",
-            "To prevent the system from placing duplicate, redundant purchase orders every single day while waiting for an already-dispatched supplier order to arrive during its lead time.",
-            "Because physical warehouse shelves cannot be measured in whole numbers."
+            "It lets the system release stock that customers have reserved, so those units can be sold again to other shoppers.",
+            "It removes the need for a reorder point, because the formula automatically triggers an order every time stock changes.",
+            "It stops the system from placing duplicate purchase orders each day while an already-dispatched supplier order is still in transit.",
+            "It allows the system to count damaged and expired stock as available, which improves the reported service level."
           ],
           "answer": 2,
           "why": "Failing to account for in-transit open POs would cause the system to trigger duplicate orders continuously during lead time, flooding warehouses with excess stock."
@@ -1945,10 +1945,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of the Gross Margin Return on Investment (GMROI) metric in retail inventory governance?",
           "options": [
-            "It calculates the internet bandwidth consumed by the online catalog.",
-            "It measures the weight of the warehouse building in metric tons.",
-            "It determines the legal retirement age for warehouse inventory managers.",
-            "It measures the exact gross profit dollars generated for every single dollar of working capital invested in average inventory, quantifying true merchandise profitability."
+            "GMROI measures how many times average inventory is sold during the year, showing how quickly stock moves.",
+            "GMROI measures net profit as a share of total assets, showing how efficiently the whole company uses its capital.",
+            "GMROI measures gross margin as a percentage of sales, showing how much of each sale remains after product costs.",
+            "GMROI measures gross profit dollars earned per dollar invested in average inventory, showing merchandise profitability."
           ],
           "answer": 3,
           "why": "GMROI connects profitability directly to capital efficiency by measuring gross margin dollars earned per dollar of inventory investment."
@@ -2017,10 +2017,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Batch Wave Picking with Put-Wall sortation achieve substantially higher Units Per Hour (UPH) productivity than Discrete Order Picking?",
           "options": [
-            "It consolidates pick paths across multiple orders, allowing a picker to visit each warehouse bin once to retrieve all required items, slashing walking travel time by up to 90%.",
-            "It eliminates the need for shipping labels and packing tape.",
-            "It allows pickers to run at 30 miles per hour through the aisles.",
-            "It requires products to be made out of lightweight helium."
+            "It consolidates pick paths across orders so a picker visits each bin once for many orders, cutting walking time by up to 90%.",
+            "It lets each picker complete one order at a time from start to finish, which removes sorting and cuts handling errors.",
+            "It assigns each picker a fixed zone and passes totes between zones, so pickers never leave their own aisle at all.",
+            "It moves picking to a night shift when aisles are empty, so pickers walk faster and pick the same orders in less time."
           ],
           "answer": 0,
           "why": "Travel time represents 50-60% of picking labor; batching routes consolidates travel paths and maximizes item picks per meter walked."
@@ -2061,10 +2061,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of allowing warehouse packers to arbitrarily select oversized shipping boxes stuffed with dunnage ('Shipping Air')?",
           "options": [
-            "It causes the cardboard boxes to melt during courier truck transport.",
-            "It makes the packages illegal to import into foreign countries.",
-            "It prevents the courier driver from opening the cargo doors.",
-            "It inflates packaging material costs (boxes and air pillows) and triggers massive carrier volumetric dimensional weight surcharges, drastically eroding transaction margins."
+            "Oversized boxes cause products to be damaged in transit, since the extra space lets items move and so raises the return rate.",
+            "Oversized boxes require a special carrier license, so shipments in them are held at the depot until the paperwork is cleared.",
+            "Oversized boxes slow down the pack line, so the warehouse hits its labor target late even though freight costs stay the same.",
+            "Oversized boxes add packaging and dunnage costs and trigger carrier dimensional weight surcharges, eroding the order's margin."
           ],
           "answer": 3,
           "why": "Oversized boxes waste expensive packaging materials and cause freight carriers to bill based on dimensional weight rather than actual weight, multiplying freight fees."
@@ -2105,10 +2105,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a lightweight parcel weighs 2.0 kg on a scale but measures 50cm x 40cm x 30cm, what is its chargeable weight under standard IATA commercial carrier rules (divisor 5000)?",
           "options": [
-            "60.0 kg (the volume in liters).",
-            "0.5 kg (a promotional discount).",
-            "12.0 kg (because Volumetric Weight = (50 x 40 x 30) / 5000 = 12.0 kg, which is greater than the 2.0 kg dead weight).",
-            "2.0 kg (because carriers only ever charge for physical scale weight)."
+            "2.0 kg, because carriers always bill on the actual scale weight, and volumetric weight is only a guide for packaging.",
+            "7.0 kg, because the carrier averages the actual weight of 2.0 kg and the volumetric weight of 12.0 kg to bill the parcel.",
+            "12.0 kg, because volumetric weight (50 x 40 x 30) / 5000 = 12.0 kg, which is greater than the 2.0 kg actual weight.",
+            "60.0 kg, because the volumetric formula (50 x 40 x 30) / 1000 gives 60.0 kg, which exceeds the actual weight."
           ],
           "answer": 2,
           "why": "Carrier Chargeable Weight = max(Actual, Volumetric). Here, (50x40x30)/5000 = 12.0 kg, which exceeds 2.0 kg dead weight."
@@ -2149,10 +2149,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Theory of Constraints in warehouse operations, what happens if an operations manager hires 20 extra pickers without increasing packing station capacity?",
           "options": [
-            "The warehouse building expands its physical square footage automatically.",
-            "Total warehouse throughput does not increase; instead, pick totes pile up at pack stations, causing physical congestion and zero additional shipped orders.",
-            "All packages are delivered to customers twice as fast.",
-            "The courier carrier agrees to provide free shipping for the rest of the year."
+            "Throughput rises in proportion to the extra pickers, since picking is the step that most limits the speed of fulfillment.",
+            "Throughput does not rise; pick totes pile up at the pack stations, causing congestion and no extra shipped orders.",
+            "Throughput rises at first, then falls once pickers exceed aisle capacity, though the pack stations remain unaffected.",
+            "Throughput stays the same but labor cost per order falls, since extra pickers share the same work among more people."
           ],
           "answer": 1,
           "why": "Throughput is governed strictly by the bottleneck station; increasing upstream capacity without addressing downstream bottlenecks only increases work-in-progress congestion."
@@ -2192,10 +2192,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary management value of tracking Cost Per Unit (CPU) alongside Units Per Hour (UPH) in fulfillment operations?",
           "options": [
-            "It links physical worker velocity directly to financial labor expense, ensuring that warehouse throughput gains translate into lower fulfillment costs per customer order.",
-            "Relying solely on static hardcoded defaults for Enterprise without reconciling Fulfillment against live boundary conditions.",
-            "It measures the temperature of the warehouse loading docks.",
-            "It calculates the physical weight of the warehouse roof."
+            "It links worker speed to labor expense, ensuring throughput gains lead to lower fulfillment cost per customer order.",
+            "It replaces UPH as the main productivity measure, since cost per unit already captures how fast each worker picks items.",
+            "It measures the purchase cost of inventory per unit, so managers can compare supplier prices alongside picking speed.",
+            "It shows how many units each shift ships per hour, so UPH can be dropped as a metric once CPU is calculated."
           ],
           "answer": 0,
           "why": "CPU directly measures the variable labor and operational cost incurred to fulfill each order, verifying financial efficiency."
@@ -2264,10 +2264,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do high-volume e-commerce platforms utilize multi-carrier routing engines rather than relying on a single exclusive logistics provider?",
           "options": [
-            "Because courier companies are legally prohibited from delivering more than 100 packages per day.",
-            "Because using multiple carriers allows the merchant to avoid printing shipping barcodes.",
-            "Because logistics carriers exhibit asymmetric regional strengths, and dynamic routing optimizes on-time delivery while eliminating single-point-of-failure capacity bottlenecks.",
-            "Because different carriers only deliver on alternating days of the week."
+            "A single carrier always charges the highest rates, so splitting volume across several carriers cuts the cost per parcel.",
+            "Carriers sell their capacity only through routing engines, so a platform cannot reach customers without multi-carrier software.",
+            "Carriers have uneven regional strengths, and dynamic routing improves on-time delivery while removing single-point-of-failure bottlenecks.",
+            "Customers choose the carrier at checkout, so the platform must contract with each carrier to avoid losing those orders."
           ],
           "answer": 2,
           "why": "Multi-carrier routing leverages the best regional carrier for each pin code, mitigating service bottlenecks and securing competitive shipping rates."
@@ -2308,10 +2308,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a Return to Origin (RTO) event on a Cash on Delivery (COD) order inflict a double freight penalty on the e-commerce merchant?",
           "options": [
-            "Because the government imposes a statutory customs tariff on every returned parcel.",
-            "Because the merchant must pay the carrier for forward shipping to the customer's doorstep, pay reverse shipping freight to transport the rejected box back to the warehouse, and discard wasted packaging—all while earning zero revenue.",
-            "Because the customer keeps the product without paying cash.",
-            "Because the carrier charges interest on the value of the goods."
+            "The merchant pays forward freight, and the carrier refunds the reverse freight, but the COD collection fee is lost.",
+            "The merchant pays forward freight, reverse freight and wasted packaging while earning no revenue from the rejected COD order.",
+            "The merchant pays a penalty to the payment gateway, plus freight in both directions, because the customer's refusal is a chargeback.",
+            "The merchant pays freight only once, but must refund the customer's deposit and the carrier's handling fee in full."
           ],
           "answer": 1,
           "why": "The merchant pays forward freight, reverse freight, and packaging labor with zero realized revenue, turning rejected COD orders into pure operational cash losses."
@@ -2351,10 +2351,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does pre-shipment WhatsApp or SMS OTP verification on high-risk Cash on Delivery (COD) orders protect e-commerce profitability?",
           "options": [
-            "It filters out fake orders, uncommitted impulse buyers, and incorrect phone numbers before warehouse dispatch, cancelling phantom orders and preventing unrecoverable forward and reverse freight losses.",
-            "It requires the buyer to pay their utility bills before receiving the parcel.",
-            "It forces the carrier to deliver the package on Sunday morning.",
-            "It automatically increases the product price by 50%."
+            "It filters out fake orders, impulse buyers and wrong phone numbers before dispatch, preventing lost forward and reverse freight.",
+            "It confirms the customer's card details before dispatch, which allows the merchant to charge the order online if it is refused.",
+            "It speeds up delivery for verified orders by giving them priority at the courier hub, which lowers the RTO rate that way.",
+            "It lets the merchant require a partial prepayment, which removes the risk of any refusal at the delivery doorstep itself."
           ],
           "answer": 0,
           "why": "Halting unverified orders before packing and dispatch eliminates unrecoverable two-way courier shipping expenses and carton packaging waste."
@@ -2394,10 +2394,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational effect of activating automated RTO Defense within a dynamic 3PL carrier allocation pipeline?",
           "options": [
-            "It forces all courier drivers to sign legal non-disclosure agreements.",
-            "It automatically converts all cash currency into gold bars.",
-            "It allows the merchant to deliver packages using supersonic passenger jets.",
-            "It filters uncommitted and fraudulent COD orders before warehouse dispatch, compressing the blended RTO rate below 6% and maximizing realized net operating profit."
+            "It sends every COD order through the cheapest carrier, which cuts freight cost but leaves the RTO rate of the orders unchanged.",
+            "It switches all COD orders to prepaid at checkout, which removes the RTO rate but also lowers conversion sharply.",
+            "It routes rejected orders to the nearest warehouse for resale, which keeps the RTO rate steady but recovers the freight.",
+            "It filters uncommitted and fraudulent COD orders before dispatch, bringing the blended RTO rate below 6% and raising net profit."
           ],
           "answer": 3,
           "why": "RTO defense halts phantom orders before shipping, boosting delivery rates to 94%+ and protecting margins from double-freight destruction."
@@ -2533,10 +2533,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what operational and financial conditions does an automated RMA engine trigger a 'Returnless Refund'?",
           "options": [
-            "When the customer initiates a chargeback dispute through their issuing bank",
-            "When the order was placed during peak holiday shopping periods",
-            "When total reverse logistics expenses (freight and inspection) exceed the expected net salvage recovery value on low-ticket items",
-            "When the item is an expensive luxury watch covered by third-party insurance"
+            "When the customer's return reason is fraud, so the engine refunds money and blocks the account from further orders.",
+            "When the item is high-value and under warranty, so the engine refunds the customer and claims the loss from the carrier.",
+            "When reverse logistics costs (freight and inspection) exceed the expected net salvage value on low-ticket items.",
+            "When the return window has expired, so the engine refunds the customer a partial amount and the item stays with them."
           ],
           "answer": 2,
           "why": "When the sum of reverse shipping freight and warehouse labor exceeds the salvage resale value of a low-ticket item, shipping the product back guarantees negative contribution margin. Issuing a returnless refund saves direct cash."
@@ -2577,10 +2577,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In warehouse reverse logistics triage, what distinguishes Grade A restocked units from Grade B Open Box inventory?",
           "options": [
-            "Grade A units are liquidated in bulk gaylord containers to external brokers",
-            "Grade A items cannot be sold under standard manufacturer warranties",
-            "Grade A items require complete PCB board replacements and soldering",
-            "Grade A units retain pristine original packaging and appearance, enabling re-shelving at 100% full retail price without open-box disclosures"
+            "Grade A units are returned unopened and sealed, whereas Grade B units are those returned with any sign of use or damage.",
+            "Grade A units are sent back to the supplier for credit, whereas Grade B units are restocked after a standard cleaning.",
+            "Grade A units are sold at a 20% discount with a limited warranty, whereas Grade B units are sold at a deeper clearance price.",
+            "Grade A units keep pristine packaging and appearance, so they can be re-shelved at full retail without open-box disclosure."
           ],
           "answer": 3,
           "why": "Grade A merchandise satisfies pristine cosmetic and packaging standards, allowing the retailer to restock the unit into forward prime inventory at 100% full retail value, whereas Grade B open-box items must be discounted."
@@ -2620,10 +2620,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do enterprise e-commerce apparel brands prevent 'wardrobing' (free renting for events) without eliminating returns for legitimate customers?",
           "options": [
-            "By deploying prominent, tamper-evident security tags that void returns if cut, combined with algorithmic return velocity scoring",
-            "By prohibiting returns on any apparel orders placed on weekends",
-            "By charging a 50% non-refundable deposit on all orders across the storefront",
-            "By replacing all human clothing models with 3D virtual avatars"
+            "Tamper-evident security tags that void the return if cut, combined with algorithmic return velocity scoring.",
+            "A flat restocking fee on every return, applied to all customers to discourage items being worn for an event.",
+            "A ban on returns for formal wear, applied to all customers because event clothing is usually worn once.",
+            "Mandatory photos of each item at return, which are reviewed manually by agents for signs of wear on every order."
           ],
           "answer": 0,
           "why": "Prominently placed tamper-evident security tags cannot be concealed or reattached after wearing an item to an event. If the tag is removed, the return is void, halting wardrobing while preserving legitimate returns."
@@ -2664,10 +2664,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Closed-Loop Efficiency Ratio (CLER) of 65.16% indicate to an e-commerce executive?",
           "options": [
-            "That 65.16% of all orders placed on the website are returned by consumers",
-            "That after paying all reverse freight and inspection labor, the enterprise successfully recovers 65.16% of original returned merchandise value through restock, refurbishment, and liquidation",
-            "That the company loses 65.16% of its gross merchandise profit to delivery couriers",
-            "That customer support satisfaction scores have declined by 65.16%"
+            "The enterprise processes 65.16% of returns inside the target time, with the remainder delayed by freight and inspection backlogs at the warehouse.",
+            "After reverse freight and inspection labor, the enterprise recovers 65.16% of returned merchandise value through restock, refurbishment and liquidation.",
+            "The enterprise finds that 65.16% of its customers return at least one order, so the return rate is high and margins are weak after refunds.",
+            "The enterprise loses 65.16% of the returned merchandise value to fraud and damage, so only a small portion is ever recovered after costs."
           ],
           "answer": 1,
           "why": "CLER measures net economic recovery relative to original returned value. A CLER of 65.16% means over sixty-five cents of every returned merchandise dollar is preserved and reinvested after deducting reverse logistics operational costs."
@@ -2735,10 +2735,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a 3P FBA seller model often generate a higher net unit contribution dollar amount ($19.40) than a 1P wholesale model ($8.70) on a $50 retail product?",
           "options": [
-            "Because in 3P FBA, the brand captures the full $50 retail price rather than selling at a 50% wholesale discount ($25), retaining higher dollar margin after platform fees",
-            "Because 3P sellers never incur advertising customer acquisition expenses",
-            "Because 1P wholesale vendors are legally exempt from manufacturing product costs",
-            "Because Amazon pays 3P sellers a 20% bonus on all prime orders"
+            "In 3P FBA the brand keeps the full $50 retail price instead of a 50% wholesale price ($25), leaving more dollars after platform fees.",
+            "In 3P FBA the seller pays no referral or fulfillment fees, so the full retail price flows to profit unlike wholesale sales.",
+            "In 3P FBA the seller sells larger volumes than in 1P, so the net dollar contribution per unit rises through scale discounts.",
+            "In 3P FBA Amazon covers advertising and returns costs, so a lower fee base gives a higher net contribution than wholesale."
           ],
           "answer": 0,
           "why": "In 3P FBA, the seller captures the end-consumer retail price ($50.00). Even after deducting referral fees ($7.50), FBA pick/pack ($5.25), advertising ($5.00), and COGS ($12.00), the net retained cash is $19.40, compared to $8.70 in 1P wholesale."
@@ -2779,10 +2779,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Buy Box scoring simulation, why did Merchant B win the Buy Box at $49.99 over Merchant A who offered a lower price of $46.50?",
           "options": [
-            "Merchant A forgot to enter their banking tax identification number",
-            "Merchant B had fewer units remaining in warehouse inventory",
-            "Bypassing Scoring during initial execution and deferring Winning validation until post-processing completes.",
-            "Merchant B utilized FBA Prime fulfillment, earning 35 fulfillment points and superior account health that outweighed Merchant A's slight price advantage"
+            "Merchant B offered free shipping on a larger quantity, so its total landed price was lower than Merchant A's $46.50 offer.",
+            "Merchant B had a higher advertising bid, since the Buy Box is awarded to the seller paying the most for sponsored placement.",
+            "Merchant B had listed the product earlier, and the Buy Box goes to the seller with the oldest listing when prices are close.",
+            "Merchant B used FBA Prime fulfillment (35 fulfillment points) and had stronger account health, outweighing A's lower price."
           ],
           "answer": 3,
           "why": "The Buy Box algorithm balances landed price against fulfillment velocity and reliability. Merchant B's Prime FBA status (35 points) and impeccable account health comfortably overcame Merchant A's modest price discount."
@@ -2823,10 +2823,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate risk of deploying an automated marketplace repricing bot without a mathematically enforced Minimum Margin Floor?",
           "options": [
-            "The product's search keywords will be demoted on Google Organic Search",
-            "The shipping carrier will refuse to accept packages at warehouse dock doors",
-            "The repricer can enter an infinite race-to-the-bottom undercutting loop, selling high-value inventory below cost and generating massive operating losses",
-            "The marketplace will permanently delete the seller's storefront account"
+            "The repricer can raise prices beyond what the market will pay, leaving the listings without sales and losing the Buy Box.",
+            "The repricer can overwrite supplier cost data, so purchase orders are placed at the wrong price and margins are misstated.",
+            "The repricer can enter a race-to-the-bottom undercutting loop, selling inventory below cost and causing heavy operating losses.",
+            "The repricer can stop reading competitor prices after errors, leaving each listing stuck at its initial price for the season."
           ],
           "answer": 2,
           "why": "Without a hard margin floor, automated repricing bots will continuously undercut each other in pennies until retail prices plummet below unit manufacturing and fulfillment costs, causing catastrophic financial losses."
@@ -2867,10 +2867,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural and economic difference between the Open Network for Digital Commerce (ONDC) and centralized platforms like Amazon?",
           "options": [
-            "ONDC requires all products to be manufactured and packaged in government-owned facilities",
-            "ONDC unbundles buyer apps, seller apps, and logistics into an open protocol (Beckn), reducing platform take rates from 25-30% to approximately 5% while eliminating walled garden lock-in",
-            "ONDC prohibits the use of digital online payments and mandates cash settlement",
-            "ONDC operates exclusively on international blockchain smart contracts"
+            "ONDC is a single government-run marketplace app that all sellers must use, replacing private platforms and charging a flat 5% fee.",
+            "ONDC unbundles buyer apps, seller apps and logistics on the open Beckn protocol, cutting take rates from 25-30% to about 5%.",
+            "ONDC is a payment network that lets sellers collect money from any app, though platform take rates stay at 25-30%.",
+            "ONDC is a logistics company that delivers for all marketplaces, charging sellers the same 25-30% platform commissions."
           ],
           "answer": 1,
           "why": "ONDC unbundles the buyer, seller, and delivery layers via open Beckn protocols. Merchants retain their data, couriers bid dynamically, and aggregate take rates decline from 25-30% to ~5%."
@@ -2911,10 +2911,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Consolidated Channel Efficiency Index (CCEI) an essential strategic benchmark for multi-channel e-commerce operators?",
           "options": [
-            "It isolates true bottom-line profitability across channels after accounting for disparate platform commissions, ad spend, and fulfillment costs, guiding optimal capital allocation",
-            "It eliminates the need to maintain warehouse inventory",
-            "It automatically guarantees that all marketplace customer reviews are 5-star ratings",
-            "It allows brands to bypass statutory sales taxes across international borders"
+            "It shows true bottom-line profit by channel after commissions, ad spend and fulfillment costs, guiding capital allocation.",
+            "It ranks channels by gross sales, directing more capital to the channel with the largest revenue and the best traffic.",
+            "It measures each channel's customer acquisition cost only, so the cheapest channel to acquire customers receives more capital.",
+            "It measures the speed of order delivery on each channel, directing capital to the channel with the best delivery time."
           ],
           "answer": 0,
           "why": "CCEI measures net contribution profit relative to gross sales for each channel, revealing whether high-volume marketplace channels are actually generating sustainable bottom-line profits after platform take rates and advertising costs."
@@ -2983,10 +2983,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "For a $15M GMV brand, why does investing an additional $213,000 in a headless tech stack yield a 1,613% ROI over three years?",
           "options": [
-            "Because Google pays headless websites a monthly digital advertising dividend",
-            "Because headless websites are legally exempt from paying credit card transaction fees",
-            "Because monolithic platforms automatically delete databases after three years",
-            "Because a modest +0.28% conversion rate improvement driven by sub-second page speed generates over $5.7M in incremental GMV and $3.4M in gross profit, dwarfing the software engineering expenses"
+            "A +2.8% drop in cart abandonment on its own cuts logistics spending by $3.4M, which repays the headless build in under a year.",
+            "The headless stack removes platform subscription fees of about $2M per year, so savings alone give the return over three years.",
+            "The headless stack raises average order value by 28%, adding $5.7M in revenue at the same ad spend over three years.",
+            "A +0.28% conversion gain from sub-second page speed adds over $5.7M in GMV and $3.4M in gross profit, dwarfing the $213K cost."
           ],
           "answer": 3,
           "why": "At enterprise scale ($15M+ annual GMV), slight conversion improvements (+0.28%) produce millions in incremental gross margin ($3.43M), heavily outweighing the $213K incremental headless infrastructure cost."
@@ -3027,10 +3027,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a federated GraphQL gateway (BFF) superior to making multiple direct REST calls from the client browser to disparate microservices in a headless stack?",
           "options": [
-            "Because GraphQL consolidates multiple backend requests into a single client network round-trip, fetches only requested fields, and executes backend calls concurrently to minimize mobile latency",
-            "Because REST APIs cannot transmit numerical product prices",
-            "Because GraphQL completely eliminates the need to pay for cloud database hosting",
-            "Because browsers are technically incapable of parsing JSON data from REST endpoints"
+            "GraphQL combines several backend requests into one client round-trip, fetches only requested fields and calls services concurrently.",
+            "GraphQL stores all microservice data in one central database, so the client reads it directly and no backend services are called at all.",
+            "GraphQL encrypts every request end to end, so a browser can safely call microservices that would be unsafe to reach over plain REST.",
+            "GraphQL caches each REST response for one hour, so repeat visitors never need to make a fresh call to the underlying microservices."
           ],
           "answer": 0,
           "why": "A GraphQL BFF gateway consolidates data from multiple microservices concurrently on high-speed server networks, returning a single tailored JSON payload to the client, preventing mobile network latency bottlenecks."
@@ -3114,10 +3114,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an Edge Virtual Waiting Room protect monolithic or headless checkout backends during extreme flash sales?",
           "options": [
-            "It permanently blocks all mobile smartphone visitors",
-            "It turns off the website's SSL certificate to reduce encryption overhead",
-            "It intercepts traffic at CDN edge nodes, offloading excess concurrent users into an offloaded queue and admitting only a metered flow that matches backend capacity",
-            "It automatically triples the retail price of the item to discourage shoppers"
+            "It adds servers automatically at the origin as traffic rises, so every visitor gets through to checkout without a queue.",
+            "It serves cached checkout pages to all visitors, so orders are saved at the edge and processed after the sale ends.",
+            "It intercepts traffic at CDN edge nodes, queues excess users and admits a metered flow matching the backend's capacity.",
+            "It blocks traffic from bots and from regions outside the sale, so only domestic shoppers can reach the checkout backend."
           ],
           "answer": 2,
           "why": "Virtual waiting rooms intercept traffic surges at edge CDN layers, throttling admissions to match the exact maximum transactions per second (TPS) of the checkout backend, preventing server crashes."
@@ -3158,10 +3158,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of maintaining an Edge Cache Hit Rate of 92% in a headless e-commerce architecture?",
           "options": [
-            "It reduces warehouse packing box dimensions",
-            "It eliminates the legal requirement to collect sales tax on international orders",
-            "It forces all customers to pay in digital cryptocurrency",
-            "It shields origin backend databases from 92% of traffic volume while serving global shoppers static HTML in under 30ms from nearest edge nodes"
+            "It guarantees every product page is fresh to the second, because edge nodes check the origin database before each response.",
+            "It removes the need for a CDN contract, because the origin servers can store 92% of the catalog pages in memory instead.",
+            "It lowers the cost of images and video, because 92% of media files are compressed by the edge before they are sent on.",
+            "It shields origin databases from 92% of traffic while serving global shoppers static HTML in under 30ms from the nearest edge nodes."
           ],
           "answer": 3,
           "why": "A 92% edge cache hit rate means 92% of all page requests resolve at edge CDN nodes in under 30ms, shielding origin servers from traffic overload and guaranteeing exceptional Core Web Vitals performance."
@@ -3230,10 +3230,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational cause of 'Where Is My Order' (WISMO) tickets, and how do branded tracking portals mitigate them?",
           "options": [
-            "WISMO tickets occur because customers forget their home address; portals re-verify credit card PIN numbers",
-            "WISMO tickets are generated automatically by courier sorting machines to test internet connections",
-            "WISMO tickets stem from post-purchase delivery anxiety and opaque courier updates; branded tracking portals ingest real-time carrier webhooks, deflecting up to 75% of inquiries through self-service",
-            "WISMO tickets happen only when packages are physically stolen by porch pirates"
+            "WISMO stems from wrong items being shipped; branded portals let customers reorder the correct items, cutting up to 75% of inquiries at once.",
+            "WISMO stems from slow refunds after returns; branded portals speed up refund approvals, which removes up to 75% of inquiries from agents.",
+            "WISMO stems from post-purchase anxiety and opaque courier updates; branded portals use carrier webhooks to deflect up to 75% of inquiries.",
+            "WISMO stems from agents' lack of training; branded portals script their answers, so up to 75% of inquiries are resolved much faster."
           ],
           "answer": 2,
           "why": "Opaque delivery milestones cause consumer anxiety. Providing proactive, real-time branded tracking updates deflecting up to 75% of repetitive WISMO questions without requiring expensive human agent labor."
@@ -3274,10 +3274,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is First Contact Resolution (FCR) targeted strictly above 75% in enterprise customer support management?",
           "options": [
-            "Because unresolved tickets are automatically reported to police cybercrime divisions",
-            "Because resolving customer issues in a single interaction prevents expensive follow-up message cycles, lowers support payroll, and produces significantly higher CSAT scores",
-            "Because multi-turn tickets crash the company's SQL database servers",
-            "Because email providers charge a $10 fee for every reply sent"
+            "FCR over 75% shows agents are closing tickets faster, even if the customer must contact support again for the same problem.",
+            "Resolving issues in one interaction avoids costly follow-ups, lowers support payroll and produces higher CSAT scores.",
+            "FCR over 75% is a legal requirement for retailers, so lower scores can lead to consumer protection penalties.",
+            "FCR over 75% shows that the average handle time is short, so it is a direct measure of the speed of each call."
           ],
           "answer": 1,
           "why": "High FCR (>75%) means 3 out of 4 customer problems are resolved immediately, reducing agent handling time, eliminating repetitive ticket ping-pong, and driving higher customer satisfaction."
@@ -3318,10 +3318,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial advantage of deploying an LLM-powered autonomous customer support agent over traditional human-only contact centers?",
           "options": [
-            "An AI agent can resolve high-frequency structured inquiries (WISMO, RMA labels) at ~$0.20 per query compared to $6.00+ for human agents, reducing overall support payroll by over 60%",
-            "AI agents make credit card payments free of charge",
-            "AI agents automatically manufacture replacement products",
-            "AI agents eliminate the need to maintain an inventory warehouse"
+            "AI agents resolve routine structured inquiries (WISMO, RMA labels) at about $0.20 versus $6.00+ for humans, cutting payroll over 60%.",
+            "AI agents resolve every type of inquiry, including complex complaints, at about $2.00 each, which cuts payroll costs by about 20%.",
+            "AI agents cost about $0.20 per query only after a large setup fee, so the net saving appears only after several years of use.",
+            "AI agents handle chat only, at about $3.00 per query, while phone support stays with human staff at a very similar cost."
           ],
           "answer": 0,
           "why": "By resolving 70%+ of routine inquiries autonomously via API tool-calling at $0.20 per interaction, AI agents drastically reduce manual ticket volume, slashing customer service costs by over 65%."
@@ -3362,10 +3362,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In customer support workforce planning, why does an operations manager need 61 rostered agents rather than just the 36 Erlangs of raw workload?",
           "options": [
-            "Because agents only work 10 minutes per day",
-            "Because Erlang C assumes all computers lose power twice an hour",
-            "Because 25 agents are legally mandated to work exclusively on marketing",
-            "Because stochastic arrival variance requires buffer agents (42 on shift) to meet response SLAs without queue backlogs, plus shrinkage adjustment (30%) accounts for breaks, training, and PTO"
+            "The extra agents cover the 30% of calls abandoned by customers before an agent answers, so the roster must exceed the workload by that share.",
+            "The extra agents are needed because one Erlang equals half an agent hour of work, so 36 Erlangs of work requires twice as many agents.",
+            "The extra agents are a legal minimum set by labor law for contact centers, so rosters must exceed raw workload by at least 60%.",
+            "Random arrival variance needs buffer agents (42 on shift) to meet response SLAs, and 30% shrinkage for breaks, training and PTO adds the rest."
           ],
           "answer": 3,
           "why": "Raw workload (36 Erlangs) represents 100% agent utilization with infinite wait times. Queuing mathematics requires 42 active agents to answer 88.4% within 45 seconds, and 30% shrinkage pushes required rostered staff to 61."
@@ -3406,10 +3406,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Support Contribution Index (SCI) of 8.22x demonstrate about an enterprise post-purchase support operation?",
           "options": [
-            "That shipping carriers charge an 8.22% fuel surcharge",
-            "That customer support is losing 8.22% of gross company revenue each month",
-            "That for every $1.00 invested in support technology and human personnel, the operation generates $8.22 in combined repeat cross-sell revenue and preserved customer lifetime value, proving it is a profit-generating center",
-            "That agents work 8.22 hours of overtime per day"
+            "Support resolves 8.22 tickets for every agent hour worked, so productivity is high and the cost per ticket is low.",
+            "Support costs 8.22% of total company revenue, which is within the usual range, so it is neither a profit nor a loss center.",
+            "Each $1.00 spent on support technology and staff generates $8.22 in repeat cross-sell revenue and preserved lifetime value.",
+            "Customers satisfied by support rate it 8.22 out of 10 on average, although that score has no direct link to revenue."
           ],
           "answer": 2,
           "why": "An SCI of 8.22x indicates that the customer service operation yields $8.22 in repeat cross-sell revenue and retained customer equity for every $1.00 spent on operations, elevating CX from a cost center to a profit driver."
@@ -3477,10 +3477,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is multi-channel virtual stock pooling superior to physically siloing inventory into separate warehouse buildings for each channel?",
           "options": [
-            "Because virtual stock pooling makes shipping couriers work for free",
-            "Because virtual pooling aggregates safety stock, prevents regional stockouts on high-velocity channels, and maximizes inventory turns across D2C, marketplaces, and ONDC without duplicate holding costs",
-            "Because marketplaces legally prohibit physical warehouses",
-            "Because physical warehousing increases manufacturing defect rates"
+            "Virtual pooling cuts all safety stock to zero, because stock can be moved between warehouses on the day an order arrives.",
+            "Virtual pooling aggregates safety stock, prevents regional stockouts on busy channels and raises turns without duplicate holding costs.",
+            "Virtual pooling gives each channel a fixed share of stock, which stops any one channel selling inventory meant for another one.",
+            "Virtual pooling lets the company stock only one warehouse, so other warehouse buildings can close and no stock is ever split."
           ],
           "answer": 1,
           "why": "Virtual stock pooling centralizes inventory visibility. Rather than locking stock into rigid physical silos where one channel starves while another sits overstocked, the DOMS dynamically allocates available stock based on real-time sales velocity."
@@ -3520,10 +3520,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Order 2 routing decision, why did the autonomous DOMS route the shipment from FC-Central-IL ($8.60) rather than splitting between FC-West-CA and FC-East-NJ?",
           "options": [
-            "Because the customer explicitly requested slower delivery transit",
-            "Because FC-East-NJ refused to answer the API webhook call",
-            "Because FC-Central-IL had both items in stock, allowing a single consolidated shipment that avoided the $4.50 split packaging penalty and duplicate freight",
-            "Because California warehouses are legally prohibited from shipping electronics to Zone 8"
+            "FC-Central-IL had the newest stock of both items, so the engine chose it to keep the oldest inventory for the later orders.",
+            "FC-Central-IL was the closest warehouse to the customer, so the engine ignored cost and chose it to minimize transit time.",
+            "FC-Central-IL had both items in stock, so one consolidated shipment avoided the $4.50 split packaging penalty and duplicate freight.",
+            "FC-West-CA and FC-East-NJ were both over capacity, so the engine had to use FC-Central-IL regardless of any freight cost."
           ],
           "answer": 2,
           "why": "A single consolidated shipment from FC-Central-IL incurs $8.60 in total freight. Splitting across FC-West-CA and FC-East-NJ would incur double carrier freight plus the $4.50 split penalty (totaling > $18.00)."
@@ -3564,10 +3564,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the logistics routing algorithm select National_Surface_3PL ($8.80) rather than Budget_Courier_Line, which offered an even cheaper rate?",
           "options": [
-            "The customer explicitly requested delivery by National_Surface_3PL",
-            "Budget_Courier_Line only accepts payments in gold bullion",
-            "National_Surface_3PL is owned by the e-commerce company's founder",
-            "Budget_Courier_Line was disqualified because its 88% on-time reliability score fell below the mandatory 94% SLA threshold"
+            "Budget_Courier_Line's rate was higher after fuel surcharges, so National_Surface_3PL was actually the cheaper carrier.",
+            "Budget_Courier_Line did not cover the destination pin code, so it could not take the shipment at any price.",
+            "Budget_Courier_Line's reliability was above 94%, but National_Surface_3PL was chosen for its faster average transit time.",
+            "Budget_Courier_Line's 88% on-time reliability fell below the mandatory 94% SLA threshold, so it was disqualified."
           ],
           "answer": 3,
           "why": "Carrier routing engines balance cost against reliability. Budget_Courier_Line had an 88% reliability score, violating the 94% SLA requirement. National_Surface_3PL was the lowest-cost carrier meeting reliability standards."
@@ -3608,10 +3608,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the 100,000-order BFCM stress test, what was the single largest operating expense incurred by the enterprise?",
           "options": [
-            "Outbound carrier logistics freight ($734,400.00 for 108,000 packages)",
-            "Warehouse cardboard packing tape",
-            "Customer service software licensing",
-            "Credit card payment gateway merchant discount rates"
+            "Outbound carrier logistics freight ($734,400.00 for 108,000 packages), making it the largest single expense line.",
+            "Payment gateway and processing fees on the 100,000 orders, which were the largest single expense line of the test.",
+            "Warehouse labor for picking, packing and handling the orders, which was larger than the carrier freight bill for them.",
+            "Packaging materials and cartons for the 108,000 packages, which were the largest single expense line of the stress test."
           ],
           "answer": 0,
           "why": "Outbound carrier freight represents the largest single operational expense ($734,400.00), demonstrating why dynamic multi-carrier rate optimization and split shipment minimization are vital to net profitability."
@@ -3653,10 +3653,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does achieving an Autonomous Commerce Composite Index (ACCI) score of 88.02 indicate for an e-commerce enterprise?",
           "options": [
-            "That the company is losing money on 88.02% of its transactions",
-            "That the enterprise operates at an institutional standard of digital commerce execution, demonstrating strong proficiency across conversion tech, inventory math, logistics routing, and marketplace operations",
-            "That the company must lay off 88.02% of its workforce",
-            "That the website will be blocked by internet service providers"
+            "The enterprise is profitable on 88.02% of its orders, with the remaining orders lost to returns, fraud and carrier delays.",
+            "The enterprise runs at an institutional standard, strong across conversion tech, inventory math, logistics routing and marketplace operations.",
+            "The enterprise reaches 88.02% of its revenue target, which shows it is on track but still below the institutional standard.",
+            "The enterprise has 88.02% order accuracy, which shows strong picking performance but says nothing about its other operations."
           ],
           "answer": 1,
           "why": "An ACCI score of 88.02 reflects strong, balanced execution across all four operational pillars: headless speed, inventory completeness, carrier reliability, and marketplace Buy Box dominance."
@@ -3736,10 +3736,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did AlphaRetail win the ad auction despite submitting a lower maximum bid ($3.50) than GammaBrands ($5.00)?",
           "options": [
-            "Because AlphaRetail had a higher Quality Score (9.2 vs 5.5), generating a higher total Ad Rank (32.20 vs 27.50)",
-            "Because AlphaRetail paid Google a private kickback under the table",
-            "Because GammaBrands was disqualified for bidding too high",
-            "Because the auction platform randomly selects a winner among all bids above $3.00"
+            "AlphaRetail had a higher Quality Score (9.2 vs 5.5), giving it a higher Ad Rank (32.20 vs 27.50) despite the lower bid.",
+            "AlphaRetail's lower bid meant a lower cost per click, and the auction awards the top spot to the cheapest advertiser.",
+            "AlphaRetail had a higher daily budget, and the auction awards the top spot to the advertiser that can spend the most.",
+            "AlphaRetail's ad was first to be submitted that day, and ties in the auction go to the advertiser with the earlier bid."
           ],
           "answer": 0,
           "why": "Ad Rank is the product of bid price and quality score. AlphaRetail's superior relevance and landing page experience gave it a higher Ad Rank, securing the top ad spot at a lower cost."
@@ -3770,10 +3770,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the Consumer Electronics campaign generate a net operational loss despite reporting an impressive 4.0x ROAS?",
           "options": [
-            "Because the ad platform failed to deliver impressions to mobile devices",
-            "Because Google Search charges higher sales tax on electronic goods",
-            "Because 4.0x ROAS is mathematically equivalent to zero revenue",
-            "Because its low gross margins (70% COGS) plus fulfillment and merchant fees exceeded the 25% gross ad revenue margin, causing a negative CM3"
+            "Its 4.0x ROAS was based on gross sales, but many orders were later cancelled, so the real ROAS fell far below that figure.",
+            "Its 4.0x ROAS covered one platform only, while other ad platforms spent more, so the blended ROAS was below 1.0x overall.",
+            "Its ad spend equals 40% of revenue at 4.0x ROAS, so the campaign lost money on advertising alone before other costs.",
+            "Its thin margin (70% COGS) plus fulfillment and merchant fees exceeded the 25% of revenue left after ads, so CM3 was negative."
           ],
           "answer": 3,
           "why": "At a 4.0x ROAS, ad spend accounts for 25% of gross revenue. With 70% COGS, product costs and ads alone consume 95% of revenue, leaving only 5%—which was entirely wiped out by fulfillment, returns, and payment fees."
@@ -3806,10 +3806,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of using Marketing Efficiency Ratio (MER) over individual platform-reported ROAS?",
           "options": [
-            "MER eliminates the need to pay for shipping and logistics",
-            "MER guarantees that Facebook and Google will stop charging credit card fees",
-            "MER reconciles total top-line store revenue against total marketing ad spend, immune to platform attribution overlap, pixel loss, and double counting",
-            "MER automatically generates video advertisements using artificial intelligence"
+            "MER compares each platform's reported conversions to its spend, using longer windows to reduce missed conversions.",
+            "MER compares net profit to total ad spend, so it shows the profit per dollar of advertising on each campaign.",
+            "MER compares total store revenue to total ad spend, so it is immune to attribution overlap, pixel loss and double counting.",
+            "MER compares revenue from new customers to the cost of acquiring them, so it ignores repeat purchases by existing customers."
           ],
           "answer": 2,
           "why": "Ad networks routinely double-count conversions (e.g., a customer clicks a Facebook ad and then a Google Search ad). MER uses actual bank deposits and total spend to reveal true commercial marketing efficiency."
@@ -3841,10 +3841,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Shapley Value Multi-Touch Attribution superior to Last-Click Attribution in multi-channel e-commerce?",
           "options": [
-            "Because it allows brands to track users without their browser consent",
-            "Because it measures each channel's marginal contribution across all customer journey permutations, fairly crediting top-of-funnel discovery ads rather than just the final click",
-            "Because it automatically refunds customer purchase charges",
-            "Because it completely eliminates advertising costs across all social media networks"
+            "It gives all of the credit to the first channel that touched the customer, which rewards discovery better than the last click.",
+            "It measures each channel's marginal contribution across all journey permutations, fairly crediting top-of-funnel discovery ads.",
+            "It splits credit equally among every channel in the journey, so no channel is favored or penalized by its position in it.",
+            "It uses only paid clicks recorded within 24 hours of the sale and removes all organic touches from the credit calculation."
           ],
           "answer": 1,
           "why": "Last-Click attribution creates an extreme bias toward branded search and retargeting ads. Shapley attribution evaluates marginal lift across all channel combinations, ensuring discovery channels receive appropriate budget."
@@ -3875,10 +3875,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of inventory-aware bidding in an enterprise advertising control gateway?",
           "options": [
-            "To automatically suppress or throttle ad spend on SKUs that drop below warehouse safety stock levels, preventing paid advertising on out-of-stock items",
-            "To force suppliers to manufacture products for free",
-            "To send emails to social media influencers asking for free promotions",
-            "To change the font color of the checkout page"
+            "It throttles or suppresses ad spend on SKUs that fall below safety stock, preventing paid ads on out-of-stock items.",
+            "It raises bids on SKUs with excess inventory, so surplus stock sells before its holding costs accumulate.",
+            "It lowers bids on SKUs with low margins, so that paid traffic is directed to the most profitable products.",
+            "It pauses all ads at the end of each month, so the warehouse can reconcile its inventory counts before new orders."
           ],
           "answer": 0,
           "why": "Advertising out-of-stock items wastes ad spend, drives up bounce rates, damages search ranking velocity, and frustrates customers. Inventory-aware bidding synchronizes WMS feeds with ad APIs to pause campaigns automatically."
@@ -3938,10 +3938,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical danger of failing to canonicalize e-commerce faceted search URLs?",
           "options": [
-            "Payment gateways will automatically charge customers twice for the same order",
-            "Google will delete the company's domain registration",
-            "The web browser will refuse to load any product images",
-            "Search engine crawlers exhaust their crawl budget indexing millions of duplicate sorting parameters, causing new and important product pages to remain undiscovered"
+            "Crawlers penalize the whole site with a manual action for using faceted filters, so rankings fall across all pages.",
+            "Crawlers cannot read faceted pages at all, so filtered products never appear in search results for any query.",
+            "Crawlers merge all faceted URLs into one page automatically, so the site loses its category pages in the index.",
+            "Crawlers waste their crawl budget on millions of duplicate sorting parameters, leaving new important product pages undiscovered."
           ],
           "answer": 3,
           "why": "Parameter bloat creates infinite URL permutations of identical product listings. Without canonical tags and crawl directives, search engines waste crawl budget on duplicate pages rather than indexing new inventory."
@@ -3974,10 +3974,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of deploying schema.org AggregateRating on e-commerce Product Detail Pages?",
           "options": [
-            "It unlocks rich snippet star ratings and review counts on Google search engine results pages, dramatically increasing organic click-through rates",
-            "It automatically lowers the price of the product on weekends",
-            "It encrypts the customer's credit card number using SHA-256",
-            "It forces Google to display the product at the very top of paid ad auctions for free"
+            "It unlocks rich snippets with star ratings and review counts in Google results, raising organic click-through rates.",
+            "It raises the page's ranking directly by a fixed weight, so products with ratings always rank above unrated ones.",
+            "It lets Google show the product's price and stock level in ads, which lowers the cost per click for the page.",
+            "It lets customers submit reviews directly on the results page, which increases the volume of reviews the store receives."
           ],
           "answer": 0,
           "why": "Google parses JSON-LD AggregateRating to display bright yellow review stars and review volume in organic search listings, establishing immediate social proof and increasing organic CTR."
@@ -4009,10 +4009,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should an e-commerce platform block internal site search URLs (/search?q=...) in robots.txt?",
           "options": [
-            "Because internal search pages contain copyrighted source code",
-            "Because search query pages generate millions of thin, low-quality duplicate pages that exhaust search engine crawl budget without adding organic search value",
-            "Because blocking internal search reduces the cost of web hosting electricity",
-            "Because search engines will fine the company for having an internal search bar"
+            "Search query pages reveal customers' search terms to competitors, which leaks private demand and pricing information.",
+            "Search query pages create millions of thin duplicate pages that use up crawl budget without adding organic search value.",
+            "Search query pages load slowly, so they lower Core Web Vitals scores and so reduce rankings for every page on the site.",
+            "Search query pages are hidden from users by default, so letting crawlers reach them would cause errors in analytics reports."
           ],
           "answer": 1,
           "why": "Google's webmaster guidelines explicitly warn against letting search engine crawlers index internal site search results. Crawling internal search creates infinite low-value URL loops that deplete crawl budget."
@@ -4045,10 +4045,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the maximum acceptable Largest Contentful Paint (LCP) threshold to achieve a 'GOOD' rating under Google's Core Web Vitals framework?",
           "options": [
-            "10.0 seconds",
-            "300 milliseconds",
-            "2.5 seconds or faster",
-            "45 seconds"
+            "4.0 seconds or faster at the 75th percentile of page visits",
+            "1.0 second or faster at the 75th percentile of page visits",
+            "2.5 seconds or faster at the 75th percentile of page visits",
+            "2.5 seconds or faster at the 50th percentile of visits only"
           ],
           "answer": 2,
           "why": "Google's official Core Web Vitals standard requires an LCP of 2.5 seconds or less for at least 75% of user page visits to qualify as 'GOOD'."
@@ -4080,10 +4080,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of the Organic Architecture Health Index (OAHI) in enterprise digital commerce?",
           "options": [
-            "To calculate federal import tariffs on overseas containers",
-            "To automatically generate social media memes for marketing interns",
-            "To replace human software engineers with automated customer support bots",
-            "To provide a single composite operational benchmark evaluating canonical URL integrity, JSON-LD schema validity, crawl budget efficiency, and Core Web Vitals compliance"
+            "A paid-search score combining ad quality, bid levels, click-through rates and landing page relevance across all campaigns.",
+            "A conversion score combining cart abandonment, checkout speed, payment success and average order value across all devices.",
+            "A link-building score combining backlink counts, referring domains, anchor text variety and domain authority over time.",
+            "A composite benchmark of canonical URL integrity, JSON-LD schema validity, crawl budget efficiency and Core Web Vitals compliance."
           ],
           "answer": 3,
           "why": "OAHI synthesizes technical search engine architecture into a quantifiable executive metric, ensuring that technical debt does not silently degrade organic customer acquisition."
@@ -4144,10 +4144,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is it mathematically dangerous to stop an e-commerce A/B test after only 3 days if the variant appears to be winning?",
           "options": [
-            "Because web browsers delete test cookies every 72 hours",
-            "Because Google Search penalizes websites that run short experiments",
-            "Because early results suffer from the 'peeking problem' and random sample noise, inflating false-positive rates to over 30% if sample size and weekly cycles are incomplete",
-            "Because payment gateways will hold customer funds in escrow"
+            "Three days is too short to measure revenue, because payments settle slowly, so conversion is understated for both variants equally.",
+            "Stopping early lowers statistical power, so the test will miss a real winner and the variant is wrongly judged to be a loser.",
+            "Early results suffer from the peeking problem and random noise, pushing false-positive rates above 30% when sample size is incomplete.",
+            "Three days always falls inside a weekend sale cycle, so the variant gets traffic from loyal customers who convert more often."
           ],
           "answer": 2,
           "why": "Continuous peeking without sample size discipline dramatically inflates Type I error rates. Random variance frequently creates illusory early leads that evaporate once full statistical power is reached."
@@ -4179,10 +4179,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary conceptual advantage of Bayesian A/B testing over Frequentist p-value testing for e-commerce executives?",
           "options": [
-            "It eliminates the need to measure user conversions",
-            "It directly calculates the intuitive probability that the variant is better than control (e.g. 99.92%), rather than the probability of observing data assuming no difference",
-            "It automatically writes marketing copy for the website",
-            "It guarantees that server hosting costs will be cut in half"
+            "It needs no traffic or sample size, because prior beliefs fill the gap, so results can be called after a single conversion.",
+            "It gives the intuitive probability that the variant beats control (e.g. 99.92%), not the chance of the data if there were no difference.",
+            "It reports the exact revenue lift of the variant with no uncertainty, which the p-value of a frequentist test cannot provide.",
+            "It runs the test on every visitor and every variant at once, so it needs no random assignment or control group at all."
           ],
           "answer": 1,
           "why": "Frequentist p-values are widely misunderstood by business stakeholders. Bayesian testing provides direct probabilistic statements (e.g., 'there is a 99.92% chance this button increases sales') and quantifies risk."
@@ -4215,10 +4215,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When is a Multi-Armed Bandit algorithm preferred over a traditional static 50/50 A/B test in e-commerce?",
           "options": [
-            "During short-duration, high-stakes sales events (like Black Friday or flash sales) where minimizing opportunity cost and maximizing immediate revenue outweighs long-term p-value precision",
-            "When the website has zero visitor traffic",
-            "When testing backend database schema migrations",
-            "When filing annual corporate income tax returns"
+            "In short, high-stakes sales events (Black Friday, flash sales), where limiting opportunity cost beats the long-term precision of a p-value.",
+            "For long-running tests of site redesigns, where it is vital to measure the lasting effect on retention with full statistical precision.",
+            "For tests with only two variants and little traffic, because a bandit needs fewer visitors than a 50/50 test to reach significance.",
+            "For compliance and pricing tests, where each customer must see a fixed variant and traffic split must remain equal throughout."
           ],
           "answer": 0,
           "why": "Multi-armed bandits dynamically exploit the winning variant in real time, capturing maximum revenue during short promotional windows where running a 50/50 test for two weeks would sacrifice substantial profit."
@@ -4250,10 +4250,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a high concentration of 'rage clicks' on a specific section of a product page indicate to a CRO specialist?",
           "options": [
-            "The customer is trying to hack into the company's SQL database",
-            "Users love the website design so much that they are clapping with their mouse cursor",
-            "The customer's computer monitor has a dead pixel",
-            "Users expect an element to be interactive or clickable (or a button is experiencing JavaScript lag), creating severe friction and confusion"
+            "Users are highly engaged with the section and keep clicking to read more, so it is a strong content area to expand.",
+            "Users are using bots or automated scripts that click repeatedly, so the section should be protected with a CAPTCHA.",
+            "Users prefer to navigate by mouse rather than keyboard, so the section needs larger tap targets for mobile visitors.",
+            "Users expect an element to be clickable (or a button lags due to JavaScript), creating friction and confusion."
           ],
           "answer": 3,
           "why": "Rage clicks are a definitive behavioral signal of user frustration caused by broken links, lagging submit buttons, or visual elements that resemble clickable buttons but are static."
@@ -4284,10 +4284,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the Enterprise Experimentation Gateway automatically kill experiment EXP-103 despite its statistically significant conversion lift (p = 0.015)?",
           "options": [
-            "Because the product manager forgot to invite the engineering team to the demo",
-            "Because the variant button was colored green instead of blue",
-            "Because it breached the enterprise guardrail metric by causing Average Order Value (AOV) to drop by -6.5%, proving it boosted volume by eroding transaction profit",
-            "Because the experiment ran on a Tuesday instead of a Friday"
+            "It breached the guardrail by raising page load time past 3 seconds, which showed the conversion lift would fade within weeks.",
+            "It breached the sample ratio check, showing that traffic was not split evenly, so the lift of p = 0.015 was not trustworthy.",
+            "It breached the guardrail metric by cutting Average Order Value by 6.5%, showing volume was bought by eroding transaction profit.",
+            "It breached the maximum run time of 7 days, so the gateway stops every experiment regardless of its measured results."
           ],
           "answer": 2,
           "why": "Conversion optimization must protect net commercial value. If a discount or urgency variant lifts conversion rate but causes AOV or gross margin to collapse, guardrails kill the experiment to protect profitability."
@@ -4347,10 +4347,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of achieving a rapid CAC Payback Period (under 3 months) in e-commerce?",
           "options": [
-            "It legally exempts the company from collecting state sales tax",
-            "It recycles advertising capital quickly back into treasury cash, allowing the enterprise to reinvest in customer acquisition without external debt",
-            "It forces Google and Facebook to discount their advertising click rates by 50%",
-            "It guarantees that shipping carriers will deliver packages within 24 hours"
+            "It shows customers are loyal and repeat purchasers, so the company can lower its ad spend and still keep revenue steady.",
+            "It recycles ad capital quickly back into cash, letting the company reinvest in acquisition without taking on external debt.",
+            "It guarantees positive profit on every cohort, because acquisition costs are always recovered within the first quarter.",
+            "It lets the company cut its marketing budget safely, because short payback means lifetime value no longer needs tracking."
           ],
           "answer": 1,
           "why": "Fast CAC payback recycles working capital into new marketing campaigns rapidly, accelerating compounding growth without burning corporate cash reserves or requiring dilutive venture capital."
@@ -4383,10 +4383,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What automated marketing strategy should an e-commerce brand immediately deploy for an customer classified as 'At_Risk_High_Spender' (RFM: 144)?",
           "options": [
-            "Send them 15 promotional marketing emails every day until they buy",
-            "Charge their credit card a monthly inactivity penalty fee",
-            "Trigger a personalized high-value win-back flow featuring an executive VIP check-in, exclusive loyalty points incentive, or tailored product recommendations based on past purchase history",
-            "Immediately delete the customer's account and unsubscribe them from all emails"
+            "Remove the customer from marketing lists to protect email deliverability, since lapsed high spenders rarely respond to outreach.",
+            "Send a generic site-wide discount code in the next newsletter, since at-risk segments all respond to the same standard offers.",
+            "Trigger a personalized high-value win-back flow with a VIP check-in, loyalty points incentive or recommendations from past purchases.",
+            "Offer a heavy first-order discount aimed at new customers, because a lapsed spender should be treated as a fresh prospect."
           ],
           "answer": 2,
           "why": "At-Risk High Spenders represent substantial past value but are slipping into permanent churn. Re-engaging them with premium incentives and personalized concierge touches protects high-margin lifetime value."
@@ -4453,10 +4453,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is personalized Inter-Purchase Time (IPT) latency modeling superior to a static '60 days of inactivity' churn rule?",
           "options": [
-            "Because customer purchase frequencies vary widely: a weekly grocery buyer is already churned after 30 days of silence, whereas a seasonal coat buyer normally purchases only once every 180 days",
-            "Because static rules are illegal under Federal Trade Commission regulations",
-            "Because calculating standard deviations reduces the amount of web server storage required",
-            "Because artificial intelligence cannot understand calendar months"
+            "Purchase frequencies vary widely: a weekly grocery buyer has churned after 30 days, while a seasonal coat buyer buys every 180 days.",
+            "Static rules are illegal under privacy law, and rules built on a customer's own history are the only lawful way to target them.",
+            "Static rules use fewer data points, and the customer's personal cadence is a simpler measure that the CRM can update quickly.",
+            "Static rules count calendar days only, and the personalized model counts logins, which are a better signal of a customer's intent."
           ],
           "answer": 0,
           "why": "Different product categories have completely different natural replenishment cycles. Personalizing churn detection to each individual's historical purchase cadence prevents premature spamming of seasonal buyers and flags frequent shoppers before it's too late."
@@ -4487,10 +4487,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an enterprise e-commerce brand that generates over 50% of its GMV from repeat customers far more resilient to digital advertising price shocks?",
           "options": [
-            "Because banks give 0% interest loans to companies with repeat buyers",
-            "Because over half of its revenue is generated organically with zero direct ad spend, insulating the company's operating profit from rising ad auction CPMs on Meta and Google",
-            "Because search engines remove competitor ads when repeat customers visit",
-            "Because repeat customers never return items or ask for refunds"
+            "Repeat customers pay higher prices than new ones, so the brand can pass on any advertising cost increase directly to buyers.",
+            "Over half its revenue arrives organically with no direct ad spend, insulating operating profit from rising Meta and Google CPMs.",
+            "Repeat customers never need discounts to buy, so the brand stops using paid ads entirely and avoids all auction exposure.",
+            "Repeat customers are acquired by retargeting, which is not affected by auction prices because it uses only first-party data."
           ],
           "answer": 1,
           "why": "A high repeat revenue share (50%+) acts as a financial shock absorber. While competitors dependent on 100% first-time paid acquisition go cash-negative when ad CPMs inflate, high-retention brands maintain strong EBITDA margins."
@@ -4551,10 +4551,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Tier 1 of the Capstone Growth Engine, why does the algorithm discount gross ad revenue by the WMS in-stock rate?",
           "options": [
-            "Because Google automatically deletes ad campaigns with out-of-stock SKUs",
-            "Because advertising out-of-stock items leads to unfulfilled orders, cancellations, and customer service refunds, diminishing true realized revenue",
-            "Because inventory stockouts are required to be reported to the SEC",
-            "Because shipping carriers charge higher fuel surcharges on out-of-stock products"
+            "In-stock rate sets the ad bid directly, so a higher in-stock rate means ad platforms charge a lower cost per click.",
+            "Advertising out-of-stock items leads to unfulfilled orders, cancellations and refunds, reducing the revenue actually realized.",
+            "Ad platforms pay out only on in-stock items, so revenue from unavailable products is refunded to the advertiser.",
+            "The in-stock rate shows how many customers returned items, so it is used to adjust revenue for the expected return rate."
           ],
           "answer": 1,
           "why": "Unfulfilled customer demand from stockouts erodes top-line revenue through cancellations, returns, and lost trust. Grounding marketing revenue in warehouse in-stock availability reflects true financial realization."
@@ -4586,10 +4586,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial impact of combining Schema.org rich snippets with sub-2.0s mobile LCP performance in Tier 2?",
           "options": [
-            "It converts all customer returns into cash donations",
-            "It forces Googlebot to host the website on its own servers",
-            "It maximizes both organic search click-through rate (via SERP review stars) and on-site checkout conversion, generating substantial organic GMV without paid media costs",
-            "It eliminates the need to pay for merchant inventory"
+            "It lets the store replace its paid campaigns with organic traffic at once, since mobile speed alone sets the search ranking.",
+            "It lowers the cost per click on paid ads, because rich snippets and fast pages raise the quality score used in the auction.",
+            "It lifts organic click-through rate (via review stars) and on-site conversion, generating organic GMV without paid media costs.",
+            "It raises average order value, because fast pages and review stars both encourage customers to add more items to carts."
           ],
           "answer": 2,
           "why": "Schema rich snippets increase organic traffic by expanding SERP click-through rates, while sub-2.0s mobile LCP maximizes on-site conversion probability, compounding high-margin organic revenue."
@@ -4621,10 +4621,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How did Thompson Sampling generate +1,754 incremental orders compared to the static baseline in Tier 3?",
           "options": [
-            "By forcing visitors to remain on the website for at least one hour",
-            "By creating fake user accounts to place automatic orders",
-            "By secretly charging customer credit cards without their knowledge",
-            "By sampling Bayesian posterior distributions in real time and automatically shifting 91.9% of visitor traffic to the highest-converting offer"
+            "By splitting traffic equally among all offers for the entire test, which improved the precision of the estimates of conversion.",
+            "By using a fixed 70/30 traffic split decided in advance, which favored the offer managers considered most likely to win.",
+            "By adding more offers over time, which raised the conversion rate through a larger variety of creative for each visitor.",
+            "By sampling Bayesian posterior distributions in real time and shifting 91.9% of visitor traffic to the highest-converting offer."
           ],
           "answer": 3,
           "why": "Thompson Sampling continuously maximizes exploitation of the winning variation while maintaining exploration, concentrating traffic on top-performing offers to maximize realized sales."
@@ -4656,10 +4656,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic role of Tier 4 retention revenue within the full-funnel e-commerce growth flywheel?",
           "options": [
-            "It generates highly predictable, high-margin cash flows that can be continuously reinvested into Tier 1 customer acquisition without external capital",
-            "It eliminates the need to pay corporate income tax",
-            "It forces Google and Facebook to give the company free ad credits",
-            "It allows the company to operate without a website"
+            "It produces predictable, high-margin cash flows that are reinvested into Tier 1 acquisition without needing external capital.",
+            "It replaces Tier 1 acquisition once the customer base is large enough, so the brand stops paying for acquisition entirely.",
+            "It provides low-margin volume to fill warehouse capacity, which lowers fixed costs per order for Tier 1 and Tier 2 sales.",
+            "It is accounted for as a one-time sales bonus, with no link to later acquisition decisions or the budget for advertising."
           ],
           "answer": 0,
           "why": "Retention revenue carries minimal marginal cost. Reinvesting repeat profits into top-of-funnel paid acquisition creates a self-funding growth loop that compounds market share."
@@ -4690,10 +4690,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the overarching institutional accomplishment represented by achieving the Certified Digital Growth Marketing Architect (CDG-MA) accreditation?",
           "options": [
-            "Buying billboard advertisements alongside city highways",
-            "Demonstrating end-to-end mastery of digital commerce growth: capital-efficient paid acquisition, technical SEO moats, scientific Bayesian/bandit experimentation, and compounding customer retention",
-            "Memorizing the names of marketing software companies",
-            "Posting advertisements on social media without tracking sales"
+            "Passing a single exam on paid advertising platforms, with the focus on bidding strategies and creative best practices alone.",
+            "End-to-end mastery of digital growth: efficient paid acquisition, technical SEO moats, Bayesian and bandit testing, and compounding retention.",
+            "Completing a certification in web analytics tools, with the focus on dashboard setup and report building for stakeholders only.",
+            "Showing proficiency in brand storytelling and content marketing, with the focus on social media reach and follower growth only."
           ],
           "answer": 1,
           "why": "The CDG-MA credential recognizes executive-level mastery of mathematical, technical, and architectural full-funnel digital commerce execution across acquisition, conversion, and retention."
@@ -4756,10 +4756,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is edge-level catalog filtering based on visitor IP address critical in international cross-border e-commerce?",
           "options": [
-            "It eliminates the need to pay international air freight carriers",
-            "It prevents foreign governments from inspecting cargo manifests",
-            "It prevents overseas shoppers from purchasing products that violate destination country biosecurity, electrical, or chemical import laws before checkout",
-            "It secretly charges overseas customers double the price without their consent"
+            "It lets the store show prices in the visitor's local currency, so that the displayed price matches the card statement.",
+            "It blocks visitors from countries under trade sanctions, as it is the only way to meet payment network requirements.",
+            "It prevents overseas shoppers from buying products that break the destination country's biosecurity, electrical or chemical import laws.",
+            "It speeds up page loading by serving only the products popular in the visitor's country, which raises conversion rates."
           ],
           "answer": 2,
           "why": "Filtering catalogs at the edge prevents consumers from ordering items prohibited by local regulatory bodies (such as Australian biosecurity or EU cosmetics directives), preventing customs seizures and chargebacks."
@@ -4791,10 +4791,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional e-commerce pricing engines add an FX Volatility Buffer onto raw spot exchange rates?",
           "options": [
-            "To artificially trigger higher customs duty inspections at destination borders",
-            "To hedge against rapid currency fluctuations and international payment gateway spreads between customer purchase and treasury settlement",
-            "Because currency exchange rates are strictly prohibited from changing on weekends",
-            "Because international banks require all digital transactions to be rounded to prime numbers"
+            "It converts customer prices to the buyer's currency using the spot rate exactly, so no margin is lost during conversion.",
+            "It hedges against fast currency moves and gateway spreads between the customer's purchase and treasury settlement.",
+            "It lets the store charge customers in several currencies at once, so shoppers can choose the cheapest option at checkout.",
+            "It adds the local import duty to the product price, so customers see one price that already includes all border costs."
           ],
           "answer": 1,
           "why": "Exchange rates oscillate continuously while consumer catalog prices must remain stable. An FX volatility buffer absorbs interim currency swings and gateway fees, protecting corporate gross margins."
@@ -4825,10 +4825,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key difference between CIF (Cost, Insurance, Freight) and FOB (Free on Board) customs valuation?",
           "options": [
-            "CIF assesses import duties on the combined total of product price, international shipping, and cargo insurance, whereas FOB assesses duty on product price alone",
-            "CIF is only applicable to orders delivered by supersonic passenger jets",
-            "FOB requires the customer to pay customs duties in physical gold bullion",
-            "CIF completely eliminates the requirement to pay local VAT"
+            "CIF assesses duty on product price plus international freight and cargo insurance, while FOB assesses duty on product price alone.",
+            "CIF assesses duty on the product price alone, while FOB adds international freight and cargo insurance to the duty base.",
+            "CIF means the buyer arranges freight and insurance after delivery, while FOB means the seller arranges both to the port.",
+            "CIF is used only for air freight and FOB only for sea freight, but both assess duty on the product price alone."
           ],
           "answer": 0,
           "why": "Most international customs jurisdictions (including the EU and UK) calculate tariffs using CIF valuation, adding freight and insurance to the customs duty and tax base."
@@ -4860,10 +4860,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Delivered Duty Paid (DDP) universally preferred over Delivered Duty Unpaid (DDU) for modern consumer cross-border e-commerce?",
           "options": [
-            "DDU is only permitted for domestic postal mail within the same city",
-            "DDP guarantees that commercial airplanes fly twice as fast across the ocean",
-            "DDP legally exempts international merchants from generating commercial invoices",
-            "DDP pre-collects all duties and taxes at checkout, eliminating surprise delivery fees and customs detention, raising delivery success to over 98%"
+            "DDP makes the customer pay duties on delivery, which reduces the seller's costs and cuts the number of returns overall.",
+            "DDP lets the seller avoid customs declarations entirely, as duties are settled by the carrier after the parcel is delivered.",
+            "DDP removes import duties altogether, since the seller pays a flat shipping fee that includes all taxes in every country.",
+            "DDP pre-collects duties and taxes at checkout, removing surprise fees and customs detention and lifting delivery success above 98%."
           ],
           "answer": 3,
           "why": "DDU causes significant customer dissatisfaction and high return rates because buyers are ambushed with customs invoices before receiving goods. DDP provides frictionless door-to-door delivery."
@@ -4895,10 +4895,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic value of offering local alternative payment methods (APMs) like iDEAL or Klarna in European cross-border commerce?",
           "options": [
-            "Credit cards are illegal for online shopping in the European Union",
-            "Local payment methods prevent European central banks from tracking revenue",
-            "In many European markets, local APMs account for over 60% of digital transactions; offering only credit cards alienates the majority of consumers and depresses conversion rates",
-            "Alternative payment methods legally bypass all European customs inspection rules"
+            "Local APMs carry lower fees than cards in every market, so they are always cheaper than cards and raise margins.",
+            "Local APMs are legally required by the EU for any merchant selling to European customers from outside the region.",
+            "In many European markets local APMs make up over 60% of digital transactions, and card-only checkouts alienate most shoppers.",
+            "Local APMs remove chargeback risk completely, since transactions through them can never be disputed by the buyer."
           ],
           "answer": 2,
           "why": "Consumer payment preferences vary drastically by region. For example, in the Netherlands, over 60% of all e-commerce transactions occur via iDEAL; omitting it destroys checkout conversion."
@@ -4955,10 +4955,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of an in-store Safety Buffer in a unified omnichannel inventory model?",
           "options": [
-            "It charges in-store customers an extra fee for buying products in person",
-            "It automatically orders emergency inventory from competitors",
-            "It physically locks store doors when inventory levels drop below 10%",
-            "It holds back a small quantity of store stock from digital online channels to ensure walk-in physical shoppers do not encounter empty shelves"
+            "It adds extra safety stock to the online catalog, so a website never shows an item as sold out when stores still have it.",
+            "It reserves store stock for the largest customers, so loyalty members always get priority over general shoppers.",
+            "It reduces store stock counts to zero at closing, so overnight online orders are fulfilled from the central warehouse.",
+            "It holds back a small quantity of store stock from online channels so walk-in shoppers do not meet empty shelves."
           ],
           "answer": 3,
           "why": "Safety buffers prevent digital orders from claiming the last few units on physical store shelves, protecting walk-in customer satisfaction while avoiding costly online order cancellations."
@@ -4990,10 +4990,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the In-Store Attach Rate a critical financial KPI for retail executives evaluating BOPIS programs?",
           "options": [
-            "Because customer visits to retrieve online orders generate unplanned, high-margin in-store impulse purchases, subsidizing store picking costs",
-            "Because retail associates are legally required to buy items every time a customer enters",
-            "Because attach rate measures the weight of cardboard boxes used in pickup",
-            "Because attach rate determines the rent paid to shopping mall landlords"
+            "Online-order pickups bring shoppers into stores to make unplanned, high-margin impulse purchases that subsidize store picking costs.",
+            "The attach rate shows the share of online orders paid on pickup, which tells the retailer how much cash it collects at the store.",
+            "The attach rate shows the share of orders shipped from stores, which tells executives how much of the freight cost is saved.",
+            "The attach rate shows the share of customers who return items on pickup, so it measures the cost of in-store returns."
           ],
           "answer": 0,
           "why": "When shoppers pick up online orders in-store, 25-35% make additional purchases, creating incremental high-margin gross profit that offsets in-store fulfillment labor."
@@ -5026,10 +5026,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does intelligent Ship-from-Store (SFS) routing generate value beyond simple parcel freight reduction?",
           "options": [
-            "By allowing retail stores to evade local property taxes",
-            "By dynamically routing digital orders to retail stores with overstocked aging inventory, selling products at full digital retail price before in-store markdowns occur",
-            "By firing warehouse associates and replacing them with in-store customers",
-            "By requiring postal carriers to deliver packages on bicycles"
+            "By routing online orders to the closest store regardless of stock age, so that delivery speed is the only factor that drives savings.",
+            "By routing online orders to stores with overstocked aging inventory, selling at full digital price before in-store markdowns hit.",
+            "By routing online orders to stores with the newest stock, so the stores keep older inventory for in-person shoppers.",
+            "By routing online orders to the central warehouse during peaks, so store staff can focus on walk-in customers instead."
           ],
           "answer": 1,
           "why": "Fulfilling online orders from stores with excess seasonal stock liquidates aging inventory at full digital price, avoiding steep 30-50% in-store clearance markdowns."
@@ -5061,10 +5061,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial advantage of Buy Online, Return In-Store (BORIS) compared to mail-in returns?",
           "options": [
-            "It destroys the returned item to prevent resale",
-            "It legally waives the merchant's obligation to issue a refund",
-            "It eliminates return postal shipping costs and provides retail associates an immediate opportunity to convert the returning customer into an in-store exchange or purchase",
-            "It requires returning customers to sweep the store floors"
+            "It lets the retailer reject returns made in store, because customers without a mailed label have no proof of purchase.",
+            "It sends returned items back to the central warehouse faster, so a return is refunded on the day it arrives there.",
+            "It eliminates return shipping costs and gives store associates a chance to convert the return into an exchange or new purchase.",
+            "It removes the need for return inspection, since store associates restock every item without checking its condition."
           ],
           "answer": 2,
           "why": "BORIS removes return shipping fees, returns stock instantly to store shelves for immediate resale, and puts customers in physical stores where 25-35% make a new purchase."
@@ -5095,10 +5095,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic objective of the Unified Commerce Operations Index (UCOI) in retail enterprise governance?",
           "options": [
-            "To eliminate the use of barcodes across all retail stores",
-            "To prevent customers from returning products",
-            "To replace physical store associates with automated phone bots",
-            "To align store operations, digital e-commerce, and logistics into a single synchronized profit engine that maximizes customer lifetime value and asset utilization"
+            "To rank the individual stores by sales per square foot, so underperforming locations are closed and e-commerce expands.",
+            "To measure the share of online revenue within total sales, so that executives can decide when to shift all trade online.",
+            "To benchmark each channel on its own profit and cost, so that stores, e-commerce and logistics operate as separate units.",
+            "To align stores, e-commerce and logistics into one synchronized profit engine that maximizes lifetime value and asset utilization."
           ],
           "answer": 3,
           "why": "UCOI benchmarks physical store and digital platform synchronization, ensuring inventory accuracy, rapid BOPIS fulfillment, and reduced last-mile freight costs."
@@ -5154,10 +5154,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Native In-App Checkout inside social applications (like TikTok Shop) achieve dramatically higher conversion rates than external web redirects?",
           "options": [
-            "Because consumers complete purchases within the app in a single tap using pre-stored biometric payment wallets, eliminating browser redirection latency and manual form entry",
-            "Because social platforms give away all products for free to registered users",
-            "Because mobile web browsers are legally prohibited from displaying digital shopping carts",
-            "Because native in-app checkout disables customer return options"
+            "Consumers buy in the app in a single tap with stored biometric wallets, avoiding browser redirect delay and manual form entry.",
+            "Native checkout shows lower prices than external web stores, since the platform subsidizes every product sold inside its app.",
+            "Native checkout hides shipping costs until after payment, so shoppers see a lower total and are more likely to complete.",
+            "Native checkout removes the need for any returns policy, since sales made in the app are final under the platform terms."
           ],
           "answer": 0,
           "why": "Eliminating page load latency, login requirements, and credit card entry forms by leveraging in-app tokenized wallets removes friction, doubling mobile conversion rates."
@@ -5190,10 +5190,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a 30-Day Commission Escrow Hold essential in creator affiliate e-commerce contracts?",
           "options": [
-            "It automatically converts affiliate commissions into corporate stock options",
-            "It gives international banks time to physically ship dollar bills across the ocean",
-            "It prevents influencers from posting new videos during the month",
-            "It holds affiliate commissions until the customer return window expires, ensuring merchants do not pay commissions on merchandise that was refunded"
+            "It lets creators earn interest on commissions held in escrow, which motivates them to promote the merchant's products more.",
+            "It stops creators from posting content for 30 days after a sale, so the product is not promoted too often to audiences.",
+            "It guarantees creators a minimum payment even if the customer returns the item, to protect creators from the refund risk.",
+            "It holds affiliate commissions until the return window ends, so merchants don't pay on merchandise that is later refunded."
           ],
           "answer": 3,
           "why": "Customer returns in e-commerce average 15-25%. Paying commissions immediately creates severe losses when products are returned; holding payouts in escrow protects merchant margins."
@@ -5225,10 +5225,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do high-velocity livestream flash sales require in-memory atomic decrement operations (e.g. Redis DECRBY) rather than standard SQL database updates?",
           "options": [
-            "Because Redis automatically ships parcels to customers' houses",
-            "Because SQL databases are incapable of storing numbers larger than one hundred",
-            "Because thousands of concurrent purchase requests hitting a relational database simultaneously cause lock contention, thread starvation, and catastrophic overselling",
-            "Because livestream video encoding corrupts relational database cables"
+            "SQL databases cannot store inventory counts as numbers, so a cache is the only place the stock can be recorded.",
+            "Redis stores stock permanently on disk, whereas SQL stores it in memory and so loses data when the server restarts.",
+            "Thousands of concurrent requests hitting a relational database cause lock contention, thread starvation and overselling.",
+            "SQL updates are slower for single users, so a livestream sale of a few visitors would take much longer to complete."
           ],
           "answer": 2,
           "why": "Standard SQL row locking cannot process thousands of simultaneous checkouts in sub-second windows without crashing. In-memory atomic counters guarantee instant, deadlock-free inventory decrements."
@@ -5261,10 +5261,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does embedding authentic customer User-Generated Content (UGC) videos on Product Detail Pages lift conversion rates more effectively than brand-produced commercial photos?",
           "options": [
-            "Because commercial studio photos are banned by mobile operating systems",
-            "Because consumers perceive unedited peer videos as authentic, trustworthy proof of product quality, fit, and real-world performance, resolving purchase anxiety",
-            "Because video files take up less server storage than static JPEG photos",
-            "Because UGC videos automatically delete customer negative reviews"
+            "UGC videos are cheaper to host than photos, so pages load faster and the lower bounce rate lifts conversion directly.",
+            "Consumers see unedited peer videos as authentic proof of quality, fit and real-world performance, which eases purchase anxiety.",
+            "UGC videos are required by search engines to rank product pages, so pages without them lose traffic to competitors.",
+            "UGC videos show higher-resolution product detail than studio photos, which removes the need for any written description."
           ],
           "answer": 1,
           "why": "Unedited customer videos provide authentic social proof regarding sizing, material texture, and real-life utility, overcoming consumer skepticism far more effectively than polished brand commercials."
@@ -5296,10 +5296,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of monitoring the Social Commerce Economics Index (SCEI) across an enterprise digital brand?",
           "options": [
-            "It validates that high-velocity social viral spikes translate into profitable, margin-accretive GMV protected from affiliate fraud and high return rates",
-            "It automatically generates viral video scripts for teenage dance creators",
-            "It eliminates the requirement to pay taxes on social media income",
-            "It guarantees that every TikTok video receives one million likes"
+            "It validates that viral social spikes turn into profitable, margin-accretive GMV protected from affiliate fraud and high returns.",
+            "It counts the followers, likes and shares earned in social campaigns, to prove that brand reach is growing each quarter.",
+            "It tracks the share of total revenue from social channels, to confirm that social is replacing paid search over time.",
+            "It measures creator content output per month, to ensure that enough videos are published to maintain algorithm visibility."
           ],
           "answer": 0,
           "why": "SCEI benchmarks the full economic efficiency of social channels, ensuring that viral traffic translates into high net ROAS, low return clawbacks, and profitable customer acquisition."
@@ -5357,10 +5357,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must B2B e-commerce portals support complex organizational account hierarchies and approval workflows?",
           "options": [
-            "Because credit card companies refuse to process transactions over five hundred dollars",
-            "Because corporate purchasing policies legally mandate spend limits, manager approvals, and budget governance before procurement funds can be committed",
-            "Because B2B buyers are forbidden from using computers without manager supervision",
-            "Because corporate procurement managers enjoy clicking approval buttons as a hobby"
+            "Business buyers prefer to enter payment details once and never see approvals, so portals hide the hierarchy from them.",
+            "Corporate purchasing policies mandate spend limits, manager approvals and budget governance before procurement funds are committed.",
+            "Tax law requires each business customer to have one user per account, so portals must split accounts by individual.",
+            "Wholesale suppliers need to know the buyer's personal credit history, so portals set limits for each employee separately."
           ],
           "answer": 1,
           "why": "Enterprise governance requires strict budget controls and delegated signing authorities; B2B portals must enforce these organizational approval chains digitally."
@@ -5392,10 +5392,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do wholesale B2B manufacturers enforce Case Pack Multiples in their digital ordering engines?",
           "options": [
-            "To prevent customers from buying more products than can fit in a car",
-            "Because digital computers can only calculate numbers divisible by 12",
-            "To ensure warehouse pickers can retrieve sealed, palletized manufacturer cartons without breaking open boxes and incurring manual counting labor",
-            "To comply with federal postal weight limits"
+            "To let buyers receive a volume discount, since price breaks apply only when orders are made in case multiples.",
+            "To keep the manufacturer's sales team informed, as each case order triggers a commission calculation by the sales team.",
+            "To let pickers retrieve sealed palletized cartons without breaking boxes and incurring manual counting labor.",
+            "To reduce the manufacturer's stock risk, because cases are produced only after the order is placed by the buyer."
           ],
           "answer": 2,
           "why": "Enforcing case pack multiples allows warehouses to ship intact master cartons directly from pallets, eliminating expensive piece-picking labor and reducing packaging waste."
@@ -5428,10 +5428,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial rationale for a B2B merchant to offer '2/10 Net 30' early payment terms?",
           "options": [
-            "It legally waives all corporate sales taxes on wholesale transactions",
-            "It forces the buyer to pay the merchant in corporate stock",
-            "It allows the merchant to avoid delivering the ordered products",
-            "It incentivizes enterprise buyers to settle invoices in 10 days rather than 30, accelerating cash flow velocity and reducing working capital financing costs"
+            "It gives buyers a 10% discount if they pay within 2 days, and the full amount is due within 30 days after delivery.",
+            "It lets buyers pay in 2 installments, the first within 10 days and the second within 30, which cuts credit risk.",
+            "It charges a 2% late fee after 10 days and then 30% interest after 30 days, to penalize slow-paying customers.",
+            "It encourages buyers to pay within 10 days instead of 30, speeding cash flow and cutting working capital financing costs."
           ],
           "answer": 3,
           "why": "Offering a 2% discount for 10-day payment accelerates cash collection, reducing Days Sales Outstanding (DSO) and freeing up treasury working capital."
@@ -5463,10 +5463,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mechanism of a cXML PunchOut Catalog integration with SAP Ariba or Coupa?",
           "options": [
-            "It allows corporate buyers to launch the supplier's web catalog from within their ERP, build a cart with contract pricing, and return the cart data seamlessly as an internal procurement requisition",
-            "It punches physical holes into warehouse shipping boxes to inspect contents",
-            "It prevents corporate buyers from communicating with supplier sales representatives",
-            "It automatically cancels orders if delivery takes longer than 24 hours"
+            "Buyers launch the supplier's catalog from their ERP, build a cart at contract pricing and return it as an internal requisition.",
+            "Buyers upload a spreadsheet of products to the supplier's portal, which then ships goods without any approval workflow.",
+            "Buyers pay the supplier through the ERP's bank connection, and the catalog is updated from the payment confirmation.",
+            "Buyers email purchase orders to the supplier, and the portal reads them to match prices to the contract automatically."
           ],
           "answer": 0,
           "why": "PunchOut connects enterprise ERP systems directly to supplier catalogs via cXML, allowing buyers to select items and return cart data directly into their corporate procurement approval pipeline."
@@ -5497,10 +5497,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Days Sales Outstanding (DSO) a critical metric in B2B e-commerce enterprise health?",
           "options": [
-            "Because DSO calculates the speed of delivery trucks on the highway",
-            "Because it measures how quickly trade receivables are converted into liquid cash; lower DSO frees up working capital and lowers corporate borrowing costs",
-            "Because high DSO increases the number of email subscribers",
-            "Because DSO is legally mandated to equal exactly 365 days by international trade treaties"
+            "It measures how long inventory sits in the warehouse before sale, so lower DSO reduces holding costs and obsolescence.",
+            "It measures how fast trade receivables become cash; lower DSO frees working capital and reduces borrowing costs.",
+            "It measures how long the company takes to pay its suppliers, so higher DSO frees working capital and delays outflows.",
+            "It measures the number of days between a customer's visits to the portal, so lower DSO shows stronger customer loyalty."
           ],
           "answer": 1,
           "why": "DSO measures the average number of days it takes for a company to collect payment after a sale. Lower DSO ensures capital is rapidly recouped rather than locked in unpaid receivables."
@@ -5557,10 +5557,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Tier 1 of the Milestone 4 Capstone, why is pre-collecting duties and taxes under a DDP model critical to international e-commerce viability?",
           "options": [
-            "It allows the merchant to hide all package tracking numbers from consumers",
-            "It legally exempts the enterprise from generating export commercial invoices",
-            "It eliminates bonded customs detention and surprise courier invoices upon delivery, driving delivery success to over 98% and preventing expensive Return to Origin (RTO) freight",
-            "It forces overseas governments to subsidize the merchant's international air freight"
+            "It lowers the product's retail price in the destination market, since duties are paid by the seller at a discounted rate.",
+            "It lets the seller skip customs paperwork entirely, since the duties are settled at the point of sale by the platform.",
+            "It avoids bonded customs detention and surprise courier invoices, driving delivery success above 98% and preventing costly RTO freight.",
+            "It shifts the responsibility for any customs penalty to the buyer, so the seller carries no risk if the parcel is seized."
           ],
           "answer": 2,
           "why": "DDP pre-clears shipments through customs without bonded holding and eliminates surprise delivery fees, protecting customer trust and driving international repeat retention."
@@ -5593,10 +5593,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial mechanism through which Ship-from-Store (SFS) creates shareholder value in Tier 2?",
           "options": [
-            "It eliminates the need for retail stores to pay local electricity bills",
-            "It converts expensive long-haul carrier air freight (Zone 7) into low-cost local ground delivery (Zone 2) while liquidating aging store inventory at full digital price",
-            "It requires postal carriers to pay rent to the retail store",
-            "It charges customers double for picking up items in a retail parking lot"
+            "It lets the retailer close its distribution centers, since stores can ship every online order faster and more cheaply than they can.",
+            "It turns costly long-haul freight (Zone 7) into cheap local ground delivery (Zone 2) while clearing aging stock at full digital price.",
+            "It raises store traffic by asking customers to collect orders, so impulse purchases lift the margin on each online order.",
+            "It shifts shipping cost to the customer through a store handling fee, so freight is no longer a cost to the retailer."
           ],
           "answer": 1,
           "why": "SFS reduces last-mile parcel shipping costs by leveraging local store proximity while clearing overstocked seasonal inventory before costly in-store markdowns."
@@ -5628,10 +5628,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the 30-Day Return Escrow Hold in Tier 3 creator affiliate governance?",
           "options": [
-            "It holds affiliate commission payouts until the customer return window has fully expired, ensuring merchants do not pay commissions on merchandise that was later refunded",
-            "It prevents creators from uploading new videos to social media",
-            "It gives shipping couriers time to print physical paper invoices",
-            "It charges creators a monthly fee for using the e-commerce website"
+            "It holds affiliate commissions until the return window fully expires, so merchants don't pay commissions on merchandise later refunded.",
+            "It pays affiliates in advance for 30 days of expected sales, which gives creators steady income during product promotion.",
+            "It blocks affiliate links from working for 30 days after launch, so the merchant can check the creator's audience quality.",
+            "It lets the merchant earn interest on unpaid commissions for 30 days, which offsets the platform fees on the sales."
           ],
           "answer": 0,
           "why": "Holding commissions in a 30-day escrow guarantees that affiliate payouts are funded strictly by retained, unreturned merchandise, protecting merchant operating margins."
@@ -5663,10 +5663,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the Tier 4 B2B engine automatically place a Credit Hold on the Caterpillar purchase requisition?",
           "options": [
-            "Because Caterpillar's procurement manager forgot their password",
-            "Because B2B wholesale orders are limited to one per year",
-            "Because the cXML file format is incompatible with industrial parts",
-            "Because adding the $25,000 order pushed total outstanding receivables to $113,000, exceeding Caterpillar's approved $100,000 credit limit"
+            "The $25,000 order was above the maximum single order size of $20,000 allowed for any corporate account in the system.",
+            "Caterpillar's payment was overdue by more than 60 days, so the engine blocks all new requisitions until it is settled.",
+            "The $25,000 order exceeded Caterpillar's remaining stock allocation, so the engine stopped it to avoid overselling.",
+            "Adding the $25,000 order pushed total receivables to $113,000, exceeding Caterpillar's approved $100,000 credit limit."
           ],
           "answer": 3,
           "why": "Automated trade credit limits freeze order processing when pending orders exceed approved credit lines, protecting corporate cash flow from excessive counterparty default risk."
@@ -5698,10 +5698,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic value of integrating international, omnichannel, social, and B2B commerce onto a single unified platform architecture?",
           "options": [
-            "It requires customers to use credit cards issued only by social media platforms",
-            "It eliminates all corporate tax obligations worldwide",
-            "It diversifies revenue streams across global retail and wholesale channels while maximizing inventory asset efficiency and eliminating channel friction",
-            "It replaces the need to manufacture physical products"
+            "It lowers the number of sales channels the company must run, so management can focus on the single most profitable channel.",
+            "It removes the need for separate B2B and B2C pricing, so every customer type sees the same list price and the same terms.",
+            "It diversifies revenue across global retail and wholesale channels while raising inventory asset efficiency and removing channel friction.",
+            "It lets the company keep separate inventory pools per channel, so stock can never be oversold across different markets."
           ],
           "answer": 2,
           "why": "A unified platform unifies inventory, pricing, and fulfillment across B2B, B2C, domestic, and international markets, maximizing asset turnover and operating margins."
@@ -5759,10 +5759,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Collaborative Filtering over manual rule-based product recommendations?",
           "options": [
-            "It guarantees that shipping carriers deliver packages within 24 hours",
-            "It legally waives consumer sales taxes on recommended items",
-            "It eliminates the need for payment processing gateways",
-            "It discovers latent, unexpected product affinities across consumer cohorts automatically without requiring manual metadata tagging of millions of SKUs"
+            "It recommends only products with identical attributes to the one viewed, so it needs no behavioral data from other users.",
+            "It uses editors' hand-written rules for every category, which gives more control over results than learned shopper behavior.",
+            "It ranks products by margin alone, so it needs no interaction data from customers and runs without any model training.",
+            "It finds latent, unexpected product affinities across customer cohorts automatically, without manual tagging of millions of SKUs."
           ],
           "answer": 3,
           "why": "Collaborative filtering learns behavioral correlations directly from user interaction data, uncovering cross-category purchase patterns that manual rules cannot detect."
@@ -5795,10 +5795,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Dense Vector Embedding search superior to traditional lexical keyword search (e.g. BM25) for modern e-commerce?",
           "options": [
-            "It captures semantic meaning, intent, and conceptual synonyms in geometric space, eliminating zero-result searches caused by vocabulary mismatches",
-            "It requires zero server computation or CPU resources",
-            "It completely replaces the need for a relational database",
-            "It guarantees that all returned products have 100% customer ratings"
+            "It captures meaning and intent as concepts in vector space, avoiding zero-result searches caused by vocabulary mismatches.",
+            "It matches the exact query words faster using an inverted index, so zero-result searches are removed by quicker lookups.",
+            "It corrects spelling and plurals in the query, so zero-result searches are eliminated by string matching alone.",
+            "It ranks products by past sales volume for each query, so popular items appear first regardless of what the query meant."
           ],
           "answer": 0,
           "why": "Dense vector search maps text to high-dimensional concept embeddings, allowing search engines to match queries with relevant products even when they share zero exact words."
@@ -5831,10 +5831,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are Real-Time Session-Based Recommendations essential for privacy-first e-commerce platforms?",
           "options": [
-            "They automatically increase product retail prices for wealthier users",
-            "They personalize the customer journey using live in-session clickstream behavior without requiring persistent user tracking cookies or third-party identity graphs",
-            "They prevent customers from leaving negative product reviews",
-            "They eliminate all shipping costs for international couriers"
+            "They store a profile of each visitor across sessions and sites, which gives more accurate results despite privacy limits.",
+            "They personalize the journey using live in-session clickstream behavior, without persistent tracking cookies or third-party identity graphs.",
+            "They use the customer's purchase history from past years, so they work only for logged-in customers who accepted tracking.",
+            "They buy demographic data from third-party brokers, so personalization works even before the customer has clicked anything."
           ],
           "answer": 1,
           "why": "Session-based models rely entirely on short-term in-session telemetry, delivering high personalization accuracy for anonymous users without infringing on data privacy."
@@ -5868,10 +5868,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In multi-objective recommendation re-ranking, why is it critical to penalize products with near-zero inventory levels?",
           "options": [
-            "Near-zero inventory items are illegal to sell online under consumer trade acts",
-            "Payment processors freeze merchant bank accounts when out-of-stock items are clicked",
-            "Promoting near-out-of-stock items wastes valuable storefront real estate and creates customer friction when buyers attempt to checkout an unavailable item",
-            "Low-inventory items permanently disable search engine indexing bots"
+            "Promoting near-out-of-stock items makes the algorithm learn that scarce items sell well, so it recommends stock it cannot restock.",
+            "Promoting near-out-of-stock items breaches marketplace rules, so the retailer is fined for each impression of such items.",
+            "Promoting near-out-of-stock items wastes storefront space and frustrates buyers who try to check out an unavailable item.",
+            "Promoting near-out-of-stock items cuts the average order value, because customers buy lower-priced alternatives instead."
           ],
           "answer": 2,
           "why": "Promoting items that cannot fulfill customer demand causes cart abandonment and customer disappointment, while failing to clear surplus warehouse inventory."
@@ -5904,10 +5904,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Revenue Per Visitor (RPV) considered the gold standard metric for measuring recommendation engine impact rather than pure CVR or AOV alone?",
           "options": [
-            "RPV is the only metric accepted by international customs border agents",
-            "RPV eliminates the need to calculate corporate income tax",
-            "RPV measures how fast warehouse employees pick products from shelves",
-            "RPV mathematically combines conversion rate and order basket value into a single metric, proving whether algorithmic changes generate more total cash from incoming traffic"
+            "RPV measures how many visitors return within 30 days, showing whether recommendations improve loyalty more than conversion.",
+            "RPV counts clicks on recommended items per visitor, showing whether recommendations draw attention more than order value does.",
+            "RPV measures gross profit per order, showing whether recommendations raise margin more than they raise conversion rate.",
+            "RPV combines conversion rate and basket value into one metric, showing whether changes generate more cash from incoming traffic."
           ],
           "answer": 3,
           "why": "RPV = CVR * AOV. An algorithm could increase CVR by recommending cheap 50-cent items while destroying total revenue, or increase AOV by recommending expensive items that nobody buys. RPV captures true net revenue productivity."
@@ -5965,10 +5965,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is client-side behavioral biometric analysis (e.g. mouse cursor entropy) more reliable than simple IP address rate limiting?",
           "options": [
-            "Modern cyber syndicates rotate through millions of clean residential proxy IPs, but automated scripts cannot easily replicate the biomechanical entropy of human hands",
-            "IP addresses are encrypted and cannot be seen by web servers",
-            "Behavioral biometrics permanently exempt merchants from paying credit card processing fees",
-            "Mouse tracking completely eliminates the need for SSL/TLS certificates"
+            "Syndicates rotate through millions of clean residential proxy IPs, but scripts can't easily replicate the biomechanical entropy of human hands.",
+            "Behavioral biometrics are cheaper to run than IP limits, because they need no third-party data or any machine learning model.",
+            "Behavioral biometrics block all traffic from data centers, whereas IP limits can only slow the requests from a single address.",
+            "Behavioral biometrics verify the customer's identity from a stored fingerprint, whereas IP limits cannot know who the user is."
           ],
           "answer": 0,
           "why": "Botnets easily circumvent IP rate limits by purchasing residential proxy pools, but synthetic cursor movements lack the natural velocity, jitter, and curvature of physical human interactions."
@@ -6001,10 +6001,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary indicator of an automated Account Takeover (ATO) credential stuffing attack?",
           "options": [
-            "A customer updating their email newsletter subscription preferences",
-            "Shoppers browsing products using mobile phones instead of desktop computers",
-            "Customers adding multiple items of clothing to their shopping carts",
-            "A sudden spike in login attempts across thousands of accounts originating from unrecognized device fingerprints and datacenter IP addresses with impossible travel velocities"
+            "A steady rise in password reset requests from a single known customer device on the same home network over several weeks.",
+            "A single account failing three logins in a row from the owner's usual device, followed by a successful login after a reset.",
+            "A rise in new account sign-ups from real customers during a promotion, each using a unique email address and one device.",
+            "A sudden spike in logins across thousands of accounts from unrecognized device fingerprints and datacenter IPs with impossible travel."
           ],
           "answer": 3,
           "why": "Credential stuffing attacks use automated bots to test millions of breached username/password pairs, producing dramatic velocity anomalies across IP networks and hardware fingerprints."
@@ -6038,10 +6038,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic commercial value of achieving a 'Liability Shift' through 3DS2 Authentication Challenges?",
           "options": [
-            "The merchant is exempted from shipping the ordered goods",
-            "The card network doubles the merchant's profit margin on that transaction",
-            "If the customer later files a fraudulent 'unauthorized transaction' chargeback, the card-issuing bank absorbs the financial loss rather than the merchant",
-            "The customer is legally prevented from returning damaged merchandise"
+            "If the customer later files an unauthorized-transaction chargeback, the payment gateway absorbs the loss, not the merchant.",
+            "If the customer later files a chargeback, the merchant is protected only against item-not-received claims, not fraud claims.",
+            "If the customer later files an unauthorized-transaction chargeback, the card-issuing bank absorbs the loss, not the merchant.",
+            "If the customer fails authentication, the merchant gets liability protection, since the issuer has declined the transaction."
           ],
           "answer": 2,
           "why": "When a transaction passes 3DS2 challenge authentication, global card network rules shift the fraud liability from the merchant to the card issuer, protecting the merchant from chargeback clawbacks."
@@ -6073,10 +6073,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Visa Compelling Evidence 3.0 (CE30), what specific evidence allows merchants to legally overturn friendly fraud chargebacks?",
           "options": [
-            "Submitting an affidavit stating that the customer was rude on social media",
-            "Proving that the customer had at least two prior undisputed transactions and that the current delivery IP address or device fingerprint matches historical customer records",
-            "Offering to refund the customer 50% in digital crypto tokens",
-            "Demonstrating that the product was purchased on a Monday morning"
+            "Showing a signed delivery receipt with a photo of the parcel and that the customer's name matches the billing address.",
+            "Showing at least two prior undisputed transactions and that the current delivery IP or device fingerprint matches past customer records.",
+            "Showing that the customer ignored three emails from the merchant before filing and that the dispute was over 60 days old.",
+            "Showing that the card was authorized with a correct CVV and the address verification (AVS) match on the original order."
           ],
           "answer": 1,
           "why": "Visa CE3.0 establishes that proving historical account continuity (>=2 clean orders) and matching device/IP/shipping telemetry legally invalidates unauthorized fraud claims."
@@ -6108,10 +6108,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical regulatory consequence if an e-commerce merchant's chargeback dispute ratio exceeds 1.50%?",
           "options": [
-            "Payment card networks place the merchant in Excessive Status, imposing massive monthly fines and potentially terminating merchant account processing privileges entirely",
-            "The merchant is required to double its shipping speed",
-            "All customer passwords are automatically converted to numeric PINs",
-            "The merchant is exempted from filing annual corporate tax returns"
+            "Card networks place the merchant in an Excessive status with big monthly fines and possible loss of card processing entirely.",
+            "Card networks lower the merchant's interchange rates for a year, because high volumes of disputes show a large customer base.",
+            "Card networks refund all pending disputes in the merchant's favor for 90 days, to give time to correct the underlying cause.",
+            "Card networks require only that the merchant adds 3DS to future orders, without fines or any risk to the merchant account."
           ],
           "answer": 0,
           "why": "Breaching the 1.50% dispute ratio threshold triggers punitive fines from Visa/Mastercard and places the merchant at risk of losing merchant card processing entirely via MATCH blacklisting."
@@ -6168,10 +6168,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mechanism by which Apple Safari's Intelligent Tracking Prevention (ITP) breaks client-side e-commerce attribution?",
           "options": [
-            "It requires the customer to pay for products using Apple Pay only",
-            "It caps client-side JavaScript-written cookies to 7 days (or 24 hours), causing purchases completed after that window to appear as unattributed direct organic visits",
-            "It automatically lowers product prices on all competing e-commerce sites",
-            "It permanently uninstalls the customer's web browser after checkout"
+            "It blocks all cookies from first-party domains, so analytics tools can no longer see any visitor on Safari at all.",
+            "It caps JavaScript-written cookies at 7 days (or 24 hours), so later purchases appear as unattributed direct visits.",
+            "It deletes the purchase data stored on the merchant's server, so reports lose the order history for Safari users.",
+            "It blocks only server-set cookies after 30 days, so the attribution of ad clicks is unaffected for client-side tags."
           ],
           "answer": 1,
           "why": "Safari ITP truncates client-side cookies, wiping out first-touch ad click IDs before consumers with multi-day purchase journeys complete their orders."
@@ -6203,10 +6203,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural security and performance benefit of using Server-Side GTM over client-side JavaScript tags?",
           "options": [
-            "It permanently prevents the user from clicking the browser's back button",
-            "It automatically refunds customers if shipping takes longer than 48 hours",
-            "It moves third-party tracking scripts off the customer's browser onto a secure private cloud server, improving page load speed while allowing the merchant to scrub sensitive PII before transmission",
-            "It forces the customer's computer to mine cryptocurrency to pay for server costs"
+            "It removes the need for consent banners, because tags run on the server and so are not covered by privacy rules at all.",
+            "It stores customers' payment details on the tagging server, so checkout pages need fewer scripts and load more quickly.",
+            "It moves third-party scripts off the browser onto a private cloud server, speeding up pages and letting the merchant scrub PII first.",
+            "It replaces the analytics platform with a database, so the merchant no longer needs to share data with ad platforms."
           ],
           "answer": 2,
           "why": "Server-side tagging reduces client browser CPU/bandwidth consumption and gives the enterprise total governance over what data is filtered or anonymized before sharing with ad platforms."
@@ -6239,10 +6239,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Event Deduplication using a shared 'event_id' required when implementing both client-side pixels and server-side Conversions APIs?",
           "options": [
-            "To automatically issue a refund if the server-side payload arrives late",
-            "To prevent the customer's credit card from being charged two separate times",
-            "Because advertising platforms legally fine merchants who transmit data via servers",
-            "To prevent the ad platform from counting the same purchase twice, which would artificially inflate reported revenue and distort automated bidding algorithms"
+            "To encrypt the purchase event so only the ad platform can read it, which protects customer data in transit from hackers.",
+            "To speed up the delivery of server events, because events with an event_id are sent before those without one.",
+            "To lets the merchant see which of the two tracking methods is more accurate, since each event is counted by one method.",
+            "To stop the ad platform counting the same purchase twice, which would inflate reported revenue and distort automated bidding."
           ],
           "answer": 3,
           "why": "When deploying hybrid tracking, both browser and server transmit the purchase event. The ad platform uses the identical event_id to recognize and merge duplicates into a single conversion."
@@ -6276,10 +6276,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Google Consent Mode v2 (Advanced Implementation), what happens when a European user clicks 'Reject All' on the cookie banner?",
           "options": [
-            "Measurement tags fire cookieless pings containing zero persistent identifiers, allowing GA4 to use machine learning to statistically model conversions while remaining 100% GDPR compliant",
-            "The customer is banned from visiting the e-commerce store for 30 days",
-            "The web browser automatically purchases a virtual private network subscription",
-            "The merchant's advertising campaigns are immediately paused by Google"
+            "Tags fire cookieless pings with no persistent identifiers, so GA4 can statistically model conversions while remaining GDPR compliant.",
+            "All tags are blocked completely, so GA4 receives no signal at all and conversions from that visitor vanish from all of the reports.",
+            "Tags fire as normal with cookies, since consent mode only affects ad personalization and does not apply to measurement tags at all.",
+            "Tags fire cookieless pings that carry the visitor's IP and device ID, and GA4 stores them for 14 months without any consent."
           ],
           "answer": 0,
           "why": "Advanced Consent Mode replaces blocked tags with anonymous cookieless pings, feeding GA4 behavioral modeling algorithms to estimate conversion trends without tracking individuals."
@@ -6312,10 +6312,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial impact on advertising ROAS when an enterprise implements server-side Conversions APIs with high Event Match Quality?",
           "options": [
-            "Advertising platforms guarantee that every ad viewer completes a purchase",
-            "Ad platform machine learning algorithms receive accurate, complete conversion signals, exiting the learning phase faster and optimizing ad delivery to reduce CAC by 15% to 25%",
-            "Competitor advertising accounts are automatically banned by the network",
-            "The enterprise is exempt from paying ad network click charges"
+            "Ad platforms raise the cost per click for accounts with better data, so ROAS stays flat while attribution accuracy improves a lot.",
+            "Ad algorithms get accurate, complete conversion signals, leave the learning phase faster and optimize delivery, cutting CAC by 15% to 25%.",
+            "Ad platforms stop charging for conversions they already know about, which lowers the cost per click by roughly 15% to 25%.",
+            "Ad platforms limit delivery to audiences that converted before, which raises ROAS but also shrinks the total reach of campaigns."
           ],
           "answer": 1,
           "why": "Restoring conversion data to ad bidding algorithms feeds the AI with ground-truth conversion signals, improving target audience optimization and lowering customer acquisition costs."
@@ -6373,10 +6373,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does outsourced 3PL line-haul freight fall under Scope 3 rather than Scope 1 emissions in corporate carbon accounting?",
           "options": [
-            "Scope 3 emissions are optional and never audited by financial regulators",
-            "Scope 1 emissions apply only to products manufactured inside the European Union",
-            "Scope 1 applies exclusively to direct emissions from company-owned or controlled physical assets, whereas outsourced 3PL carriers belong to upstream supply chain partners",
-            "Carriers like FedEx and UPS are legally exempt from carbon accounting standards"
+            "Scope 1 covers all emissions from freight in the company's supply chain, whereas Scope 3 covers only emissions from customers' travel.",
+            "Scope 2 covers emissions from outsourced carriers' fuel, because the company buys transport services as a form of purchased energy.",
+            "Scope 1 covers direct emissions from company-owned or controlled assets, while outsourced 3PL carriers are upstream value chain partners.",
+            "Scope 3 covers only the emissions from the electricity used by the company's own offices, so carrier freight falls outside of it."
           ],
           "answer": 2,
           "why": "Under the Greenhouse Gas Protocol, Scope 1 covers company-owned combustion sources (like private delivery fleets). Third-party carrier freight is classified under Scope 3 Value Chain emissions."
@@ -6409,10 +6409,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does offering 'Consolidated Eco-Ground' delivery create a win-win scenario for both consumer sustainability and e-commerce profitability?",
           "options": [
-            "It eliminates all warehouse storage and fulfillment costs entirely",
-            "It cuts carbon emissions by over 80% by shifting freight from air to ground, while saving the merchant significant express shipping surcharges",
-            "It legally waives the merchant's obligation to collect consumer sales tax",
-            "It guarantees that shipping carriers pay cash bonuses to consumers upon delivery"
+            "It cuts carbon emissions by switching packaging to recycled cartons, and the merchant's savings come from cheaper materials.",
+            "It cuts carbon emissions by over 80% by moving freight from air to ground and saves the merchant express shipping surcharges.",
+            "It cuts emissions by over 80% by using electric vans, but the merchant pays a premium that lowers its net margins.",
+            "It cuts delivery time to under a day by using local couriers, and customers pay a green fee which funds the carbon offsets."
           ],
           "answer": 1,
           "why": "Consolidated ground shipping slashes fuel consumption and carbon footprint, while allowing the merchant to avoid expensive express air couriers, expanding net margins."
@@ -6446,10 +6446,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is issuing customer trade-in payouts as Store Credit more advantageous than cash payouts for circular e-commerce?",
           "options": [
-            "Store credit ensures that 100% of the trade-in value is reinvested into the merchant's ecosystem, driving customer retention at zero advertising CAC",
-            "Store credit eliminates all warehouse labor costs",
-            "Cash payouts are illegal under international trade agreements",
-            "Store credit permanently exempts the customer from paying return shipping fees"
+            "Store credit keeps 100% of the trade-in value in the merchant's ecosystem, driving retention at zero advertising CAC.",
+            "Store credit lowers the value of the trade-in for tax purposes, so the merchant pays less sales tax on the resold goods.",
+            "Store credit lets the merchant avoid inspecting traded items, because credit is issued before the product is received.",
+            "Store credit expires after 30 days by law, so most customers never redeem it and the merchant keeps the full amount."
           ],
           "answer": 0,
           "why": "Store credit locks the consumer into the brand's flywheel, guaranteeing repeat purchases while boosting customer lifetime value without acquiring new traffic."
@@ -6482,10 +6482,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does reducing empty void space in shipping cartons generate massive financial freight savings for e-commerce retailers?",
           "options": [
-            "Lighter boxes travel through international customs with zero inspection",
-            "Cardboard manufacturers legally fine merchants who use excess tape",
-            "Postal authorities reject boxes that contain more than 10% empty space",
-            "Carriers bill freight on Dimensional Weight (volume / 5000) when it exceeds actual weight, meaning shipping empty air in oversized boxes causes merchants to pay for ghost weight"
+            "Carriers charge a flat fee for each cubic meter of void space, regardless of the weight of the shipped goods in the box.",
+            "Carriers cap the number of boxes per pallet, so larger boxes cause the merchant to pay for extra pallets in transit.",
+            "Carriers reject boxes with unfilled void space as unsafe, so shipments with air are returned to the merchant and refunded.",
+            "Carriers bill on dimensional weight (volume / 5000) when it exceeds actual weight, so shipping empty air means paying for ghost weight."
           ],
           "answer": 3,
           "why": "Carrier pricing formulas charge for the physical volume a box displaces. Right-sizing packages brings dimensional weight below actual scale weight, eliminating dimensional freight surcharges."
@@ -6517,10 +6517,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is achieving audited ESG compliance and carbon accounting increasingly required for enterprise digital commerce scaling?",
           "options": [
-            "Search engines automatically de-index non-ESG compliant websites",
-            "Payment processors charge a 50% penalty tax on companies without carbon offsets",
-            "Global regulations (EU CSRD, SEC climate rules) mandate audited reporting, while institutional investors and banks condition lower-cost debt financing on verified sustainability metrics",
-            "Electric delivery vehicles cannot legally enter commercial warehouses without an ESG certificate"
+            "Marketplaces require carbon labels on every listing, and sellers without a label are delisted from search results worldwide.",
+            "Card networks charge lower processing fees to merchants with strong ESG scores, which is the main financial driver of compliance.",
+            "Regulations (EU CSRD, SEC climate rules) mandate audited reporting, and investors and banks tie cheaper debt to verified sustainability metrics.",
+            "Customers can only pay by card if the merchant displays a carbon rating, so an audited score is needed to take payments at all."
           ],
           "answer": 2,
           "why": "Regulatory mandates and capital markets require transparent carbon ledgers. Strong ESG credentials lower corporate capital borrowing costs and protect against cross-border carbon tariffs."
@@ -6578,10 +6578,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Tier 1 of the Milestone 5 Grand Final Capstone, what is the primary strategic function of multi-objective commercial re-ranking?",
           "options": [
-            "It aligns raw machine learning relevance scores with business gross margin percentages and warehouse inventory depth to maximize net operating cash flow",
-            "It replaces the need for a payment gateway provider",
-            "It automatically refunds customers if an item takes more than 3 days to deliver",
-            "It prevents competitors from purchasing advertising on search engines"
+            "It aligns raw ML relevance scores with gross margin and warehouse inventory depth to maximize net operating cash flow.",
+            "It sorts items strictly by relevance score, so the best-matching products always appear first for every single customer.",
+            "It sorts items strictly by price from high to low, so the most expensive products receive the most storefront space.",
+            "It randomizes the order of recommended items on each visit, to collect unbiased data for the next model training run."
           ],
           "answer": 0,
           "why": "Multi-objective re-ranking ensures the storefront algorithm doesn't promote low-margin or out-of-stock items, balancing user relevance with commercial profitability."
@@ -6613,10 +6613,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is keeping the chargeback dispute ratio below 0.650% vital for an enterprise e-commerce balance sheet?",
           "options": [
-            "It legally waives the company's obligation to maintain warehouse inventory",
-            "It guarantees that all carrier packages are delivered by air freight",
-            "It allows the merchant to print its own paper currency",
-            "It prevents card networks from enrolling the merchant in punitive monitoring programs that impose massive fines and threaten merchant account termination"
+            "It stops the merchant paying a higher interchange rate on every sale, because rates rise automatically once the ratio passes the limit.",
+            "It lets the merchant avoid issuing refunds, since customers cannot dispute orders when the merchant's ratio stays low.",
+            "It guarantees the merchant wins all disputes that remain, because the networks side with merchants with a low ratio.",
+            "It stops card networks enrolling the merchant in punitive monitoring programs with massive fines and the threat of account termination."
           ],
           "answer": 3,
           "why": "Breaching 0.90% dispute ratios triggers enrollment in Visa/Mastercard monitoring programs with severe monthly fines, while breaching 1.50% risks complete loss of credit card processing."
@@ -6649,10 +6649,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of restoring $2.78M in conversion visibility to automated advertising algorithms?",
           "options": [
-            "It legally exempts the enterprise from paying corporate income taxes",
-            "It forces Google and Meta to provide free advertising credits to the merchant",
-            "It trains machine learning bidding models (like Meta Advantage+ and Google PMax) with ground-truth sales data, lowering CAC and improving ROAS efficiency",
-            "It eliminates all payment gateway processing fees"
+            "It lets the merchant raise ad budgets without limits, because the platforms refund the spend on conversions they cannot see.",
+            "It replaces creative testing, since the algorithms write the ads and pick images once the sales data is restored to them.",
+            "It trains ML bidding models (Meta Advantage+, Google PMax) on ground-truth sales data, lowering CAC and improving ROAS.",
+            "It removes the need for consent banners, since sales data sent from the server is not covered by any privacy law."
           ],
           "answer": 2,
           "why": "Feeding accurate conversion data to ad platform algorithms enables the AI to identify high-converting audiences, exiting learning phases faster and optimizing bidding efficiency."
@@ -6684,10 +6684,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic commercial value of operating a Circular Recommerce trade-in program for an enterprise brand?",
           "options": [
-            "It prevents customers from ever returning purchases",
-            "It monetizes pre-owned inventory with 45%+ contribution margins while issuing store credit that locks in future customer retention at zero ad spend",
-            "It eliminates all corporate tax filing requirements",
-            "It requires suppliers to manufacture products for free"
+            "It lowers the cost of new product by recycling parts into manufacturing, with the savings passed to buyers as price cuts.",
+            "It monetizes pre-owned inventory at 45%+ contribution margins and issues store credit that locks in retention at zero ad spend.",
+            "It replaces new-product sales with refurbished items, so the merchant's revenue falls but its return costs fall even more.",
+            "It earns carbon credits that are sold on the market, and the income covers the full running cost of the program."
           ],
           "answer": 1,
           "why": "Circular recommerce converts potential waste into profitable secondary sales, while customer trade-in store credit guarantees repeat purchases without paid marketing."
@@ -6720,10 +6720,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate accomplishment represented by earning the Chief Commerce Officer & Enterprise Digital Operating Strategist (CCO-EOS) credential?",
           "options": [
-            "Demonstrating end-to-end institutional mastery of the entire digital commerce enterprise: AI personalization, cybersecurity & fraud defense, cookieless privacy analytics, and sustainable circular supply chains",
-            "Eliminating all corporate income tax liabilities across all operating jurisdictions",
-            "Replacing all human employees with automated warehouse robots",
-            "Forcing shipping couriers to deliver orders free of charge"
+            "Demonstrating mastery of the digital commerce enterprise: AI personalization, fraud defense, cookieless analytics and circular supply chains.",
+            "Deep specialization in a single area such as paid acquisition, with an emphasis on bidding strategy and advanced attribution.",
+            "Technical certification in headless storefronts and cloud hosting, with an emphasis on engineering, DevOps and platform performance.",
+            "Legal and compliance expertise in e-commerce, with an emphasis on consumer protection, privacy and tax regulation worldwide."
           ],
           "answer": 0,
           "why": "The CCO-EOS credential certifies complete executive mastery across every operational, technological, and governance domain required to lead global digital commerce enterprises."
@@ -6769,10 +6769,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental architectural advantage of decoupling the frontend presentation layer from the commerce backend in a Headless Commerce architecture?",
           "options": [
-            "It allows the commerce enterprise to avoid paying corporate sales tax across international jurisdictions",
-            "It permanently eliminates the requirement to pay merchant credit card processing fees to payment acquiring networks",
-            "It forces all digital consumers to complete purchases exclusively through automated telephone voice response systems",
-            "It isolates frontend iteration velocity from backend stability, enables sub-second edge CDN caching, supports multiple digital touchpoints via unified APIs, and prevents frontend crashes from disrupting checkout transactions"
+            "It merges frontend and backend into one codebase, so all changes ship together and the team releases less often but more safely.",
+            "It removes the need for APIs, since the frontend reads the commerce database directly and so pages load much faster for users.",
+            "It ties the storefront design to the commerce platform's own themes, so every redesign needs the vendor's engineers to complete it.",
+            "It separates frontend release speed from backend stability, enables edge caching and API reuse, and protects checkout from UI crashes."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6829,10 +6829,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Incremental Static Regeneration (ISR) with stale-while-revalidate solve the latency challenge of large-scale e-commerce catalogs?",
           "options": [
-            "It deletes product pages from the database whenever an item goes out of stock to save server disk space",
-            "It serves cached static HTML instantly from edge CDNs while asynchronously revalidating expired pages in the background, combining static speed with dynamic freshness",
-            "It delays serving product pages until all regional warehouses report zero physical inventory discrepancies",
-            "It forces every visitor to manually compile JavaScript source code in their web browsers before viewing products"
+            "It rebuilds the whole catalog at every deploy and holds the site offline until done, so all pages are fresh at launch time.",
+            "It serves cached static HTML instantly from edge CDNs while revalidating expired pages in the background, combining speed with freshness.",
+            "It renders each page on the origin server at every single request, so users always see the latest data without any caching.",
+            "It caches pages in the browser forever and never revalidates, so catalog updates show only after the user clears the cache."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6860,10 +6860,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Token Bucket rate-limiting algorithm protect enterprise commerce backends during flash sales?",
           "options": [
-            "By permanently blocking all mobile device traffic during weekends and public holidays",
-            "By disconnecting all physical payment gateway terminal connections when inventory falls below 50 percent",
-            "By allowing legitimate short-term traffic bursts up to bucket capacity while enforcing strict continuous refill rate limits, shedding excess requests with HTTP 429 status codes before they hit backend databases",
-            "By doubling the price of all items in the shopping cart whenever a user refreshes the page"
+            "It queues every request in order and processes them one at a time, so none is ever rejected and every user waits their turn equally.",
+            "It blocks all requests above a fixed daily total per user, so a customer's next request is rejected until midnight resets the count.",
+            "It allows short legitimate bursts up to bucket capacity, enforces a refill rate and sheds excess requests with HTTP 429 before the database.",
+            "It routes excess requests to a second database copy, which answers them with HTTP 200 and so avoids ever rejecting any buyers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6890,10 +6890,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Enterprise Headless Gateway combine Token Bucket rate limiting with Edge ISR caching?",
           "options": [
-            "To replace all human customer support agents with animated cartoon avatars",
-            "Because cloud computing regulations mandate that all web servers must shut down for two hours every afternoon",
-            "To automatically convert all digital purchases into foreign currency futures contracts",
-            "To deliver sub-50ms product page latency via edge caching while protecting origin databases and checkout APIs from sudden traffic spikes and bot attacks"
+            "To store every customer's cart on the edge cache, so that checkout never needs to contact the origin servers at all.",
+            "To limit the number of products shown on each page, so fewer database queries are needed to build the pages at the edge.",
+            "To encrypt all traffic between the edge and the browser, so that checkout data is protected by caching rules and tokens.",
+            "To deliver sub-50ms product pages via edge caching while shielding origin databases and checkout APIs from traffic spikes and bots."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6951,10 +6951,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Apollo Federation v2 solve the organizational and technological bottlenecks of a monolithic GraphQL server?",
           "options": [
-            "By disabling all frontend JavaScript caching and forcing clients to download raw SQL query strings over HTTPS",
-            "By requiring all customer orders to be verified by a panel of human data entry clerks before querying the database",
-            "By composing a single unified Supergraph from autonomous, domain-owned subgraphs, allowing distributed teams to deploy independently while the Apollo Router handles query planning and parallel execution",
-            "By forcing all database tables to merge into a single unindexed text file stored on local employee workstations"
+            "It stores every domain's data in one shared database, so all teams edit one schema file and the server then runs its queries in order.",
+            "It converts GraphQL into REST endpoints, so each team exposes its own URLs and clients must call every service by themselves.",
+            "It composes one Supergraph from domain-owned subgraphs, so teams deploy independently while the Router plans queries in parallel.",
+            "It runs one large server that every team deploys to together, so releases are coordinated, tested and approved centrally by one team."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6985,10 +6985,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the purpose of the @key directive in an Apollo Federation v2 subgraph schema?",
           "options": [
-            "It locks the database against read queries while an administrator edits product descriptions",
-            "It designates primary key fields that uniquely identify an entity across microservices, allowing other subgraphs to extend that entity and resolve domain fields",
-            "It forces users to enter a secret password before adding items to their shopping carts",
-            "It encrypts the GraphQL schema using SHA-256 so that competing companies cannot view product pricing"
+            "It marks a field as required in client queries, so the router rejects any request that leaves out the field in its selection.",
+            "It marks the primary key fields that identify an entity across microservices, so other subgraphs can extend it and resolve fields.",
+            "It encrypts a field's value with a secret key, so only authorized subgraphs can read it when the query is finally executed.",
+            "It marks a field as cacheable at the edge, so the router stores the value for a time before asking the subgraph again."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7018,10 +7018,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Apollo Router Query Planner prevent cross-subgraph network waterfalls?",
           "options": [
-            "By analyzing entity dependency graphs to dispatch independent subgraph entity queries in parallel and batching multiple entity IDs into single requests",
-            "By requiring clients to download the entire production database directly into local browser storage",
-            "By converting all GraphQL queries into uncompressed audio files streamed over WebSocket connections",
-            "By refusing to resolve queries that request more than two fields at the same time"
+            "It analyzes entity dependency graphs to send independent subgraph queries in parallel and batch many entity IDs into single requests.",
+            "It runs every subgraph query one after another in a fixed order, so each result is ready before the next query is started.",
+            "It caches every query result on the client, so the router never has to contact the subgraphs for the same data again later.",
+            "It merges all subgraphs into one process at runtime, so calls between services become simple in-memory function calls in the router."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7052,10 +7052,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does DataLoader solve the GraphQL N+1 database problem in enterprise microservices?",
           "options": [
-            "By converting all relational databases into flat text spreadsheets attached to customer emails",
-            "By rejecting customer requests whenever more than one item is added to the shopping cart",
-            "By permanently deleting historical order records whenever a database CPU reaches 50 percent",
-            "By collecting field keys during an event loop tick and dispatching a single batched database query using WHERE id IN (...), while memoizing results for the duration of the request"
+            "It caches every query result in the database for a day, so repeat queries of the same row are answered from the cache.",
+            "It limits each query to ten rows, so a list with many items is loaded in pages rather than one lookup per item.",
+            "It rewrites the resolver tree into one large SQL JOIN, so all related tables are fetched at once for every query.",
+            "It collects keys during an event loop tick and sends one batched query with WHERE id IN (...), memoizing results for the request."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7084,10 +7084,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Enterprise Commerce Router Suite integrate both parallel query planning and DataLoader batching?",
           "options": [
-            "To convert all product images into animated monochrome GIFs to reduce bandwidth consumption",
-            "To force all shoppers to re-enter their billing addresses on every single page navigation",
-            "To eliminate cross-subgraph network waterfalls by resolving independent services in parallel while preventing N+1 database thrashing within individual microservices",
-            "Because database software licenses require all queries to take at least 500 milliseconds to complete"
+            "To cache every GraphQL response at the router and stop all database access, so services never need to answer a query twice at all.",
+            "To encrypt requests between the router and subgraphs, and to compress responses before they are returned to the waiting client app.",
+            "To remove cross-subgraph network waterfalls by resolving independent services in parallel and prevent N+1 database thrashing in each service.",
+            "To split large queries into many tiny requests, so that each service handles a single field and no query is ever a slow one."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7145,10 +7145,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do traditional relational database ACID transactions fail to prevent inventory overselling in modern composable e-commerce architectures?",
           "options": [
-            "Because cloud hosting providers legally prohibit companies from using database locks on weekends",
-            "Because checkout workflows span independent microservices with separate databases and third-party SaaS APIs, where no single database transaction can enforce cross-network atomicity",
-            "Because modern shoppers only purchase goods using physical paper currency delivered via postal mail",
-            "Because computer processors automatically invert subtraction math whenever server temperatures exceed 25 degrees Celsius"
+            "ACID transactions lock the database for several seconds per order, so the system cannot handle more than a handful of checkouts at once.",
+            "Checkout spans independent microservices with separate databases and SaaS APIs, so no single transaction can enforce atomicity across the network.",
+            "ACID transactions allow only one product per order, so carts with several items must be split and processed one at a time by the system.",
+            "ACID transactions are not supported by cloud databases, so a composable stack must rely on eventual consistency alone for its stock counts."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7176,10 +7176,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of Backward Compensating Transactions in an e-commerce Saga Orchestrator?",
           "options": [
-            "To automatically sue credit card companies whenever a customer transaction is declined",
-            "To physically recall delivery trucks that have already departed warehouse loading docks",
-            "To explicitly undo the business effects of previously committed local steps (such as releasing inventory holds) whenever a subsequent step (such as payment) fails",
-            "To double the customer's shopping cart total as a penalty for entering an incorrect billing zip code"
+            "They retry the failed step until it succeeds, so no earlier step ever has to be undone and the order always completes.",
+            "They roll back the database transaction of the failed step, and the steps that committed earlier remain in place.",
+            "They undo the business effects of committed local steps (such as releasing inventory holds) when a later step like payment fails.",
+            "They log failed steps to a queue for manual review, so earlier steps stay committed until an operator decides."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7210,10 +7210,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Redis Redlock algorithm, what two conditions must be satisfied for a client to successfully acquire a distributed lock?",
           "options": [
-            "The client must reboot all server hardware in the datacenter and wait for physical confirmation from electrical engineers",
-            "The client must successfully guess a 64-character cryptographic password within three attempts",
-            "The client must pay an upfront cryptocurrency deposit to the Redis open-source foundation",
-            "The client must acquire the lock on a strict majority (quorum) of independent Redis nodes, and the total acquisition time must be less than the lock TTL"
+            "The client must lock every Redis node in the cluster, and the total time spent must be longer than the lock TTL.",
+            "The client must lock a single master node, and it must renew the lock every second until the work is finished.",
+            "The client must lock a strict majority of nodes, and each node must confirm its write to disk before the lock is held.",
+            "The client must lock a strict majority of independent Redis nodes, and the total acquisition time must be less than the lock TTL."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7277,10 +7277,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Enterprise Distributed Checkout Suite unite Redlock distributed locking with Saga orchestration?",
           "options": [
-            "To require all customers to physically visit a company headquarters before making an online purchase",
-            "To provide microsecond-level mutual exclusion during inventory reservation while managing long-running cross-service checkouts with automated compensating rollbacks",
-            "Because cloud databases automatically shut down if a transaction takes more than two milliseconds",
-            "To permanently disable all credit card transactions and accept only paper checks"
+            "To replace the payment gateway, as Redlock holds the funds and the Saga orchestrator decides which party receives the final payment.",
+            "To provide fast mutual exclusion during inventory reservation while managing long cross-service checkouts with automated compensating rollbacks.",
+            "To remove the need for inventory records, because the lock itself holds the stock count and the Saga orchestrator resets it afterward.",
+            "To make every service share one common database transaction, so that the whole checkout either fully succeeds or fails all at once."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7334,10 +7334,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between physical On-Hand inventory and Available-to-Promise (ATP) sellable inventory?",
           "options": [
-            "On-Hand inventory represents raw physical units stored in warehouses, whereas ATP deducts already-allocated unfulfilled orders and safety stock while incorporating scheduled replenishment to determine true sellable capacity",
-            "On-Hand inventory is measured in kilograms while ATP inventory is measured exclusively in foreign currencies",
-            "On-Hand inventory only counts items sold during previous holiday seasons, while ATP inventory is randomly generated by marketing staff",
-            "There is no difference; all warehouse items can always be sold multiple times without consequence"
+            "On-Hand is raw physical units in warehouses, while ATP deducts allocated unfulfilled orders and safety stock and adds scheduled replenishment.",
+            "On-Hand includes units already allocated to orders, while ATP counts only the units sitting in a single warehouse's receiving dock.",
+            "On-Hand is the stock available online, while ATP is the stock in stores, and the two are summed to get total sellable capacity.",
+            "On-Hand is the units counted last month, while ATP is the forecast of the next month's demand for each product in the plan."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7363,10 +7363,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise commerce platforms implement virtual warehouse partitioning and ring-fenced channel quotas?",
           "options": [
-            "Treating Virtual and Warehouse as interchangeable constants rather than verifying Partitioning at each step.",
-            "To hide inventory from tax auditors so that corporate profits can be kept secret",
-            "To force physical distribution centers to build concrete brick walls between products stored on the same shelf",
-            "To prevent high-velocity or low-margin channels from cannibalizing shared warehouse stock, ensuring guaranteed availability for high-margin direct channels and contractual B2B partners"
+            "To give every channel an equal share of stock at all times, so no channel is favored and unsold stock stays unassigned to any channel.",
+            "To store each channel's stock in a separate physical building, so that pickers never handle goods meant for different channels together.",
+            "To let the fastest-selling channel claim all remaining stock at the start of each day, so sales velocity decides who gets priority.",
+            "To stop high-velocity or low-margin channels draining shared stock, guaranteeing availability for high-margin direct channels and B2B contract partners."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7392,10 +7392,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is executing atomic Lua scripts in Redis superior to relational database row locking (SELECT... FOR UPDATE) during high-concurrency flash sales?",
           "options": [
-            "Because relational databases cannot store numbers larger than one hundred",
-            "Because Redis automatically orders more products from manufacturing factories whenever stock runs low",
-            "Because Redis executes Lua scripts atomically in a single-threaded in-memory loop in microseconds, avoiding database row-lock queues, connection pool exhaustion, and CPU spikes",
-            "Because Redis permanently deletes all product descriptions so that search engines cannot find the sale"
+            "Redis stores the stock count permanently on disk with full ACID guarantees, which relational row locks cannot provide at scale.",
+            "Redis lets many scripts edit the same key at once without any ordering, so every request completes in parallel with no waiting.",
+            "Redis runs Lua scripts atomically on a single thread in memory within microseconds, avoiding row-lock queues, pool exhaustion and CPU spikes.",
+            "Redis replicates each decrement to all database tables first, so SELECT ... FOR UPDATE becomes unnecessary for stock accuracy."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7422,10 +7422,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does continuous cycle counting and automated delta ledger auditing prevent stockouts and customer fulfillment failures?",
           "options": [
-            "By hiring private detectives to interrogate warehouse employees after every single order is shipped",
-            "By continuously identifying physical-versus-digital stock discrepancies, logging auditable adjustment ledgers, and dynamically updating ATP availability before orders are promised against missing stock",
-            "By refusing to sell any products that have ever been touched by warehouse workers",
-            "By shutting down the entire global website for three weeks every month to count physical boxes"
+            "It counts the whole warehouse once a year during a shutdown, so ledgers are fully reset and gaps cannot build up in between.",
+            "It spots physical-versus-digital stock gaps, logs auditable adjustments and updates ATP before orders are promised against missing stock.",
+            "It replaces the ATP calculation with the physical count, so the digital ledger is ignored and orders use the latest count.",
+            "It adds safety stock to every product each week, so shortfalls from counting errors are absorbed without any stockout."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7455,10 +7455,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational capabilities are unified by the Enterprise Global Inventory Command Tower?",
           "options": [
-            "It unifies multi-echelon ATP visibility, dynamic channel quota ring-fencing, in-memory atomic reservation execution, and automated cycle-count reconciliation into an integrated zero-overselling platform",
-            "It automatically orders raw materials from steel mills to manufacture shipping containers on demand",
-            "It replaces all warehouse management software with a spreadsheet stored on a desktop computer",
-            "It forces delivery drivers to inspect customer credit scores before handing over packages"
+            "It unifies multi-node ATP, channel quotas, atomic in-memory reservation and cycle-count reconciliation to stop overselling.",
+            "It unifies supplier negotiation, purchase order approval, invoice matching and payment scheduling to reduce procurement costs.",
+            "It unifies storefront search, product recommendations, price testing and ad bidding to raise conversion across channels.",
+            "It unifies carrier selection, rate shopping, label printing and tracking updates to cut the freight cost of each parcel."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7513,10 +7513,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an enterprise composable commerce platform utilize granular cache-tag invalidation at the edge CDN rather than global cache purges or fixed TTL expirations?",
           "options": [
-            "To compress high-resolution product photography into plain ASCII text documents",
-            "To completely eliminate the need for an underlying database or backend inventory management system",
-            "To force client web browsers to reinstall their operating system before purchasing promotional items",
-            "To evict only modified product and category pages within milliseconds without triggering origin database thundering herds or serving stale commercial pricing"
+            "To clear the whole CDN cache every hour on a schedule, so pages are rebuilt in bulk and prices are never older than an hour.",
+            "To keep every page cached for a fixed 24 hours, so the origin servers receive a predictable and low number of requests per day.",
+            "To purge all pages of a product category when any item changes, so the CDN refetches the entire catalog from the origin at once.",
+            "To evict only modified product and category pages within milliseconds, avoiding origin thundering herds and stale commercial pricing."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7544,10 +7544,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Apollo Federation v2 eliminate N+1 database queries across decoupled microservices when rendering a product catalog grid?",
           "options": [
-            "By compiling query plans that batch entity representations by primary key into single parallel requests across downstream subgraphs",
-            "By forcing all microservices to share a single physical SQL database table without network isolation",
-            "By rejecting all client queries that request more than one product attribute at a time",
-            "By generating hardcoded static JSON mock files on the client device during application compilation"
+            "By compiling query plans that batch entity representations by primary key into single parallel requests across downstream subgraphs.",
+            "By caching each subgraph's full database table in the router, so entity lookups never reach the downstream services at all.",
+            "By running each product's lookup in its own sequential request, so that every subgraph handles one entity at a time safely.",
+            "By merging all subgraph databases into a single table at deploy time, so entity joins are done once inside the router."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7575,10 +7575,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of compensating transactions in an orchestrated e-commerce checkout Saga when a downstream payment authorization fails?",
           "options": [
-            "To delete all transaction history and server logs to prevent auditors from detecting payment errors",
-            "To execute backward rollback steps that release reserved inventory and promotional coupons, restoring distributed system consistency without locking databases",
-            "To force the customer's web browser to reload the home page in an infinite loop",
-            "To automatically sue the customer's bank in small claims court for breach of payment contract"
+            "To retry the payment authorization until it succeeds, so reserved inventory and coupons stay held and the order eventually completes.",
+            "To run backward rollback steps that release reserved inventory and coupons, restoring consistency across services without locking databases.",
+            "To lock the inventory and coupon databases until the payment is resolved, so that no other order can change them in the meantime.",
+            "To delete the order record and all its logs, so the failed attempt leaves no data and the customer can start a fresh checkout."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7606,10 +7606,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is achieving exactly zero oversell incidents under peak concurrency critical for an enterprise digital commerce business?",
           "options": [
-            "Because overselling causes the physical warehouse building to automatically collapse under excessive structural weight",
-            "Because credit card companies permanently confiscate all merchant bank accounts if an order is canceled within ten days",
-            "Because overselling breaks customer fulfillment promises, triggers merchant chargebacks, damages brand equity, and violates consumer protection trade regulations",
-            "Because internet service providers will disconnect fiber-optic cables if inventory counts fall below zero"
+            "Overselling lowers the stock turnover ratio, which weakens the balance sheet and makes the company ineligible for new supplier credit.",
+            "Overselling increases warehouse storage costs, because oversold items must be held until the next supplier delivery arrives.",
+            "Overselling breaks fulfillment promises, triggers chargebacks, damages brand equity and violates consumer protection trade regulations.",
+            "Overselling makes search engines drop the product pages, so organic traffic falls sharply and the lost visitors rarely return."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7637,10 +7637,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business and financial justification supports the enterprise transition from a monolithic commerce platform to a MACH composable architecture?",
           "options": [
-            "Monolithic commerce platforms cannot display color photographs on mobile devices",
-            "Monolithic platforms are illegal under international maritime trade treaties and require immediate decommissioning",
-            "Composable architectures allow developers to stop writing computer code and rely entirely on magic spells",
-            "Dramatic reduction in licensing and operating costs ($3.85M savings), sub-50ms edge latency driving conversion lifts, and zero-oversell inventory resilience"
+            "A lower implementation effort than a monolith, a single vendor to manage, and faster upgrades that need no change in the code.",
+            "A fixed annual license price that never rises, a bundled set of themes, and built-in modules that all work out of the box.",
+            "Reduced warehouse labor costs, lower carrier freight rates, and higher inventory turnover from using fewer fulfillment centers.",
+            "Lower licensing and operating costs ($3.85M saved), sub-50ms edge latency that lifts conversion, and zero-oversell inventory resilience."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7695,10 +7695,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an enterprise e-commerce platform implement automated cascade fallback on soft declines across multiple payment processors?",
           "options": [
-            "To bypass all anti-money laundering and know-your-customer banking regulations across international borders",
-            "To force issuing banks to lower their benchmark interest rates on commercial corporate lending",
-            "To recover transactions affected by transient processor network timeouts or bank errors by instantly retrying with a healthy backup gateway without customer disruption",
-            "To permanently store unencrypted primary account numbers on public client-side JavaScript cookies"
+            "To retry hard declines for stolen or closed cards on a backup gateway, until one processor approves the transaction.",
+            "To ask the customer to enter a different card after every soft decline, which lowers fraud losses and processing fees.",
+            "To recover transactions lost to transient timeouts or bank errors by retrying on a healthy backup gateway without customer disruption.",
+            "To hold declined orders for 24 hours before retrying, which gives the issuing bank time to clear the customer's balance."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7726,10 +7726,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational and financial benefit is achieved when an online transaction successfully passes through EMV 3DS2 authentication?",
           "options": [
-            "The card scheme waives all shipping carrier delivery fees for international parcel freight",
-            "Fraud chargeback liability shifts from the merchant to the card-issuing bank, while low-risk orders process via frictionless one-click flows",
-            "The e-commerce database is exempted from making regular data backups",
-            "The customer's credit limit is automatically doubled by the national central bank"
+            "Fraud chargeback liability shifts to the payment gateway, while every order is challenged with a one-time passcode to the customer.",
+            "Fraud chargeback liability shifts from the merchant to the card-issuing bank, while low-risk orders go through frictionless flows.",
+            "The merchant is guaranteed protection from all chargebacks, including claims that the goods never arrived or were faulty.",
+            "The merchant pays lower interchange fees on all orders, while the issuer gives up the right to decline any authentication."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7757,10 +7757,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are Card Scheme Network Tokens (Visa VTS, Mastercard MDES) superior to proprietary payment gateway tokens for enterprise commerce platforms?",
           "options": [
-            "They are interoperable across multiple processors, automatically update when cards expire, provide dynamic cryptograms, and achieve higher issuer authorization rates",
-            "They allow merchants to charge customer credit cards without their knowledge or consent",
-            "They automatically convert all payments into physical gold bullion stored in Swiss vaults",
-            "They bypass all SSL and TLS encryption protocols to make network transmissions faster"
+            "They work across processors, update automatically when cards expire, carry dynamic cryptograms and lift authorization rates.",
+            "They are stored only inside one gateway's vault, are cheaper to create, and expire together with the physical card.",
+            "They hold the full card number in encrypted form on the merchant's servers, so the merchant can reuse it with any processor.",
+            "They replace the CVV and billing address checks, which makes every transaction exempt from fraud screening and 3DS."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7788,10 +7788,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is local multi-currency acquiring financially superior to cross-border settlement for an international e-commerce merchant?",
           "options": [
-            "It allows merchants to completely avoid paying corporate income taxes in all countries",
-            "It forces foreign customers to pay in physical paper banknotes sent through international mail",
-            "It permanently fixes currency exchange rates to the price of petroleum derivatives",
-            "It qualifies for capped domestic interchange fees (e.g. 0.2-0.3% in EU vs 1.6%+ cross-border) and eliminates customer foreign transaction fee surcharges"
+            "It avoids interchange fees completely, as local acquirers charge only a flat monthly fee and do not charge per-transaction rates.",
+            "It allows the merchant to hold all revenue in the home currency, so exchange rates have no effect on margins at any time.",
+            "It removes the need for fraud screening on foreign cards, because local acquirers carry all chargeback liability by law.",
+            "It gets capped domestic interchange (e.g. 0.2-0.3% in the EU vs 1.6%+ cross-border) and removes customer foreign transaction surcharges."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7820,10 +7820,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an integrated enterprise payment orchestrator optimize both top-line revenue and bottom-line margin for global e-commerce platforms?",
           "options": [
-            "It charges customers five times for every single order and denies all refund requests",
-            "It eliminates the need for product manufacturing by charging customers for virtual invisible goods",
-            "It maximizes authorization rates via smart cascading, eliminates fraud liability via 3DS2, reduces interchange fees via local acquiring, and prevents churn with network tokens",
-            "It automatically converts customer credit card debts into national government treasury bonds"
+            "It routes all payments through the single cheapest processor, accepts every card without screening, and removes the need for tokens.",
+            "It replaces the merchant's bank account with a digital wallet, so settlement is instant and no processing fees are charged at all.",
+            "It lifts authorization via cascading, shifts fraud liability with 3DS2, cuts interchange by local acquiring and reduces churn with tokens.",
+            "It increases order values by offering installments on every order, while fraud, tokens and interchange costs stay unchanged."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7877,10 +7877,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are Observed-Remove Set (OR-Set) CRDTs mathematically superior to Last-Write-Wins (LWW) registers for distributed multi-device shopping carts?",
           "options": [
-            "Because CRDTs eliminate the need for computer programming by converting shopping carts into physical cardboard boxes",
-            "Because CRDT merges are commutative, associative, and idempotent, guaranteeing deterministic state convergence without lost updates or race conditions during offline syncing",
-            "Because CRDTs compress product images into binary machine code that bypasses the operating system kernel",
-            "Because CRDTs automatically charge the customer's credit card before they finish selecting their items"
+            "CRDTs lock the cart on one device at a time, so no other device can edit it until the first has saved and released it.",
+            "CRDT merges are commutative, associative and idempotent, so state converges with no lost updates or race conditions offline.",
+            "CRDTs keep only the most recent timestamp for each cart, which is simpler than OR-Set and discards older edits by design.",
+            "CRDTs ask the user to resolve each conflict manually when devices reconnect, so that no edit is ever lost without their approval."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7908,10 +7908,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must a shopping cart session merger revalidate product prices against current catalog data rather than blindly trusting the stored cart prices?",
           "options": [
-            "To automatically double the price of all items whenever a user authenticates on an Apple Mac device",
-            "To permanently lock the customer's account if a product price has increased by more than ten cents",
-            "To prevent customers from purchasing items at stale or expired promotional prices that may have changed since the older cart session was created",
-            "To convert all product prices into sovereign cryptocurrency tokens during session initialization"
+            "To make the merged cart load faster, because fresh catalog prices are cached closer to the shopper than the stored cart prices.",
+            "To remove duplicate line items from the merged cart, because the same product can appear in both sessions with different prices.",
+            "To stop customers buying at stale or expired promotional prices that changed after the older cart session was created.",
+            "To apply tax correctly, since stored cart prices exclude tax and the catalog is the only place that holds tax-inclusive prices."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7939,10 +7939,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is broadcasting lightweight JSON operational deltas over WebSockets preferable to sending the full cart payload on every cart mutation?",
           "options": [
-            "To prevent web browsers from caching images of products that have already been manufactured",
-            "Because full cart payloads can only be decoded by quantum mainframe supercomputers",
-            "Because WebSocket protocols are legally prohibited from transmitting payloads larger than fifty bytes",
-            "It minimizes network bandwidth consumption, reduces mobile device CPU/battery drain, and enables instantaneous sub-50ms reactive UI rendering"
+            "It encrypts the cart contents with stronger keys, since small deltas are harder to intercept than a complete cart payload.",
+            "It removes the need for a server database, since each device keeps its own copy and the deltas only travel between devices.",
+            "It guarantees that no two devices ever edit at the same time, because deltas are applied one by one in strict arrival order.",
+            "It cuts network bandwidth, lowers mobile CPU and battery drain, and enables instant sub-50ms reactive UI updates."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7970,10 +7970,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is decoupling cart abandonment detection into Redis Streams and in-memory TTL timers superior to running recurring relational database queries?",
           "options": [
-            "It eliminates heavy, table-locking database scans that degrade production checkout performance, enabling real-time event-driven recovery dispatching",
-            "Because relational databases are legally forbidden from storing timestamps older than one hour",
-            "It automatically deletes the customer's user account if they fail to complete a purchase within ten minutes",
-            "Because Redis Streams automatically sends physical delivery trucks to the customer's residential address"
+            "It removes heavy table-locking database scans that slow production checkout, enabling real-time event-driven recovery messages.",
+            "It stores abandoned carts in the browser instead of the server, so recovery emails can be sent without any backend involvement.",
+            "It lowers email costs by sending recovery messages in nightly batches, which a streaming system can schedule more cheaply.",
+            "It lets the database delete older carts automatically, since Redis Streams enforce retention rules that SQL tables lack."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8003,10 +8003,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the unified distributed cart engine combine CRDTs, WebSockets, and Redis Streams to deliver enterprise-grade digital commerce resilience?",
           "options": [
-            "It disables all search engine indexing so that competitors cannot view the product catalog",
-            "It guarantees deterministic cross-device convergence without locks, pushes sub-50ms delta updates to active devices, and detects cart abandonment in real time without database strain",
-            "It permanently stores all customer shopping carts in unencrypted plaintext on public web servers",
-            "It forces customers to enter their credit card PIN code before adding any item to their shopping cart"
+            "It stores the cart in one central row, locks it on each edit, and sends full payloads on a schedule from a nightly job.",
+            "It gives lock-free multi-device convergence, sub-50ms delta updates and real-time abandonment detection without database strain.",
+            "It keeps the cart in browser storage only, syncs when the customer logs in, and checks abandonment from server logs each day.",
+            "It replicates carts to every device by email, resolves conflicts by taking the newest edit, and detects abandonment by hand."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8061,10 +8061,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise e-commerce platform evaluate promotional discounts using a sequential waterfall rather than simple additive percentage calculations?",
           "options": [
-            "To prevent uncontrolled discount compounding that drives net prices below cost, ensuring each step calculates against the diminishing subtotal",
-            "Because computer processors cannot perform addition and can only execute division operations",
-            "To force all shoppers to pay in foreign currency notes rather than electronic credit cards",
-            "Because government tax authorities prohibit merchants from calculating percentages larger than five percent"
+            "To stop uncontrolled discount compounding that drives net prices below cost, so each step is calculated on the diminishing subtotal.",
+            "To make discounts add up exactly (20% + 20% = 40%) so the total reduction equals the sum of all percentages stated.",
+            "To let customers apply the largest discount first, since the order of discounts has no effect on the final amount payable.",
+            "To apply discounts on the original list price every time, so the final price never falls below the lowest single discount."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8093,10 +8093,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the RETE pattern-matching algorithm achieve sub-millisecond evaluation across thousands of active promotion rules?",
           "options": [
-            "By executing all promotion calculations on client web browsers using unencrypted JavaScript variables",
-            "By randomly selecting one promotional rule out of a hat and ignoring the rest of the marketing catalog",
-            "By storing all promotion rules on magnetic audio cassettes that rewind after every transaction",
-            "By compiling rules into an acyclic graph of shared alpha and beta memory nodes, evaluating shared conditions only once and processing incremental deltas"
+            "By testing every rule against every cart from scratch in sequence, with indexes on product IDs to speed up each lookup.",
+            "By caching the final price of each cart for a day, so repeat visits never trigger a new evaluation of any promotion rule.",
+            "By running every rule on a separate server in parallel, and the fastest server's answer is used as the final decision.",
+            "By compiling rules into a graph of shared alpha and beta memory nodes, evaluating shared conditions once and processing only deltas."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8126,10 +8126,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What architectural mechanism prevents shoppers from combining incompatible or mutually exclusive discount coupons in a composable commerce checkout?",
           "options": [
-            "Permanently disabling the ability to apply coupons across all online e-commerce channels",
-            "Deleting the customer's shopping cart whenever two coupon codes are typed into the input field",
-            "A declarative coupon compatibility matrix that evaluates stackability flags, exclusivity groups, and discount waterfall category boundaries",
-            "A manual telephone verification call made by a retail customer service representative for every single order"
+            "A cart rule that accepts only the first coupon entered, and rejects every later coupon regardless of its type or value.",
+            "A daily usage limit on each coupon code, which stops any coupon from combining with another once the limit is reached.",
+            "A declarative coupon compatibility matrix evaluating stackability flags, exclusivity groups and waterfall category boundaries.",
+            "A manual review by customer service of each order with several coupons, before the order is released for fulfillment."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8159,10 +8159,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise promotional abuse defense system detect and block self-referral loops in consumer promotion campaigns?",
           "options": [
-            "By converting all discounts into mandatory paid subscription enrollments without notice",
-            "By correlating device fingerprints between referrers and new accounts, filtering disposable email domains, and enforcing IP velocity limits",
-            "By requiring all customers to physically visit a brick-and-mortar corporate headquarters to present a government passport",
-            "By permanently shutting down the e-commerce website during evening hours to stop bot traffic"
+            "By capping each referrer at one successful referral per lifetime, regardless of any signals from devices or email addresses.",
+            "By correlating device fingerprints of referrers and new accounts, filtering disposable email domains and enforcing IP velocity limits.",
+            "By emailing every new account a confirmation link, and trusting any account that clicks it as a genuine new customer.",
+            "By removing the referral bonus for orders below a set value, so low-value fake accounts no longer have any incentive."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8194,10 +8194,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an integrated composable promotion engine protect an enterprise's commercial profitability during high-volume digital sales events?",
           "options": [
-            "By combining abuse defense to block synthetic fraud, compatibility checks to prevent stacking leaks, and sequential waterfalls to enforce minimum margin floors",
-            "By automatically raising prices by five hundred percent during checkout without customer notification",
-            "By canceling all orders that use any promotional coupon and billing customers a cancellation fee",
-            "By storing all marketing budgets in high-risk foreign currency exchange derivatives"
+            "By combining abuse defense against synthetic fraud, compatibility checks against stacking leaks and waterfalls enforcing margin floors.",
+            "By capping every discount at a fixed percentage, running promotions only on weekdays, and approving each coupon code by hand.",
+            "By adding a handling fee to discounted orders, delaying shipments of promo orders, and allowing returns only for full-price items.",
+            "By limiting sales events to loyal customers, hiding promo prices from search engines, and refusing orders from new accounts."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8249,10 +8249,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is relying strictly on 5-digit United States ZIP codes considered an anti-pattern for sales tax calculation?",
           "options": [
-            "5-digit ZIP codes are encrypted by the Federal Reserve and require quantum computers to decode",
-            "The United States Postal Service revokes the commercial license of any merchant that uses postal codes for software calculations",
-            "5-digit ZIP codes only exist in rural agricultural regions and are not used in metropolitan commercial areas",
-            "5-digit ZIP codes were engineered for postal mail routing and routinely straddle multiple municipalities and counties with conflicting local tax rates"
+            "5-digit ZIP codes change every year, so a tax table built from them is out of date and must be rebuilt from scratch each year.",
+            "5-digit ZIP codes cover only urban areas, so rural addresses have no ZIP and cannot be assigned any sales tax rate.",
+            "5-digit ZIP codes are not unique across states, so the same code can point to two states with different state tax rates.",
+            "5-digit ZIP codes were built for mail routing and often straddle several municipalities and counties with conflicting local tax rates."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8277,10 +8277,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What legal and operational function does the EU B2B Reverse Charge Mechanism serve in cross-border commerce?",
           "options": [
-            "It shifts the responsibility for reporting and paying VAT from the seller to the corporate buyer, exempting the transaction at checkout upon VIES ID validation",
-            "It automatically reverses fraudulent bank credit card charges if an item is not delivered within 24 hours",
-            "It forces buyers to refund 50% of the purchase price back to the seller in the event of an economic recession",
-            "It requires European border customs officers to physically dismantle the imported merchandise before delivery"
+            "It shifts the duty to report and pay VAT from the seller to the business buyer, with a 0% VAT checkout after VIES ID validation.",
+            "It makes the seller charge VAT at the buyer's national rate and then refund the VAT to the buyer once goods arrive in the country.",
+            "It exempts all cross-border sales to EU consumers from VAT up to a value threshold, with no business buyer involved.",
+            "It lets the seller pay VAT in its home country at the home rate for every EU sale, using the one-stop-shop return alone."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8305,10 +8305,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between Delivered Duty Paid (DDP) and Delivered at Place (DAP) Incoterms for e-commerce customers?",
           "options": [
-            "Under DDP, the merchant is exempt from paying income tax on commercial revenues for three calendar years",
-            "Under DDP, the merchant calculates and collects all customs duties and taxes upfront at checkout; under DAP, the customer must pay unexpected duties upon delivery",
-            "DDP requires goods to be transported by hot air balloons, whereas DAP requires cargo freight trains",
-            "DDP is only legal for domestic shipments inside North America, while DAP is used exclusively in Antarctica"
+            "Under DDP the customer pays duties to the carrier at delivery; under DAP the merchant collects all duties and taxes at checkout.",
+            "Under DDP the merchant collects all duties and taxes at checkout; under DAP the customer pays unexpected duties on delivery.",
+            "Under DDP the merchant is liable for goods only until the port of export; under DAP the liability ends at the buyer's door.",
+            "Under DDP the carrier handles customs for free in all countries; under DAP the merchant must file the customs entry itself."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8334,10 +8334,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What architectural benefit does an in-memory tax rate cache and circuit breaker provide to an e-commerce checkout pipeline?",
           "options": [
-            "It allows customers to negotiate custom income tax deductions directly in the shopping cart drawer",
-            "It converts all physical merchandise into non-fungible tokens stored on a public blockchain",
-            "It eliminates external API latency bottlenecks on repeated cart updates and prevents third-party tax SaaS outages from blocking customer checkouts",
-            "It eliminates the legal requirement to remit sales tax to state and federal treasuries"
+            "It lets the merchant avoid collecting tax on orders during an outage, since the circuit breaker waives the tax for those orders.",
+            "It stores the customer's full address history in memory, so tax rates can be calculated without ever calling a tax vendor.",
+            "It removes external API latency on repeated cart updates and keeps third-party tax SaaS outages from blocking customer checkouts.",
+            "It guarantees the cached rates always match current law, since the cache refreshes itself from the tax authority every minute."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8364,10 +8364,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Enterprise Global Tax Engine maintain compliance across divergent sovereign tax jurisdictions within a single checkout flow?",
           "options": [
-            "By converting all world currencies to gold bullion and storing it in a Swiss mountain vault",
-            "By forcing all international customers to acquire a United States Social Security Number prior to cart checkout",
-            "By automatically charging a flat 50% luxury tax on all digital and physical transactions globally",
-            "By dynamically routing cart items to jurisdiction-specific sub-engines (US nexus, EU OSS/VIES, and customs DDP) based on the destination delivery address"
+            "By applying the tax rate of the merchant's home country to every order, and adjusting it each quarter in the tax return.",
+            "By using one flat global tax rate for all destinations, and reconciling the differences once a year with each authority.",
+            "By asking the customer to declare their own tax rate at checkout, and storing it with the order for later audit.",
+            "By routing cart items to jurisdiction-specific sub-engines (US nexus, EU OSS/VIES, customs DDP) based on the delivery address."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8422,10 +8422,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business and technical advantage does multi-gateway smart routing provide to an enterprise global commerce platform?",
           "options": [
-            "It forces cardholders to mail physical checks directly to merchant corporate headquarters",
-            "It converts all digital payment transactions into municipal government bond certificates",
-            "It legally eliminates the requirement to comply with PCI-DSS data security standards",
-            "It maximizes payment authorization rates (e.g. 96%), slashes interchange fees via domestic acquiring licenses, and eliminates single-vendor downtime through automated cascade fallback"
+            "It sends all traffic to the cheapest gateway, which cuts fees but leaves the platform exposed to that gateway's downtime.",
+            "It stores card data with every gateway at once, so the merchant avoids tokenization and PCI compliance costs entirely.",
+            "It adds an extra verification step for all orders, which reduces fraud losses while it lowers authorization rates slightly.",
+            "It lifts authorization rates (e.g. 96%), cuts interchange via domestic acquiring and removes single-vendor downtime with cascade fallback."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8452,10 +8452,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do Conflict-Free Replicated Data Types (CRDTs) prevent data corruption in multi-device e-commerce shopping carts?",
           "options": [
-            "By decomposing cart mutations into monotonic additive and subtractive vectors whose mathematical merge operations are commutative, associative, and idempotent",
-            "By encrypting the customer's credit card and storing the private key on physical magnetic tape drives",
-            "By immediately terminating any customer session that accesses the website from more than one browser tab",
-            "By requiring all shopping cart items to be physically inspected by warehouse supervisors before being rendered on screen"
+            "By splitting cart edits into monotonic additive and subtractive vectors whose merge operations are commutative, associative and idempotent.",
+            "By locking the cart row in a database during every edit, so that devices apply changes strictly one after another in turn.",
+            "By always keeping the cart version with the latest timestamp, so older edits made offline on other devices are overwritten.",
+            "By asking a central server to approve each edit before it applies, so offline devices can't change the cart until online."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8481,10 +8481,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a strict Discount Waterfall order of operations essential for enterprise promotional engines?",
           "options": [
-            "It prevents customers from using credit cards issued on bank holidays",
-            "It establishes an immutable mathematical sequence for applying percentage and fixed discounts, preventing negative cart balances and protecting merchant gross margins",
-            "It automatically reports all customer email addresses to international patent copyright registries",
-            "It ensures that products manufactured on weekends are sold at twice their retail value"
+            "It lets customers pick the order in which their discounts apply, so they get the largest saving and the merchant gets goodwill.",
+            "It sets a fixed sequence for applying percentage and fixed discounts, preventing negative cart balances and protecting margins.",
+            "It applies all fixed-value discounts after tax is calculated, so the tax collected is lower and discounts are easier to audit.",
+            "It gives every discount an equal share of the cart total, so no single promotion can reduce the price by more than others."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8511,10 +8511,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Guaranteed Landed Cost under Delivered Duty Paid (DDP) Incoterms eliminate international e-commerce checkout abandonment?",
           "options": [
-            "By billing all import duties directly to local municipal library authorities",
-            "By declaring all international packages as diplomatic mail exempt from border security inspection",
-            "By calculating and collecting all customs tariffs, duties, and import taxes upfront at checkout, guaranteeing zero unexpected doorstep fee demands upon delivery",
-            "By requiring overseas buyers to physically travel to the exporting country to collect their packages"
+            "It shows duty estimates to the customer at checkout but collects the actual amounts at the doorstep when the parcel arrives.",
+            "It removes all import duties for the order, because the merchant's marketplace has a trade agreement with every country.",
+            "It calculates and collects all tariffs, duties and import taxes at checkout, so no unexpected doorstep fees are demanded on delivery.",
+            "It lets customers choose at checkout whether to pay duties then or on delivery, and the choice determines the final tax."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8543,10 +8543,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business metrics justify the enterprise investment in composable global checkout infrastructure?",
           "options": [
-            "It converts all physical commerce stores into virtual reality roller coasters",
-            "It allows the corporation to bypass all international taxation treaties and ignore local laws",
-            "It eliminates the need for software developers and computer servers entirely",
-            "A 14.8% checkout conversion lift, $1.25M in annual interchange fee savings, 42.5% reduction in cross-border abandonment, and sub-350ms p99 global checkout latency"
+            "A 40% fall in warehouse labor costs, $2.5M in freight savings, 15% fewer returns and next-day delivery for all domestic orders.",
+            "A 14.8% rise in social media followers, $1.25M in brand valuation, 42.5% more email subscribers and a faster blog.",
+            "A 3% increase in basket size, $125K in coupon savings, 4.5% lower churn and monthly customer satisfaction scores above 90%.",
+            "A 14.8% checkout conversion lift, $1.25M annual interchange savings, 42.5% less cross-border abandonment and sub-350ms p99 latency."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8601,10 +8601,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary architectural advantage does multi-variable Distributed Order Management (DOM) provide over static ERP routing rules?",
           "options": [
-            "It dynamically balances geographic proximity, freight tariff economics, node throughput capacity, and carbon footprint metrics to select the most cost-effective and SLA-compliant fulfillment node",
-            "It forces all customer packages to be routed exclusively through a single central hub regardless of delivery address",
-            "It eliminates the requirement for warehouses to scan barcodes or maintain inventory counts",
-            "It automatically converts physical merchandise into digital gift cards whenever stock levels drop"
+            "It balances proximity, freight tariff economics, node capacity and carbon footprint to pick the cheapest SLA-compliant node.",
+            "It always ships from the warehouse closest to the customer, so it ignores node capacity, freight tariffs and stock age.",
+            "It assigns each order to the node with the most stock of every item, so it ignores distance, freight cost and capacity.",
+            "It follows a fixed ERP table that maps every postal code to one warehouse, which operators edit by hand every quarter."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8631,10 +8631,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an omnichannel enterprise OMS maintain a strict mathematical distinction between Physical On-Hand Inventory and Available-to-Promise (ATP) inventory?",
           "options": [
-            "Because ATP inventory must be converted into physical gold coins before being sold online",
-            "Because tax authorities prohibit counting items that have been stored in a warehouse for more than seven days",
-            "Because physical inventory in warehouses is legally owned by the municipal fire department until shipped",
-            "Because physical stock includes units already committed to unshipped customer orders and safety stock buffers; selling based on raw on-hand counts causes widespread overselling and order cancellations"
+            "Physical stock includes units on order from suppliers, so selling on on-hand counts causes missed sales and idle stock.",
+            "Physical stock is counted in cases and ATP in units, so mixing them leads to rounding errors in the available quantities.",
+            "Physical stock changes once a day in the OMS, while ATP updates every minute, so the two always match at day end.",
+            "Physical stock includes units committed to unshipped orders and safety buffers; selling on raw counts causes overselling."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8661,10 +8661,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Split-Shipment Minimization critical to the profitability of an enterprise omnichannel e-commerce operation?",
           "options": [
-            "Because split shipments automatically double the sales tax owed on every item in the order",
-            "Because commercial package carriers refuse to deliver more than one parcel to any residential address per week",
-            "Because fulfilling an order in multiple separate shipments multiplies carrier base handling fees, increases packaging waste, and deteriorates customer satisfaction",
-            "Because international maritime treaties make it illegal to divide items that were added to the same shopping cart"
+            "Splitting shipments reduces the order's revenue, since each shipment is invoiced separately and attracts its own payment fee.",
+            "Splitting shipments is prohibited under most carrier contracts, so splits trigger contract penalties for each extra parcel.",
+            "Fulfilling one order in several shipments multiplies carrier base fees, increases packaging waste and hurts customer satisfaction.",
+            "Splitting shipments delays inventory deduction until the last parcel leaves, which causes overselling of the remaining stock."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8691,10 +8691,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Saga pattern ensure data consistency across distributed fulfillment microservices without causing database deadlocks?",
           "options": [
-            "By ignoring errors during payment capture and shipping products regardless of transaction authorization",
-            "By coordinating a sequence of local transactions across decoupled services, executing compensating rollback transactions if any intermediate step fails, avoiding blocking distributed locks",
-            "By freezing all global database reads and writes until all world postal services confirm package delivery",
-            "By converting all microservices into a single monolithic C++ binary that runs on an isolated mainframe"
+            "By wrapping all services in one global two-phase commit, which locks every database until each service confirms success.",
+            "By coordinating local transactions across services, running compensating rollbacks if a step fails and avoiding blocking locks.",
+            "By retrying each failed step forever, so a transaction eventually completes and no earlier step is ever undone.",
+            "By storing every service's data in one shared database, so a single local transaction covers the whole fulfillment flow."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8720,10 +8720,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of an automated Exception Management Engine within an enterprise DOM Control Tower?",
           "options": [
-            "To detect real-world fulfillment disruptions (such as warehouse pick-shorts or carrier weather delays) and autonomously execute remediation workflows like re-sourcing and re-routing without manual delay",
-            "To automatically cancel customer orders and ban user accounts whenever a warehouse worker makes a mistake",
-            "To conceal fulfillment delays from customers by fabricating artificial delivery tracking events",
-            "To shut down the entire warehouse network whenever an individual parcel experiences a tracking scan delay"
+            "To detect disruptions (pick-shorts, weather delays) and autonomously re-source and re-route orders without manual delay.",
+            "To log every disruption in a report for the next day's meeting, where managers decide how affected orders are handled.",
+            "To cancel any order hit by a disruption and refund the customer, which avoids late deliveries and SLA penalties.",
+            "To raise a ticket for customer service on each disruption, so agents can contact customers and offer a discount code."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8777,10 +8777,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational and financial benefit does Opportunistic Cross-Docking deliver to an enterprise fulfillment center?",
           "options": [
-            "It requires warehouse operators to manually repackage all merchandise into solid wood crates before shipping",
-            "It diverts incoming inventory directly from inbound receiving docks to outbound shipping lanes to fulfill pending customer orders, eliminating putaway, storage, and retrieval labor costs",
-            "It permanently locks all warehouse dock doors during business hours to prevent thermal energy leakage",
-            "It forces manufacturing suppliers to deliver products exclusively by bicycle couriers"
+            "It stores incoming stock in the fastest-picking locations near the dock, which cuts but does not remove retrieval travel time.",
+            "It sends incoming stock from inbound docks straight to outbound lanes for pending orders, removing putaway, storage and retrieval labor.",
+            "It holds incoming stock at the dock for a day to build full pallets, which lowers freight cost but adds a day of delay.",
+            "It sends incoming stock back to suppliers when no order is pending, which avoids storage costs but wastes inbound freight."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8806,10 +8806,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of an EDI 856 Ship Notice / Manifest (ASN) in the omnichannel supply chain?",
           "options": [
-            "To request a consumer credit check on the retail store manager before opening the warehouse doors",
-            "To automatically cancel all outstanding customer orders whenever a freight truck experiences a flat tire",
-            "To provide an electronic pre-notification of an inbound shipment's exact physical hierarchy, carton SSCC barcodes, line item quantities, and carrier tracking details prior to dock arrival",
-            "To convert all international ocean bills of lading into domestic postal money orders"
+            "An electronic purchase order that tells the supplier what to produce, with item quantities, prices and requested delivery dates.",
+            "An electronic invoice sent by the supplier after delivery, listing the items billed, the tax charged and the payment due date.",
+            "An electronic pre-notice of an inbound shipment's carton hierarchy, SSCC barcodes, line quantities and tracking before dock arrival.",
+            "An electronic stock report sent by the warehouse each night, listing on-hand quantities by location for each supplier."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8836,10 +8836,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does automated ASN reconciliation accelerate warehouse receiving dock throughput while protecting corporate gross margins?",
           "options": [
-            "By requiring freight truck drivers to pay cash deposits before parking at warehouse loading bays",
-            "By instructing dock workers to accept all inbound shipments without inspecting barcodes or counting boxes",
-            "By dumping all damaged cartons directly into municipal landfills without logging inventory loss records",
-            "By scanning exterior SSCC pallet barcodes against pre-notified electronic manifests to execute instant receiving, while automatically isolating variances to prevent paying for short-shipped goods"
+            "It lets the dock accept every shipment without checking contents, then the accounts team settles any variance in the next quarter.",
+            "It weighs each pallet at the dock and compares it with the purchase order, rejecting any shipment that differs by one percent.",
+            "It sends receiving staff the supplier's invoice to check by hand against cartons, with each variance resolved by phone call.",
+            "It scans pallet SSCC barcodes against the electronic manifest for instant receiving and isolates variances, avoiding short-shipped payments."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8866,10 +8866,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are enterprise commerce platforms replacing legacy batch Value-Added Networks (VANs) with real-time REST/GraphQL webhook integrations for 3PL logistics?",
           "options": [
-            "To eliminate slow batch-transmission delays and high per-character network fees, enabling instantaneous sub-second order dispatch and real-time tracking visibility across fulfillment partners",
-            "Because modern computer operating systems are technically unable to execute files written before the year 2020",
-            "To allow commercial freight trucks to navigate public highways autonomously without licensed drivers",
-            "Because international banking regulations require all third-party logistics warehouses to be audited in person daily"
+            "To remove slow batch delays and high per-character network fees, enabling sub-second order dispatch and real-time tracking visibility.",
+            "To gain stronger encryption than VANs offer, since REST and GraphQL webhooks are the only secure option for sharing logistics data.",
+            "To keep a permanent audit copy of every message at the network provider, which webhooks do not provide for 3PL partners.",
+            "To satisfy 3PL contracts that require all partners to use one shared format, which webhooks guarantee for every trading partner."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8898,10 +8898,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business function does a Global Multi-Node Sourcing Command Tower serve in enterprise supply chain management?",
           "options": [
-            "To automatically repossess commercial freight containers and sell them at municipal public auctions",
-            "To provide end-to-end visibility into inbound inventory flows, enforce vendor ASN compliance, optimize cross-dock flow-through, and mitigate global supply chain disruption risks",
-            "To force all manufacturing suppliers to sign exclusive contracts prohibiting sales to any competing business",
-            "To replace all human supply chain executives with automated chatbot social media accounts"
+            "A single storefront for customers to track orders, manage returns, and contact support in every market the company operates in.",
+            "End-to-end inbound visibility, enforcing vendor ASN compliance, improving cross-dock flow-through and reducing disruption risk.",
+            "A pricing console for setting channel prices, running promotions, and monitoring competitor offers across every marketplace.",
+            "A financial dashboard for consolidating subsidiary accounts, calculating taxes, and forecasting cash flow for the board."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8956,10 +8956,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business function does a Self-Service RMA Portal serve in enterprise e-commerce reverse logistics?",
           "options": [
-            "It forces customers to drive to the factory where the item was manufactured to deliver it in person",
-            "It automatically reports all customer returns to national credit rating bureaus as defaults",
-            "It empowers customers to initiate returns autonomously, validates policy eligibility windows, dynamically calculates return fees, and generates trackable carrier shipping labels",
-            "It permanently bans customers from shopping online whenever they return an item"
+            "It lets support agents refund orders from a central screen, approving each return by phone before any label is issued to the customer.",
+            "It lets warehouse staff grade returned goods, setting restock prices and routing items to outlet channels based on their condition.",
+            "It lets customers start returns on their own, checks eligibility windows, calculates return fees and generates trackable carrier labels.",
+            "It lets the finance team reconcile refunds against payments, flagging mismatches before the monthly accounting close takes place."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8985,10 +8985,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does automated disposition grading (Grades A through D) maximize financial recovery in e-commerce reverse logistics?",
           "options": [
-            "By storing all returned goods in public parking lots until outdoor weather destroys them",
-            "By systematically categorizing returned merchandise based on physical condition to restock pristine units at full price, route open-box goods to outlet channels, and liquidate salvage items",
-            "By immediately shredding all returned products and burning the packaging inside facility furnaces",
-            "By re-shipping returned defective products to new customers without inspection to avoid warehouse labor"
+            "By refunding every return at full price on arrival, then restocking all items as new and leaving damage claims for suppliers to settle.",
+            "By grading returns by condition: restock pristine units at full price, send open-box goods to outlets, liquidate salvage items.",
+            "By sending every returned item back to the supplier for credit, regardless of condition, so no inventory is resold by the retailer.",
+            "By destroying all items graded below A to protect the brand, and recording the cost as a marketing expense in the period."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9015,10 +9015,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an automated B2B Wholesale Liquidation Auction platform enhance corporate gross margin recovery on returned merchandise?",
           "options": [
-            "By establishing a competitive digital marketplace that aggregates salvage inventory into manifested pallet lots and enforces reserve price floors to secure the highest market clearing price",
-            "By paying wholesale brokers cash kickbacks to bury unsellable inventory in secret underground vaults",
-            "By forcing retail customers to buy back their own returned products at twice the original price",
-            "By claiming full insurance losses on all inventory while secretly selling the products at flea markets"
+            "By running a competitive marketplace that bundles salvage into manifested pallet lots and enforces reserve price floors.",
+            "By selling returned items to the first buyer who accepts a fixed discount, which avoids waiting for bids and so speeds up clearance.",
+            "By donating returned goods to charity for a tax deduction, which has a higher value than the resale price of salvage lots.",
+            "By returning all goods to the original manufacturer for credit, which removes the need for any resale channel or auction."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9044,10 +9044,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise e-commerce platform deploy Behavioral Anomaly Detection within its return processing engine?",
           "options": [
-            "To cancel customer bank accounts whenever an item is returned without original gift wrapping",
-            "To prevent all customers from returning clothing that was manufactured during a full moon",
-            "To automatically re-route all returned apparel to international fashion runway shows",
-            "To detect and neutralize abusive behaviors (such as wardrobing, component bricking, and serial switching) by holding refunds for physical inspection, while providing instant refunds to honest buyers"
+            "To block all customers who have made more than one return, which removes abuse but also removes valid repeat purchasers.",
+            "To charge every customer a restocking fee on each return, so the cost of abuse is shared by all shoppers equally.",
+            "To require a manager's approval for every refund, which delays refunds for honest buyers as well as for fraudulent ones.",
+            "To catch wardrobing, component bricking and serial switching by holding refunds for inspection, while honest buyers refund fast."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9073,10 +9073,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational and strategic value does a Circular Economy Command Tower provide to an enterprise commerce organization?",
           "options": [
-            "To burn all returned inventory in municipal incinerators to generate electricity for cryptocurrency mining rigs",
-            "To replace all customer returns with non-refundable store credits that expire within twenty-four hours",
-            "To maximize recovered capital from returned merchandise, enforce high landfill diversion rates, automate inventory valuation accounting, and provide product quality feedback to upstream design teams",
-            "To disguise returned defective merchandise as brand-new products and ship them to unsuspecting international buyers"
+            "To lower the cost of buying new inventory, shorten supplier lead times, automate purchase orders and cut the safety stock held.",
+            "To increase customer acquisition, grow the loyalty base, automate email campaigns and feed product reviews to the marketing team.",
+            "To maximize recovered capital, enforce high landfill diversion, automate inventory valuation and feed quality data to design teams.",
+            "To reduce delivery times, optimize carrier selection, automate label printing and feed tracking data to the support center."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9131,10 +9131,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary architectural advantage does Event Sourcing provide over traditional relational database status updates in post-purchase commerce?",
           "options": [
-            "It automatically converts customer credit card numbers into public blockchain tokens",
-            "It permanently disables all customer notifications to reduce enterprise cloud infrastructure bills",
-            "It requires warehouse operators to print every order event on parchment paper and store it in physical archives",
-            "It records every state change as an immutable domain event in an append-only log, enabling full temporal state replay, zero-lock high throughput, and decoupled CQRS read models"
+            "It overwrites the current order row on every change, saving storage space while keeping a compact history in a separate audit table.",
+            "It stores only the final state of each order in a cache, which gives faster reads but loses the history of earlier statuses.",
+            "It locks the order record during each update so only one service can change it, which gives strict consistency for each order.",
+            "It records every change as an immutable event in an append-only log, enabling full state replay, lock-free throughput and CQRS read models."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9160,10 +9160,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does W3C Trace Context propagation in OpenTelemetry enable end-to-end observability across distributed commerce microservices?",
           "options": [
-            "By passing standardized 'traceparent' headers across HTTP requests and message brokers, linking spans into a unified directed acyclic graph that reveals cross-service latency and failures",
-            "By encrypting all network traffic and deleting server log files every ten minutes to conserve disk space",
-            "By converting all microservices into synchronous blocking RPC calls to eliminate asynchronous event queues",
-            "By forcing all software engineers to inspect server terminals in person using physical oscilloscopes"
+            "By passing standard 'traceparent' headers over HTTP and brokers, linking spans into one graph showing cross-service latency and failures.",
+            "By writing each service's logs to one shared file, which operators search by timestamp to find the requests across services.",
+            "By sampling a fixed number of requests per second at the gateway, and discarding the spans of requests that are not sampled.",
+            "By assigning each service its own unique trace ID, which stays inside that service and never crosses a network boundary."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9189,10 +9189,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a Canonical Delivery Status Taxonomy essential when ingesting tracking webhooks from multiple commercial package carriers?",
           "options": [
-            "To automatically force all commercial parcel carriers to change their corporate logos to match the merchant's branding",
-            "To standardize disparate carrier-specific codes into a unified operational taxonomy, isolating downstream notifications and tracking UIs from proprietary carrier formats",
-            "To prevent package delivery couriers from using cellular smartphones while driving delivery vans",
-            "To eliminate the need for tracking numbers by guessing delivery dates based on astronomical lunar phases"
+            "To store each carrier's original codes in the customer-facing UI, so that the customer sees exactly what the carrier reported.",
+            "To standardize carrier-specific codes into one operational taxonomy, shielding notifications and tracking UIs from proprietary formats.",
+            "To reduce the number of carriers used by the platform, since fewer carriers mean fewer status codes to interpret for customers.",
+            "To translate carrier status messages into different languages, so that customers in every market can read the updates sent."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9219,10 +9219,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Proactive Exception Alerting in post-purchase customer notifications protect customer satisfaction (CSAT) and reduce operating costs?",
           "options": [
-            "By deleting delayed orders from the customer's purchase history so they forget they bought the product",
-            "By requiring customers to contact carrier executive board members directly to inquire about package locations",
-            "By autonomously notifying customers of in-transit delivery delays before they experience frustration, reducing costly WISMO support inquiries and reinforcing brand trust",
-            "By automatically billing customer credit cards for extra shipping charges whenever a delivery truck encounters traffic"
+            "By offering a refund on every delayed order automatically, which removes complaints but raises the cost of each shipment sharply.",
+            "By notifying customers only once the parcel is delivered, which lowers message costs while keeping the customer informed.",
+            "By telling customers about in-transit delays before they notice, cutting costly WISMO inquiries and reinforcing trust in the brand.",
+            "By hiding delay information from the tracking page, which avoids upsetting customers and so keeps support tickets low."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9308,10 +9308,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary architectural capabilities justify executive certification for Tier 1 Omnichannel Order Management?",
           "options": [
-            "Sub-50ms multi-objective DOM routing, an 88.4% single-shipment consolidation rate, and 99.8% real-time ATP inventory allocation accuracy across distributed fulfillment nodes",
-            "Routing all customer packages exclusively through regional postal train depots",
-            "Prohibiting customers from purchasing more than one item per calendar month",
-            "Replacing digital inventory databases with hand-written physical logbooks"
+            "Sub-50ms multi-objective DOM routing, 88.4% single-shipment consolidation and 99.8% real-time ATP accuracy across nodes.",
+            "Sub-5 second order routing, a 40% single-shipment consolidation rate and 90% ATP allocation accuracy, reviewed once per week.",
+            "Same-day delivery for all orders, a 99% split-shipment rate and 100% physical stock accuracy confirmed by one annual count.",
+            "A single-warehouse routing rule, a 60% consolidation rate and 80% ATP accuracy, based on a nightly inventory feed."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9340,10 +9340,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational benchmarks confirm certification for Tier 2 Inbound Logistics and EDI Infrastructure?",
           "options": [
-            "Eliminating all digital barcode labels in favor of chalk markings on boxes",
-            "Delaying dock receiving for thirty days to verify product shelf life",
-            "Requiring all freight trucks to unload cartons onto outdoor grass lawns",
-            "A 34.5% cross-dock flow-through ratio, 98.6% ANSI X12 EDI compliance, and automated ASN dock receiving cycle times under 20 minutes"
+            "A 5% cross-dock flow-through ratio, 70% ANSI X12 EDI compliance and manual dock receiving cycles of about 2 hours.",
+            "A 34.5% on-time carrier pickup rate, 98.6% packing accuracy and customer delivery cycles under 20 hours.",
+            "A 60% pallet putaway ratio, 90% EDI compliance by volume, and dock receiving times of roughly 24 hours per shipment.",
+            "A 34.5% cross-dock flow-through ratio, 98.6% ANSI X12 EDI compliance and ASN dock receiving cycles under 20 minutes."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9371,10 +9371,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary performance metrics demonstrate excellence in Tier 3 Reverse Logistics and Circular Commerce?",
           "options": [
-            "Burying all returned merchandise in desert landfill trenches",
-            "Reselling defective electronics as brand-new without testing or data sanitization",
-            "A 98.2% landfill diversion rate, 68.5% secondary capital recovery rate across Grades A through D, and a 97.9% return fraud detection accuracy",
-            "Refusing all customer return requests regardless of defect reason"
+            "A 60% landfill diversion rate, 20% secondary capital recovery across Grades A through D and 70% return fraud detection accuracy.",
+            "A 98.2% return approval rate, 68.5% refund speed within 24 hours and 97.9% customer satisfaction with the return process.",
+            "A 98.2% landfill diversion rate, 68.5% secondary capital recovery across Grades A through D and 97.9% return fraud detection accuracy.",
+            "A 30% reduction in return volume, 98.2% restock at full price, and fraud detection performed by manual inspection of each return."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9402,10 +9402,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What key technical and customer experience metrics demonstrate Tier 4 Post-Purchase Observability certification?",
           "options": [
-            "Blocking customers from viewing tracking numbers until thirty days after delivery",
-            "A 99.9% W3C trace context propagation rate, 99.1% proactive delivery exception alerting coverage, and a 4.82/5.0 Customer Satisfaction (CSAT) rating",
-            "Requiring customers to phone carrier delivery step-van drivers directly to request package coordinates",
-            "Sending customers unstyled raw database JSON dumps whenever an order status updates"
+            "A 50% trace propagation rate, 60% exception alert coverage by manual emails and a 3.2/5.0 CSAT rating for deliveries.",
+            "A 99.9% W3C trace context propagation rate, 99.1% proactive delivery exception alert coverage and a 4.82/5.0 CSAT rating.",
+            "A 99.9% on-time delivery rate, 99.1% order accuracy and a 4.82/5.0 supplier rating from inbound logistics reviews.",
+            "A 99.9% website uptime rate, 99.1% payment success rate and a 4.82/5.0 app store rating across all customers."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9434,10 +9434,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business outcomes and financial return on investment justify the corporate board conferring the CSCA-GFA credential?",
           "options": [
-            "A perfect 100.0/100 capstone composite score across all four pillars, delivering $9.26M USD in audited annual ROI through DOM shipping optimization, cross-dock labor savings, circular recovery, and WISMO ticket deflection",
-            "Replacing all human warehouse personnel with virtual reality holograms",
-            "Allowing all commercial parcel carriers to bill the corporation without providing tracking records",
-            "Shutting down all physical stores and operating exclusively through direct postal mail flyers"
+            "A perfect 100.0/100 capstone score, with $9.26M audited annual ROI from DOM, cross-dock, circular recovery and WISMO deflection.",
+            "A passing capstone score of 70/100 across the four pillars, with $1.2M in projected savings that the board has not yet audited.",
+            "A perfect 100.0/100 score on a written exam only, with no audited financial return required for the credential to be granted.",
+            "A score of 85/100 with $9.26M in estimated revenue growth from new market entry, rather than operating cost reductions."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9492,10 +9492,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary architectural role does the cXML PunchOutSetupRequest handshake serve in enterprise B2B commerce?",
           "options": [
-            "It forces corporate buyers to enter personal credit card numbers before browsing products",
-            "It authenticates the procurement system via shared secrets, establishes a secure ephemeral session bound to a BuyerCookie, and returns an authenticated StartPage URL without manual login",
-            "It automatically converts all procurement purchase orders into retail consumer gift cards",
-            "It requires enterprise purchasing agents to install desktop Java applets to view catalog images"
+            "It sends the finished purchase order to the supplier's ERP, which then confirms the quantities and the delivery date by email.",
+            "It authenticates the procurement system via shared secrets, opens a session bound to a BuyerCookie and returns a StartPage URL.",
+            "It uploads the supplier's full catalog to the buyer's ERP, which then stores the prices for later use in offline requisitions.",
+            "It transfers the invoice from the supplier to the buyer's accounts payable system, which then schedules the payment run."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9522,10 +9522,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise B2B commerce platform enforce Account-Specific Catalog Entitlements and Contract Price Lists?",
           "options": [
-            "To force all corporate procurement employees to negotiate prices individually via telephone calls",
-            "To display random clearance prices to confuse competing manufacturing suppliers",
-            "To ensure corporate buyers only view contractually authorized SKUs and receive legally negotiated net pricing, preventing rogue spend and compliance violations",
-            "Because enterprise accounting regulations prohibit selling products at round dollar amounts"
+            "To show every buyer the full public catalog and list prices, so that all customers see the same offers and the same terms.",
+            "To apply the highest volume discount to every account, so that large and small buyers alike are treated equally.",
+            "To ensure corporate buyers see only contractually authorized SKUs and receive negotiated net prices, preventing rogue spend.",
+            "To restrict each buyer to one order per month at contract prices, so that the supplier can plan production and stock."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9553,10 +9553,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the cXML PunchOutOrderMessage transfer a shopping cart back into an enterprise procurement platform without requiring payment on the supplier's website?",
           "options": [
-            "By converting all cart items into digital cryptocurrency tokens and depositing them into an anonymous wallet",
-            "By automatically charging the CEO's corporate credit card and mailing paper receipts via registered post",
-            "By exporting a raw CSV spreadsheet and asking the purchasing agent to manually email it to the warehouse",
-            "By generating an XML payload containing SKUs, contract prices, and UNSPSC codes bound to the BuyerCookie, posting it via browser form-post back into the ERP requisition workflow"
+            "By taking payment on the supplier's website and then emailing a receipt to the buyer's accounts payable team for filing.",
+            "By sending the buyer a PDF quote that staff retype into the ERP, where it is approved before the supplier is notified.",
+            "By storing the cart on the supplier's server and giving the buyer a link, which the ERP opens later to complete the order.",
+            "By generating an XML payload of SKUs, contract prices and UNSPSC codes bound to the BuyerCookie, posted by browser form-post to the ERP."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9583,10 +9583,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does SAP Open Catalog Interface (OCI) format shopping cart data when returning line items to an SAP ERP system?",
           "options": [
-            "By formatting line items as flattened HTML form parameters using bracketed array indices (e.g. NEW_ITEM-DESCRIPTION[1], NEW_ITEM-PRICE[1]) posted to the SAP HOOK_URL",
-            "By compiling the shopping cart into an encrypted binary executable file and executing it on the client workstation",
-            "By sending an unformatted plain-text SMS message directly to the SAP server room administrator",
-            "By saving the shopping cart onto a physical floppy disk and mailing it to corporate headquarters"
+            "By formatting line items as flat HTML form parameters with bracketed indices (e.g. NEW_ITEM-DESCRIPTION[1]) posted to the SAP HOOK_URL.",
+            "By formatting line items as a nested XML document with a cXML header, posted to the supplier's order endpoint for processing.",
+            "By formatting line items as a JSON array in the request body, sent to the SAP gateway with a bearer token for authorization.",
+            "By formatting line items as a fixed-width EDI 850 file, transmitted over a VAN to the buyer's SAP system each night."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9613,10 +9613,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational and financial metrics demonstrate SLA compliance in an Enterprise PunchOut Gateway Control Tower?",
           "options": [
-            "Sending unencrypted email passwords to all corporate purchasing employees daily",
-            "A 99.85% handshake success rate, 99.6% cart transfer completion rate, sub-200ms response latency, and multi-million dollar annual procurement volume governance",
-            "Requiring corporate purchasing agents to pay upfront cash deposits before launching a PunchOut session",
-            "Converting all corporate procurement requests into consumer social media likes"
+            "A 90% handshake success rate, 80% cart transfer completion, latency of a few seconds and monthly manual reconciliation of orders.",
+            "A 99.85% handshake success rate, 99.6% cart transfer completion, sub-200ms latency and governance of multi-million dollar procurement.",
+            "A 99.85% payment approval rate, 99.6% order shipping accuracy, delivery within 200 hours and annual supplier reviews by sales.",
+            "A 70% cart abandonment rate, 40% repeat orders, sub-200ms page speed and a focus on consumer marketing volume each month."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9670,10 +9670,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise B2B composable commerce architectures utilize recursive hierarchy models with closure tables or materialized paths?",
           "options": [
-            "To force individual consumers to register corporate tax credentials before browsing public consumer goods",
-            "To replace relational SQL databases with unstructured flat files for all transactional ledger entries",
-            "To model complex multi-subsidiary corporate structures and evaluate inherited commercial pricing tiers and cost centers without expensive recursive query latency",
-            "To eliminate the need for enterprise resource planning (ERP) systems in Fortune 500 corporations"
+            "To store each customer in a flat table for simpler queries, with every subsidiary treated as a separate unrelated account.",
+            "To limit each company to two levels of structure, so that queries are always fast and pricing is never inherited.",
+            "To model multi-subsidiary corporate structures and evaluate inherited pricing tiers and cost centers without slow recursive queries.",
+            "To keep a copy of the full hierarchy inside each order, so that old orders never change when the structure is edited."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9701,10 +9701,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does statutory enterprise compliance (SOX 404) prohibit self-approval of purchase requisitions in B2B commerce?",
           "options": [
-            "To mandate that all corporate purchases must be paid via personal cryptocurrency wallets",
-            "To enforce Separation of Duties (SoD), ensuring independent financial oversight and preventing unilateral misappropriation of corporate funds",
-            "To decrease checkout page loading speeds and increase shopping cart abandonment rates",
-            "To prevent buyers from saving their delivery addresses in corporate purchasing profiles"
+            "To speed up approvals by sending requisitions to a single senior approver, so every purchase is reviewed by the same person.",
+            "To enforce Separation of Duties, ensuring independent financial oversight and preventing unilateral misappropriation of corporate funds.",
+            "To keep purchase records private from other departments, so that only the requisition author sees details of the order.",
+            "To limit the number of requisitions per employee, since SOX caps how many purchases one person may create each month."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9762,10 +9762,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are automated SLA escalation state machines essential in enterprise B2B purchasing workflows?",
           "options": [
-            "To permanently delete any purchase order that is not approved within twelve hours of submission",
-            "To automatically approve all pending requisitions without review whenever an approver logs out of the platform",
-            "To force buyers to pay expedite fees to jump ahead in the corporate approval queue",
-            "To prevent operational procurement bottlenecks and assembly line stoppages when approvers are unavailable by automatically escalating unreviewed requisitions to superiors"
+            "To skip approvals for any requisition left unreviewed for three days, so the order is released automatically to the supplier.",
+            "To reject unreviewed requisitions after a time limit, so the requester has to start again and submit a fresh requisition.",
+            "To send the unreviewed requisition to the supplier for confirmation, so the supplier can decide whether to ship the goods.",
+            "To prevent procurement bottlenecks and line stoppages when approvers are away by escalating unreviewed requisitions to superiors."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9793,10 +9793,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary strategic value does the enterprise B2B account governance console provide to corporate financial controllers?",
           "options": [
-            "A system that bypasses corporate procurement rules to allow unauthorized personal purchases",
-            "Automated generation of social media marketing advertisements based on internal requisition data",
-            "Comprehensive visibility into departmental spend velocity, budget burn projections, open approval bottlenecks, and auditable compliance logs across all corporate subsidiaries",
-            "A direct portal for individual employees to play multiplayer video games during business hours"
+            "Visibility into customers' browsing behavior, abandoned carts, email open rates and campaign conversion across all channels.",
+            "Visibility into warehouse stock levels, picking speed, carrier performance and delivery exceptions across all locations.",
+            "Visibility into departmental spend velocity, budget burn projections, approval bottlenecks and auditable compliance logs.",
+            "Visibility into supplier catalog prices, competitor offers, margin targets and quote win rates across all product lines."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9852,10 +9852,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise B2B credit limit engine evaluate unbilled fulfillment pipelines alongside unpaid invoices during checkout authorization?",
           "options": [
-            "To eliminate the need for enterprise accounting general ledgers in corporate finance",
-            "To force buyers to pay for products before the warehouse begins picking inventory",
-            "To automatically deduct funds from personal consumer checking accounts without authorization",
-            "Because goods currently in picking, packing, or transit represent incurred commercial financial liability that has not yet converted to an open invoice, preventing credit oversubscription"
+            "Goods in picking, packing or transit are paid for in advance, so the engine can release more credit once they leave the warehouse.",
+            "Unbilled orders are always cancelled before shipping, so counting them would understate how much credit the buyer has available.",
+            "Invoices are raised only at month end, so the engine waits for the invoice run before it reduces the buyer's available credit.",
+            "Goods in picking, packing or transit are incurred liabilities not yet invoiced, and counting them prevents credit oversubscription."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9885,10 +9885,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What financial engineering rationale explains why enterprise buyers aggressively capture '2/10 Net 30' cash discounts?",
           "options": [
-            "Because paying twenty days early to capture a 2% discount yields an annualized return on investment (APR) of approximately 37.24%, far exceeding corporate short-term cash yields",
-            "Because failure to capture the discount results in immediate criminal prosecution of accounts payable staff",
-            "Because the discount eliminates all state and federal corporate income tax liabilities permanently",
-            "Because suppliers refuse to ship future orders unless cash discounts are redeemed on every transaction"
+            "Paying 20 days early to capture a 2% discount yields an annualized return of about 37.24%, far above corporate short-term cash yields.",
+            "Paying 20 days early to capture a 2% discount yields an annualized return of about 2%, equal to the discount percentage itself.",
+            "Paying 20 days early to capture a 2% discount yields an annualized return of about 6.5%, which matches the usual short-term bank deposit rate.",
+            "Paying 20 days early to capture a 2% discount yields an annualized return of about 12%, since the discount covers a 20-day period."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9918,10 +9918,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do statutory accounting regulations (IFRS 9 and US GAAP CECL) require suppliers to compute expected credit loss reserves across aging buckets?",
           "options": [
-            "To artificially inflate reported corporate quarterly revenue before tax reporting deadlines",
-            "To recognize expected bad debt losses proactively based on historical recovery probabilities rather than waiting for formal counterparty bankruptcy, preserving financial balance sheet integrity",
-            "To penalize corporate buyers by charging hidden administrative fees on current invoices",
-            "To force enterprise customers to convert all trade credit into retail consumer store credit"
+            "To write off a receivable only once it is proven uncollectible in court, which keeps the balance sheet stable until that point.",
+            "To recognize expected bad debt early from historical recovery data, not wait for a customer's bankruptcy, protecting the balance sheet.",
+            "To book bad debt only when a customer misses a payment, which keeps reserves low until the first default is recorded.",
+            "To reserve a flat 1% of all receivables each year, which gives a stable figure that does not depend on the aging of invoices."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9951,10 +9951,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational action does the automated dunning state machine trigger when an enterprise invoice breaches the Stage 4 (>60 DPD) threshold?",
           "options": [
-            "It deletes all historical transaction logs from the corporate database",
-            "It forgives the entire outstanding balance and upgrades the buyer to VIP platinum status",
-            "It imposes an automated Credit Freeze, locking the customer's revolving credit line and halting pending warehouse order fulfillment until arrears are settled",
-            "It automatically converts the trade invoice into an unauthorized consumer retail loan"
+            "It sends a friendly reminder email and waits another 30 days, because credit freezes are applied only after 120 days past due.",
+            "It hands the invoice to a collection agency at once, while orders continue to ship so the customer relationship is kept.",
+            "It imposes an automated Credit Freeze, locking the customer's credit line and halting pending fulfillment until arrears are settled.",
+            "It writes off the invoice as a bad debt and closes the customer account, with the balance removed from the receivables ledger."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9985,10 +9985,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary insight does Days Sales Outstanding (DSO) provide to corporate treasury executives in B2B commerce?",
           "options": [
-            "The amount of physical shelf space occupied by finished inventory in a distribution center",
-            "The number of days required for warehouse robots to pick and pack an order",
-            "The percentage discount applied to retail consumer clearance items",
-            "The average duration in calendar days required to collect cash payments on credit sales, measuring working capital liquidity velocity"
+            "The average number of days stock stays in the warehouse before being sold, measuring how quickly inventory is turned over.",
+            "The average number of days the company takes to pay its suppliers, measuring how much supplier credit it uses.",
+            "The average number of days between a customer's order and its delivery, measuring the speed of fulfillment.",
+            "The average number of calendar days needed to collect cash on credit sales, measuring how fast working capital is released."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10045,10 +10045,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise B2B composable commerce engines enforce strict precedence rules in contract pricing resolution?",
           "options": [
-            "To ensure that account-specific negotiated contract terms deterministically supersede generic volume tiers and public list prices without ambiguity",
-            "To force buyers to pay the highest possible retail list price regardless of signed enterprise agreements",
-            "To prevent customers from viewing product specifications before placing an order",
-            "To randomly select pricing on each checkout attempt to maximize supplier profit variance"
+            "To ensure account-specific negotiated contract terms always override generic volume tiers and public list prices without ambiguity.",
+            "To ensure the lowest price among all applicable prices is applied automatically, whether it comes from a contract or a promotion.",
+            "To ensure public list prices override contract terms during promotions, so that all customers see the same price on sale days.",
+            "To ensure the most recent price change always applies, so a newly updated list price replaces any older contract price."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10076,10 +10076,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do advanced industrial enterprise contracts frequently favor marginal bracket pricing over stepped all-units pricing?",
           "options": [
-            "Because stepped pricing is prohibited by federal criminal statutes in all international commerce",
-            "Because marginal bracket pricing forces customers to pay exclusively with paper traveler checks",
-            "Because stepped pricing cannot be calculated on modern 64-bit microprocessors",
-            "Because marginal bracket pricing eliminates cliff pricing anomalies where purchasing additional units unexpectedly reduces total order invoice cost"
+            "Marginal bracket pricing gives the highest discount to all units once a threshold is passed, which rewards large orders more.",
+            "Marginal bracket pricing is simpler to explain to buyers, since one flat price per unit applies to the entire order volume.",
+            "Marginal bracket pricing is required by procurement law for industrial contracts, so stepped all-units pricing is not permitted.",
+            "Marginal bracket pricing removes cliff anomalies, where buying more units unexpectedly lowers the total invoice cost of the order."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10107,10 +10107,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does ASC 606 / IFRS 15 require suppliers to accrue retrospective volume rebate liabilities quarterly rather than recognizing them at year-end payout?",
           "options": [
-            "Because corporate tax authorities seize all unspent rebate reserves at the end of each calendar month",
-            "Because enterprise buyers must be forced to forfeit their rebate entitlements if they do not submit quarterly invoices",
-            "Because variable consideration must be estimated and recognized proportionally against quarterly sales revenues to satisfy statutory matching principles and prevent artificial revenue distortion",
-            "Because cloud database storage limits prevent annual calculations from executing on single servers"
+            "Rebates are recorded only when paid, since the amount is not known until the year ends, and they are shown as an expense then.",
+            "Rebates are treated as marketing costs and booked in the quarter of payout, so revenue is not reduced by them at all.",
+            "Variable consideration must be estimated and recognized against quarterly sales, matching rebate liabilities to the periods earned.",
+            "Rebates are recognized in full at the first sale of the year, because the maximum amount is known from the contract terms."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10138,10 +10138,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business objective does the CPQ automated margin hurdle gatekeeper serve in enterprise quoting workflows?",
           "options": [
-            "It converts all quotes into consumer retail layaway plans",
-            "It prevents margin erosion and unprofitable sales by enforcing minimum profitability thresholds and establishing authoritative pricing floors before quotes are delivered to buyers",
-            "It automatically cancels quotes if the sales representative does not call the customer within five minutes",
-            "It forces buyers to purchase additional unneeded hardware accessories on every quote"
+            "It speeds up quoting by approving every discount request automatically, so sales reps can respond to buyers within minutes.",
+            "It prevents margin erosion by enforcing minimum profitability thresholds and authoritative pricing floors before quotes reach buyers.",
+            "It sets the highest possible price for each quote, so buyers always see list prices and negotiate manually afterwards.",
+            "It records each quote for tax purposes, so the company can show the authorities the price offered to each customer."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10169,10 +10169,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What critical financial vulnerability does a Pricing Waterfall analysis expose in enterprise B2B commercial operations?",
           "options": [
-            "Margin leakage resulting from compounding off-invoice concessions (such as retrospective rebates, prompt discounts, and freight allowances) that severely erode true net pocket margin despite apparent invoice profitability",
-            "Hardware failures in warehouse automated robotic sorting arms",
-            "Security vulnerabilities in consumer mobile device operating systems",
-            "Software errors in retail credit card terminal firmware"
+            "Margin leakage from compounding off-invoice concessions (rebates, prompt discounts, freight allowances) that erode net pocket margin.",
+            "Cash flow shortages from late payments by customers, which delay collection and raise the days sales outstanding figure.",
+            "Stock write-offs from slow-moving inventory, which reduce gross margin once the unsold items are marked down or scrapped.",
+            "Price inconsistency across sales reps on the invoice, which causes customers to dispute charges and delay their payments."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10227,10 +10227,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Tier 1 synthesis, what architectural mechanism ensures that enterprise corporate buyers receive their legally negotiated volume pricing during a PunchOut session?",
           "options": [
-            "The buyer must manually email paper copies of signed vendor agreements to customer service before adding items to their cart",
-            "The platform forces the buyer to pay full retail price at checkout and wait six months for a mail-in rebate check",
-            "The PunchOut gateway binds the authenticated cXML session directly to the buyer's organization profile, allowing the pricing precedence engine to dynamically resolve contractual volume breaks over public list prices",
-            "The system arbitrarily randomizes unit prices to test the buyer's market awareness"
+            "The gateway shows the public price list to every buyer, and the sales team then applies the contract discount after the order is placed.",
+            "The gateway copies the buyer's last invoice prices into the cart, so repeat orders reuse the earlier price without any further price checks.",
+            "The gateway binds the cXML session to the buyer's organization profile, so the pricing engine resolves contract volume breaks over list prices.",
+            "The gateway lets the buyer type in the agreed discount at checkout, so the amount applied depends on what the buyer reports to it."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10258,10 +10258,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Tier 2 governance engine enforce automated Separation of Duties (SoD) under SOX 404 guidelines?",
           "options": [
-            "To prevent employees from using corporate credit cards during weekend hours",
-            "To ensure independent financial oversight by strictly prohibiting purchase requisition authors from approving their own corporate expenditures",
-            "To eliminate the role of department managers in corporate organizational hierarchies",
-            "To require that every purchase requisition is reviewed by at least twelve distinct employees regardless of order size"
+            "To cut approval time by letting authors approve small orders themselves, with a manager checking a sample of them every month.",
+            "To ensure independent financial oversight by strictly prohibiting requisition authors from approving their own corporate spending.",
+            "To make all purchases visible to the public, because SOX 404 requires corporate spending to be published each quarter.",
+            "To limit the total spend per employee, since SOX 404 caps annual purchases at a fixed amount for every individual."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10289,10 +10289,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise trade credit vault evaluate unbilled in-flight fulfillment orders alongside unpaid commercial invoices?",
           "options": [
-            "Because orders currently being picked, packed, or shipped represent committed commercial liabilities that have not yet generated a final invoice, preventing credit oversubscription",
-            "To force buyers to wire cash payments before warehouse fulfillment can commence",
-            "To arbitrarily cancel customer orders whenever warehouse inventory is low",
-            "To convert all trade receivables into unsecured consumer retail credit"
+            "Orders being picked, packed or shipped are committed liabilities with no final invoice yet, and counting them prevents credit oversubscription.",
+            "Orders being picked, packed or shipped have already been paid, and counting them would double count the buyer's credit use.",
+            "Orders being picked, packed or shipped may still be cancelled, so counting them would reduce credit the buyer could rely on.",
+            "Orders being picked, packed or shipped are recorded in the general ledger only after delivery, so the vault cannot see them."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10320,10 +10320,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the CPQ engine enforce a strict minimum contribution margin hurdle before sales quotes can be delivered to buyers?",
           "options": [
-            "To require sales representatives to obtain verbal approval from every company shareholder",
-            "To force all sales quotes to be priced at exactly 100% markup regardless of market conditions",
-            "To convert all custom quotes into non-binding retail wishlist suggestions",
-            "To prevent aggressive discounting from eroding corporate profitability below acceptable gross margin thresholds and calculate authoritative floor unit prices"
+            "To make sure every quote carries the maximum discount allowed, so buyers are always offered the lowest price possible.",
+            "To limit the number of quotes a sales rep may send each day, so that the sales team focuses on higher-value accounts.",
+            "To block quotes to new customers until credit is approved, so that the company avoids any risk of non-payment on them.",
+            "To stop aggressive discounting from pushing profitability below acceptable gross margin and to calculate authoritative floor unit prices."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10351,10 +10351,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What composite score and executive accreditation does the Day 50 Milestone 10 Capstone confer upon successful architectural audit completion?",
           "options": [
-            "A temporary retail customer loyalty pass that expires after forty-eight hours",
-            "A participation certificate with 50 points and a coupon for office stationery supplies",
-            "A perfect composite score of 100/100 points, certifying $14.85M in annual enterprise ROI and conferring Chief B2B Commerce Architect & Enterprise Procurement Authority (CBCA-EPA)",
-            "An entry-level junior procurement trainee badge with zero quantified business value"
+            "A passing 75/100 composite score certifying $3.2M in projected savings and conferring a junior procurement certificate.",
+            "A perfect 100/100 composite score with no financial return required, conferring only a participation badge for the course.",
+            "A perfect 100/100 composite score certifying $14.85M in annual enterprise ROI and conferring the CBCA-EPA credential.",
+            "A composite score of 90/100 certifying $14.85M in annual revenue growth, conferring an advanced sales leadership award."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10408,10 +10408,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does integrating dominant Local Payment Methods (LPMs like iDEAL in the Netherlands or Pix in Brazil) dramatically improve international e-commerce conversion compared to offering only international credit cards?",
           "options": [
-            "Because local payment methods automatically translate the merchant's physical paper catalog into braille.",
-            "Because consumers in many international markets do not use international credit cards and strongly prefer domestic account-to-account payment rails that offer familiar security, lower friction, and zero currency conversion fees.",
-            "Because local payment methods allow consumers to receive merchandise without ever making a financial payment.",
-            "Because credit card schemes legally prohibit cross-border transactions over fifty dollars."
+            "Consumers in those markets trust international cards less and so need a stronger fraud check, which local rails always provide for free.",
+            "Consumers in many markets rarely use international cards and prefer domestic account-to-account rails with familiar security, no conversion fees.",
+            "Consumers in those markets are required by law to pay by local methods, so international cards are blocked for online purchases.",
+            "Consumers in those markets get better exchange rates through local rails, but they pay higher merchant fees than with cards."
           ],
           "answer": 1,
           "why": "In many global markets, credit cards represent a minority payment method; offering dominant local account-to-account rails (like Pix or iDEAL) aligns with consumer payment habits and eliminates bank conversion fees, dramatically reducing cart abandonment."
@@ -10435,10 +10435,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic purpose of incorporating a dynamic volatility buffer (e.g., 1.5% to 2.0%) into cross-border e-commerce multi-currency pricing engines?",
           "options": [
-            "To artificially inflate prices so that international customers pay higher import duties to foreign customs authorities.",
-            "To secretly charge customers hidden recurring monthly subscription fees without disclosure.",
-            "To insulate merchant profit margins against foreign exchange rate depreciation between customer checkout and bank settlement while covering processor conversion fees.",
-            "To compensate the merchant for physical wear and tear on transoceanic cargo containers."
+            "To raise prices above competitors in each market, so customers see a premium brand that stands apart from local sellers.",
+            "To round all converted prices to a neat number, so shoppers see familiar price points that are easy to compare across markets.",
+            "To insulate profit margins against currency depreciation between checkout and bank settlement while covering processor conversion fees.",
+            "To pay import duties on behalf of the customer, so no extra charges arise when the parcel crosses the destination border."
           ],
           "answer": 2,
           "why": "A dynamic FX volatility buffer provides an essential risk cushion that absorbs interbank currency fluctuations between checkout authorization and final bank settlement, safeguarding gross merchant margins."
@@ -10463,10 +10463,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise e-commerce platform utilize rolling forward contracts to manage foreign exchange risk on international sales receivables?",
           "options": [
-            "By forcing foreign customers to pay for goods exclusively using physical gold and silver coins delivered via courier.",
-            "By refusing to process transactions from any country experiencing currency fluctuations greater than zero percent.",
-            "By transferring all corporate financial assets into speculative cryptocurrency derivative tokens.",
-            "By locking in guaranteed exchange rates with banking partners for forecasted future foreign currency receipts, ensuring predictable gross margins regardless of spot market fluctuations."
+            "By converting every foreign payment instantly at the spot rate on the day received, so margins follow the market each day.",
+            "By holding foreign currency balances in an account until the rate rises, so that the company can sell at a better rate later.",
+            "By pricing all products in the home currency only, so that customers abroad bear the cost of currency changes on their own.",
+            "By locking guaranteed exchange rates with banks for forecast foreign currency receipts, keeping gross margins predictable whatever spot does."
           ],
           "answer": 3,
           "why": "Rolling forward contracts allow corporate treasury teams to lock in fixed exchange rates for anticipated foreign currency receivables, providing budget certainty and shielding gross margins from adverse currency movements."
@@ -10491,10 +10491,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is implementing a Guaranteed Rate Quote Lock essential for maximizing cross-border checkout conversion?",
           "options": [
-            "It guarantees that the exact localized price displayed to the consumer on the storefront remains fixed during checkout, preventing unexpected price slippage and currency shifts that cause cart abandonment.",
-            "It prevents international customers from returning physical goods after delivery.",
-            "It allows merchants to charge consumer credit cards before the order is actually submitted.",
-            "It completely bypasses international customs inspections at port-of-entry facilities."
+            "It keeps the localized price shown on the storefront fixed through checkout, preventing price slippage from currency shifts that cause abandonment.",
+            "It rounds the localized price up to a clean number at checkout, so shoppers see a simple total that hides small exchange rate differences.",
+            "It lets the customer choose between the storefront rate and the bank's rate at payment, which gives them control over the final amount.",
+            "It refreshes the exchange rate every few seconds during checkout, so that the displayed price always follows the live market rate."
           ],
           "answer": 0,
           "why": "Guaranteed quote locks freeze the exchange rate and localized price during checkout, ensuring complete price consistency and eliminating the price slippage that causes consumers to abandon purchases."
@@ -10520,10 +10520,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three core performance pillars does an executive Global Checkout Command Tower continuously monitor to guarantee cross-border commercial profitability?",
           "options": [
-            "Warehouse square footage, employee cafeteria meal counts, and office supply replenishment rates.",
-            "International checkout conversion rates, local payment method (LPM) penetration share, and treasury foreign exchange settlement slippage.",
-            "Social media follower counts, press release publication velocity, and corporate billboard placement.",
-            "Server cooling fan speeds, office chair ergonomic ratings, and parking garage occupancy levels."
+            "Domestic warehouse picking accuracy, carrier on-time delivery share and last-mile freight cost per parcel in each market served.",
+            "International checkout conversion rates, local payment method (LPM) penetration share and treasury foreign exchange settlement slippage.",
+            "Paid media return on ad spend, email open rates and organic search ranking share across every country storefront site.",
+            "Supplier invoice accuracy, purchase order cycle time and inventory turnover share across every distribution center network."
           ],
           "answer": 1,
           "why": "An executive global checkout command tower focuses on cross-border conversion yield, local payment method adoption, and treasury FX settlement slippage to optimize international profitability."
@@ -10575,10 +10575,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the international WTO CIF (Cost, Insurance, and Freight) customs valuation standard, how is import Value Added Tax (VAT) mathematically calculated?",
           "options": [
-            "Import VAT is calculated on the cumulative sum of the product price, allocated freight, insurance (CIF value), PLUS the assessed customs duty.",
-            "Import VAT is calculated solely on the merchant's wholesale manufacturing cost, ignoring shipping and duties.",
-            "Import VAT is calculated as a flat five-dollar fee regardless of parcel value or destination country.",
-            "Import VAT is only calculated if the parcel is transported via commercial passenger railways."
+            "Import VAT is charged on the product price, freight and insurance (the CIF value) plus the customs duty assessed.",
+            "Import VAT is charged on the product price alone, before freight, insurance or any customs duty are added to the value.",
+            "Import VAT is charged on the CIF value only, because customs duty is itself exempt from VAT and so is left out of the base.",
+            "Import VAT is charged on the customs duty amount alone, since the product value is already taxed in the exporting country."
           ],
           "answer": 0,
           "why": "Under international customs law, import VAT/GST is assessed on the landed tax base, which equals the CIF value (Cost, Insurance, Freight) plus the customs duty assessed by customs authorities."
@@ -10603,10 +10603,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of an automated HTS classification engine that evaluates Rules of Origin under Free Trade Agreements (such as USMCA or CPTPP)?",
           "options": [
-            "It exempts e-commerce platforms from maintaining corporate financial bank accounts.",
-            "It allows merchants to ship hazardous chemical materials without disclosing parcel contents to airlines.",
-            "It forces foreign customs inspectors to clear parcels within two minutes without inspecting shipping containers.",
-            "It automatically applies preferential zero-percent or reduced tariff rates on qualifying cross-border shipments, substantially lowering landed cost for international buyers."
+            "It removes the need for any customs declaration on qualifying shipments, since free trade agreement goods bypass border checks.",
+            "It raises the declared value of qualifying shipments, so import VAT is higher but the buyer's duty rate is set to zero.",
+            "It converts every shipment to a single flat tariff rate worldwide, which makes landed cost the same in every destination.",
+            "It automatically applies preferential zero or reduced tariff rates to qualifying shipments, lowering landed cost for international buyers."
           ],
           "answer": 3,
           "why": "Automated HTS classification engines identify qualifying origins under Free Trade Agreements (like USMCA), legally dropping customs duty rates to 0.0% and dramatically reducing landed costs."
@@ -10632,10 +10632,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Delivered Duty Paid (DDP) universally considered the gold standard for cross-border e-commerce checkout architecture compared to Delivered at Place (DAP / DDU)?",
           "options": [
-            "DDP requires the customer to travel to the international airport customs facility to physically inspect their package.",
-            "DDP allows merchants to avoid paying any import taxes or tariffs to foreign governments legally.",
-            "DDP collects all duties, taxes, and clearance fees upfront at checkout, enabling pre-cleared electronic customs entry and eliminating the doorstep surprise fees that cause massive parcel refusal rates.",
-            "DDP permits international couriers to deliver parcels via unmanned aerial drone networks exclusively."
+            "DDP lets the buyer pay duties and taxes to the courier at delivery, which keeps the checkout price low and raises conversion.",
+            "DDP makes the carrier responsible for all duties and taxes without charge, so the merchant's landed cost falls to zero.",
+            "DDP collects duties, taxes and clearance fees at checkout, enabling pre-cleared customs entry and removing doorstep fees that cause refusal.",
+            "DDP transfers legal ownership of goods to the buyer at the port of export, so the merchant carries no further responsibility."
           ],
           "answer": 2,
           "why": "DDP collects all duties and taxes upfront during checkout, guaranteeing zero surprise fees at delivery, enabling fast electronic customs clearance, and eliminating costly doorstep parcel rejections."
@@ -10661,10 +10661,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under US Foreign Trade Regulations, what statutory threshold triggers the mandatory requirement to file Electronic Export Information (EEI) through the Automated Export System (AES Direct)?",
           "options": [
-            "Whenever a shipment contains more than two physical cardboard boxes.",
-            "When a single commodity classification (Schedule B / HTS code) within a shipment has a commercial value exceeding $2,500 USD (to destinations other than Canada).",
-            "Only when exporting perishable agricultural food products to Antarctica.",
-            "Whenever the shipment is transported across international waters on a Tuesday."
+            "When the total value of the whole shipment is over $800 USD, whichever commodity classifications it contains, to any destination.",
+            "When a single commodity classification (Schedule B / HTS code) in a shipment is worth over $2,500 USD, to destinations other than Canada.",
+            "When any single commodity classification in a shipment is worth over $10,000 USD, for destinations other than Canada.",
+            "When the shipment weighs more than 70 pounds, whatever the value of the commodity classifications, to any destination."
           ],
           "answer": 1,
           "why": "US Foreign Trade Regulations legally mandate an automated EEI filing via AES Direct for any shipment where a single commodity classification value exceeds $2,500 (excluding non-licensable goods to Canada)."
@@ -10689,10 +10689,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is automated Denied Party Screening (DPS) against watchlists such as OFAC SDN and BIS Entity Lists legally mandatory for cross-border e-commerce platforms?",
           "options": [
-            "To strictly comply with international trade sanctions and national security laws, preventing unlawful commercial transactions with sanctioned individuals, terrorist organizations, and embargoed foreign entities.",
-            "To prevent competitors from purchasing products for commercial benchmarking.",
-            "To verify whether customers have paid their municipal water utility bills.",
-            "To determine which customers are eligible for free promotional holiday greeting cards."
+            "To comply with trade sanctions and security laws, preventing dealings with sanctioned persons, terrorist groups and embargoed entities.",
+            "To verify a customer's credit history before approving payment, preventing unpaid orders from buyers with poor repayment records.",
+            "To detect stolen card numbers at checkout, preventing chargebacks from buyers who use payment cards without permission.",
+            "To confirm a buyer's age and identity for restricted items, preventing sales of regulated goods to buyers who are minors."
           ],
           "answer": 0,
           "why": "Denied Party Screening is a strict legal requirement under OFAC, BIS, and international trade laws to prevent transactions with sanctioned persons, criminal syndicates, and embargoed foreign entities."
@@ -10743,10 +10743,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational and financial advantage of qualifying cross-border e-commerce shipments under US Section 321 de minimis regulations?",
           "options": [
-            "Section 321 permits merchants to transport physical parcels across international borders without paying for commercial airline freight.",
-            "Section 321 legally exempts merchants from honoring consumer product warranties.",
-            "Section 321 allows merchants to deliver packages directly into US military installations without security screening.",
-            "Shipments with a declared value of $800 or less enter the United States completely free of all customs duties and taxes, clearing customs rapidly without formal commercial entry requirements."
+            "Shipments valued at $800 or less enter the US free of duties but still pay import taxes, and need a formal commercial entry.",
+            "Shipments valued at $2,500 or less enter the US duty-free, but only when sent by the merchant's own licensed customs broker.",
+            "Shipments valued at $800 or less pay a flat 5% duty rate in place of the tariff schedule, clearing with a formal entry.",
+            "Shipments valued at $800 or less enter the US free of duties and taxes, clearing quickly without formal commercial entry."
           ],
           "answer": 3,
           "why": "US Section 321 allows consignments valued at $800 or less to enter the US entirely duty-free and tax-free with streamlined informal customs entry, eliminating duties and accelerating clearance."
@@ -10770,10 +10770,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the phenomenon of 'Duty Inversion' in Foreign Trade Zone (FTZ) manufacturing, and how does it benefit cross-border e-commerce operators?",
           "options": [
-            "When raw components carry higher tariff rates than the assembled finished good, allowing the merchant inside the FTZ to pay duty on the lower finished good rate upon domestic entry.",
-            "When customs authorities pay the merchant a cash subsidy for every container of imported goods stored in a private facility.",
-            "When foreign exchange rates invert, making foreign currencies permanently worthless.",
-            "When international couriers deliver parcels in reverse alphabetical order by recipient surname."
+            "Raw components carry higher tariffs than the finished good, so the FTZ merchant can pay the lower finished-good duty on domestic entry.",
+            "Finished goods carry higher tariffs than raw components, so the FTZ merchant imports parts duty-free and pays no duty at all.",
+            "Duties are charged twice on goods that pass through an FTZ, so merchants must pay both the component and finished-good rates.",
+            "Duties paid on components are refunded in full when the finished good leaves the FTZ, whatever the destination of the sale."
           ],
           "answer": 0,
           "why": "Duty inversion occurs when finished goods carry lower duty rates than raw parts; operating within an FTZ allows merchants to legally elect to pay the lower finished good duty rate when items enter domestic commerce."
@@ -10799,10 +10799,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Commercial Direct Air Injection over traditional Universal Postal Union (UPU) international shipping?",
           "options": [
-            "Direct injection requires zero packaging materials and ships loose products in bulk containers.",
-            "Direct injection bypasses slow postal exchanges by flying consolidated freight directly to destination airport cross-docks, executing electronic pre-clearance and injecting into domestic couriers for 4-to-6-day delivery.",
-            "Direct injection allows commercial cargo planes to land on public municipal highways.",
-            "Direct injection completely eliminates the need for commercial aircraft pilots."
+            "Direct injection sends each parcel through the national postal systems of both countries, with delivery taking about three weeks on average.",
+            "Direct injection flies consolidated freight to destination airport cross-docks, pre-clears electronically and injects into domestic couriers in 4-6 days.",
+            "Direct injection ships consolidated freight by sea to the destination port, then uses the postal service for final delivery to the buyer.",
+            "Direct injection holds parcels at the origin until a full container forms, which lowers the cost per parcel but delays delivery for weeks."
           ],
           "answer": 1,
           "why": "Direct injection consolidates parcels for charter air freight, pre-clears customs electronically while airborne, and injects directly into domestic last-mile courier networks, delivering dramatic speed and tracking improvements over postal mail."
@@ -10828,10 +10828,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In cross-border supply chain architecture, what is the strategic operational logic behind a Hybrid Dynamic Sourcing model?",
           "options": [
-            "Shipping all products exclusively via wooden sailing ships to completely eliminate carbon fuel emissions.",
-            "Refusing to fulfill orders for any customer who does not live within walking distance of the central warehouse.",
-            "Forward-deploying high-velocity top-selling SKUs into regional hubs for cheap, fast 2-day domestic delivery, while holding long-tail slow-moving SKUs centrally for direct air injection to avoid inventory fragmentation.",
-            "Storing one hundred percent of global inventory inside commercial passenger aircraft while in flight."
+            "Holding every SKU in one central warehouse and shipping all orders by air express, to avoid any inventory fragmentation across hubs.",
+            "Deploying every SKU to every regional hub, so that all orders ship in two days from the hub closest to the buyer's address.",
+            "Forward-deploying top SKUs into regional hubs for fast 2-day delivery, while holding slow long-tail SKUs centrally for direct air injection.",
+            "Deploying only the slow long-tail SKUs to regional hubs, while the top-selling SKUs are shipped by air from the central site."
           ],
           "answer": 2,
           "why": "Hybrid dynamic sourcing leverages forward regional hubs for high-turnover SKUs to maximize delivery speed and minimize freight costs, while centralizing long-tail inventory to optimize working capital and avoid dead stock."
@@ -10858,10 +10858,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three core performance pillars does an executive Global Logistics Command Tower continuously monitor to guarantee cross-border distribution efficiency?",
           "options": [
-            "The volume of paper receipts printed in retail storefront cash registers.",
-            "The number of corporate executive parking passes issued at regional headquarters.",
-            "The color scheme of delivery driver uniforms in domestic distribution centers.",
-            "De minimis utilization yields (e.g., Section 321 / IOSS compliance), customs clearance transit velocity across airport gateways, and realized duty savings from bonded warehousing."
+            "Domestic last-mile delivery speed, parcel damage rates and customer return rates across each regional fulfillment network in use.",
+            "Marketplace seller ratings, advertising return on spend and customer review scores across each international storefront site.",
+            "Supplier on-time delivery, factory defect rates and raw material cost per unit across each overseas manufacturing location.",
+            "De minimis utilization (Section 321 / IOSS), customs clearance velocity across airport gateways and duty savings from bonded warehousing."
           ],
           "answer": 3,
           "why": "A global logistics command tower focuses on de minimis exemption utilization, customs clearance velocity, and realized tariff savings to maximize delivery speed and operating profitability."
@@ -10914,10 +10914,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the European Union Consumer Rights Directive (Directive 2011/83/EU), what is the statutory right of withdrawal rule for online purchases?",
           "options": [
-            "Consumers may only return defective merchandise if they file a formal petition with the European Court of Justice",
-            "Returns are only permitted if the consumer agrees to forfeit forty percent of the purchase price as a restocking penalty",
-            "Consumers possess an unconditional statutory right to cancel distance contracts within fourteen calendar days of physical delivery, excluding sealed hygiene items and custom bespoke products",
-            "Merchants are legally permitted to enforce zero-return policies on all consumer purchases regardless of product category"
+            "Consumers have a conditional right to cancel within thirty calendar days of delivery, only where the goods are faulty or not as described.",
+            "Consumers have an unconditional right to cancel within fourteen working days of ordering, excluding only digital goods and food.",
+            "Consumers have an unconditional right to cancel distance contracts within fourteen calendar days of delivery, except sealed hygiene and custom goods.",
+            "Consumers have a right to cancel within seven calendar days of delivery, provided the goods are returned unused in the original box."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10944,10 +10944,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What legal and financial mechanism allows cross-border e-commerce merchants to recover import duties paid on merchandise that is subsequently returned and re-exported?",
           "options": [
-            "Automatic cancellations of foreign tax filings without customs documentation",
-            "Customs Duty Drawback (e.g. under 19 U.S.C. Section 1313 or UCC Article 116), which authorizes a statutory refund of up to 99% of customs duties upon verified physical re-exportation",
-            "Deducting retail prices from international customs officers' payroll accounts",
-            "Commercial chargebacks filed against international freight carriers through payment networks"
+            "A de minimis exemption on returned parcels, which waives all duties on merchandise below $800 when it re-enters the origin country.",
+            "Customs duty drawback (e.g. 19 U.S.C. Section 1313), which authorizes a refund of up to 99% of duties after verified re-exportation.",
+            "A tax credit claimed on the merchant's annual return, which offsets 50% of all duties paid on goods that were returned by customers.",
+            "A bonded warehouse election, which suspends duties on all imports until the goods are sold, with no refund needed after returns."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10974,10 +10974,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must global e-commerce platforms incorporate Standard Contractual Clauses (SCCs) when processing European customer data on international servers?",
           "options": [
-            "To provide lawful cross-border data transfer safeguards under GDPR Chapter V following the Schrems II ruling, ensuring personal data transferred outside the EEA maintains adequate protection",
-            "To grant retail banks permission to convert foreign currency transactions at black market exchange rates",
-            "To allow marketing teams to sell consumer browsing histories without obtaining user consent",
-            "To exempt the commerce platform from paying corporate income taxes in European jurisdictions"
+            "To provide lawful cross-border transfer safeguards under GDPR Chapter V after Schrems II, keeping EEA personal data adequately protected abroad.",
+            "To obtain customer consent for marketing emails under the ePrivacy rules, which allows the platform to send offers to EEA customers.",
+            "To meet payment card security standards, which require contract terms for any server that stores EEA customers' payment details.",
+            "To limit the data stored on international servers to 30 days, which GDPR requires for any personal data held outside the EEA."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11004,10 +11004,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When rendering Arabic and Hebrew storefront interfaces, what typographical problem does the bidirectional isolate (<bdi>) tag resolve?",
           "options": [
-            "It forces all text strings to translate automatically into classical Latin",
-            "It restricts website visitors from viewing product prices unless they sign a physical contract",
-            "It compresses image files to increase page load speeds in mobile browsers",
-            "It isolates embedded Latin text or numerical values, preventing mixed bidirectional content from corrupting the surrounding Right-to-Left (RTL) reading flow and jumping punctuation marks"
+            "It converts Latin text and numbers to Arabic or Hebrew characters, so the whole interface reads right to left with one script.",
+            "It mirrors the page layout for right-to-left languages, flipping the navigation, images and icons across the vertical axis.",
+            "It sets the font for Arabic and Hebrew scripts, loading the right glyphs so that characters are shown without missing symbols.",
+            "It isolates embedded Latin text or numbers, stopping mixed bidirectional content from corrupting the RTL flow and shifting punctuation."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11036,10 +11036,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational advantage does an enterprise Global Governance Command Tower deliver to multinational e-commerce operators?",
           "options": [
-            "It automatically deletes negative customer reviews from external social media networks",
-            "It replaces human software engineers with non-functional placeholder scripts",
-            "It unifies real-time tracking across international privacy compliance, duty drawback tax recovery, and localized customer satisfaction into a centralized audit cockpit",
-            "It prevents international customers from returning defective merchandise by disabling email communication"
+            "It unifies tracking of paid media returns, email engagement and social reach in one cockpit for the marketing leadership team.",
+            "It unifies tracking of picking accuracy, carrier performance and delivery costs in one cockpit for the logistics management team.",
+            "It unifies tracking of international privacy compliance, duty drawback recovery and localized customer satisfaction in one audit cockpit.",
+            "It unifies tracking of supplier prices, purchase orders and invoice matching in one cockpit for the procurement leadership team."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11094,10 +11094,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Tier 1 synthesis, what role do volatility buffers and rolling forward contracts play in enterprise cross-border commerce?",
           "options": [
-            "They force international customers to open US bank accounts before completing checkout",
-            "Volatility buffers absorb micro-fluctuations in daily FX rates during storefront browsing, while forward contracts lock in guaranteed conversion rates to eliminate currency depreciation risk on foreign revenues",
-            "They allow marketing teams to double product prices when customers connect from European IP addresses",
-            "They eliminate the need to collect sales taxes or report income to sovereign tax authorities"
+            "Volatility buffers lock in rates for the next year; forward contracts absorb small daily changes in the storefront price shown to shoppers.",
+            "Volatility buffers absorb daily FX micro-fluctuations while shoppers browse; forward contracts lock in rates to remove depreciation risk on foreign revenue.",
+            "Volatility buffers raise prices permanently once a currency weakens; forward contracts pay the customer a refund if exchange rates move.",
+            "Volatility buffers convert all foreign revenue at once on receipt; forward contracts hold the foreign balance until the rate is better."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11126,10 +11126,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Delivered Duty Paid (DDP) architecture essential for enterprise cross-border e-commerce platforms?",
           "options": [
-            "DDP legally exempts multinational corporations from having to pay import duties in foreign countries",
-            "DDP requires customers to physically pick up their parcels at airport customs bonded warehouses",
-            "DDP calculates and collects all duties, taxes, and customs clearance fees upfront at checkout, guaranteeing zero unexpected surcharges at the customer's door and dramatically reducing package abandonment",
-            "DDP converts physical consumer goods into non-fungible tokens on a decentralized blockchain"
+            "DDP shows an estimate of duties at checkout but collects the exact amount at the door, so surprise charges are reduced but not removed.",
+            "DDP passes all duties to the carrier, which pays them for free as part of its service, so the merchant has no landed cost.",
+            "DDP calculates and collects all duties, taxes and clearance fees at checkout, ensuring no surprise door charges and fewer abandoned parcels.",
+            "DDP lets the customer clear the parcel through customs personally, so the merchant is not responsible for taxes in the destination."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11158,10 +11158,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under United States customs regulations (19 U.S.C. Section 1321), what commercial advantage does Section 321 provide for qualifying e-commerce shipments?",
           "options": [
-            "It requires all international shipments to be inspected by physical canine units at maritime ports",
-            "It exempts foreign manufacturers from adhering to Consumer Product Safety Commission safety standards",
-            "It mandates that all imported goods be held in customs quarantine for thirty calendar days",
-            "It permits shipments valued at $800 or less imported by one individual on one day to enter the United States free of duty and tax without formal entry documentation"
+            "It permits shipments valued at $800 or less imported by one company in a year to enter the US duty-free but taxed, with formal entry.",
+            "It permits shipments valued at $2,500 or less imported by one person on one day to enter duty-free if a broker files the entry.",
+            "It permits shipments of any value from free trade partners to enter the US free of duty and tax without formal entry documents.",
+            "It permits shipments valued at $800 or less imported by one person on one day to enter the US free of duty and tax without formal entry."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11190,10 +11190,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does automated customs duty drawback recovery mitigate financial losses on cross-border e-commerce returns?",
           "options": [
-            "It legally reclaims up to 99% of import customs duties and 100% of import VAT paid upon entry when merchandise is verified as re-exported under statutory forms like CBP Form 7551",
-            "It forces foreign customers to pay double return shipping fees to deter future returns",
-            "It automatically files lawsuits against international customs brokers in small claims court",
-            "It converts returned consumer merchandise into digital store credit without refunding taxes"
+            "It reclaims up to 99% of import customs duties and 100% of import VAT when goods are verified as re-exported (e.g. CBP Form 7551).",
+            "It reclaims 100% of import customs duties and none of the import VAT when goods are returned, once a refund request is filed.",
+            "It reclaims up to 50% of import customs duties and 100% of import VAT when goods are destroyed under customs supervision.",
+            "It reclaims up to 99% of the freight cost of return shipments when goods are re-exported through an approved carrier network."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11221,10 +11221,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What composite score and credential are formally conferred upon successful defense of the Milestone 11 Capstone?",
           "options": [
-            "A temporary retail customer loyalty card that expires after twenty-four hours",
-            "A perfect composite score of 100/100, certifying $18.45M in annual enterprise ROI and conferring the Certified Global Commerce Architect & International Trade Authority (CGCA-ITA) credential",
-            "A warning notice mandating forty hours of remedial spreadsheet training",
-            "A provisional junior customs clerk certificate with zero quantified business impact"
+            "A passing 70/100 composite score certifying $4.5M in projected annual savings and conferring a regional trade certificate.",
+            "A perfect 100/100 composite score certifying $18.45M in annual enterprise ROI and conferring the CGCA-ITA credential.",
+            "A perfect 100/100 composite score with no financial return required, conferring only a completion badge for the course.",
+            "A composite score of 88/100 certifying $18.45M in annual revenue growth and conferring a global sales leadership award."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11277,10 +11277,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core operational advantage does a MACH-compliant Headless Commerce architecture provide over a traditional monolithic commerce suite?",
           "options": [
-            "It cleanly decouples the frontend user interface from backend microservices via stateless APIs, enabling independent scaling, multi-touchpoint deployment, and rapid zero-downtime releases",
-            "It mandates that all frontend and backend code be compiled into a single unified binary file deployed to a single bare-metal server",
-            "It eliminates the need for any caching or CDN edge layers by storing all product data directly inside browser local storage",
-            "It forces all third-party vendors to share a single centralized relational database schema without API boundaries"
+            "It decouples the frontend UI from backend microservices via stateless APIs, enabling independent scaling, many touchpoints and zero-downtime releases.",
+            "It bundles the frontend and backend into one deployable package, so every release is tested together and ships on a single schedule.",
+            "It runs the whole store on one vendor's servers with built-in themes, so scaling is handled by the vendor with no extra work needed.",
+            "It replaces APIs with direct database access from the frontend, so pages load faster and no middle layer is required at all."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11305,10 +11305,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Backend-for-Frontend (BFF) pattern essential in multi-channel headless commerce platforms?",
           "options": [
-            "It encrypts all product descriptions so that competitors cannot scrape catalog prices",
-            "It permanently replaces the database by storing all customer transaction histories directly in edge server RAM",
-            "It forces mobile phones to execute heavy SQL queries directly across the public internet without an API layer",
-            "It provides specialized intermediate services that aggregate and prune backend data into device-optimized payloads, preventing mobile over-fetching and network connection exhaustion"
+            "It provides a single shared API that returns the same full payload to every device, so all clients receive identical backend data.",
+            "It provides a database replica for each frontend, so client queries never reach the production backend microservices directly.",
+            "It provides a firewall at the network edge, which blocks bot traffic before it can reach the frontend or any backend service.",
+            "It provides intermediate services that aggregate and prune backend data into device-optimized payloads, preventing mobile over-fetching."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11333,10 +11333,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Apollo GraphQL Federation, how do autonomous backend microservices extend a shared entity without central schema coupling?",
           "options": [
-            "They merge all microservice source repositories into a single Git monorepo and redeploy the gateway on every single line edit",
-            "They communicate exclusively via raw SQL foreign key triggers written directly into the shared database table",
-            "They use declarative directives such as @key and @external to reference a shared primary key and extend the entity with domain-specific fields independently",
-            "They require each frontend developer to manually write custom JavaScript stitching code inside the browser runtime"
+            "They copy the entity's full schema into each service, so every team edits its own copy and a central team merges the changes.",
+            "They call a central schema registry at runtime, which holds the only definition of the entity and approves each new field.",
+            "They use declarative directives such as @key and @external to reference a shared primary key and extend the entity independently.",
+            "They expose the entity through REST endpoints, so other services read it by URL and cannot add any fields of their own."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11361,10 +11361,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of combining the stale-while-revalidate caching header with CDN Surrogate-Key invalidation?",
           "options": [
-            "It permanently disables all HTTP caching so that every user request hits the core database directly",
-            "It serves cached responses instantly from the edge while refreshing stale data in the background, and enables instant global cache purges when upstream data changes",
-            "It stores user credit card numbers at edge nodes to bypass PCI-DSS compliance regulations",
-            "It guarantees that edge CDN servers will never query origin microservices under any circumstance"
+            "It holds every response until the cache is rebuilt in full, so users always receive fresh data but wait longer for pages.",
+            "It serves cached responses instantly from the edge while refreshing stale data in the background, and allows instant purges on change.",
+            "It serves stale data until the time to live expires, with no way to purge it, so catalog changes appear after the delay.",
+            "It stores responses in the browser only, so each shopper sees fresh data and the CDN never has to be purged at all."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11390,10 +11390,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of metrics definitively proves the success and architectural health of an enterprise composable headless commerce platform?",
           "options": [
-            "An edge cache hit ratio >= 90%, P99 edge latency <= 45ms, significant mobile bandwidth savings via BFF pruning, and 99.9%+ federated subgraph availability",
-            "Zero API endpoints, a single centralized monolithic database, and monthly manual deployment windows",
-            "100% of all requests bypassing CDN caching to directly query the relational database origin",
-            "A monolithic frontend codebase that requires six weeks of testing before any style change can be deployed"
+            "An edge cache hit ratio of 90%+, P99 edge latency of 45ms or less, mobile bandwidth savings from BFF pruning and 99.9%+ subgraph availability.",
+            "An average page weight of 5MB, P50 latency of 2 seconds, desktop-only testing and monthly availability of 95% across subgraphs.",
+            "A cache hit ratio of 40%, P99 latency of 800ms, no bandwidth tracking for mobile clients and manual checks of subgraph health.",
+            "A count of microservices deployed, the number of API endpoints exposed and the monthly count of code releases by each team."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11447,10 +11447,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise programmatic catalog architecture prevent crawl budget exhaustion across millions of faceted filter combinations?",
           "options": [
-            "It assigns a unique random domain name to every single product filter combination",
-            "It forces search engine web crawlers to complete a CAPTCHA verification before viewing product listings",
-            "It blocks Googlebot from accessing the website entirely using a global robots.txt disallow rule",
-            "It establishes a whitelist of high-intent facet combinations for indexing while injecting self-referential canonical tags and noindex directives on deep multi-select filter combinations"
+            "It blocks every filtered URL in robots.txt, so crawlers see only the base category pages and no filter combination is indexed.",
+            "It indexes every facet combination, so that each possible filter gets a page that can rank for its own long-tail query.",
+            "It redirects all filtered pages to the home page, which concentrates link equity but removes every filtered result from search.",
+            "It whitelists high-intent facet combinations for indexing, adding self-referential canonicals and noindex to deep multi-select combinations."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11476,10 +11476,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary advantage of formatting e-commerce structured metadata as JSON-LD rather than legacy inline microdata?",
           "options": [
-            "It decouples structured semantic metadata from visual HTML markup into a clean script block, simplifying maintenance and ensuring unambiguous machine readability for search engines and AI agents",
-            "It automatically translates the entire website into thirty foreign languages without human translation",
-            "It prevents search engine crawlers from reading product prices to keep discounts secret",
-            "It eliminates the need for hosting servers by storing product catalogs directly inside search engine indexes"
+            "It moves structured semantic data out of the visual HTML into a clean script block, easing maintenance and aiding machine readability.",
+            "It makes structured data visible to shoppers on the page, since JSON-LD is displayed as styled text in the product description area.",
+            "It improves page ranking directly, since search engines give JSON-LD a higher weight than microdata in every query they rank.",
+            "It encrypts product data so only trusted crawlers can read it, which stops competitors from scraping prices and descriptions."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11505,10 +11505,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Incremental Static Regeneration (ISR) superior to both pure Client-Side Rendering (CSR) and classic Server-Side Rendering (SSR) for massive e-commerce catalogs?",
           "options": [
-            "It disables server caching entirely so that every single visitor triggers fresh database queries",
-            "It delivers sub-5ms cached static pages from edge CDNs to users and search crawlers while asynchronously rebuilding stale pages in the background without overloading origin databases",
-            "It restricts page browsing exclusively to desktop computers with high-speed internet",
-            "It forces all users to download and execute forty megabytes of raw JavaScript before viewing any text"
+            "It renders every page in the browser after loading a blank shell, which reduces server cost but delays what crawlers can see.",
+            "It serves sub-5ms cached static pages from edge CDNs to users and crawlers while rebuilding stale pages in the background.",
+            "It renders every page on the origin at each request, which keeps data fresh but raises the load on databases at peak times.",
+            "It rebuilds the whole catalog at each deploy and serves static files, which is fast but cannot update prices between releases."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11534,10 +11534,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three user-centric performance metrics constitute Google Core Web Vitals, and at what percentile does Google evaluate real-user data (CrUX)?",
           "options": [
-            "Average session duration, bounce rate, and shopping cart abandonment percentage evaluated at the 50th percentile",
-            "Server CPU temperature, memory usage, and database disk space evaluated at the 99th percentile",
-            "Largest Contentful Paint (LCP < 2.5s), Interaction to Next Paint (INP < 200ms), and Cumulative Layout Shift (CLS < 0.1), evaluated strictly at the 75th percentile (P75)",
-            "Number of daily visitors, total page views, and social media likes evaluated at the 90th percentile"
+            "LCP under 4s, FID under 100ms and TTFB under 0.8s, evaluated at the 95th percentile (P95) of real-user data.",
+            "LCP under 2.5s, INP under 500ms and CLS under 0.25, evaluated at the median (P50) of real-user data.",
+            "LCP under 2.5s, INP under 200ms and CLS under 0.1, evaluated at the 75th percentile (P75) of real-user data.",
+            "FCP under 1.8s, TBT under 200ms and SI under 3.4s, evaluated at the 75th percentile (P75) of lab test runs."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11563,10 +11563,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which combination of metrics definitively confirms that an enterprise marketplace has attained apex SEO and edge rendering maturity?",
           "options": [
-            "A five-second page load time accompanied by severe layout shifting on mobile devices",
-            "Disabling all Schema.org structured data to keep product pricing and reviews hidden from search engines",
-            "Zero indexed URLs in Google search and 100% reliance on paid digital advertising",
-            "Crawl budget efficiency >= 95%, 99%+ rich snippet validity, >= 90% of URLs passing Core Web Vitals, and multi-million dollar verified organic revenue contribution"
+            "Crawl efficiency of 50%, 70% rich snippet validity, 40% of URLs passing Core Web Vitals and organic revenue not yet measured.",
+            "A count of backlinks gained, the number of indexed pages and the average keyword position across all branded search terms.",
+            "A count of pages published per month, the average word count per page and the total number of internal links on the site.",
+            "Crawl efficiency of 95%+, 99%+ rich snippet validity, 90%+ of URLs passing Core Web Vitals and verified multi-million dollar organic revenue."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11620,10 +11620,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural requirement for achieving true unified omnichannel commerce across physical stores and digital web platforms?",
           "options": [
-            "Maintaining separate corporate legal entities with distinct customer databases and independent pricing rules for web and store retail",
-            "Restricting all customer purchases strictly to cash payments at physical cash registers",
-            "A shared real-time transactional core and unified customer identity engine that synchronizes carts, inventory, and promotions across POS hardware and digital touchpoints",
-            "Requiring customers to re-register a new user account every time they enter a different retail store location"
+            "Separate systems for stores and web with nightly file transfers, so each channel updates the other's inventory once per day.",
+            "A single storefront theme used on all web pages and store kiosks, so the visual design is identical in every channel.",
+            "A shared real-time transactional core and unified customer identity engine that syncs carts, inventory and promotions across POS and web.",
+            "A loyalty card program that records store purchases in a spreadsheet, which marketing uploads to the web store each week."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11649,10 +11649,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Available-to-Promise (ATP) formula for a physical retail store differ from that of an automated central warehouse?",
           "options": [
-            "It ignores all pending orders and assumes that store shelves are always 100% full",
-            "It incorporates dynamic safety buffers and damage deductions to account for walk-in shopper traffic, fitting room holds, and retail shrinkage variance",
-            "It only allows inventory to be counted once per calendar year during manual audit inspections",
-            "It multiplies on-hand inventory by two to artificially inflate stock levels on the public website"
+            "It includes supplier lead times and container arrival dates, since stores receive stock from vendors on a weekly cycle.",
+            "It includes dynamic safety buffers and damage deductions for walk-in traffic, fitting room holds and retail shrinkage variance.",
+            "It includes only the units on the shelf and none in the stockroom, since stockroom units cannot be sold until restocked.",
+            "It uses a fixed 50% of on-hand stock for all stores, since store demand is always smaller than that of the central warehouse."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11678,10 +11678,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an enterprise BOPIS fulfillment state machine, what crucial step must occur when an associate completes order picking before notifying the customer?",
           "options": [
-            "The order must be staged in a numbered physical bin or locker and bound to that location metadata in the central database to ensure immediate retrieval upon customer arrival",
-            "The item must be shipped via FedEx back to the central distribution center for re-packaging",
-            "The associate must call the customer on the phone to negotiate product pricing",
-            "The store must cancel the order if the customer does not arrive within fifteen minutes"
+            "The order must be staged in a numbered bin or locker and bound to that location in the central database for retrieval on arrival.",
+            "The order must be sent to the central warehouse for final inspection, and returned to the store only when the customer arrives.",
+            "The order must be left on the sales floor at the checkout counter, with the customer's name written on the bag for collection.",
+            "The order must be paid for in the store at pickup, and the payment is captured only when the customer shows an ID."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11707,10 +11707,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary financial and operational benefit does BORIS (Buy Online, Return In Store) provide over traditional mail-in returns?",
           "options": [
-            "It requires store associates to physically destroy all returned merchandise on site",
-            "It refuses to issue refunds to online shoppers to deter product returns completely",
-            "It charges customers an automatic 50% penalty fee for returning merchandise to a store",
-            "It eliminates last-mile return shipping freight costs and enables rapid re-commerce by restocking inspected merchandise to store shelves for full-price resale in minutes rather than weeks"
+            "It lets the retailer refuse refunds on items bought online, because store returns are accepted only as exchanges for other items.",
+            "It sends all returned items to a central hub by truck, which lowers freight per unit and speeds up inspection a little.",
+            "It removes the need to inspect returned items, because store staff can restock them directly without checking the condition.",
+            "It eliminates return shipping freight and enables re-commerce by restocking inspected goods to store shelves for resale in minutes."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11737,10 +11737,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which combination of metrics validates that an enterprise omnichannel retail fleet has achieved apex operational maturity?",
           "options": [
-            "Closing all physical stores and operating exclusively as a digital dropshipping website",
-            "Maintaining an average BOPIS customer pickup wait time of over three hours at store service desks",
-            "BOPIS pick SLA compliance >= 95%, BORIS re-commerce recovery >= 85%, cross-channel inventory accuracy >= 99%, and multi-million dollar annual enterprise ROI",
-            "Banning all in-store returns of digital e-commerce merchandise"
+            "BOPIS pick SLA compliance of 60%, BORIS recovery of 30%, cross-channel inventory accuracy of 80% and ROI that is yet to be measured.",
+            "Store count growth of 15%, floor space added of 20%, monthly foot traffic per store above target and a rising brand awareness score.",
+            "BOPIS pick SLA compliance of 95%+, BORIS re-commerce recovery of 85%+, cross-channel inventory accuracy of 99%+ and multi-million dollar annual ROI.",
+            "App downloads above target, social media followers up 25%, email subscribers up 30% and a rising loyalty program enrollment rate."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11794,10 +11794,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary root cause of server collapse when an un-throttled monolithic commerce application experiences a massive flash sale surge?",
           "options": [
-            "Search engines indexing product pages too quickly and filling up the hard drive",
-            "Relational database connection pool starvation and severe row-level lock contention caused by thousands of concurrent transactions attempting to update the same inventory rows",
-            "Browser CSS stylesheets requiring too much computational memory to render on screen",
-            "Operating system clock drift causing servers to display the incorrect calendar date"
+            "CPU exhaustion in the frontend servers from rendering static pages, because the CDN cache was disabled during the sale.",
+            "Database connection pool starvation and row-level lock contention from thousands of concurrent transactions updating the same inventory rows.",
+            "Network bandwidth saturation at the carrier hub from the volume of parcel labels requested at the start of the flash sale.",
+            "Disk space exhaustion on the application servers from log files, which grow quickly when many customers browse at once."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11824,10 +11824,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must admission passage tokens generated by an edge virtual waiting room contain cryptographic signatures (e.g., HMAC-SHA256)?",
           "options": [
-            "To encrypt all product descriptions so that search engines cannot crawl catalog data",
-            "To automatically deduct money from the customer's bank account before they see the checkout screen",
-            "To prevent malicious users and automated scalper bots from forging tokens, tampering with expiration timestamps, or bypassing the waiting room queue",
-            "To compress the customer's name so that it takes up less disk space in the database"
+            "To hide the customer's identity from the retailer, so shoppers can wait in the queue without sharing any of their personal data.",
+            "To compress the token so it fits in a URL, since signed tokens are shorter than unsigned ones and so load more quickly.",
+            "To prevent malicious users and scalper bots from forging tokens, altering expiration times or bypassing the waiting room queue.",
+            "To make the token expire exactly after one minute, as signatures set the validity period that the browser clock then enforces."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11854,10 +11854,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an atomic in-memory cache layer (e.g., Redis with Lua scripts) prevent inventory overselling during extreme flash sale concurrency?",
           "options": [
-            "It allows customers to buy negative inventory and manufactures additional units on demand",
-            "It charges double price to the first ten customers to discourage rapid buying",
-            "It delays all order processing until midnight so that warehouse workers can manually count boxes",
-            "It executes atomic decrement operations in a single-threaded event loop, guaranteeing mutual exclusion and sub-millisecond stock checks without relational database locking overhead"
+            "It writes every decrement to disk first and then to memory, so the stock count survives restarts at the cost of speed.",
+            "It lets many clients decrement the same key at once with no ordering, relying on later reconciliation to fix any overselling.",
+            "It splits the stock count across many keys and merges them each hour, so contention is lower but overselling is possible.",
+            "It runs atomic decrements in a single-threaded event loop, ensuring mutual exclusion and sub-millisecond stock checks without locks."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11884,10 +11884,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of an idempotency key in asynchronous distributed order ingestion architectures?",
           "options": [
-            "To ensure that redelivered or duplicate event messages from distributed message brokers do not result in duplicate customer charges or duplicate database order insertions",
-            "To encrypt customer passwords before sending them across internal networks",
-            "To permanently delete customer shopping cart histories after ten minutes of inactivity",
-            "To automatically calculate localized shipping taxes based on postal codes"
+            "To ensure redelivered or duplicate messages from brokers do not cause duplicate customer charges or duplicate order inserts.",
+            "To encrypt the order payload as it moves between services, so duplicate readers cannot see the customer's personal details.",
+            "To order messages by arrival time in the queue, so the consumers process the oldest order first and avoid starvation.",
+            "To limit the rate at which the consumer reads messages, so the database is never overloaded by bursts of new orders."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11914,10 +11914,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of metrics definitively proves that an enterprise e-commerce platform possesses military-grade flash sale concurrency resilience?",
           "options": [
-            "Requiring all customers to wait in a manual telephone queue to place orders",
-            "Zero oversell incidents, sustained handling of >= 50,000 RPS, P99 checkout latency <= 85ms, and 100% platform availability during peak drop surges",
-            "Shutting down the website during peak sales to prevent servers from overheating",
-            "Allowing inventory to drop to negative one thousand units and cancelling customer orders later"
+            "Fewer than 50 oversell incidents, sustained 500 RPS, P99 checkout latency of 3 seconds and 95% platform availability at peak.",
+            "Zero oversell incidents, sustained 50,000+ RPS, P99 checkout latency of 85ms or less and 100% platform availability through peak drops.",
+            "Average waiting room time under 5 minutes, queue abandonment under 10%, peak concurrent shoppers above 1M and revenue above target.",
+            "Sell-out time of the hero product, total units sold in the first minute, sales revenue above target and a rising social mention count."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11971,10 +11971,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary architectural advantage does the composable headless edge mesh provide over legacy monolithic commerce suites?",
           "options": [
-            "It permanently disables all database indexing to save hard drive space",
-            "It enables autonomous domain squads to deploy GraphQL subgraphs independently while edge CDNs absorb 94%+ of catalog traffic at sub-30ms global latency",
-            "It mandates that all frontend and backend code be compiled into a single massive binary file running on one server",
-            "It requires all customer orders to be manually printed on thermal paper before processing"
+            "It lets a central team deploy one shared codebase for every domain, while origin servers handle all catalog traffic directly.",
+            "It lets autonomous domain squads deploy GraphQL subgraphs independently while edge CDNs absorb 94%+ of catalog traffic at sub-30ms latency.",
+            "It lets each squad run its own full copy of the storefront, while a central database keeps all the domains' data in step.",
+            "It lets the vendor manage all deployments for the platform, while a shared theme system keeps the storefront design aligned."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12000,10 +12000,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Tier 2 architecture reconcile the need for sub-second page loads with real-time pricing accuracy across millions of catalog pages?",
           "options": [
-            "By disabling search engine indexing completely to reduce server traffic",
-            "By only displaying products that have been out of stock for over one year",
-            "Through Incremental Static Regeneration (ISR) and Schema.org JSON-LD structured data, serving cached pages in under 5ms while regenerating stale prices asynchronously in the background",
-            "By forcing users to download thirty megabytes of JavaScript before displaying any product text"
+            "Through client-side rendering and lazy-loaded scripts, serving a blank shell first and fetching prices after the page loads.",
+            "Through full server-side rendering on every request, serving fresh prices from the origin database with no caching at all.",
+            "Through ISR and Schema.org JSON-LD data, serving cached pages in under 5ms while regenerating stale prices asynchronously in the background.",
+            "Through nightly static builds of the catalog, serving fast pages that update their prices once a day after the rebuild."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12029,10 +12029,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Tier 3 omnichannel architecture, how do physical retail stores operate as distributed fulfillment micro-hubs without risking walk-in stockouts?",
           "options": [
-            "By refusing to sell any products to walk-in customers",
-            "By assuming that store inventory is infinite and manufacturing new goods on site",
-            "By locking physical store doors whenever an online order is received",
-            "By dynamically calculating Available-to-Promise (ATP) inventory with dynamic safety stock buffers that account for store sales velocity and shrinkage variance"
+            "By assigning a fixed 50% of each store's stock to online orders, regardless of how quickly items sell through in the store.",
+            "By letting online orders take any stock in the store, with walk-in customers waiting for a replenishment shipment.",
+            "By counting only stockroom units as available online, so floor stock is reserved for walk-in customers at all times.",
+            "By computing Available-to-Promise inventory with dynamic safety buffers that reflect store sales velocity and shrinkage variance."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12059,10 +12059,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What architectural combination guarantees the absolute Zero-Oversell Invariant during extreme flash sale traffic surges?",
           "options": [
-            "Edge virtual waiting room token-bucket admission paired with single-threaded atomic Redis Lua pre-reservations and asynchronous idempotent Kafka order ingestion",
-            "Directly routing 85,000 requests per second to a single un-indexed PostgreSQL database table",
-            "Allowing customers to purchase out-of-stock items and cancelling their orders three weeks later",
-            "Shutting down the checkout servers as soon as traffic exceeds 100 requests per second"
+            "Edge virtual waiting room token-bucket admission with atomic Redis Lua pre-reservations and asynchronous idempotent Kafka ingestion.",
+            "A larger relational database cluster with row locking on inventory tables and synchronous order writes at checkout.",
+            "A CDN cache of the checkout page with eventual consistency on stock counts and manual reconciliation after the sale ends.",
+            "A fixed limit on orders per customer with hourly stock syncs between systems and email apologies for any oversold items."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12089,10 +12089,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What prestigious credential and verified financial return are formally conferred upon successful defense of the Milestone 12 Grand Master Capstone?",
           "options": [
-            "A warning notice mandating forty hours of remedial spreadsheet training",
-            "The Chief Commerce Officer & Enterprise Architect (CCO-EA) credential, a perfect 100/100 composite score, and $28.5M in certified annual enterprise ROI, graduating Course 07 and all 7 Branch B courses",
-            "A provisional junior web developer certificate with zero quantified business impact",
-            "A temporary retail customer loyalty card that expires after twenty-four hours"
+            "The CCO-EA credential, a passing 75/100 composite score and $5.2M in projected annual ROI, completing Course 07 only.",
+            "The CCO-EA credential, a perfect 100/100 score and $28.5M in certified annual ROI, completing Course 07 and all 7 Branch B courses.",
+            "A course completion certificate, a perfect 100/100 composite score and no certified financial return, for Course 07 and Branch B.",
+            "The CCO-EA credential, a perfect 100/100 composite score and $28.5M in annual revenue growth, completing the whole B.Com program."
           ],
           "answer": 1,
           "answerIndex": 1,

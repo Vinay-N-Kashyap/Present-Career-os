@@ -28,10 +28,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the operational definition and role of Takt Time in Lean manufacturing?",
           "options": [
-            "The speed at which delivery trucks travel on highways",
-            "The total number of units a plant can store in its warehouse",
+            "The maximum output rate the line can achieve when all machines run without stops (Available Time / Machine Cycle Time)",
+            "The elapsed time a single unit needs to travel from raw material to shipment (Total Work-in-Process / Throughput)",
             "The required pace of production needed to match the exact rate of customer demand (Available Time / Customer Demand)",
-            "The total elapsed time a single unit spends in the system from start to finish."
+            "The minimum production pace needed to keep the bottleneck fully busy (Available Time / Bottleneck Processing Time)"
           ],
           "answer": 2,
           "why": "Takt Time is the cadence of the customer. Synchronizing workstation cycle times to takt time eliminates both overproduction inventory and stockouts."
@@ -77,9 +77,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "According to Little's Law (WIP = Throughput * Cycle Time), how can a plant manager reduce customer lead time without reducing factory production throughput?",
           "options": [
             "Systematically reduce Work-in-Progress (WIP) inventory on the factory floor",
-            "Double the price of the finished goods",
-            "Turn off the factory lights to save electricity",
-            "Increase Work-in-Progress while keeping the same Throughput"
+            "Increase the batch size at each workstation so that setups occur less often",
+            "Raise the Throughput target of the bottleneck by adding overtime hours",
+            "Add a safety buffer of finished goods inventory at the end of the line"
           ],
           "answer": 0,
           "why": "Since Cycle Time = WIP / Throughput, holding Throughput constant means Cycle Time is directly proportional to WIP. Draining excess inventory on the shop floor directly accelerates customer turnaround time."
@@ -100,9 +100,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary root cause of the Bullwhip Effect in multi-echelon supply chains?",
           "options": [
-            "Retailers always order exactly what consumers bought, so no amplification occurs",
-            "Truck drivers driving too fast on highways",
-            "Factories refusing to accept digital payments",
+            "Each tier over-orders because suppliers raise unit prices during peak demand periods, which pushes buyers to place larger orders",
+            "Each tier uses a different currency and lead time, so converting orders between regions creates compounding rounding errors upstream",
+            "Each tier forecasts from actual end-consumer demand, but long transport lead times delay the delivery of components to the plants",
             "Each independent tier forecasts demand based only on the immediate downstream tier's batched orders rather than actual end-consumer consumption data"
           ],
           "answer": 3,
@@ -124,10 +124,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the required threshold for a manufacturing process to be classified as statistically capable in industrial quality engineering?",
           "options": [
-            "Cpk must equal exactly zero",
-            "Cpk must be below 1.0 for the process to be considered capable",
+            "Cpk >= 1.00 (with world-class Six Sigma targets at Cpk >= 1.5 and <= 66,807 DPMO)",
+            "Cpk >= 0.67 (with world-class Six Sigma targets at Cpk >= 1.0 and <= 233 DPMO)",
             "Cpk >= 1.33 (with world-class Six Sigma targets at Cpk >= 2.0 and <= 3.4 DPMO)",
-            "Cpk >= 0.10"
+            "Cpk >= 2.00 (with world-class Six Sigma targets at Cpk >= 3.0 and <= 0.34 DPMO)"
           ],
           "answer": 2,
           "why": "A Cpk of 1.33 ensures that 4 standard deviations fit between the process center and spec limits, guaranteeing less than 64 defects per million parts.",
@@ -195,9 +195,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Goldratt's Theory of Constraints, what is the consequence of optimizing a non-bottleneck workstation to 100% capacity?",
           "options": [
-            "It automatically doubles the factory's finished goods shipping velocity.",
-            "It reduces total product manufacturing lead times to zero.",
-            "It eliminates all raw material purchasing costs.",
+            "It raises total finished output in proportion to the extra capacity used, which pays back the labor and energy cost within the same quarter",
+            "It lowers unit costs for every product through economies of scale, which increases the throughput of the bottleneck over time",
+            "It shortens the setup time on the constraint, because the non-bottleneck station supplies parts earlier and the bottleneck never waits",
             "It creates excessive Work-In-Progress (WIP) inventory that clogs production aisles without increasing total finished output, wasting capital."
           ],
           "answer": 3,
@@ -240,10 +240,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Drum-Buffer-Rope (DBR) manufacturing framework, what is the role of the \"Rope\"?",
           "options": [
-            "It is the feedback communication link that throttles raw material release at the entry of the plant to match the consumption rate of the bottleneck.",
-            "It physically pulls defective manufactured products into the recycling furnace.",
-            "It ties factory workers to their individual workstations during working hours.",
-            "It secures export containers on cargo container ships."
+            "It is the feedback link that throttles raw material release at the plant entry to match the bottleneck's consumption rate.",
+            "It is the schedule that sets the processing pace for all workstations, based on the average capacity of the plant",
+            "It is the protective inventory placed in front of the bottleneck so that it never stops because of upstream disruption",
+            "It is the shipping buffer at the end of the line that protects customer due dates from late completion of orders"
           ],
           "answer": 0,
           "why": "The Rope prevents excess WIP by ensuring new raw material is allowed onto the plant floor only when the constraint has completed work, pulling material through the line.",
@@ -331,10 +331,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Lean manufacturing systems, what happens to factory lead time when management reduces the number of circulating Kanban cards?",
           "options": [
-            "Raw material suppliers are legally required to discount prices by 50%.",
-            "Production immediately halts forever across all global factories.",
+            "Total Work-in-Progress (WIP) increases, which according to Little's Law (CT = WIP / Throughput) lengthens production lead times",
+            "Total Work-in-Progress (WIP) decreases, but Little's Law (CT = WIP * Throughput) shows lead times grow as throughput rises",
             "Total Work-in-Progress (WIP) decreases, which according to Little's Law (CT = WIP / Throughput) directly shortens production lead times.",
-            "Product defect rates increase by exactly 500%."
+            "Total throughput increases, which according to Little's Law (CT = Throughput / WIP) directly shortens production lead times"
           ],
           "answer": 2,
           "why": "Fewer Kanban cards lowers maximum WIP; Little's Law dictates that reducing inventory while holding throughput constant accelerates overall cycle time.",
@@ -376,10 +376,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is promising customer delivery commitments based on average lead times considered a major operational error?",
           "options": [
-            "Because standard deviations always equal zero in manufacturing environments.",
-            "Because averages are illegal to compute under industrial labor regulations.",
-            "Because customer orders never take longer than the fastest historical run.",
-            "Because process variability causes approximately 50% of orders to exceed the average time; Monte Carlo percentiles (P85 or P95) are required for reliable SLA commitments."
+            "Because averages hide seasonal peaks; a 99% fixed safety margin on top of the mean time is required for reliable SLA commitments",
+            "Because average lead time includes only value-added time; adding the queue time from the Lean value stream is needed for SLA commitments",
+            "Because process variability makes about 80% of orders exceed the average time; the median is required for reliable SLA commitments",
+            "Because variability pushes about 50% of orders past the average time; Monte Carlo percentiles (P85 or P95) are needed for reliable SLA commitments."
           ],
           "answer": 3,
           "why": "Due to statistical variance across dependent production stages, the average lead time only offers ~50% confidence of on-time delivery; robust operations require P85 or P95 buffers.",
@@ -446,10 +446,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why can an industrial manufacturing process possess an outstanding Cp of 2.0 while simultaneously producing an unacceptable rate of defective parts?",
           "options": [
-            "Because Cp only measures the spread of the process relative to tolerance width and is completely blind to whether the process mean has shifted towards one of the specification limits.",
-            "Because Cp is only valid for discrete categorical data and cannot be applied to continuous measurements.",
-            "Because Six Sigma prohibits calculating standard deviations when sample sizes exceed 100 units.",
-            "Because Cp automatically assumes that every defect is caught by incoming supplier inspections."
+            "Because Cp measures only spread relative to tolerance width and is blind to whether the process mean has shifted toward a specification limit.",
+            "Because Cp measures only the average distance from the process mean to the nearest limit and ignores the spread of individual measurements",
+            "Because Cp is calculated from sample ranges of fewer than five parts, which makes it overstate capability in short production runs",
+            "Because Cp includes both within-subgroup and between-subgroup variation, so it counts the defects that occur between shifts as capability"
           ],
           "answer": 0,
           "why": "Cp solely measures tolerance width divided by 6-sigma; if the process mean drifts significantly towards the USL or LSL, Cpk will collapse and defects will surge despite an outstanding Cp.",
@@ -490,10 +490,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical operational distinction between Specification Limits and Control Limits?",
           "options": [
-            "Specification limits are calculated with Shewhart constants, while control limits are defined by marketing managers.",
-            "Specification limits must always be narrower than control limits under ISO 9001 regulations.",
-            "There is no distinction; both terms describe the upper and lower thresholds of customer warranty claims.",
-            "Specification limits represent customer or regulatory tolerance expectations, whereas control limits represent the 3-sigma natural statistical capability of the actual process."
+            "Specification limits are set by the process engineer from historical data, whereas control limits are set by the customer based on tolerance needs.",
+            "Specification limits show where a process becomes unstable, whereas control limits show the largest deviation the customer will accept.",
+            "Specification limits are calculated as the process mean plus or minus 3 sigma, whereas control limits are the design tolerances on the drawing.",
+            "Specification limits are customer or regulatory tolerances, whereas control limits are the 3-sigma natural capability of the actual process."
           ],
           "answer": 3,
           "why": "Specification limits define what the customer requires, whereas control limits define what the process is currently delivering in statistical equilibrium.",
@@ -534,10 +534,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational advantage does implementing Nelson Rules provide over relying exclusively on 3-sigma control limit breaches?",
           "options": [
-            "Nelson Rules guarantee that standard deviation drops to zero.",
-            "Nelson Rules allow factories to eliminate inspection labor entirely.",
-            "Nelson Rules identify non-random systematic patterns (such as 6 points trending or 9 points on one side) long before a data point crosses the 3-sigma boundary, enabling early corrective action.",
-            "Nelson Rules convert attribute defect counts into continuous millivolt signals."
+            "Nelson Rules replace 3-sigma limits by tightening them to 2 sigma, so every point outside the narrower band triggers an alarm immediately",
+            "Nelson Rules identify points beyond 3 sigma faster by using larger subgroups, so shifts in the mean are detected in the first sample",
+            "Nelson Rules flag non-random patterns (such as 6 points trending or 9 points on one side) before any point crosses 3 sigma, enabling early action.",
+            "Nelson Rules estimate process capability from patterns in the data, so Cpk can be reported without the need for specification limits"
           ],
           "answer": 2,
           "why": "Nelson Rules detect non-random runs and trends while the process is still technically within 3-sigma bounds, preventing severe out-of-control failures.",
@@ -578,10 +578,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a plant's Gage R&R analysis reveals a %GRR of 38%, what operational action must leadership take?",
           "options": [
-            "Increase production speed by 38% to minimize the time parts spend inside the measuring fixture.",
+            "Accept the equipment for use, because a %GRR under 50% is tolerable when the part tolerance is wide and parts are inspected twice",
             "Halt formal capability studies and upgrade or recalibrate the measurement equipment, because over 30% measurement error masks true part quality.",
-            "Accept the process because 38% falls well within statistical 3-sigma tolerance bands.",
-            "Halve the customer specification limits to compensate for gage error."
+            "Continue capability studies but multiply the observed Cpk by 0.38 to compensate for the measurement error found in the gage",
+            "Increase the sample size to 300 parts, because a larger study will average out the 38% measurement error and restore reliability"
           ],
           "answer": 1,
           "why": "Under AIAG standards, a %GRR exceeding 30% is unacceptable because measurement error consumes too much tolerance, rendering capability metrics and quality decisions invalid.",
@@ -622,10 +622,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the 1-10-100 Rule of quality management, which category of quality expenditure delivers the highest financial return on investment?",
           "options": [
-            "Prevention Costs, because every dollar spent designing defects out of the process avoids an order-of-magnitude increase in downstream inspection and catastrophic failure costs.",
-            "External Failure Costs, because customer warranty claims generate tax write-offs for the accounting department.",
-            "Appraisal Costs, because hiring more inspectors is the most efficient way to achieve Six Sigma.",
-            "Scrap disposal costs, because selling scrapped metal increases secondary revenue."
+            "Prevention Costs, because each dollar spent designing defects out of the process avoids an order-of-magnitude rise in later inspection and failure costs.",
+            "Appraisal Costs, because inspecting every unit before shipment catches defects early and avoids the cost of customer returns and warranty claims.",
+            "Internal Failure Costs, because scrapping and reworking defects in the plant is far cheaper than any amount spent on inspection or prevention.",
+            "External Failure Costs, because paying for warranty claims and returns shows customers the company stands behind its quality and builds loyalty."
           ],
           "answer": 0,
           "why": "The 1-10-100 rule demonstrates that spending $1 on Prevention eliminates $10 in Appraisal testing and $100 in catastrophic customer Failure costs.",
@@ -692,10 +692,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an M/M/1 queuing system operating at 95% utilization experience massive waiting delays even though average capacity exceeds average demand?",
           "options": [
-            "Because Little's Law is mathematically invalid when utilization exceeds 75%.",
+            "Because the server works faster as the queue grows, so wait time rises only linearly in proportion to the utilization percentage",
             "Because stochastic variability causes arrival clusters and service delays to compound non-linearly; queue wait time grows hyperbolically as 1 / (1 - rho).",
-            "Because Markovian queues automatically halt when servers reach 90% utilization.",
-            "Because customer demand always drops to zero when utilization is high."
+            "Because the system at 95% utilization has 5% idle capacity, and wait time grows as the square of the idle capacity left over",
+            "Because arrivals always occur at fixed intervals, so wait time grows in proportion to utilization and is capped at the service time"
           ],
           "answer": 1,
           "why": "In stochastic systems, wait time is governed by 1 / (mu - lambda); as lambda approaches mu, variance causes queues to compound asymptotically towards infinity.",
@@ -736,10 +736,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mathematical reason why a pooled M/M/c queue outperforms c independent M/M/1 queues with identical aggregate capacity?",
           "options": [
-            "Pooled queues violate the laws of probability to speed up human service times.",
-            "Unpooled queues require twice as many physical computers and chairs.",
-            "Pooling eliminates server idle-time imbalance: in an unpooled system, one server can sit idle while others have long lines, whereas in a pooled system no server ever idles while customers wait.",
-            "Because Erlangs only exist in systems with a single consolidated line."
+            "Pooling increases server speed, because a single queue lets customers choose the fastest server, which raises the service rate of each server.",
+            "Pooling reduces arrival variability, because merging queues averages the arrival streams and makes the arrival rate constant over time.",
+            "Pooling removes server idle imbalance: unpooled, one server can idle while others have long lines; pooled, no server idles while customers wait.",
+            "Pooling increases total capacity, because the combined system has more servers than the sum of the independent systems it replaced."
           ],
           "answer": 2,
           "why": "Resource pooling prevents server starvation; by allowing any free server to pull the next waiting customer from a single queue, idle capacity is never wasted while demand exists.",
@@ -780,9 +780,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is an \"Erlang\" in contact center and telecommunications capacity planning?",
           "options": [
-            "A unit measuring the decibel loudness of customer phone lines.",
-            "A legal contract fine imposed whenever calls are dropped.",
-            "The total number of computer terminals installed in an office.",
+            "A unit of service speed equal to one call handled per agent per minute, used to compare productivity across contact center teams",
+            "A dimensionless measure of the average waiting time per customer, expressed as the share of calls that wait over one minute",
+            "A unit of staffing cost equal to one agent-hour, used to calculate the labor budget needed to cover offered call volume",
             "A dimensionless unit of offered traffic intensity representing one full hour of continuous server or line workload."
           ],
           "answer": 3,
@@ -824,10 +824,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Total Cost curve of a service queuing operation exhibit a convex U-shape with a unique global minimum?",
           "options": [
-            "Because server capacity costs increase linearly with headcount, while customer waiting costs decrease exponentially as servers are added; the sum of linear and convex decaying curves creates a unique minimum.",
-            "Because government labor taxes automatically double every time an employee is hired.",
-            "Because waiting costs always reach zero when at least 2 servers are present.",
-            "Because queuing algorithms invert the cost matrix when utilization drops below 50%."
+            "Server capacity costs rise linearly with headcount while customer waiting costs fall with convex decay; their sum has a unique minimum.",
+            "Because server costs rise exponentially with headcount, while customer waiting costs fall linearly as servers are added; their sum has a unique minimum",
+            "Because server costs are fixed regardless of headcount, while customer waiting costs rise as servers are added; their sum has a unique minimum",
+            "Because both server costs and customer waiting costs decay with more servers, so the total reaches its minimum when the staff is at maximum size"
           ],
           "answer": 0,
           "why": "Linear server costs and convex decaying customer waiting costs intersect at a unique optimal tradeoff point that minimizes total economic loss.",
@@ -868,10 +868,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What severe operational failure occurs if an enterprise sizes service staff using daily average arrival rates instead of dynamic interval scheduling?",
           "options": [
-            "The company receives an automatic tax penalty from the government.",
-            "During peak demand hours, arrival rates exceed capacity (lambda > c * mu), causing queues to compound without bound and resulting in severe service breakdowns and customer abandonment.",
-            "Queues become deterministic and wait times drop to zero.",
-            "Average-based staffing causes servers to work twice as fast."
+            "Staff are idle during off-peak hours because average staffing is too high, which raises labor cost per call but leaves service levels unaffected.",
+            "At peak hours, arrivals exceed capacity (lambda > c * mu), so queues grow without bound, causing service breakdowns and customer abandonment.",
+            "Staff turnover rises because daily averages hide the night-shift workload, which lowers morale but has no effect on queues or abandonment.",
+            "Queues form at off-peak hours because average staffing is too low, but they clear within minutes and cause little customer abandonment."
           ],
           "answer": 1,
           "why": "Static average staffing under-provisions peak hours where lambda > c*mu; queues compound rapidly, creating backlogs that take hours to clear.",
@@ -938,10 +938,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In global logistics network design, what is the primary objective of solving the Transportation Linear Program?",
           "options": [
-            "To ensure every factory produces the exact same quantity regardless of market demand.",
-            "To eliminate all sea freight in favor of supersonic air transport.",
-            "To determine optimal shipment quantities between origins and destinations that satisfy all supply and demand constraints while minimizing total landed freight expenditure.",
-            "To randomize supplier purchase orders to obscure procurement patterns from competitors."
+            "To choose the single warehouse location that minimizes distance to all customers, ignoring supply limits and production capacity at each origin",
+            "To maximize the utilization of every plant and warehouse, even when that increases total freight cost across the entire network",
+            "To find shipment quantities between origins and destinations that meet all supply and demand constraints at the lowest total landed freight cost.",
+            "To determine the sequence of stops a truck should follow to visit every customer exactly once with the least travel distance"
           ],
           "answer": 2,
           "why": "The transportation formulation finds the mathematically optimal flow matrix x_ij that fulfills all customer demand while minimizing aggregate shipping and handling costs.",
@@ -982,10 +982,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is continuous Center-of-Gravity (CoG) analysis typically combined with discrete candidate facility evaluation?",
           "options": [
-            "Because CoG math is illegal to use in commercial real estate without municipal licensing.",
-            "Because the continuous centroid mathematical coordinates often fall in locations without industrial infrastructure, roads, or labor supply; candidate evaluation selects the best real-world city by balancing fixed warehouse leases and variable ton-mile freight.",
-            "Because candidate cities must always have zero transportation freight costs.",
-            "Because continuous coordinates only work for airborne drone fulfillment."
+            "Because discrete candidate evaluation is faster to compute, and CoG is used only to set the number of warehouses required for the network",
+            "The continuous centroid often lacks roads or labor supply, so candidate evaluation picks the best real city by balancing leases and freight.",
+            "Because the CoG formula ignores freight rates, so candidate evaluation is needed to convert the coordinates into dollars per ton-mile",
+            "Because the continuous centroid is always near the largest customer, and candidate evaluation corrects the bias toward that single location"
           ],
           "answer": 1,
           "why": "Continuous CoG calculates the theoretical ideal spatial point, but real-world facilities must be chosen from viable candidate cities with favorable lease costs, logistics infrastructure, and labor availability.",
@@ -1026,10 +1026,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the root cause of the Bullwhip Effect in multi-echelon supply chains, and how does CPFR mitigate it?",
           "options": [
-            "The Bullwhip Effect is caused by independent demand forecasting, order batching, and information delay at each echelon; CPFR mitigates it by sharing real-time POS data so upstream factories build to true consumer demand.",
-            "The Bullwhip Effect is caused by truck drivers driving in serpentine patterns; CPFR provides GPS navigation.",
-            "The Bullwhip Effect is caused by excess factory automation; CPFR replaces robots with manual assembly workers.",
-            "The Bullwhip Effect only occurs in financial bond markets, not physical supply chains."
+            "Independent forecasting, batching, and information delays at each echelon cause it; CPFR shares real-time POS data so factories build to true demand.",
+            "It is caused by labor shortages at each echelon, and CPFR mitigates it by sharing staffing plans so upstream plants hire before demand peaks",
+            "It is caused by volatile commodity prices at each echelon, and CPFR mitigates it by sharing fixed-price contracts so buyers stop hedging orders",
+            "It is caused by excess safety stock at each echelon, and CPFR mitigates it by sharing inventory levels so warehouses cancel redundant orders"
           ],
           "answer": 0,
           "why": "Independent forecasting with lead time delays amplifies variance upstream; real-time Point-of-Sale data sharing under CPFR aligns all echelons with actual consumer consumption.",
@@ -1070,9 +1070,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Square Root Law of Inventory, why does consolidating multiple regional warehouses into a single master hub reduce total safety stock?",
           "options": [
-            "Because warehouse rent drops to zero when square footage exceeds 100,000 square feet.",
-            "Because suppliers offer 50% discounts on product unit costs to centralized facilities.",
-            "Because customer lead times become instantaneous under centralization.",
+            "Because larger warehouses negotiate lower prices from suppliers, and total safety stock falls in proportion to the volume discount obtained",
+            "Because lead time to every customer shortens, and safety stock needs fall in direct proportion to the reduction in delivery distance",
+            "Because fixed costs per unit fall at a single site, and safety stock is reduced linearly by the number of locations that are closed",
             "Because independent regional demand variations cancel each other out; portfolio variance grows as the square root of locations rather than linearly."
           ],
           "answer": 3,
@@ -1114,10 +1114,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What defines a \"Certified Fault-Tolerant\" enterprise supply chain under the Capstone Control Tower framework?",
           "options": [
-            "Shutting down all factory production whenever raw material prices rise by 5%.",
-            "Operating entirely without backup suppliers or safety stock buffers.",
-            "The ability to maintain >= 98% customer order fulfillment during severe node disruptions through pre-configured secondary suppliers and dynamic re-routing, while containing contingency freight premiums within 25%.",
-            "Having zero transportation freight costs under all geopolitical conditions."
+            "The ability to maintain >= 90% customer order fulfillment during disruptions through a single approved backup supplier, while keeping contingency freight premiums within 50%",
+            "The ability to maintain 100% fulfillment during all disruptions by holding six months of finished goods stock, while allowing contingency freight premiums up to 75%",
+            "The ability to keep >= 98% order fulfillment during severe node disruptions via pre-configured secondary suppliers and re-routing, with contingency freight premiums within 25%.",
+            "The ability to recover full order fulfillment within 12 weeks after a disruption through new supplier qualification, while keeping contingency freight premiums within 10%"
           ],
           "answer": 2,
           "why": "True operational resilience is the proven capacity to absorb major facility and lane shocks with pre-qualified contingency routing, preserving customer SLAs without runaway cost inflation.",
@@ -1185,10 +1185,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of Aggregate Production Planning (APP) in the enterprise planning hierarchy?",
           "options": [
-            "To sequence individual production batches minute-by-minute across CNC machines on the factory shop floor.",
-            "To calculate the exact purchase order quantities for thousands of individual microchips and screws.",
-            "To decide whether to construct a brand new manufacturing facility in another continent over a 10-year horizon.",
-            "To reconcile corporate sales targets with plant capacity over a 3 to 18-month horizon by planning in terms of aggregate product families, labor hours, and overall inventory levels."
+            "To schedule individual machines and workers for each job on a daily basis, so that every order is completed by its customer due date",
+            "To determine the exact quantity of each component to purchase for next week's assembly orders, based on the explosion of the bill of materials",
+            "To forecast annual demand for each product over 3 to 5 years, so that capital investments in new plants can be approved by executives",
+            "To reconcile sales targets with plant capacity over 3 to 18 months by planning in aggregate product families, labor hours, and inventory levels."
           ],
           "answer": 3,
           "why": "Aggregate Production Planning occupies the intermediate-range tier (3 to 18 months), balancing aggregate workforce, production rates, and inventory for product families without getting bogged down in individual SKU details.",
@@ -1230,10 +1230,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational trade-off between a Pure Chase Strategy and a Pure Level Strategy?",
           "options": [
-            "A Chase Strategy minimizes inventory holding costs but incurs high hiring, firing, and workforce volatility costs, whereas a Level Strategy provides workforce stability but incurs high inventory holding and potential backorder costs.",
-            "A Chase Strategy always uses contract manufacturers exclusively, whereas a Level Strategy relies only on robotic automation.",
-            "A Chase Strategy increases warehouse inventory storage costs to maximum capacity, whereas a Level Strategy operates with zero inventory.",
-            "A Level Strategy eliminates all quality defects by completely halting production during low-demand months."
+            "A Chase Strategy minimizes inventory holding costs but incurs high hiring and firing costs, whereas a Level Strategy keeps the workforce stable but incurs high inventory and backorder costs.",
+            "A Chase Strategy minimizes workforce volatility but incurs high inventory holding costs, whereas a Level Strategy matches demand through frequent hiring, firing, and overtime",
+            "A Chase Strategy lowers unit production cost through steady output, whereas a Level Strategy raises it by changing production rates to follow monthly demand",
+            "A Chase Strategy requires subcontracting all peak demand, whereas a Level Strategy builds inventory in slack months and never uses overtime or layoffs"
           ],
           "answer": 0,
           "why": "A Chase Strategy matches demand by adjusting workforce levels (incurring hiring/firing friction), while a Level Strategy keeps production flat (absorbing demand variations through inventory buffers).",
@@ -1275,10 +1275,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what condition is it economically rational to produce finished goods ahead of schedule using regular-time capacity and store them in inventory rather than producing them during the peak month using overtime?",
           "options": [
-            "When the corporate tax rate is higher than the prime bank interest lending rate.",
+            "When the regular-time unit production cost plus the inventory holding cost is strictly greater than the overtime unit production cost (C_r + H > C_o)",
             "When the regular-time unit production cost plus the inventory holding cost per period is strictly less than the overtime unit production cost (C_r + H < C_o).",
-            "When customer demand in the current month is higher than total design capacity of the factory.",
-            "Only when subcontracting suppliers have gone bankrupt and all factories are unionized."
+            "When the holding cost per period is lower than the hiring cost of an extra worker, regardless of the overtime premium (H < C_hire)",
+            "When the overtime unit production cost is lower than the regular-time cost because of reduced setup charges (C_o < C_r)"
           ],
           "answer": 1,
           "why": "If producing early at regular wage rates plus holding inventory costs less than paying overtime wage premiums (C_r + H < C_o), pre-building inventory minimizes total landed manufacturing cost.",
@@ -1320,10 +1320,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the operational meaning and purpose of the 'Available-to-Promise' (ATP) metric in Master Production Scheduling?",
           "options": [
-            "It calculates the financial profit margin promised to executive shareholders at the end of the fiscal quarter.",
-            "It represents the total volume of raw materials that suppliers have failed to deliver on time.",
+            "The total amount of finished goods in the warehouse at the start of the period, which sales may promise to any customer without checking orders already booked",
+            "The maximum amount the plant can produce in a period at full capacity, which sales may promise to new customers even if the line is already booked",
             "It represents the uncommitted portion of planned production and inventory that sales representatives can promise to new customer orders with guaranteed on-time delivery dates.",
-            "It measures the total theoretical maximum capacity of all CNC machines operating 24 hours a day."
+            "The safety stock of finished goods held for unexpected demand, which sales may promise to important customers in urgent situations"
           ],
           "answer": 2,
           "why": "Available-to-Promise (ATP) informs sales exactly how many finished units can be promised to incoming customer orders without violating existing delivery commitments or causing stockouts.",
@@ -1365,10 +1365,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the 'Frozen Zone' strictly protected by the Demand Time Fence (DTF) in Master Production Scheduling?",
           "options": [
-            "Because workers on the assembly line are physically frozen during winter months and cannot operate machinery.",
-            "Because software license agreements prohibit computer databases from updating records within 30 days.",
-            "Because raw material suppliers do not accept currency payments for orders placed within four weeks.",
-            "Because changing schedules inside the DTF disrupts active work-in-progress, forces costly teardowns, wastes setup time, and causes cascading delivery delays for other customers."
+            "Because changes inside the DTF alter forecasts, which forces sales to recalculate customer prices and renegotiate every contract signed that quarter",
+            "Because the DTF marks the period in which suppliers cannot deliver, so any revision of schedules would result in unfilled purchase orders",
+            "Because changes inside the DTF require approval from the finance team, which must update the annual budget before the plant may revise the schedule",
+            "Because changes inside the DTF disrupt work-in-progress, force costly teardowns and wasted setups, and cause cascading delivery delays."
           ],
           "answer": 3,
           "why": "The Frozen Zone locks in near-term production because shop-floor parts are already being assembled; inserting changes creates catastrophic scrap, expediting fees, and schedule chaos.",
@@ -1436,10 +1436,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental difference between Independent Demand and Dependent Demand in manufacturing operations?",
           "options": [
-            "Independent Demand comes from external customers and must be forecasted, whereas Dependent Demand is for components and is mathematically calculated from the Master Production Schedule.",
-            "Independent Demand applies only to raw materials, whereas Dependent Demand applies to customer finished goods.",
-            "Independent Demand is calculated by government regulators, whereas Dependent Demand is determined by labor unions.",
-            "Independent Demand occurs only in service industries, whereas Dependent Demand occurs only in non-profit organizations."
+            "Independent Demand comes from external customers and is forecast, whereas Dependent Demand is for components and is calculated from the Master Production Schedule.",
+            "Independent Demand is for components and is calculated from the bill of materials, whereas Dependent Demand comes from customers and must be forecasted.",
+            "Independent Demand applies to make-to-order products only, whereas Dependent Demand applies to products stocked in warehouses for future customers.",
+            "Independent Demand is steady throughout the year, whereas Dependent Demand is seasonal and changes with promotions and holidays."
           ],
           "answer": 0,
           "why": "Independent demand is stochastic and customer-facing (requiring forecasting), while dependent demand is derived deterministically from parent production schedules using the Bill of Materials recipe.",
@@ -1481,10 +1481,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical operational purpose of calculating the Low-Level Code (LLC) for every item in a manufacturing Bill of Materials?",
           "options": [
-            "To calculate the physical floor elevation at which parts should be stored in the warehouse racks.",
-            "To downgrade the quality specifications of low-cost components to save procurement costs.",
-            "To determine which assembly workers should receive the lowest hourly wage rate.",
-            "To ensure that an item's net requirements are exploded only after all parent requirements from every higher level in the product tree have been fully accumulated."
+            "To rank items by their annual dollar usage, so that the highest-value components are ordered first in the planning run",
+            "To assign each item a supplier lead time code, so that purchasing can sort components by the number of weeks needed for delivery",
+            "To group items by the work center where they are produced, so that routing steps can be sequenced for each machine",
+            "To make sure an item's requirements are exploded only after all parent requirements from higher levels have accumulated."
           ],
           "answer": 3,
           "why": "Low-level coding guarantees that multi-level shared components (used across different sub-assemblies) are exploded only once at their deepest level, consolidating demand into a single net requirements calculation.",
@@ -1526,10 +1526,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a negative time bucket in an MRP Planned Order Release vector signify to a manufacturing buyer?",
           "options": [
-            "The software has encountered a division by zero error and must be rebooted.",
-            "The customer has cancelled their order and no production is required.",
-            "The component order is already past due because the required lead time exceeds the available horizon, requiring emergency vendor expediting to prevent a shop-floor shutdown.",
-            "The factory has excessive inventory and should immediately scrap finished units."
+            "The component has an excess of inventory, so the planned release is cancelled and the buyer can return the surplus to the vendor",
+            "The component order has been delivered early, so the buyer needs to move the receipt into the next time bucket to avoid storage costs",
+            "The order is already past due because the lead time exceeds the available horizon, so the buyer must expedite with the vendor.",
+            "The component demand has been cancelled by the customer, so the buyer must reduce the planned order quantity for that time bucket"
           ],
           "answer": 2,
           "why": "If lead time offsetting points to week -1 or week 0, the order should have been placed weeks ago; the buyer must immediately expedite the purchase order or arrange air freight to avoid line stoppage.",
@@ -1571,10 +1571,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary governing principle of the Part-Period Balancing (PPB) lot-sizing heuristic?",
           "options": [
-            "It divides the annual calendar into 12 equal monthly buckets regardless of demand.",
-            "It aggregates future net requirements into a single order batch until cumulative inventory holding costs most closely equal the order setup cost.",
-            "It forces suppliers to deliver parts every single day at 8:00 AM.",
-            "It orders the maximum capacity that a commercial shipping container can physically carry."
+            "It orders every period's net requirement separately, so that holding costs are zero and setup costs are paid in each period",
+            "It combines future net requirements into one order until cumulative holding costs most closely equal the setup cost.",
+            "It aggregates future requirements until cumulative holding costs exceed the setup cost by the largest margin possible",
+            "It aggregates future requirements until the cumulative order quantity equals the supplier's minimum order quantity"
           ],
           "answer": 1,
           "why": "Part-Period Balancing finds the economic lot size where cumulative holding costs balance setup costs (EPP = S / H), minimizing total inventory expenditure under lumpy demand.",
@@ -1616,10 +1616,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the operational function of 'Pegging Records' in an advanced manufacturing MRP system?",
           "options": [
-            "They provide bidirectional traceability linking lower-level component requirements and purchase orders directly to the parent sub-assemblies and specific customer orders that generated them.",
-            "They record the quality inspection results of every finished unit shipped to customers.",
-            "They fix the currency exchange rate between domestic buyers and international vendors for tax purposes.",
-            "They calculate the square footage of floor space required to park employee vehicles."
+            "They give two-way traceability from component requirements and purchase orders to the parent assemblies and customer orders that created them.",
+            "They record the time each operator spends at a work center, linking labor hours to the cost of each customer order",
+            "They record the physical location of each component in the warehouse, linking stock to the picker who retrieves it for assembly",
+            "They record the quality inspection result of each purchased lot, linking defects to the supplier who delivered the component"
           ],
           "answer": 0,
           "why": "Pegging links component demand back up the BOM tree to specific finished goods and customer orders, allowing planners to assess the true commercial impact when delivery disruptions occur.",
@@ -1687,10 +1687,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary conceptual distinction between MRP I and MRP II in manufacturing operations?",
           "options": [
-            "MRP I requires mainframe computers, whereas MRP II can only be calculated with hand calculators.",
-            "MRP I focuses solely on material requirements planning under the assumption of infinite capacity, whereas MRP II integrates materials with human resources, machine capacity planning (CRP), and financial general ledger accounting.",
-            "MRP I is written in C++ while MRP II is written exclusively in Python.",
-            "MRP I applies only to military defense contractors, whereas MRP II applies only to retail grocery stores."
+            "MRP I integrates materials with capacity and finance, whereas MRP II focuses only on material requirements under the assumption of infinite capacity",
+            "MRP I plans materials assuming infinite capacity, whereas MRP II adds machine capacity planning (CRP), human resources, and financial accounting.",
+            "MRP I plans materials for one plant, whereas MRP II extends the same material logic to the whole supply chain, including customers and suppliers",
+            "MRP I is used for make-to-stock items, whereas MRP II is used for make-to-order items with capacity and financial checks added"
           ],
           "answer": 1,
           "why": "MRP I plans materials without verifying whether machine or labor capacity exists, while MRP II incorporates Closed-Loop capacity validation and integrates with corporate financial accounting.",
@@ -1732,10 +1732,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between a Bill of Materials (BOM) and an Operations Routing Sheet in manufacturing?",
           "options": [
-            "A BOM lists the financial stock price of the company, while a Routing Sheet lists employee home addresses.",
-            "A BOM applies only to software companies, while a Routing Sheet applies only to organic farms.",
-            "A BOM specifies WHAT materials and components make up a product, whereas a Routing Sheet specifies HOW, WHERE, and IN WHAT SEQUENCE those materials are physically processed across work centers.",
-            "A BOM is used only by sales representatives, while a Routing Sheet is used only by truck drivers."
+            "A BOM specifies HOW and WHERE materials are processed across work centers, whereas a Routing Sheet specifies WHAT materials and quantities make up the product",
+            "A BOM lists the cost of each component and labor operation, whereas a Routing Sheet lists the suppliers who deliver the components to the plant",
+            "A BOM states WHAT materials make up a product, whereas a Routing Sheet states HOW, WHERE, and in WHAT SEQUENCE they are processed across work centers.",
+            "A BOM defines the product design drawings, whereas a Routing Sheet defines the packaging and shipping instructions for the finished goods"
           ],
           "answer": 2,
           "why": "The BOM defines product physical structure and component quantities, while the Routing Sheet defines the factory path, work centers, machine setups, and operation run times.",
@@ -1777,10 +1777,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do operations managers run 'Infinite Capacity Loading' first before finalizing factory schedules?",
           "options": [
-            "Because financial regulations prohibit companies from knowing their true machine capacity limits.",
-            "Because infinite loading automatically buys new machine tools using corporate credit cards.",
-            "Because modern machine tools operate indefinitely without electricity or human maintenance.",
-            "Because infinite loading serves as a critical diagnostic X-ray, revealing where and when bottlenecks will occur so management can proactively take corrective leveling action."
+            "Because infinite loading gives the final feasible schedule, showing each job's start date so management can release work orders without further adjustment.",
+            "Because infinite loading measures the actual productivity of each work center, showing which machines run below standard so management can replace them.",
+            "Because infinite loading calculates safety stock for each work center, showing where inventory is short so management can expedite raw materials.",
+            "Because infinite loading works as a diagnostic X-ray, showing where and when bottlenecks will occur so management can level the load proactively."
           ],
           "answer": 3,
           "why": "Infinite loading reveals unconstrained demand spikes, showing planners exactly which work centers are overloaded and giving them time to level capacity before production begins.",
@@ -1823,9 +1823,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "When leveling a capacity overload at a manufacturing work center, what are the primary managerial levers available to an operations planner?",
           "options": [
             "Authorizing planned overtime, shifting non-urgent lots into adjacent weeks with idle slack, splitting large batches, or re-routing work to alternate machine centers.",
-            "Deleting uncompleted customer orders from the database without telling anyone.",
-            "Increasing the machine speed past manufacturer safety limits until gears break.",
-            "Filing an insurance claim for lost production time."
+            "Raising the customer price for overloaded products, shifting jobs to earlier weeks that are already full, merging small batches, or cutting setup time.",
+            "Reducing the planned safety stock, shifting jobs into the same week on other machines, merging small batches, or terminating the oldest customer orders.",
+            "Adding permanent headcount at once, delaying all jobs equally by a week, combining batches across products, or skipping scheduled maintenance."
           ],
           "answer": 0,
           "why": "Capacity leveling utilizes disciplined operational levers: overtime, lot shifting, lot splitting, and alternate routing to flatten overload spikes while preserving customer delivery dates.",
@@ -1867,10 +1867,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Critical Ratio (CR) of 0.65 indicate for a production job sitting in a machine shop queue?",
           "options": [
-            "The machine operator should receive a 35% wage deduction for slow performance.",
+            "The job is ahead of schedule and will finish early, because the remaining time until the due date is greater than the processing time required.",
             "The job is behind schedule and will arrive late unless expedited, because remaining time until due date is less than the processing time required.",
-            "The customer has paid 65% of the invoice in advance.",
-            "The job is 65% completed and can be shipped to the customer immediately."
+            "The job is exactly on schedule and needs no action, because the remaining time until the due date equals the processing time required.",
+            "The job is 65% complete and will finish on time, because the machine has finished almost two-thirds of the processing run so far."
           ],
           "answer": 1,
           "why": "A Critical Ratio less than 1.0 means the available time before the customer deadline is shorter than the physical processing run time, meaning the job will finish late without expediting.",
@@ -1938,10 +1938,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Taiichi Ohno identify 'Overproduction' as the most dangerous and destructive of the 8 Wastes of Lean (TIM WOODS)?",
           "options": [
-            "Because overproduction causes factories to run out of electricity.",
-            "Because customers refuse to pay for products that are manufactured during daytime shifts.",
-            "Because producing items ahead of demand or in excess quantities breeds, conceals, and amplifies all other seven wastes, including excess inventory, extra transport, and delayed defect discovery.",
-            "Because labor laws strictly limit factories to producing no more than 10 units per day."
+            "Because overproduction is the most expensive waste per unit, since the labor, energy, and material consumed are lost when the product is scrapped.",
+            "Because overproduction is the hardest waste to measure, since it occurs only at the final assembly station and does not affect other departments.",
+            "Because producing ahead of demand or in excess breeds and hides the other seven wastes, including excess inventory, extra transport, and late defect discovery.",
+            "Because overproduction reduces machine utilization, since producing extra units forces equipment to idle while workers wait for the next order."
           ],
           "answer": 2,
           "why": "Overproduction is the root waste because it creates unnecessary inventory, requires extra warehouse handling and transport, and hides machine breakdowns and quality defects under massive piles of WIP.",
@@ -1987,10 +1987,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational operational rule of 'Stage 1' in the Single-Minute Exchange of Die (SMED) methodology?",
           "options": [
-            "Double the size of production batches so setups occur only once a year.",
-            "Strictly separate Internal Setup (activities that can only be done while the machine is stopped) from External Setup (activities that can and must be done while the machine is running).",
-            "Replace all human machine operators with artificial intelligence software.",
-            "Permanently weld the existing die to the machine so it can never be changed."
+            "Strictly convert Internal Setup into External Setup by purchasing duplicate tooling, so that every setup activity is done while the machine is stopped.",
+            "Strictly separate Internal Setup (done only while the machine is stopped) from External Setup (done while the machine is still running).",
+            "Strictly eliminate External Setup by adjusting the machine during the run, so that tools and materials are fetched only after the machine stops.",
+            "Strictly standardize all setup steps into one written procedure, so that internal and external activities are done by the same operator in sequence."
           ],
           "answer": 1,
           "why": "Stage 1 separates internal setup from external setup, ensuring tools, raw materials, and cranes are pre-staged while the machine is cutting parts, immediately cutting machine downtime by 30-50%.",
@@ -2032,10 +2032,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Heijunka mixed-model production leveling over traditional batch manufacturing?",
           "options": [
-            "It levels volume and product mix so that every product model is built continuously throughout the shift, slashing finished goods inventory and eliminating upstream supplier bullwhips.",
-            "It allows factory managers to fire all machine operators and replace them with temporary workers.",
-            "It forces customers to purchase all three models together as a package deal.",
-            "It doubles the amount of scrap metal produced to qualify for tax deductions."
+            "It levels volume and mix so each model is built continuously through the shift, cutting finished goods inventory and dampening bullwhip effects for suppliers.",
+            "It builds each model in one large batch per week to reduce changeovers, cutting setup cost and giving suppliers a stable, predictable schedule.",
+            "It matches production to the monthly forecast by running the highest-volume model first, cutting idle time and giving suppliers a stable delivery pattern.",
+            "It limits the plant to a single model per shift based on order priority, cutting complexity and giving suppliers a smaller list of parts to deliver."
           ],
           "answer": 0,
           "why": "Heijunka levels volume and mix (e.g. A-B-A-C), preventing large batch runs, dampening bullwhip amplification for suppliers, and enabling rapid fulfillment of diverse customer orders.",
@@ -2077,9 +2077,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core principle of Jidoka (Autonomation with a Human Touch) in the Toyota Production System?",
           "options": [
-            "Hiring outside security guards to inspect worker lunchboxes at the factory gate.",
-            "Replacing all human workers with fully autonomous humanoid robots that never stop.",
-            "Running machinery at maximum possible speed until the cutting tool completely shatters.",
+            "Empowering a quality inspection team at the end of the line to review every finished unit and sort defective products before they ship to the customer.",
+            "Empowering machines to speed up automatically when the queue grows, so that the assembly line keeps its pace even when operators are absent.",
+            "Empowering supervisors to override the quality alarm during peak orders, so that the assembly line keeps running while the defect is documented.",
             "Empowering machines and operators to immediately detect abnormalities and halt the assembly process at the source, preventing defective products from ever passing downstream."
           ],
           "answer": 3,
@@ -2122,10 +2122,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is 'Standard Work-in-Process' (SWIP) in a Lean manufacturing cell, and what happens if inventory exceeds SWIP?",
           "options": [
-            "SWIP represents the maximum number of chairs allowed in the employee break room.",
-            "SWIP is a tax accounting penalty assessed on foreign-owned factories.",
-            "SWIP is the mathematically calculated minimum inventory required to keep the cell flowing at takt time; any inventory beyond SWIP is pure non-value-added waste that clogs flow and hides defects.",
-            "SWIP is the total number of parts that have been damaged by scrap machines."
+            "SWIP is the maximum inventory a cell may hold before it is reordered; any inventory below SWIP is waste because it causes stockouts and idle time.",
+            "SWIP is the average inventory carried during a quarter; any inventory above SWIP is acceptable because it protects the line from supplier delays.",
+            "SWIP is the calculated minimum inventory needed to keep the cell flowing at takt time; anything beyond it is non-value-added waste that clogs flow and hides defects.",
+            "SWIP is the inventory financed by the supplier on consignment; any inventory beyond SWIP is charged to the cell and appears on the balance sheet."
           ],
           "answer": 2,
           "why": "Standard WIP is the lean minimum buffer required to maintain continuous cellular flow; holding parts beyond SWIP ties up cash and creates Muda waste.",
@@ -2193,10 +2193,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of the 4-tier 'Production Control Pyramid' in manufacturing operations?",
           "options": [
-            "To provide an integrated, end-to-end governing hierarchy that reconciles long-range corporate S&OP strategy with medium-term MPS/CRP capacity planning and real-time Lean shop-floor execution.",
-            "To construct ancient stone monuments in foreign manufacturing facilities.",
-            "To rank factory workers from highest paid to lowest paid on a bulletin board.",
-            "To calculate the corporate income tax liability for multi-national holding companies."
+            "To give an end-to-end hierarchy that reconciles long-range S&OP strategy with medium-term MPS/CRP planning and real-time Lean shop-floor execution.",
+            "To split planning into independent tiers, so that corporate strategy, capacity planning, and shop-floor execution each work from their own forecasts.",
+            "To rank the plant's products by revenue, so that scarce capacity is assigned first to the highest-margin items and lower tiers follow that ranking.",
+            "To replace the MRP system with a visual management board, so that planners track orders by tier and release them without software calculation."
           ],
           "answer": 0,
           "why": "The Production Control Pyramid bridges the gap between executive S&OP forecasts and shop-floor physical flow, aligning business revenue targets with daily work center execution.",
@@ -2238,10 +2238,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What causes a factory's operational bottleneck to shift dynamically from one machine work center to another?",
           "options": [
-            "Government tax rates shifting between standard corporate tax and capital gains tax.",
-            "Factory workers swapping machine tool badges during lunch breaks.",
-            "The rotation of the Earth altering gravitational forces on factory equipment.",
-            "Changes in the product mix ordered by customers, where different products consume radically different proportions of machining, welding, or assembly hours across work centers."
+            "Changes in labor wages across shifts, where different overtime rates make the cheapest work center change from one week to the next.",
+            "Changes in raw material prices from suppliers, where cost shifts make the most expensive work center become the constraint of the factory.",
+            "Changes in the preventive maintenance calendar, where scheduled downtime moves the constraint to the machine that was serviced last.",
+            "Changes in the customer product mix, since different products use very different shares of machining, welding, or assembly hours at each work center."
           ],
           "answer": 3,
           "why": "Different products have different routing hour profiles; when customer demand shifts between products, workload shifts disproportionately, moving the bottleneck from machining to welding or brazing.",
@@ -2283,10 +2283,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three mathematical component factors that multiply together to calculate Overall Equipment Effectiveness (OEE)?",
           "options": [
-            "Direct Labor Rate, Raw Material Price, and Factory Insurance Premium.",
-            "Electricity Voltage, Hydraulic Oil Pressure, and Machine Temperature.",
+            "Availability Rate, Yield Rate, and Utilization Rate (OEE = Availability * Yield * Utilization).",
+            "Setup Rate, Performance Rate, and Throughput Rate (OEE = Setup * Performance * Throughput).",
             "Availability Rate, Performance Rate, and Quality Rate (OEE = Availability * Performance * Quality).",
-            "Customer Discount Rate, Corporate Tax Rate, and Warehouse Rental Rate."
+            "Availability Rate, Quality Rate, and Capacity Rate (OEE = Availability * Quality * Capacity)."
           ],
           "answer": 2,
           "why": "OEE is the universal gold standard of asset productivity, measuring operational uptime (Availability), machine operating speed (Performance), and first-pass defect-free yield (Quality).",
@@ -2332,10 +2332,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What five operational validation gates must be certified to achieve Milestone 2 Capstone Accreditation in the Master Production Control Tower framework?",
           "options": [
-            "Customer Satisfaction Survey, Brand Valuation, Stock Split, Trademark Renewal, and Patent Filing gates.",
-            "Aggregate-to-MPS Reconciliation, Multi-Level BOM Dependent Explosion, CRP Capacity Feasibility, SMED Single-Minute Setup Compliance (<10m), and Live Shop-Floor OEE World-Class Standard (>=85.0%).",
-            "Twitter follower growth, marketing billboard count, corporate logo redesign, and television advertising spend.",
-            "Stock price growth, dividend yield, bond credit rating, currency exchange rate, and prime lending rate."
+            "Demand Forecast Accuracy, Single-Level BOM Listing, Infinite Capacity Loading, SMED Setup Compliance (<30m), and Shop-Floor OEE of at least 65.0%.",
+            "Aggregate-to-MPS Reconciliation, Multi-Level BOM Explosion, CRP Capacity Feasibility, SMED Setup Compliance (<10m), and Shop-Floor OEE of at least 85.0%.",
+            "Aggregate-to-MPS Reconciliation, Multi-Level BOM Explosion, CRP Capacity Feasibility, SMED Setup Compliance (<60m), and Shop-Floor OEE of at least 50.0%.",
+            "Supplier Scorecard Review, Multi-Level BOM Explosion, Infinite Capacity Loading, Kanban Card Audit, and Shop-Floor OEE of at least 95.0%."
           ],
           "answer": 1,
           "why": "The Milestone 2 Capstone synthesizes the entire operational stack: reconciling strategic plans (Gate 1), calculating component materials (Gate 2), leveling machine capacity (Gate 3), achieving Lean setup speed (Gate 4), and executing world-class flow (Gate 5).",
@@ -2377,10 +2377,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining characteristic of an authentic Kaizen continuous improvement culture in a world-class Lean manufacturing facility?",
           "options": [
-            "Empowering every frontline operator to identify and eliminate TIM WOODS waste every single day through small, relentless, incremental improvements and autonomous maintenance.",
-            "Hiring outside consultants every five years to conduct mass layoffs.",
-            "Ignoring machine breakdowns and continuing to run defective parts to maintain speed.",
-            "Prohibiting factory workers from speaking or suggesting process changes."
+            "Every frontline operator identifies and eliminates TIM WOODS waste daily through small, relentless improvements and autonomous maintenance.",
+            "A central continuous-improvement department that designs yearly projects, which frontline operators carry out after management approval.",
+            "Management setting stretch targets for each quarter and evaluating teams by the number of large projects they complete.",
+            "Hiring outside consultants to run large improvement events every year, with results reported to executives after the event is over."
           ],
           "answer": 0,
           "why": "Kaizen is daily continuous improvement owned by frontline workers: respect for people, operator empowerment, and eliminating waste at the source.",
@@ -2448,9 +2448,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If an inbound pallet weighs 750kg and the only unallocated rack bins are on Level 4 and Level 5, what must the directed putaway engine do according to this lab's rack safety rule (loads over 600kg only on beam level 1 or 2)?",
           "options": [
-            "Override the weight safety constraint if the SKU is velocity class FAST_A",
-            "Put away the pallet on Level 5 to maximize vertical warehouse cubic utilization",
-            "Split the pallet into two halves and stack both on Level 4",
+            "Allow Level 4 putaway but require a supervisor override badge scan before the forklift places the pallet in the high beam bin",
+            "Place the pallet on Level 4, because beam level limits apply only to loads over 1,000kg and 750kg is within the high-bay rating",
+            "Hold the pallet at the receiving dock until a Level 1 or 2 bin is free, because floor staging is never allowed for loads over 600kg",
             "Reject high-beam putaway and route the heavy pallet to an approved floor bulk block or ground-level overflow staging bay"
           ],
           "answer": 3,
@@ -2494,9 +2494,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "If an item's daily order pick frequency quadruples due to a viral marketing campaign while its physical cubic dimensions remain unchanged, what happens to its Cube-Per-Order Index (COI) and its slotting destination?",
           "options": [
             "Its COI is cut to one-fourth, giving it a much stronger priority for prime Golden Zone forward pick faces",
-            "Its COI remains constant because physical dimensions did not change",
-            "COI optimization only applies to manufacturing raw materials, not e-commerce pick faces",
-            "Its COI quadruples, relegating the item to top-shelf reserve storage"
+            "Its COI quadruples, which moves it toward back-of-warehouse reserve locations where low-frequency products are normally slotted",
+            "Its COI is unchanged because the cubic dimensions are the same, so its slotting zone stays exactly where it is today",
+            "Its COI is cut to one-half, giving it a moderate priority for a mid-level reserve location rather than a forward pick face"
           ],
           "answer": 0,
           "why": "Since COI = Volume / Pick Frequency, a 4x increase in pick frequency reduces the COI to 25% of its original value. Lower COI indicates higher pick density per unit of space consumed, elevating the SKU's priority for prime Golden Zone slots nearest to the packing and dispatch station.",
@@ -2538,10 +2538,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under which operational pick density condition does the S-Shape (Traversal) heuristic consistently outperform the Return heuristic?",
           "options": [
-            "When an order batch has only 1 or 2 picks located right at the entrance of each aisle",
+            "When pick density is low and almost all picks are located in the first quarter of each aisle near the entrance",
             "When pick density is high and items are distributed along the entire length of the aisle from entrance to exit",
-            "When the warehouse has no cross-aisles and all aisles are dead-ends",
-            "When pickers are using manual hand carts rather than automated guided vehicles"
+            "When pick density is low and only one item per aisle is stored at the far end of the aisle",
+            "When pick density is high but all items are stored in the back half of the aisle, within a short walk from the exit"
           ],
           "answer": 1,
           "why": "When pick density is high and items span the full length of the aisle (e.g. items at 10m, 35m, and 58m of a 60m aisle), the Return heuristic requires walking 58m in and 58m back (116m total), whereas S-Shape traverses the aisle once in 60m, exiting directly into the opposite cross-aisle and cutting walking distance almost in half.",
@@ -2583,10 +2583,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing daily statistical cycle counting over an annual full-facility shutdown count?",
           "options": [
-            "Cycle counting requires zero accounting adjustments to be posted to the balance sheet",
-            "Cycle counting allows warehouse managers to count only cheap Class C items and ignore Class A items",
+            "Cycle counting replaces all financial audits, because daily statistical samples are accepted as final proof of inventory value by the auditors",
+            "Cycle counting lowers the cost of labor, because only one counter is needed and no inventory discrepancies have to be investigated afterward",
             "Cycle counting identifies inventory discrepancies continuously, enabling immediate root-cause investigation without halting facility operations",
-            "Cycle counting completely eliminates the need for barcode scanners or computer WMS software"
+            "Cycle counting increases the pick speed of operators, because counted bins are moved closer to the pick face after each verification"
           ],
           "answer": 2,
           "why": "Perpetual cycle counting enables immediate detection and forensic investigation of inventory variances as they occur, allowing management to fix defective operational processes (e.g. receiving miscounts, labeling errors) without disrupting warehouse shipping operations or shutting down revenue generation.",
@@ -2629,9 +2629,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What common operational failure occurs if a distribution center rewards warehouse pickers solely based on gross Units Picked Per Hour (UPH) without enforcing an accuracy threshold?",
           "options": [
-            "Forklift battery life increases substantially",
-            "The warehouse storage racking experiences premature structural wear",
-            "Cycle counting can be eliminated completely",
+            "Pickers slow down to double-check every item, resulting in low UPH scores that trigger unfair disciplinary action against the most careful workers",
+            "Pickers choose only the easiest, closest locations, resulting in unpicked orders in remote aisles that delay shipments to customers",
+            "Pickers share their badges to inflate productivity, resulting in inaccurate labor data that distorts staffing plans and overtime budgets",
             "Pickers rush past barcode confirmation steps, resulting in high mispick rates that trigger costly customer returns and reverse logistics expenses"
           ],
           "answer": 3,
@@ -2700,10 +2700,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Shipment SHP-INS-902 achieve an automated release while SHP-INS-901 was placed on QA hold, despite both experiencing the exact same 32°C ambient dock exposure for 45 minutes?",
           "options": [
-            "The WMS algorithm has an intentional random variance generator",
-            "SHP-INS-902 was inspected by a human supervisor who waived the rule",
-            "SHP-INS-902 utilized high-performance Vacuum-Insulated Panels (VIP) that dampened thermal heat transfer, keeping the internal insulin core at 6.01°C within the 2°C–8°C spec",
-            "SHP-INS-902 contained an ambient dry product rather than refrigerated insulin"
+            "SHP-INS-902 carried more gel ice packs that melted slowly, keeping the insulin core at 6.01°C because phase-change cooling lasted longer",
+            "SHP-INS-902 used standard EPS foam of greater wall thickness, and the extra thickness alone kept the insulin core at 6.01°C within spec",
+            "SHP-INS-902 used high-performance Vacuum-Insulated Panels (VIP) that dampened heat transfer, keeping the insulin core at 6.01°C within the 2°C-8°C spec",
+            "SHP-INS-902 was released because its logger reported a lower arithmetic mean temperature, and QA rules approve shipments on mean temperature alone"
           ],
           "answer": 2,
           "why": "Vacuum-Insulated Panels (VIP) offer exceptionally low thermal conductivity (R-values up to 10x greater than EPS foam), drastically slowing heat transfer. As a result, the internal vial temperature remained at 6.01°C—well within the mandatory 2°C–8°C envelope—enabling instant automated WMS release.",
@@ -2745,10 +2745,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Mean Kinetic Temperature (7.22°C) higher than the arithmetic mean temperature (5.33°C) in the simulation above?",
           "options": [
-            "Because sensor hardware is intentionally calibrated with a positive 6-degree bias",
+            "Because MKT is calculated by averaging only the highest temperature readings of each hour, which pushes the result above the overall mean",
             "Because thermal chemical degradation kinetics follow an exponential Arrhenius curve, weighting high-temperature excursions far more heavily than low temperatures",
-            "Because Kelvin degrees are larger than Celsius degrees",
-            "Because cold storage facilities operate at high atmospheric pressure"
+            "Because MKT adds a fixed safety margin of 2°C to the arithmetic mean to account for the thermal lag of the product inside the package",
+            "Because MKT weights low-temperature readings more heavily, since cold storage is the dominant risk for biological products in transit"
           ],
           "answer": 1,
           "why": "Chemical degradation rates increase exponentially with temperature according to the Arrhenius equation. Because MKT mathematically accounts for this non-linear exponential reaction rate, brief exposure to elevated temperatures (e.g. 20°C) inflicts disproportionate molecular stress, driving MKT far above the naive linear average.",
@@ -2791,9 +2791,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the simulation above, why didn't the National Mega-Mart order receive the remaining 50 units from Lot B-901, even though B-901 had unallocated inventory and expired earlier?",
           "options": [
             "Because Lot B-901 had only 25 days of remaining shelf life, violating National Mega-Mart's contractual SLA requiring at least 45 days",
-            "Because Lot B-901 was reserved for executive VIP customers",
-            "Because the WMS suffered a database deadlock error",
-            "Because FEFO always picks the newest lot with the longest shelf life"
+            "Because Lot B-901 had 25 days left, which was below the 30-day limit in the standard FEFO policy that applies to every customer",
+            "Because Lot B-901 was reserved for a different retailer, so the allocation engine skipped its inventory for National Mega-Mart",
+            "Because Lot B-901 had been quarantined for a quality check, so its unallocated units were blocked from every outbound order"
           ],
           "answer": 0,
           "why": "High-tier commercial retailers contractually enforce strict minimum remaining shelf-life SLAs (e.g. 45 days). Although Lot B-901 had available stock, its 25-day remaining shelf life violated the customer's contract, so the FEFO engine correctly skipped it and fulfilled the order from Lot B-902 (60 days remaining).",
@@ -2836,10 +2836,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the HACCP framework considered far more effective than traditional end-of-trip sample testing for perishable food and pharmaceutical logistics?",
           "options": [
-            "Because HACCP allows shipments to operate without temperature logging devices",
-            "Because HACCP completely eliminates the need for truck drivers",
-            "Because HACCP reduces fuel consumption of diesel engines to zero",
-            "Because HACCP prevents hazards proactively through continuous monitoring and immediate automated corrective actions, rather than relying on destroying sample units after catastrophic contamination has already occurred"
+            "Because HACCP tests a larger sample from each pallet at the destination, which provides a statistical guarantee that the entire shipment is safe",
+            "Because HACCP replaces temperature monitoring with supplier audits, which removes the need for continuous measurement during transport",
+            "Because HACCP relies on the end customer to report problems, which provides faster feedback than manufacturer testing at the origin",
+            "HACCP prevents hazards through continuous monitoring and immediate automated corrective action, instead of destroying samples after contamination has occurred."
           ],
           "answer": 3,
           "why": "Traditional end-product testing is reactive and destructive: testing 5 vials from a 10,000-vial pallet cannot prove the safety of the untested 9,995 vials. HACCP establishes preventive critical control points with real-time monitoring and corrective interventions, preventing hazardous deviations during transport.",
@@ -2882,10 +2882,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the simulation above, what specific operational factor caused the refrigerated van to breach the critical 8.0°C limit at Stop ST-03?",
           "options": [
-            "The customer refused the delivery paperwork",
-            "The driver drove too fast on the highway",
+            "A defective compressor shut down for 180 seconds in 36°C heat, which stopped refrigeration and let the compartment warm above 8.0°C",
+            "An overloaded cargo bay blocked airflow inside the compartment for 180 seconds in 36°C heat, which created warm spots on the pallets",
             "A prolonged 180-second door opening in 36°C ambient heat allowed substantial warm air infiltration, overwhelming the compartment insulation",
-            "The compressor ran out of engine fuel"
+            "A faulty temperature sensor reported incorrect readings for 180 seconds in 36°C heat, which made the van appear to breach the limit"
           ],
           "answer": 2,
           "why": "At Stop ST-03, the rear doors remained open for 180 seconds (3 minutes) under intense 36°C outdoor heat. The resulting massive air exchange flooded the compartment with warm air, driving the internal temperature to 10.92°C and triggering a regulatory thermal excursion.",
@@ -2953,10 +2953,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the gatekeeping engine issue a CUSTOMER_KEEP_REFUND_APPROVED for SKU-CASE-SLIM in the simulation above?",
           "options": [
-            "Because the customer threatened a negative social media review",
-            "Because processing the return would cost $10.00 ($7 shipping + $3 inspection) to recover an item worth only $6.00 on resale, producing an immediate $4.00 loss",
-            "Because the warehouse had no available shelf space",
-            "Because phone cases are classified as hazardous materials"
+            "Because the customer paid $6.00 for the item, and refunding more than the purchase price is prohibited by the return policy",
+            "Returning the item would cost $10.00 ($7 shipping + $3 inspection) to recover an item worth only $6.00, an immediate $4.00 loss.",
+            "Because the item could be resold for $16.00, which exceeded the $10.00 cost of shipping and inspection, so refunding was the most profitable choice",
+            "Because the item was damaged in shipping by the carrier, and the carrier's insurance covered the $10.00 cost of the return"
           ],
           "answer": 1,
           "why": "If reverse logistics freight and labor costs ($10.00) exceed the anticipated gross salvage value ($6.00), transporting the product back creates a net loss of $4.00 for the enterprise. Authorizing the customer to keep the item avoids the $10 logistics drain, maximizing corporate cash preservation.",
@@ -2999,10 +2999,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the simulation above, why did the disposition engine route Unit U-104 to COMPONENT_HARVESTING instead of FACTORY_REFURBISHMENT like Unit U-103?",
           "options": [
-            "Because Unit U-104 had an expired software license",
-            "Because U-104 was a different color variant",
-            "Because Unit U-104 had a $700 repair cost which exceeded the net economic gain of refurbishing, making harvesting its $190 in intact components ($182 net) far more profitable",
-            "Because component harvesting is always prioritized over refurbishment for all electronics"
+            "Because U-104 had a $700 repair cost but a $1,200 resale value, so refurbishing would have earned a larger profit than harvesting its parts",
+            "Because U-104 was a newer model than U-103, and the disposition rules send newer units to component harvesting to protect the brand price",
+            "U-104's $700 repair cost exceeded the net gain from refurbishing, so harvesting its $190 of intact components ($182 net) was far more profitable.",
+            "Because U-104 had no usable components, so harvesting was the only route that did not require a repair budget from the refurbishment plant"
           ],
           "answer": 2,
           "why": "Refurbishing U-104 would cost $700 to sell a unit at $780 (65% of $1,200), yielding a net gain of only $80. In contrast, harvesting its intact internal components yielded $190 ($182 net of disassembly labor). The disposition engine algorithmically chose the higher-yield option.",
@@ -3045,10 +3045,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the simulation output above, why is remanufacturing highly strategic for corporate gross margin performance?",
           "options": [
-            "Because remanufacturing requires zero factory workers or tools",
-            "Because customers are legally required to buy remanufactured units by civil law",
-            "Because remanufactured units are not subject to corporate income taxes",
-            "Because remanufacturing achieves a lower unit production cost ($405.73 vs $580.00) and higher gross operating profit margin (40.33% vs 38.95%) while diverting tons of engineered metal from landfills"
+            "Because remanufacturing has a higher unit production cost than new manufacturing, but it earns a premium price from environmentally aware customers",
+            "Because remanufacturing has the same unit production cost as new manufacturing, but it removes the need for warranty reserves on all products",
+            "Because remanufacturing lowers the unit cost, but it also reduces gross margin, since remanufactured goods must be sold at a deep discount",
+            "It lowers unit production cost ($405.73 vs $580.00) and raises gross operating margin (40.33% vs 38.95%) while diverting engineered metal from landfills."
           ],
           "answer": 3,
           "why": "Remanufacturing reuses high-value machined cores, slashing material and energy requirements. In this run, unit cost dropped by 30.05% ($405.73 vs $580.00), allowing the firm to sell at a competitive $680 price point while expanding operating profit margins from 38.95% to 40.33%.",
@@ -3092,9 +3092,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the EPR simulation above, what was the primary financial justification for Apex Electronics purchasing $472,500 in certified recycling credits?",
           "options": [
             "To avoid $2,100,000 in statutory Environmental Compensation fines and prevent corporate license cancellation, yielding $1,627,500 in net cost avoidance",
-            "Because EPR credits can be used to pay employee payroll taxes",
-            "To generate speculative cryptocurrency trading profits",
-            "To pay off executive bonuses"
+            "To earn a green marketing premium on products, because certified recycling credits raise retail prices by more than the $472,500 spent",
+            "To reduce the future cost of raw material, because recycling credits can be exchanged for discounts from metal suppliers",
+            "To lower the tax bill on profits, because recycling credits are deducted from taxable income at five times their purchase price"
           ],
           "answer": 0,
           "why": "Statutory environmental regulations impose severe punitive fines ($400/ton vs $90/ton for credits) on non-compliant manufacturers. Purchasing $472,500 in certified credits legally fulfilled the statutory quota, preventing $2,100,000 in government fines and saving the company $1,627,500.",
@@ -3137,10 +3137,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the circular economy ledger above, how did the enterprise achieve a positive net operating profit of $66,330.00 on returned items?",
           "options": [
-            "By dumping all returns into municipal landfills without paying tipping fees",
-            "By generating $89,830 in gross recovery through tiered restock, remanufacturing, and parts harvesting, which comfortably exceeded the $23,500 in reverse logistics and triage costs",
-            "By firing all reverse logistics warehouse employees",
-            "By charging customers a $100 penalty fee for every return"
+            "By selling every returned unit at full retail price after a quick cleaning, which produced $89,830 in revenue and avoided any triage cost",
+            "By recovering $89,830 gross through tiered restock, remanufacturing, and parts harvesting, far above the $23,500 of reverse logistics and triage costs.",
+            "By receiving $66,330 in refunds from suppliers for defective items, which exceeded the $23,500 in reverse logistics and triage costs",
+            "By cutting the volume of returns through stricter policies, which lowered the $23,500 in reverse logistics and triage costs to near zero"
           ],
           "answer": 1,
           "why": "Rather than treating returns as a pure loss, the multi-tier circular triage extracted $89,830 in value across Grade A restock, certified remanufacturing, and component harvesting. Subtracting the $23,500 reverse logistics operating costs yielded a net circular profit of $66,330 and a 98% landfill diversion rate.",
@@ -3208,10 +3208,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Transaction TX-BREACH-02 above, why was vendor payment blocked by the automated ICoFR engine?",
           "options": [
-            "Because the transaction committed multiple Segregation of Duties breaches, and the invoice billed for 100 units at $95.00 when only 80 units were physically received at an authorized PO price of $85.00",
-            "Because the company ran out of working capital cash",
-            "Because bearings are subject to export control tariffs",
-            "Because the vendor sent the invoice via email rather than postal mail"
+            "The transaction breached Segregation of Duties, and the invoice billed 100 units at $95.00 when only 80 units were received at the PO price of $85.00.",
+            "Because the invoice was paid late, which breached the credit terms, and the vendor's payment history showed a pattern of missed due dates",
+            "Because the invoice was missing the vendor's tax registration number, and the engine blocks every payment without a complete tax record",
+            "Because the invoice was submitted for 80 units at $85.00, but the vendor was not on the approved list for the product category"
           ],
           "answer": 0,
           "why": "The transaction violated core ICoFR controls: the same user initiated and approved the order (SoD breach), and the vendor overbilled both on quantity (billing 100 when only 80 arrived) and price ($95 vs $85 PO price). Automated Three-Way Matching immediately halted payment to prevent corporate fraud.",
@@ -3253,9 +3253,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 188(1) of the Indian Companies Act 2013, what two essential criteria must be satisfied simultaneously for an operational supply chain contract with a related party to qualify for exemption from board voting restrictions?",
           "options": [
-            "The contract must be signed by the junior warehouse associate rather than a director",
-            "The transaction value must be exactly zero",
-            "The contract must be paid in foreign currency and executed outside India",
+            "The transaction must be approved by the audit committee AND be entered into with a company holding at least 10% of the paid-up capital",
+            "The transaction must be below the prescribed turnover threshold AND be disclosed in the annual return filed with the registrar",
+            "The transaction must be executed in writing AND be ratified by shareholders at the next annual general meeting",
             "The transaction must be entered into in the Ordinary Course of Business AND conducted on an Arm's Length Basis"
           ],
           "answer": 3,
@@ -3299,10 +3299,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Clause 3(ii) of CARO 2020, what is the statutory auditor legally required to do if physical verification reveals a 12.73% discrepancy between book inventory and physical stock in Finished Goods?",
           "options": [
-            "File an immediate criminal case with the local police station",
-            "Quietly delete the inventory records and ignore the discrepancy",
+            "Ignore the discrepancy in the report, because a variance below 15% for finished goods is treated as normal and need not be disclosed",
+            "Report the discrepancy only to the audit committee in a private letter, because CARO 2020 does not require public disclosure of it",
             "Explicitly report the material discrepancy in the public CARO 2020 audit report and state whether it has been properly dealt with in the books of account",
-            "Instruct the warehouse manager to work overtime to produce missing units"
+            "Withdraw from the audit engagement, because any discrepancy above 10% is a legal ground for the auditor to resign immediately"
           ],
           "answer": 2,
           "why": "CARO 2020 Clause 3(ii)(a) explicitly mandates that if discrepancies of 10% or more in the aggregate for each class of inventory are noticed during physical verification, the statutory auditor MUST disclose this fact in their formal audit report and detail how management has accounted for the variance.",
@@ -3345,10 +3345,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ESG audit above, why was Apex Dyeing & Chemical Wash Mills placed on HIGH_RISK_CONDITIONAL_PROBATION rather than receiving full procurement approval?",
           "options": [
-            "Because the factory was located in a different time zone",
-            "Because it accumulated 3 critical violations (unpaid 75hr overtime, locked fire exits, untreated wastewater discharge), slashing its ESG score to 25/100 and triggering mandatory corrective action plans",
-            "Because its fabric prices were too low",
-            "Because it lacked ISO 9001 marketing materials"
+            "Because it failed to submit its annual ESG report on time, scoring 25/100 and triggering a suspension of all current purchase orders",
+            "It had 3 critical violations (unpaid overtime, locked fire exits, untreated wastewater), cutting its ESG score to 25/100.",
+            "Because it had 1 critical and 2 minor violations of labor law, scoring 60/100 and triggering a routine review of its operations",
+            "Because it had no ISO 14001 certificate, scoring 25/100 and requiring the supplier to obtain certification before ordering again"
           ],
           "answer": 1,
           "why": "Accumulating three critical violations (severe wage theft, locked fire escape life-safety hazard, and illegal wastewater pollution) slashed the supplier's score to 25/100, violating statutory supply chain due diligence laws and triggering mandatory 30-day corrective action probation.",
@@ -3391,10 +3391,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the anti-corruption engine classify Invoice INV-CUSTOMS-9902 as CRITICAL_BRIBERY_RISK and freeze payment?",
           "options": [
-            "Applying unverified default parameters in Integrated Anti-Bribery Compliance, FCPA/PCA & Whistleblower Red-Flag Investigation (Option 2) without validating boundary constraints or reconciling state transitions.",
-            "Because the vendor was located in a different city",
-            "Because the payment was made via credit card rather than bitcoin",
-            "Because the font size on the invoice was too small"
+            "The invoice combined illicit facilitation wording, routing to a high-risk offshore haven (Belize), a round-dollar kickback-style amount, and no compliance warranties.",
+            "The invoice exceeded the PO amount by more than 10%, was paid late, and listed a broker that was not on the preferred customs supplier list.",
+            "The invoice used a vendor name similar to a government agency, a domestic escrow account, an amount below the approval limit, and an unsigned PO.",
+            "The invoice carried a foreign currency amount that differed from the contract, a duplicate invoice number, an expired vendor license, and a missing tax code."
           ],
           "answer": 0,
           "why": "Invoice INV-CUSTOMS-9902 triggered multiple severe bribery red flags under the FCPA and UK Bribery Act: illicit facilitation terminology, payment routing to a high-risk offshore haven (Belize), round-dollar amount typical of kickback slush funds, and missing compliance warranties. The automated freeze prevents criminal corporate exposure.",
@@ -3460,10 +3460,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing an integrated Operations Control Tower across multi-echelon supply networks?",
           "options": [
-            "It replaces all warehouse human workers with robotic software scripts",
-            "It allows companies to operate without paying commercial taxes",
-            "It guarantees that freight carrier diesel fuel prices never fluctuate",
-            "It integrates disparate WMS, TMS, cold chain IoT, and statutory compliance systems into a single real-time nervous system, eliminating operational blind spots"
+            "It replaces the WMS and TMS with one system, eliminating the need for separate software licenses and reducing IT spending",
+            "It outsources order processing to a third-party logistics provider, eliminating the need for internal planners and warehouse staff",
+            "It automates all customer service calls, eliminating wait times in contact centers and reducing complaints about late deliveries",
+            "It integrates WMS, TMS, cold chain IoT, and compliance systems into one real-time view, eliminating operational blind spots."
           ],
           "answer": 3,
           "why": "An integrated Control Tower breaks down functional silos, synthesizing real-time inventory balances, temperature telematics, reverse returns disposition, and statutory ICoFR controls into a single synchronized operational cockpit.",
@@ -3507,10 +3507,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the simulation above, why did the optimizer choose RDC-MUMBAI-CENTRAL over the closer MFC-MUMBAI-SOUTH?",
           "options": [
-            "Because the local MFC lacked stock of SKU-MONITOR-PRO, meaning using the MFC would require splitting the order across two shipments ($6.50 penalty), whereas the RDC fulfilled all items in a single package for $9.30 total cost",
-            "Because RDC shipping is always cheaper than local delivery",
-            "Because insulin cannot be stored in urban dark stores",
-            "Because the MFC was closed for a holiday"
+            "The local MFC lacked stock of SKU-MONITOR-PRO, so using it would split the order into two shipments ($6.50 penalty), while the RDC filled all items in one package for $9.30 total.",
+            "The RDC was nearer to the customer's address than the MFC, so a single delivery from the RDC cost $9.30 against $12.80 for the local MFC route.",
+            "The local MFC charged a higher pick and pack fee for monitors, so the optimizer sent the whole order to the RDC where the same fee was $9.30 lower.",
+            "The RDC held a larger stock of every item in the basket, so the optimizer chose it because the largest inventory node always wins over a closer fulfillment center."
           ],
           "answer": 0,
           "why": "MFC-MUMBAI-SOUTH had zero stock of the monitor. Splitting the order between the MFC and RDC would incur two separate pick/pack fees, two freight fees, and a $6.50 split penalty. Consolidating the entire order into a single shipment from the RDC was significantly more cost-effective ($9.30 total).",
@@ -3554,10 +3554,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the cold chain simulation above, what immediate operational action did the Control Tower execute when REEFER-902 breached the 10°C threshold?",
           "options": [
-            "It instructed the driver to pull over and wait for tomorrow morning",
-            "It autonomously calculated an MKT of 8.07°C and dispatched an emergency rerouting plan to Thane Central Cold Storage (8.9 km away, 11-min ETA) to rescue the $450,000 vaccine cargo",
-            "It immediately cancelled all customer orders in the entire city",
-            "It initiated an insurance claim and marked the cargo as destroyed"
+            "It calculated an MKT of 12.2°C and told the driver to continue to the 40 km destination, where a technician would inspect the $450,000 vaccine cargo on arrival.",
+            "It calculated an MKT of 8.07°C and dispatched an emergency reroute to Thane Central Cold Storage (8.9 km, 11-min ETA) to rescue the $450,000 vaccine cargo.",
+            "It calculated an MKT of 8.07°C and ordered the driver to lower the reefer setpoint and keep driving, then logged an incident for the $450,000 vaccine cargo.",
+            "It calculated an MKT of 8.07°C and ordered a replacement shipment from the central depot 140 km away, while holding the $450,000 cargo at the roadside to wait."
           ],
           "answer": 1,
           "why": "The Control Tower's real-time triage detected the critical excursion (MKT 8.07°C, latest temp 12.2°C) and dynamically rerouted the truck to the nearest certified cold facility 8.9 km away, securing emergency pull-down cooling in 11 minutes and salvaging the $450,000 consignment.",
@@ -3601,10 +3601,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the closed-loop reverse simulation above, how much gross value was recovered from the 500 returned units, and what was the net result of purchasing market EPR credits?",
           "options": [
-            "Zero value was recovered and the company was fined for non-compliance",
-            "The entire batch was incinerated in a municipal waste incinerator",
-            "The system recovered $90,875.00 (45.4% of retail value) in material salvage and bought 9.3 tons of market EPR credits for $789.44, netting $2,461.19 in avoided statutory fines (penalty minus credit cost) and achieving 100% compliance",
-            "The company sold the units back to the original retail customers for double the price"
+            "It recovered $200,000 (100% of retail value) and bought 9.3 tons of EPR credits for $789.44, netting $2,461.19 in avoided fines with full compliance.",
+            "It recovered $45,400 (22.7% of retail value) and bought 9.3 tons of EPR credits for $7,894.40, netting $461.19 in avoided fines with partial compliance.",
+            "It recovered $90,875.00 (45.4% of retail value) and bought 9.3 tons of EPR credits for $789.44, netting $2,461.19 in avoided fines with 100% compliance.",
+            "It recovered $90,875.00 (45.4% of retail value) and paid $2,461.19 in statutory fines instead of buying credits, which achieved 80% compliance."
           ],
           "answer": 2,
           "why": "Rather than writing off the $200,000 batch, circular triage recovered $90,875 in gross value. Furthermore, acquiring 9.3 tons of market EPR credits for $789.44 fulfilled statutory e-waste mandates, netting $2,461.19 after subtracting the credit cost from the avoided penalties.",
@@ -3655,10 +3655,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary governance outcome when an enterprise successfully satisfies all 5 Quality Gates in the Milestone 3 Master Verification Engine?",
           "options": [
-            "All physical products in the warehouse are permanently de-serialized",
-            "The company is granted an exemption from paying any shipping carrier fees",
-            "The company can legally shut down its cycle counting and inventory departments",
-            "The enterprise earns an Unqualified Clean Audit Opinion, verifying world-class distribution throughput, cold chain integrity, circular economic recovery, and statutory Companies Act compliance"
+            "The enterprise earns a Qualified Audit Opinion, verifying that distribution throughput is strong while cold chain and circular recovery need improvement",
+            "The enterprise earns an ISO certification, verifying world-class quality management for the warehouse and transport operations only",
+            "The enterprise earns a tax exemption, verifying that circular economic recovery meets the conditions for deductions under the Companies Act",
+            "It earns an Unqualified Clean Audit Opinion, verifying world-class throughput, cold chain integrity, circular recovery, and Companies Act compliance."
           ],
           "answer": 3,
           "why": "Passing all five quality gates proves comprehensive operational and statutory excellence: high-velocity WMS fulfillment, zero thermal cold chain breaches, high-margin circular recovery, flawless internal financial controls (ICoFR), and complete statutory CARO 2020 and ESG vendor compliance.",
@@ -3775,10 +3775,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following is considered a 'Hidden Post-Transaction Cost' in Total Cost of Ownership (TCO) analysis?",
           "options": [
-            "The negotiated invoice price per unit stated on the supplier contract",
+            "Quoted purchase price, inbound freight charges, and import duties paid at the dock",
             "Pipeline working capital financing, incoming batch defect rework, and field warranty claims",
-            "Sales tax displayed on the initial electronic purchase requisition",
-            "Routine catalog listing fees charged by an e-commerce platform"
+            "Supplier search costs, tender documentation work, and contract negotiation fees",
+            "Initial supplier qualification audits, tender paperwork, and negotiation legal fees"
           ],
           "answer": 1,
           "why": "Post-transaction costs are expenses incurred after the purchase is finalized and delivered. They include inventory financing tied up during transit, assembly line scrap, rework labor, equipment downtime from non-conforming lots, customer support, and field warranty recalls.",
@@ -3824,9 +3824,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Analytical Hierarchy Process (AHP), what does a Consistency Ratio (CR) of 0.0346 signify regarding the evaluators' pairwise ratings?",
           "options": [
             "The pairwise judgments demonstrate acceptable logical consistency (CR < 0.10) and are statistically valid",
-            "The criteria weights are mathematically identical across all categories",
-            "Only one candidate supplier was evaluated",
-            "The ratings contain excessive random errors and must be completely discarded"
+            "The pairwise judgments are inconsistent (CR > 0.10) and must be repeated before the evaluators' weights can be used",
+            "The pairwise judgments are perfectly consistent (CR = 1.0) and the weights are accurate to within one percent",
+            "The evaluators agree with one another on every criterion, so the group has reached full consensus on the supplier ranking"
           ],
           "answer": 0,
           "why": "In Saaty's AHP methodology, a Consistency Ratio (CR) below 0.10 (10%) indicates that the pairwise comparison judgments are logically sound, transitive, and free of fatal contradictions, validating the resulting criteria weights for formal decision-making.",
@@ -3871,10 +3871,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mathematical justification for maintaining a dual-sourcing strategy despite paying a higher blended unit purchase price?",
           "options": [
-            "It doubles the amount of paperwork for accounts payable departments",
-            "It guarantees that neither supplier will ever raise prices in the future",
-            "It eliminates the need for enterprise quality inspections",
-            "It collapses the joint probability of catastrophic simultaneous supply failure (P(A and B) = P(A) * P(B)) and preserves warm operational capacity"
+            "It adds the failure probabilities of the two suppliers (P(A or B) = P(A) + P(B)), so total risk is averaged across both sources of supply",
+            "It removes the need for any safety stock, because two independent suppliers together will deliver every order within the agreed lead time",
+            "It lowers the blended price over time by playing suppliers off each other, which outweighs the added cost of qualifying a second vendor",
+            "It collapses the joint probability of simultaneous supply failure (P(A and B) = P(A) * P(B)) and keeps warm operational capacity available"
           ],
           "answer": 3,
           "why": "Dual-sourcing drastically reduces the likelihood of complete supply collapse because the mathematical probability of two independent production plants failing simultaneously is the product of their individual failure rates (e.g., 6% x 4% = 0.24%), while keeping a pre-qualified warm secondary source ready to ramp up.",
@@ -3919,10 +3919,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did CathodeTech_Sino receive the lowest AHP score (6.95/10) despite offering the lowest initial unit purchase price ($44.00 vs $52.00+)?",
           "options": [
-            "Because it refused to sign the non-disclosure agreement",
-            "Because the system is biased against overseas vendors",
-            "Because high freight/tariffs ($9.20), long lead times (75 days pipeline inventory), and high defect rates (2.8%) ballooned its effective TCO to $66.70/unit, the highest in the cohort",
-            "Because its factory was not connected to the internet"
+            "Because its payment terms of net 120 days and weak financial rating outweighed its price, even though its TCO was the lowest in the cohort",
+            "Because evaluators set the weight of unit price to zero in the AHP matrix, so its $44.00 invoice price added nothing to its overall score",
+            "Because high freight and tariffs ($9.20), a long 75-day pipeline, and a 2.8% defect rate raised its TCO to $66.70/unit, the highest in the cohort",
+            "Because its AHP consistency ratio exceeded 0.10, so the committee cut its score by a fixed penalty even though its TCO was comparable to others"
           ],
           "answer": 2,
           "why": "Although CathodeTech offered an initial invoice price of $44.00, its high freight costs, long shipping pipelines, and elevated defect failures generated an effective TCO of $66.70/unit—higher than competitors quoting $52.00 and $56.00 sticker prices. TCO analysis unmasks hidden operational costs.",
@@ -3991,10 +3991,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Incoterms 2020, why does the ICC explicitly recommend using FCA instead of FOB for modern containerized ocean freight?",
           "options": [
-            "Because FOB is exclusively reserved for air cargo shipments",
-            "Because containerized goods are handed over to the carrier at an inland container terminal days before vessel loading, leaving a dangerous uninsured gap under FOB where risk only transfers once the goods are loaded on board the vessel",
-            "Because FCA eliminates the need for customs documentation",
-            "Because FCA mandates that the seller pay for destination import tariffs"
+            "Because FOB requires the seller to pay ocean freight and insurance to the destination port, which makes it unsuitable for any shipment moved in a container",
+            "Because containers reach the carrier at an inland terminal days before loading, leaving an uninsured gap under FOB, where risk passes only once goods are on board the vessel",
+            "Because FOB transfers risk at the seller's factory door, which exposes the buyer to losses during the inland trucking to the container terminal",
+            "Because FCA transfers risk when the goods are loaded on board the vessel, and FOB transfers it at the inland terminal, which suits container shipping better"
           ],
           "answer": 1,
           "why": "In modern container shipping, cargo is delivered to container terminals days before ship arrival. Under FOB, risk transfers only when cargo is physically loaded on board the vessel. If a container is damaged in the port yard, FOB leaves the buyer and seller in fierce legal dispute. FCA transfers risk at carrier handover, perfectly matching containerized workflows.",
@@ -4041,10 +4041,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under UCP 600 Article 5, what is the fundamental governing principle regarding a bank's role in examining documentary credit presentations?",
           "options": [
-            "Banks must send inspectors to the physical docks to verify the condition and grade of goods",
-            "Banks act as general insurance underwriters for maritime piracy",
+            "Banks examine the goods and the quality of performance, and pay only after confirming the shipment matches the contract of sale",
+            "Banks deal with the applicant's creditworthiness first, and examine documents only when the issuing bank has a doubt about payment",
             "Banks deal exclusively with documents, and not with the goods, services, or performance to which the documents relate",
-            "Banks negotiate purchase prices directly with the shipping captain"
+            "Banks guarantee delivery of the goods to the buyer, and may refuse payment when the goods are late even if the documents comply"
           ],
           "answer": 2,
           "why": "The bedrock principle of documentary credit law (UCP 600 Article 5) is that banks deal strictly with paper/electronic documents and not with the physical cargo. If the documents conform on their face to the LC terms, the bank must pay; if the documents do not conform, the bank must refuse payment, regardless of the condition of the physical goods.",
@@ -4087,9 +4087,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key structural difference between the CIF Customs Valuation standard (used in the EU and India) and the FOB standard (used in the USA)?",
           "options": [
-            "CIF valuation is strictly restricted to air freight shipments",
-            "FOB valuation exempts all goods from paying customs tariffs",
-            "FOB valuation includes domestic retail sales tax in the dutiable base",
+            "CIF valuation excludes freight and insurance from the dutiable base; FOB valuation adds international ocean freight and marine insurance to the goods value",
+            "CIF valuation includes only marine insurance in the dutiable base; FOB valuation adds ocean freight but excludes the goods value at the port",
+            "CIF valuation applies to air shipments only, using the airway bill value; FOB valuation applies to ocean shipments using the loaded value",
             "CIF valuation includes international ocean freight and marine insurance in the dutiable customs base; FOB valuation taxes only the port-of-loading goods value"
           ],
           "answer": 3,
@@ -4134,9 +4134,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the maritime legal doctrine of General Average (York-Antwerp Rules), what occurs when a ship Master intentionally jettisons cargo or incurs salvage fees to save the vessel from imminent sinking?",
           "options": [
             "All surviving cargo owners and the vessel owner must proportionately contribute financial funds to compensate the sacrificed losses",
-            "The ship captain must personally pay for all lost cargo from their personal bank account",
-            "The international maritime court arrests the vessel and sells it at auction immediately",
-            "Only the cargo owner whose containers were jettisoned bears the entire financial loss"
+            "Only the owners of the jettisoned cargo bear the loss, because the Master's decision is treated as an act of nature that insurers must cover",
+            "Only the vessel owner pays for salvage and sacrificed cargo, because the ship Master acts as the carrier's agent in the emergency",
+            "Cargo owners are liable only if their cargo is insured, and uninsured shippers are exempt from any share of the extraordinary sacrifice"
           ],
           "answer": 0,
           "why": "General Average is an equitable maritime doctrine establishing that when an extraordinary sacrifice is made for the common preservation of ship and cargo, all parties benefiting from the successful survival of the voyage must proportionately share the financial cost of the sacrifice.",
@@ -4180,10 +4180,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Nearshore_Monterrey_Mexico achieve a lower Total Landed Cost (26.30/unit) than Offshore Shenzhen China (28.37/unit) despite having a $6.30 higher invoice purchase sticker price?",
           "options": [
-            "Because Mexican suppliers are legally barred from charging freight",
-            "Because zero USMCA tariffs, minimal freight ($1.40 vs $3.50+), and negligible pipeline inventory carrying costs ($0.03 vs $0.23) completely offset the initial purchase price gap",
-            "Because Chinese suppliers use air freight exclusively",
-            "Because the Mexican peso appreciated against the US dollar"
+            "Because Mexico's labor costs per unit were lower, and its invoice price included the freight, tariffs, and carrying costs in a single quoted amount",
+            "Zero USMCA tariffs, minimal freight ($1.40 vs $3.50+), and negligible pipeline carrying costs ($0.03 vs $0.23) more than offset the price gap",
+            "Because the Mexican supplier offered a volume rebate of $6.30, which reduced its invoice price to match Shenzhen before tariffs were applied",
+            "Because Shenzhen's freight and tariff costs were identical to Mexico's, but its pipeline inventory carrying cost was higher on the longer route"
           ],
           "answer": 1,
           "why": "Nearshoring under USMCA eliminated $600,000 in customs tariffs (0% vs 32.5%), compressed freight from $3.50 to $1.40, and reduced pipeline financing by 91% (4 days vs 45 days). These massive logistics and tariff savings more than overcame the $6.30 unit purchase price difference.",
@@ -4253,9 +4253,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In spend analytics, what are the three fundamental dimensions of an enterprise 'Spend Cube'?",
           "options": [
             "Who is buying (Internal Business Unit), What is being bought (Commodity Category), and Where is money going (Parent Supplier)",
-            "Length, Width, and Height of shipping containers",
-            "Base Price, Sales Tax, and Freight Surcharges",
-            "Purchase Order Date, Delivery Date, and Invoice Date"
+            "Who is selling (Supplier Name), What is being sold (Product SKU), and When it is paid (Payment Terms)",
+            "Where it is delivered (Plant Location), How it is paid (Payment Method), and Which contract applies (Agreement Number)",
+            "Who approved the order (Buyer), What the price is (Unit Cost), and Why it was bought (Business Reason)"
           ],
           "answer": 0,
           "why": "The Spend Cube is a multi-dimensional analytical geometry mapping enterprise expenditure across Organization (Who: plants/departments), Commodity (What: UNSPSC categories), and Supplier (Where: parent vendors and geographic origin).",
@@ -4298,9 +4298,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do advanced industrial manufacturing operations measure supplier quality using Parts-Per-Million (PPM) rather than standard percentage defect rates?",
           "options": [
-            "Because PPM numbers look larger on marketing presentations",
-            "Because PPM is legally required by maritime admiralty law",
-            "Because PPM eliminates the need for receiving inspection",
+            "Because suppliers report quality only in PPM under ISO standards, and percentage rates are not accepted in a formal quality agreement",
+            "Because PPM is easier to compute than a percentage, and the figure can be taken directly from the supplier's invoice without an inspection count",
+            "Because PPM measures the number of defects per unit rather than defective units, which gives more detail on multiple defects found in a single part",
             "Because at modern high-throughput manufacturing volumes, even a 0.5% defect rate represents thousands of defective parts capable of halting automated assembly lines daily"
           ],
           "answer": 3,
@@ -4345,10 +4345,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of Step D3 (Immediate Containment Action) in the 8D CAPA problem-solving methodology?",
           "options": [
-            "To file a lawsuit against the equipment manufacturer",
-            "To celebrate team success with an executive banquet",
-            "To immediately quarantine suspect inventory and sort defective parts within 24 hours to insulate the customer from assembly line disruptions while the investigation proceeds",
-            "To identify the permanent root cause using the Five Whys"
+            "To find the root cause of the defect using the 5-Why method within 24 hours, so a permanent fix reaches the customer's line immediately",
+            "To identify the team members and assign each a corrective action, so the customer receives a full written plan within the first day",
+            "To quarantine suspect inventory and sort defective parts within 24 hours so the customer line is protected while the investigation proceeds",
+            "To redesign the process controls that failed, so the supplier can restart production on the affected line without further inspections"
           ],
           "answer": 2,
           "why": "Discipline 3 (D3 Containment) is an emergency stopgap measure. Its exclusive purpose is to protect customer assembly lines immediately by freezing, sorting, and quarantining all suspect inventory within 24-48 hours, ensuring no defective parts reach production while the root cause (D4) is investigated.",
@@ -4391,10 +4391,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Early Supplier Involvement (ESI) vastly more effective at reducing total product cost than traditional post-design procurement competitive bidding?",
           "options": [
-            "Because suppliers work for free during early design phases",
-            "Because approximately 80% of total product lifecycle costs are locked in during the initial engineering design phase, leaving little room for cost reduction once blueprints are frozen",
-            "Because ESI eliminates the need to pay value-added taxes",
-            "Because design engineers prefer not to talk to suppliers"
+            "Because suppliers offer their best prices during the first competitive bid, leaving little room for savings once design drawings are released",
+            "Because about 80% of lifecycle cost is locked in during initial design, leaving little room to cut cost once blueprints are frozen",
+            "Because supplier costs rise by about 80% after the design is frozen, making early commitment the only way to protect against price increases",
+            "Because bidding rounds take 80% of the project timeline, leaving little time for cost reduction once the design is complete"
           ],
           "answer": 1,
           "why": "Once engineering designs are finalized, tolerances, material alloys, and component counts are frozen. About 80% of a product's manufacturing cost is determined by its design geometry. ESI incorporates supplier DFM expertise early to design out unnecessary complexity before expensive tooling is cast.",
@@ -4439,10 +4439,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What strategic benefit is achieved by funneling Tier-1 Preferred suppliers into an Early Supplier Involvement (ESI) and VA/VE co-development pipeline?",
           "options": [
-            "It leverages the supplier's specialized manufacturing expertise during early conceptual design, engineering out unnecessary costs and sharing mutual savings before production tooling is locked",
-            "It allows design engineers to take extended vacations",
-            "It increases product development cycle time by 400%",
-            "It eliminates the need to pay invoices to preferred suppliers"
+            "It uses supplier expertise during early design to engineer out unnecessary cost and share savings before tooling is locked",
+            "It lets the buyer transfer the full cost of design errors to the supplier, locking in a fixed price before engineering is complete",
+            "It reduces the supplier base to a single vendor, ending competitive bidding and ensuring the lowest price for the product's whole life",
+            "It speeds up invoice processing with preferred suppliers, cutting working capital by moving payments earlier in the product lifecycle"
           ],
           "answer": 0,
           "why": "Tier-1 Preferred suppliers possess deep manufacturing domain expertise. Funneling them into ESI and VA/VE enables collaborative Design for Manufacturability, standardizing components and eliminating waste early when 80% of product cost is determined.",
@@ -4511,9 +4511,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under commercial contract law (UCC § 2-718), what condition must a Liquidated Damages clause satisfy to be legally enforceable rather than struck down as an illegal penalty?",
           "options": [
-            "It must be punitive and punish the breaching party with treble damages",
-            "It must be signed by the foreign embassy of the supplier's country",
-            "It must only apply to intellectual property disputes",
+            "It must be a fixed percentage of the contract price, set by statute, and apply equally to every breach regardless of the actual harm suffered",
+            "It must be large enough to deter breach, with the amount chosen to punish the defaulting party so that future breaches are unlikely",
+            "It must be approved by a court before the contract is signed, with the amount fixed only after the harm from a breach has been assessed",
             "It must represent a reasonable pre-estimate of anticipated actual harm at the time of contract execution and not be disproportionately oppressive"
           ],
           "answer": 3,
@@ -4557,10 +4557,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In negotiation theory, what defines a 'Negative ZOPA' (Zone of Possible Agreement)?",
           "options": [
-            "A condition where the seller's minimum acceptable reservation price (floor) is higher than the buyer's maximum allowable reservation price (ceiling), making agreement on that single dimension impossible without adding new variables",
-            "An expired non-disclosure agreement",
-            "A situation where both parties refuse to speak the same language",
-            "A contract where the price is negative and the supplier pays the buyer"
+            "A condition where the seller's minimum price is higher than the buyer's maximum price, so agreement is impossible without new variables",
+            "A condition where the buyer's ceiling is higher than the seller's floor, creating a wide overlap in which any price is acceptable to both",
+            "A condition where both parties share an identical reservation price, so the only agreement possible is at that single point on the price line",
+            "A condition where the buyer's target price is below the seller's target price, which can be resolved by splitting the difference in the middle"
           ],
           "answer": 0,
           "why": "A negative ZOPA occurs when the buyer's ceiling is strictly below the seller's floor (e.g., buyer can pay at most $44, but seller will accept no less than $46.50). Continuing to haggle over price is futile; negotiators must introduce integrative non-price variables (warranties, payment terms, volume) to bridge the gap.",
@@ -4603,10 +4603,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational risk to a buying organization when a sole-source Tier-1 supplier suddenly files for Chapter 11 bankruptcy?",
           "options": [
-            "The buyer has to pay double sales tax",
-            "The supplier's manufacturing line halts, shipments are frozen, and proprietary buyer-owned tooling can become legally trapped under automatic bankruptcy court stay injunctions",
-            "The supplier's employees automatically become direct employees of the buyer",
-            "The contract automatically renews for ten years"
+            "The supplier's price rises sharply as creditors demand payment, and the buyer must pay the unpaid balance on all earlier invoices at once",
+            "The supplier's line halts, shipments freeze, and buyer-owned tooling can become trapped by the automatic bankruptcy stay",
+            "The supplier's contracts are cancelled automatically, and the buyer receives a refund of all deposits paid within thirty days of the filing",
+            "The supplier's management is replaced by the buyer, and the buyer gains control of the plant to keep production running without delay"
           ],
           "answer": 1,
           "why": "When a supplier enters bankruptcy, an 'automatic stay' freezes all assets and operations. Shipments stop, and unless the buyer has explicitly registered and perfected its title to custom manufacturing tooling, the bankruptcy trustee may seize the tooling, halting the buyer's production for months.",
@@ -4649,10 +4649,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In ISO 22301 Business Continuity Management, what is the critical relationship between Recovery Time Objective (RTO) and Maximum Tolerable Period of Disruption (MTPD)?",
           "options": [
-            "RTO must always be significantly longer than MTPD",
-            "RTO and MTPD are identical legal terms for the contract expiration date",
+            "RTO must be equal to MTPD, so that recovery is completed exactly at the moment the disruption would cause permanent harm",
+            "RTO must be strictly greater than MTPD, because recovery takes longer than the business can function without the process",
             "RTO must always be strictly less than MTPD, ensuring operational recovery occurs before the enterprise suffers irreversible, fatal harm",
-            "MTPD applies only to IT server hardware"
+            "RTO is unrelated to MTPD, because RTO is set by IT and MTPD is set by the insurer when the continuity policy is written"
           ],
           "answer": 2,
           "why": "MTPD is the point of organizational death—the maximum duration a business can survive without a critical process. RTO is the target recovery time. For business survival, RTO must be strictly shorter than MTPD with an adequate safety margin.",
@@ -4696,10 +4696,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing an automated procurement Disruption Sentinel rather than conducting annual manual supplier reviews?",
           "options": [
-            "It guarantees 100% price discounts on all raw materials",
-            "It eliminates the need to maintain an enterprise ERP system",
-            "It automatically signs contracts without human review",
-            "It continuously ingests real-time telemetry—delivery timestamps, financial filings, and geopolitical risk feeds—detecting supplier distress and contractual breaches in real time rather than discovering them after lines shut down"
+            "It replaces supplier contracts with automated purchase orders, ending negotiations and fixing prices at the level of the last annual review",
+            "It sends monthly supplier scorecards to the board, replacing manual reviews with a standard report that shows quality trends over a year",
+            "It lets buyers rank suppliers by invoice price in real time, making annual reviews unnecessary because price is the main predictor of supplier risk",
+            "It continuously ingests delivery timestamps, financial filings, and geopolitical feeds, detecting supplier distress in real time instead of after lines stop"
           ],
           "answer": 3,
           "why": "Annual supplier reviews rely on stale, historical data. An automated sentinel continuously monitors real-time telemetry (delivery scans, financial ratios, geopolitical events), enabling proactive risk mitigation—such as securing tooling title or activating dual hubs—months before an operational crisis occurs.",
@@ -4768,10 +4768,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of the Global Strategic Sourcing Control Tower in an enterprise manufacturing environment?",
           "options": [
-            "To ensure that all components are purchased exclusively from local retail shops",
-            "To print out physical paper purchase orders for factory filing cabinets",
-            "To replace human engineers with automated robotic welders",
-            "To integrate disparate ERP, CLM, and logistics streams into a real-time event-driven engine that enforces category strategies, audits landed costs, monitors supplier scorecards, and mitigates insolvency risks"
+            "To replace the ERP system with a single procurement app, so buyers place orders directly and the ERP no longer stores supplier or contract records",
+            "To centralize all purchase approvals under one executive, so that every order above a set value is signed manually before release to suppliers",
+            "To publish the weekly spend report to suppliers, so they can compare their prices with competitors and adjust the next quarterly bid",
+            "To integrate ERP, CLM, and logistics streams into a real-time engine that enforces category strategy, audits landed cost, and monitors supplier risk"
           ],
           "answer": 3,
           "why": "The Sourcing Control Tower provides centralized, end-to-end visibility and real-time algorithmic governance across the entire procurement lifecycle—unifying spend analytics, trade compliance, operational telemetry, and supplier solvency monitoring into an automated digital command center.",
@@ -4816,9 +4816,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Analytical Hierarchy Process (AHP), what does a Consistency Ratio (CR) <= 0.10 signify?",
           "options": [
             "That the pairwise comparison judgments made by the evaluation committee are mathematically consistent, logical, and free from circular contradictions",
-            "That the contract price must be reduced by 10%",
-            "That the evaluation team was 90% biased toward one vendor",
-            "That the supplier will deliver parts 10 days ahead of schedule"
+            "That the judgments are random, with no logical pattern, so the committee's ranking is valid only for the first criterion in the matrix",
+            "That the committee agrees on every pairwise comparison, so all members assigned exactly the same weight to each criterion",
+            "That the number of criteria is acceptable, because a matrix with fewer than ten criteria always passes the consistency test"
           ],
           "answer": 0,
           "why": "Saaty's Consistency Ratio (CR) measures the logical consistency of pairwise comparisons. A CR <= 0.10 proves that the evaluator's transitive preferences are mathematically consistent and statistically sound, ensuring objective decision validity.",
@@ -4862,10 +4862,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the use of the FOB (Free On Board) Incoterm legally inappropriate for modern multi-modal containerized freight shipments?",
           "options": [
-            "Because FOB applies only to airplanes",
-            "Because under FOB, risk transfers only when goods are loaded on board the vessel, whereas modern ocean containers are handed over to ocean carriers at inland container yards days before vessel loading, creating an uninsured liability gap",
-            "Because container ships do not have rails",
-            "Because FOB requires payment in gold bullion"
+            "Because under FOB the seller bears risk until the vessel reaches the destination port, which leaves the buyer without control over the goods at sea",
+            "Under FOB risk transfers only once goods are on board, but containers reach the carrier at inland yards days earlier, creating an uninsured gap",
+            "Because FOB covers only air freight shipments, and modern containers move by ocean carrier under rules that FOB does not govern",
+            "Because under FOB the buyer must arrange insurance before loading, whereas containers are insured automatically by the carrier at the inland yard"
           ],
           "answer": 1,
           "why": "In modern container shipping, shippers deliver sealed containers to port container freight stations or terminal yards days before loading. Under FOB, risk does not transfer until the goods are loaded on board the vessel. If cargo is damaged in the port terminal, severe legal disputes erupt. The ICC specifically recommends FCA (Free Carrier) for containerized cargo.",
@@ -4909,10 +4909,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of Step D3 (Immediate Containment Action) in the 8D CAPA problem-solving methodology?",
           "options": [
-            "To celebrate team completion with an executive dinner",
-            "To negotiate new payment terms",
-            "To quarantine all suspect inventory and implement 100% sorting within 24 to 48 hours to protect customer manufacturing lines while root-cause investigation is underway",
-            "To file a lawsuit against the supplier in civil court"
+            "To find the root cause of the defect using a fishbone diagram within 24 to 48 hours, so that the permanent fix can be validated by the customer",
+            "To notify the customer's quality team in writing within 24 to 48 hours, so they begin their own inspection of the supplier's parts",
+            "To quarantine suspect inventory and sort 100% of it within 24 to 48 hours to protect customer lines during root-cause work",
+            "To implement permanent process changes within 24 to 48 hours, so the defect is prevented from recurring on any other production line"
           ],
           "answer": 2,
           "why": "Discipline 3 (D3 Containment) is an emergency firewall. Its exclusive purpose is to immediately insulate the customer from defective parts by quarantining suspect inventory and sorting production within 24-48 hours while the root cause is determined.",
@@ -4970,10 +4970,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary significance of achieving 100% verification across all Five Governance Gates in Milestone 4?",
           "options": [
-            "It proves the company has eliminated all human employees",
-            "It guarantees that oil prices will never increase",
-            "It permits the company to operate without business insurance",
-            "It demonstrates that the enterprise possesses an end-to-end, mathematically rigorous, and legally bulletproof sourcing control tower—unifying spend analytics, trade compliance, operational telemetry, financial solvency auditing, and business continuity resilience"
+            "It shows the enterprise has cut procurement spend by half, and that all supplier contracts are now locked into a single long-term agreement",
+            "It shows the enterprise has outsourced its sourcing function, and that supplier compliance is now audited by an external certification body",
+            "It shows the enterprise has moved all purchasing to a single supplier, with trade compliance and insolvency risk shifted to that partner",
+            "It shows a rigorous sourcing control tower unifying spend analytics, trade compliance, telemetry, solvency auditing, and continuity resilience"
           ],
           "answer": 3,
           "why": "Passing all five governance gates proves full synthesis of strategic sourcing mastery: ensuring that procurement is grounded in empirical spend data, cross-border landed cost accuracy, Six Sigma operational quality, predictive solvency protection, and ISO 22301 crisis resilience.",
@@ -5045,10 +5045,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is MQTT preferred over standard HTTP for battery-powered industrial supply chain IoT trackers?",
           "options": [
-            "MQTT uses a lightweight 2-byte fixed header and decoupled Pub/Sub architecture, drastically minimizing radio broadcast energy and battery drain compared to bulky HTTP request headers",
-            "MQTT only functions when connected to a physical ethernet cable",
-            "HTTP does not support numbers greater than 100",
-            "HTTP is banned by international maritime treaties"
+            "MQTT has a 2-byte fixed header and decoupled Pub/Sub, cutting radio energy and battery drain versus bulky HTTP headers",
+            "MQTT uses a large header with built-in encryption and a request-response model, which maximizes data security at the cost of higher battery use",
+            "MQTT uses a persistent polling connection that updates the server every second, which maximizes accuracy but needs a larger battery",
+            "MQTT compresses sensor data into a binary file stored on the tracker, which is uploaded in one transfer once a day to avoid radio use"
           ],
           "answer": 0,
           "why": "Standard HTTP headers introduce hundreds of bytes of textual overhead and require continuous synchronous polling, rapidly depleting mobile IoT batteries. MQTT's binary 2-byte header and event-driven publish-subscribe model provide the lean efficiency required for multi-year field operation.",
@@ -5090,10 +5090,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between Passive UHF RFID and Active RFID tags in enterprise logistics?",
           "options": [
-            "Passive RFID tags require Wi-Fi passwords, while Active RFID does not",
-            "Passive RFID operates only underwater",
-            "Active RFID tags can only be read once in their lifetime",
-            "Passive RFID tags harvest RF energy from reader fields and lack an internal battery (costing cents with 3-10m range), whereas Active tags possess an internal battery to broadcast autonomous signals across 100m+ (costing $15-$50 for high-value asset tracking)"
+            "Passive RFID tags have an internal battery and reach 100m+ at $15-$50 each, whereas Active tags harvest reader energy at a cost of cents with a 3-10m range",
+            "Passive RFID tags use GPS to report position anywhere in the world, whereas Active tags work only within a warehouse and need a nearby reader",
+            "Passive RFID tags store a barcode that must be scanned in line of sight, whereas Active tags can be read in bulk through packaging and pallets",
+            "Passive tags harvest reader energy with no battery (cents, 3-10m range); Active tags have a battery and reach 100m+ ($15-$50 each)"
           ],
           "answer": 3,
           "why": "Passive tags harvest reader RF field energy, offering low cost and infinite operational life for item-level inventory, while battery-powered Active tags transmit autonomous signals across long ranges for high-value equipment and RTIs.",
@@ -5136,10 +5136,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of geofencing in real-time supply chain telematics?",
           "options": [
-            "To prevent trucks from consuming diesel fuel",
-            "To eliminate the need for drivers to hold commercial licenses",
-            "To establish virtual spatial boundaries that automatically verify arrival milestones, trigger billing and ePOD, and detect route deviations or cargo theft in real time",
-            "To change the color of physical shipping boxes"
+            "To encrypt location data sent by trackers, so that only authorized dispatchers can see where the truck is at any time on the route",
+            "To compute the shortest route between stops, so that drivers avoid traffic and fuel use is lower on every trip they complete",
+            "To set virtual boundaries that verify arrivals, trigger billing and ePOD, and flag route deviations or theft in real time",
+            "To measure the temperature inside trailers, so that alerts are sent if the cargo leaves the allowed range during a long journey"
           ],
           "answer": 2,
           "why": "Geofencing defines virtual geographical perimeters using GPS coordinates, enabling automated event logging, ETA computation, milestone verification, and immediate security alerts when high-value shipments deviate from prescribed routes.",
@@ -5182,10 +5182,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is frequency-domain FFT analysis superior to simple time-domain RMS vibration metrics for industrial predictive maintenance?",
           "options": [
-            "FFT analysis requires no mathematical calculations",
-            "Time-domain RMS only measures total gross energy and often remains within normal limits until late-stage catastrophic failure, whereas FFT isolates distinct spectral frequencies to pinpoint exact micro-defects (e.g. bearing BPFO spalls vs rotor unbalance) weeks in advance",
-            "FFT can only be used on non-metallic equipment",
-            "Time-domain metrics are completely illegal under OSHA rules"
+            "Time-domain RMS isolates specific faults but is slow to compute, whereas FFT reports only total energy and detects failures after they occur",
+            "RMS measures only total energy and stays normal until late failure, whereas FFT isolates frequencies to pinpoint micro-defects weeks earlier",
+            "Time-domain RMS needs a sensor on every bearing, whereas FFT can detect faults from one sensor mounted on the machine's outer casing",
+            "Time-domain RMS shows the exact frequency of each fault, whereas FFT averages vibration over time and shows only the gross trend"
           ],
           "answer": 1,
           "why": "Gross RMS vibration velocity frequently masks localized micro-defects during early degradation stages. FFT transforms time waveforms into discrete frequency spectra, allowing engineers to track distinct defect frequencies (such as bearing raceway impacts) long before overall vibration escalates.",
@@ -5238,9 +5238,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary business value of standardizing IoT sensor data into GS1 EPCIS event schemas within an enterprise gateway?",
           "options": [
             "It provides a universally understood, vendor-agnostic data model answering What, Where, When, and Why across multi-tier enterprise supply chain networks",
-            "It eliminates the need for computer databases",
-            "It allows sensors to operate without electricity",
-            "It forces all sensors to be painted yellow"
+            "It compresses sensor readings to reduce bandwidth costs, so trackers send fewer bytes per message and batteries last longer in transit",
+            "It encrypts event records before transmission, so only the partner who owns the shipment can read the temperature and location logs",
+            "It converts sensor data into financial entries, so supply chain events are posted to the general ledger without manual accounting work"
           ],
           "answer": 0,
           "why": "GS1 EPCIS standardizes supply chain visibility across disparate enterprise systems by encapsulating the four fundamental dimensions of physical reality: What (EPC identity), Where (coordinates/hub), When (timestamp), and Why (business context/status).",
@@ -5315,10 +5315,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary computational advantage of using a Merkle Tree rather than a linear list of hashes in supply chain blockchain blocks?",
           "options": [
-            "Merkle trees allow supply chain managers to color-code shipments",
-            "Merkle trees enable lightweight clients to verify whether a specific pallet transaction was included in a block with logarithmic O(log N) proof complexity, without downloading the entire ledger",
-            "Merkle trees eliminate the need for computer monitors",
-            "Merkle trees guarantee that freight ships travel twice as fast"
+            "Merkle trees encrypt every transaction with a unique key, so only the sender and receiver can read the pallet data stored in each block",
+            "Merkle trees let light clients verify a transaction's inclusion with O(log N) proof size, without downloading the whole ledger",
+            "Merkle trees compress the whole ledger into one hash, so a client can verify the entire chain by checking a single value in constant time",
+            "Merkle trees order transactions by timestamp, so a client can find a pallet record by binary search without a hash comparison"
           ],
           "answer": 1,
           "why": "A Merkle tree allows any participant to verify a transaction's membership in a block using an SPV Merkle proof in O(log N) time and space, requiring only the hashes of sibling nodes along the path from the leaf to the root.",
@@ -5362,10 +5362,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do blockchain smart contracts require decentralized oracles (like Chainlink or IoT relays) to interact with physical supply chains?",
           "options": [
-            "Smart contracts only work during daylight hours without oracles",
-            "Smart contracts cannot store numbers greater than 1,000",
-            "Smart contracts run in isolated deterministic execution environments and cannot natively access off-chain physical sensor data or web APIs without breaking consensus among validating nodes",
-            "Oracles are required by government postal regulations"
+            "Because smart contracts store data on the blockchain only in encrypted form, and oracles are required to decrypt sensor readings for validators",
+            "Because smart contracts are too slow to read sensor data, and oracles are required to process readings in parallel before nodes see them",
+            "Smart contracts run in isolated deterministic environments and cannot access off-chain sensor data or APIs without breaking node consensus",
+            "Because smart contracts can read any web API directly, but oracles are required by law to certify that the sensor data belongs to the shipper"
           ],
           "answer": 2,
           "why": "Because blockchains require absolute determinism for consensus across distributed nodes, smart contracts cannot initiate external API calls. Cryptographically signed oracle feeds provide the trusted off-chain physical data required to trigger smart contract logic.",
@@ -5409,10 +5409,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary evolutionary improvement of GS1 Digital Link 2D barcodes over legacy 1D linear UPC barcodes in global operations?",
           "options": [
-            "GS1 Digital Link barcodes are round instead of square",
-            "Legacy UPC barcodes require satellite uplinks to function",
-            "GS1 Digital Link barcodes can only be read by microscopes",
-            "Legacy UPC barcodes only identify the broad generic product category (GTIN), whereas GS1 Digital Link encodes item-level serial numbers, lot codes, and expiration dates in a web URI linked to live provenance ledgers"
+            "UPC barcodes encode item-level serial numbers and expiry dates, whereas GS1 Digital Link encodes only the product category and manufacturer prefix",
+            "UPC barcodes must be scanned individually, whereas GS1 Digital Link can be read from a distance of 10 meters through packaging by a fixed reader",
+            "UPC barcodes store data in a printed pattern, whereas GS1 Digital Link stores it in a radio chip that needs an antenna to be read",
+            "UPC encodes only the generic product GTIN, whereas GS1 Digital Link adds serial numbers, lot codes, and expiry dates in a web URI"
           ],
           "answer": 3,
           "why": "Standard UPC barcodes only encode the product-level GTIN. GS1 Digital Link incorporates unique serialization (AI 21), lot numbers (AI 10), and expiration dates (AI 17) into a web URI, enabling granular item-level tracking and anti-counterfeiting.",
@@ -5457,9 +5457,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What primary operational cost is eradicated by collapsing Bill of Lading courier transit latency from 12 days to minutes using tokenized eBLs?",
           "options": [
             "Port Demurrage and Detention penalties incurred when container vessels arrive days before physical paper documents arrive from overseas banks",
-            "Seafaring crew salaries",
-            "Fuel consumption of container vessels",
-            "Ship hull repainting costs"
+            "Customs duty payments, which are removed once eBLs let the importer submit tax filings before the vessel departs from the origin port",
+            "Cargo insurance premiums, which are removed once eBLs prove that goods are protected by a blockchain-based guarantee of delivery",
+            "Container leasing fees, which are removed once eBLs allow the shipping line to reuse containers sooner after unloading the cargo"
           ],
           "answer": 0,
           "why": "When vessels arrive before paper Bills of Lading, cargo cannot be released by customs, incurring massive demurrage fees ($150-$400/day). Tokenized eBLs enable instant title transfer, eliminating document-related port delays.",
@@ -5508,10 +5508,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational outcome of deploying an Enterprise Blockchain Gateway across multi-tier global supply chains?",
           "options": [
-            "It replaces all supply chain employees with automated trading bots",
-            "It eliminates counterparty trust deficits by establishing an immutable cryptographic single source of truth, automating escrow disbursements via smart contracts, and guaranteeing item-level anti-counterfeiting",
-            "It eliminates the need for physical ships and trucks",
-            "It prevents cargo from being transported across international borders"
+            "It replaces all ERP and WMS systems with a single public chain, which lowers IT costs but makes shipment data visible to the public",
+            "It removes trust gaps with an immutable single source of truth, automated smart contract escrow, and item-level anti-counterfeiting",
+            "It eliminates the need for shipping documents, by storing the invoice and bill of lading as image files in the cloud for each partner",
+            "It guarantees that every supplier delivers on time, by recording late deliveries on the ledger and charging automatic penalties to the carrier"
           ],
           "answer": 1,
           "why": "The Enterprise Blockchain Gateway replaces fragmented private ledgers with a unified, cryptographically verified single version of truth, automating commercial payments, preventing counterfeiting, and streamlining international trade documentation.",
@@ -5582,10 +5582,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technological advantage of SLAM-based Autonomous Mobile Robots (AMRs) over legacy Automated Guided Vehicles (AGVs)?",
           "options": [
-            "AMRs consume zero electricity and run on perpetual motion",
-            "AGVs have completely infinite payload capacity up to 1,000,000 tons",
-            "AMRs require zero physical floor infrastructure (navigating via onboard LiDAR and dynamic SLAM cost-maps) and can autonomously detour around unexpected obstacles without halting",
-            "AMRs can fly over warehouse roofs"
+            "AMRs run on magnetic tape or painted lines for guidance and carry heavier payloads, but stop and wait for staff when a path is blocked",
+            "AMRs are controlled from a central server that sets each path in advance, which removes the need for sensors on the vehicle",
+            "AMRs need no floor infrastructure, navigating by onboard LiDAR and SLAM cost-maps, and can detour around obstacles without halting",
+            "AMRs rely on wireless beacons installed in the ceiling, which gives faster speeds but needs more infrastructure than legacy AGVs"
           ],
           "answer": 2,
           "why": "AGVs follow rigid physical tracks and stop when blocked. AMRs utilize LiDAR, depth cameras, and SLAM mapping to navigate dynamically around obstacles without requiring costly magnetic tape or floor wire installations.",
@@ -5629,10 +5629,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary physical constraint overcome by deploying vertical high-bay AS/RS systems in urban logistics hubs?",
           "options": [
-            "Government restrictions on wooden pallets",
-            "High land acquisition costs and geographic space constraints, by expanding storage vertically to 40+ meters instead of sprawling across expensive horizontal real estate",
-            "The requirement for sprinkler systems",
-            "The need to hire computer programmers"
+            "Rising labor costs for pickers, by replacing manual order picking with automated cranes that work around the clock without a shift break",
+            "High land costs and space limits, solved by storing vertically to 40+ meters instead of spreading over costly floor area",
+            "Slow replenishment from suppliers, by storing larger quantities of inventory in the warehouse to buffer against delivery delays",
+            "Strict fire code limits for flammable goods, by spreading the stock across multiple low-rise buildings to separate the risk"
           ],
           "answer": 1,
           "why": "High-bay AS/RS systems utilize vertical cube space up to 45 meters, increasing storage density by up to 400% on the same land footprint, drastically lowering real estate acquisition and refrigeration energy costs in prime urban distribution hubs.",
@@ -5675,10 +5675,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between a 'Vertex Collision' and an 'Edge Collision' in multi-agent robot pathfinding?",
           "options": [
-            "A Vertex Collision occurs when two robots attempt to occupy the exact same spatial coordinate (x, y) at time t, whereas an Edge Collision occurs when two robots attempt to swap adjacent coordinates in opposite directions between t and t+1 (head-on collision)",
-            "Vertex collisions occur only when robots are charging",
-            "Vertex collisions happen on Tuesdays, edge collisions happen on Fridays",
-            "Edge collisions only affect wheeled robots"
+            "A Vertex Collision is two robots entering the same cell at time t; an Edge Collision is two robots swapping adjacent cells head-on between t and t+1",
+            "A Vertex Collision occurs when two robots swap adjacent cells between t and t+1, whereas an Edge Collision occurs when two robots occupy the same cell at time t",
+            "A Vertex Collision occurs when a robot hits a fixed obstacle in its path, whereas an Edge Collision occurs when two robots meet at a shelf corner",
+            "A Vertex Collision occurs when a robot loses its position data at a node, whereas an Edge Collision occurs when two robots take paths of unequal length"
           ],
           "answer": 0,
           "why": "Vertex collisions represent simultaneous spatial overlap at a single node. Edge collisions represent head-on traversal of the same physical corridor in opposite directions during the same time interval.",
@@ -5722,10 +5722,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational productivity leap achieved when transitioning from Person-to-Goods (P2G) to Goods-to-Person (G2P) order picking?",
           "options": [
-            "Warehouse ceilings must be removed",
-            "Order picking errors increase by 500%",
-            "Workers must run between aisles instead of walking",
-            "Human walking time (which accounts for up to 70% of a manual picker's shift) is eliminated completely, as robots bring inventory pods directly to stationary pickers, elevating picking rates from 65 to over 400 lines/hour"
+            "Order batching is eliminated entirely, as robots combine all orders into one large wave, raising picking rates from 65 to over 400 lines/hour",
+            "Human walking time is cut by 20% through better slotting, as pickers walk shorter paths between zones, raising picking rates from 65 to 80 lines/hour",
+            "Packing time (up to 70% of a shift) is eliminated by robots, which seal and label each box, raising picking rates from 65 to over 400 lines/hour",
+            "Walking time (up to 70% of a manual picker's shift) is eliminated as robots bring pods to pickers, lifting rates from 65 to 400+ lines/hour"
           ],
           "answer": 3,
           "why": "Manual P2G picking wastes up to 70% of labor hours in walking transit down aisles. G2P automation delivers inventory directly to stationary ergonomic workstations, driving 4x to 6x productivity improvements.",
@@ -5773,10 +5773,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of a Warehouse Execution System (WES) in coordinating AMRs and AS/RS robotics?",
           "options": [
-            "To replace all computer monitors with typewriters",
-            "To prevent workers from leaving the building",
-            "To act as the real-time operational bridge between high-level ERP order waves and low-level robot fleet controllers, dynamically allocating pods, synchronizing AS/RS replenishment, and balancing workstation queues",
-            "To print decorative product labels"
+            "To record financial transactions and invoice customers, with the WES posting each shipment to the general ledger once the robots finish",
+            "To control the motor speed and battery charging of each robot, with the WES acting as the on-board operating system of every vehicle",
+            "To bridge ERP order waves and robot fleet controllers, allocating pods, synchronizing AS/RS replenishment, and balancing workstation queues",
+            "To forecast annual demand and plan inventory purchases, with the WES sending orders to suppliers once robots report that bins are empty"
           ],
           "answer": 2,
           "why": "The Warehouse Execution System (WES) sits between high-level business WMS/ERP order management and low-level machine controls, orchestrating real-time work assignment, robot routing, and inventory synchronization.",
@@ -5852,10 +5852,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between a 'Digital Shadow' and a true 'Digital Twin' in industrial operations?",
           "options": [
-            "A Digital Shadow uses color screens while a Digital Twin uses black and white",
-            "A Digital Shadow is only used in dark warehouses",
-            "A Digital Twin cannot be run on cloud servers",
-            "A Digital Shadow features one-way telemetry flow from physical asset to virtual model, whereas a true Digital Twin implements bi-directional data flow with closed-loop automated feedback control"
+            "A Digital Shadow has bi-directional data flow with closed-loop control, whereas a true Digital Twin receives telemetry in one direction only",
+            "A Digital Shadow is a 3D visual model with no live data, whereas a true Digital Twin uses a manual upload of data once per shift",
+            "A Digital Shadow simulates future scenarios without any real inputs, whereas a true Digital Twin only records past performance of the asset",
+            "A Digital Shadow has one-way telemetry from asset to model, whereas a true Digital Twin has bi-directional flow with closed-loop control"
           ],
           "answer": 3,
           "why": "A Digital Model has manual data exchange; a Digital Shadow has one-way automated telemetry streaming from physical to virtual; a Digital Twin possesses full bi-directional communication, streaming telemetry in and pushing control setpoints back to physical equipment.",
@@ -5904,9 +5904,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "According to Little's Law (L = lambda * W), if a distribution sorting center maintains an average of 300 parcels in accumulation buffers and processes 50 parcels per minute, what is the average transit dwell time?",
           "options": [
             "6.0 minutes (W = 300 / 50)",
-            "150 minutes",
-            "15,000 minutes",
-            "0.16 minutes"
+            "0.17 minutes (W = 50 / 300)",
+            "15,000 minutes (W = 300 * 50)",
+            "350 minutes (W = 300 + 50)"
           ],
           "answer": 0,
           "why": "Little's Law states L = lambda * W. Rearranging for average waiting time W yields W = L / lambda = 300 parcels / 50 parcels/minute = 6.0 minutes.",
@@ -5955,10 +5955,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under modern supply chain resilience theory, what condition defines a 'Resilience Deficit' in an enterprise supply network?",
           "options": [
-            "When the company spends less than 5% of revenue on advertising",
-            "When Time-to-Survive is strictly less than Time-to-Recover (TTS < TTR), meaning on-hand safety stock and pipeline inventory run dry before the disrupted node can restore operations",
-            "When trucks drive faster than trains",
-            "When inventory turnover ratio exceeds 50"
+            "When Time-to-Survive is strictly greater than Time-to-Recover (TTS > TTR), so inventory lasts longer than needed and creates excess holding cost",
+            "When Time-to-Survive is less than Time-to-Recover (TTS < TTR), so stock runs dry before the disrupted node restores operations",
+            "When Time-to-Survive is equal to the planning horizon, so the network holds a full year of safety stock at every node",
+            "When Time-to-Recover is shorter than the supplier lead time, so the network relies on suppliers to restore operations faster than the buyer"
           ],
           "answer": 1,
           "why": "A Resilience Deficit occurs whenever Time-to-Survive is shorter than Time-to-Recover (TTS < TTR). During the gap period between inventory exhaustion and node restoration, customer demand cannot be fulfilled, resulting in stockouts and financial losses.",
@@ -6007,10 +6007,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical definition of a telemetry residual e(t) in Digital Twin physics-informed anomaly detection?",
           "options": [
-            "e(t) is the cost of the sensor in euros",
-            "e(t) is the battery percentage of the edge node",
-            "e(t) = y(t) - y_hat(t), the difference between the physical observed sensor telemetry y(t) and the digital twin's theoretical model expectation y_hat(t)",
-            "e(t) is the number of operators on the factory floor"
+            "e(t) = y_hat(t) / y(t), the ratio of the twin's model expectation to the observed sensor telemetry at the same moment",
+            "e(t) = y(t) + y_hat(t), the sum of the observed telemetry and the twin's expectation, used to normalize sensor drift",
+            "e(t) = y(t) - y_hat(t), the gap between observed sensor telemetry y(t) and the twin's model expectation y_hat(t)",
+            "e(t) = y(t) - y(t-1), the change in observed sensor telemetry between two consecutive time steps of the physical asset"
           ],
           "answer": 2,
           "why": "A residual is defined as e(t) = y(t) - y_hat(t), measuring the discrepancy between physical reality and simulated theoretical expectation. Non-zero persistent residuals reveal mechanical wear or environmental anomalies.",
@@ -6058,10 +6058,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the Executive Predictive Command Gateway in an enterprise digital twin architecture?",
           "options": [
-            "To replace human managers with automated emails",
-            "To turn off factory heating at night",
-            "To print colorful 3D graphs for wall posters",
-            "To synthesize physical asset telemetry, discrete event simulation, macro supply stress testing, and predictive anomaly residuals into a unified decision engine that commands closed-loop autonomous optimizations and alerts executives to emerging risks"
+            "To store raw telemetry and simulation outputs in a long-term archive, so auditors can review past asset behavior and executives receive a monthly report",
+            "To replace the plant's control systems with a cloud dashboard, so that executives set machine parameters directly and operators only monitor displays",
+            "To forecast annual demand and set procurement budgets from sales data, so executives receive a plan that machines then execute without any feedback",
+            "To unify telemetry, discrete event simulation, supply stress tests, and anomaly residuals into one decision engine that runs closed-loop optimizations and alerts executives"
           ],
           "answer": 3,
           "why": "The command gateway unifies real-time telemetry, DES queuing models, stress-testing resilience simulations, and AI anomaly detection into a single cyber-physical control platform with closed-loop setpoint dispatch.",
@@ -6137,10 +6137,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between 'Human-in-the-Loop' and 'Human-on-the-Loop' in an autonomous smart factory?",
           "options": [
-            "In Human-in-the-loop, humans execute daily physical tasks (manual driving, barcode scanning); in Human-on-the-loop, machines execute tasks autonomously while humans supervise digital twins, review simulations, and govern strategic exceptions",
-            "Human-in-the-loop workers wear safety vests while human-on-the-loop workers do not",
-            "Human-on-the-loop means workers sit on top of conveyor belts",
-            "Human-in-the-loop requires zero computer software"
+            "In Human-in-the-loop, humans do daily physical tasks like driving and scanning; in Human-on-the-loop, machines act autonomously while humans supervise twins and govern exceptions",
+            "In Human-in-the-loop, machines act autonomously while humans supervise digital twins; in Human-on-the-loop, humans execute daily tasks like manual driving and scanning",
+            "In Human-in-the-loop, workers are replaced entirely by robots; in Human-on-the-loop, workers perform the same manual tasks but with wearable scanners",
+            "In Human-in-the-loop, humans approve each machine action only during audits; in Human-on-the-loop, humans approve every action before it executes"
           ],
           "answer": 0,
           "why": "Human-on-the-loop elevates workers from manual, repetitive task execution to high-level supervisory governance: automated systems handle routing, picking, and payment execution, while human managers intervene only when algorithmic exception thresholds trigger.",
@@ -6190,10 +6190,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational benefit of anchoring IoT cold-chain telematics into smart contract escrow?",
           "options": [
-            "It guarantees that trucks drive at the speed of light",
-            "It increases manual paperwork for customs brokers",
-            "It eliminates the need for shipping containers",
-            "It replaces weeks of contentious post-delivery damage disputes with objective, automated execution: compliant shipments trigger immediate payment release, while out-of-spec shipments trigger automated penalties and quarantine routing"
+            "It lowers insurance premiums on cargo by sending live temperature alerts to the insurer, while payment terms and damage disputes stay manual",
+            "It extends shelf life of the cargo by adjusting the reefer setpoint automatically, while payment release still needs a signed receipt",
+            "It replaces the carrier's liability with the shipper's, so damage claims are settled by an arbitration panel after delivery",
+            "It replaces weeks of damage disputes with automated execution: compliant shipments release payment, out-of-spec ones trigger penalties and quarantine"
           ],
           "answer": 3,
           "why": "Integrating IoT telematics with smart contracts eliminates manual claims disputes. Objective sensor data determines payment settlement and physical quarantine routing deterministically within seconds of arrival.",
@@ -6243,10 +6243,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of Space-Time Reservation A* pathfinding in managing large autonomous mobile robot (AMR) fleets?",
           "options": [
-            "To transmit advertising emails to customers",
-            "To calculate the manufacturing cost of the robot chassis",
-            "To reserve 3D grid cells (x, y, t) across time steps, preventing both vertex collisions (same spot at same time) and opposing-edge collisions (head-on aisle deadlocks)",
-            "To clean the warehouse floor at night"
+            "To reserve (x, y) grid cells permanently for each robot, preventing vertex collisions but allowing robots to pass through each other's lanes",
+            "To assign each robot a fixed priority number, so the lower-priority robot reverses until the aisle is clear, with no reservation of future cells",
+            "To reserve (x, y, t) grid cells across time steps, preventing vertex collisions (same spot, same time) and head-on edge collisions in aisles",
+            "To compute the shortest distance for each robot ignoring others, and resolve conflicts afterward by stopping robots that happen to collide"
           ],
           "answer": 2,
           "why": "Space-Time A* plans robot trajectories across space and time coordinates (x, y, t), ensuring that no two robots occupy the same location at the same timestamp or cross the same edge in opposite directions, eliminating deadlocks.",
@@ -6296,10 +6296,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what condition does the Digital Twin confer DIGITAL_TWIN_SIMULATION_ALL_GATES_CERTIFIED_NOMINAL status?",
           "options": [
-            "Only when all factory machines are completely turned off",
-            "When all four analytical gates pass: telemetry latency <= 150ms, DES utilization <= 90% with zero overflows, Time-to-Survive >= Time-to-Recover (TTS >= TTR), and anomaly divergence < 4.0 sigma with RUL >= 48 hours",
-            "When the factory owner signs a physical certificate",
-            "When order picking velocity drops to zero"
+            "When any three of four gates pass: latency <= 500ms, DES utilization <= 99%, TTS >= TTR, and anomaly divergence < 6.0 sigma with RUL >= 24 hours",
+            "When all four gates pass: latency <= 150ms, DES utilization <= 90% with zero overflows, TTS >= TTR, and anomaly divergence < 4.0 sigma with RUL >= 48 hours",
+            "When all four gates pass: latency <= 150ms, DES utilization <= 90%, TTS <= TTR, and anomaly divergence < 4.0 sigma with RUL >= 48 hours",
+            "When all four gates pass: latency <= 15ms, DES utilization <= 60% with zero overflows, TTS >= TTR, and anomaly divergence < 1.0 sigma with RUL >= 480 hours"
           ],
           "answer": 1,
           "why": "Full digital twin nominal certification requires all four gates to pass simultaneously, validating real-time data synchrony, queuing buffer stability, network disruption survival capacity, and cyber-physical machine health.",
@@ -6349,10 +6349,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the significance of the Certified Supply Chain Digital Automation Officer (CSDAO) credential awarded by the Master Autonomous Operations Verification Engine?",
           "options": [
-            "It validates sovereign competency across the complete Industry 4.0 stack: IoT sensor telematics, blockchain smart contract provenance, autonomous AMR/AS-RS robotics, and digital twin simulation",
-            "It confirms you know how to operate a manual forklift",
-            "It is a social media badge with no technical meaning",
-            "It allows you to fly commercial airplanes"
+            "It validates competency across the Industry 4.0 stack: IoT telematics, blockchain smart contract provenance, autonomous AMR/AS-RS robotics, and digital twin simulation",
+            "It validates competency across enterprise resource planning: ERP configuration, financial consolidation, MRP parameter setup, and shop-floor scheduling",
+            "It validates competency across lean manufacturing: Kanban design, SMED setup reduction, Six Sigma statistics, and kaizen event facilitation",
+            "It validates competency across strategic sourcing: spend analytics, supplier negotiation, incoterms, and contract law for global procurement"
           ],
           "answer": 0,
           "why": "The CSDAO credential certifies mastery of the end-to-end cyber-physical automation architecture, validating the ability to lead multi-million dollar smart factory and supply chain transformation initiatives.",
@@ -6421,10 +6421,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following describes the standardized High-Level Structure (HLS) shared across modern ISO management standards such as ISO 9001, ISO 14001, and ISO 45001?",
           "options": [
-            "Incoterms 2020 Rules",
+            "Annex SL 7-clause architecture",
             "Annex SL 10-clause architecture",
-            "Six Sigma DMAIC framework",
-            "Sarbanes-Oxley Section 404"
+            "Annex XL 12-clause architecture",
+            "Annex SP 9-clause architecture"
           ],
           "answer": 1,
           "why": "Annex SL is the universal High-Level Structure created by ISO to provide an identical clause structure (Clauses 1 to 10), core text, and common terms across all modern management systems standards.",
@@ -6509,10 +6509,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of a Stage 1 ISO 9001 audit conducted by a Certification Body?",
           "options": [
-            "To immediately issue the final accredited certification certificate on the first day",
-            "To interview every individual factory employee across all three operating shifts",
-            "To inspect physical manufacturing machines for thermodynamic mechanical stress",
-            "To evaluate documented system readiness, verify internal audit and management review completion, and determine preparedness for Stage 2 on-site evaluation"
+            "To verify on-site that every process operates as documented, sample production records, and decide whether certification can be granted",
+            "To confirm the effectiveness of corrective actions from a prior certification cycle and decide whether surveillance audits may be reduced",
+            "To audit supplier facilities against the standard and report supplier nonconformities to the client before the certificate is issued",
+            "To evaluate documented system readiness, verify internal audit and management review completion, and judge preparedness for the Stage 2 on-site audit"
           ],
           "answer": 3,
           "why": "Stage 1 is the readiness and documentation audit. It verifies that mandatory QMS documentation exists, internal audits and management reviews have occurred, and the facility is prepared for Stage 2.",
@@ -6552,10 +6552,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the consequence of receiving a single Major Non-Conformance during a Stage 2 ISO 9001 certification audit?",
           "options": [
-            "Accredited certification is blocked and cannot be granted until the Major NC is fully contained, root cause resolved, and verified via a follow-up re-audit",
-            "The company is immediately awarded gold-level certification with no further actions required",
-            "The registrar automatically converts the Major NC into a harmless verbal compliment",
-            "The company is permanently banned from ever applying for ISO standards in the future"
+            "Accredited certification is blocked until the Major NC is contained, its root cause fixed, and a follow-up re-audit verifies it",
+            "Certification is granted with a conditional status, and the Major NC is closed during the first annual surveillance audit",
+            "Certification is granted on schedule, provided the organization submits a written response to the Major NC within 90 days",
+            "The audit is repeated in full the next day, and certification is issued if the second audit finds fewer than three Minor NCs"
           ],
           "answer": 0,
           "why": "A Major Non-Conformance indicates a serious breakdown of the QMS or direct risk to product quality; accredited certification cannot be granted until the issue is remediated and verified.",
@@ -6598,10 +6598,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under accredited ISO 9001:2015 registrar audit guidelines, what are the precise quantitative criteria required for a certification recommendation?",
           "options": [
-            "Less than 5 Major Non-Conformances and at least 50% Minor Non-Conformances resolved",
+            "Up to 2 Major Non-Conformances open and 100.0% of Minor Non-Conformances resolved and verified",
             "Exactly 0 Major Non-Conformances open and 100.0% of Minor Non-Conformances resolved and verified",
-            "Zero documentation but high operator enthusiasm",
-            "Any number of Major Non-Conformances provided an appeal letter is submitted within 1 year"
+            "Exactly 0 Major Non-Conformances open and at least 80.0% of Minor Non-Conformances resolved",
+            "Exactly 0 Major Non-Conformances open and Minor Non-Conformances accepted with an action plan only"
           ],
           "answer": 1,
           "why": "Accredited certification rules dictate that an organization cannot be recommended for ISO 9001:2015 certification if any Major Non-Conformance remains open, and all Minor Non-Conformances must have approved 100% closed CAPAs.",
@@ -6713,10 +6713,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic rationale behind establishing an asymmetric 70/30 volume split rather than a 50/50 split in a China+1 dual-sourcing model?",
           "options": [
-            "To intentionally bankrupt the secondary supplier within six months",
-            "Preserves high-volume economies of scale with the primary supplier while keeping the secondary supplier active, calibrated, and surge-capable",
-            "Because international maritime customs laws strictly forbid dividing orders equally",
-            "To double the total warehouse storage footprint across both destination ports"
+            "Guarantees the lowest total price from both suppliers, since a 70/30 split makes the primary supplier compete harder on every shipment",
+            "Keeps economies of scale with the primary supplier while keeping the secondary supplier active, calibrated, and ready to surge",
+            "Reduces the quality inspection burden by concentrating volume with one supplier, while the secondary supplier is kept only on paper",
+            "Matches the share of each supplier's production capacity, since China+1 dual-sourcing requires that volume follow the factories' size"
           ],
           "answer": 1,
           "why": "A 70/30 split ensures the primary supplier retains sufficient volume for cost efficiencies, while the secondary supplier maintains an active, warm production line capable of rapid surge scaling during disruptions.",
@@ -6758,9 +6758,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why does nearshoring often yield a lower Total Cost of Ownership (TCO) even when the foreign factory gate piece price is higher?",
           "options": [
             "Nearshoring eliminates import tariffs, slashes ocean freight, and dramatically compresses pipeline and safety stock carrying costs",
-            "Nearshoring requires hiring fewer quality inspectors at the retail store",
-            "Nearshore suppliers are legally prohibited from charging any money for shipping",
-            "International container ships charge negative freight rates during summer months"
+            "Nearshoring lowers the factory gate price through local subsidies, and shorter routes make pipeline and safety stock costs irrelevant",
+            "Nearshoring raises import tariffs but cuts ocean freight, and shorter lead times lower only the transport cost per unit",
+            "Nearshoring allows suppliers to be paid later, and the resulting cash flow gain exceeds the higher piece price and labor costs"
           ],
           "answer": 0,
           "why": "When calculating Total Cost of Ownership, compressed lead times drastically reduce pipeline working capital and safety stock, while free trade agreements and lower freight frequently offset higher unit piece prices.",
@@ -7050,10 +7050,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the immediate procedural consequence of detecting direct child labor or forced labor during an unannounced Sedex SMETA audit?",
           "options": [
-            "A harmless recommendation to print new employee handbook brochures",
-            "A 10% cash discount on the supplier's next invoice",
+            "Classification as a Major Non-Conformance, requiring a corrective action plan within 90 days while orders continue as normal",
+            "Classification as a Minor Non-Conformance, requiring a written policy update at the next scheduled annual audit",
             "Immediate classification as a Zero-Tolerance Violation, triggering automatic commercial disqualification and mandatory remediation protocols",
-            "Nothing, because social compliance audits only measure electricity consumption"
+            "Classification as an observation, requiring the supplier to retrain managers and notify buyers in the quarterly report"
           ],
           "answer": 2,
           "why": "Child labor and forced labor are absolute zero-tolerance violations under SMETA and international law, resulting in immediate supplier disqualification and remediation.",
@@ -7097,9 +7097,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under enterprise sustainable procurement governance, what three conditions must be satisfied for a supplier to be certified as a 'SUSTAINABLE_SCOPE_3_SUPPLIER_APPROVED'?",
           "options": [
-            "Supplier must provide free samples and pay 50% discount terms",
-            "Supplier must operate without electricity or computers",
-            "Supplier must be located in North America and have zero employees",
+            "Supplier ESG score >= 60, verified EUDR satellite GPS traceability, and zero child labor certification",
+            "Supplier ESG score >= 80, ISO 14001 environmental certificate, and zero child labor certification",
+            "Supplier ESG score >= 90, annual self-assessment questionnaire, and zero lost-time injury certification",
             "Supplier ESG score >= 80, verified EUDR satellite GPS traceability, and zero child labor certification"
           ],
           "answer": 3,
@@ -7213,10 +7213,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of AI predictive maintenance over traditional calendar-based preventative maintenance?",
           "options": [
-            "It allows factory machines to run forever without any electricity",
-            "It replaces all physical machine tools with software simulation animations",
-            "It eliminates the need to ever lubricate machine bearings",
-            "It monitors real-time asset degradation and forecasts failure lead days (10-14 days in advance), eliminating premature part replacement and preventing unplanned downtime"
+            "It replaces all maintenance staff with robots that repair assets at fixed 30-day intervals, preventing downtime through frequent replacement",
+            "It shortens the calendar interval between inspections from six months to three, catching failures earlier than annual schedules",
+            "It repairs assets only after failure with ML-directed spare parts ordering, reducing the stock of spares that the plant must hold",
+            "It monitors real-time asset degradation and forecasts failures 10-14 days ahead, avoiding premature replacement and unplanned downtime"
           ],
           "answer": 3,
           "why": "AI predictive maintenance uses condition-based telemetry and ML anomaly detection to provide 10-14 days advance lead time, enabling planned servicing before catastrophic failure while maximizing component life.",
@@ -7259,10 +7259,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational metric used to assess the efficiency of Robotic Process Automation (RPA) in procurement and accounts payable?",
           "options": [
-            "The amount of paper recycled in the corporate office",
-            "The number of color monitors installed on the office desks",
+            "Cycle Time: The average minutes each transaction spends in the queue before a bot picks it up for processing",
+            "Bot Uptime: The percentage of the working day that robots are logged in and available to process transactions",
             "Straight-Through Processing (STP) Rate: The percentage of transactions processed from end-to-end with zero human intervention",
-            "The font size used in email notification signatures"
+            "Cost Per Transaction: The license cost of the bot divided by the number of transactions processed in the same year"
           ],
           "answer": 2,
           "why": "Straight-Through Processing (STP) rate measures the proportion of transactions executed autonomously from requisition to payment without human intervention.",
@@ -7305,10 +7305,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does dynamic autonomous route optimization achieve significant fuel and carbon savings compared to legacy static routing?",
           "options": [
-            "By outsourcing all shipments to unmonitored third-party bicycle couriers",
+            "By locking each driver to a fixed route weekly, using historical average speeds and planned stops to reduce route planning effort",
             "By continuously re-optimizing delivery routes in real-time using live IoT telematics, traffic data, and multi-stop sequencing algorithms",
-            "By forcing truck drivers to turn off headlights at night",
-            "By reducing the weight of products by removing internal protective packaging"
+            "By increasing vehicle load limits on each trip, using larger trucks to cut the number of vehicles and total kilometers driven",
+            "By switching all fleets to lower-speed driving, using speed governors to cut fuel use whatever the traffic or delivery windows"
           ],
           "answer": 1,
           "why": "Dynamic routing uses real-time telematics and mathematical solvers to continuously find the shortest, least congested paths, reducing overall fleet mileage by 15% to 22%.",
@@ -7467,10 +7467,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Process Capability Index (Cpk) of 1.67 signify in Six Sigma quality engineering?",
           "options": [
-            "That the machine requires 1.67 hours of daily maintenance",
-            "A 5-sigma quality capability where the process mean is centered 5 standard deviations from tolerance limits, yielding under 0.6 PPM defects",
-            "A failing manufacturing process that must be immediately scrapped",
-            "That exactly 1.67% of manufactured parts are defective"
+            "A 4-sigma capability, with the mean centered 4 standard deviations from the limits, yielding about 63 PPM defects",
+            "A 5-sigma capability, with the mean centered 5 standard deviations from the limits, yielding under 0.6 PPM defects",
+            "A 6-sigma capability, with the mean centered 6 standard deviations from the limits, yielding about 0.002 PPM defects",
+            "A 3-sigma capability, with the mean centered 3 standard deviations from the limits, yielding about 2,700 PPM defects"
           ],
           "answer": 1,
           "why": "A Cpk of 1.67 corresponds to a 5-sigma level of quality control, ensuring that process variation is so tightly contained that defect rates drop below 0.6 parts per million.",
@@ -7511,10 +7511,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under statutory risk governance, what does an LTIFR (Lost Time Injury Frequency Rate) of 0.0 signify across an industrial enterprise?",
           "options": [
-            "Zero lost-time injuries occurred per one million man-hours worked, demonstrating world-class occupational safety",
-            "That the factory was completely shut down and no employees showed up for work",
-            "That safety equipment was never purchased to save money",
-            "That accident logs were lost in an office flood"
+            "Zero lost-time injuries per one million man-hours worked, demonstrating world-class occupational safety",
+            "Zero injuries of any kind, including first-aid cases, per 200,000 man-hours worked, demonstrating world-class safety",
+            "Zero fatalities and zero serious incidents per one million man-hours, though minor lost-time injuries remain allowed",
+            "Zero lost workdays per one hundred employees in the year, demonstrating world-class occupational safety performance"
           ],
           "answer": 0,
           "why": "An LTIFR of 0.0 is the international gold standard in occupational safety, confirming zero lost-time accidents occurred across one million operational labor hours.",
@@ -7554,9 +7554,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the Cash Conversion Cycle (CCC) for an enterprise with DIO = 40 days, DSO = 30 days, and DPO = 45 days, and what does it measure?",
           "options": [
-            "Negative 15 days; it means the company is bankrupt",
-            "70.0 days; it measures the shelf life of factory machine oil",
-            "115.0 days; it measures the total number of days employees work per year",
+            "115.0 days; it measures the total time from ordering raw materials until the company pays its suppliers for them",
+            "55.0 days; it measures the time between selling inventory to customers and the date the company pays its suppliers",
+            "-35.0 days; it measures the time the company finances its operations using supplier credit without any cash outlay",
             "25.0 days; it measures the net working capital time lag between paying suppliers for raw materials and collecting cash from customers"
           ],
           "answer": 3,
@@ -7599,10 +7599,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What executive condition must be satisfied for the Enterprise Operations, Supply Chain & Compliance Master Suite Orchestrator to certify an enterprise?",
           "options": [
-            "Only the marketing department needs to approve the brochure",
-            "At least one out of the five modules must pass",
+            "At least three of five core modules must evaluate to True, with Planning and Resilience/AI always among them",
+            "All five core modules must evaluate to True, but they may be evaluated in separate quarters as each is audited",
             "All five core modules (Planning, Manufacturing, Compliance, Execution, and Resilience/AI) must evaluate to True simultaneously",
-            "The enterprise must have zero physical machines or employees"
+            "Four of five core modules must evaluate to True, with the fifth allowed to remain open under a documented waiver"
           ],
           "answer": 2,
           "why": "Enterprise operations certification requires 100% adherence across all five pillars: Process Planning, Manufacturing Quality, Statutory Compliance, Operational Execution, and Strategic Resilience.",
@@ -7716,10 +7716,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between Type I Cycle Service Level and Type II Fill Rate?",
           "options": [
-            "Type I requires manual physical counting while Type II is computed solely through statutory tax filings",
-            "Type I measures supplier on-time delivery while Type II measures customer payment processing speed",
+            "Type I measures the percentage of unit demand filled from stock, while Type II measures the probability of zero stockouts during a cycle",
+            "Type I applies to make-to-order items only, while Type II applies to stocked items and measures delivery lead time",
             "Type I measures the probability of zero stockouts during a cycle while Type II measures the percentage of unit demand fulfilled directly from stock",
-            "Type I applies only to finished goods while Type II applies exclusively to raw agricultural commodities"
+            "Type I measures the average time to fill a backorder, while Type II measures the percentage of cycles with at least one stockout"
           ],
           "answer": 2,
           "why": "Type I (Cycle Service Level) is an event-based probability indicating whether a stockout occurred during lead time, whereas Type II (Fill Rate) quantifies the volume-based fraction of customer demand satisfied without backordering.",
@@ -7761,9 +7761,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a periodic review (R, S) policy require more safety stock than a continuous review (s, Q) policy with identical lead times?",
           "options": [
-            "Because periodic review algorithms cannot utilize digital computers and rely on paper records",
-            "Because freight carriers double their transportation rates during periodic review delivery cycles",
-            "Because periodic review inventory experiences higher physical degradation and shelf-life expiration",
+            "Because periodic review has a longer purchase lead time than continuous review, even when the nominal lead times are the same",
+            "Because periodic review orders in smaller quantities more often, so each order faces greater setup cost and variability",
+            "Because periodic review ignores on-order inventory, so it orders the same amount repeatedly while earlier orders are in transit",
             "Because periodic review must protect against demand uncertainty over both review interval R and lead time L rather than lead time alone"
           ],
           "answer": 3,
@@ -7806,10 +7806,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the normal distribution unsuitable for modeling inventory policies of slow-moving maintenance spare parts?",
           "options": [
-            "Because normal distribution assigns non-zero probability to negative demand and assumes continuous, non-zero consumption",
-            "Because spare parts cannot be counted using standard Arabic numerals",
-            "Because normal distribution curves are prohibited by international aerospace regulatory authorities",
-            "Because slow-moving parts only experience demand during leap years"
+            "Because it assigns non-zero probability to negative demand and assumes continuous, non-zero consumption",
+            "Because it cannot be computed without a mean and variance, which slow-moving parts never have enough data points to estimate",
+            "Because it assumes demand repeats every period, which does not hold for spares that are consumed in a seasonal pattern",
+            "Because it has a heavier right tail than real demand, so it recommends far too little stock for parts with rare large orders"
           ],
           "answer": 0,
           "why": "When demand is low and intermittent, the normal distribution exhibits severe tail distortion, predicting negative demand arrivals and miscalculating stockout risks. Discrete distributions like Poisson or Negative Binomial reflect true integer arrival physics.",
@@ -7852,10 +7852,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a stochastic inventory Monte Carlo simulation, what does tracking Inventory Position (IP = On-Hand + On-Order - Backorders) rather than physical On-Hand stock prevent?",
           "options": [
-            "It prevents computer systems from calculating exponential decay values",
+            "It prevents stockouts caused by supplier delays, because the position includes a time buffer that raises the reorder point automatically",
             "It prevents duplicate ordering while earlier replenishment orders are already in transit during lead time",
-            "It prevents warehouse managers from receiving annual performance bonuses",
-            "It prevents suppliers from delivering conforming goods to the loading dock"
+            "It prevents safety stock from being counted twice, because the position removes the buffer inventory from the on-hand balance",
+            "It prevents orders from being placed in fixed quantities, because the position sets the exact amount needed to reach the target level"
           ],
           "answer": 1,
           "why": "If a replenishment order were triggered based solely on physical on-hand stock, the system would repeatedly trigger duplicate orders every day during lead time because on-hand stock remains low until delivery arrives. Inventory position incorporates pipeline orders to prevent over-ordering.",
@@ -7926,9 +7926,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the mathematical definition of Echelon Inventory at facility j in a multi-echelon distribution network?",
           "options": [
             "The physical inventory at facility j plus all inventory at, or in transit to, any downstream descendant facility",
-            "Only the damaged goods awaiting scrap processing inside facility j",
-            "The total dollar value of corporate intellectual property and real estate assets",
-            "The inventory currently held by competing companies in the same metropolitan area"
+            "The physical inventory at facility j minus all inventory at, or in transit to, any downstream descendant facility",
+            "The physical inventory at facility j plus all inventory at any upstream supplier facility that feeds facility j",
+            "The physical inventory at facility j plus only the stock in transit from facility j to its immediate downstream child facility"
           ],
           "answer": 0,
           "why": "Echelon inventory at facility j encompasses all physical stock situated at facility j as well as all downstream inventory residing at or moving toward any descendant node in the sub-network rooted at j.",
@@ -7970,10 +7970,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core mathematical property allowed Clark and Scarf to decompose complex multi-echelon inventory networks into single-echelon subproblems?",
           "options": [
-            "The total elimination of physical holding costs by statutory government subsidy",
-            "The requirement that all supplier shipments must travel via supersonic air freight",
-            "The assumption that customer demand always equals zero during holiday weekends",
-            "The convexity of the induced downstream penalty function passed backward via dynamic programming induction"
+            "The linearity of holding costs across echelons, which allows each stage to be solved independently of the others",
+            "The independence of demand between regions, which allows the network to be split into separate single-echelon models",
+            "The symmetry of lead times between stages, which allows the same base-stock level to be used at every echelon",
+            "The convexity of the downstream penalty function passed backward through dynamic programming induction"
           ],
           "answer": 3,
           "why": "Clark and Scarf proved that the cost function passed from downstream to upstream stages is strictly convex, enabling backward induction to solve each echelon independently without global combinatorial explosion.",
@@ -8015,10 +8015,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Guaranteed Service Model (GSM), what operational condition allows an intermediate manufacturing facility to operate with ZERO safety stock?",
           "options": [
-            "When the enterprise changes its corporate accounting year from calendar to fiscal",
-            "When raw material suppliers provide free replacement parts under statutory warranty",
+            "When its promised outbound service time S is below the sum of its inbound service time SI and processing time T",
+            "When its inbound service time SI equals zero, regardless of its promised outbound service time S and processing time T",
             "When its promised outbound service time S equals or exceeds the sum of its inbound service time SI and internal processing time T",
-            "When the factory operates twenty-four hours a day without scheduled maintenance shutdowns"
+            "When its processing time T is shorter than its promised outbound service time S, regardless of its inbound service time SI"
           ],
           "answer": 2,
           "why": "Net lead time is defined as Net_LT = SI + T - S. When promised outbound service time S >= SI + T, net lead time becomes zero, meaning the facility has sufficient time to produce to order without holding buffer inventory.",
@@ -8060,10 +8060,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Maister's Square Root Law, what is the expected percentage reduction in total required safety stock when consolidating nine independent regional warehouses into a single centralized facility?",
           "options": [
-            "90.00% reduction, because each warehouse eliminates exactly ten percent of its stock",
-            "66.67% reduction, because safety stock scales with the square root of 9 (which is 3), meaning pooled stock is 3/9 or 33.33% of decentralized stock",
-            "0.00% reduction, because warehouse consolidation does not affect physical inventory requirements",
-            "100.00% reduction, because centralized warehouses eliminate the concept of safety stock entirely"
+            "88.89% reduction, because safety stock scales with the square of 9 divided by 9, so pooled stock falls to about 11.11% of the original",
+            "66.67% reduction, because safety stock scales with the square root of 9 (3), so pooled stock is 3/9 or 33.33% of decentralized stock",
+            "50.00% reduction, because safety stock scales with the average of 9 and 1, so pooled stock is about half of the decentralized total",
+            "33.33% reduction, because safety stock scales with the cube root of 9 (about 2.1), so pooled stock is about 66.67% of the original"
           ],
           "answer": 1,
           "why": "Under independent demand, centralized safety stock equals (sqrt(N) * SS_single) compared to (N * SS_single) in decentralized networks. For N=9, ratio is 3/9 = 1/3, representing a 66.67% reduction in safety stock.",
@@ -8107,9 +8107,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In a multi-echelon distribution network simulation, what happens to downstream regional distribution centers when the central warehouse experiences a stockout?",
           "options": [
             "Downstream replenishment orders are delayed or partially filled, artificially extending downstream lead times and causing stockout cascades",
-            "Downstream customer demand immediately drops to zero due to telepathic consumer awareness",
-            "All regional delivery trucks are automatically impounded by customs authorities",
-            "The central warehouse automatically converts into an equity investment bank"
+            "Downstream distribution centers receive orders earlier, because the warehouse ships emergency stock directly from the manufacturer",
+            "Downstream distribution centers are unaffected in the short run, because safety stock at the regional level fully isolates them",
+            "Downstream distribution centers reduce their order quantity, because they observe the stockout and cut forecasts accordingly"
           ],
           "answer": 0,
           "why": "When an upstream warehouse stocks out, downstream orders cannot be satisfied immediately, effectively extending the replenishment lead time experienced by regional centers and triggering localized customer stockouts.",
@@ -8178,9 +8178,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Factory Physics and Kingman's VUT equation, what occurs to work-in-process (WIP) and cycle time as station utilization approaches 100% in the presence of variability?",
           "options": [
-            "Cycle time drops to zero because machines operate at maximum theoretical speed",
-            "Work-in-process automatically converts into physical gold bullion inside the factory warehouse",
-            "The factory is legally granted sovereign diplomatic immunity from international tax treaties",
+            "Cycle time and WIP rise linearly toward a finite maximum, because the utilization term u / (1 - u) levels off near 100%",
+            "Cycle time and WIP fall toward zero, because the utilization term u / (1 - u) shrinks when the station is fully busy",
+            "Cycle time and WIP stay constant, because the utilization term u / (1 - u) is offset by the variability term in the VUT equation",
             "Cycle time and WIP explode asymptotically toward infinity because the utilization term u / (1 - u) approaches infinity"
           ],
           "answer": 3,
@@ -8224,9 +8224,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why does operating a manufacturing workstation at 95% utilization often result in disastrous operational performance compared to 85% utilization?",
           "options": [
             "Because the queue time multiplier u / (1 - u) increases from 5.67 to 19.0, more than tripling queue waiting time while eliminating protective capacity",
-            "Because electric utility companies disconnect factory power when utilization exceeds 90%",
-            "Because machine operators legally refuse to work when utilization passes 85%",
-            "Because raw materials lose physical mass when processed under high utilization"
+            "Because the queue time multiplier u / (1 - u) increases from 5.67 to 9.5, doubling queue waiting time but still leaving enough protective capacity",
+            "Because the queue time multiplier u / (1 - u) increases from 0.85 to 0.95, a rise of only 12%, but the machine runs hotter",
+            "Because the queue time multiplier u / (1 - u) decreases from 19.0 to 5.67, which cuts queue time but raises the machine cost"
           ],
           "answer": 0,
           "why": "The queue factor u / (1 - u) increases non-linearly: at 85% it is 0.85 / 0.15 = 5.67, whereas at 95% it surges to 0.95 / 0.05 = 19.0. This more than triples waiting time and eliminates spare capacity needed to recover from disruptions.",
@@ -8268,10 +8268,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do long, infrequent machine breakdowns cause significantly worse factory queueing delays than frequent, short machine stoppages of identical total downtime?",
           "options": [
-            "Because long breakdowns cause factory lighting to turn off automatically",
+            "Because long breakdowns occur less often, they inflate the mean time between failures, which increases the coefficient of variation of arrivals",
             "Because long repair times (MTTR) square in the effective variance formula, massively inflating the squared coefficient of variation c_e^2",
-            "Because machine lubricants chemically degrade during long idle intervals",
-            "Because factory accounting rules prohibit recording repairs that exceed fifteen minutes"
+            "Because long repairs increase the processing time of every job, which raises utilization above the level of frequent short stops",
+            "Because long repairs allow all workers to catch up on setups, which creates wait-for-batch delays across the other stations"
           ],
           "answer": 1,
           "why": "In the Hopp-Spearman variance equation, MTTR appears squared in the numerator of the variance amplification term. Long repairs create huge chunks of idle queue time, drastically increasing variance even if total availability is unchanged.",
@@ -8313,10 +8313,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In manufacturing batch sizing dynamics, what two opposing physical forces create the characteristic convex U-shaped cycle time curve?",
           "options": [
-            "Small batches cannot be tracked using barcode scanners while large batches cannot be transported by forklifts",
-            "Small batches violate corporate labor laws while large batches require municipal environmental impact permits",
+            "Small batches suffer excessive wait-for-batch delays, while large batches suffer capacity starvation and queue explosion due to frequent setups",
+            "Small batches suffer high material cost per unit, while large batches suffer from the cost of holding finished goods inventory",
             "Small batches suffer from capacity starvation and queue explosion due to frequent setups, while large batches suffer from excessive wait-for-batch delays",
-            "Small batches cause machine motors to freeze while large batches cause metal oxidation"
+            "Small batches suffer low machine utilization, while large batches suffer from excessive downtime caused by scheduled maintenance"
           ],
           "answer": 2,
           "why": "On small batches, setup time dominates, driving utilization to 100% and causing queue explosion. On large batches, queue time drops but parts sit idle inside the batch waiting for all other units to complete (wait-for-batch delay).",
@@ -8360,10 +8360,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of CONWIP (Constant Work-In-Process) pull control over traditional unconstrained MRP push scheduling?",
           "options": [
-            "CONWIP eliminates the need for human machine operators entirely",
-            "CONWIP guarantees that electricity consumption on the factory floor drops to zero",
-            "CONWIP allows manufacturing companies to ignore commercial contract law",
-            "CONWIP caps total shop floor inventory, decoupling throughput from release noise and dramatically reducing cycle times without sacrificing output"
+            "CONWIP releases jobs as fast as materials arrive, raising inventory to keep every station busy and cutting cycle times by avoiding idle time",
+            "CONWIP sets a separate inventory cap at each workstation, so every station is limited and the cycle time falls with the total of the caps",
+            "CONWIP schedules every job to a fixed calendar date in advance, removing queue variation and cutting cycle time without any feedback from the line",
+            "CONWIP caps total shop floor inventory, decoupling throughput from release noise and cutting cycle times without sacrificing output"
           ],
           "answer": 3,
           "why": "CONWIP limits total WIP on the shop floor to a predetermined cap W. When a job exits, a new job is authorized. This stabilizes queues, prevents inventory avalanches during breakdowns, and collapses lead times.",
@@ -8432,10 +8432,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core optimization rule of the Moore-Hodgson algorithm when an Earliest Due Date (EDD) schedule encounters a tardy job?",
           "options": [
-            "Double the machine operating speed to bypass physical cutting physics",
-            "Schedule the jobs in alphabetical order by customer company name",
+            "Eject the job with the shortest processing time among the jobs scheduled so far, moving it to the end of the schedule",
+            "Eject the job with the earliest due date among the jobs scheduled so far, moving it to the end of the schedule",
             "Eject the job with the longest processing time among all jobs scheduled so far, moving it to the end of the schedule",
-            "Immediately cancel all customer orders and issue cash refunds"
+            "Eject the tardy job itself, regardless of its processing time, and insert it at the front of the remaining schedule"
           ],
           "answer": 2,
           "why": "Moore-Hodgson proves that whenever a deadline violation occurs, removing the job with the largest processing time liberates the maximum possible slack for all subsequent jobs, minimizing the total count of late jobs.",
@@ -8477,10 +8477,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Johnson's 2-machine flow shop algorithm, why are jobs with min(p_1j, p_2j) occurring on Machine 1 placed at the BEGINNING of the schedule?",
           "options": [
-            "To ensure that Machine 1 produces higher scrap rates",
-            "To get work into Machine 2 as quickly as possible, minimizing downstream machine starvation idle time",
-            "Because Machine 1 operators leave the factory early for lunch",
-            "Because Machine 2 is legally prohibited from operating before noon"
+            "To finish the longest jobs first on Machine 1, minimizing the total completion time of the large orders",
+            "To feed Machine 2 as early as possible, minimizing idle time when it would otherwise starve for work",
+            "To balance the load between both machines evenly, minimizing the difference in utilization on each machine",
+            "To meet the earliest due dates first on Machine 1, minimizing the number of tardy jobs in the schedule"
           ],
           "answer": 1,
           "why": "Scheduling jobs with short Machine 1 processing times first allows Machine 1 to complete work rapidly and feed Machine 2 immediately, collapsing downstream idle starvation time.",
@@ -8524,9 +8524,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Disjunctive Graph formulation G = (V, C, D) of a job shop, what do the disjunctive edge pairs in set D represent?",
           "options": [
             "Mutual exclusion conflicts between operations competing for the same machine, requiring orientation to establish processing order",
-            "Fixed technological precedence relationships between consecutive operations of the same job",
-            "Communication errors between machine operators and enterprise accounting databases",
-            "The chemical degradation of coolant fluid over multi-week operating intervals"
+            "Precedence relations between operations of the same job, which fix the order in which its operations must be performed",
+            "Alternative routing choices for operations that can be performed on any one of several machines in the shop",
+            "Time lags between operations, representing transport or waiting time needed before the next operation can start"
           ],
           "answer": 0,
           "why": "Disjunctive edges connect pairs of operations that must be executed on the same physical machine. Since a machine can only process one job at a time, the scheduler must select an orientation (A -> B or B -> A) without creating cycles.",
@@ -8571,9 +8571,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining algorithmic characteristic of the Shifting Bottleneck Heuristic (SBH) that distinguishes it from greedy dispatching rules?",
           "options": [
-            "It shuts down the factory bottleneck machine to save electrical utility charges",
-            "It assumes all jobs have zero processing duration on all machines",
-            "It randomly shuffles machine sequences until an operator intervenes",
+            "It sorts all jobs by processing time once and assigns them to machines in a fixed order without any later adjustment",
+            "It evaluates every possible sequence on every machine at the same time to find the global optimum by enumeration",
+            "It sequences the least loaded machine first and keeps that sequence fixed while the other machines are scheduled",
             "It iteratively identifies the most critical bottleneck machine, sequences it, and then re-optimizes all previously scheduled machines"
           ],
           "answer": 3,
@@ -8619,10 +8619,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In dynamic shop floor production scheduling, what does a Critical Ratio (CR) of less than 1.0 signify for a pending work order?",
           "options": [
-            "The customer has cancelled the sales contract under force majeure provisions",
-            "The job has completed three weeks ahead of schedule and can be scrapped",
-            "The job is running behind schedule and will breach its customer delivery deadline unless prioritized or expedited",
-            "The job was manufactured using non-standard metric measurement units"
+            "The job is ahead of schedule and can wait, since the time until the deadline exceeds the processing work remaining",
+            "The job is exactly on schedule, since the time until the deadline matches the processing work that remains",
+            "The job is behind schedule and will miss its customer deadline unless it is prioritized or expedited",
+            "The job is complete except for packing, since the ratio shows less than one unit of work left to do"
           ],
           "answer": 2,
           "why": "Critical Ratio is defined as (Due Date - Current Time) / Remaining Processing Time. When CR < 1.0, the time remaining until deadline is strictly less than the time required to complete the work, meaning the job is running late.",
@@ -8692,10 +8692,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural objective of integrating stochastic inventory control, multi-echelon optimization, factory physics, and job shop scheduling into a unified engine?",
           "options": [
-            "To convert physical finished goods into digital cryptographic tokens",
+            "To replace human planners with a single optimization algorithm, so schedules, orders, and inventory are set without any manual input",
             "To eliminate departmental sub-optimization by mathematically harmonizing inventory buffers, machine queue dynamics, and scheduling priorities",
-            "To replace all physical machinery with simulated virtual computer games",
-            "To guarantee that factory workers are exempt from statutory labor safety regulations"
+            "To reduce IT licensing costs by merging four software tools, so reports are produced from one database for each department",
+            "To maximize utilization of every machine, so each department meets its own capacity target regardless of other departments"
           ],
           "answer": 1,
           "why": "Decoupled optimization creates severe sub-optimization, such as shop floors running large batches that flood warehouses or warehouses stocking out and starving assembly lines. Integrating all four pillars ensures global mathematical harmony.",
@@ -8738,10 +8738,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Capstone Module 1 achieve multi-million dollar working capital reductions while elevating customer fill rates?",
           "options": [
-            "By switching all transportation from freight ships to telepathic quantum transit",
-            "By recording finished goods inventory as intangible goodwill on corporate tax returns",
-            "By tracking echelon inventory and pooling buffers upstream where holding costs are lower, eliminating redundant local safety stock",
-            "By canceling supplier purchase orders and refusing to pay vendor invoices"
+            "By holding more safety stock at each local warehouse where customers order, which raises fill rates and lifts working capital use",
+            "By pushing all inventory to the retail level to cut transport costs, which boosts fill rates while buffer stock sits downstream",
+            "By tracking echelon inventory and pooling buffers upstream where holding costs are lower, removing redundant local safety stock",
+            "By cutting supplier lead times with expedited freight, which raises fill rates and removes the need for any safety stock"
           ],
           "answer": 2,
           "why": "Module 1 tracks echelon stock and uses Clark-Scarf decomposition to position inventory where echelon holding costs are lowest and pooling benefits are greatest, eliminating redundant decentralized buffers.",
@@ -8786,10 +8786,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Capstone Module 2 trigger CONWIP flow gating when bottleneck utilization exceeds 85%?",
           "options": [
-            "Because factory managers receive financial bonuses only when machines are turned off",
-            "Because machine cutting tools require eighty hours of cooling time after every shift",
-            "Because local electrical utility grids shut down when factory utilization passes 80%",
-            "Because utilization above 85% causes the queue multiplier u / (1 - u) to enter the asymptotic hockey-stick explosion zone, creating massive lead time delays"
+            "Because utilization above 85% triggers a contractual penalty for overtime, so work releases are gated to avoid labor cost increases",
+            "Because utilization above 85% means the machine is nearly idle, so extra jobs are released to restore a full load",
+            "Because utilization above 85% causes quality defects to double, so jobs are held back to give operators time to inspect",
+            "Utilization above 85% pushes the queue multiplier u / (1 - u) into the asymptotic explosion zone, creating massive lead time delays"
           ],
           "answer": 3,
           "why": "As utilization exceeds 85%, the non-linear term u / (1 - u) turns vertically upward, meaning any minor variance causes queue wait times to multiply exponentially. CONWIP caps WIP to maintain stable, fast flow.",
@@ -8834,10 +8834,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Capstone Module 3, how does dynamic Critical Ratio dispatching maintain delivery commitments during unexpected shop-floor disruptions?",
           "options": [
-            "By continuously recalculating time-remaining relative to work-remaining and prioritizing jobs with CR < 1.0 ahead of normal work orders",
-            "By automatically erasing late orders from corporate database records",
-            "By demanding that customers accept incomplete parts without quality inspection",
-            "By changing the factory calendar to use thirty-six-hour days"
+            "By recalculating time remaining against work remaining and prioritizing jobs with CR < 1.0 ahead of normal work orders",
+            "By ranking jobs by processing time alone and running the shortest first, so more jobs finish before the end of the shift",
+            "By freezing the schedule during a disruption and resuming the original sequence once the machine returns to service",
+            "By prioritizing jobs with CR > 1.0 first, since those have the most slack and can be completed quickly to clear the queue"
           ],
           "answer": 0,
           "why": "When CR < 1.0, the time remaining until deadline is strictly less than the time required to complete the work. Dynamic dispatching immediately elevates these critical jobs to the front of machine queues, recovering lost time.",
@@ -8886,10 +8886,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What executive credential is conferred upon achieving a 100/100 composite audit score in the Milestone 7 Capstone Operations Suite?",
           "options": [
-            "Certified Novice Cashier Assistant Grade 1",
+            "CMOPS - Certified Manager of Operations Planning & Scheduling Excellence",
             "MEOSCO - Master of Enterprise Operations Science & Supply Chain Optimization",
-            "Junior Spreadsheet Data Entry Clerk",
-            "Honorary Member of the Local Bowling League"
+            "MEPSA - Master of Enterprise Procurement Strategy & Analytics Leadership",
+            "CLSCP - Chartered Logistics & Supply Chain Practitioner, Operations Division"
           ],
           "answer": 1,
           "why": "Graduating the Milestone 7 Capstone with all modules passing verifies mastery across multi-echelon inventory, factory physics, and combinatorial scheduling, conferring the prestigious MEOSCO executive credential.",
@@ -8958,10 +8958,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does monitoring correlated quality dimensions using separate univariate Shewhart control charts create dangerous operational blind spots?",
           "options": [
-            "Because univariate charts form a rectangular acceptance region that fails to capture the elliptical covariance orientation, missing multi-axis process shifts",
-            "Because univariate charts can only be drawn using hand-written graph paper",
-            "Because computer numerical control machines refuse to execute code when two charts are open simultaneously",
-            "Because univariate charts are legally invalid under international commercial sales contracts"
+            "Because separate univariate charts form a rectangular region that misses the elliptical covariance structure, so multi-axis shifts go undetected",
+            "Because separate univariate charts require much larger samples, so they react too slowly to shifts in any of the correlated dimensions",
+            "Because separate univariate charts use 2-sigma limits that raise false alarms, so operators ignore alarms from the correlated dimensions",
+            "Because separate univariate charts cannot track the mean, so shifts in average dimension go unseen while only variance changes are shown"
           ],
           "answer": 0,
           "why": "Univariate control charts treat dimensions as orthogonal rectangles. When variables are correlated, the true in-control space is an inclined ellipse; points outside the ellipse but inside the rectangle represent severe out-of-control shifts missed by univariate charts.",
@@ -9004,9 +9004,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What role does the inverse covariance matrix S^-1 play in the mathematical formulation of Hotelling's T^2 statistic?",
           "options": [
-            "It reduces manufacturing energy consumption by fifty percent during cutting operations",
-            "It converts imperial inch measurements into statutory metric centimeters",
-            "It eliminates the need for physical cutting tools in computer numerical control machines",
+            "It scales the sample mean by the number of observations, so the statistic grows with sample size and is not affected by correlation",
+            "It sorts the variables by variance, so the dimension with the largest spread receives the heaviest weight in the statistic",
+            "It converts the process data to a normal distribution, so non-normal quality dimensions can be monitored on one chart",
             "It standardizes individual variances and de-correlates dimensional interactions, rotating the covariance ellipse into a standardized unit hypersphere"
           ],
           "answer": 3,
@@ -9051,10 +9051,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What diagnostic insight does the Mason-Young-Tracy (MYT) decomposition provide when an unconditional term T_i^2 is small but its conditional term T_{j|i}^2 is large?",
           "options": [
-            "It confirms that the quality inspector made a handwriting typographical error",
-            "It indicates that the measuring tool was unplugged from electrical wall outlets",
-            "It reveals that individual variables are near normal, but the physical correlation structure between variables has broken down",
-            "It proves that the factory was struck by cosmic solar flare radiation"
+            "It shows that one variable has shifted far from target, while its correlation with the other variables is unchanged",
+            "It shows that the sample size is too small, so the covariance matrix cannot be inverted and the statistic is unreliable",
+            "It shows that individual variables look normal, but the correlation structure between the variables has broken down",
+            "It shows that the measurement system is faulty, so every variable reads noisy values that raise the conditional statistic"
           ],
           "answer": 2,
           "why": "When individual variables appear normal (small unconditional T^2) but conditional terms are massive, the physical relationship or alignment between variables has collapsed, pinpointing fixture or cross-axis mechanical breakdown.",
@@ -9098,10 +9098,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a Multivariate Exponentially Weighted Moving Average (MEWMA) control chart vastly superior to a memoryless Hotelling's T^2 chart for detecting small, persistent process drifts?",
           "options": [
-            "Because MEWMA requires measuring parts with manual wooden micrometers",
+            "Because MEWMA uses larger subgroup sizes than Hotelling's T^2, which scales the noise variance by lambda * (2 - lambda) and finds large shifts sooner",
             "Because MEWMA incorporates exponential memory, compressing noise variance by lambda / (2 - lambda) and accumulating persistent shift signals over time",
-            "Because MEWMA charts eliminate the need for computer monitors on the shop floor",
-            "Because MEWMA algorithms run only during nocturnal shifts when electrical rates are lower"
+            "Because MEWMA ignores correlation between variables, which simplifies the covariance matrix and makes it more sensitive to small shifts",
+            "Because MEWMA uses a fixed control limit of 3 sigma, which avoids false alarms and detects drifts regardless of their size"
           ],
           "answer": 1,
           "why": "Hotelling's T^2 is memoryless and evaluates each sample in isolation. MEWMA applies an exponential smoothing filter that compresses variance by lambda / (2 - lambda) and accumulates small persistent shifts across consecutive samples.",
@@ -9148,9 +9148,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What primary operational benefit is achieved by coupling Hotelling's T^2 monitoring with automated Mason-Young-Tracy (MYT) decomposition in an enterprise quality controller?",
           "options": [
             "It immediately isolates the specific dimensional variable or covariance breakdown responsible for the alarm, collapsing troubleshooting MTTR",
-            "It eliminates the need for physical coordinate measuring machines entirely",
-            "It automatically changes the part design blueprints without engineering approval",
-            "It authorizes machine operators to ignore scrap parts and ship them to customers"
+            "It predicts the time of the next alarm using past data, preventing the alarm from occurring in the first place",
+            "It converts the multivariate chart into a single univariate chart, reducing the number of control limits operators must watch",
+            "It lowers the false alarm rate to zero, because decomposition removes noise from the statistic before it is compared with the limit"
           ],
           "answer": 0,
           "why": "Hotelling's T^2 only alerts that a problem occurred; coupling it with MYT decomposition orthogonalizes the statistic, instantly identifying which specific dimensional variable or cross-axis interaction caused the alarm to collapse MTTR.",
@@ -9197,10 +9197,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence if an industrial facility calculates process capability indices (such as Cp and Cpk) without first quantifying and validating measurement system variance?",
           "options": [
-            "The inspection system automatically corrects all sensor scaling errors through physical thermal expansion compensation.",
-            "The process capability indices automatically increase because measurement noise smooths out actual production fluctuations.",
-            "The true part-to-part variation is perfectly eliminated, leaving only the certified reference standard calibration bias.",
-            "The observed capability indices become artificially degraded and unreliable because measurement system variance inflates the total observed process variation."
+            "The observed capability indices become artificially inflated because measurement variance cancels part of the real process variation",
+            "The observed capability indices stay accurate because the measurement variance is the same for every part and offsets itself",
+            "The observed capability indices cannot be calculated because the standard deviation requires a validated gage to be defined",
+            "The indices become artificially degraded and unreliable because measurement variance inflates total observed variation"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9283,10 +9283,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical action is prescribed under AIAG MSA standards if the F-test for the Part-by-Operator interaction term yields a p-value exceeding 0.25 in a crossed ANOVA study?",
           "options": [
-            "The entire measurement system must be immediately rejected as statistically incapable of detecting part variation.",
+            "The interaction term is deemed significant and must be retained, because a p-value above 0.25 shows strong part-operator interaction",
             "The interaction term is deemed statistically insignificant and may be pooled with the repeatability error term to improve estimation precision.",
-            "The operator variance is artificially set to infinity to penalize human inconsistency across shifts.",
-            "The part-to-part variance must be replaced with the certified reference standard calibration bias."
+            "The interaction term is dropped from the study, and the whole ANOVA is repeated with more operators and parts until p falls below 0.05",
+            "The interaction term is pooled with the reproducibility term only, because operators are assumed to cause all of the interaction"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9369,9 +9369,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the GageRREngine implementation, why is it critical for the engine to evaluate both percentage of total variation (%TV) and the number of distinct categories (ndc) simultaneously?",
           "options": [
-            "Because evaluating ndc replaces the need to conduct any calibration against certified reference standards.",
-            "Because high ndc guarantees that all manufactured workpieces will have identical physical dimensions.",
-            "Because ndc measures electrical voltage whereas %TV measures ambient factory room temperature.",
+            "Because a measurement system is capable for SPC when %TV is under 30% and ndc is at least 2, which guarantees acceptable noise and resolution",
+            "Because a measurement system is capable for SPC when %TV is under 10% and ndc is at least 2, which guarantees low noise and minimal resolution",
+            "Because a measurement system is capable for SPC when %TV is under 30% and ndc is at least 5, which guarantees adequate noise and high resolution",
             "Because a measurement system can only be certified as capable for SPC when %TV is under 10% and ndc is at least 5, guaranteeing both low noise and high resolution."
           ],
           "answer": 3,
@@ -9526,9 +9526,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the defining structural property of a Resolution IV fractional factorial design?",
           "options": [
             "All main effects are completely clear of two-factor interactions, though two-factor interactions are aliased with each other in pairs.",
-            "All main effects are heavily aliased with two-factor interactions, preventing independent effect estimation.",
-            "All two-factor interactions are completely clear of each other and aliased only with four-factor terms.",
-            "The design requires running exactly two to the power of k trials without any fractional reduction."
+            "All main effects are aliased with two-factor interactions, though three-factor interactions are clear of all main effects",
+            "Main effects are clear of other main effects only, and every two-factor interaction is aliased with a main effect",
+            "Main effects are aliased with one another in pairs, though all two-factor interactions are clear of main effects"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9569,10 +9569,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Taguchi Robust Parameter Design, what is the core operational purpose of maximizing the Signal-to-Noise (S/N) ratio?",
           "options": [
-            "To eliminate the need for conducting ANOVA calculations on experimental response data.",
-            "To increase the absolute sound volume produced by automated industrial machinery on the factory floor.",
-            "To replace all preventive maintenance routines with post-production scrap sorting.",
-            "To identify control factor settings that minimize process sensitivity to uncontrollable environmental and material noise factors."
+            "To find control factor settings that maximize the average response, ignoring variation caused by noise factors",
+            "To find noise factor settings that give the strongest signal, so the experiment detects the largest possible effect",
+            "To find the smallest number of runs that estimate all main effects, so noise factors can be removed from the design",
+            "To find control factor settings that reduce process sensitivity to uncontrollable environmental and material noise factors"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9614,10 +9614,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary industrial benefit of generating a Pareto effect ranking in the automated DOEEngine?",
           "options": [
-            "It forces all experimental response variables to follow an exact Cauchy distribution.",
-            "It converts all fractional designs into unconstrained quadratic polynomial neural networks.",
-            "It immediately separates the vital few active process factors from the trivial many noise terms, directing engineering focus to high-impact drivers.",
-            "It eliminates the need for establishing control boundaries or conducting measurement systems analysis."
+            "It identifies which runs of the experiment were outliers, so those runs are deleted before fitting the regression model",
+            "It ranks the cost of each factor setting, so the least expensive combinations are selected for the production run",
+            "It separates the vital few active factors from the trivial many noise terms, focusing engineers on high-impact drivers",
+            "It orders the experimental runs by response value, so the best run is directly adopted as the new standard operating setting"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9682,10 +9682,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of executing the Method of Steepest Ascent in an exploratory manufacturing optimization study?",
           "options": [
-            "To replace multi-variable regression with one-factor-at-a-time experimentation across all production lines.",
-            "To move experimental operations rapidly along the gradient path from a remote operating region into the stationary vicinity of the optimum before deploying second-order designs.",
-            "To increase the rotational vibration frequency of coordinate measuring machines during calibration.",
-            "To eliminate all quadratic terms by forcing all manufacturing factors to follow a purely discrete binary distribution."
+            "To fit a second-order curved surface around the optimum, using a set of center and axial points to estimate quadratic terms",
+            "To move quickly along the gradient from a remote region into the vicinity of the optimum before using second-order designs",
+            "To screen out insignificant factors from a large set, using a fractional design to eliminate those with no main effect",
+            "To confirm the predicted optimum with repeated runs, using the average response to verify the model at the final setting"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9726,10 +9726,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental geometric and statistical property is guaranteed when the axial distance alpha in a Central Composite Design is set equal to (2^k)^(1/4)?",
           "options": [
-            "The design completely eliminates the need for running any replication trials at the center point.",
-            "The total number of required experimental runs drops to zero through algebraic cancellation.",
-            "The design becomes rotatable, ensuring that the variance of predicted response depends purely on radial distance from the center, without directional bias.",
-            "All factor levels are compressed into a single unconstrained nominal operating point."
+            "The design becomes orthogonal, ensuring that all main effects and interactions are estimated independently of each other",
+            "The design becomes face-centered, ensuring that all runs lie inside the factor ranges and no extrapolation is necessary",
+            "The design becomes rotatable, so prediction variance depends only on distance from the center, with no directional bias",
+            "The design becomes saturated, ensuring that every run is used to estimate a model term with no degrees of freedom for error"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9767,10 +9767,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical process safety advantage of utilizing a Box-Behnken Design rather than a Central Composite Design in high-pressure or exothermic manufacturing?",
           "options": [
-            "Box-Behnken designs require five distinct operating levels per factor to ensure maximum thermodynamic turbulence.",
-            "Box-Behnken designs eliminate the need for running center points by extrapolating beyond equipment failure limits.",
-            "Box-Behnken designs force all chemical reactions to proceed at room temperature without catalyst addition.",
-            "Box-Behnken designs completely omit the extreme corner runs where all factors are set simultaneously to their maximum levels, preventing hazardous operating extremes."
+            "Box-Behnken designs need far fewer center runs, which reduces the amount of hazardous material used in each experiment",
+            "Box-Behnken designs add axial runs outside the factor range, which lets operators test safety limits under controlled conditions",
+            "Box-Behnken designs use only two levels per factor, which reduces the number of pressure changes made during the experiment",
+            "Box-Behnken designs omit the extreme corner runs with all factors at maximum, avoiding hazardous operating extremes"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9809,9 +9809,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Derringer-Suich multi-objective optimization framework, why is the overall composite desirability D calculated as a geometric mean rather than an arithmetic average?",
           "options": [
             "Because if any individual response fails completely (d_i = 0), the geometric mean collapses D to zero, preventing unacceptable trade-offs.",
-            "Because arithmetic averages cannot be computed on dimensionless variables.",
-            "Because geometric means automatically convert all responses into decibel units.",
-            "Because the geometric mean eliminates the need for establishing engineering tolerance limits."
+            "Because the geometric mean is easier to compute, and it gives the same result as the arithmetic mean when responses are equal",
+            "Because the geometric mean ignores responses with high desirability, which focuses the optimization on the weakest characteristic only",
+            "Because the geometric mean gives extra weight to the largest response, which pushes the optimum toward the most profitable output"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9925,10 +9925,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary daily workflow standard enforced by a Constant Work-in-Process (ConWIP) control architecture on a factory floor?",
           "options": [
-            "Buffer capacities between machines are expanded indefinitely to ensure no operator ever experiences idle waiting time.",
-            "New work orders are authorized to enter the line only when a completed unit exits the final workstation, maintaining a strictly bounded line-level inventory ceiling.",
-            "Every individual workstation pushes output immediately into adjacent floor aisles regardless of downstream buffer status.",
-            "Production schedules are dictated purely by quarterly sales forecasts without regard to real-time machine availability or queue lengths."
+            "New work orders enter each workstation only when the next station is empty, keeping station-level inventory at one unit",
+            "New work orders enter the line only when a finished unit exits the final workstation, keeping line-level inventory under a strict ceiling",
+            "New work orders enter the line on a fixed daily schedule set by the MRP system, keeping inventory near the forecasted demand level",
+            "New work orders enter the line whenever the first workstation is idle, keeping the utilization of that station at its maximum"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9969,10 +9969,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Drum-Buffer-Rope (DBR) methodology, why is it critical that non-constraint workstations deliberately maintain protective excess capacity?",
           "options": [
-            "Excess capacity on non-constraints allows the plant to lay off half its workforce without affecting production.",
-            "Non-constraint machines do not consume electrical energy when running at one hundred percent utilization.",
-            "Protective excess capacity allows non-constraints to quickly clear upstream variance and recover from disruptions, preventing the bottleneck from ever starving.",
-            "Non-constraints should run at maximum possible speed to build as much finished goods inventory as storage space allows."
+            "Protective capacity lets non-constraints produce above the bottleneck's rate, so surplus stock builds up in front of the shipping dock",
+            "Protective capacity lets non-constraints take on the bottleneck's work during repairs, so the constraint can stop for planned maintenance",
+            "Protective capacity lets non-constraints clear upstream variance and recover from disruptions, so the bottleneck never starves",
+            "Protective capacity lets non-constraints run faster at peak times, so the plant's total output rises above the bottleneck rate"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10014,10 +10014,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Little's Law (WIP = Throughput * Cycle Time), what happens to manufacturing cycle time if shop floor managers double the work-in-process inventory while bottleneck capacity remains unchanged?",
           "options": [
-            "Throughput immediately doubles while cycle time remains completely constant.",
-            "Cycle time drops to zero because workers feel greater urgency from seeing more inventory.",
-            "Overall factory operating costs decrease by fifty percent due to economies of scale.",
-            "Average manufacturing cycle time doubles, causing products to take twice as long to navigate through the plant."
+            "Average cycle time is halved, so products move through the plant twice as fast",
+            "Average cycle time stays the same, since throughput is fixed and WIP has no effect on it",
+            "Average cycle time rises by about 41%, because it grows with the square root of the inventory increase",
+            "Average cycle time doubles, so products take twice as long to move through the plant"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10060,10 +10060,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Match-Up Rescheduling over simple Right-Shift Rescheduling during an unexpected machine breakdown?",
           "options": [
-            "Match-Up Rescheduling utilizes protective reserve capacity to absorb lost time and rejoin the original master production plan, preserving delivery commitments.",
-            "Match-Up Rescheduling permanently cancels all pending customer orders to eliminate plant stress.",
-            "Match-Up Rescheduling requires no computers or data telemetry and relies purely on operator intuition.",
-            "Right-shift rescheduling is always superior because it guarantees that no worker ever has to work overtime."
+            "Match-Up Rescheduling uses reserve capacity to absorb lost time and rejoin the original master plan, preserving delivery commitments",
+            "Match-Up Rescheduling pushes all remaining jobs later by the length of the breakdown, preserving the sequence of the original plan",
+            "Match-Up Rescheduling cancels the late orders and starts a new master plan from the next shift, preserving only the on-time jobs",
+            "Match-Up Rescheduling moves every job to an alternate machine for the rest of the day, preserving the schedule of the broken machine"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10107,10 +10107,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate operational achievement demonstrated by executing the Milestone 8 Autonomous Pull-System Factory Simulator?",
           "options": [
-            "Demonstrating that purchasing massive stockpiles of raw materials guarantees higher company stock prices.",
-            "Proving that unifying ConWIP pull control, DBR bottleneck buffering, and automated disruption recovery achieves high throughput and low cycle times without inventory congestion.",
-            "Showing that bottlenecks can be eliminated permanently by removing all quality inspection stations.",
-            "Proving that factories operate best when workers manually record production numbers on paper clipboards without computers."
+            "It proves that a larger buffer in front of every machine raises throughput and cycle times improve once congestion is cleared",
+            "It proves that ConWIP pull control, DBR buffering, and automated recovery together give high throughput and low cycle times without congestion",
+            "It proves that MRP push scheduling with tight due dates gives the highest throughput if disruptions are handled by supervisors",
+            "It proves that removing all buffers and constraints from the line gives the lowest cycle times at the price of lower throughput"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10180,10 +10180,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining mathematical characteristic of 'Echelon Stock' compared to traditional 'Installation Stock' in supply chain management?",
           "options": [
-            "Installation stock represents the total combined inventory of all competing companies in the global market.",
-            "Echelon stock is an accounting write-off that eliminates all taxes on unsold merchandise.",
-            "Echelon stock includes all inventory physically present at a facility plus all stock in transit to and located at all of its downstream descendant nodes.",
-            "Echelon stock only measures raw materials currently sitting inside supplier cargo ships."
+            "Echelon stock counts only the inventory physically at one facility, excluding stock held by any other node in the network",
+            "Echelon stock counts all inventory at a facility plus the stock held at every upstream supplier that feeds that facility",
+            "Echelon stock counts all inventory at a facility plus all stock in transit to and held at every downstream descendant node",
+            "Echelon stock counts the average inventory over the replenishment cycle at a facility, excluding stock in transit between nodes"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10225,10 +10225,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Clark-Scarf recursive decomposition overcome the curse of dimensionality in multi-echelon inventory optimization?",
           "options": [
-            "It mandates that all warehouses in the supply chain hold exactly zero safety stock at all times.",
-            "It proves that the global multi-echelon problem decomposes recursively into a sequence of nested single-echelon subproblems using induced penalty cost functions.",
-            "It ignores upstream holding costs and optimizes only the final customer-facing stage in isolation.",
-            "It assumes that customer demand is completely deterministic and never fluctuates."
+            "It proves all echelons should hold the same base-stock level, which reduces the multi-echelon problem to one single-echelon calculation",
+            "It proves the global multi-echelon problem decomposes recursively into nested single-echelon subproblems using induced penalty cost functions",
+            "It proves the multi-echelon problem can be solved by simulating random demand at every node and choosing the lowest cost run",
+            "It proves downstream echelons can be ignored, which reduces the multi-echelon problem to the warehouse that supplies them"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10270,10 +10270,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Square Root Law of Inventory and demand pooling theory, what happens to total required safety stock when consolidating 16 independent local stock points into a single centralized warehouse?",
           "options": [
-            "Total required safety stock is reduced by 75 percent, requiring only one-fourth of the original decentralized inventory.",
-            "Total required safety stock quadruples due to higher warehouse ceiling heights.",
-            "Safety stock remains completely unchanged because customer demand has not changed.",
-            "Total inventory holding costs increase to infinity due to local customer anger."
+            "Total required safety stock falls by 75 percent, requiring only one-fourth of the original decentralized inventory",
+            "Total required safety stock falls by 93.75 percent, requiring only one-sixteenth of the original decentralized inventory",
+            "Total required safety stock falls by 50 percent, requiring only one-half of the original decentralized inventory",
+            "Total required safety stock falls by 25 percent, requiring three-fourths of the original decentralized inventory"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10315,9 +10315,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational operational assumption of the Guaranteed Service Model (GSM) that enables it to scale computationally across massive enterprise supply chains?",
           "options": [
-            "Inventory holding costs are legally declared to be negative numbers by corporate accounting.",
-            "All suppliers agree to work for zero profit margins and provide infinite free shipping.",
-            "Customer demand is assumed to be zero for nine months out of every operating year.",
+            "Each stage quotes a random service time based on demand variability, and uses a simulation to find the stock needed for each stage",
+            "Each stage holds enough stock to cover infinite demand, so the network needs no service time quotes between the stages",
+            "Each stage sets a service time equal to its lead time, so the downstream customers always wait for the full processing time",
             "Each supply chain stage quotes a deterministic, guaranteed service time to downstream customers and absorbs demand surges within a bounded envelope."
           ],
           "answer": 3,
@@ -10362,10 +10362,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial and financial advantage demonstrated by executing the Clark-Scarf Multi-Echelon Policy Simulator?",
           "options": [
-            "Showing that closing all regional warehouses and firing all truck drivers maximizes corporate profitability.",
-            "Proving that supply chains should never hold any inventory and should rely entirely on air freight for every delivery.",
-            "Proving that coordinated echelon inventory policies reduce total network holding costs while simultaneously improving customer service fill rates compared to siloed local stocking.",
-            "Demonstrating that supply chain managers should ignore math and make stocking decisions based on personal superstition."
+            "Coordinated echelon policies raise network holding costs slightly but give the lowest stockout risk at every local warehouse in the network",
+            "Siloed local stocking cuts total network holding costs while improving fill rates, since each site sets its own safety stock level",
+            "Coordinated echelon inventory policies cut total network holding costs while also improving customer fill rates versus siloed local stocking",
+            "Coordinated echelon policies cut holding costs by removing all safety stock upstream, with fill rates unchanged at the regional level"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10436,10 +10436,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of ABC velocity slotting in a modern warehouse management system?",
           "options": [
-            "Organizing all products in pure alphabetical order by manufacturer name regardless of pick volume.",
-            "Leaving ninety percent of warehouse storage racks empty to save on lighting and electricity bills.",
-            "Hiding all fast-moving items on top shelves to prevent workers from accessing them too quickly.",
-            "Positioning high-frequency Class A items in prime ergonomic locations close to shipping docks to minimize total picker travel distance."
+            "Placing high-value Class A items in a locked cage at the rear of the building to minimize shrinkage and picker errors",
+            "Placing low-frequency Class C items near shipping docks so the most-used aisles stay clear to minimize forklift congestion",
+            "Placing Class A items by weight on the highest rack levels to maximize cubic space use and minimize storage cost per pallet",
+            "Placing high-frequency Class A items in prime ergonomic locations near shipping docks to minimize total picker travel"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10483,10 +10483,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational benefit of task interleaving during algorithmic directed putaway?",
           "options": [
-            "Pairing inbound putaway tasks with outbound retrieval tasks to eliminate empty travel (deadheading) and double forklift productivity.",
-            "Allowing forklift drivers to drive at maximum speed without looking at warehouse traffic signs.",
-            "Mandating that every pallet be moved to five different storage locations before being shipped.",
-            "Replacing all physical pallets with loose cardboard boxes stacked on the floor."
+            "Pairing inbound putaway tasks with outbound retrieval tasks to eliminate empty travel (deadheading) and raise forklift productivity",
+            "Grouping all putaway tasks into one batch at the start of the shift to reduce forklift startups and raise dock throughput",
+            "Pairing two outbound picks per trip to reduce the number of staging runs and raise forklift productivity at the shipping dock",
+            "Assigning each forklift to a fixed aisle so operators learn its layout, eliminating search time and raising productivity"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10529,10 +10529,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between Wave Picking and Zone Picking in a modern distribution center?",
           "options": [
-            "Wave picking is only used for ocean cargo ships, while zone picking is only used for postal delivery vans.",
-            "Wave picking groups orders by time intervals and carrier departures, while zone picking assigns dedicated pickers to specific physical sectors of the warehouse.",
-            "Wave picking requires workers to swim through inventory pools, while zone picking requires military clearance.",
-            "There is no difference; both terms refer to randomly picking items off warehouse floors."
+            "Wave picking assigns dedicated pickers to physical sectors, while zone picking groups orders by time windows and carrier departures",
+            "Wave picking groups orders by time windows and carrier departures, while zone picking assigns dedicated pickers to physical sectors",
+            "Wave picking picks one order at a time from start to finish, while zone picking combines many orders into one batch for a single picker",
+            "Wave picking applies only to e-commerce parcels, while zone picking applies only to full-pallet orders shipped to retail stores"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10575,10 +10575,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Goods-to-Person (G2P) Autonomous Mobile Robot systems over traditional human picker travel?",
           "options": [
-            "G2P systems operate exclusively on steam power and require no electricity or software.",
-            "Robots permanently eliminate all warehouse inventory by flying items directly into space.",
-            "Robots transport movable inventory pods directly to stationary human pickers, completely eliminating walking travel time and elevating pick rates up to 600 lines per hour.",
-            "G2P systems require workers to carry heavy robots on their backs across warehouse corridors."
+            "Robots carry pickers along the aisles on mobile platforms, which shortens walking distance and raises pick rates to about 150 lines per hour",
+            "Robots scan and pack items in the aisle without human help, which removes packing labor and raises pick rates to about 250 lines per hour",
+            "Robots bring movable pods to stationary pickers, eliminating walking time and lifting pick rates up to 600 lines per hour",
+            "Robots store pods in higher racks to increase density, which reduces storage footprint and keeps pick rates near 65 lines per hour"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10625,10 +10625,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate operational achievement demonstrated by executing the Advanced WMS Simulator?",
           "options": [
-            "Demonstrating that forklifts should drive in circles around the warehouse to keep their engines warm.",
-            "Showing that order accuracy improves when pickers are forbidden from using barcode scanners.",
-            "Proving that warehouses should eliminate all computers and return to writing inventory counts on paper cards.",
-            "Proving that integrating ABC velocity slotting, directed putaway interleaving, and wave picking achieves massive labor reductions and high throughput without congestion."
+            "It proves that wave picking alone cuts labor, and slotting and interleaving add congestion that outweighs their travel savings",
+            "It proves that zone picking with fixed storage locations gives the highest throughput, as the other algorithms add only software cost",
+            "It proves that automating dock doors removes the need for slotting, putaway algorithms, or picking waves in the warehouse",
+            "It proves that ABC slotting, interleaved putaway, and wave picking together cut labor and raise throughput without congestion"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10700,10 +10700,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical operational danger of exposing positive two to positive eight degree Celsius biological vaccines to freezing temperatures below zero degrees Celsius?",
           "options": [
-            "Freezing can cause irreversible protein denaturation, aluminum adjuvant agglomeration, and complete loss of therapeutic potency.",
-            "Freezing causes the glass vials to permanently turn into liquid plastic.",
-            "Freezing increases the vaccine potency to dangerous levels that cure diseases too quickly.",
-            "Freezing causes the vaccine cartons to become legally void under maritime admiralty law."
+            "Freezing can cause irreversible protein denaturation, aluminum adjuvant agglomeration, and complete loss of potency",
+            "Freezing can cause temporary crystal formation, which dissolves again once the vaccine is warmed and fully restores its potency",
+            "Freezing can cause the vial to crack, but the vaccine itself remains potent if the liquid is transferred to a fresh sterile vial",
+            "Freezing can reduce the shelf life by half, but the vaccine remains safe and effective until the new expiry date printed on the label"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10746,10 +10746,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Mean Kinetic Temperature (MKT) utilized instead of simple arithmetic average temperature when assessing pharmaceutical cold chain stability?",
           "options": [
-            "Because arithmetic averages require supercomputers to calculate while MKT can be guessed by eye.",
-            "Because MKT artificially lowers recorded temperatures to help pharmaceutical companies pass government audits.",
-            "Because MKT is legally required to always equal exactly zero degrees Celsius regardless of actual temperatures.",
-            "Because chemical degradation kinetics follow non-linear Arrhenius relationships, making MKT weight high-temperature excursions far more heavily than low-temperature periods."
+            "Because MKT is easier to compute than a simple average, and regulators accept it for any temperature log without further validation",
+            "Because MKT gives more weight to cold readings, which is where biological products are most at risk of freezing damage in transit",
+            "Because MKT ignores time spent in excursion, so it reports only the peak temperature recorded during the shipment journey",
+            "Because chemical degradation follows non-linear Arrhenius kinetics, so MKT weights high-temperature excursions far more than cool periods"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10794,10 +10794,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of predictive rate-of-change (dT/dt) hazard detection over traditional static threshold alarms in cold chain logistics?",
           "options": [
-            "It prevents cargo airplanes from experiencing mechanical engine breakdowns.",
-            "It automatically changes the chemical formula of the medicine to make it immune to heat.",
-            "It predicts temperature breaches before they occur, allowing ground crews to intervene and rescue in-flight cargo while it is still within certified specifications.",
-            "It eliminates the need for physical refrigeration by altering digital computer clocks."
+            "It removes the need for temperature sensors, because rate of change is estimated from the ambient forecast and the container type",
+            "It raises an alarm at the moment a breach occurs, which permits the cargo to be discarded before it reaches the destination",
+            "It predicts temperature breaches before they occur, so crews can rescue in-flight cargo while it is still within specification",
+            "It reduces false alarms to zero, because rate of change filters out all door openings and brief sensor spikes during transit"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10840,10 +10840,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary statutory requirement enforced by FDA 21 CFR Part 11 regarding electronic temperature records in pharmaceutical cold chain systems?",
           "options": [
-            "Allowing any warehouse employee to anonymously edit historical temperature readings without logging in.",
-            "Secure, computer-generated, time-stamped audit trails that record all entries and edits without obscuring original data, backed by authenticated electronic signatures.",
-            "Mandatory conversion of all digital sensor files into hand-written paper notebooks at the end of each day.",
-            "Complete deletion of all temperature logs every thirty days to save hard drive storage space."
+            "Passwords changed every 30 days and records stored on paper backups, with handwritten signatures that replace all electronic signatures",
+            "Secure, computer-generated, time-stamped audit trails recording all entries and edits without hiding original data, with authenticated e-signatures",
+            "Encrypted storage of the final temperature value only, with automatic deletion of raw readings once the shipment has been released",
+            "Quarterly calibration of sensors by the manufacturer, with a certificate of accuracy attached to each electronic record"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10887,10 +10887,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate operational achievement demonstrated by executing the Cold Chain Telemetry Engine and Excursion Risk Simulator?",
           "options": [
-            "Proving that integrating predictive IoT hazard detection, Mean Kinetic Temperature calculations, and automated re-icing rescues biological cargo and guarantees regulatory release.",
-            "Proving that vaccines should be shipped in uninsulated cardboard boxes without ice to reduce shipping weight.",
-            "Demonstrating that airplane pilots should open cargo doors during flight to let fresh cold air cool the medicine.",
-            "Showing that temperature records should be erased if cargo gets too warm to avoid regulatory paperwork."
+            "It proves that predictive IoT hazard detection, MKT calculations, and automated re-icing rescue biological cargo and support regulatory release",
+            "It proves that static threshold alarms alone detect every excursion, so predictive tools only add cost to the cold chain program",
+            "It proves that arithmetic mean temperature is enough to release cargo, so MKT calculations are needed only for frozen biologics",
+            "It proves that manual re-icing at fixed stops protects cargo, so telemetry is useful mainly for documentation after delivery"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10962,10 +10962,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of 'Gatekeeping' in modern reverse logistics management?",
           "options": [
-            "Refusing to accept any returns under any circumstances to force customers to keep broken goods.",
-            "Screening return requests at the point of customer initiation to prevent economically unviable or fraudulent returns from entering the costly physical reverse pipeline.",
-            "Locking all warehouse entrance gates to prevent delivery trucks from entering.",
-            "Mandating that customers wait in physical lines for six hours before receiving a refund."
+            "Inspecting returned items at the warehouse dock to grade them, so that unsellable goods are routed to the correct recovery channel",
+            "Screening return requests at the point of customer initiation to keep unviable or fraudulent returns out of the costly physical reverse pipeline",
+            "Blocking all returns after a fixed number of days, so that the reverse pipeline handles only recent purchases with the highest resale value",
+            "Approving every return automatically to protect customer satisfaction, so that the pipeline gets volume and recovers more value overall"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11009,10 +11009,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between 'Remanufacturing' and simple 'Repair' in closed-loop supply chains?",
           "options": [
-            "Remanufacturing is only performed on wooden toys while repair is only performed on steel bridges.",
-            "There is no difference; both terms refer to wiping dust off an old product.",
-            "Remanufacturing completely disassembles cores, restores all components to original OEM specifications, and provides a full factory warranty equal to new products.",
-            "Repair involves painting the outside of a product while remanufacturing involves throwing it into an incinerator."
+            "Remanufacturing cleans and tests the core as a whole, replaces only failed parts, and gives a limited 90-day warranty on repairs",
+            "Remanufacturing buys used goods and resells them in original condition, and gives the customer the manufacturer's original remaining warranty",
+            "Remanufacturing fully disassembles cores, restores all parts to OEM specifications, and gives a factory warranty equal to new products",
+            "Remanufacturing breaks products down into raw material, melts it for reuse, and gives a warranty only on the recycled material quality"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11056,9 +11056,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mechanism of 'Eco-Modulation' in statutory Extended Producer Responsibility (EPR) fee structures?",
           "options": [
-            "Permanently banning all electrical devices from being manufactured in Europe.",
-            "Requiring all factory workers to sing environmental songs at the beginning of each shift.",
-            "Charging every company the exact same flat fee regardless of what materials they use.",
+            "Charging flat fees to every producer by market share, so that easily recycled and hard-to-recycle products pay the same price",
+            "Charging fees by product weight only, so that heavy products pay punitive surcharges and light products pay reduced fees",
+            "Charging lower fees to imported products and higher fees to domestic ones, to encourage local manufacturers to relocate overseas",
             "Adjusting compliance fees so that easily recyclable, modular products pay lower fees while difficult-to-recycle products pay punitive surcharges."
           ],
           "answer": 3,
@@ -11105,9 +11105,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In value recovery optimization, what determines whether a returned product should be refurbished in-house versus liquidated as-is on secondary wholesale markets?",
           "options": [
             "Whether the incremental selling price achieved by refurbishment exceeds the total cost of refurbishment labor and replacement parts.",
-            "Whether the warehouse manager likes the color of the product packaging.",
-            "Refurbishment is always required by federal law for every returned item regardless of cost.",
-            "Products must always be liquidated for zero dollars to avoid paying sales tax."
+            "Whether the original purchase price paid by the customer was higher than the cost of the product's materials and labor",
+            "Whether the product category carries a legal obligation to be refurbished in-house before it can be sold on any channel",
+            "Whether the returned product is newer than a set age, since products under one year old must always be refurbished"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11153,10 +11153,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic and operational achievement demonstrated by executing the Circular Supply Chain Simulator?",
           "options": [
-            "Demonstrating that recycling costs more than throwing products in landfills so companies should avoid sustainability.",
-            "Proving that integrating gatekeeping, closed-loop remanufacturing, and disposition optimization transforms reverse logistics into a highly profitable, regulatory-compliant circular value engine.",
-            "Showing that customers should be sued if they ever attempt to return a broken product.",
-            "Proving that companies should dump all returned electronics into the ocean to avoid paying warehouse rent."
+            "It proves that outsourcing all returns to liquidators gives the highest profit, as in-house remanufacturing adds cost that exceeds recovered value",
+            "It proves that gatekeeping, closed-loop remanufacturing, and disposition optimization turn reverse logistics into a profitable, compliant circular engine",
+            "It proves that gatekeeping reduces compliance cost only, as remanufacturing and disposition decisions have no effect on profit",
+            "It proves that a strict no-return policy is the most profitable approach, since reverse logistics always costs more than it recovers"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11227,10 +11227,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of unifying Multi-Echelon Inventory, WMS, Cold Chain, and Circular Logistics into a single enterprise architecture?",
           "options": [
-            "It mandates that all supply chain employees work without pay to maximize quarterly corporate dividends.",
-            "Treating Planetary and Supply as interchangeable constants rather than verifying Chain at each step.",
-            "It eliminates functional silos, aligning forward inventory velocity with automated warehousing, thermodynamic cold chain protection, and circular material recovery.",
-            "It allows companies to eliminate all warehouses and store inventory on cargo airplanes permanently in flight."
+            "It reduces headcount by merging four departments into one team, aligning the payroll of each function with a single enterprise budget",
+            "It replaces each function's software with one standard database, aligning the report formats of each function with one schema",
+            "It eliminates functional silos, aligning inventory velocity with automated warehousing, thermodynamic cold chain protection, and circular material recovery",
+            "It lets each function keep its own targets, aligning only the monthly reports of each function with the executive dashboard"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11273,10 +11273,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Simchi-Levi resilience framework, what condition defines a 'Critical Vulnerability Chokepoint' in a global supply chain network?",
           "options": [
-            "When a warehouse roof is painted green instead of blue.",
-            "When a node's Time-to-Recovery (TTR) exceeds the enterprise's Time-to-Survive (TTS), meaning inventory buffers will exhaust before the facility can recover.",
-            "When shipping containers are transported by train instead of truck.",
-            "When all suppliers agree to sell materials at a fifty percent discount."
+            "When a node's Time-to-Recovery (TTR) is shorter than the enterprise's Time-to-Survive (TTS), so buffers last longer than the outage",
+            "When a node's Time-to-Recovery (TTR) exceeds the enterprise's Time-to-Survive (TTS), so buffers run out before the facility recovers",
+            "When a node supplies more than 50% of total spend, regardless of the buffers available or the time it needs to recover",
+            "When a node is located in a high-risk region, regardless of its Time-to-Survive or how quickly it can restore operations"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11320,10 +11320,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining characteristic of a 'Pareto-Optimal' configuration in multi-objective supply chain network design?",
           "options": [
-            "A network state where no single performance objective (e.g., lead time) can be improved without worsening another objective (e.g., cost).",
-            "A configuration where all warehouses are closed and all customer orders are permanently canceled.",
-            "A state where all suppliers agree to sell goods at exactly zero cost.",
-            "A network configuration that is chosen randomly by rolling dice in the boardroom."
+            "A network state where no single objective, such as lead time, can be improved without worsening another objective, such as cost",
+            "A network state where every objective is improved at once, so that cost, lead time, and service all reach their best values",
+            "A network state where the average of all objectives is highest, so that the sum of weighted scores cannot be improved further",
+            "A network state where the lowest-cost design is chosen, and lead time and service are accepted as whatever result that design gives"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11366,9 +11366,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the GLEC Framework and ISO 14083 standards, how does the carbon intensity of air freight compare to ultra-large ocean container shipping?",
           "options": [
-            "Air freight produces zero carbon emissions because airplanes fly above the atmosphere.",
-            "Ocean shipping produces more carbon than air freight because ships move in water.",
-            "Both modes produce the exact same emissions because distance is the only variable that matters.",
+            "Air freight is about four to five times more carbon-intensive per ton-kilometer than ocean container shipping",
+            "Air freight is about equal in carbon intensity to ocean shipping, since ocean vessels burn heavy fuel oil",
+            "Air freight is about four hundred to five hundred times more carbon-intensive per ton-kilometer than ocean container shipping",
             "Air freight is approximately forty to fifty times more carbon-intensive per ton-kilometer than ocean container shipping."
           ],
           "answer": 3,
@@ -11413,10 +11413,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic achievement demonstrated by executing the Milestone 9 Master Capstone Simulator?",
           "options": [
-            "Showing that environmental regulations should be ignored because sustainability has no commercial value.",
-            "Proving that global supply chains should be eliminated and companies should only sell goods to people living on their own street.",
-            "Proving that unifying multi-echelon inventory, WMS, cold chain, and circular reverse logistics creates an antifragile global enterprise operating system capable of surviving extreme disruptions.",
-            "Demonstrating that supply chain managers should panic and cancel all orders whenever a ship is delayed."
+            "It proves that a single best practice, such as safety stock pooling, protects the enterprise from disruptions more than integrated systems",
+            "It proves that keeping each domain in a separate system is the most resilient design, since failures stay isolated within each function",
+            "It proves that unifying multi-echelon inventory, WMS, cold chain, and circular logistics creates an antifragile enterprise able to survive extreme disruptions",
+            "It proves that outsourcing the whole supply chain to a third party gives the best protection against disruptions in global networks"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11541,10 +11541,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary trade-off encountered when implementing a level production strategy with inventory pre-builds compared to a chase strategy?",
           "options": [
-            "Immediate elimination of all raw material supplier lead times and total immunity to global logistics disruptions.",
-            "Higher working capital requirements and inventory holding costs in exchange for stable workforce utilization, machine efficiency, and lower overtime costs.",
-            "Permanent reduction of customer service levels and mandatory allocation rationing across all retail distributors.",
-            "Lower overall product quality due to accelerated machine wear and tear during seasonal demand troughs."
+            "Lower working capital and inventory holding costs in exchange for volatile workforce use, lower machine efficiency, and higher overtime",
+            "Higher working capital and inventory holding costs in exchange for stable workforce use, machine efficiency, and lower overtime costs",
+            "Higher hiring and training costs in exchange for lower inventory holding costs, stable machine efficiency, and no need for overtime",
+            "Lower unit production cost in exchange for more stockouts, since a level strategy cannot build ahead of any expected seasonal demand"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11569,10 +11569,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary distinction between a product volume variance and a product mix variance in S&OP financial gap analysis?",
           "options": [
-            "Volume variance applies exclusively to raw material purchases, while mix variance applies exclusively to finished-goods retail pricing discounts.",
-            "Volume variance represents international export sales, while mix variance represents domestic distributor consignments.",
-            "Volume variance reflects total unit count deviations from budget, while mix variance measures margin impact when the proportion of high-margin versus low-margin SKUs diverges from plan.",
-            "Volume variance measures machine breakdown hours, while mix variance measures warehouse labor absenteeism rates."
+            "Volume variance reflects deviations in selling price from budget, while mix variance measures the cost impact of material substitutions on production",
+            "Volume variance reflects deviations in margin per unit from budget, while mix variance measures the change in total unit count sold",
+            "Volume variance reflects total unit deviations from budget, while mix variance measures the margin impact when high- and low-margin SKU proportions diverge from plan",
+            "Volume variance reflects differences between regions, while mix variance reflects differences between sales channels, both at the same total volume"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11650,10 +11650,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical danger of releasing an unvalidated, infeasible Master Production Schedule into the Material Requirements Planning (MRP) engine without prior RCCP verification?",
           "options": [
-            "It causes MRP to explode unfulfillable component requirements, driving unnecessary procurement of parts that accumulate as idle WIP due to downstream assembly bottlenecks.",
-            "It permanently corrupts the corporate general ledger by deleting historical fixed asset depreciation schedules.",
-            "It forces all third-party suppliers to convert their manufacturing plants into non-profit cooperative trusts.",
-            "It automatically cancels all existing customer sales orders and re-sets distributor credit limits to zero."
+            "It causes MRP to explode unfulfillable component requirements, driving purchases of parts that pile up as idle WIP behind assembly bottlenecks",
+            "It causes MRP to reject the schedule automatically and return an error, so planners must restart the planning run from the previous week",
+            "It causes MRP to cut the lead times of components to fit the capacity, so parts arrive earlier and increase inventory holding cost",
+            "It causes MRP to split orders across suppliers automatically, so each supplier ships a smaller lot and freight cost per unit rises"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11678,10 +11678,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary analytical advantage of the Resource Profile method over the Capacity Bills method in Rough-Cut Capacity Planning?",
           "options": [
-            "It completely eliminates the need to measure machine setup times or calculate standard labor run hours.",
-            "It allows manufacturing facilities to operate without maintaining bills of materials or inventory tracking databases.",
-            "It automatically increases machine motor speeds by thirty percent during periods of high customer order demand.",
-            "It incorporates lead-time offsets, distributing work-center hours backward in time across preceding periods to reflect multi-stage fabrication timelines."
+            "It uses the average setup time of each product to spread work-center hours forward across later periods, reflecting batch run times",
+            "It uses fixed capacity factors for each product family to total work-center hours in the period when the product ships",
+            "It uses actual shop-floor performance data to adjust work-center hours each week, reflecting real efficiency rather than standards",
+            "It uses lead-time offsets to spread work-center hours backward across earlier periods, reflecting multi-stage fabrication timelines"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11762,10 +11762,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is sequence-dependent setup optimization mathematically modeled using the Traveling Salesperson Problem (TSP) formulation in industrial scheduling engines?",
           "options": [
-            "Because the changeover duration between two products depends on their specific sequence pair, mirroring the asymmetric distance matrix between cities in a TSP tour.",
-            "Because manufacturing plant managers must physically travel between regional sales offices to hand-deliver production schedules.",
-            "Because setup optimization is only applicable to long-haul trucking companies and commercial airline flight routing.",
-            "Because machines must be completely dismantled and shipped to external repair vendors between consecutive production runs."
+            "Because changeover time between two products depends on the specific pair in sequence, like the asymmetric distance matrix between cities in a TSP",
+            "Because the sum of setup times is the same for every sequence, like the fixed total distance of a TSP tour with equal city distances",
+            "Because setup time depends only on the product being started, like the cost of visiting a city regardless of the city visited before",
+            "Because TSP guarantees an optimal answer in polynomial time, which no other scheduling formulation can do for large job sets"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11815,10 +11815,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Lean methodology mandate that the initial Gemba walk for Value Stream Mapping be conducted backward from shipping to receiving rather than forward?",
           "options": [
-            "Walking backward is a mandatory legal requirement under international ISO-9001 environmental safety standards.",
-            "Walking backward forces practitioners to see operations from the customer's perspective and immediately exposes the stagnant WIP and disconnected pull signals authorized by downstream steps.",
-            "Walking backward allows the team to avoid inhaling exhaust fumes generated by forklift trucks at the receiving dock.",
-            "Walking backward ensures that factory workers cannot see the management team coming and prevents them from cleaning up the shop floor."
+            "Walking backward saves time, since the last steps of the process are the shortest and the team can finish mapping before shift change",
+            "Walking backward shows operations from the customer's view and exposes stagnant WIP and broken pull signals set by downstream steps",
+            "Walking backward lets the team start at the supplier dock, since receiving is where most waste is created and customer data is available there",
+            "Walking backward avoids disturbing operators, since the shipping area is quieter and the team can collect data without interruption"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11899,10 +11899,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Future State Value Stream design, what is the primary operational role of the 'Pacemaker Process'?",
           "options": [
-            "It is the single dedicated process where production is officially scheduled, pulling material from upstream supermarkets and pushing continuous flow downstream.",
-            "It monitors the physical heart rates and cardiovascular health of factory workers during heavy lifting operations.",
-            "It automatically regulates the electrical voltage supplied to high-speed CNC machine motors to reduce utility bills.",
-            "It serves as a temporary warehouse where obsolete finished goods are stored prior to tax write-down auctions."
+            "It is the single process where production is scheduled, pulling material from upstream supermarkets and setting continuous flow downstream",
+            "It is the final inspection process before shipping, where quality is checked and the pace of finished goods is set by the customer",
+            "It is the slowest process in the stream, where capacity is lowest and every other step runs at the rate of that bottleneck",
+            "It is the first process in the stream, where raw material is released and every downstream step is pushed at the supplier's pace"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11927,10 +11927,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of restricting Toyota's A3 Problem-Solving Report to a single 11x17-inch sheet of paper?",
           "options": [
-            "To reduce the procurement cost of office stationery and printing toner across corporate administrative headquarters.",
-            "To force conciseness, visual clarity, and disciplined root-cause thinking, eliminating narrative fluff and enabling rapid cross-functional consensus.",
-            "To prevent proprietary manufacturing trade secrets from being photocopied by industrial espionage competitors.",
-            "To ensure that problem reports can fit inside the standard toolboxes carried by maintenance line mechanics."
+            "It follows international paper standards, so reports can be filed and shipped to suppliers and customers without needing reformatting",
+            "It forces conciseness, visual clarity, and disciplined root-cause thinking, removing narrative fluff and enabling quick cross-functional consensus",
+            "It reduces printing costs, because a single sheet saves paper and ink compared with long reports, which was Toyota's main aim",
+            "It keeps the report private, because one sheet is too small to hold sensitive data and so cannot reveal company methods to others"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12036,10 +12036,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core philosophical meaning of the TPM maxim 'Cleaning is Inspection' within Autonomous Maintenance (Jishu Hozen)?",
           "options": [
-            "Physically cleaning equipment is an active diagnostic procedure where operators use sensory observation to detect loose bolts, leaks, and latent micro-defects.",
-            "Factories must be sanitized so that contract pharmaceutical auditors do not issue administrative cleanliness fines.",
-            "Maintenance technicians are officially prohibited from using mechanical hand tools until the shop floor has been washed with chemical detergents.",
-            "Operators must be evaluated solely on the aesthetic shine and gloss of their machine exterior paintwork."
+            "Cleaning equipment is an active diagnostic: operators use their senses to find loose bolts, leaks, and latent micro-defects",
+            "Cleaning equipment is a hygiene rule: operators remove dust to meet audit standards, with inspection left to maintenance specialists",
+            "Cleaning equipment is a morale exercise: operators build ownership of the machine, with defects found only by scheduled vibration checks",
+            "Cleaning equipment is a safety step: operators clear oil and debris to avoid slips, with machine condition checked only by supervisors"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12093,10 +12093,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are automated IoT edge telemetry engines vastly superior to manual operator paper logs for diagnosing 'micro-stoppages' on high-speed production lines?",
           "options": [
-            "Because manual paper logs are illegal under World Trade Organization international export licensing regulations.",
-            "Because IoT edge computers eliminate the need to maintain machine lubrication or replace worn mechanical bearings.",
-            "Because automated sensors capture brief stoppages of 15 to 45 seconds that operators rarely record on paper, revealing massive cumulative capacity losses.",
-            "Because IoT sensors automatically fire factory workers who take lunch breaks that exceed contractual limits."
+            "Automated sensors capture only long breakdowns above 30 minutes that operators already log, adding precision to the repair time",
+            "Automated sensors replace operator judgment on quality, catching defects that humans cannot see, which explains most micro-stoppages",
+            "Automated sensors capture brief 15- to 45-second stoppages that operators rarely log on paper, revealing large cumulative capacity losses",
+            "Automated sensors record the cause of each stoppage perfectly, so no root cause investigation is needed after the data is logged"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12146,10 +12146,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural objective of the Milestone 10 Capstone enterprise operations engine?",
           "options": [
-            "To seamlessly integrate strategic monthly S&OP consensus planning with finite capacity scheduling, cellular line balancing, and real-time telemetry feedback.",
-            "To replace all human factory workers with fully autonomous humanoid robots within forty-eight hours.",
-            "To eliminate corporate income taxes by relocating manufacturing assets to international offshore maritime barges.",
-            "To calculate employee annual pension payouts based on historical machine lubrication maintenance logs."
+            "To integrate monthly S&OP consensus planning with finite capacity scheduling, cellular line balancing, and real-time telemetry feedback",
+            "To replace monthly S&OP planning with a daily scheduling engine, using telemetry feedback to adjust production without a consensus plan",
+            "To maximize machine utilization in every cell, using line balancing and telemetry to load each machine to its full capacity",
+            "To connect the plant with supplier systems for automated ordering, using telemetry feedback to trigger replenishment of raw materials"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12174,10 +12174,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the multi-period S&OP mathematical optimization model, how does the objective function balance the decision between pre-building inventory during low-demand months versus scheduling overtime during peak-demand months?",
           "options": [
-            "It flips a random boolean coin at the beginning of each monthly planning cycle to determine factory shift assignments.",
-            "It mandates that factory workers must always work 80 hours a week regardless of product demand or inventory levels.",
-            "It cancels all customer orders that cannot be produced during normal daytime hours without overtime.",
-            "It mathematically compares the cumulative inventory holding carrying cost over the pre-build horizon against the overtime wage premium and outsourcing surcharges, choosing the lowest-cost alternative."
+            "It always selects overtime, because its cost is incurred only in the peak month and inventory carrying cost grows over multiple months",
+            "It always selects pre-building, because inventory has a salvage value at the end of the horizon and overtime premiums are never recovered",
+            "It selects the option with the shortest lead time, because customer service level is the only term in the objective function",
+            "It compares cumulative inventory carrying cost over the pre-build horizon with the overtime premium and outsourcing surcharges, choosing the lowest cost"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12202,10 +12202,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "An assembly cell has a total manual work content of 180 seconds across 6 operations. The current Takt Time is 45 seconds. Four operators are assigned, and after line balancing, the maximum operator cycle time is 48 seconds. What is the Line Balance Efficiency (LBE), and does this cell satisfy the customer demand rate?",
           "options": [
-            "LBE = 25.0%; the cell must immediately lay off three operators to reduce payroll expenses.",
-            "LBE = 75.0%; customer demand is satisfied because total operators multiplied by Takt Time equals 180 seconds.",
-            "LBE = 93.75%; the cell does NOT satisfy customer demand because the maximum cycle time (48s) exceeds the Takt Time ceiling (45s), creating an unfeasible bottleneck.",
-            "LBE = 100.0%; the cell perfectly matches customer demand with zero idle waste."
+            "LBE = 78.13%; the cell satisfies customer demand because the average cycle time (45s) equals the Takt Time (45s), so no bottleneck exists",
+            "LBE = 100.00%; the cell satisfies customer demand because all work content (180s) is divided evenly among the four operators",
+            "LBE = 93.75%; the cell does NOT meet demand because the maximum cycle time (48s) exceeds the Takt Time (45s), creating a bottleneck",
+            "LBE = 93.75%; the cell satisfies customer demand because the maximum cycle time (48s) is within 10% of the Takt Time (45s)"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12230,10 +12230,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the immediate automated operational response triggered by the closed-loop telemetry engine when a critical machine failure's expected repair time (MTTR) exceeds the remaining duration of the upstream decoupling buffer?",
           "options": [
-            "It increases the electrical voltage to the broken machine to force the motor to rotate through mechanical obstructions.",
-            "It immediately halts raw material release via the DBR 'Rope' mechanism to prevent WIP accumulation, and dynamically re-routes urgent orders to secondary paths based on Critical Ratio.",
-            "It automatically erases all customer purchase orders from the ERP database to conceal delivery delays from corporate auditors.",
-            "It permanently shuts down the entire factory and instructs all workers to go home without pay."
+            "It increases raw material release to fill the buffer faster, and sends all orders in queue to the machine with the shortest processing time",
+            "It halts raw material release via the DBR Rope to prevent WIP buildup, and re-routes urgent orders to alternate paths using Critical Ratio",
+            "It stops the whole factory until repair is complete, and informs customers that every order is delayed by the expected repair time",
+            "It shifts the buffer in front of the broken machine to the shipping area, and expedites all finished goods at the highest freight cost"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12259,10 +12259,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the successful execution and passing of all 5 stages in the Milestone 10 Capstone engine definitively validate for the enterprise operations architecture?",
           "options": [
-            "It mathematically and computationally validates the seamless synchronization of strategic S&OP profit optimization, finite capacity loading, U-shaped cellular Yamazumi balancing, and real-time IoT exception handling.",
-            "It proves that manufacturing plants no longer require electricity or raw materials to produce finished goods.",
-            "It confirms that human operators can work 24 hours a day without sleep or ergonomic breaks.",
-            "It certifies that corporate financial accounting rules have been permanently abolished by international regulatory authorities."
+            "It validates the synchronization of S&OP profit optimization, finite capacity loading, U-shaped Yamazumi cell balancing, and real-time IoT exception handling",
+            "It validates the accuracy of demand forecasts, safety stock levels, supplier lead times, and the financial reporting needed for budget approval",
+            "It validates the compliance of the plant with ISO 9001, ISO 14001, and ISO 45001 standards and the readiness for external certification",
+            "It validates the performance of each machine in isolation, using OEE, MTBF, and MTTR, without testing the planning or scheduling layers"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12312,10 +12312,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is evaluating Total Landed Cost mathematically superior to selecting transportation modes based solely on base carrier freight tariffs?",
           "options": [
-            "Because Total Landed Cost eliminates the need to pay customs import tariffs or harbor maintenance fees at deepwater ocean ports.",
-            "Because ocean carriers automatically waive all container demurrage charges whenever Total Landed Cost calculations are submitted.",
-            "Because base carrier freight tariffs are legally prohibited from being audited by international maritime courts.",
-            "Because Total Landed Cost incorporates pipeline inventory carrying costs, safety stock capital requirements, and obsolescence risks, which often exceed base freight savings for high-value goods."
+            "Total Landed Cost includes only freight, insurance, and customs duties, which are the sole costs that change between transportation modes",
+            "Total Landed Cost uses the purchase price alone, since freight tariffs are small relative to goods value for most high-value products",
+            "Total Landed Cost includes the carbon price on each mode, which exceeds the freight savings for all goods regardless of their value",
+            "Total Landed Cost includes pipeline inventory carrying costs, safety stock capital, and obsolescence risk, which often exceed freight savings on high-value goods"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12368,10 +12368,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of an Inland Container Depot (ICD, or Dry Port) in multimodal logistics?",
           "options": [
-            "It manufactures new steel shipping containers using scrap metal recycled from decommissioned naval submarines.",
+            "It serves as a coastal transshipment hub where containers are transferred between ships, with customs offices located at the berth",
             "It serves as an inland intermodal terminal offering customs clearance, rail transfer, and container handling away from congested coastal seaports.",
-            "It serves as a long-term residential housing facility for merchant marine ship captains during shore leave.",
-            "It enforces international copyright regulations on branded consumer goods arriving via air freight."
+            "It serves as a warehouse for loose cargo near a seaport, where goods are unloaded from containers and sorted for local delivery",
+            "It serves as a rail yard for empty containers, where carriers store idle equipment until the next booking is received"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12396,10 +12396,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A shipment consists of lightweight insulated foam panels measuring a total of 12 cubic meters with an actual gross weight of 800 kilograms. Under standard IATA air freight volumetric rules (1 CBM = 166.67 kg, or divisor 6,000 cm³/kg), what is the Chargeable Weight of this shipment?",
           "options": [
-            "12 kilograms; chargeable weight is calculated by dividing total cubic meters by the number of shipping pallets.",
-            "9,600 kilograms; chargeable weight is calculated by multiplying gross weight by cubic volume.",
-            "2,000 kilograms; the volumetric dimensional weight (12 CBM * 166.67 kg/CBM) exceeds the actual gross weight (800 kg), so the carrier bills based on volumetric weight.",
-            "800 kilograms; air carriers are legally mandated to bill exclusively on physical scale weight regardless of volume."
+            "800 kilograms; the actual gross weight (800 kg) is the chargeable weight, because the volumetric weight is billed only above 12 CBM",
+            "72 kilograms; the volumetric dimensional weight is the volume in cubic meters divided by 166.67, which is lower than the actual weight",
+            "2,000 kilograms; the volumetric weight (12 CBM * 166.67) exceeds the actual weight (800 kg), so the carrier bills volumetric weight",
+            "2,800 kilograms; the carrier bills the sum of the actual weight (800 kg) and the volumetric weight (2,000 kg) for bulky cargo"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12424,10 +12424,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical operational distinction between 'Demurrage' and 'Detention' in maritime container shipping?",
           "options": [
-            "Demurrage is paid by the ocean carrier to the shipper whenever vessels arrive ahead of published schedule.",
-            "Demurrage applies exclusively to air freight pallets, while Detention applies exclusively to cross-border railroad boxcars.",
-            "Demurrage is a voluntary charitable contribution to port worker unions, while Detention is a mandatory corporate income tax.",
-            "Demurrage applies while the loaded container remains inside the marine port terminal beyond free time, whereas Detention applies while the container is outside the terminal and not returned to the carrier's depot."
+            "Demurrage applies while the container is outside the terminal and not returned to the carrier depot, while Detention applies while it is inside the terminal beyond free time",
+            "Demurrage is charged by the shipper to the carrier for late vessel arrival, while Detention is charged by the carrier for late payment of freight",
+            "Demurrage applies to refrigerated containers only, while Detention applies to dry containers held by the consignee beyond the allotted free time",
+            "Demurrage applies while the loaded container stays in the terminal past free time; Detention applies while it is outside the terminal and not returned"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12505,10 +12505,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under General Rule of Interpretation 1 (GRI 1) of the Harmonized System, what legal components dictate the definitive classification of an imported commodity?",
           "options": [
-            "The lowest tariff duty rate available among competing product categories in the customs electronic database.",
-            "The precise terms of the Headings and any relative Section or Chapter Notes, while titles of Sections and Chapters exist for reference only.",
-            "The corporate marketing brand name printed on the retail packaging carton.",
-            "The informal verbal opinion of the local port warehouse supervisor recorded on the receiving bill of lading."
+            "The titles of Sections and Chapters first, with Headings and Notes used only to resolve cases where the titles give no clear answer",
+            "The precise terms of the Headings and any relative Section or Chapter Notes, while titles of Sections and Chapters are for reference only",
+            "The commercial description on the invoice and the exporter's own classification, with Headings and Notes used only if customs disputes them",
+            "The essential character of the goods and the highest duty rate among the competing headings, with Chapter Notes applied only afterward"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12561,10 +12561,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What unique legal power is possessed by an Original Negotiable Maritime Bill of Lading that distinguishes it from an Air Waybill or a Sea Waybill?",
           "options": [
-            "It guarantees that all international currency exchange rates are permanently frozen for twelve calendar months.",
-            "It automatically exempts the importing company from paying all corporate income taxes and harbor port fees.",
-            "It allows the carrier to seize and auction the ship captain's personal property if the vessel experiences mechanical breakdown.",
-            "It functions as a legal Document of Title, meaning possession of the physical endorsed original document confers legal ownership of the underlying physical cargo."
+            "It is a legal Contract of Insurance, so possession of the endorsed original document confers the right to claim for cargo damage",
+            "It is a legal Certificate of Origin, so possession of the endorsed original document confers duty-free entry into the importing country",
+            "It is a legal Letter of Credit, so possession of the endorsed original document guarantees payment by the buyer's bank on arrival",
+            "It is a legal Document of Title, so possession of the endorsed original document confers legal ownership of the underlying cargo"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12589,10 +12589,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of the Regional Value Content (RVC) test under international Free Trade Agreement (FTA) Rules of Origin?",
           "options": [
-            "To verify that all corporate boardroom directors reside within fifty miles of the national capital city.",
-            "To calculate the total retail sales tax collected by shopping malls in international export processing zones.",
-            "To mathematically verify that a legally mandated minimum percentage of the product's total production value was created within member treaty nations.",
-            "To measure the physical volume of water consumed by factory workers during packaging shifts."
+            "To verify that the product's final assembly took place in a member nation, regardless of where the materials were produced",
+            "To verify that the exporter's total sales to treaty countries exceed a minimum share of its annual revenue before duty-free access",
+            "To verify that a legally required minimum percentage of the product's production value was created within member treaty nations",
+            "To verify that a maximum percentage of the product's value comes from non-member nations, measured only on imported raw materials"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12641,10 +12641,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of the container staging yard within a deepwater marine terminal ecosystem?",
           "options": [
-            "It functions as an emergency dry-dock facility where merchant marine vessels undergo major structural hull welding.",
-            "It serves as a physical decoupling buffer between the massive batch arrivals of container vessels and the continuous, fragmented arrival of inland trucks and rail cars.",
-            "It serves as an administrative parking lot reserved exclusively for corporate port authority executive vehicles.",
-            "It provides long-term permanent storage where retail goods can be displayed for duty-free public auction."
+            "It acts as a customs inspection area where every container is opened and examined before it can be released to a truck or rail car",
+            "It acts as a physical buffer between the massive batch arrivals of container vessels and the continuous, fragmented arrivals of trucks and rail cars",
+            "It acts as a repair depot where damaged containers are fixed before they are loaded onto the next vessel scheduled to call at the terminal",
+            "It acts as a vessel anchorage area where ships wait in order until a berth becomes free at the quay and the cranes are available"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12668,10 +12668,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary physical constraint that must be strictly enforced in mathematical formulations of the Quay Crane Scheduling Problem (QCSP)?",
           "options": [
-            "Cranes must be repainted in corporate marine livery colors between every consecutive vessel loading cycle.",
-            "Cranes can only hoist containers manufactured in the sovereign country where the port is located.",
-            "The Non-Crossing Invariant; quay cranes operate on a single shared set of linear rails and cannot physically drive through or bypass each other.",
-            "Cranes are legally required to stop operating whenever container ships blow their maritime foghorns."
+            "The Maximum Reach Invariant; quay cranes can service only containers within a fixed radius, so each crane is tied to one bay",
+            "The Equal Load Invariant; quay cranes must handle the same number of containers, so work is divided evenly among all cranes",
+            "The Non-Crossing Invariant; quay cranes share one linear rail track and cannot drive through or bypass each other",
+            "The Single Vessel Invariant; quay cranes can serve only one ship at a time, so a vessel at the quay must be finished before the next"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12695,10 +12695,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is an unproductive 'reshuffle' (or housekeeping move) in container yard operations, and why does it represent severe operational waste?",
           "options": [
-            "It is the physical transfer of empty containers between competing ocean carrier shipping alliances at deepwater ports.",
-            "It is the legal process of transferring cargo ownership from an export manufacturer to an import wholesale distributor.",
-            "It is the mandatory daily washing and repainting of steel container exterior walls required by international maritime environmental treaties.",
-            "It is the necessary relocation of top containers to access a target container buried beneath them in a vertical stack, consuming crane time and delaying truck turn times."
+            "Moving a container from the vessel directly onto a truck without storing it, which wastes crane time because trucks arrive at irregular times",
+            "Stacking containers from the same vessel into the same yard block, which wastes space because blocks are then filled unevenly",
+            "Re-sorting the yard each night by customer name, which wastes labor since customers collect containers in random order",
+            "It is the relocation of top containers to reach a target container buried in a stack, consuming crane time and delaying truck turn times"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12722,10 +12722,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational and safety benefit of deploying Automated Stacking Cranes (ASCs) within dedicated, interlocked container yard blocks?",
           "options": [
-            "It physically segregates heavy automated machinery from human personnel, eliminating pedestrian fatalities while delivering millimeter-precise, sway-free container stacking.",
-            "It allows container terminals to eliminate all customs inspections and bypass national sovereign import laws.",
-            "It permanently prevents ocean container vessels from experiencing maritime engine breakdowns at sea.",
-            "It converts all shipping containers into biodegradable packaging materials upon terminal gate exit."
+            "It separates heavy automated machinery from human personnel, preventing pedestrian fatalities and giving precise, sway-free container stacking",
+            "It lets human drivers and robots share the same lanes at low speed, reducing fatalities through sensors on every vehicle",
+            "It replaces the need for yard planning software, since robots choose slots themselves and the cranes' speed lifts throughput",
+            "It cuts crane power use to near zero, since automated cranes run on batteries and charge during the hours without ships"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12750,10 +12750,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does adding more quay cranes to a container vessel experience diminishing marginal productivity governed by the 'Crane Interference Efficiency Factor'?",
           "options": [
-            "Because crane operators are contractually prohibited from looking at adjacent container bays.",
-            "Because adjacent cranes on a shared track require mandatory safety buffers and interfere with one another's movement and hatch-cover handling.",
-            "Because the ship's diesel engines automatically slow down whenever electrical cranes touch the hull.",
-            "Because ocean maritime insurance policies legally permit only one crane to operate per calendar day."
+            "Because each added crane draws power from the same terminal grid, so voltage falls and all cranes slow down as more are connected",
+            "Because adjacent cranes on a shared track need mandatory safety buffers and interfere with each other's movement and hatch-cover work",
+            "Because each added crane needs its own dedicated trucks, so the yard fills with vehicles that block the lanes beside the quay",
+            "Because vessel hatch openings are fixed in number, so cranes beyond the number of hatches have no containers left to move"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12832,10 +12832,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of the IMDG Code General Segregation Table (Table 7.2.4) in maritime container logistics?",
           "options": [
-            "To separate high-value luxury goods from low-value raw materials to prevent dockworker pilferage.",
-            "To ensure that all ocean shipping containers are painted in uniform pastel colors to improve harbor aesthetic appearance.",
-            "To segregate containers based on the sovereign nationality of the export cargo manufacturing corporation.",
-            "To mathematically mandate physical separation distances between incompatible chemical classes to prevent dangerous exothermic reactions, toxic gas releases, or explosions."
+            "To set the maximum stacking height for each dangerous goods class to prevent crushing damage to containers during rough seas",
+            "To list the fees and surcharges each carrier applies per dangerous goods class to compensate for added handling and insurance",
+            "To set the packaging materials and labels that each dangerous goods class needs to be accepted at ports without extra checks",
+            "To mandate physical separation between incompatible chemical classes to prevent dangerous exothermic reactions, toxic gas releases, or explosions"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12888,10 +12888,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Mean Kinetic Temperature (MKT) based on the Arrhenius equation used to evaluate pharmaceutical cold chain excursions rather than a simple arithmetic average temperature?",
           "options": [
-            "Because arithmetic averages are strictly prohibited by international maritime salvage laws.",
-            "Because chemical and biological degradation rates increase exponentially with temperature, so MKT appropriately gives greater mathematical weight to high-temperature spikes.",
-            "Because MKT automatically cools the container down by five degrees whenever an excursion occurs.",
-            "Because pharmaceutical companies use MKT solely to inflate the retail pricing of prescription medicines."
+            "Because degradation rates decrease at higher temperatures, so MKT gives greater weight to cold periods that slow product aging",
+            "Because degradation rates increase exponentially with temperature, so MKT gives greater weight to high-temperature spikes",
+            "Because MKT removes temperature spikes shorter than one hour, so it gives a smoother record than the arithmetic average",
+            "Because MKT is required by customs to estimate the duty on pharmaceutical shipments instead of using the invoice value"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12917,10 +12917,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of an automated stop-shipment interlock within a dangerous goods compliance engine when an IMDG Segregation Level 2 violation is detected?",
           "options": [
-            "It programmatically blocks warehouse pick-and-pack tasks, preventing chemically incompatible hazardous goods from being physically loaded into the same transport container.",
-            "It immediately triggers the automatic discharge of chemical fire extinguishers across the corporate office floor.",
-            "It deletes the customer's corporate credit account and reports the purchasing manager to international maritime police.",
-            "It mandates that all warehouse logistics personnel must immediately evacuate the country on outbound commercial flights."
+            "It blocks warehouse pick-and-pack tasks, preventing chemically incompatible hazardous goods from being loaded into the same container",
+            "It alerts the shipper by email after the container has been loaded, so the bill of lading can be amended before the vessel sails",
+            "It reduces the insurance premium for the shipment, since the system certifies that segregation was reviewed by a safety officer",
+            "It re-labels the containers automatically with the highest hazard class, so port staff handle the mixed load with extra caution"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12970,10 +12970,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural objective of the Milestone 11 Capstone global logistics simulation engine?",
           "options": [
-            "To eliminate all sovereign national customs borders and abolish international maritime shipping law.",
-            "To calculate individual factory worker income tax deductions based on hourly warehouse forklift mileage.",
-            "To replace all international ocean container ships with supersonic commercial air cargo freighters.",
-            "To seamlessly integrate multi-leg intermodal freight routing, automated customs compliance, deepwater port berth planning, and real-time IoT exception handling into a unified platform."
+            "To replace freight forwarders with a booking website, so shippers buy ocean and air capacity directly at published spot prices",
+            "To forecast global container demand by trade lane, so carriers can decide how many vessels to order for the coming five years",
+            "To digitize paper bills of lading on a blockchain, so banks can release letters of credit without waiting for couriers",
+            "To integrate multi-leg intermodal routing, automated customs compliance, port berth planning, and real-time IoT exception handling in one platform"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12999,10 +12999,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In multimodal routing optimization, how does a high cargo valuation ($2.5 million) with an 18% cost of capital dramatically alter the economic choice between ocean freight and expedited air freight?",
           "options": [
-            "Pipeline inventory carrying costs accumulate at over $1,200 per day, meaning long ocean transit times incur tens of thousands of dollars in capital costs that can exceed the premium cost of air freight.",
-            "High-value cargo is legally prohibited from being loaded onto maritime ocean container vessels under international maritime treaties.",
-            "Air freight carriers automatically reduce their cargo rates to zero dollars whenever high-value pharmaceuticals are shipped.",
-            "Customs authorities exempt high-value shipments from paying all import tariffs if they travel via ocean corridors."
+            "Pipeline inventory carrying costs top $1,200 per day, so long ocean transits cost tens of thousands that can exceed the air freight premium",
+            "Cargo insurance costs rise with the value, so ocean freight becomes more expensive than air, regardless of transit time or capital costs",
+            "Customs duties rise with cargo value, so air freight avoids them by arriving faster, regardless of the carrying cost of capital",
+            "Ocean freight rates rise with cargo value, so the carrier charges more per container than air freight, regardless of inventory costs"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13057,10 +13057,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When severe seaport terminal congestion threatens extended anchorage delays and high demurrage penalties, what operational advantage is provided by executing an advanced off-dock rail bypass strategy?",
           "options": [
-            "It forces the ocean carrier to refund one hundred percent of all maritime freight charges paid over the preceding five years.",
-            "It legally exempts the importing company from having to file international customs declarations or pay VAT taxes.",
-            "It transfers containers directly from the vessel hold onto on-dock rail cars, bypassing congested truck gates and avoiding marine terminal yard demurrage fees.",
-            "It converts ocean shipping vessels into amphibious hovercraft that can travel over dry land directly to customer warehouses."
+            "It stores containers on the vessel for longer, so the ship waits at anchor until the truck gates clear, avoiding terminal yard fees",
+            "It sends containers by truck to an off-dock depot for clearance, so the terminal yard is cleared but trucking costs increase",
+            "It moves containers directly from the vessel onto on-dock rail cars, bypassing congested truck gates and avoiding terminal yard demurrage fees",
+            "It speeds up customs clearance by moving inspectors to the rail yard, so containers can leave the port before documents are filed"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13086,10 +13086,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the successful execution and passing of all 5 stages in the Milestone 11 Capstone engine definitively validate for the global supply chain architecture?",
           "options": [
-            "It certifies that corporate financial accountants are no longer required to calculate freight shipping expenses or import duties.",
-            "It confirms that international free trade agreements have legally abolished all national borders and import tariffs worldwide.",
-            "It proves that international ocean container shipping can operate completely without human longshoremen or customs clearance authorities.",
-            "It mathematically and computationally validates the seamless synchronization of multi-leg intermodal routing, 3D container packing, WTO customs valuation, port berth scheduling, and IoT hazmat/cold chain compliance."
+            "It validates accuracy of demand forecasting, safety stock sizing, supplier selection, procurement contracting, and payment term negotiation",
+            "It validates compliance with local labor law, ISO 14001 environmental standards, anti-bribery rules, and sustainability reporting",
+            "It validates performance of the warehouse floor, with slotting, picking, packing, and shipping tested apart from the port and transport legs",
+            "It validates synchronization of multi-leg routing, 3D container packing, WTO customs valuation, port berth scheduling, and IoT hazmat/cold chain compliance"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13146,10 +13146,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Wickham Skinner's Focused Factory principle and the Hayes-Wheelwright Product-Process Matrix, what operational failure occurs when an enterprise operates 'below the diagonal' by utilizing a rigid, capital-intensive continuous flow line for low-volume, highly customized products?",
           "options": [
-            "It achieves immediate Stage 4 Externally Supportive manufacturing status through maximum capital deployment.",
-            "It eliminates all scheduling complexity by forcing customized products to bypass manufacturing setup routines.",
-            "It introduces an out-of-pocket cost trap characterized by massive unamortized fixed capital charges, crippling changeover penalties, and unsustainable unit production costs.",
-            "It creates an opportunity cost trap by failing to exploit automated economies of scale while relying excessively on manual artisan labor."
+            "It creates a flexibility trap with excess skilled labor, long lead times, and low utilization, offset by premium prices for customized goods",
+            "It creates a quality trap with frequent defects, rework loops, and warranty claims, offset by low fixed capital cost per line",
+            "It creates an out-of-pocket cost trap with large unamortized fixed capital charges, crippling changeover penalties, and unsustainable unit costs",
+            "It creates a capacity trap with idle machines, undersized buffers, and missed deliveries, offset by low unit cost at high volume"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13173,10 +13173,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Ferdows and De Meyer Sand Cone Model of Cumulative Capabilities, what is the mandatory sequence for building sustainable operational excellence?",
           "options": [
-            "Dependability -> Cost Efficiency -> Speed -> Quality.",
-            "Quality -> Dependability (Reliability) -> Speed (Lead-time Velocity) -> Cost Efficiency.",
-            "Cost Efficiency -> Speed -> Dependability -> Quality.",
-            "Speed -> Cost Efficiency -> Quality -> Dependability."
+            "Quality -> Speed -> Dependability -> Cost Efficiency",
+            "Quality -> Dependability -> Speed -> Cost Efficiency",
+            "Cost Efficiency -> Speed -> Dependability -> Quality",
+            "Dependability -> Quality -> Cost Efficiency -> Speed"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13200,10 +13200,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mechanism by which Postponement (Delayed Product Differentiation) reduces safety stock requirements and mitigates inventory obsolescence across multi-market supply chains?",
           "options": [
-            "It exploits statistical risk pooling by holding inventory in generic, uncommitted states upstream of the decoupling point, where aggregate demand variance is lower than SKU-specific variance.",
-            "It eliminates the need for safety stock by requiring all raw materials to be procured exclusively through domestic spot markets after order receipt.",
-            "It forces downstream customers to accept non-refundable advance deposits covering one hundred percent of production overhead.",
-            "It converts all production processes into rigid continuous flow lines operating twenty-four hours a day without changeovers."
+            "It uses risk pooling by holding inventory in generic states upstream of the decoupling point, where aggregate demand variance is lower than SKU variance",
+            "It uses economies of scale by producing larger batches of finished SKUs at the start of the season, which lowers unit cost and variance",
+            "It uses supplier consolidation by buying all components from one vendor, so lead time variance is low and less safety stock is needed",
+            "It uses demand shaping by promoting the SKUs in surplus, so inventory of the finished variants is sold before it can become obsolete"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13227,10 +13227,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Terry Hill's manufacturing strategy framework, what distinguishes an 'Order Winner' from an 'Order Qualifier'?",
           "options": [
-            "An Order Winner refers exclusively to unit cost leadership, whereas an Order Qualifier encompasses product aesthetics and packaging design.",
-            "An Order Qualifier changes every fiscal quarter, whereas an Order Winner remains permanently static throughout the corporate life cycle.",
-            "An Order Winner represents internal operational compliance metrics, while an Order Qualifier represents public regulatory safety statutes.",
-            "An Order Winner is the decisive criterion that directly captures customer purchase decisions, whereas an Order Qualifier is a baseline threshold required simply to enter the consideration set."
+            "An Order Winner is a baseline threshold to enter consideration; an Order Qualifier is the decisive criterion that captures the purchase decision",
+            "An Order Winner is a criterion on which the firm leads every competitor; an Order Qualifier is a criterion on which it trails every competitor",
+            "An Order Winner is a criterion measured by price only; an Order Qualifier is a criterion measured by quality and delivery only",
+            "An Order Winner is the decisive criterion that captures the customer's purchase decision; an Order Qualifier is a baseline threshold for entering consideration"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13254,10 +13254,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Kaplan and Norton's Strategy Map framework applied to operations, what distinguishes leading operational indicators from lagging financial indicators?",
           "options": [
-            "Leading indicators reflect raw material purchase price variances, while lagging indicators measure customer marketing click-through ratios.",
-            "Leading indicators measure past quarterly balance sheet valuations, while lagging indicators track hourly shop-floor scrap rates.",
-            "Leading indicators monitor operational process drivers that predict future performance (e.g., OEE, OTIF, cycle time), whereas lagging indicators measure historic financial results (e.g., ROCE, operating margin).",
-            "Leading indicators are monitored exclusively by external statutory auditors, whereas lagging indicators are calculated by frontline production operators."
+            "Leading indicators track past financial results (ROCE, margin); lagging indicators track operational drivers that predict future performance (OEE, OTIF)",
+            "Leading indicators track customer satisfaction scores only; lagging indicators track all internal process measures such as OEE, OTIF, and cycle time",
+            "Leading indicators track operational drivers that predict future performance (OEE, OTIF, cycle time); lagging indicators measure past financial results (ROCE, margin)",
+            "Leading indicators are set by senior executives annually; lagging indicators are set by plant managers and updated daily from the shop floor"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13305,10 +13305,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining operational mechanism of Discrete Event Simulation (DES) compared to continuous physics-based modeling in a digital twin factory?",
           "options": [
-            "DES requires physical production lines to halt completely while mathematical equations are solved on external mainframes.",
-            "DES advances the simulation clock instantaneously between discrete event timestamps (e.g., entity arrival, job completion) rather than advancing time in continuous micro-increments.",
-            "DES models thermodynamic fluid dynamics within individual cutting tools rather than discrete workpiece flow.",
-            "DES assumes that all machines operate deterministically without statistical variation or random breakdowns."
+            "DES advances the simulation clock in fixed micro-increments and solves differential equations at each step to track continuous states",
+            "DES advances the simulation clock instantly between discrete event timestamps, instead of advancing time in continuous micro-increments",
+            "DES runs the simulation in real time alongside the physical factory, instead of running faster than real time between event timestamps",
+            "DES samples random numbers at each step and averages the outputs of many runs, instead of tracking the state of each entity in time"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13332,10 +13332,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a discrete event queuing network simulation of an automated production line with finite intermediate buffers, what causes a machine to enter a 'Blocked' state?",
           "options": [
-            "The upstream feeder machine has broken down, leaving the machine's input queue completely empty.",
-            "The central PLC has lost network connectivity to the supervisory SCADA server.",
-            "The machine has completed processing its current workpiece, but cannot discharge it because the immediate downstream buffer is completely full.",
-            "The operator has initiated an unscheduled emergency stop due to tooling wear."
+            "The machine has no workpiece to process, because the immediate upstream buffer is empty and no parts have arrived",
+            "The machine has stopped for a tool change, so the downstream buffer drains and the machine cannot start its next workpiece",
+            "The machine has finished its workpiece, but cannot discharge it because the immediate downstream buffer is completely full",
+            "The machine is waiting for an operator to approve the quality inspection, so the finished workpiece stays in the station"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13386,10 +13386,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Christoph Roser's Active Period Bottleneck Detection Method implemented in digital twin factory simulations, how is the true system bottleneck identified?",
           "options": [
-            "It is the workstation that sustains the longest uninterrupted active (processing) duration without being interrupted by starvation or blocking.",
-            "It is the machine that occupies the largest physical floor space footprint in the factory CAD layout.",
-            "It is the workstation with the lowest electrical power consumption during shift changeovers.",
-            "It is the workstation that has the largest number of registered maintenance work orders in the enterprise CMMS database."
+            "The workstation that stays continuously active (processing) the longest without being interrupted by starvation or blocking",
+            "The workstation with the longest queue of waiting jobs in its input buffer at the end of the simulation run",
+            "The workstation with the highest average utilization over the simulation run, measured as busy time over total time",
+            "The workstation with the longest cycle time per part in the standard routing, regardless of starvation or blocking"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13413,10 +13413,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In dynamic shop-floor scheduling executed by a closed-loop digital twin, what is the defining characteristic and operational risk of the Shortest Processing Time (SPT) dispatching rule?",
           "options": [
-            "SPT forces intermediate inventory buffers to expand to infinite capacity before authorizing machine dispatch.",
-            "SPT minimizes total work-in-process inventory and maximizes throughput velocity, but risks severely starving and delaying long-duration, complex jobs.",
-            "SPT guarantees that jobs with the earliest customer contractual due dates are always processed first.",
-            "SPT requires all machines to operate at identical electrical feed rates regardless of workpiece geometry."
+            "SPT minimizes the maximum lateness of all jobs and guarantees due date performance, but risks higher WIP for short jobs",
+            "SPT minimizes total work-in-process and maximizes throughput velocity, but risks starving and delaying long, complex jobs",
+            "SPT minimizes setup time between jobs and maximizes machine utilization, but risks missing the start of urgent short jobs",
+            "SPT minimizes the number of tardy jobs and balances load evenly, but risks overloading the bottleneck with long jobs"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13465,10 +13465,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the ISO 14040 and ISO 14044 Life Cycle Assessment (LCA) standards, what is the primary role of the 'Functional Unit' established during the Goal and Scope Definition phase?",
           "options": [
-            "It provides a quantified reference metric to which all material inputs, energy consumption, and environmental emissions are mathematically normalized.",
-            "It serves as the internal departmental budget code for hiring environmental sustainability consultants.",
-            "It represents the maximum physical weight capacity of an automated guided vehicle on the factory floor.",
-            "It specifies the legal liability insurance coverage required for hazardous waste transport."
+            "It provides a quantified reference to which all material inputs, energy use, and environmental emissions are normalized",
+            "It sets the geographic boundary of the study, to which all supply chain emissions are assigned by the country of production",
+            "It sets the time period of the study, to which all inputs and emissions are allocated by the year in which they occur",
+            "It provides the list of impact categories, to which all inputs and emissions are assigned by their effect on climate or water"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13519,10 +13519,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Ellen MacArthur Foundation Circular Economy framework, why does Remanufacturing preserve significantly higher economic and environmental value than raw Material Recycling?",
           "options": [
-            "Remanufacturing eliminates the need for product warranty coverage and safety certifications.",
-            "Material recycling requires one hundred percent virgin fossil fuel inputs to operate sorting conveyors.",
-            "Remanufacturing preserves the complex geometric shape, precision machining, labor, and embedded energy of components, whereas recycling melts them down into basic raw materials.",
-            "Remanufacturing is legally exempt from all national workplace health and environmental emissions standards."
+            "Remanufacturing consumes more energy than recycling, but it produces a lower volume of waste going to landfills and incineration",
+            "Remanufacturing needs no collection of used products, whereas recycling requires a take-back scheme with deposits from consumers",
+            "Remanufacturing preserves the shape, precision machining, labor, and embedded energy of components, whereas recycling melts them into basic raw materials",
+            "Remanufacturing yields materials of lower quality than recycling, but it costs less because no skilled labor is needed in the process"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13546,10 +13546,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the ISO 50001 Energy Management standard, why must Energy Performance Indicators (EnPIs) be normalized against 'Relevant Variables' rather than comparing raw monthly kilowatt-hour totals?",
           "options": [
-            "Raw kilowatt-hour readings do not account for fluctuations in corporate stock price and executive stock option vesting.",
-            "Raw consumption is heavily confounded by production throughput volume changes, product mix variations, and weather fluctuations, requiring mathematical normalization to isolate true efficiency gains.",
-            "ISO 50001 requires all electrical measurements to be converted into British Thermal Units before regulatory review.",
-            "Electrical utility companies prohibit corporations from disclosing raw kilowatt-hour meter readings."
+            "Raw consumption is measured in different units across sites, so normalization is needed to convert all meters to a common kilowatt-hour basis",
+            "Raw consumption is confounded by production volume, product mix, and weather, so normalization is needed to isolate true efficiency gains",
+            "Raw consumption is affected by utility tariffs, so normalization is needed to convert all energy use into its cost per unit in dollars",
+            "Raw consumption is affected by metering errors, so normalization is needed to correct each site's meter to the supplier's invoice"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13573,10 +13573,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mechanism of the European Union's Carbon Border Adjustment Mechanism (CBAM) regarding imported industrial commodities?",
           "options": [
-            "It levies an import carbon tariff requiring importers to purchase CBAM certificates matching the embedded emissions of goods, equalizing carbon costs with domestic EU producers.",
-            "It immediately bans all maritime cargo vessels powered by heavy fuel oil from entering territorial European ports.",
-            "It mandates that all non-European suppliers donate five percent of annual export revenues to the United Nations Environment Programme.",
-            "It forces exporting factories to adopt European labor wage structures and thirty-five-hour work weeks."
+            "It levies an import carbon tariff, requiring importers to buy CBAM certificates matching the embedded emissions of goods, equalizing carbon costs with EU producers",
+            "It subsidizes EU exporters of carbon-intensive goods, paying certificates that match their emissions so they can compete with foreign producers",
+            "It bans imports of carbon-intensive goods from countries without a carbon price, replacing duties with quotas set for each supplier",
+            "It taxes the income of foreign producers selling to the EU, charging a levy on profit that depends on the emissions of the product"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13626,10 +13626,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Reference Architectural Model Industrie 4.0 (RAMI 4.0) standardized under IEC PAS 63088, what is the role of the Asset Administration Shell (AAS)?",
           "options": [
-            "It serves as a legally binding corporate liability waiver signed by shop-floor machine operators.",
-            "It is a specialized tax filing document used to claim accelerated depreciation on capital machinery.",
-            "It acts as a physical protective metal enclosure that shields factory computers from high-voltage electrical arcing.",
-            "It serves as the standardized digital representation and semantic API that encapsulates a physical asset, providing interoperable access to its properties, models, and capabilities."
+            "It is the physical enclosure that protects an industrial asset from cyberattacks, with a standardized firewall for access to its properties",
+            "It is the cloud platform that stores all maintenance records for an asset, with a standardized portal for access by the manufacturer",
+            "It is the safety certificate attached to each asset, with a standardized checklist of the inspections needed to operate it",
+            "It is the standardized digital representation and semantic API of a physical asset, giving interoperable access to its properties and capabilities"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13654,10 +13654,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Time-Sensitive Networking (TSN), specifically the IEEE 802.1Qbv Time-Aware Shaper, enable deterministic motion control and high-volume data telemetry to coexist on the same Ethernet network?",
           "options": [
-            "It establishes synchronized microsecond time slots that gate lower-priority best-effort traffic, guaranteeing collision-free transmission for deterministic control packets.",
-            "It slows down all machine motors to a universal fixed frequency of fifty hertz.",
-            "It replaces all copper Ethernet cabling with analog coaxial cables operating on separate radio frequencies.",
-            "It converts all digital network packets into unencrypted analog voltage signals."
+            "It sets synchronized microsecond time slots that gate lower-priority best-effort traffic, ensuring collision-free transmission of deterministic control packets",
+            "It sets separate physical cables for control and telemetry traffic, ensuring that the two kinds of packets never share the same switch",
+            "It sets larger frame sizes for control packets, ensuring that deterministic traffic is transmitted before any best-effort traffic arrives",
+            "It sets random back-off timers for telemetry traffic, ensuring that collisions are resolved before the next control packet is sent"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13681,10 +13681,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical rationale for performing Fast Fourier Transform (FFT) vibration feature extraction at the industrial edge rather than streaming raw time-series data to the cloud?",
           "options": [
-            "Edge computing eliminates the physical need for electrical power supply to shop-floor sensors.",
-            "It compresses high-frequency sensor streams by over ninety-nine percent, slashing network bandwidth consumption and cloud egress costs while delivering sub-millisecond local anomaly detection.",
-            "Cloud computing data centers are mathematically incapable of calculating Fast Fourier Transforms.",
-            "Raw time-series vibration data loses its electromagnetic charge when transmitted over fiber-optic internet lines."
+            "It encrypts the sensor streams before they leave the plant, preventing interception while the cloud performs the same analysis on the full signal",
+            "It compresses high-frequency sensor streams by over 99%, cutting bandwidth and cloud egress costs while delivering sub-millisecond local anomaly detection",
+            "It improves the accuracy of the raw signal by filtering electrical noise, producing a higher-resolution waveform than the cloud can obtain",
+            "It stores the raw signals on the edge device indefinitely, removing the need for any cloud services and any wireless network at the plant"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13708,10 +13708,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In vibration spectral analysis of industrial rotating machinery, what mathematical feature indicates early-stage fatigue damage on a bearing's inner race?",
           "options": [
-            "An instantaneous drop in electric motor casing temperature to zero degrees Celsius.",
-            "A complete shift of all mechanical vibrations into low-frequency gravitational waves.",
-            "Spectral peaks emerging at the Ball Pass Frequency Inner Race (BPFI), accompanied by harmonic sidebands spaced at the shaft rotational running speed (1X RPM).",
-            "A uniform flat frequency spectrum with zero decibel peaks across all audible frequencies."
+            "Spectral peaks at the Ball Pass Frequency Outer Race (BPFO), with harmonic sidebands spaced at the cage rotation speed (FTF)",
+            "A single large peak at twice the line frequency (2X), with no sidebands, showing that the shaft has become misaligned",
+            "Spectral peaks at the Ball Pass Frequency Inner Race (BPFI), with harmonic sidebands spaced at the shaft running speed (1X RPM)",
+            "A broad rise in noise floor below the first shaft harmonic, with no distinct peaks, showing that the lubricant has degraded"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13735,10 +13735,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISO/TS 15066 safety standards for Collaborative Robots (Cobots), what is the defining mechanism of the 'Power and Force Limiting (PFL)' collaborative mode?",
           "options": [
-            "The robot operates exclusively behind two-inch bulletproof polycarbonate enclosures with locked interlocks.",
-            "The robot disconnects its primary electrical power supply whenever a human enters within one hundred meters of the plant.",
-            "The robot requires an operator to continuously hold a dead-man switch while operating at full factory speed.",
-            "The robot incorporates integrated joint torque sensors and motor control limits that immediately halt motion if physical contact forces exceed human pain threshold limits, allowing fenceless human-robot collaboration."
+            "A safety-rated monitored stop halts the robot whenever a person enters the workspace, and the robot restarts only after the person leaves",
+            "Hand guiding lets the operator move the robot by hand with an enabling device, and the robot runs at full speed when released",
+            "Speed and separation monitoring slows the robot as a person approaches, and the robot stops only if the person comes within a minimum distance",
+            "Joint torque sensors and motor limits halt motion when contact forces exceed human pain thresholds, allowing fenceless human-robot collaboration"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13787,10 +13787,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining operational function of Layer 4 (Autonomous Orchestration) in an enterprise Supply Chain Command Tower?",
           "options": [
-            "It displays static pie charts of historical quarterly procurement spend on conference room monitors.",
-            "It physically manufactures replacement circuit boards using on-site consumer three-dimensional printers.",
-            "It files automated bankruptcy petitions whenever supply chain disruptions exceed thirty minutes in duration.",
-            "It automatically transmits validated prescriptive control commands and schedule adjustments directly into physical execution systems (ERP, WMS, TMS, MES) without manual clerical intervention."
+            "It displays validated descriptive dashboards of past performance to managers, who then key the schedule changes into the execution systems",
+            "It collects raw data from sensors and enterprise systems into a data lake, without recommending any schedule changes to the planners",
+            "It runs predictive models that forecast demand and disruptions, and emails the forecasts to planners who decide the next steps",
+            "It sends validated prescriptive control commands and schedule changes directly into execution systems (ERP, WMS, TMS, MES) without manual clerical intervention"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13815,10 +13815,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Multi-Echelon Inventory Optimization (MEIO) executed by a global command tower, what is the core operational principle of Clark-Scarf Echelon Stock?",
           "options": [
-            "Echelon stock evaluates inventory at any given facility as the total stock present at that facility plus all downstream nodes and in-transit shipments, optimizing buffers across the entire network rather than at isolated local nodes.",
-            "Echelon stock requires all finished goods to be destroyed and re-manufactured if they remain in a warehouse for more than seven days.",
-            "Echelon stock refers exclusively to raw materials physically stored on offshore container vessels awaiting customs clearance.",
-            "Echelon stock eliminates all digital inventory records in favor of physical paper bin cards maintained by warehouse clerks."
+            "Echelon stock is the stock at a facility plus all downstream nodes and in-transit shipments, optimizing buffers across the whole network",
+            "Echelon stock is the stock at a facility plus all upstream suppliers and their in-transit shipments, optimizing buffers at each site",
+            "Echelon stock is the stock at a facility alone, excluding in-transit shipments, optimizing buffers at each isolated local node",
+            "Echelon stock is the stock held above the reorder point at each facility, optimizing buffers by the total of the safety stock levels"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13843,10 +13843,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "During a catastrophic port or maritime canal closure, how does an autonomous command tower execute an optimal Intermodal Landbridge modal shift?",
           "options": [
-            "It halts all global sales operations and waits for statutory diplomatic treaties to resolve the geopolitical dispute.",
-            "It algorithmically balances maritime rerouting transit delays and fuel surcharges against container rail/truck transshipment costs, executing automated freight bookings across rail corridors.",
-            "It converts all maritime freight into long-range commercial passenger airline baggage without customs documentation.",
-            "It immediately dumps all physical cargo into deep ocean waters to collect total hull loss insurance payouts."
+            "It cancels all affected bookings and refunds the shippers, then waits for the port or canal to reopen before it plans any new routes",
+            "It balances maritime rerouting delays and fuel surcharges against rail or truck transshipment costs, and automatically books freight on rail corridors",
+            "It sends all affected cargo by air at the highest priority, regardless of cost or transit time, since air has no port or canal dependency",
+            "It moves all affected containers to the nearest open port and stores them there, until the original vessel route is available again"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13871,10 +13871,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a manufacturing quality and standard cost forensic audit, what operational condition is indicated when an automated process displays a Cpk of 0.82 alongside a massive unfavorable Material Quantity Variance?",
           "options": [
-            "Direct labor technicians are working at double their standard efficiency without taking breaks.",
-            "The process is operating at world-class Six Sigma levels, producing less than 3.4 defects per million opportunities.",
-            "The process is statistically incapable, generating widespread out-of-specification defects that trigger severe material scrap losses and ballooning production costs.",
-            "Raw material purchasing agents have successfully negotiated twenty percent vendor discounts."
+            "The process is highly capable, but the material supplier delivers oversized stock, which explains the heavy scrap losses on the line",
+            "The process is centered on target with little variation, so the unfavorable material variance comes from a rise in raw material prices",
+            "The process is statistically incapable, generating widespread out-of-specification defects that trigger heavy scrap losses and rising production costs",
+            "The process is capable but unstable over time, so the unfavorable material variance comes from random operator errors at changeovers"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13899,10 +13899,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary strategic operational achievement demonstrates to an executive Board of Directors that a manufacturing enterprise has attained Hayes and Wheelwright's Stage 4 'Externally Supportive' status?",
           "options": [
-            "Operations successfully outsources one hundred percent of all manufacturing to unverified overseas brokers to minimize direct overhead.",
-            "Operations eliminates all quality control inspections to achieve the fastest possible line cycle times.",
-            "Operations operates completely reactively without strategic capital plans or enterprise software systems.",
-            "Operations develops proprietary, world-class capabilities (e.g., autonomous command tower, 99% OTIF resilience, sand-cone cost leadership) that redefine industry standards and directly drive corporate market dominance."
+            "Operations meets industry standards by copying the best practices of competitors, at lower cost than the average firm in the industry",
+            "Operations avoids hurting the business by fixing visible problems, with external benchmarks used only to defend decisions to the board",
+            "Operations adopts the same best practices as competitors and aligns its capabilities with the corporate strategy set by senior management",
+            "Operations builds proprietary world-class capabilities (autonomous command tower, 99% OTIF, sand-cone cost leadership) that redefine industry standards"
           ],
           "answer": 3,
           "answerIndex": 3,

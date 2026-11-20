@@ -28,10 +28,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must enterprise sales leadership report Weighted Pipeline rather than Unweighted Pipeline to the CFO?",
           "options": [
-            "Weighted pipeline guarantees that every customer signs the contract on the exact scheduled closing date.",
-            "Weighted pipeline is only required when selling physical industrial equipment rather than cloud software subscriptions.",
-            "Unweighted pipeline subtracts sales rep commissions from top-line revenue, which violates accounting rules.",
-            "Unweighted pipeline assigns equal 100% certainty to early-stage leads and late-stage legal reviews, severely overestimating guaranteed cash inflows."
+            "Unweighted pipeline discounts late-stage legal reviews more than early-stage leads, greatly understating the expected cash inflows.",
+            "Unweighted pipeline counts only signed contracts and excludes all open deals, greatly understating the pipeline the CFO plans on.",
+            "Unweighted pipeline applies a single average win rate to every deal in the quarter, greatly smoothing the expected cash inflows.",
+            "Unweighted pipeline treats early-stage leads and late-stage legal reviews as equally certain, greatly overstating expected cash inflows."
           ],
           "answerIndex": 3,
           "explanation": "Early-stage opportunities have low win probabilities (10-20%), while late-stage contracts have high probabilities (80-90%). Unweighted pipeline treats every dollar equally, creating dangerous cash flow shortfalls when early deals inevitably fall through.",
@@ -55,10 +55,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What happens to a SaaS business with an LTV/CAC ratio of 1.2x and a 36-month CAC payback period?",
           "options": [
-            "The business suffers structural cash bleeding because capital is locked up for 3 years before earning zero net return after cost of capital and churn.",
-            "The business immediately qualifies for Tier-1 growth financing because higher customer volume overcomes individual customer losses.",
-            "The business achieves negative working capital and can fund customer acquisitions indefinitely without external cash.",
-            "The gross margin automatically expands to 100% to offset the elongated payback period."
+            "The business bleeds cash structurally, because capital is tied up for 3 years and earns almost no net return after cost of capital and churn.",
+            "The business grows profitably, because capital is recovered within 3 years and earns a strong net return after cost of capital and churn.",
+            "The business becomes cash neutral at once, because the 1.2x ratio covers its acquisition cost in the first year after churn and hosting.",
+            "The business reaches scale advantages quickly, because a 36-month payback is typical and a 1.2x ratio is above the 3x benchmark for SaaS."
           ],
           "answerIndex": 0,
           "explanation": "An LTV/CAC of 1.2x means the enterprise barely recovers its customer acquisition cost after paying for hosting and operations, while a 36-month payback creates severe working capital depletion and high vulnerability to premature customer churn.",
@@ -82,10 +82,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is negative net revenue churn considered the single most powerful growth engine in B2B recurring revenue software?",
           "options": [
-            "Because it legally eliminates the need to file sales tax returns on software subscriptions.",
-            "Because expansion revenue from retained accounts outpaces all cancellations, allowing the business to grow even with zero new customer acquisition.",
-            "Because it forces customer churn down to an absolute mathematical zero forever.",
-            "Because it allows the company to fire its customer support department without customer dissatisfaction."
+            "Because new logo revenue from acquired accounts exceeds all cancellations, so the business can grow only with heavy new customer acquisition.",
+            "Because expansion revenue from retained accounts exceeds all cancellations, so the business can grow even with no new customer acquisition.",
+            "Because cancellations from retained accounts exceed all expansion revenue, so the business shrinks unless it acquires many new customers.",
+            "Because price increases on new customers offset all cancellations, so the business can grow even when existing accounts do not expand."
           ],
           "answerIndex": 1,
           "explanation": "When Net Revenue Retention is above 100% (negative net churn), the existing customer cohort naturally expands in contract value, creating an unstoppable compounding revenue baseline before any new sales are even counted.",
@@ -135,10 +135,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How are \"Passives\" (scores 7 and 8) handled in the Net Promoter Score mathematical formula?",
           "options": [
-            "They are entirely ignored and removed from both the numerator and the denominator.",
-            "They are added to the Promoters count because 7 and 8 are above the numerical average of 5.",
-            "They are subtracted from the Detractors count to create a buffer against negative word-of-mouth.",
-            "They are included in the total respondent denominator, effectively diluting the percentage of Promoters and Detractors without adding directly to the numerator."
+            "They are counted as half a Promoter in the numerator, which raises the score without changing the total respondent denominator.",
+            "They are counted as Detractors in the numerator, which lowers the score by adding to the total respondent denominator.",
+            "They are excluded from the denominator but added to the Promoters, which raises the percentage of Promoters in the score.",
+            "They stay in the total respondent denominator, which dilutes the percentages of Promoters and Detractors without adding to the numerator."
           ],
           "answerIndex": 3,
           "explanation": "Passives (scores 7-8) are part of the total survey response count (the denominator), meaning a large proportion of passives pushes both % Promoters and % Detractors down, moderating the absolute Net Promoter Score.",
@@ -206,10 +206,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the MEDDPICC sales qualification methodology, why is mapping the \"Paper Process\" essential for accurate quarter-end forecasting?",
           "options": [
-            "Because all sales contracts must be physically printed on archival cotton parchment.",
-            "Because sales reps need to calculate how many trees were cut down for packaging.",
-            "Because complex enterprise deals frequently stall in corporate procurement, InfoSec review, and legal redlines for 60-90 days even after commercial agreement is reached.",
-            "Because paper documents are immune to cybersecurity attacks."
+            "Because complex enterprise deals close faster after commercial agreement, with procurement and legal review completing in under a week.",
+            "Because simple mid-market deals often stall in pricing negotiation for 60-90 days even after procurement and legal have approved them.",
+            "Because complex enterprise deals often stall in procurement, InfoSec review, and legal redlines for 60-90 days even after commercial agreement.",
+            "Because complex enterprise deals need the buyer to print every contract, so signature delays of 60-90 days follow commercial agreement."
           ],
           "answer": 2,
           "why": "The Paper Process encompasses procurement workflows, master service agreements, and security compliance; failure to map it causes massive forecast slippage past quarter-end.",
@@ -251,10 +251,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the operational danger of deploying a sales territory plan with a high Gini coefficient (> 0.25)?",
           "options": [
-            "The CRM database automatically deletes all customer phone numbers.",
-            "Reps assigned to starved territories face mathematically impossible quotas and quickly churn, while reps in wealthy territories hit quota without effort, leading to talent drain.",
-            "The Federal Communications Commission suspends the company's email servers.",
-            "Sales reps are forced to work entirely without laptops."
+            "Reps in starved territories receive lower quotas and stay longer, while reps in rich territories miss quota often, causing talent growth.",
+            "Reps in starved territories face unattainable quotas and churn, while reps in rich territories hit quota easily, causing talent drain.",
+            "Reps in all territories receive equal opportunity and hit quota, while the total quota exceeds the market potential, causing overhead.",
+            "Reps in rich territories face unattainable quotas and churn, while reps in starved territories hit quota easily, causing talent drain."
           ],
           "answer": 1,
           "why": "High territory inequality creates structural unfairness, driving voluntary sales rep turnover and leaving key customer whitespace unprospected.",
@@ -296,10 +296,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise software companies enforce automated Configure-Price-Quote (CPQ) discounting guardrails?",
           "options": [
-            "To prevent unauthorized rogue discounts from destroying product gross margins while establishing auditable executive approval workflows.",
-            "To make quotes completely unreadable by prospective customers.",
-            "To ensure that all customers receive identical prices regardless of company size.",
-            "To replace human sales reps with automated email bots."
+            "To stop unauthorised rogue discounts from eroding gross margins, while creating auditable executive approval workflows.",
+            "To stop competitors from seeing the list prices, while creating auditable customer approval workflows for every quote.",
+            "To speed up discounting by sales reps in every deal, while removing the executive approval step from the quoting process.",
+            "To stop customers from negotiating contract terms, while creating auditable legal approval workflows for every quote."
           ],
           "answer": 0,
           "why": "CPQ guardrails protect corporate gross margins and profitability while giving reps transparent discount thresholds based on deal size and executive approvals.",
@@ -341,10 +341,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic purpose of adding commission \"accelerators\" (e.g. 1.5x - 2.0x) for sales reps who exceed 100% of their annual quota?",
           "options": [
-            "To penalize reps for selling too much software.",
-            "To decrease the overall revenue generated by the company.",
-            "To force sales reps to switch to engineering roles.",
-            "To incentivize top sales performers to keep closing deals aggressively rather than delaying contract signatures to the following fiscal year."
+            "To motivate all reps equally to reach quota rather than exceeding it, since the extra deals cost more to support.",
+            "To motivate reps to sign bigger discounts in the final month rather than waiting for the next fiscal quarter.",
+            "To motivate top performers to move accounts to new reps rather than keeping them for the next fiscal year.",
+            "To motivate top performers to keep closing deals rather than delaying signatures into the next fiscal year."
           ],
           "answer": 3,
           "why": "Without accelerators, reps who hit 100% quota in October will \"sandbag\" deals until January; accelerators motivate them to maximize full annual revenue.",
@@ -386,10 +386,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In B2B Customer Success operations, why is Executive Champion Turnover considered one of the highest leading indicators of churn risk?",
           "options": [
-            "Because customer support phone numbers stop working when champions resign.",
-            "Because companies are legally prohibited from renewing software contracts if employees change jobs.",
-            "Because when the internal executive who championed and bought the software leaves, their replacement often evaluates alternative vendors and cancels unadopted tools.",
-            "Because software automatically uninstalls when executive user profiles are deleted."
+            "Because when the executive who championed the purchase leaves, the successor usually keeps the vendor and expands the contract.",
+            "Because when the end users who adopted the software leave, the executive usually reviews other vendors and cancels the tools.",
+            "Because when the executive who championed the purchase leaves, a successor often evaluates other vendors and cancels unadopted tools.",
+            "Because when the executive who championed the purchase is promoted, the contract auto-terminates under standard renewal terms."
           ],
           "answer": 2,
           "why": "New executives frequently review existing vendor spend and replace tools with their preferred solutions unless the CS team quickly re-proves business value.",
@@ -490,10 +490,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of establishing automated lead scoring tiers with response SLAs in a CRM?",
           "options": [
-            "To delete accounts from the CRM database if they do not purchase within 48 hours",
-            "To eliminate all sales development reps and replace the entire sales force with automated chatbots",
-            "To ensure high-intent enterprise buyers receive immediate dedicated SDR outreach while filtering low-fit leads into marketing nurture cadences",
-            "To charge customers higher software subscription prices based on how many whitepapers they download"
+            "To make sure low-fit leads get immediate SDR outreach while high-intent enterprise buyers move into marketing nurture cadences.",
+            "To make sure every lead gets the same number of calls from SDRs while marketing nurture cadences are paused for all contacts.",
+            "To make sure high-intent enterprise buyers get immediate SDR outreach while low-fit leads move into marketing nurture cadences.",
+            "To make sure high-intent enterprise buyers get routed to the Account Executives directly while SDRs handle only the nurture cadences."
           ],
           "answer": 2,
           "why": "Automated lead scoring ensures fast, prioritized SDR engagement for high-fit enterprise prospects while conserving sales resources by routing lower-intent leads to automated marketing nurture.",
@@ -530,10 +530,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the W-Shaped attribution model widely preferred over First-Touch or Last-Touch models in enterprise B2B sales?",
           "options": [
-            "Because it requires zero CRM integration and can be computed without tracking website activity",
-            "Because it completely excludes the sales department from receiving any commission credit",
-            "Because federal marketing disclosure laws require W-shaped tax filings for all digital advertising",
-            "Because it awards 90% of revenue credit to the three critical milestones (First Touch, Lead Creation, Opportunity Creation) while appropriately rewarding intermediate nurture touches"
+            "It gives 100% of revenue credit to the final touch before purchase, while ignoring the first touch and the milestones between them.",
+            "It gives equal credit to every touch in the buyer journey, while ignoring which milestones (lead creation, opportunity creation) mattered.",
+            "It gives 40% of revenue credit each to the first and last touches, while ignoring the opportunity creation milestone and middle touches.",
+            "It gives 90% of revenue credit to three milestones (first touch, lead creation, opportunity creation) while still rewarding the touches between them."
           ],
           "answer": 3,
           "why": "The W-shaped model accurately captures enterprise buying dynamics by placing 30% weight on each of the 3 major conversion milestones (first touch, lead creation, opportunity creation) and distributing 10% across nurture channels.",
@@ -570,10 +570,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must sales capacity models account for AE ramp periods when planning annual hiring targets?",
           "options": [
-            "Because newly hired sales reps take several months to achieve full productivity, meaning 1 new hire cannot deliver 100% of an annual quota in their first year",
-            "Because labor laws prohibit new employees from generating any sales revenue during their first 90 days",
-            "Because marketing teams refuse to generate pipeline for any newly hired sales representative",
-            "Because sales quotas automatically double during the second half of every fiscal year"
+            "Because new reps need several months to reach full productivity, so one new hire cannot deliver a full annual quota in the first year.",
+            "Because new reps reach full productivity within the first month, so one new hire can deliver a full annual quota in the first year.",
+            "Because new reps are assigned fewer accounts permanently, so one new hire cannot deliver a full annual quota in later years either.",
+            "Because new reps cost more than tenured reps, so one new hire cannot be added without cutting the sales budget in the first year."
           ],
           "answer": 0,
           "why": "Accounting for the learning curve and territory ramp period ensures realistic capacity expectations; new hires only produce a discounted fraction of full quota in Year 1.",
@@ -610,10 +610,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do pipeline velocity, lead scoring, attribution, and capacity planning reinforce one another in an enterprise sales organization?",
           "options": [
-            "They force all customers to pay cash upfront before receiving product demonstrations",
-            "Lead scoring prioritizes high-fit deals to improve win rates and shorten sales cycles, boosting pipeline velocity, while attribution justifies marketing spend and capacity models ensure sufficient rep headcount to close pipeline",
-            "They operate completely independently with no shared data or organizational touchpoints",
-            "They are used exclusively by human resources to calculate year-end employee health benefits"
+            "Lead scoring raises lead volume and lengthens cycles, lowering pipeline velocity; attribution replaces marketing spend, and capacity models reduce the reps needed to close the pipeline.",
+            "Lead scoring improves win rates and shortens cycles, lifting pipeline velocity; attribution justifies marketing spend, and capacity models ensure enough reps to close the pipeline.",
+            "Lead scoring selects accounts by size and sets the cycle length, fixing pipeline velocity; attribution allocates headcount, and capacity models justify marketing spend on the pipeline.",
+            "Lead scoring ranks reps by activity and sets their quotas, raising pipeline velocity; attribution assigns commissions, and capacity models measure marketing spend on the pipeline."
           ],
           "answer": 1,
           "why": "All four components form an interconnected revenue engine: lead scoring feeds qualified opps to shorten cycles and lift win rates, driving velocity, while attribution optimizes marketing ROI and capacity planning balances headcount.",
@@ -675,10 +675,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does single-threaded account engagement (relying on only one champion) pose catastrophic risk in enterprise sales?",
           "options": [
-            "If the sole champion changes jobs, leaves the company, or gets overridden by security and procurement, the entire deal collapses immediately",
-            "Because CRM software databases cannot store deals with fewer than four contact records",
-            "Because single-threaded deals are legally required to discount software by 50%",
-            "Because sales reps receive zero commission unless at least five people sign the sales order"
+            "If the one champion changes jobs, leaves, or is overridden by security and procurement, the whole deal collapses at once.",
+            "If the one champion is promoted or praised by the executive team, the whole deal accelerates and closes before the quarter ends.",
+            "If the one champion delegates the evaluation to a technical team, the whole deal splits into smaller deals for each department.",
+            "If the one champion negotiates a discount early, the whole deal loses its margin and the finance team withdraws its approval."
           ],
           "answer": 0,
           "why": "Enterprise deals require multi-threading across economic buyers, technical evaluators, security, and champions; losing a single contact will stall or kill single-threaded deals.",
@@ -715,10 +715,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between Net Revenue Retention (NRR) and Gross Revenue Retention (GRR)?",
           "options": [
-            "NRR applies only to customer refunds, whereas GRR measures sales commission deductions",
-            "GRR includes new logo acquisitions, while NRR measures marketing advertising expenses",
-            "NRR is calculated only in the first quarter of customer onboarding, while GRR is calculated at IPO",
-            "NRR includes expansion and upsell revenue from existing accounts and can exceed 100%, whereas GRR excludes expansion and measures pure retention capped at 100%"
+            "GRR includes expansion and upsell from existing accounts and can exceed 100%; NRR excludes expansion and measures pure retention, capped at 100%.",
+            "NRR includes new customer revenue and upsell from all accounts and can exceed 100%; GRR excludes new customers and is capped at 100%.",
+            "NRR counts cancellations and downgrades only and cannot exceed 100%; GRR counts expansion and upsell and can exceed 100% in any year.",
+            "NRR includes expansion and upsell from existing accounts and can exceed 100%; GRR excludes expansion and measures pure retention, capped at 100%."
           ],
           "answer": 3,
           "why": "NRR factors in expansion and upsell to measure total net cohort value, while GRR isolates pure account retention and contraction and cannot exceed 100%.",
@@ -755,10 +755,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is executive sponsor departure considered one of the highest-weight leading indicators in churn hazard modeling?",
           "options": [
-            "Because software security certificates expire immediately when a corporate executive resigns",
-            "Because executive sponsors legally own all software licenses personally under federal copyright statutes",
-            "Because incoming new executive leaders often re-evaluate legacy software vendors to cut costs or introduce platforms they used at previous companies",
-            "Because CRM systems automatically delete account access when an employee email address bounces"
+            "Because incoming executives often extend legacy software contracts to keep costs stable and avoid changing vendors in their first year.",
+            "Because outgoing executives often terminate legacy software vendors to cut costs before they hand over to the next leader.",
+            "Because incoming executives often re-examine legacy software vendors to cut costs or bring in platforms from earlier employers.",
+            "Because incoming executives often ask support teams to renegotiate pricing and the vendor accepts it at the next renewal date."
           ],
           "answer": 2,
           "why": "Executive sponsor turnover poses extreme churn risk because incoming leaders frequently review existing vendor commitments to reduce costs or replace them with preferred tools from previous roles.",
@@ -795,10 +795,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of an enterprise Deal Desk in B2B sales operations?",
           "options": [
-            "To enforce a mandatory 50% discount on every contract submitted to the CRM",
-            "To enforce commercial pricing governance and review non-standard legal and financial contract terms to preserve corporate profitability",
-            "To manufacture physical office furniture and desks for newly hired sales representatives",
-            "To prohibit sales representatives from speaking directly with customer procurement personnel"
+            "To enforce a standard discount for every deal and approve non-standard product features to protect customer satisfaction.",
+            "To enforce commercial pricing governance and review non-standard legal and financial terms to protect profitability.",
+            "To close deals for sales reps and negotiate non-standard legal terms directly with customers to protect the quarterly bookings.",
+            "To train sales reps on pricing and review non-standard marketing terms for campaigns to protect the brand and its reputation."
           ],
           "answer": 1,
           "why": "The Deal Desk serves as the cross-functional commercial clearinghouse, ensuring discounts are approved according to policy and non-standard terms receive proper legal and finance review.",
@@ -835,10 +835,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does high Net Revenue Retention (NRR > 115%) transform the growth trajectory and valuation multiple of a B2B SaaS company?",
           "options": [
-            "It creates compounding revenue expansion from existing customers, accelerating growth with zero incremental customer acquisition cost (CAC) and commanding premium valuation multiples",
-            "It forces the company to eliminate all product development engineering budgets",
-            "It mandates that the company lower its software prices by 20% every renewal cycle",
-            "It converts all equity shares into non-voting debt debentures"
+            "It compounds revenue from existing customers, speeding growth with no added acquisition cost (CAC) and earning premium valuation multiples.",
+            "It compounds costs from existing customers, slowing growth with higher support cost (CAC) and earning discounted valuation multiples.",
+            "It stabilises revenue from existing customers, keeping growth flat with moderate acquisition cost (CAC) and earning average valuation multiples.",
+            "It compounds revenue from new customers, speeding growth with higher acquisition cost (CAC) and earning premium valuation multiples."
           ],
           "answer": 0,
           "why": "High NRR means existing customers organically generate expansion revenue year after year without incurring new sales and marketing CAC, producing superior unit economics and premium enterprise valuations.",
@@ -900,10 +900,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic rationale for the Chief Revenue Officer overseeing Marketing, Sales, and Customer Success under a single executive remit?",
           "options": [
-            "To legally merge corporate tax returns with vendor advertising deductions",
-            "To eliminate all customer support personnel and automate service via email auto-responders",
-            "To force sales representatives to design advertising flyers during weekend shifts",
-            "To ensure end-to-end alignment across the entire customer lifecycle, eliminating organizational silos and maximizing lifetime revenue through seamless expansion"
+            "To centralise cost control across the lifecycle, remove customer-facing roles, and maximise short-term profit through lower headcount.",
+            "To align only the pre-sale stages, remove marketing from sales discussions, and maximise new bookings through faster deal closing.",
+            "To align the whole product lifecycle, remove engineering silos, and maximise release speed through smoother software delivery.",
+            "To align the whole customer lifecycle, remove organisational silos, and maximise lifetime revenue through smooth expansion."
           ],
           "answer": 3,
           "why": "A unified CRO role aligns demand generation, deal closing, and customer retention into a synchronized flywheel, ensuring customer acquisition feeds long-term expansion.",
@@ -940,10 +940,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must gross margin percentage be incorporated into the CAC Payback Period calculation rather than using raw top-line revenue?",
           "options": [
-            "Because revenue consumed by hosting, server infrastructure, and customer onboarding costs cannot be used to pay off sales and marketing acquisition expenses",
-            "Because federal tax authorities prohibit corporations from deducting sales commissions",
-            "Because gross margin is identical across every software company in the world",
-            "Because accounts receivable collections automatically double when customers enter contracts"
+            "Because revenue consumed by hosting, infrastructure, and onboarding costs cannot be used to pay back sales and marketing acquisition expense.",
+            "Because revenue earned from renewals and upsell cannot be used to pay back sales and marketing acquisition expense until the contract ends.",
+            "Because gross margin percentage is the same for all customers, so it must be applied to compare payback across different segments.",
+            "Because revenue recognised under accounting rules differs from billing, so it must be adjusted by margin to match the cash collected."
           ],
           "answer": 0,
           "why": "CAC payback measures recovery of invested cash; only gross profit (revenue minus cost of goods sold) contributes to amortizing the initial acquisition cost.",
@@ -980,10 +980,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do mature enterprise SaaS companies assign dedicated Technical Account Managers (TAMs) to Tier 1 strategic accounts rather than relying on pooled support?",
           "options": [
-            "Because Tier 1 accounts are legally required to employ certified software engineers on their board of directors",
-            "Because Tier 1 accounts represent a disproportionate share of enterprise revenue, where losing even a single account would severely harm quarterly corporate performance",
-            "Because pooled customer support systems are prohibited under state consumer protection statutes",
-            "Because technical account managers work for zero salary and reduce payroll expenses"
+            "Because Tier 1 accounts hold a small share of revenue, so losing one would have little effect on quarterly company performance.",
+            "Because Tier 1 accounts hold a disproportionate share of revenue, so losing even one would badly hurt quarterly company performance.",
+            "Because Tier 1 accounts need fewer technical resources, so a dedicated TAM replaces the support team to reduce company cost.",
+            "Because Tier 1 accounts hold a disproportionate share of tickets, so a dedicated TAM is hired to close support cases faster."
           ],
           "answer": 1,
           "why": "Concentration of revenue in flagship accounts demands high-touch technical alignment; losing one Tier 1 account can wipe out an entire quarter of customer expansion.",
@@ -1020,10 +1020,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise sales organizations utilize non-linear commission accelerators above 100% quota attainment?",
           "options": [
-            "Because federal labor statutes require commission rates to double every quarter",
-            "To penalize sales representatives who close complex enterprise software contracts",
-            "To strongly incentivize high-performing sales reps to continue closing deals beyond their quota rather than hoarding or stalling deals until the next fiscal year",
-            "To force underperforming sales reps to pay cash fines back to the corporate treasury"
+            "To strongly motivate all reps to stop selling past quota, so that deals are saved for the next fiscal year for planning.",
+            "To reward reps for closing smaller deals earlier in the year, so that deals are not delayed beyond the first fiscal quarter.",
+            "To strongly motivate top reps to keep closing past quota instead of hoarding or delaying deals until the next fiscal year.",
+            "To pay managers more on team performance past quota, so that deals are shared among the reps within the same fiscal year."
           ],
           "answer": 2,
           "why": "Accelerators prevent \"sandbagging\" (delaying deals to future quarters) by rewarding overachievement with higher marginal commission rates, maximizing annual company revenue.",
@@ -1060,10 +1060,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary indicator that an enterprise revenue architecture is operating in a capital-efficient, scalable state?",
           "options": [
-            "The company eliminates all customer success managers to reduce operating expenditures to zero",
-            "Sales compensation eliminates all commission accelerators so that sales reps never earn more than base salary",
-            "Marketing teams eliminate all digital advertising and rely 100% on cold calling residential phone directories",
-            "CAC payback periods remain under 12 months across all segments while Net Revenue Retention exceeds 115% through compounding expansion from existing customers"
+            "CAC payback stays above 24 months in all segments while Net Revenue Retention falls below 90% through churn from existing customers.",
+            "CAC payback stays under 12 months in all segments while gross revenue retention stays at 100% with no expansion from existing customers.",
+            "CAC payback stays near 36 months in all segments while Net Revenue Retention exceeds 115% through expansion from existing customers.",
+            "CAC payback stays under 12 months in all segments while Net Revenue Retention exceeds 115% through expansion from existing customers."
           ],
           "answer": 3,
           "why": "Fast CAC payback (< 12 months) combined with top-quartile NRR (> 115%) represents the gold standard of capital-efficient, compounding SaaS growth.",
@@ -1130,10 +1130,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to empirical Speed-to-Lead research, why does responding to an inbound inquiry within 5 minutes yield a 21x higher qualification rate than responding after 30 minutes?",
           "options": [
-            "Sales compensation plans legally forfeit all commissions if lead response times exceed five minutes",
-            "Federal commercial telecommunications regulations forbid sales representatives from calling prospects after 30 minutes have elapsed",
-            "The buyer's operational pain is top-of-mind, they are actively sitting at their workstation, and concurrent competitor inquiries have not yet anchored the evaluation",
-            "Browser cookies expire exactly thirty minutes after web form submission, erasing customer IP addresses"
+            "The buyer's budget is approved, they are in a procurement meeting, and competing inquiries have already shaped the evaluation.",
+            "The buyer's pain is fading, they are away from the workstation, and competing inquiries have not yet been sent by them.",
+            "The buyer's pain is fresh, they are at their workstation, and competing inquiries have not yet shaped the evaluation.",
+            "The buyer's pain is fresh, they are comparing pricing pages, and competing inquiries have already been answered by rivals."
           ],
           "answer": 2,
           "why": "Immediate response captures the prospect while their problem is acute, undivided attention is focused on their screen, and before competing vendors can anchor the buying criteria.",
@@ -1174,10 +1174,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary risk of relying solely on behavioral intent scoring (e.g. page visits and downloads) without an independent firmographic fit axis?",
           "options": [
-            "CRM databases exceed their memory limits when storing web page view events",
-            "Sales teams waste hundreds of high-cost selling hours contacting high-activity prospects (such as students, interns, or micro-businesses) who lack budget and authority",
-            "Marketing teams are legally prohibited from tracking website clicks under CAN-SPAM laws",
-            "Web analytics platforms automatically double the cost of pay-per-click advertising"
+            "Sales teams miss many valuable accounts that are less active online, such as large enterprises that research quietly and have both budget and authority.",
+            "Sales teams waste many expensive selling hours on highly active prospects (such as students, interns, or micro-businesses) who lack budget and authority.",
+            "Sales teams overload marketing with many low-value form fills, such as webinar registrations, which lack the data the CRM needs to qualify them.",
+            "Sales teams delay many promising follow-ups on active prospects (such as VPs or directors) until the scoring model is retrained on closed deals."
           ],
           "answer": 1,
           "why": "Behavioral intent alone creates the 'Enthusiastic Student Trap', where high web engagement from unqualified non-buyers consumes critical sales rep bandwidth.",
@@ -1218,10 +1218,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Lead-to-Account (L2A) fuzzy matching essential before dispatching inbound leads to a standard SDR round-robin queue?",
           "options": [
-            "To prevent sales development reps from cold-prospecting existing multi-million-dollar customers or trampling on active enterprise opportunities managed by Account Executives",
-            "To automatically verify that the prospect's email server supports TLS encryption protocols",
-            "Because round-robin queues are illegal under international trade and labor arbitration treaties",
-            "To calculate the prospect's personal credit score before allowing them to view software documentation"
+            "To stop SDRs from cold-prospecting existing multi-million-dollar customers or interfering with active deals owned by Account Executives.",
+            "To stop SDRs from calling small prospects in the same time zone or interfering with active campaigns owned by marketing managers.",
+            "To stop AEs from working on inbound leads from new markets or interfering with outbound lists owned by the SDR team leaders.",
+            "To stop duplicate email addresses from entering the database or interfering with the lead scoring model owned by the marketing team."
           ],
           "answer": 0,
           "why": "L2A matching prevents embarrassing internal collisions by routing existing customer subsidiaries or in-flight pipeline directly to the incumbent account owner.",
@@ -1263,10 +1263,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the operational purpose of mandating standardized CRM disqualification codes when sales reps reject or close-lost inbound leads?",
           "options": [
-            "To legally report rejected prospects to corporate credit rating agencies",
-            "To reduce CRM database storage space by wiping all prospect contact records",
-            "To automatically issue financial refunds to customers who did not enjoy their product demonstration",
-            "To provide structured closed-loop attribution data so marketing can eliminate ad spend on channels delivering non-buying personas"
+            "To give structured performance data so managers can pay commissions on rejected leads that were later converted by another channel.",
+            "To give structured territory data so operations can reassign accounts from channels that bring leads outside of the assigned regions.",
+            "To give structured pricing data so finance can adjust list prices for channels that bring buyers who ask for larger discounts.",
+            "To give structured closed-loop attribution data so marketing can cut ad spend on channels that bring non-buying personas."
           ],
           "answer": 3,
           "why": "Standardized disqualification codes (e.g. 'Under ICP Size', 'No Budget') provide granular closed-loop feedback, allowing marketing to optimize targeting and eliminate wasted ad spend.",
@@ -1308,10 +1308,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which operational criteria are required for an enterprise inbound pipeline to achieve INBOUND_SLA_REVENUE_PIPELINE_CERTIFIED_NOMINAL accreditation?",
           "options": [
-            "Eliminating all human sales reps in favor of 100% automated generative AI chatbots",
-            "Maintaining a 100% conversion rate from raw website visits to paid annual software contracts",
-            "Sales SLA compliance >= 90.0%, SAL-to-Opportunity conversion >= 20.0%, average speed-to-lead <= 15.0m, and statistically significant lead volume",
-            "Spending at least $1,000,000 per month on Google Search Ads regardless of conversion metrics"
+            "Sales SLA compliance of at least 70.0%, SAL-to-opportunity conversion of at least 10.0%, average speed-to-lead of 60.0 minutes or less, and significant lead volume.",
+            "Sales SLA compliance of at least 90.0%, SAL-to-opportunity conversion of at most 20.0%, average speed-to-lead of 15.0 minutes or more, and limited lead volume.",
+            "Sales SLA compliance of at least 90.0%, SAL-to-opportunity conversion of at least 20.0%, average speed-to-lead of 15.0 minutes or less, and significant lead volume.",
+            "Sales SLA compliance of at least 95.0%, SAL-to-opportunity conversion of at least 40.0%, average speed-to-lead of 5.0 minutes or less, and any lead volume."
           ],
           "answer": 2,
           "why": "Institutional certification requires demonstrable volume, >=90% SLA compliance, <=15m speed-to-lead, and >=20% opportunity conversion rate to guarantee commercial quality.",
@@ -1379,10 +1379,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do multi-channel cadences combining phone, email, and LinkedIn generate significantly higher conversion than single-channel email campaigns?",
           "options": [
-            "International commercial regulations require sales development reps to call every prospect before sending an email",
-            "Different executive personas communicate through different channels, and multi-channel touchpoints reinforce brand familiarity without flooding a single inbox",
-            "LinkedIn algorithms give cash rewards to sales representatives who connect their CRM to social profiles",
-            "Email servers automatically delete all emails from companies that do not own corporate telephone numbers"
+            "Different executive personas read the same channels, and multi-channel touches build brand fatigue by flooding more than one inbox.",
+            "Different executive personas prefer different channels, and multi-channel touches build brand familiarity without flooding one inbox.",
+            "Different executive personas ignore all channels, and multi-channel touches build compliance by meeting outreach limits in each region.",
+            "Different executive personas prefer email only, and multi-channel touches build call volume without improving familiarity with the brand."
           ],
           "answer": 1,
           "why": "Multi-channel outreach accommodates diverse executive communication habits while building multi-vector familiarity that elevates overall response probability.",
@@ -1422,10 +1422,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise strictly isolate cold outbound prospecting on secondary sharded domains rather than sending from its primary corporate web domain?",
           "options": [
-            "Federal banking regulations prohibit primary domains from communicating with prospects outside their home state",
-            "Domain registrars charge double subscription fees for companies that send more than 100 emails per month",
-            "If outbound campaigns trigger spam complaints or blacklisting, a damaged domain reputation will block mission-critical corporate emails, invoices, and customer support tickets",
-            "Primary web domains do not support modern HTML font rendering in email clients"
+            "Spam filters on the primary domain would slow outbound delivery rates and delay prospecting emails, but corporate emails would be unaffected.",
+            "Dedicated secondary domains would reduce the cost of email licences and cut outbound sending fees, though corporate emails would be at risk.",
+            "Spam complaints or blacklisting from outbound would damage domain reputation and block critical corporate emails, invoices, and support tickets.",
+            "Prospects would trust the primary domain less and reply less often to outbound emails, though corporate emails would be fully protected."
           ],
           "answer": 2,
           "why": "Using dedicated secondary domains protects the primary corporate domain from catastrophic spam blacklisting, ensuring customer support and billing emails remain unimpacted.",
@@ -1465,10 +1465,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an Interest-Based Call to Action ('Open to exploring how Stripe solved this?') generate substantially higher conversion than a Time-Demand CTA ('Do you have 30 minutes on Tuesday?')?",
           "options": [
-            "Email spam filters automatically delete all emails that contain the word 'Tuesday'",
-            "Corporate calendars automatically decline meeting requests from sales professionals",
-            "Executive assistants are legally mandated to block all 30-minute calendar invites",
-            "Asking for interest requires minimal psychological commitment and tests for curiosity, whereas asking for 30 minutes demands scarce executive calendar time before value is established"
+            "Asking for interest needs a long commitment and tests budget, while asking for 30 minutes demands a clear agenda before any contract is shown.",
+            "Asking for a time slot gives the prospect a clear next step and tests priority, while asking for interest leaves the follow-up date undefined.",
+            "Asking for interest shows the sender's urgency and tests authority, while asking for 30 minutes demands a decision from a senior buyer.",
+            "Asking for interest needs little commitment and tests curiosity, while asking for 30 minutes demands scarce calendar time before any value is shown."
           ],
           "answer": 3,
           "why": "Interest CTAs carry zero friction and test for curiosity, whereas demanding 30 minutes forces an immediate cognitive cost-benefit calculation that triggers defensive rejection.",
@@ -1510,10 +1510,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Transparent Permission Opener ('I know I'm an interruption, do you have 30 seconds...') so effective on cold calls?",
           "options": [
-            "It disarms the prospect's defensive fight-or-flight threat response by acknowledging the interruption and granting them explicit autonomy to end the call",
-            "It legally satisfies federal telemarketing disclosure requirements in the first sentence",
-            "It uses sub-audible acoustic frequencies that hypnotize the prospect into staying on the line",
-            "It prevents the telecommunications carrier from recording the phone conversation"
+            "It disarms the prospect's defensive threat response by admitting the interruption and giving them clear freedom to end the call.",
+            "It speeds up the prospect's buying decision by stating the price early and giving them a time limit to accept the offer.",
+            "It meets telemarketing disclosure rules by naming the caller and company, and giving the prospect a number to call back.",
+            "It builds the rep's authority with the prospect by listing credentials and giving them proof of past results with peers."
           ],
           "answer": 0,
           "why": "Acknowledging the interruption and giving the prospect permission to end the call disarms defensive amygdala resistance and establishes peer-level psychological safety.",
@@ -1623,10 +1623,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is explicitly giving the prospect permission to say 'No' in an Upfront Contract essential for successful enterprise discovery?",
           "options": [
-            "It disarms the buyer's defensive resistance against sales manipulation and establishes peer-level psychological safety for transparent dialogue",
-            "It automatically registers the deal as lost in Salesforce to keep pipeline forecasts artificially low",
-            "It allows the salesperson to end the call immediately if the prospect asks difficult technical questions",
-            "It is legally required by international consumer protection treaties before discussing pricing"
+            "It lowers the buyer's defensive resistance to sales manipulation and creates peer-level psychological safety for honest discussion.",
+            "It raises the buyer's sense of urgency to make a decision and creates time pressure for a prompt discussion of price.",
+            "It lowers the seller's need to qualify the buyer and creates a shorter discovery process that ends in the first meeting.",
+            "It raises the buyer's expectation of a discount and creates leverage for negotiation of price in the first meeting."
           ],
           "answer": 0,
           "why": "Granting permission to say 'No' neutralizes defensive buyer suspicion, eliminates sales pressure, and establishes equal business stature.",
@@ -1668,10 +1668,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of failing to probe beyond surface-level symptoms during B2B sales discovery?",
           "options": [
-            "Software engineering teams will refuse to deploy cloud licenses to the client",
-            "Sales compensation plans automatically cut commission rates in half for deals without root causes",
-            "The customer will file a formal complaint with the Better Business Bureau",
-            "The deal will be treated as a low-priority 'nice-to-have' and will inevitably stall or lose out to internal budget competing priorities"
+            "The deal is treated as a high-priority 'must-have' and closes quickly because the budget is released early in the cycle.",
+            "The deal is treated as a technical evaluation and stalls in the proof of concept because the engineers lack a test plan.",
+            "The deal is treated as a renewal and loses margin to discounts because the buyer expects a lower price from the vendor.",
+            "The deal is treated as a low-priority 'nice-to-have' and stalls or loses to other priorities competing for the budget."
           ],
           "answer": 3,
           "why": "Without connecting operational pain to executive consequences, deals lack urgency, fail to unlock budget, and succumb to inaction or competing corporate priorities.",
@@ -1712,10 +1712,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does presenting the 'Cost of Inaction' (e.g., $83,500/month) dismantle the enterprise objection to delay a purchase until next quarter?",
           "options": [
-            "It forces the prospect's accounting department to report deferred projects as balance sheet liabilities",
-            "It legally obligates the prospect to pay a cancellation penalty to the sales organization",
-            "It mathematically proves that deferring the decision by three months burns $250,500 in wasted cash, which far exceeds the cost of purchasing the software now",
-            "It automatically charges the prospect's corporate credit card every thirty days they do not sign"
+            "It shows that delaying by three months saves $250,500, which lets the buyer negotiate a better price next quarter.",
+            "It shows that delaying by one month wastes $83,500, which is less than the cost of buying the software now.",
+            "It shows that delaying by three months wastes $250,500, far more than the cost of buying the software now.",
+            "It shows that delaying by three months wastes $83,500, which is about the cost of buying the software now."
           ],
           "answer": 2,
           "why": "Cost of Inaction illustrates that waiting is not a neutral zero-cost decision, but a conscious choice to bleed hundreds of thousands of dollars in unrecoverable operational waste.",
@@ -1757,10 +1757,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key difference between an authentic Critical Event and an artificial quarter-end sales discount deadline?",
           "options": [
-            "A quarter-end discount is legally binding on the buyer, whereas a Critical Event is voluntary",
-            "A Critical Event is an external, non-negotiable deadline owned by the customer with real business consequences if missed, whereas discounts are internal vendor deadlines that invite price erosion",
-            "Critical Events only apply to hardware sales, while software sales rely entirely on discounting",
-            "A Critical Event must be registered with the United States Department of Commerce"
+            "A Critical Event is an internal vendor deadline set by sales leaders with discounts attached; a quarter-end discount deadline is an external customer date with real consequences.",
+            "A Critical Event is an external, non-negotiable customer deadline with real consequences if missed; a quarter-end discount deadline is an internal vendor date that invites price erosion.",
+            "A Critical Event is a negotiable customer preference with minor consequences if missed; a quarter-end discount deadline is a non-negotiable date set by the finance team of the buyer.",
+            "A Critical Event is a contractual deadline written into the vendor's terms; a quarter-end discount deadline is an external regulator's date with penalties for the buyer if missed."
           ],
           "answer": 1,
           "why": "Authentic Critical Events belong to the customer and carry real operational or regulatory penalties, creating natural urgency without eroding vendor price margins.",
@@ -1801,10 +1801,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does enterprise sales governance require verified Champion access to the Economic Buyer before approving an intensive technical POC?",
           "options": [
-            "To prevent sales engineering resources from being wasted on 'science projects' or evaluations that lack executive purchasing power",
-            "Because technical evaluators are legally forbidden from testing cloud software",
-            "To ensure that the software license keys can only be generated by a Chief Financial Officer",
-            "Because economic buyers are required to write the technical code for all enterprise POC integrations"
+            "To prevent sales engineering resources being wasted on 'science projects' or evaluations that lack executive buying power.",
+            "To prevent sales engineering resources being used on small accounts or evaluations that lack a large enough contract value.",
+            "To prevent sales engineering resources being delayed by long security reviews or evaluations that lack a clear test plan.",
+            "To prevent sales engineering resources being wasted on early demos or evaluations that lack a signed non-disclosure agreement."
           ],
           "answer": 0,
           "why": "Without an executive sponsor who controls budget and is committed to purchasing upon successful POC completion, proof of concepts become expensive, unpaid technical evaluations.",
@@ -1873,10 +1873,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary psychological purpose of the second 'Tell' in the Tell-Show-Tell demonstration framework?",
           "options": [
-            "To tell the customer how much the software will cost before showing the next feature",
-            "To tell the engineering team to deploy software updates during the meeting",
-            "To demand that the buyer sign an immediate nondisclosure agreement",
-            "To ask a value confirmation question that prompts the buyer to articulate the business impact and operational benefit in their own words"
+            "To give a price summary after the feature that gets the buyer to state the budget and approval process in their own words.",
+            "To repeat the feature benefits to the buyer in the seller's words so that the buyer remembers the business impact later.",
+            "To ask a technical clarification question that gets the buyer to state the integration needs and security rules in their own words.",
+            "To ask a value confirmation question that gets the buyer to state the business impact and benefit in their own words."
           ],
           "answer": 3,
           "why": "The second 'Tell' closes the loop by asking a value confirmation question, prompting the customer to state the commercial value in their own words.",
@@ -1918,10 +1918,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is securing an Economic Buyer's signed commitment to purchase upon meeting exit criteria mandatory before launching an enterprise POC?",
           "options": [
-            "It transforms the POC from an open-ended scientific evaluation into a binding pre-purchase milestone with a guaranteed close path",
-            "It automatically transfers money from the customer's bank account on day one of the POC",
-            "It prevents customer engineers from discovering software bugs during testing",
-            "It eliminates the need for software engineering teams to provide customer support"
+            "It turns the POC from an open-ended evaluation into a binding pre-purchase milestone with a guaranteed path to close.",
+            "It turns the POC from a binding pre-purchase milestone into an open-ended evaluation with a flexible path to close.",
+            "It turns the POC from a vendor-led demo into a customer-led trial with a free extension if the criteria are not met.",
+            "It turns the POC from a technical test into a legal contract with a penalty payable by the buyer if the criteria are missed."
           ],
           "answer": 0,
           "why": "A pre-agreed purchase commitment guarantees that passing the technical exit criteria automatically triggers contract execution rather than open-ended delay.",
@@ -1964,10 +1964,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is planting a 'Trap-Setting Question' superior to directly claiming a competitor has inferior technology?",
           "options": [
-            "It forces the competitor to lower their price by fifty percent",
-            "It allows the competitor's own engineering team to expose their architectural limitations directly to the buyer, eliminating vendor bias",
-            "It legally prevents the competitor from bidding on government software contracts",
-            "It automatically scrambles the competitor's demonstration software via malware"
+            "It lets the seller state the competitor's weak points directly in the demo, which the buyer accepts as unbiased vendor feedback.",
+            "It lets the buyer find the competitor's architectural limits themselves when the competitor's team cannot answer, removing vendor bias.",
+            "It lets the buyer receive the competitor's price quotes sooner in the process, which makes the seller's price look more favourable.",
+            "It lets the seller avoid discussing the competitor in the evaluation, which keeps the buyer focused on features in the demo only."
           ],
           "answer": 1,
           "why": "When the customer asks the trap question themselves, the competitor's inability to solve it provides undeniable first-hand proof of architectural limitations.",
@@ -2010,10 +2010,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of the 'Explore' step in the LAER objection handling framework?",
           "options": [
-            "To browse social media while the customer is talking about their concerns",
-            "To explore whether the salesperson can transfer the account to another representative",
-            "To ask clarifying diagnostic questions to isolate the genuine underlying operational concern before attempting an answer",
-            "To explore the customer's corporate website to find contact numbers for their competitors"
+            "To restate the objection in the seller's words and offer a discount before the buyer explains the underlying concern.",
+            "To move quickly to a solution and offer a case study that addresses the stated objection without further questions.",
+            "To ask clarifying diagnostic questions that isolate the real underlying concern before attempting an answer.",
+            "To confirm the buyer's budget and approval process so that the underlying concern is raised with the right executive."
           ],
           "answer": 2,
           "why": "Exploring isolates the true root cause and context behind a surface objection, preventing the representative from answering the wrong question.",
@@ -2055,10 +2055,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational benefit of requiring DEMO_AND_POC_GOVERNANCE_CERTIFIED_NOMINAL accreditation before advancing a deal to contract negotiation?",
           "options": [
-            "It automatically waives all legal redlines and indemnification clauses in the contract",
-            "It allows the salesperson to deliver the software code immediately via personal USB drives",
-            "It eliminates the need for software engineering teams to deploy servers",
-            "It ensures that technical feasibility and buyer alignment are 100% verified, preventing deals from collapsing during legal review due to unresolved technical doubts"
+            "It ensures legal terms and pricing are fully agreed, so deals do not collapse in technical review over unresolved contract disputes.",
+            "It ensures the buyer's budget and timeline are confirmed, so deals do not stall in procurement over unresolved approval steps.",
+            "It ensures competitor comparisons and references are provided, so deals do not collapse in negotiation over unresolved pricing gaps.",
+            "It ensures technical feasibility and buyer alignment are fully verified, so deals do not collapse in legal review over unresolved technical doubts."
           ],
           "answer": 3,
           "why": "Rigorous technical validation ensures that buyer objections, proof points, and criteria are fully resolved, de-risking the legal contracting stage and preventing late-stage fallout.",
@@ -2126,10 +2126,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is increasing top-of-funnel lead volume alone often counterproductive to overall sales pipeline velocity?",
           "options": [
-            "Federal sales tax rates double whenever a sales team generates more than 50 leads per month",
-            "Executive buyers refuse to purchase software from companies that have large marketing departments",
-            "Enterprise CRM databases automatically delete accounts when lead volume exceeds 1,000 records",
-            "Flooding the team with unqualified leads dilutes sales rep focus, dragging down win rates and increasing sales cycle duration, which can decrease net revenue velocity"
+            "Flooding the team with qualified leads raises rep focus, lifts win rates, and shortens sales cycles, which can increase net revenue velocity.",
+            "Flooding the team with unqualified leads raises rep activity, lifts call volumes, and shortens sales cycles, which can increase net revenue velocity.",
+            "Flooding the team with unqualified leads dilutes marketing budget, lowers lead quality, and lengthens campaign planning, which has no effect on sales velocity.",
+            "Flooding the team with unqualified leads dilutes rep focus, lowers win rates, and lengthens sales cycles, which can reduce net revenue velocity."
           ],
           "answer": 3,
           "why": "Unqualified leads consume valuable rep hours, resulting in lower conversion rates and elongated sales cycles that neutralize volume gains.",
@@ -2170,10 +2170,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is indicated when an enterprise sales team exhibits an abnormally high Discovery-to-POC conversion rate (>85%) combined with a very low POC-to-Proposal rate (<35%)?",
           "options": [
-            "A porous discovery gate where AEs fail to qualify prospects, resulting in engineering resources being wasted running POCs on unclosed deals",
-            "Software engineers are deliberately writing buggy code to slow down sales reps",
-            "The company's marketing website has crashed due to high traffic",
-            "Sales tax regulations require all enterprise prospects to complete a POC before talking to legal"
+            "A porous discovery gate where AEs fail to qualify prospects, so engineering resources are wasted running POCs on deals that will not close.",
+            "A strict discovery gate where AEs over-qualify prospects, so engineering resources are idle because few POCs are started on real deals.",
+            "A strong POC process where engineers close prospects directly, so AE resources are wasted running discovery on deals that already closed.",
+            "A porous proposal stage where managers fail to review pricing, so finance resources are wasted correcting quotes on deals that did close."
           ],
           "answer": 0,
           "why": "A high pass rate from discovery paired with poor POC conversion proves that reps are pushing unqualified opportunities into technical validation without rigorous pain or budget qualification.",
@@ -2214,10 +2214,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise sales organization maintain a Pipeline Coverage Ratio of at least 3.5x to 4.0x relative to rep quota targets?",
           "options": [
-            "To prevent state sales tax auditors from auditing corporate accounts",
-            "Because enterprise win rates typically hover between 20% and 30%, requiring 3.5x to 4.0x in active opportunities to ensure that 1.0x in closed revenue is mathematically achieved",
-            "To ensure that sales reps spend 75% of their working hours filling out CRM forms",
-            "Because enterprise clients require vendors to have at least four active proposals before signing a contract"
+            "Because enterprise win rates are typically 50% to 60%, so 1.5x to 2.0x in open opportunities is enough to deliver 1.0x in closed revenue.",
+            "Because enterprise win rates are typically 20% to 30%, so 3.5x to 4.0x in open opportunities is needed to deliver 1.0x in closed revenue.",
+            "Because enterprise win rates are typically 20% to 30%, so 1.0x in open opportunities is enough when deal sizes are large and cycles are long.",
+            "Because enterprise discount rates are typically 20% to 30%, so 3.5x to 4.0x in open opportunities is needed to deliver 1.0x in booked revenue."
           ],
           "answer": 1,
           "why": "With enterprise win rates around 25%, an Account Executive must carry ~4x pipeline to achieve 100% of their target.",
@@ -2259,10 +2259,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does algorithmic sales forecasting automatically downgrade a deal from 'Commit' to 'Best Case' if the Economic Buyer has not been engaged in over fourteen days?",
           "options": [
-            "Because federal banking regulations forbid signing contracts with companies that don't email weekly",
-            "Because CRM databases automatically delete uncontacted executive records after two weeks",
-            "Because enterprise closing authority rests with the Economic Buyer; if they are disengaged, late-stage procurement hurdles cannot be cleared before quarter end",
-            "To prevent sales representatives from exceeding their annual commission caps"
+            "Because enterprise technical approval sits with the champion; if they are disengaged, early-stage evaluation hurdles cannot be cleared by quarter end.",
+            "Because enterprise forecast categories sit with the CFO; if they are disengaged, quarterly bookings hurdles cannot be recorded by quarter end.",
+            "Because enterprise closing authority sits with the Economic Buyer; if they are disengaged, late-stage procurement hurdles cannot be cleared by quarter end.",
+            "Because enterprise legal review sits with the buyer's counsel; if they are disengaged, contract redline hurdles cannot be cleared by quarter end."
           ],
           "answer": 2,
           "why": "Without continuous Economic Buyer alignment, enterprise deals lack executive authorization and inevitably slip past quarter-end deadlines.",
@@ -2305,10 +2305,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which combination of capabilities is required to achieve Certified Enterprise Sales Development & Deal Strategist (CESDDS) accreditation?",
           "options": [
-            "Posting daily inspirational quotes about sales motivation on social media",
-            "Making 10,000 cold phone calls in a single afternoon using automated robot dialers",
-            "Spending ten years as a door-to-door retail vacuum cleaner salesman",
-            "Mastery across the Sales Pipeline Velocity Equation, Stage-by-Stage Conversion Funnel Telemetry, Rep Quota Capacity Planning, and Algorithmic Forecasting Governance"
+            "Mastery of the Customer Health Scoring Model, Cohort Retention Telemetry, Renewal Capacity Planning, and Algorithmic Churn Prediction Governance.",
+            "Mastery of the Marketing Attribution Equation, Channel-by-Channel Spend Telemetry, Campaign Budget Planning, and Algorithmic Bidding Governance.",
+            "Mastery of the Sales Commission Payout Equation, Rep-by-Rep Earnings Telemetry, Compensation Cost Planning, and Algorithmic Accelerator Governance.",
+            "Mastery of the Sales Pipeline Velocity Equation, Stage-by-Stage Funnel Telemetry, Rep Quota Capacity Planning, and Algorithmic Forecasting Governance."
           ],
           "answer": 3,
           "why": "CESDDS accreditation demands verified computational mastery of velocity physics, funnel telemetry, headcount capacity, and algorithmic forecasting governance.",
@@ -2461,10 +2461,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an enterprise account with a single champion experience an estimated 60-75% probability of churn when that champion leaves the company?",
           "options": [
-            "Software corporate licensing agreements automatically self-terminate when the signatory executive's corporate email is deactivated",
-            "The departing executive legally owns the software database credentials and cannot transfer them to replacement personnel",
-            "The incoming successor had no role in purchasing the software, lacks emotional buy-in, and frequently cancels existing contracts to deploy their own preferred vendor or save budget",
-            "Security compliance auditors mandate that enterprise software must be re-tendered through an RFP whenever any manager departs"
+            "The successor co-signed the software purchase, has strong buy-in, and often expands the contract to deploy more modules or use more budget.",
+            "The successor inherits the contract terms in full, lacks authority to cancel, and often keeps the vendor until a multi-year term has ended.",
+            "The successor had no role in buying the software, lacks buy-in, and often cancels the contract to deploy a preferred vendor or save budget.",
+            "The successor reports to a different department, has a separate budget, and often moves the contract to a lower pricing tier to save cost."
           ],
           "answer": 2,
           "why": "New executives naturally favor systems they already know and often look for quick budget cuts; without broad internal buy-in across multiple stakeholders, legacy tools are prime targets for removal.",
@@ -2662,10 +2662,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining characteristic of a 'SaaS Smile' cohort retention curve in enterprise software economics?",
           "options": [
-            "Sales representatives receive smile bonuses if customer contracts renew within twenty-four hours of initial expiration",
-            "The company's marketing website automatically renders animated graphics whenever an enterprise customer logs into their account",
-            "A cohort's total revenue initially dips due to minor early churn but expands significantly in subsequent years as retained customers scale usage, surpassing baseline ARR",
-            "Customer happiness surveys are legally required to feature smiling emojis on all quarterly feedback invoices"
+            "A cohort's revenue rises at first from early upsell but declines steadily in later years as retained customers cut usage below baseline ARR.",
+            "A cohort's revenue stays flat at first from fixed contracts but spikes sharply in the final year as retained customers prepay for renewals.",
+            "A cohort's revenue dips at first from minor early churn but expands strongly in later years as retained customers scale usage past baseline ARR.",
+            "A cohort's revenue dips at first from minor early churn and keeps falling in later years as retained customers reduce seats below baseline ARR."
           ],
           "answer": 2,
           "why": "Net negative churn causes cohort revenue to expand over time: retained accounts increase spend faster than lost accounts reduce it, bending the curve upward.",
@@ -2751,10 +2751,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of establishing a 90-day opt-out window in enterprise SaaS Master Services Agreements?",
           "options": [
-            "To create a legally binding deadline that forces commercial renewal discussions early, preventing unexpected last-minute non-renewals",
-            "To give customers three full months of free software usage without paying monthly subscription fees",
-            "To enable software engineers to delete the customer's database exactly ninety days before contract expiration",
-            "To satisfy federal antitrust requirements governing corporate software subscription disclosures"
+            "To set a binding deadline that forces renewal discussions early and prevents last-minute non-renewals.",
+            "To set a flexible deadline that lets customers cancel at any time and prevents long-term revenue commitments.",
+            "To set a trial period that lets customers test the product at no cost and prevents early billing for services.",
+            "To set a notice period that lets the vendor change prices mid-term and prevents customer objections to uplifts."
           ],
           "answer": 0,
           "why": "Opt-out windows require customers to give 60-90 days notice before cancelling; passing this window binds the renewal, ensuring predictable recurring cash flows.",
@@ -2796,10 +2796,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of an enterprise SaaS business achieving an NRR of 122% and GRR of 93%?",
           "options": [
-            "The software platform will automatically shut down after three years of operations unless revenue reaches $100M",
-            "The business organically expands revenue by 22% annually from its existing customer base while maintaining low churn, driving compounding valuation multiples",
-            "The company is legally required to hire twenty-two new software engineers for every ninety-three customer accounts",
-            "Customer contracts must be re-negotiated every ninety-three days to prevent automatic price increases"
+            "The business loses revenue by 22% a year from its existing customers while keeping churn high, which drives declining valuation multiples.",
+            "The business grows revenue by 22% a year from its existing customers while keeping churn low, which drives compounding valuation multiples.",
+            "The business grows revenue by 93% a year from its new customers while keeping acquisition cost low, which drives compounding valuation multiples.",
+            "The business keeps revenue flat at 122% of the base from its existing customers while keeping churn high, which drives stable valuation multiples."
           ],
           "answer": 1,
           "why": "122% NRR means the customer base organically grows by 22% net of churn, creating self-compounding recurring revenue that drives premium valuations.",
@@ -2866,10 +2866,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is relying solely on support ticket CSAT dangerous when evaluating overall enterprise customer sentiment?",
           "options": [
-            "CSAT surveys are automatically blocked by enterprise corporate firewalls under FTC spam regulations",
-            "Support ticket CSAT can only be completed by external independent auditing agencies",
-            "A customer may rate friendly support reps highly on individual tickets while overall product friction remains severe enough to cause churn",
-            "Software engineering teams delete CSAT scores whenever a new code build is deployed"
+            "A customer may rate unfriendly support reps poorly on individual tickets while product quality stays strong enough to prevent churn.",
+            "A customer may rate the product highly in annual surveys while support friction stays severe enough to cause individual ticket reopens.",
+            "A customer may rate friendly support reps highly on individual tickets while product friction stays severe enough to cause churn.",
+            "A customer may skip rating individual tickets entirely while product friction stays too small to show up in any usage or health data."
           ],
           "answer": 2,
           "why": "Transactional CSAT only measures satisfaction with a single support event, masking deep underlying product frustration and high operational effort.",
@@ -2910,10 +2910,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Net Promoter Score (NPS) methodology, how are respondents who give a score of 7 or 8 categorized, and how do they impact the final score?",
           "options": [
-            "They are categorized as Detractors and are subtracted directly from the company's annual net recurring revenue",
-            "They are categorized as Passives; they are included in total response counts in the denominator but contribute zero points to the numerator, effectively diluting the net score",
-            "They are automatically deleted from the survey database to prevent statistical skewing",
-            "They are categorized as Promoters and are awarded a 50% partial credit toward total net loyalty"
+            "They are Promoters; they count in the numerator of total responses and add one point each, raising the net score.",
+            "They are Passives; they count in the denominator of total responses but add zero points to the numerator, diluting the net score.",
+            "They are Detractors; they count in the numerator of total responses and subtract one point each, lowering the net score.",
+            "They are Passives; they are removed from both the numerator and the denominator, leaving the net score unchanged."
           ],
           "answer": 1,
           "why": "Passives (7-8) are satisfied but uncommitted; they count toward total sample size, which naturally lowers the percentage of Promoters and dilutes the score.",
@@ -3000,10 +3000,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mandate of the 'Inner Loop' in a modern Closed-Loop Feedback System?",
           "options": [
-            "To automatically unsubscribe dissatisfied customers from company promotional email newsletters",
-            "To run daily database backups of all survey SQL tables into secondary cloud storage buckets",
-            "To calculate quarterly corporate tax deductions based on customer dissatisfaction refunds",
-            "To trigger a mandatory 24-hour direct human contact with every detractor to validate their frustration and initiate rapid remediation"
+            "To trigger an automated survey follow-up to every detractor within 24 hours to collect their feedback and start a product roadmap review.",
+            "To trigger mandatory direct human contact with every promoter within 24 hours to thank them for their score and start a referral request.",
+            "To trigger a quarterly review meeting with the largest detractors within 90 days to validate their frustration and start a pricing review.",
+            "To trigger mandatory direct human contact with every detractor within 24 hours to validate their frustration and start quick remediation."
           ],
           "answer": 3,
           "why": "The Inner Loop mandates immediate frontline action: reaching out to detractors within 24 hours to address root causes before relationship churn becomes permanent.",
@@ -3113,10 +3113,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence of failing to establish a dedicated Customer Success Operations function as a SaaS company scales beyond $10M ARR?",
           "options": [
-            "Customer relationship management platforms automatically terminate all user passwords after twelve months",
-            "Sales development representatives are legally prohibited from contacting new enterprise accounts",
-            "The company's software automatically reverts to open-source licensing under federal trade regulations",
-            "CSMs spend 30-40% of their time manually compiling data across siloed tools, creating unsustainable headcount costs and delayed churn response"
+            "CSMs spend 30-40% of their time with customers on strategic reviews, creating sustainable headcount costs and quick churn response.",
+            "CSMs spend 5-10% of their time compiling data by hand across siloed tools, creating minor headcount costs and slightly slower churn response.",
+            "Sales reps spend 30-40% of their time compiling data by hand across siloed tools, creating unsustainable quota costs and slow pipeline response.",
+            "CSMs spend 30-40% of their time compiling data by hand across siloed tools, creating unsustainable headcount costs and slow churn response."
           ],
           "answer": 3,
           "why": "Without CS Ops automation, CSMs waste critical bandwidth on manual administrative reporting, leaving less time for high-value proactive customer engagement.",
@@ -3194,10 +3194,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Cross-Sell Propensity framework automatically disqualify accounts with poor Customer Health Scores (CHS < 75.0) from sales expansion campaigns?",
           "options": [
-            "Sales compensation commissions are automatically halved if an account experiences a support ticket within thirty days",
-            "Attempting to cross-sell customers who are experiencing active product bugs or frustration damages trust and provokes hostile contract non-renewals",
-            "Corporate firewall security systems automatically delete product marketing emails sent to distressed accounts",
-            "Enterprise software billing systems are legally prohibited from generating invoices for accounts in red status"
+            "Cross-selling to customers who are facing active bugs or frustration raises trust and triggers early expansion renewals.",
+            "Cross-selling to customers who are facing active bugs or frustration damages trust and triggers hostile non-renewals.",
+            "Cross-selling to customers who are fully healthy and adopting damages trust and triggers hostile pricing negotiations.",
+            "Cross-selling to customers who are facing active bugs or frustration lowers sales commissions and triggers manager approvals."
           ],
           "answer": 1,
           "why": "Pitching new products to a dissatisfied customer is tone-deaf and toxic; customer success must resolve active friction before proposing commercial expansion.",
@@ -3235,10 +3235,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between a Joint Success Plan (JSP) and a traditional internal account plan in customer success governance?",
           "options": [
-            "A JSP is legally confidential and can never be shared with anyone outside the software company's legal department",
-            "A traditional account plan is exclusively written in assembly code, while a JSP is written in English",
-            "A JSP is co-authored with the customer's Economic Buyer and focuses on the buyer's desired business outcomes, whereas an internal account plan focuses on vendor sales quotas",
-            "JSPs are only required for government contracts and are forbidden in private enterprise SaaS"
+            "A JSP is written by the vendor's sales team and centres on the vendor's renewal quotas, while an internal account plan is co-authored with the buyer's executives.",
+            "A JSP is co-authored with the customer's end users and centres on feature requests, while an internal account plan centres on support ticket volumes and response targets.",
+            "A JSP is co-authored with the customer's Economic Buyer and centres on the buyer's desired outcomes, while an internal account plan centres on vendor sales quotas.",
+            "A JSP is signed as a legal contract by both parties and centres on service penalties, while an internal account plan centres on vendor revenue goals and product roadmaps."
           ],
           "answer": 2,
           "why": "JSPs are customer-centric roadmaps co-developed with client executives to measure mutual business outcomes, transforming vendors into strategic partners.",
@@ -3280,10 +3280,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of achieving a Customer Success Efficiency Ratio of 13.4:1 in recurring revenue operations?",
           "options": [
-            "The software company must hire 13.4 software engineers for every 1 Customer Success Manager",
-            "Customer contracts automatically increase in price by 13.4% every quarter",
-            "Customer success managers are legally required to work 13.4 hours per day to maintain corporate compliance",
-            "The organization manages $13.40 in recurring ARR for every $1.00 invested in Customer Success operational budget, delivering elite operating leverage"
+            "The organisation spends $13.40 on Customer Success for every $1.00 of recurring ARR it manages, showing poor operating leverage.",
+            "The organisation manages 13.4 customers for every Customer Success manager it employs, showing average operating leverage.",
+            "The organisation earns $13.40 of new-logo revenue for every $1.00 spent on sales and marketing, showing elite acquisition leverage.",
+            "The organisation manages $13.40 of recurring ARR for every $1.00 spent on the Customer Success budget, showing elite operating leverage."
           ],
           "answer": 3,
           "why": "An efficiency ratio of 13.4:1 proves that customer success operates as a high-leverage revenue driver rather than an expensive cost center.",
@@ -3345,10 +3345,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the 360-Degree Customer Success Architecture require all four operational pillars to achieve >= 85.0 points rather than relying on an overall average?",
           "options": [
-            "A critical deficit in any single pillar (such as blind telemetry or unmeasured effort) inevitably causes catastrophic blind spots and customer churn regardless of strengths in other areas",
-            "Software billing engines refuse to generate invoices if any customer score is below eighty-five",
-            "Account Executives are prohibited by sales commission rules from logging into CRM tools with deficient scores",
-            "Public cloud server hosting costs double whenever an architecture audit fails"
+            "A serious deficit in any one pillar (such as blind telemetry or unmeasured effort) causes blind spots and churn regardless of strengths in other pillars.",
+            "A serious deficit in any one pillar is offset by strengths in other pillars, so churn is controlled when the overall average stays above the threshold.",
+            "A serious deficit in the telemetry pillar alone causes blind spots and churn, while the other three pillars have little effect on the overall result.",
+            "A serious deficit in any one pillar causes billing errors and delayed invoices, regardless of strengths in other pillars or customer health scores."
           ],
           "answer": 0,
           "why": "Customer Success is an interdependent chain; failure in telemetry, retention modeling, advocacy, or operational capacity compromises the entire revenue engine.",
@@ -3387,10 +3387,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational insight revealed by simulating customer portfolio dynamics across health segments?",
           "options": [
-            "Red accounts churn at an identical rate to Green accounts regardless of support intervention",
-            "Customer Success Managers should completely ignore accounts with unpurchased whitespace",
-            "Customer health scores have no statistical correlation with renewal or expansion outcomes",
-            "Expansion ARR generated from healthy Green accounts with active whitespace can overcome unavoidable churn, but protecting the revenue baseline requires actively mitigating Red and Yellow accounts"
+            "Expansion ARR from at-risk Red accounts with whitespace can outweigh unavoidable churn, so protecting the revenue base needs no work on Green and Yellow accounts.",
+            "New-logo ARR from healthy Green accounts with whitespace can outweigh unavoidable churn, but protecting the revenue base needs active work on prospects only.",
+            "Expansion ARR from Green accounts can never outweigh churn, so protecting the revenue base needs all effort spent on Red accounts and none on expansion.",
+            "Expansion ARR from healthy Green accounts with whitespace can outweigh unavoidable churn, but protecting the revenue base needs active work on Red and Yellow accounts."
           ],
           "answer": 3,
           "why": "Simulation models prove that net expansion is a mathematical balance between whitespace monetization in Green accounts and aggressive churn defense in distressed accounts.",
@@ -3428,10 +3428,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an enterprise customer generating $750,000 in ARR experiences champion departure, open Sev-1 bugs, and a competitor displacement POC, what is the mandatory Customer Success intervention SLA?",
           "options": [
-            "Wait ninety days until the next scheduled annual contract renewal notice to bring up the issues",
-            "Send an automated email asking the customer to fill out an online customer satisfaction survey",
-            "Activate Code Red status with a mandatory 24-hour executive intervention SLA, dispatching C-suite leadership and engineering SWAT teams",
-            "Offer an immediate 75% contract price discount via an automated billing email"
+            "Activate Amber status with a standard 5-day account manager SLA, assigning the assigned CSM and a support specialist.",
+            "Activate Code Red status with a 30-day executive review SLA, scheduling a business review ahead of the next renewal.",
+            "Activate Code Red status with a mandatory 24-hour executive intervention SLA, sending C-suite leaders and engineering SWAT teams.",
+            "Activate Code Red status with a 24-hour discount approval SLA, sending pricing proposals and a renewal incentive to the buyer."
           ],
           "answer": 2,
           "why": "Multi-threat enterprise crises represent imminent revenue loss; only rapid executive-level intervention within twenty-four hours can halt churn momentum.",
@@ -3469,10 +3469,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a 30-percentage-point difference in Net Revenue Retention (125% vs 95%) create over a $1.4 Billion enterprise valuation divergence for a $50M software company over three years?",
           "options": [
-            "Because corporate taxes are only charged to companies with Net Revenue Retention below 100%",
-            "Because expansion revenue compounds exponentially without customer acquisition cost, driving massive ARR scale that earns top-decile market valuation multiples",
-            "Because institutional investors automatically confiscate equity from underperforming executives",
-            "Because software companies with 95% NRR are legally required to dissolve and liquidate their assets under federal securities laws"
+            "Because acquisition revenue compounds with marketing cost, driving small ARR scale that earns average-decile valuation multiples.",
+            "Because expansion revenue compounds without acquisition cost, driving large ARR scale that earns top-decile valuation multiples.",
+            "Because expansion revenue is taxed at a lower rate, driving large net profit that earns top-decile valuation multiples.",
+            "Because renewal revenue is recognised upfront under revenue rules, driving large reported ARR that earns top-decile valuation multiples."
           ],
           "answer": 1,
           "why": "High NRR compounds revenue with zero acquisition cost, proving product-market durability and commanding premium enterprise value-to-revenue multiples.",
@@ -3514,10 +3514,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which combination of institutional standards must be verified to earn the Certified Enterprise Customer Success & Retention Director (CESRD) credential?",
           "options": [
-            "Passing all 5 core operational gates: CHS >= 85.0, NRR >= 120%, VoC NPS >= +50, CS Ops Efficiency >= 12:1, and Verified 24-hour Emergency Crisis Rescue Protocol with composite score >= 85.0",
-            "Logging into customer relationship management software at least five times per week",
-            "Having thirty years of experience managing physical retail cash registers",
-            "Sending ten generic apology emails to dissatisfied software users"
+            "All 5 gates: CHS of at least 85.0, NRR of at least 120%, VoC NPS of at least +50, CS Ops Efficiency of at least 12:1, and a verified 24-hour crisis rescue protocol scoring at least 85.0.",
+            "All 5 gates: CHS of at least 70.0, NRR of at least 100%, VoC NPS of at least +20, CS Ops Efficiency of at least 6:1, and a verified 72-hour crisis rescue protocol scoring at least 70.0.",
+            "Any 3 of 5 gates: CHS of at least 85.0, NRR of at least 120%, VoC NPS of at least +50, CS Ops Efficiency of at least 12:1, and a 24-hour crisis protocol with any composite score.",
+            "All 5 gates: CHS of at least 85.0, GRR of at least 120%, CSAT of at least +50, CS Ops Efficiency of at least 12:1, and a verified 24-hour hiring plan scoring at least 85.0."
           ],
           "answer": 0,
           "why": "The CESRD credential demands comprehensive, multi-pillar computational mastery across telemetry, retention, advocacy, operations, and emergency crisis intervention.",
@@ -3587,10 +3587,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which standard CRM object serves as the primary root entity linking child contacts, revenue opportunities, and support tickets in enterprise B2B sales?",
           "options": [
-            "The Campaign object, because marketing touchpoints precede sales conversations",
-            "The Account object, because it represents the legal corporate entity possessing one-to-many relationships with people and deals",
-            "The Lead object, because all prospect interactions originate from unconverted marketing forms",
-            "The Opportunity object, because revenue forecasting takes organizational precedence over corporate accounts"
+            "The Contact object, because it is the individual buyer with one-to-many relationships to accounts and deals.",
+            "The Account object, because it is the legal corporate entity with one-to-many relationships to people and deals.",
+            "The Opportunity object, because it is the revenue event with one-to-many relationships to accounts and people.",
+            "The Lead object, because it is the earliest record with one-to-many relationships to accounts and deals."
           ],
           "answer": 1,
           "why": "In enterprise B2B relational CRM architecture, the Account object represents the legal corporate entity and acts as the root parent possessing one-to-many relationships with Contacts, Opportunities, and Cases.",
@@ -3684,10 +3684,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of implementing automated CRM pipeline validation rules?",
           "options": [
-            "To assign deals to different sales territories based on currency exchange fluctuations",
-            "To slow down the sales cycle so customer support has more time to onboard customers",
-            "To automatically generate invoices before procurement approval",
-            "To prevent sales reps from advancing deals without verifiable customer milestones, eliminating phantom pipeline and protecting forecast integrity"
+            "To stop reps creating deals without a customer name entered, removing duplicate records and protecting report formatting rules.",
+            "To stop managers reviewing deals without a reason entered, removing weekly meetings and protecting selling time for the reps.",
+            "To stop customers viewing deals without a login entered, removing access risk and protecting the contract data from outsiders.",
+            "To stop reps advancing deals without verifiable customer milestones, removing phantom pipeline and protecting forecast integrity."
           ],
           "answer": 3,
           "why": "Validation rules prevent reps from advancing opportunities based on intuition alone, ensuring verifiable proof points (like Economic Buyer engagement) exist before deals enter late-stage forecasts.",
@@ -3733,10 +3733,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is it vital for RevOps teams to automatically quarantine CRM records that have decayed beyond 180-270 days with zero touchpoints?",
           "options": [
-            "To prevent high email bounce rates that blacklist corporate sender domains and waste sales rep prospecting capacity on obsolete contacts",
-            "To automatically transfer company assets to competitor databases",
-            "Because sales reps prefer viewing fewer total accounts on their computer screens",
-            "Because modern cloud CRMs charge extra licensing fees for accounts that have names starting with the letter Q"
+            "To prevent high email bounce rates that blacklist corporate sender domains and waste rep prospecting capacity on obsolete contacts.",
+            "To prevent high storage costs that slow the database down and waste IT budget on obsolete contact records in the CRM.",
+            "To prevent low email open rates that lower campaign scores and waste marketing budget on contacts who rarely read emails.",
+            "To prevent duplicate contacts that confuse the routing rules and waste rep time on contacts already owned by another rep."
           ],
           "answer": 0,
           "why": "Quarantining stale records prevents dangerous email bounce spikes that ruin sender reputation, while keeping sales reps focused on verified active decision-makers.",
@@ -3856,10 +3856,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational transition is triggered when an inbound enterprise prospect achieves a composite lead score of 75 points against a 70-point threshold?",
           "options": [
-            "The lead is archived into cold storage to conserve CRM database storage",
-            "The prospect is sent an automated invoice for enterprise licensing",
-            "The lead is classified as an SQL and immediately routed to an active sales rep for sub-15-minute qualification",
-            "The lead's company domain is permanently blocked from visiting the marketing website"
+            "The lead is classified as an MQL and placed into a marketing nurture sequence for a further 15 days of scoring.",
+            "The lead is classified as an SQL and added to a weekly batch list for the sales team to review at its next meeting.",
+            "The lead is classified as an SQL and routed straight to an active sales rep for qualification within 15 minutes.",
+            "The lead is classified as a disqualified record and flagged for review since its score is above the 70-point cap."
           ],
           "answer": 2,
           "why": "A score of 75 clears the 70-point SQL threshold, triggering immediate classification as a Sales Qualified Lead and automated dispatch to sales reps for rapid engagement.",
@@ -3905,10 +3905,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is it vital for enterprise RevOps routing engines to incorporate active capacity ceilings alongside round-robin rotation?",
           "options": [
-            "To prevent top reps from receiving higher commissions than lower-performing peers",
-            "To prevent sales reps from becoming cognitively saturated with open leads, ensuring rapid response times and preventing deal neglect",
-            "Because CRM databases cannot store more than 30 records per sales user",
-            "To force prospects to speak with multiple sales reps before receiving a quote"
+            "To prevent managers from reviewing lead assignments, keeping rep workloads hidden and avoiding rotation disputes.",
+            "To prevent reps from being overloaded with open leads, keeping response times fast and avoiding deal neglect.",
+            "To prevent reps from receiving leads outside their region, keeping territories separate and avoiding overlap fights.",
+            "To prevent leads from being assigned twice by the system, keeping records unique and avoiding duplicate outreach."
           ],
           "answer": 1,
           "why": "Capacity ceilings protect reps from becoming overwhelmed with open leads, ensuring every qualified prospect receives focused attention within strict SLA windows.",
@@ -3955,10 +3955,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational action is executed by the speed-to-lead escalation engine when an inbound SQL remains completely untouched by the assigned sales rep after 15 minutes?",
           "options": [
-            "Lead ownership is revoked from the unresponsive rep and automatically reassigned to an available backup rep to safeguard conversion",
-            "The customer is charged a late fee for submitting a form outside regular business hours",
-            "The lead is deleted from the CRM to prevent embarrassing the sales representative",
-            "The rep's computer is automatically locked for the remainder of the business day"
+            "Ownership is taken from the unresponsive rep and automatically reassigned to an available backup rep to protect conversion.",
+            "Ownership stays with the unresponsive rep and the lead is flagged for a manager to review at the next weekly pipeline meeting.",
+            "Ownership is taken from the unresponsive rep and the lead is returned to marketing for further nurture and a new score.",
+            "Ownership is shared between the unresponsive rep and a backup rep so both receive commission credit on any resulting deal."
           ],
           "answer": 0,
           "why": "At the 15-minute breach threshold, the engine revokes ownership and immediately reassigns the lead to an active backup representative to ensure rapid customer contact.",
@@ -4005,10 +4005,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of utilizing cryptographic idempotency keys in RevOps webhook dispatching?",
           "options": [
-            "To prevent sales representatives from closing deals on Friday afternoons",
-            "To compress the JSON payload size so it travels faster across WiFi networks",
-            "To hide customer email addresses from the sales manager",
-            "To guarantee at-most-once execution, ensuring network retries do not generate duplicate invoices or multiple onboarding projects"
+            "To guarantee at-least-once delivery, so network retries create a fresh invoice or onboarding project for each attempt sent.",
+            "To guarantee encrypted transport, so network retries cannot be read by outsiders who could copy invoices or project data.",
+            "To guarantee ordered processing, so network retries are queued behind other events and never skip invoices or projects.",
+            "To guarantee at-most-once execution, so network retries do not create duplicate invoices or multiple onboarding projects."
           ],
           "answer": 3,
           "why": "Idempotency keys let the receiving system recognise a retried delivery and skip it, so the event executes at most once and billing and CS platforms never create duplicate invoices or onboarding projects.",
@@ -4057,10 +4057,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of operational performance metrics is synthesized by the Master RevOps Routing & Automation Control Tower to confer operational certification?",
           "options": [
-            "Number of monitors on rep desks, total company Twitter retweets, and office heating temperature",
-            "Treating RevOps and Routing as interchangeable constants rather than verifying Automation at each step.",
-            "SQL qualification precision, round-robin territory distribution equity, 15-minute speed-to-lead SLA compliance, and webhook automation reliability",
-            "Bypassing Automation during initial execution and deferring RevOps validation until post-processing completes."
+            "MQL volume growth, round-robin quota attainment equity, 24-hour speed-to-lead SLA compliance, and email campaign open-rate reliability.",
+            "SQL qualification precision, win-rate by territory equity, 15-minute contract signature SLA compliance, and invoice collection reliability.",
+            "SQL qualification precision, round-robin territory distribution equity, 15-minute speed-to-lead SLA compliance, and webhook automation reliability.",
+            "Lead source diversity, account-based territory distribution equity, 60-minute speed-to-lead SLA compliance, and CRM licence usage reliability."
           ],
           "answer": 2,
           "why": "The Master RevOps Routing & Automation Control Tower synthesizes SQL qualification precision, round-robin distribution equity, 15-minute SLA compliance, and webhook automation reliability.",
@@ -4131,10 +4131,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What counter-positioning script strategy is prescribed by the sales enablement battlecard when competing against a slow legacy incumbent vendor?",
           "options": [
-            "Discount product pricing by 50% to initiate an aggressive price war",
-            "Tell the customer that the competitor is going out of business next month",
-            "Refuse to answer questions about the competitor and end the discovery call",
-            "Acknowledge their market heritage, then focus on our 10x faster deployment, modern cloud-native agility, and zero ongoing maintenance overhead"
+            "Criticise their ageing technology, then focus on our 10% lower price, similar cloud deployment options, and reduced maintenance overhead.",
+            "Acknowledge their market heritage, then focus on their slower deployment, higher licence fees, and long maintenance overhead only.",
+            "Avoid naming the incumbent at all, then focus on our 2x deployment speed, similar cloud features, and standard maintenance overhead.",
+            "Acknowledge their market heritage, then focus on our 10x faster deployment, modern cloud-native agility, and zero maintenance overhead."
           ],
           "answer": 3,
           "why": "Elite battlecards acknowledge competitor heritage to establish credibility, then pivot decisively to our 10x faster cloud deployment and zero maintenance overhead.",
@@ -4179,10 +4179,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic objective of laying an architectural landmine early in customer discovery questioning?",
           "options": [
-            "To establish objective technical evaluation criteria where our architecture excels and the competitor's architecture fails, without badmouthing",
-            "To insult the competitor's executive team and damage their public reputation",
-            "To trick the customer into signing a non-refundable contract before the demo",
-            "To crash the competitor's software servers during the sales pitch"
+            "To set objective technical criteria where our architecture excels and the competitor's fails, without disparaging them.",
+            "To set subjective pricing criteria where our licence terms excel and the competitor's fail, while criticising them openly.",
+            "To set objective legal criteria where our contract excels and the competitor's fails, while avoiding any technical talk.",
+            "To set objective timeline criteria where our onboarding excels and the competitor's fails, while naming them in every call."
           ],
           "answer": 0,
           "why": "Architectural landmines objectively establish evaluation criteria where our platform succeeds and the competitor fails, guiding the customer to discover competitor flaws independently.",
@@ -4228,10 +4228,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical mistake sales reps make when encountering a pricing objection, and how does the LAER framework prevent it?",
           "options": [
-            "Reps speak too quietly; LAER forces them to use a microphone during customer calls",
-            "Reps immediately offer discounts or argue without acknowledging the buyer's concern or exploring the root cause; LAER enforces an Acknowledge-Explore sequence before responding",
-            "Reps refuse to send formal quotes; LAER requires quotes to be sent via registered postal mail",
-            "Reps invite the customer's entire engineering department to dinner"
+            "Reps wait too long to offer a discount without checking the buyer's budget or approval; LAER requires Listen and Respond before exploring.",
+            "Reps offer discounts or argue at once without acknowledging the concern or finding the root cause; LAER requires Acknowledge and Explore first.",
+            "Reps escalate to a manager straight away without trying to resolve the concern or find the buyer; LAER requires Listen and Escalate first.",
+            "Reps present a long ROI model straight away without asking about the concern or the root cause; LAER requires Explore and Respond only."
           ],
           "answer": 1,
           "why": "Amateur reps immediately argue or discount; LAER forces the representative to acknowledge the customer's perspective and explore the root context before delivering a value-based response.",
@@ -4455,9 +4455,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the total annual compensation for an Account Executive with a $100k base and $100k variable OTE when achieving 120% of quota with a 1.5x accelerator above 100%?",
           "options": [
-            "$350,000 (doubled salary)",
-            "$200,000 (no accelerators applied)",
-            "$220,000 (standard linear commission with zero accelerator)",
+            "$250,000 ($100k base + $120k base commission + $30k accelerated commission)",
+            "$220,000 ($100k base + $100k base commission + $20k accelerated commission)",
+            "$260,000 ($100k base + $100k base commission + $60k accelerated commission)",
             "$230,000 ($100k base + $100k base commission + $30k accelerated commission)"
           ],
           "answer": 3,
@@ -4503,10 +4503,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which draw structure is standard practice for supporting newly hired Account Executives during their 90-day pipeline ramp period without burdening them with debt?",
           "options": [
-            "ZERO_SALARY_100_PERCENT_COMMISSION",
-            "RECOVERABLE_DRAW",
+            "RECOVERABLE_DRAW_DURING_90_DAY_RAMP_PERIOD",
+            "NON_RECOVERABLE_DRAW_DURING_12_MONTH_TERM",
             "NON_RECOVERABLE_DRAW_DURING_90_DAY_RAMP",
-            "BALLOON_COMMISSION_MORTGAGE"
+            "ZERO_BASE_SALARY_COMMISSION_ONLY_90_DAYS"
           ],
           "answer": 2,
           "why": "NON_RECOVERABLE_DRAW_DURING_90_DAY_RAMP guarantees monthly income during ramp and forgives unearned balances without saddling reps with debt.",
@@ -4610,9 +4610,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which operational credential is conferred by the Master Enterprise Sales Compensation & Commission Engine upon validating aligned quota attainment and accelerator governance?",
           "options": [
             "SALES_COMPENSATION_AND_REVOPS_CERTIFIED_NOMINAL",
-            "PROVISIONAL_DISCOUNT_COUPON_MANAGER",
-            "UNVERIFIED_COMMISSION_DISPUTE_ARBITRATOR",
-            "CERTIFIED_JUNIOR_PAYROLL_CLERK"
+            "SALES_COMPENSATION_AND_REVOPS_PROVISIONAL_REVIEW",
+            "QUOTA_ATTAINMENT_AND_PAYOUT_CERTIFIED_PENDING",
+            "ACCELERATOR_GOVERNANCE_AND_FINANCE_CERTIFIED_BASE"
           ],
           "answer": 0,
           "why": "The Master Compensation Engine confers SALES_COMPENSATION_AND_REVOPS_CERTIFIED_NOMINAL upon verifying rigorous compensation governance and quota achievement.",
@@ -4683,10 +4683,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the sales rep's talk ratio percentage when speaking for 1,200 seconds during a 3,000-second total call, and does it satisfy the golden active listening benchmark?",
           "options": [
-            "40.0% talk ratio (40%), which satisfies the <= 45.0% golden active listening benchmark",
-            "25.0% talk ratio, which indicates the rep did not attend the call",
-            "50.0% talk ratio, which represents an even split",
-            "60.0% talk ratio, which fails active listening benchmarks"
+            "40.0% talk ratio, which meets the golden active listening benchmark of 45.0% or lower.",
+            "60.0% talk ratio, which fails the golden active listening benchmark of 45.0% or lower.",
+            "25.0% talk ratio, which fails the golden active listening benchmark of 45.0% or higher.",
+            "40.0% talk ratio, which fails the golden active listening benchmark of 30.0% or lower."
           ],
           "answer": 0,
           "why": "1,200 / 3,000 * 100 = 40.0%, which is <= 45.0%, earning the classification EXCELLENT_ACTIVE_LISTENING_CONSULTATIVE_CALL.",
@@ -4732,10 +4732,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the maximum recommended consecutive monologue duration in seconds for a sales rep during a discovery or demo call?",
           "options": [
-            "600 seconds (10 minutes)",
-            "300 seconds (5 minutes)",
-            "15 seconds",
-            "90 seconds (< 90 Seconds)"
+            "180 seconds or less",
+            "45 seconds or less",
+            "300 seconds or less",
+            "90 seconds or less"
           ],
           "answer": 3,
           "why": "Conversational intelligence benchmarks enforce a maximum monologue ceiling of 90 seconds to maintain buyer engagement.",
@@ -4831,10 +4831,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a SaaS Magic Number greater than 1.0x signify to executive leadership and board investors?",
           "options": [
-            "The company is losing money on every sale and should immediately freeze operations",
-            "The go-to-market engine is highly capital-efficient, generating more than a dollar of annualized recurring revenue for every dollar spent on sales and marketing",
-            "Sales reps are being paid too much base salary and commissions should be cancelled",
-            "The CRM database has crashed and requires database restoration"
+            "The go-to-market engine is capital-inefficient, generating under a dollar of annualised recurring revenue for each dollar spent on sales and marketing.",
+            "The go-to-market engine is highly capital-efficient, generating over a dollar of annualised recurring revenue for each dollar spent on sales and marketing.",
+            "The go-to-market engine is highly profitable, generating over a dollar of operating profit for each dollar spent on sales and marketing.",
+            "The go-to-market engine is highly scalable, generating over a dollar of new customers for each dollar spent on product and engineering."
           ],
           "answer": 1,
           "why": "A Magic Number >= 1.0x indicates outstanding capital efficiency, generating >$1 of annualized ARR for every $1 invested in S&M.",
@@ -4884,9 +4884,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which prestigious professional credential is officially conferred upon successfully completing the Milestone 4 RevOps & Sales Operations Grand Capstone?",
           "options": [
             "CESRD_CREDENTIAL_CERTIFIED_NOMINAL / Certified Enterprise Sales Operations & RevOps Director",
-            "UNVERIFIED_COLD_CALL_INTERN",
-            "CERTIFIED_JUNIOR_TELEMARKETING_ASSOCIATE",
-            "PROVISIONAL_SPREADSHEET_ENTRY_CLERK"
+            "CESRD_CREDENTIAL_PROVISIONAL_REVIEW / Certified Enterprise Sales Operations & RevOps Associate",
+            "CSOPS_CREDENTIAL_CERTIFIED_NOMINAL / Certified Strategic Sales Operations & Pipeline Director",
+            "CESDDS_CREDENTIAL_CERTIFIED_NOMINAL / Certified Enterprise Sales Development & Deal Strategist"
           ],
           "answer": 0,
           "why": "The Milestone 4 Capstone confers the prestigious CESRD_CREDENTIAL_CERTIFIED_NOMINAL / Certified Enterprise Sales Operations & RevOps Director credential.",
@@ -5098,10 +5098,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the typical operational consequence when an Account Executive fails to log any commercial touchpoints on an assigned named account for more than 60 consecutive days under standard ROE?",
           "options": [
-            "The AE receives a cash bonus for minimizing CRM database activity",
-            "The account is permanently deleted from the enterprise database",
-            "The account is automatically reclaimed into the territory pool for reallocation to prevent squatting",
-            "The AE is granted perpetual ownership without review"
+            "The account is automatically frozen for the same AE until the next quarter, to prevent account reassignment disputes.",
+            "The account is automatically doubled in quota for the same AE, to prevent account neglect by the sales team members.",
+            "The account is automatically reclaimed into the territory pool for reallocation, to prevent account squatting.",
+            "The account is automatically transferred to the AE's manager as a named account, to prevent account loss in the region."
           ],
           "answer": 2,
           "why": "Under standard enterprise Rules of Engagement, uncontacted accounts exceeding 60 days of inactivity are automatically reclaimed to prevent rep squatting.",
@@ -5146,9 +5146,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which executive certification is officially conferred when an enterprise territory design passes Gini equity, capacity balance, and ROE compliance checks?",
           "options": [
-            "TEMPORARY_SPREADSHEET_DRAFT_STAGE_1",
-            "UNAUDITED_SALES_REP_WISH_LIST",
-            "PROVISIONAL_TERRITORY_SKETCH_UNVERIFIED",
+            "TERRITORY_DESIGN_AND_CAPACITY_PROVISIONAL_REVIEW",
+            "TERRITORY_QUOTA_AND_COMPENSATION_CERTIFIED_NOMINAL",
+            "ACCOUNT_ASSIGNMENT_AND_ROE_CERTIFIED_PENDING_AUDIT",
             "TERRITORY_DESIGN_AND_CAPACITY_CERTIFIED_NOMINAL"
           ],
           "answer": 3,
@@ -5220,10 +5220,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the typical services implementation multiple in enterprise GSI partnerships (services revenue generated per $1.00 of software ARR transacted)?",
           "options": [
-            "Exactly $0.05 per $1.00 of software ARR",
-            "A negative multiple where the vendor pays the customer to implement",
+            "$0.30 to $0.50 in professional services revenue per $1.00 of software ARR",
+            "$8.00 to $10.00 in professional services revenue per $1.00 of software ARR",
             "$3.00 to $5.00 in professional services revenue per $1.00 of software ARR",
-            "Zero services multiple (GSIs work purely for free)"
+            "$1.00 to $1.50 in professional services revenue per $1.00 of software ARR"
           ],
           "answer": 2,
           "why": "In enterprise GSI ecosystems, large consultancies generate between $3.00 and $5.00 in professional implementation services for every $1.00 of software license ARR transacted.",
@@ -5416,10 +5416,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which executive certification is officially conferred when an enterprise channel partner program passes margin health, deal registration lock, Crossbeam overlap, and PRM compliance audits?",
           "options": [
-            "UNVERIFIED_INFORMAL_PARTNER_MEMO",
-            "PROVISIONAL_RESELLER_SPREADSHEET",
+            "CHANNEL_SALES_ECOSYSTEM_PROVISIONAL_REVIEW",
+            "PARTNER_MARGIN_AND_DEAL_REG_CERTIFIED_PENDING",
             "CHANNEL_SALES_ECOSYSTEM_CERTIFIED_NOMINAL",
-            "TEMPORARY_COMMISSION_VOUCHER"
+            "CHANNEL_SALES_ECOSYSTEM_CERTIFIED_PENDING"
           ],
           "answer": 2,
           "why": "The Master Channel Sales Control Tower confers the official CHANNEL_SALES_ECOSYSTEM_CERTIFIED_NOMINAL certification.",
@@ -5582,10 +5582,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What gold-standard cloud security audit certification report is required to bypass 300-question enterprise InfoSec spreadsheets?",
           "options": [
-            "An internal code review memorandum",
-            "A vendor self-assessment marketing checklist",
-            "A single LinkedIn recommendation from a client engineer",
-            "SOC 2 Type II and ISO 27001 Certified independent audit package"
+            "A SOC 2 Type I and ISO 9001 certified internal audit package",
+            "A vendor-signed security whitepaper and penetration test summary",
+            "A PCI DSS and HIPAA certified independent compliance attestation",
+            "A SOC 2 Type II and ISO 27001 certified independent audit package"
           ],
           "answer": 3,
           "why": "Independent third-party SOC 2 Type II audit reports and ISO 27001 certifications provide verified operational control proof that enables enterprise CISOs to fast-track procurement.",
@@ -5629,10 +5629,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise software companies mandate an annual price escalation clause (e.g. 5% annually) in multi-year enterprise contracts?",
           "options": [
-            "To protect gross margins against inflation and automatically expand customer Net Retention",
-            "To eliminate the need for customer support",
-            "To intentionally confuse enterprise accounts payable teams",
-            "To enable immediate contract cancellation by the customer"
+            "To protect gross margins against inflation and automatically expand customer Net Retention.",
+            "To protect gross margins against churn and automatically reduce customer Net Retention.",
+            "To protect renewal rates against competitors and automatically lower customer list price.",
+            "To protect cash collection against late payment and automatically raise customer discounts."
           ],
           "answer": 0,
           "why": "Mandatory annual price escalations (e.g., 5-7%) protect vendor operating margins against rising infrastructure and wage costs while compounding expansion ARR.",
@@ -5677,10 +5677,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational milestone is reached when an enterprise deal satisfies the 48-hour turnaround SLA, presents clean SOC 2 Type II clearance, and validates all contract documents?",
           "options": [
-            "CONTRACT_GATEWAY_BLOCKED_GOVERNANCE_REVIEW_REQUIRED",
+            "CONTRACT_PENDING_LEGAL_REDLINE_REVIEW conferring ENTERPRISE_CONTRACT_MANAGEMENT_PROVISIONAL_STATUS",
             "CONTRACT_EXPEDITED_READY_FOR_ESIGNATURE conferring ENTERPRISE_CONTRACT_MANAGEMENT_CERTIFIED_NOMINAL",
-            "Immediate cancellation and customer refund",
-            "Indefinite audit suspension"
+            "CONTRACT_EXPEDITED_READY_FOR_PROCUREMENT conferring ENTERPRISE_SECURITY_REVIEW_CERTIFIED_PENDING",
+            "CONTRACT_GATEWAY_BLOCKED_SECURITY_REVIEW conferring ENTERPRISE_CONTRACT_MANAGEMENT_CERTIFIED_NOMINAL"
           ],
           "answer": 1,
           "why": "Satisfying document completeness, sub-48-hour turnaround SLAs, and gold-standard InfoSec certifications certifies the contract as ready for immediate DocuSign e-signature execution.",
@@ -5800,9 +5800,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What percentage of an executive QBR agenda should be dedicated to forward-looking strategic priorities and joint roadmap alignment?",
           "options": [
-            "10% forward-looking / 90% support ticket review",
-            "100% looking backward at historical operational logs",
-            "Zero percent forward-looking",
+            "TWENTY_PERCENT_STRATEGIC_FORWARD_LOOKING_ALIGNMENT (20% forward-looking / 80% retrospective)",
+            "FIFTY_PERCENT_STRATEGIC_FORWARD_LOOKING_ALIGNMENT (50% forward-looking / 50% retrospective)",
+            "EIGHTY_PERCENT_RETROSPECTIVE_SUPPORT_REVIEW_ALIGNMENT (80% retrospective / 20% forward-looking)",
             "EIGHTY_PERCENT_STRATEGIC_FORWARD_LOOKING_ALIGNMENT (80% forward-looking / 20% retrospective)"
           ],
           "answer": 3,
@@ -5894,10 +5894,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of enterprise whitespace mapping in land-and-expand commercial sales strategy?",
           "options": [
-            "To eliminate all white space on presentation slides",
+            "To identify unprofitable departments, subsidiaries, and product modules to reduce Customer Acquisition Cost (CAC)",
             "To identify unpenetrated departments, subsidiaries, and product modules to expand Net Revenue Retention (NRR)",
-            "To reduce software prices for all existing users",
-            "To cancel multi-year customer contracts"
+            "To identify competitor departments, subsidiaries, and product modules to expand market share within each region",
+            "To identify duplicate departments, subsidiaries, and contact records to improve CRM data quality for the account"
           ],
           "answer": 1,
           "why": "Whitespace mapping systematically identifies unpenetrated business units, subsidiaries, and product tiers across an enterprise customer to unlock expansion revenue and drive top-quartile NRR.",
@@ -5944,9 +5944,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What operational credential is conferred when an enterprise account validates 100%+ value delivery, 80% strategic QBR structure, 90-day renewal lock-in, and qualified expansion pipeline?",
           "options": [
             "EXECUTIVE_QBR_VALUE_REALIZATION_CERTIFIED_NOMINAL with HIGH_CONFIDENCE_RENEWAL_EXPANSION_SECURED",
-            "Quarterly pricing freeze",
-            "EXPANSION_INTERVENTION_REQUIRED",
-            "Immediate account cancellation"
+            "EXECUTIVE_QBR_VALUE_REALIZATION_PROVISIONAL_REVIEW with MODERATE_CONFIDENCE_RENEWAL_EXPANSION_PENDING",
+            "EXECUTIVE_QBR_SUPPORT_TICKET_CERTIFIED_NOMINAL with HIGH_CONFIDENCE_RENEWAL_DISCOUNT_SECURED",
+            "EXECUTIVE_QBR_VALUE_REALIZATION_CERTIFIED_NOMINAL with LOW_CONFIDENCE_RENEWAL_CHURN_INTERVENTION_REQUIRED"
           ],
           "answer": 0,
           "why": "Satisfying all four customer success and expansion governance gates validates high confidence renewal and expansion, conferring the prestigious EXECUTIVE_QBR_VALUE_REALIZATION_CERTIFIED_NOMINAL credential.",
@@ -6066,9 +6066,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What strategic co-selling status is validated when Crossbeam cryptographic account mapping identifies 75 overlapping target enterprise accounts under an active 90-day deal registration?",
           "options": [
             "HIGH_CO_SELLING_POTENTIAL_LAUNCH_JOINT_CAMPAIGN with exclusive deal protection",
-            "Immediate referral to external competitor",
-            "Uncapped commission reduction",
-            "INSUFFICIENT_OVERLAP_DISMISS_PARTNER"
+            "LOW_CO_SELLING_POTENTIAL_DEFER_JOINT_CAMPAIGN with shared deal protection for partners",
+            "HIGH_CO_SELLING_POTENTIAL_LAUNCH_JOINT_CAMPAIGN with open deal access for partners",
+            "MODERATE_CO_SELLING_POTENTIAL_REVIEW_JOINT_PIPELINE with exclusive deal protection"
           ],
           "answer": 0,
           "why": "Reaching or exceeding the 50 shared account threshold under an active 90-day deal registration activates HIGH_CO_SELLING_POTENTIAL_LAUNCH_JOINT_CAMPAIGN, initiating joint ABM and co-selling.",
@@ -6162,10 +6162,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the certified status when an enterprise account validates 120% value delivery with executive attendance, locks in renewal at Day 95, and forecasts 125% Net Revenue Retention?",
           "options": [
-            "EXPANSION_INTERVENTION_REQUIRED",
-            "Operational account termination",
+            "MODERATE_CONFIDENCE_RENEWAL_REVIEW_PENDING conferring EXECUTIVE_QBR_VALUE_REALIZATION_PROVISIONAL_STATUS",
+            "HIGH_CONFIDENCE_RENEWAL_EXPANSION_SECURED conferring EXECUTIVE_QBR_ESCALATION_REQUIRED_PENDING_REVIEW",
             "HIGH_CONFIDENCE_RENEWAL_EXPANSION_SECURED conferring EXECUTIVE_QBR_VALUE_REALIZATION_CERTIFIED_NOMINAL",
-            "Immediate price freeze"
+            "LOW_CONFIDENCE_RENEWAL_EXPANSION_AT_RISK conferring EXECUTIVE_QBR_VALUE_REALIZATION_CERTIFIED_NOMINAL"
           ],
           "answer": 2,
           "why": "Exceeding 100% value realization with executive sponsor presence and 90-day renewal lock-in certifies HIGH_CONFIDENCE_RENEWAL_EXPANSION_SECURED, conferring EXECUTIVE_QBR_VALUE_REALIZATION_CERTIFIED_NOMINAL.",
@@ -6214,9 +6214,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What prestigious executive commercial credential is conferred upon passing all five operational gates in the Milestone 5 Grand Capstone Control Tower?",
           "options": [
-            "Unverified Sales Agent",
-            "Junior Sales Representative Associate",
-            "Temporary Deal Desk Intern",
+            "Certified Global Channel Development & Ecosystem Specialist (CGCD_CREDENTIAL_PROVISIONAL_REVIEW)",
+            "Certified Enterprise Sales Operations & RevOps Director (CESRD_CREDENTIAL_CERTIFIED_NOMINAL)",
+            "Certified Global Commercial Associate & Territory Planner (CGCA_CREDENTIAL_CERTIFIED_NOMINAL)",
             "Certified Global Commercial Director & Ecosystem Strategist (CGCD_CREDENTIAL_CERTIFIED_NOMINAL)"
           ],
           "answer": 3,
@@ -6287,10 +6287,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the maximum number of nested DNS lookups permitted during an SPF record evaluation before receiving mail transfer agents trigger a fatal PermError?",
           "options": [
-            "25 nested lookups",
-            "Unlimited nested lookups",
-            "10 nested lookups (RFC 7208 standard)",
-            "5 nested lookups"
+            "25 nested lookups (the RFC 7208 standard)",
+            "5 nested lookups (the RFC 7208 standard)",
+            "10 nested lookups (the RFC 7208 standard)",
+            "15 nested lookups (the RFC 5321 standard)"
           ],
           "answer": 2,
           "why": "RFC 7208 strictly caps SPF DNS query mechanisms at 10 to prevent denial-of-service amplification attacks against DNS infrastructure.",
@@ -6333,10 +6333,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do high-performing enterprise sales organizations mandate dedicated secondary domains for outbound sales outreach rather than using the primary corporate domain?",
           "options": [
-            "To confuse prospects so they cannot find the real company website",
-            "To strictly isolate outbound spam filter risk and protect mission-critical corporate communications",
-            "Because secondary domains are completely exempt from SPF, DKIM, and DMARC regulations",
-            "To bypass local state sales taxes on software purchases"
+            "To isolate outbound sending volume limits and protect mission-critical corporate bandwidth",
+            "To isolate outbound spam filter risk and protect mission-critical corporate communications",
+            "To isolate outbound tracking pixel risk and protect mission-critical corporate analytics",
+            "To isolate outbound bounce rate reporting and protect mission-critical corporate mailboxes"
           ],
           "answer": 1,
           "why": "Quarantining cold outreach on secondary domains ensures that any spam flags or deliverability penalties cannot disrupt core corporate, investor, and customer communication.",
@@ -6380,9 +6380,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the mandatory minimum automated inbox warming period required before a newly provisioned email account is certified for live outbound commercial prospecting?",
           "options": [
             "21 consecutive days",
-            "7 days",
-            "90 business days",
-            "24 hours"
+            "7 consecutive days",
+            "45 consecutive days",
+            "14 consecutive days"
           ],
           "answer": 0,
           "why": "A minimum of 21 consecutive days of automated peer warming is required to establish algorithmic sender trust and volume resilience across Google and Microsoft mail servers.",
@@ -6425,9 +6425,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under enterprise outbound deliverability standards, how many separate warmed inboxes are required to safely send 500 cold sales emails per day without exceeding the 50 email/inbox daily cap?",
           "options": [
-            "100 inboxes sending 5 emails each",
-            "1 single high-volume inbox",
-            "2 inboxes sending 250 emails each",
+            "5 dedicated warmed inboxes sending 100 emails each",
+            "20 dedicated warmed inboxes sending 25 emails each",
+            "15 dedicated warmed inboxes sending 35 emails each",
             "10 dedicated warmed inboxes sending 50 emails each"
           ],
           "answer": 3,
@@ -6472,10 +6472,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational status and credential are confirmed when an outbound sales infrastructure passes all five deliverability gates including 21-day warming and SPF/DKIM/DMARC?",
           "options": [
-            "DELIVERABILITY_GATEWAY_BLOCKED_GOVERNANCE_DEFECT",
-            "Immediate domain blacklisting and cancellation",
+            "DOMAIN_WARMING_IN_PROGRESS_HOLD_OUTBOUND_VOLUME with ENTERPRISE_DELIVERABILITY_INFRASTRUCTURE_PROVISIONAL_STATUS",
+            "DOMAIN_AUTHENTICATED_READY_FOR_OUTBOUND_SCALE with ENTERPRISE_DELIVERABILITY_GATEWAY_BLOCKED_REVIEW_REQUIRED",
             "DOMAIN_AUTHENTICATED_READY_FOR_OUTBOUND_SCALE with ENTERPRISE_DELIVERABILITY_INFRASTRUCTURE_CERTIFIED_NOMINAL",
-            "Unrestricted high-volume marketing broadcast"
+            "DOMAIN_SPF_ONLY_READY_FOR_LIMITED_OUTBOUND with ENTERPRISE_DELIVERABILITY_INFRASTRUCTURE_CERTIFIED_PENDING"
           ],
           "answer": 2,
           "why": "Clearing all five deliverability gates certifies that secondary domains, authentication records, and warming protocols are fully optimized for scalable outbound outreach.",
@@ -6591,10 +6591,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the cardinal rule of Commercial Teaching in the Challenger Sale methodology?",
           "options": [
-            "Lead WITH your product features in the first five minutes",
-            "Offer an immediate 20% discount if the customer agrees to sign within 48 hours",
-            "Lead TO (not with) your unique differentiators by first surfacing an unconsidered customer vulnerability",
-            "Agree with every assumption the customer makes about their operational performance"
+            "Lead WITH your unique differentiators by first confirming a considered customer requirement",
+            "Lead TO your unique differentiators by first matching a competitor's published price comparison",
+            "Lead TO your unique differentiators by first surfacing an unconsidered customer vulnerability",
+            "Lead WITH your unique features by first reviewing an existing customer success story in detail"
           ],
           "answer": 2,
           "why": "Challengers never lead with their product; they first build an undeniable case around an unconsidered business vulnerability that leads directly to their unique solution.",
@@ -6637,9 +6637,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When tailoring a Challenger commercial teaching narrative to the Chief Financial Officer (CFO), which core themes must dominate the conversation?",
           "options": [
-            "Social golf outing invitations",
-            "User interface color schemes and dark mode toggles",
-            "REST API endpoint documentation and Docker container configurations",
+            "User adoption rates, workflow automation features, and Total Cost of Training (TCT)",
+            "Technical architecture, integration capabilities, and Mean Time to Resolution (MTTR)",
+            "Brand awareness, market positioning, and Customer Lifetime Satisfaction scores (CLS)",
             "Cash flow velocity, working capital optimization, and Cost of Inaction (COI)"
           ],
           "answer": 3,
@@ -6684,10 +6684,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary characteristic of an Account Executive who successfully 'Takes Control' during enterprise sales negotiations?",
           "options": [
-            "They assert constructive tension, defend value, and practice reciprocal value trading whenever price concessions are discussed",
-            "They agree to any discount requested as long as the deal closes before the end of the month",
-            "They avoid discussing money entirely",
-            "They shout at the procurement team until the contract is signed"
+            "They assert constructive tension, defend value, and trade value reciprocally whenever price concessions come up.",
+            "They avoid any tension, accept the discount, and trade value one-way whenever price concessions come up.",
+            "They assert constructive tension, defend the discount, and trade value early before price concessions come up.",
+            "They escalate to executives, defend price lists, and trade value only after the contract is signed on any concession."
           ],
           "answer": 0,
           "why": "Taking control means asserting constructive commercial tension, defending the economic value proposition, and exchanging price concessions for valuable contractual terms.",
@@ -6805,9 +6805,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the standard enterprise SaaS benchmark for a nominal sales team win rate across qualified Stage 2+ opportunities?",
           "options": [
             "Greater than or equal to 25.0%",
-            "Greater than 90.0%",
-            "Greater than or equal to 75.0%",
-            "Exactly 10.0%"
+            "Greater than or equal to 55.0%",
+            "Greater than or equal to 8.0%",
+            "Greater than or equal to 40.0%"
           ],
           "answer": 0,
           "why": "In enterprise B2B sales, a win rate >= 25.0% over fully qualified pipeline represents top-quartile sales execution and pricing health.",
@@ -6851,9 +6851,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the standard target ceiling for Account Executive ramp time to full quota productivity in mid-market enterprise SaaS?",
           "options": [
-            "730 days (2 years)",
-            "365 days (1 full year)",
-            "14 days (2 weeks)",
+            "Less than or equal to 270 days (9 months)",
+            "Less than or equal to 30 days (1 month)",
+            "Less than or equal to 180 days (6 months)",
             "Less than or equal to 90 days (3 months)"
           ],
           "answer": 3,
@@ -6993,9 +6993,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary indicator of nominal revenue performance when executing audit_sales_performance with 30 won deals, 70 lost deals, and 8.0% discount?",
           "options": [
             "HIGH_WINRATE_DISCIPLINED_PRICING with isPerformanceNominal evaluating to true",
-            "PERFORMANCE_DEFECT_LOW_MARGINS with isPerformanceNominal evaluating to false",
-            "COMMODITIZED_SALES_CRISIS",
-            "DISCOUNT_CEILING_BREACH_CRITICAL"
+            "LOW_WINRATE_DISCIPLINED_PRICING with isPerformanceNominal evaluating to false",
+            "HIGH_WINRATE_UNDISCIPLINED_DISCOUNTING with isPerformanceNominal evaluating to false",
+            "MODERATE_WINRATE_STANDARD_PRICING with isPerformanceNominal evaluating to null"
           ],
           "answer": 0,
           "why": "With a 30.0% win rate (>= 25.0%) and an 8.0% average discount (<= 10.0%), the system certifies HIGH_WINRATE_DISCIPLINED_PRICING.",
@@ -7115,9 +7115,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What synchronization status confirms that an AI copilot has successfully parsed a sales recording and updated CRM deal stages without errors?",
           "options": [
             "AUTONOMOUS_POST_CALL_CRM_SYNC_COMPLETED",
-            "MANUAL_DATA_ENTRY_PENDING",
-            "CRM_RECORD_CORRUPTED_ERROR",
-            "SALESFORCE_DISCONNECTED"
+            "AUTONOMOUS_POST_CALL_CRM_SYNC_FAILED",
+            "SEMI_AUTONOMOUS_POST_CALL_CRM_REVIEW_PENDING",
+            "AUTONOMOUS_PRE_CALL_CRM_PREP_COMPLETED"
           ],
           "answer": 0,
           "why": "AUTONOMOUS_POST_CALL_CRM_SYNC_COMPLETED validates that audio ingestion, MEDDPICC extraction, and automated CRM field synchronization executed perfectly.",
@@ -7161,10 +7161,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of operational signals mathematically produces the highest predictive opportunity win probability in enterprise sales?",
           "options": [
-            "Offering an unauthorized 40% discount on the first discovery call",
-            "Fast stage velocity, >= 2 executive DMU members engaged, talk ratio <= 45%, and an active Mutual Action Plan",
-            "A rep talking 85% of the call time and zero executive attendance",
-            "Spending 4x the normal stage duration waiting for procurement to respond"
+            "Slow stage velocity, only 1 champion in the DMU engaged, talk ratio of 75% or more, and no Mutual Action Plan in place",
+            "Fast stage velocity, 2 or more executive DMU members engaged, talk ratio of 45% or less, and an active Mutual Action Plan",
+            "Fast stage velocity, 2 or more end users in the DMU engaged, talk ratio of 70% or more, and an active pricing proposal",
+            "Moderate stage velocity, 2 or more executive DMU members engaged, talk ratio of 45% or less, and a draft Mutual Action Plan"
           ],
           "answer": 1,
           "why": "Multi-threaded executive alignment, fast stage velocity, active listening (talk ratio <= 45%), and mutual accountability plans represent the strongest predictors of enterprise deal closing.",
@@ -7209,10 +7209,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What automated alert status is triggered when a machine learning predictive model calculates an 85% probability of customer churn (0.85 >= 0.70)?",
           "options": [
-            "INVOICE_SENT_SUCCESSFULLY",
-            "STABLE_RETENTION_TRAJECTORY",
+            "MODERATE_PROBABILITY_CHURN_RISK_MONITOR_ONLY",
+            "HIGH_PROBABILITY_EXPANSION_OPPORTUNITY_ALERT",
             "HIGH_PROBABILITY_CHURN_RISK_DISPATCH_ALERT",
-            "CUSTOMER_ACCOUNT_TERMINATED"
+            "LOW_PROBABILITY_CHURN_RISK_NO_ACTION_NEEDED"
           ],
           "answer": 2,
           "why": "Any churn probability >= 0.70 triggers HIGH_PROBABILITY_CHURN_RISK_DISPATCH_ALERT, mobilizing executive CS playbooks before contract renewal.",
@@ -7257,10 +7257,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational prerequisite for certifying an organization at TIER_1_AI_SALES_COPILOT_ACTIVE?",
           "options": [
-            "Turning off CRM synchronization and deleting historical records",
-            "Banning machine learning predictive models from sales forecasting",
-            "Writing 5,000 manual cold emails by hand each day",
-            "Achieving an AI Sales Efficiency Composite Score of at least 75.0 points via ((Hours Saved * 5) + (Accuracy * 0.5))"
+            "An AI Sales Efficiency Composite Score of at least 50.0 points, calculated as ((Hours Saved * 2) + (Accuracy * 0.5))",
+            "An AI Sales Efficiency Composite Score of at least 75.0 points, calculated as ((Hours Saved * 0.5) + (Accuracy * 5))",
+            "An AI Win Probability Composite Score of at least 90.0 points, calculated as ((Deals Won * 5) + (Accuracy * 0.5))",
+            "An AI Sales Efficiency Composite Score of at least 75.0 points, calculated as ((Hours Saved * 5) + (Accuracy * 0.5))"
           ],
           "answer": 3,
           "why": "TIER_1_AI_SALES_COPILOT_ACTIVE requires a composite efficiency score >= 75.0, verifying substantial administrative time savings and high predictive accuracy.",
@@ -7332,10 +7332,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the minimum MEDDPICC qualification score required to clear Capstone Subsystem 1?",
           "options": [
-            "Exactly 1 out of 8 criteria",
+            "At least 4 out of 8 verified criteria",
             "At least 7 out of 8 verified criteria",
-            "Zero criteria required",
-            "Only 4 out of 8 criteria"
+            "At least 5 out of 6 verified criteria",
+            "At least 8 out of 8 verified criteria"
           ],
           "answer": 1,
           "why": "Enterprise deals require a rigorous MEDDPICC qualification score >= 7/8 to prevent wasted technical and commercial resources.",
@@ -7380,10 +7380,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the minimum positive ZOPA spread required to clear Capstone Subsystem 2 negotiation governance?",
           "options": [
-            "Zero dollars with total price capitulation",
-            "Uncapped discounts without floor limits",
-            "Positive spread greater than or equal to $15,000.00",
-            "Negative spread of -$50,000.00"
+            "A positive spread of at least $1,500.00",
+            "A positive spread of at least $150,000.00",
+            "A positive spread of at least $15,000.00",
+            "A zero or negative spread of $15,000.00"
           ],
           "answer": 2,
           "why": "A positive ZOPA spread >= $15,000.00 ensures that the transaction closes with healthy gross margins above the seller's walk-away price.",
@@ -7428,10 +7428,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the minimum Net Revenue Retention (NRR) benchmark required to clear Capstone Subsystem 3?",
           "options": [
-            "Zero percent",
-            "Exactly 50.0%",
-            "Less than 80.0%",
-            "Greater than or equal to 120.0%"
+            "At least 100.0%",
+            "At least 140.0%",
+            "At least 90.0%",
+            "At least 120.0%"
           ],
           "answer": 3,
           "why": "An NRR >= 120.0% proves strong account expansion, offsetting any churn and demonstrating elite SaaS customer durability.",
@@ -7525,10 +7525,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master status confirms certified operational synthesis of the complete Enterprise Sales, Customer Success & CRM Master Suite?",
           "options": [
-            "SALES_EXPERIMENT_INCOMPLETE",
+            "ENTERPRISE_SALES_CS_AND_CRM_MASTER_PROVISIONAL_REVIEW",
             "ENTERPRISE_SALES_CS_AND_CRM_MASTER_CERTIFIED_NOMINAL",
-            "CRM_SYSTEM_OFFLINE",
-            "REVENUE_AUDIT_DEFECT_DETECTED"
+            "ENTERPRISE_REVOPS_AND_CRM_ARCHITECT_CERTIFIED_NOMINAL",
+            "ENTERPRISE_SALES_CS_AND_CRM_MASTER_CERTIFIED_PENDING_AUDIT"
           ],
           "answer": 1,
           "why": "ENTERPRISE_SALES_CS_AND_CRM_MASTER_CERTIFIED_NOMINAL certifies that all 5 enterprise revenue subsystems passed 100% verification.",
@@ -7599,10 +7599,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise CRM relational architecture, what is the primary structural rationale for utilizing a Junction Object (such as AccountContactRelation) rather than a simple foreign-key lookup column on the Contact table?",
           "options": [
-            "To prevent SQL queries from requiring indexed primary keys during execution.",
-            "Because relational databases cannot store string values for contact names.",
-            "To resolve Many-to-Many (N:M) relationships, allowing a single contact to hold distinct roles across multiple legal corporate accounts without duplicating master contact records.",
-            "To automatically convert all inbound leads into paid commercial customers upon creation."
+            "To resolve One-to-Many (1:N) relationships, letting one account hold distinct contacts across several regions without duplicate master account records.",
+            "To enforce One-to-One (1:1) relationships, letting one contact hold a single role in one corporate account without any shared master contact records.",
+            "To resolve Many-to-Many (N:M) relationships, letting one contact hold distinct roles across several corporate accounts without duplicate master contact records.",
+            "To resolve Many-to-Many (N:M) relationships, letting one account store all contact fields in a single table with duplicate master contact records."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7647,10 +7647,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence of defining an entity relationship as Master-Detail rather than a Lookup Relationship in enterprise CRM database schemas?",
           "options": [
-            "The child record must be written in TypeScript rather than standard SQL.",
-            "Deleting the parent master record automatically and irreversibly cascades to delete all child records, and the parent can maintain real-time Roll-Up Summary aggregation fields.",
-            "Lookup relationships automatically trigger legal financial audits by regulatory agencies.",
-            "Child records can never be viewed by users who have system administrator privileges."
+            "Deleting the parent master record leaves all child records in place as orphans, and the parent cannot hold any real-time Roll-Up Summary fields.",
+            "Deleting the parent master record automatically and irreversibly cascades to delete all child records, and the parent can hold real-time Roll-Up Summary fields.",
+            "Deleting the child record automatically and irreversibly cascades to delete the parent record, and the child can hold real-time Roll-Up Summary fields.",
+            "Deleting the parent master record is blocked while child records exist, and the parent can hold only nightly batch Roll-Up Summary fields."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7695,10 +7695,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What database engineering practice permanently prevents 'Orphan Opportunity' outages during bulk automated CRM data migrations?",
           "options": [
-            "Enforcing non-nullable foreign-key database constraints on AccountId and executing migration scripts inside ACID-compliant transactions with atomic rollback triggers.",
-            "Allowing sales reps to edit database schemas directly from their mobile phones.",
-            "Deleting all historical accounts whenever a new CSV file is imported.",
-            "Running all data migrations on public unencrypted Wi-Fi networks."
+            "Enforcing non-nullable foreign-key constraints on AccountId and running migration scripts in ACID-compliant transactions with atomic rollback triggers.",
+            "Enforcing nullable foreign-key constraints on AccountId and running migration scripts in separate batch jobs with manual cleanup procedures.",
+            "Enforcing unique indexes on OpportunityName and running migration scripts in ACID-compliant transactions with scheduled report alerts.",
+            "Enforcing non-nullable validation rules in the user interface and running migration scripts as bulk imports with nightly orphan clean-up jobs."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7743,10 +7743,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise CRM data architecture, what is the key difference between Organization-Wide Defaults (OWD) and Field-Level Security (FLS)?",
           "options": [
-            "There is no difference; OWD and FLS are identical synonyms for database encryption.",
-            "OWD is only used for marketing emails, while FLS is used exclusively for accounting spreadsheets.",
-            "FLS can be bypassed by running client-side JavaScript, while OWD is enforced by hardware chips.",
-            "OWD controls record-level baseline access (whether a user can view or edit an entire record), whereas FLS controls column-level access (whether specific fields on that record are visible or read-only)."
+            "OWD sets baseline column-level access (view or edit specific fields), while FLS sets record-level access (whether whole records are visible or read-only).",
+            "OWD sets role hierarchy access for managers (view subordinates' records), while FLS sets sharing rule access (whether records are shared with public groups).",
+            "OWD sets encryption keys for stored records (decrypt an entire record), while FLS sets masking rules for fields (whether values are hashed or plain text).",
+            "OWD sets baseline record-level access (view or edit an entire record), while FLS sets column-level access (whether fields on that record are visible or read-only)."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7792,10 +7792,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is compiling real-time Roll-Up Summaries at the database kernel level superior to running nightly batch SQL scripts for enterprise sales pipeline forecasting?",
           "options": [
-            "Because batch SQL scripts delete all closed-won contracts at midnight.",
-            "Because batch scripts can only execute on physical tape drives.",
-            "Because real-time roll-ups guarantee immediate ACID consistency across executive dashboards and prevent sales leaders from negotiating deals based on stale, hours-old revenue figures.",
-            "Because real-time roll-ups legally excuse the enterprise from paying software license fees."
+            "Because nightly batch scripts give immediate ACID consistency across executive dashboards and stop sales leaders negotiating on stale, minutes-old revenue figures.",
+            "Because real-time roll-ups reduce storage costs across executive dashboards and stop database administrators from running scheduled maintenance jobs on tables.",
+            "Because real-time roll-ups give immediate ACID consistency across executive dashboards and stop sales leaders negotiating on stale, hours-old revenue figures.",
+            "Because real-time roll-ups give eventual consistency across executive dashboards and let sales leaders negotiate on figures that are updated each morning."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7866,10 +7866,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise Lead-to-Account (L2A) identity resolution architecture, why must the ingestion engine maintain an indexed blacklist of consumer webmail domains (e.g., gmail.com, yahoo.com) before executing domain matching?",
           "options": [
-            "Because webmail domains cannot be stored in UTF-8 text columns.",
-            "To automatically delete any inbound lead that was not created on a desktop computer.",
-            "Because consumer email providers block CRM platforms from sending automated email replies.",
-            "To prevent thousands of unrelated consumer prospects from matching into a single colossal 'Gmail Corporation' account, which would corrupt pipeline forecasting and route unrelated enterprise leads to a single sales rep."
+            "To stop thousands of unrelated enterprise prospects from matching into separate duplicate accounts, corrupting territories and routing consumer leads to many reps.",
+            "To stop thousands of unrelated consumer prospects from being created as leads at all, corrupting marketing counts and routing enterprise leads to a single queue.",
+            "To stop thousands of unrelated consumer emails from failing the domain verification step, corrupting deliverability and routing enterprise leads to a spam folder.",
+            "To stop thousands of unrelated consumer prospects from matching into one huge 'Gmail Corporation' account, corrupting forecasts and routing enterprise leads to a single rep."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7913,10 +7913,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Jaro-Winkler distance mathematically superior to standard Levenshtein distance for fuzzy Lead-to-Account matching in enterprise CRMs?",
           "options": [
-            "Because Jaro-Winkler applies an asymmetric bonus to matching initial prefixes, heavily boosting similarity for corporate names that share the identical primary company root but differ in trailing legal suffixes.",
-            "Because Levenshtein distance only works on numbers and cannot process alphabetical text.",
-            "Because Jaro-Winkler distance requires zero CPU compute cycles on cloud servers.",
-            "Because Levenshtein distance is strictly prohibited by GDPR privacy regulations."
+            "Because Jaro-Winkler gives an asymmetric bonus to matching initial prefixes, strongly raising similarity for company names with the same root but different legal suffixes.",
+            "Because Jaro-Winkler gives a symmetric bonus to matching trailing suffixes, strongly raising similarity for company names with different roots but the same legal suffix.",
+            "Because Jaro-Winkler counts only the number of character edits needed, strongly raising similarity for company names that are equal in length and spelling.",
+            "Because Jaro-Winkler ignores character order and compares word sets, strongly raising similarity for company names that contain the same words in any position."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7961,10 +7961,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise sales operations, what structural mechanism prevents sales rep collisions when a C-level executive from an active enterprise prospect registers with a personal webmail address?",
           "options": [
-            "Prohibiting C-level executives from browsing the corporate website.",
-            "A Territory Shield routing engine that combines fuzzy company name matching (Jaro-Winkler) with automated active opportunity lockouts, routing the lead directly to the assigned account executive.",
-            "Automatically deleting all inbound web forms that arrive between 12:00 PM and 5:00 PM.",
-            "Firing sales reps who make more than three phone calls in a single day."
+            "A Territory Shield routing engine that combines exact email domain matching with round-robin rotation, routing the lead to the next available SDR in the queue.",
+            "A Territory Shield routing engine that combines fuzzy company name matching (Jaro-Winkler) with active opportunity lockouts, routing the lead to the assigned account executive.",
+            "A Territory Shield routing engine that combines fuzzy company name matching (Jaro-Winkler) with lead score thresholds, routing the lead to marketing for further nurture.",
+            "A Territory Shield routing engine that combines geographic IP matching with manager approval lockouts, routing the lead to the regional sales director for assignment."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8009,10 +8009,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Quota-Weighted Round-Robin lead routing produce superior sales performance compared to simple sequential round-robin distribution in B2B enterprise sales organizations?",
           "options": [
-            "Because quota-weighted routing guarantees that every sales lead closes as a won contract within 24 hours.",
-            "Because sequential round-robin requires manual approval from the Chief Human Resources Officer for each lead.",
-            "Because it allocates higher volumes of qualified leads to senior account executives carrying larger revenue quotas while protecting ramping reps from unmanageable pipeline backlogs.",
-            "Because sequential round-robin is illegal under antitrust regulations."
+            "Because it gives equal volumes of qualified leads to every AE regardless of quota, while shielding senior reps from unmanageable pipeline backlogs.",
+            "Because it gives larger volumes of qualified leads to ramping reps with smaller quotas, while shielding senior AEs from unmanageable pipeline backlogs.",
+            "Because it gives larger volumes of qualified leads to senior AEs with bigger quotas, while shielding ramping reps from unmanageable pipeline backlogs.",
+            "Because it gives qualified leads to whichever AE responds first, while shielding managers from unmanageable lead reassignment requests each week."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8058,10 +8058,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary operational benefit is achieved by integrating automated Lead Deduplication directly into the L2A matching and routing pipeline?",
           "options": [
-            "It automatically charges the prospect's credit card twice for downloading a whitepaper.",
-            "It cancels the prospect's company website domain registration.",
-            "It prevents all marketing emails from being delivered on weekends.",
-            "It recognizes repeat form submissions within a 24-hour window, updating campaign attribution on the existing lead and notifying the assigned sales rep without generating cluttering duplicate records."
+            "It recognises repeat form fills within 24 hours, creates a new lead for each attribution source, and alerts every rep in the territory to the duplicate records.",
+            "It recognises repeat form fills within 30 days, overwrites campaign attribution on the existing lead, and alerts the marketing team without notifying the assigned rep.",
+            "It recognises repeat form fills from the same IP address, blocks the later submission from the database, and alerts the visitor without updating campaign attribution.",
+            "It recognises repeat form fills within 24 hours, updates campaign attribution on the existing lead, and alerts the assigned rep without creating cluttering duplicates."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8127,10 +8127,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In sales cadence automation architecture, what is the primary operational purpose of transitioning a prospect to the 'TERMINATED_REPLIED' state immediately upon receiving an inbound message?",
           "options": [
-            "To atomically cancel all remaining scheduled touchpoints across email, phone, and social channels, preventing robotic automated follow-ups from being sent to an actively engaged buyer.",
-            "To permanently delete the customer's contact record from the CRM database.",
-            "To automatically issue a refund for all historical invoices.",
-            "To prevent sales representatives from viewing the prospect's email address."
+            "To atomically cancel all remaining scheduled touchpoints across email, phone, and social, so robotic follow-ups are not sent to an actively engaged buyer.",
+            "To atomically pause only the remaining scheduled emails, so that phone and social follow-ups continue to an actively engaged buyer on schedule.",
+            "To atomically reassign all remaining scheduled touchpoints to the account executive, so that robotic follow-ups continue to an actively engaged buyer later.",
+            "To atomically restart the cadence from the first step across email, phone, and social, so that the buyer receives the full sequence again after replying."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8166,10 +8166,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In distributed enterprise sales webhook architecture, why is combining HMAC SHA-256 signatures with Idempotency Keys strictly necessary for revenue operations security?",
           "options": [
-            "Idempotency keys prevent sales reps from leaving the company.",
-            "Neither is necessary if the webhook server is hosted in North America.",
-            "HMAC signatures compress data payloads to under 5 bytes for cellular transmission.",
-            "HMAC signatures guarantee cryptographic authenticity and prevent forged webhook attacks, while Idempotency Keys guarantee that network retries cannot trigger duplicate side-effects or multi-send email loops."
+            "HMAC signatures prove delivery order and stop duplicate webhook attacks, while Idempotency Keys stop forged requests from triggering unauthorised side-effects or multi-send email loops.",
+            "HMAC signatures encrypt the payload and stop eavesdropping on webhook traffic, while Idempotency Keys stop slow responses from triggering timeouts or dropped email messages.",
+            "HMAC signatures prove authenticity and stop forged webhook attacks, while Idempotency Keys stop rate-limit errors from triggering blocked IP addresses or lost email records.",
+            "HMAC signatures prove authenticity and stop forged webhook attacks, while Idempotency Keys stop network retries from triggering duplicate side-effects or multi-send email loops."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8205,10 +8205,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three architectural defenses must be deployed in unison to permanently prevent automated email spam storm incidents during webhook retry spikes?",
           "options": [
-            "Disabling all corporate email systems on Thursday mornings.",
-            "Using HTTP GET requests instead of HTTP POST for all webhooks.",
+            "Disk-based message queue persistence, fixed-interval retries on webhook producers, and global rate-limiting throttles on the email dispatch engine for all recipients.",
+            "In-memory idempotency deduplication caching, immediate retries on webhook producers, and unlimited sending quotas on the email dispatch engine for each recipient.",
             "In-memory idempotency deduplication caching, exponential backoff on webhook producers, and per-recipient rate-limiting cooldown buffers on the email dispatch engine.",
-            "Sending automated text messages to the prospect's personal phone whenever an email fails."
+            "HMAC signature verification caching, exponential backoff on email consumers, and per-domain blacklisting on the webhook producers for each bounced recipient."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8245,10 +8245,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must cadence cancellation execute as an atomic transaction across all parallel channels (email, phone, LinkedIn) simultaneously when a prospect responds on a single channel?",
           "options": [
-            "Because atomic transactions reduce the electricity consumed by computer monitors.",
-            "To prevent split-brain race conditions where automated follow-ups or scheduled phone calls execute after the prospect has already agreed to a sales meeting, permanently protecting brand credibility.",
-            "Because multi-channel marketing is only allowed for business-to-consumer retail companies.",
-            "Because social media platforms require sales reps to close their accounts after sending an email."
+            "To prevent latency delays where follow-ups or scheduled calls run too late before the prospect has agreed to a meeting, protecting email deliverability.",
+            "To prevent race conditions where follow-ups or scheduled calls still run after the prospect has agreed to a meeting, protecting brand credibility.",
+            "To prevent database storage growth where follow-ups or scheduled calls remain in the queue after the prospect has agreed to a meeting, protecting system cost.",
+            "To prevent duplicate lead records where follow-ups or scheduled calls are logged twice after the prospect has agreed to a meeting, protecting data quality."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8285,10 +8285,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational risk eliminated by combining cryptographic HMAC authentication with Redis-style idempotency caching on enterprise sales webhook receivers?",
           "options": [
-            "It prevents forged external attacks while ensuring network retry storms cannot cause duplicate email deliveries or corrupt prospect cadence state machines.",
-            "It eliminates the need to pay internet service provider bandwidth bills.",
-            "It automatically forces all enterprise prospects to purchase the software within 48 hours.",
-            "It converts plain text emails into encrypted radio waves."
+            "It blocks forged external attacks and ensures network retry storms cannot cause duplicate email deliveries or corrupt prospect cadence state machines.",
+            "It blocks slow external queries and ensures network latency spikes cannot cause delayed email deliveries or stall the prospect cadence state machines.",
+            "It blocks unauthorised internal edits and ensures rep activity logs cannot cause duplicate email deliveries or corrupt prospect territory assignments.",
+            "It blocks bounced external messages and ensures sender reputation drops cannot cause spam folder deliveries or corrupt prospect email validation lists."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8360,10 +8360,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Product-Led Sales (PLS) architecture, what is the core structural difference between an end-user persona and a corporate workspace persona?",
           "options": [
-            "End-users can only use mobile phones, while workspaces can only run on mainframe computers.",
-            "An end-user is an individual practitioner who experiences personal product value, whereas a workspace represents an organizational container whose aggregated usage signals commercial expansion potential to revenue teams.",
-            "Workspaces are automatically deleted every 24 hours to save cloud storage space.",
-            "There is no difference; user and workspace are identical terms in modern database schemas."
+            "An end-user is a paying buyer who signs the contract, while a workspace is a personal profile whose individual usage signals commercial churn potential for revenue teams.",
+            "An end-user is an individual practitioner who feels personal product value, while a workspace is an organisational container whose combined usage signals commercial expansion potential.",
+            "An end-user is an organisational container whose combined usage signals expansion, while a workspace is an individual practitioner who feels personal product value only.",
+            "An end-user is an individual practitioner who feels personal product value, while a workspace is a billing record whose invoice history signals renewal potential."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8409,10 +8409,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do Product-Qualified Leads (PQLs) achieve conversion rates 15x higher than traditional Marketing-Qualified Leads (MQLs) in enterprise B2B sales?",
           "options": [
-            "Because PQL algorithms require sales reps to pay higher cash bonuses to marketing departments.",
-            "Because MQLs are legally prohibited from being called by enterprise sales representatives.",
-            "Because PQLs evaluate real-world product usage telemetry and verified paywall friction, whereas MQLs evaluate superficial content downloads that indicate zero software adoption.",
-            "Because PQLs automatically charge the customer's bank account before sales reps make contact."
+            "Because PQLs measure webinar attendance and email opens, while MQLs measure real product usage telemetry that shows strong software adoption.",
+            "Because PQLs measure inbound call volume and demo requests, while MQLs measure paywall friction that shows weak software adoption by buyers.",
+            "Because PQLs measure real product usage telemetry and paywall friction, while MQLs measure surface content downloads that show no software adoption.",
+            "Because PQLs measure company size and industry fit alone, while MQLs measure real product usage that shows partial software adoption by teams."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8457,10 +8457,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence of failing to synchronize in-product telemetry (active seats, usage velocity) into the sales CRM via Reverse ETL?",
           "options": [
-            "Sales representatives are legally required to attend computer science classes.",
-            "Customers are automatically enrolled in government pension schemes.",
-            "Cloud servers automatically erase all customer databases after 30 days.",
-            "Sales reps operate blind, sending embarrassing generic cold prospecting emails to accounts whose engineering teams are already power users, destroying vendor credibility and killing expansion deals."
+            "Sales reps operate with delayed data, sending personalised follow-ups to accounts whose engineers are inactive users, hurting the pipeline and speeding up expansion deals.",
+            "Sales reps operate with duplicate data, sending two follow-ups to accounts whose engineers are already power users, hurting deliverability and delaying expansion deals.",
+            "Sales reps operate with stale pricing, quoting old list prices to accounts whose engineers are already power users, hurting margins and speeding up renewal deals.",
+            "Sales reps operate blind, sending generic cold emails to accounts whose engineers are already power users, hurting credibility and killing expansion deals."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8506,10 +8506,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Incremental Diffing an indispensable architectural requirement in enterprise Reverse ETL pipelines syncing Cloud Data Warehouses to CRMs?",
           "options": [
-            "Because it evaluates cryptographic hashes of record attributes to sync strictly modified records, reducing CRM API call consumption by over 95% and preventing platform API rate limit exhaustion.",
-            "Because data warehouses delete all tables if they are queried more than once per day.",
-            "Because incremental diffing translates Python code into binary machine code.",
-            "Because CRMs can only receive data updates during full moons."
+            "Because it compares cryptographic hashes of record attributes to sync only changed records, cutting CRM API calls by over 95% and avoiding API rate limit exhaustion.",
+            "Because it compares timestamps of every record in the warehouse to sync all records, raising CRM API calls by over 95% and causing API rate limit exhaustion.",
+            "Because it compares cryptographic hashes of record attributes to sync only deleted records, cutting CRM storage by over 95% and avoiding data retention violations.",
+            "Because it compares field names across both systems to sync only schema changes, cutting CRM API calls by over 50% and avoiding data type mapping errors."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8556,10 +8556,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In production Product-Led Sales platforms, what is the primary operational advantage of triggering automated Slack alerts to Account Executives when an account's PQL score exceeds 75.0?",
           "options": [
-            "It automatically deducts money from the sales rep's personal paycheck.",
-            "It provides sales reps with immediate, contextual intelligence on active seats and paywall friction, allowing them to initiate executive consolidation negotiations at the exact moment of maximum buyer intent.",
-            "It disables the customer's software until they pay an enterprise invoice.",
-            "It automatically posts the sales rep's phone number on public internet forums."
+            "It gives managers a weekly summary of closed deals and quota gaps, so they can start coaching conversations after peak buyer intent has passed.",
+            "It gives reps immediate context on active seats and paywall friction, so they can start executive consolidation talks at peak buyer intent.",
+            "It gives reps a reminder of renewal dates and past invoices, so they can start discount negotiations before peak buyer intent is reached.",
+            "It gives marketing a list of high-scoring accounts to email, so they can start nurture campaigns at the moment of maximum buyer intent."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8631,10 +8631,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of enforcing the Zero-Drift Synchronization Invariant between operational CRMs and Cloud Data Warehouses in enterprise revenue platforms?",
           "options": [
-            "It forces all software engineers to manually review every single sales opportunity in GitHub pull requests.",
-            "It permanently deletes customer records if they do not purchase an enterprise upgrade within seven days.",
-            "It guarantees that frontline sales representatives and executive BI dashboards operate on identical, reconciled customer metrics, eliminating forecasting discrepancies and cross-departmental data silos.",
-            "It automatically doubles the sales commissions of account executives who log into the CRM before 8:00 AM."
+            "It guarantees that frontline reps and executive BI dashboards use separate, specialised customer metrics, allowing each team to tune forecasts to local needs.",
+            "It guarantees that the CRM and the data warehouse run on the same database engine, removing license costs and cross-team hosting dependencies.",
+            "It guarantees that frontline reps and executive BI dashboards use identical, reconciled customer metrics, removing forecast discrepancies and cross-team data silos.",
+            "It guarantees that all customer data is encrypted in both systems with the same key, removing key rotation tasks and cross-team access requests."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8681,10 +8681,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the $14M Split-Brain Sales collapse, what was the primary architectural flaw that prevented Account Executives from saving the churning enterprise accounts?",
           "options": [
-            "The customer's bank accounts were closed by international regulatory agencies.",
-            "The complete absence of Reverse ETL telemetry synchronization, which left sales reps blind to the fact that 540 active engineers were hitting paywall limits.",
-            "The company's software could only run on obsolete tape-drive computers.",
-            "The sales reps did not have access to smartphones during working hours."
+            "No lead scoring model in the CRM, which left reps blind to 540 inactive engineers ignoring email campaigns.",
+            "No Reverse ETL telemetry synchronisation, which left reps blind to 540 active engineers hitting paywall limits.",
+            "No cadence automation platform, which left reps blind to 540 prospects waiting for follow-up from the SDR team.",
+            "No HMAC signature validation on webhooks, which left reps blind to 540 forged requests from outside the network."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8733,10 +8733,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an autonomous lead-to-opportunity pipeline, what triggers the transition of a prospect from an automated prospecting cadence into an active enterprise sales opportunity?",
           "options": [
-            "In-product usage telemetry and active seats crossing the composite PQL threshold (e.g., PQL_Score >= 75.0), proving genuine organizational adoption and commercial expansion potential.",
-            "The prospect opening an email newsletter on a Sunday afternoon.",
-            "The sales representative receiving an automated birthday notification.",
-            "The calendar month ending on an odd-numbered calendar date."
+            "In-product usage telemetry and active seats crossing the composite PQL threshold (e.g., PQL_Score of 75.0 or more), showing genuine adoption and expansion potential.",
+            "A prospect opening three marketing emails and visiting the pricing page twice, with a composite engagement score of 40.0 or more showing genuine interest in the product.",
+            "A scheduled demo with the economic buyer and a signed mutual action plan, with a composite MEDDPICC score of 7.0 or more showing genuine purchase intent for the product.",
+            "A prospect downloading a whitepaper and attending a webinar, with a composite lead score of 75.0 or more showing genuine fit for the ideal customer profile."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8783,10 +8783,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is SHA-256 cryptographic hash chaining implemented in enterprise CRM audit ledgers to satisfy SOC 2 Type II compliance?",
           "options": [
-            "Because it forces sales representatives to write their contracts in hexadecimal code.",
-            "Because hash chaining automatically reduces cloud hosting server electricity bills by half.",
-            "Because it translates all customer data into compressed audio files.",
-            "Because it creates a tamper-evident sequence where modifying or deleting any historical record breaks all subsequent cryptographic hashes, mathematically proving ledger integrity to auditors."
+            "Because it forms an encrypted sequence where editing or deleting any past record is blocked at once by the database, mathematically hiding ledger contents from auditors.",
+            "Because it forms a compressed sequence where editing or deleting any past record reduces storage use over time, mathematically lowering ledger cost for auditors.",
+            "Because it forms a signed sequence where editing any past record needs a manager's approval, which proves to auditors that every change was authorised by someone.",
+            "Because it forms a tamper-evident sequence where editing or deleting any past record breaks every later hash, mathematically proving ledger integrity to auditors."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8834,10 +8834,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical metric best captures the compounding economic impact of implementing automated L2A fuzzy routing, Reverse ETL telemetry, and cadence automation?",
           "options": [
-            "The font size of marketing brochures delivered to the customer.",
-            "The number of email attachments uploaded to cloud storage.",
-            "Pipeline Velocity: V = (Opportunities * Win_Rate * Average_Deal_Size) / Sales_Cycle_Days, which captures how automated qualification accelerates deal speed and win rates.",
-            "The total number of cold prospecting phone calls made per hour."
+            "Customer Lifetime Value: V = (Average_Deal_Size * Gross_Margin) / Churn_Rate, showing how automated onboarding extends customer lifetime and lowers churn rates.",
+            "Magic Number: V = (Net_New_ARR * 4) / Prior_Quarter_Sales_Spend, showing how automated spend tracking improves sales efficiency and lowers cost per dollar.",
+            "Pipeline Velocity: V = (Opportunities * Win_Rate * Average_Deal_Size) / Sales_Cycle_Days, showing how automated qualification speeds up deals and lifts win rates.",
+            "Pipeline Coverage: V = Open_Pipeline_Value / Remaining_Quota_Target, showing how automated forecasting widens pipeline and lifts the quota attainment rate."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8908,10 +8908,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise Configure, Price, Quote (CPQ) architecture, what is the primary operational role of an Option Group within a hierarchical product bundle?",
           "options": [
-            "It automatically deducts income tax from the customer's bank account before quote delivery.",
-            "It translates sales proposals into foreign languages using automated internet translation tools.",
-            "It permanently deletes sales opportunities if the customer requests a discount greater than 5%.",
-            "It acts as a logical container that enforces cardinality constraints (minimum and maximum required selections) and selection types (single-select radio vs multi-select checkboxes) across related child SKUs."
+            "A pricing container that applies volume discount tiers (minimum and maximum quantities) and rounding rules (nearest unit or nearest dollar) across related child SKUs.",
+            "A approval container that routes quotes for review (minimum and maximum discount levels) and escalation types (manager or finance) across related child SKUs.",
+            "A catalog container that stores product descriptions (short and long text) and image types (thumbnail or banner) for display to customers across related child SKUs.",
+            "A logical container that enforces cardinality limits (minimum and maximum selections) and selection types (single-select or multi-select) across related child SKUs."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8958,10 +8958,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the computational role of a Mutual Exclusion constraint rule (Excludes) in an enterprise CPQ dependency graph?",
           "options": [
-            "It prevents sales representatives from selecting contradictory or incompatible products (such as provisioning both shared multi-tenant and dedicated bare-metal infrastructure in the same cluster bundle).",
-            "It prevents customers from accessing the internet while reading a sales quotation.",
-            "It automatically cancels the customer's warranty if they submit a customer service ticket.",
-            "It requires sales reps to obtain written permission from local law enforcement before selling software."
+            "It stops reps from selecting contradictory or incompatible products, such as shared multi-tenant and dedicated bare-metal infrastructure in one cluster bundle.",
+            "It stops reps from selecting required companion products, such as both a base platform and its mandatory implementation service in one cluster bundle.",
+            "It stops reps from selecting discounted products, such as both a promotional licence and a standard support plan in one cluster bundle.",
+            "It stops reps from selecting products outside their region, such as both a US-only data centre and a European backup service in one cluster bundle."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9008,10 +9008,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the $3.8M Unshippable Configuration Disaster, what was the primary architectural root cause of the manufacturing failure?",
           "options": [
-            "The customer's bank went out of business during the procurement review.",
-            "The sales quoting process operated in unvalidated Excel spreadsheets that lacked physical constraint rules governing PCIe expansion slots and electrical power supply wattage limits.",
-            "The hardware servers were damaged by unexpected rainfall during ocean transit.",
-            "The Taiwanese manufacturing factory ran out of shipping cardboard boxes."
+            "Sales quoted in a validated CPQ platform that applied outdated price books for PCIe expansion cards and power supply component costs.",
+            "Sales quoted in unvalidated Excel spreadsheets that lacked physical constraint rules for PCIe expansion slots and power supply wattage limits.",
+            "Manufacturing built from approved bills of materials that lacked sufficient inventory for PCIe expansion cards and power supply units.",
+            "Procurement ordered parts from unapproved suppliers that lacked quality certificates for PCIe expansion cards and power supply units."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9057,10 +9057,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise CPQ pricing architecture, what is a 'Percent of Total' (PoT) line item calculation?",
           "options": [
-            "A pricing model where every product in the catalog is priced at exactly ninety-nine dollars.",
-            "A penalty tax charged by the government when a customer signs an enterprise agreement.",
-            "A dynamic pricing method where a line item's fee (such as 24/7 technical support or customer success) is calculated as a fixed percentage of the aggregated net value of core software licenses across the quote.",
-            "A calculation that requires sales reps to donate a percentage of their commission to corporate charity."
+            "A fixed pricing method where a line item's fee (such as 24/7 support or customer success) is a flat amount set in the price book regardless of the licence value in the quote.",
+            "A dynamic pricing method where a line item's fee (such as 24/7 support or customer success) is a percentage of the customer's annual revenue shown in the account record.",
+            "A dynamic pricing method where a line item's fee (such as 24/7 support or customer success) is a fixed percentage of the net value of core software licences in the quote.",
+            "A tiered pricing method where a line item's fee (such as 24/7 support or customer success) falls by a percentage as the quote total passes each volume threshold."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9106,10 +9106,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an SHA-256 cryptographic verification token generated and attached to approved enterprise CPQ quote manifests?",
           "options": [
-            "To allow sales representatives to mine cryptocurrency on their office workstations.",
-            "To compress quotation PDF documents into smaller email attachments.",
-            "To automatically post customer sales quotes onto public internet message boards.",
-            "To provide a tamper-evident audit record that cryptographically proves the exact products, quantities, prices, and discounts approved by sales operations cannot be altered prior to customer signing."
+            "To give an encrypted copy of the quote that hides the exact products, quantities, prices, and discounts from the customer until the signing date is reached.",
+            "To give a compressed version of the quote that stores the exact products, quantities, prices, and discounts in a smaller file size for faster email delivery.",
+            "To give a timestamp on the quote that records the date and time when the sales operations team last viewed the products, quantities, and prices on screen.",
+            "To give a tamper-evident audit record that proves the exact products, quantities, prices, and discounts approved by sales operations cannot be altered before customer signing."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9182,10 +9182,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial and financial risk of using Tiered (Cliff) Pricing instead of Slab (Graduated) Pricing in enterprise software contracts?",
           "options": [
-            "Tiered Cliff Pricing creates perverse cliff incentives where purchasing slightly more units causes the total price to drop, allowing buyers to exploit volume arbitrage and causing unearned revenue leakage.",
-            "Tiered Pricing requires sales representatives to pay cash penalties to the government.",
-            "Tiered Pricing causes cloud databases to corrupt customer data tables.",
-            "Tiered Pricing is illegal under international maritime trade treaties."
+            "Cliff pricing creates perverse incentives where buying slightly more units lowers the total price, letting buyers exploit volume arbitrage and causing revenue leakage.",
+            "Cliff pricing creates predictable incentives where buying slightly more units raises the total price, letting vendors exploit volume premiums and causing buyer attrition.",
+            "Slab pricing creates perverse incentives where buying slightly more units lowers the total price, letting buyers exploit volume arbitrage and causing revenue leakage.",
+            "Cliff pricing creates billing complexity where each unit band needs its own invoice line, letting finance teams exploit reporting detail and causing delays in collections."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9227,10 +9227,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise CPQ pricing engines incorporate an actuarial FX hedging buffer (e.g., +3% to +6%) when generating sales quotes in foreign currencies?",
           "options": [
-            "Because credit card companies charge a mandatory sixty percent transaction fee.",
-            "To guarantee that every foreign-currency quote is issued at the lowest exchange rate available on the market that day.",
-            "To secretly inflate the sales rep's commission without the buyer's knowledge.",
-            "To absorb macroeconomic exchange rate fluctuations over multi-year contract durations, ensuring the vendor's realized USD revenue does not drop below corporate gross margin thresholds due to foreign currency depreciation."
+            "To pass exchange rate swings to the customer in every invoice, so the vendor's realised USD revenue stays equal to list price when the foreign currency weakens.",
+            "To cover bank transfer fees on multi-year contracts, so the vendor's realised USD revenue stays above gross margin thresholds when payment processing costs rise.",
+            "To cover local sales tax on multi-year contracts, so the vendor's realised USD revenue stays above gross margin thresholds when the foreign tax rate changes.",
+            "To absorb exchange rate swings over multi-year contracts, so the vendor's realised USD revenue stays above gross margin thresholds when the foreign currency weakens."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9277,10 +9277,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mathematical flaw of 'Additive Discount Stacking' (e.g., 30% + 15% + 10% = 55% discount) in CPQ engines, and how do modern engines resolve it?",
           "options": [
-            "Modern CPQ engines resolve additive stacking by firing all sales representatives who request discounts.",
-            "Additive stacking is too slow for computer processors to calculate in real time.",
-            "Additive stacking subtracts discounts linearly, rapidly eroding margins; modern CPQ engines enforce multiplicative compounding P = List * (1-d1) * (1-d2) * (1-d3) combined with hard gross margin floors.",
-            "Additive stacking forces the customer to pay their invoice using paper gold certificates."
+            "Additive stacking compounds discounts exponentially and inflates margins; modern CPQ engines use linear subtraction P = List - (d1 + d2 + d3) with soft gross margin targets.",
+            "Additive stacking applies only the largest discount and erodes volume; modern CPQ engines use multiplicative compounding P = List * (1-d1) with hard quantity floors.",
+            "Additive stacking subtracts discounts linearly and erodes margins; modern CPQ engines use multiplicative compounding P = List * (1-d1) * (1-d2) * (1-d3) with hard gross margin floors.",
+            "Additive stacking subtracts discounts linearly and erodes margins; modern CPQ engines use averaged discounts P = List * (1-(d1+d2+d3)/3) with soft gross margin targets."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9326,10 +9326,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise CPQ Deal Desk operations, how does a Multi-Dimensional Concession Matrix optimize both deal velocity and gross margin protection?",
           "options": [
-            "It requires all sales contracts to be notarized by international ambassadors.",
-            "It grants discount approval relief to sales reps when customers trade valuable commercial concessions (such as 3-year commitments or upfront annual prepayments), lowering approval escalation tiers while securing higher long-term customer lifetime value.",
-            "It automatically reduces all software prices by fifty percent on Friday afternoons.",
-            "It prevents customers from speaking directly with sales managers."
+            "It gives reps unlimited discount authority when customers ask for lower prices (like 3-year commitments or upfront prepayment), removing escalation tiers while securing faster closing.",
+            "It gives reps discount approval relief when customers trade valuable concessions (like 3-year commitments or upfront prepayment), lowering escalation tiers while securing higher lifetime value.",
+            "It gives finance approval relief when reps trade valuable concessions (like extra support or free training), raising escalation tiers while securing higher services revenue.",
+            "It gives customers price relief when reps meet quota targets (like 100% attainment or early renewals), lowering escalation tiers while securing higher commission payouts."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9377,10 +9377,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of integrating automated Gross Margin Floors into enterprise CPQ pricing pipelines?",
           "options": [
-            "To establish non-negotiable pricing ceilings that prevent stacked discounts from eroding contract profitability below corporate gross margin requirements, safeguarding financial sustainability.",
-            "To automatically cancel customer orders if the stock market declines by five points.",
-            "To force sales representatives to submit handwritten accounting ledgers.",
-            "To convert all international sales quotes into cryptocurrency tokens."
+            "To set non-negotiable limits that stop stacked discounts from pushing contract profitability below corporate gross margin requirements, safeguarding financial sustainability.",
+            "To set flexible guidelines that let reps push stacked discounts below corporate gross margin requirements when a deal is strategic, safeguarding revenue growth.",
+            "To set maximum list prices that stop customers from negotiating contract profitability above corporate gross margin requirements, safeguarding competitive pricing.",
+            "To set non-negotiable limits that stop stacked discounts from lowering contract volume below corporate quota requirements, safeguarding bookings targets."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9452,10 +9452,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of implementing an automated Deal Desk Triage Engine (Green, Yellow, Red lanes) in enterprise revenue operations?",
           "options": [
-            "To eliminate all sales managers and replace them with automated voicemail answering machines.",
-            "To allow fully standard quotes to auto-approve instantly (Green Lane) while concentrating human deal desk and legal review strictly on high-risk, non-standard transactions (Yellow and Red lanes), maximizing deal velocity while safeguarding corporate governance.",
-            "To randomly reject twenty percent of sales proposals to test the sales reps' emotional resilience.",
-            "To automatically leak confidential sales pricing to public competitor websites."
+            "To auto-approve non-standard quotes at once (Red Lane) and focus human deal desk and legal review on low-risk, standard deals (Green and Yellow lanes), raising velocity while keeping margins.",
+            "To auto-approve fully standard quotes at once (Green Lane) and focus human deal desk and legal review on high-risk, non-standard deals (Yellow and Red lanes), raising velocity while keeping governance.",
+            "To route every quote to the deal desk in sequence (Green, Yellow, then Red lanes) and focus human legal review on the fastest deals, raising coverage while keeping governance in place.",
+            "To auto-approve all quotes below a fixed discount (Green Lane) and skip legal review for every other deal (Yellow and Red lanes), raising velocity while lowering processing cost."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9498,10 +9498,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise contract negotiations, why is agreeing to a 'Termination for Convenience' clause without compensatory commercial trades considered a severe financial risk?",
           "options": [
-            "Because customers are legally required to throw away their computers upon contract termination.",
-            "Because it forces the vendor to pay cash dividends to the customer's shareholders.",
-            "Because it transforms a committed multi-year revenue contract into an uncommitted monthly subscription, destroying revenue predictability and invalidating statutory revenue recognition under ASC 606.",
-            "Because termination for convenience automatically cancels the sales representative's health insurance."
+            "Because it turns an uncommitted monthly subscription into a committed multi-year contract, raising revenue predictability and strengthening ASC 606 recognition.",
+            "Because it turns a committed multi-year contract into a one-time licence sale, increasing upfront revenue and accelerating ASC 606 recognition entirely.",
+            "Because it turns a committed multi-year revenue contract into an uncommitted monthly subscription, destroying revenue predictability and undermining ASC 606 recognition.",
+            "Because it lets the vendor end the contract at any time without notice, reducing support obligations and removing deferred revenue under ASC 606."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9548,10 +9548,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What technical security mechanism completely prevents rogue sales representatives from uploading altered PDF contracts containing unapproved side-letter concessions?",
           "options": [
-            "Requiring sales representatives to swear an oath of honesty before every sales call.",
-            "Disabling all internet connections across the sales department during the final week of the quarter.",
-            "Printing all contracts on special fluorescent yellow paper.",
-            "Cryptographic SHA-256 origin hashing that binds the approved CPQ quote directly to the e-signature API, rejecting any uploaded document whose cryptographic digest does not exactly match the approved manifest."
+            "SHA-256 password hashing that ties the sales rep's login to the CRM and rejects any session whose credentials do not match the approved user directory.",
+            "Manager review of every uploaded PDF that compares the document against the approved quote by eye and rejects any file that looks different to the reviewer.",
+            "Read-only PDF permissions that stop edits to the approved quote file in the CRM and reject any attachment added after the final approval date.",
+            "SHA-256 origin hashing that ties the approved CPQ quote to the e-signature API and rejects any uploaded document whose digest does not match the approved manifest."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9598,10 +9598,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing an Asynchronous Approval Directed Acyclic Graph (DAG) over a legacy linear approval chain in CPQ systems?",
           "options": [
-            "It triggers review notifications to Finance, Legal, Infosec, and RevOps concurrently in parallel, allowing departments to review simultaneously and compressing quote turnaround times from days to hours.",
-            "It prevents sales reps from having to talk to customers about pricing.",
-            "It guarantees that every sales quote will be approved without any executive review.",
-            "It automatically reduces all software contract lengths to twelve hours."
+            "It sends review requests to Finance, Legal, Infosec, and RevOps at the same time, letting departments review together and cutting quote turnaround from days to hours.",
+            "It sends review requests to Finance, then Legal, then Infosec, then RevOps in order, letting each department review in turn and keeping quote turnaround at several days.",
+            "It sends review requests to the sales manager only, letting one approver decide for all departments and cutting quote turnaround from days to minutes.",
+            "It sends review requests to Finance, Legal, Infosec, and RevOps at the same time, letting departments approve automatically and removing the need for any human review."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9649,10 +9649,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of automating Deal Desk concession scoring and parallel DAG approval workflows in high-volume enterprise sales organizations?",
           "options": [
-            "It allows sales representatives to alter legal contracts without anyone knowing.",
-            "It compresses sales turnaround cycles from days to hours while ensuring that high-risk non-standard terms are systematically traded for long-term commercial value, protecting corporate gross margins.",
-            "It forces all customers to pay their invoices using cash delivered by armored courier.",
-            "It automatically cancels customer orders if the sales rep forgets to log their phone calls."
+            "It raises sales turnaround from hours to days while making sure low-risk standard terms are traded for short-term commercial value, protecting quota attainment.",
+            "It cuts sales turnaround from days to hours while making sure high-risk non-standard terms are traded for long-term commercial value, protecting gross margins.",
+            "It cuts sales turnaround from days to hours while letting reps grant high-risk non-standard terms freely to win more deals, protecting bookings targets.",
+            "It cuts legal review costs from large to small while making sure all non-standard terms are rejected by default, protecting contract standardisation."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9725,10 +9725,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise Quote-to-Cash (Q2C) architecture, why does the activation engine bifurcate order line items into Subscriptions versus Assets?",
           "options": [
-            "Because Subscriptions are only available to non-profit organizations.",
-            "Because Assets can only be purchased by government defense agencies.",
-            "Because recurring cloud software licenses must be modeled as Subscriptions to govern renewal dates, proration, and co-termination schedules, whereas physical hardware or perpetual licenses must be modeled as Assets to track depreciation and serial numbers.",
-            "Because modern database engines cannot store numbers greater than one thousand."
+            "Recurring cloud software licences must be Assets to govern depreciation and serial numbers, while physical hardware or perpetual licences must be Subscriptions to track renewal dates, proration, and co-termination.",
+            "One-time professional services must be Subscriptions to govern renewal dates and proration, while recurring cloud software licences must be Assets to track depreciation, tax treatment, and serial numbers.",
+            "Recurring cloud software licences must be Subscriptions to govern renewal dates, proration, and co-termination, while physical hardware or perpetual licences must be Assets to track depreciation and serial numbers.",
+            "Orders over a set value must be Subscriptions to govern approval workflows and discounts, while orders under that value must be Assets to track shipping addresses, carriers, and delivery dates."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9773,10 +9773,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is cryptographic Idempotency Key deduplication an indispensable architectural requirement in CPQ-to-ERP billing webhook synchronizations?",
           "options": [
-            "It lets the ERP skip HMAC signature verification because every retried event already looks identical.",
-            "It prevents network retries or accidental duplicate webhook dispatches from generating duplicate invoices or charging customer bank accounts multiple times for the same order.",
-            "It translates all billing invoices into ancient Latin for statutory legal archives.",
-            "It automatically reduces corporate income tax to zero percent."
+            "It stops network latency or slow webhook responses from delaying invoices or charging customer bank accounts later than the date agreed for one order.",
+            "It stops network retries or accidental duplicate webhook dispatches from creating duplicate invoices or charging customer bank accounts more than once for one order.",
+            "It stops forged webhook requests or unauthorised senders from creating fake invoices or charging customer bank accounts for orders that never existed.",
+            "It stops expired webhook certificates or invalid payload formats from failing invoices or charging customer bank accounts in the wrong currency for one order."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9823,10 +9823,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under statutory accounting standards ASC 606 and IFRS 15, what is the fundamental requirement for recognizing enterprise software contract revenue?",
           "options": [
-            "Revenue can only be recognized as distinct performance obligations are satisfied over time (e.g., daily ratable software access or verified completion of professional service milestones), regardless of when the contract was signed or invoices were billed.",
-            "Revenue is recognized the moment the sales representative verbally agrees to the deal on the phone.",
-            "Revenue must be converted into physical gold bars stored in the corporate vault before recognition.",
-            "Revenue can only be recognized during leap years."
+            "Revenue is recognised only as distinct performance obligations are satisfied over time (like daily ratable access or verified completion of services milestones), whenever the contract was signed or billed.",
+            "Revenue is recognised in full when the contract is signed by both parties, even though the performance obligations are satisfied over time (like daily ratable access or service milestones) later.",
+            "Revenue is recognised when invoices are billed to the customer each period, whatever the performance obligations satisfied over time (like daily ratable access or service milestones) show.",
+            "Revenue is recognised when cash is collected from the customer, even though the performance obligations satisfied over time (like daily ratable access or service milestones) came earlier."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9873,10 +9873,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Step 4 of the ASC 606 revenue recognition framework, how must a negotiated contract discount be allocated across bundled software and professional services?",
           "options": [
-            "The discount must be paid in cash directly by the sales representative.",
-            "Discounts are strictly forbidden under United States federal accounting law.",
-            "The entire discount must be deducted from the software subscription so the services team gets full credit.",
-            "The discount must be allocated proportionally across all performance obligations based on their relative Standalone Selling Prices (SSP), rather than arbitrarily assigned to a single line item."
+            "The discount must be allocated entirely to the software licence line, the largest obligation, rather than shared across all performance obligations by relative Standalone Selling Prices (SSP).",
+            "The discount must be allocated equally across all performance obligations by number of line items, regardless of their relative Standalone Selling Prices (SSP).",
+            "The discount must be allocated to professional services first, the least certain obligation, until the services SSP falls to zero before any other line item is reduced.",
+            "The discount must be allocated proportionally across all performance obligations by their relative Standalone Selling Prices (SSP), not arbitrarily assigned to one line item."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9924,10 +9924,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence of automating ASC 606 revenue amortization waterfalls within the Quote-to-Cash platform?",
           "options": [
-            "It converts corporate revenue into volatile real estate investments.",
-            "It prevents customers from accessing their bank accounts on weekends.",
-            "It eliminates manual spreadsheets, automatically separates earned revenue from deferred revenue liabilities on the balance sheet, and provides mathematically certified audit trails that satisfy statutory financial regulations.",
-            "It forces all sales representatives to take professional accounting exams."
+            "It removes the need for auditors, merges earned revenue with deferred revenue liabilities on the balance sheet, and gives summary reports that replace statutory regulations.",
+            "It speeds up cash collection from customers, shifts deferred revenue liabilities into earned revenue at signing, and gives forecast reports that satisfy sales leadership.",
+            "It removes manual spreadsheets, separates earned revenue from deferred revenue liabilities on the balance sheet, and gives certified audit trails that satisfy statutory regulations.",
+            "It reduces the number of revenue accounts, separates earned revenue from cash receipts on the income statement, and gives monthly reports that satisfy tax authorities only."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10000,10 +10000,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of enforcing Systemic Traceability across the Quote-to-Cash (Q2C) enterprise pipeline?",
           "options": [
-            "It converts corporate revenue into short-term commodity futures contracts.",
-            "It automatically doubles the price of software for customers who pay by check.",
-            "It establishes an unbroken digital lineage linking sales quote configurations, managerial approvals, customer signatures, ERP billing invoices, and general ledger revenue recognition entries, satisfying statutory financial audits.",
-            "It forces all sales representatives to work from an overseas branch office."
+            "It forms a one-way digital record linking quote configurations to customer signatures only, leaving ERP invoices and general ledger revenue entries to be matched by hand at audit time.",
+            "It forms an unbroken digital lineage linking marketing campaigns, lead scores, rep activity, and pipeline stages in the CRM, satisfying sales forecasting reviews by the leadership team.",
+            "It forms an unbroken digital lineage linking quote configurations, approvals, customer signatures, ERP invoices, and general ledger revenue entries, satisfying statutory financial audits.",
+            "It forms a duplicate copy of every quote and invoice in a second system, linking storage backups and archived records, satisfying disaster recovery requirements for the platform."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10050,10 +10050,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the $18.4M Quote-to-Cash collapse, how did the absence of an integrated CPQ platform allow errors to cascade into catastrophic financial restatements?",
           "options": [
-            "The sales department was attacked by international computer hackers.",
-            "Disconnected spreadsheets, unmonitored Slack approvals, and decoupled billing systems allowed stale FX rates, additive discount stacking, rogue side letters, and premature revenue recognition to compound completely undetected across departments.",
-            "The vendor shipped its software to customers without any licence keys, so no invoices could be generated.",
-            "The customer paid their bill in invalid gold mining stock certificates."
+            "Integrated spreadsheets, monitored email approvals, and linked billing systems let stale FX rates, additive discounts, and rogue side letters be caught early by finance staff.",
+            "Disconnected spreadsheets, unmonitored Slack approvals, and separate billing systems let stale FX rates, additive discounts, rogue side letters, and early revenue recognition compound unnoticed.",
+            "Poorly trained sales reps, slow legal reviews, and late customer payments let stale pricing, extended terms, and missed renewals compound unnoticed in the revenue reports.",
+            "Outdated CRM software, overloaded servers, and weak network security let stale data, failed syncs, and forged requests compound unnoticed across the sales departments."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10102,10 +10102,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the end-to-end Quote-to-Cash lifecycle, how does the platform guarantee that customer contracts cannot be altered prior to electronic signature?",
           "options": [
-            "By binding the approved CPQ quote to the e-signature API using an SHA-256 cryptographic origin digest, automatically rejecting any document whose payload does not match the approved manifest.",
-            "By requiring sales representatives to sign contracts in red ink.",
-            "By deleting all contracts from computer hard drives after three days.",
-            "By requiring customer executives to send telegrams confirming their approval."
+            "By tying the approved CPQ quote to the e-signature API with an SHA-256 origin digest and rejecting any document whose payload differs from the approved manifest.",
+            "By locking the approved CPQ quote as a read-only PDF in the CRM and accepting any document uploaded by the rep that carries the approved quote number on its first page.",
+            "By tying the approved CPQ quote to the customer's email address with a one-time password and rejecting any signature sent from a device that was not used before.",
+            "By sending the approved CPQ quote to legal for a manual comparison with the signed copy and rejecting any document that legal finds different after the customer has signed."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10151,10 +10151,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is SHA-256 cryptographic hash chaining implemented in enterprise Quote-to-Cash audit ledgers to satisfy Sarbanes-Oxley (SOX) Section 404 compliance?",
           "options": [
-            "Because it forces sales representatives to write their quotes in hexadecimal code.",
-            "Because it automatically reduces the company's electricity consumption by half.",
-            "Because it translates all customer contracts into audio recordings.",
-            "Because it creates a tamper-evident sequence where modifying or deleting any historical record breaks all subsequent cryptographic hashes, mathematically proving ledger integrity to statutory auditors."
+            "Because it forms an encrypted sequence where editing or deleting any past record is blocked by the database, hiding ledger contents from statutory auditors.",
+            "Because it forms a compressed sequence where editing or deleting any past record lowers storage use over time, cutting ledger costs for statutory auditors.",
+            "Because it forms a signed sequence where editing any past record needs a manager's approval, showing statutory auditors that every change was authorised.",
+            "Because it forms a tamper-evident sequence where editing or deleting any past record breaks every later hash, proving ledger integrity to statutory auditors."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10202,10 +10202,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic outcome of achieving ApexCPQ Master Architecture certification for an enterprise revenue operations organization?",
           "options": [
-            "It automatically dissolves all corporate legal departments.",
-            "It eliminates the need for enterprise customers to sign contracts.",
-            "It proves that the organization has unified product catalogs, dynamic pricing, Deal Desk governance, idempotent ERP billing, and ASC 606 revenue waterfalls into an audit-proof, predictable commercial revenue engine.",
-            "It requires all sales transactions to be settled in bearer bonds."
+            "It shows the organisation has replaced product catalogues, dynamic pricing, and Deal Desk governance with a single manual process and ASC 606 spreadsheets maintained by the finance team.",
+            "It shows the organisation has unified lead scoring, territory design, cadence automation, quota planning, and commission payouts into one predictable sales performance and enablement engine.",
+            "It shows the organisation has unified product catalogues, dynamic pricing, Deal Desk governance, idempotent ERP billing, and ASC 606 revenue waterfalls into one audit-proof, predictable revenue engine.",
+            "It shows the organisation has certified its CPQ vendor, ERP supplier, and e-signature provider against SOC 2 standards and ASC 606 requirements, passing a third-party security audit."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10278,10 +10278,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise Customer Health Scoring engine rely on real-time leading telemetry indicators rather than customer renewal conversations?",
           "options": [
-            "Leading telemetry indicators require zero computational resources to ingest, whereas renewal conversations require expensive natural language processing models.",
-            "Leading telemetry indicators identify disengagement weeks before renewal discussions begin, whereas renewal conversations are lagging indicators where churn decisions have already been finalized.",
-            "Renewal conversations cannot be stored inside customer relationship management databases due to international privacy regulations.",
-            "Sales compensation plans forbid customer success managers from communicating with customers during contract renewal windows."
+            "Leading telemetry indicators show disengagement only after renewal talks begin, while renewal conversations are early indicators where the churn decision is still open.",
+            "Leading telemetry indicators show disengagement weeks before renewal talks begin, while renewal conversations are lagging indicators where the churn decision is already final.",
+            "Leading telemetry indicators show disengagement weeks before renewal talks begin, while renewal conversations are more accurate because customers state their intent openly.",
+            "Leading telemetry indicators show billing problems weeks before renewal talks begin, while renewal conversations are lagging indicators about feature requests and support."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10478,10 +10478,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexCustomerHealthEngine implementation, what causes Enterprise Gamma to be classified as AT_RISK despite having 100% on-time billing and active executive sponsors?",
           "options": [
-            "The HMAC signature validation failed during webhook transmission, causing the engine to reject the account telemetry payload.",
-            "The product utilization score decayed to 0.11 (near zero) after 45 days of inactivity, tripping the non-compensatory circuit breaker floor of 20.0 and capping the final score at 42.0.",
-            "Enterprise Gamma's contract reached its statutory renewal date, triggering an automatic downgrade to the Watchlist tier.",
-            "The customer success manager manually flagged the account as at-risk due to an unresolved executive support escalation."
+            "Product utilisation rose to 0.91 after 45 days of heavy use, tripping the compensatory circuit breaker ceiling of 80.0 and capping the final score at 92.0.",
+            "Product utilisation decayed to 0.11 after 45 days of inactivity, tripping the non-compensatory circuit breaker floor of 20.0 and capping the final score at 42.0.",
+            "Executive sponsor engagement decayed to 0.11 after 45 days without meetings, tripping the compensatory floor of 20.0 and capping the final score at 62.0.",
+            "Billing timeliness decayed to 0.11 after 45 days of late payments, tripping the non-compensatory circuit breaker floor of 40.0 and capping the final score at 42.0."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10546,10 +10546,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a predictive churn alert delivered 15 days before an enterprise contract expiration functionally ineffective?",
           "options": [
-            "Enterprise renewal notice windows require 60 to 90 days advance written notice, and executive alignment or procurement remediation requires months of operational runway.",
-            "Credit card processing networks freeze all subscription transactions fifteen days prior to contract expiration.",
-            "Salesforce CRM automatically locks all customer opportunity records into read-only mode during the final thirty days of a contract.",
-            "Enterprise software licenses cannot be legally extended once the final month of the subscription term begins."
+            "Enterprise renewal notice windows need 60 to 90 days of written notice, and fixing executive alignment or procurement issues takes months of runway.",
+            "Enterprise renewal notice windows need 5 to 10 days of written notice, and fixing executive alignment or procurement issues takes only a few days of runway.",
+            "Enterprise auto-renewal clauses lock in the contract 15 days before expiry, and fixing pricing or billing disputes takes only a few weeks of runway.",
+            "Enterprise renewal notice windows need 60 to 90 days of written notice, and alerts from predictive models are reviewed only once every quarter by managers."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10588,10 +10588,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an Executive Champion Departure Signal (CDS) considered the single strongest leading predictor of enterprise voluntary churn?",
           "options": [
-            "Corporate security regulations require all software passwords to be reset whenever a C-level executive leaves the company.",
-            "The departing executive automatically revokes the company's software licenses upon termination of employment.",
-            "SaaS contracts legally terminate automatically upon the resignation or termination of the signing executive sponsor.",
-            "An incoming executive invariably re-evaluates departmental software budgets, lacks emotional investment in past purchases, and frequently brings preferred vendor stacks."
+            "A new executive almost always keeps departmental software budgets unchanged, has strong attachment to earlier purchases, and often renews the existing vendor stacks.",
+            "A departing executive almost always cancels departmental software budgets before leaving, has strong dislike of earlier purchases, and often blocks the existing vendor stacks.",
+            "A new executive almost always re-checks departmental software budgets, has full knowledge of earlier ROI promises, and often accepts the existing vendor stacks.",
+            "A new executive almost always re-checks departmental software budgets, has no emotional investment in earlier purchases, and often brings preferred vendor stacks."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10630,10 +10630,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Cox Proportional Hazards model, what role does the partial hazard multiplier exp(beta * X) play in relation to the baseline survival function S_0(t)?",
           "options": [
-            "It converts annual contract recurring revenue into monthly amortized general ledger journal entries.",
-            "It calculates the exact statistical p-value of the underlying logistic regression coefficient weights.",
-            "It scales the baseline survival probability exponentially: S(t | X) = [S_0(t)]^exp(z), causing accounts with positive risk scores to decay significantly faster than baseline.",
-            "It linearly subtracts percentage points from the monthly revenue billing total."
+            "It adds to baseline survival linearly: S(t | X) = S_0(t) + exp(z), so accounts with positive risk scores decay much more slowly than the baseline.",
+            "It divides baseline survival by the risk score: S(t | X) = S_0(t) / exp(z), so accounts with positive risk scores hold at the same level as the baseline.",
+            "It scales baseline survival exponentially: S(t | X) = [S_0(t)]^exp(z), so accounts with positive risk scores decay much faster than the baseline.",
+            "It scales baseline hazard exponentially: h(t | X) = [h_0(t)]^exp(z), so accounts with negative risk scores decay much faster than the baseline."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10673,10 +10673,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational effect of the Temporal Alert Multiplier in the CalibratedChurnAlertEngine?",
           "options": [
-            "It reduces the customer's annual subscription price by 25% without requiring Deal Desk managerial approval.",
-            "It elevates an account's alert severity (e.g. Medium to High, or High to Critical) if the predicted churn probability coincides with the 90-day contract renewal notice window.",
-            "It automatically charges an expedited support fee to the customer's credit card upon detecting risk.",
-            "It disconnects user API access until the customer executive schedules a formal quarterly business review."
+            "It lowers an account's alert severity (e.g. High to Medium, or Critical to High) when predicted churn probability falls inside the 90-day renewal notice window.",
+            "It raises an account's alert severity (e.g. Medium to High, or High to Critical) when predicted churn probability falls inside the 90-day renewal notice window.",
+            "It raises an account's alert severity (e.g. Medium to High, or High to Critical) when predicted churn probability stays unchanged over the last 90 days.",
+            "It raises an account's renewal price (e.g. by 5% to 10%) when predicted churn probability falls inside the 90-day renewal notice window for the account."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10717,10 +10717,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexPredictiveChurnEngine simulation, why is Account Gamma classified as CRITICAL (SEV_1_EMERGENCY) with an expected ARR loss of over $300,000?",
           "options": [
-            "It exhibits an 80%+ churn probability driven by champion departure and low utilization while situated directly inside the critical 90-day contract renewal window.",
-            "Its contract reached past-due status, triggering automatic account termination under standard terms of service.",
-            "The customer success team failed to log quarterly business review notes in the CRM database.",
-            "The customer submitted a formal written cancellation letter to the corporate legal department."
+            "It has a churn probability above 80%, driven by champion departure and low utilisation, and sits inside the critical 90-day renewal window.",
+            "It has a churn probability below 20%, driven by strong utilisation and executive sponsorship, and sits outside the critical 90-day renewal window.",
+            "It has a churn probability above 80%, driven by late invoices and billing disputes, and sits well after the critical 90-day renewal window.",
+            "It has a churn probability near 50%, driven by competitor pricing and seat reductions, and sits inside the critical 30-day onboarding window."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10786,10 +10786,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why can Gross Revenue Retention (GRR) never mathematically exceed 100%, whereas Net Revenue Retention (NRR) frequently surpasses 100% in elite software companies?",
           "options": [
-            "SaaS contracts legally limit renewal pricing increases to zero percent unless approved by antitrust regulators.",
-            "International accounting regulations legally prohibit companies from reporting GRR figures higher than one hundred percent.",
-            "GRR includes new customer logo acquisition, whereas NRR measures only existing subscription renewals.",
-            "GRR strictly measures revenue retained from the existing baseline without expansion, whereas NRR includes Expansion ARR from seat additions and cross-sells."
+            "GRR measures revenue kept from the baseline plus expansion from seat additions and cross-sells, while NRR counts only retained revenue with no expansion.",
+            "GRR measures revenue from new customers added after the baseline, while NRR adds Expansion ARR from existing customers' seat additions and cross-sells.",
+            "GRR measures only revenue lost to churn from the baseline, while NRR adds Expansion ARR from price increases and contract renewals at higher rates.",
+            "GRR measures only revenue kept from the existing baseline with no expansion, while NRR adds Expansion ARR from seat additions and cross-sells."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10872,10 +10872,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary rationale for enforcing the Customer Sentiment Exception in the ContractUpliftEngine?",
           "options": [
-            "Credit card payment processors reject automated recurring charges that exceed the previous year's billing amount by more than three percent.",
-            "Executing an automated 5-7% contractual price increase on an account currently in the At-Risk tier with unresolved P1 bugs provokes executive outrage and triggers immediate churn.",
-            "Price escalations cannot be calculated by accounting software if an account's customer health score drops below fifty.",
-            "Antitrust laws make it illegal to increase software prices for customers who express dissatisfaction in support tickets."
+            "An automated 5-7% price increase on a Healthy account with no open bugs delights executives and triggers early renewal of contracts.",
+            "An automated 5-7% price increase on an At-Risk account with unresolved P1 bugs enrages executives and triggers immediate churn.",
+            "An automated 5-7% price decrease on an At-Risk account with unresolved P1 bugs satisfies executives and triggers renewal at lower rates.",
+            "An automated 5-7% price increase on an At-Risk account with unresolved P1 bugs is blocked by payment processors and triggers failed invoices."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11029,10 +11029,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Time-to-First-Value (TTFV) considered a more critical leading retention indicator than full Statement of Work (SOW) completion?",
           "options": [
-            "Enterprise software warranties expire if full SOW implementation exceeds thirty calendar days from contract execution.",
-            "Solution architects receive 100% of their variable commission upon TTFV completion regardless of remaining SOW deliverables.",
-            "Achieving early core workflow value validates the purchase decision for executive sponsors and builds momentum, whereas lengthy full implementations risk executive disengagement.",
-            "SaaS accounting standards forbid billing customers until TTFV has been formally logged in the CRM database."
+            "Reaching full implementation scope confirms the contract for procurement teams and builds revenue, while early partial deployments risk delays in billing.",
+            "Reaching early core workflow value confirms the purchase for end users and builds training progress, while long full implementations risk user disengagement.",
+            "Reaching early core workflow value confirms the purchase for executive sponsors and builds momentum, while long full implementations risk executive disengagement.",
+            "Reaching early license activation confirms the purchase for finance teams and builds revenue recognition, while long full implementations risk delayed invoices."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11073,10 +11073,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of enforcing Non-Bypassable Gate Transitions in the Customer Journey State Machine?",
           "options": [
-            "To ensure that only certified Salesforce administrators can modify customer lifecycle status in the CRM interface.",
-            "To prevent accounts with incomplete onboarding or low user adoption from prematurely advancing into Value Realization or expansion stages without verified readiness.",
-            "To automatically generate invoice PDF files whenever an account transitions into the Renewal Pipeline stage.",
-            "To comply with international data localization laws by restricting customer state transitions to local regional servers."
+            "To stop accounts with complete onboarding and high adoption from advancing into Value Realisation or expansion stages without a manager sign-off.",
+            "To stop accounts with incomplete onboarding or low adoption from advancing into Value Realisation or expansion stages without verified readiness.",
+            "To stop CSMs with large portfolios or low availability from moving accounts into Onboarding or Adoption stages without a full capacity review.",
+            "To stop accounts with incomplete billing details or missing contacts from advancing into Onboarding or Adoption stages without a verified contract."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11159,10 +11159,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must automated customer success playbooks assign tasks to specific corporate roles (e.g. Solutions Architect vs VP of CS) with strict SLA hours?",
           "options": [
-            "Corporate labor laws require all customer intervention tasks to be completed within four hours of generation.",
-            "Sales compensation plans penalize account executives if technical support engineers communicate directly with executive sponsors.",
-            "Customer relationship management software crashes if tasks are assigned to shared team queues without specific user role IDs.",
-            "Different operational issues require specialized domain expertise, and strict SLAs prevent response delays that allow customer disengagement to become irreversible."
+            "Different issues need the same generalist support, and loose SLAs prevent rigid processes that let customer teams become overly dependent on vendors.",
+            "Different issues need executive attention first, and strict SLAs prevent task backlogs that let CSM workloads become unmanageable in a quarter.",
+            "Different roles need separate billing codes, and strict SLAs prevent timesheet disputes that let internal costs become unclear to finance.",
+            "Different issues need specialised domain expertise, and strict SLAs prevent response delays that let customer disengagement become irreversible."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11205,10 +11205,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexCustomerJourneyEngine simulation, why is Account Alpha Fintech permitted to transition into VALUE_REALIZATION while Account Beta is rejected?",
           "options": [
-            "Account Alpha's Chief Executive Officer personally signed the master services agreement during initial procurement.",
-            "Account Alpha has a higher contract ARR value than Account Beta, granting it priority lifecycle status.",
-            "Account Alpha verified 100% onboarding completion, health score >= 75.0, and 88% license utilization, whereas Account Beta has a stalled onboarding milestone.",
-            "Account Beta operates in the healthcare sector, which requires specialized regulatory certification before entering Adoption."
+            "Alpha verified 60% onboarding completion, a health score of at least 50.0, and 88% licence utilisation, while Beta has a completed onboarding milestone.",
+            "Alpha signed a multi-year renewal, a health score of at least 75.0, and 88% licence utilisation, while Beta has a pending renewal discussion.",
+            "Alpha verified 100% onboarding completion, a health score of at least 75.0, and 88% licence utilisation, while Beta has a stalled onboarding milestone.",
+            "Alpha verified 100% onboarding completion, a health score of at least 75.0, and 18% licence utilisation, while Beta has a stalled billing milestone."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11286,10 +11286,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of unifying customer health scoring, churn hazard modeling, and NRR whitespace into the ApexCS platform?",
           "options": [
-            "To automatically increase software subscription prices by twenty percent every fiscal quarter without customer consent.",
-            "To replace fragmented spreadsheets and subjective CSM intuition with an integrated, mathematically verifiable operating system that defends existing ARR and drives expansion.",
-            "To completely automate customer success operations so that enterprise software companies can eliminate human customer success managers.",
-            "To bypass customer relationship management software and store all customer records directly on decentralized public blockchains."
+            "To replace dedicated CSMs and account managers with an automated billing system that protects existing ARR and removes the need for renewal conversations.",
+            "To replace fragmented spreadsheets and subjective CSM judgement with an integrated, verifiable operating system that protects existing ARR and drives expansion.",
+            "To replace fragmented CRM records and subjective sales forecasts with an integrated pipeline system that protects new-logo ARR and drives acquisition.",
+            "To replace separate customer dashboards and manual survey reports with an integrated feedback tool that protects brand reputation and drives referrals."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11347,10 +11347,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the SubsystemCustomerHealth prevent the 'Compensatory Masking Vulnerability' when an account pays invoices on time but completely abandons product usage?",
           "options": [
-            "The database administrator manually edits the customer's financial health score to zero.",
-            "The billing system rejects the customer's invoice payments until product login volume increases.",
-            "The non-compensatory circuit breaker detects product utilization < 20.0 and immediately caps the composite health score at a maximum of 42.0 (At-Risk tier).",
-            "The system automatically notifies the bank to freeze the customer's corporate credit card on file."
+            "The compensatory weighting formula spots product utilisation below 20.0 and lowers the composite health score by 5.0 points (Healthy tier).",
+            "The non-compensatory circuit breaker spots late invoices over 30 days and caps the composite health score at a maximum of 62.0 (Watch tier).",
+            "The non-compensatory circuit breaker spots product utilisation below 20.0 and caps the composite health score at a maximum of 42.0 (At-Risk tier).",
+            "The non-compensatory circuit breaker spots product utilisation below 20.0 and sets the composite health score to zero (Churned tier)."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11407,10 +11407,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do dispatched playbooks in SubsystemJourneyAndPlaybooks generate deterministic idempotency keys and HMAC-SHA256 signatures?",
           "options": [
-            "To allow customers to unsubscribe from emergency customer success intervention emails.",
-            "To automatically translate task instructions into local foreign languages using neural machine translation.",
-            "To format JSON payloads for display on mobile smartwatch notification interfaces.",
-            "To prevent duplicate task generation in downstream CRM systems upon network retries and cryptographically verify payload integrity."
+            "To stop duplicate email delivery to customers on network retries and to encrypt the payload during transit between systems.",
+            "To stop unauthorised task creation in downstream CRM systems by outsiders and to track which rep was assigned the task.",
+            "To stop delayed task creation in downstream CRM systems under heavy load and to compress the payload for faster delivery.",
+            "To stop duplicate task creation in downstream CRM systems on network retries and to verify payload integrity cryptographically."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11533,10 +11533,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexCSSovereignPlatform simulation, why is Account Gamma Retail assigned a CRITICAL risk tier with the sponsor inactive and only 49 days left to renewal?",
           "options": [
-            "The customer's credit card was declined three consecutive times during monthly billing runs.",
+            "Its modelled churn probability is about 60.0% (below the 75% CRITICAL cut-off), and it sits outside the 90-day renewal window with 149 days left.",
             "Its modelled churn probability is about 99.8% (above the 75% CRITICAL cut-off), and it sits inside the 90-day renewal window with 49 days left.",
-            "The account filed for Chapter 11 bankruptcy protection, terminating all active software agreements.",
-            "The customer success team failed to log quarterly business review notes in the CRM database."
+            "Its modelled churn probability is about 99.8% (above the 75% CRITICAL cut-off), and it sits outside the 90-day renewal window with 149 days left.",
+            "Its modelled churn probability is about 40.0% (below the 75% CRITICAL cut-off), and it sits inside the 90-day renewal window with 49 days left."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11617,10 +11617,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do high-volume enterprise architectures prefer event-driven streaming brokers over synchronous Point-to-Point REST integrations?",
           "options": [
-            "To decouple upstream CRM operations from downstream ERP systems, eliminating cascading timeout failures and quadratic integration complexity.",
-            "To avoid using internet protocol networks and transmit data exclusively over private satellite links.",
-            "To eliminate the need for enterprise resource planning software by storing all financial ledgers in the CRM.",
-            "To prevent sales representatives from entering contract data during standard business hours."
+            "To decouple upstream CRM operations from downstream ERP systems, removing cascading timeout failures and quadratic integration complexity.",
+            "To couple upstream CRM operations with downstream ERP systems, adding guaranteed response times and linear integration complexity.",
+            "To replace upstream CRM databases with downstream ERP databases, removing duplicate customer records and quadratic licence costs.",
+            "To encrypt upstream CRM requests before reaching downstream ERP systems, removing man-in-the-middle attacks and quadratic key management."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11675,10 +11675,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise bi-directional sync engine prevent 'The Infinite Echo Loop' (ping-pong mutations between CRM and ERP)?",
           "options": [
-            "By deleting and recreating the entire customer database every fifteen minutes.",
-            "By restricting database record updates to a single authorized user per global region.",
-            "By permanently disabling all webhook listeners in the destination ERP database.",
-            "By tagging updates with integration provenance metadata and suppressing outbound webhooks when the modifier is the integration actor itself."
+            "By locking records in both systems for 15 minutes after every update and queuing outbound webhooks until the lock is released.",
+            "By comparing timestamps in both systems on each update and keeping the newer value while discarding the older webhook payload.",
+            "By sending each update to a manager for approval before it syncs and suppressing outbound webhooks when a rep edits the record.",
+            "By tagging updates with integration provenance metadata and suppressing outbound webhooks when the modifier is the integration itself."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11734,10 +11734,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a concurrent collision where Sales changes the customer address in CRM while Finance updates payment terms in ERP, why is a Field-Level Authority Matrix superior to record-level Last-Write-Wins (LWW)?",
           "options": [
-            "It automatically charges a five hundred dollar administrative penalty fee to the customer's account.",
-            "It prompts both users to enter a live video conference to negotiate which record should be kept.",
-            "It decomposes records into discrete fields, preserving Sales's commercial address change while enforcing Finance's authoritative financial terms without data destruction.",
-            "It rejects both transactions and resets the customer record to its initial state from five years ago."
+            "It treats records as whole objects, keeping Finance's whole record update while discarding Sales's commercial address change to protect data integrity.",
+            "It splits records into separate fields, keeping whichever field was changed most recently while ignoring which team owns the data for that field.",
+            "It splits records into separate fields, keeping Sales's commercial address change while enforcing Finance's authoritative payment terms without data loss.",
+            "It splits records into separate tables, keeping Sales's address change in CRM only while blocking Finance's payment terms from syncing to ERP."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11797,10 +11797,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of an encrypted Dead-Letter Queue (DLQ) in an enterprise RevOps webhook pipeline?",
           "options": [
-            "To throttle network bandwidth across the internal corporate office network.",
-            "To durably capture unacknowledged payloads that have exhausted all retry attempts, preventing data loss and enabling operator investigation and replay.",
-            "To permanently erase corrupted customer records from all secondary database backups.",
-            "To generate automated promotional discount emails to affected prospective customers."
+            "To hold acknowledged payloads that have completed all retry attempts, preventing duplicate delivery and letting operators archive them for audit.",
+            "To hold unacknowledged payloads that have used up all retry attempts, preventing data loss and letting operators investigate and replay them.",
+            "To hold unacknowledged payloads that have not yet been tried, preventing overload and letting operators schedule delivery for off-peak hours.",
+            "To hold encrypted payloads that have failed signature checks, preventing forged requests and letting operators ban the sender addresses."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11855,10 +11855,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the SovereignRevOpsIntegrationBus simulation, what occurred when the downstream invoice synchronization webhook encountered persistent 503 gateway timeouts?",
           "options": [
-            "The dispatcher executed retry attempts and safely committed the unacknowledged transaction into the Dead-Letter Queue for audit replay.",
-            "The system crashed and deleted the master billing ledger from disk.",
-            "The integration bus automatically transferred seventy-five thousand dollars out of the company's reserve bank account.",
-            "The system reverted the customer's contract status from Active back to Lead."
+            "The dispatcher ran its retry attempts, then safely committed the unacknowledged transaction to the Dead-Letter Queue for audit replay.",
+            "The dispatcher ran its retry attempts, then silently dropped the unacknowledged transaction to keep the pipeline free of failed events.",
+            "The dispatcher skipped its retry attempts, then forwarded the unacknowledged transaction to the CRM as a completed invoice record.",
+            "The dispatcher ran its retry attempts, then locked the master billing ledger until an engineer manually re-entered the transaction."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11940,10 +11940,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of Reverse ETL in modern enterprise Revenue Operations?",
           "options": [
-            "To automatically delete historical sales order data from enterprise accounting ledgers.",
-            "To encrypt all executive dashboards so that only external auditors can read customer analytics.",
-            "To permanently replace the cloud data warehouse with relational spreadsheet software.",
-            "To extract modeled analytical intelligence from the central data warehouse and sync it directly into frontline operational tools like Salesforce and HubSpot."
+            "To load raw operational records from frontline tools like Salesforce and HubSpot into the central data warehouse for storage and analysis.",
+            "To extract raw transaction history from the central data warehouse and archive it into cold storage tools like tape and offline backup.",
+            "To extract modelled analytical intelligence from the frontline tools like Salesforce and HubSpot and sync it into executive dashboards only.",
+            "To extract modelled analytical intelligence from the central data warehouse and sync it into frontline operational tools like Salesforce and HubSpot."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11998,10 +11998,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do Reverse ETL feature pipelines apply logarithmic compression and percentile binning to raw telemetry counts (such as API queries)?",
           "options": [
-            "To normalize power-law distributions and prevent extreme high-volume accounts from distorting qualification scores.",
-            "To convert decimal numbers into hexadecimal characters for storage on magnetic tape.",
-            "To comply with international postal packaging regulations.",
-            "To allow sales representatives to manually edit customer query logs."
+            "To normalise power-law distributions and stop extreme high-volume accounts from distorting qualification scores.",
+            "To amplify power-law distributions and let extreme high-volume accounts dominate the qualification scores.",
+            "To compress storage of large counters and stop extreme high-volume tables from slowing the warehouse queries.",
+            "To anonymise customer usage counts and stop extreme high-volume accounts from being identified in the scores."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12056,10 +12056,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does row-level SHA-256 checksumming eliminate 'Phantom Sync Runs' in enterprise Reverse ETL pipelines?",
           "options": [
-            "By deleting all existing records in Salesforce before loading new data.",
-            "By comparing cryptographic digests of tracked field values, skipping records whose data has not mutated even if database timestamps were updated.",
-            "By shutting down the data warehouse whenever customer records are modified.",
-            "By requiring sales managers to manually sign approval waivers for every updated row."
+            "By comparing last-modified timestamps of every record and skipping records only when the timestamps are older than the last sync run.",
+            "By comparing cryptographic digests of tracked field values and skipping records with unchanged data even if their timestamps were updated.",
+            "By comparing record counts in both systems and skipping the sync run entirely when the totals match, even if field values changed.",
+            "By comparing cryptographic digests of the full record including timestamps and syncing records whenever any metadata value is updated."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12114,10 +12114,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise Bulk API integration handle partial batch failures where 20 out of 5,000 uploaded records fail validation rules?",
           "options": [
-            "It overrides the database validation rules and forces corrupted data into the system.",
-            "It rolls back all 5,000 records and terminates the entire corporate cloud infrastructure.",
-            "It isolates the 20 failed records into an exception manifest while successfully committing the 4,980 valid records to the destination database and state store.",
-            "It automatically charges a fine to the customer whose record failed validation."
+            "It rolls back the whole batch of 5,000 records when the 20 failures appear, then retries everything until all records pass validation.",
+            "It commits all 5,000 records including the 20 failed ones, then flags the invalid values for review by the data steward next week.",
+            "It puts the 20 failed records into an exception manifest while committing the 4,980 valid records to the destination database and state store.",
+            "It commits the 20 failed records after correcting them automatically, then holds the 4,980 valid records until the next scheduled batch."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12177,10 +12177,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Cycle 2 of the SovereignReverseEtlEngine simulation, why were Account Alpha and Account Delta skipped during bulk synchronization?",
           "options": [
-            "The integration engine ran out of memory and dropped their records.",
-            "The accounts were placed under legal hold by corporate compliance.",
-            "Their software subscriptions were cancelled by the billing department.",
-            "Their computed SHA-256 attribute checksums were identical to the persisted state store, proving zero data mutation occurred."
+            "Their SHA-256 attribute checksums differed from the persisted state store, showing that data had changed.",
+            "Their last-modified timestamps were older than the previous sync run, showing that no sync was needed.",
+            "Their API quota allocation was exhausted during the earlier cycle, showing that records had to be deferred.",
+            "Their SHA-256 attribute checksums matched the persisted state store, showing that no data had changed."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12249,10 +12249,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary security advantage of using composable Permission Sets over permanently elevated User Profiles in enterprise CRM architectures?",
           "options": [
-            "Permission sets eliminate the need for enterprise identity providers and passwords.",
-            "Permission sets automatically increase sales commission payouts by twenty percent.",
-            "Permission sets grant granular, modular, and temporary privileges without permanently expanding the user's baseline profile, honoring the Principle of Least Privilege.",
-            "Permission sets permanently disable security auditing logs in the CRM."
+            "Permission sets give broad, fixed, permanent privileges by widening a user's baseline profile, following the Principle of Maximum Convenience for the users.",
+            "Permission sets give granular, modular privileges by replacing the user's baseline profile entirely, following the Principle of Separation of Duties for the users.",
+            "Permission sets give granular, modular, temporary privileges without permanently widening a user's baseline profile, following the Principle of Least Privilege.",
+            "Permission sets give granular, modular privileges without audit logs of the changes made, following the Principle of Least Privilege for the users."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12295,10 +12295,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does managerial rollup inheritance operate in a Hierarchical Territory Management (HTM) tree?",
           "options": [
-            "Account access is randomized among all sales representatives every Monday morning.",
-            "A sales manager or VP positioned higher in the territory hierarchy automatically inherits visibility and access over all child territory nodes in their subtree.",
-            "Subordinate sales representatives automatically inherit the salary and commission rates of their regional VP.",
-            "Territory assignments expire every twenty-four hours, requiring manual reassignment."
+            "A sales representative at the bottom of the territory hierarchy automatically inherits visibility and access over every parent territory node above them.",
+            "A sales manager or VP higher in the territory hierarchy automatically inherits visibility and access over every child territory node beneath them.",
+            "A sales manager or VP higher in the territory hierarchy gets visibility over child territory nodes only after each node owner grants explicit sharing access.",
+            "A sales manager or VP higher in the territory hierarchy inherits visibility over sibling territory nodes at the same level but not over their own subtree."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12337,10 +12337,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Kernel-Level Field-Level Security (FLS) superior to hiding sensitive fields via user interface page layouts?",
           "options": [
-            "Because kernel FLS strips unauthorized attributes at the database query layer, preventing data leakage via REST APIs, GraphQL, and developer consoles.",
-            "Because page layout rules permanently delete the field data from the underlying database storage.",
-            "Because user interface layouts require manual approval from the Chief Executive Officer.",
-            "Because kernel FLS reduces network latency by ninety-five percent on mobile devices."
+            "Because kernel FLS removes unauthorised attributes at the database query layer, stopping leaks through REST APIs, GraphQL, and developer consoles.",
+            "Because kernel FLS hides unauthorised attributes in the page layout layer, stopping leaks through the standard user interface views and reports.",
+            "Because kernel FLS encrypts unauthorised attributes at the database storage layer, stopping leaks through disk theft and backup file copies.",
+            "Because kernel FLS deletes unauthorised attributes from the database tables, stopping leaks through REST APIs, GraphQL, and developer consoles."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12379,10 +12379,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an Attribute-Based Access Control (ABAC) architecture, what is the role of the Policy Enforcement Point (PEP)?",
           "options": [
-            "To compress database backups into encrypted zip archives.",
-            "To monitor network cables for physical wiretap intrusions.",
-            "To generate monthly sales invoices and mail physical checks to vendors.",
-            "To intercept incoming user actions, assemble the multidimensional context tuple, query the Policy Decision Point, and enforce the authorization decision."
+            "To store the organisation's access policies, evaluate the multidimensional context tuple, return a decision to the caller, and log the policy changes.",
+            "To manage user identities and passwords, assemble the multidimensional context tuple, query the identity provider, and issue session tokens to users.",
+            "To intercept incoming user actions, discard the multidimensional context tuple, query the user's role only, and enforce static role-based permissions.",
+            "To intercept incoming user actions, build the multidimensional context tuple, query the Policy Decision Point, and enforce the authorisation decision."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12421,10 +12421,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the SovereignAccessGovernanceEngine simulation, why was Account Executive Bob denied permission to execute a bulk export of customer records?",
           "options": [
-            "The customer's bank account was closed by financial regulators.",
-            "The territory hierarchy tree crashed during recursive traversal.",
-            "The ABAC policy engine detected that the request originated from an unmanaged, non-corporate mobile device, triggering an explicit policy denial.",
-            "Bob failed to pay his monthly CRM licensing fee."
+            "The ABAC policy engine found that the request came from a managed corporate laptop on the office network, which triggered an explicit policy approval.",
+            "The role-based profile assigned to Bob lacked the Export Reports permission in the CRM, which triggered a standard permission error at the user level.",
+            "The ABAC policy engine found that the request came from an unmanaged, non-corporate mobile device, which triggered an explicit policy denial.",
+            "The ABAC policy engine found that the request came after 6 PM local time from a managed laptop, which triggered a mandatory manager review step."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12506,10 +12506,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does SHA-256 linear hash chaining guarantee non-repudiation and tamper detection in an enterprise audit ledger?",
           "options": [
-            "It prevents users from logging into the CRM after five o'clock in the evening.",
-            "Each audit block incorporates the cryptographic hash of the preceding block into its own digest, ensuring that modifying any past record breaks the mathematical chain.",
-            "It converts relational database tables into read-only PDF documents.",
-            "It automatically emails physical paper copies of every transaction to corporate headquarters."
+            "Each audit block includes a timestamp of the block before it in its own entry, so changing any past record is recorded as a new event.",
+            "Each audit block includes the hash of the block before it in its own digest, so changing any past record breaks the mathematical chain.",
+            "Each audit block is encrypted with the key of the user who created it, so changing any past record needs that user's private key.",
+            "Each audit block is copied to a second server at the end of the day, so changing any past record is overwritten by the backup copy."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12568,10 +12568,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary advantage of capturing database mutations via Write-Ahead Log (WAL) tailing compared to application-level triggers?",
           "options": [
-            "It eliminates the need for database storage disks by streaming records directly to satellite networks.",
-            "It automatically translates SQL queries into natural language audio files.",
-            "It captures all database mutations out-of-band—including bulk SQL scripts and direct database updates—with near-zero query overhead on primary OLTP databases.",
-            "It increases database transaction processing fees by ten percent."
+            "It captures only mutations made by the application layer, excluding bulk SQL scripts and direct updates, with some query overhead on the primary database.",
+            "It captures all database mutations in-band by blocking each write, including bulk SQL scripts and direct updates, with high query overhead on the primary database.",
+            "It captures all database mutations out-of-band, including bulk SQL scripts and direct updates, with almost no query overhead on primary OLTP databases.",
+            "It captures database mutations by polling tables every hour for changes, including bulk SQL scripts and direct updates, with moderate query overhead on replicas."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12631,10 +12631,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Crypto-Shredding' architecture reconcile GDPR Article 17 (Right to Erasure) with immutable, unalterable audit ledgers?",
           "options": [
-            "By shutting down the corporate database for thirty days following every erasure request.",
-            "By manually editing the historical blockchain audit ledger to delete the customer's name.",
-            "By paying a legal fine to European regulators to exempt the company from compliance.",
-            "By encrypting customer PII with dedicated per-entity keys and permanently destroying the key upon erasure, rendering data unrecoverable without altering historical audit blocks."
+            "By encrypting customer PII with a single shared master key and rotating the key on erasure, making data recoverable by rewriting the historical audit blocks.",
+            "By deleting customer PII from the audit blocks on erasure and recalculating every later hash, making data unrecoverable but rebuilding the historical audit chain.",
+            "By moving customer PII to an offline archive on erasure and keeping the key, making data unavailable to users without altering historical audit blocks.",
+            "By encrypting customer PII with dedicated per-entity keys and destroying the key on erasure, making data unrecoverable without altering historical audit blocks."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12689,10 +12689,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the function of a 'Honeytoken' record in an enterprise RevOps security architecture?",
           "options": [
-            "It is a synthetic, decoy customer record that serves no legitimate commercial purpose; any query or export attempt instantly triggers a Critical Sev-1 security alert.",
-            "It is an automated promotional gift card sent to prospective sales leads.",
-            "It is a temporary discount code applied to high-volume software transactions.",
-            "It is an internal currency used by sales representatives to buy office supplies."
+            "A synthetic decoy customer record with no legitimate commercial purpose; any query or export attempt instantly triggers a Critical Sev-1 security alert.",
+            "A real high-value customer record with extra encryption applied; any query or export attempt is logged for review during the next security audit.",
+            "A synthetic test customer record used for training new reps; any query or export attempt is permitted and counted in the usage reports each week.",
+            "A synthetic decoy customer record that marks expired accounts; any query or export attempt is blocked silently and reported in the monthly audit summary."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12752,10 +12752,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the SovereignComplianceAuditEngine simulation, what happened to the historical audit chain after customer CUST-EU-900 was crypto-shredded?",
           "options": [
-            "The audit ledger crashed and deleted all customer contracts.",
-            "The cryptographic hash chain remained 100% mathematically valid, proving that privacy compliance was achieved without corrupting historical audit integrity.",
-            "The database administrator was locked out of the system.",
-            "The previous ten thousand transactions were invalidated."
+            "The cryptographic hash chain became invalid from that block onward, proving that privacy compliance required rewriting the historical audit trail.",
+            "The cryptographic hash chain stayed 100% valid, proving privacy compliance was achieved without damaging historical audit integrity.",
+            "The cryptographic hash chain stayed 100% valid, proving that the record was deleted from the ledger and all its audit blocks were removed.",
+            "The cryptographic hash chain was rebuilt with new hashes for every block, proving privacy compliance but resetting the historical audit trail."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12833,10 +12833,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of unifying integration fabrics, reverse ETL, access governance, and audit ledgers into the ApexRev platform?",
           "options": [
-            "To replace human sales teams with automated email marketing software.",
-            "To store all corporate financial records directly on decentralized public blockchains.",
-            "To automatically increase software subscription prices by ten percent every quarter without customer consent.",
-            "To eliminate operational data silos, prevent cross-system data divergence, protect confidential revenue assets, and provide an auditable, high-velocity infrastructure for enterprise RevOps."
+            "To keep operational data silos, allow data divergence across systems, share confidential revenue assets, and provide a flexible, low-cost RevOps infrastructure.",
+            "To remove duplicate software licences, prevent price divergence across regions, protect brand assets, and provide a consistent, low-cost marketing infrastructure.",
+            "To remove manual sales roles, prevent forecast divergence across managers, protect headcount budgets, and provide an automated, low-touch selling infrastructure.",
+            "To remove operational data silos, prevent data divergence across systems, protect confidential revenue assets, and provide an auditable, high-velocity RevOps infrastructure."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12892,10 +12892,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the SubsystemSyncAndConflictResolver resolve concurrent multi-system updates where Sales modifies billing address in CRM while Finance enforces payment terms in ERP?",
           "options": [
-            "By applying the Field-Level Domain Authority Matrix: granting CRM ownership over the commercial address while enforcing ERP authority over financial payment terms without data destruction.",
-            "By deleting the customer record from both databases.",
-            "By always keeping whichever system wrote last, overwriting the other system for the whole record.",
-            "By charging an administrative dispute fee to the sales representative's commission account."
+            "By applying the Field-Level Domain Authority Matrix: CRM owns the commercial address while ERP owns financial payment terms, with no data destruction.",
+            "By applying record-level Last-Write-Wins: the newest update overwrites the entire customer record in both systems, with some data destruction.",
+            "By applying a manual review queue: a data steward picks one version of the record for both systems each morning, with delayed data propagation.",
+            "By applying the Field-Level Domain Authority Matrix: ERP owns the commercial address while CRM owns financial payment terms, with no data destruction."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12956,10 +12956,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the SubsystemReverseEtlAndPqa module, how does row-level cryptographic checksumming (SHA-256 fingerprinting) prevent redundant CRM API quota consumption?",
           "options": [
-            "By deleting all existing records in Salesforce before loading new data.",
-            "By computing a hash of tracked attributes and comparing it against the state store, skipping unchanged records with zero API requests.",
-            "By shutting down the Salesforce API during business hours.",
-            "By requiring sales managers to manually approve every updated record."
+            "By hashing the full record including timestamps and comparing it with the state store, resending all records with a few API requests.",
+            "By hashing the tracked attributes and comparing the hash with the state store, skipping unchanged records with no API requests.",
+            "By counting the records in each batch and comparing totals with the CRM, skipping whole batches with a small number of API requests.",
+            "By compressing the payload of each record and sending batches in a single call, reducing the API requests but sending unchanged records."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13020,10 +13020,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the SubsystemAccessAndCompliance module, how does Kernel-Level Field-Level Security (FLS) protect sensitive executive margin targets from unauthorized sales representatives?",
           "options": [
-            "It automatically charges a fine to any sales rep who views the margin column.",
-            "It scrambles the user's computer monitor display using optical filters.",
-            "It strips hidden attributes at the database query layer, ensuring that sensitive fields are completely omitted from API payloads, list views, and reports.",
-            "It displays a warning pop-up box in the web browser asking the sales rep not to read the screen."
+            "It hides sensitive attributes in the page layout, so sensitive fields are omitted from the record detail view but remain in API payloads.",
+            "It encrypts sensitive attributes in the database files, so sensitive fields are unreadable on the disk but remain visible in reports.",
+            "It strips hidden attributes at the database query layer, so sensitive fields are omitted entirely from API payloads, list views, and reports.",
+            "It masks sensitive attributes with asterisks in list views, so sensitive fields are partly hidden but remain in API payloads and exports."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13082,10 +13082,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexRevSovereignEngine simulation, what happened when an insider attempted to execute an unauthorized bulk export while touching a synthetic honeytoken record?",
           "options": [
-            "The system crashed and deleted the master billing ledger from disk.",
-            "The customer was automatically unsubscribed from marketing emails.",
-            "The integration bus transferred seventy-five thousand dollars out of the company's reserve bank account.",
-            "The ABAC Policy Enforcement Point intercepted the request, blocked the export, triggered an immediate security alert, and logged an immutable audit block."
+            "The ABAC Policy Decision Point approved the request, completed the export, raised a low-priority notice, and logged an editable audit entry.",
+            "The role-based profile allowed the request, completed the export, raised no alert, and logged the access in a rolling application log file.",
+            "The ABAC Policy Enforcement Point intercepted the request, completed the export, raised an alert after a delay, and logged a mutable audit entry.",
+            "The ABAC Policy Enforcement Point intercepted the request, blocked the export, raised an immediate security alert, and logged an immutable audit block."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13148,10 +13148,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial driver of vapourware commitments in enterprise B2B sales organizations?",
           "options": [
-            "Quarterly quota pressure diverging from engineering reality, creating moral hazard where reps earn commissions upon signature while delivery lies twelve months in the future.",
-            "A desire by software engineers to experiment with untested database architectures in production banking environments.",
-            "Government regulatory mandates requiring all software companies to include speculative features in standard pricing catalogs.",
-            "Standard open-source licensing agreements that mandate continuous roadmap promises to prospective buyers."
+            "Quarterly quota pressure that diverges from engineering reality, creating moral hazard where reps earn commissions at signature while delivery is twelve months away.",
+            "Annual budget pressure that matches engineering reality, creating shared accountability where reps earn commissions at delivery while signature is twelve months away.",
+            "Customer demand pressure that exceeds product maturity, creating technical debt where engineers earn bonuses at release while support is twelve months behind.",
+            "Competitor pricing pressure that diverges from list prices, creating margin erosion where reps earn commissions at signature while discounts are applied later."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13191,10 +13191,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a Dual Co-Signature Governance model, what condition must be met before an enterprise contract containing unreleased roadmap features can be executed?",
           "options": [
-            "The Account Executive must verbally assure the customer that the engineering team works during weekend hours.",
-            "The software vendor must transfer its core intellectual property source code into an offshore escrow account.",
-            "The customer must pay one hundred percent of the total multi-year contract value upfront in cash.",
-            "Both the commercial Sales leader and the technical Engineering authority must cryptographically sign the proposal following formal feasibility review."
+            "The commercial Sales leader and the Finance controller must both approve the proposal after a formal margin review, with no Engineering sign-off.",
+            "The Engineering authority alone must sign the proposal after a formal feasibility review, with the Sales leader informed afterwards of the commitment.",
+            "The commercial Sales leader and the customer's technical lead must both sign the proposal after a joint workshop, with no internal Engineering review.",
+            "The commercial Sales leader and the technical Engineering authority must both cryptographically sign the proposal after a formal feasibility review."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13229,10 +13229,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are per-diem Liquidated Damages clauses uniquely dangerous to an enterprise software company facing engineering delivery delays?",
           "options": [
-            "They require the software vendor to physically surrender its corporate office real estate to the customer.",
-            "They permanently disqualify the software vendor from selling products to any other enterprise client in the same industry.",
-            "They accumulate automatic financial penalties for every calendar day of delay regardless of whether the buyer suffered actual proven financial harm, rapidly wiping out contract value.",
-            "They force the software vendor's engineering staff to become full-time employees of the customer."
+            "They accrue penalties only for delays where the buyer proves actual financial harm in court, which limits the total payable to a capped contract value.",
+            "They accrue penalties for every business day of delay once the buyer gives notice, which limits the total payable to the fees already received.",
+            "They accrue automatic penalties for every calendar day of delay whether or not the buyer shows actual financial harm, quickly wiping out contract value.",
+            "They accrue automatic penalties for every calendar day of delay but stop after thirty days, which limits the total payable to a small contract share."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13268,10 +13268,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of an automated regex-based contract clause scanner in an enterprise Deal Desk workflow?",
           "options": [
-            "To replace human legal counsel entirely by issuing automated court filings during commercial disputes.",
-            "To parse customer contract redlines in real-time, detecting prohibited clauses such as liquidated damages, uncapped liability super-caps, and unauthorized roadmap warranties.",
-            "To automatically generate invoices and transmit debit requests directly to the customer's corporate bank account.",
-            "To translate English contractual language into legal Latin for submission to international arbitration tribunals."
+            "To rewrite customer contract redlines in real time, replacing prohibited clauses such as liquidated damages with standard clauses approved by the vendor's legal team.",
+            "To parse customer contract redlines in real time, spotting prohibited clauses such as liquidated damages, uncapped liability super-caps, and unauthorised roadmap warranties.",
+            "To score customer contract redlines by deal size in real time, ranking clauses such as liquidated damages by value so that deal desk reviews the largest first.",
+            "To translate customer contract redlines in real time, converting clauses such as liquidated damages into plain language for the sales rep who is handling the deal."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13308,10 +13308,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexVapourware Defense Engine simulation, why was the Apex Global Bank proposal assigned a verdict of 'HARD_VETO_PROHIBITED'?",
           "options": [
-            "Because it combined an unreleased 365-day lead-time architecture commitment with a 90-day delivery deadline and an uncapped $15,000/day liquidated damages penalty.",
-            "Because the customer requested standard SAML authentication that is already supported in the production build.",
-            "Because the Account Executive forgot to include the company's corporate mailing address in the proposal header.",
-            "Because the contract value was less than one million dollars, failing minimum enterprise deal size thresholds."
+            "It combined an unreleased 365-day lead-time commitment with a 90-day delivery deadline and uncapped liquidated damages of $15,000 a day.",
+            "It combined a released feature already in production with a 90-day delivery deadline and capped liquidated damages of $15,000 in total.",
+            "It combined an unreleased 365-day lead-time commitment with a 400-day delivery deadline and no liquidated damages clause in the contract.",
+            "It combined a released feature with a 30-day delivery deadline and uncapped liquidated damages of $150 a day, with an executive co-signature."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13374,10 +13374,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does pegging sales commission credit to nominal Total Contract Value (TCV) rather than Annual Contract Value (ACV) create a severe corporate moral hazard?",
           "options": [
-            "It prohibits marketing departments from running digital advertising campaigns during the fourth quarter.",
-            "It incentivizes sales reps to sell backloaded multi-year contracts with deep first-year discounts, collecting massive upfront commissions while leaving the company exposed to early customer default.",
-            "It forces sales representatives to manually calculate complex calculus integrals before submitting expense reports.",
-            "It causes corporate bank accounts to automatically convert domestic currency into foreign treasury bonds."
+            "It encourages reps to sell short one-year deals with no discounts, taking small upfront commissions while the company bears no default risk at all.",
+            "It encourages reps to sell backloaded multi-year deals with deep first-year discounts, taking large upfront commissions while the company bears early default risk.",
+            "It encourages reps to sell multi-year deals with annual prepayment terms, taking commissions as cash arrives while the company bears minimal default risk.",
+            "It encourages reps to sell frontloaded multi-year deals with deep later-year discounts, taking commissions at renewal while the company bears late churn risk."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13413,10 +13413,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of a Gross Margin Floor in an enterprise incentive compensation plan?",
           "options": [
-            "To mandate that all software engineers attend weekly sales pipeline review meetings.",
-            "To guarantee that every customer receives a fixed twenty percent price increase upon annual contract renewal.",
-            "To dynamically reduce or eliminate commission payouts on heavily discounted or services-heavy contracts that fail to generate adequate corporate gross profit.",
-            "To prevent sales representatives from communicating with prospective clients located outside their primary geographic territory."
+            "To dynamically increase commission on heavily discounted or services-heavy contracts that produce high revenue volumes for the sales teams.",
+            "To fix a minimum commission on every contract regardless of discount or services content, so reps are protected on low gross profit deals.",
+            "To dynamically reduce or remove commission on heavily discounted or services-heavy contracts that do not produce adequate corporate gross profit.",
+            "To dynamically reduce commission on contracts that close late in a quarter or year, since they produce adequate corporate bookings only."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13453,10 +13453,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a Split-Payment Cash Gate protect enterprise working capital in long-cycle B2B contracts?",
           "options": [
-            "By splitting invoices into monthly installments charged automatically to customer executive credit cards.",
-            "By withholding all sales compensation for three calendar years following contract execution.",
-            "By requiring sales representatives to deposit their personal savings into corporate escrow accounts prior to closing deals.",
-            "By disbursing fifty percent of earned commission upon contract execution and holding the remaining fifty percent in escrow until customer cash clears the corporate bank account."
+            "By paying one hundred percent of earned commission at contract execution and clawing back any unpaid portion if customer cash fails to clear within a year.",
+            "By paying fifty percent of earned commission at customer renewal and holding the other fifty percent in escrow until the second renewal is completed.",
+            "By splitting the customer's invoice into two parts and holding the second part in escrow until the commission has been fully paid to the sales rep.",
+            "By paying fifty percent of earned commission at contract execution and holding the other fifty percent in escrow until customer cash clears the company bank account."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13493,10 +13493,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a formal Delegation of Authority (DOA) matrix, what is required when an enterprise buyer demands a twenty percent contract price discount?",
           "options": [
-            "The concession must be formally authorized by an approved authority tier (e.g. RVP) and balanced by a valuable counter-trade such as a multi-year commitment or upfront annual cash payment.",
-            "The sales representative must immediately accept the discount without informing executive leadership.",
-            "The customer must agree to surrender fifty percent of their company stock options to the vendor.",
-            "The Deal Desk must automatically cancel the customer's account and report them to commercial credit bureaus."
+            "The concession must be approved by an authorised tier (e.g. RVP) and balanced by a valuable counter-trade, such as a multi-year commitment or upfront annual payment.",
+            "The concession must be approved by the sales rep's team lead alone and balanced by a verbal promise, such as a future referral or a reference call.",
+            "The concession must be approved by the CFO personally and balanced by a smaller discount on services, such as free training or onboarding hours.",
+            "The concession must be approved by an authorised tier (e.g. RVP) and balanced by a lower commission rate for the rep, with no counter-trade from the buyer."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13533,10 +13533,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexComp simulation, what was the commission verdict for the rogue contract possessing a thirty-five percent gross margin?",
           "options": [
-            "The system transferred ownership of the customer account to a secondary regional reseller.",
-            "Zero commission was earned because the deal breached the forty percent critical profitability floor, protecting the company from subsidizing an unprofitable contract.",
-            "The engine automatically filed a formal breach-of-contract lawsuit against the customer.",
-            "The sales representative received a double super-accelerator payout of eighty thousand dollars in cash."
+            "Half the commission was earned because the deal passed the thirty percent minimum profitability floor, letting the company share the risk of a thin-margin contract.",
+            "Zero commission was earned because the deal fell below the forty percent critical profitability floor, stopping the company from subsidising an unprofitable contract.",
+            "Full commission was earned because the deal exceeded the thirty percent profitability floor, letting the company reward the rep for closing a large contract.",
+            "Zero commission was earned because the deal was signed outside the quarter, stopping the company from paying on a contract booked after the plan period."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13600,10 +13600,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary cause of post-acquisition customer churn cascades in enterprise software companies?",
           "options": [
-            "A decision by corporate finance to convert all accounts receivable into physical gold bullion.",
-            "An unexpected increase in the speed of optical fiber telecommunications networks.",
-            "Drastic cuts to Customer Success headcount paired with aggressive price increases and forced migrations, destroying customer trust and relationship capital.",
-            "The mandatory adoption of open-source programming languages by enterprise software developers."
+            "Deep investment in Customer Success headcount combined with price freezes and optional migrations, which build customer trust and relationship capital.",
+            "Deep cuts to engineering headcount combined with slow product releases and delayed bug fixes, which damage customer confidence in the product roadmap.",
+            "Deep cuts to Customer Success headcount combined with aggressive price increases and forced migrations, which destroy customer trust and relationship capital.",
+            "Deep cuts to marketing spend combined with fewer webinars and less advertising, which reduce brand awareness and new customer lead generation."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13641,10 +13641,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational failure occurs when a Strategic Enterprise CSM's account load is increased from six accounts to thirty accounts post-merger?",
           "options": [
-            "The software vendor is legally required to refund all historical licensing fees to the government.",
-            "Cognitive saturation forces the CSM to abandon proactive strategic reviews, transforming them into a reactive firefighter with soaring escalation response latency.",
-            "The CSM automatically receives a promotion to Executive Vice President of Global Sales.",
-            "The customer database automatically duplicates all contact records across secondary data centers."
+            "Cognitive overload makes the CSM focus on proactive strategic reviews and turn into a trusted advisor, with escalation response times falling sharply.",
+            "Cognitive overload makes the CSM drop proactive strategic reviews and turn into a reactive firefighter, with escalation response times rising sharply.",
+            "Cognitive overload makes the CSM hand off strategic reviews to the sales team and turn into a billing coordinator, with invoice disputes rising sharply.",
+            "Cognitive overload makes the CSM skip renewal conversations and turn into a product trainer, with customer health scores rising sharply over time."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13681,10 +13681,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does issuing an aggressive six-month End-of-Life (EOL) sunset notice on legacy on-premise software increase customer churn probability?",
           "options": [
-            "Because forced migration eliminates the incumbent switching cost moat: since the customer must undergo an expensive migration anyway, they evaluate competitor alternatives.",
-            "Because cloud computing infrastructure is fundamentally incapable of running enterprise relational databases.",
-            "Because enterprise customers are legally barred from using internet-connected software applications.",
-            "Because sales representatives receive lower commission rates on cloud subscription products."
+            "Because forced migration removes the switching-cost moat: since the customer must pay for a migration anyway, they evaluate competitor alternatives.",
+            "Because forced migration strengthens the switching-cost moat: since the customer has already paid for the platform, they avoid competitor alternatives.",
+            "Because forced migration lowers the vendor's support costs: since the customer must pay for hosting anyway, they evaluate a longer renewal term.",
+            "Because forced migration delays the vendor's release plans: since the customer must wait for new features, they evaluate pausing the contract."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13722,10 +13722,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of issuing Grandfathered Pricing Covenants immediately following a software acquisition?",
           "options": [
-            "It allows sales representatives to bypass Deal Desk approval on all new prospect transactions.",
-            "It requires enterprise customers to double their contracted software seat counts within thirty days.",
-            "It transfers fifty percent of the software vendor's intellectual property rights directly to customer procurement.",
-            "It legally caps renewal price increases to standard inflation for three to five years, eliminating customer fear of predatory price gouging and halting competitive RFPs."
+            "It legally fixes renewal prices at a doubled rate for three to five years, removing customer ability to negotiate and stopping competitive RFPs.",
+            "It legally caps new-customer prices at normal inflation for three to five years, removing prospect fear of price gouging and stopping competitive RFPs.",
+            "It legally caps renewal price rises at normal inflation for one quarter only, removing short-term customer fear but not stopping competitive RFPs later.",
+            "It legally caps renewal price rises at normal inflation for three to five years, removing customer fear of price gouging and stopping competitive RFPs."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13764,10 +13764,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the SovereignRetentionEngine simulation, what was the net valuation outcome of the aggressive private equity cost-cutting liquidation strategy?",
           "options": [
-            "It resulted in the immediate acquisition of the company by an offshore sovereign wealth fund.",
-            "It eliminated all customer support inquiries by achieving zero software bugs in the production release.",
-            "It destroyed tens of millions of dollars in net enterprise value as customer churn far outweighed the modest operational salary savings from cutting CSM headcount.",
-            "It doubled corporate enterprise valuation within ninety days through operational efficiency gains."
+            "It created tens of millions of dollars in net enterprise value, as the salary savings from cutting CSM headcount far outweighed modest customer churn.",
+            "It left net enterprise value unchanged, as the salary savings from cutting CSM headcount were exactly offset by modest customer churn in later years.",
+            "It destroyed tens of millions of dollars in net enterprise value, as customer churn far outweighed the modest salary savings from cutting CSM headcount.",
+            "It destroyed tens of millions of dollars in net enterprise value, as legal settlement costs far outweighed the modest salary savings from cutting CSM headcount."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13832,10 +13832,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Dynamic Account Tiering in enterprise Account-Based Marketing?",
           "options": [
-            "It requires marketing departments to spend identical advertising dollars across every registered business in the country.",
-            "It eliminates the need for enterprise sales representatives by replacing all commercial negotiations with automated web forms.",
-            "It forces all prospective customers to sign non-disclosure agreements before visiting the company's public website.",
-            "It concentrates seventy percent of marketing and sales resources on the top twenty percent of high-yield enterprise accounts, maximizing capital efficiency and deal size."
+            "It spreads marketing and sales resources evenly across the top eighty percent of enterprise accounts, raising coverage and lead volume across the market.",
+            "It focuses seventy percent of marketing and sales resources on the bottom twenty percent of low-yield accounts, raising reactivation and lead volume.",
+            "It focuses twenty percent of marketing and sales resources on the top seventy percent of accounts, raising automation and cutting rep headcount.",
+            "It focuses seventy percent of marketing and sales resources on the top twenty percent of high-yield enterprise accounts, raising capital efficiency and deal size."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13873,10 +13873,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise intent telemetry engine distinguish genuine buyer evaluations from random background web traffic?",
           "options": [
-            "By calculating statistical Z-score consumption velocities against historical ninety-day baselines and verifying signals across multiple corporate IP addresses.",
-            "By asking website visitors to complete mandatory thirty-question surveys before reading technical blog posts.",
-            "By monitoring the personal social media accounts of customer executives during weekend hours.",
-            "By restricting website access to corporate users who possess government-issued digital certificates."
+            "By calculating statistical Z-score consumption velocities against historical ninety-day baselines and checking signals across multiple corporate IP addresses.",
+            "By counting total page views per account over the last seven days and comparing them with the average across all accounts in the same industry sector.",
+            "By calculating statistical Z-score consumption velocities against the previous day's traffic and checking signals from a single corporate IP address.",
+            "By matching visitor email addresses to the CRM contact list and counting the number of form submissions made by each account in the last quarter."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13915,10 +13915,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an enforced twenty-four-hour Sales-Marketing SLA essential upon the detection of an enterprise intent surge?",
           "options": [
-            "Because marketing budgets expire at the conclusion of each business day unless spent on digital advertising.",
-            "Because enterprise buying windows are fleeting; rapid multi-channel engagement ensures the vendor enters the evaluation before competitors lock RFP criteria.",
-            "Because corporate privacy laws prohibit sales teams from contacting prospects more than one day after a website visit.",
-            "Because commercial internet service providers automatically erase web traffic logs after twenty-four hours."
+            "Because enterprise buying windows are long; slow single-channel engagement lets the vendor join the evaluation after competitors finish their RFP criteria.",
+            "Because enterprise buying windows are short; rapid multi-channel engagement gets the vendor into the evaluation before competitors lock in RFP criteria.",
+            "Because enterprise marketing budgets reset every day; rapid spending on digital ads gets the vendor higher placement before the daily allocation expires.",
+            "Because enterprise buyers answer only within one business day; rapid email replies get the vendor a response before the buyer closes the inbound inquiry."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13956,10 +13956,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of an Algorithmic Account Demotion DAG in enterprise RevOps systems?",
           "options": [
-            "To block marketing emails from being delivered to accounts that fail to open promotional newsletters.",
-            "To penalize sales representatives by reducing their base salary whenever a customer declines a sales meeting.",
-            "To automatically return cooling accounts to programmatic marketing nurture, freeing up finite sales rep capacity for newly surging target accounts.",
-            "To permanently erase inactive customer records from the corporate customer relationship management database."
+            "To keep cooling accounts with their assigned reps indefinitely, preserving long-term relationships for accounts that show no current activity.",
+            "To move surging accounts to programmatic marketing nurture automatically, freeing limited rep capacity for cooling accounts that need attention.",
+            "To return cooling accounts to programmatic marketing nurture automatically, freeing limited rep capacity for newly surging target accounts.",
+            "To delete cooling accounts from the CRM automatically, freeing limited database storage for newly surging target accounts and their contacts."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13997,10 +13997,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the SovereignABMPlatform simulation, what triggered the dynamic promotion of Apex Global Logistics from Tier 2 to Tier 1 Strategic status?",
           "options": [
-            "A manual override request submitted by the Chief Financial Officer during a board meeting.",
-            "The customer agreeing to purchase ten thousand software user licenses upfront in cash.",
-            "The expiration of the customer's existing contract with a secondary regional reseller.",
-            "A high intent surge score of 100.0 driven by a Z-score of +7.33 and four high-intent pricing page views, indicating an active RFP evaluation."
+            "A firmographic fit score of 100.0 from an employee count of 7,330 and four past purchases of other products, indicating a large account.",
+            "An intent surge score of 40.0 from a Z-score of +0.73 and four blog page views, indicating early-stage research by a single visitor.",
+            "A manual promotion request from the account's assigned rep after four meetings with a Z-score of +7.33 on past revenue, indicating a strategic account.",
+            "An intent surge score of 100.0 from a Z-score of +7.33 and four high-intent pricing page views, indicating an active RFP evaluation."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14086,10 +14086,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise software companies migrate from spreadsheet quoting to graph-based CPQ product catalog engines?",
           "options": [
-            "To eliminate revenue leakage and delivery failures by programmatically enforcing parent-child bundle hierarchies and co-requisite module dependencies.",
-            "To prevent sales representatives from using laptop computers during business travel.",
-            "To convert all product prices into foreign currency denominations automatically.",
-            "To eliminate the need for enterprise legal counsel by automating all contract signatures."
+            "To remove revenue leakage and delivery failures by enforcing parent-child bundle hierarchies and co-requisite module dependencies through code.",
+            "To remove licence costs and reduce training time by keeping bundle hierarchies and module dependencies in a shared spreadsheet for all reps.",
+            "To increase quote volume and speed by letting reps override parent-child bundle hierarchies and module dependencies when customers ask for it.",
+            "To remove duplicate customer records and email errors by enforcing account hierarchies and contact role dependencies through code."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14144,10 +14144,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of a Seat-to-Admin Cardinality Constraint in an enterprise CPQ system?",
           "options": [
-            "To mandate that all software administrators work in the same physical office building as executive leadership.",
-            "To automatically increase software prices whenever an administrator logs into the system.",
-            "To prohibit customers from adding new employee accounts during weekend hours.",
-            "To prevent privilege proliferation and ensure sound infrastructure unit economics by limiting administrator licenses to a fixed percentage (e.g. 5%) of total user seats."
+            "To prevent seat sharing and keep licence revenue sound by limiting each user to a fixed number (e.g. 5) of devices that can sign in at one time.",
+            "To prevent discount stacking and keep margins sound by limiting administrator discounts to a fixed share (e.g. 5%) of the total contract value in the quote.",
+            "To prevent privilege proliferation and keep security audits simple by requiring administrator licences to be at least a fixed share (e.g. 50%) of total user seats.",
+            "To prevent privilege proliferation and keep infrastructure unit economics sound by limiting administrator licences to a fixed share (e.g. 5%) of total user seats."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14201,10 +14201,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise CPQ engine calculate exact mid-term co-terming proration for license additions?",
           "options": [
-            "By charging the customer the full annual price regardless of when the addition occurs.",
-            "By giving the customer the additional licenses for free until the next annual contract renewal.",
-            "By dividing the annual price by the exact days in the year (365 or 366) and multiplying by the exact calendar days remaining until the master contract termination date.",
-            "By rounding the remaining time to the nearest half-year and applying a flat fifty percent discount."
+            "By dividing the annual price by twelve and multiplying by the number of whole months left until the master contract end date, rounding up to a full month.",
+            "By dividing the annual price by 360 and multiplying by the number of business days left until the master contract end date, excluding weekends and holidays.",
+            "By dividing the annual price by the exact days in the year (365 or 366) and multiplying by the exact calendar days left until the master contract end date.",
+            "By charging the full annual price for the addition and giving a credit at the next renewal for the calendar days left after the master contract end date."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14259,10 +14259,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of modeling enterprise pricing discounts as a sequential waterfall rather than a flat percentage reduction?",
           "options": [
-            "It guarantees that every enterprise customer pays identical software fees regardless of contract size.",
-            "It isolates volume tiers, duration incentives, and discretionary concessions, enabling continuous verification of net gross margin floors at each step.",
-            "It delays quote delivery by seven business days to allow sales reps to negotiate higher prices.",
-            "It adds all discount percentages together and applies them once to the original list price."
+            "It combines volume tiers, duration incentives, and discretionary concessions, allowing a single checking of gross margin floors after the final step.",
+            "It separates volume tiers, duration incentives, and discretionary concessions, allowing continuous checking of net gross margin floors at every step.",
+            "It separates list prices, taxes, and shipping charges, allowing continuous checking of regional price differences at every step of the quote.",
+            "It separates volume tiers, duration incentives, and discretionary concessions, allowing continuous checking of rep quota attainment at every step."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14322,9 +14322,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the SovereignCPQEngine simulation, what ensures that the generated quote artifact cannot be tampered with after Deal Desk approval?",
           "options": [
             "A cryptographic SHA-256 certification signature calculated from the quote ID, account name, net price, and UTC timestamp.",
-            "A physical wax seal stamped onto the printed document by the Chief Executive Officer.",
-            "A legal affidavit sworn before a municipal court judge prior to email transmission.",
-            "A permanent freeze placed on the customer's corporate credit card account."
+            "A cryptographic MD5 checksum calculated from the quote ID, rep name, list price, and local timestamp of the last edit.",
+            "A digital signature image of the Deal Desk approver added to the PDF footer along with the quote ID and approval date.",
+            "A password-protected PDF generated from the quote ID, account name, net price, and a shared passcode known to the reps."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14391,10 +14391,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a CRO revenue lifecycle state machine strictly forbid transitioning directly from QUALIFIED to CONTRACTING?",
           "options": [
-            "Because contracting teams require at least six months of marketing email interaction before opening documents.",
-            "Because it prevents sales reps from bypassing mandatory technical solution validation, RFP review, and executive commercial qualification.",
-            "Because cloud database architectures cannot perform SQL updates across two non-adjacent table columns.",
-            "Because CRM licensing models double in cost whenever an intermediate opportunity stage is omitted."
+            "Because it stops reps from moving deals too slowly through mandatory technical solution validation, RFP review, and executive qualification.",
+            "Because it stops reps from bypassing mandatory technical solution validation, RFP review, and executive commercial qualification steps.",
+            "Because it stops contracting teams from reviewing documents before mandatory marketing nurture, intent scoring, and lead routing are done.",
+            "Because it stops reps from sending proposals before mandatory pricing approval, discount review, and finance sign-off are completed."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14526,10 +14526,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise architecture RFC include explicit trade-off analyses of alternatives considered?",
           "options": [
-            "To demonstrate rigorous technical due diligence and ensure executive stakeholders understand the cost, security, and velocity implications of alternative approaches.",
-            "Because software patent laws require publishing three rejected designs before implementing an internal data schema.",
-            "To allow competing SaaS vendors to inspect internal architecture proposals during commercial negotiations.",
-            "To increase the word count of the document to meet corporate bureaucratic page-length requirements."
+            "To show rigorous technical due diligence and make sure executives understand the cost, security, and velocity implications of the alternative approaches.",
+            "To show formal legal compliance and make sure regulators understand the patent, licensing, and disclosure implications of the alternative approaches.",
+            "To show the preferred design is the only option and make sure executives approve the cost, security, and velocity targets of the chosen approach.",
+            "To show engineering effort in the RFC and make sure junior developers understand the coding, testing, and deployment steps of the chosen approach."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14581,10 +14581,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of computing a SHA-256 cryptographic hash over an approved enterprise RFC payload?",
           "options": [
-            "It compresses the text content so that it can be transmitted via SMS text messaging to field sales reps.",
-            "It creates an immutable, tamper-evident digital record ensuring that architectural and budgetary commitments cannot be altered retroactively without re-approval.",
-            "It encrypts the document so that only external software vendors can read the implementation roadmap.",
-            "It automatically registers the architecture document with the United States Patent Office."
+            "It creates an encrypted, confidential record so architectural and budgetary commitments cannot be read by anyone outside the approving executive group.",
+            "It creates an immutable, tamper-evident record so architectural and budgetary commitments cannot be changed after approval without a new approval.",
+            "It creates a compressed, searchable record so architectural and budgetary commitments can be found quickly by anyone in the engineering team.",
+            "It creates a versioned, editable record so architectural and budgetary commitments can be changed after approval with a comment from the author."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14653,10 +14653,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is executing a direct SQL DELETE cascade on enterprise customer records dangerous when handling GDPR Article 17 requests?",
           "options": [
-            "Because relational database query optimizers refuse to execute DELETE statements containing personal names.",
-            "It causes cloud database servers to permanently overheat and disconnect from regional data centers.",
-            "It corrupts foreign key referential integrity across historical financial ledgers, violates statutory tax retention laws, and breaks SOC 2 audit chains.",
-            "Because GDPR mandates that all erased records must be printed on physical paper before database removal."
+            "It improves foreign key referential integrity across historical financial ledgers, satisfies statutory tax retention laws, and strengthens SOC 2 audit chains.",
+            "It slows query performance across large analytics tables, violates database storage quotas, and breaks scheduled backup jobs on the production servers.",
+            "It breaks foreign key referential integrity across historical financial ledgers, violates statutory tax retention laws, and breaks SOC 2 audit chains.",
+            "It leaves copies of data in backup archives across the data lake, violates the erasure deadline in the regulation, and breaks scheduled reports for managers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14699,10 +14699,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical advantage of crypto-shredding over physical SQL DELETE commands in large-scale data warehouses?",
           "options": [
-            "It converts relational database tables into unencrypted plaintext documents stored in public cloud buckets.",
-            "It eliminates the need to rewrite multi-terabyte immutable storage partitions across analytical lakes and backup archives by simply destroying the decryption key.",
-            "It allows sales representatives to read prospect emails after erasure by entering an executive override password.",
-            "It automatically increases the storage capacity of relational database hard drives by ninety percent."
+            "It requires rewriting multi-terabyte immutable storage partitions across analytical lakes and backup archives by physically deleting each affected record.",
+            "It avoids rewriting multi-terabyte immutable storage partitions across analytical lakes and backup archives by simply destroying the decryption key.",
+            "It avoids encrypting multi-terabyte storage partitions across analytical lakes and backup archives by simply masking the identifying fields in views.",
+            "It avoids indexing multi-terabyte storage partitions across analytical lakes and backup archives by simply moving the affected records to cold storage."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14801,10 +14801,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of the Automated Redaction stage during DSAR fulfillment?",
           "options": [
-            "To compress the export file into an unreadable encrypted format that the requester cannot open.",
-            "To modify historical billing invoices to reflect higher subscription payments.",
-            "To delete all records from the database so that the company can claim it possesses no customer data.",
-            "To remove proprietary internal company notes and protect the privacy of third parties co-mingled in communication logs before exporting data to the requester."
+            "To remove all records of the requester's activity and protect the confidentiality of the company's systems before deleting the data from all sources.",
+            "To encrypt the exported data and protect it from interception while in transit before sending the file to the requester through a secure link.",
+            "To translate communication logs into a standard format and make them readable for the requester before exporting the data in a single file.",
+            "To remove proprietary internal company notes and protect the privacy of third parties mixed into communication logs before exporting data to the requester."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14861,10 +14861,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the ApexPrivacy engine ensure that financial ledgers remain intact for statutory audits after an Article 17 erasure?",
           "options": [
-            "By printing billing ledgers to microfiche microfilm before deleting relational database tables.",
-            "By transferring all billing records to untracked personal bank accounts outside the enterprise ERP.",
-            "By storing surrogate subject IDs and cryptographic hashes in the financial ledger while isolating and shredding PII decryption keys in the identity vault.",
-            "By paying a legal fine to European regulators to retain unencrypted customer names in billing ledgers."
+            "By keeping full customer names and addresses in the financial ledger, while moving the PII decryption keys to a restricted archive for later use.",
+            "By deleting all financial ledger rows that mention the subject, while keeping a summary of totals in the identity vault for statutory audits.",
+            "By keeping surrogate subject IDs and cryptographic hashes in the financial ledger, while isolating and shredding PII decryption keys in the identity vault.",
+            "By keeping surrogate subject IDs in the financial ledger, while storing PII decryption keys in an offline archive that auditors may open on request."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14933,10 +14933,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must the Sales Engineering organization report to technical leadership rather than commercial sales leadership?",
           "options": [
-            "Because sales engineers do not know how to read corporate financial balance sheets.",
-            "Because software engineering labor unions prohibit pre-sales consultants from speaking to quota-carrying representatives.",
-            "To prevent sales engineers from participating in company-wide holiday celebrations.",
-            "To ensure Sales Engineers possess independent veto authority to reject technically infeasible customer demands without facing commercial pressure from quarterly quota-driven managers."
+            "To give Sales Engineers shared quota targets so they can accept customer demands faster with support from quota-driven managers.",
+            "To give Sales Engineers lower salary bands so they can focus on technical work without commercial incentives from quota-driven managers.",
+            "To give Sales Engineers direct access to executive staff so they can negotiate pricing on behalf of the customer with quota-driven managers.",
+            "To give Sales Engineers independent veto power over technically infeasible customer demands, free of commercial pressure from quota-driven managers."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14989,10 +14989,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an automated RFP shredder configured to flag 'uncapped liquidated damages' as a severe redline risk?",
           "options": [
-            "Because uncapped liquidated damages expose the software vendor to existential financial liability far exceeding the contract value if unexpected outages occur.",
-            "Because procurement departments award higher scores to vendors that delete liquidated damages clauses.",
-            "Because software engineering compilers cannot run code on servers governed by liquidated damages.",
-            "Because CRM opportunity stages cannot be closed if legal terms exceed five hundred characters."
+            "Because uncapped liquidated damages expose the vendor to existential financial liability far above the contract value if unexpected outages occur.",
+            "Because uncapped liquidated damages expose the customer to existential financial liability far above the contract value if their staff cause outages.",
+            "Because capped liquidated damages expose the vendor to small financial liability well below the contract value if unexpected outages occur.",
+            "Because uncapped liquidated damages expose the vendor to higher insurance premiums above the contract value if unexpected audits occur."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -15044,10 +15044,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary risk of allowing prospective enterprise clients to run open-ended, un-chartered POC evaluations?",
           "options": [
-            "The client's servers will run out of hard drive space and demand that the vendor buy them new hardware.",
-            "Evaluation creep: The evaluation drags on for months consuming costly pre-sales engineering hours without clear commercial closing commitments.",
-            "The cloud provider will automatically delete the software vendor's corporate source code repository.",
-            "The prospective client will be legally required to acquire the software vendor in a hostile takeover."
+            "Evaluation shortcuts: the evaluation ends within days, using too few pre-sales engineering hours with no clear technical success criteria.",
+            "Evaluation creep: the evaluation drags on for months, using costly pre-sales engineering hours with no clear commercial closing commitment.",
+            "Scope creep: the product is customised for months, using costly post-sales engineering hours with a signed commitment to purchase at the end.",
+            "Evaluation creep: the evaluation drags on for months, using costly legal review hours with no clear commercial closing commitment in the contract."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -15096,10 +15096,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of a Technical Risk Escalation Tree in enterprise revenue systems?",
           "options": [
-            "To bypass cybersecurity audits by hiding custom code modifications from compliance teams.",
-            "To automatically give sales reps a fifty percent discount on all product line items.",
-            "To prevent sales representatives and pre-sales engineers from making unauthorized, high-risk technical concessions that compromise platform architecture or create unhedged liabilities.",
-            "To transfer all software development responsibilities to external third-party agencies."
+            "To help reps and pre-sales engineers make faster technical concessions with no approval needed, so deals close without delays from the architecture team.",
+            "To stop customers from escalating support tickets to executives without going through the account manager and the standard support process first.",
+            "To stop reps and pre-sales engineers from making unauthorised high-risk technical concessions that compromise platform architecture or create unhedged liabilities.",
+            "To record every technical question asked by prospects so product managers can plan the roadmap and engineering can prioritise new feature requests."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -15152,10 +15152,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of programmatically locking CRM stage progression until a POC achieves TECHNICAL_WIN status?",
           "options": [
-            "It automatically registers the sales engineer as a co-founder of the client corporation.",
-            "It ensures that prospective clients pay 100% of the contract value before running any evaluation tests.",
-            "It allows pre-sales engineers to delete customer databases if commercial negotiations stall.",
-            "It prevents sales representatives from prematurely entering legal contracting on deals where technical viability and customer satisfaction have not been proven."
+            "It stops reps from entering technical evaluation too early on deals where budget and executive sponsorship are not yet confirmed.",
+            "It stops sales engineers from closing technical evaluations too late on deals where legal terms and pricing are already agreed.",
+            "It stops reps from entering forecast commit too early on deals where the customer's signature date and quarter are not yet known.",
+            "It stops reps from entering legal contracting too early on deals where technical viability and customer satisfaction are not yet proven."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -15225,10 +15225,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Kahneman and Tversky's Prospect Theory, why do enterprise software buying committees frequently default to 'No Decision'?",
           "options": [
-            "Because psychological loss aversion causes stakeholders to fear personal career damage from a failed implementation twice as much as they value potential upside.",
-            "Because corporate procurement guidelines forbid purchasing any software unless competitors approve the contract.",
-            "Because enterprise executives are contractually required to reject fifty percent of all inbound sales proposals.",
-            "Because cloud software servers cannot execute business transactions without unanimous shareholder votes."
+            "Because psychological loss aversion makes stakeholders fear career damage from a failed implementation about twice as much as they value the upside.",
+            "Because psychological confirmation bias makes stakeholders value career gain from a successful implementation about twice as much as they fear the downside.",
+            "Because psychological anchoring makes stakeholders focus on the first price they saw about twice as much as they value the later discounted proposal.",
+            "Because psychological herd behaviour makes stakeholders copy their peers' decisions about twice as often as they follow their own internal evaluation."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -15275,10 +15275,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Commitment and Consistency principle exceptionally powerful in enterprise software procurement?",
           "options": [
-            "Because enterprise contracts automatically renew every calendar month without legal review.",
-            "Because computer algorithms require all sales emails to contain the word 'consistent' to bypass spam filters.",
-            "Because buyers are legally required to purchase software if they attend more than two product demonstrations.",
-            "Because securing small micro-commitments early (written requirements, co-signed charters) creates psychological pressure on buyers to remain consistent and complete the final purchase."
+            "Because winning one large commitment late (final price, signed contract) puts psychological pressure on buyers to act quickly and close the purchase.",
+            "Because winning small micro-commitments early (written requirements, co-signed charters) lets buyers change their minds freely and delay the purchase.",
+            "Because winning executive approval early (budget sign-off, board minutes) puts legal pressure on buyers to stay consistent and finish the purchase.",
+            "Because winning small micro-commitments early (written requirements, co-signed charters) puts psychological pressure on buyers to stay consistent and finish the purchase."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -15321,10 +15321,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In tactical empathy negotiations, why should negotiators avoid starting questions with the word 'Why'?",
           "options": [
-            "Because grammatical rules in enterprise contracts prohibit the use of three-letter interrogatives.",
-            "Because procurement officers are legally required to hang up the phone if they hear the word 'Why'.",
-            "Because 'Why' questions trigger an instinctive defensive psychological reaction, making counterparts feel accused and interrogated.",
-            "Because international telephone lines filter out the word 'Why' due to audio bandwidth compression."
+            "Because 'Why' questions trigger an instinctive trust reaction, making counterparts feel valued and invited to share.",
+            "Because 'Why' questions trigger a slow analytical reaction, making counterparts take long pauses before they reply.",
+            "Because 'Why' questions trigger an instinctive defensive reaction, making counterparts feel accused and interrogated.",
+            "Because 'Why' questions trigger a binary reaction, making counterparts answer yes or no without any explanation."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -15376,10 +15376,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of granting unilateral pricing discounts to enterprise procurement departments?",
           "options": [
-            "It forces the software vendor to fire ten percent of its engineering staff immediately.",
-            "It signals that initial pricing was arbitrary, destroys corporate gross margins, and invites aggressive follow-on demands without securing value in return.",
-            "It causes the client's corporate bank accounts to automatically freeze for ninety days.",
-            "Because enterprise tax authorities prohibit companies from selling software at less than list price."
+            "It suggests the first price was fair, protects gross margins, and invites faster approvals with a promise of value in return from the buyer.",
+            "It suggests the first price was arbitrary, hurts gross margins, and invites more aggressive demands without gaining anything of value in return.",
+            "It suggests the first price was too high, helps close rates, and invites repeat orders without needing a Deal Desk review of the concession.",
+            "It suggests the first price was negotiable, hurts the commission plan, and invites tax questions without a reduction in the contract term."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -15429,10 +15429,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the ApexNegotiate suite mathematically compute net buying committee consensus probability?",
           "options": [
-            "By calculating weighted Cialdini influence vector scores and dampening them inversely by the average perceived stakeholder loss aversion risk.",
-            "By flipping a digital coin whenever the Chief Financial Officer attends a meeting.",
-            "By averaging the number of words spoken by the sales representative during product demonstrations.",
-            "By multiplying the software license list price by the number of days remaining in the fiscal quarter."
+            "By calculating weighted Cialdini influence vector scores and reducing them in inverse proportion to the average perceived stakeholder loss aversion risk.",
+            "By calculating weighted Cialdini influence vector scores and raising them in direct proportion to the average perceived stakeholder loss aversion risk.",
+            "By counting the number of stakeholders who attended the last meeting and dividing it by the total number of members in the buying committee.",
+            "By calculating weighted MEDDPICC criteria scores and reducing them in inverse proportion to the average days spent in the current pipeline stage."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -15501,10 +15501,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of structuring ApexRevenueOS into four decoupled layers (Data, Orchestration, Transactional, Governance)?",
           "options": [
-            "To enable independent scalability, fault isolation, and clean separation of concerns between real-time commercial deal execution and immutable regulatory compliance.",
-            "Because software engineering laws mandate that no software system may have more than four directories.",
-            "To allow sales representatives to turn off financial billing modules during month-end quota scrambles.",
-            "To ensure that database queries take at least four seconds to execute across distributed cloud regions."
+            "To allow independent scaling, fault isolation, and clean separation between real-time commercial deal execution and immutable regulatory compliance.",
+            "To allow shared scaling, fault propagation, and tight coupling between real-time commercial deal execution and flexible regulatory compliance.",
+            "To allow cheaper hosting, faster releases, and single-team ownership of real-time commercial deal execution and immutable regulatory compliance.",
+            "To allow independent scaling, fault isolation, and clean separation between historical financial reporting and real-time marketing campaigns."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -15553,10 +15553,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under accounting standard ASC 606, why must a $810,000 3-year enterprise software contract be recognized as $22,500 per month rather than recognized entirely upfront?",
           "options": [
-            "Because CRM opportunity stages only permit monthly database inserts.",
-            "Because enterprise banks do not allow software vendors to deposit checks larger than fifty thousand dollars.",
-            "Because tax laws require companies to wait three years before counting profits.",
-            "Because ASC 606 mandates that subscription software revenue must be recognized ratably over the performance obligation period during which services are delivered."
+            "Because ASC 606 requires subscription software revenue to be recognised in full at contract signing, when the customer commits to the purchase.",
+            "Because ASC 606 requires subscription software revenue to be recognised as cash is collected, when the customer pays each annual invoice in advance.",
+            "Because ASC 606 requires subscription software revenue to be recognised at renewal, when the customer confirms the contract for the next period.",
+            "Because ASC 606 requires subscription software revenue to be recognised ratably over the performance obligation period in which services are delivered."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -15609,10 +15609,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an exponential hazard model superior to a simple linear scale when assessing enterprise churn risk?",
           "options": [
-            "Because accounting regulations require exponential formulas for all customer success metrics.",
-            "Because software representatives earn twice as much commission when exponential formulas are used.",
-            "Because real-world churn hazard accelerates non-linearly as product utilization drops below critical team thresholds and support tickets multiply.",
-            "Because linear scales cannot be displayed on laptop screens without specialized graphics cards."
+            "Because real churn hazard stays constant over time once product utilisation falls below critical team thresholds and support tickets multiply.",
+            "Because real churn hazard slows down non-linearly once product utilisation rises above critical team thresholds and support tickets decline.",
+            "Because real churn hazard speeds up non-linearly once product utilisation falls below critical team thresholds and support tickets multiply.",
+            "Because real churn hazard moves in a straight line as product utilisation changes, matching the pattern shown by simple linear scales."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -15669,10 +15669,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary significance of defending an enterprise revenue architecture across all ten Grand Viva Gate failure scenarios?",
           "options": [
-            "It qualifies the software company for free cloud hosting from major hyperscale infrastructure providers.",
-            "It proves that the architecture is resilient against commercial fraud, operational partitions, regulatory breaches, and financial distortions under real-world crisis conditions.",
-            "It allows sales representatives to eliminate all documentation and operate purely on verbal agreements.",
-            "It guarantees that the software will never require software updates or bug fixes in the future."
+            "It proves the architecture can scale to millions of users, faster page loads, higher availability, and lower hosting costs under normal peak load conditions.",
+            "It proves the architecture can withstand commercial fraud, operational partitions, regulatory breaches, and financial distortions under real-world crisis conditions.",
+            "It proves the architecture can generate higher sales, better forecasts, faster quotes, and larger deals under favourable market growth conditions.",
+            "It proves the architecture can pass vendor certifications, security questionnaires, penetration tests, and customer audits under routine annual review conditions."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -15731,10 +15731,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the official conferral of the Chief Commercial Systems Architect accreditation certify upon passing Day 60?",
           "options": [
-            "Complete mastery over enterprise GTM strategy, sales engineering governance, CPQ mathematical engines, churn hazard modeling, cryptographic privacy, and boardroom architectural defense.",
-            "The right to sell personal computer hardware to retail consumers.",
-            "That the architect has memorized every telephone number in corporate headquarters.",
-            "An exemption from paying corporate software licensing fees forever."
+            "Full mastery of enterprise GTM strategy, sales engineering governance, CPQ math engines, churn hazard modelling, cryptographic privacy, and boardroom defence.",
+            "Basic awareness of enterprise GTM strategy, sales coaching tips, CRM data entry, customer survey design, password hygiene, and boardroom presentation formatting.",
+            "Full mastery of paid advertising, social media campaigns, brand design, webinar hosting, public relations, and event sponsorship for enterprise software.",
+            "Full mastery of software engineering, cloud infrastructure, database tuning, DevOps pipelines, network security, and production incident management."
           ],
           "answer": 0,
           "answerIndex": 0,

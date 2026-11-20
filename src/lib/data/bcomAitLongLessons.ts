@@ -28,10 +28,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the architectural distinction between Robotic Process Automation (RPA) and Cognitive AI Agents?",
           "options": [
-            "RPA executes deterministic, rule-based UI/API workflows without judgment; Cognitive AI handles unstructured data and probabilistic entity extraction",
-            "RPA requires physical humanoid metal robots while AI runs in software",
-            "RPA was invented in 1850",
-            "RPA handles unstructured handwriting better than AI, while Cognitive AI only follows fixed if-then scripts"
+            "RPA runs deterministic, rule-based UI/API workflows without judgment; Cognitive AI handles unstructured data and probabilistic entity extraction",
+            "RPA handles unstructured data and probabilistic entity extraction; Cognitive AI runs deterministic, rule-based UI/API workflows without judgment",
+            "RPA learns its steps from data using neural networks; Cognitive AI follows fixed scripts for structured screens and database fields only",
+            "RPA works only on legacy mainframe terminals with fixed screens; Cognitive AI works only on cloud APIs with structured JSON responses"
           ],
           "answer": 0,
           "why": "RPA executes pre-programmed deterministic steps across software systems. Cognitive AI handles unstructured inputs like language or vision, bridging the gap to feed structured commands to RPA."
@@ -52,10 +52,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do production IDP pipelines combine machine learning OCR confidence scores with deterministic mathematical consistency checks?",
           "options": [
-            "To make the scanned PDF readable only by the OCR engine and not by human auditors",
-            "To make the PDF file size smaller",
-            "To convert the currency into cryptocurrency",
-            "To catch subtle OCR misreadings (such as confusing 8 with 3) by verifying that extracted subtotal + tax exactly equals the grand total before posting to ERP"
+            "To catch handwriting errors (like 8 read as 3) by verifying that the extracted vendor name exactly matches the supplier master before ERP posting",
+            "To skip deterministic checks on high-confidence fields, because the confidence score already proves that subtotal plus tax equals the grand total",
+            "To confirm the scan resolution is above 300 DPI by checking that extracted digit heights are consistent across lines before ERP posting",
+            "To catch subtle OCR misreadings (like 8 read as 3) by verifying that extracted subtotal plus tax exactly equals the grand total before ERP posting"
           ],
           "answer": 3,
           "why": "Machine learning models are probabilistic and can misread blurry characters. Pairing ML extraction with hard business logic invariants (Subtotal + Tax == Total) eliminates costly accounting errors."
@@ -100,10 +100,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is a Full-Time Equivalent (FTE) in business automation economics, and how is it calculated?",
           "options": [
-            "The number of software bugs found in code",
-            "A standardized measure representing the working capacity of one full-time employee (typically 2,080 hours/year), used to quantify labor capacity freed by automation",
-            "The annual salary of the highest-paid executive in the company",
-            "The number of computers in the company headquarters"
+            "A standard measure of the working capacity of one full-time employee (typically 1,040 hours a year), used to size the labor capacity automation frees",
+            "A standard measure of the working capacity of one full-time employee (typically 2,080 hours a year), used to size the labor capacity automation frees",
+            "A standard measure of the output of one software bot (typically 8,760 hours a year), used to size the labor capacity automation adds",
+            "A standard measure of the salary cost of one full-time employee (typically $2,080 a month), used to size the payroll budget automation frees"
           ],
           "answer": 1,
           "why": "One FTE represents 2,080 annual working hours. Calculating FTE savings translates process minute reductions directly into standardized labor cost economics."
@@ -124,10 +124,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the purpose of an Automated Circuit Breaker in Enterprise AI Governance?",
           "options": [
-            "To instantly halt AI execution and divert traffic to deterministic fallback rules if model confidence degrades or error rates exceed safety thresholds",
-            "To turn off the building power during thunderstorms",
-            "To increase the speed of the GPU fan",
-            "To permanently shut down the AI system after its first low-confidence prediction and delete its audit log"
+            "To halt AI execution at once and route traffic to deterministic fallback rules if model confidence drops or error rates pass safety limits",
+            "To retire the AI model for good and delete its training data after the first error is detected in live production traffic",
+            "To route all traffic to a larger AI model with more compute if model confidence drops or error rates pass safety limits",
+            "To pause human reviewers' access to AI outputs and keep the model running if confidence drops or error rates pass safety limits"
           ],
           "answer": 0,
           "why": "AI circuit breakers protect the enterprise from catastrophic errors by isolating misbehaving or drifting models and routing transactions to deterministic rules or human operators.",
@@ -195,10 +195,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise architects prefer Retrieval-Augmented Generation (RAG) over model fine-tuning for internal policy QA systems?",
           "options": [
-            "RAG permanently deletes original documents from company file servers.",
-            "RAG dynamically retrieves real-time private documents and provides verifiable citations without requiring expensive retraining cycles or leaking weights.",
-            "RAG requires all internal company documents to be publicly published on the open internet.",
-            "RAG reduces model accuracy down to zero to save electricity."
+            "RAG embeds the private documents permanently into the model weights, giving faster answers but with no verifiable citations or audit trail.",
+            "RAG retrieves real-time private documents and gives verifiable citations without costly retraining cycles or exposing model weights.",
+            "RAG removes the need for access controls because the model already knows which employee may see each policy document it retrieves.",
+            "RAG retrains the model every night on new documents, giving verifiable citations at the low compute cost of a small update job."
           ],
           "answer": 1,
           "why": "RAG decouples the language reasoning model from proprietary company data, providing real-time auditability, role-based access control, and citation grounding without costly retraining.",
@@ -240,10 +240,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the role of an input guardrail in enterprise Generative AI deployments?",
           "options": [
-            "To increase the font size of the user's web browser.",
-            "To automatically charge a customer's credit card without authorization.",
-            "To inspect user prompts, redact sensitive PII (like SSNs), and block adversarial prompt injection attempts before requests reach model inference endpoints.",
-            "To replace the company database with a public wiki."
+            "To inspect model responses, remove unsupported claims and add source citations before answers are returned to the user's screen.",
+            "To cache frequent user prompts and reuse earlier answers, which lowers response latency before requests reach the model endpoint.",
+            "To inspect user prompts, redact sensitive PII (like SSNs) and block adversarial prompt injection before requests reach the model endpoint.",
+            "To translate user prompts into a standard language and rewrite them for clarity before requests reach the model endpoint."
           ],
           "answer": 2,
           "why": "Input guardrails serve as the frontline defense against regulatory PII leakage, prompt jailbreaks, and unauthorized data exfiltration.",
@@ -285,10 +285,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the RAG Triad evaluation methodology, what does the \"Groundedness\" metric evaluate?",
           "options": [
-            "Whether the server is physically connected to the earth ground wire.",
-            "How many gigabytes of RAM the model consumes during inference.",
-            "The total dollar cost of model API tokens per month.",
-            "Whether every claim in the generated answer is directly backed by and traceable to the retrieved context chunks, identifying hallucinations."
+            "Whether the retrieved context chunks are relevant to the user's question, which exposes weaknesses in the search and ranking step.",
+            "Whether the generated answer addresses the user's original question directly, which exposes off-topic or evasive responses.",
+            "Whether the retrieved documents carry correct metadata and access permissions, which exposes security gaps in the indexing step.",
+            "Whether every claim in the generated answer is backed by, and traceable to, the retrieved context chunks, which exposes hallucinations."
           ],
           "answer": 3,
           "why": "Groundedness specifically isolates hallucinations by comparing the generated output against the retrieved reference context.",
@@ -330,10 +330,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the principal operational benefit of running an AI model in \"Shadow Mode\" prior to general release?",
           "options": [
-            "It evaluates model performance, latency, and output consistency on real production traffic without risking any user-facing errors or performance degradations.",
-            "It avoids paying electricity bills for data centers.",
-            "It prevents the model from ever being used in production.",
-            "It converts the model from a neural network into an Excel spreadsheet."
+            "It tests model performance, latency and output consistency on real production traffic without risking any user-facing errors.",
+            "It exposes a small share of real users to the new model to compare satisfaction scores before the full release.",
+            "It trains the candidate model on synthetic traffic generated from past logs, so no real customer data is ever processed.",
+            "It sends all production traffic to the candidate model while the old model sits idle as a silent backup if errors appear."
           ],
           "answer": 0,
           "why": "Shadow mode replicates production traffic against candidate models to measure empirical behavior safely, eliminating deployment risks before live exposure.",
@@ -375,10 +375,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the EU AI Act and enterprise Model Risk Management (SR 11-7), what mandatory requirement is imposed on High-Risk AI systems (such as hiring algorithms)?",
           "options": [
-            "Complete exemption from all national and international employment laws.",
+            "Mandatory open-sourcing of model weights, public bias test results, and registration of every individual user of the system.",
             "Mandatory Human-in-the-Loop oversight, algorithmic bias testing, and immutable audit logging with emergency kill-switch controls.",
-            "Requiring all company executives to be replaced by autonomous neural networks.",
-            "Restricting software usage exclusively to mobile phones."
+            "Mandatory fully automated decisions without human oversight, annual bias testing, and audit logging kept only for one month.",
+            "Voluntary codes of conduct, self-declared bias testing, and optional audit logging with no shutdown controls on the system."
           ],
           "answer": 1,
           "why": "High-Risk AI systems require strict human oversight, bias testing, transparent documentation, and audit logging to ensure ethical alignment and consumer protection.",
@@ -445,10 +445,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise text mining and audit analytics, why does TF-IDF multiply term frequency by inverse document frequency?",
           "options": [
-            "To translate foreign language documents into English.",
-            "Because standard deviations cannot be computed without inverse matrices.",
-            "To ensure that rare, highly diagnostic terms carry heavy statistical weight while ubiquitous common words appearing across all documents are mathematically downweighted.",
-            "To encrypt sensitive corporate communications against external hackers."
+            "To give frequent terms the heaviest statistical weight while rare words are downweighted as likely typos or one-off noise.",
+            "To give terms near the start of a document heavy statistical weight while words later in the text are progressively downweighted.",
+            "To give rare, highly diagnostic terms heavy statistical weight while common words that appear across all documents are downweighted.",
+            "To give terms in short documents heavy statistical weight while words in long documents are downweighted for their length."
           ],
           "answer": 2,
           "why": "TF measures local density while IDF penalizes universal common words; their product highlights rare, domain-specific signal words essential for forensic search.",
@@ -489,10 +489,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the VADER sentiment algorithm apply hyperbolic normalization C = x / sqrt(x^2 + alpha) rather than simple linear scaling?",
           "options": [
-            "Because words can only be analyzed using trigonometry.",
-            "Because hyperbolic normalization smoothly bounds compound scores between -1.0 and +1.0 while remaining sensitive to subtle differences near neutral without clipping extreme emotional bursts.",
-            "To convert text tokens into floating-point stock dividends.",
-            "Because linear scaling is prohibited under international accounting standards."
+            "Because hyperbolic normalization maps compound scores onto a 0 to 100 scale and stays sensitive near the extremes without flattening neutral text.",
+            "Because hyperbolic normalization smoothly bounds compound scores between -1.0 and +1.0 and stays sensitive near neutral without clipping strong emotion.",
+            "Because hyperbolic normalization bounds compound scores between -1.0 and +1.0 by clipping any sum beyond that range to the nearest limit.",
+            "Because hyperbolic normalization removes negation and intensifier effects from compound scores so every word counts with equal weight."
           ],
           "answer": 1,
           "why": "The hyperbolic normalization function smoothly maps unbounded token sums into [-1.0, +1.0] while preserving high sensitivity around zero.",
@@ -533,10 +533,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate compliance objective of implementing automated PII redaction before sending customer data to cloud AI services?",
           "options": [
-            "To prevent the accidental leakage of sensitive identifiers (SSNs, names, bank accounts) in violation of GDPR and CCPA privacy laws.",
-            "To compress text files so they download faster over slow modem connections.",
-            "To eliminate all punctuation from customer database tables.",
-            "Because cloud LLMs refuse to process any documents containing letters."
+            "To prevent accidental leakage of sensitive identifiers (SSNs, names, bank accounts) in violation of GDPR and CCPA privacy laws.",
+            "To keep sensitive identifiers (SSNs, names, bank accounts) out of internal logs, since GDPR and CCPA apply only to stored company data.",
+            "To prevent the accidental loss of model accuracy when names and numbers are sent to the AI, as required by SEC reporting rules.",
+            "To prevent duplicate copies of identifiers (SSNs, names, bank accounts) across cloud regions in violation of PCI-DSS storage rules."
           ],
           "answer": 0,
           "why": "Automated PII redaction ensures Personally Identifiable Information is never exposed to external cloud vendors or model training corpora, mitigating massive regulatory non-compliance liability.",
@@ -577,10 +577,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must automated Invoice IDP pipelines perform a mathematical reconciliation checksum before submitting payments to an ERP?",
           "options": [
-            "Because tax authorities require invoices to contain at least 10 line items.",
-            "To calculate currency conversion rates into cryptocurrency.",
-            "Because ERP systems cannot process numbers with decimal points.",
-            "To verify that individual parsed line items plus tax sum exactly to the stated total, catching supplier billing errors or OCR extraction mistakes before unauthorized disbursements occur."
+            "To verify that the invoice date falls inside the fiscal period, catching backdated supplier invoices before payments go out.",
+            "To verify that the vendor's bank details match the last payment, catching changed account numbers before payments go out.",
+            "To verify that the vendor's bank details match the last payment made, catching changed account numbers before payments go out.",
+            "To verify that parsed line items plus tax equal the stated total, catching supplier billing errors or OCR mistakes before payments go out."
           ],
           "answer": 3,
           "why": "The checksum acts as an automated anti-fraud and error-detection control, preventing improper corporate payments caused by OCR transcription errors or supplier billing discrepancies.",
@@ -621,10 +621,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the operational advantage of combining NLP text sentiment with behavioral telemetry in customer churn prediction?",
           "options": [
-            "Because NLP text analysis automatically lowers server hosting costs.",
-            "It eliminates the need to maintain customer support teams.",
-            "It detects customer dissatisfaction and churn intent weeks before renewal, capturing qualitative emotional urgency alongside quantitative login activity.",
-            "It forces customers to sign 10-year contracts automatically."
+            "It spots dissatisfaction only after the customer has cancelled, capturing emotional urgency from text alongside quantitative billing records.",
+            "It spots churn intent from login activity alone, because text sentiment adds noise that lowers the accuracy of the prediction model.",
+            "It spots dissatisfaction and churn intent weeks before renewal, capturing emotional urgency from text alongside quantitative login activity.",
+            "It spots dissatisfaction among new customers only, capturing emotional urgency from onboarding surveys alongside quantitative support tickets."
           ],
           "answer": 2,
           "why": "Combining qualitative NLP emotional signals (frustration, escalation keywords) with quantitative usage data provides an early-warning predictor far superior to isolated telemetry metrics.",
@@ -691,10 +691,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental operational challenge in digital commerce does Content-Based Filtering resolve?",
           "options": [
-            "It forces all customers to purchase the exact same product.",
-            "The need to pay sales tax on e-commerce transactions.",
-            "The high cost of server hard drives.",
-            "The Cold Start problem for new users, by recommending catalog items based strictly on item feature similarities before user behavioral history is collected."
+            "The Popularity Bias problem, by recommending the best-selling catalog items based on aggregate purchase counts across all users.",
+            "The Data Sparsity problem, by predicting missing ratings from the purchases of other users who share similar interaction histories.",
+            "The Filter Bubble problem, by recommending items bought by users with very different tastes from the current user's past choices.",
+            "The Cold Start problem for new users, by recommending items based on item feature similarity before any user behavioural history exists."
           ],
           "answer": 3,
           "why": "Content-based filtering relies on item metadata features rather than user interaction history, making it effective for recommending items to newly registered customers.",
@@ -735,10 +735,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Collaborative Filtering use the Pearson Correlation Coefficient rather than uncentered Cosine Similarity to compare user ratings?",
           "options": [
-            "Because Pearson correlation centers ratings around each user's historical mean, eliminating systemic bias between generous and harsh raters.",
-            "Because Cosine Similarity only works for image data and cannot process numbers.",
-            "Because Pearson correlation automatically deletes all 1-star ratings from the database.",
-            "Because Pearson correlation guarantees 100% click-through rate."
+            "Because Pearson correlation centers ratings on each user's own mean, removing the systematic bias between generous and harsh raters.",
+            "Because Pearson correlation ignores the size of the ratings and counts only which items were rated, removing the effect of rating scales.",
+            "Because Pearson correlation weights recent ratings more heavily than older ones, removing the bias caused by outdated tastes.",
+            "Because Pearson correlation works only on binary purchase data, removing the bias that comes from different rating scales."
           ],
           "answer": 0,
           "why": "Mean-centering in Pearson correlation adjusts for individual rating scales, preventing generous raters from artificially dominating peer neighborhood similarity.",
@@ -779,10 +779,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key advantage of Matrix Factorization over classic neighborhood collaborative filtering in large-scale commercial deployments?",
           "options": [
-            "Matrix Factorization eliminates the need to maintain product catalogs.",
-            "Matrix Factorization compresses massive sparse user-item interaction matrices into low-dimensional latent embedding vectors, enabling sub-millisecond dot-product inference.",
-            "Matrix Factorization guarantees that customers never cancel their subscriptions.",
-            "It replaces all SQL databases with Excel spreadsheets."
+            "It stores the full user-item matrix in memory for exact neighbour lookups, so prediction accuracy is perfect on every request.",
+            "It compresses huge sparse user-item matrices into low-dimensional latent vectors, so dot-product inference runs in sub-milliseconds.",
+            "It expands the sparse user-item matrix into high-dimensional one-hot vectors, so similarity lookups run in sub-milliseconds.",
+            "It replaces user-item interactions with fixed product category rules, so recommendations need no training at all."
           ],
           "answer": 1,
           "why": "By factorizing sparse interaction matrices into compact dense embeddings (e.g. 50 dimensions), dot-product predictions execute in microseconds even with millions of users and items.",
@@ -823,10 +823,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In digital marketing and revenue optimization, what role does the UCB1 exploration bonus c * sqrt(ln(N) / n_i) perform?",
           "options": [
-            "It converts currency into cryptocurrency.",
-            "It charges customers a credit card fee for clicking on links.",
-            "It grants an optimism-in-the-face-of-uncertainty bonus to offers that have been shown fewer times, preventing algorithms from permanently getting stuck on suboptimal local winners.",
-            "It automatically removes zero-revenue items from the web server."
+            "It gives a penalty to offers shown often, so the algorithm removes them from rotation after a fixed number of impressions.",
+            "It estimates the conversion rate variance of each offer, so the algorithm always picks the offer with the lowest uncertainty.",
+            "It gives an optimism bonus to offers shown fewer times, so the algorithm does not get stuck on a suboptimal early winner.",
+            "It picks a random offer with a fixed probability on each request, so the algorithm never settles on a single winning offer."
           ],
           "answer": 2,
           "why": "The exploration term ensures that arms with few impressions (small n_i) receive a boost to explore their true potential, solving the exploration vs exploitation dilemma.",
@@ -867,10 +867,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an enterprise Next-Best-Action (NBA) engine, what is the role of commercial arbitration across candidate actions?",
           "options": [
-            "To randomly display banners every 5 seconds.",
-            "Because government laws require banks to show 10 advertisements on every web page.",
-            "To ensure that only the cheapest product is ever shown to customers.",
-            "To evaluate Propensity, Financial Value, Eligibility constraints, and Contact Fatigue across competing offers to select the single action that delivers maximum sustainable customer lifetime value."
+            "To rank offers by predicted click propensity alone and pick the one action most likely to be accepted by the customer in the current session.",
+            "To weigh Propensity, Financial Value and Eligibility across competing offers and pick the action with the highest margin per single contact.",
+            "To rotate offers evenly across customers and pick the action that has been shown the fewest times in the current marketing campaign to all customers.",
+            "To weigh Propensity, Financial Value, Eligibility and Contact Fatigue across competing offers and pick the one action with the best sustainable lifetime value."
           ],
           "answer": 3,
           "why": "Arbitration balances customer acceptance probability, commercial margin, strict regulatory eligibility, and contact fatigue to present the optimal action at the right moment.",
@@ -937,10 +937,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of multi-agent swarm architecture over monolithic AI scripts in enterprise automation?",
           "options": [
-            "Specialization and deterministic handoffs allow distinct agents to focus on specific tasks (classification, verification, ERP mutation, audit) while maintaining strict governance gates at each transition.",
-            "Multi-agent swarms eliminate all server hosting costs.",
-            "Monolithic scripts are illegal under United Nations trade regulations.",
-            "Multi-agent systems only run on quantum computers."
+            "Specialised agents with deterministic handoffs can focus on distinct tasks (classification, verification, ERP changes, audit) with strict governance gates between steps.",
+            "Specialised agents share one memory and decide handoffs probabilistically, so each task is completed faster without needing governance gates between steps.",
+            "A single monolithic script handles classification, verification, ERP changes and audit in one pass, with governance applied once at the end of the run.",
+            "A single monolithic script handles classification, verification, ERP changes and audit in one pass, with governance applied once only at the end of the run."
           ],
           "answer": 0,
           "why": "Modular multi-agent architectures isolate responsibilities, enabling independent validation, error recovery, and strict compliance gating between cognitive classification and financial mutations.",
@@ -981,10 +981,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does enterprise multimodal document intelligence map foreign tax labels (like MwSt. or TVA) to standardized chart-of-accounts categories rather than performing literal word translation?",
           "options": [
-            "To avoid paying international currency conversion fees.",
-            "Because English is the only language permitted on internet servers.",
-            "Because foreign languages cannot be stored in SQL database tables.",
-            "Because financial accounting systems require standardized ledger accounts to maintain regulatory tax compliance and consolidated reporting across multinational subsidiaries."
+            "Because literal translation would exceed the token limits of the language model, which can read only labels written in English.",
+            "Because foreign tax labels are protected trade terms that cannot be reproduced in the financial records of another country.",
+            "Because standard ledger accounts allow each subsidiary to file its own local tax returns without any consolidated reporting.",
+            "Because accounting systems need standard ledger accounts to keep tax compliance and consolidated reporting across multinational subsidiaries."
           ],
           "answer": 3,
           "why": "Mapping localized fiscal terminology to standardized accounting categories ensures automated transactions feed directly into statutory tax filings and consolidated financial statements.",
@@ -1025,10 +1025,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under enterprise Model Risk Management (SR 11-7), what operational action is mandated when a model's Population Stability Index (PSI) breaches 0.25?",
           "options": [
-            "Double the marketing budget to attract more customers.",
-            "Delete the baseline training dataset and ignore future alerts.",
-            "Halt automated production decisioning and trigger immediate model retraining or fallback to deterministic heuristic rules, because significant distribution shift threatens decision validity.",
-            "Increase model prediction speed by skipping mathematical verification."
+            "Continue automated decisioning unchanged and review the shift next quarter, since 0.25 sits below the usual alert threshold for a PSI.",
+            "Halt automated decisioning only for the affected segment and keep scoring other segments, since 0.25 marks only a minor shift.",
+            "Halt automated decisioning and trigger model retraining or fallback to deterministic rules, since the input distribution has shifted sharply.",
+            "Raise the approval cutoff by 0.25 and continue automated decisioning, since the shift is corrected by adjusting the decision threshold."
           ],
           "answer": 2,
           "why": "A PSI >= 0.25 indicates that production inputs have diverged significantly from the training population, rendering model inference unreliable and necessitating immediate remediation.",
@@ -1069,10 +1069,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a 3-tier Dynamic Human-in-the-Loop (HITL) routing architecture superior to 100% full automation in enterprise AI transformation?",
           "options": [
-            "To deliberately slow down customer service response times.",
-            "It automates high-confidence routine transactions straight through while systematically routing ambiguous or low-confidence edge cases to human experts, maximizing labor efficiency without compromising business accuracy.",
-            "Because human employees demand to manually type every transaction.",
-            "Because AI models cannot run during nighttime hours."
+            "It sends every case to human experts first and lets the model review their decisions, balancing efficiency and accuracy through double checks.",
+            "It automates high-confidence routine cases straight through and routes ambiguous or low-confidence cases to human experts, balancing efficiency and accuracy.",
+            "It automates all cases at the same speed and uses humans only after a customer complaint, balancing efficiency and accuracy through audits.",
+            "It routes high-confidence cases to human experts and automates the ambiguous ones, balancing efficiency and accuracy by the case value."
           ],
           "answer": 1,
           "why": "HITL strikes the optimal balance between operational speed and risk mitigation by reserving human intervention exclusively for ambiguous, low-confidence edge cases.",
@@ -1113,10 +1113,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What financial and operational benchmarks must an enterprise achieve to earn \"Certified Digital Transformation Leader\" status under the Capstone Control Tower framework?",
           "options": [
-            "Straight-Through Processing rate >= 75%, aggregate operational accuracy >= 99%, and annual labor savings exceeding $100,000.",
-            "Firing 100% of human accounting employees.",
-            "Switching all enterprise databases to public blockchain networks.",
-            "Purchasing 10,000 personal computers for executives."
+            "Straight-Through Processing rate of at least 75%, aggregate accuracy of at least 99%, and annual labor savings above $100,000.",
+            "Straight-Through Processing rate of at least 95%, aggregate accuracy of at least 90%, and annual labor savings above $100,000.",
+            "Straight-Through Processing rate of at least 75%, aggregate accuracy of at least 99%, and annual labor savings above $10,000.",
+            "Straight-Through Processing rate of at least 50%, aggregate accuracy of at least 99.9%, and annual labor savings above $500,000."
           ],
           "answer": 0,
           "why": "True digital transformation leadership requires high straight-through automation (>= 75%), near-perfect accuracy (>= 99%), and substantial documented financial ROI.",
@@ -1185,10 +1185,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is dense vector semantic matching vastly superior to traditional Boolean keyword matching in enterprise talent acquisition?",
           "options": [
-            "Vector models guarantee that every candidate who applies will receive an immediate job offer.",
-            "Dense vector embeddings capture conceptual synonyms and skill hierarchies (e.g., recognizing that PyTorch relates to Deep Learning) even when exact terminology differs.",
-            "Keyword matching is illegal under federal civil rights laws.",
-            "Semantic embeddings eliminate the need for human employee background checks."
+            "Dense embeddings match only exact terms and job titles (such as PyTorch matching PyTorch), which keeps the screening results predictable for recruiters.",
+            "Dense embeddings capture conceptual synonyms and skill hierarchies (such as PyTorch relating to Deep Learning) even when the exact wording differs.",
+            "Dense embeddings rank candidates by the length of their resumes and years of experience, even when the exact skills listed differ.",
+            "Dense embeddings capture conceptual synonyms but cannot work across languages, so they apply only to resumes written in English."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -1227,10 +1227,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical legal distinction between Disparate Treatment and Disparate Impact in AI-driven employment selection?",
           "options": [
-            "Disparate Impact is a criminal offense, while Disparate Treatment is a minor civil infraction.",
-            "There is no legal difference; both terms describe the exact same phenomenon.",
-            "Disparate Treatment involves intentional discrimination using protected characteristics, whereas Disparate Impact involves facially neutral algorithms that disproportionately disadvantage protected groups without business necessity.",
-            "Disparate Treatment only applies to government agencies, while Disparate Impact applies to private businesses."
+            "Disparate Impact is intentional discrimination using protected traits; Disparate Treatment is a neutral-looking algorithm that disproportionately harms protected groups without business necessity.",
+            "Disparate Impact is intentional discrimination using protected traits; Disparate Treatment is a neutral-looking algorithm that disproportionately harms protected groups without any business necessity.",
+            "Disparate Treatment is intentional discrimination using protected traits; Disparate Impact is a neutral-looking algorithm that disproportionately harms protected groups without business necessity.",
+            "Disparate Treatment is bias found in the training data; Disparate Impact is bias found in the model code and in the final selection thresholds that decide who is hired."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -1311,10 +1311,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In machine learning fairness engineering, what is the core mechanism of Post-Processing Threshold Tuning?",
           "options": [
-            "Independently calibrating decision score cutoffs across demographic groups to ensure equal selection rates without altering the underlying predictive model weights.",
-            "Deleting all protected demographic rows from the training database before model training.",
-            "Adding random Gaussian noise to all predictions to make the algorithm unpredictable.",
-            "Manually rewriting every candidate resume to match a single standardized template."
+            "Setting separate decision score cutoffs per demographic group to equalise selection rates, without changing the underlying model weights.",
+            "Removing the protected attribute columns from the training data before training, so the model weights cannot learn from group membership.",
+            "Re-weighting training samples per demographic group to equalise selection rates, which changes the underlying model weights.",
+            "Adding a fairness penalty to the training loss function to equalise selection rates, which changes the underlying model weights."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -1353,10 +1353,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise AI governance frameworks mandate an internal safety buffer threshold (such as AIR >= 0.82) above the statutory 0.80 minimum?",
           "options": [
-            "Because federal law mandates paying an additional 2% tax on all AI-screened hires.",
-            "To account for random sampling variances across applicant cohorts and ensure the algorithm never inadvertently drops below the legal minimum due to natural candidate fluctuations.",
-            "To guarantee that human recruiters are entirely eliminated from the hiring process.",
-            "Because algorithms lose 2% accuracy every month due to software degradation."
+            "To meet the statutory rule that requires every employer to hold an AIR of at least 0.82 in each quarterly audit of applicants.",
+            "To absorb random sampling variance across applicant cohorts, so the algorithm does not slip below the legal minimum through normal fluctuation.",
+            "To meet the regulator's rule that firms with an AIR of exactly 0.80 must submit every hiring decision for manual review each quarter.",
+            "To cover protected groups that the 0.80 rule excludes, as the statutory minimum applies only to gender and never extends to race or age."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -1425,10 +1425,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is machine learning predictive CLV vastly superior to traditional historical average CLV in digital marketing?",
           "options": [
-            "Predictive CLV guarantees that zero customers will ever churn.",
-            "Historical CLV calculations cannot be performed on computers.",
-            "Predictive CLV forecasts future purchasing velocity and engagement trajectories for individual customers rather than averaging past historical revenue across disconnected cohorts.",
-            "Traditional CLV requires paying monthly licensing fees to government tax agencies."
+            "Predictive CLV records each customer's past purchases accurately in the ledger rather than estimating revenue from sampled customer cohorts.",
+            "Predictive CLV forecasts each cohort's average revenue from the past three years rather than modelling individual customer behaviour.",
+            "Predictive CLV forecasts each customer's future purchase pace and engagement trajectory rather than averaging past revenue across disconnected cohorts.",
+            "Predictive CLV forecasts each customer's acquisition cost and campaign response rather than projecting future revenue across the lifetime."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -1467,10 +1467,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary advantage of Survival Analysis (hazard modeling) over binary classification in customer retention?",
           "options": [
-            "Survival analysis guarantees that customers will sign 10-year contracts.",
-            "Survival analysis models the continuous time-to-event and instantaneous hazard rate, forecasting exactly when a customer is likely to depart rather than providing a static 30-day binary label.",
-            "Survival analysis eliminates all customer support operational costs.",
-            "Binary classification cannot be trained on tabular data."
+            "Survival analysis models only whether a customer will leave in the next 30 days, forecasting that single outcome more accurately than any time-based model can.",
+            "Survival analysis models the continuous time-to-event and instantaneous hazard rate, forecasting when a customer will likely leave instead of giving a static 30-day yes/no label.",
+            "Survival analysis models the average customer lifetime across the whole base, forecasting one expected tenure instead of the timing of each customer's departure.",
+            "Survival analysis models the cost of every retention offer over time, forecasting which discount keeps customers longest instead of timing their departure."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -1509,10 +1509,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an algorithm determines that demand for a premium product is inelastic (|epsilon| < 1.0), what pricing action maximizes corporate revenue?",
           "options": [
-            "Raising the price, because the percentage drop in quantity sold will be smaller than the percentage gain in price.",
-            "Cutting the price to zero to maximize market volume.",
-            "Freezing all manufacturing immediately.",
-            "Lowering the price by 50% to trigger panic buying."
+            "Raise the price, since the percentage drop in quantity sold will be smaller than the percentage gain in price.",
+            "Cut the price, since the percentage gain in quantity sold will be larger than the percentage drop in price.",
+            "Hold the price steady, since revenue is highest only when demand is exactly unit elastic at |epsilon| = 1.",
+            "Raise advertising spend instead of price, since inelastic demand reacts more to promotion than to price changes."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -1552,10 +1552,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Aspect-Based Sentiment Analysis significantly more actionable for enterprise product leaders than simple document-level sentiment polarity?",
           "options": [
-            "Aspect-based sentiment automatically issues cash refunds to customers.",
-            "Aspect-based sentiment runs 1,000 times faster than any other algorithm.",
-            "Document-level polarity is illegal under federal privacy statutes.",
-            "Aspect-based sentiment identifies the specific operational domain causing dissatisfaction (e.g., billing vs UI latency) rather than just assigning a generic negative label."
+            "It identifies the overall emotional tone of each review (positive, neutral or negative) instead of giving a separate score per feature.",
+            "It identifies the customers who wrote the negative reviews (such as high-value accounts) instead of the product features they complained about.",
+            "It identifies the language and country of each reviewer (such as German versus Spanish) instead of the topic that caused their dissatisfaction.",
+            "It identifies the specific area causing dissatisfaction (such as billing versus UI latency) instead of giving one generic negative label."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -1594,10 +1594,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture capital and private equity investors consider a 3.0:1 CLV-to-CAC ratio the benchmark for high-performance software growth?",
           "options": [
-            "It guarantees that marketing teams will never need to run paid advertising.",
-            "A 3:1 ratio is required to list on the New York Stock Exchange.",
-            "It ensures that gross profits generated over the customer lifecycle cover customer acquisition costs with sufficient residual cash flow to fund R&D and operational overhead.",
-            "Ratios above 2:1 are legally exempt from sales tax."
+            "It ensures acquisition cost is recovered within the first month of each customer's subscription, with little cash tied up in marketing.",
+            "It ensures lifetime revenue, rather than gross profit, covers acquisition cost, with enough cash left over to fund R&D and overhead.",
+            "It ensures lifetime gross profit covers acquisition cost with enough cash left over to fund R&D and operating overhead.",
+            "It ensures marketing spend stays under 3% of revenue each year, with enough cash left over to fund R&D and operating overhead."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -1666,10 +1666,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural difference between Attended and Unattended RPA bots in enterprise automation?",
           "options": [
-            "Attended bots are legally prohibited from accessing company databases.",
-            "Attended bots are written in Python, while Unattended bots are written in HTML.",
-            "Unattended bots require human employees to type passwords for every click.",
-            "Attended bots run on user desktops triggered by employees to assist with live tasks, while Unattended bots run autonomously 24/7 on servers executing scheduled batch workflows."
+            "Unattended bots run on user desktops and are triggered by employees for live tasks; Attended bots run alone on servers, executing scheduled batch work.",
+            "Attended bots handle structured data such as spreadsheets; Unattended bots handle unstructured data such as emails and scanned documents on servers.",
+            "Attended bots connect to systems through APIs only; Unattended bots connect through screen scraping only, running on virtual machines at night.",
+            "Attended bots run on user desktops and are triggered by employees for live tasks; Unattended bots run alone on servers, executing scheduled batch work."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -1709,10 +1709,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do modern IDP systems rely on multimodal models (like LayoutLM) combining visual layout with text rather than basic OCR?",
           "options": [
-            "Multimodal models understand the 2D spatial positioning and visual hierarchy of documents, enabling accurate key-value pairing across diverse invoice layouts.",
-            "Basic OCR cannot read documents written in the English language.",
-            "Multimodal models reduce computer monitor electricity consumption.",
-            "Basic OCR requires paying royalties to Adobe for every document."
+            "Multimodal models understand the 2D layout and visual hierarchy of a document, allowing accurate key-value pairing across different invoice formats.",
+            "Multimodal models read the text in a fixed left-to-right order, allowing accurate key-value pairing only for invoices that share one template.",
+            "Multimodal models compress each page into a single summary sentence, allowing quick key-value pairing across different invoice formats.",
+            "Multimodal models translate each invoice into English before reading it, allowing accurate key-value pairing across supplier languages."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -1796,10 +1796,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise AI operations, what is the role of an Active Learning feedback loop in Human-in-the-Loop workflows?",
           "options": [
-            "Sending automated disciplinary emails to employees who make data entry mistakes.",
-            "Deleting all historical transactions after 24 hours.",
-            "Capturing human reviewer corrections on exceptions and using them as high-quality training data to continuously retrain and improve the AI model over time.",
-            "Forcing human reviewers to work on weekends."
+            "Capturing human reviewers' working hours on exceptions and using them as productivity data to keep adjusting the staffing plan.",
+            "Capturing the model's own low-confidence outputs and using them as training data to retrain it without any human review.",
+            "Capturing human reviewers' corrections on exceptions and using them as quality training data to keep retraining and improving the model.",
+            "Capturing customer complaints about exceptions and using them as service data to keep rewriting the business rules by hand."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -1839,10 +1839,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of an Enterprise Automation Center of Excellence (CoE)?",
           "options": [
-            "Managing external corporate public relations.",
-            "Purchasing laptop computers for employees.",
-            "Coupling Enterprise directly to unvalidated external state while disabling Center across Automation transitions.",
-            "Establishing centralized standards, security controls, bot orchestration, SLA monitoring, and financial value realization across all departmental automation initiatives."
+            "Building and running every bot for each department centrally, so that departments cannot create their own automation projects at all.",
+            "Selecting the cheapest automation software vendor for each department, so that licence costs are lower across all departments and projects.",
+            "Training employees to use office productivity tools, so that departments can automate their own work with no central governance controls.",
+            "Setting central standards, security controls, bot orchestration, SLA monitoring and financial value tracking for all departmental automation projects."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -1911,10 +1911,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between Predictive Analytics (Tier 3) and Prescriptive Analytics (Tier 4)?",
           "options": [
-            "Predictive Analytics forecasts what will happen in the future, while Prescriptive Analytics recommends and executes the optimal action to achieve the desired outcome.",
-            "Predictive Analytics uses Python, while Prescriptive Analytics uses Excel spreadsheets.",
-            "Prescriptive Analytics is only used in hospitals and pharmaceutical companies.",
-            "There is no difference; they are synonymous terms for basic reporting."
+            "Predictive Analytics forecasts what will happen; Prescriptive Analytics recommends and carries out the best action to reach the desired result.",
+            "Predictive Analytics recommends and carries out the best action; Prescriptive Analytics forecasts what will happen in the future.",
+            "Predictive Analytics explains why something happened in the past; Prescriptive Analytics forecasts what will happen in the future.",
+            "Predictive Analytics summarises what happened in the past; Prescriptive Analytics explains why it happened and which factors drove it."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -1953,10 +1953,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise AI architectures deploy Centralized Feature Stores (like Feast or Tecton)?",
           "options": [
-            "To replace all human database administrators.",
-            "Feature stores compress data by 99% to eliminate hard drive costs.",
-            "To hide financial transactions from regulatory authorities.",
-            "To prevent Training-Serving Skew by ensuring that the exact same feature engineering transformations used in model training are served with low latency in production."
+            "To prevent model overfitting by randomly sampling features, with low latency, from the data used when the model was trained.",
+            "To prevent data duplication by storing raw tables once, with low latency, for the analysts who build the dashboards and reports.",
+            "To prevent concept drift by retraining the model each night, with low latency, on the newest features in the warehouse.",
+            "To prevent Training-Serving Skew by serving, with low latency, the exact feature transformations that were used when the model was trained."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -1995,10 +1995,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise B2B SaaS churn modeling, why is minimizing False Negatives (FN) typically prioritized over minimizing False Positives (FP)?",
           "options": [
-            "False Positives improve corporate credit ratings.",
-            "Algorithms crash when False Negatives exceed 10%.",
-            "A False Negative means an at-risk customer leaves completely unnoticed with zero intervention, destroying thousands in recurring revenue, whereas a False Positive only incurs the minor cost of a check-in.",
-            "False Negatives are illegal under consumer credit laws."
+            "A False Positive means an at-risk customer leaves unnoticed with no intervention, losing recurring revenue, while a False Negative costs only a check-in.",
+            "A False Negative means a healthy customer receives costly discounts they did not need, while a False Positive costs only a missed upsell.",
+            "A False Negative means an at-risk customer leaves unnoticed with no intervention, losing recurring revenue, while a False Positive costs only a check-in.",
+            "A False Negative means the model flags too many customers, which overloads the success team, while a False Positive costs only a delayed report."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -2037,10 +2037,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of a Contextual Next-Best-Action (NBA) decision engine in customer retention?",
           "options": [
-            "Deleting negative customer reviews from public websites.",
-            "Dynamically prescribing and dispatching the most effective personalized retention intervention based on the customer's specific friction point and expected ROI.",
-            "Sending identical form letters to all churned accounts.",
-            "Automatically charging customers a penalty fee when they attempt to cancel."
+            "Sending the same retention discount to every flagged customer, based on their contract value and the size of the next invoice.",
+            "Choosing and sending the most effective personalised retention step based on the customer's friction point and the expected ROI.",
+            "Choosing the cheapest retention step for every flagged customer, based on the lowest cost to the support team regardless of the ROI.",
+            "Choosing the retention step that the sales team prefers, based on the customer's friction point and the rep's quota for the quarter."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -2080,10 +2080,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Net Revenue Retention (NRR >= 115.0%) considered the gold standard metric of enterprise decision intelligence in SaaS and subscription businesses?",
           "options": [
-            "It proves that revenue expansion from existing healthy customers exceeds all revenue lost to customer churn, ensuring compounding organic growth even before new sales.",
-            "It is required by the IRS to claim federal research tax credits.",
-            "NRR measures the physical speed of database queries.",
-            "It ensures that marketing acquisition costs are zero."
+            "It shows that expansion from healthy existing customers exceeds all revenue lost to churn, so growth compounds even before any new sales.",
+            "It shows that new customer sales exceed all revenue lost to churn, so growth compounds only when the sales team keeps adding accounts.",
+            "It shows that churn has fallen to zero across the customer base, so growth compounds as long as pricing stays unchanged.",
+            "It shows that expansion from existing customers exceeds new sales, so growth compounds only when churn is ignored from the calculation."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -2152,10 +2152,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is pre-retrieval Role-Based Access Control (RBAC) filtering essential when deploying enterprise AI copilots?",
           "options": [
-            "RBAC filtering eliminates cloud hosting fees.",
-            "To prevent external hackers from sending spam emails to the company.",
-            "To prevent employees from viewing confidential corporate information (such as executive salaries or M&A plans) that exceeds their security clearance.",
-            "Because language models cannot process text unless it is encrypted with a password."
+            "To stop the copilot from using outdated company documents (such as old policies or superseded plans) that were archived long ago.",
+            "To stop employees from copying confidential information (such as executive pay or M&A plans) out of the copilot into email.",
+            "To stop employees from seeing confidential company information (such as executive pay or M&A plans) above their clearance level.",
+            "To stop the copilot from answering questions on topics (such as executive pay or M&A plans) that fall outside its training data."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -2195,10 +2195,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary advantage of a Knowledge Graph over traditional vector search when answering complex enterprise governance questions?",
           "options": [
-            "Vector search is strictly illegal under EU corporate regulations.",
-            "Knowledge graphs explicitly map and traverse structured relational pathways across multiple entity hops, whereas vector search only calculates flat statistical text similarity.",
-            "Knowledge graphs require no computer memory to store.",
-            "Knowledge graphs only work on Apple computers."
+            "Vector search maps and traverses structured relationships across several entity hops, while knowledge graphs only measure flat text similarity.",
+            "Knowledge graphs map and traverse structured relationships across several entity hops, while vector search only measures flat text similarity.",
+            "Knowledge graphs store raw documents in one searchable index with no structure, while vector search stores entities and typed relationships.",
+            "Knowledge graphs return answers faster than any vector search, while vector search needs relationships mapped by hand across entities."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -2237,10 +2237,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does enterprise search combine Dense Vector Retrieval with Sparse BM25 via Reciprocal Rank Fusion (RRF)?",
           "options": [
-            "Dense vectors capture conceptual semantics while BM25 captures exact keyword precision (such as SKUs and contract IDs), producing a balanced and highly accurate retrieval corpus.",
-            "BM25 prevents computer monitors from overheating.",
-            "Combining algorithms allows the company to file double patent applications.",
-            "Vector search alone cannot read PDF files."
+            "Dense vectors capture conceptual meaning while BM25 captures exact keyword precision (such as SKUs and contract IDs), giving balanced and accurate retrieval.",
+            "Dense vectors capture exact keyword precision (such as SKUs and contract IDs) while BM25 captures conceptual meaning, giving balanced and accurate retrieval.",
+            "Dense vectors and BM25 both capture conceptual meaning, but the fusion removes duplicate chunks, giving balanced and accurate retrieval.",
+            "Dense vectors rank results by document freshness while BM25 ranks them by author authority, which gives balanced and highly accurate retrieval."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -2279,10 +2279,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the standard latency Service Level Agreement (SLA) for enterprise AI copilots to prevent employee abandonment and workflow friction?",
           "options": [
-            "Turnaround under 45 minutes.",
-            "Zero latency (0.00 milliseconds).",
-            "Overnight batch turnaround within 12 hours.",
-            "Total query turnaround under 1,500 milliseconds (<= 1.5 seconds) with TTFT under 600 ms."
+            "Total query turnaround under 5,000 milliseconds (5 seconds) with time to first token under 2,000 ms.",
+            "Total query turnaround under 500 milliseconds (0.5 seconds) with time to first token under 100 ms.",
+            "Total query turnaround under 15,000 milliseconds (15 seconds) with time to first token under 6,000 ms.",
+            "Total query turnaround under 1,500 milliseconds (1.5 seconds) with time to first token under 600 ms."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -2321,10 +2321,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core competencies are formally certified by earning the Certified Enterprise AI Transformation Architect (CEATA) credential?",
           "options": [
-            "Certification to file corporate tax returns in all 50 states.",
-            "Expertise in designing billboard advertisements for highways.",
-            "Institutional mastery across algorithmic fairness, predictive growth economics, straight-through automation, and enterprise copilot knowledge graphs.",
-            "The ability to assemble personal computer hardware in a warehouse."
+            "Institutional mastery of cloud infrastructure, cybersecurity operations, network design, and enterprise database administration.",
+            "Institutional mastery of cloud infrastructure, cybersecurity operations, network design, and enterprise database administration practice.",
+            "Institutional mastery of algorithmic fairness, predictive growth economics, straight-through automation, and enterprise copilot knowledge graphs.",
+            "Institutional mastery of financial reporting, corporate taxation, statutory audit, and enterprise treasury management practice."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -2395,10 +2395,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary business value of No-Code AI workflow builders in enterprise digital transformation?",
           "options": [
-            "Eliminating the need for enterprise cybersecurity firewalls.",
-            "Empowering domain experts to build and deploy functional, integrated AI workflows in hours rather than waiting months for central IT development backlogs.",
-            "Allowing employees to play video games during work hours.",
-            "Reducing computer screen brightness to conserve battery."
+            "Letting central IT teams build AI workflows faster with generated code, instead of waiting months for domain experts to write requirements.",
+            "Letting domain experts build and deploy working, integrated AI workflows in hours instead of waiting months in a central IT backlog.",
+            "Letting domain experts build AI workflows without any integration, instead of waiting months for central IT to approve the security review.",
+            "Letting vendors host and manage AI workflows entirely for the company, instead of waiting months for internal staff to learn the platform."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -2438,10 +2438,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must enterprise Custom GPT assistants include defensive prompt guardrails in their system instructions?",
           "options": [
-            "To automatically increase company stock prices.",
-            "Because language models cannot speak English without guardrails.",
-            "To prevent prompt injection attacks from manipulating the assistant into revealing proprietary corporate policies or executing unapproved actions.",
-            "To prevent employees from logging in from home."
+            "To stop the assistant from using up its monthly token quota by limiting how many questions each employee may ask per day.",
+            "To stop the assistant from answering in languages other than English, so company policies stay consistent across every region.",
+            "To stop prompt injection attacks from tricking the assistant into revealing proprietary company policies or taking unapproved actions.",
+            "To stop employees from changing the assistant's name and avatar, so the company brand stays consistent across every department."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -2483,10 +2483,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is HMAC-SHA256 cryptographic signature verification mandatory for enterprise webhook endpoints?",
           "options": [
-            "It reduces internet broadband costs by 50%.",
-            "It translates JSON payloads into human speech.",
-            "It encrypts computer hard drives automatically.",
-            "It mathematically proves that the incoming webhook payload originated from the authorized source and was not altered or spoofed in transit across the internet."
+            "It encrypts the webhook payload so that no one on the network can read its contents while it moves across the internet.",
+            "It proves the webhook was delivered exactly once, so no payload can be repeated or arrive out of order across the internet.",
+            "It proves the webhook sender's IP address belongs to the vendor, so the payload content itself needs no further checks.",
+            "It proves the webhook payload came from the authorised source and was not altered or spoofed in transit over the internet."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -2526,10 +2526,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of Function Calling in enterprise AI agent architectures?",
           "options": [
-            "Allowing the model to output structured JSON specifying exact tool names and arguments, enabling deterministic software to execute database mutations without hallucinations.",
-            "Writing Python code directly into production server operating systems without testing.",
-            "Replacing all relational databases with text files.",
-            "Translating English into Spanish."
+            "Letting the model output structured JSON naming exact tools and arguments, so deterministic software can run database changes without hallucination.",
+            "Letting the model run database changes directly in its own runtime environment, so no separate software layer is needed to execute tools.",
+            "Letting the model store its chat history in a structured JSON file, so earlier turns are reused in later requests without hallucination.",
+            "Letting the model write free-text descriptions of tool actions, so human operators type the commands into enterprise systems themselves."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -2568,10 +2568,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an Enterprise No-Code Application Gateway prevent the risks of 'Shadow AI' in corporate environments?",
           "options": [
-            "By requiring all business decisions to be approved by government regulators.",
-            "By centralizing authentication, API schema enforcement, security logging, and testing standards across all citizen-developed tools before production release.",
-            "By deleting all employee email accounts.",
-            "By banning all employees from using computers."
+            "By blocking citizen developers from building tools and moving every automation request to a central IT queue for custom development.",
+            "By centralising authentication, API schema enforcement, security logging and testing standards for all citizen-developed tools before production release.",
+            "By blocking citizen developers from building tools and moving every automation request to a central IT queue for custom development work.",
+            "By dropping authentication for citizen-developed tools, since tools built in no-code platforms always run inside the company firewall."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -2644,10 +2644,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do monolithic, single-prompt AI assistants inevitably fail when tasked with complex cross-functional corporate projects?",
           "options": [
-            "Monolithic agents suffer from context window saturation and cognitive attention dilution across competing domains, causing hallucinations and reasoning collapse.",
-            "Monolithic agents are illegal under federal cybersecurity standards.",
-            "Single assistants cannot write Python code.",
-            "Single assistants require paying double cloud licensing fees."
+            "Monolithic agents suffer context window saturation and attention dilution across competing domains, causing hallucinations and reasoning collapse.",
+            "Monolithic agents lack enough parameters to hold finance, legal and operations knowledge together, causing crashes and frequent memory errors.",
+            "Monolithic agents cannot call external tools or APIs in a single prompt, causing every cross-functional request to fail at the first step.",
+            "Monolithic agents respond too quickly to weigh competing domains, causing shallow answers and a reasoning collapse on long projects."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -2686,10 +2686,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of the Orchestrator-Workers design pattern in enterprise multi-agent workflows?",
           "options": [
-            "It eliminates the need for human executive decision makers entirely.",
-            "It reduces server electricity consumption to zero.",
-            "It guarantees that all corporate acquisitions will be 100% profitable.",
-            "It separates strategic planning from specialized domain execution, allowing workers to run in parallel within isolated contexts without token bloat."
+            "It gives every worker the full global context and all other workers' outputs, so each call benefits from shared memory.",
+            "It forces workers to run strictly one after another so the orchestrator can review each step, which guarantees identical outputs.",
+            "It removes planning altogether and lets workers pick tasks at random, so no central agent is needed to coordinate them.",
+            "It separates strategic planning from specialised domain work, so workers run in parallel in isolated contexts without token bloat."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -2728,10 +2728,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise multi-agent architectures implement Adversarial Multi-Agent Debate protocols?",
           "options": [
-            "To make the software write longer paragraphs.",
-            "Because debate protocols are required by labor unions.",
-            "To stress-test corporate proposals against a dedicated 'Devil's Advocate' agent, mitigating groupthink and uncovering unstated risks before capital is committed.",
-            "To entertain employees with automated arguments."
+            "To speed up agreement by letting agents vote quickly on the first proposal, reducing long debate and unneeded review before capital is committed.",
+            "To cut token costs by letting one agent argue both sides of a proposal in a single prompt, reducing the number of agents needed.",
+            "To stress-test corporate proposals against a 'Devil's Advocate' agent, reducing groupthink and exposing unstated risks before capital is committed.",
+            "To train agents on adversarial examples, so they can resist prompt injection from outside users and external documents before capital is committed."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -2770,10 +2770,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of managing multi-agent state by copying full conversational transcripts into every agent's prompt?",
           "options": [
-            "Copying transcripts is prohibited by international copyright treaties.",
-            "Token consumption grows quadratically, leading to massive cloud inference costs, excessive latency, and context window exhaustion.",
-            "It causes the computer operating system to format the hard drive.",
-            "Full transcripts cause computer monitors to freeze."
+            "Earlier agents' decisions get overwritten by the last agent, leading to lost approvals, looping workflows and repeated tool calls.",
+            "Token consumption grows quadratically, driving up cloud inference cost, adding latency and exhausting the context window.",
+            "Transcripts expose personal data to the model provider, leading to mandatory fines, blocked deployments and lost certifications.",
+            "Token consumption falls as transcripts are compressed, leading to loss of detail, weaker answers and lower reasoning quality."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -2813,9 +2813,9 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What benchmark consensus agreement score must a multi-agent team achieve to earn automated boardroom executive clearance?",
           "options": [
             "Greater than or equal to 90.0% (Consensus >= 90.0%)",
-            "Exactly 50.0%",
-            "10.0%",
-            "Zero percent (unanimous disagreement is preferred)"
+            "Greater than or equal to 75.0% (Consensus >= 75.0%)",
+            "Greater than or equal to 99.0% (Consensus >= 99.0%)",
+            "Greater than or equal to 60.0% (Consensus >= 60.0%)"
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -2886,10 +2886,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When should an enterprise transition from serverless PaaS model APIs to dedicated IaaS GPU clusters?",
           "options": [
-            "Never; dedicated GPUs are obsolete.",
-            "Only when foundation model companies go out of business.",
-            "When building static HTML websites.",
-            "When continuous high-volume query workloads make hourly reserved GPU instance costs substantially cheaper than cumulative per-token API fees."
+            "When occasional low-volume query workloads make hourly reserved GPU instances cheaper than the cumulative per-token API fees.",
+            "When the team wants to avoid running infrastructure, since dedicated GPU clusters remove all operations work for the company.",
+            "When per-token API prices hit a new low, since dedicated GPU clusters are cheapest for bursty and unpredictable traffic.",
+            "When steady high-volume query workloads make hourly reserved GPU instances much cheaper than the cumulative per-token API fees."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -2928,10 +2928,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do foundation model cloud providers price Output Tokens significantly higher than Input Tokens?",
           "options": [
-            "Generating output tokens requires sequential autoregressive GPU passes, which are memory-bandwidth constrained, whereas input tokens are processed in parallel.",
-            "Output tokens are legally copyrighted by the user.",
-            "Input tokens take up more hard drive space.",
-            "Providers charge an arbitrary fee because output tokens contain vowels."
+            "Output tokens need sequential autoregressive GPU passes limited by memory bandwidth, while input tokens are processed in parallel.",
+            "Output tokens need parallel passes across all positions that are compute-bound, while input tokens are processed one after another.",
+            "Output tokens are returned over the network to the user, which costs more bandwidth, while input tokens stay inside the cloud region.",
+            "Output tokens use larger embedding tables than input tokens, which cost more memory, while input tokens reuse the shared tables."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -2970,10 +2970,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of INT4 model weight quantization in enterprise AI infrastructure?",
           "options": [
-            "It deletes 75% of the company's customer data.",
-            "It reduces model VRAM memory requirements by 75%, allowing massive models to run on fewer, cheaper GPUs with negligible reasoning loss.",
-            "It makes the language model speak 4 different languages simultaneously.",
-            "It prevents models from using numbers greater than 4."
+            "It cuts model VRAM needs by 50%, so large models run on fewer, cheaper GPUs with negligible loss of reasoning quality.",
+            "It cuts model VRAM needs by 75%, so large models run on fewer, cheaper GPUs with negligible loss of reasoning quality.",
+            "It cuts model VRAM needs by 75%, but requires retraining from scratch and causes a major loss of reasoning quality.",
+            "It raises model throughput fourfold, but doubles VRAM needs and requires more expensive GPUs with no loss of reasoning quality."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -3012,10 +3012,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Semantic Caching differ from traditional exact-match HTTP web caching?",
           "options": [
-            "Semantic caching only works on mobile phones.",
-            "HTTP caching is illegal under federal banking laws.",
-            "Semantic caching uses vector embeddings to recognize conceptually identical questions phrased with different words, whereas HTTP caching requires exact byte-for-byte string matches.",
-            "Semantic caching deletes the cache after 5 seconds."
+            "Semantic caching uses keyword stemming and regular expressions to match similar questions, while HTTP caching needs exact byte-for-byte matches.",
+            "Semantic caching stores answers per user session and expires them at logout, while HTTP caching stores answers for every visitor of the site.",
+            "Semantic caching uses vector embeddings to match conceptually identical questions worded differently, while HTTP caching needs exact byte-for-byte matches.",
+            "Semantic caching matches only the first sentence of each question with the cache key, while HTTP caching matches the whole request body."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -3054,10 +3054,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core objective of an Enterprise FinOps for AI Control Tower?",
           "options": [
-            "Printing physical paper currency in corporate offices.",
-            "Banning marketing departments from purchasing software.",
-            "Replacing human corporate treasurers with cryptocurrency.",
-            "Bringing financial accountability, unit-cost tracking, semantic cache optimization, and budget guardrails to cloud AI spending."
+            "Bringing real-time monitoring, threat detection and unified security governance to all foundation model applications.",
+            "Bringing golden benchmarks, rubric scoring and regression telemetry to the quality clearance of AI applications.",
+            "Bringing data quality gates, transaction auditability and lakehouse certification to the enterprise data pipelines.",
+            "Bringing financial accountability, unit-cost tracking, semantic cache optimisation and budget guardrails to cloud AI spending."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -3126,10 +3126,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the Silver tier in a Modern Data Lakehouse Medallion Architecture?",
           "options": [
-            "Generating final executive pitch decks automatically.",
-            "Deleting all customer records older than thirty days.",
-            "Cleansing, deduplicating, validating, and structuring raw Bronze data into trusted, query-ready datasets.",
-            "Encrypting raw data into secret cryptocurrency wallets."
+            "Storing raw data exactly as ingested from source systems, without cleansing, to keep a complete history.",
+            "Aggregating cleansed data into business-level KPI tables that feed executive dashboards and reports.",
+            "Cleansing, deduplicating, validating and structuring raw Bronze data into trusted, query-ready datasets.",
+            "Archiving superseded dataset versions in cold storage to keep long-term retention costs very low."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -3175,10 +3175,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Delta Lake guarantee ACID transactions on fundamentally non-transactional cloud object storage?",
           "options": [
-            "By requiring all data writes to be executed manually by human database administrators.",
-            "By maintaining a serialized, append-only Transaction Delta Log that records atomic commit metadata and active parquet snapshots.",
-            "By converting all parquet files into plain text emails.",
-            "By installing physical database hardware inside cloud object storage centers."
+            "By locking every object in the storage bucket during writes with a distributed mutex that blocks all other readers.",
+            "By keeping a serialised, append-only Transaction Delta Log of atomic commit metadata and active parquet snapshots.",
+            "By rewriting the whole dataset on every commit and replacing the old copy with a single atomic folder rename.",
+            "By moving the data into a relational engine that replaces object storage and applies row-level locks to each write."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -3218,10 +3218,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What enterprise benefit does Lakehouse Time-Travel provide during regulatory audits?",
           "options": [
-            "The ability to instantaneously query the historical state of any table at a past timestamp without restoring physical backups.",
-            "The ability to physically travel back in time to alter past business contracts.",
-            "The automatic prediction of next year's stock market prices.",
-            "Exemption from all federal tax reporting requirements."
+            "Instantly querying the historical state of any table at a past timestamp without restoring physical backups.",
+            "Automatically restoring physical backups of any table to a past timestamp within a few minutes of a request.",
+            "Editing past records in place so the audit trail matches corrected data without keeping the earlier versions.",
+            "Instantly querying the projected state of any table at a future timestamp without waiting for new loads."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -3263,10 +3263,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What action does an enterprise data pipeline execute when an incoming batch exhibits a DQI below 98.0%?",
           "options": [
-            "It automatically charges the customer's credit card twice.",
-            "It deletes the entire data lakehouse immediately.",
-            "It disables all company email servers.",
-            "It triggers an automated circuit breaker to quarantine the contaminated batch, halting Gold-tier materialization."
+            "It publishes the batch to the Gold tier with a warning flag and sends an email alert to the data owner.",
+            "It deletes the batch from Bronze storage and re-ingests the same source files without any review step.",
+            "It lowers the DQI threshold dynamically until the batch passes and continues to the Gold tier as normal.",
+            "It triggers an automated circuit breaker that quarantines the contaminated batch and halts Gold-tier materialisation."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -3307,10 +3307,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of an Enterprise Data Architecture Control Tower?",
           "options": [
-            "Replacing human software developers with automated robot vacuum cleaners.",
-            "Managing building air conditioning and electrical power grids.",
-            "Providing real-time governance, transaction auditability, and data quality certification across the enterprise lakehouse.",
-            "Tracking employee social media posts."
+            "Providing real-time threat monitoring, injection detection and unified security governance across the model applications.",
+            "Providing token-level cost tracking, cache optimisation and budget guardrails across the cloud AI spending.",
+            "Providing real-time governance, transaction auditability and data quality certification across the enterprise lakehouse.",
+            "Providing golden evaluation benchmarks, rubric critiques and regression telemetry across the model releases."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -3378,10 +3378,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary security role of the Tier 1 Enterprise No-Code Gateway?",
           "options": [
-            "Disabling all corporate computer networks at 5:00 PM.",
-            "Verifying cryptographic HMAC authentication and validating JSON schemas to eliminate shadow AI and unapproved mutations.",
-            "Deleting employee emails after 24 hours.",
-            "Printing physical paper copies of every API call."
+            "Encrypting lakehouse tables at rest and rotating storage keys to stop data theft and unapproved exports.",
+            "Verifying cryptographic HMAC authentication and validating JSON schemas to stop shadow AI and unapproved mutations.",
+            "Scoring model answers against golden datasets and rubrics to stop regressions and unapproved releases.",
+            "Throttling API requests per user and caching repeated queries to stop cost overruns and unapproved spending."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -3428,10 +3428,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Master Orchestrator require unanimous approval and confidence >= 0.85 before recommending corporate action?",
           "options": [
-            "Because language models cannot operate unless three agents are running.",
-            "To delay business decisions until the next fiscal quarter.",
-            "To prevent catastrophic blind spots by ensuring cross-functional consensus across legal, financial, and technical domains.",
-            "Because federal law mandates all AI swarms to vote unanimously."
+            "To speed up decisions by letting the most confident agent act alone once it scores above the threshold.",
+            "To reduce cloud cost by stopping the debate as soon as two agents agree on the proposed corporate action.",
+            "To avoid catastrophic blind spots by securing consensus across the legal, financial and technical domains.",
+            "To meet a statutory rule that requires every corporate action to be signed off by at least three AI models."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -3473,10 +3473,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Tier 3 FinOps guarantee that enterprise multi-agent systems remain economically scalable?",
           "options": [
-            "By shutting down all AI servers whenever costs exceed $100.",
-            "By charging employees personal credit cards for each search query.",
-            "By replacing software applications with manual paperwork.",
-            "By combining semantic caching, model quantization, and token economics modeling to keep unit query costs below $0.01."
+            "By combining larger context windows, longer prompts and premium model tiers to keep answer quality above 99.0%.",
+            "By combining semantic caching, model quantisation and token economics modelling to keep unit query costs under $0.10.",
+            "By combining hourly GPU reservations, higher batch sizes and fixed-price licences to keep monthly spend under $1,000.",
+            "By combining semantic caching, model quantisation and token economics modelling to keep unit query costs under $0.01."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -3518,10 +3518,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the consequence of failing the 98.0% DQI gate in Tier 4 Data Lakehouse Governance?",
           "options": [
-            "Automated circuit breakers quarantine contaminated data to prevent poisoned records from degrading executive decisions.",
-            "The entire cloud storage bucket is deleted immediately.",
-            "All company bank accounts are frozen by federal authorities.",
-            "The data engineers are immediately terminated."
+            "Automated circuit breakers quarantine contaminated data so poisoned records cannot degrade executive decisions.",
+            "The pipeline continues to the Gold tier with flagged records so executives still receive reports on schedule.",
+            "The entire lakehouse is shut down automatically until engineers rebuild every table from the raw source files.",
+            "The batch is deleted from Bronze storage so executives see only the last clean dataset without any alert."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -3561,10 +3561,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core enterprise competencies are certified by the CEATA Milestone 2 Honors credential?",
           "options": [
-            "Certification to conduct physical building security audits.",
-            "End-to-end mastery across no-code gateways, multi-agent swarms, sub-cent token economics, and modern lakehouse architecture.",
-            "Mastery of commercial airline pilot navigation systems.",
-            "The ability to assemble computer monitors in a manufacturing plant."
+            "End-to-end mastery of algorithmic fairness, predictive growth economics, straight-through automation and copilot knowledge graphs.",
+            "End-to-end mastery of no-code gateways, multi-agent swarms, sub-cent token economics and modern lakehouse architecture.",
+            "End-to-end mastery of AI security, red-teaming, evaluation benchmarks and regulatory compliance for enterprise deployments.",
+            "End-to-end mastery of demand forecasting, bullwhip damping, S&OP control towers and supply chain digital twins."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -3634,10 +3634,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are traditional network firewalls ineffective at preventing prompt injection attacks against LLMs?",
           "options": [
-            "Prompt injection attacks use valid, probabilistic natural language rather than binary exploit code, bypassing classical signature filters.",
-            "Traditional firewalls cannot connect to cloud computing centers.",
-            "Foundation models are legally exempt from firewall inspection.",
-            "Network firewalls only monitor incoming email spam."
+            "Prompt injection uses valid natural language, not binary exploit code, so it slips past classical signature filters.",
+            "Prompt injection uses encrypted network traffic that firewalls cannot inspect, so it slips past classical packet filters.",
+            "Prompt injection targets the model's GPU drivers, which sit outside the firewall's scope, so it slips past classical rules.",
+            "Prompt injection comes from trusted internal users, who are exempt from firewall rules, so it slips past classical filters."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -3680,10 +3680,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mechanism of an Indirect Prompt Injection attack in an enterprise RAG system?",
           "options": [
-            "An attacker writes a malicious smartphone app that steals customer passwords.",
-            "An attacker hacks the electrical grid of the cloud provider.",
-            "An attacker physically unplugs the enterprise database server.",
-            "An attacker embeds adversarial instructions within external documents that hijack the model's execution when retrieved as context."
+            "An attacker types adversarial instructions directly into the chat box, which take over the model when the prompt is submitted.",
+            "An attacker poisons the model's pre-training corpus, so the model carries adversarial instructions from before any retrieval.",
+            "An attacker overloads the vector database with queries, which takes the retrieval service offline when context is requested.",
+            "An attacker hides adversarial instructions in external documents, which take over the model when they are retrieved as context."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -3722,10 +3722,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is in-line PII redaction essential before sending prompts to external foundation model APIs?",
           "options": [
-            "To reduce the size of the internet.",
-            "Because credit card companies ban the use of software.",
-            "To prevent statutory data privacy violations under GDPR/HIPAA and prevent confidential data memorization by external models.",
-            "Because language models refuse to process numbers."
+            "To cut token costs on external APIs and to speed up responses from external models for every request.",
+            "To meet network latency targets for external APIs and to stop external models from rejecting long prompts.",
+            "To avoid statutory privacy violations under GDPR/HIPAA and to stop external models from memorising confidential data.",
+            "To avoid export-control fines on model weights and to stop external models from logging the user's IP addresses."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -3764,10 +3764,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What enterprise hazard arises from Insecure Output Handling in automated AI agent applications?",
           "options": [
-            "Computers will physically overheat and catch fire.",
-            "Unvalidated model outputs passed directly to downstream software can trigger Cross-Site Scripting (XSS), SQL injection, or remote code execution.",
-            "Employees will forget their computer passwords.",
-            "The model will demand higher salary payments."
+            "Unvalidated user input passed straight to the model can trigger refusals, token overruns or poor answers in downstream software.",
+            "Unvalidated model output passed straight to downstream software can trigger XSS, SQL injection or remote code execution.",
+            "Validated model output stored in the training logs can trigger data drift, label leaks or bias in later retraining runs.",
+            "Unvalidated model output shown to users can trigger copyright claims, fines for plagiarism or loss of brand trust."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -3805,10 +3805,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of an Enterprise AI Security Operations Center (AI-SOC)?",
           "options": [
-            "Providing real-time monitoring, threat detection, and unified governance across all foundation model applications.",
-            "Selling computer hardware to external retail customers.",
-            "Managing building heating and cooling systems.",
-            "Designing company logo graphics."
+            "Providing real-time monitoring, threat detection and unified governance across all foundation model applications.",
+            "Providing token-level cost tracking, cache optimisation and budget guardrails across all foundation model applications.",
+            "Providing golden benchmarks, rubric critiques and regression telemetry across all foundation model applications.",
+            "Providing training data lineage, labelling workflows and model registry controls across all foundation model applications."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -3877,10 +3877,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary advantage of Automated Red-Teaming over manual penetration testing in enterprise AI?",
           "options": [
-            "Automated red-teaming eliminates the need for computer networks.",
-            "Automated tools guarantee that models will never make factual mistakes.",
-            "Manual red-teaming is banned under international copyright laws.",
-            "Automated red-teaming scales to execute thousands of adversarial probes continuously in CI/CD pipelines at high velocity."
+            "Automated red-teaming finds novel attack techniques that no human tester could imagine, run once before each major release.",
+            "Automated red-teaming replaces the need to fix vulnerabilities, since the probes themselves block attacks in production traffic.",
+            "Automated red-teaming costs nothing to run, as the probes use only the free tier of the model provider's public API.",
+            "Automated red-teaming scales to thousands of adversarial probes, run continuously in CI/CD pipelines at high speed."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -3923,10 +3923,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do security teams apply Base64 encoding and character mutation during prompt fuzzing?",
           "options": [
-            "To test whether the model will decode and execute harmful instructions that would be caught by surface-level keyword filters in plain text.",
-            "To make the prompt smaller so it loads faster in the browser.",
-            "Because foundation models cannot understand standard English letters.",
-            "To encrypt the data permanently so nobody can read it."
+            "To test whether the model decodes and follows harmful instructions that surface-level keyword filters would catch in plain text.",
+            "To test whether the model's output is compressed correctly and decoded safely when it is sent across the network to users.",
+            "To test whether the model's tokenizer handles unusual characters, which improves the speed of its responses on long inputs.",
+            "To test whether the encoded instructions are stored correctly in the logs and can be decoded by the auditors in plain text."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -3965,10 +3965,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do Cognitive Jailbreak attacks attempt to bypass model safety filters?",
           "options": [
-            "By deleting the model's neural network weights from RAM.",
-            "By embedding harmful requests within fictional role-playing, hypothetical scenarios, or academic research pretexts to exploit model helpfulness.",
-            "By transmitting radio waves into the user's computer monitor.",
-            "By physically cutting the fiber-optic network cables to the server."
+            "By flooding the model with thousands of identical requests until its filters time out and let the harmful request through.",
+            "By wrapping harmful requests in fictional role-play, hypothetical scenarios or academic research pretexts that exploit model helpfulness.",
+            "By encoding harmful requests in Base64 or other formats that the keyword filters cannot read but the model can decode.",
+            "By editing the model's weights through a compromised fine-tuning pipeline so that its safety filters no longer trigger."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -4007,10 +4007,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of DevSecOps automated penetration testing in enterprise AI deployment?",
           "options": [
-            "Increasing the price of cloud computing subscriptions.",
-            "Automatically filing patent applications for every software update.",
-            "Automatically running standardized security regression tests on every build to block vulnerable models before production release.",
-            "Replacing human software engineers with automated code generators."
+            "Running one manual penetration test per year by an outside firm, to certify the models that are already in production.",
+            "Running one manual penetration test per year by an outside firm, to certify the models that are already in production use.",
+            "Running standard security regression tests on every build automatically, to block vulnerable models before they reach production.",
+            "Running load tests on every build automatically, to block slow models before they ever reach production and its users."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -4048,10 +4048,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core requirement must an enterprise AI system satisfy to achieve Red-Team Certified accreditation?",
           "options": [
-            "Being developed by a team of at least 1,000 software engineers.",
-            "Running on personal laptop computers rather than cloud servers.",
-            "Being featured on the front page of national newspapers.",
-            "Passing all automated red-team probes, demonstrating fuzzing resilience, blocking cognitive jailbreaks, and having zero open critical vulnerabilities."
+            "Passing most automated red-team probes, showing fuzzing resilience, blocking cognitive jailbreaks, and having no more than five open critical vulnerabilities.",
+            "Passing all automated red-team probes, showing fuzzing resilience, and having a written plan to fix open critical vulnerabilities within a year.",
+            "Passing an annual manual penetration test, documenting known jailbreaks in a register, and having zero open low-severity vulnerabilities.",
+            "Passing all automated red-team probes, showing fuzzing resilience, blocking cognitive jailbreaks, and having zero open critical vulnerabilities."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -4120,10 +4120,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of a Golden Evaluation Dataset in enterprise AI engineering?",
           "options": [
-            "Generating random numbers for cryptographic key generation.",
-            "Printing physical paper copies of customer contracts.",
-            "Providing a standardized, curated ground-truth benchmark to quantitatively measure model accuracy across updates.",
-            "Storing employee password records securely."
+            "Providing a large, unlabelled text corpus to teach the model new domain knowledge before each update.",
+            "Providing a live feed of user questions to measure model popularity across departments after each update.",
+            "Providing a standard, curated ground-truth benchmark to measure model accuracy across updates in numbers.",
+            "Providing a record of every model prompt and answer to measure token costs across updates for billing."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -4166,10 +4166,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Chain-of-Thought Rubric Scoring essential when using LLM-as-a-Judge?",
           "options": [
-            "Because language models cannot generate numbers without writing letters first.",
-            "Requiring the judge model to explain its reasoning step-by-step increases scoring consistency and correlation with human expert judges.",
-            "To make the software run slower so humans can read the code.",
-            "Because federal law mandates all AI judges to write essays."
+            "Making the judge model give only a score without explanation lowers cost and raises agreement with human expert judges.",
+            "Making the judge model explain its reasoning step by step raises scoring consistency and agreement with human expert judges.",
+            "Making the judge model compare its answer with the generator's own reasoning removes bias and raises agreement with expert judges.",
+            "Making the judge model run the same rubric five times and report the highest score raises consistency with human expert judges."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -4208,10 +4208,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What diagnostic insight does the RAG Triad provide when an enterprise AI application produces incorrect answers?",
           "options": [
-            "It isolates whether the failure originated in the Information Retriever (poor context) or the Generative Model (hallucination).",
-            "It tells engineers which employee wrote the faulty code.",
-            "It calculates the exact monetary value of the enterprise.",
-            "It automatically fixes broken computer hardware in data centers."
+            "It shows whether a failure began in the Information Retriever (poor context) or in the Generative Model (hallucination).",
+            "It shows whether a failure began in the user's prompt wording or in the language the user wrote the question.",
+            "It shows whether a failure began in the vector database hardware or in the network between the services.",
+            "It shows whether a failure began in the training data cleaning or in the licence terms of the base model."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -4250,10 +4250,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must enterprise AI teams run continuous regression testing against commercial LLM APIs?",
           "options": [
-            "To prevent computers from running out of electricity.",
-            "Because foundation models delete their training weights after 30 days.",
-            "Because software licenses expire every 24 hours.",
-            "Because cloud model providers frequently update model checkpoints, which can silently degrade reasoning, formatting, or accuracy."
+            "Because cloud model providers often raise prices without notice, which can silently increase the cost of each production request.",
+            "Because cloud model providers often remove older models without warning, which can silently disable the enterprise integrations.",
+            "Because cloud model providers often change their data centre regions, which can silently increase the latency of each response.",
+            "Because cloud model providers often update model checkpoints, which can silently degrade reasoning, formatting or accuracy."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -4291,10 +4291,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the Enterprise AI Evaluation Control Tower?",
           "options": [
-            "Tracking physical employee attendance in office buildings.",
-            "Managing corporate travel hotel reservations.",
-            "Unifying factual accuracy benchmarks, rubric critiques, and regression telemetry into a single production quality clearance.",
-            "Conducting annual tax return filings for executive staff."
+            "Combining threat detection, injection monitoring and red-team results into one production security clearance.",
+            "Combining unit cost tracking, cache hit rates and budget guardrails into one production cost clearance.",
+            "Combining factual accuracy benchmarks, rubric critiques and regression telemetry into one production quality clearance.",
+            "Combining unit cost tracking, cache hit rates and budget guardrails into one production cost clearance for the whole platform."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -4407,10 +4407,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an ISO/IEC 42001 AIMS audit, what is the role and requirement of the Statement of Applicability (SoA) regarding excluded controls?",
           "options": [
-            "All 38 Annex A controls are legally mandatory for every company regardless of whether they develop or use AI, making exclusions illegal.",
-            "The Statement of Applicability is an optional marketing brochure that external certification bodies are instructed to ignore.",
-            "Organizations may exclude controls only if they provide a formal, documented business or technical justification, while all applicable controls must have verifiable audit evidence.",
-            "Organizations can omit any control without explanation as long as the chief technology officer signs an informal email disclaimer."
+            "Controls may be excluded without any justification if the organisation is small, and only the included controls need verifiable audit evidence.",
+            "Controls may be excluded only with approval from the registrar before the audit, and every excluded control needs verifiable audit evidence.",
+            "Controls may be excluded only with a documented business or technical justification, and every applicable control needs verifiable audit evidence.",
+            "Controls may be excluded only for the first year of certification, and every applicable control needs a written policy but no audit evidence."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -4448,10 +4448,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the EU AI Act, what regulatory tier is assigned to an enterprise AI system used for screening job applicants and ranking candidate resumes, and what are the compliance requirements?",
           "options": [
-            "Unacceptable Risk (Article 5), meaning resume screening software is strictly banned and punishable by immediate corporate dissolution.",
-            "Specific Transparency Risk only, requiring nothing more than a watermark indicating the text was generated by a computer.",
-            "Minimal Permitted Risk, exempting enterprise human resources systems from any European regulatory oversight whatsoever.",
-            "High Risk (Annex III, Employment), requiring mandatory compliance with Articles 9-15 including risk management, data governance, logging, human oversight, and robustness."
+            "Limited Risk (Article 50), requiring only a transparency notice to candidates, with no risk management, logging or human oversight duties.",
+            "Limited Risk (Article 50), requiring only a transparency notice to candidates, with no risk management, logging, robustness or human oversight duties.",
+            "Minimal Risk (voluntary codes), requiring no mandatory compliance, with risk management, logging and human oversight left to the employer.",
+            "High Risk (Annex III, Employment), requiring compliance with Articles 9-15 including risk management, data governance, logging, human oversight and robustness."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -4530,10 +4530,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is cryptographic ledger chaining (SHA-256 linking of previous block hashes) essential for enterprise AI compliance in CI/CD pipelines?",
           "options": [
-            "It accelerates GPU floating-point operations during deep learning matrix multiplication.",
-            "It creates an immutable, tamper-evident audit trail proving that mandatory safety, fairness, and governance tests were passed before deployment.",
-            "It converts unformatted text files into compressed video streams for regulatory archiving.",
-            "It bypasses all cloud security firewalls by masking model weights as cryptographic tokens."
+            "It encrypts the deployment artefacts so only authorised engineers can read the model files stored in the build registry.",
+            "It creates an immutable, tamper-evident audit trail showing that mandatory safety, fairness and governance tests passed before deployment.",
+            "It speeds up the pipeline by skipping tests on blocks whose hashes match earlier builds, cutting the time of each release.",
+            "It speeds up the pipeline by skipping tests on blocks whose hashes match earlier builds, cutting the time of each release considerably."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -4602,10 +4602,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of Pillar 1 in the Enterprise AI Control Tower?",
           "options": [
-            "To compile C++ code into WebAssembly binaries inside web browsers.",
-            "To act as a real-time, low-latency runtime firewall intercepting OWASP LLM vulnerabilities (injection, DoS, exfiltration) before queries reach downstream models.",
-            "To manually transcribe recorded voice audio into markdown files during quarterly sales meetings.",
-            "To replace human executive leadership with an unconstrained autonomous financial speculation agent."
+            "To act as a nightly batch scanner that reports OWASP LLM threats (injection, DoS, exfiltration) to auditors after queries reached downstream models.",
+            "To act as a real-time, low-latency runtime firewall that blocks OWASP LLM threats (injection, DoS, exfiltration) before queries reach downstream models.",
+            "To act as a model registry that tracks versions and licences and records OWASP LLM threats on each model before it is deployed downstream.",
+            "To act as a rate limiter that caps the daily token budget of each team and blocks OWASP LLM threats only when the budget is exceeded."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -4646,10 +4646,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Attack Neutralization Rate (ANR) in Pillar 2 calculated across multiple mutation types rather than simple direct attacks?",
           "options": [
-            "Because running multiple attacks generates more billing revenue for third-party cloud infrastructure vendors.",
-            "Because direct attacks have been completely eliminated from the internet since 2021.",
-            "Because modern LLM jailbreaks routinely use obfuscation (base64, roleplay, token splitting) to bypass direct keyword filters, making multi-vector stress testing essential.",
-            "Because mutation types are required by Python syntax rules to terminate while loops."
+            "Because direct attacks are rare in practice and almost never reach production, so multi-vector tests give a more realistic traffic profile.",
+            "Because mutation types raise the number of test cases, so the neutralisation rate looks higher and meets the audit threshold easily.",
+            "Because modern jailbreaks use obfuscation (base64, roleplay, token splitting) to evade direct keyword filters, so multi-vector stress tests are needed.",
+            "Because mutation types raise the number of test cases, so the neutralisation rate looks higher and meets the audit threshold more easily."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -4687,10 +4687,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the harmonic mean favored over the arithmetic mean when calculating composite RAG Triad scores in Pillar 3?",
           "options": [
-            "Because arithmetic means require quadratic memory allocations while harmonic means run in constant time.",
-            "Because the harmonic mean automatically converts floating point numbers into integer strings for legacy databases.",
-            "Because European Union regulations prohibit the use of addition or subtraction in financial data pipelines.",
-            "Because the harmonic mean heavily penalizes severe outliers, ensuring that a near-zero faithfulness score (hallucination) cannot be concealed by high relevance."
+            "Because the harmonic mean rewards the highest score in the set, so a single strong relevance result can lift the composite score.",
+            "Because the harmonic mean ignores the lowest score in the set, so one noisy metric cannot distort the composite RAG score.",
+            "Because the harmonic mean weights scores by retrieval order, so early retrieved chunks outweigh late ones in the composite score.",
+            "Because the harmonic mean heavily penalises a very low score, so near-zero faithfulness (hallucination) cannot be hidden by high relevance."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -4729,9 +4729,9 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What four mandatory statutory conditions must be satisfied simultaneously for Pillar 4 to grant 'PASSED' status to an enterprise AI deployment?",
           "options": [
             "Non-prohibited EU tier, EU high-risk conformity pass, disparate impact ratio >= 0.80, and 100% ISO 42001 Statement of Applicability conformance.",
-            "Zero prompt tokens, 100% GPU memory allocation, and two senior executive approvals.",
-            "An active commercial cloud subscription, zero open-source dependencies, and weekly marketing announcements.",
-            "Continuous video streaming of the server rack, an active credit card on file, and zero user feedback tickets."
+            "Non-prohibited EU tier, EU high-risk conformity pass, disparate impact ratio >= 0.60, and 80% ISO 42001 Statement of Applicability conformance.",
+            "Minimal-risk EU tier only, EU conformity self-declaration, disparate impact ratio >= 0.80, and 100% ISO 27001 control conformance.",
+            "Non-prohibited EU tier, SOC 2 attestation pass, disparate impact ratio >= 0.90, and 100% ISO 42001 Statement of Applicability conformance."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -4769,10 +4769,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic and operational significance of achieving a 100/100 Enterprise Trust & Governance Score in the Master AI Control Tower?",
           "options": [
-            "It automatically doubles the clock speed of all cloud GPUs hosted in North American data centers.",
-            "It proves that the AI system meets the highest enterprise benchmarks for threat immunity, adversarial resilience, factual accuracy, and statutory compliance, conferring operational authorization and the CEAIGD credential.",
-            "It exempts the company from paying corporate income taxes under international technology treaties.",
-            "It converts the AI system into a proprietary cryptocurrency listed on decentralized exchanges."
+            "It shows the AI system has no remaining risk of any kind, so regulators waive all future audits and the company is exempt from the obligations of the EU AI Act.",
+            "It shows the AI system meets the top enterprise benchmarks for threat immunity, resilience, factual accuracy and compliance, earning operational authorisation and the CEAIGD credential.",
+            "It shows the AI system is the cheapest to run in its class, so finance approves unlimited scaling and the CEAIGD credential is issued to the whole team at once.",
+            "It shows the AI system passed one annual penetration test with zero findings, earning a security badge from the auditor but no operational authorisation for use."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -4841,10 +4841,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Weighted Absolute Percentage Error (WAPE) frequently preferred over Mean Absolute Percentage Error (MAPE) in enterprise retail and supply chain forecasting?",
           "options": [
-            "MAPE requires quadratic computing memory while WAPE runs directly inside GPU registers.",
-            "MAPE is illegal under International Financial Reporting Standards (IFRS 15) for retail inventory valuation.",
-            "WAPE weights errors by volume, preventing low-volume or zero-sales items from skewing aggregate accuracy metrics with division-by-zero or extreme percentages.",
-            "WAPE automatically sets all forecast errors to zero if total sales exceed one million units."
+            "WAPE squares each error before averaging, so large misses cannot be hidden by many small ones in the aggregate accuracy metric.",
+            "WAPE squares each error before averaging, so large misses cannot be hidden by many small ones in the aggregate accuracy metric of the supply chain.",
+            "WAPE weights errors by volume, so low-volume or zero-sales items cannot distort the aggregate accuracy with division-by-zero or extreme percentages.",
+            "WAPE averages errors across forecast horizons, so short-term misses cannot distort the aggregate accuracy metric with extreme percentages."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -4886,10 +4886,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In generalized additive time-series models (like Prophet), what is the key benefit of providing Bayesian uncertainty intervals alongside point forecasts for supply chain procurement?",
           "options": [
-            "Uncertainty intervals prevent supply chain planners from accessing historical sales databases.",
-            "Uncertainty intervals provide upper and lower demand boundaries, allowing inventory planners to size safety stocks based on statistical risk tolerance rather than guessing a single number.",
-            "Uncertainty intervals eliminate the need to purchase raw materials by generating synthetic digital twin assets.",
-            "Uncertainty intervals guarantee that suppliers will provide a 50% cash discount if demand drops below the lower bound."
+            "Intervals give the exact future demand figure, so planners can cut safety stock to zero and rely on a single reliable number.",
+            "Intervals give upper and lower demand bounds, so planners set safety stock by statistical risk tolerance instead of guessing one number.",
+            "Intervals give the seasonal pattern of past sales, so planners set safety stock by last year's peaks instead of statistical risk.",
+            "Intervals give the supplier lead time distribution, so planners set safety stock by delivery delays instead of demand risk."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -4927,10 +4927,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger in an enterprise supply chain when regional distribution centers and corporate headquarters operate on incoherent, non-reconciled forecasts?",
           "options": [
-            "Operational misalignments occur where procurement under-buys inventory while logistics over-allocates freight capacity, resulting in stockouts and wasted shipping expenditures.",
-            "Incoherent forecasts cause physical warehouse conveyor belts to automatically reverse direction.",
-            "Non-reconciled forecasts force ERP systems to convert all monetary amounts into foreign currencies.",
-            "Aggregation errors trigger immediate revocation of commercial business licenses by the Securities and Exchange Commission."
+            "Operations fall out of step: procurement under-buys while logistics over-allocates freight, causing stockouts and wasted shipping spend.",
+            "Operations stay in step, but forecasts become too accurate, causing planners to cut safety stocks to zero and miss late orders.",
+            "Operations fall out of step: procurement over-buys while logistics under-allocates freight, causing excess stock and delayed shipments.",
+            "Operations fall out of step: finance over-budgets while sales under-reports, causing audit queries and wasted planning effort."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -4968,10 +4968,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a supply chain's Bullwhip Ratio is measured at 9.92, what does this mathematically indicate about the factory's production stability relative to end-customer retail demand?",
           "options": [
-            "Factory production is 9.92% cheaper than retail store operating expenses.",
-            "Retail stores are selling 9.92 times more goods than the factory is manufacturing.",
-            "The supply chain operates in perpetual steady-state equilibrium with zero buffer stock requirements.",
-            "Factory order variance is 9.92 times greater than retail demand variance, leading to massive production swings, high holding costs, and factory under-utilization."
+            "Retail demand variance is 9.92 times factory order variance, causing small production swings, low holding costs and stable factory use.",
+            "Factory orders are 9.92% higher than retail demand on average, causing steady production growth and low holding costs.",
+            "Factory order variance equals retail demand variance within 9.92%, causing stable production swings and high factory use.",
+            "Factory order variance is 9.92 times retail demand variance, causing large production swings, high holding costs and factory under-use."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -5009,10 +5009,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an autonomous S&OP Control Tower, why is exception routing segmented between autonomous load balancing and human executive escalation based on financial dollar impact?",
           "options": [
-            "Because enterprise ERP systems require physical signatures on paper for every inventory movement.",
-            "To comply with international maritime treaties governing trans-Atlantic container shipping.",
-            "To allow low-risk operational adjustments to occur at machine speed while ensuring human executives retain fiduciary oversight over high-stakes financial commitments.",
-            "Because machine learning models cannot compute numbers larger than $50,000 due to 16-bit integer overflow."
+            "To let high-value financial commitments happen at machine speed while human planners keep oversight of low-risk operational changes.",
+            "To route exceptions by the department that raised them while the finance executives approve all cases above a fixed number of items.",
+            "To let low-risk operational changes happen at machine speed while human executives keep fiduciary oversight of high-value financial commitments.",
+            "To route exceptions by the time of day they occur while the on-call manager approves all cases raised outside working hours."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -5081,10 +5081,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does each extra point of Cycle Service Level between 98% and 99.5% require far more safety stock than a point between 90% and 95%?",
           "options": [
-            "Because international maritime freight ships travel 50% slower when transporting goods destined for high-service retail tiers.",
-            "Because commercial banks double the prime interest rate on corporate loans when inventory service levels exceed 98%.",
-            "Because warehouse workers charge triple overtime wages to shelve goods designated with a 99% service tag.",
-            "Because the tails of the normal distribution thin out, so each additional point of service level needs a much larger increase in the Z-score (and thus safety units) to cover rarer extreme events."
+            "Because the tails of the normal distribution thicken, so each extra service point needs a much larger Z-score only for fast-moving items with steady, high-volume demand.",
+            "Because supplier lead times lengthen at higher service levels, so each extra service point needs a proportionally larger buffer to cover the longer replenishment window.",
+            "Because the Z-score rises in a straight line with service level, but the holding cost per unit climbs at higher levels, so each extra point costs far more to carry.",
+            "Because the tails of the normal distribution thin out, so each extra service point needs a much larger Z-score (and more safety units) to cover rarer extreme events."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -5126,10 +5126,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic operational rationale for assigning an 'AUTOMATED_JIT_LOW_SAFETY_BUFFER' policy to an 'AX' classified SKU?",
           "options": [
-            "Because AX items represent massive financial revenue and highly predictable demand, allowing the company to minimize buffer capital while relying on continuous just-in-time replenishment.",
-            "Because AX items are legally prohibited from being stored inside physical warehouse buildings.",
-            "Because AX items have zero customer demand and must be auctioned off to scrap metal dealers.",
-            "Because AX items are perishable dairy products that spoil within forty-five minutes of arrival."
+            "Because AX items bring large revenue and highly predictable demand, the company can keep little buffer capital and rely on continuous just-in-time replenishment.",
+            "Because AX items bring little revenue and highly volatile demand, the company can keep little buffer capital and rely on JIT replenishment to avoid obsolescence.",
+            "Because AX items bring large revenue and highly erratic demand, the company must keep little buffer capital and rely on JIT replenishment to avoid write-offs.",
+            "Because AX items bring large revenue and highly predictable demand, regulators require little buffer capital and continuous just-in-time replenishment for the class."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -5167,10 +5167,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Square Root Law of Inventory, if an enterprise centralizes safety stock from 16 regional warehouses into 1 central distribution center, what is the theoretical percentage reduction in total required safety stock?",
           "options": [
-            "16.0% reduction (proportional to the number of closed warehouses).",
-            "75.0% reduction (since pooled stock scales as 1 / sqrt(16) = 1/4 = 25% of decentralized stock, yielding a 75% reduction).",
-            "Zero reduction (total demand remains constant regardless of warehouse locations).",
-            "99.0% reduction (central distribution centers completely eliminate all demand uncertainty)."
+            "93.75% reduction (pooled stock scales as 1 / 16 = 6.25% of decentralized stock, so the reduction is 93.75%).",
+            "75.0% reduction (pooled stock scales as 1 / sqrt(16) = 1/4 = 25% of decentralized stock, so the reduction is 75%).",
+            "25.0% reduction (pooled stock scales as 1 / sqrt(16) = 1/4 of decentralized stock, so a quarter of stock is removed).",
+            "50.0% reduction (pooled stock scales as 1 / sqrt(4) = 1/2 of decentralized stock, so the total is cut in half)."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -5208,10 +5208,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a Periodic Review (R, S) inventory policy require more safety stock than a Continuous Review (s, Q) policy for the identical product and supplier?",
           "options": [
-            "Because Periodic Review requires purchasing physical paper notebooks for warehouse stock audits.",
-            "Because Continuous Review systems are completely immune to supplier shipment delays.",
-            "Because Periodic Review is exposed to demand volatility over both the review interval and the supplier lead time (L + R), whereas Continuous Review is exposed only during the lead time (L).",
-            "Because suppliers charge a 20% penalty fee for reviewing inventory on calendar schedules."
+            "Because Continuous Review is exposed to demand variability over both the review interval and the lead time (L + R), while Periodic Review is exposed only over the lead time (L).",
+            "Because Periodic Review uses larger fixed lot sizes than Continuous Review, so it holds more cycle stock as safety stock when the supplier and product are identical.",
+            "Because Periodic Review is exposed to demand variability over both the review interval and the lead time (L + R), while Continuous Review is exposed only over the lead time (L).",
+            "Because Periodic Review is exposed to supplier lead time variability only, while Continuous Review is exposed to demand variability only, and lead time risk is larger."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -5249,10 +5249,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an autonomous inventory control tower, what is the primary economic advantage of executing lateral transshipments between regional distribution centers over placing expedited supplier rush orders?",
           "options": [
-            "Lateral transshipments eliminate all freight transportation emissions by transporting physical goods over fiber optic internet cables.",
-            "Lateral transshipments force the receiving warehouse to pay corporate taxes in two states simultaneously.",
-            "Suppliers refuse to accept purchase orders from companies with multiple distribution centers.",
-            "Lateral transshipments utilize existing enterprise inventory already paid for, eliminating expensive supplier expedite premiums and reducing excess carrying costs across the network."
+            "Lateral transshipments use ocean freight that is cheaper than expedited air shipments, avoiding supplier minimum order quantities across the network.",
+            "Lateral transshipments use the supplier's own safety stock held at the dock, avoiding the carrying cost of regional inventory across the network.",
+            "Lateral transshipments use forecast data to pre-position stock at the supplier, avoiding the freight cost of regional movements across the network.",
+            "Lateral transshipments use inventory the enterprise already owns, avoiding supplier expedite premiums and cutting excess carrying costs across the network."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -5321,10 +5321,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Capacitated Vehicle Routing with Time Windows (VRPTW), what occurs if a delivery vehicle arrives at a customer stop before the specified time window opening (e_i)?",
           "options": [
-            "The vehicle must idle and wait outside the facility until the window opens, consuming driver labor hours but remaining legally compliant without triggering SLA penalties.",
-            "The customer stop is automatically canceled and the driver returns immediately to the central depot.",
-            "The vehicle is impounded by municipal traffic authorities for early commercial operation.",
-            "The goods are automatically destroyed by automated onboard cargo security mechanisms."
+            "The vehicle must idle and wait outside until the window opens, using driver hours but staying compliant with no SLA penalty.",
+            "The vehicle must skip the stop and return later in the day, saving driver hours but incurring an SLA penalty for the missed window.",
+            "The vehicle may unload at once and the early arrival counts as on time, saving driver hours and earning an SLA bonus for the customer.",
+            "The solver marks the whole route infeasible and discards the tour, using no driver hours but forcing a full replan of all stops."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -5366,10 +5366,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Clarke-Wright savings formula Savings(i, j) = Distance(0, i) + Distance(0, j) - Distance(i, j), what does the resulting value mathematically represent?",
           "options": [
-            "The maximum weight capacity of the delivery vehicle divided by the price of diesel fuel.",
-            "The total number of packages that can be stored on the depot loading dock.",
-            "The total financial insurance premium required to operate a commercial delivery truck.",
-            "The exact distance saved by serving stops i and j consecutively on a single vehicle tour instead of sending two separate vehicles from the depot to each stop."
+            "The extra distance added by serving stops i and j one after the other on a single tour instead of sending two separate vehicles.",
+            "The extra distance added by serving stops i and j one after the other on a single tour instead of sending two separate vehicles from the depot.",
+            "The total distance travelled when stops i and j are served by two separate vehicles that each leave from and return to the depot.",
+            "The distance saved by serving stops i and j one after the other on a single tour instead of sending two separate vehicles from the depot."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -5407,10 +5407,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the autonomous dispatch engine select 'DYNAMIC_STOP_TRANSFER' over 'REROUTE_DETOUR' when resolving the 45-minute traffic delay?",
           "options": [
-            "Because city municipal traffic codes make detour routing illegal for commercial transport vehicles.",
-            "Because delivery drivers are prohibited from turning right at highway intersections.",
-            "Transferring the stop to nearby TRUCK-02 costs only $2.25 in sibling fuel, compared to $30.40 for a detour and $112.50 in unmitigated late penalties.",
-            "Because TRUCK-01 ran out of electrical battery charge and had to be abandoned."
+            "Rerouting by detour costs only $2.25 in extra fuel, versus $30.40 for moving the stop to TRUCK-02 and $112.50 in unmitigated late penalties.",
+            "Moving the stop to nearby TRUCK-02 costs $112.50 in sibling fuel, versus $30.40 for a detour and only $2.25 in unmitigated late penalties.",
+            "Moving the stop to nearby TRUCK-02 costs only $2.25 in sibling fuel, versus $30.40 for a detour and $112.50 in unmitigated late penalties.",
+            "Moving the stop to nearby TRUCK-02 costs $30.40 in sibling fuel, versus $2.25 for a detour, but avoids $112.50 in late penalties."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -5448,10 +5448,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational driver that enables Smart Parcel Locker aggregation to cut last-mile delivery costs by over 50% relative to traditional residential door-to-door delivery?",
           "options": [
-            "Parcel lockers are exempt from paying local sales tax on delivered consumer electronics.",
-            "Lockers aggregate dozens of customer deliveries into a single high-density stop, slashing driver delivery dwell time, eliminating residential failed-attempt re-deliveries, and shortening route distance.",
-            "Delivery drivers are unpaid volunteers when dropping parcels at commercial locker banks.",
-            "Lockers allow shipping companies to deliver empty cardboard boxes without merchandise."
+            "Lockers move all deliveries to a night shift with lighter traffic, cutting driver wages, avoiding congestion charges and shortening routes.",
+            "Lockers combine dozens of deliveries into one dense stop, cutting driver dwell time, avoiding failed-attempt re-deliveries and shortening routes.",
+            "Lockers combine dozens of deliveries into one dense stop, cutting parcel insurance, avoiding customs checks and lengthening each route.",
+            "Lockers replace couriers with drones that load parcels automatically, cutting driver dwell time, avoiding fuel costs and shortening routes."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -5489,10 +5489,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the operational function of automated dynamic geofencing in the Autonomous Fleet Control Tower?",
           "options": [
-            "It automatically detects when vehicles cross virtual spatial boundaries at customer docks, logging arrival timestamps, triggering gate clearance, and updating high-precision customer ETAs without manual driver paperwork.",
-            "It physically locks vehicle wheels if the truck enters an unauthorized zip code.",
-            "It transmits high-voltage electrical charges to deter unauthorized package tampering.",
-            "It prevents delivery trucks from refueling at commercial petrol stations."
+            "It detects when vehicles cross virtual boundaries at customer docks, logging arrival times, triggering gate clearance and updating ETAs without driver paperwork.",
+            "It detects when vehicles cross national borders on international routes, logging customs times, triggering duty payments and updating tariffs without broker paperwork.",
+            "It detects when drivers exceed speed limits inside the facility, logging violations, triggering fines and updating insurance scores without supervisor paperwork.",
+            "It detects when parcels leave the warehouse shelves, logging pick times, triggering reorders and updating stock counts without storekeeper paperwork."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -5561,10 +5561,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise cognitive procurement, what is the significance of an Altman Z-Score falling below 1.81 for a tier-1 critical components supplier?",
           "options": [
-            "It means the supplier's products have zero physical defects and are certified for military aviation.",
-            "It indicates the supplier is in the 'Distress Zone' with a high statistical probability of bankruptcy within two years, requiring the enterprise to secure secondary sourcing immediately.",
-            "It proves that the supplier is exempt from paying corporate taxes in their home jurisdiction.",
-            "It automatically lowers purchase order prices by 50% under standard contract clauses."
+            "It puts the supplier in the 'Safe Zone' with a low statistical probability of bankruptcy within two years, so single-source contracts can be extended with no change.",
+            "It puts the supplier in the 'Distress Zone' with a high statistical probability of bankruptcy within two years, so secondary sourcing must be secured at once.",
+            "It puts the supplier in the 'Grey Zone' with an uncertain probability of bankruptcy within two years, so only an annual review of its financials is required.",
+            "It shows the supplier is profitable but highly leveraged, with a high probability of a price increase within two years, so payment terms must be renegotiated at once."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -5606,10 +5606,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise contract negotiations, why is an uncapped 'Limitation of Liability' clause considered a critical red flag by corporate legal counsel and procurement auditors?",
           "options": [
-            "It automatically forces the enterprise to publish all its proprietary source code on public social media platforms.",
-            "It prevents the company from deducting the contract value as an expense on corporate tax returns.",
-            "It exposes the enterprise to potentially catastrophic, unlimited financial damages in the event of a breach, contract dispute, or product failure, risking corporate insolvency.",
-            "It requires the chief executive officer to physically relocate their primary residence to the supplier's headquarters city."
+            "It voids the warranty and indemnity clauses of the agreement, so the enterprise has no contractual remedy against the supplier after a breach.",
+            "It limits the supplier's damages to the fees paid in the last twelve months, so the enterprise cannot recover its full losses after a breach.",
+            "It exposes the enterprise to potentially unlimited financial damages after a breach, dispute or product failure, risking corporate insolvency.",
+            "It exposes the supplier to unlimited financial damages after a breach, so the supplier refuses to sign and the contract is never concluded."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -5647,10 +5647,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In game-theoretic autonomous procurement, what is the Zone of Possible Agreement (ZOPA), and what occurs if the buyer's maximum reservation price (set by its BATNA) is lower than the supplier's minimum floor price?",
           "options": [
-            "If BATNA is below the supplier floor, the supplier is legally compelled to provide the merchandise for free under anti-monopoly laws.",
-            "The ZOPA represents the physical boundary of the municipal airport cargo loading terminal.",
-            "The ZOPA is an offshore tax haven where international trade negotiations are legally executed.",
-            "The ZOPA is the overlap range between the buyer's maximum willing price and the supplier's minimum acceptable price; if BATNA is below the supplier floor, no ZOPA exists and negotiations inevitably collapse without agreement."
+            "ZOPA is the gap between the buyer's maximum willing price and the supplier's minimum acceptable price; if the buyer's BATNA ceiling is below the supplier floor, the buyer must raise its offer.",
+            "ZOPA is the overlap between the buyer's opening offer and the supplier's opening demand; if the buyer's BATNA ceiling is below the supplier floor, a mediator sets a price between the two.",
+            "ZOPA is the midpoint between the buyer's maximum willing price and the supplier's minimum acceptable price; if the buyer's BATNA ceiling is below the floor, the midpoint becomes the deal.",
+            "ZOPA is the overlap between the buyer's maximum willing price and the supplier's minimum acceptable price; if the buyer's BATNA ceiling is below the supplier floor, no ZOPA exists and talks fail."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -5688,10 +5688,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of automated 3-Way Reconciliation in enterprise accounts payable and financial governance?",
           "options": [
-            "To verify that the vendor billed exactly what was ordered on the PO and physically delivered/inspected on the Goods Receipt, preventing overbilling, phantom deliveries, and unauthorized bank routing changes.",
-            "To calculate income tax withholding for full-time corporate employees.",
-            "To convert euro invoices into Japanese yen at historical 1999 exchange rates.",
-            "To generate marketing brochures for prospective B2B procurement vendors."
+            "To verify the vendor billed exactly what the PO ordered and the Goods Receipt confirms was delivered and inspected, preventing overbilling, phantom deliveries and bank detail fraud.",
+            "To verify the vendor billed exactly what the contract allows and the bank statement shows was paid, preventing duplicate payments, currency errors and late payment penalties.",
+            "To verify the PO matched the approved budget and the contract allows the quantity ordered, preventing overspending, unapproved purchases and splits of large orders.",
+            "To verify the invoice matched the vendor's tax return and the ledger shows it was recorded, preventing missed accruals, wrong tax codes and late filing of returns."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -5729,10 +5729,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is 'Maverick Spend' in corporate procurement, and why does eliminating it unlock immediate financial cost savings?",
           "options": [
-            "Maverick spend refers to currency losses caused by volatile foreign exchange fluctuations.",
-            "Maverick spend refers to off-contract purchases made outside negotiated master corporate agreements; eliminating it consolidates spend onto preferred vendors, capturing pre-negotiated 15-30% volume discounts.",
-            "Maverick spend is purchases of commercial fighter jets by corporate aviation divisions.",
-            "Maverick spend is the extra profit earned when suppliers voluntarily lower their prices after a contract has been signed."
+            "Purchases from preferred vendors that exceed the approved budget; ending them cuts overspend, capturing pre-negotiated 15-30% budget savings across the departments.",
+            "Off-contract purchases made outside negotiated master agreements; ending them moves spend onto preferred vendors, capturing pre-negotiated 15-30% volume discounts.",
+            "Emergency purchases made after a supplier failure; ending them removes safety stocks, capturing pre-negotiated 15-30% holding cost savings across the network.",
+            "Purchases from new vendors outside the approved list that sell innovative goods; ending them avoids onboarding costs, capturing 15-30% tax savings."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -5801,10 +5801,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What two mandatory conditions must be satisfied for Pillar 1 to award full 25.0 points in the Supply Chain Control Tower?",
           "options": [
-            "Conversion of all demand data into encrypted audio signals.",
-            "An active commercial social media marketing campaign with over one million impressions.",
-            "Hierarchical coherence across regional distribution centers and an empirical Bullwhip Ratio <= 1.25.",
-            "Zero total sales volume and complete closure of all manufacturing plants."
+            "Hierarchical coherence across regional distribution centers and a measured Bullwhip Ratio <= 2.50.",
+            "Hierarchical coherence across regional distribution centers and a measured Bullwhip Ratio >= 1.25.",
+            "Hierarchical coherence across regional distribution centers and a measured Bullwhip Ratio <= 1.25.",
+            "Hierarchical coherence across regional distribution centers and a measured Bullwhip Ratio >= 1.25 or above."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -5846,10 +5846,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Pillar 2 achieve working capital reductions exceeding 20% while simultaneously increasing product availability to 98.8%?",
           "options": [
-            "By requiring suppliers to deliver goods on sixty-year payment terms.",
-            "By leveraging Multi-Echelon Risk Pooling to centralize volatile safety buffers upstream while using lateral transshipments to rebalance regional stock imbalances dynamically.",
-            "By cancelling 50% of customer orders to artificially reduce demand.",
-            "By replacing physical inventory with digital 3D computer graphics on corporate websites."
+            "By using Multi-Echelon Risk Pooling to spread volatile safety stock downstream to every store, and expedited orders to rebalance regional stock imbalances on the fly.",
+            "By using Multi-Echelon Risk Pooling to centralise volatile safety stock upstream, and lateral transshipments to rebalance regional stock imbalances on the fly.",
+            "By using larger, less frequent supplier orders to cut ordering costs upstream, and higher safety stock at regional centers to cover regional stock imbalances.",
+            "By using longer supplier payment terms to raise payables upstream, and reduced service levels at regional centers to cover regional stock imbalances."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -5887,10 +5887,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Supply Chain Control Tower, why is Scope 1 CO2 abatement evaluated alongside On-Time Performance (OTP) in Pillar 3?",
           "options": [
-            "To ensure route optimization achieves customer delivery commitments without compromising corporate environmental, social, and governance (ESG) compliance or incurring regulatory carbon penalties.",
-            "Because diesel delivery vans are legally banned from operating on paved asphalt roads.",
-            "Because electric vehicles automatically transport double the cargo payload of diesel trucks.",
-            "To satisfy international treaties regarding maritime fishing quotas."
+            "To ensure route optimisation meets delivery commitments without breaching environmental, social and governance (ESG) compliance or triggering regulatory carbon penalties.",
+            "To ensure route optimisation cuts fuel spending without any regard to delivery commitments, so environmental targets are met even if customers' deliveries run late.",
+            "To ensure route optimisation meets delivery commitments without breaching tax compliance or triggering customs duties on goods moved between regions.",
+            "To ensure route optimisation meets delivery commitments without breaching driver working-hour limits or triggering overtime penalties in labour regulations."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -5928,9 +5928,9 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three conditions must be verified simultaneously in Pillar 4 to grant 'APPROVED' procurement governance status?",
           "options": [
-            "A 50% discount on all employee office chairs, automated invoice deletion, and weekly executive luncheons.",
-            "An active commercial social media profile with over 50,000 corporate followers.",
-            "Full cash payment for all goods 60 days in advance of physical shipment.",
+            "3-Way invoice match rate >= 90.0%, zero contract red flags (liability capped, target payment terms), and maverick spend leakage <= 15.0%.",
+            "3-Way invoice match rate >= 98.0%, no more than two contract red flags (liability capped, target payment terms), and maverick spend leakage >= 5.0%.",
+            "2-Way invoice match rate >= 98.0%, zero contract red flags (liability uncapped, extended payment terms), and maverick spend leakage <= 5.0%.",
             "3-Way invoice match rate >= 98.0%, zero contract red flags (liability capped, target payment terms), and maverick spend leakage <= 5.0%."
           ],
           "answerIndex": 3,
@@ -5969,10 +5969,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic commercial value of achieving a 100.0 / 100.0 score in the Master Supply Chain Control Tower and earning the CGSCLD credential?",
           "options": [
-            "It automatically eliminates all international customs duties on imports entering North American ports.",
-            "It converts the company's delivery trucks into self-driving spacecraft capable of orbital cargo transport.",
-            "It proves that the enterprise has successfully unified demand forecasting, multi-echelon inventory, green fleet logistics, and cognitive procurement into an autonomous, shock-resilient operating system that maximizes profitability and customer satisfaction.",
-            "It exempts the company from having to pay commercial electricity bills for its warehouse lighting."
+            "It shows the enterprise has replaced all human planners with an autonomous system, so supply chain staff costs drop to zero and regulators waive all future audits of the operations, and the CGSCLD credential is issued.",
+            "It shows the enterprise has the lowest logistics cost in its industry, so suppliers must give automatic price discounts and the CGSCLD credential is issued to every employee of the firm in the group.",
+            "It shows the enterprise has unified demand forecasting, multi-echelon inventory, green fleet logistics and cognitive procurement into an autonomous, shock-resilient operating system that maximises profit and customer satisfaction.",
+            "It shows the enterprise has perfect demand forecasting, so safety stock and fleet capacity are no longer needed and the supply chain no longer faces any disruption risks, and the CGSCLD credential is issued."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -6041,10 +6041,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining operational characteristic of a 'Tier 3 Autonomous Cognitive Enterprise' relative to a 'Tier 2 Digitalized Agile' organization?",
           "options": [
-            "The enterprise completely eliminates all human employees and dissolves corporate legal registration.",
-            "The enterprise relies exclusively on paper records stored in underground fireproof vaults.",
-            "All software code is compiled into 8-bit assembly language to prevent external internet access.",
-            "Core business processes execute via autonomous multi-agent workflows with straight-through processing rates >= 85% and sub-hour cycle times, shifting human operators from manual task executors to strategic supervisors managing exceptions."
+            "Core processes run through digital tools with straight-through processing >= 50% and next-day cycle times, and humans approve every transaction instead of doing manual tasks.",
+            "Core processes run through autonomous multi-agent workflows with straight-through processing >= 85% and sub-hour cycle times, and humans are removed from all oversight.",
+            "Core processes run through robotic scripts with straight-through processing >= 65% and weekly cycle times, and humans fix every exception instead of supervising agents.",
+            "Core processes run through autonomous multi-agent workflows with straight-through processing >= 85% and sub-hour cycle times, and humans supervise exceptions instead of doing tasks."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -6087,10 +6087,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Hub-and-Spoke (Federated) organizational model considered the optimal architecture for an enterprise AI Center of Excellence?",
           "options": [
-            "It balances centralized governance (security firewalls, shared GPU infrastructure, legal compliance) at the Hub with localized business agility and domain customization at embedded Spokes.",
-            "It forces all employees to physically work inside circular office buildings with bicycle spoke designs.",
-            "It eliminates all software licensing costs by using unpaid community volunteers to build production models.",
-            "It prevents business unit executives from accessing corporate financial reports."
+            "It balances central governance (security firewalls, shared GPU infrastructure, legal compliance) at the Hub with local agility and domain customisation in embedded Spokes.",
+            "It gives each business unit its own governance, GPU infrastructure and legal compliance, with a small Hub that only collects the results from the Spokes each year.",
+            "It places all AI talent, governance and projects in one central Hub, with Spokes that only submit requests and receive finished tools from the Hub.",
+            "It balances central budget approval at the Hub with local security firewalls and legal compliance at the Spokes, with shared GPU infrastructure held by the vendor."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -6128,10 +6128,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a 100% allocation of corporate AI budget to Track 1 (Core Optimization) dangerous for long-term enterprise survival, even if near-term ROI is high?",
           "options": [
-            "Because employees refuse to work at companies that optimize existing business processes.",
-            "Because competitors or agile startups may introduce disruptive, platform-level business models (Track 2) that render the enterprise's optimized core operations obsolete, resulting in strategic disruption.",
-            "Because commercial cloud providers cancel server contracts if organizations do not train at least one generative AI model annually.",
-            "Because corporate income tax rates increase to 95% if capital expenditure is spent solely on automation."
+            "Because auditors may disallow cost savings from core optimisation (Track 1) that exceed the budget, which makes the enterprise's reported returns unreliable.",
+            "Because competitors or agile startups may bring disruptive platform-level business models (Track 2) that make the enterprise's optimised core obsolete.",
+            "Because regulators may cap the share of the budget spent on Track 1 core optimisation, which makes the enterprise's investment plan non-compliant.",
+            "Because core optimisation (Track 1) quickly reaches zero returns once the first project ends, so the enterprise's budget is wasted on later projects."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -6169,10 +6169,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an embedded Legal/Model Risk Officer included directly inside the Cross-Functional Agile Squad rather than reviewing the project only at final completion?",
           "options": [
-            "Because corporate law requires all software code to be co-signed by an active member of the state bar association.",
-            "To replace the Product Owner so the squad no longer needs a business domain expert.",
-            "To identify and remediate regulatory compliance, copyright, and bias risks continuously during 2-week sprints, preventing months of costly rework at final deployment.",
-            "To write the underlying Python unit tests and optimize GPU memory compilation."
+            "To approve every sprint deliverable before the squad starts the next sprint, avoiding the delay of waiting for the end-of-project review by the board.",
+            "To find and fix performance, latency and cost risks continuously during 2-week sprints, avoiding months of expensive cloud spend at final deployment.",
+            "To find and fix compliance, copyright and bias risks continuously during 2-week sprints, avoiding months of expensive rework at final deployment.",
+            "To take on the legal liability for every release personally during the project, avoiding the need for the company to carry insurance at deployment."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -6210,10 +6210,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three core quantitative health pillars evaluated by the Autonomous Organization Control Tower to verify enterprise digital transformation on-track status?",
           "options": [
-            "Conversion of all employee compensation into decentralized cryptocurrency tokens.",
-            "The number of employees who attended the annual company picnic and the total cafeteria spend.",
-            "The number of corporate press releases issued mentioning generative artificial intelligence.",
-            "Enterprise process modernization rate >= target (75%), workforce AI literacy >= 80%, and zero unmanaged shadow AI governance breaches."
+            "Enterprise process modernisation rate >= target (50%), workforce AI literacy >= 60%, and no more than five unmanaged shadow AI governance breaches.",
+            "Enterprise process modernisation rate >= target (75%), workforce AI literacy >= 80%, and a growing count of approved shadow AI tools every quarter.",
+            "Enterprise cloud migration rate >= target (75%), engineering headcount growth >= 80%, and zero unplanned system outages in the reporting year.",
+            "Enterprise process modernisation rate >= target (75%), workforce AI literacy >= 80%, and zero unmanaged shadow AI governance breaches."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -6281,10 +6281,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should an enterprise prioritize 'Quick Wins' (High Impact, High Feasibility) in Phase 1 before tackling 'Strategic Big Bets' (High Impact, Low Feasibility)?",
           "options": [
-            "Quick Wins deliver cash flow and measurable ROI within 3-6 months, establishing organizational credibility, proving technological viability, and generating capital to self-fund complex Big Bets.",
-            "Because Big Bets are legally prohibited by corporate bylaws during the first year of any digital transformation.",
-            "Because Quick Wins eliminate all corporate income taxes for the fiscal year.",
-            "Because Big Bets require the CEO to resign and transfer all executive power to an external consulting firm."
+            "Quick Wins give cash flow and measurable ROI within 3-6 months, building credibility, proving feasibility and funding the complex Big Bets.",
+            "Quick Wins give strategic market position within 3-6 years, building credibility, proving brand strength and shielding the company from the Big Bets.",
+            "Quick Wins give cost cuts by firing staff within 3-6 months, building credibility, proving short-term profit and replacing the Big Bets.",
+            "Quick Wins give regulator approval within 3-6 months, building credibility, proving legal compliance and removing the need for the Big Bets."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -6322,10 +6322,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is discounting cash flows at the corporate Weighted Average Cost of Capital (WACC / Hurdle Rate) essential when presenting an AI business case to the Chief Financial Officer?",
           "options": [
-            "Discounting ensures that cloud computing servers consume less electrical power during peak daytime hours.",
-            "Discounting is a tax evasion mechanism used to hide software expenditures from financial auditors.",
-            "The Federal Reserve mandates that all technology projects subtract 10% from their projected earnings each month.",
-            "A dollar earned in Year 2 or 3 is worth less than a dollar invested in Year 0 due to the time value of money and opportunity cost of capital; discounting proves the AI initiative generates more value than alternative corporate investments."
+            "A dollar earned in Year 2 or 3 is worth more than a dollar invested in Year 0, owing to inflation and future growth; discounting shows the AI project beats the cost of waiting.",
+            "A dollar saved in labor is worth less than a dollar earned in revenue, owing to tax treatment and risk of cost cuts; discounting shows the AI project beats other revenue plans.",
+            "A dollar earned in Year 2 or 3 is worth the same as a dollar invested in Year 0, owing to fixed prices over the contract; discounting shows the AI project beats the budget.",
+            "A dollar earned in Year 2 or 3 is worth less than a dollar invested in Year 0, owing to time value of money and cost of capital; discounting shows the AI project beats other investments."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -6363,10 +6363,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of conducting a 30-day 'Shadow Production Dual-Run' during the 60-to-90-day Walk Phase before full production cutover?",
           "options": [
-            "To allow developers to mine cryptocurrency on corporate servers after business hours.",
-            "To double the billing fees charged to commercial retail customers.",
-            "To run the AI system silently in parallel with human operators on real customer transactions, empirically validating that model accuracy and safety match human expert performance without risking customer harm.",
-            "To hide software bugs from corporate internal audit committees."
+            "To run the AI system as the sole decision maker on a small share of real transactions, showing that its accuracy and safety match human experts with limited customer harm.",
+            "To run the AI system on synthetic transactions generated by the team, showing that its accuracy and safety match human experts without touching customer data at all.",
+            "To run the AI system silently alongside human operators on real transactions, showing that its accuracy and safety match human experts without risking customer harm.",
+            "To run the AI system silently alongside human operators on real transactions, showing that its cost and speed beat human experts so staff can be released at once."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -6404,10 +6404,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should an enterprise choose 'Partner (Co-Development)' instead of 'Buy (COTS SaaS)' for a strategic capability that represents a core competitive differentiator, even if internal engineering talent is currently lacking?",
           "options": [
-            "Because co-development contracts automatically double the speed of cloud fiber-optic networks.",
-            "Buying commercial SaaS surrenders proprietary IP and locks the enterprise into a vendor that could license the exact same tool to direct competitors, whereas partnering ensures the enterprise retains exclusive ownership of the customized model IP.",
-            "Because commercial software vendors do not accept corporate credit cards or purchase orders.",
-            "Because partnership contracts allow the enterprise to avoid paying federal employment taxes."
+            "Buying commercial SaaS is always cheaper in the long run and avoids vendor lock-in, while partnering gives the partner exclusive ownership of the custom model IP and its updates.",
+            "Buying commercial SaaS gives up proprietary IP and ties the enterprise to a vendor that may license the same tool to competitors, while partnering keeps exclusive ownership of the custom model IP.",
+            "Buying commercial SaaS requires hiring a large engineering team to maintain the product, while partnering means the partner supplies engineers and the enterprise owns nothing it builds.",
+            "Buying commercial SaaS gives the best differentiation because every competitor uses the tool, while partnering delays delivery by years and the enterprise keeps exclusive ownership."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -6445,10 +6445,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three core criteria must be satisfied for the Autonomous Strategic Roadmap Control Tower to issue a 'STRATEGIC_ROADMAP_ON_TARGET' verdict?",
           "options": [
-            "Benefit realization rate >= 90.0%, portfolio execution velocity >= 80.0%, and total capital deployed <= total allocated budget.",
-            "Zero total capital expenditures, complete cancellation of all cloud subscriptions, and weekly all-hands meetings.",
-            "An active commercial television advertising campaign and two international technology patents filed.",
-            "100% of employees spending at least 4 hours daily using conversational chatbots."
+            "Benefit realisation rate >= 90.0%, portfolio execution velocity >= 80.0%, and total capital deployed <= total allocated budget.",
+            "Benefit realisation rate >= 75.0%, portfolio execution velocity >= 60.0%, and total capital deployed <= total allocated budget.",
+            "Benefit realisation rate >= 90.0%, portfolio execution velocity >= 80.0%, and total capital deployed >= total allocated budget.",
+            "Benefit realisation rate >= 100.0%, portfolio execution velocity >= 95.0%, and total capital deployed <= half of the allocated budget."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -6513,10 +6513,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is 'Human-in-the-Loop' (HITL) mandatory for high-stakes regulatory or multi-million-dollar transactions, even when model confidence is high (96%)?",
           "options": [
-            "Because modern AI models cannot generate digital PDF documents without human handwriting.",
-            "To ensure fiduciary accountability, legal compliance, and ethical oversight remain anchored in human judgment where errors carry severe liability or legal penalties.",
-            "Because commercial banks charge a 50% transaction fee for autonomous straight-through payments.",
-            "To prevent computer monitors from overheating during matrix multiplication calculations."
+            "To keep model accuracy improving through human labels, because even a 96% confident model learns nothing from decisions that are never reviewed.",
+            "To keep fiduciary accountability, legal compliance and ethical oversight rooted in human judgment where errors bring severe liability or legal penalties.",
+            "To keep transaction speed high through human approval, because a 96% confident model is slower than staff on high-value decisions made in the loop.",
+            "To keep regulators satisfied by the presence of a human signature, because a 96% confident model is legally barred from deciding anything on its own."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -6553,10 +6553,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is skill adjacency mapping superior to hiring all AI talent externally during enterprise digital transformation?",
           "options": [
-            "External data scientists refuse to use corporate email systems.",
-            "External AI specialists are legally prohibited from working for private corporations under labor laws.",
-            "Existing employees already possess deep institutional knowledge, customer context, and complex business logic that external data scientists lack; upskilling them pairs domain mastery with AI leverage while eliminating cultural resistance.",
-            "Skill adjacency mapping eliminates all employee salaries and health insurance benefits."
+            "Current staff are cheaper than outside data scientists because they accept lower salaries; upskilling them combines low cost with AI skills and reduces the need for outside training providers.",
+            "Outside data scientists are slower to hire than current staff and take years to learn tools; upskilling staff combines speed with AI skills and reduces the need for any new technology.",
+            "Current staff have deep institutional knowledge, customer context and business logic that outside data scientists lack; upskilling them combines domain mastery with AI and reduces cultural resistance.",
+            "Current staff already know advanced machine learning methods from their roles; upskilling them adds only tool training and removes the need for domain knowledge on the project."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -6594,10 +6594,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical function of an automated 'Circuit Breaker' in an enterprise AgentOps monitoring platform?",
           "options": [
-            "To prevent human operators from modifying the system prompt.",
-            "To convert Python scripts into executable binary files.",
-            "To physically shut down power to the building during an electrical storm.",
-            "To automatically terminate an agent's execution session if it enters an infinite recursive loop or exceeds pre-set step/latency ceilings, preventing runaway API token costs and server resource exhaustion."
+            "To rewrite an agent's prompt automatically if it gives a wrong answer or low-quality output, preventing repeated errors and customer complaints in later sessions.",
+            "To pause an agent's session automatically at midnight each day for scheduled maintenance, preventing runaway logs and stale data in the memory store.",
+            "To switch an agent to a cheaper model automatically after a daily token budget is spent, preventing cost overruns and keeping the session running unchanged.",
+            "To end an agent's session automatically if it enters an infinite loop or passes set step or latency limits, preventing runaway token costs and server exhaustion."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -6635,10 +6635,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ADKAR change management framework, why is providing training courses (Knowledge) ineffective if an employee's Desire score is below the 3.5 threshold?",
           "options": [
-            "Because employees who fear for their job security or do not understand the personal benefit of the change will reject or passively resist training; desire must be cultivated before knowledge can be absorbed.",
-            "Because training platforms refuse to register users who have negative emotional desire scores.",
-            "Because corporate law requires employees to sign a loyalty oath before opening software manuals.",
-            "Because Knowledge and Desire are mathematically identical variables in the ADKAR equation."
+            "Because employees who fear for their jobs or do not see a personal benefit will reject or passively resist training; desire must be built before knowledge can land.",
+            "Because employees who lack awareness of the change will skip the training sessions; awareness must be built before knowledge, and the Desire score has no bearing.",
+            "Because employees who lack the ability to apply the skill will fail the training exams; practice must be built before knowledge, and the Desire score has no bearing.",
+            "Because employees whose Desire score is low are always replaced by external hires; training budgets are only paid for staff who score above the threshold."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -6676,10 +6676,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Autonomous Workforce Control Tower, why is a human override rate between 2% and 8% considered healthy rather than aiming for 0% overrides?",
           "options": [
-            "Because software systems automatically crash if they do not receive manual human keystrokes every fifteen minutes.",
-            "A 2% to 8% override rate confirms that human experts are actively supervising the autonomous agents, catching edge-case exceptions, and preventing drift, whereas 0% overrides indicates rubber-stamping or lack of oversight.",
-            "Because corporate taxes increase by 10% if autonomous straight-through processing reaches 100%.",
-            "Because labor unions mandate that human workers must override at least 25% of all computer transactions."
+            "A 2% to 8% override rate shows the agents are poorly trained and make frequent errors, while 0% shows the agents are perfect and need no further human supervision.",
+            "A 2% to 8% override rate shows human experts are actively supervising the agents, catching edge cases and preventing drift, while 0% suggests rubber-stamping or no oversight.",
+            "A 2% to 8% override rate shows humans are slowing the agents down on routine tasks, while 0% shows the workforce is fully trained and needs no further supervision.",
+            "A 2% to 8% override rate shows the regulator requires a fixed share of overrides, while 0% shows the company is breaking the rule and risks a compliance fine."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -6744,10 +6744,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the corporate Caremark doctrine, how does a Board of Directors shield individual directors from personal fiduciary liability regarding high-risk autonomous AI systems?",
           "options": [
-            "By forbidding the enterprise from ever using computer networks or machine learning models in customer-facing roles.",
-            "By purchasing commercial cyber insurance policies and waiving all compliance auditing responsibilities.",
-            "By establishing proactive, documented board reporting systems, verified kill-switches, and regular independent audits to demonstrate a good-faith duty of care.",
-            "By delegating all operational liability exclusively to junior data science contractors through non-disclosure contracts."
+            "By delegating all AI decisions to the vendor in the contract, with an indemnity clause that transfers the board's duty of care to the vendor.",
+            "By avoiding all board discussion of AI systems, so that directors cannot be shown to have known of the risks and so cannot be found liable.",
+            "By setting up documented board reporting systems, verified kill-switches and regular independent audits that show a good-faith duty of care.",
+            "By buying cyber insurance with a high limit, which transfers the directors' duty of care and personal liability to the insurer in full."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -6785,10 +6785,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which rule of thumb, originating in the EEOC Uniform Guidelines on Employee Selection Procedures and widely borrowed for algorithmic bias audits, is the usual benchmark for disparate (adverse) impact?",
           "options": [
-            "Zero statistical variance, meaning standard deviation across all decision outputs must equal exactly 0.0.",
-            "The Four-Fifths (80%) Rule: the selection rate for any protected demographic group must not be less than 80% of the selection rate of the benchmark group with the highest rate.",
-            "A strict 100% exact numerical equality requirement where all demographic cohorts must have identical approval counts regardless of applicant volume.",
-            "The Five-Halves (250%) Rule: minority group selection must exceed benchmark rates by 2.5 times in all instances."
+            "The Three-Fifths (60%) Rule: a protected group's selection rate should not be below 60% of the selection rate of the highest-rate benchmark group.",
+            "The Four-Fifths (80%) Rule: a protected group's selection rate should not be below 80% of the selection rate of the highest-rate benchmark group.",
+            "The Five-Sixths (83%) Rule: a protected group's selection rate should not be above 83% of the selection rate of the lowest-rate benchmark group.",
+            "The Four-Fifths (80%) Rule: a protected group's share of applicants should not be below 80% of its share of the national working population."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -6826,10 +6826,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is pre-deployment adversarial 'Red Teaming' mandatory under modern Board AI Ethics Charters?",
           "options": [
-            "To proactively probe for prompt injections, safety bypasses, bias leakage, and data exfiltration before malicious actors or customers can exploit them in production.",
-            "To generate colorful marketing infographics that persuade consumers to share personal passwords.",
-            "Because software engineers cannot test code without wearing red jackets in the server room.",
-            "To eliminate the need for firewalls, encryption, and relational database schemas."
+            "To probe ahead of launch for prompt injections, safety bypasses, bias leakage and data exfiltration before attackers or customers exploit them in production.",
+            "To prove after launch that the AI system met its accuracy target on a sample of live data before the next regulator inspection in the following year.",
+            "To train the AI system on the expected user questions before launch so that its answers are consistent with brand style before customers use it.",
+            "To measure the AI system's speed and cost per request before launch so that cloud capacity can be planned before customers use it in production."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -6867,10 +6867,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an algorithmic circuit breaker trigger automatic emergency disengagement without waiting for board or committee manual approval?",
           "options": [
-            "Because corporate boards do not have email accounts or mobile phones.",
-            "To prevent software developers from earning overtime pay during production outages.",
-            "Because modern servers permanently overheat if an AI model runs for more than 10 minutes continuously.",
-            "Because financial drawdowns and algorithmic error cascades at machine speed can cause tens of millions of dollars in catastrophic damage within seconds before humans can assemble."
+            "Because board approval is not allowed under securities law during trading hours, so automatic action avoids a breach of disclosure rules before humans convene.",
+            "Because algorithmic circuit breakers are more accurate than human directors, so automatic disengagement raises returns above those humans could earn if they convened.",
+            "Because algorithmic error cascades build up slowly over weeks, so automatic disengagement is cheaper than the cost of convening humans over several days.",
+            "Because financial drawdowns and algorithmic error cascades at machine speed can cause tens of millions in damage within seconds, before humans can even convene."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -6908,10 +6908,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do commercial insurance underwriters offer premium discounts (up to 25%) on Directors & Officers (D&O) liability policies for enterprises with certified AI Governance Cockpits?",
           "options": [
-            "Because insurance underwriters prefer companies that invest in expensive graphic user interfaces.",
-            "Because insurance policies are legally voided whenever an enterprise installs Python packages.",
-            "Because verifiable algorithmic audit trails, automated circuit breakers, and bias controls drastically reduce the statistical likelihood of catastrophic corporate lawsuits, regulatory fines, and shareholder derivative suits.",
-            "Because AI systems never make mistakes once approved by an executive committee."
+            "Because insurers earn a share of the compliance fees that certified AI Governance Cockpits pay, which funds discounts of up to 25% on the D&O policies of the enterprise.",
+            "Because certified AI Governance Cockpits remove the legal liability of directors entirely, so insurers need not cover lawsuits, regulatory fines or shareholder derivative suits.",
+            "Because verifiable algorithmic audit trails, automated circuit breakers and bias controls cut the likelihood of catastrophic lawsuits, regulatory fines and shareholder derivative suits.",
+            "Because insurers must by law give a discount of 25% to any enterprise that spends more than a set sum on AI, regardless of audit trails, circuit breakers or bias controls."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -7019,10 +7019,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is cryptographic SHA-256 data lineage verification essential before feeding Gold-layer data to autonomous production swarms?",
           "options": [
-            "To automatically double the physical storage capacity of solid-state disk drives.",
-            "Because Python scripts cannot read CSV files unless they are hashed with cryptographic algorithms.",
-            "To prevent competitors from reading corporate marketing emails.",
-            "To guarantee data provenance and ensure that training or inference datasets have not suffered unauthorized tampering, corruption, or silent schema drift."
+            "To compress Gold-layer tables before they are fed to the swarms, which cuts storage costs and speeds up reads of training or inference datasets.",
+            "To encrypt Gold-layer tables before they are fed to the swarms, which hides personal data from anyone who reads the training or inference datasets.",
+            "To rank Gold-layer tables by freshness before they are fed to the swarms, which picks the newest of the training or inference datasets automatically.",
+            "To prove data provenance and confirm that training or inference datasets have not been tampered with, corrupted or silently changed in schema."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -7060,10 +7060,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the EU AI Act (Article 15) and ISO/IEC 42001, what must high-risk enterprise AI systems demonstrate regarding cybersecurity and risk management?",
           "options": [
-            "Exemption from all cybersecurity laws if the enterprise operates on public cloud servers.",
-            "Relying exclusively on password-protected Excel spreadsheets for access control.",
-            "Documented, continuous risk management plus accuracy, robustness and cybersecurity measures that withstand adversarial attacks such as prompt injection and data poisoning, backed by verifiable logging.",
-            "A one-time self-certification signed by an intern with no subsequent monitoring."
+            "A single risk assessment done before launch plus accuracy and robustness measures, with cybersecurity left to the cloud vendor and no logging unless a regulator asks for it.",
+            "Voluntary risk management plus accuracy and cybersecurity measures that cover only external network attacks, with no need to address prompt injection or data poisoning.",
+            "Documented continuous risk management plus accuracy, robustness and cybersecurity measures that withstand attacks such as prompt injection and data poisoning, backed by verifiable logging.",
+            "Documented continuous risk management plus transparency notices to users, with accuracy, robustness and cybersecurity measures left to the discretion of the deployer."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -7101,10 +7101,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does closed-loop integration of neural demand forecasting with automated 3-way invoice reconciliation directly shorten an enterprise's Cash Conversion Cycle (CCC)?",
           "options": [
-            "By refusing to pay suppliers until the end of the calendar decade.",
-            "By aligning supplier purchase orders precisely with verified consumer demand and accelerating invoice processing from weeks to machine-speed seconds, eliminating working capital deadlocks.",
-            "By converting all corporate cash into physical gold bullion stored in retail branch vaults.",
-            "Because algorithms eliminate the need for enterprise bank accounts."
+            "By matching supplier POs closely to the sales team's quota and cutting invoice processing from weeks to days, which removes the need for supplier credit terms.",
+            "By matching supplier POs closely to verified consumer demand and cutting invoice processing from weeks to seconds, which removes working capital deadlocks.",
+            "By raising safety stock at every warehouse and cutting invoice processing from weeks to seconds, which removes the risk of stockouts and late payments.",
+            "By matching supplier POs closely to verified consumer demand while holding invoices for payment until the fiscal year ends, which keeps cash balances high."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -7142,10 +7142,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining competitive advantage of an organization that successfully operationalizes all four pillars of the Autonomous Enterprise Operating System?",
           "options": [
-            "The ability to perceive market opportunities, optimize multi-echelon supply chains, enforce fiduciary risk controls, and execute business workflows at machine speed while humans focus on strategic innovation.",
-            "The ability to completely eliminate all human employees and cancel all corporate customer service lines.",
-            "Guaranteed immunity from all macroeconomic recessions, currency fluctuations, and interest rate changes.",
-            "Unlimited free compute resources granted by cloud hyperscalers."
+            "The ability to sense market opportunities, optimise multi-echelon supply chains, enforce fiduciary risk controls and run workflows at machine speed while people focus on strategy.",
+            "The ability to cut headcount in every department, optimise payroll costs, outsource risk controls and run workflows at human speed while managers focus on forecasts.",
+            "The ability to sense market opportunities, centralise all inventory in one warehouse, relax fiduciary risk controls and run workflows overnight while people check outputs.",
+            "The ability to buy the newest AI tools, optimise software licence costs, delegate risk controls to vendors and run workflows monthly while people monitor dashboards."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -7231,10 +7231,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise multi-agent architecture, why is a hierarchical supervisor topology mathematically superior to a flat uncoordinated peer-to-peer mesh?",
           "options": [
-            "Because supervisory agents consume zero tokens whereas peer-to-peer agents require double floating-point token arithmetic.",
-            "To prevent human executives from viewing intermediate task payloads during enterprise operating cycles.",
-            "Because flat peer-to-peer agent meshes cannot run inside cloud data centers due to physical fiber optic limitations.",
-            "It restricts inter-agent communication complexity from quadratic O(N^2) mesh explosion down to linear O(N) supervisory channels while preserving isolated worker context windows."
+            "It increases communication complexity from linear O(N) to quadratic O(N^2) supervisory channels while giving every worker access to all other workers' context windows.",
+            "It reduces communication complexity from a cubic O(N^3) mesh explosion to logarithmic O(log N) channels while sharing one context window across all the workers.",
+            "It removes communication between agents altogether, so complexity falls to a constant O(1) cost while each worker keeps an isolated private context window.",
+            "It reduces communication complexity from a quadratic O(N^2) mesh explosion to linear O(N) supervisory channels while keeping workers' context windows isolated."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7281,10 +7281,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an autonomous multi-agent task graph strictly satisfy Directed Acyclic Graph (DAG) invariants before execution?",
           "options": [
-            "To prevent circular dependency deadlocks where agents wait endlessly for each other's outputs, while enabling topological sorting for maximum safe parallel concurrency.",
-            "Because acyclic graphs require fewer hard drive sectors than cyclic graphs on enterprise cloud file systems.",
-            "Because cyclic graphs violate human labor laws in European jurisdictions by forcing agents to work overtime.",
-            "To ensure that all tasks execute in random alphabetical order regardless of data requirements."
+            "To prevent circular-dependency deadlocks where agents wait forever for each other's outputs, and to enable topological sorting for maximum safe parallelism.",
+            "To prevent memory overflow when agents store too many intermediate outputs, and to enable alphabetical sorting for maximum safe parallelism.",
+            "To prevent duplicate task assignment when two agents claim the same step, and to enable round-robin scheduling for maximum safe parallelism.",
+            "To prevent agents from calling external tools without approval, and to enable priority sorting by cost for maximum safe parallelism in execution."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7332,10 +7332,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural hazard of creating generalist 'omni-capable' worker agents in enterprise multi-agent workflows?",
           "options": [
-            "Generalist agents automatically delete backend SQL database indexes when prompted with multiple tools.",
-            "Context window bloat and cross-domain semantic interference, which degrade model attention, multiply hallucinations, and create privilege escalation vulnerabilities.",
-            "Generalist agents consume less electricity, violating enterprise green energy contracts.",
-            "Because modern operating systems restrict each Python process to a single dictionary lookup."
+            "Slower training cycles and higher GPU memory needs, which delay releases, multiply licence costs and create vendor lock-in vulnerabilities.",
+            "Context window bloat and cross-domain semantic interference, which weaken attention, multiply hallucinations and create privilege-escalation vulnerabilities.",
+            "Context window shortage and rigid tool schemas, which block parallelism, multiply handoffs and create single-point-of-failure vulnerabilities.",
+            "Inconsistent output formatting and weak language support, which weaken translation, multiply review cycles and create brand-tone vulnerabilities."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7387,10 +7387,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical function of a Circuit Breaker pattern within a supervisory multi-agent finite state machine?",
           "options": [
-            "It automatically rewrites the Python source code using genetic algorithms during runtime execution.",
-            "To prevent the supervisor from recording error logs in compliance audit databases.",
-            "It halts repeated futile retries against a failing or degraded worker service, preventing cascade resource exhaustion and routing execution to verified fallback workers.",
-            "It physically cuts electrical power to the enterprise server rack to prevent overheating."
+            "It restarts a failing worker service repeatedly until it recovers, preventing lost tasks and keeping work on the same worker until the supervisor allows a reroute.",
+            "It stops the whole multi-agent system as soon as any worker fails once, preventing cascading errors and leaving all fallback workers idle until the next release.",
+            "It stops repeated futile retries against a failing or degraded worker service, preventing cascading resource exhaustion and routing work to verified fallback workers.",
+            "It speeds up repeated retries against a failing worker service by doubling the request rate, preventing timeouts and routing work to the same worker without delay."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7439,10 +7439,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an enterprise billing dispute swarm, why must the Executive Synthesis agent be strictly dependent on both Fraud Screening and Ledger Reconciliation?",
           "options": [
-            "To ensure the fraud agent has time to post dispute updates to corporate social media channels.",
-            "Because executive agents cannot read English text unless it has been translated into hexadecimal code by the fraud agent.",
-            "Because enterprise email servers will reject outbound memos sent before 5:00 PM.",
-            "To prevent the system from authorizing financial settlement adjustments or issuing executive commitments before forensic fraud clearance and accounting balance verification are certified."
+            "To speed up settlements by letting the synthesis agent act while Fraud Screening and Ledger Reconciliation run in the background and finish later in the day.",
+            "To keep the synthesis agent from reading customer records until Fraud Screening and Ledger Reconciliation have deleted all personal data from the dispute file.",
+            "To let the synthesis agent reuse the earlier agents' outputs for future disputes, so that Fraud Screening and Ledger Reconciliation run only once per customer.",
+            "To stop settlement adjustments or executive commitments from being authorised before forensic fraud clearance and accounting balance checks are certified."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7513,10 +7513,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is standardizing on FIPA performatives (REQUEST, INFORM, PROPOSE, REFUSE) essential for enterprise multi-agent swarms?",
           "options": [
-            "Because Large Language Models are physically incapable of reading sentences containing more than three adjectives.",
-            "Because cloud service providers charge double bandwidth tariffs for messages that do not contain FIPA headers.",
-            "It eliminates linguistic ambiguity and parsing non-determinism by converting communicative intent into strongly typed speech acts that can be validated before LLM processing.",
-            "To prevent human compliance officers from decrypting inter-agent communications."
+            "It adds flexibility to agent messages by letting each agent invent its own speech acts, which the receiving LLM interprets freely during its processing.",
+            "It reduces token costs by compressing agent messages into short binary codes, which the receiving LLM decodes before it processes the content.",
+            "It removes linguistic ambiguity and parsing non-determinism by turning communicative intent into strongly typed speech acts that are validated before LLM processing.",
+            "It removes the need for message validation by trusting the sending agent's identity, which the receiving LLM accepts during its own processing step."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7564,10 +7564,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the synchronous blocking RPC pattern considered an architectural failure mode in enterprise cognitive multi-agent systems?",
           "options": [
-            "Because Python cannot send HTTP requests over local Wi-Fi connections.",
-            "Because non-deterministic LLM inference latency cascades across blocking calls, consuming connection threads and triggering catastrophic timeout failures across the entire agent mesh.",
-            "Because synchronous calls permanently encrypt server RAM with irreversible private keys.",
-            "To prevent human system administrators from reading console logs."
+            "Because blocking calls always return stale data from LLM caches, which spreads wrong answers through connected agents and corrupts results across the agent mesh.",
+            "Because non-deterministic LLM latency cascades through blocking calls, using up connection threads and causing catastrophic timeout failures across the agent mesh.",
+            "Because blocking calls send every request in plain text between agents, which exposes credentials on connection threads and enables spoofing across the agent mesh.",
+            "Because blocking calls make LLM inference run faster than the downstream services, which floods connection queues and drops messages across the agent mesh."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7615,10 +7615,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural advantage of the Blackboard pattern over point-to-point agent messaging in complex enterprise problem-solving?",
           "options": [
-            "It provides a centralized, partitioned shared memory space that eliminates quadratic communication overhead and decouples collaborating agents in space and time.",
-            "It eliminates the need for enterprise cloud storage by running directly on printer memory.",
-            "It ensures that agents cannot communicate unless they speak identical programming languages.",
-            "Because blackboards are required by IEEE standards for all software running on Linux."
+            "It gives a central, partitioned shared memory that removes quadratic communication overhead and decouples collaborating agents in space and time.",
+            "It gives each agent a private memory that removes shared state conflicts and keeps collaborating agents tightly coupled in space and time.",
+            "It gives a central message broker that routes every request to one agent in sequence and keeps collaborating agents synchronised in time.",
+            "It gives a shared memory that lets every agent call every other agent directly, which raises overhead but speeds each individual reply."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7665,10 +7665,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Optimistic Concurrency Control (OCC) preferred over Pessimistic Locking in cognitive multi-agent shared state pools?",
           "options": [
-            "Because optimistic locking converts all Python strings into integer floating point values.",
-            "To prevent database administrators from seeing which agent modified a table.",
-            "Because pessimistic locking is prohibited by the Federal Trade Commission in corporate finance.",
-            "Because holding exclusive pessimistic locks while waiting for slow, non-deterministic LLM token generation causes thread starvation, massive latency bottlenecks, and deadlocks."
+            "Because OCC locks each shared record for the full LLM inference, which guarantees that no agent ever sees stale state or has to retry a write.",
+            "Because OCC keeps shared state in the LLM context window, which removes the need for any version checks when several agents write at once.",
+            "Because pessimistic locks fail to protect shared records during LLM inference, which lets two agents overwrite one another and corrupt state silently.",
+            "Because holding exclusive locks while waiting for slow, non-deterministic LLM token generation causes thread starvation, latency bottlenecks and deadlocks."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7717,10 +7717,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an autonomous cybersecurity blackboard exchange, why must firewall containment require atomic OCC version verification against the forensic verification stage?",
           "options": [
-            "Because security analysts must physically sign every network packet with a blue ink pen.",
-            "To allow ransomware software to finish encrypting backup drives before blocking connections.",
-            "To prevent executing severe network isolation rules based on unverified raw hypotheses, while ensuring concurrent mitigation agents do not corrupt active firewall policy tables.",
-            "Because firewall switches will overheat if they receive commands faster than ten seconds apart."
+            "To avoid executing network isolation rules too slowly after a detection, while letting concurrent mitigation agents overwrite active firewall policy tables freely.",
+            "To avoid storing raw hypotheses in the shared blackboard for long, while stopping forensic agents from reading active firewall policy tables during analysis.",
+            "To avoid executing severe network isolation rules based on unverified raw hypotheses, while stopping concurrent mitigation agents from corrupting active firewall policy tables.",
+            "To avoid executing network isolation rules during business hours, while giving a single mitigation agent exclusive locks on active firewall policy tables."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7791,10 +7791,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should enterprise multi-agent platforms dynamically bind semantically matched tools rather than loading all corporate tool schemas into every prompt?",
           "options": [
-            "Because OpenAPI specifications are only valid if fewer than five tools exist in an enterprise.",
-            "Loading hundreds of static tools saturates the context window, dilutes model attention, increases inference latency, and dramatically raises parameter hallucination rates.",
-            "To prevent software developers from reading API documentation.",
-            "Because cloud database servers automatically shut down if a prompt contains more than ten tools."
+            "Loading hundreds of static tools slows the vector database, raises licensing fees, adds network hops and sharply reduces the number of tools agents can use.",
+            "Loading hundreds of static tools fills the context window, dilutes attention, adds inference latency and sharply raises parameter hallucination rates.",
+            "Loading hundreds of static tools exposes tool credentials in the prompt, weakens encryption, adds audit entries and sharply raises authentication failures.",
+            "Loading hundreds of static tools lowers inference latency but makes every answer identical, removes tool variety and sharply raises repetition rates."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7842,10 +7842,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is intelligent type coercion combined with strict schema validation critical before invoking enterprise APIs from LLM tool calls?",
           "options": [
-            "Because international accounting laws require all corporate numbers to be stored as raw ASCII strings.",
-            "Because cloud servers cannot run Python unless all JSON numbers are wrapped in double quotes.",
-            "It safely resolves minor primitive formatting differences (like string numerals) without crashing, while strictly intercepting dangerous boundary violations and hallucinated parameters.",
-            "To prevent the large language model from learning how to multiply large numbers."
+            "It rejects every formatting difference (like numbers sent as strings) with an error, while passing hallucinated parameters on to the API if the schema is loose.",
+            "It rewrites every parameter value to a default (like zero for numbers), while stopping dangerous boundary violations only when the call is made at night.",
+            "It resolves small formatting gaps (like numbers sent as strings) without crashing, while strictly stopping dangerous boundary violations and hallucinated parameters.",
+            "It resolves small formatting gaps (like numbers sent as strings) and also fills in missing required parameters by guessing, so hallucinated parameters pass."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7893,10 +7893,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of a Confused Deputy attack in autonomous enterprise agent tool execution?",
           "options": [
-            "To prevent the agent from communicating with other agents on the same server.",
-            "The agent becomes confused and switches its system clock to daylight saving time early.",
-            "The computer monitor displays upside-down text when reading PDF files.",
-            "An adversary uses prompt injection to trick an authorized agent into abusing its legitimate corporate credentials to access restricted files or execute unauthorized transactions."
+            "An adversary steals an agent's credentials through a phishing email and logs in as that agent to reach restricted files or run unauthorised transactions.",
+            "An adversary overloads an authorised agent with requests until it times out, then uses a fallback agent to reach restricted files or run unauthorised transactions.",
+            "An adversary poisons the training data of an authorised agent so its legitimate credentials are revoked and it fails to reach restricted files or run transactions.",
+            "An adversary uses prompt injection to trick an authorised agent into misusing its legitimate corporate credentials to reach restricted files or run unauthorised transactions."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7944,10 +7944,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Saga Pattern with compensating actions necessary for multi-step autonomous agent workflows across distributed microservices?",
           "options": [
-            "Because distributed services cannot use single database ACID locks; compensating actions guarantee semantic rollback if intermediate steps fail, preventing inconsistent corporate state.",
-            "Because cloud networks automatically delete all databases if an HTTP request returns code 500.",
-            "Because the Saga pattern allows agents to execute transactions without recording financial ledger entries.",
-            "To prevent the Federal Reserve from monitoring corporate bank transactions."
+            "Because distributed services cannot share one database ACID lock; compensating actions give semantic rollback if a middle step fails, avoiding inconsistent corporate state.",
+            "Because distributed services share one database lock; compensating actions give faster commits when every step succeeds, avoiding extra network calls in corporate state.",
+            "Because distributed services cannot retry failed steps; compensating actions give fresh data to every step, avoiding stale reads in corporate state.",
+            "Because distributed services cannot log their steps; compensating actions give audit trails of each call, avoiding missing records in corporate state."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7996,10 +7996,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Master Procurement Orchestrator, why must escrow funds be automatically refunded via compensating actions when the supplier rejects the purchase order?",
           "options": [
-            "Because the Federal Reserve requires all corporate cash to be physically withdrawn as banknotes.",
-            "To prevent working capital from remaining permanently locked in escrow without corresponding hardware assets, guaranteeing accurate balance sheet reconciliation.",
-            "To ensure the supplier's server can delete its internal transaction log.",
-            "Because bank accounts automatically expire if escrow is held for more than thirty seconds."
+            "To stop the supplier from receiving a second purchase order with the same number, guaranteeing accurate purchase order sequence control.",
+            "To stop working capital from staying locked in escrow with no matching hardware assets, guaranteeing accurate balance sheet reconciliation.",
+            "To stop the escrow account from earning interest that the company must report as income, guaranteeing accurate income statement presentation.",
+            "To stop hardware assets from being recorded on the balance sheet before delivery, guaranteeing accurate depreciation schedules for the year."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8071,10 +8071,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is cognitive divergence considered an essential architectural feature rather than a bug in enterprise multi-agent swarms?",
           "options": [
-            "It prevents catastrophic algorithmic groupthink by ensuring complex corporate decisions are evaluated through diverse, competing risk and growth frameworks.",
-            "Because Large Language Models consume zero electricity when they disagree with each other.",
-            "Because European union labor laws mandate that artificial intelligence agents have union debates.",
-            "To slow down software execution so human employees feel more comfortable."
+            "It prevents catastrophic algorithmic groupthink, because complex corporate decisions are judged through diverse, competing risk and growth frameworks.",
+            "It speeds up agreement, because complex corporate decisions are settled by the first agent that responds with a high-confidence answer.",
+            "It lowers token cost, because complex corporate decisions are judged by one framework that every agent shares in the same way.",
+            "It improves repeatability, because complex corporate decisions are judged by identical agents that produce the same output each run."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -8122,10 +8122,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Confidence-Weighted Voting prevent erroneous decision-making in specialized enterprise multi-agent swarms?",
           "options": [
-            "It forces agents to bet their own personal cryptocurrency tokens on every vote.",
-            "It automatically deletes the votes of any agent that runs on an AMD processor.",
-            "To ensure all decisions are made in alphabetical order.",
-            "It scales each agent's vote by its calibrated subjective confidence score, allowing high-confidence domain specialists to overrule a majority of uncertain generalist agents."
+            "It gives each agent one equal vote and counts the majority, so uncertain generalists can overrule a few high-confidence domain specialists.",
+            "It scales each agent's vote by its seniority in the swarm, so the longest-running agents can overrule a majority of newer domain specialists.",
+            "It scales each agent's vote by its response speed, so the fastest agents can overrule a majority of slower but better calibrated specialists.",
+            "It scales each agent's vote by its calibrated confidence, so high-confidence domain specialists can overrule a majority of uncertain generalists."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8173,10 +8173,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does dialectical debate between Actor and Critic agents drastically reduce hallucination rates in enterprise decision workflows?",
           "options": [
-            "Because arguing agents generate more heat, which warms up cloud data centers during winter.",
-            "By letting the most persuasive-sounding agent win regardless of whether its claims are backed by evidence.",
-            "By forcing agents to cross-examine factual assertions and defend claims with grounded evidence, exposing unstated assumptions and flawed logic before final adjudication.",
-            "Because debate software deletes thirty percent of the agent's memory bank after every turn."
+            "By letting agents agree quickly on one answer and repeat it with high confidence, hiding disagreements and uncertain logic before final judgment.",
+            "By letting a single agent write both sides of the argument in one pass, reducing token costs and skipping outside evidence before final judgment.",
+            "By forcing agents to cross-examine factual claims and defend them with grounded evidence, exposing hidden assumptions and flawed logic before final judgment.",
+            "By forcing agents to rephrase the same claim in several styles, improving fluency and tone while leaving the logic unchecked before final judgment."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8224,10 +8224,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Practical Byzantine Fault Tolerance (PBFT), how many total agent nodes (N) are mathematically required to tolerate two simultaneously compromised or Byzantine agents (f = 2)?",
           "options": [
-            "Only 1 node if it is configured to use multithreading.",
-            "At least 7 nodes (satisfying the fundamental theorem N >= 3f + 1, where 3 * 2 + 1 = 7).",
-            "Exactly 2 nodes, because agents can take turns acting as supervisor.",
-            "Exactly 4 nodes, because four is double two."
+            "At least 5 nodes (from N >= 2f + 1, where 2 x 2 + 1 = 5).",
+            "At least 7 nodes (from N >= 3f + 1, where 3 x 2 + 1 = 7).",
+            "At least 6 nodes (from N >= 3f, where 3 x 2 = 6).",
+            "At least 9 nodes (from N >= 4f + 1, where 4 x 2 + 1 = 9)."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8276,10 +8276,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Enterprise Credit Committee Swarm, why are Byzantine outlier nodes quarantined before calculating the final composite risk score?",
           "options": [
-            "To prevent malicious, corrupted, or hallucinating agent feeds from skewing the credit score and causing an erroneous loan rejection or default risk.",
-            "Because credit ratings cannot exceed thirty points under European banking treaties.",
-            "Because Python cannot compute averages of lists containing more than five elements.",
-            "To ensure that only agents located in North America participate in corporate loan decisions."
+            "To stop malicious, corrupted or hallucinating agent feeds from skewing the credit score and causing a wrong loan rejection or default risk call.",
+            "To stop honest agents from disagreeing with the majority on risk scores and slowing the final committee vote on the loan application.",
+            "To stop duplicate agent feeds from raising the credit score and causing the committee to approve loans beyond its approved lending limit.",
+            "To stop slow agent feeds from delaying the credit score and causing the committee to miss the regulatory deadline for the loan decision."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8351,10 +8351,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural function of the Master Command Bridge within the Autonomous Enterprise Operations Swarm?",
           "options": [
-            "It stores all corporate email attachments on local USB thumb drives.",
-            "To prevent software developers from updating Python libraries on GitHub.",
-            "Relying solely on static hardcoded defaults for Architecture without reconciling Autonomous against live boundary conditions.",
-            "It acts as a centralized supervisory orchestrator that aggregates cross-domain telemetry, coordinates inter-swarm task handoffs, and computes the composite enterprise operational index."
+            "It is a shared database that stores raw logs from each domain swarm, keeps them separate and computes the monthly storage cost of each swarm.",
+            "It is a user dashboard that displays each domain swarm's chat history, lets staff edit it and computes the daily number of tickets closed.",
+            "It is a peer-to-peer network that links each domain swarm directly, removes the central supervisor and computes a separate index inside each swarm.",
+            "It is a central supervisory orchestrator that gathers cross-domain telemetry, coordinates handoffs between swarms and computes the composite enterprise operational index."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8402,10 +8402,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must the Autonomous Financial Close Swarm enforce strict debit-credit parity and compute SHA-256 cryptographic hashes on trial balances?",
           "options": [
-            "To guarantee double-entry accounting integrity under statutory standards (US GAAP / IFRS) and provide tamper-proof provenance for regulatory audit compliance.",
-            "Because cloud database hard drives automatically wipe files that are not formatted with cryptographic hashes.",
-            "Because debit cards cannot be used to pay taxes unless credits are equal to debits.",
-            "To prevent human CFOs from viewing financial reports on desktop computers."
+            "To guarantee double-entry integrity under US GAAP / IFRS and give tamper-proof provenance for regulatory audit compliance.",
+            "To guarantee fast settlement of bank transfers under payment network rules and give instant notice of fraud to card holders.",
+            "To guarantee that revenue is recognised at the point of sale under tax rules and give a lower tax charge for the filing year.",
+            "To guarantee matching of purchase orders with invoices under procurement rules and give early payment discounts from suppliers."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8454,10 +8454,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Autonomous Supply Chain Swarm minimize total landed costs during an unexpected regional inventory stockout?",
           "options": [
-            "It converts physical warehouse goods into non-fungible tokens on a public blockchain.",
-            "It prioritizes low-cost peer-hub transfers from facilities holding surplus inventory above safety thresholds before issuing expensive external supplier rush orders.",
-            "To force suppliers to pay penalties by ignoring invoice receipts.",
-            "It cancels all customer orders and shuts down the regional ecommerce website."
+            "It first places expensive rush orders with outside suppliers to refill every hub, before moving surplus stock between peer hubs to save on freight.",
+            "It first prioritises low-cost transfers from peer hubs that hold surplus above safety levels, before placing expensive rush orders with outside suppliers.",
+            "It first waits for the next scheduled supplier delivery to arrive at the affected hub, before moving any surplus stock between peer hubs at all.",
+            "It first cancels the pending customer orders at the affected hub, before moving surplus stock between peer hubs or placing any supplier orders."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8505,10 +8505,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Customer Incident Swarm automatically issue contractual SLA billing credits immediately upon incident remediation?",
           "options": [
-            "To hide the incident from corporate auditors and regulators.",
-            "Because cloud servers are programmed to shut down if they do not refund money daily.",
-            "To enforce fiduciary compliance with Master Services Agreements and build customer trust by eliminating dispute friction before customers submit billing claims.",
-            "Because European GDPR laws require all tech companies to operate as non-profit charities."
+            "To avoid reporting the incident to regulators and keep customer trust by settling the matter quietly before customers learn that service levels were missed.",
+            "To reduce support ticket volume and lift customer trust by crediting every customer in the region, whether or not their service level was missed.",
+            "To meet fiduciary duties under Master Services Agreements and build customer trust by removing dispute friction before customers file billing claims.",
+            "To meet tax duties on service revenue and build customer trust by posting credits at quarter-end after customers file billing claims."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8557,10 +8557,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of achieving a 100.0/100.0 Composite Operational Index across the Autonomous Enterprise Operations Swarm?",
           "options": [
-            "Because 100 is the highest number permitted by the Python compiler.",
-            "To automatically double corporate stock price on the New York Stock Exchange.",
-            "It allows the enterprise to shut down all physical office buildings and terminate all human employees.",
-            "It mathematically certifies that the enterprise operating system achieves zero-latency multi-domain execution across finance, logistics, and incident recovery while preserving 100% fiduciary audit compliance."
+            "It certifies that the operating system replaced every human employee across finance, logistics and incident recovery while cutting 100% of operating costs.",
+            "It certifies that the operating system passed one internal test in finance only, with logistics and incident recovery left for review in the next quarter.",
+            "It certifies that the operating system earns the highest revenue across finance, logistics and incident recovery while carrying 100% of the legal liability.",
+            "It certifies that the operating system achieves zero-latency multi-domain execution across finance, logistics and incident recovery while keeping 100% fiduciary audit compliance."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8634,10 +8634,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a pure dense semantic vector retrieval architecture fail on enterprise queries containing specific contract section numbers or SKU codes?",
           "options": [
-            "Because vector databases automatically delete any query that contains numbers or hyphens.",
-            "Because transformer models are mathematically prohibited from encoding text with fewer than one thousand words.",
-            "Because continuous embedding models map semantic concepts to nearby vectors, causing fine-grained alphanumeric identifiers with rare tokens to be smoothed into generic neighborhood clusters.",
-            "To save electricity by disabling exact string matching in cloud GPUs."
+            "Because dense retrieval indexes only the first 512 tokens of each document, so identifiers deeper in the contract are never stored in the index.",
+            "Because dense retrieval ranks documents by exact string overlap, so identifiers that appear many times get ranked far above the relevant section.",
+            "Because continuous embedding models map concepts to nearby vectors, so rare alphanumeric identifiers get smoothed into generic neighbourhood clusters.",
+            "Because embedding models are trained on English text only, so identifiers written with numbers and letters are rejected before they are embedded."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8684,10 +8684,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mathematical purpose of parameter k1 in the Okapi BM25 scoring algorithm?",
           "options": [
-            "It determines the encryption key size used for SSL socket connections.",
-            "It controls the term frequency saturation curve, setting the asymptotic upper bound on how much additional occurrences of a keyword can increase document relevance.",
-            "It converts English text into binary hexadecimal machine code.",
-            "It randomly deletes half the index entries to conserve hard drive space."
+            "It controls the document length normalisation, setting how strongly long documents are penalised against short ones in the relevance score.",
+            "It controls the term frequency saturation curve, setting the upper limit on how much extra keyword occurrences can raise document relevance.",
+            "It controls the inverse document frequency weight, setting how strongly rare keywords are boosted against common ones in the relevance score.",
+            "It controls the query term boost, setting how strongly words that appear first in the query count against later words in the relevance score."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8734,10 +8734,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are embedding vectors normalized to unit length (L2 norm = 1.0) before storing them in enterprise vector databases?",
           "options": [
-            "Because when vectors have unit length, cosine similarity simplifies mathematically to the standard dot product, drastically reducing computation time during nearest-neighbor search.",
-            "Because computer hardware crashes if vector coordinates exceed 1.0.",
-            "To delete any sensitive personal identifying information from the vector coordinates.",
-            "Because transformer models are only capable of outputting decimal fractions between 0 and 1."
+            "Because with unit length vectors, cosine similarity reduces to a plain dot product, which cuts computation time in nearest-neighbour search.",
+            "Because with unit length vectors, cosine similarity reduces to a plain Euclidean distance, which raises the accuracy of nearest-neighbour search.",
+            "Because with unit length vectors, the dimensions are cut to a single number per document, which cuts storage space in nearest-neighbour search.",
+            "Because with unit length vectors, all documents become equally similar to every query, which removes ties in nearest-neighbour search."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8784,10 +8784,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Reciprocal Rank Fusion (RRF) preferred over linear score normalization (Min-Max scaling) when combining sparse BM25 and dense vector search results?",
           "options": [
-            "To force all search engines to output alphabetical results.",
-            "Because RRF runs exclusively on quantum computers with infinite floating-point precision.",
-            "Because linear normalization requires paying licensing royalties to commercial software vendors.",
-            "Because RRF operates strictly on ordinal ranks rather than arbitrary score values, making it immune to score distribution skews, scale mismatches, and outlier sensitivity."
+            "Because RRF works on raw scores summed after log scaling, so it keeps the original score distribution, scale and outlier effects of each retriever.",
+            "Because RRF works on document length and freshness metadata, so it is immune to ranking bias, stale content and duplicate passages.",
+            "Because RRF works on query terms matched in both retrievers only, so it drops every document that only one retriever has returned.",
+            "Because RRF works on ordinal ranks rather than raw scores, so it is immune to score distribution skew, scale mismatch and outlier sensitivity."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8834,10 +8834,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an enterprise RAG architecture, what is the primary benefit of deploying a two-stage retrieval pipeline combining Hybrid RRF with a Cross-Encoder Re-Ranker?",
           "options": [
-            "It eliminates the need for human users to type questions by reading brainwaves.",
-            "It reduces the size of the company's hard drives by deleting all duplicate files.",
-            "Hybrid RRF rapidly filters millions of documents down to top candidates using fast sparse and dense indices, while the cross-encoder applies deep token-level cross-attention to rank the final passages with maximum precision.",
-            "It prevents competitors from reading public web pages."
+            "The cross-encoder quickly narrows millions of documents to top candidates with deep token-level attention, then hybrid RRF ranks the final passages with fast sparse and dense indices.",
+            "Hybrid RRF stores every document as a fixed summary vector for fast retrieval, then the cross-encoder rewrites each passage to match the query wording more closely.",
+            "Hybrid RRF quickly narrows millions of documents to top candidates with fast sparse and dense indices, then the cross-encoder ranks the final passages with deep token-level attention.",
+            "Hybrid RRF quickly narrows millions of documents to top candidates, then the cross-encoder generates the final answer directly from the candidate passages without the LLM."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8910,10 +8910,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural drawback of using large text chunks (e.g., 2000 tokens) in dense vector retrieval systems?",
           "options": [
-            "Because Large Language Models refuse to accept inputs longer than one hundred tokens.",
-            "Vector embedding dilution: multiple disparate topics are averaged into a single embedding vector, reducing cosine similarity for specific fine-grained queries.",
-            "Large chunks cause physical overheating in server network interface cards.",
-            "Large chunks automatically trigger copyright infringement lawsuits."
+            "Vector embedding truncation: the model embeds only the first sentence of each chunk, dropping the topics that appear later in the text.",
+            "Vector embedding dilution: several unrelated topics are averaged into one vector, lowering cosine similarity for specific fine-grained queries.",
+            "Vector index bloat: every large chunk needs thousands of vectors, raising storage costs without affecting cosine similarity for queries.",
+            "Vector embedding overfit: each large chunk copies the query wording, raising cosine similarity for every query and hiding relevant chunks."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8960,10 +8960,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Parent-Document (Small-to-Big) retrieval pattern, what is the core architectural principle that prevents LLM context fragmentation?",
           "options": [
-            "Requiring the user to manually read all parent documents before submitting a prompt.",
-            "Translating all corporate documents into Latin to standardize sentence lengths.",
-            "Decoupling the search unit from the generation unit: searching against fine-grained child chunks for high vector precision, but retrieving the expansive parent document for rich LLM context.",
-            "Restricting vector searches exclusively to the first ten pages of every PDF."
+            "Coupling the search unit to the generation unit: search large parent documents for broad context, then pass only the matching child chunks to the LLM.",
+            "Decoupling the search unit from the generation unit: search the parent documents' titles for speed, then fetch only the matching child chunks for the LLM.",
+            "Decoupling the search unit from the generation unit: search small child chunks for vector precision, then fetch the larger parent document for rich LLM context.",
+            "Coupling the search unit to the generation unit: search small child chunks for vector precision, then give the LLM only those same child chunks."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9009,10 +9009,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of Contextual Compression in enterprise RAG pipelines?",
           "options": [
-            "To translate English corporate policies into Spanish and German.",
-            "To compress text using ZIP algorithms so human users cannot read the documents.",
-            "To convert text into binary Morse code for satellite transmission.",
-            "To eliminate non-relevant sentences from retrieved documents, slashing prompt token costs and preventing the 'Lost in the Middle' LLM attention failure mode."
+            "To add extra context sentences to retrieved documents, raising prompt token costs but avoiding the 'Lost in the Middle' attention failure.",
+            "To compress the embeddings of retrieved documents, cutting vector storage costs and avoiding the 'Lost in the Middle' attention failure.",
+            "To remove duplicate documents from the vector index, cutting storage costs but leaving the 'Lost in the Middle' failure unchanged.",
+            "To remove non-relevant sentences from retrieved documents, cutting prompt token costs and avoiding the 'Lost in the Middle' attention failure."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9059,10 +9059,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must table-aware chunkers re-inject column header lines into every split table chunk when segmenting enterprise financial tables?",
           "options": [
-            "Because without the header row, segmented data rows become anonymous numbers stripped of column definitions (e.g., losing whether a number represents revenue or debt), causing severe hallucinations.",
-            "Because Markdown parsers crash if a table has fewer than ten columns.",
-            "Because the Securities and Exchange Commission mandates that all tables be printed in blue ink.",
-            "To increase the character count so software engineers can charge higher consulting fees."
+            "Because without the header row, split data rows become anonymous numbers with no column meaning (revenue versus debt), which causes severe hallucinations.",
+            "Because without the header row, split chunks are rejected by the embedding model, which cannot process rows that start with numbers rather than text.",
+            "Because without the header row, split chunks lose their page numbers, which stops the system from showing citations for the answers it generates.",
+            "Because without the header row, split chunks become too short for the index, which raises storage costs and slows down every search request."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9109,10 +9109,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Production Parent-Document Hierarchical RAG Pipeline achieve both high retrieval recall and low generation hallucinations?",
           "options": [
-            "It forces the LLM to guess the answer without reading any source documents.",
-            "It searches small, focused child chunks to achieve high vector similarity signal, expands matched chunks to their full parent context to eliminate semantic fragmentation, and applies contextual compression to remove distracting boilerplate.",
-            "It deletes all documents that are more than five days old.",
-            "It translates all documents into binary machine code and stores them on floppy disks."
+            "It searches large parent documents for broad topical signal, narrows matches to their small child chunks to remove noise, and applies contextual expansion to add supporting boilerplate.",
+            "It searches small child chunks for a sharp similarity signal, expands matches to their full parent context to remove fragmentation, and applies contextual compression to strip distracting boilerplate.",
+            "It searches small child chunks for a sharp similarity signal, passes only those chunks to the LLM to keep prompts short, and applies re-ranking to remove duplicate passages.",
+            "It searches small child chunks for a sharp similarity signal, expands matches to their full parent context to remove fragmentation, and skips compression to keep all boilerplate."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9185,10 +9185,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a standard vector-based RAG pipeline fail when tasked with answering multi-hop corporate compliance questions?",
           "options": [
-            "Because vector search evaluates documents as isolated semantic islands based on topical proximity, making it incapable of traversing explicit relational chains that span across disconnected documents.",
-            "Because vector databases are prohibited from storing text written in the English language.",
-            "Because cosine similarity cannot calculate numbers greater than zero.",
-            "To prevent corporate servers from consuming more than fifty watts of electricity."
+            "Because vector search treats documents as isolated semantic islands ranked by topical closeness, so it cannot follow explicit relationship chains across separate documents.",
+            "Because vector search treats documents as ordered sequences ranked by recency, so it cannot follow the latest amendments across versions of the same document.",
+            "Because vector search treats documents as keyword lists ranked by exact matches, so it cannot follow synonyms and paraphrases across the same documents.",
+            "Because vector search treats documents as short summaries ranked by length, so it cannot follow detailed clauses and exceptions inside the same document."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9236,10 +9236,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise knowledge graph engineering, what is the primary purpose of Entity Canonicalization?",
           "options": [
-            "To encrypt entity names so graph queries take longer to run.",
-            "To translate all foreign company names into French.",
-            "To delete any entity that does not trade on the New York Stock Exchange.",
-            "To resolve diverse textual surface names, acronyms, and colloquial aliases into a single canonical Master Entity ID, preventing the knowledge graph from fracturing into disconnected subgraphs."
+            "To translate entity names into English before storing them, so the graph does not mix different languages inside the same subgraph.",
+            "To delete duplicate documents that mention the same entity, so the graph does not repeat the same source text in different subgraphs.",
+            "To encrypt entity names before storing them in the graph, so the graph does not reveal private company names to unauthorised users.",
+            "To merge varied surface names, acronyms and aliases into one canonical Master Entity ID, so the graph does not split into disconnected subgraphs."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9286,10 +9286,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the GraphRAG architecture, what is the primary operational advantage of Hierarchical Community Detection (Leiden Algorithm)?",
           "options": [
-            "To force all computer servers to restart at midnight every Sunday.",
-            "It automatically deletes all negative reviews of company products from social media.",
-            "It partitions the massive knowledge graph into modular semantic clusters, allowing LLMs to generate pre-computed hierarchical summary reports that answer broad global questions without brute-force context stuffing.",
-            "It restricts graph database access to employees who possess a PhD in graph theory."
+            "It merges all communities in the knowledge graph into a single cluster, so LLMs can answer every global question from one summary without any hierarchy.",
+            "It splits the knowledge graph by document source and date, so LLMs can answer narrow factual questions quickly without reading any community summary.",
+            "It splits the large knowledge graph into modular semantic clusters, so LLMs can write pre-computed summaries that answer broad global questions without stuffing the context.",
+            "It ranks the graph's nodes by their number of links, so LLMs can answer broad global questions by reading only the ten most connected entities."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9337,10 +9337,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of Linearizing a sub-graph ego-network into Markdown triples before injecting it into the LLM context?",
           "options": [
-            "It prevents the graph database from charging hourly licensing fees.",
-            "It translates complex multi-hop graph topology into explicit, readable textual relationships (Subject-Predicate-Object), grounding the LLM in verified factual links without requiring the LLM to parse raw JSON database syntax.",
-            "Because Large Language Models are strictly prohibited from processing numbers.",
-            "It compresses the database so it can be emailed as a JPEG image."
+            "It turns clear Subject-Predicate-Object text into complex multi-hop graph structure, grounding the LLM in the database schema without making it read plain text.",
+            "It turns complex multi-hop graph structure into clear Subject-Predicate-Object text, grounding the LLM in verified links without making it parse raw JSON database syntax.",
+            "It turns complex multi-hop graph structure into dense embedding vectors, grounding the LLM in similar passages without making it read relationships as text.",
+            "It turns complex multi-hop graph structure into short summaries, grounding the LLM in the main themes while dropping the Subject-Predicate-Object links."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9388,10 +9388,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a corporate compliance audit, why is the GraphRAG Knowledge Mesh superior to a standard vector database when evaluating ultimate beneficial ownership (UBO)?",
           "options": [
-            "Because GraphRAG deterministically traverses multi-hop ownership chains across legal filings and shell companies, discovering indirect relationships that share zero semantic vector similarity with the target applicant.",
-            "Because GraphRAG is hosted on an overseas private satellite.",
-            "Because vector databases automatically crash if an entity has more than two owners.",
-            "To comply with requirements that all financial audits be solved using pencil and paper."
+            "Because GraphRAG deterministically follows multi-hop ownership chains through filings and shell companies, finding indirect links that have no semantic similarity to the applicant.",
+            "Because GraphRAG ranks filings by semantic similarity to the applicant, finding the most similar shell companies that share wording with the applicant's name.",
+            "Because GraphRAG caches earlier ownership answers for repeat queries, finding results faster for applicants that were already checked in the past.",
+            "Because GraphRAG summarises each filing into a single paragraph, finding direct owners listed in the first section of the applicant's own document."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9464,10 +9464,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Harmonic Mean used instead of an Arithmetic Average when calculating the Composite RAG Quality Score across the RAG Triad?",
           "options": [
-            "To prevent the server from running out of disk space.",
-            "Because arithmetic averages are illegal under European Union software regulations.",
-            "Because the harmonic mean converts all numbers into musical chords.",
-            "Because the harmonic mean severely penalizes extreme weakness in any single pillar, ensuring that a system with 0% faithfulness (hallucination) cannot achieve a passing score through high fluency alone."
+            "Because the harmonic mean rewards the strongest pillar most, so a system with 0% faithfulness can still pass if its relevance scores are high.",
+            "Because the harmonic mean ignores the weakest pillar, so a system with 0% faithfulness is judged on its other two scores only.",
+            "Because the harmonic mean weights pillars by token count, so a system with 0% faithfulness passes if its answers are short.",
+            "Because the harmonic mean heavily penalises extreme weakness in any one pillar, so a system with 0% faithfulness cannot pass on high fluency alone."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9514,10 +9514,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary risk of deploying a RAG pipeline that consistently scores low on Context Relevance (e.g., score < 0.20)?",
           "options": [
-            "Prompt Dilution: excessive irrelevant sentences contaminate the LLM context window, distracting attention heads, increasing token costs, and raising hallucination rates.",
-            "It causes the company's domain name to be unregistered on the public internet.",
-            "It permanently damages the liquid cooling tubes inside the server chassis.",
-            "To force users to only submit questions during standard business hours."
+            "Prompt dilution: too many irrelevant sentences fill the LLM context, distracting attention heads, raising token costs and increasing hallucinations.",
+            "Prompt truncation: too many relevant sentences exceed the LLM context limit, cutting off the question, lowering token costs and increasing refusals.",
+            "Prompt leakage: too many private sentences enter the LLM context, exposing internal data, raising compliance costs and increasing audit findings.",
+            "Prompt rigidity: too few irrelevant sentences enter the LLM context, narrowing attention heads, lowering token costs and increasing repetition."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9564,10 +9564,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must generated text be decomposed into Atomic Claims before performing Groundedness (Faithfulness) evaluation?",
           "options": [
-            "Because atomic claim decomposition physically splits atoms in the server CPU to generate heat.",
-            "Because evaluating whole paragraphs obscures partial hallucinations; decomposing into atomic factual propositions allows the system to verify each claim independently and calculate an exact faithfulness ratio.",
-            "Treating Metric and Groundedness as interchangeable constants rather than verifying Faithfulness at each step.",
-            "Because Large Language Models can only read sentences with fewer than ten letters."
+            "Because scoring a whole paragraph is slower than scoring sentences; splitting it into atomic claims lets each be cached alone and gives a shorter average latency.",
+            "Because scoring a whole paragraph hides partial hallucinations; splitting it into atomic claims lets each be checked alone and gives an exact faithfulness ratio.",
+            "Because scoring a whole paragraph ignores the retrieved context; splitting it into atomic claims lets each be matched to a source and gives an answer relevance score.",
+            "Because scoring a whole paragraph exceeds the judge's context limit; splitting it into atomic claims lets each be scored alone and gives a lower token bill."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9612,10 +9612,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Corrective RAG (CRAG) architecture, what action is triggered when the retrieved context confidence falls into the 'Incorrect' or 'Ambiguous' state?",
           "options": [
-            "To force the user to type their question in capital letters.",
-            "It immediately terminates the user's software license.",
-            "The pipeline intercepts the poor retrieval, executes adaptive query rewriting (expanding technical synonyms or decomposing sub-queries), and runs a secondary retrieval loop before generation.",
-            "It randomly deletes ten rows from the enterprise SQL database."
+            "The pipeline passes the poor retrieval to the LLM anyway, adds a warning to the answer, and skips any second retrieval loop before generation.",
+            "The pipeline blocks the poor retrieval, switches off the LLM, and returns a canned reply with no rewriting or second retrieval loop before generation.",
+            "The pipeline blocks the poor retrieval, runs adaptive query rewriting (expanding synonyms or splitting sub-queries), and does a second retrieval loop before generation.",
+            "The pipeline blocks the poor retrieval, retrains the embedding model on the failed query, and does a second retrieval loop after generation."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9662,10 +9662,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of integrating automated RAG Triad evaluation gates into enterprise production pipelines?",
           "options": [
-            "It prevents competitors from launching competing products by patenting every English sentence.",
-            "To slow down the internet so mainframe servers can catch up.",
-            "It eliminates the need for computer databases by printing all answers on paper.",
-            "It provides continuous, mathematical verification that AI outputs are grounded in verified documentation, intercepting hallucinations and low-quality retrieval before corporate decisions are impacted."
+            "It replaces human review of AI output entirely, so hallucinations and weak retrieval are accepted once the average score passes a fixed threshold.",
+            "It speeds up deployment of AI models by skipping testing, so hallucinations and weak retrieval are found only after corporate decisions are affected.",
+            "It verifies once a year that AI output follows style guidelines, so hallucinations and weak retrieval are reviewed after corporate decisions are made.",
+            "It continuously verifies mathematically that AI output is grounded in verified documents, catching hallucinations and weak retrieval before corporate decisions are affected."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9737,10 +9737,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of the Enterprise Fiduciary Knowledge Mesh?",
           "options": [
-            "Because Large Language Models refuse to answer questions without a graph database.",
-            "To delete all corporate emails that are older than six months.",
-            "To replace human software engineers with public blockchain smart contracts.",
-            "To unite hybrid search, hierarchical parent-document chunking, relational property graphs, and RAG Triad governance into a single synchronized system that provides verified, source-grounded intelligence with greatly reduced hallucination risk across complex corporate operations."
+            "To unite fine-tuning, quantisation, adapter serving and synthetic data in one system that gives faster, lower-cost model hosting with far lower GPU memory use across the enterprise across complex corporate operations and regulated reporting.",
+            "To unite RPA bots, workflow engines, process mining and no-code builders in one system that gives automated, rule-based task handling with far lower manual effort in operations.",
+            "To unite firewalls, red-teaming, prompt filters and security logging in one system that gives monitored, attack-resistant AI services with far lower breach risk across the company.",
+            "To unite hybrid search, hierarchical parent-document chunking, relational property graphs and RAG Triad governance in one system that gives verified, source-grounded intelligence with far lower hallucination risk."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9787,10 +9787,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is automated covenant extraction with formal penalty and threshold metadata necessary in multinational regulatory compliance?",
           "options": [
-            "It transforms ambiguous, multi-thousand-page legal texts across conflicting jurisdictions into structured, machine-evaluable constraints that can be checked against corporate supply chain operations in real time.",
-            "It forces international courts to dismiss all corporate lawsuits automatically.",
-            "To convert all regulatory statutes into audio podcasts.",
-            "Because European Union laws are strictly prohibited from being read by human lawyers."
+            "It turns ambiguous, multi-thousand-page legal texts from conflicting jurisdictions into structured, machine-checkable constraints that can be tested against supply chain operations in real time.",
+            "It turns structured, machine-checkable constraints from a single jurisdiction into long legal texts that lawyers can review against supply chain operations each quarter.",
+            "It turns structured, machine-checkable constraints from a single jurisdiction into long legal texts that lawyers can review against supply chain operations each quarter by hand.",
+            "It stores multi-thousand-page legal texts from conflicting jurisdictions in a searchable archive, so staff can find them but not test them against supply chain operations."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9838,10 +9838,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does GraphRAG multi-hop pathfinding protect multinational corporations from catastrophic regulatory fines under the EU CSDDD?",
           "options": [
-            "It creates fake inspection reports to deceive European Union regulators.",
-            "It traverses multi-tier subcontracting chains (Tier 1 through Tier 4) to uncover hidden human rights and environmental violations that are invisible in direct vendor billing records, enabling proactive remediation before regulatory enforcement.",
-            "It encrypts all supplier emails so journalists cannot read them.",
-            "To automatically shut down physical factory machines whenever it rains."
+            "It reads direct vendor billing records for Tier 1 suppliers only, to confirm that human rights and environmental policies are signed, allowing annual reporting.",
+            "It follows multi-tier subcontracting chains (Tier 1 to Tier 4) to expose hidden human rights and environmental violations absent from direct vendor billing records, allowing early remediation.",
+            "It follows multi-tier subcontracting chains (Tier 1 to Tier 4) to find cheaper suppliers hidden in billing records, allowing procurement savings before the next tender.",
+            "It follows multi-tier subcontracting chains (Tier 1 to Tier 4) to expose hidden violations, but only after regulators have opened an investigation and requested records."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9888,10 +9888,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of the Fiduciary RAG Triad Firewall during high-value enterprise financial transactions?",
           "options": [
-            "It automatically transfers ten percent of all loans into the IT department's personal bank account.",
-            "It disconnects the building's electrical power whenever a loan application is submitted.",
-            "It acts as an active inline security barrier that decomposes AI draft answers into atomic claims, verifies 100% factual entailment against source filings, checks real-time sanctions registries, and blocks flawed transactions before executive sign-off.",
-            "To force all bank employees to submit their resignations."
+            "It is a passive reporting layer that samples AI draft answers each month, checks a small share for factual entailment against source filings and lists flawed transactions after executive sign-off.",
+            "It is an active inline security barrier that encrypts AI draft answers, checks the user's login against the identity directory, screens network traffic live and blocks logins before executive sign-off.",
+            "It is an active inline security barrier that splits AI draft answers into atomic claims, checks 100% factual entailment against source filings, screens sanctions registries live and blocks flawed transactions before executive sign-off.",
+            "It is an active inline security barrier that rewrites AI draft answers for tone, checks the grammar of each sentence, screens brand terms live and edits flawed wording before executive sign-off."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9940,10 +9940,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of achieving a 100.0/100.0 Composite Knowledge Mesh Index across the Enterprise Fiduciary Knowledge Mesh?",
           "options": [
-            "Because 100 is the highest number permitted by the computer operating system.",
-            "To force all company employees to write with quill pens.",
-            "It authorizes the company to stop filing tax returns with the government.",
-            "It shows that all three modules (statutory ingestion, multi-hop supply chain audit and the RAG Triad firewall) passed their checks and that fiduciary compliance was confirmed, which is what unlocks the top accreditation tier."
+            "It shows only the RAG Triad firewall module passed its checks, with the other two modules exempt, and fiduciary compliance was assumed, unlocking the top accreditation tier.",
+            "It shows all three modules (statutory ingestion, multi-hop supply chain audit and the RAG Triad firewall) ran without errors, though fiduciary compliance was not tested at all.",
+            "It shows the system answered 100 questions in a row without any delay, with fiduciary compliance confirmed by the vendor, which unlocks the top accreditation tier.",
+            "It shows all three modules (statutory ingestion, multi-hop supply chain audit and the RAG Triad firewall) passed and fiduciary compliance was confirmed, unlocking the top accreditation tier."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10016,10 +10016,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Full Parameter Fine-Tuning require over 16 bytes of GPU VRAM per parameter during standard AdamW model training?",
           "options": [
-            "Because in addition to 16-bit model weights (2 bytes), the AdamW backpropagation algorithm maintains gradients (2 bytes), first-order momentum (4 bytes), and second-order variance (4 bytes) for every single parameter.",
-            "Because cloud GPU providers intentionally slow down training to charge higher hourly rates.",
-            "Because transformer models duplicate all text files eight times on the hard drive.",
-            "To convert all floating-point numbers into Roman numerals."
+            "Because besides 16-bit weights (2 bytes), AdamW holds gradients (2 bytes), first-order momentum (4 bytes) and second-order variance (4 bytes) for every parameter.",
+            "Because besides 16-bit weights (2 bytes), AdamW holds gradients (4 bytes) and a single moving average (2 bytes), and no variance term, for every parameter.",
+            "Because besides 16-bit weights (2 bytes), AdamW holds a full copy of the training data (8 bytes) and the learning rate schedule (4 bytes) for every parameter.",
+            "Because besides 8-bit weights (1 byte), AdamW holds gradients (1 byte), first-order momentum (2 bytes) and second-order variance (2 bytes) for every parameter."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10066,10 +10066,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Matrix B in a LoRA adapter initialized to all zeros (B = 0) at the start of training?",
           "options": [
-            "To prevent the GPU from consuming more than twelve volts of electricity.",
-            "Because computer hardware cannot multiply numbers unless one of the matrices is zero.",
-            "To delete any copyright-infringing content from the base model.",
-            "To guarantee that the delta update matrix Delta W = B * A equals zero at step zero, ensuring the adapter begins as an identity pass-through that preserves 100% of the foundational model's pre-trained knowledge."
+            "To make the update matrix Delta W = B x A equal one at step zero, so the adapter starts as a full copy of the base model and doubles all the pre-trained knowledge.",
+            "To make the gradient of Matrix A equal zero throughout training, so the adapter learns only through Matrix B and keeps the base model's weights frozen.",
+            "To make the memory for Matrix B equal zero bytes at step zero, so the adapter starts without any VRAM cost and grows as the training progresses.",
+            "To make the update matrix Delta W = B x A equal zero at step zero, so the adapter starts as an identity pass-through that keeps all the base model's pre-trained knowledge."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10115,10 +10115,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the 4-bit NormalFloat (NF4) data type superior to standard 4-bit integer (INT4) quantization for Large Language Model weights?",
           "options": [
-            "Because NF4 was created by the United States Department of the Treasury.",
-            "Because INT4 can only be used on computers that run Windows 95.",
-            "Because neural network weights follow a Gaussian normal distribution; NF4 allocates equal probability mass to each bin, capturing dense values near zero with minimal quantization error compared to uniform integer grids.",
-            "To force graphics cards to turn off their cooling fans."
+            "Because model weights follow a uniform distribution; NF4 gives each bin equal width, capturing sparse values far from zero with less error than integer grids.",
+            "Because model weights follow a Gaussian distribution; NF4 gives each bin equal width, capturing dense values near zero with the same error as uniform integer grids.",
+            "Because model weights follow a Gaussian distribution; NF4 gives each bin equal probability mass, capturing dense values near zero with less error than uniform integer grids.",
+            "Because model weights follow a Gaussian distribution; NF4 stores each weight in 8 bits instead of 4, capturing dense values near zero with less error than integer grids."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10165,10 +10165,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Dynamic LoRA Adapter Hot-Swapping in enterprise multi-tenant cloud serving?",
           "options": [
-            "It forces all users to log in using floppy disks.",
-            "It allows hundreds of corporate business units to utilize custom domain-adapted models while sharing a single base model instance in GPU VRAM, slashing hardware hosting costs by over eighty percent.",
-            "To prevent computer monitors from displaying colors other than green.",
-            "It automatically rewrites the company's annual financial statements to double corporate profits."
+            "It lets hundreds of business units use custom domain-adapted models while each keeps its own base model instance in GPU VRAM, cutting hosting costs by over eighty percent.",
+            "It lets hundreds of business units use custom domain-adapted models while sharing one base model instance in GPU VRAM, cutting hosting costs by over eighty percent.",
+            "It lets hundreds of business units use one shared general model with no domain adaptation while sharing GPU VRAM, cutting hosting costs by over eighty percent.",
+            "It lets a few business units use custom models while sharing one base model on CPU memory, cutting training time by over eighty percent."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10215,10 +10215,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of Permanently Merging a trained LoRA adapter into the base model weights (W_merged = W0 + (alpha/r)*B*A) prior to dedicated production serving?",
           "options": [
-            "It eliminates all runtime latency overhead caused by computing auxiliary low-rank matrix multiplications, allowing the adapted model to serve traffic at the exact same speed as the original base model.",
-            "It doubles the parameter count of the model on disk.",
-            "It allows the model to run without using any computer memory.",
-            "To convert the model into a spreadsheet file."
+            "It removes all runtime latency from the extra low-rank matrix multiplications, so the adapted model serves traffic at the same speed as the base model.",
+            "It removes the need for the base model at serving time, so the adapted model serves traffic from the small adapter files alone at a faster speed.",
+            "It keeps the adapter separate from the base model weights, so many adapted models can be switched on the fly at the same speed as the base model.",
+            "It adds extra low-rank matrix multiplications at runtime, so the adapted model serves traffic with a higher accuracy at a slower speed than the base model."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10291,10 +10291,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary economic and operational motivation for deploying the Synthetic Data Flywheel in enterprise fine-tuning?",
           "options": [
-            "It eliminates the need for computer programmers by deleting all programming languages.",
-            "It overcomes the human labeling bottleneck by using high-capability teacher models to transform unstructured corporate records into clean, diverse instruction-tuning datasets at a fraction of the cost and time of human domain experts.",
-            "To slow down model training so server hard drives do not overheat.",
-            "It allows computers to write code without needing electricity."
+            "It removes the need for any corporate records by using strong teacher models to invent training data from general web text, at the same cost and time as human experts in a single training run.",
+            "It removes the human labelling bottleneck by using strong teacher models to turn unstructured corporate records into clean, varied instruction-tuning datasets at a fraction of expert cost and time.",
+            "It removes the need for a fine-tuned model by using strong teacher models to answer every query at run time, at a fraction of the cost and time of retraining.",
+            "It removes the human review bottleneck by letting the fine-tuned model label its own outputs without any teacher model, at a fraction of expert cost and time."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10341,10 +10341,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In synthetic data engineering, how does Evol-Instruct prevent models from learning trivial or repetitive conversational behaviors?",
           "options": [
-            "It restricts the model to only generating answers on Friday afternoons.",
-            "To force all questions to be translated into binary Morse code.",
-            "It systematically evolves simple base prompts by injecting multi-step domain constraints, regulatory conditions, and complex input data, forcing the synthetic dataset to cover high-difficulty enterprise reasoning.",
-            "It deletes all vowels from the training text to compress file sizes."
+            "It trims complex base prompts down to short single-step questions with no constraints, so the dataset covers a broad range of easy enterprise questions at scale.",
+            "It copies each base prompt several times with small wording changes, so the dataset covers more phrasings of the same simple enterprise question.",
+            "It evolves simple base prompts by adding multi-step domain constraints, regulatory conditions and complex input data, so the dataset covers difficult enterprise reasoning.",
+            "It adds random noise and typos to simple base prompts, so the dataset covers messy user input but not harder enterprise reasoning so the model learns many wordings."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10391,10 +10391,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural and operational breakthrough of Direct Preference Optimization (DPO) over classical RLHF (PPO)?",
           "options": [
-            "Because PPO was banned by the International Olympic Committee.",
-            "DPO allows computers to run without using any computer memory.",
-            "DPO forces all models to output rhyming poetry.",
-            "DPO eliminates the need to train a separate Reward Model or run complex PPO reinforcement learning, optimizing the language model directly on preference pairs using standard binary cross-entropy loss."
+            "DPO adds a second Reward Model on top of PPO reinforcement learning, optimising the model on scalar scores from human raters with mean squared error loss.",
+            "DPO removes the need for any preference data or human labels, optimising the model directly on its own sampled outputs with a language modelling loss.",
+            "DPO removes the need to keep a reference model but still trains a separate Reward Model with PPO, optimising the model on pairs with cross-entropy loss.",
+            "DPO removes the need to train a separate Reward Model or run complex PPO reinforcement learning, optimising the model directly on preference pairs with binary cross-entropy loss."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10441,10 +10441,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise DPO dataset construction, why must length bias be carefully controlled between winning (y_w) and losing (y_l) responses?",
           "options": [
-            "Because if winning responses are consistently longer than losing responses, the model exploits the shortcut of generating verbose fluff rather than learning actual corporate factual accuracy and fiduciary policy.",
-            "Because computer monitors cannot display text longer than two hundred words.",
-            "Because the Federal Trade Commission requires all corporate emails to have identical word counts.",
-            "To prevent the GPU from calculating numbers that have decimal points."
+            "Because if winners are consistently longer than losers, the model takes the shortcut of writing verbose fluff instead of learning factual accuracy and fiduciary policy.",
+            "Because if losers are consistently longer than winners, the model takes the shortcut of writing very short answers instead of learning factual accuracy and policy.",
+            "Because if winners and losers differ in length, the training loss cannot be computed, and the model fails to run any update until the lengths are equal.",
+            "Because if winners are consistently longer than losers, the model needs more GPU memory per batch, which raises training cost without affecting what it learns."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10492,10 +10492,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of achieving an 89.4% domain win-rate using Direct Preference Optimization (DPO) in enterprise AI applications?",
           "options": [
-            "Because 89.4% is the minimum passing grade for university professors.",
-            "It mathematically validates that the model has successfully internalized executive risk tolerance, corporate policy constraints, and fiduciary standards, systematically choosing prudent, factual answers over reckless hallucinations.",
-            "To force all computer servers to shut down at sunset.",
-            "It allows the company to eliminate all legal contracts and rely on verbal promises."
+            "It shows the model has memorised the training pairs word for word, so it repeats the chosen answers exactly even when the question is changed or new.",
+            "It shows the model has internalised executive risk tolerance, corporate policy limits and fiduciary standards, choosing prudent, factual answers over reckless hallucinations.",
+            "It shows the model runs 89.4% faster than the base model, so executive users get prudent, factual answers sooner than from the earlier version.",
+            "It shows the model has been checked by 89.4% of the board members, so corporate policy limits are approved for every answer that the model produces."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10567,10 +10567,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Domain-Specific Instruction Tuning necessary when adapting Large Language Models to enterprise accounting, audit, and legal operations?",
           "options": [
-            "To force all accounting models to output numbers rounded to the nearest million dollars.",
-            "Because commercial law firms are prohibited from using computers connected to electricity.",
-            "Because general-purpose models are trained on unstructured conversational text; domain instruction tuning aligns models with strict professional personas, mathematical accounting invariants, and regulatory document schemas.",
-            "To delete all public domain literature from the model's memory."
+            "Because general models are trained only on code and mathematics; domain tuning adds conversational skill, friendly personas and casual language for enterprise users.",
+            "Because general models cannot read long documents; domain tuning extends their context window so full ledgers and contracts fit in a single prompt at lower cost.",
+            "Because general models are trained on unstructured conversational text; domain tuning aligns them with strict professional personas, accounting invariants and regulatory document schemas.",
+            "Because general models are too small to hold accounting terms; domain tuning adds new vocabulary entries to the tokenizer so legal words are not split."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10617,10 +10617,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In financial bookkeeping, why must an adapted Large Language Model strictly enforce the mathematical invariant sum(Debits) == sum(Credits) for every generated transaction?",
           "options": [
-            "Because banks refuse to accept wire transfers on Tuesdays unless debits exceed credits.",
-            "Because an unbalanced journal entry violates the fundamental double-entry accounting equation (Assets = Liabilities + Equity), causing ERP database write failures, balance sheet imbalances, and statutory audit citations.",
-            "Because the Federal Reserve requires all debits to be written in green ink.",
-            "To force computer monitors to turn off when entering numbers."
+            "Because an unbalanced journal entry slows the double-entry posting engine, causing ERP timeouts, delayed month-end closes and extra costs for storage.",
+            "Because an unbalanced journal entry breaks the double-entry equation (Assets = Liabilities + Equity), causing ERP write failures, balance sheet imbalances and audit citations.",
+            "Because an unbalanced journal entry hides tax payable under the equation (Assets = Liabilities + Equity), causing underpaid taxes, penalties and notices.",
+            "Because an unbalanced journal entry changes the chart of accounts, causing ERP schema errors, missing ledger codes and failed currency conversions."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10667,10 +10667,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In statutory audit working papers prepared under ISA 230, what is the mathematical relationship defined by the Audit Risk Model?",
           "options": [
-            "Audit Risk = Inherent Risk * Control Risk * Detection Risk; auditors assess inherent and control risk to solve for the planned Detection Risk required to keep overall audit risk below acceptable thresholds (typically <= 5%).",
-            "Audit Risk = Total Revenue divided by Employee Count.",
-            "Audit Risk equals the number of accounting errors multiplied by zero.",
-            "To force all accounting audits to finish in fewer than ten minutes."
+            "Audit Risk = Inherent Risk x Control Risk x Detection Risk; auditors assess inherent and control risk to set the Detection Risk needed to hold audit risk under an acceptable level (often 5%).",
+            "Audit Risk = Inherent Risk + Control Risk + Detection Risk; auditors assess inherent and control risk to set the Detection Risk needed to hold audit risk over an acceptable level (often 5%).",
+            "Audit Risk = Inherent Risk x Control Risk x Detection Risk; auditors set the Detection Risk first and then assess the inherent and control risk to fit it to a 50% level.",
+            "Audit Risk = Inherent Risk x Control Risk / Detection Risk; auditors assess inherent and control risk to set the Detection Risk needed to hold audit risk under 5%."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10716,10 +10716,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate legal contract review, why is an indemnification clause with a liability cap that omits confidentiality carve-outs considered high risk?",
           "options": [
-            "Because corporate law requires all contracts to be signed in purple ink.",
-            "Because the American Bar Association dissolves any corporation that signs a lease.",
-            "To force all lawyers to wear wigs in courtrooms.",
-            "Because if a massive customer data breach or trade secret leak occurs, the company's recoverable damages are capped at a nominal fee amount (e.g. 12 months fees), leaving the enterprise with millions in unrecoverable liabilities."
+            "Because after a big customer data breach or trade secret leak, recoverable damages are unlimited for the vendor, leaving the vendor with millions of unrecoverable liability.",
+            "Because after a big customer data breach or trade secret leak, the indemnity applies only to the customer's losses, leaving the vendor's own losses with no cover at all.",
+            "Because after a big customer data breach or trade secret leak, the cap is waived by law in all courts, leaving the clause unenforceable and the contract fully void.",
+            "Because after a big customer data breach or trade secret leak, recoverable damages are capped at a nominal amount (like 12 months of fees), leaving millions of unrecoverable liability."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10767,10 +10767,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural advantage of deploying a unified Tri-Domain Instruction Tuning Engine across finance, audit, and corporate law?",
           "options": [
-            "To force all financial statements to be printed on glossy paper.",
-            "It eliminates the need for corporations to hire human lawyers or accountants forever.",
-            "It allows complex enterprise commercial events (such as M&A transactions or large contracts) to be evaluated simultaneously across accounting balance sheet parity, statutory audit materiality, and legal indemnity risk in a single cohesive inference pass.",
-            "It allows the enterprise to ignore federal tax laws and trade embargoes."
+            "It lets complex events such as M&A deals or large contracts be judged on financial reporting alone, with audit and legal checks run later by separate human teams.",
+            "It lets complex events such as M&A deals or large contracts be judged by three separate models in sequence, with each domain run in its own pass at a higher cost.",
+            "It lets complex events such as M&A deals or large contracts be judged together on balance sheet parity, audit materiality and legal indemnity risk in one inference pass.",
+            "It lets complex events such as M&A deals or large contracts be approved automatically, with balance sheet, audit and legal checks skipped once the model is confident."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10842,10 +10842,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does quantizing a Small Language Model's weights from 16-bit (FP16) to 4-bit (INT4) dramatically increase generation speed during on-premise inference?",
           "options": [
-            "To force computer monitors to refresh at a lower refresh rate.",
-            "Because 4-bit numbers travel through copper cables faster than 16-bit numbers.",
-            "Because quantizing weights deletes the last three layers of the neural network.",
-            "Because autoregressive token generation is memory-bandwidth bound; reducing the weight bytes by 75% allows the GPU memory bus to stream the full model weights to compute cores four times faster for every token generated."
+            "Because autoregressive generation is compute bound; cutting weight bytes by 75% lets the compute cores run four times more operations per second on each token.",
+            "Because autoregressive generation is memory-bandwidth bound; cutting weight bytes by 50% lets the memory bus stream the model to the compute cores twice as fast per token.",
+            "Because autoregressive generation is network bound; cutting weight bytes by 75% lets the data centre network send the model four times faster to each user.",
+            "Because autoregressive generation is memory-bandwidth bound; cutting weight bytes by 75% lets the memory bus stream the model to the compute cores four times faster per token."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10892,10 +10892,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core technical innovation of Activation-Aware Weight Quantization (AWQ) over naive Round-To-Nearest (RTN) quantization?",
           "options": [
-            "AWQ identifies that the top 1% of weights responsible for model reasoning align with high-magnitude activation channels, and applies per-channel scaling to protect these salient weights from quantization rounding error.",
-            "AWQ deletes all activation channels that contain negative numbers.",
-            "AWQ converts all floating-point numbers into Roman numerals.",
-            "To force neural networks to only calculate even numbers."
+            "AWQ finds that the top 1% of weights that drive reasoning align with high-magnitude activation channels, and applies per-channel scaling to protect them from rounding error.",
+            "AWQ finds that the bottom 1% of weights have no effect on reasoning, and removes them entirely so the remaining weights are rounded with less error.",
+            "AWQ finds that all weights matter equally for reasoning, and applies one global scaling factor to every channel so rounding error is spread evenly.",
+            "AWQ finds that the top 1% of weights align with low-magnitude activation channels, and keeps them in 4-bit while rounding the other weights to 16-bit."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10942,10 +10942,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Knowledge Distillation, why are the Teacher and Student logits scaled by temperature T > 1.0 before computing KL divergence?",
           "options": [
-            "To delete random words from the vocabulary.",
-            "Because temperature softening prevents the softmax function from collapsing into a hard winner-take-all output, revealing the subtle 'dark knowledge' probability distribution across secondary tokens.",
-            "Because language models overheat unless the temperature is set above 100 degrees Celsius.",
-            "To force all probabilities to sum to zero."
+            "Because temperature sharpening pushes softmax toward a hard winner-take-all output, hiding the subtle secondary token spread from the student's loss.",
+            "Because temperature softening stops softmax from collapsing into a hard winner-take-all output, exposing the subtle 'dark knowledge' spread across secondary tokens.",
+            "Because temperature softening lowers the number of tokens in the vocabulary, reducing the KL divergence computation cost for the student at each step.",
+            "Because temperature softening makes the teacher's logits equal to the student's logits, which sets the KL divergence between them to zero from the start."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10992,10 +10992,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is 2:4 semi-structured sparsity preferred over random unstructured sparsity for enterprise on-premise model serving?",
           "options": [
-            "To force GPUs to run in battery-saving mode permanently.",
-            "Because unstructured sparsity causes computer power supplies to spark.",
-            "Because 2:4 semi-structured sparsity is natively accelerated by modern GPU Tensor Cores, delivering an immediate 2x matrix multiplication speedup and 50% memory bandwidth reduction, whereas unstructured sparsity cannot be accelerated by standard hardware.",
-            "Because 2:4 sparsity requires every fourth word in the English language to be deleted."
+            "Because unstructured sparsity is natively accelerated by modern GPU Tensor Cores, giving a 2x matrix multiplication speedup and 50% less memory bandwidth, unlike 2:4 sparsity.",
+            "Because 2:4 semi-structured sparsity removes 75% of the weights with no accuracy loss, giving a 4x memory saving and faster training, unlike unstructured sparsity.",
+            "Because 2:4 semi-structured sparsity is natively accelerated by modern GPU Tensor Cores, giving a 2x matrix multiplication speedup and 50% less memory bandwidth, unlike unstructured sparsity.",
+            "Because 2:4 semi-structured sparsity needs no special hardware on any processor, giving a 2x speedup on CPUs and GPUs alike, unlike unstructured sparsity."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11044,10 +11044,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational and security benefit of deploying an air-gapped Small Language Model (SLM) on enterprise premises compared to using cloud API endpoints?",
           "options": [
-            "To force all enterprise data to be stored on 3.5-inch floppy disks.",
-            "It allows the enterprise to operate without paying for electricity.",
-            "It guarantees that the company will never need to hire a software engineer again.",
-            "Complete data sovereignty with zero external data leakage, guaranteed sub-20ms latency without public network jitter, insulation from external vendor price hikes, and an upfront hardware CapEx that eliminates recurring token expenses."
+            "Full data sovereignty with some external logging, steady sub-20ms latency without public network jitter, exposure to vendor price hikes, and upfront CapEx plus recurring token fees.",
+            "Higher model accuracy than any cloud model, steady sub-20ms latency without public network jitter, protection from vendor price hikes, and no hardware costs at all.",
+            "Full data sovereignty with zero external leakage, lower accuracy on reasoning tasks, no need for any hardware security, and recurring token fees billed by the vendor.",
+            "Full data sovereignty with zero external leakage, steady sub-20ms latency without public network jitter, protection from vendor price hikes, and upfront CapEx that removes recurring token fees."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11120,10 +11120,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical objective of performing cryptographic weight attestation (SHA-256) on an air-gapped sovereign enterprise SLM appliance prior to boot?",
           "options": [
-            "To verify that the model weight shards, tokenizers, and configuration files have not been modified, corrupted, or tampered with by unauthorized actors, ensuring strict software supply-chain integrity.",
-            "To compress the model weights into an audio file.",
-            "To force the computer fans to spin at maximum speed.",
-            "Treating Architecture and Air-Gapped as interchangeable constants rather than verifying Sovereign at each step."
+            "To verify that model weight shards, tokenizers and configuration files have not been changed, corrupted or tampered with, ensuring software supply-chain integrity.",
+            "To compress model weight shards, tokenizers and configuration files before boot, ensuring that the appliance loads faster and uses less storage space.",
+            "To encrypt model weight shards, tokenizers and configuration files at rest, ensuring that stolen disks cannot be read by outside parties after boot.",
+            "To measure the accuracy of the model on a test set before boot, ensuring that the appliance meets the minimum quality bar set by the business."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11171,10 +11171,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an air-gapped on-premise SLM uniquely suited for enterprise corporate bank reconciliation compared to traditional rigid rule-based systems?",
           "options": [
-            "To force all bank statements to be printed on parchment paper.",
-            "Because language models can legally sign corporate checks on behalf of the CFO.",
-            "Because rule-based software cannot process numbers larger than one hundred.",
-            "Because it cognitively parses messy, unstructured bank statement descriptions, deduces commercial fee variances (such as payment gateway deductions), and generates balanced double-entry adjusting entries without exposing sensitive financial banking telemetry to external public clouds."
+            "Because it matches only exact amounts and dates in bank statements, flags every variance for manual review and posts no entries until a human approves the data.",
+            "Because it uses a fixed set of regex rules for bank statement descriptions, infers fee variances from a table and writes entries without any language model.",
+            "Because it parses messy bank statement descriptions, infers fee variances and writes adjusting entries after sending the statement text to a public cloud for checking.",
+            "Because it parses messy bank statement descriptions, infers fee variances (such as gateway deductions) and writes balanced adjusting entries without exposing banking data to public clouds."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11223,10 +11223,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an air-gapped sovereign SLM critical for reviewing commercial contracts and generating negotiation redlines in enterprise legal operations?",
           "options": [
-            "To force all legal disputes to be arbitrated by coin flips.",
-            "Because federal judges refuse to read contracts that were typed on mechanical keyboards.",
-            "Because commercial contracts contain confidential trade secrets, pricing formulas, and strategic merger terms; processing them through public cloud APIs risks corporate data leaks, whereas an air-gapped SLM enforces internal negotiation playbooks with zero external data exposure.",
-            "Because lawyers are legally required to write all contract amendments by hand with fountain pens."
+            "Because contracts hold public records, standard terms and published prices; public cloud APIs are slower, while an air-gapped SLM applies internal playbooks with lower latency.",
+            "Because contracts hold trade secrets, pricing formulas and merger terms; public cloud APIs encrypt them, so an air-gapped SLM is needed only to cut token fees.",
+            "Because contracts hold trade secrets, pricing formulas and merger terms; public cloud APIs risk leaks, while an air-gapped SLM applies internal playbooks with zero external exposure.",
+            "Because contracts hold trade secrets, pricing formulas and merger terms; an air-gapped SLM shares them with outside lawyers automatically to speed up each negotiation."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11273,10 +11273,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In forensic statutory auditing under ISA 240, why is Benford's Law first-digit statistical analysis effective at uncovering fraudulent accounting entries?",
           "options": [
-            "To force accountants to use calculators with mechanical bells.",
-            "Because naturally occurring financial transaction amounts follow a strict logarithmic first-digit distribution (e.g. 1 occurs ~30.1% of the time, while 9 occurs ~4.6% of the time); human fraudsters inventing numbers fail to match this distribution, creating statistically anomalous Chi-Square deviations.",
-            "Because Benford's Law was passed by the US Congress to outlaw the number nine.",
-            "Because all fraudulent transactions must be written backwards."
+            "Because natural transaction amounts follow a uniform first-digit pattern (each digit appears about 11.1% of the time); invented numbers match it, giving small Chi-Square deviations.",
+            "Because natural transaction amounts follow a logarithmic first-digit pattern (1 appears about 30.1% of the time, 9 about 4.6%); invented numbers miss it, giving large Chi-Square deviations.",
+            "Because natural transaction amounts follow a logarithmic first-digit pattern (9 appears about 30.1% of the time, 1 about 4.6%); invented numbers miss it, giving large Chi-Square deviations.",
+            "Because natural transaction amounts follow a normal bell-curve pattern around round numbers; invented numbers miss it, giving large Chi-Square deviations in the tails."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11325,10 +11325,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does earning the Certified Lead Enterprise SLM Architect (CLESA) credential signify in enterprise AI leadership?",
           "options": [
-            "Mastery in designing, fine-tuning, quantizing, and deploying sovereign, air-gapped Small Language Model appliances that execute complex financial reconciliation, legal contract redlining, and statutory fraud auditing on-premise with zero data leakage.",
-            "The ability to memorize the names of all computers in an office building.",
-            "A certification to repair cathode-ray tube television monitors.",
-            "Permission to delete corporate databases without managerial approval."
+            "Mastery in designing, fine-tuning, quantising and deploying sovereign, air-gapped SLM appliances for financial reconciliation, contract redlining and fraud auditing on premises with zero data leakage.",
+            "Mastery in designing, training and deploying frontier cloud models that serve global users with financial reconciliation, contract redlining and fraud auditing through public APIs.",
+            "Mastery in selecting and buying commercial SaaS tools that cover financial reconciliation, contract redlining and fraud auditing under vendor service level agreements.",
+            "Mastery in writing prompts for public chatbots that assist with financial reconciliation, contract redlining and fraud auditing, with data held in vendor clouds."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11400,10 +11400,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Continuous Dynamic Batching dramatically increase GPU throughput compared to traditional static batching when serving concurrent enterprise LLM requests?",
           "options": [
-            "Because it deletes the pre-trained weights from GPU memory after every request.",
-            "Because it schedules inference at the individual token iteration level, instantly evicting requests that emit an [EOS] token and scheduling new incoming prompts into the vacated compute slots rather than waiting for the slowest request in the batch to complete.",
-            "To force all server fans to run at half speed.",
-            "Because it forces all users to generate exactly twelve words."
+            "Because it schedules inference at each full request, holding every slot until the whole batch ends and then filling all slots with new prompts at the same time.",
+            "Because it schedules inference at each token iteration, evicting requests that emit [EOS] and filling the freed slots with new prompts instead of waiting for the slowest request.",
+            "Because it schedules inference at each token iteration, but holds slots of requests that emit [EOS] until the slowest request finishes, keeping batch order intact.",
+            "Because it schedules inference at each token iteration, but sorts new prompts by length and starts them only after the whole current batch has completed."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11449,10 +11449,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does PagedAttention eliminate memory fragmentation waste in Large Language Model serving engines?",
           "options": [
-            "To force all GPU memory to be shared with the computer sound card.",
-            "By deleting the Key and Value matrices after every generated sentence.",
-            "By dividing the KV cache into small, fixed-size physical blocks (e.g. 16 tokens) and using a virtual Block Table to map non-contiguous physical memory, eliminating the need to pre-allocate worst-case contiguous memory upfront.",
-            "By rounding all token embeddings to zero."
+            "By compressing the KV cache into one large contiguous buffer per request and growing it by copying, which avoids fragmentation but needs worst-case pre-allocation.",
+            "By moving the KV cache of idle requests from GPU memory to disk and reloading it when they resume, which avoids fragmentation but adds read latency.",
+            "By dividing the KV cache into small fixed-size physical blocks (e.g. 16 tokens) and mapping non-contiguous blocks with a virtual Block Table, avoiding worst-case pre-allocation.",
+            "By dividing the KV cache into small fixed-size blocks (e.g. 16 tokens) but forcing them to stay contiguous in physical memory, which still needs worst-case pre-allocation."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11498,10 +11498,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why has Grouped-Query Attention (GQA) superseded traditional Multi-Head Attention (MHA) in state-of-the-art enterprise foundation models like Llama 3?",
           "options": [
-            "Because GQA disables attention across odd-numbered tokens.",
-            "Because MHA was banned by international copyright treaties.",
-            "To force all attention matrices to have negative eigenvalues.",
-            "Because GQA shares Key and Value heads across groups of Query heads (e.g. 8 KV heads for 64 Query heads), reducing the KV cache memory footprint by 87.5% and unlocking massive concurrent batch sizes with virtually zero loss in reasoning accuracy."
+            "Because GQA gives each Query head its own Key and Value heads (e.g. 64 KV heads for 64 Query heads), raising KV cache memory by 87.5% for a gain in accuracy.",
+            "Because GQA shares Key and Value heads across all Query heads (e.g. 1 KV head for 64 Query heads), cutting KV cache memory by 87.5% with a large loss of accuracy.",
+            "Because GQA shares Key and Value heads across groups of Query heads (e.g. 8 KV heads for 64 Query heads), cutting model weight memory by 87.5% with almost no loss of accuracy.",
+            "Because GQA shares Key and Value heads across groups of Query heads (e.g. 8 KV heads for 64 Query heads), cutting KV cache memory by 87.5% with almost no loss of accuracy."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11549,10 +11549,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary performance benefit does Automated Prefix Caching deliver in multi-turn enterprise conversational AI applications?",
           "options": [
-            "It reuses precomputed KV cache blocks for shared prompt prefixes (such as system instructions and policy documents), reducing Time-To-First-Token (TTFT) by up to 85% and eliminating redundant prefill computation across concurrent queries.",
-            "It automatically rewrites user questions into French.",
-            "It forces the model to only generate single-character responses.",
-            "To delete the conversation history after every comma."
+            "It reuses precomputed KV cache blocks for shared prompt prefixes (system instructions, policy documents), cutting Time-To-First-Token by up to 85% and skipping repeated prefill work.",
+            "It stores whole answers for repeated user questions and returns them unchanged, cutting Time-To-First-Token by up to 85% and skipping repeated generation work.",
+            "It reuses precomputed KV cache blocks for shared prompt prefixes, cutting the memory used by the model weights by up to 85% and skipping repeated loading work.",
+            "It reuses precomputed KV cache blocks across different users, cutting total output tokens by up to 85% and skipping repeated decode work at the end of each answer."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11600,10 +11600,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of deploying an optimized vLLM serving engine with continuous batching and PagedAttention in an enterprise IT environment?",
           "options": [
-            "To turn off cooling fans in enterprise data centers.",
-            "It increases aggregate token throughput by over 8x, reduces VRAM memory waste by over 96%, and dramatically slashes operational cloud infrastructure costs while supporting four to eight times more concurrent enterprise users on identical GPU hardware.",
-            "It eliminates the need for computer programming languages.",
-            "It forces all language models to output text in alphabetical order."
+            "It raises aggregate token throughput by about 20% and cuts VRAM waste by about 10%, lowering cloud costs slightly while serving the same users on the same GPUs.",
+            "It raises aggregate token throughput by over 8x and cuts VRAM waste by over 96%, lowering cloud costs while serving four to eight times more users on the same GPUs.",
+            "It raises aggregate token throughput by over 8x and cuts VRAM waste by over 96%, but needs eight times more GPUs to serve the same number of enterprise users.",
+            "It raises single-request speed by over 8x and cuts VRAM waste by over 96%, lowering cloud costs but serving the same number of users on the same GPUs."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11676,10 +11676,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does single-stream autoregressive token generation represent the primary bottleneck in achieving sub-200ms interactive enterprise AI SLAs?",
           "options": [
-            "Because enterprise firewalls automatically delay all AI responses by ten seconds for security inspections.",
-            "To force computer monitors to refresh at 30Hz.",
-            "Because autoregressive decoding generates text strictly sequentially (one token per forward pass) and is memory-bandwidth bound; streaming multi-gigabyte weight matrices across the memory bus for every individual token forces 20-35ms latencies per token, causing multi-token responses to quickly exceed 200ms.",
-            "Because modern fiber-optic internet cables cannot carry more than ten words per second."
+            "Because autoregressive decoding is fully parallel (all tokens per forward pass) and compute bound; running trillions of operations per token costs 20-35ms each, so long replies pass 200ms.",
+            "Because autoregressive decoding is strictly sequential and network bound; sending each token to the user over the internet costs 20-35ms each, so long replies pass 200ms.",
+            "Because autoregressive decoding is strictly sequential (one token per forward pass) and memory-bandwidth bound; streaming gigabytes of weights per token costs 20-35ms each, so long replies pass 200ms.",
+            "Because autoregressive decoding is strictly sequential and disk bound; loading weights from storage for each reply costs 20-35ms each, so long replies pass 200ms."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11727,10 +11727,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Target Model able to verify multiple candidate tokens in a single forward pass during Speculative Decoding?",
           "options": [
-            "Because the target model guesses the tokens before reading the prompt.",
-            "Because verifying known candidate tokens is a parallel, compute-bound prefill operation that processes all K tokens simultaneously in one matrix multiplication, whereas sequential generation is a memory-bandwidth-bound decode operation that must stream model weights separately for every token.",
-            "Because draft models delete all vowels from candidate words.",
-            "To force GPUs to calculate tokens in reverse order."
+            "Because verifying known candidate tokens is a sequential, memory-bound decode operation done token by token, whereas parallel prefill is compute-bound and streams weights once.",
+            "Because verifying known candidate tokens is a parallel, compute-bound prefill operation done in one matrix multiplication, whereas sequential decoding is memory-bound and streams weights per token.",
+            "Because verifying known candidate tokens needs no forward pass at all, as the draft model has already computed their probabilities and the target model only reads them.",
+            "Because verifying known candidate tokens is a parallel prefill operation, but it skips the attention layers, whereas sequential decoding must run every layer for each token."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11778,10 +11778,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural advantage of Medusa over traditional draft-model speculative decoding?",
           "options": [
-            "Medusa uses lightweight parallel prediction heads attached directly to the target model's final hidden state, eliminating the VRAM footprint and synchronization overhead of running a separate draft model in GPU memory.",
-            "Medusa converts all text tokens into Greek mythical monsters.",
-            "Medusa deletes the self-attention mechanism from the neural network.",
-            "To force all predictions to be generated in hexadecimal format."
+            "Medusa attaches lightweight parallel prediction heads to the target model's final hidden state, avoiding the VRAM and synchronisation cost of running a separate draft model.",
+            "Medusa attaches a second full-size copy of the target model to run in parallel, avoiding the accuracy cost of using a smaller draft model for token prediction.",
+            "Medusa attaches lightweight prediction heads to a separate small draft model, avoiding the cost of verifying tokens with the target model at each step.",
+            "Medusa removes the verification step by accepting every token the extra heads predict, avoiding the synchronisation cost of a draft model and target model."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11830,10 +11830,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Speculative Rejection Sampling guarantee zero degradation in output quality compared to running the Target Model alone?",
           "options": [
-            "Because the draft model is instructed to never make a mistake.",
-            "To force all probabilities to round to 1.0.",
-            "Because it deletes all tokens that have negative sentiment.",
-            "Because it accepts draft tokens with probability min(1, P/Q) and draws rejected tokens from the normalized residual distribution (P - Q), which mathematically proves that the final output probability distribution is identical to the target model alone (D_KL = 0)."
+            "Because it accepts every draft token whose probability exceeds 50% and resamples rejected tokens from the draft model, so the final distribution is close to the target's (D_KL small).",
+            "Because it accepts draft tokens with probability min(1, Q/P) and resamples rejected tokens from the draft distribution Q, so the final distribution equals the draft model's (D_KL = 0).",
+            "Because it accepts draft tokens only when they match the target's top choice and resamples rejected tokens at random, so the final output is greedy and always deterministic.",
+            "Because it accepts draft tokens with probability min(1, P/Q) and resamples rejected tokens from the normalised residual (P - Q), so the final distribution equals the target model's (D_KL = 0)."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11882,10 +11882,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational outcome of deploying an Enterprise Speculative Decoding Latency Accelerator in time-critical corporate workflows?",
           "options": [
-            "It allows models to run on computers without network interface cards.",
-            "It forces all language models to output text in uppercase letters.",
-            "It reduces wall-clock token generation latency by 2.5x to 3x, bringing end-to-end response times comfortably under the critical 200ms interactive SLA threshold while mathematically guaranteeing zero degradation in output intelligence or factual accuracy.",
-            "To delete half the words in the English dictionary."
+            "It cuts wall-clock generation latency by 2.5x to 3x, bringing response times under the 200ms SLA, but with a small loss of output accuracy on hard questions.",
+            "It cuts wall-clock generation latency by 20% to 30%, bringing response times only slightly closer to the 200ms SLA while guaranteeing no loss of output accuracy.",
+            "It cuts wall-clock generation latency by 2.5x to 3x, bringing response times under the 200ms SLA while mathematically guaranteeing no loss of output intelligence or accuracy.",
+            "It cuts GPU memory use by 2.5x to 3x, bringing hardware costs under budget while mathematically guaranteeing no loss of output intelligence or accuracy."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11956,10 +11956,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary physical hardware constraint that dictates the maximum token generation speed for Large Language Models on embedded edge devices?",
           "options": [
-            "The color of the aluminum enclosure housing the edge microprocessor.",
-            "The number of Wi-Fi antennas attached to the outer chassis.",
-            "To force all robots to speak in binary code.",
-            "Memory bus bandwidth (GB/s), because autoregressive decoding requires streaming the entire model weight tensor from DRAM into on-chip cache for every single token generated; the token generation rate is mathematically bounded by memory bandwidth divided by model weight footprint."
+            "Raw compute throughput (TOPS), as decoding multiplies the full weight tensor for every token, so the token rate is bounded by throughput divided by operation count.",
+            "Storage read speed (GB/s), as decoding loads the full weight tensor from flash for every token, so the token rate is bounded by storage speed divided by weight size.",
+            "Battery capacity (mAh), as decoding draws power for every token generated, so the token rate is bounded by the energy available divided by weight size.",
+            "Memory bus bandwidth (GB/s), as decoding streams the full weight tensor from DRAM for every token, so the token rate is bounded by bandwidth divided by weight size."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12007,10 +12007,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Kernel Fusion in NVIDIA TensorRT-LLM dramatically reduce latency on embedded edge hardware?",
           "options": [
-            "By fusing multiple consecutive mathematical operations (such as LayerNorm, QKV projection, and RoPE) into a single monolithic CUDA kernel, allowing intermediate activations to remain inside fast on-chip SRAM registers instead of continually reading and writing them across the slow external DRAM memory bus.",
-            "By deleting the attention weights after the first ten tokens are generated.",
-            "By converting all floating-point numbers into Morse code strings.",
-            "To force the GPU fan to spin at maximum velocity continuously."
+            "By fusing consecutive operations (such as LayerNorm, QKV projection and RoPE) into one CUDA kernel, so intermediate values stay in fast on-chip SRAM instead of crossing slow DRAM.",
+            "By splitting large operations (such as LayerNorm, QKV projection and RoPE) into many small CUDA kernels, so each runs in parallel on separate streaming units.",
+            "By fusing consecutive operations into one CUDA kernel, so intermediate values are written to DRAM once and read back later with fewer instructions.",
+            "By compiling operations (such as LayerNorm, QKV projection and RoPE) to run on the CPU instead of the GPU, so intermediate values stay in the CPU cache."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12058,10 +12058,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural benefit of Apple MLX's Unified Memory Architecture (UMA) for on-device Large Language Model serving?",
           "options": [
-            "To force all model weights to be stored in iCloud servers.",
-            "CPU, GPU, and Neural Engine share a single, zero-copy physical memory pool with up to 400+ GB/s bandwidth, eliminating the need to serialize and copy multi-gigabyte weight tensors across PCIe bus bottlenecks.",
-            "It prevents Apple laptops from needing battery recharge cycles.",
-            "It automatically translates all text into Swift programming syntax."
+            "The CPU, GPU and Neural Engine each keep a private memory pool with 400+ GB/s bandwidth, so weight tensors are copied across a PCIe bus only once at load time.",
+            "The CPU, GPU and Neural Engine share one zero-copy physical memory pool with 400+ GB/s bandwidth, so large weight tensors need not be copied across a PCIe bus.",
+            "The CPU and GPU share a zero-copy pool, but the Neural Engine is excluded, so large weight tensors are copied across the bus before use on the Neural Engine.",
+            "The CPU, GPU and Neural Engine share one memory pool backed by flash storage, so large weight tensors need not be held in RAM during model execution."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12109,10 +12109,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is constrained structured decoding (e.g. grammar-restricted JSON generation) mandatory when deploying autonomous edge AI models to control physical industrial machinery?",
           "options": [
-            "Because cloud providers charge five times more for unstructured text.",
-            "To force robots to write essays before moving.",
-            "Because physical actuators, PLCs, and robotic controllers require mathematically strict, schema-validated command payloads; an unconstrained conversational output (e.g. 'I am rotating the arm now') will crash downstream software parsers, triggering emergency system lockouts or physical damage.",
-            "Because robotic joints can only read text written in ancient Latin."
+            "Because actuators, PLCs and robot controllers need friendly natural language replies; strict JSON output crashes the machines and risks lockouts or damage and so reduces the cost of the controllers.",
+            "Because actuators, PLCs and robot controllers need very short commands; grammar-restricted output runs slower, and delays risk lockouts or damage to the machinery.",
+            "Because actuators, PLCs and robot controllers need strictly schema-validated command payloads; free chat output (like 'I am rotating the arm now') crashes parsers and risks lockouts or damage.",
+            "Because actuators, PLCs and robot controllers need encrypted command payloads; unconstrained output is readable by outsiders and risks data theft or damage."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12161,10 +12161,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of deploying a fully air-gapped Industrial Edge Cognitive Micro-Engine in mission-critical manufacturing facilities?",
           "options": [
-            "It eliminates the need for factory machinery to use electricity.",
-            "It replaces all industrial robots with manual hand tools.",
-            "To force all machines to shut down at 5:00 PM every day.",
-            "It delivers deterministic sub-50ms real-time control, operates autonomously without internet connectivity, eliminates external cloud API dependencies, and guarantees that proprietary factory telemetry and intellectual property never leave the physical facility."
+            "It gives variable 200-400ms control through a cloud link, runs with internet access, keeps cloud API dependency, and sends proprietary factory data to the vendor.",
+            "It gives deterministic sub-50ms control, runs without internet access, removes cloud API dependency, but needs plant data exported weekly for model retraining at the vendor.",
+            "It gives deterministic sub-50ms control, runs without internet access, but only for non-critical tasks, and shares proprietary factory data with other plants by default.",
+            "It gives deterministic sub-50ms real-time control, runs without internet access, removes cloud API dependency, and keeps proprietary factory data and IP inside the plant."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12236,10 +12236,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are foundation model output (completion) tokens consistently priced significantly higher than input (prompt) tokens across commercial AI cloud providers?",
           "options": [
-            "Because output generation executes autoregressively one token at a time and is memory-bandwidth bound, requiring entire multi-gigabyte weight tensors to stream across the GPU bus for every individual token generated, whereas prompt prefill processes all tokens simultaneously in parallel matrix multiplications with high compute efficiency.",
-            "Because cloud providers have to pay royalties to authors for every new word created.",
-            "Because input tokens are stored in cheaper magnetic tape drives.",
-            "To discourage users from asking questions longer than one sentence."
+            "Because output generation is autoregressive and memory-bandwidth bound, streaming whole weight tensors for each token, while prompt prefill handles all tokens in parallel with high compute efficiency.",
+            "Because prompt processing is autoregressive and memory-bandwidth bound, streaming whole weight tensors for each token, while output generation handles all tokens in parallel.",
+            "Because output tokens are longer than input tokens, needing more bytes over the network, while prompt tokens are sent in one compressed packet at lower cost.",
+            "Because output tokens require extra safety filtering by human reviewers at the provider, while prompt tokens are processed automatically at lower cost for the whole enterprise customer base."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12286,10 +12286,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical objective of the official OpenTelemetry GenAI Semantic Conventions in enterprise AI operations?",
           "options": [
-            "To convert all database query strings into Shakespearean poetry.",
-            "To force all Python scripts to compile into WebAssembly binaries.",
-            "To delete all trace logs that contain information about GPU temperatures.",
-            "To establish a standardized, vendor-neutral taxonomy of trace span names, parent-child hierarchies, and metric attributes (such as prompt tokens, completion tokens, and TTFT) that enables unified end-to-end observability and latency attribution across heterogeneous AI pipelines."
+            "To set a vendor-specific format for log files, error codes and dashboard colours, giving each cloud provider full control of observability across its own AI pipelines.",
+            "To set a security standard for encrypting prompts, completions and user identity, giving confidentiality across mixed AI pipelines but no observability of latency.",
+            "To set a pricing standard for prompt tokens, completion tokens and GPU hours, giving a common invoice format across mixed AI pipelines but no trace data across all of the vendors.",
+            "To set a vendor-neutral standard for span names, parent-child hierarchies and metric attributes (prompt tokens, completion tokens, TTFT), giving end-to-end observability across mixed AI pipelines."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12335,10 +12335,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Semantic Caching using vector similarity vastly superior to traditional exact-match hash caching for enterprise generative AI applications?",
           "options": [
-            "Because exact-match caches can only store numbers, not letters.",
-            "Because semantic caching automatically translates all responses into French.",
-            "Because users express identical informational intents using different wording, syntax, and punctuation; exact-match hash caches suffer near-total cache misses on minor phrasing differences, whereas semantic caches evaluate underlying semantic meaning (cosine similarity >= 0.95), deflecting 40% to 75% of redundant queries to zero-cost, sub-20ms memory retrievals.",
-            "To force all database queries to be processed on floppy disks."
+            "Because users phrase the same intent in different words, so semantic caches miss almost always, while exact-match hash caches match every query and deflect 40-75% of repeat queries in under 20ms.",
+            "Because users phrase the same intent identically, so exact-match hash caches rarely miss, while semantic caches match on cosine >= 0.50 and deflect 5-10% of repeat queries in under 20 seconds.",
+            "Because users phrase the same intent in different words, so exact-match hash caches miss almost always, while semantic caches match meaning (cosine >= 0.95) and deflect 40-75% of repeat queries in under 20ms.",
+            "Because users phrase the same intent in different words, so semantic caches store full model weights per query, matching meaning (cosine >= 0.95) and deflecting 40-75% of repeat queries."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12385,10 +12385,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational function of the 'Orange Zone' Model Degradation Circuit Breaker in an enterprise AI FinOps governor?",
           "options": [
-            "It turns all computer screens bright orange to warn employees.",
-            "When a department's monthly spend crosses a high threshold (e.g. 90%), the governor automatically routes requests from expensive frontier foundation models to highly efficient Small Language Models or local quantized engines, slashing cost-per-query by 85%+ and preserving business continuity without abruptly halting user workflows.",
-            "It deletes all employee emails sent in the last 24 hours.",
-            "To force all financial reports to be printed on paper."
+            "When a department's monthly spend passes a high threshold (e.g. 90%), requests are blocked outright with an error message until the next billing cycle, cutting cost-per-query to zero.",
+            "When a department's monthly spend passes a high threshold (e.g. 90%), requests are routed from costly frontier models to efficient SLMs or local quantised engines, cutting cost-per-query by 85%+ without halting work.",
+            "When a department's monthly spend passes a high threshold (e.g. 90%), requests are routed to larger, costlier frontier models for better accuracy, raising cost-per-query by 85%+.",
+            "When a department's monthly spend passes a low threshold (e.g. 10%), requests are routed from frontier models to SLMs, cutting cost-per-query by 85%+ for the whole month for the whole business."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12437,10 +12437,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial impact of deploying an Enterprise AI FinOps & Distributed Telemetry Gateway across corporate business units?",
           "options": [
-            "It provides granular departmental Cost-Per-Query (CPQ) attribution, deflects 40% to 75% of redundant queries via sub-20ms semantic caching, enforces automated model degradation circuit breakers to eliminate budget overruns, and slashes total enterprise inference expenditures by 65% to 80% while preserving full OpenTelemetry observability.",
-            "It forces all employees to stop using computers and return to paper ledgers.",
-            "It eliminates the need for software developers to test their code.",
-            "To convert all corporate currency into cryptocurrency tokens."
+            "It gives per-department Cost-Per-Query attribution, deflects 40-75% of repeat queries via sub-20ms semantic caching, enforces degradation circuit breakers against overruns, and cuts inference spend by 65-80%.",
+            "It gives per-department Cost-Per-Query attribution, deflects 5-10% of repeat queries via sub-second exact-match caching, relies on manual approvals against overruns, and cuts inference spend by 5-10%.",
+            "It gives company-wide Cost-Per-Query averages, deflects 40-75% of repeat queries via sub-20ms semantic caching, blocks all requests at budget limits, and cuts inference spend by 65-80%.",
+            "It gives per-department Cost-Per-Query attribution, deflects 40-75% of repeat queries via sub-20ms semantic caching, ignores budget limits, and raises inference spend by 65-80%."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12513,10 +12513,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an Anycast Multi-Region Mesh architecture essential for global enterprise AI deployments operating under sub-500ms interactive SLAs?",
           "options": [
-            "To force all enterprise users to purchase satellite communication dishes.",
-            "Because global internet cables are turned off on weekends.",
-            "Because single-region centralized hosting introduces 180ms to 260ms of speed-of-light transatlantic/transpacific network transit delay for global users, consuming half the SLA budget before inference begins; an Anycast multi-region mesh terminates TLS at local edge PoPs and routes requests to the closest regional GPU cluster within 20ms.",
-            "Because foundation models cannot understand users who speak foreign languages unless hosted locally."
+            "Because single-region hosting adds 5-10ms of network delay for global users, which is negligible against the SLA; an Anycast mesh is needed only to encrypt traffic at local edge PoPs.",
+            "Because single-region hosting adds 180-260ms of delay from slow model inference for global users; an Anycast mesh speeds up the GPUs by routing requests to larger clusters in the same data centre.",
+            "Because single-region hosting adds 180-260ms of transcontinental network delay for global users, eating half the SLA before inference; an Anycast mesh ends TLS at local edge PoPs and routes to the nearest GPU cluster within 20ms.",
+            "Because multi-region hosting adds 180-260ms of delay from replication between regions; an Anycast mesh avoids this by routing all global users to one central GPU cluster within 20ms for every user session."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12562,10 +12562,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial advantage of implementing a 3-tier Dynamic Model Router (Tier 1 SLM -> Tier 2 Medium -> Tier 3 Frontier) over routing all enterprise queries to a Frontier 70B model?",
           "options": [
-            "It ensures that language models never generate punctuation marks.",
-            "It matches query complexity to model capacity, routing 70% of routine corporate queries to sub-50ms Small Language Models ($0.0002/query) and reserving expensive Frontier 70B models ($0.018/query) for deep reasoning, reducing blended latency by 75%+ and slashing enterprise token expenditures by over 80% with zero loss in output accuracy.",
-            "To force computer monitors to operate in monochrome mode.",
-            "It forces all employees to write computer code before submitting inquiries."
+            "It matches query length to model size, sending 70% of short queries to sub-50ms SLMs ($0.0002/query) and keeping Frontier 70B ($0.018/query) for long ones, cutting costs by over 80% regardless of accuracy.",
+            "It matches query difficulty to model size, sending 70% of routine queries to sub-50ms SLMs ($0.0002/query) and keeping Frontier 70B ($0.018/query) for deep reasoning, cutting costs by over 80%.",
+            "It sends every query to all three tiers at once ($0.0002, $0.002, $0.018 per query) and keeps the best answer, raising accuracy but also raising costs by over 80%.",
+            "It matches query difficulty to model size, sending 70% of routine queries to Frontier 70B ($0.018/query) and 30% to SLMs ($0.0002/query), cutting latency by 75% but not costs."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12613,10 +12613,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an Active-Active Globally Replicated Semantic Cache combined with Token Arbitrage dramatically reduce enterprise AI operational expenditures?",
           "options": [
-            "It instantly replicates verified answers across global regional clusters so users worldwide hit local memory caches in sub-15ms (deflecting 65% to 75% of queries at zero token cost), while remaining cache misses are dynamically routed to the cheapest available spot GPU provider, slashing total inference costs by over 70%.",
-            "By deleting all data older than ten minutes from all computers.",
-            "By forcing all employees to share a single computer terminal.",
-            "To force cloud providers to provide free electricity to datacenters."
+            "It replicates verified answers across global regional clusters so users hit local caches in under 15ms (deflecting 65-75% of queries at zero token cost), with misses sent to the cheapest spot GPU provider.",
+            "It stores verified answers in one central cluster so users worldwide reach the cache in 150-250ms (deflecting 10-15% of queries at zero token cost), with misses sent to the dearest GPU provider.",
+            "It replicates verified answers across global regional clusters so users hit local caches in under 15ms (deflecting 65-75% of queries), with all misses sent to a fixed-price reserved GPU provider.",
+            "It replicates unverified drafts across global regional clusters so users hit local caches in under 15ms (deflecting 65-75% of queries at zero token cost), with misses dropped without an answer."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12665,10 +12665,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of an AI Circuit Breaker when an upstream cloud model cluster experiences latency spikes or network timeouts?",
           "options": [
-            "It automatically unplugs the server rack from the wall socket.",
-            "It deletes all customer accounts that attempted to make requests during the outage.",
-            "To force all engineers to report to the datacenter in person.",
-            "It detects error rate or p99 latency threshold violations in a sliding window, trips to an OPEN state, and instantaneously re-routes incoming traffic to warm fallback clusters or localized edge SLMs, preventing thread starvation and systemic failure."
+            "It detects error-rate or p99 latency breaches in a fixed window, trips to a CLOSED state, and keeps sending traffic to the failing cluster until a human restarts it, preventing data loss.",
+            "It detects error-rate or p99 latency breaches in a sliding window, trips to an OPEN state, and queues all incoming traffic until the cluster recovers, preventing duplicate requests.",
+            "It detects error-rate or p99 latency breaches in a sliding window, trips to an OPEN state, and doubles the retry rate against the same cluster, preventing timeouts.",
+            "It detects error-rate or p99 latency breaches in a sliding window, trips to an OPEN state, and at once reroutes traffic to warm fallback clusters or local edge SLMs, preventing thread starvation."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12715,10 +12715,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the transformative operational achievement of deploying the Master Sub-Second Global AI Routing Gateway & Dynamic Tiering Architecture?",
           "options": [
-            "Applying unverified default parameters in Masterclass Synthesis: The Grand Defense of the Sub-Second Global AI Gateway & Block 10 Accreditation (Option 3) without validating boundary constraints or reconciling state transitions.",
-            "To force all enterprise software applications to run on 8-bit microprocessors.",
-            "It unites Anycast multi-region edge ingress, 68% active-active semantic cache deflection, 3-tier dynamic model routing (SLM -> Medium -> Frontier), and real-time circuit-breaking SLA guards to deliver sub-150ms p95 global latency and slash enterprise AI expenditures by 74.8% with 100% fiduciary compliance.",
-            "It forces all language models to output text exclusively in Latin."
+            "It unites a single central ingress, 6.8% semantic cache deflection, one fixed frontier model and manual SLA reviews to deliver sub-1500ms p95 latency and cut AI spend by 7.48% with partial compliance.",
+            "It unites Anycast edge ingress, 68% semantic cache deflection, 3-tier dynamic model routing and circuit-breaking SLA guards to deliver sub-150ms p95 latency and raise AI spend by 74.8% with full compliance.",
+            "It unites Anycast edge ingress, 68% semantic cache deflection, 3-tier dynamic model routing and circuit-breaking SLA guards to deliver sub-150ms p95 latency and cut AI spend by 74.8% with full fiduciary compliance.",
+            "It unites Anycast edge ingress, 68% semantic cache deflection, 3-tier dynamic model routing and circuit-breaking SLA guards to deliver sub-150ms p50 latency but with no fiduciary compliance checks."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12772,10 +12772,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is ingress payload decoding (e.g. Base64 and Hexadecimal de-obfuscation) essential prior to evaluating prompt safety in enterprise AI systems?",
           "options": [
-            "Because Base64 strings permanently damage GPU memory registers if executed directly.",
-            "Because frontier language models retain latent multi-format decoding capabilities and will execute hidden malicious instructions, while naive English-only safety filters fail to recognize encoded text as toxic until it is normalized to canonical form.",
-            "To convert all customer prompts into binary machine code for faster calculation.",
-            "Because modern web browsers reject HTTP requests containing alphanumeric text."
+            "Because frontier models cannot read encoded text at all and will ignore concealed instructions, while English-only safety filters flag encoded text as harmless once normalised.",
+            "Because frontier models retain hidden multi-format decoding skills and will follow concealed malicious instructions, while English-only safety filters miss encoded text until it is normalised.",
+            "Because frontier models decode encoded text only at the final layer and will follow concealed instructions, while safety filters work faster on text that is left encoded.",
+            "Because frontier models retain hidden decoding skills, and encoded text raises the token count, while safety filters bill by token and so cost more on text left encoded."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12821,10 +12821,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental architectural vulnerability enables Indirect Prompt Injections to succeed against standard Retrieval-Augmented Generation (RAG) agents?",
           "options": [
-            "To force all enterprise documents to be compiled into C++ libraries.",
-            "Because RAG vector databases can only store text written in lowercase letters.",
-            "The lack of architectural separation between instruction and data channels in foundation models, where retrieved third-party text and system instructions share the identical token context window, causing the LLM to interpret untrusted data as authoritative commands.",
-            "Because modern graphics processing units lack sufficient memory to process punctuation marks."
+            "Foundation models keep a strict split between instruction and data channels, but retrieved third-party text can overwrite the system prompt file stored on the server in the system's configuration files.",
+            "Foundation models have no architectural limit on context size, so a retrieved third-party document can fill the window and push out the system instructions entirely.",
+            "Foundation models have no architectural split between instruction and data channels, so retrieved third-party text and system instructions share one context and untrusted data is read as commands.",
+            "Foundation models have a split between instruction and data channels, but they trust any text that comes from a vector database and so read it as verified commands."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12870,10 +12870,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do adversaries exploit Unicode Homoglyphs and Zero-Width characters to subvert enterprise AI safety firewalls?",
           "options": [
-            "To force all enterprise computer screens to display black-and-white graphics.",
-            "Because zero-width characters cause server cooling fans to shut down.",
-            "By physically disconnecting Ethernet cables from GPU server racks.",
-            "By replacing standard Latin characters with visually identical foreign glyphs (e.g., Cyrillic 'а') and embedding non-printing zero-width characters that bypass string-matching regex safety filters while steering tokenization trajectories and embedding hidden commands."
+            "By swapping Latin letters for emoji and adding visible punctuation characters, which are caught by regex string filters but steer tokenisation and hide commands from reviewers.",
+            "By swapping Latin letters for lookalike foreign glyphs (e.g. Cyrillic 'а') and adding very long inputs, which exhaust the regex engine and block the safety filters from running.",
+            "By swapping lowercase letters for uppercase ones and adding extra spaces between words, which slip past regex string filters while keeping tokenisation and meaning identical.",
+            "By swapping Latin letters for lookalike foreign glyphs (e.g. Cyrillic 'а') and adding invisible zero-width characters, which slip past regex string filters while steering tokenisation and hiding commands."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -12919,10 +12919,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of integrating Automated Red Teaming (e.g. TAP or continuous probing) into enterprise AI CI/CD release pipelines?",
           "options": [
-            "It systematically probes candidate model deployments with thousands of algorithmic adversarial perturbations across enterprise hazard matrices, establishing an empirical Attack Success Rate (ASR) and blocking production release if vulnerabilities are detected prior to public customer exposure.",
-            "It automatically rewrites the model weights in JavaScript so they load faster in web browsers.",
-            "It eliminates the need for computer security teams by replacing all firewalls with blockchain tokens.",
-            "To force all employee passwords to expire every 30 seconds."
+            "It probes candidate models with thousands of algorithmic adversarial perturbations across hazard matrices, measures an Attack Success Rate (ASR), and blocks release if flaws are found before customers see them.",
+            "It probes live production models with a handful of manual adversarial prompts once a year, measures user satisfaction scores, and reports flaws to customers after they find them.",
+            "It probes candidate models with thousands of random benign prompts across product categories, measures average latency, and blocks release if the response time is too slow.",
+            "It probes candidate models with thousands of algorithmic adversarial perturbations across hazard matrices, measures an Attack Success Rate (ASR), but allows release regardless of the result."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12968,10 +12968,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical objective of the Master Enterprise Adversarial Ingress Firewall in enterprise AI deployments?",
           "options": [
-            "To convert all database records into ancient Egyptian hieroglyphics.",
-            "To provide a sub-10ms multi-perimeter inspection gateway that canonicalizes Unicode homoglyphs, decodes obfuscated Base64 payloads, detects direct jailbreak signatures, quarantines indirect prompt injections, and redacts markdown exfiltration channels before untrusted data reaches the LLM inference engine.",
-            "To delete all incoming user queries that do not mention the stock market.",
-            "To force all employee communications to be routed through analog telephone modems."
+            "To give a multi-second batch inspection service that translates documents, scores sentiment, detects spam, archives indirect injections and redacts personal data after untrusted data has reached the LLM and logs every blocked request for audit.",
+            "To give a sub-10ms multi-layer inspection gateway that normalises Unicode homoglyphs, decodes Base64 payloads, detects jailbreak signatures, quarantines indirect injections and redacts markdown exfiltration channels before untrusted data reaches the LLM.",
+            "To give a sub-10ms single-layer keyword filter that blocks banned words, detects profanity, flags long prompts, ignores indirect injections and logs markdown exfiltration channels after the LLM replies.",
+            "To give a sub-10ms multi-layer inspection gateway that encrypts all prompts, verifies user identity, throttles request rates, caches repeated queries and signs outputs before untrusted data reaches the LLM."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13045,10 +13045,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is deterministic output verification so important for enterprise generative AI systems operating in regulated financial domains?",
           "options": [
-            "Because foundation models are probabilistic and can hallucinate unlawful promissory guarantees or regulatory violations even when given benign prompts; deterministic output guardrails intercept many non-compliant completions before delivery and substitute pre-vetted legal fallbacks, reducing (not eliminating) compliance exposure.",
-            "Because regular expressions make the model generate text ten times faster.",
-            "To force all financial statements to be printed on paper ledgers.",
-            "Because computer monitors cannot display text that contains percentages."
+            "Because foundation models are probabilistic and can hallucinate unlawful promises even on benign prompts; deterministic output guardrails catch many non-compliant outputs and swap in pre-vetted fallbacks, reducing (not removing) exposure.",
+            "Because foundation models are deterministic and never hallucinate unlawful promises on benign prompts; deterministic output guardrails are used only for formatting and style, and do not affect compliance exposure.",
+            "Because foundation models are probabilistic and can hallucinate unlawful promises even on benign prompts; deterministic output guardrails catch every non-compliant output and fully remove all compliance exposure.",
+            "Because foundation models are probabilistic and can hallucinate unlawful promises only on malicious prompts; deterministic output guardrails filter input text and swap in pre-vetted fallbacks before the model runs."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13095,10 +13095,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an asynchronous speculative guardrail architecture achieve comprehensive MLCommons safety classification without degrading conversational latency?",
           "options": [
-            "By forcing all users to complete a CAPTCHA verification before every response.",
-            "By running the language model on solar-powered calculator microchips.",
-            "To delete the server database whenever an invalid prompt is received.",
-            "By streaming tokens to the client through a lightweight regex buffer while concurrently dispatching early tokens to an optimized Llama-Guard micro-engine on edge silicon, so a semantic verdict can arrive within tens of milliseconds and the stream can still be aborted before the user reads downstream content."
+            "By holding the full response in a buffer until a large safety model has scanned every token, so the verdict arrives after the whole reply is generated and only then is the text released.",
+            "By streaming tokens straight to the client with no checks while a nightly batch job reviews the logs, so a verdict arrives in hours and the offending reply can only be reported afterwards.",
+            "By streaming tokens through a light regex buffer while sending early tokens in parallel to a cloud safety model, so a verdict arrives in several seconds and the stream is never aborted.",
+            "By streaming tokens through a light regex buffer while sending early tokens in parallel to a Llama-Guard micro-engine on edge silicon, so a verdict arrives in tens of milliseconds and the stream can be aborted."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13149,10 +13149,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Cryptographic Pseudonymization over permanent irreversible PII redaction in enterprise AI systems?",
           "options": [
-            "It converts all text files into MP3 audio format.",
-            "To force all employee communications to occur inside encrypted virtual reality rooms.",
-            "It replaces sensitive customer PII with synthetic cryptographic tokens that allow the foundation model to perform contextual reasoning across entities without exposing real-world identities, while enabling authorized egress gateways to safely re-hydrate original data for authenticated users.",
-            "Because permanent redaction destroys the computer's motherboard."
+            "It swaps sensitive PII for random placeholders that are destroyed at once, so the model reasons across entities without any real identities, and no gateway can ever restore the real data.",
+            "It leaves sensitive PII unchanged inside the prompt but encrypts the model's reply, so the model reasons across entities with real identities, while approved gateways decrypt the reply for users.",
+            "It swaps sensitive PII for synthetic cryptographic tokens that let the model reason across entities without seeing real identities, while approved egress gateways can restore the real data for authenticated users.",
+            "It swaps sensitive PII for synthetic tokens that differ on every request, so the model cannot link the same entity across prompts, while approved gateways restore the real data for users."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13199,10 +13199,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Grammar-Constrained Decoding (CFG Masking) eliminate syntactic JSON hallucinations in enterprise LLM pipelines?",
           "options": [
-            "To delete the output file if it contains any numbers or letters.",
-            "By compiling the target JSON schema into a formal Context-Free Grammar that dynamically calculates valid next tokens at every generation step and sets the logit bias of invalid tokens to negative infinity, so the output is guaranteed to be syntactically valid and schema-shaped.",
-            "Because grammar checkers slow down the internet to prevent errors.",
-            "By forcing the model to generate responses exclusively in binary machine code."
+            "By asking the model politely in the system prompt to return valid JSON, and retrying the full generation up to three times if the parser fails, which lowers but does not remove syntax errors.",
+            "By compiling the JSON schema into a Context-Free Grammar that works out valid next tokens at every step and sets the logits of invalid tokens to negative infinity, guaranteeing syntactically valid, schema-shaped output.",
+            "By compiling the JSON schema into a regular expression that is checked once after the full output is generated, and discarding any reply that fails, which reports syntax errors but does not prevent them.",
+            "By compiling the JSON schema into a Context-Free Grammar and lowering the sampling temperature to zero at every step, which makes invalid tokens less likely but still possible in the output."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13248,10 +13248,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the transformative operational impact of deploying the Master Enterprise Output Guardrail Firewall across enterprise cognitive microservices?",
           "options": [
-            "It establishes a multi-perimeter egress gatekeeper that pseudonymizes PII, intercepts non-compliant statements, applies hazard checks and substitutes vetted fallbacks within a latency budget small enough for interactive use, reducing compliance exposure before output reaches clients.",
-            "It forces all corporate computers to restart every 10 minutes.",
-            "To convert all database records into audio podcasts.",
-            "Because language models cannot generate text unless an output firewall is turned off."
+            "It sets up a multi-layer egress gatekeeper that pseudonymises PII, blocks non-compliant statements, runs hazard checks and swaps in vetted fallbacks within an interactive latency budget, reducing compliance exposure.",
+            "It sets up a single-layer ingress filter that blocks banned words in user prompts, logs hazard checks for later review and swaps in vetted fallbacks after a delay of several minutes, reducing user complaints.",
+            "It sets up a multi-layer egress gatekeeper that deletes PII, blocks non-compliant statements, runs hazard checks and swaps in vetted fallbacks, eliminating all compliance exposure at any latency.",
+            "It sets up a multi-layer egress gatekeeper that encrypts PII, rewrites statements for tone, runs readability checks and swaps in marketing fallbacks within an interactive latency budget."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13325,10 +13325,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are clean-label backdoor attacks particularly dangerous in enterprise AI training workflows compared to standard software malware?",
           "options": [
-            "Because backdoor triggers cause the GPU cooling fans to spin backwards.",
-            "Because clean-label attacks delete the operating system files from the training server.",
-            "To force all foundation models to be trained exclusively on Wikipedia articles.",
-            "Because poisoned samples contain natural text with correct ground-truth labels that pass human inspection and standard accuracy benchmarks, while implanting hidden trigger pathways that activate unauthorized model behaviors only when an adversary submits a specific trigger phrase."
+            "Poisoned samples hold garbled text with wrong labels that fail human review and accuracy benchmarks, while degrading the model in every response whether or not a trigger phrase is used.",
+            "Poisoned samples hold natural text with correct labels that pass human review, but they reduce accuracy benchmarks sharply, which alerts engineers before the trigger phrase is ever used.",
+            "Poisoned samples hold executable code in the training files that scans the host for credentials, while the model's behaviour is unchanged and no trigger phrase is needed to activate it.",
+            "Poisoned samples hold natural text with correct labels that pass human review and accuracy benchmarks, while hiding trigger pathways that activate unauthorised behaviour only for a specific trigger phrase."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13375,10 +13375,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical phenomenon enables Membership Inference Attacks (MIA) to determine whether a private record was used to train a foundation model?",
           "options": [
-            "Model overfitting and memorization, where training set samples produce significantly lower cross-entropy loss, higher top-token confidence, and lower prediction entropy than unseen holdout records, revealing membership signals through logit distributions.",
-            "Because language models secretly upload copies of their training data to public web servers.",
-            "To force all database queries to be processed using ancient Roman numerals.",
-            "Because neural networks lose weight when they memorize private data."
+            "Overfitting and memorisation: training samples give much lower cross-entropy loss, higher top-token confidence and lower entropy than unseen records, exposing membership in the logit distributions.",
+            "Underfitting and generalisation: training samples give much higher cross-entropy loss, lower top-token confidence and higher entropy than unseen records, exposing membership in the logit distributions.",
+            "Gradient clipping and noise: training samples give identical loss, confidence and entropy to unseen records, which exposes membership through the clipping thresholds applied to the weights.",
+            "Tokenisation and vocabulary: training samples give shorter token sequences than unseen records, which exposes membership through the length of the model's output rather than its logits."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13426,10 +13426,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical purpose does Per-Sample Gradient Clipping serve in the DP-SGD algorithm?",
           "options": [
-            "To convert all floating-point numbers into 8-bit integers.",
-            "It strictly bounds the maximum L2-norm of the gradient vector produced by any individual customer training sample, mathematically restricting the influence that any single record can exert on the shared model weights prior to Gaussian noise addition.",
-            "Because unclipped gradients automatically erase training checkpoints.",
-            "It prevents GPU hardware from overheating by shutting down unneeded processor cores."
+            "It bounds the minimum L2-norm of the gradient from any single customer training sample, raising how much every record can influence the shared weights before Gaussian noise is added.",
+            "It bounds the maximum L2-norm of the gradient from any single customer training sample, limiting how much any one record can influence the shared weights before Gaussian noise is added.",
+            "It bounds the L2-norm of the averaged batch gradient, limiting how much a whole batch can influence the shared weights, but not the influence of any single record, before noise is added.",
+            "It bounds the number of training epochs for each customer record, limiting how many times a record is seen by the shared weights, instead of its gradient size, before noise is added."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13476,10 +13476,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Machine Unlearning essential for enterprise AI compliance under GDPR Article 17 (Right to be Forgotten)?",
           "options": [
-            "Because GDPR regulations mandate that all AI servers must be replaced with paper filing cabinets.",
-            "Because foundation models automatically delete their own code files every 30 days.",
-            "Because foundation models diffusely absorb training data into billions of weights, making standard database deletions impossible; machine unlearning mathematically excises specific customer influence vectors from the weights without requiring expensive and slow full-model retraining from scratch.",
-            "To force all enterprise software applications to run exclusively in computer RAM."
+            "Because models store training data as rows in a hidden database, so ordinary database deletion works; unlearning is needed only to re-index the rows after a customer asks to be forgotten.",
+            "Because models spread training data over billions of weights, so ordinary database deletion cannot work; unlearning requires full retraining from scratch for every erasure request received.",
+            "Because models spread training data over billions of weights, so ordinary database deletion cannot work; unlearning removes a customer's influence from the weights without slow full retraining.",
+            "Because models keep training data only in their prompts, so ordinary database deletion removes it; unlearning is needed only to clear the cache after a customer asks to be forgotten."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13526,10 +13526,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the transformative operational achievement of deploying the Master Enterprise Differentially Private Fine-Tuning & Audit Suite?",
           "options": [
-            "Because differential privacy makes computers run on battery power forever.",
-            "It forces all deep learning algorithms to use only addition and subtraction.",
-            "To delete all neural network weights after every training epoch.",
-            "It unites training supply chain backdoor sanitization, provable (epsilon, delta)-DP-SGD privacy budgets, membership inference logit obfuscation, and GDPR Article 17 machine unlearning, mathematically guaranteeing total corporate data confidentiality without sacrificing model intelligence."
+            "It unites backdoor injection tests of the training supply chain, loose (epsilon, delta) DP-SGD budgets, membership inference logging and Article 17 notices, reducing data exposure with a clear loss of model intelligence.",
+            "It unites backdoor sanitisation of the training supply chain, provable (epsilon, delta) DP-SGD budgets and Article 17 unlearning, but leaves membership inference untouched, guaranteeing confidentiality only for the weights.",
+            "It unites faster training of the supply chain, larger (epsilon, delta) DP-SGD budgets, membership inference scoring and Article 17 deletion of logs, guaranteeing model accuracy without extra privacy protection.",
+            "It unites backdoor sanitisation of the training supply chain, provable (epsilon, delta) DP-SGD budgets, membership inference logit obfuscation and Article 17 unlearning, guaranteeing data confidentiality without losing model intelligence."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13604,10 +13604,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the EEOC Four-Fifths Rule, when is an automated decision system (e.g. credit underwriting or hiring) legally presumed to exhibit Disparate Impact?",
           "options": [
-            "Because credit models are only allowed to approve 80 total loans per month.",
-            "When the model code contains more than four comments per function.",
-            "When the favorable selection rate for any protected demographic cohort is less than four-fifths (80%) of the selection rate for the group with the highest selection rate, establishing a prima facie regulatory violation regardless of discriminatory intent.",
-            "To force all applicants to be interviewed by four separate human managers."
+            "When the favourable selection rate for any protected cohort is below one-half (50%) of the rate for the highest-rate group, creating a prima facie violation only if intent is shown.",
+            "When the favourable selection rate for the highest-rate group is above four-fifths (80%) of the rate for any protected cohort, creating a prima facie violation whatever the intent.",
+            "When the favourable selection rate for any protected cohort is below four-fifths (80%) of the rate for the highest-rate group, creating a prima facie violation whatever the intent.",
+            "When the number of applicants from any protected cohort is below four-fifths (80%) of the national share of that cohort, creating a prima facie violation whatever the intent."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13654,10 +13654,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core conclusion of the mathematical Impossibility Theorem of Machine Learning Fairness (Kleinberg et al.)?",
           "options": [
-            "Because computers cannot calculate percentages accurately.",
-            "That whenever base rates differ across demographic cohorts, it is mathematically impossible for an algorithmic decision model to simultaneously satisfy Demographic Parity, Equalized Odds, and Predictive Calibration Parity, forcing enterprise leaders to make explicit policy choices on which fairness metric to prioritize.",
-            "That all machine learning algorithms will stop working in the year 2030.",
-            "To force all financial calculations to be performed on mechanical adding machines."
+            "That when base rates differ across groups, a model can satisfy Demographic Parity, Equalised Odds and Predictive Calibration Parity at once if trained on enough data, so no policy choice is needed.",
+            "That when base rates differ across groups, no model can satisfy Demographic Parity, Equalised Odds and Predictive Calibration Parity at once, so leaders must make an explicit policy choice on which to prioritise.",
+            "That when base rates are equal across groups, no model can satisfy Demographic Parity, Equalised Odds and Predictive Calibration Parity at once, so leaders must choose which to prioritise.",
+            "That when base rates differ across groups, no model can satisfy accuracy and speed at once, so leaders must make an explicit policy choice on which of the two metrics to prioritise."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13705,10 +13705,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the game-theoretic 'Efficiency Property' of Shapley Additive Explanations (SHAP) critically important for regulatory compliance in adverse credit decisions?",
           "options": [
-            "Because it mathematically guarantees that the sum of all individual feature attributions plus the expected base rate exactly equals the model's final prediction, ensuring that explanations account for 100% of the decision without unassigned residual error under legal examination.",
-            "Because it makes the model run using 50% less electrical power.",
-            "To force all financial calculations to be rounded to the nearest dollar.",
-            "Because government regulators require all mathematical proofs to be printed on blue paper."
+            "Because it guarantees the sum of all feature attributions plus the expected base rate equals the model's final prediction, so the explanation covers 100% of the decision with no unassigned residual.",
+            "Because it guarantees the attributions of the top five features alone equal the model's final prediction, so the explanation can ignore the rest of the features without any residual error.",
+            "Because it guarantees the sum of all feature attributions equals zero for every applicant, so the explanation treats all applicants equally with no group-level residual under legal review.",
+            "Because it guarantees each feature's attribution is the same across all models, so the explanation can be reused for any lender without recomputing it for the new decision."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13755,10 +13755,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must enterprise counterfactual recourse engines enforce strict 'Immutability Constraints' during algorithmic recourse generation?",
           "options": [
-            "Relying solely on static hardcoded defaults for Local without reconciling Interpretable against live boundary conditions.",
-            "To force all applicants to purchase mandatory credit insurance.",
-            "Because government regulators require all credit decisions to be written in pencil.",
-            "To prevent generating mathematically optimal but physically impossible or unlawful recommendations (such as telling an applicant to change their age, race, or historical graduation date), ensuring that all generated recourse roadmaps are actionable, feasible, and legally compliant."
+            "To stop recommendations that are slow to compute or expensive to verify (like telling an applicant to run a long credit check), so every recourse plan is cheap and quick to generate.",
+            "To stop recommendations that change more than one feature at a time (like telling an applicant to raise income and cut debt), so every recourse plan is simple and easy to explain.",
+            "To stop recommendations that depend on the model's weights (like telling an applicant which feature counts most), so every recourse plan keeps the model's internals confidential.",
+            "To stop recommendations that are mathematically optimal but impossible or unlawful (like telling an applicant to change age, race or graduation date), so every recourse plan is feasible and legally compliant."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -13805,10 +13805,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the transformative operational impact of deploying the Master Enterprise Algorithmic Auditing & Fiduciary Fairness Cockpit?",
           "options": [
-            "To automatically approve 100% of all loan applications regardless of credit score.",
-            "Because fairness cockpits replace computer monitors with analog gauges.",
-            "It unifies continuous EEOC Four-Fifths disparate impact monitoring, mathematical fairness trade-off navigation, game-theoretic SHAP adverse action explanations, and actionable counterfactual recourse generation into a single automated governance system that eliminates civil rights liabilities and ensures 100% fiduciary compliance.",
-            "It forces all credit applicants to take a standardized multiple-choice mathematics test."
+            "It unifies annual Four-Fifths reports, fairness metric averaging, SHAP summary charts and customer survey feedback in one reporting system that lowers civil rights liability and informs fiduciary review.",
+            "It unifies continuous Four-Fifths monitoring, fairness trade-off navigation and counterfactual recourse in one system, but leaves out adverse action explanations, so some civil rights liability stays.",
+            "It unifies continuous Four-Fifths monitoring, fairness trade-off navigation, SHAP adverse action explanations and counterfactual recourse in one governance system that removes civil rights liability and ensures fiduciary compliance.",
+            "It unifies continuous Four-Fifths monitoring, model speed tuning, SHAP adverse action explanations and counterfactual recourse in one system that removes civil rights liability and guarantees profit."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13880,10 +13880,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the EU AI Act, what is the statutory classification and maximum administrative penalty for deploying an AI system that performs automated credit underwriting or employment candidate ranking?",
           "options": [
-            "Because credit models are only regulated if they run on microcontrollers.",
-            "It is classified as a High-Risk AI System under Annex III, subjecting the enterprise to mandatory risk management, human oversight, technical logging, and potential fines of up to 15 million Euros or 3% of worldwide annual turnover.",
-            "It is completely exempt from all regulation if written in Python.",
-            "Applying unverified default parameters in The Regulatory Architecture of the EU AI Act: Risk Tiers, Prohibited Practices & High-Risk Obligations (Option 3) without validating boundary constraints or reconciling state transitions."
+            "It is an Unacceptable Risk AI System under Article 5, banned from the market, with fines up to 15 million Euros or 3% of worldwide annual turnover for any breach of the ban.",
+            "It is a High-Risk AI System under Annex III, requiring risk management, human oversight and technical logging, with fines up to 15 million Euros or 3% of worldwide annual turnover.",
+            "It is a High-Risk AI System under Annex III, requiring risk management, human oversight and technical logging, with fines up to 35 million Euros or 7% of worldwide annual turnover.",
+            "It is a Limited Risk AI System under Article 50, requiring only a transparency notice, with fines up to 7.5 million Euros or 1% of worldwide annual turnover for a missing notice."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13929,10 +13929,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary statutory purpose of Article 12 automated event logging in High-Risk AI systems under the EU AI Act?",
           "options": [
-            "To force computer servers to run at maximum clock speed.",
-            "Because European law requires all software to print physical paper receipts.",
-            "To ensure continuous, tamper-evident record-keeping of all model inferences, inputs, confidence scores, and human overrides throughout the system lifecycle, providing verifiable audit trails for regulatory compliance and incident investigations.",
-            "To fill up company hard drives with random binary data."
+            "To keep a short-term cache of model inferences and inputs for debugging during the first week of operation, giving engineers a way to replay errors before the logs are deleted.",
+            "To keep a public record of model inferences and customer identities for transparency, giving citizens a way to look up how any individual decision was made at any time.",
+            "To keep continuous, tamper-evident records of model inferences, inputs, confidence scores and human overrides over the lifecycle, giving audit trails for compliance and incident investigation.",
+            "To keep a summary of training data sources and licence terms, giving regulators a way to check copyright compliance of the model before it is placed on the market."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13979,10 +13979,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Article 14 of the EU AI Act, why is the 'Four-Eyes Principle' (Dual-Key Authorization) mandated for high-value automated financial transactions?",
           "options": [
-            "Because computer screens have four corners.",
-            "To force financial institutions to hire four times as many executives.",
-            "Because the European Union requires all software to use four-digit passwords.",
-            "To prevent rogue insider action, catastrophic automated errors, and unchecked automation bias by requiring two independent, qualified human officers with distinct fiduciary roles to review and co-sign high-stakes transactions."
+            "To speed up approval of routine transactions by letting either of two human officers sign alone, while the model co-signs high-stakes transactions to confirm the officers' decision.",
+            "To stop competitors from copying the model by requiring two cryptographic keys to unlock the weights, so that high-stakes transactions can only be run on approved hardware.",
+            "To stop customer disputes by requiring two separate confirmation emails from the account holder, so that high-stakes transactions cannot be disowned after they are completed.",
+            "To stop rogue insider action, catastrophic automated errors and unchecked automation bias by requiring two independent, qualified human officers with distinct fiduciary roles to co-sign high-stakes transactions."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14028,10 +14028,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do autonomous AI models governing financial forecasting, credit underwriting, or loan loss provisioning fall under Sarbanes-Oxley (SOX) Section 404 internal control scrutiny?",
           "options": [
-            "Because they directly calculate and influence numbers that flow into financial statements, meaning that an undetected algorithmic error or model drift constitutes a material weakness in Internal Controls Over Financial Reporting (ICFR).",
-            "Because SOX law only applies to computers manufactured before 2002.",
-            "To force all corporate boards to hold daily meetings on Saturday mornings.",
-            "Because government regulators require all AI code to be written by certified public accountants."
+            "Because they calculate and influence numbers that flow into the financial statements, so an undetected model error or drift is a material weakness in Internal Controls Over Financial Reporting (ICFR).",
+            "Because they store customer data that flows into marketing systems, so an undetected model error or drift is a breach of the privacy rules in the Sarbanes-Oxley Act's data sections.",
+            "Because they are built by external vendors whose contracts flow into procurement, so an undetected model error or drift is a breach of vendor-management rules under Section 404.",
+            "Because they run on servers that flow into the company's IT estate, so an undetected model error or drift is a material weakness in general IT availability under Section 404."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14076,10 +14076,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic and legal objective of the Boardroom AI Fiduciary Governance Cockpit in a multinational enterprise?",
           "options": [
-            "To display colorful 3D charts on the CEO's television monitor.",
-            "To unify EU AI Act statutory compliance, Article 12 Merkle logging, Article 14 dual-key human oversight, and SOX Section 404 internal control telemetry into a certified, auditable executive dashboard that eliminates director fiduciary liability and guarantees CE Mark operational authorization.",
-            "To eliminate the need for corporate lawyers and compliance officers.",
-            "Because government regulators require all software code to be signed in calligraphy."
+            "To unify EU AI Act compliance, Article 12 plain-text logging, Article 14 single-key oversight and SOX Section 404 control telemetry in an internal dashboard that lowers director liability and secures CE Mark authorisation.",
+            "To unify EU AI Act compliance, Article 12 Merkle logging, Article 14 dual-key oversight and SOX Section 404 control telemetry in a certified, auditable dashboard that removes director liability and secures CE Mark authorisation.",
+            "To unify GDPR consent records, Article 12 Merkle logging and SOX Section 302 certifications in a certified, auditable dashboard that removes director liability and secures a national data licence.",
+            "To unify EU AI Act compliance, Article 12 Merkle logging, Article 14 dual-key oversight and SOX Section 404 control telemetry in a marketing dashboard that raises investor ratings and lowers audit costs."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14151,10 +14151,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise AI FinOps, why is 'Prefix Caching' considered a fundamental lever for optimizing Total Cost of Ownership (TCO)?",
           "options": [
-            "Because static prompt prefixes (system instructions, schemas, and few-shot examples) typically comprise over 80% of enterprise prompt tokens; caching their KV representations allows cloud gateways to process them at up to 90% cost discounts and near-zero compute latency.",
-            "Because prefix caching automatically deletes all customer database records every hour.",
-            "To force all user queries to begin with the letter 'P'.",
-            "Treating Enterprise and Capital as interchangeable constants rather than verifying Economics at each step."
+            "Because static prompt prefixes (system instructions, schemas, few-shot examples) often make up over 80% of prompt tokens; caching their KV states lets gateways bill them at up to 90% discounts with near-zero compute latency.",
+            "Because dynamic user questions often make up over 80% of prompt tokens; caching their KV states lets gateways bill them at up to 90% discounts with near-zero compute latency.",
+            "Because static prompt prefixes often make up under 10% of prompt tokens; caching their KV states lets gateways bill them at up to 90% discounts but with no change in compute latency for the whole enterprise.",
+            "Because static prompt prefixes often make up over 80% of prompt tokens; caching their final answers lets gateways skip generation, bill them at full price and return near-zero latency."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14199,10 +14199,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing an intelligent Dynamic Cascade Router for enterprise AI workloads?",
           "options": [
-            "To force all employee computers to use dial-up modems.",
-            "Because frontier models refuse to answer questions about office holidays.",
-            "Relying solely on static hardcoded defaults for Multi-Model without reconciling Dynamic against live boundary conditions.",
-            "It deflects the majority (70%+) of low-entropy routine enterprise queries to ultra-low-cost, low-latency SLMs while reserving expensive frontier reasoning models only for high-complexity tasks, slashing total cloud expenditures by 60% to 90% without degrading response quality."
+            "It sends most (70%+) low-complexity routine queries to costly frontier models and keeps cheap SLMs for high-complexity tasks, raising cloud spend by 60-90% while improving response quality.",
+            "It sends every query to a cheap SLM first and then to a frontier model for a second opinion, cutting cloud spend by 60-90% without lowering response quality on any task.",
+            "It sends most (70%+) low-complexity routine queries to cheap, fast SLMs and all remaining queries to a second SLM, cutting cloud spend by 60-90% with lower response quality on hard tasks.",
+            "It sends most (70%+) low-complexity routine queries to cheap, fast SLMs and keeps costly frontier models for high-complexity tasks, cutting cloud spend by 60-90% without lowering response quality."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14248,10 +14248,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does PagedAttention virtual memory scheduling achieve massive cost efficiencies on dedicated enterprise GPU clusters?",
           "options": [
-            "Because NVIDIA graphics cards only work if memory is deleted every 5 seconds.",
-            "By turning off the GPU fans to save electricity.",
-            "By partitioning GPU High-Bandwidth Memory into non-contiguous physical pages (similar to OS virtual memory), eliminating static pre-allocation waste and reducing memory fragmentation from >60% down to <4%, allowing clusters to serve 4x to 8x more concurrent streams on existing hardware.",
-            "To force all AI models to run on floppy disks."
+            "By merging GPU High-Bandwidth Memory into one contiguous block per request like a static array, increasing pre-allocation waste and keeping fragmentation above 60%, so clusters serve the same number of streams.",
+            "By compressing GPU High-Bandwidth Memory into 4-bit values with no paging, removing weight storage waste and cutting fragmentation from over 60% to under 4%, so clusters serve 4x-8x more streams.",
+            "By splitting GPU High-Bandwidth Memory into non-contiguous pages like OS virtual memory, removing pre-allocation waste and cutting fragmentation from over 60% to under 4%, so clusters serve 4x-8x more streams.",
+            "By splitting GPU High-Bandwidth Memory into non-contiguous pages, removing pre-allocation waste and cutting fragmentation from over 60% to under 4%, so clusters train 4x-8x larger models."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14297,10 +14297,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is statistical Z-score anomaly detection essential for enterprise AI FinOps governance in autonomous agent workflows?",
           "options": [
-            "Because cloud billing invoices are only sent once every five years.",
-            "Because runaway recursive loops or prompt injection attacks in autonomous agents can quietly trigger thousands of high-token frontier LLM calls per minute; statistical Z-score monitoring detects anomalies within seconds and executes automated circuit-breaking before catastrophic cloud bills accumulate.",
-            "Because government regulators require all math to be done using the letter 'Z'.",
-            "To force computer servers to run at exactly 3 miles per hour."
+            "Because runaway recursive loops or prompt injection in agents can trigger a handful of cheap SLM calls an hour; Z-score monitoring detects the drift within days and reports it in the monthly bill review.",
+            "Because runaway recursive loops or prompt injection in agents can trigger thousands of costly frontier LLM calls a minute; Z-score monitoring detects the spike within seconds and trips circuit breakers before the bill grows.",
+            "Because runaway recursive loops or prompt injection in agents can trigger thousands of costly LLM calls a minute; Z-score monitoring forecasts the invoice at month-end and sends an email to the finance team.",
+            "Because runaway recursive loops or prompt injection in agents can trigger thousands of costly LLM calls a minute; Z-score monitoring rounds token counts to the nearest thousand to simplify billing records."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14344,10 +14344,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic and fiduciary objective of the Enterprise AI FinOps Master Control Cockpit?",
           "options": [
-            "To systematically unite token TCO modeling, semantic cascade routing, GPU bin-packing, and real-time OpenTelemetry anomaly governance into an integrated platform that slashes enterprise cloud AI costs by over 75% while maintaining uncompromised quality and fiduciary compliance.",
-            "To force all corporate spreadsheets to be printed in purple ink.",
-            "To eliminate all software engineers from the corporate organization.",
-            "Because computer chips will become completely free in the future."
+            "To unite token TCO modelling, semantic cascade routing, GPU bin-packing and real-time OpenTelemetry anomaly governance in one platform, cutting cloud AI costs by over 75% while keeping quality and fiduciary compliance.",
+            "To unite token price lists, single-model routing, GPU leasing and monthly invoice reviews in one platform, cutting cloud AI costs by about 5% while accepting lower quality and delayed fiduciary compliance.",
+            "To unite token TCO modelling, semantic cascade routing and OpenTelemetry anomaly governance in one platform, cutting cloud AI costs by over 75% by switching off quality and compliance checks.",
+            "To unite GPU purchasing, model training, data labelling and OpenTelemetry anomaly governance in one platform, raising cloud AI spending by over 75% while keeping quality and compliance."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14420,10 +14420,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an 'Air-Gapped Sovereign AI Appliance' architecture strictly mandated for central banking, national defense, and sovereign wealth institutions?",
           "options": [
-            "Because government regulators only allow software to run when it is disconnected from electricity.",
-            "Because air-conditioned server rooms make computers run 10% faster.",
-            "To force all banking transactions to be stored on cassette tapes.",
-            "Because statutory and national security mandates prohibit transmitting confidential transactions or classified intelligence across external public network boundaries, requiring physically isolated on-premise infrastructure with zero Internet connectivity to eliminate data exfiltration risks."
+            "Because internal company policy prefers lower hosting costs for confidential transactions or classified intelligence, so shared multi-tenant cloud infrastructure with a private link is chosen.",
+            "Because statutory and national security rules allow sending confidential transactions or classified intelligence over encrypted public networks, so isolated on-premise infrastructure is optional.",
+            "Because statutory and national security rules ban storing confidential transactions or classified intelligence on disks, so memory-only cloud infrastructure with a public Internet link is needed.",
+            "Because statutory and national security rules ban sending confidential transactions or classified intelligence over external public networks, so isolated on-premise infrastructure with no Internet link is needed."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14469,10 +14469,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What security vulnerability is solved by deploying AI models within Hardware Confidential Computing Enclaves backed by FIPS 140-3 HSMs?",
           "options": [
-            "It protects against Privileged Insider Threats (such as rogue root administrators or hypervisor operators) by encrypting memory at the hardware silicon level and releasing decryption keys only upon verified TPM remote attestation, ensuring plaintext data is never exposed in RAM.",
-            "It prevents computers from catching biological viruses.",
-            "To force all data center employees to wear sunglasses.",
-            "Because computer chips run faster when encrypted."
+            "It guards against privileged insiders (rogue root admins or hypervisor operators) by encrypting memory in hardware and releasing keys only after TPM remote attestation, so plaintext is never exposed in RAM.",
+            "It guards against external network attackers (port scanners or botnet operators) by filtering traffic in hardware and opening ports only after IP allow-listing, so plaintext is never sent over the wire.",
+            "It guards against privileged insiders (rogue root admins or hypervisor operators) by hashing logs in software and releasing keys after a manager's approval, so plaintext is exposed only to admins.",
+            "It guards against model theft by competitors (stolen weights or API scraping) by watermarking outputs in software and rate limiting requests, so plaintext prompts are never logged."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14518,10 +14518,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must on-premise vector databases in sovereign AI architectures enforce strict encryption-at-rest and clearance-based RBAC pruning?",
           "options": [
-            "Because vector math only works on computers that use encryption.",
-            "Because high-dimensional embeddings retain rich semantic information that can be reconstructed into original plaintext documents via model inversion attacks; cryptographic protection and RBAC pruning prevent unauthorized insiders from recovering sensitive intelligence.",
-            "Because unencrypted vectors attract electromagnetic radiation.",
-            "To force all database tables to have exactly two columns."
+            "Because high-dimensional embeddings keep no semantic detail and cannot be reversed into text; encryption and RBAC pruning are needed only to meet storage rules for the database files.",
+            "Because high-dimensional embeddings keep rich semantic detail that model inversion attacks can rebuild into the original text; encryption and RBAC pruning stop unauthorised insiders from recovering sensitive intelligence.",
+            "Because high-dimensional embeddings keep rich semantic detail that model inversion attacks can rebuild; encryption and RBAC pruning are needed to make the nearest-neighbour search run faster.",
+            "Because high-dimensional embeddings are always public once created; encryption and RBAC pruning stop unauthorised insiders from changing the stored vectors rather than from reading them."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14567,10 +14567,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is 'Zero-Copy Streaming Decryption Direct-to-VRAM' critically important for protecting proprietary enterprise AI model weights?",
           "options": [
-            "To force all server fans to spin backwards.",
-            "Because software licenses require models to be loaded in under one second.",
-            "Because decrypting weights to temporary local disk directories leaves plaintext model artifacts on the storage system that can be recovered by rogue administrators; streaming directly into encrypted GPU memory ensures plaintext weights exist only inside hardware-protected enclaves with zero filesystem footprint.",
-            "Because hard drives cannot store numbers larger than 1,000."
+            "Because decrypting weights to a temporary disk folder makes the model load slower than reading plain files; streaming into GPU memory speeds the load while leaving a plaintext copy on the filesystem.",
+            "Because decrypting weights on the CPU doubles the memory needed to hold them; streaming into GPU memory halves the footprint while the decrypted weights stay available to rogue admins.",
+            "Because decrypting weights to a temporary disk folder leaves plaintext model files that rogue admins can recover; streaming into encrypted GPU memory keeps plaintext only inside hardware enclaves with no filesystem trace.",
+            "Because decrypting weights at boot makes the model start after a long delay; streaming into GPU memory starts it at once while keeping a plaintext backup in a protected folder on disk."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14616,10 +14616,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic objective of deploying an Air-Gapped Sovereign Cognitive Appliance in regulated central banking?",
           "options": [
-            "To display animated logos on the central bank lobby screens.",
-            "To force all financial analysts to use mechanical typewriters.",
-            "Because government regulators require all software code to be stored in underground bank vaults.",
-            "To provide state-of-the-art generative cognitive capability within a completely self-contained, air-gapped on-premise hardware pod backed by FIPS 140-3 HSM attestation, encrypted vector search, and direct-to-VRAM weight decryption, eliminating all data sovereignty and external cloud exfiltration risks."
+            "To give state-of-the-art generative capability through a shared public cloud tenant with FIPS 140-3 HSM attestation, encrypted vector search and cloud-managed weight decryption, lowering sovereignty and exfiltration risk.",
+            "To give basic generative capability inside a self-contained, air-gapped on-premise pod with plain disk storage, unencrypted vector search and local weight decryption, reducing cost and cloud exfiltration risk.",
+            "To give state-of-the-art generative capability inside an air-gapped on-premise pod that syncs daily with a vendor cloud for updates, encrypted vector search and weight decryption, reducing sovereignty risk.",
+            "To give state-of-the-art generative capability inside a self-contained, air-gapped on-premise pod with FIPS 140-3 HSM attestation, encrypted vector search and direct-to-VRAM weight decryption, removing sovereignty and cloud exfiltration risk."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14692,10 +14692,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of implementing an Autonomous Multi-Agent Treasury Mesh over traditional periodic batch cash sweeping?",
           "options": [
-            "Because international banking laws prohibit human treasurers from working after 3 PM.",
-            "It replaces all corporate bank accounts with physical gold coins stored in office basements.",
-            "It enables continuous real-time forecasting and intra-day liquidity routing across global operating subsidiaries, preventing overdraft penalties and maximizing overnight yield arbitrage while enforcing mathematical fiduciary risk guardrails.",
-            "To force all currency transactions to execute in alphabetical order."
+            "It supports weekly forecasting and end-of-day liquidity sweeps within a single parent account, avoiding manual reconciliation work and maximising the number of accounts while applying manual approval guardrails.",
+            "It supports continuous real-time forecasting and intra-day liquidity routing across global subsidiaries, avoiding overdraft penalties but raising borrowing costs while applying no fiduciary guardrails.",
+            "It supports continuous real-time forecasting and intra-day liquidity routing across global subsidiaries, avoiding overdraft penalties and maximising overnight yield while applying mathematical fiduciary guardrails.",
+            "It supports quarterly budgeting and annual capital allocation across global subsidiaries, avoiding overdraft penalties and maximising dividend payments while applying mathematical fiduciary guardrails."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14741,10 +14741,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Autonomous Legal Redlining differ fundamentally from traditional lexical document differencing tools like Microsoft Word Track Changes?",
           "options": [
-            "It replaces all legal clauses with Latin poems.",
-            "It evaluates legal semantic intent and fiduciary liability exposure against an enterprise corporate playbook, automatically generating tiered compromise language and escalating non-negotiable breaches rather than merely highlighting typographical differences.",
-            "To force all contracts to be signed in invisible ink.",
-            "Because word processors cannot read documents longer than ten pages."
+            "It highlights every typographical and formatting difference between document versions, writes a summary of the changes and escalates all documents to lawyers, instead of judging legal intent.",
+            "It judges legal intent and fiduciary liability exposure against a corporate playbook, writes tiered compromise language and escalates non-negotiable breaches, instead of merely highlighting text differences.",
+            "It judges legal intent against a corporate playbook, writes tiered compromise language and signs the contract automatically when the other side accepts, instead of escalating non-negotiable breaches.",
+            "It judges grammar and tone against a corporate style guide, rewrites clauses into plain language and escalates unusual wording, instead of reviewing legal liability exposure."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -14790,10 +14790,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are static annual supplier self-certification questionnaires ineffective for preventing international trade and sanctions compliance breaches?",
           "options": [
-            "Because rogue actors routinely conceal sanctioned ownership through layered offshore holding entities and sub-tier transshipments; continuous multi-tier graph traversal across trade manifests and beneficial ownership registries is required to uncover true upstream dependencies.",
-            "Because paper forms decompose after three weeks in office storage.",
-            "To force all manufacturing companies to build their own copper mines.",
-            "Because international customs officials only accept hand-written letters."
+            "Because bad actors hide sanctioned ownership behind layered offshore holding entities and sub-tier transshipments; continuous multi-tier graph traversal of manifests and ownership registries is needed to find true upstream links.",
+            "Because suppliers rarely complete questionnaires on time and forget the deadlines; automatic reminder emails every month are needed to improve the response rate and cover all upstream links.",
+            "Because bad actors hide sanctioned ownership behind layered offshore holding entities; a one-time deeper questionnaire with more fields is needed to find true upstream links and cover the sub-tier gaps.",
+            "Because sanctions lists change only once a year; a single annual comparison of supplier names against the updated list is needed to find true upstream links, with no graph traversal in each annual review cycle."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14839,10 +14839,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an Algorithmic Multi-Agent Consensus Protocol superior to rigid departmental override hierarchies in enterprise decision-making?",
           "options": [
-            "Because computer algorithms enjoy arguing with each other.",
-            "To eliminate all human employees from enterprise payrolls.",
-            "Because software licenses forbid single-department approvals.",
-            "Because rigid hierarchies create operational paralysis and ignore complex cross-departmental trade-offs; algorithmic consensus calculates Pareto-optimal compromise vectors across financial, legal, and operational utility dimensions."
+            "Because rigid hierarchies give fast, clear decisions and respect cross-departmental authority; algorithmic consensus computes the average of every department's vote across financial and legal utility.",
+            "Because rigid hierarchies depend on the CEO's availability and ignore time zones; algorithmic consensus lets the agent with the highest confidence decide alone across financial, legal and operational utility.",
+            "Because rigid hierarchies cause operational paralysis and ignore trade-offs; algorithmic consensus lets the finance department's model decide first and the others review it across legal and operational utility.",
+            "Because rigid hierarchies cause operational paralysis and ignore cross-departmental trade-offs; algorithmic consensus computes Pareto-optimal compromises across financial, legal and operational utility."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -14888,10 +14888,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural objective of deploying an Autonomous Enterprise Master Cognitive Mesh across an enterprise conglomerate?",
           "options": [
-            "To replace all human executive board members with autonomous chat bots.",
-            "To force all corporate offices to shut down their physical headquarters.",
-            "To unify isolated departmental agents (Treasury, Legal, Supply Chain) into a synchronized, real-time operating fabric that resolves complex cross-functional crises in milliseconds via mathematical consensus while maintaining cryptographic audit lineage.",
-            "Because enterprise software must have at least ten agents to function."
+            "To keep departmental agents (Treasury, Legal, Supply Chain) isolated in separate systems, to settle cross-functional crises in days by committee consensus with paper-based audit lineage.",
+            "To join departmental agents (Treasury, Legal, Supply Chain) into a synchronised, real-time fabric that settles crises in milliseconds by a single master agent's decision, with no audit lineage.",
+            "To join isolated departmental agents (Treasury, Legal, Supply Chain) into a synchronised, real-time operating fabric that settles cross-functional crises in milliseconds by mathematical consensus with cryptographic audit lineage.",
+            "To join departmental agents (Treasury, Legal, Supply Chain) into a nightly batch workflow that settles cross-functional crises the next morning by mathematical consensus with cryptographic audit lineage."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14964,10 +14964,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary danger of Indirect Prompt Inversion in enterprise Retrieval-Augmented Generation (RAG) applications?",
           "options": [
-            "It causes physical computer monitors to turn upside down.",
-            "Adversaries can embed malicious natural language instructions into external documents (resumes, vendor invoices, customer reviews) that the model retrieves, hijacking model attention and exfiltrating confidential corporate data without direct user access.",
-            "To force all database servers to consume twice as much electricity.",
-            "Because language models cannot read words containing the letter 'Z'."
+            "Attackers can type malicious instructions directly into the chat window of an authorised employee, hijacking the session and leaking confidential data after gaining the user's login credentials.",
+            "Attackers can hide malicious instructions in external documents (resumes, vendor invoices, reviews) that the model retrieves, hijacking its attention and leaking confidential data without direct user access.",
+            "Attackers can flood the retrieval index with large numbers of harmless documents, slowing the model's search and making answers late, without any chance of leaking confidential data.",
+            "Attackers can hide malicious instructions in the model's training data months before launch, hijacking its attention and leaking confidential data with no retrieval of external documents."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -15013,10 +15013,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining operational characteristic of a Neural Trojan (Backdoor) implanted into an enterprise foundation model via data poisoning?",
           "options": [
-            "Because poisoned models refuse to process numbers greater than fifty.",
-            "The model immediately crashes the operating system whenever it boots.",
-            "The model performs with flawless accuracy on standard benchmarks and routine queries, but produces malicious, attacker-controlled outputs when presented with a specific, secret trigger phrase.",
-            "To force all model weights to be converted into Roman numerals."
+            "The model performs badly on standard benchmarks and routine queries, and gives malicious, attacker-controlled outputs on every input whether or not a trigger phrase appears.",
+            "The model performs flawlessly on standard benchmarks and routine queries, but slowly leaks its weights through the logs whenever an administrator reviews the output files.",
+            "The model performs flawlessly on standard benchmarks and routine queries, but gives malicious, attacker-controlled outputs when it sees a specific, secret trigger phrase.",
+            "The model performs flawlessly on standard benchmarks and routine queries, but gives malicious outputs only when the GPU temperature is above a secret threshold level."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -15062,10 +15062,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Autonomous Automated Containment essential during active large language model data exfiltration attacks compared to manual security team triage?",
           "options": [
-            "Because software firewalls only operate when humans are asleep.",
-            "Because human security engineers are not permitted to work on computers during holidays.",
-            "To force all security teams to purchase mechanical typewriters.",
-            "Because language models process hundreds of tokens per second, allowing adversaries to exfiltrate gigabytes of confidential data in seconds; automated circuit breakers execute session revocation, network quarantine, and memory purging in milliseconds."
+            "Because language models handle only a few tokens a second, letting attackers pull small amounts of data over days; automated breakers are used only to produce reports for later manual review.",
+            "Because security analysts work around the clock in shifts, letting attackers be caught at any hour; automated circuit breakers are used mainly to reduce the pay of the security team.",
+            "Because language models handle hundreds of tokens a second, but exfiltration is blocked by the firewall anyway; automated circuit breakers revoke sessions and purge memory once an analyst approves.",
+            "Because language models handle hundreds of tokens a second, letting attackers pull gigabytes of data in seconds; automated circuit breakers revoke sessions, quarantine networks and purge memory in milliseconds."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -15112,9 +15112,9 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under SEC Form 8-K Item 1.05 rules, what is the mandatory timeline for publicly disclosing a cybersecurity incident once it is determined to be material?",
           "options": [
             "Within four business days of determining that the incident is material to a reasonable investor.",
-            "Within thirty days of the end of the fiscal year.",
-            "Only if the company's annual revenue declines by more than 50%.",
-            "Public disclosure is completely optional at the CEO's discretion."
+            "Within thirty calendar days of discovering that the incident occurred, material or not.",
+            "Within seventy-two hours of discovering the incident, before its materiality is determined.",
+            "Within the next quarterly 10-Q filing after determining that the incident is material to a reasonable investor."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -15160,10 +15160,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational and fiduciary benefit of uniting technical automated containment with boardroom materiality evaluation in a Master Cognitive Cyber Incident Center?",
           "options": [
-            "To force all corporate press releases to be written by AI models.",
-            "It ensures that cyber attacks are technically neutralized in milliseconds while concurrently providing the Board of Directors with mathematically verifiable forensic evidence to fulfill SEC statutory disclosure obligations and protect against shareholder liability.",
-            "Because government regulators require all computers to be replaced after a cyber alert.",
-            "It eliminates the need for corporations to maintain data backups."
+            "It neutralises attacks within several days while giving the Board a summary of events so that SEC disclosure duties can be met in the next annual report.",
+            "It neutralises attacks in milliseconds while giving the Board verifiable forensic evidence to meet SEC disclosure duties and guard against shareholder liability.",
+            "It neutralises attacks in milliseconds while keeping the Board uninformed of the details so that SEC disclosure duties and shareholder liability are avoided.",
+            "It neutralises attacks in milliseconds while giving the Board marketing talking points to meet customer expectations and guard against reputational damage."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -15235,10 +15235,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural innovation of the Autonomous Enterprise Operating System v2 (AEOS v2) compared to legacy enterprise software suites?",
           "options": [
-            "To force all enterprise employees to work on identical laptop models.",
-            "It unifies sovereign hardware, cognitive retrieval, multi-agent departmental meshes, and boardroom fiduciary governance into an event-driven, real-time operating fabric with cryptographic decision provenance.",
-            "Because cloud software vendors require companies to have a v2 in their title.",
-            "It eliminates all computer software and replaces it with manual paper accounting."
+            "It bundles a larger set of separate modules for finance, HR and sales in one licence, running on shared cloud servers with a monthly batch update cycle and manual approval trails.",
+            "It unifies sovereign hardware, cognitive retrieval, multi-agent departmental meshes and boardroom governance in an event-driven, real-time fabric with cryptographic decision provenance.",
+            "It replaces departmental software with one general chatbot that answers staff questions in plain language, running on public cloud servers with conversation logs kept by the vendor.",
+            "It unifies sovereign hardware and cognitive retrieval in an event-driven fabric, but leaves departmental meshes and boardroom governance to separate legacy suites with manual reports."
           ],
           "answerIndex": 1,
           "answer": 1,
@@ -15284,10 +15284,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does AEOS v2 prevent cross-departmental destabilization when simultaneously resolving currency shocks, cyber attacks, and supply chain embargoes?",
           "options": [
-            "By disconnecting all servers from the power grid until the crisis passes.",
-            "To force all human managers to vote in a public referendum.",
-            "Through real-time cross-functional state synchronization, ensuring that treasury liquidity sweeps update capital constraints across procurement and legal negotiation agents in sub-second timeframes.",
-            "Because computer algorithms never experience financial losses."
+            "By processing each crisis in a separate silo, so that treasury liquidity sweeps update capital limits for the procurement and legal negotiation agents at the end of the month.",
+            "By pausing two of the three crises until the first one is resolved, so treasury liquidity sweeps update capital limits for the procurement and legal agents after a delay.",
+            "By real-time cross-functional state synchronisation, so treasury liquidity sweeps update capital limits for the procurement and legal negotiation agents within a second.",
+            "By leaving each agent to act on its own cached state, so treasury liquidity sweeps never update capital limits for the procurement and legal negotiation agents."
           ],
           "answerIndex": 2,
           "answer": 2,
@@ -15334,10 +15334,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What provides mathematically irrefutable evidence of fiduciary compliance in an autonomous enterprise transaction executed by AEOS v2?",
           "options": [
-            "To force all banking transactions to be published on social media.",
-            "Because computer algorithms never make accounting mistakes.",
-            "A notarized paper certificate signed with a fountain pen.",
-            "The Cryptographic Execution Receipt, which cryptographically links the input state, legal redline modifications, sanctions traversal proof, consensus votes, and settlement hashes into an immutable SHA-256 audit block."
+            "The Daily Reconciliation Report, which lists the input state, redline changes, sanctions screening results, consensus votes and settlement amounts in a spreadsheet reviewed by auditors.",
+            "The Board Resolution Minutes, which record the input state, redline changes, sanctions screening results, consensus votes and settlement amounts as written by the company secretary.",
+            "The Model Card Summary, which describes the training data, accuracy scores, bias tests and intended use of the agents in a document signed by the engineering team.",
+            "The Cryptographic Execution Receipt, which links the input state, redline changes, sanctions traversal proof, consensus votes and settlement hashes into an immutable SHA-256 audit block."
           ],
           "answerIndex": 3,
           "answer": 3,
@@ -15382,10 +15382,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Delaware corporate law (Caremark standard), why does the AEOS v2 architecture protect corporate directors from personal liability during autonomous AI operations?",
           "options": [
-            "Because it implements a rigorous, mathematically auditable information and reporting system with immutable cryptographic decision lineage, ensuring directors exercise active oversight and fulfill their fiduciary Duty of Care.",
-            "Because Delaware law exempts all technology companies from corporate liability.",
-            "To force all corporate directors to be artificial intelligence algorithms.",
-            "Because boards of directors are never responsible for software decisions."
+            "Because it builds a rigorous, auditable information and reporting system with immutable cryptographic decision lineage, so directors can show active oversight and their fiduciary Duty of Care.",
+            "Because it removes the directors from the decision process entirely, so directors have no duty to oversee autonomous operations and cannot be held responsible for the results.",
+            "Because it transfers the directors' fiduciary duties to the software vendor by contract, so directors have no liability for autonomous operations under Delaware corporate law.",
+            "Because it builds a rigorous reporting system that is reviewed once a year by management, so directors can show their Duty of Loyalty rather than any active oversight."
           ],
           "answerIndex": 0,
           "answer": 0,
@@ -15427,10 +15427,10 @@ export const BCOM_AIT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role and strategic responsibility of a Certified Chief AI & Digital Transformation Officer (CAIDTO) in a modern enterprise?",
           "options": [
-            "To write all computer code manually by hand on whiteboards.",
-            "To bridge the gap between deep mathematical algorithms and boardroom fiduciary governance, architecting sovereign, resilient, and auditable cognitive operating systems that drive enterprise EBITDA expansion while fulfilling statutory Duties of Care.",
-            "To eliminate all financial reporting and rely solely on intuition.",
-            "Because software development only requires knowing how to type quickly."
+            "To manage the day-to-day work of data scientists and engineers, running model training schedules and sprint boards that grow headcount while meeting internal delivery deadlines.",
+            "To bridge deep mathematical algorithms and boardroom fiduciary governance, designing sovereign, resilient, auditable cognitive operating systems that grow EBITDA while meeting statutory Duties of Care.",
+            "To handle the purchase of AI software licences from vendors, negotiating contracts and price lists that cut procurement cost while meeting the internal budget limits of departments.",
+            "To lead the company's public relations about AI, writing press releases and conference talks that grow brand awareness while meeting the marketing targets of the quarter."
           ],
           "answerIndex": 1,
           "answer": 1,

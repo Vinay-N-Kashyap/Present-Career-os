@@ -29,10 +29,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under common law contract principles, what distinguishes an enforceable liquidated damages clause from an unenforceable penalty clause?",
           "options": [
-            "Liquidated damages can only be applied to consumer credit contracts, never corporate contracts.",
-            "Liquidated damages clauses must be witnessed by a federal judge prior to signing.",
-            "Enforceable liquidated damages represent a reasonable advance forecast of actual damages that were difficult to ascertain, whereas penalty clauses stipulate punitive sums designed to coerce performance.",
-            "Penalty clauses are only enforceable if the contract is denominated in foreign currency."
+            "Liquidated damages are a sum fixed by the court after breach, whereas a penalty is a sum the parties agreed in advance in the contract.",
+            "Liquidated damages must equal the non-breaching party's actual loss exactly, whereas a penalty is any sum above the contract price.",
+            "Liquidated damages are a reasonable advance estimate of hard-to-prove actual loss, whereas a penalty is a punitive sum meant to coerce performance.",
+            "Liquidated damages are allowed only in consumer contracts with a cooling-off period, whereas a penalty is a clause in a commercial contract."
           ],
           "answerIndex": 2,
           "explanation": "Courts uphold liquidated damages when parties make a good-faith pre-estimate of anticipated damages that would be difficult to prove. When the amount is disproportionately punitive, courts strike it down as an unenforceable penalty that violates public policy.",
@@ -55,10 +55,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What was the foundational principle established in Salomon v A Salomon & Co Ltd (1897)?",
           "options": [
-            "Creditors of a bankrupt company can automatically seize the personal assets of the largest shareholder.",
-            "A duly incorporated company has a legal personality completely distinct from its members, so shareholders are not personally liable for the company's debts beyond their share capital.",
-            "Corporate charters must be renewed every 12 months by an act of parliament.",
-            "Sole proprietors cannot legally own more than 49% of their company's voting stock."
+            "A one-person company is treated as an extension of its owner, so a sole shareholder is liable for its debts beyond the capital paid in.",
+            "A duly incorporated company has a legal personality distinct from its members, so shareholders aren't liable for its debts beyond share capital.",
+            "A company has a separate legal personality only if its shares are held by at least seven members, each with an equal voting power.",
+            "A company's directors are personally liable for its debts to creditors, while shareholders are protected only if they do not hold office."
           ],
           "answerIndex": 1,
           "explanation": "Salomon v Salomon established the core bedrock of modern corporate law: that a corporation is an independent legal entity. Even if one individual owns 99.9% of shares, the business debts belong to the corporate person, not the individual human shareholder.",
@@ -82,10 +82,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What triggers Delaware courts to abandon the Business Judgment Rule and apply the onerous \"Entire Fairness\" standard of review?",
           "options": [
-            "Evidence that directors suffered from a self-dealing conflict of interest (breaching the Duty of Loyalty), requiring the board to prove both fair dealing and fair price.",
-            "Any corporate merger that fails to generate a profit within 90 days of closing.",
-            "When a company incurs more than $10 million in debt.",
-            "Whenever minority shareholders vote against a board compensation package."
+            "Evidence that directors had a self-dealing conflict of interest (a breach of the Duty of Loyalty), so the board must prove fair dealing and fair price.",
+            "Evidence that directors made a decision which later caused the company a financial loss, so the board must show the decision was reasonable.",
+            "Evidence that a majority of shareholders voted against the board's proposal, so the board must prove the decision had a rational business purpose.",
+            "Evidence that directors relied on outside advisers without checking their reports, so the board must prove it acted with due care and diligence."
           ],
           "answerIndex": 0,
           "explanation": "The Business Judgment Rule presumption evaporates the moment a plaintiff proves a director had a personal financial conflict of interest (a breach of loyalty). Under Entire Fairness review, the burden flips to the directors to prove the transaction was objectively fair to shareholders.",
@@ -109,10 +109,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal definition of Material Non-Public Information (MNPI) under SEC Rule 10b-5 jurisprudence?",
           "options": [
-            "Information that has been viewed by at least 1,000 retail traders on public message boards.",
-            "Any information discussed in an email that contains more than 500 words.",
-            "Information that causes a stock price to move by exactly 10% in one trading session.",
-            "Information for which there is a substantial likelihood that a reasonable investor would consider it important in deciding whether to buy, sell, or hold securities."
+            "Information that causes a change of at least 5% in the share price within one trading day after it is released to the market.",
+            "Information that is known only to directors and senior officers of the company and has not been included in any filing with the SEC.",
+            "Information about the issuer's earnings or dividends that is disclosed to an analyst before it is published in a Form 10-Q.",
+            "Information that a reasonable investor would substantially likely consider important in deciding whether to buy, sell or hold securities."
           ],
           "answerIndex": 3,
           "explanation": "Under TSC Industries and Basic Inc v Levinson, information is material if a reasonable investor would view it as significantly altering the total mix of available information, and non-public until broadly disseminated to the investing public.",
@@ -136,10 +136,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do antitrust authorities calculate the Herfindahl-Hirschman Index (HHI) by squaring market shares rather than simply adding the top 4 firms' shares (CR4)?",
           "options": [
-            "Because international tax treaties require quadratic mathematical formulas.",
-            "Because squaring shares reduces the total sum of the index below 100.",
-            "Squaring gives disproportionate mathematical weight to dominant firms with large market shares, directly measuring monopoly pricing power and market distortion.",
-            "Because squaring shares simplifies the calculations on older mainframe computers."
+            "Squaring reduces the effect of very small firms to zero, so HHI counts only the four largest firms in the market, just as CR4 does.",
+            "Squaring lets authorities compare markets with different numbers of firms, because the result always falls between zero and 100 points.",
+            "Squaring gives extra weight to dominant firms with large shares, so HHI better measures market power and distortion than a simple top-four sum.",
+            "Squaring is required by statute in the Clayton Act, which sets a fixed formula for how agencies must measure market concentration."
           ],
           "answerIndex": 2,
           "explanation": "Squaring market shares heavily penalizes high market concentration: two 20% firms yield 400 + 400 = 800, whereas one 40% firm yields 1,600. This captures the disproportionate economic pricing power exerted by a single dominant market player.",
@@ -209,10 +209,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental statutory requirement for a proprietary corporate algorithm to qualify for trade secret protection under the Defend Trade Secrets Act (DTSA)?",
           "options": [
-            "The company must register the full algorithm source code with the Library of Congress.",
-            "The algorithm must be published on a public GitHub repository with an MIT license.",
-            "The algorithm must have been invented more than 100 years ago.",
-            "The owner must take affirmative, reasonable measures under the circumstances to maintain its secrecy, and the information must derive independent economic value from not being generally known."
+            "The owner must register the algorithm with the Copyright Office, and it must be novel and non-obvious to qualify for protection.",
+            "The owner must disclose the algorithm to the government in a filing, and it must be shown to give the owner a lawful market monopoly.",
+            "The owner must keep the algorithm in a vault, and it must be at least 20 years old to receive any protection under the statute.",
+            "The owner must take reasonable measures to keep it secret, and it must derive independent economic value from not being generally known."
           ],
           "answer": 3,
           "why": "Under the DTSA and UTSA, trade secret protection vanishes if the owner fails to maintain reasonable security measures such as confidentiality agreements, role-based encryption, and access controls.",
@@ -255,10 +255,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical legal difference between a \"Significant Deficiency\" and a \"Material Weakness\" under SOX Section 404 internal audit rules?",
           "options": [
-            "A Material Weakness represents a severe deficiency where there is a reasonable possibility that a material misstatement will not be prevented or detected, requiring an adverse public audit opinion.",
-            "A Significant Deficiency leads directly to criminal incarceration of all shareholders.",
-            "A Material Weakness applies only to small family-owned grocery stores.",
-            "There is no legal difference; both terms are interchangeable informal accounting slang."
+            "A Material Weakness is a deficiency with a reasonable possibility that a material misstatement will go undetected, requiring an adverse opinion.",
+            "A Material Weakness is any control deficiency that management identifies, while a Significant Deficiency is one the external auditor discovers.",
+            "A Material Weakness is a control failure that has already caused a restatement of past financial results, and must be reported to the SEC at once.",
+            "A Material Weakness is a minor control gap that is less serious than a Significant Deficiency, and needs no mention in the audit report."
           ],
           "answer": 0,
           "why": "Under PCAOB auditing standards, a Material Weakness is the most severe internal control defect, indicating an unaddressed gap that could materially corrupt reported financial statements.",
@@ -300,10 +300,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How can voluntary corporate sustainability reports or environmental disclosures create legal liability under US Federal Securities Law (SEC Rule 10b-5)?",
           "options": [
-            "Because sustainability reports must always be written entirely in Latin.",
-            "If ESG disclosures contain materially false or misleading claims (such as fabricated carbon offsets) that mislead reasonable investors regarding corporate environmental risks or financial exposure.",
-            "Only if the CEO personally signs every single page of the report in duplicate.",
-            "Because companies are legally prohibited from discussing environmental topics in public."
+            "Only if the report is filed on a Form 10-K, since voluntary sustainability reports are exempt from antifraud rules in every other document.",
+            "If ESG disclosures contain materially false or misleading claims (such as fabricated carbon offsets) that mislead reasonable investors about environmental risks.",
+            "Only if the company's share price falls after the report, since Rule 10b-5 liability depends on the stock decline and not on any falsehood.",
+            "Only if the report is audited by an independent firm, since unaudited voluntary disclosures can never be the basis of a securities claim."
           ],
           "answer": 1,
           "why": "Rule 10b-5 applies to all public statements by an issuer; materially misleading claims regarding green credentials or emissions that influence investor perceptions constitute actionable securities fraud.",
@@ -347,10 +347,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a successful Shareholder Derivative Lawsuit where corporate officers are found liable for embezzling company assets, who receives the monetary damages awarded by the court?",
           "options": [
-            "The federal treasury confiscates the damages as a criminal tariff.",
-            "The company's suppliers divide the money equally.",
-            "The corporation itself, because the primary injury was inflicted upon the corporate entity and its balance sheet.",
-            "The individual shareholder who filed the lawsuit receives 100% of the funds in their personal checking account."
+            "The shareholder who brought the suit, because that shareholder bore the litigation cost and risk for the company.",
+            "All shareholders in proportion to their holdings, because the court pays damages directly to each owner of the company's stock.",
+            "The corporation itself, because the primary injury was inflicted on the corporate entity and its balance sheet.",
+            "The company's creditors, because stolen assets reduce the funds available to pay debts and the court pays them first."
           ],
           "answer": 2,
           "why": "In a derivative lawsuit, the shareholder merely acts as a representative champion for the corporation; all damages recovered flow back into the company treasury to restore corporate value.",
@@ -394,10 +394,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's landmark Revlon doctrine, how does the fiduciary duty of a target company's board of directors fundamentally change once the sale or breakup of the corporation becomes inevitable?",
           "options": [
-            "The board is legally required to burn all corporate records.",
-            "The board must immediately file for Chapter 7 liquidation bankruptcy.",
-            "The directors are forbidden from communicating with shareholders or investment bankers.",
-            "The board's role transforms from defending the corporate entity into acting as neutral auctioneers charged with maximizing the immediate cash value per share for shareholders."
+            "The board's role shifts to protecting the company's long-term strategy, so it may reject a higher bid in favor of a bidder who preserves jobs.",
+            "The board's role shifts to the company's creditors, so it must maximize recovery for lenders before any price per share for stockholders.",
+            "The board's role is unchanged, since the Business Judgment Rule protects any defensive tactic in a sale, including a refusal to negotiate.",
+            "The board's role shifts from defending the corporate entity to acting as neutral auctioneers who must maximize the immediate cash value per share."
           ],
           "answer": 3,
           "why": "Under Revlon, defensive barriers like poison pills must be redeemed once a sale is inevitable; the board must secure the highest transaction price available in the open market.",
@@ -463,10 +463,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are Change of Control (CoC) clauses in key supplier and customer agreements considered top-tier deal risks in M&A due diligence?",
           "options": [
-            "If a key counterparty refuses to consent to the ownership transfer, they can terminate the contract immediately upon closing, destroying the revenue foundation of the deal.",
-            "CoC clauses force the buyer to rehire all previous executives at double salary.",
-            "CoC clauses automatically convert common equity into municipal bonds.",
-            "CoC clauses require the target company to physically relocate its headquarters to another state."
+            "If a key counterparty withholds consent to the ownership transfer, it can terminate the contract on closing, destroying the revenue base of the deal.",
+            "A change of control automatically cancels all of the target's debts under these contracts, which removes the acquirer's obligation to pay them.",
+            "A change of control triggers an automatic price increase of 10% in these contracts, which reduces the acquirer's expected margins after closing.",
+            "A change of control makes these contracts unenforceable against the target's former owners, which exposes them to claims from the counterparties."
           ],
           "answer": 0,
           "why": "Counterparties can weaponize CoC provisions to exit unfavorable pricing or demand massive renegotiation fees, posing severe revenue attrition risks to the acquirer.",
@@ -507,10 +507,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical legal difference between a \"Deductible\" indemnity basket and a \"Tipping\" (or first-dollar) indemnity basket in an acquisition agreement?",
           "options": [
-            "A deductible basket only applies to intellectual property claims.",
-            "A tipping basket cannot be enforced under Delaware or New York law.",
-            "A tipping basket requires the buyer to tip the seller's attorneys an additional 15% gratuity.",
-            "Under a deductible basket, the buyer recovers only the amount that exceeds the threshold; under a tipping basket, once the threshold is crossed, the buyer recovers all losses from dollar one."
+            "In a deductible basket the buyer recovers all losses from dollar one once the threshold is crossed; in a tipping basket only the excess is recovered.",
+            "In a deductible basket the seller pays the buyer's first-dollar losses; in a tipping basket the buyer pays the seller's costs above the cap.",
+            "In a deductible basket the threshold sets a maximum total recovery; in a tipping basket the threshold sets a minimum claim for each individual loss.",
+            "In a deductible basket the buyer recovers only the excess over the threshold; in a tipping basket, once crossed, it recovers all losses from dollar one."
           ],
           "answer": 3,
           "why": "A deductible basket permanently absorbs the first dollar losses up to the threshold, whereas a tipping basket triggers full retroactive recovery of all losses once breached.",
@@ -551,10 +551,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Delaware Court of Chancery jurisprudence (e.g. IBP v. Tyson Foods), what durational timeframe is required for an economic downturn to qualify as a Material Adverse Effect?",
           "options": [
-            "The downturn must last for at least 50 continuous years.",
-            "Delaware courts do not enforce MAE clauses under any circumstances.",
-            "The downturn must be consequential to the company's overall earning potential over a commercially reasonable period measured in years, rather than a short-term blip measured in months or quarters.",
-            "A single poor quarterly earnings report of any magnitude is sufficient."
+            "The downturn must reduce the company's quarterly earnings by any amount in the first reporting period after the signing of the merger agreement.",
+            "The downturn must last at least ninety days after signing, and a drop in the company's stock price in that period is enough to qualify.",
+            "The downturn must substantially threaten overall earnings potential over a commercially reasonable period measured in years, not months or quarters.",
+            "The downturn must be unique to the target and not shared by its industry, and it must reduce one quarter's revenue by at least half."
           ],
           "answer": 2,
           "why": "Vice Chancellor Strine established in IBP that an MAE requires durational significance—an adverse event that alters the long-term foundational earnings power of the enterprise over several years.",
@@ -595,10 +595,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the FTC/DOJ Horizontal Merger Guidelines, what mathematical threshold triggers a structural legal presumption that a horizontal merger is anti-competitive?",
           "options": [
-            "The merging companies have fewer than 10 employees.",
-            "In a highly concentrated market (post-merger HHI > 1,800), an increase in HHI (Delta HHI) of more than 100 points.",
-            "The merger increases total national GDP by more than 5%.",
-            "The combined company issues more than 1,000 credit cards."
+            "In a moderately concentrated market (post-merger HHI above 1,000), an increase in HHI of more than 50 points.",
+            "In a highly concentrated market (post-merger HHI above 1,800), an increase in HHI of more than 100 points.",
+            "In a highly concentrated market (post-merger HHI above 3,000), an increase in HHI of more than 500 points.",
+            "In any market where the merged firm has a combined share of 10% or more, whatever the HHI level or increase."
           ],
           "answer": 1,
           "why": "The 2023 Merger Guidelines establish a formal legal presumption of anti-competitive harm when a merger in a highly concentrated market increases HHI by >= 100 points.",
@@ -639,10 +639,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Delaware corporate law (e.g. Omnicare v. NCS Healthcare), why will courts invalidate a target company breakup fee that exceeds 4.5% to 5.0% of deal value?",
           "options": [
-            "An excessively high breakup fee is legally coercive and preclusive, improperly deterring rival bidders from submitting superior offers to maximize shareholder value.",
-            "Breakup fees exceeding $10M are prohibited by the United States Constitution.",
-            "Target boards are never allowed to agree to any financial penalties.",
-            "Breakup fees must be paid in gold coins rather than wire transfers."
+            "An excessive breakup fee is coercive and preclusive, deterring rival bidders from making superior offers that would maximize shareholder value.",
+            "An excessive breakup fee is a penalty under contract law, so the acquirer can never enforce any part of it against the target company.",
+            "An excessive breakup fee breaches the acquirer's duty of disclosure, so shareholders may rescind the merger agreement as a whole.",
+            "An excessive breakup fee exceeds the maximum allowed by the Delaware statute, which sets a fixed cap of 4.5% of the deal value."
           ],
           "answer": 0,
           "why": "A breakup fee that is too large creates a punitive economic barrier that prevents rival bidders from topping the bid, violating the board's duty to maintain a fair playing field.",
@@ -709,10 +709,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's ruling in Marchand v. Barnhill, what specific standard must a corporate board satisfy regarding \"mission-critical\" regulatory risks?",
           "options": [
-            "The board must delegate all operating responsibility to junior interns without supervision.",
-            "The board must make a good faith effort to implement and actively oversee an explicit, board-level monitoring and reporting system tailored to that specific central operational risk.",
-            "The board is automatically immune from oversight liability if the company has a generic employee handbook.",
-            "Directors must personally inspect manufacturing factories every single morning."
+            "The board must hire an outside compliance firm that certifies the risks every year, and then the directors have no further duty of oversight.",
+            "The board must make a good faith effort to implement and oversee a board-level reporting system tailored to that central operational risk.",
+            "The board must delegate all mission-critical risks to the CEO, who must report to the board only after a regulatory violation occurs.",
+            "The board must meet the same general compliance standards as any company, as long as management files the required regulatory reports."
           ],
           "answer": 1,
           "why": "Chief Justice Strine held that boards cannot satisfy their oversight obligations by relying on general corporate compliance when a mission-critical operational risk is ignored at the board table.",
@@ -753,10 +753,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What revolutionary change did SEC Rule 14a-19 (the Universal Proxy Rule) introduce for contested corporate proxy elections?",
           "options": [
-            "It prohibits institutional investors from voting in board elections.",
-            "It requires all corporate proxy fights to be settled by coin toss.",
-            "It mandates that both management and dissident director nominees be listed together on a single universal proxy card, allowing shareholders voting by proxy to pick and choose individual candidates from either slate.",
-            "It completely eliminates shareholder voting in Delaware corporations."
+            "It requires dissident nominees to be placed on a separate proxy card, so proxy voters must vote an all-or-nothing choice for either slate.",
+            "It requires every shareholder to vote in person at the annual meeting, so proxy voting is no longer allowed in contested elections.",
+            "It requires management and dissident nominees to be listed on one universal proxy card, so proxy voters can pick candidates from either slate.",
+            "It requires dissidents to own at least 25% of the shares, so only large holders can nominate directors in a contested election."
           ],
           "answer": 2,
           "why": "Universal proxy cards democratize proxy voting by eliminating the constraint where proxy voters had to choose all-or-nothing between competing ballots.",
@@ -797,10 +797,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under amended SEC Rule 10b5-1, what is the mandatory cooling-off period before a corporate officer or director may execute their first trade under a new trading plan?",
           "options": [
-            "Ten continuous business years.",
-            "Exactly 24 hours after sending an email to the corporate secretary.",
-            "Zero days, provided the executive signs an affidavit of good character.",
-            "The later of 90 days after plan adoption or 2 business days following the filing of the Form 10-Q or Form 10-K for the quarter of adoption."
+            "The later of 30 days after plan adoption or 2 business days after the next press release about the company's earnings.",
+            "The earlier of 90 days after plan adoption or 10 business days after the Form 10-Q or 10-K for the quarter of adoption.",
+            "A fixed 180 days after plan adoption, for officers and directors and for the company itself, regardless of any filings.",
+            "The later of 90 days after plan adoption or 2 business days after the Form 10-Q or 10-K for the quarter of adoption."
           ],
           "answer": 3,
           "why": "The SEC amended Rule 10b5-1 to enforce a robust cooling-off window ensuring that market earnings are disclosed before any planned insider trades execute.",
@@ -841,10 +841,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a corporate executive accidentally discloses material non-public financial guidance during an off-the-record chat with a securities analyst, what is the company's legal obligation under SEC Regulation FD?",
           "options": [
-            "The company must promptly disclose that information to the general public (via Form 8-K or press release) within 24 hours or before the start of the next trading day.",
-            "The executive must ask the analyst to delete their handwritten notes.",
-            "The company must immediately buy back all outstanding stock.",
-            "The company has no legal obligation if the conversation took place over dinner."
+            "The company must promptly disclose the information publicly (Form 8-K or press release) within 24 hours or before the next trading day.",
+            "The company must ask the analyst to sign a confidentiality agreement within 24 hours, and then it need not make any public disclosure.",
+            "The company must file a correction with the SEC within 30 days of the conversation, after the executive reports it in writing.",
+            "The company must disclose the information only if the analyst trades on it, since Regulation FD applies only after a trade."
           ],
           "answer": 0,
           "why": "Under Reg FD Rule 101, inadvertent selective disclosures of MNPI must be publicly disseminated within 24 hours to level the playing field for retail investors.",
@@ -885,10 +885,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical legal significance of an \"Upjohn Warning\" administered by corporate counsel during an employee internal investigation interview?",
           "options": [
-            "It guarantees that the employee cannot be fired from their job.",
-            "It informs the employee that counsel represents the corporation, not the individual, and that the attorney-client privilege belongs solely to the company, which may unilaterally waive it and disclose the statements to the government.",
-            "It transfers ownership of corporate stock options to the employee's spouse.",
-            "It reads the employee their constitutional Fifth Amendment Miranda rights before criminal arrest."
+            "It tells the employee that counsel represents them personally, and that their statements stay privileged unless the employee agrees to waive.",
+            "It tells the employee that counsel represents the company, not the individual, and that the company holds the privilege and may waive it and share the statements.",
+            "It tells the employee that nothing said in the interview can be used against them, because the company grants them immunity from any prosecution.",
+            "It tells the employee they must answer every question, because the privilege belongs to the government and not to the company or the employee."
           ],
           "answer": 1,
           "why": "Under Upjohn, the company owns the privilege; the warning prevents the employee from claiming a personal attorney-client relationship that would block the company from cooperating with regulators.",
@@ -955,10 +955,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal and operational effect of the Section 362 \"Automatic Stay\" upon filing a Chapter 11 bankruptcy petition?",
           "options": [
-            "It automatically cancels all debt without requiring court approval.",
-            "It converts the corporation into a non-profit municipal charity.",
-            "It immediately halts all creditor collection efforts, lawsuits, foreclosures, and asset seizures against the debtor, giving the business breathing room to reorganize.",
-            "It forces the debtor to fire all current employees immediately."
+            "It cancels all of the debtor's unsecured debts at once, so creditors cannot pursue the debtor for any prefiling claims after the filing.",
+            "It freezes the debtor's operations, so the company must stop trading and cannot pay employees or suppliers until the plan is approved.",
+            "It halts creditor collection efforts, lawsuits, foreclosures and asset seizures against the debtor, giving the business room to reorganize.",
+            "It freezes only secured creditors' actions, while unsecured creditors may continue collecting through lawsuits and wage garnishments."
           ],
           "answer": 2,
           "why": "Section 362 imposes a broad statutory injunction that freezes all collection and litigation, preventing a chaotic run on corporate assets.",
@@ -999,10 +999,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Bankruptcy Code Section 363(f), what is the primary legal advantage for a buyer purchasing assets through a Section 363 bankruptcy sale?",
           "options": [
-            "The buyer is exempt from paying corporate taxes for the next twenty years.",
-            "The buyer acquires the target assets \"free and clear\" of pre-petition liens, encumbrances, and successor liability claims.",
-            "The buyer receives a sovereign government guarantee against business losses.",
-            "The buyer does not have to pay any cash for the acquisition."
+            "The buyer takes the assets subject to all existing liens, but it avoids the debtor's contracts and its unpaid taxes.",
+            "The buyer acquires the assets free and clear of pre-petition liens, encumbrances and successor liability claims.",
+            "The buyer takes the assets with all of the debtor's liabilities, but receives a discount approved by the creditors' committee.",
+            "The buyer takes the assets free of liens but must assume all employee claims and pension obligations of the debtor."
           ],
           "answer": 1,
           "why": "Section 363(f) strips away historical liabilities and creditor claims, transferring clean title to the buyer and maximizing sale proceeds for the bankruptcy estate.",
@@ -1043,10 +1043,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the Absolute Priority Rule under Bankruptcy Code Section 1129(b)(2)(B)?",
           "options": [
-            "In a non-consensual cramdown plan, senior dissenting creditor classes must be paid in full before any junior class (such as common equity) receives or retains any property under the plan.",
-            "The first creditor to file a lawsuit receives all assets of the company.",
-            "Government tax debts are automatically wiped out before bondholders are paid.",
-            "Corporate directors must personally pay all debts of the company."
+            "In a cramdown, senior dissenting classes must be paid in full before any junior class (such as common equity) retains anything.",
+            "In a cramdown, equity holders must be paid first, because they bear the greatest risk of loss when the business has to be restructured.",
+            "In a cramdown, all creditor classes must receive the same percentage recovery, whatever their legal priority or lien rank.",
+            "In a cramdown, unsecured creditors must be paid before secured creditors, since secured creditors can recover from their collateral."
           ],
           "answer": 0,
           "why": "The Absolute Priority Rule prevents equity holders from retaining ownership value while intermediate unsecured creditors suffer haircut losses without consenting.",
@@ -1087,10 +1087,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's landmark Gheewalla ruling, what fiduciary duties do corporate directors owe directly to individual creditors when a company enters the \"zone of insolvency\"?",
           "options": [
-            "Directors must immediately surrender their personal homes to the bank.",
-            "Directors must prioritize paying unsecured bondholders before employees or vendors.",
-            "Creditors automatically gain the legal right to vote on corporate board resolutions.",
-            "None; directors do not owe direct fiduciary duties to creditors, but continue to owe their fiduciary duties to the corporate enterprise as a whole for the benefit of all residual claimants."
+            "A duty to put creditors' interests ahead of shareholders' as soon as the company enters the zone of insolvency, enforceable by creditors directly.",
+            "A duty to guarantee repayment of creditors' claims, which directors must meet from their personal assets if the company later fails.",
+            "A duty to hold a creditor vote on every major decision, since the zone of insolvency shifts control to a creditors' committee.",
+            "None; directors owe no direct fiduciary duties to creditors, but continue to owe them to the corporation for the benefit of all residual claimants."
           ],
           "answer": 3,
           "why": "Gheewalla firmly rejected creditor direct fiduciary claims, preserving the Business Judgment Rule for directors managing an enterprise through insolvency.",
@@ -1131,10 +1131,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a corporate Chapter 11 reorganization, what legal finding allows the bankruptcy court to confirm a Plan of Reorganization via \"cramdown\" over the unanimous rejection of common equity holders?",
           "options": [
-            "The company changes its incorporation from Delaware to Nevada.",
-            "The common shareholders fail to attend the court hearing in business suits.",
-            "At least one impaired creditor class accepts the plan without insider votes, and the plan complies with the Absolute Priority Rule by providing zero recovery to junior equity while senior creditors are impaired.",
-            "The judge personally owns shares in the corporate debtor."
+            "All impaired classes must vote to accept the plan by a two-thirds majority, including the common equity holders who are being cut off.",
+            "The court finds the debtor is solvent, so the plan may be confirmed and equity holders can be given a share of the reorganized value.",
+            "One impaired class accepts without insider votes, and the plan follows the Absolute Priority Rule, giving junior equity nothing.",
+            "The plan is proposed by the debtor within 120 days of filing, and the court confirms it once the creditors' committee approves it."
           ],
           "answer": 2,
           "why": "Section 1129(b) empowers the court to cram down a plan over dissenting junior classes provided that the absolute priority rule is strictly honored and an impaired creditor class votes in favor.",
@@ -1204,10 +1204,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's Alice/Mayo two-step framework, when is a software-implemented invention eligible for patent protection under 35 USC § 101?",
           "options": [
-            "Whenever the source code is filed under an open-source MIT or Apache license.",
-            "Whenever the software application is written in an object-oriented programming language like C++ or Java.",
-            "Only when the software program generates over $1 million in commercial subscription revenues.",
-            "When the patent claims recite an inventive concept that provides a specific technological improvement to the functioning of a computer or network, rather than merely implementing an abstract idea on generic hardware."
+            "When the software runs on a computer, since any claim that is tied to a computing device is automatically eligible for a patent.",
+            "When the software is new and non-obvious, since novelty alone shows that the claimed invention is not directed to an abstract idea.",
+            "When the software performs a business method that was not known before, even if it is implemented on a general-purpose computer.",
+            "When the claims recite an inventive concept that technologically improves a computer or network, not just an abstract idea on generic hardware."
           ],
           "answer": 3,
           "why": "Alice Step 2 requires an inventive concept that transforms an abstract concept into eligible subject matter by improving underlying computer technology or solving a technical problem in an unconventional manner.",
@@ -1251,10 +1251,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal standard required to invalidate a patent claim for lack of novelty (anticipation) under 35 USC § 102?",
           "options": [
-            "A single prior art reference must disclose, either expressly or inherently, each and every element of the claimed invention.",
-            "Three independent patents must disclose at least 50% of the claim elements in aggregate.",
-            "The Examiner must prove that the inventor had a subjective intent to copy competitor technology.",
-            "The patent must have been rejected by at least two foreign patent offices."
+            "A single prior art reference must disclose, expressly or inherently, each and every element of the claimed invention.",
+            "A combination of two or more prior art references must together suggest the claimed invention to a skilled person.",
+            "A single prior art reference must disclose the main idea of the invention, even if some claim elements are missing from it.",
+            "A prior art reference must have been commercially successful before the filing date, and it must have been sold to the public."
           ],
           "answer": 0,
           "why": "Anticipation under Section 102 requires identity: a single prior art document, patent, or public sale must contain every single limitation recited in the patent claim.",
@@ -1299,10 +1299,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Graham v. John Deere and KSR v. Teleflex, how can a patent applicant overcome an Examiner's prima facie obviousness rejection under 35 USC § 103?",
           "options": [
-            "By removing all independent claims and submitting only abstract flowcharts.",
-            "By presenting objective evidence of secondary considerations, such as long-felt but unresolved industry need, unexpected synergistic results, commercial success tied directly to the invention, or competitor copying.",
-            "By paying an accelerated examination fee to the Patent Office.",
-            "By threatening to relocate corporate manufacturing offshore."
+            "By arguing that the invention was the result of a lucky accident, since an accidental discovery is never obvious to a skilled person.",
+            "By presenting objective secondary considerations such as long-felt need, unexpected results, commercial success, or copying by competitors.",
+            "By showing that the applicant spent substantial money on research, since high development cost proves the invention was not obvious.",
+            "By amending the claims to add a trivial feature, since any added limitation makes the invention distinct from the prior art."
           ],
           "answer": 1,
           "why": "Objective secondary considerations provide concrete real-world economic proof that an invention was not obvious to competitors at the time of filing, effectively defeating hindsight bias.",
@@ -1345,10 +1345,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between possessing a granted patent and having Freedom-to-Operate (FTO)?",
           "options": [
-            "A granted patent automatically immunizes a corporation against all competitor infringement lawsuits.",
-            "FTO is only required for retail grocery products, never high-technology electronics.",
-            "A patent confers only the right to exclude others from practicing your invention; it does not grant an affirmative right to sell your product if it infringes another entity's broader, pre-existing patent.",
-            "FTO requires approval from the United Nations World Trade Organization."
+            "A patent gives the right to make, use and sell the invention, so FTO follows automatically from owning the granted patent.",
+            "A patent gives FTO in the country where it is granted, and the only risk is infringement in other countries without a patent.",
+            "A patent gives only the right to exclude others; it gives no right to sell a product infringing another party's earlier, broader patent.",
+            "A patent gives the right to sell the product, but FTO is a separate trademark clearance that applies only to brand names."
           ],
           "answer": 2,
           "why": "Patents are exclusionary rights, not permissions. If your patented device incorporates another party's patented component, you are blocked from commercialization without a license.",
@@ -1391,10 +1391,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's Halo Electronics doctrine, what is the primary corporate defense to defeat a claim of willful patent infringement and avoid treble damages?",
           "options": [
-            "Demonstrating that the company's patent attorney has a law degree.",
-            "Appealing directly to the United States President for an executive pardon.",
-            "Filing for corporate dissolution in Delaware before the jury verdict.",
-            "Securing a timely, competent written Opinion of Counsel from independent outside patent litigators establishing a good-faith belief of non-infringement or invalidity."
+            "Showing that the company had no knowledge of the patent before the lawsuit, because any later knowledge is irrelevant to willfulness.",
+            "Showing that the company stopped selling the product on the day the complaint was filed, which removes any basis for enhanced damages.",
+            "Showing that the company sought a license from the patent holder, because a refused offer proves the company acted in good faith.",
+            "A timely, competent written Opinion of Counsel from independent outside patent counsel showing good-faith belief in non-infringement or invalidity."
           ],
           "answer": 3,
           "why": "A timely, competent legal opinion establishes subjective good faith, demonstrating that the corporation acted reasonably and negating the egregious misconduct required for treble damages under Halo.",
@@ -1467,10 +1467,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Abercrombie distinctiveness spectrum, why can a generic term never be registered as a trademark, even if an enterprise spends $100 million in national advertising?",
           "options": [
-            "Because generic words are the essential commercial language necessary for competitors to describe what they are selling; granting a monopoly over a generic name would paralyze fair competition.",
-            "Because the Federal Trade Commission requires generic words to be translated into Latin before filing.",
-            "Because generic marks are reserved exclusively for non-profit charitable organizations.",
-            "Because advertising expenditures above $50 million automatically convert trademarks into public utility franchises."
+            "Generic words are the essential language competitors need to describe their goods, so a monopoly over them would paralyze fair competition.",
+            "Generic words are too short to identify one source, so advertising can never turn them into brands, even though the law would allow it.",
+            "Generic words are protected by copyright, so the trademark office refuses them to avoid conflicts between the two systems of law.",
+            "Generic words can be registered but only after 5 years of use, so heavy advertising speeds registration but cannot bypass the wait."
           ],
           "answer": 0,
           "why": "Generic terms are common product names belonging to the public domain; allowing any single company to monopolize the name of a product would prevent competitors from marketing competing goods.",
@@ -1512,10 +1512,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Polaroid multi-factor likelihood of confusion test, what is the significance of proving actual consumer confusion in the marketplace?",
           "options": [
-            "Proving actual confusion is a mandatory statutory prerequisite; without documented misdirected orders, a case must be dismissed.",
-            "Actual confusion automatically trebles the statutory damages under the Lanham Act.",
-            "Actual confusion transfers ownership of the junior user's corporate shares to the plaintiff.",
-            "Actual confusion is the most persuasive and probative single piece of evidence proving that confusion is not merely theoretical, though a plaintiff can still prevail without it."
+            "Actual confusion is a required element, so a plaintiff cannot prevail under the test without proof of consumers who were confused.",
+            "Actual confusion carries no weight, since the test looks only at how similar the marks look and sound to each other.",
+            "Actual confusion is relevant only when the goods are identical, and it is ignored when the goods are different but related.",
+            "Actual confusion is the most persuasive evidence that confusion is real, though a plaintiff can still win without it."
           ],
           "answer": 3,
           "why": "While likelihood of confusion is an objective probability inquiry that can be established without proof of actual confusion, concrete evidence of real-world consumer confusion is the most persuasive proof available in trademark litigation.",
@@ -1557,10 +1557,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key legal advantage granted to owners of 'famous' trademarks under the Trademark Dilution Revision Act (TDRA) compared to traditional infringement?",
           "options": [
-            "The owner can seize the physical machinery of the defendant without a court order.",
-            "Famous mark status exempts the corporation from all state and federal corporate taxes.",
-            "The owner of a famous mark does not need to prove consumer confusion, competitive proximity, or actual economic loss; proof of likelihood of blurring or tarnishment is sufficient for an injunction.",
-            "Dilution claims are automatically tried before the International Court of Justice in The Hague."
+            "The owner of a famous mark need not prove the mark is famous, since registration alone shows it is entitled to dilution protection.",
+            "The owner of a famous mark may recover money damages without proof of willfulness, as long as the defendant used a similar mark on any goods.",
+            "The owner of a famous mark need not prove confusion, competition or actual loss; likely blurring or tarnishment is enough for an injunction.",
+            "The owner of a famous mark has rights in every country where the mark is known, even if it has never been used or registered there."
           ],
           "answer": 2,
           "why": "Dilution protects the commercial magnetism and exclusivity of a famous mark itself; because there is no requirement to prove confusion, a famous mark can enjoin uses on completely unrelated goods.",
@@ -1602,10 +1602,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the 'Central Attack' risk inherent in international trademark registrations filed under the Madrid Protocol?",
           "options": [
-            "Foreign competitors can force the brand owner to sell its trademarks for 1 Swiss Franc.",
-            "If the basic home country application or registration is successfully challenged, cancelled, or invalidated within the first 5 years, all international extension registrations collapse across all designated countries simultaneously.",
-            "Customs officers in Switzerland automatically confiscate all corporate products.",
-            "The World Intellectual Property Organization headquarters is vulnerable to physical military seizure."
+            "If the international registration is refused in any one designated country, the refusal automatically cancels the registrations in all the others.",
+            "If the home application or registration is cancelled or invalidated within 5 years, all international extensions fall in every designated country.",
+            "If the owner fails to renew the home registration after 10 years, all the international registrations lapse in every designated country.",
+            "If a third party opposes the registration in one designated country, the opposition automatically applies in all other countries designated."
           ],
           "answer": 1,
           "why": "Under Article 6 of the Madrid Protocol, international registrations remain legally dependent on the home application for 5 years; invalidation at home automatically extinguishes the foreign rights.",
@@ -1647,10 +1647,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's decisions in Wal-Mart v. Samara Brothers and TrafFix Devices, what are the two core limitations on protecting product design as trade dress?",
           "options": [
-            "Product design can never be inherently distinctive (it requires secondary meaning), and a functional feature, which a utility patent covering it strongly evidences, is permanently ineligible for trade dress protection.",
-            "Product design trade dress is only available to companies incorporated outside North America.",
-            "Trade dress registrations must be renewed every 30 days at the US Court of International Trade.",
-            "Product design is only protectable if the product is colored neon green."
+            "Product design can never be inherently distinctive (it needs secondary meaning), and functional features cannot be trade dress.",
+            "Product design is always inherently distinctive if it is unique, and a functional feature can be protected if it has acquired secondary meaning.",
+            "Product design needs secondary meaning only in a crowded market, and a functional feature is protected while a utility patent is in force.",
+            "Product design is protected only if it is registered with the Patent Office, and a functional feature is protected for a period of 20 years."
           ],
           "answer": 0,
           "why": "Wal-Mart establishes that product design always requires secondary meaning, and TrafFix establishes that functional features cannot be protected as trade dress because utility patents are the proper vehicle for mechanical monopolies.",
@@ -1724,10 +1724,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Defend Trade Secrets Act (DTSA), what happens to a company's lawsuit if the judge finds that the company failed to take 'reasonable measures under the circumstances' to protect the secrecy of its formula?",
           "options": [
-            "The defendant must pay a nominal $500 fine to the Department of Commerce.",
-            "The lawsuit must be dismissed because failure to take reasonable measures legally forfeits trade secret status, transforming the formula into unprotected public domain knowledge.",
-            "The lawsuit is transferred to a private binding AAA arbitration panel.",
-            "The judge converts the trade secret into a granted 20-year utility patent."
+            "The lawsuit proceeds but the court awards only nominal damages, because weak secrecy measures reduce the value of the formula.",
+            "The lawsuit must be dismissed because failing to take reasonable measures forfeits trade secret status, leaving the formula in the public domain.",
+            "The lawsuit proceeds but the company must post a bond, because weak secrecy measures raise doubts about its right to relief.",
+            "The lawsuit is transferred to state court, because the federal statute applies only where the owner has taken full secrecy measures."
           ],
           "answer": 1,
           "why": "Reasonable measures are an essential statutory element of a trade secret; if an owner fails to protect its own information, the law will not recognize any property right in it.",
@@ -1770,10 +1770,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the severe legal consequence if an employer fails to include the mandatory DTSA Whistleblower Notice in an employment agreement or NDA governing trade secrets?",
           "options": [
-            "The employee becomes the legal co-owner of all corporate patents.",
-            "The employer must pay triple wages to the employee for the duration of their tenure.",
-            "The employer is statutorily barred from recovering exemplary (punitive) damages and attorney's fees in a subsequent federal DTSA lawsuit against that employee.",
-            "The employer's corporate charter is automatically revoked by the Secretary of State."
+            "The employer cannot recover any damages at all in a DTSA suit against that employee, and the agreement is void in full.",
+            "The employer is fined by the Department of Labor for each agreement that lacks the notice, and the NDA stays enforceable.",
+            "The employer cannot recover exemplary (punitive) damages or attorney's fees in a DTSA suit against that employee.",
+            "The employer cannot obtain an injunction against that employee, but it may still recover actual damages and attorney's fees."
           ],
           "answer": 2,
           "why": "18 U.S.C. § 1833(b)(3) explicitly strips employers of the right to recover exemplary damages or attorney's fees if they fail to provide the required statutory notice of whistleblower immunity.",
@@ -1816,10 +1816,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What was the landmark legal precedent established in PepsiCo, Inc. v. Redmond (1995) regarding the Inevitable Disclosure Doctrine?",
           "options": [
-            "All commercial beverage formulas must be registered with the United States Patent Office.",
-            "Employees who sign NDAs forfeit their right to file for unemployment benefits.",
-            "Non-compete agreements are automatically extended by 10 years if an employee joins a Fortune 500 company.",
-            "A court can enjoin a departing employee from working for a direct competitor if the employee's new position will inevitably cause them to rely upon and disclose the former employer's trade secrets, even without proof of actual past theft."
+            "A court may enjoin a departing employee from working for any competitor for two years, whether or not the employee knows trade secrets.",
+            "A court may award damages against the new employer only after the employee has actually used the secrets, never before any misuse.",
+            "A court may enjoin a departing employee only if there is a signed noncompete agreement in force, and never on the basis of the secrets.",
+            "A court may enjoin a departing employee from joining a direct competitor if the new job would inevitably involve using the former employer's secrets."
           ],
           "answer": 3,
           "why": "PepsiCo v. Redmond established that when a competitor hires an executive with intimate knowledge of marketing secrets into an identical role, disclosure is inevitable, justifying an injunction.",
@@ -1862,10 +1862,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what exceptional circumstances does the federal Defend Trade Secrets Act (DTSA) authorize a federal judge to issue an Ex Parte Civil Seizure Order executed by US Marshals?",
           "options": [
-            "Only in extraordinary circumstances where standard preliminary injunctions would be inadequate because the defendant would destroy, move, or hide the stolen trade secret if given advance notice.",
-            "Whenever an employee resigns with less than two weeks of advance notice.",
-            "Whenever a corporation files for Chapter 7 bankruptcy liquidation.",
-            "Only if the trade secret involves cryptographic currencies valued over $100 million."
+            "Only in extraordinary cases where an injunction would be inadequate because the defendant would destroy, move or hide the secret if notified.",
+            "Whenever the plaintiff shows that the defendant is a competitor who has hired one of the plaintiff's former employees in the past year.",
+            "Whenever the plaintiff posts a bond, because seizure orders are routinely available once the court has been shown a likelihood of success.",
+            "Only after the defendant has ignored a preliminary injunction, since a seizure order serves to enforce a prior court order."
           ],
           "answer": 0,
           "why": "18 U.S.C. § 1836(b)(2) authorizes ex parte civil seizures only upon clear proof that notifying the defendant would cause the immediate destruction or concealment of the stolen proprietary property.",
@@ -1908,10 +1908,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Economic Espionage Act of 1996, what is the critical legal factor that distinguishes Section 1831 (Foreign Economic Espionage) from Section 1832 (Commercial Trade Secret Theft)?",
           "options": [
-            "Section 1832 applies exclusively to non-profit university laboratories.",
-            "Section 1831 requires intent or knowledge that the offense will benefit any foreign government, foreign instrumentality, or foreign agent, carrying higher prison terms (up to 15 years) and organizational fines up to $10M or 3x the secret's value.",
-            "Section 1831 requires personal approval from the Chief Justice of the United States.",
-            "Section 1831 applies only to trade secret thefts involving physical paper files."
+            "Section 1831 applies when the stolen secret exceeds $1 million in value, with up to 15 years in prison, whoever benefits from the theft.",
+            "Section 1831 requires intent that the offense benefit a foreign government, instrumentality or agent, carrying up to 15 years and fines up to $10M.",
+            "Section 1831 applies when the theft is committed by a non-US citizen, with up to 10 years in prison and fines up to $250,000.",
+            "Section 1831 applies only to thefts from the federal government, with up to 5 years in prison and fines up to $1M for individuals."
           ],
           "answer": 1,
           "why": "Section 1831 specifically penalizes state-sponsored economic espionage intended to benefit foreign governments, whereas Section 1832 addresses commercial thefts between private business competitors.",
@@ -1987,10 +1987,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Abstraction-Filtration-Comparison test established in Computer Associates v. Altai, what elements of a software program must be filtered out before determining infringement?",
           "options": [
-            "Only elements that are written in low-level Assembly code.",
-            "Any lines of code written during weekend hours.",
-            "Ideas, algorithms, elements dictated by hardware or efficiency (merger doctrine), and elements required by industry compatibility or external standards (scenes a faire).",
-            "All software subroutines licensed under non-exclusive commercial agreements."
+            "Only the code that was copied word for word, because nonliteral elements such as structure and sequence are never compared.",
+            "Only the user interface and screen displays, because functional program code is always protected and so is left unfiltered.",
+            "Ideas, algorithms, elements dictated by hardware or efficiency (merger doctrine), and elements required by industry standards (scenes a faire).",
+            "Only the portions that the plaintiff has not registered, because registration covers only the elements that are listed in the filing."
           ],
           "answer": 2,
           "why": "Filtration strips away all unprotectable functional and standard elements under 17 U.S.C. § 102(b), leaving only the truly original creative expression to be compared for infringement.",
@@ -2034,10 +2034,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a contract stating 'all software created by the independent contractor shall be a work made for hire' fail to transfer copyright ownership to the hiring company under 17 U.S.C. § 101?",
           "options": [
-            "Because all independent contractors are legally minors under federal law.",
-            "Because software is not one of the nine exclusive statutory categories of commissioned works under Section 101(2); without an explicit affirmative assignment clause, copyright remains vested in the contractor.",
-            "Because copyright in computer software can only be owned by the United States Library of Congress.",
-            "Because works made for hire require a public notary seal from the Department of Transportation."
+            "The contract must be signed by both parties in front of a notary, and a notarized work-for-hire clause is needed to transfer rights.",
+            "Software is not one of the nine commissioned-work categories in Section 101(2); without an assignment clause, the contractor keeps copyright.",
+            "A contractor's work can be work for hire only if the contractor is paid a salary, so a fee-based contractor always keeps the copyright.",
+            "A work for hire clause transfers the copyright only for ten years, after which the rights return to the contractor automatically."
           ],
           "answer": 1,
           "why": "Section 101(2) lists nine exclusive categories for commissioned works made for hire, and software is not among them. Therefore, an explicit assignment clause is mandatory to transfer title.",
@@ -2082,10 +2082,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under 17 U.S.C. § 512(c), what mandatory threshold policy must an Online Service Provider adopt and reasonably implement to qualify for DMCA safe harbor immunity?",
           "options": [
-            "A policy that provides for the termination in appropriate circumstances of subscribers and account holders of the service provider's system or network who are repeat infringers.",
-            "A policy requiring all users to submit notarized identity cards before uploading text.",
-            "A mandatory 50% revenue-sharing agreement with the Recording Industry Association of America.",
-            "An agreement to store all user data exclusively on magnetic tape drives."
+            "A policy for terminating, in appropriate circumstances, subscribers and account holders who are repeat infringers.",
+            "A policy of monitoring all user uploads in advance to filter out any copyrighted material before it is posted on the service.",
+            "A policy of paying royalties to copyright owners for each work posted on the service, whether or not it was infringing.",
+            "A policy of requiring all users to register their real identity with the provider before they can post any content online."
           ],
           "answer": 0,
           "why": "17 U.S.C. § 512(i)(1)(A) makes the adoption and reasonable implementation of a repeat infringer termination policy a strict prerequisite for all safe harbor protections.",
@@ -2130,10 +2130,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Google LLC v. Oracle America, Inc. (2021), why did the Supreme Court hold that Google's copying of 11,500 lines of Java API declaring code constituted Fair Use as a matter of law?",
           "options": [
-            "Because all computer code under 20,000 lines is automatically exempt from copyright law.",
-            "Because Google paid a $1 billion mandatory licensing fee to the Library of Congress.",
-            "Because Java source code was written in a foreign country outside US jurisdiction.",
-            "Because declaring code is inherently functional and closely tethered to unprotectable ideas, and Google's transformative implementation in the Android ecosystem did not harm Sun/Oracle's market for Java SE."
+            "Declaring code is not eligible for copyright protection at all, so the Court held that no fair use analysis was necessary.",
+            "Google had a license from Sun for the declaring code, so the Court held that copying was authorized and not fair use.",
+            "Google copied only a small number of lines, so the Court held that copying under 5% of any program is fair use as a matter of law.",
+            "Declaring code is functional and tied to unprotectable ideas, and Google's transformative use in Android did not harm Java SE's market."
           ],
           "answer": 3,
           "why": "The Supreme Court emphasized that API declaring code is bound up with programmer habits and functional organization, and copying only what was needed for interoperability was transformative fair use.",
@@ -2177,10 +2177,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under 17 U.S.C. § 412 of the Copyright Act, what is the critical legal penalty for failing to register a copyrighted work with the US Copyright Office prior to the commencement of infringement?",
           "options": [
-            "The author must pay a $10,000 administrative fine to the Register of Copyrights.",
-            "The copyright permanently transfers to the public domain.",
-            "The copyright owner is statutorily barred from recovering statutory damages under Section 504(c) and attorney's fees under Section 505, being limited strictly to actual damages and infringer's profits.",
-            "The infringer is immune from federal preliminary injunctions."
+            "The owner cannot sue for infringement in federal court at all, and can only seek relief through state courts for unfair competition.",
+            "The owner loses the copyright itself, which passes into the public domain if registration is not made before infringement occurs.",
+            "The owner cannot recover statutory damages (Section 504(c)) or attorney's fees (Section 505), only actual damages and the infringer's profits.",
+            "The owner cannot obtain an injunction against the infringer, but may still recover statutory damages and attorney's fees."
           ],
           "answer": 2,
           "why": "Section 412 explicitly conditions the availability of statutory damages and attorney's fees upon timely registration prior to infringement or within three months of publication.",
@@ -2253,10 +2253,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Microsoft Corp. v. Motorola and the Smallest Saleable Patent-Practicing Unit (SSPPU) doctrine, how must a court calculate a FRAND royalty for a Standard Essential Patent?",
           "options": [
-            "The royalty base must be limited to the smallest saleable component practicing the patent (e.g. the baseband chip) rather than the entire end product, and apportioned to reflect only the economic value contributed by the patented feature.",
-            "The royalty must equal 10% of the manufacturer's gross annual global revenue.",
-            "The court must order the patentee to transfer the patent to the public domain for zero compensation.",
-            "The royalty must be calculated using the gross weight of the physical hardware in metric tons."
+            "The royalty base is limited to the smallest saleable component practicing the patent (e.g. the baseband chip), apportioned to the patented feature's value.",
+            "The royalty base is the full price of the end product, such as the whole phone, with a fixed percentage for each standard it implements.",
+            "The royalty base is the net profit of the implementer's whole business, shared in equal parts among all holders of essential patents.",
+            "The royalty base is the highest price the patent holder has ever charged a licensee, adjusted upward for the number of patents in the standard."
           ],
           "answer": 0,
           "why": "The SSPPU doctrine prevents patent holdup and unearned windfalls by ensuring royalties are calculated only against the component that embodies the invention, not unrelated features of a complex multi-component product.",
@@ -2298,10 +2298,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical statutory deadline under 35 USC § 315(b) for a corporate defendant to file an Inter Partes Review (IPR) petition after being sued for patent infringement?",
           "options": [
-            "Any time within 20 years of the patent's issuance date.",
-            "Only after the jury returns a final liability verdict in federal district court.",
-            "Within 30 days of receiving a cease-and-desist letter.",
-            "Within 1 year after the date on which the petitioner, real party in interest, or privy of the petitioner was served with a complaint alleging infringement of the patent."
+            "Within 6 months after the petitioner, real party in interest or privy was served with a complaint alleging infringement of the patent.",
+            "Within 1 year after the date on which the challenged patent was first issued to its owner by the Patent Office, whoever is sued.",
+            "Within 2 years after the petitioner first learned of the patent, whether or not a complaint alleging infringement has been served.",
+            "Within 1 year after the petitioner, real party in interest or privy was served with a complaint alleging infringement of the patent."
           ],
           "answer": 3,
           "why": "35 USC § 315(b) imposes a strict 1-year time bar; failing to file an IPR petition within 12 months of being served with an infringement complaint permanently forfeits the right to seek PTAB review.",
@@ -2343,10 +2343,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under US GAAP (ASC 805) and international financial reporting standards, how does the Relief-from-Royalty Method determine the Fair Value of a proprietary patent or software codebase?",
           "options": [
-            "By adding together the original salaries of the computer programmers who wrote the code.",
-            "By taking 50% of the acquiring company's total market capitalization.",
-            "By calculating the present value of the hypothetical after-tax royalty payments the enterprise avoids paying to an independent third party because it owns the IP asset outright.",
-            "By multiplying the number of patent pages by an official USPTO fee index."
+            "By adding up the historical cost of researching and developing the patent, and adjusting it for inflation since the year it was created.",
+            "By calculating the present value of the royalties the owner actually receives each year from licensing the patent to its customers.",
+            "By calculating the present value of the hypothetical after-tax royalties the owner avoids paying a third party because it owns the IP outright.",
+            "By estimating what it would cost a competitor to build a replacement patent or codebase of equal functionality from scratch today."
           ],
           "answer": 2,
           "why": "The Relief-from-Royalty Method values an intangible asset based on the discounted cash flow savings realized by owning the asset rather than licensing it from an outside licensor at market rates.",
@@ -2388,10 +2388,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the landmark antitrust decision FTC v. Actavis, Inc. (2013), what was the Supreme Court's ruling regarding 'reverse payment' patent settlements?",
           "options": [
-            "All pharmaceutical patents expire automatically after 5 years.",
-            "Large, unexplained cash payments from a patent owner to an accused generic infringer to settle litigation and delay generic entry are subject to antitrust Rule of Reason scrutiny rather than being immune from antitrust law.",
-            "Patent owners are prohibited from ever settling any patent litigation out of court.",
-            "Generic drug companies must pay 50% of their revenues to the FTC."
+            "Such payments are immune from antitrust review as long as the settlement stays within the scope of the exclusionary rights of the patent.",
+            "Large, unexplained payments from a patentee to a generic infringer to settle and delay generic entry are subject to Rule of Reason antitrust scrutiny.",
+            "Such payments are per se illegal under the Sherman Act, so a court must strike them down without hearing any justification for them.",
+            "Such payments are lawful only if approved by the FTC in advance, and the court need not examine the size or purpose of the payment."
           ],
           "answer": 1,
           "why": "The Supreme Court rejected the scope-of-the-patent immunity rule, holding that unexplained large reverse payments suggest the patentee is buying off competition to maintain a monopoly.",
@@ -2434,10 +2434,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance requirement to successfully defend an enterprise intellectual property portfolio before a Board of Directors and secure M&A transaction approval?",
           "options": [
-            "A synthesized four-pillar IP architecture: verified Freedom-to-Operate clearing third-party blocking patents, inherently distinctive trademarks recorded with customs, fortified trade secret reasonable measures with statutory whistleblower notices, and 100% copyright chain of title with zero open-source viral copyleft contamination.",
-            "Filing at least 10,000 provisional patent applications regardless of technological merit.",
-            "Requiring all software programmers to surrender their personal laptops to the Board of Directors.",
-            "Publishing all trade secret algorithms in the Wall Street Journal."
+            "A four-pillar IP architecture: verified FTO, distinctive recorded trademarks, reasonable trade secret measures, and clean copyright title free of copyleft.",
+            "A single patent portfolio audit: a count of granted patents, their remaining terms and maintenance fee status, along with licensing revenue forecasts.",
+            "A trademark-only review: registered marks in each country, renewal dates and any pending oppositions, plus a list of brand licensing agreements.",
+            "A financial valuation: the book value of intangible assets, amortization schedules and a fair value report prepared by an outside appraiser."
           ],
           "answer": 0,
           "why": "A robust enterprise IP defense requires holistic excellence across all four legal pillars to eliminate infringement liability, preserve proprietary asset value, and prevent viral open-source contamination.",
@@ -2507,10 +2507,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's Howey doctrine, which of the following elements is REQUIRED to classify an innovative commercial transaction as an investment contract security?",
           "options": [
-            "An explicit guarantee that the investor will never suffer a loss of principal.",
-            "A mandatory registration filing with the World Trade Organization.",
-            "A formal issuance of physical paper stock certificates signed by the corporate president.",
-            "An investment of money or tangible value in a common enterprise with an expectation of profits derived predominantly from the managerial efforts of others."
+            "An investment of money in a business with a written promise of a fixed return, regardless of who manages the enterprise or its operations.",
+            "An investment of money in a common enterprise in which the investor holds voting rights and takes an active part in managing it.",
+            "An investment of money in a registered company with shares that are traded on a national exchange and held through a broker.",
+            "An investment of money in a common enterprise with an expectation of profits derived predominantly from the managerial efforts of others."
           ],
           "answer": 3,
           "why": "Howey establishes a flexible four-prong economic reality test: investment of money/value, common enterprise, profit expectation, and reliance on the managerial efforts of promoters or third parties.",
@@ -2550,9 +2550,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "During the 'Waiting Period' (after Form S-1 is filed but before SEC effectiveness), which of the following activities is legally permissible under Section 5?",
           "options": [
             "Conducting oral institutional roadshows and distributing preliminary red herring prospectuses to solicit non-binding indications of interest.",
-            "Executing binding purchase contracts and collecting investor subscription funds into an escrow account.",
-            "Issuing unregistered written guarantees promising a minimum 20% dividend yield.",
-            "Delivering final stock certificates without providing any disclosure document."
+            "Signing binding sales contracts with institutional investors and accepting their payment, as long as shares are delivered after effectiveness.",
+            "Publishing written sales literature and advertisements about the offering, as long as the preliminary prospectus is attached to each.",
+            "Confirming orders by telephone and accepting payment from retail investors, provided the shares are held in escrow until effectiveness."
           ],
           "answer": 0,
           "why": "Section 5 permits oral offers and preliminary statutory prospectuses during the waiting period, but strictly prohibits entering into binding sales contracts before the registration statement is declared effective.",
@@ -2592,10 +2592,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEC Rule 169, what condition MUST be met for a pre-IPO private company to safely release factual business communications without violating Section 5 gun-jumping rules?",
           "options": [
-            "The communication must contain speculative 5-year revenue forecasts.",
-            "The communication must be factual business information intended for customers and suppliers, released in the ordinary course of business, without referencing the securities offering.",
-            "The company must purchase a full-page advertisement in the Wall Street Journal disclosing executive salaries.",
-            "The CEO must swear an oath before the SEC Commissioners in Washington D.C."
+            "The communication must be forward-looking and aimed at investors, made through a press release that describes the planned offering and its size.",
+            "The communication must be factual business information meant for customers and suppliers, made in the ordinary course, without referencing the offering.",
+            "The communication must be filed with the SEC at least 30 days before release, together with a copy of the draft registration statement.",
+            "The communication must be approved in writing by the lead underwriter, and it must include a legend that the offering has not been registered."
           ],
           "answer": 1,
           "why": "Rule 169 protects ordinary-course factual business information directed to customers and commercial counterparties, provided it does not mention the offering or include forward-looking projections.",
@@ -2634,10 +2634,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical legal distinction between a Section 3 'exempted security' and a Section 4 'exempted transaction' under the Securities Act of 1933?",
           "options": [
-            "Section 3 requires approval by state governors, while Section 4 requires SEC commissioner votes.",
-            "Section 4 grants absolute criminal immunity to corporate executives.",
-            "A Section 3 exempted security permanently retains its exempt status and can be freely resold forever, whereas a Section 4 exemption applies only to a specific trade, generating restricted securities that cannot be freely resold without a separate exemption.",
-            "Section 3 applies only to gold and silver commodities, while Section 4 governs real estate."
+            "A Section 3 exemption covers only the first sale and yields restricted securities, whereas a Section 4 exempted security is freely resold forever.",
+            "A Section 3 exemption applies only to securities issued by private companies, whereas a Section 4 exemption applies to public company securities.",
+            "A Section 3 security stays exempt and freely resellable, whereas a Section 4 exemption covers one trade and yields restricted securities.",
+            "A Section 3 exemption applies to the anti-fraud rules and registration alike, whereas a Section 4 exemption covers registration only."
           ],
           "answer": 2,
           "why": "Section 3 exempts the security itself permanently based on issuer status, while Section 4 exempts only the isolated transaction, making the resulting securities restricted under Rule 144.",
@@ -2676,10 +2676,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a class action lawsuit filed under Section 11 of the Securities Act of 1933 for material misstatements in a registration statement, what defense is available to the corporate ISSUER?",
           "options": [
-            "The issuer can prove that the underwriter was paid a commission.",
-            "The issuer can claim sovereign immunity under Delaware corporate law.",
-            "Relying solely on static hardcoded defaults for Civil without reconciling Liability against live boundary conditions.",
-            "The corporate issuer has NO due diligence defense; issuer liability for material misstatements in an effective registration statement is absolute strict liability."
+            "The issuer may assert a due diligence defense by showing it made a reasonable investigation and believed the statements were true when made.",
+            "The issuer escapes liability if the plaintiff knew of the misstatement, and also if the loss came from a decline in the overall market.",
+            "The issuer is liable only if the plaintiff proves that the issuer acted with intent to defraud, as in a claim under Rule 10b-5.",
+            "The issuer has no due diligence defense; its liability for material misstatements in an effective registration statement is strict liability."
           ],
           "answer": 3,
           "why": "Under Section 11, the issuing corporation is strictly liable for material misstatements or omissions; the due diligence defense of Section 11(b) is available only to non-issuer defendants.",
@@ -2748,10 +2748,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's landmark decision in SEC v. Ralston Purina Co., what must an issuer prove to sustain a valid Section 4(a)(2) private placement exemption?",
           "options": [
-            "That the CEO has never been convicted of a traffic violation.",
-            "That the securities were sold exclusively on a weekend.",
-            "That all offerees possess financial sophistication and have access to the same kind of information that registration would disclose, enabling them to fend for themselves.",
-            "That the total amount of capital raised was less than $100,000."
+            "That the offering was made to fewer than 35 offerees, whatever their financial sophistication or access to information about the issuer.",
+            "That the offering was made only to residents of one state, and that the issuer filed a notice with the securities regulator of that state.",
+            "That all offerees are financially sophisticated and have access to the kind of information registration would disclose, so they can fend for themselves.",
+            "That the offering was made only to accredited investors who each purchased at least $150,000 of securities, with no public advertising."
           ],
           "answer": 2,
           "why": "Ralston Purina establishes that Section 4(a)(2) exempts only transactions where all offerees are sophisticated and possess information access equivalent to registration, eliminating the need for statutory protection.",
@@ -2792,10 +2792,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal difference between an offering conducted under Rule 506(b) versus Rule 506(c) of Regulation D?",
           "options": [
-            "Rule 506(b) applies only to agricultural businesses, while Rule 506(c) applies only to oil companies.",
-            "Rule 506(b) prohibits general solicitation but permits up to 35 non-accredited sophisticated investors, while Rule 506(c) allows wide general solicitation but requires 100% accredited investors with reasonable verification.",
-            "Rule 506(c) requires immediate registration of common stock on the London Stock Exchange.",
-            "Rule 506(b) is limited to $5 million, while Rule 506(c) is limited to $10 million."
+            "Rule 506(b) allows general solicitation to accredited investors only; Rule 506(c) bars all solicitation but allows 35 non-accredited investors.",
+            "Rule 506(b) bars general solicitation but permits up to 35 non-accredited sophisticated buyers; 506(c) permits it but requires verified accredited buyers only.",
+            "Rule 506(b) limits the raise to $10 million in 12 months; Rule 506(c) has no cap on the amount but requires state-by-state registration.",
+            "Rule 506(b) requires an SEC review before the first sale; Rule 506(c) needs only a notice filed on Form D within 15 days of the first sale."
           ],
           "answer": 1,
           "why": "Rule 506(c) permits general solicitation provided that all purchasers are accredited and the issuer takes reasonable verification steps, whereas Rule 506(b) bans general advertising entirely.",
@@ -2834,10 +2834,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Dodd-Frank Act amendments to SEC Rule 501, how must an individual calculate their net worth to qualify as an accredited investor?",
           "options": [
-            "Net worth must exceed $1,000,000, strictly excluding the value of the primary residence and any associated debt (unless the mortgage is underwater).",
-            "Net worth must include all residential real estate, personal jewelry, and household furniture.",
-            "Net worth must be certified by the local county sheriff.",
-            "Net worth must equal at least 50% of the company's total authorized shares."
+            "Net worth must exceed $1,000,000, excluding the primary residence's value and related debt (unless the mortgage is underwater).",
+            "Net worth must exceed $1,000,000, including the primary residence at its market value and subtracting the full mortgage debt on it.",
+            "Net worth must exceed $5,000,000, excluding the primary residence's value and related debt (unless the mortgage is underwater).",
+            "Net worth must exceed $1,000,000, excluding retirement accounts and life insurance, but including the value of the primary residence."
           ],
           "answer": 0,
           "why": "Dodd-Frank mandates that the primary residence value and associated normal mortgage debt be excluded from the $1,000,000 net worth calculation to protect unsophisticated homeowners.",
@@ -2876,10 +2876,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEC Rule 144, what volume restriction applies to a NON-AFFILIATE shareholder reselling restricted stock of an SEC reporting company after holding the shares for more than one year?",
           "options": [
-            "The non-affiliate is permanently restricted to 1% of total outstanding shares.",
-            "The non-affiliate must obtain personal written permission from the United States Treasury Secretary.",
-            "The non-affiliate can sell no more than 10 shares per year.",
-            "There are ZERO volume limitations; the non-affiliate can sell 100% of their shares immediately without volume caps or Form 144 filings."
+            "The non-affiliate may sell, in any three-month period, no more than 1% of the outstanding shares or the average weekly trading volume.",
+            "The non-affiliate may sell up to 10% of the holding each month and must file a Form 144 with the SEC before each sale.",
+            "The non-affiliate may sell freely only if the issuer is current in its reports, and must still file a Form 144 for sales over $50,000.",
+            "There are no volume limitations; the non-affiliate can sell all shares at once without volume caps or Form 144 filings."
           ],
           "answer": 3,
           "why": "Once a non-affiliate holds restricted stock for one full year, all Rule 144 restrictions fall away entirely, permitting unlimited secondary market resales.",
@@ -2918,10 +2918,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEC Regulation S, what are the two core conditions that must ALWAYS be satisfied for an offering to escape Section 5 registration?",
           "options": [
-            "The offering must be denominated in Japanese Yen and certified by the Swiss National Bank.",
-            "The issuer must physically destroy all corporate laptops located in America.",
-            "The transaction must be an Offshore Transaction (buyer outside the US or foreign exchange execution) and there must be NO Directed Selling Efforts in the United States.",
-            "The securities must be shipped exclusively via ocean cargo freighters."
+            "The securities must be registered in the home country of the buyers, and the issuer must file a Form D with the SEC within 15 days.",
+            "The securities must be sold only to non-US citizens, and the proceeds must be held in an escrow account outside of the United States.",
+            "The transaction must be an offshore transaction (buyer outside the US) and there must be no directed selling efforts in the United States.",
+            "The issuer must be a foreign company, and it must offer the securities only through a US broker-dealer registered with the SEC."
           ],
           "answer": 2,
           "why": "Rules 901 and 903 mandate that every Regulation S offering must be an offshore transaction with zero directed selling efforts in the United States.",
@@ -2992,10 +2992,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "During the SEC Division of Corporation Finance review of Form S-1, what is the legal effect of receiving an SEC Comment Letter?",
           "options": [
-            "The comment letter constitutes a criminal indictment of the corporate board of directors.",
-            "The comment letter identifies disclosure deficiencies and legal ambiguities that the issuer must resolve via formal responses and Form S-1/A amendments before the SEC will declare the offering effective.",
-            "The comment letter immediately forfeits the company's corporate charter.",
-            "The comment letter automatically forces the company to sell its assets at auction."
+            "The comment letter is a final approval of the S-1, and the issuer may start selling shares once it has acknowledged receipt of the letter.",
+            "The letter flags disclosure deficiencies the issuer must resolve through responses and S-1/A amendments before the SEC declares the offering effective.",
+            "The comment letter is a denial of the registration, and the issuer must wait one year before it may refile the S-1 with the SEC again.",
+            "The comment letter is a request for fees and filings, and the SEC declares the offering effective once the amounts are paid in full."
           ],
           "answer": 1,
           "why": "SEC comment letters are regulatory review tools identifying disclosure defects under Regulations S-K and S-X, requiring iterative S-1/A amendments before effectiveness can be granted.",
@@ -3035,10 +3035,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal and economic distinction between a 'Firm Commitment' underwriting agreement and a 'Best Efforts' underwriting agreement?",
           "options": [
-            "Firm commitment offerings cannot charge more than $1.00 per share.",
-            "Firm commitment is illegal under federal securities law.",
-            "In a firm commitment, the underwriter contractually buys all shares from the issuer and bears 100% of the risk of unsold shares, whereas in best efforts, the underwriter acts as an agent without purchasing unsold shares.",
-            "Best efforts requires the underwriters to deposit gold bars into the Federal Reserve."
+            "In a firm commitment the underwriter acts as agent and returns unsold shares to the issuer; in best efforts it buys all shares outright.",
+            "In a firm commitment the issuer bears the risk of unsold shares; in best efforts the underwriter guarantees the full proceeds to the issuer.",
+            "In a firm commitment the underwriter buys all shares from the issuer and bears the risk of unsold shares; in best efforts it acts as agent without buying.",
+            "In a firm commitment the price is set after the market closes on the first day; in best efforts the price is fixed by the issuer's board."
           ],
           "answer": 2,
           "why": "Firm commitment underwritings transfer market risk to the investment bank syndicate, which legally purchases the entire issue; best efforts contracts involve no purchase commitment.",
@@ -3077,10 +3077,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of a 180-day 'Lock-Up Agreement' signed by existing corporate directors, officers, and venture investors in an IPO?",
           "options": [
-            "To prevent the company from manufacturing any products for six months.",
-            "To force company executives to stay inside the corporate headquarters building.",
-            "To freeze all customer bank accounts.",
-            "To contractually prohibit pre-IPO shareholders from selling or pledging their stock into the public market for 180 days following pricing, preventing market oversupply and price collapse."
+            "To require pre-IPO shareholders to buy additional shares at the offering price within 180 days, which raises the money received by the issuer.",
+            "To bar the company from issuing new shares for 180 days after pricing, which protects the original investors from dilution of their stakes.",
+            "To require underwriters to hold their unsold allotment for 180 days after pricing, which removes the risk of price pressure from their sales.",
+            "To contractually bar pre-IPO shareholders from selling or pledging stock for 180 days after pricing, preventing oversupply and a price collapse."
           ],
           "answer": 3,
           "why": "Lock-up agreements prevent pre-IPO insiders from immediately dumping large blocks of stock into the newly public market, stabilizing trading prices and ensuring executive commitment.",
@@ -3120,10 +3120,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an IPO stock begins trading BELOW the public offering price, how do underwriters utilize the Green Shoe Option under SEC Regulation M?",
           "options": [
-            "Underwriters DO NOT exercise the option with the company; instead, they purchase shares in the open market below the IPO price to cover their syndicate short position, creating an artificial price floor that stabilizes trading.",
-            "Underwriters demand that the SEC shut down the stock exchange for 90 days.",
-            "Underwriters exercise the option to buy more shares at the full IPO price from the company.",
-            "Underwriters cancel all shares previously sold to institutional investors."
+            "Underwriters buy shares in the open market below the IPO price to cover their short position, creating a price floor, instead of exercising the option.",
+            "Underwriters exercise the option in full to buy 15% more shares from the issuer at the offering price, which supports the stock price.",
+            "Underwriters sell more shares into the market at the lower price, which gives the issuer additional proceeds at a discount to the IPO price.",
+            "Underwriters let the option lapse without any action, since the SEC bars stabilizing purchases once the stock trades below the IPO price."
           ],
           "answer": 0,
           "why": "When the stock breaks below the IPO price, underwriters cover their 15% short position by buying in the open market, injecting vital buying power that stabilizes the market price.",
@@ -3164,10 +3164,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the federal court's landmark ruling in Escott v. BarChris Construction Corp., what must an underwriter do to successfully establish a Section 11 due diligence defense?",
           "options": [
-            "The underwriter must obtain a personal guarantee from the governor of the state of incorporation.",
-            "The underwriter must conduct an independent, adversarial investigation into the issuer's business, examining underlying contracts, minutes, and records rather than merely accepting management's verbal assurances.",
-            "The underwriter only needs to attend a single golf outing with the CEO.",
-            "The underwriter can escape all liability by purchasing an insurance policy from Lloyd's of London."
+            "The underwriter must obtain written assurances from the issuer's officers and a comfort letter from the auditors on all parts of the document.",
+            "The underwriter must conduct an independent, adversarial investigation of contracts, minutes and records, not merely accept management's assurances.",
+            "The underwriter must rely on the audited financial statements and has no duty to check non-audited parts of the registration statement.",
+            "The underwriter must hire outside counsel to review the prospectus, and may then accept any statement that counsel does not question."
           ],
           "answer": 1,
           "why": "BarChris established that underwriters owe an adversarial duty to the investing public to independently verify the accuracy of registration disclosures through primary source verification.",
@@ -3239,9 +3239,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Supreme Court's landmark decision in Blue Chip Stamps v. Manor Drug Stores, who has legal standing to bring a private damages lawsuit under Section 10(b) and Rule 10b-5?",
           "options": [
             "Only actual purchasers or sellers of securities who bought or sold during the relevant class period.",
-            "Any individual who read a negative newspaper article about the corporation.",
-            "Any shareholder who thought about selling stock but decided to hold it.",
-            "Any citizen residing in the county where corporate headquarters is located."
+            "Any investor who held shares and chose not to sell because of the misstatement, as well as actual traders.",
+            "Any person who shows the misstatement affected the share price, whether or not they traded the securities.",
+            "Only the SEC and state regulators, because private plaintiffs may not sue for damages under Rule 10b-5."
           ],
           "answer": 0,
           "why": "Blue Chip Stamps established the strict purchaser-seller rule, holding that potential buyers who chose not to buy or holders who chose not to sell lack standing under Rule 10b-5.",
@@ -3282,10 +3282,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's ruling in Halliburton II, what direct evidentiary showing can corporate defendants make at the class certification stage to defeat the Basic fraud-on-the-market presumption?",
           "options": [
-            "Defendants can show that the plaintiffs are not registered voters.",
-            "Defendants can argue that stock markets are inherently irrational.",
-            "Defendants can prove that the judge's pension owns company stock.",
-            "Defendants can introduce econometric event studies proving that the alleged misstatement had no price impact on the company's stock price."
+            "Defendants can show that the plaintiffs did not personally read the statement, and so did not rely on it when they bought the stock.",
+            "Defendants can show that the company's stock trades on an inefficient market, but only after the court has certified the class.",
+            "Defendants can show that the alleged misstatement was immaterial, but only after the court has ruled on the merits of the case.",
+            "Defendants can submit econometric event studies showing that the alleged misstatement had no price impact on the company's stock price."
           ],
           "answer": 3,
           "why": "Halliburton II allows defendants to rebut the Basic presumption prior to class certification by demonstrating that the misrepresentation produced zero price impact.",
@@ -3326,10 +3326,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's decision in Tellabs v. Makor Issues & Rights, what standard must a federal judge apply when determining whether a complaint pleads a 'strong inference' of scienter under the PSLRA?",
           "options": [
-            "The judge must automatically assume that corporate executives are guilty of fraud.",
-            "The judge must toss a coin in the courtroom.",
-            "The judge must engage in a comparative analysis, and the inference of fraudulent scienter must be cogent and at least as compelling as any plausible non-fraudulent inference of innocent conduct.",
-            "The judge must wait until after a jury trial before evaluating the complaint."
+            "The judge must accept the plaintiff's allegations as true and draw every reasonable inference in the plaintiff's favor at the pleading stage.",
+            "The judge must find that the inference of scienter is more likely true than not true, weighing the evidence as at a trial on the merits.",
+            "The judge must compare competing inferences; the inference of scienter must be cogent and at least as compelling as any plausible innocent inference.",
+            "The judge must require the plaintiff to prove scienter beyond a reasonable doubt before discovery may begin against the defendants."
           ],
           "answer": 2,
           "why": "Tellabs mandates comparative weighing of competing inferences, requiring the fraud inference to be at least as compelling as plausible non-culpable explanations to survive dismissal.",
@@ -3370,10 +3370,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the PSLRA Safe Harbor for Forward-Looking Statements (Section 21E), what is the legal effect of accompanying an executive forecast with 'meaningful cautionary statements'?",
           "options": [
-            "The company must immediately refund all shareholder capital.",
-            "The forward-looking statement receives absolute statutory immunity from securities fraud liability, even if the forecast turns out to be completely inaccurate.",
-            "The statement is automatically converted into a criminal confession.",
-            "The SEC requires the CEO to forfeit their salary for that quarter."
+            "The forward-looking statement is protected only if the forecast proves accurate, and the cautionary language serves as additional evidence.",
+            "The forward-looking statement receives statutory immunity from securities fraud liability, even if the forecast proves wholly inaccurate.",
+            "The forward-looking statement is protected only if the speaker had no knowledge of falsity, and cautionary language is not a factor in this.",
+            "The forward-looking statement is protected only in SEC enforcement actions, while private plaintiffs may still sue over a forecast."
           ],
           "answer": 1,
           "why": "Under Prong 1 of the PSLRA Safe Harbor, statements accompanied by meaningful cautionary language identifying important factors that could cause actual results to differ are completely protected from liability.",
@@ -3414,10 +3414,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's landmark decision in Dura Pharmaceuticals, Inc. v. Broudo, what must a securities fraud plaintiff prove to satisfy the loss causation requirement?",
           "options": [
-            "The plaintiff must prove that the revelation of the alleged misrepresentation or corrective disclosure was the proximate cause of their economic loss, and that the price drop was not caused by general market or macroeconomic factors.",
-            "The plaintiff only needs to prove that they purchased stock at an artificially inflated price.",
-            "The plaintiff must show that the corporation filed for bankruptcy within 24 hours.",
-            "The plaintiff must prove that they never sold any shares."
+            "The plaintiff must prove that the corrective disclosure proximately caused the loss, and that the drop was not due to market-wide factors.",
+            "The plaintiff must prove only that the purchase price was inflated by the misrepresentation, since paying too much is itself an economic loss.",
+            "The plaintiff must prove that the defendant profited from the misrepresentation by selling its own shares at an inflated price before the drop.",
+            "The plaintiff must prove that the stock price fell by at least 10% on the day of the disclosure, whatever the other market conditions."
           ],
           "answer": 0,
           "why": "Dura held that paying an inflated purchase price does not constitute economic loss; plaintiffs must prove that the truth leaked to the market and caused the subsequent decline.",
@@ -3487,10 +3487,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Tier 1 Capital Formation Control Tower, what is the mandatory compliance requirement when utilizing Rule 506(c) for an institutional capital raise?",
           "options": [
-            "All investor funds must be converted into physical silver coins.",
-            "The offering must be reviewed and approved by the International Monetary Fund.",
-            "The company must convert into a general partnership.",
-            "100% of all purchasers must be verified as accredited investors using objective reasonable verification methods, and Form D must be filed within 15 days."
+            "Up to 35 non-accredited purchasers are allowed if they are sophisticated, and Form D must be filed before any general solicitation begins.",
+            "100% of purchasers must be accredited investors by self-certification only, and Form D must be filed within 60 days of the closing.",
+            "All purchasers must be residents of one state, and a notice must be filed with that state's regulator before the first sale occurs.",
+            "100% of purchasers must be verified as accredited investors by objective reasonable verification, and Form D must be filed within 15 days."
           ],
           "answer": 3,
           "why": "Rule 506(c) permits public advertising only if all purchasers are verified accredited investors and Form D is timely submitted.",
@@ -3529,10 +3529,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Tier 2 IPO Syndicate Control Tower, what happens when the newly listed stock trades below the public offering price post-pricing?",
           "options": [
-            "The syndicate does not exercise the Green Shoe with the issuer; instead, it executes open-market stabilizing purchases under Rule 104 of Regulation M, buying shares at market price to cover its short position and establish a price floor.",
-            "The underwriter files an immediate Chapter 11 bankruptcy petition.",
-            "The issuer is forced to return all IPO proceeds to the Federal Reserve.",
-            "The stock exchange automatically doubles the stock price."
+            "The syndicate doesn't exercise the Green Shoe; it makes open-market stabilizing purchases under Regulation M Rule 104 to cover its short and set a floor.",
+            "The syndicate exercises the Green Shoe with the issuer in full, buying 15% more shares at the offering price to cover its short position.",
+            "The syndicate sells more shares into the market at a discount, which adds to the supply and lowers the price until demand returns.",
+            "The syndicate suspends all trading in the stock for a cooling-off period of five days, as required by Regulation M below the offer price."
           ],
           "answer": 0,
           "why": "When stock trades at a discount, underwriters cover their 15% syndicate short via open-market purchases, injecting buying pressure that stabilizes the trading price.",
@@ -3572,10 +3572,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Tier 3 BarChris Due Diligence Control Tower, what is the legal consequence if an underwriting syndicate relies solely on verbal representations from corporate executives without independently examining underlying contracts?",
           "options": [
-            "The offering is automatically converted into a private placement.",
-            "The Section 11 affirmative due diligence defense is completely forfeited, subjecting underwriters to joint and several strict liability for registration statement misstatements.",
-            "The corporate stock price is guaranteed to increase by 50%.",
-            "The underwriters are awarded a medal by the SEC."
+            "The underwriters keep the due diligence defense, but their liability is reduced in proportion to the shares each one sold in the offering.",
+            "The Section 11 due diligence defense is forfeited, exposing the underwriters to joint and several liability for registration statement misstatements.",
+            "The underwriters lose the defense only for the non-expertised portions, and the issuer alone bears liability for the expertised portions.",
+            "The underwriters face only SEC administrative sanctions, since private investors cannot sue for reliance on management's representations."
           ],
           "answer": 1,
           "why": "BarChris established that blind reliance on management verbal assurances without primary source verification eviscerates the Section 11 due diligence defense.",
@@ -3614,10 +3614,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Tier 4 Securities Defense Control Tower, what is the effect of proving via econometric regression that 90% of an observed stock price drop coincided with a broader macroeconomic market crash?",
           "options": [
-            "The company must immediately file a Chapter 7 liquidation petition.",
-            "The federal court doubles the plaintiff class damages.",
-            "Loss causation is defeated under the Supreme Court's Dura Pharmaceuticals doctrine, eliminating plaintiff class damages and entitling the company to summary judgment dismissal.",
-            "The corporate CEO is automatically barred from leaving the country."
+            "Loss causation is established under Dura Pharmaceuticals, since the 10% of the drop left over is attributable to the misstatement.",
+            "Materiality is defeated under Basic, since a decline in a falling market shows the misstatement could not have been important to investors.",
+            "Loss causation is defeated under Dura Pharmaceuticals, eliminating class damages and entitling the company to summary judgment.",
+            "Scienter is defeated under Tellabs, since a market crash shows that the company's officers had no intent to deceive investors."
           ],
           "answer": 2,
           "why": "Dura requires plaintiffs to prove the misrepresentation caused their loss; proving that macroeconomic forces caused the drop dismantles loss causation.",
@@ -3657,10 +3657,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic objective of the Tier 5 Master Command Boardroom Defense in the Milestone 3 Capstone?",
           "options": [
-            "To replace all board members with automated chatbot accounts.",
-            "To dissolve the corporation and distribute company laptops to shareholders.",
-            "To file a lawsuit against the United States Supreme Court.",
-            "To integrate capital formation compliance, S-1 IPO syndicate underwriting, BarChris due diligence defenses, and PSLRA econometric class action dismissals into a certified sovereign governance framework."
+            "To rank the four pillars by risk and focus the company's resources on the single pillar with the most potential liability for the board.",
+            "To transfer the compliance duties of the four pillars to outside counsel, so the board is released from oversight liability on all of them.",
+            "To test knowledge of each pillar separately in a written exam, with each pillar scored independently and then averaged into a final grade.",
+            "To integrate capital formation compliance, S-1 IPO underwriting, BarChris due diligence defenses and PSLRA dismissals into one governance framework."
           ],
           "answer": 3,
           "why": "Tier 5 unifies all four operational pillars to establish complete sovereign capital markets integrity and confer Boardroom General Counsel Accreditation.",
@@ -3731,10 +3731,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Delaware corporate law, what is the critical legal difference between a breach of the Duty of Care and a breach of the Duty of Loyalty?",
           "options": [
-            "There is no legal difference between care and loyalty under Delaware law.",
-            "The duty of care applies only to companies that sell automobiles.",
-            "A breach of the duty of care can be exculpated under DGCL § 102(b)(7) corporate charter provisions, whereas breaches of the duty of loyalty cannot be exculpated and expose fiduciaries to personal monetary liability.",
-            "The duty of loyalty only applies if the director is an elected politician."
+            "A duty of loyalty breach can be exculpated by a DGCL § 102(b)(7) charter provision, but care breaches cannot and carry personal monetary liability.",
+            "Both duty of care and duty of loyalty breaches can be exculpated by a charter provision, but only for the amount of the director's annual fees.",
+            "A duty of care breach can be exculpated by a DGCL § 102(b)(7) charter provision, but loyalty breaches cannot and carry personal monetary liability.",
+            "Neither breach can be exculpated, but the company may buy insurance that pays any damages awarded against its directors in full."
           ],
           "answer": 2,
           "why": "Section 102(b)(7) explicitly permits corporations to eliminate director monetary liability for duty of care breaches, but strictly prohibits exculpating breaches of the duty of loyalty or bad faith.",
@@ -3775,10 +3775,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's landmark ruling in Smith v. Van Gorkom, what standard of fault must a shareholder plaintiff prove to overcome the Business Judgment Rule on duty of care grounds?",
           "options": [
-            "Criminal Treason against the state of Delaware.",
-            "Gross Negligence—demonstrating that the directors acted with procedural recklessness by failing to inform themselves of all material information reasonably available.",
-            "Mere Simple Negligence—showing that an ordinary person would have made a slightly different choice.",
-            "Strict Liability—proving that the corporate share price declined by more than 5%."
+            "Ordinary negligence, shown by any failure of directors to act as a reasonably careful person would in their position.",
+            "Gross negligence, shown by directors failing to inform themselves of all material information reasonably available to them.",
+            "Fraud or intentional wrongdoing, shown by directors knowingly misleading shareholders to approve the transaction.",
+            "Waste of corporate assets, shown by directors approving a deal in which the company receives no consideration of value."
           ],
           "answer": 1,
           "why": "Van Gorkom established that director duty of care claims are evaluated under a gross negligence standard, requiring proof that the board failed to engage in an informed decision-making process.",
@@ -3820,9 +3820,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under DGCL § 102(b)(7) and the Delaware Supreme Court's ruling in In re Walt Disney Co., which of the following director actions CANNOT be exculpated from monetary liability?",
           "options": [
             "Acts or omissions not in good faith (conscious disregard of known duties) and breaches of the Duty of Loyalty.",
-            "Reviewing a financial report that had a typographical error.",
-            "Failing to ask a question during an investment banker presentation.",
-            "Deciding to expand sales operations into Canada."
+            "Acts or omissions that amount to gross negligence in the informed decision process, and breaches of the Duty of Disclosure.",
+            "Acts or omissions that cause any financial loss to the company, and breaches of the Duty of Care in an informed process.",
+            "Acts or omissions in a merger context, and breaches of any duty that results in a loss exceeding the director's annual pay."
           ],
           "answer": 0,
           "why": "Section 102(b)(7) expressly excludes breaches of the duty of loyalty and bad faith (conscious disregard of duties) from charter exculpation.",
@@ -3862,10 +3862,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's landmark ruling in Marchand v. Barnhill, how does the Caremark oversight standard apply to 'mission-critical' compliance risks (such as food safety in a food company)?",
           "options": [
-            "Directors are completely immune from any oversight liability regarding mission-critical risks.",
-            "Mission-critical risks can be outsourced entirely to an offshore consulting firm.",
-            "Directors only need to read customer reviews on Twitter once a year.",
-            "Directors must make a good faith effort to implement and monitor an active board-level compliance and reporting system specifically addressing the mission-critical risk; passive reliance on floor managers is bad faith."
+            "Directors must hire a compliance officer who reports to the CEO, which satisfies Caremark for any mission-critical risk to the company.",
+            "Directors must personally inspect the company's facilities each quarter, which satisfies Caremark for any mission-critical risk to it.",
+            "Directors may rely on management's general compliance program, and are liable only if they knew of a specific violation beforehand.",
+            "Directors must make a good faith effort to implement and monitor a board-level compliance and reporting system for the mission-critical risk."
           ],
           "answer": 3,
           "why": "Marchand held that regarding central, mission-critical operational hazards, a board's complete failure to maintain a board-level oversight system constitutes bad faith under Caremark.",
@@ -3904,10 +3904,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under DGCL § 145(c), what is the corporation's legal obligation when a corporate officer or director is sued and the lawsuit is dismissed on a procedural technicality?",
           "options": [
-            "The corporation can refuse to pay if the CEO does not like the officer.",
-            "The officer must forfeit all stock options.",
-            "The corporation MUST provide mandatory indemnification for all actual and reasonable legal expenses incurred, because the officer was successful 'on the merits or otherwise'.",
-            "The court must re-try the case in a federal military tribunal."
+            "The corporation may decline indemnification, since a dismissal on a technicality is not a success on the merits of the claim.",
+            "The corporation must indemnify only half of the legal expenses, since the dismissal did not clear the officer on the merits.",
+            "The corporation must indemnify all actual and reasonable legal expenses, because the officer was successful 'on the merits or otherwise'.",
+            "The corporation may indemnify only if shareholders approve by vote, since a technical dismissal is not a complete victory."
           ],
           "answer": 2,
           "why": "Section 145(c) establishes mandatory indemnification whenever a fiduciary is successful 'on the merits or otherwise', including procedural or technical dismissals.",
@@ -3976,10 +3976,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Guth v. Loft and DGCL § 122(17), which mechanism allows a corporation to eliminate liability in advance for venture capital directors who sit on multiple competing tech boards?",
           "options": [
-            "Requiring the venture capitalist to pay a $500 monthly fine to the Delaware Chancery Court.",
-            "Adopting a provision in the certificate of incorporation or board resolution renouncing in advance any interest or expectancy in specified business opportunities under DGCL § 122(17).",
-            "Prohibiting venture capitalists from using email or mobile phones during board meetings.",
-            "Forcing the corporation to dissolve automatically every three years."
+            "Adopting a bylaw that bars directors from serving on any other board, which removes the risk of competing duties of loyalty.",
+            "Adopting a charter provision or board resolution that renounces in advance any interest in specified business opportunities under DGCL § 122(17).",
+            "Obtaining a shareholder vote after each opportunity is taken, which ratifies the director's use of it and removes all liability.",
+            "Registering each director's other board seats with the Delaware Secretary of State, which removes the director's duty to disclose."
           ],
           "answer": 1,
           "why": "DGCL § 122(17) explicitly authorizes corporations to renounce advance corporate opportunities in their charter or bylaws, providing critical liability protection for VC/PE investors.",
@@ -4017,10 +4017,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What two essential prongs must conflicted directors establish by a preponderance of the evidence to survive Delaware Entire Fairness review under Weinberger v. UOP?",
           "options": [
-            "Federal Trade Commission approval and SEC registration.",
-            "High Stock Price and Low Dividend Yield.",
+            "Fair Process (approval by a majority of shareholders) and Fair Disclosure (a full proxy statement sent to all stockholders).",
+            "Fair Notice (a board meeting announced in advance) and Fair Valuation (a fairness opinion from an investment bank).",
             "Fair Dealing (procedural honesty and arm's-length negotiation) and Fair Price (substantive economic fairness matching market value).",
-            "Quick Meeting Adjournment and Verbal Assent."
+            "Good Faith (honest belief in the deal) and Due Care (an informed board that met several times before approving the transaction)."
           ],
           "answer": 2,
           "why": "Weinberger v. UOP established that Entire Fairness is a unified inquiry encompassing both procedural Fair Dealing and substantive Fair Price.",
@@ -4059,10 +4059,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under DGCL § 144(a)(1) and Benihana of Tokyo, what happens to the standard of judicial review when an interested director transaction is approved in good faith by a majority of fully informed disinterested directors?",
           "options": [
-            "The interested director is sent to federal prison automatically.",
-            "All company patents are revoked by the Delaware Chancery Court.",
-            "The transaction is permanently banned by the federal government.",
-            "The transaction is cleansed of common-law voidability, and the standard of review shifts from Entire Fairness back to the deferential Business Judgment Rule."
+            "The transaction stays subject to Entire Fairness, but the burden moves to the plaintiff to show that the deal was unfair to the company.",
+            "The transaction is void, since an interested director may never take part in any deal, even when disinterested directors approve it.",
+            "The transaction is reviewed under a heightened Revlon standard, requiring the board to show it obtained the best price available.",
+            "The transaction is cleansed of common-law voidability, and review shifts from Entire Fairness back to the deferential Business Judgment Rule."
           ],
           "answer": 3,
           "why": "Section 144(a)(1) removes the taint of self-dealing, restoring the Business Judgment Rule presumption and placing the burden on plaintiffs to show waste.",
@@ -4100,10 +4100,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Kahn v. Lynch and Delaware Chancery precedents, what vital authority must the full board confer upon a Special Committee for its approval to be legally effective?",
           "options": [
-            "The absolute authority to select independent advisors, negotiate freely, and definitively reject the proposed transaction (power to say 'NO').",
-            "The authority to rewrite the United States Tax Code.",
-            "The power to fire all employees without severance.",
-            "The obligation to approve whatever the CEO suggests within 48 hours."
+            "Absolute authority to select independent advisors, negotiate freely and definitively reject the proposed transaction (the power to say 'NO').",
+            "Authority to hire advisors and recommend terms to the full board, which can then override its recommendation by majority vote.",
+            "Authority to negotiate price only, while the controlling stockholder decides whether the deal goes ahead or is abandoned.",
+            "Authority to approve the transaction in place of the board, with no power to hire advisors or to turn the transaction down."
           ],
           "answer": 0,
           "why": "A Special Committee that lacks the power to say 'NO' is a mere cosmetic rubber stamp, rendering its process legally ineffective under Kahn v. Lynch.",
@@ -4141,10 +4141,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can a corporate fiduciary who breached the Duty of Loyalty escape personal liability by asserting that the corporation suffered zero out-of-pocket financial harm?",
           "options": [
-            "No; but only if the fiduciary agrees to pay a $50 fine.",
-            "No; equity mandates full Disgorgement of Profits to strip the faithless fiduciary of all gains and deter future disloyalty, regardless of corporate loss.",
-            "Yes; if the corporation didn't lose money, no legal case exists.",
-            "Yes; Delaware law permits fiduciaries to keep 50% of usurped profits."
+            "Yes; without out-of-pocket harm to the corporation there is no damage to recover, so the fiduciary keeps the profits from the deal.",
+            "No; equity requires full disgorgement of profits to strip the faithless fiduciary of gains and deter disloyalty, whatever the corporate loss.",
+            "Yes; the fiduciary escapes if the transaction was approved by shareholders, even when it was not disclosed to them in full.",
+            "No; the fiduciary must repay the corporation's lost profits only, and may keep any extra gain that the corporation could not have earned."
           ],
           "answer": 1,
           "why": "The purpose of disgorgement is prophylactic deterrence: equity strips the faithless fiduciary of all profits irrespective of whether the corporation incurred direct damage.",
@@ -4217,10 +4217,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's Tooley v. Donaldson framework, what two questions determine whether a shareholder lawsuit is direct or derivative?",
           "options": [
-            "(1) Who suffered the alleged harm (the corporation or suing stockholders individually)?; and (2) Who would receive the benefit of any recovery?",
-            "(1) Is the corporation incorporated in New York?; and (2) How many employees work at the company?",
-            "(1) What is the company's price-to-earnings ratio?; and (2) Does the CEO own private jets?",
-            "(1) Was the complaint filed in a federal military court?; and (2) Has the SEC approved the lawsuit?"
+            "(1) Who suffered the alleged harm, the corporation or the suing stockholders? (2) Who would receive the benefit of any recovery?",
+            "(1) Which court has jurisdiction over the claim, state or federal? (2) What percentage of the shares does the plaintiff own?",
+            "(1) Was the board's decision made in good faith? (2) Did the plaintiff make a demand on the directors before filing suit?",
+            "(1) Is the claim based on contract or on fiduciary duty? (2) Is the relief sought money damages or an injunction?"
           ],
           "answer": 0,
           "why": "Tooley established that claim classification depends entirely on who suffered the harm and who receives the recovery, eliminating prior confusing tests.",
@@ -4260,10 +4260,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What catastrophic legal consequence occurs under Delaware law (Spiegel v. Buntrock) when a shareholder serves a formal pre-suit demand on the board of directors?",
           "options": [
-            "The shareholder must transfer all their shares to the Governor of Delaware.",
-            "The corporation is forced into immediate bankruptcy.",
-            "The board of directors is automatically removed from office.",
-            "The shareholder is legally deemed to have conceded that the board is disinterested and independent, forfeiting the right to argue demand futility."
+            "The shareholder is deemed to have waived all claims against the directors, and the derivative suit is dismissed with prejudice.",
+            "The shareholder is deemed to have agreed to the board's decision on the claim, so the suit may continue only with the board's consent.",
+            "The shareholder is deemed to have ratified the challenged transaction, so the court reviews the claim under the entire fairness test.",
+            "The shareholder is deemed to have conceded that the board is disinterested and independent, forfeiting the right to argue demand futility."
           ],
           "answer": 3,
           "why": "Spiegel v. Buntrock establishes that making demand waives any argument that the board was conflicted or lacked independence.",
@@ -4304,10 +4304,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the unified Delaware Supreme Court demand futility standard in United Food v. Zuckerberg, what percentage of the demand board must be disqualified to excuse pre-suit demand?",
           "options": [
-            "Only one single director.",
-            "Exactly 100% of all directors.",
+            "More than 50%, a majority of the sitting directors.",
+            "At least two-thirds (67%) of the sitting directors.",
             "At least 50% (half or more of the sitting directors).",
-            "At least 85% of all independent directors."
+            "Every one of the sitting directors on the board."
           ],
           "answer": 2,
           "why": "Under Delaware law and Zuckerberg, if half or more of the board (at least 50%) is disqualified, the board cannot act by an impartial majority, excusing demand.",
@@ -4348,10 +4348,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is unique about Step 2 of the Delaware Supreme Court's Zapata v. Maldonado framework for reviewing Special Litigation Committee dismissals?",
           "options": [
-            "The litigation is automatically transferred to the United States Supreme Court.",
-            "The Court of Chancery applies its own independent business judgment to determine whether dismissing the derivative suit serves the best interests of the corporation.",
-            "The plaintiff shareholder is awarded the company's patent portfolio.",
-            "Relying solely on static hardcoded defaults for Special without reconciling Litigation against live boundary conditions."
+            "The Court of Chancery defers to the Special Litigation Committee's judgment under the Business Judgment Rule once independence is shown.",
+            "The Chancery court applies its own business judgment on whether dismissing the derivative suit serves the corporation's best interests.",
+            "The Court of Chancery appoints its own committee of outside experts to decide whether the derivative suit should continue.",
+            "The Court of Chancery sends the question to the shareholders, who vote on whether the derivative suit should be dismissed."
           ],
           "answer": 1,
           "why": "Zapata Step 2 uniquely empowers the Chancery judge to apply their own business judgment, acting as an equitable check against boardroom structural bias.",
@@ -4390,10 +4390,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Court of Chancery Rule 23.1(c) and Sugarland, what is required before a shareholder derivative action can be settled and attorney's fees awarded?",
           "options": [
-            "Notice to all stockholders, court approval following a fairness hearing, and fee determination grounded in the corporate benefit achieved under the Sugarland factors.",
-            "A private secret payment from the CEO directly to plaintiff counsel.",
-            "An executive order signed by the President of the United States.",
-            "Immediate dissolution of the corporate entity."
+            "Notice to all stockholders, court approval after a fairness hearing, and fees based on the corporate benefit achieved under the Sugarland factors.",
+            "Approval by the board of directors, a signed release from the plaintiff, and fees based on the plaintiff counsel's hours at standard rates.",
+            "Approval by a majority of the stockholders, a filing with the SEC, and fees fixed at a set percentage of the amount recovered.",
+            "Notice to the defendants only, court approval without a hearing, and fees set by agreement between the plaintiff and the company."
           ],
           "answer": 0,
           "why": "Rule 23.1(c) mandates judicial scrutiny and stockholder notice to prevent collusive settlements, with fees governed by Sugarland benefit analysis.",
@@ -4465,10 +4465,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the crucial difference in voting baseline between electing directors at an annual meeting versus executing a corporate merger under DGCL § 251?",
           "options": [
-            "Mergers require unanimous consent from every citizen of Delaware.",
-            "Electing directors is illegal in Delaware corporations.",
-            "Mergers do not require any shareholder vote.",
-            "Electing directors typically requires a majority or plurality of shares present at a meeting with quorum, whereas a merger requires the affirmative vote of a majority of all outstanding shares entitled to vote."
+            "Directors are elected by a majority of all outstanding shares entitled to vote, but a merger needs only a majority of the shares present at a meeting.",
+            "Directors are elected by a two-thirds vote of the shares present, but a merger needs only a simple majority of the board of directors.",
+            "Directors and mergers both need a majority of the shares present at a quorate meeting, with no difference in the baseline between them.",
+            "Directors are elected by a majority or plurality of shares present at a quorate meeting, but a merger needs a majority of all outstanding voting shares."
           ],
           "answer": 3,
           "why": "Fundamental transactions under DGCL §§ 242, 251, and 271 require an absolute majority of all outstanding voting shares, not merely shares present at the meeting.",
@@ -4507,10 +4507,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the U.S. Supreme Court's landmark decision in TSC Industries v. Northway, what is the legal standard for determining whether an omitted fact in a proxy statement is 'material' under Rule 14a-9?",
           "options": [
-            "There must be a substantial likelihood that a reasonable shareholder would consider the omitted fact important in deciding how to vote.",
-            "The fact must involve at least $10 billion in cash.",
-            "The CEO must admit under oath that they committed a crime.",
-            "The omitted fact must have been published on the front page of the New York Times."
+            "There is a substantial likelihood that a reasonable shareholder would consider the omitted fact important in deciding how to vote.",
+            "There is a reasonable possibility that the omitted fact would have changed the result of the vote that was actually cast at the meeting.",
+            "There is a certainty that the omitted fact would have caused a majority of shareholders to vote against the proposal at the meeting.",
+            "There is a substantial likelihood that the omitted fact would have moved the company's stock price by at least 5% after disclosure."
           ],
           "answer": 0,
           "why": "TSC Industries established that materiality exists when there is a substantial likelihood that the disclosure of the omitted fact would have significantly altered the total mix of information made available.",
@@ -4549,10 +4549,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are shareholder proposals attempting to mandate operational corporate actions excludable under Rule 14a-8(i)(1) and Delaware corporate law?",
           "options": [
-            "The SEC bans all shareholder voting on technology companies.",
-            "Under DGCL § 141(a), managerial power is vested exclusively in the board of directors; shareholders cannot dictate operational decisions, so proposals must be precatory (advisory).",
-            "All shareholder proposals are illegal under the United States Constitution.",
-            "Shareholders are prohibited from submitting proposals if they do not hold a law degree."
+            "Under DGCL § 141(a), shareholders hold managerial power directly; the board only executes their instructions, so proposals are binding commands.",
+            "Under DGCL § 141(a), the board holds managerial power exclusively; shareholders cannot dictate operations, so proposals must be precatory (advisory).",
+            "Under DGCL § 141(a), a proposal is excludable if it costs the company more than $50,000 to include in the proxy statement for the meeting.",
+            "Under DGCL § 141(a), a proposal is excludable if it has been submitted by a shareholder who has held shares for less than five years."
           ],
           "answer": 1,
           "why": "Section 141(a) establishes that directors, not shareholders, direct enterprise business; mandatory shareholder commands invade the board's statutory purview.",
@@ -4591,10 +4591,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental change did SEC Rule 14a-19 (the Universal Proxy Rule) introduce for contested director elections?",
           "options": [
-            "Coupling Proxy directly to unvalidated external state while disabling Universal across Contests transitions.",
-            "It abolishes the Board of Directors and replaces it with an algorithm.",
-            "It requires both management and dissident proxy cards to include all director nominees, allowing shareholders voting by proxy to mix and match candidates from both slates.",
-            "It bans hedge funds from buying stock in public companies."
+            "It requires dissidents to solicit holders of at least 50% of the shares, so only large activist investors can run a contested slate.",
+            "It requires management to send the dissidents' proxy materials at its own cost, so every nominee is paid for by the company.",
+            "It requires management and dissident cards to list all director nominees, so proxy voters can mix and match candidates from both slates.",
+            "It requires each proxy card to name only one slate, so shareholders must choose the entire management or dissident slate."
           ],
           "answer": 2,
           "why": "Rule 14a-19 democratized proxy voting by placing all nominees on a universal card, eliminating the requirement to vote exclusively for one slate.",
@@ -4634,10 +4634,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Blasius Industries doctrine, what standard of review applies when a corporate board takes defensive action for the primary purpose of interfering with or thwarting a shareholder vote?",
           "options": [
-            "The board is dissolved and taken over by the U.S. Navy.",
-            "The shareholders lose their right to sue in court.",
-            "The Business Judgment Rule automatically shields the board.",
-            "The board must prove a 'Compelling Justification' for its action; paternalistic desire to protect shareholders from their own vote is legally insufficient."
+            "The board must show its action was a good faith, informed decision, and the Business Judgment Rule then protects it from review.",
+            "The board must prove its action was reasonable in relation to a threat to corporate policy, under the Unocal proportionality test.",
+            "The board must prove its action was entirely fair to shareholders, in both the process followed and the price they would receive.",
+            "The board must prove a 'Compelling Justification' for its action; a paternalistic wish to protect shareholders from their own vote is insufficient."
           ],
           "answer": 3,
           "why": "Blasius establishes that boards cannot act to disenfranchise stockholders without proving a compelling justification, which can almost never be met.",
@@ -4708,9 +4708,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Marchand v. Barnhill and Caremark, what specific structural oversight mechanism must a corporate board implement to satisfy Tier 1 fiduciary invariants?",
           "options": [
-            "An automatic $1,000 bonus paid to all board members every Friday.",
-            "A mandatory prohibition against independent directors speaking at meetings.",
-            "A corporate Instagram account managed by the CEO's children.",
+            "A management-level compliance hotline reporting to the CEO, which addresses all of the company's routine legal and operational risks.",
+            "An annual external audit of the company's compliance policies, which the board reviews once the audit report has been filed.",
+            "A standing instruction to officers to alert the board only after a regulator has notified the company of a possible violation.",
             "A board-level reporting and monitoring system specifically addressing the company's central 'mission-critical' compliance and operational risks."
           ],
           "answer": 3,
@@ -4750,10 +4750,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal benefit of successfully cleansing an interested director transaction under DGCL § 144(a)(1)?",
           "options": [
-            "It eliminates common-law voidability and shifts the judicial review standard from Entire Fairness back to the deferential Business Judgment Rule.",
-            "It dissolves the corporation and distributes remaining assets to the CEO.",
-            "It eliminates all federal taxes owed by the corporation for five years.",
-            "It prohibits shareholders from selling their stock on public exchanges."
+            "It eliminates common-law voidability and moves judicial review from Entire Fairness back to the deferential Business Judgment Rule.",
+            "It keeps Entire Fairness review in place but shifts the burden of proof to the plaintiff to show that the transaction was unfair.",
+            "It makes the transaction immune from any court challenge, including claims of fraud, waste or bad faith against the directors.",
+            "It replaces the Business Judgment Rule with enhanced scrutiny, so directors must show the transaction was reasonable and proportionate."
           ],
           "answer": 0,
           "why": "Section 144(a)(1) safe harbor compliance removes the self-dealing taint, restoring the Business Judgment Rule presumption under Benihana.",
@@ -4792,10 +4792,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Delaware Chancery Rule 23.1 and United Food v. Zuckerberg, what happens to a derivative complaint when the plaintiff fails to plead particularized facts disqualifying at least 50% of the demand board?",
           "options": [
-            "The board of directors is replaced by the SEC.",
-            "The Court of Chancery grants the defendants' motion to dismiss with prejudice for failure to make a pre-suit demand.",
-            "The case is automatically transferred to criminal court.",
-            "The plaintiff is awarded 10,000 shares of stock."
+            "The Court of Chancery stays the complaint and orders the plaintiff to make a demand on the board within 30 days.",
+            "The Court of Chancery dismisses the complaint with prejudice for failure to make a pre-suit demand.",
+            "The Court of Chancery stays the complaint and orders the plaintiff to make a demand within 30 days.",
+            "The Court of Chancery lets the case go to discovery so that the plaintiff can seek facts on demand futility."
           ],
           "answer": 1,
           "why": "When less than half the board is disqualified, the board maintains capacity to evaluate a demand, requiring dismissal under Rule 23.1.",
@@ -4835,10 +4835,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is strict compliance with the Blasius Industries doctrine essential during a contested universal proxy election under Rule 14a-19?",
           "options": [
-            "Because universal proxies are prohibited under Delaware state law.",
-            "Because SEC rules mandate that dissidents must win every election.",
-            "Because taking defensive board action for the primary purpose of impeding shareholder voting triggers strict scrutiny requiring a compelling justification, which almost always results in a Chancery injunction.",
-            "Because Blasius requires boards to resign immediately if an activist buys 1% of stock."
+            "Defensive board action meant to protect the company is reviewed under the Business Judgment Rule, and courts almost never interfere with it.",
+            "Defensive board action is reviewed only for procedural compliance with the bylaws, and a violation leads to a fine, not an injunction.",
+            "Defensive action meant mainly to impede a shareholder vote triggers strict scrutiny needing compelling justification, which usually means an injunction.",
+            "Defensive board action is lawful if approved by the proxy advisors, and courts then defer to the board without further review."
           ],
           "answer": 2,
           "why": "Blasius strictly protects the stockholder franchise; board attempts to thwart elections cannot survive judicial review without an impossible compelling justification.",
@@ -4877,10 +4877,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic objective of the Tier 5 Master Command Boardroom Defense in the Milestone 4 Capstone?",
           "options": [
-            "To shut down the company's servers and relocate all offices to Bermuda.",
-            "To eliminate all voting rights for institutional shareholders.",
-            "To replace all human executives with automated stock trading algorithms.",
-            "To integrate board fiduciary duty compliance, DGCL § 144 conflict cleansing, Rule 23.1 derivative defense, and universal proxy democracy into an unassailable sovereign governance framework."
+            "To rank the four governance pillars by litigation risk and concentrate the board's attention on the single most dangerous pillar.",
+            "To shift all fiduciary compliance duties to outside counsel and the audit committee, which releases the full board from liability.",
+            "To test each governance pillar separately in a written exam, with equal marks for each and an average used as the final score.",
+            "To integrate board fiduciary compliance, DGCL § 144 conflict cleansing, Rule 23.1 derivative defense and universal proxy democracy."
           ],
           "answer": 3,
           "why": "Tier 5 unifies all four governance pillars to eliminate fiduciary liability, protect corporate democracy, and confer Boardroom General Counsel Accreditation.",
@@ -4951,10 +4951,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Delaware Court of Chancery apply the 'Enhanced Scrutiny' intermediate standard of review to defensive measures taken against a hostile takeover?",
           "options": [
-            "Because of the inherent conflict of interest ('omnipresent specter') that directors may act primarily to entrench themselves in office rather than protect stockholders.",
-            "Because all mergers are strictly illegal under Delaware state constitution.",
-            "Because Delaware judges are required to personally negotiate every corporate buyout.",
-            "Because tender offers must be approved by the United Nations Security Council."
+            "Because directors face an inherent conflict, the 'omnipresent specter' that they act mainly to entrench themselves rather than protect stockholders.",
+            "Because hostile takeovers are illegal under Delaware law, so courts examine every defense to see whether it is a lawful way to stop one.",
+            "Because stockholders have approved the defense in advance, so courts review only whether the vote was properly counted and disclosed.",
+            "Because the defensive measures are adopted by officers and not the board, so courts check that the board delegated them to management."
           ],
           "answer": 0,
           "why": "Unocal established Enhanced Scrutiny because defensive actions carry an inherent risk of managerial entrenchment, requiring directors to prove good faith and proportionality.",
@@ -4993,10 +4993,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Unitrin v. American General Corp., what makes a corporate takeover defensive measure 'Draconian' and therefore illegal under Delaware law?",
           "options": [
-            "The defense was voted on after 5:00 PM.",
-            "The defense costs more than $10,000 in filing fees.",
-            "The board hires an investment bank based in New York.",
-            "The defensive measure is either 'Coercive' (forcing shareholders to accept a management transaction) or 'Preclusive' (rendering a proxy contest or takeover realistically unattainable)."
+            "The measure is 'Aggressive' (costing the company more than 5% of its equity value) or 'Hostile' (adopted after a bid has been made public).",
+            "The measure is 'Unilateral' (adopted without a shareholder vote) or 'Permanent' (staying in force for longer than a single year).",
+            "The measure is 'Defensive' (intended to deter any bidder) or 'Reactive' (adopted only after a specific bid has been received).",
+            "The measure is 'Coercive' (forcing shareholders to accept a management deal) or 'Preclusive' (making a proxy contest or takeover realistically unattainable)."
           ],
           "answer": 3,
           "why": "Unitrin established that draconian defenses (those that coerce stockholders or preclude any contest) are per se disproportionate and invalid under Unocal.",
@@ -5036,10 +5036,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mechanical reason why a hostile bidder cannot survive intentionally triggering a modern 'Flip-In' Poison Pill?",
           "options": [
-            "The target company's stock is deleted from the New York Stock Exchange.",
-            "The Federal Reserve takes over the target corporation's bank accounts.",
-            "All other stockholders can buy massive amounts of stock at a 50% discount while the bidder is legally excluded, collapsing the bidder's ownership percentage and destroying hundreds of millions in capital.",
-            "The Delaware Chancery Court immediately executes the bidder's board of directors."
+            "The bidder is required to sell its shares back to the company at cost, which ends the bid at a small loss on its investment.",
+            "The bidder is barred from voting its shares for a period of one year, which makes a proxy contest impossible during that time.",
+            "Other stockholders can buy stock at a 50% discount while the bidder is excluded, collapsing the bidder's stake and destroying its capital.",
+            "The target is entitled to buy the bidder's own shares at a 50% discount, which transfers control of the bidder to the target."
           ],
           "answer": 2,
           "why": "The selective exclusion of the acquirer combined with 50% discounted stock purchases by non-acquirers creates catastrophic dilution that makes hostile triggers economically impossible.",
@@ -5078,10 +5078,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Chancellor Chandler's landmark decision in Air Products v. Airgas, will the Delaware Court of Chancery force a corporate board to redeem its poison pill against an unsolicited all-cash tender offer?",
           "options": [
-            "Yes; Delaware law requires boards to accept any bid that offers a 10% premium.",
-            "No; as long as an independent board acts in good faith with independent advice and identifies a valid threat of substantive coercion, the board may 'Just Say No' indefinitely.",
-            "No; but only if the target CEO moves to California.",
-            "Yes; poison pills must be cancelled within 30 days of any tender offer."
+            "Yes; once the offer is for all shares and in cash, the court must order the board to redeem the pill so that shareholders can decide.",
+            "No; if an independent board acts in good faith with independent advice and finds a valid substantive coercion threat, it may 'Just Say No'.",
+            "Yes; after one annual meeting has passed, the court must order the board to redeem the pill and put the offer to a shareholder vote.",
+            "No; but the board may keep the pill only until the next annual meeting, and then it must redeem it if a majority of shareholders ask."
           ],
           "answer": 1,
           "why": "Airgas established that Delaware courts will not substitute their judgment for an independent board's, permitting boards to maintain a pill against inadequate bids.",
@@ -5121,10 +5121,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under recent Delaware Court of Chancery decisions in Rosenbaum v. CytoDyn and AIM ImmunoTech, when can a board of directors lawfully reject an activist's director nominations?",
           "options": [
-            "When the activist fails to satisfy the clear, unambiguous procedural windows or disclosure requirements (such as synthetic swap or golden leash disclosures) set forth in advance notice bylaws.",
-            "Whenever the board of directors does not want to lose their jobs.",
-            "Only if the activist is based in a foreign country.",
-            "Never; advance notice bylaws are completely illegal under Delaware corporate law."
+            "When the activist fails to meet the clear procedural windows or disclosure rules (such as synthetic swaps or golden leash) in advance notice bylaws.",
+            "Whenever the board believes the activist's nominees are unqualified, since the board has full discretion to refuse nominations it finds unwise.",
+            "Whenever the activist holds less than 5% of the shares, since the bylaws of Delaware companies restrict nominations to large holders.",
+            "Whenever the nominations are made within 90 days of the annual meeting, since the bylaws bar all late nominations in every case."
           ],
           "answer": 0,
           "why": "CytoDyn and AIM ImmunoTech affirmed that advance notice bylaws are enforceable contractual rules; failure to provide mandated disclosures justifies disqualifying nominees.",
@@ -5195,10 +5195,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Paramount Communications v. QVC Network and Revlon, when does a corporate board's duty shift from long-term enterprise growth to the auctioneer mandate of maximizing immediate share value?",
           "options": [
-            "Never; Delaware law prohibits corporate auctions.",
-            "Whenever the board initiates an active sale process, seeks an alternative transaction involving a company breakup, or enters a transaction resulting in a change of corporate control.",
-            "Only when the corporation files for Chapter 7 bankruptcy liquidation.",
-            "Whenever the company's quarterly revenue declines by more than 2%."
+            "Whenever the board receives an unsolicited offer, since receiving any bid obliges it to run an auction to find the highest price.",
+            "Whenever the board starts an active sale process, seeks a breakup alternative, or enters a transaction that results in a change of control.",
+            "Whenever the company announces any acquisition of another business, whether it pays in cash or in its own shares of stock.",
+            "Whenever the company's stock price falls by more than 20% in a year, since a fall in price triggers a duty to explore a sale."
           ],
           "answer": 1,
           "why": "Paramount v. QVC solidified that Revlon duties apply whenever control shifts or public stockholders are cashed out, requiring value maximization.",
@@ -5238,10 +5238,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's ruling in Omnicare, Inc. v. NCS Healthcare, why are merger lock-ups that completely omit a fiduciary out clause invalid?",
           "options": [
-            "Because buyers are forbidden from recovering any expenses.",
-            "Because the Federal Trade Commission automatically voids all tech contracts.",
-            "Because they are preclusive and coercive under Unocal, impermissibly disabling the board from fulfilling its fiduciary duties if a superior proposal emerges.",
-            "Because all merger agreements must be written entirely in Latin."
+            "They are unenforceable because Delaware law bars all deal protection devices, including termination fees and no-shop clauses.",
+            "They are invalid because the buyer did not pay for them, and a lock-up needs consideration to be a binding contract.",
+            "They are preclusive and coercive under Unocal, disabling the board from meeting its fiduciary duties if a superior proposal emerges.",
+            "They are invalid only if a majority of the shareholders vote against them, and are otherwise protected by the Business Judgment Rule."
           ],
           "answer": 2,
           "why": "Omnicare established that boards cannot contractually bind themselves to an absolute lock-up that renders a superior transaction impossible.",
@@ -5280,9 +5280,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the standard, presumptively valid percentage range for target breakup fees in public company acquisitions under Delaware Court of Chancery precedents?",
           "options": [
-            "Zero; breakup fees are completely illegal under federal law.",
-            "Exactly 25% of annual gross revenue.",
-            "Between 10% and 15% of total company debt.",
+            "Between 5% and 7.5% of aggregate equity or transaction value.",
+            "Between 0.5% and 1.25% of aggregate equity or transaction value.",
+            "Between 10% and 15% of aggregate equity or transaction value.",
             "Between 2.5% and 3.75% of aggregate equity or transaction value."
           ],
           "answer": 3,
@@ -5323,10 +5323,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal effect of including a 'Force-the-Vote' covenant authorized under DGCL § 146 in an M&A merger agreement?",
           "options": [
-            "The target corporation must submit the merger agreement to a stockholder vote even if the board of directors subsequently changes its recommendation to oppose the deal.",
-            "The board of directors is arrested if stockholders vote against the merger.",
-            "The merger closes automatically without requiring any shareholder vote.",
-            "The rival bidder is banned from buying stock for ten years."
+            "The target must submit the merger agreement to a stockholder vote even if its board later changes its recommendation to oppose the deal.",
+            "The target may cancel the stockholder vote if its board changes its recommendation, and the merger agreement is then terminated.",
+            "The target must complete the merger without a stockholder vote, since the covenant replaces the vote with the board's approval.",
+            "The target must pay the buyer a termination fee if the stockholders vote down the deal, whatever the board's recommendation."
           ],
           "answer": 0,
           "why": "Section 146 expressly authorizes agreements requiring a merger vote regardless of whether the board withdraws its recommendation.",
@@ -5365,10 +5365,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal effect of Corwin cleansing under Delaware law when a non-controller merger is approved by a fully informed, uncoerced vote of disinterested stockholders?",
           "options": [
-            "The merger is automatically cancelled and the buyer forfeits its breakup fee.",
-            "The Business Judgment Rule irrebuttably applies, resulting in the immediate dismissal of all fiduciary duty and Revlon claims with prejudice.",
-            "The transaction is reviewed under Entire Fairness with the burden on the board.",
-            "All directors are barred from serving on corporate boards for five years."
+            "The Business Judgment Rule applies as a rebuttable presumption, and plaintiffs may still prove gross negligence in discovery.",
+            "The Business Judgment Rule applies irrebuttably, leading to immediate dismissal of all fiduciary duty and Revlon claims with prejudice.",
+            "Entire Fairness continues to apply, but the burden shifts to the plaintiffs to show that the merger was unfair to stockholders.",
+            "Enhanced scrutiny continues to apply, but the directors need show only that the price was within a range of reasonableness."
           ],
           "answer": 1,
           "why": "Corwin establishes that an informed, uncoerced stockholder vote restores the irrebuttable Business Judgment Rule, extinguishing post-closing damages claims.",
@@ -5438,10 +5438,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Delaware corporate law (Tornetta v. Musk and Kahn v. Lynch), can a shareholder who owns less than 50% of outstanding voting shares be classified as a Controlling Shareholder?",
           "options": [
-            "Only if the shareholder holds an elected public office.",
-            "No; control requires owning exactly 50% plus one single share.",
-            "Yes; if the shareholder owns a significant minority block (e.g. 20-30%) and exercises actual managerial domination and control over the board of directors.",
-            "No; minority shareholders are completely immune from fiduciary duties."
+            "No; a shareholder below 50% of the voting shares can never be a controller, whatever its influence over the directors.",
+            "Yes; any shareholder with more than 5% of the voting shares is a controller, whether or not it influences the board.",
+            "Yes; if it owns a significant minority block (e.g. 20-30%) and exercises actual managerial domination and control over the board.",
+            "No; a controller must hold at least two-thirds of the voting shares, and no smaller block can give the control power."
           ],
           "answer": 2,
           "why": "Tornetta and Lynch established that de facto control exists where a dominant minority shareholder exercises actual control over corporate conduct and the board.",
@@ -5479,10 +5479,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the historical rule of Kahn v. Lynch, what was the legal effect in a one-step freeze-out merger of obtaining independent Special Committee approval?",
           "options": [
-            "It forced the company to double its dividend payments.",
-            "It merely shifted the burden of proof under Entire Fairness from the defendant controller to the plaintiff shareholder; it did NOT restore the Business Judgment Rule.",
-            "It dissolved the Board of Directors automatically.",
-            "It resulted in the immediate dismissal of all litigation with prejudice."
+            "It restored the Business Judgment Rule, so the court asked only whether the committee's decision had a rational business purpose.",
+            "It merely shifted the burden of proof under Entire Fairness to the plaintiff shareholder; it did not restore the Business Judgment Rule.",
+            "It moved review to enhanced scrutiny, so directors needed only to show that the price fell within a range of reasonableness.",
+            "It had no effect, because the burden of proof under Entire Fairness stayed on the controller whatever protections it used."
           ],
           "answer": 1,
           "why": "Lynch held that procedural protections in one-step controller mergers only shift the burden of proof, keeping the transaction subject to Entire Fairness.",
@@ -5521,10 +5521,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's MFW doctrine (Kahn v. M&F Worldwide), what two procedural protections must be established 'ab initio' to restore the Business Judgment Rule in a controller buyout?",
           "options": [
-            "Approval by an independent, fully empowered Special Committee AND an uncoerced, fully informed vote of a Majority of the Minority stockholders.",
-            "Approval by the Governor of Delaware and the President of the NYSE.",
-            "A 50% discount on all corporate products for retail shareholders.",
-            "An automatic $5 million payment to the Delaware State Treasury."
+            "Approval by an independent, fully empowered Special Committee and an uncoerced, informed vote of a Majority of the Minority stockholders.",
+            "Approval by a majority of the full board of directors and an informed vote of two-thirds of all the outstanding shares of the company.",
+            "Approval by an independent Special Committee and a fairness opinion from a bank chosen by the controller, obtained at any stage.",
+            "Approval by an informed Majority of the Minority vote, and an independent Special Committee formed after the price is agreed."
           ],
           "answer": 0,
           "why": "MFW requires the simultaneous implementation of both an independent Special Committee and a Majority of the Minority stockholder vote from the very beginning.",
@@ -5562,10 +5562,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's April 2024 landmark ruling in In re Match Group, Inc., what is required to restore the Business Judgment Rule when a controlling shareholder receives a unique non-ratable benefit in a corporate transaction?",
           "options": [
-            "A Majority-of-the-Minority stockholder vote alone is always sufficient.",
-            "Controlling shareholders can never obtain Business Judgment Rule review under any circumstances.",
-            "An independent Special Committee alone is always sufficient outside of freeze-out mergers.",
-            "The transaction must satisfy the full MFW framework ab initio—employing BOTH an independent Special Committee AND a Majority-of-the-Minority stockholder vote."
+            "The transaction needs only an independent Special Committee with the power to say no, since the stockholder vote adds nothing in this case.",
+            "The transaction needs only a Majority-of-the-Minority stockholder vote, since a Special Committee adds nothing in this setting.",
+            "The transaction needs approval by a majority of the board, including the controller's designees, and a fairness opinion from a bank.",
+            "The transaction must satisfy the full MFW framework from the start, with both an independent Special Committee and a Majority-of-the-Minority vote."
           ],
           "answer": 3,
           "why": "Match Group conclusively held that in ANY transaction where a controller receives a unique benefit, both MFW prongs are required to restore BJR.",
@@ -5603,10 +5603,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's decisions in Dell v. Magnetar and Aruba Networks, what is the best evidence of 'Fair Value' in a DGCL § 262 appraisal proceeding when the merger resulted from an open, unconflicted market auction?",
           "options": [
-            "The company's liquidation book value in bankruptcy.",
-            "The highest price ever predicted by an anonymous financial blogger.",
-            "The negotiated Deal Price, minus any value arising from the accomplishment or expectation of the merger (merger synergies).",
-            "The petitioner's proprietary internal DCF model."
+            "The company's average trading price over the five years before the deal, adjusted for the market index over that period.",
+            "The price from the discounted cash flow model of the petitioners' expert, since market prices are never reliable in appraisal.",
+            "The negotiated deal price, less any value arising from the accomplishment or expectation of the merger (synergies).",
+            "The deal price plus a control premium of 20%, since the buyer gains control of the business by acquiring all of the shares."
           ],
           "answer": 2,
           "why": "Dell and Aruba established that in efficient, competitive market sales, the market deal price less synergies is the most reliable evidence of going-concern fair value.",
@@ -5677,10 +5677,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Hart-Scott-Rodino (HSR) Act, what is the legal effect when a proposed transaction exceeds the statutory upper threshold (approximately $478 million)?",
           "options": [
-            "The transaction is permanently banned by the FTC.",
-            "The filing fee is reduced to zero.",
-            "The merger closes automatically within 24 hours.",
-            "An HSR filing and waiting period are mandatory regardless of the annual sales or total assets of the merging parties (the Size-of-Person test is bypassed)."
+            "An HSR filing is mandatory only if the parties also meet the Size-of-Person test based on their annual sales or total assets.",
+            "An HSR filing is optional, though the parties may file to obtain an early termination of the waiting period and clearance.",
+            "An HSR filing is mandatory, but there is no waiting period and the parties may close the transaction as soon as they file.",
+            "An HSR filing and waiting period are mandatory regardless of the parties' annual sales or total assets (the Size-of-Person test is bypassed)."
           ],
           "answer": 3,
           "why": "Section 7A of the Clayton Act provides that for transactions exceeding the upper size threshold, the Size-of-Person test is entirely eliminated.",
@@ -5718,10 +5718,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is 'Gun-Jumping' under the Hart-Scott-Rodino Act and Section 1 of the Sherman Act, and what are its legal consequences?",
           "options": [
-            "Prematurely coordinating prices, integrating operations, or transferring beneficial ownership before HSR waiting periods expire, subjecting parties to massive daily civil penalties.",
-            "Filing an HSR notice before 9:00 AM on a Monday.",
-            "Refusing to pay investment banking advisory retainers.",
-            "Hiring an attorney who previously worked for the federal government."
+            "Coordinating prices, integrating operations or transferring ownership before HSR waiting periods expire, with daily civil penalties.",
+            "Filing the HSR notification after signing the merger agreement instead of before it, which carries a fixed one-time fine.",
+            "Announcing a merger publicly before the agreement is signed, which carries criminal penalties for the company's executives.",
+            "Closing a merger before shareholders vote on it, which carries damages for the shareholders and no civil penalty to the government."
           ],
           "answer": 0,
           "why": "Gun-jumping violates the statutory requirement that merging parties remain independent competitors until antitrust clearance is granted.",
@@ -5759,10 +5759,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the 2023 FTC/DOJ Merger Guidelines, what mathematical market thresholds establish a structural presumption of illegality in a horizontal merger?",
           "options": [
-            "A market where the CEO owns stock in both corporations.",
-            "A post-merger HHI exceeding 1,800 points with an increase greater than 100 points, OR a combined market share greater than 30% with an increase greater than 100 points.",
-            "Any merger where both companies earn more than $10 million in revenue.",
-            "An HHI score of zero."
+            "Post-merger HHI above 1,000 with an increase of more than 50 points, or a combined share above 20% with an increase of more than 50 points.",
+            "Post-merger HHI above 1,800 with an increase of more than 100 points, or a combined share above 30% with an increase of more than 100 points.",
+            "Post-merger HHI above 2,500 with an increase of more than 200 points, or a combined share above 40% with an increase of more than 200 points.",
+            "Post-merger HHI above 1,800 with an increase of more than 100 points, or a combined share above 50% with any increase at all."
           ],
           "answer": 1,
           "why": "The 2023 Guidelines reinstated the 1,800 HHI threshold and 30% market share rule to establish a structural presumption of anticompetitive effect.",
@@ -5800,10 +5800,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under FIRRMA, what constitutes a 'TID U.S. Business' that subjects foreign non-controlling investments to CFIUS jurisdiction?",
           "options": [
-            "A company that imports tropical fruit.",
-            "A corporation that issues preferred stock.",
+            "A U.S. business that holds a federal contract, a defense license, or a facility within a radius of a military base.",
+            "A U.S. business that has foreign owners of any kind, annual revenue above $500 million, or more than 1,000 employees.",
             "A U.S. business involved in Critical Technology, Covered Critical Infrastructure, or Sensitive Personal Data of U.S. citizens.",
-            "Any business located in Texas, Idaho, or Delaware."
+            "A U.S. business that deals in Tangible Goods, Industrial Real estate, or Digital currency held on behalf of U.S. residents."
           ],
           "answer": 2,
           "why": "FIRRMA expanded CFIUS authority to non-controlling investments in TID (Technology, Infrastructure, Data) businesses to protect national security.",
@@ -5842,10 +5842,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal effect of a 'Hell-or-High-Water' regulatory covenant in an M&A merger agreement?",
           "options": [
-            "The transaction is exempt from all federal antitrust laws.",
-            "The buyer pays zero dollars for the target company.",
-            "The buyer can cancel the deal without penalty if it rains on the closing day.",
-            "The buyer contractually obligates itself to take any and all actions necessary to secure regulatory antitrust approval, including divesting overlapping divisions and litigating against the government."
+            "The buyer commits to use reasonable best efforts to secure antitrust approval, but need not divest businesses or litigate against the government.",
+            "The seller commits to take any and all actions needed to secure approval, including selling its overlapping divisions at its own cost.",
+            "The buyer may walk away without a fee if regulators raise any objection, and the seller bears all the risk that closing fails.",
+            "The buyer commits to take any and all actions to secure antitrust approval, including divesting overlapping businesses and litigating against the government."
           ],
           "answer": 3,
           "why": "A Hell-or-High-Water clause shifts 100% of regulatory risk to the buyer, compelling unlimited divestitures to achieve closing clearance.",
@@ -5917,10 +5917,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Unocal and Unitrin, why is a standard 15% flip-in poison pill paired with a staggered board legally upheld by the Delaware Court of Chancery?",
           "options": [
-            "Because it is non-draconian—it does not coerce stockholders and does not preclude a hostile bidder from winning successive proxy contests to replace the board and redeem the pill.",
-            "Because Delaware judges are legally required to reject all hostile bids.",
-            "Because poison pills are created by the Federal Reserve.",
-            "Because raiders are prohibited from hiring attorneys in Delaware."
+            "It is non-draconian: it doesn't coerce stockholders or preclude a hostile bidder from winning successive proxy contests to replace the board and redeem it.",
+            "It is draconian but adopted with shareholder approval, which makes it valid under the Business Judgment Rule as a protection for the company.",
+            "It is permitted because pills of 15% or less are authorized by DGCL § 203, which exempts them from any judicial review of their terms.",
+            "It is permitted because a staggered board makes a proxy contest impossible, which is the main purpose that Delaware courts allow."
           ],
           "answer": 0,
           "why": "Unitrin established that a defense is non-preclusive if a bidder can realistically mount a proxy contest, keeping the pill within the range of reasonableness.",
@@ -5959,10 +5959,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Corwin v. KKR Financial Holdings, what is the legal consequence of an M&A merger being approved by a fully informed, uncoerced vote of disinterested stockholders?",
           "options": [
-            "The transaction is transferred to federal criminal court.",
-            "The merger is automatically rescinded by the Court of Chancery.",
-            "The buyer is required to pay a 10% cash dividend to all stockholders.",
-            "The Business Judgment Rule irrebuttably applies, resulting in the immediate dismissal of all post-closing fiduciary duty and Revlon damages claims at the pleading stage."
+            "The Business Judgment Rule applies as a rebuttable presumption, so claims continue to discovery to test the directors' decisions.",
+            "Entire Fairness review still applies to the merger, but the burden of proof shifts to the plaintiffs to show that the price was unfair.",
+            "Revlon scrutiny still applies, but the stockholders' vote is taken as strong evidence that the price obtained was adequate.",
+            "The Business Judgment Rule applies irrebuttably, dismissing post-closing fiduciary duty and Revlon claims at the pleading stage."
           ],
           "answer": 3,
           "why": "Corwin establishes that stockholders' informed democratic approval cures all Revlon defects, conferring complete post-closing judicial immunity.",
@@ -6002,10 +6002,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Supreme Court's decisions in MFW and In re Match Group (Del. 2024), what happens when a controlling shareholder buyout is approved by an independent Special Committee but NOT conditioned upon a Majority-of-the-Minority stockholder vote?",
           "options": [
-            "The controller is forced to surrender all shares to the state of Delaware.",
-            "The Business Judgment Rule irrebuttably applies automatically.",
-            "The transaction remains subject to Entire Fairness review; the Special Committee alone merely shifts the burden of proof to the plaintiff, failing to restore the Business Judgment Rule.",
-            "The transaction is completely cleansed under Corwin."
+            "The transaction is reviewed under the Business Judgment Rule, because the independent Special Committee alone is a sufficient protection.",
+            "The transaction is void, because a controlling shareholder buyout without a minority vote is prohibited by Delaware statute.",
+            "The transaction stays under Entire Fairness; the Special Committee alone merely shifts the burden to the plaintiff and does not restore the BJR.",
+            "The transaction is reviewed under enhanced scrutiny, requiring the committee to show that its price fell within a range of fairness."
           ],
           "answer": 2,
           "why": "Match Group reaffirmed that both MFW prongs are strictly mandatory; a Special Committee alone cannot restore the Business Judgment Rule.",
@@ -6044,10 +6044,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is strict pre-merger gun-jumping compliance essential while merging parties await federal HSR antitrust clearance?",
           "options": [
-            "Because the DOJ will automatically seize the buyer's bank accounts.",
-            "Because prematurely integrating operations or coordinating customer pricing violates Clayton Act § 7A and Sherman Act § 1, triggering daily civil penalties exceeding $51,000 and risking federal injunctions.",
-            "Because gun-jumping invalidates the corporate charter under Delaware state law.",
-            "Because all merger discussions must be broadcast on public television."
+            "Premature integration breaches the merger agreement's covenants, giving each party a right to terminate, but it carries no government penalty.",
+            "Premature integration or coordinated pricing violates Clayton Act § 7A and Sherman Act § 1, with daily civil penalties above $51,000 and injunction risk.",
+            "Premature integration requires the parties to refile the HSR notification, restarting the waiting period at no additional penalty.",
+            "Premature integration is lawful once the parties have signed the merger agreement, as the waiting period concerns only the closing date."
           ],
           "answer": 1,
           "why": "Gun-jumping laws mandate that merging parties remain independent competitors until statutory waiting periods expire, enforcing massive civil penalties for premature coordination.",
@@ -6087,10 +6087,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic objective of the Tier 5 Master Command Sovereign M&A Control Tower in the Milestone 5 Capstone?",
           "options": [
-            "To integrate Unocal takeover defense, Revlon deal protections with Corwin cleansing, MFW controller freeze-out dual cleansing, and HSR/CFIUS regulatory clearance into an unassailable sovereign transactional framework.",
-            "To dissolve all public corporations and replace them with private sole proprietorships.",
-            "To abolish federal antitrust enforcement.",
-            "To ban foreign investors from traveling to the United States."
+            "To integrate Unocal takeover defense, Revlon deal protections with Corwin cleansing, MFW dual cleansing and HSR/CFIUS regulatory clearance.",
+            "To rank the four transactional pillars by deal value at stake and give each deal team its own pillar to defend in the transaction.",
+            "To transfer the transaction risks of the four pillars to the buyer through indemnities, which releases the target board of liability.",
+            "To test the four pillars separately in written exams, with each pillar marked on its own and the lowest mark used as the grade."
           ],
           "answer": 0,
           "why": "Tier 5 integrates all four transactional pillars to execute high-stakes M&A, defeat hostile threats, ensure regulatory compliance, and confer Sovereign M&A General Counsel Accreditation.",
@@ -6147,10 +6147,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the UNCITRAL Model Law on Cross-Border Insolvency and Chapter 15 jurisprudence (e.g., In re SPhinX, In re Fairfield Sentry), how is the statutory presumption that a debtor's registered office is its Center of Main Interests (COMI) treated?",
           "options": [
-            "It is an irrebuttable statutory presumption that conclusively binds all international bankruptcy courts",
-            "It is a rebuttable presumption that readily yields to objective evidence regarding where the debtor's actual nerve center, headquarters, and operational decisions are perceived by creditors",
-            "It applies only if the debtor has zero physical assets anywhere in the world",
-            "It is determined solely by the citizenship of the debtor's largest equity shareholder"
+            "It is a conclusive presumption that cannot be challenged, so the registered office alone fixes the COMI and the court that has jurisdiction.",
+            "It is a rebuttable presumption that yields to objective evidence of where the debtor's nerve center and operations are perceived by creditors.",
+            "It is a rebuttable presumption that yields only to evidence of the location of the debtor's largest creditors and the bulk of its debts.",
+            "It is no presumption at all, since the court must always determine the COMI from the debtor's principal place of business alone."
           ],
           "answerIndex": 1,
           "explanation": "Under 11 U.S.C. § 1516(c) and international UNCITRAL jurisprudence, the presumption that the registered office is the debtor's COMI is strictly rebuttable. Courts evaluate where the debtor conducts regular administration ascertainable by third parties (creditors).",
@@ -6185,10 +6185,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal consequence of a U.S. bankruptcy court recognizing a foreign insolvency proceeding as a 'Foreign Main Proceeding' under 11 U.S.C. § 1520?",
           "options": [
-            "The foreign representative is barred from communicating with U.S. creditors",
-            "The U.S. government assumes all outstanding pension liabilities of the debtor",
-            "The Section 362 automatic stay applies automatically to all property of the debtor located within the territorial jurisdiction of the United States",
-            "All debts of the foreign entity are immediately and permanently discharged under U.S. law without creditor voting"
+            "The Section 362 automatic stay applies only if the foreign representative asks the court for it and shows a likelihood of irreparable harm.",
+            "The Section 362 automatic stay applies to the debtor's property worldwide, including its assets located outside of the United States.",
+            "The Section 362 automatic stay applies automatically to all of the debtor's property located within the territorial jurisdiction of the United States.",
+            "The Section 362 automatic stay applies only to secured creditors, while unsecured creditors may still sue the debtor in U.S. courts."
           ],
           "answerIndex": 2,
           "explanation": "Under 11 U.S.C. § 1520(a)(1), upon recognition of a foreign proceeding that is a foreign main proceeding, Section 362 applies with respect to the debtor and that property of the debtor that is within the territorial jurisdiction of the United States.",
@@ -6223,10 +6223,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of the 'Hotchpot Rule' codified in 11 U.S.C. § 1532 in cross-border insolvency proceedings?",
           "options": [
-            "To mandate that all cross-border bankruptcies be settled through mandatory binding arbitration in Switzerland",
-            "To convert all unsecured corporate debt into non-voting preferred equity",
-            "To force all foreign creditors to surrender their claims to the U.S. Department of the Treasury",
-            "To prevent a creditor who seized assets in a foreign proceeding from receiving distributions in the domestic proceeding until all parity creditors have achieved an equivalent percentage recovery"
+            "To stop a foreign representative from selling the debtor's U.S. assets until a hearing has been held for all of the creditors involved.",
+            "To give a creditor who seized assets abroad first priority in the domestic proceeding, as a reward for its diligence in enforcing its claim.",
+            "To limit each creditor's claim in the domestic proceeding to the amount that the creditor could have collected in the foreign proceeding.",
+            "To stop a creditor who seized assets in a foreign proceeding from sharing in the domestic one until other parity creditors reach an equal percentage."
           ],
           "answerIndex": 3,
           "explanation": "Under 11 U.S.C. § 1532, an unsecured creditor who receives part payment in a foreign proceeding may not receive a dividend in a U.S. case so long as other creditors of the same class receive a proportionately smaller payment.",
@@ -6262,10 +6262,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the landmark Chapter 15 decision In re Qimonda AG, why did the federal court invoke the 11 U.S.C. § 1506 public policy exception?",
           "options": [
-            "Because applying German insolvency law would have stripped U.S. patent licensees of their statutory Section 365(n) rights without compensation, severely destabilizing the technological economy",
-            "Because the German liquidator charged excessive hourly legal fees under European standards",
-            "Because the debtor's corporate executives were not citizens of the United States",
-            "Because German bankruptcy petitions must be translated into French before filing"
+            "Applying German insolvency law would have stripped U.S. patent licensees of their Section 365(n) rights without compensation.",
+            "Applying German insolvency law would have denied the foreign representative standing to sue, which violated U.S. due process requirements.",
+            "Applying German insolvency law would have given German creditors priority over U.S. creditors, which violated U.S. bankruptcy priorities.",
+            "Applying German insolvency law would have required the debtor to sell its U.S. assets at auction, which was against U.S. public policy."
           ],
           "answerIndex": 0,
           "explanation": "In Qimonda, the Fourth Circuit held that stripping patent licensees of their 11 U.S.C. § 365(n) protections without just compensation was manifestly contrary to U.S. public policy under Section 1506.",
@@ -6300,10 +6300,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic benefit of pairing an English Part 26A Restructuring Plan with an ancillary U.S. Chapter 15 recognition proceeding for a multinational corporation with significant U.S. operations?",
           "options": [
-            "It eliminates the need to pay any income taxes to either the UK or US governments for five years",
-            "It allows the debtor to bind dissenting debt classes via English cross-class cramdown while simultaneously shielding U.S. assets from creditor attachment via the Chapter 15 automatic stay",
-            "It automatically converts all corporate employees into independent general partners",
-            "It waives all securities disclosure requirements under SEC Rule 10b-5"
+            "It lets the debtor avoid the English court entirely, since a Chapter 15 order alone binds all creditors worldwide to the restructuring.",
+            "It lets the debtor bind dissenting debt classes through English cross-class cramdown while shielding U.S. assets via the Chapter 15 stay.",
+            "It lets the debtor reduce U.S. taxes on the restructuring, since Chapter 15 recognition treats the plan as a tax-free reorganization.",
+            "It lets the debtor keep control of its U.S. subsidiaries free of any creditor claim, since Chapter 15 exempts them from all debts."
           ],
           "answerIndex": 1,
           "explanation": "Pairing a foreign primary reorganization (like a UK Part 26A plan) with Chapter 15 combines foreign restructuring powers (like cross-class cramdown) with U.S. injunctive protection under Section 362/1520.",
@@ -6371,10 +6371,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Article II(3) of the 1958 New York Convention, what is the mandatory obligation of a domestic court when a lawsuit is filed before it regarding a matter covered by a valid written arbitration agreement?",
           "options": [
-            "The court must re-write the commercial contract to eliminate the arbitration clause",
-            "The court must immediately assess monetary punitive damages against both parties",
-            "The court must refer the parties to arbitration upon the request of one of the parties, unless it finds the agreement null and void, inoperative, or incapable of being performed",
-            "The court must transfer the case to the International Court of Justice in The Hague"
+            "The court may keep the case and decide the dispute itself, if it finds that litigation would be more efficient than arbitration.",
+            "The court must stay the case, but only if both parties ask for arbitration after the lawsuit has been filed in the court.",
+            "The court must refer the parties to arbitration on a party's request, unless the agreement is null and void, inoperative or incapable of performance.",
+            "The court must refer the parties to arbitration whatever the circumstances, even if the agreement is void or cannot be performed."
           ],
           "answerIndex": 2,
           "explanation": "Article II(3) mandates that the court of a Contracting State, when seized of an action in a matter covered by an arbitration agreement, shall, at the request of one of the parties, refer the parties to arbitration.",
@@ -6409,10 +6409,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In international commercial arbitration, why is the designated 'Seat of Arbitration' (lex arbitri) of paramount legal importance?",
           "options": [
-            "It determines the catering services and hotel accommodations for the hearing witnesses",
-            "It determines the juridical home of the arbitration, establishing which national courts have exclusive supervisory jurisdiction to set aside (annul) the award",
-            "It mandates that the arbitrators must be direct descendants of the country's monarch",
-            "It requires the contract to be translated into Latin before filing"
+            "It determines the language and the number of arbitrators, fixing which national rules the tribunal must use to appoint its members.",
+            "It determines the juridical home of the arbitration, fixing which national courts have exclusive supervisory jurisdiction to set aside the award.",
+            "It determines the place where the hearings must take place, fixing which witnesses can be required to attend the arbitration.",
+            "It determines the substantive law of the contract, fixing which national rules apply to decide the merits of the dispute."
           ],
           "answerIndex": 1,
           "explanation": "The seat establishes the curial law and designates the supervisory courts. Only the courts of the seat possess jurisdiction to entertain an action to annul (set aside) the arbitral award.",
@@ -6448,10 +6448,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Doctrine of Separability established in Prima Paint Corp. and Fiona Trust, how is an arbitration agreement treated when a party claims the main commercial contract was procured by fraud?",
           "options": [
-            "The arbitration clause is treated as an autonomous, independent agreement that survives challenges to the main contract, leaving fraud claims to be decided by the arbitral tribunal",
-            "The entire dispute must be submitted to the United Nations Security Council",
-            "The claimant must pay double the filing fees to the ICC",
-            "The arbitration clause is automatically declared null and void along with the main contract"
+            "The arbitration clause is an autonomous, independent agreement that survives challenges to the main contract, so the tribunal decides fraud claims.",
+            "The arbitration clause falls with the main contract, so a court must first decide whether the contract was procured by fraud.",
+            "The arbitration clause is valid only if the party alleging fraud consents to it again, after it has learned of the facts at issue.",
+            "The arbitration clause survives, but the court rather than the tribunal must hear any fraud claim concerning the main contract."
           ],
           "answerIndex": 0,
           "explanation": "Under the Doctrine of Separability, the arbitration clause is severed from the underlying contract. Unless the claim of fraud goes to the arbitration clause specifically, the arbitrator decides whether the contract was fraudulently induced.",
@@ -6485,10 +6485,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can a domestic court in a New York Convention contracting state refuse to enforce a foreign arbitral award simply because it believes the arbitral tribunal made a serious mistake of substantive contract law?",
           "options": [
-            "Yes, national courts have plenary appellate authority to reverse all arbitral legal errors",
-            "Yes, but only if the award exceeds $100,000,000",
-            "Only if the arbitral hearing lasted longer than six months",
-            "No, the grounds for refusal under Article V of the New York Convention are exclusive and exhaustive, and do not permit review of the substantive legal or factual merits of the award"
+            "Yes; a court may refuse enforcement of the award if it finds a serious error of law that has affected the tribunal's decision.",
+            "Yes; a court may review the merits if the amount of the award exceeds a threshold set by the law of the enforcing state.",
+            "No; but the court may reduce the amount of the award if it believes that the tribunal awarded excessive damages to the winner.",
+            "No; the Article V grounds for refusal are exclusive and exhaustive, and do not allow review of the legal or factual merits of the award."
           ],
           "answerIndex": 3,
           "explanation": "It is a foundational principle of the New York Convention that national enforcement courts are prohibited from reviewing the merits of an arbitral award. Article V specifies the exclusive grounds for refusing enforcement.",
@@ -6522,10 +6522,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an international commercial arbitration seated in London governed by English procedural law, which court has exclusive supervisory jurisdiction to decide an action to set aside (annul) the final award?",
           "options": [
-            "The Singapore International Commercial Court",
-            "The International Court of Justice in The Hague",
-            "The High Court of Justice of England and Wales (English Commercial Court)",
-            "The U.S. District Court for the Southern District of New York"
+            "The Permanent Court of Arbitration in The Hague, Netherlands",
+            "The International Chamber of Commerce court in Paris, France",
+            "The High Court of Justice of England and Wales (Commercial Court)",
+            "The courts of the country where the losing party is domiciled"
           ],
           "answerIndex": 2,
           "explanation": "Under international arbitration law and the New York Convention, only the courts of the juridical seat (here, the English Commercial Court in London) possess jurisdiction to annul an award.",
@@ -6632,10 +6632,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the German Supply Chain Due Diligence Act (LkSG), when is a covered company legally obligated to conduct due diligence regarding an indirect supplier (Tier 2 or Tier 3)?",
           "options": [
-            "As soon as the company obtains 'substantiated knowledge' (tatsächliche Anhaltspunkte) indicating that a violation of a human rights or environmental obligation at an indirect supplier appears possible",
-            "Never; the LkSG applies exclusively to Tier 1 direct contractual partners",
-            "Only after the German Chancellor personally signs an executive decree",
-            "Only if the indirect supplier is located within the European Union"
+            "As soon as the company has 'substantiated knowledge' (tatsächliche Anhaltspunkte) that a violation at an indirect supplier appears possible.",
+            "As soon as the company signs a contract with a direct supplier, which must then check every indirect supplier in the chain before it starts.",
+            "Once a regulator has formally found that an indirect supplier has violated human rights, and has notified the company of the finding.",
+            "Once an indirect supplier accounts for more than 10% of the company's purchasing volume, whether or not any violation seems possible."
           ],
           "answerIndex": 0,
           "explanation": "Under Section 9 of the LkSG, due diligence obligations in relation to indirect suppliers are triggered as soon as the enterprise has substantiated knowledge of a potential violation.",
@@ -6670,10 +6670,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What historic enforcement mechanism distinguishes the EU Corporate Sustainability Due Diligence Directive (CSDDD / CS3D) from traditional supply chain reporting laws?",
           "options": [
-            "It mandates that corporate executives spend 30 days every year working in overseas manufacturing factories",
-            "It introduces direct civil liability under Article 29, allowing victims and representative NGOs to sue multinational corporations in European civil courts for damages caused by due diligence failures",
-            "It makes the United Nations General Assembly the exclusive appellate court for all corporate contract breaches",
-            "It eliminates all European antitrust and competition laws for sustainable corporations"
+            "It creates direct criminal liability for directors under Article 29, with prison terms for executives whose suppliers violate human rights.",
+            "It creates direct civil liability under Article 29, letting victims and NGOs sue multinationals in European courts for due diligence failures.",
+            "It creates a public register of supplier violations, kept by the Commission, and the companies named in it must publish their own reports.",
+            "It creates a monetary fine of up to 1% of turnover, set by national regulators, but gives victims no right to sue for damages in court."
           ],
           "answerIndex": 1,
           "explanation": "Article 29 of the CSDDD creates a statutory civil liability regime holding companies liable in European domestic courts for damages resulting from intentional or negligent failures to comply with due diligence obligations.",
@@ -6707,10 +6707,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can a multinational corporation completely shield itself from statutory liability under the German LkSG and EU CSDDD simply by requiring all suppliers to sign a Supplier Code of Conduct and contractual warranties?",
           "options": [
-            "Yes, signing a contract completely transfers all statutory legal liability to the supplier",
-            "Yes, provided the contract is notarized in Switzerland",
-            "No, contractual clauses alone do not create a safe harbor if the buyer fails to conduct adequate risk analyses, ignores red flags, or fails to verify compliance",
-            "Only if the supplier is a state-owned enterprise"
+            "Yes; a signed code of conduct and contractual warranties are enough, because the law makes suppliers liable for their own violations.",
+            "Yes; a code of conduct gives a full defense, but only if the supplier is located outside the European Union and Germany.",
+            "No; contractual clauses alone give no safe harbor if the buyer fails to analyze risks, ignores red flags or does not verify compliance.",
+            "No; a code of conduct is unlawful, because both laws forbid companies from passing due diligence duties on to suppliers by contract."
           ],
           "answerIndex": 2,
           "explanation": "Both the LkSG and CSDDD explicitly reject formalistic tick-the-box defenses. Contractual assurances must be accompanied by ongoing monitoring, verification, and effective enforcement.",
@@ -6745,10 +6745,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance mechanism used by multinational enterprises to shield themselves from cross-border civil tort liability under CSDDD Article 29?",
           "options": [
-            "Refusing to disclose the names of any suppliers to the public",
-            "Purchasing liability insurance from an unregulated cryptocurrency protocol",
-            "Dissolving the parent corporation and moving all executives to an offshore yacht",
-            "Conducting continuous, verified Human Rights and Environmental Due Diligence, maintaining credible worker grievance hotlines, and immediately implementing effective corrective action plans when abuses are detected"
+            "Moving production to suppliers outside the EU, where the Directive's civil liability rules do not apply to the suppliers' conduct.",
+            "Buying liability insurance for supply chain harms, which transfers civil tort claims from the company to its insurer in every case.",
+            "Publishing an annual sustainability report with the company's targets, which gives a full defense once it has been filed on time.",
+            "Continuous, verified human rights and environmental due diligence, worker grievance hotlines, and prompt corrective action plans."
           ],
           "answerIndex": 3,
           "explanation": "Under Article 29 of the CSDDD, proving that the enterprise took all reasonable, diligent preventative measures and cooperated in remediation serves as an effective defense against allegations of negligence.",
@@ -6816,10 +6816,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the landmark Eleventh Circuit decision in United States v. Esquenazi, how is an 'instrumentality' of a foreign government defined for purposes of classifying individuals as 'foreign officials' under the FCPA?",
           "options": [
-            "Any entity controlled by the foreign government (e.g. through majority ownership) that performs a function the government treats as its own",
-            "Only entities located in countries with which the United States maintains no diplomatic relations",
-            "Only entities that operate military aircraft or naval ships",
-            "Any company with an annual revenue of less than $1,000,000"
+            "Any entity controlled by the foreign government (e.g. through majority ownership) that performs a function the government treats as its own.",
+            "Any company in which a foreign government holds at least 10% of the shares, whether or not it performs a government function.",
+            "Only a department or agency of a foreign government that is established by statute and is funded by the national budget.",
+            "Any company that does business with a foreign government as a contractor, regardless of how the government owns or controls it."
           ],
           "answerIndex": 0,
           "explanation": "Esquenazi established that an entity is an instrumentality of a foreign government if the government controls it and the entity performs a function that the government treats as its own, bringing state-owned enterprises within the FCPA.",
@@ -6854,10 +6854,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Is the Securities and Exchange Commission (SEC) required to prove criminal corrupt intent or financial statement materiality to establish a violation of the FCPA's Books-and-Records provision (15 U.S.C. § 78m(b)(2)(A))?",
           "options": [
-            "Only if the misstatement exceeds 10% of global net income",
-            "Yes, the SEC must prove criminal intent beyond a reasonable doubt in all cases",
-            "Only if the company is incorporated in Delaware",
-            "No, the Books-and-Records provision is a strict liability statute; any failure to accurately and fairly reflect corporate transactions in reasonable detail constitutes an independent civil violation regardless of intent or materiality"
+            "Yes; the SEC must prove corrupt intent to bribe, since a Books-and-Records violation depends on a proven bribe of a foreign official.",
+            "Yes; the SEC must prove the inaccuracy was material to the financial statements, since immaterial errors fall outside the provision.",
+            "No; but the SEC must prove the company knew about the inaccuracy, since negligent record keeping is not enough to violate the provision.",
+            "No; the provision is strict liability, so any failure to record transactions accurately in reasonable detail is a civil violation regardless of intent."
           ],
           "answerIndex": 3,
           "explanation": "The Books-and-Records provision imposes strict civil liability on issuers. The SEC is not required to show corrupt intent or financial materiality to prove a violation.",
@@ -6893,10 +6893,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the sole statutory affirmative defense available to a commercial organization charged with the strict liability corporate offense of failure to prevent bribery under Section 7 of the UK Bribery Act 2010?",
           "options": [
-            "Proving that the CEO did not personally receive any of the bribe money",
-            "Demonstrating that the bribe was paid in foreign currency outside the UK",
-            "Proving that the commercial organization had in place adequate procedures designed to prevent persons associated with it from undertaking such conduct",
-            "Showing that the bribe was less than £500,000"
+            "Proving that the organization had no knowledge of the bribe, since lack of knowledge by senior management is a full defense.",
+            "Proving that the bribe was paid outside the United Kingdom, since the offence covers only bribery that takes place in the UK.",
+            "Proving that the organization had in place adequate procedures designed to prevent persons associated with it from undertaking such conduct.",
+            "Proving that the bribe was a facilitation payment of small value, since such payments are exempt from the corporate offence."
           ],
           "answerIndex": 2,
           "explanation": "Under Section 7(2) of the UKBA, it is a complete defense for the organization to prove that it had in place adequate procedures designed to prevent associated persons from bribing.",
@@ -6931,10 +6931,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the revised Department of Justice (DOJ) Corporate Enforcement and Voluntary Self-Disclosure Policy, what is the presumptive resolution for a company that timely self-discloses misconduct, fully cooperates, and appropriately remediates, in the absence of aggravating circumstances?",
           "options": [
-            "A mandatory criminal guilty plea and immediate liquidation of the company",
-            "A formal Declination of criminal prosecution, requiring only disgorgement of illicit profits with zero criminal fines and no independent monitor",
-            "A five-year suspension of all corporate export licenses",
-            "A mandatory transfer of 51% of corporate equity to the United Nations"
+            "A non-prosecution agreement with a criminal fine reduced by 50% and an independent monitor for a term of three years.",
+            "A formal Declination of prosecution, requiring only disgorgement of illicit profits, with no criminal fines and no independent monitor.",
+            "A deferred prosecution agreement with a fine reduced by 25% and a requirement to plead guilty if the terms are breached.",
+            "A guilty plea by a subsidiary with the fine waived, and an independent monitor to be appointed for the following five years."
           ],
           "answerIndex": 1,
           "explanation": "Under the DOJ Corporate Enforcement Policy, there is a presumption that the DOJ will grant a Declination (no criminal charges or criminal penalties) if the company satisfies the criteria of timely voluntary disclosure, full cooperation, and remediation without aggravating factors.",
@@ -6968,10 +6968,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a corporate anti-corruption settlement under the DOJ Corporate Enforcement Policy, does receiving a full Declination exempt the corporation from paying disgorgement of ill-gotten profits to the SEC or DOJ?",
           "options": [
-            "No, a declination eliminates criminal fines and monitorships, but the corporation must still pay full disgorgement of all net ill-gotten profits resulting from the corrupt transactions",
-            "Only if the company pays an equivalent amount to the United Nations",
-            "Only if the company changes its corporate name",
-            "Yes, a declination forgives all financial penalties and disgorgement completely"
+            "No; a declination removes criminal fines and monitorships, but the corporation must still pay full disgorgement of net ill-gotten profits.",
+            "Yes; a declination removes every payment obligation, so the company keeps its profits and only reforms its compliance program.",
+            "Yes; a declination removes disgorgement to the DOJ, but the SEC may still demand it in a separate civil action against the company.",
+            "No; a declination removes disgorgement, but the corporation must pay a criminal fine equal to double the profits it obtained."
           ],
           "answerIndex": 0,
           "explanation": "Under the DOJ Corporate Enforcement Policy, a Declination does not allow the company to keep the fruits of corruption. The company must pay full disgorgement of all illicit profits.",
@@ -7039,10 +7039,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational effect of the OECD/G20 BEPS 2.0 Pillar Two Global Anti-Base Erosion (GloBE) rules on multinational enterprise groups with annual revenues exceeding €750M?",
           "options": [
-            "It mandates that all corporations move their headquarters to Switzerland",
-            "It requires all corporate profits to be converted into physical gold bars",
-            "It imposes a mandatory 15% global minimum effective tax rate, levying top-up taxes on constituent entities taxed below that threshold",
-            "It eliminates all corporate income taxes worldwide"
+            "It sets a mandatory 25% global minimum corporate tax rate, with refunds to entities taxed above that rate in any jurisdiction.",
+            "It sets a 15% withholding tax on cross-border royalty payments, collected by the country where the licensed intangible is used.",
+            "It sets a mandatory 15% global minimum effective tax rate, with top-up taxes on constituent entities taxed below that rate.",
+            "It sets a 15% tax on digital services revenue, collected by the countries where the users of the services are located."
           ],
           "answerIndex": 2,
           "explanation": "BEPS 2.0 Pillar Two establishes a 15% global minimum tax rate. If an entity's effective tax rate in any jurisdiction is below 15%, the parent jurisdiction levies a top-up tax under the Income Inclusion Rule.",
@@ -7078,10 +7078,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the United Kingdom's City Code on Takeovers and Mergers (Rule 21) differ fundamentally from Delaware corporate law regarding the deployment of poison pills by a target board?",
           "options": [
-            "The UK Takeover Code allows poison pills only if they dilute shares by at least 90%",
-            "Under UK Rule 21, the board is strictly prohibited from taking any frustrating action (including poison pills) without shareholder approval once an offer is imminent, whereas Delaware boards can unilaterally adopt poison pills under the business judgment rule",
-            "Delaware law requires all poison pills to be approved by the Governor of Delaware",
-            "There is no difference; UK and Delaware takeover laws are identical"
+            "Under UK Rule 21 the board may adopt poison pills freely, subject to the business judgment rule; Delaware boards need shareholder approval.",
+            "Under UK Rule 21 the board cannot frustrate an offer, including with pills, without shareholder approval; Delaware boards may adopt pills alone.",
+            "Under UK Rule 21 poison pills are permitted if the Takeover Panel approves them in advance; Delaware boards may not use pills of any kind.",
+            "Under UK Rule 21 the board may frustrate an offer if it consults its advisers; Delaware boards must always obtain a shareholder vote."
           ],
           "answerIndex": 1,
           "explanation": "UK Rule 21 imposes a strict non-frustration rule reserving takeover decisions for shareholders, directly conflicting with Delaware's board-centric model which empowers directors to maintain poison pills.",
@@ -7116,10 +7116,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the OFAC 50 Percent Rule, if an entity is owned 30% by SDN Individual A and 25% by SDN Company B, but the entity itself is NOT listed on the OFAC Specially Designated Nationals (SDN) list, is the entity blocked?",
           "options": [
-            "Yes, because entities owned in the aggregate 50% or more by one or more blocked persons are considered blocked by operation of law",
-            "Only if the entity operates in the commercial maritime shipping industry",
-            "No, because the entity is not individually named on the SDN list",
-            "Only if the entity conducts business inside the District of Columbia"
+            "Yes, because entities owned 50% or more in the aggregate by one or more blocked persons are blocked by operation of law.",
+            "No, because no single blocked person owns 50% or more, and the 50 Percent Rule looks at each owner's stake separately.",
+            "No, because an entity is blocked only if OFAC lists it on the SDN list, whatever the share held by blocked owners.",
+            "Yes, but only if the blocked owners also control the entity's board, since ownership alone is not enough under the rule."
           ],
           "answerIndex": 0,
           "explanation": "Under OFAC's 50 Percent Rule, ownership stakes of multiple blocked persons are aggregated. Since 30% + 25% = 55% (exceeding 50%), the entity is automatically blocked.",
@@ -7154,10 +7154,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Hull Formula recognized in international investment law and Bilateral Investment Treaties, what compensation must a sovereign state provide to lawfully expropriate foreign investor property?",
           "options": [
-            "Promissory notes payable over 100 years at zero percent interest",
-            "A formal diplomatic apology delivered to the United Nations",
-            "Shares in the host state's unprofitable state airline",
-            "Prompt, adequate, and effective compensation representing the full fair market value of the expropriated asset"
+            "Partial compensation set by the host state's courts, reflecting the book value of the asset on the host state's accounts.",
+            "Appropriate compensation set by the host state's law, which may be below market value if public needs require.",
+            "Compensation limited to the investor's original capital contribution, without interest or any share of lost future profits.",
+            "Prompt, adequate and effective compensation representing the full fair market value of the expropriated asset."
           ],
           "answerIndex": 3,
           "explanation": "The Hull Formula mandates that lawful expropriation requires prompt, adequate (fair market value), and effective (freely convertible currency) compensation.",
@@ -7191,10 +7191,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the Chief Legal Officer and Transnational General Counsel in managing multi-jurisdictional legal and regulatory risk for a global enterprise?",
           "options": [
-            "Eliminating all internal compliance documentation to prevent discovery in litigation",
-            "Solely signing vendor nondisclosure agreements and delegating all strategic matters to outside accountants",
-            "Synthesizing corporate governance, cross-border M&A defenses, global tax substance, ESG supply chain liability shields, anti-corruption compliance, and sovereign treaty enforcement into an integrated, proactive balance-sheet protection system",
-            "Advising the board of directors to ignore all foreign legal systems and operate exclusively under local customary law"
+            "Representing the company in all court cases abroad, with the focus on litigation strategy and the cost of outside counsel.",
+            "Drafting the company's contracts in each country, with the focus on standard clauses and templates that all units use.",
+            "Integrating governance, cross-border M&A defenses, tax substance, ESG liability, anti-corruption and treaty enforcement into one system.",
+            "Filing the regulatory returns of each subsidiary, with the focus on deadlines and fees in each of the countries involved."
           ],
           "answerIndex": 2,
           "explanation": "Modern transnational corporate counsel acts as an executive strategic partner, integrating all legal disciplines to protect enterprise value and maintain global regulatory license to operate.",
@@ -7344,10 +7344,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 149(12) of the Companies Act 2013, under what specific statutory circumstances can an independent director be held personally liable for an unlawful act of the company?",
           "options": [
-            "Only for acts occurring with their knowledge attributable through board processes and with their consent, connivance, or where they failed to act diligently",
-            "Strictly and automatically for any financial misstatement or regulatory violation committed by executive management",
-            "Only if they personally signed the annual financial statements alongside the Chief Financial Officer",
-            "Exclusively in cases where the independent director holds more than 5 percent of the equity share capital"
+            "Only for acts done with their knowledge through board processes and with their consent or connivance, or where they failed to act diligently.",
+            "For every unlawful act of the company during their term, because an independent director owes the same liability as an executive director.",
+            "Only for acts of the company that caused a loss of more than 10% of its net worth, and which occurred during their term of office.",
+            "Only for acts they personally carried out as signatories of the document, and never for board decisions taken at a meeting."
           ],
           "answerIndex": 0,
           "why": "Section 149(12) limits independent director liability strictly to acts of omission or commission by a company which occurred with their knowledge, attributable through board processes, and with their consent or connivance, or where they had not acted diligently.",
@@ -7372,10 +7372,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the immediate legal effect if an independent director on the Audit Committee incurs a disqualifying pecuniary relationship under Section 149(6)(c) of the Companies Act 2013?",
           "options": [
-            "The director may continue serving until the next Annual General Meeting, where shareholders can vote to waive the conflict",
-            "The director instantly ceases to be an independent director, and if the committee loses its independent majority, subsequent financial approvals are defectively constituted",
-            "The pecuniary relationship is automatically cured if the director donates the proceeds to the Prime Minister National Relief Fund",
-            "The Ministry of Corporate Affairs automatically issues a retrospective waiver if the company turnover exceeds five hundred crore rupees"
+            "The director remains independent until the next general meeting, which must vote to remove the director before the status is lost.",
+            "The director instantly ceases to be independent, and if the committee loses its independent majority, later approvals are defective.",
+            "The director stays independent but must abstain from audit decisions, and the committee's approvals remain valid with the others.",
+            "The director is automatically disqualified from the board for five years, but the independent status ends only at the end of that period."
           ],
           "answerIndex": 1,
           "why": "Under Section 149(6) read with Section 167(1), incurring a disqualification vacates the director's independent status by operation of law. If their removal leaves the Audit Committee without a majority of independent directors under Section 177, the committee's actions are defectively constituted and legally vulnerable.",
@@ -7485,10 +7485,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 178(5) of the Companies Act 2013, what is the statutory trigger that mandates the constitution of a Stakeholders Relationship Committee?",
           "options": [
-            "A company generating annual gross revenue exceeding five hundred crore rupees from commercial exports",
-            "A company that has issued commercial paper to scheduled commercial banks in excess of twenty-five crore rupees",
-            "A company having more than one thousand shareholders, debenture-holders, deposit-holders, and other security-holders at any time during a financial year",
-            "Any private limited company that has more than fifty individual angel investors on its cap table"
+            "A company with more than five hundred shareholders, debenture-holders, deposit-holders and other security-holders at any time in the year.",
+            "A company with more than ten thousand shareholders, debenture-holders, deposit-holders and other security-holders at the year end.",
+            "A company with more than one thousand shareholders, debenture-holders, deposit-holders and other security-holders at any time in a year.",
+            "A company with a paid-up capital of more than one thousand crore rupees, whatever the number of its security-holders."
           ],
           "answerIndex": 2,
           "why": "Section 178(5) specifies that the Board of Directors of a company which consists of more than one thousand shareholders, debenture-holders, deposit-holders and any other security-holders at any time during a financial year shall constitute a Stakeholders Relationship Committee.",
@@ -7596,10 +7596,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 2(76)(v) of the Companies Act 2013, when does a public company qualify as a related party to another enterprise?",
           "options": [
-            "Only when the enterprise owns more than fifty percent (50%) of the equity voting rights of the public company",
-            "Exclusively if the public company has borrowed money from the enterprise exceeding twenty-five crore rupees",
-            "Whenever both public companies have their corporate headquarters registered in the same commercial state",
-            "When a director or manager of the enterprise is a director and holds along with their relatives more than two percent (2%) of its paid-up share capital"
+            "When a director or manager of the enterprise is a director and holds, with relatives, more than ten percent (10%) of its paid-up share capital.",
+            "When a director or manager of the enterprise is a director and holds, with relatives, more than twenty percent (20%) of its paid-up share capital.",
+            "When a director or manager of the enterprise holds, with relatives, any shares of its paid-up share capital, however small the amount.",
+            "When a director or manager of the enterprise is a director and holds, with relatives, more than two percent (2%) of its paid-up share capital."
           ],
           "answerIndex": 3,
           "why": "Section 2(76)(v) defines a related party as a public company in which a director or manager is a director and holds along with his relatives, more than two percent of its paid-up share capital.",
@@ -7653,10 +7653,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 23(7) of SEBI LODR, which shareholders are legally barred from voting on a resolution approving a material Related Party Transaction?",
           "options": [
-            "Only retail individual shareholders holding less than two lakh rupees in face value of shares",
-            "All entities falling under the definition of related parties, regardless of whether the entity is a party to the particular transaction or not",
-            "Only the specific director who personally signed the commercial procurement contract",
-            "Exclusively foreign portfolio investors and institutional venture capital shareholders"
+            "Only the related parties that are a party to the particular transaction, while other related parties may vote on it.",
+            "All entities falling within the definition of related parties, whether or not the entity is a party to the particular transaction.",
+            "Only the promoters of the company that are a party to the transaction, while other shareholders may vote on the matter.",
+            "Only the directors who are interested in the transaction, while all shareholders of the company may vote on the resolution."
           ],
           "answerIndex": 1,
           "why": "Regulation 23(7) of SEBI LODR establishes that all entities falling under the definition of related parties shall not vote to approve the resolution, irrespective of whether the entity is a party to the particular transaction or not.",
@@ -7767,10 +7767,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 173(3) of the Companies Act 2013 and ICSI SS-1, what is the statutory requirement for transacting urgent business at a board meeting called on shorter notice than seven days?",
           "options": [
-            "The resolution must be unanimously approved by the Ministry of Corporate Affairs before the meeting convenes",
-            "The meeting is automatically valid if the Chairman of the Board deposits a security bond of five lakh rupees with the Registrar",
-            "At least one independent director must be present, or if absent, decisions must be circulated to all directors and ratified in writing by at least one independent director",
-            "Short notice is strictly prohibited under Indian law, and any meeting convened on less than seven days notice is permanently illegal"
+            "At least two thirds of the directors must be present, or if absent, decisions must be ratified by the full board at its next meeting.",
+            "The company secretary must certify the urgency, or if absent, decisions are valid once the chairman has recorded them in the minutes.",
+            "At least one independent director must attend, or if absent, decisions must be circulated and ratified by at least one independent director.",
+            "A majority of the audit committee must be present, or if absent, decisions are valid once the auditors confirm them in writing."
           ],
           "answerIndex": 2,
           "why": "Section 173(3) proviso specifies that a meeting of the Board may be called at shorter notice to transact urgent business subject to the condition that at least one independent director, if any, shall be present at the meeting; in case of absence, decisions shall be circulated to all directors and shall be final only on ratification by at least one independent director.",
@@ -7938,10 +7938,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Milestone 7 corporate governance architecture, what is the primary consequence if an independent director's firm revenue from the company reaches eleven percent (11%)?",
           "options": [
-            "The director may continue serving as long as the executive Managing Director signs a certificate of personal indemnity",
-            "The director is statutorily disqualified under Section 149(6)(e), reducing the valid independent director count and potentially creating a defective board constitution",
-            "The transaction is automatically transferred to the Corporate Social Responsibility committee for charitable absorption",
-            "The company must immediately pay a statutory compounding fee of ten lakh rupees to the Registrar of Companies"
+            "The director stays independent, because the 11% revenue level is below the 20% threshold set by Section 149(6)(e) for such firms.",
+            "The director is disqualified under Section 149(6)(e), reducing the independent director count and possibly leaving the board defective.",
+            "The director must resign from the audit committee only, and remains independent on the board and its other committees.",
+            "The director must disclose the revenue to the shareholders, and remains independent if they approve it by ordinary resolution."
           ],
           "answerIndex": 1,
           "why": "Section 149(6)(e) disqualifies any individual whose professional firm derives 10% or more of its gross turnover from the company. The disqualification vacates the independent seat, reducing the valid count and causing a defective board constitution if the remaining number falls below the Section 149(4) one-third quota.",
@@ -8030,10 +8030,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 3 of the Board Meetings Rules read with Section 174, what is the immediate legal effect if video-conferencing dropouts reduce the number of active disinterested directors below statutory quorum during a vote?",
           "options": [
-            "The meeting loses quorum instantly, proceedings must be paused, and if quorum is not restored, the meeting must be adjourned under Section 174(4)",
-            "The Chairperson may unilaterally cast proxy votes on behalf of all disconnected virtual directors",
-            "The resolution is automatically deemed approved if the company secretary has logged in via telephone audio",
-            "The meeting may proceed uninterrupted provided the disconnected directors ratify the vote on social media within twenty-four hours"
+            "The meeting loses quorum at once, proceedings must pause, and if quorum is not restored the meeting must be adjourned under Section 174(4).",
+            "The meeting continues, because quorum is tested only at the start of the meeting and need not be present during later votes.",
+            "The meeting continues, but the votes taken while quorum is absent are valid if the chairman confirms them at the next meeting.",
+            "The meeting is cancelled, and the agenda must be taken up at a new meeting with fresh notice of not less than twenty-one days."
           ],
           "answerIndex": 0,
           "why": "Quorum must be continuously present throughout the meeting. If virtual disconnections reduce the number of participating directors below the Section 174 statutory quorum, the meeting cannot transact business and must be paused or adjourned under Section 174(4).",
@@ -8061,10 +8061,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of the Milestone 7 Grand Corporate Governance Control Tower?",
           "options": [
-            "To allow executive officers to execute multi-billion-dollar related party loans without board or shareholder authorization",
-            "To synthesize board composition, Audit Committee oversight, Section 198 CSR formulas, RPT minority voting, and SS-1 meeting procedures into an integrated compliance simulator",
-            "To eliminate all independent directors and replace them with executive promoter appointees",
-            "To permanently exempt public companies from filing annual financial statements with the Registrar of Companies"
+            "To rank the governance rules by penalty, and focus the company's secretarial staff on the rules that carry the highest fines.",
+            "To synthesize board composition, Audit Committee oversight, Section 198 CSR, RPT minority voting and SS-1 procedures into one simulator.",
+            "To replace the board's judgment with automated decisions, and so remove directors' personal liability under the Companies Act.",
+            "To file the company's annual returns with the ROC, together with the statutory registers that the Act requires it to keep."
           ],
           "answerIndex": 1,
           "why": "The Milestone 7 Grand Control Tower synthesizes all statutory governance frameworks of the Companies Act 2013 and SEBI LODR into a unified, automated compliance simulator that guarantees complete legal validity across corporate proceedings.",
@@ -8174,10 +8174,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's landmark ruling in Mobilox Innovations v. Kirusa Software, what standard must the corporate debtor satisfy to defeat a Section 9 CIRP petition on grounds of a pre-existing dispute?",
           "options": [
-            "Obtaining a certified decree of contract nullification from the International Court of Arbitration in Paris",
-            "Demonstrating that the operational creditor's net profit margin exceeds fifteen percent of total billable hours",
-            "Demonstrating a plausible dispute documented prior to the Section 8 demand notice that is not spurious, hypothetical, or an asserted dispute of straw",
-            "Proving beyond reasonable doubt that the operational creditor committed criminal breach of trust under the Indian Penal Code"
+            "Proving that the debt is not due, by showing a complete defense that would succeed at a full trial in a civil court.",
+            "Proving that the corporate debtor has paid the debt in full, by filing receipts that were issued after the demand notice.",
+            "Showing a plausible dispute documented before the Section 8 demand notice that is not spurious, hypothetical or a dispute of straw.",
+            "Demonstrating a dispute raised in a reply to the demand notice, even if it is raised for the first time and without any documents."
           ],
           "answerIndex": 2,
           "why": "In Mobilox Innovations, the Supreme Court held that all the Adjudicating Authority must see is whether there is a plausible contention requiring further investigation and that the dispute is not a patently feeble legal argument or an asserted dispute of straw, and that the defense was raised prior to the Section 8 notice.",
@@ -8591,10 +8591,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Insolvency and Bankruptcy Code 2016, how are abstentions by financial creditors treated when calculating whether a resolution has achieved the statutory sixty-six percent voting threshold?",
           "options": [
-            "Abstaining votes are legally counted as affirmative votes in favor of the resolution professional's recommendation",
-            "Abstaining creditors are automatically removed from the denominator and their shares redistributed proportionally",
-            "The sixty-six percent threshold is calculated against total voting shares of the entire CoC, so abstentions function effectively as non-affirmative votes",
-            "Abstaining banks are penalized by having twenty percent of their loan balance forfeited to the state treasury"
+            "The 66% threshold is calculated on the votes cast, so abstentions are left out and do not count for or against the resolution.",
+            "The 66% threshold is calculated on the creditors present, so abstentions count as votes in favor of the resolution.",
+            "The 66% threshold is calculated on the total voting shares of the whole CoC, so abstentions work as non-affirmative votes.",
+            "The 66% threshold is calculated on the secured creditors only, so abstentions by unsecured creditors do not affect the result."
           ],
           "answerIndex": 2,
           "why": "The statutory requirement under the IBC specifies a majority of not less than sixty-six percent of the voting shares of financial creditors of the entire CoC; therefore, abstaining creditors do not contribute to the affirmative threshold, making abstentions effectively function as non-affirmative votes.",
@@ -8892,10 +8892,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's landmark judgments in K. Sashidhar and Essar Steel, what is the statutory standard governing the Adjudicating Authority's power to review the commercial decisions of the Committee of Creditors?",
           "options": [
-            "The commercial wisdom of the CoC is advisory only and must be ratified by a committee of retired High Court judges",
-            "The NCLT possesses unlimited equity jurisdiction to modify haircuts and adjust payout percentages to achieve social justice",
-            "The NCLT must conduct independent commercial feasibility audits on every approved resolution plan",
-            "The commercial wisdom of the Committee of Creditors is supreme and non-justiciable; the NCLT cannot evaluate business viability or debt distribution percentages"
+            "The NCLT may review the CoC's commercial decisions and replace them with its own view if it finds the distribution unfair.",
+            "The NCLT may review the CoC's decisions on viability, but not its distribution of proceeds among the classes of creditors.",
+            "The NCLT must approve the CoC's decisions only if all financial and operational creditors have voted in favor of the plan.",
+            "The commercial wisdom of the CoC is supreme and non-justiciable; the NCLT cannot assess business viability or debt distribution percentages."
           ],
           "answerIndex": 3,
           "why": "In K. Sashidhar and Essar Steel, the Supreme Court definitively settled that the commercial wisdom of the CoC has been given paramount status; there is no scope for the Adjudicating Authority to sit in appeal over the commercial wisdom of the majority of financial creditors.",
@@ -8923,10 +8923,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 53(1)(b) of the Insolvency and Bankruptcy Code 2016, which two classes of debts share equal pari passu ranking in Tier 2 of the liquidation waterfall?",
           "options": [
-            "Workmen's dues for the period of twenty-four months and debts owed to secured creditors who have relinquished security",
-            "Central government income tax dues and debts owed to unsecured commercial banks",
-            "Insolvency resolution process costs and unpaid vendor invoices for raw materials",
-            "Equity shareholder dividend arrears and preference share capital redemption"
+            "Workmen's dues for the 24-month period and debts owed to secured creditors who have relinquished their security.",
+            "Workmen's dues for the 12-month period and debts owed to secured creditors who have enforced their security.",
+            "Government dues for the preceding 2 years and debts owed to unsecured financial creditors of the corporate debtor.",
+            "Operational creditors' dues for the 24-month period and employee dues other than those of workmen, for the same period."
           ],
           "answerIndex": 0,
           "why": "Section 53(1)(b) specifies that workmen's dues for the period of twenty-four months preceding liquidation and debts owed to a secured creditor in the event such secured creditor has relinquished security rank equally pari passu in the second tier.",
@@ -8956,10 +8956,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary overarching constitutional objective of the Insolvency and Bankruptcy Code 2016 as established by the Supreme Court in Swiss Ribbons and Essar Steel?",
           "options": [
-            "Punishing company directors through mandatory lifetime disqualification across all corporate boards",
-            "Resolution and revival of the corporate debtor as a going concern, maximization of asset value, and promotion of entrepreneurship",
-            "Nationalizing indebted industrial assets under federal government manufacturing ministries",
-            "Immediate liquidation of distressed enterprises to maximize immediate cash recovery for public sector banks"
+            "Recovery of debts for lenders as quickly as possible, even if the corporate debtor has to be closed down and its assets sold.",
+            "Resolution and revival of the corporate debtor as a going concern, maximization of asset value and promotion of entrepreneurship.",
+            "Punishment of defaulting promoters and directors through criminal proceedings, with recovery for creditors a secondary goal.",
+            "Protection of the interests of equity shareholders, with maximization of returns for lenders and workmen as a secondary goal."
           ],
           "answerIndex": 1,
           "why": "In Swiss Ribbons and Essar Steel, the Supreme Court unequivocally held that the primary objective of the IBC is the resolution and revival of the corporate debtor as a going concern, maximization of the value of its assets, and promotion of entrepreneurship, with recovery of creditor dues operating as a secondary byproduct.",
@@ -9013,10 +9013,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational defect of the cross-border insolvency mechanism currently codified under Sections 234 and 235 of the Insolvency and Bankruptcy Code 2016?",
           "options": [
-            "It forces the NCLT to conduct all cross-border hearings in the official language of the foreign debtor",
-            "It mandates the automatic liquidation of all foreign subsidiaries within forty-eight hours of NCLT admission",
-            "It relies exclusively on bilateral reciprocal government treaties that do not exist in practice, causing severe delays and asset flight",
-            "It requires foreign creditors to surrender fifty percent of their claims to the Reserve Bank of India"
+            "It relies on the UNCITRAL Model Law, which India adopted with changes that make foreign proceedings unenforceable in practice.",
+            "It relies on the courts of the country of the debtor's incorporation, which refuse to recognize insolvency orders made in India.",
+            "It relies only on bilateral reciprocal government treaties that do not exist in practice, causing delays and asset flight.",
+            "It relies on letters rogatory sent by the NCLT, which foreign courts accept only if the debtor has consented to the process."
           ],
           "answerIndex": 2,
           "why": "Sections 234 and 235 depend upon the Central Government negotiating bilateral reciprocal treaties with foreign nations; because no such treaties have been executed, Indian insolvency professionals have no direct statutory mechanism to access foreign assets.",
@@ -9044,10 +9044,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the UNCITRAL Model Law on Cross-Border Insolvency, what mandatory legal effect automatically occurs upon the domestic court recognizing a foreign proceeding as a 'Foreign Main Proceeding'?",
           "options": [
-            "The automatic transfer of all domestic corporate bank accounts to the foreign central bank",
-            "An immediate statutory stay and moratorium automatically freezing all domestic debt enforcement actions, lawsuits, and asset transfers",
-            "The immediate dismissal of all ongoing domestic tax audits and environmental investigations",
-            "Mandatory conversion of all secured debt into zero-coupon convertible preference shares"
+            "A requirement that the foreign representative post security, which must be done before any stay applies against the creditors.",
+            "An immediate statutory stay and moratorium freezing all domestic debt enforcement actions, lawsuits and asset transfers.",
+            "An order handing the debtor's domestic assets to the foreign representative, who may sell them without any court approval.",
+            "A ban on the debtor's domestic subsidiaries trading, which applies only to those that are placed in insolvency proceedings."
           ],
           "answerIndex": 1,
           "why": "Article 20 of the UNCITRAL Model Law mandates that upon recognition of a foreign proceeding as a foreign main proceeding, commencement or continuation of individual actions or proceedings concerning the debtor's assets, rights, obligations or liabilities is automatically stayed.",
@@ -9074,10 +9074,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the landmark Jet Airways cross-border insolvency case, how did the NCLAT resolve the jurisdictional conflict between the Indian CIRP and the Dutch bankruptcy proceedings?",
           "options": [
-            "By directing the Indian Resolution Professional and the Dutch Trustee to execute a bilateral Cross-Border Insolvency Protocol recognizing India as COMI",
-            "By issuing an anti-suit injunction ordering the arrest of the Dutch Bankruptcy Trustee upon entering Indian airspace",
-            "By ordering the immediate liquidation of all domestic airport slots to satisfy Dutch municipal claims",
-            "By transferring the entire insolvency proceedings to the International Court of Justice in The Hague"
+            "By directing the Indian Resolution Professional and the Dutch Trustee to execute a cross-border insolvency protocol recognizing India as COMI.",
+            "By directing that the Indian CIRP be stayed, and so give the Dutch bankruptcy proceedings full control over the debtor's assets.",
+            "By directing that the assets in India and in the Netherlands be sold separately, with each proceeding paying its own creditors.",
+            "By directing the Dutch Trustee to apply to the NCLT for recognition, which gave the Dutch court the main proceeding status."
           ],
           "answerIndex": 0,
           "why": "In Jet Airways, the NCLAT set aside the NCLT's refusal to cooperate and approved a cross-border protocol between the Indian RP and Dutch Trustee, recognizing India as the Center of Main Interests and establishing a cooperative framework for asset resolution.",
@@ -9105,10 +9105,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Article 2(f) of the UNCITRAL Model Law on Cross-Border Insolvency, what criteria must be satisfied for a debtor to possess an 'Establishment' supporting a Foreign Non-Main Proceeding?",
           "options": [
-            "Employing at least one local citizen as a designated corporate process service agent",
-            "Maintaining a registered post office box address and paying annual corporate franchise taxes",
-            "Holding a minimum of ten thousand dollars in a local commercial banking checking account",
-            "Any place of operations where the debtor carries out a non-transitory economic activity with human means and goods or services"
+            "Any place where the debtor has registered an office, which gives the court jurisdiction whatever activity takes place there.",
+            "Any place where the debtor holds assets or bank accounts, which is enough to show a presence supporting a non-main proceeding.",
+            "Any place of operations where the debtor has carried out a temporary economic activity for a period of at least three months.",
+            "Any place of operations where the debtor carries out a non-transitory economic activity with human means and goods or services."
           ],
           "answerIndex": 3,
           "why": "Article 2(f) strictly defines an establishment as any place of operations where the debtor carries out a non-transitory economic activity with human means and goods or services; a shell entity or mere mailbox address is legally insufficient.",
@@ -9136,10 +9136,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Article 32 of the UNCITRAL Model Law on Cross-Border Insolvency (the Hotchpot Rule), what is the statutory restriction on a creditor who has received partial payment on its claim in a foreign proceeding?",
           "options": [
-            "They are permanently banned from filing any future claims across all United Nations member countries",
-            "They must surrender fifty percent of their foreign recovery to the International Monetary Fund",
-            "They may not receive a payment for the same claim in domestic proceedings until other creditors of the same class receive a proportionate payment",
-            "They are automatically reclassified as equity preference shareholders of the liquidated debtor"
+            "They may not claim in domestic proceedings at all, since any payment abroad cancels the creditor's right to claim at home.",
+            "They may receive a payment in the domestic proceeding first, as the foreign payment is treated as an advance on their claim.",
+            "They may not receive payment on the same claim in domestic proceedings until other creditors of the same class receive a proportionate payment.",
+            "They may claim in domestic proceedings only for the part of the claim that exceeds the foreign payment, with priority over the rest."
           ],
           "answerIndex": 2,
           "why": "Article 32 (the Hotchpot Rule) provides that a creditor who has received part payment in a foreign proceeding cannot receive a dividend in domestic proceedings as long as the payment to other creditors of the same class is proportionately less than the payment the creditor has already received.",
@@ -9193,10 +9193,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In group insolvency jurisprudence, what is the primary economic flaw of subjecting interdependent corporate group entities to isolated, fragmented insolvency proceedings before separate judicial tribunals?",
           "options": [
-            "It automatically dissolves all commercial banking licenses belonging to consortium lenders",
-            "It mandates the immediate criminal prosecution of all subsidiary procurement managers",
-            "It forces the Ministry of Finance to absorb seventy percent of group debt liabilities",
-            "It causes catastrophic enterprise dismemberment because complementary assets such as land, machinery, and intellectual property cannot be resolved as an integrated going concern"
+            "It raises the cost of professional fees, because each tribunal must appoint its own professional and this multiplies the total expense.",
+            "It lets creditors of the stronger entities recover in full, while creditors of the weaker entities recover nothing at all.",
+            "It breaches the principle of limited liability, because separate proceedings make the group's shareholders liable for group debts.",
+            "It causes enterprise dismemberment because complementary assets such as land, machinery and IP cannot be resolved as one going concern."
           ],
           "answerIndex": 3,
           "why": "Fragmented insolvency isolates complementary assets across multiple entities, making it impossible for bidders to acquire the enterprise as a functional going concern and precipitating corporate liquidation.",
@@ -9253,10 +9253,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the landmark ruling SBI v. Videocon Industries Ltd. (2019), what legal consequence was ordered by the NCLT Mumbai Bench upon substantively consolidating thirteen group entities?",
           "options": [
-            "All commercial bank loans were converted into non-voting municipal bonds maturing in fifty years",
-            "A single consolidated Information Memorandum was issued, a unified CoC was formed, and all intra-group debts and mutual cross-guarantees were extinguished",
-            "The promoter family was granted thirty percent perpetual equity in the restructured company",
-            "The corporate debtors were immediately handed over to the Ministry of Heavy Industries for nationalization"
+            "Each of the thirteen entities kept its own CoC and plan, but the NCLT set one timetable for all of the group's resolution processes.",
+            "A single consolidated Information Memorandum was issued, a unified CoC formed, and all intra-group debts and cross-guarantees were extinguished.",
+            "Only the parent entity entered the CIRP, while the twelve subsidiaries were wound up with their assets sold to meet the parent's debts.",
+            "All the intra-group debts were preserved and ranked equally with external debts, and a single CoC was formed for the entire group."
           ],
           "answerIndex": 1,
           "why": "In Videocon, the NCLT ordered substantive consolidation resulting in a unified claims pool, a single consolidated CoC, extinguishment of intra-group liabilities and cross-guarantees, and invitation of a single comprehensive resolution plan.",
@@ -9283,10 +9283,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court and NCLAT rulings in Athena Energy Ventures and Lalit Kumar Jain, what is the governing rule regarding a creditor filing simultaneous insolvency claims against both the principal borrower and corporate guarantors?",
           "options": [
-            "Filing against a corporate guarantor automatically discharges the principal borrower from all contractual liabilities",
-            "A creditor must completely exhaust liquidation of the principal debtor before issuing any demand notice to a guarantor",
-            "Simultaneous proceedings are legally maintainable against both, but the creditor is strictly barred from recovering more than one hundred percent of its actual outstanding debt",
-            "Claims against corporate guarantors are automatically converted into equity shares of the State Bank of India"
+            "Simultaneous proceedings are barred, so the creditor must choose between the principal borrower and the corporate guarantors.",
+            "Simultaneous proceedings are maintainable against both, and the creditor may recover from each in full, up to double its debt.",
+            "Simultaneous proceedings are maintainable against both, but the creditor may not recover more than one hundred percent of its outstanding debt.",
+            "Simultaneous proceedings are maintainable only after the principal borrower's CIRP has ended, with the guarantors proceeded against next."
           ],
           "answerIndex": 2,
           "why": "In Athena Energy, the NCLAT settled that simultaneous CIRP proceedings against principal debtor and corporate guarantors are maintainable, provided the creditor does not recover more than its actual debt.",
@@ -9313,10 +9313,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what circumstance must the Adjudicating Authority refuse an application for substantive consolidation of a subsidiary into an insolvent parent's CIRP?",
           "options": [
-            "Where the subsidiary is owned less than ninety-nine percent by public sector insurance companies",
-            "Where the subsidiary's registered office is located more than one hundred kilometers away from the parent company",
-            "Where the subsidiary manufactures products in a different color scheme from the parent corporation",
-            "Where the subsidiary is independently solvent, maintains segregated books of accounts and separate governance, and did not execute cross-guarantees for parent debt"
+            "Where the subsidiary is wholly owned by the parent, whether or not it is solvent and whether or not its books are kept apart.",
+            "Where the subsidiary is located in a different state from the parent, since the NCLT can consolidate only entities in one state.",
+            "Where the subsidiary has creditors that object, since a single objection by a creditor bars consolidation under the Code.",
+            "Where the subsidiary is independently solvent, keeps separate books and governance, and gave no cross-guarantees for the parent's debt."
           ],
           "answerIndex": 3,
           "why": "Substantive consolidation is denied where a subsidiary maintains genuine separate existence, solvency, and segregated accounts, as consolidating it would unfairly dilute solvent creditors to bail out parent debt.",
@@ -9369,10 +9369,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 54A of the Insolvency and Bankruptcy Code, what corporate and creditor approval thresholds are mandatory before a corporate debtor can file for PIRP?",
           "options": [
-            "A Special Resolution passed by at least seventy-five percent of shareholders and approval from unrelated financial creditors representing at least sixty-six percent in value",
-            "A simple majority of fifty percent of shareholders and approval from ninety percent of operational trade vendors",
-            "Unanimous one hundred percent approval of all employees and the Ministry of Micro, Small and Medium Enterprises",
-            "Approval by thirty-three percent of secured lenders and an executive decree from the local municipal corporation"
+            "A Special Resolution passed by at least 75% of shareholders, and approval from unrelated financial creditors representing at least 66% in value.",
+            "An ordinary resolution passed by a simple majority of shareholders, and approval from unrelated financial creditors of 51% in value.",
+            "A Special Resolution passed by at least 75% of shareholders, and approval from all of the unrelated financial creditors in writing.",
+            "A board resolution passed by two thirds of the directors, and approval from financial creditors representing at least 75% in value."
           ],
           "answerIndex": 0,
           "why": "Section 54A(2) requires a special resolution passed by at least 75% of members/shareholders, and Section 54A(3) mandates prior approval by not less than 66% in value of unrelated financial creditors.",
@@ -9399,10 +9399,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 54H and Section 54J of the IBC, who manages the day-to-day affairs of an MSME corporate debtor during PIRP, and under what condition can this management be ousted?",
           "options": [
-            "A committee of three retired high court judges manages daily factory operations with zero creditor input",
-            "Management is permanently dissolved and assets are transferred to the State Bank of India within forty-eight hours",
-            "The senior-most unsecured operational vendor takes over management automatically on day one",
-            "The incumbent board of directors retains management, but the NCLT can vest management in the RP under Section 54J if the CoC proves fraud or gross mismanagement by a sixty-six percent vote"
+            "The Resolution Professional takes over management at once, and the incumbent board is suspended for the whole duration of the PIRP.",
+            "The Committee of Creditors appoints a new board of directors from its own members, and the old board must hand over management.",
+            "The incumbent board keeps management, and it can be removed only by a special resolution passed by the company's shareholders.",
+            "The incumbent board keeps management, but the NCLT may vest it in the RP under Section 54J if the CoC proves fraud or gross mismanagement."
           ],
           "answerIndex": 3,
           "why": "Section 54H establishes the Debtor-in-Possession model where the board continues managing affairs, but Section 54J provides an emergency circuit breaker to vest management in the RP upon proof of fraud or gross mismanagement with 66% CoC approval.",
@@ -9430,10 +9430,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 54K(4) of the IBC, what is the mandatory statutory consequence if a corporate debtor's Base Resolution Plan proposes an impairment (haircut) to the claims of operational creditors?",
           "options": [
-            "The corporate debtor is automatically subjected to immediate criminal liquidation by the Registrar of Companies",
-            "All operational creditors lose their voting rights and their debts are permanently written off to zero",
-            "The Committee of Creditors is barred from approving the plan directly, and the Resolution Professional must invite public competing resolution plans",
-            "The Central Government steps in to pay eighty percent of the trade debt from the Consolidated Fund of India"
+            "The CoC may approve the plan only if operational creditors give written consent, and the NCLT then approves it without public bids.",
+            "The NCLT must reject the plan, and the corporate debtor is moved to liquidation without any invitation for competing plans.",
+            "The CoC cannot approve the plan directly, and the Resolution Professional must invite public competing resolution plans.",
+            "The CoC may approve the plan by a 75% vote, and operational creditors receive the liquidation value of their claims."
           ],
           "answerIndex": 2,
           "why": "Section 54K(4) unambiguously mandates that if the Base Resolution Plan impairs the claims of operational creditors, the RP must publish an invitation inviting prospective resolution applicants to submit competing plans.",
@@ -9492,10 +9492,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the consequence if the NCLT discovers that a corporate debtor secured an MSME registration fraudulently by concealing that its turnover exceeds two hundred and fifty crore rupees?",
           "options": [
-            "The NCLT rejects or terminates the PIRP under Section 54N, orders conversion to standard CIRP, and imposes penalties under Section 77A",
-            "The NCLT rewards the promoters with an interest-free loan from the Reserve Bank of India",
-            "The operational creditors are forced to become equity shareholders with unlimited liability",
-            "The company is granted five years of immunity from all tax audits and banking inspections"
+            "The NCLT rejects or ends the PIRP under Section 54N, orders conversion to a standard CIRP, and imposes penalties under Section 77A.",
+            "The NCLT lets the PIRP continue, because registration is a matter for the Registrar of MSMEs and not a ground for rejection.",
+            "The NCLT lets the PIRP continue but removes the board, and the RP runs the business with a fine on the promoters only.",
+            "The NCLT orders the corporate debtor into liquidation at once under Section 33, with no option of a standard CIRP."
           ],
           "answerIndex": 0,
           "why": "Fraudulent invocation of PIRP by a non-MSME results in dismissal or termination under Section 54N, conversion to standard CIRP, and potential penal sanctions under Section 77A for false declarations.",
@@ -9550,10 +9550,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 56 of the IBC, what is the base statutory timeframe for concluding a Fast-Track CIRP, and what is the maximum duration of extension permitted?",
           "options": [
-            "Base duration of two hundred and seventy days, extendable by one year by the Registrar of Companies",
-            "Base duration of ninety days, with a single maximum extension of forty-five days subject to a seventy-five percent CoC vote",
-            "Base duration of one hundred and eighty days, with unlimited extensions of sixty days each",
-            "Base duration of thirty days, with zero extensions permitted under any circumstances"
+            "A base duration of one hundred and eighty days, with one extension of at most ninety days subject to a sixty-six percent CoC vote.",
+            "A base duration of ninety days, with one extension of at most forty-five days subject to a seventy-five percent CoC vote.",
+            "A base duration of sixty days, with no extension permitted, since fast-track cases must end within that fixed period.",
+            "A base duration of ninety days, with repeated extensions of forty-five days allowed, each subject to a majority CoC vote."
           ],
           "answerIndex": 1,
           "why": "Section 56(1) establishes a 90-day base completion timeline, and Section 56(3) allows the NCLT to grant a single extension of up to 45 days upon an application approved by 75% of the CoC.",
@@ -9612,10 +9612,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 59(3) of the IBC, if a company initiating voluntary liquidation owes debts to creditors, what creditor approval threshold must be obtained, and within what timeframe?",
           "options": [
-            "A simple majority of fifty percent in number of creditors must approve within thirty days",
-            "No creditor approval is required if the company has bank deposits exceeding five crore rupees",
-            "Creditors representing one hundred percent in value must approve within ninety days",
-            "Creditors representing not less than two-thirds in value of the debt must approve the resolution within seven days of its passage"
+            "Creditors representing not less than one-half in value of the debt must approve the resolution within seven days of its passage.",
+            "Creditors representing not less than two-thirds in value of the debt must approve the resolution within thirty days of its passage.",
+            "Creditors representing not less than three-quarters in number of the creditors must approve it within seven days of its passage.",
+            "Creditors representing not less than two-thirds in value of the debt must approve the resolution within seven days of its passage."
           ],
           "answerIndex": 3,
           "why": "Section 59(3)(c) mandates that creditors representing at least two-thirds (66.67%) in value of the company's debt must approve the liquidation resolution within 7 days of its passage.",
@@ -9643,10 +9643,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 59(7) and Section 59(8) of the IBC, who passes the final order dissolving a corporate debtor in voluntary liquidation, and within what timeframe must this order be filed with the ROC?",
           "options": [
-            "The National Company Law Tribunal passes the dissolution order, and the liquidator must file it with the ROC within fourteen days",
-            "The High Court passes the order, and the board of directors files it with SEBI within six months",
-            "The liquidator passes an internal administrative order with zero tribunal involvement",
-            "The State Police Department issues a certificate of closure filed with the municipal corporation within thirty days"
+            "The NCLT passes the dissolution order, and the liquidator must file it with the ROC within fourteen days.",
+            "The Registrar passes the dissolution order, and the liquidator files it with the NCLT within fourteen days.",
+            "The NCLT passes the dissolution order, and the liquidator must file it with the ROC within sixty days.",
+            "The IBBI passes the dissolution order, and the liquidator files it with the ROC within fourteen days."
           ],
           "answerIndex": 0,
           "why": "Section 59(8) provides that the NCLT passes the dissolution order on an application under Section 59(7), and Section 59(9) mandates filing a copy with the ROC within 14 days.",
@@ -9674,10 +9674,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 59(6) of the IBC, what is the mandatory statutory duty of a liquidator if they discover that the company in voluntary liquidation will not be able to pay its debts in full?",
           "options": [
-            "Borrow emergency funds from commercial banks at fifty percent annual interest rates",
-            "Immediately suspend voluntary liquidation and apply to the NCLT within three days to convert the proceedings into CIRP or compulsory liquidation",
-            "Distribute all remaining cash to shareholders immediately before creditors discover the deficit",
-            "Issue a press release demanding that the Ministry of Corporate Affairs settle the debt"
+            "Continue the voluntary liquidation and pay the creditors pro rata, and then inform the NCLT in the final report of the liquidator.",
+            "Immediately suspend voluntary liquidation and apply to the NCLT within three days to convert the proceedings into CIRP or compulsory liquidation.",
+            "Immediately resign as liquidator and appoint a successor, and then seek the creditors' consent to continue the voluntary liquidation.",
+            "Suspend the voluntary liquidation and apply to the Board within thirty days for permission to continue as a voluntary process."
           ],
           "answerIndex": 1,
           "why": "Section 59(6) mandates that where the liquidator is of the opinion that the company will not be able to pay its debts in full, the liquidator shall immediately apply to the Adjudicating Authority to suspend voluntary liquidation and convert to CIRP or compulsory liquidation.",
@@ -9733,10 +9733,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In cross-border corporate insolvency, what constitutes an 'Anti-Suit Injunction', and why does it create a severe jurisdictional crisis?",
           "options": [
-            "An order issued by the World Health Organization requiring corporate debtors to sanitize factory premises",
-            "A municipal decree requiring corporate directors to wear uniform business attire during NCLT hearings",
-            "A foreign court order restraining a creditor or liquidator from initiating or continuing insolvency proceedings before a domestic tribunal, creating a direct conflict of judicial sovereignty",
-            "An automated banking software lock that converts all outstanding loan balances into foreign currency bonds"
+            "A domestic court order freezing the foreign debtor's bank accounts worldwide pending recognition, which conflicts with the foreign court's own stay.",
+            "A foreign court order recognizing the domestic insolvency proceeding as the main one, which then conflicts with the debtor's right to choose a forum.",
+            "A foreign court order restraining a creditor or liquidator from starting or continuing insolvency proceedings before a domestic tribunal, conflicting with its sovereignty.",
+            "A treaty clause barring creditors from suing a sovereign state in any court, which conflicts with the rights of private investors to claim."
           ],
           "answerIndex": 2,
           "why": "An anti-suit injunction is an order issued by a court in one jurisdiction prohibiting a party from commencing or prosecuting litigation in another forum, creating severe jurisdictional gridlock and sovereignty clashes in insolvency.",
@@ -9764,10 +9764,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the UNCITRAL Model Law and landmark international jurisprudence (Eurofood IFSC and Jet Airways), how is the statutory presumption that a debtor's registered office is its COMI rebutted?",
           "options": [
-            "By paying an administrative processing penalty of twenty lakh rupees to the International Monetary Fund",
-            "By proving through objective, third-party ascertainable factors that the central executive administration, primary physical operations, and banking treasury are located in another state",
-            "By obtaining a character reference letter signed by three foreign ambassadors",
-            "By proving that the debtor's corporate logo uses a color palette associated with another country"
+            "By showing that the debtor's shareholders and directors are citizens of another state, whatever the place from which the business is run.",
+            "By proving through objective, third-party ascertainable factors that central administration, main operations and treasury are located in another state.",
+            "By showing that most of the debtor's creditors are located in another state, whatever the place where its management makes decisions.",
+            "By showing that the debtor's registered office was moved to another state within the last year, without any change in its operations."
           ],
           "answerIndex": 1,
           "why": "The registered office presumption is rebuttable where objective, third-party ascertainable factors—such as location of headquarters, management deliberations, assets, and financing—demonstrate that the central administration is located elsewhere.",
@@ -9796,10 +9796,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the landmark Jet Airways cross-border insolvency precedent (2019), what procedural status was granted to the Dutch Bankruptcy Trustee in the Indian Committee of Creditors under the court-approved protocol?",
           "options": [
-            "Observer status entitled to attend meetings and receive information, without having voting rights",
-            "A permanent sixty-six percent veto power over all resolution plans",
-            "Full voting rights equal to the State Bank of India with double voting weight",
-            "Immediate entitlement to seize all cash balances held in Indian scheduled banks"
+            "Observer status, entitled to attend meetings and receive information, without voting rights.",
+            "Full voting status, with votes in proportion to the Dutch claims, but no right to receive information.",
+            "Resolution Professional status, with power to manage the debtor jointly with the Indian professional.",
+            "Operational creditor status, with a vote limited to trade claims and no right to attend the meetings."
           ],
           "answerIndex": 0,
           "why": "Under the Jet Airways Cross-Border Protocol approved by the NCLAT, the Dutch Trustee was granted observer status to participate in discussions without separate voting rights, avoiding statutory voting distortion.",
@@ -9827,10 +9827,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 32A of the IBC, what protection is conferred upon a corporate debtor and its assets upon the approval of a resolution plan by the NCLT?",
           "options": [
-            "A statutory prohibition preventing commercial banks from ever filing lawsuits against the company",
-            "Exemption from all future corporate income tax liabilities for thirty years",
-            "Automatic conversion of all company directors into public servants with diplomatic immunity",
-            "Complete immunity from prosecution and attachment of assets for offenses committed by previous management prior to the CIRP commencement date"
+            "Immunity from prosecution for previous offenses, but its assets remain open to attachment by the authorities that investigate the offenses.",
+            "Immunity for the corporate debtor and for its former promoters, who are released from all liability for offenses before the CIRP.",
+            "Immunity from civil claims by creditors, but the corporate debtor remains open to criminal prosecution for the earlier offenses.",
+            "Complete immunity from prosecution and attachment of assets for offenses committed by previous management before the CIRP commencement date."
           ],
           "answerIndex": 3,
           "why": "Section 32A establishes the Clean Slate principle, providing that the corporate debtor shall not be prosecuted and its property shall not be attached for offenses committed prior to CIRP, once a resolution plan is approved with clean management.",
@@ -9859,10 +9859,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 9 Capstone Outage scenario, how does the Resolution Professional successfully neutralize foreign anti-suit injunctions and asset seizures to preserve integrated global enterprise value?",
           "options": [
-            "By closing all bank accounts and converting the corporate enterprise into an unregistered charitable trust",
-            "By requesting the United Nations Security Council to dispatch peacekeeping troops to corporate headquarters",
-            "By negotiating a court-approved standstill protocol under the Jet Airways doctrine, securing US Chapter 15 recognition, clawing back siphoned IP, and asserting Section 238 primacy",
-            "By issuing an apology statement to foreign creditors and surrendering all domestic factory equipment"
+            "By ignoring the foreign orders and selling the Indian assets at once, so that creditors in India are paid before the foreign courts can act.",
+            "By asking the Indian Supreme Court to issue a counter-injunction against the foreign creditors, without any dealing with foreign courts.",
+            "By negotiating a court-approved standstill protocol (Jet Airways doctrine), securing Chapter 15 recognition, clawing back siphoned IP and asserting Section 238.",
+            "By settling with the largest foreign creditor alone, in exchange for its withdrawal, so that the remaining creditors lose their standing."
           ],
           "answerIndex": 2,
           "why": "The four-pillar cross-border defense protocol successfully resolves international insolvency gridlock through negotiated comity protocols, US Chapter 15 recognition, clawback of siphoned assets, and assertion of Section 238 statutory primacy.",
@@ -9930,10 +9930,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core jurisprudential concept of 'Modified Universalism' codified in the UNCITRAL Model Law on Cross-Border Insolvency?",
           "options": [
-            "Surrender of national judicial sovereignty to an automated algorithmic artificial intelligence court.",
-            "Enforcement of local criminal statutes against foreign bondholders without legal process.",
-            "Complete territorial fragmentation where every country seizes local assets and bars foreign creditors.",
-            "A single primary insolvency proceeding is conducted in the debtor's Centre of Main Interests (COMI) with worldwide reach, coordinated with local non-main proceedings to protect local creditors."
+            "Each country runs its own separate proceeding over the assets within its borders, with no coordination between the courts involved.",
+            "A single proceeding is run in the country where most creditors are located, which then excludes all other local proceedings.",
+            "A single proceeding is run in the debtor's place of incorporation, which can be reopened in any country by the creditors.",
+            "A single main proceeding is run in the debtor's COMI with worldwide reach, coordinated with local non-main proceedings protecting local creditors."
           ],
           "answer": 3,
           "explanation": "Modified Universalism coordinates a single main proceeding in the debtor's COMI with ancillary local proceedings, ensuring global restructuring while protecting local creditor rights.",
@@ -9969,10 +9969,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the landmark ECJ Eurofood and US Chapter 15 jurisprudence, what is the indispensable legal test required to rebut the registered office presumption for COMI?",
           "options": [
-            "Proof that the central administration of the debtor is conducted in a different jurisdiction in a manner that is readily ascertainable by objective third parties (creditors).",
-            "Proof that the debtor's founder has dual citizenship in both countries.",
-            "Proof that the debtor's server is hosted on a public cloud provider.",
-            "Proof that the corporate logo uses colors from a different national flag."
+            "Proof that the debtor's central administration is conducted elsewhere in a manner readily ascertainable by objective third parties (creditors).",
+            "Proof that the debtor's shareholders have chosen another state as the place of the proceeding in a resolution approved by a majority.",
+            "Proof that the debtor's largest asset is located in another state, whatever the place from which the management directs the business.",
+            "Proof that the debtor's directors secretly meet in another state, even if creditors cannot know where the decisions are really made."
           ],
           "answer": 0,
           "explanation": "COMI requires that the debtor's central administration be conducted in that jurisdiction on a regular basis in a manner that is objectively ascertainable by third-party creditors.",
@@ -10010,10 +10010,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Article 6 of the UNCITRAL Model Law, under what specific threshold may a domestic court refuse to recognize a foreign insolvency proceeding?",
           "options": [
-            "If the foreign judge is younger than the domestic judge.",
-            "Only if the foreign action would be 'manifestly contrary to the public policy' of the enacting sovereign state (such as severe denial of due process).",
-            "Whenever the debtor operates in the technology sector.",
-            "Whenever domestic creditors would recover less than 100% of their claims."
+            "Whenever the foreign proceeding differs from the domestic insolvency law in its priority rules or in the treatment of the creditors.",
+            "Only if the foreign action would be 'manifestly contrary to the public policy' of the enacting state (such as a severe denial of due process).",
+            "Whenever the foreign court's judges were appointed by a government that the enacting state has not recognized as legitimate.",
+            "Whenever the foreign proceeding would be less favorable to domestic creditors than a proceeding started in the enacting state."
           ],
           "answer": 1,
           "explanation": "Article 6 restricts public policy refusals to situations where the foreign proceeding is 'manifestly contrary' to public policy, preventing standard commercial differences from blocking relief.",
@@ -10051,10 +10051,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical legal distinction between the relief granted upon recognition of a Foreign Main Proceeding versus a Foreign Non-Main Proceeding under the Model Law?",
           "options": [
-            "Foreign Main Proceedings liquidate the company, while Non-Main Proceedings pardon all debt.",
-            "Foreign Non-Main Proceedings double the interest rates payable to foreign bondholders.",
-            "Recognition of a Foreign Main Proceeding triggers an immediate, mandatory automatic stay under Article 20, whereas relief for a Foreign Non-Main Proceeding is discretionary under Article 21.",
-            "There is no legal difference; both trigger identical worldwide criminal sanctions."
+            "A Foreign Non-Main Proceeding triggers a mandatory automatic stay under Article 20, whereas relief for a Foreign Main Proceeding is discretionary.",
+            "Both types of proceeding trigger the same automatic stay under Article 20, but a Non-Main Proceeding gets it for a shorter period only.",
+            "A Foreign Main Proceeding gets a mandatory automatic stay under Article 20, whereas a Foreign Non-Main Proceeding gets discretionary Article 21 relief.",
+            "Neither type gives an automatic stay, and both depend on discretionary relief under Article 21 granted after a hearing of creditors."
           ],
           "answer": 2,
           "explanation": "Article 20 confers a mandatory statutory stay only upon recognition of a Foreign Main Proceeding; Foreign Non-Main Proceedings receive only tailored discretionary relief under Article 21.",
@@ -10092,10 +10092,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence when an Indian tribunal (NCLT) determines that India is the debtor's Centre of Main Interests (COMI)?",
           "options": [
-            "All foreign creditors are immediately imprisoned under contempt of court rules.",
-            "The company is automatically nationalized by the central government.",
-            "The debtor's debts are permanently extinguished without repayment.",
-            "The Indian proceeding is recognized globally as the Foreign Main Proceeding, empowering the Indian Resolution Professional to seek worldwide Article 20 stays and coordinate all foreign proceedings."
+            "The Indian proceeding is recognized only as a Foreign Non-Main Proceeding, so the Resolution Professional has discretionary relief only.",
+            "The Indian proceeding takes over all foreign proceedings automatically, so foreign courts must close their cases and transfer assets to India.",
+            "The Indian proceeding is limited to the debtor's Indian assets, and the professional has no standing to act in foreign courts.",
+            "The Indian proceeding is recognized globally as the Foreign Main Proceeding, letting the Resolution Professional seek Article 20 stays worldwide."
           ],
           "answer": 3,
           "explanation": "COMI status establishes the Indian restructuring as the primary Foreign Main Proceeding, authorizing the Resolution Professional to coordinate worldwide restructuring under Modified Universalism.",
@@ -10163,10 +10163,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What distinguishes a Foreign Main Proceeding (FMP) from a Foreign Non-Main Proceeding (FNMP) under the UNCITRAL Model Law?",
           "options": [
-            "FMP requires the debtor's COMI and triggers an automatic stay under Article 20, whereas FNMP requires an establishment and affords only discretionary relief under Article 21",
-            "FMP applies only to domestic creditors while FNMP applies exclusively to international sovereign entities",
-            "FMP provides discretionary relief while FNMP provides an irreversible worldwide criminal injunction",
-            "FMP requires bilateral executive treaty ratification under Section 234 while FNMP is established informally by corporate resolution"
+            "An FMP needs the debtor's COMI and triggers an automatic Article 20 stay; an FNMP needs an establishment and gets discretionary Article 21 relief.",
+            "An FMP needs only an establishment and gets discretionary relief; an FNMP needs COMI and triggers an automatic Article 20 stay.",
+            "An FMP is opened in the debtor's place of incorporation; an FNMP is opened in the country where its largest creditors are located.",
+            "An FMP applies to companies and an FNMP applies to individuals, but both get the same automatic stay under Article 20 of the Law."
           ],
           "answer": 0,
           "explanation": "Under UNCITRAL Model Law Articles 2, 17, and 20, an FMP is seated in the debtor's COMI and automatically triggers a statutory moratorium. An FNMP requires an establishment and only unlocks discretionary relief under Article 21.",
@@ -10255,10 +10255,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the absence of a notified bilateral treaty under IBC Section 234, how did NCLAT enable cross-border cooperation in the Jet Airways case?",
           "options": [
-            "NCLAT compelled the Central Government to execute an emergency bilateral treaty within 24 hours",
-            "NCLAT transferred the entire company and its assets to the United Nations International Court of Justice",
-            "NCLAT exercised its inherent powers under Rule 11 to approve a bespoke Cross-Border Insolvency Protocol with the Dutch bankruptcy trustee",
-            "NCLAT dismissed the Indian CIRP and directed all Indian banks to litigate exclusively in the Netherlands"
+            "NCLAT waited for the Central Government to notify a bilateral treaty under Section 234, and then approved the treaty-based cooperation.",
+            "NCLAT directed the Dutch court to hand over the case to India, applying Section 235 as if it were a treaty with the Netherlands.",
+            "NCLAT exercised inherent powers under Rule 11 to approve a bespoke Cross-Border Insolvency Protocol with the Dutch bankruptcy trustee.",
+            "NCLAT referred the question to the Supreme Court under Article 143, which framed a protocol for the two proceedings to follow."
           ],
           "answer": 2,
           "explanation": "In *State Bank of India v. Jet Airways*, the NCLAT utilized inherent powers under Rule 11 of NCLT Rules, 2016 to approve a cross-border cooperation protocol on principles of international comity.",
@@ -10301,10 +10301,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Hotchpot Rule' under Article 32 of the UNCITRAL Model Law treat a creditor who already received a 30% dividend abroad?",
           "options": [
-            "The creditor is granted priority super-status and receives double the domestic dividend payout rate",
-            "The creditor cannot receive local dividends until other creditors of the same class have received an equivalent 30% dividend locally",
-            "The creditor must refund all foreign recoveries to the domestic court before filing a claim",
-            "The creditor is immediately disqualified and all of its remaining debt is permanently canceled with prejudice"
+            "The creditor receives local dividends in full, because the 30% received abroad is ignored when the local distribution is calculated.",
+            "The creditor can't receive local dividends until other creditors of the same class have received an equivalent 30% dividend locally.",
+            "The creditor receives local dividends only on the remaining 70% of its claim, and ranks ahead of other creditors of the same class.",
+            "The creditor is barred from the local distribution altogether, since a dividend received abroad ends its right to claim locally."
           ],
           "answer": 1,
           "explanation": "Article 32 dictates that a creditor who received partial payment abroad cannot participate in local distributions until peer creditors of the same class receive an equal percentage.",
@@ -10427,10 +10427,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What statutory condition must be satisfied under Article 22 before an insolvency court can entrust domestic assets to a foreign representative under Article 21?",
           "options": [
-            "The foreign representative must transfer complete corporate ownership to the sovereign wealth fund",
-            "The court must be satisfied that the interests of domestic creditors and other interested persons are adequately protected",
-            "All foreign debt obligations must be unconditionally forgiven by international decree",
-            "The domestic court must resign its sovereign jurisdiction and refer the case to the World Bank"
+            "The court must be satisfied that the foreign representative has posted security equal to the value of the domestic assets.",
+            "The court must be satisfied that the interests of domestic creditors and other interested persons are adequately protected.",
+            "The court must be satisfied that the foreign proceeding was opened in the debtor's place of incorporation and not elsewhere.",
+            "The court must be satisfied that all domestic creditors have consented in writing to the transfer of the assets abroad."
           ],
           "answer": 1,
           "explanation": "Article 22(1) mandates that in granting relief under Article 21, the court must be satisfied that the interests of domestic creditors and interested persons are adequately protected.",
@@ -10474,10 +10474,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal function of a 'Norwich Pharmacal' order in cross-border asset recovery?",
           "options": [
-            "It dissolves the corporate debtor and liquidates all assets within 24 hours",
-            "It converts all unsecured foreign debt into non-voting sovereign debt instruments",
-            "It compels an entangled third party (such as a correspondent bank) to disclose information and documents identifying wrongdoers and asset trails",
-            "It automatically sentences delinquent directors to criminal imprisonment without trial"
+            "It freezes a defendant's worldwide assets before judgment, to keep them available to satisfy any later judgment in the case.",
+            "It restrains a creditor from pursuing a claim in a foreign court, if the claim would be vexatious or oppressive to the debtor.",
+            "It compels an entangled third party (such as a correspondent bank) to disclose information identifying wrongdoers and asset trails.",
+            "It lets a court appoint a receiver over the defendant's property abroad, with powers to collect and sell the assets found."
           ],
           "answer": 2,
           "explanation": "Originating in *Norwich Pharmacal v Customs and Excise*, this equitable remedy compels an entangled third party to disclose the identity of wrongdoers and documentary evidence tracing concealed assets.",
@@ -10521,10 +10521,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Against whom does an Anti-Suit Injunction operate when issued by a court managing a cross-border insolvency?",
           "options": [
-            "It commands the foreign judge to appear in person before the domestic court",
-            "It directly binds the foreign sovereign government and strikes down its constitution",
-            "It halts all international commercial shipping across maritime borders",
-            "It operates strictly in personam against the recalcitrant creditor who is subject to the court's personal jurisdiction"
+            "It operates in rem against the foreign court itself, ordering that court to stay its proceedings in the creditor's favor.",
+            "It operates against the foreign court's judges personally, who may be held in contempt for continuing the proceedings.",
+            "It operates against the debtor's assets located abroad, which are frozen wherever they are found by the domestic court.",
+            "It operates in personam against the recalcitrant creditor who is subject to the court's personal jurisdiction."
           ],
           "answer": 3,
           "explanation": "An anti-suit injunction operates in personam against the litigant, restraining them from prosecuting an unconscionable or vexatious foreign proceeding.",
@@ -10568,10 +10568,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what circumstances may an Indian NCLT bench invoke the Article 6 Public Policy exception to refuse foreign recognition?",
           "options": [
-            "Only where the foreign proceeding is manifestly contrary to public policy, such as a severe violation of fundamental procedural due process or sovereign non-discrimination",
-            "Whenever the foreign insolvency law has a slightly different distribution waterfall than Section 53 of the IBC",
-            "Whenever the foreign liquidator is not an Indian citizen",
-            "Whenever domestic unsecured creditors receive a dividend payout lower than 100%"
+            "Only where the foreign proceeding is manifestly contrary to public policy, such as a severe violation of fundamental due process.",
+            "Whenever the foreign proceeding applies a priority waterfall that differs from the one used under the Indian Code and ranks creditors differently.",
+            "Whenever the foreign proceeding was opened by a court that is not a member of the Commonwealth or of a notified reciprocating territory.",
+            "Whenever the foreign representative has not paid the fee set by the NCLT, in which case the bench may dismiss the application."
           ],
           "answer": 0,
           "explanation": "Article 6 requires that the relief be 'manifestly contrary' to public policy, which is narrowly construed to protect core constitutional values, due process, and justice.",
@@ -10620,10 +10620,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What key certification is produced upon successful execution of the Day 48 production simulator?",
           "options": [
-            "OFFSHORE_TAX_EVASION_PASS authorizing undisclosed transfers to tax haven jurisdictions",
-            "CROSS_BORDER_ASSET_RECOVERY_AND_PUBLIC_POLICY_PASS validating offshore clawbacks, anti-suit protections, and Article 22 escrows",
-            "UNCONDITIONAL_LIQUIDATION_PASS mandating immediate distress auction of all corporate subsidiaries",
-            "SOVEREIGN_DEBT_REPUDIATION_PASS canceling all foreign sovereign loan facilities unconditionally"
+            "GLOBAL_CROSS_BORDER_INSOLVENCY_SHIELD_PASS, validating COMI rebuttal, Hotchpot parity and protocol approvals under Rule 11.",
+            "CROSS_BORDER_ASSET_RECOVERY_AND_PUBLIC_POLICY_PASS, validating offshore clawbacks, anti-suit protections and Article 22 escrows.",
+            "ENTERPRISE_GROUP_PROTOCOL_OPTIMIZER_PASS, validating group consolidation, protocol sanctions and intercompany debt elimination.",
+            "SECTION_135_CSR_COMPLIANCE_AND_AUDIT_PASS, validating Section 198 profit calculations, Schedule VII and unspent escrow transfers."
           ],
           "answer": 1,
           "explanation": "The engine validates extraterritorial clawback, anti-suit protection, Article 22 holdbacks, and Article 6 filters, passing CROSS_BORDER_ASSET_RECOVERY_AND_PUBLIC_POLICY_PASS.",
@@ -10694,10 +10694,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What distinguishes 'Procedural Consolidation' from 'Substantive Consolidation' in corporate group insolvency?",
           "options": [
-            "Procedural consolidation requires approval from the United Nations General Assembly",
-            "Procedural consolidation applies only to criminal cases while substantive consolidation applies only to civil debt",
-            "Procedural consolidation coordinates administrative steps while keeping assets/liabilities separate; substantive consolidation pools all assets and liabilities into a single estate",
-            "Procedural consolidation liquidates all foreign subsidiaries while substantive consolidation forgives all corporate debts"
+            "Procedural consolidation pools all assets and liabilities into one estate; substantive consolidation coordinates only the administrative steps.",
+            "Procedural consolidation applies to the parent company alone; substantive consolidation extends the process to every subsidiary.",
+            "Procedural consolidation coordinates administrative steps with assets and liabilities kept separate; substantive consolidation pools them into one estate.",
+            "Procedural consolidation merges the creditors' committees of the group; substantive consolidation merges the boards of the entities."
           ],
           "answer": 2,
           "explanation": "Procedural consolidation coordinates hearings and administration while preserving separate legal entities; substantive consolidation pools assets and liabilities into a single unified estate.",
@@ -10741,10 +10741,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What was the pivotal legal significance of the Cross-Border Insolvency Protocol approved in *SBI v Jet Airways*?",
           "options": [
-            "It compelled all Indian public sector banks to write off 100% of their loans without restructuring",
-            "It was the first cross-border protocol sanctioned under Indian insolvency law, harmonizing the Indian CIRP with the Dutch bankruptcy proceeding",
-            "It resulted in the immediate sale of all Indian national airports to foreign investors",
-            "It abolished the Insolvency and Bankruptcy Code, 2016 in favor of European Union bankruptcy regulations"
+            "It was the first order recognizing a foreign main proceeding in India under the UNCITRAL Model Law, adopted in the Code in 2016.",
+            "It was the first cross-border protocol sanctioned under Indian insolvency law, harmonizing the Indian CIRP with the Dutch bankruptcy proceeding.",
+            "It was the first order in which an Indian tribunal handed control of a debtor's Indian assets to a foreign trustee for distribution.",
+            "It was the first order applying a bilateral treaty under Section 234 between India and the Netherlands to an Indian insolvency."
           ],
           "answer": 1,
           "explanation": "In *Jet Airways*, the NCLAT approved the historic protocol between the Indian RP and Dutch trustee, formally establishing judicial comity protocols in Indian jurisprudence.",
@@ -10788,10 +10788,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which core procedural safeguard is required under the JIN Guidelines when judges of different countries communicate directly?",
           "options": [
-            "Advance written notice must be served on all primary appearing parties, and contemporaneous verbatim records must be maintained",
-            "The communications must remain secret from all creditors and corporate directors permanently",
-            "All foreign judges must be sworn in as honorary domestic judicial officers",
-            "The proceedings must be conducted in Latin without translation"
+            "Advance written notice must be served on all primary appearing parties, and contemporaneous verbatim records must be kept.",
+            "Judges must communicate only through the parties' lawyers, and any exchange must be reported in a summary after the hearing.",
+            "Judges must communicate in private, and only the final order should be shared with the parties on the date it is made.",
+            "Judges must obtain the consent of the Supreme Court of each country, and no record of the communication need be kept."
           ],
           "answer": 0,
           "explanation": "The JIN Guidelines mandate strict transparency: advance notice to parties, contemporaneous verbatim recording, and open court conduct to prevent ex-parte communication.",
@@ -10835,10 +10835,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do Synchronized Joint Hearings preserve national sovereign judicial authority?",
           "options": [
-            "The hearing automatically merges both nations into a single unified sovereign jurisdiction",
-            "The larger country's judge automatically assumes total command and overrules the other judge",
-            "Both judges submit their draft orders to the International Monetary Fund for final binding arbitration",
-            "Each sovereign court hears identical evidence simultaneously via video link but enters its own independent judicial order under domestic law"
+            "The courts hear the evidence together and enter one joint order, which is binding on the parties in each of the countries.",
+            "One court hears the evidence on behalf of both, and the other court adopts its findings as its own without a separate hearing.",
+            "The courts hear evidence separately at different times, and the foreign court's order is enforced by the domestic court.",
+            "Each court hears identical evidence at the same time by video link but enters its own independent order under its domestic law."
           ],
           "answer": 3,
           "explanation": "In synchronized joint hearings, sovereign courts convene simultaneously to hear common evidence, yet each court issues its own domestic order according to its domestic statutes.",
@@ -10888,10 +10888,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What key milestone certification is generated upon running the Day 49 enterprise group simulator?",
           "options": [
-            "GLOBAL_DEBT_REPUDIATION_PASS forgiving all cross-border commercial credit obligations",
-            "INTERNATIONAL_TAX_ARBITRAGE_PASS permitting tax-free asset transfers between offshore jurisdictions",
-            "ENTERPRISE_GROUP_PROTOCOL_OPTIMIZER_PASS validating group consolidation, protocol sanctions, and intercompany debt elimination",
-            "TOTAL_CORPORATE_DISSOLUTION_PASS wiping out all corporate enterprise registrations immediately"
+            "CROSS_BORDER_ASSET_RECOVERY_AND_PUBLIC_POLICY_PASS, validating offshore clawbacks, anti-suit protection and Article 22 escrows.",
+            "GLOBAL_CROSS_BORDER_INSOLVENCY_SHIELD_PASS, validating COMI rebuttal, Hotchpot parity and judicial communication guidelines.",
+            "ENTERPRISE_GROUP_PROTOCOL_OPTIMIZER_PASS, validating group consolidation, protocol sanctions and intercompany debt elimination.",
+            "RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS, validating Section 2(76) mappings, arm's length tests and minority voting."
           ],
           "answer": 2,
           "explanation": "The engine validates group consolidation, protocol execution, intercompany debt netting, and joint hearings, passing ENTERPRISE_GROUP_PROTOCOL_OPTIMIZER_PASS.",
@@ -10963,10 +10963,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary challenge arises when an integrated multinational conglomerate defaults on cross-border syndicated debt?",
           "options": [
-            "Fragmented territorial auctions in multiple countries destroy collective going-concern value and trigger cross-default cascades",
-            "All debt obligations are automatically transferred to the United Nations Security Council",
-            "Foreign creditors are prohibited from filing claims under international criminal law",
-            "The corporate group is immediately converted into a state-owned enterprise without compensation"
+            "Fragmented territorial auctions in several countries destroy collective going-concern value and trigger cross-default cascades.",
+            "A single court takes over every asset worldwide, which prevents lenders in other countries from enforcing their security.",
+            "Syndicate lenders cannot agree on a common claim form, which delays filing until after the limitation periods have expired.",
+            "Local tax authorities seize the group's bank accounts first, which leaves no cash for the syndicated lenders to claim."
           ],
           "answer": 0,
           "explanation": "Without coordinated cross-border insolvency procedures, fragmented territorial auctions destroy going-concern enterprise value.",
@@ -11010,10 +11010,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is the Article 16(3) registered office presumption successfully rebutted under the *Eurofood* doctrine?",
           "options": [
-            "By proving that the company's shares are held exclusively by retail shareholders",
-            "By dissolving the foreign registered office without notice to creditors",
-            "By securing a unilateral executive decree from the Ministry of External Affairs",
-            "By presenting objective evidence ascertainable to third parties that central management and treasury are located in another state"
+            "By presenting a shareholders' resolution that declares another state to be the debtor's center of main interests.",
+            "By presenting evidence that the debtor's registered office has no staff, even if no other place is shown as the center.",
+            "By presenting a statement from the directors that decisions are taken abroad, which creditors cannot check for themselves.",
+            "By presenting objective evidence, ascertainable to third parties, that central management and treasury are located in another state."
           ],
           "answer": 3,
           "explanation": "Under *Eurofood* and *Stanford International Bank*, the presumption is rebutted by objective factors ascertainable to third parties demonstrating that the true seat of administration is elsewhere.",
@@ -11057,10 +11057,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do cross-border discovery orders and JIN protocols protect multinational insolvency estates against asset flight?",
           "options": [
-            "They require all foreign judges to submit to domestic civil service examinations",
-            "They permanently cancel all foreign patents and trade secrets without investigation",
-            "Norwich Pharmacal orders pierce offshore secrecy to claw back fraudulent transfers, while JIN protocols harmonize parallel judicial oversight",
-            "They eliminate the requirement for creditor voting in all jurisdictions"
+            "Anti-suit injunctions freeze every foreign claim against the estate, while JIN protocols let the domestic court decide all disputes alone.",
+            "Standstill agreements bind all creditors worldwide to wait, while JIN protocols give the foreign court exclusive control of assets.",
+            "Norwich Pharmacal orders pierce offshore secrecy to claw back fraudulent transfers, while JIN protocols harmonize parallel judicial oversight.",
+            "Letters of request transfer foreign assets to the estate at once, while JIN protocols allow judges to meet in private chambers."
           ],
           "answer": 2,
           "explanation": "Norwich Pharmacal discovery allows tracing and clawing back offshore assets, while JIN protocols provide judicially sanctioned operational frameworks across sovereign courts.",
@@ -11104,10 +11104,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Article 32 of the UNCITRAL Model Law, how are creditors who received partial recovery abroad treated during local resolution plan distribution?",
           "options": [
-            "They receive double their admitted claims as a reward for prompt international collection",
-            "They are barred from receiving plan dividends until other creditors of the same class receive an equal percentage dividend",
-            "Their claims are transferred to the sovereign government as tax revenue",
-            "They are permanently imprisoned for contempt of court"
+            "They receive plan dividends in full, since the amounts recovered abroad are not counted in the local plan distribution.",
+            "They are barred from receiving plan dividends until other creditors of the same class receive an equal percentage dividend.",
+            "They receive plan dividends on the unpaid balance only, and rank ahead of the other creditors of the same class.",
+            "They are barred from the plan altogether, and their claims are treated as satisfied by the foreign recovery."
           ],
           "answer": 1,
           "explanation": "Article 32 enforces the Hotchpot rule: creditors who recovered abroad cannot participate in domestic distributions until peer creditors attain dividend parity.",
@@ -11165,10 +11165,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What supreme professional legal credential is confirmed upon successfully completing the Milestone 10 Grand Capstone?",
           "options": [
-            "GLOBAL_CROSS_BORDER_INSOLVENCY_SHIELD_PASS validating comprehensive mastery of cross-border corporate insolvency engineering",
-            "SOVEREIGN_DEBT_CANCELLATION_PASS wiping out all corporate debts without repayment",
-            "AUTOMATIC_CORPORATE_DISSOLUTION_PASS terminating corporate registration without restructuring",
-            "UNILATERAL_ASSET_CONFISCATION_PASS allowing seizure of private property without due process"
+            "GLOBAL_CROSS_BORDER_INSOLVENCY_SHIELD_PASS, validating mastery of cross-border corporate insolvency engineering.",
+            "ENTERPRISE_ESG_AND_COMPLIANCE_PASS, validating mastery of enterprise governance and securities compliance.",
+            "ENTERPRISE_GROUP_PROTOCOL_OPTIMIZER_PASS, validating mastery of group insolvency consolidation and protocols.",
+            "CROSS_BORDER_ASSET_RECOVERY_AND_PUBLIC_POLICY_PASS, validating mastery of offshore clawback and public policy."
           ],
           "answer": 0,
           "explanation": "Executing the complete capstone simulator verifies all 6 cross-border checkpoints and certifies GLOBAL_CROSS_BORDER_INSOLVENCY_SHIELD_PASS.",
@@ -11283,10 +11283,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What distinguishes 'BRSR Core' from the broader BRSR disclosure framework under the SEBI Master Circular of July 2023?",
           "options": [
-            "BRSR Core comprises a critical subset of 9 quantifiable KPIs that require mandatory reasonable assurance from an independent third-party assurance provider",
-            "BRSR Core applies exclusively to software startups without physical office locations",
-            "BRSR Core eliminates all environmental reporting requirements in favor of executive tax returns",
-            "BRSR Core allows corporations to self-certify sustainability without presenting documentary evidence"
+            "BRSR Core is a subset of 9 quantifiable KPIs that require mandatory reasonable assurance from an independent third-party provider.",
+            "BRSR Core is a subset of 9 narrative sections that need only a limited review by the company's audit committee.",
+            "BRSR Core is an expanded set of 49 KPIs that require reasonable assurance from the company's statutory auditor alone.",
+            "BRSR Core is a voluntary set of 9 KPIs that only the top 100 listed companies must disclose, with no assurance needed."
           ],
           "answer": 0,
           "explanation": "BRSR Core specifies 9 key ESG performance indicators that require mandatory third-party reasonable assurance.",
@@ -11329,10 +11329,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What statutory liability arises if a listed enterprise publishes false or misleading 'Net Zero' claims in its annual report?",
           "options": [
-            "A modest administrative warning with zero financial penalties or public disclosure",
-            "Prosecution under SEBI PFUTP Regulation 4(2)(k) and criminal fraud liability under Companies Act Sections 447 and 448 with potential imprisonment up to 10 years",
-            "Immediate exemption from corporate income tax for the subsequent financial year",
-            "Automatic transfer of corporate equity shares to the United Nations Development Programme"
+            "A warning letter from SEBI under the LODR rules, and a fine of up to Rs 25 lakh, with no criminal liability for the directors.",
+            "Prosecution under SEBI PFUTP Regulation 4(2)(k) and fraud liability under Companies Act Sections 447 and 448, with up to 10 years' imprisonment.",
+            "A civil claim by shareholders only under Section 245, with damages limited to the fall in share price after the claim is corrected.",
+            "Delisting of the company's shares under the SEBI delisting rules, with no further liability on the company or its officers."
           ],
           "answer": 1,
           "explanation": "Disseminating false sustainability statements is classified as securities fraud under PFUTP and corporate fraud under Companies Act Sections 447/448.",
@@ -11375,10 +11375,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Section 166(2) of the Companies Act, 2013 formally define a director's statutory environmental responsibility?",
           "options": [
-            "A director is legally forbidden from considering environmental issues during boardroom meetings",
-            "A director must allocate 100% of annual company revenues to international carbon credit brokers",
-            "A director is legally mandated to act in good faith to promote company objects, protect employees and community, and act 'for the protection of environment'",
-            "A director is personally exempt from all environmental liabilities if corporate shares are held in demat form"
+            "A director must act only to maximize shareholder returns, and environmental duties apply to the company and not to individual directors.",
+            "A director must file an annual environmental report with the Pollution Control Board, and is liable for any breach of its rules.",
+            "A director must act in good faith to promote the company's objects, protect employees and community, and act 'for the protection of environment'.",
+            "A director must obtain a shareholder vote on any activity with an environmental impact, and is exempt from other duties."
           ],
           "answer": 2,
           "explanation": "Section 166(2) codifies the explicit statutory duty of directors to act for the protection of the environment.",
@@ -11499,10 +11499,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following corporate financial thresholds triggers mandatory CSR compliance under Section 135(1)?",
           "options": [
-            "Only upon receiving a formal directive from the International Monetary Fund",
-            "Only when corporate shares are listed on the New York Stock Exchange",
-            "Net Worth of Rs 500 crore or more, OR Turnover of Rs 1,000 crore or more, OR Net Profit of Rs 5 crore or more in the immediately preceding financial year",
-            "Only when the company employs more than 50,000 full-time software engineers"
+            "Net worth of Rs 100 crore or more, and turnover of Rs 500 crore or more, and net profit of Rs 5 crore or more in the preceding year.",
+            "Net worth of Rs 500 crore or more, or turnover of Rs 1,000 crore or more, or net profit of Rs 50 crore or more in the preceding year.",
+            "Net worth of Rs 500 crore or more, or turnover of Rs 1,000 crore or more, or net profit of Rs 5 crore or more in the preceding year.",
+            "Net worth of Rs 250 crore or more, or turnover of Rs 750 crore or more, or net profit of Rs 25 crore or more in the preceding year."
           ],
           "answer": 2,
           "explanation": "Section 135(1) establishes the disjunctive triple threshold: Net Worth >= Rs 500 Cr, Turnover >= Rs 1,000 Cr, or Net Profit >= Rs 5 Cr.",
@@ -11545,10 +11545,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is 'Net Profit' for calculating the mandatory 2% CSR obligation determined under Section 135(5)?",
           "options": [
-            "It equals the gross revenue of the company before paying any salaries or vendor expenses",
-            "It is calculated in accordance with Section 198 of the Companies Act, strictly excluding overseas branch profits, capital gains, and dividends from other CSR-compliant Indian companies",
-            "It is determined solely by the Chairman's personal discretion without reference to financial books",
-            "It equals the market capitalization of the company on the last day of the fiscal year"
+            "It is calculated from the profit before tax in the audited statement, including overseas branch profits and capital gains.",
+            "It is calculated under Section 198, excluding overseas branch profits, capital gains and dividends from other CSR-compliant Indian companies.",
+            "It is calculated from the average of the last five years' profit, including dividends from all other Indian companies.",
+            "It is calculated from the company's turnover multiplied by the profit margin, excluding domestic capital gains alone."
           ],
           "answer": 1,
           "explanation": "Section 135(5) mandates that net profit be calculated strictly under Section 198, which excludes foreign branch profits, capital gains, and inter-corporate dividends.",
@@ -11590,10 +11590,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following expenditures is statutorily DISQUALIFIED from counting toward a company's mandatory CSR spend under the CSR Rules?",
           "options": [
-            "Activities undertaken in the normal course of business, activities exclusively benefiting employees, political donations, and marketing sponsorships",
-            "Promoting preventive healthcare and sanitation in rural clinics",
-            "Setting up vocational training centers for differently-abled youth",
-            "Contributions to research and development institutions approved by the Central Government"
+            "Activities in the normal course of business, activities benefiting employees exclusively, political donations and marketing sponsorships.",
+            "Contributions to the Prime Minister's National Relief Fund, spending on rural development and spending on promoting sports.",
+            "Contributions to a registered trust set up by the company, spending on skill development and spending on environmental protection.",
+            "Spending on projects outside the company's local area, spending on healthcare for the poor and spending on education."
           ],
           "answer": 0,
           "explanation": "Rule 2(1)(d) strictly excludes normal course of business activities, employee-exclusive benefits, political contributions, and marketing sponsorships from CSR.",
@@ -11636,10 +11636,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory deadline for transferring unspent CSR funds relating to an ONGOING project under Section 135(6)?",
           "options": [
-            "Whenever the Board of Directors decides to declare a final equity dividend",
-            "Within ten years from the date of incorporation of the company",
-            "On the day before the company files for voluntary winding up",
-            "Within 30 days from the end of the financial year into a special 'Unspent CSR Account' in a scheduled bank"
+            "Within 90 days from the end of the financial year, into a special 'Unspent CSR Account' in a scheduled bank.",
+            "Within 30 days from the end of the financial year, into the Prime Minister's National Relief Fund as a donation.",
+            "Within three financial years from the date of the transfer, into a fund specified in Schedule VII of the Act.",
+            "Within 30 days from the end of the financial year, into a special 'Unspent CSR Account' in a scheduled bank."
           ],
           "answer": 3,
           "explanation": "Section 135(6) requires unspent funds pursuant to an ongoing project to be transferred to the Unspent CSR Account within 30 days from the end of the financial year.",
@@ -11688,10 +11688,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What key milestone certification is awarded upon executing the Day 52 production CSR compliance simulator?",
           "options": [
-            "CORPORATE_DIVIDEND_ARBITRAGE_PASS allowing distribution of CSR funds to equity shareholders",
-            "UNCONDITIONAL_PHILANTHROPY_EXEMPTION_PASS permanently removing the company from MCA regulatory oversight",
-            "SECTION_135_CSR_COMPLIANCE_AND_AUDIT_PASS validating Section 198 profit calculations, Schedule VII eligibility, and unspent escrow transfers",
-            "VOLUNTARY_TAX_EVASION_PASS authorizing deduction of private promoter expenses from corporate taxes"
+            "VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS, validating Section 177 vigil mechanisms, anti-retaliation shields and SEBI bounties.",
+            "RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS, validating Section 2(76) mappings, arm's length tests and minority voting limits.",
+            "SECTION_135_CSR_COMPLIANCE_AND_AUDIT_PASS, validating Section 198 profit calculations, Schedule VII eligibility and unspent escrows.",
+            "ENTERPRISE_ESG_AND_COMPLIANCE_PASS, validating BRSR Core assurance, Section 135 spending and Section 188 approvals together."
           ],
           "answer": 2,
           "explanation": "The engine validates Section 198 profit reconciliation, Schedule VII compliance, and escrow funding, issuing SECTION_135_CSR_COMPLIANCE_AND_AUDIT_PASS.",
@@ -11760,10 +11760,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which categories of companies are statutorily required to establish a Vigil Mechanism under Companies Act Section 177(9)?",
           "options": [
-            "Only foreign airlines operating charter flights to India",
-            "Every listed company, companies that accept public deposits, and companies with bank/PFI borrowings exceeding Rs 50 crore",
-            "Only agricultural cooperatives registered under state society laws",
-            "Private startups with fewer than ten employees"
+            "Every private company, every company with a turnover above Rs 100 crore, and every company with a paid-up capital above Rs 10 crore.",
+            "Every listed company, companies that accept public deposits, and companies with bank or PFI borrowings above Rs 50 crore.",
+            "Only listed companies, and no other class of company, since Section 177(9) does not apply to unlisted public companies.",
+            "Every listed company, companies that accept public deposits, and companies with bank borrowings above Rs 5 crore."
           ],
           "answer": 1,
           "explanation": "Section 177(9) read with Rule 7 mandates vigil mechanisms for all listed companies, deposit-accepting companies, and companies with borrowings > Rs 50 crore.",
@@ -11807,10 +11807,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 177(10), what critical statutory safeguard must be guaranteed to an employee filing a protected disclosure?",
           "options": [
-            "Automatic transfer of the company's patent portfolio to the employee",
-            "Exemption from all federal and state tax liabilities",
-            "Adequate safeguards against victimization and direct access to the Chairperson of the Audit Committee in exceptional cases",
-            "Immediate doubling of the employee's salary and lifetime tenure"
+            "Full anonymity from the board and a cash reward of 10% of the amount recovered, with direct access to the managing director.",
+            "A guaranteed transfer to another office of the company, with protection from dismissal for twelve months after the disclosure.",
+            "Adequate safeguards against victimization, and direct access to the Chairperson of the Audit Committee in exceptional cases.",
+            "Legal immunity from any claim for defamation, and an obligation on the company to pay the employee's legal costs in advance."
           ],
           "answer": 2,
           "explanation": "Section 177(10) mandates adequate safeguards against victimization and ensures direct access to the Audit Committee Chairperson.",
@@ -11854,10 +11854,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What maximum monetary reward can an informant receive from SEBI under Chapter IIIA of the SEBI PIT Regulations?",
           "options": [
-            "Zero monetary reward; informants receive only a certificate of appreciation",
-            "A flat reward of exactly Rs 1,000 regardless of the fraud amount",
-            "Fifty percent of the market capitalization of the target company",
-            "Up to 10% of monies disgorged or collected, subject to a statutory maximum ceiling of Rupees 10 crore"
+            "Up to 25% of the monies disgorged or collected, subject to a statutory maximum of Rupees 50 crore.",
+            "Up to 10% of the monies disgorged or collected, subject to a statutory maximum of Rupees 1 crore.",
+            "A fixed reward of Rupees 10 crore for every informant, whatever the amount that SEBI collects from the case.",
+            "Up to 10% of the monies disgorged or collected, subject to a statutory maximum of Rupees 10 crore."
           ],
           "answer": 3,
           "explanation": "Regulation 7D of SEBI PIT establishes an informant reward of up to 10% of monies collected, capped at Rs 10 crore.",
@@ -11900,10 +11900,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do modern corporate compliance systems deploy SHA-256 cryptographic hashing for whistleblower intake?",
           "options": [
-            "To preserve 100% informant anonymity by generating an untraceable tracking token while enabling bi-directional secure communication",
-            "To automatically delete all company emails after 24 hours",
-            "To prevent external regulatory agencies from accessing court orders",
-            "To convert financial statement ledgers into unregulated cryptocurrencies"
+            "To preserve informant anonymity by generating an untraceable tracking token while enabling secure two-way communication.",
+            "To encrypt the report so that only the Audit Committee can read it, which removes the need for any tracking or reply.",
+            "To compress large attachments before upload, which lets informants send long documents without any problem of size.",
+            "To prove the report was made on a given date, which lets informants claim a reward from SEBI at a later time."
           ],
           "answer": 0,
           "explanation": "Cryptographic identity hashing ensures total informant anonymity and shields whistleblowers from internal IT and HR surveillance.",
@@ -11952,10 +11952,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What key milestone certification is awarded upon running the Day 53 production whistleblower simulator?",
           "options": [
-            "CORPORATE_SECRECY_ARBITRAGE_PASS permitting non-disclosure of financial fraud to statutory auditors",
-            "VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS validating Section 177 vigil mechanisms, anti-retaliation shields, and SEBI PIT bounties",
-            "UNCONDITIONAL_EMPLOYMENT_TERMINATION_PASS allowing summary firing of employees without investigation",
-            "CONFIDENTIAL_INSIDER_TRADING_PASS exempting executive directors from securities disclosure rules"
+            "RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS, validating Section 2(76) mappings, arm's length tests and minority voting.",
+            "VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS, validating Section 177 vigil mechanisms, anti-retaliation shields and SEBI PIT bounties.",
+            "SECTION_135_CSR_COMPLIANCE_AND_AUDIT_PASS, validating Section 198 profit calculations, Schedule VII and unspent escrow transfers.",
+            "CROSS_BORDER_ASSET_RECOVERY_AND_PUBLIC_POLICY_PASS, validating offshore clawbacks, anti-suit protection and escrows."
           ],
           "answer": 1,
           "explanation": "The engine validates Section 177 compliance, direct Audit Committee escalation, anti-retaliation injunctions, and SEBI bounties, issuing VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS.",
@@ -12024,10 +12024,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What dual conjunctive criteria must be satisfied for a contract to be statutorily exempt from Section 188 Board and Shareholder approvals?",
           "options": [
-            "The transaction must be entered into in the ordinary course of business AND on an arm's length basis",
-            "The transaction must be approved by the local municipal corporation",
-            "The contract value must be paid entirely in physical gold bars",
-            "The company must have zero outstanding debts to public financial institutions"
+            "The transaction must be in the ordinary course of business and on an arm's length basis.",
+            "The transaction must be in the ordinary course of business or on an arm's length basis.",
+            "The transaction must be below Rs 1 crore and approved by the Audit Committee in advance.",
+            "The transaction must be with a wholly owned subsidiary and approved by the Board in advance."
           ],
           "answer": 0,
           "explanation": "Under the fourth proviso to Section 188(1), transactions entered into in the ordinary course of business on an arm's length basis are exempt from Section 188.",
@@ -12070,10 +12070,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory temporal validity limit of an Omnibus Approval granted by the Audit Committee?",
           "options": [
-            "It expires automatically after twenty-four hours from the date of the meeting",
-            "It is valid until all current directors resign from the board",
-            "It is valid permanently for ninety-nine years without renewal",
-            "It is valid for a period not exceeding one financial year and requires fresh approval after the expiry of the year"
+            "It is valid for a period not exceeding three financial years, and needs fresh approval after that period.",
+            "It is valid for a period not exceeding six months, and needs fresh approval after the half year ends.",
+            "It is valid until the next annual general meeting, and needs fresh approval from the shareholders after it.",
+            "It is valid for a period not exceeding one financial year, and needs fresh approval after the year ends."
           ],
           "answer": 3,
           "explanation": "Rule 6A and SEBI LODR Regulation 23(3)(c) stipulate that omnibus approvals are valid for a maximum period of one financial year.",
@@ -12115,10 +12115,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI LODR Regulation 23(4), how are votes cast by interested promoter entities treated on resolutions approving Material RPTs?",
           "options": [
-            "Promoter votes are counted with a three-fold super-priority weighting",
-            "Promoters cast all votes on behalf of minority shareholders as proxy holders",
-            "All related parties are legally barred from voting on the resolution, and the outcome is decided exclusively by non-related minority shareholders",
-            "The resolution is automatically passed without conducting a shareholder vote"
+            "Only related parties that are party to the transaction are barred from voting, while other promoter entities may vote on it.",
+            "Related parties may vote, but their votes are counted separately and the resolution needs a majority of both groups.",
+            "All related parties are barred from voting on the resolution, and the outcome is decided only by non-related minority shareholders.",
+            "Related parties may vote if the Audit Committee has approved the transaction, and the result is decided by all shareholders."
           ],
           "answer": 2,
           "explanation": "Regulation 23(4) mandates that no related party shall vote to approve a material RPT, empowering non-related minority shareholders to decide the outcome.",
@@ -12162,10 +12162,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What legal consequence occurs under Section 188(3) if an unapproved related party transaction is not ratified within three months?",
           "options": [
-            "The company is immediately dissolved and liquidated by the Central Government",
-            "The contract is voidable at the option of the Board or shareholders, and the authorizing director must personally indemnify the company for any loss",
-            "All company assets are transferred to the Prime Minister National Relief Fund",
-            "The company's equity shares are converted into non-voting preference shares"
+            "The contract is void from the start, and neither the company nor the counterparty can enforce any term of it in court.",
+            "The contract is voidable at the option of the Board or shareholders, and the authorizing director must indemnify the company for loss.",
+            "The contract stays valid, but the authorizing director is fined Rs 1 lakh, and the company has no right to cancel it.",
+            "The contract stays valid, but the counterparty must pay the company a penalty equal to the profit it earned under it."
           ],
           "answer": 1,
           "explanation": "Under Section 188(3), unratified contracts are voidable at the option of the Board, and consenting directors must personally indemnify the company for any loss sustained.",
@@ -12214,10 +12214,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What key milestone certification is awarded upon running the Day 54 production RPT gatekeeper engine?",
           "options": [
-            "RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS validating Section 2(76) mappings, arm's length CUP tests, omnibus limits, and minority voting",
-            "UNCONDITIONAL_PROMOTER_TUNNELING_PASS allowing extraction of corporate cash without shareholder approval",
-            "OFFSHORE_ROUND_TRIPPING_PASS authorizing non-disclosure of foreign vendor contracts",
-            "AUTOMATIC_AUDIT_COMMITTEE_BYPASS_PASS removing independent directors from RPT oversight"
+            "RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS, validating Section 2(76) mappings, arm's length CUP tests and minority voting.",
+            "VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS, validating Section 177 vigil mechanisms, anti-retaliation shields and bounties.",
+            "SECTION_135_CSR_COMPLIANCE_AND_AUDIT_PASS, validating Section 198 profit calculations, Schedule VII and unspent escrow transfers.",
+            "ENTERPRISE_GROUP_PROTOCOL_OPTIMIZER_PASS, validating group consolidation, protocol sanctions and intercompany debt elimination."
           ],
           "answer": 0,
           "explanation": "The engine validates Section 188 compliance, omnibus drawdowns, SEBI materiality thresholds, and minority voting, issuing RPT_SECTION_188_COMPLIANCE_GATEKEEPER_PASS.",
@@ -12289,10 +12289,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What multi-front regulatory exposures confront Zenith Global Conglomerate in the Milestone 11 Capstone?",
           "options": [
-            "Immediate military seizure of all corporate manufacturing facilities",
-            "Mandatory distribution of 100% of corporate turnover to retail shareholders",
-            "Automatic conversion of all corporate debt into international climate bonds",
-            "Concurrent regulatory inquiries across BRSR Core greenwashing, Section 135 promoter CSR grants, and whistleblower RPT fraud"
+            "A single tax assessment on transfer pricing, together with a customs audit and a labor inspection in the same year.",
+            "A hostile takeover bid, a sanctions investigation and an insolvency petition filed by operational creditors.",
+            "An FCPA bribery probe, a competition law cartel inquiry and a data protection breach notice from a regulator.",
+            "Concurrent regulatory inquiries into BRSR Core greenwashing, Section 135 promoter CSR grants and whistleblower RPT fraud."
           ],
           "answer": 3,
           "explanation": "The capstone scenario tests resolution of concurrent inquiries across SEBI BRSR Core, Section 135 CSR, and Section 188 RPTs.",
@@ -12336,10 +12336,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the enterprise eliminate securities fraud liability under SEBI PFUTP Regulation 4(2)(k)?",
           "options": [
-            "By recalculating true Scope 1/2 emissions, purging unverified voluntary carbon offsets, and obtaining third-party reasonable assurance",
-            "By deleting all historical environmental records from company archives",
-            "By paying an informal cash settlement to the stock exchange registrar",
-            "By rebranding all fossil-fuel power plants as solar farms without changing operations"
+            "By recalculating true Scope 1/2 emissions, purging unverified voluntary carbon offsets and obtaining third-party reasonable assurance.",
+            "By withdrawing the annual report and issuing a press release, without any change to the emissions numbers disclosed.",
+            "By buying more voluntary carbon offsets to cover the claim, without any independent verification of the offsets.",
+            "By removing the Net Zero claim from the website only, while the annual report stays as filed with the regulator."
           ],
           "answer": 0,
           "explanation": "SEBI PFUTP liability is purged by recalculating verified emissions, removing unverified offsets, and securing reasonable assurance.",
@@ -12382,10 +12382,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What statutory action is required under Section 135(6) for unspent funds relating to an ongoing CSR project?",
           "options": [
-            "Write off the unspent funds as a bad debt in the profit and loss statement",
-            "Transfer the funds into a dedicated 'Unspent CSR Account' in a scheduled commercial bank within 30 days of fiscal year end",
-            "Distribute the funds as a discretionary bonus to the Board of Directors",
-            "Transfer the funds to an offshore bank account in the Cayman Islands"
+            "Transfer the funds into the Prime Minister's National Relief Fund within 30 days of the fiscal year end as a donation.",
+            "Transfer the funds into a dedicated 'Unspent CSR Account' in a scheduled commercial bank within 30 days of the fiscal year end.",
+            "Carry the funds forward in the company's books for three years, and transfer them to an account only after that period.",
+            "Transfer the funds into a dedicated account in a scheduled commercial bank within 90 days of the fiscal year end."
           ],
           "answer": 1,
           "explanation": "Section 135(6) requires ongoing project funds to be transferred to the Unspent CSR Account within 30 days from fiscal year end.",
@@ -12429,10 +12429,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why was the promoter group holding 58% equity barred from voting on the Rs 1,320 crore equipment contract?",
           "options": [
-            "Because the promoter directors were attending an international conference abroad",
-            "Because promoter equity shares carry zero voting rights under the Companies Act",
-            "Under SEBI LODR Regulation 23(4) and Section 188(1), all related parties are statutorily barred from voting on RPT resolutions",
-            "Because the stock exchange suspended all promoter trading accounts permanently"
+            "Because the promoter group held more than 50% of the equity, and a controlling shareholder cannot vote on any related contract.",
+            "Because the Audit Committee had not approved the contract, and promoters may vote only after that committee has approved it.",
+            "Under SEBI LODR Regulation 23(4) and Section 188(1), all related parties are statutorily barred from voting on RPT resolutions.",
+            "Because the contract exceeded Rs 1,000 crore, and any promoter voting on a contract of that size is a breach of the Takeover Code."
           ],
           "answer": 2,
           "explanation": "Regulation 23(4) mandates that no related party shall vote to approve an RPT, ensuring minority shareholders decide the outcome.",
@@ -12489,10 +12489,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What supreme legal engineering credential is confirmed upon successfully completing the Milestone 11 Grand Capstone?",
           "options": [
-            "UNCONDITIONAL_TAX_EXEMPTION_PASS shielding the company from income tax assessments",
-            "TOTAL_CORPORATE_LIQUIDATION_PASS mandating distress auction of all company assets",
-            "VOLUNTARY_DELISTING_PASS removing the company from Indian stock exchanges",
-            "ENTERPRISE_ESG_AND_COMPLIANCE_PASS certifying comprehensive mastery of enterprise governance and securities compliance"
+            "GLOBAL_CROSS_BORDER_INSOLVENCY_SHIELD_PASS, certifying mastery of cross-border corporate insolvency engineering.",
+            "ENTERPRISE_GROUP_PROTOCOL_OPTIMIZER_PASS, certifying mastery of group insolvency and consolidation protocols.",
+            "VIGIL_MECHANISM_AND_WHISTLEBLOWER_SHIELD_PASS, certifying mastery of whistleblower protection and vigil systems.",
+            "ENTERPRISE_ESG_AND_COMPLIANCE_PASS, certifying mastery of enterprise governance and securities compliance."
           ],
           "answer": 3,
           "explanation": "Running the capstone engine validates all 6 compliance checkpoints and certifies ENTERPRISE_ESG_AND_COMPLIANCE_PASS.",
@@ -12739,10 +12739,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key distinction between being placed on the FATF 'Blacklist' versus the FATF 'Grey List'?",
           "options": [
-            "There is no distinction; both lists impose mandatory trade embargoes enforced by the United Nations Security Council",
-            "The Grey List is strictly confidential and never published, whereas the Blacklist is updated quarterly in the financial press",
-            "Blacklist jurisdictions are subject to global countermeasures and enhanced due diligence; Grey List jurisdictions are subject to increased monitoring under an agreed action plan",
-            "Blacklist status automatically dissolves all domestic corporations in that country; Grey List status only affects commercial aviation"
+            "The Blacklist brings increased monitoring under an action plan; the Grey List brings global countermeasures and enhanced due diligence.",
+            "The Blacklist covers countries with terrorist financing risk only; the Grey List covers countries with money laundering risk only.",
+            "The Blacklist brings global countermeasures and enhanced due diligence; the Grey List brings increased monitoring under an agreed action plan.",
+            "The Blacklist is a voluntary list kept by banks; the Grey List is a mandatory list kept by FATF for its member countries."
           ],
           "answer": 2,
           "explanation": "FATF High-Risk Jurisdictions (Blacklist) face active countermeasures from global states. Jurisdictions under Increased Monitoring (Grey List) have committed to resolving strategic deficiencies and are monitored without external countermeasures.",
@@ -12908,10 +12908,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did India's 2016 Model BIT completely omit the Most-Favored-Nation (MFN) clause?",
           "options": [
-            "Because the World Trade Organization mandated the global elimination of MFN provisions in 2015",
-            "To ensure that only domestic Indian public sector undertakings could access foreign direct investment",
-            "Because MFN clauses are unconstitutional under Article 14 of the Constitution of India",
-            "To prevent foreign investors from 'treaty shopping' and borrowing more favorable substantive clauses from third-party treaties"
+            "To give India more time to negotiate each treaty on its own terms, because the MFN clause forces it to extend rights to all.",
+            "To limit the amount of compensation that investors can claim, because the MFN clause allows for damages above market value.",
+            "To exclude disputes about taxation from arbitration, because the MFN clause makes them open to every investor in India.",
+            "To prevent foreign investors from 'treaty shopping' and borrowing more favorable substantive clauses from third-party treaties."
           ],
           "answer": 3,
           "explanation": "Following the White Industries award where the investor borrowed an 'effective means of asserting claims' clause from the India-Kuwait BIT, India eliminated the MFN clause in its 2016 Model BIT to prevent treaty shopping.",
@@ -12936,10 +12936,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 44 of the Arbitration and Conciliation Act 1996, what is a mandatory prerequisite for an award to be enforced as a 'foreign award' in India?",
           "options": [
-            "The underlying arbitration must have been conducted in either the English or Hindi language",
-            "The amount awarded must not exceed the statutory ceiling of INR 100 Crores",
-            "It must be made in a territory officially notified and gazetted by the Central Government of India as a reciprocating territory",
-            "It must be accompanied by an unconditional clearance letter signed by the Chief Justice of India"
+            "It must be made in a country that is a member of the Commonwealth, whether or not the Central Government has notified it.",
+            "It must be made by an arbitral tribunal that is seated in India and has at least three arbitrators with Indian qualifications.",
+            "It must be made in a territory notified and gazetted by the Central Government of India as a reciprocating territory.",
+            "It must be registered with the High Court in India within 90 days of the date on which the award was made abroad."
           ],
           "answer": 2,
           "explanation": "Section 44 mandates that a foreign award under the New York Convention must arise from a commercial relationship and be made in a reciprocating territory officially gazetted by the Central Government.",
@@ -12966,10 +12966,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an Indian court refuse the enforcement of a foreign arbitral award under Section 48 on the ground of 'patent illegality'?",
           "options": [
-            "No, because foreign arbitral awards are automatically enforced without any judicial examination whatsoever",
-            "No; following Shri Lal Mahal and the 2015 amendments, 'patent illegality' applies only to domestic awards and is statutorily excluded from foreign awards",
-            "Yes; any minor error of Indian statutory law permits the Indian court to set aside the foreign award entirely",
-            "Yes, but only if the foreign award was rendered by an arbitral tribunal of less than five arbitrators"
+            "Yes; the court may refuse enforcement of a foreign award on patent illegality, as it can for a domestic award under Section 34.",
+            "No; after Shri Lal Mahal and the 2015 amendments, 'patent illegality' applies only to domestic awards and is excluded for foreign awards.",
+            "Yes; but only if the illegality goes to the root of the matter and the award is against the fundamental policy of Indian law.",
+            "No; but the court may reduce the amount of the foreign award if it finds the damages were wrongly calculated by the tribunal."
           ],
           "answer": 1,
           "explanation": "Shri Lal Mahal and the 2015 amendments to Section 48 firmly established that patent illegality is not a ground to refuse enforcement of a foreign award. Merits review is explicitly barred by Explanation 2 to Section 48(2)(b).",
@@ -12994,10 +12994,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the restrictive theory of sovereign immunity, which category of foreign sovereign assets can be attached to satisfy an arbitral award?",
           "options": [
-            "Assets used purely for commercial activity, such as commercial airline revenues or commercial cargo vessels",
-            "Diplomatic embassy buildings and consular premises in foreign capitals",
-            "Naval warships and military weapons systems located in international waters",
-            "Foreign central bank foreign exchange reserve vaults held under sovereign custody"
+            "Assets used purely for commercial activity, such as commercial airline revenues or commercial cargo vessels.",
+            "Assets used for diplomatic purposes, such as embassy bank accounts and the property of consular missions.",
+            "Assets used for military purposes, such as warships, aircraft and weapons held by the armed forces.",
+            "Assets held by the central bank of the foreign state, such as its foreign currency reserves and gold."
           ],
           "answer": 0,
           "explanation": "Under the restrictive theory of sovereign immunity, property used for commercial activity (acta jure gestionis) is subject to execution, whereas diplomatic and military properties (acta jure imperii) are protected by absolute immunity.",
@@ -13049,10 +13049,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are unilateral board-level Poison Pills (Shareholder Rights Plans) legally unviable under Indian corporate law?",
           "options": [
-            "Because the Ministry of Corporate Affairs sets a statutory price ceiling of INR 100 on all equity shares",
-            "Because SEBI mandates that target companies must unconditionally accept any tender offer exceeding book value",
-            "Because hostile takeovers are illegal under the Indian Penal Code and cannot be mounted in India",
-            "Because Section 62 of the Companies Act 2013 mandates that any new issue of shares must be offered pro-rata to all existing shareholders unless approved by a 75% special resolution"
+            "Section 62 bars all issues of new shares during a takeover offer, and a board that issues shares commits a criminal offence.",
+            "Section 62 requires the approval of the target's creditors for a rights plan, and the creditors have never approved one.",
+            "Section 62 allows rights plans only for private companies, and listed companies are barred from adopting them at all.",
+            "Section 62 requires any new issue of shares to be offered pro rata to existing shareholders unless a 75% special resolution approves it."
           ],
           "answer": 3,
           "explanation": "In India, directors cannot unilaterally issue dilutive shares to defeat a bidder without shareholder approval. Section 62 mandates preemptive rights to all existing shareholders, precluding US-style poison pills.",
@@ -13164,10 +13164,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 17, how is the mandatory escrow deposit calculated for an open offer consideration of INR 1,040 Crores?",
           "options": [
-            "A flat 10% on the entire INR 1,040 Crores = INR 104 Crores",
-            "50% cash deposit on the entire consideration = INR 520 Crores",
-            "Escrow is optional provided the acquirer has a AAA credit rating from an accredited agency",
-            "25% on the first INR 500 Crores (INR 125 Cr) + 10% on the remaining INR 540 Crores (INR 54 Cr) = INR 179 Crores"
+            "25% on the entire INR 1,040 Cr offer value, with no lower rate on the excess, giving an escrow of INR 260 Crores.",
+            "10% on the entire INR 1,040 Cr offer value, with no higher rate on the first slab, giving an escrow of INR 104 Crores.",
+            "25% on the first INR 500 Cr (INR 125 Cr) + 5% on the remaining INR 540 Cr (INR 27 Cr) = INR 152 Crores.",
+            "25% on the first INR 500 Cr (INR 125 Cr) + 10% on the remaining INR 540 Cr (INR 54 Cr) = INR 179 Crores."
           ],
           "answer": 3,
           "explanation": "Regulation 17 stipulates 25% of the consideration up to INR 500 Crores (125 Cr) and 10% on the excess over INR 500 Crores (54 Cr), giving an exact escrow requirement of INR 179 Crores.",
@@ -13218,10 +13218,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a multi-jurisdictional corporate crisis involving simultaneous hostile raids and sanctions violations, what is the primary role of the General Counsel?",
           "options": [
-            "To immediately file for voluntary liquidation under the IBC to eliminate all outstanding corporate liabilities",
-            "To unconditionally accept the hostile tender offer without independent valuation or board review",
-            "To publicly disclose confidential client trade secrets to depress the target company's share price",
-            "To act as strategic advisor to the Board, synthesizing securities regulation, sanctions compliance, restructuring laws, and cross-border arbitration into a cohesive defense"
+            "To handle the litigation in each country, instructing local counsel and leaving the strategy to the managing director of the group.",
+            "To advise the Board on the sanctions risk only, since the other regulatory matters belong to the finance department to manage.",
+            "To approve the company's public statements before release, while the Board decides the legal strategy on its own account.",
+            "To act as strategic advisor to the Board, combining securities regulation, sanctions, restructuring law and arbitration into one defense."
           ],
           "answer": 3,
           "explanation": "The General Counsel serves as the chief legal strategist, harmonizing complex regulatory regimes (takeover codes, sanctions, restructuring, and arbitral enforcement) to protect corporate integrity and shareholder value.",
@@ -13274,10 +13274,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an 18.5% beneficial ownership interest by a sanctioned entity trigger an immediate transaction block and STR mandate in India?",
           "options": [
-            "Because OFAC regulations automatically replace the Indian Constitution in corporate takeover battles",
-            "Because the PMLA 2023 Amendment Rules set the corporate UBO identification threshold at 10%, triggering mandatory CDD and FIU-IND reporting for high-risk jurisdictions",
-            "Because any foreign investment exceeding 5% in Indian companies requires prior approval from the President of India",
-            "Because the Companies Act prohibits foreign entities from owning any shares in Indian listed companies"
+            "The PMLA 2023 Amendment Rules set the corporate UBO threshold at 25%, so an 18.5% holding is below it and no reporting is needed.",
+            "The PMLA 2023 Amendment Rules set the UBO threshold at 10%, triggering mandatory CDD and FIU-IND reporting for high-risk jurisdictions.",
+            "The PMLA 2023 Amendment Rules apply only to banks, so a corporate shareholding in a listed company is outside their scope.",
+            "The PMLA 2023 Amendment Rules require a block only above 51%, though a holding of 18.5% needs enhanced monitoring."
           ],
           "answer": 1,
           "explanation": "Under the 2023 PMLA Amendment Rules, any beneficial owner holding 10% or more ownership or control must be identified. An 18.5% UBO in a sanctioned/FATF Blacklist nation mandates an immediate STR to FIU-IND and transaction freeze.",
@@ -13301,10 +13301,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an Indian court refuse the enforcement of an $850 Million foreign arbitral award under Section 48 on the ground of 'patent illegality'?",
           "options": [
-            "Enforcement is strictly forbidden if the monetary amount exceeds INR 500 Crores",
-            "Yes; any error in calculating damages allows an Indian court to overturn the arbitral award on the merits",
-            "No; following Shri Lal Mahal and the 2015 amendments, 'patent illegality' is strictly excluded from foreign award review under Part II",
-            "Yes, but only if the award was rendered under the UNCITRAL Arbitration Rules rather than ICC rules"
+            "Yes; Indian courts can refuse enforcement of a foreign award on patent illegality, as they can for domestic awards.",
+            "Yes; but only if the sum is more than $500 million, since the amendment excludes the ground only for smaller awards.",
+            "No; after Shri Lal Mahal and the 2015 amendments, 'patent illegality' is excluded from the review of foreign awards under Part II.",
+            "No; but the court may refuse enforcement on the basis of an error of fact apparent on the face of the foreign award."
           ],
           "answer": 2,
           "explanation": "The Supreme Court in Shri Lal Mahal and the 2015 amendments to Section 48 established that patent illegality applies solely to domestic arbitrations under Section 34, and merits review of foreign awards is strictly prohibited.",

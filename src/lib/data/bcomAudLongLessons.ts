@@ -33,9 +33,9 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Audit Risk Model AR = IR * CR * DR, which component is directly controllable by the auditor?",
           "options": [
             "Detection Risk (DR), because the auditor controls the nature, timing, and extent of their substantive audit procedures.",
-            "Inherent Risk (IR), because the auditor can modify the client's industry business model.",
-            "Control Risk (CR), because the auditor authors the client's internal accounting software.",
-            "None of the components, because audit risk is dictated solely by government tax authorities."
+            "Control Risk (CR), because the auditor decides how strong the client's internal control activities should be designed.",
+            "Inherent Risk (IR), because the auditor can lower it by selecting the nature and timing of audit work performed.",
+            "Audit Risk (AR), because the auditor can set it to zero by performing a large enough number of substantive tests."
           ],
           "answerIndex": 0,
           "explanation": "Inherent Risk and Control Risk are functions of the client and their internal environment. The auditor can only evaluate RMM and adjust their own Detection Risk by increasing sample sizes and conducting deeper testing.",
@@ -92,10 +92,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Monetary Unit Sampling (MUS) widely preferred over classical attribute sampling when auditing accounts receivable balances?",
           "options": [
-            "Because MUS allows auditors to verify accounts without reviewing invoices.",
-            "Because federal banking laws prohibit classical sampling on corporate ledgers.",
-            "Because large dollar accounts have a proportionally higher probability of selection, directing audit testing automatically toward the transactions carrying the greatest financial risk.",
-            "Because MUS eliminates the need to calculate audit materiality."
+            "Because every account receives an equal probability of selection, which removes any bias toward larger balances in the sample drawn.",
+            "Because small balances are selected more often, which gives the auditor better coverage of the numerous low-value receivables.",
+            "Because large dollar accounts have a higher selection probability, directing testing toward items carrying the greatest financial risk.",
+            "Because MUS selects items by their account number order, which lets the auditor test all balances without calculating sample sizes."
           ],
           "answerIndex": 2,
           "explanation": "In MUS, every dollar is a sampling unit. A $100,000 invoice has 100 times the chance of being audited as a $1,000 invoice. This naturally focuses audit scrutiny on high-value items where material misstatements are most likely to occur.",
@@ -122,10 +122,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What distinguishes a \"Material Weakness\" from a \"Significant Deficiency\" under SOX 404 auditing standards?",
           "options": [
-            "A Material Weakness can only be diagnosed by government criminal prosecutors.",
-            "A Material Weakness represents a deficiency where there is a reasonable possibility that a material misstatement will not be prevented or detected, whereas a Significant Deficiency is less severe though still meriting audit committee attention.",
-            "A Significant Deficiency automatically revokes the company's business license.",
-            "There is no distinction; both terms refer to minor clerical errors."
+            "A Material Weakness is a deficiency that was found in the company's controls over fraud, while a Significant Deficiency covers only deficiencies found in controls over routine transactions.",
+            "A Material Weakness means a reasonable possibility that a material misstatement will not be prevented or detected; a Significant Deficiency is less severe but still merits attention.",
+            "A Material Weakness is a deficiency that has already caused an actual material misstatement, while a Significant Deficiency is one that only might cause a misstatement of any size.",
+            "A Material Weakness is reported only to the external auditor's firm partners, while a Significant Deficiency must be reported to the audit committee and the public in the annual filing."
           ],
           "answerIndex": 1,
           "explanation": "Under PCAOB standards, a Material Weakness is the most severe internal control failure: it means the internal controls are sufficiently broken that a material misstatement could slip through undetected into public financial statements.",
@@ -208,10 +208,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Beneish M-Score greater than -1.78 (e.g., -1.45 or +0.30) indicate to a forensic auditor?",
           "options": [
-            "The company has qualified for immediate listing on the New York Stock Exchange.",
-            "(Recommended) The company exhibits a high statistical probability of earnings manipulation and aggressive financial statement distortion.",
-            "The company has zero debt and is immune from financial audits.",
-            "The company is legally entitled to a 50% reduction in federal corporate income taxes."
+            "The company has a low statistical probability of earnings manipulation and its accruals and margins look normal for the industry.",
+            "The company has a high statistical probability of earnings manipulation and aggressive financial statement distortion.",
+            "The company is in financial distress and likely to go bankrupt, whether or not its reported profits have been manipulated.",
+            "The company's cash flows exceed reported profits, which signals conservative accounting and unusually strong earnings quality."
           ],
           "answer": 1,
           "why": "Because the Beneish probit model produces negative scores for clean firms, scores above -1.78 indicate significant probability that reported profits are manipulated through aggressive accruals or distorted margins.",
@@ -238,10 +238,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an Altman Z-Score below 1.81 considered a major red flag in forensic audit examinations?",
           "options": [
-            "It proves that the company has committed money laundering under federal law.",
-            "It automatically revokes the company's commercial banking license.",
-            "(Recommended) It places the company in the Distress Zone with high probability of bankruptcy within 24 months, which significantly increases management incentive to commit accounting fraud.",
-            "It requires the auditor to immediately resign without completing the audit."
+            "It places the company in the Safe Zone with low bankruptcy probability, which removes management's incentive to manipulate reported results.",
+            "It shows the company has already manipulated its earnings, which confirms that fraud exists regardless of its financial position.",
+            "It places the company in the Distress Zone with high bankruptcy probability, which increases management's incentive to commit accounting fraud.",
+            "It places the company in the Grey Zone with an unclear outlook, which means management has the same fraud incentive as healthy firms."
           ],
           "answer": 2,
           "why": "Scores below 1.81 signify acute financial distress, creating intense pressure on executive management to fabricate revenue or conceal liabilities to prevent debt covenant defaults.",
@@ -268,10 +268,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the most definitive technical indicator that an electronic bank statement PDF submitted during an audit was fraudulently altered?",
           "options": [
-            "The bank statement contains account numbers with more than 8 digits.",
-            "The statement was generated on a Tuesday afternoon.",
-            "The document file size is an even number of kilobytes.",
-            "(Recommended) PDF metadata revealing consumer graphic design software (such as Photoshop or Canva) as the creator, mismatched modification timestamps, or patched non-standard font embeddings."
+            "A bank statement PDF with a file size below one megabyte, which indicates that the document was reproduced from a scanned paper copy.",
+            "A statement whose creation date falls on a weekend, which shows that the bank would not have generated the document in its normal cycle.",
+            "A statement produced as a password-protected PDF with disabled printing, which shows that the account holder restricted access to the data.",
+            "PDF metadata showing consumer design software (such as Photoshop or Canva) as the creator, mismatched modification timestamps, or patched font embeddings."
           ],
           "answer": 3,
           "why": "Automated banking systems generate statements via specialized enterprise spoolers; appearance of desktop graphic design software or font patching in metadata provides conclusive proof of tampering.",
@@ -298,10 +298,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is cross-referencing employee residential addresses against Accounts Payable vendor billing records a standard forensic audit procedure?",
           "options": [
-            "(Recommended) To detect fictitious shell vendor schemes and employee kickbacks where an insider creates a fake consulting company using their personal address to embezzle company funds.",
-            "To ensure that all employees receive free holiday gift baskets from authorized corporate vendors.",
-            "To verify that vendors live within a 50-mile radius of corporate headquarters for supply chain efficiency.",
-            "To comply with federal postal regulations regarding corporate mail delivery."
+            "To detect fictitious shell vendor schemes where an insider registers a fake company using a personal address to embezzle company funds.",
+            "To confirm that employees live within the commuting distance policy set by HR, which supports the accuracy of travel reimbursements.",
+            "To find duplicate invoices submitted by genuine suppliers, which arise when two vendors share a mailing address by coincidence.",
+            "To verify that payroll tax withholding was calculated using the correct state of residence, which prevents misstatement of tax expense."
           ],
           "answer": 0,
           "why": "Dishonest employees frequently use their home or residential PO box when registering fake shell vendors; algorithmic address matching detects these hidden conflicts of interest immediately.",
@@ -328,10 +328,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SOX 301 and corporate governance standards, what immediate action is required when a credible whistleblower tip alleges multimillion-dollar accounting fraud by the Chief Financial Officer?",
           "options": [
-            "The tip must be forwarded to the CFO to draft a public rebuttal before the Board is notified.",
-            "(Recommended) The Audit Committee must be immediately notified and an independent investigation launched using outside forensic legal counsel, bypassing management to prevent cover-ups.",
-            "The company must terminate the employee who submitted the anonymous report.",
-            "The allegation must be held confidential until the annual shareholder meeting 9 months later."
+            "The CFO must be asked to investigate and report back, since the finance function holds the records and best understands the transactions.",
+            "The Audit Committee must be notified immediately and an independent investigation launched using outside forensic counsel, bypassing management.",
+            "The external auditor must wait until the next quarterly review to disclose the tip, so that the investigation does not disrupt filings.",
+            "The company's internal audit department reporting to the CFO must lead the inquiry, with results given to the Board only if fraud is proven."
           ],
           "answer": 1,
           "why": "When senior executives are implicated in material accounting fraud, internal management cannot investigate itself; the Board's Audit Committee must oversee an independent inquiry led by external forensic counsel.",
@@ -401,10 +401,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 240 and PCAOB AS 2401, why is manual journal entry testing mandatory even when an auditor tests routine internal controls over daily operational transactions?",
           "options": [
-            "Because journal entry testing eliminates the need to verify cash bank balances.",
-            "Because manual journal entries are automatically deleted from server databases every 90 days.",
-            "Because management is uniquely positioned to override internal accounting controls and record fraudulent manual adjustments directly in the general ledger.",
-            "Because external auditors are legally required to balance the corporate checkbook."
+            "Because routine transaction controls are never tested by auditors, so journal entries are the only place where evidence can be collected.",
+            "Because journal entries are posted automatically by the system, so only manual entries can be traced to a specific preparer.",
+            "Because management is uniquely positioned to override internal controls and record fraudulent manual adjustments directly in the general ledger.",
+            "Because most misstatements originate from clerical keying errors in daily transactions, which controls testing is unable to detect."
           ],
           "answer": 2,
           "why": "Management override of controls is an inherent risk in financial reporting; senior executives can circumvent established controls by posting manual post-closing journal entries directly into the ledger.",
@@ -448,10 +448,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do forensic data auditors rely on the Median Absolute Deviation (MAD) Modified Z-score rather than traditional Mean and Standard Deviation when testing financial ledgers for fraud?",
           "options": [
-            "Because standard deviation can only be computed for companies in the manufacturing sector.",
-            "Because the mean and standard deviation are heavily distorted by the very fraudulent outliers the auditor seeks to detect, creating a masking effect.",
-            "Because calculating the arithmetic mean is prohibited under modern auditing standards.",
-            "Because the MAD formula automatically decrypts password-protected corporate PDF files."
+            "Because the median and MAD require a normal distribution, which ledger amounts follow more closely than they follow skewed distributions.",
+            "Because the mean and standard deviation are distorted by the very fraudulent outliers being sought, which creates a masking effect.",
+            "Because the mean and standard deviation require a larger sample than the number of entries found in a typical general ledger.",
+            "Because MAD flags every entry above the average, which ensures that no unusual transaction escapes detection by the auditor."
           ],
           "answer": 1,
           "why": "Extreme fraudulent numbers inflate the sample mean and standard deviation, causing other fraudulent entries to look normal (masking). The median and MAD are robust non-parametric metrics with high breakdown points.",
@@ -495,10 +495,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In statutory group audits, what does a persistent, material unreconciled variance between an intercompany receivable and its corresponding payable indicate?",
           "options": [
-            "Either an accounting breakdown in multi-currency settlement or a potential fraudulent scheme where one entity booked unilateral revenue that the other party never incurred.",
-            "That the corporate group has achieved full compliance with OECD Pillar Two minimum tax standards.",
-            "That the central bank has issued a corporate stimulus bond.",
-            "That the auditor should issue an immediate unqualified clean opinion."
+            "Either an accounting breakdown in multi-currency settlement or a fraudulent scheme where one entity booked revenue the other party never incurred.",
+            "A normal timing difference between group entities, which clears automatically on consolidation and needs no further audit follow-up.",
+            "A sign that the group has applied transfer pricing correctly, since mismatched balances show that prices follow arm's length terms.",
+            "Evidence of an unrecorded liability in the parent company only, which must be reported by the subsidiary auditors as a modified opinion."
           ],
           "answer": 0,
           "why": "Intercompany balances must eliminate to exactly zero upon consolidation. A material unreconciled difference signifies either accounting system failures or fictitious one-sided transactions booked to artificially inflate revenues.",
@@ -542,10 +542,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the US Foreign Corrupt Practices Act (FCPA), which payment arrangement represents the most severe red flag that an overseas commercial consultant is acting as a conduit for foreign bribery?",
           "options": [
-            "The consultant invoices the company in Euros rather than US Dollars.",
-            "The consultant delivers reports formatted in markdown rather than PDF.",
-            "The consultant is incorporated as a limited liability partnership.",
-            "A high commission rate (>15%) paired with a request to wire fees to an offshore bank account in a tax haven, where the consultant has ties to government officials."
+            "A low flat fee paid in local currency to a domestic bank account, where the consultant has a long record of working with private companies.",
+            "A request to be paid after the contract is signed through a written agreement, where the consultant has provided references from past clients.",
+            "A fee based on hours worked and supported by timesheets, where the consultant is registered in the country with a published tax number.",
+            "A high commission rate (above 15%) paired with a request to wire fees to an offshore tax haven account, where the consultant has ties to government officials."
           ],
           "answer": 3,
           "why": "Offshore wire transfers, excessive success commissions, and political affiliations are classic FCPA red flags cited in DOJ/SEC corporate bribery enforcement actions.",
@@ -589,10 +589,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate forensic fraud examination, what is the most definitive investigative technique to identify self-dealing and kickback schemes between procurement employees and shell vendors?",
           "options": [
-            "Verifying that all purchasing managers have completed corporate compliance slide decks.",
-            "Inspecting vendor business cards for official corporate logos.",
-            "Executing automated collision graph analysis matching employee residential addresses and personal bank account numbers against vendor master records.",
-            "Asking vendors to sign an annual voluntary ethics questionnaire."
+            "Comparing vendor invoice totals with the approved purchase budget, to find purchases that exceed what each department was allowed to spend.",
+            "Sending confirmation letters to a random sample of vendors, to check that the balances owed match the accounts payable ledger.",
+            "Running automated entity matching of employee residential addresses and personal bank accounts against vendor master records.",
+            "Reviewing the purchasing policy manual for approval limits, to confirm that each buyer's authority matches the published thresholds."
           ],
           "answer": 2,
           "why": "Automated entity collision analysis matches immutable data points (bank account numbers, physical addresses, phone numbers) across employee and vendor masters, exposing illicit self-dealing connections.",
@@ -662,10 +662,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Federal Rules of Evidence Rule 902(14) and NIST SP 800-86, why is an identical SHA-256 cryptographic hash match required between the physical source drive and the forensic disk image?",
           "options": [
-            "It automatically decrypts corporate email passwords stored on the computer.",
-            "It reduces the file size of the disk image by 90% for cloud storage upload.",
-            "It serves as an automated digital signature from the presiding federal bankruptcy judge.",
-            "It mathematically proves that not a single bit of digital data was modified during acquisition, establishing a tamper-proof chain of custody."
+            "It proves that the source drive has no hidden partitions, so all relevant files were captured.",
+            "It proves that the files in the image were created by the suspect, which establishes authorship of every document in it.",
+            "It proves that the image was compressed without data loss, which removes the need to keep the original drive for the court.",
+            "It proves that no bit of data was altered during acquisition, which supports a tamper-proof chain of custody."
           ],
           "answer": 3,
           "why": "A matching cryptographic hash between source drive and forensic image proves the copy is an exact, bit-for-bit duplicate, ensuring evidence admissibility in court.",
@@ -709,10 +709,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Electronic Discovery Reference Model (EDRM) processing phase, what is the primary purpose of \"De-NISTing\" a raw collection of seized digital files?",
           "options": [
-            "Filtering out millions of known operating system files and software binaries using the NIST National Software Reference Library hash list.",
-            "Converting all corporate spreadsheets into physical paper printouts for courtroom display.",
-            "Erasing all emails that contain negative comments about company executives.",
-            "Permanently encrypting corporate financial databases before handing them to auditors."
+            "Filtering out millions of known operating system and software files by matching them to the NIST National Software Reference Library hash list.",
+            "Removing duplicate copies of the same email and attachment by comparing custodians' hash values within the review database.",
+            "Removing duplicate copies of the same email and attachment by comparing hash values across custodians' files in the review database.",
+            "Redacting privileged attorney-client documents from the collection by matching them to a NIST list of protected law firm names."
           ],
           "answer": 0,
           "why": "De-NISTing cross-references collected files against NIST's NSRL hash list to eliminate standard system files (DLLs, EXE files) that contain no user data, drastically reducing legal review volume.",
@@ -756,10 +756,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Order of Volatility in RFC 3227 and digital forensic standards, why must volatile physical RAM be acquired before powering down a computer seized in a fraud investigation?",
           "options": [
-            "Because federal law mandates that corporate servers run 24 hours a day without maintenance.",
-            "Because shutting down the power cuts electrical current to RAM chips, permanently erasing all active encryption keys, network connections, and uncommitted memory buffers.",
-            "Because pulling the power plug automatically re-formats the physical solid-state drive.",
-            "Because computer monitors cannot display forensic reports without uninterrupted power."
+            "Because RAM is rewritten to the hard drive on shutdown, which would overwrite deleted files that investigators wish to recover.",
+            "Because cutting power erases RAM, permanently destroying active encryption keys, network connections, and uncommitted memory buffers.",
+            "Because RAM holds the system's permanent audit logs, and these logs are cleared whenever the machine is rebooted by an authorised user.",
+            "Because the order of volatility ranks RAM as the most stable source, so it must be copied first before less stable disk data is touched."
           ],
           "answer": 1,
           "why": "RAM is volatile memory; cutting power immediately purges all transient data, destroying running processes, decrypted keys, and in-memory communications.",
@@ -803,10 +803,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In forensic digital investigation, what does a cryptographic DKIM (DomainKeys Identified Mail) signature failure in an email header indicate?",
           "options": [
-            "The email was drafted in an unsupported foreign language.",
-            "The sender forgot to type a closing salutation.",
-            "The message contents or sender header were modified in transit or spoofed by an unauthorized sending mail server.",
-            "The recipient's computer is completely out of disk storage space."
+            "The message was sent from a mailbox that has exceeded its storage quota, so the server rejected the delivery to the recipient.",
+            "The message was encrypted with the recipient's public key, so the header could not be read by the receiving mail server.",
+            "The message contents or sender header were modified in transit, or the message was spoofed by a server not authorised for the domain.",
+            "The message passed through more than five relay servers, which is the maximum hop count before the signature expires."
           ],
           "answer": 2,
           "why": "DKIM uses public-key cryptography to sign email headers. A signature validation failure proves the message was tampered with in transit or did not originate from the asserted domain server.",
@@ -850,10 +850,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do digital forensic investigators mathematically prove that a suspect backdated a fraudulent corporate agreement on an NTFS file system (\"timestomping\")?",
           "options": [
-            "By verifying whether the word count exceeds 1,000 words.",
-            "By checking whether the font in the document is Times New Roman or Calibri.",
-            "By measuring the physical temperature of the computer's hard drive.",
-            "By comparing the STANDARD INFORMATION attribute against theFILE_NAME attribute in the Master File Table (MFT), revealing that the kernel-level creation date is subsequent to the user-altered date."
+            "By comparing the file's last-opened date against the system clock, where the clock shows a later date than the last access value.",
+            "By comparing the file size recorded in the directory entry against the actual size on disk, where the sizes differ by one cluster.",
+            "By comparing the FILE_NAME attribute against the volume's creation date, where the volume was formatted after the document was created.",
+            "By comparing the STANDARD_INFORMATION and FILE_NAME attributes in the MFT, where the kernel-set creation date is later than the user-altered one."
           ],
           "answer": 3,
           "why": "User-mode timestomping utilities can alter STANDARD INFORMATION timestamps, but cannot modify theFILE_NAME attribute, which is controlled exclusively by the NTFS file system kernel.",
@@ -923,10 +923,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In forensic accounting, why does the combination of a Benford Chi-Square statistic > 15.51 and a Beneish M-Score > -1.78 provide overwhelming evidence of intentional accounting fraud rather than mere clerical error?",
           "options": [
-            "Benford's Law identifies human psychological digit fabrication in disbursement ledgers, while the Beneish M-Score econometrically proves systemic financial statement distortion across accruals and revenue.",
-            "Benford's Law applies exclusively to federal income tax returns, while the Beneish M-Score is required by the PCAOB for routine inventory physical counts.",
-            "The Beneish M-Score measures foreign exchange translation volatility, while Benford's Law guarantees that cash balances match bank confirmations.",
-            "Both metrics are required by GAAP to calculate the annual straight-line depreciation expense of corporate physical fixed assets."
+            "Benford's Law detects human digit fabrication in transaction ledgers, while the M-Score shows systemic distortion across accruals and revenue; together they point to deliberate manipulation.",
+            "Benford's Law detects arithmetic mistakes in transaction ledgers, while the M-Score shows ratio drift in working capital; together they point to unintentional clerical error.",
+            "Benford's Law measures liquidity risk in the balance sheet, while the M-Score shows digit patterns in disbursements; together they point to a risk of going-concern failure.",
+            "Benford's Law tests whether a company follows tax rules in filings, while the M-Score shows the cash conversion cycle; together they point to a weak control environment."
           ],
           "answer": 0,
           "why": "Benford's Law detects abnormal human fabrication in transactional populations, while the Beneish M-Score quantifies macro-level manipulation across financial statement line items. Their joint violation confirms deliberate manipulation.",
@@ -970,10 +970,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2401 and corporate governance internal controls, why is matching employee bank accounts against vendor masters such a devastating audit test against management fraud?",
           "options": [
-            "Enterprise resource planning (ERP) systems require all employees to register as certified third-party logistics vendors.",
-            "Vendor master files are publicly traded on stock exchanges, requiring quarterly reconciliation with employee tax returns.",
-            "Matching bank accounts automatically computes the executive's federal payroll tax withholding liabilities under IRS Form 941.",
-            "Corrupt managers operating shell company kickback schemes almost invariably reuse personal bank accounts or home addresses, immediately unmasking beneficial ownership."
+            "Genuine suppliers frequently share bank accounts with employees through payroll banks, which makes any match a normal and harmless finding.",
+            "Shell companies always use accounts held in offshore jurisdictions, so a match with a domestic employee account proves the vendor is genuine.",
+            "Management fraud is mostly financial statement misreporting, so vendor tests find only clerical errors made by accounts payable staff.",
+            "Corrupt managers running shell company kickbacks often reuse personal bank accounts or home addresses, which exposes the beneficial ownership."
           ],
           "answer": 3,
           "why": "Beneficial ownership of shell companies is frequently revealed when dishonest employees use their personal bank accounts or residential addresses to receive illicit vendor disbursements.",
@@ -1017,10 +1017,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is volatile RAM memory dumping performed prior to shutting down or pulling the power plug on a seized executive workstation during a corporate fraud raid?",
           "options": [
-            "Operating systems automatically backup all RAM contents to the public cloud whenever power is lost.",
-            "Volatile RAM is required by the SEC to compute the company's quarterly return on equity (ROE).",
-            "Volatile RAM contains uncommitted ERP transactions, active network socket states, and encryption keys that vanish permanently the instant power is severed.",
-            "Pulling the power plug on a server causes permanent physical damage to the liquid cooling radiator coils."
+            "RAM holds the permanent copy of all user documents, and these files are deleted from the hard drive when a computer is seized.",
+            "RAM holds the system's registry settings, which are needed to boot the machine again in the forensic laboratory after seizure.",
+            "RAM holds uncommitted ERP transactions, active network connections, and encryption keys that disappear the instant power is removed.",
+            "RAM holds the deleted file fragments from unallocated space, and these are overwritten as soon as the operating system is started."
           ],
           "answer": 2,
           "why": "RAM is volatile memory; disconnecting power instantly wipes uncommitted buffers, encryption keys, and active socket connections that provide smoking-gun evidence.",
@@ -1064,10 +1064,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In federal court, how does the Forensic Net Worth Method legally establish criminal intent and illicit enrichment when direct bribery records are hidden in offshore shell entities?",
           "options": [
-            "By converting all corporate stock options into municipal debt bonds yielding 4.5% interest.",
-            "By proving that an executive's documented asset growth and luxury consumption vastly exceeded all reported legitimate income, creating a strong inference of illicit revenue.",
-            "By requiring the defendant to submit to a compulsory polygraph examination administered by the internal audit director.",
-            "By automatically forfeiting 100% of the defendant's 401(k) balance to the Securities and Exchange Commission without judicial review."
+            "By tracing each individual bribe payment from the payer's ledger to the official's account, which proves the specific transactions beyond doubt.",
+            "By showing that an executive's documented asset growth and spending far exceeded reported legitimate income, creating an inference of illicit revenue.",
+            "By showing that the executive's reported salary was lower than the industry median, which creates an inference of unreported side income.",
+            "By obtaining a signed admission from the executive about private spending, which proves the source of funds without financial analysis."
           ],
           "answer": 1,
           "why": "The Net Worth Method indirectly proves illicit revenue by showing mathematical impossibility: legitimate earnings cannot account for the executive's observed asset accumulation and lifestyle expenditures.",
@@ -1111,10 +1111,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Federal Rules of Evidence Rule 702 and the Supreme Court Daubert standard, what criteria must a forensic audit expert witness satisfy for financial fraud testimony to be admissible in federal court?",
           "options": [
-            "Testimony must be grounded in sufficient facts/data, based on reliable peer-reviewed principles and methods with known error rates, and the expert must have reliably applied those methods to the facts.",
-            "The expert must hold an active CPA license in all 50 states, have served at least 10 years as an FBI agent, and maintain personal insurance of at least $10M.",
-            "The expert must obtain written approval from the defendant's board of directors prior to testifying under cross-examination.",
-            "Testimony is admissible only if the financial damage exceeds $100M and involves publicly traded NYSE companies."
+            "Testimony must rest on sufficient facts or data, use reliable tested methods with known error rates, and the expert must have reliably applied them to the facts.",
+            "Testimony must reflect the methods generally accepted by the expert's own professional association, and a signed peer endorsement must be filed with the court.",
+            "Testimony must be supported by an audited financial statement from the year in question, and the expert must have been appointed by the prosecution.",
+            "Testimony must state a legal conclusion on the defendant's guilt, and the expert must have personally examined all of the defendant's records."
           ],
           "answer": 0,
           "why": "The Daubert standard under FRE Rule 702 requires that expert testimony be grounded in sufficient facts, utilize peer-reviewed and tested methodologies with known error rates, and be reliably applied to the case facts.",
@@ -1168,10 +1168,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 200, what is the statutory relationship between Inherent Risk (IR), Control Risk (CR), and the auditor's planned Detection Risk (DR)?",
           "options": [
-            "Detection risk is directly proportional to inherent risk, meaning auditors test fewer samples when internal controls fail",
-            "Detection risk is inversely related to the risk of material misstatement (RMM = IR * CR); when RMM is assessed as high, the auditor must set allowable detection risk low by increasing substantive testing scope",
-            "Control risk is directly determined by the external auditor, while detection risk is controlled exclusively by corporate management",
-            "Detection risk and inherent risk must always sum to 100% across all financial statement audit cycles"
+            "Detection risk moves in the same direction as the risk of material misstatement; when RMM is high, the auditor accepts higher detection risk and reduces substantive samples.",
+            "Detection risk is inversely related to the risk of material misstatement (RMM = IR x CR); when RMM is high, the auditor sets detection risk low by expanding substantive testing.",
+            "Detection risk is unrelated to the risk of material misstatement; the auditor sets it at a fixed level for every engagement irrespective of the client's control environment.",
+            "Detection risk equals the sum of inherent risk and control risk; when RMM is high, the auditor increases detection risk to offset the weaker client controls."
           ],
           "answerIndex": 1,
           "why": "The Audit Risk Model states AR = IR * CR * DR. To maintain an acceptably low Audit Risk (typically 5%), any increase in RMM (IR * CR) necessitates an inverse reduction in allowable Detection Risk (DR), forcing the auditor to expand sample sizes and conduct deeper substantive testing.",
@@ -1194,10 +1194,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory consequence under SA 220 and SQC 1 if the Engagement Quality Control Review (EQCR) for a public listed entity is not completed prior to the audit report release date?",
           "options": [
-            "The auditor may release the audit report conditionally provided EQCR finishes within 60 days",
-            "The audit opinion automatically degrades to an adverse opinion without further inquiry",
-            "The statutory auditor is legally prohibited from signing and dating the auditor's report until the EQCR review is fully resolved and documented",
-            "The EQCR review is purely voluntary and has no bearing on report issuance"
+            "The auditor may date and sign the report, but must disclose the pending EQCR in an emphasis of matter paragraph.",
+            "The auditor may release the report, but the engagement fee must be reduced until the EQCR work is later finished.",
+            "The auditor is legally prohibited from signing and dating the auditor's report until the EQCR is completed and documented.",
+            "The auditor may date the report once the engagement partner is satisfied, and the EQCR is filed within the next quarter."
           ],
           "answerIndex": 2,
           "why": "SA 220 Paragraph 19 strictly mandates that the engagement partner shall not date the auditor's report until the completion of the engagement quality control review.",
@@ -1247,10 +1247,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between the Overall Audit Strategy and the Detailed Audit Plan under SA 300?",
           "options": [
-            "The overall audit strategy sets the broad scope, timing, and direction of the audit, whereas the audit plan is more detailed and specifies the nature, timing, and extent of specific risk assessment and substantive procedures",
-            "The strategy is prepared by client management while the audit plan is prepared by the external auditor",
-            "The audit plan is filed with government regulators while the strategy remains strictly confidential to the client",
-            "The strategy applies only to forensic fraud investigations while the audit plan governs routine statutory filings"
+            "The overall strategy sets the broad scope, timing, and direction of the audit, while the audit plan details the nature, timing, and extent of specific procedures.",
+            "The overall audit strategy lists the specific tests for each assertion, while the audit plan sets the broad scope and the direction of the audit work.",
+            "The overall audit strategy is drafted once the fieldwork ends and the report is signed, while the audit plan is drafted at the beginning of the engagement.",
+            "The overall audit strategy covers only the review of internal controls, while the audit plan covers only the substantive testing of balances."
           ],
           "answerIndex": 0,
           "why": "SA 300 Paragraphs 7-9 explain that the audit strategy establishes the high-level scope, timing, and direction to guide the development of the detailed audit plan, which operationalizes specific audit procedures at the assertion level.",
@@ -1274,10 +1274,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory objective of calculating Performance Materiality under SA 320?",
           "options": [
-            "To identify personal income tax liability for corporate directors",
-            "To reduce to an appropriately low level the probability that the aggregate of uncorrected and undetected misstatements in the financial statements exceeds overall materiality",
-            "To determine the statutory audit fee payable by the company under Companies Act Section 142",
-            "To set the maximum civil penalty that an auditor can incur before the National Financial Reporting Authority (NFRA)"
+            "To set the smallest amount below which misstatements are clearly trivial and are excluded from the summary of uncorrected misstatements.",
+            "To reduce to an appropriately low level the probability that the aggregate of uncorrected and undetected misstatements exceeds overall materiality.",
+            "To set the amount above which the auditor must report every identified misstatement to those charged with governance, however minor.",
+            "To set the level of the financial statements as a whole at which the auditor issues a qualified rather than an unmodified opinion."
           ],
           "answerIndex": 1,
           "why": "SA 320 Paragraph 9 establishes that Performance Materiality is set by the auditor at an amount less than overall materiality to mitigate the risk that the accumulation of individual undetected or unadjusted errors exceeds overall financial statement materiality.",
@@ -1331,10 +1331,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 330, is the statutory auditor ever permitted to completely eliminate substantive testing for a material class of transactions by relying 100% on tested internal controls?",
           "options": [
-            "Yes, if the Audit Committee provides an unconditional indemnity bond protecting the audit firm",
-            "Only if the transactions are under Rs 1 Crore in value",
-            "No, SA 330 legally mandates that irrespective of assessed risks or control effectiveness, the auditor shall perform substantive procedures for each material class of transactions, account balance, and disclosure",
-            "Yes, provided the entity uses an enterprise SAP system with SOC 1 Type 2 certification"
+            "Yes. When controls are tested and found effective for the whole year, the auditor may rely on them alone for material balances with low risk.",
+            "Yes. When the class of transactions is routine and automated, substantive testing may be dropped provided management signs a representation letter.",
+            "No. Irrespective of assessed risks or control effectiveness, substantive procedures are required for each material class of transactions, balance, and disclosure.",
+            "No. Substantive testing is required only for balances above overall materiality, and a class below that level can rely on controls alone, as SA 330 allows."
           ],
           "answerIndex": 2,
           "why": "SA 330 Paragraph 18 strictly mandates that irrespective of the assessed risks of material misstatement, the auditor shall design and perform substantive procedures for each material class of transactions, account balance, and disclosure.",
@@ -1359,10 +1359,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory consequence under Section 143(3)(i) of the Companies Act, 2013 if the auditor identifies a single unmitigated Material Weakness in internal financial controls at the balance sheet date?",
           "options": [
-            "The auditor can ignore the finding provided the balance sheet numbers are mathematically balanced",
-            "The statutory auditor must issue an Adverse or Qualified audit opinion on the adequacy and operating effectiveness of the company's internal financial controls over financial reporting",
-            "The auditor must immediately arrest the Chief Financial Officer under PMLA regulations",
-            "The company's corporate charter is automatically suspended by the Registrar of Companies (ROC)"
+            "The auditor must issue an unqualified opinion with an emphasis of matter paragraph, since the weakness did not change the financial statements.",
+            "The auditor must issue an adverse or qualified opinion on the adequacy and operating effectiveness of the company's internal financial controls.",
+            "The auditor must withdraw from the engagement and report the finding to the Registrar of Companies without issuing any opinion.",
+            "The auditor must issue a disclaimer of opinion on the financial statements, because internal controls cannot be assessed after the balance sheet date."
           ],
           "answerIndex": 1,
           "why": "Under the ICAI Guidance Note on IFCoFR and Section 143(3)(i), the existence of even one unmitigated Material Weakness at the balance sheet date legally precludes an unqualified opinion, requiring a modified (qualified or adverse) IFCoFR audit report.",
@@ -1411,10 +1411,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the definition and danger of the 'Risk of Over-Reliance' in testing controls under SA 530?",
           "options": [
-            "The risk that the client pays the audit fee before the audit opinion is delivered",
-            "The risk that physical computer hardware fails during automated test procedures",
-            "The risk that the auditor works excessive overtime hours beyond statutory labor standards",
-            "The risk that the auditor assesses control risk lower than it actually is, leading the auditor to mistakenly believe controls are effective and inappropriately reduce substantive testing, directly impairing audit effectiveness"
+            "The risk that the auditor assesses control risk higher than it really is, leading to unnecessary extra testing and lower audit efficiency.",
+            "The risk that the sample is drawn from the wrong population, leading to conclusions that cannot be applied to the control being tested.",
+            "The risk that the auditor relies too heavily on management's explanations, leading to evidence that is not corroborated by documents.",
+            "The risk that the auditor assesses control risk lower than it really is, leading to wrongly reduced substantive testing and impaired audit effectiveness."
           ],
           "answerIndex": 3,
           "why": "SA 530 Paragraph 5 defines the Risk of Over-Reliance as the risk that the assessed level of control risk based on the sample is less than the true operating effectiveness of the control, which dangerously compromises audit effectiveness by falsely justifying reduced substantive testing.",
@@ -1437,10 +1437,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In statistical audit sampling under SA 530, what is the Upper Error Limit (UEL) and how does it dictate the auditor's conclusion?",
           "options": [
-            "The UEL is the maximum tax refund that a company can claim under Income Tax Section 237",
-            "The UEL is the statutory maximum audit fee that a Chartered Accountant can bill a listed company",
-            "The UEL is the maximum monetary error that could exist in the population at the target confidence level (comprising Basic Precision + Projected Misstatement + Incremental Precision Allowance); if UEL exceeds Tolerable Misstatement, the auditor cannot conclude that the population is fairly stated",
-            "The UEL is the physical storage limit for electronic audit working papers"
+            "The UEL is the projected misstatement in the sample multiplied by the population, and it is compared with materiality for the balance to decide on the opinion.",
+            "The UEL is the smallest error the auditor can detect at the target confidence level; if it is below tolerable misstatement, the sampling procedure must be repeated.",
+            "The UEL is the maximum error possible in the population at the target confidence; if it exceeds tolerable misstatement, the population cannot be concluded fairly stated.",
+            "The UEL is the total of actual misstatements found in the sample items; if it exceeds tolerable misstatement, the auditor must extend the sample by ten percent."
           ],
           "answerIndex": 2,
           "why": "SA 530 Paragraph 13 requires the auditor to evaluate whether the projected misstatement combined with the allowance for sampling risk (the Upper Error Limit) exceeds tolerable misstatement before concluding on population fairness.",
@@ -1494,10 +1494,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 500, what is the hierarchy of audit evidence reliability when evaluating conflicting sources of evidence?",
           "options": [
-            "Photocopied invoices have higher statutory reliability than digitally signed electronic records",
-            "Internal spreadsheets generated by company accountants carry maximum reliability under Indian Evidence law",
-            "Oral statements from corporate executives always supersede external bank confirmations",
-            "Directly obtained original documentary evidence from independent third-party sources outside the entity is most reliable, followed by internal documents under effective controls, while oral management representations are least reliable"
+            "Documents generated by the client's own systems are most reliable, then confirmations from third parties, and the auditor's own inquiries are least reliable.",
+            "Oral explanations given by senior management are most reliable, then internal documents, and third-party documents received directly are least reliable.",
+            "Photocopies and scanned images are most reliable, then electronic originals, and documents obtained directly from third parties are least reliable.",
+            "Original documents obtained directly from independent external sources are most reliable, then internal documents under effective controls, then oral management statements."
           ],
           "answerIndex": 3,
           "why": "SA 500 Paragraph A31 establishes that audit evidence obtained directly by the auditor in original documentary form from independent external sources possesses the highest degree of reliability, whereas internal or oral evidence is least reliable.",
@@ -1520,10 +1520,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 501, what is the mandatory statutory procedure required of the external auditor when physical inventory is material to the financial statements?",
           "options": [
-            "The auditor shall attend physical inventory counting unless impracticable, observe management count procedures, inspect the condition of stock, and perform independent test counts",
-            "The auditor is required only to obtain a written email from the warehouse supervisor confirming inventory values",
-            "The auditor must personally weigh and measure 100% of all raw materials in the warehouse",
-            "Attendance at physical inventory counts is optional if the company maintains an annual insurance policy"
+            "The auditor must attend the count unless impracticable, observe management's procedures, inspect stock condition, and perform independent test counts.",
+            "The auditor must perform the full count personally in place of management, and the count by client staff is then treated as unnecessary.",
+            "The auditor must review the perpetual inventory records at year end and rely on them without attending the physical count at all.",
+            "The auditor must attend the count only for the highest value items, and rely on management's own count sheets for remaining stock."
           ],
           "answerIndex": 0,
           "why": "SA 501 Paragraph 4 establishes that if inventory is material to the financial statements, the auditor shall obtain sufficient appropriate audit evidence regarding existence and condition by attending physical inventory counting unless impracticable.",
@@ -1547,10 +1547,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 505, when is an auditor legally permitted to use Negative Confirmation requests as the sole substantive procedure for auditing accounts receivable?",
           "options": [
-            "Whenever the client requests negative confirmations to save postage costs",
-            "Only when ALL four statutory conditions are met: assessed RMM is low and controls are effective; the population consists of large numbers of small, homogeneous balances; very low exception rate is expected; and recipients are unlikely to disregard requests",
-            "For all bank balances and derivatives positions exceeding Rs 100 Crore",
-            "Whenever the auditor has less than two weeks remaining to complete the annual audit"
+            "Only when any one of four conditions is met: low assessed RMM, a small number of large balances, a high expected exception rate, or client management consent.",
+            "Only when all four hold: low RMM with effective controls, many small homogeneous balances, a very low expected exception rate, and likely responses.",
+            "Whenever the population has more than a hundred balances, since negative confirmation is the standard method for receivables above this size.",
+            "Whenever the auditor has received positive confirmations for the largest ten balances, since negative requests may then cover the remaining ones."
           ],
           "answerIndex": 1,
           "why": "SA 505 Paragraph 15 strictly prohibits relying on negative confirmations as the sole substantive audit procedure unless all four cumulative criteria (low RMM, large homogeneous population, low exception rate, high likelihood of response) are satisfied.",
@@ -1573,10 +1573,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory procedure under SA 520 when a substantive analytical procedure reveals a significant variance between the auditor's independent expectation and the client's reported financial figures?",
           "options": [
-            "The auditor must notify the local police within 24 hours of detecting any variance",
-            "The auditor must immediately alter the mathematical expectation to match the client's ledger",
-            "The auditor shall investigate the difference by inquiring of management, obtaining corroborative audit evidence to support management's explanations, and performing other necessary audit procedures",
-            "The auditor can accept management's oral explanation without requesting corroborating documentary proof"
+            "The auditor must adjust the client's figures to the auditor's expectation, and the difference is then recorded as an uncorrected misstatement.",
+            "The auditor must accept management's explanation if it is plausible, since analytical procedures give only limited assurance on balances.",
+            "The auditor must investigate by inquiring of management, corroborating the explanations with evidence, and performing other necessary procedures.",
+            "The auditor must expand testing only if the difference exceeds overall materiality, and ignore variances that fall below that level."
           ],
           "answerIndex": 2,
           "why": "SA 520 Paragraph 7 explicitly mandates that if analytical procedures identify significant unexplained differences, the auditor shall inquire of management and obtain appropriate audit evidence relevant to management's responses, corroborating all explanations.",
@@ -1601,10 +1601,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of performing analytical procedures near the end of the audit under SA 520?",
           "options": [
-            "To calculate the income tax refund due to the company for advance tax installments",
-            "To compute annual executive bonuses under the nomination and remuneration policy",
-            "To file quarterly Goods and Services Tax returns with the GSTN portal",
-            "To assist the auditor when forming an overall conclusion as to whether the financial statements as a whole are consistent with the auditor's understanding of the entity"
+            "To help the auditor decide on the nature and timing of substantive procedures to be performed on individual accounts during the audit.",
+            "To help the auditor identify risks of material misstatement at the start of the engagement, before the audit plan is completed.",
+            "To help the auditor obtain direct evidence for each assertion of every balance, replacing detailed tests of the closing ledgers.",
+            "To help form an overall conclusion on whether the financial statements as a whole are consistent with the auditor's understanding of the entity."
           ],
           "answerIndex": 3,
           "why": "SA 520 Paragraph 6 mandates that the auditor shall design and perform analytical procedures near the end of the audit to assist in forming an overall conclusion as to whether the financial statements are consistent with the auditor's understanding of the entity.",
@@ -1657,10 +1657,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 143(12) of the Companies Act, 2013 and Rule 13, what is the monetary threshold that legally triggers mandatory reporting of fraud directly to the Central Government in Form ADT-4?",
           "options": [
-            "Frauds involving an amount of Rupees One Crore (INR 1 Crore) or above committed against the company by its officers or employees",
-            "Any fraud exceeding Rupees Ten Lakh involving cash transactions",
-            "Only multi-state banking frauds exceeding Rupees One Hundred Crore",
-            "Reporting to the Central Government is never required if the company files a police FIR"
+            "Frauds involving an amount of Rs 1 crore or above committed against the company by its officers or employees.",
+            "Frauds involving an amount of Rs 10 lakh or above committed against the company by any person, including outsiders.",
+            "Frauds involving an amount of Rs 25 crore or above committed against the company by its officers or employees.",
+            "Frauds involving an amount of Rs 1 crore or above committed by the company against its customers or the tax authorities."
           ],
           "answerIndex": 0,
           "why": "Section 143(12) read with Rule 13(1) of the Companies (Audit and Auditors) Rules, 2014 establishes that if an auditor has reason to believe that an offence of fraud involving an amount of Rs 1 Crore or above is being or has been committed by officers or employees, the auditor must report it to the Central Government.",
@@ -1683,10 +1683,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Clause (ii)(b) of CARO 2020, what is the statutory threshold of sanctioned working capital limits that triggers mandatory auditor reconciliation between quarterly bank stock statements and audited books of account?",
           "options": [
-            "Sanctioned limits in excess of Rupees Fifty Crore from international foreign banks",
-            "Any unsecured personal loan taken by company promoters",
-            "There is no threshold; all companies must file monthly reconciliations regardless of borrowing size",
-            "Sanctioned working capital limits in excess of Rupees Five Crore (INR 5 Crore) in aggregate from banks or financial institutions on the basis of security of current assets"
+            "Aggregate sanctioned working capital limits above Rs 50 lakh from banks or financial institutions on the security of fixed assets.",
+            "Aggregate sanctioned working capital limits above Rs 25 crore from banks or financial institutions on the security of current assets.",
+            "Aggregate sanctioned term loan limits above Rs 5 crore from banks or financial institutions on the security of current assets.",
+            "Aggregate sanctioned working capital limits above Rs 5 crore from banks or financial institutions on the security of current assets."
           ],
           "answerIndex": 3,
           "why": "CARO 2020 Clause (ii)(b) specifies that where the company has been sanctioned working capital limits in excess of Rs 5 Crore, in aggregate, from banks or financial institutions on the security of current assets, the auditor must report whether quarterly returns/statements filed agree with the books.",
@@ -1709,10 +1709,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Clause (iii)(e) of CARO 2020, what specific financial practice must the statutory auditor investigate and disclose regarding maturing loans?",
           "options": [
-            "Whether the company charges interest rates exceeding 36% per annum under usury laws",
-            "Whether loan agreements were printed on legal green paper",
-            "Evergreening of loans: whether any loan fallen due during the year has been renewed or extended or fresh loans granted to settle overdues of existing loans",
-            "Whether loan proceeds were used to pay employee health club memberships"
+            "Related party lending: whether any loan granted during the year was given to a director or a relative at an interest rate below the market rate.",
+            "Loan write-offs: whether any loan outstanding was written off during the year without the approval of the board of directors.",
+            "Evergreening of loans: whether any loan fallen due was renewed or extended, or fresh loans granted to settle overdues of existing loans.",
+            "Loan classification: whether any loan overdue for more than ninety days was shown as a standard asset in the books of the company."
           ],
           "answerIndex": 2,
           "why": "CARO 2020 Clause (iii)(e) specifically targets the fraudulent corporate practice of evergreening, requiring auditors to report whether maturing loans were renewed, extended, or settled with fresh loans to disguise default.",
@@ -1734,10 +1734,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Clause (ix)(c) and Clause (ix)(d) of CARO 2020, what two critical banking fund utilization violations must the statutory auditor audit and disclose?",
           "options": [
-            "Whether corporate loan applications were submitted on public holidays",
-            "Whether term loans were applied for the purpose for which they were obtained (detecting fund diversion), and whether funds raised on a short-term basis were utilized for long-term purposes (asset-liability mismatch)",
-            "Whether the company pays bank managers higher interest rates than corporate credit cards",
-            "Whether bank cheques were signed with blue ink rather than black ink"
+            "Whether term loans were repaid before their due date (prepayment), and whether long-term funds were used to repay short-term bank overdrafts (refinancing).",
+            "Whether term loans were applied for their stated purpose (fund diversion), and whether short-term funds were used for long-term purposes (asset-liability mismatch).",
+            "Whether term loans carried an interest rate above the bank's lending rate (overpricing), and whether the interest was capitalised in the books (accounting).",
+            "Whether term loans were secured by a charge on assets (security creation), and whether the charge was registered with the Registrar within thirty days (filing)."
           ],
           "answerIndex": 1,
           "why": "CARO 2020 Clause (ix)(c) mandates reporting whether term loans were applied for the sanctioned purpose, while Clause (ix)(d) requires disclosing whether short-term borrowings were inappropriately used for long-term commitments.",
@@ -1759,10 +1759,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Clause (xix) of CARO 2020, what specific forward-looking assurance must the statutory auditor certify regarding the company's financial health?",
           "options": [
-            "Whether based on financial ratios, ageing, expected dates of realization of financial assets and liabilities, any material uncertainty exists that the company is capable of meeting its liabilities existing at balance sheet date as and when they fall due within a period of one (1) year",
-            "Whether the company's stock price will double on the stock exchange over the next 12 months",
-            "Whether the company will open at least 50 new international retail branches",
-            "Whether all corporate employees will receive a mandatory 15% salary increase"
+            "Whether, based on ratios, ageing, and expected realisation dates, a material uncertainty exists that the company can meet its liabilities as they fall due within one year.",
+            "Whether, on the basis of ratios, ageing, and expected profit forecasts, the company is expected to pay a dividend to its shareholders within the next one year.",
+            "Whether, on the basis of ratios, ageing, and credit rating reports, the company can meet its liabilities that fall due within a period of five years.",
+            "Whether, on the basis of ratios, ageing, and management plans, the company will achieve the revenue targets it announced to the stock exchange for next year."
           ],
           "answerIndex": 0,
           "why": "CARO 2020 Clause (xix) requires auditors to certify whether on the basis of financial ratios, ageing, realization schedules, and board plans, there is material uncertainty regarding the company's capability to meet liabilities falling due within one year.",
@@ -1817,10 +1817,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone Project 2 strategy engine, what is the statutory relationship between Overall Materiality (Rs 14.0 Cr), Performance Materiality (Rs 9.1 Cr), and the Sampling Interval?",
           "options": [
-            "Overall Materiality is determined by the Board of Directors without auditor input",
-            "The Sampling Interval is equal to the total net profit of the company divided by 365 days",
-            "Performance Materiality is set at 65% of Overall Materiality (Rs 9.1 Cr) to reduce aggregate undetected error risk, and the Sampling Interval (Rs 3.03 Cr) is derived by dividing Performance Materiality by the 95% confidence reliability coefficient of 3.0",
-            "Performance Materiality must always equal exactly 100% of the company's authorized share capital"
+            "Performance Materiality is set at 65% of Overall Materiality (Rs 9.1 Cr), and the Sampling Interval (Rs 4.55 Cr) is Performance Materiality divided by a reliability factor of 2.0.",
+            "Performance Materiality is set at 150% of Overall Materiality (Rs 21 Cr), and the Sampling Interval (Rs 7.0 Cr) is Overall Materiality divided by the factor of 2.0.",
+            "Performance Materiality is set at 65% of Overall Materiality (Rs 9.1 Cr), and the Sampling Interval (Rs 3.03 Cr) is Performance Materiality divided by the 95% reliability factor of 3.0.",
+            "Performance Materiality is set at 65% of Overall Materiality (Rs 9.1 Cr), and the Sampling Interval (Rs 14.0 Cr) is Overall Materiality itself with no reliability factor."
           ],
           "answerIndex": 2,
           "why": "Under SA 320 and SA 530, Performance Materiality incorporates a risk haircut (here 65%) to buffer against aggregated errors, and Monetary Unit Sampling derives the sampling interval by dividing PM by the Poisson 95% zero-error reliability factor (3.0).",
@@ -1842,10 +1842,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the presence of an unmitigated management override vulnerability on journal vouchers (CTRL-R2R-04) compel an Adverse IFCoFR opinion under Section 143(3)(i)?",
           "options": [
-            "Because the auditor must qualify the report whenever an accounting software updates its version",
-            "Because management override represents a pervasive qualitative control breakdown that circumvents all automated controls, creating a reasonable possibility of undetected material financial statement fraud",
-            "Because the Companies Act automatically dissolves any company with manual journal entries",
-            "Because all journal vouchers must be approved by the President of India"
+            "Because management override is a minor control gap that affects only a few vouchers, which creates a remote chance of any misstatement being missed.",
+            "Because management override is a pervasive control breakdown that circumvents automated controls, creating a reasonable possibility of undetected material fraud.",
+            "Because management override is a detective control that supports automated controls, so its absence calls for only an emphasis paragraph in the report.",
+            "Because management override is a documentation lapse in the voucher approval records, so it is reported only to the audit committee and not in the opinion."
           ],
           "answerIndex": 1,
           "why": "Under the ICAI IFCoFR Guidance Note, unauthorized management override of controls represents a foundational design breakdown that creates a reasonable possibility of material misstatement, legally constituting a Material Weakness requiring an adverse IFCoFR opinion.",
@@ -1867,10 +1867,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What must the statutory auditor do under SA 530 and SA 450 when the Upper Error Limit (Rs 12.15 Cr) exceeds Tolerable Misstatement (Rs 9.1 Cr)?",
           "options": [
-            "The auditor cannot accept the population as fairly stated; the auditor must request management to investigate the causes, record adjustments, or expand testing to reduce sampling risk before issuing the audit report",
-            "The auditor must conceal the calculation from the working papers to ensure a clean opinion",
-            "The auditor should increase the tolerance threshold arbitrarily to match the higher error",
-            "The auditor must immediately resign without informing the Board of Directors"
+            "The auditor cannot accept the population as fairly stated; management must investigate causes, record adjustments, or the auditor must expand testing before the report.",
+            "The auditor can accept the population as fairly stated, since the projected error falls within overall materiality, and only a note is added to the working papers.",
+            "The auditor must reject only the sampled items found in error and accept the rest of the population, without any adjustment or extension of the sample.",
+            "The auditor must raise the tolerable misstatement to the level of the upper error limit and then issue the audit report without further audit procedures."
           ],
           "answerIndex": 0,
           "why": "Under SA 530 the auditor projects the misstatements found in the sample to the population and evaluates the result; where the upper error limit exceeds tolerable misstatement, SA 450 and SA 530 require the auditor to request management to investigate and adjust, or to perform additional audit procedures.",
@@ -1892,10 +1892,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal status and destination of the CARO 2020 report in Indian corporate law?",
           "options": [
-            "It is a voluntary internal management memo prepared by the Chief Human Resources Officer",
-            "It is a secret report filed exclusively with foreign credit rating agencies",
-            "It is a commercial invoice for the audit fee",
-            "CARO 2020 is a mandatory statutory annexure issued under Section 143(11) of the Companies Act, 2013 that forms an integral part of the independent auditor's report presented to shareholders and filed with the MCA"
+            "CARO 2020 is a mandatory statutory certificate under Section 143(3) that is submitted separately to the tax department and is not filed with the shareholders' report.",
+            "CARO 2020 is an optional disclosure note under Section 134 that the board may add to the directors' report when it chooses to inform shareholders of audit matters.",
+            "CARO 2020 is a mandatory internal audit report under Section 138 that is submitted only to the audit committee and is not part of the statutory auditor's report.",
+            "CARO 2020 is a mandatory statutory annexure under Section 143(11) that forms an integral part of the auditor's report presented to shareholders and filed with the MCA."
           ],
           "answerIndex": 3,
           "why": "Section 143(11) of the Companies Act, 2013 authorizes the Central Government to order that the auditor's report shall include a statement on specified matters; CARO 2020 constitutes this mandatory statutory annexure to the audit report.",
@@ -1917,10 +1917,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an independent auditor issue an Unmodified (Clean) opinion on financial statement numbers while simultaneously issuing an Adverse opinion on IFCoFR under Section 143(3)(i) and adverse remarks under CARO 2020?",
           "options": [
-            "No, CARO qualifications are strictly illegal if the balance sheet is unmodified",
-            "Only if the company pays a special waiver fee to the Ministry of Corporate Affairs",
-            "Yes, because the financial statement opinion evaluates whether reported numbers give a true and fair view at balance sheet date, whereas IFCoFR and CARO evaluate internal control design/operation and statutory compliance matters independently",
-            "No, an adverse IFCoFR opinion automatically forces an adverse opinion on financial statements"
+            "No. An adverse IFCoFR opinion automatically makes the financial statements unreliable, so the auditor must also modify the true and fair view opinion.",
+            "No. The three reports must always carry the same type of opinion, because they are all signed by the auditor on the same date for the same entity.",
+            "Yes. The financial statement opinion tests the true and fair view of the numbers, while IFCoFR and CARO assess internal controls and statutory compliance independently.",
+            "Yes. But only when the CARO remarks are limited to disclosure matters, since any adverse IFCoFR opinion requires the financial statement opinion to be qualified."
           ],
           "answerIndex": 2,
           "why": "Under ICAI Standards on Auditing and the Companies Act, the financial statement opinion, IFCoFR opinion, and CARO report are legally distinct; an entity may present numbers that are materially true and fair despite having severe internal control weaknesses or CARO defaults.",
@@ -1975,10 +1975,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory presumption established by SA 240 regarding risks of fraud in the audit of financial statements?",
           "options": [
-            "There is a presumption that management always commits tax fraud in odd-numbered years",
-            "There is a statutory legal presumption that risks of fraud exist in revenue recognition, requiring the auditor to evaluate which revenue types or assertions carry fraud risk unless explicitly rebutted with documented evidence",
-            "There is a presumption that physical inventory is never stolen by warehouse employees",
-            "There is a presumption that all external suppliers collude with the accounts payable department"
+            "A rebuttable presumption that fraud risks exist in all expense accounts, so the auditor must evaluate each expense head unless management rebuts it in writing.",
+            "A rebuttable presumption that fraud risks exist in revenue recognition, so the auditor must evaluate which revenue types carry fraud risk unless evidence rebuts it.",
+            "A conclusive presumption that fraud has occurred in revenue recognition, so the auditor must report every revenue transaction to the authorities for investigation.",
+            "A presumption that fraud risks exist only where there are known weaknesses in controls, so the auditor tests revenue only when the control tests have failed."
           ],
           "answerIndex": 1,
           "why": "SA 240 Paragraph 26 explicitly establishes a rebuttable presumption that there are risks of fraud in revenue recognition, mandating targeted procedures unless the auditor documents compelling contrary evidence.",
@@ -2002,10 +2002,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 240, why is Journal Entry Testing (JET) legally mandatory on every statutory audit regardless of assessed control risk?",
           "options": [
-            "Because the software vendor charges a fee for each manual voucher",
-            "Because all accounting entries must be submitted to the income tax department on floppy disks",
-            "Because management possesses the inherent ability to override controls that otherwise appear to be operating effectively, making management override a pervasive significant risk across all corporate entities",
-            "Because junior accountants make more mathematical mistakes on Fridays"
+            "Because journal entries are the only records the auditor can obtain directly, since all other evidence is generated by the entity's accounting staff.",
+            "Because control risk is always assessed as high for journal entries, so no reliance can be placed on controls for any posted adjustment in the ledger.",
+            "Because management can override controls that otherwise appear to operate effectively, making management override a significant risk in every entity.",
+            "Because entities with weak controls are the only ones exposed to override, so journal testing is mandated only after the controls test has failed."
           ],
           "answerIndex": 2,
           "why": "SA 240 Paragraph 31 establishes that management override of controls is an inherent risk present in all entities that can circumvent effective controls, mandating substantive journal entry testing across every engagement.",
@@ -2027,10 +2027,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Beneish Eight-Variable M-Score model, what does an M-Score of -1.15 indicate to a forensic auditor?",
           "options": [
-            "That the company is bankrupt under the Altman Z-score model",
-            "That the company is exempt from paying corporate income taxes",
-            "An exceptional degree of corporate governance with zero possibility of fraud",
-            "A high probability that the financial statements have been manipulated, because -1.15 is greater than the critical benchmark threshold of -1.78"
+            "A low probability of manipulation, because -1.15 is less than the usual threshold of zero.",
+            "A high probability of bankruptcy, because -1.15 is below the Altman cut-off of 1.81.",
+            "A low probability of manipulation, because negative scores always indicate clean results.",
+            "A high probability of manipulation, because -1.15 is greater than the critical threshold of -1.78."
           ],
           "answerIndex": 3,
           "why": "The Beneish M-Score uses a critical cutoff of -1.78; any value greater (less negative or positive, such as -1.15) indicates a statistically significant likelihood of earnings manipulation.",
@@ -2055,10 +2055,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Benford's Law, what is the theoretical probability that a naturally occurring multi-magnitude accounting number begins with the digit '1'?",
           "options": [
-            "Approximately 30.1% of the time, following the logarithmic formula P(1) = log10(1 + 1/1) = log10(2)",
-            "Exactly 11.1% of the time, because all 9 digits have an equal 1/9 chance of appearing",
-            "50% of the time, because numbers are split between odd and even digits",
-            "Zero percent, because corporate transactions never begin with digit 1"
+            "Approximately 30.1% of the time, following P(1) = log10(1 + 1/1) = log10(2).",
+            "Approximately 11.1% of the time, following P(1) = 1/9 with all digits equally likely.",
+            "Approximately 17.6% of the time, following P(1) = log10(1 + 1/2) = log10(1.5).",
+            "Approximately 50.0% of the time, following P(1) = 1/2 as digit one dominates ledgers."
           ],
           "answerIndex": 0,
           "why": "Benford's Law proves that the probability of leading digit d is log10(1 + 1/d). For digit 1, log10(2) = 0.30103, meaning digit 1 naturally appears ~30.1% of the time.",
@@ -2081,10 +2081,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of running conflict of interest collision analytics between master HR records and vendor files in forensic accounting?",
           "options": [
-            "To compute annual fringe benefit tax liabilities on company vehicles",
-            "To identify undisclosed related parties, fictitious shell company vendors, and corrupt kickback arrangements where employees or their relatives receive corporate disbursements",
-            "To ensure all vendors receive annual holiday greeting cards from the HR department",
-            "To verify that all corporate employees purchase company products"
+            "To identify duplicate vendor payments, overpriced purchase contracts, and rebate arrangements where genuine suppliers give volume discounts to the company.",
+            "To identify undisclosed related parties, shell company vendors, and kickback arrangements where employees or relatives receive corporate disbursements.",
+            "To identify employees on leave, ghost payroll entries, and attendance irregularities where staff are paid for days they did not work for the company.",
+            "To identify vendors with expired licences, missing tax registrations, and weak delivery records where suppliers fail the procurement policy for approval."
           ],
           "answerIndex": 1,
           "why": "Cross-referencing employee identifiers (PAN, residential address, bank accounts) against vendor masters isolates shell companies created by corrupt employees to divert corporate funds.",
@@ -2138,10 +2138,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 115 Step 5, what is the core legal principle that dictates when an entity is permitted to recognize revenue from the sale of goods?",
           "options": [
-            "When (or as) the entity satisfies a performance obligation by transferring control of a promised good or service to the customer",
-            "When the sales manager sends an email forecast to executive leadership",
-            "Immediately upon generating a pro-forma invoice in the accounting software",
-            "When the customer opens a corporate bank account"
+            "When (or as) the entity satisfies a performance obligation by transferring control of a promised good or service to the customer.",
+            "When the entity has issued the invoice and sent it to the customer, whether or not control of the goods has passed to them.",
+            "When the entity has received the full cash payment from the customer, whether or not the goods have been delivered to them.",
+            "When the entity has transferred the significant risks and rewards of ownership, as the previous revenue standard also required."
           ],
           "answerIndex": 0,
           "why": "Ind AS 115 Paragraph 31 establishes that revenue is recognized when or as performance obligations are satisfied through the transfer of control of promised goods or services to the customer.",
@@ -2163,10 +2163,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 115, what four cumulative criteria must be satisfied before an entity is legally permitted to recognize revenue on a Bill-and-Hold transaction?",
           "options": [
-            "The product must be insured with a government insurance provider",
-            "The sales invoice must be stamped by a notary public",
-            "The customer must pay in foreign currency within 3 days",
-            "The arrangement must be substantive (requested by customer); product must be identified separately as customer's; product must be ready for transfer; and entity cannot use or redirect the product to another customer"
+            "The arrangement is requested by the seller to manage storage; the goods are held in general stock and ready for transfer; and the entity may redirect them.",
+            "The arrangement is substantive and requested by the customer; the goods are billed in advance and paid for in full; and the entity may use them for other orders.",
+            "The arrangement is approved by the board and disclosed in notes; the goods are insured and stored in a bonded area; and the customer pays storage charges.",
+            "The arrangement is substantive and requested by the customer; the goods are separately identified as theirs and ready for transfer; and the entity cannot use or redirect them."
           ],
           "answerIndex": 3,
           "why": "Ind AS 115 Appendix B Paragraph B81 outlines the four mandatory criteria for bill-and-hold recognition: customer substantive request, separate identification, readiness for physical transfer, and inability to redirect goods.",
@@ -2188,10 +2188,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does cross-referencing ERP sales dates with government E-Invoicing (IRP) timestamps and E-Way bill RFID logs enhance revenue cut-off testing under SA 240?",
           "options": [
-            "It calculates road freight transport tax refunds for the trucking company",
-            "It reduces highway toll charges paid by the corporate vehicle fleet",
-            "It provides unalterable third-party timestamped cryptographic evidence of when invoices were registered and when goods physically moved, exposing premature revenue recognition booked prior to actual shipment",
-            "It verifies that all transport truck drivers have valid commercial driver licenses"
+            "It gives auditor-prepared timestamped records of when invoices were drafted and goods ordered, exposing revenue booked after the actual shipment.",
+            "It gives customer-confirmed evidence of the amounts invoiced and paid, exposing revenue booked at prices different from the approved price list.",
+            "It gives third-party timestamped evidence of when invoices were registered and goods moved, exposing revenue booked before actual shipment.",
+            "It gives management-certified records of the invoice numbering sequence, exposing revenue booked on invoices that are missing from the register."
           ],
           "answerIndex": 2,
           "why": "IRP timestamps and E-Way Bill RFID toll logs provide independent, immutable digital proof of actual dispatch dates, preventing management from backdating ERP revenue invoices to manipulate fiscal cut-offs.",
@@ -2213,10 +2213,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 115 and Ind AS 37, what is the mandatory accounting and auditing treatment when total estimated costs on a long-term construction contract exceed total contract revenue?",
           "options": [
-            "The contract is transferred to the Ministry of Finance for direct settlement",
-            "The contract is an Onerous Contract, and the entire expected loss must be recognized as an immediate expense in the current period P&L, regardless of the percentage of completion",
-            "The loss can be capitalized as goodwill and amortized over 30 years",
-            "The contractor is permitted to hide the loss until final physical handover"
+            "It is a loss-making contract, and the expected loss is recognised gradually in the P&L in proportion to the percentage of completion.",
+            "It is an onerous contract, and the entire expected loss is recognised immediately in the P&L, regardless of the percentage of completion.",
+            "It is an onerous contract, and the expected loss is deferred as an asset and charged to the P&L only when the contract is completed.",
+            "It is a contingent contract, and the expected loss is disclosed in the notes to accounts without being recognised in the P&L."
           ],
           "answerIndex": 1,
           "why": "Ind AS 115 and Ind AS 37 mandate that when it is probable that total contract costs will exceed total contract revenue, the expected loss must be recognized as an immediate expense in full, establishing an onerous contract provision.",
@@ -2238,10 +2238,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 505, what mandatory alternative audit procedures must the statutory auditor perform when a customer fails to reply to a positive accounts receivable confirmation request?",
           "options": [
-            "Vouch subsequent cash receipts in bank statements after year-end, inspect signed customer shipping documents (bills of lading/proof of delivery), and verify customer purchase orders",
-            "Forgive the customer's debt automatically and issue a clean audit report",
-            "Call the customer's receptionist on a personal cell phone without documentation",
-            "Assume the balance is 100% correct because silence implies consent"
+            "Vouch subsequent cash receipts in bank statements, inspect signed shipping or delivery documents, and verify customer purchase orders.",
+            "Send the same request again to the customer, and treat the balance as confirmed when no objection is received after thirty days.",
+            "Accept the balance in the customer ledger, and rely on the management representation letter that all receivables are genuine.",
+            "Review the credit notes issued after year end, and write off the balance if the customer has not paid within the credit period."
           ],
           "answerIndex": 0,
           "why": "SA 505 Paragraph 12 mandates that for each non-response to positive confirmation requests, the auditor shall perform alternative audit procedures, such as examining subsequent cash receipts, shipping documentation, and sales orders.",
@@ -2295,10 +2295,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 2, how is Net Realizable Value (NRV) calculated for finished goods inventory?",
           "options": [
-            "The historical replacement cost adjusted for annual inflation indices",
-            "The liquidation value determined by bankruptcy court trustees",
-            "The original supplier invoice price plus 50% retail markup",
-            "Estimated selling price in the ordinary course of business less the estimated costs of completion and the estimated costs necessary to make the sale"
+            "Estimated replacement cost in the ordinary course of business less the estimated costs of completion and the costs of storing the goods.",
+            "Estimated selling price in the ordinary course of business plus the estimated costs of completion and the costs necessary to make the sale.",
+            "Original purchase cost in the ordinary course of business less the estimated costs of completion and the costs necessary to make the sale.",
+            "Estimated selling price in the ordinary course of business less the estimated costs of completion and the costs necessary to make the sale."
           ],
           "answerIndex": 3,
           "why": "Ind AS 2 Paragraph 6 defines Net Realizable Value as the estimated selling price in the ordinary course of business less the estimated costs of completion and the estimated costs necessary to make the sale.",
@@ -2324,10 +2324,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do forensic auditors utilize the 'Mass-Balance Equation' to detect off-book scrap metal embezzlement in manufacturing enterprises?",
           "options": [
-            "By subtracting finished goods output weight from raw material input weight to establish theoretical scrap yield, and comparing that theoretical yield against recorded scrap sales to detect unrecorded cash diversions",
-            "By weighing all company executives at the annual general meeting",
-            "By inspecting the scrap dealer's personal credit card bills",
-            "By checking whether production machinery is painted in corporate colors"
+            "By subtracting finished goods weight from raw material input weight to get theoretical scrap, then comparing it with recorded scrap sales to detect unrecorded cash diversions.",
+            "By adding finished goods weight to raw material input weight to get theoretical output, then comparing it with recorded production to detect overstated sales figures.",
+            "By subtracting recorded scrap sales from scrap generated in the budget to get theoretical waste, then comparing it with payroll to detect inflated labor costs.",
+            "By dividing raw material cost by finished goods units to get theoretical unit cost, then comparing it with standard cost to detect unrecorded price variances."
           ],
           "answerIndex": 0,
           "why": "The mass-balance equation (Input Weight = Output Product Weight + Scrap Weight) establishes an objective physical expectation of scrap generation; significant shortfalls between theoretical scrap and recorded sales reveal off-book cash embezzlement.",
@@ -2350,10 +2350,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the primary evidentiary characteristics of a fraudulent circular trading (round-tripping) scheme in corporate auditing?",
           "options": [
-            "Customers paying with cash on delivery at retail checkout counters",
-            "Goods invoiced in a closed loop (Company A -> B -> C -> A) within hours at minimal or zero margins, accompanied by circular bank wire transfers and zero physical movement of goods verified by E-Way Bill toll records",
-            "International export shipments requiring customs tariff inspections",
-            "Purchasing raw materials from ISO-certified suppliers with 30-day payment terms"
+            "Goods invoiced in an open chain (A to B to C to D) over several months at normal margins, with bank transfers and goods movement in E-Way Bill records.",
+            "Goods invoiced in a closed loop (A to B to C to A) within hours at near-zero margins, with circular bank transfers and no goods movement in E-Way Bill records.",
+            "Goods invoiced between related companies at market prices over the year, with settlement by cheque and delivery supported by signed transporter receipts.",
+            "Goods invoiced to one large customer at a discount of 20% in a single month, with advance payment and delivery shown by a verified lorry receipt."
           ],
           "answerIndex": 1,
           "why": "Circular trading is characterized by closed entity loops, rapid settlement velocity, razor-thin accommodation margins, and absence of physical goods transport, creating synthetic revenue without commercial substance.",
@@ -2378,10 +2378,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical danger of an inventory cut-off breakdown where goods are shipped on April 3, but the sales invoice was booked on March 31 and the goods were also counted in the March 31 physical inventory count?",
           "options": [
-            "The inventory automatically depreciates to zero under tax rules",
-            "The warehouse manager must pay personal customs tariffs",
-            "Double-Counting: The company records both the sales revenue and accounts receivable on the asset side, while simultaneously retaining the goods in ending inventory, artificially inflating current assets and profits twice",
-            "The transport truck driver receives two paychecks"
+            "Understatement: the sale is not recorded while the goods are removed from ending inventory, reducing current assets and profit in the year.",
+            "Cost misstatement: the sale is recorded with the goods excluded from ending inventory, inflating the cost of goods sold and reducing profit.",
+            "Double-counting: the sale and receivable are recorded while the goods stay in ending inventory, inflating current assets and profit twice.",
+            "Timing reversal: the sale is recorded in April while the goods stay in March inventory, which only moves profit between months of the year."
           ],
           "answerIndex": 2,
           "why": "Double-counting occurs when a sale is recognized prematurely while the underlying goods are still counted in ending inventory, creating an unearned double boost to operating profit and assets.",
@@ -2404,10 +2404,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 501, when is an auditor required to perform physical inspection of inventory held by a third party rather than relying solely on a written third-party confirmation?",
           "options": [
-            "Only when the third party operates in an international tax haven",
-            "Whenever the warehouse has fewer than 10 security guards",
-            "Physical inspection of third-party warehouses is prohibited by Indian property law",
-            "When inventory value is material, when the third party is a related party, or where doubts exist regarding the integrity or independence of the third-party warehouse keeper"
+            "When inventory is held in more than one warehouse, the third party is a listed company, or there are doubts about the insurance cover of the goods.",
+            "When inventory is below materiality, the third party is a regulated entity, or there are doubts about the pricing of the stock in the warehouse.",
+            "When inventory is material, the third party is an independent firm, or there are doubts about the quality of the packaging of the stored goods.",
+            "When inventory is material, the third party is a related party, or there are doubts about the warehouse keeper's integrity or independence."
           ],
           "answerIndex": 3,
           "why": "SA 501 Paragraph 8 and A14 provide that where information obtained raises doubt about the integrity and objectivity of the third party, or where inventory is material or held by related parties, the auditor shall perform inspection or other procedures in addition to confirmation.",
@@ -2490,10 +2490,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Schedule III of the Companies Act, 2013 and Ind AS 36, what is the required accounting and auditing treatment for CWIP projects where construction has been permanently halted due to regulatory bans?",
           "options": [
-            "The project cost is automatically converted into equity shares issued to the government",
-            "The company must evaluate the project for impairment under Ind AS 36 and recognize an immediate write-off/impairment loss in the P&L, while disclosing aging in Schedule III",
-            "The company can continue carrying the full project cost in CWIP indefinitely without depreciation",
-            "The expenditure must be transferred to the local municipal corporation as a public park asset"
+            "Continue to carry the project at cost under Ind AS 16, defer any write-off until the ban is lifted, and disclose the ageing in the directors' report.",
+            "Evaluate the project for impairment under Ind AS 36, recognise an immediate write-off in the P&L, and disclose the ageing in Schedule III.",
+            "Evaluate the project for impairment under Ind AS 36, spread the loss over the remaining useful life of the project, and disclose it in the notes.",
+            "Reclassify the project as an investment property under Ind AS 40, measure it at fair value through P&L, and disclose the ageing in Schedule III."
           ],
           "answerIndex": 1,
           "why": "Ind AS 36 requires that when an asset suffers permanent cessation or regulatory revocation with zero future economic benefits, its recoverable amount is zero, requiring an immediate 100% impairment loss in profit or loss.",
@@ -2517,10 +2517,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 23, what must an entity do regarding borrowing cost capitalization during extended periods in which active development of a qualifying asset is interrupted?",
           "options": [
-            "Capitalization of borrowing costs shall be suspended during extended periods of interruption and charged directly to profit or loss as finance expense",
-            "Capitalization must be doubled to compensate for construction delays",
-            "The interest is deferred into future corporate dividends",
-            "Borrowing costs are paid directly by the lender bank without accounting entries"
+            "Capitalisation of borrowing costs is suspended during extended interruptions, and the costs are charged to profit or loss as finance expense.",
+            "Capitalisation of borrowing costs continues during extended interruptions, and the costs are added to the carrying amount of the asset under construction.",
+            "Capitalisation of borrowing costs is suspended during extended interruptions, and the costs are deferred and charged to profit or loss on completion.",
+            "Capitalisation of borrowing costs is suspended only when the interruption exceeds twelve months, and shorter delays are charged to reserves."
           ],
           "answerIndex": 0,
           "why": "Ind AS 23 Paragraph 20 explicitly establishes that an entity shall suspend capitalization of borrowing costs during extended periods in which it suspends active development of a qualifying asset.",
@@ -2543,10 +2543,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 36, how is an impairment loss on a Cash-Generating Unit (CGU) allocated across the assets of that unit?",
           "options": [
-            "To corporate equity share capital first",
-            "To cash and bank accounts first",
-            "Equally across all current and non-current assets without distinction",
-            "First, to reduce the carrying amount of any goodwill allocated to the CGU to zero, and then to the other non-current assets of the unit pro-rata on the basis of the carrying amount of each asset"
+            "First to the most recently acquired assets of the CGU, then to goodwill and the other non-current assets, in the order of their purchase dates.",
+            "First to the other non-current assets of the CGU pro-rata to carrying amounts, and then to goodwill if any loss remains unallocated.",
+            "First to the current assets of the unit, such as inventory and receivables, and then to goodwill and the other non-current assets equally.",
+            "First to reduce goodwill allocated to the CGU to zero, then to the other non-current assets of the unit pro-rata to their carrying amounts."
           ],
           "answerIndex": 3,
           "why": "Ind AS 36 Paragraph 104 legally mandates that impairment losses for a CGU must be allocated first to extinguish any goodwill allocated to the unit, and subsequently pro-rata across other non-current assets.",
@@ -2571,10 +2571,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under CARO 2020 Clause (i)(b), what must the statutory auditor report regarding physical verification of Property, Plant and Equipment conducted by management?",
           "options": [
-            "Whether factory security guards hold active military clearances",
-            "Whether the company owns real estate in more than 10 countries",
-            "Whether PPE has been physically verified by management at reasonable intervals, whether any material discrepancies were noticed, and whether they have been properly dealt with in the books of account",
-            "Whether all factory machines were painted within the last 6 months"
+            "Whether PPE was physically verified by the auditor at each year end, whether all assets were found in working order, and whether they were fully insured.",
+            "Whether PPE was revalued by a registered valuer every three years, whether any revaluation surplus was recorded, and whether it was credited to reserves.",
+            "Whether PPE was physically verified by management at reasonable intervals, whether material discrepancies were noticed, and whether they were properly dealt with in the books.",
+            "Whether PPE was tagged with unique identification numbers, whether the register was updated every month, and whether disposals were approved by the board."
           ],
           "answerIndex": 2,
           "why": "CARO 2020 Clause (i)(b) requires statutory auditors to state whether PPE has been physically verified by management at reasonable intervals, whether material discrepancies were noticed, and whether properly accounted for in the books.",
@@ -2628,10 +2628,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Milestone Project 3, how does the Substantive Asset Verification Cockpit determine whether total accumulated asset errors require mandatory balance sheet adjustments?",
           "options": [
-            "By checking whether the stock exchange is open on the audit signing date",
-            "By comparing total accumulated asset errors across portfolios against Performance Materiality (Rs 12.35 Cr); when total errors exceed Performance Materiality, the auditor must require adjustments to prevent aggregate misstatements from breaching Overall Materiality",
-            "By waiting 12 months for errors to self-correct",
-            "By asking company executives whether they agree with the adjustments"
+            "By comparing total accumulated asset errors with Overall Materiality (Rs 19 Cr); only if exceeded are adjustments required, so that the balance sheet is corrected in full.",
+            "By comparing total accumulated asset errors with Performance Materiality (Rs 12.35 Cr); if exceeded, adjustments are required so aggregate misstatement stays under Overall Materiality.",
+            "By comparing each individual asset error with the clearly trivial threshold; if any single error exceeds it, adjustments are required in the balance sheet for that item.",
+            "By comparing total accumulated asset errors with the Sampling Interval (Rs 4.1 Cr); if exceeded, adjustments are required so the sample is extended to the whole population."
           ],
           "answerIndex": 1,
           "why": "Under SA 320 and SA 450, when accumulated uncorrected errors exceed performance materiality, the auditor must demand adjustments to mitigate the statistical risk that undetected errors cause total misstatements to exceed overall materiality.",
@@ -2656,10 +2656,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the complete two-sided adjusting journal entry required when the auditor reverses Rs 35 Crore of fraudulent revenue with Rs 24.5 Crore of underlying cost of goods sold?",
           "options": [
-            "Debit Share Capital Rs 35 Cr / Credit Tax Payable Rs 35 Cr",
-            "No entry is needed if the customer pays next year",
-            "Debit Sales Revenue Rs 35 Cr / Credit Accounts Receivable Rs 35 Cr (reversing the fake sale), AND Debit Finished Goods Inventory Rs 24.5 Cr / Credit Cost of Goods Sold Rs 24.5 Cr (restoring the asset)",
-            "Debit Cash Rs 35 Cr / Credit Retained Earnings Rs 35 Cr"
+            "Dr Accounts Receivable 35 / Cr Sales Revenue 35 to reverse the fake sale, and Dr Cost of Goods Sold 24.5 / Cr Finished Goods Inventory 24.5 to restore the asset.",
+            "Dr Sales Revenue 35 / Cr Accounts Receivable 35 to reverse the fake sale, and Dr Cost of Goods Sold 24.5 / Cr Finished Goods Inventory 24.5 to remove the asset.",
+            "Dr Sales Revenue 35 / Cr Accounts Receivable 35 to reverse the fake sale, and Dr Finished Goods Inventory 24.5 / Cr Cost of Goods Sold 24.5 to restore the asset.",
+            "Dr Sales Revenue 10.5 / Cr Accounts Receivable 10.5 to reverse only the margin, and Dr Finished Goods Inventory 24.5 / Cr Cost of Goods Sold 24.5 for the cost."
           ],
           "answerIndex": 2,
           "why": "Reversing premature revenue requires eliminating the unearned revenue and related receivable, while reversing the associated cost of goods sold and restoring the inventory asset on the balance sheet.",
@@ -2681,10 +2681,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When forensic collision graphing proves that a corporate Vice President of Procurement channeled Rs 28.5 Crore into shell vendors sharing their personal bank account, what statutory actions are legally mandated under Section 143(12) of the Companies Act?",
           "options": [
-            "The auditor should ask the executive to refund 10% of the money and close the file",
-            "The company can reclassify the embezzlement as research and development expense",
-            "The auditor must keep the information strictly secret until the executive retires",
-            "The statutory auditor must report the fraud to the Board Audit Committee within 2 days, and on expiry of the 45-day window, transmit Form ADT-4 directly to the Central Government (Ministry of Corporate Affairs)"
+            "Report the fraud to the Registrar of Companies within 45 days, and after the 2-day window, send Form ADT-4 to the Audit Committee chairperson.",
+            "Report the fraud to the Board or Audit Committee within 30 days, and after the 60-day window, send Form ADT-3 to the Central Government (MCA).",
+            "Report the fraud to the Central Government (MCA) at once, and after the 45-day window, inform the Board and Audit Committee in the annual report.",
+            "Report the fraud to the Board or Audit Committee within 2 days, and after the 45-day window, send Form ADT-4 to the Central Government (MCA)."
           ],
           "answerIndex": 3,
           "why": "Section 143(12) and Rule 13 legally compel the auditor to report fraud exceeding Rs 1 Crore committed by officers or employees to the Board within 2 days and subsequently file Form ADT-4 with the Central Government.",
@@ -2709,10 +2709,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary disclosure requirement under Schedule III and CARO 2020 Clause (i) for Capital Work-in-Progress (CWIP) projects whose completion is overdue or where construction has been suspended?",
           "options": [
-            "A detailed CWIP Aging Schedule (categorized by <1yr, 1-2yr, 2-3yr, >3yr) and CWIP Completion Schedule disclosing project-wise cost overruns, timeline delays, and impairment evaluations under Ind AS 36",
-            "A single one-line statement certifying that all projects are proceeding smoothly",
-            "No disclosure is required if the company plans to sell the project to a competitor",
-            "Disclosures are required only for foreign projects located in Europe"
+            "A CWIP ageing schedule (under 1 year, 1-2, 2-3, over 3 years) and a completion schedule showing project-wise overruns, delays, and Ind AS 36 impairment evaluation.",
+            "A CWIP reconciliation (opening balance, additions, capitalisations, closing balance) and a funding schedule showing project-wise borrowings, interest, and security offered.",
+            "A CWIP valuation report (fair value, replacement cost, net realisable value) and an insurance schedule showing project-wise cover, premium, and claims received.",
+            "A CWIP approval statement (board sanction, budget, tender status) and a payment schedule showing project-wise advances, retention, and penalties on contractors."
           ],
           "answerIndex": 0,
           "why": "Schedule III of the Companies Act, 2013 legally mandates comprehensive CWIP aging schedules and completion plans for all overdue or cost-overrun capital projects, ensuring transparency over stalled capital expenditures.",
@@ -2735,10 +2735,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic and ethical responsibility of the Senior Technical Audit Director when substantive audit testing reveals that reported corporate earnings must be restated downwards by 50.8% due to fraudulent revenue and asset impairments?",
           "options": [
-            "Conceal the adjustments in exchange for higher consulting fees",
-            "Uphold public interest and capital market integrity by insisting on full audited financial statement restatement, issuing an appropriately modified audit opinion, and filing Form ADT-4 with the Central Government for proven fraud",
-            "Resign quietly without notifying shareholders or regulatory authorities",
-            "Spread the write-downs over 50 years to avoid alarming investors"
+            "Protect the client relationship by allowing a restatement only in the next year's accounts, issuing an unmodified opinion, and filing Form ADT-4 for internal records.",
+            "Uphold the public interest by insisting on full restatement of the financial statements, issuing a modified opinion, and filing Form ADT-4 with the Central Government.",
+            "Uphold the public interest by insisting on full restatement of the financial statements, issuing an unmodified opinion, and reporting the matter to the audit committee only.",
+            "Protect the audit firm by limiting the restatement to the revenue items, issuing an emphasis of matter, and filing Form ADT-4 only if management agrees."
           ],
           "answerIndex": 1,
           "why": "The statutory auditor serves as a public gatekeeper; when material fraud and asset impairments are substantiated, the auditor is legally bound by the Companies Act and ICAI standards to compel restatement and report fraud to the Central Government.",
@@ -2793,10 +2793,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 540 (Revised), which condition classifies an accounting estimate as having high estimation uncertainty representing a significant risk?",
           "options": [
-            "When the plausible sensitivity range of measurement outcomes exceeds the auditor's performance materiality, or when measurement relies heavily on unobservable Level 3 inputs with extreme management judgment",
-            "When the estimate is calculated using Microsoft Excel rather than enterprise SAP software",
-            "When the accounting estimate is approved by the external statutory tax authority",
-            "When the total book value of the asset is recorded in Indian Rupees rather than US Dollars"
+            "When the plausible range of outcomes exceeds performance materiality, or measurement relies heavily on unobservable Level 3 inputs with extreme management judgment.",
+            "When the range of outcomes is narrower than performance materiality, or measurement relies mostly on quoted Level 1 prices with limited management judgment.",
+            "When the estimate is recorded at a value above overall materiality, or measurement relies on a third-party valuation expert appointed by management.",
+            "When the estimate has changed from the prior year by more than ten percent, or measurement relies on a model that was developed by the auditor."
           ],
           "answerIndex": 0,
           "why": "SA 540 Paragraph 11 and A84 define high estimation uncertainty as situations where the potential range of outcomes is highly sensitive to subjective assumptions and exceeds materiality, triggering mandatory significant risk classification.",
@@ -2819,10 +2819,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If an auditor develops an independent range to evaluate management's accounting estimate under SA 540, what is the maximum permissible width of that range?",
           "options": [
-            "The width of the range can be up to 100% of total revenue",
-            "The width of the range must equal exactly twice the overall materiality",
-            "There is no limitation on range width as long as management signs a letter of representation",
-            "The width of the auditor's range must be narrowed until it is equal to or less than performance materiality"
+            "The width of the auditor's range must be narrowed until it is equal to or less than overall materiality.",
+            "The width of the auditor's range may be as wide as the sensitivity analysis shows, with no materiality limit.",
+            "The width of the auditor's range must be narrowed until it is equal to or less than the clearly trivial threshold.",
+            "The width of the auditor's range must be narrowed until it is equal to or less than performance materiality."
           ],
           "answerIndex": 3,
           "why": "SA 540 Paragraph A125 mandates that when the auditor develops a range, the range must be narrowed until all outcomes are reasonable and its width is equal to or less than performance materiality.",
@@ -2847,10 +2847,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary purpose of performing a retrospective review of prior-period accounting estimates under SA 540?",
           "options": [
-            "To calculate the annual bonus entitlement of the company's internal audit staff",
-            "To reopen and retroactively restate the audited prior-year income tax return with the tax department",
-            "To evaluate whether management's estimation process exhibits indicators of management bias and assess the historical predictive reliability of management's models",
-            "To prosecute the previous statutory auditor for issuing an unqualified report"
+            "To recalculate prior-period estimates using current information and adjust the comparative figures for any difference that has been identified.",
+            "To obtain evidence that the opening balances were correctly brought forward and that the prior-period audit opinion was unmodified.",
+            "To evaluate whether management's estimation process shows signs of management bias and to assess the historical predictive reliability of its models.",
+            "To evaluate whether the entity's accounting policies were applied consistently between periods and that changes were properly disclosed."
           ],
           "answerIndex": 2,
           "why": "SA 540 Paragraph 14 and A65 explicitly state that retrospective reviews are conducted to obtain information regarding the effectiveness of management's prior period estimation process and to identify indicators of management bias.",
@@ -2873,10 +2873,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 113, what constitutes a Level 3 input in the fair value measurement hierarchy?",
           "options": [
-            "The original physical invoice purchase price from five years ago adjusted for GST",
-            "Unobservable inputs for the asset or liability reflecting management's own assumptions about how market participants would price the asset",
-            "Unadjusted quoted prices in active markets for identical assets",
-            "Inputs other than quoted prices that are directly or indirectly observable such as interest rate yield curves"
+            "Observable inputs other than quoted prices, such as interest rates and yield curves, that can be corroborated by market data.",
+            "Unobservable inputs for the asset or liability that reflect management's own assumptions about how market participants would price it.",
+            "Quoted prices in active markets for identical assets or liabilities that the entity can access at the measurement date.",
+            "Historical cost inputs for the asset or liability that reflect the price paid at acquisition, adjusted for depreciation."
           ],
           "answerIndex": 1,
           "why": "Ind AS 113 Paragraphs 72-90 classify unobservable inputs as Level 3, carrying the highest estimation risk and requiring comprehensive sensitivity and valuation model testing.",
@@ -2901,10 +2901,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can a statutory auditor refer to the work of an Auditor's Expert in an unmodified (clean) audit report issued under SA 700 / SA 620?",
           "options": [
-            "No, the auditor shall not refer to the work of an auditor's expert in an unmodified audit report, as the auditor retains sole responsibility for the audit opinion",
-            "Yes, the auditor is legally required to list all external experts in the opening paragraph of the audit report",
-            "Yes, provided the expert signs the audit report alongside the statutory audit partner",
-            "Only if the expert's professional fees exceed the statutory audit fee"
+            "No. The auditor does not refer to the work of an auditor's expert in an unmodified report, because the auditor keeps sole responsibility for the opinion.",
+            "Yes. The auditor must name the expert in the opinion paragraph of an unmodified report, because the expert shares responsibility for the opinion.",
+            "Yes. The auditor may refer to the expert's work in the report when the client agrees, because the reference reduces the auditor's own liability.",
+            "No. The auditor does not refer to the expert's work in any report, even in a modified one, because the expert's findings are confidential to the client."
           ],
           "answerIndex": 0,
           "why": "SA 620 Paragraph 14 explicitly prohibits the auditor from referring to the work of an auditor's expert in an unmodified audit report, maintaining undivided auditor responsibility.",
@@ -2958,10 +2958,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary reason why SA 550 treats related party relationships and transactions as carrying inherently elevated risk of material misstatement?",
           "options": [
-            "All related parties must be registered in the state of Delaware",
-            "Related parties are illegal under the Indian Penal Code",
-            "Related party transactions are exempt from Goods and Services Tax",
-            "Related parties often operate through complex non-transparent ownership structures and provide opportunities for collusion, concealment, or management override of normal controls"
+            "Related parties are often large listed groups with strict reporting systems and give opportunities for pricing disputes, delayed payments, or tax planning.",
+            "Related parties are regulated by law and must file returns with the Registrar, which makes their transactions difficult for the auditor to verify.",
+            "Related parties usually transact at prices set by market forces and give opportunities for cost savings, volume discounts, or extended credit periods.",
+            "Related parties often operate through complex non-transparent ownership structures and give opportunities for collusion, concealment, or management override of controls."
           ],
           "answerIndex": 3,
           "why": "SA 550 Paragraph 3 explicitly notes that related party relationships provide greater opportunities for collusion, concealment, and management override, creating significant fraud and presentation risks.",
@@ -2983,10 +2983,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory action required of an auditor under SA 550 upon identifying a related party or significant related party transaction that management failed to previously identify or disclose?",
           "options": [
-            "Promptly communicate the relevant information to the other members of the engagement team, request management to identify all transactions with the newly discovered party, and inquire why controls failed",
-            "Immediately resign from the audit engagement without informing anyone",
-            "Issue a clean unmodified audit report because related party identification is exclusively management's duty",
-            "Keep the discovery strictly confidential from the rest of the audit engagement team"
+            "Promptly tell the other engagement team members, ask management to identify all transactions with the newly found party, and inquire why the controls failed.",
+            "Wait until year end to tell the engagement partner, ask management to confirm the single transaction found, and note the control failure in the file.",
+            "Promptly tell the audit committee only, ask the party to confirm its own transactions with the company, and inquire why the party was not registered.",
+            "Promptly tell the other engagement team members, record the party in the working papers, and treat the control failure as a clearly trivial matter."
           ],
           "answerIndex": 0,
           "why": "SA 550 Paragraph 22 explicitly prescribes that the auditor shall promptly communicate the information to the engagement team, request identification of all related transactions, and evaluate control failures.",
@@ -3008,10 +3008,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What must the statutory auditor do if management includes an assertion in the financial statement notes that a related party transaction was conducted at arm's-length, but management cannot provide sufficient appropriate audit evidence supporting the claim?",
           "options": [
-            "File a criminal FIR with the local police station within 24 hours",
-            "Request management to remove the unsubstantiated arm's-length assertion from the financial statements, and if management refuses, evaluate the need to issue a qualified or adverse audit opinion under SA 705",
-            "Automatically rewrite the financial statement notes without informing management",
-            "Disregard the issue because note disclosures are voluntary and non-binding"
+            "Accept the assertion if the board has approved it, and add an emphasis of matter paragraph under SA 706 stating the lack of evidence.",
+            "Ask management to remove the unsubstantiated assertion, and if it refuses, consider a qualified or adverse opinion under SA 705.",
+            "Ask management to obtain a valuation report, and if it refuses, resign from the engagement and report to the Registrar of Companies.",
+            "Remove the assertion from the notes, and if management objects, issue a disclaimer of opinion on the complete set of financial statements."
           ],
           "answerIndex": 1,
           "why": "SA 550 requires the auditor to obtain sufficient appropriate audit evidence for an arm's-length assertion (paragraph 24). If it cannot be supported, the assertion is a misstatement that the auditor asks management to remove; refusal results in an audit opinion modification under SA 705.",
@@ -3033,10 +3033,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 177(4)(iv) of the Companies Act, 2013, which related party transactions require prior approval from the Audit Committee?",
           "options": [
-            "None, because the Audit Committee only reviews financial statements after year-end",
-            "Only transactions exceeding Rs 100 Crore entered into with offshore tax havens",
-            "All related party transactions require prior approval of the Audit Committee, without exception for whether they are in the ordinary course of business or at arm's length",
-            "Only transactions that involve immediate blood relatives of the Company Secretary"
+            "Only related party transactions outside the ordinary course of business or not at arm's length need the Audit Committee's prior approval.",
+            "Only related party transactions above the materiality threshold of ten percent of turnover need the Audit Committee's prior approval.",
+            "All related party transactions need the Audit Committee's prior approval, whether or not they are in the ordinary course or at arm's length.",
+            "All related party transactions need the Audit Committee's approval within sixty days after they are entered into, whether or not at arm's length."
           ],
           "answerIndex": 2,
           "why": "Section 177(4)(iv) explicitly mandates that the Audit Committee must give prior approval for all related party transactions; ordinary course and arm's length exemptions apply to Section 188 Board approval, not Section 177.",
@@ -3057,10 +3057,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory retention period for audit documentation and related party working papers under SA 230?",
           "options": [
-            "There is no retention requirement once the audited financial statements are published",
-            "One year until the next annual general meeting of shareholders",
-            "Three years until the completion of the income tax assessment",
-            "Not less than seven years from the date of the auditor's report (or group auditor's report)"
+            "Not less than three years from the date of the audited financial statements being approved by the board.",
+            "Not less than ten years from the date on which the auditor's engagement letter was signed by the client.",
+            "Not less than five years from the end of the financial year to which the audit documentation relates.",
+            "Not less than seven years from the date of the auditor's report (or the group auditor's report)."
           ],
           "answerIndex": 3,
           "why": "SA 230 Paragraph A23 and SQC 1 mandate a minimum retention period of not less than seven years from the date of the auditor's report.",
@@ -3114,10 +3114,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 10 and SA 560, what is the mandatory accounting treatment for a subsequent event occurring in April that provides evidence of conditions that already existed on March 31?",
           "options": [
-            "It requires the auditor to immediately resign from the audit engagement",
-            "It is a Non-Adjusting Event that cannot be mentioned anywhere in the financial statements",
-            "It is an Adjusting Event requiring management to adjust the figures recognized in the balance sheet and profit and loss statement as of March 31",
-            "It can only be recorded in the subsequent fiscal year's income tax return"
+            "It is a Non-adjusting Event, so management must only disclose it in the notes without changing the figures as of March 31.",
+            "It is an Adjusting Event, so management must adjust the figures in the next year's accounts for the period starting April 1.",
+            "It is an Adjusting Event, so management must adjust the figures in the balance sheet and profit and loss statement as of March 31.",
+            "It is a Non-adjusting Event, so management must adjust only the cash flow statement and leave the balance sheet unchanged."
           ],
           "answerIndex": 2,
           "why": "Ind AS 10 explicitly defines adjusting events as those providing additional evidence of conditions existing at the reporting date, requiring restatement/adjustment of the year-end financial figures.",
@@ -3139,10 +3139,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the auditor's statutory obligation regarding subsequent events between the balance sheet date and the date of the auditor's report (Period 1) under SA 560?",
           "options": [
-            "The auditor is only required to call the company's receptionist on the day of the annual general meeting",
-            "The auditor has an active statutory duty to design and perform audit procedures to identify all subsequent events requiring adjustment or disclosure",
-            "The auditor has zero responsibility to look at any events occurring after the balance sheet date",
-            "The auditor only has responsibility if a newspaper publishes an exposé about the company"
+            "The auditor must wait for management to tell of subsequent events, and has no duty to perform any procedures to find them.",
+            "The auditor must design and perform procedures to obtain evidence that all subsequent events needing adjustment or disclosure are identified.",
+            "The auditor must perform procedures only for events after the report date, as events before it are the responsibility of management.",
+            "The auditor must perform procedures for events that need adjustment, while those that need only disclosure are left to the directors."
           ],
           "answerIndex": 1,
           "why": "SA 560 Paragraph 6 explicitly mandates that the auditor shall perform procedures designed to obtain sufficient appropriate evidence that all subsequent events requiring adjustment or disclosure have been identified.",
@@ -3167,10 +3167,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal effect of an auditor 'dual dating' an audit report under SA 560?",
           "options": [
-            "It limits the auditor's procedures and legal liability regarding subsequent events solely to the specific event or note described in the amendment",
-            "It doubles the statutory audit fees payable by the client",
-            "It indicates that two separate audit firms jointly conducted the audit",
-            "It permits the company to pay dividends twice in the same quarter"
+            "It limits the auditor's procedures and liability for subsequent events to the specific event or note described in the amendment.",
+            "It extends the auditor's procedures and liability for subsequent events to all events up to the later date of the report.",
+            "It allows the auditor to sign the report on the earlier date for the entire statements and ignore the later amended note.",
+            "It requires the auditor to report the second date to the regulator and withdraw the report issued on the earlier date."
           ],
           "answerIndex": 0,
           "why": "SA 560 Paragraph 12 explicitly establishes that dual dating informs readers that the auditor's procedures on subsequent events were restricted solely to the amendment described in the relevant note.",
@@ -3193,10 +3193,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What must the statutory auditor do under SA 560 if management refuses to take steps to inform financial statement users or restate financial statements after a material fraud is discovered post-issuance?",
           "options": [
-            "Do nothing, because an auditor's legal liability terminates the instant financial statements are mailed",
-            "Agree to keep the discovery secret in exchange for doubled audit fees for the next financial year",
-            "Issue a private apology letter to the Chief Executive Officer",
-            "Notify management and the Board that the auditor will take appropriate action to prevent reliance on the audit report, including notifying regulatory bodies such as MCA, NFRA, and SEBI"
+            "Tell management and the Board that the audit report is final, and take no further action since the financial statements have been issued.",
+            "Tell management and the Board that the auditor will resign, but without notifying any regulator since confidentiality duties prevent it.",
+            "Tell management and the Board that the auditor will withdraw its fees, and ask the shareholders to restate the statements at the next meeting.",
+            "Tell management and the Board that the auditor will act to prevent reliance on the report, including notifying regulators such as MCA, NFRA, and SEBI."
           ],
           "answerIndex": 3,
           "why": "SA 560 Paragraph 17 mandates that if management refuses to take steps to prevent reliance on issued financial statements containing material errors, the auditor shall take active steps to prevent reliance, including regulatory notification.",
@@ -3218,10 +3218,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory threshold under Section 143(12) of the Companies Act, 2013 that triggers mandatory fraud reporting by the auditor directly to the Central Government in Form ADT-4?",
           "options": [
-            "Fraud involving foreign currency transactions only",
-            "There is no statutory threshold; all petty thefts must be reported to the Prime Minister",
-            "Fraud involving an amount of Rs 1 Crore or above committed against the company by its officers or employees",
-            "Any fraud exceeding Rs 100 Crore only"
+            "Fraud of Rs 1 lakh or above committed against the company by its officers or employees.",
+            "Fraud of Rs 10 crore or above committed against the company by its officers or employees.",
+            "Fraud of Rs 1 crore or above committed against the company by its officers or employees.",
+            "Fraud of Rs 1 crore or above committed by any outsider, but not by its officers or employees."
           ],
           "answerIndex": 2,
           "why": "Section 143(12) and Rule 13 of Companies (Audit and Auditors) Rules, 2014 mandate that fraud of Rs 1 Crore or above must be reported to the Central Government via Form ADT-4.",
@@ -3300,10 +3300,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When auditing management's plans to sell assets or secure financing to mitigate going concern distress under SA 570, what must the auditor obtain?",
           "options": [
-            "A verbal promise made during a telephone call with the Chief Marketing Officer",
-            "A screenshot of a positive news headline from a financial blog",
-            "Sufficient appropriate audit evidence corroborating that the plans are feasible and legally binding, such as executed agreements, bank sanctions, or escrow deposits",
-            "An internal management memorandum claiming the stock price will triple"
+            "Sufficient appropriate evidence that the plans are approved by the board, such as minutes of meetings, draft term sheets, or letters of intent.",
+            "Sufficient appropriate evidence that the plans are described in the notes, such as management's cash flow forecasts, budgets, or press releases.",
+            "Sufficient appropriate evidence that the plans are feasible and legally binding, such as executed agreements, bank sanctions, or escrow deposits.",
+            "Sufficient appropriate evidence that the plans are supported by directors, such as personal guarantees, shareholder comfort letters, or oral assurances."
           ],
           "answerIndex": 2,
           "why": "SA 570 Paragraph 16 mandates that the auditor evaluate whether the outcome of management's plans is likely to improve the situation and whether management's plans are feasible in the circumstances.",
@@ -3325,10 +3325,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 570 (Revised), what is the correct reporting format when the going concern assumption is appropriate, a material uncertainty exists, and management has adequately disclosed the matter in Note 38?",
           "options": [
-            "Bury the note inside the Key Audit Matters (KAM) section without any separate heading",
-            "Express a Disclaimer of Opinion and delete the audit report",
-            "Issue an Adverse Opinion and remove all references to the company's directors",
-            "Express an Unmodified Opinion with a separate, dedicated section headed 'Material Uncertainty Related to Going Concern' referencing Note 38 and stating the opinion is not modified in respect of this matter"
+            "Express a qualified opinion with an 'except for' paragraph headed 'Basis for Qualified Opinion' that refers to Note 38 and says the opinion is modified for the matter.",
+            "Express an unmodified opinion with the matter reported as a Key Audit Matter headed 'Going Concern' that refers to Note 38 within the KAM section of the report.",
+            "Express an adverse opinion with a separate section headed 'Basis for Adverse Opinion' that refers to Note 38 and says the statements are not fairly presented.",
+            "Express an unmodified opinion with a separate section headed 'Material Uncertainty Related to Going Concern' that refers to Note 38 and states the opinion is unmodified."
           ],
           "answerIndex": 3,
           "why": "SA 570 Paragraph 22 explicitly prescribes that when material uncertainty is adequately disclosed, the auditor issues an unmodified opinion with a dedicated 'Material Uncertainty Related to Going Concern' section.",
@@ -3350,10 +3350,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory requirement under Clause (xix) of CARO 2020 regarding the financial liabilities of a company?",
           "options": [
-            "The auditor must state whether in their opinion no material uncertainty exists that the company is capable of meeting liabilities existing at balance sheet date as and when they fall due within one year",
-            "The auditor must guarantee that the company's shares will outperform the Nifty 50 index",
-            "The auditor must pay off any defaulting debts on behalf of the company",
-            "The auditor must verify whether the company bought insurance from a government-owned insurer"
+            "The auditor must state whether, in their opinion, no material uncertainty exists that the company can meet its liabilities existing at the balance sheet date as and when they fall due within one year.",
+            "The auditor must state whether, in their opinion, the company has sufficient cash reserves to meet all of its liabilities existing at the balance sheet date within a period of six months.",
+            "The auditor must state whether, in their opinion, the company has made provision for all liabilities existing at the balance sheet date including contingent liabilities falling due later.",
+            "The auditor must state whether, in their opinion, the directors have a plan to meet its liabilities existing at the balance sheet date as and when they fall due within five years."
           ],
           "answerIndex": 0,
           "why": "CARO 2020 Clause (xix) explicitly requires the auditor to state whether a material uncertainty exists regarding the company's capability to meet liabilities falling due within one year from the balance sheet date.",
@@ -3374,10 +3374,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If an auditor concludes that an entity's going concern basis of accounting is appropriate and a material uncertainty exists that has been adequately disclosed in the financial statements, does this mean the auditor guarantees the entity will survive?",
           "options": [
-            "Yes, the audit partner personally guarantees all company debts",
-            "No, an audit report is never a guarantee of future operational viability; the auditor's opinion provides reasonable assurance on historical financial statements and transparently discloses identified material uncertainties",
-            "No, because the auditor's report only applies to the day it is printed",
-            "Yes, the statutory audit firm must financially reimburse creditors if the entity goes bankrupt within 12 months"
+            "Yes. An unmodified opinion with a going concern section is a guarantee of future viability, since the auditor has tested the entity's forecasts in detail.",
+            "No. An audit report is not a guarantee of future viability; it gives reasonable assurance on historical statements and discloses identified material uncertainties.",
+            "No. An audit report is not a guarantee of viability, because the auditor gives absolute assurance only on the statements of the future periods.",
+            "Yes. An audit report is a guarantee of viability once the material uncertainty is disclosed, because the lenders are entitled to rely on the auditor's opinion."
           ],
           "answerIndex": 1,
           "why": "SA 570 Paragraph A2 explicitly clarifies that an auditor cannot predict future events or conditions and the auditor's report does not guarantee the entity's future viability.",
@@ -3431,10 +3431,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can a statutory auditor rely solely on a written representation from management as sufficient appropriate audit evidence regarding an account balance or assertion under SA 580?",
           "options": [
-            "Yes, a signed management representation letter eliminates the need to perform any physical counts or bank confirmations",
-            "No, written representations do not provide sufficient appropriate audit evidence on their own and cannot substitute for other substantive audit procedures that are available",
-            "Yes, provided the letter is notarized by a public notary",
-            "Only if the letter is printed on expensive watermark paper"
+            "Yes. Written representations from management are sufficient evidence on their own for balances where the auditor has assessed the risk of misstatement as low.",
+            "No. Written representations do not provide sufficient appropriate evidence on their own and cannot replace other substantive procedures that are available.",
+            "Yes. Written representations are sufficient evidence for matters of management intent, and may replace all other procedures for those assertions.",
+            "No. Written representations are not evidence at all, so the auditor must not obtain them for any assertion in the financial statements."
           ],
           "answerIndex": 1,
           "why": "SA 580 Paragraph 4 explicitly states that although written representations provide necessary audit evidence, they do not provide sufficient appropriate audit evidence on their own about any of the matters with which they deal.",
@@ -3482,10 +3482,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Milestone Project 4, how are the statutory reporting requirements of SA 570 (Material Uncertainty Related to Going Concern) and CARO 2020 Clause (xix) integrated into the final audit delivery?",
           "options": [
-            "The auditor resigns and leaves the country without issuing an opinion",
-            "The auditor deletes the CARO 2020 report to avoid confusing shareholders",
-            "The auditor replaces the entire audit report with a one-sentence tweet",
-            "The auditor issues an Unmodified Opinion with a dedicated 'Material Uncertainty Related to Going Concern' section in the independent auditor's report, and simultaneously includes an adverse qualified remark under CARO 2020 Clause (xix) highlighting the 1-year liquidity gap"
+            "The auditor issues a qualified opinion with a dedicated 'Basis for Qualified Opinion' section, and also gives a favourable remark under CARO 2020 Clause (xix) on the one-year liquidity position.",
+            "The auditor issues an unmodified opinion with the matter reported as a Key Audit Matter, and makes no remark under CARO 2020 Clause (xix), since the opinion already covers going concern.",
+            "The auditor issues an adverse opinion with a dedicated 'Basis for Adverse Opinion' section, and also gives an adverse remark under CARO 2020 Clause (xvii) on cash losses of the year.",
+            "The auditor issues an unmodified opinion with a dedicated 'Material Uncertainty Related to Going Concern' section, and also gives an adverse remark under CARO 2020 Clause (xix) on the one-year liquidity gap."
           ],
           "answerIndex": 3,
           "why": "When material uncertainty exists and is disclosed, SA 570 mandates an unmodified opinion with a MURGC section, while CARO Clause (xix) requires an explicit statutory remark on 1-year liability viability.",
@@ -3507,10 +3507,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 220 and SQC 1, what is the mandatory rule regarding Engagement Quality Control Review (EQCR) for listed company audits?",
           "options": [
-            "The auditor's report shall not be dated or issued until the completion of the engagement quality control review",
-            "The EQCR can be conducted within three years after the audit report is printed",
-            "EQCR is optional if the engagement partner has more than 20 years of experience",
-            "EQCR is only required if the client requests it in writing"
+            "The auditor's report must not be dated or issued until the engagement quality control review is completed.",
+            "The auditor's report may be dated at once, and the engagement quality control review may be completed within sixty days.",
+            "The auditor's report must not be signed until the engagement quality control review is approved by the audit committee.",
+            "The auditor's report may be issued before the review, and the review is required only if the opinion is later modified."
           ],
           "answerIndex": 0,
           "why": "SA 220 Paragraph 19 explicitly mandates that the auditor's report shall not be dated until the completion of the engagement quality control review.",
@@ -3532,10 +3532,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core competencies are certified upon successful completion of Milestone Project 4 in Auditing & Forensic Accounting?",
           "options": [
-            "How to prepare personal income tax returns for salaried individuals",
-            "Mastery of SA 540 accounting estimates, SA 550 related parties, SA 560 subsequent events, SA 570 going concern, SA 580 written representations, and CARO 2020 Clauses (xiii), (xvii), and (xix)",
-            "How to trade cryptocurrency on offshore exchanges",
-            "Basic knowledge of how to enter invoices into Tally Prime"
+            "SA 500 audit evidence, SA 510 opening balances, SA 520 analytical procedures, SA 530 sampling, SA 560 subsequent events, and CARO 2020 Clauses (i), (ii), and (iii).",
+            "SA 540 accounting estimates, SA 550 related parties, SA 560 subsequent events, SA 570 going concern, SA 580 written representations, and CARO 2020 Clauses (xiii), (xvii), and (xix).",
+            "SA 700 audit opinions, SA 701 key audit matters, SA 705 modifications, SA 706 emphasis paragraphs, SA 710 comparatives, and CARO 2020 Clauses (vi), (x), and (xi).",
+            "SA 200 overall objectives, SA 210 engagement terms, SA 220 quality control, SA 230 documentation, SA 240 fraud, and CARO 2020 Clauses (iv), (v), and (viii)."
           ],
           "answerIndex": 1,
           "why": "Milestone Project 4 synthesizes the entire spectrum of complex substantive standards (SAs 540, 550, 560, 570, 580) and statutory CARO 2020 governance clauses.",
@@ -3590,10 +3590,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 700 (Revised), when shall the statutory auditor express an Unmodified (Clean) Opinion?",
           "options": [
-            "When the auditor has audited fewer than 10% of the company's ledger accounts",
-            "When management promises to fix all unadjusted errors in the next three years",
-            "When the auditor concludes that the financial statements are prepared, in all material respects, in accordance with the applicable financial reporting framework",
-            "When the client promises to increase the audit fees by 25% for the following fiscal year"
+            "When the auditor concludes that the financial statements are free of all misstatements, however small, and in accordance with the applicable framework.",
+            "When the auditor concludes that the financial statements show the entity is profitable, and in accordance with the applicable financial reporting framework.",
+            "When the auditor concludes that the financial statements are prepared, in all material respects, in accordance with the applicable financial reporting framework.",
+            "When the auditor concludes that the internal controls are effective, and the financial statements contain no matter requiring any emphasis paragraph."
           ],
           "answerIndex": 2,
           "why": "SA 700 Paragraph 16 explicitly prescribes that the auditor shall express an unmodified opinion when concluding that the financial statements are prepared, in all material respects, in accordance with the applicable financial reporting framework.",
@@ -3617,10 +3617,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 700 (Revised), which section must appear first among the substantive sections of the Independent Auditor's Report?",
           "options": [
-            "The Auditor's Signature and invoice receipt must appear first",
-            "The Auditor's Opinion section must appear first, followed immediately by the Basis for Opinion section",
-            "The Management's Responsibilities section must appear first",
-            "The CARO 2020 Annexure must appear first"
+            "The Basis for Opinion section appears first, followed immediately by the Auditor's Opinion section.",
+            "The Auditor's Opinion section appears first, followed immediately by the Basis for Opinion section.",
+            "The Key Audit Matters section appears first, followed immediately by the Auditor's Opinion section.",
+            "The Management's Responsibilities section appears first, followed by the Auditor's Opinion section."
           ],
           "answerIndex": 1,
           "why": "SA 700 Paragraphs 23 and 28 explicitly require that the Auditor's Opinion shall be the first section, followed directly by Basis for Opinion, giving maximum visibility to the assurance conclusion.",
@@ -3643,10 +3643,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 11(g) of the Companies (Audit and Auditors) Rules, 2014, what specific statutory reporting duty is imposed on the auditor regarding accounting software?",
           "options": [
-            "The auditor must report whether the company has used accounting software with an audit trail (edit log) feature that operated continuously throughout the year and has not been tampered with",
-            "The auditor must verify whether the software was coded in Python 3.12",
-            "The auditor must report whether all computers have dual monitors",
-            "The auditor must confirm that the software is hosted in a foreign cloud datacenter"
+            "The auditor must report whether the company used accounting software with an audit trail (edit log) that operated throughout the year and was not tampered with.",
+            "The auditor must report whether the company used accounting software with a cloud backup feature that was tested at the end of the year and was not corrupted.",
+            "The auditor must report whether the company used accounting software with an audit trail (edit log) that was reviewed by the board and was approved for use.",
+            "The auditor must report whether the company used accounting software with user passwords that were changed every ninety days and were not shared by staff."
           ],
           "answerIndex": 0,
           "why": "Rule 11(g) mandates that statutory auditors report on whether the company's accounting software has an audit trail feature operating continuously without tampering throughout the fiscal year.",
@@ -3671,10 +3671,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Does an adverse or qualified remark in the CARO 2020 statutory annexure automatically require the auditor to qualify the primary financial statement opinion under SA 700?",
           "options": [
-            "Yes, the Companies Act forbids issuing clean opinions if CARO has any remarks",
-            "Only if the CARO remark is printed in bold red ink",
-            "Yes, any remark in CARO automatically makes the audit report an Adverse Opinion",
-            "No, CARO reporting is a separate statutory reporting requirement; the main opinion under SA 700 can remain Unmodified if the financial statements as a whole give a true and fair view"
+            "Yes. A CARO remark shows the books are misstated, so the SA 700 opinion must be qualified whenever the annexure contains an adverse comment.",
+            "Yes. CARO forms part of the opinion paragraph, so any adverse remark on a clause must be repeated in the Basis for Qualified Opinion section.",
+            "No. CARO remarks are reported to the Registrar only, so the annexure is not attached to the auditor's report on the financial statements.",
+            "No. CARO is a separate statutory reporting requirement, so the SA 700 opinion can stay unmodified if the statements as a whole give a true and fair view."
           ],
           "answerIndex": 3,
           "why": "ICAI Guidance Note on CARO 2020 clarifies that an adverse remark under CARO does not necessarily mean that the financial statements do not give a true and fair view; the primary opinion depends on financial statement misstatements.",
@@ -3698,10 +3698,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory function of the Unique Document Identification Number (UDIN) in statutory audit reporting in India?",
           "options": [
-            "A secret discount voucher code for downloading accounting software",
-            "A tax deduction identifier for claiming corporate CSR deductions",
-            "An 18-digit system-generated number from the ICAI portal that secures document authenticity, prevents unauthorized impersonation, and enables online regulatory verification",
-            "A serial number printed on office stationery for inventory counting"
+            "A 12-digit client-generated number from the MCA portal that tracks document submission, prevents duplicate filing, and allows online fee payment.",
+            "An 18-digit firm-generated number from the audit software that sequences working papers, prevents missing files, and allows internal review tracking.",
+            "An 18-digit system-generated number from the ICAI portal that secures document authenticity, prevents impersonation, and allows online regulatory verification.",
+            "A 10-digit system-generated number from the income tax portal that secures return filing, prevents refund fraud, and allows online assessment tracking."
           ],
           "answerIndex": 2,
           "why": "UDIN was introduced by ICAI as a mandatory 18-digit security mechanism to verify the authenticity of reports signed by practicing Chartered Accountants.",
@@ -3755,10 +3755,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 705 (Revised), what type of audit opinion must be expressed when a material misstatement exists that is both Material AND Pervasive to the financial statements?",
           "options": [
-            "A Qualified Opinion with an 'except for' paragraph",
-            "A Clean Unmodified Opinion with a Key Audit Matter paragraph",
-            "A Disclaimer of Opinion stating that the auditor was on leave",
-            "An Adverse Opinion stating that the financial statements do not give a true and fair view"
+            "A qualified opinion with an 'except for' paragraph describing the misstatement only.",
+            "A disclaimer of opinion stating that the auditor cannot form a view on the statements.",
+            "An unmodified opinion with an emphasis of matter paragraph describing the misstatement.",
+            "An adverse opinion stating that the financial statements do not give a true and fair view."
           ],
           "answerIndex": 3,
           "why": "SA 705 Paragraph 8 mandates that the auditor shall express an adverse opinion when the auditor obtains sufficient evidence that misstatements are both material and pervasive.",
@@ -3780,10 +3780,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory requirement under SA 705 Paragraph 21 regarding the quantification of financial effects in a Basis for Qualified Opinion section?",
           "options": [
-            "The auditor must quantify the financial effects of the misstatement on the financial statements unless it is impracticable to do so",
-            "The auditor is strictly prohibited from mentioning any monetary numbers",
-            "The auditor can only provide estimates in percentage terms without currency",
-            "The auditor only quantifies if the company agrees in advance"
+            "The auditor must quantify the financial effects of the misstatement on the financial statements unless it is impracticable to do so.",
+            "The auditor must quantify the financial effects only when management agrees to the amounts, and otherwise describe the matter in words.",
+            "The auditor must quantify the financial effects only for misstatements above overall materiality, and not for smaller qualifying items.",
+            "The auditor must quantify the financial effects in the management letter, and leave the Basis for Qualified Opinion section without amounts."
           ],
           "answerIndex": 0,
           "why": "SA 705 Paragraph 21 explicitly requires the auditor to quantify the financial effects on the relevant line items unless impracticable, ensuring complete stakeholder transparency.",
@@ -3805,10 +3805,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an auditor include a Key Audit Matters (KAM) section in an audit report that contains a Disclaimer of Opinion under SA 705 and SA 701?",
           "options": [
-            "Yes, provided the KAM section contains at least 10 matters",
-            "No, SA 705 Paragraph 29 and SA 701 strictly prohibit the auditor from including a Key Audit Matters section when an opinion on the financial statements is disclaimed",
-            "Only if the Audit Committee pays an extra statutory advisory fee",
-            "Yes, a KAM section is always mandatory for every company in the world"
+            "Yes. SA 701 requires a Key Audit Matters section in every report, so a disclaimer of opinion is always accompanied by one.",
+            "No. SA 705 and SA 701 prohibit including a Key Audit Matters section when an opinion on the financial statements is disclaimed.",
+            "Yes. The auditor may include the section if those charged with governance agree, to help users understand the reasons for the disclaimer.",
+            "No. SA 701 prohibits the section only in a report with an adverse opinion, and a disclaimer may include it if the matters are significant."
           ],
           "answerIndex": 1,
           "why": "SA 705 Paragraph 29 and SA 701 Paragraph 11 prohibit including a KAM section when the auditor disclaims an opinion, to prevent confusing users about the absence of assurance.",
@@ -3831,10 +3831,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between an Emphasis of Matter (EoM) paragraph and an Other Matter (OM) paragraph under SA 706 (Revised)?",
           "options": [
-            "There is no difference; the terms are interchangeable synonyms",
-            "An EoM paragraph modifies the audit opinion to qualified, whereas an OM paragraph modifies it to adverse",
-            "An EoM paragraph refers to a matter appropriately presented or disclosed in the financial statements that is fundamental to users' understanding; an OM paragraph refers to matters not disclosed in the financial statements that are relevant to users' understanding of the audit or auditor's responsibilities",
-            "An EoM paragraph is only for tax disputes, while an OM paragraph is only for inventory theft"
+            "An EoM paragraph refers to a matter not disclosed in the statements that affects users' understanding of the audit; an OM paragraph refers to matters already presented that are fundamental to the statements.",
+            "An EoM paragraph refers to a matter that modifies the opinion because it is material and pervasive; an OM paragraph refers to matters that do not modify the opinion but appear in the notes.",
+            "An EoM paragraph refers to a matter presented or disclosed in the statements that is fundamental to users' understanding; an OM paragraph refers to a matter not disclosed there but relevant to understanding the audit.",
+            "An EoM paragraph is used only in the audit reports of listed companies for going concern; an OM paragraph is used for all other entities to describe the audit scope and its limitations."
           ],
           "answerIndex": 2,
           "why": "SA 706 Paragraphs 5 and 7 explicitly define EoM as matters disclosed in the financial statements, and OM as matters not disclosed in the financial statements relevant to audit understanding.",
@@ -3855,10 +3855,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the Engagement Quality Control Reviewer (EQCR) under SA 220 when the audit team proposes to issue a modified audit opinion under SA 705?",
           "options": [
-            "To rewrite the company's accounting software in C++",
-            "To pay the client a refund on the audit fees",
-            "To file a lawsuit against the engagement partner",
-            "To independently evaluate the significant judgments made by the team, review the proposed wording of the modification, and ensure compliance before report release"
+            "To prepare the proposed wording of the modification for the team, and agree the amounts with management before the report is released.",
+            "To approve the audit fee and the staffing for the team, and sign the modified report on behalf of the engagement partner before release.",
+            "To gather additional evidence on the misstatement from the client, and replace the engagement partner's judgments before the report is released.",
+            "To independently evaluate the team's significant judgments, review the proposed wording of the modification, and ensure compliance before release."
           ],
           "answerIndex": 3,
           "why": "SA 220 and SQC 1 require the EQCR partner to independently evaluate significant judgments and the formulation of modified opinions prior to the release of the audit report.",
@@ -3912,10 +3912,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an auditor report a Material Uncertainty Related to Going Concern as a Key Audit Matter (KAM) under SA 701?",
           "options": [
-            "No, SA 701 Paragraph 15 explicitly prohibits reporting a going concern material uncertainty as a KAM; it must be reported in a dedicated 'Material Uncertainty Related to Going Concern' section under SA 570",
-            "Yes, going concern is always the first Key Audit Matter",
-            "Only if the company is listed on both the BSE and NSE",
-            "Yes, provided the auditor does not mention any financial numbers"
+            "No. SA 701 prohibits reporting a going concern uncertainty as a KAM; it goes in the dedicated 'Material Uncertainty Related to Going Concern' section under SA 570.",
+            "Yes. SA 701 treats a going concern uncertainty as the most significant matter, so it must always be reported as a KAM and not in any other section.",
+            "Yes. SA 570 requires the uncertainty to be reported as a KAM, and also repeated in the Emphasis of Matter section of the same audit report.",
+            "No. SA 701 allows going concern matters only in the Other Matter paragraph, and the dedicated section is used for fraud-related uncertainties."
           ],
           "answerIndex": 0,
           "why": "SA 701 Paragraph 15 and SA 570 mandate that matters giving rise to a material uncertainty regarding going concern must be reported under the dedicated SA 570 section, not inside KAM.",
@@ -3939,10 +3939,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the correct 3-step sequence mandated by SA 701 for determining Key Audit Matters?",
           "options": [
-            "All accounts with balances over Rs 1 Lakh -> Accounts audited on Fridays -> Accounts with zero errors",
-            "Draft financial statements -> Income tax return -> Board report",
-            "Matters published in newspapers -> Matters selected by shareholders -> Matters approved by the Chief Executive Officer",
-            "Matters communicated with TCWG -> Matters that required significant auditor attention -> Matters of most significance in the audit of the financial statements of the current period"
+            "Matters of most significance in the audit, then matters communicated with TCWG, then matters that required significant auditor attention.",
+            "Matters that required significant auditor attention, then matters flagged as risks by management, then matters above overall materiality.",
+            "Matters identified as significant risks, then matters communicated with the regulator, then matters of most significance in the prior-period audit.",
+            "Matters communicated with TCWG, then matters that required significant auditor attention, then matters of most significance in the current-period audit."
           ],
           "answerIndex": 3,
           "why": "SA 701 Paragraphs 8, 9, and 10 explicitly delineate the 3-step funnel: TCWG communication -> significant auditor attention -> matters of most significance.",
@@ -3966,10 +3966,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 701 Paragraph 13, what two essential technical explanations must the description of each Key Audit Matter provide?",
           "options": [
-            "An explanation of why the company hired the audit firm, and how much the audit partner was paid",
-            "A list of all employees fired during the year, and their residential addresses",
-            "An explanation of WHY the matter was considered to be one of most significance in the audit, and a description of HOW the matter was addressed in the audit",
-            "A prediction of next quarter's dividend yield, and stock trading tips"
+            "Why the matter was identified by management as a risk, and how the matter was resolved in the accounts.",
+            "What the matter was in the financial statements, and what adjustments the auditor proposed for it.",
+            "Why the matter was one of most significance in the audit, and how the matter was addressed in the audit.",
+            "Why the matter was not modified in the opinion, and how the matter was discussed with the regulator."
           ],
           "answerIndex": 2,
           "why": "SA 701 Paragraph 13 explicitly requires that each KAM must state why the matter was of most significance and how the audit addressed it, cross-referenced to the financial statement notes.",
@@ -3994,10 +3994,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can management's commercial sensitivity concerns prevent the auditor from communicating a Key Audit Matter if the company has already publicly disclosed information about the matter?",
           "options": [
-            "Yes, if the Board passes an extraordinary resolution",
-            "No, under SA 701 Paragraph 14(b), the adverse consequences exception cannot apply if the entity has already publicly disclosed information about the matter",
-            "Only if the company pays a fine to the stock exchange",
-            "Yes, management can unilaterally redact any section of the auditor's report"
+            "Yes. Under SA 701 Paragraph 14(b), management's commercial sensitivity is a valid reason to omit a KAM even when the matter has been publicly disclosed.",
+            "No. Under SA 701 Paragraph 14(b), the adverse consequences exception does not apply when the entity has already publicly disclosed information about the matter.",
+            "Yes. Under SA 701 Paragraph 14(b), the exception applies whenever the audit committee agrees that disclosure would harm the entity's market position.",
+            "No. Under SA 701 Paragraph 14(b), the exception never applies, so the auditor must communicate every matter even when law prohibits public disclosure."
           ],
           "answerIndex": 1,
           "why": "SA 701 Paragraph 14(b) explicitly establishes that the adverse consequences exception does not apply if the entity has publicly disclosed information about the matter.",
@@ -4022,10 +4022,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory working paper documentation requirement under SA 701 Paragraph 18 regarding Key Audit Matters?",
           "options": [
-            "The auditor must document the matters that required significant auditor attention and the rationale for determining whether or not each matter is a Key Audit Matter",
-            "The auditor only documents matters that were rejected by management",
-            "The auditor deletes all working papers once the audit report is signed",
-            "The auditor must publish all working papers on Wikipedia"
+            "The auditor must document the matters that required significant attention and the rationale for deciding whether each is a Key Audit Matter.",
+            "The auditor must document only the matters selected as Key Audit Matters and the wording that was agreed with management for the report.",
+            "The auditor must document the matters that required significant attention and the fee earned for the extra work needed on each matter.",
+            "The auditor must document the matters that were communicated to the regulator and the reasons for which the matters were later withdrawn."
           ],
           "answerIndex": 0,
           "why": "SA 701 Paragraph 18 explicitly mandates that the auditor shall document the matters that required significant auditor attention and the technical rationale for determining whether or not each is a KAM.",
@@ -4079,10 +4079,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 299 (Revised), what is the legal liability of joint auditors regarding audit areas that have NOT been specifically divided and allocated among them?",
           "options": [
-            "Neither auditor is responsible; the error is blamed on management",
-            "All joint auditors are jointly and severally responsible for all audit work that is not specifically divided and allocated",
-            "Responsibility is decided by a coin toss in the High Court",
-            "The senior partner's firm takes 100% of the blame alone"
+            "Only the lead joint auditor is responsible for audit work that is not specifically divided and allocated among the joint auditors.",
+            "All joint auditors are jointly and severally responsible for audit work that is not specifically divided and allocated among them.",
+            "Each joint auditor is responsible only for the share of fees received, for work that is not specifically divided and allocated.",
+            "All joint auditors are exempt from responsibility for audit work not allocated, and the liability passes to the company's directors."
           ],
           "answerIndex": 1,
           "why": "SA 299 Paragraph 11 explicitly establishes that in respect of audit work that is not divided and is carried out by all joint auditors, the joint auditors shall be jointly and severally responsible.",
@@ -4104,10 +4104,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 299 (Revised), is a joint auditor required to review or re-perform the audit procedures executed by another joint auditor on their allocated area?",
           "options": [
-            "Yes, but only on national holidays",
-            "Yes, every joint auditor must 100% re-perform all audit procedures of the other firm",
-            "No, a joint auditor is not required to review the work done by the other joint auditors and is entitled to assume that the other joint auditors have performed their work in accordance with Standards on Auditing",
-            "Only if the other audit firm has fewer than 10 partners"
+            "Yes. A joint auditor must re-perform a sample of the other joint auditors' work, since each auditor signs the report as a whole.",
+            "Yes. A joint auditor must review the other auditors' work only for areas the company has classified as high risk at the start.",
+            "No. A joint auditor need not review the other joint auditors' work and may assume they performed it in accordance with the Standards on Auditing.",
+            "No. A joint auditor need not review the other auditors' work, because the engagement partner of the lead firm alone is responsible."
           ],
           "answerIndex": 2,
           "why": "SA 299 Paragraph 9 explicitly establishes that each joint auditor is entitled to rely on the work performed by other joint auditors and is not required to review their work.",
@@ -4130,10 +4130,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SA 299 (Revised), what is the mandatory requirement when joint auditors disagree regarding the audit opinion on financial statements?",
           "options": [
-            "Both audit firms are automatically disqualified and fired without payment",
-            "The audit firm with the higher gross fee revenue gets to decide the opinion for both firms",
-            "The company's Board of Directors casts the tie-breaking vote",
-            "Each joint auditor shall express their own opinion through a separate audit report, and each report shall make reference to the other audit report(s)"
+            "The joint auditors issue a single report with the majority view, and the dissenting auditor signs a note of disagreement.",
+            "The lead joint auditor issues the report, and the other auditor's opinion is attached in an annexure without any reference.",
+            "Each joint auditor refers the dispute to the ICAI, and no report is issued until the Institute decides on the matter.",
+            "Each joint auditor expresses their own opinion in a separate audit report, and each report refers to the other report(s)."
           ],
           "answerIndex": 3,
           "why": "SA 299 Paragraph 13 explicitly mandates that when joint auditors disagree, each shall issue a separate report referencing the other report(s).",
@@ -4155,10 +4155,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 143(3)(c) of the Companies Act, 2013, what specific statement must the principal statutory auditor include in the audit report regarding branch audits?",
           "options": [
-            "Whether the report on the accounts of any branch office audited under Section 143(8) by a branch auditor has been sent to him and the manner in which he has dealt with it in preparing his report",
-            "A list of the names of all branch security guards",
-            "A statement that the principal auditor visited every single branch in person",
-            "A declaration of branch real estate property tax rates"
+            "Whether the report on a branch office's accounts audited under Section 143(8) was sent to him and how he dealt with it in preparing his report.",
+            "Whether the branch office's accounts were audited by the principal auditor and the fee that was paid to the branch auditor for the work.",
+            "Whether the branch auditor was appointed under Section 139 and how the branch auditor's independence was assessed by the audit committee.",
+            "Whether the branch office's accounts were consolidated with the head office and the manner in which inter-branch balances were eliminated."
           ],
           "answerIndex": 0,
           "why": "Section 143(3)(c) explicitly requires the auditor to report whether branch audit reports were sent to him and how he dealt with them in preparing the auditor's report.",
@@ -4179,10 +4179,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of assembling a Multi-Firm Governance Dossier under SA 299 and Section 143(8)?",
           "options": [
-            "To merge the two audit firms into a single partnership",
-            "To establish an unassailable audit trail documenting work allocation, coordination meetings, branch audit reliance, and ethical independence compliance across all participating firms",
-            "To calculate the division of lunch expenses among audit teams",
-            "To determine which firm has the newest laptops"
+            "To build a marketing record documenting client acquisition, fee negotiations, branch visits, referral arrangements, and pricing across the participating firms.",
+            "To build an audit trail documenting work allocation, coordination meetings, branch audit reliance, and ethical independence compliance across the participating firms.",
+            "To build a tax record documenting profit sharing, partner remuneration, branch expenses, GST compliance, and filings across the participating firms.",
+            "To build an inspection file documenting peer review findings, training hours, branch staffing, and the licence renewals across all participating firms."
           ],
           "answerIndex": 1,
           "why": "The Multi-Firm Governance Dossier provides documentary evidence of adherence to SA 299, SA 600, and Section 143(8), proving that work was properly allocated and coordinated.",
@@ -4236,10 +4236,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Milestone Project 5, what is the effect on the audit opinion when management agrees to adjust Rs 26.0 Crore of identified misstatements, bringing unadjusted differences to Rs 22.5 Crore?",
           "options": [
-            "The company must replace its Board of Directors",
-            "The auditor must issue an Adverse Opinion regardless of adjustments",
-            "An Unmodified (Clean) Opinion is permitted under SA 700 because the net unadjusted differences of Rs 22.5 Crore are well below overall materiality of Rs 57.5 Crore and performance materiality of Rs 37.38 Crore",
-            "The auditor must disclaim an opinion because adjustments were made"
+            "A qualified opinion is required under SA 705, since net unadjusted differences of Rs 22.5 crore exceed the clearly trivial threshold and the level of performance materiality of Rs 37.38 crore.",
+            "An unmodified opinion is permitted under SA 700 only after the remaining Rs 22.5 crore is also adjusted, since any unadjusted difference prevents a clean opinion on the statements.",
+            "An unmodified opinion is permitted under SA 700, since net unadjusted differences of Rs 22.5 crore are below overall materiality of Rs 57.5 crore and performance materiality of Rs 37.38 crore.",
+            "An adverse opinion is required under SA 705, since the Rs 26.0 crore adjusted by management shows that the earlier statements were misstated beyond overall materiality of Rs 57.5 crore."
           ],
           "answerIndex": 2,
           "why": "When management records adjustments reducing remaining uncorrected misstatements below materiality, an unmodified clean opinion under SA 700 is fully justified.",
@@ -4261,10 +4261,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Milestone Project 5, what two Key Audit Matters are formulated under SA 701 for Bharat Conglomerate?",
           "options": [
-            "Director personal golf club memberships",
-            "Turnkey infrastructure contract revenue recognition (Ind AS 115) and Thermal power generation CGU impairment testing (Ind AS 36)",
-            "Petty cash reimbursement and office tea supplies",
-            "Employee uniform laundry costs and parking fees"
+            "Inventory valuation of finished goods (Ind AS 2) and foreign currency translation of overseas subsidiaries (Ind AS 21).",
+            "Turnkey infrastructure contract revenue recognition (Ind AS 115) and thermal power generation CGU impairment testing (Ind AS 36).",
+            "Related party transactions with promoters (Ind AS 24) and deferred tax asset recognition on carried-forward losses (Ind AS 12).",
+            "Lease accounting for corporate office premises (Ind AS 116) and employee benefit obligations of the gratuity fund (Ind AS 19)."
           ],
           "answerIndex": 1,
           "why": "Long-term contract revenue recognition and thermal CGU impairment involve massive financial scale (Rs 5,400 Cr and Rs 4,800 Cr) and extreme estimation subjectivity.",
@@ -4286,10 +4286,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Milestone Project 5, how are the branch audits under Section 143(8) formally acknowledged in the joint statutory audit report?",
           "options": [
-            "Through a mandatory statutory statement in the Report on Other Legal and Regulatory Requirements under Section 143(3)(c) confirming that all 14 branch reports were sent to the auditors and properly dealt with",
-            "By attaching photographs of all 14 branch buildings",
-            "By requiring all 14 branch auditors to travel to Mumbai for a group photo",
-            "Branch audits are confidential and never mentioned in the statutory report"
+            "A statutory statement in the Report on Other Legal and Regulatory Requirements under Section 143(3)(c) confirming that all 14 branch reports were received and dealt with.",
+            "A key audit matter in the Key Audit Matters section under SA 701 explaining that all 14 branch audits were assessed for risk and relied upon by the auditors.",
+            "An emphasis of matter paragraph under SA 706 confirming that all 14 branch reports were sent to the auditors and that the branches had audited accounts for the year.",
+            "A statement in the CARO 2020 annexure under Clause (i) confirming that all 14 branch premises were physically verified and found to be in order."
           ],
           "answerIndex": 0,
           "why": "Section 143(3)(c) of the Companies Act, 2013 explicitly mandates the inclusion of a statutory statement confirming receipt and handling of branch audit reports.",
@@ -4311,10 +4311,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 143(3)(i) of the Companies Act, 2013, what must the statutory auditor report regarding internal financial controls?",
           "options": [
-            "Whether the company's website has an SSL certificate",
-            "Whether the company uses antivirus software on office computers",
-            "Whether employees arrive at work before 9:00 AM",
-            "Whether the company has adequate internal financial controls with reference to financial statements in place and the operating effectiveness of such controls"
+            "Whether the company has adequate internal audit coverage of its operations in place, and whether the internal auditor's reports were placed before the board.",
+            "Whether the company has adequate internal controls over all business operations in place, and the design effectiveness of those controls for compliance.",
+            "Whether the company has adequate IT general controls over financial systems in place, and whether the controls were certified by an independent firm.",
+            "Whether the company has adequate internal financial controls with reference to financial statements in place, and the operating effectiveness of those controls."
           ],
           "answerIndex": 3,
           "why": "Section 143(3)(i) explicitly requires the auditor to state whether the company has adequate internal financial controls with reference to financial statements and whether they operated effectively.",
@@ -4336,10 +4336,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What major professional milestone is certified upon completing Milestone Project 5 (Days 21-25) in Auditing & Forensic Accounting?",
           "options": [
-            "A certificate of attendance for a one-hour webinar",
-            "A license to drive corporate delivery trucks",
-            "Senior Statutory Assurance Partner & Corporate Governance Director accreditation, certifying mastery of SA 700/705/706 audit opinions, SA 701 Key Audit Matters, SA 299 Joint Audits, Section 143(8) Branch Audits, and CARO 2020",
-            "Certification in basic bookkeeping and cash ledger entries"
+            "Forensic Accounting and Fraud Examination Director accreditation, covering Benford analysis, Beneish scoring, evidence handling, expert testimony, and digital forensic acquisition.",
+            "Internal Audit and Risk Advisory Director accreditation, covering COSO controls, risk registers, sampling methods, IT general controls, and enterprise risk management.",
+            "Senior Statutory Assurance Partner and Corporate Governance Director accreditation, covering SA 700/705/706 opinions, SA 701 KAMs, SA 299 joint audits, branch audits, and CARO 2020.",
+            "Tax Audit and Compliance Partner accreditation, covering Section 44AB audits, transfer pricing reports, GST audits, TDS compliance, and income tax assessments."
           ],
           "answerIndex": 2,
           "why": "Milestone Project 5 certifies comprehensive mastery over the entire statutory reporting and multi-firm audit architecture under Indian and international standards.",
@@ -4394,10 +4394,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary scientific reason for using a hardware write-blocker during digital evidence acquisition under ISO/IEC 27037 and NIST SP 800-86?",
           "options": [
-            "To delete unwanted files from the suspect's computer before imaging",
-            "To speed up the computer's CPU clock frequency",
-            "To decrypt password-protected PDF bank statements automatically",
-            "To physically and electronically prevent any modification, write, or metadata alteration on the original source storage device during imaging"
+            "To speed up the copying of the original source device by compressing the data and avoiding the checks on every sector during imaging.",
+            "To encrypt the contents of the original source device with a key so that other analysts cannot access the data during imaging.",
+            "To verify the hash of the forensic image against a trusted database by comparing known file signatures on the device during imaging.",
+            "To physically and electronically prevent any modification, write, or metadata alteration on the original source device during imaging."
           ],
           "answerIndex": 3,
           "why": "A hardware write-blocker permits read commands while intercepting and blocking all write commands, guaranteeing that the original storage drive remains bit-for-bit unchanged.",
@@ -4420,10 +4420,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the landmark legal rule established by the Supreme Court of India in Arjun Panditrao Khotkar (2020) regarding Section 65B of the Indian Evidence Act?",
           "options": [
-            "A certificate under Section 65B is a mandatory condition precedent for the admissibility of electronic records in court; oral evidence cannot substitute for a written certificate",
-            "Section 65B certificates are entirely optional and only required if the judge asks for one",
-            "Electronic records are automatically inadmissible in all civil trials",
-            "A Section 65B certificate must be signed by the President of India"
+            "A Section 65B certificate is a mandatory condition for admitting electronic records in court, and oral evidence cannot take the place of the written certificate.",
+            "A Section 65B certificate is required only for records from a computer owned by the accused, and oral evidence from the operator may replace the certificate.",
+            "A Section 65B certificate is a mandatory condition only for original devices, and certified copies of electronic records are admitted without any certificate.",
+            "A Section 65B certificate is a discretionary requirement that the court may waive in the interest of justice, once the opposite party raises no objection."
           ],
           "answerIndex": 0,
           "why": "The Supreme Court in Arjun Panditrao Khotkar definitively held that a Section 65B(4) certificate is an absolute mandatory condition precedent for the admissibility of electronic evidence.",
@@ -4448,10 +4448,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the technical purpose of 'De-NISTing' during the processing stage of the Electronic Discovery Reference Model (EDRM)?",
           "options": [
-            "To erase all files created by non-Indian software developers",
-            "To match file cryptographic hashes against the NIST National Software Reference Library to automatically discard irrelevant operating system and application files",
-            "To convert all PDF documents into Microsoft Word format",
-            "To print out physical hard copies of all emails"
+            "To match file names against the NIST list of sensitive keywords so that privileged and confidential documents are separated for the legal team.",
+            "To match file hashes against the NIST National Software Reference Library so that irrelevant operating system and application files are discarded automatically.",
+            "To match file hashes against the NIST database of malware so that infected files are quarantined before review by the investigation team.",
+            "To match file dates against the NIST records of time zones so that timestamps are normalised across custodians before review by the legal team."
           ],
           "answerIndex": 1,
           "why": "De-NISTing filters out known, uncorrupted system files (like system DLLs) using NIST's database of known hashes, preventing wasted review of non-evidence files.",
@@ -4475,10 +4475,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does digital forensic analysis detect 'timestomping' on an NTFS file system?",
           "options": [
-            "By smelling the hard drive for burnt circuits",
-            "By verifying if the monitor brightness was turned down",
-            "By comparing the user-accessible STANDARD INFORMATION attribute against the kernel-protectedFILE_NAME attribute in the Master File Table (MFT); user timestomping tools alter $SI but fail to update $FN",
-            "By checking if the computer's battery was dead"
+            "By comparing the file's last access time with the volume's journal entries in the MFT; user timestomping tools alter $LogFile but fail to update $SI.",
+            "By comparing the file's creation time with the registry hive entries on the disk; user timestomping tools alter the registry but fail to update $SI.",
+            "By comparing the STANDARD_INFORMATION attribute with the kernel-protected FILE_NAME attribute in the MFT; user timestomping tools alter $SI but fail to update $FN.",
+            "By comparing the STANDARD_INFORMATION attribute with the user-visible file properties in Explorer; timestomping tools alter $FN but fail to update $SI."
           ],
           "answerIndex": 2,
           "why": "NTFS stores timestamps in two distinct MFT attributes: STANDARD INFORMATION (which user-mode tools can easily manipulate) andFILE_NAME (which kernel-level system processes manage), creating a tell-tale divergence when manipulated.",
@@ -4503,10 +4503,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of a digital forensic expert witness in judicial court proceedings under Section 45 of the Indian Evidence Act?",
           "options": [
-            "To install software updates on the judge's computer",
-            "To act as an advocate for the highest-paying client",
-            "To decide whether the accused should go to prison",
-            "To provide an objective, scientifically sound, and repeatable opinion on digital artifacts and evidence to assist the court in understanding technical facts"
+            "To give an advocate's view, supported by the instructing party's evidence, that helps the party to win the case on technical facts.",
+            "To give a final ruling on the guilt of the accused on the digital evidence, which then binds the court on technical and legal facts.",
+            "To give a summary of the case, drawn from the police charge sheet, that helps the court record the factual narrative of events.",
+            "To give an objective, scientifically sound, and repeatable opinion on digital evidence that helps the court understand technical facts."
           ],
           "answerIndex": 3,
           "why": "Under Section 45, an expert witness is an objective professional assisting the court with specialized technical knowledge, requiring impartial and scientifically repeatable evidence.",
@@ -4589,10 +4589,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary anti-fraud internal control designed to prevent Business Email Compromise (BEC) treasury wire diversion?",
           "options": [
-            "Changing executive email passwords to 'Password123'",
-            "Printing all emails on green paper",
-            "Forwarding all emails to the marketing manager",
-            "Mandatory out-of-band (OOB) verbal callback verification using pre-registered phone numbers before modifying vendor bank details or wiring large funds"
+            "Mandatory email confirmation from the sender's address, using the reply function, before changing vendor bank details or wiring large funds.",
+            "Mandatory approval by the vendor's invoice stamp, using scanned documents received, before changing vendor bank details or wiring large funds.",
+            "Mandatory annual review of vendor contracts, using the procurement register, before changing vendor bank details or wiring large funds.",
+            "Mandatory out-of-band verbal callback verification, using pre-registered phone numbers, before changing vendor bank details or wiring large funds."
           ],
           "answerIndex": 3,
           "why": "Out-of-band verbal callback verification ensures that changes to payment instructions are verified through an independent communication channel, defeating spoofed emails.",
@@ -4616,10 +4616,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 37, when must an enterprise recognize a formal financial provision on the balance sheet for a potential regulatory penalty arising from a corporate cyber data breach?",
           "options": [
-            "Only after the Chief Executive Officer pleads guilty in a court of law",
-            "Never, because cyber attacks are classified as acts of God",
-            "When there is a present legal or constructive obligation as a result of a past event, it is probable (>50% likelihood) that an outflow of resources will be required, and a reliable estimate can be made",
-            "Only if the ransomware was written in Python"
+            "When there is a possible obligation from a past event, an outflow is more than remote (about 10%), and a rough estimate can be made.",
+            "When there is a present legal obligation from a future event, an outflow is virtually certain (about 95%), and a reliable estimate can be made.",
+            "When there is a present legal or constructive obligation from a past event, an outflow is probable (more than 50%), and a reliable estimate can be made.",
+            "When there is a present legal or constructive obligation from a past event, an outflow is possible (about 30%), and the amount is disclosed."
           ],
           "answerIndex": 2,
           "why": "Ind AS 37 Paragraph 14 establishes the three criteria for recognizing a provision: present obligation, probable outflow (>50%), and reliable estimability.",
@@ -4644,10 +4644,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the CERT-In Cyber Security Directions issued under Section 70B of the IT Act, 2000, what is the mandatory time window within which a cyber incident must be reported to CERT-In?",
           "options": [
-            "Only after the incident is reported in a national newspaper",
-            "Within six (6) hours of noticing or being brought to notice of such incidents",
-            "Within 30 days of the next board meeting",
-            "Within one calendar year"
+            "Within twenty-four hours of noticing the incident or being notified of it.",
+            "Within six hours of noticing the incident or being notified of it.",
+            "Within seventy-two hours of noticing the incident or being notified of it.",
+            "Within six days of noticing the incident or being notified of it."
           ],
           "answerIndex": 1,
           "why": "CERT-In Cyber Directions Paragraph 2(i) explicitly mandates that all reportable cyber security incidents must be reported to CERT-In within 6 hours.",
@@ -4671,10 +4671,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of assembling a Cyber Incident & Resilience Audit Dossier in a statutory financial audit?",
           "options": [
-            "To obtain sufficient appropriate audit evidence confirming that the cyber incident did not materially distort the financial statements, that statutory reporting (CERT-In) was executed, and that IFCoFR remained effective",
-            "To negotiate the cryptocurrency ransom with the hackers",
-            "To write malicious code to attack competitor companies",
-            "To sell confidential company data on the dark web"
+            "To obtain sufficient appropriate evidence that the incident did not materially distort the financial statements, CERT-In reporting was done, and IFCoFR remained effective.",
+            "To obtain sufficient appropriate evidence that the incident was caused by an external attacker, the ransom was paid on time, and the insurer accepted the claim in full.",
+            "To obtain sufficient appropriate evidence that the incident did not affect the company's website, the CERT-In was informed, and the share price remained stable.",
+            "To obtain sufficient appropriate evidence that the incident was fully contained by the IT team, the firewall logs were saved, and the vendors were replaced."
           ],
           "answerIndex": 0,
           "why": "The audit dossier establishes that financial records remain complete, uncorrupted, and compliant with statutory reporting and internal financial control standards.",
@@ -4728,10 +4728,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Continuous Auditing over traditional retrospective audit sampling?",
           "options": [
-            "It replaces the need to pay statutory corporate taxes",
-            "It analyzes 100% of transactions in real-time or near-real-time, immediately alerting auditors to control breaches, threshold structuring, and segregation of duties violations",
-            "It allows companies to eliminate all accounting staff",
-            "It ensures that company stock prices never decline"
+            "It analyses a statistical sample of transactions at each quarter end, alerting auditors to control breaches, threshold structuring, and segregation of duties violations.",
+            "It analyses 100% of transactions in real time or near real time, alerting auditors at once to control breaches, threshold structuring, and segregation of duties violations.",
+            "It analyses 100% of transactions once a year after closing, alerting auditors later to control breaches, threshold structuring, and segregation of duties violations.",
+            "It analyses only high value transactions in real time, alerting auditors at once to control breaches, but ignoring smaller structured payments below thresholds."
           ],
           "answerIndex": 1,
           "why": "Continuous auditing eliminates sampling risk by screening 100% of transactions in near-real-time, enabling proactive detection of fraud and control breakdowns.",
@@ -4753,10 +4753,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Isolation Forest algorithm particularly effective for financial fraud detection in auditing?",
           "options": [
-            "Because it is written in Java rather than Python",
-            "Because it only runs on computers located in forests",
-            "Because anomalies are 'few and different', requiring fewer recursive splits in isolation trees to be isolated at shallow tree depths compared to normal transactions",
-            "Because it requires zero mathematical understanding"
+            "Because anomalies are numerous and similar, so they are grouped in the densest tree branches with more splits than normal transactions.",
+            "Because anomalies need labelled fraud examples, so they are learned from the training data with more depth than normal transactions.",
+            "Because anomalies are few and different, so they are isolated at shallow tree depths with fewer recursive splits than normal transactions.",
+            "Because anomalies lie far from the cluster mean, so they are found by distance measures with fewer variables than normal transactions."
           ],
           "answerIndex": 2,
           "why": "Isolation Forests isolate outliers by exploiting their sparsity and unusual attribute combinations, requiring fewer partitions than normal cluster points.",
@@ -4777,10 +4777,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is model explainability (such as SHAP or LIME) essential when auditing automated AI algorithms used for financial statement reporting?",
           "options": [
-            "To translate the computer code into French",
-            "Because explainability allows computers to run without electricity",
-            "To teach the AI model how to play chess",
-            "To prove that the AI model is not an opaque 'black box', allowing auditors to understand the feature weights and mathematical logic driving financial figures under SA 500"
+            "To show the model is faster than manual review, so auditors can reduce the audit sample sizes that were needed for the financial figures under SA 530.",
+            "To show the model is built by an independent vendor, so auditors can rely on the vendor's certification for the financial figures under SA 620.",
+            "To show the model is accurate on past data, so auditors can accept the output without testing the inputs of the financial figures under SA 520.",
+            "To show the model is not an opaque black box, so auditors can understand the feature weights and logic that drive the financial figures under SA 500."
           ],
           "answerIndex": 3,
           "why": "Auditors cannot obtain reasonable assurance on unexplainable black-box models; explainability frameworks provide the verifiable mathematical logic required under SA 500.",
@@ -4801,10 +4801,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 11(g) of the Companies (Audit and Auditors) Rules, 2014, what is the statutory standard for the operation of the audit trail (edit log) feature in accounting software?",
           "options": [
-            "The audit trail feature must have operated continuously throughout the entire year for all transactions recorded in the software, without being disabled or tampered with",
-            "The audit trail only needs to operate on the last day of the fiscal year",
-            "The audit trail can be deleted every Friday afternoon to save hard drive space",
-            "Audit trail logging is voluntary for companies with female directors"
+            "The audit trail must have operated continuously throughout the whole year for all recorded transactions, without being disabled or tampered with.",
+            "The audit trail must have operated on the dates of month-end closing for all recorded transactions, without being disabled during those periods.",
+            "The audit trail must have operated for transactions above the materiality limit throughout the year, without being tampered with in those cases.",
+            "The audit trail must have operated continuously for the most recent quarter for all recorded transactions, without being disabled during it."
           ],
           "answerIndex": 0,
           "why": "Rule 11(g) explicitly mandates that the audit trail feature must operate continuously throughout the year without tampering for all transactions.",
@@ -4826,10 +4826,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of assembling an AI & Continuous Analytics Audit Dossier under SA 230?",
           "options": [
-            "To generate fake marketing videos using generative AI",
-            "To document the scientific methodologies, algorithmic hyperparameters, explainability validations, and continuous log verifications supporting the audit opinion",
-            "To reduce electricity consumption in the audit firm's cafeteria",
-            "To sell algorithmic trading bots to retail investors"
+            "To document the vendor contracts, licence costs, user training hours, and server maintenance schedules that support the audit budget.",
+            "To document the methodologies, hyperparameters, explainability validations, and continuous log verifications that support the audit opinion.",
+            "To document the sample selections, confirmation replies, inventory counts, and bank reconciliations that support the audit opinion.",
+            "To document the client's source code, database schemas, cloud hosting terms, and access control lists that support the audit opinion."
           ],
           "answerIndex": 1,
           "why": "The dossier provides the permanent evidentiary audit trail required under SA 230 and SA 500, proving that algorithmic tools were calibrated, validated, and sound.",
@@ -4910,10 +4910,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the golden rule for an expert witness during hostile cross-examination regarding facts outside their mandate?",
           "options": [
-            "Admit that all accountants make up their numbers",
-            "Never guess or speculate; state calmly that the matter was outside the investigative mandate and confine answers strictly to verified evidence in the working papers",
-            "Make up a creative story to entertain the judge",
-            "Shout at the defense lawyer and demand an apology"
+            "Answer every question to appear confident; offer a best estimate on the matter outside the mandate and support it with general industry experience.",
+            "Never guess or speculate; state calmly that the matter was outside the mandate and confine answers to verified evidence in the working papers.",
+            "Challenge the questioner firmly; insist the matter is irrelevant to the case and avoid answering until the judge directs the expert to reply.",
+            "Defer to the instructing party; ask counsel to answer the question on the matter outside the mandate and then agree with counsel's answer."
           ],
           "answerIndex": 1,
           "why": "Speculation destroys expert credibility; the expert must remain objective and confine testimony strictly to verified evidence within their mandate.",
@@ -4935,10 +4935,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 132(4)(c) of the Companies Act, 2013, what is the maximum period for which the National Financial Reporting Authority (NFRA) can debar a Chartered Accountant or audit firm for professional misconduct?",
           "options": [
-            "Debarment for a minimum period of six months and up to ten years (or permanently in severe corporate fraud cases)",
-            "A maximum of 14 days over the Diwali holidays",
-            "Three weeks of community service cleaning the local library",
-            "NFRA cannot debar auditors; it can only write angry letters"
+            "Debarment for a minimum of six months and up to ten years, or permanently in severe corporate fraud cases.",
+            "Debarment for a minimum of one year and up to five years, and never permanently, even in severe corporate fraud cases.",
+            "Debarment for a minimum of ten years and up to twenty years, or permanently in the cases of severe corporate fraud.",
+            "Debarment for a minimum of one month and up to six months, with a monetary penalty in the severe corporate fraud cases."
           ],
           "answerIndex": 0,
           "why": "Section 132(4)(c)(B) explicitly grants NFRA the power to debar an auditor or audit firm for a minimum period of 6 months and up to 10 years.",
@@ -4991,10 +4991,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary judicial benefit of combining an expert report under Section 45 with a cryptographically locked SA 230 audit file?",
           "options": [
-            "It permits the auditor to skip all court appearances",
-            "It eliminates the need for a trial",
-            "It establishes that the expert's conclusions are grounded in objective scientific evidence and that working papers were locked in an untampered state within statutory timelines, defeating allegations of bias or fabrication",
-            "It makes the auditor eligible for a government pension"
+            "It shows the expert's conclusions rest on the client's accounting records and the working papers were shared with the prosecution early, defeating claims of delay.",
+            "It shows the expert's opinion was reviewed by the court-appointed auditor and the working papers were destroyed after the trial, defeating claims of privacy breach.",
+            "It shows the expert's conclusions rest on objective scientific evidence and the working papers were locked untampered within statutory timelines, defeating claims of bias.",
+            "It shows the expert's report was signed by the audit committee and the working papers were updated until the hearing, defeating claims of incomplete evidence."
           ],
           "answerIndex": 2,
           "why": "Grounding expert testimony in cryptographically verified, timely locked SA 230 working papers provides unassailable proof of evidentiary integrity and objectivity.",
@@ -5073,10 +5073,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In forensic auditing of a 142,500 invoice dataset, if the Pearson Chi-Square statistic for first-digit Benford distribution yields 70,452.94 against an 8-degree-of-freedom critical value of 20.09 (p < 0.001), what is the definitive forensic conclusion?",
           "options": [
-            "The Chi-Square test is mathematically invalid because degrees of freedom for Benford first-digit distributions must always be 9 rather than 8",
-            "The deviation merely reflects seasonal inflationary price index adjustments requiring no forensic escalation to the Audit Committee",
-            "The invoice population is fully compliant with natural Benford curves within normal acceptable audit sampling tolerance",
-            "The invoice distribution demonstrates catastrophic non-conformity to natural logarithmic patterns, establishing deliberate data fabrication and invoice threshold splitting"
+            "The distribution shows normal conformity to Benford's pattern, indicating natural variation and invoices raised in the ordinary course of business.",
+            "The distribution shows the test is not reliable for large datasets, because a count of 142,500 invoices makes every Chi-Square result significant.",
+            "The distribution shows weak non-conformity to Benford's pattern, indicating random clerical error in invoice entry and no fabrication by anyone.",
+            "The distribution shows severe non-conformity to Benford's pattern, indicating deliberate data fabrication and invoice threshold splitting."
           ],
           "answerIndex": 3,
           "why": "A Chi-Square test statistic of 70,452.94 vastly exceeds the critical value of 20.09 (alpha = 0.01, df = 8), providing overwhelming statistical proof that the numbers were artificially manufactured by human perpetrators.",
@@ -5123,10 +5123,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the landmark Supreme Court ruling in Arjun Panditrao Khotkar (2020) regarding Section 65B of the Indian Evidence Act, what is the mandatory requirement for electronic records (ERP dumps, email logs) to be admissible in court?",
           "options": [
-            "An oral testimony by the external statutory auditor stating that the electronic records appear reasonably authentic",
-            "A contemporaneous written Section 65B certificate executed by the person in lawful control of the computer system, certifying lawful custody, normal system operation, and cryptographic hash integrity",
-            "A notarized photocopy of the computer monitor displaying the spreadsheet rows without requiring cryptographic hash verification",
-            "A declaration from the criminal defendant affirming that the electronic records were accurately generated"
+            "A written affidavit from the external statutory auditor, certifying that the records appear authentic and were reviewed during the course of the audit.",
+            "A contemporaneous written Section 65B certificate from the person in lawful control of the system, certifying lawful custody, normal operation, and hash integrity.",
+            "A forensic report from the investigating officer, certifying that the records were seized lawfully and copied to a drive by the police laboratory.",
+            "A signed declaration from the company's director, certifying that the records are true copies of the books maintained for the financial year."
           ],
           "answerIndex": 1,
           "why": "Arjun Panditrao Khotkar (2020) established that a Section 65B certificate is an absolute condition precedent for the admissibility of secondary electronic evidence in Indian courts.",
@@ -5148,10 +5148,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance objective achieved when the Chief Audit Executive presents a validated forensic trial dossier and an IFCoFR remediation roadmap to the Audit Committee under Section 134(5)(e) and Section 177 of the Companies Act, 2013?",
           "options": [
-            "Restoring institutional integrity, securing asset recovery, fulfilling statutory reporting obligations to regulators, and preventing future systemic control breakdowns through hardened internal financial controls",
-            "Discharging all internal auditors immediately to minimize corporate overhead expenses and increase quarterly dividend payouts",
-            "Waiving external statutory audit requirements under Section 143 for the next five years due to internal assurance perfection",
-            "Classifying all past financial statements as confidential state secrets immune from regulatory review by NFRA or MCA"
+            "Restoring institutional integrity, securing asset recovery, meeting statutory reporting obligations, and preventing future control breakdowns through stronger internal financial controls.",
+            "Reducing the costs of the internal audit function, securing the early closure of the case, meeting the dividend commitments, and limiting the cost of future control reviews.",
+            "Protecting the reputation of the senior management, securing the removal of the whistleblower, meeting the share price targets, and limiting disclosure of the remediation plan.",
+            "Transferring liability to the external auditor, securing insurance recovery, meeting the lender covenants, and avoiding changes to the internal control framework in future."
           ],
           "answerIndex": 0,
           "why": "The presentation fulfills the Audit Committee's oversight mandate under Section 177, supports the Directors' Responsibility Statement under Section 134(5)(e), and institutes systemic control remediation to safeguard enterprise assets.",
@@ -5203,10 +5203,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 315 (Revised 2019) and the Audit Risk Model (AR = IR x CR x DR), how must the statutory auditor respond when the assessed Risk of Material Misstatement (RoMM = IR x CR) is exceptionally high?",
           "options": [
-            "The auditor can simply increase the target Audit Risk to fifty percent to reduce the required audit fieldwork.",
-            "The auditor is legally required to resign from the audit engagement within twenty-four hours.",
-            "The auditor should eliminate all substantive testing and rely entirely on unverified management inquiries.",
-            "The auditor must lower the allowable Detection Risk (DR), requiring more persuasive substantive evidence, larger sample sizes, and forensic audit procedures to maintain the target Audit Risk."
+            "The auditor must raise the allowable Detection Risk, which permits less persuasive substantive evidence, smaller samples, and analytical procedures to hold the target Audit Risk.",
+            "The auditor must lower the target Audit Risk to zero, which requires testing every transaction, full confirmations, and forensic procedures to hold the high Inherent Risk.",
+            "The auditor must keep Detection Risk unchanged, which requires the same evidence and samples as before, and rely on Control Risk reductions to offset the higher RoMM.",
+            "The auditor must lower the allowable Detection Risk, which requires more persuasive substantive evidence, larger samples, and forensic procedures to hold the target Audit Risk."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5229,10 +5229,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a material deficiency in General IT Controls (such as unsegregated administrative access) prevent statutory auditors from relying on automated application controls under ISA 315?",
           "options": [
-            "Because if general IT controls fail, unauthorized personnel could modify production data, system code, or automated calculations without leaving an audit trail, invalidating the integrity of all automated application controls.",
-            "Because statutory auditors are not permitted to use computers during the audit.",
-            "Because ERP software licenses are automatically revoked whenever a password expires.",
-            "Because General IT Controls only apply to consumer gaming consoles, not enterprise accounting systems."
+            "If general IT controls fail, unauthorised people could change production data, code, or automated calculations without an audit trail, undermining all automated application controls.",
+            "If general IT controls fail, the system speed is reduced and reports are produced late, which delays automated application controls but leaves their accuracy unaffected.",
+            "If general IT controls fail, only the manual controls that depend on user judgement are affected, while automated application controls continue to work as designed.",
+            "If general IT controls fail, the auditor loses access to the system logs, which means automated application controls can be tested only at the end of the year."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5256,10 +5256,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the structural difference between a Risk of Material Misstatement (RoMM) at the Financial Statement Level versus at the Assertion Level under ISA 315?",
           "options": [
-            "Financial statement level risks can only be identified by external tax authorities.",
-            "Financial statement level risks are pervasive risks affecting the financial statements as a whole and potentially many accounts (requiring overall audit strategic responses), whereas assertion-level risks relate directly to specific assertions within individual transaction classes or account balances (requiring specific substantive audit procedures).",
-            "Financial statement level risks only apply to companies with fewer than ten employees.",
-            "Assertion level risks are completely ignored by statutory auditors under international standards."
+            "Financial statement level risks relate to specific assertions in single balances, needing specific procedures; assertion level risks are pervasive and affect many accounts, needing overall responses.",
+            "Financial statement level risks are pervasive and affect many accounts, needing overall responses; assertion level risks relate to specific assertions in classes or balances, needing specific procedures.",
+            "Financial statement level risks arise only from fraud and need forensic procedures; assertion level risks arise only from error and need analytical procedures for the account balances.",
+            "Financial statement level risks are assessed by the audit committee at the year end; assertion level risks are assessed by the auditor during planning for each account balance."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5283,10 +5283,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an impending debt covenant breach considered a primary driver of the Risk of Material Misstatement (RoMM) during audit risk planning under ISA 315?",
           "options": [
-            "It makes the financial statements completely immune to fraud.",
-            "It automatically forces the lending bank to take over the external audit firm.",
-            "It creates immense financial and career pressure on executive management to aggressively manipulate accounting estimates, accelerate revenue, or conceal liabilities to prevent immediate debt acceleration and bankruptcy.",
-            "It legally dissolves the corporation's board of directors without a shareholder vote."
+            "It creates light pressure on management because lenders watch the figures closely, which lowers the chance that estimates or liabilities are manipulated.",
+            "It creates a legal duty on the auditor to report the breach to the lenders, which transfers the fraud risk away from the entity's own management.",
+            "It creates heavy pressure on management to manipulate estimates, accelerate revenue, or conceal liabilities to prevent debt acceleration and insolvency.",
+            "It creates an increased chance of clerical error in the debt notes, because covenant calculations are complex and are prepared by junior finance staff."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5309,10 +5309,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational outcome of deploying an algorithmic Inherent Risk and RoMM simulator during statutory audit planning under ISA 315?",
           "options": [
-            "It eliminates the need for auditors to perform any substantive procedures.",
-            "It automatically generates an unqualified audit opinion without reviewing financial records.",
-            "It replaces external auditors with company executives.",
-            "It mathematically derives the allowable Detection Risk for every account balance and objectively identifies Significant Risks, ensuring that audit resources and specialist procedures are deployed where risk of material misstatement is concentrated."
+            "It calculates the audit fee for each account balance and identifies low-risk areas, so audit effort is cut where misstatement risk is considered to be absent.",
+            "It calculates the final audit opinion for each account balance and identifies adjustments, so audit effort is limited to recording entries proposed by the system.",
+            "It calculates the sample size for every control in the entity and identifies deficiencies, so audit effort goes mainly to IT controls rather than to account balances.",
+            "It calculates the allowable Detection Risk for each account balance and identifies Significant Risks, so audit effort and specialists go where misstatement risk is concentrated."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5365,10 +5365,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 320 and SEC Staff Accounting Bulletin No. 99 (SAB 99), can a misstatement that is quantitatively below the planning materiality threshold still be deemed material?",
           "options": [
-            "Yes, but only if the misstatement involves cash stolen directly by the external audit partner.",
-            "No, because auditing standards establish that any error below five percent of net income is automatically immaterial under all legal jurisdictions.",
-            "Yes, because qualitative factors—such as masking a debt covenant breach, reversing earnings trends, or altering executive bonus payouts—can make quantitatively small misstatements material to reasonable users.",
-            "No, because qualitative factors are explicitly prohibited from consideration during statutory audits."
+            "No. Materiality is purely quantitative, so any misstatement below the planning threshold is immaterial whatever its effect on covenants, trends, or executive bonuses.",
+            "Yes. But only when the misstatement is above performance materiality, since qualitative factors are considered only for items that approach the planning threshold.",
+            "Yes. Qualitative factors, such as masking a covenant breach, reversing an earnings trend, or changing executive bonuses, can make a small misstatement material to users.",
+            "No. Qualitative factors such as covenants and bonuses are matters for management and the audit committee, and are not weighed in the auditor's materiality judgement."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5392,10 +5392,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do statutory auditors frequently normalize Profit Before Tax (PBT) by averaging prior years or excluding non-recurring events when establishing planning materiality under ISA 320?",
           "options": [
-            "To ensure that the external audit fee is automatically doubled every three years.",
-            "To prevent temporary, non-recurring anomalies (such as a one-time litigation settlement or asset impairment) from artificially distorting the materiality baseline and causing irrational audit scopes.",
-            "Because international auditing standards prohibit the use of current-year financial data.",
-            "To hide financial losses from the company's shareholders."
+            "To make sure profit before tax is always raised to match the budget, so that a larger materiality amount allows the auditor to test fewer items in the audit scope.",
+            "To stop temporary, non-recurring items, such as a one-time litigation settlement or impairment, from distorting the materiality baseline and creating an irrational audit scope.",
+            "To make sure the materiality baseline follows the latest year's volatility, so that a one-time litigation settlement or impairment sets a lower amount for audit scope.",
+            "To keep the materiality baseline equal to the revenue figure, so that profit before tax averages are not needed when the entity reports a one-time loss in the year."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5419,10 +5419,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical objective of establishing Performance Materiality at less than Overall Materiality under ISA 320?",
           "options": [
-            "To reduce to an appropriately low level the probability that the aggregate of uncorrected and undetected misstatements across multiple accounts exceeds overall financial statement materiality (aggregation risk).",
-            "To generate additional audit billing hours by testing unnecessary transactions.",
-            "To allow management to conceal small fraudulent transactions without reporting them to the board.",
-            "To comply with corporate income tax deductions."
+            "To reduce to a low level the probability that aggregate uncorrected and undetected misstatements across accounts exceed overall materiality (aggregation risk).",
+            "To reduce to a low level the cost of audit procedures by testing fewer accounts and ignoring misstatements that are below overall materiality for each account.",
+            "To raise the level at which individual misstatements are reported to management, so that aggregate misstatements across accounts are not communicated at all.",
+            "To reduce to a low level the probability that sampling in a single account fails to find an error above tolerable error, without regard to other accounts."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5446,10 +5446,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the regulatory definition and operational treatment of an audit difference that is 'Clearly Trivial' under ISA 450?",
           "options": [
-            "It is an error that must be immediately reported to criminal prosecutors.",
-            "It is any misstatement exceeding twenty-five percent of corporate net worth.",
-            "It is an error that requires the auditor to resign from the firm.",
-            "It is an error of a wholly different, negligible order of magnitude than materiality (typically below 3% to 5% of overall materiality) that is unmistakably trifling and does not need to be accumulated on the schedule of uncorrected misstatements."
+            "An error below overall materiality but above performance materiality (typically 50% to 75% of overall materiality) that must be accumulated on the schedule of misstatements.",
+            "An error that is trivial in amount but arises from fraud (typically below 3% to 5% of overall materiality) that must be reported to those charged with governance.",
+            "An error that management has already corrected (typically below 10% to 20% of overall materiality) that need not be shown on the schedule of misstatements.",
+            "An error of a clearly negligible order of magnitude (typically below 3% to 5% of overall materiality) that need not be accumulated on the schedule of uncorrected misstatements."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5474,10 +5474,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When accumulated uncorrected misstatements on the SUM schedule exceed Performance Materiality but remain below Overall Materiality, what is the auditor's required professional response under ISA 450?",
           "options": [
-            "The auditor must immediately issue an adverse opinion declaring total bankruptcy.",
-            "The auditor can ignore all accumulated misstatements because they are below overall materiality.",
-            "The auditor cannot simply issue an unqualified clean opinion without further action; they must request management to adjust the financial statements or perform expanded audit procedures to reduce aggregation risk to an acceptably low level.",
-            "The auditor must surrender their professional license to the board of directors."
+            "The auditor can issue a clean opinion because the total is below overall materiality; they need only note the amounts and report them to those charged with governance.",
+            "The auditor must issue a qualified opinion at once because the total is above performance materiality; they need not ask management to adjust the statements.",
+            "The auditor cannot simply issue a clean opinion; they must ask management to adjust the statements or expand procedures to bring aggregation risk to an acceptably low level.",
+            "The auditor must raise performance materiality to the total of the misstatements; they then conclude that aggregation risk is acceptably low for the statements."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5531,10 +5531,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 330 paragraph 18, why is the statutory auditor mandated to perform substantive procedures for each material class of transactions, account balance, and disclosure, regardless of the assessed risk of material misstatement?",
           "options": [
-            "Because financial statements are automatically considered fraudulent until proven otherwise.",
-            "Because audit risk assessment is inherently judgmental and internal controls have inherent operational limitations, including human error, management override, and collusive fraud.",
-            "Because statutory auditors are legally prohibited from ever relying on internal controls under all circumstances.",
-            "To generate extra billing hours for the audit firm's summer intern staff."
+            "Because risk assessment is mechanical and controls are always effective, so the substantive procedures serve only as a formal check of the auditor's work.",
+            "Because risk assessment is judgemental and controls have inherent limitations, including human error, management override, and collusive fraud.",
+            "Because auditing standards assume the statements are misstated until proven correct, so each balance must be tested regardless of materiality levels.",
+            "Because the audit committee requires full substantive testing in every audit, so the auditor must follow the committee's request over the risk assessment."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5558,10 +5558,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 330 paragraph 15, can statutory auditors rely on internal controls tested in prior years (triennial rotation) if the control mitigates an identified Significant Risk?",
           "options": [
-            "Yes, controls over significant risks can be rotated once every ten years.",
-            "Yes, provided management provides an oral confirmation that the control is working.",
-            "No, controls that mitigate identified Significant Risks must be tested for operating effectiveness in the current annual operating period without exception.",
-            "No, because controls over significant risks are illegal under international law."
+            "Yes. Controls over Significant Risks may be tested once every three years if there has been no change in the control since the last test.",
+            "Yes. Controls over Significant Risks may rely on prior-year testing when the entity has a strong control environment and automated controls.",
+            "No. Controls that mitigate identified Significant Risks must be tested for operating effectiveness in the current period, without exception.",
+            "No. Controls over Significant Risks may be tested in any period, but a walkthrough must be performed in each current period to rely on them."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5586,10 +5586,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 520 paragraph 7, when an identified variance between recorded amounts and the auditor's independent expectation exceeds the tolerable difference, what is the auditor required to do?",
           "options": [
-            "Adjust the auditor's independent expectation until the variance disappears.",
-            "Dismiss the variance as an immaterial rounding difference.",
-            "Automatically assume management committed fraud and refer the matter to Interpol.",
-            "Inquire of management and perform additional audit procedures to obtain corroborating audit evidence supporting management's explanations; the auditor cannot simply accept verbal management assertions."
+            "Accept management's verbal explanation if it appears reasonable, and record the variance as explained in the working papers without further procedures.",
+            "Adjust the tolerable difference upward to include the variance, and record the revised expectation in the working papers without further procedures.",
+            "Report the variance to the audit committee as a misstatement, and include the full amount in the schedule of uncorrected misstatements.",
+            "Inquire of management and perform additional procedures to corroborate management's explanations; verbal management assertions alone are not enough."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5614,10 +5614,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the structural difference between 'Vouching' and 'Tracing' during tests of details under ISA 330?",
           "options": [
-            "Vouching tests backward from general ledger entries to source documents to verify Existence/Occurrence (testing for overstatement), whereas Tracing tests forward from source documents to general ledger entries to verify Completeness (testing for understatement).",
-            "Vouching is only performed by external tax authorities, whereas Tracing is performed by marketing staff.",
-            "Vouching is testing paper documents, whereas Tracing is testing digital spreadsheets.",
-            "There is no difference; they are identical terms for counting petty cash."
+            "Vouching tests backward from ledger entries to source documents for existence or occurrence (overstatement); tracing tests forward from source documents to the ledger for completeness (understatement).",
+            "Vouching tests forward from source documents to ledger entries for completeness (understatement); tracing tests backward from the ledger to source documents for existence or occurrence (overstatement).",
+            "Vouching tests the valuation of ledger entries against market prices for accuracy (overstatement); tracing tests the cut-off of source documents against dispatch records for timing (understatement).",
+            "Vouching is applied to balance sheet accounts for rights and obligations (ownership); tracing is applied to income statement accounts for classification (presentation) in the statements."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5643,10 +5643,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the statutory auditor's assessment of control operating effectiveness directly influence the design of substantive audit procedures under ISA 330?",
           "options": [
-            "Ineffective controls allow the auditor to charge the client without doing any testing.",
-            "Operating effective controls allow the auditor to assess control risk as low, permitting a reduction in the extent of substantive tests of details and increased reliance on substantive analytical procedures, whereas ineffective controls force extensive substantive tests of details with larger sample sizes.",
-            "Control effectiveness has no relationship whatsoever to substantive testing.",
-            "Effective controls allow the auditor to completely eliminate all audit procedures and skip the audit."
+            "Effective controls support a high control risk and more substantive details tests with fewer analytical procedures; ineffective controls allow limited detail tests with smaller samples.",
+            "Effective controls support a low control risk and fewer substantive details tests with more analytical procedures; ineffective controls force extensive detail tests with larger samples.",
+            "Effective controls remove the need for substantive testing and allow reliance on control tests alone; ineffective controls require only a larger number of control walkthroughs.",
+            "Effective controls matter only for the opinion on internal controls and not for substantive design; ineffective controls change the audit report but not the testing plan."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5699,10 +5699,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 240 paragraph 26, how must statutory auditors treat the risk of fraud in revenue recognition across financial statement audit engagements?",
           "options": [
-            "Auditors must presume that there are risks of fraud in revenue recognition as an automatic significant risk; if this presumption is rebutted, the detailed rationale must be documented in the audit file.",
-            "Auditors must ignore revenue fraud unless the client's CEO admits to stealing cash.",
-            "Auditors are prohibited from auditing revenue recognition under international law.",
-            "Revenue fraud is presumed to occur only in non-profit charitable organizations."
+            "Auditors must presume that fraud risks exist in revenue recognition as a significant risk; if this presumption is rebutted, the rationale must be documented in the file.",
+            "Auditors must presume that fraud risks exist in all expense accounts as a significant risk; if this presumption is rebutted, the rationale must be reported to the regulator.",
+            "Auditors must treat fraud risk in revenue as a significant risk only when indicators are present; if no indicators exist, no documentation of the assessment is needed.",
+            "Auditors must presume that revenue is fraudulently stated in every engagement; this presumption cannot be rebutted, and the rationale must be documented in the file."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5727,10 +5727,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do statutory auditors specifically filter for manual journal entries recorded on weekends, late at night, or posted by senior executives during Journal Entry Testing (JET) under ISA 240?",
           "options": [
-            "Because accounting systems are legally prohibited from functioning on weekends.",
-            "Because external auditors are only paid for work performed on Saturdays.",
-            "To verify that all corporate employees are receiving proper overtime pay.",
-            "Because fraudulent ledger entries and management override manipulations are frequently executed outside normal working hours by senior executives seeking to force earnings targets without operational staff scrutiny."
+            "Because genuine entries are never posted outside normal hours by finance staff, so weekend postings prove that the amounts are false without any other audit evidence.",
+            "Because weekend and late-night postings are made by the batch processing system, so manual entries on those days are more likely to be routine and accurate.",
+            "Because posting dates are the only field in the ledger that management cannot edit, so the auditor can rely on them as reliable evidence of the amounts posted.",
+            "Because fraudulent entries and management override are often posted outside normal hours by senior executives seeking to meet targets without scrutiny from operational staff."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5755,10 +5755,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of performing a retrospective review of management judgments and assumptions relating to significant accounting estimates under ISA 240 paragraph 32(b)?",
           "options": [
-            "To force management to dismiss the external valuation specialists.",
-            "To prove that management is legally incapable of making subjective estimates.",
-            "To determine whether there is an indication of potential management bias or systematic reserve manipulation (such as cookie-jar accounting) that represents a risk of material misstatement due to fraud.",
-            "To recalculate the prior year's income tax liability and demand a refund from the government."
+            "To find indications of changes in accounting policy or presentation, such as early adoption of standards, that signal a risk of material misstatement from error.",
+            "To re-perform prior-year estimates with current information, such as updated market data, so that opening balances can be restated in the current year.",
+            "To find indications of management bias or systematic reserve manipulation, such as cookie-jar accounting, that signal a risk of material misstatement from fraud.",
+            "To confirm that prior-year estimates were audited properly, such as by the previous auditor, so that the current year's procedures can be reduced."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5783,10 +5783,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When evaluating significant unusual transactions outside the normal course of business under ISA 240 paragraph 32(c), what is the auditor's primary responsibility?",
           "options": [
-            "Charge a separate success commission based on the transaction's profit.",
-            "Evaluate whether the business rationale (or lack thereof) suggests that the transactions may have been entered into to engage in fraudulent financial reporting or to conceal asset misappropriation.",
-            "Assist management in drafting press releases praising the commercial wisdom of the transaction.",
-            "Automatically assume the transaction was approved by foreign tax authorities."
+            "Evaluate whether the pricing of the transactions is in line with market rates, so that tax authorities can accept the transactions as at arm's length.",
+            "Evaluate whether the business rationale, or lack of it, suggests the transactions were made to commit fraudulent reporting or to conceal asset misappropriation.",
+            "Evaluate whether the board approved the transactions in minutes, so that unusual transactions are accepted when the approval was documented in advance.",
+            "Evaluate whether the transactions were disclosed in the notes, so that unusual transactions are accepted when the related disclosures were adequate."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5811,10 +5811,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an enterprise fraud simulator detects pervasive executive journal entries overriding internal controls combined with systematic bias across subjective reserves, what is the auditor's required action under ISA 240?",
           "options": [
-            "Communicate the identified management override and fraud indicators to those charged with governance (Board Audit Committee) on a timely basis, re-evaluate management integrity, and consider legal reporting obligations or potential engagement withdrawal.",
-            "Delete the audit working papers to avoid embarrassing the client.",
-            "Sign an unqualified audit opinion immediately.",
-            "Offer to write the company's marketing brochure in exchange for a fee reduction."
+            "Communicate the management override and fraud indicators to those charged with governance promptly, reassess management integrity, and consider legal reporting or withdrawing from the engagement.",
+            "Discuss the management override and fraud indicators with the CFO privately, accept management's assurances on integrity, and continue the engagement with extra sampling in the areas.",
+            "Record the management override and fraud indicators in the working papers only, maintain the existing plan of work, and consider legal reporting duties after the audit is complete.",
+            "Communicate the management override and fraud indicators to the external lenders at once, reassess the fee for the engagement, and continue after obtaining their consent."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5868,10 +5868,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 7 Capstone engagement for Aegis Industrial Conglomerate, why do a razor-thin debt covenant margin (0.026x) and a 1-cent EPS beat over analyst consensus create an environment requiring maximum professional skepticism under ISA 240 and ISA 315?",
           "options": [
-            "Because debt covenants are legally unenforceable under international maritime law.",
-            "Because corporate earnings per share are not subject to external audit review.",
-            "Because statutory auditors are required to resign whenever a company beats earnings estimates.",
-            "Because they provide extreme structural incentives for executive management to fraudulently accelerate revenue, conceal liabilities, and manipulate subjective reserves to avoid immediate covenant default and preserve multi-million-dollar bonus payouts."
+            "Because they give strong reassurance that management has reliable forecasting, which allows the auditor to reduce testing of revenue, liabilities, and reserves.",
+            "Because they give strong evidence of a clerical error in the covenant calculation, which allows the auditor to correct the revenue, liabilities, and reserves.",
+            "Because they give weak incentives for management as the margin is positive, which allows the auditor to apply standard testing of revenue, liabilities, and reserves.",
+            "Because they give strong incentives for management to accelerate revenue, conceal liabilities, and manipulate reserves to avoid covenant default and protect large bonus payouts."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5896,10 +5896,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When General IT Controls (GITCs) over enterprise ERP systems are found to be materially deficient due to unsegregated developer root access, what is the mandatory auditing standard impact under ISA 315?",
           "options": [
-            "The auditor cannot rely on automated application controls, must escalate Control Risk to maximum, lower allowable Detection Risk, and perform extensive substantive testing of details across affected accounts.",
-            "The auditor can simply assume that developers never made any errors.",
-            "The auditor should ask the developers to promise they will not touch the database again.",
-            "The auditor is legally required to delete the company's financial database."
+            "The auditor cannot rely on automated application controls; they must set Control Risk at maximum, lower Detection Risk, and do extensive substantive details testing.",
+            "The auditor can still rely on automated application controls; they must set Control Risk at medium, keep Detection Risk, and do limited substantive details testing.",
+            "The auditor cannot rely on manual controls; they must set Inherent Risk at maximum, raise Detection Risk, and do extensive tests of controls in the affected accounts.",
+            "The auditor cannot rely on the ERP reports; they must set Control Risk at minimum, lower Detection Risk, and do extensive walkthroughs of the IT environment."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5924,10 +5924,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the engagement partner calibrate Performance Materiality at a severe 50% haircut ($12.0M) relative to Overall Materiality ($24.0M) for Aegis Industrial Conglomerate under ISA 320?",
           "options": [
-            "Because the external audit fee was reduced by fifty percent.",
-            "Because severe General IT Control deficiencies, complex operations, and prior-year adjustments created high aggregation risk, requiring a conservative performance threshold to ensure multiple undetected errors would not breach overall materiality.",
-            "Because auditing standards require performance materiality to always equal zero.",
-            "To intentionally cause the client to fail the audit."
+            "Because strong IT controls, simple operations, and clean prior-year results lowered aggregation risk, so a conservative threshold was used to cut the audit hours needed for the engagement overall.",
+            "Because severe IT control deficiencies, complex operations, and prior-year adjustments raised aggregation risk, so a conservative threshold kept multiple undetected errors under overall materiality.",
+            "Because the 50% haircut is the minimum set by ISA 320, so a threshold at that level is applied to every audit regardless of the risk assessment made for the engagement overall.",
+            "Because the entity is a listed conglomerate with several operating segments, so a conservative threshold was set to match the overall materiality assigned to each of its segments in the group."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5952,10 +5952,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When statutory audit procedures uncover intentional fraudulent journal entries and biased estimate releases totaling $64.5M against an Overall Materiality of $24.0M, can the auditor issue an unqualified clean audit opinion under ISA 700 without management booking adjustments?",
           "options": [
-            "Yes, provided management pays a ten percent audit bonus.",
-            "No, because auditing standards require the auditor to be executed.",
-            "No; because the uncorrected misstatements are material and fraudulent, the auditor must demand that management adjust the financial statements; if management refuses, the auditor must issue a Modified Qualified ('Except For') or Adverse Audit Opinion under ISA 705.",
-            "Yes, because external auditors have no legal duty to report fraud to anyone."
+            "Yes. The auditor can issue a clean opinion with an emphasis of matter paragraph that discloses the misstatements, if management refuses the adjustments under ISA 706.",
+            "No. The auditor must withdraw the opinion and issue a disclaimer of opinion at once, whether or not management agrees to book the adjustments under ISA 705.",
+            "No. The auditor must ask management to adjust the statements; if it refuses, the auditor must issue a qualified ('Except For') or adverse opinion under ISA 705.",
+            "Yes. The auditor can issue a clean opinion when the board approves the entries, because fraud-related misstatements do not affect the opinion under ISA 700."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5981,10 +5981,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory auditor's legal and professional obligation under ISA 705 when executive management refuses to book audit adjustments for material fraudulent misstatements ($64.5M) that breach overall materiality ($24.0M)?",
           "options": [
-            "The auditor must purchase shares in the company to offset the losses.",
-            "The auditor must agree to management's compromise to protect the company's stock price.",
-            "The auditor can simply sign a clean opinion and secretly mail a letter to the newspaper.",
-            "The auditor must modify the independent audit opinion by issuing a Qualified ('Except For') or Adverse Audit Opinion, as the financial statements are materially misstated; the auditor cannot compromise or negotiate away material audit adjustments."
+            "The auditor must keep the opinion unmodified with an emphasis of matter paragraph, because the statements are disclosed accurately and the adjustments can be negotiated.",
+            "The auditor must withdraw from the engagement without reporting, because the statements are materially misstated and the adjustments are a matter for management to settle.",
+            "The auditor must issue a disclaimer of opinion on the statements, because the evidence is insufficient and the adjustments can be left to the next period's accounts.",
+            "The auditor must modify the opinion with a qualified ('Except For') or adverse opinion, because the statements are materially misstated and the adjustments cannot be negotiated away."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6037,10 +6037,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 500 paragraph 6 and PCAOB AS 1105, can an auditor compensate for audit evidence that is irrelevant or of poor reliability by simply gathering a larger volume of that evidence?",
           "options": [
-            "Yes; obtaining ten thousand copies of an unverified internal memo makes it legally conclusive.",
-            "Yes; quantity always overrides quality under international auditing standards.",
-            "No; merely obtaining more audit evidence cannot compensate for audit evidence that lacks quality, relevance, or reliability.",
-            "No, because auditing standards prohibit collecting more than five pieces of evidence per account."
+            "Yes. Obtaining more audit evidence can make up for evidence that lacks relevance when the volume is large enough.",
+            "No. Obtaining more audit evidence is not allowed when the evidence has been supplied by management or its staff.",
+            "No. Obtaining more audit evidence cannot make up for evidence that lacks quality, relevance, or reliability.",
+            "Yes. Obtaining more audit evidence can make up for evidence that lacks reliability if it is collected at year end."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6065,10 +6065,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the ISA 500 Hierarchy of Evidence Reliability, why is an external bank confirmation received directly by the auditor (Tier 2) considered significantly more reliable than a bank statement PDF provided by the client (Tier 4)?",
           "options": [
-            "Because commercial banks are governmental branches of the United Nations.",
-            "Because direct external confirmations originate from an independent third party without passing through the client's hands, eliminating the risk of internal alteration, selective withholding, or digital editing by dishonest management.",
-            "Because PDF documents are legally prohibited from being viewed by certified accountants.",
-            "Because external bank confirmations are automatically insured by the federal government."
+            "Because a direct external confirmation covers every account of the client, which removes the need for any further procedures on the cash and bank balances.",
+            "Because a direct external confirmation comes from an independent third party without passing through the client, removing the risk of alteration, selective withholding, or editing.",
+            "Because a direct external confirmation is signed by the bank's auditor, which means the bank statement has been audited under the same professional standards.",
+            "Because a direct external confirmation is received faster than statements, which reduces the risk that balances change between the dates of the year end."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6092,10 +6092,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 500 paragraph 8, can a statutory auditor accept a valuation report prepared by management's specialist without evaluating the expert's objectivity, testing source data, or challenging underlying assumptions?",
           "options": [
-            "No; the auditor is explicitly required to evaluate the specialist's competence, capabilities, and objectivity, understand the methods used, and test the relevance, completeness, and accuracy of source data.",
-            "Yes, because external auditors are legally forbidden from questioning scientific or engineering reports.",
-            "Yes, provided the specialist holds a PhD from an accredited university.",
-            "No, because auditing standards require all specialists to be fired immediately."
+            "No. The auditor must evaluate the specialist's competence, capabilities, and objectivity, understand the methods used, and test the source data's relevance and accuracy.",
+            "Yes. The auditor may accept the specialist's report when the specialist holds a recognised professional licence, without further evaluation of the methods or the source data.",
+            "No. The auditor must evaluate the specialist's licence and fee arrangements, understand the pricing used, and test only the final value for reasonableness against budgets.",
+            "Yes. The auditor may accept the specialist's report when management confirms the assumptions in writing, though the auditor must still test the source data for accuracy."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6119,10 +6119,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 500 paragraph 9 and PCAOB AS 1105, why must statutory auditors test the completeness and accuracy of Information Produced by the Entity (IPE) before using it for audit procedures?",
           "options": [
-            "To prove that corporate accountants do not know how to use computers.",
-            "Because client spreadsheets are automatically destroyed after thirty days.",
-            "Because accounting software companies require auditors to pay a license fee for every report.",
-            "Because if the underlying report or spreadsheet produced by the client is incomplete or inaccurate, any audit sampling, substantive testing, or conclusion based upon that report is fundamentally flawed and unreliable."
+            "Because the client's report or spreadsheet is always prepared by junior staff, so any sampling, testing, or conclusion based on it must be reviewed by a senior reviewer.",
+            "Because the client's report or spreadsheet is the audit evidence itself, so any sampling, testing, or conclusion based on it is complete once the totals are agreed.",
+            "Because the client's report or spreadsheet is protected by confidentiality rules, so any sampling, testing, or conclusion based on it needs the client's prior consent.",
+            "Because if the client's report or spreadsheet is incomplete or inaccurate, any sampling, testing, or conclusion based on it is fundamentally flawed and unreliable."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6147,10 +6147,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of deploying an enterprise ISA 500 audit evidence and IPE verification simulator during financial statement audit execution?",
           "options": [
-            "To eliminate the need for independent external auditors.",
-            "To automatically issue unqualified opinions without testing any source documents.",
-            "To programmatically verify that all material accounts are supported by sufficient appropriate audit evidence meeting the required hierarchy reliability tier, that IPE reports are complete and accurate, and that specialist work is rigorously validated before signing the audit report.",
-            "To hide accounting errors from regulatory inspection authorities."
+            "To check programmatically that material accounts are supported by management representations, IPE reports are signed by the CFO, and specialist work is approved by the board before sign-off.",
+            "To replace the review of audit evidence by the engagement partner, so that IPE reports are accepted automatically and specialist work does not need validation before sign-off.",
+            "To check programmatically that material accounts have sufficient appropriate evidence of the required reliability tier, IPE reports are complete and accurate, and specialist work is validated.",
+            "To check programmatically that all accounts are tested at the same level of assurance, IPE reports are reperformed in full, and specialist work is excluded from the scope before sign-off."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6204,10 +6204,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 505 paragraph 7, what is the mandatory consequence if statutory auditors permit client personnel to collect and forward third-party confirmation responses to the audit team?",
           "options": [
-            "The auditor can simply ask management to sign an affidavit that they did not open the mail.",
-            "Direct auditor control is broken, compromising the integrity and reliability of the audit evidence, which forces the auditor to reject the responses and re-perform the confirmation procedure under strict auditor control or perform alternative substantive procedures.",
-            "The confirmation responses are legally elevated to Tier 1 evidence.",
-            "The client's accounting software license is automatically revoked."
+            "Direct auditor control is retained if management signs a declaration, so the auditor may accept the responses and note the client's handling in the working papers of the file.",
+            "Direct auditor control is broken and reliability is compromised, so the auditor must reject the responses and redo the confirmation under auditor control or use alternative procedures.",
+            "Direct auditor control is broken only for responses above materiality, so the auditor must redo those confirmations but may accept smaller responses without further procedures.",
+            "Direct auditor control is unaffected for electronic responses, so the auditor may accept forwarded replies by email but must reject any forwarded paper responses from the client."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6231,10 +6231,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 505 paragraph 15, why are Negative Confirmation Requests considered significantly less persuasive than Positive Confirmation Requests?",
           "options": [
-            "Because negative confirmation requests are always printed in invisible ink.",
-            "Because negative confirmations are illegal in all English-speaking countries.",
-            "Because failure to receive a response to a negative confirmation does not provide explicit evidence that the third party verified and agreed with the balance; the recipient may have simply discarded or overlooked the request.",
-            "Because negative confirmations can only be signed by criminal attorneys."
+            "Because receiving a reply to a negative confirmation always shows that the balance is wrong; the third party replies only when they disagree, so agreement is never shown.",
+            "Because negative confirmations are sent to the client rather than the third party; the client's reply gives weaker evidence than the independent party's reply would.",
+            "Because not receiving a reply to a negative confirmation gives no explicit evidence that the third party checked and agreed with the balance; they may simply have ignored it.",
+            "Because negative confirmations cover only a sample of the balance rather than the whole; the third party reply shows agreement with the part, not the full amount."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6259,10 +6259,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do standard bank confirmation requests under ISA 505 and PCAOB standards ask the bank to confirm outstanding loans, credit facilities, contingent guarantees, and collateral encumbrances, in addition to ending cash deposit balances?",
           "options": [
-            "To help the bank market new consumer credit cards to company employees.",
-            "Because cash balances can only be verified if the company borrows money.",
-            "Because commercial banks are required to pay the auditor's invoice directly.",
-            "To obtain independent verification of the entire commercial banking relationship, uncovering unrecorded liabilities, off-balance-sheet credit commitments, pledged collateral, and restricted cash covenants that management may have failed to disclose."
+            "To get independent verification of the bank's own credit rating, uncovering the bank's capital adequacy, regulatory sanctions, branch closures, and licence conditions that the bank may not have disclosed.",
+            "To get independent verification of the client's tax position, uncovering unpaid advance tax, TDS defaults, GST mismatches, and refunds due that management may not have recorded in the ledger.",
+            "To get independent verification of the client's payroll accounts, uncovering ghost employees, unrecorded advances, provident fund shortfalls, and bonus accruals that management may not have booked.",
+            "To get independent verification of the whole banking relationship, uncovering unrecorded liabilities, off-balance-sheet commitments, pledged collateral, and restricted cash that management may not have disclosed."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6288,10 +6288,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 505 paragraph 9, what must the statutory auditor do if management's refusal to allow a confirmation request is deemed unreasonable, or if alternative substantive procedures cannot obtain sufficient appropriate audit evidence on a material balance?",
           "options": [
-            "Communicate immediately with the Board Audit Committee under ISA 260 and modify the independent audit opinion (Qualified Opinion or Disclaimer of Opinion) under ISA 705 due to a management-imposed scope limitation.",
-            "Sign an unqualified clean audit opinion to avoid embarrassing executive management.",
-            "Pay the client a settlement fine for asking inappropriate questions.",
-            "Secretly telephone the client's competitors to sell corporate trade secrets."
+            "Communicate with the Audit Committee under ISA 260 and modify the opinion (qualified or disclaimer) under ISA 705 because of a management-imposed scope limitation.",
+            "Communicate with the Audit Committee under ISA 260 and issue an unmodified opinion with an emphasis of matter paragraph under ISA 706 describing the management's refusal.",
+            "Communicate with the regulator under ISA 250 and issue an adverse opinion under ISA 705 because the refusal is evidence that the balance in the ledger is materially misstated.",
+            "Communicate with the engagement partner under ISA 220 and rely on the management representation letter under ISA 580 to replace the confirmation evidence on the balance."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6317,10 +6317,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of an enterprise confirmation simulator in executing statutory audit procedures under ISA 505?",
           "options": [
-            "To replace third-party confirmations with internal client estimates.",
-            "To maintain direct auditor control over confirmation dispatch and receipt, track response rates, automate timing discrepancy reconciliations, and ensure that all non-responses are rigorously substantiated via alternative procedures.",
-            "To automatically delete unconfirmed customer accounts from the general ledger.",
-            "To eliminate the need for auditors to communicate with commercial banks."
+            "To give management control over dispatch and receipt, track internal approvals, automate preparation of the confirmation letters, and ensure non-responses are treated as agreement with the balances.",
+            "To keep direct auditor control over dispatch and receipt, track response rates, automate reconciliation of timing differences, and ensure non-responses are substantiated by alternative procedures.",
+            "To keep direct auditor control over dispatch only, track postal delivery, automate chasing of the third parties, and ensure non-responses are escalated to the audit committee for follow-up.",
+            "To replace positive confirmations with negative requests, track bounced mail, automate sampling of the balances, and ensure non-responses are substantiated by management representations."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6374,10 +6374,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 530 and PCAOB AS 2315, why is the Risk of Incorrect Acceptance (Type II / Beta Risk) considered the most dangerous sampling risk in financial statement auditing?",
           "options": [
-            "Because it causes the auditor to erroneously conclude that an account is not materially misstated when it actually is, leading to an inappropriate unqualified audit opinion, public audit failure, and severe liability.",
-            "Because it automatically reduces the auditor's hourly billing rate by fifty percent.",
-            "Because it causes the client's accounting software to crash.",
-            "Because it is prohibited by international human rights treaties."
+            "Because it makes the auditor wrongly conclude that an account is not materially misstated when it is, leading to an inappropriate clean opinion, audit failure, and severe liability.",
+            "Because it makes the auditor wrongly conclude that an account is materially misstated when it is not, leading to unnecessary extra testing, higher costs, and lower efficiency.",
+            "Because it makes the auditor wrongly extrapolate the sample results to the population, leading to a projected misstatement, extended sampling, and delay in the report.",
+            "Because it makes the auditor wrongly set the tolerable error too high at planning, leading to a smaller sample, weaker evidence, and a qualified opinion in the report."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6402,10 +6402,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary structural difference between Monetary Unit Sampling (MUS) and classical physical-unit sampling under ISA 530?",
           "options": [
-            "MUS completely eliminates the need for statutory auditors to inspect invoices.",
-            "MUS is only permitted for non-profit charitable foundations.",
-            "MUS treats each physical invoice as one sampling unit, so every invoice has the same chance of selection regardless of its dollar value.",
-            "MUS defines each individual dollar in the population as the sampling unit, automatically stratifying the sample so that larger dollar transactions have a proportionately higher probability of selection, while items larger than the interval are selected 100% of the time."
+            "MUS treats each physical item as a sampling unit, so every item has an equal chance of being selected, and items larger than the interval are rarely chosen.",
+            "MUS treats each account as a sampling unit with a fixed quota, so larger accounts are selected at the same rate, and items larger than the interval are excluded.",
+            "MUS treats each monetary unit as a sampling unit, so smaller items are more likely to be selected, and items larger than the interval are tested only by inquiry.",
+            "MUS treats each monetary unit as a sampling unit, so larger items are more likely to be selected, and items larger than the interval are always selected."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6430,10 +6430,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 530, under what operational conditions is Classical Variables Sampling (such as Difference or Ratio Estimation) preferred over Monetary Unit Sampling (MUS)?",
           "options": [
-            "When the auditor wants to perform an audit without reviewing financial records.",
-            "Only when auditing companies in the construction industry.",
-            "When the auditor expects a significant frequency of misstatements, when both overstatements and understatements are present, or when the population contains zero balances and credit balances that cannot be handled by MUS.",
-            "When the client pays the audit fee in physical gold bars."
+            "When the auditor expects few misstatements, only overstatements are present, or the population has mainly large debit balances that MUS handles with ease.",
+            "When the auditor expects frequent misstatements, only understatements are present, or the population has large balances that classical sampling cannot select.",
+            "When the auditor expects frequent misstatements, both overstatements and understatements are present, or the population has zero and credit balances that MUS cannot handle.",
+            "When the auditor expects few misstatements, both overstatements and understatements are present, or the population has high-value items that need 100% testing."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6458,10 +6458,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 530 paragraph 14, when an auditor uncovers monetary misstatements in an audit sample, why must the auditor project the misstatements across the entire population rather than recording only the sample errors?",
           "options": [
-            "Because international standards prohibit auditors from recording factual errors.",
-            "Because sample errors represent only a fraction of the population; projecting misstatements across the unexamined items is necessary to estimate the true total scale of misstatement in the financial statements.",
-            "To ensure that the client's corporate tax bill is maximized.",
-            "Because projection formulas are required by local municipal zoning laws."
+            "Because the sample errors are assumed to be isolated events, so projecting them over the population overstates the true total misstatement in the statements.",
+            "Because the sample errors cover only a fraction of the population, so projecting them over unexamined items estimates the true total misstatement in the statements.",
+            "Because the sample errors must be reported to the client in full, so projecting them over the population fixes the amount management must adjust in the statements.",
+            "Because the sample errors are compared with materiality at once, so projecting them over the population is needed only when they exceed that level in the statements."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6486,10 +6486,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical reason why the Upper Error Limit (UEL) exceeds Tolerable Misstatement when even small percentage errors (taintings) are uncovered in a Monetary Unit Sample under ISA 530?",
           "options": [
-            "Because Basic Precision already equals Tolerable Misstatement when zero errors are expected; any additional projected misstatement and incremental precision allowance pushes UEL above Tolerable Misstatement, signaling that the planned precision is insufficient to absorb errors.",
-            "Because the auditor's computer software contains a mathematical bug.",
-            "Because international auditing standards require auditors to double all errors.",
-            "Because statistical sampling can only be used when an auditor predicts zero errors in advance."
+            "Because Basic Precision equals Tolerable Misstatement when zero errors are expected, so any projected misstatement plus incremental precision pushes the UEL above it.",
+            "Because Basic Precision is set at half of Tolerable Misstatement when zero errors are expected, so only large projected misstatements push the UEL above it.",
+            "Because Basic Precision is calculated from the sample errors found, so the incremental precision allowance alone pushes the UEL above Tolerable Misstatement.",
+            "Because Tolerable Misstatement is lowered by the taintings found, so the projected misstatement is compared with a smaller amount and the UEL exceeds it."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6542,10 +6542,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 600 (Revised), what is the statutory rule regarding referencing component auditors in the group auditor's report on consolidated financial statements?",
           "options": [
-            "The group auditor must list every component junior auditor's personal phone number in the audit opinion.",
-            "The group auditor automatically transfers 50% of legal liability to overseas component auditors.",
-            "The group auditor can only sign the consolidated report if all component auditors fly to London in person.",
-            "The group auditor bears single, undivided statutory responsibility and must NOT make reference to component auditors in an unmodified report unless required by specific national law or regulation."
+            "The group auditor shares responsibility with component auditors and must refer to them by name in every unmodified report on the consolidated statements.",
+            "The group auditor bears single, undivided responsibility but must refer to component auditors in an emphasis of matter paragraph when they audit over 20% of assets.",
+            "The group auditor bears responsibility only for the parent's own statements and must obtain separate opinions from component auditors for each subsidiary.",
+            "The group auditor bears single, undivided responsibility and must not refer to component auditors in an unmodified report unless national law or regulation requires it."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6571,10 +6571,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 600, why must Component Materiality be set strictly lower than Group Overall Materiality across multinational audit engagements?",
           "options": [
-            "To manage aggregation risk—ensuring that undetected and uncorrected misstatements across multiple individual operating components do not accumulate upon consolidation to exceed group materiality.",
-            "Because international banking laws cap overseas audit fees.",
-            "To prevent foreign tax authorities from auditing subsidiary tax filings.",
-            "Because group holding companies are required to pay higher dividends."
+            "To manage aggregation risk, so that undetected and uncorrected misstatements across components do not add up on consolidation to exceed group materiality.",
+            "To manage translation risk, so that exchange differences across several components do not add up on consolidation to exceed group materiality.",
+            "To manage sampling risk, so that the sample sizes across several components do not add up on consolidation to exceed the audit budget.",
+            "To manage independence risk, so that fees earned from several components do not add up on consolidation to exceed ethical thresholds."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6599,10 +6599,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 600 paragraph 9(m), what two distinct criteria establish whether an operating entity or subsidiary must be classified as a 'Significant Component'?",
           "options": [
-            "Whether the entity's CEO graduated from an Ivy League university, or if the entity owns a private jet.",
-            "Either individual financial significance (typically accounting for at least 15% to 20% of a group financial benchmark like revenue, assets, or profit), OR the existence of significant risks of material misstatement of the group financial statements owing to its specific nature or circumstances.",
-            "Whether the entity is incorporated in a country that uses the metric system, or if it has more than fifty employees.",
-            "Whether the entity pays statutory audit fees in cryptocurrency, or if it operates a social media account."
+            "Either legal significance (typically being a wholly owned subsidiary registered in the same country as the parent), or a statutory requirement to have a separate audit of its own financial statements.",
+            "Either individual financial significance (typically 15% to 20% of a group benchmark such as revenue, assets, or profit), or significant risks of material misstatement due to its nature or circumstances.",
+            "Both individual financial significance (typically 5% to 10% of a group benchmark such as revenue, assets, or profit), and significant risks of material misstatement due to its nature or circumstances.",
+            "Either geographic significance (typically being located in a country with a high rate of inflation), or the presence of a component auditor who is not a member of the group auditor's firm."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6626,10 +6626,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When a subsidiary sells inventory to another subsidiary at a markup, and that inventory remains unsold in warehouse storage at the balance sheet date, why must the group auditor verify that the unrealized profit is eliminated in the consolidation workpapers under IFRS 10 and ISA 600?",
           "options": [
-            "Because foreign subsidiaries are legally prohibited from generating profits.",
-            "Because inventory items must be revalued in physical gold bullion.",
-            "Because from the perspective of the consolidated economic entity, no commercial transaction with an external party has occurred; failing to eliminate the internal markup overstates both consolidated inventory assets and consolidated operating profit.",
-            "Because the auditor's professional insurance policy requires zero ending inventory."
+            "Because from the consolidated entity's perspective the sale to the other subsidiary was a genuine external sale, so eliminating the markup would understate profit.",
+            "Because from the subsidiary's perspective the markup is a cost of the buyer, so leaving the markup in would overstate the selling subsidiary's own inventory.",
+            "Because from the consolidated entity's perspective no sale to an external party has occurred, so leaving the markup overstates both consolidated inventory and operating profit.",
+            "Because from the tax authority's perspective the markup is taxable in the seller's country, so leaving the markup in overstates the consolidated tax expense."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6656,10 +6656,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the Maximum Aggregate Component Materiality (MACM) ceiling when allocating component materiality across a multinational group under ISA 600?",
           "options": [
-            "It eliminates the requirement to test journal entries during consolidation.",
-            "It dictates the maximum salary paid to statutory audit interns.",
-            "It forces all foreign subsidiaries to adopt the US dollar as their legal currency.",
-            "It establishes an upper limit on the sum of all allocated component materialities based on probability theory (square root benchmark), ensuring that aggregation risk is controlled across components while allowing efficient, value-weighted component testing."
+            "It sets a lower limit on each allocated component materiality using a fixed percentage, ensuring every component is tested equally regardless of its size.",
+            "It sets an upper limit on the group materiality using a revenue benchmark, controlling aggregation risk while allowing the same threshold across all components.",
+            "It sets a total of component materialities equal to group materiality, ensuring that no component is tested using an amount above the group threshold.",
+            "It sets an upper limit on the sum of allocated component materialities using a square root benchmark, controlling aggregation risk while allowing efficient testing."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6713,10 +6713,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 8 Capstone scenario, what is the Maximum Aggregate Component Materiality (MACM) ceiling for Vanguard Global across its 5 operational hubs when Group Materiality is $30,000,000?",
           "options": [
-            "An arbitrary number selected by local management without mathematical derivation.",
-            "Exactly $150,000,000, obtained by multiplying $30M by 5.",
-            "Zero, because component materiality is prohibited under international auditing standards.",
-            "Exactly $67,082,039.32, derived from the Glover-Prawitt square root formula: $30,000,000 * sqrt(5)."
+            "Exactly $150,000,000, using the simple additive formula: $30,000,000 x 5 components.",
+            "Exactly $13,416,407.86, using the inverse square root formula: $30,000,000 / sqrt(5).",
+            "Exactly $30,000,000, using the group ceiling rule: equal to Group Materiality itself.",
+            "Exactly $67,082,039.32, using the Glover-Prawitt square root formula: $30,000,000 x sqrt(5)."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6742,10 +6742,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an auditor calculates an Upper Error Limit (UEL) of $10,226,667 on a population with a Tolerable Misstatement of $8,000,000 under ISA 530, what is the mandatory course of action for the statutory audit team?",
           "options": [
-            "Reject the population as statistically unsupportable; the auditor cannot conclude the balance is free of material misstatement without requiring management to investigate and adjust the ledger, or performing expanded testing.",
-            "Delete the error schedule from the audit file to make the numbers match.",
-            "Issue an immediate criminal indictment against the warehouse shipping clerk.",
-            "Conclude that sampling risk is irrelevant and sign an unmodified opinion."
+            "Reject the population as unsupported; the auditor cannot conclude it is free of material misstatement without management investigating and adjusting the ledger, or expanded testing.",
+            "Accept the population as the UEL is within overall materiality; the auditor can conclude it is free of material misstatement and record the excess in the summary of differences.",
+            "Accept the population after raising tolerable misstatement to the UEL; the auditor can conclude it is free of material misstatement and note the change in the working papers.",
+            "Reject only the items found in error; the auditor can conclude the rest of the balance is free of material misstatement without management adjusting or any extended testing."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6771,10 +6771,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IFRS 10 and ISA 600, when Subsidiary A sells goods to Subsidiary B for $60M with a 20% margin, and Subsidiary B still holds 30% of the goods in warehouse inventory at year-end, what is the exact amount of unrealized profit that must be eliminated upon consolidation?",
           "options": [
-            "$12,000,000, which represents the entire gross profit regardless of whether goods were sold.",
-            "Exactly $3,600,000, calculated as the ending inventory holding ($18,000,000) multiplied by the 20% embedded gross margin.",
-            "$60,000,000, which represents the total sales volume.",
-            "Zero, because intra-group profits are automatically recognized under tax treaties."
+            "Exactly $12,000,000, which is the total intra-group sale ($60,000,000) multiplied by the 20% embedded gross margin.",
+            "Exactly $3,600,000, which is the ending inventory holding ($18,000,000) multiplied by the 20% embedded gross margin.",
+            "Exactly $2,400,000, which is the ending inventory holding ($12,000,000) multiplied by the 20% embedded gross margin.",
+            "Exactly $5,400,000, which is the ending inventory holding ($18,000,000) multiplied by a 30% embedded gross margin."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6801,10 +6801,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 450, when total unadjusted misstatements on the Summary of Unadjusted Differences (SUD) equal $6,900,000 against a Group Overall Materiality of $30,000,000 and Performance Materiality of $22,500,000, what is the auditor's conclusion regarding the financial statements?",
           "options": [
-            "The financial statements are automatically considered fraudulent.",
-            "The auditor must immediately resign and report the client to Interpol.",
-            "The unadjusted misstatements are quantitatively immaterial and well within the performance materiality cushion; provided no qualitative fraud or trend distortions exist, an unmodified clean group audit opinion is appropriate.",
-            "The auditor must force management to liquidate the company's assets."
+            "The unadjusted misstatements are quantitatively material because they exceed the clearly trivial level; even with no qualitative distortions, a qualified group opinion is appropriate.",
+            "The unadjusted misstatements are quantitatively immaterial but must all be adjusted by management; without these adjustments, no unmodified group opinion can be issued at all.",
+            "The unadjusted misstatements are quantitatively immaterial and well inside the performance materiality cushion; with no qualitative distortions, an unmodified group opinion is appropriate.",
+            "The unadjusted misstatements are quantitatively close to performance materiality and must be added to the next year; with no qualitative distortions, an emphasis paragraph is used."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6832,10 +6832,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by integrating Monetary Unit Sampling, MACM component materiality allocation, and consolidation workpaper elimination into an enterprise assurance simulator under ISA 530 and ISA 600?",
           "options": [
-            "It guarantees that client stock prices will double following publication of the audit report.",
-            "It allows audit teams to completely avoid conducting physical inventory inspections.",
-            "It eliminates the need for statutory auditors to obtain client signatures on representation letters.",
-            "It transforms subjective audit guesswork into a mathematically reproducible, transparent assurance pipeline that controls sampling risk, limits multi-component error aggregation, eliminates intra-group profit distortions, and satisfies stringent regulatory inspections."
+            "It turns subjective audit judgement into an automated opinion that removes sampling risk, replaces the group auditor's review, eliminates the need for component auditors, and avoids regulatory inspection.",
+            "It turns detailed audit documentation into a single summary file that reduces sampling work, shortens the group audit timetable, eliminates the need for consolidation checks, and lowers the audit fee.",
+            "It turns statistical sampling into a fixed percentage test that controls audit cost, limits the number of components, eliminates the need for materiality calculation, and satisfies management.",
+            "It turns subjective audit guesswork into a reproducible, transparent assurance pipeline that controls sampling risk, limits error aggregation across components, eliminates intra-group profit, and meets regulatory inspection."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6889,10 +6889,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the UK Corporate Governance Code and international best practices, why is the structural separation of the Board Chair and the Chief Executive Officer (CEO) mandated?",
           "options": [
-            "To prevent the concentration of unfettered decision-making power in one individual, ensuring that the board can objectively supervise, challenge, and evaluate executive management.",
-            "Because statutory regulations require all CEOs to spend fifty percent of their working hours outside the corporate headquarters.",
-            "To allow the company to double the total corporate entertainment budget for board members.",
-            "Because international maritime law prohibits dual executive appointments."
+            "To prevent unchecked decision-making power in one person, so that the board can objectively supervise, challenge, and evaluate executive management.",
+            "To reduce the remuneration costs of the board, so that the company can pay lower combined fees to the two roles than it would pay to one person.",
+            "To increase the speed of decision-making in the board, so that the Chair can approve executive proposals without a separate debate by directors.",
+            "To ensure the Chair has operational experience in the company, so that the CEO can delegate day-to-day management tasks to the board members."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6917,10 +6917,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 404(a) of the Sarbanes-Oxley Act and SEC rules, what is the mandatory statutory conclusion if even a single unremediated Material Weakness in internal control over financial reporting exists at the fiscal year-end date?",
           "options": [
-            "Management must automatically dissolve the corporate board and liquidate all assets.",
-            "Management can conclude ICFR is effective provided they pay a nominal fine to the PCAOB.",
-            "Management is allowed to classify the material weakness as a confidential trade secret.",
-            "Corporate management is legally prohibited from concluding that internal control over financial reporting is effective, and must report an adverse conclusion."
+            "Management can conclude that internal control is effective if the weakness is remediated next quarter, and must report a disclosure note.",
+            "Management can conclude that internal control is effective if the weakness is below materiality, and must report a significant deficiency.",
+            "Management must withdraw its assessment, and the auditor alone gives a conclusion on internal control over financial reporting for the year.",
+            "Management cannot conclude that internal control over financial reporting is effective, and must report an adverse conclusion on it at year end."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6944,10 +6944,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 301 of the Sarbanes-Oxley Act and national exchange listing rules, what two absolute criteria define whether a member of a public company's board of directors satisfies the independence requirement for audit committee service?",
           "options": [
-            "The member must hold a doctorate degree in mathematics, and cannot reside in the same state as the corporate headquarters.",
-            "The member must have previously served in the military, and cannot own more than ten shares of stock.",
-            "The member cannot accept any consulting, advisory, or compensatory fees from the company (other than regular board and committee fees), and cannot be an affiliated person of the company or its subsidiaries.",
-            "The member must be a citizen of the United States, and cannot have relatives working in accounting."
+            "The member cannot hold shares in the company or its subsidiaries of any amount, and cannot have served on the board for more than three consecutive years in total.",
+            "The member must be a qualified accountant with audit experience from a big firm, and cannot be employed by the company in any executive role in the past ten years.",
+            "The member cannot accept any consulting, advisory, or other fee from the company (apart from board and committee fees), and cannot be an affiliate of the company or its subsidiaries.",
+            "The member cannot accept consulting fees above $120,000 a year from the company, and must be nominated by the largest shareholder of the company for service."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6973,10 +6973,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 610 (Revised) and PCAOB AS 2605, why is an external statutory auditor strictly prohibited from relying on the work of internal auditors for areas involving significant accounting estimates or high risks of material misstatement?",
           "options": [
-            "Because external auditors are required by law to duplicate every single internal calculation.",
-            "Because international standards dictate that the external auditor must make all significant professional judgments and bear sole, indivisible responsibility for the audit opinion on high-risk, subjective matters.",
-            "Because internal auditors only work during the first quarter of the fiscal year.",
-            "Because internal auditors are legally prohibited from reviewing corporate balance sheets."
+            "Because internal auditors report to management and are never independent, so their work cannot be used on any matter, including routine low-risk balances.",
+            "Because the external auditor must make all significant professional judgments and carry sole, indivisible responsibility for the opinion on high-risk, subjective matters.",
+            "Because the external auditor can delegate judgments but not the signing of the report, so internal audit may assist on estimates only under the partner's review.",
+            "Because internal audit work is reviewed by the audit committee instead of the auditor, so the external auditor cannot evaluate its quality on high-risk matters."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7002,10 +7002,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by integrating Board governance vetting, SOX 302 certifications, and Section 404 ICFR assessments into an automated compliance simulator?",
           "options": [
-            "It transforms disparate statutory mandates into a verifiable, transparent compliance pipeline that validates audit committee independence, tracks executive certifications, detects internal control weaknesses, and ensures regulatory defensibility.",
-            "It allows companies to eliminate all independent external audit requirements permanently.",
-            "It guarantees that company executives receive automatic tax exemptions.",
-            "It eliminates the need for corporations to prepare annual balance sheets."
+            "It turns separate statutory mandates into a verifiable compliance pipeline that validates committee independence, tracks executive certifications, detects control weaknesses, and supports defensibility.",
+            "It turns separate statutory mandates into a single certificate that replaces committee independence checks, removes executive certifications, hides control weaknesses, and reduces regulatory filings.",
+            "It turns separate board reports into a ranking of directors that scores committee members, rewards executive certifications, penalises control weaknesses, and sets annual director pay.",
+            "It turns separate audit procedures into a checklist that records committee meetings, files executive certifications, tracks control deficiencies, and avoids regulatory enquiries."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7059,10 +7059,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2201, what does the requirement to perform an 'Integrated Audit' mean in practice for registered public accounting firms?",
           "options": [
-            "The auditor is required to use artificial intelligence software to replace all human engagement team members.",
-            "The auditor designs testing strategies so that evidence obtained from testing internal controls informs substantive procedures, while substantive audit results simultaneously inform the evaluation of internal control effectiveness.",
-            "The audit fee must be integrated into the client's annual municipal property tax bill.",
-            "The auditor must conduct all audit meetings in the client's corporate cafeteria."
+            "The auditor performs two separate audits, one on controls and one on the statements, with different teams, and neither set of results is used for the other opinion.",
+            "The auditor plans the testing so that internal control evidence informs the substantive procedures, while substantive results also inform the evaluation of internal control effectiveness.",
+            "The auditor tests controls only after the substantive procedures are done, so that substantive results inform control testing but control results never change the substantive scope.",
+            "The auditor combines the audit of the parent and the audit of the subsidiaries, so that group evidence informs each component and component evidence informs the group."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7087,10 +7087,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2201 paragraph 23, what is the primary operational distinction between a 'Direct' Entity-Level Control and an 'Indirect' Entity-Level Control?",
           "options": [
-            "Direct ELCs can only be tested by the Chief Executive Officer in person.",
-            "Indirect ELCs are prohibited by the Securities and Exchange Commission.",
-            "A Direct ELC operates at a level of precision sufficient to prevent or detect misstatements to relevant assertions on a timely basis, potentially reducing process-level testing, whereas an Indirect ELC sets the cultural tone but cannot directly catch errors.",
-            "Direct ELCs only apply to companies operating in the retail sector."
+            "A Direct ELC sets the cultural tone through the code of conduct and board oversight, possibly reducing process-level testing; an Indirect ELC operates with enough precision to detect errors on time.",
+            "A Direct ELC applies only to the controls over IT systems and cannot reduce process-level testing; an Indirect ELC applies to manual controls over the financial close and reporting.",
+            "A Direct ELC operates with enough precision to prevent or detect misstatements on time, possibly reducing process-level testing; an Indirect ELC sets the cultural tone but cannot catch errors directly.",
+            "A Direct ELC is tested by the internal audit function and never by the auditor, possibly reducing process-level testing; an Indirect ELC is tested by the auditor for the tone at the top."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7116,10 +7116,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2201 paragraph 28, how must the statutory auditor determine whether an account or disclosure is classified as a 'Significant Account'?",
           "options": [
-            "By choosing accounts in alphabetical order until twenty percent of the ledger is reached.",
-            "By asking corporate management whether they would prefer the account to be audited.",
-            "By selecting only those accounts that have positive cash balances on the balance sheet.",
-            "By evaluating whether there is a reasonable possibility that the account could contain a material misstatement (considering both quantitative size and qualitative risk factors like complexity and fraud risk), without regard to the effect of internal controls."
+            "By evaluating whether the account has an actual misstatement above materiality found in prior years, using size and qualitative risk factors, after considering the effect of controls.",
+            "By evaluating whether the account exceeds a fixed percentage of total assets or revenue, using size alone and without considering qualitative risk factors or the effect of controls.",
+            "By evaluating whether the account is covered by effective controls tested in the prior year, using qualitative risk factors, and excluding any account that management has certified.",
+            "By evaluating whether there is a reasonable possibility the account could contain a material misstatement, using size and qualitative risk factors, without regard to the effect of controls."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7145,10 +7145,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2201 paragraphs B28 through B33, under what specific conditions is a statutory auditor permitted to employ a 'Benchmarking Strategy' for an automated application control, testing only a sample size of one in subsequent years?",
           "options": [
-            "When the automated control was baseline tested in a prior year, and effective IT General Controls (ITGCs) over program changes, access to programs, and computer operations have verified that no unauthorized changes were made to the software code.",
-            "When the client promises to buy the audit team lunch on the day of filing.",
-            "When the accounting software was designed by an open-source non-profit organization.",
-            "Only when auditing companies in the commercial aviation industry."
+            "When the automated control was baseline tested in a prior year, and effective ITGCs over program changes, program access, and computer operations show that the code was not changed without authorisation.",
+            "When the automated control was designed by the vendor of the software, and an independent SOC report over the vendor's development shows that the code was tested before its release.",
+            "When the automated control was tested in the current year at a sample of one, and the company's management confirms in writing that the code was not changed without authorisation.",
+            "When the automated control was baseline tested in a prior year, and the internal audit function confirms that no errors were reported by users of the application during the period."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7175,10 +7175,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by integrating the top-down approach, ELC precision scoring, and automated control benchmarking into an enterprise AS 2201 simulator?",
           "options": [
-            "It forces all corporate executives to take annual written examinations in software programming.",
-            "It replaces low-value, bottom-up testing of trivial operational controls with a risk-grounded methodology that concentrates testing on material financial exposures, leverages automated system reliability, and satisfies stringent PCAOB inspection standards.",
-            "It eliminates the requirement to test journal entries under ISA 240.",
-            "It allows public accounting firms to issue audit opinions without reviewing client general ledgers."
+            "It replaces risk-based testing of material exposures with a bottom-up method that tests every control equally, uses manual re-performance, and avoids PCAOB inspection standards.",
+            "It replaces low-value bottom-up testing of trivial controls with a risk-based method that focuses on material exposures, uses automated system reliability, and meets PCAOB inspection standards.",
+            "It replaces detailed documentation of the audit work with a summary method that focuses on the partner's review, uses internal audit reports, and meets the firm's own quality standards.",
+            "It replaces substantive testing of account balances with a controls-only method that focuses on entity-level controls, uses management's self-assessment, and meets SEC filing standards."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7231,10 +7231,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical consequence for an integrated financial audit when IT General Controls (ITGCs) fail across the core ERP environment under PCAOB AS 2201?",
           "options": [
-            "The auditor is required to pay a twenty percent penalty to the software vendor.",
-            "All financial statement accounts are automatically declared free of fraud.",
-            "The auditor cannot rely on automated application controls or computer-generated reports (IPE), invalidating automated benchmarking and forcing extensive manual substantive testing across all affected accounts.",
-            "The client's computer monitors automatically turn off permanently."
+            "The auditor can still rely on automated application controls and system-generated reports (IPE), which supports benchmarking and allows reduced substantive testing of affected accounts.",
+            "The auditor cannot rely on manual controls or management review procedures, which invalidates walkthroughs and requires extensive automated testing of all affected accounts.",
+            "The auditor cannot rely on automated application controls or system-generated reports (IPE), which invalidates benchmarking and requires extensive manual substantive testing of affected accounts.",
+            "The auditor cannot rely on the entity-level controls or the tone at the top, which invalidates the risk assessment and requires extensive inquiry in all affected accounts."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7258,10 +7258,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the combination of 'Vendor Master File Maintenance' and 'Accounts Payable Payment Release' considered a severe toxic Segregation of Incompatible Duties (SOD) conflict in enterprise ERP systems?",
           "options": [
-            "Because it reduces the company's credit rating by thirty percent.",
-            "Because it allows a single employee to create a fictitious vendor, post a fraudulent invoice, and disburse corporate funds to their own private bank account without independent supervisory oversight or detection.",
-            "Because international banking laws prohibit vendors from receiving electronic payments.",
-            "Because ERP systems run out of memory when one user holds multiple roles."
+            "Because one employee could approve a purchase requisition, receive the goods at the warehouse, and record the inventory in the ledger without independent oversight or detection.",
+            "Because one employee could create a fictitious vendor, post a fraudulent invoice, and release the payment to their own bank account without independent oversight or detection.",
+            "Because one employee could post a payroll journal, approve the overtime hours, and change the tax withholding details without independent oversight or detection by managers.",
+            "Because one employee could reconcile the bank account, prepare the cash receipts report, and record the customer collections without independent oversight or detection."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7285,10 +7285,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IT General Controls change management standards (Domain 2), why are software developers strictly prohibited from having access rights to migrate code changes directly into production environments?",
           "options": [
-            "To maintain segregation of duties between software authoring and production deployment, preventing developers from introducing unauthorized code modifications, untested features, or malicious backdoors into live financial systems.",
-            "Because software developers are legally classified as external independent contractors.",
-            "Because software code compiles twenty percent slower when deployed by developers.",
-            "Because international telecommunications treaties require production servers to be managed exclusively by government agencies."
+            "To keep segregation between writing software and deploying to production, preventing developers from introducing unauthorised changes, untested features, or backdoors into live financial systems.",
+            "To keep the software development schedule on time, preventing developers from delaying production releases, cutting testing cycles, or exceeding the budget for the financial systems.",
+            "To keep the production servers free of the developers' tools, preventing developers from slowing the system, exhausting storage space, or conflicting with user access to financial systems.",
+            "To keep the change approvals in the hands of the vendor, preventing developers from customising purchased packages, voiding licences, or altering the terms of support for the systems."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7313,10 +7313,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When a company relies on a third-party cloud service organization for core financial processing, what is the role of Complementary User Entity Controls (CUECs) in the statutory auditor's evaluation of the SOC 1 Type 2 report?",
           "options": [
-            "CUECs are software patches that the user must install on personal home computers.",
-            "CUECs allow the auditor to skip all auditing of accounts payable.",
-            "CUECs represent the client's mandatory corporate tax deductions for cloud computing expenses.",
-            "CUECs are controls that the service organization's description assumes will be implemented by the user client; if the client fails to implement these required controls, the auditor cannot rely on the third party's SOC report."
+            "CUECs are controls the service organisation implements on the client's behalf; if the service organisation fails to implement them, the client reports a deficiency in the SOC report.",
+            "CUECs are controls the auditor performs over the service organisation's systems; if the auditor does not perform them, the SOC report is treated as a Type 1 report.",
+            "CUECs are controls the service organisation's auditor tests during the period; if they fail the tests, the client cannot rely on the cloud provider's financial data.",
+            "CUECs are controls the service organisation's description assumes the client will implement; if the client does not implement them, the auditor cannot rely on the SOC report."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7344,10 +7344,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated ITGC Multi-Domain Audit and SOD Conflict Simulator in enterprise assurance engagements?",
           "options": [
-            "It replaces all corporate accounting software with manual ledger books.",
-            "It allows IT departments to bypass all corporate governance oversight.",
-            "It transforms subjective IT checklist evaluations into a mathematically rigorous, continuous auditing pipeline that reconciles code transports, detects toxic SOD combinations, validates third-party cloud SOC reports, and determines automated control reliance.",
-            "It guarantees that client computers will never suffer physical hardware failures."
+            "It turns detailed IT control testing into a one-page summary that lists code transports, ranks users by access level, files third-party SOC reports, and sets the audit fee for the year.",
+            "It turns manual IT checklist reviews into an annual certification that approves code transports, grants toxic SOD exceptions, replaces third-party SOC reports, and removes control reliance.",
+            "It turns subjective IT checklist reviews into a rigorous continuous auditing pipeline that reconciles code transports, detects toxic SOD combinations, validates third-party SOC reports, and sets control reliance.",
+            "It turns subjective IT risk ratings into a vendor scoring system that prices code transports, tracks user logins, ranks third-party SOC providers, and sets the IT budget for the year."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7400,10 +7400,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2201 paragraph 62, why can an internal control breakdown be classified as a Material Weakness even if zero dollars of actual financial statement misstatements occurred during the fiscal year?",
           "options": [
-            "Because statutory auditing rules require external auditors to issue adverse opinions every five years.",
-            "Because internal control deficiencies only apply to future fiscal periods.",
-            "Because auditors are required to assume all corporate employees are dishonest.",
-            "Because deficiency evaluation is prospective, governed by likelihood and potential magnitude: if there is a reasonable possibility that a material misstatement could occur and remain undetected, the control failure constitutes a material weakness regardless of actual misstatement."
+            "Because deficiency evaluation is retrospective, based on actual results: a material weakness exists only if a material misstatement did occur and was found by the auditor in the year.",
+            "Because deficiency evaluation is based on the number of control failures: more than five failures in a year makes it a material weakness, whether or not any misstatement occurred.",
+            "Because deficiency evaluation is based on the control type: any failure of a preventive control is a material weakness, whether or not the amount involved could be material to the statements.",
+            "Because evaluation is prospective, based on likelihood and magnitude: a reasonable possibility that a material misstatement could occur undetected makes it a material weakness, even if none occurred."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7427,10 +7427,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following factual scenarios represents an explicit strong indicator of a Material Weakness under PCAOB AS 2201 paragraph 69?",
           "options": [
-            "Identification of a material misstatement in the current period financial statements by the external auditor that was not identified by the company's internal controls.",
-            "An unexpected increase in the client's commercial electricity utility rates.",
-            "The resignation of an entry-level accounts payable data entry clerk.",
-            "A ten percent decline in the client's quarterly advertising expenditures."
+            "Identification by the external auditor of a material misstatement in the current-period statements that the company's internal controls did not identify.",
+            "Identification by the company's internal audit function of a misstatement in a prior period that was corrected before the current-period statements were issued.",
+            "Identification by the external auditor of a misstatement below performance materiality that management corrected after the auditor's request in the audit.",
+            "Identification by the company's controllers of a material misstatement in the current-period interim statements that was corrected before year end by them."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7455,10 +7455,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary requirement for an internal compensating control to successfully mitigate an identified control deficiency and prevent it from escalating to a material weakness?",
           "options": [
-            "The compensating control must be performed exclusively by an external consulting firm.",
-            "The compensating control must operate at a sufficient level of precision, meaning its detection threshold and execution frequency are capable of preventing or detecting misstatements that exceed performance materiality.",
-            "The compensating control must cost more than fifty thousand dollars to administer.",
-            "The compensating control must be patented under national commercial property laws."
+            "The compensating control must operate with enough frequency, with a review performed at least once every year to prevent or detect misstatements above overall materiality.",
+            "The compensating control must operate with enough precision, with a detection threshold and frequency able to prevent or detect misstatements above performance materiality.",
+            "The compensating control must operate with enough independence, with a review performed by the same person who performs the deficient control and who detects misstatements.",
+            "The compensating control must operate with enough documentation, with a signed checklist that shows that misstatements above the clearly trivial level were prevented."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7482,10 +7482,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an enterprise unable to achieve a clean (unqualified) ICFR audit opinion if it implements a control remediation patch only three days prior to its fiscal year-end date?",
           "options": [
-            "Because audit firms do not work during the last week of December.",
-            "Because the SEC requires all remediations to be certified by the local county court.",
-            "Because a remediated control must operate for a sufficient seasoning period to generate a representative population of transactions for the auditor to test operating effectiveness prior to the as-of reporting date.",
-            "Because software patches installed in December are prohibited by federal computer laws."
+            "Because a remediated control must be approved by the audit committee for a notice period, to produce a written resolution the auditor can inspect before the as-of date.",
+            "Because a remediated control must be redesigned by a consultant for a review period, to produce a certified report the auditor can rely on before the as-of date.",
+            "Because a remediated control must operate for a sufficient seasoning period to produce a representative population of transactions for testing before the as-of date.",
+            "Because a remediated control must be disclosed to the SEC for a comment period, to produce a clearance letter the auditor can reference before the as-of date."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7513,10 +7513,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory consequence for the auditor's report on internal control over financial reporting (ICFR) if even a single Material Weakness remains un-remediated as of the fiscal year-end reporting date under PCAOB AS 2201.90?",
           "options": [
-            "The auditor delays the filing of financial statements for three calendar years.",
-            "The auditor issues an Unqualified Opinion with a five percent fine paid to the stock exchange.",
-            "The auditor is required to recalculate the company's income tax expense.",
-            "The auditor must issue an Adverse Opinion on the company's internal control over financial reporting, stating that ICFR is not operating effectively."
+            "The auditor must issue a qualified opinion on the company's internal control over financial reporting, stating that ICFR is operating effectively except in one area.",
+            "The auditor must issue a disclaimer of opinion on the company's internal control over financial reporting, stating that ICFR could not be evaluated by the auditor.",
+            "The auditor must issue an unqualified opinion with an explanatory paragraph on the company's internal control, stating that ICFR is operating effectively overall.",
+            "The auditor must issue an adverse opinion on the company's internal control over financial reporting, stating that ICFR is not operating effectively."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7570,10 +7570,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 9 Capstone integrated audit of Titanium Global ($14.8B revenue, $900M PBT), what is the primary purpose of setting Performance Materiality at $31.5M (70% of planning materiality)?",
           "options": [
-            "To establish a lower threshold for planning and performing audit procedures that reduces to an appropriately low level the probability that the aggregate of uncorrected and undetected misstatements exceeds overall planning materiality.",
-            "To limit the total fee that the independent audit firm can bill the client.",
-            "To restrict the number of hours that staff auditors can work each week.",
-            "To calculate the annual executive bonus pool for corporate officers."
+            "To set a lower threshold for planning and performing procedures, reducing to a low level the probability that aggregate uncorrected and undetected misstatements exceed planning materiality.",
+            "To set a higher threshold for reporting uncorrected misstatements to the audit committee, raising the level above which individual misstatements must be communicated in writing.",
+            "To set a lower threshold for classifying a control deficiency, reducing to a low level the probability that deficiencies are treated as material weaknesses by the auditor.",
+            "To set a fixed threshold for excluding trivial accounts from the audit scope, raising the level below which balances at locations are not tested at all by the team."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7599,10 +7599,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the immediate auditing consequence under PCAOB AS 2201 when the audit team discovers that developers deployed emergency code transports directly to production without prior CAB approval or post-implementation testing?",
           "options": [
-            "The client's software license is automatically cancelled by the software vendor.",
-            "The external auditor must resign from the audit engagement immediately.",
-            "The enterprise is required to re-run all payroll checks issued during the fiscal year.",
-            "The auditor cannot rely on automated control benchmarking for application controls affected by the unapproved code changes, invalidating automated control reliance and forcing direct testing of those controls."
+            "The auditor can continue to rely on benchmarking for the affected application controls if the emergency changes were later approved, so reliance remains valid with limited re-testing.",
+            "The auditor cannot rely on the manual controls that surround the affected applications, so reliance on the preventive controls is invalid and the processes must be tested directly.",
+            "The auditor can rely on benchmarking if the changes were made by the vendor's staff, so reliance remains valid and only the access to the production environment is re-tested.",
+            "The auditor cannot rely on automated control benchmarking for application controls affected by unapproved code changes, so reliance is invalid and those controls must be tested directly."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7628,10 +7628,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did the audit team reject management's monthly executive financial statement flux analysis as a compensating control for the unapproved $36M manual journal entries?",
           "options": [
-            "Because flux analyses are legally prohibited under the Sarbanes-Oxley Act.",
-            "Because financial flux analyses can only be performed by external consultants.",
-            "Because management's investigation threshold of $50M exceeded performance materiality ($31.5M), meaning the control lacked sufficient precision to detect misstatements that could be material to the financial statements.",
-            "Because monthly financial reviews expire after twenty-four hours."
+            "Because management's investigation threshold of $20M was below performance materiality ($31.5M), so the control produced too many exceptions to be effective in practice.",
+            "Because management's analysis was performed quarterly rather than monthly, so the control lacked the frequency to detect misstatements that could be material to the statements.",
+            "Because management's investigation threshold of $50M exceeded performance materiality ($31.5M), so the control lacked the precision to detect misstatements that could be material.",
+            "Because management's analysis was prepared by the same finance team that posted the entries, so the control lacked the independence to detect misstatements by the preparers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7655,10 +7655,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2201, why was Titanium Global able to receive an Unqualified (Clean) ICFR opinion despite an initial $36M manual journal entry breakdown that exceeded performance materiality?",
           "options": [
-            "Because the SEC automatically forgives control deficiencies discovered in October.",
-            "Because management successfully implemented an automated hard-lock remediation control on October 25, allowing a 66-day seasoning period that enabled the auditor to verify operating effectiveness across a statistically valid sample prior to the December 31 as-of date.",
-            "Because journal entry controls are exempt from Sarbanes-Oxley compliance.",
-            "Because the external audit firm agreed to overlook the deficiency in exchange for future consulting contracts."
+            "Because management documented a manual review control on December 20, giving an 11-day period that let the auditor accept the design of the control before the December 31 date.",
+            "Because management implemented an automated hard-lock control on October 25, giving a 66-day seasoning period that let the auditor verify operating effectiveness before the December 31 date.",
+            "Because management reclassified the $36M entries as immaterial on October 25, giving a 66-day period that let the auditor ignore the breakdown before the December 31 date.",
+            "Because management hired a consulting firm on October 25 to review the entries, giving a 66-day period that let the auditor rely on the firm's report before the December 31 date."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7682,10 +7682,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 9 Capstone War Room simulation, what is the ultimate statutory reporting outcome when Titanium Global remediates its manual journal entry material weakness in October and demonstrates verified operational seasoning through December 31?",
           "options": [
-            "The auditor issues an Unqualified (Clean) Opinion on both the consolidated financial statements and internal control over financial reporting (ICFR), while formally communicating the two remaining Significant Deficiencies in writing to the Audit Committee.",
-            "The auditor issues an Adverse Opinion on the financial statements and an Unqualified Opinion on ICFR.",
-            "The auditor is required to dissolve the client's board of directors.",
-            "The auditor files a formal criminal complaint with the International Court of Justice."
+            "An unqualified opinion on both the financial statements and ICFR, while the two remaining significant deficiencies are formally communicated in writing to the Audit Committee.",
+            "An unqualified opinion on the financial statements and an adverse opinion on ICFR, while the two remaining significant deficiencies are disclosed to the shareholders publicly.",
+            "An adverse opinion on the financial statements and an unqualified opinion on ICFR, while the two remaining significant deficiencies are communicated orally to the audit committee.",
+            "An unqualified opinion on both the financial statements and ICFR, while the two remaining significant deficiencies are communicated only to management and not further."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7738,10 +7738,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 606 / IFRS 15, when a bundled contract includes multiple distinct performance obligations sold at a lump-sum discount, how must the transaction price be allocated across deliverables?",
           "options": [
-            "Entirely to the upfront deliverable to maximize current-period net income.",
-            "In proportion to each performance obligation's relative standalone selling price (SSP) established through observable standalone sales or approved estimation models.",
-            "Equally among all obligations regardless of their economic value.",
-            "In proportion to the client company's historical income tax bracket."
+            "In proportion to each performance obligation's relative cost to the entity, established from the cost records or approved budgets of the contract.",
+            "In proportion to each performance obligation's relative standalone selling price (SSP), established from observable standalone sales or approved estimation methods.",
+            "Equally across all performance obligations in the contract, regardless of their standalone selling prices, unless the customer requests a different split.",
+            "Entirely to the performance obligation delivered first, with later obligations recognised at zero until their delivery occurs in a later period."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7765,10 +7765,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 606 and international auditing standards, when goods are sold under 'FOB Destination' terms and shipped on December 29 but arrive at the customer's facility on January 4, in which fiscal year must the revenue be recognized?",
           "options": [
-            "In whichever fiscal year the customer remits payment.",
-            "In the current fiscal year (December), because the goods were shipped before the end of the year.",
-            "In the subsequent fiscal year (January), because control and title do not legally transfer to the customer until physical delivery occurs at the destination.",
-            "Divided equally across both fiscal years."
+            "In the current fiscal year (December), because control and title pass to the customer as soon as the goods leave the seller's warehouse.",
+            "In the current fiscal year (December), because the invoice was issued before year end and the customer has a legal obligation to pay for goods.",
+            "In the subsequent fiscal year (January), because control and title do not pass to the customer until physical delivery at the destination.",
+            "In the subsequent fiscal year (January), because revenue is recognised only on the date the customer's payment is received by the seller."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7792,10 +7792,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical criterion under ASC 606 and IFRS 15 that entitles an enterprise to recognize revenue on a Gross basis as a Principal rather than on a Net basis as an Agent?",
           "options": [
-            "The enterprise must employ more than five hundred customer service representatives.",
-            "The enterprise must process customer payments through a commercial bank account.",
-            "The enterprise must have annual sales exceeding one billion dollars.",
-            "The enterprise must control the specified good or service before it is transferred to the customer, evidenced by primary fulfillment responsibility, inventory risk, and pricing discretion."
+            "The enterprise must invoice the customer for the specified good or service, shown by billing in its own name, credit risk on receivables, and payment terms set.",
+            "The enterprise must earn a commission on the specified good or service, shown by a fixed fee per sale, no inventory risk, and no discretion over the customer price.",
+            "The enterprise must deliver the specified good or service on time, shown by shipment records, transport insurance, and an acknowledged receipt from the customer.",
+            "The enterprise must control the specified good or service before it is transferred, shown by primary responsibility for fulfilment, inventory risk, and pricing discretion."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7819,10 +7819,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under FASB ASC Topic 326 (CECL), how does the substantive audit of trade accounts receivable allowances differ fundamentally from the legacy incurred loss accounting model?",
           "options": [
-            "CECL requires management to estimate expected lifetime credit losses incorporating historical loss rates, current economic conditions, and reasonable and supportable forward-looking macroeconomic forecasts from day one, rather than waiting for an actual default event to occur.",
-            "CECL eliminates the need for an allowance for doubtful accounts altogether.",
-            "CECL requires receivables to be discounted at the sovereign central bank risk-free rate.",
-            "CECL applies exclusively to foreign cash currency deposits."
+            "CECL requires management to estimate lifetime expected credit losses from day one, using historical rates, current conditions, and supportable forecasts, not waiting for an actual default.",
+            "CECL requires management to estimate losses only over the next twelve months, using historical rates alone, and to record the allowance when a default has actually occurred.",
+            "CECL requires management to estimate losses based on the aged balances only, using a fixed percentage per ageing band, and to record the allowance when invoices are overdue.",
+            "CECL requires management to estimate losses only on specific accounts in doubt, using the customer's credit reports, and to record the allowance when the customer is bankrupt."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7851,10 +7851,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective achieved by deploying an automated Substantive Revenue & Receivables Audit Simulator during statutory year-end fieldwork?",
           "options": [
-            "It replaces the need for an external independent financial audit entirely.",
-            "It integrates multi-element contract allocations, dual-directional cut-off reconciliation, principal versus agent evaluations, and CECL credit loss recalculations into a unified, mathematically rigorous substantive testing pipeline.",
-            "It guarantees that client customers will pay all invoices within thirty days.",
-            "It allows management to record revenue without customer sales orders."
+            "It combines inventory count sheets, three-way purchase matching, vendor debit reviews, and accrual recalculations into one rigorous substantive testing pipeline for the payables cycle.",
+            "It combines multi-element contract allocations, two-way cut-off reconciliation, principal versus agent evaluations, and CECL loss recalculations into one rigorous substantive testing pipeline.",
+            "It combines control walkthroughs, entity-level scoring, IT access reviews, and deficiency evaluations into one rigorous control testing pipeline for the revenue process.",
+            "It combines sales forecasts, price list approvals, customer credit scoring, and bonus recalculations into one planning pipeline for management's budget and revenue process."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7907,10 +7907,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the auditor's primary substantive audit direction for accounts payable focused on testing for Understatement (Completeness) rather than Overstatement (Existence)?",
           "options": [
-            "Because accounts payable cannot legally exceed accounts receivable under commercial law.",
-            "Because banks automatically guarantee all corporate trade liabilities.",
-            "Because corporate management facing financial performance pressures is strongly incentivized to conceal expenses and omit liabilities to inflate reported operating profits and working capital ratios.",
-            "Because tax authorities charge penalties for having too many trade payables."
+            "Because management under pressure to meet tax targets has an incentive to record fictitious invoices and overstate liabilities, deflating profit and working capital ratios.",
+            "Because suppliers under pressure to meet sales targets have an incentive to send fake invoices and overstate balances, inflating the payables owed by the company.",
+            "Because management under pressure to meet performance targets has an incentive to hide expenses and omit liabilities, inflating profit and working capital ratios.",
+            "Because auditors under pressure to meet fee budgets have an incentive to limit the existence testing of payables, reducing the work required on recorded liabilities."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7934,10 +7934,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical procedural reason why the Search for Unrecorded Liabilities (SOUL) must examine post-balance sheet cash disbursements up to the date of the auditor's report rather than stopping immediately at year-end?",
           "options": [
-            "Because external auditors are prohibited from inspecting December bank records.",
-            "Because liabilities that existed at the balance sheet date are frequently paid weeks or months later in the subsequent period; stopping early would miss unrecorded invoices held by management and paid later in January or February.",
-            "Because the SEC requires all vendor checks to be issued in March.",
-            "Because commercial banks close all checking accounts on December 31."
+            "Because liabilities existing at the balance sheet date are often paid before year end; testing later would find only invoices that were already recorded in the ledger.",
+            "Because liabilities existing at the balance sheet date are often paid weeks or months later; stopping early would miss unrecorded invoices paid in January or February.",
+            "Because liabilities arising after the balance sheet date are often paid shortly after; testing up to the report date would find invoices that belong to the next year.",
+            "Because cash disbursements after the balance sheet date are always supported by invoices; testing to the report date would give evidence on the existence of payables."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7961,10 +7961,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under FASB ASC Topic 450, what two statutory conditions must be simultaneously satisfied for an enterprise to be legally required to accrue an estimated loss from a pending lawsuit on its balance sheet?",
           "options": [
-            "It must be Probable that an asset has been impaired or a liability incurred prior to financial statement issuance, AND the amount of the loss must be Reasonably Estimable.",
-            "The lawsuit must be filed in a federal appellate court, and the judge must issue a preliminary injunction.",
-            "The company's board of directors must vote unanimously to accept legal liability.",
-            "The plaintiff must agree to accept installment payments over five years."
+            "It must be probable that a liability was incurred before the statements are issued, and the amount of the loss must be reasonably estimable.",
+            "It must be reasonably possible that a liability was incurred before the statements are issued, and the amount of the loss must be fully insured.",
+            "It must be probable that a liability will arise in a future period after the statements are issued, and the amount of the loss must be disclosed.",
+            "It must be remote that a liability was incurred before the statements are issued, and the amount of the loss must be confirmed by legal counsel."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7988,10 +7988,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When raw materials are purchased under 'FOB Shipping Point' terms and shipped by the vendor on December 28, but do not arrive at the buyer's factory until January 5, how must the transaction be treated in the buyer's December 31 financial statements?",
           "options": [
-            "The transaction is recorded as a sales return.",
-            "The transaction must be completely ignored until physical arrival in January.",
-            "The buyer records an expense but no liability.",
-            "The buyer must record the goods as 'Inventory in Transit' and accrue the corresponding liability in Accounts Payable as of December 31, because legal title transferred upon shipment."
+            "The buyer records the goods as inventory only on January 5 and accrues the payable then, because legal title passes on arrival at the factory.",
+            "The buyer records the payable at December 31 but leaves the goods out of inventory, because the goods cannot be counted until they arrive.",
+            "The buyer discloses the goods in a note at December 31 and records no entry, because the goods were not in its custody at the year end.",
+            "The buyer records the goods as inventory in transit and accrues the payable at December 31, because legal title passed on shipment."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8019,10 +8019,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated Substantive Procurement, AP & SOUL Audit Simulator during statutory audit fieldwork?",
           "options": [
-            "It prevents suppliers from issuing commercial invoices.",
-            "It allows companies to eliminate all accounts payable balances permanently.",
-            "It integrates post-period disbursement sampling, GRNI clearing reconciliations, vendor debit reclassifications, and ASC 450 legal contingency evaluations into a unified, mathematically rigorous liability completeness audit pipeline.",
-            "It replaces external legal counsel with software algorithms."
+            "It combines customer confirmation sampling, deferred revenue reconciliations, credit note reviews, and ASC 606 contract evaluations into one rigorous revenue existence pipeline.",
+            "It combines inventory count sampling, perpetual record reconciliations, obsolescence reviews, and ASC 330 costing evaluations into one rigorous inventory valuation pipeline.",
+            "It combines post-period disbursement sampling, GRNI clearing reconciliations, vendor debit reclassifications, and ASC 450 contingency evaluations into one rigorous liability completeness pipeline.",
+            "It combines payroll register sampling, tax withholding reconciliations, bonus accrual reviews, and ASC 710 benefit evaluations into one rigorous compensation completeness pipeline."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8075,10 +8075,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a statutory physical inventory count observation under ISA 501 and PCAOB AS 2510, why does the auditor execute 'Floor-to-Sheet' test counts in addition to 'Sheet-to-Floor' counts?",
           "options": [
-            "Because warehouse workers are legally prohibited from counting their own inventory.",
-            "To test the valuation of foreign currency accounts.",
-            "To calculate the enterprise's corporate income tax refund.",
-            "To test the Completeness assertion by verifying that physical inventory existing on the warehouse floor was not omitted from the final inventory compilation sheets."
+            "To test the existence assertion by checking that inventory recorded on the count sheets is physically on the floor and in the stated quantity.",
+            "To test the valuation assertion by checking that inventory on the floor is priced at the lower of cost and net realisable value on the sheets.",
+            "To test the cut-off assertion by checking that inventory received after the count date is excluded from the final inventory compilation sheets.",
+            "To test the completeness assertion by checking that inventory physically on the floor was not left off the final inventory compilation sheets."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8102,10 +8102,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what condition is an independent external auditor permitted to accept an interim physical inventory count (e.g., October 31) rolled forward to fiscal year-end (December 31) under PCAOB AS 2510?",
           "options": [
-            "Only when internal controls over the perpetual inventory system are tested and proven to operate effectively, and the auditor tests interim additions, deductions, and gross margins across the roll-forward period.",
-            "Only when the enterprise has zero debt on its balance sheet.",
-            "Only when the client agrees to pay double audit fees.",
-            "Interim counts are automatically prohibited for all publicly traded corporations."
+            "Only when controls over the perpetual inventory system are tested and effective, and the auditor tests interim additions, deductions, and gross margins over the roll-forward period.",
+            "Only when the interim count was observed by the client's internal auditors, and the auditor agrees the total value of the interim count to the general ledger at year end.",
+            "Only when the entity uses a periodic inventory system, and the auditor tests the purchases and sales recorded in the last month before the fiscal year end.",
+            "Only when the inventory value is below overall materiality, and the auditor agrees the interim count sheets to the perpetual records without further roll-forward tests."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8129,10 +8129,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 2 paragraph 12 and ASC 330, why is an enterprise prohibited from capitalizing manufacturing overhead variances resulting from abnormal idle factory capacity into ending inventory?",
           "options": [
-            "Because idle capacity can only be capitalized into land and buildings.",
-            "Because abnormal amounts of idle capacity and wasted materials represent period inefficiencies that must be recognized as an expense in the period incurred, rather than capitalized as an asset.",
-            "Because standard costing is illegal under international trade agreements.",
-            "Because manufacturing variances expire automatically after thirty days."
+            "Because normal idle capacity and routine scrap are period inefficiencies that must be expensed when incurred, not spread across ending inventory units.",
+            "Because abnormal idle capacity and wasted materials are period inefficiencies that must be expensed when incurred, not capitalised as an asset.",
+            "Because abnormal idle capacity and wasted materials are product costs that must be deferred until sale, not expensed in the period they are incurred.",
+            "Because abnormal idle capacity and wasted materials are financing costs that must be capitalised as borrowing costs, not expensed in the period incurred."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8156,10 +8156,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 2 and FASB ASC Topic 330, how is Net Realizable Value (NRV) calculated when determining whether inventory must be written down below historical cost?",
           "options": [
-            "The current market value of common stock shares of the company.",
-            "The inventory's insured value under commercial property insurance.",
-            "Estimated selling price in the ordinary course of business, less estimated costs of completion and estimated costs necessary to make the sale.",
-            "The original replacement cost charged by the manufacturer."
+            "Estimated replacement cost in the ordinary course of business, less estimated costs of completion and the estimated costs necessary to make the sale.",
+            "Estimated selling price in the ordinary course of business, plus estimated costs of completion and the estimated costs necessary to make the sale.",
+            "Estimated selling price in the ordinary course of business, less estimated costs of completion and the estimated costs necessary to make the sale.",
+            "Original purchase cost in the ordinary course of business, less estimated costs of completion and the estimated costs necessary to make the sale."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8187,10 +8187,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated Substantive Inventory Valuation & Physical Count Simulator during statutory audit fieldwork?",
           "options": [
-            "It converts physical raw materials into marketable equity securities.",
-            "It eliminates the need for physical warehouse security personnel.",
-            "It guarantees that client factories will never experience production downtime.",
-            "It integrates multi-location physical count reconciliations, perpetual roll-forwards, standard cost variance allocations, and NRV lower-of-cost write-downs into a unified, mathematically rigorous inventory audit pipeline."
+            "It integrates multi-location customer confirmations, receivable roll-forwards, credit loss allocations, and CECL expected-loss write-downs into one rigorous receivables audit pipeline.",
+            "It integrates multi-location payroll reconciliations, headcount roll-forwards, bonus accrual allocations, and pension liability write-ups into one rigorous compensation audit pipeline.",
+            "It integrates multi-location bank reconciliations, cash roll-forwards, interest income allocations, and foreign currency revaluations into one rigorous treasury audit pipeline.",
+            "It integrates multi-location count reconciliations, perpetual roll-forwards, standard cost variance allocations, and NRV lower-of-cost write-downs into one rigorous inventory audit pipeline."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8243,10 +8243,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 16 and US GAAP, what is the auditor's required procedure when substantive testing reveals that management unilaterally extended the useful life of manufacturing machinery, reducing annual depreciation expense by $2.0M?",
           "options": [
-            "Challenge management's revision by evaluating engineering maintenance records, technological obsolescence trends, and industry benchmark data to determine whether the change in accounting estimate is empirically justified.",
-            "Accept management's explanation without inquiry because depreciation is a non-cash expense.",
-            "Immediately report the corporate controller to criminal authorities.",
-            "Require the company to depreciate all assets over exactly ten years."
+            "Challenge management's revision by evaluating maintenance records, technological obsolescence trends, and industry benchmark data to decide whether the change in estimate is justified.",
+            "Accept management's revision after confirming that the change is applied prospectively, since a change in useful life is a policy choice that needs no further evidence.",
+            "Challenge management's revision by restating prior years' depreciation, since a change in useful life is a correction of an error that needs retrospective restatement.",
+            "Accept management's revision after comparing it with the tax depreciation rates, since the statutory rate is the best evidence of the machinery's real useful life."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8270,10 +8270,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 38 and US GAAP (ASC 350-40), how must an enterprise account for $1.5M in internal personnel costs incurred to train end-users on a newly implemented ERP software system?",
           "options": [
-            "The training costs must be capitalized as part of the software asset carrying value.",
-            "The training costs are recorded as a permanent deduction from common equity.",
-            "The training costs are deferred as a non-current asset over forty years.",
-            "The training costs must be expensed as an operating expense in the period incurred, because training costs do not provide future economic benefits directly attributable to preparing the software asset for its intended use."
+            "The training costs must be capitalised as part of the software asset, because training provides future benefits directly attributable to preparing the software for its intended use.",
+            "The training costs must be deferred as a prepaid expense and amortised, because training provides benefits over the software's life even though it is not part of the asset.",
+            "The training costs must be capitalised only for internal personnel, because external trainer fees do not provide future benefits attributable to preparing the software.",
+            "The training costs must be expensed in the period incurred, because training does not provide future benefits directly attributable to preparing the software for its intended use."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8297,10 +8297,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IFRS 16 and ASC 842, why does an enterprise that artificially inflates its Incremental Borrowing Rate (IBR) from 5.2% to 9.0% violate accounting standards?",
           "options": [
-            "Because lease payments are exempt from financial statement disclosures.",
-            "Because higher interest rates automatically cancel commercial lease contracts.",
-            "Because using an artificially high discount rate materially understates the present value of the lease liability and Right-of-Use asset, concealing debt from the balance sheet.",
-            "Because IBR rates must be approved by the United Nations."
+            "Because using an artificially high discount rate overstates the present value of the lease liability and right-of-use asset, inflating debt on the balance sheet.",
+            "Because using an artificially high discount rate understates the lease payments due, which means the cash flow statement shows lower financing outflows in the year.",
+            "Because using an artificially high discount rate understates the present value of the lease liability and right-of-use asset, hiding debt from the balance sheet.",
+            "Because using an artificially high discount rate increases the interest expense in the first year only, which means reported profit is lower for that year alone."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8324,10 +8324,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 36, when an impairment loss is recognized for a Cash-Generating Unit (CGU) that contains allocated Goodwill and tangible PPE, how must the impairment loss be allocated across the assets of the unit?",
           "options": [
-            "The impairment loss is allocated entirely to accounts receivable.",
-            "The impairment loss must first be allocated to reduce the carrying amount of any allocated Goodwill to zero, and then allocated pro-rata across the other tangible and intangible assets based on their relative carrying values.",
-            "The impairment loss is capitalized as a deferred tax asset.",
-            "The impairment loss is divided equally between common stock and retained earnings."
+            "The loss first reduces the other tangible assets pro-rata by carrying amounts, then reduces any allocated goodwill if some part of the loss remains after that stage.",
+            "The loss first reduces any allocated goodwill to zero, then is allocated pro-rata across the other tangible and intangible assets based on their relative carrying amounts.",
+            "The loss is allocated equally across goodwill and all other assets in the unit, whatever their carrying amounts, until each asset has absorbed an equal amount.",
+            "The loss first reduces the current assets such as inventory and receivables to net realisable value, then is allocated to goodwill and the other non-current assets."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8356,10 +8356,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated Substantive Fixed Assets, Leases & Impairment Simulator during statutory audit fieldwork?",
           "options": [
-            "It integrates fixed asset additions vouching, CapEx vs OpEx boundary scrubbing, IFRS 16 lease liability recalculations, and IAS 36 CGU impairment DCF modeling into a unified, mathematically rigorous long-lived asset audit pipeline.",
-            "It eliminates the need for companies to purchase commercial property insurance.",
-            "It converts fixed assets into liquid cash deposits automatically.",
-            "It replaces all corporate accounting software with spreadsheets."
+            "It integrates vouching of fixed asset additions, CapEx versus OpEx scrubbing, IFRS 16 lease liability recalculation, and IAS 36 CGU impairment DCF modelling into one rigorous long-lived asset audit pipeline.",
+            "It integrates vouching of inventory purchases, standard versus actual costing, IAS 2 write-down recalculation, and NRV sensitivity modelling into one rigorous inventory valuation audit pipeline.",
+            "It integrates vouching of share issues, dividend declarations, IAS 32 equity classification checks, and EPS recalculation into one rigorous equity and capital structure audit pipeline.",
+            "It integrates vouching of revenue contracts, deferred revenue schedules, IFRS 15 allocation recalculation, and contract asset modelling into one rigorous revenue cut-off audit pipeline."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8412,10 +8412,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2105 and AS 2810, what is the regulatory function of the Clearly Trivial Threshold ($1.35M in this engagement)?",
           "options": [
-            "It allows corporate management to hide material unauthorized cash withdrawals from shareholders.",
-            "It defines the minimum amount of cash that must be maintained in the corporate bank account.",
-            "It establishes the boundary below which discovered misstatements do not need to be accumulated on the Summary of Unadjusted Differences (SUD) schedule, provided they are not indicative of systemic qualitative fraud.",
-            "It represents the maximum fee that the audit firm is legally allowed to bill the corporate client."
+            "It sets the boundary above which misstatements must be reported to the SEC separately from the Summary of Unadjusted Differences, even if they are not systemic.",
+            "It sets the boundary below which controls need not be tested for operating effectiveness, provided they do not relate to systems with qualitative fraud risk.",
+            "It sets the boundary below which misstatements need not be accumulated on the Summary of Unadjusted Differences, provided they do not indicate systemic or qualitative fraud.",
+            "It sets the boundary above which misstatements must be adjusted by management before the Summary of Unadjusted Differences, in all cases and without exception."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8441,10 +8441,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must the $5,200,000 in FOB Destination sales shipped on December 30 but delivered on January 4 be removed from current-period revenue under ASC 606 and IFRS 15?",
           "options": [
-            "Because all accounts receivable balances must be paid in physical gold bars before year-end.",
-            "Because control of the promised goods does not transfer to the customer until delivery at the designated destination point, violating the cut-off and revenue recognition criteria.",
-            "Because freight shipping companies are required to hold title to all shipped goods forever.",
-            "Because goods shipped via commercial freight trucks are never recognized in financial statements."
+            "Because control of the goods passes to the customer only when payment is received in cash, so recognising it before the receipt breaches cut-off and revenue criteria.",
+            "Because control of the goods does not pass to the customer until delivery at the designated destination, so recognising it earlier breaches cut-off and revenue criteria.",
+            "Because control of the goods passes to the customer as soon as they leave the dock, so recognising it later breaches cut-off and revenue criteria for the period.",
+            "Because control of the goods is retained by the seller until the invoice is approved, so recognising it before approval breaches cut-off and revenue criteria."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8470,10 +8470,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary technical rationale for performing subsequent cash disbursement testing during the Search for Unrecorded Liabilities (SOUL)?",
           "options": [
-            "To verify the completeness assertion by detecting liabilities and operating expenses that legitimately pertained to the audit period but were omitted from the year-end accounts payable subledger.",
-            "To approve upcoming corporate dividend payouts to common shareholders.",
-            "To calculate the personal income tax returns of the chief executive officer.",
-            "To guarantee that the corporation eliminates all accounts payable debt by the end of Q1."
+            "To verify completeness by finding liabilities and expenses that belonged to the audit period but were left out of the year-end accounts payable subledger.",
+            "To verify existence by finding recorded payables and expenses that did not belong to the audit period but were included in the year-end subledger.",
+            "To verify valuation by recalculating payables and expenses that were recorded in foreign currency at the year-end subledger exchange rate.",
+            "To verify rights and obligations by confirming that payables and expenses recorded in the year-end subledger were owed to related parties."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8499,10 +8499,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 36.104, when an impairment loss is recognized for a Cash-Generating Unit (CGU), in what exact sequence must the impairment write-down be allocated among the unit's assets?",
           "options": [
-            "First, to reduce cash and cash equivalents, and then to accounts receivable.",
-            "Equally across all common stock equity accounts and treasury shares.",
-            "Directly to retained earnings without affecting the carrying values of any assets.",
-            "First, to reduce the carrying amount of any goodwill allocated to the CGU, and then to the other non-current assets of the unit pro-rata on the basis of their carrying amounts."
+            "First to reduce the carrying amount of the CGU's other non-current assets pro-rata, then to any allocated goodwill if a part of the loss remains.",
+            "First to reduce the carrying amount of the CGU's intangible assets with finite lives, then to goodwill and tangible assets equally if any loss remains.",
+            "First to reduce the carrying amount of the CGU's working capital items to their recoverable amounts, then to goodwill and non-current assets pro-rata.",
+            "First to reduce the carrying amount of any goodwill allocated to the CGU, then to its other non-current assets pro-rata to their carrying amounts."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8528,10 +8528,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory professional obligation of the Lead Audit Engagement Partner under PCAOB AS 2810 and AS 3101 if cumulative unadjusted misstatements ($44.4M) exceed planning materiality ($27.0M) and management refuses to book the proposed adjustments?",
           "options": [
-            "The partner must secretly pay the difference out of the audit firm's partnership capital.",
-            "The partner must resign from public accounting and cancel all corporate registrations.",
-            "The partner cannot issue an unqualified (clean) audit opinion and must issue a qualified or adverse audit opinion detailing the material misstatements.",
-            "The partner must delete the audit working papers and issue a clean opinion anyway."
+            "The partner can issue an unqualified opinion if the audit committee approves, and must add an emphasis paragraph describing the misstatements.",
+            "The partner must issue a disclaimer of opinion in every case, because management's refusal limits the scope of the work done by the audit team.",
+            "The partner cannot issue an unqualified opinion and must issue a qualified or adverse opinion that describes the material misstatements.",
+            "The partner can issue an unqualified opinion on the statements, and must issue a qualified opinion only on the internal control over reporting."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8584,10 +8584,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2810.09 and ISA 520, what is the auditor's required action if final concluding analytical procedures identify an unexpected fluctuation or relationship break that was not previously addressed during substantive testing?",
           "options": [
-            "The auditor must immediately resign from the engagement and issue an emergency press release.",
-            "The auditor must re-evaluate the risk assessment, reconsider the audit plan, and perform additional substantive procedures to obtain sufficient appropriate evidence explaining the fluctuation.",
-            "The auditor must change the prior year's audited numbers so the ratios match current-year figures.",
-            "The auditor may simply accept management's verbal explanation and sign the clean opinion without further work."
+            "The auditor must accept the fluctuation as a normal variation, document management's explanation, and complete the audit without further procedures or a revised plan.",
+            "The auditor must re-evaluate the risk assessment, reconsider the audit plan, and perform extra substantive procedures to obtain sufficient evidence explaining the fluctuation.",
+            "The auditor must report the fluctuation to the audit committee, record it as an uncorrected misstatement, and complete the audit without extra substantive procedures.",
+            "The auditor must repeat the planning analytics with a new expectation, adjust the expectation until the fluctuation disappears, and complete the audit with the same plan."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8611,10 +8611,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ISA 560 and PCAOB AS 2801, what distinguishes a Type 1 subsequent event from a Type 2 subsequent event?",
           "options": [
-            "A Type 1 event must be audited by internal auditors, whereas a Type 2 event is audited by tax authorities.",
-            "A Type 1 event involves cash, whereas a Type 2 event involves common stock.",
-            "A Type 1 event provides evidence about conditions that already existed at the balance sheet date and requires financial statement adjustment, whereas a Type 2 event relates to conditions that arose entirely after the balance sheet date and requires footnote disclosure only.",
-            "A Type 1 event is reported to the government, whereas a Type 2 event is kept confidential."
+            "Type 1 relates to conditions arising after the balance sheet date and requires footnote disclosure; Type 2 gives evidence about conditions existing at that date and requires adjustment.",
+            "Type 1 occurs before the audit report date and requires adjustment of the statements; Type 2 occurs after the report date and requires the auditor to withdraw the report issued.",
+            "Type 1 gives evidence about conditions existing at the balance sheet date and requires adjustment; Type 2 relates to conditions arising after that date and requires footnote disclosure only.",
+            "Type 1 is a favourable event that increases profit and requires adjustment; Type 2 is an unfavourable event that reduces profit and requires footnote disclosure only."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8640,10 +8640,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is inspecting the minutes of Board of Directors and Audit Committee meetings held after the balance sheet date a mandatory procedure under PCAOB AS 2801?",
           "options": [
-            "Because external auditors are required to vote on shareholder motions.",
-            "Because board minutes disclose the personal political contributions of directors.",
-            "Because board minutes are used to calculate employee payroll taxes.",
-            "Because corporate boards authorize major commercial actions—such as debt offerings, acquisitions, divestitures, litigation settlements, or restructuring plans—that may constitute material subsequent events requiring adjustment or disclosure."
+            "Because boards approve the audit fee and the auditor's reappointment, which must be disclosed in the statements as related party events needing adjustment or disclosure.",
+            "Because boards set the accounting policies used in the statements, and any change in policy after year end must be applied retrospectively to the balances at year end.",
+            "Because boards record the directors' attendance at meetings, and any absence after year end is a control deficiency needing reporting to the audit committee chair.",
+            "Because boards authorise major actions, such as debt offerings, acquisitions, settlements, or restructurings, that may be material subsequent events needing adjustment or disclosure."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8668,10 +8668,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal and professional benefit of dual-dating an audit report under PCAOB AS 3110 when a material subsequent event occurs prior to financial statement issuance?",
           "options": [
-            "It restricts the auditor's extended active subsequent events liability solely to the specific audited event and footnote disclosure, without extending responsibility for the entire audit to the later date.",
-            "It allows the auditor to charge double the audit fee to the client.",
-            "It eliminates the need to perform any audit procedures on the subsequent event.",
-            "It converts the client's public reporting status from public to private."
+            "It limits the auditor's extended responsibility for subsequent events to the specific event and footnote disclosure, without extending responsibility for the whole audit to the later date.",
+            "It extends the auditor's responsibility for subsequent events to every area of the audit, and requires the whole audit to be updated through the later date of the report.",
+            "It limits the auditor's responsibility for the whole audit to the earlier date, and releases the auditor from any procedures on the event added by management later.",
+            "It allows the auditor to sign the report on the earlier date only, and requires management to take responsibility for the event and footnote disclosure that follow."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8699,10 +8699,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated Master Concluding Analytics & Subsequent Events Assurance Simulator?",
           "options": [
-            "It completely eliminates the legal requirement to issue an audit report to shareholders.",
-            "It integrates ratio anomaly detection, Type 1 balance sheet adjustment generation, Type 2 footnote structuring, and AS 3110 dual-dating report generation into a unified, mathematically rigorous audit completion pipeline.",
-            "It allows corporate management to file tax returns without paying corporate income taxes.",
-            "It replaces all independent statutory auditors with commercial marketing consultants."
+            "It integrates sampling plan design, error projection, tolerable misstatement checks, and AS 2315 evaluation of results into one rigorous substantive sampling pipeline.",
+            "It integrates ratio anomaly detection, Type 1 adjustment generation, Type 2 footnote structuring, and AS 3110 dual-dating report generation into one rigorous audit completion pipeline.",
+            "It integrates risk scoring, control deficiency grading, remediation tracking, and AS 2201 opinion wording generation into one rigorous internal control reporting pipeline.",
+            "It integrates working paper indexing, reviewer sign-off tracking, archive locking, and AS 1215 documentation retention into one rigorous audit file assembly pipeline."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8756,10 +8756,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under US GAAP (ASC 450-20-30-1 / FIN 14), when an enterprise determines that a loss contingency is probable and the reasonable estimate of loss exists across a range between $15M and $40M with no amount appearing better than any other, what amount must be accrued on the balance sheet?",
           "options": [
-            "The minimum amount in the range ($15,000,000), with the remaining potential exposure ($25,000,000) disclosed in the footnotes.",
-            "The midpoint of the range ($27,500,000).",
-            "The maximum amount in the range ($40,000,000).",
-            "Zero dollars, because range estimates cannot be accrued until a final court verdict."
+            "The minimum amount in the range ($15,000,000), with the remaining possible exposure ($25,000,000) disclosed in the footnotes.",
+            "The midpoint of the range ($27,500,000), with the remaining possible exposure ($12,500,000) disclosed in the footnotes.",
+            "The maximum amount in the range ($40,000,000), with the remaining possible exposure ($25,000,000) disclosed in the footnotes.",
+            "No amount is accrued, with the whole range ($15,000,000 to $40,000,000) disclosed in the footnotes until a best estimate exists."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8783,10 +8783,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2505.13 and AS 3105, what is the mandatory consequence on the auditor's report if outside legal counsel or corporate management refuses to furnish information requested in an inquiry letter regarding a material litigation matter?",
           "options": [
-            "The auditor may assume the lawsuit has zero value and issue a clean opinion.",
-            "The auditor must fine the law firm $100,000.",
-            "The auditor must take over legal defense of the court case personally.",
-            "It constitutes a material scope limitation on the audit that precludes an unqualified opinion, requiring a qualified opinion or a disclaimer of opinion."
+            "It is a minor reporting matter that allows an unqualified opinion, requiring only an emphasis paragraph about the litigation matter.",
+            "It is a material misstatement that precludes an unqualified opinion, requiring an adverse opinion on the statements as a whole.",
+            "It is a significant deficiency in controls that allows an unqualified opinion, requiring written communication to the audit committee.",
+            "It is a material scope limitation that precludes an unqualified opinion, requiring a qualified opinion or a disclaimer of opinion."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8812,10 +8812,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 410-30, when an enterprise is identified as a Potentially Responsible Party (PRP) at an environmental Superfund site, how must the entity account for cleanup costs allocable to other participating PRPs who are known to be insolvent?",
           "options": [
-            "The entity must convert its corporate charter to a non-profit foundation.",
-            "The entity may ignore all costs of insolvent co-PRPs because government agencies pay them.",
-            "The entity must include in its accrued liability its proportionate share of the cleanup costs that will not be paid by the insolvent co-PRPs.",
-            "The entity can bill the insolvent co-PRPs' bank accounts directly."
+            "The entity excludes from its liability the cleanup costs allocated to insolvent co-PRPs, and discloses them as a contingent gain.",
+            "The entity includes in its liability the full cleanup cost of the site, and records a receivable from the insolvent co-PRPs.",
+            "The entity includes in its accrued liability its proportionate share of the cleanup costs that the insolvent co-PRPs will not pay.",
+            "The entity includes in its liability only its own allocated share of the cleanup costs, and discloses the others' share in notes."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8839,10 +8839,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 1210, what is the external auditor's professional responsibility regarding the findings and reports of an auditor-engaged specialist?",
           "options": [
-            "The auditor must ignore the specialist's findings if they contradict client management.",
-            "The auditor retains ultimate responsibility for the audit opinion and must evaluate the specialist's qualifications, independence, source data, and significant assumptions rather than accepting the findings on blind faith.",
-            "The auditor can delegate all legal liability for the audit opinion to the specialist.",
-            "The auditor is legally required to sign the specialist's name to the final audit report."
+            "The auditor transfers responsibility for the related balance to the specialist and need only check the specialist's licence and fee terms before relying on the findings in the audit.",
+            "The auditor keeps ultimate responsibility for the opinion and must evaluate the specialist's qualifications, independence, source data, and assumptions, not accept findings blindly.",
+            "The auditor keeps ultimate responsibility for the opinion but may rely on the findings if the specialist was engaged and paid by the audited company's management.",
+            "The auditor shares responsibility for the opinion with the specialist and must name the specialist in the report to show the division of responsibility between them."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8869,10 +8869,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated Master Legal Contingencies & Litigation Assurance Simulator during statutory audit fieldwork?",
           "options": [
-            "It integrates legal inquiry evaluation, range accrual calculations under ASC 450, environmental Superfund remediation modeling, and footnote disclosure formulation into a unified, mathematically rigorous legal audit pipeline.",
-            "It prevents lawyers from billing legal fees to corporate clients.",
-            "It automatically dismisses all pending court lawsuits without a judge.",
-            "It converts contingent loss liabilities into guaranteed cash revenues."
+            "It integrates legal inquiry evaluation, range accrual calculations under ASC 450, environmental Superfund remediation modelling, and footnote disclosure drafting into one rigorous legal audit pipeline.",
+            "It integrates tax inquiry evaluation, deferred tax calculations under ASC 740, transfer pricing modelling, and footnote disclosure drafting into one rigorous income tax audit pipeline.",
+            "It integrates regulatory inquiry evaluation, penalty accrual calculations under ASC 450, SEC enforcement modelling, and press release drafting into one rigorous compliance audit pipeline.",
+            "It integrates insurance inquiry evaluation, claims accrual calculations under ASC 944, catastrophe loss modelling, and reinsurance disclosure drafting into one rigorous insurance audit pipeline."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8924,9 +8924,9 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under US GAAP (ASC 205-40), what is the statutory look-forward time horizon over which management and the auditor must evaluate an entity's ability to continue as a going concern?",
           "options": [
-            "Ninety days following the annual general meeting of stockholders.",
-            "Twelve months from the balance sheet date.",
-            "Five years from the balance sheet date.",
+            "One year after the balance sheet date of the financial statements that are being audited.",
+            "Two years after the date that the financial statements are issued (or available to be issued).",
+            "Six months after the date that the financial statements are issued (or available to be issued).",
             "One year after the date that the financial statements are issued (or available to be issued)."
           ],
           "answer": 3,
@@ -8953,10 +8953,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 470 and IAS 1, if an entity breaches a debt covenant at the balance sheet date giving lenders the right to demand immediate repayment, under what condition may the debt remain classified as a long-term liability?",
           "options": [
-            "Only if the lender formally executes a legally binding waiver prior to financial statement issuance granting a grace period of at least twelve months during which the debt cannot be called.",
-            "If management verbally promises that the lender will never demand payment.",
-            "If the company replaces its external auditing firm with a local bookkeeping firm.",
-            "If the chief financial officer transfers personal real estate into corporate ownership."
+            "Only if the lender signs a legally binding waiver before the statements are issued, with a grace period of at least twelve months during which the debt cannot be called.",
+            "Only if the lender gives a written statement of intent before the statements are issued, with no grace period but a commitment to review the position each quarter.",
+            "Only if management cures the breach within thirty days after the balance sheet date, with a grace period of at least three months during which the debt cannot be called.",
+            "Only if the debt is secured by assets worth more than the loan before the statements are issued, with a repayment schedule of at least twelve months stated in the loan."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8981,10 +8981,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 205-40-50-6, when can an external auditor accept a management plan to sell an operating division to alleviate going concern substantial doubt?",
           "options": [
-            "Whenever management expresses an aspiration to sell assets in future press releases.",
-            "Only when it is probable that the plan will be effectively implemented (supported by a binding purchase agreement or definitive active transaction) and the net proceeds will cure the cash deficit.",
-            "Only if the buyer is a domestic state government agency.",
-            "Never, because selling capital assets is legally prohibited during audit fieldwork."
+            "Only when it is possible the plan will be implemented (backed by a board resolution or draft term sheet) and its gross proceeds will exceed the cash deficit.",
+            "Only when it is probable the plan will be implemented (backed by a binding purchase agreement or definitive transaction) and its net proceeds will cure the cash deficit.",
+            "Only when it is probable the plan will be implemented (backed by an approved budget or management forecast) and its book value will exceed the cash deficit.",
+            "Only when it is probable the plan will be approved by the lenders (backed by a letter of comfort or oral assurance) and its sale will occur after the report date."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9039,10 +9039,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated Master Going Concern Liquidity Stress & Survival Simulator during statutory audit fieldwork?",
           "options": [
-            "It allows corporate directors to avoid filing annual financial statements with securities regulators.",
-            "It guarantees that the company will remain profitable for the next ten years.",
-            "It automatically deposits cash into the client's corporate bank accounts to prevent bankruptcy.",
-            "It integrates liquidity runway stress testing, debt covenant default reclassification, Phase 2 mitigating plan qualification filtering, and statutory explanatory paragraph wording generation into a unified, mathematically rigorous going concern assurance pipeline."
+            "It integrates revenue forecast modelling, budget variance reporting, qualification screening of key managers, and annual report generation into one rigorous management planning pipeline.",
+            "It integrates credit rating monitoring, bond price tracking, qualification checks on lenders, and covenant waiver generation into one rigorous debt capital markets pipeline.",
+            "It integrates cash flow forecasting, dividend capacity testing, qualification review of investors, and shareholder circular generation into one rigorous equity funding pipeline.",
+            "It integrates liquidity runway stress testing, covenant default reclassification, filtering of mitigating plans, and explanatory paragraph generation into one rigorous going concern pipeline."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9124,10 +9124,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2805.06(f) and ISA 450, what must be attached to the Management Representation Letter regarding unadjusted misstatements discovered during the audit?",
           "options": [
-            "A certified copy of the corporate credit card statements for all board members.",
-            "A complete summary of uncorrected misstatements, accompanied by an explicit written certification from the CEO and CFO that the uncorrected errors are immaterial to the financial statements as a whole.",
-            "Nothing; uncorrected misstatements are strictly confidential and must never be shown to management.",
-            "A list of the personal financial investments of the external audit partner."
+            "A complete list of corrected misstatements, with a written certification from the auditor that the corrected errors were immaterial to the statements as a whole.",
+            "A complete summary of uncorrected misstatements, with a written certification from the CEO and CFO that the uncorrected errors are immaterial to the statements as a whole.",
+            "A summary of only the uncorrected misstatements above materiality, with a written certification from the audit committee that the errors were reported to it.",
+            "A complete summary of uncorrected misstatements, with a written certification from the engagement partner that the errors are immaterial to the statements as a whole."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9153,10 +9153,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2805.13 and ISA 580.19, what is the mandatory consequence on the audit opinion if corporate management refuses to furnish written representations regarding pervasive matters like financial statement responsibility or fraud?",
           "options": [
-            "The auditor is legally prohibited from issuing an unqualified (clean) opinion and must issue a disclaimer of opinion or withdraw from the engagement.",
-            "The auditor may issue an unqualified opinion if the audit committee gives verbal assurances.",
-            "The auditor must fine the corporation $500,000 and issue a clean opinion.",
-            "The auditor can sign the representation letter on management's behalf as power of attorney."
+            "The auditor is prohibited from issuing an unqualified opinion and must issue a disclaimer of opinion or withdraw from the engagement.",
+            "The auditor may issue an unqualified opinion and must add an emphasis of matter paragraph describing management's refusal to sign.",
+            "The auditor is prohibited from issuing any opinion at all and must report management to the regulator before withdrawing.",
+            "The auditor may issue a qualified opinion only on the matters not represented and must obtain oral assurances for the remaining matters."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9182,10 +9182,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 1301 and PCAOB Rule 3526, what are the primary statutory obligations of external auditors regarding communications with the Board Audit Committee?",
           "options": [
-            "To provide legal defense counsel in shareholder class action lawsuits.",
-            "To approve the compensation bonuses of executive officers.",
-            "To manage the corporate treasury cash investments directly.",
-            "To communicate critical accounting estimates, significant unusual transactions, uncorrected and corrected misstatements, disagreements with management, and deliver a formal written affirmation of audit firm independence."
+            "To communicate the audit fee budget, staffing plans, billing schedules, and disagreements among the audit team, and to give a formal written summary of the firm's profitability.",
+            "To communicate the company's strategic plans, product launches, executive pay levels, and disagreements with competitors, and to give a formal written forecast of the company's earnings.",
+            "To communicate the details of internal audit staff, compliance training, whistleblower names, and disagreements with regulators, and to give a formal written guarantee of the statements.",
+            "To communicate critical accounting estimates, unusual transactions, corrected and uncorrected misstatements, and disagreements with management, and to affirm the firm's independence in writing."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9213,10 +9213,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational victory achieved by deploying an automated Master Governance Communications & Representation Defense Simulator during statutory audit fieldwork?",
           "options": [
-            "It allows audit partners to issue audit reports without reading client financial statements.",
-            "It converts public corporate financial records into confidential secret documents.",
-            "It integrates representation letter tailoring, executive signatory verification, SUD exhibit binding, AS 1301 Audit Committee reporting, and Rule 3526 independence certification into a unified, mathematically rigorous governance clearance pipeline.",
-            "It eliminates the legal requirement for companies to have a Board of Directors."
+            "It integrates engagement letter tailoring, fee negotiation, billing exhibit binding, AS 1201 supervision reporting, and Rule 3200 quality certification into one rigorous firm administration pipeline.",
+            "It integrates risk assessment tailoring, control walkthroughs, IT exhibit binding, AS 2110 planning reporting, and Rule 3502 contribution certification into one rigorous planning clearance pipeline.",
+            "It integrates representation letter tailoring, signatory verification, SUD exhibit binding, AS 1301 Audit Committee reporting, and Rule 3526 independence certification into one rigorous governance clearance pipeline.",
+            "It integrates disclosure checklist tailoring, XBRL tagging, filing exhibit binding, AS 2710 other information reporting, and Rule 3211 form certification into one rigorous filing support pipeline."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9268,10 +9268,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary regulatory purpose of establishing strict quantitative materiality thresholds (PM $27M, TE $18.9M, Clearly Trivial $1.35M) during the audit completion war room under PCAOB AS 2810?",
           "options": [
-            "To determine the pricing structure of upcoming commercial products.",
-            "To establish the quantitative benchmarks against which all uncorrected misstatements, Type 1 subsequent events, and unrecorded loss contingencies are evaluated to determine whether the financial statements are materially misstated.",
-            "To calculate the total bonus compensation for corporate marketing executives.",
-            "To determine the annual dividend payout per common share."
+            "To set the quantitative benchmarks for pricing the audit engagement, allocating staff hours, and scheduling the fieldwork to decide whether the audit is profitable for the firm.",
+            "To set the quantitative benchmarks for evaluating uncorrected misstatements, Type 1 subsequent events, and unrecorded loss contingencies to decide whether the statements are materially misstated.",
+            "To set the quantitative benchmarks for evaluating internal control deficiencies, IT access conflicts, and entity-level controls to decide whether ICFR is operating effectively.",
+            "To set the quantitative benchmarks for evaluating management's bonus targets, covenant ratios, and analyst forecasts to decide whether the earnings are manipulated by executives."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9295,10 +9295,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must the $32,000,000 warehouse fire occurring on February 24 be accounted for as a Type 2 subsequent event with dual-dating rather than a retroactive balance sheet write-down?",
           "options": [
-            "Because the auditor is required to pay for the rebuilding of the warehouse.",
-            "Because physical fire damage is never recognized in corporate accounting.",
-            "Because the physical disaster occurred entirely after the December 31 balance sheet date, meaning the condition did not exist at year-end; dual-dating under AS 3110 limits the auditor's extended liability exclusively to Note 21.",
-            "Because insurance companies are legally prohibited from paying commercial claims."
+            "Because the disaster was insured against losses at December 31, so the condition was recoverable at year end; dual-dating under AS 3110 extends the auditor's liability to all notes.",
+            "Because the disaster was anticipated before December 31, so the condition existed at year end; dual-dating under AS 3110 limits the auditor's liability to the balance sheet only.",
+            "Because the disaster occurred entirely after December 31, so the condition did not exist at year end; dual-dating under AS 3110 limits the auditor's extended liability to Note 21.",
+            "Because the disaster affected inventory that was counted on December 31, so the condition existed at year end; dual-dating under AS 3110 replaces the original report date."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9323,10 +9323,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 450-20-30-1, when external legal counsel confirms that a loss is probable within an estimable range of $14,000,000 to $28,000,000 with no single point being better than any other, what exact accounting treatment is mandated?",
           "options": [
-            "Management must accrue the maximum amount of $28,000,000.",
-            "Management may defer all accruals until the Supreme Court issues a final verdict.",
-            "Management must accrue the midpoint of $21,000,000.",
-            "Management must accrue the minimum amount of $14,000,000 on the balance sheet and disclose the additional $14,000,000 potential exposure in the footnotes."
+            "Management must accrue the midpoint of $21,000,000 on the balance sheet and disclose the extra $7,000,000 of potential exposure in the footnotes.",
+            "Management must accrue nothing on the balance sheet and disclose the full range of $14,000,000 to $28,000,000 of exposure in the footnotes.",
+            "Management must accrue the minimum of $14,000,000 on the balance sheet and record the extra $14,000,000 as a contingent asset in the footnotes.",
+            "Management must accrue the minimum of $14,000,000 on the balance sheet and disclose the extra $14,000,000 of potential exposure in the footnotes."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9350,10 +9350,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the technical consequence on the audit opinion when substantial doubt remains unalleviated but management provides comprehensive footnote disclosures in Note 2 under PCAOB AS 2415?",
           "options": [
-            "The auditor issues an unqualified (clean) opinion accompanied by an explicit explanatory paragraph following the opinion paragraph containing the statutory terms 'substantial doubt' and 'going concern'.",
-            "The auditor must issue an adverse opinion stating the company is fraudulent.",
-            "The auditor must issue a disclaimer of opinion refusing to audit the client.",
-            "The auditor can omit all mentions of going concern from the audit report."
+            "The auditor issues an unqualified opinion with an explanatory paragraph after the opinion paragraph that uses the terms 'substantial doubt' and 'going concern'.",
+            "The auditor issues a qualified opinion with an 'except for' paragraph before the opinion paragraph that uses the terms 'material uncertainty' and 'insolvency'.",
+            "The auditor issues an unqualified opinion with no additional paragraph, because the footnote disclosures in Note 2 are adequate and sufficient to inform users.",
+            "The auditor issues a disclaimer of opinion with an explanatory paragraph after the report that uses the terms 'substantial doubt' and 'cannot be expressed'."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9378,10 +9378,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory professional function of the Engagement Quality Review (EQR) partner under PCAOB AS 1220 prior to the issuance of the independent auditor's report?",
           "options": [
-            "To calculate the quarterly stock dividend for shareholders.",
-            "To evaluate the significant judgments made by the engagement team, review key working papers and governance dockets, and provide concurring approval of issuance only if no significant unresolved deficiencies exist.",
-            "To manage the client's customer service call center.",
-            "To prepare the client's corporate tax return."
+            "To prepare the engagement team's working papers, make the key judgments on the audit, and give final approval of the fee only if the client has no unpaid invoices.",
+            "To evaluate the engagement team's significant judgments, review key working papers, and give concurring approval of issuance only if no significant unresolved deficiencies remain.",
+            "To supervise the engagement team's fieldwork, direct the sampling work, and give a verbal opinion on the report only if the engagement partner requests a review.",
+            "To review the engagement team's timesheets, approve the staffing plans, and give approval of the planning memo only if the budget hours have been fully used."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9433,10 +9433,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 3101, what is the mandatory structural placement of the 'Opinion on the Financial Statements' section in the independent auditor's report?",
           "options": [
-            "It must be placed as the very first section of the report, immediately following the title and addressee, placing the opinion front and center for capital markets.",
-            "It must be placed at the very end of the report, following all working paper exhibits.",
-            "It must be placed in a confidential sealed envelope sent only to executive officers.",
-            "It is optional and may be omitted if management provides an earnings press release."
+            "It must be the very first section of the report, immediately after the title and addressee, placing the opinion front and centre for capital markets.",
+            "It must be the second section of the report, immediately after the Basis for Opinion, placing the conclusions after the auditor's responsibilities for capital markets.",
+            "It must be the last section of the report, immediately before the signature and date, placing the conclusion after all explanatory paragraphs for capital markets.",
+            "It must be the first section only for unqualified opinions, immediately after the title and addressee, with modified opinions placed after the Basis for Opinion."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9460,10 +9460,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary regulatory purpose of including the explicit PCAOB registration and independence statement in the Basis for Opinion section under AS 3101.09?",
           "options": [
-            "To guarantee that the client's stock price will rise post-filing.",
-            "To request the SEC to pay for the audit fees.",
-            "To exempt the client from paying federal corporate taxes.",
-            "To affirm that the audit firm is legally registered with and inspected by the PCAOB, and complies with federal securities laws and SEC/PCAOB independence rules."
+            "To affirm that the audit firm is a member of the AICPA and follows its peer review, and complies with state accountancy laws and the AICPA's ethical rules.",
+            "To affirm that the audit firm has been approved by the audit committee, and complies with the company's internal policies and its own code of conduct for audits.",
+            "To affirm that the audit firm has been reviewed by the SEC for the engagement, and complies with the company's listing rules and the exchange's governance rules.",
+            "To affirm that the audit firm is registered with and inspected by the PCAOB, and complies with federal securities laws and SEC and PCAOB independence rules."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9486,10 +9486,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Does adding a mandatory explanatory paragraph regarding going concern substantial doubt under PCAOB AS 2415 convert an unqualified audit opinion into a modified (qualified) opinion?",
           "options": [
-            "Yes. Any explanatory paragraph automatically changes the opinion to a qualified adverse opinion.",
-            "Yes. Explanatory paragraphs are legally considered disclaimers of opinion.",
-            "No. The opinion remains an unqualified opinion because the financial statements are presented fairly with adequate footnote disclosures; the explanatory paragraph merely highlights the existential uncertainty.",
-            "No. But the auditor must refund fifty percent of the audit fee to the client."
+            "Yes. The opinion becomes qualified because the statements are not fully reliable despite the footnotes; the explanatory paragraph states an exception to the opinion.",
+            "No. The opinion stays unqualified because the paragraph replaces the footnotes; the explanatory paragraph must be removed when management gives disclosure.",
+            "No. The opinion stays unqualified because the statements are fairly presented with adequate footnotes; the explanatory paragraph only highlights the uncertainty.",
+            "Yes. The opinion becomes adverse because the going concern basis is not appropriate; the explanatory paragraph states that the statements are not presented fairly."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9512,10 +9512,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal advantage for an audit firm of using the dual-dating convention under PCAOB AS 3110 when a material subsequent event occurs prior to financial statement issuance?",
           "options": [
-            "It allows the auditor to charge the client double the original audit fee.",
-            "It restricts the auditor's extended subsequent events investigation and legal liability solely to the specific event disclosed in the referenced footnote, without extending liability for all other financial statement accounts.",
-            "It excuses the auditor from ever performing an inventory count in the future.",
-            "It transfers all auditor liability directly to the Securities and Exchange Commission."
+            "It extends the auditor's subsequent events work and liability to every account in the statements through the later date, not only the event in the footnote.",
+            "It limits the auditor's extended subsequent events work and liability to the specific event disclosed in the referenced footnote, not to all other accounts.",
+            "It limits the auditor's original audit work and liability to the earlier date, and shifts the work on the event in the footnote entirely to management.",
+            "It allows the auditor to withdraw from the audit after the earlier date, and ends liability for all events disclosed in the footnotes by management later."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9539,10 +9539,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary regulatory purpose of assembling an independent auditor's report that strictly complies with PCAOB AS 3101 front-and-center architecture, explicit independence declarations, and explanatory paragraphs?",
           "options": [
-            "To ensure that the statutory audit opinion communicates transparent, unambiguous assurance to capital markets while strictly fulfilling federal securities laws and PCAOB standards.",
-            "To allow the audit firm to purchase equity shares in the client at a discount.",
-            "To enable the company to bypass all quarterly SEC Form 10-Q filing requirements.",
-            "To eliminate the need for the Board of Directors to hold annual shareholder meetings."
+            "To ensure the audit opinion gives clear, unambiguous assurance to capital markets while meeting federal securities laws and PCAOB standards.",
+            "To ensure the audit opinion gives a guarantee of future performance to capital markets while meeting the exchange listing rules and the company's own policies.",
+            "To ensure the audit opinion gives a detailed account of audit procedures to capital markets while meeting the engagement letter terms and the firm's methodology.",
+            "To ensure the audit opinion gives a ranking of the company against peers to capital markets while meeting analyst expectations and the rating agencies' criteria."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9594,10 +9594,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following conditions must be met for a matter to be designated as a Critical Audit Matter (CAM) under PCAOB AS 3101.11?",
           "options": [
-            "The matter resulted in a material restatement of prior period financial statements.",
-            "The matter was discussed in an internal whistleblower complaint.",
-            "The matter resulted in the termination of the Chief Financial Officer.",
-            "The matter was communicated or required to be communicated to the Audit Committee, relates to accounts or disclosures that are material to the financial statements, and involved especially challenging, subjective, or complex auditor judgment."
+            "The matter was identified by management as a risk; relates to accounts above performance materiality; and involved a restatement of prior period statements or a control deficiency.",
+            "The matter was communicated, or required to be communicated, to the regulator; relates to accounts or disclosures that are unusual; and involved extra audit hours or specialist work.",
+            "The matter was discussed with the engagement quality reviewer; relates to accounts with estimates; and involved a difference of opinion between the auditor and management.",
+            "The matter was communicated, or required to be communicated, to the Audit Committee; relates to material accounts or disclosures; and involved especially challenging, subjective, or complex judgment."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9621,10 +9621,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a significant risk of material misstatement identified under PCAOB AS 2110 not automatically classified as a Critical Audit Matter (CAM)?",
           "options": [
-            "Because a matter must also satisfy the requirement of involving especially challenging, subjective, or complex auditor judgment under the six factors of AS 3101.12; routine significant risks with straightforward testing do not qualify.",
-            "Because significant risks can only be disclosed in quarterly Form 10-Q filings.",
-            "Because the PCAOB prohibits auditors from disclosing significant risks to the public.",
-            "Because significant risks are only applicable to private companies."
+            "Because the matter must also involve especially challenging, subjective, or complex auditor judgment under the six factors of AS 3101.12; routine significant risks with simple testing do not qualify.",
+            "Because the matter must also be approved for inclusion by management under the six factors of AS 3101.12; significant risks with straightforward testing qualify when management agrees.",
+            "Because the matter must also relate to accounts above overall materiality under the six factors of AS 3101.12; all significant risks above that level qualify automatically.",
+            "Because the matter must also be disclosed to the audit committee under the six factors of AS 3101.12; routine significant risks that were disclosed to the committee qualify."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9647,10 +9647,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 3101.13, which of the following is strictly prohibited when drafting a Critical Audit Matter in the independent auditor's report?",
           "options": [
-            "Describing the substantive testing procedures performed by the audit team.",
-            "Including language that provides original, non-public information about the entity that management has not publicly disclosed, or language that purports to express a separate, discrete opinion on the individual matter.",
-            "Referring to the financial statement footnotes where the accounting policy is disclosed.",
-            "Stating that an independent valuation specialist was used by the audit team."
+            "Language that gives the principal considerations for the matter, or that describes how the matter was addressed in the audit, including the procedures performed.",
+            "Language that gives original, non-public information about the entity not disclosed by management, or that expresses a separate, discrete opinion on the individual matter.",
+            "Language that refers to the relevant financial statement accounts or disclosures, or that describes the audit judgments that made the matter especially complex.",
+            "Language that identifies the matter by name in the report, or that refers to the auditor's communication with the audit committee on the matter during the audit."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9674,10 +9674,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the goodwill impairment CAM archetype, why is an auditor-engaged valuation specialist under PCAOB AS 1210 frequently deployed to evaluate management's discounted cash flow model?",
           "options": [
-            "To manage the corporate treasury cash desk.",
-            "To file corporate patent applications with the US Patent and Trademark Office.",
-            "To independently test and evaluate the technical appropriateness of financial valuation models, discount rates (WACC), and market multiples that involve specialized valuation skills.",
-            "To sell the reporting unit to an external buyer."
+            "To prepare management's discounted cash flow model and select the discount rates (WACC) and market multiples that management will use in its impairment test.",
+            "To approve management's valuation conclusion and sign the impairment test on behalf of the company, so the auditor can rely on the specialist's assurance.",
+            "To independently test and evaluate the technical appropriateness of valuation models, discount rates (WACC), and market multiples that need specialised valuation skills.",
+            "To replace the auditor's evaluation of source data and assumptions, so the auditor can accept the discount rates (WACC) and multiples without any testing."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9701,10 +9701,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary regulatory purpose of requiring the mandatory introductory language preceding the Critical Audit Matters section under PCAOB AS 3101.14?",
           "options": [
-            "To state that the auditor does not accept legal responsibility for the audit.",
-            "To request the SEC to forgive all corporate tax obligations.",
-            "To explain that the financial statements were prepared by the independent auditor.",
-            "To clarify to investors that CAMs do not alter the overall opinion on the financial statements and that the auditor is not providing separate, piecemeal opinions on individual accounts."
+            "To make clear to investors that CAMs change the overall opinion to a qualified one and that the auditor is giving separate opinions on the individual accounts.",
+            "To make clear to investors that CAMs are decided by management and that the auditor is not responsible for the matters described in the report section.",
+            "To make clear to investors that CAMs replace the opinion on the statements and that the auditor is relieved of liability for the matters in the report section.",
+            "To make clear to investors that CAMs do not change the overall opinion and that the auditor is not giving separate, piecemeal opinions on individual accounts."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9756,10 +9756,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 3105 and ISA 705, what distinguishes a Qualified Opinion from an Adverse Opinion when financial statements contain departures from GAAP?",
           "options": [
-            "An Adverse Opinion can only be issued if the CEO has been arrested by federal law enforcement.",
-            "A Qualified Opinion means the auditor was fully qualified to perform the engagement.",
-            "A Qualified Opinion is issued when departures are material but not pervasive, whereas an Adverse Opinion is issued when departures are both material and pervasive to the financial statements as a whole.",
-            "A Qualified Opinion is issued only for private companies, while an Adverse Opinion is for public companies."
+            "A qualified opinion is issued when departures are pervasive but not material; an adverse opinion is issued when departures are material but limited to a single account balance.",
+            "A qualified opinion is issued when departures are caused by error; an adverse opinion is issued when departures are caused by fraud by senior management of the company.",
+            "A qualified opinion is issued when departures are material but not pervasive; an adverse opinion is issued when departures are both material and pervasive to the statements as a whole.",
+            "A qualified opinion is issued when departures are above overall materiality; an adverse opinion is issued when departures are above total assets of the company."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9783,10 +9783,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical linguistic difference between the opinion sentence in a Qualified Opinion for a GAAP departure versus a Qualified Opinion for a Scope Limitation?",
           "options": [
-            "A scope limitation must be printed in red ink.",
-            "A GAAP departure states 'except for the effects of the matter', whereas a scope limitation states 'except for the possible effects of the matter'.",
-            "A GAAP departure must be co-signed by the Department of Justice.",
-            "There is no difference in statutory wording between the two opinions."
+            "A GAAP departure says 'except for the possible effects of the matter', while a scope limitation says 'except for the effects of the matter'.",
+            "A GAAP departure says 'except for the effects of the matter', while a scope limitation says 'except for the possible effects of the matter'.",
+            "A GAAP departure says 'except for the effects of the matter', while a scope limitation says 'we do not express an opinion on the matter'.",
+            "A GAAP departure says 'subject to the effects of the matter', while a scope limitation says 'except for the audit evidence of the matter'."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9810,10 +9810,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an independent auditor include Critical Audit Matters (CAMs) in an auditor's report that expresses an Adverse Opinion under PCAOB AS 3101.12?",
           "options": [
-            "No. PCAOB AS 3101.12 strictly prohibits communicating CAMs when an adverse opinion is expressed, as doing so could imply piecemeal assurance on individual accounts within fundamentally misleading financial statements.",
-            "Yes. An adverse opinion must contain at least ten CAMs.",
-            "Yes. But only if approved by the client's Chief Executive Officer.",
-            "No. But the auditor must publish the CAMs on their personal social media page."
+            "No. AS 3101.12 prohibits communicating CAMs when an adverse opinion is given, since this could imply piecemeal assurance on accounts within misleading statements.",
+            "Yes. AS 3101.12 requires communicating CAMs when an adverse opinion is given, since this helps users identify the accounts within the misleading statements.",
+            "No. AS 3101.12 prohibits communicating CAMs only when a qualified opinion is given, but allows them in adverse reports for the affected accounts.",
+            "Yes. AS 3101.12 allows communicating CAMs when an adverse opinion is given, if the audit committee has approved the wording of each matter."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9837,10 +9837,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the introductory sentence of an auditor's report change from 'We have audited...' to 'We were engaged to audit...' when a Disclaimer of Opinion is issued under PCAOB AS 3105.62?",
           "options": [
-            "To avoid paying state licensing fees.",
-            "Because the client requested a different grammatical style.",
-            "Because the audit firm was fired before signing the contract.",
-            "To reflect the legal and statutory reality that because sufficient appropriate audit evidence was obstructed or unobtainable, the auditor did not complete an audit and cannot assume the responsibilities of an audit."
+            "To reflect that, because the auditor was appointed after year end, the audit was completed by the previous auditor and the current one takes on the responsibilities of a review.",
+            "To reflect that, because the statements were materially misstated, the auditor completed the audit but cannot take on the responsibilities of an opinion on the accounts.",
+            "To reflect that, because the client changed its reporting framework, the audit was completed on the old basis and the auditor takes on the responsibilities of an examination.",
+            "To reflect that, because sufficient appropriate evidence was obstructed or unobtainable, the auditor did not complete an audit and cannot take on the responsibilities of an audit."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9920,10 +9920,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2905.04, what fundamental condition must exist for an auditor to be legally required to investigate and initiate post-issuance procedures regarding newly discovered facts?",
           "options": [
-            "The stock price must have increased by more than twenty percent post-filing.",
-            "The facts must have actually existed at the date of the auditor's report, were unknown to the auditor at that time, and are of such nature that they would have affected the report had they been known.",
-            "The facts must describe a physical disaster that occurred six months after financial statement publication.",
-            "The company must have hired a new marketing director."
+            "The facts arose after the date of the auditor's report, were known to the auditor then, and are of a nature that would have affected the statements had they been recorded.",
+            "The facts existed at the date of the auditor's report, were unknown to the auditor then, and are of a nature that would have affected the report had they been known.",
+            "The facts existed at the date of the auditor's report, were known to management then, and are of a nature that would have affected the share price had they been public.",
+            "The facts arose in the year following the audit, were unknown to the auditor then, and are of a nature that would have required disclosure in the next annual report."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9946,10 +9946,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary regulatory difference between a 'Big R' restatement and a 'Little r' revision restatement under SEC rules?",
           "options": [
-            "There is no difference; both terms are slang with no legal meaning.",
-            "A Big R restatement is for American companies, while a Little r restatement is for European companies.",
-            "A Big R restatement corrects a material error to prior periods, requires an immediate SEC Form 8-K Item 4.02 filing within four business days, and renders prior financials non-reliable; a Little r restatement is corrected in comparative columns of the next Form 10-K without an Item 4.02 filing.",
-            "A Little r restatement requires the company to dissolve its corporate charter."
+            "Big R corrects an immaterial error, needs a 10-K/A filing within thirty days, and keeps prior financials reliable; little r is corrected through a restated 8-K Item 4.02 within four business days.",
+            "Big R corrects a change in accounting policy, needs an 8-K Item 4.02 filing within four business days, and makes prior financials non-reliable; little r is corrected in the next 10-Q without Item 4.02.",
+            "Big R corrects a material error, needs an 8-K Item 4.02 filing within four business days, and makes prior financials non-reliable; little r is corrected in comparative columns of the next 10-K without Item 4.02.",
+            "Big R corrects an error in the current quarter only, needs no SEC filing, and keeps prior financials reliable; little r is corrected through an amended 8-K Item 4.02 within four business days."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9973,10 +9973,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2905.06 and Section 10A of the Securities Exchange Act of 1934, what must an independent auditor do if corporate management refuses to cease distributing materially misstated financial statements or notify the public?",
           "options": [
-            "Wait until the following year's audit to resolve the disagreement quietly.",
-            "Offer the client a discount on upcoming audit fees to encourage cooperation.",
-            "Destroy all working paper files relating to the engagement.",
-            "Notify the Board of Directors, deliver formal notice revoking association with the audit report, report directly to the SEC within one business day, and notify stock exchanges and the public."
+            "Notify the Audit Committee chair, give informal notice that it will review the report next year, report to the SEC within ninety days, and notify the exchanges after the next filing.",
+            "Notify the management only, give formal notice that it reserves its fee rights on the report, report to the SEC within one year, and notify the public if the management agrees.",
+            "Notify the Board of Directors, give formal notice that it intends to resign from the next audit, report to the PCAOB within one week, and notify the public after the resignation.",
+            "Notify the Board of Directors, give formal notice that it withdraws association with the report, report to the SEC within one business day, and notify the exchanges and the public."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10002,10 +10002,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory wording required in the explanatory paragraph when an independent auditor issues an unqualified report on restated financial statements under PCAOB AS 2820.09?",
           "options": [
-            "A statement that the previously issued financial statements have been restated to correct a misstatement, referencing the relevant footnote, and affirming that the opinion is not modified with respect to the matter.",
-            "An apology to shareholders for the audit team's failure to catch the error.",
-            "A declaration that the Chief Financial Officer must be fined by the audit firm.",
-            "A demand that the SEC reimburse the company for restatement legal fees."
+            "A statement that the previously issued statements were restated to correct a misstatement, referencing the relevant footnote, and affirming that the opinion is not modified for the matter.",
+            "A statement that the previously issued statements were withdrawn due to an audit failure, referencing the engagement letter, and affirming that the opinion is modified for the matter.",
+            "A statement that the previously issued statements were restated at the request of the SEC, referencing the comment letter, and affirming that the auditor accepts liability for the matter.",
+            "A statement that the previously issued statements were updated for new accounting standards, referencing the adoption note, and affirming that the opinion is limited for the matter."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10030,10 +10030,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory deadline for a public enterprise to file SEC Form 8-K Item 4.02 after concluding that previously issued financial statements cannot be relied upon?",
           "options": [
-            "There is no statutory deadline under SEC rules.",
-            "Within exactly four business days after the conclusion is reached.",
-            "Within ninety days after the fiscal year ends.",
-            "At the next scheduled annual shareholder meeting."
+            "Within thirty calendar days after the conclusion is reached.",
+            "Within four business days after the conclusion is reached.",
+            "Within one business day after the conclusion is reached.",
+            "Within the filing deadline of the next annual Form 10-K report."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10086,10 +10086,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAASB ISA 600 (Revised) and PCAOB AS 1205, why must component materiality allocated to individual subsidiaries be strictly lower than Group Planning Materiality?",
           "options": [
-            "To reduce the billing rate of foreign component audit staff.",
-            "To reduce the aggregation risk that undetected and uncorrected misstatements across multiple independent operating components could collectively accumulate and exceed Group Planning Materiality.",
-            "Because foreign tax authorities prohibit matching parent company materiality thresholds.",
-            "To allow the parent company to avoid consolidating smaller operating units."
+            "To reduce the translation risk that exchange differences across several operating components could add up and exceed Group Planning Materiality on consolidation.",
+            "To reduce the aggregation risk that undetected and uncorrected misstatements across several operating components could add up and exceed Group Planning Materiality.",
+            "To increase the audit coverage so that every operating component is tested to the same level of precision as the parent, whatever its size or risk to the group.",
+            "To increase the efficiency of the audit so that component auditors can ignore misstatements below the group level, whatever their effect on the component."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10113,10 +10113,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under FASB ASC Topic 810 and IFRS 10, how must unrealized intercompany profit residing in ending inventory resulting from cross-border intra-group transfers be accounted for upon consolidation?",
           "options": [
-            "No elimination is required if the transactions were documented in local currency.",
-            "The intercompany profit may be deferred over a ten-year amortization schedule.",
-            "One hundred percent of the unrealized intercompany gross profit residing in inventory must be eliminated against consolidated ending inventory and cost of goods sold.",
-            "The intercompany profit is recognized immediately as a capital contribution in stockholders' equity."
+            "Only the parent's ownership share of the unrealised intercompany gross profit in inventory is eliminated against consolidated ending inventory and cost of goods sold.",
+            "One hundred percent of the intercompany sales revenue is eliminated, but the unrealised gross profit in inventory is left in consolidated ending inventory.",
+            "One hundred percent of the unrealised intercompany gross profit in inventory must be eliminated against consolidated ending inventory and cost of goods sold.",
+            "Fifty percent of the unrealised intercompany gross profit in inventory is eliminated, and the remainder is deferred until the inventory is moved to another group member."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10140,10 +10140,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under FASB ASC Topic 470 and IAS 1, what is the mandatory balance sheet accounting treatment when an enterprise violates a long-term debt covenant at year-end and secures only a 60-day temporary forbearance without a written 12-month waiver?",
           "options": [
-            "The debt may remain classified as long-term if management promises to repay it.",
-            "The debt is removed from the balance sheet and disclosed only in the footnotes.",
-            "The auditor must repay the debt on behalf of the company.",
-            "The entire carrying value of the long-term debt facility must be reclassified from non-current liabilities into current liabilities on the consolidated balance sheet."
+            "Only the installments due within sixty days must be reclassified from non-current liabilities to current liabilities on the consolidated balance sheet.",
+            "The entire carrying value of the long-term debt stays in non-current liabilities, with the covenant breach disclosed in the footnotes to the statements.",
+            "The covenant breach amount alone must be reclassified from non-current liabilities to current liabilities, with the remainder left in non-current liabilities.",
+            "The entire carrying value of the long-term debt must be reclassified from non-current liabilities to current liabilities on the consolidated balance sheet."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10166,10 +10166,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the technical justification for issuing an Unqualified Audit Opinion when $8,500,000 of uncorrected revenue cut-off misstatements remain on the Schedule of Unadjusted Differences (SUD)?",
           "options": [
-            "Because $8,500,000 is substantially below Group Planning Materiality ($36.0M) and Performance Materiality ($25.2M), and qualitative evaluation under SEC SAB 99 confirms the error does not mask trend changes or affect debt covenants.",
-            "Because revenue cut-off errors are never considered misstatements in technology audits.",
-            "Because foreign component auditors are allowed to ignore US GAAP rules.",
-            "Because the Chief Executive Officer requested that the error be overlooked."
+            "Because $8,500,000 is well below Group Planning Materiality ($36.0M) and Performance Materiality ($25.2M), and the SAB 99 qualitative review shows no masked trends or covenant effects.",
+            "Because $8,500,000 is above Group Planning Materiality ($36.0M) but below Performance Materiality ($25.2M), and the SAB 99 qualitative review shows no masked trends or covenant effects.",
+            "Because $8,500,000 is well below Group Planning Materiality ($36.0M) and Performance Materiality ($25.2M), so the SAB 99 qualitative review is not required for revenue errors.",
+            "Because $8,500,000 is below the Clearly Trivial Threshold set for the audit, and the SAB 99 qualitative review shows that masked trends or covenant effects are acceptable."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10194,10 +10194,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory regulatory role of the Engagement Quality Review (EQR) partner under PCAOB AS 1220 before the independent auditor's report can be released to the public?",
           "options": [
-            "To determine the pricing of the company's new products.",
-            "To evaluate the significant judgments made by the engagement team, review key working papers and governance dockets, and provide concurring approval of issuance as an absolute legal condition precedent to report release.",
-            "To conduct annual performance reviews of the client's corporate staff.",
-            "To file the corporate tax return with the Internal Revenue Service."
+            "To prepare the engagement team's significant judgments, draft key working papers, and give final approval of the engagement letter as a commercial condition before the work starts.",
+            "To evaluate the engagement team's significant judgments, review key working papers, and give concurring approval of issuance as a legal condition before the report is released.",
+            "To supervise the engagement team's day-to-day work, assess the key working papers, and give advisory comments on issuance, which the engagement partner may override before release.",
+            "To evaluate the engagement team's fee proposals, review key client contracts, and give concurring approval of the renewal as a firm policy condition before the next engagement."
           ],
           "answer": 1,
           "answerIndex": 1,

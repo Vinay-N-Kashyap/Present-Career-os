@@ -28,9 +28,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under modern corporate financial theory, what decision rule determines whether a capital expenditure project should be approved?",
           "options": [
-            "Approve the project if its upfront investment is the largest available, since bigger projects always create more value",
-            "Approve the project only if the CEO likes the slide presentation",
-            "Approve the project if nominal accounting profits are positive regardless of the discount rate",
+            "Approve the project if its payback period is shorter than five years, indicating the initial outlay is recovered quickly enough",
+            "Approve the project if its accounting profit is positive in year one, indicating the venture covers its reported expenses",
+            "Approve the project if its undiscounted total inflows exceed the initial outlay, indicating nominal cash is fully recovered",
             "Approve the project if Net Present Value (NPV) > 0, indicating the discounted cash inflows exceed the cost of invested capital"
           ],
           "answer": 3,
@@ -52,10 +52,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the after-tax cost of debt mathematically lower than the pre-tax interest rate paid to corporate bondholders?",
           "options": [
-            "Interest payments are tax-deductible expenses under corporate income tax codes, reducing the firm's taxable income (the Debt Tax Shield)",
-            "Banks refund 50% of all loan payments at the end of the year",
-            "Bondholders pay fees to the government to hold company debt",
-            "Interest is paid out of retained earnings, which makes it a free source of capital"
+            "Interest payments are tax-deductible, reducing taxable income and creating a debt tax shield",
+            "Bondholders pay corporate tax on coupon income, which the issuer recovers as a lower cost",
+            "Interest is booked as a non-cash expense, so the cash cost of debt falls below the coupon",
+            "Debt is repaid in future dollars, so inflation erodes the real interest the firm pays"
           ],
           "answer": 0,
           "why": "Interest on corporate debt is deducted prior to income tax calculation (EBT). This tax shield lowers the effective cash cost of debt to r_d * (1 - TaxRate)."
@@ -78,10 +78,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three operational and financial levers isolated by the DuPont 3-Step ROE decomposition?",
           "options": [
-            "Revenue, cost of goods, and taxes",
+            "Gross Profit Margin (pricing power), Inventory Turnover (stock efficiency), and Current Ratio (short-term liquidity risk)",
             "Net Profit Margin (operational efficiency), Asset Turnover (asset utilization), and Financial Leverage (capital structure risk)",
-            "Stocks, bonds, and mutual funds",
-            "Net Margin, Current Ratio, and Quick Ratio"
+            "Operating Margin (cost control), Receivables Turnover (collection speed), and Interest Coverage (debt servicing risk)",
+            "Net Profit Margin (operational efficiency), Dividend Payout (shareholder returns), and Price-to-Book (market valuation risk)"
           ],
           "answer": 1,
           "why": "The DuPont identity factors ROE into Net Margin * Asset Turnover * Equity Multiplier, exposing whether returns stem from profitability, efficiency, or financial leverage."
@@ -105,10 +105,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Negative Cash Conversion Cycle (CCC < 0) signify about a company's working capital dynamics?",
           "options": [
-            "The company is bankrupt and cannot pay employees",
-            "The company has negative revenue",
-            "The company collects cash from customer sales before it pays its suppliers, effectively financing its operational growth using supplier credit",
-            "The company has a very long inventory holding period and collects receivables slowly"
+            "The company holds inventory longer than it takes customers to pay, so excess stock helps finance operations",
+            "The company pays its suppliers before it sells the goods, so supplier prepayments help finance its growth",
+            "The company collects cash from customers before it pays its suppliers, so supplier credit helps finance operations",
+            "The company's current liabilities exceed its total assets, so its lenders effectively finance the operations"
           ],
           "answer": 2,
           "why": "When DPO exceeds DIO + DSO, suppliers are paid weeks after customer revenue is collected. The business generates negative working capital requirements, providing free non-dilutive liquidity."
@@ -181,10 +181,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mathematical driver of private equity returns in a standard Leveraged Buyout (LBO) transaction?",
           "options": [
-            "Permanently exempting the target company from paying employee salaries.",
-            "Converting all corporate debt into non-refundable government grants.",
-            "(Recommended) Using the acquired firm's operating cash flow to amortize debt over the holding period, thereby transferring enterprise value from lenders directly into sponsor equity value.",
-            "Selling all target operational assets immediately at a 90% discount."
+            "Selling the acquired firm's assets at inflated book values in the first year, shifting enterprise value from sellers to sponsor equity",
+            "Raising dividends from the acquired firm each year to the sponsor, shifting enterprise value from public shareholders to sponsor equity",
+            "Using the acquired firm's operating cash flow to repay debt over the holding period, shifting enterprise value from lenders to sponsor equity",
+            "Increasing the acquired firm's debt every year through new borrowing, shifting enterprise value from sponsor equity to lenders over the holding period"
           ],
           "answer": 2,
           "why": "Debt paydown de-levers the business, shifting the capital structure so that equity holders own a progressively larger percentage of the enterprise value at exit.",
@@ -208,10 +208,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what condition is an all-stock corporate acquisition automatically accretive to the acquiring company's Earnings Per Share (EPS)?",
           "options": [
-            "Only when the transaction is paid entirely in physical gold bullion.",
-            "(Recommended) When the acquiring company's Price-to-Earnings (P/E) multiple is strictly higher than the effective acquisition P/E multiple paid for the target company.",
-            "When both companies report negative net income for the fiscal year.",
-            "When the target company has a higher debt-to-equity ratio than the acquiring firm."
+            "When the acquirer's P/E multiple is lower than the effective P/E multiple it pays for the target",
+            "When the acquirer's P/E multiple is higher than the effective P/E multiple it pays for the target",
+            "When the target's book value per share is higher than the acquirer's book value per share",
+            "When the acquirer's P/E multiple equals the target's market capitalization divided by its revenue"
           ],
           "answer": 1,
           "why": "When a buyer with a higher P/E multiple issues stock to buy a lower P/E target, it issues fewer new shares per dollar of acquired earnings, automatically driving EPS accretion.",
@@ -235,10 +235,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does higher commercial volatility increase the value of a Real Option in corporate capital budgeting, whereas it decreases the value of a static DCF project?",
           "options": [
-            "(Recommended) Because options possess asymmetric payoffs: management can capture massive upside if demand surges while capping downside losses by simply choosing not to exercise if market conditions deteriorate.",
-            "Because volatility legally waives corporate income taxes on project revenue.",
-            "Because higher volatility eliminates debt service obligations on bank loans.",
-            "Because volatility guarantees that competitor patents will expire earlier."
+            "Options have asymmetric payoffs: management captures large upside if demand surges and can decline to exercise if conditions worsen",
+            "Options have symmetric payoffs: management gains and loses equally from demand swings, so higher volatility raises expected profits",
+            "Options are exercised automatically at maturity: management must commit capital whatever happens, so wider outcomes add upside only",
+            "Options are valued at the risk-free rate: management discounts volatile cash flows at a lower rate, so volatility raises present value"
           ],
           "answer": 0,
           "why": "Options have convex payoffs; management only exercises the capex strike price if the project is in-the-money, so increased dispersion of future outcomes expands upside potential without increasing downside risk.",
@@ -262,10 +262,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Static Tradeoff Theory of Capital Structure, at what point is a corporation's market value maximized?",
           "options": [
-            "When the corporate tax rate is set to zero by federal statutory decree.",
-            "When the corporation eliminates 100% of all debt and operates purely on common equity.",
-            "When the firm reaches 100% debt financing and completely eliminates common shares.",
-            "(Recommended) At the debt-to-equity ratio where the marginal gain from the interest tax shield exactly equals the marginal increase in the expected present value of financial distress costs."
+            "At the debt-to-equity ratio where the cost of equity equals the cost of debt, so neither source of capital is cheaper",
+            "At the maximum debt level the lenders will provide, since each extra dollar of debt adds a tax shield and raises firm value",
+            "At the debt-to-equity ratio where earnings per share are highest, since maximizing EPS maximizes the firm's market value",
+            "At the debt-to-equity ratio where the marginal interest tax shield gain equals the marginal increase in expected distress costs"
           ],
           "answer": 3,
           "why": "Firm value is maximized (and WACC minimized) where the incremental tax shield from adding one more dollar of debt is exactly offset by the incremental expected bankruptcy and distress cost.",
@@ -289,10 +289,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key strategic benefit of structuring a Zero-Cost Collar for corporate foreign currency hedging compared to a standard forward contract?",
           "options": [
-            "It converts foreign currency receivables directly into US Treasury inflation-protected securities.",
-            "It allows the corporation to bypass all international banking regulations and sanctions.",
-            "(Recommended) It guarantees downside protection against currency depreciation with zero net upfront option premium, while allowing the firm to participate in favorable currency appreciation up to the call strike ceiling.",
-            "It permanently fixes the global price of gold in international commercial treaties."
+            "It locks in one fixed exchange rate for the future, with no net premium and no exposure to any later currency move",
+            "It gives full upside participation with no cap, paid for by a high upfront premium on a purchased put option",
+            "It gives downside protection with no net upfront premium, while allowing gains from favorable moves up to the call strike",
+            "It removes all currency exposure and all counterparty risk, because the options are cleared through a central exchange"
           ],
           "answer": 2,
           "why": "A collar finances the put option floor by selling a call option ceiling, creating free downside insurance while maintaining upside flexibility within the defined strike corridor.",
@@ -361,10 +361,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a multi-stage DCF valuation, why must the perpetual terminal growth rate (g) never exceed the long-term projected growth rate of the macro economy (typically 2.0% to 3.0%)?",
           "options": [
-            "Tax authorities disallow tax deductions for terminal value depreciation if g exceeds the central bank inflation target.",
-            "If a company grew faster than the aggregate economy forever, it would eventually become larger than the entire global economy, creating a mathematical and economic impossibility.",
-            "Corporate bond rating agencies automatically downgrade any corporation whose terminal growth rate exceeds the yield on 3-month Treasury bills.",
-            "The Gordon Growth equation produces a negative terminal value whenever the growth rate exceeds zero."
+            "A growth rate above the risk-free rate would make the Gordon Growth formula produce a negative cost of equity",
+            "A company growing faster than the economy forever would eventually become larger than the entire economy, which is impossible",
+            "A company growing faster than inflation forever would see its margins converge to zero, which is impossible",
+            "A growth rate above the firm's historical average would break the explicit forecast period of the model, which is invalid"
           ],
           "answer": 1,
           "why": "A perpetual growth rate exceeding long-term macro GDP growth implies the firm will mathematically surpass the size of the world economy over time, which violates fundamental economic theory.",
@@ -407,10 +407,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental insight does the Hamada Equation provide regarding the relationship between corporate leverage and shareholder risk?",
           "options": [
-            "The Hamada Equation proves that equity beta is independent of corporate capital structure under all economic conditions.",
-            "Issuing debt reduces the beta of a firm because interest payments are tax deductible under Section 163(j).",
-            "Debt financing introduces fixed interest payment obligations that amplify the volatility of earnings available to equity holders, mechanically increasing equity beta above underlying asset beta.",
-            "Unlevering beta converts common stock into preferred cumulative convertible securities."
+            "Debt lowers the volatility of earnings to equity holders through the tax shield, so equity beta falls below asset beta",
+            "Debt adds interest obligations that raise asset beta itself, so equity beta and asset beta both rise in proportion",
+            "Debt adds fixed interest obligations that amplify volatility of earnings to equity holders, raising equity beta above asset beta",
+            "Debt shifts business risk to lenders entirely, so equity beta stays equal to asset beta however much debt is used"
           ],
           "answer": 2,
           "why": "Debt service is a senior fixed obligation; adding debt magnifies earnings volatility for common stockholders, driving levered beta higher than the unlevered asset beta.",
@@ -453,10 +453,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an increase in the WACC discount rate cause a non-linear, convex reduction in Enterprise Value in a discounted cash flow model?",
           "options": [
-            "Higher WACC automatically increases corporate federal income tax liabilities under IRS guidelines.",
-            "Higher WACC forces the company to immediately write off 100% of its accumulated goodwill balance.",
-            "WACC discount rates are strictly linear functions that only affect the first year of projected operations.",
-            "WACC appears in the denominator of both explicit discounting (1 + WACC)^t and the Gordon Growth formula (WACC - g), compounding value destruction across all future periods."
+            "WACC multiplies the free cash flows in each forecast year, so a higher rate cuts every cash flow by the same percentage",
+            "WACC affects only the terminal value, because the explicit-period cash flows are discounted at the risk-free rate, not WACC",
+            "WACC is subtracted from the growth rate after the terminal year, so a higher rate lowers value by a fixed amount",
+            "WACC sits in the denominator of both the explicit-period discount factor and the terminal value formula, compounding the value loss"
           ],
           "answer": 3,
           "why": "The discount rate compounds exponentially across explicit years and sits in the denominator of the terminal value formula, creating a convex valuation response to interest rate changes.",
@@ -499,10 +499,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In leveraged buyout debt structuring, why do senior lenders demand a 100% Cash Sweep covenant in the credit agreement?",
           "options": [
-            "A 100% cash sweep prevents the financial sponsor from paying out dividends or extracting liquidity until the senior lenders' principal exposure is substantially retired.",
-            "A 100% cash sweep guarantees that all corporate cash is automatically converted into physical gold bars stored in the Federal Reserve.",
-            "Cash sweeps are required by the SEC for companies to maintain eligibility for inclusion in the S&P 500 index.",
-            "Lenders use cash sweeps to calculate executive compensation under Sarbanes-Oxley Section 404."
+            "It prevents the sponsor from paying dividends or extracting cash until the senior lenders' principal is substantially repaid",
+            "It lets the sponsor reinvest surplus cash into new acquisitions, so senior lenders benefit from a larger asset base",
+            "It requires the borrower to hold surplus cash in reserve accounts permanently, so lenders can draw on it at any time",
+            "It forces the sponsor to repay junior lenders first from surplus cash, so senior lenders are paid last from asset sales"
           ],
           "answer": 0,
           "why": "Cash sweeps protect lenders by trapping all surplus operational cash inside the firm to pay down debt, preventing sponsors from draining liquidity via dividend recapitalizations.",
@@ -543,10 +543,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Enterprise-to-Equity Value bridge, why is cash added back to Enterprise Value while debt is subtracted to calculate Equity Value?",
           "options": [
-            "Debt is added because borrowing capital increases the total physical assets owned by the enterprise.",
-            "Enterprise Value reflects operating assets; cash is a non-operating asset belonging to shareholders, while debt represents a senior non-equity claim against operating assets.",
-            "GAAP requires cash and debt to cancel each other out on the corporate consolidated balance sheet.",
-            "Cash is subtracted because it generates interest income that is taxable at ordinary rates."
+            "Enterprise Value covers all assets including cash; debt is subtracted because interest is an operating expense",
+            "Enterprise Value covers operating assets; cash is a non-operating asset owned by shareholders, and debt is a senior claim",
+            "Enterprise Value excludes debt-funded assets; cash is added back because it is pledged as collateral to lenders",
+            "Enterprise Value covers equity only; cash is added because it is a senior claim ranking ahead of debt holders"
           ],
           "answer": 1,
           "why": "EV values core operations; cash is excess non-operating liquidity owned by shareholders, whereas debt holders have senior claims that must be satisfied before common equity receives proceeds.",
@@ -614,10 +614,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an increase in secondary market bond trading price above face value indicate that the bond's Yield to Maturity has fallen below its stated coupon rate?",
           "options": [
-            "Investors are willing to pay an upfront premium only because the bond's fixed contractual coupon rate exceeds prevailing new-issue market yields.",
-            "Higher prices automatically trigger a mandatory prepayment penalty enforced by the indenture trustee.",
-            "Bond prices and interest rates move in the same direction because higher prices increase the issuer's total interest deductions.",
-            "Secondary market premiums are credited directly to the issuer's retained earnings under GAAP rules."
+            "Investors pay a premium only because the bond's fixed coupon is higher than yields on newly issued comparable bonds",
+            "Investors pay a premium only because the bond's fixed coupon is lower than yields on newly issued comparable bonds",
+            "Investors pay a premium only because the issuer's credit rating has fallen, which raises the coupon automatically",
+            "Investors pay a premium only because the bond's maturity has lengthened, which raises the stated yield to maturity"
           ],
           "answer": 0,
           "why": "Bond prices and yields share an inverse relationship; when prevailing interest rates fall below the bond's coupon rate, investors bid the bond up above par value.",
@@ -790,10 +790,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why would a corporate treasury department implement a Zero-Cost Collar on an equity holding rather than simply buying a standalone protective Put option?",
           "options": [
-            "A zero-cost collar eliminates the cash expense of buying insurance by funding the put purchase through the sale of an out-of-the-money call option, in exchange for capping upside gains.",
-            "Zero-cost collars are required by the SEC to prevent illegal insider trading by corporate officers.",
-            "Buying standalone puts causes immediate dilution of the company's common stock earnings per share.",
-            "Zero-cost collars convert corporate debt from fixed-rate coupon obligations into subordinated convertible debt."
+            "It avoids the cash cost of a protective put by funding it through selling an out-of-the-money call, at the cost of capped upside",
+            "It avoids the cash cost of a protective put by funding it through buying a deep call, at the cost of capped downside",
+            "It lowers the cash cost of a protective put by selling an in-the-money put, at the cost of giving up all downside protection",
+            "It removes the cash cost of a protective put through a tax deduction on the premium, with no cost to upside gains"
           ],
           "answer": 0,
           "why": "Standalone puts require cash outlay; a collar funds the downside protection floor by selling upside calls, eliminating upfront cash drag.",
@@ -861,10 +861,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do investment banking fairness opinions require weighting both intrinsic DCF valuation and market-based multiples (comps and precedents) rather than relying exclusively on DCF?",
           "options": [
-            "DCF models are prohibited by the SEC for corporations with more than $500M in revenue.",
-            "Market multiples eliminate the need to calculate corporate income taxes or working capital changes.",
-            "Precedent transactions measure liquidation value under Chapter 7 bankruptcy proceedings.",
-            "DCF captures long-term intrinsic cash-generating fundamentals, while market multiples ground the valuation in current investor sentiment and observable control transactions."
+            "DCF captures current investor sentiment, while market multiples capture long-term intrinsic cash generation and growth",
+            "DCF is required by securities law for fairness opinions, while market multiples are included only as optional extras",
+            "DCF reflects the target's past accounting profits, while market multiples reflect the buyer's expected synergies only",
+            "DCF captures long-term intrinsic cash generation, while market multiples ground the value in current sentiment and observed transactions"
           ],
           "answer": 3,
           "why": "A triangulated football field balances theoretical intrinsic value with actual market clearing prices, preventing unrealistic assumptions from biasing the transaction.",
@@ -905,10 +905,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Static Trade-Off Theory of capital structure, why does increasing debt beyond the optimal point destroy enterprise value?",
           "options": [
-            "The exponential rise in the present value of bankruptcy distress costs and credit spreads surpasses the incremental value of interest tax shields.",
-            "Corporate tax shields expire automatically after 3 years under IRC Section 163(j).",
-            "All corporate bondholders convert their debt into preferred stock whenever leverage reaches 50%.",
-            "WACC increases because the risk-free rate is forced upward by the Federal Reserve."
+            "The present value of bankruptcy and distress costs and credit spreads rises faster than the added value of interest tax shields",
+            "The corporate tax rate rises with leverage, so each extra dollar of debt reduces the value of the interest tax shield",
+            "The cost of equity falls with extra debt faster than the cost of debt rises, so WACC rises and firm value falls",
+            "The present value of interest tax shields becomes negative once debt exceeds equity, so value declines automatically"
           ],
           "answer": 0,
           "why": "Beyond the optimal leverage inflection point, financial distress and agency costs grow faster than the tax shield, driving WACC up and destroying firm value.",
@@ -949,10 +949,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What immediate legal and financial consequences occur if a corporation breaches a debt maintenance covenant such as Maximum Leverage Ratio?",
           "options": [
-            "The company is automatically dissolved and its assets auctioned off by the county sheriff.",
-            "Lenders gain the contractual right to accelerate debt maturity, demand immediate repayment, increase interest margins, or mandate restructuring concessions.",
-            "All company bank accounts are frozen and transferred to the Internal Revenue Service.",
-            "The board of directors is replaced by the Federal Deposit Insurance Corporation (FDIC)."
+            "The firm is automatically placed into bankruptcy liquidation, and equity holders receive their proceeds first",
+            "Lenders may accelerate maturity, demand immediate repayment, raise the interest margin, or require restructuring concessions",
+            "Lenders must wait until the next scheduled payment date, after which only the missed interest can be demanded",
+            "The lender reduces the debt's interest rate as compensation, so the borrower can restore compliance over time"
           ],
           "answer": 1,
           "why": "A covenant breach triggers a technical default, giving lenders powerful leverage to demand fee waivers, higher spreads, equity cures, or debt acceleration.",
@@ -993,10 +993,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Covered Interest Parity (CIP), why does the currency with the lower nominal interest rate (e.g. EUR at 3.0% vs USD at 4.5%) trade at a forward premium against the higher-yielding currency?",
           "options": [
-            "Central banks mandate artificial forward premiums to subsidize import-dependent corporate borrowers.",
-            "Forward premiums are determined entirely by the trading volume of sovereign gold certificates.",
-            "To prevent cross-border interest rate arbitrage, the forward exchange rate must adjust so that investing in either currency yields the identical risk-free return.",
-            "The lower-interest-rate currency is guaranteed to experience faster GDP growth over the subsequent 10 years."
+            "The lower-yielding currency is expected to appreciate by the interest rate differential, so spot rates must rise to match",
+            "The central bank of the lower-yielding country buys forward contracts, so the forward rate rises above spot",
+            "The forward rate must adjust so that investing in either currency yields the same risk-free return, preventing arbitrage",
+            "The forward rate equals the expected future spot rate, so investors earn a higher return in the higher-yielding currency"
           ],
           "answer": 2,
           "why": "Covered Interest Parity ensures no-arbitrage equilibrium: the forward premium compensates for the interest rate differential between the two national currencies.",
@@ -1037,10 +1037,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the overarching objective of a Chief Financial Officer when orchestrating enterprise valuation, capital structure, debt covenants, and treasury hedging into a unified board strategy?",
           "options": [
-            "To minimize corporate revenue so that federal and state income tax liabilities are reduced to zero.",
-            "To convert all common stock into non-voting cryptocurrency tokens held on offshore servers.",
-            "To eliminate all debt financing and fund the corporation entirely through short-term trade accounts payable.",
-            "To maximize long-term shareholder enterprise value while minimizing cost of capital and immunizing the corporate balance sheet against catastrophic distress."
+            "To maximize reported quarterly earnings per share while maximizing leverage and keeping the balance sheet lightly hedged",
+            "To maximize the firm's total assets and revenue growth while keeping the cost of capital stable and the debt level constant",
+            "To maximize the dividend paid each year while eliminating all debt and keeping the balance sheet free of any hedging",
+            "To maximize long-term shareholder enterprise value while minimizing the cost of capital and protecting the balance sheet from distress"
           ],
           "answer": 3,
           "why": "The core mission of corporate finance is maximizing intrinsic shareholder value by optimizing the capital structure, lowering WACC, and protecting liquidity through robust risk hedging.",
@@ -1277,10 +1277,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a negative Net Unrealized Variance between portfolio clean market value and total par value indicate to an enterprise chief investment officer?",
           "options": [
-            "The corporate treasury has overpaid underwriting fees by exactly that dollar amount",
-            "Accrued interest must be written off as a permanent balance sheet tax impairment",
-            "Current market discount yields exceed original coupon rates, resulting in marked-to-market discount valuations across holdings",
-            "The issuing counterparties have legally declared bankruptcy under Chapter 11 proceedings"
+            "Current market yields are below original coupon rates, so holdings are marked to market at a discount to par",
+            "Issuers have defaulted on part of the portfolio, so holdings are written down to their recovery value below par",
+            "Current market yields exceed original coupon rates, so holdings are marked to market at a discount to par",
+            "The portfolio's duration has increased, so holdings are marked to market above par with an unrealized gain"
           ],
           "answer": 2,
           "why": "A negative unrealized variance indicates that prevailing market yields exceed contractual coupon rates, causing the bonds to trade at a net discount relative to their par values.",
@@ -1998,10 +1998,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In capital budgeting sensitivity analysis, what does it mean if a project's Net Present Value remains positive across all plausible discount rates (e.g. from 6% to 16%)?",
           "options": [
-            "The project violates statutory capital expenditure reporting regulations",
-            "The financial analyst has committed a fatal zero-division syntax error in the code",
-            "The firm must immediately issue additional common stock to fund dividend payouts",
-            "The project possesses high robust economic headroom and will add value even during aggressive monetary tightening"
+            "The project has a high IRR, so it must also have a payback period shorter than every competing project",
+            "The project is risk-free, so its cash flows should be discounted at the lowest rate in the range",
+            "The project has positive accounting profit, so it will create value regardless of the discount rate used",
+            "The project has a robust margin of safety and still adds value even if the cost of capital rises sharply"
           ],
           "answer": 3,
           "why": "A project whose NPV remains positive across a broad spectrum of discount rates demonstrates robust economic viability and resilience to rising cost of capital shocks.",
@@ -2249,10 +2249,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of synthesizing NPV, exact bisection IRR, MIRR, and Profitability Index into an integrated capital budgeting control tower?",
           "options": [
-            "To convert all long-term debt liabilities into immediate trade receivables",
-            "To evade federal corporate income tax audits under Section 44AB",
-            "To guarantee that all corporate employees receive automatic annual stock option grants",
-            "To maximize total shareholder enterprise wealth while eliminating reinvestment skew and respecting capital rationing ceilings"
+            "To maximize the highest single IRR while ignoring project scale and respecting the hurdle rate set last year",
+            "To rank projects by payback period alone while avoiding negative-cash-flow years and respecting budget limits",
+            "To maximize accounting profit while avoiding discounting distortions and respecting the depreciation schedule",
+            "To maximize shareholder wealth while avoiding reinvestment-rate distortions and respecting capital rationing limits"
           ],
           "answer": 3,
           "why": "Integrating NPV, exact IRR bisection, MIRR, and Profitability Index creates an airtight strategic decision system that maximizes total firm value, respects capital constraints, and eliminates reinvestment rate biases.",
@@ -2319,9 +2319,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "An investment project requires an initial outlay of $100,000 and generates annual cash inflows of $50,000, $50,000, and $50,000 over three years. What is its simple payback period?",
           "options": [
             "Exactly 2.00 years",
-            "3.00 years",
-            "1.50 years",
-            "2.35 years"
+            "Exactly 1.50 years",
+            "Exactly 3.00 years",
+            "Exactly 2.50 years"
           ],
           "answer": 0,
           "why": "Year 1 cash inflow ($50,000) + Year 2 cash inflow ($50,000) = $100,000, which fully recovers the $100,000 outlay at exactly 2.00 years.",
@@ -2445,10 +2445,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a $60,000 budget limit, why does the capital rationing ranker select Project A (Outlay $50,000, PV $75,000) over Project B (Outlay $50,000, PV $60,000)?",
           "options": [
-            "Project B carries statutory dividend withholding penalties under Section 194",
-            "Project A exhibits a higher Profitability Index (1.50x vs 1.20x) and creates $25,000 in NPV compared to $10,000",
-            "Project A pays zero interest to debenture holders",
-            "Project B violates corporate liquidity covenants under IAS 8"
+            "Project A has a lower Profitability Index (1.20x vs 1.50x) but creates $25,000 in NPV compared to $10,000",
+            "Project A has a higher Profitability Index (1.50x vs 1.20x) and creates $25,000 in NPV compared to $10,000",
+            "Project A has a higher Profitability Index (1.50x vs 1.20x) but creates $15,000 in NPV compared to $10,000",
+            "Project A has a lower initial outlay ($50,000 vs $60,000) and creates $25,000 in NPV compared to $10,000"
           ],
           "answer": 1,
           "why": "Project A has a higher Profitability Index (1.50x > 1.20x) and adds $25,000 in Net Present Value, maximizing shareholder wealth within the $60,000 budget.",
@@ -2487,10 +2487,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an enterprise multi-criteria capital appraisal governance framework, why is a project with positive NPV but long discounted payback classified under Tier 2 conditional review rather than automatic approval?",
           "options": [
-            "It generates shareholder wealth but exposes the firm to extended liquidity risk and capital lockup",
-            "It is legally forbidden from issuing debt under the Companies Act",
-            "Its internal rate of return cannot be solved with bisection algorithms",
-            "The corporate income tax rate increases to 90% after Year 3"
+            "It creates shareholder wealth but exposes the firm to extended liquidity risk and capital lockup",
+            "It destroys shareholder wealth but offers the firm quick liquidity and rapid capital recovery",
+            "It creates shareholder wealth but shows an IRR below the firm's cost of debt financing",
+            "It creates accounting profit but delivers negative cash flows during the entire project life"
           ],
           "answer": 0,
           "why": "While positive NPV indicates wealth accretion, an extended discounted payback period ties up enterprise capital over a long horizon, creating liquidity risk that warrants conditional executive review.",
@@ -2679,10 +2679,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does redeeming a bond at a 5% premium over its face value increase the effective after-tax Cost of Debt for the issuing corporation?",
           "options": [
-            "The corporation must pay extra cash at maturity, creating an additional capital cost amortized over the bond's life",
-            "The corporate income tax rate increases by exactly 5% under Section 115BAA",
-            "Premium redemptions disqualify debentures from receiving any interest tax shield",
-            "The investment banking syndicate doubles its underwriting commission upon redemption"
+            "The firm must pay extra cash at maturity, which adds an annualized cost to the effective Cost of Debt",
+            "The firm receives extra cash at maturity, which subtracts an annualized cost from the effective Cost of Debt",
+            "The firm must pay a higher coupon each year, which raises the stated coupon but not the effective Cost of Debt",
+            "The firm loses the interest tax shield on the premium, which reduces the after-tax benefit of the coupon"
           ],
           "answer": 0,
           "why": "Paying a redemption premium requires additional cash outflow at maturity, which adds an annualized capital amortization cost to the numerator, raising the effective Cost of Debt.",
@@ -2721,10 +2721,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary banking covenant metric is protected when a corporation maintains an Interest Coverage Ratio (EBIT / Gross Interest) above 3.0x across its debt portfolio?",
           "options": [
-            "Mandatory conversion of debt principal into non-voting preferred stock",
-            "Solvency headroom, guaranteeing the firm generates sufficient operating earnings to cover all contractual interest obligations",
-            "Elimination of all underwriting flotation fees on future commercial bond issuances",
-            "Automatic exemption from filing annual corporate tax returns"
+            "Liquidity headroom: current assets comfortably cover the short-term liabilities falling due within the year",
+            "Solvency headroom: operating earnings comfortably cover the contractual interest obligations on all the firm's debt",
+            "Leverage headroom: total debt remains comfortably below the market value of the firm's equity capital",
+            "Profitability headroom: net income after tax comfortably covers the dividends paid to common shareholders"
           ],
           "answer": 1,
           "why": "An Interest Coverage Ratio above 3.0x indicates healthy solvency headroom, reassuring lenders and rating agencies that operating earnings comfortably exceed debt servicing obligations.",
@@ -2952,10 +2952,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Corporate Pecking Order Theory, why is the Cost of Retained Earnings (Kr) strictly lower than the Cost of New Common Equity (Ke,new)?",
           "options": [
-            "Retained earnings are legally exempt from inflation indexation adjustments",
-            "New common equity is backed by sovereign physical gold guarantees",
-            "Internal retained earnings incur zero investment banking flotation commissions and avoid equity underpricing dilution",
-            "The Securities and Exchange Board refunds all dividend taxes on retained earnings"
+            "Retained earnings carry no cost of equity at all, since the shareholders have not received any cash payment",
+            "Retained earnings are taxed at a lower rate than new equity, which reduces the return investors demand",
+            "Retained earnings incur no investment banking flotation costs and avoid equity underpricing dilution",
+            "Retained earnings have lower systematic risk than new shares, since they are held within the existing business"
           ],
           "answer": 2,
           "why": "Retained earnings already exist on the balance sheet and avoid the substantial underwriting, legal, and listing flotation costs associated with issuing new shares.",
@@ -3063,10 +3063,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does corporate finance theory mandate using Market Value Weights rather than Book Value Weights when computing WACC?",
           "options": [
-            "Market values reflect the true current opportunity costs demanded by investors in capital markets today",
-            "Book values are illegal to report on financial statements under Ind AS",
-            "Market values eliminate corporate income tax liabilities permanently",
-            "Book values cannot be expressed as decimal percentages"
+            "Market values reflect the current opportunity cost investors demand in capital markets today",
+            "Book values reflect the true replacement cost of assets that investors expect to recover today",
+            "Market values are standardized by accounting rules, which makes them more reliable than book values",
+            "Book values reflect current prices, whereas market values reflect historical issuing costs"
           ],
           "answer": 0,
           "why": "Market values represent current investor opportunity costs, whereas book values merely reflect historical sunken expenditures that do not reflect today's cost of capital.",
@@ -3101,10 +3101,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is it dangerous for a corporation to use its company-wide average WACC to evaluate a high-risk exploration venture in a new industry?",
           "options": [
-            "It increases underwriting flotation costs on past corporate bond issuances",
-            "It understates the project's true risk, using an artificially low discount rate that can lead to approving value-destroying projects",
-            "It causes debt covenants to trigger immediate loan acceleration",
-            "It requires the board of directors to forfeit all accumulated retained earnings"
+            "It overstates the project's risk, using a discount rate that is too high and can lead to rejecting value-creating projects",
+            "It understates the project's risk, using a discount rate that is too low and can lead to approving value-destroying projects",
+            "It ignores the tax shield on debt, using a discount rate that is too high and can lead to overstated debt capacity",
+            "It reflects only equity risk, using a cost of equity that is too low and can lead to under-investment in new industries"
           ],
           "answer": 1,
           "why": "Using an average corporate WACC for a high-risk project discounts future cash flows at too low a rate, overstating NPV and risking capital destruction.",
@@ -3139,10 +3139,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Static Trade-Off Theory of Capital Structure, what occurs at the optimal debt-to-equity ratio?",
           "options": [
-            "The firm's beta falls to zero, matching the risk-free rate",
-            "The corporation eliminates all equity shares and funds 100% of operations through commercial paper",
-            "The marginal interest tax shield benefit exactly equals the marginal expected cost of financial distress, minimizing WACC",
-            "Corporate income taxes drop to exactly zero by statutory decree"
+            "The marginal cost of debt equals the marginal cost of equity, minimizing the firm's overall financial risk",
+            "The interest tax shield is fully exhausted, so firm value equals the value of the all-equity firm",
+            "The marginal interest tax shield benefit equals the marginal expected cost of financial distress, minimizing WACC",
+            "The expected cost of financial distress is zero, so WACC is minimized by borrowing up to the lenders' limit"
           ],
           "answer": 2,
           "why": "At the optimal capital structure, the incremental tax shield gained from additional debt is exactly offset by rising distress and agency costs, minimizing WACC and maximizing firm value.",
@@ -3181,9 +3181,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the enterprise hurdle rate audit, why is Proposal P-03 (Experimental Quantum Tech Lab, Expected Return 11.50%) rejected even though its expected return is higher than Proposal P-02 (9.00%)?",
           "options": [
-            "P-02 carries sovereign debt underwriting guarantees",
-            "P-03 has a simple payback period exceeding 50 years",
-            "P-03 violates statutory employee provident fund withholding regulations",
+            "P-03's high systematic risk (beta 1.8) demands a 9.00% company-wide hurdle rate, which its 11.50% return comfortably clears",
+            "P-03's high total volatility demands a 14.00% hurdle rate set by the board, which its 11.50% return fails to clear",
+            "P-03's low systematic risk (beta 0.8) demands a 10.20% tailored hurdle rate, which its 11.50% return fails to clear",
             "P-03's high systematic risk (beta 1.8) demands a 12.48% tailored hurdle rate, which its 11.50% return fails to clear"
           ],
           "answer": 3,
@@ -3347,10 +3347,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If Plan A (100,000 shares, zero debt) and Plan B (50,000 shares, $50,000 annual interest) achieve identical EPS at an EBIT of $100,000, which plan should be selected if expected corporate EBIT is $150,000?",
           "options": [
-            "Both plans remain identical at all earnings levels",
-            "Plan A (Equity Financing), because debt interest violates corporate charter rules",
-            "Plan B (Debt Financing), because operating earnings exceed the indifference point, allowing financial leverage to amplify EPS ($1.50 vs $1.125)",
-            "Neither plan, because corporate income taxes cannot be calculated above $100,000"
+            "Plan A (Equity Financing), because EBIT exceeds the indifference point, so leverage reduces EPS ($1.50 vs $1.125)",
+            "Plan A (Equity Financing), because EBIT exceeds the indifference point, so the larger share count raises EPS ($1.50 vs $1.125)",
+            "Plan B (Debt Financing), because EBIT exceeds the indifference point, so leverage amplifies EPS ($1.50 vs $1.125)",
+            "Plan B (Debt Financing), because EBIT exceeds the indifference point, so interest costs lower EPS ($1.125 vs $1.50)"
           ],
           "answer": 2,
           "why": "When expected EBIT ($150,000) exceeds the indifference point ($100,000), financial leverage magnifies EPS, making debt financing more accretive to equity shareholders.",
@@ -3392,10 +3392,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the capital rationing allocation matrix under a $300,000 budget cap, why is Proposal CAP-04 (Legacy Fleet Overhaul) rejected?",
           "options": [
-            "Its capital outlay exceeds the total budget ceiling",
+            "Its payback period is longer than the other proposals, even though its NPV is positive at $9,000",
             "Its Profitability Index is 0.85x and its NPV is -$9,000, which destroys shareholder wealth",
-            "It has zero operating depreciation tax shields",
-            "The corporate tax rate drops to zero during fleet overhaul"
+            "Its Internal Rate of Return is below the risk-free rate, which makes it ineligible for any funding",
+            "Its Profitability Index is 1.20x but the budget is exhausted, so it is rejected despite creating wealth"
           ],
           "answer": 1,
           "why": "Proposal CAP-04 produces a negative Net Present Value (-$9,000) and a Profitability Index below 1.0 (0.85x), representing destruction of economic capital.",
@@ -3441,10 +3441,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary executive outcome achieved by synthesizing WACC hurdle rate derivation, DCF project valuation, Profitability Index ranking, and capital rationing into an integrated master control tower?",
           "options": [
-            "Maximizing total shareholder enterprise wealth while ensuring all funded projects cover current market capital costs within corporate budget ceilings",
-            "Eliminating the need to prepare statutory audited financial statements under Ind AS",
-            "Guaranteeing that corporate share prices double every 12 months",
-            "Converting all debt instruments into irredeemable preference stock"
+            "Maximizing total shareholder wealth while ensuring all funded projects cover current market capital costs within the budget ceiling",
+            "Maximizing reported accounting profit while ensuring all funded projects meet historical book return targets within the budget ceiling",
+            "Maximizing the number of approved projects while ensuring every funded project recovers its outlay inside the payback cutoff",
+            "Minimizing the firm's tax liability while ensuring all funded projects are financed with debt within the lenders' covenant limits"
           ],
           "answer": 0,
           "why": "Integrating WACC hurdle rates with DCF valuation and capital rationing guarantees the corporation deploys capital exclusively to wealth-maximizing projects that exceed market financing costs.",
@@ -3705,10 +3705,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "An executive risk committee reviews a corporate business unit with DOL = 3.50x and DFL = 2.00x (DCL = 7.00x). If the board's risk charter caps Degree of Combined Leverage at 4.00x, what corrective financing action should the CFO take?",
           "options": [
-            "Increase fixed operating costs to dilute operating leverage",
-            "De-lever the capital structure by paying down debt or raising equity to reduce DFL toward 1.14x (4.00 / 3.50 = 1.14x)",
-            "Increase variable costs per unit to lower the contribution margin",
-            "Increase debt borrowing to lower the weighted average cost of capital"
+            "De-lever by paying down debt or raising equity so DFL falls to about 2.00x (7.00 / 3.50)",
+            "De-lever by paying down debt or raising equity so DFL falls to about 1.14x (4.00 / 3.50)",
+            "Add leverage by issuing more debt so DFL rises to about 1.14x (4.00 / 3.50) to meet the cap",
+            "Keep financing unchanged, because DOL of 3.50x and DFL of 2.00x are each below the 4.00x cap"
           ],
           "answer": 1,
           "why": "Since DCL = DOL * DFL, to reduce DCL from 7.00x to the 4.00x ceiling when DOL is 3.50x, DFL must be brought down to 4.00 / 3.50 = 1.14x. This is achieved by de-leveraging the capital structure (paying down debt or substituting debt with equity).",
@@ -3918,10 +3918,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm has fixed operating costs of $600,000, unit selling price of $50, unit variable cost of $30, and faces a 20% corporate tax rate. How many units must be sold to earn a desired post-tax net profit of $200,000?",
           "options": [
-            "40,000 units (Calculated without grossing up target profit for taxes: ($600k + $200k) / $20 = 40,000 units)",
-            "30,000 units (Calculated by dividing fixed costs by unit contribution directly)",
-            "50,000 units (Calculated assuming variable cost ratio as unit contribution)",
-            "42,500 units (Grossed-up pre-tax profit = $200k / 0.80 = $250k; Required units = ($600k + $250k) / ($50 - $30) = $850k / $20 = 42,500 units)"
+            "40,000 units: target profit of $200,000 plus $600,000 fixed costs, divided by the $20 contribution, ignoring tax",
+            "38,000 units: after-tax profit cut to $160,000 plus $600,000 fixed costs, divided by the $20 contribution",
+            "17,000 units: grossed-up profit of $250,000 plus $600,000 fixed costs, divided by the $50 selling price",
+            "42,500 units: grossed-up pre-tax profit of $250,000 plus $600,000 fixed costs, divided by the $20 contribution"
           ],
           "answer": 3,
           "why": "Target Pre-Tax Profit = $200,000 / (1 - 0.20) = $250,000. Unit Contribution = $50 - $30 = $20. Required Sales Units = (Fixed Costs + Pre-Tax Profit) / Unit Contribution = ($600,000 + $250,000) / $20 = $850,000 / $20 = 42,500 units.",
@@ -3967,10 +3967,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A conglomerate operates two divisions: Division 1 (60% sales mix, 50% P/V ratio) and Division 2 (40% sales mix, 25% P/V ratio). What is the firm's composite weighted average P/V ratio, and what composite revenue is required to cover $800,000 in common fixed costs?",
           "options": [
-            "Weighted P/V = 20.0%; Composite BEP Revenue = $4,000,000 (Calculated using lowest product margin)",
-            "Weighted P/V = 37.5%; Composite BEP Revenue = $2,133,333 (Calculated by unweighted simple average: (50% + 25%) / 2 = 37.5%)",
-            "Weighted P/V = 40.0%; Composite BEP Revenue = $2,000,000 (Weighted P/V = 0.60*50% + 0.40*25% = 30% + 10% = 40%; $800,000 / 0.40 = $2,000,000)",
-            "Weighted P/V = 75.0%; Composite BEP Revenue = $1,066,667 (Calculated by adding the P/V ratios together)"
+            "Weighted P/V of 37.5% (simple average) and composite break-even revenue of $2,133,333 on $800,000 of fixed costs",
+            "Weighted P/V of 40.0% and composite break-even revenue of $320,000, from $800,000 of fixed costs times 0.40",
+            "Weighted P/V of 40.0% and composite break-even revenue of $2,000,000 on $800,000 of common fixed costs",
+            "Weighted P/V of 30.0% and composite break-even revenue of $2,666,667 on $800,000 of fixed costs"
           ],
           "answer": 2,
           "why": "Weighted Average P/V Ratio = (60% * 50%) + (40% * 25%) = 30.0% + 10.0% = 40.0%. Composite Break-Even Revenue = Fixed Costs / Weighted P/V Ratio = $800,000 / 0.40 = $2,000,000.",
@@ -4140,10 +4140,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm enters October with $40,000 in opening cash. October receipts total $120,000 and disbursements total $150,000. If the company maintains a minimum statutory cash balance policy of $25,000, what bank overdraft financing is required in October, and what will be the closing balance?",
           "options": [
-            "Overdraft = $10,000; Closing Balance = $20,000 (Calculated without minimum cash buffer adjustment)",
-            "Overdraft = $15,000; Closing Balance = $25,000 (Preliminary Cash = $40k + $120k - $150k = $10,000; Overdraft needed = $25,000 - $10,000 = $15,000)",
-            "Overdraft = $0; Closing Balance = $10,000 (Operating with cash deficit below minimum policy)",
-            "Overdraft = $30,000; Closing Balance = $40,000 (Calculated by ignoring opening cash balance)"
+            "Overdraft of $30,000, since the whole net outflow is borrowed, leaving a closing balance of $25,000",
+            "Overdraft of $15,000, bringing preliminary cash of $10,000 up to the $25,000 minimum closing balance",
+            "No overdraft, since the $40,000 opening cash covers the $30,000 net outflow, leaving $10,000",
+            "Overdraft of $25,000, since the full minimum balance is borrowed, leaving a closing balance of $35,000"
           ],
           "answer": 1,
           "why": "Preliminary Cash = $40,000 + ($120,000 - $150,000) = $40,000 - $30,000 = $10,000. To restore the required $25,000 minimum cash buffer, Overdraft Required = $25,000 - $10,000 = $15,000. The closing cash balance is restored to $25,000.",
@@ -4235,10 +4235,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A corporation reports Total Current Assets of $6,000,000, Inventories of $2,400,000, and Current Liabilities of $3,000,000. What are the firm's Current Ratio and Quick (Acid-Test) Ratio?",
           "options": [
-            "Current Ratio = 2.00x; Quick Ratio = 0.80x (Calculated by dividing inventory by current liabilities)",
-            "Current Ratio = 1.50x; Quick Ratio = 1.00x (Calculated with incorrect liability base)",
-            "Current Ratio = 2.50x; Quick Ratio = 1.50x (Calculated by adding inventory to cash)",
-            "Current Ratio = 2.00x; Quick Ratio = 1.20x (Current Ratio = $6M / $3M = 2.00x; Quick Ratio = ($6M - $2.4M) / $3M = $3.6M / $3M = 1.20x)"
+            "Current Ratio of 2.00x and Quick Ratio of 0.80x",
+            "Current Ratio of 1.20x and Quick Ratio of 2.00x",
+            "Current Ratio of 2.00x and Quick Ratio of 1.60x",
+            "Current Ratio of 2.00x and Quick Ratio of 1.20x"
           ],
           "answer": 3,
           "why": "Current Ratio = Current Assets / Current Liabilities = $6,000,000 / $3,000,000 = 2.00x. Quick Ratio = (Current Assets - Inventories) / Current Liabilities = ($6,000,000 - $2,400,000) / $3,000,000 = $3,600,000 / $3,000,000 = 1.20x.",
@@ -4307,10 +4307,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Net Operating Income (NOI) approach, what happens to the overall Weighted Average Cost of Capital (Ko) and the Cost of Equity (Ke) as a firm increases its debt-to-equity ratio?",
           "options": [
-            "Ko remains completely constant while Ke rises linearly to offset the financial risk of cheaper debt",
-            "Ko declines monotonically while Ke remains constant",
-            "Ko rises while Ke falls due to tax deductibility of interest",
-            "Both Ko and Ke decline simultaneously, maximizing enterprise market value"
+            "Ko stays constant while Ke rises linearly with the debt-to-equity ratio to offset the cheaper debt",
+            "Ko falls steadily while Ke stays constant, since cheaper debt lowers the overall cost of capital",
+            "Ko rises steadily while Ke falls, since extra debt makes equity safer and therefore cheaper",
+            "Ko and Ke both rise in proportion to debt, since each of them carries more financial risk"
           ],
           "answer": 0,
           "why": "Under the NOI approach, overall WACC (Ko) is constant and determined strictly by business risk. As cheaper debt is added, financial risk increases for equity holders, driving Ke upward by Ke = Ko + (Ko - Kd)*(D/E), neutralizing any overall financing benefit.",
@@ -4353,10 +4353,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Modigliani-Miller Proposition I (without taxes), why cannot two firms with identical operating assets and earnings have different total market values?",
           "options": [
-            "Securities regulations strictly enforce equal enterprise debt-to-equity ratios across identical industries",
-            "Banks refuse to lend to levered firms once debt exceeds 50% of total assets",
-            "Cost of debt increases exponentially, preventing any pricing disparities",
-            "Investors engage in homemade leverage arbitrage, buying the cheaper firm and selling the overpriced firm until values equalize"
+            "Managers adjust dividend policy, paying out cash from the cheaper firm until its earnings and values equalize",
+            "Lenders enforce covenants, restricting the overvalued firm's borrowing until the two capital structures equalize",
+            "Regulators apply takeover rules, forcing the cheaper firm to merge with the overpriced one until values equalize",
+            "Investors use homemade leverage arbitrage, buying the cheaper firm and selling the overpriced one until values equalize"
           ],
           "answer": 3,
           "why": "MM Proposition I proves that personal borrowing (homemade leverage) allows investors to replicate corporate leverage. If a levered firm is overpriced relative to an unlevered firm, investors sell the levered shares, borrow on personal account, and buy the unlevered shares, driving prices into equilibrium (VL = VU).",
@@ -4402,10 +4402,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "An unlevered firm is worth $10,000,000. It issues $4,000,000 in permanent corporate debt at 8% interest. If the corporate tax rate is 30%, what is the total market value of the levered firm (VL) under Modigliani-Miller Proposition I with taxes?",
           "options": [
-            "$14,000,000 (Calculated by adding total debt directly to unlevered value)",
-            "$10,000,000 (Calculated under MM Proposition I without taxes)",
-            "$11,200,000 (VL = VU + Tc * D = $10,000,000 + 0.30 * $4,000,000 = $10,000,000 + $1,200,000 = $11,200,000)",
-            "$12,800,000 (Calculated assuming 70% tax shield capitalization)"
+            "$14,000,000 (VU of $10,000,000 plus the full $4,000,000 of debt raised)",
+            "$8,800,000 (VU of $10,000,000 less a tax cost of 30% of the $4,000,000 debt)",
+            "$11,200,000 (VU of $10,000,000 plus a tax shield of 30% of the $4,000,000 debt)",
+            "$12,800,000 (VU of $10,000,000 plus 70% of the $4,000,000 debt after tax)"
           ],
           "answer": 2,
           "why": "Under MM Proposition I with corporate taxes: VL = VU + (Tc * Debt) = $10,000,000 + (0.30 * $4,000,000) = $10,000,000 + $1,200,000 = $11,200,000.",
@@ -4447,10 +4447,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Static Trade-Off Theory, what defines the optimal corporate debt-to-equity ratio?",
           "options": [
-            "0% debt to eliminate any probability of bankruptcy",
-            "The debt ratio where the marginal corporate interest tax shield equals the marginal expected cost of financial distress",
-            "50% debt and 50% equity based on historical book value parity",
-            "100% debt because interest is tax-deductible under all economic scenarios"
+            "The debt ratio where the cost of debt equals the cost of equity, so both sources of capital are equally priced",
+            "The debt ratio where the marginal interest tax shield equals the marginal expected cost of financial distress",
+            "The debt ratio where earnings per share is maximized, since every added dollar of debt raises EPS",
+            "The highest debt ratio the market will lend at, since the tax shield outweighs expected distress costs"
           ],
           "answer": 1,
           "why": "Under the Static Trade-Off Theory, optimal capital structure is achieved at the inflection point where the marginal benefit of debt tax shields is exactly offset by the marginal increase in expected bankruptcy/distress costs.",
@@ -4492,10 +4492,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A corporation with $40,000,000 in enterprise value carries $12,000,000 in debt at 7% pre-tax interest with EBIT of $5,000,000. What is its Interest Coverage Ratio (ICR)?",
           "options": [
-            "5.95x (Interest = $12M * 7% = $840,000; ICR = $5,000,000 / $840,000 = 5.95x)",
-            "3.33x (Calculated by dividing enterprise value by debt)",
-            "8.00x (Calculated without applying interest rate)",
-            "4.17x (Calculated using after-tax operating profit)"
+            "5.95x (EBIT of $5,000,000 divided by interest of $840,000)",
+            "0.17x (interest of $840,000 divided by EBIT of $5,000,000)",
+            "8.33x (EBIT of $5,000,000 divided by interest of $600,000)",
+            "3.33x (EBIT of $5,000,000 divided by interest of $1,500,000)"
           ],
           "answer": 0,
           "why": "Annual Interest = Debt * Interest Rate = $12,000,000 * 7% = $840,000. Interest Coverage Ratio (ICR) = EBIT / Interest = $5,000,000 / $840,000 = 5.95x.",
@@ -4561,10 +4561,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm earns $8.00 per share with an internal rate of return (r) of 12% and a cost of equity (Ke) of 10%. Under Walter's model, what is the theoretical share price if the firm pays a $2.00 dividend per share?",
           "options": [
-            "$92.00 per share (P = [2 + (0.12/0.10)*(8 - 2)] / 0.10 = [2 + 1.2*6] / 0.10 = [2 + 7.2] / 0.10 = 9.2 / 0.10 = $92.00)",
-            "$80.00 per share (Calculated as EPS / Ke without growth retention factor)",
-            "$100.00 per share (Calculated assuming 100% dividend payout)",
-            "$64.00 per share (Calculated with inverted return ratio)"
+            "$92.00 per share",
+            "$80.00 per share",
+            "$68.00 per share",
+            "$104.00 per share"
           ],
           "answer": 0,
           "why": "Under Walter's model: P = [D + (r / Ke)*(E - D)] / Ke = [$2 + (0.12 / 0.10)*($8 - $2)] / 0.10 = [$2 + 1.2 * $6] / 0.10 = [$2 + $7.20] / 0.10 = $9.20 / 0.10 = $92.00 per share.",
@@ -4606,10 +4606,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A stock expects EPS of $10 next year. It maintains a 40% retention ratio (b = 0.40) and earns a 15% return on investment (r = 0.15). If the cost of equity (Ke) is 10%, what is the equilibrium share price under Gordon's Model?",
           "options": [
-            "$250.00 per share (Calculated with inverted discount spread)",
-            "$100.00 per share (Calculated by dividing D1 by the growth rate directly: $6.00 / 0.06)",
-            "$60.00 per share (Calculated as D1 / Ke without growth adjustment: $6.00 / 0.10)",
-            "$150.00 per share (g = 0.40 * 15% = 6.0%; D1 = $10 * 0.60 = $6.00; P0 = $6.00 / (0.10 - 0.06) = $6.00 / 0.04 = $150.00)"
+            "$100.00 per share",
+            "$60.00 per share",
+            "$300.00 per share",
+            "$150.00 per share"
           ],
           "answer": 3,
           "why": "Retention growth rate g = b * r = 0.40 * 0.15 = 0.06 or 6.0%. Next year dividend D1 = E1 * (1 - b) = $10 * (1 - 0.40) = $6.00. Intrinsic Share Price P0 = D1 / (Ke - g) = $6.00 / (0.10 - 0.06) = $6.00 / 0.04 = $150.00 per share.",
@@ -4700,10 +4700,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm has 1,000,000 shares outstanding, earns $5,000,000 in net income (EPS = $5.00), and trades at $75.00 per share (P/E = 15.0x). If the company deploys $1,500,000 to repurchase shares at $75.00, how many shares are retired, and what is the new post-buyback EPS?",
           "options": [
-            "20,000 shares retired; new EPS = $5.00 (Assuming zero EPS accretion from buybacks)",
-            "20,000 shares retired; new EPS = $5.10 (Shares bought = $1.5M / $75 = 20,000; New shares = 980,000; New EPS = $5,000,000 / 980,000 = $5.102)",
-            "30,000 shares retired; new EPS = $5.15 (Calculated assuming discounted repurchase price)",
-            "15,000 shares retired; new EPS = $5.08 (Calculated using incorrect share count)"
+            "20,000 shares retired; new EPS is about $4.90",
+            "20,000 shares retired; new EPS is about $5.10",
+            "75,000 shares retired; new EPS is about $5.41",
+            "15,000 shares retired; new EPS is about $5.08"
           ],
           "answer": 1,
           "why": "Shares repurchased = $1,500,000 / $75.00 = 20,000 shares. Remaining shares = 1,000,000 - 20,000 = 980,000 shares. New EPS = $5,000,000 / 980,000 = $5.102 (a 2.04% accretion in EPS).",
@@ -4749,10 +4749,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm with last year's dividend of $2.00 achieves EPS of $8.00. It targets a 40% long-term payout ratio with a speed of adjustment coefficient of c = 0.30. Under the Lintner model, what is the recommended dividend per share for the current year?",
           "options": [
-            "$2.36 per share (Target DPS = $8.00 * 40% = $3.20; Recommended DPS = $2.00 + 0.30 * ($3.20 - $2.00) = $2.00 + $0.36 = $2.36)",
-            "$3.20 per share (Calculated by immediately adopting the long-term target payout)",
-            "$2.00 per share (Calculated assuming zero dividend growth)",
-            "$2.60 per share (Calculated with a 50% adjustment rate)"
+            "$2.36 per share",
+            "$3.20 per share",
+            "$3.80 per share",
+            "$2.96 per share"
           ],
           "answer": 0,
           "why": "Target DPS = Target Payout * Current EPS = 40% * $8.00 = $3.20. Under Lintner's model: Recommended DPS = Last DPS + c * (Target DPS - Last DPS) = $2.00 + 0.30 * ($3.20 - $2.00) = $2.00 + 0.30 * $1.20 = $2.00 + $0.36 = $2.36 per share.",
@@ -4830,10 +4830,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A subsidiary generates $30,000,000 in Contribution, $15,000,000 in EBIT, and pays $3,000,000 in annual interest with $500,000 in preference dividends (tax rate 25%). What are its DOL and DFL?",
           "options": [
-            "DOL = 2.00x; DFL = 1.25x (Calculated without grossing up preference dividends for taxes)",
-            "DOL = 3.00x; DFL = 1.50x (Calculated using gross sales revenue)",
-            "DOL = 1.50x; DFL = 2.00x (Calculated with inverted leverage formulas)",
-            "DOL = 2.00x; DFL = 1.32x (DOL = 30M/15M = 2.00x; DFL = 15M / [15M - 3M - (0.5M / 0.75)] = 15M / [12M - 0.667M] = 15M / 11.333M = 1.32x)"
+            "DOL of 2.00x and DFL of 1.25x",
+            "DOL of 0.50x and DFL of 1.32x",
+            "DOL of 2.00x and DFL of 1.30x",
+            "DOL of 2.00x and DFL of 1.32x"
           ],
           "answer": 3,
           "why": "DOL = Contribution / EBIT = $30,000,000 / $15,000,000 = 2.00x. Grossed-up preference dividends = $500,000 / (1 - 0.25) = $666,667. DFL = EBIT / [EBIT - Interest - Dp/(1-T)] = $15,000,000 / ($15,000,000 - $3,000,000 - $666,667) = $15,000,000 / $11,333,333 = 1.32x.",
@@ -4884,10 +4884,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm with an unlevered beta of 1.00 operates in a 25% tax bracket. If it adopts a capital structure of 20% debt and 80% equity (D/E = 0.25), what is its Hamada relevered equity beta?",
           "options": [
-            "Beta_L = 1.188 (Beta_L = Beta_U * [1 + (1 - T)*(D/E)] = 1.00 * [1 + 0.75 * 0.25] = 1.00 * [1 + 0.0625] = 1.00 * 1.1875 = 1.188)",
-            "Beta_L = 1.250 (Calculated without the tax deduction shield)",
-            "Beta_L = 1.050 (Calculated with inverted leverage weight)",
-            "Beta_L = 1.500 (Calculated assuming 50% debt ratio)"
+            "Beta_L = 1.188, from Beta_U × [1 + (1 − T) × D/E]",
+            "Beta_L = 1.250, from Beta_U × [1 + D/E], ignoring tax",
+            "Beta_L = 1.150, from Beta_U × [1 + (1 − T) × D/V]",
+            "Beta_L = 0.938, from Beta_U × [1 − (1 − T) × D/E]"
           ],
           "answer": 0,
           "why": "Hamada Relevered Beta equation: Beta_L = Beta_U * [1 + (1 - T)*(D / E)]. Here, D/E = 0.20 / 0.80 = 0.25. Therefore, Beta_L = 1.00 * [1 + (1 - 0.25)*0.25] = 1.00 * [1 + 0.75 * 0.25] = 1.00 * 1.1875 = 1.188.",
@@ -4930,10 +4930,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In February, Horizon entered with $4,000,000 cash, collected $11,000,000, and paid $13,500,000 in disbursements. With a mandatory minimum cash buffer of $2,000,000, what credit facility draw was required?",
           "options": [
-            "$2,500,000 credit draw (Equal to the monthly net cash deficit)",
-            "$500,000 credit draw (Preliminary Cash = $4M + $11M - $13.5M = $1.5M; Shortfall against $2M buffer = $2.0M - $1.5M = $500,000)",
-            "$0 credit draw (Cash remained positive so no draw required)",
-            "$1,000,000 credit draw (Calculated by ignoring opening cash balance)"
+            "$2,000,000 credit draw, since the whole buffer must be borrowed when disbursements exceed collections",
+            "$500,000 credit draw, since preliminary cash of $1.5M falls $500,000 below the $2.0M buffer",
+            "$2,500,000 credit draw, since disbursements exceed collections by that amount in the month",
+            "No credit draw, since the $4.0M opening cash is larger than the $2.0M minimum cash buffer"
           ],
           "answer": 1,
           "why": "Preliminary cash balance = Opening ($4.0M) + Collections ($11.0M) - Disbursements ($13.5M) = $1.5M. Since the policy mandates a minimum buffer of $2.0M, Credit Draw = $2.0M - $1.5M = $500,000. Closing cash is held at $2.0M.",
@@ -4984,10 +4984,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A growth company earns EPS of $1.50 with r = 14% and Ke = 11%. Under Walter's model, what is the theoretical share price at 0% dividend payout compared to 100% dividend payout?",
           "options": [
-            "P = $13.64 at 0% payout vs P = $17.36 at 100% payout (Reversed pricing)",
-            "P = $20.00 at 0% payout vs P = $10.00 at 100% payout (Estimated without exact rounding)",
-            "P = $17.36 at 0% payout vs P = $13.64 at 100% payout (At 0%: P = [0 + (0.14/0.11)*1.50]/0.11 = 1.909/0.11 = $17.36; At 100%: P = 1.50/0.11 = $13.64)",
-            "P = $15.00 at both payouts because dividend policy is irrelevant"
+            "$13.64 at 0% payout versus $17.36 at 100% payout, so paying dividends maximizes price when r exceeds Ke",
+            "$13.64 at both payouts, since dividend policy does not affect value even when r exceeds Ke",
+            "$17.36 at 0% payout versus $13.64 at 100% payout, so retention maximizes price when r exceeds Ke",
+            "$10.71 at 0% payout versus $13.64 at 100% payout, so paying dividends maximizes price when r exceeds Ke"
           ],
           "answer": 2,
           "why": "At 0% dividend payout: P = [0 + (0.14 / 0.11)*($1.50 - 0)] / 0.11 = (1.2727 * $1.50) / 0.11 = $1.9091 / 0.11 = $17.36. At 100% payout: P = [$1.50 + 0] / 0.11 = $13.64. Walter's model proves that retaining earnings in a growth firm maximizes share price.",
@@ -5034,10 +5034,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 4 Grand Control Tower, what are the primary corporate finance recommendations presented to the Board of Directors of Horizon Global Industries?",
           "options": [
-            "Increase debt to 100% to maximize tax shields regardless of financial distress risk",
-            "Eliminate all debt borrowing to achieve a zero-risk capital structure and pay 100% cash dividends",
-            "Extend cash conversion cycle to 180 days to preserve trade payables financing",
-            "Maintain DCL at 2.65x (below 3.75x ceiling), target 20% debt to minimize WACC at 10.82%, manage an 85-day CCC, and deploy $5.0M for share buybacks (+3.45% EPS accretion)"
+            "Lift DCL to 3.70x (near the 3.75x ceiling), target 40% debt for a 9.60% WACC, hold an 85-day CCC, and fund $5.0M buybacks",
+            "Hold DCL at 2.65x (under the 3.75x ceiling), target 20% debt for a 10.82% WACC, stretch CCC to 120 days, pay a $5.0M dividend",
+            "Cut DCL to 1.20x (under the 3.75x ceiling), target 0% debt for a 12.40% WACC, hold an 85-day CCC, and retain the $5.0M",
+            "Maintain DCL at 2.65x (under the 3.75x ceiling), target 20% debt for a 10.82% WACC, hold an 85-day CCC, and fund $5.0M buybacks"
           ],
           "answer": 3,
           "why": "The Milestone 4 Capstone establishes a disciplined financial policy: conservative combined leverage (DCL = 2.65x), optimal capital structure at 20% debt (WACC = 10.82%), disciplined working capital management (85-day CCC), and accretive share repurchases.",
@@ -5112,10 +5112,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm earns $10,000,000 in EBIT (tax rate 25%). It incurs $2,000,000 in depreciation, invests $2,500,000 in CapEx, and increases working capital by $500,000. What is its Free Cash Flow to Firm (FCFF)?",
           "options": [
-            "$9,000,000 (Calculated by adding CapEx instead of deducting it)",
-            "$7,500,000 (Calculated as NOPAT without reinvestment adjustments)",
-            "$6,500,000 (NOPAT = 10M * 0.75 = 7.5M; FCFF = 7.5M + 2.0M - 2.5M - 0.5M = $6,500,000)",
-            "$5,000,000 (Calculated by deducting pre-tax interest expense)"
+            "$9,000,000",
+            "$4,500,000",
+            "$6,500,000",
+            "$7,500,000"
           ],
           "answer": 2,
           "why": "NOPAT = EBIT * (1 - T) = $10,000,000 * (1 - 0.25) = $7,500,000. Free Cash Flow to Firm (FCFF) = NOPAT + Depreciation - CapEx - Delta NWC = $7,500,000 + $2,000,000 - $2,500,000 - $500,000 = $6,500,000.",
@@ -5166,10 +5166,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A firm has an Enterprise Value of $100,000,000, Total Debt of $30,000,000, Cash of $5,000,000, and 2,000,000 shares outstanding. What is its Equity Value and Intrinsic Price Per Share?",
           "options": [
-            "Equity Value = $100,000,000; Price = $50.00 per share (Equating enterprise value with equity value)",
-            "Equity Value = $75,000,000; Price = $37.50 per share (Net Debt = $30M - $5M = $25M; Equity Value = $100M - $25M = $75M; Price = $75M / 2M = $37.50)",
-            "Equity Value = $125,000,000; Price = $62.50 per share (Calculated by adding debt instead of subtracting)",
-            "Equity Value = $70,000,000; Price = $35.00 per share (Calculated without adding cash)"
+            "Equity Value of $65,000,000 and $32.50 per share",
+            "Equity Value of $75,000,000 and $37.50 per share",
+            "Equity Value of $70,000,000 and $35.00 per share",
+            "Equity Value of $105,000,000 and $52.50 per share"
           ],
           "answer": 1,
           "why": "Net Debt = Total Debt - Cash = $30,000,000 - $5,000,000 = $25,000,000. Equity Value = Enterprise Value - Net Debt = $100,000,000 - $25,000,000 = $75,000,000. Price Per Share = $75,000,000 / 2,000,000 shares = $37.50 per share.",
@@ -5216,10 +5216,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A target firm generates $12,000,000 in EBITDA, has $15,000,000 in Net Debt, and 3,000,000 shares outstanding. If peer companies trade at an average EV/EBITDA multiple of 7.5x, what is the implied target share price?",
           "options": [
-            "$25.00 per share (Implied EV = $12M * 7.5x = $90M; Equity Value = $90M - $15M = $75M; Share Price = $75M / 3M = $25.00)",
-            "$30.00 per share (Calculated without deducting net debt)",
-            "$20.00 per share (Calculated using an incorrect multiple)",
-            "$15.00 per share (Calculated by dividing EBITDA directly by share count)"
+            "$25.00 per share",
+            "$30.00 per share",
+            "$35.00 per share",
+            "$20.00 per share"
           ],
           "answer": 0,
           "why": "Implied Enterprise Value = EBITDA * Peer Multiple = $12,000,000 * 7.5x = $90,000,000. Implied Equity Value = EV - Net Debt = $90,000,000 - $15,000,000 = $75,000,000. Implied Share Price = $75,000,000 / 3,000,000 shares = $25.00 per share.",
@@ -5307,10 +5307,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A stock trades at $16.00 with a blended consensus target price of $19.76 based on DCF and trading comparables. What is the implied price upside and standard institutional rating?",
           "options": [
-            "+10.00% upside; rating is HOLD_MARKET_PERFORM",
-            "-15.00% downside; rating is SELL_UNDERPERFORM",
-            "+23.50% upside; rating is BUY_OUTPERFORM (Upside = [$19.76 - $16.00] / $16.00 = $3.76 / $16.00 = +23.50% >= 15% threshold)",
-            "+50.00% upside; rating is SPECULATIVE_BUY"
+            "+23.50% upside, rated HOLD_NEUTRAL",
+            "+19.03% upside, rated BUY_OUTPERFORM",
+            "+23.50% upside, rated BUY_OUTPERFORM",
+            "+3.76% upside, rated HOLD_NEUTRAL"
           ],
           "answer": 2,
           "why": "Implied upside = (Target Price - Market Price) / Market Price = ($19.76 - $16.00) / $16.00 = +23.50%. Since the upside exceeds the standard 15% threshold, the institutional research mandate is BUY_OUTPERFORM.",
@@ -5570,10 +5570,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an equally weighted portfolio holding n assets, what happens to the contribution of individual asset variances (sigma_i^2) to overall portfolio risk as n grows very large?",
           "options": [
-            "The individual asset variances compound exponentially, dominating the covariance terms",
-            "The contribution of individual asset variances approaches zero, and portfolio variance converges to the average pairwise covariance",
-            "The portfolio variance becomes negative due to matrix inversion singularities",
-            "The covariance terms approach zero, leaving only the weighted average of individual variances"
+            "Pairwise covariances contribute almost nothing, and portfolio variance converges to the average individual asset variance",
+            "Individual asset variances contribute almost nothing, and portfolio variance converges to the average pairwise covariance",
+            "Individual asset variances dominate, and portfolio variance converges to the weighted average of the asset variances",
+            "Both variances and covariances vanish, and portfolio variance falls to zero as the number of assets grows"
           ],
           "answer": 1,
           "why": "In an equally weighted portfolio, the variance is (1/n)*var_avg + ((n-1)/n)*cov_avg. As n approaches infinity, (1/n)*var_avg approaches 0, and portfolio variance converges entirely to the average covariance (cov_avg). Individual asset risk is diversified away.",
@@ -5836,10 +5836,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following statements correctly distinguishes the Capital Market Line (CML) from the Security Market Line (SML)?",
           "options": [
-            "The CML measures total risk (standard deviation) and applies only to efficient portfolios, whereas the SML measures systematic risk (Beta) and applies to all individual assets and portfolios",
-            "The CML measures systematic risk (Beta) for all assets, while the SML measures unsystematic risk for mutual funds only",
-            "Individual stocks with high unsystematic risk plot above the CML, while efficient portfolios plot below the SML",
-            "The slope of the SML is the Sharpe ratio of the market portfolio, while the slope of the CML is the equity risk premium"
+            "The CML uses total risk (standard deviation) and covers only efficient portfolios; the SML uses beta and covers all assets",
+            "The CML uses systematic risk (beta) and covers all assets; the SML uses total risk (standard deviation) and covers only efficient portfolios",
+            "Both lines use beta, but the CML covers only the market portfolio while the SML covers only equity securities in the index",
+            "Both lines use standard deviation, but the CML applies to risky assets only while the SML includes risk-free lending"
           ],
           "answer": 0,
           "why": "The Capital Market Line uses total risk (sigma) on the x-axis and is valid only for efficient portfolios. The Security Market Line uses systematic risk (Beta) on the x-axis and applies to all securities, whether efficient, individual, or diversified.",
@@ -6004,10 +6004,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Eugene Fama's performance decomposition framework, what does 'Net Selectivity' represent?",
           "options": [
-            "The passive return generated by allocating 100% of capital into sovereign Treasury bills",
-            "The manager's gross stock-selection alpha minus the return penalty required to compensate for taking on incomplete portfolio diversification",
-            "The total nominal portfolio return divided by the portfolio's systematic market beta",
-            "The arithmetic difference between the Sharpe Ratio and the Treynor Ratio"
+            "Gross stock-selection alpha plus the premium earned from successful market timing",
+            "Gross stock-selection alpha minus the penalty for taking on incomplete diversification",
+            "Total portfolio return minus the risk-free return, scaled by the portfolio's standard deviation",
+            "Gross stock-selection alpha minus the management fee charged to the fund's investors"
           ],
           "answer": 1,
           "why": "Fama's Net Selectivity equals Gross Selectivity (Jensen's Alpha) minus the Diversification Cost. It measures the net value added by the manager through stock picking after fully penalizing them for exposing the investor to diversifiable idiosyncratic risk.",
@@ -6107,10 +6107,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional investment committees utilize an integrated scorecard combining Sharpe, Treynor, Alpha, and Information Ratio rather than relying on a single metric?",
           "options": [
-            "Combining all four metrics mathematically guarantees that portfolio losses can never occur during economic downturns",
-            "Single metrics only function when interest rates and sovereign inflation are strictly equal to zero",
-            "Securities regulations legally mandate that all four ratios must produce mathematically identical numerical rankings",
-            "Each metric addresses a distinct dimension of risk (total risk, systematic risk, benchmark active risk, and absolute dollar alpha), preventing misjudgments caused by single-metric blind spots"
+            "The metrics all measure the same return-per-risk ratio, so combining them averages out data errors in each one",
+            "Regulators require four metrics to be reported, so committees combine them to satisfy fund disclosure rules",
+            "Each metric ranks funds over a different time horizon (short, medium, long, rolling), so the scorecard avoids timing bias",
+            "Each metric covers a distinct dimension (total risk, systematic risk, absolute alpha, active risk), avoiding blind spots"
           ],
           "answer": 3,
           "why": "No single metric captures all dimensions of risk and return. The Sharpe ratio measures total risk efficiency; Treynor measures systematic risk productivity; Jensen's Alpha quantifies absolute outperformance over CAPM; and the Information Ratio measures active return consistency per unit of tracking error.",
@@ -6182,10 +6182,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the cost-of-carry model, if an equity index trades at a spot price of 2,000, the annual risk-free rate is 5.0%, and the dividend yield is 2.0%, what is the theoretical 1-year forward price (discrete compounding)?",
           "options": [
-            "2,100.00, calculated by ignoring the dividend yield entirely",
-            "1,940.00, calculated by subtracting the interest rate from the spot price",
-            "2,060.00, calculated as S0 * (1 + r - q) = 2,000 * (1 + 0.05 - 0.02) = 2,000 * 1.03 = 2,060.00",
-            "2,140.00, calculated by adding both the interest rate and the dividend yield"
+            "2,100, from S0 × (1 + r) = 2,000 × 1.05, ignoring dividends",
+            "2,040, from S0 × (1 + q) = 2,000 × (1 + 0.02), dividends only",
+            "2,060, from S0 × (1 + r − q) = 2,000 × (1 + 0.05 − 0.02)",
+            "1,940, from S0 × (1 − r + q) = 2,000 × (1 − 0.05 + 0.02)"
           ],
           "answer": 2,
           "why": "Discrete forward price F0 = S0 * (1 + r - q)^T = 2,000 * (1 + 0.05 - 0.02)^1 = 2,000 * 1.03 = 2,060.00. The net cost of carry is 3.0%, adding 60 points of forward premium.",
@@ -6230,10 +6230,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "An investor deposits an initial margin of $10,000 with a maintenance margin of $7,500. Following an adverse price swing, their account balance drops to $6,800. What is the amount of the variation margin call required?",
           "options": [
-            "$10,000, because breaching maintenance margin requires depositing an entirely new initial margin",
-            "$3,200, because the margin call requires restoring the account balance back to the Initial Margin level ($10,000 - $6,800 = $3,200)",
-            "$700, because the balance is only $700 below the maintenance margin threshold",
-            "$0, because margin calls are only issued if the account balance reaches zero"
+            "$700, restoring the balance to the maintenance margin level ($7,500 − $6,800)",
+            "$3,200, restoring the balance to the initial margin level ($10,000 − $6,800)",
+            "$2,500, the gap between initial and maintenance margin ($10,000 − $7,500)",
+            "$1,300, the loss relative to the maintenance margin plus its buffer ($7,500 − $6,200)"
           ],
           "answer": 1,
           "why": "When an account balance falls below the maintenance margin ($6,800 < $7,500), a margin call is triggered. Institutional rules require restoring the balance back to the Initial Margin level, not merely to the maintenance margin. Variation margin call = $10,000 - $6,800 = $3,200.",
@@ -6277,10 +6277,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Put-Call Parity (C + PV(K) = P + S0), if a 1-year European call with strike $100 trades at $8.00, the stock price is $95.00, and the present value of the strike price is $92.00, what is the arbitrage-free price of the European put?",
           "options": [
-            "$5.00, calculated as P = C + PV(K) - S0 = $8.00 + $92.00 - $95.00 = $100.00 - $95.00 = $5.00",
-            "$15.00, calculated as P = C + S0 - PV(K)",
-            "$8.00, because calls and puts with identical strikes must trade at identical prices",
-            "$3.00, calculated by subtracting the call premium from the stock price difference"
+            "$5.00, from P = C + PV(K) − S0 = $8 + $92 − $95",
+            "$11.00, from P = C + S0 − PV(K) = $8 + $95 − $92",
+            "$3.00, from P = S0 − PV(K) = $95 − $92, no call",
+            "$13.00, from P = K − S0 + C = $100 − $95 + $8"
           ],
           "answer": 0,
           "why": "Rearranging Put-Call Parity: P = C + PV(K) - S0. Substituting values: P = $8.00 + $92.00 - $95.00 = $100.00 - $95.00 = $5.00. Any other market put price creates immediate riskless arbitrage opportunities.",
@@ -6324,10 +6324,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A corporation with a $100,000,000 floating-rate bank loan enters a 1-year semi-annual interest rate swap as the Fixed-Rate Payer at 6.00% against SOFR. In the first 6-month period, SOFR resets to 7.00%. What is the net semi-annual swap cash flow received by the corporation?",
           "options": [
-            "+$1,000,000 net received, calculated without accounting for the semi-annual accrual fraction",
-            "-$500,000 net paid, because higher interest rates always penalize borrowers",
-            "$0, because swaps only settle cash flows at maturity",
-            "+$500,000 net received, calculated as $100M * (7.00% - 6.00%) * 0.5 = $100M * 1.00% * 0.5 = +$500,000"
+            "−$500,000 net paid, from $100M × (6.00% − 7.00%) × 0.5 of a year",
+            "+$1,000,000 net received, from $100M × (7.00% − 6.00%) × 1.0 year",
+            "+$3,500,000 net received, from $100M × 7.00% × 0.5 of a year",
+            "+$500,000 net received, from $100M × (7.00% − 6.00%) × 0.5 of a year"
           ],
           "answer": 3,
           "why": "Net cash flow to fixed payer = Notional * (Floating - Fixed) * time_fraction = $100,000,000 * (0.07 - 0.06) * 0.5 = $100,000,000 * 0.01 * 0.5 = +$500,000. The corporation receives $500,000 from the swap counterparty, which offsets its higher bank interest payment.",
@@ -6371,10 +6371,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial rationale for constructing a Zero-Cost Options Collar rather than simply purchasing a standalone Protective Put?",
           "options": [
-            "A collar completely eliminates all systematic market risk while allowing 100% unlimited upside participation",
-            "Tax authorities legally prohibit corporations from purchasing standalone put options without an offsetting call",
-            "The premium collected from selling the out-of-the-money call fully funds the purchase of the protective put, eliminating cash drag in exchange for capping upside gains",
-            "A collar guarantees that the underlying asset price will never decline in the physical spot market"
+            "The put premium received fully funds the call purchase, removing cash drag in exchange for capped downside cover",
+            "Selling the in-the-money call fully funds the protective put, removing cash drag in exchange for losing downside cover",
+            "The call premium received fully funds the protective put, removing cash drag in exchange for capped upside gains",
+            "The tax deduction on the put premium fully funds the protection, removing cash drag with no cost to upside gains"
           ],
           "answer": 2,
           "why": "Purchasing standalone protective puts imposes a continuous cash premium drain. A zero-cost collar finances the put purchase by selling an out-of-the-money call option, achieving downside floor protection with zero upfront cash outlay at the cost of capping maximum upside gains.",
@@ -6446,10 +6446,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "An acquirer identifies $10,000,000 in annual pre-tax operational cost synergies in a 25% tax environment. If the discount rate is 10.0% and upfront integration costs are $5,000,000, what is the Net Present Value of the synergies?",
           "options": [
-            "$95,000,000, calculated without deducting taxes from pre-tax cost synergies",
-            "$70,000,000, calculated as ($10M * 0.75 / 0.10) - $5M = $75,000,000 - $5,000,000 = $70,000,000",
-            "$75,000,000, calculated by ignoring upfront integration expenses",
-            "$50,000,000, calculated using an arbitrary 50% discount factor"
+            "$95,000,000, from ($10M ÷ 0.10) − $5M integration cost, ignoring tax",
+            "$70,000,000, from ($10M × (1 − 0.25) ÷ 0.10) − $5M integration cost",
+            "$75,000,000, from $10M × (1 − 0.25) ÷ 0.10, ignoring integration cost",
+            "$25,000,000, from ($10M × (1 − 0.25) ÷ 0.25) − $5M, dividing by tax rate"
           ],
           "answer": 1,
           "why": "After-tax annual synergies = $10,000,000 * (1 - 0.25) = $7,500,000. Gross PV of synergies = $7,500,000 / 0.10 = $75,000,000. Net Present Value of synergies = Gross PV - Integration Costs = $75,000,000 - $5,000,000 = $70,000,000.",
@@ -6486,10 +6486,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A target firm has a standalone value of $80,000,000. An acquirer identifies $25,000,000 in net synergies and pays $95,000,000 to purchase the target. What is the takeover premium paid and the net economic value (NPV) captured by the acquirer?",
           "options": [
-            "Takeover Premium = $0; Acquirer NPV = +$25,000,000 (Assuming no premium was paid)",
-            "Takeover Premium = $25,000,000; Acquirer NPV = $0 (Equating premium with total synergies)",
-            "Takeover Premium = $15,000,000; Acquirer NPV = +$10,000,000 (Premium = $95M - $80M = $15M; NPV = $25M - $15M = +$10,000,000)",
-            "Takeover Premium = $15,000,000; Acquirer NPV = -$15,000,000 (Assuming zero synergies)"
+            "Takeover Premium of $15,000,000 and Acquirer NPV of +$25,000,000",
+            "Takeover Premium of $25,000,000 and Acquirer NPV of +$15,000,000",
+            "Takeover Premium of $15,000,000 and Acquirer NPV of +$10,000,000",
+            "Takeover Premium of $15,000,000 and Acquirer NPV of −$15,000,000"
           ],
           "answer": 2,
           "why": "Takeover Premium = Purchase Price - Standalone Value = $95,000,000 - $80,000,000 = $15,000,000. Acquirer NPV = Synergies - Premium Paid = $25,000,000 - $15,000,000 = +$10,000,000. The acquirer successfully retains $10M of the synergy surplus.",
@@ -6529,10 +6529,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an all-stock M&A transaction with zero synergies, when is the deal mathematically guaranteed to be accretive to the acquirer's EPS?",
           "options": [
-            "Whenever the exchange ratio is greater than 1.0 shares per target share",
-            "Whenever the central bank lowers baseline risk-free sovereign interest rates",
-            "Whenever the target company has a higher total market capitalization than the acquirer",
-            "Whenever the acquirer's P/E multiple is strictly higher than the target's effective transaction P/E multiple"
+            "Whenever the acquirer's P/E multiple is lower than the target's effective transaction P/E multiple",
+            "Whenever the target's earnings growth rate is faster than the acquirer's earnings growth rate",
+            "Whenever the target's market capitalization is smaller than the acquirer's market capitalization",
+            "Whenever the acquirer's P/E multiple is higher than the target's effective transaction P/E multiple"
           ],
           "answer": 3,
           "why": "In an all-stock deal without synergies, the deal is accretive if Acquirer P/E > Target P/E. The acquirer trades high-multiple equity to acquire earnings at a lower multiple, diluting share count by a smaller percentage than the earnings added.",
@@ -6568,10 +6568,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "An acquirer trades at $80.00 per share with $4.00 EPS. A target trades at $20.00 with $2.00 EPS. What is the feasible bargaining range for the share exchange ratio (assuming zero synergies)?",
           "options": [
-            "Feasible corridor is [0.2500 to 0.5000] shares (Floor = $20/$80 = 0.2500; Ceiling = $2.00/$4.00 = 0.5000)",
-            "Feasible corridor is [0.5000 to 1.0000] shares",
-            "Feasible corridor is [0.1000 to 0.2000] shares",
-            "There is no feasible corridor because the target EPS is lower than the acquirer EPS"
+            "Between 0.2500 and 0.5000 shares: the floor is $20/$80, the ceiling is $2.00/$4.00",
+            "Between 0.5000 and 4.0000 shares: the floor is $2.00/$4.00, the ceiling is $80/$20",
+            "Between 0.1000 and 0.2500 shares: the floor is $2.00/$20, the ceiling is $20/$80",
+            "Between 0.2500 and 1.0000 shares: the floor is $20/$80, the ceiling is a one-for-one swap"
           ],
           "answer": 0,
           "why": "Minimum floor acceptable to target = P_target / P_acquirer = $20.00 / 80.00 = 0.2500 shares. Maximum non-dilutive ceiling for acquirer = EPS target / EPS acquirer =2.00 / $4.00 = 0.5000 shares. The feasible bargaining zone is [0.2500, 0.5000].",
@@ -6612,10 +6612,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a traditional 'Poison Pill' (Shareholder Rights Plan) structurally deter a hostile takeover bidder?",
           "options": [
-            "It liquidates all company cash reserves and converts the enterprise into a non-profit charity",
-            "It automatically allows all shareholders except the hostile bidder to buy shares at a massive discount upon a stake threshold breach, inflicting catastrophic economic dilution on the bidder",
-            "It requires the hostile bidder to immediately pay off all corporate pension liabilities in gold bullion",
-            "It permanently freezes trading in the company's common stock across all international securities exchanges"
+            "It lets the target's board sell new shares to the bidder at a premium once a stake threshold is crossed, raising the bidder's cost",
+            "It lets all shareholders except the hostile bidder buy shares at a deep discount once a stake threshold is crossed, heavily diluting the bidder",
+            "It requires the bidder to buy all remaining shares at a fixed high price once a stake threshold is crossed, raising the bidder's cost",
+            "It gives every shareholder, including the bidder, the right to sell shares back to the target at a premium once a threshold is crossed"
           ],
           "answer": 1,
           "why": "A flip-in poison pill triggers when a hostile bidder breaches an ownership threshold (e.g. 15%). All shareholders other than the bidder receive rights to purchase shares at a severe discount (often 50%), massively diluting the bidder's ownership percentage and value.",
@@ -6864,10 +6864,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate financial advantage of implementing a centralized Multilateral Netting system within a multinational corporation?",
           "options": [
-            "It consolidates and nets all intercompany receivables and payables, eliminating up to 80-90% of cross-border bank wire transfers and FX bid-ask conversion spreads",
-            "It legally exempts the multinational from paying all corporate income taxes in foreign jurisdictions",
-            "It completely guarantees that foreign exchange rates will remain permanently fixed by law",
-            "It eliminates the need for multinational corporations to maintain audited balance sheets"
+            "It nets intercompany receivables and payables centrally, eliminating most cross-border wire transfers and FX conversion spreads",
+            "It converts all intercompany balances into a single hedged currency forward, eliminating transaction exposure and tax liabilities",
+            "It pools subsidiary cash into one bank account, eliminating the need for any borrowing and the associated interest expense",
+            "It settles intercompany balances at market exchange rates daily, eliminating translation exposure on the consolidated statements"
           ],
           "answer": 0,
           "why": "Multilateral netting centralizes intercompany obligations into a central clearinghouse, calculating each subsidiary's net balance. This eliminates 70-90% of redundant cross-border banking wires, saving substantial transaction fees and foreign exchange conversion spreads.",
@@ -6935,10 +6935,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If an equity research analyst finds that trading strategies based strictly on historical chart patterns and past price trends fail to generate abnormal returns, which form of market efficiency is supported?",
           "options": [
-            "Inefficient Market Hypothesis, which states that all asset prices are completely random noise",
-            "Semi-Strong Efficiency only, with weak-form efficiency being violated",
-            "Strong-Form Efficiency, which asserts that corporate insiders cannot trade profitably",
-            "Weak-Form Efficiency, which asserts that past price and volume data are already fully reflected in current market prices"
+            "Strong-Form Efficiency, which asserts that even private insider information is already fully reflected in current prices",
+            "Semi-Strong Efficiency, which asserts that public news is reflected in prices only after a lag of several weeks",
+            "Weak-Form Inefficiency, which asserts that past price and volume data still contain information that predicts future prices",
+            "Weak-Form Efficiency, which asserts that past price and volume data are already fully reflected in current prices"
           ],
           "answer": 3,
           "why": "Weak-form efficiency specifically tests whether historical price and volume data can predict future returns. If technical analysis on past trading data fails to earn excess returns (alpha), the market exhibits weak-form efficiency.",
@@ -7021,10 +7021,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is Post-Earnings Announcement Drift (PEAD) and why does it contradict the Semi-Strong Form of the Efficient Market Hypothesis?",
           "options": [
-            "Stock prices immediately reflect all insider trading information before quarterly earnings are released to the public",
-            "Stock prices fail to adjust immediately to earnings surprises, instead drifting in the direction of the surprise for weeks due to investor under-reaction",
-            "Corporate executives intentionally manipulate accounting earnings to conceal operating losses from auditors",
-            "Stock prices always fall on earnings announcement days regardless of whether the report was positive or negative"
+            "Prices overreact to earnings surprises and then reverse over the following weeks, showing investor overreaction to news",
+            "Prices fail to adjust fully to earnings surprises and drift in the surprise direction for weeks, showing investor under-reaction",
+            "Prices adjust instantly to earnings surprises but trading volume drifts for weeks, showing liquidity constraints on investors",
+            "Prices drift opposite to the direction of the earnings surprise for weeks, showing investor under-reaction to the news"
           ],
           "answer": 1,
           "why": "Semi-strong EMH mandates that public news (like earnings reports) must be incorporated into prices instantaneously. PEAD proves that prices adjust gradually over 60-90 days following earnings surprises, demonstrating investor under-reaction and market inefficiency.",
@@ -7064,10 +7064,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following corporate governance structures best mitigates agency conflicts between executive management and public shareholders?",
           "options": [
-            "Combining the roles of Chief Executive Officer and Chairman of the Board into a single individual",
-            "Compensating executive management strictly with fixed cash salaries with zero equity incentives",
-            "A board of directors with a majority of independent non-executive directors and an audit committee composed entirely of independent financial experts",
-            "Eliminating external independent financial audits to reduce corporate overhead expenses"
+            "A board where the CEO also serves as chair and most directors are senior executives, with an audit committee led by the CFO",
+            "A board of long-serving directors nominated by management, with an audit committee drawn from the company's major suppliers",
+            "A board with a majority of independent non-executive directors and an audit committee made up of independent financial experts",
+            "A board split equally between executives and outside directors, with an audit committee chaired by the Chief Executive Officer"
           ],
           "answer": 2,
           "why": "Independent board majorities and fully independent audit committees provide objective oversight over management, eliminating conflicts of interest and ensuring management acts in the best interest of shareholders.",
@@ -7106,10 +7106,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal requirement mandated by Section 302 of the Sarbanes-Oxley Act (SOX) for public company executives?",
           "options": [
-            "The board of directors must hire former government officials to manage corporate investor relations",
-            "The company is legally prohibited from using financial derivatives for hedging purposes",
-            "The corporation must pay 100% of its annual earnings out as cash dividends to shareholders",
-            "The CEO and CFO must personally certify in writing that corporate financial reports are accurate and that internal controls have been reviewed, under penalty of criminal prosecution"
+            "The external auditor must personally certify in writing that financial reports are accurate and controls are effective, under civil penalty",
+            "The audit committee chair and CEO must certify that reports comply with internal company policies, under disciplinary penalty only",
+            "The board must rotate the external auditor every five years and certify the rotation in writing, under criminal penalty",
+            "The CEO and CFO must personally certify in writing that financial reports are accurate and controls were reviewed, under criminal penalty"
           ],
           "answer": 3,
           "why": "SOX Section 302 requires the Chief Executive Officer and Chief Financial Officer to personally sign certifications confirming that they have reviewed financial statements, that the reports contain no material misstatements, and that internal controls are effective, backed by criminal penalties.",
@@ -7185,10 +7185,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Capstone Phase 1, what are the consolidated Degree of Combined Leverage (DCL) and the Hamada relevered equity beta (Beta_L) calculated for Titan Global Enterprises?",
           "options": [
-            "DCL = 1.60x and Beta_L = 2.0000 (overshooting target risk)",
-            "DCL = 2.50x (DOL 2.00x * DFL 1.25x) and Beta_L = 1.3875 (yielding WACC = 11.04%)",
-            "DCL = 2.00x and Beta_L = 1.1500 (ignoring tax deduction on debt)",
-            "DCL = 3.50x and Beta_L = 1.0500 (unlevered beta)"
+            "DCL = 3.25x (DOL 2.00x + DFL 1.25x) and Beta_L = 1.3875, giving a WACC of 11.04% for Titan",
+            "DCL = 2.50x (DOL 2.00x × DFL 1.25x) and Beta_L = 1.3875, giving a WACC of 11.04% for Titan",
+            "DCL = 2.50x (DOL 2.00x × DFL 1.25x) and Beta_L = 1.5000 (no tax effect), giving a WACC of 11.70%",
+            "DCL = 1.60x (DOL 2.00x ÷ DFL 1.25x) and Beta_L = 1.0500 (unlevered), giving a WACC of 10.20%"
           ],
           "answer": 1,
           "why": "DOL = Contribution / EBIT = $60M / $30M = 2.00x. DFL = EBIT / EBT = $30M / $24M = 1.25x. DCL = DOL * DFL = 2.00 * 1.25 = 2.50x. Hamada Beta_L = 1.05 * [1 + 0.75 * (30/70)] = 1.3875.",
@@ -7290,10 +7290,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Capstone Phase 3, why does Titan Global's treasury execute the Forward Market Hedge for its EUR 10M receivable rather than the Money Market Hedge?",
           "options": [
-            "The forward contract allows Titan to speculate on cryptocurrency price movements",
-            "International banking regulations legally prohibit corporations from using money market hedges",
-            "The Money Market Hedge involves paying a non-refundable upfront cash premium that exceeds $1,000,000",
-            "The Forward Market Hedge delivers $11,150,000 in guaranteed USD cash, outperforming the Money Market Hedge ($11,135,468) by a net $14,532 advantage"
+            "The money market hedge locks in $11,150,000, beating the forward hedge's $11,135,468 by $14,532",
+            "The forward hedge yields $11,150,000 but leaves some currency risk, which the money market hedge removes",
+            "The two hedges yield the same $11,150,000, so the choice depends only on transaction fees",
+            "The forward hedge locks in $11,150,000, beating the money market hedge's $11,135,468 by $14,532"
           ],
           "answer": 3,
           "why": "Comparing terminal cash proceeds: Forward Hedge yields EUR 10M * $1.1150 = $11,150,000. Money Market Hedge yields $11,135,468. The forward contract secures an extra $14,532 while eliminating 100% of currency risk.",
@@ -7390,10 +7390,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core executive findings are consolidated and ratified in the Grand Master CFO Command Center of Titan Global Enterprises Corporation?",
           "options": [
-            "Refusal to approve any capital expenditures or strategic mergers due to market uncertainty",
-            "Approval of $40M CapEx (+$13.0M NPV), $23.45 DCF share price, +$10.57M M&A net value, 100% FX netting efficiency, and a 0.7563 Sharpe / +306 bps Alpha treasury portfolio",
-            "Complete elimination of all corporate equity and liquidation of company assets into cash",
-            "Adoption of 100% debt financing with zero interest rate or foreign exchange risk management"
+            "$40M CapEx rejected (−$13.0M NPV), $23.45 DCF price, +$10.57M M&A value, 60% FX netting, and Sharpe 0.7563 with −306 bps Alpha",
+            "$40M CapEx approved (+$13.0M NPV), $23.45 DCF price, +$10.57M M&A value, 100% FX netting, and Sharpe 0.7563 with +306 bps Alpha",
+            "$40M CapEx approved (+$13.0M NPV), $32.45 DCF price, −$10.57M M&A value, 100% FX netting, and Sharpe 0.2563 with +306 bps Alpha",
+            "$40M CapEx approved (+$3.0M NPV), $23.45 DCF price, +$1.57M M&A value, 40% FX netting, and Sharpe 1.7563 with +30 bps Alpha"
           ],
           "answer": 1,
           "why": "The Grand Master CFO Command Center consolidates all four phases: capital budgeting approval ($40M outlay, +$13.0M NPV), DCF equity fair value ($23.45/share), accretive M&A due diligence (+$10.57M NPV), global treasury immunization (100% netting, $1.01M swap gain), and a strong portfolio scorecard (Sharpe 0.756, Alpha +306 bps).",
@@ -7539,10 +7539,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What constitutes the primary risk of relying exclusively on exit multiple terminal values in DCF models?",
           "options": [
-            "Exit multiples require knowing future debt paydown amounts five years in advance",
-            "Exit multiples are prohibited under international financial reporting standards",
-            "Exit multiples cannot be applied to profitable manufacturing corporations",
-            "Exit multiples circularize the DCF by relying on public market sentiment rather than intrinsic cash generation"
+            "Exit multiples overstate value because they ignore the cash flows of the final forecast year entirely",
+            "Exit multiples cannot reflect the target's actual growth prospects because accounting rules regulate them",
+            "Exit multiples cannot be applied to private companies because no market multiples exist for such firms",
+            "Exit multiples make the DCF circular by relying on market sentiment instead of intrinsic cash generation"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7628,10 +7628,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of a mandatory cash sweep in private equity credit agreements?",
           "options": [
-            "Distributes all residual operating profits as immediate quarterly dividends to the sponsor",
-            "Requires lenders to inject additional equity capital if EBITDA margins contract",
-            "Locks company cash in escrow until all common equity shares are fully vested",
-            "Forces the portfolio company to apply all excess operational free cash flow toward prepaying debt principal"
+            "Forces the company to distribute excess free cash flow to equity holders as dividends",
+            "Forces the company to hold excess free cash flow in a reserve account for future capex",
+            "Forces the company to use excess free cash flow to repay the sponsor's equity stake",
+            "Forces the portfolio company to use all excess operating free cash flow to prepay debt principal"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7687,10 +7687,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the two core return metrics evaluated by private equity investment committees?",
           "options": [
-            "Price-to-Earnings Ratio and Enterprise-to-Sales Multiple",
+            "EV/EBITDA exit multiple and Debt Service Coverage Ratio (DSCR)",
             "Multiple on Invested Capital (MoIC) and Internal Rate of Return (IRR)",
-            "Quick Ratio and Days Sales Outstanding",
-            "Operating Cash Flow Margin and Current Ratio"
+            "Return on Equity (ROE) and annual Earnings Per Share (EPS) growth",
+            "Net Present Value (NPV) and Discounted Payback Period in years"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7718,10 +7718,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does operational debt paydown create value for private equity sponsors upon exit?",
           "options": [
-            "Paying down debt increases the corporate marginal tax rate to maximize deductions",
-            "Paying down debt eliminates the need to negotiate an exit multiple upon sale",
-            "Paying down debt reduces enterprise debt claims, dollar-for-dollar expanding the residual equity value",
-            "Paying down debt converts common stock into non-voting preferred shares"
+            "Each dollar of principal repaid raises the exit multiple the market pays, lifting value above the purchase price",
+            "Each dollar of principal repaid lowers interest cost, which lifts EBITDA and enterprise value one-for-one",
+            "Each dollar of principal repaid cuts the debt claims on the firm and raises equity value one-for-one",
+            "Each dollar of principal repaid moves value to lenders at exit, so equity value falls unless the multiple expands"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7837,10 +7837,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is balance sheet Goodwill calculated under Purchase Price Allocation accounting?",
           "options": [
-            "Goodwill = Target Historical Book Value * Acquirer P/E Multiple",
-            "Goodwill = Pre-Tax Synergies / Weighted Average Cost of Capital",
-            "Goodwill = Total Purchase Price + Target Standalone EBITDA",
-            "Goodwill = Excess Purchase Price - Identifiable Asset Write-Ups + Deferred Tax Liabilities"
+            "Goodwill = excess purchase price + identifiable asset write-ups − deferred tax liabilities",
+            "Goodwill = excess purchase price − identifiable asset write-ups − deferred tax liabilities",
+            "Goodwill = excess purchase price + identifiable asset write-ups + deferred tax liabilities",
+            "Goodwill = excess purchase price − identifiable asset write-ups + deferred tax liabilities"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7987,10 +7987,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Modigliani-Miller Proposition I with corporate taxes, why does firm value increase with debt?",
           "options": [
-            "Debt holders accept lower dividend yields than common equity shareholders",
-            "Interest payments are tax-deductible, creating a permanent interest tax shield that increases net cash flows",
-            "Commercial banks guarantee enterprise customer contracts against bankruptcy",
-            "Financial leverage eliminates the need to maintain capital expenditure reserves"
+            "Interest rates fall as debt rises, creating a permanent financing saving of T × Debt that raises net cash flows",
+            "Interest is tax-deductible, creating a permanent interest tax shield of T × Debt that raises net cash flows",
+            "Debt holders absorb part of operating risk, creating a permanent risk transfer of T × Debt that raises cash flows",
+            "Debt reduces the share count, creating a permanent EPS gain of T × Debt that raises the firm's share price"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8017,10 +8017,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the Hamada equation mathematically calculate?",
           "options": [
-            "Determines the terminal growth rate of free cash flows in a discounted cash flow model",
-            "Bridges GAAP net income to statutory taxable income for tax filing purposes",
-            "Relevers an unlevered asset beta to reflect the financial risk introduced by a specific debt-to-equity ratio",
-            "Calculates the exact probability of bond default over a five-year economic horizon"
+            "Unlevers an observed equity beta to remove the financial risk from a specific debt-to-equity ratio",
+            "Estimates the cost of debt from the firm's credit spread and a specific debt-to-equity ratio",
+            "Relevers an unlevered asset beta to reflect the financial risk from a specific debt-to-equity ratio",
+            "Calculates the after-tax WACC from the market weights of debt and equity at a specific ratio"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8077,10 +8077,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is minimizing WACC mathematically equivalent to maximizing Enterprise Value?",
           "options": [
-            "Enterprise Value is the present value of future cash flows; minimizing the discount rate maximizes present value",
-            "A lower WACC automatically increases reported GAAP gross profit margins",
-            "Minimizing WACC reduces the number of common shares required to elect board directors",
-            "A minimum WACC guarantees that commercial lenders cannot enforce debt covenants"
+            "Enterprise Value is the present value of future cash flows, so a lower discount rate gives a higher present value",
+            "Enterprise Value is the book value of capital employed, so a lower discount rate gives a higher accounting value",
+            "Enterprise Value is the present value of future cash flows, so a higher discount rate gives a higher present value",
+            "Enterprise Value is the sum of debt and equity at issuance, so a lower discount rate gives a larger raise"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8167,10 +8167,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an investment banking strategic review, why does a strategic corporate acquirer frequently outbid a private equity financial sponsor?",
           "options": [
-            "Private equity sponsors are legally prohibited from paying more than book value for target assets",
-            "Strategic buyers are exempt from corporate income taxes on acquired operating earnings",
-            "Strategic buyers monetize operational synergies that are unavailable to financial sponsors, justifying a higher price",
-            "Syndicated loan markets refuse to lend capital to private equity buyout partnerships"
+            "Strategic buyers can use more leverage than financial sponsors can, which justifies a higher bid price",
+            "Strategic buyers face lower regulatory scrutiny than financial sponsors do, which justifies a higher bid",
+            "Strategic buyers can realize operational synergies that financial sponsors cannot, justifying a higher price",
+            "Strategic buyers accept lower returns than financial sponsors since their funds have no fixed horizon"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8197,10 +8197,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary purpose of a board Fairness Opinion in an M&A transaction?",
           "options": [
-            "A regulatory filing exempting the transaction from antitrust regulatory review",
-            "An independent valuation opinion confirming that the proposed transaction consideration is fair from a financial point of view",
-            "An accounting certificate guaranteeing that goodwill will never suffer balance sheet impairments",
-            "A legal document certifying that the acquiring corporation will never lay off target employees"
+            "A legal guarantee that the board will not face shareholder lawsuits over the price agreed in the deal",
+            "An independent opinion that the deal consideration is fair to shareholders from a financial point of view",
+            "A certification that the buyer can finance the full purchase price from committed funding sources",
+            "An audit opinion that the target's financial statements follow GAAP without any material errors"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8227,10 +8227,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Football Field valuation chart assist executive leadership during transaction negotiations?",
           "options": [
-            "It visually displays valuation ranges across multiple methodologies (52-week trading, comps, precedents, DCF, LBO) on a single scale",
-            "It tracks the daily price movements of sovereign government bond yields over a decade",
-            "It allocates customer accounts across regional sales territories post-closing",
-            "It graphs the historical progression of corporate debt defaults in the manufacturing sector"
+            "It shows valuation ranges from several methods (trading range, comps, precedents, DCF, LBO) on one scale",
+            "It shows the target's historical stock price against its peers' share prices on a single timeline",
+            "It shows each bidder's offer price and financing mix (cash, stock, debt) side by side on one scale",
+            "It shows the sensitivity of a single DCF value to changes in WACC and terminal growth on one grid"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8258,10 +8258,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Milestone 7 Capstone simulation, why did the advisory syndicate recommend the Titan Technologies merger over the Olympus LBO?",
           "options": [
-            "Apex Industrial Systems carried too much cash to qualify for a private equity buyout",
-            "Titan Technologies agreed to convert its common stock into non-voting preferred shares",
-            "Olympus Capital failed to secure senior debt financing from commercial bank syndicates",
-            "Titan offered a superior valuation ($25.00/sh vs $22.50/sh), unlocked $35M in synergies, and generated 6.13% EPS accretion"
+            "Titan offered the higher valuation ($25.00 vs $22.50 per share), but only $5M of synergies and 6.13% EPS dilution",
+            "Olympus offered the higher valuation ($25.00 vs $22.50 per share), $35M of synergies, and 6.13% EPS accretion",
+            "Titan offered the lower valuation ($22.50 vs $25.00 per share) but $35M of synergies and 6.13% EPS accretion",
+            "Titan offered the higher valuation ($25.00 vs $22.50 per share), $35M of synergies, and 6.13% EPS accretion"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8290,10 +8290,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 7 Grand Capstone?",
           "options": [
-            "INVESTMENT_COMMITTEE_REJECTION",
-            "CAPSTONE_VALUATION_SIMULATOR_FAIL",
+            "INVESTMENT_BANKING_VALUATION_ENGINE_PASS",
+            "CORPORATE_FINANCE_TRANSACTION_SIMULATOR_PASS",
             "INVESTMENT_BANKING_TRANSACTION_SIMULATOR_PASS",
-            "TRANSACTION_WATERFALL_ABORT"
+            "MERGERS_ACQUISITIONS_DEAL_SIMULATOR_PASS"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9207,10 +9207,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 8 Grand Capstone?",
           "options": [
-            "SYNDICATE_RESTRUCTURING_ABORT",
-            "GLOBAL_TREASURY_HALT_REJECTED",
+            "GLOBAL_TREASURY_HEDGING_SIMULATOR_PASS",
+            "CORPORATE_TREASURY_SYNDICATE_SIMULATOR_PASS",
             "GLOBAL_TREASURY_SYNDICATE_SIMULATOR_PASS",
-            "CAPITAL_MARKETS_SIMULATOR_ERROR"
+            "GLOBAL_CASH_MANAGEMENT_SYNDICATE_ENGINE_PASS"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9806,10 +9806,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary commercial and structural benefit do Asian options offer corporate commodity hedgers compared to European vanilla options?",
           "options": [
-            "Guaranteed unlimited upside leverage without paying upfront option premiums",
-            "Complete exemption from Dodd-Frank and EMIR central clearing mandates",
-            "Lower option premiums due to variance reduction and elimination of expiration date price manipulation",
-            "Higher Delta sensitivity that magnifies short-term intraday market momentum"
+            "Lower premiums because the holder can exercise early at any time, avoiding expiry date price risk",
+            "Higher premiums because the payoff uses the best price seen in the period, locking in the top rate",
+            "Lower premiums from variance reduction, and no exposure to price spikes on the expiration date",
+            "Lower premiums because the option is cash-settled in the home currency, removing all basis risk"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9838,10 +9838,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary commercial and structural benefit do Asian options offer corporate commodity hedgers compared to European vanilla options?",
           "options": [
-            "Complete exemption from Dodd-Frank and EMIR central clearing mandates",
-            "Lower option premiums due to variance reduction and elimination of expiration date price manipulation",
-            "Higher Delta sensitivity that magnifies short-term intraday market momentum",
-            "Guaranteed unlimited upside leverage without paying upfront option premiums"
+            "Lower premiums because the holder can exercise early at any time, avoiding expiry date price risk",
+            "Lower premiums from variance reduction, and no exposure to price spikes on the expiration date",
+            "Higher premiums because the payoff uses the best price seen in the period, locking in the top rate",
+            "Lower premiums because the option is cash-settled in the home currency, removing all basis risk"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9870,10 +9870,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary commercial and structural benefit do Asian options offer corporate commodity hedgers compared to European vanilla options?",
           "options": [
-            "Lower option premiums due to variance reduction and elimination of expiration date price manipulation",
-            "Guaranteed unlimited upside leverage without paying upfront option premiums",
-            "Complete exemption from Dodd-Frank and EMIR central clearing mandates",
-            "Higher Delta sensitivity that magnifies short-term intraday market momentum"
+            "Lower premiums from variance reduction, and no exposure to price spikes on the expiration date",
+            "Lower premiums because the holder can exercise early at any time, avoiding expiry date price risk",
+            "Higher premiums because the payoff uses the best price seen in the period, locking in the top rate",
+            "Lower premiums because the option is cash-settled in the home currency, removing all basis risk"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9902,10 +9902,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary commercial and structural benefit do Asian options offer corporate commodity hedgers compared to European vanilla options?",
           "options": [
-            "Complete exemption from Dodd-Frank and EMIR central clearing mandates",
-            "Higher Delta sensitivity that magnifies short-term intraday market momentum",
-            "Guaranteed unlimited upside leverage without paying upfront option premiums",
-            "Lower option premiums due to variance reduction and elimination of expiration date price manipulation"
+            "Lower premiums because the holder can exercise early at any time, avoiding expiry date price risk",
+            "Higher premiums because the payoff uses the best price seen in the period, locking in the top rate",
+            "Lower premiums because the option is cash-settled in the home currency, removing all basis risk",
+            "Lower premiums from variance reduction, and no exposure to price spikes on the expiration date"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9935,10 +9935,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary commercial and structural benefit do Asian options offer corporate commodity hedgers compared to European vanilla options?",
           "options": [
-            "Guaranteed unlimited upside leverage without paying upfront option premiums",
-            "Complete exemption from Dodd-Frank and EMIR central clearing mandates",
-            "Lower option premiums due to variance reduction and elimination of expiration date price manipulation",
-            "Higher Delta sensitivity that magnifies short-term intraday market momentum"
+            "Lower premiums because the holder can exercise early at any time, avoiding expiry date price risk",
+            "Higher premiums because the payoff uses the best price seen in the period, locking in the top rate",
+            "Lower premiums from variance reduction, and no exposure to price spikes on the expiration date",
+            "Lower premiums because the option is cash-settled in the home currency, removing all basis risk"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9991,10 +9991,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 9 Grand Capstone Trading Desk Simulator?",
           "options": [
-            "FINANCIAL_ENGINEERING_REJECTED",
+            "QUANT_RISK_TRADING_DESK_SIMULATOR_PASS",
             "QUANT_RISK_FIN_ENGINEERING_SIMULATOR_PASS",
-            "DERIVATIVES_TRADING_SIMULATOR_ERROR",
-            "QUANT_CAPITAL_MARKETS_ABORT"
+            "QUANTITATIVE_RISK_FIN_ENGINEERING_COMPLETE",
+            "DERIVATIVES_RISK_ENGINEERING_SIMULATOR_PASS"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10023,10 +10023,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 9 Grand Capstone Trading Desk Simulator?",
           "options": [
-            "FINANCIAL_ENGINEERING_REJECTED",
-            "DERIVATIVES_TRADING_SIMULATOR_ERROR",
+            "QUANT_RISK_TRADING_DESK_SIMULATOR_PASS",
+            "QUANTITATIVE_RISK_FIN_ENGINEERING_COMPLETE",
             "QUANT_RISK_FIN_ENGINEERING_SIMULATOR_PASS",
-            "QUANT_CAPITAL_MARKETS_ABORT"
+            "DERIVATIVES_RISK_ENGINEERING_SIMULATOR_PASS"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10056,9 +10056,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 9 Grand Capstone Trading Desk Simulator?",
           "options": [
-            "DERIVATIVES_TRADING_SIMULATOR_ERROR",
-            "QUANT_CAPITAL_MARKETS_ABORT",
-            "FINANCIAL_ENGINEERING_REJECTED",
+            "QUANT_RISK_TRADING_DESK_SIMULATOR_PASS",
+            "QUANTITATIVE_RISK_FIN_ENGINEERING_COMPLETE",
+            "DERIVATIVES_RISK_ENGINEERING_SIMULATOR_PASS",
             "QUANT_RISK_FIN_ENGINEERING_SIMULATOR_PASS"
           ],
           "answer": 3,
@@ -10090,9 +10090,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What master cryptographic token validates complete execution of the Milestone 9 Grand Capstone Trading Desk Simulator?",
           "options": [
             "QUANT_RISK_FIN_ENGINEERING_SIMULATOR_PASS",
-            "DERIVATIVES_TRADING_SIMULATOR_ERROR",
-            "QUANT_CAPITAL_MARKETS_ABORT",
-            "FINANCIAL_ENGINEERING_REJECTED"
+            "QUANT_RISK_TRADING_DESK_SIMULATOR_PASS",
+            "QUANTITATIVE_RISK_FIN_ENGINEERING_COMPLETE",
+            "DERIVATIVES_RISK_ENGINEERING_SIMULATOR_PASS"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10122,10 +10122,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 9 Grand Capstone Trading Desk Simulator?",
           "options": [
-            "FINANCIAL_ENGINEERING_REJECTED",
+            "QUANT_RISK_TRADING_DESK_SIMULATOR_PASS",
             "QUANT_RISK_FIN_ENGINEERING_SIMULATOR_PASS",
-            "DERIVATIVES_TRADING_SIMULATOR_ERROR",
-            "QUANT_CAPITAL_MARKETS_ABORT"
+            "QUANTITATIVE_RISK_FIN_ENGINEERING_COMPLETE",
+            "DERIVATIVES_RISK_ENGINEERING_SIMULATOR_PASS"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10742,10 +10742,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate reorganization under Chapter 11, how is the 'Fulcrum Security' analytically identified?",
           "options": [
-            "As the trade vendor payables incurred within twenty days prior to bankruptcy filing",
-            "As the specific debt tranche that is neither fully covered nor completely uncovered by the reorganized enterprise value",
-            "As the most senior secured revolving credit line that holds first-priority liens on cash accounts",
-            "As the common equity shares held by the founding executive management team"
+            "The most senior debt tranche, which is fully covered by the reorganized enterprise value and paid in cash",
+            "The debt tranche that is only partly covered by the reorganized enterprise value, where the value runs out",
+            "The most junior debt tranche, which receives nothing and is wiped out under the reorganization plan",
+            "The debt tranche with the highest coupon, which the court converts into the reorganized company's equity"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10775,10 +10775,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate reorganization under Chapter 11, how is the 'Fulcrum Security' analytically identified?",
           "options": [
-            "As the most senior secured revolving credit line that holds first-priority liens on cash accounts",
-            "As the common equity shares held by the founding executive management team",
-            "As the specific debt tranche that is neither fully covered nor completely uncovered by the reorganized enterprise value",
-            "As the trade vendor payables incurred within twenty days prior to bankruptcy filing"
+            "The most senior debt tranche, which is fully covered by the reorganized enterprise value and paid in cash",
+            "The most junior debt tranche, which receives nothing and is wiped out under the reorganization plan",
+            "The debt tranche that is only partly covered by the reorganized enterprise value, where the value runs out",
+            "The debt tranche with the highest coupon, which the court converts into the reorganized company's equity"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10809,10 +10809,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate reorganization under Chapter 11, how is the 'Fulcrum Security' analytically identified?",
           "options": [
-            "As the common equity shares held by the founding executive management team",
-            "As the trade vendor payables incurred within twenty days prior to bankruptcy filing",
-            "As the most senior secured revolving credit line that holds first-priority liens on cash accounts",
-            "As the specific debt tranche that is neither fully covered nor completely uncovered by the reorganized enterprise value"
+            "The most senior debt tranche, which is fully covered by the reorganized enterprise value and paid in cash",
+            "The most junior debt tranche, which receives nothing and is wiped out under the reorganization plan",
+            "The debt tranche with the highest coupon, which the court converts into the reorganized company's equity",
+            "The debt tranche that is only partly covered by the reorganized enterprise value, where the value runs out"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10842,10 +10842,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate reorganization under Chapter 11, how is the 'Fulcrum Security' analytically identified?",
           "options": [
-            "As the specific debt tranche that is neither fully covered nor completely uncovered by the reorganized enterprise value",
-            "As the most senior secured revolving credit line that holds first-priority liens on cash accounts",
-            "As the common equity shares held by the founding executive management team",
-            "As the trade vendor payables incurred within twenty days prior to bankruptcy filing"
+            "The debt tranche that is only partly covered by the reorganized enterprise value, where the value runs out",
+            "The most senior debt tranche, which is fully covered by the reorganized enterprise value and paid in cash",
+            "The most junior debt tranche, which receives nothing and is wiped out under the reorganization plan",
+            "The debt tranche with the highest coupon, which the court converts into the reorganized company's equity"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10878,10 +10878,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate reorganization under Chapter 11, how is the 'Fulcrum Security' analytically identified?",
           "options": [
-            "As the common equity shares held by the founding executive management team",
-            "As the specific debt tranche that is neither fully covered nor completely uncovered by the reorganized enterprise value",
-            "As the trade vendor payables incurred within twenty days prior to bankruptcy filing",
-            "As the most senior secured revolving credit line that holds first-priority liens on cash accounts"
+            "The most senior debt tranche, which is fully covered by the reorganized enterprise value and paid in cash",
+            "The debt tranche that is only partly covered by the reorganized enterprise value, where the value runs out",
+            "The most junior debt tranche, which receives nothing and is wiped out under the reorganization plan",
+            "The debt tranche with the highest coupon, which the court converts into the reorganized company's equity"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10936,9 +10936,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 10 Grand Capstone Simulator?",
           "options": [
-            "DISTRESSED_RESTRUCTURING_HALT",
-            "PRIVATE_EQUITY_WATERFALL_ERROR",
-            "LBO_TRANSACTION_REJECTED",
+            "PE_LBO_SPECIAL_SITUATIONS_SIMULATOR_PASS",
+            "PE_MEGAFUND_DISTRESSED_RESTRUCTURING_ENGINE_PASS",
+            "LBO_DISTRESSED_DEBT_RESTRUCTURING_SIMULATOR_PASS",
             "PE_LBO_DISTRESSED_RESTRUCTURING_SIMULATOR_PASS"
           ],
           "answer": 3,
@@ -10970,9 +10970,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What master cryptographic token validates complete execution of the Milestone 10 Grand Capstone Simulator?",
           "options": [
             "PE_LBO_DISTRESSED_RESTRUCTURING_SIMULATOR_PASS",
-            "PRIVATE_EQUITY_WATERFALL_ERROR",
-            "LBO_TRANSACTION_REJECTED",
-            "DISTRESSED_RESTRUCTURING_HALT"
+            "PE_LBO_SPECIAL_SITUATIONS_SIMULATOR_PASS",
+            "PE_MEGAFUND_DISTRESSED_RESTRUCTURING_ENGINE_PASS",
+            "LBO_DISTRESSED_DEBT_RESTRUCTURING_SIMULATOR_PASS"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11003,10 +11003,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 10 Grand Capstone Simulator?",
           "options": [
-            "LBO_TRANSACTION_REJECTED",
+            "PE_LBO_SPECIAL_SITUATIONS_SIMULATOR_PASS",
             "PE_LBO_DISTRESSED_RESTRUCTURING_SIMULATOR_PASS",
-            "DISTRESSED_RESTRUCTURING_HALT",
-            "PRIVATE_EQUITY_WATERFALL_ERROR"
+            "PE_MEGAFUND_DISTRESSED_RESTRUCTURING_ENGINE_PASS",
+            "LBO_DISTRESSED_DEBT_RESTRUCTURING_SIMULATOR_PASS"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11037,10 +11037,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 10 Grand Capstone Simulator?",
           "options": [
-            "DISTRESSED_RESTRUCTURING_HALT",
-            "PRIVATE_EQUITY_WATERFALL_ERROR",
+            "PE_LBO_SPECIAL_SITUATIONS_SIMULATOR_PASS",
+            "PE_MEGAFUND_DISTRESSED_RESTRUCTURING_ENGINE_PASS",
             "PE_LBO_DISTRESSED_RESTRUCTURING_SIMULATOR_PASS",
-            "LBO_TRANSACTION_REJECTED"
+            "LBO_DISTRESSED_DEBT_RESTRUCTURING_SIMULATOR_PASS"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11071,9 +11071,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master cryptographic token validates complete execution of the Milestone 10 Grand Capstone Simulator?",
           "options": [
-            "PRIVATE_EQUITY_WATERFALL_ERROR",
-            "LBO_TRANSACTION_REJECTED",
-            "DISTRESSED_RESTRUCTURING_HALT",
+            "PE_LBO_SPECIAL_SITUATIONS_SIMULATOR_PASS",
+            "PE_MEGAFUND_DISTRESSED_RESTRUCTURING_ENGINE_PASS",
+            "LBO_DISTRESSED_DEBT_RESTRUCTURING_SIMULATOR_PASS",
             "PE_LBO_DISTRESSED_RESTRUCTURING_SIMULATOR_PASS"
           ],
           "answer": 3,
@@ -11219,10 +11219,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Foreign Investment Risk Review Modernization Act (FIRRMA), what triggers mandatory CFIUS review even if a foreign sovereign fund acquires a non-controlling minority stake?",
           "options": [
-            "If the target company has ever issued a paper invoice to a public municipal government entity.",
-            "If the target is a TID U.S. business and the investment conveys board seats, observer rights, or access to material non-public technical information.",
-            "If the investment transaction is denominated in any currency other than gold-backed sovereign certificates.",
-            "If the sovereign wealth fund holds more than fifty thousand dollars in cash reserves in any domestic central bank."
+            "The investment exceeds 10% of the target's voting shares, whether or not it conveys board seats or technical information access",
+            "The target is a TID U.S. business and the investment conveys board seats, observer rights, or access to non-public technical information",
+            "The target is any U.S. business with annual revenue above $50 million and the investor is a foreign government-owned fund",
+            "The investor is a sovereign fund from a country on the Treasury watchlist and holds the stake through a U.S. blocker entity"
           ],
           "answer": 1,
           "why": "FIRRMA explicitly extends CFIUS jurisdiction to non-controlling investments in TID (Technology, Infrastructure, Data) businesses if rights like board representation or technical access are granted.",
@@ -11673,10 +11673,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental structural difference between a Green Bond and a Sustainability-Linked Bond (SLB)?",
           "options": [
-            "SLBs require the corporate issuer to forfeit physical corporate ownership to environmental regulatory agencies if targets are missed.",
-            "Green Bonds are issued exclusively by non-profit charities, whereas SLBs can only be purchased by foreign central banks.",
-            "Green Bonds never pay cash interest coupons, whereas SLBs pay dividends based on daily solar radiation measurements.",
-            "Green Bond proceeds must be strictly allocated to eligible green projects, whereas SLB proceeds can be used for general purposes but feature coupon adjustments based on KPI achievement."
+            "SLB proceeds are ring-fenced for eligible green projects, whereas Green Bond proceeds can fund general purposes but the coupon adjusts with KPI results",
+            "Green Bonds are issued only by governments and SLBs only by corporations, but both ring-fence proceeds for eligible green projects only",
+            "Green Bonds pay a fixed coupon backed by carbon credits, whereas SLBs pay a floating coupon linked to the issuer's credit rating",
+            "Green Bond proceeds are ring-fenced for eligible green projects, whereas SLB proceeds fund general purposes with a coupon tied to KPI results"
           ],
           "answer": 3,
           "why": "Green bonds ring-fence proceeds for dedicated green projects; SLBs allow general corporate use but adjust the coupon rate based on whether the issuer hits predefined ESG targets.",
@@ -11764,10 +11764,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal purpose of a 'Corresponding Adjustment' under Article 6 of the Paris Agreement when carbon credits are transferred across international borders?",
           "options": [
-            "To convert all voluntary carbon credits into physical currency notes issued by the International Monetary Fund.",
-            "To mandate that all international corporate executives travel exclusively by electric railway between trading hubs.",
-            "To ensure the host nation deducts the exported carbon reduction from its national emissions registry, strictly preventing the same reduction from being double-counted.",
-            "To force private buyers to pay a one hundred percent import tariff directly to the World Trade Organization."
+            "It ensures the buyer country pays a tax on imported carbon credits, preventing the market from being undersupplied",
+            "It requires the host country to retire the credit permanently from the registry, preventing buyers from reselling it",
+            "It ensures the host country deducts the exported carbon reduction from its own emissions accounting, preventing double counting",
+            "It adjusts the credit's price for the host country's inflation rate, preventing it from losing value across borders"
           ],
           "answer": 2,
           "why": "A Corresponding Adjustment ensures that the host country removes the exported mitigation outcome from its own NDC accounting, eliminating double-counting.",
@@ -11886,10 +11886,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone Eleven project finance model, how does debt sculpting maximize total borrowing capacity compared to straight-line debt amortization?",
           "options": [
-            "By transferring all future debt obligations to the municipal school district balance sheet.",
-            "By eliminating all interest expense calculations through the use of zero-coupon sovereign treasury bills.",
-            "By legally requiring the commercial banks to forgive fifty percent of the outstanding loan balance after five years of operation.",
-            "By shaping each period principal payment to match projected cash flow, maintaining a constant target DSCR and eliminating artificial coverage dips."
+            "By deferring all principal repayments to the final year, holding DSCR at its target and raising the interest tax shield",
+            "By repaying equal principal each period, holding DSCR constant and removing the need for a debt service reserve account",
+            "By raising the interest rate in low-cash periods, holding DSCR at its target and removing artificial coverage dips",
+            "By shaping principal repayments to follow projected cash flow, holding DSCR at its target and removing artificial coverage dips"
           ],
           "answer": 3,
           "why": "Debt sculpting dynamically tailors periodic debt service to match fluctuating CFADS, maximizing total debt capacity while maintaining the target DSCR.",
@@ -11948,10 +11948,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate treasury benefit of integrating an EUA forward hedging program into an enterprise compliance carbon management strategy?",
           "options": [
-            "It automatically exempts the facility from all future European Union climate and industrial emissions regulations.",
-            "It locks in compliance carbon costs in advance, eliminating commodity price volatility and protecting operating cash flows from sudden EUA price surges.",
-            "It converts carbon emissions into physical gold coins deposited into the company executive retirement accounts.",
-            "It requires the international energy exchange to refund one hundred percent of electricity generation costs to the company."
+            "It cuts the firm's physical emissions in advance, shielding operating cash flows from any need to buy EUAs",
+            "It locks in compliance carbon costs in advance, shielding operating cash flows from sudden spikes in EUA prices",
+            "It locks in a minimum resale price for surplus EUAs, shielding operating cash flows from falls in EUA prices",
+            "It lets the firm earn EUA price gains with no downside, shielding operating cash flows from adverse price moves"
           ],
           "answer": 1,
           "why": "Forward hedging locks in carbon allowance prices, immunizing enterprise operating margins against volatile spikes in compliance carbon markets.",
@@ -11978,10 +11978,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary structural reason that the five-billion-dollar sovereign infrastructure syndicate maintains investment-grade debt resilience even under severe operational stress?",
           "options": [
-            "The combination of long-term availability PPAs, non-recourse debt sculpting, a 6-month DSRA reserve, and distribution lock-up covenants insulates senior debt service.",
-            "The project sponsors are legally authorized to print sovereign paper currency to pay off commercial bank loans.",
-            "The host sovereign government agrees to assume one hundred percent of all private corporate equity liabilities without repayment.",
-            "All physical solar panels and wind turbines are insured by international maritime treaties against financial market volatility."
+            "Long-term availability PPAs, non-recourse sculpted debt, a 6-month DSRA, and distribution lock-ups together protect senior debt service",
+            "Short-term merchant revenue contracts, non-recourse sculpted debt, a 6-month DSRA, and distribution lock-ups together protect senior debt service",
+            "Long-term availability PPAs, full-recourse bullet debt, no reserve account, and distribution lock-ups together protect senior debt service",
+            "Long-term availability PPAs, non-recourse sculpted debt, a 6-month DSRA, and sponsor dividend rights together protect senior debt service"
           ],
           "answer": 0,
           "why": "Contractual availability payments, sculpted debt, dedicated DSRA liquidity, and distribution lock-ups provide layered defense against debt service default.",
@@ -12037,10 +12037,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Fama-French Five-Factor Model, what does the 'Conservative Minus Aggressive' (CMA) factor capture?",
           "options": [
-            "The speed at which high-frequency algorithmic market makers execute equity limit orders on public exchanges.",
-            "The empirical tendency of firms with conservative capital investment policies to outperform firms that aggressively expand their balance sheets.",
-            "The ratio of corporate executive stock option bonuses to total annual research and development expenditures.",
-            "The political orientation of corporate board directors and their preferred sovereign tax policies."
+            "Firms with aggressive investment policies tend to outperform firms that invest conservatively and keep assets small",
+            "Firms with conservative investment policies tend to outperform firms that expand their balance sheets aggressively",
+            "Firms with high book-to-market ratios tend to outperform firms that carry low book-to-market ratios",
+            "Firms with robust operating profitability tend to outperform firms that report weak operating profitability"
           ],
           "answer": 1,
           "why": "The CMA factor measures investment style; empirical evidence demonstrates that firms with disciplined, conservative capex outperform aggressive empire builders.",
@@ -12159,10 +12159,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a Fama-French multi-factor regression, how does an institutional allocator mathematically confirm whether a fund manager possesses true stock-picking skill?",
           "options": [
-            "By ensuring that the fund manager is a registered lobbyist with the national sovereign securities commission.",
-            "By verifying that the regression intercept (alpha) is positive with a statistically significant t-statistic exceeding 2.0.",
-            "By verifying that the fund market beta is greater than 3.5 during a bull market.",
-            "By confirming that the fund holds more than ten thousand individual corporate common stocks."
+            "By confirming that the regression R-squared is above 0.90 with a statistically significant market beta",
+            "By confirming that the regression alpha is positive with a statistically significant t-statistic above 2.0",
+            "By confirming that the alpha is positive with a t-statistic below 1.0, showing the returns were consistent",
+            "By confirming that the market beta is above 1.0, showing the returns exceeded what the market delivered"
           ],
           "answer": 1,
           "why": "A positive intercept (alpha) with a t-statistic >= 2.0 provides 95% statistical confidence that returns do not stem from chance or factor beta exposure.",
@@ -12218,10 +12218,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Internal Revenue Code statutory requirements, what is the minimum percentage of taxable income a qualified REIT must distribute annually to shareholders to avoid entity-level corporate income taxation?",
           "options": [
-            "One hundred percent of total accounting depreciation charges recognized on physical building assets.",
-            "Fifty percent of the market value of the founder personal equity holdings.",
-            "Ninety percent of taxable corporate income, though distributing one hundred percent eliminates all entity-level corporate tax.",
-            "Twenty-five percent of gross corporate revenues regardless of operating expenses."
+            "Seventy-five percent of taxable income; distributing all of it removes entity-level corporate tax",
+            "Fifty percent of taxable income; distributing all of it removes entity-level corporate tax",
+            "Ninety percent of taxable income; distributing all of it removes entity-level corporate tax",
+            "One hundred percent of taxable income; distributing less causes loss of REIT status immediately"
           ],
           "answer": 2,
           "why": "IRC Section 857 mandates distributing at least 90% of taxable income to maintain REIT status, with 100% distribution eliminating corporate income tax completely.",
@@ -12248,10 +12248,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is NAREIT Funds From Operations (FFO) considered a far superior performance metric than GAAP Net Income for commercial equity REITs?",
           "options": [
-            "Because it legally authorizes the REIT to refuse to pay interest on all outstanding commercial mortgage loans.",
-            "Because it adds back non-cash real estate depreciation, eliminating the accounting distortion that understates the earning power of appreciating properties.",
-            "Because it multiplies all reported corporate revenues by the prevailing federal funds target interest rate.",
-            "Because it requires all corporate tenants to pay rent exclusively in physical silver bullion rather than digital bank transfers."
+            "It adds back cash capital expenditure on properties, which understates the earning power of newly renovated assets",
+            "It adds back non-cash real estate depreciation, which understates the earning power of properties that hold their value",
+            "It deducts unrealized property appreciation, which overstates the earning power of properties that rise in value",
+            "It adds back mortgage interest expense, which understates the earning power of highly leveraged property portfolios"
           ],
           "answer": 1,
           "why": "Real estate depreciation is a non-cash accounting charge that depresses GAAP net income; adding it back provides an accurate picture of recurring cash earnings.",
@@ -12280,10 +12280,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a Commercial Mortgage-Backed Securities (CMBS) capital structure, how are realized loan default losses allocated across tranches?",
           "options": [
-            "In reverse sequential order from the bottom upward, meaning the junior B-piece absorbs losses first before senior tranches are impacted.",
-            "Equally across all tranches on a pro-rata basis regardless of credit rating.",
-            "Directly to the federal sovereign treasury department with zero impact on private bondholders.",
-            "Exclusively to the commercial tenants who lease office space within the underlying physical properties."
+            "In reverse sequential order from the bottom up, so the junior B-piece absorbs losses before senior tranches",
+            "In sequential order from the top down, so the senior AAA tranche absorbs losses before junior tranches",
+            "Pro rata across all tranches, so each tranche absorbs losses in proportion to its share of the pool",
+            "In order of tranche coupon, so the highest-yielding tranche absorbs losses before lower-yielding ones"
           ],
           "answer": 0,
           "why": "CMBS credit protection operates via subordination: the first dollar of default loss is absorbed by the unrated junior B-piece before touching higher tranches.",
@@ -12341,10 +12341,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a CMBS securitization with $50M B-piece, $100M BBB tranche, and $350M AAA tranche, what is the loss allocation if the mortgage pool suffers $75M in cumulative default losses?",
           "options": [
-            "The AAA tranche absorbs the entire seventy-five million dollar loss because it has the largest principal balance.",
-            "The loss is immediately cancelled and refunded by the commercial property appraisal management company.",
-            "The B-piece is completely wiped out ($50M loss), the BBB tranche absorbs $25M in losses, and the AAA tranche suffers $0 loss (100% recovery).",
-            "All three tranches absorb an equal loss of twenty-five million dollars each regardless of subordination."
+            "Pro rata: B-piece loses $7.5M, BBB $15M, and AAA $52.5M",
+            "AAA loses $75M, while the B-piece and BBB lose nothing",
+            "B-piece loses $50M, BBB absorbs $25M, and AAA loses nothing",
+            "B-piece loses $50M, BBB loses nothing, and AAA absorbs $25M"
           ],
           "answer": 2,
           "why": "Under reverse-sequential subordination, the $50M B-piece is wiped out first, the remaining $25M loss hits the BBB tranche, and AAA suffers zero loss.",
@@ -12400,10 +12400,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial advantage of executing a Direct Listing instead of a Traditional Firm-Commitment IPO for a cash-rich private unicorn?",
           "options": [
-            "It legally shields the company from all future Securities and Exchange Commission financial reporting requirements.",
-            "It guarantees that the company stock price will never decline in secondary market trading.",
-            "It converts all employee common shares into senior tax-exempt municipal bonds.",
-            "It eliminates investment banking underwriting fee spreads and avoids the severe underpricing dilution of first-day pops while offering immediate liquidity."
+            "It guarantees a minimum raise through a firm underwriter commitment while providing immediate liquidity",
+            "It avoids SEC registration and disclosure duties while providing immediate liquidity to existing holders",
+            "It raises new primary capital through a lock-up arrangement while providing immediate liquidity",
+            "It avoids underwriting fee spreads and first-day underpricing dilution while providing immediate liquidity"
           ],
           "answer": 3,
           "why": "Direct listings bypass the 5-7% underwriting discount, avoid underpricing dilution, and eliminate restrictive lockup periods for existing shareholders.",
@@ -12430,10 +12430,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What happens to the SPAC sponsor 'Founder Shares' (the 20% promote) and private placement warrants if the SPAC fails to close a business combination within its 24-month charter window?",
           "options": [
-            "They expire completely worthless, resulting in a total loss of the sponsor's multi-million-dollar upfront at-risk investment capital.",
-            "They are automatically purchased by the Federal Reserve at full original nominal face value.",
-            "They convert into voting common stock of the largest listed technology enterprise on the New York Stock Exchange.",
-            "They are transferred to public municipal school districts to fund elementary educational textbooks."
+            "They expire completely worthless, so the sponsor loses its entire upfront at-risk investment capital",
+            "They convert into ordinary shares of the trust, so the sponsor recovers its investment alongside public investors",
+            "They are repaid from the trust account ahead of public investors, so the sponsor recovers its at-risk capital",
+            "They transfer to public shareholders as compensation, so the sponsor keeps its warrants but loses the promote"
           ],
           "answer": 0,
           "why": "If no transaction closes, the SPAC dissolves: trust funds return to public investors, while sponsor promote shares and warrants expire completely worthless.",
@@ -12460,10 +12460,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a De-SPAC transaction, what is the primary operational function of Private Investment in Public Equity (PIPE) financing?",
           "options": [
-            "To convert all public common shares into non-redeemable subordinated junk debt certificates.",
-            "To provide committed institutional capital that guarantees the target company receives required cash even if public shareholders redeem 90% of trust funds.",
-            "To legally eliminate all future federal corporate income tax obligations for the merged public enterprise.",
-            "To allow the SPAC sponsor to personally withdraw all cash from the escrow trust account for private residential purchases."
+            "It provides a guaranteed return to public holders who redeem, so the SPAC trust is never depleted by redemptions",
+            "It provides committed institutional capital so the target gets its needed cash even if public holders redeem most trust funds",
+            "It provides a fixed-price stock buyback to the sponsor, so the founder shares keep their value after the merger",
+            "It provides bridge loans from the sponsor's affiliates, so the SPAC can extend its charter beyond 24 months"
           ],
           "answer": 1,
           "why": "PIPE financing provides committed institutional capital that backstops public redemptions, ensuring the target receives necessary cash to close.",
@@ -12612,10 +12612,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In sovereign debt dynamics, what occurs when a nation's real interest rate on public debt (r) permanently exceeds its real economic growth rate (g)?",
           "options": [
-            "The national debt is automatically cancelled and erased by the Bank for International Settlements.",
-            "The sovereign government is legally required to adopt the gold standard within sixty days.",
-            "All commercial domestic banks must transfer one hundred percent of their cash reserves to foreign private equity funds.",
-            "Debt compounds faster than the economy grows, requiring the government to run continuous primary fiscal surpluses to prevent a runaway debt spiral."
+            "Debt shrinks relative to GDP automatically, so the government can run permanent primary deficits without a debt spiral",
+            "Debt falls relative to GDP only if the central bank buys it, so surpluses are unnecessary to prevent a debt spiral",
+            "Tax revenue grows faster than interest costs, so the government can run primary deficits indefinitely without a debt spiral",
+            "Debt compounds faster than the economy grows, so the government needs continuing primary surpluses to prevent a debt spiral"
           ],
           "answer": 3,
           "why": "When r > g (positive snowball effect), public debt expands faster than GDP, compelling the government to generate primary surpluses to avoid debt explosion.",
@@ -12644,10 +12644,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal function of Collective Action Clauses (CACs) in modern sovereign Eurobond documentation?",
           "options": [
-            "To authorize the sovereign nation to seize all private citizen bank accounts during national economic emergencies.",
-            "To convert all foreign sovereign debt into non-voting common stock of the World Health Organization.",
-            "To allow a supermajority of bondholders to approve a restructuring agreement and legally bind all dissenting minority holdout creditors.",
-            "To exempt sovereign governments from ever publishing national macroeconomic balance sheet data."
+            "They let the issuing government change bond terms on its own without any bondholder vote when it faces distress",
+            "They require every bondholder to give unanimous approval before any restructuring of the Eurobond terms can proceed",
+            "They let a supermajority of bondholders approve a restructuring that legally binds all dissenting holdout creditors",
+            "They give a trustee the right to sell the bonds in the secondary market at par if the government misses a payment"
           ],
           "answer": 2,
           "why": "CACs enable a supermajority of bondholders to bind all creditors to restructuring terms, eliminating the holdout litigation risk.",
@@ -12676,10 +12676,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What foundational assumption of sovereign reserve management was fundamentally altered by the 2022 freezing of Russian central bank foreign reserves by G7 nations?",
           "options": [
-            "The requirement that central banks must print physical banknotes exclusively on cotton-fiber paper.",
-            "The assumption that foreign exchange reserves held in foreign sovereign jurisdictions enjoy absolute sovereign immunity from confiscation or freezing.",
-            "The assumption that the price of crude oil is measured in metric barrels rather than liquid gallons.",
-            "The belief that sovereign nations must always maintain a balanced annual fiscal budget."
+            "The assumption that dollar-denominated reserves earn a higher yield than reserves held in gold, euros, and yen",
+            "The assumption that foreign exchange reserves held in other sovereign jurisdictions are immune from freezing or confiscation",
+            "The assumption that gold holdings stored at home can be converted to hard currency without any price impact on markets",
+            "The assumption that central bank reserves are legally ring-fenced from claims held by foreign creditors of the state"
           ],
           "answer": 1,
           "why": "Freezing central bank reserves demonstrated that sovereign reserves held overseas carry acute geopolitical confiscation risk, accelerating de-dollarization.",
@@ -12705,10 +12705,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Sovereign Debt Sustainability Analysis (DSA) model, what is the primary operational objective of restructuring external debt via nominal haircuts and maturity extensions?",
           "options": [
-            "To bring the Debt-to-GDP trajectory onto a definitively sustainable downward path and reduce Gross Financing Needs below the 15% distress threshold.",
-            "To allow the sovereign government to purchase fifty percent of all private commercial factories within the country.",
-            "To mandate that all national government employees receive their monthly salaries exclusively in cryptocurrency.",
-            "To force international bondholders to forfeit their corporate passports to the International Monetary Fund."
+            "To put Debt-to-GDP on a clearly sustainable downward path and cut Gross Financing Needs below the 15% distress threshold",
+            "To bring Debt-to-GDP onto a stable plateau and keep Gross Financing Needs right at the 15% distress threshold",
+            "To lower the debt coupon to the risk-free rate and cut Gross Financing Needs below a 5% minimum set by the IMF",
+            "To transfer the debt to official creditors and remove Debt-to-GDP concerns without changing financing needs"
           ],
           "answer": 0,
           "why": "Restructuring aims to restore medium-term debt sustainability, bringing Debt-to-GDP and Gross Financing Needs within manageable risk thresholds.",
@@ -12766,10 +12766,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining characteristic of the Day Sixty Final Grand Master Capstone in Corporate Finance & Capital Markets?",
           "options": [
-            "It synthesizes all twelve blocks of the sixty-day curriculum into an integrated, industrial-grade investment banking and sovereign advisory execution platform.",
-            "It requires students to physically travel to Washington, D.C. to take a paper-based multiple choice examination.",
-            "It converts all course materials into an automated retail cryptocurrency trading bot on unregulated offshore exchanges.",
-            "It mandates that all sovereign governments must immediately dissolve their national central bank treasuries."
+            "It integrates all twelve blocks of the sixty-day curriculum into one advanced investment banking and sovereign advisory platform",
+            "It repeats the first block of the curriculum with harder numerical problems and a much larger advisory case study",
+            "It tests only the final four blocks of the curriculum through an automated certification of derivative pricing",
+            "It replaces the earlier blocks with a single case study on corporate bankruptcy, creditor negotiation, and recovery"
           ],
           "answer": 0,
           "why": "Day 60 represents the ultimate capstone, unifying 60 days of corporate finance, private equity, quantitative risk, and sovereign advisory into a single master simulator.",
@@ -12798,10 +12798,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Master Capstone LBO returns attribution bridge, why is achieving 74.8% of value creation via EBITDA growth and 25.2% via debt paydown considered the hallmark of disciplined private equity?",
           "options": [
-            "Because private equity sponsors forfeit all carried interest if the exit multiple is higher than the entry multiple.",
-            "Because EBITDA growth automatically exempts the portfolio company from paying corporate employee payroll taxes.",
-            "Because federal banking regulators mandate that multiple expansion must be completely illegal for institutional buyout funds.",
-            "Because it proves returns were generated through fundamental operational improvements and cash generation rather than relying on speculative multiple expansion."
+            "It shows returns came mainly from multiple expansion and financial engineering rather than operating improvement",
+            "It shows returns came from dividend recaps and asset sales rather than EBITDA growth or debt reduction",
+            "It shows returns came from higher leverage at entry rather than from operating or cash generation gains",
+            "It shows returns came from real operating improvement and cash generation rather than speculative multiple expansion"
           ],
           "answer": 3,
           "why": "Disciplined institutional buyouts rely on organic EBITDA growth and cash flow de-leveraging, avoiding speculative reliance on market multiple expansion.",
@@ -12830,10 +12830,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Master Capstone quantitative equity engine, what is the primary structural purpose of enforcing strict sector-neutral constraints on multi-factor portfolios?",
           "options": [
-            "To guarantee that all stock dividends are paid in physical corporate coupons rather than digital electronic cash.",
-            "To force the portfolio to hold an identical number of physical corporate headquarters buildings in every global time zone.",
-            "To ensure that factor tilts (such as Value or Quality) capture pure cross-sectional factor premia rather than accidental concentrated bets on cyclical sectors.",
-            "To comply with international maritime treaties governing commercial shipping container inspection protocols."
+            "It ensures every sector has the same weight as in the benchmark, so the portfolio cannot beat its index",
+            "It ensures all factor exposures are zero, so portfolio returns come only from market beta and not from tilts",
+            "It ensures factor tilts capture pure factor premia rather than accidental concentrated bets on cyclical sectors",
+            "It ensures each stock has equal weight inside its sector, so factor tilts are diversified across all stocks"
           ],
           "answer": 2,
           "why": "Sector neutrality isolates pure factor performance, preventing a value strategy from becoming an unintended concentrated bet on banks or energy.",
@@ -12863,10 +12863,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Master Capstone sovereign restructuring program, what is the primary role of the Paris Club 'Comparability of Treatment' principle?",
           "options": [
-            "To guarantee that private commercial banks receive a one hundred percent cash prepayment before any public social programs are funded.",
-            "To ensure that private bondholders and non-Paris Club creditors grant debt relief terms at least as favorable as those granted by bilateral official creditors.",
-            "To force all sovereign citizens to pay their personal income taxes directly to the International Monetary Fund.",
-            "To require all sovereign debt treaties to be written in both French and English under United Nations charter rules."
+            "It ensures official bilateral creditors give debt relief at least as favorable as the terms of private bondholders",
+            "It ensures private and non-Paris Club creditors give debt relief at least as favorable as official bilateral creditors",
+            "It ensures all creditors receive the same nominal haircut regardless of the maturity or seniority of their claims",
+            "It ensures the IMF's preferred creditor status is waived so its loans are restructured along with the others"
           ],
           "answer": 1,
           "why": "Comparability of treatment prevents private creditors or non-Paris Club lenders from free-riding on official debt relief by demanding equivalent concessions.",
@@ -12891,10 +12891,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate professional capability demonstrated by successfully executing the Day Sixty Master Corporate Finance Accreditation Simulator?",
           "options": [
-            "The ability to architect, analyze, and execute complex multi-billion-dollar corporate buyouts, quantitative trading books, structured credit facilities, and sovereign restructurings with institutional precision.",
-            "The ability to memorize short-term stock price predictions from social media message boards.",
-            "The requirement to work exclusively as an entry-level bank branch teller handling physical cash deposits.",
-            "The legal authorization to issue sovereign currency without municipal government approval."
+            "The ability to design, analyze, and execute corporate buyouts, trading books, structured credit, and sovereign restructurings",
+            "The ability to design and execute public equity offerings, simple DCF valuations, and routine tax planning for mid-sized listed firms",
+            "The ability to manage retail banking products, consumer credit scoring models, and branch network strategy for a regional bank",
+            "The ability to prepare statutory financial statements, audit workpapers, and tax filings for large multinational groups"
           ],
           "answer": 0,
           "why": "Day 60 certifies comprehensive institutional mastery across corporate finance, private equity LBOs, quantitative asset pricing, structured credit, and sovereign debt.",

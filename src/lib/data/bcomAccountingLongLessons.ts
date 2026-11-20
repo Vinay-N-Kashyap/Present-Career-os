@@ -32,10 +32,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an enterprise record upfront customer subscription billings as Deferred Revenue on the Balance Sheet rather than immediate revenue?",
           "options": [
-            "Because GAAP requires all corporate revenue to be delayed by ninety days to verify customer solvency.",
-            "Because the enterprise must deduct prospective sales returns before determining net earnings.",
-            "Because cash collected has not cleared through the central bank settlement depository.",
-            "Because performance obligations have not yet been satisfied, creating a legal contract liability to deliver future services under ASC 606 / IFRS 15."
+            "Because the cash is only a customer deposit that becomes revenue once the invoice is paid, regardless of when the service is delivered under ASC 606.",
+            "Because revenue is recognised when the contract is signed, so the upfront cash is recorded as a liability only until the invoice is issued under IFRS 15.",
+            "Because subscription billings are equity contributions from customers, which are reclassified to revenue at year-end under ASC 606 / IFRS 15.",
+            "Because performance obligations are not yet satisfied, so the cash received creates a contract liability to deliver future service under ASC 606 / IFRS 15."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -64,10 +64,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the Fundamental Accounting Equation that governs every corporate balance sheet?",
           "options": [
-            "Assets = Liabilities + Equity, ensuring total economic resources equal creditor claims plus residual owner capital.",
-            "Assets + Liabilities = Equity, allocating total liabilities to shareholder equity.",
-            "Assets = Liabilities - Equity, deducting equity from total debt obligations.",
-            "Equity = Liabilities - Assets, representing creditor claims minus total tangible assets."
+            "Assets = Liabilities + Equity, so every economic resource is financed by creditor claims or by owner capital.",
+            "Assets = Liabilities - Equity, so every economic resource equals creditor claims less the residual owner capital.",
+            "Assets + Liabilities = Equity, so total owner capital is funded by the resources and debts the firm holds.",
+            "Equity = Assets + Liabilities, so owner capital equals total resources plus the claims of creditors."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -159,10 +159,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the accounting purpose of the Allowance for Doubtful Accounts on the Balance Sheet?",
           "options": [
-            "It represents cash deposited into a dedicated bank reserve to compensate for bad debt losses.",
-            "It records legal fees incurred while prosecuting delinquent corporate customers in civil court.",
-            "It functions as a long-term liability reflecting disputed trade vendor payables.",
-            "It serves as a contra-asset account reducing gross receivables to their estimated Net Realizable Value based on expected credit defaults."
+            "It is a liability account recording cash the firm owes customers because of expected credit losses on invoices.",
+            "It is an expense account in the income statement that writes off customer balances once they are uncollectible.",
+            "It is an asset reserve of cash set aside in a separate bank account so that expected bad debts can be paid out later.",
+            "It is a contra-asset that reduces gross receivables to net realizable value, based on the credit losses expected."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -216,10 +216,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 842 and IFRS 16, what was the primary regulatory rationale for mandating operating lease capitalization on corporate balance sheets?",
           "options": [
-            "To force companies to convert all operating leases into direct equipment ownership titles within three fiscal years.",
-            "To allow corporate entities to claim immediate accelerated tax deductions on full multi-year lease commitments on day one.",
-            "To eliminate off-balance sheet financing by compelling corporations to disclose all contractual future lease commitments as recognized liabilities alongside Right-of-Use assets.",
-            "To replace double-entry bookkeeping with single-entry cash flow monitoring across real estate portfolios."
+            "To make lessors recognise leased assets as sold at inception, removing the equipment and lease receivable from their balance sheets.",
+            "To require lessees to expense all lease payments immediately, so no lease liability or asset appears on the balance sheet.",
+            "To end off-balance sheet financing by requiring lessees to recognise lease liabilities alongside Right-of-Use assets.",
+            "To convert operating leases into finance leases only when the lease term exceeds the whole economic life of the asset."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -280,10 +280,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a sustained inflationary pricing environment, what is the primary financial impact of utilizing FIFO inventory costing compared to Weighted-Average costing?",
           "options": [
-            "FIFO yields lower Cost of Goods Sold, higher reported gross profit, and higher ending inventory asset valuations on the balance sheet.",
-            "FIFO yields higher Cost of Goods Sold, lower reported gross profit, and lower ending inventory valuations.",
-            "FIFO eliminates all physical inventory warehouse write-downs and obsolescence reserves under GAAP.",
-            "FIFO requires the enterprise to report zero inventory assets on the balance sheet at fiscal year end."
+            "FIFO gives lower Cost of Goods Sold, higher gross profit and higher ending inventory than Weighted-Average.",
+            "FIFO gives higher Cost of Goods Sold, lower gross profit and lower ending inventory than Weighted-Average.",
+            "FIFO gives lower Cost of Goods Sold, higher gross profit and lower ending inventory than Weighted-Average.",
+            "FIFO gives the same Cost of Goods Sold as Weighted-Average but a higher ending inventory on the balance sheet."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -344,10 +344,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary internal control risk when accounting personnel post manual top-side journal entries directly into General Ledger control accounts without subledger support?",
           "options": [
-            "It forces the central bank to freeze the enterprise's commercial operating accounts within twenty-four hours.",
-            "It reduces statutory tax depreciation rates on capitalized computer hardware.",
-            "It breaks the subledger-to-GL equilibrium invariant, creating untraceable variances that often conceal fraud, fictitious assets, or unrecorded liabilities.",
-            "It causes the ERP database to delete all historical transactional subledger records automatically."
+            "It overstates the cash balance, because control account postings without subledger support raise the bank reconciliation total.",
+            "It breaks the trial balance equality, because control account entries are posted on one side only and cannot be reversed later.",
+            "It breaks the subledger-to-GL balance, creating untraceable variances that can hide fraud or unrecorded liabilities.",
+            "It causes the entry to be taxed twice, because control accounts are reported separately to tax authorities and to shareholders."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -402,10 +402,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does traditional volume-based overhead allocation systematically distort product costs in modern manufacturing environments?",
           "options": [
-            "Because direct labor hours always decrease whenever a company introduces bespoke customized product lines.",
-            "Because it allocates overhead based on volume metrics like labor hours, over-costing simple high-volume products while under-costing complex low-volume custom products that consume excessive batch activities.",
-            "Because traditional costing ignores direct material costs and double-counts administrative sales salaries.",
-            "Because volume-based accounting requires factories to expense entire industrial plants within a single monthly payroll cycle."
+            "Volume-based allocation under-costs simple high-volume products and over-costs complex low-volume ones because labour hours rise with product complexity.",
+            "Volume-based allocation over-costs simple high-volume products and under-costs complex low-volume ones that use heavy batch and setup activity.",
+            "Volume-based allocation ignores overhead altogether, so simple and complex products carry only direct material and direct labour costs.",
+            "Volume-based allocation spreads overhead equally by unit count, so high-volume products absorb exactly the same total cost as custom products."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -452,10 +452,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a manufacturing company reports a large Favorable Direct Materials Price Variance paired with an even larger Unfavorable Direct Materials Quantity Variance, what is the most likely operational root cause?",
           "options": [
-            "Customer demand collapsed, causing unsold finished goods to accumulate in warehouse inventory.",
-            "The corporate treasury team hedged foreign currency movements using forward interest rate contracts.",
-            "Purchasing procured cheap, substandard raw materials to capture purchase discounts, causing severe factory floor defects, jamming, and excessive scrap waste during assembly.",
-            "Factory workers received substantial wage raises that increased direct labor overtime hours."
+            "Purchasing paid premium prices for high-grade materials, which caused less scrap but a higher price per unit on every order.",
+            "Production workers became more skilled at assembly, which reduced material usage per unit but raised the average hourly wage rate.",
+            "Purchasing bought cheap, poor-quality materials to win price discounts, which caused defects, jamming and excess scrap in production.",
+            "Sales volume fell below plan, which left excess raw materials in storage and lowered the usage recorded per finished unit."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -502,10 +502,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Direct Labor Efficiency Variance calculated using the Standard Labor Rate (SR) rather than the actual wage rate paid to workers?",
           "options": [
-            "Because standard labor rates are dictated by federal minimum wage legislation and cannot be altered.",
-            "To conceal employee payroll costs from external statutory auditors during annual audits.",
-            "Because GAAP prohibits recording actual wage payments in general ledger payroll accounts.",
-            "To isolate pure physical labor productivity and prevent wage rate fluctuations from distorting the operational efficiency evaluation of shop floor supervisors."
+            "To isolate the effect of wage rates, so productivity changes outside the supervisors' control do not distort the labour rate evaluation.",
+            "To comply with labour laws that require wages to be measured at the standard union rate when reporting variances to shareholders.",
+            "To ensure the variance equals the labour rate variance, so the two variances always offset each other and total to zero.",
+            "To isolate physical labour productivity, so wage rate changes outside the supervisors' control do not distort their efficiency evaluation."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -552,10 +552,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In standard absorption costing, what does an Unfavorable Fixed Overhead Volume Variance signify about plant operations?",
           "options": [
-            "Actual manufacturing production volume fell below the planned denominator capacity, meaning fixed plant overhead was under-absorbed into inventory.",
-            "The factory experienced catastrophic machine tool breakdowns that increased repair expenditures.",
-            "Local municipal utility tariffs increased above standard variable electricity pricing.",
-            "Direct labor hourly wage rates escalated due to unscheduled weekend overtime shifts."
+            "Actual production fell below the planned denominator capacity, so fixed overhead was under-absorbed into inventory.",
+            "Actual fixed overhead spending exceeded the budgeted amount, so too much fixed overhead was absorbed into inventory.",
+            "Actual production exceeded the planned denominator capacity, so fixed overhead was over-absorbed into inventory.",
+            "Actual labour hours per unit exceeded the standard, so fixed overhead was charged at a lower rate per hour."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -602,10 +602,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Flexible Budget considered an indispensable management tool compared to a static Master Budget?",
           "options": [
-            "Because it eliminates all fixed overhead expenses from corporate financial statements under GAAP.",
-            "Because it adjusts budgeted revenues and variable expenses to the actual volume achieved, isolating marketing volume effects from operational cost and pricing execution.",
-            "Because it guarantees that an enterprise will always report zero static budget variances at fiscal year end.",
-            "Because it automatically converts double-entry accounting entries into cash basis transactions."
+            "It holds budgeted revenue and costs at planned volume, so volume effects stay combined with cost and pricing execution in one variance.",
+            "It adjusts budgeted revenue and variable costs to actual volume, separating volume effects from cost and pricing execution.",
+            "It adjusts budgeted fixed costs to actual volume, separating fixed cost changes from variable cost and pricing execution.",
+            "It replaces actual results with budgeted figures, so management can report only planned volume effects to external investors."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -717,10 +717,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental difference between the legacy incurred loss model and the ASC 326 CECL framework?",
           "options": [
-            "CECL completely eliminates the allowance contra-asset account and writes off bad debts directly to retained earnings",
-            "Incurred loss required 10-year discounted cash flow simulations for all loans, whereas CECL allows a simple 1% flat revenue deduction",
-            "CECL applies only to cash equivalents and excludes trade receivables, customer notes, and commercial term loans",
-            "CECL requires recognizing lifetime expected credit losses immediately on Day 1 including forward-looking macroeconomic forecasts, whereas incurred loss waited for an actual delinquency event"
+            "CECL books only the next twelve months of expected losses from Day 1, while the incurred loss model recorded lifetime losses at origination",
+            "CECL books credit losses only when a loan is past due, while the incurred loss model used forward-looking forecasts from Day 1",
+            "CECL books lifetime losses using only historical loss rates with no forecasts, while the incurred loss model used macroeconomic outlooks",
+            "CECL books lifetime expected credit losses from Day 1 using forward-looking forecasts, while the incurred loss model waited for an actual loss event"
           ],
           "answer": 3,
           "why": "ASC 326 CECL requires entities to estimate and reserve for lifetime expected credit losses from the date of asset origination incorporating forward-looking forecasts, resolving the systemic delay of waiting for an incurred default trigger.",
@@ -789,10 +789,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the required accounting treatment for the effective portion of gains and losses on a cash flow hedge under ASC 815?",
           "options": [
-            "They are immediately recognized as operating revenue in the current period statement of operations",
-            "They are deferred in Other Comprehensive Income (AOCI) and reclassified into earnings in the same period the hedged transaction affects earnings",
-            "They are permanently capitalized into intangible asset goodwill and never reclassified to earnings",
-            "They are treated as an adjustment to retained earnings without ever passing through OCI or P&L"
+            "They are recognised in earnings immediately and reclassified to AOCI when the hedged transaction is finally settled in cash",
+            "They are deferred in AOCI and reclassified into earnings in the same period the hedged transaction affects earnings",
+            "They are deferred in retained earnings and reclassified into AOCI in the period the hedged transaction affects earnings",
+            "They are deferred in AOCI and reclassified into earnings only when the hedging instrument itself is sold or terminated"
           ],
           "answer": 1,
           "why": "Cash flow hedge accounting eliminates income statement timing mismatches by deferring effective derivative gains and losses in AOCI until the underlying forecasted item impacts earnings.",
@@ -834,10 +834,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise balance sheet presentation, where are the bifurcated equity component of convertible notes and the effective portion of cash flow hedges recorded?",
           "options": [
-            "Both are recorded within Stockholders' Equity: the convertible option in Additional Paid-in Capital (APIC) and the hedge gain/loss in Accumulated Other Comprehensive Income (AOCI)",
-            "Both are recorded as Current Operating Liabilities in the working capital section of the balance sheet",
-            "Both are netted directly against Gross Accounts Receivable as contra-assets",
-            "Both are omitted from the balance sheet entirely and mentioned only in optional board presentation slides"
+            "Both sit in Stockholders' Equity: the convertible option in Additional Paid-in Capital and the hedge gain or loss in AOCI",
+            "Both sit in non-current liabilities: the convertible option as deferred financing cost and the hedge gain or loss as a derivative payable",
+            "Both sit in Stockholders' Equity: the convertible option in AOCI and the hedge gain or loss in Additional Paid-in Capital",
+            "Both sit in the income statement: the convertible option as interest expense and the hedge gain or loss as other operating income"
           ],
           "answer": 0,
           "why": "The bifurcated conversion option of a hybrid note is credited to APIC in permanent equity, while effective cash flow hedging gains and losses are parked in AOCI within equity until underlying operational transactions hit P&L.",
@@ -900,10 +900,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must unrealized intercompany profit in ending inventory be eliminated in consolidation under ASC 810?",
           "options": [
-            "Because GAAP mandates that inventory must always be carried on the balance sheet at fair value rather than historical cost",
-            "Because intercompany inventory profits are taxed at double the corporate income tax rate by the IRS",
-            "Because non-controlling interest shareholders are legally prohibited from receiving any share of gross profit",
-            "Because the consolidated entity cannot recognize profit by simply transferring goods between related entities until the inventory is sold to an independent third party"
+            "Because the group must carry all inventory at fair value, so profit on internal transfers is replaced by a market valuation adjustment",
+            "Because the parent must recognise the profit in full, but only the subsidiary's share is eliminated against non-controlling interest",
+            "Because internal transfers are recorded at cost by law, so any profit shown by the selling entity is an accounting error",
+            "Because the group is one economic entity and cannot recognise profit on goods moved internally until they are sold to an outside party"
           ],
           "answer": 3,
           "why": "Under ASC 810 / IFRS 10, a corporate group represents a single economic entity; profits can only be recognized when goods are sold externally to third-party customers.",
@@ -940,10 +940,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the ASC 230 indirect method, why is an increase in Accounts Receivable subtracted from Net Income in the Operating section?",
           "options": [
-            "Because revenue was recognized on an accrual basis in the income statement but the cash has not yet been collected from customers",
-            "Because Accounts Receivable represents a long-term capital investment classified as financing",
-            "Because increasing receivables indicates that the company wrote off bad debts against retained earnings",
-            "Because customer credit balances must be remitted immediately to state tax authorities"
+            "Because revenue was recognised on an accrual basis, but the cash from those credit sales has not yet been collected",
+            "Because the increase means customers paid early, so cash received exceeds the revenue recognised and net income must be reduced",
+            "Because receivables are a non-cash financing item, so the increase must be removed from the operating section of the statement",
+            "Because the increase signals bad debts were written off, which reduced net income and must be reversed to find operating cash"
           ],
           "answer": 0,
           "why": "An increase in Accounts Receivable reflects credit sales that inflated accrual net income without generating corresponding cash collections during the period, requiring a deduction to reach actual cash flow.",
@@ -980,10 +980,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the distinguishing feature of a temporary difference under ASC 740 compared to a permanent difference?",
           "options": [
-            "Temporary differences apply only to state sales taxes rather than corporate federal income taxes",
-            "Temporary differences will reverse in future periods and generate deferred tax assets or liabilities, whereas permanent differences never reverse",
-            "Temporary differences are illegal under IRS regulations and result in mandatory financial penalties",
-            "Temporary differences affect cash flow immediately but are excluded from GAAP financial statements"
+            "Permanent differences reverse in future periods and create deferred tax assets or liabilities, while temporary differences never reverse",
+            "Temporary differences reverse in future periods and create deferred tax assets or liabilities, while permanent differences never reverse",
+            "Temporary differences change only the effective tax rate and need no deferred tax, while permanent differences create deferred tax balances",
+            "Temporary differences arise only from tax rate changes between years, while permanent differences arise from timing of revenue recognition"
           ],
           "answer": 1,
           "why": "Temporary differences represent timing discrepancies that reverse in future years (giving rise to DTAs and DTLs), whereas permanent differences do not reverse and directly alter the effective tax rate.",
@@ -1020,10 +1020,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary SEC requirement under Regulation G when presenting non-GAAP Adjusted EBITDA in Form 10-K filings?",
           "options": [
-            "Non-GAAP metrics are only permitted if certified by state treasury departments prior to quarterly earnings calls",
-            "Adjusted EBITDA must always exceed GAAP Net Income by at least 25% to be deemed informative",
-            "The filing must present the most directly comparable GAAP measure (GAAP Net Income) with equal or greater prominence and provide a full mathematical reconciliation bridge",
-            "The company is required to replace the GAAP audited income statement entirely with the Adjusted EBITDA schedule"
+            "The non-GAAP measure may be shown more prominently than GAAP, provided a short narrative explains why management prefers it",
+            "The non-GAAP measure must be audited by the independent auditor and presented with a separate opinion in the Form 10-K",
+            "The most directly comparable GAAP measure must appear with equal or greater prominence, together with a full quantitative reconciliation",
+            "The non-GAAP measure may be shown without reconciliation if the adjustments are disclosed as a total in the footnotes"
           ],
           "answer": 2,
           "why": "SEC Regulation G mandates equal or greater prominence for the comparable GAAP measure and requires an explicit, quantitative reconciliation table.",
@@ -1060,10 +1060,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What constitutes an Unqualified Clean Audit Opinion on an enterprise SEC Form 10-K filing?",
           "options": [
-            "The SEC waives all quarterly filing requirements for the subsequent five fiscal years",
-            "The auditor certifies that the company has achieved record-high profitability and will never suffer an operating loss",
-            "The auditor states that internal controls were completely unnecessary because management has high integrity",
-            "The independent auditor concludes that the consolidated financial statements present fairly, in all material respects, the financial position and results of operations in conformity with GAAP"
+            "The auditor concludes the statements are free of every error and guarantee that the company will remain a going concern next year",
+            "The auditor concludes the statements present fairly, except for a specific departure from GAAP that is material but not pervasive",
+            "The auditor concludes the internal controls are effective and certifies the accuracy of the forward-looking guidance given to investors",
+            "The auditor concludes the statements present fairly, in all material respects, the financial position and results in conformity with GAAP"
           ],
           "answer": 3,
           "why": "An unqualified opinion is the highest audit rating, signifying that financial statements are free of material misstatements and comply fully with GAAP.",
@@ -1125,10 +1125,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the accounting definition and recording protocol for a 'Contra Entry' in a 3-column cash book?",
           "options": [
-            "A direct journal adjustment made exclusively at year-end to write off uncollectible debtor balances.",
-            "An external bank charge deducted automatically by financial institutions without prior invoice approval.",
-            "A transaction that simultaneously affects both Cash and Bank columns, entered on both debit and credit sides with the folio letter 'C'.",
-            "A cash discount granted to a retail customer for immediate full settlement upon purchase."
+            "A transaction affecting both Cash and Bank columns, entered on one side only and posted to the ledger with folio letter 'L'.",
+            "A transaction affecting both Cash and a customer account, entered on both sides of the cash book with the folio letter 'C'.",
+            "A transaction affecting both Cash and Bank columns, entered on the debit and credit sides with the folio letter 'C'.",
+            "A transaction affecting only the Bank column, entered on the credit side with the folio letter 'C' and posted to the ledger."
           ],
           "answer": 2,
           "why": "Contra entries record internal transfers between cash safe and bank account, appearing on both sides of the cash book with folio mark 'C' and requiring no separate ledger posting.",
@@ -1163,10 +1163,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Imprest System of Petty Cash function within corporate internal financial controls?",
           "options": [
-            "The petty cash balance is deposited back into the main bank account at the end of every business day.",
-            "The petty cashier is provided a fixed float; at the end of the period, the chief cashier reimburses the exact sum spent, restoring the float to its original fixed amount.",
-            "The petty cashier is allowed to draw arbitrary amounts from the bank without submitting vouchers as long as monthly expenses do not exceed $10,000.",
-            "The petty cash fund is permanently written off as a direct operating expense upon initial capitalization and never audited."
+            "The petty cashier receives a variable float, and the chief cashier periodically sets a new amount based on forecast spending.",
+            "The petty cashier receives a fixed float, and the chief cashier periodically reimburses exactly the amount spent to restore it.",
+            "The petty cashier receives a fixed float, and the chief cashier reimburses the full float amount regardless of the vouchers spent.",
+            "The petty cashier keeps all receipts unrecorded, and the chief cashier periodically credits the cash account with the estimated spending."
           ],
           "answer": 1,
           "why": "Under the imprest system, the petty cash float remains constant; the exact total of approved vouchers spent during the period is reimbursed by issuing a bank cheque, restoring the original balance.",
@@ -1237,10 +1237,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the required accounting adjustment when a customer's cheque previously deposited into the bank is returned dishonoured (bounced)?",
           "options": [
-            "Debit Bad Debts Expense Account immediately without attempting customer recovery.",
-            "Make no entry in the Cash Book since the money was never successfully collected.",
-            "Credit the Customer's Personal Account and Debit Sales Revenue Account directly.",
-            "Debit the Customer's Personal Account (Accounts Receivable) and Credit the Bank Account, while also reversing any cash discount previously allowed."
+            "Debit the Bank Account and Credit the Customer's Personal Account, and keep any cash discount previously allowed.",
+            "Debit the Customer's Personal Account and Credit the Sales Account, and reverse any cash discount previously allowed.",
+            "Debit the Bank Charges Account and Credit the Customer's Personal Account, and keep any cash discount previously allowed.",
+            "Debit the Customer's Personal Account and Credit the Bank Account, and reverse any cash discount previously allowed."
           ],
           "answer": 3,
           "why": "When a deposited cheque bounces, the bank reverses the deposit credit; the business must credit Bank to reduce its balance, debit Accounts Receivable to re-instate the debt, and reverse any settlement discounts allowed.",
@@ -1275,10 +1275,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are the Discount columns of a 3-column Cash Book never balanced against each other at month-end?",
           "options": [
-            "The two columns are always mathematically identical in a balanced double-entry system.",
-            "Discounts must be remitted directly to the central tax authority rather than retained in the business.",
-            "Discount Allowed is an expense and Discount Received is an income; they represent entirely separate economic transactions posted to independent nominal accounts.",
-            "Discounts represent non-monetary items that are ignored during financial statement preparation."
+            "Discount Allowed and Discount Received are both expenses, posted to one nominal account and netted against each other at month-end.",
+            "Discount Allowed is an income and Discount Received is an expense, so the two columns are balanced to find the net discount.",
+            "Discount Allowed is an expense and Discount Received is an income, posted to separate nominal accounts and never netted against each other.",
+            "Discount columns are memorandum totals not posted anywhere, so they are balanced against each other only in the trial balance."
           ],
           "answer": 2,
           "why": "Discount Allowed represents a financial expense incurred to accelerate customer cash receipts, while Discount Received represents financial income earned from paying suppliers early; they are posted to separate nominal accounts and never balanced against each other.",
@@ -1378,10 +1378,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary source document utilized to make entries in the Sales Day Book?",
           "options": [
-            "A formal statutory audit engagement letter.",
-            "The customer's bank statement showing direct deposit.",
-            "The Outward Invoice (Sales Invoice or Delivery Challan bill) dispatched to the customer.",
-            "A Goods Received Note issued by the warehouse receiving clerk."
+            "The Inward Invoice (supplier invoice or purchase bill) received from the supplier.",
+            "The Credit Note issued to a customer for goods returned to the business.",
+            "The Outward Invoice (sales invoice or delivery challan bill) sent to the customer.",
+            "The Debit Note sent to a supplier for goods the business returned to them."
           ],
           "answer": 2,
           "why": "Entries in the Sales Day Book are prepared directly from copies of Outward Invoices dispatched to customers detailing goods sold, prices, and trade discounts.",
@@ -1416,10 +1416,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental evidentiary difference between a Debit Note and a Credit Note in subsidiary returns accounting?",
           "options": [
-            "A Debit Note is used exclusively for bank reconciliation adjustments, while a Credit Note is used for payroll processing.",
-            "Both documents are identical in legal effect and can be used interchangeably regardless of counterparty.",
-            "A Debit Note increases revenue, while a Credit Note decreases cash reserves.",
-            "A Debit Note is issued to a supplier to inform them their account is being debited for returned goods; a Credit Note is issued to a customer to inform them their account is being credited for accepted returns."
+            "A Credit Note is sent to a supplier to credit their account for goods returned, and a Debit Note is sent to a customer debiting returns accepted.",
+            "A Debit Note is sent to a customer to debit their account for goods sold, and a Credit Note is sent to a supplier crediting goods bought.",
+            "A Debit Note records a cash payment made to a supplier for purchases, and a Credit Note records cash received from a customer for sales.",
+            "A Debit Note is sent to a supplier to debit their account for goods returned, and a Credit Note is sent to a customer crediting returns accepted."
           ],
           "answer": 3,
           "why": "When returning goods to a vendor, the buyer issues a Debit Note (debiting supplier AP); when accepting returns from a buyer, the seller issues a Credit Note (crediting customer AR).",
@@ -1455,10 +1455,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How should a Bill of Exchange discounted with a commercial bank before maturity be disclosed in corporate financial statements?",
           "options": [
-            "As a Contingent Liability disclosed in the Notes to Accounts, because if the primary drawee dishonours the bill at maturity, the enterprise must repay the bank in full.",
-            "As a direct reduction of permanent shareholder equity reserves.",
-            "As a long-term fixed asset recorded at fair market value.",
-            "It requires no accounting disclosure whatsoever because the bank assumes 100% of the default risk."
+            "As a contingent liability in the Notes to Accounts, since the enterprise must repay the bank if the drawee dishonours the bill at maturity.",
+            "As a current liability on the face of the balance sheet, since the enterprise has borrowed the discounted amount from the bank.",
+            "As a deduction from Bills Receivable with no disclosure, since the bank takes over all risk once the bill is discounted.",
+            "As a contingent asset in the Notes to Accounts, since the enterprise expects to receive the full bill amount at maturity."
           ],
           "answer": 0,
           "why": "When an enterprise discounts a bill of exchange, it endorses the instrument to the bank; if the drawee defaults, the bank has legal recourse against the endorser, creating a classic contingent liability.",
@@ -1489,10 +1489,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of Total Debtors and Total Creditors Control Accounts in the General Ledger?",
           "options": [
-            "To authorize emergency bank overdraft transfers without board resolution.",
-            "To provide an independent summary balance of total receivables and payables that acts as an arithmetic check against the sum of individual subsidiary ledger balances.",
-            "To replace all individual customer and vendor invoicing permanently.",
-            "To calculate statutory corporation income tax liabilities automatically."
+            "They record each customer's and supplier's separate transactions in full detail, replacing the individual subsidiary ledger accounts.",
+            "They give an independent total of receivables and payables that checks the arithmetic of the individual subsidiary ledger balances.",
+            "They give a total of cash receipts and payments that is checked against the bank statement at the end of every month.",
+            "They record the credit limits approved for each customer and supplier, which are checked against the subsidiary ledger balances."
           ],
           "answer": 1,
           "why": "Control accounts maintain aggregate balances of subsidiary ledgers, enabling rapid trial balance extraction and proving the arithmetic accuracy of hundreds of individual customer and supplier folios.",
@@ -1554,10 +1554,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary accounting nature and purpose of a Bank Reconciliation Statement (BRS)?",
           "options": [
-            "A periodic memorandum statement prepared by an account holder to reconcile and explain the causes of divergence between the Cash Book bank balance and the Bank Statement balance.",
-            "A permanent journal account maintained in the General Ledger that forms part of the published Balance Sheet.",
-            "A statutory document submitted directly to central tax authorities to claim input tax credits.",
-            "An internal audit penalty report assessing fines against company cashiers for clerical errors."
+            "A periodic memorandum statement prepared by the account holder to explain the differences between the Cash Book bank balance and the Bank Statement balance.",
+            "A periodic statement prepared by the bank to explain the differences between its ledger balance and the balance in the account holder's Cash Book.",
+            "A permanent ledger account kept by the account holder to record all bank transactions, and it forms part of the published Balance Sheet.",
+            "A periodic memorandum statement prepared by the auditor to confirm that the Cash Book bank balance equals the Bank Statement balance."
           ],
           "answer": 0,
           "why": "A BRS is an explanatory memorandum statement reconciling the bank balance in the Cash Book with the balance shown in the bank Pass Book, ensuring neither cash is misappropriated nor unrecorded transactions missed.",
@@ -1592,10 +1592,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Corrected (Adjusted) Cash Book protocol mandatory prior to closing financial statements at fiscal year-end?",
           "options": [
-            "Because the bank statement is legally invalid until signed by the corporate board of directors.",
-            "Because all unpresented cheques must be written off as corporate profit at year-end.",
-            "Because the Cash Book must be deleted and replaced entirely by the bank Pass Book.",
-            "Because items initiated by the bank (bank charges, interest, direct collections) represent real economic events that must be posted to General Ledger accounts, leaving only pure timing items for the BRS."
+            "Because bank-initiated items like charges and interest are only timing differences, which must be left to appear in the BRS each month.",
+            "Because the BRS is prepared only after year-end, so every cheque issued or deposited in the period must be recorded in the Cash Book first.",
+            "Because the bank statement may be rejected by auditors until adjusted, so unpresented cheques and uncleared deposits must be posted to the ledger.",
+            "Because bank-initiated items like charges, interest and direct collections are real events to be posted, leaving only timing items for the BRS."
           ],
           "answer": 3,
           "why": "Bank charges, direct deposits, and standing orders represent genuine transactions that must be posted to the Cash Book to determine the true balance sheet cash position, leaving only external timing differences for the BRS.",
@@ -1631,10 +1631,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When preparing a BRS starting from an Overdraft as per Cash Book, how are 'Unpresented Cheques' treated?",
           "options": [
-            "Ignored completely because overdraft facilities do not permit cheque issuance.",
-            "Transferred directly into permanent retained earnings.",
-            "Deducted from the Overdraft balance, because when the cheques are presented, they will reduce the unfavorable borrowing balance (or viewed mathematically, added to a negative number).",
-            "Added to the Overdraft balance to increase corporate debt."
+            "Unpresented cheques are added to the overdraft, because the cheques will increase the amount owed to the bank once presented.",
+            "Unpresented cheques are ignored when starting from an overdraft, because they affect only a favourable Cash Book balance.",
+            "Unpresented cheques are deducted from the overdraft, because the Cash Book has already credited them and so overstates the overdraft.",
+            "Unpresented cheques are deducted from the overdraft, because the Cash Book has not yet credited them and so understates the overdraft."
           ],
           "answer": 2,
           "why": "Unpresented cheques have already been credited in the Cash Book, exaggerating the overdraft; when starting from the overdraft balance, unpresented cheques are deducted to arrive at the bank statement overdraft.",
@@ -1669,10 +1669,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If the commercial bank wrongfully debits an enterprise's account for another company's cheque, what is the correct accounting procedure?",
           "options": [
-            "Credit Accounts Receivable to write off the difference.",
-            "Add the wrongful debit in the BRS to reconcile to the Pass Book, and issue a formal dispute notice to the bank without making any entry in the enterprise Cash Book.",
-            "Alter historical sales invoices to match the bank balance.",
-            "Debit Bank Charges Expense Account in the General Ledger immediately."
+            "Pass a correcting journal entry in the Cash Book to credit the amount wrongly debited, then show nothing in the BRS.",
+            "Add the wrongful debit in the BRS to agree with the Pass Book, and dispute it with the bank without any Cash Book entry.",
+            "Deduct the wrongful debit in the BRS to agree with the Pass Book, and dispute it with the bank without any Cash Book entry.",
+            "Write off the wrongful debit as a bank charge in the Cash Book, and recover it through a claim against the other company."
           ],
           "answer": 1,
           "why": "A bank error is external to the company's books; the enterprise must not alter its own Cash Book for a mistake made by the bank. It is reflected as a temporary reconciling item in the BRS until the bank rectifies it.",
@@ -1706,10 +1706,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural advantage of a continuous automated bank reconciliation pipeline over traditional manual end-of-month reconciliation?",
           "options": [
-            "It transforms bank reconciliation from a high-stress month-end batch event into a real-time continuous control activity, detecting cash leakage, fraud, and clearing exceptions instantly.",
-            "It eliminates the need to maintain a General Ledger altogether.",
-            "It guarantees that commercial banks will never charge overdraft interest fees.",
-            "It automatically generates annual statutory tax returns without human review."
+            "It turns reconciliation from a month-end batch task into a real-time control that spots leakage, fraud and clearing exceptions quickly.",
+            "It replaces the need for the bank statement, because the automated system generates the cash book balance from internal records only.",
+            "It makes reconciliation a once-a-year audit procedure, because the automated system reviews exceptions only at fiscal year-end.",
+            "It removes timing differences completely, because the automated system forces the bank to clear all cheques on the same day."
           ],
           "answer": 0,
           "why": "Continuous reconciliation matches transactions daily or in real-time, detecting unauthorized transactions, wire fraud, and posting errors within hours rather than waiting 30 days for month-end statements.",
@@ -1771,10 +1771,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does an agreement (perfect mathematical equality) of the Trial Balance conclusively prove?",
           "options": [
-            "It guarantees that corporate management is immune from statutory tax audits.",
-            "It conclusively proves that no financial errors or omissions of any kind exist in the books of account.",
-            "It proves that the business made a net profit during the accounting period.",
-            "It proves the arithmetic accuracy of the ledger postings, verifying that for every debit recorded, an equal credit was posted."
+            "It proves the books are free of all errors, since errors of principle and omission would unbalance the totals.",
+            "It proves the financial statements are accurate, since the trial balance is audited and confirmed by an independent auditor.",
+            "It proves every transaction went to the correct accounts, since equal totals mean no debit hit a wrong account.",
+            "It proves arithmetic accuracy of the ledger postings, since an equal credit was posted for every debit recorded."
           ],
           "answer": 3,
           "why": "A balanced trial balance proves arithmetic accuracy (debits equal credits); it does not prove total freedom from errors, as errors of principle, complete omission, and compensating errors do not affect trial balance equality.",
@@ -1847,10 +1847,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If the difference between total debits and total credits in a Trial Balance is evenly divisible by 9, what type of clerical error is strongly indicated?",
           "options": [
-            "A direct fraud involving corporate executive embezzlement.",
-            "A Transposition Error (digit reversal such as writing 85 instead of 58) or a Slide Error (misplacing a decimal point such as writing 100 instead of 1,000).",
-            "A bank overdraft credit limit violation.",
-            "An error in computing statutory corporate depreciation rates."
+            "An error of omission, such as an unposted transaction, or an error of commission, such as posting to a wrong personal account.",
+            "A transposition error, such as writing 85 instead of 58, or a slide error, such as writing 100 instead of 1,000.",
+            "A compensating error, such as two equal opposite mistakes, or an error of principle, such as treating capital as revenue.",
+            "A single-sided error, such as posting a debit with no matching credit, or a duplicate posting of the same transaction."
           ],
           "answer": 1,
           "why": "Mathematical law dictates that the difference between any number and the reversal of its digits (transposition) or decimal shifting (slide) is always a multiple of 9.",
@@ -1884,10 +1884,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the 'Balance Method' (Net Balances Method) of compiling a Trial Balance universally preferred in modern commercial practice over the 'Total Method'?",
           "options": [
-            "Because the Net Balances Method eliminates the need to calculate accounts payable.",
-            "Because the Total Method always fails to achieve mathematical equilibrium.",
-            "Because the Net Balances Method lists the exact net asset, liability, revenue, and expense figures required to construct the Profit & Loss Account and Balance Sheet directly.",
-            "Because the Total Method requires computer mainframes that are illegal under modern corporate accounting standards."
+            "It lists the total debits and total credits of every account, which feed directly into the final financial statements.",
+            "It lists only the personal and real account balances, which feed directly into the Balance Sheet without any further netting.",
+            "It lists the net closing balances of assets, liabilities, income and expenses, which feed directly into the final financial statements.",
+            "It lists the opening and closing balances of each account, which are then compared to detect errors in the ledger postings."
           ],
           "answer": 2,
           "why": "The Balance Method directly extracts the net closing balances of accounts, which feed directly into the final financial statements; the Total Method clutters the schedule with historical gross postings that must still be netted.",
@@ -1922,10 +1922,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What critical governance step must occur immediately after achieving a verified Trial Balance before publishing final financial statements?",
           "options": [
-            "Discarding the Trial Balance because it has served its purpose.",
-            "Permanently closing the business and distributing all assets to shareholders.",
-            "Deleting all subsidiary day books to conserve digital storage space.",
-            "Formulating period-end Adjusting Entries (accruals, prepayments, depreciation, closing inventory, bad debt provisions) to comply with the accrual matching principle."
+            "Prepare closing entries that transfer the unadjusted balances straight to the Balance Sheet, since the matching principle is applied only at year-end.",
+            "Prepare the Balance Sheet directly from the unadjusted balances, since the matching principle is already applied in daily postings by the clerks.",
+            "Prepare reversing entries that remove the unadjusted balances, since the matching principle applies only to the next accounting period.",
+            "Prepare period-end adjusting entries, such as accruals, prepayments, depreciation, closing inventory and bad debt provisions, under the matching principle."
           ],
           "answer": 3,
           "why": "The unadjusted Trial Balance represents raw historical balances; to prepare true financial statements, period-end adjusting entries for depreciation, accrued expenses, prepaid expenses, and inventory valuation must be incorporated.",
@@ -1988,10 +1988,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference in rectifying a one-sided error before preparing the Trial Balance versus after preparing the Trial Balance?",
           "options": [
-            "Before preparing the Trial Balance, all errors are permanently ignored.",
-            "After preparing the Trial Balance, the accountant must delete the General Ledger and re-enter all transactions from scratch.",
-            "There is no difference; Suspense Accounts are used at every stage of the accounting cycle.",
-            "Before preparing the Trial Balance, the error is rectified directly in the affected ledger account by an explanatory note without using a Suspense Account; after preparing the Trial Balance, it must be rectified via a journal entry through the Suspense Account."
+            "Before the Trial Balance, the error is fixed by a journal entry through the Suspense Account; after it, the fix is made directly in the ledger.",
+            "Before the Trial Balance, the error is fixed in the Cash Book alone; after it, the fix is made by reversing the whole original posting.",
+            "Before the Trial Balance, the error is carried to the Suspense Account; after it, the fix is shown only as a note in the final statements.",
+            "Before the Trial Balance, the error is fixed directly in the affected ledger account; after it, the fix goes by journal entry through the Suspense Account."
           ],
           "answer": 3,
           "why": "Before the Trial Balance is drafted, no Suspense Account exists because books have not been forced into balance; errors are fixed directly. After the Trial Balance is forced into balance with a Suspense Account, rectifications must route through Suspense.",
@@ -2027,10 +2027,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a Suspense Account still contains an unresolved debit balance at the end of the fiscal year when the Balance Sheet must be published, how is it presented?",
           "options": [
-            "Reported on the Assets side of the Balance Sheet under Current Assets / Other Debits pending future investigation.",
-            "Permanently expensed as an executive bonus.",
-            "Written off against common stock equity capital.",
-            "The business is legally forced into immediate bankruptcy."
+            "It is shown on the Assets side of the Balance Sheet under Current Assets or Other Assets until it is investigated and cleared.",
+            "It is shown on the Liabilities side of the Balance Sheet under Current Liabilities until it is investigated and cleared.",
+            "It is written off to the Profit and Loss Account as an unexplained loss at year-end before the Balance Sheet is published.",
+            "It is netted against Retained Earnings in Shareholders' Equity until it is investigated and cleared in the following year."
           ],
           "answer": 0,
           "why": "An unresolved debit balance in the Suspense Account represents an unexplained net debit in the ledger, presented under Current Assets (or Other Assets) on the Balance Sheet until fully investigated and rectified.",
@@ -2066,10 +2066,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are two-sided accounting errors (such as errors of principle or errors of commission) NEVER rectified through the Suspense Account?",
           "options": [
-            "Because two-sided errors only affect cash and bank accounts.",
-            "Because two-sided errors recorded equal debits and equal credits; they never disrupted Trial Balance equilibrium, and therefore the Suspense Account contains no trace of them.",
-            "Because two-sided errors are illegal under corporate law and cannot be rectified.",
-            "Because the Suspense Account only accepts transactions denominated in foreign currencies."
+            "Two-sided errors are too large to hold, so the Suspense Account is limited to errors below a materiality threshold set by auditors.",
+            "Two-sided errors posted equal debits and credits, so they never upset Trial Balance equality and Suspense holds no trace of them.",
+            "Two-sided errors are posted with unequal debits and credits, so they are corrected only in the final accounts after the Suspense Account is closed.",
+            "Two-sided errors must be corrected before the Trial Balance is prepared, so the Suspense Account is unavailable for them afterwards."
           ],
           "answer": 1,
           "why": "The Suspense Account only holds one-sided imbalances; since two-sided errors posted equal debits and credits, both legs are rectified directly between the affected accounts without touching Suspense.",
@@ -2104,10 +2104,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 8 and US GAAP ASC 250, how must material errors relating to prior accounting periods be reported in the current year's financial statements?",
           "options": [
-            "By quietly modifying historical tax returns without disclosing the change in the financial statements.",
-            "By creating an off-balance-sheet reserve fund.",
-            "Retrospectively, by restating the opening balance of Retained Earnings and comparative historical figures, without passing the adjustment through current year operating profit.",
-            "Prospectively, by treating the prior error as an ordinary operating expense of the current year."
+            "Prospectively, by recording the correction in current year operating profit, with no restatement of opening Retained Earnings or comparatives.",
+            "Retrospectively, by restating comparative figures only, with the correction also passed through current year operating profit.",
+            "Retrospectively, by restating opening Retained Earnings and comparative figures, with no adjustment through current year operating profit.",
+            "Prospectively, by spreading the correction over future years' profit, with a disclosure note and no change to prior balances."
           ],
           "answer": 2,
           "why": "Under IAS 8 / ASC 250, material prior period errors must be corrected retrospectively, adjusting opening retained earnings and comparative historical statements to prevent current period operating earnings from being distorted.",
@@ -2142,10 +2142,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate corporate governance mandate achieved by completing Milestone 2 (Days 6-10) of the Career OS Curriculum?",
           "options": [
-            "Exemption from all federal corporate income tax liabilities.",
-            "The ability to issue corporate shares without regulatory board approval.",
-            "The authority to abolish all internal audits and operate without accounting records.",
-            "Total end-to-end command over enterprise working capital recording, subsidiary ledger reconciliation, bank cash control, arithmetic trial balance validation, and forensic error rectification."
+            "Complete command over fixed asset depreciation, inventory valuation, final accounts preparation, balance sheet marshalling and ratio analysis.",
+            "Complete command over consolidated financial reporting, deferred tax accounting, lease capitalisation, hedge accounting and non-GAAP disclosure.",
+            "Complete command over Tally Prime configuration, voucher entry, GST invoicing, input credit reconciliation and e-invoice generation.",
+            "Complete command over working capital recording, subsidiary ledger reconciliation, bank cash control, trial balance validation and error rectification."
           ],
           "answer": 3,
           "why": "Milestone 2 certifies complete mastery over the operational foundation of financial accounting: cash books, day books, bank reconciliations, trial balance equilibrium, and error rectifications.",
@@ -2208,10 +2208,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core conceptual difference between the Straight Line Method (SLM) and the Written Down Value (WDV) method of depreciation?",
           "options": [
-            "SLM charges a fixed, constant depreciation amount every year calculated on original cost minus scrap; WDV applies a fixed percentage to the diminishing book value, resulting in declining depreciation charges over time.",
-            "SLM is used only for real estate land, while WDV is used exclusively for liquid cash balances.",
-            "WDV charges a constant dollar amount every year, while SLM increases depreciation charges exponentially.",
-            "SLM is forbidden under statutory accounting standards."
+            "SLM charges a fixed amount each year on cost less scrap, while WDV applies a fixed percentage to the falling book value, so charges decline over time.",
+            "WDV charges a fixed amount each year on cost less scrap, while SLM applies a fixed percentage to the falling book value, so charges decline over time.",
+            "SLM applies a fixed percentage to the original cost each year, while WDV charges the same amount in every year on cost less scrap.",
+            "SLM charges more depreciation in later years than early years, while WDV applies a fixed percentage to the original cost throughout."
           ],
           "answer": 0,
           "why": "SLM allocates asset cost evenly over time in equal annual installments; WDV charges higher depreciation in early years and progressively smaller amounts as book value decreases.",
@@ -2247,10 +2247,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate reporting advantage of maintaining a separate 'Provision for Depreciation' (Accumulated Depreciation) Account rather than crediting the Asset Account directly?",
           "options": [
-            "It transforms the asset into liquid cash reserves automatically.",
-            "It eliminates the need to record depreciation expense in the Profit & Loss Statement.",
-            "It allows the enterprise to sell the asset without paying capital gains tax.",
-            "It preserves the original historical cost of the asset on the face of the Balance Sheet while disclosing total cumulative depreciation in a separate contra-asset account, providing full transparency into asset age and replacement cycles."
+            "It reduces the original cost of the asset on the Balance Sheet each year and shows depreciation as a liability, giving transparency on asset age.",
+            "It keeps the original cost of the asset off the Balance Sheet and shows only the depreciation charge for the year, giving transparency on tax liability.",
+            "It keeps the original cost of the asset on the Balance Sheet and shows total depreciation as an expense reserve in equity, giving transparency on profits.",
+            "It keeps the original cost of the asset on the Balance Sheet and shows total depreciation separately as a contra-asset, giving transparency on asset age."
           ],
           "answer": 3,
           "why": "Maintaining a Provision for Depreciation account allows the Balance Sheet to show both gross historical investment and accumulated write-downs, satisfying GAAP and IFRS statutory disclosure standards.",
@@ -2285,10 +2285,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of opening a temporary 'Asset Disposal Account' when a fixed asset is sold or scrapped?",
           "options": [
-            "To transfer the asset's legal title to the bank without board authorization.",
-            "To convert capital equipment into inventory merchandise for retail sale.",
-            "To isolate and assemble the asset's original cost, total accumulated depreciation to date of sale, disposal expenses, and cash sale proceeds in a single clearing account to determine net gain or loss on disposal.",
-            "To conceal asset retirement losses from statutory tax inspectors."
+            "To bring together the asset's cost, annual depreciation charge and insurance premiums in one clearing account to find the replacement cost.",
+            "To bring together the asset's sale proceeds and purchase price in the Cash Book so the Balance Sheet value is updated for the new owner.",
+            "To bring together the asset's cost, accumulated depreciation, disposal expenses and sale proceeds in one clearing account to find the gain or loss.",
+            "To bring together the asset's cost, accumulated depreciation and sale proceeds in the Capital Account to find the change in owner equity."
           ],
           "answer": 2,
           "why": "The Asset Disposal Account acts as a dedicated clearing ledger where gross cost, accumulated depreciation, and sale proceeds are brought together to calculate the net profit or loss on disposal.",
@@ -2323,10 +2323,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IAS 16 and Ind AS 16, how must a change in the estimated useful life of a depreciable asset be accounted for?",
           "options": [
-            "Retrospectively, by reopening and rewriting all prior year published balance sheets.",
-            "Prospectively as a change in accounting estimate, by allocating the remaining written down value over the revised remaining useful life without altering historical financial statements.",
-            "By immediately writing off the entire remaining asset balance to retained earnings.",
-            "As an error of principle that requires reporting to criminal law enforcement."
+            "Retrospectively as a correction of error, restating all prior statements as if the revised life had always applied to the asset.",
+            "Prospectively as a change in estimate, spreading the remaining written down value over the revised remaining life without restating prior statements.",
+            "Prospectively as a change in accounting policy, restating the opening balance of retained earnings for the revised remaining life.",
+            "Retrospectively as a change in estimate, adjusting the opening accumulated depreciation and comparative figures for the revised remaining life."
           ],
           "answer": 1,
           "why": "Under IAS 16 / ASC 250, revisions to useful life or salvage value represent changes in accounting estimates; they are accounted for prospectively from the date of change without restating prior periods.",
@@ -2361,10 +2361,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does accelerated depreciation for tax purposes create a 'Deferred Tax Liability' (DTL) on the corporate balance sheet under IAS 12 and US GAAP ASC 740?",
           "options": [
-            "Because higher tax depreciation in early years reduces current taxable income and cash taxes paid today, creating a future tax obligation when book depreciation eventually exceeds tax depreciation.",
-            "Because the enterprise has broken federal tax law and owes immediate penalty fines.",
-            "Because tax depreciation is an illegal accounting invention.",
-            "Because Deferred Tax Liabilities represent customer warranty claims."
+            "Higher tax depreciation early on cuts current taxable income and cash taxes now, creating a future tax obligation when book depreciation exceeds tax depreciation.",
+            "Higher tax depreciation early on raises current taxable income and cash taxes now, creating a future tax refund when book depreciation exceeds tax depreciation.",
+            "Higher book depreciation early on cuts current accounting profit and cash taxes now, creating a future tax obligation when tax depreciation exceeds book depreciation.",
+            "Higher tax depreciation early on is a permanent difference that cuts the effective tax rate, creating no future tax obligation when book depreciation exceeds it."
           ],
           "answer": 0,
           "why": "Accelerated tax depreciation lowers current tax payments relative to accounting profit; because this timing difference will reverse in future years, a Deferred Tax Liability is recognized to reflect future higher tax outflows.",
@@ -2427,10 +2427,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the precise mathematical formula for calculating Cost of Goods Sold (COGS) in the Trading Account?",
           "options": [
-            "COGS = Gross Sales - Administrative Expenses - Depreciation.",
+            "COGS = Opening Stock + Net Purchases - Direct Expenses + Closing Stock.",
             "COGS = Opening Stock + Net Purchases + Direct Expenses - Closing Stock.",
-            "COGS = Net Income + Corporate Income Taxes Paid.",
-            "COGS = Total Bank Deposits + Outstanding Debtors."
+            "COGS = Closing Stock + Net Sales + Direct Expenses - Opening Stock.",
+            "COGS = Opening Stock + Net Sales + Indirect Expenses - Closing Stock."
           ],
           "answer": 1,
           "why": "Cost of Goods Sold represents the direct cost of inventory brought to a saleable condition: Opening Stock plus Net Purchases plus Direct Manufacturing Expenses minus Closing Stock.",
@@ -2465,10 +2465,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical accounting distinction between 'Carriage Inwards' and 'Carriage Outwards'?",
           "options": [
-            "Carriage Inwards represents personal drawings by the owner, while Carriage Outwards is a long-term capital asset.",
-            "Both expenses are identical and debited to the Trading Account interchangeably.",
-            "Carriage Inwards is a Direct Expense debited to the Trading Account (freight paid to acquire raw materials); Carriage Outwards is an Indirect Expense debited to the Profit & Loss Account (freight paid to deliver sold goods to customers).",
-            "Carriage Outwards is recorded exclusively in the Cash Book discount column."
+            "Carriage Inwards is an indirect expense in the Profit & Loss Account for freight on acquiring goods; Carriage Outwards is a direct expense in the Trading Account for delivering sales.",
+            "Carriage Inwards and Carriage Outwards are both direct expenses in the Trading Account, as freight on goods bought and sold forms part of the cost of sales.",
+            "Carriage Inwards is a direct expense in the Trading Account for freight on acquiring goods; Carriage Outwards is an indirect expense in the Profit & Loss Account for delivering sales.",
+            "Carriage Inwards is a direct expense in the Trading Account for freight on delivering sales; Carriage Outwards is an indirect expense in the Profit & Loss Account for acquiring goods."
           ],
           "answer": 2,
           "why": "Carriage Inwards directly adds to the cost of purchasing inventory and belongs in the Trading Account; Carriage Outwards is a selling and distribution expense that belongs in the Profit & Loss Account.",
@@ -2541,10 +2541,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the proper accounting treatment for goods destroyed by an abnormal casualty event (such as a factory fire) in the Trading Account and Profit & Loss Statement?",
           "options": [
-            "The full cost of destroyed goods is credited to the Trading Account (to restore true gross profit on goods actually sold); the insurance claim admitted is debited as a Current Asset; and the net uncovered loss is debited to the Profit & Loss Account.",
-            "The loss is ignored entirely until all legal claims conclude in civil court.",
-            "The cost of destroyed goods is added to Closing Stock on the Balance Sheet.",
-            "The loss is debited to Sales Revenue to reduce taxable turnover."
+            "The cost of destroyed goods is credited to the Trading Account, the insurance claim admitted is debited as a current asset, and the uncovered loss goes to Profit & Loss.",
+            "The cost of destroyed goods is debited to the Trading Account, the insurance claim admitted is credited as income, and the uncovered loss goes to the Balance Sheet.",
+            "The cost of destroyed goods is credited to the Profit & Loss Account, the insurance claim admitted is debited to the Trading Account, and the uncovered loss goes to Capital.",
+            "The cost of destroyed goods is left in the Trading Account as part of normal cost of sales, and the whole loss is spread over the next few years."
           ],
           "answer": 0,
           "why": "Crediting the full cost of destroyed stock to the Trading Account removes the abnormal loss from COGS, preserving true operational gross margin; the net uncovered loss is charged to P&L as an abnormal non-operating item.",
@@ -2580,10 +2580,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of preparing a separate 'Manufacturing Account' prior to the Trading Account in an industrial enterprise?",
           "options": [
-            "To replace the corporate Balance Sheet permanently.",
-            "To determine the Cost of Finished Goods Produced during the period (by aggregating raw materials consumed, direct labor, direct expenses, factory overheads, and WIP adjustments) and transfer that total to the Trading Account.",
-            "To calculate executive sales commissions on customer contracts.",
-            "To compute corporate income taxes owed to state authorities."
+            "To work out the Cost of Goods Sold from opening stock, purchases, carriage inwards and closing stock, then transfer the gross profit to the Profit & Loss Account.",
+            "To work out the Cost of Finished Goods Produced from materials consumed, direct labour, direct expenses, factory overheads and WIP adjustments, then transfer it to the Trading Account.",
+            "To work out the Cost of Finished Goods Produced from materials consumed, selling expenses, administration overheads and interest, then transfer it to the Profit & Loss Account.",
+            "To work out the Net Profit of the factory from sales revenue, production costs, selling and office expenses, then transfer it to the Capital Account of the owner."
           ],
           "answer": 1,
           "why": "In manufacturing concerns, the Manufacturing Account compiles all factory production costs to establish the Cost of Finished Goods Produced, which is transferred to the Trading Account in lieu of simple purchases.",
@@ -2645,10 +2645,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural purpose of a Multi-Step Profit & Loss Statement over a Single-Step Income Statement?",
           "options": [
-            "It guarantees that the company will never pay interest to commercial banks.",
-            "It calculates employee payroll withholding taxes automatically.",
-            "It segregates core Operating Profit (EBIT) from non-operating incomes, financing costs, and statutory tax provisions, providing transparency into operational earnings quality.",
-            "It replaces the corporate Cash Book permanently."
+            "It combines all income and all expenses into one total, showing the net profit figure in a single step for simplicity.",
+            "It separates Gross Profit from Net Profit only, leaving financing costs and non-operating income inside operating expenses for simplicity.",
+            "It separates Operating Profit (EBIT) from non-operating income, financing costs and tax, showing the quality of core operating earnings.",
+            "It separates revenue by customer segment and region, showing which markets contribute most to the total sales figure of the year."
           ],
           "answer": 2,
           "why": "A multi-step P&L clearly delineates Gross Profit, Operating Profit (EBIT), and Net Profit (PAT), allowing management and analysts to evaluate core operating performance independently of financing and tax structures.",
@@ -2684,10 +2684,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the dual-aspect accounting treatment for an 'Outstanding (Accrued) Expense' discovered at the end of the fiscal year?",
           "options": [
-            "Credited directly to Sales Revenue.",
-            "Added to the respective expense account in the Trading or Profit & Loss Statement (debit), and presented as a Current Liability on the Balance Sheet (credit).",
-            "Deducted from the expense account and recorded as a fixed asset.",
-            "Ignored until the cash payment check clears the bank next year."
+            "Credit it by deducting it from the expense account in the Trading or P&L Account, and debit it as a Current Asset on the Balance Sheet.",
+            "Debit it by adding it to the expense account in the Trading or P&L Account, and credit it as a Current Liability on the Balance Sheet.",
+            "Debit it by adding it to the expense account in the Trading or P&L Account, and credit it as a Current Asset on the Balance Sheet.",
+            "Debit it by adding it to the expense account in the next year's P&L Account, and credit it as a Non-Current Liability on the Balance Sheet."
           ],
           "answer": 1,
           "why": "Under the accrual matching principle, unpaid expenses incurred during the period must be added to the P&L expense (debit) to reflect true costs, and recognized as a Current Liability (credit) on the Balance Sheet.",
@@ -2723,10 +2723,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory mathematical sequence for computing Bad Debts, Provision for Doubtful Debts, and Provision for Discount on Debtors at year-end?",
           "options": [
-            "Step 1: Deduct additional bad debts from gross debtors; Step 2: Compute Provision for Doubtful Debts on remaining debtors; Step 3: Compute Provision for Discount on Debtors strictly on the remaining sound debtors (Gross Debtors - Bad Debts - Doubtful Provision).",
-            "Compute all three percentages simultaneously on gross debtors without deductions.",
-            "Deduct discount provision first, then bad debts, then doubtful provision.",
-            "Provision for discount is only calculated on cash sales."
+            "First deduct additional bad debts from gross debtors, then compute the doubtful debts provision, then compute the discount provision on the remaining sound debtors.",
+            "First compute the discount provision on gross debtors, then compute the doubtful debts provision, then deduct additional bad debts from the remaining debtors.",
+            "First compute the doubtful debts provision on gross debtors, then deduct additional bad debts, then compute the discount provision on the remaining debtors.",
+            "First deduct additional bad debts from gross debtors, then compute the discount provision, then compute the doubtful debts provision on the remaining debtors."
           ],
           "answer": 0,
           "why": "Discount is granted only to customers who pay promptly; doubtful debtors are unlikely to pay at all, so discount provision must be calculated strictly on sound debtors after deducting both bad debts and doubtful provision.",
@@ -2762,10 +2762,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational mathematical relationship between the 'Operating Ratio' and the 'Operating Profit Ratio' in corporate financial analysis?",
           "options": [
-            "Operating Profit Ratio is always double the Operating Ratio.",
-            "Operating Ratio multiplied by Operating Profit Ratio equals Net Working Capital.",
-            "The two ratios are completely unrelated and calculated from different financial statements.",
-            "Operating Ratio + Operating Profit Ratio = 100%, because Operating Ratio measures the percentage of revenue consumed by operating costs (COGS + OpExp) and Operating Profit Ratio measures what remains."
+            "Operating Ratio - Operating Profit Ratio = 100%, since the first is the share of sales used by operating costs and the second is the net margin.",
+            "Operating Ratio x Operating Profit Ratio = 100%, since the first is the share of sales used by operating costs and the second is its inverse.",
+            "Operating Ratio + Net Profit Ratio = 100%, since the first is the share of sales used by operating costs and the second includes all remaining items.",
+            "Operating Ratio + Operating Profit Ratio = 100%, since the first is the share of sales used by operating costs and the second is what remains."
           ],
           "answer": 3,
           "why": "Operating Ratio represents the cost of generating revenue (Cost of Goods Sold + Operating Expenses as a percentage of Sales); Operating Profit Ratio represents the operational profit margin (EBIT / Sales). Together, cost plus profit must total 100% of revenue.",
@@ -2801,10 +2801,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final accounting entry required to close the Profit & Loss Statement when a Net Profit has been earned at year-end?",
           "options": [
-            "Credit Profit & Loss Account and Debit Cash Account.",
-            "Debit Bank Account and Credit Sales Revenue Account.",
-            "Debit Profit & Loss Account and Credit Capital Account (or Retained Earnings in a corporate entity), transferring net income to equity.",
-            "Transfer the entire profit to statutory external auditors as a closing bonus."
+            "Debit Capital Account (or Retained Earnings) and Credit Profit & Loss Account, moving net income out of equity.",
+            "Debit Profit & Loss Account and Credit Drawings Account, moving net income into the owner's withdrawals.",
+            "Debit Profit & Loss Account and Credit Capital Account (or Retained Earnings), moving net income into equity.",
+            "Debit Trading Account and Credit Profit & Loss Account, moving net income into the gross profit."
           ],
           "answer": 2,
           "why": "Net Profit represents the net increase in owner wealth generated during the period; closing P&L debits Profit & Loss Account (clearing it to zero) and credits Capital Account (or Retained Earnings), completing the integration into the Balance Sheet.",
@@ -2866,10 +2866,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference in presentation between the 'Order of Permanence' and the 'Order of Liquidity' on the Balance Sheet?",
           "options": [
-            "There is no difference; assets are always listed in random alphabetical order.",
-            "Order of Permanence is used only for banks, while Order of Liquidity is used exclusively for governments.",
-            "Order of Liquidity ignores equity capital entirely.",
-            "Order of Permanence lists least liquid, permanent assets (Land, Buildings, Plant) first, ending with Cash; Order of Liquidity lists the most liquid assets (Cash, Bank, Debtors) first, ending with permanent assets."
+            "Order of Liquidity lists permanent assets such as Land and Buildings first and ends with Cash; Order of Permanence lists Cash and Bank first and ends with permanent assets.",
+            "Order of Permanence lists liabilities first and then assets from the most liquid; Order of Liquidity lists assets first and then liabilities from the most permanent.",
+            "Order of Permanence lists current assets before fixed assets on the Balance Sheet; Order of Liquidity lists intangible assets before tangible assets.",
+            "Order of Permanence lists permanent assets such as Land and Buildings first and ends with Cash; Order of Liquidity lists Cash and Bank first and ends with permanent assets."
           ],
           "answer": 3,
           "why": "Marshalling refers to the systematic arrangement of assets and liabilities; Permanence order prioritizes long-term fixed assets (standard for corporations), while Liquidity order prioritizes cash and near-cash items (standard for banks and sole traders).",
@@ -2904,10 +2904,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is inventory strictly excluded from Current Assets when calculating the Quick Ratio (Acid-Test Ratio)?",
           "options": [
-            "Because inventory cannot be converted into cash immediately at predictable values; goods must first find willing buyers and are subject to price discounts, damage, and customer collection lags.",
-            "Because inventory belongs exclusively to the corporate board of directors.",
-            "Because inventory has already been written off as a permanent tax loss.",
-            "Because inventory is classified as a non-current intangible asset."
+            "Because inventory cannot be converted to cash immediately at predictable values; it needs buyers and is exposed to discounts, damage and collection delays.",
+            "Because inventory is a non-current asset under accounting standards, so it cannot be classified within current assets for any liquidity ratio.",
+            "Because inventory is valued at cost rather than market price, so it cannot be compared with liabilities that are measured at fair value.",
+            "Because inventory is already included in current liabilities through supplier credit, so counting it again would double count the working capital."
           ],
           "answer": 0,
           "why": "The Quick Ratio tests immediate short-term liquidity; inventory is excluded because it requires marketing, selling, and debt collection before converting into cash, unlike debtors and bank balances.",
@@ -2943,10 +2943,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under modern statutory frameworks (IAS 1 and Schedule III), what is the definitive criterion for classifying an asset or liability as 'Current' versus 'Non-Current'?",
           "options": [
-            "Current assets are items made of paper; non-current assets are items made of metal.",
-            "The Operating Cycle Criterion: An asset is Current if it is expected to be realized within 12 months or within the normal operating cycle of the business; a liability is Current if it is due to be settled within 12 months. All other items are Non-Current.",
-            "Classification depends entirely on whether the item was purchased with a credit card.",
-            "All physical assets are current; all financial assets are non-current."
+            "An asset is Current if it is held for more than 12 months for use in operations; a liability is Current if due after 12 months; all else is Non-Current.",
+            "An asset is Current if expected to be realised within 12 months or the normal operating cycle; a liability is Current if due within 12 months; all else is Non-Current.",
+            "An asset is Current if it is purchased with borrowed funds within the financial year; a liability is Current if secured by assets; all else is Non-Current.",
+            "An asset is Current if it is tangible and readily saleable at book value; a liability is Current if owed to trade suppliers only; all else is Non-Current."
           ],
           "answer": 1,
           "why": "Under IAS 1 and modern corporate statutes, the 12-month boundary or the operating cycle defines current assets and liabilities; long-term productive investments and multi-year borrowings are classified as non-current.",
@@ -2982,10 +2982,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a high 'Proprietary Ratio' (Shareholders' Equity / Total Assets) signify regarding corporate financial health?",
           "options": [
-            "It indicates that the company is on the verge of bankruptcy.",
-            "It proves that the enterprise does not own any physical fixed assets.",
-            "It indicates a high degree of long-term financial security and low insolvency risk, because a large percentage of total assets is funded by permanent owner equity rather than debt creditors.",
-            "It means the company is legally required to liquidate all cash reserves."
+            "It shows heavy reliance on creditors and high insolvency risk, since a large share of total assets is funded by debt rather than owner equity.",
+            "It shows strong short-term liquidity and low default risk, since a large share of current assets is funded by cash rather than inventory.",
+            "It shows strong long-term financial security and low insolvency risk, since a large share of total assets is funded by owner equity rather than debt.",
+            "It shows high profitability for shareholders, since a large share of total sales is converted into net profit rather than operating costs."
           ],
           "answer": 2,
           "why": "The Proprietary Ratio measures the proportion of total assets funded by shareholders; a ratio above 50-60% provides a strong safety buffer for creditors and insulates the firm against debt default during economic recessions.",
@@ -3021,10 +3021,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate mathematical condition that proves a Balance Sheet has been compiled correctly from the General Ledger and Trial Balance?",
           "options": [
-            "Total Assets must equal exactly double the net profit.",
-            "The bank balance must be zero dollars.",
-            "The Balance Sheet must show zero accounts payable.",
-            "Total Assets must mathematically equal Total Liabilities plus Owner Equity, proving that the dual-aspect double-entry equilibrium has been maintained across all adjusting entries."
+            "Total Assets must equal Total Liabilities minus Owner Equity, showing that double-entry balance held through all adjusting entries.",
+            "Total Current Assets must equal Total Current Liabilities, showing that working capital balance held through all adjusting entries.",
+            "Total Debits must equal Total Credits in the Profit & Loss Account, showing that income and expense balance held through all adjusting entries.",
+            "Total Assets must equal Total Liabilities plus Owner Equity, showing that double-entry balance held through all adjusting entries."
           ],
           "answer": 3,
           "why": "The fundamental accounting equation Assets = Liabilities + Equity must be satisfied to the exact cent; equality proves that every debit has an equal credit across all historical and adjusting entries.",
@@ -3088,10 +3088,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must period-end adjusting entries for unrecorded accruals and prepayments be posted before synthesizing financial statements?",
           "options": [
-            "To uphold the accrual basis of accounting by matching revenues earned and expenses incurred within the period, regardless of physical cash flows",
-            "To artificially inflate the net profit reported to commercial banks and tax authorities",
-            "To convert all nominal ledger accounts into physical cash in hand before closing",
-            "To eliminate the need for physical inventory stocktaking at the end of the year"
+            "To uphold accrual accounting by matching revenues earned and expenses incurred in the period, regardless of when cash moves",
+            "To uphold cash accounting by recording only the receipts and payments made in the period, regardless of when revenue is earned",
+            "To uphold the going concern principle by valuing assets at expected sale value, regardless of when the expenses are incurred",
+            "To uphold the consistency principle by repeating last year's entries, regardless of when revenues are earned or expenses incurred"
           ],
           "answer": 0,
           "why": "Upholding the accrual basis of accounting requires adjusting for accrued and prepaid items so that all revenues earned and expenses incurred in the period are accurately matched.",
@@ -3127,10 +3127,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between Gross Profit in the Trading Account and Net Profit in the P&L Account?",
           "options": [
-            "Gross Profit includes all office salaries and depreciation, while Net Profit excludes them",
-            "Gross Profit is calculated after deducting owner drawings, whereas Net Profit ignores drawings completely",
-            "Gross Profit is transferred directly to the balance sheet capital account without entering the P&L account",
-            "Gross Profit reflects revenue minus direct production/merchandise costs (COGS), whereas Net Profit reflects Gross Profit plus other incomes minus all operating, administrative, selling, and financial overheads"
+            "Gross Profit is revenue minus all operating and financial expenses, while Net Profit is revenue minus only the direct cost of goods sold",
+            "Gross Profit is net profit plus tax and interest, while Net Profit is revenue minus direct costs (COGS) before any overheads are deducted",
+            "Gross Profit is revenue minus indirect expenses and depreciation, while Net Profit is Gross Profit minus only direct production costs and taxes",
+            "Gross Profit is revenue minus direct costs (COGS), while Net Profit is Gross Profit plus other incomes minus all operating, selling and financial expenses"
           ],
           "answer": 3,
           "why": "Gross Profit measures trading profitability (Revenue minus COGS), whereas Net Profit accounts for all indirect overheads, depreciation, financing charges, and non-operating incomes.",
@@ -3166,10 +3166,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is the net profit from the Profit & Loss statement integrated into the Marshalled Balance Sheet under the order of permanence?",
           "options": [
-            "It is listed as a separate current liability under trade creditors",
-            "It is credited against gross plant and machinery to reduce accumulated depreciation",
-            "It is added to Owner's Capital along with fresh capital and reduced by drawings to determine Closing Equity",
-            "It is transferred into a temporary cash in hand suspense account"
+            "It is shown as a separate current liability beside the Owner's Capital and is not reduced by any drawings of the year",
+            "It is deducted from the Owner's Capital together with drawings and fresh capital to give the Closing Equity",
+            "It is added to the Owner's Capital together with fresh capital and reduced by drawings to give Closing Equity",
+            "It is added to the Fixed Assets side of the Balance Sheet as the value created by operations during the year"
           ],
           "answer": 2,
           "why": "Net profit represents the owner's return on investment and is added directly to Owner's Capital (less drawings) in the Equity section of the Balance Sheet.",
@@ -3205,10 +3205,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do Nominal accounts not appear on the Post-Closing Trial Balance?",
           "options": [
-            "Because nominal accounts are deleted permanently from the ERP database without audit traces",
-            "Because all nominal accounts (revenues and expenses) have been closed to zero through closing journal entries transferred to Equity/Capital",
-            "Because nominal accounts only contain confidential management salaries",
-            "Because the post-closing trial balance only records cash transactions"
+            "Because nominal accounts carry debit balances only, so they are shown in the pre-closing trial balance and never again",
+            "Because all nominal accounts (revenues and expenses) were closed to zero by closing entries transferred to Equity or Capital",
+            "Because nominal accounts are transferred to the subsidiary ledgers at year-end, so only the control accounts remain active",
+            "Because nominal accounts are replaced by suspense accounts at year-end, so only unresolved errors remain in the ledger"
           ],
           "answer": 1,
           "why": "Nominal accounts measure performance over a bounded period and are reset to zero at year-end by closing entries into Profit & Loss / Capital, leaving only permanent Real and Personal accounts active.",
@@ -3245,10 +3245,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Quick Ratio (Acid-Test) considered a more stringent test of immediate liquidity than the Current Ratio?",
           "options": [
-            "Because it excludes inventory and prepaid expenses from current assets, focusing strictly on assets that can be converted into cash immediately to service current obligations",
-            "Because it includes long-term debentures in the numerator",
-            "Because it divides total fixed assets by owner's capital",
-            "Because it ignores sundry creditors and trade payables"
+            "Because it excludes inventory and prepaid expenses, counting only assets that can quickly be turned into cash to pay current obligations",
+            "Because it includes inventory and prepaid expenses at market value, counting all assets that can be sold to pay current obligations",
+            "Because it excludes cash and bank balances, counting only receivables and inventory that can be sold to pay current obligations",
+            "Because it excludes current liabilities due after six months, counting only the most urgent debts against the total current assets"
           ],
           "answer": 0,
           "why": "The Quick Ratio excludes inventory (which takes time to sell) and prepaid expenses (which cannot be refunded easily), providing an acid test of instant debt-servicing ability.",
@@ -3311,10 +3311,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction in Tally Prime between the 'Financial Year Begins From' date and the 'Books Beginning From' date?",
           "options": [
-            "Books Beginning must always be exactly one year before the Financial Year start date",
-            "Financial Year denotes the 12-month statutory tax cycle (e.g. 01-04-2026), whereas Books Beginning marks the exact operational date from which accounting entries are recorded in the system",
-            "Financial Year can only be set by tax auditors, whereas Books Beginning is set by sales clerks",
-            "Financial Year is only used for cash transactions, while Books Beginning is used for bank transactions"
+            "Books Beginning is the 12-month statutory tax cycle (e.g. 01-04-2026), while Financial Year is the date from which entries are recorded in the system",
+            "Financial Year is the 12-month statutory tax cycle (e.g. 01-04-2026), while Books Beginning is the date from which entries are recorded in the system",
+            "Financial Year is the date the company was incorporated, while Books Beginning is the date the first GST return was filed in the system",
+            "Financial Year is the date set for closing the audit, while Books Beginning is the date from which opening balances are carried forward"
           ],
           "answer": 1,
           "why": "The financial year establishes statutory tax boundaries, while books beginning denotes the active start date for transaction records, accommodating businesses founded midway through the fiscal period.",
@@ -3350,10 +3350,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How are Tally Prime's 28 pre-defined groups structurally partitioned across primary and secondary tiers?",
           "options": [
-            "28 independent groups with no parent-child relationship",
-            "20 Primary Groups and 8 Secondary Groups based entirely on alphabetical order",
-            "15 Primary Groups (9 Balance Sheet, 6 Profit & Loss) and 13 Secondary Sub-Groups that automatically roll up into primary roots",
-            "14 Balance Sheet groups and 14 Cash Book groups with no hierarchical inheritance"
+            "15 Primary Groups (6 Balance Sheet, 9 Profit & Loss) and 13 Secondary Sub-Groups that roll up into the primary groups",
+            "13 Primary Groups (9 Balance Sheet, 4 Profit & Loss) and 15 Secondary Sub-Groups that roll up into the primary groups",
+            "15 Primary Groups (9 Balance Sheet, 6 Profit & Loss) and 13 Secondary Sub-Groups that roll up into the primary groups",
+            "28 Primary Groups (14 Balance Sheet, 14 Profit & Loss) and no Secondary Sub-Groups, which roll up into the ledgers"
           ],
           "answer": 2,
           "why": "Tally Prime features 15 Primary Groups (9 Balance Sheet, 6 P&L) and 13 Secondary Sub-Groups that inherit financial statement rollup rules from their respective primary parents.",
@@ -3390,10 +3390,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which two ledger accounts are created automatically by Tally Prime upon initializing a new company?",
           "options": [
-            "Bank Account and Sales Account",
-            "Sundry Debtors and Sundry Creditors",
-            "Capital Account and Depreciation Account",
-            "Cash (under Cash-in-Hand) and Profit & Loss A/c (primary nominal summary ledger)"
+            "Cash (under Cash-in-Hand) and Bank A/c (under the Bank Accounts primary group)",
+            "Profit & Loss A/c (the primary nominal summary ledger) and Capital A/c (under Capital Account)",
+            "Sales A/c (under Sales Accounts) and Purchase A/c (under Purchase Accounts) for the company",
+            "Cash (under Cash-in-Hand) and Profit & Loss A/c (the primary nominal summary ledger)"
           ],
           "answer": 3,
           "why": "Tally Prime automatically creates Cash and Profit & Loss A/c by default; all other operational ledgers must be explicitly configured by the user.",
@@ -3430,10 +3430,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does enterprise managerial accounting employ Cost Centers and Cost Categories rather than creating distinct nominal ledgers for every project and department?",
           "options": [
-            "To prevent chart of accounts explosion while enabling multi-dimensional allocation across departments and projects without distorting statutory financial statements",
-            "Because Tally Prime limits companies to a maximum of 10 total ledger accounts",
-            "To hide departmental spending from corporate statutory auditors",
-            "Because cost centers convert expense vouchers into tax-free government grants"
+            "To avoid a bloated chart of accounts while tracking departments and projects across several dimensions, leaving statutory statements unaffected",
+            "To avoid statutory audits of departments and projects while tracking them across several dimensions in the published balance sheet",
+            "To avoid double entry on departments and projects while tracking them across several dimensions, replacing the nominal ledgers fully",
+            "To avoid manual postings for departments and projects while tracking them across several dimensions, changing the statutory statements"
           ],
           "answer": 0,
           "why": "Cost categories and centers provide parallel multi-dimensional tracking (e.g. by department and project) while keeping the statutory general ledger clean and manageable.",
@@ -3469,10 +3469,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of extracting and auditing the Chart of Accounts before processing accounting vouchers in an ERP system?",
           "options": [
-            "To print physical paper certificates for every customer and vendor",
-            "To verify that all ledgers are mapped to valid hierarchical groups, statutory GST/tax parameters are compliant, and opening balances balance to zero",
-            "To convert the accounting database into an uneditable PDF file",
-            "To delete all expense accounts so that the company shows maximum net profit"
+            "To check that ledgers sit under valid groups, tax settings such as GST are compliant, and opening balances equal the closing stock",
+            "To check that ledgers sit under valid groups, tax settings such as GST are compliant, and opening balances net to zero",
+            "To check that every voucher is approved by the auditor, tax returns are filed, and opening balances equal last year's profit",
+            "To check that bank balances agree to statements, tax settings such as GST are disabled, and opening balances net to zero"
           ],
           "answer": 1,
           "why": "Auditing the Chart of Accounts ensures structural validity, statutory tax configuration readiness, and opening balance zero-difference equilibrium prior to transaction processing.",
@@ -3539,10 +3539,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which accounting transactions are strictly permitted within an F4 Contra voucher in Tally Prime?",
           "options": [
-            "Depreciation adjusting entries on fixed assets",
-            "Payments to external trade vendors for inventory purchases",
-            "Transactions exclusively between cash and bank accounts (e.g. cash deposit, cash withdrawal, or inter-bank funds transfer)",
-            "Credit sales of goods to customers"
+            "Transactions between cash or bank accounts and expense ledgers, such as cash withdrawals for salaries and rent payments",
+            "Transactions between bank accounts and sundry debtors, such as cheque receipts from customers and refunds to suppliers",
+            "Only transactions between cash and bank accounts, such as cash deposits, cash withdrawals and inter-bank transfers",
+            "Transactions between journal ledgers and stock items, such as inventory adjustments and non-cash depreciation entries"
           ],
           "answer": 2,
           "why": "Contra vouchers are restricted exclusively to internal cash and bank movements; third-party or expense ledgers cannot enter an F4 voucher.",
@@ -3579,10 +3579,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When should an enterprise utilize Item Invoice Mode rather than Accounting Invoice Mode in Tally Prime?",
           "options": [
-            "When entering daily cash withdrawal contra entries",
-            "When billing or purchasing physical merchandise requiring tracking of quantities, stock items, godowns, and unit rates",
-            "When recording prior-period restatement adjusting entries",
-            "When recording pure professional consulting services with no inventory"
+            "When billing or buying services that need hours, ledger heads, cost centres and hourly rates tracked",
+            "When billing or buying physical goods that need quantities, stock items, godowns and unit rates tracked",
+            "When recording journal adjustments that need only ledger heads, narrations and debit-credit totals tracked",
+            "When billing or buying fixed assets that need depreciation, cost centres, and disposal schedules tracked"
           ],
           "answer": 1,
           "why": "Item Invoice Mode links financial transactions directly to physical inventory stock items, tracking quantities, rates, and godown locations.",
@@ -3619,10 +3619,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational function of selecting 'Agst Ref' (Against Reference) during voucher entry?",
           "options": [
-            "To allocate payments or receipts against a specific pre-existing invoice, updating its pending balance in the aging schedule",
-            "To generate a brand new invoice with a fresh credit period",
-            "To permanently write off the customer's debt as a bad debt loss",
-            "To reverse all sales transactions recorded during the fiscal quarter"
+            "To allocate a payment or receipt against a specific existing invoice, updating its pending balance in the ageing schedule",
+            "To allocate a payment or receipt against a future invoice, creating a new pending balance in the ageing schedule",
+            "To allocate a payment or receipt against a general account, leaving every invoice balance unchanged in the ageing schedule",
+            "To allocate a payment or receipt against a cost centre, updating its budget balance in the project schedule"
           ],
           "answer": 0,
           "why": "Agst Ref matches incoming receipts or outgoing payments against specific outstanding invoices, maintaining accurate bill-by-bill aging.",
@@ -3658,10 +3658,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a Post-Dated Voucher (PDV) produce zero impact on active ledger balances until its effective maturity date?",
           "options": [
-            "Because Tally Prime database automatically deletes post-dated vouchers after 24 hours",
-            "Because post-dated cheques are illegal under statutory commercial law",
-            "To hide confidential corporate transactions from junior accounting staff",
-            "To prevent premature distortion of current bank balances and receivables before the financial instrument legally matures"
+            "To prevent current bank balances and receivables from being audited before the instrument legally matures",
+            "To prevent future bank balances and receivables from being forecast before the instrument legally matures",
+            "To prevent current bank balances and payables from being reconciled before the instrument is legally issued",
+            "To prevent current bank balances and receivables from being distorted before the instrument legally matures"
           ],
           "answer": 3,
           "why": "Post-dated vouchers reside in a provisional state to preserve true current financial reality while enabling treasury teams to forecast future cash flows.",
@@ -3698,10 +3698,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary audit verification is provided by the Tally Prime Daybook at the close of daily business?",
           "options": [
-            "A permanent liquidation of all customer debt balances to zero",
-            "A legal patent certification for software development algorithms",
-            "A chronological audit trail of all daily vouchers verifying sequential numbering, narration completeness, and daily debit-credit equilibrium",
-            "An automatic calculation of annual corporate income tax liability"
+            "A summary audit trail of the month's vouchers, checking ledger-wise balances, complete narrations and monthly profit and loss",
+            "A chronological record of the day's bank transactions, checking cheque clearing, reconciliation status and daily cash balance",
+            "A chronological audit trail of the day's vouchers, checking sequential numbering, complete narrations and daily debit-credit balance",
+            "A ledger-wise audit trail of the day's vouchers, checking GST rates, stock quantities and daily closing stock values"
           ],
           "answer": 2,
           "why": "The Daybook provides an immediate chronological audit log of all transactions posted during the day, verifying equilibrium and completeness.",
@@ -3764,10 +3764,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what statutory condition is an Intra-State supply established, requiring equal bifurcation between CGST and SGST?",
           "options": [
-            "When the transaction value exceeds ₹50 Crores in a single fiscal quarter",
-            "When the buyer pays using cash instead of a digital bank transfer",
-            "When goods are imported from a foreign country across sea customs borders",
-            "When the Location of the Supplier and the Place of Supply are within the same State or Union Territory"
+            "When the supplier's location and the place of supply are in different States or Union Territories",
+            "When the supplier's registration and the recipient's registration are in the same State or Union Territory",
+            "When the place of supply and the place of payment are in the same State or Union Territory",
+            "When the supplier's location and the place of supply are in the same State or Union Territory"
           ],
           "answer": 3,
           "why": "An intra-state supply occurs whenever the supplier location and place of supply reside within the same state, triggering equal CGST and SGST levies.",
@@ -3803,10 +3803,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a Bill-to Ship-to transaction under Section 10(1)(b) of the IGST Act, what constitutes the legal Place of Supply for the primary vendor?",
           "options": [
-            "The location of the principal third party directing the movement (the Buyer/Bill-to party)",
-            "The physical factory location of the initial manufacturer",
-            "The final warehouse where goods are physically unloaded",
-            "The international customs port of entry"
+            "The location of the principal third party directing the movement, which is the Buyer or Bill-to party",
+            "The location of the party who actually receives the goods, which is the Ship-to party of the supply",
+            "The location of the transporter carrying the goods, which is the movement agent for the supply",
+            "The location of the supplier dispatching the goods, which is the Seller or Bill-from party"
           ],
           "answer": 0,
           "why": "Under Section 10(1)(b), a legal fiction deems the buyer directing the transaction to have received the goods, establishing their location as the place of supply.",
@@ -3882,10 +3882,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal consequence under Rule 48(5) if an enterprise mandated to generate e-Invoices issues a physical invoice without a valid IRN?",
           "options": [
-            "The transaction is permanently exempt from all taxes",
-            "The supplier is required to convert the business into a non-profit trust",
-            "The invoice is treated as legally void and non-existent, and the recipient cannot claim Input Tax Credit (ITC)",
-            "The recipient receives an automatic 10% cash discount from the government"
+            "The invoice is treated as valid, but the supplier pays a penalty and the recipient claims ITC",
+            "The invoice is treated as void, but the recipient can still claim Input Tax Credit (ITC)",
+            "The invoice is treated as void, and the recipient cannot claim Input Tax Credit (ITC)",
+            "The invoice is treated as valid, but the recipient can claim ITC only after one month"
           ],
           "answer": 2,
           "why": "Under Rule 48(5), any invoice issued without a valid Invoice Reference Number (IRN) where mandated is deemed null and void, invalidating recipient ITC claims.",
@@ -3921,10 +3921,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does double-entry accounting maintain separate general ledger accounts for Input GST and Output GST?",
           "options": [
-            "Because tax authorities require separate physical paper ledgers for debits and credits",
-            "Because Input GST is an owner equity account, while Output GST is a direct expense",
-            "To prevent bank managers from seeing the company's total sales turnover",
-            "Because Output GST represents a current liability collected for the government, while Input GST represents an asset credit eligible for monthly set-off"
+            "Output GST is an asset credit paid to suppliers, while Input GST is a current liability set off monthly",
+            "Output GST is a current liability recorded as an expense, while Input GST is a deduction from sales",
+            "Output GST is an asset credit collected for the government, while Input GST is an expense set off yearly",
+            "Output GST is a current liability collected for the government, while Input GST is an asset credit set off monthly"
           ],
           "answer": 3,
           "why": "Output GST is a liability owed to tax authorities, while Input GST is an asset credit, requiring separate tracking for monthly statutory set-off.",
@@ -3988,10 +3988,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory consequence under the second proviso to Section 16(2) if a buyer fails to pay a supplier within 180 days from the invoice date?",
           "options": [
-            "The recipient must reverse the claimed Input Tax Credit along with mandatory interest under Section 50",
-            "The invoice is permanently cancelled and the supplier forfeits their payment rights",
-            "The buyer receives a government subsidy covering the outstanding balance",
-            "The tax department automatically converts the unpaid bill into equity shares"
+            "The recipient must reverse the Input Tax Credit claimed, along with interest under Section 50",
+            "The recipient may keep the Input Tax Credit claimed, but must pay a late fee under Section 47",
+            "The supplier must reverse the output tax already paid, along with interest under Section 50",
+            "The recipient must reverse the Input Tax Credit claimed, but is exempt from any interest charge"
           ],
           "answer": 0,
           "why": "Failure to pay the supplier within 180 days mandates reversal of the claimed ITC along with statutory interest until payment is actually made.",
@@ -4028,10 +4028,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following procurements is explicitly blocked from claiming Input Tax Credit under Section 17(5)(a)?",
           "options": [
-            "Industrial heavy manufacturing machinery used in factory production",
-            "Enterprise software licenses purchased for IT employees",
-            "Raw steel materials purchased for automobile assembly",
-            "Motor vehicles for transportation of persons having approved seating capacity <= 13 seats (unless in passenger transport or driving training)"
+            "Motor vehicles for transporting persons with approved seating capacity above 13 (unless used for passenger transport or driving training)",
+            "Plant and machinery installed in a factory for manufacturing taxable goods (unless used for exempt supplies or personal consumption)",
+            "Goods transport vehicles with gross vehicle weight up to 7.5 tonnes (unless used for outward supply or a fixed route service)",
+            "Motor vehicles for transporting persons with approved seating capacity of 13 or fewer (unless used for passenger transport or driving training)"
           ],
           "answer": 3,
           "why": "Section 17(5)(a) explicitly blocks ITC on passenger motor vehicles with seating capacity up to 13 persons unless used for authorized business exceptions.",
@@ -4067,10 +4067,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strict statutory rule regarding cross-utilization between CGST credit and SGST liability under Section 49?",
           "options": [
-            "CGST and SGST can be cross-utilized freely whenever convenient for the taxpayer",
-            "CGST can offset SGST only if the transaction occurs on a Friday",
-            "CGST credit can NEVER be cross-utilized against SGST liability, and SGST credit can NEVER be cross-utilized against CGST liability",
-            "Cross-utilization is permitted up to a lifetime ceiling of ₹10,000"
+            "CGST credit can be used freely against SGST liability, but SGST credit can never be used against CGST liability",
+            "CGST and SGST credit can be used against each other only after all IGST credit has been fully exhausted",
+            "CGST credit can never be used against SGST liability, and SGST credit can never be used against CGST liability",
+            "CGST credit can be used against SGST liability up to 50% of the liability, and the same limit applies in reverse"
           ],
           "answer": 2,
           "why": "Under Section 49, there is an absolute statutory barrier prohibiting any cross-utilization between Central GST (CGST) and State GST (SGST).",
@@ -4144,10 +4144,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of the Electronic Cash Ledger on the GST portal?",
           "options": [
-            "To record actual cash deposited via bank challans used to pay net tax liabilities that cannot be discharged via Input Tax Credits",
-            "To store cash collected from retail customers before physical bank deposit",
-            "To hold company retained earnings permanently exempt from income tax",
-            "To accumulate Input Tax Credit from purchase invoices so it can be set off before any cash is paid"
+            "To record actual cash deposited through bank challans, which is used to pay net tax liabilities that Input Tax Credit cannot cover",
+            "To record Input Tax Credit claimed from supplier invoices, which is used to pay output tax liabilities before any cash is deposited",
+            "To record refunds sanctioned by the department, which are credited back to the taxpayer's bank account after the GST return is filed",
+            "To record tax liabilities and late fees auto-populated from returns, which are then offset against Input Tax Credit at month-end"
           ],
           "answer": 0,
           "why": "The Electronic Cash Ledger records cash deposited by taxpayers through bank challans to pay net taxes, interest, and late fees not covered by credit.",
@@ -4211,10 +4211,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary reporting difference between Table 4 (B2B) and Table 7 (B2C Small) in Form GSTR-1?",
           "options": [
-            "Table 4 requires invoice-level details for each registered recipient with GSTIN, whereas Table 7 reports consolidated state-wise and rate-wise summaries for small consumer supplies",
-            "Table 4 only records cash sales, while Table 7 records credit sales",
-            "Table 4 is filed quarterly, while Table 7 is filed annually",
-            "Table 4 is exempt from tax, while Table 7 carries 28% luxury tax"
+            "Table 4 requires invoice-level details with the GSTIN of each registered recipient, while Table 7 reports state-wise and rate-wise summaries of small consumer supplies",
+            "Table 4 reports state-wise and rate-wise summaries of supplies to registered recipients, while Table 7 requires invoice-level details with the GSTIN of each small consumer",
+            "Table 4 requires invoice-level details for each registered recipient with GSTIN, whereas Table 7 reports invoice-level details of exports and supplies to SEZ units",
+            "Table 4 reports consolidated monthly totals for all registered and unregistered buyers, whereas Table 7 requires invoice-level details for each small consumer supply"
           ],
           "answer": 0,
           "why": "B2B supplies in Table 4 mandate invoice-level tracking to allow customer ITC auto-population, whereas B2C small supplies are aggregated by state and rate.",
@@ -4251,10 +4251,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Form GSTR-2B described as a 'static' statement, and on what date is it generated monthly?",
           "options": [
-            "It can only be generated on the 31st of December",
-            "It changes every 10 minutes based on live bank stock market feeds",
-            "It is printed on static electricity paper by tax officers",
-            "It freezes all supplier filings between the 12th of previous month and 11th of current month, generated on the 14th without subsequent changes for that period"
+            "It keeps updating as late supplier filings arrive during the month, is generated on the 14th, and changes whenever a supplier amends an invoice",
+            "It freezes supplier filings between the 1st and the last day of the previous month, is generated on the 20th, and does not change afterwards",
+            "It freezes supplier filings between the 12th of the previous month and the 11th of the current month, is generated on the 14th, but is revised on the 20th",
+            "It freezes supplier filings between the 12th of the previous month and the 11th of the current month, is generated on the 14th, and does not change afterwards"
           ],
           "answer": 3,
           "why": "GSTR-2B is generated on the 14th as a static lock of all supplier filings up to the 11th cut-off, providing an immutable baseline for GSTR-3B credit.",
@@ -4290,10 +4290,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 36(4), what must a business do if an invoice appears in its purchase books but is missing from Form GSTR-2B?",
           "options": [
-            "The invoice must be permanently erased from accounting books",
-            "The business must file a police complaint within 24 hours",
+            "The business can claim the Input Tax Credit in GSTR-3B for that month, and must reverse it later if the vendor fails to file their GSTR-1",
+            "The business can claim the Input Tax Credit in GSTR-3B for that month, but only up to 10% of the eligible credit shown in GSTR-2B",
             "The business cannot claim the Input Tax Credit in GSTR-3B for that month, and must follow up with the vendor to file their GSTR-1",
-            "The business can claim 200% bonus credit as compensation"
+            "The business cannot claim the Input Tax Credit in GSTR-3B for that year, and must pay the vendor's tax from its own cash ledger"
           ],
           "answer": 2,
           "why": "Rule 36(4) bars claiming ITC on invoices not reflected in GSTR-2B; credit must be deferred until the supplier files and it appears in a subsequent 2B.",
@@ -4328,10 +4328,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is statutory interest calculated under Section 50 when a taxpayer files Form GSTR-3B after the due date?",
           "options": [
-            "At 12% per annum on the total unadjusted sales value",
-            "At 18% per annum calculated strictly on the NET cash tax paid out of the electronic cash ledger for the period of delay",
-            "Interest is completely waived if the taxpayer writes a formal apology letter",
-            "At 50% flat penalty on total gross turnover"
+            "At 24% per annum on the gross output tax declared in the return, for the period of delay",
+            "At 18% per annum on the net cash tax paid from the electronic cash ledger, for the period of delay",
+            "At 12% per annum on the net cash tax paid from the electronic cash ledger, for the period of delay",
+            "At 18% per annum on the gross tax liability before Input Tax Credit set-off, for the period of delay"
           ],
           "answer": 1,
           "why": "Section 50 levies interest at 18% p.a. strictly on the net cash tax liability discharged via the Electronic Cash Ledger for delayed filing.",
@@ -4368,10 +4368,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate compliance risk if tax declared in GSTR-1 substantially exceeds the tax paid in GSTR-3B?",
           "options": [
-            "Triggering automated statutory recovery notices under Rule 88C for unpaid output tax liabilities with bank attachment risks",
-            "Receiving an automatic corporate income tax refund",
-            "Being forced to convert company assets into government bonds",
-            "Losing corporate trademark rights"
+            "Automated recovery notices under Rule 88C for unpaid output tax, with a risk of bank account attachment",
+            "Automatic cancellation of the GST registration under Rule 21, with blocked e-way bill generation",
+            "Automated notices under Rule 88D for excess Input Tax Credit claimed, with blocked ledger credit",
+            "Automatic refund of the excess liability under Rule 89 for overpaid tax, with a risk of an audit of the next return"
           ],
           "answer": 0,
           "why": "Rule 88C triggers automated system notices and recovery proceedings whenever GSTR-1 output liabilities exceed the taxes paid in GSTR-3B.",
@@ -4434,10 +4434,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is multi-level master synchronization (Company, Group, Stock Item, Party) essential in Tally Prime for GST compliance?",
           "options": [
-            "To hide vendor profit margins from internal accounting staff",
-            "To prevent sales clerks from creating customer invoices on weekends",
-            "Because Tally Prime requires entering tax rates manually on every transaction line",
-            "To embed statutory HSN/SAC codes and tax rates directly into the data hierarchy, enabling automated determination of Intra-State vs Inter-State taxes during invoice entry"
+            "To embed bank account details and credit limits in the data hierarchy, so Intra-State and Inter-State taxes are determined automatically at invoice entry",
+            "To embed HSN/SAC codes and tax rates in the data hierarchy, so the GSTR-1 return is filed on the portal automatically at invoice entry",
+            "To embed HSN/SAC codes and tax rates in each company file separately, so Intra-State and Inter-State taxes are entered manually at invoice entry",
+            "To embed HSN/SAC codes and tax rates in the data hierarchy, so Intra-State and Inter-State taxes are determined automatically at invoice entry"
           ],
           "answer": 3,
           "why": "Synchronizing tax masters ensures that invoice transactions automatically determine geographic supply type and tax rates without clerical error.",
@@ -4473,10 +4473,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does double-entry accounting record the output tax charged on an intra-state sales invoice?",
           "options": [
-            "Bifurcated equally, crediting Output CGST Payable and Output SGST Payable as current statutory liabilities",
-            "Credited 100% to Owner's Equity as tax-free retained earnings",
-            "Debited to Sales Revenue Account to reduce gross margin",
-            "Credited to Sundry Debtors as a customer cash discount"
+            "Split equally, crediting Output CGST Payable and Output SGST Payable as current statutory liabilities",
+            "Split equally, debiting Output CGST Receivable and Output SGST Receivable as current statutory assets",
+            "Recorded in full, crediting Output IGST Payable as a current statutory liability to the Central Government",
+            "Split equally, crediting Output CGST Payable and Output SGST Payable as expenses of the sales account"
           ],
           "answer": 0,
           "why": "Output tax collected on intra-state supplies is a statutory liability owed to government authorities, split equally between Output CGST and Output SGST ledgers.",
@@ -4511,10 +4511,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational treasury action should a company take when a purchase invoice is missing from Form GSTR-2B?",
           "options": [
-            "Claim the credit anyway and destroy the physical paper bill",
-            "Hold vendor payment retention until the vendor files GSTR-1 and the invoice reflects on GSTR-2B, enforcing Rule 36(4)",
-            "Write off the vendor's bill as a long-term capital loss",
-            "Pay the vendor a 10% cash bonus to incentivize filing next month"
+            "Pay the vendor in full and claim the credit in GSTR-3B anyway, relying on the purchase register under Rule 36(4)",
+            "Hold back the vendor payment until the vendor files GSTR-1 and the invoice shows in GSTR-2B, applying Rule 36(4)",
+            "Hold back the vendor payment until the vendor files GSTR-3B and the invoice shows in GSTR-1, applying Rule 36(4)",
+            "Pay the vendor in full and reverse the credit from the electronic credit ledger, applying Rule 42 at year-end"
           ],
           "answer": 1,
           "why": "Enforcing payment withholding on unreflected invoices protects working capital and motivates vendors to achieve statutory filing compliance.",
@@ -4550,10 +4550,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does algorithmic Section 49 optimization allocate residual Input IGST credit specifically toward deficit-facing tax heads?",
           "options": [
-            "To pay off corporate debentures using electronic tax vouchers",
-            "Because CGST and SGST can be merged into a single bank account",
-            "To prevent hard cash tax payouts by utilizing flexible IGST credits against heads that lack sufficient native credit, avoiding trapped credits",
-            "Because the Income Tax Department prohibits carrying forward any tax credit"
+            "To avoid IGST credit lapsing by using it against CGST and SGST only after cash has been deposited for those heads",
+            "To avoid cash tax payments by using CGST credit against SGST liability, so that surplus credit is not trapped",
+            "To avoid cash tax payments by using flexible IGST credit against heads short of native credit, so credit is not trapped",
+            "To avoid interest on late payments by using IGST credit only after the due date, so that the liability is not trapped"
           ],
           "answer": 2,
           "why": "Strategic allocation of residual IGST credit offsets native tax deficits, preventing cash tax lockup and minimizing net challan payouts.",
@@ -4589,10 +4589,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary assurance does the Executive Tax Controller Dossier provide to statutory auditors?",
           "options": [
-            "An agreement to waive employee provident fund obligations",
-            "A certificate exempting the company from all future statutory tax audits",
-            "A legal authorization to print government currency notes",
-            "Verification that ERP turnover matches GSTR-1, claimed ITC adheres to GSTR-2B under Rule 88D, and required cash taxes are funded via verified bank challan"
+            "Confirmation that ERP profit matches the audited balance sheet, claimed ITC follows GSTR-1 under Rule 88D, and cash taxes are funded by bank overdraft",
+            "Confirmation that ERP turnover matches GSTR-3B, claimed ITC follows GSTR-1 under Rule 36(4), and cash taxes are funded by the credit ledger",
+            "Confirmation that ERP stock matches the physical count, claimed ITC follows GSTR-2B under Rule 88C, and cash taxes are funded by a customer advance",
+            "Confirmation that ERP turnover matches GSTR-1, claimed ITC follows GSTR-2B under Rule 88D, and cash taxes are funded by a verified bank challan"
           ],
           "answer": 3,
           "why": "The Controller Dossier certifies end-to-end concordance between ERP ledger records, statutory portal statements, and cash tax settlements.",
@@ -4655,10 +4655,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical statutory restriction regarding how tax payable under the Reverse Charge Mechanism (RCM) must be discharged?",
           "options": [
-            "RCM tax can be completely waived if the recipient donates to corporate charity",
-            "RCM tax can only be paid using government treasury postage stamps",
-            "RCM tax must be paid 100% in hard cash via the Electronic Cash Ledger, and cannot be settled by utilizing Input Tax Credit",
-            "RCM tax is settled by deducting funds from employee provident funds"
+            "RCM tax may be paid fully from the Electronic Credit Ledger using Input Tax Credit, with cash only for shortfalls",
+            "RCM tax must be paid fully in cash from the Electronic Cash Ledger, with credit allowed next year",
+            "RCM tax must be paid fully in cash from the Electronic Cash Ledger and cannot be paid using Input Tax Credit",
+            "RCM tax may be paid half in cash and half through Input Tax Credit, as the recipient chooses"
           ],
           "answer": 2,
           "why": "Tax payable under reverse charge must be discharged entirely in cash through the electronic cash ledger before the recipient can claim it as input tax credit.",
@@ -4695,10 +4695,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 31(3)(f) of the CGST Act, when must an enterprise generate a Self-Invoice?",
           "options": [
-            "When issuing annual dividend checks to company shareholders",
-            "When receiving taxable goods or services subject to RCM from an unregistered supplier",
-            "When recording depreciation on office furniture",
-            "When paying bank loan interest on working capital overdrafts"
+            "When it supplies taxable goods under forward charge to an unregistered buyer",
+            "When it receives taxable goods or services under RCM from an unregistered supplier",
+            "When it receives taxable goods under RCM from a registered supplier above the limit",
+            "When it supplies exempt goods or services to a registered recipient in a different State"
           ],
           "answer": 1,
           "why": "Section 31(3)(f) mandates that a registered recipient must issue a self-invoice when procuring taxable supplies subject to RCM from unregistered vendors.",
@@ -4735,10 +4735,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the nationwide statutory consignment value threshold under Rule 138 for mandatory E-Way Bill generation?",
           "options": [
-            "Consignment value exceeding ₹50,000 (taxable value plus all applicable GST taxes)",
-            "Any shipment exceeding ₹10,00,000 in physical weight",
-            "Flat ₹10,000 regardless of whether items are taxable or exempt",
-            "No threshold applies; every single parcel requires an E-Way Bill"
+            "A consignment value above ₹50,000 (taxable value plus all applicable GST taxes)",
+            "A consignment value above ₹1,00,000 (taxable value plus all applicable GST taxes)",
+            "A consignment value above ₹2,50,000 (taxable value plus all applicable GST taxes)",
+            "A consignment value above ₹10,000 (taxable value plus all applicable GST taxes)"
           ],
           "answer": 0,
           "why": "Under Rule 138, generating an E-Way Bill is mandatory whenever the consignment value of goods in transit exceeds ₹50,000.",
@@ -4774,10 +4774,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 138(10), what is the statutory validity granted for normal (non-ODC) cargo in transit?",
           "options": [
-            "1 Day for every 1,000 Kilometers based on train speed",
-            "Infinite validity until the recipient signs the delivery challan",
-            "Exactly 24 hours regardless of distance",
-            "1 Day for every 200 Kilometers (or part thereof) from generation until midnight of the final day"
+            "1 day for every 100 kilometres or part thereof, from generation until midnight of the last day",
+            "1 day for every 500 kilometres or part thereof, from generation until midnight of the last day",
+            "A flat 3 days for any distance within the State, from generation until midnight of the last day",
+            "1 day for every 200 kilometres or part thereof, from generation until midnight of the last day"
           ],
           "answer": 3,
           "why": "Rule 138(10) establishes a validity rate of 1 day for every 200 km (or part thereof) for normal highway cargo.",
@@ -4813,10 +4813,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What penalty is statutorily levied under Section 129 if goods are intercepted moving in a vehicle not registered in Part-B of the E-Way Bill?",
           "options": [
-            "A mandatory transfer of company ownership to the transport union",
-            "A verbal warning from the highway checkpost constable",
-            "Vehicle detention and mandatory penalty equal to 200% of the tax payable on the consignment",
-            "An automatic 5-year corporate tax holiday"
+            "Detention of the vehicle and a penalty of 100% of the tax payable on the consignment",
+            "Detention of the vehicle and a penalty of 50% of the value of the goods in the consignment",
+            "Detention of the vehicle and a penalty of 200% of the tax payable on the consignment",
+            "Release of the vehicle and a late fee of 200 rupees per day on the consignment"
           ],
           "answer": 2,
           "why": "Section 129 prescribes vehicle and cargo detention with a statutory penalty equal to 200% of the applicable tax for transporting goods without valid Part-B documents.",
@@ -4891,10 +4891,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between Cost-to-Company (CTC) and Gross Salary?",
           "options": [
-            "CTC is calculated after deducting income tax, while Gross Salary excludes allowances",
-            "CTC represents total enterprise expenditure including employer retirement benefits and gratuity, whereas Gross Salary is the total earnings before employee deductions",
-            "CTC is paid in cash weekly, while Gross Salary is paid annually in stock options",
-            "CTC only includes employee take-home pay, while Gross Salary includes government taxes"
+            "CTC is the total earnings before employee deductions, while Gross Salary is the total employer expenditure including retirement benefits and gratuity",
+            "CTC is the total employer expenditure including employer retirement benefits and gratuity, while Gross Salary is total earnings before employee deductions",
+            "CTC is the take-home pay after employee deductions and tax, while Gross Salary is the total employer expenditure including retirement benefits",
+            "CTC is the basic salary plus allowances paid monthly, while Gross Salary is the total employer expenditure including bonus and gratuity"
           ],
           "answer": 1,
           "why": "CTC encompasses all employer costs (including employer EPF and gratuity provisions), while Gross Salary represents the total earnings entitlement of the employee before deductions.",
@@ -4946,10 +4946,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is the employer's 12% matching EPF contribution legally bifurcated under statutory rules?",
           "options": [
-            "Equally divided among all company directors",
-            "100% directly into the employee's personal bank savings account",
-            "8.33% to Employees' Pension Scheme (EPS A/c 10) capped at ₹1,250/month, with the residual going to Employees' Provident Fund (EPF A/c 1)",
-            "6% to life insurance and 6% to medical insurance"
+            "8.33% goes to the Employees' Provident Fund (A/c 1), and the rest goes to the Pension Scheme (A/c 10), capped at ₹1,250 a month",
+            "8.33% goes to the Employees' Pension Scheme (A/c 10), capped at ₹2,500 a month, and the rest goes to the EPF (A/c 1)",
+            "8.33% goes to the Employees' Pension Scheme (A/c 10), capped at ₹1,250 a month, and the rest goes to the EPF (A/c 1)",
+            "3.67% goes to the Employees' Pension Scheme (A/c 10), capped at ₹1,250 a month, and the rest goes to the EPF (A/c 1)"
           ],
           "answer": 2,
           "why": "The employer's 12% is split into 8.33% for the Employees' Pension Scheme (A/c 10, limited to Rs 1,250 a month on the Rs 15,000 ceiling) and the remainder for the EPF account (A/c 1).",
@@ -5001,10 +5001,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory gross monthly wage threshold above which an employee is completely exempt from ESI contributions?",
           "options": [
-            "Gross monthly wages exceeding ₹1,00,000 per month",
-            "Basic pay exceeding ₹5,000 per month",
-            "There is no ceiling; all employees regardless of salary must pay ESI",
-            "Gross monthly wages exceeding ₹21,000 per month (₹25,000 for employees with disabilities)"
+            "Gross monthly wages above ₹15,000 (₹21,000 for employees with disabilities)",
+            "Gross monthly wages above ₹30,000 (₹35,000 for employees with disabilities)",
+            "Gross monthly wages above ₹10,000 (₹15,000 for employees with disabilities)",
+            "Gross monthly wages above ₹21,000 (₹25,000 for employees with disabilities)"
           ],
           "answer": 3,
           "why": "ESI applies strictly to employees earning gross monthly wages up to ₹21,000; employees earning above this ceiling are legally exempt.",
@@ -5052,10 +5052,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is monthly Tax Deducted at Source (TDS) on salaries determined by an employer under Section 192?",
           "options": [
-            "By estimating the employee's annual taxable income, calculating annual tax based on opted tax regime, and deducting 1/12th monthly",
-            "By charging a flat 30% tax on the gross salary of every employee",
-            "By deducting tax only in the month of March at the end of the fiscal year",
-            "By asking the employee to pay cash directly to the tax department"
+            "By estimating annual taxable income, computing annual tax under the chosen regime, and deducting one-twelfth each month",
+            "By taking the actual monthly pay, applying a flat 10% rate under the chosen regime, and deducting it each month",
+            "By estimating annual taxable income, computing annual tax under the old regime only, and deducting it at year-end",
+            "By estimating annual taxable income, computing annual tax under the chosen regime, and depositing one-twelfth each quarter"
           ],
           "answer": 0,
           "why": "Section 192 mandates that employers estimate annual tax liabilities based on applicable tax slabs and withhold average monthly installments across the year.",
@@ -5106,10 +5106,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does an enterprise record a payroll accrual entry on the last day of the month before salaries are physically disbursed?",
           "options": [
-            "To artificially inflate the company's bank balance before quarterly audits",
-            "To satisfy the accrual basis of accounting by matching personnel expenses with the revenues generated in that calendar month",
-            "To permanently avoid paying employee provident fund contributions",
-            "Because commercial banks prohibit transferring salaries on the 1st of the month"
+            "To follow cash accounting by recording personnel costs only when the salary is paid in the following month",
+            "To follow accrual accounting by matching personnel costs with the revenues earned in that calendar month",
+            "To follow the prudence concept by recording personnel costs only when the tax on salary is deposited",
+            "To follow accrual accounting by matching personnel costs with the bank charges incurred in the next month"
           ],
           "answer": 1,
           "why": "Accrual accounting requires recognizing salary expenses in the period the labor effort occurred, creating temporary liabilities that settle upon disbursement.",
@@ -5172,10 +5172,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory consequence under Section 40(a)(ia) of the Income Tax Act if an enterprise fails to deduct TDS on a business expenditure?",
           "options": [
-            "30% of the expenditure is disallowed as a tax deduction, increasing the company's taxable corporate profit",
-            "The company's commercial banking license is immediately cancelled",
-            "The business is exempt from all corporate income taxes for that year",
-            "The vendor is required to refund 100% of the invoice payment"
+            "30% of the expenditure is disallowed as a deduction, which raises the company's taxable profit",
+            "100% of the expenditure is disallowed as a deduction, which raises the company's taxable profit",
+            "15% of the expenditure is disallowed as a deduction, which raises the company's taxable profit",
+            "30% of the expenditure is allowed as a deduction only in the year the tax is deposited"
           ],
           "answer": 0,
           "why": "Section 40(a)(ia) disallows 30% of any expenditure paid to a resident on which tax was deductible but not deducted, increasing taxable business income.",
@@ -5212,9 +5212,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the statutory withholding rates under Section 194J for Professional Services versus Fees for Technical Services (FTS)?",
           "options": [
-            "Flat 30% for both professional and technical services",
-            "1% for companies and 5% for individuals",
-            "No tax is deducted on professional fees under Indian direct tax law",
+            "2.0% for Professional Services and 10.0% for Fees for Technical Services (FTS)",
+            "10.0% for Professional Services and 10.0% for Fees for Technical Services (FTS)",
+            "5.0% for Professional Services and 1.0% for Fees for Technical Services (FTS)",
             "10.0% for Professional Services and 2.0% for Fees for Technical Services (FTS)"
           ],
           "answer": 3,
@@ -5252,10 +5252,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mandatory tax withholding rate is statutorily enforced under Section 206AA if a payee fails to furnish a valid PAN to the deductor?",
           "options": [
-            "Zero tax withholding since tax cannot be linked without a PAN",
-            "A flat 50% penalty on total gross company revenue",
-            "The highest of the normal rate, the rate in force, or a mandatory penal rate of 20.0%",
-            "The standard 1% rate with an informal warning"
+            "The lowest of the normal rate, the rate in force, or a concessional rate of 5.0%",
+            "The highest of the normal rate, the rate in force, or a flat penal rate of 10.0%",
+            "The highest of the normal rate, the rate in force, or a penal rate of 20.0%",
+            "Nil deduction until a valid PAN is furnished, after which the normal rate applies"
           ],
           "answer": 2,
           "why": "Section 206AA mandates tax deduction at the highest of the statutory rate, rate in force, or a penal rate of 20% when a valid PAN is not provided.",
@@ -5292,10 +5292,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory interest rate levied under Section 201(1A) for delay in depositing deducted TDS into the government treasury?",
           "options": [
-            "Interest is only charged if the delay exceeds 12 calendar months",
-            "1.5% per month (or part of a month) from the date of deduction to the date of actual payment",
-            "Flat 10% annual simple interest with zero compounding",
-            "0.5% per year capped at ₹500"
+            "1% per month or part of a month, from the date of deduction to the date of payment",
+            "1.5% per month or part of a month, from the date of deduction to the date of payment",
+            "1.5% per month or part of a month, from the date tax was deductible to the date of deduction",
+            "1.5% per annum, from the due date of payment to the date of actual payment"
           ],
           "answer": 1,
           "why": "Section 201(1A)(ii) levies interest at 1.5% per month or part of a month for any delay in depositing deducted tax beyond the statutory due date.",
@@ -5336,10 +5336,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an enterprise cross-reconcile its internal TDS Receivable asset ledger against Form 26AS on the income tax portal?",
           "options": [
-            "To verify that clients have actually deposited the withheld tax under the company's PAN, ensuring credits can be legally claimed on the corporate tax return",
-            "To calculate the annual bonus for the corporate finance team",
-            "Because Form 26AS is an internal company budget spreadsheet",
-            "To automatically transfer client bank funds into the company's account"
+            "To confirm that clients have actually deposited the tax withheld under the company's PAN, so credit can be legally claimed in the return",
+            "To confirm that the company has deposited the tax it withheld from vendors under its own TAN, so deductions can be legally claimed in the return",
+            "To confirm that clients have deducted the tax at the correct rate under the company's PAN, so refunds can be automatically issued without a return",
+            "To confirm that the bank has credited the tax withheld to the company's account, so credit can be legally claimed in the GST return"
           ],
           "answer": 0,
           "why": "Tax credits can only be claimed against corporate income tax liabilities if they are officially reflected in Form 26AS under the company's verified PAN.",
@@ -5418,10 +5418,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory zero-tax income threshold under Section 87A for resident individuals in the New Tax Regime (Section 115BAC)?",
           "options": [
-            "Total taxable income up to ₹2,50,000",
-            "Any income as long as the employee invests in agricultural land",
-            "There is no zero-tax rebate; every rupee is taxed at 30%",
-            "Total taxable income up to ₹7,00,000 (after Standard Deduction of ₹75,000, allowing gross salary up to ₹7,75,000 with zero tax)"
+            "Taxable income up to ₹5,00,000 (after a ₹50,000 standard deduction, so salary up to ₹5,50,000 pays zero tax)",
+            "Taxable income up to ₹3,00,000 (after a ₹75,000 standard deduction, so salary up to ₹3,75,000 pays zero tax)",
+            "Taxable income up to ₹10,00,000 (after a ₹75,000 standard deduction, so salary up to ₹10,75,000 pays zero tax)",
+            "Taxable income up to ₹7,00,000 (after a ₹75,000 standard deduction, so salary up to ₹7,75,000 pays zero tax)"
           ],
           "answer": 3,
           "why": "Section 87A grants a full tax rebate up to ₹25,000 for resident individuals earning taxable income up to ₹7,00,000 under the New Regime.",
@@ -5533,10 +5533,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise financial controller objectively determine whether an employee should opt for the Old or New Tax Regime?",
           "options": [
-            "By choosing whichever regime produces the highest tax deduction for the company",
-            "By computing the breakeven deduction threshold where Old Regime tax equals New Regime tax; if eligible deductions exceed breakeven, Old Regime is superior",
-            "By randomly flipping a coin during annual payroll processing",
-            "By forcing all employees into the Old Regime regardless of investments"
+            "By finding the breakeven deduction level at which Old Regime tax equals New Regime tax; if deductions exceed it, the New Regime is better",
+            "By finding the breakeven deduction level at which Old Regime tax equals New Regime tax; if deductions exceed it, the Old Regime is better",
+            "By comparing gross salary against the basic exemption limit; if gross salary exceeds it, the Old Regime is better for every employee",
+            "By comparing the employer's contribution to provident fund with the standard deduction; if it is higher, the New Regime is better"
           ],
           "answer": 1,
           "why": "The breakeven threshold marks the mathematical tipping point where total eligible deductions overcome the lower tax rates of the New Regime.",
@@ -5584,10 +5584,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What must an employer do under Section 192 if an employee fails to submit a tax regime declaration at the start of the fiscal year?",
           "options": [
-            "Stop paying the employee's salary until declaration is furnished",
-            "Deduct a flat 50% tax on the gross salary",
-            "Withhold monthly TDS under the statutory default New Tax Regime (Section 115BAC)",
-            "Report the employee to the local municipal police department"
+            "Withhold monthly TDS under the default Old Tax Regime, allowing all deductions",
+            "Withhold monthly TDS at a flat 30% without applying any slab rates or rebate",
+            "Withhold monthly TDS under the default New Tax Regime (Section 115BAC)",
+            "Withhold no TDS until the employee submits a declaration, then recover arrears"
           ],
           "answer": 2,
           "why": "CBDT guidelines mandate that employers withhold salary tax under the default New Tax Regime (Section 115BAC) in the absence of an explicit opt-out choice.",
@@ -5635,10 +5635,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance objective of cross-reconciling Challan 281 deposits against monthly TDS registers?",
           "options": [
-            "To print decorative tax certificates for corporate reception lobbies",
-            "To permanently eliminate corporate audit requirements",
-            "To convert company liabilities into personal loans for company executives",
-            "To verify that 100% of withheld payroll and commercial taxes have been deposited by the 7th, eliminating Section 201(1A) interest and Section 40(a)(ia) disallowance risks"
+            "To confirm that all withheld payroll and commercial taxes were deposited by the 30th, avoiding Section 234B interest and Section 40(a)(ia) disallowance",
+            "To confirm that all GST and customs duties were deposited by the 20th, avoiding Section 50 interest and Section 17(5) credit blocking",
+            "To confirm that all withheld payroll and commercial taxes were refunded by the 7th, avoiding Section 201(1A) interest and Section 80C disallowance",
+            "To confirm that all withheld payroll and commercial taxes were deposited by the 7th, avoiding Section 201(1A) interest and Section 40(a)(ia) disallowance"
           ],
           "answer": 3,
           "why": "Reconciling Challan 281 payments ensures timely statutory tax deposit, preventing compounding interest penalties and corporate expense disallowances.",
@@ -5777,10 +5777,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory exemption limit on Long-Term Capital Gains under Section 112A following the Finance Act 2024 revisions?",
           "options": [
-            "Flat Rs 50,000 exemption identical to standard deduction",
-            "The first Rs 1,25,000 of aggregate LTCG per fiscal year is completely exempt from tax",
-            "Zero exemption; all long-term capital gains are taxed from rupee one",
-            "The first Rs 5,00,000 of gains is exempt if invested in municipal bonds"
+            "The first Rs 1,00,000 of total LTCG in a fiscal year is fully exempt from tax",
+            "The first Rs 1,25,000 of total LTCG in a fiscal year is fully exempt from tax",
+            "The first Rs 2,50,000 of total LTCG in a fiscal year is fully exempt from tax",
+            "The first Rs 1,25,000 of total STCG in a fiscal year is fully exempt from tax"
           ],
           "answer": 1,
           "why": "Finance Act 2024 upgraded the annual statutory LTCG exemption under Section 112A from Rs 1,00,000 to Rs 1,25,000.",
@@ -5835,10 +5835,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the exact effective corporate income tax rate under Section 115BAA including mandatory surcharge and education cess?",
           "options": [
-            "25.168% (22% Base Tax + 10% Surcharge + 4% Health & Education Cess)",
-            "30.0% flat with zero surcharge",
-            "15.0% flat identical to foreign trading corporations",
-            "34.944% including graduated wealth surcharges"
+            "25.168% (22% base tax + 10% surcharge + 4% Health & Education Cess)",
+            "29.120% (25% base tax + 12% surcharge + 4% Health & Education Cess)",
+            "34.944% (30% base tax + 12% surcharge + 4% Health & Education Cess)",
+            "17.160% (15% base tax + 10% surcharge + 4% Health & Education Cess)"
           ],
           "answer": 0,
           "why": "Under Section 115BAA, the base rate is 22%, plus flat 10% surcharge (24.20%), plus 4% cess, producing an effective tax rate of exactly 25.168%.",
@@ -5889,10 +5889,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What percentage of assessed tax must be deposited as advance tax by March 31 (the end of the financial year) to avoid Section 234B default interest?",
           "options": [
-            "No minimum threshold; companies pay taxes whenever funds permit",
-            "Exactly 50% with the remainder paid during annual tax filing",
-            "At least 25% if certified by a company auditor",
-            "At least 90.0% of assessed tax paid as advance tax before the end of the fiscal year"
+            "At least 75.0% of the assessed tax paid as advance tax before the end of the fiscal year",
+            "At least 100.0% of the assessed tax paid as advance tax before the end of the fiscal year",
+            "At least 60.0% of the assessed tax paid as advance tax before the end of the fiscal year",
+            "At least 90.0% of the assessed tax paid as advance tax before the end of the fiscal year"
           ],
           "answer": 3,
           "why": "Under Section 234B, interest is triggered if advance tax paid before March 31 is less than 90% of the assessed tax.",
@@ -5944,10 +5944,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must capital gains under Section 111A and Section 112A be ring-fenced from ordinary corporate business profits in Form ITR-6?",
           "options": [
-            "Because capital gains are 100% tax-free for all incorporated entities",
-            "Because capital gains must be donated to municipal charities before filing",
-            "Because capital gains are taxed at specialized statutory rates (20% and 12.5%) rather than the 22% Section 115BAA corporate rate, and cannot be mixed with business turnover",
-            "Because capital gains can only be paid using physical gold bullion"
+            "Because capital gains are taxed at the same 22% Section 115BAA rate but with no surcharge, and can be mixed with business turnover only in Schedule BP",
+            "Because capital gains are exempt from tax for corporates under Section 115BAA, and cannot be mixed with business turnover that is taxed",
+            "Because capital gains are taxed at special rates (20% and 12.5%) instead of the 22% Section 115BAA rate, and cannot be mixed with business turnover",
+            "Because capital gains are taxed at special rates (15% and 10%) instead of the 22% Section 115BAA rate, and must be included in business turnover"
           ],
           "answer": 2,
           "why": "Capital gains on listed securities carry special rates (111A @ 20%, 112A @ 12.5%) and must be segregated from standard business profits in Schedule CG of Form ITR-6.",
@@ -6026,10 +6026,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are Closing Inventory and Prepaid Expenses deducted from Current Assets when calculating the Quick Ratio?",
           "options": [
-            "Because prepaid expenses and inventory are always recorded as current liabilities",
-            "Because inventory cannot be converted into cash immediately without commercial loss, and prepaids cannot be recovered in cash to pay creditors",
-            "Because inventory is classified as a fixed asset on the balance sheet",
-            "Because inventory belongs entirely to the government until corporate taxes are settled"
+            "Because inventory is already counted in cost of goods sold, and prepaids are already included in cash to pay creditors",
+            "Because inventory cannot be turned into cash right away without loss, and prepaids cannot be recovered in cash to pay creditors",
+            "Because inventory is financed by long-term debt rather than creditors, and prepaids are repaid by customers to the business",
+            "Because inventory can be turned into cash only after a year, and prepaids are recovered only from the tax authorities"
           ],
           "answer": 1,
           "why": "Inventories require sales cycles and prepaids cannot be redeemed for cash, so both are excluded to measure strictly immediate cash-convertible liquidity.",
@@ -6080,10 +6080,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does an Interest Coverage Ratio below 1.0x signify regarding corporate solvency?",
           "options": [
-            "Bank interest rates have dropped to zero percent",
-            "The company is generating record-breaking cash dividends for equity shareholders",
-            "Operating earnings (EBIT) are insufficient to satisfy current annual interest obligations, creating acute risk of debt default",
-            "The company is legally required to pay zero taxes under Section 115BAA"
+            "Operating earnings (EBIT) comfortably exceed annual interest costs, creating a cushion against default",
+            "Net profit after tax cannot cover annual dividend payments, creating a serious risk of losing shareholders' confidence",
+            "Operating earnings (EBIT) cannot cover annual interest costs, creating a serious risk of default on debt",
+            "Cash reserves cannot cover annual principal repayments, creating a risk of liquidity shortage"
           ],
           "answer": 2,
           "why": "An Interest Coverage Ratio below 1.0 indicates that operating profits cannot cover annual debt interest charges, signaling immediate default and insolvency risk.",
@@ -6134,10 +6134,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three core financial components of the 3-Stage DuPont ROE Decomposition formula?",
           "options": [
-            "Gross Revenue, Cash Flow, and Dividend Yield",
-            "Depreciation Expense, Accounts Payable, and Retained Earnings",
-            "Stock Beta, Bond Yield, and Inflation Index",
-            "Net Profit Margin, Asset Turnover Ratio, and Equity Multiplier (Financial Leverage)"
+            "Gross Profit Margin, Inventory Turnover Ratio and Debt-to-Equity Ratio (financial leverage)",
+            "Net Profit Margin, Asset Turnover Ratio and Interest Coverage Ratio (financial solvency)",
+            "Operating Margin, Current Ratio and Equity Multiplier (financial leverage and liquidity)",
+            "Net Profit Margin, Asset Turnover Ratio and Equity Multiplier (financial leverage)"
           ],
           "answer": 3,
           "why": "DuPont decomposes ROE into Net Profit Margin (profitability), Asset Turnover (efficiency), and Equity Multiplier (leverage).",
@@ -6188,10 +6188,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Days Sales Outstanding (DSO) metric of 30.4 days indicate to corporate credit controllers?",
           "options": [
-            "It takes an average of 30.4 days from invoice issuance for the enterprise to collect cash payments from trade debtors",
-            "The company's bank accounts remain frozen for 30 days each month",
-            "Customers are legally barred from making credit purchases for 30 days",
-            "The company writes off 30% of its sales as bad debts each month"
+            "It takes about 30.4 days on average from issuing an invoice for the enterprise to collect cash from trade debtors",
+            "It takes about 30.4 days on average from receiving a supplier invoice for the enterprise to pay cash to trade creditors",
+            "It takes about 30.4 days on average from buying goods for the enterprise to sell them to customers on credit",
+            "It takes about 30.4 days on average from paying suppliers for the enterprise to collect cash from its trade debtors"
           ],
           "answer": 0,
           "why": "Days Sales Outstanding (DSO) measures the average elapsed time between issuing a credit sales invoice and receiving cash settlement.",
@@ -6238,10 +6238,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an integrated multi-dimensional ratio dashboard superior to evaluating standalone financial ratios in isolation?",
           "options": [
-            "Because Indian tax authorities require exactly 100 pages of ratios for filing income tax returns",
-            "It prevents misleading conclusions by cross-referencing profitability against liquidity and debt leverage, revealing true underlying financial risks",
-            "Because standalone ratios are illegal under the Companies Act 2013",
-            "To hide high corporate debt levels from credit rating agencies"
+            "It prevents regulatory review by combining every ratio into one composite score, which investors accept in place of audited statements",
+            "It prevents misleading conclusions by cross-checking profitability against liquidity and leverage, revealing the real underlying financial risk",
+            "It simplifies comparison by relying on profitability alone, since liquidity and leverage ratios mostly repeat the same underlying information",
+            "It improves accuracy by weighting each ratio equally across all industries, so unusual results in any single ratio are smoothed away"
           ],
           "answer": 1,
           "why": "Synthesizing ratios across liquidity, leverage, velocity, and profitability ensures that high returns are not falsely masked by dangerous hidden debt or working capital deficits.",
@@ -6377,10 +6377,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Indirect Method of calculating Operating Cash Flows (CFO), how does an increase in Trade Debtors during the period affect cash?",
           "options": [
-            "It is multiplied by the corporate income tax rate",
-            "It is added as a cash inflow because the company has more legal assets",
-            "It is completely ignored because debtors are non-current assets",
-            "It is deducted as a cash outflow because revenue was recognized on the P&L but cash has not yet been collected from customers"
+            "It is added as a cash inflow, since revenue was booked in the P&L and the cash has already been collected from customers",
+            "It is shown in investing activities, since the receivables are a long-term asset that was acquired using the cash of the business",
+            "It is deducted as a cash outflow, since customers paid in advance for goods that were not yet delivered during the period",
+            "It is deducted as a cash outflow, since revenue was booked in the P&L but the cash has not yet been collected from customers"
           ],
           "answer": 3,
           "why": "An increase in receivables means sales were booked without cash collection, requiring a deduction from Net Profit to determine actual cash generated.",
@@ -6428,10 +6428,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is cash expenditure on Fixed Asset additions (Capex) mathematically reconstructed from balance sheet gross block figures?",
           "options": [
-            "Capex Outflow is read directly from the cash balance of the company",
-            "Capex is calculated by dividing annual revenue by the number of factory machines",
-            "Capex Outflow = Closing Gross Block - Opening Gross Block + Original Cost of Assets Sold/Disposed during the year",
-            "Capex Outflow is always equal to total depreciation expense for the year"
+            "Capex outflow = Closing Gross Block - Opening Gross Block - original cost of assets sold or disposed of during the year",
+            "Capex outflow = Closing Net Block - Opening Net Block + accumulated depreciation on assets sold or disposed of during the year",
+            "Capex outflow = Closing Gross Block - Opening Gross Block + original cost of assets sold or disposed of during the year",
+            "Capex outflow = Closing Gross Block + Opening Gross Block - original cost of assets sold or disposed of during the year"
           ],
           "answer": 2,
           "why": "Because asset disposals reduce the gross block, adding back the original cost of sold assets to the net change in gross block isolates the true cash paid for new additions.",
@@ -6482,10 +6482,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary assurance does the AS-3 closing cash reconciliation checksum provide to external statutory auditors?",
           "options": [
-            "A declaration that the company has zero debts",
-            "Verification that the net sum of Operating, Investing, and Financing cashflows exactly matches the change between opening and closing balance sheet cash assets",
-            "An exemption from paying corporate advance tax",
-            "A guarantee that the company's stock price will double within six months"
+            "It confirms that the net sum of Operating, Investing and Financing cash flows equals the net profit reported in the income statement",
+            "It confirms that the net sum of Operating, Investing and Financing cash flows equals the change between opening and closing balance sheet cash",
+            "It confirms that the Operating cash flow alone equals the change between opening and closing balance sheet cash and bank balances",
+            "It confirms that the net sum of Investing and Financing cash flows equals the change in non-cash assets between the two balance sheets"
           ],
           "answer": 1,
           "why": "The checksum guarantees arithmetic consistency across all financial statements by proving that net cashflows tie directly to the balance sheet cash account.",
@@ -6532,10 +6532,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What operational condition indicates that an enterprise is achieving Self-Funded Capital Expenditure?",
           "options": [
-            "Cash Flow from Operations (CFO) exceeds total capital expenditure (Capex), allowing internal cash to fund asset growth without debt",
-            "The company borrows 100% of Capex funds from foreign commercial banks",
-            "The company sells its corporate headquarters to pay worker salaries",
-            "Capex is completely eliminated from corporate operations"
+            "Cash Flow from Operations (CFO) is greater than total capital expenditure, so internal cash funds asset growth without borrowing",
+            "Cash Flow from Operations (CFO) is lower than total capital expenditure, so the shortfall in asset growth is met by raising new debt",
+            "Net profit after tax is greater than total dividends paid, so retained earnings fund asset growth without borrowing",
+            "Cash Flow from Financing (CFF) is greater than total capital expenditure, so external funds cover asset growth without borrowing"
           ],
           "answer": 0,
           "why": "When CFO exceeds Capex, the enterprise finances its own infrastructure replacement from operational earnings, avoiding external debt or dilution.",
@@ -6619,10 +6619,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must automated cloud accounting ingestion pipelines enforce cryptographic hash chaining (prev_hash -> audit_hash) across successive journal vouchers?",
           "options": [
-            "To automatically convert foreign currency transactions into domestic legal tender without manual bank rate lookup",
-            "To bypass statutory goods and services tax reconciliation rules during high-volume month-end financial closes",
-            "To compress the size of the general ledger database for faster network transmission over slow internet connections",
-            "To guarantee tamper-evident ledger immutability and verify that historical journal entries cannot be deleted or modified retroactively without breaking the audit chain"
+            "To encrypt the ledger so that only authorised accountants can read past journal entries while the vouchers are in transit",
+            "To speed up posting so that batches of vouchers can be validated in parallel without needing to preserve their original order",
+            "To compress the ledger so that older journal entries can be archived and deleted without affecting any later vouchers",
+            "To make the ledger tamper-evident, so past journal entries cannot be deleted or changed later without breaking the audit chain"
           ],
           "answer": 3,
           "why": "Cryptographic hash chaining creates a tamper-evident audit trail where any unauthorized modification or deletion of a past voucher invalidates the hash of all subsequent entries, supporting the audit-trail (edit log) requirement of Rule 3(1) of the Companies (Accounts) Rules, 2014.",
@@ -6674,10 +6674,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational reason enterprise accounting pipelines require confidence scoring thresholds and human-in-the-loop review for AI OCR invoice extractions?",
           "options": [
-            "To prevent erroneous amounts, incorrect vendor master assignments, or duplicate invoice postings from compromising the general ledger when image quality or layout ambiguity reduces model certainty",
-            "To ensure that all vendor invoices are printed on physical stamp paper before being accepted by the purchasing manager",
-            "To automatically negotiate cash discounts with the vendor based on early payment terms",
-            "To calculate the depreciation rate of plant and machinery under the straight-line method"
+            "To stop wrong amounts, wrong vendor assignments or duplicate postings from reaching the ledger when poor image quality or layout makes the model uncertain",
+            "To stop the OCR engine from reading scanned documents at all when the image quality is poor or the layout is unfamiliar, so every invoice is keyed in manually",
+            "To stop vendors from submitting invoices by email when the layout is unfamiliar, so every invoice is posted only after a bank payment",
+            "To stop wrong amounts from reaching the ledger by rounding every extracted value up, so reviewers only handle invoices above a fixed value"
           ],
           "answer": 0,
           "why": "Setting strict confidence thresholds routes ambiguous extractions to accounts payable specialists for manual verification, preventing corrupt ledger data, phantom liability creation, and fraudulent duplicate payments.",
@@ -6789,10 +6789,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the forensic audit output, why did digit 4 produce a massive positive Z-score of +22.55 (observed 28.6% vs expected 9.7%)?",
           "options": [
-            "Because Benford's Law naturally expects digit 4 to be the most common leading digit in manufacturing enterprises",
-            "Because the computer system experienced a round-off overflow in the floating-point arithmetic register",
-            "Because fraudulent actors systematically fabricated split transactions just below the Rs. 5,000 approval threshold, abnormally clustering invoices starting with digit 4",
-            "Because corporate income tax rates under Section 115BAA mandate a 4% Health and Education Cess on all vouchers"
+            "Because Benford's law expects digit 4 to appear in about 28% of natural invoice amounts, so the observed share reflects normal behaviour",
+            "Because clerks rounded invoices up to the Rs. 5,000 approval threshold, abnormally clustering invoices that start with digit 5 instead",
+            "Because fraudsters split transactions to sit just below the Rs. 5,000 approval threshold, abnormally clustering invoices that start with digit 4",
+            "Because a few large vendors billed fixed Rs. 4,000 monthly retainers, clustering invoices that start with digit 4 through normal contracts"
           ],
           "answer": 2,
           "why": "A massive positive Z-score on digit 4 occurs when fraudsters artificially generate transactions just below an authorization threshold (e.g. Rs. 4,800 - Rs. 4,990), causing an unnatural spike that proves deliberate circumvention of internal controls.",
@@ -6845,10 +6845,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 143(12) of the Companies Act, 2013 and Rule 13 of the Companies (Audit and Auditors) Rules, what is the statutory duty of an auditor if forensic analysis reveals suspected fraud of Rs. 1 crore or more involving company officers or employees?",
           "options": [
-            "Quietly inform the CFO and agree to write off the fraud amount as an unrecorded operational shrinkage in the next fiscal year",
-            "Issue an immediate press release before discussing the findings with the Board of Directors or Audit Committee",
-            "Resign from the audit engagement immediately without recording reasons in the company's annual filing",
-            "Report the matter to the Board/Audit Committee within 2 days, seek their reply within 45 days, and forward the report to the Central Government (MCA) via Form ADT-4 within 15 days of receiving the reply (or within 60 days total)"
+            "Report to the Board or Audit Committee within 7 days, seek a reply within 30 days, and send the report to the Central Government in Form ADT-1 within 30 days of the reply",
+            "Report directly to the Central Government in Form ADT-4 within 2 days, and tell the Board or Audit Committee only after the government has replied within 45 days",
+            "Report to the Board or Audit Committee within 2 days, seek a reply within 45 days, and send the report to the Registrar of Companies in Form ADT-4 within 60 days",
+            "Report to the Board or Audit Committee within 2 days, seek a reply within 45 days, and send the report to the Central Government in Form ADT-4 within 15 days of the reply"
           ],
           "answer": 3,
           "why": "Section 143(12) mandates a rigid reporting timeline: report to Board/Audit Committee within 2 days, await reply within 45 days, and transmit final findings to the Central Government (MCA) in Form ADT-4 within 15 days thereof.",
@@ -6927,10 +6927,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance requirement when initializing opening trial balances under Schedule III of the Companies Act, 2013?",
           "options": [
-            "Input tax credit balances from previous years must be forfeited to the central government",
-            "Total debits must precisely equal total credits with zero unallocated variance, ensuring opening assets equal opening liabilities plus equity without undisclosed suspense balances",
-            "Paid-up share capital must be converted into short-term trade debt",
-            "All fixed assets must be written down to zero salvage value at the start of every fiscal year"
+            "Total debits may differ from total credits by a small tolerance, with the variance parked in a suspense balance until the first audit is completed",
+            "Total debits must exactly equal total credits with no unallocated variance, so opening assets equal opening liabilities plus equity without suspense balances",
+            "Total debits must exactly equal total credits for revenue and expense accounts, with opening asset and liability balances adjusted after year-end",
+            "Total assets must exactly equal total revenue for the period, with any difference between opening liabilities and equity shown as a suspense balance"
           ],
           "answer": 1,
           "why": "Schedule III requires perfect trial balance equilibrium where total debits equal total credits without suspense balances, establishing an audited baseline for financial reporting.",
@@ -6987,10 +6987,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 49 and Rule 88A of the CGST Rules, can an unutilized Input Tax Credit of CGST be used to settle an Output SGST liability?",
           "options": [
-            "No, CGST credit can only be used to pay Customs import duty",
-            "Yes, provided the taxpayer obtains prior written permission from the jurisdictional GST commissioner",
-            "No, cross-utilization between CGST credit and SGST liability (and vice-versa) is strictly prohibited by law",
-            "Yes, but only if the total business turnover is below Rs. 1.50 Crores"
+            "Yes, since CGST credit may be used against SGST liability once IGST credit has been fully used",
+            "No, since CGST credit may be used only against IGST liability, and not against SGST or CGST",
+            "No, since using CGST credit against SGST liability, or the reverse, is prohibited by law",
+            "Yes, since CGST credit may be used against SGST liability up to the amount of cash deposited"
           ],
           "answer": 2,
           "why": "Cross-utilization between Central GST credit and State GST liability (and vice-versa) is legally prohibited under Section 49, preserving fiscal separation between Union and State tax revenues.",
@@ -7049,10 +7049,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory consequence under Section 40(a)(ia) of the Income Tax Act if a corporate deductor fails to deduct TDS on a Rs. 10,00,000 professional fee paid to a resident consultant?",
           "options": [
-            "The expenditure is allowed in full provided the vendor signs a physical indemnity bond",
-            "The entire company is automatically liquidated by the Registrar of Companies",
-            "The consultant is permanently debarred from practicing profession in India",
-            "30% of the expenditure (Rs. 3,00,000) is disallowed as a tax-deductible expense in computing business profits, artificially inflating corporate tax liability"
+            "100% of the expenditure (Rs. 10,00,000) is disallowed in computing business profits, which increases the corporate tax liability",
+            "15% of the expenditure (Rs. 1,50,000) is disallowed in computing business profits, which increases the corporate tax liability",
+            "The full Rs. 10,00,000 stays deductible, but a penalty of Rs. 3,00,000 is levied on the deductor in addition to the tax",
+            "30% of the expenditure (Rs. 3,00,000) is disallowed in computing business profits, which increases the corporate tax liability"
           ],
           "answer": 3,
           "why": "Section 40(a)(ia) disallows 30% of any expenditure paid to a resident without statutory TDS deduction or timely deposit, increasing the company's taxable business income.",
@@ -7108,10 +7108,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the AS-3 Indirect Cash Flow calculation, why are Depreciation Expense (Rs. 1.65 Cr) and Finance Costs (Rs. 1.85 Cr) added back to Profit Before Tax in the Operating Activities section?",
           "options": [
-            "Depreciation is a non-cash accounting allocation and Finance Costs are financing activities, so both must be reversed from PBT to isolate pure operational cash generation",
-            "Because statutory tax laws allow companies to claim double tax deductions for machinery wear and tear",
-            "Because they represent direct cash revenues collected from institutional bank depositors",
-            "To artificially inflate the company's operating cash flows before applying for commercial bank loans"
+            "Depreciation is a non-cash charge and Finance Costs are a financing item, so both are reversed from PBT to isolate cash generated by operations",
+            "Depreciation is an investing cash outflow and Finance Costs are an operating item, so both are reversed from PBT to avoid double counting capex",
+            "Depreciation is a cash payment for asset replacement and Finance Costs are non-operating income, so both are reversed from PBT to isolate operations",
+            "Depreciation is a non-cash charge and Finance Costs are an investing item, so only depreciation is reversed from PBT to isolate operating cash"
           ],
           "answer": 0,
           "why": "Depreciation requires no cash outflow and interest is classified under financing cash flows; adding them back neutralizes their effect on PBT, correctly isolating true operating cash generation.",
@@ -7163,10 +7163,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 44AB of the Income Tax Act, 1961, which statutory report format must be furnished by an auditor when the audit of accounts of an enterprise has already been conducted under the Companies Act, 2013?",
           "options": [
-            "Form GSTR-9C along with Form ADT-1",
-            "Form 3CA (Audit Report) along with the detailed Statement of Particulars in Form 3CD",
-            "Form 3CB (Audit Report) along with Form 3CE",
-            "Form 10B along with Form 26AS"
+            "Form 3CB (Audit Report) together with the Statement of Particulars in Form 3CD",
+            "Form 3CA (Audit Report) together with the Statement of Particulars in Form 3CD",
+            "Form 3CA (Audit Report) together with the Transfer Pricing Report in Form 3CEB",
+            "Form 3CD (Statement of Particulars) alone, without any separate audit report form"
           ],
           "answer": 1,
           "why": "When an enterprise is already required to get its accounts audited under any other law (such as the Companies Act 2013), Section 44AB mandates the audit report in Form No. 3CA and the statement of particulars in Form No. 3CD.",
@@ -7220,10 +7220,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational principle of Ind AS 115 / IFRS 15 for recognizing revenue from contracts with customers?",
           "options": [
-            "An entity recognizes revenue immediately upon signing a commercial contract regardless of delivery or performance",
-            "An entity recognizes revenue only when green cash is physically deposited into the corporate operating bank account",
-            "An entity recognizes revenue when control of promised goods or services is transferred to the customer in an amount reflecting expected consideration",
-            "An entity recognizes revenue strictly when significant risks and rewards of ownership are transferred under AS 9"
+            "An entity recognises revenue when the risks and rewards of the goods or services pass to the customer, in an amount that reflects the invoiced price",
+            "An entity recognises revenue when cash is received from the customer for the promised goods or services, in an amount that reflects the cash received",
+            "An entity recognises revenue when control of promised goods or services transfers to the customer, in an amount that reflects the expected consideration",
+            "An entity recognises revenue when the contract is signed with the customer, in an amount that reflects the total price spread evenly over the term"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7247,10 +7247,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 115, when is a promised good or service considered 'distinct'?",
           "options": [
-            "Whenever the good or service has an individual inventory serial number stamped by the quality control department",
-            "When the customer can benefit from it on its own or with readily available resources, AND it is separately identifiable within the contract",
-            "Only when the product is sold at a gross profit margin exceeding 30% of standard manufacturing cost",
-            "When the customer explicitly waives all statutory warranty claims in an executed written affidavit"
+            "When the entity sells it separately to other customers, and it is priced separately from other items within the contract",
+            "When the customer can benefit from it on its own or with readily available resources, and it is separately identifiable within the contract",
+            "When the customer can benefit from it only together with the other items, and it is delivered at the same time within the contract",
+            "When the customer can benefit from it on its own or with readily available resources, and it is delivered at a different time in the contract"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7329,10 +7329,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key difference between a Contract Asset and a Trade Receivable under Ind AS 115?",
           "options": [
-            "Contract assets can only be held by banking companies licensed under the Banking Regulation Act",
-            "A contract asset is always an intangible asset, whereas a trade receivable is an equity instrument",
-            "A trade receivable represents an unconditional right to payment (only passage of time required); a contract asset is conditioned on something other than time (such as future performance)",
-            "Trade receivables are never assessed for credit impairment, whereas contract assets are evaluated under Ind AS 37"
+            "A contract asset is an unconditional right to payment needing only the passage of time; a trade receivable depends on something other than time, such as future performance",
+            "A trade receivable is a conditional right to payment that depends on the customer's credit approval; a contract asset is a right that depends on a bank guarantee",
+            "A trade receivable is an unconditional right to payment needing only the passage of time; a contract asset depends on something other than time, such as future performance",
+            "A trade receivable arises only after cash is collected from the customer; a contract asset arises when the invoice is raised, before any performance is completed"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7386,10 +7386,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental structural change did Ind AS 116 / IFRS 16 introduce for lessee accounting?",
           "options": [
-            "It banned companies from leasing real estate, mandating outright debt-financed property purchases",
-            "It required lessors to record negative equity equal to the fair market value of leased equipment",
-            "It allowed all leases up to 25 years to be kept off-balance-sheet as long as annual rent was disclosed in footnotes",
-            "It eliminated the operating lease distinction for lessees, requiring virtually all leases to be recognized on-balance-sheet as ROU Assets and Lease Liabilities"
+            "It removed the finance lease distinction for lessees, so almost all leases are recorded as rental expense with only a disclosure note in the accounts",
+            "It removed the operating lease distinction for lessors, so almost all leases are recorded on the lessor's balance sheet as sales of the leased asset",
+            "It kept the operating lease distinction for lessees, so only finance leases are recorded on the balance sheet as ROU Assets and Lease Liabilities",
+            "It removed the operating lease distinction for lessees, so almost all leases are recorded on the balance sheet as ROU Assets and Lease Liabilities"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7413,10 +7413,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "At what amount is a Lease Liability initially measured on the balance sheet under Ind AS 116?",
           "options": [
-            "At the present value of future lease payments discounted using the interest rate implicit in the lease or the lessee's incremental borrowing rate (IBR)",
-            "At the undiscounted total sum of all contractual lease payments over the entire contractual term",
-            "At the fair market value of the underlying physical asset as certified by an independent registered valuer",
-            "At exactly zero until the final year of the lease contract expires"
+            "At the present value of future lease payments, discounted at the rate implicit in the lease or the lessee's incremental borrowing rate (IBR)",
+            "At the undiscounted total of future lease payments over the lease term, with the interest portion recognised in the first year of the lease",
+            "At the fair value of the underlying asset on the commencement date, discounted at the lessee's weighted average cost of capital (WACC)",
+            "At the present value of the lease payments for the first year only, discounted at the prime lending rate quoted by the central bank"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7441,10 +7441,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Ind AS 116 produce a 'front-loading' effect on the Profit & Loss statement in the early years of a lease?",
           "options": [
-            "Because statutory tax depreciation rates in Year 1 are mandated to be 80% under the Income Tax Act",
-            "Because interest expense (calculated on the higher initial liability balance) combined with straight-line depreciation exceeds the former level annual rent",
-            "Because the standard requires all 5 years of lease payments to be expensed in full in Year 1",
-            "Because lessors charge double rent in the first year to protect against tenant bankruptcy risk"
+            "Because interest on the lower opening liability, combined with accelerated depreciation, is more than the old level annual rent",
+            "Because interest on the higher opening liability, combined with straight-line depreciation, is more than the old level annual rent",
+            "Because lease payments are made in advance, so the whole rent is expensed in the first year and nothing is expensed later",
+            "Because interest on the higher opening liability, combined with straight-line depreciation, is less than the old level annual rent"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7467,10 +7467,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the adoption of Ind AS 116 impact reported EBITDA and Operating Cash Flows?",
           "options": [
-            "There is zero mathematical impact because Ind AS 116 only applies to balance sheet disclosure notes",
-            "EBITDA declines by 50% because lease interest is charged directly against gross revenues",
-            "EBITDA expands because operating rent is eliminated; Operating Cash Flow increases because principal payments shift into financing cash flows",
-            "Operating cash flow drops to zero because all cash transactions are classified under investing activities"
+            "EBITDA decreases because lease depreciation is deducted, and Operating Cash Flow decreases because interest payments move into operating cash flows",
+            "EBITDA is unchanged because rent is still deducted, and Operating Cash Flow is unchanged because payments remain within operating cash flows",
+            "EBITDA increases because operating rent is removed, and Operating Cash Flow increases because principal payments move into financing cash flows",
+            "EBITDA increases because operating rent is removed, and Operating Cash Flow decreases because principal payments move into investing cash flows"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7493,10 +7493,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 116, what happens in a Sale-and-Leaseback transaction if the transfer of the asset does not qualify as a sale under Ind AS 115?",
           "options": [
-            "The seller-lessee recognizes an immediate 100% extraordinary gain on disposal in operating profit",
-            "The buyer-lessor must donate the property to a municipal trust within 30 days",
-            "The contract is automatically rendered null and void under the Indian Contract Act 1872",
-            "The transaction is accounted for as a collateralized borrowing; the seller-lessee continues to recognize the asset and records a financial liability"
+            "It is accounted for as a sale; the seller-lessee removes the asset from its books and records the full gain in the profit and loss",
+            "It is accounted for as an operating lease; the seller-lessee keeps the asset on its books and records no financial liability",
+            "It is accounted for as a sale; the seller-lessee removes the asset from its books and defers the gain in other comprehensive income",
+            "It is accounted for as a collateralised borrowing; the seller-lessee keeps the asset on its books and records a financial liability"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7550,9 +7550,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "How is Fair Value defined under Ind AS 113 / IFRS 13?",
           "options": [
             "The price that would be received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date",
-            "The historical cash outlay paid to acquire the asset indexed for national wholesale inflation",
-            "The forced liquidation price realized at an emergency distress auction supervised by a court receiver",
-            "The net book value of the asset as determined by the historical straight-line depreciation schedule"
+            "The price that would be paid to acquire an asset or received to assume a liability in an orderly transaction between market participants at the acquisition date",
+            "The price at which an asset was last sold or a liability was last settled in a transaction between the entity and any counterparty before the measurement date",
+            "The price that would be received to sell an asset in a forced liquidation or paid to transfer a liability under distress at the measurement date"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7578,10 +7578,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 113, how are Transaction Costs and Transport Costs treated in measuring Fair Value?",
           "options": [
-            "Both transaction costs and transport costs are deducted in full from Fair Value",
-            "Neither transaction costs nor transport costs are ever considered in any fair value calculation",
-            "Transaction costs are capitalized onto the balance sheet, while transport costs are banned from accounting ledgers",
-            "Transport costs adjust Fair Value (location is an asset characteristic); transaction costs do NOT adjust Fair Value (they are expensed separately)"
+            "Transaction costs adjust Fair Value because they are incurred to complete the sale; transport costs do not adjust Fair Value because location is not a characteristic of the asset",
+            "Both transport costs and transaction costs adjust Fair Value because both are incurred in moving the asset to the point of sale and completing it",
+            "Neither transport costs nor transaction costs adjust Fair Value, and both are expensed as incurred in the period when the sale is completed",
+            "Transport costs adjust Fair Value because location is a characteristic of the asset; transaction costs do not adjust Fair Value and are accounted for separately"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7632,10 +7632,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following represents a Level 1 input in the Ind AS 113 Fair Value Hierarchy?",
           "options": [
-            "Quoted prices for similar assets in illiquid over-the-counter secondary dealer markets",
-            "Unadjusted quoted prices in active markets for identical assets or liabilities accessible at the measurement date",
-            "Credit spreads derived from interest rate swap matrix pricing models",
-            "Discounted cash flow projections based entirely on internal management financial forecasts"
+            "Quoted prices in active markets for similar assets or liabilities, adjusted for differences between the similar item and the asset being measured",
+            "Unadjusted quoted prices in active markets for identical assets or liabilities that the entity can access at the measurement date",
+            "Unobservable inputs based on the entity's own data, such as internal cash flow forecasts used when no market information is available",
+            "Observable inputs other than quoted prices, such as interest rate yield curves and implied volatilities that are commonly quoted in the market"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7659,10 +7659,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Ind AS 113 engine simulation, why was the National Mercantile Exchange selected over the Regional Coastal Hub?",
           "options": [
-            "Because it is the Principal Market, exhibiting the greatest volume and level of activity (25,000 trades/day > 4,000 trades/day)",
-            "Because the Regional Coastal Hub was located in a foreign offshore tax haven",
-            "Because the Chief Financial Officer owned equity shares in the National Mercantile Exchange",
-            "Because Ind AS 113 strictly prohibits companies from selling commodities in coastal ports"
+            "Because it is the Principal Market, with the greatest volume and activity (25,000 trades a day against 4,000 trades a day)",
+            "Because it is the Most Advantageous Market, offering the highest net price after all costs, whatever its trading volume",
+            "Because it is the nearest market to the entity's location, the only factor that matters when several markets are accessible",
+            "Because it is the market where the entity itself usually sells, so its own trading history takes priority over the volume of other markets"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7717,10 +7717,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why was the legacy Incurred Loss Model under AS 30 / IAS 39 replaced by Ind AS 109 / IFRS 9?",
           "options": [
-            "Because financial instruments are no longer recognized on corporate balance sheets",
-            "Because the incurred loss model delayed credit loss recognition until formal default occurred ('too little, too late'), exacerbating the 2008 financial crisis",
-            "Because accounting standard setters decided to abolish credit provisions entirely",
-            "Because all commercial loans must be repaid in physical gold under modern IFRS rules"
+            "Because the incurred loss model recognised lifetime losses on every loan from day one, which made profits too volatile during the 2008 financial crisis",
+            "Because the incurred loss model delayed credit loss recognition until a default occurred ('too little, too late'), which worsened the 2008 financial crisis",
+            "Because the incurred loss model applied only to bank loans and ignored trade receivables, which left a gap in disclosures during the 2008 financial crisis",
+            "Because the incurred loss model required provisions to be measured at fair value each quarter, which was too costly for lenders during the 2008 financial crisis"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7746,10 +7746,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What two cumulative criteria must a debt instrument satisfy to be measured at Amortized Cost under Ind AS 109?",
           "options": [
-            "It must have an investment-grade rating from at least three international credit agencies",
-            "It must be held for active short-term trading AND listed on a recognized stock exchange",
-            "It must be held within a 'Hold to Collect' business model AND its contractual cash flows must be Solely Payments of Principal and Interest (SPPI)",
-            "It must be an equity instrument issued by a state-owned enterprise"
+            "It must be held in a 'Hold to Collect and Sell' business model, and its contractual cash flows must be Solely Payments of Principal and Interest (SPPI)",
+            "It must be held in a 'Hold to Collect' business model, and it must be quoted in an active market with an observable price at each date",
+            "It must be held in a 'Hold to Collect' business model, and its contractual cash flows must be Solely Payments of Principal and Interest (SPPI)",
+            "It must be held in a 'Held for Trading' business model, and its contractual cash flows must be Solely Payments of Principal and Interest (SPPI)"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7775,10 +7775,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does interest revenue recognition change when a debt asset transitions from Stage 2 to Stage 3 (Credit-Impaired)?",
           "options": [
-            "In Stage 3, interest revenue is doubled to penalize the defaulting borrower",
-            "In Stage 3, all interest recognition is prohibited under the Indian Penal Code",
-            "There is zero change; interest is always recognized on the historical cost of the asset",
-            "In Stage 2, interest is calculated on the Gross Carrying Amount; in Stage 3, interest is calculated on the Net Carrying Amount (Gross minus Loss Allowance)"
+            "In Stage 2, interest is calculated on the Net Carrying Amount (Gross less Loss Allowance); in Stage 3, it is calculated on the Gross Carrying Amount",
+            "In Stage 2, interest is calculated on the Gross Carrying Amount; in Stage 3, interest revenue stops completely until the asset is recovered",
+            "In Stage 2 and Stage 3, interest is calculated on the Net Carrying Amount (Gross less Loss Allowance), but in Stage 3 at the penalty rate",
+            "In Stage 2, interest is calculated on the Gross Carrying Amount; in Stage 3, it is calculated on the Net Carrying Amount (Gross less Loss Allowance)"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7832,10 +7832,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the engine simulation, what was the ECL allowance for Loan 2 ($500k exposure, 45 DPD, 12% lifetime PD, 45% LGD)?",
           "options": [
-            "$225,000 representing total loss given default",
-            "$27,000 (calculated as $500,000 * 12.0% * 45.0% under Stage 2 Lifetime ECL)",
-            "Zero, because the borrower had not yet entered formal liquidation",
-            "$6,750 based on 12-month expected credit losses"
+            "$60,000 (calculated as $500,000 x 12.0% under Stage 2 Lifetime ECL, ignoring LGD)",
+            "$27,000 (calculated as $500,000 x 12.0% x 45.0% under Stage 2 Lifetime ECL)",
+            "$11,250 (calculated as $500,000 x 5.0% x 45.0% under Stage 1 12-month ECL)",
+            "$225,000 (calculated as $500,000 x 45.0% under Stage 3 Credit-Impaired ECL)"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7890,10 +7890,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In modern corporate governance, what is the primary responsibility of the Enterprise Financial Controller regarding converged Ind AS standards?",
           "options": [
-            "To artificially inflate quarterly net profit by keeping all long-term property leases off the balance sheet",
-            "To refuse to recognize any credit impairment provisions until borrowers enter formal bankruptcy liquidation",
-            "To ensure that revenue recognition, lease capitalization, fair value measurement, and credit impairment comply with rigorous principle-based standards and pass statutory audit scrutiny",
-            "To eliminate all footnote disclosures from the published annual report to reduce printing costs"
+            "To ensure revenue recognition, lease capitalisation, fair value measurement and credit impairment follow tax rules in the returns and withstand income tax assessment scrutiny",
+            "To ensure revenue recognition, lease capitalisation, fair value measurement and credit impairment follow the local legacy rules and avoid any need for statutory audit",
+            "To ensure revenue recognition, lease capitalisation, fair value measurement and credit impairment follow the principle-based standards and withstand statutory audit scrutiny",
+            "To ensure revenue targets, lease budgets, market price forecasts and credit limits follow management plans and withstand the scrutiny of the board of directors"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7918,10 +7918,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Capstone contract simulation ($100k price, Hardware SSP $75k, Cloud SSP $50k), how much revenue is recognized in Year 1?",
           "options": [
-            "Zero, because revenue cannot be recognized until the full 24-month subscription expires",
-            "$80,000 ($60,000 allocated to hardware recognized at point of delivery + $20,000 for 12 months of cloud service)",
-            "$100,000 representing the entire cash consideration received at contract inception",
-            "$50,000 based on an equal 50/50 arbitrary split between hardware and cloud"
+            "$100,000 ($75,000 allocated to hardware at delivery, plus $25,000 for the first year of cloud service)",
+            "$80,000 ($60,000 allocated to hardware at delivery, plus $20,000 for 12 months of cloud service)",
+            "$75,000 ($75,000 allocated to hardware at delivery, with the cloud service deferred entirely to Year 2)",
+            "$90,000 ($60,000 allocated to hardware at delivery, plus $30,000 for cloud service billed in Year 1)"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7975,10 +7975,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the $2,000,000 corporate credit facility require an ECL allowance of $68,000 under Ind AS 109?",
           "options": [
-            "Because the borrower was declared completely bankrupt by the National Company Law Tribunal",
-            "Because Ind AS 109 strictly prohibits corporate lenders from holding collateral against loans",
-            "Because statutory rules require an arbitrary 10% provision on all corporate commercial loans",
-            "Because covenant breaches triggered a Significant Increase in Credit Risk (Stage 2), mandating Lifetime ECL: $2M * 8.5% PD * 40% LGD = $68,000"
+            "Because covenant breaches triggered a Significant Increase in Credit Risk (Stage 2), requiring 12-month ECL: $2M x 8.5% PD x 40% LGD = $68,000",
+            "Because covenant breaches triggered credit impairment (Stage 3), requiring Lifetime ECL on the full exposure: $2M x 40% LGD = $800,000",
+            "Because covenant breaches triggered a Significant Increase in Credit Risk (Stage 2), requiring Lifetime ECL with no loss given default: $2M x 8.5% PD = $170,000",
+            "Because covenant breaches triggered a Significant Increase in Credit Risk (Stage 2), requiring Lifetime ECL: $2M x 8.5% PD x 40% LGD = $68,000"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8062,10 +8062,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 102, what is the required accounting treatment for an Equity-Settled Employee Stock Option Plan (ESOP)?",
           "options": [
-            "Record the entire contractual value as a current cash liability on the grant date",
-            "Keep the option grant completely off the financial statements with zero footnote disclosure",
-            "Recognize expense only if the market price exceeds the exercise price under the legacy intrinsic value method",
-            "Recognize employee benefit expense over the vesting period based on grant-date fair value, with a corresponding credit to equity (Share-Based Payment Reserve)"
+            "Recognise an employee benefit expense on the exercise date at intrinsic value, credited to a liability for the amount payable to employees",
+            "Recognise an employee benefit expense over the vesting period at fair value remeasured every year, credited to a liability for the amount payable",
+            "Recognise no expense in the profit and loss account, and only disclose the dilution of earnings per share when the options are exercised",
+            "Recognise an employee benefit expense over the vesting period at grant-date fair value, credited to equity (Share-Based Payment Reserve)"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8090,10 +8090,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How are non-market vesting conditions (such as remaining in service for 3 years or achieving an EBITDA target) accounted for under Ind AS 102?",
           "options": [
-            "They are excluded from the grant-date option pricing model and accounted for by adjusting the estimated number of options expected to vest at each reporting date",
-            "They are factored into the grant-date fair value calculation and can never be adjusted subsequently",
-            "They immediately disqualify the arrangement from being recognized under Ind AS 102",
-            "They mandate that the option be reclassified as a cash-settled liability"
+            "They are left out of the grant-date option pricing model, and the estimated number of options expected to vest is revised at each reporting date",
+            "They are built into the grant-date option pricing model, so the estimate of the number of options is fixed at the grant date with no later true-up",
+            "They are left out of the grant-date option pricing model, and the fair value per option is remeasured at each reporting date",
+            "They are ignored until the options vest, and then the whole expense is recognised in a single amount at the vesting date, with no earlier charge"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8119,10 +8119,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an ESOP features a 4-year graded vesting schedule (25% vesting each year), how must the compensation expense be recognized under Ind AS 102?",
           "options": [
-            "No expense can be recognized until all 4 tranches have fully vested at the end of Year 4",
-            "Each tranche must be treated as a separate share-based payment arrangement with its own vesting period, producing a front-loaded expense curve",
-            "The total fair value must be divided equally across 4 years on a straight-line basis (25% per year)",
-            "100% of the total compensation cost must be expensed on the first day of Year 1"
+            "The whole grant is one arrangement with an average vesting period of 2.5 years, which produces an equal expense in each year",
+            "Each tranche is a separate share-based payment with its own vesting period, which produces an expense pattern weighted towards the early years",
+            "Only the final tranche sets the vesting period of 4 years, which produces an expense pattern weighted towards the later years",
+            "Each tranche is expensed in full in the year it vests, which produces an expense equal to one quarter of the total each year"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8147,10 +8147,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference in balance sheet and P&L treatment between Cash-Settled SARs and Equity-Settled ESOPs?",
           "options": [
-            "Cash-Settled SARs can only be granted to non-executive directors",
-            "Cash-Settled SARs are credited to equity while Equity ESOPs are recognized as liabilities",
-            "Cash-Settled SARs are recognized as financial liabilities and remeasured at fair value at each reporting date through P&L, whereas Equity ESOPs have frozen grant-date fair values credited to equity",
-            "Cash-Settled SARs are never recognized in the financial statements until cash is disbursed"
+            "Cash-Settled SARs are equity instruments kept at a fixed grant-date fair value, while Equity ESOPs are liabilities remeasured at fair value at each reporting date through P&L",
+            "Cash-Settled SARs are financial liabilities remeasured at fair value at each reporting date through OCI, while Equity ESOPs are remeasured through the P&L at exercise",
+            "Cash-Settled SARs are financial liabilities remeasured at fair value at each reporting date through P&L, while Equity ESOPs keep a fixed grant-date fair value credited to equity",
+            "Cash-Settled SARs are expensed only when paid in cash, while Equity ESOPs are expensed over the vesting period with the credit shown as a financial liability"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8233,10 +8233,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Ind AS 12 replace legacy Indian GAAP's income statement timing difference method with the balance sheet liability method?",
           "options": [
-            "To capture tax consequences of balance sheet items that bypass the income statement, such as revaluations in OCI, business combinations, and equity transaction costs",
-            "To eliminate all deferred tax reporting and require only cash-basis tax accounting",
-            "To ensure that corporate income tax is always recognized as zero on the balance sheet",
-            "To force corporations to compute tax depreciation using straight-line methods"
+            "To capture the tax effects of balance sheet items that bypass the income statement, such as OCI revaluations, business combinations and equity issue costs",
+            "To capture the tax effects of cash items recorded in the income statement, such as sales, wages, rent and interest paid during the year",
+            "To simplify tax accounting by ignoring items recognised in OCI and equity, so that only the income statement timing differences are tracked",
+            "To reduce the volatility of reported profit by recording deferred tax only when the underlying assets are sold or the liabilities are settled"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8260,10 +8260,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the tax base of a $150,000 warranty provision under Ind AS 12 when warranty expenses are tax-deductible only upon cash settlement?",
           "options": [
-            "$37,752 representing the net tax shield",
-            "Indeterminate until the warranty period expires",
-            "$150,000 representing the gross accrued provision",
-            "$0.00, because the carrying amount of $150,000 minus future tax deductions of $150,000 equals zero"
+            "$150,000, because the carrying amount of $150,000 has no future tax deductions to subtract",
+            "$300,000, because the carrying amount of $150,000 plus future deductions of $150,000",
+            "$75,000, because the carrying amount of $150,000 less half of the future deductions of $150,000",
+            "$0, because the carrying amount of $150,000 less future tax deductions of $150,000 equals zero"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8287,10 +8287,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what condition is a Deferred Tax Asset (DTA) recognized for deductible temporary differences under Ind AS 12?",
           "options": [
-            "Only if the entity receives written advance authorization from the Income Tax Department",
-            "Never, because Ind AS 12 prohibits the recognition of deferred tax assets",
-            "Only to the extent that it is probable (more likely than not) that future taxable profit will be available against which the deduction can be utilized",
-            "Automatically in full regardless of whether the entity has any future profit prospects"
+            "Whenever a deductible temporary difference exists, whether or not future taxable profit is expected",
+            "Only if it is virtually certain that future taxable profit will be available, as shown by a signed order book",
+            "Only to the extent that it is probable that future taxable profit will be available to use the deduction against",
+            "Only if the entity has made taxable profits in each of the last three years, whatever its expectations of future profit"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8315,10 +8315,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the effective enacted corporate tax rate under Section 115BAA in India used for measuring deferred tax balances?",
           "options": [
-            "18.500% Minimum Alternate Tax rate",
+            "24.200% (22% base rate + 10% surcharge, with no education cess)",
             "25.168% (22% base rate + 10% surcharge + 4% education cess)",
-            "34.944% (30% base rate + 12% surcharge + 4% cess)",
-            "15.000% flat rate with zero surcharge"
+            "22.880% (22% base rate + 4% education cess, with no surcharge)",
+            "29.120% (25% base rate + 12% surcharge + 4% education cess)"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8401,10 +8401,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 33, how are dividends on cumulative preference shares treated in the calculation of the Basic EPS numerator?",
           "options": [
-            "Added back to net profit because preference shares are treated as equity",
-            "Deducted in full for the period whether or not the preference dividend has been formally declared by the board",
-            "Completely ignored in computing ordinary equity earnings",
-            "Deducted only if the dividend has been formally declared during the fiscal period"
+            "Deducted only if the board declared the preference dividend before the financial statements were approved",
+            "Deducted in full for the period, whether or not the board has formally declared the preference dividend",
+            "Deducted only when the preference dividend is paid in cash during the period to which it relates",
+            "Ignored in the numerator, and instead added to the denominator as potential ordinary shares of the period"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8429,10 +8429,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When a company issues bonus shares or executes a share split without consideration, how is the weighted average number of shares treated under Ind AS 33?",
           "options": [
-            "Excluded from the denominator until the shares are fully paid in cash",
-            "Recognized as an extraordinary loss in the current year profit and loss statement",
-            "Adjusted retrospectively for all periods presented as if the event had occurred at the beginning of the earliest period reported",
-            "Time-weighted from the date of the bonus issue without restating comparative periods"
+            "Adjusted prospectively from the date of the issue, with the new shares weighted for the days they were outstanding",
+            "Adjusted for the current period only, with the comparative figures left unchanged as they were originally reported to users",
+            "Adjusted retrospectively for all periods presented, as if the event had happened at the start of the earliest period reported",
+            "Adjusted from the board approval date, with the new shares weighted for the part of the year after approval"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8459,10 +8459,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core rule governing Anti-Dilutive potential ordinary shares under Ind AS 33?",
           "options": [
-            "They require immediate cash settlement by the issuing corporation",
-            "They must be included in Diluted EPS to show the highest possible upside to investors",
-            "They must be recognized as deferred tax liabilities on the balance sheet",
-            "They must be strictly excluded from the Diluted EPS calculation because including them would decrease loss or increase earnings per share"
+            "They must be included in Diluted EPS, because excluding them would overstate the earnings per share reported to investors",
+            "They must be included in Diluted EPS only when the company reports a loss, because dilution is measured against loss per share",
+            "They must be excluded from Diluted EPS and Basic EPS alike, because they have not yet been issued to any shareholder",
+            "They must be excluded from Diluted EPS, because including them would reduce a loss per share or raise earnings per share"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8488,10 +8488,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Treasury Stock Method, how are the cash proceeds from assumed option exercises treated in computing incremental diluted shares?",
           "options": [
-            "Assumed to be used to repurchase ordinary shares at the average market price, so only the net unrepurchased shares are added to the denominator",
-            "Added directly to the net profit numerator without changing the share count",
-            "Invested in government bonds at the risk-free rate of interest",
-            "Distributed immediately to existing shareholders as a special cash dividend"
+            "Assumed to be used to buy back ordinary shares at the average market price, so only the net shares not bought back are added to the denominator",
+            "Assumed to be kept by the company as cash, so all the shares from the assumed exercise are added to the diluted share denominator",
+            "Assumed to be used to buy back ordinary shares at the exercise price, so only the net shares not bought back are added to the denominator",
+            "Assumed to be used to repay debt, so the interest saved is added to the numerator and all shares are added to the denominator"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8571,10 +8571,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between a Provision and a Contingent Liability under Ind AS 37?",
           "options": [
-            "There is no difference; both terms are used interchangeably under Ind AS",
-            "A Provision is disclosed only in the footnotes, while a Contingent Liability is recognized on the balance sheet",
-            "A Provision is a present liability of uncertain timing or amount recognized on the balance sheet, whereas a Contingent Liability is a possible obligation disclosed only in the notes",
-            "A Provision is recognized only when an outflow is 100% virtually certain"
+            "A Provision is a possible obligation disclosed only in the notes; a Contingent Liability is a present liability of uncertain timing or amount recognised on the balance sheet",
+            "A Provision is a liability of certain timing and amount recognised on the balance sheet; a Contingent Liability is a possible obligation recognised as an expense when it arises",
+            "A Provision is a present liability of uncertain timing or amount recognised on the balance sheet; a Contingent Liability is a possible obligation disclosed only in the notes",
+            "A Provision and a Contingent Liability are both recognised on the balance sheet, and differ only in that a Provision is measured at cost and a Contingent Liability at fair value"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8599,10 +8599,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an airline company accrue a provision for expected major aircraft overhaul expenses that will occur in 3 years under Ind AS 37?",
           "options": [
-            "Yes; safety regulations make future maintenance costs 100% legally binding",
-            "No; there is no present obligation resulting from a past event because the company can avoid future overhaul costs by selling or grounding the aircraft",
-            "Yes; provisions must be recognized for all future anticipated operating expenditures",
-            "No, unless approved by the Directorate General of Civil Aviation (DGCA)"
+            "Yes; the past use of the aircraft creates a present obligation, because each flight hour adds to the overhaul cost that will fall due",
+            "No; there is no present obligation from a past event, because the airline can avoid the overhaul cost by selling or grounding the aircraft",
+            "Yes; the overhaul is probable and can be estimated reliably, so the airline must provide for the cost in the years before it occurs",
+            "No; the overhaul is a capital expense that Ind AS 37 never allows to be provided for, even when there is a legal duty to do it"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8626,10 +8626,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When a long-term decommissioning provision is discounted to present value, how is the annual unwinding of the discount accounted for in subsequent periods?",
           "options": [
-            "Recognized as a Finance Cost (interest expense) in Profit or Loss, increasing the carrying amount of the provision liability",
-            "Capitalized into the cost of the property, plant, and equipment asset",
-            "Recognized as an extraordinary operating expense inside EBITDA",
-            "Credited directly to General Reserves within Equity"
+            "Recognised as a Finance Cost (interest expense) in Profit or Loss, which increases the carrying amount of the provision",
+            "Recognised as an operating expense in Profit or Loss, with no change in the carrying amount of the provision liability",
+            "Recognised in Other Comprehensive Income, which decreases the carrying amount of the provision over its remaining life",
+            "Capitalised into the cost of the related asset, which increases the carrying amount of the provision as well"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8739,10 +8739,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary executive mandate of the Chief Accounting Officer when orchestrating Block 8 standards?",
           "options": [
-            "To ignore the time value of money when measuring multi-decade decommissioning liabilities",
-            "To hide all executive share option grants from public disclosures",
-            "To synthesize share-based compensation, deferred taxation, EPS dilution, and provisions into an integrated, auditable financial reporting system",
-            "To arbitrarily adjust tax rates to eliminate corporate tax liabilities"
+            "To combine business combinations, consolidation, joint arrangements and disclosures into one integrated, auditable financial reporting system",
+            "To combine asset impairment, intangibles, fair value and held-for-sale rules into one integrated, auditable financial reporting system",
+            "To combine share-based pay, deferred tax, EPS dilution and provisions into one integrated, auditable financial reporting system",
+            "To combine liquidity, solvency, DuPont analysis and forensic fraud models into one integrated, auditable financial health report"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8932,10 +8932,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 103 Paragraph 53, how must acquisition-related costs (legal, valuation, and advisory fees) be accounted for?",
           "options": [
-            "They must be capitalized into the initial carrying value of goodwill",
-            "They must be deducted directly from the target company's retained earnings",
-            "They must be expensed in Profit & Loss in the period incurred, strictly prohibited from being capitalized into goodwill",
-            "They must be amortized over a 10-year period as preliminary expenses"
+            "They are capitalised into goodwill when incurred, and amortised through Profit & Loss over the life",
+            "They are added to the cost of the identifiable assets acquired, and depreciated over their lives",
+            "They are expensed in Profit & Loss when incurred, and may not be capitalised into goodwill",
+            "They are deducted from equity when incurred, as a cost of issuing the shares to the sellers"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8958,10 +8958,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a fair value step-up on acquired assets create a Deferred Tax Liability (DTL) in a share acquisition?",
           "options": [
-            "Because tax authorities immediately refund taxes on all asset revaluations",
-            "Because fair value adjustments eliminate all future corporate tax liabilities permanently",
-            "Because Ind AS 12 prohibits recognizing deferred taxes on business combinations",
-            "Because the carrying amount increases to fair value while the tax base remains at historical written-down value, creating a taxable temporary difference"
+            "The carrying amount stays at historical cost while the tax base rises to fair value, creating a deductible temporary difference",
+            "The step-up is taxed as a capital gain in the acquirer's return in the year of purchase, creating a current tax liability",
+            "The carrying amount rises to fair value and the tax base rises by the same amount, creating a permanent difference on goodwill",
+            "The carrying amount rises to fair value while the tax base stays at historical written-down value, creating a taxable temporary difference"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8984,10 +8984,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 103, how is a Gain on Bargain Purchase (Negative Goodwill) recognized when clear evidence exists?",
           "options": [
-            "Recognized in Other Comprehensive Income (OCI) and accumulated in Equity as Capital Reserve",
-            "Recognized immediately as operating revenue in Profit & Loss like IFRS 3",
-            "Distributed immediately to equity shareholders as a cash dividend",
-            "Deducted from the carrying value of Property, Plant & Equipment"
+            "Recognised in Other Comprehensive Income (OCI) and accumulated in Equity as Capital Reserve",
+            "Recognised in Profit or Loss as income immediately, and carried to Retained Earnings in Equity",
+            "Recognised as a deferred credit liability and released to Profit or Loss over five years",
+            "Recognised as a deduction from goodwill on other acquisitions, and carried in Non-Current Assets"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9013,10 +9013,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Phoenix-Zenith case study, what is the proportionate goodwill recognized on acquisition?",
           "options": [
-            "Zero, because the acquisition resulted in a bargain purchase",
+            "$2,105,376.00 (Consideration $14.5M - Net Assets $12,394,624, with no NCI added)",
             "$4,584,300.80 (Consideration $14.5M + NCI $2,478,924.80 - Net Assets $12,394,624)",
-            "$5,605,376.00 based on full goodwill",
-            "$14,500,000.00 equal to total consideration transferred"
+            "$16,978,924.80 (Consideration $14.5M + NCI $2,478,924.80, with no net assets deducted)",
+            "-$373,548.80 (Consideration $14.5M - NCI $2,478,924.80 - Net Assets $12,394,624)"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9069,10 +9069,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three cumulative elements required to establish control over an investee under Ind AS 110?",
           "options": [
-            "Power over the investee, exposure/rights to variable returns, and the ability to use power to affect those returns",
-            "Holding more than 50% equity shares, regardless of voting rights or contractual veto powers",
-            "Appointing at least one executive director and holding long-term debt securities",
-            "Registering a trademark in the same jurisdiction as the subsidiary company"
+            "Power over the investee, exposure to variable returns, and the ability to use that power to affect those returns",
+            "More than 50% of voting rights, a majority on the board, and the ability to set the investee's dividend policy",
+            "Power over the investee, exposure to variable returns, and legal ownership of the majority of the investee's equity",
+            "Significant influence over the investee, a share of its profits, and the right to appoint at least one director"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9096,10 +9096,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Where is Non-Controlling Interest (NCI) presented on the consolidated balance sheet under Ind AS 110?",
           "options": [
-            "NCI is not presented on the consolidated balance sheet",
-            "Under Long-Term Borrowings as a financial liability",
-            "Deducted directly from total consolidated Property, Plant & Equipment",
-            "Within total Equity, but explicitly segregated from the equity attributable to the owners of the parent"
+            "Within non-current liabilities, as a long-term obligation owed to the minority shareholders of the subsidiary",
+            "Within the parent's own equity, merged with retained earnings of the group without any separate disclosure",
+            "Outside the balance sheet, disclosed only in the notes as a possible claim of the minority shareholders",
+            "Within total Equity, but shown separately from the equity attributable to the owners of the parent"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9123,10 +9123,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a downstream sale of inventory from parent to subsidiary, how is unrealized intercompany profit eliminated?",
           "options": [
-            "100% against NCI's share of profit",
-            "It is never eliminated if the sale was conducted at market prices",
+            "Shared between the parent and NCI in proportion to ownership, reducing both profit shares and inventory",
+            "100% against the NCI's share of profit and consolidated inventory, leaving the parent's profit unaffected",
             "100% against the parent's profit and consolidated inventory, leaving NCI completely unaffected",
-            "Proportionately between parent and NCI based on their shareholding percentages"
+            "Only to the parent's ownership percentage, leaving the rest of the profit in consolidated inventory"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9234,10 +9234,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining legal criterion required to establish Joint Control under Ind AS 111?",
           "options": [
-            "The arrangement must be registered as a non-profit trust",
-            "A majority vote of directors regardless of contractual veto rights",
-            "One investor holding at least 51% of voting shares",
-            "Decisions about the relevant activities require the unanimous consent of the parties sharing control"
+            "Decisions about the relevant activities need a simple majority vote of the parties sharing control",
+            "Decisions about the relevant activities need approval by parties holding at least 75% of the votes",
+            "Decisions about the relevant activities are taken by the party that holds exactly half of the votes",
+            "Decisions about the relevant activities need the unanimous consent of the parties sharing control"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9263,10 +9263,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a Joint Operator account for its interest in a Joint Operation under Ind AS 111?",
           "options": [
-            "By directly recognizing its share of assets, liabilities, revenues, and expenses line-by-line",
-            "By applying the equity method as a single line item on the balance sheet",
-            "By capitalizing all investments into goodwill without recognizing liabilities",
-            "By recording all cash outflows as charitable donations"
+            "By recognising its share of assets, liabilities, revenues and expenses line by line",
+            "By recording a single line for its investment, adjusted for its share of profit or loss",
+            "By recording its interest at fair value, with changes in value taken to Profit or Loss",
+            "By recording its interest at fair value, with changes taken to Profit or Loss"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9290,10 +9290,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Equity Method (Ind AS 28), how are cash dividends received from an associate or joint venture accounted for?",
           "options": [
-            "As an addition to share capital and securities premium",
+            "As dividend income in Profit or Loss, with no change in the carrying amount of the investment",
             "As a reduction in the carrying amount of the investment on the balance sheet, not as income",
-            "As an extraordinary gain in Other Comprehensive Income",
-            "As operating revenue in the Statement of Profit and Loss"
+            "As a gain in Other Comprehensive Income, with an increase in the carrying amount of the investment",
+            "As a liability on the balance sheet until the associate confirms that the profit has been realised"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9317,10 +9317,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a downstream sale to a 30% associate with $100k unrealized profit, how much profit must the investor eliminate?",
           "options": [
-            "$100,000.00 (100% eliminated regardless of ownership interest)",
-            "Zero, because associates are separate legal entities",
-            "$30,000.00 (30% of $100,000, eliminated to the extent of the investor's ownership interest)",
-            "$70,000.00 equal to the unrelated investors' share"
+            "$100,000 (the full unrealised profit, eliminated as in a fully consolidated subsidiary)",
+            "$70,000 (70% of $100,000, eliminated for the share held by the other investors)",
+            "$30,000 (30% of $100,000, eliminated to the extent of the investor's interest)",
+            "$0 (no elimination is needed, as a downstream sale to an associate is a real sale)"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9400,10 +9400,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary overarching objective of Ind AS 112?",
           "options": [
-            "To completely conceal all minority ownership stakes from equity research analysts",
-            "To eliminate all statutory footnote disclosures from corporate annual reports",
-            "To enable users to evaluate the nature, risks, and financial effects of an entity's interests in other entities",
-            "To mandate that all structured entities be liquidated immediately"
+            "To set the rules for preparing consolidated financial statements when an entity controls one or more other entities",
+            "To set the measurement rules for an entity's investments in associates and joint ventures at each reporting date",
+            "To let users evaluate the nature of, risks in, and financial effects of an entity's interests in other entities",
+            "To make sure that all group entities use uniform accounting policies and reporting dates in their separate statements"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9427,10 +9427,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 112 Paragraph 13, why must an entity disclose significant restrictions on cash transfers from subsidiaries?",
           "options": [
-            "To avoid paying audit fees to independent statutory auditors",
-            "To alert investors to borrowing covenants or legal barriers preventing the parent from accessing subsidiary cash",
-            "Because subsidiaries are legally prohibited from holding cash",
-            "Because all subsidiary cash is automatically transferred to the central tax authority"
+            "To warn investors of tax rates that apply when subsidiaries pay dividends to the parent from their retained cash",
+            "To warn investors of borrowing covenants or legal barriers that stop the parent from accessing subsidiary cash",
+            "To support the parent's goodwill impairment test by showing the cash flow forecasts of each subsidiary separately",
+            "To show the central bank how much subsidiary cash is held abroad and subject to foreign exchange controls"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9455,10 +9455,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 112 Paragraph B14, what reconciliation must be provided for material associates?",
           "options": [
-            "A formal reconciliation between summarized financial information of the associate and the carrying amount of the investment",
-            "A reconciliation between total revenue and the CEO's annual compensation",
-            "A reconciliation between historical cost and the current price of gold",
-            "No reconciliation is permitted under Ind AS 112"
+            "A formal reconciliation of the associate's summarised financial information to the carrying amount of the investment",
+            "A formal reconciliation of the associate's profit for the year to the cash dividends received by the investor",
+            "A formal reconciliation of the fair value of the investment to the quoted market capitalisation of the associate",
+            "A formal reconciliation of the associate's summarised information to the parent's consolidated net assets"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9568,10 +9568,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary executive mandate of the Group Chief Financial Officer when orchestrating Block 9 standards?",
           "options": [
-            "To account for all multi-billion dollar acquisitions on a cash basis without PPA",
-            "To synthesize business combinations, group consolidations, joint partnerships, and statutory disclosures into a unified, auditable financial reporting system",
-            "To hide all subsidiary operating debts from credit rating agencies",
-            "To arbitrarily eliminate non-controlling interests from the consolidated balance sheet"
+            "To combine share-based pay, deferred tax, EPS dilution and provisions into one auditable reporting system for the group",
+            "To combine business combinations, group consolidation, joint arrangements and statutory disclosures into one auditable reporting system",
+            "To combine CGU impairment, R&D intangibles, fair value hierarchy and disposal groups into one auditable reporting system",
+            "To combine liquidity, solvency, DuPont analysis and fraud detection into one auditable reporting system for the group"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9733,10 +9733,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary formula and purpose of the Defensive Interval Ratio (DIR)?",
           "options": [
-            "Quick Assets divided by Daily Cash Operating Expenses, measuring how many days an enterprise can operate without additional cash inflows",
-            "Total Assets divided by Total Debt, measuring long-term liquidation coverage",
-            "Cash and Marketable Securities divided by Long-Term Liabilities, measuring insolvency risk",
-            "Inventory divided by Cost of Goods Sold, measuring warehouse holding duration"
+            "Quick Assets divided by Daily Cash Operating Expenses, showing how many days the firm can operate without new cash inflows",
+            "Current Assets divided by Daily Sales, showing how many days of revenue the firm holds in current assets at the period end",
+            "Quick Assets divided by Total Liabilities, showing what proportion of debt could be paid immediately from liquid assets",
+            "Cash divided by Annual Cash Operating Expenses, showing what fraction of a year the firm can operate without new inflows"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9761,10 +9761,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must mandatory debt principal repayments be grossed up by (1 - Effective Tax Rate) when calculating the Debt Service Coverage Ratio (DSCR)?",
           "options": [
-            "Because lenders demand a penalty multiplier on pre-tax debt payments",
-            "Because statutory auditors require all principal amounts to be inflated by VAT or GST",
-            "Because principal repayments generate deferred tax assets under Ind AS 12",
-            "Because unlike interest expense, principal repayments are not tax-deductible and must be funded from after-tax operating earnings"
+            "Because like interest, principal repayments are tax-deductible and the tax saving must be added to operating earnings",
+            "Because unlike interest, principal repayments are paid from pre-tax earnings and the tax rate is added to the repayment",
+            "Because principal repayments are an operating expense in the income statement, which reduces EBIT before tax is computed",
+            "Because unlike interest, principal repayments are not tax-deductible and must be paid from after-tax operating earnings"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9788,10 +9788,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In working capital analysis, what does a negative Cash Conversion Cycle (CCC) signify for a corporate enterprise?",
           "options": [
-            "The company has zero bank borrowings and refuses to grant trade credit to customers",
-            "The company has entered bankruptcy under the Insolvency and Bankruptcy Code (IBC 2016)",
-            "The company collects cash from customer sales before it pays its suppliers, effectively financing its operations with interest-free vendor float",
-            "The company has completely run out of inventory and cannot manufacture goods"
+            "The company pays its suppliers before it collects cash from customers, so its own cash must fund the operations",
+            "The company sells inventory faster than it buys it, so stock balances fall below zero at the end of the year",
+            "The company collects cash from customers before it pays its suppliers, so vendor float funds operations at no interest",
+            "The company makes operating losses on every sale, so its cash balance shrinks during the whole operating cycle"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9899,10 +9899,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the 3-Stage DuPont Model, what three underlying operational and financial components drive Return on Equity (ROE)?",
           "options": [
-            "Gross Margin, Current Ratio, and Debt-to-Equity Ratio",
-            "Operating Cash Flow, Free Cash Flow, and WACC",
-            "EBITDA, Interest Coverage Ratio, and Price-to-Earnings Ratio",
-            "Net Profit Margin, Asset Turnover, and Equity Multiplier (Financial Leverage)"
+            "Gross Profit Margin, Inventory Turnover and Debt-to-Equity Ratio (Solvency)",
+            "Net Profit Margin, Asset Turnover and Interest Coverage Ratio (Solvency)",
+            "Operating Margin, Receivables Turnover and Equity Multiplier (Leverage)",
+            "Net Profit Margin, Asset Turnover and Equity Multiplier (Financial Leverage)"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9926,10 +9926,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the formula and economic interpretation of the Interest Burden in the 5-Stage Extended DuPont Model?",
           "options": [
-            "EBT divided by EBIT, measuring the proportion of operating profits preserved after deducting debt service finance costs",
-            "Interest Expense divided by Revenue, measuring interest cost percentage",
-            "EBIT divided by Interest Expense, measuring interest coverage safety",
-            "Total Debt divided by EBT, measuring debt repayment duration"
+            "EBT divided by EBIT, showing the share of operating profit kept after paying financing costs",
+            "EBIT divided by EBT, showing how many times operating profit exceeds the profit after financing costs",
+            "EBIT divided by EBT, showing how many times operating profit exceeds profit after financing",
+            "Net Income divided by EBT, showing the share of profit before tax kept after paying the tax of the period"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9955,10 +9955,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Return on Invested Capital (ROIC) superior to ROE when evaluating companies that engage in massive debt-financed share buybacks?",
           "options": [
-            "Because ROIC only looks at intangible software assets rather than factory machinery",
-            "Because ROIC is unaffected by equity-reducing financial engineering, measuring cash return on total operating capital deployed regardless of debt-equity mix",
-            "Because ROIC excludes all corporate income tax expenses from profit calculations",
-            "Because ROIC is required by the SEC while ROE is illegal under Ind AS"
+            "Because ROIC is not affected by equity-reducing financial engineering, and measures the return on all operating capital, whatever the debt-equity mix",
+            "Because ROIC is not affected by equity-reducing financial engineering, and measures the return on all operating capital whatever the debt-equity mix",
+            "Because ROIC uses net income after interest, and measures the return on shareholders' funds whatever the amount of operating capital",
+            "Because ROIC is not affected by the dividend payout, and measures the return on retained earnings whatever the debt-equity mix"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9983,10 +9983,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Stern Stewart Economic Value Added (EVA) framework, what does a positive EVA signify?",
           "options": [
-            "The company's gross profit margin exceeds 50% of annual revenue",
-            "The company is exempt from paying corporate income taxes under Section 115BAA",
-            "The company has earned a return on invested capital (ROIC) that exceeds its Weighted Average Cost of Capital (WACC), creating genuine shareholder wealth",
-            "The company has zero debt obligations on its consolidated balance sheet"
+            "The company's accounting net profit is positive after interest and tax, creating real profit for the shareholders of the year",
+            "The company's return on equity (ROE) is above the risk-free rate of return, creating real excess return over government bonds",
+            "The company's return on invested capital (ROIC) is above its Weighted Average Cost of Capital (WACC), creating real shareholder wealth",
+            "The company's Weighted Average Cost of Capital (WACC) is above its return on invested capital (ROIC), creating real shareholder wealth"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10066,10 +10066,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the formula and economic definition of the Degree of Operating Leverage (DOL)?",
           "options": [
-            "EBIT divided by Total Assets, measuring asset turnover speed",
-            "Sales divided by Variable Costs, measuring manufacturing efficiency",
-            "Contribution divided by EBIT (or % Change in EBIT / % Change in Sales), measuring how fixed operating costs amplify changes in sales volume into changes in operating profit",
-            "EBIT divided by Interest Expense, measuring interest coverage"
+            "EBIT divided by EBT (or % change in EPS / % change in EBIT), showing how fixed financing costs magnify operating profit changes into EPS changes",
+            "Contribution divided by Sales (or Contribution / Variable Cost), showing how much of each sales rupee is left to cover fixed costs and profit",
+            "Contribution divided by EBIT (or % change in EBIT / % change in Sales), showing how fixed operating costs magnify sales changes into operating profit changes",
+            "Contribution divided by Sales (or Contribution / Variable Cost), showing how much of each sales rupee is left to cover the fixed costs and the profit"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10095,10 +10095,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must preference share dividends be grossed up by (1 - Effective Tax Rate) when calculating the Degree of Financial Leverage (DFL)?",
           "options": [
-            "Because preference dividends are tax-free under Section 115BAA",
-            "Because preference dividends are paid out of after-tax net profit, requiring more pre-tax operating income to satisfy than tax-deductible interest expense",
-            "Because auditors add a mandatory statutory penalty to preference dividends",
-            "Because preference shares are classified as debt under Indian corporate law"
+            "Because preference dividends are tax-deductible like interest, so they need less pre-tax operating income than the amount paid",
+            "Because preference dividends are paid from after-tax profit, so they need more pre-tax operating income than tax-deductible interest",
+            "Because preference dividends are paid from pre-tax profit, so the tax rate must be added to show the dividend after tax",
+            "Because preference dividends are paid before interest, so they need to be adjusted to show the order of claim on operating income"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10124,10 +10124,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core recommendation of the Law of Inverse Leverage in corporate financial risk management?",
           "options": [
-            "Firms with high operating leverage (high fixed assets) should maintain low financial leverage (low debt) to avoid dangerous total corporate risk",
-            "Firms should maximize both operating and financial leverage simultaneously to achieve maximum growth",
-            "Firms with high debt should increase fixed overhead to compensate for interest expense",
-            "Firms should eliminate all equity capital and operate with 100% debt"
+            "Firms with high operating leverage (many fixed assets) should keep financial leverage low (little debt) to avoid dangerous total risk",
+            "Firms with high operating leverage (many fixed assets) should use high financial leverage (more debt) to raise returns on equity",
+            "Firms with low operating leverage (few fixed assets) should keep financial leverage low (little debt) to avoid dangerous total risk",
+            "Firms should keep operating and financial leverage equal (a DOL equal to a DFL) to avoid dangerous total corporate risk"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10235,10 +10235,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Cash Flow Realism ratio (Operating Cash Flow / Net Income) significantly less than 0.80 indicate to forensic auditors?",
           "options": [
-            "The company has received an unqualified audit clean chit from NFRA inspectors",
-            "Reported accounting net income is not being supported by operating cash generation, signaling aggressive revenue accruals, uncollected receivables, or potential manipulation",
-            "The company has zero debt and pays high cash dividends to ordinary shareholders",
-            "The company is operating under primitive cash-basis accounting rather than Ind AS"
+            "Reported net income is understated compared with operating cash generation, suggesting conservative revenue recognition and strong collection of receivables",
+            "Reported net income is not backed by operating cash generation, suggesting aggressive revenue accruals, uncollected receivables or possible manipulation",
+            "Reported net income is fully backed by operating cash generation, suggesting accurate revenue accruals and a low risk of manipulation by management",
+            "Reported operating cash is not backed by net income, suggesting aggressive capital expenditure, unpaid payables or possible diversion of assets"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10263,10 +10263,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Richard Sloan's 1996 Accrual Anomaly research, how does the persistence of the cash flow component of earnings compare to the accrual component?",
           "options": [
-            "Accruals never reverse and permanently inflate balance sheet shareholders' equity",
-            "Accruals exhibit 100% persistence while cash flows are completely random",
-            "Cash flows exhibit high, repeatable persistence, whereas accruals display low persistence and mean-revert rapidly due to eventual accounting reversals",
-            "Both cash flows and accruals display identical persistence across all industries"
+            "Accruals show high, repeatable persistence, while cash flows show low persistence and quickly mean-revert as accounting reversals occur",
+            "Cash flows and accruals show equal persistence, so the split of earnings between them carries no information about future profit",
+            "Cash flows show high, repeatable persistence, while accruals show low persistence and quickly mean-revert as accounting reversals occur",
+            "Cash flows show high persistence only in the first year, while accruals show low persistence that continues to increase later"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10289,10 +10289,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Beneish M-Score manipulation detection model, what is the critical threshold value separating likely manipulators from unlikely manipulators?",
           "options": [
-            "0.00 (any positive M-Score indicates manipulation)",
-            "1.81 (the Altman Z-score lower bound)",
-            "-4.84 (the constant intercept in the regression equation)",
-            "-1.78 (an M-Score greater than -1.78 indicates high probability of earnings manipulation)"
+            "-2.22 (an M-Score above -2.22 means a high probability of earnings manipulation)",
+            "+1.78 (an M-Score below +1.78 means a high probability of earnings manipulation)",
+            "0.00 (an M-Score above 0.00 means a high probability of earnings manipulation)",
+            "-1.78 (an M-Score above -1.78 means a high probability of earnings manipulation)"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10316,9 +10316,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 143(12) of the Companies Act 2013, what is the statutory auditor's obligation upon discovering fraud involving one crore rupees or more?",
           "options": [
             "Report the fraud directly to the Central Government (Ministry of Corporate Affairs) within 60 days using Form ADT-4",
-            "Conceal the fraud until management agrees to resign voluntarily",
-            "File an immediate lawsuit in civil court against all minority shareholders",
-            "Charge an additional forensic audit fee without reporting to regulators"
+            "Report the fraud directly to the Registrar of Companies within 30 days using Form ADT-1 filed with the annual return",
+            "Report the fraud only to the Board of Directors, with no duty to inform the Central Government of the matter",
+            "Report the fraud to the Securities and Exchange Board within 7 days using Form ADT-3 along with the audit report"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10396,10 +10396,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary executive mandate of the Group Chief Financial Officer and Lead Forensic Auditor when orchestrating Block 10 diagnostics?",
           "options": [
-            "To eliminate the cash flow statement from annual financial reporting",
-            "To arbitrarily write off all company debt to improve credit ratings",
-            "To hide customer receivable defaults from statutory auditors under CARO 2020",
-            "To synthesize liquidity, solvency, DuPont ROE/EVA, combined leverage, and forensic fraud models into an integrated, auditable financial health report"
+            "To combine share-based pay, deferred tax, EPS dilution and provisions into one auditable financial health report for the group",
+            "To combine business combinations, consolidation, joint arrangements and disclosures into one auditable financial health report",
+            "To combine impairment, intangibles, fair value and held-for-sale rules into one auditable financial health report for the group",
+            "To combine liquidity, solvency, DuPont ROE/EVA, combined leverage and forensic fraud models into one auditable financial health report"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10561,9 +10561,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which of the following asset categories is subject to mandatory annual impairment testing under Ind AS 36 regardless of whether any impairment indicators exist?",
           "options": [
             "Goodwill acquired in a business combination, indefinite-life intangibles, and intangibles not yet available for use",
-            "Finished goods inventory and raw materials awaiting processing",
-            "Trade receivables subject to expected credit loss modeling under Ind AS 109",
-            "Deferred tax assets evaluated under Ind AS 12"
+            "Property, plant and equipment, investment property, and finite-life intangibles that are in use at the date",
+            "Inventories, trade receivables, and financial assets carried at amortised cost at the year end of the entity",
+            "Goodwill acquired in a business combination, all finite-life intangibles, and assets held for sale"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10614,10 +10614,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an impairment loss arises for a Cash-Generating Unit (CGU) that includes allocated goodwill, how must the loss be allocated across the assets?",
           "options": [
-            "Evenly divided among all assets including goodwill on a simple headcount basis",
-            "Allocated exclusively to tangible machinery while preserving goodwill at historical cost",
-            "First to reduce the carrying amount of goodwill to zero, and then pro-rata to other assets based on relative carrying amounts",
-            "Deducted directly from share capital without touching any asset accounts"
+            "Pro-rata to all assets including goodwill in proportion to their carrying amounts, with no priority for goodwill",
+            "First to reduce the other assets in proportion to their carrying amounts, and then goodwill for any remainder",
+            "First to reduce goodwill to zero, and then pro-rata to the other assets in proportion to their carrying amounts",
+            "Entirely to goodwill, with any excess of the loss over goodwill ignored and not allocated to other assets"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10724,10 +10724,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 38, what are the two alternative conditions under which an intangible asset is considered 'identifiable'?",
           "options": [
-            "It has physical substance OR can be converted into physical gold within 30 days",
-            "It is separable (capable of being divided and sold/licensed) OR arises from contractual or other legal rights",
-            "It was purchased exclusively for cash OR has an indefinite market life",
-            "It is listed on a recognized stock exchange OR owned by the government"
+            "It is controlled by the entity AND it is expected to generate future economic benefits for the entity",
+            "It is separable (it can be divided off and sold or licensed) OR it arises from contractual or other legal rights",
+            "It has no physical substance AND it is held by the entity for use in production or administration",
+            "It is separable (it can be divided off and sold or licensed) AND it arises from contractual or other legal rights"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10750,10 +10750,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory accounting treatment under Ind AS 38 for expenditure incurred during the research phase of an internal project?",
           "options": [
-            "It may be capitalized as an asset if approved by the Chief Technology Officer",
-            "It should be deferred on the balance sheet and amortized over 20 years",
-            "It must be recognized as an expense in the Statement of Profit and Loss when it is incurred, with zero capitalization permitted",
-            "It must be retroactively added to goodwill upon commercial product launch"
+            "It is capitalised as an intangible asset once future economic benefits are probable, and amortised later",
+            "It is capitalised as an intangible asset when incurred, and tested for impairment every year after that",
+            "It is expensed in the Statement of Profit and Loss when incurred, and no capitalisation is allowed",
+            "It is carried as a prepayment and expensed when the product is commercialised, with no immediate charge"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10776,10 +10776,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How are intangible assets with an indefinite useful life accounted for under Ind AS 38?",
           "options": [
-            "They are amortized on a straight-line basis over 40 years without impairment testing",
-            "They are amortized over a mandatory default period of 10 years",
-            "They are written off immediately to capital reserves at acquisition",
-            "They are not amortized, but must be tested for impairment annually under Ind AS 36 and whenever an impairment indicator exists"
+            "They are amortised over a maximum of 20 years, and tested for impairment only when an indicator exists",
+            "They are amortised over their expected life, and tested for impairment every year under Ind AS 36",
+            "They are not amortised, and not tested for impairment unless the entity decides to sell the asset",
+            "They are not amortised, but are tested for impairment every year and whenever an impairment indicator exists"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10885,10 +10885,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Ind AS 113 formally define Fair Value, and what is the rule regarding the Principal Market?",
           "options": [
-            "Fair value is the historical cost paid to purchase the asset plus accumulated depreciation",
-            "Fair value is always determined by the price in the most advantageous market regardless of trading volume in other markets",
-            "Fair value is an exit price in an orderly transaction between market participants, and the price in the principal market must be used even if another market offers a more advantageous price",
-            "Fair value is the undiscounted liquidation value forced by bank creditors"
+            "Fair value is an entry price in an orderly transaction between market participants, and the most advantageous market price is used even if another market has greater volume",
+            "Fair value is an exit price in an orderly transaction between market participants, and the highest price available across all markets is used even if the principal market differs",
+            "Fair value is an exit price in an orderly transaction between market participants, and the principal market price is used even if another market offers a better price",
+            "Fair value is the price an entity actually obtained in its last sale, and the entity's own market price is used even if the principal market offers a different price"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10939,10 +10939,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following correctly pairs a valuation technique with its core operational methodology under Ind AS 113?",
           "options": [
-            "Income Approach converts future cash flows to a single current discounted amount using techniques such as DCF or option pricing models",
-            "Cost Approach relies exclusively on active stock exchange quoted prices",
-            "Market Approach estimates replacement cost adjusted for physical deterioration",
-            "Income Approach ignores future cash flows and uses original supplier invoices"
+            "Income Approach converts future cash flows into a single current discounted amount, using techniques such as DCF or option pricing models",
+            "Market Approach converts future cash flows into a single current discounted amount, using techniques such as DCF or option pricing models",
+            "Cost Approach uses prices from market transactions of identical or comparable assets, using techniques such as multiples or matrix pricing",
+            "Income Approach reflects the amount needed to replace the service capacity of an asset, using techniques such as depreciated replacement cost"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10967,10 +10967,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 113, what constitutes a Level 1 input in the fair value hierarchy?",
           "options": [
-            "Observable yield curves and credit default swap spreads in dealer markets",
-            "Internal management projections of discounted cash flows",
-            "Real estate appraisal estimates based on unobservable capitalization rates",
-            "Quoted prices (unadjusted) in active markets for identical assets or liabilities that the entity can access at the measurement date"
+            "Quoted prices in active markets for similar assets or liabilities, adjusted for differences that the entity can observe at the measurement date",
+            "Inputs other than quoted prices that are observable for the asset, such as interest rates, yield curves and credit spreads at the measurement date",
+            "Unobservable inputs based on the entity's own assumptions about what market participants would use at the measurement date",
+            "Unadjusted quoted prices in active markets for identical assets or liabilities that the entity can access at the measurement date"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11050,9 +11050,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What two conditions must be met simultaneously for an asset or disposal group to be classified as held for sale under Ind AS 105?",
           "options": [
-            "It must be fully depreciated AND owned by the government",
-            "It must have zero operating liabilities AND generate positive cash flow",
-            "It must be listed on a commodity exchange AND insured against flood",
+            "It must be available for sale after planned refurbishment AND its sale must be highly probable within three years",
+            "It must be fully depreciated in the books AND its sale must be approved by the shareholders within one year",
+            "It must be available for immediate sale in its present condition AND its sale must be merely possible within one year",
             "It must be available for immediate sale in its present condition AND its sale must be highly probable within one year"
           ],
           "answer": 3,
@@ -11080,9 +11080,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "How is a non-current asset or disposal group measured upon classification as held for sale under Ind AS 105?",
           "options": [
             "At the lower of its carrying amount and fair value less costs to sell (FVLCTS)",
-            "At its original historical acquisition cost with zero adjustment",
-            "At its undiscounted projected cash flows over 5 years",
-            "At the higher of net book value and liquidation scrap value"
+            "At the higher of its carrying amount and fair value less costs to sell (FVLCTS)",
+            "At fair value, with no deduction for costs to sell and any gain taken to equity",
+            "At its carrying amount, adjusted only for depreciation until the date of sale"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11107,10 +11107,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory rule under Ind AS 105.25 regarding depreciation and amortization while an asset is classified as held for sale?",
           "options": [
-            "Depreciation is only suspended if approved by the National Company Law Tribunal",
-            "An entity shall NOT depreciate (or amortize) a non-current asset while it is classified as held for sale",
-            "Depreciation continues at double the normal straight-line rate",
-            "Amortization is charged directly to retained earnings instead of profit or loss"
+            "An entity continues to depreciate or amortise a non-current asset while it is classified as held for sale",
+            "An entity does not depreciate or amortise a non-current asset while it is classified as held for sale",
+            "An entity depreciates a non-current asset at half the usual rate while it is classified as held for sale",
+            "An entity amortises intangible assets but does not depreciate tangible assets while classified as held for sale"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11135,10 +11135,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How must the results of discontinued operations be presented on the face of the Statement of Profit and Loss under Ind AS 105.33?",
           "options": [
-            "Commingled line-by-line within continuing revenues and expenses without distinction",
-            "Excluded completely from financial statements and reported only in tax returns",
-            "As a single amount comprising the post-tax profit/loss of discontinued operations and post-tax gain/loss on measurement or disposal",
-            "Recorded as an offset against share premium in the equity section"
+            "As separate lines for the revenue, expenses and tax of discontinued operations, mixed with the lines of continuing operations",
+            "As separate lines for the revenue, expenses and tax of discontinued operations, mixed with the lines of continuing operations in the statement",
+            "As a single amount for the post-tax profit or loss of discontinued operations plus the post-tax gain or loss on measurement or disposal",
+            "As a single pre-tax amount in Other Comprehensive Income, with the tax effect shown separately in the notes to the accounts of the entity"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11216,10 +11216,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary executive mandate of the Group CFO and Lead Forensic Valuation Partner when orchestrating Block 11 asset governance?",
           "options": [
-            "To synthesize CGU impairment (Ind AS 36), R&D intangibles (Ind AS 38), fair value hierarchy (Ind AS 113), and disposal groups (Ind AS 105) into an integrated, auditable valuation and reporting platform",
-            "To hide obsolete machinery losses in operating reserves without statutory disclosures",
-            "To retroactively capitalize all prior research expenditures to inflate quarterly EBITDA",
-            "To offset held-for-sale assets against unrelated bank debt on the face of the balance sheet"
+            "To combine CGU impairment (Ind AS 36), R&D intangibles (Ind AS 38), the fair value hierarchy (Ind AS 113) and disposal groups (Ind AS 105) into one auditable valuation platform",
+            "To combine business combinations (Ind AS 103), consolidation (Ind AS 110), joint arrangements (Ind AS 111) and disclosures (Ind AS 112) into one auditable valuation platform",
+            "To combine share-based payments (Ind AS 102), deferred tax (Ind AS 12), EPS (Ind AS 33) and provisions (Ind AS 37) into one auditable valuation platform",
+            "To combine presentation (Ind AS 1), cash flows (Ind AS 7), policies and errors (Ind AS 8) and events after the period (Ind AS 10) into one auditable valuation platform"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11324,9 +11324,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the final confirmation string emitted by the Corporate Asset Valuation, Impairment & Fair Value Suite upon verifying all assertions?",
           "options": [
             "CORPORATE_ASSET_VALUATION_IMPAIRMENT_SUITE_PASS",
-            "ASSET_VALUATION_AUDIT_EXCEPTION",
-            "IND_AS_IMPAIRMENT_FAILED_VERIFICATION",
-            "DISPOSAL_GROUP_MEASUREMENT_TERMINATED"
+            "CORPORATE_ASSET_VALUATION_IMPAIRMENT_ENGINE_PASS",
+            "CORPORATE_ASSET_IMPAIRMENT_FAIR_VALUE_SUITE_PASS",
+            "CORPORATE_VALUATION_IMPAIRMENT_DISPOSAL_SUITE_PASS"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11411,10 +11411,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Ind AS 1 govern the classification of inventory that will be realized within a 24-month operating cycle?",
           "options": [
-            "It must be classified as a Non-Current Asset because realization exceeds 12 months",
-            "It must be excluded from the balance sheet until 30 days before sale",
-            "It is classified as a Current Asset because it will be realized within the entity's normal operating cycle",
-            "It is classified as an intangible asset under development"
+            "It is classified as a Non-Current Asset, because it will be realised after more than twelve months",
+            "It is classified as a Current Asset only up to the first twelve months, with the rest shown as Non-Current",
+            "It is classified as a Current Asset, because it will be realised within the entity's normal operating cycle",
+            "It is classified by its nature as a Non-Current Asset, because the operating cycle exceeds one year"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11439,9 +11439,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following is an item of Other Comprehensive Income (OCI) that will NOT be reclassified to profit or loss?",
           "options": [
-            "Factory utility expenses and warehouse rental payments",
-            "Effective portion of cash flow hedges and foreign currency translation reserves",
-            "Operating expenses and sales commissions paid to marketing agents",
+            "Exchange differences on translating foreign operations and the effective portion of cash flow hedge gains",
+            "Fair value gains on debt instruments held at FVTOCI and the effective portion of cash flow hedge gains",
+            "Net profit for the year and remeasurements of defined benefit pension plans (Ind AS 19) taken to equity",
             "Remeasurements of defined benefit pension plans (Ind AS 19) and equity instruments at FVTOCI (Ind AS 109)"
           ],
           "answer": 3,
@@ -11469,10 +11469,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary function of the Statement of Changes in Equity (SOCIE) under Ind AS 1.106?",
           "options": [
-            "To reconcile opening and closing balances of equity, disclosing TCI, retrospective restatements, and owner transactions",
-            "To list the names and addresses of all equity shareholders with zero financial data",
-            "To calculate corporate income tax deductions under Section 115BAA",
-            "To record bank account transactions and daily cash balances"
+            "To reconcile opening and closing balances of equity, disclosing total comprehensive income, restatements and owner transactions",
+            "To reconcile opening and closing cash balances, disclosing operating, investing and financing cash flows of the entity",
+            "To reconcile profit before tax with taxable income, disclosing permanent differences and deferred tax on the equity items",
+            "To summarise assets, liabilities and equity at the year end, disclosing current and non-current classification of each item"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11557,10 +11557,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What qualifies an investment as a 'Cash Equivalent' under Ind AS 7.6?",
           "options": [
-            "Real estate land parcels intended for long-term speculative development",
-            "A 10-year government bond held to maturity",
-            "A short-term, highly liquid investment readily convertible to known amounts of cash with insignificant risk of value changes (typically 3 months or less maturity)",
-            "Any equity share listed on a stock exchange regardless of market volatility"
+            "A short-term, highly liquid investment convertible to known cash amounts with moderate risk of value change (typically 12 months or less to maturity)",
+            "A marketable equity investment listed on a recognised stock exchange that can be sold quickly at the prevailing quoted price (typically within 3 months)",
+            "A short-term, highly liquid investment convertible to known cash amounts with insignificant risk of value change (typically 3 months or less to maturity)",
+            "A long-term bank deposit convertible to known cash amounts with insignificant risk of value change (typically 3 years or less to maturity)"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11587,10 +11587,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Indirect Method of Ind AS 7, why is depreciation added back to Profit Before Tax?",
           "options": [
-            "Because depreciation is an operating cash outflow paid to machine vendors",
-            "Because depreciation is a non-cash expense that reduced accounting profit without involving an outflow of cash",
-            "Because depreciation represents an immediate cash receipt from the government",
-            "Because depreciation is reclassified to equity share capital"
+            "Because depreciation is a cash outflow for replacing assets that reduced accounting profit during the period",
+            "Because depreciation is a non-cash expense that reduced accounting profit without any cash outflow",
+            "Because depreciation is an investing outflow that has already been included in the cash spent on assets",
+            "Because depreciation is a non-operating income that increased accounting profit without any cash inflow"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11645,10 +11645,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the purpose of the mandatory financing liabilities reconciliation under Ind AS 7.44A?",
           "options": [
-            "To record trade receivables aging schedules",
-            "To determine corporate income tax liability under Section 115BAC",
-            "To calculate executive director performance bonuses",
-            "To reconcile opening and closing debt carrying amounts, disclosing both financing cash flows and non-cash changes"
+            "To reconcile opening and closing cash balances, showing both operating cash flows and non-cash investing changes",
+            "To reconcile opening and closing equity balances, showing both dividend payments and non-cash share issues",
+            "To reconcile profit before tax and net cash from operations, showing both working capital and non-cash expenses",
+            "To reconcile opening and closing debt carrying amounts, showing both financing cash flows and non-cash changes"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11733,9 +11733,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three distinct categories governed by Ind AS 8?",
           "options": [
-            "Operating Cash, Investing Cash, and Financing Cash",
-            "Level 1 Inputs, Level 2 Inputs, and Level 3 Inputs",
-            "Direct Taxes, Indirect Taxes, and Custom Duties",
+            "Accounting Policies, Changes in Accounting Estimates, and Contingent Liabilities",
+            "Accounting Policies, Events After the Reporting Period, and Prior Period Errors",
+            "Accounting Estimates, Prior Period Errors, and Discontinued Operations",
             "Accounting Policies, Changes in Accounting Estimates, and Prior Period Errors"
           ],
           "answer": 3,
@@ -11763,9 +11763,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "How is a voluntary change in accounting policy applied under Ind AS 8?",
           "options": [
             "Retrospectively, adjusting opening equity for the earliest prior period presented and restating comparative figures",
-            "Prospectively, affecting only the current year with zero adjustment to comparative figures",
-            "Recorded as a direct expense in current year operating expenses",
-            "Ignored until audited by the tax department"
+            "Prospectively, adjusting the current period profit from the date of the change without restating comparative figures",
+            "Retrospectively, adjusting current period profit for the cumulative effect without restating comparative figures",
+            "Prospectively, adjusting opening equity for the current period and restating only the latest comparative period"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11790,10 +11790,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How must a change in the useful life or depreciation method of Property, Plant and Equipment be accounted for under Ind AS 8.36?",
           "options": [
-            "Charged directly to share premium reserve",
-            "Prospectively, recognizing the adjustment in profit or loss in the current and future periods without restating prior periods",
-            "Recognized as a prior period error in opening retained earnings",
-            "Retrospectively, restating prior years' balance sheets and reopening past tax returns"
+            "Retrospectively, with the adjustment in opening equity and restatement of the comparative figures of prior periods",
+            "Prospectively, with the adjustment in profit or loss for the current and future periods and no restatement of prior periods",
+            "Retrospectively, with the cumulative adjustment in profit or loss of the current period and no restatement of prior periods",
+            "Prospectively, with the adjustment in Other Comprehensive Income for the current period and restatement of prior periods"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11818,10 +11818,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 8.42, how must a material prior period accounting error (such as premature revenue recognition) be corrected?",
           "options": [
-            "Included as an extraordinary expense in the current period Statement of Profit and Loss",
-            "Written off against share capital with tribunal approval",
-            "Retrospectively, restating prior period comparative figures and adjusting opening Retained Earnings",
-            "Deferred on the balance sheet as an intangible asset under development"
+            "Prospectively, recording the correction in current year profit and leaving prior period comparatives unchanged",
+            "Prospectively, recording the correction in current year profit and leaving the comparatives unchanged",
+            "Retrospectively, restating the prior period comparatives and adjusting opening Retained Earnings",
+            "Prospectively, spreading the correction over the remaining life of the item and disclosing it in the notes"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11847,9 +11847,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Enterprise Ind AS 8 Engine upon verifying all retrospective and prospective calculations?",
           "options": [
-            "RETROSPECTIVE_RESTATEMENT_FAILED",
-            "ESTIMATE_PROSPECTIVE_ERROR",
-            "IND_AS_8_COMPLIANCE_EXCEPTION",
+            "IND_AS_8_POLICIES_ESTIMATES_EVENTS_PASS",
+            "IND_AS_8_ACCOUNTING_POLICIES_ERRORS_PASS",
+            "IND_AS_8_ESTIMATES_ERRORS_DISCLOSURE_PASS",
             "IND_AS_8_POLICIES_ESTIMATES_ERRORS_PASS"
           ],
           "answer": 3,
@@ -11905,10 +11905,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical time window governed by Ind AS 10 for events after the reporting period?",
           "options": [
-            "Between the end of the reporting period and the date when financial statements are approved for issue by the Board of Directors",
-            "Between the beginning of the reporting period and the date of the annual general meeting",
-            "Between the date of the audit report and the date of filing income tax returns",
-            "Between two consecutive quarterly board meetings"
+            "Between the end of the reporting period and the date the financial statements are approved for issue by the Board",
+            "Between the end of the reporting period and the date the financial statements are filed with the Registrar",
+            "Between the start of the reporting period and the date the financial statements are approved for issue by the Board",
+            "Between the end of the reporting period and the date of the annual general meeting of the shareholders"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11933,10 +11933,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following events occurring after the reporting period is an Adjusting Event under Ind AS 10.9?",
           "options": [
-            "The announcement of an employee strike after the reporting date",
-            "The destruction of a factory by fire occurring after the reporting date",
-            "A general decline in the stock market value of equity investments",
-            "The settlement of a court case confirming a present obligation existed at the reporting date, or bankruptcy of a major customer confirming pre-existing insolvency"
+            "A fire destroying the main factory after the reporting date, or a major customer's bankruptcy caused by a loss of assets after the reporting date",
+            "A fire destroying the main factory after the reporting date, or a major customer's bankruptcy caused by losses arising after the reporting date",
+            "A decline in the fair value of investments after the reporting date, or a business combination completed in the months after the reporting date",
+            "Settlement of a court case confirming a present obligation existed at the reporting date, or a major customer's bankruptcy confirming insolvency that already existed"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -11991,10 +11991,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the overriding exception under Ind AS 10.14 regarding the Going Concern assumption?",
           "options": [
-            "Going concern is unaffected by any event occurring after the reporting date",
-            "Financial statements shall NOT be prepared on a going concern basis if management determines after the reporting period that it intends to liquidate or has no realistic alternative",
-            "Going concern can only be questioned by the tax authorities",
-            "Liquidation basis is strictly prohibited under Ind AS"
+            "Statements must still be prepared on a going concern basis if management decides after the period end that it will liquidate, with disclosure in the notes",
+            "Statements must not be prepared on a going concern basis if management decides after the period end that it will liquidate or has no realistic alternative",
+            "Statements must not be prepared on a going concern basis if profits declined after the period end, whatever management intends to do next",
+            "Statements must be prepared on a going concern basis only if the auditor confirms after the period end that the entity will trade for ten years"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12079,10 +12079,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the executive mandate of the Global Financial Controller and Lead Statutory Audit Partner in the Milestone 12 Grand Capstone?",
           "options": [
-            "To synthesize all 60 days of curriculum across Ind AS 1, 7, 8, 10, diagnostics, asset valuation, and group consolidation into a unified, auditable annual reporting close",
-            "To write off all company liabilities to eliminate balance sheet debt",
-            "To retroactively alter historical accounting policies without disclosure",
-            "To conceal customer receivable defaults from statutory auditors"
+            "To combine all 60 days of curriculum across Ind AS 1, 7, 8, 10, diagnostics, asset valuation and group consolidation into one auditable annual reporting close",
+            "To combine only the presentation standards, Ind AS 1, 7, 8 and 10, into one auditable annual reporting close without diagnostics or consolidation",
+            "To combine all 60 days of curriculum across Ind AS 1, 7, 8, 10 and tax computation into one auditable quarterly reporting close with GST returns",
+            "To combine group consolidation and asset valuation into one auditable annual reporting close, leaving diagnostics and presentation to the auditor"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12198,9 +12198,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the final confirmation string emitted by the Global Corporate Controller Master Suite upon completing Course 01 accreditation?",
           "options": [
             "GLOBAL_FINANCIAL_CONTROLLER_ACCREDITATION_PASS",
-            "CAPSTONE_AUDIT_VERIFICATION_FAILED",
-            "MASTER_CONSOLIDATION_EXCEPTION",
-            "COURSE_01_INCOMPLETE_HALT"
+            "GLOBAL_FINANCIAL_CONTROLLER_CERTIFICATION_PASS",
+            "GLOBAL_CORPORATE_CONTROLLER_ACCREDITATION_PASS",
+            "GLOBAL_FINANCIAL_REPORTING_ACCREDITATION_PASS"
           ],
           "answer": 0,
           "answerIndex": 0,

@@ -28,9 +28,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Lean Startup methodology consider prospective customer prepayments or letters of intent (LOI) superior to positive survey feedback?",
           "options": [
-            "Because survey feedback is strictly prohibited by securities laws before incorporation.",
-            "Because venture capital funds only invest in companies that have zero customer interviews.",
-            "Because letters of intent are immediately recognized as audited GAAP revenue on day one.",
+            "Surveys reach far more prospects than prepayments, so their larger samples give a statistically stronger signal of demand for the idea.",
+            "Prepayments let the startup fund development early, so the revenue they bring matters more than any evidence about customer demand.",
+            "Letters of intent are legally binding contracts, so customers cannot back out and the startup can book them as guaranteed revenue.",
             "Financial commitment filters out polite compliments and proves genuine willingness to reallocate existing budget to solve the problem."
           ],
           "answerIndex": 3,
@@ -55,10 +55,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should a startup begin institutional fundraising when it has 9 to 12 months of runway left rather than waiting until 3 months remain?",
           "options": [
-            "Institutional venture rounds take 3 to 6 months to close, and running out of runway destroys negotiating leverage, leading to punitive down-rounds or insolvency.",
-            "Because the SEC levies automatic fines on companies with less than 6 months of cash reserves.",
-            "Because investors refuse to meet with founders unless their runway exceeds exactly 24 months.",
-            "Because commercial banks automatically seize equity if cash balances drop below $500,000."
+            "Institutional rounds take 3 to 6 months to close, and running out of runway destroys negotiating leverage, leading to punitive down-rounds or insolvency.",
+            "Investors value companies more highly when cash balances are large, and early raising lets the founders sell more shares at the lowest possible price.",
+            "Term sheets expire after nine months, and investors refuse to fund companies that have not raised at least once in the preceding twelve months.",
+            "Banks stop extending credit lines to startups with under a year of cash, so equity financing must be secured before all other funding sources close."
           ],
           "answerIndex": 0,
           "explanation": "Closing an institutional venture financing round takes months of diligence, partner meetings, and legal drafting. If a startup pitches with only 3 months of cash, investors can stall or demand predatory terms knowing the company will go bankrupt in weeks.",
@@ -82,10 +82,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of the Valuation Cap in a SAFE note for an early-stage investor?",
           "options": [
-            "It forces the startup to repay the invested capital with compound interest upon contract signing.",
-            "It protects early investors from excessive valuation growth in the subsequent round, ensuring their early risk is rewarded with a capped entry price.",
-            "It legally requires the company to pay quarterly dividends to SAFE holders.",
-            "It guarantees that the founders can never sell more than 50% of company shares."
+            "It guarantees early investors a fixed interest rate on their money until the next round, ensuring their early risk is rewarded with a guaranteed yield.",
+            "It protects early investors from excessive valuation growth in the next round, ensuring their early risk is rewarded with a capped entry price.",
+            "It protects the founders from excessive dilution in the next round, ensuring their ownership never falls below a floor set by the cap.",
+            "It gives early investors voting control over the next round, ensuring their early risk is rewarded with the power to approve the new valuation."
           ],
           "answerIndex": 1,
           "explanation": "If a startup takes an angel's money when it is worth very little and subsequently explodes in value to $50M before Series A, without a valuation cap the angel's $100k would buy a negligible fraction of 1% of the company. The cap guarantees an equity floor reward for taking early risk.",
@@ -108,10 +108,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do venture capitalists insist that the unallocated employee option pool be created out of the pre-money valuation rather than post-money?",
           "options": [
-            "Because post-money option pools are strictly prohibited by the Delaware General Corporation Law.",
-            "Because creating it pre-money reduces the company's payroll taxes on employee stock grants.",
-            "Because creating the pool pre-money forces 100% of the dilution onto the founders, preserving the VC's agreed percentage without additional cost to the VC.",
-            "Because employees refuse to accept options that are issued after an institutional venture investment."
+            "Because creating the pool pre-money splits the dilution equally between founders and the VC, so both parties share the cost of future hires equally.",
+            "Because creating the pool pre-money lowers the headline valuation in the term sheet, so the VC can claim a higher price per share in the press release.",
+            "Because creating the pool pre-money puts 100% of the dilution on the founders, preserving the VC's agreed percentage at no extra cost to the VC.",
+            "Because creating the pool post-money triggers a tax charge on the VC's shares, so the VC avoids it by placing the pool before the investment."
           ],
           "answerIndex": 2,
           "explanation": "In a pre-money option pool creation, the founders absorb 100% of the dilution needed to create the employee shares. If the pool were created post-money, the incoming VC would also be diluted by that pool, which would require the VC to invest more money to maintain their ownership target.",
@@ -135,10 +135,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a standard 1x Non-Participating Liquidation Preference, at what exit valuation does an investor who put in $4,000,000 for 20% ownership choose to convert to common stock?",
           "options": [
-            "At exactly $4,000,000 because that repays their initial principal.",
-            "Never, because preferred stock is legally barred from receiving common stock proceeds in an acquisition.",
-            "Only if the acquisition is paid in cash rather than public company shares.",
-            "At any exit valuation strictly above $20,000,000 (because 20% of $20M is $4.0M, exceeding the 1x preference)."
+            "At any exit valuation strictly above $4,000,000 (the amount of the 1x preference, which is repaid first).",
+            "At any exit valuation strictly above $80,000,000 (20% of $80M is $16.0M, four times the 1x preference).",
+            "At any exit valuation strictly above $24,000,000 (the $4.0M preference plus 20% of the $20M that remains).",
+            "At any exit valuation strictly above $20,000,000 (20% of $20M is $4.0M, the amount of the 1x preference)."
           ],
           "answerIndex": 3,
           "explanation": "The conversion threshold is calculated as Investment / Ownership % = $4M / 0.20 = $20,000,000. At any exit below $20M, taking the $4M preference yields more cash than 20% pro-rata; above $20M, taking 20% pro-rata yields more.",
@@ -188,10 +188,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do venture debt lenders require warrant coverage (an equity kicker) in addition to charging cash interest on loans to startups?",
           "options": [
-            "Because warrants allow the lender to replace the startup CEO if quarterly revenue drops by 2%.",
-            "Because federal law mandates that all corporate loans must issue voting common shares to commercial banks.",
-            "(Recommended) Because venture loans bear equity-like default risk, warrants allow the lender to participate in outsized startup upside if the company becomes a unicorn.",
-            "Because warrant coverage legally relieves the borrower from having to make monthly cash interest payments."
+            "Because venture loans carry no collateral, warrants let the lender take control of the board if the company misses a payment on the loan.",
+            "Because venture loans are priced below market rates, warrants let the lender convert the loan into common stock at its own discretion.",
+            "Because venture loans carry equity-like default risk, warrants let the lender share in outsized upside if the company becomes a unicorn.",
+            "Because venture lenders are regulated as equity funds, warrants let the lender satisfy the minimum equity holding required by their licenses."
           ],
           "answer": 2,
           "why": "Startup borrowers often fail or burn through capital with limited physical collateral; the warrant kicker provides equity upside on winners to compensate the lender for default losses across their venture loan portfolio.",
@@ -215,10 +215,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must common stock options granted to employees be priced at or above Fair Market Value (FMV) determined by an independent 409A valuation?",
           "options": [
-            "Because the SEC requires all private startup options to be registered on NASDAQ within 30 days of grant.",
-            "(Recommended) To comply with IRS safe harbor rules and protect employees from immediate taxable income and a punitive 20% federal excise tax penalty on unexercised options.",
-            "Because lower option strike prices increase corporate income tax liabilities for the startup.",
-            "Because corporate law requires common stock options to be priced higher than the latest preferred stock round."
+            "To meet SEC registration rules and protect the company from having to file a public prospectus whenever employees exercise their options.",
+            "To meet IRS safe harbor rules and protect employees from immediate taxable income and a punitive 20% federal excise tax on unexercised options.",
+            "To meet GAAP rules and protect the company from recording stock compensation expense, which would otherwise reduce reported net income.",
+            "To meet IRS rules and protect employees from a 20% capital gains tax at exercise, which applies to any option priced above fair value."
           ],
           "answer": 1,
           "why": "Under IRC Section 409A, issuing options below Fair Market Value constitutes deferred compensation without substantial risk of forfeiture, triggering immediate income recognition and a 20% excise tax penalty on the option recipient.",
@@ -242,10 +242,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance objective of enforcing a Right of First Refusal (ROFR) on private company stock transfers?",
           "options": [
-            "(Recommended) To prevent competitor or hostile third parties from entering the cap table and allow existing insiders or the company to consolidate ownership.",
-            "To guarantee that employees can never sell their shares under any circumstances prior to bankruptcy.",
-            "To force all outside buyers to purchase shares at a mandatory 50% discount to fair market value.",
-            "To automatically convert common stock into non-voting municipal bonds upon transfer."
+            "To keep competitors or hostile third parties off the cap table and let insiders or the company consolidate ownership.",
+            "To guarantee employees a market for their shares at a fixed price, so they can sell stock to insiders whenever they decide to leave.",
+            "To make sure private shares are sold at the highest bid, so the company runs an auction among outside buyers before any transfer.",
+            "To let outside investors force the company to buy back their stock at cost, so no holder is stuck with illiquid shares at exit."
           ],
           "answer": 0,
           "why": "ROFR ensures that private companies and lead venture investors maintain control over who owns their equity, preventing activist investors or commercial competitors from acquiring cap table access.",
@@ -269,10 +269,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Broad-Based Weighted Average anti-dilution considered far superior for company longevity compared to Full Ratchet anti-dilution?",
           "options": [
-            "Because full ratchet is illegal under Delaware corporate law and cannot be enforced in court.",
-            "Because full ratchet forces the startup to immediately repay all previous venture capital in cash.",
-            "Because broad-based weighted average requires preferred investors to forfeit all board seats during a down-round.",
-            "(Recommended) Because it softens the dilution adjustment by factoring in the size of the round relative to total capitalization, preventing founder equity from being completely wiped out."
+            "Because it resets the conversion price to the new round price for every investor, so founder equity is shielded by the same price floor.",
+            "Because it applies the adjustment only to shares sold in the down round, so earlier investors keep their original conversion price intact.",
+            "Because it removes the investor's price protection after the Series B, so founder equity is not diluted by any later down round.",
+            "Because it softens the adjustment by weighing the round's size against total capitalization, so founder equity is not wiped out."
           ],
           "answer": 3,
           "why": "Broad-based weighted average accounts for the economic magnitude of the round (how much capital was actually raised at the lower price), preventing catastrophic dilution of founders and common employees that would otherwise destroy team incentives.",
@@ -296,10 +296,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what specific conditions does a standard Double-Trigger Equity Acceleration clause trigger 100% vesting of a founder or executive unvested stock?",
           "options": [
-            "Immediately upon signing a non-binding term sheet with an interested prospective acquirer.",
-            "Only when the company completes an initial public offering (IPO) on a major global stock exchange.",
-            "(Recommended) Both a change of control (acquisition) occurs AND the founder is involuntarily terminated without cause (or constructive termination) within a defined post-closing window.",
-            "Whenever the board of directors votes to replace the Chief Technology Officer during normal business operations."
+            "A change of control occurs OR the executive is terminated without cause, whichever happens first, within the first year after hiring.",
+            "The executive voluntarily resigns AND the company is acquired within 12 months of the resignation, with the buyer approving the vesting.",
+            "Both a change of control occurs AND the executive is terminated without cause (or constructively terminated) within a defined window after closing.",
+            "The company completes an IPO AND the executive remains employed for 24 months afterward, which triggers vesting of all unvested shares."
           ],
           "answer": 2,
           "why": "Double-trigger requires both Trigger 1 (Change of Control) and Trigger 2 (Involuntary termination without cause within 12-24 months), protecting the executive from being purged post-deal while reassuring acquirers that un-terminated executives will stay.",
@@ -360,10 +360,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the economic consequence of creating an unallocated employee option pool in the pre-money valuation rather than the post-money valuation?",
           "options": [
-            "All existing company employees immediately forfeit their vested common stock",
+            "The new investor absorbs 100% of the dilution required to create the pool, effectively raising the true post-money valuation paid by the founders",
             "Existing founders absorb 100% of the dilution required to create the pool, effectively reducing the true pre-money valuation paid by the new investor",
-            "The IRS imposes a 50% excise tax penalty on all stock option grants",
-            "The incoming venture capital fund pays double the agreed share price to fund employee bonuses"
+            "Existing founders and the new investor share the dilution equally, effectively leaving the true pre-money valuation exactly as stated in the term sheet",
+            "The company absorbs the dilution as a cost on its income statement, effectively reducing the net income reported to the new investor"
           ],
           "answer": 1,
           "why": "Creating the option pool in the pre-money forces existing shareholders to bear the entire dilution burden, effectively discounting the price-per-share paid by the new investor.",
@@ -400,10 +400,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What happens to a 1x Non-Participating Preferred stock in an acquisition where the investor's as-converted common stock value exceeds their initial investment?",
           "options": [
-            "The preferred stock is cancelled by Delaware courts without any distribution",
-            "The investor is legally required to return all initial invested capital back to the founders",
-            "The investor automatically converts their preferred shares into common stock to receive their higher pro-rata percentage of exit proceeds",
-            "The investor receives both their 1x preference AND their full common stock percentage"
+            "The investor keeps the preferred shares and receives the 1x preference plus a pro-rata share of the remaining exit proceeds",
+            "The investor's preferred shares are redeemed by the company at the original price, and no share of exit proceeds is paid",
+            "The investor converts the preferred shares into common stock to receive their higher pro-rata share of exit proceeds",
+            "The investor's preferred shares are cancelled and replaced by a warrant, and the founders receive the full exit proceeds"
           ],
           "answer": 2,
           "why": "Under non-participating preferred, investors choose whichever payout is greater: their 1x liquidation preference or converting to common stock to share pro-rata.",
@@ -440,10 +440,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Broad-Based Weighted Average anti-dilution vastly preferred by founders over Full Ratchet anti-dilution?",
           "options": [
-            "Because Full Ratchet requires the founders to pay cash out of their personal bank accounts to the investors",
-            "Because Broad-Based anti-dilution is only allowed for companies incorporated in Delaware",
-            "Because Full Ratchet eliminates all preferred stock and forces venture capitalists to accept debt notes",
-            "Because Broad-Based accounts for the dollar amount raised and total capitalization, mitigating dilution, whereas Full Ratchet resets the price entirely regardless of round size"
+            "Broad-Based resets the conversion price to the lowest price issued, which protects founders, whereas Full Ratchet averages it by round size",
+            "Broad-Based applies only to founders' shares and ignores investors' holdings, whereas Full Ratchet applies to every class of stock equally",
+            "Broad-Based fixes the investor's ownership percentage permanently, mitigating dilution, whereas Full Ratchet allows it to float with each round",
+            "Broad-Based accounts for the dollar amount raised and total capitalization, mitigating dilution, whereas Full Ratchet resets the price regardless of round size"
           ],
           "answer": 3,
           "why": "Full Ratchet ignores the size of the round and resets the conversion price directly to the lowest issued price, creating severe dilution; Broad-Based cushions dilution proportionally.",
@@ -480,10 +480,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the function of a Drag-Along clause in a venture capital stockholders' agreement?",
           "options": [
-            "It enables a specified majority of shareholders to force all other shareholders to vote in favor of and execute a board-approved company sale",
-            "It allows founders to drag investors to court for failing to provide marketing referrals",
-            "It prevents the company from hiring external legal counsel without state approval",
-            "It forces sales representatives to attend every board meeting in person"
+            "It enables a specified majority of shareholders to force all other shareholders to vote for and sign a board-approved company sale",
+            "It enables any single shareholder to block a board-approved company sale by refusing to vote for it or to sign the sale documents",
+            "It entitles minority shareholders to join any sale made by a majority holder on the same terms and at the same price per share",
+            "It requires the company to repurchase the shares of any shareholder who objects to a board-approved sale at the original price"
           ],
           "answer": 0,
           "why": "Drag-along rights prevent a minority holdout from vetoing or blocking an acquisition that has been approved by the board and the specified majority of shareholders.",
@@ -520,10 +520,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do sophisticated startup founders evaluate competing venture capital term sheets beyond top-line valuation?",
           "options": [
-            "By choosing whichever venture capitalist offers the highest discount on office snacks",
-            "By analyzing option pool size and placement, liquidation preference participation rights, anti-dilution formulas, and board governance control thresholds",
-            "By refusing to sign any legal agreements and accepting only physical cash investments",
-            "By granting all voting control to junior angel investors"
+            "By comparing the logo and reputation of each venture firm, the speed of closing, the size of its fund, and the founders' personal rapport with partners",
+            "By analyzing option pool size and placement, liquidation preference participation rights, anti-dilution formulas, and board control thresholds",
+            "By ranking the term sheets by headline valuation, the amount of capital offered, the closing date, and the number of partners joining the board",
+            "By comparing the advertised returns of each firm's past funds, the size of its portfolio, its office location, and the seniority of its partners"
           ],
           "answer": 1,
           "why": "True deal economics depend heavily on the option pool shuffle, liquidation preferences (participating vs non-participating), anti-dilution provisions, and board composition rather than stated valuation alone.",
@@ -585,10 +585,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the SaaS Rule of 40, why is a company growing at 70% with a -20% free cash flow margin considered an elite performer?",
           "options": [
-            "Because 70% + (-20%) = 50%, which significantly exceeds the 40% efficiency hurdle, proving that high top-line growth justifies temporary cash burn",
-            "Because venture capital funds prohibit companies from generating positive cash flow until they file for IPO",
-            "Because burning cash reduces federal corporate income taxes to zero",
-            "Because growth rates below 80% are automatically disqualified by NASDAQ exchanges"
+            "Because 70% + (-20%) = 50%, which exceeds the 40% efficiency hurdle, showing that high growth justifies temporary cash burn",
+            "Because 70% - (-20%) = 90%, which far exceeds the 40% hurdle, showing that cash burn adds to the growth score",
+            "Because the negative margin is ignored in the rule, leaving only 70% growth, which exceeds the 40% hurdle by itself",
+            "Because the company burns cash, it automatically qualifies, since the rule rewards negative margins as a sign of aggressive investment"
           ],
           "answer": 0,
           "why": "The Rule of 40 recognizes that hyper-growth compensates for negative margins; a combined score of 50% indicates highly attractive venture capital unit economics.",
@@ -625,10 +625,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Burn Multiple of 3.0x indicate about a venture-backed growth startup?",
           "options": [
-            "The startup is legally required to distribute 30% dividends to common stockholders",
-            "The company's stock price has tripled on secondary venture markets",
-            "The company has three years of cash remaining in its treasury reserves",
-            "The company is burning $3.00 of net operating cash for every $1.00 of net new ARR generated, signaling severely inefficient capital allocation"
+            "The company earns $3.00 of net new ARR for every $1.00 of net cash burned, signaling efficient capital allocation",
+            "The company's cash will last three years at the current burn, signaling a comfortable runway for the next round",
+            "The company spends three times its revenue on payroll, signaling an oversized team for its current stage of growth",
+            "The company burns $3.00 of net cash for every $1.00 of net new ARR, signaling inefficient capital allocation"
           ],
           "answer": 3,
           "why": "A 3.0x burn multiple reveals severe capital inefficiency, burning three dollars of invested capital to generate a single dollar of recurring revenue.",
@@ -665,10 +665,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must Customer Lifetime Value (LTV) be calculated using Gross Margin rather than Top-Line Revenue?",
           "options": [
-            "Because venture capital funds only invest in companies with zero customer acquisition costs",
-            "Because federal banking laws prohibit software companies from counting gross revenue",
-            "Because revenue that is consumed by server hosting, customer support, and software delivery costs cannot be used to pay for customer acquisition costs",
-            "Because top-line revenue is always zero during the first five years of operations"
+            "Because gross margin includes marketing expense, which makes lifetime value consistent with how customer acquisition costs are measured",
+            "Because top-line revenue is audited less strictly than gross margin, so lifetime value based on it would be rejected by investors",
+            "Because revenue consumed by hosting, support, and software delivery costs cannot be used to pay for customer acquisition costs",
+            "Because gross margin is larger than revenue after discounts, so using it gives a larger and more attractive lifetime value"
           ],
           "answer": 2,
           "why": "True lifetime value represents gross profit generated by a customer; using revenue overstates LTV by ignoring the ongoing direct cost to serve the customer.",
@@ -705,10 +705,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional Series B investors mandate bottom-up financial models based on headcount and quota rather than top-down percentages?",
           "options": [
-            "Because top-down financial models require executive approval from the Department of Commerce",
-            "Because bottom-up models prove that revenue targets are mathematically achievable through realistic hiring, quota attainment, and customer retention dynamics",
-            "Because bottom-up models allow companies to fire all marketing personnel",
-            "Because bottom-up models are legally required by federal securities exchanges for all private companies"
+            "Because bottom-up models produce larger revenue forecasts than top-down percentages, which raises the valuation investors will offer",
+            "Because bottom-up models prove that revenue targets are achievable through realistic hiring, quota attainment, and retention dynamics",
+            "Because bottom-up models avoid any assumptions about headcount, so the forecast depends only on observed historical revenue figures",
+            "Because bottom-up models are required by securities law for any company that raises a Series B, whatever its stage of growth"
           ],
           "answer": 1,
           "why": "Bottom-up models validate operational feasibility by tying revenue targets to concrete hiring schedules, quota productivity, and customer retention metrics.",
@@ -745,10 +745,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What combination of metrics signals the strongest financial health to Series B growth equity investors?",
           "options": [
-            "A Rule of 40 score >= 40%, a Burn Multiple <= 1.5x with > 24 months of runway, an LTV/CAC ratio >= 3.0x, and a bottom-up hiring model supporting ARR targets",
-            "A 100% marketing budget allocation with zero investment in engineering product development",
-            "Zero sales quotas and unlimited executive expense accounts",
-            "Raising debt notes with 30% interest rates to fund office expansions"
+            "A Rule of 40 score >= 40%, a Burn Multiple <= 1.5x with > 24 months of runway, LTV/CAC >= 3.0x, and a bottom-up hiring model supporting ARR targets",
+            "A Rule of 40 score >= 20%, a Burn Multiple <= 3.0x with > 12 months of runway, LTV/CAC >= 1.0x, and a top-down market model supporting ARR targets",
+            "A Rule of 40 score >= 40%, a Burn Multiple >= 3.0x with > 6 months of runway, LTV/CAC <= 1.0x, and a bottom-up hiring model supporting ARR targets",
+            "A Rule of 40 score <= 40%, a Burn Multiple <= 1.5x with > 24 months of runway, LTV/CAC >= 6.0x, and a top-down share model supporting ARR targets"
           ],
           "answer": 0,
           "why": "The combination of Rule of 40 >= 40%, Burn Multiple <= 1.5x, strong LTV/CAC, and a grounded bottom-up model represents the gold standard of growth stage venture health.",
@@ -810,10 +810,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture capital investment committees place equal weight on Net Revenue Retention (NRR) and Net New ARR growth during Series B due diligence?",
           "options": [
-            "NRR represents the total cash balance in the bank divided by outstanding common stock.",
-            "NRR eliminates the necessity of tracking gross margin and sales marketing expenses.",
-            "NRR is an accounting requirement mandated by GAAP for all venture-backed corporate tax returns.",
-            "NRR isolates customer expansion and retention from new acquisition, proving that the installed base compounds even if new sales acquisition stalls."
+            "NRR isolates gross margin and cost of revenue from new acquisition, proving that each customer is profitable even if new sales stall.",
+            "NRR counts new customer logos and expansion together, proving that the total customer base grows even if the churn rate rises.",
+            "NRR measures how quickly new customers are won relative to marketing spend, proving that the sales engine scales as budgets grow.",
+            "NRR isolates customer expansion and retention from new acquisition, proving that the installed base compounds even if new sales stall."
           ],
           "answer": 3,
           "why": "NRR measures the compounding power of the existing customer base through expansions and upsells minus churn, validating product-market durability independent of top-line marketing spend.",
@@ -850,10 +850,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic benefit of major early investors exercising their contractual pro-rata rights in a Series B round?",
           "options": [
-            "It allows early investors to maintain their exact proportional equity ownership, avoiding dilution as the company scales.",
-            "It guarantees that the company will not be required to hire an independent board member.",
-            "It eliminates the requirement for the lead investor to perform legal due diligence.",
-            "It converts all preferred shares immediately into subordinated debt notes."
+            "It lets early investors keep their exact proportional ownership, avoiding dilution as the company scales.",
+            "It lets early investors veto the new round's price, keeping the valuation below an agreed ceiling.",
+            "It lets early investors sell their shares to the new investor first, at the round price, as the company scales.",
+            "It lets early investors convert their shares to a higher class, gaining preference over the new Series B investors."
           ],
           "answer": 0,
           "why": "Pro-rata rights protect early venture investors against equity dilution by empowering them to inject pro-rata capital to maintain their proportional ownership stake.",
@@ -890,10 +890,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational role of an independent director in a balanced 2-2-1 Series B venture board of directors?",
           "options": [
-            "To audit the code repository every weekend for syntax errors.",
-            "To serve as an objective industry expert who breaks potential deadlocks between common founders and preferred investors in the best fiduciary interest of the corporation.",
-            "To represent the legal interests of commercial bank lenders and enforce debt repayments.",
-            "To manage daily sales engineering and customer onboarding operations."
+            "To represent the employees' interests on the board and vote with the founders on compensation, since the employees hold no preferred stock.",
+            "To act as an objective industry expert who breaks deadlocks between common-stock founders and preferred investors in the corporation's best interest.",
+            "To act as the lead investor's alternate on the board and vote on its behalf whenever the investor's own director cannot attend a meeting.",
+            "To serve as the company's chief financial officer and report on audited results, since the board needs a member with accounting authority."
           ],
           "answer": 1,
           "why": "An independent director provides seasoned industry wisdom and acts as an impartial tie-breaker when founder and investor interests diverge, ensuring balanced corporate stewardship.",
@@ -930,10 +930,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should growth-stage software companies maintain at least 24 to 30 months of cash runway following a Series B financing round?",
           "options": [
-            "It guarantees that customer churn rates will immediately drop to zero percent.",
-            "It eliminates the obligation to pay corporate income taxes in western jurisdictions.",
-            "It provides sufficient operational runway to reach key enterprise valuation inflection points while buffering against prolonged macroeconomic venture downturns.",
-            "It is required by the SEC to prevent common shares from trading on secondary markets."
+            "It meets the covenant in most Series B documents requiring a minimum cash balance, while buffering against lender demands for early repayment.",
+            "It lets the company delay its next financing until the IPO, so it can skip all private rounds while buffering against rising interest rates.",
+            "It gives enough time to reach key enterprise valuation inflection points while buffering against prolonged macroeconomic venture downturns.",
+            "It keeps the burn multiple below 1.0x for the full period, which is needed to maintain a Rule of 40 score above the investors' hurdle."
           ],
           "answer": 2,
           "why": "A 24-30 month runway insulates the business against macroeconomic capital market freezes and provides ample time to compound ARR toward the next major valuation milestone.",
@@ -970,10 +970,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic achievement validated by the Milestone 1 Capstone in B.Com Entrepreneurship?",
           "options": [
-            "The replacement of all human executives with open-source software scripts.",
-            "The immediate distribution of all investment proceeds as cash dividends to common founders.",
-            "The automated filing of a provisional patent application with no financial documentation.",
-            "The synthesis of institutional due diligence, multi-tranche syndication, balanced corporate governance, and stress-tested capital allocation into an investable scale-up enterprise."
+            "The synthesis of founder-led bootstrapping, customer prepayments, cost-minimized hiring, and revenue-funded growth into a profitable lifestyle business.",
+            "The synthesis of crowd-funded equity, retail investor communications, simple governance, and social-media marketing into a public community venture.",
+            "The synthesis of patent filing, grant applications, university licensing, and laboratory scale-up into a research-led technology spin-out business.",
+            "The synthesis of institutional due diligence, multi-tranche syndication, balanced governance, and stress-tested capital allocation into an investable scale-up."
           ],
           "answer": 3,
           "why": "The capstone validates full mastery over venture capital mechanics, institutional due diligence, boardroom governance, and capital allocation required to scale a growth-stage company.",
@@ -1091,10 +1091,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the single most definitive empirical indicator that an enterprise customer pain is authentic rather than a polite false positive?",
           "options": [
-            "The customer compliments the founder's pitch deck typography",
+            "The customer describes the problem as important to them and agrees to a follow-up meeting with the team",
             "The customer is already spending substantial financial budget or human labor on makeshift workarounds",
-            "The customer agrees that the problem is theoretically interesting",
-            "The customer signs an online petition asking for a new software tool"
+            "The customer lists the problem among their top three priorities in the survey that you sent to them",
+            "The customer introduces you to colleagues and offers to be quoted in your marketing material"
           ],
           "answer": 1,
           "why": "Existing financial spend and labor allocated to manual workarounds proves acute willingness to pay and active budget availability.",
@@ -1185,10 +1185,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the recommended design strategy when mapping Pain Relievers and Gain Creators to a customer profile?",
           "options": [
-            "Ignore customer pains entirely and build only what the engineering team finds interesting",
-            "Copy the exact feature list of legacy competitors without conducting customer discovery",
-            "Attempt to build a generic feature for every single minor complaint listed on the customer profile",
-            "Focus obsessively on relieving 2-3 acute shark-bite pains and delivering 2 high-impact gains rather than trying to solve everything"
+            "Cover every pain and gain on the customer profile, ranked by size, so that no customer need is left without a matching feature",
+            "Prioritize the largest number of minor pains and gains, so that each customer segment finds a feature that matches its needs",
+            "Start with the gains the competitors already deliver, then add pain relievers for the problems that customers mention least often",
+            "Focus on relieving 2-3 acute shark-bite pains and delivering 2 high-impact gains rather than trying to solve everything"
           ],
           "answer": 3,
           "why": "Elite value propositions maintain extreme focus, resolving acute high-severity pains with relentless precision rather than diluting resources across minor issues.",
@@ -1232,10 +1232,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What credential status is conferred when an entrepreneurial venture clears all four validation gates in the Master Value Proposition Control Tower?",
           "options": [
-            "BUSINESS_MODEL_UNAUDITED",
-            "VALUE_PROP_GOVERNANCE_DEFICIT",
+            "VALUE_PROPOSITION_FIT_VERIFIED_PROVISIONAL",
+            "PRODUCT_MARKET_FIT_CERTIFIED_CONDITIONAL",
             "VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL",
-            "PRODUCT_MARKET_FIT_PENDING"
+            "VALUE_PROPOSITION_DESIGN_REVIEW_PENDING"
           ],
           "answer": 2,
           "why": "VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL confirms that the venture has rigorously proven 3D jobs coverage, shark-bite pain relief, gain differentiation, and fit alignment.",
@@ -1306,10 +1306,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a multi-sided platform business model, how is the 'chicken-and-egg' liquidity problem resolved?",
           "options": [
-            "By eliminating all digital interfaces and replacing the platform with an offline paper directory.",
-            "By deploying asymmetric monetization: subsidizing one side to build network liquidity while monetizing the complementary side that values that liquidity.",
-            "By legally prohibiting users on one side from communicating with users on the opposing side.",
-            "By charging identical high upfront membership fees to both sides simultaneously to maximize early gross revenue."
+            "By symmetric pricing: charging both sides the same fee from launch so that neither side values the platform more than the other.",
+            "By asymmetric monetization: subsidizing one side to build network liquidity while charging the complementary side that values that liquidity.",
+            "By vertical integration: owning the supply side outright so that the platform never depends on outside suppliers for network liquidity.",
+            "By waiting for organic growth: staying free of promotion until both sides join on their own and network liquidity builds by itself."
           ],
           "answer": 1,
           "why": "Asymmetric monetization subsidizes the more price-sensitive or bottleneck side to generate network density, enabling profitable monetization of the complementary side.",
@@ -1402,9 +1402,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which customer relationship archetype involves assigning a designated, individual relationship manager to high-value enterprise accounts?",
           "options": [
-            "Self-Service Portals.",
-            "Open Co-Creation Forums.",
-            "Automated Services.",
+            "Automated Self-Service Portal.",
+            "Community Co-creation Forum.",
+            "Transactional Support Desk.",
             "Dedicated Personal Assistance."
           ],
           "answer": 3,
@@ -1499,10 +1499,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What credential status is conferred when an enterprise successfully passes all four gates in the Master Customer Delivery Control Tower?",
           "options": [
-            "SUPPLY_CHAIN_UNAUDITED",
+            "CUSTOMER_DELIVERY_ARCHITECTURE_CONDITIONAL_PASS",
             "CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL",
-            "GTM_DELIVERY_GOVERNANCE_DEFICIT",
-            "PRODUCT_MARKET_FIT_PENDING"
+            "CUSTOMER_SEGMENT_ARCHITECTURE_CERTIFIED_NOMINAL",
+            "CHANNEL_DELIVERY_ARCHITECTURE_REVIEW_REQUIRED"
           ],
           "answer": 1,
           "why": "CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL verifies complete mastery over customer segments, channel phases, relationship costs, and acquisition unit economics.",
@@ -1769,9 +1769,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What credential status is conferred when an entrepreneurial venture clears all four gates in the Master Backstage Operational Control Tower?",
           "options": [
             "BACKSTAGE_OPERATIONAL_ENGINE_CERTIFIED_NOMINAL",
-            "BACKSTAGE_OPERATIONAL_GOVERNANCE_DEFICIT",
-            "CUSTOMER_DISCOVERY_PENDING",
-            "FINANCIAL_AUDIT_UNAUTHORIZED"
+            "BACKSTAGE_OPERATIONAL_ENGINE_CONDITIONAL_PASS",
+            "FRONTSTAGE_OPERATIONAL_ENGINE_CERTIFIED_NOMINAL",
+            "BACKSTAGE_OPERATIONAL_ENGINE_REVIEW_REQUIRED"
           ],
           "answer": 0,
           "why": "BACKSTAGE_OPERATIONAL_ENGINE_CERTIFIED_NOMINAL confirms that the enterprise has proven VRIO defensibility, activity scalability, alliance resiliency, and boundary integrity.",
@@ -1842,10 +1842,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a high Degree of Operating Leverage (DOL) indicate about a venture's cost structure?",
           "options": [
-            "The company is legally prohibited from raising prices under antitrust regulations.",
-            "The company has achieved infinite free cash flow with zero financial risk.",
-            "The company has zero fixed costs and relies entirely on hourly contractor labor.",
-            "The company has heavy fixed costs relative to variable costs, meaning small percentage changes in revenue cause large percentage swings in operating income."
+            "The company has heavy variable costs relative to fixed costs, so small percentage changes in revenue cause small swings in operating income.",
+            "The company has high gross margins relative to its operating costs, so large percentage changes in revenue cause only small swings in net income.",
+            "The company has heavy debt relative to equity, so small percentage changes in revenue cause large percentage swings in net income.",
+            "The company has heavy fixed costs relative to variable costs, so small percentage changes in revenue cause large percentage swings in operating income."
           ],
           "answer": 3,
           "why": "High operating leverage arises from heavy fixed costs; when revenue exceeds break-even, profits surge rapidly, but if sales decline, losses escalate with equal speed.",
@@ -1892,9 +1892,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which of Alexander Osterwalder's revenue stream archetypes is generated by granting continuous, uninterrupted access to a service over time?",
           "options": [
             "Subscription Fees.",
-            "Asset Sale.",
-            "Usage Fee.",
-            "Brokerage Fees."
+            "Licensing Revenue.",
+            "Brokerage Revenue.",
+            "Rental or Leasing."
           ],
           "answer": 0,
           "why": "Subscription Fees sell continuous access to a service over time (e.g., monthly or annual software subscriptions), contrasting with single asset sales or per-unit usage fees.",
@@ -1939,10 +1939,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Net Revenue Retention (NRR) rate exceeding 100% indicate about an enterprise subscription business?",
           "options": [
-            "The business is losing customers faster than it can replace them with new acquisition marketing.",
-            "The business exhibits 'Negative Net Churn', expanding recurring revenue from existing customers faster than it loses revenue through churn or contraction.",
-            "The business has zero operating expenses and zero cost of goods sold.",
-            "The business is in breach of international accounting standards and must be liquidated."
+            "The business exhibits 'Negative Gross Churn', adding more new customers than the number that cancel or reduce their subscriptions.",
+            "The business exhibits 'Negative Net Churn', expanding revenue from existing customers faster than it loses revenue through churn or contraction.",
+            "The business exhibits 'Zero Net Churn', retaining every existing customer and expanding revenue only from new customer acquisition.",
+            "The business exhibits 'Positive Net Churn', losing more revenue through churn or contraction than it gains from expansion by existing customers."
           ],
           "answer": 1,
           "why": "NRR > 100% signifies Negative Net Churn: customer account expansion and upsells outpace revenue lost from cancellations and downgrades.",
@@ -1987,10 +1987,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does an enterprise Margin of Safety (MOS) of 33.9% signify?",
           "options": [
-            "The company gross profit margin is legally capped at exactly 33.9%.",
-            "The company is losing 33.9% on every product it sells to customers.",
-            "The company sales revenue can decline by up to 33.9% before the business reaches its break-even point and begins incurring operating losses.",
-            "The company has 33.9 days of cash remaining in its commercial bank account."
+            "Sales can grow by up to 33.9% before the business reaches its capacity limit and needs to add fixed costs to continue.",
+            "Profit can decline by up to 33.9% before the business reaches its break-even point and begins incurring cash losses.",
+            "Sales can decline by up to 33.9% before the business reaches its break-even point and begins incurring operating losses.",
+            "Costs can rise by up to 33.9% before the business reaches its break-even point and begins incurring operating losses."
           ],
           "answer": 2,
           "why": "Margin of Safety measures the percentage buffer by which actual or projected sales exceed the break-even threshold before operating losses occur.",
@@ -2037,9 +2037,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What credential status is conferred when an entrepreneurial venture clears all four gates in the Master Financial Viability Control Tower?",
           "options": [
-            "SEED_VALUATION_PENDING",
-            "TAX_ACCOUNTING_INCOMPLETE",
-            "FINANCIAL_VIABILITY_GOVERNANCE_DEFICIT",
+            "VENTURE_FINANCIAL_VIABILITY_CONDITIONAL_PASS",
+            "VENTURE_OPERATING_VIABILITY_CERTIFIED_NOMINAL",
+            "VENTURE_FINANCIAL_VIABILITY_REVIEW_REQUIRED",
             "VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL"
           ],
           "answer": 3,
@@ -2112,9 +2112,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three fundamental meta-dimensions that encompass Alexander Osterwalder's nine Business Model Canvas building blocks?",
           "options": [
-            "Ideation, Prototyping, and Liquidation.",
-            "Equity, Debt, and Convertible Derivatives.",
-            "Advertising, Direct Mail, and Cold Telemarketing.",
+            "Profitability (Margins), Scalability (Growth), and Defensibility (Moats).",
+            "Customers (Segments), Capabilities (Resources), and Cash (Revenues and Costs).",
+            "Demand (Customers), Delivery (Channels), and Durability (Partners and Costs).",
             "Desirability (Market), Feasibility (Operations), and Viability (Financial)."
           ],
           "answer": 3,
@@ -2159,10 +2159,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of subjecting a Business Model Canvas to multi-factor macroeconomic stress-testing?",
           "options": [
-            "To prove that the venture can maintain operational solvency, positive unit economics, and at least 18 months of cash runway under severe economic shocks.",
-            "To immediately terminate all engineering personnel and abandon the venture hypothesis.",
-            "To manipulate accounting records to hide customer churn from board members.",
-            "To artificially inflate the valuation cap on convertible debt instruments."
+            "To prove that the venture keeps operational solvency, positive unit economics, and at least 18 months of runway under severe economic shocks.",
+            "To prove that the venture can raise a larger funding round by showing that the business model grows revenue during an economic downturn.",
+            "To prove that the venture's customers will still pay the same prices when the economy weakens, regardless of competing alternatives.",
+            "To prove that the venture's founders can run the company without external funding for at least 18 months under severe economic shocks."
           ],
           "answer": 0,
           "why": "Stress-testing demonstrates to founders and institutional investors that the business model possesses sufficient structural shock absorbers to survive downturns without insolvency.",
@@ -2253,10 +2253,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the SaaS Rule of 40 metric used by institutional venture capital investment committees?",
           "options": [
-            "A regulation capping founder equity dilution at exactly 40% across all rounds.",
-            "A legal requirement to file tax returns within 40 days of fiscal year end.",
-            "A benchmark stating that an enterprise software company's annual revenue growth rate percentage plus its operating margin percentage should equal or exceed 40.0%.",
-            "A rule that every startup must have exactly 40 employees before raising Series A capital."
+            "A benchmark stating that a software company's annual revenue growth rate minus its churn rate should equal or exceed 40.0%.",
+            "A benchmark stating that a software company's customer lifetime value divided by acquisition cost should equal or exceed 40.0.",
+            "A benchmark stating that a software company's annual revenue growth rate plus its profit margin should equal or exceed 40.0%.",
+            "A benchmark stating that a software company's gross margin plus its net revenue retention should equal or exceed 140.0%."
           ],
           "answer": 2,
           "why": "The Rule of 40 states that Growth Rate (%) + Profit Margin (%) >= 40%, balancing hyper-growth with capital efficiency.",
@@ -2302,9 +2302,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What double accreditation is formally conferred upon passing all five gates in the Milestone 2 Capstone Defense?",
           "options": [
-            "BASIC_BUSINESS_PLAN_AUDITOR and Junior Associate Clerk.",
-            "PROVISIONAL_PATENT_DRAFTER and Non-Executive Observer.",
-            "BOOKKEEPING_ASSISTANT and Level-1 Cashier.",
+            "VENTURE_CREATION_AND_BMC_PRACTITIONER_CONDITIONAL and Certified Business Model Analyst & Venture Associate.",
+            "VENTURE_SCALING_AND_BMC_MASTER_CERTIFIED_NOMINAL and Certified Growth Strategy Architect & Venture Operator.",
+            "VENTURE_CREATION_AND_LEAN_MASTER_CERTIFIED_NOMINAL and Certified Lean Startup Coach & Venture Mentor.",
             "VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL and Certified Business Model Architect & Venture Strategist."
           ],
           "answer": 3,
@@ -2375,9 +2375,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why do venture-stage DCF models use discount rates of 30-50% or more instead of 8-10%?",
           "options": [
             "To compensate for the high probability that the startup fails entirely, which diversified large companies do not carry.",
-            "Because venture investors are legally required to use higher rates.",
-            "Because higher discount rates always increase the valuation.",
-            "Because startups have no cash flows to discount."
+            "To compensate for the high inflation in startup markets, which raises the cost of capital above that of established companies.",
+            "To offset the lower tax deductions available to startups, which means venture investors must earn higher returns to break even.",
+            "To reflect the longer time to exit for startups, which means each year of delay costs investors a fixed share of their return."
           ],
           "answer": 0,
           "why": "The discount rate prices in the risk of total failure and illiquidity. Since most venture investments return little or nothing, winners must be priced at a steep discount for the portfolio to earn an acceptable return.",
@@ -2419,9 +2419,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a growth adjustment applied to a raw revenue multiple?",
           "options": [
-            "Because revenue is always negative for startups.",
-            "Because investors prefer round numbers.",
-            "Because growth rate has no relationship to company value.",
+            "Because slower-growing companies are more profitable by exit, so the market pays a higher multiple for them instead.",
+            "Because faster-growing companies carry more debt by exit, so the market applies a lower multiple to reflect the extra risk.",
+            "Because growth is easier to measure than revenue, so the market applies the same multiple to every company that reports it.",
             "Because faster-growing companies reach a much larger revenue base by exit, so the market pays a higher multiple for them."
           ],
           "answer": 3,
@@ -2464,10 +2464,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the Berkus Method primarily reward in a pre-revenue startup?",
           "options": [
-            "The amount of money the founders have personally invested.",
-            "The size of the revenue forecast in the pitch deck.",
+            "Audited revenue history that supports a forecast: sales, margins, cash flows, assets, and customer growth.",
+            "Comparable exits that set a market price: peers, multiples, deal sizes, sectors, and the quality of buyers.",
             "Concrete progress that reduces specific risks: idea, prototype, team, relationships, and rollout.",
-            "The number of employees on the payroll."
+            "Founder credentials that signal a future success: education, pedigree, network, prior exits, and capital."
           ],
           "answer": 2,
           "why": "Berkus assigns value to risk reduction milestones, each capped at $500,000, rather than to unproven financial projections.",
@@ -2509,10 +2509,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Venture Capital Method, what is the effect of raising the investor's target return multiple, holding exit value constant?",
           "options": [
-            "The company's exit value automatically increases.",
+            "The investor can own less of the company today, so the valuation they will accept rises.",
             "The investor must own more of the company today, so the valuation they will accept falls.",
-            "The investor can accept a higher valuation because the return is larger.",
-            "Nothing changes, because exit value alone determines valuation."
+            "The investor must wait longer for the exit, so the valuation they will accept stays the same.",
+            "The investor needs the same ownership today, so the valuation they will accept rises with the target."
           ],
           "answer": 1,
           "why": "A higher return target requires a larger ownership share to hit the target proceeds, which means a smaller post-money and pre-money valuation for the same investment.",
@@ -2555,9 +2555,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why does a disciplined analyst exclude the Berkus pre-revenue ceiling from the agreement test of revenue-stage methods?",
           "options": [
             "Because applying a pre-revenue method to a revenue-stage company is a category error that would distort the comparison.",
-            "Because averaging methods is never allowed.",
-            "Because Berkus always produces the highest value.",
-            "Because Berkus is illegal for companies with employees."
+            "Because the Berkus ceiling is higher than revenue-stage results, so including it would inflate the average of all the other methods.",
+            "Because Berkus values are set in dollars while revenue-stage methods use multiples, so the two cannot be placed in one comparison table.",
+            "Because the Berkus method relies on the analyst's opinion while revenue-stage methods use data, so mixing them lowers the audit quality."
           ],
           "answer": 0,
           "why": "Each method fits a specific stage. Mixing a pre-revenue ceiling into revenue-stage methods produces a blended number that is wrong for both.",
@@ -2626,10 +2626,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is double-trigger acceleration the market norm instead of single-trigger?",
           "options": [
-            "It is required by every company law statute.",
+            "It lets founders cash out all their unvested stock at the acquisition closing, while still giving the acquirer a share of the proceeds.",
             "It protects founders from being acquired and then fired to recapture their unvested stock, while still giving the acquirer retention leverage.",
-            "It vests all shares the moment a term sheet is signed.",
-            "It removes the need for a vesting schedule entirely."
+            "It protects acquirers from founders who leave right after the deal closes, by cancelling all their stock whether vested or unvested.",
+            "It gives investors full vesting on a financing round, while still leaving founders subject to the original schedule on a later sale."
           ],
           "answer": 1,
           "why": "Double-trigger needs both a change of control and a qualifying termination, balancing founder protection against the acquirer's need to keep the team.",
@@ -2671,10 +2671,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the chain-of-title problem with an assignment signed after the contributor started working?",
           "options": [
-            "Assignments can only be signed on the first day of a quarter.",
-            "It automatically invalidates the company's incorporation.",
+            "It makes the assignment void for future work, unless the contributor signs a new agreement at the start of every calendar year.",
+            "It transfers ownership to the company only for work done after the signature date, which leaves later work to be licensed rather than owned.",
             "It creates a gap period in which the contributor may still own the work, unless the agreement also assigns past work retroactively.",
-            "It transfers ownership to the company's investors."
+            "It converts the work into a joint copyright, owned equally by the company and the contributor, unless a patent is filed within a year."
           ],
           "answer": 2,
           "why": "Work created before the assignment may still be owned by the creator; a retroactive assignment clause closes that gap.",
@@ -2716,9 +2716,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the practical effect of a 75% special-resolution threshold on a holder with just over 25% of the voting shares?",
           "options": [
-            "It gives that holder no additional rights.",
-            "It lets that holder pass resolutions alone.",
-            "It forces that holder to sell their shares.",
+            "It lets that holder pass any special resolution alone, because a holder above 25% controls the outcome of the vote.",
+            "It gives that holder a right to appoint a director, because holders above 25% are entitled to board seats by law.",
+            "It forces that holder to sell the shares to the others, because the remaining holders can then reach 75% by buying them.",
             "It lets that holder block any special resolution, because the other holders cannot reach 75% without them."
           ],
           "answer": 3,
@@ -2806,10 +2806,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should a founder run a governance checklist before approaching investors?",
           "options": [
-            "Because checklists replace the need for any lawyers.",
+            "Because investors read the checklist before agreeing to meet, so a good score wins the first meeting.",
             "Because gaps are cheap to fix early and expensive or deal-threatening to fix during diligence.",
-            "Because it increases the founders' vesting percentage.",
-            "Because investors only invest in companies without legal documents."
+            "Because the checklist is a legal filing that investors need before they can lawfully send a term sheet.",
+            "Because governance gaps lower the valuation by a fixed percentage, so fixing them first lifts the price."
           ],
           "answer": 1,
           "why": "Missing assignments, vesting terms or SHA clauses are routine fixes before a round but can delay or reprice a deal when found during diligence.",
@@ -2878,10 +2878,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the baseline-to-target formula work for both 'increase users' and 'reduce churn' key results?",
           "options": [
-            "Because it ignores the current value.",
-            "Because lower-is-better metrics are not allowed in OKRs.",
+            "Because lower-is-better metrics are converted to percentages first, so the formula treats a fall in the value as zero progress toward the target.",
+            "Because the baseline is set equal to the target for churn metrics, so progress is measured only against the previous quarter's value.",
             "Because the distance (target - baseline) changes sign automatically for lower-is-better metrics, keeping progress between 0 and 1.",
-            "Because churn is not measurable."
+            "Because the formula takes the absolute value of progress, so a rise or a fall in the metric is counted as equal movement toward the goal."
           ],
           "answer": 2,
           "why": "Dividing by (target - baseline) preserves direction: when the target is below the baseline, a falling value produces positive progress.",
@@ -2923,10 +2923,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of these is an outcome rather than an output?",
           "options": [
-            "Publish 12 blog posts.",
+            "Launch the new onboarding checklist to all trial users by the end of the quarter.",
             "Increase the share of trial users who become paying customers from 9% to 14%.",
-            "Hold 30 customer interviews.",
-            "Launch the redesigned dashboard."
+            "Publish twelve help-center articles covering the main trial user questions this quarter.",
+            "Complete the redesign of the pricing page and release it before the end of month two."
           ],
           "answer": 1,
           "why": "The first, second and fourth describe activities completed; only the conversion change measures an effect on customer behaviour.",
@@ -2969,9 +2969,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is a score of 1.0 on an aspirational OKR considered a warning sign?",
           "options": [
             "It suggests the goal was not ambitious enough to be a true stretch.",
-            "It guarantees a promotion.",
-            "It means the team cheated.",
-            "It means the OKR should be removed from the system."
+            "It shows the team performed at its best and the target should be raised.",
+            "It indicates the objective was measured with too many key results in it.",
+            "It proves the key results were all met on time without any scope cuts."
           ],
           "answer": 0,
           "why": "Stretch goals are designed to land near 0.7; consistently hitting 1.0 indicates targets are being set too low.",
@@ -3013,9 +3013,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is an 'orphan' objective in an OKR alignment audit?",
           "options": [
-            "An objective that has already been completed.",
-            "An objective with no key results.",
-            "A company objective that no team supports.",
+            "A company objective that no team has taken on as its own work.",
+            "A key result that has been scored but not reviewed by managers.",
+            "An objective that was carried over unchanged from the prior quarter.",
             "A team objective that does not connect to any company objective."
           ],
           "answer": 3,
@@ -3058,10 +3058,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which condition best indicates that stretch goals are well calibrated?",
           "options": [
-            "Every aspirational OKR scores exactly 1.0.",
-            "Every aspirational OKR scores 0.0.",
+            "The average aspirational score sits roughly between 0.90 and 1.00.",
+            "The average aspirational score sits roughly between 0.20 and 0.40.",
             "The average aspirational score sits roughly between 0.55 and 0.8.",
-            "There are no aspirational OKRs at all."
+            "The average aspirational score sits roughly between 0.80 and 0.95."
           ],
           "answer": 2,
           "why": "An average in that band suggests goals are ambitious enough to stretch the team but still reachable in part.",
@@ -3130,9 +3130,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A process has 2 hours of touch time but a 10-day lead time. What does this tell you about where improvement effort should go?",
           "options": [
-            "Employees need to work faster during the touch time.",
-            "The process should be abandoned.",
-            "More approvals should be added.",
+            "Almost all of the time is processing, so speeding up the work itself will have the greatest effect.",
+            "Most of the time is spent on rework, so adding inspection steps will have the greatest effect.",
+            "Most of the delay comes from low skills, so training the team on the tasks will have the greatest effect.",
             "Almost all of the time is waiting, so removing queues and handoffs will have the greatest effect."
           ],
           "answer": 3,
@@ -3220,10 +3220,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does adding capacity to a non-bottleneck stage not increase system throughput?",
           "options": [
-            "Because only the first stage matters.",
+            "Because non-bottleneck stages are already idle part of the time, so extra capacity there has no cost to be recovered later.",
             "Because the system can never produce more than the slowest stage allows, so extra output just piles up as WIP.",
-            "Because non-bottleneck stages cannot be improved.",
-            "Because capacity is irrelevant to throughput."
+            "Because added capacity raises the variability of arrivals, so extra output at that stage delays the bottleneck stage.",
+            "Because the bottleneck moves to the stage that was just expanded, so overall output stays at the old rate."
           ],
           "answer": 1,
           "why": "System throughput equals the bottleneck's capacity; additional upstream output simply accumulates in front of the constraint.",
@@ -3265,10 +3265,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does average waiting time rise sharply as utilisation approaches 100%?",
           "options": [
-            "Because workers become tired at high utilisation.",
-            "Because queues are always the same length.",
+            "Because time in system is proportional to the arrival rate times the service rate, which grows steadily as utilisation rises.",
+            "Because time in system is proportional to the utilisation squared, which rises smoothly and reaches a modest maximum at 100%.",
             "Because time in system is proportional to 1/(service rate - arrival rate), which grows without bound as the two converge.",
-            "Because arrival rates fall as utilisation rises."
+            "Because time in system is proportional to the service rate divided by the arrival rate, which doubles whenever load grows by half."
           ],
           "answer": 2,
           "why": "As arrivals approach capacity the denominator shrinks toward zero, so small increases in load cause large increases in waiting time.",
@@ -3310,9 +3310,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is running a non-bottleneck stage above ~95% utilisation a warning sign?",
           "options": [
-            "It means the stage is unusually efficient.",
-            "It means the stage has no queue.",
-            "It guarantees the stage will become the new bottleneck immediately.",
+            "Idle time drops to zero near saturation, so the stage cannot be maintained and equipment breaks down more often.",
+            "Unit costs rise near saturation, so overtime and shift premiums erase the margin earned on the additional output.",
+            "Quality falls near saturation, so operators skip checks and defects reach customers in rising numbers every week.",
             "Waiting times explode near saturation, so small demand fluctuations create large backlogs and delays."
           ],
           "answer": 3,
@@ -3373,10 +3373,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional investors and startup CFOs utilize an ensemble of valuation methods rather than relying exclusively on a single DCF model?",
           "options": [
-            "Because DCF models are highly sensitive to terminal growth rates and WACC, while early-stage startups often have negative cash flows; blending with multiples and VC methods provides a balanced, robust valuation.",
-            "Because corporate law requires all companies to use at least four separate valuation spreadsheets.",
-            "Because DCF only calculates net income and completely ignores cash generation.",
-            "Because revenue multiples are illegal in venture capital transactions."
+            "Because DCF is highly sensitive to terminal growth and WACC, while startups have negative cash flows; blending with multiples and VC methods gives a robust value.",
+            "Because DCF models take too long to build for a startup, while investors need a number within days; multiples and VC methods give a faster estimate.",
+            "Because DCF requires audited statements that startups lack, so regulators accept only market multiples and VC methods in a valuation report.",
+            "Because DCF undervalues startups relative to the market, while multiples give inflated numbers; averaging them cancels out the two errors."
           ],
           "answer": 0,
           "why": "DCF models are sensitive to long-term assumptions and struggle with early negative cash flows. Blending DCF with revenue multiples, Berkus scores, and the VC method provides market-grounded triangulation.",
@@ -3405,10 +3405,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What happens to unvested shares when a co-founder departs a startup as a 'good leaver' 18 months into a standard 4-year vesting agreement with a 1-year cliff?",
           "options": [
-            "The unvested shares are converted into cash debt at high interest rates.",
-            "The departing founder receives 100% of their equity immediately under accelerated vesting.",
-            "The unvested shares are given directly to angel investors without board approval.",
-            "The unvested shares (62.5% of the grant) are forfeited or cancelled back to the company pool, while the founder retains their 37.5% vested equity."
+            "The unvested shares (62.5% of the grant) are kept by the founder, while the company repurchases the 37.5% vested equity at nominal cost.",
+            "The unvested shares (50% of the grant) are forfeited back to the company pool, while the founder keeps the 50% vested equity.",
+            "All shares are forfeited back to the company pool because the departure falls within the first 24 months, leaving the founder no equity.",
+            "The unvested shares (62.5% of the grant) are forfeited back to the company pool, while the founder keeps the 37.5% vested equity."
           ],
           "answer": 3,
           "why": "Good leavers retain accrued vested equity (18/48 = 37.5%), while unvested equity (62.5%) is cancelled back to the option pool or repurchased at nominal cost.",
@@ -3442,10 +3442,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the institutional Google/Intel OKR grading rubric, what does an average objective score between 0.70 and 1.00 signify?",
           "options": [
-            "Failure: Any score under 1.00 represents poor execution requiring executive dismissal.",
-            "Audit Warning: The score indicates that targets were sandbagged and too easy.",
-            "Green Zone: Healthy, ambitious stretch performance indicating that difficult targets were successfully fulfilled.",
-            "Suspension: Departmental budgets are automatically frozen until 100% is reached."
+            "Red Zone: failure to deliver on the objective, showing that the targets need to be reset or abandoned.",
+            "Yellow Zone: progress was made but fell short, showing that the targets need more resources next quarter.",
+            "Green Zone: healthy, ambitious stretch performance showing that difficult targets were largely met.",
+            "Green Zone: sandbagged targets that were too easy, showing the team set safe goals to guarantee a high score."
           ],
           "answer": 2,
           "why": "In aspirational OKR methodology, 0.70 to 1.00 is the Green zone, reflecting aggressive stretch target achievement without sandbagging.",
@@ -3479,10 +3479,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Little's Law (L = lambda * W), how can an operations manager cut average customer lead time (W) in half if system throughput (lambda) remains constant?",
           "options": [
-            "By increasing work-in-progress inventory to keep workers busy.",
+            "By doubling the allowable Work-in-Progress (L) so that every stage has work waiting to be done.",
             "By capping allowable Work-in-Progress (L) at half its current level across the pipeline.",
-            "By hiring twice as many workers at non-bottleneck stations.",
-            "By eliminating value-adding touch time completely."
+            "By halving the throughput (lambda) so that each unit of Work-in-Progress gets more attention.",
+            "By adding inspection steps to the pipeline so that Work-in-Progress (L) is checked at each stage."
           ],
           "answer": 1,
           "why": "Since W = L / lambda, holding throughput (lambda) constant means lead time (W) is directly proportional to WIP (L). Halving WIP halves lead time.",
@@ -3517,9 +3517,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which accreditation is conferred upon an enterprise that passes all four verification gates of the Milestone 3 Capstone Audit?",
           "options": [
             "STARTUP_FINANCE_GOVERNANCE_AND_OPS_MASTER_CERTIFIED_NOMINAL",
-            "JUNIOR_BOOKKEEPING_CERTIFICATE",
-            "BASIC_SPREADSHEET_AUDITOR",
-            "UNVERIFIED_PROVISIONAL_CLERK"
+            "STARTUP_FINANCE_GOVERNANCE_AND_OPS_MASTER_CONDITIONAL_PASS",
+            "STARTUP_FINANCE_AND_GOVERNANCE_PRACTITIONER_CERTIFIED_NOMINAL",
+            "STARTUP_OPERATIONS_AND_GROWTH_MASTER_CERTIFIED_NOMINAL"
           ],
           "answer": 0,
           "why": "The Milestone 3 Capstone audit confers STARTUP_FINANCE_GOVERNANCE_AND_OPS_MASTER_CERTIFIED_NOMINAL upon passing all four institutional verification gates.",
@@ -3580,10 +3580,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which category of the Lean TIMWOODS taxonomy represents senior engineers or specialists performing low-value manual administrative tasks?",
           "options": [
-            "Transport (Physical shipment of equipment).",
+            "Motion (Unnecessary movement of people, tools, or equipment).",
             "Skills (Underutilizing human talent and domain capabilities).",
-            "Overproduction (Building excess features).",
-            "Motion (Ergonomic wrist strain)."
+            "Overprocessing (Doing more work than the customer values).",
+            "Waiting (Idle time between process steps for people or items)."
           ],
           "answer": 1,
           "why": "The 'Skills' waste category reflects the misuse or underutilization of specialized employee talents on routine or mismatched manual work.",
@@ -3618,10 +3618,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of the 'Control' phase in the Six Sigma DMAIC methodology?",
           "options": [
-            "To brainstorm initial project ideas without data.",
-            "To conduct marketing campaigns for new product releases.",
-            "To establish mistake-proofing (Poka-Yoke), telemetry, and control charts that prevent operational regression back to baseline.",
-            "To fire employees responsible for defects."
+            "To measure the current process capability and collect baseline data on defects, cycle time, and customer complaints.",
+            "To analyze the data to find the root causes of defects using fishbone diagrams, regression, and hypothesis tests.",
+            "To set up mistake-proofing (Poka-Yoke), telemetry, and control charts that stop the process from regressing to baseline.",
+            "To generate and test improvement ideas through pilots and design of experiments, and then select the best solution."
           ],
           "answer": 2,
           "why": "The Control phase establishes systems, telemetry, and procedures to sustain gains and prevent processes from deteriorating back to old habits.",
@@ -3656,9 +3656,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Cpk considered a more accurate reflection of real-world process performance than Cp?",
           "options": [
-            "Because Cpk ignores standard deviation completely.",
-            "Because Cp only applies to physical manufacturing, while Cpk is exclusive to software.",
-            "Because Cpk is always exactly double Cp.",
+            "Because Cpk accounts for the number of defects found in a sample, whereas Cp counts only the width of the control limits.",
+            "Because Cpk uses control limits instead of specification limits, whereas Cp assumes the customer tolerance is perfectly known.",
+            "Because Cpk is calculated on short-term data only, whereas Cp uses long-term data that hides the shifts in the process mean.",
             "Because Cpk accounts for process centering between specification limits, whereas Cp assumes the process is perfectly centered."
           ],
           "answer": 3,
@@ -3694,10 +3694,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key difference between Process Specification Limits (USL/LSL) and Statistical Control Limits (UCL/LCL)?",
           "options": [
-            "Specification limits represent customer requirements, while control limits represent the natural statistical boundaries of what the process actually delivers.",
-            "Control limits are dictated by marketing, while specification limits are dictated by accounting.",
-            "Specification limits must always be narrower than control limits.",
-            "There is no difference; the terms are interchangeable."
+            "Specification limits represent customer requirements, while control limits represent the natural statistical boundaries of what the process delivers.",
+            "Specification limits are calculated from process data, while control limits are set by the customer as the tolerance for each unit.",
+            "Specification limits apply to the average of a sample, while control limits apply to each individual unit that the process makes.",
+            "Specification limits are set at three standard deviations, while control limits are set at six standard deviations from the mean."
           ],
           "answer": 0,
           "why": "Specification limits (USL/LSL) define customer tolerance requirements; control limits (UCL/LCL) define the voice of the process under statistical equilibrium.",
@@ -3733,10 +3733,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which accreditation is conferred upon an enterprise that passes all four quality verification gates in the Master Six Sigma Control Tower?",
           "options": [
-            "BASIC_MANUFACTURING_TRAINEE",
+            "LEAN_SIX_SIGMA_QUALITY_CONDITIONAL_PASS",
             "LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL",
-            "UNVERIFIED_TEMPORARY_ASSOCIATE",
-            "JUNIOR_INSPECTION_CLERK"
+            "LEAN_SIX_SIGMA_GREEN_BELT_CERTIFIED_NOMINAL",
+            "LEAN_SIX_SIGMA_QUALITY_REVIEW_REQUIRED"
           ],
           "answer": 1,
           "why": "Passing all four gates in the Six Sigma Control Tower confers LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL.",
@@ -3798,10 +3798,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Bill Aulet's Disciplined Entrepreneurship, what is the primary strategic purpose of dominating a tightly constrained beachhead market?",
           "options": [
-            "To eliminate the need for customer service and product development.",
-            "To remain a tiny local business forever without growing.",
-            "To establish a defensible, cash-flow-positive market stronghold that generates reference customers to conquer adjacent markets like bowling pins.",
-            "To hide from competitors so the company never has to raise capital."
+            "To maximize the total addressable market quickly by selling to every segment at once, so that early revenue growth is as large as possible.",
+            "To test pricing in many small markets, picking the cheapest to serve, so that the company avoids dependence on one customer group.",
+            "To build a defensible, cash-flow-positive stronghold that generates reference customers to take over adjacent markets like bowling pins.",
+            "To minimize competition by choosing a market with no customers yet, so that the company can set prices without any reference points."
           ],
           "answer": 2,
           "why": "Dominating a beachhead creates referenceable validation, economies of scale, and cash flow, providing the sovereign base needed to knock down adjacent markets.",
@@ -3836,10 +3836,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do mainstream Early Majority (Pragmatist) buyers refuse to purchase technology products that are popular among Early Adopter Visionaries?",
           "options": [
-            "Because Pragmatists have smaller budgets than Visionaries.",
-            "Because Pragmatists are risk-averse and require a 100% complete 'Whole Product' with proven reference customers, whereas Visionaries embrace unproven prototypes.",
-            "Because Pragmatists only buy physical hardware and refuse to buy software.",
-            "Because Pragmatists only purchase software through retail stores."
+            "Because Pragmatists favor the cheapest option and wait for steep discounts, whereas Visionaries are willing to pay premium prices for new products.",
+            "Because Pragmatists are risk-averse and want a complete 'Whole Product' with proven reference customers, whereas Visionaries accept unproven prototypes.",
+            "Because Pragmatists are prohibited by procurement rules from buying from vendors with under 10 years of history, whereas Visionaries are exempt.",
+            "Because Pragmatists prefer custom-built software designed for their own firms, whereas Visionaries accept standard off-the-shelf products at launch."
           ],
           "answer": 1,
           "why": "Pragmatists fear project failure and require complete whole-product solutions with robust support, documentation, and peer references.",
@@ -3875,9 +3875,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What mathematical condition must be satisfied for a product's viral loop to achieve self-sustaining, exponential viral growth?",
           "options": [
             "The Viral Coefficient (K-factor) must strictly exceed 1.00 (K > 1.0).",
-            "The company must spend at least $100,000 per month on Google Ads.",
-            "The cycle time must be longer than 365 days.",
-            "The customer churn rate must equal exactly 50%."
+            "The Viral Coefficient (K-factor) must strictly stay below 1.00 (K < 1.0).",
+            "The Viral Coefficient (K-factor) must strictly equal 0.50 (K = 0.5).",
+            "The Viral Coefficient (K-factor) must strictly exceed 10.0 (K > 10.0)."
           ],
           "answer": 0,
           "why": "When K > 1.0, each cohort of users generates a larger subsequent cohort of users, creating super-critical compounding exponential growth.",
@@ -3913,9 +3913,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Customer Acquisition Cost (CAC) inevitably increase as an enterprise scales its ad spend within a single marketing channel?",
           "options": [
-            "Because customer lifetime value automatically drops to zero.",
-            "Because servers become slower when more ads are displayed.",
-            "Because Google and Facebook legally mandate higher prices for large companies.",
+            "Because platforms raise their fees each quarter for large advertisers, forcing algorithms to charge more for the same traffic.",
+            "Because creative assets lose their legal protection over time, forcing advertisers to pay licensing fees on each new impression.",
+            "Because sales teams close fewer deals as ad volume rises, forcing algorithms to pay more for each lead that is generated.",
             "Because high-intent audiences are exhausted, forcing algorithms to bid on broader, more competitive, and lower-converting traffic."
           ],
           "answer": 3,
@@ -3951,10 +3951,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which accreditation is conferred upon an enterprise that passes all four commercial gates in the Master Go-To-Market Control Tower?",
           "options": [
-            "JUNIOR_TELEMARKETING_ASSOCIATE",
-            "PROVISIONAL_SALES_TRAINEE",
+            "GO_TO_MARKET_STRATEGY_CONDITIONAL_PASS",
+            "GO_TO_MARKET_EXECUTION_CERTIFIED_NOMINAL",
             "GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL",
-            "UNVERIFIED_ADVERTISING_CLERK"
+            "GO_TO_MARKET_STRATEGY_REVIEW_REQUIRED"
           ],
           "answer": 2,
           "why": "Passing all four commercial gates confers GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL.",
@@ -4016,9 +4016,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Sales Velocity Formula V = (Opportunities * Win Rate * Deal Size) / Cycle Time, which variable is in the denominator that retards revenue velocity when it increases?",
           "options": [
-            "Number of Opportunities.",
-            "Average Deal Size (ACV).",
-            "Win Rate percentage.",
+            "Win Rate (the share of opportunities that end in a signed deal).",
+            "Average Deal Size (the dollar value of each closed contract).",
+            "Opportunity Count (the number of qualified deals in the pipeline).",
             "Sales Cycle Duration (T: elapsed calendar days to close a deal)."
           ],
           "answer": 3,
@@ -4056,9 +4056,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why do enterprise B2B SaaS sales organizations universally mandate maintaining a 3.0x to 4.0x pipeline coverage ratio?",
           "options": [
             "Because historical B2B win rates average between 25% and 33%, requiring $3 to $4 in active pipeline to reliably close $1 in quota.",
-            "Because corporate law requires four duplicate contracts for every client.",
-            "Because sales reps only work three days a week.",
-            "Because pipeline coverage determines executive bonus taxation."
+            "Because lenders require sales pipelines to be three times annual revenue before approving working capital lines for software firms.",
+            "Because the SEC requires public software firms to report pipeline of 3x to 4x guidance before they can announce quarterly targets.",
+            "Because sales reps work only a third of their time on selling, so $3 to $4 of pipeline is needed per $1 of quota capacity."
           ],
           "answer": 0,
           "why": "Since win rates typically hover around 25-30%, an enterprise must maintain 3x to 4x coverage to ensure that 1x worth of deals close successfully.",
@@ -4094,10 +4094,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do advanced RevOps forecasting engines apply probability haircuts to deals that remain in a sales stage past maximum SLA boundaries?",
           "options": [
-            "Because CRM databases delete deals after thirty days.",
-            "Because data proves that deal momentum decays over time; stalled deals suffer from champion turnover, lost budget, or stalled procurement.",
-            "Because sales reps request lower commissions on stalled deals.",
-            "Because older deals automatically convert into equity shares."
+            "Because stalled deals have already been priced at a discount, so forecasts must lower their value to match the lower price.",
+            "Because deal momentum decays over time; stalled deals suffer from champion turnover, lost budget, or stalled procurement.",
+            "Because reps overstate the stage of deals that stall, so a haircut corrects the bias that sales managers add to forecasts.",
+            "Because stalled deals count toward quota twice in the CRM, so a haircut removes the duplicate revenue from the forecast."
           ],
           "answer": 1,
           "why": "Stalled deals experience severe probability decay due to organizational inertia, champion departure, or shifting corporate priorities.",
@@ -4133,10 +4133,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the danger of planning sales capacity using nominal math (Target Revenue / Individual Quota) without accounting for ramp curves?",
           "options": [
-            "Nominal math forces reps to work overtime without pay.",
-            "It causes software licenses to expire prematurely.",
-            "Newly hired reps require several months to reach full productivity; ignoring ramp creates an operational capacity deficit that causes quota misses.",
-            "It leads to excessive tax payments to state authorities."
+            "New reps hit quota faster than veterans, so ignoring ramp overstates hiring needs and creates idle sales capacity in the team.",
+            "Quota is allocated by territory rather than by rep, so nominal math double counts the territories that new reps are given.",
+            "New reps need several months to reach full productivity; ignoring ramp creates a capacity deficit that causes quota misses.",
+            "Sales capacity depends on the win rate alone, so ignoring ramp has no effect and the plan is correct in each quarter."
           ],
           "answer": 2,
           "why": "New reps take 4-6 months to reach full productivity; failing to buffer for ramp results in under-capacity and missed revenue commitments.",
@@ -4172,9 +4172,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which accreditation is conferred upon an enterprise that passes all four commercial gates in the Master Revenue Operations Control Tower?",
           "options": [
-            "PROVISIONAL_TELEMARKETING_CLERK",
-            "UNVERIFIED_INVOICING_INTERN",
-            "JUNIOR_SALES_BOOKKEEPER",
+            "REVENUE_OPERATIONS_CONDITIONAL_PASS",
+            "REVENUE_ANALYTICS_CERTIFIED_NOMINAL",
+            "REVENUE_OPERATIONS_REVIEW_REQUIRED",
             "REVENUE_OPERATIONS_CERTIFIED_NOMINAL"
           ],
           "answer": 3,
@@ -4237,10 +4237,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core philosophical difference between Cost-Plus Pricing and Value-Based Pricing?",
           "options": [
-            "Cost-Plus calculates internal development costs and adds an arbitrary markup, whereas Value-Based prices based on the quantifiable economic ROI delivered to the customer.",
-            "Cost-Plus is exclusively for software, while Value-Based is exclusively for physical retail.",
-            "Value-Based pricing always results in lower revenue than Cost-Plus.",
-            "Cost-Plus pricing requires approval from the International Monetary Fund."
+            "Cost-Plus adds a markup to internal development costs, whereas Value-Based prices on the quantifiable economic ROI delivered to the customer.",
+            "Cost-Plus prices on the economic ROI delivered to the customer, whereas Value-Based adds a markup to internal development costs.",
+            "Cost-Plus matches the price to the competitor's list price, whereas Value-Based sets the price at the customer's stated budget limit.",
+            "Cost-Plus uses a fixed price for all customers, whereas Value-Based negotiates a discount for each customer based on volume."
           ],
           "answer": 0,
           "why": "Value-based pricing decouples price from internal production costs, anchoring fees to the quantifiable economic value generated for the client.",
@@ -4276,10 +4276,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a standard Good-Better-Best (GBB) software packaging architecture, what is the strategic role of the 'Better' tier?",
           "options": [
-            "To offer zero software features as a joke tier.",
-            "To hide from enterprise clients so they only buy the Good tier.",
-            "To be so expensive that nobody buys it.",
-            "To serve as the primary commercial anchor tailored to the core customer persona, attracting 50% to 65% of total paying accounts."
+            "To serve as a deliberate decoy that makes the top tier look cheap, attracting under 10% of paying accounts.",
+            "To serve as the entry offer with minimal features, attracting 50% to 65% of the free trial users who sign up.",
+            "To serve as the premium offer for the largest enterprises, attracting 50% to 65% of revenue from custom contracts.",
+            "To serve as the main commercial anchor for the core customer persona, attracting 50% to 65% of paying accounts."
           ],
           "answer": 3,
           "why": "The 'Better' tier is the deliberate centerpiece of the catalog, engineered with 80% of desired features to capture the majority of the market.",
@@ -4311,10 +4311,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Asymmetric Dominance (Decoy) Effect alter consumer buying behavior?",
           "options": [
-            "By confusing buyers so they accidentally purchase both tiers.",
-            "By forcing customers to sign multi-year contracts against their will.",
-            "By introducing a decoy option that is priced close to the premium option but offers inferior value, making the premium option appear as an obvious, irresistible bargain.",
-            "By offering a 90% discount on all software products."
+            "A decoy option priced far below every other option makes the cheapest option look like an obvious bargain for budget buyers.",
+            "A decoy option priced above the premium option makes buyers delay the decision until a discount is announced by the seller.",
+            "A decoy option priced close to the premium option but offering inferior value makes the premium option look like an obvious bargain.",
+            "A decoy option that matches the premium option in features makes buyers split evenly between the two and lowers the average price."
           ],
           "answer": 2,
           "why": "The decoy changes the cognitive frame of reference, making the target premium tier look like a superior bargain in comparison.",
@@ -4350,10 +4350,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an enterprise product exhibits Price Inelastic Demand (|PED| < 1.0), what happens to total corporate revenue when management raises prices?",
           "options": [
-            "Total revenue drops by exactly 50%.",
+            "Total revenue decreases, because the percentage drop in unit volume is larger than the percentage gain in price.",
             "Total revenue increases, because the percentage drop in unit volume is smaller than the percentage gain in price.",
-            "Total revenue drops to zero immediately.",
-            "Total revenue remains completely unchanged regardless of price."
+            "Total revenue stays unchanged, because the percentage drop in unit volume exactly equals the percentage gain in price.",
+            "Total revenue increases only in the long run, because customers need time to notice the price rise and cut their purchases."
           ],
           "answer": 1,
           "why": "When demand is inelastic (|PED| < 1.0), price increases outpace volume decreases, expanding total revenue.",
@@ -4390,9 +4390,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which accreditation is conferred upon an enterprise that passes all four commercial gates in the Master Sovereign Pricing Control Tower?",
           "options": [
             "PRICING_STRATEGY_CERTIFIED_NOMINAL",
-            "JUNIOR_DISCOUNT_CLERK",
-            "PROVISIONAL_INVOICE_AUDITOR",
-            "UNVERIFIED_CASHIER_TRAINEE"
+            "PRICING_STRATEGY_CONDITIONAL_PASS",
+            "PRICING_ANALYTICS_CERTIFIED_NOMINAL",
+            "PRICING_STRATEGY_REVIEW_REQUIRED"
           ],
           "answer": 0,
           "why": "Passing all four pricing gates confers PRICING_STRATEGY_CERTIFIED_NOMINAL.",
@@ -4455,9 +4455,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which mathematical condition must be satisfied to achieve institutional 4-Sigma process capability?",
           "options": [
             "Cpk must reach or exceed 1.33, guaranteeing fewer than 63 defects per million opportunities.",
-            "Process standard deviation must equal zero exactly.",
-            "TIMWOODS waste savings must exceed $1,000,000 annually.",
-            "DMAIC projects must be completed in under seven business days."
+            "Cpk must reach or exceed 2.00, guaranteeing fewer than 63 defects per million opportunities.",
+            "Cp alone must reach 1.33, ignoring centering, guaranteeing under 63 defects per million opportunities.",
+            "Cpk must stay below 1.33, guaranteeing fewer than 63 defects per million opportunities."
           ],
           "answer": 0,
           "why": "A Cpk index of 1.33 or greater mathematically validates 4-Sigma quality compliance, confirming that process centering and dispersion remain within acceptable upper and lower specification limits with an expected defect rate below 63 defects per million transactions.",
@@ -4493,9 +4493,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What occurs when an enterprise product achieves a Viral Coefficient (K-factor) strictly exceeding 1.00?",
           "options": [
-            "Viral growth decays rapidly due to channel exhaustion within two cycles.",
-            "Customer acquisition costs increase proportionally with user growth.",
-            "The business is forced to discontinue enterprise sales hiring.",
+            "User acquisition falls into a decay regime in which each cohort is smaller than the one before it.",
+            "User acquisition becomes fully organic, so the company can stop paying for any customer onboarding or support.",
+            "User acquisition plateaus at a fixed level, because each cohort replaces exactly the users who have churned.",
             "User acquisition enters a super-critical exponential growth regime without linear marketing spend."
           ],
           "answer": 3,
@@ -4532,10 +4532,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional sales organizations mandate entering each quarter with at least 3.5x to 4.0x pipeline coverage?",
           "options": [
-            "To ensure that sales reps do not receive incentive commissions.",
-            "To eliminate the need for CRM software tracking.",
+            "To satisfy investor covenants that require pipeline to exceed forecast revenue by a fixed multiple.",
+            "To keep sales reps busy with prospects at all times, since idle time lowers morale and lowers win rates.",
             "To insulate quarterly quota attainment from deal slippage and typical 25% to 28% win rates.",
-            "To satisfy regulatory SEC filing requirements for early-stage startups."
+            "To match marketing budgets to the sales plan, since each pipeline dollar costs three in ad spend."
           ],
           "answer": 2,
           "why": "With standard enterprise win rates hovering between 25% and 28%, a minimum pipeline coverage ratio of 3.5x to 4.0x is required to absorb normal deal slippage and reliably achieve net revenue quota commitments.",
@@ -4611,10 +4611,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of the Master Sovereign Milestone 4 Capstone Audit Engine?",
           "options": [
-            "To execute an automated four-gate accreditation verifying operational quality, GTM distribution, RevOps predictability, and unit economics viability.",
-            "To replace human executive leadership with automated scripts.",
-            "To eliminate all sales and marketing expenditures across the business.",
-            "To guarantee immediate profitability in the first month of operation."
+            "To run an automated four-gate accreditation verifying operational quality, GTM distribution, RevOps predictability, and unit economics viability.",
+            "To run an annual financial audit verifying the revenue recognized, taxes paid, cash balances held, and debts owed by the enterprise.",
+            "To run a manual peer review verifying founder biographies, advisory board names, press coverage, and investor references of the venture.",
+            "To run a hiring assessment verifying sales rep quotas, engineer productivity, support response times, and executive tenure at the firm."
           ],
           "answer": 0,
           "why": "The Milestone 4 Capstone Audit Engine provides an automated, objective governance framework that validates the cybernetic alignment of operational quality, GTM scaling, RevOps velocity, and unit economics before major capital expansion.",
@@ -4674,9 +4674,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture capital investors mandate establishing a 10% to 15% ESOP pool during Series A/B rounds?",
           "options": [
-            "To hide company ownership from taxation authorities.",
-            "To force founders to give away all their equity to junior interns.",
-            "To eliminate the need for paying cash salaries entirely.",
+            "To provide a cash bonus reserve to attract and retain executive talent without repeated approvals from the compensation committee.",
+            "To provide a reserve of founder shares to repurchase from departing cofounders without repeated negotiations over the price.",
+            "To provide an unallocated equity reserve for investors to buy at a discount in later rounds without repeated cap table filings.",
             "To provide an unallocated equity reserve to attract and recruit elite executive talent without repeated cap table re-authorizations."
           ],
           "answer": 3,
@@ -4713,9 +4713,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary operational purpose of enforcing a mandatory 'One-Year Cliff' on startup stock option grants?",
           "options": [
             "To ensure that employees who leave or are terminated within the first year forfeit 100% of their equity, preventing dead equity on the cap table.",
-            "To reduce company payroll taxes during the first fiscal quarter.",
-            "To delay product development until the employee completes one year.",
-            "To force employees to purchase their shares on their first day of work."
+            "To ensure that employees who leave within the first year keep their entire grant, preventing disputes over equity at their departure.",
+            "To ensure that employees who stay past the first year receive double the vesting rate, preventing early departures from the team.",
+            "To ensure that employees pay the exercise price for the entire grant in the first year, preventing unpaid options on the cap table."
           ],
           "answer": 0,
           "why": "The one-year cliff protects the company and cap table from departures within the first 12 months, ensuring equity is earned through sustained commitment.",
@@ -4752,10 +4752,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the McKinsey 9-Box Grid, what strategic talent action should leadership take for employees classified in Box (3, 3) (High Performance, High Potential)?",
           "options": [
-            "Freeze their salary and restrict their promotion opportunities.",
+            "Place them on a performance improvement plan, freeze their equity refreshes, and reassign them to routine support roles.",
             "Accelerate equity refreshes, assign high-impact stretch projects, and groom them for executive leadership roles.",
-            "Place them on a 30-day performance improvement plan.",
-            "Transfer them to low-priority maintenance tasks."
+            "Maintain current pay and duties, rotate them across departments, and review their potential again after two years.",
+            "Move them to a mentoring role for new hires, reduce their project load, and defer their promotion until next cycle."
           ],
           "answer": 1,
           "why": "Box (3,3) Stars are the future leaders of the enterprise; management must invest aggressively in their growth, compensation, and retention.",
@@ -4791,10 +4791,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Total Cost of Workforce (TCOW) loaded multiplier typically 1.4x to 1.6x of an employee's base salary in technology startups?",
           "options": [
-            "Because office snack bars cost 50% of employee salaries.",
-            "Because banks charge a 50% fee on all direct deposit payroll transfers.",
-            "Because employer payroll taxes, healthcare benefits, software tooling, performance bonuses, and amortized equity substantially exceed base pay.",
-            "Treating Total and Workforce as interchangeable constants rather than verifying Loaded at each step."
+            "Because recruiting agency fees, relocation payments, office leases, and legal costs add substantially to base pay in the first year.",
+            "Because overtime pay, severance packages, retirement matching, and training courses add substantially to base pay for every employee.",
+            "Because employer payroll taxes, healthcare benefits, software tooling, performance bonuses, and amortized equity add substantially to base pay.",
+            "Because stock option exercise costs, investor board fees, audit charges, and insurance premiums add substantially to base pay for every hire."
           ],
           "answer": 2,
           "why": "Fully loaded workforce costs include statutory taxes (FICA/Medicare), health insurance, software licenses, bonuses, and equity, typically adding 40-60% over base salary.",
@@ -4830,9 +4830,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary governance objective of the Master Human Capital & Compensation Control Tower?",
           "options": [
-            "To force all employees to accept identical compensation regardless of role.",
-            "To guarantee that no employee ever leaves the company.",
-            "To eliminate all human resource personnel from the startup.",
+            "To execute an automated four-gate audit validating payroll tax filings, employee contract signatures, office space leases, and benefit plan enrollments.",
+            "To execute a manual annual review validating founder salaries, investor board fees, recruiter contracts, and employee satisfaction survey scores.",
+            "To execute an automated four-gate audit validating customer churn rates, sales pipeline coverage, product release dates, and support ticket volumes.",
             "To execute an automated four-gate audit validating option pool solvency, vesting integrity, talent calibration, and loaded workforce cost guardrails."
           ],
           "answer": 3,
@@ -4894,10 +4894,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Blanchard's Situational Leadership II model, what leadership style is prescribed for an employee at Development Level D2 (Low Competence, Low Commitment)?",
           "options": [
-            "Immediate termination without further developmental investment.",
-            "S4 Delegating (Complete autonomy with zero managerial oversight).",
+            "S1 Directing (High Directive, Low Supportive behavior to specify tasks and closely supervise execution).",
+            "S3 Supporting (Low Directive, High Supportive behavior to share decisions and encourage independence).",
             "S2 Coaching (High Directive, High Supportive behavior to clarify rationale and rebuild confidence).",
-            "S1 Directing (Issuing orders without explaining the underlying reasoning)."
+            "S4 Delegating (Low Directive, Low Supportive behavior to hand over responsibility and decision making)."
           ],
           "answer": 2,
           "why": "D2 'Disillusioned Learners' suffer from low competence and falling motivation; they require both intensive directive guidance to build skills and high supportive behavior to restore confidence.",
@@ -4933,10 +4933,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining characteristic of teams operating in Amy Edmondson's 'Learning & High-Performance Zone'?",
           "options": [
-            "Complete silence where junior employees never question executive leadership.",
+            "High psychological safety combined with low accountability for performance, enabling comfortable discussion and friendly consensus.",
             "High psychological safety combined with high accountability for performance, enabling bold experimentation and candid debate.",
-            "Zero accountability where deadlines are disregarded to prevent stress.",
-            "Brutal interpersonal criticism without personal empathy."
+            "Low psychological safety combined with high accountability for performance, enabling strict compliance and fear of errors.",
+            "Low psychological safety combined with low accountability for performance, enabling withdrawal and avoidance of any risk."
           ],
           "answer": 1,
           "why": "The Learning Zone occurs when psychological safety is high enough to take interpersonal risks while accountability remains high enough to drive world-class execution.",
@@ -4972,10 +4972,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is 'Ruinous Empathy' (High Care Personally, Low Challenge Directly) considered the most dangerous feedback trap in startup management?",
           "options": [
-            "Because managers withhold critical performance feedback to avoid temporary emotional discomfort, allowing preventable mistakes to compound until the employee is blindsided by termination.",
-            "Because it causes managers to shout profanities at employees during public meetings.",
-            "Because it leads to excessive executive stock option grants.",
-            "Because employees receive so much harsh criticism that they immediately resign."
+            "Because managers withhold critical feedback to avoid discomfort, letting preventable mistakes compound until the employee is blindsided by termination.",
+            "Because managers deliver harsh criticism without caring about the person, which causes talented employees to quit before any improvement is attempted.",
+            "Because managers give vague praise to cover political agendas, which leads employees to distrust all feedback and ignore every warning given.",
+            "Because managers share feedback in public settings to save time, which embarrasses employees and ends the working relationship at once."
           ],
           "answer": 0,
           "why": "Ruinous Empathy feels kind in the short term but is cruel in the long term, denying employees the actionable feedback required to improve and succeed.",
@@ -5011,9 +5011,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to J. Richard Hackman, what is the primary condition required for a group to be considered a 'Real Team'?",
           "options": [
-            "Having an informal group chat where anyone can join or leave at will.",
-            "Employing at least fifty engineers on a single project.",
-            "Requiring all team members to work in the same physical cubicle.",
+            "Open, rotating membership with loose task ownership and a shared sense of individual responsibility.",
+            "Large membership with clear reporting lines and defined individual performance targets per member.",
+            "Co-located membership with frequent social events and defined team-building budgets for members.",
             "Bounded, stable membership with clear task interdependency and defined collective responsibility."
           ],
           "answer": 3,
@@ -5051,10 +5051,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary governance objective of the Master Leadership & Team Governance Control Tower?",
           "options": [
-            "To eliminate all 1-on-1 meetings between managers and employees.",
-            "To enforce a rigid military chain of command across all startup departments.",
-            "To execute an automated four-gate audit verifying adaptive managerial matching, fearless psychological safety, radical candor coaching, and team structural efficacy.",
-            "To replace human executive leadership with automated bots."
+            "To execute an automated four-gate audit verifying employee payroll accuracy, vacation accruals, benefit enrollment, and recruiting pipeline health.",
+            "To execute a manual annual review verifying manager tenure, team headcount, office attendance, and department budget compliance each year.",
+            "To execute an automated four-gate audit verifying adaptive managerial matching, psychological safety, radical candor coaching, and team structural efficacy.",
+            "To execute an automated four-gate audit verifying product roadmap delivery, customer satisfaction, sales quota attainment, and churn rates."
           ],
           "answer": 2,
           "why": "The Master Leadership Control Tower provides rigorous governance ensuring that behavioral leadership, psychological safety, candid feedback, and team structure are optimized for exponential performance.",
@@ -5115,10 +5115,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key legal distinction between a director's Duty of Care and Duty of Loyalty?",
           "options": [
-            "Duty of Care relates to physical office safety; Duty of Loyalty relates to singing the company anthem.",
+            "Duty of Loyalty requires informed, diligent deliberation; Duty of Care prohibits self-dealing, conflicts of interest, and usurping corporate opportunities.",
             "Duty of Care requires informed, diligent deliberation; Duty of Loyalty prohibits self-dealing, conflicts of interest, and usurping corporate opportunities.",
-            "Duty of Care requires paying taxes; Duty of Loyalty requires working on weekends.",
-            "There is no difference; they are interchangeable colloquial terms."
+            "Duty of Care requires directors to guarantee profits for shareholders; Duty of Loyalty requires them to support management decisions without objection.",
+            "Duty of Care applies only to officers who manage the company daily; Duty of Loyalty applies only to outside directors who sit on the board."
           ],
           "answer": 1,
           "why": "Duty of Care mandates informed, prudent decision-making; Duty of Loyalty mandates that directors always act in the best interests of the company rather than personal gain.",
@@ -5154,10 +5154,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture capital investors require a 75% Preferred Supermajority vote on Protective Provisions?",
           "options": [
-            "To force all board meetings to be held at the investor's office.",
-            "To eliminate the need for common shareholders to vote on anything.",
-            "To prevent common shareholders from unilaterally selling the company, issuing senior stock, or altering corporate bylaws without investor consensus.",
-            "To guarantee that founders receive double their salary every year."
+            "To prevent preferred investors from selling their shares to competitors, converting to common stock, or exiting the board without founder consent.",
+            "To prevent management from paying salaries, signing customer contracts, or hiring executives without a vote of the preferred shareholders.",
+            "To prevent common shareholders from unilaterally selling the company, issuing senior stock, or amending the bylaws without investor consensus.",
+            "To prevent regulators from blocking financing rounds, approving mergers, or changing listing rules without a vote of the preferred holders."
           ],
           "answer": 2,
           "why": "Protective provisions grant preferred investors a collective veto over critical transactions that could dilute or compromise their equity rights.",
@@ -5193,10 +5193,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Directors & Officers (D&O) Liability Insurance essential for scaling venture-backed startups?",
           "options": [
-            "It replaces the need for paying corporate income taxes.",
-            "It guarantees that the startup's stock price will never decline.",
-            "It pays for directors' executive travel and luxury hotel expenses.",
-            "It shields board members and corporate officers from personal financial liability arising from shareholder lawsuits, regulatory investigations, or alleged fiduciary breaches."
+            "It shields the company from losses caused by data breaches, equipment failures, or natural disasters that interrupt its normal operations.",
+            "It guarantees directors and officers a fixed payout if the company is sold, goes bankrupt, or removes them from their positions.",
+            "It shields employees from workplace injuries, harassment claims, or wage disputes that arise from their regular company work.",
+            "It shields directors and officers from personal liability from shareholder lawsuits, regulatory investigations, or alleged fiduciary breaches."
           ],
           "answer": 3,
           "why": "D&O insurance protects the personal assets of directors and officers against legal defense costs and settlement liabilities arising from their corporate service.",
@@ -5233,10 +5233,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational rule regarding a Board Observer's role during formal Board of Directors meetings?",
           "options": [
-            "Observers can attend meetings and review confidential board packages, but hold strictly zero voting rights and can be excused during executive sessions.",
-            "Observers can cast deciding votes in the event of a tie.",
-            "Coupling Investor directly to unvalidated external state while disabling Rights across Information transitions.",
-            "Observers are required to chair all board meetings."
+            "Observers can attend meetings and review confidential board packages, but hold no voting rights and can be excused from executive sessions.",
+            "Observers can attend meetings and cast a tie-breaking vote, but cannot review confidential board packages and must leave executive sessions.",
+            "Observers can attend meetings and veto major decisions, but cannot speak during discussions and must sign the board minutes afterward.",
+            "Observers can attend meetings and review board packages, but hold one vote on routine matters and must be excused from votes on funding."
           ],
           "answer": 0,
           "why": "Board observers are non-voting attendees bound by confidentiality who have the right to listen and contribute, but hold zero formal corporate voting power.",
@@ -5273,10 +5273,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary governance objective of the Master Corporate Governance & Board Dynamics Control Tower?",
           "options": [
-            "To eliminate the board of directors entirely and operate with sole founder dictatorship.",
-            "To execute an automated four-gate audit verifying balanced board composition, supermajority voting integrity, statutory meeting compliance, and tiered investor information rights.",
-            "To make all company financial documents publicly available on the internet.",
-            "To replace corporate legal counsel with automated chatbots."
+            "To run an automated four-gate audit verifying executive compensation, equity vesting schedules, payroll tax filings, and benefit plan funding.",
+            "To run an automated four-gate audit verifying balanced board composition, supermajority voting, statutory meeting compliance, and investor information rights.",
+            "To run a manual annual review verifying the stock ledger, option grants, share certificates, and the accuracy of the cap table each year.",
+            "To run an automated four-gate audit verifying product roadmap delivery, customer satisfaction, sales pipeline coverage, and churn rates."
           ],
           "answer": 1,
           "why": "The Master Corporate Governance Control Tower provides quantitative legal governance ensuring board balance, voting thresholds, meeting compliance, and reporting hygiene.",
@@ -5338,9 +5338,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In an ISO 31000 5x5 Risk Matrix, what governance protocol is mandated for risks scoring in the 'Critical Severity' tier (scores 15 to 25)?",
           "options": [
             "Immediate executive escalation, active board oversight, and mandatory daily mitigation war room sprints.",
-            "Logging the item in an annual administrative review without notifying management.",
-            "Accepting the risk completely and ignoring it.",
-            "Deleting the risk from the company records to avoid alarming employees."
+            "Monthly review by the department head, with no board involvement and mitigation handled within normal budgets.",
+            "Quarterly reporting to the risk committee, with passive monitoring and mitigation scheduled for the next budget year.",
+            "Acceptance of the risk without further action, with annual review and mitigation only if losses actually occur."
           ],
           "answer": 0,
           "why": "Critical Severity risks represent existential threats capable of destroying the enterprise; they require immediate executive escalation and active board oversight.",
@@ -5377,10 +5377,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between 'Treating' a risk and 'Transferring' a risk under the 4T Taxonomy?",
           "options": [
-            "There is no difference; both mean paying insurance premiums.",
-            "Treating requires hiring doctors; Transferring requires moving to another country.",
-            "Treating eliminates the risk entirely; Transferring ignores the risk.",
-            "Treating implements internal technical controls and process redundancies; Transferring shifts financial liability to external third parties via insurance or vendor SLAs."
+            "Treating shifts financial liability to third parties through insurance or vendor SLAs; Transferring applies internal technical controls and redundancies.",
+            "Treating accepts the risk and monitors it with a budget reserve; Transferring eliminates the risk by ending the activity that creates it.",
+            "Treating applies internal controls to low risks only; Transferring applies internal controls to high risks only, by moving staff to new teams.",
+            "Treating applies internal technical controls and process redundancies; Transferring shifts financial liability to third parties through insurance or vendor SLAs."
           ],
           "answer": 3,
           "why": "Treating mitigates the risk through internal engineering controls; Transferring offloads financial or operational liability to third parties like insurers.",
@@ -5417,10 +5417,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of Key Risk Indicators (KRIs) compared to standard Key Performance Indicators (KPIs)?",
           "options": [
-            "KRIs measure how many sales calls were made last week.",
-            "KRIs are only used by tax auditors to calculate payroll taxes.",
-            "KRIs serve as forward-looking early-warning indicators that signal emerging vulnerabilities before losses occur, whereas KPIs measure trailing historical performance.",
-            "KRIs evaluate the physical speed of the company's delivery trucks."
+            "KRIs measure trailing losses that already happened in the past year, whereas KPIs are forward-looking indicators of emerging vulnerabilities.",
+            "KRIs are used only by the board to set risk appetite, whereas KPIs are used only by managers to measure the results of their own work.",
+            "KRIs are forward-looking early-warning indicators that signal emerging vulnerabilities before losses occur, whereas KPIs track past performance.",
+            "KRIs measure the monetary size of insured losses each quarter, whereas KPIs measure the number of risk events recorded by the company."
           ],
           "answer": 2,
           "why": "KRIs provide forward-looking predictive telemetry, alerting management to escalating risk exposure before it impacts enterprise operations.",
@@ -5458,10 +5458,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In disaster recovery architecture, what is the precise distinction between Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
           "options": [
-            "RTO measures cloud hosting costs; RPO measures software license fees.",
-            "RTO defines the maximum acceptable downtime duration to restore service; RPO defines the maximum tolerable data loss window measured backwards in time.",
-            "There is no difference; both measure how fast internet connections operate.",
-            "RTO measures financial revenue; RPO measures employee headcount."
+            "RTO is the maximum tolerable data loss window, measured backwards in time; RPO is the maximum acceptable downtime to restore service.",
+            "RTO is the maximum acceptable downtime to restore service; RPO is the maximum tolerable data loss window, measured backwards in time.",
+            "RTO is the time needed to detect an incident after it starts; RPO is the time needed to notify customers that service is restored.",
+            "RTO is the cost of restoring systems after a failure; RPO is the cost of the data that cannot be recovered after the failure."
           ],
           "answer": 1,
           "why": "RTO is the maximum clock time to restore operations; RPO is the maximum acceptable data loss interval resulting from a system failure.",
@@ -5499,10 +5499,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary governance objective of the Master Enterprise Risk Management Control Tower?",
           "options": [
-            "To execute an automated four-gate audit validating risk matrix calibration, 4T treatment effectiveness, KRI early-warning health, and disaster recovery resilience.",
-            "To eliminate all business risk so that the company never has to innovate.",
-            "To replace the CEO with an insurance claims adjuster.",
-            "To prevent the company from ever spending money on marketing."
+            "To run an automated four-gate audit validating risk matrix calibration, 4T treatment effectiveness, KRI early-warning health, and disaster recovery.",
+            "To run an automated four-gate audit validating insurance premiums paid, claim settlement times, broker contracts, and policy coverage limits held.",
+            "To run a manual annual review validating audit committee minutes, director attendance, compliance training, and conflict-of-interest forms filed.",
+            "To run an automated four-gate audit validating cyber attack counts, firewall rules, password policies, and penetration test results obtained."
           ],
           "answer": 0,
           "why": "The Master ERM Control Tower provides quantitative governance ensuring that corporate risks are systematically identified, treated, monitored, and resiliently mitigated.",
@@ -5564,10 +5564,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 5 Capstone synthesis, why is maintaining an unallocated ESOP reserve (e.g., 5.5% of the company) essential post-Series B?",
           "options": [
-            "To hide ownership from tax authorities.",
-            "To distribute all remaining shares as cash bonuses to the founders.",
-            "To ensure that no new employees can ever receive stock options.",
-            "To provide an equity reserve to recruit critical junior, mid-level, and replacement talent over the subsequent 18 months without triggering dilutive shareholder votes."
+            "To provide a cash reserve to pay critical junior, mid-level, and replacement talent over the next 18 months without raising new debt from lenders.",
+            "To provide shares for existing investors to buy over the next 18 months at a discount without triggering a new priced round of financing.",
+            "To provide a reserve of founder shares for repurchase over the next 18 months if cofounders leave, without triggering vesting acceleration.",
+            "To provide an equity reserve to recruit critical junior, mid-level, and replacement talent over the next 18 months without triggering dilutive shareholder votes."
           ],
           "answer": 3,
           "why": "Unallocated ESOP reserves provide the talent runway necessary to hire subsequent cohorts of engineering and operational staff without repeatedly amending the corporate charter.",
@@ -5605,10 +5605,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core operational outcome occurs when a team achieves both high psychological safety (>= 4.0/5.0) and a high Hackman effectiveness index (>= 80%)?",
           "options": [
-            "The squad operates as an elite collaborative unit in the Learning Zone, exhibiting fearless innovation, blameless post-mortems, and exponential delivery velocity.",
-            "The team ceases writing software and only attends social team-building retreats.",
-            "Employees refuse to follow any instructions from executive management.",
-            "Product development halts completely due to endless theoretical debates."
+            "The squad operates as an elite collaborative unit in the Learning Zone, with fearless innovation, blameless post-mortems, and fast delivery velocity.",
+            "The squad operates as a comfortable social unit in the Comfort Zone, with friendly meetings, avoided conflict, and slow delivery velocity.",
+            "The squad operates as a high-pressure unit in the Anxiety Zone, with strict targets, hidden mistakes, and uneven delivery velocity.",
+            "The squad operates as a disengaged unit in the Apathy Zone, with low effort, vague goals, and unpredictable delivery velocity over time."
           ],
           "answer": 0,
           "why": "High psychological safety combined with structural team effectiveness enables teams to take calculated interpersonal risks and execute with autonomous velocity.",
@@ -5646,10 +5646,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the 2:2:1 Board Composition Model (2 Founders, 2 Investors, 1 Independent) considered the gold standard in Series A/B governance?",
           "options": [
-            "It ensures that founders can unilaterally fire investors at any time.",
-            "It balances founder vision with investor fiduciary discipline, while an independent industry expert breaks deadlocks and provides objective strategic counsel.",
-            "It guarantees that venture capitalists control 100% of all company decisions.",
-            "It eliminates the need for holding formal board meetings."
+            "It gives investors a clear control majority over founder decisions, while an independent expert provides objective counsel on audits only.",
+            "It balances founder vision with investor fiduciary discipline, while an independent industry expert breaks deadlocks and provides objective counsel.",
+            "It gives founders a permanent control majority over investor decisions, while an independent expert votes with the founders on all matters.",
+            "It balances the interests of customers and employees on the board, while an independent expert represents the lenders and regulators."
           ],
           "answer": 1,
           "why": "The 2:2:1 structure ensures equitable power distribution, prevents single-party dominance, and introduces impartial industry expertise to resolve deadlocks.",
@@ -5687,10 +5687,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise risk management and business continuity planning, why must Disaster Recovery (RTO/RPO) plans be tested under simulated stress (such as Chaos Engineering)?",
           "options": [
-            "Because cloud providers shut down accounts that do not run chaos simulations.",
-            "To prove that cloud servers never fail under any circumstances.",
-            "Because untested disaster recovery plans frequently fail during real-world crises due to unreadable backups, network configuration drift, or failover script bugs.",
-            "Because insurance companies require employees to work on weekends."
+            "Because insurance policies require annual simulated outages before they pay any claims, regardless of how the recovery plan performs in them.",
+            "Because regulators require customers to be notified of every test, so frequent drills build trust in the brand and reduce complaints each year.",
+            "Because untested disaster recovery plans often fail in real crises due to unreadable backups, network configuration drift, or failover script bugs.",
+            "Because untested plans are cheaper to maintain than tested plans, so stress tests are done only to meet an audit checklist every year."
           ],
           "answer": 2,
           "why": "Chaos engineering and live failover rehearsals verify that automated multi-region backup systems function seamlessly before catastrophic real-world outages occur.",
@@ -5728,10 +5728,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary academic and operational significance of earning the MILESTONE_5_CAPSTONE_ORGANIZATIONAL_SOVEREIGNTY_CONFERRED accreditation?",
           "options": [
-            "It allows the founder to sell the company without paying any taxes.",
-            "It proves that the company will never face any competitors.",
-            "It replaces the need for hiring external legal counsel or financial auditors.",
-            "It certifies complete mastery over human capital architecture, behavioral leadership, corporate boardroom governance, and enterprise risk resilience, establishing an unshakeable institutional foundation for scaling."
+            "It certifies mastery of product-market fit, go-to-market strategy, pricing design, and sales operations as a foundation for rapid growth.",
+            "It certifies mastery of capital markets, IPO preparation, secondary sales, and public company reporting as a foundation for listing.",
+            "It certifies mastery of international expansion, transfer pricing, joint ventures, and foreign currency hedging as a foundation for scale.",
+            "It certifies mastery of human capital architecture, behavioral leadership, boardroom governance, and enterprise risk resilience as a foundation for scaling."
           ],
           "answer": 3,
           "why": "Milestone 5 Capstone accreditation certifies that a venture possesses the institutional, managerial, fiduciary, and risk-management maturity required to scale an enduring enterprise.",
@@ -5790,10 +5790,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which foreign entry mode provides the highest operational control and IP protection but demands the largest capital expenditure?",
           "options": [
-            "Turnkey Franchising.",
-            "Direct Exporting.",
+            "Licensing Agreement (Contractual License).",
+            "Equity Joint Venture (Shared Ownership).",
             "Wholly Owned Subsidiary (Greenfield WOS).",
-            "International Licensing."
+            "Direct Exporting (Arm's Length Sales)."
           ],
           "answer": 2,
           "why": "A Wholly Owned Subsidiary provides 100% operational autonomy and absolute IP protection, but requires the largest capital outlay.",
@@ -5828,10 +5828,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Pankaj Ghemawat's CAGE Distance Framework, what does the 'A' dimension represent?",
           "options": [
-            "Automated Technology Infrastructure.",
+            "Accounting and Pricing Distance (tax rates, wage levels, cost of capital, and exchange rate differences).",
             "Administrative and Political Distance (legal traditions, regulatory compliance, trade pacts, and currency unions).",
-            "Accounting Standards Variance.",
-            "Advertising Media Penetration."
+            "Attitude and Preference Distance (consumer tastes, brand loyalty, product habits, and spending patterns).",
+            "Access and Logistics Distance (port capacity, shipping routes, road quality, and warehouse availability)."
           ],
           "answer": 1,
           "why": "Administrative distance measures differences in legal institutions, regulatory frameworks, trade agreements, and political relationships between countries.",
@@ -5866,9 +5866,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under OECD guidelines and IRC Section 482, what is the core requirement of the Arm's Length Principle (ALP)?",
           "options": [
             "Controlled intercompany transactions must be priced as if they occurred between independent, unrelated parties under identical free-market conditions.",
-            "Subsidiaries must pay 0% tax to maximize corporate profits.",
-            "All international revenues must be recognized exclusively in the home country.",
-            "Transfer prices must always match the parent company's domestic retail prices."
+            "Controlled intercompany transactions must be priced at cost with no markup, so that profit arises only on sales to third parties outside the group.",
+            "Controlled intercompany transactions must be priced at the same rate in every country, so that tax authorities see one global price list.",
+            "Controlled intercompany transactions must be priced at a discount to the market, so that the foreign subsidiary reports a competitive margin."
           ],
           "answer": 0,
           "why": "The Arm's Length Principle mandates that related-party transactions must mirror open-market commercial terms between independent enterprises.",
@@ -5903,9 +5903,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of entering into an FX Forward contract for foreign currency receivables?",
           "options": [
-            "It eliminates the need to pay invoices to foreign suppliers.",
-            "It converts all debt obligations into equity.",
-            "It guarantees that the foreign currency will appreciate in value.",
+            "It locks in the best of the future exchange rates, capturing upside currency moves while limiting downside losses to the premium paid.",
+            "It converts the receivable into home currency today at the spot rate, eliminating the delay in cash collection from foreign customers.",
+            "It guarantees that customers pay on time at the invoice price, eliminating default risk and protecting operating cash flows abroad.",
             "It locks in a guaranteed future exchange rate, eliminating downside currency volatility and protecting operating cash flows."
           ],
           "answer": 3,
@@ -5940,10 +5940,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mandate of OECD BEPS Pillar Two for multinational enterprises?",
           "options": [
-            "Restricting international wire transfers between subsidiary hubs.",
-            "Abolishing all corporate taxes globally.",
-            "Enforcing a mandatory 15.0% Global Minimum Corporate Tax rate backed by Top-Up Taxes on low-tax jurisdictions.",
-            "Forcing companies to incorporate exclusively in offshore tax havens."
+            "A voluntary 25.0% Global Minimum Corporate Tax rate backed by Treaty Rebates for low-tax jurisdictions.",
+            "A mandatory 15.0% digital services tax on revenue earned by large technology firms in market jurisdictions.",
+            "A mandatory 15.0% Global Minimum Corporate Tax rate backed by Top-Up Taxes on low-tax jurisdictions.",
+            "A mandatory 5.0% Global Minimum Withholding Tax backed by Exit Taxes on profits moved from subsidiaries."
           ],
           "answer": 2,
           "why": "OECD BEPS Pillar Two establishes a 15% global minimum corporate tax to neutralize profit shifting to low-tax jurisdictions.",
@@ -6004,10 +6004,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do corporate joint ventures require formal capital call provisions in their shareholder agreements?",
           "options": [
-            "To transfer all intellectual property to government regulators.",
+            "To allow any partner to withdraw its invested capital on demand, preventing funding commitments from lasting beyond one budget cycle.",
             "To obligate partners to fund future capital expenditures pro-rata, preventing funding shortfalls or unauthorized dilution.",
-            "To avoid filing annual financial statements.",
-            "To eliminate the need for board meetings."
+            "To require the manager to fund all expenditures from retained profits, preventing partners from contributing additional capital.",
+            "To oblige lenders to advance new money to the venture on request, preventing a funding shortfall or a default under the facility."
           ],
           "answer": 1,
           "why": "Capital call provisions ensure that all joint venture partners are legally bound to fund budgeted capital requirements proportionally.",
@@ -6042,10 +6042,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a joint venture cash flow distribution waterfall, what is the purpose of a 'Preferred Return Hurdle'?",
           "options": [
-            "To eliminate corporate tax liabilities on dividend distributions.",
-            "To convert equity investments into subordinated junk debt.",
-            "To prioritize paying partners an agreed percentage return on their invested capital before splitting residual profits.",
-            "To guarantee that the smaller partner receives 100% of all profits forever."
+            "To pay the manager an agreed percentage of revenue before capital is returned to the partners of the venture.",
+            "To pay partners their invested capital back in full before any return on it is calculated for them.",
+            "To pay partners an agreed percentage return on invested capital before residual profits are split among them.",
+            "To split residual profits equally among the partners before any distribution of capital returns is made."
           ],
           "answer": 2,
           "why": "A preferred hurdle guarantees that investors receive a minimum baseline return on capital before excess profits are distributed.",
@@ -6080,10 +6080,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a 'Russian Roulette' deadlock clause protect joint venture partners from being low-balled?",
           "options": [
-            "Because all company assets are liquidated at public auction.",
-            "Because the partner with lower equity is automatically granted free shares.",
-            "Because government antitrust regulators set the transaction price.",
-            "Because the recipient of the buyout offer has the unilateral right to either accept the buyout or reverse the offer to buy out the initiator at the exact same price."
+            "The recipient of the buyout offer must accept the price named, but may demand a second independent valuation within thirty days.",
+            "The initiator must buy out the recipient at the price named, but may withdraw the offer if the recipient's lender objects to the sale.",
+            "The recipient of the buyout offer may reject it and force a public auction of the venture, with both partners barred from bidding.",
+            "The recipient of the buyout offer has the unilateral right to either accept it or reverse it and buy out the initiator at the same price."
           ],
           "answer": 3,
           "why": "Russian Roulette forces fair valuation because any price named by the initiator can be turned back against them to buy their own shares.",
@@ -6118,10 +6118,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary strategic trade-off of distributing through an OEM alliance partner rather than direct sales?",
           "options": [
-            "Surrendering a revenue-share margin percentage in exchange for instant access to a vast, pre-existing enterprise customer base.",
-            "Giving up complete ownership of core source code.",
-            "Accepting 100% bad debt risk on all customer contracts.",
-            "Eliminating all future product roadmap control."
+            "Surrendering a revenue-share margin in exchange for instant access to a vast, pre-existing enterprise customer base.",
+            "Gaining a higher margin per sale in exchange for slower access to a small number of customers the company reaches directly.",
+            "Surrendering ownership of the product code in exchange for the partner's funding of the research and development team.",
+            "Surrendering the brand name entirely in exchange for guaranteed minimum orders that rise with the number of partner stores."
           ],
           "answer": 0,
           "why": "Distribution alliances trade partner margin for massive sales volume and rapid market penetration without linear direct CAC scaling.",
@@ -6157,10 +6157,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the conferral of MASTER_STRATEGIC_ALLIANCE_CERTIFIED_NOMINAL signify?",
           "options": [
-            "Government approval to monopolize the entire national market.",
-            "Complete mathematical and contractual validation of capital funding, preferred return waterfalls, deadlock buy-sell protocols, and distribution moats.",
-            "An exemption from all federal and state tax liabilities.",
-            "The immediate automatic acquisition of all alliance partners."
+            "Mathematical and contractual validation of shareholder voting, option pool sizing, vesting schedules, and board observer rights for founders.",
+            "Mathematical and contractual validation of capital funding, preferred return waterfalls, deadlock buy-sell protocols, and distribution moats.",
+            "Legal validation of patent filings, trademark registrations, licensing royalties, and trade secret protections across all markets served.",
+            "Financial validation of lender covenants, interest coverage, working capital cycles, and hedging contracts across all markets served."
           ],
           "answer": 1,
           "why": "The certification confirms that all financial, legal, and operational governance gates for joint ventures and strategic alliances are fully satisfied.",
@@ -6223,10 +6223,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In M&A financial due diligence, what is the primary purpose of a Quality of Earnings (QoE) report?",
           "options": [
-            "To normalize reported EBITDA by stripping out non-recurring income, owner personal expenses, and pro-forma distortions to reflect true sustainable cash-generating capacity.",
-            "To calculate the total amount of income tax owed to foreign governments.",
-            "To evaluate the graphic design quality of the company's marketing brochures.",
-            "To replace the need for an independent audited balance sheet."
+            "To normalize reported EBITDA by stripping out non-recurring income, owner personal expenses, and pro-forma distortions to reflect true sustainable earnings.",
+            "To confirm the audited balance sheet by counting inventory, verifying receivables, and testing the existence of fixed assets at the target.",
+            "To value the target's intellectual property by modeling patent royalties, brand premiums, and the lifetime value of the customer base.",
+            "To forecast post-merger synergies by estimating cost savings, revenue cross-sells, and one-time integration costs after closing the deal."
           ],
           "answer": 0,
           "why": "A QoE report strips away non-operational and non-recurring items to establish the baseline economic earning power of an acquisition target.",
@@ -6262,9 +6262,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary covenant risk of funding an acquisition with excessive leverage turns (e.g. > 5.5x EBITDA)?",
           "options": [
-            "All employees lose their stock options immediately.",
-            "Lenders are forced to forgive all principal obligations.",
-            "The company is automatically dissolved by the stock exchange.",
+            "High interest rates reduce the equity purchase price, which lowers returns for the sponsor and risks a failed bid for the target.",
+            "High lender fees accrue at closing, which reduce the cash available to the target and risk a delay in the integration plan.",
+            "High debt balances raise the target's credit rating, which increases the cost of borrowing and risks refinancing at worse terms.",
             "High debt service obligations restrict cash flow flexibility and risk loan default during macroeconomic revenue downturns."
           ],
           "answer": 3,
@@ -6301,10 +6301,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What two metrics do private equity investment committees universally evaluate to judge LBO investment attractiveness?",
           "options": [
-            "Customer Net Promoter Score and Glassdoor Rating.",
-            "Days Sales Outstanding and Depreciation Schedules.",
+            "Return on Equity (ROE) and Price to Earnings (P/E) multiple ratio.",
+            "Earnings per Share (EPS) and Dividend Yield on invested capital.",
             "Multiple on Invested Capital (MOIC) and Internal Rate of Return (IRR).",
-            "Website Pageviews and Social Media Followers."
+            "Net Promoter Score (NPS) and Customer Acquisition Cost (CAC)."
           ],
           "answer": 2,
           "why": "MOIC measures absolute cash multiple returned while IRR measures the annualized compounding rate of the equity investment.",
@@ -6341,10 +6341,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a buy-and-build rollup strategy, what is 'Multiple Arbitrage'?",
           "options": [
-            "Trading shares between different foreign stock exchanges to profit from currency differences.",
-            "The value created by acquiring smaller add-on targets at low valuation multiples (e.g. 5x) and packaging them into a larger platform that trades at a higher multiple (e.g. 10x).",
-            "Artificially inflating revenue by selling products to subsidiary companies.",
-            "Refinancing senior debt with government subsidies."
+            "The value created by buying large platforms at high multiples (e.g. 10x) and splitting them into smaller businesses that trade at lower multiples (e.g. 5x).",
+            "The value created by buying small add-ons at low multiples (e.g. 5x) and packaging them into a larger platform that trades at a higher multiple (e.g. 10x).",
+            "The value created by buying targets with debt at a low interest rate (e.g. 5%) and refinancing them at a higher valuation multiple (e.g. 10x).",
+            "The value created by paying with stock valued at a high multiple (e.g. 10x) to buy targets that report the same multiple after the deal."
           ],
           "answer": 1,
           "why": "Multiple arbitrage captures the valuation spread between fragmented sub-scale businesses and scaled institutional platforms.",
@@ -6382,10 +6382,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the significance of earning MA_AND_LBO_ACQUISITION_ARCHITECTURE_CERTIFIED_NOMINAL accreditation?",
           "options": [
-            "It certifies institutional mastery over acquisition financial due diligence, debt capacity modeling, private equity returns hurdles, and synergistic rollup integration.",
-            "It permits an enterprise to bypass all antitrust regulatory filings.",
-            "It guarantees that zero integration friction will ever occur after closing.",
-            "It replaces the need for executing definitive Stock Purchase Agreements."
+            "It certifies mastery of acquisition financial due diligence, debt capacity modeling, private equity returns hurdles, and rollup integration.",
+            "It certifies mastery of public offering mechanics, underwriter economics, listing standards, and post-IPO reporting duties for issuers.",
+            "It certifies mastery of seed fundraising, convertible note terms, option pool sizing, and early-stage valuation methods for founders.",
+            "It certifies mastery of organic growth planning, pricing design, channel strategy, and sales capacity modeling for scale-ups."
           ],
           "answer": 0,
           "why": "The accreditation certifies that an organization has mastered the mathematical, structural, and strategic disciplines required to execute accretive acquisitions.",
@@ -6448,10 +6448,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary capital markets purpose of the standard 15% 'Greenshoe' overallotment option granted to IPO underwriters?",
           "options": [
-            "To eliminate all underwriting commissions.",
-            "To prevent retail investors from purchasing shares.",
-            "To transfer executive voting control to the stock exchange.",
-            "To allow underwriters to stabilize the stock price post-listing by covering naked short positions without taking directional market risk."
+            "To let the issuer raise extra capital after listing by selling additional shares at a premium to the offer price in the open market.",
+            "To let early investors sell additional shares during the lockup period at the offer price without affecting the stock price.",
+            "To let underwriters keep unsold shares for their own accounts after listing and speculate on the price rise without any hedging.",
+            "To let underwriters stabilize the stock price after listing by covering naked short positions without taking directional market risk."
           ],
           "answer": 3,
           "why": "The Greenshoe option gives underwriters price-stabilization tools in the secondary market, protecting the stock from plunging below the offer price.",
@@ -6488,10 +6488,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an IPO, what is the crucial structural difference between 'Primary Shares' and 'Secondary Shares'?",
           "options": [
-            "Primary shares are newly issued shares whose proceeds go to the company treasury; secondary shares are existing shares sold by early shareholders whose proceeds go to those selling investors.",
-            "Primary shares carry no voting rights; secondary shares carry 100 votes.",
-            "Primary shares are sold only to retail investors; secondary shares are sold only to foreign banks.",
-            "Primary shares do not dilute existing ownership; secondary shares cause 100% dilution."
+            "Primary shares are newly issued shares with proceeds to the company; secondary shares are existing shares sold by early holders with proceeds to those sellers.",
+            "Primary shares are sold to retail investors with proceeds to the company; secondary shares are sold to institutions with proceeds to the underwriters.",
+            "Primary shares are existing shares sold by founders with proceeds to them; secondary shares are newly issued shares with proceeds to the company.",
+            "Primary shares carry voting rights and are sold on the first day; secondary shares carry no votes and are sold after the lockup period ends."
           ],
           "answer": 0,
           "why": "Primary shares create new equity capital for corporate expansion, whereas secondary shares provide personal liquidity to existing shareholders.",
@@ -6527,10 +6527,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional investment bankers target a modest 10% to 20% 'First-Day IPO Pop' rather than zero pop or a 100% surge?",
           "options": [
-            "A pop greater than 20% triggers automatic SEC cancellation of the IPO.",
-            "A 10-20% pop generates positive market momentum and rewards institutional anchor buyers without leaving excessive capital on the table for the corporate issuer.",
-            "Zero pop results in automatic delisting by Nasdaq.",
-            "Investment banks only receive their gross spread fee if the pop exceeds 50%."
+            "A 10-20% pop proves that the shares were priced at fair value, so the issuer and underwriters are both paid exactly their correct amounts.",
+            "A 10-20% pop builds market momentum and rewards institutional anchor buyers without leaving excessive capital on the table for the issuer.",
+            "A 10-20% pop is mandated by the exchange listing rules, so a price rise above 20% requires the issuer to restart the whole offering.",
+            "A 10-20% pop covers the underwriting fee, so the issuer receives net proceeds equal to the offer price with no loss to investors."
           ],
           "answer": 1,
           "why": "A modest pop signals strong investor demand and creates favorable market sentiment without depriving the issuer of substantial primary capital.",
@@ -6566,10 +6566,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational mandate of Section 404 of the Sarbanes-Oxley Act (SOX 404) for publicly traded corporations?",
           "options": [
-            "Executive salaries must be capped at $100,000 annually.",
-            "All intellectual property must be open-sourced to the public.",
-            "Management and independent auditors must document, test, and formally certify the adequacy of Internal Controls over Financial Reporting (ICFR).",
-            "The company must grant free shares to all citizens."
+            "Management and independent auditors must disclose, test, and certify the adequacy of executive stock option grants and insider trades.",
+            "Management and independent auditors must document, test, and certify the adequacy of cyber security controls over customer personal data.",
+            "Management and independent auditors must document, test, and certify the adequacy of Internal Controls over Financial Reporting (ICFR).",
+            "Management and the audit committee must document, test, and certify the adequacy of the board's compliance with exchange listing rules."
           ],
           "answer": 2,
           "why": "SOX 404 requires rigorous internal controls to prevent accounting fraud, financial misstatements, and audit failures in public corporations.",
@@ -6606,10 +6606,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is certified by the IPO_AND_CAPITAL_MARKETS_ARCHITECTURE_CERTIFIED_NOMINAL credential?",
           "options": [
-            "An absolute guarantee that the stock price will double within 30 days.",
-            "Immunity from all future quarterly SEC Form 10-Q reporting obligations.",
-            "Unrestricted insider selling on day one without any lock-up agreements.",
-            "Complete institutional readiness across underwriting syndicate economics, exchange-compliant float sizing, pricing discipline, and SOX 404 governance."
+            "Institutional readiness across seed funding terms, convertible note mechanics, option pool design, and early-stage valuation discipline.",
+            "Institutional readiness across merger due diligence, leveraged financing, synergy modeling, and post-acquisition integration discipline.",
+            "Institutional readiness across international expansion, transfer pricing, currency hedging, and foreign subsidiary governance rules.",
+            "Institutional readiness across underwriting syndicate economics, exchange-compliant float sizing, pricing discipline, and SOX 404 governance."
           ],
           "answer": 3,
           "why": "The credential certifies that an enterprise possesses the financial scale, legal structures, and governance rigor required to list and trade on public capital markets.",
@@ -6672,10 +6672,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate finance advantage of a Sum-of-the-Parts (SOTP) valuation for a multi-division holding company?",
           "options": [
-            "It allows subsidiaries to ignore local labor laws.",
-            "It values each distinct operating division against its specific industry peer multiples, unlocking premium valuations rather than suffering a generic conglomerate discount.",
-            "It converts all parent company equity into government bonds.",
-            "It eliminates the need to report consolidated group revenue."
+            "It values the whole holding company with one blended multiple, avoiding disputes between divisions over the choice of peer group.",
+            "It values each division against its own industry peer multiples, unlocking premium valuations rather than a generic conglomerate discount.",
+            "It values each division at the book value of its assets, avoiding the use of market multiples that can swing with sentiment.",
+            "It values each division by discounting its own cash flows at the holding company's cost of debt, avoiding any reference to peers."
           ],
           "answer": 1,
           "why": "SOTP valuation prevents high-margin divisions (e.g. software) from being dragged down by lower multiples of capital-intensive divisions.",
@@ -6712,10 +6712,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do late-stage founders achieve generational personal liquidity without surrendering corporate control during secondary sales?",
           "options": [
-            "By selling the entire company to a private equity firm.",
-            "By transferring all corporate shares to anonymous offshore bank accounts.",
-            "By implementing Dual-Class Voting architectures, converting only the economic shares being sold into single-vote Class A stock while retaining super-voting Class B shares.",
-            "By borrowing money from employees without paying it back."
+            "By using a Poison Pill, issuing new shares at a discount to every holder except the founder when any outside party buys a large stake.",
+            "By using Staggered Board terms, electing only a third of the directors each year so that outside holders cannot replace the board quickly.",
+            "By using Dual-Class Voting, converting only the economic shares being sold into single-vote Class A stock while retaining super-voting Class B shares.",
+            "By using a Voting Trust, transferring all of the founder's shares to a trustee who sells them for cash on a fixed monthly schedule."
           ],
           "answer": 2,
           "why": "Dual-class stock decouples economic ownership from voting power, allowing founders to sell equity for cash while keeping voting control.",
@@ -6754,10 +6754,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to institutional endowment theory, what condition must be satisfied for a family office endowment to achieve Perpetual Growth?",
           "options": [
-            "The family office must avoid paying any salaries to investment staff.",
-            "Treating Family and Office as interchangeable constants rather than verifying Endowment at each step.",
-            "100% of the portfolio must be held in cash.",
-            "The portfolio's expected real return (nominal return minus inflation) must strictly exceed its annual spending and grant distribution rate."
+            "The portfolio's expected nominal return (before inflation) must exceed its annual management fees and trustee compensation costs each year.",
+            "The portfolio's expected real return (nominal return minus inflation) must equal zero after its annual spending and grant distribution.",
+            "The portfolio's expected volatility must stay below its annual spending and grant distribution rate in every market scenario.",
+            "The portfolio's expected real return (nominal return minus inflation) must exceed its annual spending and grant distribution rate."
           ],
           "answer": 3,
           "why": "If real returns exceed spending, the principal grows in purchasing power perpetually; if spending exceeds real return, the principal eventually depletes.",
@@ -6794,10 +6794,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary estate planning function of establishing an Irrevocable Dynasty Trust in sovereign wealth management?",
           "options": [
-            "To hold family equity in perpetuity across generations without triggering catastrophic estate or generation-skipping transfer taxes upon each succession.",
-            "To allow children to liquidate the operating company without board approval.",
-            "To evade all public company reporting requirements.",
-            "To eliminate the need for having a board of directors."
+            "To hold family equity in perpetuity across generations without triggering catastrophic estate or generation-skipping transfer taxes on each succession.",
+            "To let the grantor revoke the trust at any time and reclaim the family equity, while shielding it from the creditors of the heirs.",
+            "To pass family equity outright to the next generation at the grantor's death, with a step-up in basis that removes all taxes on succession.",
+            "To hold family equity only until the youngest beneficiary reaches age 25, then distribute it free of estate or generation-skipping taxes."
           ],
           "answer": 0,
           "why": "Dynasty trusts remove assets from the taxable estate, preserving family wealth across centuries without recurring 40% estate tax confiscation.",
@@ -6835,10 +6835,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does earning the SOVEREIGN_VENTURE_EMPIRE_GRAND_CAPSTONE_CERTIFIED_NOMINAL accreditation represent?",
           "options": [
-            "A guarantee that no competitor will ever enter the market.",
-            "The definitive mastery of enterprise creation from zero to multi-billion-dollar scale, synthesizing ideation, governance, capital markets, and multi-generational legacy stewardship.",
-            "An award granted automatically to anyone who reads a business book.",
-            "A license to avoid all environmental regulations."
+            "Mastery of a single business function in a mature company, synthesizing budgeting, forecasting, reporting, and cost control practice.",
+            "Mastery of enterprise creation from zero to multi-billion scale, synthesizing ideation, governance, capital markets, and legacy stewardship.",
+            "Mastery of venture investing from fund formation to exit, synthesizing sourcing, diligence, portfolio support, and limited partner reporting.",
+            "Mastery of public company management from listing to maturity, synthesizing disclosure, investor relations, audit, and buyback policy."
           ],
           "answer": 1,
           "why": "This apex certification validates comprehensive mastery over the entire entrepreneurial lifecycle, from initial validation to sovereign global conglomerate stewardship.",
@@ -6904,10 +6904,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under corporate statutory documentation, why do early-stage seed startups utilize convertible promissory notes with valuation caps rather than issuing direct preferred equity?",
           "options": [
-            "Because commercial banks in Delaware and India legally prohibit startups from selling equity shares during their first five years.",
-            "Because convertible notes require zero corporate authorization from the board of directors and can be executed without shareholder knowledge.",
-            "To defer establishing a definitive equity valuation until institutional Series A metrics are proven, avoiding down-round signaling risks while granting early investors downside debt seniority and upside equity expansion.",
-            "Because convertible notes eliminate all future dilution for founders and guarantee that common stock is never split."
+            "To avoid paying legal fees on a priced round, because convertible notes need no documentation or investor rights and so cost the startup nothing to issue.",
+            "To give founders full voting control until the note matures, because noteholders hold debt and so cannot receive any board seat or information rights.",
+            "To defer a definitive equity valuation until Series A metrics are proven, avoiding down-round signaling risk while giving early investors debt seniority and upside conversion.",
+            "To lock in a lower valuation for investors today, because convertible notes convert at the seed price regardless of what the Series A round is priced at."
           ],
           "answer": 2,
           "why": "Valuation deferral protects early-stage startups from mispricing equity while giving seed investors debt seniority and conversion sweeteners (cap and discount) at the Series A round.",
@@ -6976,10 +6976,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture finance standards strongly favor simple annual interest over compounding interest on early-stage convertible notes?",
           "options": [
-            "Because compounding interest penalizes the startup for taking time to build defensible product value, generating excessive phantom debt that increases founder dilution upon equity conversion.",
-            "Because compound interest is strictly illegal under the United States Uniform Commercial Code for any loan under $5,000,000.",
-            "Because simple interest notes never convert into preferred equity shares.",
-            "Because seed investors are prohibited by securities law from earning any return on invested capital."
+            "Because compounding interest penalizes the startup for the time needed to build product value, creating phantom debt that increases founder dilution on conversion.",
+            "Because compounding interest is prohibited by usury laws for notes held by venture investors, creating legal risk that voids the conversion terms.",
+            "Because compounding interest requires the startup to pay cash each quarter, creating a burden that shortens runway before the Series A round.",
+            "Because compounding interest raises the valuation cap automatically with time, creating a higher Series A price and reducing the noteholders' stake."
           ],
           "answer": 0,
           "why": "Simple interest is standard practice because compounding interest unfairly penalizes founders for normal product-market iteration cycles, creating unnecessary dilutive overhang.",
@@ -7014,10 +7014,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance purpose of establishing a high capital hurdle (e.g., $1,000,000+) in a Qualified Equity Financing (QEF) definition?",
           "options": [
-            "To mandate that the startup immediately pay cash bonuses to all corporate officers.",
-            "To ensure that only foreign sovereign wealth funds are allowed to invest in the Series A round.",
-            "To force all convertible noteholders to surrender 50% of their investment as a penalty.",
-            "To prevent founders from forcing noteholders to convert their senior debt into illiquid equity based on an unverified, token equity round raised at an artificial vanity valuation."
+            "To stop investors forcing the startup to repay notes early through a large equity round that exceeds the maturity date of the notes.",
+            "To stop noteholders blocking a follow-on round through a veto on any equity financing that is raised below the valuation cap amount.",
+            "To stop founders raising a large equity round at a low valuation, because the noteholders must then receive cash repayment in full.",
+            "To stop founders forcing noteholders to convert senior debt into illiquid equity through a token equity round at an artificial vanity valuation."
           ],
           "answer": 3,
           "why": "The QEF hurdle ensures that automatic conversion only occurs when an arm's-length institutional lead investor has rigorously priced and validated the company's equity value with substantial new capital.",
@@ -7052,10 +7052,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Note Stacking Nightmare' anti-pattern destroy founder common equity at Series A closing?",
           "options": [
-            "By legally converting all founder common shares into non-voting debt liabilities.",
-            "By requiring founders to personally repay noteholder principal out of their private personal savings accounts.",
-            "By issuing multiple tranches of uncoordinated convertible notes with low valuation caps that convert simultaneously at steep discounts, forcing common founders to absorb massive cumulative dilution prior to lead investor entry.",
-            "By automatically dissolving the corporate charter under Delaware General Corporation Law."
+            "Issuing a single large convertible note with a high cap that converts at the Series A price, forcing the lead investor to absorb dilution from the note.",
+            "Issuing several coordinated SAFEs with a common cap that convert after the lead investor, shifting dilution from founders to the new preferred holders.",
+            "Issuing several uncoordinated convertible notes with low caps that convert together at steep discounts, so founders absorb massive dilution before the lead enters.",
+            "Issuing several convertible notes with long maturities that are repaid in cash at the Series A closing, draining the money raised by the lead investor."
           ],
           "answer": 2,
           "why": "Uncoordinated note stacking causes multiple debt tranches to convert at steep discounts simultaneously, shifting substantial equity to early noteholders and diluting founders far beyond initial expectations.",
@@ -7116,10 +7116,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary mathematical and strategic advantage of the Y Combinator Post-Money SAFE compared to legacy pre-money convertible instruments?",
           "options": [
-            "It automatically transfers voting control of the board of directors to angel investors upon signing.",
-            "It exempts the startup from filing corporate income tax returns in Delaware and California.",
-            "It legally obligates the startup to repay the entire investment with 15% annual cash interest after 12 months.",
-            "It freezes and guarantees the investor's exact percentage ownership upfront (Investment / Post-Money Cap), eliminating the uncoordinated dilution ambush for founders and earlier investors."
+            "It fixes the investor's ownership only after the Series A prices, because the post-money cap is applied to the pre-money valuation of that round.",
+            "It adds an interest rate and maturity date to the investment, giving the investor a repayment claim if no priced round ever happens at all.",
+            "It lets the investor choose between the cap and the Series A price, giving the founders fixed ownership that the next round cannot dilute.",
+            "It fixes the investor's exact ownership upfront (Investment / Post-Money Cap), eliminating the uncoordinated dilution ambush for founders and earlier investors."
           ],
           "answer": 3,
           "why": "Post-money SAFEs fix the investor's ownership fraction immediately upon check clearance, removing dilution ambiguity and preventing the pre-money SAFE stacking trap.",
@@ -7154,10 +7154,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do corporate charters authorize shadow 'Series A-SAFE Preferred Stock' when converting SAFEs at a valuation cap lower than the Series A headline price?",
           "options": [
-            "To match the liquidation preference per share exactly to the lower conversion price paid, preventing SAFE holders from receiving an unfair multi-dollar liquidation preference windfall.",
-            "Because statutory securities law strictly prohibits preferred shareholders from having voting rights.",
-            "To force all SAFE investors to surrender their shares back to the company without compensation.",
-            "To allow commercial banks to place second-lien mortgages on the startup intellectual property."
+            "To match the liquidation preference per share to the lower conversion price paid, preventing SAFE holders from receiving an unfair liquidation preference windfall.",
+            "To let SAFE holders vote on Series A matters with the same power per share as the new lead investor, preventing unfair voting dilution for them.",
+            "To give SAFE holders a higher liquidation preference than the Series A investor, preventing the SAFE holders from losing the benefit of the cap.",
+            "To protect founders' common stock from conversion, preventing SAFE holders from receiving shares in the same class as the new Series A investors."
           ],
           "answer": 0,
           "why": "Shadow Series A-SAFE Preferred shares ensure that liquidation preferences match actual invested cash per share rather than inheriting the higher headline Series A liquidation preference.",
@@ -7192,10 +7192,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do incoming institutional Series A lead venture firms frequently object to 'Super-Pro-Rata' rights previously granted to seed investors?",
           "options": [
-            "Because seed investors are legally forbidden from investing in subsequent priced equity rounds.",
-            "Because super-pro-rata rights allow seed funds to purchase a larger share of Series A than their pro-rata holding, starving the lead VC of their mandatory 20% to 25% ownership target.",
-            "Because super-pro-rata rights make it illegal for the company to issue employee stock options.",
-            "Because super-pro-rata rights require the company to pay annual cash dividends to seed investors."
+            "Because super-pro-rata rights let seed funds block the Series A price, starving the lead VC of the chance to set a valuation of its own.",
+            "Because super-pro-rata rights let seed funds buy more of Series A than their pro-rata share, starving the lead VC of its 20% to 25% ownership target.",
+            "Because super-pro-rata rights let seed funds convert at the cap, starving the lead VC of the lower share price it expects from a new round.",
+            "Because super-pro-rata rights force the lead VC to buy seed shares, starving the lead VC of the cash it plans to invest in the new round."
           ],
           "answer": 1,
           "why": "Super-pro-rata rights cannibalize the incoming lead investor's ownership allocation, creating structural term sheet friction that can kill the financing round.",
@@ -7230,10 +7230,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a post-money SAFE regime with multiple stacked tranches, who absorbs all the dilution caused by issuing subsequent SAFEs?",
           "options": [
-            "The incoming Series A lead venture capital firm, who must absorb all seed dilution in the post-money.",
-            "The Delaware Secretary of State through statutory equity indemnity pools.",
-            "Existing common shareholders (the founders and employee option pool), because earlier post-money SAFE holders are contractually insulated from dilution by subsequent SAFEs.",
-            "All SAFEs absorb dilution equally in proportion to their investment size."
+            "Earlier post-money SAFE holders, because each new SAFE reduces their fixed percentage while founders keep their ownership untouched by later SAFEs.",
+            "All holders equally, including founders and SAFE holders, because every new SAFE dilutes the whole cap table in proportion to its ownership.",
+            "Existing common shareholders (founders and the option pool), because earlier post-money SAFE holders are contractually insulated from dilution by later SAFEs.",
+            "The incoming Series A investors, because SAFEs convert at the Series A closing and so reduce the percentage that the new lead acquires."
           ],
           "answer": 2,
           "why": "Post-money SAFEs lock investor percentages against the post-money cap, meaning every new SAFE tranche dilutes common founders exclusively.",
@@ -7268,10 +7268,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Post-Money SAFE Option Pool Wipeout' anti-pattern plunge founders into minority equity ownership?",
           "options": [
-            "By allowing angel investors to seize company assets through mechanics' liens without court approval.",
-            "By legally converting all founder common shares into promissory debt notes with mandatory 20% interest.",
-            "By forcing founders to sell their shares to the company at par value of one cent per share.",
-            "By combining stacked post-money SAFEs with an institutional Series A requirement that an expanded option pool be created entirely out of pre-money common equity, forcing founders to absorb 100% of both seed and option dilution."
+            "Stacked post-money SAFEs combined with a Series A requirement that an expanded option pool be shared pro rata by all holders, so founders absorb only part of the dilution.",
+            "A single large post-money SAFE converted at a low cap, plus a founder-friendly option pool created from post-money shares, which transfers dilution to the lead investor.",
+            "Stacked convertible notes with high caps combined with a Series A option pool of under 5%, so founders absorb dilution only from the accrued interest.",
+            "Stacked post-money SAFEs plus a Series A requirement that the expanded option pool come entirely from pre-money common equity, so founders absorb all seed and pool dilution."
           ],
           "answer": 3,
           "why": "When pre-money option pool expansions and insulated post-money SAFEs collide, common founders absorb the entirety of both dilution sources, frequently crushing founder equity below 35%.",
@@ -7332,10 +7332,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture capital term sheets price equity rounds strictly on a 'Fully Diluted Basis' rather than based on issued and outstanding common shares?",
           "options": [
-            "To account for all granted options, warrants, and unallocated option pool reserves, ensuring the investor's post-closing ownership percentage is not diluted by pre-existing equity promises.",
-            "Because statutory corporate law in Delaware makes it illegal to own common stock without also holding stock options.",
-            "To allow founders to issue unlimited shares to themselves without board approval.",
-            "Because commercial banks require fully diluted share counts to calculate checking account transaction fees."
+            "To count all granted options, warrants, and unallocated pool reserves, so the investor's post-closing percentage is not diluted by earlier equity promises.",
+            "To count only shares that have vested to date, so the investor's post-closing percentage is based on the equity actually owned by the team.",
+            "To count only common shares and exclude all preferred stock, so the investor's post-closing percentage is not reduced by earlier funding rounds.",
+            "To count only issued shares and the new round, so the share price excludes the dilution that the founders accepted in earlier rounds."
           ],
           "answer": 0,
           "why": "Pricing on a fully diluted basis protects the incoming investor by forcing all options, warrants, and reserved pools to be absorbed prior to new money entry.",
@@ -7370,10 +7370,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Pre-Money Option Pool Shuffle' economically transfer value from startup founders to the incoming venture capital firm?",
           "options": [
-            "By legally converting founder common shares into preferred shares with zero voting rights.",
-            "By requiring the startup to pay cash dividends to the venture capital firm during the first 12 months.",
-            "By transferring the corporate intellectual property ownership to the venture capital firm.",
-            "By creating the unallocated option pool entirely out of pre-money common equity, which lowers the effective share price paid by the VC and forces founders to absorb 100% of the dilution."
+            "By creating the unallocated pool out of post-money equity shared by all holders, which raises the share price paid by the VC and spreads the dilution evenly.",
+            "By creating the unallocated pool out of the VC's new shares, which lowers the VC's ownership and makes the founders absorb none of the dilution.",
+            "By creating the unallocated pool out of preferred shares of earlier investors, which lowers their stake and shifts the dilution from founders to them.",
+            "By creating the pool entirely out of pre-money common equity, which lowers the effective share price paid by the VC and puts 100% of the dilution on founders."
           ],
           "answer": 3,
           "why": "Expanding the option pool pre-money lowers the share price paid by the investor, forcing existing common founders to absorb all the dilution needed for future employee equity.",
@@ -7408,10 +7408,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the catastrophic financial consequence for a startup founder who fails to file an Internal Revenue Code Section 83(b) election within 30 days of receiving restricted stock?",
           "options": [
-            "Their stock is automatically forfeited and transferred to the Delaware state treasury.",
-            "They are legally disqualified from serving as a corporate director or officer in the United States.",
-            "They incur massive ordinary income tax liabilities on the fair market value of their shares as they vest over 4 years, potentially owing millions in cash taxes on illiquid stock.",
-            "The corporate charter is automatically revoked by the Internal Revenue Service."
+            "They lose the right to the restricted stock entirely, because the grant becomes void and the company must repurchase every share at zero cost to it.",
+            "They incur a 20% penalty tax on the grant price at the date of the award, but owe no tax on later vesting or appreciation of the stock.",
+            "They owe large ordinary income tax on the fair market value of shares as they vest over 4 years, potentially millions in taxes on illiquid stock.",
+            "They incur capital gains tax at exercise on the full value of unvested shares, payable in cash before the first vesting date arrives."
           ],
           "answer": 2,
           "why": "Failing to file an 83(b) election subjects each vesting tranche to ordinary income tax based on the stock's appreciated value on each vesting date rather than its nominal grant price.",
@@ -7446,10 +7446,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does modeling a Series A capitalization table with converting SAFEs and pre-money option pools create a circular reference in spreadsheet software?",
           "options": [
-            "Because convertible SAFEs do not convert into shares until an Initial Public Offering.",
-            "Because the Series A share price depends on fully diluted shares, but the number of shares issued to converting SAFEs and option pools depends on the Series A share price.",
-            "Because Microsoft Excel prohibits using formulas with more than three shareholders.",
-            "Because venture capital firms legally require cap tables to contain intentional circular calculation errors."
+            "Because the pre-money valuation depends on the option pool size, but the option pool size is fixed by the investors in the term sheet itself.",
+            "Because the Series A share price depends on fully diluted shares, but the shares issued to converting SAFEs and option pools depend on the Series A share price.",
+            "Because spreadsheet software cannot divide by a quantity that changes with time, so any dilution calculation in a Series A model fails to compute.",
+            "Because converting SAFEs and option pools are modeled on separate sheets, so formulas in each sheet refer back to the cells of the other sheet."
           ],
           "answer": 1,
           "why": "The circularity arises because share price and converting share counts are mutually dependent variables that must be resolved through simultaneous algebra or iterative numerical solvers.",
@@ -7484,10 +7484,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture capital firms consider a startup with 50% 'Dead Equity' completely uninvestable?",
           "options": [
-            "Because an inactive departed founder owns half the common stock without contributing labor, leaving insufficient equity to incentivize the active team or recruit future executives.",
-            "Because dead equity violates Delaware banking laws regarding corporate loan guarantees.",
-            "Because departed founders are legally required to serve as Chief Executive Officer.",
-            "Because federal securities law prohibits companies from having more than one common stockholder."
+            "Because an inactive departed founder owns half the common stock without contributing labor, leaving too little equity to motivate the team or recruit executives.",
+            "Because a departed founder who holds half the common stock can veto every investor decision, leaving the board unable to approve a financing round.",
+            "Because half of the common stock is untraded, leaving no market price that the VC can use to value the preferred shares in the term sheet.",
+            "Because the departed founder's shares have no voting rights, leaving the VC unable to count them toward the quorum for shareholder meetings."
           ],
           "answer": 0,
           "why": "Dead equity destroys team incentives and cap table capacity, making it mathematically impossible for institutional VCs to properly motivate the ongoing operational team.",
@@ -7548,10 +7548,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a 1x Non-Participating Preferred Stock structure, what election does the investor make upon an enterprise acquisition?",
           "options": [
-            "The investor receives 10% annual cash dividends paid by the acquiring firm.",
-            "The investor elects either to receive their 1x original investment back as a senior preference OR to convert into common stock and share pro-rata in total proceeds, whichever yields the higher payout.",
-            "The investor always receives double their money back plus 50% of all common equity.",
-            "The investor is legally required to forgive all investment capital and accept zero proceeds."
+            "The investor takes the 1x original investment back as a senior preference AND also converts to common to share pro-rata in what remains.",
+            "The investor chooses either to take the 1x original investment back as a senior preference OR to convert to common and share pro-rata, whichever yields more.",
+            "The investor must convert to common stock and share pro-rata, since the 1x preference lapses once an acquisition price has been agreed.",
+            "The investor must take the 1x original investment back, since the right to convert is lost once the company has been acquired by a buyer."
           ],
           "answer": 1,
           "why": "Non-participating preferred forces a strict either/or choice: take the senior capital protection floor or convert to common equity for upside appreciation.",
@@ -7586,10 +7586,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is 'Full Participating Preferred Stock' considered predatory and vehemently opposed by experienced startup founders?",
           "options": [
-            "Because it requires the CEO to personally guarantee all company lease liabilities.",
-            "Because it automatically triggers corporate dissolution under Delaware General Corporation Law.",
-            "Because it allows the investor to 'double-dip' by receiving their 1x preference back off the top and then participating pro-rata in remaining proceeds, extracting massive wealth from common founders on moderate exits.",
-            "Because participating preferred shares cannot be sold to institutional secondary funds."
+            "It lets the investor convert to common and also receive a dividend, extracting wealth from common founders on large exits with high valuation.",
+            "It lets the investor veto any acquisition below the preference amount, extracting wealth from common founders through the right to block exits.",
+            "It lets the investor 'double-dip', taking the 1x preference first and then sharing pro-rata in the rest, extracting wealth from founders on moderate exits.",
+            "It lets the investor receive twice the original investment first, with no participation in the rest, extracting wealth from founders on small exits."
           ],
           "answer": 2,
           "why": "Full participation allows preferred investors to take their capital back first and then take a pro-rata cut of remaining funds, heavily penalizing common founders.",
@@ -7624,10 +7624,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary difference between Pari Passu Seniority and Tiered (Last In, First Out) Seniority in preferred liquidation waterfalls?",
           "options": [
-            "Under Pari Passu, common stockholders are paid before preferred investors.",
-            "Under Tiered Seniority, seed investors are guaranteed 5x returns in all acquisition scenarios.",
-            "Pari Passu applies only to foreign corporations operating under English common law.",
-            "Under Pari Passu, all preferred classes share available exit proceeds pro-rata if proceeds are insufficient; under Tiered Seniority, the latest round is paid 100% of its preference before earlier rounds receive anything."
+            "Under Pari Passu, the earliest round is paid its full preference first; under Tiered Seniority, all preferred classes share proceeds pro-rata when proceeds are short.",
+            "Under Pari Passu, common stockholders are paid before preferred classes receive anything; under Tiered Seniority, the latest preferred round is paid first.",
+            "Under Pari Passu, each class is paid in proportion to its voting rights; under Tiered Seniority, each class is paid in proportion to its ownership.",
+            "Under Pari Passu, preferred classes share proceeds pro-rata when proceeds are short; under Tiered Seniority, the latest round is paid in full before earlier rounds."
           ],
           "answer": 3,
           "why": "Pari passu treats all preferred rounds on equal footing pro-rata, whereas tiered seniority gives later growth rounds absolute priority over earlier seed rounds.",
@@ -7662,10 +7662,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do venture capital investors agree to a 'Management Carve-Out Plan' in an acquisition where proceeds are lower than total liquidation preferences?",
           "options": [
-            "To prevent key founders and executives from walking away before the deal closes, ensuring management stays to complete due diligence and transition operations to the acquirer.",
-            "Because federal law mandates that corporate executives receive 50% of all acquisition proceeds in cash.",
-            "To force the acquiring company to assume all outstanding commercial bank debts.",
-            "Because venture capital funds are legally prohibited from owning preferred stock."
+            "To keep key founders and executives from walking away before the deal closes, ensuring management stays to complete due diligence and transition to the acquirer.",
+            "To let the investors take their preferences in full before management is paid, ensuring the board can approve the sale within the notice period.",
+            "To reduce the tax paid by investors on their gain from the sale, ensuring that the acquirer pays the full purchase price in cash on closing.",
+            "To compensate common shareholders for their lost voting rights, ensuring they do not challenge the transaction in court after the sale closes."
           ],
           "answer": 0,
           "why": "Management carve-outs resolve the executive walk-away risk, aligning founders and investors to successfully close an acquisition that would otherwise collapse.",
@@ -7696,10 +7696,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Zero-Dollar Common Wipeout' anti-pattern occur during an apparently successful corporate acquisition?",
           "options": [
-            "By failing to pay quarterly franchise taxes to the state of incorporation.",
-            "By raising excessive venture capital that creates a liquidation preference hurdle larger than the eventual acquisition price, causing 100% of exit proceeds to be paid to investors while common founders receive zero.",
-            "By allowing corporate officers to convert their common shares into unsecured bonds.",
-            "By accidentally selling common stock to unauthorized foreign shell corporations."
+            "Raising so little venture capital that the acquirer discounts the price, so investors recover only half of their preference and founders receive the rest.",
+            "Raising so much venture capital that the liquidation preference stack exceeds the acquisition price, so 100% of proceeds go to investors and common founders receive zero.",
+            "Granting investors full participation rights, so investors take their preference and 50% of what remains while founders keep the other 50% of the remainder.",
+            "Issuing too many option grants before the sale, so the option pool takes 100% of the proceeds while founders and investors receive nothing at all."
           ],
           "answer": 1,
           "why": "When the liquidation preference stack exceeds the exit price, senior preferred claims consume all proceeds, leaving common shareholders completely uncompensated.",
@@ -7760,10 +7760,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do convertible promissory notes and post-money SAFEs interact mathematically when held concurrently during the seed phase?",
           "options": [
-            "Convertible notes automatically cancel post-money SAFEs upon signing.",
-            "Post-money SAFEs pay monthly cash interest to noteholders.",
-            "Both instruments dilute common founder equity concurrently, while post-money SAFEs remain insulated from debt dilution and debt notes accrue senior interest claims.",
-            "The Delaware Secretary of State seizes 50% of the company's common stock."
+            "Both dilute the investors' equity at the same time, while notes stay insulated from SAFE dilution and SAFEs accrue senior interest claims.",
+            "Neither dilutes common founder equity until the Series A, while post-money SAFEs accrue interest and notes convert at a fixed percentage.",
+            "Both dilute common founder equity at the same time, while post-money SAFEs stay insulated from debt dilution and notes accrue senior interest claims.",
+            "Notes convert before SAFEs and so dilute them, while post-money SAFEs lose their fixed ownership percentage as notes accrue interest."
           ],
           "answer": 2,
           "why": "Both instruments draw equity from the common founder allocation, with notes accumulating interest and SAFEs maintaining their fixed post-money percentage.",
@@ -7798,10 +7798,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does sizing an unallocated option pool in the pre-money valuation require a simultaneous algebraic solver?",
           "options": [
-            "Because venture capital firms refuse to invest in companies that use standard arithmetic.",
-            "Because the required pool share count depends on total post-financing shares, which depends on new Series A shares, which depends on share price, which depends on the pre-money pool size.",
-            "Because option pool shares must be divided equally among all registered voters in Delaware.",
-            "Because corporate securities law mandates using quantum computing for all Series A rounds."
+            "Because the pool share count depends on the number of employees, which depends on the hiring plan, which depends on the size of the pool itself.",
+            "Because the pool share count depends on total post-financing shares, which depend on Series A shares, which depend on price, which depends on the pre-money pool.",
+            "Because the pool share count depends on the option strike price, which depends on the 409A value, which depends on the size of the pool itself.",
+            "Because spreadsheets cannot handle percentages that apply to the totals they are part of, so a pool percentage always needs a macro to resolve."
           ],
           "answer": 1,
           "why": "The mutual dependency between share price, converting seed shares, and option pool sizing creates an algebraic circularity that requires iterative or simultaneous resolution.",
@@ -7836,10 +7836,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the contractual significance of 'Tiered Seniority' introduced by a Series B lead growth investor?",
           "options": [
-            "Series B Preferred must be repaid 100% of its invested capital before Series A, Seed Preferred, or Common stockholders receive any acquisition proceeds.",
-            "Series B investors are legally required to serve as Chief Financial Officer.",
-            "Series B investors forfeit all voting rights in exchange for guaranteed 10% annual dividends.",
-            "Common founders are legally barred from attending board of directors meetings."
+            "Series B Preferred must be repaid 100% of invested capital before Series A, Seed Preferred, or Common stockholders receive any proceeds.",
+            "Series B Preferred must be repaid pro-rata with Series A and Seed Preferred before Common stockholders receive any acquisition proceeds.",
+            "Series B Preferred must be repaid only after Common stockholders receive their share of the acquisition proceeds in full.",
+            "Series B Preferred must be repaid twice its invested capital before Series A or Seed Preferred stockholders receive any proceeds."
           ],
           "answer": 0,
           "why": "Tiered seniority places later growth rounds at the top of the liquidation waterfall, making their preference senior to earlier venture rounds.",
@@ -7874,9 +7874,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a $250,000,000 private equity buyout, why do all preferred investors voluntarily convert their shares into common stock?",
           "options": [
-            "Because common founders possess statutory drag-along rights that eliminate preferred preferences.",
-            "Because corporate law legally forces all preferred shares to be cancelled upon reaching $100,000,000.",
-            "Because preferred investors are prohibited by the IRS from receiving cash distributions in a buyout.",
+            "Because their liquidation preferences significantly exceed their pro-rata share of common proceeds, maximizing their financial return.",
+            "Because the buyer requires all preferred stock to be converted before closing, regardless of the preferred investors' financial return.",
+            "Because converting to common stock removes the tax due on the gain, regardless of how the proceeds compare to the preferences.",
             "Because their pro-rata share of common proceeds significantly exceeds their original liquidation preferences, maximizing their financial return."
           ],
           "answer": 3,
@@ -7908,10 +7908,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance objective of executing an autonomous telemetry audit suite across a 4-round venture capitalization model?",
           "options": [
-            "To legally transfer all founder voting shares into offshore blind trusts.",
-            "To generate automatic marketing emails to retail investors on social media.",
-            "To deterministically verify that all 6 corporate invariants (cap table parity, debt capitalization, SAFE invariance, pool sizing, seniority stacking, and founder floors) hold true with zero discrepancy.",
-            "To bypass Delaware franchise tax filings and avoid corporate audits."
+            "To estimate the probability that the company will reach its next round, using revenue growth, burn rate, runway, retention, and hiring pace.",
+            "To track real-time market prices of the preferred shares on secondary exchanges and report price changes to the board each month.",
+            "To verify that all 6 corporate invariants (cap table parity, debt, SAFE invariance, pool sizing, seniority, founder floors) hold with zero discrepancy.",
+            "To verify that the company's financial statements comply with GAAP, using audit sampling, ratio analysis, and reconciliation of bank accounts."
           ],
           "answer": 2,
           "why": "Automated telemetry audits ensure mathematical and legal integrity across multi-round capitalizations, preventing fatal dilution errors and governance disputes.",
@@ -7968,10 +7968,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational cash flow consequence when a venture debt facility transitions from the interest-only period into principal amortization?",
           "options": [
-            "The startup's valuation is automatically marked down by fifty percent by the SEC.",
-            "The lender immediately forgives the outstanding loan principal in exchange for common stock.",
-            "Interest payments cease entirely and the company pays only zero-interest principal installments.",
-            "Monthly debt service cash payments sharply increase because the company must pay both accrued interest and a monthly slice of principal amortization."
+            "Monthly debt service cash payments fall sharply because the company pays only principal and the interest is capitalized into the loan balance.",
+            "Monthly debt service cash payments stay the same because the lender spreads accrued interest across the term of the principal amortization.",
+            "Monthly debt service is paid in warrants rather than cash because the company must now convert the principal amortization into equity.",
+            "Monthly debt service cash payments rise sharply because the company must pay both accrued interest and a monthly slice of principal amortization."
           ],
           "answer": 3,
           "why": "Transitioning from interest-only to amortization adds monthly principal repayments to monthly interest, sharply increasing cash burn.",
@@ -8041,10 +8041,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate purpose of a Minimum Cash Liquidity Covenant in a venture debt facility?",
           "options": [
-            "To guarantee that employees receive annual bonus payments regardless of company performance.",
-            "To ensure that if the startup approaches financial distress, sufficient liquid cash remains in the bank for the lender to sweep and recover outstanding debt principal.",
-            "To prevent the company from opening international sales offices.",
-            "To force founders to distribute quarterly cash dividends to preferred equity shareholders."
+            "To ensure that the startup keeps enough cash to pay its employees and suppliers, so the lender is not named as a creditor in bankruptcy.",
+            "To ensure that if the startup nears distress, enough liquid cash remains in the bank for the lender to sweep and recover outstanding principal.",
+            "To ensure that the startup invests its idle cash in lender-approved securities, so the lender earns the spread on the funds held on deposit.",
+            "To ensure that the startup raises new equity each year, so the lender's loan remains smaller than the amount of cash the investors hold."
           ],
           "answer": 1,
           "why": "Minimum cash covenants establish a liquidity floor ensuring the lender can recover loan principal before the company exhausts all cash.",
@@ -8078,10 +8078,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do venture-backed technology founders fiercely insist on an 'IP Negative Pledge' rather than granting a 'Direct IP Security Interest'?",
           "options": [
-            "An IP Negative Pledge exempts the startup from paying corporate state and federal income taxes.",
-            "An IP Negative Pledge allows the lender to automatically sell patent assets to foreign entities without shareholder consent.",
-            "An IP Negative Pledge contractually promises not to encumber IP to third parties while preventing the lender from foreclosing on and seizing proprietary source code upon loan default.",
-            "An IP Negative Pledge converts the loan into common stock after 36 months."
+            "An IP Negative Pledge gives the lender ownership of the source code immediately, while preventing the company from licensing it to third parties.",
+            "An IP Negative Pledge gives the lender the right to sell the source code on default, while preventing other creditors from taking it first.",
+            "An IP Negative Pledge promises not to encumber IP to third parties while preventing the lender from foreclosing on and seizing source code upon default.",
+            "An IP Negative Pledge lets the company pledge IP to any other lender, while preventing the venture lender from charging default interest."
           ],
           "answer": 2,
           "why": "Under a negative pledge, the lender cannot seize or auction the company's core software code upon default, preserving tech sovereignty.",
@@ -8114,10 +8114,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Venture Debt Death Spiral' anti-pattern wipe out common founder equity during market downturns?",
           "options": [
-            "By forcing founders to personally pay lender legal fees out of private bank accounts.",
-            "By automatically dissolving the Delaware corporate charter without court review.",
-            "By legally converting all common stock into non-voting debt debentures.",
-            "The expiration of interest-only periods spikes monthly debt service just as revenue slows, causing cash to breach minimum liquidity covenants, triggering debt acceleration and lender cash sweeps that prevent equity bridge financing."
+            "Warrants issued to the lender are exercised at a low strike price during the downturn, giving the lender a majority of the common equity directly.",
+            "The lender converts the debt into preferred shares at the first missed payment, senior to all investors, diluting the common founders to zero.",
+            "Revenue grows too quickly and the company must raise equity at a low price to repay the loan, diluting founders in an unplanned financing round.",
+            "Interest-only periods end and debt service spikes as revenue slows, breaching liquidity covenants and triggering acceleration and sweeps that block bridge funding."
           ],
           "answer": 3,
           "why": "Amortization spikes and revenue misses cause liquidity covenant breaches, prompting lenders to accelerate debt and sweep cash accounts, wiping out common equity.",
@@ -8175,10 +8175,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary legal function of the Business Judgment Rule (BJR) under Delaware corporate jurisprudence?",
           "options": [
-            "A judicial presumption that in making a business decision, directors acted on an informed basis, in good faith, and in honest belief that the action was in the best interests of the company.",
-            "An absolute statutory ban on common stockholders bringing any lawsuits against corporate officers.",
-            "A rule mandating that the board of directors must distribute ninety percent of net profits as dividends.",
-            "A requirement that all board meetings must be held in the state of Delaware."
+            "A judicial presumption that directors acted on an informed basis, in good faith, and in the honest belief that the action served the company's best interests.",
+            "A statutory guarantee that directors cannot be sued by shareholders for any decision that reduced the value of the company's equity, however it was made.",
+            "A requirement that directors obtain shareholder approval before any decision with a value above a stated limit, to protect equity holders.",
+            "A rule that directors must follow the instructions of the largest shareholder, in order to avoid claims of favoring one class over another."
           ],
           "answer": 0,
           "why": "The Business Judgment Rule protects directors from judicial second-guessing when decisions are made on an informed, good-faith, and disinterested basis.",
@@ -8211,9 +8211,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What occurs when a startup board attempts to execute a major corporate acquisition that is rejected by a majority of Preferred Stockholders holding standard NVCA protective provisions?",
           "options": [
-            "The Delaware Court of Chancery automatically fires all Preferred Stock directors.",
-            "The transaction converts into a federal government loan.",
-            "The transaction automatically proceeds because common shareholders hold seventy percent of total voting power.",
+            "The transaction proceeds if the common shareholders approve it, because their majority vote overrides the separate preferred class vote.",
+            "The transaction proceeds with a court order, because the preferred protective provisions apply only to financing and not to acquisitions.",
+            "The transaction is blocked only until the board resolves the preferred holders' objection, after which the board's vote overrides the veto.",
             "The transaction is legally blocked because the Preferred Stock class veto operates independently of common shareholder vote totals."
           ],
           "answer": 3,
@@ -8247,10 +8247,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional venture capital term sheets mandate a '2-2-1' board composition structure upon Series A closing?",
           "options": [
-            "To ensure that venture capital investors hold absolute majority control over all hiring and firing decisions.",
-            "To comply with federal labor laws requiring union representatives on tech startup boards.",
-            "To prevent boardroom deadlocks between common founder directors and preferred VC directors by establishing a mutually agreed Independent Director as a neutral tie-breaking swing vote.",
-            "To eliminate all founder voting rights after initial equity funding."
+            "To give common founders and preferred VCs equal representation, with an observer who has no vote in order to reduce legal liability.",
+            "To give the preferred VCs a permanent board majority, with a founder director who has no vote in order to simplify decision making.",
+            "To prevent boardroom deadlocks between common founder directors and preferred VC directors, using an independent director as a neutral swing vote.",
+            "To prevent founders from being removed from the board, with an outside director who is appointed by the founders in order to protect them."
           ],
           "answer": 2,
           "why": "A 2-2-1 board balances founder and investor representation, relying on an independent director to resolve split 2-2 deadlocks.",
@@ -8283,10 +8283,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate purpose of an express waiver of appraisal rights within an institutional drag-along agreement?",
           "options": [
-            "To eliminate all income tax liabilities associated with capital gains on stock sales.",
-            "To prevent dissenting minority shareholders from filing statutory appraisal petitions in Delaware Chancery Court under DGCL 262 to demand judicial fair value cash payouts that disrupt M&A exits.",
-            "To automatically transfer minority shares to the state of Delaware.",
-            "To allow founders to secretly divert acquisition proceeds to offshore shell accounts."
+            "To stop dissenting minority shareholders from selling their shares to competing bidders under DGCL 262, which would disrupt the M&A process.",
+            "To stop dissenting minority holders from filing appraisal petitions under DGCL 262 in Delaware Chancery Court demanding judicial cash fair value.",
+            "To stop dissenting minority shareholders from voting against the merger at the stockholders' meeting under DGCL 262, which would defeat the exit.",
+            "To stop dissenting minority shareholders from inspecting the company's books under DGCL 220 before the merger, which would delay closing."
           ],
           "answer": 1,
           "why": "Waiving appraisal rights under DGCL 262 prevents holdout minority shareholders from suing for judicial share appraisal during mergers.",
@@ -8319,10 +8319,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Delaware Court of Chancery's landmark Trados Doctrine, what is the core fiduciary duty of startup directors when approving a corporate sale?",
           "options": [
-            "Directors owe an ultimate fiduciary duty to maximize the long-term economic value of the enterprise for the benefit of Common Stockholders as the residual equity claimants, rather than merely satisfying Preferred Stock liquidation preferences.",
-            "Directors are legally obligated to prioritize preferred venture capital investors over common employees in all circumstances.",
-            "Directors must allocate fifty percent of all acquisition proceeds to the Delaware state treasury.",
-            "Directors owe fiduciary duties exclusively to secured venture debt lenders."
+            "Directors owe a fiduciary duty to maximize long-term enterprise value for Common Stockholders as residual claimants, not merely to satisfy Preferred preferences.",
+            "Directors owe a fiduciary duty to maximize the contractual returns of Preferred Stockholders, who funded the company, ahead of Common Stockholders.",
+            "Directors owe a fiduciary duty to satisfy the largest creditor first, who holds the senior claim, before Preferred or Common Stockholders.",
+            "Directors owe a fiduciary duty to equalize proceeds among Preferred and Common holders, regardless of liquidation preferences set by contract."
           ],
           "answer": 0,
           "why": "Trados established that preferred rights are contractual, while directors' fiduciary duties run primarily to common stockholders as residual claimants.",
@@ -8379,10 +8379,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Who absorbs the equity dilution when an unallocated employee option pool is created inside the pre-money valuation during a venture capital financing round?",
           "options": [
-            "The dilution is split equally between founders, new investors, and bank lenders.",
-            "One hundred percent of the option pool dilution is absorbed entirely by existing common stockholders (founders and early investors) prior to closing.",
-            "The incoming venture capital investors absorb seventy percent of the dilution.",
-            "The option pool dilution is paid by the state government through tax credits."
+            "One hundred percent of the option pool dilution is absorbed by the incoming venture investor, after the closing of the financing round.",
+            "One hundred percent of the option pool dilution is absorbed by existing common stockholders (founders and early investors) before closing.",
+            "Half of the option pool dilution is absorbed by existing stockholders and half by the incoming investor, as both gain from future hiring.",
+            "None of the option pool dilution is absorbed by stockholders, because the company issues the pool from treasury shares at no cost to them."
           ],
           "answer": 1,
           "why": "A pre-money option pool expansion forces existing shareholders to absorb 100% of the dilution, lowering the effective share price.",
@@ -8414,10 +8414,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the non-negotiable statutory deadline for filing an IRC Section 83(b) election with the IRS following the receipt of restricted stock?",
           "options": [
-            "By April 15 of the calendar year following the grant.",
-            "At any time prior to the company's initial public offering.",
+            "Exactly ninety calendar days from the date of the stock grant, which can be extended once by a written request to the IRS.",
+            "Exactly sixty calendar days from the date of vesting, which can be cured by paying a late filing penalty to the IRS.",
             "Exactly thirty calendar days from the date of the stock grant, which cannot be extended or cured under any circumstances.",
-            "Ninety days from the end of the corporate fiscal year."
+            "Until the tax return due date for the year of grant, which can be extended by filing the standard extension form."
           ],
           "answer": 2,
           "why": "IRC Section 83(b) strictly mandates filing within 30 days of the grant date; missing the deadline permanently forfeits the election.",
@@ -8450,10 +8450,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance purpose of enforcing a Right of First Refusal (ROFR) on private company stock transfers?",
           "options": [
-            "To automatically dissolve employee stock options upon any secondary sale.",
-            "To mandate that all stock sales must be approved by the federal government.",
-            "To force founders to forfeit fifty percent of their stock proceeds to charity.",
-            "To prevent unsolicited transfers of private shares to predatory competitors or activist investors by granting the company and major investors the right to purchase the shares first."
+            "To make sure employees can sell their private shares to outside buyers at the highest offered price, without company interference.",
+            "To require outside buyers of private shares to be approved by regulators, giving the company and major investors the right to veto them.",
+            "To force every shareholder to sell their shares if a majority sells, giving the company and major investors the right to set the price.",
+            "To prevent unsolicited transfers of private shares to competitors or activists by giving the company and major investors the first right to buy them."
           ],
           "answer": 3,
           "why": "A ROFR protocol ensures the company and existing investors can purchase selling shares, keeping private cap tables tightly controlled.",
@@ -8486,10 +8486,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a Cashless Net Exercise algorithm protect departing startup employees who hold vested stock options?",
           "options": [
-            "By automatically withholding a number of option shares equal to the aggregate strike price and issuing the net remaining shares to the employee without requiring any out-of-pocket cash payment.",
-            "By forgiving the strike price and converting options into preferred debt debentures.",
-            "By forcing the company to pay the employee a cash bonus equal to the strike price.",
-            "By transferring the employee's options to a public mutual fund."
+            "By withholding option shares equal to the aggregate strike price and issuing the net remaining shares, so the employee pays no cash out of pocket.",
+            "By selling all of the employee's shares on the open market on exercise, so the employee receives cash and keeps no stock after paying tax.",
+            "By lending the employee the aggregate strike price at a low interest rate, so the employee pays the money back after the next financing.",
+            "By waiving the strike price entirely for departing employees, so the employee receives all the option shares and the company absorbs the cost."
           ],
           "answer": 0,
           "why": "Net exercise mathematically settles the strike price using share value, allowing employees to exercise without wiring cash.",
@@ -8522,10 +8522,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary cause of the 'Illiquid AMT Tax Trap' anti-pattern for startup employees exercising Incentive Stock Options (ISOs)?",
           "options": [
-            "The startup board of directors is legally allowed to confiscate employee bank accounts.",
-            "Employees must pay immediate cash Alternative Minimum Tax (AMT) to the IRS based on the paper spread of private illiquid stock, and if the company subsequent crashes, the IRS does not refund the taxes paid on depreciated stock.",
-            "The state of Delaware imposes a mandatory wealth tax on all stock option holders.",
-            "The SEC bans employees from exercising options after a Series B round."
+            "Employees owe ordinary income tax on the paper spread when the options vest, and if the company later crashes, the tax is refunded in full by the IRS.",
+            "Employees owe immediate cash AMT on the paper spread of private illiquid stock, and if the company later crashes, the IRS does not refund the tax paid.",
+            "Employees owe capital gains tax when the options are granted, and if the company later crashes, the company must reimburse the tax paid by employees.",
+            "Employees owe AMT only when the stock is sold on a public market, and if the company never lists, the IRS cancels the liability after ten years."
           ],
           "answer": 1,
           "why": "AMT is assessed on the paper spread at exercise; if private stock later crashes, the employee cannot recover the cash taxes paid.",
@@ -8584,10 +8584,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary structural difference between Corporate Venture Capital (CVC) funds and traditional Financial Venture Capital (VC) firms?",
           "options": [
-            "CVC funds are prohibited by federal law from investing in privately held companies.",
-            "Financial VCs are owned entirely by the United States government.",
-            "Financial VCs operate with a singular fiduciary mandate to maximize cash returns (IRR) for external LPs, whereas CVCs operate with a dual mandate balancing financial returns with corporate strategic objectives.",
-            "CVC funds invest exclusively in physical manufacturing equipment rather than equity."
+            "Financial VCs invest only in public companies for strategic benefit, whereas CVCs invest in private companies purely to maximize returns for external LPs.",
+            "Financial VCs have a dual mandate balancing financial returns with corporate strategic goals, whereas CVCs maximize cash returns (IRR) for external LPs.",
+            "Financial VCs have one mandate to maximize cash returns (IRR) for external LPs, whereas CVCs have a dual mandate balancing financial returns with corporate strategy.",
+            "Financial VCs are funded by corporate treasuries and pursue product synergies, whereas CVCs are funded by pension funds and seek only cash returns."
           ],
           "answer": 2,
           "why": "Financial VCs focus purely on financial IRR, while CVCs balance financial returns with strategic benefits for their corporate parents.",
@@ -8621,10 +8621,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an unconstrained Most-Favored Nation (MFN) pricing clause in a commercial sidecar agreement hazardous for a SaaS startup?",
           "options": [
-            "An MFN clause forces the startup to relocate its corporate headquarters overseas.",
-            "Any commercial discount offered to win a new enterprise customer automatically and retroactively reduces prices across the corporate investor's entire contract volume, destroying operating margins.",
-            "An MFN clause requires the startup to pay seventy percent of revenues to the SEC.",
-            "An MFN clause legally converts all software licenses into non-voting debt debentures."
+            "Any discount given to the corporate investor automatically lowers the list price for all customers worldwide, destroying margins on new contracts.",
+            "Any discount given to win a new enterprise customer automatically and retroactively reduces prices across the corporate investor's entire contract volume.",
+            "Any price increase applied to a new enterprise customer must also be applied to the corporate investor immediately, destroying the investor's goodwill.",
+            "Any discount offered by a competitor is automatically matched by the startup for the corporate investor, destroying margins on every contract held."
           ],
           "answer": 1,
           "why": "MFN clauses create systemic price compression because any lower price given to win a deal cascades across the corporate partner's volume.",
@@ -8657,10 +8657,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance reason for refusing to grant a Corporate Venture Capitalist a Right of First Refusal (ROFR) on future M&A sales?",
           "options": [
-            "A ROFR creates a severe 'chilling effect' where competing third-party acquirers refuse to invest time and money making acquisition bids, knowing the CVC can simply match the price and steal the deal.",
-            "A ROFR automatically dissolves the Delaware corporate charter upon signing.",
-            "A ROFR requires the company to distribute all intellectual property to public universities.",
-            "A ROFR forces common stockholders to personally guarantee the corporate investor's debt."
+            "A ROFR creates a 'chilling effect': third-party acquirers will not invest time and money bidding when the CVC can match the price and take the deal.",
+            "A ROFR creates a tax problem: the startup must record the right as a liability, which lowers the reported value of the company at the sale.",
+            "A ROFR creates a securities problem: the right counts as a second class of stock, which requires a vote of the common shareholders to issue.",
+            "A ROFR creates a pricing problem: the CVC can force the startup to sell at a discount to book value, which costs founders the control premium."
           ],
           "answer": 0,
           "why": "A ROFR destroys competitive bidding tension because competing bidders refuse to act as free stalking horses for the corporate investor.",
@@ -8694,10 +8694,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do technology startup boards defend against 'Intellectual Property Contamination' when accommodating Corporate Venture Capital board observers?",
           "options": [
-            "By granting the corporate observer full ownership of all company patents.",
-            "By requiring corporate observers to sign non-compete agreements that ban them from ever working in the tech industry.",
-            "By deleting all source code repositories prior to every board meeting.",
-            "By enforcing Clean-Team protocols that exclude operational business-unit executives and using Executive Sessions to redact sensitive source code architectures and product roadmaps."
+            "By requiring the CVC observer to sign a noncompete that bars the parent from building competing products for five years after the investment.",
+            "By giving the CVC observer full access to the product roadmap in return for a commercial pilot, with disputes settled by arbitration later.",
+            "By granting the CVC observer a vote on technical matters only, while board decisions on finance remain with the founders and the lead investor.",
+            "By enforcing Clean-Team protocols that exclude operational business-unit executives and using Executive Sessions to redact source code architectures and roadmaps."
           ],
           "answer": 3,
           "why": "Clean-team rules and executive session redactions prevent sensitive technical and commercial IP from leaking to competing corporate units.",
@@ -8731,10 +8731,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Corporate Predator Encumbrance Outage' anti-pattern destroy enterprise venture sovereignty?",
           "options": [
-            "By legally converting all preferred equity into high-yield municipal bonds.",
-            "By forcing founders to personally pay federal corporate income taxes out of private savings.",
-            "Category exclusivity restricts sales while an M&A ROFR chills outside acquisition offers, starving the startup of revenue and outside capital until the corporate partner executes a distressed fire-sale buyout.",
-            "By automatically canceling all employee stock options without notice."
+            "Revenue sharing with the partner reduces profit margins while a seat on the board lets the partner veto budgets, leaving the startup unable to raise any future capital.",
+            "Technology licensing gives the partner copies of the source code while a standstill clause blocks new hires, leaving the startup unable to build its own products.",
+            "Category exclusivity caps sales while an M&A ROFR chills outside offers, starving the startup of revenue and outside capital until the partner executes a distressed buyout.",
+            "Joint marketing commitments drain the startup's cash while a most-favored-nation price clause lowers its list prices, leaving the startup unable to reach profitability."
           ],
           "answer": 2,
           "why": "Exclusivity caps revenue while ROFR blocks third-party exits, driving the startup into insolvency where the corporate predator buys it cheaply.",
@@ -8793,10 +8793,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance advantage of deploying an integrated multi-instrument capital architecture in a growth-stage venture?",
           "options": [
-            "It exempts the company from filing annual corporate tax returns with the IRS.",
-            "It legally dissolves all employee stock options upon any debt draw.",
-            "It harmonizes senior debt covenants, preferred board vetoes, employee equity incentives, and corporate partner rights into a unified computational framework, preventing contractual conflicts and unexpected insolvency.",
-            "It allows founders to unilaterally eliminate all preferred investor liquidation preferences."
+            "It standardizes all financing into a single instrument type, removing debt, preferred stock, and option plans from the capital structure and reducing legal costs.",
+            "It transfers all governance rights to the largest investor, making senior debt, preferred vetoes, and partner rights subordinate to one lead investor's decisions.",
+            "It harmonizes senior debt covenants, preferred board vetoes, employee equity incentives, and partner rights in one framework, preventing contractual conflicts and insolvency.",
+            "It maximizes the funds raised at the highest valuation, combining senior debt, preferred equity, and option pools to capture the most capital from each investor group."
           ],
           "answer": 2,
           "why": "An integrated architecture ensures that senior debt, preferred equity, employee options, and strategic alliances operate harmoniously without conflict.",
@@ -8830,10 +8830,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How are warrant shares settled under a cashless net exercise provision when a venture-backed enterprise exits at a 10x multiple?",
           "options": [
-            "The lender is required to wire cash for the entire enterprise valuation.",
-            "The company withholds a number of warrant shares equal to the aggregate strike price and issues the net remaining shares directly to the lender without requiring any cash payment.",
-            "The warrants are automatically cancelled and converted into corporate charitable donations.",
-            "The common founders are forced to pay the lender's tax bill in cash."
+            "The company pays the aggregate strike price in cash from its own treasury and issues all of the warrant shares to the lender at the exit.",
+            "The company withholds warrant shares equal to the aggregate strike price and issues the net remaining shares to the lender with no cash payment.",
+            "The company cancels the warrant at the exit and pays the lender the strike price in cash, so that no shares are ever issued to the lender.",
+            "The lender sells half of the warrant shares on the open market to cover the strike price, with the company issuing the remaining shares later."
           ],
           "answer": 1,
           "why": "Cashless net exercise settles the strike price using market share value, delivering net equity to the lender with zero cash required.",
@@ -8867,10 +8867,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance mechanism that resolves a 2-to-2 boardroom deadlock between founders and venture capital investors?",
           "options": [
-            "The mutually designated Independent Director casts the tie-breaking swing vote, resolving operational paralysis in accordance with Delaware fiduciary standards.",
-            "The corporate charter is automatically revoked by the Delaware Secretary of State.",
-            "The investor directors are legally permitted to seize common stock without compensation.",
-            "The company is forced into immediate Chapter 7 liquidation."
+            "The mutually designated Independent Director casts the tie-breaking swing vote, resolving paralysis under Delaware fiduciary standards.",
+            "The chairman, who is the founder CEO, casts a second deciding vote, resolving paralysis under the company's bylaws and the stockholders' agreement.",
+            "The lead investor's director casts the tie-breaking swing vote, resolving paralysis under the protective provisions of the preferred stock.",
+            "The board refers the matter to a vote of all common stockholders, resolving paralysis under the Delaware General Corporation Law quorum rules."
           ],
           "answer": 0,
           "why": "The independent director occupies the neutral 5th seat in a 2-2-1 board, acting as the designated arbiter to resolve deadlocks.",
@@ -8904,10 +8904,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does constructing an empirical 18-month hiring budget benefit startup founders during Series A option pool negotiations?",
           "options": [
-            "It eliminates all vesting requirements for executive employees.",
-            "It allows founders to avoid paying federal and state payroll taxes.",
-            "It automatically doubles the company's annual recurring revenue.",
-            "It mathematically proves that the startup requires a smaller unallocated option pool (e.g., 9% instead of 15%), saving founders millions of dollars in unnecessary pre-money equity dilution."
+            "It proves with data that the startup needs a larger unallocated option pool (e.g. 20% instead of 15%), saving founders from repeated re-authorizations.",
+            "It proves with data that the startup should raise a smaller round (e.g. $6M instead of $10M), saving founders millions in needless equity dilution.",
+            "It proves with data that the startup should grant options only at the Series B stage, saving founders millions in tax on early option exercises.",
+            "It proves with data that the startup needs a smaller unallocated option pool (e.g. 9% instead of 15%), saving founders millions in needless pre-money dilution."
           ],
           "answer": 3,
           "why": "Empirical hiring budgets replace arbitrary 15% investor pool demands with granular data, preserving millions in founder equity.",
@@ -8942,10 +8942,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of executing the Milestone 8 Capstone Control Tower verification sweep?",
           "options": [
-            "To file automated marketing press releases with financial news agencies.",
-            "To legally transfer corporate ownership to offshore holding entities.",
-            "To deterministically verify that all 6 corporate invariants (debt amortization, warrant math, DGCL 141/144 governance, NVCA drag-along, ESOP parity, and CVC IP firewalls) hold true with zero discrepancy.",
-            "To automatically dissolve all minority shareholder voting rights."
+            "To estimate whether the venture will reach profitability within 18 months, using burn, runway, growth, and unit economics to rank the six strategic scenarios.",
+            "To verify that all 6 investors on the cap table have signed the closing documents, wired their funds, and received share certificates before the round closes.",
+            "To verify that all 6 corporate invariants (debt amortization, warrant math, DGCL 141/144 governance, drag-along, ESOP parity, CVC IP firewalls) hold with zero discrepancy.",
+            "To rank the venture against six benchmark competitors on valuation, growth, margin, retention, headcount, and funding raised, and publish the ranking to the board."
           ],
           "answer": 2,
           "why": "The Control Tower executes an automated 6-point audit verifying that debt, equity, governance, and tax invariants match institutional standards.",
@@ -9003,10 +9003,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate finance catalyst that drives international technology startups to execute a cross-border corporate flip into Delaware or Singapore?",
           "options": [
-            "Flipping into Delaware automatically dissolves all debt obligations owed to banks.",
-            "Global institutional venture capital firms operate under LP fiduciary mandates that restrict direct investments in emerging market operating entities, requiring a standardized Delaware or Singapore holding company.",
-            "Delaware law exempts technology companies from having to pay software engineers any wages.",
-            "A corporate flip allows founders to avoid paying federal and state payroll taxes forever."
+            "Delaware and Singapore tax treaties exempt startups from corporate income tax for the first five years, so a flip removes the tax paid on early profits.",
+            "Global VC firms operate under LP mandates that restrict direct investment in emerging-market operating entities, requiring a standard Delaware or Singapore holding company.",
+            "Emerging-market regulators require startups to relocate their legal domicile abroad before they may accept foreign investment from any institutional fund.",
+            "Delaware and Singapore courts enforce employee non-compete clauses without limit, so a flip lets the startup bind its engineers for the long term."
           ],
           "answer": 1,
           "why": "Institutional VC limited partnership agreements frequently mandate investing into Delaware or Singapore entities with established corporate legal predictability.",
@@ -9038,10 +9038,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is exact 'Mirror Capitalization Table Alignment' mandatory when executing a cross-border share swap during an offshore corporate flip?",
           "options": [
-            "Mirror alignment exempts the company from having a board of directors.",
-            "Mirror alignment converts all preferred equity into common stock automatically.",
-            "The offshore holding company must issue shares in exact economic proportions and classes identical to the domestic operating company to prevent taxable value transfers between shareholders under tax laws.",
-            "Mirror alignment allows founders to secretly double their personal share count without investor knowledge."
+            "The offshore holding company must issue shares at a premium to the domestic company's value to avoid tax on the share swap paid by the founders.",
+            "The offshore holding company must issue shares only to the founders and not to investors to avoid disclosures of the swap to the tax authorities.",
+            "The offshore holding company must issue shares in exact economic proportions and classes identical to the domestic company to avoid taxable value transfers among holders.",
+            "The offshore holding company must issue shares with higher voting rights to the investors to avoid conflicts with the domestic company's directors."
           ],
           "answer": 2,
           "why": "Any deviation from proportional mirror ownership creates taxable deemed gifts or capital gains among shareholders under tax statutes.",
@@ -9074,10 +9074,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 9(1)(i) of the Indian Income Tax Act, when are shares of an offshore foreign holding company deemed to derive substantial value from Indian assets?",
           "options": [
-            "Whenever the offshore company hires an Indian software engineer.",
-            "Whenever the offshore company generates more than $10,000 in global revenues.",
-            "Only if the company's corporate headquarters is physically located in New Delhi.",
-            "When Indian operating assets exceed INR 10 Crore (INR 100,000,000) and represent at least fifty percent (50%) of the total asset value of the offshore holding company on the valuation date."
+            "When Indian assets exceed INR 1 Crore and represent at least 20% of the offshore holding company's total asset value on the valuation date.",
+            "When Indian assets exceed INR 100 Crore and represent at least 75% of the offshore holding company's total asset value on the valuation date.",
+            "When Indian assets exceed INR 10 Crore or represent at least 50% of the offshore holding company's total revenue in the prior fiscal year.",
+            "When Indian assets exceed INR 10 Crore and represent at least 50% of the offshore holding company's total asset value on the valuation date."
           ],
           "answer": 3,
           "why": "Section 9(1)(i) applies the dual test: asset value exceeding INR 10 Crore and representing >= 50% of total assets on the valuation date.",
@@ -9111,9 +9111,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Foreign Exchange Management (Overseas Investment) Rules 2022, what is the maximum financial commitment an Indian corporate entity can make by way of Overseas Direct Investment (ODI) under the Automatic Route?",
           "options": [
             "Up to four hundred percent (400%) of its audited net worth as per its last audited balance sheet.",
-            "A maximum of one hundred thousand dollars ($100,000) per calendar year.",
-            "Unlimited financial commitments without any balance sheet restrictions.",
-            "Fifty percent of its annual gross revenue."
+            "Up to two hundred percent (200%) of its audited net worth as per its last audited balance sheet.",
+            "Up to one hundred percent (100%) of its audited net worth as per its last audited balance sheet.",
+            "Up to eight hundred percent (800%) of its audited net worth as per its last audited balance sheet."
           ],
           "answer": 0,
           "why": "Rule 9 of the 2022 Overseas Investment Rules establishes that eligible Indian corporate entities may invest up to 400% of audited net worth.",
@@ -9146,10 +9146,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary statutory consequence under FEMA Section 13 when a technology startup executes an unauthorized cross-border share swap without RBI approval?",
           "options": [
-            "The Delaware Secretary of State automatically dissolves all foreign subsidiaries.",
-            "The central bank and regulatory authorities can impose penalties up to three hundred percent (300%) of the transaction value, assess compounding daily fines, and freeze corporate operating bank accounts.",
-            "The company is exempt from paying corporate taxes for ten years.",
-            "The company is automatically awarded an emergency venture capital grant from the World Bank."
+            "The central bank can impose penalties up to ten percent (10%) of the transaction value, assess one-time fines, and cancel the startup's corporate registration.",
+            "The central bank can impose penalties up to three hundred percent (300%) of the transaction value, assess daily fines, and freeze corporate operating bank accounts.",
+            "The central bank can impose penalties up to fifty percent (50%) of the transaction value, assess quarterly fines, and suspend corporate director licenses.",
+            "The central bank can impose penalties up to one hundred percent (100%) of the transaction value, assess annual fines, and seize the founders' personal bank accounts."
           ],
           "answer": 1,
           "why": "FEMA Section 13 authorizes penalties up to three times (300%) the quantifiable transaction value and freezing of corporate bank accounts.",
@@ -9206,10 +9206,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core requirement of the 'Arm's Length Standard' codified under IRC Section 482 and OECD Transfer Pricing Guidelines?",
           "options": [
-            "Commercial and financial transactions between related corporate entities must be priced exactly as if they were conducted between independent, unrelated enterprises operating under comparable market conditions.",
-            "All software source code must be given away for free to public universities.",
-            "Offshore subsidiaries are prohibited from charging any markup over direct costs.",
-            "Transfer prices must be determined exclusively by the United Nations."
+            "Transactions between related entities must be priced exactly as if conducted between independent, unrelated enterprises under comparable market conditions.",
+            "Transactions between related corporate entities must be priced at their actual cost without any markup, so profits arise only on third-party sales.",
+            "Transactions between related corporate entities must be priced identically in every country, so tax authorities see one uniform global price list.",
+            "Transactions between related corporate entities must be priced to equalize profit margins across all subsidiaries, regardless of their functions and risks."
           ],
           "answer": 0,
           "why": "The arm's length standard mandates that intercompany transactions reflect market pricing negotiated between independent third parties.",
@@ -9242,10 +9242,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are captive R&D operating subsidiaries in technology startups compensated under a 'Cost-Plus' invoicing model rather than sharing in global software licensing revenues?",
           "options": [
-            "Because cost-plus invoicing eliminates the need to pay corporate taxes in any jurisdiction.",
-            "Because international law prohibits subsidiaries from opening commercial bank accounts.",
-            "Because software engineers are legally classified as government contractors.",
-            "Because the subsidiary operates as a low-risk contract service provider that does not own the intellectual property or bear entrepreneurial market risk, requiring predictable compensation on operating costs plus an arm's length markup."
+            "Because the subsidiary owns all of the group's IP and bears full market risk, so it earns a fixed royalty set by cost plus an arm's length markup.",
+            "Because the subsidiary sells directly to customers and carries inventory risk, so it earns predictable cost plus a markup that tax law requires.",
+            "Because the subsidiary is exempt from corporate tax in its home country, so it earns only cost plus a markup that keeps its profit at zero.",
+            "Because the subsidiary is a low-risk contract service provider that owns no IP and bears no market risk, so it earns predictable cost plus an arm's length markup."
           ],
           "answer": 3,
           "why": "Low-risk contract service providers bear no entrepreneurial risk, making cost-plus the standard transfer pricing methodology.",
@@ -9278,10 +9278,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the OECD BEPS Action 13 three-tier documentation framework, what is the primary corporate purpose of the 'Local File'?",
           "options": [
-            "To publish trade secret software source code on open-source repositories.",
-            "To file trademark applications with local municipal governments.",
-            "To provide a detailed, jurisdiction-specific compliance dossier documenting related-party transactions, functional and risk analyses, and economic benchmarking studies proving that intercompany pricing satisfies the arm's length standard.",
-            "To list personal bank accounts of all startup employees."
+            "To give a global overview of the group's business, allocation of income, and activities in all countries, for every tax authority that receives it.",
+            "To give a country-by-country report of revenue, profit, taxes paid, and employees for each jurisdiction, filed once a year by the parent company.",
+            "To give a local dossier of related-party transactions, functional analyses, and benchmarking proving intercompany pricing meets the arm's length standard.",
+            "To give a local register of the shareholders and directors of the subsidiary, with their tax residence, filed with the local companies registry."
           ],
           "answer": 2,
           "why": "The Local File provides localized transactional, functional, and economic benchmarking evidence substantiating arm's length transfer pricing.",
@@ -9314,10 +9314,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What documentation must a foreign corporate entity furnish to claim beneficial reduced withholding tax rates under a bilateral Double Tax Avoidance Agreement (DTAA)?",
           "options": [
-            "A personal letter of recommendation from an international diplomat.",
-            "A valid Tax Residency Certificate (TRC) issued by its home tax authority, a completed electronic Form 10F, an Indian Permanent Account Number (PAN), and confirmation of no domestic permanent establishment.",
-            "A commercial credit rating report from an American credit bureau.",
-            "A copy of the founder's university diploma."
+            "A certificate of incorporation from its home registry, a board resolution, an Indian GST number, and confirmation of no foreign exchange liability.",
+            "A valid Tax Residency Certificate (TRC) from its home tax authority, an electronic Form 10F, an Indian PAN, and confirmation of no domestic permanent establishment.",
+            "A valid Tax Residency Certificate (TRC) from the Indian tax authority, a paper Form 15CA, a foreign tax ID, and confirmation of no domestic bank account.",
+            "A copy of the treaty text, an audited annual report, an Indian TAN, and confirmation of no related-party transactions with the Indian payer."
           ],
           "answer": 1,
           "why": "Section 90(4) strictly mandates a Tax Residency Certificate (TRC) and Form 10F as statutory prerequisites for claiming DTAA treaty relief.",
@@ -9350,10 +9350,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a Transfer Pricing Recharacterization audit by revenue authorities trigger a catastrophic double taxation outage for a cross-border tech startup?",
           "options": [
-            "Tax authorities reject the subsidiary's low-risk service provider status, recharacterize it as an entrepreneurial co-owner of global IP, attribute a large percentage of global revenue, and assess retroactive taxes with 200% underreporting penalties.",
-            "By legally converting all common stock into non-voting debt debentures.",
-            "By forcing founders to personally pay employee salaries out of private bank accounts.",
-            "By automatically canceling all corporate patents registered in the home jurisdiction."
+            "Authorities reject low-risk status, recast the subsidiary as an entrepreneurial IP co-owner, attribute large global revenue, and assess retroactive taxes with 200% penalties.",
+            "Authorities accept low-risk status but disallow the cost-plus markup as excessive, assess retroactive taxes on the markup, and levy 200% penalties on the parent group.",
+            "Authorities treat the subsidiary as a branch of the parent, tax the parent's global income in the subsidiary's country, and assess a one-time 20% penalty on it.",
+            "Authorities cancel the tax treaty for the group, apply the maximum withholding rate on all payments, and assess retroactive taxes with 200% penalties on it."
           ],
           "answer": 0,
           "why": "Recharacterizing a subsidiary as an entrepreneurial co-owner attributes global revenues, creating massive uncredited retroactive tax liabilities.",
@@ -9410,10 +9410,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under IRC Section 957(a) and Section 951(b), when is a foreign company classified as a Controlled Foreign Corporation (CFC)?",
           "options": [
-            "When it employs more than five hundred software developers in Europe.",
-            "When its foreign exchange bank accounts hold more than one million British pounds.",
-            "When it operates an office in a country that is not recognized by the United Nations.",
-            "When more than fifty percent (50%) of its total combined voting power or stock value is owned by United States Shareholders who each own ten percent (10%) or more of the company."
+            "When more than twenty-five percent (25%) of its total voting power or stock value is owned by United States Shareholders who each own five percent (5%) or more.",
+            "When more than fifty percent (50%) of its total income is earned from United States customers, regardless of who owns its voting power or stock value.",
+            "When more than ten percent (10%) of its total voting power or stock value is owned by any one United States Shareholder, regardless of the size of the others.",
+            "When more than fifty percent (50%) of its total voting power or stock value is owned by United States Shareholders who each own ten percent (10%) or more."
           ],
           "answer": 3,
           "why": "Section 957(a) defines a CFC as a foreign corporation where qualifying 10% US Shareholders own more than 50% of vote or value.",
@@ -9446,10 +9446,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are high-growth software and digital technology startups disproportionately exposed to GILTI inclusions under IRC Section 951A?",
           "options": [
-            "Because software companies possess minimal tangible depreciable assets (near-zero QBAI), meaning they receive virtually no ten-percent routine return deduction, leaving nearly 100% of foreign operating profit exposed to GILTI.",
-            "Because software code is classified as toxic physical industrial waste by the Environmental Protection Agency.",
-            "Because the Internal Revenue Service charges higher tax rates to companies with websites.",
-            "Because computer programmers are legally classified as foreign diplomats."
+            "Because software firms hold few tangible assets (near-zero QBAI), they get virtually no ten-percent routine return deduction, leaving nearly all profit exposed to GILTI.",
+            "Because software companies pay high foreign tax rates on their income, they get no credit for the foreign taxes paid, leaving nearly all profit exposed to GILTI.",
+            "Because software companies earn most of their income inside the United States, they get no foreign tax credit, leaving nearly all of their profit exposed to GILTI.",
+            "Because software companies are exempt from the routine return deduction by statute, they get no QBAI offset, leaving nearly all foreign profit exposed to GILTI."
           ],
           "answer": 0,
           "why": "With minimal physical capital assets, software companies have negligible QBAI, leaving virtually all profits exposed to GILTI.",
@@ -9482,10 +9482,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the significance of the '13.125% Breakeven Foreign Tax Rate' in United States GILTI corporate tax planning?",
           "options": [
-            "It represents the maximum interest rate a foreign subsidiary can charge on intercompany promissory notes.",
-            "If a foreign CFC pays an effective corporate tax rate of at least 13.125%, the eighty-percent deemed paid foreign tax credit under Section 960 completely absorbs the 10.5% effective US corporate tax, resulting in zero residual US GILTI tax.",
-            "It is the mandatory dividend distribution percentage required by the European Central Bank.",
-            "It is the minimum employee turnover rate allowed before corporate tax deductions are forfeited."
+            "If a foreign CFC pays an effective tax rate of at most 13.125%, the 80% deemed paid credit under Section 960 absorbs the 10.5% effective US tax, leaving zero residual GILTI tax.",
+            "If a foreign CFC pays an effective tax rate of at least 13.125%, the 80% deemed paid credit under Section 960 absorbs the 10.5% effective US tax, leaving zero residual GILTI tax.",
+            "If a foreign CFC pays an effective tax rate of at least 10.5%, the 100% deemed paid credit under Section 960 absorbs the 10.5% effective US tax, leaving zero residual GILTI tax.",
+            "If a foreign CFC pays an effective tax rate of at least 13.125%, the 80% deemed paid credit under Section 960 absorbs the full 21% US corporate tax, leaving zero residual GILTI tax."
           ],
           "answer": 1,
           "why": "Because 80% of 13.125% equals 10.5%, the deemed paid FTC exactly offsets the 10.5% effective US tax rate on GILTI.",
@@ -9518,10 +9518,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a Dependent Agent Permanent Establishment (DAPE) under Article 5(5) expose an offshore holding company to foreign corporate taxes?",
           "options": [
-            "By requiring all senior executives to enlist in the foreign nation's armed forces.",
-            "By revoking the holding company's corporate charter in its home state.",
-            "If domestic subsidiary employees habitually conclude customer contracts on behalf of the offshore holding company, the offshore company is deemed to have a local taxable presence, subjecting profits to foreign corporate taxes up to 40% plus surcharges.",
-            "By automatically converting the company into a charitable non-profit organization."
+            "If local employees only market the offshore company's products without concluding contracts, it is deemed to have a taxable local presence on those profits.",
+            "If the offshore holding company owns shares in the local subsidiary, it is deemed to have a taxable local presence on the subsidiary's profits.",
+            "If local employees habitually conclude customer contracts for the offshore holding company, it is deemed to have a taxable local presence on those profits.",
+            "If the offshore holding company lends money to the local subsidiary at a fixed interest rate, it is deemed to have a taxable local presence on the profits."
           ],
           "answer": 2,
           "why": "Article 5(5) establishes a taxable DAPE nexus if local agents habitually conclude or lead to conclusion of contracts for the foreign principal.",
@@ -9554,10 +9554,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a timely Section 962 Protective Election rescue an individual United States founder from a catastrophic Phantom GILTI Tax Outage?",
           "options": [
-            "It forces the foreign government to wire emergency cash refunds to the founder's personal account.",
-            "It eliminates all requirement to file annual tax returns with the Internal Revenue Service.",
-            "It allows the founder to legally renounce their United States citizenship with zero exit taxes.",
-            "It permits the individual to elect to be taxed on their GILTI inclusion at domestic corporate rates (21%) and claim the Section 960 deemed paid foreign tax credit, neutralizing the phantom cash tax liability."
+            "It lets the individual elect to defer the GILTI inclusion until the shares are sold, and claim a capital loss that cancels the phantom cash tax liability.",
+            "It lets the individual elect to exclude the GILTI inclusion if the foreign tax rate exceeds 10%, with no credit claim needed to cancel the phantom tax.",
+            "It lets the individual elect to transfer the GILTI inclusion to the corporate parent at 21%, claiming the full Section 250 deduction to neutralize the phantom tax.",
+            "It lets the individual elect to be taxed on the GILTI inclusion at corporate rates (21%) and claim the Section 960 deemed paid credit, neutralizing the phantom cash tax."
           ],
           "answer": 3,
           "why": "Section 962 allows individual US shareholders to elect corporate tax treatment and claim deemed paid foreign tax credits on CFC inclusions.",
@@ -9615,10 +9615,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial benefit of a Cost Sharing Arrangement (CSA) under Treasury Regulation Section 1.482-7?",
           "options": [
-            "It exempts companies from paying employee salaries during the development phase.",
-            "It automatically transfers all intellectual property to public domain foundations.",
-            "Participating entities fund development costs in proportion to anticipated benefits, becoming economic co-owners of resulting intangibles and eliminating ongoing cross-border royalty friction.",
-            "It allows companies to register patents without disclosing software algorithms."
+            "Participating entities fund development costs equally regardless of anticipated benefits, become licensees of the resulting intangibles, and pay royalties to the lead entity.",
+            "Participating entities fund development costs in proportion to anticipated benefits, and the parent alone owns the resulting intangibles, charging a royalty to the others.",
+            "Participating entities fund development costs in proportion to anticipated benefits, become economic co-owners of the resulting intangibles, and eliminate cross-border royalty friction.",
+            "Participating entities share development costs in proportion to headcount, and become economic co-owners of the resulting intangibles only in the country where they are used."
           ],
           "answer": 2,
           "why": "A CSA enables joint economic ownership based on RAB shares, eliminating intercompany royalty payments upon commercialization.",
@@ -9652,10 +9652,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the OECD BEPS DEMPE framework, why is holding legal title to a patent in a tax haven insufficient to retain intangible profits?",
           "options": [
-            "Because international law requires all patents to be written in Latin.",
-            "Because economic profits must be allocated to the jurisdictions where people actually perform, manage, and control the Development, Enhancement, Maintenance, Protection, and Exploitation functions.",
-            "Because offshore shell companies are prohibited from opening email accounts.",
-            "Because tax havens do not maintain physical courthouses to resolve corporate disputes."
+            "Because profits must be allocated to the jurisdiction where the largest customers are located, regardless of where the intangible was developed or who controls it.",
+            "Because profits go to the jurisdictions where people actually perform, manage, and control Development, Enhancement, Maintenance, Protection, and Exploitation functions.",
+            "Because profits must be allocated to the jurisdiction with the highest statutory tax rate, which is deemed to be where the intangible earns its economic return.",
+            "Because profits must be allocated to the jurisdiction where the patent was first registered, unless the registrant fails to pay the maintenance fees on time."
           ],
           "answer": 1,
           "why": "DEMPE rules mandate that profits from intangibles must align with economic substance and significant people functions.",
@@ -9689,10 +9689,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the OECD 'Modified Nexus Approach' restrict access to sovereign Patent Box tax incentives?",
           "options": [
-            "It restricts preferential tax rates strictly to the proportion of qualifying internal R&D expenditures incurred directly by the taxpayer in the host jurisdiction, preventing tax relief on outsourced shell operations.",
-            "It requires companies to give all patent royalties to the United Nations.",
-            "It forces companies to hire only government-certified software engineers.",
-            "It prohibits companies from selling products outside the country of registration."
+            "It restricts preferential rates to the share of qualifying R&D spending incurred directly by the taxpayer in the host country, denying relief on outsourced shells.",
+            "It restricts preferential rates to income from patents registered in the host country, regardless of where the R&D spending was incurred or by whom.",
+            "It restricts preferential rates to companies that employ more than half of their workforce in the host country, regardless of the R&D spending incurred.",
+            "It restricts preferential rates to the first five years of a patent's life, regardless of the qualifying R&D spending incurred by the taxpayer."
           ],
           "answer": 0,
           "why": "The modified nexus approach links tax relief directly to the ratio of qualifying direct R&D expenditures to total expenditures.",
@@ -9726,10 +9726,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does transferring pre-existing software code from an Indian operating company to a foreign holding company trigger capital gains exit tax?",
           "options": [
-            "Because foreign holding companies must pay import duties on digital downloads.",
-            "Because software source code is legally treated as physical real estate.",
-            "Because the Indian central bank prohibits foreign ownership of technology companies.",
-            "Because Section 9(1)(i) and Section 45 classify the assignment of domestic intangible assets to a non-resident as a taxable transfer, taxing the fair market value determined under Rule 11UA at capital gains rates."
+            "Because Section 80 treats the assignment of domestic intangibles to a non-resident as a deductible expense, taxed instead on the royalties received over time.",
+            "Because Section 9(1)(i) treats shares in the foreign holding company as a capital asset, taxed on the cost of the code at book value under Rule 11UA.",
+            "Because Section 45 exempts transfers to a holding company, but taxes the foreign company on the book value of the code when it is later licensed.",
+            "Because Sections 9(1)(i) and 45 treat assigning domestic intangibles to a non-resident as a taxable transfer, taxed at fair market value under Rule 11UA."
           ],
           "answer": 3,
           "why": "Section 45 taxes the transfer of capital assets at certified fair market value under Rule 11UA, treating internal code cost basis as zero.",
@@ -9764,10 +9764,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate defense against an Unperfected IP Migration Exit Tax Outage under Section 92CA?",
           "options": [
-            "Delete all git commit history and claim the software was created by anonymous volunteers.",
-            "Reincorporate the business as an unregistered general partnership.",
-            "Execute Cost Sharing Arrangements at earliest inception, commission contemporaneous Rule 11UA Merchant Banker DCF valuation reports, and avoid transferring pre-existing IP at arbitrary nominal prices.",
-            "Refuse to answer statutory communications from revenue authorities."
+            "Transfer the IP at book value, avoid independent valuation reports to limit disclosure, and file the transfer with the tax officer only after the exit event.",
+            "Execute a royalty-free license at inception, obtain a legal opinion on the license, and keep transfer pricing records only for the last two years.",
+            "Execute Cost Sharing Arrangements at inception, obtain contemporaneous Rule 11UA merchant banker DCF valuations, and never transfer existing IP at arbitrary nominal prices.",
+            "Execute the share swap before any IP transfer, obtain a board valuation approved by the founders, and defer the tax filing until the next financing round."
           ],
           "answer": 2,
           "why": "Early CSAs, certified Rule 11UA valuations, and robust transfer pricing documentation prevent discretionary retroactive TPO assessments.",
@@ -9825,10 +9825,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance advantage of the Tri-Jurisdictional Holding Topology (Delaware-Singapore-India)?",
           "options": [
-            "It grants founders diplomatic immunity from international commercial contract law.",
-            "It separates American venture fundraising and governance (Delaware) from regional commercial operations and IP exploitation (Singapore), while maintaining dedicated technical engineering services in India under bilateral tax treaties.",
-            "It requires all software engineering code to be approved by the United Nations.",
-            "It eliminates the legal requirement to maintain corporate bank accounts in any country."
+            "It combines US venture fundraising, regional IP ownership, and engineering services in one Delaware company, with branch offices in Singapore and India under tax treaties.",
+            "It separates US venture fundraising and governance (Delaware) from regional commercial operations and IP (Singapore), with engineering services in India under tax treaties.",
+            "It separates Indian fundraising and governance (India) from US commercial operations and IP (Delaware), with engineering services in Singapore under tax treaties.",
+            "It separates US venture fundraising (Delaware) from IP ownership in India and commercial operations in Singapore, with no engineering services outside the US."
           ],
           "answer": 1,
           "why": "The tri-jurisdictional model aligns Silicon Valley governance with Singapore regional commercial IP hubs and Indian technical R&D.",
@@ -9862,10 +9862,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is declaring a seventeen percent (17%) operating markup under Indian CBDT Safe Harbour Rules advantageous for a captive software subsidiary?",
           "options": [
-            "It exempts the company from paying salaries to software developers.",
-            "It allows the company to invoice customers without issuing legal tax receipts.",
-            "The tax department is legally mandated to accept the declared transfer price without discretionary transfer pricing adjustments, eliminating audit disputes and litigation expenses for transactions up to INR 100 Crore.",
-            "It automatically converts all operating debt into non-taxable government grants."
+            "The tax department must accept the declared transfer price only after a mandatory advance pricing agreement, which removes audit disputes for transactions of any size.",
+            "The tax department must reduce the declared transfer price by seventeen percent, which lowers the taxable profit of the subsidiary for transactions up to INR 100 Crore.",
+            "The tax department must accept the declared transfer price without discretionary adjustment, eliminating audit disputes and litigation costs for transactions up to INR 100 Crore.",
+            "The tax department must treat the subsidiary as a branch of the parent, which removes withholding tax disputes for transactions up to INR 100 Crore of value."
           ],
           "answer": 2,
           "why": "CBDT Safe Harbour Rules provide statutory immunity from transfer pricing audit adjustments for qualifying entities.",
@@ -9899,10 +9899,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the '13.125% Breakeven Foreign Tax Rate' protect an American corporate parent from residual GILTI tax liabilities under IRC Section 951A?",
           "options": [
-            "It exempts foreign subsidiaries from filing local corporate tax returns.",
-            "It allows the parent company to borrow money from the Federal Reserve at zero percent interest.",
-            "It automatically eliminates state corporate income taxes across all fifty states.",
-            "Because the eighty-percent deemed paid foreign tax credit under Section 960 on a 13.125% foreign tax rate exactly offsets the ten point five percent effective US corporate tax on GILTI, resulting in zero residual federal tax."
+            "Because the 100% deemed paid credit under Section 960 on a 10.5% foreign tax rate offsets the 10.5% effective US corporate tax on GILTI, leaving zero residual federal tax.",
+            "Because the 50% deduction under Section 250 on a 13.125% foreign tax rate exactly offsets the 21% corporate tax on GILTI, leaving zero residual federal tax.",
+            "Because the 80% deemed paid credit under Section 960 on a 21% foreign tax rate offsets the 13.125% effective US corporate tax on GILTI, leaving zero residual federal tax.",
+            "Because the 80% deemed paid credit under Section 960 on a 13.125% foreign tax rate exactly offsets the 10.5% effective US corporate tax on GILTI, leaving zero residual federal tax."
           ],
           "answer": 3,
           "why": "80% of 13.125% equals 10.5%, perfectly neutralizing the 10.5% effective US corporate tax rate on GILTI inclusions.",
@@ -9936,10 +9936,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Residual Profit Split Method (RPSM), how are multi-jurisdictional software profits divided between corporate entities?",
           "options": [
-            "Operating subsidiaries first receive a routine arm's length return for routine services, and the remaining residual intangible profit is divided between holding entities based on weighted DEMPE scores and economic substance.",
-            "All profits are distributed equally to all employees regardless of role.",
-            "The entity with the largest physical office receives one hundred percent of global profit.",
-            "Treating DEMPE-Compliant and Sharing as interchangeable constants rather than verifying Arrangement at each step."
+            "Operating subsidiaries first receive a routine arm's length return, then the residual intangible profit is divided between holding entities by weighted DEMPE scores.",
+            "Holding entities first receive a routine return for the intangible, and the remaining routine profit is divided between operating subsidiaries by weighted headcount.",
+            "All profit is divided in proportion to each entity's sales revenue, with no routine return first, regardless of DEMPE scores and economic substance.",
+            "All profit is allocated to the entity that legally owns the intangible, after a routine return to subsidiaries, regardless of DEMPE scores and economic substance."
           ],
           "answer": 0,
           "why": "RPSM first rewards routine functions, then divides residual intangible profits based on DEMPE functional contributions.",
@@ -9990,10 +9990,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of the Milestone 9 Capstone Enterprise Control Tower?",
           "options": [
-            "To automatically dissolve foreign operating subsidiaries at the end of each fiscal year.",
-            "To programmatically verify all five subsystems of the cross-border corporate architecture—holding topology, transfer pricing, GILTI credits, DEMPE cost-sharing, and anti-pattern defenses—ensuring institutional-grade legal and tax resilience.",
-            "To file trademark applications with international sports federations.",
-            "To publish proprietary software source code on open bulletin boards."
+            "To manually review the five subsystems of the domestic architecture: payroll taxes, GST filings, employee stock plans, board minutes, and statutory registers.",
+            "To programmatically verify the five subsystems of the cross-border architecture: holding topology, transfer pricing, GILTI credits, DEMPE cost-sharing, and anti-pattern defenses.",
+            "To programmatically verify the five subsystems of the fundraising architecture: term sheet terms, cap table math, option pool sizing, SAFE conversion, and vesting.",
+            "To programmatically verify the five subsystems of the operating architecture: unit economics, CAC payback, pricing tiers, retention cohorts, and sales velocity."
           ],
           "answer": 1,
           "why": "The Control Tower programmatically certifies the legal, regulatory, and tax integrity of the complete cross-border enterprise architecture.",
@@ -10051,10 +10051,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical financial risk of relying exclusively on 'Blended CAC' rather than 'Paid CAC' when scaling a growth-stage venture?",
           "options": [
-            "Blended CAC dilutes paid marketing expenses with free organic signups, masking the true marginal cost of acquiring customers through paid channels and leading to aggressive capital allocation into unprofitable ad campaigns.",
-            "Blended CAC requires corporate controllers to publish trade secret source code on social media.",
-            "Blended CAC automatically converts preferred shares into non-voting debt debentures.",
-            "Blended CAC prohibits companies from opening corporate bank accounts in North America."
+            "Blended CAC dilutes paid spend with free organic signups, masking the true marginal cost of paid acquisition and leading to aggressive spending on unprofitable ad campaigns.",
+            "Blended CAC excludes sales salaries and marketing tools from the numerator, understating the total cost of acquiring customers and leading to hiring too slowly.",
+            "Blended CAC counts only the first month of revenue from customers, overstating the cost of acquisition and leading to cuts in profitable ad campaigns.",
+            "Blended CAC averages acquisition costs across products and regions, hiding the cheapest channel and leading to a uniform budget cut across all campaigns."
           ],
           "answer": 0,
           "why": "Blended CAC conceals deteriorating paid acquisition unit economics behind free organic traffic, triggering capital destruction.",
@@ -10087,10 +10087,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Net Dollar Retention (NDR) rate exceeding one hundred percent (100%) signify for an enterprise software company?",
           "options": [
-            "It indicates that the company has failed to pay corporate income taxes for twelve months.",
-            "It means that the company has lost one hundred percent of its customers to competitors.",
-            "It indicates that software source code has suffered catastrophic memory leaks.",
-            "It indicates 'Negative Net Churn', meaning that expansion revenue from existing customer accounts outpaces contraction and cancellations, causing cohort revenue to grow organically over time without new sales."
+            "It indicates 'Zero Net Churn': no customer cancelled or contracted, so cohort revenue stays flat unless new sales add customers to the existing base.",
+            "It indicates 'Positive Net Churn': cancellations and contractions outpace expansion revenue, so cohort revenue shrinks unless new sales replace the losses.",
+            "It indicates 'Negative Gross Churn': the company added more new customers than it lost, so total revenue grows only through new sales effort.",
+            "It indicates 'Negative Net Churn': expansion revenue from existing accounts outpaces contraction and cancellations, so cohort revenue grows without new sales."
           ],
           "answer": 3,
           "why": "NDR > 100% represents negative net churn, where upsells and expansions exceed churn, creating organic cohort growth.",
@@ -10124,10 +10124,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is the 'SaaS Magic Number' calculated, and what does a value exceeding 1.0x indicate to growth-stage venture investors?",
           "options": [
-            "It is calculated by multiplying gross revenue by employee headcounts to evaluate office space.",
-            "It is the ratio of software bug reports to resolved customer support tickets.",
-            "It is calculated as Net New ARR divided by Previous Quarter Sales and Marketing Spend; a value over 1.0x indicates exceptional capital efficiency, signaling that the venture should aggressively accelerate sales hiring.",
-            "It is calculated as Total Assets divided by Founder Stock Options; a value over 1.0x indicates impending bankruptcy."
+            "Net New ARR divided by current-quarter gross margin; a value over 1.0x signals exceptional profitability and a case to distribute cash to shareholders.",
+            "Total ARR divided by prior-quarter Sales and Marketing spend; a value over 1.0x signals exceptional scale and a case to raise the next round soon.",
+            "Net New ARR divided by prior-quarter Sales and Marketing spend; a value over 1.0x signals exceptional efficiency and a case to accelerate sales hiring.",
+            "Net New ARR multiplied by the churn rate in the prior quarter; a value over 1.0x signals exceptional retention and a case to reduce sales hiring."
           ],
           "answer": 2,
           "why": "Magic Number = Net New ARR / Prior Qtr S&M spend; values >= 1.0x demonstrate outstanding sales efficiency justifying expansion.",
@@ -10162,10 +10162,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is customer expansion revenue substantially more capital efficient than new logo acquisition in enterprise SaaS?",
           "options": [
-            "Because expansion revenue is exempt from state and federal corporate income taxation.",
-            "Expanding existing accounts eliminates cold outbound marketing costs, leverages pre-existing vendor approvals, and incurs lower sales commissions, resulting in an expansion CAC that is 70% to 80% lower than new-logo CAC.",
-            "Because software developers work without compensation when building product upsells.",
-            "Because enterprise customers are legally barred from canceling software subscriptions after year one."
+            "Expanding existing accounts requires longer security reviews, reuses no approvals, and carries higher commissions, so expansion CAC is 70% to 80% above new-logo CAC.",
+            "Expanding existing accounts removes cold outbound costs, reuses prior vendor approvals, and carries lower sales commissions, so expansion CAC is 70% to 80% below new-logo CAC.",
+            "Expanding existing accounts needs no sales team, reuses all approvals, and carries no commissions, so expansion CAC is 90% to 100% below new-logo CAC.",
+            "Expanding existing accounts is funded by customer prepayments, reuses prior approvals, and carries lower marketing costs, so expansion CAC equals new-logo CAC."
           ],
           "answer": 1,
           "why": "Expansion CAC is 70-80% cheaper than new-logo acquisition because trust, security vetting, and master service contracts are already in place.",
@@ -10199,10 +10199,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 'Blended CAC Growth Trap' destroy a growth-stage startup following a large venture financing round?",
           "options": [
-            "The company uses blended CAC to mask rising marginal paid acquisition costs; when organic viral growth plateaus, paid CAC escalates while customer retention deteriorates, creating severe negative unit margins that burn venture runway.",
-            "By automatically transferring corporate voting control to competitor venture capital firms.",
-            "By legally converting customer software subscriptions into government municipal bonds.",
-            "By forcing the company to pay triple salaries to all non-technical administrative employees."
+            "Blended CAC masks rising paid acquisition costs; when organic growth plateaus, paid CAC escalates while retention weakens, creating negative unit margins that burn runway.",
+            "Blended CAC overstates the paid acquisition cost; when organic growth plateaus, the company cuts ad spend while retention strengthens, creating positive margins that idle runway.",
+            "Blended CAC excludes salaries in the numerator; when the round closes, hiring speeds up while paid CAC falls, creating higher unit margins that shorten the payback period.",
+            "Blended CAC rises with every ad dollar; when the round closes, the company shifts spend to organic channels while retention improves, creating cash that extends runway."
           ],
           "answer": 0,
           "why": "Relying on blended CAC hides that marginal paid CAC exceeds customer LTV, driving exponential cash burn as marketing scales.",
@@ -10319,10 +10319,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 606 and IFRS 15, how must a $360,000 annual software subscription contract invoiced on January 1 be recognized on the corporate books?",
           "options": [
-            "Recorded as $360,000 in deferred revenue contract liabilities on January 1, and recognized ratably at $30,000 per month as performance obligations are satisfied.",
-            "Recognized fully as $360,000 in GAAP subscription revenue on January 1 upon contract execution.",
-            "Recorded as an equity reserve until the contract expires at the end of twelve months, then recognized as retained earnings.",
-            "Expensed immediately as unearned customer compensation and written off against operating accounts payable."
+            "Recorded as $360,000 in deferred revenue (a contract liability) on January 1, then recognized ratably at $30,000 per month as the obligation is satisfied.",
+            "Recorded as $360,000 in revenue on January 1, when the invoice is issued, with no further entries needed during the year of the subscription.",
+            "Recorded as $360,000 in accounts receivable and revenue on January 1, then reduced by $30,000 per month as cash is collected from the customer.",
+            "Recorded as $30,000 in revenue on January 1, then recognized as $30,000 per month, with the remaining balance disclosed only in the notes."
           ],
           "answerIndex": 0,
           "why": "Under ASC 606 and IFRS 15, subscription contracts must be recorded as deferred revenue liabilities upon invoicing and recognized ratably month by month as the performance obligations are systematically satisfied.",
@@ -10367,10 +10367,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a significant escalation in Days Sales Outstanding (DSO) from 35 days to 75 days indicate to growth-equity investors during financial due diligence?",
           "options": [
-            "Operating cash flow is expanding rapidly because receivables are legally classified as liquid cash equivalents.",
-            "Customers are delaying invoice payments, disputing delivery milestones, or experiencing liquidity stress, trapping cash in uncollected receivables.",
-            "Sales productivity has improved because account executives are granting unlimited trade credit without management approval.",
-            "The enterprise has successfully transitioned all enterprise customers to annual upfront cash collections."
+            "Customers are paying faster than before, using early-payment discounts, or prepaying contracts, releasing cash that was tied up in receivables.",
+            "Customers are delaying payments, disputing delivery milestones, or facing liquidity stress, trapping cash in uncollected receivables.",
+            "The company is extending longer payment terms to win large deals, which improves sales growth but signals no risk to the quality of revenue.",
+            "The company is collecting cash before delivery under annual contracts, which lengthens the days outstanding without trapping any cash at all."
           ],
           "answerIndex": 1,
           "why": "An escalating DSO indicates that customer payments are delayed, invoices are disputed, or clients are facing cash flow distress, trapping vital liquidity in uncollected accounts receivable and threatening corporate runway.",
@@ -10463,10 +10463,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance control to prevent the Phantom Revenue Accrual Outage in growth-stage technology ventures?",
           "options": [
-            "Replace ASC 606 revenue recognition standards with cash-basis tax accounting to eliminate deferred revenue liabilities.",
-            "Permit account executives to recognize 100% of multi-year contract values immediately upon signing verbal letters of intent.",
-            "Eliminate accounts receivable aging schedules and write off all uncollected invoices at the end of each calendar year.",
-            "Enforce strict separation between Bookings, Recognized Revenue, and Cash Collections, disburse sales commissions only on cash collected, and prohibit revenue recognition on contingent contracts."
+            "Combine Bookings, Recognized Revenue, and Cash Collections in one report, pay sales commissions on signed bookings, and allow recognition on contingent contracts.",
+            "Recognize revenue when contracts are signed, pay sales commissions at the end of each year, and bar cash collections from being reported with bookings.",
+            "Enforce quarterly reconciliation of Bookings to Cash Collections only, pay sales commissions on recognized revenue, and allow recognition on contingent contracts.",
+            "Enforce strict separation between Bookings, Recognized Revenue, and Cash Collections, pay sales commissions only on cash collected, and bar recognition on contingent contracts."
           ],
           "answerIndex": 3,
           "why": "To prevent phantom revenue accrual outages, governance must mandate strict separation between bookings, revenue, and cash collections, disburse sales commissions only upon cleared cash, and enforce ASC 606 compliance by prohibiting revenue recognition on contracts with contingent delivery terms.",
@@ -10537,10 +10537,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary economic difference between standard Pro-Rata rights and Super Pro-Rata rights in growth-stage venture syndicates?",
           "options": [
-            "Super pro-rata converts preferred shares into common debt instruments upon round completion, eliminating equity voting rights.",
-            "Standard pro-rata applies only to seed rounds, while super pro-rata is strictly reserved for initial public offerings.",
-            "Standard pro-rata permits an investor to maintain their exact ownership percentage, while super pro-rata permits them to purchase a higher percentage of the round, crowding out new leads or diluting founders.",
-            "Standard pro-rata requires an investor to double their capital commitment in every round, while super pro-rata eliminates all investment obligations."
+            "Standard pro-rata lets an investor buy a higher percentage of the round, while super pro-rata lets them keep their ownership percentage only, giving founders priority.",
+            "Standard pro-rata applies only to the founders' shares, while super pro-rata applies to all investors' shares, so new leads are allotted their full share of the round.",
+            "Standard pro-rata lets an investor keep their ownership percentage, while super pro-rata lets them buy more of the round, crowding out new leads or diluting founders.",
+            "Standard pro-rata applies in follow-on rounds only, while super pro-rata applies at the seed round only, so new leads are never crowded out of any round."
           ],
           "answerIndex": 2,
           "why": "Standard pro-rata allows an existing investor to maintain their existing ownership percentage, whereas super pro-rata allows them to take an expanded allocation (e.g., 1.5x to 2.0x pro-rata), which can crowd out the incoming lead investor or cause unbudgeted founder dilution.",
@@ -10585,10 +10585,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the contractual consequence of a Pay-to-Play provision on an existing Series A preferred investor who refuses to fund their pro-rata share in a qualified down-round?",
           "options": [
-            "The investor is prohibited from trading any public stocks for a period of five years under federal securities laws.",
-            "Their preferred shares are involuntarily converted to common stock (or shadow preferred), forfeiting their senior liquidation preference and protective voting rights.",
-            "The company is legally forced to repurchase their shares at original cost plus an eighteen percent compounding annual interest penalty.",
-            "Their preferred shares receive a double liquidation preference to compensate them for not participating in the new round."
+            "Their preferred shares are cancelled and the investor receives a refund of the original investment, forfeiting only the right to participate in future rounds.",
+            "Their preferred shares are involuntarily converted to common stock (or shadow preferred), forfeiting their liquidation preference and protective voting rights.",
+            "Their preferred shares are repurchased by the company at a 50% discount, forfeiting their board seat but keeping the liquidation preference in full.",
+            "Their preferred shares are converted to debt that must be repaid first at the next financing, forfeiting only the anti-dilution protection they held."
           ],
           "answerIndex": 1,
           "why": "Under a pay-to-play provision, an investor who fails to contribute their pro-rata share in a qualified round has their preferred shares converted into common stock or shadow preferred, stripping away liquidation preferences, anti-dilution rights, and board seats.",
@@ -10633,10 +10633,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Full Ratchet anti-dilution protection considered toxic and predatory compared to Broad-Based Weighted Average protection?",
           "options": [
-            "Full ratchet resets the previous conversion price directly to the down-round price regardless of round size, doubling or tripling investor shares and wiping out founder equity.",
-            "Full ratchet requires founders to personally guarantee the company's lease liabilities with their private residential real estate.",
-            "Full ratchet prevents the company from ever issuing employee stock options to software engineers or executive leadership.",
-            "Full ratchet automatically dissolves the corporation if the stock price declines by more than five percent."
+            "Full ratchet resets the earlier conversion price to the down-round price regardless of round size, multiplying investor shares and wiping out founder equity.",
+            "Full ratchet adjusts the earlier conversion price in proportion to the size of the down round, modestly raising investor shares and diluting founders evenly.",
+            "Full ratchet resets the earlier conversion price to the down-round price only for new investors, leaving earlier holders unaffected and founders unchanged.",
+            "Full ratchet raises the earlier conversion price to the up-round price regardless of round size, cutting investor shares and increasing founder equity."
           ],
           "answerIndex": 0,
           "why": "Full ratchet anti-dilution resets the conversion price to the down-round price even for a trivial investment size, drastically expanding investor share counts and imposing catastrophic dilution on founders and employee option holders.",
@@ -10730,10 +10730,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance mechanism used to restore talent retention and rescue an enterprise from a Down-Round Death Spiral?",
           "options": [
-            "File for Chapter 7 liquidating bankruptcy and transfer all software intellectual property to the state treasury.",
-            "Enforce full-ratchet anti-dilution to the maximum legal extent and terminate all founding executives immediately.",
-            "Implement a Management Incentive Plan (MIP) carve-out off the top of exit proceeds and execute a recapitalization restructuring that resets the capitalization table.",
-            "Convert all employee stock options into non-voting municipal bonds with thirty-year maturity horizons."
+            "Increase the liquidation preference of the existing investors and freeze all new option grants until the next priced financing round.",
+            "Replace the founders with new management hired by the investors and cancel all unvested options held by the departed executives.",
+            "Implement a Management Incentive Plan (MIP) carve-out from exit proceeds and recapitalize to reset the capitalization table.",
+            "Issue a new class of senior preferred stock to existing employees and cancel the anti-dilution rights of earlier investors."
           ],
           "answerIndex": 2,
           "why": "To stop talent flight in a down-round washout, boards establish a Management Incentive Plan (MIP) carving out 10%–15% of exit proceeds for key management and execute a recapitalization restructuring to reset employee incentives.",
@@ -10804,10 +10804,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Value-Based Pricing superior to Cost-Plus or simplistic Per-Seat pricing in enterprise software commercialization?",
           "options": [
-            "It legally prohibits enterprise clients from ever terminating their software subscription agreements.",
-            "It aligns commercial pricing directly with the economic surplus created for the customer, capturing maximum value and expanding revenue as customer usage scales.",
-            "It ensures that software is priced strictly five percent above cloud hosting and server depreciation costs.",
-            "It guarantees that every enterprise customer pays the exact same monthly fee regardless of size or usage."
+            "It matches pricing to the competitors' price list, capturing market share quickly and keeping revenue stable as customer usage scales.",
+            "It aligns pricing with the economic surplus created for the customer, capturing maximum value and expanding revenue as customer usage scales.",
+            "It fixes pricing at the cost of delivery plus a margin, capturing predictable profit and keeping revenue steady as customer usage scales.",
+            "It sets one flat price for every customer, capturing simple billing and removing negotiation as customer usage scales across accounts."
           ],
           "answerIndex": 1,
           "why": "Value-based pricing captures the economic surplus generated for the customer and scales alongside their business operations, whereas cost-plus underprices software and per-seat pricing penalizes efficiency.",
@@ -10853,10 +10853,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 830 and institutional treasury best practices, how does an enterprise software company protect international billing margins against foreign currency depreciation?",
           "options": [
-            "Recognize foreign currency losses as intangible marketing assets on the corporate balance sheet.",
-            "Eliminate international invoicing and conduct all global transactions through unregulated peer-to-peer crypto tokens.",
-            "Incorporate contractual FX collar corridors with reset thresholds into master agreements, and execute currency forward contracts to lock in baseline conversion rates.",
-            "Require all international enterprise clients to pay exclusively in physical gold bullion delivered to corporate headquarters."
+            "Invoice customers in the home currency only, and hold large foreign currency balances in local accounts to earn a higher interest rate.",
+            "Hedge only the revenue of the largest customers with options, and leave the other contracts exposed to currency moves to avoid hedging costs.",
+            "Include contractual FX collar corridors with reset thresholds in master agreements, and use currency forward contracts to lock in baseline conversion rates.",
+            "Raise list prices in foreign markets each quarter by the expected depreciation, and book the gain or loss on translation in net income."
           ],
           "answerIndex": 2,
           "why": "To neutralize foreign exchange risk, enterprises incorporate contractual FX collar corridors in agreements and execute financial forward contracts to lock in predictable cash conversions under ASC 830.",
@@ -10901,9 +10901,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the maximum allowed unplanned downtime per month for an enterprise software product guaranteeing 99.9% (Three Nines) availability in its commercial SLA?",
           "options": [
-            "Zero seconds of unplanned downtime under any circumstances.",
-            "Up to five full business days per calendar quarter.",
-            "Exactly 14.5 hours of unplanned downtime per month.",
+            "Approximately 4.38 minutes of unplanned downtime per month (52.6 minutes per year).",
+            "Approximately 7.3 hours of unplanned downtime per month (87.6 hours per year).",
+            "Approximately 21.9 minutes of unplanned downtime per month (4.38 hours per year).",
             "Approximately 43.8 minutes of unplanned downtime per month (8.76 hours per year)."
           ],
           "answerIndex": 3,
@@ -10950,10 +10950,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 606, what criteria determines whether software revenue sold through an external reseller must be recorded Gross or Net of partner discounts?",
           "options": [
-            "Whether the software enterprise controls the underlying cloud service before it is transferred to the customer; control establishes principal status, requiring Gross revenue reporting.",
-            "Whether the partner agreement is signed using electronic signatures or physical wet ink on paper.",
-            "Whether the reseller employs more than one thousand certified software engineers in its regional offices.",
-            "Whether the transaction is invoiced in the first or fourth quarter of the corporate fiscal year."
+            "Whether the enterprise controls the underlying service before it is transferred to the customer; control establishes principal status and Gross revenue reporting.",
+            "Whether the reseller sets the final end-customer price list for the software; setting prices establishes agent status and Net revenue reporting.",
+            "Whether the software enterprise bears the credit risk on the reseller's receivable; bearing credit risk establishes principal status and Gross revenue reporting.",
+            "Whether the contract is longer than twelve months with the partner; a multi-year term establishes principal status and Gross revenue reporting."
           ],
           "answerIndex": 0,
           "why": "Under ASC 606, if the entity controls the specified service before transfer (as in multi-tenant SaaS hosted by the vendor), it acts as a Principal and reports Gross revenue, expensing partner margins as sales costs.",
@@ -10999,10 +10999,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural and governance defense against the Custom Enterprise Feature Bloat Trap in high-growth SaaS ventures?",
           "options": [
-            "Accept all custom customer code requests and hire contractors to manage separate single-tenant branches for each enterprise client.",
-            "Enforce strict API-first extensibility, establish an Architecture Review Board with veto power over bespoke forks, and require custom workflows to be built externally via APIs.",
-            "Eliminate all enterprise security features and force Fortune 500 clients to use entry-level consumer software.",
-            "Shut down cloud operations and transition the entire company to on-premises shrink-wrapped CD-ROM software."
+            "Allow each large customer a dedicated code fork, set up a Customer Success Board with power to approve every custom request, and build workflows inside the core code.",
+            "Enforce API-first extensibility, set up an Architecture Review Board with veto power over bespoke forks, and require custom workflows to be built externally via APIs.",
+            "Freeze the product roadmap for twelve months, set up a Pricing Committee with power to refuse every custom request, and build workflows in spreadsheets instead.",
+            "Outsource all custom work to the customer's own engineers, set up an Audit Committee with veto power over contract terms, and bill custom features by the hour."
           ],
           "answerIndex": 1,
           "why": "To prevent custom code forks and maintenance quagmires, companies enforce API-first extensibility architectures and mandate Architecture Review Board approvals, ensuring core multi-tenant codebase integrity.",
@@ -11073,10 +11073,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a growth-stage Series B round, why do institutional lead investors insist that unallocated option pool refreshes be created entirely out of pre-money shares?",
           "options": [
-            "It converts employee stock options into cash dividend warrants payable every calendar quarter.",
-            "It legally prohibits existing venture investors from ever exercising their pro-rata rights in subsequent rounds.",
-            "It eliminates the need for Delaware corporate franchise tax filings during the subsequent fiscal year.",
-            "It forces the existing founders and early shareholders to bear one hundred percent of the option pool dilution, insulating the new investor from immediate equity dilution."
+            "It spreads the pool dilution equally between existing shareholders and the new investor, so neither side bears more than half of the dilution.",
+            "It forces the new investor to bear 100% of the pool dilution, which lets existing founders keep their ownership percentage unchanged.",
+            "It places the pool outside the cap table until it is granted, so no shareholder bears any dilution until the options are exercised later.",
+            "It forces existing founders and early shareholders to bear 100% of the pool dilution, insulating the new investor from immediate equity dilution."
           ],
           "answerIndex": 3,
           "why": "Requiring option pool refreshes out of pre-money shares ensures that existing shareholders bear all the dilution prior to investment, effectively reducing the true pre-money valuation paid by incoming investors.",
@@ -11121,10 +11121,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the capitalization and amortization of sales commissions under ASC Subtopic 340-40 protect enterprise gross profit margins during rapid sales hiring?",
           "options": [
-            "Commissions are capitalized as balance sheet assets and amortized systematically over the estimated benefit period, preventing massive upfront sales expense spikes from collapsing in-period margins.",
-            "Commissions are completely forgiven by sales representatives and converted into common shares upon closing.",
-            "Commissions are paid directly by the enterprise customer as an additional consulting surcharge outside GAAP.",
-            "Commissions are expensed as non-operating tax credits against future federal payroll obligations."
+            "Commissions are capitalized as balance sheet assets and amortized over the estimated benefit period, preventing upfront sales expense spikes from collapsing in-period margins.",
+            "Commissions are expensed in full when the contract is signed, matching the cost to the booking date and showing the true cost of each new customer in the period.",
+            "Commissions are recorded as deferred revenue and amortized over the contract term, preventing large cash payments from collapsing in-period margins.",
+            "Commissions are capitalized as intangible assets and amortized over five years regardless of contract length, preventing expense spikes in the period."
           ],
           "answerIndex": 0,
           "why": "Under ASC 340-40, sales commissions are capitalized as contract acquisition assets and amortized over the period of benefit, matching expenses directly with multi-year recognized revenue.",
@@ -11167,10 +11167,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of Broad-Based Weighted Average Anti-Dilution over Full Ratchet Anti-Dilution for founding teams during an unavoidable down-round?",
           "options": [
-            "Broad-based weighted average forces the incoming investors to purchase all common shares at a twenty percent premium.",
-            "Broad-based weighted average factors in the size and magnitude of the new round relative to total capitalization, producing an equitable price adjustment that prevents severe founder washout.",
-            "Broad-based weighted average guarantees that common stock prices will triple within six months of closing.",
-            "Broad-based weighted average eliminates all income tax liabilities for both company and employees."
+            "It resets the earlier conversion price to the new round price whatever the round size, producing a simple adjustment that prevents unlimited investor claims.",
+            "It factors in the size of the new round relative to total capitalization, producing an equitable price adjustment that prevents severe founder washout.",
+            "It applies only to shares sold in the new round, producing no change in the conversion price of earlier investors and so protecting founders fully.",
+            "It cancels the investors' anti-dilution rights after the first down round, producing a permanent price adjustment that prevents repeated founder dilution."
           ],
           "answerIndex": 1,
           "why": "Broad-based weighted average accounts for both the price reduction and the number of shares issued relative to total capitalization, cushioning the dilution impact compared to the predatory reset of full ratchet.",
@@ -11213,10 +11213,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 606, why must estimated Service Level Agreement (SLA) penalty credits be accounted for as Variable Consideration when recognizing monthly enterprise revenue?",
           "options": [
-            "They must be deducted directly from founding shareholder equity on a dollar-for-dollar basis.",
-            "They are treated as voluntary charitable donations that are tax-deductible on state corporate filings.",
-            "They represent potential contractual price concessions that constrain recognized revenue, requiring finance controllers to record a refund liability until service performance is verified.",
-            "They are classified as long-term debt liabilities bearing eight percent compounding annual interest."
+            "They are operating expenses of delivering the service, so controllers record a cost of revenue accrual in the month in which the downtime occurs.",
+            "They are contingent gains for the customer, so controllers disclose them in the notes only and record no liability until a credit is issued.",
+            "They are potential contractual price concessions that constrain recognized revenue, so controllers record a refund liability until service performance is verified.",
+            "They are penalties payable to regulators, so controllers record a provision for fines separately from revenue until the regulator issues a notice."
           ],
           "answerIndex": 2,
           "why": "SLA service credits constitute variable consideration under ASC 606, requiring the enterprise to constrain recognized revenue and establish refund liabilities to reflect probable customer price concessions.",
@@ -11264,10 +11264,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the five core diagnostic checks verified by the Milestone 10 Capstone Growth Control Tower Suite?",
           "options": [
-            "Relying solely on static hardcoded defaults for Anti-Pattern without reconciling Defense against live boundary conditions.",
-            "Coupling Anti-Pattern directly to unvalidated external state while disabling Milestone across Defense transitions.",
-            "Daily stock trading volume, cryptocurrency treasury holdings, municipal bond yields, and commercial bank credit ratings.",
-            "Marginal Paid vs Blended CAC health, Cash-to-Revenue collection ratio (>=85%), MIP carve-out equity protection (15%), Multi-tenant platform integrity (<=5% fork drain), and Rule of 40 / Burn Multiple efficiency."
+            "Paid vs Blended CAC health, cash collection ratio (>=50%), MIP carve-out (5%), multi-tenant integrity (<=25% fork drain), and Rule of 20 / Burn Multiple efficiency.",
+            "Gross vs Net revenue health, cash collection ratio (>=85%), ESOP pool size (15%), data residency integrity (<=5% latency), and Magic Number / NRR efficiency.",
+            "Paid vs Blended CAC health, cash collection ratio (>=95%), liquidation preference cap (1x), multi-tenant integrity (<=15% fork drain), and DSO / NDR efficiency.",
+            "Paid vs Blended CAC health, cash collection ratio (>=85%), MIP carve-out (15%), multi-tenant integrity (<=5% fork drain), and Rule of 40 / Burn Multiple efficiency."
           ],
           "answerIndex": 3,
           "why": "The Milestone 10 Control Tower systematically verifies CAC marginal efficiency, cash collection solvency (>=85%), MIP talent retention safety, multi-tenant engineering integrity, and capital efficiency (Rule of 40 and Burn Multiple <= 1.5x).",
@@ -11338,10 +11338,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must private technology ventures retroactively restate historical financial statements under Ind AS / US GAAP prior to filing an IPO prospectus?",
           "options": [
-            "To provide institutional investors and securities regulators with three to five years of standardized, comparable financial metrics reflecting public-grade accounting standards.",
-            "To eliminate all previous corporate income tax liabilities owed to federal and state revenue authorities.",
-            "To automatically double the company's valuation by reclassifying all operating expenses as intangible goodwill.",
-            "To convert all outstanding common stock into redeemable debt debentures maturing within six months."
+            "To give institutional investors and securities regulators three to five years of standardized, comparable financial metrics under public-grade accounting standards.",
+            "To give the company a tax deduction on past losses, since restated statements let it carry back losses over three to five earlier years of operation.",
+            "To reduce the reported revenue of earlier years, since restated statements must show lower growth rates than the management accounts to satisfy regulators.",
+            "To give founders an extra year before the IPO lock-in starts, since restated statements reset the date when the promoter holding is measured."
           ],
           "answerIndex": 0,
           "why": "Regulators require three to five years of standardized, restated financial statements under Ind AS/GAAP to ensure transparency, comparability, and accurate reflection of equity compensation, leases, and revenue recognition.",
@@ -11386,10 +11386,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the regulatory definition of a Material Weakness in Internal Financial Controls over Financial Reporting (ICFR) under SOX Section 404 and Companies Act 2013?",
           "options": [
-            "Any quarterly business travel expense claim that exceeds the company's standard meal per-diem by ten dollars.",
-            "A hardware failure in a non-financial developer sandbox laptop that causes twenty minutes of test downtime.",
-            "A minor typographical error in an informal internal marketing department presentation slide deck.",
-            "A deficiency, or combination of deficiencies, such that there is a reasonable possibility that a material misstatement of the financial statements will not be prevented or detected on a timely basis."
+            "A deficiency or combination of deficiencies in which a misstatement of the financial statements has been found and corrected by management after the year end.",
+            "A deficiency in the design of any control that is less severe than a significant deficiency but is important enough to merit attention by those in charge of governance.",
+            "A deficiency or combination of deficiencies in which fraud by senior management has been proven in court and the financial statements have been restated.",
+            "A deficiency or combination of deficiencies in which a material misstatement of the financial statements is reasonably possible without timely prevention or detection."
           ],
           "answerIndex": 3,
           "why": "A material weakness is a severe deficiency (or combination of deficiencies) in internal controls creating a reasonable possibility that a material financial misstatement will not be prevented or detected on a timely basis.",
@@ -11434,10 +11434,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI LODR Regulation 23, what special voting rule applies when a material Related Party Transaction is submitted to shareholders for approval?",
           "options": [
-            "The transaction is automatically approved without a vote if the company has been profitable for two consecutive years.",
-            "The promoter is granted double voting power to ensure the strategic commercial transaction passes unanimously.",
-            "All related parties, including promoters and interested shareholders, are legally barred from voting on the resolution, leaving approval entirely to disinterested public minority shareholders.",
-            "Only foreign institutional investors with over one billion dollars in assets under management may cast ballots."
+            "All related parties may vote on the resolution, but their votes are counted separately and approval needs a majority of both groups of shareholders.",
+            "Only the related party that is a party to the transaction is barred from voting, leaving approval to all other shareholders including the promoters.",
+            "All related parties, including promoters and interested shareholders, are barred from voting, leaving approval to disinterested public minority shareholders.",
+            "All shareholders may vote on the resolution, but approval requires 90% of the votes cast instead of the usual 75% required for special resolutions."
           ],
           "answerIndex": 2,
           "why": "Under SEBI LODR Regulation 23, all related parties are strictly prohibited from voting on resolutions approving material related party transactions, ensuring uncompromised approval by disinterested public minority shareholders.",
@@ -11531,10 +11531,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence if statutory auditors identify an un-remediated Material Weakness in internal financial controls on the eve of an IPO?",
           "options": [
-            "Auditors issue an adverse audit opinion, regulatory authorities halt the offering, institutional investors withdraw, and the IPO is derailed.",
-            "The investment bankers automatically purchase all unsold shares at a fifty percent premium.",
-            "The company is granted an unconditional three-year tax exemption by federal securities regulators.",
-            "The stock exchange permits the company to list immediately on the senior tier without public disclosures."
+            "Auditors issue an adverse audit opinion, regulators halt the offering, institutional investors withdraw, and the IPO is derailed.",
+            "Auditors issue a clean opinion with an emphasis paragraph, the offering proceeds, and the weakness is disclosed only in the risk factors.",
+            "Auditors issue a qualified opinion on the first quarter only, regulators allow the offering, and the weakness is remediated after listing.",
+            "Auditors resign from the engagement, the company appoints new auditors within a month, and the IPO is delayed only by one quarter."
           ],
           "answerIndex": 0,
           "why": "An un-remediated material weakness results in an adverse audit opinion, causing regulatory halts, institutional investor withdrawal, and the abrupt cancellation or derailment of the IPO.",
@@ -11606,10 +11606,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary statutory difference between a Draft Red Herring Prospectus (DRHP) and a Red Herring Prospectus (RHP) under SEBI ICDR Regulations?",
           "options": [
-            "The DRHP is a secret document that is never made public, while the RHP is printed in consumer fashion magazines.",
-            "The DRHP contains complete operational and legal disclosures but omits the issue price and price band, whereas the RHP includes the floor and cap price band for book-building.",
-            "The DRHP is prepared only by commercial banks, while the RHP is drafted by individual retail stock investors.",
-            "The DRHP eliminates all risk factors, while the RHP adds back criminal litigation records."
+            "The DRHP includes the final issue price and allotment details, while the RHP omits them to allow regulators to review the offer terms in advance.",
+            "The DRHP carries full disclosures but omits the issue price and price band, while the RHP adds the floor and cap price band for book-building.",
+            "The DRHP is filed with the stock exchanges only, while the RHP is filed with the registrar of companies and omits all financial statements.",
+            "The DRHP is a summary for retail investors, while the RHP is the full legal document filed after listing to confirm the final allotment."
           ],
           "answerIndex": 1,
           "why": "A DRHP omits the price and price band to facilitate regulatory review, while the RHP introduces the price band (Floor Price and Cap Price) to initiate the public book-building bidding process.",
@@ -11655,10 +11655,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Schedule VI and the Bespeaks Caution legal doctrine, what standard must Risk Factor disclosures satisfy in a public offering prospectus?",
           "options": [
-            "They must guarantee that investors will never lose money under any macroeconomic circumstances.",
-            "They must be printed in invisible cryptographic watermark ink that can only be read under ultraviolet light.",
-            "They must be specifically tailored to the issuer's business, quantify concrete financial exposures, and avoid generic boilerplate language to provide genuine legal protection.",
-            "They must be limited to exactly one single generic paragraph stating that all business investments carry risk."
+            "They must be written in general terms covering every industry, avoid quantified exposures, and use standard boilerplate so that they cover unforeseen events.",
+            "They must be limited to the three largest risks, quantify only past losses, and omit forward-looking exposures so that they avoid legal claims.",
+            "They must be tailored to the issuer's business, quantify concrete financial exposures, and avoid generic boilerplate so that they give genuine legal protection.",
+            "They must be placed in the last section of the prospectus, use technical language, and avoid cross-references so that investors read them last."
           ],
           "answerIndex": 2,
           "why": "Under SEBI regulations and the Bespeaks Caution doctrine, risk factors must be tailored specifically to the company, quantify exposures, and provide meaningful cautionary context to shield forward-looking disclosures.",
@@ -11752,10 +11752,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEC Regulation G and SEBI guidelines, what is the 'Equal or Greater Prominence' rule regarding Non-GAAP financial measures in the MD&A section?",
           "options": [
-            "Whenever a non-GAAP financial measure like Adjusted EBITDA is presented, the most directly comparable GAAP measure must be presented with equal or greater prominence, accompanied by a line-by-line reconciliation.",
-            "Non-GAAP measures must be printed in font sizes five times larger than standard GAAP figures.",
-            "GAAP financial statements must be completely excluded from the prospectus whenever non-GAAP metrics are used.",
-            "Non-GAAP measures are strictly illegal and cannot be referenced in any public corporate document."
+            "Whenever a non-GAAP measure such as Adjusted EBITDA is presented, the most comparable GAAP measure must appear with equal or greater prominence, with a line-by-line reconciliation.",
+            "Whenever a non-GAAP measure such as Adjusted EBITDA is presented, it must appear with greater prominence than the GAAP measure, with a summary reconciliation.",
+            "Whenever a GAAP measure such as net income is presented, a non-GAAP measure must appear beside it with equal prominence, without any reconciliation required.",
+            "Whenever a non-GAAP measure such as Adjusted EBITDA is presented, it may replace the GAAP measure if the auditor approves, with a footnote reconciliation."
           ],
           "answerIndex": 0,
           "why": "Regulation G and SEBI rules require that whenever non-GAAP metrics are presented, the most directly comparable GAAP measure must be presented with equal or greater prominence, supported by a transparent reconciliation.",
@@ -11801,10 +11801,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance remedy if an issuing enterprise discovers an undisclosed material operational development after filing its Draft Red Herring Prospectus?",
           "options": [
-            "Quietly delete all internal emails mentioning the event and instruct customer support staff to deny everything.",
-            "Immediately convene the Due Diligence Committee, notify merchant bankers, and issue a formal public Addendum / Corrigendum in national financial daily newspapers.",
-            "Transfer all corporate assets to an offshore shell entity in an unregulated tax haven.",
-            "Proceed with the IPO as scheduled without mentioning the event, hoping public investors do not notice."
+            "Wait for the Red Herring Prospectus stage, record the development in the final prospectus, and notify the regulator after allotment has been completed.",
+            "Immediately convene the Due Diligence Committee, notify merchant bankers, and issue a public Addendum / Corrigendum in national financial dailies.",
+            "Withdraw the Draft Red Herring Prospectus permanently, notify the stock exchanges, and refile the offer document after a two-year waiting period.",
+            "Amend the Articles of Association, notify the registrar, and issue a private circular only to the anchor investors who are in the book."
           ],
           "answerIndex": 1,
           "why": "If a material development occurs post-filing, the issuer must immediately issue a public Addendum or Corrigendum in national financial dailies, updating the disclosure and insulating directors from securities fraud liability.",
@@ -11875,10 +11875,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulation 29, what is the statutory restriction on the Price Band established for a book-built public offering?",
           "options": [
-            "The Floor Price must be set to zero rupees to encourage unlimited speculative bidding.",
-            "The price band must be determined exclusively by a public online poll conducted on social media platforms.",
-            "The Cap Price cannot exceed one hundred twenty percent (120%) of the Floor Price, imposing a strict twenty percent collar constraint.",
-            "The Cap Price must be exactly five times the Floor Price to maximize promoter valuation."
+            "The Cap Price cannot exceed one hundred fifty percent (150%) of the Floor Price, a strict fifty percent collar.",
+            "The Cap Price cannot exceed one hundred ten percent (110%) of the Floor Price, a strict ten percent collar.",
+            "The Cap Price cannot exceed one hundred twenty percent (120%) of the Floor Price, a strict twenty percent collar.",
+            "The Cap Price cannot exceed two hundred percent (200%) of the Floor Price, a strict one hundred percent collar."
           ],
           "answerIndex": 2,
           "why": "SEBI ICDR regulations mandate that the Cap Price of a price band cannot exceed 120% of the Floor Price (a 20% maximum spread) to prevent predatory pricing and ensure genuine price discovery.",
@@ -11924,10 +11924,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the statutory lock-in periods applicable to Anchor Investors in an Indian public offering under amended SEBI ICDR Regulations?",
           "options": [
-            "Anchors are locked in for exactly five business days, after which they must transfer shares to retail investors.",
-            "Fifty percent (50%) of the anchor shares are locked in for thirty days, and the remaining fifty percent are locked in for ninety days following allotment.",
-            "Zero lock-in applies; anchors may sell all shares within one minute of market listing.",
-            "One hundred percent of anchor shares are locked in permanently for twenty-five years."
+            "Fifty percent (50%) of the anchor shares are locked in for ninety days, and the remaining fifty percent are locked in for one hundred eighty days after allotment.",
+            "Fifty percent (50%) of the anchor shares are locked in for thirty days, and the remaining fifty percent are locked in for ninety days after allotment.",
+            "All of the anchor shares (100%) are locked in for a single period of thirty days after allotment, after which they can be freely traded in the market.",
+            "Twenty-five percent (25%) of the anchor shares are locked in for thirty days, and the remaining seventy-five percent are locked in for sixty days after allotment."
           ],
           "answerIndex": 1,
           "why": "To deter short-term flipping and stabilize secondary trading, SEBI mandates staggered lock-ins for anchor investors: 50% of allocated shares for 30 days and the remaining 50% for 90 days post-allotment.",
@@ -11973,10 +11973,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Application Supported by Blocked Amount (ASBA) via UPI mandate protect retail investors during the IPO bidding process?",
           "options": [
-            "Funds remain in the investor's bank account earning interest and are blocked electronically, with cash debited only upon successful allotment.",
-            "All application money is immediately transferred to the merchant bankers' personal offshore bank accounts.",
-            "Investors pay zero money upfront and receive shares on credit with twenty-year repayment horizons.",
-            "The government guarantees that all retail applicants receive at least ten percent of the company's equity."
+            "Funds stay in the investor's bank account earning interest and are only blocked, with cash debited only on successful allotment.",
+            "Funds are transferred to the issuer's escrow account at bidding, with a refund processed after allotment if the bid is unsuccessful.",
+            "Funds are debited from the investor's account at the time of bidding, and interest is paid on them until the refund is made after the listing.",
+            "Funds stay with the broker in a pooled client account during the bidding, with the broker debiting cash on the day the shares list."
           ],
           "answerIndex": 0,
           "why": "Under ASBA/UPI, application funds remain in the investor's bank account earning interest and are only blocked, ensuring that cash is debited only upon verified share allotment and unblocked immediately if unallotted.",
@@ -12022,10 +12022,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulation 115, what is the maximum percentage of the total issue size that a Stabilizing Agent may borrow under a Green Shoe Option, and where must net stabilization profits be transferred?",
           "options": [
-            "Five percent of the issue size; all profits must be spent on corporate billboard advertisements.",
-            "Fifty percent of the issue size; all profits are kept by the merchant bankers as underwriting bonuses.",
-            "One hundred percent of the issue size; profits are distributed as cash dividends to founding executives.",
-            "Maximum fifteen percent (15%) of the total issue size; all net cash profits from stabilization must be transferred to the Investor Education and Protection Fund (IEPF)."
+            "Maximum 25% of the total issue size; net cash profits from stabilization must be retained by the stabilizing agent as compensation for the exercise.",
+            "Maximum 15% of the total issue size; net cash profits from stabilization must be distributed to the promoters who lent the shares to the agent.",
+            "Maximum 5% of the total issue size; net cash profits from stabilization must be transferred to the stock exchange's investor protection reserve.",
+            "Maximum 15% of the total issue size; net cash profits from stabilization must be transferred to the Investor Education and Protection Fund (IEPF)."
           ],
           "answerIndex": 3,
           "why": "SEBI Regulation 115 caps Green Shoe borrowing at 15% of the total issue size, and mandates that any net cash surplus resulting from stabilization purchases below the issue price must be transferred to the government IEPF.",
@@ -12071,10 +12071,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance and pricing discipline required to prevent an Over-Priced Broken IPO on listing day?",
           "options": [
-            "Instruct the stock exchange to suspend trading whenever the stock price falls by more than one percent.",
-            "Eliminate all public retail investors and sell the entire company to a single offshore hedge fund.",
-            "Price the offering at a disciplined 15% to 20% discount to intrinsic peer valuation to leave money on the table for secondary buyers, and curate a high-quality fundamental anchor book.",
-            "Price the shares at five hundred times revenue and prohibit all secondary market trading for ten years."
+            "Price the offering at a 15% to 20% premium to intrinsic peer valuation to capture the maximum proceeds for the issuer, and curate a broad retail book.",
+            "Price the offering at the exact midpoint of peer valuation to avoid favoring any buyer, and curate a book dominated by short-term traders for liquidity.",
+            "Price the offering at a disciplined 15% to 20% discount to intrinsic peer valuation to leave money on the table for secondary buyers, and curate a quality anchor book.",
+            "Price the offering at a 50% discount to peer valuation to guarantee a large listing gain, and curate a book dominated by retail buyers for publicity."
           ],
           "answerIndex": 2,
           "why": "To prevent broken listings, issuers must maintain pricing discipline—leaving a 15%–20% discount on the table to reward public investors—and anchor the offering with long-term fundamental institutions.",
@@ -12343,9 +12343,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 15G of the SEBI Act 1992, what is the maximum statutory financial penalty that can be levied for insider trading violations?",
           "options": [
-            "Ten percent of the company's total annual turnover with zero individual executive liability.",
-            "Five crore rupees or two times the profits made, whichever is lower.",
-            "A fixed fine of one crore rupees regardless of the quantum of illegal profits generated.",
+            "Ten crore rupees or two times the amount of profits made out of insider trading, whichever is higher.",
+            "Twenty-five lakh rupees or three times the amount of profits made out of insider trading, whichever is lower.",
+            "One hundred crore rupees or five times the amount of profits made out of insider trading, whichever is higher.",
             "Twenty-five crore rupees or three times the amount of profits made out of insider trading, whichever is higher."
           ],
           "answerIndex": 3,
@@ -12570,10 +12570,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 115 of SEBI ICDR, what is the maximum percentage of shares that an issuer may borrow from promoters for a Green Shoe Option, and what happens to any net financial surplus generated from stabilization?",
           "options": [
-            "Maximum five percent of the issue size; all profits are distributed as dividends to corporate promoters.",
-            "Maximum fifteen percent (15%) of the total issue size; all net cash surplus must be transferred directly to the Investor Education and Protection Fund (IEPF).",
-            "Twenty percent of the issue size; all profits are credited to the company's General Corporate Purposes reserve.",
-            "Up to fifty percent of the issue size; all cash profits are retained by the merchant bankers as underwriting fees."
+            "Maximum 25% of the total issue size; all net cash surplus must be retained by the issuer and recorded as other income in its accounts.",
+            "Maximum 15% of the total issue size; all net cash surplus must be transferred directly to the Investor Education and Protection Fund (IEPF).",
+            "Maximum 15% of the total issue size; all net cash surplus must be shared between the promoters and the stabilizing agent equally.",
+            "Maximum 10% of the total issue size; all net cash surplus must be paid to the Securities and Exchange Board of India as a fee."
           ],
           "answerIndex": 1,
           "why": "Under Regulation 115 of SEBI ICDR Regulations, the stabilizing agent may borrow up to a statutory maximum of fifteen percent (15%) of the total issue size from promoters, and all net financial gains arising from secondary stabilization operations must be remitted to the government's Investor Education and Protection Fund (IEPF).",
@@ -12622,9 +12622,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What are the core components verified by the Milestone 11 Public Enterprise Governance Control Tower prior to public market operations?",
           "options": [
             "3-year Ind AS financial restatements, 20% minimum promoter lock-in, 120% book-building collar, 15% Green Shoe stabilization, and cryptographic SDD compliance.",
-            "Solely marketing pitch decks and social media publicity campaigns without financial statement audits.",
-            "Only the initial venture capital valuation multiple and founder voting rights agreements.",
-            "Exclusively the commercial lease contracts and employee stock option vesting acceleration triggers."
+            "1-year Ind AS financial restatements, 50% minimum promoter lock-in, 150% book-building collar, 5% Green Shoe stabilization, and manual SDD compliance.",
+            "3-year US GAAP financial restatements, 10% minimum promoter lock-in, 120% book-building collar, 25% Green Shoe stabilization, and cryptographic SDD compliance.",
+            "5-year Ind AS financial restatements, 20% minimum promoter lock-in, 200% book-building collar, 15% Green Shoe stabilization, and verbal SDD compliance."
           ],
           "answerIndex": 0,
           "why": "The Milestone 11 Control Tower verifies the full suite of statutory public enterprise invariants: 3-year Ind AS restated financials, 20% promoter contribution locked for 3 years, 25% GCP ceiling, 120% book-building collar, 33.33% mutual fund anchor reservation, 15% Green Shoe ceiling with IEPF surplus remittance, and continuous SEBI LODR/PIT compliance.",
@@ -12794,10 +12794,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of a Right of First Refusal (ROFR) in a venture-backed technology company's capitalization agreements?",
           "options": [
-            "To grant junior engineers veto authority over executive compensation agreements.",
-            "To force all employees to sell their shares at a mandatory fifty percent discount to founders.",
-            "To automatically dissolve the company's option pool upon completion of a Series B financing round.",
-            "To empower the company and existing investors to match any third-party purchase offer and prevent unauthorized equity transfers."
+            "To let employees match any investor purchase offer for their options and prevent forced buybacks at a discount to market value.",
+            "To let the company force any investor to sell shares at a fixed price whenever a majority of other holders agree to a sale.",
+            "To let existing investors block any new financing round that is priced below their original investment and prevent price dilution.",
+            "To let the company and existing investors match any third-party purchase offer and prevent unauthorized equity transfers."
           ],
           "answerIndex": 3,
           "why": "A Right of First Refusal (ROFR) grants the company (Primary ROFR) and existing major investors (Secondary ROFR) the contractual right to purchase shares offered by a selling shareholder on identical terms to a bona fide third-party offer, protecting capitalization table integrity.",
@@ -12892,10 +12892,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary existential risk to a venture-backed startup when employees sell shares in unsanctioned secondary direct trades at high market valuations?",
           "options": [
-            "Automatic conversion of all preferred venture capital stock into common equity.",
-            "409A Valuation Contagion, where independent appraisers ratchet up the common stock strike price, crippling future talent recruitment.",
-            "Forced delisting of the company from state corporate registries without right of appeal.",
-            "An immediate compulsory liquidation of all company assets by bankruptcy courts."
+            "Tax Residency Contagion, where authorities treat selling employees as non-resident holders, crippling future capital raising from investors.",
+            "409A Valuation Contagion, where independent appraisers raise the common stock strike price, crippling future talent recruitment.",
+            "Liquidation Preference Contagion, where buyers inherit the preference stack, crippling future acquisition offers from strategic buyers.",
+            "Voting Control Contagion, where outside buyers gain a majority of the votes, crippling future board decisions of the founders."
           ],
           "answerIndex": 1,
           "why": "When unsanctioned secondary trades occur at aggressive valuations, independent appraisers must incorporate those market data points into annual 409A appraisals, eliminating the common stock discount and inflating the exercise strike price for future employee option grants, which cripples recruitment.",
@@ -12967,10 +12967,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the US Foreign Sovereign Immunities Act (FSIA), why must a private technology company require sovereign wealth funds to execute an express waiver of sovereign immunity?",
           "options": [
-            "To automatically transfer ownership of the sovereign nation's state assets to corporate founders.",
-            "To eliminate all corporate income tax obligations across all operating jurisdictions.",
+            "To ensure that sovereign wealth funds pay the same tax as private investors on commercial investment income under the US tax code.",
+            "To ensure that sovereign wealth funds disclose their ultimate beneficiaries and sources of funds to the company's board of directors.",
             "To ensure that commercial investment contracts, voting covenants, and escrow liabilities remain legally enforceable in neutral arbitration.",
-            "To allow the startup's executive management to issue sovereign government bonds."
+            "To ensure that sovereign wealth funds receive the same voting rights as private venture investors and cannot be given any veto rights."
           ],
           "answerIndex": 2,
           "why": "Without an express, irrevocable waiver of sovereign immunity under the FSIA, foreign state-owned sovereign wealth funds enjoy statutory immunity from the jurisdiction of foreign courts and arbitral bodies, rendering commercial contracts and representations unenforceable.",
@@ -13016,10 +13016,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence to common shareholders and founders when a Downside IPO Ratchet is triggered during a public offering?",
           "options": [
-            "The public stock exchange cancels the IPO and freezes all secondary trading indefinitely.",
-            "The company must issue additional bonus shares to the crossover investor at zero cost, inflicting severe dilution on common shareholders.",
-            "The company is immediately forced into involuntary Chapter 11 bankruptcy liquidation.",
-            "The crossover investor's preferred stock is permanently converted into non-voting debt."
+            "The company must repay the crossover investor's principal in cash at the IPO price, which reduces the cash raised and delays the listing.",
+            "The company must issue additional bonus shares to the crossover investor at zero cost, severely diluting common shareholders.",
+            "The company must cancel the crossover investor's shares at the IPO price, which increases the percentage held by common shareholders.",
+            "The company must issue additional bonus shares to the common shareholders at zero cost, which increases the percentage held by founders."
           ],
           "answerIndex": 1,
           "why": "A Downside IPO Ratchet is a contractual anti-dilution mechanism that obligates the company to issue additional bonus shares to crossover investors at zero cost if the public offering price is lower than the mezzanine purchase price, causing severe dilution to common shareholders and founders.",
@@ -13065,10 +13065,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is granting a whole-company Right of First Refusal (ROFR) to a Strategic Corporate Venture Capital (CVC) investor considered a catastrophic governance error?",
           "options": [
-            "It grants the strategic investor an effective veto over future M&A, deterring competing corporate acquirers from submitting acquisition bids.",
-            "It automatically dissolves the company's board of directors and transfers executive control to the state.",
-            "It forces the company to adopt cash-basis accounting in violation of statutory Ind AS regulations.",
-            "It mandates that all employee salaries must be paid in cryptocurrency."
+            "It grants the strategic investor an effective veto over future M&A, deterring competing acquirers from submitting bids.",
+            "It grants the strategic investor a seat on the board of the acquirer, deterring the founders from accepting a stock-based offer.",
+            "It grants the strategic investor a price discount on future rounds, deterring other investors from taking part in the financing.",
+            "It grants the strategic investor access to customer data, deterring regulators from approving a future merger with any rival."
           ],
           "answerIndex": 0,
           "why": "Granting a whole-company ROFR to a corporate strategic investor grants that competitor the legal right to match any acquisition offer, scaring away rival prospective acquirers who refuse to invest millions in due diligence only to have their bid matched, destroying M&A optionality.",
@@ -13114,10 +13114,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under standard NVCA Board Observer Agreements, under what circumstances may a company's board of directors legally exclude a strategic corporate investor's observer from a board meeting?",
           "options": [
-            "Only if the observer fails to arrive in formal business attire at the board meeting.",
-            "Solely during discussions concerning the selection of corporate catering vendors.",
-            "Under zero circumstances, as board observers possess absolute statutory rights to attend all executive sessions.",
-            "When deliberations involve proprietary competitor-sensitive IP, pricing secrets, or M&A discussions involving the observer's parent company."
+            "Whenever the observer's parent company has not paid its annual observer fee, or when the observer has missed more than two consecutive meetings.",
+            "Whenever the board discusses the compensation of the founders, or when the observer is not a lawyer admitted to the bar in Delaware.",
+            "Whenever the board votes on a matter, since observers may attend discussions only and must leave the room before each vote is taken.",
+            "When deliberations involve proprietary competitor-sensitive IP, pricing secrets, or M&A discussions concerning the observer's parent company."
           ],
           "answerIndex": 3,
           "why": "Under standard NVCA agreements, the board of directors retains the contractual right to exclude board observers from any portion of a meeting or withhold materials if the discussion involves competitive commercial topics, sensitive trade secrets, or M&A transactions where the observer's parent company is a potential bidder or competitor.",
@@ -13163,10 +13163,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the recommended governance practice for founders when negotiating late-stage mezzanine rounds to avoid the Crossover Ratchet Trap?",
           "options": [
-            "Eliminate all independent directors from the board and transfer corporate governance to foreign banks.",
-            "Grant uncapped ratchets unconditionally to achieve the highest possible press release valuation.",
-            "Insist on hard ratchet collar caps (limiting maximum dilution) or accept a lower headline valuation rather than granting uncapped downside protections.",
-            "Pledge founders' personal residential real estate as collateral to guarantee crossover fund IRRs."
+            "Accept uncapped ratchets in return for a higher headline valuation, since a high headline price signals strength to later public investors.",
+            "Insist on investor warrants covering 100% of the round, or accept a longer lock-up period instead of granting any downside protection.",
+            "Insist on hard ratchet collar caps (limiting maximum dilution) or accept a lower headline valuation instead of granting uncapped downside protections.",
+            "Insist on a cash dividend payable to founders at the IPO, or accept a lower liquidation preference instead of granting downside protections."
           ],
           "answerIndex": 2,
           "why": "Founders must insist on hard caps on any ratchet dilution (limiting maximum bonus shares) or negotiate a realistic lower headline valuation without ratchets, rather than granting uncapped downside ratchets that can wipe out common shareholders in a market downturn.",
@@ -13238,9 +13238,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 3(1) and Regulation 7(1) of the SEBI SAST Regulations 2011, what voting share threshold triggers a mandatory open offer, and what is the minimum statutory offer size?",
           "options": [
-            "Acquiring 5% of voting rights triggers an immediate delisting of the company.",
-            "Acquiring 50% of voting rights triggers an open offer for exactly 10% of total shares.",
-            "Acquiring 15% of voting rights triggers an open offer for 51% of total shares.",
+            "Acquiring 10% or more of voting rights triggers an open offer for at least 51% of the target company's total voting capital.",
+            "Acquiring 25% or more of voting rights triggers an open offer for at least 10% of the target company's total voting capital.",
+            "Acquiring 51% or more of voting rights triggers an open offer for at least 26% of the target company's total voting capital.",
             "Acquiring 25% or more of voting rights triggers an open offer for at least 26% of the target company's total voting capital."
           ],
           "answerIndex": 3,
@@ -13336,10 +13336,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate takeover defense, what is the operational mechanism of a 'White Knight' strategy?",
           "options": [
-            "Purchasing corporate bonds of the hostile bidder to force bankruptcy.",
-            "Inviting a friendly, strategic suitor to make a competing counter-offer at a superior price to defeat an unsolicited hostile raider.",
-            "Dismissing all independent directors and operating without a board of directors.",
-            "Filing for involuntary corporate dissolution to destroy shareholder equity."
+            "Issuing new shares at a deep discount to existing holders, other than the hostile raider, to dilute the raider's stake in the target.",
+            "Inviting a friendly strategic suitor to make a competing counter-offer at a superior price to defeat an unsolicited hostile raider.",
+            "Selling the most valuable assets of the target to a friendly party, to make the target less attractive to the unsolicited hostile raider.",
+            "Buying back the raider's shares at a premium to the market price in exchange for an agreement to stop acquiring the target."
           ],
           "answerIndex": 1,
           "why": "A White Knight defense involves the target company's board soliciting a friendly strategic or financial suitor (the White Knight) to make a competing acquisition offer at a higher price or with superior terms to rescue the target from an unsolicited hostile takeover.",
@@ -13385,10 +13385,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 230(6) of the Indian Companies Act 2013, what dual statutory voting thresholds must be achieved to approve a court-sanctioned Scheme of Arrangement?",
           "options": [
-            "A simple majority of fifty-one percent of shares present and voting.",
-            "Unanimous one hundred percent written consent from all registered shareholders.",
-            "A majority in number (over 50% headcount) representing at least seventy-five percent (75%) in value of creditors and shareholders voting.",
-            "Approval solely by the board of directors without requiring shareholder or creditor meetings."
+            "A majority in number (over 50% headcount) representing at least fifty percent (50%) in value of the creditors and shareholders voting.",
+            "Two thirds in number (over 66% headcount) representing at least ninety percent (90%) in value of the creditors and shareholders voting.",
+            "A majority in number (over 50% headcount) representing at least seventy-five percent (75%) in value of the creditors and shareholders voting.",
+            "A majority in value only (over 50%) with no minimum headcount of the creditors and shareholders present and voting at the meeting."
           ],
           "answerIndex": 2,
           "why": "Under Section 230(6) of the Companies Act 2013, a scheme must be approved by a majority in number representing three-fourths (75%) in value of the creditors or class of creditors, or members or class of members, present and voting.",
@@ -13511,9 +13511,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 13(d) of the US Securities Exchange Act of 1934, what beneficial ownership threshold triggers the mandatory filing of SEC Schedule 13D?",
           "options": [
             "Acquiring more than five percent (5.0%) of any class of registered equity securities with intent to influence control.",
-            "Acquiring twenty-five percent of voting shares, matching Indian Takeover Code regulations.",
-            "Acquiring fifty-one percent of total outstanding voting stock.",
-            "Acquiring any number of shares exceeding one million dollars in market value."
+            "Acquiring more than ten percent (10.0%) of any class of registered equity securities with intent to influence control.",
+            "Acquiring more than twenty-five percent (25.0%) of any class of registered equity securities with intent to influence control.",
+            "Acquiring more than one percent (1.0%) of any class of registered equity securities with intent to influence control."
           ],
           "answerIndex": 0,
           "why": "Under Section 13(d) of the Securities Exchange Act of 1934 and SEC Rule 13d-1, any person or group that acquires beneficial ownership of more than five percent (5.0%) of a voting class of registered public equity must file a Schedule 13D within five business days.",
@@ -13559,9 +13559,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 68 of the Indian Companies Act 2013, what is the statutory ceiling on the quantum of shares a company may buy back in any financial year?",
           "options": [
-            "Zero percent, as share repurchases are prohibited for listed entities.",
-            "Up to seventy-five percent subject to approval by debt debenture holders.",
-            "Up to fifty percent of total annual gross revenue.",
+            "Maximum fifty percent (50%) of the aggregate of paid-up capital and free reserves of the company in any year.",
+            "Maximum ten percent (10%) of the aggregate of paid-up capital and free reserves of the company in any year.",
+            "Maximum twenty-five percent (25%) of the aggregate of the net profits and securities premium of the company.",
             "Maximum twenty-five percent (25%) of the aggregate of paid-up capital and free reserves of the company."
           ],
           "answerIndex": 3,
@@ -13608,10 +13608,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 197 of the Indian Companies Act 2013, what is the maximum total managerial remuneration payable by a public company to its directors in any financial year?",
           "options": [
-            "Up to fifty percent of EBITDA at the sole discretion of the Chairman.",
-            "Maximum twenty-five percent of gross revenue.",
+            "Maximum five percent (5.0%) of the net profits of the company computed under Section 198 of the Act.",
+            "Maximum twenty-five percent (25.0%) of the net profits of the company computed under Section 198.",
             "Maximum eleven percent (11.0%) of the net profits of the company computed under Section 198.",
-            "A fixed ceiling of five crore rupees regardless of company profitability."
+            "Maximum eleven percent (11.0%) of the gross revenue of the company computed under Section 198."
           ],
           "answerIndex": 2,
           "why": "Under Section 197(1) of the Companies Act 2013, the total managerial remuneration payable by a public company to its directors in any financial year cannot exceed eleven percent (11%) of the net profits of that company for that financial year computed in the manner laid down in Section 198.",
@@ -13657,10 +13657,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 135 of the Indian Companies Act 2013, what is the mandatory statutory Corporate Social Responsibility (CSR) expenditure requirement for eligible companies?",
           "options": [
-            "A voluntary donation determined solely by independent directors.",
+            "At least five percent (5.0%) of the average net profits of the company made during the three immediately preceding financial years.",
             "At least two percent (2.0%) of the average net profits of the company made during the three immediately preceding financial years.",
-            "One percent of total annual gross revenue.",
-            "Five percent of paid-up equity share capital."
+            "At least two percent (2.0%) of the net profits of the company made during the immediately preceding financial year only.",
+            "At least two percent (2.0%) of the average turnover of the company made during the three immediately preceding financial years."
           ],
           "answerIndex": 1,
           "why": "Under Section 135(5) of the Companies Act 2013, the board of every qualifying company must ensure that the company spends, in every financial year, at least two percent (2%) of the average net profits of the company made during the three immediately preceding financial years in pursuance of its CSR policy.",
@@ -13706,10 +13706,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the most effective corporate governance practice for a public enterprise to prevent hostile shareholder activist proxy battles?",
           "options": [
-            "Proactive capital discipline: executing disciplined share buybacks when cash is surplus, maintaining high ROE, and engaging in transparent institutional roadshows.",
-            "Hoarding one hundred percent of cash flows in secret bank accounts and refusing to answer analyst questions.",
-            "Altering bylaws to eliminate annual general meetings entirely.",
-            "Filing defamation lawsuits against all institutional shareholders who question management."
+            "Proactive capital discipline: executing buybacks when cash is surplus, maintaining high ROE, and holding transparent institutional roadshows.",
+            "Reactive legal defense: adopting a poison pill after the activist builds a stake, maintaining a staggered board, and avoiding contact with the activist.",
+            "Concentrated ownership: issuing super-voting shares to insiders after the listing, maintaining a classified board, and refusing shareholder meetings.",
+            "Aggressive diversification: acquiring unrelated businesses with surplus cash, maintaining low payout ratios, and restricting investor roadshows."
           ],
           "answerIndex": 0,
           "why": "The best defense against activist campaigns is proactive operational excellence and capital discipline: returning surplus cash via buybacks, maintaining high return on equity (ROE), de-staggering boards, and conducting continuous, transparent dialogue with major institutional shareholders.",
@@ -13783,9 +13783,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Foreign Sovereign Immunities Act (FSIA), why must late-stage technology unicorns mandate that foreign sovereign wealth funds execute express waivers of sovereign immunity?",
           "options": [
             "To ensure that commercial investment contracts, voting covenants, and escrow liabilities remain legally enforceable in neutral commercial arbitration.",
-            "To allow company founders to seize foreign embassies in commercial disputes.",
-            "To automatically exempt corporate profits from all international direct taxes.",
-            "To force sovereign wealth funds to guarantee all bank borrowings of the startup."
+            "To ensure that sovereign wealth funds pay the same tax as private investors on commercial investment income under the US tax code and treaties.",
+            "To ensure that sovereign wealth funds disclose their ultimate beneficiaries and sources of funds to the unicorn's board of directors and auditors.",
+            "To ensure that sovereign wealth funds receive the same voting rights as private venture investors and cannot be granted any special veto rights."
           ],
           "answerIndex": 0,
           "why": "Without an express, irrevocable waiver of sovereign immunity under the FSIA, foreign state-owned sovereign wealth funds enjoy statutory immunity from the jurisdiction of foreign courts and arbitral bodies, rendering commercial contracts and covenants unenforceable.",
@@ -13878,10 +13878,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 3(1) of the SEBI SAST Regulations 2011, what is the mandatory trigger for making a public announcement of an open offer?",
           "options": [
-            "Purchasing more than ten crore rupees worth of shares on electronic stock exchanges.",
-            "Securing one board observer seat without voting rights.",
+            "Acquiring shares or voting rights entitling the acquirer and PACs to 10% or more of voting rights in the target company.",
+            "Acquiring shares or voting rights entitling the acquirer and PACs to more than 50% of voting rights in the target company.",
             "Acquiring shares or voting rights entitling the acquirer and PACs to 25% or more of voting rights in the target company.",
-            "Acquiring five percent of voting shares in any calendar quarter."
+            "Acquiring shares or voting rights entitling the acquirer alone, and not PACs, to 25% of the voting rights in the target."
           ],
           "answerIndex": 2,
           "why": "Under Regulation 3(1) of the SEBI SAST Regulations 2011, acquiring shares or voting rights entitling an acquirer together with Persons Acting in Concert (PAC) to exercise twenty-five percent (25%) or more of voting rights triggers a mandatory public open offer.",
@@ -13928,10 +13928,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 68 and Section 197 of the Indian Companies Act 2013, what are the statutory ceilings governing share buyback quantum and total managerial remuneration, respectively?",
           "options": [
-            "Buybacks are capped at 10% of total assets; remuneration is capped at one crore rupees.",
+            "Buybacks are capped at 11% of paid-up capital and free reserves; managerial remuneration is capped at 25% of net profits.",
             "Buybacks are capped at 25% of paid-up capital and free reserves; managerial remuneration is capped at 11% of net profits.",
-            "Both buybacks and managerial remuneration are entirely unregulated.",
-            "Buybacks are capped at 50% of revenue; managerial remuneration is capped at 25% of EBITDA."
+            "Buybacks are capped at 50% of paid-up capital and free reserves; managerial remuneration is capped at 5% of net profits.",
+            "Buybacks are capped at 25% of net profits and securities premium; managerial remuneration is capped at 11% of gross revenue."
           ],
           "answerIndex": 1,
           "why": "Under Section 68(2)(c) of the Companies Act 2013, share buybacks cannot exceed twenty-five percent of paid-up capital and free reserves. Under Section 197(1), total managerial remuneration cannot exceed eleven percent of net profits.",
@@ -13979,9 +13979,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the supreme operational purpose of the Milestone 12 Grand Enterprise Capstone Control Tower?",
           "options": [
             "To execute automated, multi-vector verification across all 12 milestones (Days 1 to 60), certifying complete mastery of entrepreneurship and venture incubation.",
-            "To automatically liquidate the company and distribute assets to creditors.",
-            "To eliminate all independent directors and operate without statutory oversight.",
-            "To convert all common equity into high-interest debt debentures."
+            "To run a manual annual audit of the final milestone alone (Days 55 to 60), certifying that the venture's financial statements are free from error.",
+            "To run automated, multi-vector verification across all 12 funded ventures in the incubator, certifying complete readiness for a listing on the exchange.",
+            "To run a peer review across the first six milestones (Days 1 to 30), certifying the founders' mastery of lean validation and early fundraising."
           ],
           "answerIndex": 0,
           "why": "The Milestone 12 Grand Control Tower is the apex verification engine that tests, audits, and validates all twelve milestones spanning the full sixty-day curriculum—from lean validation and SAFE cap tables to sovereign mega-rounds, IPO book-building, takeover defense, and public governance—certifying complete enterprise operational excellence.",

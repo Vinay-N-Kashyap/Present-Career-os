@@ -29,9 +29,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What are the three essential mathematical components of every business optimization model?",
           "options": [
             "Decision variables (controllable choices), an objective function (goal to maximize/minimize), and constraints (scarce resource limits)",
-            "Spreadsheet macros, pivot charts, and slide decks",
-            "Revenue, accounts payable, and income taxes",
-            "Only a budget spreadsheet, a project calendar, and a sales forecast"
+            "Historical data (past transactions), a forecast function (projected future demand), and a variance term (gap between actual and predicted results)",
+            "Decision variables (uncontrollable market inputs), an objective function (target met exactly), and ratios (fixed relationships between costs)",
+            "Parameters (fixed inputs), a utility curve (customer preference across products), and a break-even point (sales volume that covers all costs)"
           ],
           "answer": 0,
           "why": "Prescriptive optimization models require explicit decision variables that the enterprise controls, a mathematical objective function to evaluate outcomes, and constraints bounding resource limits."
@@ -52,9 +52,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Fundamental Theorem of Linear Programming, where does the optimal solution to an LP always reside?",
           "options": [
-            "At infinity",
-            "At a random interior point chosen by the solver, never on the boundary",
-            "At the exact arithmetic center of the feasible region",
+            "At the geometric center of the feasible region, where all constraints are equally slack",
+            "At a point on a boundary edge midway between two adjacent corner vertices",
+            "At whichever interior point lies farthest from every constraint line",
             "At one of the extreme corner vertices of the convex feasible region polyhedron"
           ],
           "answer": 3,
@@ -76,10 +76,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a plant constraint currently has positive slack (unused capacity), what is its shadow price?",
           "options": [
-            "Negative infinity",
-            "Equal to the average hourly wage paid to the workers",
-            "Strictly $0.00, because adding more of a non-bottleneck resource yields zero increase in optimal profit",
-            "Equal to the cost of purchasing the machine"
+            "Equal to the resource's market purchase price, because unused capacity still carries its replacement value",
+            "Equal to the profit contribution of the last unit produced, since slack resources earn the average margin",
+            "$0.00, because adding more of a non-bottleneck resource yields zero increase in optimal profit",
+            "A small positive value that shrinks as slack grows, because spare capacity keeps partial marginal value"
           ],
           "answer": 2,
           "why": "By the Complementary Slackness Theorem of linear programming, any constraint that is not binding at the optimum has a dual shadow price of zero. Expanding an unconstrained resource produces zero marginal return."
@@ -100,10 +100,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Net Revenue Retention (NRR) metric exceeding 100% indicate about an enterprise subscription business?",
           "options": [
-            "NRR above 100% only occurs when the company stops all marketing spend",
+            "Customer churn has been eliminated entirely, so the subscription base can no longer lose any of its existing customer accounts",
             "Existing customer account expansion (upsells/cross-sells) outpaces revenue lost from customer churn, creating negative net churn",
-            "The company is operating at an accounting loss",
-            "Every customer canceled their subscription"
+            "New customer acquisition is outpacing both churn and expansion, so growth comes mainly from sales and marketing spend",
+            "The company retains over 100% of its customer count, because reactivated former customers outnumber those who left"
           ],
           "answer": 1,
           "why": "NRR > 100% means the business grows revenue organically from its existing cohort base alone, even before adding any newly acquired customers."
@@ -124,10 +124,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary advantage of Monte Carlo simulation over static deterministic Excel financial models?",
           "options": [
-            "It evaluates thousands of random stochastic outcomes across probability distributions, quantifying the exact probability of loss and tail risk (VaR)",
-            "It guarantees that every business project makes a profit",
-            "It replaces accounting audits with automated random numbers",
-            "It removes the need to estimate any probability distributions at all"
+            "It simulates thousands of random outcomes across probability distributions, quantifying the probability of loss and tail risk (VaR)",
+            "It uses one best-guess scenario for each input, which makes the net present value estimate more precise and easier to audit",
+            "It solves the investment decision exactly with calculus, giving a single optimal project size without sampling any inputs",
+            "It extrapolates historical cash flow trends, which removes the need to estimate the volatility of any model inputs"
           ],
           "answer": 0,
           "why": "Static point estimates hide downside volatility. Monte Carlo models reveal the full probability distribution of outcomes, enabling leadership to stress-test projects against tail risks."
@@ -174,10 +174,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does credit risk analytics employ the Sigmoid transformation in Logistic Regression rather than standard Ordinary Least Squares (OLS) regression?",
           "options": [
-            "Because credit bureaus only accept integer numbers between 1 and 10",
-            "Because the Sigmoid function non-linearly maps any unbounded real log-odds value strictly into the [0.0, 1.0] probability interval required for classification",
-            "Because logistic regression eliminates the need for financial statements",
-            "Because linear regression is banned by federal banking regulations"
+            "Because the Sigmoid function standardizes every predictor to zero mean and unit variance before the model is fitted",
+            "Because the Sigmoid function maps any unbounded log-odds value into the 0-to-1 probability range required for classification",
+            "Because the Sigmoid function guarantees residuals are normally distributed with constant variance, as OLS requires",
+            "Because the Sigmoid function removes outliers from borrower data so the fitted curve is not pulled by extreme values"
           ],
           "answer": 1,
           "why": "Linear OLS models produce invalid probabilities (<0 or >1). The Sigmoid curve mathematically bounds predictions between 0 and 1, making it the bedrock of credit scoring.",
@@ -200,10 +200,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In customer portfolio analytics, what specific danger does an RFM profile of \"155\" or \"255\" indicate to executive management?",
           "options": [
-            "A fraudulent account that should be immediately reported to credit agencies",
-            "A brand-new lead generated from digital social media ads",
-            "A historically high-frequency, high-spending client who has not transacted recently, indicating high imminent flight risk that warrants immediate executive intervention",
-            "An account with zero customer lifetime value"
+            "A brand-new client who just made a first large purchase, signalling a promising lead that needs standard onboarding follow-up only",
+            "A low-frequency, low-spending client who bought recently, signalling a bargain hunter of little value who needs no special attention",
+            "A high-frequency, high-spending client who has not transacted recently, signalling imminent flight risk that warrants immediate executive intervention",
+            "A low-frequency, low-spending client who bought recently, signalling a bargain hunter of little long-term value who needs no special attention"
           ],
           "answer": 2,
           "why": "Low Recency (1 or 2) combined with high Frequency and Monetary (55) flags severe churn danger: a loyal big spender who has stopped buying and is defecting to competitors.",
@@ -226,10 +226,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of \"de-seasonalizing\" historical sales data prior to projecting forward growth trends?",
           "options": [
-            "To manipulate corporate financial statements for audit evasion",
-            "To convert seasonal sales numbers into foreign currencies",
-            "To eliminate all customer returns from the general ledger",
-            "To remove recurring calendar fluctuations (e.g. holiday peaks and summer troughs) so the genuine underlying structural growth rate of the business can be accurately isolated"
+            "To remove one-off events such as a product recall or a strike, so the cyclical pattern of the business cycle becomes clearly visible",
+            "To restate every month's sales in a common currency and price level, so that figures from different years can be compared fairly",
+            "To smooth random day-to-day noise with a moving average, so the seasonal pattern itself can be measured and forecast more tightly",
+            "To remove recurring calendar fluctuations (holiday peaks, summer troughs) so the underlying structural growth rate of the business can be isolated"
           ],
           "answer": 3,
           "why": "De-seasonalizing strips out predictable periodic calendar distortions, revealing whether business sales are truly expanding or contracting underlyingly.",
@@ -252,10 +252,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statistical consequence of stopping an A/B test early as soon as a p-value briefly drops below 0.05 without reaching the pre-calculated sample size?",
           "options": [
-            "It inflates the Type I error rate (false positive rate), leading teams to deploy ineffective features that are merely random statistical noise",
-            "It guarantees higher conversion rates for the company",
-            "It reduces server hosting costs by 50%",
-            "It automatically invalidates all past financial audits"
+            "It inflates the Type I error rate (false positives), leading teams to deploy ineffective features that are only random noise",
+            "It inflates the Type II error rate (false negatives), so teams discard genuinely effective features that needed more data",
+            "It lowers the significance level automatically, so any later result needs a smaller p-value to be accepted as reliable",
+            "It biases the estimated effect toward zero, so teams underestimate real gains but rarely ship an ineffective feature"
           ],
           "answer": 0,
           "why": "Continuous peeking without sample size discipline dramatically increases false discoveries (Type I errors) because random metric fluctuations will periodically cross the 0.05 threshold by chance.",
@@ -278,10 +278,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do corporate boards and enterprise investors prioritize Net Revenue Retention (NRR) over Gross Top-Line Revenue growth?",
           "options": [
-            "Because NRR only applies to hardware manufacturing businesses",
-            "Because NRR isolates installed-base product-market fit and negative net churn, proving the company can grow organically without burning capital on customer acquisition",
-            "Because NRR is an IRS tax calculation that determines corporate tax rates",
-            "Because NRR guarantees that employee headcounts can be doubled every quarter"
+            "Because NRR includes revenue from newly acquired customers, giving a fuller picture of total market share than gross revenue does",
+            "Because NRR isolates installed-base product-market fit and net negative churn, proving the company can grow without spending heavily on acquisition",
+            "Because NRR is audited under accounting standards while gross revenue is an unaudited management figure that boards cannot trust",
+            "Because NRR is audited under accounting standards, while gross revenue is an unaudited management figure that outside boards cannot trust"
           ],
           "answer": 1,
           "why": "NRR isolates cohort expansion from new sales. A high NRR (>100%) proves high customer value and product stickiness, creating sustainable compound growth.",
@@ -337,10 +337,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must direct material price variance be evaluated separately from material quantity efficiency variance?",
           "options": [
-            "Because standard costing formulas do not allow multiplying two variables together",
-            "Because price variance is only calculated by government tax inspectors",
-            "Because price variance reflects procurement purchasing negotiation, while efficiency variance reflects shop-floor manufacturing waste and conversion productivity",
-            "Because efficiency variance only applies when manufacturing automobiles"
+            "Because price variance reflects shop-floor waste and scrap, while efficiency variance reflects the supplier discounts negotiated",
+            "Because both variances are caused by the purchasing manager, so splitting them only changes the account where the cost is posted",
+            "Because price variance reflects purchasing negotiation, while efficiency variance reflects shop-floor waste and productivity",
+            "Because price variance is a fixed-overhead measure while efficiency variance is a variable-labour measure with different budgets"
           ],
           "answer": 2,
           "why": "Separating price from quantity isolates departmental accountability: the purchasing agent controls price per kg, whereas factory plant supervisors control physical kg consumed per unit."
@@ -405,10 +405,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is product cross-subsidization in traditional volume-based cost accounting systems?",
           "options": [
-            "A distortion where high-volume standardized products are allocated excessive overhead, effectively subsidizing the true operational costs of complex low-volume products",
-            "When a government agency provides tax subsidies to green technology manufacturers",
-            "When one company buys out all outstanding shares of a competing supplier",
-            "When employee payroll taxes are deducted from weekly paychecks"
+            "High-volume standardized products are allocated excessive overhead, effectively subsidizing the true costs of complex low-volume products",
+            "Complex low-volume products are charged excessive overhead, effectively subsidizing the true costs of simple high-volume products",
+            "Profitable product lines are charged with the losses of discontinued lines, so margins of all remaining products fall equally",
+            "Corporate headquarters bills each division a flat fee for shared services, which hides how much each division really uses"
           ],
           "answer": 0,
           "why": "Traditional volume allocations assign overhead in proportion to direct labor or machine hours, blinding managers to the reality that low-volume custom batches consume disproportionate setup, engineering, and inspection resources."
@@ -439,9 +439,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Profitability Index (PI) superior to raw Net Present Value (NPV) when an enterprise faces capital rationing?",
           "options": [
-            "Because PI does not require an estimated hurdle rate or cost of capital",
-            "Because PI is only used for municipal government non-profit projects",
-            "Because PI eliminates the need to calculate future cash flows",
+            "Because PI ignores the time value of money, so it avoids the discount-rate assumptions that make NPV unreliable when funds are limited",
+            "Because PI selects the single project with the highest total NPV, which always makes the most effective use of the full budget",
+            "Because PI counts only cash flows inside the payback period, so it favours projects that return the invested capital fastest",
             "Because PI measures the efficiency of wealth generated per dollar of capital outlay, enabling optimal ranking under budget constraints"
           ],
           "answer": 3,
@@ -532,10 +532,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic business advantage of operating with a Negative Cash Conversion Cycle (CCC)?",
           "options": [
-            "All manufacturing machinery operates without consuming electricity",
-            "The firm is legally exempt from paying accounts payable to external suppliers",
-            "The company never has to file annual tax returns with regulatory authorities",
-            "The enterprise collects cash from customer sales before it must pay vendors for raw materials, effectively generating interest-free operating cash flow"
+            "The company pays suppliers long before it collects from customers, so it must borrow to fund the gap and earns a premium",
+            "The company holds inventory for less time than receivables remain unpaid, so working capital is released only at year end",
+            "The company's payables exceed its total current assets, signalling insolvency risk that lenders price into higher interest",
+            "The company collects cash from customers before it must pay suppliers for materials, generating interest-free operating cash"
           ],
           "answer": 3,
           "why": "A negative CCC means customer receivables are collected weeks before vendor payables come due, generating a float of liquid cash that can fund operations and growth without external debt."
@@ -600,10 +600,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational penalty of increasing customer service level from 95% to 99% in inventory replenishment systems?",
           "options": [
-            "Truck drivers must legally drive at double their regular highway speed",
-            "Safety stock units and associated working capital carrying costs escalate non-linearly due to the bell-curve tails of normal distributions",
-            "Suppliers will immediately refuse to sell products to the company",
-            "Customer orders can no longer be processed using barcode scanners"
+            "Safety stock and carrying costs rise in direct proportion, so a four-point service gain costs about four percent more stock",
+            "Safety stock and the associated carrying costs rise non-linearly because of the tails of the normal distribution",
+            "Safety stock falls because higher service levels shorten supplier lead times, but order-processing costs rise sharply",
+            "Stockout penalties rise while carrying costs stay fixed, since the extra units come from existing cycle stock"
           ],
           "answer": 1,
           "why": "Because the normal distribution curve flattens in its tails, capturing the final few percentage points of demand coverage requires disproportionately massive safety buffer increases."
@@ -634,10 +634,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under modern IFRS 9 / CECL standards, why must corporations recognize bad debt provisions before an account defaults?",
           "options": [
-            "To pay bonuses to external collection agencies",
-            "Because credit card companies demand all trade receivables be settled in cash",
-            "To reflect forward-looking expected credit risk immediately, preventing management from hiding deteriorating customer quality until default occurs",
-            "To reduce income tax payments to zero in every financial quarter"
+            "To smooth reported profit across periods by spreading the eventual write-off evenly over the years before the debt is due",
+            "To recognize only losses already incurred and confirmed by missed payments, with provisions limited to accounts past due",
+            "To reflect forward-looking expected credit risk immediately, so management cannot hide deteriorating customer quality until default",
+            "To carry receivables at full invoiced value, with credit risk disclosed only in the notes rather than in the balance sheet"
           ],
           "answer": 2,
           "why": "The financial crisis proved that waiting for an incurred loss event masks credit deterioration; forward-looking ECL provisions ensure balance sheet receivables reflect net realizable cash value."
@@ -668,10 +668,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Quick Ratio (Acid-Test) exclude inventory from current assets when evaluating acute enterprise liquidity?",
           "options": [
-            "Because inventory always increases in value over time",
-            "Because only cash and crypto can be classified as assets",
-            "Because inventory does not belong on corporate balance sheets under accounting rules",
-            "Because physical inventory cannot be instantly converted to cash to pay impending short-term debts without heavy discounting or liquidation delays"
+            "Because inventory is recorded at historical cost, which sits below replacement cost and so understates liquidity",
+            "Because inventory is financed by long-term debt, so it does not belong in a measure of short-term obligations",
+            "Because inventory is already counted in the cash conversion cycle, so including it would double count liquidity",
+            "Because inventory cannot be converted to cash quickly to pay short-term debts without heavy discounts or delays"
           ],
           "answer": 3,
           "why": "In an acute credit crisis, selling inventory takes weeks or months and may require steep distress discounts; the Quick Ratio measures instant debt-paying capacity using cash, securities, and receivables."
@@ -727,10 +727,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why are intercompany sales eliminated in preparing consolidated corporate financial statements?",
           "options": [
-            "Because recognizing revenue on transactions between controlled subsidiaries would artificially inflate revenue without executing actual sales to external customers",
-            "Because subsidiaries are legally forbidden from owning bank accounts",
-            "Because parent corporations are not allowed to sell physical inventory",
-            "To avoid paying employee health insurance premiums"
+            "Because recognizing revenue on transactions between controlled subsidiaries would inflate revenue without any actual sale to external customers",
+            "Because intercompany sales are taxed twice, so they are removed to stop the group from overpaying income tax on a single transaction",
+            "Because subsidiaries use different accounting standards, so their mutual sales cannot be translated into the parent's currency",
+            "Because intercompany sales are recorded at transfer prices above market value, so only the excess over market is eliminated"
           ],
           "answer": 0,
           "why": "A consolidated entity represents a single economic unit; moving inventory between subsidiaries is an internal transfer, not a realization event with outside economic counterparties."
@@ -761,10 +761,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Beneish M-Score forensic model, what threshold separates companies with low earnings manipulation risk from potential manipulators?",
           "options": [
-            "An M-Score less than -10.0",
-            "An M-Score greater than +100",
-            "An M-Score equal to exactly zero",
-            "An M-Score greater than -1.78 indicates high probability of accounting manipulation"
+            "An M-Score below -1.78 indicates a high probability of accounting manipulation",
+            "An M-Score greater than +1.78 indicates a high probability of accounting manipulation",
+            "An M-Score greater than -4.30 indicates a high probability of accounting manipulation",
+            "An M-Score greater than -1.78 indicates a high probability of accounting manipulation"
           ],
           "answer": 3,
           "why": "The Beneish benchmark is -1.78: values greater (less negative or positive, such as -1.49 or +0.50) reflect statistically significant markers of earnings manipulation."
@@ -829,10 +829,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What financial danger is signaled when a company reports steadily increasing Net Income while Cash Flow from Operations (CFO) declines for multiple quarters?",
           "options": [
-            "The firm has completely run out of paper in its accounting office",
-            "Reported accounting earnings are increasingly driven by non-cash accruals and uncollected receivables rather than genuine cash generation, indicating potential earnings manipulation or severe credit risk",
-            "Suppliers are delivering goods for free",
-            "The company has discovered a method to eliminate all taxes"
+            "Cash is being consumed mainly by dividends and buybacks rather than operations, so falling CFO is a financing matter that has no link to earnings quality or accruals",
+            "Reported earnings are increasingly driven by non-cash accruals and uncollected receivables rather than real cash generation, signalling possible manipulation or credit risk",
+            "Earnings are understated by conservative provisioning, so the widening gap between income and cash flow shows hidden reserves being built for later years",
+            "Operating margins are expanding through real cost savings, and lower CFO is merely a timing effect of paying suppliers earlier, with no bearing on earnings quality"
           ],
           "answer": 1,
           "why": "A growing divergence where net income rises while operating cash flow shrinks is the single most reliable historical warning sign of accounting irregularities and impending earnings restatements."
@@ -863,10 +863,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate financial reporting and external auditing, what does an Unqualified Clean Audit Opinion signify?",
           "options": [
-            "The financial statements represent a true and fair view of the enterprise financial position in accordance with accounting standards, with zero material misstatements detected",
-            "The auditor was unqualified and lacked professional training",
-            "The company lost all of its accounting records",
-            "All corporate assets have been seized by the government"
+            "The statements give a true and fair view of the company's position under accounting standards, with no material misstatements found",
+            "The company is financially healthy and will be able to repay its debts, because the auditor has verified its solvency and future cash flows",
+            "The statements are materially misstated in one specific area only, while the remainder of the statements are accurate and reliable",
+            "The auditor could not obtain enough evidence to form a view, so no assurance is given on the statements as a whole"
           ],
           "answer": 0,
           "why": "An \"unqualified\" audit report is the highest standard of clean financial health, meaning the independent auditor found no reservations, exceptions, or material misstatements in the consolidated statements."
@@ -918,10 +918,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Modify the checkout flows by adding a fourth extreme discount variant with values in the eighties; observe how the F-ratio scales as between-group sum of squares surges relative to within-group error.",
         "check": {
           "options": [
-            "Pairwise t-tests fail to calculate the arithmetic mean of the individual variations.",
-            "Family-Wise Error Rate (FWER) inflates to over fifty percent across fifteen pairwise tests, guaranteeing multiple false positive discoveries of 'winning' designs that are pure statistical noise.",
-            "The significance threshold alpha automatically drops to zero point zero零five, causing massive Type II false negatives.",
-            "The Student t-test requires exactly equal group sample sizes, which invalidates the degrees of freedom."
+            "Statistical power drops below fifty percent across fifteen pairwise tests, so genuinely better designs are likely to be missed entirely",
+            "FWER inflates to over fifty percent across fifteen pairwise tests, so false 'winning' designs that are pure noise become likely",
+            "The t-test assumes equal sample sizes in all six groups, so unequal traffic splits invalidate every pairwise p-value computed",
+            "Alpha shrinks to about 0.3 percent across fifteen pairwise tests, so real design differences are nearly impossible to detect"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -948,10 +948,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Adjust the true conversion rates so that the four arms are extremely close; observe how cumulative regret scales when the optimal margin shrinks.",
         "check": {
           "options": [
-            "Static A/B tests suffer from the Neyman-Pearson curse where the sample variance collapses to zero.",
-            "Epsilon-greedy algorithms cannot be computed when conversion rates exceed ten percent.",
-            "Static equal-allocation experimentation incurs linear cumulative regret because twenty-five percent of all traffic is forced into each underperforming arm regardless of overwhelming negative evidence.",
-            "Static A/B tests violate the central limit theorem when applied to holiday traffic streams."
+            "Equal allocation incurs only logarithmic cumulative regret, so the losses are small and only become visible in the quarterly report after the holiday ends",
+            "Equal-split testing lacks randomization, so holiday shoppers cluster in one arm and the revenue gap reflects selection bias, not the designs",
+            "Static equal allocation incurs linear cumulative regret, since twenty-five percent of traffic keeps flowing to each underperforming arm despite clear evidence",
+            "Four-arm tests lose statistical power in proportion to the number of arms, so the winning arm could not be detected until the test ended"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -979,10 +979,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Increase the simulation volume from two thousand to ten thousand visitors; observe how Subject Line B captures over ninety percent of all allocated impressions as its posterior variance collapses.",
         "check": {
           "options": [
-            "It forces all experimental arms to have identical sample sizes, ensuring balanced variance.",
-            "It guarantees that statistical significance is reached within exactly one hundred iterations.",
-            "It eliminates the need for prior probability distributions by converting binomial events into Gaussian white noise.",
-            "It dynamically matches allocation probability to the posterior probability that each arm is optimal, automatically directing the vast majority of traffic to the winning arm while maintaining low-regret exploration."
+            "It fixes the traffic split in advance from prior revenue estimates, so the strongest arm gets more traffic from day one but exploration stops",
+            "It sends traffic only to the arm with the highest observed conversion rate so far, which eliminates exploration and speeds up the decision",
+            "It adds a deterministic confidence bonus to each arm's average and picks the largest, so it needs no random draws from any posterior distribution",
+            "It matches allocation probability to the posterior probability that each arm is best, sending most traffic to the winner while keeping low-regret exploration"
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -1010,10 +1010,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Change the incoming context vector to desktop affluent user [0.0, 0.95]; observe how the LinUCB recommendation immediately shifts as the feature vector aligns with historical luxury conversions.",
         "check": {
           "options": [
-            "It incorporates observed user context vectors into ridge regression models, generating personalized recommendations while adding an exploration bonus based on context uncertainty.",
-            "It eliminates the need for user telemetry by relying entirely on historical macro ratings.",
-            "It guarantees that every user receives an identical sequence of content recommendations.",
-            "It converts all continuous variables into categorical labels to avoid matrix computation."
+            "It feeds observed user context vectors into ridge regression, personalizing recommendations while adding an exploration bonus for context uncertainty",
+            "It clusters users into fixed segments in advance and runs a separate classical bandit in each, so no context is used within a segment",
+            "It trains a neural network on past viewing logs offline, then serves its fixed predictions without any exploration or uncertainty term",
+            "It averages rewards over all users for each carousel, using a confidence bound that shrinks with global traffic, not individual context"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -1042,10 +1042,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Lower the guardrail maximum churn threshold to 0.02; observe how quickly the aggressive flow is quarantined to preserve enterprise customer relationships.",
         "check": {
           "options": [
-            "It converts the test into a static A/B test to see if the cancellations decrease over time.",
-            "It immediately quarantines the violating arm, halting all further traffic routing to protect enterprise customer retention while alerting analytics engineers.",
-            "It doubles traffic allocation to the violating arm to harvest short-term liquidity before customers cancel.",
-            "It averages the cancellation rate across all historical quarters to smooth out the anomaly."
+            "It keeps the arm running but caps its traffic share at five percent, since the order-value gain outweighs cancellations",
+            "It quarantines the violating arm and halts all traffic to it to protect customer retention, while alerting analytics engineers",
+            "It lets the test run to the planned end date, then compares cancellation rates with a significance test before deciding whether to stop",
+            "It rolls the arm out to all customers immediately, since the higher order value more than offsets the cancellations it causes"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -1100,10 +1100,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Modify the simulation by increasing the confounding strength of client size Z; observe how the naive observational slope becomes even more deceptively positive while the true causal effect remains negative.",
         "check": {
           "options": [
-            "Approve the proposal because a positive Pearson correlation coefficient always indicates a positive causal return on investment.",
-            "Recommend increasing ticket response times so tickets stay open longer.",
-            "Reject the proposal immediately: enterprise client size is a confounding variable that causes both high ticket counts and high contract values; the true causal effect of tickets is negative once client size is controlled.",
-            "Advise running an unadjusted linear regression with ticket count as the sole independent variable."
+            "Approve a pilot: tickets signal engagement, and since renewals rise with ticket counts, adding workflow friction will deepen client involvement and retention.",
+            "Approve it once the correlation is confirmed significant at the one percent level, since significance rules out chance as an explanation for the pattern.",
+            "Reject it: enterprise client size is a confounder that drives both ticket counts and contract value; once size is controlled, the causal effect of tickets is negative.",
+            "Approve it once the correlation is confirmed significant at the one percent level, since statistical significance rules out chance as an explanation for the pattern."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -1131,10 +1131,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Adjust the visitor allocation so that Mobile and Desktop users are split equally fifty-fifty across both designs; observe how the paradox vanishes and the aggregate rate reflects the true subgroup superiority.",
         "check": {
           "options": [
-            "Both flows are statistically identical and sample sizes should be discarded.",
-            "The new flow is strictly superior; Simpson's Paradox occurred because the new flow received a disproportionate volume of low-converting mobile traffic, artificially deflating its aggregate rate.",
-            "The old flow is superior because aggregate numbers always supersede subgroup partitions.",
-            "The experiment was corrupted by malware and all customer transactions should be refunded."
+            "The old flow is superior; aggregate rates are the truest measure, so the segment-level wins are noise from small sample sizes.",
+            "The new flow is superior; Simpson's Paradox arose because it received more low-converting mobile traffic, deflating its aggregate rate.",
+            "The result is inconclusive; Berkson's bias arose because only visitors reaching checkout were counted, so neither flow can be ranked.",
+            "The new flow wins only on desktop; the mobile gain of two points is too small to justify rolling it out across both device types."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -1161,10 +1161,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Add a new variable to the graph representing customer satisfaction and test whether conditioning on it satisfies the backdoor criterion.",
         "check": {
           "options": [
-            "It induces severe collider stratification bias, creating a spurious negative correlation between Talent and Drive because employees with low talent must have had extreme drive to be promoted.",
-            "It eliminates all observational noise and reveals the true positive causal effect.",
-            "It automatically converts the regression into a randomized control trial.",
-            "It increases the degrees of freedom of the t-distribution."
+            "It induces collider bias, creating a spurious negative correlation between Talent and Drive, since promoted low-talent employees must have had high drive.",
+            "It removes the confounding effect of Promotion, revealing the true causal link between Talent and Drive that the full dataset had obscured.",
+            "It leaves the relationship unchanged, because Talent and Drive are independent causes and filtering on their effect cannot alter independence.",
+            "It induces a spurious positive correlation between Talent and Drive, since promoted employees tend to have high levels of both traits."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -1191,10 +1191,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Alter the post-control numbers to reflect a severe macro-economic recession; observe how DiD cleanly separates external economic contraction from internal pricing strategy gains.",
         "check": {
           "options": [
-            "Twenty-five percent gross lift because region A experienced the full twenty-five percent increase.",
-            "Thirty-five percent combined impact by summing the two regional metrics.",
-            "Zero percent because regional testing violates the Gauss-Markov theorem.",
-            "Fifteen percent net incremental sales lift, obtained by subtracting the ten percent control baseline inflation drift from the twenty-five percent treatment growth."
+            "A twenty-five percent sales lift, because region A's growth is the observed outcome and region B only shows inflation, not a program effect.",
+            "A thirty-five percent sales lift, found by adding region B's inflation-driven growth to region A's measured growth after the launch.",
+            "A two-and-a-half-fold sales lift, found by dividing region A's twenty-five percent growth by region B's ten percent inflation-driven growth.",
+            "A fifteen percent net sales lift, found by subtracting the ten percent control-region drift from the twenty-five percent treatment-region growth."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -1222,10 +1222,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Input a campaign with an observed risk ratio of 1.05; observe how a tiny E-value of 1.28 indicates that negligible unmeasured customer targeting bias could easily account for the entire reported uplift.",
         "check": {
           "options": [
-            "Recommend eliminating all customer targeting to make the marketing campaign purely random.",
-            "Advise using a standard t-test to convert the observational data into an experimental design.",
-            "Reject the budget expansion: an E-value of 1.57 is extremely fragile, meaning weak unmeasured customer targeting bias (such as customers already intending to buy clicking an ad) can completely explain away the apparent lift.",
-            "Approve the $5M budget because any risk ratio greater than 1.0 proves economic causation."
+            "Approve the expansion: a risk ratio of 1.15 is a positive effect, and an E-value above 1.0 shows the result is robust to unmeasured confounding.",
+            "Approve a reduced budget: an E-value of 1.57 means the true effect is exactly 57 percent as large as the observed campaign risk ratio suggests.",
+            "Reject the expansion: an E-value of 1.57 is fragile, so weak unmeasured bias, such as buyers already intending to purchase clicking the ad, could explain the lift.",
+            "Reject the expansion: the E-value is below the 1.96 threshold, so the risk ratio of 1.15 is not statistically significant at the five percent level."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -1280,10 +1280,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Add a new data observation with zero ad spend and observe how the estimated intercept and slope update via the normal equations.",
         "check": {
           "options": [
-            "The Gauss-Markov theorem requires the error variance to be strictly equal to one.",
-            "The Hat Matrix automatically sets all negative residuals to zero.",
-            "The Central Limit Theorem forces all residuals to cancel out automatically in samples larger than five.",
-            "The OLS orthogonality condition requires that X transpose times e equals zero; since the first column of X is an all-ones vector, the dot product with e enforces that the sum of residuals is identically zero."
+            "The Central Limit Theorem: with a large sample, residuals are normally distributed around zero, so their sum converges to zero regardless of the intercept.",
+            "The Gauss-Markov theorem: the best linear unbiased estimator has an expected error of zero, which forces the sample residuals to sum to zero.",
+            "The R-squared maximization property: choosing coefficients that explain the most variance leaves no net positive or negative error in the fitted values.",
+            "The OLS orthogonality condition X'e = 0: since the first column of X is all ones, its dot product with e forces the residuals to sum to zero."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -1311,10 +1311,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Increase the error variance sigma from 2.0 to 5.0; observe how the absolute sampling variances expand, but OLS strictly maintains its minimum variance supremacy over all linear competitors.",
         "check": {
           "options": [
-            "The claim is mathematically impossible: the Gauss-Markov Theorem proves that OLS achieves the unique minimum sampling variance among all linear unbiased estimators under homoskedastic spherical errors.",
-            "The claim is valid if sample size N is greater than one hundred thousand.",
-            "The claim is true only if all explanatory variables are normalized between zero and one.",
-            "The analyst's estimator is superior because OLS always suffers from multicollinearity."
+            "Impossible: the Gauss-Markov Theorem proves OLS has minimum variance among all linear unbiased estimators under homoskedastic, uncorrelated errors.",
+            "Plausible: the Gauss-Markov Theorem only guarantees that OLS is unbiased, so a cleverly weighted estimator can still reach lower variance without bias.",
+            "Plausible if the analyst uses ridge regression, which keeps coefficients unbiased while lowering variance under the same assumptions.",
+            "Impossible only in small samples: with a large sample, any consistent estimator can achieve lower variance than OLS without bias."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -1342,10 +1342,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Modify the data generator so that X and Z are completely uncorrelated (gamma1 = 0); observe how the short regression slope returns to the unbiased true causal value of 0.80.",
         "check": {
           "options": [
-            "Indeterminate bias because consumer loyalty cannot be mathematically modeled.",
-            "Positive bias: the estimated email coefficient will be deceptively inflated above its true causal effect because it captures the unmodeled purchasing power of brand loyalty.",
-            "Negative bias: omitting brand loyalty always causes the coefficient to shrink toward zero.",
-            "Zero bias: omitted variable bias only occurs in non-linear models."
+            "Negative bias: the email coefficient is deflated below its true effect because loyal customers already buy and respond less to extra emails.",
+            "Positive bias: the email coefficient is inflated above its true effect because it absorbs the unmodeled purchasing effect of brand loyalty.",
+            "No bias: omitted variables affect only the standard errors, so the email coefficient stays centered on its true causal effect.",
+            "Bias of indeterminate sign: it depends on sample size, because the effects of beta_2 and gamma_1 offset each other in large samples."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -1372,10 +1372,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Increase the number of noise features to 30; observe how raw R-squared continues to climb deceptively while Adjusted R-squared collapses under the degrees-of-freedom penalty.",
         "check": {
           "options": [
-            "The model is a breakthrough because raw R-squared is the sole definitive metric of predictive truth.",
-            "The model should be expanded to one hundred variables to reach an R-squared of 0.90.",
-            "The model is severely overfitting; the twenty new variables are largely statistical noise, failing to explain enough residual variance to justify the loss of degrees of freedom.",
-            "Adjusted R-squared is irrelevant when sample sizes exceed thirty."
+            "The model is improved; the raw R-squared gain shows the new variables add explanatory power, and Adjusted R-squared simply penalizes complexity too harshly.",
+            "The model is underfitting; the drop in Adjusted R-squared shows more variables are still needed, so twenty more predictors should be added.",
+            "The model is overfitting; the twenty new variables are mostly noise that does not explain enough variance to justify the lost degrees of freedom.",
+            "The model is fine but suffers from heteroskedasticity, which pushes Adjusted R-squared down while leaving the coefficient estimates unaffected."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -1405,10 +1405,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Simulate adding a new high-price outlier; observe how the t-statistic and standard errors respond to sample leverage.",
         "check": {
           "options": [
-            "The negative t-statistic indicates that the model is mathematically defective and must be discarded.",
-            "The model should be rejected because R-squared cannot exceed 0.50 in commercial markets.",
-            "The intercept must be forced to zero before presenting to the board.",
-            "The price coefficient is highly statistically significant (t-statistic far exceeds the 2.0 critical threshold), and the model explains ninety-six percent of demand variance, providing an authoritative basis for price elasticity optimization."
+            "The price coefficient is significant, but an Adjusted R-squared of 0.96 signals overfitting, so the model is unreliable for any pricing decision.",
+            "The negative t-statistic shows the price effect is insignificant, because only positive t-statistics above 2.0 can support a pricing decision.",
+            "The model proves a ten percent price cut raises demand ninety-six percent, since the Adjusted R-squared of 0.96 directly measures the price elasticity of demand.",
+            "The price coefficient is highly significant (t far beyond 2.0) and the model explains ninety-six percent of demand variance, a solid basis for elasticity decisions."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -1464,10 +1464,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Reduce the correlation between Search and Social spend by introducing independent campaign testing days; observe how the VIF collapses back to healthy levels below 3.0.",
         "check": {
           "options": [
-            "Severe multicollinearity: Google and Facebook ad spend are highly correlated, inflating parameter standard errors and collapsing individual t-statistics while the overall model fit remains strong.",
-            "Omitted variable bias has eliminated the degrees of freedom.",
-            "The Gauss-Markov theorem has proven that advertising has no effect on sales.",
-            "The dependent variable has collapsed to zero."
+            "Severe multicollinearity: Google and Facebook spend are highly correlated, inflating standard errors and collapsing individual t-statistics despite strong overall fit.",
+            "Heteroskedasticity: the variance of errors changes with ad spend, which biases the coefficients toward zero and collapses individual t-statistics.",
+            "Autocorrelation: sales in one period depend on the previous period, which makes the F-test significant while individual variables look insignificant.",
+            "Omitted variable bias: a missing seasonality variable biases both ad coefficients upward, producing low individual t-statistics despite a high overall R-squared."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -1496,10 +1496,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Replace the expanding residuals with constant variance random.gauss(0, 5.0); observe how the LM statistic collapses to near-zero, confirming textbook homoskedasticity.",
         "check": {
           "options": [
-            "Heteroskedasticity proves that corporate IT spending has no relationship to firm revenue.",
-            "The sample size must be reduced to ten observations to restore homoskedasticity.",
-            "The regression coefficients are biased and must be multiplied by negative one.",
-            "Heteroskedasticity is present: while OLS coefficient point estimates remain unbiased, textbook standard errors are invalid, artificially inflating t-statistics and manufacturing false significance."
+            "Heteroskedasticity is present: OLS coefficients are biased and inconsistent, so the point estimates of IT spending must be discarded and re-estimated.",
+            "Homoskedasticity holds: the large statistic exceeds 3.84, which confirms constant error variance and so validates the classical standard errors.",
+            "Multicollinearity is present: the statistic of 18.42 shows revenue is correlated with other regressors, inflating standard errors and weakening significance.",
+            "Heteroskedasticity is present: OLS coefficients remain unbiased, but classical standard errors are invalid and t-statistics are inflated, creating false significance."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -1527,10 +1527,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Compare the classical versus White standard errors as sample size scales to 1,000; observe how White standard errors reliably converge to true sampling variance.",
         "check": {
           "options": [
-            "Force the intercept to zero to restore homoskedasticity.",
-            "Discard White's robust standard errors because classical standard errors always have higher statistical power.",
-            "Accept the robust results: the apparent statistical significance was an illusion created by classical standard error underestimation; the variable is not statistically significant at the 5% level.",
-            "Delete all outlier observations until the classical t-statistic exceeds 3.0."
+            "Keep the classical results: robust errors reduce power, and the original t-statistic of 2.45 better reflects the true significance of the slope.",
+            "Accept the robust results, and conclude the coefficient estimate itself was biased and must be re-estimated with weighted least squares.",
+            "Accept the robust results: the apparent significance came from underestimated classical standard errors; the variable is not significant at the 5% level.",
+            "Average the two p-values and treat the slope as significant, because classical and robust errors are equally valid estimates of the same uncertainty."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -1558,10 +1558,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Increase the magnitude of the shared store shock from 5.0 to 15.0; observe how clustered standard errors expand to reflect group-level correlation while unclustered errors remain artificially small.",
         "check": {
           "options": [
-            "The program was an overwhelming success because unadjusted OLS had a p-value below 0.01.",
-            "The training program has no statistically significant effect: unadjusted OLS suffered from severe intra-cluster correlation, manufacturing artificial significance by ignoring shared branch-level shocks.",
-            "Clustering is invalid because 1,000 employees is too large a sample for clustered errors.",
-            "The branch offices should be treated as continuous variables to eliminate the p-value shift."
+            "A significant effect: clustering shrinks the effective sample to twenty branches, so the original p-value of 0.008 is more reliable than the clustered one.",
+            "No significant effect: unadjusted OLS ignored intra-cluster correlation, manufacturing significance by overlooking shared branch-level shocks.",
+            "No significant effect: unadjusted OLS suffered from omitted variable bias at the branch level, which biased the training coefficient upward.",
+            "Inconclusive: the two p-values average to 0.075, which falls between the usual thresholds, so neither method can be preferred without more employees."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -1591,10 +1591,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Reduce the true slope to 0.10; observe how the tower accurately identifies the estimate as inconclusive noise once robust standard errors are applied.",
         "check": {
           "options": [
-            "It deactivates classical OLS reporting, enforces White's robust standard errors, and flags the credit factor as statistically insignificant, preventing flawed underwriting policies.",
-            "It automatically multiplies the credit score factor by two to force significance.",
-            "It ignores the Breusch-Pagan test because classical OLS is always BLUE.",
-            "It converts all continuous customer metrics into binary indicators."
+            "It disables classical OLS reporting, enforces White's robust standard errors, and flags the credit factor as insignificant, preventing flawed underwriting policy.",
+            "It keeps classical OLS reporting because t = 2.12 exceeds the 2.0 threshold, and adds a footnote warning that heteroskedasticity was detected.",
+            "It switches the model to log-transformed variables, re-runs classical OLS standard errors, and approves the credit factor if it stays significant.",
+            "It discards the credit score factor and re-estimates the model on a larger sample, because heteroskedasticity makes the coefficient itself biased."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -1650,10 +1650,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Add a new data point at Price = 60.0; observe how the Log-Log constant elasticity parameter eta accurately captures the demand collapse.",
         "check": {
           "options": [
-            "A one dollar price hike reduces sales by exactly 1.65 units.",
-            "Sales increase by 165% whenever price drops by ten dollars.",
-            "Price elasticity of demand is -1.65: a one percent increase in product price induces a 1.65 percent reduction in unit sales volume, indicating price-elastic demand where price hikes reduce total revenue.",
-            "The model is misspecified because logarithmic slopes cannot be negative."
+            "Price elasticity of demand is -1.65: a one percent price rise cuts unit sales by 1.65 units, so demand is inelastic and price hikes raise total revenue.",
+            "Each one dollar price increase reduces sales by 1.65 percent, because the slope in a log-log model is a constant absolute dollar effect on demand.",
+            "Price elasticity of demand is -1.65: a one percent price rise cuts unit sales by 1.65 percent, so demand is price-elastic and price hikes reduce total revenue.",
+            "The coefficient shows that price explains 1.65 percent of the variation in sales, so demand is inelastic and price hikes raise total revenue."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -1682,10 +1682,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Generate data with a strictly linear true DGP; observe how the Ramsey RESET F-statistic collapses to near-zero, validating linear specification.",
         "check": {
           "options": [
-            "Delete all ad impressions above one thousand to force linearity.",
-            "The linear model suffers from severe functional misspecification; the team must reject the simple linear form and re-estimate using logarithmic transformations or polynomial diminishing returns terms.",
-            "The test is invalid because Ramsey RESET only applies to time-series models.",
-            "Accept the linear model because an F-statistic above ten proves that advertising works."
+            "The linear model is correctly specified; the large F-statistic confirms the straight-line form, so the team should keep it and only report robust errors.",
+            "The linear model is functionally misspecified; reject the simple linear form and re-estimate with logarithmic transformations or polynomial diminishing-returns terms.",
+            "The model suffers from multicollinearity among its regressors; the team must drop ad impressions and re-estimate with a different advertising variable.",
+            "The model's errors are autocorrelated over time; the team must add lagged sales terms and re-estimate it with Newey-West standard errors and a trend."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -1713,10 +1713,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Alter beta2 to -0.10; observe how the revenue-maximizing discount percentage shifts higher as the diminishing returns penalty softens.",
         "check": {
           "options": [
-            "Twenty percent discount, calculated as X_star = -6.0 / (2 * -0.15) = 20.0%, beyond which additional discounting actively destroys corporate revenue.",
-            "Thirty percent discount because maximum discount always drives maximum volume.",
-            "Zero percent discount because discounting always hurts brand equity.",
-            "Ten percent discount obtained by dividing beta1 by beta0."
+            "Twenty percent, from X* = -6.0 / (2 * -0.15) = 20.0%, beyond which further discounting actively destroys corporate revenue.",
+            "Thirty percent, because revenue keeps rising with each added discount point across the whole tested range of zero to thirty percent.",
+            "Ten percent, from X* = -6.0 / (4 * -0.15) = 10.0%, beyond which further discounting begins to destroy corporate revenue.",
+            "Forty percent, from X* = -6.0 / -0.15 = 40.0%, the point where marginal revenue first turns negative for the company."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -1745,9 +1745,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Calculate the exact Johnson-Neyman tipping point for brand equity where ad spend transitions from losing money (ROI < 1.0) to generating net profit (ROI > 1.0).",
         "check": {
           "options": [
-            "$2.50 gross return by adding all three coefficients together.",
-            "$0.02 return because only the interaction term matters.",
-            "$0.50 gross return because the main effect coefficient is 0.50.",
+            "$0.50 gross return: dSales/dAds = 0.50, because interaction terms leave the slope unchanged.",
+            "$2.52 gross return, calculated as dSales/dAds = 0.50 + 2.00 + 0.02 = $2.52 in total.",
+            "$0.90 gross return, calculated as dSales/dAds = 0.50 + 0.01 * 40 = 0.50 + 0.40 = 0.90.",
             "$1.30 gross return, calculated as dSales/dAds = 0.50 + 0.02 * 40 = 0.50 + 0.80 = 1.30."
           ],
           "answer": 3,
@@ -1778,10 +1778,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "tryIt": "Increase the price elasticity eta from -1.75 to -3.00 (highly price-sensitive market); observe how the optimal price contracts toward unit cost to protect demand volume.",
         "check": {
           "options": [
-            "$20.00 per month at cost to maximize user acquisition.",
-            "$150.00 per month derived from the intercept.",
-            "$60.00 per month, calculated as P* = 20 * (1.50 / (1.50 - 1.0)) = 20 * (1.50 / 0.50) = 20 * 3.0 = $60.00.",
-            "$30.00 per month by adding a 50% markup to cost."
+            "$30.00 per month, from P* = 20 * 1.50 = $30.00, a markup on the elasticity alone.",
+            "$40.00 per month, from P* = 20 * (1 + 1.00) = $40.00, a flat 100 percent markup.",
+            "$60.00 per month, from P* = 20 * (1.50 / (1.50 - 1.0)) = 20 * 3.0 = $60.00.",
+            "$50.00 per month, from P* = 20 / (1 - 0.60) = 20 / 0.40 = $50.00."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2072,10 +2072,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a negative individual silhouette coefficient s(i) indicate about a customer data point?",
           "options": [
-            "The observation was discarded by the algorithm due to missing data values.",
-            "The cluster algorithm has successfully reached global convergence.",
-            "The observation is closer on average to points in a neighboring cluster than to points in its assigned cluster.",
-            "The customer's monetary spend is negative due to outstanding accounts receivable invoices."
+            "The observation sits exactly on the boundary between two clusters, with equal average distance to both and to its own cluster.",
+            "The observation is an outlier whose average distance to every cluster exceeds the overall mean distance, so it should be removed.",
+            "The observation is, on average, closer to points in a neighboring cluster than to points in its own assigned cluster.",
+            "The observation is tightly packed with points in its own cluster and far from all other clusters, so the clustering fits it well."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2136,9 +2136,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is customer account migration tracking across cluster boundaries critical for Chief Revenue Officers?",
           "options": [
             "It reveals early behavioral deterioration before accounts officially cancel or default, enabling proactive retention.",
-            "It allows the engineering team to compress database storage sizes automatically.",
-            "It prevents customer data from being audited by external financial regulators.",
-            "It eliminates the necessity of maintaining customer relationship management software."
+            "It proves that cluster centroids stay fixed over time, which lets the CRO reuse one segmentation for all future planning cycles.",
+            "It replaces the need for individual account histories, since cluster labels alone give the exact revenue each customer will generate.",
+            "It shows which accounts have already cancelled or defaulted, so finance can book the bad debt and close the quarter accurately."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2193,9 +2193,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a diagonal pattern of sudden retention drops across multiple cohorts in a triangle matrix signify?",
           "options": [
-            "A structural increase in customer lifetime value driven by compounding price increases.",
-            "A natural mathematical convergence guaranteed by the Central Limit Theorem.",
-            "An algorithmic indexing error caused by leap-year date formatting in SQL data warehouses.",
+            "A cohort aging effect, in which customers acquired in a given month steadily lose interest as their tenure with the product grows.",
+            "A data quality error in the acquisition month, where one vintage of customers was recorded with the wrong signup date by mistake.",
+            "A seasonal promotion pattern, in which every cohort responds to the same discount timing in its first few months of tenure.",
             "A macro calendar-time shock (such as a severe product outage or competitor launch) affecting all active users simultaneously."
           ],
           "answer": 3,
@@ -2253,10 +2253,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is naive churn calculation (dividing total churned customers by total accounts) fatally biased when evaluating active subscription databases?",
           "options": [
-            "It requires customer transaction dates to be converted into Coordinated Universal Time.",
+            "It ignores left-truncation, counting only customers who joined before the observation window and so leaving out all new signups.",
             "It ignores right-censoring, misclassifying active customers who haven't finished their lifecycle as permanent survivors.",
-            "It produces negative numbers whenever monthly recurring revenue expands.",
-            "It violates the second law of thermodynamics regarding corporate entropy."
+            "It double counts customers who churn and later reactivate, inflating the churn rate above the level of true cancellations.",
+            "It averages churn across all tenure ages, which hides seasonal peaks but does not bias the lifetime estimates for any cohort."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -2284,10 +2284,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational risk of relying on a high Net Retention Rate driven by a tiny handful of hyper-expanding accounts?",
           "options": [
-            "It triggers automatic anti-trust investigations by international trade regulators.",
-            "It makes it impossible to calculate customer acquisition costs.",
+            "Cash flow timing risk: expansion revenue is billed in advance, so the high retention rate overstates the cash actually collected each quarter.",
+            "Attribution risk: expansion revenue from hyper-growing accounts is credited to the sales team, so commission costs rise faster than retention.",
             "Account concentration risk: if the anchor expanding client defaults or departs, apparent negative churn collapses into severe net contraction.",
-            "It forces the enterprise to restate all historical balance sheets in foreign currencies."
+            "Measurement risk: a high retention rate cannot be audited, because expansion revenue is excluded from cohort data under reporting standards."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2433,10 +2433,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Kaiser-Guttman criterion, when should a principal component be retained from a standardized dataset?",
           "options": [
-            "When its eigenvalue is strictly greater than 1.0, meaning it explains more variance than a single raw standardized variable.",
-            "When its eigenvalue equals exactly zero, confirming complete orthogonality.",
-            "When the component contains strictly positive factor loadings across all variables.",
-            "When the component's cumulative variance exceeds fifty percent of the total dataset."
+            "When its eigenvalue is greater than 1.0, meaning it explains more variance than a single standardized variable.",
+            "When its eigenvalue is greater than 0.5, meaning it explains at least half the variance of a single standardized variable.",
+            "When its eigenvalue is less than 1.0, meaning it captures the shared variance missed by the other retained components.",
+            "When its eigenvalue is greater than 2.0, meaning it explains more variance than any two standardized variables together."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2464,9 +2464,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of applying Varimax orthogonal rotation to extracted principal components?",
           "options": [
-            "It converts continuous variables into discrete categorical classifications.",
-            "It eliminates the necessity of standardizing input variables prior to covariance calculation.",
-            "It increases the total cumulative variance explained by the component subspace.",
+            "It makes components correlated with one another, so each captures a distinct slice of the shared variance in the data.",
+            "It increases the total variance explained by the retained components, so fewer components are needed to describe the data.",
+            "It standardizes every variable to unit variance before extraction, so loadings on large-scale variables no longer dominate.",
             "It drives factor loadings toward zero or one, creating a simple structure that makes components easily interpretable."
           ],
           "answer": 3,
@@ -2495,10 +2495,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does variance-weighted composite scoring in PCA eliminate arbitrary subjective bias in executive index construction?",
           "options": [
-            "It replaces statistical eigenvalues with external equity market stock prices.",
-            "It forces all customer scores to follow a uniform probability distribution.",
-            "It weights each component by its mathematically proven proportion of explained variance rather than executive guesswork.",
-            "It automatically removes all negative customer ratings from the database."
+            "It gives every component an equal weight, so no single factor dominates the index and the result remains simple to explain.",
+            "It weights each component by the importance rating that managers assign, then rescales the weights so they sum to one.",
+            "It weights each component by its proportion of explained variance rather than by executive judgment or guesswork.",
+            "It weights each original variable by its standard deviation, so the most volatile metrics contribute most to the final index."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2583,10 +2583,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Tufte Lie Factor of 1.0 indicate about a business visualization?",
           "options": [
-            "The underlying dataset follows a perfectly symmetric Gaussian distribution.",
-            "The graphic contains exactly one visual dimension per data observation.",
-            "The physical percentage change shown in the graphic perfectly matches the true percentage change in the underlying data.",
-            "The visualization has successfully passed external financial accounting audits."
+            "The graphic uses exactly one data variable, so no second dimension can distort how the viewer reads the values.",
+            "The chart has a data-ink ratio of 1.0, meaning every drop of ink represents data and no decoration is present at all.",
+            "The physical size change shown in the graphic matches the true percentage change in the underlying data.",
+            "The graphic exaggerates the true change by a factor of one, so it shows a modest distortion that readers can ignore."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2645,10 +2645,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is pre-aggregation into materialized summary tables essential for enterprise executive dashboards?",
           "options": [
-            "It eliminates full table scans over millions of rows, guaranteeing sub-second response times during interactive filtering.",
-            "It prevents unauthorized users from exporting data into spreadsheet files.",
-            "It converts SQL database queries into machine learning neural networks automatically.",
-            "It bypasses corporate network firewalls and cloud encryption protocols."
+            "It avoids full table scans over millions of rows, giving sub-second response times during interactive filtering.",
+            "It keeps dashboard figures current in real time, since summary tables refresh whenever any source row changes.",
+            "It removes the need for data governance, because summarized tables cannot contain errors from the original source systems.",
+            "It lets executives drill down to individual transactions, since the summary tables store every row in a compressed form."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2676,10 +2676,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of data lineage in executive decision intelligence operating systems?",
           "options": [
-            "To compress relational database storage tables into binary executable files.",
-            "To allow any board-level metric to be mathematically traced back to its underlying models, transformations, and raw data logs.",
-            "To enforce daily password rotations across all enterprise employee workstations.",
-            "To convert all internal financial accounting statements into public marketing blog posts."
+            "To encrypt board-level metrics so only authorized executives can view the underlying models, transformations, and logs.",
+            "To allow any board-level metric to be traced back to its underlying models, transformations, and raw data logs.",
+            "To forecast how board-level metrics will change by modelling their historical relationships with underlying business drivers.",
+            "To compress raw data logs into summary tables so that board-level metrics load faster for executives on mobile devices."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -2733,10 +2733,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate time series analytics, what distinguishes a cyclical pattern from a seasonal pattern?",
           "options": [
-            "Seasonal patterns recur at fixed calendar intervals, whereas cyclical patterns fluctuate with macroeconomic business cycles over variable multi-year horizons.",
-            "Seasonal patterns only occur in agricultural companies, whereas cyclical patterns only occur in technology companies.",
-            "Seasonal patterns always exhibit negative variance, whereas cyclical patterns always exhibit positive variance.",
-            "Cyclical patterns can be modeled with pure standard deviations, whereas seasonal patterns require neural networks."
+            "Seasonal patterns recur at fixed calendar intervals, whereas cyclical patterns fluctuate with business cycles over variable multi-year horizons.",
+            "Cyclical patterns recur at fixed calendar intervals, whereas seasonal patterns fluctuate with business cycles over variable multi-year horizons.",
+            "Seasonal patterns are caused by random shocks and cannot be forecast, whereas cyclical patterns repeat every twelve months without fail.",
+            "Seasonal patterns affect only retail sales, whereas cyclical patterns affect all industries equally over exactly four-year periods."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2762,10 +2762,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the multiplicative decomposition model preferred over the additive model for rapidly growing enterprises?",
           "options": [
-            "Because multiplicative decomposition guarantees that corporate tax liabilities are reduced to zero.",
-            "Because multiplicative decomposition eliminates the need to calculate arithmetic moving averages.",
-            "Because additive decomposition cannot be executed without matrix inversion hardware.",
-            "Because the dollar magnitude of seasonal swings expands proportionally as total revenue grows, whereas additive models assume fixed dollar variations."
+            "Because seasonal swings stay at a fixed dollar size as revenue grows, which multiplicative models capture and additive models cannot.",
+            "Because multiplicative models need no seasonal indices, so they are simpler to fit when a growing business has limited history.",
+            "Because multiplicative models remove the trend component from the series, leaving a clean seasonal signal for fast-growing firms.",
+            "Because the dollar size of seasonal swings grows proportionally as total revenue grows, whereas additive models assume fixed dollar variations."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -2848,10 +2848,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of applying the log-difference transformation Delta ln(Y_t) to commercial time series?",
           "options": [
-            "It stabilizes exponential variance expansion while simultaneously eliminating unit root trends to yield stationary percentage returns.",
-            "It eliminates all negative numbers from the entire historical database automatically.",
-            "It forces the time series to match the exact quarterly growth rate of the S&P 500.",
-            "It converts monthly discrete time series data into high-frequency millisecond tick feeds."
+            "It stabilizes exponentially expanding variance while removing unit root trends, yielding stationary percentage returns.",
+            "It converts a stationary series into a trending one, so that exponential growth patterns can be modelled with simple linear terms.",
+            "It removes seasonal patterns of fixed length, leaving the trend untouched so that percentage growth can be forecast directly.",
+            "It scales the series to a common mean of zero, so that series measured in different currencies can be compared directly."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2904,10 +2904,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical condition must hold for an autoregressive AR(1) process Y_t = c + phi_1 * Y_{t-1} + e_t to be weakly stationary?",
           "options": [
-            "The constant intercept c must be exactly equal to zero.",
-            "The error term variance sigma^2 must expand exponentially over time.",
-            "The lag parameter phi_1 must be an odd prime number.",
-            "The absolute value of the autoregressive parameter phi_1 must be strictly less than one (|phi_1| < 1)."
+            "The autoregressive parameter must exceed one (phi_1 > 1) so that shocks are amplified over time.",
+            "The autoregressive parameter must be exactly equal to one (phi_1 = 1) so that the series has a constant mean.",
+            "The autoregressive parameter must be negative (phi_1 < 0) so that consecutive observations offset each other.",
+            "The absolute value of the autoregressive parameter must be strictly less than one (|phi_1| < 1)."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -2933,10 +2933,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key difference in shock duration between an Autoregressive AR(1) process and a Moving Average MA(1) process?",
           "options": [
-            "An AR(1) process exhibits an infinite, exponentially decaying shock memory, whereas an MA(1) process exhibits a strictly finite memory of exactly one lag.",
-            "An MA(1) process has infinite memory, whereas an AR(1) process has zero memory.",
-            "An AR(1) process only applies to continuous variables, whereas an MA(1) process only applies to boolean variables.",
-            "An MA(1) process requires daily differencing, whereas an AR(1) process cannot be differenced."
+            "An AR(1) process has infinite, exponentially decaying shock memory, whereas an MA(1) process has finite memory of exactly one lag.",
+            "An AR(1) process has finite memory of exactly one lag, whereas an MA(1) process has infinite, exponentially decaying shock memory.",
+            "Both processes have infinite shock memory, but an AR(1) shock decays linearly while an MA(1) shock decays geometrically.",
+            "Both processes forget shocks after one period, but the AR(1) process also carries a constant term that persists forever."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2992,10 +2992,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Partial Autocorrelation Function (PACF) identify the order p of a pure Autoregressive AR(p) process?",
           "options": [
-            "The PACF decays exponentially to infinity without ever terminating.",
-            "The PACF oscillates randomly between positive and negative numbers with zero mean.",
-            "The PACF exhibits exactly p statistically significant spikes and cuts off sharply to zero for all lags greater than p.",
-            "The PACF computes the square root of the moving average parameters."
+            "The PACF decays gradually toward zero, and the order p equals the number of lags before it first crosses zero.",
+            "The PACF is flat until lag p and then spikes sharply, so p marks where the first significant spike appears.",
+            "The PACF shows exactly p significant spikes and then cuts off to zero for all lags greater than p.",
+            "The PACF shows a spike at every seasonal lag, and p equals the length of the seasonal period in the data."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3022,10 +3022,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary objective of Stage 3 (Diagnostic Checking) in the Box-Jenkins methodology?",
           "options": [
-            "To convert all negative revenue values into positive marketing dividends.",
-            "To eliminate the need for future database backups and cloud encryption.",
-            "To maximize the total number of parameters in the model to overfit training data.",
-            "To verify that model residual errors resemble pure, uncorrelated white noise with zero remaining temporal structure."
+            "To choose the differencing order d by testing whether the original series contains a unit root before fitting.",
+            "To estimate the AR and MA coefficients by maximum likelihood once the model order has been selected from the correlograms.",
+            "To generate out-of-sample forecasts and compare them with actual values to confirm the model beats a naive baseline.",
+            "To verify that the model's residuals resemble uncorrelated white noise with no remaining temporal structure."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -3106,10 +3106,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of seasonal differencing (1 - L^s) in SARIMA models?",
           "options": [
-            "It divides all monthly financial figures by twelve to calculate daily revenue averages.",
-            "It eliminates seasonal unit roots by subtracting the observation from exactly s periods ago, stabilizing periodic calendar oscillations.",
-            "It converts continuous random variables into binary categorical indicators.",
-            "It automatically cancels all corporate tax liabilities in the fourth quarter."
+            "It removes the trend by subtracting the previous observation, which leaves the seasonal pattern intact for later modelling.",
+            "It removes seasonal unit roots by subtracting the observation from exactly s periods earlier, stabilizing periodic oscillations.",
+            "It averages the observations at the same seasonal position across years, which removes the noise from periodic oscillations.",
+            "It divides each observation by its seasonal index, which stabilizes the variance of periodic oscillations around the trend line."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3134,10 +3134,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Bayesian Information Criterion (BIC) penalize model complexity more harshly than the Akaike Information Criterion (AIC) for sample sizes N >= 8?",
           "options": [
-            "Because BIC penalizes each parameter by ln(N), which exceeds the fixed 2.0 multiplier used by AIC for any sample size greater than seven.",
-            "Because BIC automatically doubles the number of historical data points.",
-            "Because AIC only applies to classification models, whereas BIC only applies to regression models.",
-            "Because BIC computes the derivative of the covariance matrix instead of the log-likelihood."
+            "Because BIC penalizes each parameter by ln(N), which exceeds the fixed 2.0 multiplier of AIC for any sample size above seven.",
+            "Because BIC penalizes each parameter by sqrt(N), which exceeds the fixed 2.0 multiplier of AIC for any sample size above four.",
+            "Because BIC ignores the likelihood and counts only parameters, whereas AIC combines goodness of fit with a complexity term.",
+            "Because AIC is derived for small samples, and for N of eight or more its fixed penalty of 2.0 is automatically doubled."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -3163,10 +3163,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why cannot Moving Average MA(q) parameters be estimated using closed-form Ordinary Least Squares (OLS) algebra?",
           "options": [
-            "Because moving average parameters are restricted to imaginary complex numbers.",
-            "Because moving average models require non-invertible matrix determinants.",
-            "Because OLS algebra can only be calculated on binary classification labels.",
-            "Because historical error shocks epsilon_{t-q} are unobserved and depend recursively on the unknown parameters themselves, making the system non-linear in parameters."
+            "Because MA models need more observations than OLS allows, so the closed-form solution becomes singular for any sample under one thousand points.",
+            "Because MA errors are correlated with the regressors, which makes the OLS estimator biased, so no closed-form algebraic solution exists for the model.",
+            "Because MA models contain no lagged dependent variables, so there are no regressors available for the closed-form OLS algebra to use in estimation.",
+            "Because past error shocks are unobserved and depend recursively on the unknown parameters themselves, making the model non-linear in its parameters."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -3193,10 +3193,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of automated grid search algorithms in enterprise time series forecasting pipelines?",
           "options": [
-            "To replace relational SQL databases with unstructured spreadsheet files.",
-            "To force all company employees to adopt identical software development environments.",
-            "To systematically evaluate candidate (p, d, q) orders, prune non-stationary or non-invertible models, and select the globally optimal parsimonious model using information criteria.",
-            "To convert annual corporate budgets into monthly cryptocurrency investments."
+            "To estimate every coefficient of the final model by trial and error, replacing maximum likelihood with repeated random starting values until forecast error stops falling.",
+            "To test whether the series is stationary by trying every differencing order, and then fix the model order by hand from the autocorrelation plots.",
+            "To systematically evaluate candidate (p, d, q) orders, prune non-stationary or non-invertible models, and select the best parsimonious model by information criteria.",
+            "To combine forecasts from all candidate orders into one average, weighting each by its in-sample fit, rather than selecting any single model for the pipeline."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3250,10 +3250,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Root Mean Squared Error (RMSE) always mathematically greater than or equal to Mean Absolute Error (MAE)?",
           "options": [
-            "Because MAE incorporates corporate tax credits, whereas RMSE ignores depreciation.",
-            "Because squaring errors disproportionately penalizes large misses, and by Jensen's inequality the square root of the mean square is bounded below by the mean absolute value.",
-            "Because RMSE converts dollar figures into foreign exchange currency units.",
-            "Because RMSE is calculated using calendar months, whereas MAE is calculated using fiscal weeks."
+            "Because RMSE adds a constant bias term for the number of forecasts, and by definition this term is never smaller than the average absolute error.",
+            "Because squaring penalizes large misses disproportionately, and by Jensen's inequality the root of the mean square is bounded below by the mean absolute value.",
+            "Because RMSE is measured in squared units while MAE is measured in original units, so its numerical value is always the larger of the two.",
+            "Because RMSE is measured in squared units while MAE is measured in original units, so its numerical value is always the larger of the two, regardless of the data."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3279,10 +3279,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of Symmetric SMAPE over classical MAPE in enterprise supply chain analytics?",
           "options": [
-            "SMAPE guarantees that all product returns are classified as operational profits.",
-            "SMAPE computes the arithmetic median rather than the arithmetic mean.",
-            "SMAPE treats over-forecasting and under-forecasting with bounded symmetry and prevents division-by-zero crashes when actual demand is zero.",
-            "SMAPE eliminates the need for physical warehouse inventory counts."
+            "SMAPE penalizes under-forecasting more heavily than over-forecasting, which protects service levels and avoids stock-outs in supply chains.",
+            "SMAPE expresses error in units of demand rather than percentages, so errors can be summed across products of very different sizes.",
+            "SMAPE is bounded and treats over- and under-forecasting symmetrically, and it avoids division-by-zero crashes when actual demand is zero.",
+            "SMAPE uses the median instead of the mean of the errors, so a single extreme forecast miss cannot distort the overall accuracy score."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3308,9 +3308,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Mean Absolute Scaled Error (MASE) score of 0.70 indicate to an enterprise decision-maker?",
           "options": [
-            "The model's regression slope is restricted to 0.70.",
-            "The model achieves exactly seventy percent profit margins on sales.",
-            "The model has a thirty percent probability of experiencing a database crash.",
+            "The model's out-of-sample forecast error is seventy percent lower than that of a naive random walk baseline.",
+            "The model explains seventy percent of the variance in the data that a naive random walk baseline leaves unexplained.",
+            "The model's forecast error is thirty percent higher than that of a naive random walk baseline, so it adds no value.",
             "The model's out-of-sample forecast error is thirty percent lower than that of a naive random walk baseline."
           ],
           "answer": 3,
@@ -3338,10 +3338,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the Null Hypothesis (H0) in the Ljung-Box Q-statistic portmanteau test?",
           "options": [
-            "The residual errors are independent white noise with zero autocorrelation across all tested lags.",
-            "The model contains exactly twelve explanatory regression variables.",
-            "The time series has an infinite variance and cannot be inverted.",
-            "The enterprise gross margin exceeds fifty percent."
+            "The residual errors are independent white noise, with zero autocorrelation across all tested lags.",
+            "The residual errors are autocorrelated at one or more of the tested lags, so the model is misspecified.",
+            "The residual errors are normally distributed with a mean of zero and constant variance across all lags.",
+            "The time series is non-stationary, containing a unit root that must be removed by differencing the data."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -3368,10 +3368,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is randomized K-fold cross-validation strictly prohibited in time series forecasting pipelines?",
           "options": [
-            "Because K-fold cross-validation requires matrix determinants that exceed 32-bit floating point precision.",
-            "Because random shuffling leaks future information into past training folds (look-ahead bias), producing artificially optimistic accuracy that collapses in production.",
-            "Because time series models can only be validated using linear regression spreadsheets.",
-            "Because cross-validation is only permitted for unsupervised clustering algorithms."
+            "Because K-fold trains on less data than a single holdout split, so every fold underestimates the true accuracy of the final model in production.",
+            "Because random shuffling leaks future information into the training folds (look-ahead bias), producing optimistic accuracy that collapses in production.",
+            "Because shuffling destroys the seasonal pattern in the data, which makes the fitted model unable to forecast any seasonal cycle at all.",
+            "Because random folds make the test sets overlap, so the same observations are scored several times and the error averages get inflated."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3425,10 +3425,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the structural effect of selecting a high alpha smoothing parameter (e.g. alpha = 0.85) in Simple Exponential Smoothing?",
           "options": [
-            "The model doubles the physical storage capacity of the warehouse.",
+            "The model becomes slow to react to recent observations, smoothing out random noise but adapting poorly to genuine level shifts.",
             "The model becomes highly responsive to recent observations, adapting rapidly to level shifts but increasing vulnerability to random noise.",
-            "The model completely eliminates all white noise innovations from future projections.",
-            "The model automatically generates upward exponential growth curves."
+            "The model weights all historical observations about equally, giving a stable long-run average that ignores recent changes.",
+            "The model switches from forecasting a level to forecasting a trend, because high alpha adds a slope term to every update."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3454,10 +3454,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the slope equation b_t in Holt's Linear Trend Method?",
           "options": [
-            "It eliminates all seasonal fluctuations using Fourier transform harmonics.",
-            "It calculates foreign exchange conversion rates for overseas subsidiaries.",
-            "It dynamically updates the estimated rate of growth per period, allowing forward forecasts to project an upward or downward sloping linear trajectory.",
-            "It divides quarterly revenue by twelve to calculate daily operating margins."
+            "It updates the seasonal index for each period, allowing forecasts to repeat the same calendar pattern in every future year.",
+            "It smooths the level of the series to remove noise, allowing forecasts to stay flat at the latest estimated average value.",
+            "It dynamically updates the estimated growth rate per period, allowing forecasts to project an upward or downward linear trajectory.",
+            "It dampens the growth rate geometrically each period, forcing long-horizon forecasts to flatten out at a finite ceiling."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3483,10 +3483,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical purpose does the damping parameter phi (0 < phi < 1) serve in Gardner-McKenzie exponential smoothing?",
           "options": [
-            "It forces the model's regression residuals to follow an exponential probability distribution.",
-            "It doubles the model's computation time to improve cryptographic security.",
-            "It converts monthly accounting statements into continuous daily currency trades.",
-            "It applies a geometric brake to the trend slope, forcing long-horizon forecasts to converge asymptotically to a realistic finite ceiling rather than exploding linearly."
+            "It increases the trend slope geometrically each period, forcing long-horizon forecasts to accelerate toward ever larger growth rates over time.",
+            "It smooths the seasonal indices toward one, forcing long-horizon forecasts to lose their calendar pattern and revert to the plain level.",
+            "It weights recent errors more heavily when fitting the level, forcing long-horizon forecasts to track the latest observations closely.",
+            "It applies a geometric brake to the trend slope, forcing long-horizon forecasts to converge to a finite ceiling instead of rising linearly forever."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -3512,10 +3512,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between Additive and Multiplicative Holt-Winters models?",
           "options": [
-            "Additive models assume seasonal variations have fixed absolute magnitude, whereas multiplicative models assume seasonal swings expand proportionally as business volume grows.",
-            "Additive models only work on positive numbers, whereas multiplicative models only work on negative numbers.",
-            "Multiplicative models eliminate the need for level and trend smoothing parameters.",
-            "Additive models require neural network accelerators, whereas multiplicative models run on microcontrollers."
+            "Additive models assume seasonal swings of fixed absolute size, whereas multiplicative models assume swings that grow in proportion to business volume.",
+            "Additive models assume seasonal swings grow in proportion to business volume, whereas multiplicative models assume swings of fixed absolute size.",
+            "Additive models forecast only the level of the series, whereas multiplicative models add separate trend and seasonal terms to the level equation.",
+            "Additive models are fitted by least squares, whereas multiplicative models are fitted by a separate maximum likelihood estimator on logs."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -3541,10 +3541,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the three-character ETS(E, T, S) taxonomy in modern time series econometrics?",
           "options": [
-            "To compress SQL database tables into encrypted zip files.",
-            "To classify exponential smoothing models across Error, Trend, and Seasonal dimensions into a unified state-space framework with exact likelihood functions.",
-            "To calculate employee performance ratings based on sales targets.",
-            "To convert annual corporate budgets into monthly cryptocurrency trades."
+            "To classify ARIMA models by Error, Trend, and Seasonal type within one regression framework that has closed-form least squares solutions.",
+            "To classify exponential smoothing models by Error, Trend, and Seasonal type within one state-space framework that has exact likelihood functions.",
+            "To rank exponential smoothing models by forecast accuracy, with E, T, and S marking the best, second best, and third best models.",
+            "To label the three smoothing parameters alpha, beta, and gamma, so analysts can set each one by hand without using any likelihood."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3594,10 +3594,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does safety stock investment escalate asymptotically as the target Cycle Service Level approaches 100% under normally distributed demand?",
           "options": [
-            "Because the annual inventory holding cost rate increases linearly with the total quantity of inventory ordered.",
-            "Because warehouse handling charges are strictly non-linear functions of supplier transit distance.",
-            "Because the Gaussian probability density tails extend to infinity, requiring exponentially larger Z-scores for marginal gains in tail coverage.",
-            "Because supplier replenishment lead times systematically double whenever customer demand volumes increase."
+            "Because demand variability grows with the service level, so each extra point of service requires proportionally more lead time.",
+            "Because the Z-score rises linearly with the service level, so each added percentage point costs the same extra safety stock.",
+            "Because the Gaussian tails extend to infinity, requiring ever larger Z-scores for each marginal gain in tail coverage.",
+            "Because suppliers charge higher unit prices for the extra volume, so total safety stock cost rises faster than the units held."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3652,10 +3652,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must replenishment orders be triggered based on Inventory Position (IP = OH + OO - BO) rather than physical On-Hand Inventory (OH)?",
           "options": [
-            "Because ignoring On-Order pipeline inventory causes redundant replenishment orders to be placed while previous orders are in transit, leading to severe over-stocking.",
-            "Because On-Hand inventory is legally owned by the freight carrier until customer delivery is completed.",
-            "Because customer backorders automatically reduce the supplier's manufacturing lead time.",
-            "Because accounting regulations prohibit recognizing inventory until invoices are settled in cash."
+            "Because ignoring On-Order pipeline inventory causes redundant orders to be placed while earlier orders are still in transit, leading to over-stocking.",
+            "Because On-Hand inventory is recorded with delays in the ERP system, so orders based on it arrive later than the stock actually requires.",
+            "Because Inventory Position excludes backorders, so orders based on it never reflect unmet customer demand and cause repeated stock-outs.",
+            "Because physical On-Hand inventory includes obsolete stock, so orders based on it understate demand and leave shelves empty of fast sellers."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -3680,10 +3680,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the key mathematical reason that a firm can achieve a 99% Fill Rate (Type 2 Service) even when its Cycle Service Level (Type 1 Service) is only 90%?",
           "options": [
-            "Because the normal loss function G(Z) is mathematically identical to the cumulative distribution function Phi(Z).",
-            "Because customer demand variance is eliminated when order sizes exceed economic order quantity thresholds.",
-            "Because supplier replenishment lead time drops to zero whenever the stockout quantity is small.",
-            "Because Fill Rate accounts for replenishment batch size Q, so a stockout occurring in only 10% of cycles represents a tiny fraction of the total units ordered across the entire cycle."
+            "Because Fill Rate counts only the units backordered and later delivered, so any stockout that is eventually filled is excluded from the measure.",
+            "Because Fill Rate uses a higher Z-score than Cycle Service Level, so a 90% cycle service level automatically maps to 99% unit availability.",
+            "Because Fill Rate averages service across all SKUs in the catalog, so strong items offset the stockouts that occur on the weak items.",
+            "Because Fill Rate depends on the batch size Q, so a stockout in only 10% of cycles is a tiny fraction of all units ordered across the cycle."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -3709,10 +3709,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In discrete-event inventory simulations, how does accumulated customer backorder volume affect the firm's financial cash flow?",
           "options": [
-            "It causes the supplier to provide mandatory volume discounts on pipeline deliveries.",
-            "It permanently eliminates the holding cost rate applied to warehouse storage.",
-            "It triggers direct stockout penalty fees, lost customer goodwill costs, and consumes future replenishment shipments before new orders can be satisfied.",
-            "It increases the Economic Order Quantity (EOQ) by multiplying the fixed order placement fee."
+            "It reduces holding costs because backordered units are never stored, and the penalty is offset by interest earned on the unspent cash.",
+            "It is recorded only as a future sales increase, since backordered customers pay in advance and replenishment shipments remain fully available.",
+            "It triggers stockout penalty fees and lost goodwill costs, and consumes incoming replenishment shipments before new orders can be served.",
+            "It has no cash effect until the units ship, because backorders are off-balance-sheet commitments and incur no penalties or goodwill costs."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3763,10 +3763,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In classical inventory ABC classification, how is Annual Dollar Usage (ADU) computed and utilized to segment catalog items?",
           "options": [
-            "ADU is calculated by dividing annual sales revenue by the supplier replenishment lead time in weeks.",
-            "ADU is derived by taking the logarithm of unit shipping weight multiplied by freight tariffs.",
-            "ADU is computed as warehouse storage footprint multiplied by daily inventory holding cost rates.",
-            "ADU is computed as Annual Unit Demand multiplied by Unit Cost, and items are sorted in descending order to assign Class A to the top ~80% of cumulative monetary value."
+            "ADU is Annual Unit Demand divided by Unit Cost; items are sorted in ascending order and Class A is the bottom ~80% of cumulative unit volume.",
+            "ADU is the average daily usage in units; items are sorted by unit count and Class A is the top ~80% of cumulative units demanded across the catalog.",
+            "ADU is Annual Unit Demand multiplied by Unit Cost; items are sorted and Class A is the top ~50% of cumulative monetary value, split evenly with Class B.",
+            "ADU is Annual Unit Demand multiplied by Unit Cost; items are sorted in descending order and Class A is the top ~80% of cumulative monetary value."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -3790,10 +3790,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Coefficient of Variation (CV = sigma / mu) superior to raw standard deviation (sigma) when evaluating demand predictability across an inventory catalog?",
           "options": [
-            "Because CV is scale-invariant, allowing relative demand volatility to be compared fairly between high-volume and low-volume SKUs.",
-            "Because CV eliminates the need to calculate arithmetic sample variances.",
-            "Because CV automatically converts weekly demand into annual currency valuations.",
-            "Because CV is immune to supplier replenishment lead-time variability."
+            "Because CV is scale-invariant, so relative demand volatility can be compared fairly between high-volume and low-volume SKUs.",
+            "Because CV measures the absolute dollar variation in demand, so volatility can be compared in cost terms between all SKUs.",
+            "Because CV removes seasonality from the demand series, so volatility reflects only the random component of each SKU's demand.",
+            "Because CV is bounded between zero and one, so every SKU can be ranked on one standard percentile scale of volatility."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -3819,10 +3819,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which inventory governance policy should be applied to items falling into Cell AZ (High Value, High Volatility)?",
           "options": [
-            "Automated continuous reordering with large bulk batch sizes to achieve economies of scale.",
-            "Make-to-Order (MTO), customer advance deposits, buffer stock at the component level, and strict executive purchase sign-offs.",
-            "Two-bin Kanban replenishment with 180 days of on-hand safety stock.",
-            "Immediate catalog deletion without notifying existing commercial clients."
+            "Automated min-max replenishment with high safety stock, so the expensive items stay available on the shelf.",
+            "Make-to-Order, customer advance deposits, component-level buffer stock, and strict executive purchase sign-offs.",
+            "Consignment stocking at the supplier, annual contracts, and relaxed monthly reviews by the buyers for each item.",
+            "Bulk quantity purchasing at deep discounts, large finished-goods stocks, and approval delegated to warehouse supervisors."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3847,10 +3847,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial benefit of implementing differential service levels across the 9-Box ABC/XYZ matrix compared to a blanket uniform 95% service level?",
           "options": [
-            "It removes the need to track inventory carrying costs on balance sheet accounting reports.",
-            "It eliminates all supplier replenishment lead-time variability across the maritime transport network.",
-            "It releases substantial working capital by intentionally lowering buffer stock on erratic, expensive items (Cell AZ) while increasing availability on predictable core revenue drivers (Cell AX).",
-            "It guarantees that every SKU in the warehouse achieves exactly zero stockouts over a three-year operating horizon."
+            "It lowers purchase prices by placing one large uniform order with every supplier, while holding the same availability level across all items in the matrix.",
+            "It ties up more working capital by stocking extra buffer on erratic, expensive items (Cell AZ) while cutting availability on predictable core items (Cell AX).",
+            "It frees working capital by deliberately lowering buffer stock on erratic, expensive items (Cell AZ) while raising availability on predictable core revenue drivers (Cell AX).",
+            "It eliminates the need for forecasting entirely, because each cell of the matrix is replenished by a fixed rule and a review cycle that never changes."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3876,10 +3876,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the recommended strategic action for catalog items diagnosed in Cell CZ (Low Monetary Value, High Demand Volatility)?",
           "options": [
-            "Increase safety stock targets to 99% Cycle Service Level using expedited air freight.",
-            "Apply linear regression trend forecasting without evaluating zero-demand intervals.",
-            "Deploy Vendor-Managed Inventory (VMI) with daily electronic data interchange (EDI) purchase orders.",
-            "Conduct SKU rationalization, enforce minimum order quantities (MOQ), transfer stocking to third-party distributors, or initiate phase-out."
+            "Increase safety stock and automate reordering, because volatile items need the highest buffers to protect sales and customers.",
+            "Assign dedicated planners and tight monitoring, because demand volatility on a small number of items is the largest forecasting risk.",
+            "Negotiate vendor-managed inventory at premium pricing and keep every item in stock, since these items define the catalog's breadth.",
+            "Conduct SKU rationalization, enforce minimum order quantities (MOQ), move stocking to third-party distributors, or start a phase-out."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -3930,10 +3930,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the Allen Midpoint Arc Formula universally preferred over the standard endpoint formula when computing Price Elasticity of Demand from historical price tests?",
           "options": [
-            "Because it uses average price and average quantity as denominators, eliminating directional asymmetry and yielding identical elasticity values whether prices rise or fall.",
-            "Because it automatically eliminates all marginal production costs from the gross margin equation.",
-            "Because it converts non-linear demand curves into quadratic exponential smoothing models.",
-            "Because it guarantees that price elasticity will always be greater than positive one."
+            "Because it uses the average price and average quantity as denominators, removing directional asymmetry so elasticity is the same for a price rise or fall.",
+            "Because it uses the lowest price and lowest quantity as denominators, so elasticity is measured against the smallest base observed in the price test.",
+            "Because it converts price and quantity to logarithms before differencing, so elasticity is constant along the whole demand curve regardless of range.",
+            "Because it ignores quantity changes and uses only the price change, so elasticity does not depend on which historical test point is the reference."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -3957,10 +3957,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Along a downward-sloping linear demand curve Q(P) = alpha - beta * P, at what exact price point is Total Revenue strictly maximized?",
           "options": [
-            "At the price point where the marginal cost of production equals total fixed overhead.",
-            "At the choke price where customer demand drops to zero.",
-            "At a price of zero where total sales volume is maximized.",
-            "At P = alpha / (2 * beta), which represents exactly half the choke price and where Price Elasticity of Demand is exactly Unit Elastic (|PED| = 1.0)."
+            "At P = alpha / beta, which is the choke price itself and the point where demand becomes perfectly elastic (|PED| = infinity).",
+            "At P = 2 * alpha / beta, which is double the choke price and the point where demand is perfectly inelastic (|PED| = 0).",
+            "At P = alpha / (4 * beta), which is a quarter of the choke price and the point where demand is highly elastic (|PED| = 3.0).",
+            "At P = alpha / (2 * beta), which is half the choke price and the point where demand is exactly unit elastic (|PED| = 1.0)."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -3984,10 +3984,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the profit-maximizing price P_{pi}^* strictly higher than the revenue-maximizing price P_{rev}^* whenever marginal production costs are greater than zero?",
           "options": [
-            "Because price elasticity of demand shifts from negative to positive when marginal costs are recognized.",
-            "Because fixed warehouse overhead expenses automatically double when unit production volume contracts.",
-            "Because profit optimization balances incremental revenue against incremental production costs, adding exactly half of marginal cost (MC / 2) to the revenue-maximizing price.",
-            "Because tax authorities mandate higher statutory gross profit margins on manufactured physical inventory."
+            "Because profit optimization ignores demand and sets price at marginal cost plus a fixed margin, which lies above the revenue-maximizing price.",
+            "Because production costs shift the demand curve upward, so customers become willing to pay the full marginal cost on top of the revenue-maximizing price.",
+            "Because profit optimization balances incremental revenue against incremental production cost, adding half of marginal cost (MC / 2) to the revenue-maximizing price.",
+            "Because marginal cost lowers the choke price, so profit is maximized by pricing at exactly twice the marginal cost above the revenue-maximizing price."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4013,10 +4013,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a positive Cross-Price Elasticity of Demand (XED_{A, B} > 0) signify in multi-product portfolio analytics?",
           "options": [
-            "Customer income elasticity is strictly greater than positive two.",
-            "Products A and B are economic substitutes, meaning a price drop in Product B will siphon sales away from Product A through cannibalization.",
-            "Products A and B are economic complements, meaning a price increase in B will increase demand for A.",
-            "Both products have negative gross profit contribution margins."
+            "Products A and B are complements, so a price drop on Product B will lift sales of Product A through combined purchases.",
+            "Products A and B are substitutes, so a price drop on Product B will pull sales from Product A through cannibalization.",
+            "Products A and B are independent goods, so a price drop on Product B has no effect on the sales of Product A.",
+            "Products A and B are luxury goods, so a price drop on Product B raises sales of both through higher consumer income."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4045,9 +4045,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why do enterprise dynamic pricing engines enforce an operational cost floor (e.g., P >= MC / (1 - Margin%)) alongside unconstrained econometric optimization models?",
           "options": [
             "To ensure that algorithmic recommendations never price products below minimum required gross margins, preventing cash-burning pricing blunders.",
-            "To eliminate all income elasticity variance from customer demand estimation.",
-            "To guarantee that own-price elasticity of demand remains strictly equal to positive zero.",
-            "To bypass statutory sales tax reporting requirements."
+            "To guarantee that algorithmic recommendations maximize revenue, since the cost floor replaces the econometric elasticity estimates used elsewhere.",
+            "To keep prices identical across all customer segments and channels, which prevents the engine from charging different prices at different times.",
+            "To raise prices to the competitor's level whenever the model finds elastic demand, so the company never starts a damaging price war."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -4100,10 +4100,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational flaw of relying exclusively on Last-Touch Attribution in enterprise marketing analytics?",
           "options": [
-            "It eliminates all customer lifetime value metrics from quarterly corporate balance sheets.",
-            "It systematically over-allocates credit to bottom-of-funnel capture channels (like branded search or email) while starving top-of-funnel channels that created original awareness.",
-            "It assigns equal fractional revenue to every marketing impression regardless of conversion outcome.",
-            "It requires solving exponential Markov chain transition matrices for every website visitor."
+            "It over-allocates credit to top-of-funnel awareness channels (display, video) while starving the bottom-of-funnel channels that closed the actual sale.",
+            "It over-allocates credit to bottom-of-funnel capture channels (branded search, email) while starving the top-of-funnel channels that created the original awareness.",
+            "It splits credit equally across every touchpoint in the journey, so channels with many low-value impressions look as valuable as the closing channel.",
+            "It ignores cross-device tracking entirely, so each customer is counted as several different users and total conversions are overstated across campaigns."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4128,10 +4128,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical meaning of the Markovian Memoryless Property in customer journey modeling?",
           "options": [
-            "Every marketing channel has an identical conversion probability regardless of position in the funnel.",
-            "Customers never interact with more than two distinct marketing channels before purchasing.",
-            "The probability of transitioning to the next touchpoint depends exclusively on the customer's current touchpoint, independent of the historical path of prior touches.",
-            "The marketing tracking database permanently deletes cookie logs after thirty seconds of inactivity."
+            "The probability of moving to the next touchpoint depends on the complete history of earlier touches, with recent touches weighted more heavily.",
+            "The probability of moving to the next touchpoint is fixed at the same value for every state, regardless of which touchpoint the customer is at.",
+            "The probability of moving to the next touchpoint depends only on the customer's current touchpoint, not on the earlier path of touches.",
+            "The probability of conversion is unchanged by the number of touchpoints, because each touch has an equal and independent chance to convert."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4157,10 +4157,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the Removal Effect Algorithm determine the causal attribution weight of a marketing channel in a Markov chain network?",
           "options": [
-            "By dividing the channel's total advertising spend by the number of clicks recorded in tracking cookies.",
-            "By counting how many times the channel appeared as the very first touchpoint in customer journeys.",
-            "By multiplying the channel's cost-per-click by the average order value of converted users.",
-            "By simulating the complete removal of the channel, measuring the percentage drop in total conversions, and normalizing that drop across all channels."
+            "By assigning equal credit to each channel on every converting path, then scaling the credit by the total spend on the channel.",
+            "By crediting the last channel on every converting path, then reweighting the credit by that channel's average conversion value.",
+            "By measuring each channel's correlation with conversions across all customers, then normalizing the coefficients so they sum to one.",
+            "By simulating the removal of the channel, measuring the percentage drop in total conversions, and normalizing it across all channels."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -4186,10 +4186,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary computational limitation of using the Shapley Value for multi-touch attribution compared to first-order Markov chains?",
           "options": [
-            "The Shapley value requires evaluating all 2^K sub-coalitions, scaling exponentially and becoming computationally intractable for large numbers of marketing channels.",
-            "The Shapley value violates the axiom of efficiency by attributing more than 100% of conversion revenue.",
-            "The Shapley value can only be computed when all marketing channels have identical cost-per-click rates.",
-            "The Shapley value does not account for customer journey conversion values."
+            "The Shapley value requires evaluating all 2^K channel coalitions, so it scales exponentially and is intractable for large numbers of channels.",
+            "The Shapley value needs the full sequence of every customer's path, so it cannot be used when the journeys contain only a few channels.",
+            "The Shapley value gives a channel zero credit when it appears early in a path, so it undervalues all awareness channels in the mix.",
+            "The Shapley value cannot handle channels that appear together, so it requires each customer journey to include exactly one channel."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -4216,10 +4216,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When comparing Last-Touch Attribution spend allocations against Markov Removal Effect allocations, what does a positive Dollar Variance signify?",
           "options": [
-            "The channel was responsible for zero customer conversions during the quarter.",
-            "The channel is an under-valued mid-funnel or discovery catalyst that was starved of budget by Last-Touch models, warranting an increased capital allocation.",
-            "The channel has an unacceptably high customer churn rate and must be immediately discontinued.",
-            "The channel's cost-per-click exceeds the lifetime value of the customer."
+            "The channel is over-valued by Last-Touch models and should be cut, because its Markov weight exceeds its Last-Touch weight in the comparison.",
+            "The channel is an under-valued discovery or mid-funnel catalyst starved of budget by Last-Touch models, warranting a larger capital allocation.",
+            "The channel produced more conversions than it cost, so its budget should be left unchanged because its attribution is already accurate.",
+            "The channel overlaps with other channels, so its budget should be merged with theirs and the spend reported as a single combined line."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4271,10 +4271,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the CAC Payback Period (CAC / (Monthly ARPU * Gross Margin %)) a vital metric for monitoring cash flow solvency in subscription enterprises?",
           "options": [
-            "Because it proves that marketing ad spend generates zero customer churn after twelve months.",
-            "Because it calculates the statutory corporate income tax depreciation schedule for capitalized software assets.",
-            "Because it measures the time required for a customer cohort to reimburse the upfront cash spent to acquire them, determining how fast acquisition capital recycles.",
-            "Because it eliminates the need to maintain GAAP operating cash flow statements."
+            "Because it measures the total lifetime profit of a customer divided by acquisition cost, showing how large the eventual return will be.",
+            "Because it measures how long customers stay before cancelling, showing how many months of recurring revenue the company can count on.",
+            "Because it measures the time for a customer cohort to repay the upfront cash spent acquiring it, showing how fast acquisition capital recycles.",
+            "Because it measures the time before gross margin turns positive on each product, showing when manufacturing costs are fully covered."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4300,10 +4300,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the closed-form DCF-adjusted Customer Lifetime Value formula CLV = Margin * [ 1 / (1 + d - r) ], why is the result strictly lower than the naive formula Margin / (1 - r)?",
           "options": [
-            "Because retention rates r are assumed to approach zero within six months.",
-            "Because it incorporates the periodic cost-of-capital discount rate d, properly discounting future cash flows back to present value.",
-            "Because it assumes customer acquisition expenditures double every operating year.",
-            "Because it subtracts statutory federal corporate tax liabilities from gross margin."
+            "Because it includes the customer churn rate d, which reduces the number of customers who are still paying in later periods.",
+            "Because it includes the periodic cost-of-capital discount rate d, discounting future cash flows back to present value.",
+            "Because it excludes gross margin from later periods, so only the cash flows from the first year of the relationship are counted.",
+            "Because it adds acquisition cost to the denominator, so the margin earned is spread across the cost of winning the customer."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4329,10 +4329,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic significance of achieving Net Revenue Retention (NRR) strictly greater than 100% in a subscription business?",
           "options": [
-            "It achieves Negative Net Churn, meaning expansion revenue from surviving customers exceeds total lost revenue, allowing the company to grow even without new customer acquisition.",
-            "It guarantees that Customer Acquisition Cost will decline to zero within ninety days.",
-            "It allows the firm to eliminate gross profit margin accounting requirements.",
-            "It proves that all historical customers maintain a 100% renewal rate."
+            "It achieves negative net churn: expansion revenue from surviving customers exceeds total lost revenue, so the company can grow even without new customers.",
+            "It achieves positive net churn: lost revenue from departing customers exceeds expansion revenue, so growth depends on constantly adding new customers.",
+            "It shows that gross margin exceeds 100 percent of revenue, so each added customer costs nothing to serve and adds pure profit in every period.",
+            "It shows the company has retained every customer it ever acquired, so no revenue has been lost to cancellations, downgrades, or discounts."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -4358,10 +4358,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic operational mandate when a subscription company's SaaS Magic Number is strictly greater than 0.75?",
           "options": [
-            "Increase customer churn thresholds to artificially inflate gross margin percentages.",
-            "Switch from annual billing cycles to daily payment processing.",
-            "Immediately implement headcount layoffs across marketing teams to preserve cash.",
-            "Aggressively scale sales and marketing spend because every dollar invested in acquisition generates more than $0.75 in recurring ARR run-rate."
+            "Cut sales and marketing spend sharply, because every dollar invested in acquisition generates less than $0.75 of recurring ARR run-rate.",
+            "Hold sales and marketing spend flat, because a Magic Number above 0.75 means the payback period has become longer than three years.",
+            "Shift all spend to retention and customer success, because a Magic Number above 0.75 shows the acquisition channels are saturated.",
+            "Aggressively scale sales and marketing spend, because every dollar invested in acquisition generates more than $0.75 in recurring ARR run-rate."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -4389,10 +4389,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of simulating cohort revenue maturation across multi-year horizons rather than viewing aggregate monthly income statements?",
           "options": [
-            "It converts customer acquisition costs into non-amortizable long-term debt liabilities.",
-            "It eliminates all statutory requirements for reporting quarterly balance sheets.",
-            "It reveals the exact underlying retention, expansion, and cash payback trajectories of customer vintages, preventing new customer volume from masking retention decay.",
-            "It guarantees that monthly churn will decline to exactly zero percent."
+            "It reveals the total revenue recognized under accounting rules for each month, so cash receipts can be matched against billing records.",
+            "It replaces forecasting of future customers by assuming that every cohort will behave exactly like the oldest cohort in the database.",
+            "It reveals the underlying retention, expansion, and cash payback trajectories of customer vintages, so new customer volume cannot mask retention decay.",
+            "It lets finance combine all vintages into one retention rate, so differences in acquisition channel and timing are averaged out for reporting."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4443,9 +4443,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Little's Law (L = lambda * W), what happens to operational cycle time W if management increases Work-in-Process (L) without expanding system throughput capacity (lambda)?",
           "options": [
-            "Cycle time W automatically contracts due to economies of scale on the factory floor.",
-            "System throughput lambda doubles to absorb the excess inventory.",
-            "Process cycle efficiency immediately reaches one hundred percent.",
+            "Cycle time W decreases proportionally, because more work in process keeps every machine busy and speeds the flow of orders through the system.",
+            "Cycle time W stays unchanged, because it is set by the processing time at each station and not by the amount of work in process.",
+            "Cycle time W falls and throughput lambda rises automatically, because a larger queue gives the system more orders to process each day.",
             "Cycle time W increases proportionally, causing orders to spend significantly longer waiting in queues and delaying customer delivery."
           ],
           "answer": 3,
@@ -4472,10 +4472,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Goldratt's Theory of Constraints, what is the operational consequence of running non-bottleneck machines at one hundred percent capacity?",
           "options": [
-            "It produces zero incremental enterprise throughput, merely accumulating massive, expensive Work-in-Process inventory in front of the bottleneck.",
-            "It permanently shifts the bottleneck to customer shipping docks.",
-            "It reduces the plant's total inventory holding costs by twenty percent.",
-            "It eliminates all machine maintenance downtime across the facility."
+            "It produces zero incremental enterprise throughput, merely piling up expensive Work-in-Process inventory in front of the bottleneck.",
+            "It raises enterprise throughput in proportion to the added machine output, since every machine contributes to total finished goods.",
+            "It lowers unit costs through greater absorption of fixed overhead, which more than offsets the extra inventory carrying costs.",
+            "It shortens lead times because finished parts are ready earlier, although bottleneck output and the delivery schedule stay the same."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -4501,10 +4501,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does an Order Variance Ratio OVR = Var(Orders) / Var(Demand) strictly greater than 1.0 indicate across a multi-echelon supply chain?",
           "options": [
-            "Supplier replenishment lead time has dropped to zero days.",
-            "The Bullwhip Effect is active, meaning order volatility is becoming artificially amplified as procurement signals propagate upstream.",
-            "Retail customers are purchasing products in steady, non-stochastic quantities.",
-            "The enterprise has eliminated all inventory holding costs."
+            "The supply chain is perfectly synchronized, meaning order volatility is dampened as procurement signals move upstream.",
+            "The Bullwhip Effect is active, meaning order volatility is artificially amplified as procurement signals move upstream.",
+            "Demand is seasonal, meaning order volatility rises only because consumer purchases peak in particular months of the year.",
+            "The firm holds excess safety stock, meaning order variance exceeds demand variance because buffers are refilled each week."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4531,10 +4531,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Collaborative Planning, Forecasting, and Replenishment (CPFR) with real-time Point-of-Sale (POS) data sharing mitigate the Bullwhip Effect?",
           "options": [
-            "By enforcing strict manual paperwork audits across every regional warehouse.",
-            "By permanently doubling retail product prices to suppress consumer demand volatility.",
-            "By providing upstream manufacturers with direct visibility into end-consumer consumption, eliminating reliance on distorted intermediary order signals.",
-            "By replacing all truckload freight shipping with air cargo deliveries."
+            "By requiring retailers to place larger, less frequent orders, which reduces the number of order signals upstream manufacturers receive.",
+            "By adding safety stock at every echelon, so each tier can absorb demand swings without passing any order signal to its suppliers.",
+            "By giving upstream manufacturers direct visibility into end-consumer consumption, removing reliance on distorted intermediary order signals.",
+            "By shortening supplier lead times through contractual penalties, so manufacturers can react quickly to distorted intermediary orders."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4563,10 +4563,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of conducting comprehensive Value Stream Analytics across an enterprise manufacturing and logistics network?",
           "options": [
-            "To increase factory inventory holding costs to claim higher balance sheet asset valuations.",
-            "To force all machines to operate at one hundred percent utilization regardless of demand.",
-            "To replace real-time digital telemetry with paper ledger tracking.",
-            "To identify systemic bottlenecks, eliminate non-value-added queuing waste via Little's Law, and synchronize multi-echelon replenishment to eliminate the Bullwhip Effect."
+            "To maximize utilization of every machine, keep work-in-process high at each station, and let each echelon forecast independently to cut order variance.",
+            "To allocate overhead costs to each product line, compare standard and actual labour rates, and report cost variances to purchasing managers.",
+            "To forecast future demand for each customer segment, estimate price elasticity, and set prices that maximize contribution margin across channels.",
+            "To find systemic bottlenecks, remove non-value-added queuing waste using Little's Law, and synchronize multi-echelon replenishment to reduce the Bullwhip Effect."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -4618,10 +4618,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Cost of Goods Sold (COGS) used as the denominator when calculating Days Inventory Outstanding (DIO) rather than total sales revenue?",
           "options": [
-            "Because inventory is recorded on the balance sheet at acquisition cost, requiring a cost-basis denominator to avoid distorting inventory holding duration with gross profit markups.",
-            "Because GAAP accounting prohibits dividing balance sheet assets by revenue figures.",
-            "Because supplier payment terms are legally pegged to COGS under commercial trade law.",
-            "Because sales revenue is recognized only after customer warranty periods expire."
+            "Because inventory is carried on the balance sheet at cost, so a cost-based denominator avoids distorting holding time with gross profit markups.",
+            "Because revenue includes sales tax and returns that are removed from COGS, so COGS gives a cleaner measure of true inventory turnover.",
+            "Because revenue is recognized when invoices are issued while COGS is recognized when cash is paid, so COGS matches the timing of inventory.",
+            "Because COGS is larger than revenue for most manufacturers, so using it gives a more conservative estimate of inventory days outstanding."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -4646,10 +4646,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a positive Cash Conversion Cycle (e.g., CCC = +55 days) signify for corporate treasury operations?",
           "options": [
-            "The firm's inventory turnover rate has doubled over the prior operating quarter.",
-            "Accounts receivable collections precede supplier invoice generation by fifty-five days.",
-            "The firm generates fifty-five days of free cash float funded by customer prepayments.",
-            "The firm experiences a 55-day cash deficit between paying suppliers and receiving customer cash, requiring external working capital financing."
+            "The firm collects customer cash 55 days before paying suppliers, creating interest-free float that funds growth without external debt.",
+            "The firm holds 55 days of surplus cash above its needs, which treasury should invest in short-term securities to earn a return.",
+            "The firm turns over its inventory in 55 days, a pace that treasury should treat as fast and not as a financing need for the business.",
+            "The firm faces a 55-day cash gap between paying suppliers and receiving customer cash, requiring external working capital financing."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -4675,10 +4675,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an enterprise with a Negative Cash Conversion Cycle (e.g., CCC = -44 days) finance its corporate expansion and capital investments?",
           "options": [
-            "By selling fixed warehouse equipment on short-term leaseback contracts.",
-            "By permanently eliminating supplier accounts payable liabilities.",
-            "By utilizing interest-free working capital float created because customer cash is collected weeks before supplier trade invoices become due.",
-            "By issuing high-yield junk bonds to commercial banks."
+            "By issuing long-term bonds, because a negative cycle shows suppliers demand payment before customers have paid the company.",
+            "By holding extra inventory as collateral, because the cycle shows inventory converts to cash faster than customer receivables.",
+            "By using interest-free working capital float, because customer cash is collected weeks before supplier trade invoices come due.",
+            "By collecting deposits from suppliers up front, because customers pay late and the company has to cover the gap temporarily."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4704,10 +4704,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does releasing trapped cash from the Cash Conversion Cycle directly expand a corporation's Economic Value Added (EVA)?",
           "options": [
-            "By converting trade accounts payable into permanent common equity shares.",
-            "By reducing Net Working Capital, which shrinks total Invested Capital and permanently lowers annual WACC capital holding charges.",
-            "By allowing the company to avoid statutory income taxes on inventory markdowns.",
-            "By eliminating all supplier invoice liabilities from the balance sheet."
+            "By increasing NOPAT directly, because releasing cash raises operating income by the amount of trapped cash that is freed.",
+            "By reducing Net Working Capital, which shrinks Invested Capital and lowers the annual capital charge based on WACC.",
+            "By lowering the WACC percentage itself, because lenders reduce the cost of debt for companies with a shorter cash cycle.",
+            "By increasing Invested Capital, since the released cash is added to equity and earns a return above the capital charge."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4738,10 +4738,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance value of tracking quarterly Cash Conversion Cycle trajectories alongside GAAP income statements?",
           "options": [
-            "It provides immediate visibility into operational liquidity velocity, preventing growing receivables or bloated inventory from creating an invisible cash liquidity crisis.",
-            "It eliminates the need to file annual corporate tax returns with government authorities.",
-            "It guarantees that Cost of Goods Sold will remain fixed across all future operating cycles.",
-            "It converts customer credit receivables into permanent federal cash grants."
+            "It gives immediate visibility into operational liquidity, so growing receivables or bloated inventory cannot create an invisible cash crisis behind reported profit.",
+            "It replaces the income statement, because cash conversion measures give a more accurate view of profit than accrual accounting does for the board.",
+            "It replaces the income statement, because cash conversion measures give a more accurate view of profit than accrual accounting does for the board of directors.",
+            "It proves that revenue recognition is compliant with GAAP, since a stable CCC confirms that sales have been recorded in the correct reporting period."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -4794,10 +4794,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical definition of a 'binding constraint' in a linear programming feasibility solution?",
           "options": [
-            "A constraint that is legally signed by external trade labor unions.",
-            "A resource constraint where consumption exactly equals available capacity, leaving zero slack and acting as an active operational bottleneck.",
-            "A constraint that forces all decision variables to become non-negative integers.",
-            "A constraint that multiplies the objective function contribution margin by statutory tax rates."
+            "A resource constraint where consumption is far below available capacity, leaving large slack and no effect on the optimal solution.",
+            "A resource constraint where consumption exactly equals available capacity, leaving zero slack and acting as an active bottleneck.",
+            "A resource constraint that is violated by the optimal solution, so the plan must be changed until the constraint is satisfied.",
+            "A decision variable fixed at its upper bound by the model, leaving no flexibility in the choice of the objective function."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4823,10 +4823,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational significance of the Fundamental Theorem of Linear Programming in operations research?",
           "options": [
-            "It guarantees that every linear program will yield an infinite objective value.",
-            "It proves that all constraint inequalities can be solved using ordinary least squares regression.",
-            "It proves that the optimal solution to any linear program is guaranteed to lie on an extreme corner vertex of the feasible polyhedron, transforming an infinite search into a finite vertex evaluation.",
-            "It eliminates the need to verify non-negativity conditions in optimization models."
+            "It proves the optimum of any linear program lies at the interior center of the feasible polyhedron, allowing gradient search to find it quickly.",
+            "It proves every linear program has a unique solution, so the search can stop after the first feasible corner has been found and checked.",
+            "It proves the optimum of any linear program lies at an extreme corner vertex of the feasible polyhedron, turning an infinite search into a finite one.",
+            "It proves that a linear program can be solved by setting the derivative of its objective function to zero at the maximum point of the feasible region."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4852,10 +4852,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Simplex Algorithm, how does the Minimum Ratio Test protect the mathematical validity of the solution during pivot operations?",
           "options": [
-            "It ensures that decision variables remain strictly negative.",
-            "It calculates the annual compound inflation rate of raw materials.",
-            "It divides total factory overhead by the number of machine operators.",
-            "It identifies which basic variable leaves the basis, ensuring that the step length does not exceed constraint boundaries and maintaining non-negativity (x >= 0)."
+            "It selects which non-basic variable enters the basis, choosing the largest objective coefficient to give the fastest rise in profit.",
+            "It checks that the final tableau is optimal, confirming that all reduced costs are non-negative before the algorithm stops running.",
+            "It selects the pivot row with the largest ratio, so the step length is as long as possible and the objective rises as fast as it can.",
+            "It selects which basic variable leaves the basis, keeping the step length within constraint boundaries so that non-negativity (x >= 0) is maintained."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -4881,10 +4881,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic operational meaning of a Shadow Price of $15.00 per hour on factory machine capacity?",
           "options": [
-            "Adding one additional hour of machine capacity will increase total enterprise profit by exactly $15.00, meaning management should authorize overtime if labor costs under $15.00/hour.",
-            "The machine loses $15.00 in depreciation expense every operating hour.",
-            "The factory must pay a $15.00 penalty fine to commercial environmental regulators.",
-            "The machine's retail purchase price is fifteen dollars per pound of steel."
+            "Adding one extra machine hour raises total profit by exactly $15.00, so management should approve overtime if it costs under $15.00 per hour.",
+            "Each machine hour already used earns an average profit of $15.00, so management should stop production if labor costs more than $15.00 per hour.",
+            "Adding one machine hour raises total profit by $15.00 only if every other resource grows by the same proportion, so overtime needs full approval.",
+            "Machine capacity can be sold on the market for $15.00 per hour, so management should rent out all machine hours at that price."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -4914,10 +4914,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Master Prescriptive Optimization Engine scorecard, what is the primary business action indicated for a resource classified as 'BINDING BOTTLENECK' with a positive shadow price?",
           "options": [
-            "Delete the resource constraint from subsequent linear programming models.",
-            "Invest operational capital to expand its capacity up to the shadow price threshold, as every additional unit directly increases enterprise contribution margin.",
-            "Immediately shut down the resource to reduce electricity expenses.",
-            "Transfer all machine operators from that resource to non-binding surplus stages."
+            "Reduce the capacity of the resource to free capital, since a positive shadow price shows the resource is underused in production.",
+            "Invest capital to expand its capacity up to the shadow price threshold, since each added unit directly raises enterprise contribution margin.",
+            "Leave the capacity unchanged, because a binding constraint cannot raise contribution margin however much capacity is added to it.",
+            "Invest in other non-binding resources first, because their larger slack signals the greatest scope to increase contribution margin."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -4970,10 +4970,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic objective of the Minimax Regret Criterion in decision analysis under uncertainty?",
           "options": [
-            "To guarantee that accounting profit equals zero across all economic cycles.",
-            "To maximize the variance of quarterly net cash flows.",
-            "To minimize the maximum opportunity loss (regret) an executive could suffer from failing to pick the best action for the state of nature that ultimately unfolds.",
-            "To ensure that corporate taxes on capital gains are minimized."
+            "To maximize the minimum payoff an executive could receive, picking the action whose worst-case outcome is highest across all future states.",
+            "To maximize the expected payoff an executive receives, weighting each outcome by the probability that its state of nature occurs.",
+            "To minimize the maximum opportunity loss (regret) an executive could suffer from not picking the best action for the state of nature that unfolds.",
+            "To maximize the highest possible payoff an executive could receive, picking the action with the best outcome in any state of nature."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -4998,10 +4998,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Decision Tree Rollback Method, what mathematical operation is performed at Chance Nodes versus Decision Nodes?",
           "options": [
-            "At Chance Nodes, multiply payoffs by corporate income taxes; at Decision Nodes, compute ordinary least squares slopes.",
-            "At Chance Nodes, compute the probability-weighted Expected Monetary Value (EMV); at Decision Nodes, select the branch that maximizes the net EMV.",
-            "At Chance Nodes, divide payoffs by the inventory turnover rate; at Decision Nodes, prune all positive cash flows.",
-            "At Chance Nodes, select the minimum regret; at Decision Nodes, compute the Gaussian quantile function."
+            "At Chance Nodes, select the branch with the highest payoff; at Decision Nodes, compute the probability-weighted average of all branches.",
+            "At Chance Nodes, compute the probability-weighted Expected Monetary Value (EMV); at Decision Nodes, select the branch with the highest EMV.",
+            "At Chance Nodes, add the payoffs of all branches without weights; at Decision Nodes, select the branch with the lowest cost.",
+            "At both node types, take the simple average of the branch values, since probabilities only matter at the end of the tree."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5027,10 +5027,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic operational meaning of the Expected Value of Perfect Information (EVPI = EVwPI - Base EMV)?",
           "options": [
-            "It represents the absolute mathematical upper bound on what an enterprise should pay for any market research, survey, or consulting study.",
-            "It measures the total interest expense paid on corporate credit lines.",
-            "It calculates the probability that customer demand will fall into a recession.",
-            "It guarantees that sample surveys have one hundred percent accuracy."
+            "It is the absolute upper bound on what an enterprise should pay for any market research, survey, or consulting study.",
+            "It is the minimum fee that a consultant must charge to provide a market study that is perfectly accurate for the firm.",
+            "It is the expected profit of the best decision made without any additional information about the future state of nature.",
+            "It is the cost of making the wrong decision in the worst possible state of nature, which equals the maximum regret."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5055,10 +5055,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the economic interpretation of the Certainty Equivalent (CE) in corporate utility theory?",
           "options": [
-            "The maximum price a company can charge under linear demand elasticity models.",
-            "The inventory safety stock buffer required to guarantee zero stockouts.",
-            "The exact dollar sum owed to commercial banking institutions upon debt maturation.",
-            "The guaranteed cash amount that a risk-averse executive would accept with certainty rather than undertake a risky probabilistic venture."
+            "The expected monetary value of a risky venture, which a risk-neutral executive computes by weighting each payoff by its probability.",
+            "The maximum loss an executive would tolerate on a risky venture before declining to take part in the project at all.",
+            "The break-even payout at which an executive is indifferent between two risky ventures that have equal variance.",
+            "The guaranteed cash amount that a risk-averse executive would accept with certainty rather than undertake a risky venture."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5085,10 +5085,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate decision intelligence function of the Master Strategic Decision Suite?",
           "options": [
-            "To replace financial auditors during annual statutory regulatory filings.",
-            "To guarantee that all capital investment ventures achieve zero downside risk.",
-            "To synthesize sequential backward induction, information economics (EVPI/EVSI), and risk-adjusted utility into an objective, defensible capital allocation mandate.",
-            "To eliminate the need for corporate board governance votes."
+            "To forecast quarterly revenue by combining time-series decomposition, exponential smoothing, and ARIMA models into one reliable point estimate for the board.",
+            "To optimize production plans by combining simplex pivoting, shadow prices, and sensitivity ranges into a binding resource allocation schedule for plants.",
+            "To combine sequential backward induction, information economics (EVPI/EVSI), and risk-adjusted utility into an objective, defensible capital allocation mandate.",
+            "To audit financial statements by combining ratio analysis, forensic scoring, and sampling tests into a defensible opinion on reported earnings."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5141,10 +5141,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Gartner Analytics Maturity Model implemented in our Capstone Architecture, what distinguishes Prescriptive Analytics from Predictive Analytics?",
           "options": [
-            "Predictive analytics forecasts future values and probability distributions, whereas prescriptive analytics integrates those forecasts into optimization models to identify the optimal course of action.",
-            "Predictive analytics creates static financial statements, whereas prescriptive analytics audits past accounting entries.",
-            "Predictive analytics relies solely on linear programming, whereas prescriptive analytics requires ordinary least squares regression.",
-            "Predictive analytics calculates historical depreciation, whereas prescriptive analytics schedules tax filings."
+            "Predictive analytics forecasts future values and distributions, while prescriptive analytics feeds them into optimization models to find the best action.",
+            "Predictive analytics explains why past events happened, while prescriptive analytics forecasts future values and distributions of key metrics.",
+            "Predictive analytics reports what happened in the past using dashboards, while prescriptive analytics forecasts future demand using regression.",
+            "Predictive analytics optimizes decisions under constraints, while prescriptive analytics only monitors whether forecasts matched actual results."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5199,10 +5199,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is supplier lead-time variance (sigma_L) amplified by the square of average demand (d_mean^2) in the combined lead-time demand variance formula?",
           "options": [
-            "Because corporate tax brackets require quadratic scaling of inventory assets.",
-            "Because exponential smoothing squares all negative residuals.",
-            "Because when a shipment is delayed, all customer demand accumulating across the extended delay periods must be absorbed by inventory, compounding exposure by the average consumption rate.",
-            "Because linear programming constraints require second-degree polynomial terms."
+            "Because lead-time variance changes the supplier's price, and price changes are multiplied by the average demand rate to set the safety stock cost.",
+            "Because demand variance is already included in the formula, so lead-time variance is squared a second time to avoid understating risk.",
+            "Because when a shipment is delayed, all demand accumulating over the extra delay must be absorbed by inventory, scaling with the average consumption rate.",
+            "Because longer lead times raise the number of orders placed, and each order adds fixed ordering costs proportional to average demand rates."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5228,10 +5228,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic operational significance of a Dual Shadow Price in linear programming capital allocation?",
           "options": [
-            "It forces production quantities of unprofitable products to zero automatically.",
-            "It represents the exact marginal increase in objective profit resulting from acquiring one additional unit of the constrained resource capacity.",
-            "It defines the maximum income tax rate applied to foreign subsidiary earnings.",
-            "It computes the historical depreciation of robotic equipment over ten fiscal quarters."
+            "It is the total profit earned by all units of the constrained resource, divided by the number of units used in production.",
+            "It is the exact marginal increase in objective profit from acquiring one additional unit of the constrained resource.",
+            "It is the purchase price that the firm paid for the constrained resource in the previous planning period, per unit acquired.",
+            "It is the decrease in total profit caused by raising the objective coefficient of one product by a single dollar."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5257,10 +5257,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance function of the Grand Capstone Boardroom Decision Suite?",
           "options": [
-            "To synthesize descriptive data baselines, predictive time-series forecasts, inventory safety buffers, and linear programming margins into a defensible, risk-adjusted capital allocation policy.",
-            "To prepare marketing promotional brochures for consumer retail trade shows.",
-            "To replace certified public accountants during external corporate tax audits.",
-            "To ensure that company products achieve zero defect rates without quality inspection."
+            "To combine descriptive baselines, predictive forecasts, safety buffers, and linear programming margins into a defensible, risk-adjusted capital policy.",
+            "To replace human executive judgment with a fully automated trading algorithm that rebalances the corporate portfolio each quarter without review.",
+            "To store every historical transaction in a data warehouse so that auditors can reproduce any past financial statement on demand from the records.",
+            "To report descriptive statistics of last year's sales to the board, ranked by region, so that managers can compare actual performance with budgets."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5311,10 +5311,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the fundamental mathematical difference between Empirical Risk Minimization (ERM) and Structural Risk Minimization (SRM) in statistical learning?",
           "options": [
-            "ERM guarantees zero training variance, whereas SRM forces all regression coefficients to zero.",
-            "ERM applies only to logistic regression, whereas SRM applies only to neural networks.",
-            "ERM calculates corporate tax liability, whereas SRM schedules manufacturing maintenance.",
-            "ERM minimizes loss strictly on observed training data, which risks severe overfitting; SRM incorporates an explicit complexity penalty (regularization) to bound out-of-sample generalization error."
+            "ERM adds an explicit complexity penalty (regularization) to bound generalization error; SRM minimizes loss only on observed training data, risking underfitting.",
+            "ERM minimizes loss on a held-out validation set, avoiding overfitting; SRM minimizes loss on the training data and then prunes features afterward.",
+            "ERM and SRM minimize the same training loss, but SRM uses a larger sample so that out-of-sample error is made equal to training error.",
+            "ERM minimizes loss only on observed training data, risking overfitting; SRM adds a complexity penalty (regularization) to bound out-of-sample error."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5340,10 +5340,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the mathematical Bias-Variance decomposition of Mean Squared Error, what happens to the Irreducible Error (sigma^2) as training sample size n approaches infinity?",
           "options": [
-            "Irreducible error remains strictly positive and constant because it represents intrinsic domain stochasticity and unmeasured latent variables outside model features.",
-            "Irreducible error asymptotically converges to zero as sample size grows.",
-            "Irreducible error increases quadratically with the number of training observations.",
-            "Irreducible error transforms into model variance."
+            "Irreducible error stays positive and constant, since it reflects intrinsic randomness and unmeasured latent variables outside the model features.",
+            "Irreducible error falls toward zero, because a very large sample averages out the noise in the data generating process of the business.",
+            "Irreducible error rises with n, because larger samples contain more outliers and a wider range of unmeasured influences on the outcome.",
+            "Irreducible error is converted into variance, because a flexible model can fit the intrinsic noise as n becomes very large and the sample grows."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5368,10 +5368,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is performing feature scaling or target encoding across an entire dataset prior to train/test partitioning considered fatal data leakage?",
           "options": [
-            "Because train and test sets must have completely identical row indices.",
-            "Because summary statistics and target information from the test partition bleed into the training features, giving the model advance knowledge of the evaluation data and creating false out-of-sample accuracy.",
-            "Because scaling features converts continuous numerical variables into strings.",
-            "Because target encoding violates federal accounting principles under US GAAP."
+            "Because scaling across the full dataset changes the units of the features, so the fitted coefficients cannot be compared with those from the test set.",
+            "Because test-set statistics and target information bleed into the training features, giving the model advance knowledge of the evaluation data and false accuracy.",
+            "Because target encoding removes categories that appear only in the test partition, so the model cannot score customers who are new to the system.",
+            "Because preprocessing the full dataset makes the training sample larger than the test sample, which biases the error estimate toward zero in the final report."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5395,10 +5395,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Stratified K-Fold Cross-Validation preferred over standard random K-Fold on imbalanced business classification problems?",
           "options": [
-            "Because it reduces the dataset size by fifty percent automatically.",
-            "Because stratification eliminates the need to collect feature data.",
-            "Because stratified partitioning guarantees that each fold contains the exact same ratio of positive to negative target outcomes as the overall population, preventing empty minority folds.",
-            "Because stratified splits force all model coefficients to remain positive."
+            "Because stratified partitioning oversamples the minority class in each fold until positives and negatives are equal, which balances the training data.",
+            "Because stratified partitioning sorts observations by target value, so each fold holds one class only and fold errors can be compared directly.",
+            "Because stratified partitioning keeps the same ratio of positive to negative outcomes in each fold as in the overall population, preventing empty minority folds.",
+            "Because stratified partitioning uses fewer folds than random partitioning, which lowers the computing cost on large imbalanced business datasets."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5424,10 +5424,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise machine learning governance (e.g. SR 11-7), what does a Population Stability Index (PSI) exceeding 0.25 indicate?",
           "options": [
-            "All model regression coefficients have converged to zero.",
-            "The corporate database has run out of memory.",
-            "The model has achieved one hundred percent out-of-sample accuracy.",
-            "Significant population and feature distribution drift between training baseline and live production data, signaling that the model is no longer operating in its verified domain and must be retrained."
+            "A stable population with minimal drift, signaling the model is operating normally and needs only a routine annual review by the validation team.",
+            "A data entry error in the live feed, signaling that the scoring system should be shut down until the records are corrected by the IT department.",
+            "A rise in the model's predictive power over time, signaling that the live data now separates good and bad accounts better than the baseline.",
+            "Significant drift between the training baseline and live data, signaling the model is no longer in its verified domain and must be reviewed or retrained."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5480,10 +5480,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical pathology occurs when Ordinary Least Squares (OLS) is applied to high-dimensional datasets where features outnumber observations (p > n)?",
           "options": [
-            "The p-values of all features automatically become exactly 0.05.",
-            "The dataset rows are reduced to match the number of features.",
-            "The Gram matrix X^T X is strictly singular (rank <= n < p), meaning its determinant is zero, its inverse does not exist, and OLS variance diverges to infinity.",
-            "The algorithm converges to a single unique global minimum with zero variance."
+            "The Gram matrix X'X becomes diagonal, so every coefficient is estimated independently and OLS gives exact, minimum-variance solutions.",
+            "The residual sum of squares becomes negative, so OLS minimizes a loss that has no lower bound and the coefficient estimates diverge.",
+            "The Gram matrix X'X is singular (rank <= n < p): its determinant is zero, its inverse does not exist, and OLS variance diverges.",
+            "The Gram matrix X'X has full rank but very large eigenvalues, so OLS coefficients shrink toward zero and the model underfits."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5509,10 +5509,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the matrix (X^T X + lambda * I) in Ridge Regression guaranteed to be invertible for any lambda > 0, even when X^T X is singular?",
           "options": [
-            "Because Gauss-Jordan elimination ignores singular matrices.",
-            "Because adding lambda * I shifts every eigenvalue of X^T X upward by lambda, ensuring all eigenvalues are strictly positive and the determinant is non-zero.",
-            "Because Ridge regression removes all negative rows from the feature matrix.",
-            "Because the identity matrix forces all off-diagonal covariance elements to zero."
+            "Because adding lambda * I removes the correlated columns of X, leaving only linearly independent features in the matrix to be inverted.",
+            "Because adding lambda * I shifts every eigenvalue of X'X up by lambda, making all eigenvalues strictly positive and the determinant non-zero.",
+            "Because adding lambda * I scales every entry of X'X by lambda, so the determinant grows large enough to be non-zero in all cases.",
+            "Because adding lambda * I makes the sample size larger than the number of features, which guarantees that the matrix has full rank."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5538,10 +5538,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Geometrically, why does the L1 norm constraint in Lasso produce exact sparsity (coefficients equal to zero) whereas the L2 norm in Ridge does not?",
           "options": [
-            "Because the L1 constraint region is a diamond with sharp non-differentiable vertices on the coordinate axes, making elliptical loss contours overwhelmingly likely to intersect at a corner where coordinates equal zero.",
-            "Because the L1 norm squares all negative numbers.",
-            "Because Lasso algorithms delete columns from the CSV file automatically.",
-            "Because L1 regularization applies only to categorical data."
+            "Because the L1 constraint region is a diamond with sharp vertices on the coordinate axes, so loss contours most likely touch it at a corner where a coordinate is zero.",
+            "Because the L1 constraint region is a smooth circle with no corners, so loss contours touch it at points where some coefficients are exactly zero.",
+            "Because the L1 penalty shrinks all coefficients by the same proportion, so small coefficients are driven to exactly zero before the large ones are.",
+            "Because the L1 norm is differentiable at zero, so gradient descent lands exactly on zero for any coefficient with only a small effect on the loss."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5567,10 +5567,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of ElasticNet over pure Lasso regression when analyzing customer analytics datasets with collinear feature clusters?",
           "options": [
-            "ElasticNet eliminates the need to specify any hyperparameters.",
-            "ElasticNet forces all model predictions to equal the sample mean.",
-            "ElasticNet increases the total number of customer records by tenfold.",
-            "ElasticNet incorporates an L2 quadratic penalty that preserves grouped selection, retaining all correlated informative features with stable weights rather than arbitrarily picking one and zeroing out the rest."
+            "ElasticNet adds an L2 penalty that drops every correlated feature after the first, giving a sparser model than Lasso with the same level of accuracy.",
+            "ElasticNet removes the need to tune the penalty strength by cross-validation, because its L2 term sets the shrinkage level automatically for each dataset.",
+            "ElasticNet replaces the L1 penalty with an unpenalized fit on the retained features, which removes shrinkage bias from the correlated customer variables.",
+            "ElasticNet adds an L2 penalty that supports grouped selection, keeping correlated informative features with stable weights instead of arbitrarily keeping one."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5597,10 +5597,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial governance benefit of utilizing Cross-Validated ElasticNet in regulated financial decision systems?",
           "options": [
-            "It guarantees that all corporate loans achieve zero percent default rates.",
-            "It eliminates the need for financial statements during loan underwriting.",
-            "It balances L1 feature sparsity and L2 coefficient stability, ensuring that high-stakes credit and pricing decisions do not suffer from wild coefficient oscillations across correlated customer variables.",
-            "It converts Python regression code into Java bytecode automatically."
+            "It guarantees the highest possible predictive accuracy on the test sample, so regulators can approve the model without further validation work.",
+            "It keeps every variable in the model with equal weights, so credit and pricing decisions remain simple for frontline staff to explain to customers.",
+            "It balances L1 sparsity with L2 coefficient stability, so high-stakes credit and pricing decisions avoid wild coefficient swings across correlated customer variables.",
+            "It removes the need for out-of-time validation, since cross-validation inside the training sample proves the model is stable across economic cycles."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5652,10 +5652,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical definition and range of the Gini Impurity metric in binary classification decision trees?",
           "options": [
-            "Gini is an index that applies only to national income inequality in macroeconomic models.",
-            "Gini = 1 - (p_0^2 + p_1^2); its range is strictly [0.0, 0.5], where 0.0 indicates a perfectly pure node (all observations belong to one class) and 0.5 indicates maximum impurity (50/50 distribution).",
-            "Gini measures the ratio of corporate debt to equity, ranging from zero to infinity.",
-            "Gini calculates the correlation coefficient between continuous features, ranging from -1 to +1."
+            "Gini = p_0 * log2(p_0) + p_1 * log2(p_1), ranging from 0.0 for a pure node to 1.0 for maximum impurity (a 50/50 class split).",
+            "Gini = 1 - (p_0^2 + p_1^2), ranging from 0.0 for a perfectly pure node to 0.5 for maximum impurity (a 50/50 class split).",
+            "Gini = 1 - (p_0^2 + p_1^2), ranging from 0.5 for a perfectly pure node to 1.0 for maximum impurity (a 50/50 class split).",
+            "Gini = (p_0 - p_1)^2, ranging from 0.0 for a 50/50 class split to 1.0 for a perfectly pure node with a single class."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5681,10 +5681,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of the complexity penalty parameter alpha in CART Cost-Complexity Pruning R_alpha(T) = R(T) + alpha * |T|?",
           "options": [
-            "It increases the learning rate of gradient descent optimization.",
-            "It scales the input features to zero mean and unit variance.",
-            "It penalizes tree size by balancing training misclassification error R(T) against the number of terminal leaves |T|, collapsing non-essential branches to minimize generalization error.",
-            "It forces the decision tree to become a logistic regression."
+            "It sets the minimum number of observations per leaf, so splits that would create small leaves are blocked while the tree is being grown.",
+            "It controls the learning rate of each new tree, shrinking the contribution of later splits so that training error R(T) falls gradually.",
+            "It penalizes tree size by balancing training error R(T) against the number of leaves |T|, collapsing non-essential branches to reduce generalization error.",
+            "It sets the maximum depth of the tree, so that growth stops at a fixed level regardless of the training error R(T) at each leaf node."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5710,10 +5710,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the mathematical formula for ensemble variance Var(Ensemble) = rho * sigma^2 + ((1 - rho) / B) * sigma^2, what is the asymptotic lower bound on variance as tree count B approaches infinity?",
           "options": [
-            "The variance increases towards infinity due to accumulated floating-point errors.",
-            "The variance equals the number of bootstrap resamples divided by two.",
-            "The variance asymptotically approaches exactly zero.",
-            "The variance is bounded below by rho * sigma^2, meaning ensemble variance reduction is strictly limited by the pairwise correlation rho between individual trees."
+            "The variance falls to zero, because averaging infinitely many trees cancels all of their individual errors and any correlation between them.",
+            "The variance is bounded below by sigma^2 / B, so adding more trees keeps reducing the variance of the ensemble in steady steps.",
+            "The variance is bounded below by (1 - rho) * sigma^2, so reduction is limited by how many of the trees differ from one another.",
+            "The variance is bounded below by rho * sigma^2, so ensemble variance reduction is limited by the correlation rho between individual trees."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5739,10 +5739,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does drawing a bootstrap sample of size n with replacement leave approximately 36.8% of observations Out-of-Bag (OOB)?",
           "options": [
-            "Because the probability of not selecting an observation in n independent draws is (1 - 1/n)^n, which mathematically converges to 1/e approx 0.368 as n approaches infinity.",
-            "Because corporate risk regulations mandate thirty-six percent holdout partitions.",
-            "Because decision trees prune thirty-six percent of leaf nodes automatically.",
-            "Because random sampling rounds down odd-numbered observations."
+            "Because the probability of not selecting an observation in n draws is (1 - 1/n)^n, which converges to 1/e, about 0.368, as n grows.",
+            "Because each tree is trained on exactly two thirds of the data by design, which leaves one third, about 36.8%, out of the bag.",
+            "Because the probability of not selecting an observation in n draws is 1/n, which averages to 0.368 over the n draws in the sample.",
+            "Because the probability of selecting an observation in n draws is (1 - 1/e), which leaves about 36.8% when n is small."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5768,10 +5768,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise risk governance, what is the regulatory function of Mean Decrease in Impurity (MDI) in Random Forest models?",
           "options": [
-            "It converts non-linear decision trees into linear regression equations.",
-            "It aggregates the total reduction in Gini impurity achieved by each feature across all trees in the ensemble, providing an objective, defensible ranking of commercial risk drivers to satisfy adverse action explainability requirements.",
-            "It forces tree models to achieve zero false positive errors.",
-            "It calculates the annual compound interest earned on corporate treasury bills."
+            "It measures the drop in accuracy when a feature's values are shuffled on out-of-bag samples, ranking risk drivers by their effect on predictions.",
+            "It sums the Gini impurity reduction each feature achieves across all trees, giving an objective ranking of risk drivers that supports adverse action explainability.",
+            "It counts how many times each feature is used for a split near the root, giving a ranking of risk drivers that auditors can reproduce exactly.",
+            "It estimates the causal effect of each feature on default by holding the others fixed, giving regulators a ranking they can use for pricing and approvals."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5824,10 +5824,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Friedman's formulation of Gradient Boosting, what mathematical entity do the sequential weak learners (decision trees) fit at each iteration?",
           "options": [
-            "The negative gradient (pseudo-residuals) of the loss function evaluated at the current ensemble predictions: r_im = - dL(y_i, F(x_i)) / dF(x_i).",
-            "The inverse of the Gram matrix computed on historical customer observations.",
-            "The moving average of the corporate stock price over twenty days.",
-            "The ratio of true positive classifications to false negative classifications."
+            "The negative gradient (pseudo-residuals) of the loss function at the current ensemble predictions: r_im = - dL(y_i, F(x_i)) / dF(x_i).",
+            "The raw residuals y_i - F(x_i) of the previous tree alone, ignoring the ensemble, so each learner corrects only its predecessor's errors.",
+            "The positive Hessian (second derivative) of the loss function at the current predictions, so each tree measures curvature rather than error.",
+            "The original target values y_i reweighted by sample weights that grow for misclassified observations, as in adaptive boosting methods."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5853,10 +5853,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical formula for the optimal leaf weight w_j^* in XGBoost, and what roles do the Gradient (G) and Hessian (H) perform?",
           "options": [
-            "w_j^* = G_j * H_j / lambda; G_j computes variance and H_j computes standard deviation.",
-            "w_j^* = - lambda / (G_j + H_j); it forces leaf weights to remain between zero and one.",
-            "w_j^* = G_j + H_j; it calculates corporate income tax on click advertising.",
-            "w_j^* = - G_j / (H_j + lambda); G_j represents the sum of first derivatives (gradient direction) and H_j represents the sum of second derivatives (loss surface curvature), with lambda providing L2 regularization."
+            "w_j* = G_j / (H_j - lambda); G_j sums the squared residuals (error), H_j sums leaf sample counts (size), and lambda adds L1 regularization.",
+            "w_j* = - H_j / (G_j + lambda); H_j sums first derivatives (gradient), G_j sums second derivatives (curvature), and lambda adds L2 regularization.",
+            "w_j* = - G_j / H_j; G_j sums the first derivatives (gradient), H_j sums the second derivatives (curvature), and lambda is only a learning rate.",
+            "w_j* = - G_j / (H_j + lambda); G_j sums first derivatives (gradient), H_j sums second derivatives (curvature), and lambda adds L2 regularization."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -5881,10 +5881,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the computational benefit of Histogram-based split finding in LightGBM compared to traditional exact greedy sorting in early XGBoost?",
           "options": [
-            "It automatically converts tabular datasets into image files.",
-            "It eliminates the need for gradient descent by solving the model with linear algebra.",
-            "Continuous features are bucketed into K discrete integer bins (typically K=256), reducing split evaluation complexity from O(n * p) to O(K * p) and cutting memory usage by eighty percent.",
-            "It guarantees that all model predictions become integers."
+            "Continuous features are converted to ranks and sorted once, cutting split evaluation from O(n * p) to O(n) at the cost of extra memory use.",
+            "Categorical features are one-hot encoded into sparse columns, cutting split evaluation from O(n * p) to O(p) and reducing the memory use.",
+            "Continuous features are bucketed into K discrete bins (typically 256), cutting split evaluation from O(n * p) to O(K * p) and reducing memory use.",
+            "Splits are evaluated on a random 10% sample of rows, cutting split evaluation from O(n * p) to O(0.1 * n * p) and reducing memory use."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -5909,10 +5909,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does CatBoost's Ordered Target Encoding prevent the catastrophic data leakage that plagues standard greedy target encoding?",
           "options": [
-            "It forces all categorical features to have equal weights.",
-            "It simulates an online sequential time horizon using random permutations, calculating target statistics for each observation strictly from preceding records in the permutation without seeing its own target.",
-            "It replaces all categorical strings with random numbers.",
-            "It converts multi-class targets into continuous linear regression lines."
+            "It computes each category's target mean on the full training set, then adds random noise so that no single target value can be recovered.",
+            "It simulates an online time horizon with random permutations, computing each observation's target statistic only from preceding records.",
+            "It replaces each category with its frequency count in the data, which removes target information from the encoded feature entirely and cleanly.",
+            "It encodes each category with the mean of all other observations' targets in the same fold, leaving out only the row being encoded."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5939,10 +5939,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational function of Early Stopping in enterprise gradient boosted decision models?",
           "options": [
-            "It monitors out-of-sample validation loss after each boosting round and automatically halts training when validation loss stops improving, rolling back to the optimal checkpoint to prevent severe overfitting.",
-            "It halts the computer's CPU when the power supply overheats.",
-            "It converts gradient boosting trees into deep neural networks.",
-            "It increases the learning rate to one point zero automatically."
+            "It monitors validation loss after each boosting round and stops training when the loss stops improving, rolling back to the best round.",
+            "It increases the learning rate after each boosting round whenever training loss stops improving, so the model reaches a minimum faster.",
+            "It removes the weakest trees from the finished ensemble after training, keeping only those that improve accuracy on the training data.",
+            "It halts training once training loss reaches zero, rolling back to the first round, which prevents the ensemble from growing too large."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -5994,10 +5994,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is utilizing a default classification threshold of p = 0.5 considered commercial malpractice in enterprise customer churn prevention?",
           "options": [
-            "Because default thresholds convert continuous probabilities into integer percentages.",
-            "Because decision trees cannot output probabilities above 0.5.",
-            "Because credit card processors reject transactions evaluated at 0.5.",
-            "Because False Negatives (losing an $1,800 customer lifetime value) are vastly more costly than False Positives ($75 retention offer); waiting for p >= 0.5 misses most churning customers and causes massive revenue destruction."
+            "Because False Positives ($75 retention offer) cost far more than False Negatives (losing an $1,800 lifetime value), so p = 0.5 wastes campaign budget.",
+            "Because churn model probabilities cluster near 0.5, so a threshold of 0.5 splits customers almost at random instead of ranking them by their true churn risk.",
+            "Because a threshold of 0.5 is valid only for regression models, so applying it to a churn classifier gives probabilities that cannot be interpreted.",
+            "Because False Negatives (losing an $1,800 customer lifetime value) cost far more than False Positives ($75 retention offer), so waiting for p >= 0.5 misses most churners."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6023,10 +6023,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In customer churn retention economics with Customer Lifetime Value CLV, campaign cost C, and save rate gamma, what is the exact formula for the optimal threshold p*?",
           "options": [
-            "p* = C / [ (1 + gamma) * CLV ]; intervention is profitable for every customer whose predicted churn risk exceeds this exact ratio.",
-            "p* = CLV / (C * gamma); intervention is profitable only for customers with zero risk.",
-            "p* = 0.50; symmetric classification is always mathematically optimal.",
-            "p* = C * gamma * CLV; intervention should be scheduled once every fiscal quarter."
+            "p* = C / [(1 + gamma) * CLV]; intervention is profitable for every customer whose predicted churn risk exceeds this ratio.",
+            "p* = C / CLV; intervention is profitable for every customer whose predicted churn risk exceeds this simple cost-to-value ratio.",
+            "p* = C / [(1 - gamma) * CLV]; intervention is profitable for every customer whose predicted churn risk exceeds this ratio.",
+            "p* = (C * gamma) / CLV; intervention is profitable for every customer whose predicted churn risk exceeds this save-adjusted ratio."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6051,10 +6051,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of constructing an Expected Profit Curve over evaluating models via standard ROC-AUC?",
           "options": [
-            "Expected Profit Curves force all machine learning algorithms to become linear models.",
-            "Expected Profit Curves integrate actual customer lifetime values, retention campaign costs, and intervention effectiveness to identify the exact customer contact percentage that maximizes net corporate cash margins.",
-            "Expected Profit Curves reduce customer churn rates to exactly zero percent.",
-            "Expected Profit Curves eliminate the need for training labels."
+            "Expected Profit Curves rank customers by predicted churn probability only, giving a scale-free score of model quality in every business setting.",
+            "Expected Profit Curves bring in customer lifetime values, campaign costs, and intervention effectiveness to find the contact percentage that maximizes net cash margin.",
+            "Expected Profit Curves measure the share of churners captured in the top decile, giving a lift number that is easy to compare across different models.",
+            "Expected Profit Curves test whether predicted probabilities match observed churn rates, giving a calibration check from which profit then follows."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6081,10 +6081,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Causal Machine Learning and Uplift Modeling, why is it fatal to target the 'Sleeping Dogs' (Do-Not-Disturb) customer archetype with retention marketing?",
           "options": [
-            "Because C-corporation tax laws prohibit marketing to long-tenured customers.",
-            "Because their customer lifetime value is mathematically zero.",
-            "Because Sleeping Dogs are contented customers who will stay loyal if left alone, but contacting them reminds them of their recurring subscription cost, actively triggering customer cancellation.",
-            "Because Sleeping Dogs have invalid email addresses that bounce."
+            "Because Sleeping Dogs are customers who will leave anyway, so any retention spend on them is wasted without changing their decision to go.",
+            "Because Sleeping Dogs are customers who will stay regardless of contact, so any retention offer subsidizes a purchase that would have happened.",
+            "Because Sleeping Dogs are contented customers who stay loyal if left alone, but contact reminds them of their subscription cost and triggers cancellation.",
+            "Because Sleeping Dogs respond to marketing only if it is delivered twice, so a single contact wastes spend and lowers their response rate."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6111,10 +6111,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance function of the Master Retention Intelligence Suite in enterprise customer analytics?",
           "options": [
-            "To guarantee that all customer support tickets achieve zero resolution time.",
-            "To convert customer feedback into automated press releases.",
-            "To replace the corporate legal team during trademark litigation.",
-            "To synthesize calibrated machine learning probabilities, asymmetric business cost matrices, analytical threshold optimization (p*), and causal uplift segmentation to maximize net retained corporate shareholder value."
+            "To maximize raw model accuracy using default thresholds, uniform costs, and random customer selection to build the largest retention campaign possible.",
+            "To rank customers by lifetime value alone, ignoring churn probabilities, and assign every top-ranked customer the most expensive retention offer.",
+            "To report historical churn rates by segment, using cohort tables and survival curves, so management can compare past retention across regions.",
+            "To combine calibrated probabilities, asymmetric cost matrices, threshold optimization (p*), and causal uplift segmentation to maximize retained shareholder value."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6165,10 +6165,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Basel III and FCRA regulatory standards, why must continuous risk features like Debt-to-Income (DTI) be coarsely binned into monotonic intervals before Weight of Evidence (WoE) transformation?",
           "options": [
-            "Weight of Evidence is mathematically invalid unless all input values are completely random.",
-            "Binning increases the total parameter count of deep neural networks to maximize raw training accuracy regardless of interpretability.",
-            "Monotonic coarse binning linearizes non-linear relationships with log-odds, prevents overfitting in sparse data intervals, and guarantees transparent, explainable adverse action reason codes that satisfy regulatory audits.",
-            "Regulations require that every bin must have an identical 50% default rate to eliminate financial risk."
+            "Monotonic coarse binning increases the number of intervals until every borrower has a unique score, and maximizes the predictive power of each feature.",
+            "Monotonic coarse binning converts continuous features into dummy variables for regression, and removes the need for any model validation in audits.",
+            "Monotonic coarse binning linearizes relationships with log-odds, avoids overfitting in sparse intervals, and yields explainable adverse action reason codes.",
+            "Monotonic coarse binning replaces missing values with the median, and ensures each interval holds an equal number of defaults for the scorecard."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6192,10 +6192,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In commercial credit risk modeling, why must an attribute exhibiting an Information Value (IV) greater than 0.50 be subjected to an immediate forensic audit rather than automatically accepted?",
           "options": [
-            "An IV >= 0.50 proves that the loan portfolio has achieved zero defaults, eliminating the need for a scorecard.",
-            "An IV >= 0.50 is classified as 'suspicious' because it almost invariably signals target leakage (such as a variable capturing post-default collections) or severe overfitting from hyper-fragmented binning.",
-            "An IV >= 0.50 implies that the feature has zero statistical correlation with credit default.",
-            "Banking regulations cap the maximum allowable Information Value at 0.10 for all consumer loans."
+            "An IV of 0.50 or more is suspicious because it signals the attribute has very low predictive power and is likely to be dropped by the model.",
+            "An IV of 0.50 or more is suspicious because it usually signals target leakage (such as post-default collections data) or overfitting from fragmented binning.",
+            "An IV of 0.50 or more is suspicious because regulators prohibit any attribute with predictive power above 0.50 in consumer credit scorecards.",
+            "An IV of 0.50 or more is suspicious because it usually signals a population shift between development and live data, not target leakage."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6219,10 +6219,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a credit scoring system is calibrated with Base Score 600 at 50:1 odds and Points to Double Odds (PDO) = 20, what is the exact mathematical formula for the scaling Factor?",
           "options": [
-            "Factor = PDO / ln(2), which converts changes in natural log-odds into proportional integer score point movements.",
-            "Factor = PDO * ln(2), scaling log-odds exponentially.",
-            "Factor = Base Score / Base Odds, dividing 600 by 50.",
-            "Factor is arbitrarily chosen by underwriting executives between 1 and 10."
+            "Factor = PDO / ln(2), which converts changes in log-odds into proportional score point movements.",
+            "Factor = PDO * ln(2), which converts changes in log-odds into proportional score point movements.",
+            "Factor = ln(2) / PDO, which converts changes in log-odds into proportional score point movements.",
+            "Factor = PDO / ln(50), which converts changes in log-odds into proportional score point movements."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6246,10 +6246,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Basel II/III regulatory framework, what is the exact formula for portfolio Expected Loss (EL), and why is equity capital NOT held against Expected Loss?",
           "options": [
-            "EL = PD + LGD + EAD; equity capital is held against EL to ensure zero default rates.",
-            "EL = EAD / (PD * LGD); capital reserves are mandated to equal 100% of outstanding loan principal.",
-            "EL = LGD * EAD; Probability of Default is excluded under Basel III guidelines.",
-            "EL = PD * LGD * EAD; equity capital is not held against EL because Expected Loss is an anticipated operating cost factored into loan pricing and provisions, whereas equity capital is reserved for Unexpected Loss (UL)."
+            "EL = PD * EAD / LGD; equity is not held against EL because it is an expected cost priced into loans and provisions, whereas equity covers Unexpected Loss (UL).",
+            "EL = PD * LGD * EAD; equity is held against EL because losses are certain to occur, whereas Unexpected Loss (UL) is covered by reserves and provisions.",
+            "EL = PD + LGD + EAD; equity is not held against EL because it is a tax-deductible expense, whereas equity covers only Unexpected Loss (UL).",
+            "EL = PD * LGD * EAD; equity is not held against EL because it is an expected cost priced into loans and provisions, whereas equity covers Unexpected Loss (UL)."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6273,10 +6273,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Federal Reserve SR 11-7 and Basel model risk management standards, what action is triggered when a production credit scorecard registers a Population Stability Index (PSI) >= 0.25?",
           "options": [
-            "The model is awarded an automated green rating and monitoring frequency is reduced from monthly to annual.",
-            "All loan applications are automatically approved without credit checks.",
-            "A critical breach is declared, requiring mandatory model risk escalation, scorecard recalibration or redevelopment, and emergency underwriting cut-off adjustments to preserve capital reserves.",
-            "No action is taken because PSI >= 0.25 indicates that the applicant population has stabilized completely."
+            "A routine monitoring note is filed, requiring no escalation, with the scorecard left in place until the next annual validation cycle comes round.",
+            "A warning is logged, requiring only a footnote in the quarterly report, with the scorecard retained and the cut-off score loosened a little.",
+            "A critical breach is declared, requiring mandatory model risk escalation, scorecard recalibration or redevelopment, and interim underwriting cut-off adjustments.",
+            "A model decommissioning is ordered, requiring all live scores to be deleted immediately and every approved loan to be reviewed by hand at the bank."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6328,10 +6328,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Term Frequency-Inverse Document Frequency (TF-IDF) mathematically superior to raw term counting when vectorizing customer feedback text?",
           "options": [
-            "TF-IDF guarantees that every single document vector contains identical numbers to simplify memory storage.",
-            "TF-IDF penalizes ubiquitous words that appear across all documents via high Document Frequency (low IDF) while amplifying domain-specific discriminative terms that characterize specific topics.",
-            "TF-IDF converts all text documents into randomly generated normal numbers regardless of content.",
-            "Raw term counts violate the Central Limit Theorem and produce complex imaginary numbers."
+            "TF-IDF gives the highest weight to words that appear in every document, treating them as the core vocabulary that defines the whole corpus.",
+            "TF-IDF down-weights ubiquitous words that appear across all documents (low IDF) while amplifying discriminative terms that characterize particular topics.",
+            "TF-IDF normalizes each document to a fixed length by dividing the raw counts, which stops long reviews from dominating the whole corpus.",
+            "TF-IDF replaces words with their dictionary stems and removes stop words, which cuts vocabulary size and shortens the vectors for each text."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6356,10 +6356,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the VADER sentiment algorithm, how does the presence of a contrastive conjunction like 'but' alter the evaluation of a sentence such as 'The product is great, but support is terrible'?",
           "options": [
-            "VADER deletes all words following 'but' to prevent memory overflow.",
-            "VADER treats 'but' as an extremely positive word with a valence score of +4.0.",
-            "VADER de-emphasizes the clause prior to 'but' (multiplying valence by 0.5) and amplifies the clause following 'but' (multiplying valence by 1.5), correctly prioritizing the customer's final negative grievance.",
-            "VADER resets the entire sentence sentiment to exactly zero regardless of vocabulary."
+            "VADER amplifies the clause before 'but' (valence x 1.5) and de-emphasizes the clause after it (valence x 0.5), prioritizing the customer's praise.",
+            "VADER ignores conjunctions and sums the valence of every word equally, so the great and terrible words cancel out to a neutral score overall.",
+            "VADER de-emphasizes the clause before 'but' (valence x 0.5) and amplifies the clause after it (valence x 1.5), prioritizing the customer's final negative complaint.",
+            "VADER splits the sentence at 'but' and scores only the first clause, discarding the remainder as a separate unrelated statement by the customer."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6385,10 +6385,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a generic NLP sentiment model fail catastrophically when evaluating the financial statement: 'The company recorded an $850M non-cash goodwill impairment'?",
           "options": [
-            "The word 'impairment' is ignored by all computer algorithms.",
-            "Goodwill is an imaginary metric that has no impact on enterprise balance sheets.",
-            "Generic models cannot parse dollar amounts exceeding $100M.",
-            "Generic models misinterpret 'goodwill' as a positive emotional word (+2.8), whereas in corporate accounting a goodwill impairment represents severe asset destruction and earnings write-downs."
+            "Generic models read 'impairment' as a neutral technical term, whereas in accounting a non-cash charge has no effect on earnings or value.",
+            "Generic models cannot parse dollar amounts such as $850M, whereas in accounting the size of a charge is what determines its sentiment.",
+            "Generic models treat 'non-cash' as a positive signal of liquidity, whereas in accounting non-cash charges indicate strong operating cash flow.",
+            "Generic models read 'goodwill' as a positive emotional word, whereas in accounting a goodwill impairment is a severe asset write-down that hurts earnings."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6413,10 +6413,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Multinomial Naive Bayes text classification, why is Laplace (Add-One) smoothing indispensable when calculating token likelihoods P(t | c)?",
           "options": [
-            "Laplace smoothing prevents zero-frequency multiplication: if a single novel token in a test ticket was absent from a training category, smoothing assigns it a non-zero probability rather than forcing the entire document probability to zero.",
-            "Laplace smoothing converts text tokens into complex numbers to accelerate GPU training.",
-            "Smoothing ensures that all training documents have exactly 100 words.",
-            "Laplace smoothing deletes rare words to minimize memory consumption."
+            "Laplace smoothing prevents zero-frequency multiplication: a token absent from a training category gets a non-zero probability instead of zeroing the whole document.",
+            "Laplace smoothing reduces the vocabulary size: tokens that are rare in a training category are merged into one class, so the document probability is computed faster.",
+            "Laplace smoothing balances the class priors: categories with few training tickets receive extra weight, so each document's probability is no longer zero.",
+            "Laplace smoothing normalizes document length: long tickets are scaled down so that each token likelihood is comparable across categories of different sizes."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6442,10 +6442,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In high-throughput Transformer inference pipelines, why does dynamic length-bucketed batching dramatically improve GPU performance and prevent Out-of-Memory (OOM) crashes?",
           "options": [
-            "It converts Transformer neural networks into linear regression models.",
-            "By grouping messages of similar token lengths into homogeneous batches, it eliminates massive padding token overhead, slashing quadratic self-attention FLOPs and reducing peak tensor memory allocation.",
-            "It forces all user messages to be truncated to exactly 5 words.",
-            "It replaces GPU hardware with human customer support agents."
+            "By sorting messages from newest to oldest within each batch, it keeps frequently requested text in cache, cutting attention FLOPs and peak tensor memory.",
+            "By grouping messages of similar token length into batches, it removes heavy padding overhead, cutting quadratic self-attention FLOPs and peak tensor memory.",
+            "By truncating every message to the shortest length in the batch, it removes padding overhead, cutting attention FLOPs while keeping the full text of each message.",
+            "By running each message through the model one at a time, it avoids padding altogether, cutting memory use and attention FLOPs for the whole pipeline."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6496,10 +6496,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Latent Dirichlet Allocation (LDA), why does setting a sparse Dirichlet hyperparameter (alpha < 1.0, such as alpha = 0.1) produce superior topic interpretability for customer reviews compared to a large alpha (alpha = 5.0)?",
           "options": [
-            "A sparse prior (alpha < 1.0) forces the document-topic distribution to concentrate probability on one or two dominant topics, reflecting real customer reviews that focus on specific issues rather than averaging across all topics.",
-            "A sparse prior deletes 90% of the customer database to accelerate database queries.",
-            "A large alpha = 5.0 is mathematically impossible because probabilities cannot exceed 1.0.",
-            "The Dirichlet distribution can only be used with binary classification models."
+            "A sparse prior (alpha < 1.0) concentrates each document's topic distribution on one or two dominant topics, matching reviews that focus on specific issues.",
+            "A sparse prior (alpha < 1.0) spreads each document's topic distribution evenly across all topics, matching reviews that mix every issue together.",
+            "A sparse prior (alpha < 1.0) concentrates each topic's word distribution on a handful of words, matching reviews that use a very narrow vocabulary.",
+            "A sparse prior (alpha < 1.0) increases the number of topics the model discovers, matching reviews that raise many different issues at once."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6523,10 +6523,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Collapsed Gibbs Sampling algorithm for Latent Dirichlet Allocation (LDA), what continuous parameter matrices are 'collapsed' (integrated out) to accelerate inference?",
           "options": [
-            "The customer database is collapsed into a single summary paragraph.",
-            "Word tokens are converted to zeros to eliminate memory usage.",
-            "The number of topics K is collapsed to zero.",
-            "The continuous document-topic mixtures (theta) and topic-word distributions (phi) are algebraically integrated out, allowing the sampler to track only discrete integer count matrices."
+            "The discrete topic assignments (z) and word counts are integrated out, so the sampler tracks only the continuous theta and phi parameter matrices directly.",
+            "The Dirichlet hyperparameters alpha and beta are integrated out, so the sampler needs no prior and tracks only maximum likelihood estimates of the topics.",
+            "The vocabulary and document length variables are integrated out, so the sampler tracks only a fixed-size matrix of topic proportions for each document.",
+            "The continuous document-topic mixtures (theta) and topic-word distributions (phi) are integrated out, so the sampler tracks only discrete integer count matrices."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6551,10 +6551,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is statistical Perplexity negatively correlated with human topic interpretability according to Chang et al.'s landmark 'Reading Tea Leaves' study?",
           "options": [
-            "Perplexity can only be calculated on binary numbers, making it invalid for text.",
-            "Perplexity was outlawed by European Union AI governance regulations in 2024.",
-            "Perplexity rewards models that overfit rare, idiosyncratic statistical word associations that humans find confusing, while semantic coherence metrics (C_v, U_Mass) directly reward co-occurring, semantically aligned words.",
-            "Human analysts prefer randomly generated words over coherent corporate themes."
+            "Perplexity rewards simpler models with fewer topics, which humans find too vague, whereas coherence metrics (C_v, U_Mass) reward models with many topics.",
+            "Perplexity measures how fast the sampler converges, which has no link to topic wording, whereas coherence metrics (C_v, U_Mass) measure model run time.",
+            "Perplexity rewards fitting rare, idiosyncratic word associations that humans find confusing, whereas coherence metrics (C_v, U_Mass) reward semantically related words.",
+            "Perplexity is computed on training documents only, so it falls as vocabularies grow, whereas coherence metrics (C_v, U_Mass) are computed on held-out text."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6579,10 +6579,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does Class-based TF-IDF (c-TF-IDF) in BERTopic extract topic keywords from document clusters?",
           "options": [
-            "c-TF-IDF deletes all words that appear more than once in a cluster.",
-            "c-TF-IDF concatenates all documents in a cluster into a pseudo-document, calculating word frequency normalized by cluster length multiplied by log-ratio of average cluster size to global word frequency.",
-            "c-TF-IDF counts only punctuation marks to identify sentiment.",
-            "c-TF-IDF randomly selects 5 words from the English dictionary."
+            "c-TF-IDF picks the single most representative document in each cluster, then returns the words in it that have the highest raw frequency counts.",
+            "c-TF-IDF concatenates all documents in a cluster into one pseudo-document, then weights word frequency by the log-ratio of average cluster size to global frequency.",
+            "c-TF-IDF averages the word embeddings of each cluster's documents, then returns the vocabulary words nearest to the cluster centroid in embedding space.",
+            "c-TF-IDF counts how many documents in a cluster contain each word, then weights the counts by the number of clusters that contain the same word."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6607,10 +6607,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In real-time Voice of the Customer surveillance, what statistical condition triggers an automated P0 Incident Alert when tracking daily topic prevalence?",
           "options": [
-            "A daily prevalence Z-score >= 3.0 relative to historical baseline, signifying a statistically extreme surge in customer grievances with greater than 99.8% statistical confidence.",
-            "A single customer submitting a polite feedback ticket.",
-            "A Z-score equal to 0.0 indicating complete population stability.",
-            "The server CPU utilization drops to zero percent."
+            "A daily prevalence Z-score >= 3.0 relative to the historical baseline, signifying a statistically extreme surge in grievances (above 99.8% confidence).",
+            "A daily prevalence Z-score >= 1.0 relative to the historical baseline, signifying a mild rise in grievances (above 84% confidence) that merits escalation.",
+            "A daily prevalence Z-score <= -3.0 relative to the historical baseline, signifying an extreme drop in grievances (below 0.2% confidence) that merits review.",
+            "A weekly prevalence increase of 5% over the prior week, signifying a steady rise in grievances that merits immediate escalation to the executives."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6661,10 +6661,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise e-commerce retail, why is Item-Item Collaborative Filtering computationally preferred over User-User Collaborative Filtering?",
           "options": [
-            "Item-Item collaborative filtering requires zero computer memory to operate.",
-            "User-User collaborative filtering is legally prohibited by privacy laws.",
-            "Item-Item filtering automatically deletes unpopular items from the database.",
-            "In retail, user populations vastly outnumber catalog items (|U| >> |I|), and item affinities remain stable over time, allowing item similarity matrices to be precomputed offline for sub-millisecond serving."
+            "Retail has far more items than users (|I| >> |U|) and user tastes are stable, so user similarity matrices can be precomputed offline for fast serving.",
+            "Item-Item filtering needs no rating data, because item affinities come from product descriptions alone, so it avoids the sparse ratings that limit User-User.",
+            "User-User filtering cannot recommend popular items, because every user's neighbors have already bought them, so Item-Item is the only workable choice.",
+            "Retail has far more users than catalog items (|U| >> |I|) and item affinities are stable, so item similarity matrices can be precomputed offline for fast serving."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6688,10 +6688,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Hu-Koren-Volinsky implicit feedback model, why do unobserved user-item interactions (where interaction count is zero) receive a confidence weight of c_{u, i} = 1.0 rather than zero?",
           "options": [
-            "A zero interaction count provides weak negative evidence: the user may prefer the item but never saw it, so it is assigned baseline confidence c=1.0 rather than completely ignored.",
-            "Zero confidence would crash the computer's arithmetic logic unit with a divide-by-zero error.",
-            "Banking regulations require all numbers in a database to be greater than or equal to 1.0.",
-            "Unobserved items represent customer returns that must be refunded."
+            "A zero count is weak negative evidence: the user may like the item but never saw it, so it gets a low baseline confidence c = 1.0 rather than being ignored.",
+            "A zero count is strong negative evidence: the user saw the item and rejected it, so it keeps a high confidence weight c = 1.0 in the loss function.",
+            "A zero count is missing data: the system cannot tell anything, so c = 1.0 simply fills the gap until a purchase replaces it with a higher weight.",
+            "A zero count is a data error: the item was not logged, so c = 1.0 marks the entry as unreliable and excludes it from the regularization term."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6716,10 +6716,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Alternating Least Squares (ALS) mathematically capable of optimizing implicit feedback datasets across millions of users and items while Stochastic Gradient Descent (SGD) struggles?",
           "options": [
-            "ALS converts continuous linear algebra equations into simple text strings.",
-            "Holding item factors fixed renders the loss convex and quadratic, allowing exact closed-form matrix updates where unobserved pairs are efficiently aggregated via an invariant Y^T Y precomputation.",
-            "Stochastic Gradient Descent is mathematically impossible to implement on computers.",
-            "ALS randomly deletes 99% of all users to make matrix multiplication fit in RAM."
+            "ALS samples a few unobserved pairs per user at random, so each closed-form update touches only a tiny fraction of the whole interaction matrix.",
+            "Fixing item factors makes the loss convex and quadratic, so exact closed-form updates are possible and unobserved pairs aggregate efficiently via a precomputed Y'Y.",
+            "ALS stores every user-item pair as a sparse binary flag, so each update is a simple lookup and no matrix algebra or regularization is needed at all.",
+            "ALS optimizes a non-convex loss with momentum and a decaying learning rate, which converges faster than SGD on very large, sparse interaction data."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6744,10 +6744,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Mean Squared Error (MSE / RMSE) considered an inadequate metric for evaluating commercial enterprise recommender systems compared to MAP@K and NDCG@K?",
           "options": [
-            "NDCG was mandated by international accounting standards to replace all error metrics.",
-            "MSE can only be calculated on binary classification models.",
-            "Consumers interact with Top-K ranked recommendation carousels on screen, making the ordering and relevance of the top 5 to 10 items critical, whereas RMSE measures overall numeric rating error across un-displayed items.",
-            "RMSE is mathematically invalid for datasets containing more than 100 rows."
+            "Consumers rate every catalog item they buy, so all predicted ratings matter equally, whereas MAP@K and NDCG@K measure only a few items per customer.",
+            "RMSE cannot be computed on implicit data such as clicks, and MAP@K and NDCG@K are the only metrics that reward predictions near the true rating.",
+            "Consumers see ranked Top-K carousels, so the order and relevance of the top 5 to 10 items matter most, whereas RMSE measures rating error across items never displayed.",
+            "RMSE rewards predicting extreme ratings, so it favors models that recommend only popular items, whereas ranking metrics favor niche products in the catalog."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6772,10 +6772,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a production recommender gateway, how does an Upper Confidence Bound (UCB1) Multi-Armed Bandit resolve the cold-start item problem without damaging site conversion?",
           "options": [
-            "It forces new users to complete a 50-question mandatory survey before viewing products.",
-            "It hides all new items until they have been in the warehouse for at least two years.",
-            "It randomly reboots the recommendation server whenever a new user registers.",
-            "It balances exploitation of high-converting items with an uncertainty exploration bonus that temporarily boosts rarely displayed items to gather data, naturally funneling traffic to winning products."
+            "It shows each new item to a fixed random 50% of visitors for a week, then removes all items whose average conversion rate falls below the catalog mean.",
+            "It ranks new items by the average conversion of the most similar older items, so exploration is replaced by a content-based guess for every new item.",
+            "It shows only the item with the highest observed conversion rate, adding randomness only after a loss, so new items receive no exposure at first.",
+            "It balances exploiting high-converting items with an uncertainty bonus that temporarily boosts rarely shown items to gather data, funneling traffic to winners."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6827,10 +6827,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Market Basket Analysis, why is an association rule with 80% Confidence considered commercially questionable or potentially worthless if its Lift is equal to 0.95?",
           "options": [
-            "A Lift of 0.95 violates the laws of physics and produces negative transaction counts.",
-            "Confidence is only valid when Lift exceeds 100.0.",
-            "Lift <= 1.0 means that the items were returned for a full cash refund.",
-            "A Lift <= 1.0 indicates that the antecedent and consequent are statistically independent or slightly substitute each other; the high 80% confidence is merely an artifact of the consequent's massive baseline popularity across all transactions."
+            "A Lift below 1.0 means the items are strong complements; the 80% confidence is reliable but the rule applies only to small baskets of items in the store.",
+            "A Lift below 1.0 means the rule has too little support; the 80% confidence is an artifact of sampling error in a small number of transactions.",
+            "A Lift below 1.0 means the consequent occurs less often with the antecedent than the confidence implies, so the rule must be reversed to be valid.",
+            "A Lift below 1.0 means antecedent and consequent are independent or mild substitutes; the 80% confidence merely reflects the consequent's high baseline popularity."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6856,10 +6856,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the Downward Closure Property (Apriori Principle) in association rule mining, and how does it prevent combinatorial explosion?",
           "options": [
-            "If an itemset is infrequent, all of its supersets are guaranteed to be infrequent and are pruned immediately, eliminating trillions of hopeless candidate combinations from the search tree.",
-            "It forces all supermarket prices to decline by 10% every week.",
-            "It requires all itemsets to contain exactly two items.",
-            "Downward closure proves that customers only buy items displayed on bottom shelves."
+            "If an itemset is infrequent, all of its supersets are infrequent and are pruned immediately, eliminating huge numbers of hopeless candidate combinations.",
+            "If an itemset is frequent, all of its supersets are frequent and are accepted immediately, which removes the need to count their support in the database.",
+            "If an itemset is infrequent, all of its subsets are infrequent and are pruned immediately, eliminating the lower levels of the search tree at once.",
+            "If an itemset is frequent, all of its subsets must be rechecked against the database, which limits candidate growth to the current level only."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6885,10 +6885,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the FP-Growth algorithm mine all frequent itemsets while completely eliminating the candidate generation bottleneck of classical Apriori?",
           "options": [
-            "FP-Growth randomly generates association rules and deletes all unverified items.",
-            "FP-Growth compresses transactions into a compact in-memory Frequent Pattern Tree (FP-Tree) with prefix sharing and mines patterns recursively via conditional pattern bases in only two database scans.",
-            "FP-Growth replaces the database with a single linear regression model.",
-            "FP-Growth only works when transactions contain exactly one item."
+            "FP-Growth sorts transactions by size into a sequential file and mines patterns by joining frequent itemsets level by level in many database scans.",
+            "FP-Growth compresses transactions into a compact in-memory FP-Tree with shared prefixes and mines patterns through conditional pattern bases in two database scans.",
+            "FP-Growth builds a hash table of all item pairs and mines patterns by counting each pair in a single scan, then discarding the larger itemsets.",
+            "FP-Growth samples a small fraction of transactions into memory and mines patterns on the sample, then verifies them with a final complete scan."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6915,10 +6915,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial reason that a retail promotional bundle based on the rule {Bananas} => {Milk} (Confidence = 84.0%, Lift = 0.98) caused a $2.4M margin loss?",
           "options": [
-            "Bananas spoiled inside the cash registers and destroyed the receipt printers.",
-            "Milk is legally prohibited from being sold with fruit under agricultural trade laws.",
-            "Milk had an 86% unconditional baseline support, meaning customers were already buying milk independently; discounting milk in a banana bundle subsidized normal purchases without generating incremental sales lift.",
-            "A lift of 0.98 indicates that exactly zero customers bought bananas."
+            "Milk had a low baseline support of 14%, so the bundle attracted too few customers; the discount cost more than the extra sales it generated for the store.",
+            "A lift of 0.98 showed bananas and milk were strong complements, so the bundle cannibalized sales of other dairy products in the store across the whole month.",
+            "Milk had an 86% baseline support, so customers already bought it independently; discounting it in a banana bundle subsidized normal purchases without lifting sales.",
+            "The confidence of 84% was computed on the wrong date range, so the bundle targeted customers who had already stopped shopping at the store during any promotion period."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6944,10 +6944,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise Big Data architectures, why are maximum itemset length constraints (e.g. k <= 3) and bitwise sparse representations deployed in association rule mining?",
           "options": [
-            "Max-length constraints guarantee that all transactions have identical numbers of items.",
-            "Bitwise encoding converts all product prices to zero dollars.",
-            "Retailers are legally prohibited from selling more than three items to any individual customer.",
-            "Max-length constraints prevent exponential combinatorial tree growth, while bitwise integer encodings replace slow set operations with single-clock-cycle CPU bitwise AND operations."
+            "Max-length constraints raise the confidence of every rule, while bitwise integer encodings replace sorting of transactions with a single database scan.",
+            "Max-length constraints guarantee that only the most profitable rules survive, while bitwise encodings compress the database so it fits on local disk.",
+            "Max-length constraints remove rare items from the catalog, while bitwise integer encodings convert item names to numbers that use less memory than text.",
+            "Max-length constraints stop exponential growth of the itemset tree, while bitwise integer encodings replace slow set operations with single-cycle CPU AND operations."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -6998,10 +6998,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the foundational mathematical insight of the Isolation Forest algorithm that enables it to detect anomalies in high-dimensional financial data without training labels?",
           "options": [
-            "Anomalies are 'few and different', meaning random recursive partition cuts isolate outliers in significantly shorter tree path lengths E[h(x)] than normal clustered points.",
-            "Isolation Forests convert all numerical transactions into encrypted blockchain tokens.",
-            "The algorithm requires human fraud investigators to label every tree node manually.",
-            "Isolation Forests only operate on linear datasets with exactly two variables."
+            "Anomalies are 'few and different', so random recursive partition cuts isolate outliers in much shorter tree path lengths E[h(x)] than normal clustered points.",
+            "Anomalies are 'many and similar', so random recursive partition cuts isolate outliers in much longer tree path lengths E[h(x)] than normal clustered points.",
+            "Anomalies lie far from the global mean, so distance-based partition cuts made at the mean isolate outliers in shorter path lengths than normal points.",
+            "Anomalies break the normal distribution of each feature, so a per-feature Gaussian fit marks outliers by their long-tailed density values in the data."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7026,10 +7026,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Local Outlier Factor (LOF) mathematically superior to global distance-based outlier methods in multi-modal e-commerce datasets with varying cluster densities?",
           "options": [
-            "LOF requires that all clusters have an identical number of observations.",
-            "LOF was proved by Gauss to eliminate 100% of false positive alerts.",
-            "LOF deletes all negative numbers from the database to improve processing speed.",
-            "LOF evaluates an object's density relative to its k-nearest neighbors, correctly identifying local outliers in sparse or dense clusters without being fooled by global density differences."
+            "LOF measures each object's absolute distance to the global centroid, so it flags the farthest points in every cluster no matter how dense each cluster is.",
+            "LOF assigns each object to the cluster of its nearest neighbor and flags clusters smaller than a size threshold, ignoring local density differences.",
+            "LOF compares each object's density to the global average density, so it flags every point that falls below one fixed density threshold across all clusters.",
+            "LOF compares an object's density with its k-nearest neighbors, so it flags local outliers in sparse or dense clusters without being fooled by global density differences."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7054,10 +7054,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How did engineering Cent Entropy and Transaction Velocity features enable the unsupervised anomaly engine to detect the distributed carding ring when conventional supervised models failed?",
           "options": [
-            "Velocity features are legally mandated to equal zero for all credit card transactions.",
-            "Cent entropy causes credit cards to self-destruct inside the cardholder's wallet.",
-            "Carding botnets execute repeated identical micro-charges at extreme velocity, resulting in zero cent entropy and high velocity that stand out as severe multidimensional anomalies regardless of low dollar amounts.",
-            "Supervised models cannot process decimal numbers."
+            "Carding botnets run a few very large charges at slow speed, so high cent entropy and low velocity stand out as anomalies despite normal volumes of sales.",
+            "Carding botnets use random charge amounts at moderate velocity, so high cent entropy and normal velocity stand out as anomalies against average customers.",
+            "Carding botnets run repeated identical micro-charges at extreme velocity, so zero cent entropy and high velocity stand out as anomalies despite small dollar amounts.",
+            "Carding botnets copy the spending habits of real customers, so cent entropy and velocity match the norm and anomalies appear only in billing addresses."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7082,10 +7082,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Extreme Value Theory (EVT) Peaks-Over-Threshold (POT) modeling provide superior threshold calibration for anomaly detection compared to static percentage cutoffs?",
           "options": [
-            "EVT guarantees that no customer will ever be falsely accused of fraud.",
-            "EVT mathematically models the asymptotic tail of score excesses using the Generalized Pareto Distribution, dynamically adapting thresholds to preserve an invariant target false alarm rate regardless of volume surges.",
-            "Static cutoffs are prohibited by federal computer software copyright laws.",
-            "EVT reduces all anomaly scores to zero to simplify human review."
+            "EVT sets the threshold at a fixed percentile of historical scores, keeping the same alert volume even if the true anomaly rate changes during surges.",
+            "EVT models the tail of score excesses with the Generalized Pareto Distribution, adapting thresholds to keep a constant target false alarm rate despite volume surges.",
+            "EVT models the whole score distribution as Gaussian, setting the threshold at three standard deviations so the false alarm rate is fixed at 0.3%.",
+            "EVT trains a supervised classifier on past fraud labels, adapting thresholds to keep a constant recall level despite volume surges in transactions."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7110,10 +7110,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an Alert Deduplication and Top-K Priority Queue governance architecture mitigate alert fatigue in an enterprise Security Operations Center (SOC)?",
           "options": [
-            "It clusters hundreds of related alerts into unified master incident dossiers and prioritizes the top cases based on composite financial risk, preventing cognitive overload and ensuring analysts catch genuine high-value attacks.",
-            "It mutes all security alerts and ignores wire fraud completely.",
-            "It automatically fires human analysts who fail to review 10,000 alerts per hour.",
-            "It replaces all fraud detection software with static spreadsheets."
+            "It clusters related alerts into one master incident dossier and ranks the top cases by composite financial risk, preventing overload so analysts catch genuine attacks.",
+            "It suppresses every alert below a fixed severity score and closes them automatically, so analysts see only the few alerts that have confirmed attacks.",
+            "It forwards each alert to a different analyst in turn, balancing the workload evenly across the team, so no single analyst sees too many of the false alarms.",
+            "It raises the detection threshold during busy periods and lowers it at night, so the number of alerts stays constant across the day for analysts."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7164,10 +7164,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In customer analytics, why does standard linear regression produce fatally biased lifetime estimates when applied to active subscription accounts?",
           "options": [
-            "Active customers are legally prohibited from being included in mathematical calculations.",
-            "Standard regression ignores Right-Censoring: active users have not finished their lifecycles (T > current tenure), so treating current tenure as final lifetime severely underestimates true customer lifetime value.",
-            "Right-censoring only occurs when users pay their invoices with paper checks.",
-            "Linear regression cannot process numbers with decimal points."
+            "Regression ignores left-truncation: customers who left before the study began are missing, so treating the observed customers as the full population overestimates lifetime.",
+            "Regression ignores right-censoring: active users have not finished their lifecycles (T > current tenure), so treating tenure as final lifetime underestimates lifetime value.",
+            "Regression requires lifetimes to be normally distributed, but tenure data are skewed, so predicted lifetimes fall below zero for many active accounts of the base.",
+            "Regression ignores time-varying covariates: customer usage changes each month, so a single average value per customer overestimates their expected lifetime."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7192,10 +7192,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Kaplan-Meier product-limit formula S_hat(t) = prod_{t_i <= t} (1 - d_i / n_i), how are right-censored active customers treated at time t_i?",
           "options": [
-            "Right-censored customers are deleted from the entire dataset to prevent variance.",
-            "Right-censored customers are counted as confirmed churn events with d_i = 1.",
-            "Right-censored customers remain in the risk set denominator n_i for all intervals prior to their censoring, correctly contributing their observed survival time without inflating event counts.",
-            "Right-censored customers are assigned a survival probability of exactly zero."
+            "Right-censored customers are counted as events at their censoring time, adding to d_i so that their observed tenure counts as a completed lifetime.",
+            "Right-censored customers are dropped from the data entirely before the risk sets are formed, so only churned customers contribute to n_i and d_i.",
+            "Right-censored customers stay in the risk set denominator n_i up to their censoring time, contributing their observed survival without adding to the event count d_i.",
+            "Right-censored customers stay in the risk set for all intervals after censoring, contributing their expected survival time to the denominator n_i."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7219,10 +7219,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Cox Proportional Hazards model, if the estimated regression coefficient for 'Bug_Tickets' is beta = +0.4055, what is the resulting Hazard Ratio (HR), and how is it interpreted?",
           "options": [
-            "HR = -1.50; bug tickets cause the software to crash 150 times per day.",
-            "HR = 0.0; bug tickets have no effect on customer retention.",
-            "HR = 0.4055; bug tickets reduce customer churn by 40%.",
-            "HR = exp(0.4055) = 1.50; each additional bug ticket submitted increases the customer's instantaneous churn risk by 50%."
+            "HR = exp(0.4055) = 0.67; each additional bug ticket submitted lowers the customer's instantaneous churn risk by 33%.",
+            "HR = 0.4055 * 100 = 40.55; each additional bug ticket submitted multiplies the customer's instantaneous churn risk by 40.",
+            "HR = 1 + 0.4055 = 1.41; each additional bug ticket submitted raises the customer's instantaneous churn risk by 41%.",
+            "HR = exp(0.4055) = 1.50; each additional bug ticket submitted raises the customer's instantaneous churn risk by 50%."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7247,10 +7247,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a statistically significant positive correlation between Schoenfeld residuals and event time indicate regarding a covariate in a Cox model?",
           "options": [
-            "It proves a violation of the Proportional Hazards assumption: the covariate's true effect increases over time, meaning a single static hazard ratio misrepresents the changing dynamic.",
-            "It proves that the model has zero prediction errors.",
-            "It indicates that all customers will churn on day 100.",
-            "Schoenfeld residuals can only correlate with user email addresses."
+            "It signals a violation of proportional hazards: the covariate's effect grows over time, so a single static hazard ratio misrepresents the dynamics.",
+            "It confirms the proportional hazards assumption holds: the covariate's effect is constant over time, so a single static hazard ratio is valid.",
+            "It signals that the covariate is not predictive: its effect on churn is zero, so it should be dropped from the Cox model and refitted afterward.",
+            "It signals heavy right-censoring: many customers remain active at the end of the study, so Kaplan-Meier curves should replace the Cox model."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7275,10 +7275,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does computing Customer Lifetime Value (CLV) via numerical integration of survival curves S(t) improve upon traditional static CLV formulas (Margin / Churn)?",
           "options": [
-            "Numerical integration can only be computed when all customers pay in cryptocurrency.",
-            "It incorporates empirical time-varying tenure hazards and discounts future cash flows for the cost of capital, eliminating simplistic memoryless churn assumptions.",
-            "It doubles all subscription prices automatically.",
-            "It eliminates all churn from the customer base permanently."
+            "It uses a single constant churn rate fitted by regression and applies a higher discount rate, so the lifetime estimate becomes more conservative overall.",
+            "It uses empirical time-varying tenure hazards and discounts future cash flows at the cost of capital, removing simplistic memoryless churn assumptions.",
+            "It replaces the margin per period with revenue per period, which removes cost assumptions and so makes lifetime value easier to audit for finance.",
+            "It extends the customer horizon to infinity and ignores discounting, so lifetime value reflects every cash flow the customer could ever generate."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7329,10 +7329,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Fundamental Theorem of Linear Programming, why is it sufficient to inspect only the extreme points (vertices) of a bounded convex feasible polyhedron to find the optimal solution?",
           "options": [
-            "Because non-linear curves bend outward, forcing optimal points into the center.",
-            "Extreme points are the only coordinates where machines can physically operate without friction.",
-            "Because the objective function is linear, its level sets are hyperplanes; moving in the gradient direction monotonically improves the objective until reaching an extreme boundary vertex.",
-            "Because interior points are mathematically forbidden from having positive coordinates."
+            "Because the objective is quadratic, its level sets are ellipsoids; moving along the gradient improves it steadily until it reaches the center of the polyhedron.",
+            "Because the constraints are equalities, the feasible region contains only its vertices, so no interior or edge points exist for the objective to use.",
+            "Because the objective is linear, its level sets are hyperplanes; moving along the gradient improves it steadily until it reaches an extreme boundary vertex.",
+            "Because the objective is linear, every point on an edge is optimal when the optimum is unique, so edge midpoints must be checked as well as vertices."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7355,10 +7355,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Simplex algorithm tableau, what is the mathematical purpose of the Minimum Ratio Test (min b_i / a_{ik} for a_{ik} > 0) when selecting the leaving variable?",
           "options": [
-            "It divides the company's financial debt equally among all corporate directors.",
-            "It determines the maximum step size the entering variable can take along the polyhedral edge without driving any basic variable below zero, preserving non-negativity feasibility.",
-            "It checks whether the computer processor has sufficient RAM to continue.",
-            "It forces the objective function to invert from maximization to minimization."
+            "It finds the entering variable with the most negative reduced cost, so the objective rises as fast as possible on the next pivot of the tableau.",
+            "It finds the largest step the entering variable can take along the edge without pushing any basic variable below zero, preserving feasibility.",
+            "It finds the smallest step the entering variable can take to leave the objective unchanged, so the algorithm cannot cycle between vertices.",
+            "It checks that the current tableau is optimal by testing that every ratio b_i / a_ik is non-negative, which then ends the algorithm run."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7382,10 +7382,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the economic significance of the Strong Duality Theorem (c^T x* = b^T y*) in enterprise operations?",
           "options": [
-            "It proves that the maximum possible operating profit from manufactured products exactly equals the total imputed economic valuation of the scarce resources consumed.",
-            "It guarantees that all supply chain employees receive equal annual salaries.",
-            "It proves that linear programming cannot be audited by outside accounting firms.",
-            "It indicates that product manufacturing generates infinite cash flow."
+            "It proves that the maximum operating profit from manufactured products exactly equals the total imputed value of the scarce resources consumed.",
+            "It proves that the maximum operating profit exceeds the imputed value of the scarce resources consumed, leaving a strictly positive surplus.",
+            "It proves that the optimal product mix is the same whether the firm maximizes profit or minimizes cost, so duality has no separate economic meaning.",
+            "It proves that the shadow prices of all resources sum to the total revenue of the products, so every resource earns an equal share of revenue."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7410,10 +7410,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If the shadow price (dual variable) of a factory's bottleneck machine is y* = $75.00/hour, what is the net economic outcome of authorizing overtime maintenance labor at $50.00/hour to keep the machine running for an extra 40 hours?",
           "options": [
-            "The factory loses $2,000 due to excessive labor spending.",
-            "The machine's shadow price drops to negative $50.00.",
-            "Overtime labor cannot be analyzed with mathematical programming.",
-            "The factory generates a net gain of +$1,000 in operating profit (marginal gain of $75 - $50 = $25/hour over 40 hours)."
+            "A net loss of -$1,000 in operating profit (a marginal loss of $50 - $75 = -$25 per hour over 40 hours).",
+            "A net gain of +$3,000 in operating profit (a marginal gain of $75 per hour over 40 hours, ignoring overtime cost).",
+            "A net gain of +$2,000 in operating profit (a marginal gain of $75 - $25 = $50 per hour over 40 hours).",
+            "A net gain of +$1,000 in operating profit (a marginal gain of $75 - $50 = $25 per hour over 40 hours)."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7438,10 +7438,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an enterprise multi-facility supply chain optimization model, what does an infeasible solution (total customer demand exceeding total factory capacity) indicate, and how is it resolved operationally?",
           "options": [
-            "It indicates that fuel costs have dropped to exactly zero.",
-            "It means the company must immediately declare Chapter 7 bankruptcy.",
-            "It indicates capacity deficiency; solvers introduce a dummy supply origin with high stockout penalty costs to determine the optimal rationing of scarce inventory across regions.",
-            "It proves that freight trucks cannot travel between interstate borders."
+            "It indicates a data entry error in demand; solvers delete the largest customer demand until total demand fits within the total factory capacity.",
+            "It indicates excess capacity in the network; solvers add a dummy demand destination with zero shipping cost to absorb the unused factory output.",
+            "It indicates a capacity deficiency; solvers add a dummy supply origin with high stockout penalty costs to find the best rationing of scarce inventory across regions.",
+            "It indicates a transportation cost error; solvers raise all shipping costs uniformly until the model finds a feasible shipping plan for every region."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7494,10 +7494,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Equal Credit Opportunity Act (ECOA) and CFPB Circular 2022-03, why is presenting global permutation feature importance legally invalid as an Adverse Action explanation?",
           "options": [
-            "Permutation importance values are always negative, violating banking laws.",
-            "Global feature importance can only be computed for linear models, not neural networks.",
-            "Federal regulators require all rejection notices to be hand-written in calligraphy.",
-            "Global importance describes average feature sensitivity across the entire dataset, failing to identify the specific local factors that drove an individual applicant's denial."
+            "Global importance is too computationally slow for production use, so applicants cannot receive an explanation within the legal time limit after denial.",
+            "Global importance reveals proprietary model logic, so disclosing it to any applicant would breach trade secret protections under federal credit law.",
+            "Global importance includes protected class variables by definition, so presenting it to an applicant is itself prohibited discrimination under ECOA.",
+            "Global importance describes average feature sensitivity across the whole dataset and fails to identify the specific local factors that drove one applicant's denial."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7522,10 +7522,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following describes the 'Efficiency Axiom' in cooperative game theory and SHAP local model explainability?",
           "options": [
-            "The sum of all local feature attributions phi_i plus the baseline expected value phi_0 must exactly equal the model's actual predicted output: phi_0 + sum(phi_i) = f(x).",
-            "The algorithm must run in less than one second on a mobile phone.",
-            "Every feature must be assigned an equal importance weight regardless of data.",
-            "The model must never make a false positive prediction."
+            "The sum of local feature attributions phi_i plus the baseline expected value phi_0 equals the model's actual prediction: phi_0 + sum(phi_i) = f(x).",
+            "The sum of local feature attributions phi_i must equal zero for every prediction, so positive and negative contributions cancel out exactly: sum(phi_i) = 0.",
+            "Each feature attribution phi_i must equal the feature's own value multiplied by its model coefficient, so no interactions are credited: phi_i = beta_i * x_i.",
+            "Features that have no effect on the model output must still receive a share of the baseline value phi_0, divided equally among all the features."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7551,10 +7551,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the TreeSHAP algorithm overcome the exponential O(M 2^M) computational bottleneck of classical Shapley values when explaining decision tree ensembles?",
           "options": [
-            "It rounds all continuous features to zero.",
-            "It exploits decision tree structure to compute conditional expectations in polynomial time O(T L D^2) by recursively tracking background sample weights down decision paths.",
-            "TreeSHAP only runs on quantum computers.",
-            "It samples random coalitions of features and averages them, giving only a noisy approximation of the Shapley values."
+            "It samples a random subset of 1,000 feature coalitions for each prediction and averages them, giving exact Shapley values in O(T L) time per sample.",
+            "It uses tree structure to compute conditional expectations in polynomial time O(T L D^2) by recursively tracking background sample weights down decision paths.",
+            "It replaces the trees with a linear surrogate fitted around each prediction, then reads the coefficients in O(M) time as exact attributions.",
+            "It removes one feature at a time and re-scores the data, so only M coalitions are evaluated in O(M) time instead of 2^M for the ensemble."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7580,10 +7580,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between LIME and SHAP in enterprise model governance?",
           "options": [
-            "LIME and SHAP are identical mathematical algorithms with different brand names.",
-            "LIME can only be run on Tuesdays, whereas SHAP runs all week.",
-            "LIME fits a local surrogate model via stochastic perturbation (model-agnostic but non-deterministic), whereas SHAP is grounded in cooperative game theory (deterministic, additive, and provably unique).",
-            "SHAP requires all customer data to be made publicly accessible on the internet."
+            "LIME rests on cooperative game theory (deterministic, additive, unique), whereas SHAP fits a local surrogate through stochastic perturbation (non-deterministic).",
+            "LIME explains the entire model globally with a single decision tree, whereas SHAP explains only one prediction at a time with a local linear model.",
+            "LIME fits a local surrogate through stochastic perturbation (model-agnostic, non-deterministic), whereas SHAP rests on game theory (deterministic, additive, unique).",
+            "LIME works only on tree ensembles (fast but model-specific), whereas SHAP works on any model but cannot produce additive attributions or unique values."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7609,10 +7609,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a production credit underwriting API, how are quantitative SHAP feature attributions converted into legally compliant Adverse Action notices under CFPB regulations?",
           "options": [
-            "The applicant's full social security number is published on a public billboard.",
-            "The computer randomly selects four dictionary words at random.",
-            "All applicants are told they were denied due to computer malfunction.",
-            "Features that negatively impacted approval (positive default log-odds) are sorted by magnitude, and the top factors are mapped directly to standardized federal reason codes."
+            "Features with the largest absolute SHAP values are listed in alphabetical order, and every feature is sent to the applicant as a reason for denial.",
+            "Features that most increased approval (negative default log-odds) are sorted by magnitude, and the top factors are mapped to standardized reason codes.",
+            "Features are ranked by their global importance across all past applicants, and the top factors are mapped to reason codes for every denial notice.",
+            "Features that most reduced approval (positive default log-odds) are sorted by magnitude, and the top factors are mapped to standardized federal reason codes."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7664,10 +7664,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexPredict architecture, what is the operational purpose of the Point-in-Time (PIT) Temporal Correctness engine in the feature store?",
           "options": [
-            "It strictly filters out any customer events occurring after the decision timestamp, mathematically preventing target data leakage from inflating model evaluation metrics.",
-            "It synchronizes the computer clock with the atomic clock in Greenwich, London.",
-            "It deletes all customer records older than seven days to save hard drive space.",
-            "It guarantees that all machine learning models execute on solar power."
+            "It filters out any customer events after the decision timestamp, preventing target leakage from inflating model evaluation metrics.",
+            "It loads every event ever recorded for the customer into the features, so models see the most complete history available at scoring time.",
+            "It refreshes feature values every night for all customers, so models are trained on the latest batch rather than on older snapshots.",
+            "It converts event timestamps to a single time zone, so features from different regional systems line up before the models are trained."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7693,10 +7693,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise decision intelligence, what is 'Model Collision', and how does ApexPredict's Joint Expected Economic Value (JEEV) engine resolve it?",
           "options": [
-            "Model collision refers to when a computer screen goes completely blank during a storm.",
-            "Model collision is an error that only occurs in video games.",
-            "Model collision happens when two desktop computers bump into each other on a desk.",
-            "Model collision occurs when disconnected departmental models take contradictory actions (e.g., marketing subsidizing a user that risk flagged for default); JEEV coordinates models into a unified net profit equation to eliminate contradictory actions."
+            "Model collision is when two models give identical scores for the same customer, so JEEV removes the duplicates and keeps the model with the larger sample.",
+            "Model collision is when a model's predictions drift away from live data over time, and JEEV resolves it by retraining that model automatically every night.",
+            "Model collision is when two departments request the same data at once, and JEEV resolves it by queueing the requests in the shared feature store service.",
+            "Model collision is when departmental models act in contradiction (marketing subsidizes a user that risk flagged for default); JEEV unifies them in one net profit equation."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7723,10 +7723,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexPredict Core engine, why does the decision router prioritize the Unsupervised Anomaly / Fraud gate (Stage 1) ahead of credit scoring and churn retention?",
           "options": [
-            "Because fraud algorithms use more electricity than marketing models.",
-            "Fraud detection is only run when the bank is closed for holidays.",
-            "If a transaction is fraudulent or anomalous, executing marketing promotions or extending credit lines exposes the enterprise to immediate criminal loss; security quarantine must precede all commercial actions.",
-            "The Basel Accords prohibit credit cards from having fraud protection."
+            "Fraud checks are the cheapest model to run, so placing them first reduces compute cost; the order has no effect on the loss from fraudulent accounts.",
+            "Fraud detection is the most accurate model in the pipeline, so its output is passed as the main input to credit scoring and churn retention models.",
+            "If a transaction is fraudulent, promotions or credit lines would expose the enterprise to criminal loss, so security quarantine must precede commercial actions.",
+            "Fraud flags are generated by the credit score itself, so the router runs it first to avoid computing the same variables twice in the pipeline."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7753,10 +7753,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do enterprise software architects prioritize the 99th percentile (p99) latency over arithmetic mean latency when evaluating production machine learning SLAs?",
           "options": [
-            "Percentiles are legally required to be written in Roman numerals.",
-            "Arithmetic mean conceals dangerous outlier latency spikes that cause customer timeouts; p99 reflects the worst-case experience of the slowest 1% of transactions, certifying system stability.",
-            "p99 latency only applies to models built in the 1990s.",
-            "The arithmetic mean cannot be calculated for numbers with decimal points."
+            "The arithmetic mean cannot be computed on streaming data, whereas p99 needs only a counter, so it is cheaper to track for each service in production.",
+            "The arithmetic mean hides outlier latency spikes that cause customer timeouts; p99 shows the worst-case experience of the slowest 1% of transactions.",
+            "The arithmetic mean is skewed by the fastest 1% of transactions, whereas p99 ignores them, so it reflects the typical customer experience in production.",
+            "The arithmetic mean measures only network time, whereas p99 includes the model computation time, so it is the only complete SLA measure of speed."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7783,10 +7783,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Milestone 8 Executive Evaluation Gate, how does the analytics lead mathematically defend ApexPredict's decision to suppress retention discounts for high-churn accounts that also exhibit high default risk?",
           "options": [
-            "By presenting the Joint Expected Economic Value (JEEV) formulation: subsidizing customers facing imminent bankruptcy default accelerates credit write-offs that far exceed retained LTV, destroying shareholder capital.",
-            "By arguing that marketing discounts are illegal under international maritime law.",
-            "By stating that churned customers are not worthy of attention.",
-            "By demonstrating that coin flips are superior to machine learning algorithms."
+            "By presenting the JEEV formulation: subsidizing customers facing imminent default accelerates credit write-offs that far exceed retained LTV, destroying shareholder capital.",
+            "By presenting the JEEV formulation: retention discounts raise retention, but the compliance department forbids any marketing contact with customers flagged for default risk.",
+            "By presenting the JEEV formulation: high-churn accounts have low lifetime value, so any retention discount costs more than the revenue those customers could still produce.",
+            "By presenting the JEEV formulation: discounting default-prone customers lowers their credit limits automatically, which reduces write-offs and protects shareholder capital."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7839,10 +7839,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Apache Spark distributed architecture, what is the fundamental mathematical benefit of Resilient Distributed Dataset (RDD) Lineage Graphs and Lazy Evaluation?",
           "options": [
-            "Lazy evaluation means that programmers do not have to write code on weekends.",
-            "Transformations are recorded as a directed acyclic graph rather than computed immediately, allowing lost partitions to be recomputed on-the-fly after a worker crash without expensive disk replication.",
-            "It forces all computer screens in the office to turn off after 5:00 PM.",
-            "It eliminates the need for computer processors by running on optical lasers."
+            "Every transformation is written to disk with three replicas as soon as it is defined, so a worker crash requires no recomputation of any partition.",
+            "Transformations are recorded as a DAG and not computed immediately, so lost partitions are recomputed after a worker crash without costly disk replication.",
+            "Transformations are executed immediately on the driver node and results are cached there, so executors can reload lost partitions from the driver.",
+            "Transformations are compiled into a single SQL query plan and sent to the database, so Spark workers do not hold any partitions that could be lost."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7868,10 +7868,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary cause of 'The 99% Straggler Problem' in distributed Apache Spark shuffle operations, and how does Key Salting resolve it?",
           "options": [
-            "Stragglers are caused by computer cooling fans running too slowly.",
-            "Key salting refers to adding sodium chloride to the server motherboard to improve electrical conductivity.",
-            "Data skew causes records with a high-frequency key to hash to a single executor, creating a massive bottleneck; Key Salting appends random suffixes to distribute the skewed key across multiple executors.",
-            "Spark stragglers occur only when running on battery power."
+            "Network latency between executors delays the final partition; Key Salting encrypts each key with a random suffix so shuffled data travels faster between nodes.",
+            "Insufficient driver memory slows the final task; Key Salting appends random suffixes to each record so the driver can cache the results across executors.",
+            "Data skew sends records with a high-frequency key to one executor, creating a bottleneck; Key Salting appends random suffixes to spread the hot key across executors.",
+            "Too many small partitions overload the scheduler; Key Salting appends random suffixes to merge neighboring keys into fewer and larger partitions."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7897,10 +7897,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a Broadcast Hash Join (Map-Side Join) vastly superior to a Sort-Merge Join when joining a 500-million row fact table with a 500-row merchant reference table in PySpark?",
           "options": [
-            "Broadcast joins require the computer monitor to be turned to maximum brightness.",
-            "Sort-merge joins are illegal under European Union competition laws.",
-            "Broadcast joins only work when the internet connection is turned off.",
-            "The small reference table is copied to all worker nodes in memory, allowing executors to join records locally with zero network shuffle and zero sorting of the massive fact table."
+            "The small table is sorted and split across workers by key, so each executor joins its share of the fact table after a smaller shuffle of both tables.",
+            "The fact table is first filtered to 500 rows using a hash index, so the sort-merge step runs on a tiny dataset and finishes within a few seconds.",
+            "The small table is written to a shared file system, so executors read it on demand without any memory use, though the fact table is still fully sorted.",
+            "The small table is copied to every worker's memory, so executors join locally with no network shuffle and no sorting of the massive fact table."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -7927,10 +7927,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Apache Spark's Unified Memory Management model, what happens when an intensive distributed shuffle join requires more execution memory than is currently available in unified RAM?",
           "options": [
-            "Execution memory takes strict priority: it forcibly evicts cached DataFrame blocks from storage memory to disk, and if unified memory is still insufficient, spills its own buffers to disk.",
-            "The computer immediately deletes the operating system.",
-            "Spark shuts down all worker nodes and sends an email to the company CEO.",
-            "Execution memory is permanently blocked from ever using more than 10 MB of RAM."
+            "Execution memory has priority: it evicts cached DataFrame blocks from storage memory to disk, and if memory is still insufficient it spills its own buffers to disk.",
+            "Storage memory has priority: cached blocks stay in RAM, and the join fails with an out-of-memory error as soon as execution memory runs out of space.",
+            "Spark pauses the join until cached DataFrame blocks expire on their own, then resumes using the memory they release back into the unified region.",
+            "Execution memory borrows from the JVM heap outside the unified region, so the cached blocks and the shuffle buffers are left untouched and unmoved."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7956,10 +7956,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does storing big data in columnar Parquet or Delta Lake format with partition pruning drastically reduce cloud compute and storage costs compared to raw JSON/CSV files?",
           "options": [
-            "Parquet automatically converts all computer files into free promotional credits.",
-            "Parquet stores data column-by-column with compressed metadata statistics, allowing Spark to read only the specific columns and partition date slices required for a query, skipping 90%+ of irrelevant bytes.",
-            "Parquet files can only be read on Sundays when cloud electricity is cheaper.",
-            "Columnar formats delete 95% of customer records permanently to save money."
+            "Parquet stores data row by row with a global index, so Spark seeks directly to the needed records and skips the remaining files in the table.",
+            "Parquet stores data column by column with compressed statistics, so Spark reads only the needed columns and partition slices, skipping most irrelevant bytes.",
+            "Parquet converts all values to text strings with run-length compression, so Spark scans the file faster and pays less for the storage space.",
+            "Parquet keeps the full table in cloud memory permanently, so queries read from RAM and avoid object storage charges for scanning the data."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8011,10 +8011,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In real-time stream processing, what is the mathematical function of a Watermark W(t) = max(EventTime) - Delta?",
           "options": [
-            "It measures the water level in the computer server room.",
-            "Watermarks are used to encrypt passwords on the internet.",
-            "It acts as a temporal progress assertion guaranteeing that, with high probability, no further events older than W(t) will arrive, allowing the engine to close windows and purge state.",
-            "It prints a copyright stamp on all data records."
+            "It sets the exact arrival time of every event, so the engine can sort late data into the correct window and retain all of its state forever.",
+            "It measures the processing delay of each operator, so the engine can add parallelism whenever watermarks fall behind the system clock.",
+            "It asserts temporal progress: with high probability no events older than W(t) will arrive, so the engine can close windows and purge state.",
+            "It guarantees that no event can ever arrive late, so the engine can close windows and purge state with zero data loss at all."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8040,10 +8040,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an Apache Kafka distributed streaming architecture, what does 'Consumer Group Lag' measure, and why is an explosion in lag critical to enterprise operations?",
           "options": [
-            "Lag indicates that the computer screen has fallen asleep.",
-            "Lag measures the difference between messages produced (LEO) and messages processed (Committed Offset); lag explosion means consumers are falling behind, causing real-time models to operate on stale data.",
-            "Consumer lag only occurs when the company fails to pay its internet bill.",
-            "Lag measures the physical weight of the server rack in kilograms."
+            "Lag is the gap between the oldest and newest messages stored in a partition; an explosion means disks are filling up and brokers will drop messages.",
+            "Lag is the gap between messages produced (LEO) and messages processed (committed offset); a lag explosion means consumers fall behind and models act on stale data.",
+            "Lag is the network round-trip time between producer and broker; an explosion means messages are lost in transit and models receive incomplete data.",
+            "Lag is the number of consumers missing from a group; an explosion means partitions are unassigned and the producers must slow down their writes."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8069,10 +8069,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In stateful stream processing with Apache Flink, how does the Chandy-Lamport Asynchronous Barrier Snapshotting algorithm achieve fault-tolerant checkpoints?",
           "options": [
-            "Lightweight checkpoint barrier markers flow through the event stream, allowing operators to snapshot their local state to cloud storage asynchronously without pausing live data processing.",
-            "It shuts down the entire data center every five minutes to take a physical photograph of the server screens.",
-            "It deletes all historical data permanently to prevent errors.",
-            "Checkpoints can only be saved when customer transaction volume reaches zero."
+            "Lightweight barrier markers flow through the event stream, so operators snapshot local state to cloud storage asynchronously without pausing live processing.",
+            "The whole job is paused at fixed intervals, and every operator writes its state to disk in sequence before processing resumes from the same point.",
+            "Every record is written to a durable log before processing, and on failure the job replays the whole log from the first record ever received.",
+            "Each operator replicates its state to a standby node on every record, so failover is instant and no snapshots or barriers are needed at all."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8098,10 +8098,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is 'Training-Serving Skew' in enterprise machine learning, and how does a Dual-Storage Feature Store (Feast) permanently eliminate it?",
           "options": [
-            "It describes a situation where an algorithm only works during morning hours.",
-            "It refers to training models on laptops instead of desktop computers.",
-            "Training-serving skew is when the computer monitor is tilted at a crooked angle.",
-            "Training-serving skew occurs when features used during offline model training differ from features computed in online production; Feature Stores define features once and sync them across both offline BigQuery and online Redis storage."
+            "It is when the model's accuracy decays as customer behavior changes; Feature Stores retrain the model every night on fresh data from the warehouse.",
+            "It is when training data are larger than serving data; Feature Stores compress the training set until it matches the volume seen in production online.",
+            "It is when different teams label the same feature differently; Feature Stores force every team to use a single central naming convention in code.",
+            "Features used in offline training differ from those computed online; Feature Stores define features once and sync them to offline BigQuery and online Redis."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8127,10 +8127,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Chicago thunderstorm dynamic pricing incident, what was the root cause that prevented the pricing model from applying the required surge multiplier?",
           "options": [
-            "The pricing model crashed because lightning struck the credit card office.",
-            "The computer algorithm was allergic to rainwater.",
-            "A severe Kafka consumer lag explosion caused the pricing model to evaluate 45-minute-old stale weather telemetry from when skies were clear, blinding the model to real-time storm demand.",
-            "Drivers voted unanimously to work for free during storms."
+            "A weather API outage returned empty telemetry, so the model assumed clear skies and capped the surge multiplier at its default value of 1.0 during the storm.",
+            "A feature store schema change renamed the weather field, so the model read null values and applied no multiplier during the storm period in Chicago.",
+            "A Kafka consumer lag explosion made the model evaluate 45-minute-old weather telemetry from when skies were clear, blinding it to real-time storm demand.",
+            "A regulator-set price cap blocked surge multipliers during declared emergencies, so the model's output was overridden before it reached any customers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8184,10 +8184,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Mixed-Integer Linear Programming, why is simply rounding the fractional results of a continuous LP relaxation to the nearest integer considered unacceptable in enterprise operations?",
           "options": [
-            "Continuous variables are always negative in business analytics.",
-            "Rounding numbers is prohibited by international copyright laws.",
-            "Calculators cannot multiply numbers that have been rounded.",
-            "Rounded solutions frequently violate critical physical capacity constraints (causing operational infeasibility) or open redundant facilities that waste millions in unnecessary capital expenditure."
+            "Rounded solutions improve the objective but exceed the memory limits of the solver, so large models cannot be rounded in production environments.",
+            "Rounded solutions lose the dual variables of the LP, so shadow prices cannot be reported to managers after the integer solution is accepted.",
+            "Rounded solutions keep the optimal value exactly, but break the sign of the decision variables, so negative quantities appear in schedules.",
+            "Rounded solutions often violate physical capacity constraints, causing infeasibility, or open redundant facilities that waste millions in capital expenditure."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8213,10 +8213,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Branch-and-Bound algorithm, under what condition is a node in the search tree 'Pruned by Bound'?",
           "options": [
-            "When the continuous LP relaxation upper bound of that subtree is less than or equal to the current best known integer incumbent solution, proving that no integer solution in that subtree can beat the incumbent.",
-            "When the computer runs out of battery power.",
-            "When the number of variables exceeds the date of the month.",
-            "Pruning by bound only occurs when all decision variables equal zero."
+            "When the LP relaxation upper bound of the subtree is less than or equal to the best integer incumbent, so no integer solution there can beat it.",
+            "When the LP relaxation upper bound of the subtree is greater than the best integer incumbent, so every solution there is guaranteed to improve on it.",
+            "When the LP relaxation of the subtree returns an integer solution, so no further branching is possible and the node can be pruned at once.",
+            "When the LP relaxation of the subtree is infeasible, so no solution exists there and the node is removed from the search tree entirely."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8243,10 +8243,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a Gomory Fractional Cut accelerate the convergence of Mixed-Integer Linear Programs in Branch-and-Cut solvers?",
           "options": [
-            "Gomory cuts are only used in retail clothing manufacturing.",
-            "It generates a new linear constraint directly from the fractional Simplex tableau row that renders the fractional vertex infeasible while preserving all valid integer points.",
-            "It multiplies all numbers by ten to eliminate decimal points.",
-            "It deletes all constraints that contain negative numbers."
+            "It rounds the fractional variable up and adds a bound on it in the tableau, which cuts off the fractional vertex and the nearby integer points.",
+            "It builds a new linear constraint from the fractional simplex tableau row that cuts off the fractional vertex while keeping all valid integer points.",
+            "It adds a constraint forcing every variable to equal its nearest integer, which makes the relaxation integral without any need for branching.",
+            "It removes the fractional variable from the model and resolves the LP, so the fractional vertex is cut away along with part of the integer region."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8272,10 +8272,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Capacitated Facility Location Problem, what is the core economic trade-off evaluated by the mixed-integer objective function?",
           "options": [
-            "Facility location models only evaluate the cost of office furniture.",
-            "The trade-off between airplane speed and train ticket prices.",
-            "The trade-off between fixed annual facility leasing costs (incurred only if a warehouse is opened) versus variable transportation shipping costs to customer demand zones.",
-            "The trade-off between employee uniform colors."
+            "The trade-off between inventory holding costs at each warehouse and stockout penalties at each customer zone, with no fixed cost for opening a site.",
+            "The trade-off between the purchase price of products and the sale price to customers, with warehouses chosen to maximize the margin per unit sold.",
+            "The trade-off between fixed annual facility leasing costs (incurred only if a warehouse is opened) and variable transportation costs to customer demand zones.",
+            "The trade-off between the number of warehouses and the number of trucks, with leasing costs ignored because they are the same for every site."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8301,10 +8301,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In production operations research, what is the primary business justification for setting a commercial MIP Gap tolerance (e.g. 1.0% gap) rather than requiring a 0.0% provable optimum?",
           "options": [
-            "A 0.0% gap causes the computer monitor to catch fire.",
-            "MIP gap tolerances are required by the Federal Reserve to prevent inflation.",
-            "Optimization solvers can only run for three minutes per day.",
-            "A 1.0% gap captures 99% of all possible financial optimization gains while terminating in seconds, avoiding hours of expensive cluster compute time that yields diminishing marginal returns."
+            "A 1.0% gap is required by solver licenses, which stop after the first feasible solution found, so cost savings depend on the license class purchased.",
+            "A 1.0% gap proves the solution is within one percent of optimal for every coefficient change, so sensitivity analysis is no longer necessary.",
+            "A 1.0% gap makes the solution integral and feasible, whereas a 0.0% gap risks fractional answers that cannot be implemented in operations.",
+            "A 1.0% gap captures about 99% of the possible financial gain while stopping in seconds, avoiding hours of costly cluster compute with diminishing returns."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8355,10 +8355,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is Little's Law in queuing theory, and under what conditions does its mathematical relationship (L = lambda * W) hold true?",
           "options": [
-            "Little's Law proves that the average number of customers in a system L equals arrival rate lambda multiplied by average time in system W; it holds universally for all probability distributions and service disciplines.",
-            "Little's Law only applies to kindergarten classrooms.",
-            "Little's Law requires that all customers arrive at the exact same minute.",
-            "It states that waiting time decreases as customer arrival rates increase."
+            "The average number in the system L equals arrival rate lambda times average time in system W; it holds for any probability distribution and service discipline.",
+            "The average number in the system L equals arrival rate lambda times average time in system W; it holds only for Poisson arrivals and exponential service times.",
+            "The average time in the system W equals arrival rate lambda times the average number L; it holds for any probability distribution and service discipline.",
+            "The average number in the system L equals arrival rate lambda times average service time; it holds only when utilization is below fifty percent."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8383,10 +8383,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Discrete-Event Simulation (DES), how does 'Next-Event Time Advancement' differ from continuous fixed time-stepping dt?",
           "options": [
-            "It forces all events to happen on the hour.",
-            "Next-event advancement only works on digital watches.",
-            "It speeds up physical time in the real world.",
-            "The simulation clock advances directly from one event timestamp to the exact timestamp of the next earliest event in the priority queue, bypassing idle intervals without unnecessary computation."
+            "The clock advances by a fixed small increment dt and checks each step whether any event is due, which ensures that no event is missed.",
+            "The clock advances at the speed of real time, so each event is processed at its actual wall-clock moment and the simulation cannot run faster.",
+            "The clock jumps to the event with the largest service time in the queue, skipping short events and merging them into the next long event.",
+            "The clock jumps from one event timestamp straight to the next earliest event in the priority queue, skipping idle intervals without wasted computation."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8411,10 +8411,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do steady-state queuing formulas (such as classical Erlang-C) fail when applied to real-world operations with sudden arrival surges (such as morning airport rushes)?",
           "options": [
-            "Transient queues disappear immediately when arrival rates decrease.",
-            "Erlang-C can only be calculated in French.",
-            "Erlang-C assumes the system has reached infinite steady-state equilibrium; sudden surges trigger transient queuing dynamics where queues accumulate much faster and persist long after the surge ends.",
-            "Passenger airports are legally exempt from the laws of physics."
+            "Erlang-C assumes deterministic service times; real surges bring variable service times, so the formula underestimates agent utilization during the rushes.",
+            "Erlang-C assumes customers wait without limit; real surges cause abandonment, so the formula overstates the queue length at the busiest hour of the day.",
+            "Erlang-C assumes the system has reached steady-state equilibrium; surges create transient dynamics in which queues build faster and persist long after the surge ends.",
+            "Erlang-C assumes a single server; real operations use many agents, so the formula can be used only after scaling the load by the number of agents."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8439,10 +8439,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In queuing physics, why did downsizing the airline check-in desks from 10 agents to 6 agents cause an exponential wait time explosion rather than a proportional 40% increase?",
           "options": [
-            "Queues only increase linearly in government offices.",
-            "Waiting time scales non-linearly as rho / (1 - rho); as utilization rho approaches 1.0 (94%), the denominator approaches zero, causing queues to explode exponentially toward infinity.",
-            "Because passengers decided to walk home instead of taking flights.",
-            "Because airline computers shut down when utilization exceeds 50%."
+            "Waiting time scales linearly with the staffing ratio, so a 40% cut in agents causes a 40% longer wait; the surge came from other causes.",
+            "Waiting time scales as rho / (1 - rho); as utilization nears 1.0 (94%), the denominator approaches zero and queues explode toward infinity.",
+            "Waiting time scales as rho squared, so a 40% cut in agents quadruples the queue; at 94% utilization the effect remains moderate and stable.",
+            "Waiting time scales as the logarithm of utilization, so a cut from 10 to 6 agents adds time slowly, with queues flattening above 90%."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8468,10 +8468,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In multi-stage discrete-event queuing simulations (such as hospital patient flow), how are circular wait deadlocks mathematically prevented?",
           "options": [
-            "By enforcing a hierarchical resource acquisition ordering (releasing upstream resources before acquiring downstream locks) or implementing patient timeout reneging to break the circular wait condition.",
-            "By deleting half of the patients from the database.",
-            "Deadlocks cannot be prevented in computer simulations.",
-            "By running the computer backwards in time."
+            "By enforcing hierarchical resource ordering (release upstream resources before acquiring downstream locks) or timeout reneging to break circular wait.",
+            "By adding more beds and staff to every stage, so no patient ever waits for a resource held by another patient anywhere in the patient flow.",
+            "By serving patients strictly in arrival order at every stage, so earlier patients always hold resources before later patients can request them.",
+            "By holding every resource until the whole stage sequence is available, so patients start only when all downstream locks are acquired."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8522,10 +8522,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Agent-Based Modeling (ABM), what is meant by 'Emergent Macro Phenomena' and why does it invalidate single-equation representative agent models?",
           "options": [
-            "Relying solely on static hardcoded defaults for Complex without reconciling Adaptive against live boundary conditions.",
-            "It means that government regulators manually set every individual transaction price.",
-            "Aggregate system-level dynamics (such as price collapses or flash crashes) arise endogenously from decentralized, non-linear interactions among heterogeneous boundedly-rational agents and cannot be deduced by merely aggregating single-agent equilibrium equations.",
-            "Emergent phenomena only occur when all agents have identical data and infinite computing power."
+            "Aggregate dynamics (price collapses, flash crashes) arise from a single dominant agent whose decisions are copied by all others and can be derived from that agent's equation.",
+            "Aggregate dynamics (price collapses, flash crashes) arise from external shocks to the economy and cannot be generated by the interactions of agents inside the model.",
+            "Aggregate dynamics (price collapses, flash crashes) arise from non-linear interactions of heterogeneous boundedly-rational agents and cannot be derived from single-agent equations.",
+            "Aggregate dynamics (price collapses, flash crashes) arise from random noise in the data and disappear once enough agents are simulated to average it away."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8551,10 +8551,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core algorithmic pathology caused the multi-million dollar margin collapse in the TransContinental vs PacificSky airline fare war?",
           "options": [
-            "A power failure in New York erased the airline database.",
-            "Both automated repricing algorithms were programmed with myopic undercutting logic without hard profit margin floors or cooperative game-theoretic signaling, causing recursive feedback loops that drove fares below operating costs.",
-            "Airline customers refused to accept cheaper plane tickets.",
-            "The algorithms were hacked by Russian intelligence agents."
+            "Both repricing algorithms were trained on stale demand data from the previous season, so they set fares far below what travelers were willing to pay.",
+            "Both repricing algorithms used myopic undercutting rules with no margin floor or cooperative signaling, creating feedback loops that drove fares below cost.",
+            "Both repricing algorithms used cooperative price matching with no competitive floor, so fares rose in lockstep until demand collapsed across all routes.",
+            "Both repricing algorithms were attacked by fare-scraping bots, which flooded the booking systems with fake searches that lowered the posted fares."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8579,10 +8579,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Enterprise Agent-Based Market Simulator, why did aggressive undercutting firms go bankrupt despite initially capturing high market share?",
           "options": [
-            "Undercutting prices below full operating cost generated negative gross margins; as volume surged, cash burn accelerated rapidly, depleting initial cash reserves and triggering corporate bankruptcy.",
-            "Because consumers refused to purchase goods from companies with low prices.",
-            "Because undercutting algorithms are illegal under international maritime law.",
-            "Undercutting firms always earn higher profits than margin preservers in all markets."
+            "Pricing below full operating cost produced negative gross margins; as volume surged, cash burn accelerated, depleting reserves and triggering bankruptcy.",
+            "Cutting prices triggered a regulatory fine for predatory pricing, which drained their cash reserves before they could recover any market share.",
+            "Cutting prices lowered product quality, so customers returned goods in large numbers and the refund costs depleted their cash reserves.",
+            "Cutting prices reduced volume at the start, because customers waited for lower prices, so revenue fell short and reserves were depleted."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8607,10 +8607,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do uncalibrated, synchronous agent-based pricing models frequently produce artificial flash crashes and violent oscillations in simulation?",
           "options": [
-            "Oscillations only happen when computer monitors are unplugged.",
-            "Because Python cannot perform floating point math accurately.",
-            "Because consumers always buy from the most expensive store.",
-            "Simultaneous updates combined with undamped, high-gain reaction rates cause algorithms to overreact simultaneously to prior-round states, generating divergent feedback whiplash and artificial limit cycles."
+            "Asynchronous updates with small, damped reaction rates make algorithms ignore prior-round states, creating stagnant prices and artificial lock-in.",
+            "Random agent placement on the grid with too few neighbors makes algorithms react to noise, creating diverging prices and artificial limit cycles.",
+            "Agents that learn from historical data with no memory limit overweight old prices, creating slowly drifting prices and artificial price floors.",
+            "Simultaneous updates with undamped, high-gain reaction rates make algorithms overreact together to prior states, creating divergent feedback and limit cycles."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8635,10 +8635,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate pricing strategy, why does an Axelrod-style 'Tit-for-Tat with Hard Margin Floor' algorithm consistently outperform naive undercutting algorithms in competitive markets?",
           "options": [
-            "It outperforms competitors by permanently shutting down the company website.",
-            "Tit-for-Tat only works when there is a single monopoly seller.",
-            "It matches competitor cuts to deter unprovoked predatory pricing, immediately forgives when rivals raise prices, and strictly enforces a hard margin floor to prevent selling goods at catastrophic operating losses.",
-            "Because it threatens competitors with physical violence."
+            "It cuts prices below the competitor's by a fixed percentage at every turn, does not forgive, and applies a hard margin floor only at year end.",
+            "It ignores competitor price changes entirely, holds a constant list price, and enforces a hard margin floor to avoid losses in quarterly reviews.",
+            "It matches competitor cuts to deter predatory pricing, forgives when rivals raise prices, and enforces a hard margin floor to avoid selling at catastrophic losses.",
+            "It raises prices whenever rivals cut prices, to signal strength, and forgives only after a long delay; the margin floor is set by the competitor."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8689,10 +8689,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Rubin Causal Model, why does a naive difference in means E[Y|W=1] - E[Y|W=0] between adopters and non-adopters fail to measure the true causal impact of a feature?",
           "options": [
-            "Because observational data can never be loaded into computers.",
-            "Because the naive difference conflates the true treatment effect with Selection Bias: pre-existing baseline differences between self-selected adopters and non-adopters.",
-            "Because SUTVA requires all customers to have identical names.",
-            "The naive difference is always equal to zero in business analytics."
+            "Because the naive difference measures the effect on the whole population, whereas the causal impact applies only to the self-selected adopters of the feature.",
+            "Because the naive difference mixes the true treatment effect with selection bias: pre-existing baseline differences between self-selected adopters and non-adopters.",
+            "Because the naive difference uses sample means instead of population means, so sampling error inflates the apparent effect of the feature in every dataset.",
+            "Because the naive difference ignores the order in which users adopted the feature, so early adopters are weighted the same as late adopters in the mean."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8717,10 +8717,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the credit card rewards forensic audit, what critical baseline evidence revealed that the marketing team's claimed $10,100 spend lift was a statistical illusion?",
           "options": [
-            "The marketing team forgot to calculate credit scores.",
-            "The credit card company was founded in Delaware.",
-            "Cardholders who enrolled in Premium Rewards were already spending $13,850 annually before the rewards program was ever launched, proving that pre-existing customer wealth caused high spend rather than the rewards.",
-            "All transactions were denominated in gold bullion."
+            "Cardholders enrolled in Premium Rewards were spending $13,850 a year because the program doubled their credit limits, so the limit increase explained high spend.",
+            "Cardholders enrolled in Premium Rewards were already churning at twice the usual rate before the program launched, so retention, not spend, explained the lift.",
+            "Cardholders enrolled in Premium Rewards were already spending $13,850 a year before the program launched, so pre-existing wealth, not the rewards, explained high spend.",
+            "Cardholders enrolled in Premium Rewards were mostly new customers who joined during a holiday period, so seasonal demand, not the rewards, explained high spend."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8746,10 +8746,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the central mathematical principle of Rosenbaum and Rubin's (1983) Propensity Score Balancing Theorem?",
           "options": [
-            "It states that propensity scores can only be calculated using paper and pencil.",
-            "Propensity scores replace the need for data collection.",
-            "It proves that all customers have the exact same credit card spending.",
-            "If treatment assignment is conditionally unconfounded given multi-dimensional covariates X, then conditioning on the scalar one-dimensional propensity score e(X) = P(W=1|X) completely balances all covariates across treated and control cohorts."
+            "If treatment assignment is random, conditioning on the propensity score e(X) = P(W=1|X) is needed to balance covariates between treated and control groups.",
+            "If treatment assignment is unconfounded given X, the propensity score e(X) = P(W=1|X) balances only the outcome variable, not the covariates themselves.",
+            "If covariates are balanced between treated and control groups, the propensity score e(X) = P(W=1|X) becomes constant and the groups are identical.",
+            "If treatment assignment is unconfounded given X, conditioning on the scalar propensity score e(X) = P(W=1|X) balances all covariates between treated and control groups."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8774,10 +8774,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is 'Propensity Trimming' (e.g. discarding observations with e(X) < 0.05 or e(X) > 0.95) mathematically mandatory when using Inverse Probability Weighting (IPW)?",
           "options": [
-            "Propensity scores near 0.0 or 1.0 violate the Positivity assumption, causing IPW weights (1/e or 1/(1-e)) to explode to infinity, which destabilizes the estimator and introduces massive sampling variance.",
-            "Because credit card companies only accept numbers ending in 5.",
-            "Trimming is done to reduce the size of Excel spreadsheets.",
-            "Propensity scores cannot be calculated for treated customers."
+            "Scores near 0.0 or 1.0 violate Positivity, so IPW weights (1/e or 1/(1-e)) explode, destabilizing the estimator and adding huge sampling variance.",
+            "Scores near 0.0 or 1.0 violate the Normality assumption, so the IPW weights lose their symmetric shape and bias the estimated treatment effect.",
+            "Scores near 0.5 violate Positivity, so IPW weights (1/e or 1/(1-e)) shrink toward one, removing the correction and leaving the bias in place.",
+            "Scores near 0.0 or 1.0 violate Ignorability, so the observed covariates cannot explain treatment and the IPW estimator is biased, not noisy."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8802,10 +8802,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Rosenbaum Bounds sensitivity parameter of Gamma = 1.75 mean in observational causal inference?",
           "options": [
-            "It indicates that the machine learning model had 175 layers.",
-            "It means that an unobserved confounder would have to alter the odds of treatment adoption by a factor of 1.75 (a 75% increase in adoption odds) between matched pairs to overturn the statistical significance of the causal finding.",
-            "It means that 1.75% of the data was deleted.",
-            "Gamma = 1.75 means the company should hire 175 new analysts."
+            "The causal effect is 1.75 times larger than the effect of any observed covariate, so the result is robust to confounders that were measured.",
+            "An unobserved confounder would need to change the odds of treatment adoption by a factor of 1.75 between matched pairs to overturn the finding's significance.",
+            "An unobserved confounder would need to explain 1.75% of the variance in the outcome to overturn the significance of the causal finding.",
+            "The treated group is 1.75 times the size of the control group, so matched pairs cannot be formed for all units and the finding is fragile."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8856,10 +8856,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In customer analytics, why does a standard machine learning churn prediction model frequently trigger a surge in customer cancellations when targeted with marketing emails?",
           "options": [
-            "Traditional churn models predict baseline risk P(Churn|X), which gives high scores to 'Sleeping Dogs'—inactive customers who are quietly paying recurring subscriptions; contacting them reminds them of the expense, prompting immediate cancellations.",
-            "Because marketing emails cause computer monitors to explode.",
-            "Churn models only work on customers with gmail addresses.",
-            "Traditional models always achieve 100% conversion rates."
+            "Churn models predict baseline risk P(Churn|X) and score 'Sleeping Dogs' high: inactive customers quietly paying, whom contact reminds of the expense and prompts to cancel.",
+            "Churn models predict baseline risk P(Churn|X) and score 'Lost Causes' high: customers who leave regardless, so emails waste budget but cannot raise cancellations.",
+            "Churn models predict the incremental effect of email and score 'Persuadables' high: customers whom emails retain, so cancellations rise when emails are skipped.",
+            "Churn models predict baseline risk P(Churn|X) and are miscalibrated: probabilities above 0.5 are too low, so the emails reach too few customers to matter."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8884,10 +8884,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the digital publisher forensic audit, what experimental design element conclusively proved that the email campaign caused customer cancellations rather than normal background churn?",
           "options": [
-            "A survey was posted on Twitter asking users why they cancelled.",
-            "Experimental holdouts cannot measure cancellation rates.",
-            "The marketing director admitted to sending the wrong emails.",
-            "A randomized holdout control group of 20,000 identical inactive subscribers who were never contacted; they auto-renewed at 78%, while the contacted group renewed at only 57%, proving a -21% causal treatment effect."
+            "A before-and-after comparison showed renewals falling from 78% to 57% in the month of the campaign, which proved a -21% causal effect of the emails.",
+            "A matched sample of 20,000 similar subscribers from last year renewed at 78%, against 57% this year, which proved a -21% effect of the emails.",
+            "A survey of 20,000 contacted subscribers found 57% would renew, against 78% of last year's customers, which proved a -21% causal effect.",
+            "A randomized holdout of 20,000 identical inactive subscribers was never contacted and renewed at 78% against 57% for the contacted group: a -21% causal effect."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -8912,10 +8912,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In randomized marketing trials, how does Lai's Class Transformation method allow any standard binary classification algorithm to perform causal uplift modeling?",
           "options": [
-            "Class transformation deletes all customers who did not buy.",
-            "It requires customer data to be encrypted with quantum keys.",
-            "By defining a transformed binary target Z = Y*W + (1-Y)*(1-W), where E[Z|X] = 1/2 + 1/2*tau(x); training a standard classifier to predict P(Z=1|X) yields predicted uplift tau(x) = 2*P(Z=1|X) - 1.",
-            "It converts customer phone numbers into binary code."
+            "It defines a transformed target Z = Y*W, so E[Z|X] = tau(x); a standard classifier of P(Z=1|X) gives uplift tau(x) = P(Z=1|X) directly for each customer.",
+            "It trains two separate classifiers for treated and control groups, then subtracts their predicted probabilities: tau(x) = P(Y=1|X,W=1) - P(Y=1|X,W=0).",
+            "It defines a transformed target Z = Y*W + (1-Y)*(1-W), so E[Z|X] = 1/2 + 1/2*tau(x); a standard classifier of P(Z=1|X) gives uplift tau(x) = 2*P(Z=1|X) - 1.",
+            "It defines a transformed target Z = Y + W, so E[Z|X] = E[Y|X] + 1/2; a standard classifier of P(Z=1|X) gives uplift tau(x) = P(Z=1|X) - 1/2."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8940,10 +8940,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "On a Qini Curve evaluating an uplift model, what does it indicate when the curve reaches a high peak around the 50th percentile and then slopes downward toward the 100th percentile?",
           "options": [
-            "Qini curves always slope downward in economics.",
-            "It indicates the presence of 'Sleeping Dogs' in the bottom deciles: contacting customers in those deciles produces negative treatment effects (tau < 0), causing net incremental conversions to decline as outreach expands.",
-            "It indicates that the computer ran out of memory.",
-            "A downward sloping Qini curve means the model is 100% random."
+            "It indicates 'Persuadables' in the bottom deciles: contacting them has large positive effects (tau > 0), so conversions keep falling as outreach expands.",
+            "It indicates 'Sleeping Dogs' in the bottom deciles: contacting them has negative effects (tau < 0), so net incremental conversions decline as outreach expands.",
+            "It indicates a model with no ranking power: the curve would match the random-targeting diagonal, so conversions fall as outreach expands across deciles.",
+            "It indicates 'Sure Things' in the bottom deciles: they convert with or without contact, so extra outreach only adds cost without changing the curve."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8968,10 +8968,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In production uplift marketing, under what exact mathematical condition should a customer be selected for an outreach campaign when contact cost is C and conversion value is V?",
           "options": [
-            "A customer should be contacted if and only if their predicted causal uplift satisfies tau_hat >= C / V, ensuring that expected incremental revenue exceeds the marginal outreach cost.",
-            "A customer should be contacted if they have visited the website in the past five minutes.",
-            "All customers should be contacted regardless of cost.",
-            "Uplift models require that C and V are equal to zero."
+            "A customer should be contacted if and only if predicted uplift satisfies tau_hat >= C / V, so expected incremental revenue exceeds the marginal outreach cost.",
+            "A customer should be contacted if and only if the predicted conversion probability satisfies p_hat >= C / V, whatever the effect of the contact itself.",
+            "A customer should be contacted if and only if predicted uplift satisfies tau_hat >= C * V, so expected incremental revenue exceeds the outreach cost.",
+            "A customer should be contacted if and only if predicted uplift satisfies tau_hat >= V / C, so expected incremental revenue exceeds the outreach cost."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9022,10 +9022,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary reason why Edward Altman's Multi-Discriminant Analysis (Z-Score) vastly outperforms single univariate ratio checks for predicting corporate bankruptcy?",
           "options": [
-            "Altman Z-scores can only be computed by certified public accountants.",
-            "Because single ratios were outlawed by the Securities and Exchange Commission in 1968.",
-            "Z-scores ignore balance sheet data entirely and only analyze stock prices.",
-            "Corporate financial distress is a multivariate state governed by the joint covariance of liquidity, profitability, leverage, and asset turnover; individual ratios in isolation fail to capture simultaneous cross-balance-sheet degradation."
+            "Single ratios are computed from audited statements while the Z-Score uses market prices, which makes it unaffected by accounting manipulation in the filings.",
+            "Univariate ratios cannot be compared across industries, whereas the Z-Score removes industry effects by adding fixed weights to each of five ratios.",
+            "Single ratios require annual data, whereas the Z-Score is computed from daily stock prices and therefore reacts to distress faster than any ratio.",
+            "Financial distress is multivariate (liquidity, profitability, leverage, turnover together); individual ratios in isolation miss degradation across the balance sheet."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9051,10 +9051,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Tier-1 supplier bankruptcy forensic audit, what critical balance sheet warning sign did the procurement spreadsheet team miss by only tracking sales growth and gross margins?",
           "options": [
-            "Vanguard's working capital had flipped into a negative $500M deficit and retained earnings were depleted; the Altman Z-score had collapsed to 0.88 (deep distress zone) 18 months before Chapter 11 was filed.",
-            "The supplier changed the color of their corporate logo.",
-            "The supplier had no employees on payroll.",
-            "Bankruptcy cannot be predicted from financial statements."
+            "Vanguard's working capital had flipped to a -$500M deficit and retained earnings were depleted; the Altman Z-score had collapsed to 0.88 18 months before Chapter 11.",
+            "Vanguard's gross margin had fallen below the industry average and sales growth was slowing; the Altman Z-score stayed near 3.2 (safe zone) until Chapter 11.",
+            "Vanguard's inventory turnover had doubled and cash was building up; the Altman Z-score had risen to 2.5 (grey zone) 18 months before Chapter 11 was filed.",
+            "Vanguard's largest customer had cancelled its contract and receivables were rising; the Altman Z-score had held at 1.9 (grey zone) 18 months before Chapter 11."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9079,10 +9079,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is James Ohlson's O-Score preferred over Edward Altman's Z-Score when calculating regulatory capital reserves under Basel III/IV standards?",
           "options": [
-            "Z-scores are only valid for companies located in California.",
-            "Ohlson's model uses conditional logistic regression to output a mathematically calibrated Probability of Default (PD in [0, 1]) without requiring restrictive multivariate normal distribution assumptions.",
-            "Ohlson scores are calculated using stock trading volumes only.",
-            "Because Ohlson was an Olympic gold medalist."
+            "Ohlson's model uses discriminant analysis to output a bankruptcy score between 0 and 5, with cutoffs set by industry rather than by a probability.",
+            "Ohlson's conditional logistic model outputs a calibrated Probability of Default (PD in [0, 1]) without restrictive multivariate normality assumptions.",
+            "Ohlson's model uses market-based option pricing to output an implied asset volatility, which regulators convert directly into capital reserves.",
+            "Ohlson's model uses a neural network to output a default probability, which avoids any need for financial statements or accounting ratios."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9108,10 +9108,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In forensic financial accounting, why does a Messod Beneish M-Score of M = -1.18 indicate an extreme probability of earnings manipulation and accounting fraud?",
           "options": [
-            "The cutoff is only applied on leap years.",
-            "Because -1.18 is an unlucky number in numerology.",
-            "The standard forensic cutoff is M = -1.78; because scores are negative, any score greater (less negative) than -1.78 indicates high probability of fraud, driven by uncollected receivables (DSRI) and large non-cash accruals (TATA).",
-            "M-Scores greater than -1.78 mean the company has zero bank accounts."
+            "The forensic cutoff is M = -2.22; because scores are negative, any score below -2.22 signals a high probability of fraud driven by sales growth and leverage.",
+            "The forensic cutoff is M = 0; because scores are centered at zero, any score above 0 only signals fraud when driven by asset quality (AQI).",
+            "The cutoff is M = -1.78; a score greater (less negative) than -1.78 signals a high probability of fraud from receivables growth (DSRI) and accruals (TATA).",
+            "The forensic cutoff is M = -1.78; since scores are negative, a score below -1.78 signals a high probability of fraud from receivables growth (DSRI) and accruals (TATA)."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9137,10 +9137,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In enterprise counterparty risk governance, how does combining the Altman Z-Score, Ohlson O-Score, and Beneish M-Score create a complete risk defense?",
           "options": [
-            "It guarantees that all suppliers will deliver goods for free.",
-            "It eliminates the need for written legal contracts.",
-            "The triad only works for agricultural commodities.",
-            "Altman Z detects balance sheet insolvency; Ohlson O provides calibrated default probabilities (PD) for Basel capital sizing; and Beneish M detects accounting manipulation and fraud that masks distress on paper."
+            "Altman Z detects accounting manipulation; Ohlson O flags balance sheet insolvency through discriminant scores; Beneish M supplies calibrated PD values for Basel capital sizing.",
+            "Altman Z supplies calibrated default probabilities for Basel capital; Ohlson O detects balance sheet insolvency; Beneish M estimates the market value of distressed debt holdings.",
+            "The three scores are different versions of one insolvency measure, so combining them mainly reduces rounding error and adds no independent protection against fraud.",
+            "Altman Z detects balance sheet insolvency; Ohlson O supplies calibrated default probabilities (PD) for Basel capital; Beneish M detects accounting manipulation that masks distress."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9191,10 +9191,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural advantage of Kaplan & Norton's Balanced Scorecard over traditional quarterly financial accounting statements?",
           "options": [
-            "The framework can only be utilized by manufacturing companies with over 100,000 employees.",
-            "The Balanced Scorecard eliminates the need for financial balance sheets and income statements entirely.",
-            "The Balanced Scorecard balances financial lagging indicators with operational, customer, and learning leading indicators within a validated causal strategy map, preventing rear-view mirror optimization.",
-            "The Balanced Scorecard allows managers to arbitrarily choose whatever numbers make their division look profitable."
+            "It replaces financial indicators with customer satisfaction and employee surveys in a single dashboard, so strategy is measured without any accounting numbers at all.",
+            "It audits financial statements more often than quarterly accounting does, using daily closes so that reporting errors are corrected before the annual report is issued.",
+            "It balances financial lagging indicators with operational, customer, and learning leading indicators in a causal strategy map, preventing rear-view mirror optimization.",
+            "It ranks business units by profit margin against competitors in a league table, so that the strongest units receive capital ahead of the weakest ones."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9220,10 +9220,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Call Center Hangup Disaster forensic audit, what behavioral pathology occurred when support agents were evaluated exclusively on Average Handle Time (AHT < 3 minutes)?",
           "options": [
-            "Agents transferred all calls to the corporate accounting department.",
-            "Agents deliberately hung up on complex customer calls at 2 minutes and 45 seconds to keep their average handle times low, destroying customer satisfaction and triggering $42M in subscriber churn.",
-            "Handle times naturally increased to 45 minutes because agents were bored.",
-            "Agents went on strike and refused to answer any phone calls."
+            "Agents transferred complex calls to colleagues at 2 minutes 45 seconds to keep average handle times low, overloading senior staff and triggering $42M in overtime costs.",
+            "Agents deliberately hung up on complex calls at 2 minutes 45 seconds to keep average handle times low, destroying satisfaction and triggering $42M in subscriber churn.",
+            "Agents rushed through scripts with uniform greetings to keep average handle times low, lowering call quality scores but leaving subscriber churn unchanged overall.",
+            "Agents placed customers on long holds after 2 minutes 45 seconds to keep average handle times low, raising wait times and triggering $42M in refunds."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9248,10 +9248,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following historical examples perfectly illustrates Goodhart's Law and the Cobra Effect in performance metrics?",
           "options": [
-            "Paying a cash bounty for dead cobras in colonial Delhi led citizens to breed cobras in their homes to collect bounties, multiplying the wild cobra population when bounties ceased.",
-            "Cobras are non-venomous and make excellent household pets.",
-            "The British government made snakes illegal in all territories.",
-            "Central banks eliminated all currency in 1975 to prevent inflation."
+            "Paying a cash bounty for dead cobras in colonial Delhi led citizens to breed cobras at home for bounties, multiplying the cobra population once bounties ceased.",
+            "Offering free parking to shoppers in a city center raised store sales, because more drivers could stop there and all of the retailers benefited from the extra visits.",
+            "Raising the speed limit on a highway shortened average travel time, because most drivers followed the new limit and congestion at the junctions fell as a result.",
+            "Awarding a bonus for lower hospital waiting times led to shorter waits, because staff treated patients faster and the quality of care rose as measured."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9276,10 +9276,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Invariant of Metric Duality, why must every primary accelerator metric be paired with an antagonistic counter-metric?",
           "options": [
-            "It guarantees that all employees work exactly 40 hours per week.",
-            "Because human resource guidelines require every metric to have an even number of syllables.",
-            "Paired metrics are required by the International Monetary Fund for currency printing.",
-            "To define acceptable operational boundary conditions and prevent metric gaming; optimizing an unconstrained accelerator metric inevitably incentivizes behavior that destroys quality, risk, or enterprise capital."
+            "To double the number of metrics each team reports; more indicators produce a higher-resolution view and reduce the variance of each individual measure.",
+            "To make every metric a ratio of two quantities; ratios cancel out scale effects and stop larger teams from looking better simply by being larger in size.",
+            "To let executives replace the accelerator with the counter-metric during downturns; only one metric is active at a time to simplify the incentives.",
+            "To define acceptable boundary conditions and prevent metric gaming; an unconstrained accelerator metric incentivizes behavior that destroys quality, risk, or capital."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9304,10 +9304,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an automated enterprise metric defense platform, how does the system detect metric gaming in real time?",
           "options": [
-            "By waiting for the company to declare bankruptcy and then checking the news.",
-            "By deleting all data from the database at midnight.",
-            "By monitoring the statistical divergence between paired accelerator and brake metrics; when an accelerator surges while its paired quality or risk counter-metric sharply deteriorates, the system flags a metric gaming tripwire.",
-            "By secretly installing keystroke loggers on every employee laptop."
+            "By monitoring whether any single metric exceeds its annual target in a given week; a metric that beats target early is flagged as gaming by default in the system.",
+            "By monitoring divergence between each metric and the industry average; when a team beats the benchmark by more than 10%, a gaming tripwire fires for review.",
+            "By monitoring divergence between paired accelerator and brake metrics; when an accelerator surges while its quality or risk counter-metric deteriorates, a gaming tripwire fires.",
+            "By monitoring how many employees view each dashboard; when views drop sharply while an accelerator is rising, the system flags metric gaming to the managers."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9359,10 +9359,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary reason why Barbara Minto's Pyramid Principle mandates leading with the 'Answer First' when presenting to corporate executives and boards of directors?",
           "options": [
-            "Executives are incapable of understanding basic arithmetic or data.",
-            "Executives operate under severe cognitive load and time constraints; stating the decisive recommendation and commercial impact upfront frames all subsequent evidence, preventing disengagement.",
-            "Answer First was established as a mandatory requirement by the federal government.",
-            "Leading with the answer is only utilized when the company has declared bankruptcy."
+            "Executives distrust data, so a recommendation stated first can be challenged right away, which lets the presenter correct objections before the evidence is shown.",
+            "Executives work under severe cognitive load and time limits; stating the decisive recommendation first frames all later evidence and prevents disengagement.",
+            "Boards require a formal order of presentation, so a recommendation must come first to satisfy governance rules before any evidence or analysis is allowed.",
+            "Answer-first keeps presentations short, since the supporting evidence slides can then be dropped entirely, saving the board time on all technical detail."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9387,10 +9387,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Cancelled $6M Pitch forensic audit, why did the Chief Executive Officer halt the 90-minute technical presentation after only 30 minutes?",
           "options": [
-            "The projector bulb burned out in the conference room.",
-            "The analytics director was wearing the wrong style of shoes.",
-            "The presentation fell into the Inductive Trap: spending 30 minutes on Snowflake schemas and missing value imputation without stating the commercial recommendation, EBITDA return, or capital budget justification.",
-            "The company had already decided to shut down all 850 retail stores."
+            "It fell into the Deductive Trap: 30 minutes on the recommendation and EBITDA return without presenting the technical methods or the data validation steps behind them.",
+            "It ran into a technical failure: 30 minutes lost to a broken projector and data connection, which left no time for the recommendation or budget justification.",
+            "It fell into the Inductive Trap: 30 minutes on Snowflake schemas and missing value imputation without stating the recommendation, EBITDA return, or capital budget justification.",
+            "It was cut short by a conflict of interest: the CEO owned a competing vendor and ended the session before the recommendation or capital budget was shown."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9415,10 +9415,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Edward Tufte's visual design principles, what is the 'Data-Ink Ratio', and why is maximizing it critical in executive boardroom presentations?",
           "options": [
-            "Maximizing data-ink means replacing all charts with 10,000-word essays.",
-            "The Data-Ink Ratio measures the cost of printer ink cartridges purchased by the IT department.",
-            "It mandates that every chart must be drawn using exactly five colors.",
-            "The Data-Ink Ratio is the proportion of a graphic's ink devoted to non-redundant quantitative information; maximizing it eliminates chartjunk and visual clutter, allowing executives to grasp critical signals rapidly."
+            "The proportion of a graphic's area filled with color; maximizing it adds visual emphasis so executives notice the key figures even from the back of a boardroom.",
+            "The ratio of data points to chart labels in a graphic; maximizing it adds annotations and grid lines so executives can read exact values from the chart quickly.",
+            "The ratio of printed ink to the page area in a graphic; maximizing it fills the whole slide with data so executives get all the figures in one view.",
+            "The share of a graphic's ink that presents non-redundant quantitative information; maximizing it removes chartjunk so executives grasp critical signals quickly."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9444,10 +9444,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When a skeptical Board member challenges an analytics presentation by stating 'Correlation is not causation, why should we trust your regression?', what is the most effective executive response?",
           "options": [
-            "Acknowledge the validity of the concern, explain in plain commercial terms why OLS is biased, demonstrate that Two-Stage Least Squares (2SLS) was used with a strong instrument (F > 10), and present E-value sensitivity bounds.",
-            "Argue loudly that the Board member does not understand basic mathematics.",
-            "Immediately withdraw the presentation and apologize for wasting the Board's time.",
-            "Tell the Board member that artificial intelligence has replaced econometrics."
+            "Acknowledge the concern, explain in plain commercial terms why OLS is biased, show that 2SLS was used with a strong instrument (F > 10), and present E-value sensitivity bounds.",
+            "Defend the regression by citing its high R-squared and low p-values, explain that significance proves the relationship is causal, and offer a larger sample.",
+            "Concede that causation cannot be established from observational data, recommend dropping the regression, and propose that the board decide without any analytics.",
+            "Redirect the question to the data team, explain that correlation is the standard of evidence in business, and present a chart of the strongest correlations found."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9472,10 +9472,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a boardroom executive decision brief evaluating competing multi-million-dollar capital investments, what core financial and strategic metrics must be synthesized to win capital allocation approval?",
           "options": [
-            "A list of the software engineers' favorite programming languages.",
-            "A Minto Pyramid Answer-First recommendation paired with Discounted Cash Flow metrics (NPV, IRR, Payback Period), multi-scenario sensitivity bounds, and high-density longitudinal visual context.",
-            "Capital allocation decisions are made exclusively through coin flips.",
-            "A 300-page binder containing raw SQL database dumps and server logs."
+            "A chronological narrative of the analysis steps with accounting profit metrics (net income, ROE, EPS), a single base case, and decorative graphics.",
+            "A Minto answer-first recommendation with DCF metrics (NPV, IRR, Payback), multi-scenario sensitivity bounds, and high-density visual context.",
+            "A technical appendix of model diagnostics with market share metrics (growth, penetration, rank), a single point estimate, and extensive animations.",
+            "An answer-last recommendation with budget metrics (cost per unit, headcount, utilization), best-case projections only, and low-density tables."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9526,10 +9526,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In mathematical Differential Privacy, why is adding calibrated Laplace noise directly proportional to Global Sensitivity (Delta f / epsilon) superior to traditional k-anonymity?",
           "options": [
-            "Differential privacy provides a provable, worst-case mathematical guarantee against arbitrary auxiliary information and linkage attacks, whereas k-anonymity is vulnerable to attribute disclosure and external database linkage.",
-            "Differential privacy makes databases run 1,000 times faster.",
-            "k-anonymity was invented before computers existed.",
-            "Laplace noise completely erases all data so no queries can ever be answered."
+            "Differential privacy gives a provable, worst-case guarantee against arbitrary auxiliary information and linkage attacks, whereas k-anonymity is open to attribute disclosure.",
+            "Differential privacy removes all identifiers from the dataset so linkage attacks have nothing to match, whereas k-anonymity leaves some direct identifiers in place.",
+            "Differential privacy encrypts each record with a secret key held by the analyst, whereas k-anonymity publishes records in plain text where anyone can read them.",
+            "Differential privacy guarantees exact query answers for the analyst, whereas k-anonymity returns approximate answers that vary with each release of the dataset."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9556,10 +9556,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the $85M mortgage discrimination forensic audit, why did deleting race from the training data fail to prevent illegal algorithmic bias?",
           "options": [
-            "The loan officers manually threw away all minority loan applications in the mail room.",
-            "The Fair Housing Act only applies to loans approved on weekends.",
-            "Because the bank's computers were infected with a physical computer virus.",
-            "The model effortlessly reconstructed racial demographics through correlated proxy variables (residential zip codes and retail transaction patterns), causing a disparate impact ratio of 0.48 that violated the EEOC 80% rule."
+            "The deletion was applied only to the test data, so the model still used race in training and produced a disparate impact ratio of 0.48 under the EEOC rule.",
+            "The model was trained on too few applicants of each race, so random sampling error produced a disparate impact ratio of 0.48 against the EEOC 80% rule.",
+            "The model used race through a separate manual override by loan officers, giving a disparate impact ratio of 0.48 that violated the EEOC 80% rule.",
+            "The model reconstructed race through proxy variables (zip codes, retail patterns), giving a disparate impact ratio of 0.48 that violated the EEOC 80% rule."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9584,10 +9584,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the Impossibility Theorem of Machine Learning Fairness (Kleinberg, Chouldechova) prove regarding fairness metrics in predictive algorithms?",
           "options": [
-            "That algorithms are incapable of predicting any future event.",
-            "That all machine learning models must be written in assembly language.",
-            "Except in trivial cases where base default rates are identical across groups, it is mathematically impossible for an algorithm to satisfy Demographic Parity, Equalized Odds, and Predictive Parity simultaneously.",
-            "Fairness can only be achieved if all candidates are rejected."
+            "With enough data and a flexible model, an algorithm can satisfy Demographic Parity, Equalized Odds, and Predictive Parity at the same time for any set of groups.",
+            "No algorithm can satisfy even one fairness metric unless base rates differ between groups, so fairness testing is limited to cases with equal base rates.",
+            "Except in trivial cases where base rates are equal across groups, no algorithm can satisfy Demographic Parity, Equalized Odds, and Predictive Parity at the same time.",
+            "Demographic Parity, Equalized Odds, and Predictive Parity are equivalent definitions, so satisfying one of them satisfies the other two whenever base rates are equal."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9613,10 +9613,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In post-processing fairness threshold optimization, how does adjusting group-specific decision thresholds (e.g. tau_maj = 0.52, tau_prot = 0.42) resolve disparate impact violations?",
           "options": [
-            "It guarantees that zero loans will ever be approved.",
-            "It compensates for proxy attenuation in protected group risk scores, ensuring the Disparate Impact Ratio exceeds the 80% legal threshold while preserving over 98% of maximum commercial portfolio profitability.",
-            "Group-specific thresholds are only permitted in Antarctica.",
-            "It forces all loan officers to undergo 500 hours of handwriting training."
+            "It removes the protected attribute from the scoring model, lifting the Disparate Impact Ratio above 80% while keeping over 98% of maximum profitability for the lender.",
+            "It compensates for proxy attenuation in protected group scores, lifting the Disparate Impact Ratio above the 80% legal threshold while keeping over 98% of maximum profitability.",
+            "It sets lower thresholds for the majority group, lifting the Disparate Impact Ratio above 80% but cutting portfolio profitability to about 60% of the maximum.",
+            "It equalizes approval rates by random lottery inside each score band, lifting the Disparate Impact Ratio above 80% while preserving all of the profitability."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9641,10 +9641,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In production enterprise analytics governance under GDPR and the India DPDP Act 2023, what is the primary role of an Automated Privacy Budget Ledger?",
           "options": [
-            "It tracks cumulative epsilon consumption across queries and blocks further analytical exports once the privacy budget is exhausted, preventing adversarial data reconstruction through repeated querying.",
-            "It deducts money from employees' salaries whenever they make a data error.",
-            "It sends an email to the prime minister every time a SQL query runs.",
-            "The ledger is only used to buy advertising space on social media."
+            "It tracks cumulative epsilon consumption across queries and blocks further exports once the privacy budget is exhausted, preventing reconstruction by repeated querying.",
+            "It tracks which analysts access each dataset and deletes the personal data after the retention period ends, preventing storage beyond the legal limit.",
+            "It resets epsilon to its full value at midnight each day and allows unlimited queries within the day, preventing noise from accumulating over time.",
+            "It records every user's consent choice and blocks exports of records whose owners have withdrawn consent, preventing processing without a legal basis."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9695,10 +9695,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When an enterprise growth team evaluates 50 metrics in a single A/B test at significance alpha = 0.05 without multiple testing correction, what is the mathematical probability of finding at least one false positive on pure random noise?",
           "options": [
-            "0.0%, because computers cannot generate false positives.",
-            "50.0%, because every test either succeeds or fails.",
-            "Exactly 5.0%, because the significance level alpha is 0.05.",
-            "92.3% (calculated via FWER = 1 - (1 - 0.05)^50), meaning the team has over a 9-out-of-10 chance of falsely declaring a statistical fluke to be a winning product change."
+            "5.0% (FWER = alpha), so the team has only a 1-in-20 chance of declaring a statistical fluke a winning change on the metrics tested.",
+            "72.2% (FWER = 1 - (1 - 0.05)^25), so the team has over a 7-in-10 chance of declaring a statistical fluke a winning change.",
+            "2.5% (FWER = alpha / 2), because a two-sided test halves the error, so there is a 1-in-40 chance of declaring a fluke a winning change.",
+            "92.3% (FWER = 1 - (1 - 0.05)^50), so the team has over a 9-in-10 chance of declaring a statistical fluke a winning change."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9724,10 +9724,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the $4M marketing campaign flop forensic audit, what fundamental statistical error led the growth team to roll out an email variation that generated zero actual revenue lift?",
           "options": [
-            "Testing 60 variations on pure noise produced 3 false positives (p < 0.05) purely by random chance; the team failed to apply Benjamini-Hochberg FDR correction, mistaking random statistical flukes for genuine commercial winners.",
-            "The marketing team forgot to send the emails to any customers.",
-            "The email servers were permanently disconnected from the internet.",
-            "Marketing campaigns are legally required to fail under SEC regulations."
+            "Testing 60 variations on pure noise produced about 3 false positives (p < 0.05) by chance; without Benjamini-Hochberg FDR correction, flukes were mistaken for winners.",
+            "Testing 60 variations produced 3 true winners but the sample was too small, so the lift estimates were noisy and the team ignored the Bonferroni correction.",
+            "Testing 60 variations on pure noise produced 3 false negatives (p > 0.05) by chance; the team missed real winners and kept the control email in place.",
+            "Testing 60 variations in one email send contaminated each group, so interference between variations produced 3 false positives despite the correction."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9752,10 +9752,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary conceptual difference between the False Discovery Rate (FDR) controlled by Benjamini-Hochberg and the Family-Wise Error Rate (FWER) controlled by Bonferroni?",
           "options": [
-            "FDR only works when the sample size is less than 10 people.",
-            "FWER controls the probability of making even a single false positive across all tests (overly conservative), while FDR controls the expected proportion of false positives among declared discoveries (E[V/R]), preserving high statistical power for big data.",
-            "Bonferroni is an Italian dessert, not a statistical method.",
-            "FDR was outlawed by the Supreme Court in 1995."
+            "FDR bounds the probability of even one false positive across all tests (very conservative), while FWER bounds the expected share of false positives among discoveries (E[V/R]).",
+            "FWER bounds the probability of even one false positive (very conservative), while FDR bounds the expected share of false positives among discoveries (E[V/R]), keeping power high.",
+            "FWER controls the Type II error across all tests, while FDR controls the Type I error of each individual test at the unadjusted level of alpha for the family.",
+            "FWER applies only to independent tests, while FDR applies to dependent tests, but both control the probability of at least one false positive in the family."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9781,10 +9781,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does continuous peeking at A/B test results (checking daily and stopping as soon as p < 0.05) destroy the scientific validity of enterprise experimentation?",
           "options": [
-            "Peeking causes SQL databases to overheat and catch fire.",
-            "A/B tests can only be inspected by government postal inspectors.",
-            "Optional stopping allows random noise fluctuations to trigger early termination, inflating the true Type I error rate from 5% to over 30% and guaranteeing that false statistical anomalies are treated as real victories.",
-            "Stopping early saves money on cloud compute with zero statistical consequences."
+            "Optional stopping lowers statistical power below 20%, so real effects go undetected and the team wrongly concludes that the variation has no effect.",
+            "Optional stopping makes the p-value uninterpretable because it changes the sample variance, though the Type I error rate remains at 5% for every look.",
+            "Optional stopping lets random fluctuations trigger early termination, inflating the true Type I error rate from 5% to over 30% so noise is treated as a win.",
+            "Optional stopping biases the traffic split toward the better variation, so the groups differ in size and the standard error is understated in the test."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9810,10 +9810,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In production enterprise experimentation governance, how does an automated Benjamini-Hochberg controller protect the organization from deploying spurious features?",
           "options": [
-            "It cancels all A/B testing and fires all product managers.",
-            "It randomly approves 50% of all submitted ideas.",
-            "The controller is only active when the stock market is closed.",
-            "It intercepts all evaluated metrics, applies the Benjamini-Hochberg step-up threshold (i/m)*q, certifies genuine discoveries, and automatically blocks spurious p-hacked subgroup flukes from receiving production rollout authorization."
+            "It collects all evaluated metrics, applies the Bonferroni threshold alpha/m to the largest p-value only, and approves any subgroup that passes it for rollout.",
+            "It collects all evaluated metrics, ranks them by effect size, and approves the top q% for rollout regardless of their p-values or the number of tests.",
+            "It collects all evaluated metrics, doubles the sample size of each test, and approves any result that stays significant at 0.05 after the repetition.",
+            "It collects all evaluated metrics, applies the Benjamini-Hochberg step-up threshold (i/m)*q, certifies genuine discoveries, and blocks p-hacked fluke subgroups."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9864,10 +9864,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fatal statistical error did NASA and contractor engineers commit during the pre-launch meeting before the Space Shuttle Challenger disaster?",
           "options": [
-            "They forgot to calculate the weight of the space shuttle.",
-            "They used Roman numerals instead of Arabic numerals in their calculations.",
-            "Sample Truncation: They analyzed only the 7 flights where O-ring damage occurred, omitting the 17 flights with zero damage; this truncated the dependent variable and completely obscured the lethal cold-temperature failure cliff.",
-            "They tested the rocket engines underwater."
+            "Measurement Error: the O-ring damage counts were recorded by different inspectors, so random scoring noise hid any link between temperature and damage in the data.",
+            "Autocorrelation: they treated each flight's O-rings as independent, which understated the standard errors and hid the effect of temperature on the damage.",
+            "Sample Truncation: they analyzed only the 7 flights with O-ring damage and omitted the 17 with none, truncating the dependent variable and hiding the cold-weather failure cliff.",
+            "Overfitting: they fitted a high-order polynomial to the 24 flights, which produced a spurious temperature effect that the engineers rightly dismissed as noise."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9893,10 +9893,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Zillow Offers $880M algorithmic meltdown forensic audit, what mathematical phenomenon caused the algorithm to selectively acquire overpriced homes?",
           "options": [
-            "The computer servers ran out of hard drive storage space.",
-            "The Winner's Curse (Adverse Selection): Whenever the model overvalued a home, rational sellers eagerly accepted the bid; whenever the model undervalued a home, sellers rejected the bid, causing Zillow to selectively win almost exclusively overpriced assets.",
-            "Real estate agents secretly reprogrammed Zillow's algorithms using phishing emails.",
-            "Housing prices dropped by 99% in a single day."
+            "Survivorship Bias: the model trained only on homes that sold at a profit, so it overstated how well its past purchases would resell in the market.",
+            "Winner's Curse (Adverse Selection): sellers accepted bids on homes the model overvalued and rejected bids on those it undervalued, so Zillow won mostly overpriced homes.",
+            "Simpson's Paradox: model accuracy looked good in each city separately but poor overall, so aggregate bids were too high for most local markets.",
+            "Multicollinearity: correlated home features inflated the model's coefficients, so valuations rose uniformly and the bids were too high for all homes."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9922,10 +9922,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Target pregnancy prediction model PR crisis, what core ethical lesson did corporate data analytics teams learn regarding high-dimensional predictive modeling?",
           "options": [
-            "Predictive accuracy is not equivalent to business success; algorithmically inferring sensitive personal states without customer consent produces existential brand backlash and regulatory scrutiny.",
-            "Target should have made all retail shopping illegal.",
-            "Pregnant women should never be allowed to buy unscented lotion.",
-            "Retail stores should only sell lawnmowers."
+            "Predictive accuracy is not business success; inferring sensitive personal states without consent produces existential brand backlash and regulatory scrutiny.",
+            "Predictive accuracy must be raised above 99% before any marketing use, because lower-accuracy models will offend customers by sending irrelevant offers.",
+            "High-dimensional models should be avoided in marketing, because every variable they use must be disclosed to customers in advance and in writing.",
+            "Customer data should be kept for under thirty days, because older purchase records cause predictions to degrade and trigger customer complaints."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9950,10 +9950,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Federal Reserve SR 11-7 Model Risk Management guidelines, what is the mandatory structural requirement for Independent Model Validation (IMV)?",
           "options": [
-            "The validation team must be composed entirely of summer interns.",
-            "Models only need to be validated if they use Python 2.7.",
-            "Independent validation was made voluntary in 2020.",
-            "The model validation team must be completely structurally independent of model development and commercial profit incentives, with the authority to stress-test models, evaluate conceptual soundness, and enforce exposure caps."
+            "The validation team must be the same group that built the model, since only its developers know the assumptions well enough to challenge the results.",
+            "The validation team must be reviewed annually by the model developers, who confirm its findings before any limits or caps are applied to the model.",
+            "The validation team must report to the head of the business line that uses the model, so that its findings are acted on quickly by the owners.",
+            "The validation team must be structurally independent of model development and profit incentives, with authority to stress-test models and enforce exposure caps."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -9978,10 +9978,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In production enterprise model risk management (SR 11-7), how does automated monitoring of bid-acceptance rates prevent algorithmic catastrophes like Zillow Offers?",
           "options": [
-            "It proves that real estate prices will always increase forever.",
-            "Acceptance rate monitoring is only required on national holidays.",
-            "A sudden surge in bid-acceptance rate is the definitive operational signature of Adverse Selection and the Winner's Curse (sellers dumping overvalued assets); automated circuit breakers immediately freeze capital allocation and increase bid-shading discounts.",
-            "Relying solely on static hardcoded defaults for Enterprise without reconciling Model against live boundary conditions."
+            "A surge in bid-acceptance rate signals strong market demand for the offers; automated triggers raise capital allocation and reduce bid-shading discounts.",
+            "A fall in bid-acceptance rate signals Adverse Selection and the Winner's Curse; automated circuit breakers freeze capital and increase bid-shading discounts.",
+            "A surge in bid-acceptance rate signals Adverse Selection and the Winner's Curse; automated circuit breakers freeze capital and increase bid-shading discounts.",
+            "A surge in bid-acceptance rate signals model underpricing of homes; automated circuit breakers lower the bids and increase capital for acquisitions."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10034,10 +10034,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Chief Analytics Officer (CAO) Enterprise Architecture RFC, why must analytical scoring and decision models be strictly decoupled from operational transactional databases?",
           "options": [
-            "Analytical models can only run on magnetic tape drives.",
-            "To ensure that analytical compute loads, model retraining, or algorithmic drift events can be isolated and updated without jeopardizing the stability or uptime of core transactional customer-facing services.",
-            "Decoupling allows software developers to work from home.",
-            "Because operational databases are legally required to be powered off on weekends."
+            "So transactional databases can store model coefficients as ordinary rows, letting the application query them directly with fewer network hops and lower latency.",
+            "So analytical compute loads, model retraining, or drift events can be isolated and updated without risking the stability or uptime of core transactional customer-facing services.",
+            "So analytical models can read live transaction rows with row-level locks, ensuring that scores reflect the latest committed customer record in the ledger.",
+            "So regulators can audit the analytical models separately from the ledgers, since financial law requires models and transactions to be stored in different countries."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10064,10 +10064,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Fractured $45M Corporate Data Lake forensic audit, what was the primary root cause of the $42,000,000 metric discrepancy between the Sales division and the Finance department?",
           "options": [
-            "The accounting department's calculator batteries died during the meeting.",
-            "Sales revenue was calculated in Canadian dollars while finance used gold coins.",
-            "The lack of a centralized architectural RFC and unified semantic layer allowed each department to independently code their own conflicting definitions of revenue, creating massive divergence between booked contracts and recognized GAAP revenue.",
-            "A rogue hacker changed all the numbers five minutes before the meeting."
+            "A data lake storage failure corrupted part of the Finance revenue tables, creating a gap between booked contracts and recognized GAAP revenue.",
+            "Sales deliberately inflated bookings to meet quota, and Finance could not detect it because audit logs were turned off, creating the $42M gap.",
+            "No centralized RFC or semantic layer let each department code its own conflicting revenue definition, creating a gap between booked contracts and GAAP revenue.",
+            "Different time zones in the warehouse shifted transactions across quarter boundaries, creating a gap between booked contracts and recognized GAAP revenue."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10093,10 +10093,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary role of a 'Data Contract' in an enterprise Data Mesh architecture?",
           "options": [
-            "Data contracts are only used when selling hardware computers.",
-            "A legal contract signed by customers agreeing to pay higher interest rates.",
-            "A piece of paper stored in a physical filing cabinet in the basement.",
-            "A formal, version-controlled specification defining schema types, business definitions, and quality SLAs between domain producers and consumers, preventing unannounced breaking changes and schema drift."
+            "A legal agreement between the company and customers describing how personal data may be used, which prevents privacy breaches in domain data products.",
+            "A central team's catalog of all datasets with their owners, which lets consumers find any data product but places no obligations on the producers.",
+            "A backup policy that copies every domain's tables to a shared warehouse nightly, preventing data loss when a producer system fails or is replaced.",
+            "A version-controlled specification of schema types, business definitions, and quality SLAs between domain producers and consumers, preventing unannounced breaking changes."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10122,10 +10122,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "When presenting an enterprise analytics architecture RFC to the Chief Financial Officer (CFO), why is calculating Net Present Value (NPV) and Internal Rate of Return (IRR) essential?",
           "options": [
-            "It translates technical engineering upgrades into corporate finance metrics, proving that the multi-year investment generates risk-adjusted returns (IRR > 35%, 18-month payback) that far exceed the corporate cost of capital.",
-            "Because CFOs are legally required to reject any presentation without an IRR calculation.",
-            "NPV is required by the fire department for computer server safety.",
-            "Calculating DCF eliminates the need to pay taxes."
+            "It translates technical upgrades into corporate finance metrics, proving the investment earns risk-adjusted returns (IRR > 35%, 18-month payback) above the cost of capital.",
+            "It shows the architecture's technical performance in finance terms, proving the system will process 35% more queries per second within 18 months of go-live.",
+            "It shows that the upgrade will reduce the CFO's headcount budget by 35%, because the automation will replace finance analysts within 18 months of launch.",
+            "It proves the investment is tax-deductible in the year of purchase (IRR > 35%), so the cash cost is covered by lower tax within 18 months of payment."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10151,10 +10151,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In production enterprise analytics governance, how does an automated Semantic Metric Registry prevent catastrophic boardroom discrepancies like the $42M sales-versus-finance collision?",
           "options": [
-            "Metric registries are only permitted for non-profit charities.",
-            "It establishes a codified, version-controlled Single Source of Truth for core enterprise KPIs, assigning explicit departmental ownership (e.g. GAAP recognized revenue owned by Finance) and automatically flagging unauthorized divergent calculations.",
-            "It eliminates all financial metrics from board presentations and only shows pictures of the corporate office.",
-            "It forces sales representatives to calculate commissions by hand."
+            "It creates a shared spreadsheet of KPI definitions that analysts may edit freely, so each department can adapt the revenue formula to its own local needs.",
+            "It creates a version-controlled Single Source of Truth for core KPIs, assigning explicit ownership (e.g. GAAP revenue owned by Finance) and flagging divergent calculations.",
+            "It creates a nightly copy of every department's reports in one warehouse, so executives can compare the divergent numbers before the board meetings.",
+            "It creates a faster query engine for the data lake, so each department computes its own revenue sooner and the numbers match more often in practice."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10206,10 +10206,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexIntelligence sovereign decision architecture, why must the analytical and optimization decision layer be completely decoupled from operational transactional databases via asynchronous event mediation?",
           "options": [
-            "To force all enterprise data to be converted into static CSV files before executing machine learning pipelines.",
-            "To ensure that analytical compute spikes, algorithmic model updates, or model drift quarantine events can never degrade or crash mission-critical customer-facing transaction ledgers.",
-            "Because decoupling eliminates the need to maintain data contracts or enforce regulatory compliance audits.",
-            "Because relational transactional databases cannot store floating-point numbers required for regression weights."
+            "So transactional data can be copied faster into the analytical layer, which lets scoring models see every committed ledger row without any delay.",
+            "So analytical compute spikes, model updates, or drift quarantine events can never degrade or crash the mission-critical customer-facing transaction ledgers.",
+            "So the transaction ledgers can be modified by model outputs directly, which lets scoring decisions update customer balances without a separate step.",
+            "So the analytical layer can run on the same servers as the ledgers, which saves hardware costs and keeps the two systems consistent at all times."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10235,10 +10235,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In multi-echelon enterprise decision systems, why does independent departmental optimization (such as marketing maximizing sales while supply chain minimizes inventory) frequently cause catastrophic enterprise losses?",
           "options": [
-            "Because Mixed-Integer Linear Programming models can only optimize single scalar variables.",
-            "Because marketing teams should never be permitted to analyze transaction sales data.",
-            "Because the sum of local uncoordinated departmental optima ignores shared capacity bottlenecks, cross-functional externalities, and joint constraints, driving the global system into severe resource deficits.",
-            "Because supply chain inventory holding costs always exceed marketing gross revenues in every commercial industry."
+            "Because each department optimizes with outdated data, so its local optimum is wrong and the enterprise total falls below an unoptimized baseline level.",
+            "Because departments compete for the same budget, so each one increases its own spending to the maximum and the enterprise total exceeds its capital limit.",
+            "Because the sum of uncoordinated departmental optima ignores shared capacity bottlenecks, externalities, and joint constraints, pushing the global system into resource deficits.",
+            "Because local optima are worse than the global optimum by definition, so every decentralized decision rule destroys value for the enterprise as a whole."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10264,10 +10264,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Two-Stage Least Squares (2SLS) regression using wholesale fuel tariffs or tax instruments succeed in identifying true price elasticity when naive Ordinary Least Squares (OLS) fails?",
           "options": [
-            "Because 2SLS forces all regression error terms to equal exactly zero.",
-            "Because instrumental variables eliminate the need to collect quantity demanded data from customer transactions.",
-            "Because OLS regression cannot be computed on datasets with more than two explanatory variables.",
-            "Because the instrument isolates exogenous price variation driven by supply-side cost shocks, eliminating endogenous confounding caused by simultaneous unobserved consumer demand surges."
+            "Because the instrument adds extra observations of price from wholesale markets, which increases the sample size and shrinks the standard errors of the OLS slope.",
+            "Because the instrument is correlated with consumer demand shocks, which lets the model net out unobserved demand surges from the price coefficient directly.",
+            "Because the instrument replaces the price variable with its lagged value, which removes simultaneity but keeps all of the demand-side variation in the estimate.",
+            "Because the instrument isolates exogenous price variation driven by supply-side cost shocks, removing endogenous confounding from simultaneous unobserved consumer demand surges."
           ],
           "answer": 3,
           "answerIndex": 3,
@@ -10293,10 +10293,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Consumer Financial Protection Bureau (CFPB) and EEOC Four-Fifths Rule, what numerical threshold constitutes prima facie evidence of disparate impact discrimination in algorithmic credit underwriting?",
           "options": [
-            "A Disparate Impact Ratio (DIR) below 0.80 (80%), meaning the selection rate for the protected demographic class is less than four-fifths of the selection rate for the reference group.",
-            "A model R-squared coefficient below 0.80 in predicting loan defaults.",
-            "A Population Stability Index (PSI) exceeding 0.80 across quarterly audits.",
-            "A differential privacy epsilon parameter exceeding 0.80 in Laplace noise injection."
+            "A Disparate Impact Ratio (DIR) below 0.80 (80%): the protected class selection rate is less than four-fifths of the reference group's selection rate.",
+            "A Disparate Impact Ratio (DIR) below 0.95 (95%): the protected class selection rate is less than 19/20 of the reference group's selection rate.",
+            "A Disparate Impact Ratio (DIR) above 1.25 (125%): the protected class selection rate is more than five-fourths of the reference group's selection rate.",
+            "A Disparate Impact Ratio (DIR) below 0.50 (50%): the protected class selection rate is less than one half of the reference group's selection rate."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10322,10 +10322,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In executive boardroom presentations and C-suite decision communication, why does Barbara Minto's Pyramid Principle dictate placing the governing recommendation ('Answer First') at the apex rather than leading with technical background details?",
           "options": [
-            "Because senior executives refuse to read any mathematical equations in slide decks.",
-            "Because executive leaders make decisions top-down under severe cognitive and time constraints; stating the definitive core recommendation first immediately frames subsequent evidence, eliminating confusion.",
-            "Because inductive bottom-up arguments are strictly illegal under GAAP accounting rules.",
-            "Because placing the recommendation first guarantees that no audience member will ask critical questions."
+            "Because executive leaders trust conclusions more than methods; stating the recommendation first hides the technical background so that it cannot be questioned.",
+            "Because executive leaders decide top-down under severe cognitive and time constraints; stating the recommendation first frames the evidence that follows and removes confusion.",
+            "Because boards are legally required to hear conclusions before supporting evidence; stating the recommendation first satisfies the governance rules for decisions.",
+            "Because executive leaders prefer short presentations; stating the recommendation first lets the presenter skip the supporting evidence and finish within the slot."
           ],
           "answer": 1,
           "answerIndex": 1,
