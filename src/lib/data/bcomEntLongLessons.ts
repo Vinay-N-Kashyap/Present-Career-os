@@ -19,25 +19,23 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "More startups fail from a lack of customers than from a failure of product development. The Lean Startup framework, pioneered by Steve Blank and Eric Ries, demands that founders \"get out of the building\" and test core hypotheses before writing code or manufacturing inventory.",
           "Customer Discovery tests Problem-Solution Fit by asking prospective buyers about current behaviors, painful workflows, and existing budget allocations—never asking hypothetical questions like \"Would you buy this if we built it?\" (which always produce polite false positives).",
           "A quantitative Problem-Solution Fit Matrix scores target customer segments across three dimensions: Problem Severity (1-5, how critical is the pain point?), Frequency (1-5, how often does it occur?), and Current Spend/Workaround Cost (1-5, what are they already spending to solve it?).",
-          "Only when a problem segment scores above a validated threshold does the venture proceed to Minimum Viable Product (MVP) prototyping; otherwise, the venture executes a structured Pivot.",
-          "When studying Lean Customer Discovery & Problem-Solution Fit Matrix within Lean Validation, Runway Physics & Venture Capital Cap Table Mechanics, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through Simulation, Lean, Customer, Discovery, Problem, Solution line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Lean Customer Discovery & Problem-Solution Fit Matrix prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "Only when a problem segment scores above a validated threshold does the venture proceed to Minimum Viable Product (MVP) prototyping; otherwise, the venture executes a structured Pivot."
         ],
         "example": "If you ask 20 restaurant owners if they want an AI inventory scanner, 18 might say \"Yes, sounds cool!\" But when you inspect their actual operations, only 2 spend more than $50/month on inventory tools, and 16 use a free clipboard. The clipboard is your real competitor.",
         "code": "# Simulation: Lean Customer Discovery Problem-Solution Fit Validator\nfrom dataclasses import dataclass\nfrom typing import List\n\n@dataclass\nclass CustomerInterview:\n    interviewee_id: str\n    segment: str\n    severity_score: int       # 1-5: How painful is the problem?\n    frequency_score: int      # 1-5: How often does the pain occur?\n    budget_allocated: float   # Actual annual spend on current workarounds\n    willing_to_prepay: bool   # Real financial commitment test\n\nclass LeanValidationEngine:\n    def __init__(self, interviews: List[CustomerInterview]):\n        self.interviews = interviews\n\n    def evaluate_fit(self) -> dict:\n        total = len(self.interviews)\n        if total == 0:\n            return {\"Decision\": \"NO_DATA\"}\n\n        avg_severity = sum(i.severity_score for i in self.interviews) / total\n        avg_frequency = sum(i.frequency_score for i in self.interviews) / total\n        total_budget = sum(i.budget_allocated for i in self.interviews)\n        prepay_count = sum(1 for i in self.interviews if i.willing_to_prepay)\n        prepay_rate = (prepay_count / total) * 100.0\n\n        # Composite pain index (out of 25)\n        composite_score = avg_severity * avg_frequency\n\n        # Decision threshold: High pain (>= 16/25) and real prepayment/intent (>= 25%)\n        validated = composite_score >= 16.0 and prepay_rate >= 25.0\n        decision = \"PROCEED_TO_MVP\" if validated else \"PIVOT_OR_REFINE_HYPOTHESIS\"\n\n        return {\n            \"Total_Interviews\": total,\n            \"Avg_Severity_Pain\": round(avg_severity, 2),\n            \"Avg_Frequency\": round(avg_frequency, 2),\n            \"Composite_Pain_Index\": round(composite_score, 2),\n            \"Prepayment_Commit_Rate\": f\"{round(prepay_rate, 1)}%\",\n            \"Validated_Decision\": decision\n        }\n\ninterviews = [\n    CustomerInterview(\"User_01\", \"SMB Freight Broker\", 5, 5, 12000.0, True),\n    CustomerInterview(\"User_02\", \"SMB Freight Broker\", 4, 4, 8000.0, False),\n    CustomerInterview(\"User_03\", \"SMB Freight Broker\", 5, 4, 15000.0, True),\n    CustomerInterview(\"User_04\", \"SMB Freight Broker\", 4, 5, 6000.0, True),\n    CustomerInterview(\"User_05\", \"SMB Freight Broker\", 4, 4, 10000.0, False)\n]\n\nengine = LeanValidationEngine(interviews)\nresult = engine.evaluate_fit()\n\nprint(\"Lean Problem-Solution Validation Report:\")\nprint(f\"Sample Size:         {result['Total_Interviews']} Enterprise Interviews\")\nprint(f\"Avg Severity (1-5):  {result['Avg_Severity_Pain']}\")\nprint(f\"Avg Frequency (1-5): {result['Avg_Frequency']}\")\nprint(f\"Pain Index (1-25):   {result['Composite_Pain_Index']}\")\nprint(f\"Commitment Rate:     {result['Prepayment_Commit_Rate']}\")\nprint(f\"Venture Recommendation: {result['Validated_Decision']}\")",
         "output": "Lean Problem-Solution Validation Report:\nSample Size:         5 Enterprise Interviews\nAvg Severity (1-5):  4.4\nAvg Frequency (1-5): 4.4\nPain Index (1-25):   19.36\nCommitment Rate:     60.0%\nVenture Recommendation: PROCEED_TO_MVP",
-        "tryIt": "Change the interview prepay flags to False and observe the recommendation pivot from PROCEED_TO_MVP to PIVOT_OR_REFINE_HYPOTHESIS.",
+        "tryIt": "Change all the interview prepay flags to False and observe the recommendation pivot from PROCEED_TO_MVP to PIVOT_OR_REFINE_HYPOTHESIS.",
         "check": {
           "question": "Why does the Lean Startup methodology consider prospective customer prepayments or letters of intent (LOI) superior to positive survey feedback?",
           "options": [
-            "Financial commitment filters out polite compliments and proves genuine willingness to reallocate existing budget to solve the problem.",
-            "Because letters of intent are immediately recognized as audited GAAP revenue on day one.",
             "Because survey feedback is strictly prohibited by securities laws before incorporation.",
-            "Because venture capital funds only invest in companies that have zero customer interviews."
+            "Because venture capital funds only invest in companies that have zero customer interviews.",
+            "Because letters of intent are immediately recognized as audited GAAP revenue on day one.",
+            "Financial commitment filters out polite compliments and proves genuine willingness to reallocate existing budget to solve the problem."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Prospective customers will often compliment an idea to be encouraging. Real commitment—a letter of intent, a deposit, or sharing internal workflow data—is the only rigorous proof that the customer experiences unbearable pain worth paying to solve.",
-          "answer": 0,
+          "answer": 3,
           "why": "Prospective customers will often compliment an idea to be encouraging. Real commitment—a letter of intent, a deposit, or sharing internal workflow data—is the only rigorous proof that the customer experiences unbearable pain worth paying to solve."
         }
       },
@@ -48,13 +46,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Gross Burn is the total cash money leaving the company bank account each month: Gross Burn = Payroll + Benefits + Cloud Servers + Office Lease + Software Subscriptions.",
           "Net Burn is the actual net monthly cash depletion: Net Burn = Gross Burn - Monthly Cash Receipts.",
           "Runway (Months) = Total Available Cash Reserves / Monthly Net Burn.",
-          "The Zero-Cash Date (ZCD) is the exact calendar date when bank balances reach $0.00. Top founders maintain a strict \"Red Zone Alert\" threshold: when runway drops below 6 months, all discretionary spending freezes and fundraising or headcount restructuring becomes mandatory.",
-          "When studying Burn Rate Dynamics & The Zero-Cash Date Runway Horizon within Lean Validation, Runway Physics & Venture Capital Cap Table Mechanics, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through Simulation, Startup, Runway, Physics, Zero, Cash line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Burn Rate Dynamics & The Zero-Cash Date Runway Horizon prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "The Zero-Cash Date (ZCD) is the exact calendar date when bank balances reach $0.00. Top founders maintain a strict \"Red Zone Alert\" threshold: when runway drops below 6 months, all discretionary spending freezes and fundraising or headcount restructuring becomes mandatory."
         ],
         "example": "If a startup has $1,200,000 in the bank, spends $120,000/month on salaries and servers, and collects $40,000/month from customers, its Net Burn is $80,000/month. Its runway is $1,200,000 / $80,000 = 15 months.",
         "code": "# Simulation: Startup Runway Physics & Zero-Cash Date (ZCD) Projection\nfrom datetime import datetime, timedelta\n\nclass StartupRunwaySimulator:\n    def __init__(self, cash_balance: float, gross_burn: float, monthly_revenue: float):\n        self.cash = cash_balance\n        self.gross_burn = gross_burn\n        self.revenue = monthly_revenue\n        self.net_burn = gross_burn - monthly_revenue\n\n    def project_runway(self, start_date: datetime) -> dict:\n        if self.net_burn <= 0:\n            return {\n                \"Runway_Months\": \"Infinite (Default Solvency / Profitable)\",\n                \"Zero_Cash_Date\": \"Never (Cash Flow Positive)\",\n                \"Net_Burn\": self.net_burn\n            }\n\n        runway_months = self.cash / self.net_burn\n        days_remaining = int(runway_months * 30.4375) # Average days per month\n        zero_cash_date = start_date + timedelta(days=days_remaining)\n        \n        # Red zone alert if runway < 6 months\n        fundraising_urgency = \"URGENT_FUNDRAISE_NOW\" if runway_months < 6.0 else (\n            \"BEGIN_WARM_OUTREACH\" if runway_months <= 9.0 else \"HEADS_DOWN_BUILDING\"\n        )\n\n        return {\n            \"Current_Cash\": round(self.cash, 2),\n            \"Monthly_Net_Burn\": round(self.net_burn, 2),\n            \"Runway_Months\": round(runway_months, 1),\n            \"Zero_Cash_Date\": zero_cash_date.strftime(\"%Y-%m-%d\"),\n            \"Capital_Strategy\": fundraising_urgency\n        }\n\nsimulator = StartupRunwaySimulator(\n    cash_balance=1200000.0,  # $1.2M seed round\n    gross_burn=115000.0,     # $115k monthly expenses\n    monthly_revenue=35000.0  # $35k monthly revenue\n)\n\nstart_dt = datetime(2026, 1, 1)\nreport = simulator.project_runway(start_dt)\n\nprint(f\"Cash Reserves:       ${report['Current_Cash']:,}\")\nprint(f\"Monthly Net Burn:    ${report['Monthly_Net_Burn']:,}\")\nprint(f\"Runway Horizon:      {report['Runway_Months']} Months\")\nprint(f\"Zero Cash Date:      {report['Zero_Cash_Date']}\")\nprint(f\"Fundraising Status:  {report['Capital_Strategy']}\")",
-        "output": "Cash Reserves:       $1,200,000.0\nMonthly Net Burn:    $80,000.0\nRunway Horizon:      15.0 Months\nZero Cash Date:      2027-03-31\nFundraising Status:  HEADS_DOWN_BUILDING",
+        "output": "Cash Reserves:       $1,200,000.0\nMonthly Net Burn:    $80,000.0\nRunway Horizon:      15.0 Months\nZero Cash Date:      2027-04-02\nFundraising Status:  HEADS_DOWN_BUILDING",
         "tryIt": "Increase gross burn to $240,000 and see runway drop to 5.9 months, triggering the URGENT_FUNDRAISE_NOW status.",
         "check": {
           "question": "Why should a startup begin institutional fundraising when it has 9 to 12 months of runway left rather than waiting until 3 months remain?",
@@ -77,9 +73,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "A SAFE is not debt: it carries no interest rate and no maturity date. Instead, it represents the contractual right to convert into preferred shares when the company raises a priced institutional round (such as Series A).",
           "A SAFE typically includes two key investor protection terms: a Valuation Cap (an upper limit on the valuation used to determine the SAFE holder's share price) and a Discount Rate (typically 15% to 20% off the future Series A price).",
           "When the priced round occurs, the SAFE converts at whichever mechanism produces the lower share price (giving the investor more shares): Price = min(Valuation Cap / Pre-Round Shares, Series A Price * (1 - Discount)).",
-          "The Post-Money SAFE guarantees that the investor buys a fixed, transparent percentage of the company regardless of other unpriced notes issued in that seed syndicate.",
-          "When studying Early-Stage Venture Valuation & SAFE Note Mechanics within Lean Validation, Runway Physics & Venture Capital Cap Table Mechanics, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through Simulation, SAFE, Note, Conversion, Effective, Investor line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Early-Stage Venture Valuation & SAFE Note Mechanics prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "The Post-Money SAFE guarantees that the investor buys a fixed, transparent percentage of the company regardless of other unpriced notes issued in that seed syndicate."
         ],
         "example": "An angel invests $100,000 on a SAFE with a $5,000,000 valuation cap and a 20% discount. In Series A, the company is valued at $10,000,000 at $10.00/share. With the discount, the price is $8.00. But under the cap, the price is $5.00! The investor converts at $5.00/share, receiving 20,000 shares instead of 10,000.",
         "code": "# Simulation: SAFE Note Conversion & Effective Investor Share Price\nclass SafeNoteInvestment:\n    def __init__(self, investor_name: str, investment_amount: float, \n                 valuation_cap: float, discount_rate: float):\n        self.name = investor_name\n        self.amount = investment_amount\n        self.cap = valuation_cap\n        self.discount = discount_rate\n\n    def convert_at_priced_round(self, series_a_share_price: float, pre_money_shares: int) -> dict:\n        # Price using valuation cap\n        price_under_cap = self.cap / pre_money_shares\n        \n        # Price using discount\n        price_under_discount = series_a_share_price * (1.0 - self.discount)\n        \n        # Investor gets the lower price (more favorable)\n        effective_price = min(price_under_cap, price_under_discount)\n        mechanism = \"VALUATION_CAP\" if price_under_cap <= price_under_discount else \"DISCOUNT_RATE\"\n        \n        shares_issued = self.amount / effective_price\n\n        return {\n            \"Investor\": self.name,\n            \"Investment\": self.amount,\n            \"Price_Under_Cap\": round(price_under_cap, 4),\n            \"Price_Under_Discount\": round(price_under_discount, 4),\n            \"Effective_Share_Price\": round(effective_price, 4),\n            \"Mechanism_Triggered\": mechanism,\n            \"Shares_Received\": int(shares_issued)\n        }\n\nsafe_angel = SafeNoteInvestment(\n    investor_name=\"Sequoia Scout Seed\",\n    investment_amount=250000.0,\n    valuation_cap=6000000.0, # $6M Cap\n    discount_rate=0.20       # 20% Discount\n)\n\n# In Series A: Company raises at $12M pre-money on 2,000,000 shares ($6.00/share)\nconversion = safe_angel.convert_at_priced_round(\n    series_a_share_price=6.00,\n    pre_money_shares=2000000\n)\n\nprint(f\"SAFE Investor:       {conversion['Investor']}\")\nprint(f\"Cap Implied Price:   ${conversion['Price_Under_Cap']}\")\nprint(f\"Discount Price:      ${conversion['Price_Under_Discount']}\")\nprint(f\"Effective Price:     ${conversion['Effective_Share_Price']} ({conversion['Mechanism_Triggered']})\")\nprint(f\"Shares Issued:       {conversion['Shares_Received']:,} shares\")",
@@ -88,14 +82,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of the Valuation Cap in a SAFE note for an early-stage investor?",
           "options": [
-            "It protects early investors from excessive valuation growth in the subsequent round, ensuring their early risk is rewarded with a capped entry price.",
-            "It guarantees that the founders can never sell more than 50% of company shares.",
             "It forces the startup to repay the invested capital with compound interest upon contract signing.",
-            "It legally requires the company to pay quarterly dividends to SAFE holders."
+            "It protects early investors from excessive valuation growth in the subsequent round, ensuring their early risk is rewarded with a capped entry price.",
+            "It legally requires the company to pay quarterly dividends to SAFE holders.",
+            "It guarantees that the founders can never sell more than 50% of company shares."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "If a startup takes an angel's money when it is worth very little and subsequently explodes in value to $50M before Series A, without a valuation cap the angel's $100k would buy a negligible fraction of 1% of the company. The cap guarantees an equity floor reward for taking early risk.",
-          "answer": 0,
+          "answer": 1,
           "why": "If a startup takes an angel's money when it is worth very little and subsequently explodes in value to $50M before Series A, without a valuation cap the angel's $100k would buy a negligible fraction of 1% of the company. The cap guarantees an equity floor reward for taking early risk."
         }
       },
@@ -105,25 +99,23 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "When venture capitalists issue a Series A Term Sheet, they routinely demand that the company establish or expand an unallocated Employee Stock Option Plan (ESOP) pool, typically 10% to 20% of post-round shares, to attract future executive hires.",
           "Crucially, almost all term sheets specify that the option pool must be created out of the PRE-MONEY valuation rather than post-money. This standard industry practice is known as the \"Option Pool Shuffle\".",
           "Because the pool is created out of the pre-money valuation, 100% of the dilution required to create those unissued option shares comes directly out of the existing founders and angel shareholders—the incoming VC suffers zero dilution from the new pool!",
-          "This hidden dilution effectively reduces the \"effective pre-money valuation\" received by the founders. Negotiating the exact size of the pool based on an itemized hiring plan for the next 18 months is one of the highest-value skills a founder can possess.",
-          "When studying The Option Pool Shuffle & Founder Dilution Mechanics within Lean Validation, Runway Physics & Venture Capital Cap Table Mechanics, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through Simulation, The, Option, Pool, Shuffle, True line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering The Option Pool Shuffle & Founder Dilution Mechanics prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "This hidden dilution effectively reduces the \"effective pre-money valuation\" received by the founders. Negotiating the exact size of the pool based on an itemized hiring plan for the next 18 months is one of the highest-value skills a founder can possess."
         ],
         "example": "On an $8M pre-money valuation with a $2M investment, the post-money is $10M and the VC owns 20%. If a 15% unallocated option pool is required on a pre-money basis, that 15% comes entirely from the founders, shrinking their ownership from 80% down to 65% on Day 1.",
-        "code": "# Simulation: The Option Pool Shuffle & True Founder Dilution Engine\nclass CapTableDilutionModel:\n    def __init__(self, founder_shares: int, pre_money_valuation: float, \n                 investment_amount: float, option_pool_target_pct: float):\n        self.founder_shares = founder_shares\n        self.pre_money = pre_money_valuation\n        self.investment = investment_amount\n        self.pool_pct = option_pool_target_pct\n        self.post_money = pre_money_valuation + investment_amount\n\n    def compute_shuffle(self) -> dict:\n        vc_target_ownership = self.investment / self.post_money\n        \n        # When pool is created pre-money:\n        # Founders_Ownership = 1.0 - VC_Ownership - Option_Pool_Pct\n        founder_ownership = 1.0 - vc_target_ownership - self.pool_pct\n        \n        # Effective Pre-Money Valuation experienced by founders\n        effective_pre_money = self.pre_money * (1.0 - self.pool_pct)\n        \n        # Total shares calculation\n        total_post_shares = int(self.founder_shares / founder_ownership)\n        vc_shares = int(total_post_shares * vc_target_ownership)\n        pool_shares = total_post_shares - self.founder_shares - vc_shares\n\n        return {\n            \"Nominal_Pre_Money\": round(self.pre_money, 2),\n            \"Effective_Pre_Money\": round(effective_pre_money, 2),\n            \"Post_Money_Valuation\": round(self.post_money, 2),\n            \"Founder_Ownership_Pct\": round(founder_ownership * 100.0, 2),\n            \"VC_Ownership_Pct\": round(vc_target_ownership * 100.0, 2),\n            \"Option_Pool_Pct\": round(self.pool_pct * 100.0, 2),\n            \"Total_Post_Shares\": total_post_shares,\n            \"Pool_Shares_Created\": pool_shares\n        }\n\nmodel = CapTableDilutionModel(\n    founder_shares=8000000,        # 8M initial founder shares\n    pre_money_valuation=8000000.0, # $8.0M Pre-Money\n    investment_amount=2000000.0,   # $2.0M Series A Round\n    option_pool_target_pct=0.15    # 15% Unallocated Employee Option Pool\n)\n\nres = model.compute_shuffle()\nprint(f\"Nominal Pre-Money:    ${res['Nominal_Pre_Money']:,}\")\nprint(f\"Effective Pre-Money:  ${res['Effective_Pre_Money']:,}\")\nprint(f\"Post-Money:           ${res['Post_Money_Valuation']:,}\")\nprint(f\"Founder Ownership:    {res['Founder_Ownership_Pct']}%\")\nprint(f\"VC Ownership:         {res['VC_Ownership_Pct']}%\")\nprint(f\"Option Pool:          {res['Option_Pool_Pct']}%\")\nprint(f\"New Pool Shares:      {res['Pool_Shares_Created']:,}\")",
-        "output": "Nominal Pre-Money:    $8,000,000.0\nEffective Pre-Money:  $6,800,000.0\nPost-Money:           $10,000,000.0\nFounder Ownership:    65.0%\nVC Ownership:         20.0%\nOption Pool:          15.0%\nNew Pool Shares:      1,846,153",
+        "code": "# Simulation: The Option Pool Shuffle & True Founder Dilution Engine\nclass CapTableDilutionModel:\n    def __init__(self, founder_shares: int, pre_money_valuation: float, \n                 investment_amount: float, option_pool_target_pct: float):\n        self.founder_shares = founder_shares\n        self.pre_money = pre_money_valuation\n        self.investment = investment_amount\n        self.pool_pct = option_pool_target_pct\n        self.post_money = pre_money_valuation + investment_amount\n\n    def compute_shuffle(self) -> dict:\n        vc_target_ownership = self.investment / self.post_money\n        \n        # When pool is created pre-money:\n        # Founders_Ownership = 1.0 - VC_Ownership - Option_Pool_Pct\n        founder_ownership = 1.0 - vc_target_ownership - self.pool_pct\n        \n        # Effective Pre-Money Valuation experienced by founders\n        effective_pre_money = self.pre_money - self.pool_pct * self.post_money\n        \n        # Total shares calculation\n        total_post_shares = int(self.founder_shares / founder_ownership)\n        vc_shares = int(total_post_shares * vc_target_ownership)\n        pool_shares = total_post_shares - self.founder_shares - vc_shares\n\n        return {\n            \"Nominal_Pre_Money\": round(self.pre_money, 2),\n            \"Effective_Pre_Money\": round(effective_pre_money, 2),\n            \"Post_Money_Valuation\": round(self.post_money, 2),\n            \"Founder_Ownership_Pct\": round(founder_ownership * 100.0, 2),\n            \"VC_Ownership_Pct\": round(vc_target_ownership * 100.0, 2),\n            \"Option_Pool_Pct\": round(self.pool_pct * 100.0, 2),\n            \"Total_Post_Shares\": total_post_shares,\n            \"Pool_Shares_Created\": pool_shares\n        }\n\nmodel = CapTableDilutionModel(\n    founder_shares=8000000,        # 8M initial founder shares\n    pre_money_valuation=8000000.0, # $8.0M Pre-Money\n    investment_amount=2000000.0,   # $2.0M Series A Round\n    option_pool_target_pct=0.15    # 15% Unallocated Employee Option Pool\n)\n\nres = model.compute_shuffle()\nprint(f\"Nominal Pre-Money:    ${res['Nominal_Pre_Money']:,}\")\nprint(f\"Effective Pre-Money:  ${res['Effective_Pre_Money']:,}\")\nprint(f\"Post-Money:           ${res['Post_Money_Valuation']:,}\")\nprint(f\"Founder Ownership:    {res['Founder_Ownership_Pct']}%\")\nprint(f\"VC Ownership:         {res['VC_Ownership_Pct']}%\")\nprint(f\"Option Pool:          {res['Option_Pool_Pct']}%\")\nprint(f\"New Pool Shares:      {res['Pool_Shares_Created']:,}\")",
+        "output": "Nominal Pre-Money:    $8,000,000.0\nEffective Pre-Money:  $6,500,000.0\nPost-Money:           $10,000,000.0\nFounder Ownership:    65.0%\nVC Ownership:         20.0%\nOption Pool:          15.0%\nNew Pool Shares:      1,846,154",
         "tryIt": "Negotiate the option pool target down from 15% to 8% based on a realistic hiring plan, and watch Founder Ownership jump from 65.0% to 72.0%.",
         "check": {
           "question": "Why do venture capitalists insist that the unallocated employee option pool be created out of the pre-money valuation rather than post-money?",
           "options": [
-            "Because creating the pool pre-money forces 100% of the dilution onto the founders, preserving the VC's agreed percentage without additional cost to the VC.",
             "Because post-money option pools are strictly prohibited by the Delaware General Corporation Law.",
             "Because creating it pre-money reduces the company's payroll taxes on employee stock grants.",
+            "Because creating the pool pre-money forces 100% of the dilution onto the founders, preserving the VC's agreed percentage without additional cost to the VC.",
             "Because employees refuse to accept options that are issued after an institutional venture investment."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "In a pre-money option pool creation, the founders absorb 100% of the dilution needed to create the employee shares. If the pool were created post-money, the incoming VC would also be diluted by that pool, which would require the VC to invest more money to maintain their ownership target.",
-          "answer": 0,
+          "answer": 2,
           "why": "In a pre-money option pool creation, the founders absorb 100% of the dilution needed to create the employee shares. If the pool were created post-money, the incoming VC would also be diluted by that pool, which would require the VC to invest more money to maintain their ownership target."
         }
       },
@@ -134,25 +126,23 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Preferred stock holds a senior liquidation claim over Common stock (founders and employees). The most common term is a \"1x Non-Participating Liquidation Preference\".",
           "Under 1x Non-Participating Preference, upon an exit or sale, the investor chooses whichever is higher: (1) getting their initial investment dollars returned (1x capital guarantee), OR (2) converting their preferred shares into common stock and taking their pro-rata percentage of the total proceeds.",
           "Under 1x Participating Preference (\"double-dipping\"), the investor gets their entire 1x investment returned FIRST, and then ALSO shares pro-rata in whatever remaining cash is left over with the common shareholders.",
-          "The \"Conversion Threshold\" is the exit valuation at which a non-participating investor chooses to convert to common stock: Conversion Threshold = Investment Amount / Investor Ownership Percentage.",
-          "When studying Waterfall Cap Table Liquidation Preference Analysis within Lean Validation, Runway Physics & Venture Capital Cap Table Mechanics, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through Simulation, Cap, Table, Liquidation, Waterfall, Payout line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Waterfall Cap Table Liquidation Preference Analysis prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "The \"Conversion Threshold\" is the exit valuation at which a non-participating investor chooses to convert to common stock: Conversion Threshold = Investment Amount / Investor Ownership Percentage."
         ],
         "example": "A VC invests $5M for 25% ownership with 1x Non-Participating preference. If the company sells for $10M: converting gives them 25% ($2.5M), but their 1x preference gives them $5M! They take $5M, leaving only $5M for common. But if the company sells for $40M, 25% is $10M, which exceeds their $5M preference, so they convert.",
-        "code": "# Simulation: Cap Table Liquidation Waterfall Payout Engine\nclass LiquidationWaterfall:\n    def __init__(self, preferred_investment: float, preferred_ownership: float, \n                 preference_multiple: float = 1.0, is_participating: bool = False):\n        self.investment = preferred_investment\n        self.ownership = preferred_ownership\n        self.multiple = preference_multiple\n        self.participating = is_participating\n\n    def calculate_exit_payouts(self, exit_valuation: float) -> dict:\n        preference_owed = self.investment * self.multiple\n        \n        if exit_valuation <= preference_owed:\n            # Distressed exit: Preferred takes all available cash, Common gets $0\n            return {\n                \"Exit_Valuation\": exit_valuation,\n                \"Preferred_Payout\": exit_valuation,\n                \"Common_Payout\": 0.0,\n                \"Preferred_Mechanism\": \"PARTIAL_PREFERENCE_RECOVERY\"\n            }\n\n        if self.participating:\n            # Double dipping: gets preference plus pro-rata share of remainder\n            remaining_after_pref = exit_valuation - preference_owed\n            pref_payout = preference_owed + (remaining_after_pref * self.ownership)\n            common_payout = remaining_after_pref * (1.0 - self.ownership)\n            mechanism = \"PARTICIPATING_DOUBLE_DIP\"\n        else:\n            # Non-participating: chooses higher of Preference or Pro-Rata\n            pro_rata_payout = exit_valuation * self.ownership\n            if pro_rata_payout > preference_owed:\n                pref_payout = pro_rata_payout\n                common_payout = exit_valuation - pref_payout\n                mechanism = \"CONVERTED_TO_COMMON\"\n            else:\n                pref_payout = preference_owed\n                common_payout = exit_valuation - preference_owed\n                mechanism = \"TOOK_1X_PREFERENCE\"\n\n        return {\n            \"Exit_Valuation\": round(exit_valuation, 2),\n            \"Preferred_Payout\": round(pref_payout, 2),\n            \"Common_Payout\": round(common_payout, 2),\n            \"Preferred_Mechanism\": mechanism\n        }\n\nwaterfall = LiquidationWaterfall(\n    preferred_investment=5000000.0, # $5M Preferred Investment\n    preferred_ownership=0.25,        # 25% Equity\n    preference_multiple=1.0,\n    is_participating=False           # Standard 1x Non-Participating\n)\n\nexit_low = waterfall.calculate_exit_payouts(exit_valuation=10000000.0) # $10M Exit\nexit_high = waterfall.calculate_exit_payouts(exit_valuation=40000000.0) # $40M Exit\n\nprint(\"Exit Scenario 1 ($10M Acquisition):\")\nprint(f\"Preferred: ${exit_low['Preferred_Payout']:,} ({exit_low['Preferred_Mechanism']})\")\nprint(f\"Common:    ${exit_low['Common_Payout']:,}\")\n\nprint(\"\nExit Scenario 2 ($40M Acquisition):\")\nprint(f\"Preferred: ${exit_high['Preferred_Payout']:,} ({exit_high['Preferred_Mechanism']})\")\nprint(f\"Common:    ${exit_high['Common_Payout']:,}\")",
+        "code": "# Simulation: Cap Table Liquidation Waterfall Payout Engine\nclass LiquidationWaterfall:\n    def __init__(self, preferred_investment: float, preferred_ownership: float, \n                 preference_multiple: float = 1.0, is_participating: bool = False):\n        self.investment = preferred_investment\n        self.ownership = preferred_ownership\n        self.multiple = preference_multiple\n        self.participating = is_participating\n\n    def calculate_exit_payouts(self, exit_valuation: float) -> dict:\n        preference_owed = self.investment * self.multiple\n        \n        if exit_valuation <= preference_owed:\n            # Distressed exit: Preferred takes all available cash, Common gets $0\n            return {\n                \"Exit_Valuation\": exit_valuation,\n                \"Preferred_Payout\": exit_valuation,\n                \"Common_Payout\": 0.0,\n                \"Preferred_Mechanism\": \"PARTIAL_PREFERENCE_RECOVERY\"\n            }\n\n        if self.participating:\n            # Double dipping: gets preference plus pro-rata share of remainder\n            remaining_after_pref = exit_valuation - preference_owed\n            pref_payout = preference_owed + (remaining_after_pref * self.ownership)\n            common_payout = remaining_after_pref * (1.0 - self.ownership)\n            mechanism = \"PARTICIPATING_DOUBLE_DIP\"\n        else:\n            # Non-participating: chooses higher of Preference or Pro-Rata\n            pro_rata_payout = exit_valuation * self.ownership\n            if pro_rata_payout > preference_owed:\n                pref_payout = pro_rata_payout\n                common_payout = exit_valuation - pref_payout\n                mechanism = \"CONVERTED_TO_COMMON\"\n            else:\n                pref_payout = preference_owed\n                common_payout = exit_valuation - preference_owed\n                mechanism = \"TOOK_1X_PREFERENCE\"\n\n        return {\n            \"Exit_Valuation\": round(exit_valuation, 2),\n            \"Preferred_Payout\": round(pref_payout, 2),\n            \"Common_Payout\": round(common_payout, 2),\n            \"Preferred_Mechanism\": mechanism\n        }\n\nwaterfall = LiquidationWaterfall(\n    preferred_investment=5000000.0, # $5M Preferred Investment\n    preferred_ownership=0.25,        # 25% Equity\n    preference_multiple=1.0,\n    is_participating=False           # Standard 1x Non-Participating\n)\n\nexit_low = waterfall.calculate_exit_payouts(exit_valuation=10000000.0) # $10M Exit\nexit_high = waterfall.calculate_exit_payouts(exit_valuation=40000000.0) # $40M Exit\n\nprint(\"Exit Scenario 1 ($10M Acquisition):\")\nprint(f\"Preferred: ${exit_low['Preferred_Payout']:,} ({exit_low['Preferred_Mechanism']})\")\nprint(f\"Common:    ${exit_low['Common_Payout']:,}\")\n\nprint(\"\\nExit Scenario 2 ($40M Acquisition):\")\nprint(f\"Preferred: ${exit_high['Preferred_Payout']:,} ({exit_high['Preferred_Mechanism']})\")\nprint(f\"Common:    ${exit_high['Common_Payout']:,}\")",
         "output": "Exit Scenario 1 ($10M Acquisition):\nPreferred: $5,000,000.0 (TOOK_1X_PREFERENCE)\nCommon:    $5,000,000.0\n\nExit Scenario 2 ($40M Acquisition):\nPreferred: $10,000,000.0 (CONVERTED_TO_COMMON)\nCommon:    $30,000,000.0",
         "tryIt": "Set is_participating=True and rerun Scenario 2 to see the participating preferred investor take $13.75M instead of $10.0M.",
         "check": {
           "question": "Under a standard 1x Non-Participating Liquidation Preference, at what exit valuation does an investor who put in $4,000,000 for 20% ownership choose to convert to common stock?",
           "options": [
-            "At any exit valuation strictly above $20,000,000 (because 20% of $20M is $4.0M, exceeding the 1x preference).",
             "At exactly $4,000,000 because that repays their initial principal.",
             "Never, because preferred stock is legally barred from receiving common stock proceeds in an acquisition.",
-            "Only if the acquisition is paid in cash rather than public company shares."
+            "Only if the acquisition is paid in cash rather than public company shares.",
+            "At any exit valuation strictly above $20,000,000 (because 20% of $20M is $4.0M, exceeding the 1x preference)."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The conversion threshold is calculated as Investment / Ownership % = $4M / 0.20 = $20,000,000. At any exit below $20M, taking the $4M preference yields more cash than 20% pro-rata; above $20M, taking 20% pro-rata yields more.",
-          "answer": 0,
+          "answer": 3,
           "why": "The conversion threshold is calculated as Investment / Ownership % = $4M / 0.20 = $20,000,000. At any exit below $20M, taking the $4M preference yields more cash than 20% pro-rata; above $20M, taking 20% pro-rata yields more."
         }
       }
@@ -198,14 +188,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do venture debt lenders require warrant coverage (an equity kicker) in addition to charging cash interest on loans to startups?",
           "options": [
-            "(Recommended) Because venture loans bear equity-like default risk, warrants allow the lender to participate in outsized startup upside if the company becomes a unicorn.",
+            "Because warrants allow the lender to replace the startup CEO if quarterly revenue drops by 2%.",
             "Because federal law mandates that all corporate loans must issue voting common shares to commercial banks.",
-            "Because warrant coverage legally relieves the borrower from having to make monthly cash interest payments.",
-            "Because warrants allow the lender to replace the startup CEO if quarterly revenue drops by 2%."
+            "(Recommended) Because venture loans bear equity-like default risk, warrants allow the lender to participate in outsized startup upside if the company becomes a unicorn.",
+            "Because warrant coverage legally relieves the borrower from having to make monthly cash interest payments."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Startup borrowers often fail or burn through capital with limited physical collateral; the warrant kicker provides equity upside on winners to compensate the lender for default losses across their venture loan portfolio.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Startup borrowers often fail or burn through capital with limited physical collateral; the warrant kicker provides equity upside on winners to compensate the lender for default losses across their venture loan portfolio."
         }
       },
@@ -225,14 +215,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must common stock options granted to employees be priced at or above Fair Market Value (FMV) determined by an independent 409A valuation?",
           "options": [
-            "(Recommended) To comply with IRS safe harbor rules and protect employees from immediate taxable income and a punitive 20% federal excise tax penalty on unexercised options.",
-            "Because corporate law requires common stock options to be priced higher than the latest preferred stock round.",
             "Because the SEC requires all private startup options to be registered on NASDAQ within 30 days of grant.",
-            "Because lower option strike prices increase corporate income tax liabilities for the startup."
+            "(Recommended) To comply with IRS safe harbor rules and protect employees from immediate taxable income and a punitive 20% federal excise tax penalty on unexercised options.",
+            "Because lower option strike prices increase corporate income tax liabilities for the startup.",
+            "Because corporate law requires common stock options to be priced higher than the latest preferred stock round."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Under IRC Section 409A, issuing options below Fair Market Value constitutes deferred compensation without substantial risk of forfeiture, triggering immediate income recognition and a 20% excise tax penalty on the option recipient.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Under IRC Section 409A, issuing options below Fair Market Value constitutes deferred compensation without substantial risk of forfeiture, triggering immediate income recognition and a 20% excise tax penalty on the option recipient."
         }
       },
@@ -279,14 +269,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Broad-Based Weighted Average anti-dilution considered far superior for company longevity compared to Full Ratchet anti-dilution?",
           "options": [
-            "(Recommended) Because it softens the dilution adjustment by factoring in the size of the round relative to total capitalization, preventing founder equity from being completely wiped out.",
+            "Because full ratchet is illegal under Delaware corporate law and cannot be enforced in court.",
             "Because full ratchet forces the startup to immediately repay all previous venture capital in cash.",
             "Because broad-based weighted average requires preferred investors to forfeit all board seats during a down-round.",
-            "Because full ratchet is illegal under Delaware corporate law and cannot be enforced in court."
+            "(Recommended) Because it softens the dilution adjustment by factoring in the size of the round relative to total capitalization, preventing founder equity from being completely wiped out."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Broad-based weighted average accounts for the economic magnitude of the round (how much capital was actually raised at the lower price), preventing catastrophic dilution of founders and common employees that would otherwise destroy team incentives.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Broad-based weighted average accounts for the economic magnitude of the round (how much capital was actually raised at the lower price), preventing catastrophic dilution of founders and common employees that would otherwise destroy team incentives."
         }
       },
@@ -306,14 +296,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what specific conditions does a standard Double-Trigger Equity Acceleration clause trigger 100% vesting of a founder or executive unvested stock?",
           "options": [
-            "(Recommended) Both a change of control (acquisition) occurs AND the founder is involuntarily terminated without cause (or constructive termination) within a defined post-closing window.",
+            "Immediately upon signing a non-binding term sheet with an interested prospective acquirer.",
             "Only when the company completes an initial public offering (IPO) on a major global stock exchange.",
-            "Whenever the board of directors votes to replace the Chief Technology Officer during normal business operations.",
-            "Immediately upon signing a non-binding term sheet with an interested prospective acquirer."
+            "(Recommended) Both a change of control (acquisition) occurs AND the founder is involuntarily terminated without cause (or constructive termination) within a defined post-closing window.",
+            "Whenever the board of directors votes to replace the Chief Technology Officer during normal business operations."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Double-trigger requires both Trigger 1 (Change of Control) and Trigger 2 (Involuntary termination without cause within 12-24 months), protecting the executive from being purged post-deal while reassuring acquirers that un-terminated executives will stay.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Double-trigger requires both Trigger 1 (Change of Control) and Trigger 2 (Involuntary termination without cause within 12-24 months), protecting the executive from being purged post-deal while reassuring acquirers that un-terminated executives will stay."
         }
       }
@@ -344,7 +334,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
       {
         "title": "Pre-Money vs Post-Money Valuation Mechanics & Option Pool Shuffle",
         "say": [
-          "In venture capital financing rounds, founders often focus exclusively on the headline pre-money valuation, celebrating high paper valuations without understanding the subtle contractual mechanics that quietly dilute their equity. The fundamental mathematical relationship is deceptively simple: Post-Money Valuation = Pre-Money Valuation + Investment Amount. For example, a $5,000,000 investment on a $20,000,000 pre-money valuation creates a $25,000,000 post-money valuation, indicating on paper that the incoming investor will own 20% while existing shareholders retain 80%. Qualification filter retains 45% high-intent cohort (4,838).",
+          "In venture capital financing rounds, founders often focus exclusively on the headline pre-money valuation, celebrating high paper valuations without understanding the subtle contractual mechanics that quietly dilute their equity. The fundamental mathematical relationship is deceptively simple: Post-Money Valuation = Pre-Money Valuation + Investment Amount. For example, a $5,000,000 investment on a $20,000,000 pre-money valuation creates a $25,000,000 post-money valuation, indicating on paper that the incoming investor will own 20% while existing shareholders retain 80%.",
           "However, venture capital term sheets almost universally include a clause requiring the startup to create an unallocated Employee Stock Ownership Plan (ESOP) option pool prior to financing—typically 10% to 15% of post-money capitalization. In the notorious \"Option Pool Shuffle,\" the term sheet specifies that this pool must be created out of the pre-money capitalization.",
           "Because the option pool is expanded entirely before the investor checks clear, 100% of the dilution required to create the pool is borne by the existing founders, while the investor's 20% ownership remains pristine.",
           "To calculate the real economic impact, the founder must compute the Effective Founder Pre-Money Valuation by subtracting the dollar value of the unallocated pool ($3,750,000 for a 15% pool) from the stated pre-money valuation ($20,000,000). The resulting effective pre-money valuation is only $16,250,000, diluting founders from an expected 80.0% down to 65.0% ownership. Astute founders negotiate to right-size the option pool based on an explicit 12-month hiring plan rather than accepting arbitrary 15% to 20% buffers, preserving millions in founder equity value."
@@ -354,15 +344,15 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Venture Capital Option Pool Shuffle Mechanics:\n  Stated Pre-Money Valuation: $20,000,000.00\n  Series A Investment: $5,000,000.00\n  Post-Money Valuation: $25,000,000.00\n  Unallocated ESOP Pool Required: 15.0% ($3,750,000.00)\n  Effective Founder Pre-Money Valuation: $16,250,000.00\n  Investor Ownership: 20.0%\n  Unallocated Option Pool: 15.0%\n  Founder Effective Post-Round Ownership: 65.0% (Diluted by 15.0%)",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 4,
             "note": "Calculates the standard post-money valuation ($25.0M) from pre-money ($20.0M) and investment ($5.0M)."
           },
           {
-            "line": 2,
+            "line": 10,
             "note": "Demonstrates how establishing a 15% unallocated option pool out of pre-money reduces effective founder valuation by $3.75M."
           },
           {
-            "line": 3,
+            "line": 12,
             "note": "Quantifies founder ownership compression from 80.0% down to 65.0% due to the pre-money option pool creation."
           }
         ],
@@ -370,21 +360,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the economic consequence of creating an unallocated employee option pool in the pre-money valuation rather than the post-money valuation?",
           "options": [
-            "Existing founders absorb 100% of the dilution required to create the pool, effectively reducing the true pre-money valuation paid by the new investor",
-            "The incoming venture capital fund pays double the agreed share price to fund employee bonuses",
             "All existing company employees immediately forfeit their vested common stock",
-            "The IRS imposes a 50% excise tax penalty on all stock option grants"
+            "Existing founders absorb 100% of the dilution required to create the pool, effectively reducing the true pre-money valuation paid by the new investor",
+            "The IRS imposes a 50% excise tax penalty on all stock option grants",
+            "The incoming venture capital fund pays double the agreed share price to fund employee bonuses"
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Creating the option pool in the pre-money forces existing shareholders to bear the entire dilution burden, effectively discounting the price-per-share paid by the new investor.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Creating the option pool in the pre-money forces existing shareholders to bear the entire dilution burden, effectively discounting the price-per-share paid by the new investor."
         }
       },
       {
         "title": "Preferred Stock Liquidation Preferences & Participation Rights",
         "say": [
-          "Venture capitalists rarely purchase common stock alongside founders; instead, they purchase Preferred Stock structured with liquidation preferences to protect their downside capital. A liquidation preference dictates the order and magnitude of cash distributions when a startup undergoes a liquidity event, such as a merger, trade sale, or asset liquidation. (Qualification filter retains 45% high-intent cohort (4,838).)",
+          "Venture capitalists rarely purchase common stock alongside founders; instead, they purchase Preferred Stock structured with liquidation preferences to protect their downside capital. A liquidation preference dictates the order and magnitude of cash distributions when a startup undergoes a liquidity event, such as a merger, trade sale, or asset liquidation.",
           "Under the standard National Venture Capital Association (NVCA) model, a 1x Non-Participating Preferred stock grants the investor the right to receive either their original investment back OR convert their preferred shares into common stock to share pro-rata in exit proceeds, whichever is higher.",
           "In contrast, aggressive investor term sheets sometimes introduce Participating Preferred stock (derided by entrepreneurs as \"double-dipping\"). In a 1x Fully Participating Preferred structure, the investor receives their full 1x original investment back FIRST, and then participates alongside common stockholders in the remaining exit proceeds according to their pro-rata ownership percentage. In distressed or modest exit scenarios, participating preferred severely depresses founder payouts.",
           "For instance, on a $5,000,000 Series A investment for 20% ownership, if the company is sold for $12,000,000, a non-participating investor takes their $5,000,000 preference, leaving $7,000,000 for founders. However, under participating preferred, the investor takes $5,000,000 plus 20% of the remaining $7,000,000 ($1.4M), extracting $6,400,000 total and shrinking the founder payout to $5,600,000. In high-value unicorn exits (e.g. $100M), preferred shares automatically convert to common, aligning investor and founder incentives."
@@ -394,15 +384,15 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Liquidation Preference Waterfall Comparison (1x Non-Participating vs 1x Participating):\n  Exit Value      | 1x Non-Participating (Preferred vs Common) | 1x Fully Participating   \n  ----------------------------------------------------------------------------------------\n  $12,000,000     | Investor: $5,000,000 (PREFERENCE) / Founder: $7,000,000 | Investor: $6,400,000 / Founder: $5,600,000\n  $30,000,000     | Investor: $6,000,000 (CONVERTED) / Founder: $24,000,000 | Investor: $10,000,000 / Founder: $20,000,000\n  $100,000,000    | Investor: $20,000,000 (CONVERTED) / Founder: $80,000,000 | Investor: $24,000,000 / Founder: $76,000,000",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 5,
             "note": "Models exit waterfalls across $12M, $30M, and $100M liquidity outcomes."
           },
           {
-            "line": 2,
+            "line": 14,
             "note": "Demonstrates that non-participating preferred chooses the higher of 1x preference or as-converted common share."
           },
           {
-            "line": 3,
+            "line": 25,
             "note": "Illustrates how participating preferred extracts an additional $1.4M to $4.0M in proceeds directly from founder equity."
           }
         ],
@@ -410,61 +400,61 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What happens to a 1x Non-Participating Preferred stock in an acquisition where the investor's as-converted common stock value exceeds their initial investment?",
           "options": [
-            "The investor automatically converts their preferred shares into common stock to receive their higher pro-rata percentage of exit proceeds",
+            "The preferred stock is cancelled by Delaware courts without any distribution",
             "The investor is legally required to return all initial invested capital back to the founders",
-            "The investor receives both their 1x preference AND their full common stock percentage",
-            "The preferred stock is cancelled by Delaware courts without any distribution"
+            "The investor automatically converts their preferred shares into common stock to receive their higher pro-rata percentage of exit proceeds",
+            "The investor receives both their 1x preference AND their full common stock percentage"
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Under non-participating preferred, investors choose whichever payout is greater: their 1x liquidation preference or converting to common stock to share pro-rata.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Under non-participating preferred, investors choose whichever payout is greater: their 1x liquidation preference or converting to common stock to share pro-rata."
         }
       },
       {
         "title": "Down-Round Protection: Broad-Based Weighted Average vs Full Ratchet Anti-Dilution",
         "say": [
-          "When market valuations contract or a startup misses revenue milestones, it may be forced to raise capital at a lower valuation than its previous financing round—an event known in venture capital as a \"Down-Round.\" To protect early investors from value destruction, preferred stock agreements include anti-dilution provisions that dynamically adjust the price at which preferred shares convert into common stock, issuing compensatory bonus shares to the investor. Qualification filter retains 45% high-intent cohort (4,838).",
+          "When market valuations contract or a startup misses revenue milestones, it may be forced to raise capital at a lower valuation than its previous financing round—an event known in venture capital as a \"Down-Round.\" To protect early investors from value destruction, preferred stock agreements include anti-dilution provisions that dynamically adjust the price at which preferred shares convert into common stock, issuing compensatory bonus shares to the investor.",
           "The two primary mechanisms for anti-dilution adjustments are Full Ratchet and Broad-Based Weighted Average. Full Ratchet is the most punitive clause in venture finance: it reprices the original investor's shares entirely to the new down-round price, regardless of how small the new round is. If Series A invested $5,000,000 at $10.00/share and Series B is priced at $5.00/share, Full Ratchet cuts the Series A conversion price directly to $5.00, instantly doubling the investor's share count from 500,000 to 1,000,000 shares and wiping out founder equity.",
           "The NVCA market standard is Broad-Based Weighted Average anti-dilution, which factors in both the price of the new round and the magnitude of capital raised relative to the company's fully diluted capitalization. The formula is expressed as CP2 = CP1 * (A + B) / (A + C), where A is pre-round fully diluted shares (2,500,000), B is shares that would have been purchased at the old price ($3M / $10 = 300,000), and C is actual new shares issued (600,000).",
           "This adjusts the conversion price moderately to $9.0323, granting Series A 553,571 shares (+53,571 shares or +10.7%) rather than doubling their ownership, protecting founders from wipeout dilution."
         ],
         "example": "Series A holds 500,000 shares at $10.00 in a 2.5M share company. Raising $3.0M at $5.00 triggers Full Ratchet to double Series A to 1,000,000 shares (+100% dilution), whereas Broad-Based Weighted Average adjusts the price to $9.0323, granting 553,571 shares (+10.7% dilution).",
-        "code": "def calculate_down_round_anti_dilution():\n    # Series A: Invested $5,000,000 at $10.00/share (500,000 shares)\n    # Total pre-Series B capitalization: 2,500,000 fully diluted shares\n    # Series B Down-Round: Raising $3,000,000 at $5.00/share (600,000 new shares)\n    cp1 = 10.00  # Original Series A Conversion Price\n    shares_a = 500000\n    fully_diluted_pre = 2500000\n    new_money = 3000000.0\n    new_price = 5.00\n    new_shares = new_money / new_price # 600,000 shares\n\n    # 1. Full Ratchet: Conversion price immediately drops to new price\n    full_ratchet_cp = new_price # $5.00\n    full_ratchet_shares = (shares_a * cp1) / full_ratchet_cp # 1,000,000 shares (+500k shares)\n\n    # 2. Broad-Based Weighted Average: CP2 = CP1 * (A + B) / (A + C)\n    # A = Fully diluted shares before round = 2,500,000\n    # B = Shares that would have been purchased at old price = $3,000,000 / $10.00 = 300,000\n    # C = Actual shares purchased at new price = 600,000\n    a = fully_diluted_pre\n    b = new_money / cp1 # 300,000\n    c = new_shares      # 600,000\n    bb_cp = cp1 * ((a + b) / (a + c)) # $10.00 * (2.8M / 3.1M) = $9.0323\n    bb_shares = (shares_a * cp1) / bb_cp # ~553,571 shares (+53,571 shares)\n\n    print(\"Down-Round Anti-Dilution Adjustment Comparison:\")\n    print(f\"  Original Series A: {shares_a:,} shares at \" + \"$\" + f\"{cp1:.2f} / share\")\n    print(f\"  Series B Down-Round: Raised \" + \"$\" + f\"{new_money:,.0f} at \" + \"$\" + f\"{new_price:.2f} / share ({new_shares:,.0f} shares)\")\n    print(f\"  1. Full Ratchet Protection:\")\n    print(f\"     Adjusted Conversion Price: \" + \"$\" + f\"{full_ratchet_cp:.2f}\")\n    print(f\"     Adjusted Series A Shares: {full_ratchet_shares:,.0f} (+{full_ratchet_shares - shares_a:,.0f} shares, +100.0% dilution protection)\")\n    print(f\"  2. Broad-Based Weighted Average Protection:\")\n    print(f\"     Adjusted Conversion Price: \" + \"$\" + f\"{bb_cp:.4f}\")\n    print(f\"     Adjusted Series A Shares: {bb_shares:,.0f} (+{bb_shares - shares_a:,.0f} shares, +10.7% dilution protection)\")\n    return {\"full_ratchet_cp\": full_ratchet_cp, \"broad_based_cp\": bb_cp}\n\ncalculate_down_round_anti_dilution()",
+        "code": "def calculate_down_round_anti_dilution():\n    # Series A: Invested $5,000,000 at $10.00/share (500,000 shares)\n    # Total pre-Series B capitalization: 2,500,000 fully diluted shares\n    # Series B Down-Round: Raising $3,000,000 at $5.00/share (600,000 new shares)\n    cp1 = 10.00  # Original Series A Conversion Price\n    shares_a = 500000\n    fully_diluted_pre = 2500000\n    new_money = 3000000.0\n    new_price = 5.00\n    new_shares = new_money / new_price # 600,000 shares\n\n    # 1. Full Ratchet: Conversion price immediately drops to new price\n    full_ratchet_cp = new_price # $5.00\n    full_ratchet_shares = (shares_a * cp1) / full_ratchet_cp # 1,000,000 shares (+500k shares)\n\n    # 2. Broad-Based Weighted Average: CP2 = CP1 * (A + B) / (A + C)\n    # A = Fully diluted shares before round = 2,500,000\n    # B = Shares that would have been purchased at old price = $3,000,000 / $10.00 = 300,000\n    # C = Actual shares purchased at new price = 600,000\n    a = fully_diluted_pre\n    b = new_money / cp1 # 300,000\n    c = new_shares      # 600,000\n    bb_cp = cp1 * ((a + b) / (a + c)) # $10.00 * (2.8M / 3.1M) = $9.0323\n    bb_shares = (shares_a * cp1) / bb_cp # ~553,571 shares (+53,571 shares)\n\n    print(\"Down-Round Anti-Dilution Adjustment Comparison:\")\n    print(f\"  Original Series A: {shares_a:,} shares at \" + \"$\" + f\"{cp1:.2f} / share\")\n    print(f\"  Series B Down-Round: Raised \" + \"$\" + f\"{new_money:,.0f} at \" + \"$\" + f\"{new_price:.2f} / share ({new_shares:,.0f} shares)\")\n    print(f\"  1. Full Ratchet Protection:\")\n    print(f\"     Adjusted Conversion Price: \" + \"$\" + f\"{full_ratchet_cp:.2f}\")\n    print(f\"     Adjusted Series A Shares: {full_ratchet_shares:,.0f} (+{full_ratchet_shares - shares_a:,.0f} shares, +{(full_ratchet_shares / shares_a - 1) * 100:.1f}% dilution protection)\")\n    print(f\"  2. Broad-Based Weighted Average Protection:\")\n    print(f\"     Adjusted Conversion Price: \" + \"$\" + f\"{bb_cp:.4f}\")\n    print(f\"     Adjusted Series A Shares: {bb_shares:,.0f} (+{bb_shares - shares_a:,.0f} shares, +{(bb_shares / shares_a - 1) * 100:.1f}% dilution protection)\")\n    return {\"full_ratchet_cp\": full_ratchet_cp, \"broad_based_cp\": bb_cp}\n\ncalculate_down_round_anti_dilution()",
         "output": "Down-Round Anti-Dilution Adjustment Comparison:\n  Original Series A: 500,000 shares at $10.00 / share\n  Series B Down-Round: Raised $3,000,000 at $5.00 / share (600,000 shares)\n  1. Full Ratchet Protection:\n     Adjusted Conversion Price: $5.00\n     Adjusted Series A Shares: 1,000,000 (+500,000 shares, +100.0% dilution protection)\n  2. Broad-Based Weighted Average Protection:\n     Adjusted Conversion Price: $9.0323\n     Adjusted Series A Shares: 553,571 (+53,571 shares, +10.7% dilution protection)",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 14,
             "note": "Calculates Full Ratchet by setting conversion price directly equal to the new $5.00 round price, doubling investor shares."
           },
           {
-            "line": 2,
+            "line": 23,
             "note": "Applies the NVCA Broad-Based Weighted Average formula CP2 = CP1 * (A + B) / (A + C) to calculate $9.0323."
           },
           {
-            "line": 3,
+            "line": 24,
             "note": "Shows that Broad-Based Weighted Average limits Series A share expansion to +53,571 shares, mitigating catastrophic founder dilution."
           }
         ],
-        "tryIt": "Raise the down-round price from $5.00 to $8.00 to see Broad-Based conversion price moderate to $9.6429 (+18,519 shares).",
+        "tryIt": "Raise the down-round price from $5.00 to $8.00 (line 9) to see the Broad-Based conversion price move to $9.7391 (553,571 becomes 513,393 shares, +13,393 shares or +2.7%), while Full Ratchet gives 625,000 shares.",
         "check": {
           "question": "Why is Broad-Based Weighted Average anti-dilution vastly preferred by founders over Full Ratchet anti-dilution?",
           "options": [
-            "Because Broad-Based accounts for the dollar amount raised and total capitalization, mitigating dilution, whereas Full Ratchet resets the price entirely regardless of round size",
             "Because Full Ratchet requires the founders to pay cash out of their personal bank accounts to the investors",
             "Because Broad-Based anti-dilution is only allowed for companies incorporated in Delaware",
-            "Because Full Ratchet eliminates all preferred stock and forces venture capitalists to accept debt notes"
+            "Because Full Ratchet eliminates all preferred stock and forces venture capitalists to accept debt notes",
+            "Because Broad-Based accounts for the dollar amount raised and total capitalization, mitigating dilution, whereas Full Ratchet resets the price entirely regardless of round size"
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Full Ratchet ignores the size of the round and resets the conversion price directly to the lowest issued price, creating severe dilution; Broad-Based cushions dilution proportionally.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Full Ratchet ignores the size of the round and resets the conversion price directly to the lowest issued price, creating severe dilution; Broad-Based cushions dilution proportionally."
         }
       },
       {
         "title": "Corporate Governance: Board Control, Protective Provisions & Drag-Along Rights",
         "say": [
-          "Economic terms determine who gets paid in an exit, but governance terms dictate who controls the company's destiny on a day-to-day basis. Founders often surrender corporate control without realizing it by agreeing to unbalanced board seats, sweeping veto rights, and predatory transfer clauses. (Qualification filter retains 45% high-intent cohort (4,838).)",
+          "Economic terms determine who gets paid in an exit, but governance terms dictate who controls the company's destiny on a day-to-day basis. Founders often surrender corporate control without realizing it by agreeing to unbalanced board seats, sweeping veto rights, and predatory transfer clauses.",
           "In standard Series A financings, the Board of Directors typically expands to five members: two Founder seats, two Investor seats, and one mutually agreed Independent industry expert, establishing a balanced decision-making coalition.",
           "Venture investors protect their minority equity interests through Protective Provisions—contractual negative covenants requiring separate majority approval from preferred stockholders before the company can take significant corporate actions. Standard NVCA protective provisions restrict the startup from altering certificate of incorporation terms, creating or issuing senior equity, incurring debt exceeding agreed thresholds (e.g. >$500,000), repurchasing common shares, or declaring dividends.",
           "Crucially, term sheets govern exit liquidity through Drag-Along and Tag-Along rights. Drag-Along rights enable a designated majority (typically Board approval, a majority of Preferred, and a majority of Common) to force minority stockholders to vote in favor of a corporate sale or merger, preventing holdout shareholders from blocking an acquisition. Tag-Along (co-sale) rights protect minority investors by guaranteeing them the right to participate pro-rata if founders sell their personal shares on secondary markets."
@@ -474,19 +464,19 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "NVCA Term Sheet Corporate Governance & Protective Provisions Audit:\n  Board Composition      | Standard: 2 Founder, 2 Investor, 1 Independent     | Status: APPROVED (BALANCED)\n  Protective Provisions  | Standard: Series A majority approval for M&A, debt >$500k, senior stock | Status: APPROVED (STANDARD)\n  Drag-Along Threshold   | Standard: Board + Common Majority + Series A Majority required | Status: APPROVED (FOUNDER_PROTECTED)\n  Information Rights     | Standard: Major investors (>10% ownership) receive monthly financials & annual budget | Status: APPROVED (STANDARD)",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 3,
             "note": "Evaluates corporate board composition against the balanced 2-2-1 NVCA structure."
           },
           {
-            "line": 2,
+            "line": 4,
             "note": "Verifies standard preferred protective provisions limiting unapproved M&A and debt incurrence."
           },
           {
-            "line": 3,
+            "line": 5,
             "note": "Ensures drag-along clauses require common stockholder consent to prevent unilateral investor fire sales."
           }
         ],
-        "tryIt": "Simulate an investor-favorable drag-along clause requiring only Preferred majority approval to analyze founder vulnerability.",
+        "tryIt": "Edit the Drag-Along row (line 5): change nvca_standard to 'Series A Majority only' and risk to 'INVESTOR_CONTROLLED' to see how the audit line would flag an investor-favorable clause that lets the preferred holders sell the company over common holders' objections.",
         "check": {
           "question": "What is the function of a Drag-Along clause in a venture capital stockholders' agreement?",
           "options": [
@@ -504,25 +494,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
       {
         "title": "Deploy the Venture Capital Term Sheet Control Tower",
         "say": [
-          "Venture capital negotiations are an exercise in multi-variable game theory. Evaluating a term sheet requires synthesizing valuation, option pool mechanics, downside liquidation preferences, anti-dilution protections, and board governance provisions into a single coherent capital strategy. Qualification filter retains 45% high-intent cohort (4,838).",
+          "Venture capital negotiations are an exercise in multi-variable game theory. Evaluating a term sheet requires synthesizing valuation, option pool mechanics, downside liquidation preferences, anti-dilution protections, and board governance provisions into a single coherent capital strategy.",
           "In this operational capstone module, you will deploy the complete Venture Capital Term Sheet Control Tower.",
-          "You will audit the option pool shuffle to uncover effective pre-money valuations, model liquidation preferences across exit horizons, simulate down-round anti-dilution dilution formulas, and audit corporate governance provisions.",
+          "You will audit the option pool shuffle to uncover effective pre-money valuations, model liquidation preferences across exit horizons, simulate down-round anti-dilution formulas, and audit corporate governance provisions.",
           "Deploying this control tower empowers entrepreneurs and venture finance leaders to negotiate term sheets from a position of analytical strength, safeguarding founder ownership and establishing sustainable boardroom partnerships."
         ],
         "example": "The team analyzes a $20M pre-money term sheet ($16.25M effective founder valuation), confirms non-participating preferred protections across $12M to $100M exits, verifies Broad-Based anti-dilution at $9.0323, and audits 4 balanced NVCA governance clauses.",
-        "code": "def run_venture_capital_term_sheet_suite():\n    print(\"=== PinIT Career OS Venture Capital Term Sheet Control Tower ===\")\n    print(\"--- 1. Pre/Post-Money & Option Pool Shuffle ---\")\n    shuf = calculate_option_pool_shuffle()\n\n    print(\"\n--- 2. Liquidation Preference Structures ---\")\n    liq = evaluate_liquidation_preference_structures()\n\n    print(\"\n--- 3. Down-Round Anti-Dilution Modeling ---\")\n    ad = calculate_down_round_anti_dilution()\n\n    print(\"\n--- 4. NVCA Corporate Governance Scorecard ---\")\n    gov = audit_nvca_governance_scorecard()\n\n    print(\"\n--- 5. VC Term Sheet Synthesis ---\")\n    print(\"  Effective Founder Pre-Money: \" + \"$\" + f\"{shuf['effective_pre']:,.2f}\")\n    print(f\"  Broad-Based Weighted Average Conversion Price: \" + \"$\" + f\"{ad['broad_based_cp']:.4f}\")\n    print(f\"  NVCA Governance Clauses Audited: {gov['total_clauses']} (All Compliant)\")\n    print(\"Status: TERM SHEET FINANCIAL & LEGAL GOVERNANCE READY FOR PARTNER VOTE.\")\n\nrun_venture_capital_term_sheet_suite()",
+        "code": "# Setup: re-runs the earlier parts of today's lesson so this capstone runs on its own (their output is hidden).\nimport sys as _s4, io as _io4\n_o4 = _s4.stdout\n_s4.stdout = _io4.StringIO()\n\ndef calculate_option_pool_shuffle():\n    stated_pre_money = 20000000.0  # $20,000,000 stated pre-money\n    investment_amount = 5000000.0   # $5,000,000 Series A investment\n    post_money = stated_pre_money + investment_amount # $25,000,000\n\n    esop_target_pct = 0.15 # 15% post-money unallocated option pool demanded\n    esop_dollar_val = post_money * esop_target_pct # $3,750,000\n\n    # Under standard term sheet, the 15% pool is created in PRE-MONEY\n    effective_founder_pre_money = stated_pre_money - esop_dollar_val # $16,250,000\n    founder_pre_ownership = stated_pre_money / post_money # 80.0%\n    founder_actual_ownership = effective_founder_pre_money / post_money # 65.0%\n    investor_ownership = investment_amount / post_money # 20.0%\n\n    print(\"Venture Capital Option Pool Shuffle Mechanics:\")\n    print(\"  Stated Pre-Money Valuation: \" + \"$\" + f\"{stated_pre_money:,.2f}\")\n    print(\"  Series A Investment: \" + \"$\" + f\"{investment_amount:,.2f}\")\n    print(\"  Post-Money Valuation: \" + \"$\" + f\"{post_money:,.2f}\")\n    print(f\"  Unallocated ESOP Pool Required: {esop_target_pct*100:.1f}% (\" + \"$\" + f\"{esop_dollar_val:,.2f}\" + \")\")\n    print(\"  Effective Founder Pre-Money Valuation: \" + \"$\" + f\"{effective_founder_pre_money:,.2f}\")\n    print(f\"  Investor Ownership: {investor_ownership*100:.1f}%\")\n    print(f\"  Unallocated Option Pool: {esop_target_pct*100:.1f}%\")\n    print(f\"  Founder Effective Post-Round Ownership: {founder_actual_ownership*100:.1f}% (Diluted by {founder_pre_ownership*100 - founder_actual_ownership*100:.1f}%)\")\n    return {\"effective_pre\": effective_founder_pre_money, \"founder_pct\": founder_actual_ownership}\n\ncalculate_option_pool_shuffle()\n\ndef evaluate_liquidation_preference_structures():\n    # Series A invested $5,000,000 for 20% preferred stock\n    invested_amount = 5000000.0\n    ownership_pct = 0.20\n    exit_valuations = [12000000.0, 30000000.0, 100000000.0]\n\n    print(\"Liquidation Preference Waterfall Comparison (1x Non-Participating vs 1x Participating):\")\n    print(f\"  {'Exit Value':<15} | {'1x Non-Participating (Preferred vs Common)':<42} | {'1x Fully Participating':<25}\")\n    print(\"  \" + \"-\" * 88)\n\n    results = []\n    for exit_val in exit_valuations:\n        # 1. 1x Non-Participating: Max of (1x Preference, As-Converted Share)\n        as_converted_pref = exit_val * ownership_pct\n        if as_converted_pref > invested_amount:\n            non_part_pref = as_converted_pref\n            non_part_founder = exit_val - non_part_pref\n            choice = \"CONVERTED\"\n        else:\n            non_part_pref = min(invested_amount, exit_val)\n            non_part_founder = max(0.0, exit_val - non_part_pref)\n            choice = \"PREFERENCE\"\n\n        # 2. 1x Fully Participating: 1x Preference + 20% of Remaining Proceeds\n        part_pref = min(invested_amount, exit_val)\n        remaining = max(0.0, exit_val - part_pref)\n        part_pref += remaining * ownership_pct\n        part_founder = exit_val - part_pref\n\n        print(f\"  \" + \"$\" + f\"{exit_val:<14,.0f} | Investor: \" + \"$\" + f\"{non_part_pref:,.0f}\" + f\" ({choice}) / Founder: \" + \"$\" + f\"{non_part_founder:,.0f} | Investor: \" + \"$\" + f\"{part_pref:,.0f}\" + \" / Founder: \" + \"$\" + f\"{part_founder:,.0f}\")\n        results.append({\"exit\": exit_val, \"non_part_investor\": non_part_pref, \"part_investor\": part_pref})\n\n    return results\n\nevaluate_liquidation_preference_structures()\n\ndef calculate_down_round_anti_dilution():\n    # Series A: Invested $5,000,000 at $10.00/share (500,000 shares)\n    # Total pre-Series B capitalization: 2,500,000 fully diluted shares\n    # Series B Down-Round: Raising $3,000,000 at $5.00/share (600,000 new shares)\n    cp1 = 10.00  # Original Series A Conversion Price\n    shares_a = 500000\n    fully_diluted_pre = 2500000\n    new_money = 3000000.0\n    new_price = 5.00\n    new_shares = new_money / new_price # 600,000 shares\n\n    # 1. Full Ratchet: Conversion price immediately drops to new price\n    full_ratchet_cp = new_price # $5.00\n    full_ratchet_shares = (shares_a * cp1) / full_ratchet_cp # 1,000,000 shares (+500k shares)\n\n    # 2. Broad-Based Weighted Average: CP2 = CP1 * (A + B) / (A + C)\n    # A = Fully diluted shares before round = 2,500,000\n    # B = Shares that would have been purchased at old price = $3,000,000 / $10.00 = 300,000\n    # C = Actual shares purchased at new price = 600,000\n    a = fully_diluted_pre\n    b = new_money / cp1 # 300,000\n    c = new_shares      # 600,000\n    bb_cp = cp1 * ((a + b) / (a + c)) # $10.00 * (2.8M / 3.1M) = $9.0323\n    bb_shares = (shares_a * cp1) / bb_cp # ~553,571 shares (+53,571 shares)\n\n    print(\"Down-Round Anti-Dilution Adjustment Comparison:\")\n    print(f\"  Original Series A: {shares_a:,} shares at \" + \"$\" + f\"{cp1:.2f} / share\")\n    print(f\"  Series B Down-Round: Raised \" + \"$\" + f\"{new_money:,.0f} at \" + \"$\" + f\"{new_price:.2f} / share ({new_shares:,.0f} shares)\")\n    print(f\"  1. Full Ratchet Protection:\")\n    print(f\"     Adjusted Conversion Price: \" + \"$\" + f\"{full_ratchet_cp:.2f}\")\n    print(f\"     Adjusted Series A Shares: {full_ratchet_shares:,.0f} (+{full_ratchet_shares - shares_a:,.0f} shares, +{(full_ratchet_shares / shares_a - 1) * 100:.1f}% dilution protection)\")\n    print(f\"  2. Broad-Based Weighted Average Protection:\")\n    print(f\"     Adjusted Conversion Price: \" + \"$\" + f\"{bb_cp:.4f}\")\n    print(f\"     Adjusted Series A Shares: {bb_shares:,.0f} (+{bb_shares - shares_a:,.0f} shares, +{(bb_shares / shares_a - 1) * 100:.1f}% dilution protection)\")\n    return {\"full_ratchet_cp\": full_ratchet_cp, \"broad_based_cp\": bb_cp}\n\ncalculate_down_round_anti_dilution()\n\ndef audit_nvca_governance_scorecard():\n    terms = [\n        {\"clause\": \"Board Composition\", \"nvca_standard\": \"2 Founder, 2 Investor, 1 Independent\", \"status\": \"APPROVED\", \"risk\": \"BALANCED\"},\n        {\"clause\": \"Protective Provisions\", \"nvca_standard\": \"Series A majority approval for M&A, debt >$500k, senior stock\", \"status\": \"APPROVED\", \"risk\": \"STANDARD\"},\n        {\"clause\": \"Drag-Along Threshold\", \"nvca_standard\": \"Board + Common Majority + Series A Majority required\", \"status\": \"APPROVED\", \"risk\": \"FOUNDER_PROTECTED\"},\n        {\"clause\": \"Information Rights\", \"nvca_standard\": \"Major investors (>10% ownership) receive monthly financials & annual budget\", \"status\": \"APPROVED\", \"risk\": \"STANDARD\"}\n    ]\n\n    print(\"NVCA Term Sheet Corporate Governance & Protective Provisions Audit:\")\n    for t in terms:\n        print(f\"  {t['clause']:<22} | Standard: {t['nvca_standard']:<40} | Status: {t['status']} ({t['risk']})\")\n\n    return {\"total_clauses\": len(terms), \"status\": \"GOVERNANCE_COMPLIANT\"}\n\naudit_nvca_governance_scorecard()\n\n_s4.stdout = _o4\n# ---- Capstone starts here ----\n\n\n\ndef run_venture_capital_term_sheet_suite():\n    print(\"=== PinIT Career OS Venture Capital Term Sheet Control Tower ===\")\n    print(\"--- 1. Pre/Post-Money & Option Pool Shuffle ---\")\n    shuf = calculate_option_pool_shuffle()\n\n    print(\"\\n--- 2. Liquidation Preference Structures ---\")\n    liq = evaluate_liquidation_preference_structures()\n\n    print(\"\\n--- 3. Down-Round Anti-Dilution Modeling ---\")\n    ad = calculate_down_round_anti_dilution()\n\n    print(\"\\n--- 4. NVCA Corporate Governance Scorecard ---\")\n    gov = audit_nvca_governance_scorecard()\n\n    print(\"\\n--- 5. VC Term Sheet Synthesis ---\")\n    print(\"  Effective Founder Pre-Money: \" + \"$\" + f\"{shuf['effective_pre']:,.2f}\")\n    print(f\"  Broad-Based Weighted Average Conversion Price: \" + \"$\" + f\"{ad['broad_based_cp']:.4f}\")\n    print(f\"  NVCA Governance Clauses Audited: {gov['total_clauses']} (All Compliant)\")\n    print(\"Status: TERM SHEET FINANCIAL & LEGAL GOVERNANCE READY FOR PARTNER VOTE.\")\n\nrun_venture_capital_term_sheet_suite()",
         "output": "=== PinIT Career OS Venture Capital Term Sheet Control Tower ===\n--- 1. Pre/Post-Money & Option Pool Shuffle ---\nVenture Capital Option Pool Shuffle Mechanics:\n  Stated Pre-Money Valuation: $20,000,000.00\n  Series A Investment: $5,000,000.00\n  Post-Money Valuation: $25,000,000.00\n  Unallocated ESOP Pool Required: 15.0% ($3,750,000.00)\n  Effective Founder Pre-Money Valuation: $16,250,000.00\n  Investor Ownership: 20.0%\n  Unallocated Option Pool: 15.0%\n  Founder Effective Post-Round Ownership: 65.0% (Diluted by 15.0%)\n\n--- 2. Liquidation Preference Structures ---\nLiquidation Preference Waterfall Comparison (1x Non-Participating vs 1x Participating):\n  Exit Value      | 1x Non-Participating (Preferred vs Common) | 1x Fully Participating   \n  ----------------------------------------------------------------------------------------\n  $12,000,000     | Investor: $5,000,000 (PREFERENCE) / Founder: $7,000,000 | Investor: $6,400,000 / Founder: $5,600,000\n  $30,000,000     | Investor: $6,000,000 (CONVERTED) / Founder: $24,000,000 | Investor: $10,000,000 / Founder: $20,000,000\n  $100,000,000    | Investor: $20,000,000 (CONVERTED) / Founder: $80,000,000 | Investor: $24,000,000 / Founder: $76,000,000\n\n--- 3. Down-Round Anti-Dilution Modeling ---\nDown-Round Anti-Dilution Adjustment Comparison:\n  Original Series A: 500,000 shares at $10.00 / share\n  Series B Down-Round: Raised $3,000,000 at $5.00 / share (600,000 shares)\n  1. Full Ratchet Protection:\n     Adjusted Conversion Price: $5.00\n     Adjusted Series A Shares: 1,000,000 (+500,000 shares, +100.0% dilution protection)\n  2. Broad-Based Weighted Average Protection:\n     Adjusted Conversion Price: $9.0323\n     Adjusted Series A Shares: 553,571 (+53,571 shares, +10.7% dilution protection)\n\n--- 4. NVCA Corporate Governance Scorecard ---\nNVCA Term Sheet Corporate Governance & Protective Provisions Audit:\n  Board Composition      | Standard: 2 Founder, 2 Investor, 1 Independent     | Status: APPROVED (BALANCED)\n  Protective Provisions  | Standard: Series A majority approval for M&A, debt >$500k, senior stock | Status: APPROVED (STANDARD)\n  Drag-Along Threshold   | Standard: Board + Common Majority + Series A Majority required | Status: APPROVED (FOUNDER_PROTECTED)\n  Information Rights     | Standard: Major investors (>10% ownership) receive monthly financials & annual budget | Status: APPROVED (STANDARD)\n\n--- 5. VC Term Sheet Synthesis ---\n  Effective Founder Pre-Money: $16,250,000.00\n  Broad-Based Weighted Average Conversion Price: $9.0323\n  NVCA Governance Clauses Audited: 4 (All Compliant)\nStatus: TERM SHEET FINANCIAL & LEGAL GOVERNANCE READY FOR PARTNER VOTE.",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 126,
             "note": "Unifies option pool valuation impacts, liquidation waterfalls, down-round anti-dilution, and NVCA governance."
           },
           {
-            "line": 2,
+            "line": 141,
             "note": "Demonstrates how mathematical rigor in term sheet evaluation protects millions in founder capitalization."
           },
           {
-            "line": 3,
+            "line": 144,
             "note": "Prepares entrepreneurs for institutional venture capital partner presentations and legal term sheet execution."
           }
         ],
@@ -530,14 +520,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How do sophisticated startup founders evaluate competing venture capital term sheets beyond top-line valuation?",
           "options": [
-            "By analyzing option pool size and placement, liquidation preference participation rights, anti-dilution formulas, and board governance control thresholds",
             "By choosing whichever venture capitalist offers the highest discount on office snacks",
+            "By analyzing option pool size and placement, liquidation preference participation rights, anti-dilution formulas, and board governance control thresholds",
             "By refusing to sign any legal agreements and accepting only physical cash investments",
             "By granting all voting control to junior angel investors"
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "True deal economics depend heavily on the option pool shuffle, liquidation preferences (participating vs non-participating), anti-dilution provisions, and board composition rather than stated valuation alone.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "True deal economics depend heavily on the option pool shuffle, liquidation preferences (participating vs non-participating), anti-dilution provisions, and board composition rather than stated valuation alone."
         }
       }
@@ -569,27 +559,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
       {
         "title": "SaaS Rule of 40 & Magic Number Capital Efficiency",
         "say": [
-          "In early-stage venture capital, investors tolerate high cash burn in pursuit of rapid user adoption and product-market fit. However, as startups mature into growth stage Series B and C rounds, top-tier venture capitalists and growth equity funds demand proven capital efficiency. The preeminent benchmark for evaluating growth-stage software companies is the Rule of 40, which posits that a healthy software company's annual revenue growth rate plus its free cash flow (FCF) margin should equal or exceed 40.0%. Qualification filter retains 45% high-intent cohort (4,950).",
+          "In early-stage venture capital, investors tolerate high cash burn in pursuit of rapid user adoption and product-market fit. However, as startups mature into growth stage Series B and C rounds, top-tier venture capitalists and growth equity funds demand proven capital efficiency. The preeminent benchmark for evaluating growth-stage software companies is the Rule of 40, which posits that a healthy software company's annual revenue growth rate plus its free cash flow (FCF) margin should equal or exceed 40.0%.",
           "The Rule of 40 provides founders with strategic flexibility to trade off growth against profitability according to market conditions. An elite hyper-growth company growing at 65% year-over-year with a -15% FCF margin scores 50.0%, easily beating the Rule of 40 because rapid market capture justifies temporary operational cash burn.",
           "Similarly, a mature enterprise business growing at 32% with an 18% FCF margin also achieves 50.0%, signaling strong cash generation. In contrast, a struggling startup growing at only 12% while burning -22% FCF scores -10.0%, indicating broken unit economics that will fail investor due diligence.",
-          "To assess sales and marketing efficiency specifically, growth investors track the SaaS Magic Number. The Magic Number is calculated as (Quarterly Net New ARR * 4) divided by Sales and Marketing Spend from the prior quarter. A Magic Number exceeding 1.0 indicates exceptional acquisition efficiency, signaling to the board that the company should immediately pour additional capital into marketing and sales rep hiring. A score between 0.75 and 1.0 represents healthy performance, while a score below 0.75 mandates pulling back on burn to fix sales conversion leakages.",
-          "When studying SaaS Rule of 40 & Magic Number Capital Efficiency within Unit Economics at Scale: Rule of 40, Burn Multiple & Growth Stage Capital Efficiency, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through def, evaluate_rule_of_40_and_magic_number, profiles, name, Hyper, Growth line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering SaaS Rule of 40 & Magic Number Capital Efficiency prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "To assess sales and marketing efficiency specifically, growth investors track the SaaS Magic Number. The Magic Number is calculated as (Quarterly Net New ARR * 4) divided by Sales and Marketing Spend from the prior quarter. A Magic Number exceeding 1.0 indicates exceptional acquisition efficiency, signaling to the board that the company should immediately pour additional capital into marketing and sales rep hiring. A score between 0.75 and 1.0 represents healthy performance, while a score below 0.75 mandates pulling back on burn to fix sales conversion leakages."
         ],
         "example": "Hyper-Growth Cloud delivers 65% revenue growth with a -15% FCF margin, achieving a 50.0% Rule of 40 score. Generating $2.2M in net new ARR against $1.8M in prior S&M spend yields a 4.89 Magic Number, signaling an urgent recommendation to accelerate go-to-market spending.",
         "code": "def evaluate_rule_of_40_and_magic_number():\n    profiles = [\n        {\"name\": \"Hyper-Growth Cloud\", \"growth_rate\": 0.65, \"fcf_margin\": -0.15, \"q_net_arr\": 2200000.0, \"prior_sm_spend\": 1800000.0},\n        {\"name\": \"Balanced Enterprise\", \"growth_rate\": 0.32, \"fcf_margin\": 0.18, \"q_net_arr\": 1100000.0, \"prior_sm_spend\": 1200000.0},\n        {\"name\": \"Distressed Startup\", \"growth_rate\": 0.12, \"fcf_margin\": -0.22, \"q_net_arr\": 300000.0, \"prior_sm_spend\": 950000.0}\n    ]\n\n    print(\"SaaS Rule of 40 & Magic Number Capital Efficiency:\")\n    results = []\n    for p in profiles:\n        rule_of_40 = (p[\"growth_rate\"] + p[\"fcf_margin\"]) * 100\n        # Magic Number = (Quarterly Net New ARR * 4) / Prior Quarter S&M Spend\n        magic_number = (p[\"q_net_arr\"] * 4.0) / p[\"prior_sm_spend\"]\n\n        r40_status = \"ELITE_EFFICIENCY\" if rule_of_40 >= 40.0 else \"SUB_BENCHMARK\"\n        mn_status = \"ACCELERATE_SPEND\" if magic_number >= 1.0 else \"HEALTHY\" if magic_number >= 0.75 else \"REDUCE_BURN\"\n\n        print(f\"  {p['name']}: Growth={p['growth_rate']*100:.1f}% | FCF Margin={p['fcf_margin']*100:.1f}%\")\n        print(f\"    Rule of 40 Score: {rule_of_40:.1f}% ({r40_status}) | Magic Number: {magic_number:.2f} ({mn_status})\")\n        results.append({\"name\": p[\"name\"], \"rule_of_40\": rule_of_40, \"magic_number\": magic_number})\n\n    return results\n\nevaluate_rule_of_40_and_magic_number()",
         "output": "SaaS Rule of 40 & Magic Number Capital Efficiency:\n  Hyper-Growth Cloud: Growth=65.0% | FCF Margin=-15.0%\n    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 4.89 (ACCELERATE_SPEND)\n  Balanced Enterprise: Growth=32.0% | FCF Margin=18.0%\n    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 3.67 (ACCELERATE_SPEND)\n  Distressed Startup: Growth=12.0% | FCF Margin=-22.0%\n    Rule of 40 Score: -10.0% (SUB_BENCHMARK) | Magic Number: 1.26 (ACCELERATE_SPEND)",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 11,
             "note": "Calculates Rule of 40 by summing annual percentage revenue growth and FCF profit margins."
           },
           {
-            "line": 2,
+            "line": 13,
             "note": "Computes the SaaS Magic Number by annualizing quarterly net new ARR over prior-quarter S&M expenses."
           },
           {
-            "line": 3,
+            "line": 15,
             "note": "Demonstrates how capital-efficient growth commands premium valuation multiples from growth equity investors."
           }
         ],
@@ -611,27 +599,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
       {
         "title": "Burn Multiple & Cash Runway Physics Under Macro Volatility",
         "say": [
-          "In macroeconomic downturns where venture capital fundraising cycles freeze, high-burn startups face catastrophic insolvency if they cannot control their cash consumption. Rather than simply evaluating gross burn rate, modern venture investors analyze the Burn Multiple—a metric popularized by Craft Ventures that measures how much cash a startup consumes to generate each incremental dollar of Annual Recurring Revenue. Qualification filter retains 45% high-intent cohort (4,950).",
+          "In macroeconomic downturns where venture capital fundraising cycles freeze, high-burn startups face catastrophic insolvency if they cannot control their cash consumption. Rather than simply evaluating gross burn rate, modern venture investors analyze the Burn Multiple—a metric popularized by Craft Ventures that measures how much cash a startup consumes to generate each incremental dollar of Annual Recurring Revenue.",
           "The Burn Multiple is calculated as Net Burn (cash consumed from operations) divided by Net New ARR Added over the same period.",
           "Unlike high-level vanity metrics, the burn multiple directly exposes operating efficiency: a Burn Multiple under 1.0x is considered amazing (the startup burns less than $1 to add $1 of ARR), 1.0x to 1.5x is good, 1.5x to 2.0x is suspect, and exceeding 2.0x indicates dangerously inefficient operations that will rapidly deplete cash reserves.",
-          "Dividing total bank cash by net monthly burn calculates the Zero-Cash Date runway in months. For example, a company with $12,000,000 in cash burning $4,800,000 annually ($400,000/month) while adding $3,200,000 in net new ARR delivers a healthy 1.50x Burn Multiple and 30.0 months of runway (2.5 years). Maintaining at least 24 to 30 months of runway shields founders from having to raise dilutive bridge rounds during macroeconomic fundraising contractions.",
-          "When studying Burn Multiple & Cash Runway Physics Under Macro Volatility within Unit Economics at Scale: Rule of 40, Burn Multiple & Growth Stage Capital Efficiency, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through def, calculate_burn_multiple_and_runway, cash_balance, bank, annual_net_burn, Consumed line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Burn Multiple & Cash Runway Physics Under Macro Volatility prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "Dividing total bank cash by net monthly burn calculates the Zero-Cash Date runway in months. For example, a company with $12,000,000 in cash burning $4,800,000 annually ($400,000/month) while adding $3,200,000 in net new ARR delivers a healthy 1.50x Burn Multiple and 30.0 months of runway (2.5 years). Maintaining at least 24 to 30 months of runway shields founders from having to raise dilutive bridge rounds during macroeconomic fundraising contractions."
         ],
         "example": "A venture startup holds $12,000,000 in cash, burns $4,800,000 annually ($400k/month), and adds $3,200,000 in net new ARR. The resulting 1.50x Burn Multiple qualifies as Good efficiency, providing 30.0 months of runway to hit growth targets.",
         "code": "def calculate_burn_multiple_and_runway():\n    cash_balance = 12000000.0   # $12,000,000 in bank\n    annual_net_burn = 4800000.0 # Consumed $4.8M net cash in year\n    annual_net_new_arr = 3200000.0 # Added $3.2M net new ARR\n\n    # Burn Multiple = Net Burn / Net New ARR\n    burn_multiple = annual_net_burn / annual_net_new_arr\n    monthly_net_burn = annual_net_burn / 12.0 # $400,000/month\n    runway_months = cash_balance / monthly_net_burn\n\n    status = \"AMAZING\" if burn_multiple < 1.0 else \"GOOD\" if burn_multiple <= 1.5 else \"SUSPECT\" if burn_multiple <= 2.0 else \"DANGEROUS\"\n\n    print(\"Burn Multiple & Cash Runway Physics:\")\n    print(\"  Cash in Bank: \" + \"$\" + f\"{cash_balance:,.2f}\")\n    print(\"  Annual Net Cash Burn: \" + \"$\" + f\"{annual_net_burn:,.2f}\" + \" (\" + \"$\" + f\"{monthly_net_burn:,.2f}\" + \" / month)\")\n    print(\"  Net New ARR Added: \" + \"$\" + f\"{annual_net_new_arr:,.2f}\")\n    print(f\"  Burn Multiple: {burn_multiple:.2f}x ({status}) (Benchmark: < 1.5x)\")\n    print(f\"  Remaining Zero-Cash Runway: {runway_months:.1f} months ({runway_months/12:.2f} years)\")\n    return {\"burn_multiple\": burn_multiple, \"runway_months\": runway_months}\n\ncalculate_burn_multiple_and_runway()",
         "output": "Burn Multiple & Cash Runway Physics:\n  Cash in Bank: $12,000,000.00\n  Annual Net Cash Burn: $4,800,000.00 ($400,000.00 / month)\n  Net New ARR Added: $3,200,000.00\n  Burn Multiple: 1.50x (GOOD) (Benchmark: < 1.5x)\n  Remaining Zero-Cash Runway: 30.0 months (2.50 years)",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 7,
             "note": "Calculates Burn Multiple by dividing net operating cash burn ($4.8M) by net new ARR added ($3.2M)."
           },
           {
-            "line": 2,
+            "line": 9,
             "note": "Computes zero-cash runway by dividing cash balance ($12.0M) by monthly net burn ($400k)."
           },
           {
-            "line": 3,
+            "line": 18,
             "note": "Confirms 30.0 months of runway, ensuring the company can execute without urgent fundraising pressure."
           }
         ],
@@ -639,125 +625,119 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a Burn Multiple of 3.0x indicate about a venture-backed growth startup?",
           "options": [
-            "The company is burning $3.00 of net operating cash for every $1.00 of net new ARR generated, signaling severely inefficient capital allocation",
+            "The startup is legally required to distribute 30% dividends to common stockholders",
             "The company's stock price has tripled on secondary venture markets",
             "The company has three years of cash remaining in its treasury reserves",
-            "The startup is legally required to distribute 30% dividends to common stockholders"
+            "The company is burning $3.00 of net operating cash for every $1.00 of net new ARR generated, signaling severely inefficient capital allocation"
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "A 3.0x burn multiple reveals severe capital inefficiency, burning three dollars of invested capital to generate a single dollar of recurring revenue.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "A 3.0x burn multiple reveals severe capital inefficiency, burning three dollars of invested capital to generate a single dollar of recurring revenue."
         }
       },
       {
         "title": "Cohort Contribution Margin & Customer Lifetime Value (LTV / CAC) Dynamics",
         "say": [
-          "Unit economics provide the foundational bedrock upon which enterprise scale is built. In venture finance, no metric is more scrutinized than the Customer Lifetime Value to Customer Acquisition Cost (LTV / CAC) ratio. Customer Lifetime Value measures the total gross profit an average customer contributes over their entire relationship with the company, calculated as (Annual Contract Value * Gross Margin %) / Annual Churn Rate. Qualification filter retains 45% high-intent cohort (4,950).",
+          "Unit economics provide the foundational bedrock upon which enterprise scale is built. In venture finance, no metric is more scrutinized than the Customer Lifetime Value to Customer Acquisition Cost (LTV / CAC) ratio. Customer Lifetime Value measures the total gross profit an average customer contributes over their entire relationship with the company, calculated as (Annual Contract Value * Gross Margin %) / Annual Churn Rate.",
           "Venture capital investors expect high-growth software companies to maintain an LTV / CAC ratio between 3.0x and 5.0x. An LTV / CAC below 3.0x signals an unsustainable business model where marketing spend outstrips lifetime value, while an LTV / CAC exceeding 5.0x often indicates that the company is being overly conservative and under-investing in acquisition, leaving market share vulnerable to aggressive competitors.",
-          "To model the cash profile of customer acquisition, founders construct multi-year cohort contribution waterfalls. For a cohort of 100 enterprise customers acquired at an $18,000 CAC ($1,800,000 Month 0 investment) with an $24,000 ACV, 80% gross margin, and 8% annual churn, Year 1 gross profit contribution reaches $1,920,000, paying back the entire CAC investment in 11.2 months.",
-          "Over three years, cumulative gross profit reaches $5,311,488, generating $3,511,488 in net cash contribution and proving sustainable unit economics.",
-          "When studying Cohort Contribution Margin & Customer Lifetime Value (LTV / CAC) Dynamics within Unit Economics at Scale: Rule of 40, Burn Multiple & Growth Stage Capital Efficiency, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through def, model_ltv_cac_and_cohort_contribution, arpu_annual, ACV, gross_margin, software line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Cohort Contribution Margin & Customer Lifetime Value (LTV / CAC) Dynamics prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "To model the cash profile of customer acquisition, founders construct multi-year cohort contribution waterfalls. For a cohort of 100 enterprise customers acquired at an $18,000 CAC ($1,800,000 Month 0 investment) with a $24,000 ACV, 80% gross margin, and 8% annual churn, Year 1 gross profit contribution reaches $1,920,000, paying back the entire CAC investment in 11.2 months.",
+          "Over three years, cumulative gross profit reaches $5,311,488, generating $3,511,488 in net cash contribution and proving sustainable unit economics."
         ],
         "example": "With $24,000 ACV, 80% gross margin, 8% churn, and $18,000 CAC, the startup achieves a $240,000 LTV, a 13.33x LTV/CAC ratio, and an 11.2-month CAC payback. A 100-customer cohort ($1.8M CAC) produces $5.31M in 3-year gross profit ($3.51M net profit).",
         "code": "def model_ltv_cac_and_cohort_contribution():\n    arpu_annual = 24000.0 # $24,000 ACV\n    gross_margin = 0.80   # 80% software gross margin\n    churn_rate = 0.08     # 8% annual logo churn\n    cac = 18000.0         # $18,000 fully loaded CAC\n\n    # LTV = (ARPU * Gross Margin) / Churn\n    ltv = (arpu_annual * gross_margin) / churn_rate\n    ltv_cac_ratio = ltv / cac\n    cac_payback_months = (cac / ((arpu_annual * gross_margin) / 12.0))\n\n    # 3-Year Cumulative Gross Profit from a cohort of 100 customers\n    customers = 100\n    m0_cac_investment = customers * cac # $1,800,000\n    y1_gp = customers * (arpu_annual * gross_margin) # $1,920,000\n    y2_gp = (customers * (1 - churn_rate)) * (arpu_annual * gross_margin) # $1,766,400\n    y3_gp = (customers * ((1 - churn_rate) ** 2)) * (arpu_annual * gross_margin) # $1,625,088\n    total_gp = y1_gp + y2_gp + y3_gp\n    net_cohort_contribution = total_gp - m0_cac_investment\n\n    print(\"Customer Lifetime Value (LTV) & Unit Economics:\")\n    print(\"  Annual Contract Value (ARPU): \" + \"$\" + f\"{arpu_annual:,.2f}\" + f\" | Gross Margin: {gross_margin*100:.0f}%\")\n    print(\"  Customer Lifetime Value (LTV): \" + \"$\" + f\"{ltv:,.2f}\")\n    print(\"  Fully Loaded CAC: \" + \"$\" + f\"{cac:,.2f}\")\n    print(f\"  LTV / CAC Ratio: {ltv_cac_ratio:.2f}x (Benchmark: 3.0x - 5.0x)\")\n    print(f\"  CAC Payback Period: {cac_payback_months:.1f} months\")\n    print(\"3-Year Cohort Contribution (100 Customers):\")\n    print(\"  Initial Month 0 CAC Investment: \" + \"$\" + f\"{m0_cac_investment:,.2f}\")\n    print(\"  3-Year Cumulative Gross Profit: \" + \"$\" + f\"{total_gp:,.2f}\")\n    print(\"  Net Cumulative Cohort Profit: \" + \"$\" + f\"{net_cohort_contribution:,.2f}\")\n    return {\"ltv_cac\": ltv_cac_ratio, \"payback\": cac_payback_months, \"net_contribution\": net_cohort_contribution}\n\nmodel_ltv_cac_and_cohort_contribution()",
         "output": "Customer Lifetime Value (LTV) & Unit Economics:\n  Annual Contract Value (ARPU): $24,000.00 | Gross Margin: 80%\n  Customer Lifetime Value (LTV): $240,000.00\n  Fully Loaded CAC: $18,000.00\n  LTV / CAC Ratio: 13.33x (Benchmark: 3.0x - 5.0x)\n  CAC Payback Period: 11.2 months\n3-Year Cohort Contribution (100 Customers):\n  Initial Month 0 CAC Investment: $1,800,000.00\n  3-Year Cumulative Gross Profit: $5,311,488.00\n  Net Cumulative Cohort Profit: $3,511,488.00",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 8,
             "note": "Calculates true LTV ($240,000) using gross margin percentage rather than raw revenues."
           },
           {
-            "line": 2,
+            "line": 10,
             "note": "Determines that CAC payback occurs in 11.2 months, recovering initial acquisition capital in Year 1."
           },
           {
-            "line": 3,
+            "line": 18,
             "note": "Demonstrates how cohort gross profit compounds to $5.31M over 3 years, generating $3.51M net cash."
           }
         ],
-        "tryIt": "Increase churn rate from 8% to 15% to evaluate how customer attrition cuts LTV to $128,000 and reduces net cohort profit by $1.2M.",
+        "tryIt": "Increase churn_rate (line 4) from 0.08 to 0.15 to see LTV fall to $128,000 (LTV/CAC 7.11x) and net cohort profit fall by about $372,000, from $3,511,488 to $3,139,200.",
         "check": {
           "question": "Why must Customer Lifetime Value (LTV) be calculated using Gross Margin rather than Top-Line Revenue?",
           "options": [
-            "Because revenue that is consumed by server hosting, customer support, and software delivery costs cannot be used to pay for customer acquisition costs",
+            "Because venture capital funds only invest in companies with zero customer acquisition costs",
             "Because federal banking laws prohibit software companies from counting gross revenue",
-            "Because top-line revenue is always zero during the first five years of operations",
-            "Because venture capital funds only invest in companies with zero customer acquisition costs"
+            "Because revenue that is consumed by server hosting, customer support, and software delivery costs cannot be used to pay for customer acquisition costs",
+            "Because top-line revenue is always zero during the first five years of operations"
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "True lifetime value represents gross profit generated by a customer; using revenue overstates LTV by ignoring the ongoing direct cost to serve the customer.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "True lifetime value represents gross profit generated by a customer; using revenue overstates LTV by ignoring the ongoing direct cost to serve the customer."
         }
       },
       {
         "title": "Series B Financial Model Engineering: Bottom-Up Revenue Build & Headcount Quota Capacity",
         "say": [
-          "When presenting to Series B lead investors, founders cannot rely on top-down market sizing (\"if we capture 1% of a $50B market\"). Institutional growth funds conduct exhaustive financial due diligence requiring an operational bottom-up revenue build grounded in headcount capacity, quota attainment, and customer retention dynamics. Qualification filter retains 45% high-intent cohort (4,950).",
+          "When presenting to Series B lead investors, founders cannot rely on top-down market sizing (\"if we capture 1% of a $50B market\"). Institutional growth funds conduct exhaustive financial due diligence requiring an operational bottom-up revenue build grounded in headcount capacity, quota attainment, and customer retention dynamics.",
           "A credible bottom-up financial model begins with sales capacity: projecting the hiring and ramp schedule of Account Executives (AEs). For a company scaling from $6.0M ARR, deploying 12 AEs with $800,000 individual annual quotas at a conservative 75% blended attainment yields $7,200,000 in gross new bookings capacity.",
           "Incorporating installed base dynamics—8% logo churn (-$480k) offset by 20% expansion (+$1,200k)—projects Year 1 ARR at $13.92M, demonstrating achievable operational scaling.",
-          "Simultaneously, the model allocates operating expenses across functional cost centers: allocating 35% of an annual $10M budget to R&D engineering ($3.5M) to maintain product differentiation, 45% to Sales and Marketing ($4.5M) to drive quota-carrying demand, and 20% to G&A ($2.0M) for legal, finance, and operational overhead. Aligning headcount capacity with financial budgets validates executive operational competence.",
-          "When studying Series B Financial Model Engineering: Bottom-Up Revenue Build & Headcount Quota Capacity within Unit Economics at Scale: Rule of 40, Burn Multiple & Growth Stage Capital Efficiency, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through def, build_series_b_financial_model, Month, Projections, Beginning, ARR line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Series B Financial Model Engineering: Bottom-Up Revenue Build & Headcount Quota Capacity prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "Simultaneously, the model allocates operating expenses across functional cost centers: allocating 35% of an annual $10M budget to R&D engineering ($3.5M) to maintain product differentiation, 45% to Sales and Marketing ($4.5M) to drive quota-carrying demand, and 20% to G&A ($2.0M) for legal, finance, and operational overhead. Aligning headcount capacity with financial budgets validates executive operational competence."
         ],
         "example": "Scaling from $6.0M ARR, 12 AEs at $800k quota and 75% attainment generate $7.2M in new bookings capacity, which net of 8% churn and 20% expansion projects robust ARR growth supported by a balanced $10M operating budget (35% R&D, 45% S&M, 20% G&A).",
         "code": "def build_series_b_financial_model():\n    # 24-Month Projections: Beginning ARR $6.0M scaling to $18.0M\n    starting_arr = 6000000.0\n    y1_target_arr = 11000000.0\n    y2_target_arr = 18000000.0\n\n    # Headcount Capacity\n    y1_aes = 12\n    ae_quota = 800000.0\n    blended_attainment = 0.75 # 75% realistic quota attainment\n    y1_new_capacity = y1_aes * ae_quota * blended_attainment # $7,200,000 capacity\n    installed_churn = starting_arr * 0.08 # $480k churn\n    installed_expansion = starting_arr * 0.20 # $1,200k expansion\n    y1_projected_arr = starting_arr + y1_new_capacity - installed_churn + installed_expansion # $13.92M\n\n    # Opex Distribution for Year 1 ($10M total budget)\n    total_opex = 10000000.0\n    rd_spend = total_opex * 0.35 # $3.5M (35%)\n    sm_spend = total_opex * 0.45 # $4.5M (45%)\n    ga_spend = total_opex * 0.20 # $2.0M (20%)\n\n    print(\"Series B Bottom-Up Financial Plan (24-Month Build):\")\n    print(\"  Current ARR: \" + \"$\" + f\"{starting_arr:,.2f}\")\n    print(\"  Year 1 Quota Capacity: \" + \"$\" + f\"{y1_new_capacity:,.2f}\" + f\" ({y1_aes} AEs at {blended_attainment*100:.0f}% Attainment)\")\n    print(\"  Year 1 Net Expansion: \" + \"$\" + f\"{installed_expansion - installed_churn:,.2f}\" + \" (20% Expansion, 8% Churn)\")\n    print(\"  Operating Expenditure Allocation: \" + \"$\" + f\"{total_opex:,.2f}\")\n    print(\"    R&D Engineering (35%): \" + \"$\" + f\"{rd_spend:,.2f}\")\n    print(\"    Sales & Marketing (45%): \" + \"$\" + f\"{sm_spend:,.2f}\")\n    print(\"    General & Admin (20%): \" + \"$\" + f\"{ga_spend:,.2f}\")\n    return {\"capacity\": y1_new_capacity, \"sm_spend\": sm_spend}\n\nbuild_series_b_financial_model()",
         "output": "Series B Bottom-Up Financial Plan (24-Month Build):\n  Current ARR: $6,000,000.00\n  Year 1 Quota Capacity: $7,200,000.00 (12 AEs at 75% Attainment)\n  Year 1 Net Expansion: $720,000.00 (20% Expansion, 8% Churn)\n  Operating Expenditure Allocation: $10,000,000.00\n    R&D Engineering (35%): $3,500,000.00\n    Sales & Marketing (45%): $4,500,000.00\n    General & Admin (20%): $2,000,000.00",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 11,
             "note": "Builds revenue capacity from bottom-up sales rep headcount (12 AEs) and 75% realistic attainment."
           },
           {
-            "line": 2,
+            "line": 12,
             "note": "Accounts for installed base dynamics (20% expansion, 8% churn) yielding $720k net expansion."
           },
           {
-            "line": 3,
+            "line": 18,
             "note": "Structures functional opex budget across R&D ($3.5M), S&M ($4.5M), and G&A ($2.0M)."
           }
         ],
-        "tryIt": "Adjust AE attainment to 60% to evaluate how hiring delays or ramp frictions impact Year 1 bookings capacity.",
+        "tryIt": "Set blended_attainment (line 10) to 0.60 to see Year 1 quota capacity fall from $7,200,000 to $5,760,000, showing how ramp delays shrink bookings.",
         "check": {
           "question": "Why do institutional Series B investors mandate bottom-up financial models based on headcount and quota rather than top-down percentages?",
           "options": [
-            "Because bottom-up models prove that revenue targets are mathematically achievable through realistic hiring, quota attainment, and customer retention dynamics",
-            "Because bottom-up models are legally required by federal securities exchanges for all private companies",
             "Because top-down financial models require executive approval from the Department of Commerce",
-            "Because bottom-up models allow companies to fire all marketing personnel"
+            "Because bottom-up models prove that revenue targets are mathematically achievable through realistic hiring, quota attainment, and customer retention dynamics",
+            "Because bottom-up models allow companies to fire all marketing personnel",
+            "Because bottom-up models are legally required by federal securities exchanges for all private companies"
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Bottom-up models validate operational feasibility by tying revenue targets to concrete hiring schedules, quota productivity, and customer retention metrics.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Bottom-up models validate operational feasibility by tying revenue targets to concrete hiring schedules, quota productivity, and customer retention metrics."
         }
       },
       {
         "title": "Deploy the Growth Stage Venture Economics Control Tower",
         "say": [
-          "Scaling an enterprise venture requires balancing aggressive market expansion with disciplined capital conservation. (Qualification filter retains 45% high-intent cohort (4,950).)",
+          "Scaling an enterprise venture requires balancing aggressive market expansion with disciplined capital conservation.",
           "In this operational capstone module, you will deploy the Growth Stage Venture Economics Control Tower.",
           "You will synthesize Rule of 40 growth-profitability profiles, evaluate the SaaS Magic Number to guide GTM spend, calculate the Burn Multiple to extend cash runway, model multi-year cohort contribution gross profits, and validate 24-month bottom-up hiring capacity models.",
-          "Deploying this control tower equips entrepreneurs and venture capital investors with the financial rigor required to successfully lead and navigate Series B growth rounds.",
-          "When studying Deploy the Growth Stage Venture Economics Control Tower within Unit Economics at Scale: Rule of 40, Burn Multiple & Growth Stage Capital Efficiency, pay close attention to how each state transition is structured for both rapid intuition and step-by-step verification. Fast readers can scan the core invariants and output metrics directly, while slow or methodical readers should trace how the input parameters flow through def, run_venture_economics_control_tower, print, PinIT, Career, Growth line by line before inspecting the final result.",
-          "In production engineering and operational workflows, mastering Deploy the Growth Stage Venture Economics Control Tower prevents subtle edge-case failures when inputs scale or boundary conditions are triggered. Always verify that your mental model matches the exact deterministic output produced by the code block, and use the interactive practice prompt below to test how modifying a single threshold or input value changes the system behavior."
+          "Deploying this control tower equips entrepreneurs and venture capital investors with the financial rigor required to successfully lead and navigate Series B growth rounds."
         ],
         "example": "The team verifies a 50.0% Rule of 40 score, confirms a Good 1.50x Burn Multiple with 30.0 months of runway, validates an outstanding 13.33x LTV/CAC ratio with 11.2-month payback, and certifies $7.2M in bottom-up AE bookings capacity.",
-        "code": "def run_venture_economics_control_tower():\n    print(\"=== PinIT Career OS Growth Stage Venture Economics Control Tower ===\")\n    print(\"--- 1. Rule of 40 & Magic Number ---\")\n    r40 = evaluate_rule_of_40_and_magic_number()\n\n    print(\"\n--- 2. Burn Multiple & Cash Runway ---\")\n    bm = calculate_burn_multiple_and_runway()\n\n    print(\"\n--- 3. LTV/CAC & Cohort Economics ---\")\n    ltv = model_ltv_cac_and_cohort_contribution()\n\n    print(\"\n--- 4. Series B Financial Plan ---\")\n    sb = build_series_b_financial_model()\n\n    print(\"\n--- 5. Growth Stage Venture Synthesis ---\")\n    print(f\"  Flagship Profile Rule of 40: {r40[0]['rule_of_40']:.1f}%\")\n    print(f\"  Portfolio Burn Multiple: {bm['burn_multiple']:.2f}x ({bm['runway_months']:.1f} months runway)\")\n    print(f\"  LTV / CAC Efficiency: {ltv['ltv_cac']:.2f}x (Payback: {ltv['payback']:.1f} mo)\")\n    print(\"Status: VENTURE UNIT ECONOMICS CERTIFIED READY FOR SERIES B LEAD INVESTOR AUDIT.\")\n\nrun_venture_economics_control_tower()",
+        "code": "# Setup: re-runs the earlier parts of today's lesson so this capstone runs on its own (their output is hidden).\nimport sys as _s4, io as _io4\n_o4 = _s4.stdout\n_s4.stdout = _io4.StringIO()\n\ndef evaluate_rule_of_40_and_magic_number():\n    profiles = [\n        {\"name\": \"Hyper-Growth Cloud\", \"growth_rate\": 0.65, \"fcf_margin\": -0.15, \"q_net_arr\": 2200000.0, \"prior_sm_spend\": 1800000.0},\n        {\"name\": \"Balanced Enterprise\", \"growth_rate\": 0.32, \"fcf_margin\": 0.18, \"q_net_arr\": 1100000.0, \"prior_sm_spend\": 1200000.0},\n        {\"name\": \"Distressed Startup\", \"growth_rate\": 0.12, \"fcf_margin\": -0.22, \"q_net_arr\": 300000.0, \"prior_sm_spend\": 950000.0}\n    ]\n\n    print(\"SaaS Rule of 40 & Magic Number Capital Efficiency:\")\n    results = []\n    for p in profiles:\n        rule_of_40 = (p[\"growth_rate\"] + p[\"fcf_margin\"]) * 100\n        # Magic Number = (Quarterly Net New ARR * 4) / Prior Quarter S&M Spend\n        magic_number = (p[\"q_net_arr\"] * 4.0) / p[\"prior_sm_spend\"]\n\n        r40_status = \"ELITE_EFFICIENCY\" if rule_of_40 >= 40.0 else \"SUB_BENCHMARK\"\n        mn_status = \"ACCELERATE_SPEND\" if magic_number >= 1.0 else \"HEALTHY\" if magic_number >= 0.75 else \"REDUCE_BURN\"\n\n        print(f\"  {p['name']}: Growth={p['growth_rate']*100:.1f}% | FCF Margin={p['fcf_margin']*100:.1f}%\")\n        print(f\"    Rule of 40 Score: {rule_of_40:.1f}% ({r40_status}) | Magic Number: {magic_number:.2f} ({mn_status})\")\n        results.append({\"name\": p[\"name\"], \"rule_of_40\": rule_of_40, \"magic_number\": magic_number})\n\n    return results\n\nevaluate_rule_of_40_and_magic_number()\n\ndef calculate_burn_multiple_and_runway():\n    cash_balance = 12000000.0   # $12,000,000 in bank\n    annual_net_burn = 4800000.0 # Consumed $4.8M net cash in year\n    annual_net_new_arr = 3200000.0 # Added $3.2M net new ARR\n\n    # Burn Multiple = Net Burn / Net New ARR\n    burn_multiple = annual_net_burn / annual_net_new_arr\n    monthly_net_burn = annual_net_burn / 12.0 # $400,000/month\n    runway_months = cash_balance / monthly_net_burn\n\n    status = \"AMAZING\" if burn_multiple < 1.0 else \"GOOD\" if burn_multiple <= 1.5 else \"SUSPECT\" if burn_multiple <= 2.0 else \"DANGEROUS\"\n\n    print(\"Burn Multiple & Cash Runway Physics:\")\n    print(\"  Cash in Bank: \" + \"$\" + f\"{cash_balance:,.2f}\")\n    print(\"  Annual Net Cash Burn: \" + \"$\" + f\"{annual_net_burn:,.2f}\" + \" (\" + \"$\" + f\"{monthly_net_burn:,.2f}\" + \" / month)\")\n    print(\"  Net New ARR Added: \" + \"$\" + f\"{annual_net_new_arr:,.2f}\")\n    print(f\"  Burn Multiple: {burn_multiple:.2f}x ({status}) (Benchmark: < 1.5x)\")\n    print(f\"  Remaining Zero-Cash Runway: {runway_months:.1f} months ({runway_months/12:.2f} years)\")\n    return {\"burn_multiple\": burn_multiple, \"runway_months\": runway_months}\n\ncalculate_burn_multiple_and_runway()\n\ndef model_ltv_cac_and_cohort_contribution():\n    arpu_annual = 24000.0 # $24,000 ACV\n    gross_margin = 0.80   # 80% software gross margin\n    churn_rate = 0.08     # 8% annual logo churn\n    cac = 18000.0         # $18,000 fully loaded CAC\n\n    # LTV = (ARPU * Gross Margin) / Churn\n    ltv = (arpu_annual * gross_margin) / churn_rate\n    ltv_cac_ratio = ltv / cac\n    cac_payback_months = (cac / ((arpu_annual * gross_margin) / 12.0))\n\n    # 3-Year Cumulative Gross Profit from a cohort of 100 customers\n    customers = 100\n    m0_cac_investment = customers * cac # $1,800,000\n    y1_gp = customers * (arpu_annual * gross_margin) # $1,920,000\n    y2_gp = (customers * (1 - churn_rate)) * (arpu_annual * gross_margin) # $1,766,400\n    y3_gp = (customers * ((1 - churn_rate) ** 2)) * (arpu_annual * gross_margin) # $1,625,088\n    total_gp = y1_gp + y2_gp + y3_gp\n    net_cohort_contribution = total_gp - m0_cac_investment\n\n    print(\"Customer Lifetime Value (LTV) & Unit Economics:\")\n    print(\"  Annual Contract Value (ARPU): \" + \"$\" + f\"{arpu_annual:,.2f}\" + f\" | Gross Margin: {gross_margin*100:.0f}%\")\n    print(\"  Customer Lifetime Value (LTV): \" + \"$\" + f\"{ltv:,.2f}\")\n    print(\"  Fully Loaded CAC: \" + \"$\" + f\"{cac:,.2f}\")\n    print(f\"  LTV / CAC Ratio: {ltv_cac_ratio:.2f}x (Benchmark: 3.0x - 5.0x)\")\n    print(f\"  CAC Payback Period: {cac_payback_months:.1f} months\")\n    print(\"3-Year Cohort Contribution (100 Customers):\")\n    print(\"  Initial Month 0 CAC Investment: \" + \"$\" + f\"{m0_cac_investment:,.2f}\")\n    print(\"  3-Year Cumulative Gross Profit: \" + \"$\" + f\"{total_gp:,.2f}\")\n    print(\"  Net Cumulative Cohort Profit: \" + \"$\" + f\"{net_cohort_contribution:,.2f}\")\n    return {\"ltv_cac\": ltv_cac_ratio, \"payback\": cac_payback_months, \"net_contribution\": net_cohort_contribution}\n\nmodel_ltv_cac_and_cohort_contribution()\n\ndef build_series_b_financial_model():\n    # 24-Month Projections: Beginning ARR $6.0M scaling to $18.0M\n    starting_arr = 6000000.0\n    y1_target_arr = 11000000.0\n    y2_target_arr = 18000000.0\n\n    # Headcount Capacity\n    y1_aes = 12\n    ae_quota = 800000.0\n    blended_attainment = 0.75 # 75% realistic quota attainment\n    y1_new_capacity = y1_aes * ae_quota * blended_attainment # $7,200,000 capacity\n    installed_churn = starting_arr * 0.08 # $480k churn\n    installed_expansion = starting_arr * 0.20 # $1,200k expansion\n    y1_projected_arr = starting_arr + y1_new_capacity - installed_churn + installed_expansion # $13.92M\n\n    # Opex Distribution for Year 1 ($10M total budget)\n    total_opex = 10000000.0\n    rd_spend = total_opex * 0.35 # $3.5M (35%)\n    sm_spend = total_opex * 0.45 # $4.5M (45%)\n    ga_spend = total_opex * 0.20 # $2.0M (20%)\n\n    print(\"Series B Bottom-Up Financial Plan (24-Month Build):\")\n    print(\"  Current ARR: \" + \"$\" + f\"{starting_arr:,.2f}\")\n    print(\"  Year 1 Quota Capacity: \" + \"$\" + f\"{y1_new_capacity:,.2f}\" + f\" ({y1_aes} AEs at {blended_attainment*100:.0f}% Attainment)\")\n    print(\"  Year 1 Net Expansion: \" + \"$\" + f\"{installed_expansion - installed_churn:,.2f}\" + \" (20% Expansion, 8% Churn)\")\n    print(\"  Operating Expenditure Allocation: \" + \"$\" + f\"{total_opex:,.2f}\")\n    print(\"    R&D Engineering (35%): \" + \"$\" + f\"{rd_spend:,.2f}\")\n    print(\"    Sales & Marketing (45%): \" + \"$\" + f\"{sm_spend:,.2f}\")\n    print(\"    General & Admin (20%): \" + \"$\" + f\"{ga_spend:,.2f}\")\n    return {\"capacity\": y1_new_capacity, \"sm_spend\": sm_spend}\n\nbuild_series_b_financial_model()\n\n_s4.stdout = _o4\n# ---- Capstone starts here ----\n\n\n\ndef run_venture_economics_control_tower():\n    print(\"=== PinIT Career OS Growth Stage Venture Economics Control Tower ===\")\n    print(\"--- 1. Rule of 40 & Magic Number ---\")\n    r40 = evaluate_rule_of_40_and_magic_number()\n\n    print(\"\\n--- 2. Burn Multiple & Cash Runway ---\")\n    bm = calculate_burn_multiple_and_runway()\n\n    print(\"\\n--- 3. LTV/CAC & Cohort Economics ---\")\n    ltv = model_ltv_cac_and_cohort_contribution()\n\n    print(\"\\n--- 4. Series B Financial Plan ---\")\n    sb = build_series_b_financial_model()\n\n    print(\"\\n--- 5. Growth Stage Venture Synthesis ---\")\n    print(f\"  Flagship Profile Rule of 40: {r40[0]['rule_of_40']:.1f}%\")\n    print(f\"  Portfolio Burn Multiple: {bm['burn_multiple']:.2f}x ({bm['runway_months']:.1f} months runway)\")\n    print(f\"  LTV / CAC Efficiency: {ltv['ltv_cac']:.2f}x (Payback: {ltv['payback']:.1f} mo)\")\n    print(\"Status: VENTURE UNIT ECONOMICS CERTIFIED READY FOR SERIES B LEAD INVESTOR AUDIT.\")\n\nrun_venture_economics_control_tower()",
         "output": "=== PinIT Career OS Growth Stage Venture Economics Control Tower ===\n--- 1. Rule of 40 & Magic Number ---\nSaaS Rule of 40 & Magic Number Capital Efficiency:\n  Hyper-Growth Cloud: Growth=65.0% | FCF Margin=-15.0%\n    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 4.89 (ACCELERATE_SPEND)\n  Balanced Enterprise: Growth=32.0% | FCF Margin=18.0%\n    Rule of 40 Score: 50.0% (ELITE_EFFICIENCY) | Magic Number: 3.67 (ACCELERATE_SPEND)\n  Distressed Startup: Growth=12.0% | FCF Margin=-22.0%\n    Rule of 40 Score: -10.0% (SUB_BENCHMARK) | Magic Number: 1.26 (ACCELERATE_SPEND)\n\n--- 2. Burn Multiple & Cash Runway ---\nBurn Multiple & Cash Runway Physics:\n  Cash in Bank: $12,000,000.00\n  Annual Net Cash Burn: $4,800,000.00 ($400,000.00 / month)\n  Net New ARR Added: $3,200,000.00\n  Burn Multiple: 1.50x (GOOD) (Benchmark: < 1.5x)\n  Remaining Zero-Cash Runway: 30.0 months (2.50 years)\n\n--- 3. LTV/CAC & Cohort Economics ---\nCustomer Lifetime Value (LTV) & Unit Economics:\n  Annual Contract Value (ARPU): $24,000.00 | Gross Margin: 80%\n  Customer Lifetime Value (LTV): $240,000.00\n  Fully Loaded CAC: $18,000.00\n  LTV / CAC Ratio: 13.33x (Benchmark: 3.0x - 5.0x)\n  CAC Payback Period: 11.2 months\n3-Year Cohort Contribution (100 Customers):\n  Initial Month 0 CAC Investment: $1,800,000.00\n  3-Year Cumulative Gross Profit: $5,311,488.00\n  Net Cumulative Cohort Profit: $3,511,488.00\n\n--- 4. Series B Financial Plan ---\nSeries B Bottom-Up Financial Plan (24-Month Build):\n  Current ARR: $6,000,000.00\n  Year 1 Quota Capacity: $7,200,000.00 (12 AEs at 75% Attainment)\n  Year 1 Net Expansion: $720,000.00 (20% Expansion, 8% Churn)\n  Operating Expenditure Allocation: $10,000,000.00\n    R&D Engineering (35%): $3,500,000.00\n    Sales & Marketing (45%): $4,500,000.00\n    General & Admin (20%): $2,000,000.00\n\n--- 5. Growth Stage Venture Synthesis ---\n  Flagship Profile Rule of 40: 50.0%\n  Portfolio Burn Multiple: 1.50x (30.0 months runway)\n  LTV / CAC Efficiency: 13.33x (Payback: 11.2 mo)\nStatus: VENTURE UNIT ECONOMICS CERTIFIED READY FOR SERIES B LEAD INVESTOR AUDIT.",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 123,
             "note": "Unifies Rule of 40, Magic Number, Burn Multiple, LTV/CAC cohort contribution, and bottom-up financial planning."
           },
           {
-            "line": 2,
+            "line": 129,
             "note": "Demonstrates how capital-efficient unit economics establish 30.0 months of runway and superior investor attractiveness."
           },
           {
-            "line": 3,
+            "line": 141,
             "note": "Validates readiness for institutional Series B growth equity diligence."
           }
         ],
@@ -814,30 +794,30 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "=== Institutional Series B Investment Memo & SaaS Due Diligence ===\nARR Trajectory: Beginning=$6,000,000.00 -> Ending=$12,000,000.00 (+100.0% YoY)\nCohort Retention: GRR=95.0% | NRR=125.0%\nFinancial Margins: Gross Margin=81.0% | FCF Margin=-20.0%\nCapital Efficiency: Rule of 40=80.0% | Burn Multiple=0.90x\nGo-to-Market: Magic Number=1.25 | CAC Payback=11.9 months\nDiligence Score: 100/100 -> Recommendation: TIER_1_SERIES_B_APPROVED",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 13,
             "note": "Evaluates high-growth SaaS metrics: 100% ARR growth, 95% GRR, and 125% NRR across cohort renewals."
           },
           {
-            "line": 2,
+            "line": 26,
             "note": "Calculates Rule of 40 at 80.0% and Burn Multiple at 0.90x, well inside top-quartile venture capital benchmarks."
           },
           {
-            "line": 3,
+            "line": 29,
             "note": "Measures GTM efficiency with a 1.25 Magic Number and 11.9-month CAC payback, qualifying for Tier-1 institutional Series B approval."
           }
         ],
-        "tryIt": "Adjust sales and marketing spend to $7,000,000.00 to observe how an extended CAC payback period impacts the institutional diligence score.",
+        "tryIt": "Set sales_marketing_spend (line 28) to 7_000_000.0: Magic Number falls to 0.86, CAC Payback stretches to 17.3 months, the payback test no longer scores, and the Diligence Score drops from 100 to 85 (CONDITIONAL_APPROVAL).",
         "check": {
           "question": "Why do institutional venture capital investment committees place equal weight on Net Revenue Retention (NRR) and Net New ARR growth during Series B due diligence?",
           "options": [
-            "NRR isolates customer expansion and retention from new acquisition, proving that the installed base compounds even if new sales acquisition stalls.",
-            "NRR is an accounting requirement mandated by GAAP for all venture-backed corporate tax returns.",
             "NRR represents the total cash balance in the bank divided by outstanding common stock.",
-            "NRR eliminates the necessity of tracking gross margin and sales marketing expenses."
+            "NRR eliminates the necessity of tracking gross margin and sales marketing expenses.",
+            "NRR is an accounting requirement mandated by GAAP for all venture-backed corporate tax returns.",
+            "NRR isolates customer expansion and retention from new acquisition, proving that the installed base compounds even if new sales acquisition stalls."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "NRR measures the compounding power of the existing customer base through expansions and upsells minus churn, validating product-market durability independent of top-line marketing spend.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "NRR measures the compounding power of the existing customer base through expansions and upsells minus churn, validating product-market durability independent of top-line marketing spend."
         }
       },
@@ -846,7 +826,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "say": [
           "Negotiating a multi-million dollar Series B financing round requires navigating complex investor syndication dynamics, pro-rata equity entitlements, and cap table dilution mechanics. Unlike early seed rounds typically closed via rolling SAFE notes, a Series B is led by an institutional growth fund that prices the round, issues a formal NVCA term sheet, and demands fifteen to twenty-five percent ownership of the company post-closing. The lead investor rarely takes the entirety of the round alone; instead, they anchor sixty to seventy percent of the total dollar raise while leaving the remaining allocation open to existing investors exercising major investor pro-rata rights and strategic co-investors.",
           "For founders, orchestrating this syndicate allocation is a critical balancing act between securing prestigious lead governance, rewarding early supporters, and preserving long-term cap table equity. Pro-rata rights represent the contractual entitlement of major early investors, usually granted in Seed and Series A financing agreements, to purchase their exact percentage ownership in subsequent preferred stock financings. When existing Series A investors exercise their full pro-rata rights in a thirty million dollar Series B round, they inject fresh capital to prevent their equity percentage from being diluted down by the new financing.",
-          "However, this pro-rata allocation consumes valuable round capacity: if the lead investor insists on acquiring fifteen percent ownership post-money and existing investors demand their full twenty-four percent pro-rata, the aggregate dilution expands, or other potential syndicate partners are squeezed out. Founders must model the exact dollar waterfalls and ownership shifts resulting from varying syndicate allocations before executing definitive agreements. Furthermore, the Series B term sheet frequently requires an expansion of the unallocated employee option pool to ensure adequate equity incentives are available to recruit executive talent through subsequent growth milestones.",
+          "However, this pro-rata allocation consumes valuable round capacity: if the lead investor takes twelve percent post-money and existing investors also claim a pro-rata share of the round (modeled below at twenty-five percent of the raise, about five percent of the company), the aggregate dilution expands, or other potential syndicate partners are squeezed out. Founders must model the exact dollar waterfalls and ownership shifts resulting from varying syndicate allocations before executing definitive agreements. Furthermore, the Series B term sheet frequently requires an expansion of the unallocated employee option pool to ensure adequate equity incentives are available to recruit executive talent through subsequent growth milestones.",
           "When VCs stipulate that the option pool must represent twelve to fifteen percent of the company on a post-money fully diluted basis, the economic burden of this dilution falls entirely on the pre-money shareholders unless aggressively negotiated. In this section, we examine an algorithmic syndicate allocation model that structures a thirty million dollar raise on a one hundred and twenty million dollar pre-money valuation, distributing allocations across a lead Tier-1 VC, Series A pro-rata exercises, and an opportunistic growth syndicate. Understanding these capitalization dynamics empowers founders to negotiate optimal valuations while managing syndicate governance harmoniously."
         ],
         "example": "Consider syndicating a thirty million dollar Series B financing round like financing a premier commercial film production. A major Hollywood studio acts as the lead producer, committing sixty percent of the budget and insisting on principal artistic oversight and board representation. Meanwhile, early independent angel investors who funded the original script hold contractual options to co-invest twenty-five percent in all sequels to maintain their financial stake, while a global streaming network takes the remaining fifteen percent for distribution rights. If the lead studio and early backers consume the entire financing allocation without clear structural rules, friction arises over producer credits and profit participation. By establishing clear syndicate allocation rules and cap table schedules upfront, the executive producer ensures every investor receives their rightful ownership without stalling production.",
@@ -854,19 +834,19 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "=== Multi-Tranche Series B Term Sheet, Syndicate & Pro-Rata ===\nRound Terms: Pre-Money=$120,000,000.00 | Raise=$30,000,000.00 | Post-Money=$150,000,000.00\nTotal Series B Dilution: 20.00%\nSyndicate Allocation Waterfall:\n  Lead Tier-1 VC (60%): $18,000,000.00 -> 12.00% Post-Money Ownership\n  Series A Pro-Rata (25%): $7,500,000.00 -> 5.00% Incremental Ownership\n  Growth Syndicate (15%): $4,500,000.00 -> 3.00% Post-Money Ownership\nPost-Money Fully Diluted Cap Table:\n  Founders & Common: 41.60%\n  Seed Investors: 9.60%\n  Series A Investors: 24.20%\n  Option Pool (Existing): 9.60%\n  Series B Lead VC: 12.00%\n  Series B Growth Syndicate: 3.00%",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 7,
             "note": "Models a $30.0M Series B raise at $120.0M pre-money ($150.0M post-money), resulting in 20.00% round dilution."
           },
           {
-            "line": 2,
+            "line": 9,
             "note": "Allocates the syndicate across Lead VC ($18.0M / 12.00%), Series A pro-rata ($7.5M / 5.00%), and Growth Syndicate ($4.5M / 3.00%)."
           },
           {
-            "line": 3,
+            "line": 29,
             "note": "Reconciles the fully diluted cap table post-closing, preserving 41.60% for founders and updating Series A ownership to 24.20%."
           }
         ],
-        "tryIt": "Adjust the round pre-money valuation to $150,000,000.00 to examine how higher pricing reduces total round dilution on a $30M raise.",
+        "tryIt": "Set pre_money_val (line 3) to 150_000_000.0: post-money becomes $180M, round dilution falls from 20.00% to 16.67%, the lead's stake shrinks to 10.00% (same $18M buys less of a pricier company) and Founders & Common end at 43.33%.",
         "check": {
           "question": "What is the primary strategic benefit of major early investors exercising their contractual pro-rata rights in a Series B round?",
           "options": [
@@ -890,34 +870,34 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Effective corporate governance also establishes formal board committees to oversee specialized enterprise functions, specifically an Audit Committee and a Compensation Committee. The Compensation Committee, typically composed of the independent director and one preferred investor, establishes objective performance milestones for C-suite executive bonuses, equity refresh grants, and executive severance packages. Meanwhile, the Audit Committee oversees the engagement of Big Four independent accounting firms, reviews internal financial controls under SOC 2 and Sarbanes-Oxley standards, and inspects annual financial statements prior to board dissemination. Operating within this formalized governance matrix ensures that the venture is managed with the maturity, transparency, and operational rigor expected of a pre-IPO enterprise."
         ],
         "example": "Think of restructuring your corporate board and protective covenants at Series B like ratifying a national constitutional balance of power during a period of federation expansion. In the founding era, tribal leaders govern through immediate executive decrees without legislative delay. However, once neighboring states contribute substantial treasury resources and citizens to the common alliance, a constitutional council is formed with balanced representation: two provincial governors, two federal delegates, and an independent supreme magistrate. The council establishes strict constitutional vetoes requiring legislative supermajorities before issuing public debt, entering foreign treaties, or altering taxation laws. This governance architecture prevents any single faction from bankrupting the union while providing a stable, rule-based legal system that fosters long-term prosperity.",
-        "code": "def audit_boardroom_governance_and_covenants():\n    print(\"=== Boardroom Corporate Governance & Protective Covenants Audit ===\")\n    board_seats = [\n        {\"seat\": \"Seat 1 (Common)\", \"holder\": \"Chief Executive Officer (Founder)\", \"type\": \"Executive\", \"voting_power\": 1},\n        {\"seat\": \"Seat 2 (Common)\", \"holder\": \"Chief Technology Officer (Founder)\", \"type\": \"Executive\", \"voting_power\": 1},\n        {\"seat\": \"Seat 3 (Series A)\", \"holder\": \"Series A Lead General Partner\", \"type\": \"Preferred Investor\", \"voting_power\": 1},\n        {\"seat\": \"Seat 4 (Series B)\", \"holder\": \"Series B Lead General Partner\", \"type\": \"Preferred Investor\", \"voting_power\": 1},\n        {\"seat\": \"Seat 5 (Independent)\", \"holder\": \"Veteran SaaS Enterprise Operator\", \"type\": \"Mutually Appointed\", \"voting_power\": 1}\n    ]\n    \n    protective_covenants = [\n        {\"covenant\": \"Indebtedness Threshold\", \"threshold\": \"> $2,000,000.00\", \"required_consent\": \"Series B Lead + Board Majority\"},\n        {\"covenant\": \"M&A / Liquidation Event\", \"threshold\": \"Any Change of Control\", \"required_consent\": \"66.7% Preferred Supermajority\"},\n        {\"covenant\": \"Budget Deviation\", \"threshold\": \"> 15% Annual Opex Variance\", \"required_consent\": \"Board Majority Approval\"},\n        {\"covenant\": \"Option Pool Expansion\", \"threshold\": \"> Authorized 12% Pool\", \"required_consent\": \"Series A & Series B Preferred Consent\"},\n        {\"covenant\": \"Executive Compensation / C-Suite Hire\", \"threshold\": \"CEO / CFO / VP Appointments\", \"required_consent\": \"Board Compensation Committee\"}\n    ]\n    \n    drag_along_threshold_pct = 66.7\n    founder_board_pct = (2 / len(board_seats)) * 100.0\n    investor_board_pct = (2 / len(board_seats)) * 100.0\n    independent_board_pct = (1 / len(board_seats)) * 100.0\n    \n    print(f\"Board Structure (5 Seats): Common/Founders={founder_board_pct:.0f}% | Investors={investor_board_pct:.0f}% | Independent={independent_board_pct:.0f}%\")\n    print(\"Seat Allocations:\")\n    for seat in board_seats:\n        print(f\"  {seat['seat']}: {seat['holder']} ({seat['type']})\")\n    print(\"Protective Provisions & Negative Covenants:\")\n    for cov in protective_covenants:\n        print(f\"  {cov['covenant']}: Floor={cov['threshold']} | Requires: {cov['required_consent']}\")\n    print(f\"Drag-Along Agreement: Minimum {drag_along_threshold_pct}% Supermajority required to enforce sale\")\n    print(\"Status: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.\")\n    return {\n        \"board_size\": len(board_seats),\n        \"founder_pct\": founder_board_pct,\n        \"investor_pct\": investor_board_pct,\n        \"drag_along_threshold_pct\": drag_along_threshold_pct,\n        \"status\": \"NVCA_COMPLIANT_2_2_1\"\n    }\n\naudit_boardroom_governance_and_covenants()",
+        "code": "def audit_boardroom_governance_and_covenants():\n    print(\"=== Boardroom Corporate Governance & Protective Covenants Audit ===\")\n    board_seats = [\n        {\"seat\": \"Seat 1 (Common)\", \"holder\": \"Chief Executive Officer (Founder)\", \"type\": \"Executive\", \"voting_power\": 1},\n        {\"seat\": \"Seat 2 (Common)\", \"holder\": \"Chief Technology Officer (Founder)\", \"type\": \"Executive\", \"voting_power\": 1},\n        {\"seat\": \"Seat 3 (Series A)\", \"holder\": \"Series A Lead General Partner\", \"type\": \"Preferred Investor\", \"voting_power\": 1},\n        {\"seat\": \"Seat 4 (Series B)\", \"holder\": \"Series B Lead General Partner\", \"type\": \"Preferred Investor\", \"voting_power\": 1},\n        {\"seat\": \"Seat 5 (Independent)\", \"holder\": \"Veteran SaaS Enterprise Operator\", \"type\": \"Mutually Appointed\", \"voting_power\": 1}\n    ]\n    \n    protective_covenants = [\n        {\"covenant\": \"Indebtedness Threshold\", \"threshold\": \"> $2,000,000.00\", \"required_consent\": \"Series B Lead + Board Majority\"},\n        {\"covenant\": \"M&A / Liquidation Event\", \"threshold\": \"Any Change of Control\", \"required_consent\": \"66.7% Preferred Supermajority\"},\n        {\"covenant\": \"Budget Deviation\", \"threshold\": \"> 15% Annual Opex Variance\", \"required_consent\": \"Board Majority Approval\"},\n        {\"covenant\": \"Option Pool Expansion\", \"threshold\": \"> Authorized 12% Pool\", \"required_consent\": \"Series A & Series B Preferred Consent\"},\n        {\"covenant\": \"Executive Compensation / C-Suite Hire\", \"threshold\": \"CEO / CFO / VP Appointments\", \"required_consent\": \"Board Compensation Committee\"}\n    ]\n    \n    drag_along_threshold_pct = 66.7\n    founder_board_pct = (2 / len(board_seats)) * 100.0\n    investor_board_pct = (2 / len(board_seats)) * 100.0\n    independent_board_pct = (1 / len(board_seats)) * 100.0\n    \n    print(f\"Board Structure ({len(board_seats)} Seats): Common/Founders={founder_board_pct:.0f}% | Investors={investor_board_pct:.0f}% | Independent={independent_board_pct:.0f}%\")\n    print(\"Seat Allocations:\")\n    for seat in board_seats:\n        print(f\"  {seat['seat']}: {seat['holder']} ({seat['type']})\")\n    print(\"Protective Provisions & Negative Covenants:\")\n    for cov in protective_covenants:\n        print(f\"  {cov['covenant']}: Floor={cov['threshold']} | Requires: {cov['required_consent']}\")\n    print(f\"Drag-Along Agreement: Minimum {drag_along_threshold_pct}% Supermajority required to enforce sale\")\n    print(\"Status: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.\")\n    return {\n        \"board_size\": len(board_seats),\n        \"founder_pct\": founder_board_pct,\n        \"investor_pct\": investor_board_pct,\n        \"drag_along_threshold_pct\": drag_along_threshold_pct,\n        \"status\": \"NVCA_COMPLIANT_2_2_1\"\n    }\n\naudit_boardroom_governance_and_covenants()",
         "output": "=== Boardroom Corporate Governance & Protective Covenants Audit ===\nBoard Structure (5 Seats): Common/Founders=40% | Investors=40% | Independent=20%\nSeat Allocations:\n  Seat 1 (Common): Chief Executive Officer (Founder) (Executive)\n  Seat 2 (Common): Chief Technology Officer (Founder) (Executive)\n  Seat 3 (Series A): Series A Lead General Partner (Preferred Investor)\n  Seat 4 (Series B): Series B Lead General Partner (Preferred Investor)\n  Seat 5 (Independent): Veteran SaaS Enterprise Operator (Mutually Appointed)\nProtective Provisions & Negative Covenants:\n  Indebtedness Threshold: Floor=> $2,000,000.00 | Requires: Series B Lead + Board Majority\n  M&A / Liquidation Event: Floor=Any Change of Control | Requires: 66.7% Preferred Supermajority\n  Budget Deviation: Floor=> 15% Annual Opex Variance | Requires: Board Majority Approval\n  Option Pool Expansion: Floor=> Authorized 12% Pool | Requires: Series A & Series B Preferred Consent\n  Executive Compensation / C-Suite Hire: Floor=CEO / CFO / VP Appointments | Requires: Board Compensation Committee\nDrag-Along Agreement: Minimum 66.7% Supermajority required to enforce sale\nStatus: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 3,
             "note": "Models an NVCA-standard 5-member board structure: 40% Common/Founders, 40% Preferred Investors, and 20% Independent Operator."
           },
           {
-            "line": 2,
+            "line": 11,
             "note": "Audits protective negative covenants governing debt incurrence (>$2.0M), change of control M&A, and budget variances (>15%)."
           },
           {
-            "line": 3,
+            "line": 19,
             "note": "Verifies a 66.7% preferred and common supermajority drag-along threshold, guaranteeing smooth execution of future M&A transactions."
           }
         ],
-        "tryIt": "Modify the board structure to include 3 founder seats and test whether it conforms to typical Series B institutional venture standards.",
+        "tryIt": "Add a sixth board seat (for example a third founder) to board_seats: the percentages recompute to 33% / 33% / 17% because they divide by the seat count, but the final Status line is fixed text and still says COMPLIANT, so you must judge the 2-2-1 structure yourself.",
         "check": {
           "question": "What is the primary operational role of an independent director in a balanced 2-2-1 Series B venture board of directors?",
           "options": [
+            "To audit the code repository every weekend for syntax errors.",
             "To serve as an objective industry expert who breaks potential deadlocks between common founders and preferred investors in the best fiduciary interest of the corporation.",
             "To represent the legal interests of commercial bank lenders and enforce debt repayments.",
-            "To manage daily sales engineering and customer onboarding operations.",
-            "To audit the code repository every weekend for syntax errors."
+            "To manage daily sales engineering and customer onboarding operations."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "An independent director provides seasoned industry wisdom and acts as an impartial tie-breaker when founder and investor interests diverge, ensuring balanced corporate stewardship.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "An independent director provides seasoned industry wisdom and acts as an impartial tie-breaker when founder and investor interests diverge, ensuring balanced corporate stewardship."
         }
       },
@@ -930,34 +910,34 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "In this section, you will model an automated growth capital deployment engine that tracks quarterly cash ramp, projects ARR milestones to forty-two million dollars, and stress-tests treasury solvency across extreme macroeconomic conditions."
         ],
         "example": "Consider deploying thirty million dollars in Series B growth capital like fueling and navigating a supersonic passenger aircraft during a transatlantic flight. Over fifty percent of the high-octane fuel is allocated directly to the primary propulsion turbines—your enterprise go-to-market engine—propelling the craft forward to cruise speed. Thirty percent is channeled into hydraulic flight stabilization and advanced avionics—your R&D engineering platform—ensuring structural integrity and guidance at high altitudes. Ten percent fuels auxiliary life-support and communications systems (G&A compliance), while the remaining fuel is locked in emergency reserve tanks. If violent unexpected headwinds or turbulence strike mid-ocean, the pilot does not risk a catastrophic ditching; the reserve fuel guarantees sufficient endurance to divert safely to an alternate airfield.",
-        "code": "def allocate_growth_capital_and_stress_runway():\n    print(\"=== Growth Capital Allocation & Solvency Runway Stress Test ===\")\n    net_proceeds = 30_000_000.0\n    existing_cash = 10_000_000.0\n    total_treasury = net_proceeds + existing_cash\n    \n    allocations = {\n        \"GTM Enterprise Expansion (55%)\": net_proceeds * 0.55,\n        \"R&D AI & Core Platform (30%)\": net_proceeds * 0.30,\n        \"G&A Legal & International Compliance (10%)\": net_proceeds * 0.10,\n        \"Strategic Working Capital Reserve (5%)\": net_proceeds * 0.05\n    }\n    \n    quarterly_runway_simulation = [\n        {\"quarter\": \"Q1\", \"monthly_burn\": 800_000.0, \"arr\": 13_500_000.0},\n        {\"quarter\": \"Q2\", \"monthly_burn\": 950_000.0, \"arr\": 15_800_000.0},\n        {\"quarter\": \"Q3\", \"monthly_burn\": 1_100_000.0, \"arr\": 18_900_000.0},\n        {\"quarter\": \"Q4\", \"monthly_burn\": 1_250_000.0, \"arr\": 22_500_000.0},\n        {\"quarter\": \"Q5\", \"monthly_burn\": 1_200_000.0, \"arr\": 26_800_000.0},\n        {\"quarter\": \"Q6\", \"monthly_burn\": 1_100_000.0, \"arr\": 31_500_000.0},\n        {\"quarter\": \"Q7\", \"monthly_burn\": 900_000.0, \"arr\": 36_200_000.0},\n        {\"quarter\": \"Q8\", \"monthly_burn\": 650_000.0, \"arr\": 42_000_000.0}\n    ]\n    \n    current_cash = total_treasury\n    cash_trajectory = []\n    for q in quarterly_runway_simulation:\n        quarterly_burn = q[\"monthly_burn\"] * 3.0\n        current_cash -= quarterly_burn\n        cash_trajectory.append({\"quarter\": q[\"quarter\"], \"ending_cash\": current_cash, \"arr\": q[\"arr\"]})\n        \n    downside_stress_factor = 1.35\n    stressed_annual_burn = sum(q[\"monthly_burn\"] * 3.0 for q in quarterly_runway_simulation[:4]) * downside_stress_factor\n    stressed_runway_months = (total_treasury / (stressed_annual_burn / 12.0))\n    \n    print(f\"Total Treasury Capital: \" + \"$\" + f\"{total_treasury:,.2f} (\" + \"$\" + f\"{existing_cash:,.2f} cash + \" + \"$\" + f\"{net_proceeds:,.2f} Series B)\")\n    print(\"Capital Allocation Schedule:\")\n    for cat, amt in allocations.items():\n        print(f\"  {cat}: \" + \"$\" + f\"{amt:,.2f}\")\n    print(\"24-Month Treasury & ARR Ramp Simulation:\")\n    for row in cash_trajectory:\n        print(f\"  {row['quarter']}: Treasury Remaining=\" + \"$\" + f\"{row['ending_cash']:,.2f} | ARR Runway=\" + \"$\" + f\"{row['arr']:,.2f}\")\n    print(f\"Macro Stress Test (1.35x Burn Shock): Stressed Runway = {stressed_runway_months:.1f} Months\")\n    print(\"Status: ROBUST 28+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.\")\n    return {\n        \"total_treasury\": total_treasury,\n        \"ending_cash_q8\": cash_trajectory[-1][\"ending_cash\"],\n        \"stressed_runway_months\": stressed_runway_months\n    }\n\nallocate_growth_capital_and_stress_runway()",
+        "code": "def allocate_growth_capital_and_stress_runway():\n    print(\"=== Growth Capital Allocation & Solvency Runway Stress Test ===\")\n    net_proceeds = 30_000_000.0\n    existing_cash = 10_000_000.0\n    total_treasury = net_proceeds + existing_cash\n    \n    allocations = {\n        \"GTM Enterprise Expansion (55%)\": net_proceeds * 0.55,\n        \"R&D AI & Core Platform (30%)\": net_proceeds * 0.30,\n        \"G&A Legal & International Compliance (10%)\": net_proceeds * 0.10,\n        \"Strategic Working Capital Reserve (5%)\": net_proceeds * 0.05\n    }\n    \n    quarterly_runway_simulation = [\n        {\"quarter\": \"Q1\", \"monthly_burn\": 800_000.0, \"arr\": 13_500_000.0},\n        {\"quarter\": \"Q2\", \"monthly_burn\": 950_000.0, \"arr\": 15_800_000.0},\n        {\"quarter\": \"Q3\", \"monthly_burn\": 1_100_000.0, \"arr\": 18_900_000.0},\n        {\"quarter\": \"Q4\", \"monthly_burn\": 1_250_000.0, \"arr\": 22_500_000.0},\n        {\"quarter\": \"Q5\", \"monthly_burn\": 1_200_000.0, \"arr\": 26_800_000.0},\n        {\"quarter\": \"Q6\", \"monthly_burn\": 1_100_000.0, \"arr\": 31_500_000.0},\n        {\"quarter\": \"Q7\", \"monthly_burn\": 900_000.0, \"arr\": 36_200_000.0},\n        {\"quarter\": \"Q8\", \"monthly_burn\": 650_000.0, \"arr\": 42_000_000.0}\n    ]\n    \n    current_cash = total_treasury\n    cash_trajectory = []\n    for q in quarterly_runway_simulation:\n        quarterly_burn = q[\"monthly_burn\"] * 3.0\n        current_cash -= quarterly_burn\n        cash_trajectory.append({\"quarter\": q[\"quarter\"], \"ending_cash\": current_cash, \"arr\": q[\"arr\"]})\n        \n    downside_stress_factor = 1.35\n    stressed_annual_burn = sum(q[\"monthly_burn\"] * 3.0 for q in quarterly_runway_simulation[:4]) * downside_stress_factor\n    stressed_runway_months = (total_treasury / (stressed_annual_burn / 12.0))\n    \n    print(f\"Total Treasury Capital: \" + \"$\" + f\"{total_treasury:,.2f} (\" + \"$\" + f\"{existing_cash:,.2f} cash + \" + \"$\" + f\"{net_proceeds:,.2f} Series B)\")\n    print(\"Capital Allocation Schedule:\")\n    for cat, amt in allocations.items():\n        print(f\"  {cat}: \" + \"$\" + f\"{amt:,.2f}\")\n    print(\"24-Month Treasury & ARR Ramp Simulation:\")\n    for row in cash_trajectory:\n        print(f\"  {row['quarter']}: Treasury Remaining=\" + \"$\" + f\"{row['ending_cash']:,.2f} | ARR Runway=\" + \"$\" + f\"{row['arr']:,.2f}\")\n    print(f\"Macro Stress Test ({downside_stress_factor:.2f}x Burn Shock): Stressed Runway = {stressed_runway_months:.1f} Months\")\n    print(f\"Status: ROBUST {int(stressed_runway_months)}+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.\")\n    return {\n        \"total_treasury\": total_treasury,\n        \"ending_cash_q8\": cash_trajectory[-1][\"ending_cash\"],\n        \"stressed_runway_months\": stressed_runway_months\n    }\n\nallocate_growth_capital_and_stress_runway()",
         "output": "=== Growth Capital Allocation & Solvency Runway Stress Test ===\nTotal Treasury Capital: $40,000,000.00 ($10,000,000.00 cash + $30,000,000.00 Series B)\nCapital Allocation Schedule:\n  GTM Enterprise Expansion (55%): $16,500,000.00\n  R&D AI & Core Platform (30%): $9,000,000.00\n  G&A Legal & International Compliance (10%): $3,000,000.00\n  Strategic Working Capital Reserve (5%): $1,500,000.00\n24-Month Treasury & ARR Ramp Simulation:\n  Q1: Treasury Remaining=$37,600,000.00 | ARR Runway=$13,500,000.00\n  Q2: Treasury Remaining=$34,750,000.00 | ARR Runway=$15,800,000.00\n  Q3: Treasury Remaining=$31,450,000.00 | ARR Runway=$18,900,000.00\n  Q4: Treasury Remaining=$27,700,000.00 | ARR Runway=$22,500,000.00\n  Q5: Treasury Remaining=$24,100,000.00 | ARR Runway=$26,800,000.00\n  Q6: Treasury Remaining=$20,800,000.00 | ARR Runway=$31,500,000.00\n  Q7: Treasury Remaining=$18,100,000.00 | ARR Runway=$36,200,000.00\n  Q8: Treasury Remaining=$16,150,000.00 | ARR Runway=$42,000,000.00\nMacro Stress Test (1.35x Burn Shock): Stressed Runway = 28.9 Months\nStatus: ROBUST 28+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 7,
             "note": "Allocates $30.0M net proceeds across GTM expansion ($16.5M), R&D engineering ($9.0M), G&A ($3.0M), and reserves ($1.5M)."
           },
           {
-            "line": 2,
+            "line": 27,
             "note": "Simulates 8 quarters of treasury trajectory, reaching $42.0M ARR run-rate with $16.15M ending cash buffer."
           },
           {
-            "line": 3,
+            "line": 34,
             "note": "Executes an extreme 1.35x burn shock stress test, certifying 28.9 months of survival runway under adverse market conditions."
           }
         ],
-        "tryIt": "Simulate an extreme downside scenario where monthly burn increases by 50% to evaluate the minimum cash cushion threshold.",
+        "tryIt": "Set downside_stress_factor (line 32) from 1.35 to 1.50 to model a 50% burn shock: stressed runway falls from 28.9 to 26.0 months, still above the 24-month floor.",
         "check": {
           "question": "Why should growth-stage software companies maintain at least 24 to 30 months of cash runway following a Series B financing round?",
           "options": [
-            "It provides sufficient operational runway to reach key enterprise valuation inflection points while buffering against prolonged macroeconomic venture downturns.",
+            "It guarantees that customer churn rates will immediately drop to zero percent.",
             "It eliminates the obligation to pay corporate income taxes in western jurisdictions.",
-            "It is required by the SEC to prevent common shares from trading on secondary markets.",
-            "It guarantees that customer churn rates will immediately drop to zero percent."
+            "It provides sufficient operational runway to reach key enterprise valuation inflection points while buffering against prolonged macroeconomic venture downturns.",
+            "It is required by the SEC to prevent common shares from trading on secondary markets."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "A 24-30 month runway insulates the business against macroeconomic capital market freezes and provides ample time to compound ARR toward the next major valuation milestone.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "A 24-30 month runway insulates the business against macroeconomic capital market freezes and provides ample time to compound ARR toward the next major valuation milestone."
         }
       },
@@ -970,19 +950,19 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "As you step into the global venture ecosystem, remember that the technical mastery you have demonstrated in this course represents the true competitive moat of high-caliber entrepreneurs. Valuations fluctuate with macroeconomic cycles, but the fundamental laws of recurring revenue compounding, capital efficiency, and fiduciary governance remain immutable. By uniting rigorous financial modeling with bold entrepreneurial vision, you are prepared to lead boardrooms, negotiate with institutional titans, and steer high-growth technology ventures through every phase of scale from initial seed inception to IPO triumph."
         ],
         "example": "Think of the Milestone 1 Capstone defense like delivering a doctoral dissertation defense in astrophysics before the world's foremost scientific academy. You do not simply recite interesting astronomical trivia; you present peer-reviewed observational datasets, mathematical proofs of orbital mechanics, and computer simulations verifying that your theoretical model withstands gravitational anomalies and cosmic radiation. When the academy faculty scrutinizes your calculations on energy conservation and celestial mass, every variable holds under cross-examination. Upon concluding your defense, the panel votes unanimously to confer highest honors, welcoming you as a full peer and recognized authority in the discipline.",
-        "code": "def generate_venture_partner_dossier_and_accreditation():\n    print(\"=== Silicon Valley VC Pitch Defense & Venture Partner Accreditation ===\")\n    memo = model_series_b_investment_memo()\n    syndicate = structure_series_b_syndicate_and_prorata()\n    gov = audit_boardroom_governance_and_covenants()\n    treasury = allocate_growth_capital_and_stress_runway()\n    \n    print(\"\n--- Milestone 1 Capstone Synthesis: Sand Hill Road Boardroom Defense ---\")\n    print(f\"  1. Enterprise Scale: ARR Growth = {memo['arr_growth_pct']:.1f}% | NRR = {memo['nrr_pct']:.1f}%\")\n    print(f\"  2. Capital Efficiency: Rule of 40 = {memo['rule_of_40']:.1f}% | Burn Multiple = {memo['burn_multiple']:.2f}x\")\n    print(f\"  3. Financing Architecture: \" + \"$\" + f\"{syndicate['post_money']:,.2f} Post-Money Valuation (\" + \"$\" + f\"{syndicate['pre_money']:,.2f} Pre)\")\n    print(f\"  4. Governance Integrity: {gov['status']} ({gov['board_size']}-Member Board, {gov['drag_along_threshold_pct']}% Drag-Along)\")\n    print(f\"  5. Solvency Cushion: \" + \"$\" + f\"{treasury['ending_cash_q8']:,.2f} Cash at Q8 ($42M ARR Run-Rate)\")\n    print(\"\n================================================================================\")\n    print(\"OFFICIAL VENTURE PARTNERSHIP UNANIMOUS VOTE: PASSED WITH DISTINCTION (5/5)\")\n    print(\"ACCREDITATION CONFERRED: CERTIFIED VENTURE CAPITAL PARTNER & CHIEF EXECUTIVE ENTREPRENEUR (VCP-CEE)\")\n    print(\"STATUS: COURSE B.COM ENTREPRENEURSHIP (BCOM_ENT) 100% COMPLETE & CERTIFIED.\")\n    print(\"================================================================================\")\n\ngenerate_venture_partner_dossier_and_accreditation()",
+        "code": "# Setup: re-runs the earlier parts of today's lesson so this capstone runs on its own (their output is hidden).\nimport sys as _s4, io as _io4\n_o4 = _s4.stdout\n_s4.stdout = _io4.StringIO()\n\ndef model_series_b_investment_memo():\n    print(\"=== Institutional Series B Investment Memo & SaaS Due Diligence ===\")\n    starting_arr = 6_000_000.0\n    ending_arr = 12_000_000.0\n    net_new_arr = ending_arr - starting_arr\n    arr_growth_pct = (net_new_arr / starting_arr) * 100.0\n    \n    beginning_cohort_arr = 5_000_000.0\n    expansion_arr = 1_500_000.0\n    churn_contraction_arr = 250_000.0\n    retained_arr = beginning_cohort_arr - churn_contraction_arr\n    \n    grr_pct = (retained_arr / beginning_cohort_arr) * 100.0\n    nrr_pct = ((retained_arr + expansion_arr) / beginning_cohort_arr) * 100.0\n    \n    revenue = 9_500_000.0\n    cogs = 1_805_000.0\n    gross_profit = revenue - cogs\n    gross_margin_pct = (gross_profit / revenue) * 100.0\n    \n    net_cash_burn = 5_400_000.0\n    burn_multiple = net_cash_burn / net_new_arr\n    \n    fcf = -1_900_000.0\n    fcf_margin_pct = (fcf / revenue) * 100.0\n    rule_of_40_score = arr_growth_pct + fcf_margin_pct\n    \n    sales_marketing_spend = 4_800_000.0\n    magic_number = net_new_arr / sales_marketing_spend\n    cac_payback_months = (sales_marketing_spend / (net_new_arr * (gross_margin_pct / 100.0))) * 12.0\n    \n    score = 0\n    if arr_growth_pct >= 80.0: score += 25\n    if nrr_pct >= 120.0: score += 25\n    if rule_of_40_score >= 40.0: score += 20\n    if burn_multiple <= 1.2: score += 15\n    if cac_payback_months <= 12.0: score += 15\n    \n    verdict = \"TIER_1_SERIES_B_APPROVED\" if score >= 90 else \"CONDITIONAL_APPROVAL\"\n    \n    print(f\"ARR Trajectory: Beginning=\" + \"$\" + f\"{starting_arr:,.2f} -> Ending=\" + \"$\" + f\"{ending_arr:,.2f} (+{arr_growth_pct:.1f}% YoY)\")\n    print(f\"Cohort Retention: GRR={grr_pct:.1f}% | NRR={nrr_pct:.1f}%\")\n    print(f\"Financial Margins: Gross Margin={gross_margin_pct:.1f}% | FCF Margin={fcf_margin_pct:.1f}%\")\n    print(f\"Capital Efficiency: Rule of 40={rule_of_40_score:.1f}% | Burn Multiple={burn_multiple:.2f}x\")\n    print(f\"Go-to-Market: Magic Number={magic_number:.2f} | CAC Payback={cac_payback_months:.1f} months\")\n    print(f\"Diligence Score: {score}/100 -> Recommendation: {verdict}\")\n    return {\n        \"arr_growth_pct\": arr_growth_pct,\n        \"nrr_pct\": nrr_pct,\n        \"rule_of_40\": rule_of_40_score,\n        \"burn_multiple\": burn_multiple,\n        \"cac_payback_months\": cac_payback_months,\n        \"score\": score,\n        \"verdict\": verdict\n    }\n\nmodel_series_b_investment_memo()\n\ndef structure_series_b_syndicate_and_prorata():\n    print(\"=== Multi-Tranche Series B Term Sheet, Syndicate & Pro-Rata ===\")\n    pre_money_val = 120_000_000.0\n    investment_amount = 30_000_000.0\n    post_money_val = pre_money_val + investment_amount\n    \n    series_b_dilution_pct = (investment_amount / post_money_val) * 100.0\n    \n    lead_vc_pct = 60.0\n    lead_vc_investment = investment_amount * (lead_vc_pct / 100.0)\n    \n    pro_rata_pct = 25.0\n    pro_rata_investment = investment_amount * (pro_rata_pct / 100.0)\n    \n    growth_syndicate_pct = 15.0\n    growth_syndicate_investment = investment_amount * (growth_syndicate_pct / 100.0)\n    \n    lead_vc_post_ownership = (lead_vc_investment / post_money_val) * 100.0\n    pro_rata_post_ownership = (pro_rata_investment / post_money_val) * 100.0\n    syndicate_post_ownership = (growth_syndicate_investment / post_money_val) * 100.0\n    \n    pre_round_cap_table = {\n        \"Founders & Common\": 52.0,\n        \"Seed Investors\": 12.0,\n        \"Series A Investors\": 24.0,\n        \"Option Pool (Existing)\": 12.0\n    }\n    \n    retention_factor = 1.0 - (series_b_dilution_pct / 100.0)\n    post_round_cap_table = {}\n    for stakeholder, pct in pre_round_cap_table.items():\n        if stakeholder == \"Series A Investors\":\n            post_round_cap_table[stakeholder] = (pct * retention_factor) + pro_rata_post_ownership\n        else:\n            post_round_cap_table[stakeholder] = pct * retention_factor\n            \n    post_round_cap_table[\"Series B Lead VC\"] = lead_vc_post_ownership\n    post_round_cap_table[\"Series B Growth Syndicate\"] = syndicate_post_ownership\n    \n    print(f\"Round Terms: Pre-Money=\" + \"$\" + f\"{pre_money_val:,.2f} | Raise=\" + \"$\" + f\"{investment_amount:,.2f} | Post-Money=\" + \"$\" + f\"{post_money_val:,.2f}\")\n    print(f\"Total Series B Dilution: {series_b_dilution_pct:.2f}%\")\n    print(\"Syndicate Allocation Waterfall:\")\n    print(f\"  Lead Tier-1 VC (60%): \" + \"$\" + f\"{lead_vc_investment:,.2f} -> {lead_vc_post_ownership:.2f}% Post-Money Ownership\")\n    print(f\"  Series A Pro-Rata (25%): \" + \"$\" + f\"{pro_rata_investment:,.2f} -> {pro_rata_post_ownership:.2f}% Incremental Ownership\")\n    print(f\"  Growth Syndicate (15%): \" + \"$\" + f\"{growth_syndicate_investment:,.2f} -> {syndicate_post_ownership:.2f}% Post-Money Ownership\")\n    print(\"Post-Money Fully Diluted Cap Table:\")\n    for stakeholder, share in post_round_cap_table.items():\n        print(f\"  {stakeholder}: {share:.2f}%\")\n    return {\n        \"pre_money\": pre_money_val,\n        \"post_money\": post_money_val,\n        \"dilution_pct\": series_b_dilution_pct,\n        \"post_cap_table\": post_round_cap_table\n    }\n\nstructure_series_b_syndicate_and_prorata()\n\ndef audit_boardroom_governance_and_covenants():\n    print(\"=== Boardroom Corporate Governance & Protective Covenants Audit ===\")\n    board_seats = [\n        {\"seat\": \"Seat 1 (Common)\", \"holder\": \"Chief Executive Officer (Founder)\", \"type\": \"Executive\", \"voting_power\": 1},\n        {\"seat\": \"Seat 2 (Common)\", \"holder\": \"Chief Technology Officer (Founder)\", \"type\": \"Executive\", \"voting_power\": 1},\n        {\"seat\": \"Seat 3 (Series A)\", \"holder\": \"Series A Lead General Partner\", \"type\": \"Preferred Investor\", \"voting_power\": 1},\n        {\"seat\": \"Seat 4 (Series B)\", \"holder\": \"Series B Lead General Partner\", \"type\": \"Preferred Investor\", \"voting_power\": 1},\n        {\"seat\": \"Seat 5 (Independent)\", \"holder\": \"Veteran SaaS Enterprise Operator\", \"type\": \"Mutually Appointed\", \"voting_power\": 1}\n    ]\n    \n    protective_covenants = [\n        {\"covenant\": \"Indebtedness Threshold\", \"threshold\": \"> $2,000,000.00\", \"required_consent\": \"Series B Lead + Board Majority\"},\n        {\"covenant\": \"M&A / Liquidation Event\", \"threshold\": \"Any Change of Control\", \"required_consent\": \"66.7% Preferred Supermajority\"},\n        {\"covenant\": \"Budget Deviation\", \"threshold\": \"> 15% Annual Opex Variance\", \"required_consent\": \"Board Majority Approval\"},\n        {\"covenant\": \"Option Pool Expansion\", \"threshold\": \"> Authorized 12% Pool\", \"required_consent\": \"Series A & Series B Preferred Consent\"},\n        {\"covenant\": \"Executive Compensation / C-Suite Hire\", \"threshold\": \"CEO / CFO / VP Appointments\", \"required_consent\": \"Board Compensation Committee\"}\n    ]\n    \n    drag_along_threshold_pct = 66.7\n    founder_board_pct = (2 / len(board_seats)) * 100.0\n    investor_board_pct = (2 / len(board_seats)) * 100.0\n    independent_board_pct = (1 / len(board_seats)) * 100.0\n    \n    print(f\"Board Structure ({len(board_seats)} Seats): Common/Founders={founder_board_pct:.0f}% | Investors={investor_board_pct:.0f}% | Independent={independent_board_pct:.0f}%\")\n    print(\"Seat Allocations:\")\n    for seat in board_seats:\n        print(f\"  {seat['seat']}: {seat['holder']} ({seat['type']})\")\n    print(\"Protective Provisions & Negative Covenants:\")\n    for cov in protective_covenants:\n        print(f\"  {cov['covenant']}: Floor={cov['threshold']} | Requires: {cov['required_consent']}\")\n    print(f\"Drag-Along Agreement: Minimum {drag_along_threshold_pct}% Supermajority required to enforce sale\")\n    print(\"Status: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.\")\n    return {\n        \"board_size\": len(board_seats),\n        \"founder_pct\": founder_board_pct,\n        \"investor_pct\": investor_board_pct,\n        \"drag_along_threshold_pct\": drag_along_threshold_pct,\n        \"status\": \"NVCA_COMPLIANT_2_2_1\"\n    }\n\naudit_boardroom_governance_and_covenants()\n\ndef allocate_growth_capital_and_stress_runway():\n    print(\"=== Growth Capital Allocation & Solvency Runway Stress Test ===\")\n    net_proceeds = 30_000_000.0\n    existing_cash = 10_000_000.0\n    total_treasury = net_proceeds + existing_cash\n    \n    allocations = {\n        \"GTM Enterprise Expansion (55%)\": net_proceeds * 0.55,\n        \"R&D AI & Core Platform (30%)\": net_proceeds * 0.30,\n        \"G&A Legal & International Compliance (10%)\": net_proceeds * 0.10,\n        \"Strategic Working Capital Reserve (5%)\": net_proceeds * 0.05\n    }\n    \n    quarterly_runway_simulation = [\n        {\"quarter\": \"Q1\", \"monthly_burn\": 800_000.0, \"arr\": 13_500_000.0},\n        {\"quarter\": \"Q2\", \"monthly_burn\": 950_000.0, \"arr\": 15_800_000.0},\n        {\"quarter\": \"Q3\", \"monthly_burn\": 1_100_000.0, \"arr\": 18_900_000.0},\n        {\"quarter\": \"Q4\", \"monthly_burn\": 1_250_000.0, \"arr\": 22_500_000.0},\n        {\"quarter\": \"Q5\", \"monthly_burn\": 1_200_000.0, \"arr\": 26_800_000.0},\n        {\"quarter\": \"Q6\", \"monthly_burn\": 1_100_000.0, \"arr\": 31_500_000.0},\n        {\"quarter\": \"Q7\", \"monthly_burn\": 900_000.0, \"arr\": 36_200_000.0},\n        {\"quarter\": \"Q8\", \"monthly_burn\": 650_000.0, \"arr\": 42_000_000.0}\n    ]\n    \n    current_cash = total_treasury\n    cash_trajectory = []\n    for q in quarterly_runway_simulation:\n        quarterly_burn = q[\"monthly_burn\"] * 3.0\n        current_cash -= quarterly_burn\n        cash_trajectory.append({\"quarter\": q[\"quarter\"], \"ending_cash\": current_cash, \"arr\": q[\"arr\"]})\n        \n    downside_stress_factor = 1.35\n    stressed_annual_burn = sum(q[\"monthly_burn\"] * 3.0 for q in quarterly_runway_simulation[:4]) * downside_stress_factor\n    stressed_runway_months = (total_treasury / (stressed_annual_burn / 12.0))\n    \n    print(f\"Total Treasury Capital: \" + \"$\" + f\"{total_treasury:,.2f} (\" + \"$\" + f\"{existing_cash:,.2f} cash + \" + \"$\" + f\"{net_proceeds:,.2f} Series B)\")\n    print(\"Capital Allocation Schedule:\")\n    for cat, amt in allocations.items():\n        print(f\"  {cat}: \" + \"$\" + f\"{amt:,.2f}\")\n    print(\"24-Month Treasury & ARR Ramp Simulation:\")\n    for row in cash_trajectory:\n        print(f\"  {row['quarter']}: Treasury Remaining=\" + \"$\" + f\"{row['ending_cash']:,.2f} | ARR Runway=\" + \"$\" + f\"{row['arr']:,.2f}\")\n    print(f\"Macro Stress Test ({downside_stress_factor:.2f}x Burn Shock): Stressed Runway = {stressed_runway_months:.1f} Months\")\n    print(f\"Status: ROBUST {int(stressed_runway_months)}+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.\")\n    return {\n        \"total_treasury\": total_treasury,\n        \"ending_cash_q8\": cash_trajectory[-1][\"ending_cash\"],\n        \"stressed_runway_months\": stressed_runway_months\n    }\n\nallocate_growth_capital_and_stress_runway()\n\n_s4.stdout = _o4\n# ---- Capstone starts here ----\n\n\n\ndef generate_venture_partner_dossier_and_accreditation():\n    print(\"=== Silicon Valley VC Pitch Defense & Venture Partner Accreditation ===\")\n    memo = model_series_b_investment_memo()\n    syndicate = structure_series_b_syndicate_and_prorata()\n    gov = audit_boardroom_governance_and_covenants()\n    treasury = allocate_growth_capital_and_stress_runway()\n    \n    print(\"\\n--- Milestone 1 Capstone Synthesis: Sand Hill Road Boardroom Defense ---\")\n    print(f\"  1. Enterprise Scale: ARR Growth = {memo['arr_growth_pct']:.1f}% | NRR = {memo['nrr_pct']:.1f}%\")\n    print(f\"  2. Capital Efficiency: Rule of 40 = {memo['rule_of_40']:.1f}% | Burn Multiple = {memo['burn_multiple']:.2f}x\")\n    print(f\"  3. Financing Architecture: \" + \"$\" + f\"{syndicate['post_money']:,.2f} Post-Money Valuation (\" + \"$\" + f\"{syndicate['pre_money']:,.2f} Pre)\")\n    print(f\"  4. Governance Integrity: {gov['status']} ({gov['board_size']}-Member Board, {gov['drag_along_threshold_pct']}% Drag-Along)\")\n    print(f\"  5. Solvency Cushion: \" + \"$\" + f\"{treasury['ending_cash_q8']:,.2f} Cash at Q8 ($42M ARR Run-Rate)\")\n    print(\"\\n================================================================================\")\n    print(\"OFFICIAL VENTURE PARTNERSHIP UNANIMOUS VOTE: PASSED WITH DISTINCTION (5/5)\")\n    print(\"ACCREDITATION CONFERRED: CERTIFIED VENTURE CAPITAL PARTNER & CHIEF EXECUTIVE ENTREPRENEUR (VCP-CEE)\")\n    print(\"STATUS: COURSE B.COM ENTREPRENEURSHIP (BCOM_ENT) 100% COMPLETE & CERTIFIED.\")\n    print(\"================================================================================\")\n\ngenerate_venture_partner_dossier_and_accreditation()",
         "output": "=== Silicon Valley VC Pitch Defense & Venture Partner Accreditation ===\n=== Institutional Series B Investment Memo & SaaS Due Diligence ===\nARR Trajectory: Beginning=$6,000,000.00 -> Ending=$12,000,000.00 (+100.0% YoY)\nCohort Retention: GRR=95.0% | NRR=125.0%\nFinancial Margins: Gross Margin=81.0% | FCF Margin=-20.0%\nCapital Efficiency: Rule of 40=80.0% | Burn Multiple=0.90x\nGo-to-Market: Magic Number=1.25 | CAC Payback=11.9 months\nDiligence Score: 100/100 -> Recommendation: TIER_1_SERIES_B_APPROVED\n=== Multi-Tranche Series B Term Sheet, Syndicate & Pro-Rata ===\nRound Terms: Pre-Money=$120,000,000.00 | Raise=$30,000,000.00 | Post-Money=$150,000,000.00\nTotal Series B Dilution: 20.00%\nSyndicate Allocation Waterfall:\n  Lead Tier-1 VC (60%): $18,000,000.00 -> 12.00% Post-Money Ownership\n  Series A Pro-Rata (25%): $7,500,000.00 -> 5.00% Incremental Ownership\n  Growth Syndicate (15%): $4,500,000.00 -> 3.00% Post-Money Ownership\nPost-Money Fully Diluted Cap Table:\n  Founders & Common: 41.60%\n  Seed Investors: 9.60%\n  Series A Investors: 24.20%\n  Option Pool (Existing): 9.60%\n  Series B Lead VC: 12.00%\n  Series B Growth Syndicate: 3.00%\n=== Boardroom Corporate Governance & Protective Covenants Audit ===\nBoard Structure (5 Seats): Common/Founders=40% | Investors=40% | Independent=20%\nSeat Allocations:\n  Seat 1 (Common): Chief Executive Officer (Founder) (Executive)\n  Seat 2 (Common): Chief Technology Officer (Founder) (Executive)\n  Seat 3 (Series A): Series A Lead General Partner (Preferred Investor)\n  Seat 4 (Series B): Series B Lead General Partner (Preferred Investor)\n  Seat 5 (Independent): Veteran SaaS Enterprise Operator (Mutually Appointed)\nProtective Provisions & Negative Covenants:\n  Indebtedness Threshold: Floor=> $2,000,000.00 | Requires: Series B Lead + Board Majority\n  M&A / Liquidation Event: Floor=Any Change of Control | Requires: 66.7% Preferred Supermajority\n  Budget Deviation: Floor=> 15% Annual Opex Variance | Requires: Board Majority Approval\n  Option Pool Expansion: Floor=> Authorized 12% Pool | Requires: Series A & Series B Preferred Consent\n  Executive Compensation / C-Suite Hire: Floor=CEO / CFO / VP Appointments | Requires: Board Compensation Committee\nDrag-Along Agreement: Minimum 66.7% Supermajority required to enforce sale\nStatus: NVCA COMPLIANT 2-2-1 GOVERNANCE ARCHITECTURE VERIFIED.\n=== Growth Capital Allocation & Solvency Runway Stress Test ===\nTotal Treasury Capital: $40,000,000.00 ($10,000,000.00 cash + $30,000,000.00 Series B)\nCapital Allocation Schedule:\n  GTM Enterprise Expansion (55%): $16,500,000.00\n  R&D AI & Core Platform (30%): $9,000,000.00\n  G&A Legal & International Compliance (10%): $3,000,000.00\n  Strategic Working Capital Reserve (5%): $1,500,000.00\n24-Month Treasury & ARR Ramp Simulation:\n  Q1: Treasury Remaining=$37,600,000.00 | ARR Runway=$13,500,000.00\n  Q2: Treasury Remaining=$34,750,000.00 | ARR Runway=$15,800,000.00\n  Q3: Treasury Remaining=$31,450,000.00 | ARR Runway=$18,900,000.00\n  Q4: Treasury Remaining=$27,700,000.00 | ARR Runway=$22,500,000.00\n  Q5: Treasury Remaining=$24,100,000.00 | ARR Runway=$26,800,000.00\n  Q6: Treasury Remaining=$20,800,000.00 | ARR Runway=$31,500,000.00\n  Q7: Treasury Remaining=$18,100,000.00 | ARR Runway=$36,200,000.00\n  Q8: Treasury Remaining=$16,150,000.00 | ARR Runway=$42,000,000.00\nMacro Stress Test (1.35x Burn Shock): Stressed Runway = 28.9 Months\nStatus: ROBUST 28+ MONTH SOLVENCY BUFFER CONFIRMED UNDER SEVERE DOWNSIDE STRESS.\n\n--- Milestone 1 Capstone Synthesis: Sand Hill Road Boardroom Defense ---\n  1. Enterprise Scale: ARR Growth = 100.0% | NRR = 125.0%\n  2. Capital Efficiency: Rule of 40 = 80.0% | Burn Multiple = 0.90x\n  3. Financing Architecture: $150,000,000.00 Post-Money Valuation ($120,000,000.00 Pre)\n  4. Governance Integrity: NVCA_COMPLIANT_2_2_1 (5-Member Board, 66.7% Drag-Along)\n  5. Solvency Cushion: $16,150,000.00 Cash at Q8 ($42M ARR Run-Rate)\n\n================================================================================\nOFFICIAL VENTURE PARTNERSHIP UNANIMOUS VOTE: PASSED WITH DISTINCTION (5/5)\nACCREDITATION CONFERRED: CERTIFIED VENTURE CAPITAL PARTNER & CHIEF EXECUTIVE ENTREPRENEUR (VCP-CEE)\nSTATUS: COURSE B.COM ENTREPRENEURSHIP (BCOM_ENT) 100% COMPLETE & CERTIFIED.\n================================================================================",
         "codeNotes": [
           {
-            "line": 1,
+            "line": 218,
             "note": "Synthesizes all 5 capstone pillars: SaaS investment memo metrics, syndicate allocation waterfall, and board covenants."
           },
           {
-            "line": 2,
+            "line": 230,
             "note": "Validates a $150.0M post-money financing structure and a $16.15M ending treasury cushion at $42.0M ARR run-rate."
           },
           {
-            "line": 3,
+            "line": 233,
             "note": "Formally confers the Certified Venture Capital Partner & Chief Executive Entrepreneur (VCP-CEE) accreditation, completing course bcom_ent (5/5 Days)."
           }
         ],
@@ -990,14 +970,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the ultimate strategic achievement validated by the Milestone 1 Capstone in B.Com Entrepreneurship?",
           "options": [
-            "The synthesis of institutional due diligence, multi-tranche syndication, balanced corporate governance, and stress-tested capital allocation into an investable scale-up enterprise.",
-            "The automated filing of a provisional patent application with no financial documentation.",
             "The replacement of all human executives with open-source software scripts.",
-            "The immediate distribution of all investment proceeds as cash dividends to common founders."
+            "The immediate distribution of all investment proceeds as cash dividends to common founders.",
+            "The automated filing of a provisional patent application with no financial documentation.",
+            "The synthesis of institutional due diligence, multi-tranche syndication, balanced corporate governance, and stress-tested capital allocation into an investable scale-up enterprise."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The capstone validates full mastery over venture capital mechanics, institutional due diligence, boardroom governance, and capital allocation required to scale a growth-stage company.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The capstone validates full mastery over venture capital mechanics, institutional due diligence, boardroom governance, and capital allocation required to scale a growth-stage company."
         }
       }
@@ -1048,15 +1028,15 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "note": "Defines CustomerJob encapsulation tracking name, category (Functional/Social/Emotional), importance (1-5), and context."
           },
           {
-            "line": 2,
+            "line": 11,
             "note": "Implements evaluate_customer_jobs_profile auditing dimensional diversity and weighted job urgency."
           },
           {
-            "line": 3,
+            "line": 27,
             "note": "Enforces 3D coverage invariant: robust enterprise value propositions must satisfy functional, social, and emotional criteria simultaneously."
           },
           {
-            "line": 4,
+            "line": 54,
             "note": "Validates enterprise CFO profile, confirming JTBD_PROFILE_CERTIFIED_ROBUST with 4.38/5.0 composite importance."
           }
         ],
@@ -1064,14 +1044,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Clayton Christensen's Jobs-to-be-Done framework, which three core job dimensions must an enterprise value proposition address to achieve durable customer resonance?",
           "options": [
-            "Functional jobs, Social jobs, and Emotional jobs",
             "Marketing jobs, Sales jobs, and Accounting jobs",
             "Hardware jobs, Software jobs, and Network jobs",
+            "Functional jobs, Social jobs, and Emotional jobs",
             "Patent jobs, Legal jobs, and Tax jobs"
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "A robust value proposition satisfies the customer's functional execution, social perception among peers/executives, and emotional state of security.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "A robust value proposition satisfies the customer's functional execution, social perception among peers/executives, and emotional state of security."
         }
       },
@@ -1088,37 +1068,37 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         ],
         "example": "In 2012, Stripe identified an acute shark-bite pain among web developers: setting up an online merchant account and accepting credit card payments required signing 40-page paper contracts with traditional banks, waiting 6 weeks for underwriting approval, and paying thousands in setup fees. Developers were hacking together clunky PayPal redirects that destroyed checkout conversion. Stripe replaced this catastrophic 6-week paper pain with 7 lines of code and instant API key provisioning, unlocking a $95B global payments infrastructure.",
         "code": "# Customer Pain Profiler & Workaround Cost Quantification Engine\nfrom typing import Dict, Any, List\n\nclass CustomerPain:\n    def __init__(self, description: str, severity: int, frequency_per_month: int, workaround_cost_annual: float):\n        self.description = description\n        self.severity = severity  # 1 (Trivial) to 5 (Existential/Catastrophic)\n        self.frequency = frequency_per_month  # Times pain occurs per month\n        self.workaround_cost = workaround_cost_annual  # Real annual spend mitigating pain\n\ndef audit_customer_pain_profile(pains: List[CustomerPain]) -> Dict[str, Any]:\n    \"\"\"\n    Quantifies customer pain intensity and financial workaround footprint:\n    - Calculates Pain Severity Index (PSI)\n    - Aggregates total annual financial spend on manual workarounds\n    - Flags shark-bite pains (severity >= 4, frequency >= 10, workaround spend > $25k)\n    \"\"\"\n    if not pains:\n        return {\"status\": \"NO_PAINS_RECORDED\"}\n        \n    total_spend = sum(p.workaround_cost for p in pains)\n    shark_bite_pains = [\n        p for p in pains\n        if p.severity >= 4 and p.frequency >= 10 and p.workaround_cost >= 25000.0\n    ]\n    \n    # Calculate weighted pain intensity score (scale of 0 to 100)\n    avg_severity = sum(p.severity for p in pains) / len(pains)\n    avg_frequency = sum(min(p.frequency, 30) for p in pains) / len(pains)\n    pain_intensity_score = round((avg_severity / 5.0) * 0.6 * 100 + (avg_frequency / 30.0) * 0.4 * 100, 1)\n    \n    # Classification: Painkiller vs Vitamin\n    is_painkiller = len(shark_bite_pains) >= 1 and total_spend >= 50000.0\n    status = \"COMMERCIAL_PAINKILLER_VERIFIED\" if is_painkiller else \"VITAMIN_DISCRETIONARY_RISK\"\n    \n    return {\n        \"pain_count\": len(pains),\n        \"total_annual_workaround_spend\": total_spend,\n        \"shark_bite_pain_count\": len(shark_bite_pains),\n        \"pain_intensity_score\": pain_intensity_score,\n        \"is_painkiller\": is_painkiller,\n        \"status\": status\n    }\n\n# Benchmark Simulation: Enterprise Logistics Pain Audit\nlogistics_pains = [\n    CustomerPain(\"Customs Clearance Document Discrepancies\", 5, 22, 65000.0),\n    CustomerPain(\"Manual Freight Invoice Reconciliation\", 4, 18, 42000.0),\n    CustomerPain(\"Unnotified Port Demurrage Penalties\", 4, 12, 38000.0),\n    CustomerPain(\"Inconsistent Cargo Tracking Portal Formats\", 2, 5, 4000.0)\n]\n\npain_audit = audit_customer_pain_profile(logistics_pains)\nprint(f\"Pain Profile Status: {pain_audit['status']}\")\nprint(f\"Total Workaround Spend: ${pain_audit['total_annual_workaround_spend']:,.2f}\")\nprint(f\"Shark-Bite Pains Identified: {pain_audit['shark_bite_pain_count']} | Intensity: {pain_audit['pain_intensity_score']}/100\")\n",
-        "output": "Pain Profile Status: COMMERCIAL_PAINKILLER_VERIFIED\nTotal Workaround Spend: $149,000.00\nShark-Bite Pains Identified: 3 | Intensity: 76.9/100",
+        "output": "Pain Profile Status: COMMERCIAL_PAINKILLER_VERIFIED\nTotal Workaround Spend: $149,000.00\nShark-Bite Pains Identified: 3 | Intensity: 64.0/100",
         "codeNotes": [
           {
             "line": 4,
             "note": "Defines CustomerPain modeling description, severity (1-5), monthly frequency, and annual workaround financial cost."
           },
           {
-            "line": 2,
+            "line": 22,
             "note": "Implements audit_customer_pain_profile filtering for high-conviction shark-bite pains (severity >= 4, freq >= 10, spend >= $25k)."
           },
           {
-            "line": 3,
+            "line": 33,
             "note": "Calculates composite pain intensity score and certifies COMMERCIAL_PAINKILLER_VERIFIED if spend >= $50k."
           },
           {
-            "line": 4,
+            "line": 53,
             "note": "Validates enterprise logistics dataset, confirming $149,000 in existing workaround spend and 3 distinct shark-bite pain points."
           }
         ],
-        "tryIt": "Reduce the workaround_cost of Customs Clearance to $2,000. Re-run to observe how total workaround spend drops, changing the venture classification to VITAMIN_DISCRETIONARY_RISK.",
+        "tryIt": "Lower the workaround_cost of the first three pains (lines 47-49) to 10000.0 each: total spend drops to 34,000, no pain qualifies as shark-bite, and the status flips to VITAMIN DISCRETIONARY RISK. (Lowering only Customs Clearance to2,000 leaves $86,000 total and 2 shark-bite pains, so the status stays COMMERCIAL_PAINKILLER_VERIFIED.)",
         "check": {
           "question": "What is the single most definitive empirical indicator that an enterprise customer pain is authentic rather than a polite false positive?",
           "options": [
-            "The customer is already spending substantial financial budget or human labor on makeshift workarounds",
-            "The customer signs an online petition asking for a new software tool",
             "The customer compliments the founder's pitch deck typography",
-            "The customer agrees that the problem is theoretically interesting"
+            "The customer is already spending substantial financial budget or human labor on makeshift workarounds",
+            "The customer agrees that the problem is theoretically interesting",
+            "The customer signs an online petition asking for a new software tool"
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Existing financial spend and labor allocated to manual workarounds proves acute willingness to pay and active budget availability.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Existing financial spend and labor allocated to manual workarounds proves acute willingness to pay and active budget availability."
         }
       },
@@ -1142,15 +1122,15 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "note": "Defines CustomerGain capturing description, tier (Required/Expected/Desired/Unexpected), and impact score."
           },
           {
-            "line": 2,
+            "line": 10,
             "note": "Implements audit_customer_gain_portfolio tracking 4-tier distribution and calculating weighted leverage score."
           },
           {
-            "line": 3,
+            "line": 39,
             "note": "Enforces differentiation invariant: ventures must deliver at least 1 Desired and 1 Unexpected gain to escape commoditization."
           },
           {
-            "line": 4,
+            "line": 64,
             "note": "Tests enterprise AI platform gain portfolio, confirming 49.9 strategic leverage points and nominal differentiation."
           }
         ],
@@ -1189,15 +1169,15 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "note": "Defines ValuePropositionFitEngine taking lists of pains, gains, pain relievers, and gain creators."
           },
           {
-            "line": 2,
+            "line": 30,
             "note": "Calculates pain relief coverage (55% weight) and gain creation coverage (45% weight) to derive Composite Fit Score."
           },
           {
-            "line": 3,
+            "line": 33,
             "note": "Certifies PROBLEM_SOLUTION_FIT_NOMINAL when composite score reaches or exceeds 75.0%."
           },
           {
-            "line": 4,
+            "line": 77,
             "note": "Executes fit calculation across enterprise RevOps SaaS specification, proving 100% coverage and nominal certification."
           }
         ],
@@ -1205,14 +1185,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the recommended design strategy when mapping Pain Relievers and Gain Creators to a customer profile?",
           "options": [
-            "Focus obsessively on relieving 2-3 acute shark-bite pains and delivering 2 high-impact gains rather than trying to solve everything",
-            "Attempt to build a generic feature for every single minor complaint listed on the customer profile",
             "Ignore customer pains entirely and build only what the engineering team finds interesting",
-            "Copy the exact feature list of legacy competitors without conducting customer discovery"
+            "Copy the exact feature list of legacy competitors without conducting customer discovery",
+            "Attempt to build a generic feature for every single minor complaint listed on the customer profile",
+            "Focus obsessively on relieving 2-3 acute shark-bite pains and delivering 2 high-impact gains rather than trying to solve everything"
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Elite value propositions maintain extreme focus, resolving acute high-severity pains with relentless precision rather than diluting resources across minor issues.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Elite value propositions maintain extreme focus, resolving acute high-severity pains with relentless precision rather than diluting resources across minor issues."
         }
       },
@@ -1236,15 +1216,15 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "note": "Defines MasterValuePropositionControlTower synthesizing all four foundational value design gates."
           },
           {
-            "line": 2,
+            "line": 19,
             "note": "Evaluates Gate 1 (3D JTBD), Gate 2 (Shark-Bite Pains), Gate 3 (Gain Differentiation), and Gate 4 (Problem-Solution Fit)."
           },
           {
-            "line": 3,
+            "line": 25,
             "note": "Confers VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL when all four validation gates pass green simultaneously."
           },
           {
-            "line": 4,
+            "line": 52,
             "note": "Executes integrated control tower verification against enterprise benchmarks, confirming 100% clearance."
           }
         ],
@@ -1252,14 +1232,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What credential status is conferred when an entrepreneurial venture clears all four validation gates in the Master Value Proposition Control Tower?",
           "options": [
-            "VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL",
+            "BUSINESS_MODEL_UNAUDITED",
             "VALUE_PROP_GOVERNANCE_DEFICIT",
-            "PRODUCT_MARKET_FIT_PENDING",
-            "BUSINESS_MODEL_UNAUDITED"
+            "VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL",
+            "PRODUCT_MARKET_FIT_PENDING"
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL confirms that the venture has rigorously proven 3D jobs coverage, shark-bite pain relief, gain differentiation, and fit alignment.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "VALUE_PROPOSITION_DESIGN_CERTIFIED_NOMINAL confirms that the venture has rigorously proven 3D jobs coverage, shark-bite pain relief, gain differentiation, and fit alignment."
         }
       }
@@ -1306,34 +1286,34 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Platform: UrbanRide Mobility | Status: MULTI_SIDED_PLATFORM_SOVEREIGN_LIQUIDITY\nLiquidity: Drivers=True | Riders=True | Both=True\nSynergy Score: 175.0 | Net Margin: $750,000.00 (44.4%)",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 5,
             "note": "Defines MarketSegment dataclass modeling segment role (Subsidized vs Moneymaking), active user volumes, and network multipliers."
           },
           {
-            "line": 2,
+            "line": 22,
             "note": "Implements evaluate_platform_liquidity verifying dual-sided liquidity thresholds, cross-side synergy, and monetization margin."
           },
           {
-            "line": 3,
+            "line": 53,
             "note": "Establishes certification invariant: MULTI_SIDED_PLATFORM_SOVEREIGN_LIQUIDITY requires both sides liquid, margin >= 40%, and synergy >= 50.0."
           },
           {
-            "line": 4,
+            "line": 93,
             "note": "Executes benchmark test for UrbanRide Mobility, proving $750k net platform margin (44.4%) and 175.0 cross-side synergy."
           }
         ],
         "tryIt": "Reduce drivers.active_users to 8000 (below the 10000 threshold). Observe how side_a_liquid flips to False, triggering PLATFORM_LIQUIDITY_DEFICIT.",
         "check": {
-          "question": "In Clayton Christensen and Alexander Osterwalder's multi-sided platform architecture, how is the 'chicken-and-egg' liquidity problem resolved?",
+          "question": "In a multi-sided platform business model, how is the 'chicken-and-egg' liquidity problem resolved?",
           "options": [
-            "By deploying asymmetric monetization: subsidizing one side to build network liquidity while monetizing the complementary side that values that liquidity.",
-            "By charging identical high upfront membership fees to both sides simultaneously to maximize early gross revenue.",
             "By eliminating all digital interfaces and replacing the platform with an offline paper directory.",
-            "By legally prohibiting users on one side from communicating with users on the opposing side."
+            "By deploying asymmetric monetization: subsidizing one side to build network liquidity while monetizing the complementary side that values that liquidity.",
+            "By legally prohibiting users on one side from communicating with users on the opposing side.",
+            "By charging identical high upfront membership fees to both sides simultaneously to maximize early gross revenue."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Asymmetric monetization subsidizes the more price-sensitive or bottleneck side to generate network density, enabling profitable monetization of the complementary side.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Asymmetric monetization subsidizes the more price-sensitive or bottleneck side to generate network density, enabling profitable monetization of the complementary side."
         }
       },
@@ -1354,19 +1334,19 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Channel: Enterprise Inside Sales & Field Executive Route | Status: CHANNEL_ARCHITECTURE_CERTIFIED_NOMINAL\nYield: 1530 customers (3.06%) from 50000 reach\nEconomics: Price=$1200.0 | Cost/Unit=$94.77 | Net Margin=$1105.23 (92.1%)",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines ChannelStage encapsulating the 5 Osterwalder phases (Awareness, Evaluation, Purchase, Delivery, After-Sales) with step costs."
           },
           {
-            "line": 2,
+            "line": 13,
             "note": "Defines ChannelRoute tracking channel ownership (Direct Owned vs Indirect Partner) and partner margin take-rates."
           },
           {
-            "line": 3,
+            "line": 24,
             "note": "Implements audit_channel_pipeline calculating multi-phase funnel yield, channel cost per unit, and net operating margin."
           },
           {
-            "line": 4,
+            "line": 96,
             "note": "Validates Enterprise B2B Direct Sales benchmark: yields 1,530 customers (3.06%), $94.77 cost/unit, and 92.1% net margin."
           }
         ],
@@ -1374,14 +1354,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the five canonical channel phases defined by Alexander Osterwalder in the Business Model Canvas?",
           "options": [
-            "Awareness, Evaluation, Purchase, Delivery, and After-Sales.",
-            "Prospecting, Cold Calling, Invoicing, Shipping, and Collections.",
             "Impressions, Clicks, Add-to-Cart, Checkout, and Returns.",
-            "Brainstorming, Prototyping, Manufacturing, Warehousing, and Retail."
+            "Brainstorming, Prototyping, Manufacturing, Warehousing, and Retail.",
+            "Awareness, Evaluation, Purchase, Delivery, and After-Sales.",
+            "Prospecting, Cold Calling, Invoicing, Shipping, and Collections."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Alexander Osterwalder explicitly defines the five channel phases as Awareness, Evaluation, Purchase, Delivery, and After-Sales.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Alexander Osterwalder explicitly defines the five channel phases as Awareness, Evaluation, Purchase, Delivery, and After-Sales."
         }
       },
@@ -1399,37 +1379,37 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         ],
         "example": "Salesforce utilizes a segmented relationship architecture: enterprise clients paying over $250,000 annually receive Dedicated Personal Assistance via assigned Strategic Customer Success Managers and Solutions Architects, whereas small businesses paying $25 per user per month are routed to Automated Services, Self-Service Trailhead documentation, and the peer-to-peer Salesforce Trailblazer Community. This preserves unit economics across vastly different customer tiers.",
         "code": "# Customer Relationship Archetype & Cost-to-Serve (CTS) Evaluator\nfrom dataclasses import dataclass\nfrom typing import Dict, Any, List\n\n@dataclass\nclass CustomerAccount:\n    account_id: str\n    tier: str                      # 'ENTERPRISE', 'MID_MARKET', 'SMB'\n    acv: float                     # Annual Contract Value ($)\n    relationship_archetype: str    # 'DEDICATED_PERSONAL', 'PERSONAL_HYBRID', 'AUTOMATED_SELF_SERVICE'\n    annual_support_hours: float\n    hourly_personnel_cost: float   # Loaded hourly cost of CSM / support engineer ($)\n    automated_infra_cost: float    # Cost of self-service software & tooling ($)\n    nps_score: int                 # Net Promoter Score (-100 to +100)\n    monthly_active_usage_pct: float # Product telemetry adoption rate (0-100%)\n\nclass CustomerRelationshipEngine:\n    def __init__(self, accounts: List[CustomerAccount]):\n        self.accounts = accounts\n\n    def audit_relationship_health_and_cost(self) -> Dict[str, Any]:\n        \"\"\"\n        Audits relationship efficiency across customer accounts:\n        - Calculates loaded Cost-to-Serve (CTS) per account\n        - Measures CTS as a percentage of Annual Contract Value (ACV)\n        - Computes composite customer health score from usage telemetry and NPS\n        \"\"\"\n        total_acv = sum(a.acv for a in self.accounts)\n        total_cts = 0.0\n        health_scores = []\n        cts_ratios = []\n\n        for a in self.accounts:\n            labor_cost = a.annual_support_hours * a.hourly_personnel_cost\n            account_cts = labor_cost + a.automated_infra_cost\n            total_cts += account_cts\n            \n            cts_pct = (account_cts / a.acv * 100.0) if a.acv > 0 else 100.0\n            cts_ratios.append(cts_pct)\n\n            # Health calculation: 60% usage adoption + 40% normalized NPS\n            norm_nps = (a.nps_score + 100) / 2.0  # Scale -100..+100 to 0..100\n            composite_health = (0.60 * a.monthly_active_usage_pct) + (0.40 * norm_nps)\n            health_scores.append(composite_health)\n\n        avg_cts_ratio = sum(cts_ratios) / len(cts_ratios) if cts_ratios else 0.0\n        avg_health = sum(health_scores) / len(health_scores) if health_scores else 0.0\n        blended_cts_pct = (total_cts / total_acv * 100.0) if total_acv > 0 else 0.0\n\n        # Accreditation Gating: Blended CTS <= 20.0% of ACV and Average Health >= 70.0\n        is_healthy = blended_cts_pct <= 20.0 and avg_health >= 70.0\n        status = (\n            \"RELATIONSHIP_ARCHITECTURE_CERTIFIED_OPTIMAL\"\n            if is_healthy\n            else \"HIGH_COST_TO_SERVE_RETENTION_RISK\"\n        )\n\n        return {\n            \"account_count\": len(self.accounts),\n            \"total_portfolio_acv\": round(total_acv, 2),\n            \"total_portfolio_cts\": round(total_cts, 2),\n            \"blended_cts_percentage\": round(blended_cts_pct, 1),\n            \"average_account_health_score\": round(avg_health, 1),\n            \"status\": status\n        }\n\n# Enterprise Benchmark Portfolio\nportfolio = [\n    CustomerAccount(\"ACC-01\", \"ENTERPRISE\", 150000.0, \"DEDICATED_PERSONAL\", 120.0, 85.0, 1500.0, 75, 92.0),\n    CustomerAccount(\"ACC-02\", \"ENTERPRISE\", 220000.0, \"DEDICATED_PERSONAL\", 160.0, 85.0, 2000.0, 80, 95.0),\n    CustomerAccount(\"ACC-03\", \"MID_MARKET\", 45000.0, \"PERSONAL_HYBRID\", 40.0, 65.0, 800.0, 60, 84.0),\n    CustomerAccount(\"ACC-04\", \"SMB\", 12000.0, \"AUTOMATED_SELF_SERVICE\", 4.0, 50.0, 250.0, 65, 88.0)\n]\n\nengine = CustomerRelationshipEngine(portfolio)\nres = engine.audit_relationship_health_and_cost()\n\nprint(f\"Relationship Audit Status: {res['status']}\")\nprint(f\"Portfolio ACV: ${res['total_portfolio_acv']:,.2f} | Total CTS: ${res['total_portfolio_cts']:,.2f}\")\nprint(f\"Blended CTS: {res['blended_cts_percentage']}% of ACV | Avg Health: {res['average_account_health_score']}/100.0\")\n",
-        "output": "Relationship Audit Status: RELATIONSHIP_ARCHITECTURE_CERTIFIED_OPTIMAL\nPortfolio ACV: $427,000.00 | Total CTS: $33,650.00\nBlended CTS: 7.9% of ACV | Avg Health: 89.9/100.0",
+        "output": "Relationship Audit Status: RELATIONSHIP_ARCHITECTURE_CERTIFIED_OPTIMAL\nPortfolio ACV: $427,000.00 | Total CTS: $31,150.00\nBlended CTS: 7.3% of ACV | Avg Health: 87.8/100.0",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines CustomerAccount dataclass tracking ACV, archetype (Dedicated Personal, Hybrid, Automated), support hours, and telemetry."
           },
           {
-            "line": 2,
+            "line": 21,
             "note": "Implements audit_relationship_health_and_cost calculating loaded Cost-to-Serve and multi-factor customer health."
           },
           {
-            "line": 3,
+            "line": 51,
             "note": "Enforces strict efficiency invariant: blended Cost-to-Serve must not exceed 20.0% of ACV, and health must average >= 70.0."
           },
           {
-            "line": 4,
-            "note": "Validates enterprise portfolio benchmark, proving a lean 7.9% CTS ratio and 89.9/100 composite customer health score."
+            "line": 75,
+            "note": "Validates enterprise portfolio benchmark, proving a lean 7.3% blended CTS ratio and 87.8/100 composite customer health score."
           }
         ],
         "tryIt": "Increase ACC-01 annual_support_hours to 1200.0. Observe how labor costs explode, pushing blended CTS above 20% and failing certification.",
         "check": {
           "question": "Which customer relationship archetype involves assigning a designated, individual relationship manager to high-value enterprise accounts?",
           "options": [
-            "Dedicated Personal Assistance.",
-            "Automated Services.",
             "Self-Service Portals.",
-            "Open Co-Creation Forums."
+            "Open Co-Creation Forums.",
+            "Automated Services.",
+            "Dedicated Personal Assistance."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Dedicated Personal Assistance assigns an individual customer account manager or relationship director to handle the specific needs of a high-value client.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Dedicated Personal Assistance assigns an individual customer account manager or relationship director to handle the specific needs of a high-value client."
         }
       },
@@ -1445,28 +1425,28 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "The strategic danger of relying purely on blended CAC lies in the false sense of security it provides to executive leadership and board directors. In high-growth venture-backed companies, marketing teams are often incentivized to hit gross user acquisition targets. When high-efficiency organic channels deliver a steady stream of low-cost signups, an undisciplined marketing team can mask millions of dollars in wasted ad spend across saturated programmatic campaigns because the overall blended metric appears acceptable. Only by enforcing strict unit-level reporting—auditing Channel-Specific CAC, Channel Marginal CAC, and Channel-Specific Cohort Churn—can leadership identify which acquisition engines are truly accretive to enterprise value.",
           "Additionally, payback period dynamics dictate the venture vulnerability to macro capital market freezes. When venture capital is abundant and interest rates are near zero, companies can tolerate CAC payback periods of 18 to 24 months, financing customer acquisition through equity rounds. However, during economic downturns and liquidity contractions, outside equity dries up, and companies with 24-month payback periods enter acute cash crises because their cash outlays for customer acquisition take two full years to return to corporate bank accounts. In contrast, ventures engineered around rapid 6-to-12-month CAC payback cycles recycle working capital multiple times within a single fiscal year, achieving self-sustaining capital independence."
         ],
-        "example": "In 2019, direct-to-consumer mattress company Casper went public revealing a severely distorted omnichannel model: its Blended CAC had surged as digital ad platforms became saturated, while customer repeat purchase frequency for mattresses remained near zero. Because Casper spent over $300 to acquire a customer on a one-time purchase with thin gross margins, its LTV/CAC remained below 1.5x and the business generated catastrophic net operating losses despite achieving $400M+ in top-line revenue.",
+        "example": "In early 2020, direct-to-consumer mattress company Casper went public revealing a severely distorted omnichannel model: its Blended CAC had surged as digital ad platforms became saturated, while customer repeat purchase frequency for mattresses remained near zero. Because Casper spent over $300 to acquire a customer on a one-time purchase with thin gross margins, its LTV/CAC remained below 1.5x and the business generated catastrophic net operating losses despite achieving $400M+ in top-line revenue.",
         "code": "# Omnichannel Acquisition Economics & Marginal CAC Optimizer\nfrom dataclasses import dataclass\nfrom typing import Dict, Any, List\n\n@dataclass\nclass AcquisitionChannel:\n    name: str\n    monthly_spend: float       # Channel advertising & marketing spend ($)\n    customers_acquired: int    # Customers attributed to this channel\n    marginal_spend_boost: float # Hypothetical incremental test budget ($)\n    incremental_customers: int  # Expected additional customers from boost\n\nclass OmnichannelEconomicsEngine:\n    def __init__(\n        self,\n        channels: List[AcquisitionChannel],\n        average_revenue_per_user_annual: float,\n        gross_margin_pct: float,\n        annual_churn_rate_pct: float\n    ):\n        self.channels = channels\n        self.arpu = average_revenue_per_user_annual\n        self.gross_margin_pct = gross_margin_pct\n        self.annual_churn_rate = annual_churn_rate_pct\n\n    def compute_customer_ltv(self) -> float:\n        \"\"\"Calculates Customer Lifetime Value (LTV) = (ARPU * Gross Margin %) / Churn Rate\"\"\"\n        annual_gross_profit = self.arpu * (self.gross_margin_pct / 100.0)\n        churn_decimal = self.annual_churn_rate / 100.0\n        return annual_gross_profit / churn_decimal if churn_decimal > 0 else 0.0\n\n    def evaluate_omnichannel_performance(self) -> Dict[str, Any]:\n        ltv = self.compute_customer_ltv()\n        total_spend = sum(c.monthly_spend for c in self.channels)\n        total_customers = sum(c.customers_acquired for c in self.channels)\n\n        blended_cac = total_spend / total_customers if total_customers > 0 else 999999.0\n        ltv_to_blended_cac = ltv / blended_cac if blended_cac > 0 else 0.0\n\n        # CAC Payback in Months = (CAC / (Annual Gross Profit / 12))\n        monthly_gross_profit = (self.arpu * (self.gross_margin_pct / 100.0)) / 12.0\n        blended_payback_months = blended_cac / monthly_gross_profit if monthly_gross_profit > 0 else 999.0\n\n        channel_breakdown = []\n        for c in self.channels:\n            channel_cac = c.monthly_spend / c.customers_acquired if c.customers_acquired > 0 else 999999.0\n            marginal_cac = (\n                c.marginal_spend_boost / c.incremental_customers\n                if c.incremental_customers > 0 else 999999.0\n            )\n            channel_breakdown.append({\n                \"name\": c.name,\n                \"spend\": c.monthly_spend,\n                \"customers\": c.customers_acquired,\n                \"average_cac\": round(channel_cac, 2),\n                \"marginal_cac\": round(marginal_cac, 2),\n                \"ltv_to_cac\": round(ltv / channel_cac, 2) if channel_cac > 0 else 0.0\n            })\n\n        # Venture Rules: LTV/CAC >= 3.0x and CAC Payback <= 12.0 months\n        is_viable = ltv_to_blended_cac >= 3.0 and blended_payback_months <= 12.0\n        status = (\n            \"OMNICHANNEL_ECONOMICS_CERTIFIED_SCALEABLE\"\n            if is_viable\n            else \"UNIT_ECONOMICS_CAC_DEFICIT\"\n        )\n\n        return {\n            \"total_monthly_spend\": round(total_spend, 2),\n            \"total_customers_acquired\": total_customers,\n            \"blended_cac\": round(blended_cac, 2),\n            \"customer_ltv\": round(ltv, 2),\n            \"ltv_to_blended_cac_ratio\": round(ltv_to_blended_cac, 2),\n            \"cac_payback_period_months\": round(blended_payback_months, 1),\n            \"status\": status,\n            \"channel_breakdown\": channel_breakdown\n        }\n\n# Enterprise Benchmark Omnichannel Setup\nchannels = [\n    AcquisitionChannel(\"Organic Inbound & Technical SEO\", 15000.0, 300, 5000.0, 80),\n    AcquisitionChannel(\"Paid Search & Programmatic Display\", 45000.0, 180, 15000.0, 40),\n    AcquisitionChannel(\"Outbound SDR Sales Prospecting\", 30000.0, 120, 10000.0, 30),\n    AcquisitionChannel(\"Partner & Ecosystem Referrals\", 10000.0, 100, 5000.0, 45)\n]\n\n# ARPU = $2,400/yr, Gross Margin = 80%, Annual Churn = 15%\nengine = OmnichannelEconomicsEngine(\n    channels=channels,\n    average_revenue_per_user_annual=2400.0,\n    gross_margin_pct=80.0,\n    annual_churn_rate_pct=15.0\n)\n\naudit = engine.evaluate_omnichannel_performance()\n\nprint(f\"Omnichannel Audit Status: {audit['status']}\")\nprint(f\"Blended CAC: ${audit['blended_cac']} | Customer LTV: ${audit['customer_ltv']:,.2f}\")\nprint(f\"LTV/CAC Ratio: {audit['ltv_to_blended_cac_ratio']}x (Target >= 3.0x) | Payback: {audit['cac_payback_period_months']} mo (Target <= 12 mo)\")\nfor ch in audit['channel_breakdown']:\n    print(f\"  > {ch['name']}: Avg CAC=${ch['average_cac']} | Marginal CAC=${ch['marginal_cac']} | LTV/CAC={ch['ltv_to_cac']}x\")\n",
         "output": "Omnichannel Audit Status: OMNICHANNEL_ECONOMICS_CERTIFIED_SCALEABLE\nBlended CAC: $142.86 | Customer LTV: $12,800.00\nLTV/CAC Ratio: 89.6x (Target >= 3.0x) | Payback: 0.9 mo (Target <= 12 mo)\n  > Organic Inbound & Technical SEO: Avg CAC=$50.0 | Marginal CAC=$62.5 | LTV/CAC=256.0x\n  > Paid Search & Programmatic Display: Avg CAC=$250.0 | Marginal CAC=$375.0 | LTV/CAC=51.2x\n  > Outbound SDR Sales Prospecting: Avg CAC=$250.0 | Marginal CAC=$333.33 | LTV/CAC=51.2x\n  > Partner & Ecosystem Referrals: Avg CAC=$100.0 | Marginal CAC=$111.11 | LTV/CAC=128.0x",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines AcquisitionChannel dataclass tracking monthly budgets, volume, and marginal test expansion metrics."
           },
           {
-            "line": 2,
+            "line": 13,
             "note": "Implements OmnichannelEconomicsEngine calculating actuarial Customer Lifetime Value (LTV) from ARPU, Margin, and Churn."
           },
           {
-            "line": 3,
+            "line": 45,
             "note": "Evaluates channel-by-channel Average CAC vs Marginal CAC, alongside portfolio Blended Payback Period in months."
           },
           {
-            "line": 4,
+            "line": 95,
             "note": "Validates enterprise benchmark, confirming OMNICHANNEL_ECONOMICS_CERTIFIED_SCALEABLE with 89.6x LTV/CAC and 0.9-month payback."
           }
         ],
-        "tryIt": "Increase Paid Search spend to $250,000 with only 100 acquired customers. Notice how Blended CAC skyrockets and Payback exceeds 12 months.",
+        "tryIt": "Change the Paid Search channel to monthly_spend 1_500_000.0 with 100 customers (line 82): Blended CAC jumps to $2,508.06, LTV/CAC falls to 5.1x (still above 3.0x) but payback stretches to 15.7 months, past the 12-month limit, so the status becomes UNIT_ECONOMICS_CAC_DEFICIT.",
         "check": {
           "question": "What are the two mandatory venture capital unit economics benchmarks for sustainable customer acquisition?",
           "options": [
@@ -1495,7 +1475,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "As we finalize Day 7 of Milestone 2, the entrepreneurial venture has established rigorous quantitative control over its customer-facing architecture. By validating multi-sided market liquidity, proving channel phase unit margins, maintaining disciplined cost-to-serve thresholds, and optimizing acquisition economics, the venture secures institutional certification. This outward-facing foundation prepares us for Day 8, where we will architect the internal operational power plant of the enterprise: Key Resources, Core Activities, and Strategic Ecosystem Partnerships."
         ],
         "example": "When Zoom Video Communications filed its S-1 IPO prospectus, its front-stage delivery architecture demonstrated world-class mastery: a viral freemium customer segment model (Gate 1), a frictionless product-led web self-service purchase and instant cloud delivery channel (Gate 2), automated customer support communities maintaining a 72 Net Promoter Score with low cost-to-serve (Gate 3), and an extraordinary LTV/CAC ratio exceeding 8.0x with a 9-month payback period (Gate 4). This enabled Zoom to become one of the most profitable SaaS IPOs in tech history.",
-        "code": "# Master Customer Delivery Control Tower & GTM Certification Engine\nfrom typing import Dict, Any, List\n\nclass MasterCustomerDeliveryControlTower:\n    \"\"\"\n    Synthesizes the four foundational Front Stage gates of the Business Model Canvas:\n    - Gate 1: Customer Segment Liquidity & Asymmetric Monetization Margin (>= 40%)\n    - Gate 2: Channel Phase Funnel Yield (>= 1.0%) & Net Realized Margin (>= 35%)\n    - Gate 3: Customer Relationship Cost-to-Serve (CTS <= 20% ACV) & Health (>= 70.0)\n    - Gate 4: Unit Economics (LTV/CAC >= 3.0x & CAC Payback <= 12.0 Months)\n    \"\"\"\n    @staticmethod\n    def run_customer_delivery_control_tower(\n        segment_audit: Dict[str, Any],\n        channel_audit: Dict[str, Any],\n        relationship_audit: Dict[str, Any],\n        economics_audit: Dict[str, Any]\n    ) -> Dict[str, Any]:\n        gate1_passed = (\n            segment_audit.get(\"both_sides_liquid\", False) and\n            segment_audit.get(\"margin_percentage\", 0.0) >= 40.0\n        )\n        gate2_passed = (\n            channel_audit.get(\"funnel_yield_percentage\", 0.0) >= 1.0 and\n            channel_audit.get(\"net_margin_percentage\", 0.0) >= 35.0\n        )\n        gate3_passed = (\n            relationship_audit.get(\"blended_cts_percentage\", 100.0) <= 20.0 and\n            relationship_audit.get(\"average_account_health_score\", 0.0) >= 70.0\n        )\n        gate4_passed = (\n            economics_audit.get(\"ltv_to_blended_cac_ratio\", 0.0) >= 3.0 and\n            economics_audit.get(\"cac_payback_period_months\", 999.0) <= 12.0\n        )\n\n        all_gates_cleared = gate1_passed and gate2_passed and gate3_passed and gate4_passed\n        status = (\n            \"CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL\"\n            if all_gates_cleared\n            else \"GTM_DELIVERY_GOVERNANCE_DEFICIT\"\n        )\n\n        return {\n            \"gate1_segment_liquidity\": gate1_passed,\n            \"gate2_channel_viability\": gate2_passed,\n            \"gate3_relationship_efficiency\": gate3_passed,\n            \"gate4_unit_economics_viability\": gate4_passed,\n            \"all_gates_cleared\": all_gates_cleared,\n            \"status\": status,\n            \"gtm_readiness_statement\": (\n                \"Certified sovereign customer delivery architecture: Validated multi-sided liquidity, \"\n                \"frictionless channel phase execution, lean cost-to-serve, and institutional LTV/CAC payback.\"\n                if all_gates_cleared\n                else \"Uncertified: GTM front stage requires structural channel or relationship re-engineering.\"\n            )\n        }\n\n# Integrated Verification Execution\nseg_res = {\"both_sides_liquid\": True, \"margin_percentage\": 44.4}\nchan_res = {\"funnel_yield_percentage\": 3.06, \"net_margin_percentage\": 92.1}\nrel_res = {\"blended_cts_percentage\": 7.9, \"average_account_health_score\": 89.9}\necon_res = {\"ltv_to_blended_cac_ratio\": 89.6, \"cac_payback_period_months\": 0.9}\n\ncontrol_tower = MasterCustomerDeliveryControlTower.run_customer_delivery_control_tower(\n    seg_res, chan_res, rel_res, econ_res\n)\n\nprint(f\"Control Tower Status: {control_tower['status']}\")\nprint(f\"All Gates Cleared: {control_tower['all_gates_cleared']}\")\nprint(f\"Gates: G1(Segments)={control_tower['gate1_segment_liquidity']} | G2(Channels)={control_tower['gate2_channel_viability']} | G3(Relationships)={control_tower['gate3_relationship_efficiency']} | G4(Economics)={control_tower['gate4_unit_economics_viability']}\")\nprint(f\"GTM Statement: {control_tower['gtm_readiness_statement']}\")\n",
+        "code": "# Master Customer Delivery Control Tower & GTM Certification Engine\nfrom typing import Dict, Any, List\n\nclass MasterCustomerDeliveryControlTower:\n    \"\"\"\n    Synthesizes the four foundational Front Stage gates of the Business Model Canvas:\n    - Gate 1: Customer Segment Liquidity & Asymmetric Monetization Margin (>= 40%)\n    - Gate 2: Channel Phase Funnel Yield (>= 1.0%) & Net Realized Margin (>= 35%)\n    - Gate 3: Customer Relationship Cost-to-Serve (CTS <= 20% ACV) & Health (>= 70.0)\n    - Gate 4: Unit Economics (LTV/CAC >= 3.0x & CAC Payback <= 12.0 Months)\n    \"\"\"\n    @staticmethod\n    def run_customer_delivery_control_tower(\n        segment_audit: Dict[str, Any],\n        channel_audit: Dict[str, Any],\n        relationship_audit: Dict[str, Any],\n        economics_audit: Dict[str, Any]\n    ) -> Dict[str, Any]:\n        gate1_passed = (\n            segment_audit.get(\"both_sides_liquid\", False) and\n            segment_audit.get(\"margin_percentage\", 0.0) >= 40.0\n        )\n        gate2_passed = (\n            channel_audit.get(\"funnel_yield_percentage\", 0.0) >= 1.0 and\n            channel_audit.get(\"net_margin_percentage\", 0.0) >= 35.0\n        )\n        gate3_passed = (\n            relationship_audit.get(\"blended_cts_percentage\", 100.0) <= 20.0 and\n            relationship_audit.get(\"average_account_health_score\", 0.0) >= 70.0\n        )\n        gate4_passed = (\n            economics_audit.get(\"ltv_to_blended_cac_ratio\", 0.0) >= 3.0 and\n            economics_audit.get(\"cac_payback_period_months\", 999.0) <= 12.0\n        )\n\n        all_gates_cleared = gate1_passed and gate2_passed and gate3_passed and gate4_passed\n        status = (\n            \"CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL\"\n            if all_gates_cleared\n            else \"GTM_DELIVERY_GOVERNANCE_DEFICIT\"\n        )\n\n        return {\n            \"gate1_segment_liquidity\": gate1_passed,\n            \"gate2_channel_viability\": gate2_passed,\n            \"gate3_relationship_efficiency\": gate3_passed,\n            \"gate4_unit_economics_viability\": gate4_passed,\n            \"all_gates_cleared\": all_gates_cleared,\n            \"status\": status,\n            \"gtm_readiness_statement\": (\n                \"Certified sovereign customer delivery architecture: Validated multi-sided liquidity, \"\n                \"frictionless channel phase execution, lean cost-to-serve, and institutional LTV/CAC payback.\"\n                if all_gates_cleared\n                else \"Uncertified: GTM front stage requires structural channel or relationship re-engineering.\"\n            )\n        }\n\n# Integrated Verification Execution\nseg_res = {\"both_sides_liquid\": True, \"margin_percentage\": 44.4}\nchan_res = {\"funnel_yield_percentage\": 3.06, \"net_margin_percentage\": 92.1}\nrel_res = {\"blended_cts_percentage\": 7.3, \"average_account_health_score\": 87.8}\necon_res = {\"ltv_to_blended_cac_ratio\": 89.6, \"cac_payback_period_months\": 0.9}\n\ncontrol_tower = MasterCustomerDeliveryControlTower.run_customer_delivery_control_tower(\n    seg_res, chan_res, rel_res, econ_res\n)\n\nprint(f\"Control Tower Status: {control_tower['status']}\")\nprint(f\"All Gates Cleared: {control_tower['all_gates_cleared']}\")\nprint(f\"Gates: G1(Segments)={control_tower['gate1_segment_liquidity']} | G2(Channels)={control_tower['gate2_channel_viability']} | G3(Relationships)={control_tower['gate3_relationship_efficiency']} | G4(Economics)={control_tower['gate4_unit_economics_viability']}\")\nprint(f\"GTM Statement: {control_tower['gtm_readiness_statement']}\")\n",
         "output": "Control Tower Status: CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL\nAll Gates Cleared: True\nGates: G1(Segments)=True | G2(Channels)=True | G3(Relationships)=True | G4(Economics)=True\nGTM Statement: Certified sovereign customer delivery architecture: Validated multi-sided liquidity, frictionless channel phase execution, lean cost-to-serve, and institutional LTV/CAC payback.",
         "codeNotes": [
           {
@@ -1503,30 +1483,30 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "note": "Defines MasterCustomerDeliveryControlTower synthesizing the four essential Front Stage operational gates."
           },
           {
-            "line": 2,
+            "line": 19,
             "note": "Evaluates Gate 1 (Liquidity), Gate 2 (Channel Yield/Margin), Gate 3 (CTS/Health), and Gate 4 (LTV/CAC Payback)."
           },
           {
-            "line": 3,
+            "line": 36,
             "note": "Confers CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL when all four validation gates pass green."
           },
           {
-            "line": 4,
+            "line": 64,
             "note": "Executes integrated control tower verification against enterprise benchmarks, proving 100% GTM clearance."
           }
         ],
-        "tryIt": "Set blended_cts_percentage=35.0 in rel_res. Notice how Gate 3 fails, flipping the control tower status to GTM_DELIVERY_GOVERNANCE_DEFICIT.",
+        "tryIt": "Set blended_cts_percentage=35.0 in rel_res (line 61). Notice how Gate 3 fails, flipping the control tower status to GTM_DELIVERY_GOVERNANCE_DEFICIT.",
         "check": {
           "question": "What credential status is conferred when an enterprise successfully passes all four gates in the Master Customer Delivery Control Tower?",
           "options": [
+            "SUPPLY_CHAIN_UNAUDITED",
             "CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL",
             "GTM_DELIVERY_GOVERNANCE_DEFICIT",
-            "PRODUCT_MARKET_FIT_PENDING",
-            "SUPPLY_CHAIN_UNAUDITED"
+            "PRODUCT_MARKET_FIT_PENDING"
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL verifies complete mastery over customer segments, channel phases, relationship costs, and acquisition unit economics.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "CUSTOMER_DELIVERY_ARCHITECTURE_CERTIFIED_NOMINAL verifies complete mastery over customer segments, channel phases, relationship costs, and acquisition unit economics."
         }
       }
@@ -1642,14 +1622,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three core activity archetypes identified by Alexander Osterwalder in the Business Model Canvas?",
           "options": [
-            "Production, Problem-Solving, and Platform/Network.",
+            "Advertising, Direct Mail, and Cold Outreach.",
             "Accounting, Human Resources, and Corporate Legal.",
             "Purchasing, Warehousing, and Retail Cashiering.",
-            "Advertising, Direct Mail, and Cold Outreach."
+            "Production, Problem-Solving, and Platform/Network."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Alexander Osterwalder categorizes all core business model activities into three fundamental archetypes: Production, Problem-Solving, and Platform/Network.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Alexander Osterwalder categorizes all core business model activities into three fundamental archetypes: Production, Problem-Solving, and Platform/Network."
         }
       },
@@ -1690,14 +1670,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic management term for an alliance where direct competitors collaborate in pre-competitive domains while competing in commercial markets?",
           "options": [
-            "Co-opetition.",
-            "Monopolistic Collusion.",
             "Hostile Takeover.",
-            "Vertical Disintegration."
+            "Vertical Disintegration.",
+            "Co-opetition.",
+            "Monopolistic Collusion."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Co-opetition (Brandenburger & Nalebuff) describes the strategic phenomenon where direct competitors cooperate to create value and expand market size while competing for market share.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Co-opetition (Brandenburger & Nalebuff) describes the strategic phenomenon where direct competitors cooperate to create value and expand market size while competing for market share."
         }
       },
@@ -1738,14 +1718,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Oliver Williamson's Transaction Cost Economics (TCE), what condition creates severe vendor hold-up risk that favors building in-house (Make)?",
           "options": [
-            "High asset specificity paired with behavioral uncertainty.",
             "Low asset specificity with perfect market competition.",
+            "High asset specificity paired with behavioral uncertainty.",
             "Zero fixed costs with completely standardized commodity components.",
             "Unlimited vendor alternatives with zero switching costs."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "High asset specificity means the asset cannot be redeployed without severe value loss, creating vulnerability to opportunistic vendor hold-up.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "High asset specificity means the asset cannot be redeployed without severe value loss, creating vulnerability to opportunistic vendor hold-up."
         }
       },
@@ -1757,7 +1737,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Gate 2 (Core Activity Scalability & Bottleneck Integrity) audits the venture's activity architecture under Eliyahu Goldratt's Theory of Constraints. It enforces that core operational workflows achieve an Automation Index of at least 60.0%, maintain a blended Service Level Agreement (SLA) compliance rate of at least 99.0%, and ensure that the primary bottleneck stage supports a throughput ceiling of at least 500 units per day.",
           "Gate 3 (Strategic Alliance Ecosystem Resiliency) evaluates the venture's key partnerships. It audits whether strategic alliances deliver at least $1,500,000 in gross financial synergies (cost savings plus unlocked channel revenue) while ensuring that average operational dependency remains capped below 30.0% and intellectual property leakage risk remains below 20.0%. Gate 4 (Make vs. Buy Boundary Optimization) audits firm boundaries under Prahalad & Hamel and Oliver Williamson's criteria, verifying that no core competence has been outsourced and that in-house internalizations are economically justified by transaction volume exceeding break-even thresholds.",
           "When an entrepreneurial venture satisfies all four backstage gating criteria simultaneously, it clears institutional due diligence and is awarded the formal credential: BACKSTAGE_OPERATIONAL_ENGINE_CERTIFIED_NOMINAL. This certification confirms that the venture does not merely possess a compelling front-stage marketing facade, but commands a robust, automated, and defensible operational power plant capable of supporting hyper-growth.",
-          "Having mastered the Value Proposition in Day 6, the Front Stage in Day 7, and the Back Stage in Day 8, we possess the operational foundation of the enterprise. In Day 9, we will turn our focus to the bottom line: Cost Structures and Multi-Stream Revenue Model Engineering. Before moving on from Master Backstage Operational Control Tower & Resource Readiness Certification to the concept check below, mentally trace what happens if the primary input to anchored doubles or drops by half. Seeing how control absorbs that shock—and how massive and robotic surface the resulting variance—gives you an intuitive feel for the model's sensitivity. That intuition will serve you both in hands-on troubleshooting and in high-stakes technical interviews.",
+          "Having mastered the Value Proposition in Day 6, the Front Stage in Day 7, and the Back Stage in Day 8, we possess the operational foundation of the enterprise. In Day 9, we will turn our focus to the bottom line: Cost Structures and Multi-Stream Revenue Model Engineering.",
           "In this final section of Day 8, we synthesize our Python engines into the integrated Master Backstage Operational Control Tower, executing comprehensive multi-gate verification across simulated enterprise benchmarks.",
           "The synthesis of Key Resources, Core Activities, and Key Partnerships forms what strategic management scholars term the Internal Architecture of the Firm. While market-facing hype can attract early customer interest, only backstage operational rigor can deliver on that promise at scale. When venture capitalists conduct operational due diligence for growth-stage financing, they systematically probe whether the company cost structure is anchored in automated, scalable systems or whether it is propped up by heroic, unsustainable human firefighting. A venture with certified backstage integrity commands immense strategic authority in commercial negotiations and board discussions.",
           "Furthermore, backstage capabilities must be designed with dynamic reconfigurability. In hyper-competitive markets, macroeconomic shocks, supply chain disruptions, and technological breakthroughs (such as generative AI) can render existing core activities obsolete overnight. A truly sovereign operational engine possesses organizational agility—the capability to rapidly reallocate capital, transition key activities, swap out underperforming suppliers, and cross-train human talent without triggering corporate paralysis. This structural adaptability is the ultimate hallmark of institutional venture maturity.",
@@ -1842,34 +1822,34 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Cost Audit: ApexCloud Enterprise Data Fabric | Status: COST_STRUCTURE_CERTIFIED_SOLVENT\nRevenue: $3,600,000.00 | Operating Income: $1,350,000.00 (37.5%)\nFixed Overhead: $1,800,000.00 | Variable Costs: $450,000.00\nBreak-Even: 1,714 seats (Cushion: 42.9%) | DOL: 2.33x",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines EnterpriseCostStructure dataclass capturing cost philosophy, fixed overhead, variable COGS, and volume."
           },
           {
-            "line": 2,
+            "line": 18,
             "note": "Implements analyze_cost_structure_and_leverage calculating Contribution Margin, Operating Income, and Break-Even volume."
           },
           {
-            "line": 3,
+            "line": 49,
             "note": "Computes Degree of Operating Leverage (DOL) and volume cushion percentage against severe demand contraction shocks."
           },
           {
-            "line": 4,
+            "line": 87,
             "note": "Validates enterprise SaaS benchmark: proves $1.35M operating income (37.5%), 42.9% volume cushion, and 2.33x DOL."
           }
         ],
-        "tryIt": "Increase annual_fixed_overhead to $3,200,000. Notice how operating income collapses, DOL exceeds 4.0x, and status fails certification.",
+        "tryIt": "Increase annual_fixed_overhead (line 80) to 3200000.0: contribution margin ($3.15M) no longer covers fixed costs, so operating income turns negative (-$50,000), the volume cushion goes negative (-1.6%), DOL shows the 999.0x sentinel (the code's value when operating income is not positive) and certification fails.",
         "check": {
           "question": "What does a high Degree of Operating Leverage (DOL) indicate about a venture's cost structure?",
           "options": [
-            "The company has heavy fixed costs relative to variable costs, meaning small percentage changes in revenue cause large percentage swings in operating income.",
-            "The company has zero fixed costs and relies entirely on hourly contractor labor.",
             "The company is legally prohibited from raising prices under antitrust regulations.",
-            "The company has achieved infinite free cash flow with zero financial risk."
+            "The company has achieved infinite free cash flow with zero financial risk.",
+            "The company has zero fixed costs and relies entirely on hourly contractor labor.",
+            "The company has heavy fixed costs relative to variable costs, meaning small percentage changes in revenue cause large percentage swings in operating income."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "High operating leverage arises from heavy fixed costs; when revenue exceeds break-even, profits surge rapidly, but if sales decline, losses escalate with equal speed.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "High operating leverage arises from heavy fixed costs; when revenue exceeds break-even, profits surge rapidly, but if sales decline, losses escalate with equal speed."
         }
       },
@@ -1891,23 +1871,23 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Revenue Audit Status: REVENUE_ARCHITECTURE_CERTIFIED_PREMIUM\nTotal Portfolio Revenue: $8,500,000.00 | Gross Profit: $6,815,000.00\nBlended Gross Margin: 80.2% (Target >= 70%) | Recurring Ratio: 80.0% (Target >= 60%)\n  > Core Enterprise Cloud Subscription (SUBSCRIPTION): $5,000,000 (58.8%) | Margin: 85.0% | Recurring: True\n  > API Usage Compute Metering (USAGE_FEE): $1,800,000 (21.2%) | Margin: 75.0% | Recurring: True\n  > Ecosystem Marketplace App Take-Rate (BROKERAGE): $900,000 (10.6%) | Margin: 95.0% | Recurring: False\n  > Hardware Security Enclave Asset Sales (ASSET_SALE): $800,000 (9.4%) | Margin: 45.0% | Recurring: False",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines RevenueStream dataclass capturing the 7 Osterwalder archetypes, pricing mechanics, COGS, and recurring flags."
           },
           {
-            "line": 2,
+            "line": 18,
             "note": "Implements audit_revenue_architecture calculating stream contributions, gross profit, and recurring revenue ratios."
           },
           {
-            "line": 3,
+            "line": 55,
             "note": "Enforces institutional quality invariant: requires blended gross margin >= 70.0% and recurring revenue ratio >= 60.0%."
           },
           {
-            "line": 4,
+            "line": 80,
             "note": "Validates hybrid SaaS benchmark: produces $8.5M revenue, 80.2% blended gross margin, and 80.0% recurring predictability."
           }
         ],
-        "tryIt": "Increase Hardware Asset Sales to $10,000,000 with 65% COGS. Observe how blended margin drops and recurring ratio plummets, failing certification.",
+        "tryIt": "On the Hardware Security Enclave line (line 77) change the volume to 10000000.0 and the COGS percentage to 65.0: blended gross margin drops to 56.2%, the recurring ratio falls to 38.4%, and the status becomes REVENUE_PORTFOLIO_MARGIN_DEFICIT.",
         "check": {
           "question": "Which of Alexander Osterwalder's revenue stream archetypes is generated by granting continuous, uninterrupted access to a service over time?",
           "options": [
@@ -1928,7 +1908,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "In modern entrepreneurial finance, Software-as-a-Service (SaaS) and recurring subscription business models have established their own rigorous mathematical physics. The financial beauty of recurring revenue lies in the compounding nature of the revenue baseline: rather than starting each month or fiscal quarter at zero revenue (as transactional asset sales models do), a subscription business begins each period with its entire active recurring customer base intact, compounding top-line growth through renewals, seat expansions, and upsells.",
           "To manage recurring revenue physics, venture architects track Monthly Recurring Revenue (MRR) and Annual Recurring Revenue (ARR). The dynamics of recurring revenue are governed by the MRR Waterfall, which decomposes monthly revenue movement into five distinct flows: (1) New MRR: revenue generated from newly acquired customers who signed contracts in the current month, (2) Expansion MRR: incremental revenue generated from existing customers who upgraded subscription tiers, purchased additional user seats, or consumed more compute capacity, (3) Contraction MRR: revenue lost when existing customers downgrade to lower tiers or reduce seat counts while remaining active customers, (4) Churn MRR: revenue completely wiped out when existing customers cancel their contracts or fail to renew, and (5) Reactivation MRR: revenue recaptured from previously churned customers who return to the platform.",
           "The defining operational metric that separates elite, venture-scale SaaS companies from stagnant software businesses is Net Revenue Retention (NRR). NRR measures the percentage of recurring revenue retained from an existing cohort of customers over a specified time horizon (typically 12 months), taking into account expansion, contraction, and churn. The mathematical equation is: NRR = (Starting ARR + Expansion ARR - Contraction ARR - Churn ARR) / Starting ARR. If an enterprise achieves an NRR exceeding 100% (such as 120% or 130%), it exhibits 'Negative Net Churn.' This means that even if the company ceased all sales and marketing activities and acquired zero new customers over the course of a year, its top-line recurring revenue would still expand by 20% to 30% purely from the organic expansion of its existing customer base.",
-          "Conversely, Gross Revenue Retention (GRR) measures the percentage of recurring revenue retained from existing customers excluding all expansion revenue, strictly capturing contraction and churn. GRR can never exceed 100%; top-tier enterprise software businesses maintain GRR between 90% and 95%, reflecting minimal account attrition. Concurrently, founders must track the SaaS Quick Ratio, formulated by venture capitalist Mamoon Hamid. The SaaS Quick Ratio measures the efficiency of growth by comparing revenue additions to revenue losses: Quick Ratio = (New MRR + Expansion MRR) / (Churn MRR + Contraction MRR). A Quick Ratio of 1.0 means the company is treading water—every dollar gained at the front door is lost out the back door; an investable SaaS business requires a Quick Ratio of at least 4.0x.",
+          "Conversely, Gross Revenue Retention (GRR) measures the percentage of recurring revenue retained from existing customers excluding all expansion revenue, strictly capturing contraction and churn. GRR can never exceed 100%; top-tier enterprise software businesses maintain GRR between 90% and 95%, reflecting minimal account attrition. Concurrently, founders must track the SaaS Quick Ratio, formulated by venture capitalist Mamoon Hamid. The SaaS Quick Ratio measures the efficiency of growth by comparing revenue additions to revenue losses: Quick Ratio = (New MRR + Expansion MRR) / (Churn MRR + Contraction MRR). A Quick Ratio of 1.0 means the company is treading water—every dollar gained at the front door is lost out the back door; 4.0x is the commonly cited benchmark for an investable SaaS business (this lesson's code gates at 3.5x).",
           "Finally, recurring revenue physics demands rigorous cohort retention analysis. Logo Churn (the percentage of customer accounts that cancel) must be distinguished from Dollar Churn (the percentage of recurring revenue lost). In healthy enterprise models, Dollar Churn is significantly lower than Logo Churn because small, low-ACV accounts churn at higher frequencies, while high-value enterprise accounts remain extremely sticky. By aligning product engineering around workflow stickiness and high switching costs, ventures engineer compounding recurring cash flows that command premium institutional valuation multiples.",
           "In this lesson, we will program an algorithmic Subscription Unit Economics & MRR Waterfall Engine in Python. We will model 12-month cohort decay, compute NRR, GRR, and the SaaS Quick Ratio, and verify whether a subscription venture satisfies institutional venture capital benchmarks.",
           "Cohort retention mechanics also reflect the quality of the venture Product-Market Fit. In venture capital due diligence, investors plot retention curves across historical customer signup cohorts. In an unviable product, the cohort curve slopes continuously downward toward the x-axis, indicating that given sufficient time, 100% of customers eventually churn. In a healthy product with true Product-Market Fit, the cohort curve flattens out into a horizontal asymptote—indicating that a core, loyal subset of customers never churns. In an exemplary SaaS product with negative net churn, the dollar retention curve actually inflects upward after month 6 or 12, as account expansions from retained champions outpace all cancellations.",
@@ -1936,37 +1916,37 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         ],
         "example": "When Snowflake filed its S-1 IPO prospectus in 2020, it stunned Wall Street by revealing a Net Revenue Retention (NRR) rate of 158%. This meant that an enterprise customer spending $100,000 on Snowflake in Year 1 was organically spending $158,000 in Year 2 due to expanding data warehouse workloads. This world-record NRR allowed Snowflake to achieve the largest software IPO valuation in corporate history.",
         "code": "# Subscription Unit Economics & MRR Waterfall Engine\nfrom dataclasses import dataclass\nfrom typing import Dict, Any, List\n\n@dataclass\nclass MonthlyRevenueCohort:\n    month_index: int\n    starting_mrr: float\n    new_mrr: float\n    expansion_mrr: float\n    contraction_mrr: float\n    churn_mrr: float\n\nclass SubscriptionEconomicsEngine:\n    def __init__(self, cohort_history: List[MonthlyRevenueCohort]):\n        self.history = cohort_history\n\n    def analyze_subscription_health(self) -> Dict[str, Any]:\n        \"\"\"\n        Audits recurring revenue dynamics across historical cohorts:\n        - Calculates Net New MRR and Ending MRR per period\n        - Computes Net Revenue Retention (NRR) and Gross Revenue Retention (GRR)\n        - Evaluates SaaS Quick Ratio and growth efficiency\n        \"\"\"\n        if not self.history:\n            return {\"status\": \"NO_DATA\"}\n\n        total_new = sum(c.new_mrr for c in self.history)\n        total_expansion = sum(c.expansion_mrr for c in self.history)\n        total_contraction = sum(c.contraction_mrr for c in self.history)\n        total_churn = sum(c.churn_mrr for c in self.history)\n\n        first_cohort = self.history[0]\n        latest_cohort = self.history[-1]\n\n        # Ending MRR of latest period\n        latest_ending_mrr = (\n            latest_cohort.starting_mrr + latest_cohort.new_mrr +\n            latest_cohort.expansion_mrr - latest_cohort.contraction_mrr - latest_cohort.churn_mrr\n        )\n        annual_run_rate_arr = latest_ending_mrr * 12.0\n\n        # NRR = (Starting MRR + Expansion - Contraction - Churn) / Starting MRR\n        # Calculated across all periods against base starting MRR\n        base_starting_mrr = first_cohort.starting_mrr\n        retained_base_mrr = (\n            base_starting_mrr + total_expansion - total_contraction - total_churn\n        )\n        nrr_pct = (retained_base_mrr / base_starting_mrr * 100.0) if base_starting_mrr > 0 else 0.0\n\n        # GRR = (Starting MRR - Contraction - Churn) / Starting MRR (excluding expansion)\n        grr_retained = base_starting_mrr - total_contraction - total_churn\n        grr_pct = (grr_retained / base_starting_mrr * 100.0) if base_starting_mrr > 0 else 0.0\n\n        # SaaS Quick Ratio = (New MRR + Expansion MRR) / (Churn MRR + Contraction MRR)\n        total_additions = total_new + total_expansion\n        total_losses = total_contraction + total_churn\n        quick_ratio = (total_additions / total_losses) if total_losses > 0 else 999.0\n\n        # Institutional Benchmarks: NRR >= 115.0%, GRR >= 88.0%, Quick Ratio >= 3.5x\n        is_top_tier = (nrr_pct >= 115.0 and grr_pct >= 88.0 and quick_ratio >= 3.5)\n        status = (\n            \"SAAS_UNIT_ECONOMICS_CERTIFIED_EXEMPLARY\"\n            if is_top_tier\n            else \"RECURRING_CHURN_DRAG_DEFICIT\"\n        )\n\n        return {\n            \"period_count_months\": len(self.history),\n            \"ending_mrr\": round(latest_ending_mrr, 2),\n            \"annualized_arr\": round(annual_run_rate_arr, 2),\n            \"total_new_mrr_added\": round(total_new, 2),\n            \"total_expansion_mrr\": round(total_expansion, 2),\n            \"total_contraction_mrr\": round(total_contraction, 2),\n            \"total_churn_mrr\": round(total_churn, 2),\n            \"net_revenue_retention_pct\": round(nrr_pct, 1),\n            \"gross_revenue_retention_pct\": round(grr_pct, 1),\n            \"saas_quick_ratio\": round(quick_ratio, 2),\n            \"status\": status\n        }\n\n# Enterprise Benchmark: 6-Month SaaS Trajectory\ncohorts = [\n    MonthlyRevenueCohort(1, 200000.0, 25000.0, 12000.0, 3000.0, 4000.0),\n    MonthlyRevenueCohort(2, 230000.0, 28000.0, 14000.0, 2500.0, 3500.0),\n    MonthlyRevenueCohort(3, 266000.0, 32000.0, 16000.0, 3200.0, 4200.0),\n    MonthlyRevenueCohort(4, 306600.0, 35000.0, 19000.0, 2800.0, 3800.0),\n    MonthlyRevenueCohort(5, 354000.0, 40000.0, 22000.0, 3500.0, 4500.0),\n    MonthlyRevenueCohort(6, 408000.0, 45000.0, 26000.0, 3000.0, 4000.0)\n]\n\nengine = SubscriptionEconomicsEngine(cohorts)\naudit = engine.analyze_subscription_health()\n\nprint(f\"SaaS Economics Audit: {audit['status']}\")\nprint(f\"Ending MRR: ${audit['ending_mrr']:,.2f} | Annualized ARR: ${audit['annualized_arr']:,.2f}\")\nprint(f\"NRR: {audit['net_revenue_retention_pct']}% (Target >= 115%) | GRR: {audit['gross_revenue_retention_pct']}% (Target >= 88%)\")\nprint(f\"SaaS Quick Ratio: {audit['saas_quick_ratio']}x (Target >= 3.5x) | Additions: ${audit['total_new_mrr_added'] + audit['total_expansion_mrr']:,.2f} vs Losses: ${audit['total_contraction_mrr'] + audit['total_churn_mrr']:,.2f}\")\n",
-        "output": "SaaS Economics Audit: SAAS_UNIT_ECONOMICS_CERTIFIED_EXEMPLARY\nEnding MRR: $472,000.00 | Annualized ARR: $5,664,000.00\nNRR: 136.5% (Target >= 115%) | GRR: 81.5% (Target >= 88%)\nSaaS Quick Ratio: 8.51x (Target >= 3.5x) | Additions: $314,000.00 vs Losses: $36,900.00",
+        "output": "SaaS Economics Audit: RECURRING_CHURN_DRAG_DEFICIT\nEnding MRR: $472,000.00 | Annualized ARR: $5,664,000.00\nNRR: 133.5% (Target >= 115%) | GRR: 79.0% (Target >= 88%)\nSaaS Quick Ratio: 7.48x (Target >= 3.5x) | Additions: $314,000.00 vs Losses: $42,000.00",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines MonthlyRevenueCohort dataclass capturing starting MRR, new adds, expansion, contraction, and churn."
           },
           {
-            "line": 2,
+            "line": 18,
             "note": "Implements analyze_subscription_health computing annualized ARR, NRR, GRR, and Mamoon Hamid's SaaS Quick Ratio."
           },
           {
-            "line": 3,
-            "note": "Audits negative net churn dynamics, proving how expansion ($109k) dwarfs contraction & churn ($36.9k)."
+            "line": 49,
+            "note": "Audits expansion ($109k) against contraction and churn ($42k combined), producing a strongly positive NRR and a high Quick Ratio."
           },
           {
-            "line": 4,
-            "note": "Validates 6-month enterprise SaaS benchmark: achieves $5.66M ARR run-rate, 136.5% NRR, and 8.51x Quick Ratio."
+            "line": 92,
+            "note": "Validates the 6-month SaaS trajectory: $5.66M ARR run-rate, 133.5% NRR and 7.48x Quick Ratio, but GRR of 79.0% misses the 88% gate, so the status is RECURRING_CHURN_DRAG_DEFICIT."
           }
         ],
-        "tryIt": "Increase total_churn_mrr across cohorts to $35,000/mo. Observe how the Quick Ratio collapses below 3.5x and NRR falls below 100%.",
+        "tryIt": "Set the last number (churn_mrr) of each of the six cohorts (lines 84-89) to 35000.0: Quick Ratio collapses from 7.48x to 1.38x and NRR falls from 133.5% to 40.5%.",
         "check": {
           "question": "What does a Net Revenue Retention (NRR) rate exceeding 100% indicate about an enterprise subscription business?",
           "options": [
-            "The business exhibits 'Negative Net Churn', expanding recurring revenue from existing customers faster than it loses revenue through churn or contraction.",
             "The business is losing customers faster than it can replace them with new acquisition marketing.",
+            "The business exhibits 'Negative Net Churn', expanding recurring revenue from existing customers faster than it loses revenue through churn or contraction.",
             "The business has zero operating expenses and zero cost of goods sold.",
             "The business is in breach of international accounting standards and must be liquidated."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "NRR > 100% signifies Negative Net Churn: customer account expansion and upsells outpace revenue lost from cancellations and downgrades.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "NRR > 100% signifies Negative Net Churn: customer account expansion and upsells outpace revenue lost from cancellations and downgrades."
         }
       },
@@ -1987,34 +1967,34 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Break-Even Audit: PORTFOLIO_BREAKEVEN_CERTIFIED_RESILIENT\nRevenue: $6,400,000.00 | Fixed OPEX: $3,200,000.00\nWeighted CM Ratio: 75.6% | Break-Even Rev: $4,231,404.96\nMargin of Safety: 33.9% (Target >= 30%) | Operating Income: $1,640,000.00 (25.6%)\n  > Enterprise Dedicated Cloud Suite: Mix=46.9% | CM=84.0% | Break-Even Units=79\n  > Mid-Market Managed Security Tier: Mix=37.5% | CM=75.0% | Break-Even Units=198\n  > SMB Automated Sensor Appliance: Mix=15.6% | CM=52.0% | Break-Even Units=264",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines ProductOffering dataclass capturing unit price, variable cost, and unit volume sales mix."
           },
           {
-            "line": 2,
+            "line": 17,
             "note": "Implements calculate_portfolio_breakeven computing Weighted Average Contribution Margin Ratio (WACMR) and Break-Even Revenue."
           },
           {
-            "line": 3,
+            "line": 35,
             "note": "Deconstructs portfolio Margin of Safety (MOS) and calculates allocated break-even unit volume targets per product line."
           },
           {
-            "line": 4,
+            "line": 95,
             "note": "Validates enterprise security portfolio benchmark: proves 75.6% WACMR, 33.9% Margin of Safety, and $1.64M operating profit."
           }
         ],
-        "tryIt": "Increase fixed_annual_operating_expenses to $5,000,000. Observe how Break-Even Revenue surges and Margin of Safety drops below 30%.",
+        "tryIt": "Increase the fixed expenses argument (line 95) to 5000000.0: Break-Even Revenue rises to $6,611,570.25, above the $6.4M forecast, so Margin of Safety turns negative (-3.3%), operating income is -$160,000 and the status becomes FRAGILE_BREAKEVEN_SOLVENCY_RISK.",
         "check": {
           "question": "What does an enterprise Margin of Safety (MOS) of 33.9% signify?",
           "options": [
-            "The company sales revenue can decline by up to 33.9% before the business reaches its break-even point and begins incurring operating losses.",
+            "The company gross profit margin is legally capped at exactly 33.9%.",
             "The company is losing 33.9% on every product it sells to customers.",
-            "The company has 33.9 days of cash remaining in its commercial bank account.",
-            "The company gross profit margin is legally capped at exactly 33.9%."
+            "The company sales revenue can decline by up to 33.9% before the business reaches its break-even point and begins incurring operating losses.",
+            "The company has 33.9 days of cash remaining in its commercial bank account."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Margin of Safety measures the percentage buffer by which actual or projected sales exceed the break-even threshold before operating losses occur.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Margin of Safety measures the percentage buffer by which actual or projected sales exceed the break-even threshold before operating losses occur."
         }
       },
@@ -2032,7 +2012,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Furthermore, financial viability is not a static milestone, but an ongoing governance discipline. As competitors enter the market, pricing pressure intensifies and customer acquisition costs rise. A sovereign business model maintains financial viability by continuously innovating its revenue mechanisms—layering on fintech monetization, platform marketplace take-rates, or consumption-based AI inference credits—while aggressively driving down variable cost of goods sold through infrastructure optimization. This dual-engine discipline guarantees enduring profitability across economic cycles.",
           "With Day 9 complete, the four architectural quadrants of Alexander Osterwalder Business Model Canvas stand fully validated: Value Proposition, Front Stage Delivery, Backstage Operations, and Financial Viability. Tomorrow, in Day 10, we reach the Milestone 2 Capstone: uniting all nine building blocks into the Sovereign Business Model Canvas Engine, executing the grand capstone simulation and conferring the Certified Business Model Architect & Venture Strategist accreditation."
         ],
-        "example": "When Atlassian went public, it demonstrated an unprecedented financial viability control tower: a lean, automated R&D cost structure (Gate 1), a 100% recurring subscription and usage revenue portfolio with an 83% gross profit margin (Gate 2), an extraordinary Net Revenue Retention rate exceeding 120% with near-zero paid marketing spend (Gate 3), and a massive 45% Margin of Safety with consistent free cash flow generation from day one (Gate 4). This enabled Atlassian to become a multi-billion-dollar sovereign enterprise without raising traditional venture capital.",
+        "example": "When Atlassian went public, it demonstrated an unprecedented financial viability control tower: a lean, automated R&D cost structure (Gate 1), a largely recurring subscription revenue portfolio with a gross profit margin above 80% (Gate 2), an extraordinary Net Revenue Retention rate exceeding 120% with near-zero paid marketing spend (Gate 3), and a massive 45% Margin of Safety with consistent free cash flow generation from day one (Gate 4). This enabled Atlassian to become a multi-billion-dollar enterprise while raising only a single small venture round.",
         "code": "# Master Financial Viability Control Tower & Unit Economics Certification Engine\nfrom typing import Dict, Any, List\n\nclass MasterFinancialViabilityControlTower:\n    \"\"\"\n    Synthesizes the four foundational Financial Viability gates of the Business Model Canvas:\n    - Gate 1: Operating Leverage & Solvency (DOL <= 4.0x, Op Margin >= 20%, Cushion >= 25%)\n    - Gate 2: Revenue Quality & Margin Integrity (Blended GM >= 70%, Recurring Ratio >= 60%)\n    - Gate 3: SaaS Retention & Growth Efficiency (NRR >= 115%, GRR >= 80%, Quick Ratio >= 3.5x)\n    - Gate 4: Break-Even Resiliency & Margin of Safety (WACMR >= 65%, Margin of Safety >= 30%)\n    \"\"\"\n    @staticmethod\n    def run_financial_viability_control_tower(\n        cost_audit: Dict[str, Any],\n        revenue_audit: Dict[str, Any],\n        saas_audit: Dict[str, Any],\n        breakeven_audit: Dict[str, Any]\n    ) -> Dict[str, Any]:\n        gate1_passed = (\n            cost_audit.get(\"degree_of_operating_leverage\", 999.0) <= 4.0 and\n            cost_audit.get(\"operating_margin_percentage\", 0.0) >= 20.0 and\n            cost_audit.get(\"volume_cushion_percentage\", 0.0) >= 25.0\n        )\n        gate2_passed = (\n            revenue_audit.get(\"blended_gross_margin_percentage\", 0.0) >= 70.0 and\n            revenue_audit.get(\"recurring_revenue_ratio_percentage\", 0.0) >= 60.0\n        )\n        gate3_passed = (\n            saas_audit.get(\"net_revenue_retention_pct\", 0.0) >= 115.0 and\n            saas_audit.get(\"gross_revenue_retention_pct\", 0.0) >= 80.0 and\n            saas_audit.get(\"saas_quick_ratio\", 0.0) >= 3.5\n        )\n        gate4_passed = (\n            breakeven_audit.get(\"weighted_average_cm_ratio_pct\", 0.0) >= 65.0 and\n            breakeven_audit.get(\"margin_of_safety_pct\", 0.0) >= 30.0\n        )\n\n        all_gates_cleared = gate1_passed and gate2_passed and gate3_passed and gate4_passed\n        status = (\n            \"VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL\"\n            if all_gates_cleared\n            else \"FINANCIAL_VIABILITY_GOVERNANCE_DEFICIT\"\n        )\n\n        return {\n            \"gate1_operating_leverage\": gate1_passed,\n            \"gate2_revenue_margin_quality\": gate2_passed,\n            \"gate3_recurring_retention\": gate3_passed,\n            \"gate4_breakeven_safety\": gate4_passed,\n            \"all_gates_cleared\": all_gates_cleared,\n            \"status\": status,\n            \"financial_readiness_statement\": (\n                \"Certified sovereign financial viability engine: Validated operating leverage cushion, \"\n                \"premium gross margins, compounding negative net churn, and resilient multi-product break-even safety.\"\n                if all_gates_cleared\n                else \"Uncertified: Financial baseline requires cost reduction or pricing restructuring.\"\n            )\n        }\n\n# Integrated Verification Execution\nc_res = {\"degree_of_operating_leverage\": 2.33, \"operating_margin_percentage\": 37.5, \"volume_cushion_percentage\": 42.9}\nr_res = {\"blended_gross_margin_percentage\": 80.2, \"recurring_revenue_ratio_percentage\": 80.0}\ns_res = {\"net_revenue_retention_pct\": 136.5, \"gross_revenue_retention_pct\": 81.5, \"saas_quick_ratio\": 8.51}\nb_res = {\"weighted_average_cm_ratio_pct\": 75.6, \"margin_of_safety_pct\": 33.9}\n\ncontrol_tower = MasterFinancialViabilityControlTower.run_financial_viability_control_tower(\n    c_res, r_res, s_res, b_res\n)\n\nprint(f\"Control Tower Status: {control_tower['status']}\")\nprint(f\"All Gates Cleared: {control_tower['all_gates_cleared']}\")\nprint(f\"Gates: G1(Leverage)={control_tower['gate1_operating_leverage']} | G2(Margins)={control_tower['gate2_revenue_margin_quality']} | G3(Retention)={control_tower['gate3_recurring_retention']} | G4(BreakEven)={control_tower['gate4_breakeven_safety']}\")\nprint(f\"Financial Statement: {control_tower['financial_readiness_statement']}\")\n",
         "output": "Control Tower Status: VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL\nAll Gates Cleared: True\nGates: G1(Leverage)=True | G2(Margins)=True | G3(Retention)=True | G4(BreakEven)=True\nFinancial Statement: Certified sovereign financial viability engine: Validated operating leverage cushion, premium gross margins, compounding negative net churn, and resilient multi-product break-even safety.",
         "codeNotes": [
@@ -2041,30 +2021,30 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "note": "Defines MasterFinancialViabilityControlTower synthesizing the four essential Viability gates of the BMC."
           },
           {
-            "line": 2,
+            "line": 19,
             "note": "Evaluates Gate 1 (Operating Leverage), Gate 2 (Revenue Quality), Gate 3 (SaaS Retention), and Gate 4 (Break-Even Safety)."
           },
           {
-            "line": 3,
+            "line": 38,
             "note": "Confers VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL when all four validation gates pass green."
           },
           {
-            "line": 4,
+            "line": 66,
             "note": "Executes integrated control tower verification against enterprise benchmarks, proving 100% financial clearance."
           }
         ],
-        "tryIt": "Set margin_of_safety_pct=15.0 in b_res. Notice how Gate 4 fails, flipping status to FINANCIAL_VIABILITY_GOVERNANCE_DEFICIT.",
+        "tryIt": "Set margin_of_safety_pct=15.0 in b_res (line 64). Notice how Gate 4 fails, flipping status to FINANCIAL_VIABILITY_GOVERNANCE_DEFICIT.",
         "check": {
           "question": "What credential status is conferred when an entrepreneurial venture clears all four gates in the Master Financial Viability Control Tower?",
           "options": [
-            "VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL",
-            "FINANCIAL_VIABILITY_GOVERNANCE_DEFICIT",
             "SEED_VALUATION_PENDING",
-            "TAX_ACCOUNTING_INCOMPLETE"
+            "TAX_ACCOUNTING_INCOMPLETE",
+            "FINANCIAL_VIABILITY_GOVERNANCE_DEFICIT",
+            "VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL"
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL confirms that the enterprise has proven sustainable operating leverage, high gross margins, top-tier SaaS retention, and resilient break-even safety.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "VENTURE_FINANCIAL_VIABILITY_CERTIFIED_NOMINAL confirms that the enterprise has proven sustainable operating leverage, high gross margins, top-tier SaaS retention, and resilient break-even safety."
         }
       }
@@ -2102,44 +2082,44 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "The nine building blocks span three fundamental meta-dimensions: Desirability, Feasibility, and Viability. Desirability encompasses the front-stage market interface: Customer Segments (the homogeneous buyer cohorts we serve), Value Propositions (the bundles of products and services that resolve specific customer jobs, pains, and gains), Channels (the communication, distribution, and sales touchpoints delivering value across five distinct phases), and Customer Relationships (the interaction archetypes that acquire, retain, and expand customer accounts). Feasibility encompasses the backstage operational engine: Key Resources (the physical, intellectual, human, and financial assets required to operate), Key Activities (the production, problem-solving, and platform orchestration disciplines executed with world-class excellence), and Key Partnerships (the network of suppliers, co-opetitors, and joint venture alliances that optimize scale and mitigate uncertainty).",
           "Viability represents the financial lifeblood that connects the front stage to the backstage: Revenue Streams (the diverse cash-generation mechanisms capturing value from customers) and Cost Structures (the operational expenses incurred to maintain assets, activities, and alliances). The ultimate test of venture viability is whether the monetary value captured through revenue streams decisively exceeds the monetary expenses dictated by cost structures, yielding self-sustaining free cash flow and expanding return on invested capital (ROIC).",
           "Beyond individual block definitions, the hallmark of an investable business model is the presence of Reinforcing Feedback Loops—popularized in business strategy as the 'Flywheel Effect' by Jim Collins. A business model flywheel occurs when success in one building block naturally and automatically accelerates performance in adjacent blocks without requiring linear infusions of outside capital. In the celebrated Amazon Flywheel, a customer-centric Value Proposition (lower prices and vast selection) delights Customer Segments, driving organic website Traffic; this traffic attracts third-party merchant Partners, expanding product Selection and driving Economies of Scale in Key Resources (robotic fulfillment centers); these lower Cost Structures, allowing Amazon to lower prices even further, spinning the flywheel faster and wider.",
-          "Conversely, poorly designed business models suffer from Structural Anti-Patterns—internal contradictions between blocks that generate destructive operational friction. For example, a venture might attempt to offer an ultra-low-price, mass-market consumer Value Proposition while relying on an expensive, high-touch Dedicated Personal Assistance Customer Relationship model; the resulting Cost-to-Serve immediately obliterates gross margins. Another common anti-pattern is building an enterprise B2B Value Proposition that requires complex multi-stakeholder security reviews, while attempting to distribute exclusively through an unassisted Self-Service digital Channel. Structural coherence requires that every block operates in harmonious harmony with its surrounding ecosystem.",
+          "Conversely, poorly designed business models suffer from Structural Anti-Patterns—internal contradictions between blocks that generate destructive operational friction. For example, a venture might attempt to offer an ultra-low-price, mass-market consumer Value Proposition while relying on an expensive, high-touch Dedicated Personal Assistance Customer Relationship model; the resulting Cost-to-Serve immediately obliterates gross margins. Another common anti-pattern is building an enterprise B2B Value Proposition that requires complex multi-stakeholder security reviews, while attempting to distribute exclusively through an unassisted Self-Service digital Channel. Structural coherence requires that every block operates in harmony with its surrounding ecosystem.",
           "In this opening capstone section, we program an algorithmic Unified Business Model Canvas Engine in Python. We will model the interconnected dependencies across all nine Osterwalder blocks, calculate a quantitative Cross-Block Coherence Index, and audit whether an enterprise design possesses the structural alignment required to achieve sovereign venture scale.",
           "In academic literature, the Business Model Canvas is frequently compared to biological ecosystems. A biological organism cannot survive if its respiratory, circulatory, and nervous systems are uncoordinated; similarly, an enterprise cannot thrive if its Value Proposition operates in isolation from its Key Activities or Cost Structures. When an entrepreneur introduces an improvement in one block—such as transitioning an on-premise software architecture to a multi-tenant cloud SaaS deployment—the reverberations shake the entire canvas. Key Activities shift toward platform uptime and DevOps; Key Resources demand distributed cloud engineers rather than hardware field technicians; Customer Relationships evolve toward automated product-led onboarding; and Cost Structures replace upfront hardware depreciation with elastic cloud computing fees. Master architects map these second- and third-order systemic repercussions before committing capital.",
           "Furthermore, multi-sided platform architectures demonstrate the highest degree of cross-block complexity. In a multi-sided market, the canvas must simultaneously accommodate multiple distinct customer profiles, each with its own dedicated Value Proposition, Channel phase sequence, and Customer Relationship archetype. The backstage operations and key partnerships must orchestrate interactions between these disparate segments without introducing platform friction. An entrepreneur who masters the 9-block unified architecture commands the cognitive capacity to hold the entire enterprise in systemic equilibrium, diagnosing operational bottlenecks and strategic misalignments with algorithmic precision."
         ],
         "example": "Amazon's legendary 9-block flywheel seamlessly unifies front stage and backstage: Low Cost Structure (Block 9) enables Lower Prices in the Value Proposition (Block 1), attracting Mass Customer Segments (Block 2), which drives Channel Traffic (Block 3). High traffic attracts Third-Party Marketplace Partners (Block 8), which perform Platform Activities (Block 7) and contribute high-margin Brokerage Fees (Block 5), funding AWS and fulfillment Key Resources (Block 6). Every block reinforces the entire system.",
         "code": "# Unified 9-Block Business Model Canvas Structural Coherence Engine\nfrom dataclasses import dataclass\nfrom typing import Dict, Any, List\n\n@dataclass\nclass BmcBuildingBlock:\n    block_id: str             # e.g., 'VP', 'CS', 'CH', 'CR', 'RS', 'KR', 'KA', 'KP', 'CS_COST'\n    name: str\n    dimension: str            # 'DESIRABILITY', 'FEASIBILITY', 'VIABILITY'\n    completeness_score: float # 0.0 to 100.0 score based on empirical validation\n    dependency_links: List[str] # Other block_ids that this block structurally supports\n\nclass UnifiedBusinessModelCanvasEngine:\n    def __init__(self, blocks: List[BmcBuildingBlock]):\n        self.blocks = {b.block_id: b for b in blocks}\n\n    def audit_canvas_coherence(self) -> Dict[str, Any]:\n        \"\"\"\n        Audits full 9-block Business Model Canvas:\n        - Verifies presence and completeness of all 9 canonical Osterwalder blocks\n        - Evaluates cross-block dependency linkages (flywheel density)\n        - Computes composite Business Model Coherence Index (0-100%)\n        \"\"\"\n        required_blocks = {'VP', 'CS', 'CH', 'CR', 'RS', 'KR', 'KA', 'KP', 'CS_COST'}\n        present_blocks = set(self.blocks.keys())\n        missing = required_blocks - present_blocks\n\n        # Dimension average completeness\n        desirability = [b.completeness_score for b in self.blocks.values() if b.dimension == 'DESIRABILITY']\n        feasibility = [b.completeness_score for b in self.blocks.values() if b.dimension == 'FEASIBILITY']\n        viability = [b.completeness_score for b in self.blocks.values() if b.dimension == 'VIABILITY']\n\n        avg_des = sum(desirability) / len(desirability) if desirability else 0.0\n        avg_fea = sum(feasibility) / len(feasibility) if feasibility else 0.0\n        avg_via = sum(viability) / len(viability) if viability else 0.0\n\n        # Total dependency linkages across canvas\n        total_links = sum(len(b.dependency_links) for b in self.blocks.values())\n        flywheel_density = total_links / len(self.blocks) if self.blocks else 0.0\n\n        # Composite Coherence Index = 70% average completeness + 30% flywheel linkage density\n        avg_completeness = (avg_des + avg_fea + avg_via) / 3.0\n        normalized_density = min(100.0, (flywheel_density / 3.0) * 100.0)\n        coherence_index = (0.70 * avg_completeness) + (0.30 * normalized_density)\n\n        # Capstone Gate 1: All 9 blocks present, Coherence Index >= 90.0%, Flywheel Density >= 2.5 links/block\n        is_coherent = (len(missing) == 0 and coherence_index >= 90.0 and flywheel_density >= 2.5)\n        status = (\n            \"BMC_UNIFIED_ARCHITECTURE_CERTIFIED_COHERENT\"\n            if is_coherent\n            else \"BMC_STRUCTURAL_COHERENCE_DEFICIT\"\n        )\n\n        return {\n            \"all_9_blocks_present\": len(missing) == 0,\n            \"missing_blocks\": list(missing),\n            \"desirability_score\": round(avg_des, 1),\n            \"feasibility_score\": round(avg_fea, 1),\n            \"viability_score\": round(avg_via, 1),\n            \"flywheel_density_links_per_block\": round(flywheel_density, 2),\n            \"coherence_index_pct\": round(coherence_index, 1),\n            \"status\": status\n        }\n\n# Enterprise Benchmark Canvas: Sovereign B2B Cloud Enterprise Suite\ncanvas_blocks = [\n    BmcBuildingBlock(\"VP\", \"Value Propositions\", \"DESIRABILITY\", 96.0, [\"CS\", \"CH\", \"CR\", \"RS\"]),\n    BmcBuildingBlock(\"CS\", \"Customer Segments\", \"DESIRABILITY\", 94.0, [\"VP\", \"CH\", \"RS\"]),\n    BmcBuildingBlock(\"CH\", \"Channels\", \"DESIRABILITY\", 92.0, [\"CS\", \"VP\", \"CR\"]),\n    BmcBuildingBlock(\"CR\", \"Customer Relationships\", \"DESIRABILITY\", 95.0, [\"CS\", \"RS\", \"CH\"]),\n    BmcBuildingBlock(\"KR\", \"Key Resources\", \"FEASIBILITY\", 95.0, [\"KA\", \"VP\", \"CS_COST\"]),\n    BmcBuildingBlock(\"KA\", \"Core Activities\", \"FEASIBILITY\", 93.0, [\"KR\", \"VP\", \"CS_COST\"]),\n    BmcBuildingBlock(\"KP\", \"Key Partnerships\", \"FEASIBILITY\", 91.0, [\"KA\", \"KR\", \"CS_COST\"]),\n    BmcBuildingBlock(\"RS\", \"Revenue Streams\", \"VIABILITY\", 96.0, [\"CS_COST\", \"VP\"]),\n    BmcBuildingBlock(\"CS_COST\", \"Cost Structure\", \"VIABILITY\", 92.0, [\"RS\", \"KR\", \"KA\"])\n]\n\nengine = UnifiedBusinessModelCanvasEngine(canvas_blocks)\nreport = engine.audit_canvas_coherence()\n\nprint(f\"Canvas Audit Status: {report['status']}\")\nprint(f\"9 Blocks Present: {report['all_9_blocks_present']} | Flywheel Density: {report['flywheel_density_links_per_block']} links/block\")\nprint(f\"Dimensions: Desirability={report['desirability_score']}% | Feasibility={report['feasibility_score']}% | Viability={report['viability_score']}%\")\nprint(f\"Composite Coherence Index: {report['coherence_index_pct']}% (Target >= 90.0%)\")\n",
-        "output": "Canvas Audit Status: BMC_UNIFIED_ARCHITECTURE_CERTIFIED_COHERENT\n9 Blocks Present: True | Flywheel Density: 2.89 links/block\nDimensions: Desirability=94.2% | Feasibility=93.0% | Viability=94.0%\nComposite Coherence Index: 94.5% (Target >= 90.0%)",
+        "output": "Canvas Audit Status: BMC_UNIFIED_ARCHITECTURE_CERTIFIED_COHERENT\n9 Blocks Present: True | Flywheel Density: 3.0 links/block\nDimensions: Desirability=94.2% | Feasibility=93.0% | Viability=94.0%\nComposite Coherence Index: 95.6% (Target >= 90.0%)",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines BmcBuildingBlock dataclass tracking block taxonomy, meta-dimension, completeness, and flywheel links."
           },
           {
-            "line": 2,
+            "line": 17,
             "note": "Implements audit_canvas_coherence evaluating the 3 meta-dimensions (Desirability, Feasibility, Viability)."
           },
           {
-            "line": 3,
+            "line": 47,
             "note": "Enforces Capstone Gate 1 invariant: requires all 9 blocks present, coherence >= 90.0%, and density >= 2.5."
           },
           {
-            "line": 4,
-            "note": "Validates enterprise cloud benchmark: achieves 94.5% coherence and 2.89 links/block, passing Gate 1 green."
+            "line": 78,
+            "note": "Validates the enterprise cloud benchmark: 95.6% coherence index and 3.0 links/block, passing Gate 1 green."
           }
         ],
         "tryIt": "Remove block 'KP' from canvas_blocks. Observe how all_9_blocks_present flips to False, triggering BMC_STRUCTURAL_COHERENCE_DEFICIT.",
         "check": {
           "question": "What are the three fundamental meta-dimensions that encompass Alexander Osterwalder's nine Business Model Canvas building blocks?",
           "options": [
-            "Desirability (Market), Feasibility (Operations), and Viability (Financial).",
             "Ideation, Prototyping, and Liquidation.",
             "Equity, Debt, and Convertible Derivatives.",
-            "Advertising, Direct Mail, and Cold Telemarketing."
+            "Advertising, Direct Mail, and Cold Telemarketing.",
+            "Desirability (Market), Feasibility (Operations), and Viability (Financial)."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The 9 blocks are categorized into Desirability (Value Prop, Segments, Channels, Relationships), Feasibility (Resources, Activities, Partners), and Viability (Revenues, Costs).",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The 9 blocks are categorized into Desirability (Value Prop, Segments, Channels, Relationships), Feasibility (Resources, Activities, Partners), and Viability (Revenues, Costs)."
         }
       },
@@ -2154,28 +2134,28 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "The history of modern entrepreneurship is littered with companies that achieved initial Product-Market Fit but perished because their business models were structurally fragile. During economic expansions characterized by low interest rates and boundless venture capital, companies often adopt Growth at All Costs models. They subsidize customer acquisition through equity burn, ignore bloated fixed operational overheads, and tolerate high customer churn because a rising tide of new customers masks customer dissatisfaction. When the macro cycle abruptly turns—whether due to monetary tightening, geopolitical friction, or financial market contagion—these unhedged ventures experience catastrophic liquidity crises. Stress-testing strips away the illusion of paper growth and reveals whether a venture can generate positive operating cash flow when cheap capital disappears.",
           "A crucial dimension of macroeconomic stress-testing is analyzing the Price Elasticity of Demand across your customer base. When inflation surges and corporate buyers face margin compression, their procurement committees systematically audit all recurring software vendor contracts, categorizing tools into Must-Have Core Systems and Nice-to-Have Discretionary Utilities. If your Value Proposition addresses only peripheral convenience, your business model will experience severe contraction and churn during downturns. Conversely, if your product is deeply embedded in core revenue-generating operations or mandatory regulatory compliance workflows, customers will protect your contract even while firing other vendors. A battle-tested business model builds defensible mission-criticality into its core Value Proposition."
         ],
-        "example": "During the 2020 global pandemic crisis, Airbnb suffered an immediate 80% collapse in bookings over a single two-week period. Because Brian Chesky had built a flexible cost structure (leveraging third-party hosts rather than owning physical hotels), Airbnb immediately cut discretionary marketing by $800M, paused non-core initiatives, and pivoted its value proposition to local staycations and remote-work rentals. Within six months, Airbnb returned to profitability and executed one of the most successful IPOs of the decade.",
+        "example": "During the 2020 global pandemic crisis, Airbnb suffered an immediate 80% collapse in bookings within a matter of weeks. Because Brian Chesky had built a flexible cost structure (leveraging third-party hosts rather than owning physical hotels), Airbnb immediately cut discretionary marketing by $800M, paused non-core initiatives, and pivoted its value proposition to local staycations and remote-work rentals. Within six months, Airbnb returned to profitability and executed one of the most successful IPOs of the decade.",
         "code": "# Business Model Macroeconomic Shock Stress-Testing Engine\nfrom dataclasses import dataclass\nfrom typing import Dict, Any\n\n@dataclass\nclass VentureBaselineFinancials:\n    cash_treasury_balance: float # Available liquid cash reserves ($)\n    annual_recurring_revenue: float # Baseline ARR ($)\n    gross_margin_pct: float       # Baseline gross margin percentage (0-100%)\n    annual_fixed_opex: float      # Baseline annual fixed operating expenses ($)\n    annual_sales_marketing_spend: float # Baseline S&M budget ($)\n    annual_churn_rate_pct: float  # Baseline logo/dollar churn rate (0-100%)\n    annual_new_arr_added: float   # Baseline new ARR generated per year ($)\n\nclass BusinessModelStressTestEngine:\n    def __init__(self, baseline: VentureBaselineFinancials):\n        self.baseline = baseline\n\n    def simulate_macroeconomic_stress_test(\n        self,\n        demand_contraction_pct: float = 30.0,    # 30% drop in new ARR velocity\n        cac_inflation_surge_pct: float = 40.0,    # 40% increase in S&M cost per ARR\n        cogs_inflation_surge_pct: float = 20.0,   # 20% increase in variable COGS\n        churn_acceleration_pct: float = 50.0      # 50% increase in churn rate\n    ) -> Dict[str, Any]:\n        \"\"\"\n        Subjects the business model to four concurrent severe macroeconomic shocks:\n        - Contracts new ARR additions by demand_contraction_pct\n        - Increases sales & marketing burn by cac_inflation_surge_pct\n        - Compresses gross margin due to variable cost inflation\n        - Accelerates revenue churn by churn_acceleration_pct\n        - Calculates stressed net cash burn and surviving runway in months\n        \"\"\"\n        b = self.baseline\n\n        # 1. Stressed New ARR velocity\n        stressed_new_arr = b.annual_new_arr_added * (1.0 - (demand_contraction_pct / 100.0))\n\n        # 2. Stressed Churn ARR\n        stressed_churn_rate = b.annual_churn_rate_pct * (1.0 + (churn_acceleration_pct / 100.0))\n        stressed_churn_arr = b.annual_recurring_revenue * (stressed_churn_rate / 100.0)\n\n        # Stressed ending ARR\n        stressed_arr = b.annual_recurring_revenue + stressed_new_arr - stressed_churn_arr\n\n        # 3. Stressed Gross Margin (COGS surge)\n        base_cogs_pct = 100.0 - b.gross_margin_pct\n        stressed_cogs_pct = base_cogs_pct * (1.0 + (cogs_inflation_surge_pct / 100.0))\n        stressed_gross_margin_pct = max(0.0, 100.0 - stressed_cogs_pct)\n        stressed_gross_profit = stressed_arr * (stressed_gross_margin_pct / 100.0)\n\n        # 4. Stressed Operating Expenditures (S&M inflation)\n        stressed_sm_spend = b.annual_sales_marketing_spend * (1.0 + (cac_inflation_surge_pct / 100.0))\n        total_stressed_opex = b.annual_fixed_opex + stressed_sm_spend\n\n        # Stressed Net Cash Burn = Total OPEX - Gross Profit\n        stressed_annual_cash_burn = total_stressed_opex - stressed_gross_profit\n        stressed_monthly_burn = stressed_annual_cash_burn / 12.0\n\n        # Surviving Runway in Months\n        surviving_runway_months = (\n            (b.cash_treasury_balance / stressed_monthly_burn)\n            if stressed_monthly_burn > 0 else 999.0\n        )\n\n        # Capstone Gate 2: Stressed Runway >= 18.0 months and Stressed Gross Margin >= 60.0%\n        is_solvent = surviving_runway_months >= 18.0 and stressed_gross_margin_pct >= 60.0\n        status = (\n            \"MACRO_STRESS_TEST_CERTIFIED_SOLVENT\"\n            if is_solvent\n            else \"MACRO_STRESS_INSOLVENCY_DEFICIT\"\n        )\n\n        return {\n            \"baseline_arr\": round(b.annual_recurring_revenue, 2),\n            \"stressed_arr\": round(stressed_arr, 2),\n            \"stressed_gross_margin_pct\": round(stressed_gross_margin_pct, 1),\n            \"stressed_annual_opex\": round(total_stressed_opex, 2),\n            \"stressed_annual_cash_burn\": round(stressed_annual_cash_burn, 2),\n            \"stressed_monthly_burn\": round(stressed_monthly_burn, 2),\n            \"surviving_runway_months\": round(surviving_runway_months, 1),\n            \"status\": status\n        }\n\n# Enterprise Benchmark: Series B Venture Treasury\nbaseline = VentureBaselineFinancials(\n    cash_treasury_balance=18500000.0,   # $18.5M cash cushion\n    annual_recurring_revenue=12000000.0, # $12.0M baseline ARR\n    gross_margin_pct=82.0,              # 82% SaaS gross margin\n    annual_fixed_opex=8000000.0,        # $8.0M fixed G&A and R&D\n    annual_sales_marketing_spend=5000000.0, # $5.0M sales and marketing\n    annual_churn_rate_pct=8.0,          # 8% annual churn\n    annual_new_arr_added=8000000.0      # $8.0M new ARR run-rate\n)\n\ntester = BusinessModelStressTestEngine(baseline)\nstress_report = tester.simulate_macroeconomic_stress_test()\n\nprint(f\"Stress Test Status: {stress_report['status']}\")\nprint(f\"Stressed ARR: ${stress_report['stressed_arr']:,.2f} | Stressed Margin: {stress_report['stressed_gross_margin_pct']}%\")\nprint(f\"Stressed Monthly Burn: ${stress_report['stressed_monthly_burn']:,.2f}/mo | Annual Burn: ${stress_report['stressed_annual_cash_burn']:,.2f}\")\nprint(f\"Surviving Cash Runway: {stress_report['surviving_runway_months']} months (Target >= 18.0 months)\")\n",
-        "output": "Stress Test Status: MACRO_STRESS_TEST_CERTIFIED_SOLVENT\nStressed ARR: $16,160,000.00 | Stressed Margin: 78.4%\nStressed Monthly Burn: $233,786.67/mo | Annual Burn: $2,805,440.00\nSurviving Cash Runway: 79.1 months (Target >= 18.0 months)",
+        "output": "Stress Test Status: MACRO_STRESS_TEST_CERTIFIED_SOLVENT\nStressed ARR: $16,160,000.00 | Stressed Margin: 78.4%\nStressed Monthly Burn: $194,213.33/mo | Annual Burn: $2,330,560.00\nSurviving Cash Runway: 95.3 months (Target >= 18.0 months)",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines VentureBaselineFinancials capturing treasury cash, ARR, gross margin, OPEX, S&M, churn, and velocity."
           },
           {
-            "line": 2,
+            "line": 19,
             "note": "Implements simulate_macroeconomic_stress_test applying 4 concurrent shocks: demand contraction, CAC surge, COGS surge, churn jump."
           },
           {
-            "line": 3,
+            "line": 67,
             "note": "Enforces Capstone Gate 2 invariant: requires >= 18.0 months surviving cash runway and >= 60.0% stressed gross margin."
           },
           {
-            "line": 4,
-            "note": "Validates Series B benchmark under black swan stress: preserves 78.4% margin and 79.1 months runway, passing Gate 2 green."
+            "line": 97,
+            "note": "Validates the Series B benchmark under combined stress: preserves a 78.4% margin and 95.3 months of runway, passing Gate 2 green."
           }
         ],
-        "tryIt": "Reduce cash_treasury_balance to $3,000,000. Notice how surviving runway falls to 12.8 months, triggering MACRO_STRESS_INSOLVENCY_DEFICIT.",
+        "tryIt": "Reduce cash_treasury_balance (line 87) to $3,000,000. Notice how surviving runway falls to 15.4 months, below the 18-month gate, triggering MACRO_STRESS_INSOLVENCY_DEFICIT.",
         "check": {
           "question": "What is the primary objective of subjecting a Business Model Canvas to multi-factor macroeconomic stress-testing?",
           "options": [
@@ -2195,7 +2175,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "say": [
           "Sustainable venture supremacy is rarely achieved by competing on product features alone; it is won through Business Model Innovation. While product innovations are easily copied, reverse-engineered, or leapfrogged by well-funded incumbents, an innovative business model creates structural defensibility that is extraordinarily difficult for competitors to duplicate without cannibalizing their existing profit engines. In modern strategy literature, business model innovation is guided by Alexander Osterwalder's Business Model Shift Archetypes and W. Chan Kim and Renée Mauborgne's Blue Ocean Strategy.",
           "Osterwalder categorizes business model shifts across four major transformative axes: (1) Product to Service (Servitization): transitioning from selling one-off physical or digital assets to delivering ongoing, managed outcomes (e.g., Rolls-Royce moving from selling aircraft jet engines to 'Power by the Hour' thrust subscriptions, where airlines pay only for operational flight hours while Rolls-Royce handles 100% of maintenance), (2) Low-Tech to High-Tech: infusing traditional manual operational activities with algorithmic automation, proprietary data assets, and machine learning, expanding operating leverage and gross margins, (3) One-Sided to Multi-Sided Platform: unlocking latent network effects by inviting third-party complementors, developers, or merchant partners to transact on your platform, and (4) Transactional to Recurring: transitioning from unpredictable one-time purchases to sticky, predictable subscription contracts.",
-          "The power of shifting from transactional to recurring models was vividly demonstrated by Adobe in 2012. Historically, Adobe sold boxed desktop software (Photoshop, Illustrator, Premiere) for a one-off retail price of $1,800 to $2,500. Every 18 to 24 months, Adobe had to convince existing customers to pay $600 for an upgrade. When Adobe executed its bold business model shift to the Creative Cloud subscription model ($50/month), its top-line revenue temporarily dipped as large upfront license sales ceased. However, within three years, Adobe's recurring revenue surged, customer lifetime value expanded by over 300%, piracy was eliminated, and Adobe's market capitalization expanded by more than 800%.",
+          "The power of shifting from transactional to recurring models was vividly demonstrated by Adobe in 2012. Historically, Adobe sold boxed desktop software (Photoshop, Illustrator, Premiere) for a one-off retail price of $1,800 to $2,500. Every 18 to 24 months, Adobe had to convince existing customers to pay $600 for an upgrade. When Adobe executed its bold business model shift to the Creative Cloud subscription model ($50/month), its top-line revenue temporarily dipped as large upfront license sales ceased. However, within a few years Adobe's recurring revenue grew sharply, subscriptions became its dominant revenue source, and its market capitalization rose several-fold.",
           "Concurrently, Blue Ocean Strategy provides the Four Actions Framework—the ERRC Grid (Eliminate, Reduce, Raise, Create)—to reconstruct industry value curves. To break the traditional trade-off between low cost and high differentiation, entrepreneurs ask four fundamental questions: Which factors that the industry takes for granted should be Eliminated? Which factors should be Reduced well below the industry standard? Which factors should be Raised well above the industry standard? Which factors should be Created that the industry has never offered? Cirque du Soleil famously eliminated expensive star performers and live animal acts (massive cost reduction), while creating an artistic, theatrical, and musical narrative experience (high-end ticket pricing), capturing a lucrative, uncontested blue ocean market.",
           "In this lesson, we program an algorithmic Business Model Shift Simulator in Python. We will model legacy versus transformed business models, compute Customer Lifetime Value expansion multipliers, track gross margin progression, and verify whether a proposed business model shift achieves the 2.0x value expansion hurdle required for venture certification.",
           "Business model shifts require extraordinary organizational leadership and cultural courage because they almost always trigger the S-Curve Transition Dilemma. When an established company attempts to pivot from a legacy business model to an innovative new model, its legacy business is often at its peak profitability, while the new model is initially unproven, unprofitable, and disruptive to existing sales channels. Sales representatives accustomed to earning large upfront commissions on multi-year perpetual licenses will actively resist selling monthly subscriptions unless their incentive structures are fundamentally redesigned. Founders must navigate this transitional valley of death, aligning executive compensation, board expectations, and operational metrics around long-term enterprise value rather than short-term quarterly revenue targets.",
@@ -2206,34 +2186,34 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Shift Audit Status: BUSINESS_MODEL_SHIFT_CERTIFIED_BREAKTHROUGH\nLegacy Model Net LTV: $990.00 (Perpetual Boxed Desktop License)\nTransformed Model Net LTV: $4,240.50 (Enterprise Cloud AI Collaboration SaaS)\nStrategic Value Expansion: 4.28x Multiplier (Target >= 2.0x) | Transformed Margin: 85.0%",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines BusinessModelProfile dataclass modeling pricing, margins, lifespans, and operational support costs."
           },
           {
-            "line": 2,
+            "line": 20,
             "note": "Implements evaluate_strategic_shift calculating lifecycle Net LTV and the strategic expansion multiplier."
           },
           {
-            "line": 3,
+            "line": 45,
             "note": "Enforces Capstone Gate 3 invariant: requires >= 2.0x LTV expansion and >= 75.0% transformed gross margin."
           },
           {
-            "line": 4,
+            "line": 83,
             "note": "Validates enterprise SaaS shift benchmark: delivers a 4.28x Net LTV expansion ($4,240 vs $990), passing Gate 3 green."
           }
         ],
-        "tryIt": "Reduce transformed customer_lifespan_years to 1.5. Observe how Net LTV shrinks and the expansion multiplier drops below 2.0x.",
+        "tryIt": "Reduce the transformed customer_lifespan_years (line 78) to 1.5. Net LTV shrinks to $1,156.50, the expansion multiplier drops to 1.17x (below 2.0x) and the status becomes INCREMENTAL_SHIFT_VALUE_DEFICIT.",
         "check": {
           "question": "What are the four strategic actions that comprise the ERRC Grid in W. Chan Kim and Renée Mauborgne's Blue Ocean Strategy?",
           "options": [
+            "Enforce, Regulate, Restrict, and Control.",
             "Eliminate, Reduce, Raise, and Create.",
             "Equity, Revenue, Return, and Capital.",
-            "Expand, Retain, Recruit, and Consolidate.",
-            "Enforce, Regulate, Restrict, and Control."
+            "Expand, Retain, Recruit, and Consolidate."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The Blue Ocean ERRC Grid demands asking: Which factors to Eliminate, Reduce below standards, Raise above standards, and Create anew.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The Blue Ocean ERRC Grid demands asking: Which factors to Eliminate, Reduce below standards, Raise above standards, and Create anew."
         }
       },
@@ -2250,37 +2230,37 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         ],
         "example": "When Bessemer Venture Partners authored its internal Series A investment memo for Shopify in 2010, partner Alex Ferrara did not focus merely on e-commerce software features; he highlighted Shopify's 9-block business model: a scalable subscription core paired with an explosive brokerage revenue stream via payments, high developer platform stickiness, an extraordinary LTV/CAC ratio, and an expanding market of independent merchants. Bessemer invested at a $25M valuation, ultimately returning billions to its limited partners.",
         "code": "# Institutional Venture Capital Investment Committee Memo Scoring Engine\nfrom dataclasses import dataclass\nfrom typing import Dict, Any, List\n\n@dataclass\nclass InvestmentPillar:\n    pillar_name: str          # 'TEAM', 'MARKET_TIMING', 'MOATS_DEFENSIBILITY', 'UNIT_ECONOMICS', 'BMC_COHERENCE'\n    weight_pct: float         # Portfolio weighting percentage (sum = 100%)\n    score_out_of_100: float   # Empirical audit score\n    justification: str\n\nclass InvestmentCommitteeVentureMemoScorer:\n    def __init__(\n        self,\n        venture_name: str,\n        annual_growth_rate_pct: float,\n        operating_margin_pct: float,\n        pillars: List[InvestmentPillar]\n    ):\n        self.venture_name = venture_name\n        self.growth_rate = annual_growth_rate_pct\n        self.operating_margin = operating_margin_pct\n        self.pillars = pillars\n\n    def evaluate_investment_memorandum(self) -> Dict[str, Any]:\n        \"\"\"\n        Audits venture memorandum against Tier-1 Sand Hill Road VC criteria:\n        - Computes composite weighted Investment Committee Score (0-100)\n        - Calculates the Rule of 40 score (Growth % + Operating Margin %)\n        - Enforces minimum 85.0 composite threshold for unanimous partner approval\n        \"\"\"\n        total_weight = sum(p.weight_pct for p in self.pillars)\n        assert abs(total_weight - 100.0) < 0.01, \"Pillar weights must sum to exactly 100%\"\n\n        weighted_score = sum(p.score_out_of_100 * (p.weight_pct / 100.0) for p in self.pillars)\n\n        # Rule of 40 Score = Annual Growth Rate (%) + Operating Margin (%)\n        rule_of_40_score = self.growth_rate + self.operating_margin\n\n        # Capstone Gate 4: Composite Score >= 85.0 and Rule of 40 >= 40.0%\n        is_approved = (weighted_score >= 85.0 and rule_of_40_score >= 40.0)\n        status = (\n            \"INVESTMENT_COMMITTEE_UNANIMOUS_APPROVAL\"\n            if is_approved\n            else \"INVESTMENT_COMMITTEE_TERM_SHEET_REJECTED\"\n        )\n\n        return {\n            \"venture_name\": self.venture_name,\n            \"weighted_ic_score\": round(weighted_score, 1),\n            \"rule_of_40_score\": round(rule_of_40_score, 1),\n            \"growth_rate_pct\": round(self.growth_rate, 1),\n            \"operating_margin_pct\": round(self.operating_margin, 1),\n            \"status\": status,\n            \"recommendation\": (\n                \"ISSUE_TIER_1_SERIES_B_TERM_SHEET\"\n                if is_approved\n                else \"PASS_DO_NOT_INVEST\"\n            )\n        }\n\n# Enterprise Benchmark: Institutional Memo Evaluation\nmemo_pillars = [\n    InvestmentPillar(\"TEAM\", 20.0, 95.0, \"Repeat founders with previous $200M exit and deep AI domain authority\"),\n    InvestmentPillar(\"MARKET_TIMING\", 20.0, 90.0, \"$18B TAM expanding at 32% CAGR driven by regulatory compliance mandates\"),\n    InvestmentPillar(\"MOATS_DEFENSIBILITY\", 20.0, 92.0, \"VRIO certified proprietary AI inference engine with high switching costs\"),\n    InvestmentPillar(\"UNIT_ECONOMICS\", 25.0, 96.0, \"LTV/CAC = 8.5x, Payback = 7.2 mo, NRR = 136%, 78% gross margin\"),\n    InvestmentPillar(\"BMC_COHERENCE\", 15.0, 94.0, \"Flawless 9-block Osterwalder alignment with self-reinforcing flywheel\")\n]\n\n# Growth Rate = 65.0% YoY, Operating Margin = 22.0% -> Rule of 40 = 87.0%\nscorer = InvestmentCommitteeVentureMemoScorer(\n    venture_name=\"SovereignData AI Platform\",\n    annual_growth_rate_pct=65.0,\n    operating_margin_pct=22.0,\n    pillars=memo_pillars\n)\n\nmemo_audit = scorer.evaluate_investment_memorandum()\n\nprint(f\"Venture: {memo_audit['venture_name']} | Decision: {memo_audit['recommendation']}\")\nprint(f\"Status: {memo_audit['status']} | Composite Score: {memo_audit['weighted_ic_score']}/100.0 (Target >= 85.0)\")\nprint(f\"Rule of 40 Score: {memo_audit['rule_of_40_score']}% (Target >= 40.0%) | Growth: {memo_audit['growth_rate_pct']}% + Margin: {memo_audit['operating_margin_pct']}%\")\n",
-        "output": "Venture: SovereignData AI Platform | Decision: ISSUE_TIER_1_SERIES_B_TERM_SHEET\nStatus: INVESTMENT_COMMITTEE_UNANIMOUS_APPROVAL | Composite Score: 93.6/100.0 (Target >= 85.0)\nRule of 40 Score: 87.0% (Target >= 40.0%) | Growth: 65.0% + Margin: 22.0%",
+        "output": "Venture: SovereignData AI Platform | Decision: ISSUE_TIER_1_SERIES_B_TERM_SHEET\nStatus: INVESTMENT_COMMITTEE_UNANIMOUS_APPROVAL | Composite Score: 93.5/100.0 (Target >= 85.0)\nRule of 40 Score: 87.0% (Target >= 40.0%) | Growth: 65.0% + Margin: 22.0%",
         "codeNotes": [
           {
-            "line": 4,
+            "line": 6,
             "note": "Defines InvestmentPillar dataclass capturing the 5 institutional evaluation pillars with weights and audit scores."
           },
           {
-            "line": 2,
+            "line": 25,
             "note": "Implements evaluate_investment_memorandum computing the composite IC score and the SaaS Rule of 40 metric."
           },
           {
-            "line": 3,
+            "line": 41,
             "note": "Enforces Capstone Gate 4 invariant: requires composite IC score >= 85.0 and Rule of 40 score >= 40.0%."
           },
           {
-            "line": 4,
-            "note": "Validates Series B memo benchmark: achieves 93.6 composite score and 87.0% Rule of 40, securing unanimous approval."
+            "line": 72,
+            "note": "Validates the Series B memo benchmark: 93.5 composite score and 87.0% Rule of 40, securing unanimous approval."
           }
         ],
-        "tryIt": "Set score_out_of_100=40.0 on UNIT_ECONOMICS. Notice how composite score drops below 85.0, resulting in term sheet rejection.",
+        "tryIt": "Set score_out_of_100=40.0 on UNIT_ECONOMICS (line 67). The composite score falls from 93.5 to 79.5, below 85.0, resulting in term sheet rejection.",
         "check": {
           "question": "What is the SaaS Rule of 40 metric used by institutional venture capital investment committees?",
           "options": [
-            "A benchmark stating that an enterprise software company's annual revenue growth rate percentage plus its operating margin percentage should equal or exceed 40.0%.",
-            "A rule that every startup must have exactly 40 employees before raising Series A capital.",
             "A regulation capping founder equity dilution at exactly 40% across all rounds.",
-            "A legal requirement to file tax returns within 40 days of fiscal year end."
+            "A legal requirement to file tax returns within 40 days of fiscal year end.",
+            "A benchmark stating that an enterprise software company's annual revenue growth rate percentage plus its operating margin percentage should equal or exceed 40.0%.",
+            "A rule that every startup must have exactly 40 employees before raising Series A capital."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "The Rule of 40 states that Growth Rate (%) + Profit Margin (%) >= 40%, balancing hyper-growth with capital efficiency.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "The Rule of 40 states that Growth Rate (%) + Profit Margin (%) >= 40%, balancing hyper-growth with capital efficiency."
         }
       },
@@ -2298,7 +2278,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Take pride in this monumental achievement. You have mastered Alexander Osterwalder Business Model Canvas in its most rigorous, executable, and stress-tested form. In Milestone 3, we will carry this sovereign foundation into the legal, regulatory, and corporate governance arena, scaling our enterprise from an investable business model into an enduring global institution."
         ],
         "example": "When Stripe raised its landmark financing rounds, its capstone defense was mathematically unassailable: 100% 9-block coherence (Gate 1), multi-year runway surviving extreme e-commerce volatility (Gate 2), a breakthrough shift from simple payments to a global financial infrastructure platform (Gate 3), unanimous Tier-1 VC partnership approval (Gate 4), and world-class LTV/CAC economics with negative net churn (Gate 5). This enabled Stripe to achieve a $95B valuation.",
-        "code": "# Master Sovereign Business Model Canvas Engine & Milestone 2 Capstone Accreditation\nfrom typing import Dict, Any, List\n\nclass MasterSovereignBmcCapstoneEngine:\n    \"\"\"\n    Synthesizes the five definitive Capstone Defense Gates of Milestone 2:\n    - Gate 1: 9-Block Structural Coherence (All 9 blocks present, Coherence >= 90.0%, Flywheel Density >= 2.5)\n    - Gate 2: Macroeconomic Stress Survival (Surviving Runway >= 18.0 months under 4 concurrent shocks)\n    - Gate 3: Strategic Shift Breakthrough (Net LTV Expansion Multiplier >= 2.0x & Margin >= 75%)\n    - Gate 4: Investment Committee Memo Approval (Composite Score >= 85.0 & Rule of 40 >= 40.0%)\n    - Gate 5: Unit Economics Mastery (LTV/CAC >= 3.5x, Payback <= 12 mo, NRR >= 115%)\n    \"\"\"\n    @staticmethod\n    def run_grand_capstone_defense(\n        coherence_audit: Dict[str, Any],\n        stress_audit: Dict[str, Any],\n        shift_audit: Dict[str, Any],\n        ic_memo_audit: Dict[str, Any],\n        unit_econ_audit: Dict[str, Any]\n    ) -> Dict[str, Any]:\n        gate1_passed = (\n            coherence_audit.get(\"all_9_blocks_present\", False) and\n            coherence_audit.get(\"coherence_index_pct\", 0.0) >= 90.0 and\n            coherence_audit.get(\"flywheel_density_links_per_block\", 0.0) >= 2.5\n        )\n        gate2_passed = (\n            stress_audit.get(\"surviving_runway_months\", 0.0) >= 18.0 and\n            stress_audit.get(\"stressed_gross_margin_pct\", 0.0) >= 60.0\n        )\n        gate3_passed = (\n            shift_audit.get(\"expansion_multiplier\", 0.0) >= 2.0 and\n            shift_audit.get(\"transformed_gross_margin_pct\", 0.0) >= 75.0\n        )\n        gate4_passed = (\n            ic_memo_audit.get(\"weighted_ic_score\", 0.0) >= 85.0 and\n            ic_memo_audit.get(\"rule_of_40_score\", 0.0) >= 40.0\n        )\n        gate5_passed = (\n            unit_econ_audit.get(\"ltv_to_cac_ratio\", 0.0) >= 3.5 and\n            unit_econ_audit.get(\"cac_payback_months\", 999.0) <= 12.0 and\n            unit_econ_audit.get(\"nrr_percentage\", 0.0) >= 115.0\n        )\n\n        all_gates_cleared = (\n            gate1_passed and gate2_passed and gate3_passed and gate4_passed and gate5_passed\n        )\n\n        status = (\n            \"VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL\"\n            if all_gates_cleared\n            else \"CAPSTONE_DEFENSE_GOVERNANCE_DEFICIT\"\n        )\n\n        accreditation = (\n            \"Certified Business Model Architect & Venture Strategist\"\n            if all_gates_cleared\n            else \"Unaccredited: Candidate must remediate deficient gates\"\n        )\n\n        return {\n            \"gate1_structural_coherence\": gate1_passed,\n            \"gate2_macro_stress_survival\": gate2_passed,\n            \"gate3_strategic_shift\": gate3_passed,\n            \"gate4_ic_approval\": gate4_passed,\n            \"gate5_unit_economics\": gate5_passed,\n            \"all_gates_cleared\": all_gates_cleared,\n            \"status\": status,\n            \"accreditation\": accreditation,\n            \"capstone_conferral_statement\": (\n                \"🏆 UNANIMOUS CAPSTONE APPROVAL: Highest honors conferred. \"\n                \"The candidate has demonstrated complete mastery over Alexander Osterwalder's \"\n                \"Business Model Canvas, macro stress resilience, business model innovation shifts, \"\n                \"Sand Hill Road institutional defense, and capital-independent unit economics.\"\n                if all_gates_cleared\n                else \"CAPSTONE DEFENSE FAILED: Revise model architecture and resubmit.\"\n            )\n        }\n\n# Integrated Capstone Execution\ng1_res = {\"all_9_blocks_present\": True, \"coherence_index_pct\": 94.5, \"flywheel_density_links_per_block\": 2.89}\ng2_res = {\"surviving_runway_months\": 79.1, \"stressed_gross_margin_pct\": 78.4}\ng3_res = {\"expansion_multiplier\": 4.28, \"transformed_gross_margin_pct\": 85.0}\ng4_res = {\"weighted_ic_score\": 93.6, \"rule_of_40_score\": 87.0}\ng5_res = {\"ltv_to_cac_ratio\": 8.5, \"cac_payback_months\": 7.2, \"nrr_percentage\": 136.5}\n\ncapstone_engine = MasterSovereignBmcCapstoneEngine.run_grand_capstone_defense(\n    g1_res, g2_res, g3_res, g4_res, g5_res\n)\n\nprint(f\"Capstone Status: {capstone_engine['status']}\")\nprint(f\"Accreditation: {capstone_engine['accreditation']}\")\nprint(f\"All 5 Gates Cleared: {capstone_engine['all_gates_cleared']}\")\nprint(f\"Gates: G1(Coherence)={capstone_engine['gate1_structural_coherence']} | G2(Stress)={capstone_engine['gate2_macro_stress_survival']} | G3(Shift)={capstone_engine['gate3_strategic_shift']} | G4(IC)={capstone_engine['gate4_ic_approval']} | G5(UnitEcon)={capstone_engine['gate5_unit_economics']}\")\nprint(f\"Statement: {capstone_engine['capstone_conferral_statement']}\")\n",
+        "code": "# Master Sovereign Business Model Canvas Engine & Milestone 2 Capstone Accreditation\nfrom typing import Dict, Any, List\n\nclass MasterSovereignBmcCapstoneEngine:\n    \"\"\"\n    Synthesizes the five definitive Capstone Defense Gates of Milestone 2:\n    - Gate 1: 9-Block Structural Coherence (All 9 blocks present, Coherence >= 90.0%, Flywheel Density >= 2.5)\n    - Gate 2: Macroeconomic Stress Survival (Surviving Runway >= 18.0 months under 4 concurrent shocks)\n    - Gate 3: Strategic Shift Breakthrough (Net LTV Expansion Multiplier >= 2.0x & Margin >= 75%)\n    - Gate 4: Investment Committee Memo Approval (Composite Score >= 85.0 & Rule of 40 >= 40.0%)\n    - Gate 5: Unit Economics Mastery (LTV/CAC >= 3.5x, Payback <= 12 mo, NRR >= 115%)\n    \"\"\"\n    @staticmethod\n    def run_grand_capstone_defense(\n        coherence_audit: Dict[str, Any],\n        stress_audit: Dict[str, Any],\n        shift_audit: Dict[str, Any],\n        ic_memo_audit: Dict[str, Any],\n        unit_econ_audit: Dict[str, Any]\n    ) -> Dict[str, Any]:\n        gate1_passed = (\n            coherence_audit.get(\"all_9_blocks_present\", False) and\n            coherence_audit.get(\"coherence_index_pct\", 0.0) >= 90.0 and\n            coherence_audit.get(\"flywheel_density_links_per_block\", 0.0) >= 2.5\n        )\n        gate2_passed = (\n            stress_audit.get(\"surviving_runway_months\", 0.0) >= 18.0 and\n            stress_audit.get(\"stressed_gross_margin_pct\", 0.0) >= 60.0\n        )\n        gate3_passed = (\n            shift_audit.get(\"expansion_multiplier\", 0.0) >= 2.0 and\n            shift_audit.get(\"transformed_gross_margin_pct\", 0.0) >= 75.0\n        )\n        gate4_passed = (\n            ic_memo_audit.get(\"weighted_ic_score\", 0.0) >= 85.0 and\n            ic_memo_audit.get(\"rule_of_40_score\", 0.0) >= 40.0\n        )\n        gate5_passed = (\n            unit_econ_audit.get(\"ltv_to_cac_ratio\", 0.0) >= 3.5 and\n            unit_econ_audit.get(\"cac_payback_months\", 999.0) <= 12.0 and\n            unit_econ_audit.get(\"nrr_percentage\", 0.0) >= 115.0\n        )\n\n        all_gates_cleared = (\n            gate1_passed and gate2_passed and gate3_passed and gate4_passed and gate5_passed\n        )\n\n        status = (\n            \"VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL\"\n            if all_gates_cleared\n            else \"CAPSTONE_DEFENSE_GOVERNANCE_DEFICIT\"\n        )\n\n        accreditation = (\n            \"Certified Business Model Architect & Venture Strategist\"\n            if all_gates_cleared\n            else \"Unaccredited: Candidate must remediate deficient gates\"\n        )\n\n        return {\n            \"gate1_structural_coherence\": gate1_passed,\n            \"gate2_macro_stress_survival\": gate2_passed,\n            \"gate3_strategic_shift\": gate3_passed,\n            \"gate4_ic_approval\": gate4_passed,\n            \"gate5_unit_economics\": gate5_passed,\n            \"all_gates_cleared\": all_gates_cleared,\n            \"status\": status,\n            \"accreditation\": accreditation,\n            \"capstone_conferral_statement\": (\n                \"🏆 UNANIMOUS CAPSTONE APPROVAL: Highest honors conferred. \"\n                \"The candidate has demonstrated complete mastery over Alexander Osterwalder's \"\n                \"Business Model Canvas, macro stress resilience, business model innovation shifts, \"\n                \"Sand Hill Road institutional defense, and capital-independent unit economics.\"\n                if all_gates_cleared\n                else \"CAPSTONE DEFENSE FAILED: Revise model architecture and resubmit.\"\n            )\n        }\n\n# Integrated Capstone Execution\ng1_res = {\"all_9_blocks_present\": True, \"coherence_index_pct\": 95.6, \"flywheel_density_links_per_block\": 3.0}\ng2_res = {\"surviving_runway_months\": 95.3, \"stressed_gross_margin_pct\": 78.4}\ng3_res = {\"expansion_multiplier\": 4.28, \"transformed_gross_margin_pct\": 85.0}\ng4_res = {\"weighted_ic_score\": 93.5, \"rule_of_40_score\": 87.0}\ng5_res = {\"ltv_to_cac_ratio\": 8.5, \"cac_payback_months\": 7.2, \"nrr_percentage\": 136.0}\n\ncapstone_engine = MasterSovereignBmcCapstoneEngine.run_grand_capstone_defense(\n    g1_res, g2_res, g3_res, g4_res, g5_res\n)\n\nprint(f\"Capstone Status: {capstone_engine['status']}\")\nprint(f\"Accreditation: {capstone_engine['accreditation']}\")\nprint(f\"All 5 Gates Cleared: {capstone_engine['all_gates_cleared']}\")\nprint(f\"Gates: G1(Coherence)={capstone_engine['gate1_structural_coherence']} | G2(Stress)={capstone_engine['gate2_macro_stress_survival']} | G3(Shift)={capstone_engine['gate3_strategic_shift']} | G4(IC)={capstone_engine['gate4_ic_approval']} | G5(UnitEcon)={capstone_engine['gate5_unit_economics']}\")\nprint(f\"Statement: {capstone_engine['capstone_conferral_statement']}\")\n",
         "output": "Capstone Status: VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL\nAccreditation: Certified Business Model Architect & Venture Strategist\nAll 5 Gates Cleared: True\nGates: G1(Coherence)=True | G2(Stress)=True | G3(Shift)=True | G4(IC)=True | G5(UnitEcon)=True\nStatement: 🏆 UNANIMOUS CAPSTONE APPROVAL: Highest honors conferred. The candidate has demonstrated complete mastery over Alexander Osterwalder's Business Model Canvas, macro stress resilience, business model innovation shifts, Sand Hill Road institutional defense, and capital-independent unit economics.",
         "codeNotes": [
           {
@@ -2306,30 +2286,30 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "note": "Defines MasterSovereignBmcCapstoneEngine synthesizing all 5 Capstone Defense Gates of Milestone 2."
           },
           {
-            "line": 2,
+            "line": 21,
             "note": "Evaluates Gate 1 (9-Block Coherence), Gate 2 (Macro Stress), Gate 3 (Shift), Gate 4 (IC Approval), Gate 5 (Unit Econ)."
           },
           {
-            "line": 3,
+            "line": 48,
             "note": "Confers VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL and Certified Business Model Architect & Venture Strategist."
           },
           {
-            "line": 4,
+            "line": 86,
             "note": "Executes integrated capstone simulation across benchmarks, clearing all 5 gates with highest honors."
           }
         ],
-        "tryIt": "Set surviving_runway_months=12.0 in g2_res. Notice how Gate 2 fails, flipping capstone status to CAPSTONE_DEFENSE_GOVERNANCE_DEFICIT.",
+        "tryIt": "Set surviving_runway_months=12.0 in g2_res (line 81). Notice how Gate 2 fails, flipping capstone status to CAPSTONE_DEFENSE_GOVERNANCE_DEFICIT.",
         "check": {
           "question": "What double accreditation is formally conferred upon passing all five gates in the Milestone 2 Capstone Defense?",
           "options": [
-            "VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL and Certified Business Model Architect & Venture Strategist.",
             "BASIC_BUSINESS_PLAN_AUDITOR and Junior Associate Clerk.",
             "PROVISIONAL_PATENT_DRAFTER and Non-Executive Observer.",
-            "BOOKKEEPING_ASSISTANT and Level-1 Cashier."
+            "BOOKKEEPING_ASSISTANT and Level-1 Cashier.",
+            "VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL and Certified Business Model Architect & Venture Strategist."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The Milestone 2 Capstone formally confers VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL / Certified Business Model Architect & Venture Strategist upon successful 5-gate defense.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The Milestone 2 Capstone formally confers VENTURE_CREATION_AND_BMC_MASTER_CERTIFIED_NOMINAL / Certified Business Model Architect & Venture Strategist upon successful 5-gate defense."
         }
       }
@@ -2394,14 +2374,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do venture-stage DCF models use discount rates of 30-50% or more instead of 8-10%?",
           "options": [
-            "Because venture investors are legally required to use higher rates.",
             "To compensate for the high probability that the startup fails entirely, which diversified large companies do not carry.",
+            "Because venture investors are legally required to use higher rates.",
             "Because higher discount rates always increase the valuation.",
             "Because startups have no cash flows to discount."
           ],
-          "answer": 1,
+          "answer": 0,
           "why": "The discount rate prices in the risk of total failure and illiquidity. Since most venture investments return little or nothing, winners must be priced at a steep discount for the portfolio to earn an acceptable return.",
-          "answerIndex": 1,
+          "answerIndex": 0,
           "explanation": "The discount rate prices in the risk of total failure and illiquidity. Since most venture investments return little or nothing, winners must be priced at a steep discount for the portfolio to earn an acceptable return."
         }
       },
@@ -2441,12 +2421,12 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Because revenue is always negative for startups.",
             "Because investors prefer round numbers.",
-            "Because faster-growing companies reach a much larger revenue base by exit, so the market pays a higher multiple for them.",
-            "Because growth rate has no relationship to company value."
+            "Because growth rate has no relationship to company value.",
+            "Because faster-growing companies reach a much larger revenue base by exit, so the market pays a higher multiple for them."
           ],
-          "answer": 2,
+          "answer": 3,
           "why": "Two companies with identical revenue today can be worth very different amounts if one is growing far faster; the market capitalizes that future revenue base into a higher multiple.",
-          "answerIndex": 2,
+          "answerIndex": 3,
           "explanation": "Two companies with identical revenue today can be worth very different amounts if one is growing far faster; the market capitalizes that future revenue base into a higher multiple."
         }
       },
@@ -2484,14 +2464,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the Berkus Method primarily reward in a pre-revenue startup?",
           "options": [
-            "The size of the revenue forecast in the pitch deck.",
-            "The number of employees on the payroll.",
             "The amount of money the founders have personally invested.",
-            "Concrete progress that reduces specific risks: idea, prototype, team, relationships, and rollout."
+            "The size of the revenue forecast in the pitch deck.",
+            "Concrete progress that reduces specific risks: idea, prototype, team, relationships, and rollout.",
+            "The number of employees on the payroll."
           ],
-          "answer": 3,
+          "answer": 2,
           "why": "Berkus assigns value to risk reduction milestones, each capped at $500,000, rather than to unproven financial projections.",
-          "answerIndex": 3,
+          "answerIndex": 2,
           "explanation": "Berkus assigns value to risk reduction milestones, each capped at $500,000, rather than to unproven financial projections."
         }
       },
@@ -2529,14 +2509,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Venture Capital Method, what is the effect of raising the investor's target return multiple, holding exit value constant?",
           "options": [
+            "The company's exit value automatically increases.",
             "The investor must own more of the company today, so the valuation they will accept falls.",
             "The investor can accept a higher valuation because the return is larger.",
-            "Nothing changes, because exit value alone determines valuation.",
-            "The company's exit value automatically increases."
+            "Nothing changes, because exit value alone determines valuation."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "A higher return target requires a larger ownership share to hit the target proceeds, which means a smaller post-money and pre-money valuation for the same investment.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "A higher return target requires a larger ownership share to hit the target proceeds, which means a smaller post-money and pre-money valuation for the same investment."
         }
       },
@@ -2574,14 +2554,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a disciplined analyst exclude the Berkus pre-revenue ceiling from the agreement test of revenue-stage methods?",
           "options": [
-            "Because Berkus always produces the highest value.",
-            "Because Berkus is illegal for companies with employees.",
+            "Because applying a pre-revenue method to a revenue-stage company is a category error that would distort the comparison.",
             "Because averaging methods is never allowed.",
-            "Because applying a pre-revenue method to a revenue-stage company is a category error that would distort the comparison."
+            "Because Berkus always produces the highest value.",
+            "Because Berkus is illegal for companies with employees."
           ],
-          "answer": 3,
+          "answer": 0,
           "why": "Each method fits a specific stage. Mixing a pre-revenue ceiling into revenue-stage methods produces a blended number that is wrong for both.",
-          "answerIndex": 3,
+          "answerIndex": 0,
           "explanation": "Each method fits a specific stage. Mixing a pre-revenue ceiling into revenue-stage methods produces a blended number that is wrong for both."
         }
       }
@@ -2646,14 +2626,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is double-trigger acceleration the market norm instead of single-trigger?",
           "options": [
+            "It is required by every company law statute.",
             "It protects founders from being acquired and then fired to recapture their unvested stock, while still giving the acquirer retention leverage.",
             "It vests all shares the moment a term sheet is signed.",
-            "It removes the need for a vesting schedule entirely.",
-            "It is required by every company law statute."
+            "It removes the need for a vesting schedule entirely."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Double-trigger needs both a change of control and a qualifying termination, balancing founder protection against the acquirer's need to keep the team.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Double-trigger needs both a change of control and a qualifying termination, balancing founder protection against the acquirer's need to keep the team."
         }
       },
@@ -2692,13 +2672,13 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the chain-of-title problem with an assignment signed after the contributor started working?",
           "options": [
             "Assignments can only be signed on the first day of a quarter.",
-            "It creates a gap period in which the contributor may still own the work, unless the agreement also assigns past work retroactively.",
             "It automatically invalidates the company's incorporation.",
+            "It creates a gap period in which the contributor may still own the work, unless the agreement also assigns past work retroactively.",
             "It transfers ownership to the company's investors."
           ],
-          "answer": 1,
+          "answer": 2,
           "why": "Work created before the assignment may still be owned by the creator; a retroactive assignment clause closes that gap.",
-          "answerIndex": 1,
+          "answerIndex": 2,
           "explanation": "Work created before the assignment may still be owned by the creator; a retroactive assignment clause closes that gap."
         }
       },
@@ -2736,14 +2716,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the practical effect of a 75% special-resolution threshold on a holder with just over 25% of the voting shares?",
           "options": [
-            "It forces that holder to sell their shares.",
             "It gives that holder no additional rights.",
-            "It lets that holder block any special resolution, because the other holders cannot reach 75% without them.",
-            "It lets that holder pass resolutions alone."
+            "It lets that holder pass resolutions alone.",
+            "It forces that holder to sell their shares.",
+            "It lets that holder block any special resolution, because the other holders cannot reach 75% without them."
           ],
-          "answer": 2,
+          "answer": 3,
           "why": "If the others hold less than 75% in total, the minority holder is a blocking minority regardless of how the rest vote.",
-          "answerIndex": 2,
+          "answerIndex": 3,
           "explanation": "If the others hold less than 75% in total, the minority holder is a blocking minority regardless of how the rest vote."
         }
       },
@@ -2781,14 +2761,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a typical bad-leaver clause, at what price are the departing holder's vested shares repurchased?",
           "options": [
-            "At the highest valuation achieved in any funding round.",
             "At the lower of cost or fair market value.",
+            "At the highest valuation achieved in any funding round.",
             "At double fair market value.",
             "They are never repurchased."
           ],
-          "answer": 1,
+          "answer": 0,
           "why": "Bad-leaver clauses typically repurchase vested shares at the lower of original cost and fair market value, creating a strong deterrent against damaging departures.",
-          "answerIndex": 1,
+          "answerIndex": 0,
           "explanation": "Bad-leaver clauses typically repurchase vested shares at the lower of original cost and fair market value, creating a strong deterrent against damaging departures."
         }
       },
@@ -2826,14 +2806,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why should a founder run a governance checklist before approaching investors?",
           "options": [
-            "Because investors only invest in companies without legal documents.",
             "Because checklists replace the need for any lawyers.",
             "Because gaps are cheap to fix early and expensive or deal-threatening to fix during diligence.",
-            "Because it increases the founders' vesting percentage."
+            "Because it increases the founders' vesting percentage.",
+            "Because investors only invest in companies without legal documents."
           ],
-          "answer": 2,
+          "answer": 1,
           "why": "Missing assignments, vesting terms or SHA clauses are routine fixes before a round but can delay or reprice a deal when found during diligence.",
-          "answerIndex": 2,
+          "answerIndex": 1,
           "explanation": "Missing assignments, vesting terms or SHA clauses are routine fixes before a round but can delay or reprice a deal when found during diligence."
         }
       }
@@ -2898,14 +2878,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the baseline-to-target formula work for both 'increase users' and 'reduce churn' key results?",
           "options": [
-            "Because churn is not measurable.",
-            "Because the distance (target - baseline) changes sign automatically for lower-is-better metrics, keeping progress between 0 and 1.",
             "Because it ignores the current value.",
-            "Because lower-is-better metrics are not allowed in OKRs."
+            "Because lower-is-better metrics are not allowed in OKRs.",
+            "Because the distance (target - baseline) changes sign automatically for lower-is-better metrics, keeping progress between 0 and 1.",
+            "Because churn is not measurable."
           ],
-          "answer": 1,
+          "answer": 2,
           "why": "Dividing by (target - baseline) preserves direction: when the target is below the baseline, a falling value produces positive progress.",
-          "answerIndex": 1,
+          "answerIndex": 2,
           "explanation": "Dividing by (target - baseline) preserves direction: when the target is below the baseline, a falling value produces positive progress."
         }
       },
@@ -2943,14 +2923,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of these is an outcome rather than an output?",
           "options": [
-            "Launch the redesigned dashboard.",
             "Publish 12 blog posts.",
             "Increase the share of trial users who become paying customers from 9% to 14%.",
-            "Hold 30 customer interviews."
+            "Hold 30 customer interviews.",
+            "Launch the redesigned dashboard."
           ],
-          "answer": 2,
+          "answer": 1,
           "why": "The first, second and fourth describe activities completed; only the conversion change measures an effect on customer behaviour.",
-          "answerIndex": 2,
+          "answerIndex": 1,
           "explanation": "The first, second and fourth describe activities completed; only the conversion change measures an effect on customer behaviour."
         }
       },
@@ -2988,14 +2968,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is a score of 1.0 on an aspirational OKR considered a warning sign?",
           "options": [
-            "It means the team cheated.",
             "It suggests the goal was not ambitious enough to be a true stretch.",
-            "It means the OKR should be removed from the system.",
-            "It guarantees a promotion."
+            "It guarantees a promotion.",
+            "It means the team cheated.",
+            "It means the OKR should be removed from the system."
           ],
-          "answer": 1,
+          "answer": 0,
           "why": "Stretch goals are designed to land near 0.7; consistently hitting 1.0 indicates targets are being set too low.",
-          "answerIndex": 1,
+          "answerIndex": 0,
           "explanation": "Stretch goals are designed to land near 0.7; consistently hitting 1.0 indicates targets are being set too low."
         }
       },
@@ -3048,7 +3028,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "OKR System Health Control Tower: Focus, Quality, Alignment & Calibration",
         "say": [
           "Having examined how to write, grade and align OKRs, we can now step back and ask a question that most organizations neglect: is the OKR system itself healthy? It is entirely possible to run OKRs every quarter, produce impressive-looking documents, and still gain nothing from them. A system that has degenerated into ritual has characteristic symptoms: too many objectives, key results that are really tasks, teams working on things unconnected to the strategy, and scores that cluster suspiciously at either extreme. A health check turns these vague worries into specific, testable conditions that leadership can review each quarter.",
-          "The control tower evaluates six conditions. The first is focus: no more than five company objectives. The second is key result structure: every objective has between two and five key results, because one is too fragile and more than five dilutes attention. The third is outcome quality: at least seventy percent of key results should be outcomes rather than outputs. The fourth is alignment: no orphan objectives and no uncovered company goals. The fifth is calibration of ambition: the average aspirational score should fall between about zero point five five and zero point eight, showing that stretch goals are neither sandbagged nor wildly unrealistic. The sixth is delivery on commitments: at least ninety percent of committed OKRs should reach full score.",
+          "The control tower evaluates six conditions. The first is focus: no more than five company objectives. The second is key result structure: every objective has between two and five key results, because one is too fragile and more than five dilutes attention. The third is outcome quality: at least seventy percent of key results should be outcomes rather than outputs. The fourth is alignment: no orphan objectives and no uncovered company goals. The fifth is calibration of ambition: the average aspirational score should fall between about zero point five and zero point eight, showing that stretch goals are neither sandbagged nor wildly unrealistic. The sixth is delivery on commitments: at least ninety percent of committed OKRs should reach full score.",
           "These thresholds are not laws of nature, and a company can reasonably adjust them. What matters is that they are written down, measured, and discussed. The value of the exercise lies in turning the amorphous feeling that something is off with our OKRs into a specific finding such as our outcome ratio is forty percent. That finding suggests a specific action: run a workshop on rewriting output-style key results. Without measurement, organizations cycle through the same frustrations quarter after quarter, blaming the framework rather than their use of it. A quarterly retrospective that reviews this scorecard is the cheapest way to improve the system.",
           "Leadership behavior is the most powerful determinant of OKR health, and it deserves explicit mention. If executives write OKRs and then ignore them in day-to-day decisions, the organization draws the correct conclusion that the framework is decorative. If they refer to OKRs in staff meetings, cite them when saying no to requests, and openly share their own scores, including the misses, the framework acquires authority. Equally important is protecting psychological safety around the aspirational scores. A leader who criticizes a team for scoring zero point six on a stretch goal will receive modest goals next quarter. The control tower measures structure, but culture determines whether the structure produces honest numbers.",
           "The simulation below implements the six checks on a sample company and prints a pass or fail for each along with an overall verdict. As with the earlier governance gate, use it as a template. Modify one input at a time, such as raising the number of company objectives to seven or dropping the outcome ratio to fifty percent, and observe the status change. The aim is to leave this lesson with a working picture of an OKR practice that is deliberately small, measurable, and aligned, and with the habit of examining it critically every quarter rather than trusting that it works because it exists. Revisit this scorecard at every quarterly retrospective and keep the history, because a trend across several quarters tells you far more than any single reading, and it shows whether your OKR practice is genuinely improving or only repeating the same habits under a fresh set of labels."
@@ -3195,14 +3175,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If throughput is fixed, what is the only way to reduce average lead time according to Little's Law?",
           "options": [
-            "Increase the amount of work in progress.",
             "Reduce the amount of work in progress.",
+            "Increase the amount of work in progress.",
             "Add more approvals.",
             "Ignore the queue."
           ],
-          "answer": 1,
+          "answer": 0,
           "why": "Lead time = WIP / throughput, so with throughput fixed, lowering WIP is the only way to lower lead time.",
-          "answerIndex": 1,
+          "answerIndex": 0,
           "explanation": "Lead time = WIP / throughput, so with throughput fixed, lowering WIP is the only way to lower lead time."
         }
       },
@@ -3240,14 +3220,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does adding capacity to a non-bottleneck stage not increase system throughput?",
           "options": [
-            "Because non-bottleneck stages cannot be improved.",
-            "Because capacity is irrelevant to throughput.",
+            "Because only the first stage matters.",
             "Because the system can never produce more than the slowest stage allows, so extra output just piles up as WIP.",
-            "Because only the first stage matters."
+            "Because non-bottleneck stages cannot be improved.",
+            "Because capacity is irrelevant to throughput."
           ],
-          "answer": 2,
+          "answer": 1,
           "why": "System throughput equals the bottleneck's capacity; additional upstream output simply accumulates in front of the constraint.",
-          "answerIndex": 2,
+          "answerIndex": 1,
           "explanation": "System throughput equals the bottleneck's capacity; additional upstream output simply accumulates in front of the constraint."
         }
       },
@@ -3286,13 +3266,13 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why does average waiting time rise sharply as utilisation approaches 100%?",
           "options": [
             "Because workers become tired at high utilisation.",
-            "Because time in system is proportional to 1/(service rate - arrival rate), which grows without bound as the two converge.",
             "Because queues are always the same length.",
+            "Because time in system is proportional to 1/(service rate - arrival rate), which grows without bound as the two converge.",
             "Because arrival rates fall as utilisation rises."
           ],
-          "answer": 1,
+          "answer": 2,
           "why": "As arrivals approach capacity the denominator shrinks toward zero, so small increases in load cause large increases in waiting time.",
-          "answerIndex": 1,
+          "answerIndex": 2,
           "explanation": "As arrivals approach capacity the denominator shrinks toward zero, so small increases in load cause large increases in waiting time."
         }
       },
@@ -3382,15 +3362,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines synthesize_valuation computing DCF, ARR multiples, Berkus scores, and VC method pre-money valuation."
+            "note": "Defines the function `synthesize_valuation`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a 5-year SaaS cash flow forecast discounted at 15% WACC and blends it with market multiples."
-          },
-          {
-            "line": 3,
-            "note": "Prints the itemized valuation breakdown and final blended enterprise valuation."
+            "line": 61,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase vc_required_irr from 0.35 to 0.45. Observe how the higher hurdle return reduces pre_money_vc and pulls down the blended valuation.",
@@ -3422,29 +3398,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements audit_equity_and_vesting calculating vested, unvested, and forfeited shares under 48-month schedules with 12-month cliffs."
-          },
-          {
-            "line": 2,
-            "note": "Simulates Founder COO departure at month 18 as a good leaver, cancelling 1,562,500 unvested shares."
-          },
-          {
-            "line": 3,
-            "note": "Prints individual founder share grants, vested allocations, retained equity, and pool forfeitures."
+            "note": "Defines the function `audit_equity_and_vesting`."
           }
         ],
         "tryIt": "Change leaver_status to 'bad_leaver'. Observe how all shares (including vested) are forfeited or repurchased at nominal par value ($0.0001).",
         "check": {
           "question": "What happens to unvested shares when a co-founder departs a startup as a 'good leaver' 18 months into a standard 4-year vesting agreement with a 1-year cliff?",
           "options": [
-            "The unvested shares (62.5% of the grant) are forfeited or cancelled back to the company pool, while the founder retains their 37.5% vested equity.",
+            "The unvested shares are converted into cash debt at high interest rates.",
             "The departing founder receives 100% of their equity immediately under accelerated vesting.",
             "The unvested shares are given directly to angel investors without board approval.",
-            "The unvested shares are converted into cash debt at high interest rates."
+            "The unvested shares (62.5% of the grant) are forfeited or cancelled back to the company pool, while the founder retains their 37.5% vested equity."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Good leavers retain accrued vested equity (18/48 = 37.5%), while unvested equity (62.5%) is cancelled back to the option pool or repurchased at nominal cost.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Good leavers retain accrued vested equity (18/48 = 37.5%), while unvested equity (62.5%) is cancelled back to the option pool or repurchased at nominal cost."
         }
       },
@@ -3463,29 +3431,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines evaluate_okr_matrix calculating normalized progress scores across weighted multi-tier objectives."
+            "note": "Defines the function `evaluate_okr_matrix`."
           },
           {
-            "line": 2,
-            "note": "Configures Q3 enterprise objectives across monetisation, sales cycle acceleration, and platform resilience."
-          },
-          {
-            "line": 3,
-            "note": "Evaluates objectives, reporting individual pillar scores and overall composite enterprise health."
+            "line": 64,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Decrease the current ARR from 3.9 to 2.2 in the first objective. Observe how the composite score drops into the Yellow or Red zone.",
         "check": {
           "question": "Under the institutional Google/Intel OKR grading rubric, what does an average objective score between 0.70 and 1.00 signify?",
           "options": [
-            "Green Zone: Healthy, ambitious stretch performance indicating that difficult targets were successfully fulfilled.",
             "Failure: Any score under 1.00 represents poor execution requiring executive dismissal.",
             "Audit Warning: The score indicates that targets were sandbagged and too easy.",
+            "Green Zone: Healthy, ambitious stretch performance indicating that difficult targets were successfully fulfilled.",
             "Suspension: Departmental budgets are automatically frozen until 100% is reached."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "In aspirational OKR methodology, 0.70 to 1.00 is the Green zone, reflecting aggressive stretch target achievement without sandbagging.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "In aspirational OKR methodology, 0.70 to 1.00 is the Green zone, reflecting aggressive stretch target achievement without sandbagging."
         }
       },
@@ -3504,29 +3468,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements optimize_operational_flow identifying process bottlenecks and deriving WIP limits via Little's Law (L = lambda * W)."
+            "note": "Defines the function `optimize_operational_flow`."
           },
           {
-            "line": 2,
-            "note": "Configures a 5-stage enterprise fulfillment pipeline with touch times and daily capacities."
-          },
-          {
-            "line": 3,
-            "note": "Prints the identified bottleneck, operating throughput, optimal WIP cap, lead time, and Process Cycle Efficiency."
+            "line": 35,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change desired_lead_time_days to 1.5. Notice how the recommended WIP cap drops proportionally from 85 to 51 units.",
         "check": {
           "question": "According to Little's Law (L = lambda * W), how can an operations manager cut average customer lead time (W) in half if system throughput (lambda) remains constant?",
           "options": [
+            "By increasing work-in-progress inventory to keep workers busy.",
             "By capping allowable Work-in-Progress (L) at half its current level across the pipeline.",
             "By hiring twice as many workers at non-bottleneck stations.",
-            "By eliminating value-adding touch time completely.",
-            "By increasing work-in-progress inventory to keep workers busy."
+            "By eliminating value-adding touch time completely."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Since W = L / lambda, holding throughput (lambda) constant means lead time (W) is directly proportional to WIP (L). Halving WIP halves lead time.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Since W = L / lambda, holding throughput (lambda) constant means lead time (W) is directly proportional to WIP (L). Halving WIP halves lead time."
         }
       },
@@ -3545,15 +3505,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_milestone3_audit checking Gate 1 (Valuation), Gate 2 (Equity), Gate 3 (OKRs), Gate 4 (Flow)."
+            "note": "Defines the function `master_milestone3_audit`."
           },
           {
-            "line": 2,
-            "note": "Sets up benchmark outputs from the four foundational models."
-          },
-          {
-            "line": 3,
-            "note": "Executes grand capstone audit and outputs individual gate pass/fail flags and final certification status."
+            "line": 51,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set flow_sample['implied_lead_time_days'] = 4.5. Notice how Gate 4 fails and certification status flips to failure.",
@@ -3613,29 +3569,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines audit_timwoods_waste calculating annual loaded labor costs across the 8 Lean waste categories."
+            "note": "Defines the function `audit_timwoods_waste`."
           },
           {
-            "line": 2,
-            "note": "Configures an enterprise observation log across transport, inventory, motion, waiting, overproduction, overprocessing, defects, and skills."
-          },
-          {
-            "line": 3,
-            "note": "Executes audit, reporting total annual waste cost and ranking waste categories by financial severity."
+            "line": 32,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Double the hours_lost_per_week for 'Waiting'. Observe how total annual waste jumps and waiting cements its position as the dominant bottleneck.",
         "check": {
           "question": "Which category of the Lean TIMWOODS taxonomy represents senior engineers or specialists performing low-value manual administrative tasks?",
           "options": [
-            "Skills (Underutilizing human talent and domain capabilities).",
             "Transport (Physical shipment of equipment).",
+            "Skills (Underutilizing human talent and domain capabilities).",
             "Overproduction (Building excess features).",
             "Motion (Ergonomic wrist strain)."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The 'Skills' waste category reflects the misuse or underutilization of specialized employee talents on routine or mismatched manual work.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The 'Skills' waste category reflects the misuse or underutilization of specialized employee talents on routine or mismatched manual work."
         }
       },
@@ -3644,10 +3596,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "say": [
           "Having established a rigorous taxonomy for identifying operational waste, organizations require a structured, repeatable methodology to diagnose root causes and implement permanent operational improvements. In industrial engineering and modern technology operations, the global standard for data-driven problem solving is Six Sigma's DMAIC framework: Define, Measure, Analyze, Improve, and Control. Originated by Motorola in the 1980s and popularized by Jack Welch at General Electric, DMAIC provides an unyielding scientific roadmap that prevents management teams from jumping to premature conclusions, chasing cosmetic symptoms, or implementing superficial Band-Aids that fail to resolve underlying systemic flaws.",
           "The first phase, Define, establishes the project charter, articulates the problem statement in quantifiable financial terms, identifies the Voice of the Customer (VOC), and determines the Critical-to-Quality (CTQ) parameters. A vague objective like 'improve customer service' is unacceptable in Six Sigma; instead, the team defines: 'Reduce enterprise onboarding cycle time from twenty-eight calendar days to under five business days, eliminating fifty thousand dollars in monthly deferred revenue realization and preventing account cancellation.' The second phase, Measure, collects empirical baseline data to establish current process capability. Teams map the value stream, conduct measurement system analysis to ensure data integrity, and measure defect frequencies across customer cohorts. Without accurate measurement, subsequent analysis is merely speculation and personal opinion.",
-          "The third phase, Analyze, employs statistical tools to identify the fundamental root causes of process defects and variation. Teams construct Ishikawa cause-and-effect fishbone diagrams, conduct Five-Why root-cause interrogations, and execute multivariable regression or ANOVA testing to isolate the vital few variables ($X's$) that dictate process output ($Y$). This statistical rigor separates genuine causative drivers from deceptive correlational noise. The fourth phase, Improve, develops, pilots, and validates high-impact operational solutions. Rather than rolling out unverified changes across the entire enterprise, the team runs rapid controlled experiments, measures output changes, and refines automation blueprints until performance meets the target specification, verifying that solutions address root causes without creating secondary bottlenecks.",
+          "The third phase, Analyze, employs statistical tools to identify the fundamental root causes of process defects and variation. Teams construct Ishikawa cause-and-effect fishbone diagrams, conduct Five-Why root-cause interrogations, and execute multivariable regression or ANOVA testing to isolate the vital few variables ($X's$) that dictate process output (Y). This statistical rigor separates genuine causative drivers from deceptive correlational noise. The fourth phase, Improve, develops, pilots, and validates high-impact operational solutions. Rather than rolling out unverified changes across the entire enterprise, the team runs rapid controlled experiments, measures output changes, and refines automation blueprints until performance meets the target specification, verifying that solutions address root causes without creating secondary bottlenecks.",
           "The final and most crucial phase is Control. Operational improvements frequently experience regression: after a project team disbands, employees gradually revert to old habits, and process metrics deteriorate back to baseline. The Control phase institutes mistake-proofing mechanisms (Poka-Yoke), standard operating procedures, real-time telemetry dashboards, and Statistical Process Control charts. Furthermore, every DMAIC phase requires explicit sponsor sign-off and validated financial benefit verification before passing through executive tollgates. In our Python DMAIC Milestone Tracker, we model the five sequential phase gates, confirming that all empirical deliverables and sponsor approvals are satisfied before conferring organizational certification. This rigorous operational discipline ensures that enterprise optimizations remain permanently embedded in standard operating procedure.",
           "Executing DMAIC within modern digital enterprises aligns engineering squads, operations personnel, and executive sponsors behind shared, measurable performance metrics. By enforcing tollgate accountability, executive sponsors prevent project scope creep and ensure capital investments deliver validated return on investment. Teams avoid the common failure pattern of deploying expensive enterprise software to automate flawed, broken processes. Instead, DMAIC ensures that workflows are simplified, verified, and stabilized prior to automation. Over successive execution cycles, organizations develop an institutional capability for continuous improvement that compounds operational advantages over time, widening competitive moats against market challengers.",
-          "To successfully operationalize DMAIC within high-velocity software engineering, DevOps, and customer delivery environments, leading technology firms establish dedicated operational excellence centers of excellence. These operational teams provide project coaching, advanced statistical modeling support, and executive tollgate governance across functional departments. During weekly project standups, project leaders track critical input metrics ($X's$) alongside high-level customer-facing outcomes ($Y$), employing automated data pipelines to measure cycle times and error rates continuously. When an experimental improvement fails to achieve expected efficiency gains during pilot deployment, the team executes rapid five-why root cause retrospectives, modifying solution architectures before broad enterprise rollout. This disciplined, iterative experimentation cycle eliminates the risk of deploying broken workflows, ensuring that every operational change contributes directly toward strategic customer retention and margin expansion milestones."
+          "To successfully operationalize DMAIC within high-velocity software engineering, DevOps, and customer delivery environments, leading technology firms establish dedicated operational excellence centers of excellence. These operational teams provide project coaching, advanced statistical modeling support, and executive tollgate governance across functional departments. During weekly project standups, project leaders track critical input metrics ($X's$) alongside high-level customer-facing outcomes (Y), employing automated data pipelines to measure cycle times and error rates continuously. When an experimental improvement fails to achieve expected efficiency gains during pilot deployment, the team executes rapid five-why root cause retrospectives, modifying solution architectures before broad enterprise rollout. This disciplined, iterative experimentation cycle eliminates the risk of deploying broken workflows, ensuring that every operational change contributes directly toward strategic customer retention and margin expansion milestones."
         ],
         "example": "A fintech scaleup executes a DMAIC project to reduce onboarding cycle times, requiring formal sponsor sign-off and validated financial benefit verification at each of the five phase tollgates before deploying enterprise-wide automation.",
         "code": "def execute_dmaic_milestone_tracker(phase_gates):\n    dmaic_phases = ['Define', 'Measure', 'Analyze', 'Improve', 'Control']\n    audit_results = {}\n    all_gates_cleared = True\n\n    for phase in dmaic_phases:\n        gate = phase_gates.get(phase, {})\n        deliverables_met = gate.get('deliverables_verified', False)\n        sign_off = gate.get('sponsor_signoff', False)\n        metric_gain = gate.get('quantified_benefit', 0.0)\n\n        passed = deliverables_met and sign_off\n        if not passed:\n            all_gates_cleared = False\n\n        audit_results[phase] = {\n            'status': 'CLEARED' if passed else 'BLOCKED',\n            'deliverables_verified': deliverables_met,\n            'sponsor_signoff': sign_off,\n            'benefit': metric_gain\n        }\n\n    status = 'DMAIC_IMPROVEMENT_CYCLE_VALIDATED' if all_gates_cleared else 'DMAIC_PHASE_GATE_DEFICIT'\n    return audit_results, status\n\ngates_input = {\n    'Define': {'deliverables_verified': True, 'sponsor_signoff': True, 'quantified_benefit': 0.0},\n    'Measure': {'deliverables_verified': True, 'sponsor_signoff': True, 'quantified_benefit': 15000.0},\n    'Analyze': {'deliverables_verified': True, 'sponsor_signoff': True, 'quantified_benefit': 25000.0},\n    'Improve': {'deliverables_verified': True, 'sponsor_signoff': True, 'quantified_benefit': 95000.0},\n    'Control': {'deliverables_verified': True, 'sponsor_signoff': True, 'quantified_benefit': 120000.0}\n}\n\ndmaic_audit, dmaic_status = execute_dmaic_milestone_tracker(gates_input)\nfor phase, data in dmaic_audit.items():\n    print(f\"Phase [{phase:<7}] : {data['status']} | Verified={data['deliverables_verified']} | Signoff={data['sponsor_signoff']}\")\nprint(f\"Overall DMAIC Certification Status: {dmaic_status}\")\n",
@@ -3655,71 +3607,63 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements execute_dmaic_milestone_tracker evaluating phase gate deliverables and sponsor sign-offs across Define, Measure, Analyze, Improve, and Control."
+            "note": "Defines the function `execute_dmaic_milestone_tracker`."
           },
           {
-            "line": 2,
-            "note": "Simulates a completed 5-phase project tracking incremental financial benefit realization."
-          },
-          {
-            "line": 3,
-            "note": "Reports individual phase clearance statuses and overall project validation."
+            "line": 37,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set 'sponsor_signoff' to False in the 'Improve' phase. Observe how the project status flips to DMAIC_PHASE_GATE_DEFICIT.",
         "check": {
           "question": "What is the primary objective of the 'Control' phase in the Six Sigma DMAIC methodology?",
           "options": [
-            "To establish mistake-proofing (Poka-Yoke), telemetry, and control charts that prevent operational regression back to baseline.",
             "To brainstorm initial project ideas without data.",
             "To conduct marketing campaigns for new product releases.",
+            "To establish mistake-proofing (Poka-Yoke), telemetry, and control charts that prevent operational regression back to baseline.",
             "To fire employees responsible for defects."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "The Control phase establishes systems, telemetry, and procedures to sustain gains and prevent processes from deteriorating back to old habits.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "The Control phase establishes systems, telemetry, and procedures to sustain gains and prevent processes from deteriorating back to old habits."
         }
       },
       {
         "title": "Statistical Process Capability: Cp, Cpk & The 4-Sigma Benchmark (Cpk >= 1.33)",
         "say": [
-          "A central premise of Six Sigma quality engineering is that customer satisfaction and operational efficiency depend not merely on average performance, but on the management of statistical variation. A payment gateway that processes transactions in an average of two hundred milliseconds sounds acceptable; however, if high variance means ten percent of transactions take eight seconds, thousands of customers will abandon their shopping carts during checkout. To quantitatively evaluate whether a business process can reliably meet customer expectations, industrial engineers and operations managers calculate the Process Capability Indices: $C_p$ and $C_{pk}$.",
-          "Process capability measures the relationship between the natural dispersion of a process (represented by six standard deviations, $6\\sigma$) and the allowable customer tolerance spread, defined by the Upper Specification Limit (USL) and Lower Specification Limit (LSL). The potential capability index, $C_p$, is calculated as $(USL - LSL) / (6\\sigma)$. It measures the maximum capability the process could achieve if it were perfectly centered between the specification limits. However, real-world business processes are rarely centered; tool wear, operator fatigue, server thermal throttling, and market shifts introduce drift. Therefore, management must evaluate the actual capability index, $C_{pk}$, defined as the minimum of the upper capability $C_{pu} = (USL - \\mu) / (3\\sigma)$ and lower capability $C_{pl} = (\\mu - LSL) / (3\\sigma)$, where $\\mu$ represents the process mean.",
-          "In institutional quality control, a $C_{pk}$ of 1.00 represents 3-Sigma performance, producing approximately 2,700 defects per million opportunities (DPMO). For mission-critical commercial operations, modern enterprises mandate a minimum $C_{pk}$ threshold of 1.33, representing 4-Sigma quality with fewer than 63 defects per million opportunities. Elite manufacturing and mission-critical cloud infrastructure target a $C_{pk}$ of 1.67 or 2.00, representing true Six Sigma excellence with a defect rate of 3.4 parts per million opportunities. When $C_p$ is significantly higher than $C_{pk}$, it reveals that the process possesses low inherent variation but is suffering from centering error, meaning leadership can achieve massive quality gains simply by adjusting the process mean without re-engineering the entire system.",
-          "In our Python capability script, we evaluate a production dataset of API latency measurements bounded by an SLA specification spread between 60ms and 120ms. The algorithm calculates the empirical sample mean, unbiased standard deviation, potential capability $C_p$, and actual capability $C_{pk}$. The calculated $C_{pk}$ reaches 1.48, decisively surpassing the institutional 1.33 benchmark. This proves that the technical infrastructure possesses the statistical stability required to maintain customer SLAs without risking costly contract penalty breaches or executive escalation, providing institutional assurance to enterprise clients that platform performance will remain predictable under peak load conditions.",
-          "Furthermore, tracking process capability indices over time enables engineering managers to practice predictive capacity planning. As transaction volumes increase, degrading $C_{pk}$ values serve as an early-warning signal that infrastructure components are approaching saturation long before customer-facing outages occur. Engineering leadership can proactively provision additional server clusters, optimize database queries, or refactor synchronous code blocks into asynchronous event-driven queues. By institutionalizing $C_{pk}$ monitoring across core operational pipelines, technology enterprises ensure that rapid customer acquisition does not compromise platform reliability or violate enterprise service level agreements.",
-          "In modern distributed cloud environments and microservice architectures, process capability indices provide the foundational quantitative metrics for engineering robust Service Level Objectives (SLOs) and customer Service Level Agreements (SLAs). While average latency metrics often mask severe performance degradation experienced by edge cohorts, calculating $C_{pk}$ across specific percentile distributions (such as p95 and p99 request latencies) reveals whether system throughput remains reliable under volatile traffic spikes. When engineering teams observe that potential capability $C_p$ remains high while actual capability $C_{pk}$ degrades toward unity, it provides definitive empirical proof that the platform is suffering from centering offset rather than excessive variance. Engineers can immediately prioritize database query indexing, memory caching layers, or load-balancing realignment to re-center process distributions, restoring 4-Sigma quality compliance with minimal capital expenditure."
+          "A central premise of Six Sigma quality engineering is that customer satisfaction and operational efficiency depend not merely on average performance, but on the management of statistical variation. A payment gateway that processes transactions in an average of two hundred milliseconds sounds acceptable; however, if high variance means ten percent of transactions take eight seconds, thousands of customers will abandon their shopping carts during checkout. To quantitatively evaluate whether a business process can reliably meet customer expectations, industrial engineers and operations managers calculate the Process Capability Indices: C p and C pk.",
+          "Process capability measures the relationship between the natural dispersion of a process (represented by six standard deviations, 6 sigma) and the allowable customer tolerance spread, defined by the Upper Specification Limit (USL) and Lower Specification Limit (LSL). The potential capability index, C p, is calculated as (USL - LSL) / (6 sigma ). It measures the maximum capability the process could achieve if it were perfectly centered between the specification limits. However, real-world business processes are rarely centered; tool wear, operator fatigue, server thermal throttling, and market shifts introduce drift. Therefore, management must evaluate the actual capability index, C pk, defined as the minimum of the upper capability C pu = (USL - mu ) / (3 sigma ) and lower capability C pl = ( mu - LSL) / (3 sigma ), where mu represents the process mean.",
+          "In institutional quality control, a C pk of 1.00 represents 3-Sigma performance, producing approximately 2,700 defects per million opportunities (DPMO). For mission-critical commercial operations, modern enterprises mandate a minimum C pk threshold of 1.33, representing 4-Sigma quality with fewer than 63 defects per million opportunities. Elite manufacturing and mission-critical cloud infrastructure target a C pk of 1.67 or 2.00, representing true Six Sigma excellence with a defect rate of 3.4 parts per million opportunities. When C p is significantly higher than C pk, it reveals that the process possesses low inherent variation but is suffering from centering error, meaning leadership can achieve massive quality gains simply by adjusting the process mean without re-engineering the entire system.",
+          "In our Python capability script, we evaluate a production dataset of API latency measurements bounded by an SLA specification spread between 60ms and 120ms. The algorithm calculates the empirical sample mean, unbiased standard deviation, potential capability C p, and actual capability C pk. The calculated C pk reaches 1.48, decisively surpassing the institutional 1.33 benchmark. This proves that the technical infrastructure possesses the statistical stability required to maintain customer SLAs without risking costly contract penalty breaches or executive escalation, providing institutional assurance to enterprise clients that platform performance will remain predictable under peak load conditions.",
+          "Furthermore, tracking process capability indices over time enables engineering managers to practice predictive capacity planning. As transaction volumes increase, degrading C pk values serve as an early-warning signal that infrastructure components are approaching saturation long before customer-facing outages occur. Engineering leadership can proactively provision additional server clusters, optimize database queries, or refactor synchronous code blocks into asynchronous event-driven queues. By institutionalizing C pk monitoring across core operational pipelines, technology enterprises ensure that rapid customer acquisition does not compromise platform reliability or violate enterprise service level agreements.",
+          "In modern distributed cloud environments and microservice architectures, process capability indices provide the foundational quantitative metrics for engineering robust Service Level Objectives (SLOs) and customer Service Level Agreements (SLAs). While average latency metrics often mask severe performance degradation experienced by edge cohorts, calculating C pk across specific percentile distributions (such as p95 and p99 request latencies) reveals whether system throughput remains reliable under volatile traffic spikes. When engineering teams observe that potential capability C p remains high while actual capability C pk degrades toward unity, it provides definitive empirical proof that the platform is suffering from centering offset rather than excessive variance. Engineers can immediately prioritize database query indexing, memory caching layers, or load-balancing realignment to re-center process distributions, restoring 4-Sigma quality compliance with minimal capital expenditure."
         ],
         "example": "A cloud infrastructure engineering team measures API latencies under a 60ms-120ms SLA, calculating a Cpk of 1.48 to confirm that the service meets the institutional 4-Sigma quality threshold (Cpk >= 1.33).",
         "code": "import math\n\ndef calculate_process_capability(samples, usl, lsl):\n    n = len(samples)\n    mean = sum(samples) / n\n    variance = sum((x - mean) ** 2 for x in samples) / (n - 1)\n    std_dev = math.sqrt(variance)\n\n    # Cp: Potential capability (assumes centering)\n    cp = (usl - lsl) / (6 * std_dev)\n\n    # Cpk: Actual capability (accounts for off-centering)\n    cpu = (usl - mean) / (3 * std_dev)\n    cpl = (mean - lsl) / (3 * std_dev)\n    cpk = min(cpu, cpl)\n\n    # Benchmark: Cpk >= 1.33 is institutional 4-Sigma capability\n    is_capable = cpk >= 1.33\n    sigma_level = 3 * cpk + 1.5  # Typical industry 1.5-sigma shift heuristic\n\n    return {\n        'mean': round(mean, 3),\n        'std_dev': round(std_dev, 3),\n        'cp': round(cp, 3),\n        'cpk': round(cpk, 3),\n        'sigma_level': round(sigma_level, 2),\n        'is_capable_4sigma': is_capable\n    }\n\n# Sample measurements of API latency in milliseconds: SLA target [50ms, 150ms]\napi_latencies = [\n    88.2, 92.4, 85.1, 91.0, 89.5, 94.2, 87.8, 90.1, 93.4, 86.9,\n    91.5, 89.0, 90.8, 88.7, 92.1, 89.9, 87.3, 91.8, 90.4, 88.9\n]\n\ncap_res = calculate_process_capability(api_latencies, usl=120.0, lsl=60.0)\nprint(f\"Process Mean      : {cap_res['mean']} ms\")\nprint(f\"Standard Deviation: {cap_res['std_dev']} ms\")\nprint(f\"Cp Index          : {cap_res['cp']} (Potential)\")\nprint(f\"Cpk Index         : {cap_res['cpk']} (Actual)\")\nprint(f\"Estimated Sigma   : {cap_res['sigma_level']}σ\")\nprint(f\"4-Sigma Compliant : {cap_res['is_capable_4sigma']}\")\n",
         "output": "Process Mean      : 89.95 ms\nStandard Deviation: 2.292 ms\nCp Index          : 4.364 (Potential)\nCpk Index         : 4.357 (Actual)\nEstimated Sigma   : 14.57σ\n4-Sigma Compliant : True\n",
         "codeNotes": [
           {
-            "line": 1,
-            "note": "Defines calculate_process_capability computing sample mean, standard deviation, Cp (potential), and Cpk (actual) capability."
-          },
-          {
-            "line": 2,
-            "note": "Configures a sample of 20 API latency measurements evaluated against Upper (120ms) and Lower (60ms) Specification Limits."
-          },
-          {
             "line": 3,
-            "note": "Computes and prints process statistics, capability indices, and 4-Sigma compliance status."
+            "note": "Defines the function `calculate_process_capability`."
+          },
+          {
+            "line": 37,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase the standard deviation of latency measurements by adding outliers like 118.0 and 122.0. Observe how Cpk drops below 1.33.",
         "check": {
           "question": "Why is Cpk considered a more accurate reflection of real-world process performance than Cp?",
           "options": [
-            "Because Cpk accounts for process centering between specification limits, whereas Cp assumes the process is perfectly centered.",
             "Because Cpk ignores standard deviation completely.",
             "Because Cp only applies to physical manufacturing, while Cpk is exclusive to software.",
-            "Because Cpk is always exactly double Cp."
+            "Because Cpk is always exactly double Cp.",
+            "Because Cpk accounts for process centering between specification limits, whereas Cp assumes the process is perfectly centered."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Cp only measures the width of process dispersion relative to specification width. Cpk factors in process drift and shift away from the center.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Cp only measures the width of process dispersion relative to specification width. Cpk factors in process drift and shift away from the center."
         }
       },
@@ -3727,8 +3671,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Statistical Process Control (SPC): X-bar & R Charts & Stability Detection",
         "say": [
           "Calculating process capability is essential, but operational leaders also require real-time telemetry to monitor processes during live execution and detect emerging abnormalities before defects are produced. This discipline is known as Statistical Process Control (SPC), pioneered by Walter Shewhart at Bell Laboratories. SPC differentiates between two fundamental types of process variation: common cause variation and special cause variation. Common cause variation represents the inherent, background noise naturally present in any stable system, such as minor ambient temperature changes or slight network jitter. Special cause variation represents external, assignable disturbances, such as a failing server cooling fan, a corrupted database index, or an untrained substitute employee.",
-          "Attempting to adjust a process in response to common cause variation is known as 'tampering,' which Deming proved mathematically actually increases total system variation. Conversely, failing to respond to special cause variation allows defects to multiply unchecked. To navigate this balance, Shewhart engineered Control Charts, most notably the $X$-bar and $R$ chart (Shewhart variables chart). The $X$-bar chart tracks subgroup averages over time, bounded by a Center Line (the grand mean $\\bar{\\bar{X}}$), an Upper Control Limit ($UCL = \\bar{\\bar{X}} + A_2 \\bar{R}$), and a Lower Control Limit ($LCL = \\bar{\\bar{X}} - A_2 \\bar{R}$), where $\\bar{R}$ represents the average range across subgroups and $A_2$ is a sample-size weighting constant ($0.577$ for sample size $n=5$).",
-          "Unlike customer specification limits ($USL$ and $LSL$), which represent what management or customers desire, control limits ($UCL$ and $LCL$) represent what the process is actually delivering under statistical equilibrium. A process is defined as in statistical control if all subgroup averages fall strictly within the control boundaries and exhibit random dispersion without non-random trends, runs, or cycles. If a single point breaches the upper or lower control limit, Western Electric Rule 1 is triggered, indicating that a special cause has entered the system and requiring immediate root-cause intervention before defective output reaches downstream customers.",
+          "Attempting to adjust a process in response to common cause variation is known as 'tampering,' which Deming proved mathematically actually increases total system variation. Conversely, failing to respond to special cause variation allows defects to multiply unchecked. To navigate this balance, Shewhart engineered Control Charts, most notably the X-bar and R chart (Shewhart variables chart). The X-bar chart tracks subgroup averages over time, bounded by a Center Line (the grand mean \\bar\\barX), an Upper Control Limit (UCL = \\bar\\barX + A 2 \\barR), and a Lower Control Limit (LCL = \\bar\\barX - A 2 \\barR), where \\barR represents the average range across subgroups and A 2 is a sample-size weighting constant ($0.577$ for sample size $n=5$).",
+          "Unlike customer specification limits (USL and LSL), which represent what management or customers desire, control limits (UCL and LCL) represent what the process is actually delivering under statistical equilibrium. A process is defined as in statistical control if all subgroup averages fall strictly within the control boundaries and exhibit random dispersion without non-random trends, runs, or cycles. If a single point breaches the upper or lower control limit, Western Electric Rule 1 is triggered, indicating that a special cause has entered the system and requiring immediate root-cause intervention before defective output reaches downstream customers.",
           "In our Python SPC implementation, we simulate five consecutive manufacturing and transaction processing batches. The algorithm calculates subgroup averages, range dispersions, control boundaries, and evaluates points against control limits. All subgroup means remain securely within control boundaries, confirming that the process is operating in a state of statistical control. By establishing automated SPC monitoring, operations managers transition from reactive post-mortem inspection to proactive, real-time quality assurance, ensuring operational anomalies are caught and remediated before they impact end-users or disrupt customer fulfillment.",
           "Integrating automated Statistical Process Control directly into continuous integration, deployment pipelines, and digital transaction monitoring transforms enterprise governance. Rather than waiting for monthly reporting cycles or customer support complaints to identify emerging regressions, automated alerting systems trigger instant containment protocols the moment a control limit is breached. DevOps and operations teams can execute automated rollbacks, isolate suspect transaction batches, or route traffic to redundant failover clusters. This proactive statistical governance establishes an unassailable foundation of operational integrity that inspires confidence among enterprise customers, regulatory auditors, and institutional investors.",
           "Statistical Process Control charts also serve as an indispensable governance tool for executive leadership and board-level risk committees. When operating performance is evaluated purely through static quarterly averages or monthly executive slide decks, management frequently falls victim to the fallacy of treating natural system noise as actionable trends, triggering costly reorganizations or redundant process modifications that destabilize operational cadence. By establishing Shewhart X-bar and R control boundaries, leadership clearly separates common cause variation—which requires fundamental system redesign—from special cause variation, which warrants immediate localized investigation. This statistical maturity eliminates management tampering, protects engineering focus, and ensures that executive interventions are reserved strictly for genuine systemic anomalies that threaten business continuity."
@@ -3739,15 +3683,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements spc_control_chart_audit calculating subgroup means, range averages, control limits (UCL/LCL using A2 factor), and Western Electric Rule 1 breaches."
+            "note": "Defines the function `spc_control_chart_audit`."
           },
           {
-            "line": 2,
-            "note": "Evaluates five operational batch samples against specification limits."
-          },
-          {
-            "line": 3,
-            "note": "Prints control boundaries and confirms whether the system is in statistical control."
+            "line": 38,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Add an outlier point like 11.2 to the first batch. Observe how the subgroup mean breaches UCL, flagging an out-of-control violation.",
@@ -3769,8 +3709,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Master Six Sigma Quality Control Tower & Enterprise Accreditation",
         "say": [
           "We conclude Day 16 by uniting all four operational frameworks into our Master Six Sigma Quality Control Tower. In high-growth entrepreneurship, operational excellence is not an academic exercise; it is the vital bridge that transforms an innovative product concept into a scalable, cash-flow-positive enterprise. Venture capital investors conducting Series B and C diligence scrutinize operational resilience: they examine whether customer onboarding can double without linear headcount expansion, whether API and fulfillment error rates breach customer SLAs, and whether management possesses data-driven mechanisms to govern quality across expanding regional markets.",
-          "Our Master Six Sigma Quality Control Tower executes an automated four-gate accreditation audit. Gate 1 evaluates TIMWOODS Waste Identification, confirming that operational waste is transparently tracked, categorized, and quantified across labor-cost dimensions. Gate 2 verifies DMAIC Structured Governance, confirming that continuous improvement initiatives follow the sequential tollgate discipline with verified deliverables and sponsor sign-offs. Gate 3 enforces Process Capability Compliance, validating that the empirical $C_{pk}$ index meets or exceeds the institutional 1.33 benchmark (4-Sigma quality floor). Finally, Gate 4 inspects Statistical Process Control Stability, verifying that active processes operate in a state of statistical control without special-cause breaches.",
-          "When organizations achieve operational certification across these four dimensions, the benefits compound across the entire business model. Defect reduction directly slashes customer support tickets and eliminates churn, expanding customer lifetime value ($LTV$) and accelerating net revenue retention ($NRR$). Streamlining processes via TIMWOODS eliminates wasteful touch points and minimizes queuing delays, driving down customer acquisition payback periods and unlocking working capital. Furthermore, standardizing quality provides the predictable operational baseline required to execute aggressive Go-to-Market expansion without fear of product breakdown or operational gridlock.",
+          "Our Master Six Sigma Quality Control Tower executes an automated four-gate accreditation audit. Gate 1 evaluates TIMWOODS Waste Identification, confirming that operational waste is transparently tracked, categorized, and quantified across labor-cost dimensions. Gate 2 verifies DMAIC Structured Governance, confirming that continuous improvement initiatives follow the sequential tollgate discipline with verified deliverables and sponsor sign-offs. Gate 3 enforces Process Capability Compliance, validating that the empirical C pk index meets or exceeds the institutional 1.33 benchmark (4-Sigma quality floor). Finally, Gate 4 inspects Statistical Process Control Stability, verifying that active processes operate in a state of statistical control without special-cause breaches.",
+          "When organizations achieve operational certification across these four dimensions, the benefits compound across the entire business model. Defect reduction directly slashes customer support tickets and eliminates churn, expanding customer lifetime value (LTV) and accelerating net revenue retention (NRR). Streamlining processes via TIMWOODS eliminates wasteful touch points and minimizes queuing delays, driving down customer acquisition payback periods and unlocking working capital. Furthermore, standardizing quality provides the predictable operational baseline required to execute aggressive Go-to-Market expansion without fear of product breakdown or operational gridlock.",
           "In our executed demonstration, all four verification gates register unanimous PASS ratings, culminating in the formal conferral of the highest operational accreditation: LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL. As we progress into tomorrow's session covering Go-To-Market strategy, beachhead expansion, and viral loops, this operational bedrock ensures that customer growth is met with flawless fulfillment and industrial-grade reliability. You now command the quantitative tools and governance frameworks required to engineer an enterprise that scales sustainably with sovereign operational mastery.",
           "Mastering this integrated control tower positions startup leaders to execute capital-efficient scaling while maintaining institutional standards of governance. As your enterprise expands into cross-border markets, adds multi-product business lines, and recruits hundreds of distributed team members, these quantitative quality frameworks prevent organizational decay. By establishing objective statistical standards for operational excellence, leadership empowers autonomous teams to innovate rapidly while preserving the core reliability, customer trust, and financial discipline that define enduring global enterprises.",
           "Furthermore, the Master Six Sigma Quality Control Tower provides the operational substantiation required to defend corporate valuation during institutional financing rounds, joint venture negotiations, or initial public offerings. Investment committees and sovereign diligence teams conduct rigorous operational audits to verify that the company's financial model is supported by repeatable, defect-resistant execution mechanics rather than hero-driven manual improvisation. Demonstrating verifiable compliance across TIMWOODS waste reduction, DMAIC continuous improvement governance, 4-Sigma capability thresholds, and Statistical Process Control stability provides incoming investors with unshakeable confidence that expanding revenue will translate into expanding operating leverage. By codifying these world-class operational standards into the core operating engine, founders construct an unassailable enterprise fortress capable of dominating competitive markets and generating enduring shareholder value.",
@@ -3782,29 +3722,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_six_sigma_quality_control_tower checking Gate 1 (Waste), Gate 2 (DMAIC), Gate 3 (Cpk >= 1.33), Gate 4 (SPC Stability)."
+            "note": "Defines the function `master_six_sigma_quality_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Executes integrated audit combining results from the four foundational models."
-          },
-          {
-            "line": 3,
-            "note": "Outputs individual gate verification statuses and final accreditation."
+            "line": 42,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set cap_res['cpk'] = 1.10. Observe how Gate 3 fails and quality certification status is revoked.",
         "check": {
           "question": "Which accreditation is conferred upon an enterprise that passes all four quality verification gates in the Master Six Sigma Control Tower?",
           "options": [
-            "LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL",
-            "JUNIOR_INSPECTION_CLERK",
             "BASIC_MANUFACTURING_TRAINEE",
-            "UNVERIFIED_TEMPORARY_ASSOCIATE"
+            "LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL",
+            "UNVERIFIED_TEMPORARY_ASSOCIATE",
+            "JUNIOR_INSPECTION_CLERK"
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Passing all four gates in the Six Sigma Control Tower confers LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Passing all four gates in the Six Sigma Control Tower confers LEAN_SIX_SIGMA_QUALITY_CERTIFIED_NOMINAL."
         }
       }
@@ -3851,29 +3787,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines score_beachhead_markets evaluating candidates across purchasing funding, compelling reason, whole product feasibility, competition, and follow-on adjacencies."
+            "note": "Defines the function `score_beachhead_markets`."
           },
           {
-            "line": 2,
-            "note": "Configures prospective commercial segments and executes multi-factor weighted scoring."
-          },
-          {
-            "line": 3,
-            "note": "Reports ranked beachhead opportunities and strategic fit classifications."
+            "line": 49,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Decrease 'compelling_reason' to 2 in the first market. Observe how its composite score drops from 4.35 to 3.60, falling out of Ideal Beachhead status.",
         "check": {
           "question": "According to Bill Aulet's Disciplined Entrepreneurship, what is the primary strategic purpose of dominating a tightly constrained beachhead market?",
           "options": [
-            "To establish a defensible, cash-flow-positive market stronghold that generates reference customers to conquer adjacent markets like bowling pins.",
+            "To eliminate the need for customer service and product development.",
             "To remain a tiny local business forever without growing.",
-            "To hide from competitors so the company never has to raise capital.",
-            "To eliminate the need for customer service and product development."
+            "To establish a defensible, cash-flow-positive market stronghold that generates reference customers to conquer adjacent markets like bowling pins.",
+            "To hide from competitors so the company never has to raise capital."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Dominating a beachhead creates referenceable validation, economies of scale, and cash flow, providing the sovereign base needed to knock down adjacent markets.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Dominating a beachhead creates referenceable validation, economies of scale, and cash flow, providing the sovereign base needed to knock down adjacent markets."
         }
       },
@@ -3893,29 +3825,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements audit_whole_product_completeness evaluating secured complementary assets against total requirements."
+            "note": "Defines the function `audit_whole_product_completeness`."
           },
           {
-            "line": 2,
-            "note": "Evaluates 10 enterprise healthcare operational assets across security, integration, and clinical training."
-          },
-          {
-            "line": 3,
-            "note": "Outputs secured asset count, completeness percentage, and chasm crossing readiness."
+            "line": 37,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Mark two additional assets as secured=False. Notice how completeness drops to 70%, triggering PRAGMATIST_ADOPTION_RISK.",
         "check": {
           "question": "Why do mainstream Early Majority (Pragmatist) buyers refuse to purchase technology products that are popular among Early Adopter Visionaries?",
           "options": [
-            "Because Pragmatists are risk-averse and require a 100% complete 'Whole Product' with proven reference customers, whereas Visionaries embrace unproven prototypes.",
             "Because Pragmatists have smaller budgets than Visionaries.",
+            "Because Pragmatists are risk-averse and require a 100% complete 'Whole Product' with proven reference customers, whereas Visionaries embrace unproven prototypes.",
             "Because Pragmatists only buy physical hardware and refuse to buy software.",
             "Because Pragmatists only purchase software through retail stores."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Pragmatists fear project failure and require complete whole-product solutions with robust support, documentation, and peer references.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Pragmatists fear project failure and require complete whole-product solutions with robust support, documentation, and peer references."
         }
       },
@@ -3923,9 +3851,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Viral Loop Mechanics, K-Factor Dynamics & Cycle Time Optimization",
         "say": [
           "While enterprise sales teams rely on high-touch account executives to conquer B2B beachheads, consumer applications, self-serve SaaS platforms, and digital marketplaces scale through the mathematical power of Viral Loops. When designed correctly, a viral loop turns every active user into an organic marketing channel, driving customer acquisition costs toward zero and generating exponential compounding growth. In product-led growth (PLG) entrepreneurship, mastering the mechanics of virality is essential for building massive user networks before venture competitors can respond.",
-          "The mathematical foundation of viral expansion is the Viral Coefficient, universally designated as the $K$-factor. The $K$-factor represents the number of new registered users generated by each existing active user, calculated as the product of two core operational variables: $i$ (the average number of invitations or referral links sent by each active user) and $c$ (the conversion rate of invitees who register and become active users), yielding the classic formula $K = i \\times c$. If an average user invites four colleagues ($i = 4.0$) and twenty-five percent of those invitees sign up ($c = 0.25$), the $K$-factor equals exactly $1.00$. If $K$ is less than $1.00$, the viral loop is sub-critical: while virality amplifies paid marketing, customer acquisition eventually decays to zero without continuous ad spend. However, when $K$ strictly exceeds $1.00$ ($K > 1.0$), the system enters a super-critical exponential growth regime where user numbers multiply automatically in self-sustaining cascading cohorts.",
-          "Equally vital to exponential scaling is Viral Cycle Time ($ct$). Cycle time represents the elapsed calendar duration required for a user to join, experience core value, and successfully invite the next cohort of users. If a platform achieves a $K$-factor of $1.20$ but requires four months for each referral cycle, user growth will crawl at an imperceptible pace. If that same platform re-engineers its onboarding friction, enabling users to invite collaborators within forty-eight hours, the compounding frequency accelerates sixty-fold. Companies like Dropbox, Slack, Zoom, and Calendly built multi-billion dollar enterprise valuations by embedding collaborative viral mechanics directly into daily workflows, turning collaborative document sharing and meeting scheduling into high-velocity viral acquisition loops.",
-          "In our Python viral loop simulator, we model a digital platform starting with an initial seed cohort of 1,000 users, operating with an invite rate of 5.0 invitations per user, a 25% conversion rate ($K = 1.25$), and a 7-day viral cycle time across five consecutive cycles. In just thirty-five days, the algorithm proves that the user base expands from 1,000 to over 4,000 active members, adding hundreds of new compounding users each week under a super-critical growth regime. By quantitatively modeling the $K$-factor and cycle time, growth engineers identify the precise product levers required to elevate viral coefficients above the critical $1.00$ threshold.",
+          "The mathematical foundation of viral expansion is the Viral Coefficient, universally designated as the K-factor. The K-factor represents the number of new registered users generated by each existing active user, calculated as the product of two core operational variables: i (the average number of invitations or referral links sent by each active user) and c (the conversion rate of invitees who register and become active users), yielding the classic formula K = i times c. If an average user invites four colleagues ($i = 4.0$) and twenty-five percent of those invitees sign up ($c = 0.25$), the K-factor equals exactly $1.00$. If K is less than $1.00$, the viral loop is sub-critical: while virality amplifies paid marketing, customer acquisition eventually decays to zero without continuous ad spend. However, when K strictly exceeds $1.00$ ($K > 1.0$), the system enters a super-critical exponential growth regime where user numbers multiply automatically in self-sustaining cascading cohorts.",
+          "Equally vital to exponential scaling is Viral Cycle Time (ct). Cycle time represents the elapsed calendar duration required for a user to join, experience core value, and successfully invite the next cohort of users. If a platform achieves a K-factor of $1.20$ but requires four months for each referral cycle, user growth will crawl at an imperceptible pace. If that same platform re-engineers its onboarding friction, enabling users to invite collaborators within forty-eight hours, the compounding frequency accelerates sixty-fold. Companies like Dropbox, Slack, Zoom, and Calendly built multi-billion dollar enterprise valuations by embedding collaborative viral mechanics directly into daily workflows, turning collaborative document sharing and meeting scheduling into high-velocity viral acquisition loops.",
+          "In our Python viral loop simulator, we model a digital platform starting with an initial seed cohort of 1,000 users, operating with an invite rate of 5.0 invitations per user, a 25% conversion rate ($K = 1.25$), and a 7-day viral cycle time across five consecutive cycles. In just thirty-five days, the algorithm proves that the user base expands from 1,000 to over 4,000 active members, adding hundreds of new compounding users each week under a super-critical growth regime. By quantitatively modeling the K-factor and cycle time, growth engineers identify the precise product levers required to elevate viral coefficients above the critical $1.00$ threshold.",
           "Furthermore, elite growth teams recognize that virality is not a marketing gimmick tacked onto a finished product; it must be native to the core value proposition. In inherent virality—such as video conferencing, team communication, or collaborative design software—the product is fundamentally more useful when shared with colleagues. In artificial virality, such as referral discount codes or affiliate credits, user motivation is purely transactional and degrades rapidly over time. By engineering native collaboration into product workflows, founders create permanent, self-reinforcing acquisition engines that dominate digital markets with minimal paid advertising overhead.",
           "Optimizing product virality also requires engineering teams to monitor secondary viral mechanics, including invitation delivery deliverability, referral link open rates, and conversion funnel drop-off points. In elite product-led growth companies, product managers instrument every single touchpoint of the viral loop with granular telemetry dashboards. If invite conversion rates drop from thirty percent to twenty percent, growth squads immediately launch multivariate A/B tests to optimize invitation email subject lines, redesign landing page social proof, and streamline new user account creation workflows. By treating the viral acquisition engine with the same empirical, data-driven rigor applied to core software engineering, organizations achieve predictable, scalable user compounding that drastically lowers blended customer acquisition costs."
         ],
@@ -3935,15 +3863,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_viral_loop_growth calculating K-factor (invites * conversion), growth regimes, and compounding cohorts over time."
+            "note": "Defines the function `model_viral_loop_growth`."
           },
           {
-            "line": 2,
-            "note": "Simulates 5 weekly viral cycles starting from 1,000 seed users."
-          },
-          {
-            "line": 3,
-            "note": "Prints K-factor, growth regime, final user count, and itemized cycle-by-cycle expansion."
+            "line": 38,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Decrease conversion_rate to 0.15 (making K = 5.0 * 0.15 = 0.75). Observe how growth flattens and drops into SUB_CRITICAL_VIRAL_DECAY.",
@@ -3965,8 +3889,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Customer Acquisition Economics & Paid Channel Saturation Curves",
         "say": [
           "Even platforms with robust viral amplification or specialized direct sales forces must eventually scale paid acquisition channels—such as Google Search, LinkedIn B2B ads, programmatic display, and performance marketing—to accelerate customer acquisition. However, novice entrepreneurs frequently make the naive assumption that marketing channels scale linearly: they assume that if spending $5,000 generates 100 customers at a $50 Customer Acquisition Cost (CAC), spending $500,000 will effortlessly generate 10,000 customers at that same $50 CAC. In reality, every paid marketing channel is subject to the ruthless economic law of diminishing marginal returns and CAC Saturation Curves.",
-          "Channel saturation occurs because digital advertising platforms operate on real-time second-price auction mechanics. At low spend levels, advertising algorithms target the lowest-hanging fruit: highly motivated 'in-market' searchers who actively type precise high-intent keywords like 'enterprise medical billing software.' As the startup increases its monthly marketing budget five-fold or ten-fold, the algorithm exhausts high-intent searchers and is forced to bid on broader, more competitive, and lower-intent audience segments. Furthermore, aggressive ad spend leads to ad fatigue, audience saturation, and bidding wars against well-capitalized incumbents, driving effective Customer Acquisition Cost ($CPA$) up exponentially.",
-          "Mathematically, this non-linear saturation can be modeled using power-law degradation: effective $CPA = \\text{Base } CPA \\times (\\text{Spend} / \\text{Min Spend})^{s - 1}$, where $s$ represents the channel saturation elasticity factor ($s > 1.0$). If an advertising channel exhibits a saturation elasticity of $1.35$, tripling ad spend causes effective CAC to surge by forty to fifty percent, eroding unit margins. Consequently, growth architects must calculate marginal CAC—the acquisition cost of the very next customer—rather than relying solely on blended average CAC. If the marginal CAC exceeds customer lifetime value ($LTV$), every additional dollar spent on that channel destroys enterprise value even if historical blended metrics appear healthy.",
+          "Channel saturation occurs because digital advertising platforms operate on real-time second-price auction mechanics. At low spend levels, advertising algorithms target the lowest-hanging fruit: highly motivated 'in-market' searchers who actively type precise high-intent keywords like 'enterprise medical billing software.' As the startup increases its monthly marketing budget five-fold or ten-fold, the algorithm exhausts high-intent searchers and is forced to bid on broader, more competitive, and lower-intent audience segments. Furthermore, aggressive ad spend leads to ad fatigue, audience saturation, and bidding wars against well-capitalized incumbents, driving effective Customer Acquisition Cost (CPA) up exponentially.",
+          "Mathematically, this non-linear saturation can be modeled using power-law degradation: effective CPA = Base CPA times (Spend / Min Spend) to the power s - 1, where s represents the channel saturation elasticity factor ($s > 1.0$). If an advertising channel exhibits a saturation elasticity of $1.35$, tripling ad spend causes effective CAC to surge by forty to fifty percent, eroding unit margins. Consequently, growth architects must calculate marginal CAC—the acquisition cost of the very next customer—rather than relying solely on blended average CAC. If the marginal CAC exceeds customer lifetime value (LTV), every additional dollar spent on that channel destroys enterprise value even if historical blended metrics appear healthy.",
           "In our Python channel saturation simulator, we model a paid acquisition budget scaling across five expenditure tiers from $5,000 to $150,000 per month. The model reveals that while an initial $5,000 budget yields customers at an efficient $45.00 CPA, scaling spend to $150,000 pushes effective acquisition costs up to $148.00 per account, slashing conversion yield per marketing dollar. By modeling these saturation curves in advance, Chief Marketing Officers and growth directors learn to diversify across multiple marketing channels, capping spend on individual channels before diminishing returns destroy portfolio economics.",
           "To counteract channel saturation, leading commercial teams employ Gabriel Weinberg's 'Bullseye Framework,' continuously testing nineteen distinct traction channels to uncover overlooked, low-cost customer acquisition vectors. Rather than pouring capital into saturated Google and Meta ad auctions, innovative ventures leverage podcast sponsorships, SEO programmatic content networks, strategic co-marketing partnerships, and developer community evangelism. Balancing saturated high-volume channels with emerging high-efficiency channels ensures that enterprise customer acquisition remains cost-effective and resilient across all stages of commercial scaling.",
           "To build sustainable growth resilience against paid channel saturation, leading commercial organizations implement blended customer acquisition frameworks that combine paid performance marketing with organic search engine optimization, content marketing networks, and community-driven evangelism. Paid channels are strategically deployed as top-of-funnel catalysts to accelerate initial brand discovery and seed organic referral loops, rather than serving as the sole permanent source of customer volume. As paid acquisition costs inflate with scale, the expanding baseline of organic inbound traffic and viral referrals insulates the enterprise's blended unit economics, ensuring that customer acquisition costs remain strictly within sustainable lifetime value guardrails.",
@@ -3978,25 +3902,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines analyze_channel_saturation modeling non-linear CPA inflation caused by diminishing marginal returns."
+            "note": "Defines the function `analyze_channel_saturation`."
           },
           {
-            "line": 2,
-            "note": "Evaluates 5 budget tiers and outputs effective CPA alongside total customer acquisitions."
+            "line": 19,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase saturation_exponent to 1.50. Notice how effective CPA skyrockets much faster as ad spend increases.",
         "check": {
           "question": "Why does Customer Acquisition Cost (CAC) inevitably increase as an enterprise scales its ad spend within a single marketing channel?",
           "options": [
-            "Because high-intent audiences are exhausted, forcing algorithms to bid on broader, more competitive, and lower-converting traffic.",
-            "Because Google and Facebook legally mandate higher prices for large companies.",
             "Because customer lifetime value automatically drops to zero.",
-            "Because servers become slower when more ads are displayed."
+            "Because servers become slower when more ads are displayed.",
+            "Because Google and Facebook legally mandate higher prices for large companies.",
+            "Because high-intent audiences are exhausted, forcing algorithms to bid on broader, more competitive, and lower-converting traffic."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Ad platforms operate on real-time auctions; scaling ad spend exhausts low-hanging, high-intent prospects, requiring bids on lower-intent audiences with ad fatigue.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Ad platforms operate on real-time auctions; scaling ad spend exhausts low-hanging, high-intent prospects, requiring bids on lower-intent audiences with ad fatigue."
         }
       },
@@ -4004,7 +3928,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Master Go-To-Market Control Tower & Sovereign GTM Accreditation",
         "say": [
           "We conclude Day 17 by uniting all four growth pillars into our Master Go-To-Market (GTM) Strategy Control Tower. In high-growth venture management, a brilliant product without an effective distribution engine is doomed to obscurity. Silicon Valley venture capitalist Peter Thiel famously remarked that poor distribution—not poor product—is the number one cause of startup failure. To build an enduring enterprise capable of commanding venture premiums, founders must prove to their board of directors and prospective Series B investors that they possess an engineered, repeatable Go-to-Market engine that synchronizes market focus, product completeness, viral amplification, and channel economics.",
-          "Our Master GTM Strategy Control Tower executes an automated four-gate accreditation audit. Gate 1 evaluates Beachhead Market Validation, confirming that the primary target market scores at or above the 4.0 threshold in our multi-factor decision matrix, verifying well-funded buyers and urgent demand. Gate 2 verifies Whole Product Chasm Readiness, confirming that at least ninety percent of essential complementary assets, certifications, and enterprise integrations are operational to satisfy risk-averse Pragmatist buyers. Gate 3 evaluates Viral Loop Viability, confirming that collaborative product mechanics achieve a super-critical $K$-factor at or above $1.00$. Finally, Gate 4 assesses Acquisition Channel Efficiency, confirming that baseline acquisition costs remain economically viable within allowable customer lifetime value guardrails.",
+          "Our Master GTM Strategy Control Tower executes an automated four-gate accreditation audit. Gate 1 evaluates Beachhead Market Validation, confirming that the primary target market scores at or above the 4.0 threshold in our multi-factor decision matrix, verifying well-funded buyers and urgent demand. Gate 2 verifies Whole Product Chasm Readiness, confirming that at least ninety percent of essential complementary assets, certifications, and enterprise integrations are operational to satisfy risk-averse Pragmatist buyers. Gate 3 evaluates Viral Loop Viability, confirming that collaborative product mechanics achieve a super-critical K-factor at or above $1.00$. Finally, Gate 4 assesses Acquisition Channel Efficiency, confirming that baseline acquisition costs remain economically viable within allowable customer lifetime value guardrails.",
           "In our executed benchmark demonstration, the Master GTM Control Tower evaluates the integrated performance of our four foundational models. All four verification gates register unanimous PASS ratings, culminating in the formal conferral of the highest commercial accreditation: GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL. As you advance into tomorrow's session covering Revenue Operations (RevOps), sales stage velocity, and pipeline coverage ratios, this Go-to-Market architecture will serve as your strategic execution roadmap. You now command the quantitative models and strategic frameworks required to take an enterprise from initial customer traction to nationwide market dominance with sovereign commercial mastery.",
           "Mastering this integrated Go-To-Market discipline ensures that your company avoids the tragic fate of technical excellence undermined by commercial failure. By concentrating scarce capital on an unassailable beachhead, delivering a complete whole product that eliminates enterprise risk, harnessing the exponential power of viral loops, and managing channel saturation economics, leadership builds a resilient commercial engine. This systematic operational rigor provides the growth predictability, capital efficiency, and customer velocity necessary to dominate emerging technology sectors and create lasting enterprise value.",
           "Ultimately, the Master Go-To-Market Control Tower represents the institutional operational standard required to guide an enterprise from early customer validation into nationwide commercial category leadership. Venture capital partners, growth equity investors, and prospective acquirers evaluate startups not merely on past revenue figures, but on the repeatability, efficiency, and scalability of their distribution engine. A company that demonstrates mathematical mastery across beachhead market domination, whole-product completeness, compounding viral coefficients, and CAC saturation curves commands an extraordinary strategic valuation multiple. By embedding automated commercial governance directly into executive decision-making, leadership builds an enduring corporate vehicle capable of dominating competitive markets and generating sovereign enterprise value.",
@@ -4016,25 +3940,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_gtm_control_tower checking Gate 1 (Beachhead), Gate 2 (Whole Product), Gate 3 (Virality), Gate 4 (Channel Economics)."
+            "note": "Defines the function `master_gtm_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Executes integrated audit across benchmark inputs and outputs certification status."
+            "line": 44,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set top_score = 3.5 in b_sample. Notice how Gate 1 fails and certification status is withheld.",
         "check": {
           "question": "Which accreditation is conferred upon an enterprise that passes all four commercial gates in the Master Go-To-Market Control Tower?",
           "options": [
-            "GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL",
             "JUNIOR_TELEMARKETING_ASSOCIATE",
             "PROVISIONAL_SALES_TRAINEE",
+            "GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL",
             "UNVERIFIED_ADVERTISING_CLERK"
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Passing all four commercial gates confers GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Passing all four commercial gates confers GO_TO_MARKET_STRATEGY_CERTIFIED_NOMINAL."
         }
       }
@@ -4069,8 +3993,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Sales Velocity Physics: Opportunities, Win Rate, Deal Size & Cycle Time",
         "say": [
           "Welcome to Day 18 of Entrepreneurship and Business Management. Today, we investigate Revenue Operations (RevOps), sales velocity physics, pipeline coverage ratios, and enterprise capacity planning. In commercial scaling, high-growth technology companies frequently suffer from what industry veterans term the 'Revenue Rollercoaster': a company enjoys an exceptional quarter of record bookings, followed immediately by two disastrous quarters of missed quotas and stalled pipeline. This volatile revenue whiplash occurs when sales organizations operate as fragmented, artisanal silos where individual account executives manage deals by intuition, marketing generates low-intent leads that sales ignores, and finance issues unrealistic revenue forecasts based on wishful thinking. To establish predictable, repeatable, and scalable commercial expansion, modern enterprises build a unified Revenue Operations engine that synchronizes sales, marketing, and customer success through rigorous mathematical modeling.",
-          "The central governing equation of all B2B commercial pipelines is the Sales Velocity Formula, pioneered by Salesforce and Mark Roberge at HubSpot. Sales velocity represents the monetary revenue generated by a sales organization per unit of time (typically measured in dollars per day or dollars per month), expressed as: $V = (O \\times W \\times A) / T$, where $O$ is the total number of qualified pipeline opportunities, $W$ is the historical win rate percentage (closed won divided by total closed opportunities), $A$ is the Average Deal Size (or Annual Contract Value, ACV), and $T$ is the average Sales Cycle Duration measured in calendar days. This formula reveals an extraordinary operational principle: sales revenue is the product of four distinct levers, three in the numerator that accelerate revenue, and one in the denominator that retards revenue.",
-          "Novice sales executives instinctively attempt to grow bookings purely by increasing $O$—hiring more junior business development reps to bombard prospects with cold outbound emails. However, expanding pipeline volume without addressing lead qualification frequently degrades win rates ($W$) and dilutes deal sizes ($A$), resulting in net revenue stagnation. Elite RevOps architects understand that marginal, concurrent improvements across all four variables compound exponentially. If an enterprise increases qualified opportunities by fifteen percent, improves win rates from twenty-five to thirty percent through consultative demo training, expands average deal size by ten percent through multi-tier software packaging, and shortens sales cycle duration from sixty to forty-five days via automated legal redlining, total sales velocity surges by more than seventy-five percent without expanding total sales headcount.",
+          "The central governing equation of all B2B commercial pipelines is the Sales Velocity Formula, pioneered by Salesforce and Mark Roberge at HubSpot. Sales velocity represents the monetary revenue generated by a sales organization per unit of time (typically measured in dollars per day or dollars per month), expressed as: V = (O times W times A) / T, where O is the total number of qualified pipeline opportunities, W is the historical win rate percentage (closed won divided by total closed opportunities), A is the Average Deal Size (or Annual Contract Value, ACV), and T is the average Sales Cycle Duration measured in calendar days. This formula reveals an extraordinary operational principle: sales revenue is the product of four distinct levers, three in the numerator that accelerate revenue, and one in the denominator that retards revenue.",
+          "Novice sales executives instinctively attempt to grow bookings purely by increasing O—hiring more junior business development reps to bombard prospects with cold outbound emails. However, expanding pipeline volume without addressing lead qualification frequently degrades win rates (W) and dilutes deal sizes (A), resulting in net revenue stagnation. Elite RevOps architects understand that marginal, concurrent improvements across all four variables compound exponentially. If an enterprise increases qualified opportunities by fifteen percent, improves win rates from twenty-five to thirty percent through consultative demo training, expands average deal size by ten percent through multi-tier software packaging, and shortens sales cycle duration from sixty to forty-five days via automated legal redlining, total sales velocity surges by more than seventy-five percent without expanding total sales headcount.",
           "In our opening Python implementation, we build an algorithmic Sales Velocity Engine. The model calculates baseline sales velocity across 120 opportunities with a 25% win rate, a $45,000 average deal size, and a 60-day cycle time, yielding $67,500 in daily bookings ($2,025,000 monthly). The engine then evaluates a synchronized RevOps optimization program: expanding opportunities to 140, lifting win rate to 30%, expanding ACV to $50,000, and compressing sales cycle duration to 45 days. The resulting sales velocity surges to $104,166 per day ($3,125,000 monthly), delivering an astonishing 54.3% compound velocity lift. By mathematically formalizing sales velocity, RevOps leaders gain the predictive tools required to identify exactly which operational lever yields the highest marginal return on investment.",
           "Furthermore, tracking sales velocity dynamically across individual customer segments and industry verticals allows executive leadership to allocate enterprise capital with laser precision. If enterprise healthcare deals generate three times the daily velocity of manufacturing accounts despite longer sales cycles, management can immediately redeploy marketing budgets and specialized sales engineers toward healthcare accounts. This data-driven capital allocation eliminates commercial guesswork, ensuring that every sales dollar and engineering asset is directed toward the highest-velocity market opportunities.",
           "In institutional sales leadership, analyzing sales velocity at granular cohort levels reveals critical insights into representative performance and market responsiveness. Rather than evaluating account executives solely by lagging quota attainment numbers, RevOps tracks individual velocity drivers across each rep's deal portfolio. If a particular sales representative consistently exhibits high win rates but sluggish deal velocity, deeper inspection often uncovers prolonged sales cycle durations caused by manual proposal generation or unassisted technical scoping. Management can immediately assign dedicated sales engineering support or implement automated CPQ (Configure, Price, Quote) software to eliminate proposal latency. By systematically removing friction across each component of the velocity equation, the enterprise unlocks latent revenue capacity and drives continuous productivity expansion across the entire commercial team."
@@ -4081,33 +4005,33 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines calculate_sales_velocity implementing the classic formula V = (Opportunities * Win Rate * Deal Size) / Cycle Time."
+            "note": "Defines the function `calculate_sales_velocity`."
           },
           {
-            "line": 2,
-            "note": "Evaluates baseline vs optimized commercial performance and prints daily, monthly, and compound velocity gains."
+            "line": 18,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce sales_cycle_days from 45 to 30 in the optimized scenario. Observe how daily sales velocity jumps dramatically due to the denominator reduction.",
         "check": {
           "question": "In the Sales Velocity Formula V = (Opportunities * Win Rate * Deal Size) / Cycle Time, which variable is in the denominator that retards revenue velocity when it increases?",
           "options": [
-            "Sales Cycle Duration (T: elapsed calendar days to close a deal).",
+            "Number of Opportunities.",
             "Average Deal Size (ACV).",
             "Win Rate percentage.",
-            "Number of Opportunities."
+            "Sales Cycle Duration (T: elapsed calendar days to close a deal)."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Cycle time is in the denominator; longer sales cycles drag down velocity, while compressing sales cycle time accelerates daily bookings.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Cycle time is in the denominator; longer sales cycles drag down velocity, while compressing sales cycle time accelerates daily bookings."
         }
       },
       {
         "title": "Pipeline Coverage Ratio (3.0x - 4.0x) & Funnel Sufficiency Audits",
         "say": [
-          "While sales velocity models the rate of revenue generation, managing commercial predictability requires forward-looking visibility into pipeline sufficiency. In B2B sales management, the primary metric governing quota attainment is the Pipeline Coverage Ratio. The pipeline coverage ratio expresses the total dollar volume of active, qualified opportunities scheduled to close within a given fiscal quarter relative to the enterprise's net new bookings quota for that quarter, calculated as: $\\text{Coverage} = \\text{Total Open Pipeline} / \\text{Quarterly Quota Target}$.",
-          "Understanding the mathematical necessity of pipeline coverage requires examining the inverse of an organization's win rate. If an enterprise sales team possesses an average historical win rate of twenty-five percent ($25\\% = 0.25$), exactly one out of every four qualified opportunities will successfully convert into a paying customer, while seventy-five percent will be lost to competitors, postponed, or abandoned to no decision. Mathematically, to achieve one million dollars in closed bookings with a twenty-five percent win rate, the sales team must enter the quarter with at least $1 / 0.25 = 4.0x$ coverage—meaning four million dollars in open pipeline. In enterprise B2B SaaS, institutional benchmarks universally mandate maintaining between $3.0x$ and $4.0x$ pipeline coverage; operating with less than $3.0x$ coverage represents severe commercial negligence that virtually guarantees a quarterly quota miss.",
+          "While sales velocity models the rate of revenue generation, managing commercial predictability requires forward-looking visibility into pipeline sufficiency. In B2B sales management, the primary metric governing quota attainment is the Pipeline Coverage Ratio. The pipeline coverage ratio expresses the total dollar volume of active, qualified opportunities scheduled to close within a given fiscal quarter relative to the enterprise's net new bookings quota for that quarter, calculated as: Coverage = Total Open Pipeline / Quarterly Quota Target.",
+          "Understanding the mathematical necessity of pipeline coverage requires examining the inverse of an organization's win rate. If an enterprise sales team possesses an average historical win rate of twenty-five percent (25% = 0.25), exactly one out of every four qualified opportunities will successfully convert into a paying customer, while seventy-five percent will be lost to competitors, postponed, or abandoned to no decision. Mathematically, to achieve one million dollars in closed bookings with a twenty-five percent win rate, the sales team must enter the quarter with at least $1 / 0.25 = 4.0x$ coverage—meaning four million dollars in open pipeline. In enterprise B2B SaaS, institutional benchmarks universally mandate maintaining between $3.0x$ and $4.0x$ pipeline coverage; operating with less than $3.0x$ coverage represents severe commercial negligence that virtually guarantees a quarterly quota miss.",
           "However, seasoned RevOps leaders recognize that not all pipeline dollars are created equal. Counting raw, unverified pipeline generated by aggressive SDRs creates a false sense of security that blinds management to impending revenue shortfalls. A rigorous pipeline audit must enforce strict stage entrance criteria: deals cannot be counted toward coverage until they satisfy MEDDPICC qualification (Metrics, Economic Buyer, Decision Criteria, Decision Process, Paper Process, Identified Pain, Champion, Competition). Furthermore, opportunities must be categorized into stage progression tiers: early-stage discovery (Stage 1), technical evaluation (Stage 2), business case validation (Stage 3), formal proposal (Stage 4), and procurement negotiation (Stage 5), with coverage audited dynamically across each funnel phase.",
           "In our Python pipeline coverage audit engine, we evaluate a B2B enterprise operating against a one million dollar quarterly net bookings quota across five active pipeline stages totaling four million dollars in aggregate opportunities. The algorithm computes an exact 4.0x pipeline coverage ratio, calculates the required pipeline threshold at a 3.5x institutional standard, and determines that the organization maintains zero pipeline shortfall, earning the highest operational status: OPTIMAL_COVERAGE. By establishing automated pipeline coverage tracking, corporate leadership detects revenue deficits sixty to ninety days before quarter-end, providing ample time to launch targeted marketing campaigns and reallocate sales engineering resources.",
           "To maintain healthy coverage ratios quarter after quarter, RevOps establishes continuous lead-generation SLAs between marketing, business development, and account executives. If marketing fails to deliver its required quota of Sales Qualified Leads (SQLs) in the first month of a quarter, RevOps immediately flags the impending coverage gap for the subsequent quarter. This forward-looking operational radar eliminates the panicked end-of-quarter discounting that destroys software gross margins, replacing desperation with disciplined, predictable commercial execution.",
@@ -4120,11 +4044,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines audit_pipeline_coverage comparing aggregate open pipeline against quarterly quota targets at a 3.5x institutional benchmark."
+            "note": "Defines the function `audit_pipeline_coverage`."
           },
           {
-            "line": 2,
-            "note": "Evaluates five active pipeline stages and reports coverage health status."
+            "line": 34,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Decrease total pipeline to $2.5M. Notice how coverage drops to 2.5x, triggering CRITICAL_PIPELINE_DEFICIT.",
@@ -4159,25 +4083,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines compute_weighted_forecast applying empirical stage close probabilities and penalizing stalled deals exceeding SLA duration."
+            "note": "Defines the function `compute_weighted_forecast`."
           },
           {
-            "line": 2,
-            "note": "Simulates five enterprise opportunities and outputs nominal, weighted, and slippage risk figures."
+            "line": 33,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set days_in_stage to 15 for 'Beacon Health Cloud'. Notice how removing the stall penalty increases the weighted forecast.",
         "check": {
           "question": "Why do advanced RevOps forecasting engines apply probability haircuts to deals that remain in a sales stage past maximum SLA boundaries?",
           "options": [
-            "Because data proves that deal momentum decays over time; stalled deals suffer from champion turnover, lost budget, or stalled procurement.",
-            "Because older deals automatically convert into equity shares.",
             "Because CRM databases delete deals after thirty days.",
-            "Because sales reps request lower commissions on stalled deals."
+            "Because data proves that deal momentum decays over time; stalled deals suffer from champion turnover, lost budget, or stalled procurement.",
+            "Because sales reps request lower commissions on stalled deals.",
+            "Because older deals automatically convert into equity shares."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Stalled deals experience severe probability decay due to organizational inertia, champion departure, or shifting corporate priorities.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Stalled deals experience severe probability decay due to organizational inertia, champion departure, or shifting corporate priorities."
         }
       },
@@ -4198,25 +4122,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines plan_sales_capacity calculating required sales rep headcount factoring in annual ramp curves and rep turnover buffers."
+            "note": "Defines the function `plan_sales_capacity`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a $6.0M target against an $800k rep quota and prints nominal vs recommended hiring targets."
+            "line": 18,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase ae_churn_rate to 0.25 (25% turnover). Observe how the recommended hiring target increases to absorb expected attrition.",
         "check": {
           "question": "What is the danger of planning sales capacity using nominal math (Target Revenue / Individual Quota) without accounting for ramp curves?",
           "options": [
-            "Newly hired reps require several months to reach full productivity; ignoring ramp creates an operational capacity deficit that causes quota misses.",
             "Nominal math forces reps to work overtime without pay.",
             "It causes software licenses to expire prematurely.",
+            "Newly hired reps require several months to reach full productivity; ignoring ramp creates an operational capacity deficit that causes quota misses.",
             "It leads to excessive tax payments to state authorities."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "New reps take 4-6 months to reach full productivity; failing to buffer for ramp results in under-capacity and missed revenue commitments.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "New reps take 4-6 months to reach full productivity; failing to buffer for ramp results in under-capacity and missed revenue commitments."
         }
       },
@@ -4237,25 +4161,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_revops_control_tower checking Gate 1 (Coverage), Gate 2 (Velocity), Gate 3 (Forecast), Gate 4 (Capacity Buffer)."
+            "note": "Defines the function `master_revops_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Executes integrated verification across benchmark inputs and outputs final accreditation."
+            "line": 42,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set coverage_ratio = 2.8 in c_sample. Observe how Gate 1 fails, flipping status to REVOPS_GOVERNANCE_DEFICIT_DETECTED.",
         "check": {
           "question": "Which accreditation is conferred upon an enterprise that passes all four commercial gates in the Master Revenue Operations Control Tower?",
           "options": [
-            "REVENUE_OPERATIONS_CERTIFIED_NOMINAL",
-            "JUNIOR_SALES_BOOKKEEPER",
             "PROVISIONAL_TELEMARKETING_CLERK",
-            "UNVERIFIED_INVOICING_INTERN"
+            "UNVERIFIED_INVOICING_INTERN",
+            "JUNIOR_SALES_BOOKKEEPER",
+            "REVENUE_OPERATIONS_CERTIFIED_NOMINAL"
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Passing all four gates in the RevOps Control Tower confers REVENUE_OPERATIONS_CERTIFIED_NOMINAL.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Passing all four gates in the RevOps Control Tower confers REVENUE_OPERATIONS_CERTIFIED_NOMINAL."
         }
       }
@@ -4302,11 +4226,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines calculate_value_based_price deriving annual software pricing from total customer economic value created and calculating net customer ROI."
+            "note": "Defines the function `calculate_value_based_price`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a hospital compliance scenario and outputs annual price, monthly price, and customer net ROI multiple."
+            "line": 18,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase value_share_pct to 0.35. Observe how annual software revenue expands to $157,500 while customer net ROI drops to 1.9x.",
@@ -4341,25 +4265,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_gbb_tier_mix calculating customer distribution, blended ARPU, and MRR across Good, Better, and Best tiers."
+            "note": "Defines the function `evaluate_gbb_tier_mix`."
           },
           {
-            "line": 2,
-            "note": "Simulates a 550-customer base and prints itemized tier performance."
+            "line": 35,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Shift 100 customers from 'Good' to 'Best'. Observe how total MRR surges from $174k to over $244k, drastically elevating blended ARPU.",
         "check": {
           "question": "In a standard Good-Better-Best (GBB) software packaging architecture, what is the strategic role of the 'Better' tier?",
           "options": [
-            "To serve as the primary commercial anchor tailored to the core customer persona, attracting 50% to 65% of total paying accounts.",
-            "To be so expensive that nobody buys it.",
             "To offer zero software features as a joke tier.",
-            "To hide from enterprise clients so they only buy the Good tier."
+            "To hide from enterprise clients so they only buy the Good tier.",
+            "To be so expensive that nobody buys it.",
+            "To serve as the primary commercial anchor tailored to the core customer persona, attracting 50% to 65% of total paying accounts."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The 'Better' tier is the deliberate centerpiece of the catalog, engineered with 80% of desired features to capture the majority of the market.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The 'Better' tier is the deliberate centerpiece of the catalog, engineered with 80% of desired features to capture the majority of the market."
         }
       },
@@ -4380,25 +4304,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_decoy_pricing comparing binary customer choices against trinary choices with an asymmetric decoy tier."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates revenue and ARPU across scenarios and demonstrates how decoy placement drives buyers toward the premium tier."
+            "note": "Defines the function `simulate_decoy_pricing`."
           }
         ],
         "tryIt": "Change the Decoy price to $90. Observe how the decoy loses its asymmetric dominance and fails to anchor buyers toward the $120 Pro plan.",
         "check": {
           "question": "How does the Asymmetric Dominance (Decoy) Effect alter consumer buying behavior?",
           "options": [
-            "By introducing a decoy option that is priced close to the premium option but offers inferior value, making the premium option appear as an obvious, irresistible bargain.",
             "By confusing buyers so they accidentally purchase both tiers.",
             "By forcing customers to sign multi-year contracts against their will.",
+            "By introducing a decoy option that is priced close to the premium option but offers inferior value, making the premium option appear as an obvious, irresistible bargain.",
             "By offering a 90% discount on all software products."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "The decoy changes the cognitive frame of reference, making the target premium tier look like a superior bargain in comparison.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "The decoy changes the cognitive frame of reference, making the target premium tier look like a superior bargain in comparison."
         }
       },
@@ -4406,8 +4326,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Price Elasticity of Demand (PED) & Revenue Maximizing Price Points",
         "say": [
           "A foundational question confronting every corporate treasurer, pricing strategist, and startup CEO is: 'What is the exact price point that maximizes total corporate revenue?' Novice entrepreneurs often fear raising prices, worrying that even a five percent price increase will cause a mass exodus of customers. Conversely, overconfident founders sometimes raise prices too aggressively, choking off customer acquisition volume and shrinking their market presence. To resolve this dilemma mathematically, commercial leaders analyze the Price Elasticity of Demand (PED).",
-          "Price Elasticity of Demand measures the percentage change in the quantity demanded of a product relative to the percentage change in its price, expressed mathematically as: $\\text{PED} = (\\% \\Delta Q) / (\\% \\Delta P) = [(Q_2 - Q_1) / Q_1] / [(P_2 - P_1) / P_1]$. Because demand curves typically slope downward, PED is expressed as a negative number, though economists frequently evaluate its absolute magnitude. If the absolute value of PED is greater than 1.0 ($|\\text{PED}| > 1.0$), demand is defined as 'Price Elastic': a small percentage increase in price causes a disproportionately larger percentage drop in volume, causing total revenue ($P \\times Q$) to decrease. If $|\\text{PED}| < 1.0$, demand is 'Price Inelastic': raising prices causes only a minor drop in customer volume, causing total revenue to expand.",
-          "In technology and subscription software, proprietary technological moats, high switching costs, and regulatory compliance requirements generate high price inelasticity. When enterprise software is deeply embedded in a customer's core financial or clinical workflows, the cost of migrating to a competitor vastly exceeds a fifteen or twenty percent price increase. Commercial leaders can identify the revenue-maximizing price point by conducting empirical price-testing across customer cohorts and plotting the Total Revenue Curve. The revenue-maximizing price point occurs exactly at the inflection point where price elasticity reaches unitary elasticity ($|\\text{PED}| = 1.0$), where marginal revenue equals zero.",
+          "Price Elasticity of Demand measures the percentage change in the quantity demanded of a product relative to the percentage change in its price, expressed mathematically as: PED = (% Delta Q) / (% Delta P) = [(Q 2 - Q 1) / Q 1] / [(P 2 - P 1) / P 1]. Because demand curves typically slope downward, PED is expressed as a negative number, though economists frequently evaluate its absolute magnitude. If the absolute value of PED is greater than 1.0 (|PED| > 1.0), demand is defined as 'Price Elastic': a small percentage increase in price causes a disproportionately larger percentage drop in volume, causing total revenue (P times Q) to decrease. If |PED| < 1.0, demand is 'Price Inelastic': raising prices causes only a minor drop in customer volume, causing total revenue to expand.",
+          "In technology and subscription software, proprietary technological moats, high switching costs, and regulatory compliance requirements generate high price inelasticity. When enterprise software is deeply embedded in a customer's core financial or clinical workflows, the cost of migrating to a competitor vastly exceeds a fifteen or twenty percent price increase. Commercial leaders can identify the revenue-maximizing price point by conducting empirical price-testing across customer cohorts and plotting the Total Revenue Curve. The revenue-maximizing price point occurs exactly at the inflection point where price elasticity reaches unitary elasticity (|PED| = 1.0), where marginal revenue equals zero.",
           "In our Python price elasticity model, we evaluate an enterprise software offering across five price points from $50 to $150, tracking corresponding demand volumes from 1,000 units down to 360 units. The algorithm calculates the PED at each price step and identifies the revenue-maximizing peak. While the lowest price ($50) generates $50,000 and the highest price ($150) generates $54,000, the optimal price point is identified at $100, generating $70,000 in maximum revenue with 700 paying clients. By empirically mapping price elasticity, leadership eliminates emotional debates over pricing, anchoring commercial strategy in rigorous econometric optimization.",
           "Furthermore, tracking price elasticity across different customer segments reveals opportunities for price discrimination. Enterprise corporations with multi-million dollar IT budgets exhibit extreme price inelasticity, allowing the company to charge premium fees for enterprise security features, while early-stage startups exhibit high elasticity, requiring accessible pricing tiers. Segmented pricing ensures that the business captures maximum economic surplus across every tier of the market.",
           "Understanding price elasticity also enables technology companies to execute localized geographic pricing and dynamic market segmentation. In developing markets with lower average purchasing power, customer demand exhibits severe price elasticity, meaning that maintaining US-dollar enterprise pricing chokes off market adoption entirely. By calibrating localized pricing models based on regional purchasing power parity (PPP) and regional elasticity curves, global software companies capture substantial incremental revenue from international markets that would otherwise turn to local competitors or pirated alternatives, expanding total market penetration while preserving premium pricing in core markets.",
@@ -4419,25 +4339,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines analyze_price_elasticity calculating PED across price/volume schedules and identifying the revenue-maximizing price point."
+            "note": "Defines the function `analyze_price_elasticity`."
           },
           {
-            "line": 2,
-            "note": "Evaluates five price steps and outputs total revenue and elasticity coefficients."
+            "line": 27,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change volumes to [1000, 950, 900, 850, 800] (highly inelastic demand). Notice how $150 becomes the new revenue-maximizing price point.",
         "check": {
           "question": "When an enterprise product exhibits Price Inelastic Demand (|PED| < 1.0), what happens to total corporate revenue when management raises prices?",
           "options": [
+            "Total revenue drops by exactly 50%.",
             "Total revenue increases, because the percentage drop in unit volume is smaller than the percentage gain in price.",
             "Total revenue drops to zero immediately.",
-            "Total revenue remains completely unchanged regardless of price.",
-            "Total revenue drops by exactly 50%."
+            "Total revenue remains completely unchanged regardless of price."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "When demand is inelastic (|PED| < 1.0), price increases outpace volume decreases, expanding total revenue.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "When demand is inelastic (|PED| < 1.0), price increases outpace volume decreases, expanding total revenue."
         }
       },
@@ -4458,11 +4378,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_pricing_control_tower checking Gate 1 (ROI Multiple), Gate 2 (GBB Balance), Gate 3 (Decoy Uplift), Gate 4 (Elasticity)."
+            "note": "Defines the function `master_pricing_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Executes integrated verification across benchmark inputs and outputs certification status."
+            "line": 48,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set customer_roi_multiple = 2.0 in v_sample. Observe how Gate 1 fails, withholding pricing certification.",
@@ -4510,10 +4430,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
       {
         "title": "Lean & Six Sigma Operational Quality Synthesis (TIMWOODS, DMAIC & Cpk >= 1.33)",
         "say": [
-          "Welcome to the prestigious Milestone 4 Capstone of Entrepreneurship and Business Management. Over our preceding four sessions in Module 4, we investigated the critical operational and commercial pillars required to scale an enterprise from initial commercial traction into nationwide market dominance: Lean manufacturing waste elimination and Six Sigma statistical process control, Go-to-Market beachhead domination and compounding viral loop dynamics, Revenue Operations sales velocity modeling and pipeline coverage ratios, and Value-Based Pricing packaging with behavioral decoy psychology. Today, in this comprehensive capstone, we synthesize these four disciplines into a unified, sovereign enterprise execution engine. In modern venture building, commercial scaling is a tightly coupled cybernetic system: if operational quality suffers from high defect variance, customer churn accelerates, destroying customer lifetime value ($LTV$) and obliterating unit economics. If Go-to-Market execution lacks a disciplined beachhead focus, marketing capital evaporates across saturated channels without crossing the chasm into mainstream enterprise adoption. We begin this capstone by formalising our Six Sigma quality control architecture into an unshakeable operational foundation.",
+          "Welcome to the prestigious Milestone 4 Capstone of Entrepreneurship and Business Management. Over our preceding four sessions in Module 4, we investigated the critical operational and commercial pillars required to scale an enterprise from initial commercial traction into nationwide market dominance: Lean manufacturing waste elimination and Six Sigma statistical process control, Go-to-Market beachhead domination and compounding viral loop dynamics, Revenue Operations sales velocity modeling and pipeline coverage ratios, and Value-Based Pricing packaging with behavioral decoy psychology. Today, in this comprehensive capstone, we synthesize these four disciplines into a unified, sovereign enterprise execution engine. In modern venture building, commercial scaling is a tightly coupled cybernetic system: if operational quality suffers from high defect variance, customer churn accelerates, destroying customer lifetime value (LTV) and obliterating unit economics. If Go-to-Market execution lacks a disciplined beachhead focus, marketing capital evaporates across saturated channels without crossing the chasm into mainstream enterprise adoption. We begin this capstone by formalising our Six Sigma quality control architecture into an unshakeable operational foundation.",
           "The intellectual foundation of operational excellence requires treating every internal workflow as a statistical distribution governed by natural laws. High-growth technology startups frequently deceive themselves by measuring performance purely through average metrics: an average onboarding duration of five days sounds acceptable, yet if high statistical variance means twenty percent of enterprise clients wait thirty days, those delayed clients will experience executive churn before generating a single dollar of recognized revenue. To prevent operational decay, modern management mandates the deployment of Six Sigma's DMAIC framework (Define, Measure, Analyze, Improve, Control) combined with rigorous TIMWOODS waste auditing. Eliminating the eight operational wastes—Transport, Inventory, Motion, Waiting, Overproduction, Overprocessing, Defects, and underutilized Skills—purges hidden administrative drag and unlocks hundreds of thousands of dollars in working capital that can be redeployed toward customer acquisition.",
-          "Furthermore, institutional quality engineering requires calculating Process Capability Indices ($C_p$ and $C_{pk}$) across core platform infrastructure and customer service pipelines. While $C_p$ measures theoretical process dispersion relative to customer specification boundaries, $C_{pk}$ accounts for real-world process centering and drift. In our executed synthesis model, we evaluate platform telemetry against customer SLA boundaries spanning 60ms to 120ms. The engine verifies an empirical $C_{pk}$ index of 1.48, decisively exceeding the institutional 1.33 benchmark. Achieving $C_{pk} \\ge 1.33$ provides mathematical proof of 4-Sigma quality compliance, guaranteeing fewer than sixty-three defects per million transactions. This statistical stability eliminates service-level penalty breaches, reassuring enterprise buyers that platform performance will remain predictable under peak holiday shopping or financial closing volumes.",
-          "In our opening Python capstone module, we execute an integrated quality evaluation linking TIMWOODS financial savings, DMAIC tollgate clearances, and $C_{pk}$ capability indices. The engine confirms that over two hundred thousand dollars in operational waste was successfully purged through automated handoffs and asynchronous approval workflows, while continuous improvement initiatives cleared all five DMAIC governance tollgates. By anchoring commercial scaling on a foundation of statistical quality control, startup leadership ensures that rapid customer expansion does not lead to operational breakdown, customer dissatisfaction, or gross margin degradation.",
+          "Furthermore, institutional quality engineering requires calculating Process Capability Indices (C p and C pk) across core platform infrastructure and customer service pipelines. While C p measures theoretical process dispersion relative to customer specification boundaries, C pk accounts for real-world process centering and drift. In our executed synthesis model, we evaluate platform telemetry against customer SLA boundaries spanning 60ms to 120ms. The engine verifies an empirical C pk index of 1.48, decisively exceeding the institutional 1.33 benchmark. Achieving C pk greater than or equal to 1.33 provides mathematical proof of 4-Sigma quality compliance, guaranteeing fewer than sixty-three defects per million transactions. This statistical stability eliminates service-level penalty breaches, reassuring enterprise buyers that platform performance will remain predictable under peak holiday shopping or financial closing volumes.",
+          "In our opening Python capstone module, we execute an integrated quality evaluation linking TIMWOODS financial savings, DMAIC tollgate clearances, and C pk capability indices. The engine confirms that over two hundred thousand dollars in operational waste was successfully purged through automated handoffs and asynchronous approval workflows, while continuous improvement initiatives cleared all five DMAIC governance tollgates. By anchoring commercial scaling on a foundation of statistical quality control, startup leadership ensures that rapid customer expansion does not lead to operational breakdown, customer dissatisfaction, or gross margin degradation.",
           "Mastering this quality synthesis empowers startup founders to transition from chaotic, hero-driven problem solving into institutionalized, data-driven operational governance. Board members, prospective Series B venture investors, and enterprise procurement committees scrutinize process capability to confirm that the business can double or triple transaction throughput without linear headcount expansion. With statistical quality control verified, the enterprise stands on a solid foundation, ready to deploy aggressive Go-to-Market expansion across national markets.",
           "Additionally, institutional operations leaders understand that quality control is not a static audit but an active cultural operating system. By establishing automated continuous telemetry dashboards, engineering teams and operational managers receive real-time alerts whenever process variance begins to drift away from nominal setpoints. Root-cause corrective actions are immediately deployed before minor variances compound into client-facing SLA failures. This proactive engineering rigor protects the venture's brand equity and ensures that customer trust remains intact throughout periods of hyper-growth."
         ],
@@ -4523,11 +4443,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines evaluate_six_sigma_quality synthesizing TIMWOODS waste savings, DMAIC tollgate verification, and sample Cpk calculation."
+            "note": "Defines the function `evaluate_six_sigma_quality`."
           },
           {
-            "line": 2,
-            "note": "Evaluates API latency measurements against SLA boundaries (60ms-120ms) and prints quality compliance statistics."
+            "line": 27,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase sample variance by changing latency values to range between 55ms and 125ms. Observe how Cpk drops below 1.33, failing 4-Sigma compliance.",
@@ -4551,7 +4471,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "With operational quality and process stability mathematically certified, the enterprise must deploy an aggressive, capital-efficient Go-to-Market (GTM) engine capable of conquering customer segments without catastrophic customer acquisition costs. In high-growth entrepreneurship, the most common commercial failure mode is premature horizontal expansion: attempting to sell software to retail, healthcare, finance, and logistics simultaneously. Diffusing marketing capital across multiple unrelated industries prevents the startup from achieving word-of-mouth dominance, resulting in high customer acquisition costs and extended sales cycles. To overcome this hurdle, the enterprise implements Bill Aulet's Beachhead Market Strategy, identifying a tightly constrained, highly focused commercial niche, capturing dominant market share, and utilizing that sovereign base to conquer adjacent markets.",
           "In our synthesized GTM architecture, we score candidate markets across five weighted strategic criteria: customer funding accessibility, the presence of an urgent hair-on-fire problem, the ability to deliver a 100% complete whole product, the absence of entrenched competitors, and the strategic presence of follow-on market adjacencies. Our model validates Regional Independent Medical Clinics with an outstanding 4.45 weighted score, confirming that the niche possesses well-funded buyers with urgent regulatory compliance mandates. By dominating this beachhead first, the enterprise builds a dense network of referenceable peer case studies, enabling sales representatives to achieve exceptional conversion velocity.",
           "Furthermore, transitioning from early adopters into the mainstream market requires crossing Geoffrey Moore's 'Chasm' by constructing the 'Whole Product.' Mainstream Pragmatist buyers, who control eighty percent of enterprise procurement budgets, refuse to purchase standalone generic software; they demand a complete, risk-free ecosystem encompassing legacy electronic health record (EHR) integrations, HIPAA-compliant cloud storage, SOC2 Type II certifications, 24/7 technical support, and certified clinician training. Our capstone audit verifies that the enterprise has secured ninety percent of these essential complementary assets, eliminating procurement objections and confirming that the platform is certified CHASM_CROSSING_READY.",
-          "In parallel with B2B direct sales, the enterprise activates product-led viral growth mechanics. The mathematical engine of viral compounding is the Viral Coefficient ($K$-factor), calculated as invitations per user multiplied by invitee conversion rate ($K = i \\times c$). When collaborative workflow tools achieve a $K$-factor strictly exceeding 1.00 ($K > 1.0$) with short viral cycle times, user acquisition shifts into a super-critical exponential growth regime. In our executed Python simulation, an initial cohort of 1,000 seed users operating with a $K$-factor of 1.25 and a 7-day cycle time multiplies automatically into over 11,000 active accounts in just thirty-five days. This organic viral compounding drives blended customer acquisition costs toward zero, providing an unfair competitive advantage over legacy rivals who rely exclusively on paid advertising.",
+          "In parallel with B2B direct sales, the enterprise activates product-led viral growth mechanics. The mathematical engine of viral compounding is the Viral Coefficient (K-factor), calculated as invitations per user multiplied by invitee conversion rate (K = i times c). When collaborative workflow tools achieve a K-factor strictly exceeding 1.00 ($K > 1.0$) with short viral cycle times, user acquisition shifts into a super-critical exponential growth regime. In our executed Python simulation, an initial cohort of 1,000 seed users operating with a K-factor of 1.25 and a 7-day cycle time multiplies automatically into over 11,000 active accounts in just thirty-five days. This organic viral compounding drives blended customer acquisition costs toward zero, providing an unfair competitive advantage over legacy rivals who rely exclusively on paid advertising.",
           "Combining disciplined beachhead domination with whole-product enterprise readiness and viral product amplification creates an unbeatable commercial distribution flywheel. Word-of-mouth referrals from delighted beachhead customers accelerate inbound enterprise interest, while collaborative viral loops convert end-users into internal software champions. This multifaceted Go-to-Market engine enables the venture to capture market share with unprecedented capital efficiency, establishing undisputed market leadership before competitors can mobilize defensive responses.",
           "Moreover, establishing a dominant beachhead creates powerful psychological network effects that dissuade well-funded competitors from entering the sector. When prospective clients in an industry observe that eighty percent of their regional peers standardize on a single software platform, adoption shifts from a speculative risk into an industry-mandated best practice. Sales resistance collapses, contract turnaround times shorten from months to days, and pricing power strengthens substantially. By establishing regional hegemony before attempting nationwide expansion, the startup achieves sustainable economic defensibility.",
           "Finally, maintaining viral momentum requires continuous product experimentation and conversion optimization. Product growth teams measure cycle time latency at every stage of the user referral flow, removing authentication friction, enabling single-click guest collaboration, and embedding subtle brand attribution into shared artifacts. Compounding these incremental optimizations across weekly development sprints ensures that viral loops remain vibrant, continuously feeding qualified prospective buyers into the enterprise sales pipeline."
@@ -4562,25 +4482,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines evaluate_gtm_scaling modeling compounding viral expansion over multiple weekly cycles."
+            "note": "Defines the function `evaluate_gtm_scaling`."
           },
           {
-            "line": 2,
-            "note": "Simulates a 5-week viral expansion with a 1.25 K-factor and prints beachhead and chasm crossing metrics."
+            "line": 21,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce the viral K-factor to 0.85 and observe how the user base plateaus rather than compounding exponentially.",
         "check": {
           "question": "What occurs when an enterprise product achieves a Viral Coefficient (K-factor) strictly exceeding 1.00?",
           "options": [
-            "User acquisition enters a super-critical exponential growth regime without linear marketing spend.",
+            "Viral growth decays rapidly due to channel exhaustion within two cycles.",
             "Customer acquisition costs increase proportionally with user growth.",
             "The business is forced to discontinue enterprise sales hiring.",
-            "Viral growth decays rapidly due to channel exhaustion within two cycles."
+            "User acquisition enters a super-critical exponential growth regime without linear marketing spend."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "When K > 1.0, each customer cohort generates more than one new customer on average, sparking a self-sustaining exponential viral loop that drives blended customer acquisition costs toward zero.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "When K > 1.0, each customer cohort generates more than one new customer on average, sparking a self-sustaining exponential viral loop that drives blended customer acquisition costs toward zero."
         }
       },
@@ -4588,7 +4508,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Revenue Operations Control Tower & Pipeline Coverage Matrix (Coverage >= 3.5x)",
         "say": [
           "A brilliant Go-to-Market strategy must be operationalized through a unified Revenue Operations (RevOps) control tower that converts market demand into predictable, repeatable cash flow. High-growth enterprises cannot afford to manage sales pipelines through subjective sales rep intuition or chaotic end-of-quarter discounting. In our third capstone module, we synthesize the two fundamental equations of B2B commercial engineering: the 4-Factor Sales Velocity Formula and the Pipeline Coverage Ratio.",
-          "The Sales Velocity Formula ($V = (O \\times W \\times A) / T$) models commercial revenue generation as a physics equation. Velocity is accelerated by expanding qualified opportunities ($O$), improving consultative win rates ($W$), and enlarging Average Contract Value ($A$), while being constrained by the sales cycle duration ($T$) in the denominator. In our executed capstone model, the enterprise achieves an optimized sales velocity of $104,166 per day ($3,125,000 monthly) by concurrently optimizing all four levers: expanding qualified SQLs, training reps in consultative discovery to lift win rates to 28%, introducing enterprise feature tiers to expand deal sizes to $50,000, and compressing cycle times from sixty to forty-five days via automated legal redlining.",
+          "The Sales Velocity Formula (V = (O times W times A) / T) models commercial revenue generation as a physics equation. Velocity is accelerated by expanding qualified opportunities (O), improving consultative win rates (W), and enlarging Average Contract Value (A), while being constrained by the sales cycle duration (T) in the denominator. In our executed capstone model, the enterprise achieves an optimized sales velocity of $104,166 per day ($3,125,000 monthly) by concurrently optimizing all four levers: expanding qualified SQLs, training reps in consultative discovery to lift win rates to 28%, introducing enterprise feature tiers to expand deal sizes to $50,000, and compressing cycle times from sixty to forty-five days via automated legal redlining.",
           "In parallel, commercial sustainability requires forward-looking visibility through the Pipeline Coverage Ratio. To achieve target quota attainment with an empirical twenty-five to twenty-eight percent win rate, the sales organization must enter every fiscal quarter with at least 3.5x to 4.0x pipeline coverage. Operating with less than 3.0x coverage virtually guarantees a quota miss, forcing management to resort to margin-destroying discounts. In our synthesized RevOps model, the enterprise maintains four million dollars in qualified pipeline against a one million dollar quarterly net bookings quota, achieving an exact 4.0x coverage ratio that insulates the business from deal slippage and macroeconomic turbulence.",
           "Furthermore, our RevOps engine implements stage-weighted forecasting with automated slippage haircuts. While raw pipeline figures can be distorted by over-optimistic sales reps, our algorithm applies empirical close probabilities across each funnel stage and automatically imposes a fifty percent probability penalty on stalled deals exceeding stage duration SLAs. In our executed pipeline analysis, the engine accurately forecasts $296,500 in risk-adjusted quarterly revenue from $655,000 in unweighted deals, isolating $225,000 in stalled deal slippage risk. This rigorous financial triangulation provides the CFO and board of directors with high-fidelity revenue projections that eliminate unexpected budget shortfalls.",
           "Finally, RevOps aligns pipeline generation with sales hiring capacity. By factoring in four-month rep onboarding ramp curves and ten percent annual rep turnover, our capacity model calculates that the company must recruit twelve Account Executives rather than the nominal 7.5 to reliably fulfill a six million dollar annual bookings commitment. This capacity buffer prevents the dreaded 'capacity deficit trap,' ensuring that the enterprise possesses the physical sales horsepower required to convert expanding pipeline into recognized revenue.",
@@ -4601,35 +4521,35 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines evaluate_revops_pipeline calculating coverage ratios and monthly sales velocity based on quota and deal parameters."
+            "note": "Defines the function `evaluate_revops_pipeline`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a $1.0M net bookings quota scenario with 28% win rate and prints pipeline health metrics."
+            "line": 24,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce open pipeline to $2.0M. Observe how coverage drops to 2.0x, flagging an unhealthy pipeline deficit below the 3.5x threshold.",
         "check": {
           "question": "Why do institutional sales organizations mandate entering each quarter with at least 3.5x to 4.0x pipeline coverage?",
           "options": [
-            "To insulate quarterly quota attainment from deal slippage and typical 25% to 28% win rates.",
             "To ensure that sales reps do not receive incentive commissions.",
             "To eliminate the need for CRM software tracking.",
+            "To insulate quarterly quota attainment from deal slippage and typical 25% to 28% win rates.",
             "To satisfy regulatory SEC filing requirements for early-stage startups."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "With standard enterprise win rates hovering between 25% and 28%, a minimum pipeline coverage ratio of 3.5x to 4.0x is required to absorb normal deal slippage and reliably achieve net revenue quota commitments.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "With standard enterprise win rates hovering between 25% and 28%, a minimum pipeline coverage ratio of 3.5x to 4.0x is required to absorb normal deal slippage and reliably achieve net revenue quota commitments."
         }
       },
       {
         "title": "Unit Economics Viability & Capital Recycling (LTV/CAC >= 3.0x & Payback <= 12 Mo)",
         "say": [
-          "The ultimate economic test of any business model is whether its customer relationships generate sustainable, compounding unit profitability. A company can boast exceptional six-sigma quality, rapid viral user growth, and massive pipeline coverage, but if the cost to acquire a customer exceeds the net lifetime profit generated by that customer, rapid growth will simply accelerate corporate bankruptcy. In this fourth capstone section, we formalize the definitive financial metrics of venture economic viability: Customer Acquisition Cost ($CAC$), Customer Lifetime Value ($LTV$), the $LTV/CAC$ Ratio, and the CAC Payback Period.",
-          "Customer Acquisition Cost represents the total loaded financial expenditure required to acquire a single paying customer, calculated by summing all sales salaries, commissions, marketing ad spend, agency retainers, and travel overhead, divided by the total number of customers acquired within that period. Customer Lifetime Value measures the net gross profit contribution generated by a customer over their entire commercial relationship with the enterprise, expressed mathematically as: $LTV = (ARPU \\times \\text{Gross Margin}) / \\text{Churn Rate}$. When an enterprise delivers high-margin software ($80\\%$ gross margins) with minimal annual customer churn ($8\\%$), customer lifetime value expands exponentially.",
+          "The ultimate economic test of any business model is whether its customer relationships generate sustainable, compounding unit profitability. A company can boast exceptional six-sigma quality, rapid viral user growth, and massive pipeline coverage, but if the cost to acquire a customer exceeds the net lifetime profit generated by that customer, rapid growth will simply accelerate corporate bankruptcy. In this fourth capstone section, we formalize the definitive financial metrics of venture economic viability: Customer Acquisition Cost (CAC), Customer Lifetime Value (LTV), the $LTV/CAC$ Ratio, and the CAC Payback Period.",
+          "Customer Acquisition Cost represents the total loaded financial expenditure required to acquire a single paying customer, calculated by summing all sales salaries, commissions, marketing ad spend, agency retainers, and travel overhead, divided by the total number of customers acquired within that period. Customer Lifetime Value measures the net gross profit contribution generated by a customer over their entire commercial relationship with the enterprise, expressed mathematically as: LTV = (ARPU times Gross Margin) / Churn Rate. When an enterprise delivers high-margin software (80% gross margins) with minimal annual customer churn (8%), customer lifetime value expands exponentially.",
           "In institutional venture capital and private equity analysis, two fundamental benchmarks dictate whether a venture is investable. The first is the $LTV/CAC$ Ratio, which must reach or exceed $3.0x$. An $LTV/CAC$ ratio below $3.0x$ indicates that marketing and sales expenditures are consuming too much capital relative to customer value, leaving inadequate gross profit to cover fixed engineering, administrative, and research overhead. An $LTV/CAC$ ratio between $4.0x$ and $6.0x$ represents the 'Goldilocks Zone' of venture capital scaling, indicating highly efficient commercial expansion. In our executed capstone model, an annual ARPU of $4,500 with an 80% gross margin and an 8% annual churn rate yields an extraordinary customer lifetime value of $45,000 against a $7,500 loaded CAC, delivering a phenomenal $6.0x$ $LTV/CAC$ ratio.",
-          "The second non-negotiable benchmark is the CAC Payback Period—the calendar duration required for a customer's monthly gross profit contribution to fully recover the upfront cash expended to acquire them ($CAC / (\\text{Monthly ARPU} \\times \\text{Gross Margin})$). In venture-backed software, the institutional standard mandates that CAC payback must occur in less than twelve months. Shorter payback periods minimize cash burn and accelerate capital recycling: when a company recovers its customer acquisition costs in eight months, that same capital can be reinvested into acquiring a second customer within the same fiscal year. In our model, the enterprise achieves a rapid 8.3-month payback period, confirming that the commercial engine is self-sustaining and capital-independent.",
+          "The second non-negotiable benchmark is the CAC Payback Period—the calendar duration required for a customer's monthly gross profit contribution to fully recover the upfront cash expended to acquire them (CAC / (Monthly ARPU times Gross Margin)). In venture-backed software, the institutional standard mandates that CAC payback must occur in less than twelve months. Shorter payback periods minimize cash burn and accelerate capital recycling: when a company recovers its customer acquisition costs in eight months, that same capital can be reinvested into acquiring a second customer within the same fiscal year. In our model, the enterprise achieves a rapid 8.3-month payback period, confirming that the commercial engine is self-sustaining and capital-independent.",
           "Mastering unit economics protects the enterprise from the dangerous 'Growth at All Costs' trap that doomed countless over-funded startups. When commercial leaders understand their exact marginal acquisition costs and payback velocity, they can make informed capital allocation decisions, aggressively scaling marketing spend on high-performing channels while ruthlessly eliminating unprofitable acquisition vectors. This economic discipline transforms the startup into an enduring, high-margin cash generator.",
           "Furthermore, institutional investors scrutinize the composition of customer acquisition costs to evaluate scalability. If CAC increases linearly with sales volume due to rising digital advertising costs, the enterprise risks experiencing margin compression as it expands. Conversely, companies that leverage product-led growth, organic search authority, and customer referral flywheels maintain flat or declining marginal CAC curves, allowing operating margins to expand dramatically at scale. Maintaining this capital efficiency is the hallmark of category-defining technology leaders.",
           "To continuously strengthen unit economics, commercial leaders also invest in customer retention and expansion strategies. Generating negative net churn through automated cross-selling, seat expansion, and usage-based monetization dramatically increases cumulative customer lifetime value without incurring additional customer acquisition expenditures. When Net Revenue Retention (NRR) reaches 120% or higher, the business experiences organic revenue growth from its existing installed base alone, decoupling revenue expansion from raw marketing acquisition budgets."
@@ -4640,25 +4560,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines evaluate_unit_economics calculating LTV, LTV/CAC ratio, and CAC payback in months from ARPU, margin, churn, and acquisition costs."
+            "note": "Defines the function `evaluate_unit_economics`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a SaaS unit economics profile and verifies compliance with institutional investment benchmarks."
+            "line": 28,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase annual churn to 25% and observe how LTV drops to $14,400, reducing the LTV/CAC ratio to 1.92x and violating institutional viability.",
         "check": {
           "question": "What are the two primary unit economics benchmarks required for institutional venture capital investment?",
           "options": [
+            "A viral K-factor of 0.50 combined with high digital ad spend.",
             "LTV/CAC ratio of at least 3.0x and CAC payback period of 12 months or less.",
             "Gross margins below 30% and net churn exceeding 20%.",
-            "Sales velocity exceeding $100M monthly regardless of acquisition cost.",
-            "A viral K-factor of 0.50 combined with high digital ad spend."
+            "Sales velocity exceeding $100M monthly regardless of acquisition cost."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Institutional venture capital mandates that Customer Lifetime Value must be at least 3x Customer Acquisition Cost (LTV/CAC >= 3.0x) and upfront acquisition cash must be recovered within 12 months or less to ensure capital-efficient, compounding growth.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Institutional venture capital mandates that Customer Lifetime Value must be at least 3x Customer Acquisition Cost (LTV/CAC >= 3.0x) and upfront acquisition cash must be recovered within 12 months or less to ensure capital-efficient, compounding growth."
         }
       },
@@ -4666,8 +4586,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "🏆 Master Sovereign Milestone 4 Capstone Audit Engine & Four-Gate Accreditation",
         "say": [
           "We conclude this Milestone 4 Capstone by uniting all four commercial and operational pillars into our Master Sovereign Milestone 4 Capstone Audit Engine. True mastery of entrepreneurship and business management requires the ability to audit an entire enterprise holistically, verifying that operational quality, Go-to-Market distribution, RevOps pipeline mechanics, and financial unit economics operate in synchronized harmony. When preparing an enterprise for a major financing round, cross-border joint venture, or initial public offering, institutional diligence teams and sovereign auditors execute automated verification scripts across these exact four dimensions. A failure in any single domain compromises the entire corporate vehicle.",
-          "Our Master Sovereign Milestone 4 Capstone Audit Engine performs an automated four-gate accreditation verification. Gate 1 evaluates Operational Six Sigma Excellence, confirming that internal processes maintain 4-Sigma capability ($C_{pk} \\ge 1.33$) with validated DMAIC continuous improvement governance, guaranteeing fewer than sixty-three defects per million transactions. Gate 2 verifies Go-to-Market Scaling and Virality, confirming that the company has secured a dominant beachhead market (score $\\ge 4.0$) with whole-product chasm crossing readiness ($\\ge 90\\%$) and super-critical viral expansion potential ($K \\ge 1.0$).",
-          "Gate 3 verifies Revenue Operations Pipeline Predictability, ensuring that total qualified pipeline maintains at least 3.5x coverage relative to quarterly quota while demonstrating compounding sales velocity and stalled deal probability adjustments. Finally, Gate 4 inspects Unit Economics and Payback Viability, confirming that customer lifetime value exceeds customer acquisition costs by at least 3.0x ($LTV/CAC \\ge 3.0x$) with cash payback occurring in twelve months or less. Passing this gate proves that customer acquisition is capital-efficient and self-sustaining, assuring investors that revenue growth will translate into expanding operating cash flows.",
+          "Our Master Sovereign Milestone 4 Capstone Audit Engine performs an automated four-gate accreditation verification. Gate 1 evaluates Operational Six Sigma Excellence, confirming that internal processes maintain 4-Sigma capability (C pk greater than or equal to 1.33) with validated DMAIC continuous improvement governance, guaranteeing fewer than sixty-three defects per million transactions. Gate 2 verifies Go-to-Market Scaling and Virality, confirming that the company has secured a dominant beachhead market (score greater than or equal to 4.0) with whole-product chasm crossing readiness (greater than or equal to 90%) and super-critical viral expansion potential (K greater than or equal to 1.0).",
+          "Gate 3 verifies Revenue Operations Pipeline Predictability, ensuring that total qualified pipeline maintains at least 3.5x coverage relative to quarterly quota while demonstrating compounding sales velocity and stalled deal probability adjustments. Finally, Gate 4 inspects Unit Economics and Payback Viability, confirming that customer lifetime value exceeds customer acquisition costs by at least 3.0x (LTV/CAC greater than or equal to 3.0x) with cash payback occurring in twelve months or less. Passing this gate proves that customer acquisition is capital-efficient and self-sustaining, assuring investors that revenue growth will translate into expanding operating cash flows.",
           "In our executed capstone demonstration, the Master Sovereign Milestone 4 Capstone Engine evaluates the integrated outputs of our four preceding models. All four verification gates register unanimous PASS ratings, culminating in the formal conferral of the highest commercial accreditation: GTM_SCALING_AND_UNIT_ECONOMICS_MASTER_CERTIFIED_NOMINAL. As you advance into subsequent modules covering human capital, corporate governance, situational leadership, and enterprise risk management, this commercial and operational engine will serve as your core growth driver. You now command the quantitative models, quality frameworks, and economic metrics required to scale an enterprise to national category leadership with sovereign institutional excellence.",
           "Ultimately, this Milestone 4 Capstone represents the institutional transition from founder-led commercial experimentation to an industrialized, highly predictable corporate growth machine. By embedding automated quality controls, repeatable distribution playbooks, disciplined RevOps pipeline management, and robust unit economics directly into the enterprise operating cadence, executive leadership builds an enduring corporate foundation. This sovereign architecture empowers the organization to navigate competitive price wars, absorb macroeconomic shocks, and generate compounding enterprise value across all stages of commercial scaling.",
           "Moreover, achieving this level of quantitative operational mastery transforms the enterprise into a magnetic target for elite talent and premier venture capital. Institutional financiers and sovereign wealth funds seek scalable vehicles characterized by verifiable mathematical rigor rather than charismatic founder promises. Having cleared all four audit gates with decisive quantitative margins, the enterprise stands fully equipped to dominate national markets, cross international borders, and establish an enduring legacy of market leadership.",
@@ -4680,11 +4600,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines master_milestone4_capstone_audit verifying 4-Sigma quality (Cpk >= 1.33), GTM readiness (Beachhead >= 4.0, K >= 1.0), RevOps coverage (>= 3.5x), and unit economics (LTV/CAC >= 3.0x, Payback <= 12 mo)."
+            "note": "Defines the function `master_milestone4_capstone_audit`."
           },
           {
-            "line": 2,
-            "note": "Executes the unified capstone evaluation across all four gates and prints the final accreditation status."
+            "line": 42,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set revops_res coverage_ratio to 3.0x and rerun. Observe how Gate 3 fails, triggering CAPSTONE_DEFENSE_DEFICIT_DETECTED.",
@@ -4743,29 +4663,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines calculate_esop_pool_allocation computing total pool shares, executive grant deductions, and unallocated reserve solvency."
+            "note": "Defines the function `calculate_esop_pool_allocation`."
           },
           {
-            "line": 2,
-            "note": "Simulates executive equity grants across VP Engineering, Head of Product, VP Sales, and Staff Engineers."
-          },
-          {
-            "line": 3,
-            "note": "Reports fully diluted share counts, allocated shares, remaining ungranted shares, and pool solvency."
+            "line": 46,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase executive grants to total 14.0%. Observe how remaining ungranted shares drop to negative numbers, triggering an OVERALLOCATED deficit.",
         "check": {
           "question": "Why do institutional venture capital investors mandate establishing a 10% to 15% ESOP pool during Series A/B rounds?",
           "options": [
-            "To provide an unallocated equity reserve to attract and recruit elite executive talent without repeated cap table re-authorizations.",
             "To hide company ownership from taxation authorities.",
             "To force founders to give away all their equity to junior interns.",
-            "To eliminate the need for paying cash salaries entirely."
+            "To eliminate the need for paying cash salaries entirely.",
+            "To provide an unallocated equity reserve to attract and recruit elite executive talent without repeated cap table re-authorizations."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "A 10-15% ESOP pool reserves equity for critical senior hires needed to scale the company over the subsequent 18-24 months without requiring constant dilutive shareholder votes.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "A 10-15% ESOP pool reserves equity for critical senior hires needed to scale the company over the subsequent 18-24 months without requiring constant dilutive shareholder votes."
         }
       },
@@ -4773,7 +4689,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "title": "Four-Year Vesting Schedules with One-Year Cliff & Strike Price Spread Mechanics",
         "say": [
           "Issuing equity options to employees is only the first step; organizations must govern equity distribution over time through structured vesting mechanics and exercise guardrails. If a startup grants two percent of its equity to a newly recruited Chief Technology Officer on day one without vesting restrictions, and that executive resigns after ninety days to join a competitor, the venture loses two percent of its capitalization table forever. This 'dead equity' repels future venture capital investors and demoralizes remaining team members who must work for years to build enterprise value. To prevent this existential risk, global technology enterprises enforce the Four-Year Vesting Schedule with a One-Year Cliff.",
-          "The One-Year Cliff is an absolute institutional standard in venture-backed entrepreneurship. Under cliff mechanics, an employee earns zero percent equity during their first twelve consecutive months of service. If the employee resigns, is terminated for cause, or fails to satisfy cultural and performance standards within the first 364 days, they leave the company with zero vested shares, and their unvested options return immediately to the company option pool. Exactly upon the 365th day—clearing the cliff—the employee vests twenty-five percent ($25\\% = 12/48$) of their total grant in a single lump tranche. Thereafter, vesting transitions into a smooth monthly straight-line progression ($1/48$th of total grant per month) over the remaining thirty-six months.",
+          "The One-Year Cliff is an absolute institutional standard in venture-backed entrepreneurship. Under cliff mechanics, an employee earns zero percent equity during their first twelve consecutive months of service. If the employee resigns, is terminated for cause, or fails to satisfy cultural and performance standards within the first 364 days, they leave the company with zero vested shares, and their unvested options return immediately to the company option pool. Exactly upon the 365th day—clearing the cliff—the employee vests twenty-five percent (25% = 12/48) of their total grant in a single lump tranche. Thereafter, vesting transitions into a smooth monthly straight-line progression ($1/48$th of total grant per month) over the remaining thirty-six months.",
           "In addition to vesting schedules, equity architectures must define strike prices and post-termination exercise windows (PTEWs). The strike price (or exercise price) represents the fixed dollar price an employee must pay to convert an option into common stock. Federal tax regulations (such as Section 409A in the United States and comparable provisions under the Indian Companies Act) mandate that strike prices must be set at or above Fair Market Value (FMV) determined by an independent valuation firm. Setting strike prices below FMV triggers punitive tax penalties for employees. When an employee exercises options, their net financial gain equals the spread between the current FMV and the original strike price multiplied by their vested options.",
           "In our Python vesting simulation, we evaluate an executive granted 100,000 stock options with a $1.00 strike price under a platform whose FMV expands to $15.00 per share over four years. At Month 6, prior to the cliff, the engine confirms 0 options vested ($0 net spread). At Month 12, the one-year cliff clears, unlocking 25,000 options worth $350,000 in net pre-tax gain for a $25,000 exercise payment. By Month 48, full vesting is achieved, delivering 100,000 shares generating $1,400,000 in net equity wealth. This structured compensation model provides life-changing financial upside for high-performing employees while protecting the company against premature departures.",
           "Furthermore, forward-thinking startups are reforming legacy Post-Termination Exercise Windows. Historically, departing employees were given only 90 days to exercise their vested options; otherwise, the options were forfeited back to the company. For early employees who helped build the business, paying thousands of dollars in exercise costs and associated AMT tax liabilities within 90 days was financially impossible, resulting in unfair equity forfeiture. Leading technology firms now implement Extended Exercise Windows spanning seven to ten years for employees who complete at least two years of service, demonstrating progressive human capital leadership while retaining strong talent loyalty.",
@@ -4785,15 +4701,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_vesting_tranches evaluating cliff clearance, monthly straight-line progression, exercise costs, and net spread value."
+            "note": "Defines the function `calculate_vesting_tranches`."
           },
           {
-            "line": 2,
-            "note": "Simulates vesting milestones at 6, 12, 24, 36, and 48 months under expanding Fair Market Value."
-          },
-          {
-            "line": 3,
-            "note": "Prints itemized vesting percentages, exercise cash obligations, and net equity wealth."
+            "line": 26,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set cliff_months to 0 to simulate immediate vesting. Observe how equity vests linearly from Month 1, eliminating the retention cliff safeguard.",
@@ -4829,29 +4741,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines calibrate_9box_grid mapping performance (1-3) and potential (1-3) coordinates into nine standardized talent categories."
+            "note": "Defines the function `calibrate_9box_grid`."
           },
           {
-            "line": 2,
-            "note": "Configures a sample team roster across engineering, product, QA, and customer support."
-          },
-          {
-            "line": 3,
-            "note": "Reports star counts, underperformance risks, and itemized employee box classifications."
+            "line": 47,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change Frank Miller's potential score to 3. Notice how his classification flips from Underperformer to 'Enigma / Rough Diamond', shifting action from exit to coaching.",
         "check": {
           "question": "In the McKinsey 9-Box Grid, what strategic talent action should leadership take for employees classified in Box (3, 3) (High Performance, High Potential)?",
           "options": [
+            "Freeze their salary and restrict their promotion opportunities.",
             "Accelerate equity refreshes, assign high-impact stretch projects, and groom them for executive leadership roles.",
             "Place them on a 30-day performance improvement plan.",
-            "Transfer them to low-priority maintenance tasks.",
-            "Freeze their salary and restrict their promotion opportunities."
+            "Transfer them to low-priority maintenance tasks."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Box (3,3) Stars are the future leaders of the enterprise; management must invest aggressively in their growth, compensation, and retention.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Box (3,3) Stars are the future leaders of the enterprise; management must invest aggressively in their growth, compensation, and retention."
         }
       },
@@ -4872,29 +4780,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_loaded_headcount_cost summing cash compensation, employer taxes, healthcare benefits, tooling, and annualized equity value."
+            "note": "Defines the function `calculate_loaded_headcount_cost`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a senior technical executive compensation package and computes the loaded multiplier."
-          },
-          {
-            "line": 3,
-            "note": "Outputs itemized cost components, total annual loaded cost, and the base salary multiplier."
+            "line": 32,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase base salary to $200,000 and bonus to 25%. Observe how total loaded cost expands beyond $320,000 annually, demonstrating true cash burn impact.",
         "check": {
           "question": "Why is the Total Cost of Workforce (TCOW) loaded multiplier typically 1.4x to 1.6x of an employee's base salary in technology startups?",
           "options": [
-            "Because employer payroll taxes, healthcare benefits, software tooling, performance bonuses, and amortized equity substantially exceed base pay.",
             "Because office snack bars cost 50% of employee salaries.",
             "Because banks charge a 50% fee on all direct deposit payroll transfers.",
+            "Because employer payroll taxes, healthcare benefits, software tooling, performance bonuses, and amortized equity substantially exceed base pay.",
             "Treating Total and Workforce as interchangeable constants rather than verifying Loaded at each step."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Fully loaded workforce costs include statutory taxes (FICA/Medicare), health insurance, software licenses, bonuses, and equity, typically adding 40-60% over base salary.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Fully loaded workforce costs include statutory taxes (FICA/Medicare), health insurance, software licenses, bonuses, and equity, typically adding 40-60% over base salary."
         }
       },
@@ -4915,25 +4819,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_human_capital_control_tower verifying ESOP pool solvency (10-15%), vesting cliff enforcement, 9-box calibration, and TCOW multiplier (<= 1.75x)."
+            "note": "Defines the function `master_human_capital_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Evaluates benchmark sample inputs and prints gate clearance statuses and final accreditation."
+            "line": 48,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set tcow_res loaded_multiplier to 1.85x and rerun. Observe how Gate 4 fails, triggering HUMAN_CAPITAL_GOVERNANCE_DEFICIT.",
         "check": {
           "question": "What is the primary governance objective of the Master Human Capital & Compensation Control Tower?",
           "options": [
-            "To execute an automated four-gate audit validating option pool solvency, vesting integrity, talent calibration, and loaded workforce cost guardrails.",
-            "To eliminate all human resource personnel from the startup.",
             "To force all employees to accept identical compensation regardless of role.",
-            "To guarantee that no employee ever leaves the company."
+            "To guarantee that no employee ever leaves the company.",
+            "To eliminate all human resource personnel from the startup.",
+            "To execute an automated four-gate audit validating option pool solvency, vesting integrity, talent calibration, and loaded workforce cost guardrails."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The Master Human Capital Control Tower provides quantitative governance ensuring equity reserves, vesting schedules, talent density, and payroll burn are aligned with venture milestones.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The Master Human Capital Control Tower provides quantitative governance ensuring equity reserves, vesting schedules, talent density, and payroll burn are aligned with venture milestones."
         }
       }
@@ -4979,29 +4883,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements diagnose_situational_leadership mapping competence and commitment into D1-D4 developmental levels and S1-S4 leadership styles."
+            "note": "Defines the function `diagnose_situational_leadership`."
           },
           {
-            "line": 2,
-            "note": "Configures a sample team roster across junior, mid-level, and senior engineering/product roles."
-          },
-          {
-            "line": 3,
-            "note": "Outputs developmental classifications, directive/supportive behaviors, and concrete action prescriptions."
+            "line": 50,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set Alex's competence score to 4. Observe how his developmental classification advances to D4, shifting the prescribed style from S1 Directing to S4 Delegating.",
         "check": {
           "question": "Under Blanchard's Situational Leadership II model, what leadership style is prescribed for an employee at Development Level D2 (Low Competence, Low Commitment)?",
           "options": [
-            "S2 Coaching (High Directive, High Supportive behavior to clarify rationale and rebuild confidence).",
+            "Immediate termination without further developmental investment.",
             "S4 Delegating (Complete autonomy with zero managerial oversight).",
-            "S1 Directing (Issuing orders without explaining the underlying reasoning).",
-            "Immediate termination without further developmental investment."
+            "S2 Coaching (High Directive, High Supportive behavior to clarify rationale and rebuild confidence).",
+            "S1 Directing (Issuing orders without explaining the underlying reasoning)."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "D2 'Disillusioned Learners' suffer from low competence and falling motivation; they require both intensive directive guidance to build skills and high supportive behavior to restore confidence.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "D2 'Disillusioned Learners' suffer from low competence and falling motivation; they require both intensive directive guidance to build skills and high supportive behavior to restore confidence."
         }
       },
@@ -5022,29 +4922,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines audit_psychological_safety scoring Edmondson's 7-item Likert scale into High-Safety, Moderate, and Low-Safety organizational zones."
+            "note": "Defines the function `audit_psychological_safety`."
           },
           {
-            "line": 2,
-            "note": "Evaluates survey responses for an engineering squad and a sales cohort."
-          },
-          {
-            "line": 3,
-            "note": "Prints composite Likert scores, safety percentages, organizational zones, and behavioral profiles."
+            "line": 42,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce the engineering team scores to average 2.0. Observe how the classification shifts into the Low Safety / Anxiety Zone, indicating defensive silence.",
         "check": {
           "question": "What is the defining characteristic of teams operating in Amy Edmondson's 'Learning & High-Performance Zone'?",
           "options": [
+            "Complete silence where junior employees never question executive leadership.",
             "High psychological safety combined with high accountability for performance, enabling bold experimentation and candid debate.",
             "Zero accountability where deadlines are disregarded to prevent stress.",
-            "Brutal interpersonal criticism without personal empathy.",
-            "Complete silence where junior employees never question executive leadership."
+            "Brutal interpersonal criticism without personal empathy."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The Learning Zone occurs when psychological safety is high enough to take interpersonal risks while accountability remains high enough to drive world-class execution.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The Learning Zone occurs when psychological safety is high enough to take interpersonal risks while accountability remains high enough to drive world-class execution."
         }
       },
@@ -5065,15 +4961,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_radical_candor_feedback mapping Care Personally and Challenge Directly scores into the four quadrant archetypes."
+            "note": "Defines the function `evaluate_radical_candor_feedback`."
           },
           {
-            "line": 2,
-            "note": "Assesses four executive manager communication profiles across engineering, sales, ops, and product."
-          },
-          {
-            "line": 3,
-            "note": "Outputs quadrant classifications and specific leadership remediation action plans."
+            "line": 40,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change Emily's challenge score to 4.5. Notice how her classification shifts from Ruinous Empathy to Radical Candor, eliminating the risk of sugarcoated feedback.",
@@ -5108,29 +5000,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements assess_team_effectiveness evaluating Hackman's 5 conditions and computing the team effectiveness index and operational tier."
+            "note": "Defines the function `assess_team_effectiveness`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a cross-functional AI product squad across the five empirical dimensions."
-          },
-          {
-            "line": 3,
-            "note": "Prints total effectiveness index, performance tier, operational velocity, and itemized scores."
+            "line": 49,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set real_team_score to 2.5 and compelling_direction_score to 2.0. Observe how the squad drops to Tier 3 Dysfunctional Collective with stagnant velocity.",
         "check": {
           "question": "According to J. Richard Hackman, what is the primary condition required for a group to be considered a 'Real Team'?",
           "options": [
-            "Bounded, stable membership with clear task interdependency and defined collective responsibility.",
             "Having an informal group chat where anyone can join or leave at will.",
             "Employing at least fifty engineers on a single project.",
-            "Requiring all team members to work in the same physical cubicle."
+            "Requiring all team members to work in the same physical cubicle.",
+            "Bounded, stable membership with clear task interdependency and defined collective responsibility."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "A 'Real Team' requires clear boundaries, stable membership over time, and genuine interdependency where members must collaborate to achieve common goals.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "A 'Real Team' requires clear boundaries, stable membership over time, and genuine interdependency where members must collaborate to achieve common goals."
         }
       },
@@ -5152,25 +5040,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_leadership_control_tower validating SLII diagnostic coverage, psychological safety thresholds (>= 4.0), radical candor integrity, and Hackman effectiveness (>= 80%)."
+            "note": "Defines the function `master_leadership_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Evaluates benchmark verification inputs and prints gate clearance statuses and final accreditation."
+            "line": 42,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set sample_safety avg_likert_score to 3.5. Observe how Gate 2 fails, triggering an ORGANIZATIONAL_DYSFUNCTION_ALERT.",
         "check": {
           "question": "What is the primary governance objective of the Master Leadership & Team Governance Control Tower?",
           "options": [
-            "To execute an automated four-gate audit verifying adaptive managerial matching, fearless psychological safety, radical candor coaching, and team structural efficacy.",
             "To eliminate all 1-on-1 meetings between managers and employees.",
             "To enforce a rigid military chain of command across all startup departments.",
+            "To execute an automated four-gate audit verifying adaptive managerial matching, fearless psychological safety, radical candor coaching, and team structural efficacy.",
             "To replace human executive leadership with automated bots."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "The Master Leadership Control Tower provides rigorous governance ensuring that behavioral leadership, psychological safety, candid feedback, and team structure are optimized for exponential performance.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "The Master Leadership Control Tower provides rigorous governance ensuring that behavioral leadership, psychological safety, candid feedback, and team structure are optimized for exponential performance."
         }
       }
@@ -5216,29 +5104,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements audit_board_composition_and_fiduciary auditing seat breakdowns, independent presence, conflict of interest recusal, and meeting attendance thresholds."
+            "note": "Defines the function `audit_board_composition_and_fiduciary`."
           },
           {
-            "line": 2,
-            "note": "Configures a 5-member board spanning founders, lead venture partners, and an independent industry director."
-          },
-          {
-            "line": 3,
-            "note": "Outputs seat balance, balanced governance clearance, fiduciary loyalty compliance, and fiduciary care status."
+            "line": 41,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Add has_conflict=True to Victor Stone's profile. Observe how fiduciary loyalty drops to FAIL, requiring immediate conflict disclosure and recusal.",
         "check": {
           "question": "What is the key legal distinction between a director's Duty of Care and Duty of Loyalty?",
           "options": [
-            "Duty of Care requires informed, diligent deliberation; Duty of Loyalty prohibits self-dealing, conflicts of interest, and usurping corporate opportunities.",
             "Duty of Care relates to physical office safety; Duty of Loyalty relates to singing the company anthem.",
+            "Duty of Care requires informed, diligent deliberation; Duty of Loyalty prohibits self-dealing, conflicts of interest, and usurping corporate opportunities.",
             "Duty of Care requires paying taxes; Duty of Loyalty requires working on weekends.",
             "There is no difference; they are interchangeable colloquial terms."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Duty of Care mandates informed, prudent decision-making; Duty of Loyalty mandates that directors always act in the best interests of the company rather than personal gain.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Duty of Care mandates informed, prudent decision-making; Duty of Loyalty mandates that directors always act in the best interests of the company rather than personal gain."
         }
       },
@@ -5259,29 +5143,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_protective_provisions evaluating whether high-stakes corporate votes clear the 75% preferred supermajority threshold."
+            "note": "Defines the function `evaluate_protective_provisions`."
           },
           {
-            "line": 2,
-            "note": "Evaluates live scenarios for a corporate M&A sale and a senior preferred stock authorization."
-          },
-          {
-            "line": 3,
-            "note": "Outputs percentage approved, required threshold, and legal ratification verdict."
+            "line": 40,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase votes_for in the M&A vote to 1,900,000. Observe how approval reaches 76.0%, successfully ratifying the corporate sale.",
         "check": {
           "question": "Why do institutional venture capital investors require a 75% Preferred Supermajority vote on Protective Provisions?",
           "options": [
-            "To prevent common shareholders from unilaterally selling the company, issuing senior stock, or altering corporate bylaws without investor consensus.",
-            "To guarantee that founders receive double their salary every year.",
             "To force all board meetings to be held at the investor's office.",
-            "To eliminate the need for common shareholders to vote on anything."
+            "To eliminate the need for common shareholders to vote on anything.",
+            "To prevent common shareholders from unilaterally selling the company, issuing senior stock, or altering corporate bylaws without investor consensus.",
+            "To guarantee that founders receive double their salary every year."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Protective provisions grant preferred investors a collective veto over critical transactions that could dilute or compromise their equity rights.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Protective provisions grant preferred investors a collective veto over critical transactions that could dilute or compromise their equity rights."
         }
       },
@@ -5302,29 +5182,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements verify_board_meeting_protocol auditing formal notice days, quorum presence, agenda completeness, and active D&O insurance."
+            "note": "Defines the function `verify_board_meeting_protocol`."
           },
           {
-            "line": 2,
-            "note": "Audits a sample board meeting proceedings package."
-          },
-          {
-            "line": 3,
-            "note": "Prints notice validation, quorum status, agenda item count, insurance status, and legal enforceability."
+            "line": 38,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set quorum_present to False. Observe how proceedings become legally voidable due to lack of statutory quorum.",
         "check": {
           "question": "Why is Directors & Officers (D&O) Liability Insurance essential for scaling venture-backed startups?",
           "options": [
-            "It shields board members and corporate officers from personal financial liability arising from shareholder lawsuits, regulatory investigations, or alleged fiduciary breaches.",
-            "It pays for directors' executive travel and luxury hotel expenses.",
             "It replaces the need for paying corporate income taxes.",
-            "It guarantees that the startup's stock price will never decline."
+            "It guarantees that the startup's stock price will never decline.",
+            "It pays for directors' executive travel and luxury hotel expenses.",
+            "It shields board members and corporate officers from personal financial liability arising from shareholder lawsuits, regulatory investigations, or alleged fiduciary breaches."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "D&O insurance protects the personal assets of directors and officers against legal defense costs and settlement liabilities arising from their corporate service.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "D&O insurance protects the personal assets of directors and officers against legal defense costs and settlement liabilities arising from their corporate service."
         }
       },
@@ -5346,15 +5222,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements manage_information_rights_and_observers tiering information packages based on the 5% Major Investor threshold and defining observer access."
+            "note": "Defines the function `manage_information_rights_and_observers`."
           },
           {
-            "line": 2,
-            "note": "Configures profiles for a lead venture fund and a syndicate angel."
-          },
-          {
-            "line": 3,
-            "note": "Outputs information rights packages and observer privileges for each investor tier."
+            "line": 30,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change the syndicate angel's shareholding_pct to 6.0%. Observe how their tier automatically upgrades to Major Investor with full monthly reporting.",
@@ -5390,25 +5262,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_board_governance_control_tower validating balanced board seats, supermajority thresholds (>= 75%), statutory meeting legality, and information rights governance."
+            "note": "Defines the function `master_board_governance_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Evaluates benchmark verification inputs and prints gate clearance statuses and final accreditation."
+            "line": 50,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set sample_supermajority required_threshold_pct to 50.0. Observe how Gate 2 fails, triggering a FIDUCIARY_GOVERNANCE_BREACH.",
         "check": {
           "question": "What is the primary governance objective of the Master Corporate Governance & Board Dynamics Control Tower?",
           "options": [
-            "To execute an automated four-gate audit verifying balanced board composition, supermajority voting integrity, statutory meeting compliance, and tiered investor information rights.",
             "To eliminate the board of directors entirely and operate with sole founder dictatorship.",
+            "To execute an automated four-gate audit verifying balanced board composition, supermajority voting integrity, statutory meeting compliance, and tiered investor information rights.",
             "To make all company financial documents publicly available on the internet.",
             "To replace corporate legal counsel with automated chatbots."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The Master Corporate Governance Control Tower provides quantitative legal governance ensuring board balance, voting thresholds, meeting compliance, and reporting hygiene.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The Master Corporate Governance Control Tower provides quantitative legal governance ensuring board balance, voting thresholds, meeting compliance, and reporting hygiene."
         }
       }
@@ -5454,15 +5326,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_5x5_risk_matrix computing severity scores (1-25) across Likelihood (1-5) and Impact (1-5) and assigning severity tiers."
+            "note": "Defines the function `evaluate_5x5_risk_matrix`."
           },
           {
-            "line": 2,
-            "note": "Configures five enterprise risk scenarios across cloud outages, talent departures, funding freezes, cyberattacks, and SaaS vendor costs."
-          },
-          {
-            "line": 3,
-            "note": "Prints severity scores, risk tiers, and recommended executive action protocols."
+            "line": 37,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set the AWS cloud outage likelihood to 4. Observe how its severity score surges to 20, escalating it into a Critical Severity risk requiring daily executive sprints.",
@@ -5498,29 +5366,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements prescribe_4t_risk_treatment assigning Terminate, Treat, Transfer, or Tolerate responses based on inherent score and risk category, computing residual scores."
+            "note": "Defines the function `prescribe_4t_risk_treatment`."
           },
           {
-            "line": 2,
-            "note": "Configures a portfolio of four corporate risk profiles across cybersecurity, compliance, operations, and physical assets."
-          },
-          {
-            "line": 3,
-            "note": "Outputs treatment decisions, strategy descriptions, and residual risk scores."
+            "line": 39,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change the operating jurisdiction category to OPERATIONAL. Notice how treatment shifts from Terminate to Treat, allowing the activity under enhanced technical controls.",
         "check": {
           "question": "What is the primary difference between 'Treating' a risk and 'Transferring' a risk under the 4T Taxonomy?",
           "options": [
-            "Treating implements internal technical controls and process redundancies; Transferring shifts financial liability to external third parties via insurance or vendor SLAs.",
+            "There is no difference; both mean paying insurance premiums.",
             "Treating requires hiring doctors; Transferring requires moving to another country.",
             "Treating eliminates the risk entirely; Transferring ignores the risk.",
-            "There is no difference; both mean paying insurance premiums."
+            "Treating implements internal technical controls and process redundancies; Transferring shifts financial liability to external third parties via insurance or vendor SLAs."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Treating mitigates the risk through internal engineering controls; Transferring offloads financial or operational liability to third parties like insurers.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Treating mitigates the risk through internal engineering controls; Transferring offloads financial or operational liability to third parties like insurers."
         }
       },
@@ -5542,29 +5406,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements monitor_key_risk_indicators evaluating cash runway, engineering attrition, system outages, and customer concentration against Green/Amber/Red thresholds."
+            "note": "Defines the function `monitor_key_risk_indicators`."
           },
           {
-            "line": 2,
-            "note": "Audits a sample set of live corporate telemetry metrics."
-          },
-          {
-            "line": 3,
-            "note": "Outputs overall enterprise health status, red alert counts, and itemized KRI indicators."
+            "line": 51,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set Cash Runway current_value to 5.2 months. Observe how the status flips to RED, triggering a CRITICAL_RISK_TRIGGERED alert for emergency fundraising.",
         "check": {
           "question": "What is the primary operational purpose of Key Risk Indicators (KRIs) compared to standard Key Performance Indicators (KPIs)?",
           "options": [
-            "KRIs serve as forward-looking early-warning indicators that signal emerging vulnerabilities before losses occur, whereas KPIs measure trailing historical performance.",
             "KRIs measure how many sales calls were made last week.",
             "KRIs are only used by tax auditors to calculate payroll taxes.",
+            "KRIs serve as forward-looking early-warning indicators that signal emerging vulnerabilities before losses occur, whereas KPIs measure trailing historical performance.",
             "KRIs evaluate the physical speed of the company's delivery trucks."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "KRIs provide forward-looking predictive telemetry, alerting management to escalating risk exposure before it impacts enterprise operations.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "KRIs provide forward-looking predictive telemetry, alerting management to escalating risk exposure before it impacts enterprise operations."
         }
       },
@@ -5587,29 +5447,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements verify_disaster_recovery_compliance verifying Recovery Time Objective (RTO) and Recovery Point Objective (RPO) thresholds and multi-region redundancy."
+            "note": "Defines the function `verify_disaster_recovery_compliance`."
           },
           {
-            "line": 2,
-            "note": "Evaluates disaster recovery metrics for an enterprise cloud SaaS architecture."
-          },
-          {
-            "line": 3,
-            "note": "Outputs RTO downtime compliance, RPO data loss compliance, redundancy status, and DR certification."
+            "line": 29,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set actual_rto_hours to 6.0. Observe how RTO compliance fails, shifting the audit status to BUSINESS_CONTINUITY_RISK.",
         "check": {
           "question": "In disaster recovery architecture, what is the precise distinction between Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
           "options": [
-            "RTO defines the maximum acceptable downtime duration to restore service; RPO defines the maximum tolerable data loss window measured backwards in time.",
-            "RTO measures financial revenue; RPO measures employee headcount.",
             "RTO measures cloud hosting costs; RPO measures software license fees.",
-            "There is no difference; both measure how fast internet connections operate."
+            "RTO defines the maximum acceptable downtime duration to restore service; RPO defines the maximum tolerable data loss window measured backwards in time.",
+            "There is no difference; both measure how fast internet connections operate.",
+            "RTO measures financial revenue; RPO measures employee headcount."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "RTO is the maximum clock time to restore operations; RPO is the maximum acceptable data loss interval resulting from a system failure.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "RTO is the maximum clock time to restore operations; RPO is the maximum acceptable data loss interval resulting from a system failure."
         }
       },
@@ -5632,11 +5488,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_enterprise_risk_control_tower validating 5x5 matrix scoring, 4T residual reduction, zero KRI red alerts, and full BCP/DR compliance."
+            "note": "Defines the function `master_enterprise_risk_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Evaluates benchmark verification inputs and prints gate clearance statuses and final accreditation."
+            "line": 42,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set sample_kris red_alert_count to 1. Observe how Gate 3 fails, triggering an ENTERPRISE_VULNERABILITY_DEFICIT.",
@@ -5697,29 +5553,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_human_capital_synthesis calculating option pool reserves, 9-box talent counts, and fully loaded headcount multipliers."
+            "note": "Defines the function `evaluate_human_capital_synthesis`."
           },
           {
-            "line": 2,
-            "note": "Configures executive grants across VP Eng, Product, Sales, and Architecture, team calibration roster, and executive compensation parameters."
-          },
-          {
-            "line": 3,
-            "note": "Outputs authorized pool shares, solvency status, 9-box calibration results, and loaded headcount economics."
+            "line": 57,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase executive grants to 1,300,000 shares. Observe how pool solvency flips to FAIL due to negative reserve shares.",
         "check": {
           "question": "In the Milestone 5 Capstone synthesis, why is maintaining an unallocated ESOP reserve (e.g., 5.5% of the company) essential post-Series B?",
           "options": [
-            "To provide an equity reserve to recruit critical junior, mid-level, and replacement talent over the subsequent 18 months without triggering dilutive shareholder votes.",
             "To hide ownership from tax authorities.",
             "To distribute all remaining shares as cash bonuses to the founders.",
-            "To ensure that no new employees can ever receive stock options."
+            "To ensure that no new employees can ever receive stock options.",
+            "To provide an equity reserve to recruit critical junior, mid-level, and replacement talent over the subsequent 18 months without triggering dilutive shareholder votes."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Unallocated ESOP reserves provide the talent runway necessary to hire subsequent cohorts of engineering and operational staff without repeatedly amending the corporate charter.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Unallocated ESOP reserves provide the talent runway necessary to hire subsequent cohorts of engineering and operational staff without repeatedly amending the corporate charter."
         }
       },
@@ -5742,15 +5594,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_leadership_synthesis evaluating SLII coverage, psychological safety mean, radical candor thresholds, and Hackman team effectiveness index."
+            "note": "Defines the function `evaluate_leadership_synthesis`."
           },
           {
-            "line": 2,
-            "note": "Configures sample inputs across leadership styles, survey results, feedback matrices, and Hackman conditions."
-          },
-          {
-            "line": 3,
-            "note": "Outputs SLII coverage percentage, psychological safety mean, radical candor clearance, and team effectiveness index."
+            "line": 31,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce psychological safety scores to average 3.0. Observe how the in_learning_zone flag flips to FAIL, indicating defensive silence.",
@@ -5774,7 +5622,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Pillar 3 of our capstone synthesis ascends to the constitutional apex of corporate authority: Corporate Governance, Board of Directors Dynamics, and Fiduciary Trust. Once a venture accepts institutional capital, founders become legally accountable corporate fiduciaries. Operational decisions must be governed by pristine statutory procedures, balanced boardroom power dynamics, and legally binding voting thresholds that protect the collective interests of all equity stakeholders.",
           "Our capstone governance engine audits board composition against the gold-standard 2:2:1 Model. The board structure comprises two Founder seats (CEO and CTO), two Institutional Venture Investor seats (Series A Lead and Series B Partner), and one mutually agreed-upon Independent Industry Expert. This balanced architecture prevents governance gridlock, provides deep enterprise software domain expertise, and ensures that neither founders nor investors can unilaterally dictate corporate destiny. Furthermore, the audit confirms that all directors maintain perfect fiduciary hygiene: zero unresolved conflicts of interest (Duty of Loyalty) and meeting attendance records exceeding 90% (Duty of Care).",
           "Simultaneously, the engine models the legal mechanics of Supermajority Protective Provisions (Negative Covenants). Evaluating a proposed corporate transaction across 2,500,000 authorized preferred shares, the engine verifies that 2,125,000 affirmative votes are cast (85.0%), comfortably surpassing the mandatory 75% preferred supermajority threshold. This quantitative check guarantees that major corporate actions—such as mergers, senior stock authorizations, and debt obligations—are lawfully ratified with broad investor consensus, shielding the board under the legal protections of the Business Judgment Rule.",
-          "In addition, the capstone engine audits statutory board meeting compliance. It verifies that formal written notice was delivered seven days in advance (exceeding the five-day statutory minimum), confirms the presence of a legal Quorum, and verifies that a comprehensive $3.0M Directors & Officers (D&O) Liability Insurance policy is actively in force. Finally, the engine audits Investor Information Rights, confirming that reporting packages are strictly tiered: Major Investors (owning $\\\\ge 5\\\\%$ of equity) receive monthly unaudited financials, quarterly board packages, and annual audited GAAP reports with active observer privileges, while minor syndicate angels are restricted to annual summaries.",
+          "In addition, the capstone engine audits statutory board meeting compliance. It verifies that formal written notice was delivered seven days in advance (exceeding the five-day statutory minimum), confirms the presence of a legal Quorum, and verifies that a comprehensive $3.0M Directors & Officers (D&O) Liability Insurance policy is actively in force. Finally, the engine audits Investor Information Rights, confirming that reporting packages are strictly tiered: Major Investors (owning \\ greater than or equal to 5\\% of equity) receive monthly unaudited financials, quarterly board packages, and annual audited GAAP reports with active observer privileges, while minor syndicate angels are restricted to annual summaries.",
           "Furthermore, our capstone governance framework incorporates Drag-Along Rights and Executive Session protocols. Drag-along covenants ensure that when a 75% supermajority approves a bona fide corporate acquisition, minority shareholders are legally compelled to vote in favor, preventing disgruntled holdouts from obstructing enterprise liquidity. Meanwhile, executive session protocols empower the Chairman to excuse board observers during discussions of executive compensation and sensitive litigation, preserving attorney-client privilege.",
           "Moreover, establishing institutional governance hygiene creates immense enterprise value during liquidity events. In merger due diligence or initial public offering audits, institutional underwriters inspect every board resolution, option grant consent, and protective provision waiver. Operating with pristine corporate records eliminates closing delays and valuation escrow holdbacks, ensuring seamless capital market execution.",
           "Additionally, institutional governance maturity becomes essential when orchestrating complex international corporate restructuring. As technology ventures expand operations into foreign jurisdictions—establishing subsidiaries in Singapore, Ireland, or India—the board must establish specialized compliance subcommittees to oversee international transfer pricing, cross-border intellectual property licensing, and local corporate filings. Maintaining rigorous boardroom minutes and formal committee charters protects the parent entity from regulatory sanctions and tax liabilities.",
@@ -5787,29 +5635,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_board_governance_synthesis auditing 2:2:1 board seats, 75% preferred supermajority ratification, meeting statutory compliance, and investor information rights."
+            "note": "Defines the function `evaluate_board_governance_synthesis`."
           },
           {
-            "line": 2,
-            "note": "Configures a 5-member board, a high-stakes corporate vote, statutory meeting parameters, and major investor stakes."
-          },
-          {
-            "line": 3,
-            "note": "Outputs board balance status, supermajority voting percentage, statutory meeting compliance, and information rights governance."
+            "line": 44,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change ma_vote_for to 1,800,000. Notice how the supermajority percentage drops to 72.0%, triggering a protective provision veto.",
         "check": {
           "question": "Why is the 2:2:1 Board Composition Model (2 Founders, 2 Investors, 1 Independent) considered the gold standard in Series A/B governance?",
           "options": [
-            "It balances founder vision with investor fiduciary discipline, while an independent industry expert breaks deadlocks and provides objective strategic counsel.",
             "It ensures that founders can unilaterally fire investors at any time.",
+            "It balances founder vision with investor fiduciary discipline, while an independent industry expert breaks deadlocks and provides objective strategic counsel.",
             "It guarantees that venture capitalists control 100% of all company decisions.",
             "It eliminates the need for holding formal board meetings."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The 2:2:1 structure ensures equitable power distribution, prevents single-party dominance, and introduces impartial industry expertise to resolve deadlocks.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The 2:2:1 structure ensures equitable power distribution, prevents single-party dominance, and introduces impartial industry expertise to resolve deadlocks."
         }
       },
@@ -5832,29 +5676,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_erm_resilience_synthesis computing 4T treatment coverage, KRI monitor health, and RTO/RPO disaster recovery compliance."
+            "note": "Defines the function `evaluate_erm_resilience_synthesis`."
           },
           {
-            "line": 2,
-            "note": "Configures sample enterprise risk register items, KRI red alert counts, and disaster recovery time/point objectives."
-          },
-          {
-            "line": 3,
-            "note": "Outputs 4T treatment percentage, KRI health status, disaster recovery performance metrics, and BCP certification."
+            "line": 40,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set actual_rto to 5.0 hours. Observe how BCP compliance fails because actual downtime exceeds the 4.0-hour contractual threshold.",
         "check": {
           "question": "In enterprise risk management and business continuity planning, why must Disaster Recovery (RTO/RPO) plans be tested under simulated stress (such as Chaos Engineering)?",
           "options": [
-            "Because untested disaster recovery plans frequently fail during real-world crises due to unreadable backups, network configuration drift, or failover script bugs.",
-            "Because insurance companies require employees to work on weekends.",
             "Because cloud providers shut down accounts that do not run chaos simulations.",
-            "To prove that cloud servers never fail under any circumstances."
+            "To prove that cloud servers never fail under any circumstances.",
+            "Because untested disaster recovery plans frequently fail during real-world crises due to unreadable backups, network configuration drift, or failover script bugs.",
+            "Because insurance companies require employees to work on weekends."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Chaos engineering and live failover rehearsals verify that automated multi-region backup systems function seamlessly before catastrophic real-world outages occur.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Chaos engineering and live failover rehearsals verify that automated multi-region backup systems function seamlessly before catastrophic real-world outages occur."
         }
       },
@@ -5877,25 +5717,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_milestone5_capstone_control_tower validating all four foundational milestone gates across human capital, leadership, governance, and ERM."
+            "note": "Defines the function `master_milestone5_capstone_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Evaluates integrated capstone outputs and prints gate clearance statuses and final capstone sovereignty accreditation."
+            "line": 58,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set lead_res slii_coverage_pct to 75.0. Observe how Gate 2 fails, triggering a GOVERNANCE_AND_RISK_DEFICIT.",
         "check": {
           "question": "What is the primary academic and operational significance of earning the MILESTONE_5_CAPSTONE_ORGANIZATIONAL_SOVEREIGNTY_CONFERRED accreditation?",
           "options": [
-            "It certifies complete mastery over human capital architecture, behavioral leadership, corporate boardroom governance, and enterprise risk resilience, establishing an unshakeable institutional foundation for scaling.",
             "It allows the founder to sell the company without paying any taxes.",
             "It proves that the company will never face any competitors.",
-            "It replaces the need for hiring external legal counsel or financial auditors."
+            "It replaces the need for hiring external legal counsel or financial auditors.",
+            "It certifies complete mastery over human capital architecture, behavioral leadership, corporate boardroom governance, and enterprise risk resilience, establishing an unshakeable institutional foundation for scaling."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Milestone 5 Capstone accreditation certifies that a venture possesses the institutional, managerial, fiduciary, and risk-management maturity required to scale an enduring enterprise.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Milestone 5 Capstone accreditation certifies that a venture possesses the institutional, managerial, fiduciary, and risk-management maturity required to scale an enduring enterprise."
         }
       }
@@ -5939,25 +5779,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_foreign_entry_modes calculating composite scores across four global entry modes."
+            "note": "Defines the function `evaluate_foreign_entry_modes`."
           },
           {
-            "line": 2,
-            "note": "Evaluates market entry for Germany DACH hub and prints ranked strategic recommendations."
+            "line": 64,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase tariff_barrier_pct to 30.0% and observe direct exporting composite score plummet due to severe tariff penalties.",
         "check": {
           "question": "Which foreign entry mode provides the highest operational control and IP protection but demands the largest capital expenditure?",
           "options": [
-            "Wholly Owned Subsidiary (Greenfield WOS).",
+            "Turnkey Franchising.",
             "Direct Exporting.",
-            "International Licensing.",
-            "Turnkey Franchising."
+            "Wholly Owned Subsidiary (Greenfield WOS).",
+            "International Licensing."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "A Wholly Owned Subsidiary provides 100% operational autonomy and absolute IP protection, but requires the largest capital outlay.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "A Wholly Owned Subsidiary provides 100% operational autonomy and absolute IP protection, but requires the largest capital outlay."
         }
       },
@@ -5977,32 +5817,32 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_cage_distance_index weighting cultural, administrative, geographic, and economic distance dimensions."
+            "note": "Defines the function `calculate_cage_distance_index`."
           },
           {
-            "line": 2,
-            "note": "Evaluates India->Germany and India->Singapore corridors, reporting composite CAGE index and GTM overhead premiums."
+            "line": 34,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Lower Germany administrative distance to 2.0. Observe how the composite CAGE drops into the low-friction corridor.",
         "check": {
           "question": "In Pankaj Ghemawat's CAGE Distance Framework, what does the 'A' dimension represent?",
           "options": [
-            "Administrative and Political Distance (legal traditions, regulatory compliance, trade pacts, and currency unions).",
             "Automated Technology Infrastructure.",
+            "Administrative and Political Distance (legal traditions, regulatory compliance, trade pacts, and currency unions).",
             "Accounting Standards Variance.",
             "Advertising Media Penetration."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Administrative distance measures differences in legal institutions, regulatory frameworks, trade agreements, and political relationships between countries.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Administrative distance measures differences in legal institutions, regulatory frameworks, trade agreements, and political relationships between countries."
         }
       },
       {
         "title": "OECD Transfer Pricing & Arm's Length Principle (ALP)",
         "say": [
-          "Once an enterprise establishes operational entities across multiple sovereign jurisdictions, it enters the intensely scrutinized realm of international taxation and cross-border intra-group transactions. When a parent company sells proprietary software licenses, hardware components, management services, or technical support to its foreign subsidiaries, it must establish an internal billing rate known as a transfer price. Historically, multinational corporations manipulated transfer prices to artificially shift taxable income from high-tax jurisdictions to low-tax tax havens, stripping profits from operational territories. To eradicate base erosion and profit shifting, the Organization for Economic Co-operation and Development (OECD) and global tax authorities enforce the Arm's Length Principle (ALP) under Section 482 of the US Internal Revenue Code and equivalent worldwide tax treaties. The Arm's Length Principle mandates that commercial transactions between controlled related-party entities must be priced as if they occurred between independent, unrelated enterprises operating under identical free-market conditions.",
+          "Once an enterprise establishes operational entities across multiple sovereign jurisdictions, it enters the intensely scrutinized realm of international taxation and cross-border intra-group transactions. When a parent company sells proprietary software licenses, hardware components, management services, or technical support to its foreign subsidiaries, it must establish an internal billing rate known as a transfer price. Historically, multinational corporations manipulated transfer prices to artificially shift taxable income from high-tax jurisdictions to low-tax havens, stripping profits from operational territories. To eradicate base erosion and profit shifting, the Organization for Economic Co-operation and Development (OECD) and global tax authorities enforce the Arm's Length Principle (ALP) under Section 482 of the US Internal Revenue Code and equivalent worldwide tax treaties. The Arm's Length Principle mandates that commercial transactions between controlled related-party entities must be priced as if they occurred between independent, unrelated enterprises operating under identical free-market conditions.",
           "Violating transfer pricing regulations exposes an expanding venture to devastating sovereign penalties, double taxation on identical earnings, retroactive tax adjustments, and protracted cross-border litigation. Tax authorities deploy rigorous transfer pricing methods to test intercompany transactions: the Comparable Uncontrolled Price (CUP) method, the Resale Price Method (RPM), the Cost Plus Method (CPM), the Profit Split Method (PSM), and the Transactional Net Margin Method (TNMM). For high-growth technology, SaaS, and advanced manufacturing ventures operating shared service centers or regional engineering hubs, the Transactional Net Margin Method and Cost Plus benchmarks are widely recognized as the most defensible transfer pricing methodologies. Under TNMM, the routine functional entity—such as a captive offshore research and development facility or local distribution support hub—is compensated with an arm's length operating margin markup over its fully burdened operational expenses.",
           "In Part 3, we build an institutional OECD Transfer Pricing & Arm's Length Principle Compliance Engine utilizing the Transactional Net Margin Method. The software architecture computes the fully loaded operational cost base of an offshore subsidiary—integrating cost of goods sold, direct personnel expenditure, infrastructure facilities, and localized administrative overhead. It then applies an arm's length markup percentage derived from comparable independent service providers within the jurisdiction. The engine models the exact intercompany invoice generated from the subsidiary to the parent entity, computes the subsidiary's localized Earnings Before Interest and Taxes (EBIT), and calculates local corporate income tax liabilities under local statutory rates. Crucially, the engine incorporates an automated Transfer Pricing Audit Risk Gatekeeper: markups falling within the standard OECD interquartile range of 6.0 to 12.0 percent are classified as low audit risk, whereas deviations above or below trigger immediate red-flag warnings for potential fiscal non-compliance.",
           "Our executed benchmark analysis of an engineering subsidiary supporting European expansion demonstrates the practical application of this doctrine. With a fully burdened cost base of 6.0 million dollars comprising 4.5 million in direct engineering costs and 1.5 million in operational overhead, the TNMM engine applies an arm's length markup of 8.5 percent. This results in an intercompany billing of 6,510,000 dollars back to the corporate parent, recognizing 510,000 dollars of legitimate operating profit within the local subsidiary. At a local statutory corporate tax rate of 15.0 percent, the subsidiary remits 76,500 dollars to the host tax authority, retaining 433,500 dollars in net earnings. Because the 8.5 percent markup sits squarely within the OECD interquartile band, the transaction achieves low audit risk status, providing airtight evidentiary documentation to withstand multi-jurisdictional tax audits.",
@@ -6014,11 +5854,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_transfer_pricing_tnmm calculating transfer price invoices, local EBIT, tax liabilities, and OECD interquartile audit risk."
+            "note": "Defines the function `model_transfer_pricing_tnmm`."
           },
           {
-            "line": 2,
-            "note": "Evaluates sample European tech subsidiary, verifying low audit risk within the 6-12% markup corridor."
+            "line": 23,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase markup_pct to 18.0%. Observe how the audit risk flips to High due to deviation from standard OECD benchmarks.",
@@ -6052,32 +5892,32 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_fx_hedging_waterfall comparing unhedged disaster cash flows against forward contract protection."
+            "note": "Defines the function `calculate_fx_hedging_waterfall`."
           },
           {
-            "line": 2,
-            "note": "Simulates severe EUR/USD spot devaluation, proving capital preservation and mitigated drawdown."
+            "line": 26,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce hedge_ratio_pct to 0%. Observe how the company absorbs the full $500,000 currency drawdown with zero capital preserved.",
         "check": {
           "question": "What is the primary commercial benefit of entering into an FX Forward contract for foreign currency receivables?",
           "options": [
-            "It locks in a guaranteed future exchange rate, eliminating downside currency volatility and protecting operating cash flows.",
-            "It guarantees that the foreign currency will appreciate in value.",
             "It eliminates the need to pay invoices to foreign suppliers.",
-            "It converts all debt obligations into equity."
+            "It converts all debt obligations into equity.",
+            "It guarantees that the foreign currency will appreciate in value.",
+            "It locks in a guaranteed future exchange rate, eliminating downside currency volatility and protecting operating cash flows."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "FX Forward contracts lock in fixed future exchange rates, removing currency volatility and ensuring cash flow certainty.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "FX Forward contracts lock in fixed future exchange rates, removing currency volatility and ensuring cash flow certainty."
         }
       },
       {
         "title": "Global Tax Optimization, Pillar Two & Sovereign Compliance",
         "say": [
-          "The ultimate tier of international strategic management involves architecting a globally optimized corporate entity and tax structure that balances operational efficiency with strict adherence to sovereign legal frameworks. Over the past three decades, global tax planning evolved through an era of aggressive offshore profit shifting, where multinational technology giants utilized synthetic intellectual property licensing arrangements—such as the infamous Double Irish Dutch Sandwich—to pay effective tax rates below 2 percent in zero-tax tax havens. However, the international fiscal landscape has undergone a tectonic regulatory revolution spearheaded by the G20 and OECD through the Base Erosion and Profit Shifting (BEPS) 2.0 framework, specifically Pillar Two. Pillar Two introduces a mandatory Global Minimum Corporate Tax of 15.0 percent for multinational enterprises, enforced through complex Qualified Domestic Minimum Top-Up Taxes (QDMTT) and Income Inclusion Rules (IIR).",
+          "The ultimate tier of international strategic management involves architecting a globally optimized corporate entity and tax structure that balances operational efficiency with strict adherence to sovereign legal frameworks. Over the past three decades, global tax planning evolved through an era of aggressive offshore profit shifting, where multinational technology giants utilized synthetic intellectual property licensing arrangements—such as the infamous Double Irish Dutch Sandwich—to pay effective tax rates below 2 percent in zero-tax havens. However, the international fiscal landscape has undergone a tectonic regulatory revolution spearheaded by the G20 and OECD through the Base Erosion and Profit Shifting (BEPS) 2.0 framework, specifically Pillar Two. Pillar Two introduces a mandatory Global Minimum Corporate Tax of 15.0 percent for multinational enterprises, enforced through complex Qualified Domestic Minimum Top-Up Taxes (QDMTT) and Income Inclusion Rules (IIR).",
           "Under Pillar Two, if an enterprise generates earnings in an international hub that subjects those profits to an Effective Tax Rate (ETR) below 15.0 percent—such as an EMEA distribution hub in Ireland taxed at 12.5 percent, or a regional treasury hub in Singapore enjoying statutory pioneer tax holidays at 10.0 percent—the parent jurisdiction or the local tax authority itself is legally mandated to levy a Top-Up Tax. This top-up tax automatically brings the total effective tax liability up to the 15.0 percent global minimum threshold. Consequently, the historical era of pure zero-tax paper entity structures is dead. Modern international corporate architecture must be grounded in substantial economic presence, real operational infrastructure, local executive management, and defensible transfer pricing documentation. Attempting to deploy fictitious letterbox subsidiaries now triggers catastrophic top-up taxes, severe financial penalties, and reputational damage that can permanently derail institutional financing rounds or public listing prospectuses.",
           "In Part 5, we engineer an institutional BEPS Pillar Two Global Effective Tax Rate & Top-Up Tax Compliance Suite. The software models a multi-jurisdictional multinational enterprise network spanning four operational hubs: a United States parent corporation (21.0 percent corporate tax), an Irish EMEA commercial distribution subsidiary (12.5 percent corporate tax), a Singapore APAC regional treasury hub (10.0 percent corporate tax), and an Indian engineering center of excellence (25.17 percent corporate tax). The engine computes jurisdictional Earnings Before Interest and Taxes across 31.0 million dollars in consolidated group operating profit, calculates localized tax liabilities, and automatically identifies jurisdictions operating below the 15.0 percent global minimum tax floor. For non-compliant hubs, the engine calculates the exact Qualified Domestic Minimum Top-Up Tax liability, computes consolidated group tax liabilities, and outputs the true consolidated group Effective Tax Rate.",
           "The executed simulation outputs highlight the precision of modern fiscal modeling. Across the enterprise's 31.0 million dollars in consolidated EBIT, the group incurs 5,598,500 dollars in baseline local statutory taxes. However, Pillar Two mandates an additional 200,000 dollars in top-up tax on the Irish operations (raising its ETR from 12.5 to 15.0 percent) and 300,000 dollars in top-up tax on the Singapore treasury hub (raising its ETR from 10.0 to 15.0 percent). This assesses a total top-up tax of 500,000 dollars, lifting total enterprise tax liabilities to 6,098,500 dollars and establishing a true consolidated group Effective Tax Rate of 19.67 percent. Rather than relying on outdated tax-shelter illusions, the executive team gains absolute transparency into its global fiscal obligations, enabling compliant long-term strategic capital planning.",
@@ -6089,25 +5929,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_beps_pillar_two_top_up_tax auditing multinational hubs against the 15% global minimum tax rate."
+            "note": "Defines the function `calculate_beps_pillar_two_top_up_tax`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a 4-country hub network, calculating statutory taxes, top-up levies, and consolidated Effective Tax Rate (18.96%)."
+            "line": 52,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Raise Ireland local tax rate to 15.0%. Notice how the Irish top-up tax drops to $0.00.",
         "check": {
           "question": "What is the primary mandate of OECD BEPS Pillar Two for multinational enterprises?",
           "options": [
-            "Enforcing a mandatory 15.0% Global Minimum Corporate Tax rate backed by Top-Up Taxes on low-tax jurisdictions.",
+            "Restricting international wire transfers between subsidiary hubs.",
             "Abolishing all corporate taxes globally.",
-            "Forcing companies to incorporate exclusively in offshore tax havens.",
-            "Restricting international wire transfers between subsidiary hubs."
+            "Enforcing a mandatory 15.0% Global Minimum Corporate Tax rate backed by Top-Up Taxes on low-tax jurisdictions.",
+            "Forcing companies to incorporate exclusively in offshore tax havens."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "OECD BEPS Pillar Two establishes a 15% global minimum corporate tax to neutralize profit shifting to low-tax jurisdictions.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "OECD BEPS Pillar Two establishes a 15% global minimum corporate tax to neutralize profit shifting to low-tax jurisdictions."
         }
       }
@@ -6153,25 +5993,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_jv_equity_and_capital_calls calculating phase-based capital calls, equity ratios, and governance thresholds."
+            "note": "Defines the function `model_jv_equity_and_capital_calls`."
           },
           {
-            "line": 2,
-            "note": "Evaluates Apex Global and EuroLogistics joint venture, confirming $8.0M total capital commitment."
+            "line": 29,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase partner A equity split to 70%. Notice how governance structure shifts to unilateral majority control.",
         "check": {
           "question": "Why do corporate joint ventures require formal capital call provisions in their shareholder agreements?",
           "options": [
-            "To obligate partners to fund future capital expenditures pro-rata, preventing funding shortfalls or unauthorized dilution.",
-            "To eliminate the need for board meetings.",
             "To transfer all intellectual property to government regulators.",
-            "To avoid filing annual financial statements."
+            "To obligate partners to fund future capital expenditures pro-rata, preventing funding shortfalls or unauthorized dilution.",
+            "To avoid filing annual financial statements.",
+            "To eliminate the need for board meetings."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Capital call provisions ensure that all joint venture partners are legally bound to fund budgeted capital requirements proportionally.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Capital call provisions ensure that all joint venture partners are legally bound to fund budgeted capital requirements proportionally."
         }
       },
@@ -6191,25 +6031,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_jv_distribution_waterfall distributing cash across Tier 1 preferred return and Tier 2 residual split."
+            "note": "Defines the function `calculate_jv_distribution_waterfall`."
           },
           {
-            "line": 2,
-            "note": "Evaluates distributable operating cash flow, verifying hurdle satisfaction and effective payout percentages."
+            "line": 36,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce distributable cash to $500k. Observe how the preferred hurdle is not fully satisfied and residual cash drops to zero.",
         "check": {
           "question": "In a joint venture cash flow distribution waterfall, what is the purpose of a 'Preferred Return Hurdle'?",
           "options": [
-            "To prioritize paying partners an agreed percentage return on their invested capital before splitting residual profits.",
-            "To guarantee that the smaller partner receives 100% of all profits forever.",
             "To eliminate corporate tax liabilities on dividend distributions.",
-            "To convert equity investments into subordinated junk debt."
+            "To convert equity investments into subordinated junk debt.",
+            "To prioritize paying partners an agreed percentage return on their invested capital before splitting residual profits.",
+            "To guarantee that the smaller partner receives 100% of all profits forever."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "A preferred hurdle guarantees that investors receive a minimum baseline return on capital before excess profits are distributed.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "A preferred hurdle guarantees that investors receive a minimum baseline return on capital before excess profits are distributed."
         }
       },
@@ -6229,25 +6069,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_deadlock_resolution_mechanism modeling contractual buy-sell formulas under Russian Roulette and Texas Shootout."
+            "note": "Defines the function `simulate_deadlock_resolution_mechanism`."
           },
           {
-            "line": 2,
-            "note": "Evaluates $20M baseline deadlock offers, reporting acquisition costs and squeeze risks."
+            "line": 33,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Switch mechanism to Texas Shootout and observe how the competitive auction premium increases the required buyout cash.",
         "check": {
           "question": "How does a 'Russian Roulette' deadlock clause protect joint venture partners from being low-balled?",
           "options": [
-            "Because the recipient of the buyout offer has the unilateral right to either accept the buyout or reverse the offer to buy out the initiator at the exact same price.",
-            "Because government antitrust regulators set the transaction price.",
             "Because all company assets are liquidated at public auction.",
-            "Because the partner with lower equity is automatically granted free shares."
+            "Because the partner with lower equity is automatically granted free shares.",
+            "Because government antitrust regulators set the transaction price.",
+            "Because the recipient of the buyout offer has the unilateral right to either accept the buyout or reverse the offer to buy out the initiator at the exact same price."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Russian Roulette forces fair valuation because any price named by the initiator can be turned back against them to buy their own shares.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Russian Roulette forces fair valuation because any price named by the initiator can be turned back against them to buy their own shares."
         }
       },
@@ -6267,11 +6107,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_distribution_alliance_economics contrasting direct CAC margins against partner revenue-share economics at 3.5x scale."
+            "note": "Defines the function `model_distribution_alliance_economics`."
           },
           {
-            "line": 2,
-            "note": "Evaluates enterprise software distribution metrics, reporting a 2.95x net operating profit multiplier."
+            "line": 42,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase alliance_partner_margin_pct to 35.0% and observe the impact on scaled net contribution and margin efficiency.",
@@ -6306,25 +6146,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_jv_and_alliance_control_tower validating all four foundational JV and alliance governance gates."
+            "note": "Defines the function `master_jv_and_alliance_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Evaluates integrated joint venture outputs and certifies compliance under sovereign corporate standards."
+            "line": 39,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set waterfall_res pref_return_satisfied to False. Observe how Gate 2 fails, triggering a STRATEGIC_ALLIANCE_GOVERNANCE_DEFICIT.",
         "check": {
           "question": "What does the conferral of MASTER_STRATEGIC_ALLIANCE_CERTIFIED_NOMINAL signify?",
           "options": [
-            "Complete mathematical and contractual validation of capital funding, preferred return waterfalls, deadlock buy-sell protocols, and distribution moats.",
             "Government approval to monopolize the entire national market.",
+            "Complete mathematical and contractual validation of capital funding, preferred return waterfalls, deadlock buy-sell protocols, and distribution moats.",
             "An exemption from all federal and state tax liabilities.",
             "The immediate automatic acquisition of all alliance partners."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The certification confirms that all financial, legal, and operational governance gates for joint ventures and strategic alliances are fully satisfied.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The certification confirms that all financial, legal, and operational governance gates for joint ventures and strategic alliances are fully satisfied."
         }
       }
@@ -6372,11 +6212,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_qoe_ebitda_adjustments itemizing owner perks, litigation costs, and rent adjustments into normalized EBITDA."
+            "note": "Defines the function `calculate_qoe_ebitda_adjustments`."
           },
           {
-            "line": 2,
-            "note": "Evaluates target company financials and reports normalized pro-forma margins."
+            "line": 47,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Add a $500k deduction for unrecorded software maintenance. Observe how normalized EBITDA drops to $6.9M.",
@@ -6411,25 +6251,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_lbo_debt_sizing_waterfall sizing senior and junior debt facilities and computing implied enterprise values."
+            "note": "Defines the function `calculate_lbo_debt_sizing_waterfall`."
           },
           {
-            "line": 2,
-            "note": "Validates leverage ratio compliance under the 5.0x total leverage covenant."
+            "line": 29,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase senior_debt_turns to 4.5x. Observe how total leverage increases to 6.0x, triggering a Non-Compliant covenant alert.",
         "check": {
           "question": "What is the primary covenant risk of funding an acquisition with excessive leverage turns (e.g. > 5.5x EBITDA)?",
           "options": [
-            "High debt service obligations restrict cash flow flexibility and risk loan default during macroeconomic revenue downturns.",
-            "The company is automatically dissolved by the stock exchange.",
             "All employees lose their stock options immediately.",
-            "Lenders are forced to forgive all principal obligations."
+            "Lenders are forced to forgive all principal obligations.",
+            "The company is automatically dissolved by the stock exchange.",
+            "High debt service obligations restrict cash flow flexibility and risk loan default during macroeconomic revenue downturns."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Excessive debt creates severe debt-service drag, raising fixed interest burdens and increasing default risk if operational earnings falter.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Excessive debt creates severe debt-service drag, raising fixed interest burdens and increasing default risk if operational earnings falter."
         }
       },
@@ -6450,25 +6290,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_lbo_returns_irr_and_moic modeling debt paydown, equity value expansion, MOIC, and annualized IRR."
+            "note": "Defines the function `calculate_lbo_returns_irr_and_moic`."
           },
           {
-            "line": 2,
-            "note": "Executes benchmark buyout return analysis, verifying institutional hurdle clearance."
+            "line": 34,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Lower exit_multiple to 6.0x. Notice the resulting compression in sponsor MOIC and IRR.",
         "check": {
           "question": "What two metrics do private equity investment committees universally evaluate to judge LBO investment attractiveness?",
           "options": [
-            "Multiple on Invested Capital (MOIC) and Internal Rate of Return (IRR).",
-            "Website Pageviews and Social Media Followers.",
             "Customer Net Promoter Score and Glassdoor Rating.",
-            "Days Sales Outstanding and Depreciation Schedules."
+            "Days Sales Outstanding and Depreciation Schedules.",
+            "Multiple on Invested Capital (MOIC) and Internal Rate of Return (IRR).",
+            "Website Pageviews and Social Media Followers."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "MOIC measures absolute cash multiple returned while IRR measures the annualized compounding rate of the equity investment.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "MOIC measures absolute cash multiple returned while IRR measures the annualized compounding rate of the equity investment."
         }
       },
@@ -6490,25 +6330,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_industry_rollup_multiple_arbitrage evaluating buy-and-build synergies and valuation multiple expansion."
+            "note": "Defines the function `model_industry_rollup_multiple_arbitrage`."
           },
           {
-            "line": 2,
-            "note": "Evaluates 3 bolt-on acquisitions and reports consolidated pro-forma platform value ($214M)."
+            "line": 46,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase bolt-on entry multiples to 9.0x. Observe how multiple arbitrage gains drop significantly.",
         "check": {
           "question": "In a buy-and-build rollup strategy, what is 'Multiple Arbitrage'?",
           "options": [
-            "The value created by acquiring smaller add-on targets at low valuation multiples (e.g. 5x) and packaging them into a larger platform that trades at a higher multiple (e.g. 10x).",
             "Trading shares between different foreign stock exchanges to profit from currency differences.",
+            "The value created by acquiring smaller add-on targets at low valuation multiples (e.g. 5x) and packaging them into a larger platform that trades at a higher multiple (e.g. 10x).",
             "Artificially inflating revenue by selling products to subsidiary companies.",
             "Refinancing senior debt with government subsidies."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Multiple arbitrage captures the valuation spread between fragmented sub-scale businesses and scaled institutional platforms.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Multiple arbitrage captures the valuation spread between fragmented sub-scale businesses and scaled institutional platforms."
         }
       },
@@ -6531,11 +6371,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_ma_and_lbo_control_tower validating all four foundational acquisition and buyout gates."
+            "note": "Defines the function `master_ma_and_lbo_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Executes control tower audit against benchmark inputs and certifies acquisition readiness."
+            "line": 34,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set lbo_returns_bench moic to 2.2x. Observe how Gate 3 fails due to missing the 3.0x institutional returns hurdle.",
@@ -6597,25 +6437,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_ipo_underwriting_gross_spread calculating base proceeds, Greenshoe overallotment, and syndicate fee splits."
+            "note": "Defines the function `calculate_ipo_syndicate_economics`."
           },
           {
-            "line": 2,
-            "note": "Reports gross capital raised, net issuer proceeds, and syndicate compensation."
+            "line": 36,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set exercise_greenshoe to False. Notice how total proceeds drop back to $700M and underwriting fees decline proportionally.",
         "check": {
           "question": "What is the primary capital markets purpose of the standard 15% 'Greenshoe' overallotment option granted to IPO underwriters?",
           "options": [
-            "To allow underwriters to stabilize the stock price post-listing by covering naked short positions without taking directional market risk.",
-            "To transfer executive voting control to the stock exchange.",
             "To eliminate all underwriting commissions.",
-            "To prevent retail investors from purchasing shares."
+            "To prevent retail investors from purchasing shares.",
+            "To transfer executive voting control to the stock exchange.",
+            "To allow underwriters to stabilize the stock price post-listing by covering naked short positions without taking directional market risk."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The Greenshoe option gives underwriters price-stabilization tools in the secondary market, protecting the stock from plunging below the offer price.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The Greenshoe option gives underwriters price-stabilization tools in the secondary market, protecting the stock from plunging below the offer price."
         }
       },
@@ -6637,11 +6477,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_ipo_capitalization_and_dilution computing post-money shares, market capitalization, dilution, and float percentages."
+            "note": "Defines the function `calculate_ipo_cap_table_dilution`."
           },
           {
-            "line": 2,
-            "note": "Validates compliance with public float standards exceeding the 15% exchange minimum."
+            "line": 29,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce primary_shares_issued to 8.0M. Observe how public float drops below the 15% compliance threshold.",
@@ -6676,25 +6516,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_ipo_pop_and_money_left_on_table evaluating first-day trading gains and issuer opportunity costs."
+            "note": "Defines the function `calculate_ipo_pop_and_capital_left_on_table`."
           },
           {
-            "line": 2,
-            "note": "Confirms optimal underwriting calibration when the pop sits between 10% and 25%."
+            "line": 32,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase first_day_close_usd to $65.00. Notice how the underwriting assessment warns of severe underpricing and excessive capital left on the table.",
         "check": {
           "question": "Why do institutional investment bankers target a modest 10% to 20% 'First-Day IPO Pop' rather than zero pop or a 100% surge?",
           "options": [
-            "A 10-20% pop generates positive market momentum and rewards institutional anchor buyers without leaving excessive capital on the table for the corporate issuer.",
             "A pop greater than 20% triggers automatic SEC cancellation of the IPO.",
+            "A 10-20% pop generates positive market momentum and rewards institutional anchor buyers without leaving excessive capital on the table for the corporate issuer.",
             "Zero pop results in automatic delisting by Nasdaq.",
             "Investment banks only receive their gross spread fee if the pop exceeds 50%."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "A modest pop signals strong investor demand and creates favorable market sentiment without depriving the issuer of substantial primary capital.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "A modest pop signals strong investor demand and creates favorable market sentiment without depriving the issuer of substantial primary capital."
         }
       },
@@ -6715,25 +6555,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_sox_and_public_readiness_budget aggregating Big 4 audits, SOX controls, D&O liability insurance, and SEC filing expenses."
+            "note": "Defines the function `model_sox_and_public_readiness_budget`."
           },
           {
-            "line": 2,
-            "note": "Verifies that public company drag remains below the 4.0% revenue threshold."
+            "line": 35,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase num_material_subsidiaries to 10. Observe how subsidiary compliance overhead pushes public costs above the 4% threshold.",
         "check": {
           "question": "What is the primary operational mandate of Section 404 of the Sarbanes-Oxley Act (SOX 404) for publicly traded corporations?",
           "options": [
-            "Management and independent auditors must document, test, and formally certify the adequacy of Internal Controls over Financial Reporting (ICFR).",
-            "The company must grant free shares to all citizens.",
             "Executive salaries must be capped at $100,000 annually.",
-            "All intellectual property must be open-sourced to the public."
+            "All intellectual property must be open-sourced to the public.",
+            "Management and independent auditors must document, test, and formally certify the adequacy of Internal Controls over Financial Reporting (ICFR).",
+            "The company must grant free shares to all citizens."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "SOX 404 requires rigorous internal controls to prevent accounting fraud, financial misstatements, and audit failures in public corporations.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "SOX 404 requires rigorous internal controls to prevent accounting fraud, financial misstatements, and audit failures in public corporations."
         }
       },
@@ -6755,25 +6595,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_ipo_underwriting_control_tower validating all four capital markets listing gates."
+            "note": "Defines the function `master_ipo_underwriting_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Executes control tower audit against benchmark inputs and certifies public markets readiness."
+            "line": 39,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set ipo_bench total_gross_proceeds to $300M. Observe how Gate 1 fails due to falling below the $500M institutional scale threshold.",
         "check": {
           "question": "What is certified by the IPO_AND_CAPITAL_MARKETS_ARCHITECTURE_CERTIFIED_NOMINAL credential?",
           "options": [
-            "Complete institutional readiness across underwriting syndicate economics, exchange-compliant float sizing, pricing discipline, and SOX 404 governance.",
             "An absolute guarantee that the stock price will double within 30 days.",
             "Immunity from all future quarterly SEC Form 10-Q reporting obligations.",
-            "Unrestricted insider selling on day one without any lock-up agreements."
+            "Unrestricted insider selling on day one without any lock-up agreements.",
+            "Complete institutional readiness across underwriting syndicate economics, exchange-compliant float sizing, pricing discipline, and SOX 404 governance."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The credential certifies that an enterprise possesses the financial scale, legal structures, and governance rigor required to list and trade on public capital markets.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The credential certifies that an enterprise possesses the financial scale, legal structures, and governance rigor required to list and trade on public capital markets."
         }
       }
@@ -6821,25 +6661,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_sovereign_holdco_sotp_valuation aggregating division financials, applying individual EBITDA multiples, and netting corporate debt."
+            "note": "Defines the function `model_sovereign_holding_company`."
           },
           {
-            "line": 2,
-            "note": "Simulates conglomerate valuation across Cloud, Logistics, and Robotics divisions."
+            "line": 46,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase Cloud EBITDA multiple to 25.0x. Observe how the holding company net equity value expands past $1.6B.",
         "check": {
           "question": "What is the primary corporate finance advantage of a Sum-of-the-Parts (SOTP) valuation for a multi-division holding company?",
           "options": [
-            "It values each distinct operating division against its specific industry peer multiples, unlocking premium valuations rather than suffering a generic conglomerate discount.",
-            "It eliminates the need to report consolidated group revenue.",
             "It allows subsidiaries to ignore local labor laws.",
-            "It converts all parent company equity into government bonds."
+            "It values each distinct operating division against its specific industry peer multiples, unlocking premium valuations rather than suffering a generic conglomerate discount.",
+            "It converts all parent company equity into government bonds.",
+            "It eliminates the need to report consolidated group revenue."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "SOTP valuation prevents high-margin divisions (e.g. software) from being dragged down by lower multiples of capital-intensive divisions.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "SOTP valuation prevents high-margin divisions (e.g. software) from being dragged down by lower multiples of capital-intensive divisions."
         }
       },
@@ -6861,25 +6701,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements calculate_founder_secondary_liquidity_waterfall evaluating share sales, capital gains taxes, family office endowments, and retained equity."
+            "note": "Defines the function `calculate_founder_secondary_and_family_office_waterfall`."
           },
           {
-            "line": 2,
-            "note": "Reports net liquid cash generation, venture fund allocations, and sovereign control retention."
+            "line": 46,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Lower monetization_pct to 10.0%. Observe how gross proceeds drop to $147M while retained equity expands to $1.323B.",
         "check": {
           "question": "How do late-stage founders achieve generational personal liquidity without surrendering corporate control during secondary sales?",
           "options": [
-            "By implementing Dual-Class Voting architectures, converting only the economic shares being sold into single-vote Class A stock while retaining super-voting Class B shares.",
+            "By selling the entire company to a private equity firm.",
             "By transferring all corporate shares to anonymous offshore bank accounts.",
-            "By borrowing money from employees without paying it back.",
-            "By selling the entire company to a private equity firm."
+            "By implementing Dual-Class Voting architectures, converting only the economic shares being sold into single-vote Class A stock while retaining super-voting Class B shares.",
+            "By borrowing money from employees without paying it back."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Dual-class stock decouples economic ownership from voting power, allowing founders to sell equity for cash while keeping voting control.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Dual-class stock decouples economic ownership from voting power, allowing founders to sell equity for cash while keeping voting control."
         }
       },
@@ -6903,25 +6743,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_family_office_endowment_portfolio allocating capital across equities, private equity, venture, real estate, and bonds under the Yale Model."
+            "note": "Defines the function `model_family_office_endowment_portfolio`."
           },
           {
-            "line": 2,
-            "note": "Evaluates annual spending grants, net compounding, and generational preservation status."
+            "line": 31,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase annual_spending_pct to 10.0%. Observe how generational preservation status flips to Depleting.",
         "check": {
           "question": "According to institutional endowment theory, what condition must be satisfied for a family office endowment to achieve Perpetual Growth?",
           "options": [
-            "The portfolio's expected real return (nominal return minus inflation) must strictly exceed its annual spending and grant distribution rate.",
-            "100% of the portfolio must be held in cash.",
             "The family office must avoid paying any salaries to investment staff.",
-            "Treating Family and Office as interchangeable constants rather than verifying Endowment at each step."
+            "Treating Family and Office as interchangeable constants rather than verifying Endowment at each step.",
+            "100% of the portfolio must be held in cash.",
+            "The portfolio's expected real return (nominal return minus inflation) must strictly exceed its annual spending and grant distribution rate."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "If real returns exceed spending, the principal grows in purchasing power perpetually; if spending exceeds real return, the principal eventually depletes.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "If real returns exceed spending, the principal grows in purchasing power perpetually; if spending exceeds real return, the principal eventually depletes."
         }
       },
@@ -6943,11 +6783,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements model_executive_succession_and_trust_governance evaluating executive benches, trust structures, and handover milestones."
+            "note": "Defines the function `model_executive_succession_and_trust_governance`."
           },
           {
-            "line": 2,
-            "note": "Confirms robust bench strength (2/3 ready successors) and certifies nominal succession viability."
+            "line": 39,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Lower Sarah Chen's readiness score to 75. Observe how the bench strength drops and alerts to Key-Person Risk.",
@@ -6984,25 +6824,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements master_sovereign_venture_empire_capstone_control_tower validating all four grand capstone audit gates."
+            "note": "Defines the function `master_sovereign_venture_empire_capstone_control_tower`."
           },
           {
-            "line": 2,
-            "note": "Executes capstone control tower audit and certifies 100% completion of the Entrepreneurship & Business Management curriculum."
+            "line": 39,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set founder_liq_res net_liquid_cash_generated to $50M. Observe how Gate 2 fails due to falling short of the $100M threshold.",
         "check": {
           "question": "What does earning the SOVEREIGN_VENTURE_EMPIRE_GRAND_CAPSTONE_CERTIFIED_NOMINAL accreditation represent?",
           "options": [
+            "A guarantee that no competitor will ever enter the market.",
             "The definitive mastery of enterprise creation from zero to multi-billion-dollar scale, synthesizing ideation, governance, capital markets, and multi-generational legacy stewardship.",
             "An award granted automatically to anyone who reads a business book.",
-            "A license to avoid all environmental regulations.",
-            "A guarantee that no competitor will ever enter the market."
+            "A license to avoid all environmental regulations."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "This apex certification validates comprehensive mastery over the entire entrepreneurial lifecycle, from initial validation to sovereign global conglomerate stewardship.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "This apex certification validates comprehensive mastery over the entire entrepreneurial lifecycle, from initial validation to sovereign global conglomerate stewardship."
         }
       }
@@ -7048,30 +6888,30 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Conversion Mechanism: VALUATION_CAP\nEffective Price Per Share: $0.6000 (Series A Base: $1.50)\nTotal Shares Issued: 875,000 (from $525,000.00 total claim)\n",
         "codeNotes": [
           {
-            "line": 1,
-            "note": "Defines ConvertibleNote dataclass capturing principal, accrued interest, valuation cap, and discount rate."
+            "line": 5,
+            "note": "Defines the class `ConvertibleNote`."
           },
           {
-            "line": 2,
-            "note": "Implements calculate_conversion_price evaluating both branches and deterministically returning the investor-favorable lower share price."
+            "line": 11,
+            "note": "Defines the function `calculate_conversion_price`."
           },
           {
-            "line": 3,
-            "note": "Executes benchmark Series A scenario ($15M pre-money), demonstrating valuation cap activation at $0.60/share vs $1.20 discounted price."
+            "line": 24,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Modify note valuation_cap to 18000000.0 (above Series A pre-money) and observe how the conversion mechanism flips from VALUATION_CAP to DISCOUNT_RATE.",
         "check": {
           "question": "Under corporate statutory documentation, why do early-stage seed startups utilize convertible promissory notes with valuation caps rather than issuing direct preferred equity?",
           "options": [
-            "To defer establishing a definitive equity valuation until institutional Series A metrics are proven, avoiding down-round signaling risks while granting early investors downside debt seniority and upside equity expansion.",
-            "Because convertible notes eliminate all future dilution for founders and guarantee that common stock is never split.",
             "Because commercial banks in Delaware and India legally prohibit startups from selling equity shares during their first five years.",
-            "Because convertible notes require zero corporate authorization from the board of directors and can be executed without shareholder knowledge."
+            "Because convertible notes require zero corporate authorization from the board of directors and can be executed without shareholder knowledge.",
+            "To defer establishing a definitive equity valuation until institutional Series A metrics are proven, avoiding down-round signaling risks while granting early investors downside debt seniority and upside equity expansion.",
+            "Because convertible notes eliminate all future dilution for founders and guarantee that common stock is never split."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Valuation deferral protects early-stage startups from mispricing equity while giving seed investors debt seniority and conversion sweeteners (cap and discount) at the Series A round.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Valuation deferral protects early-stage startups from mispricing equity while giving seed investors debt seniority and conversion sweeteners (cap and discount) at the Series A round."
         }
       },
@@ -7091,29 +6931,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Iterates across multiple Series A pre-money valuations from $6M to $25M."
-          },
-          {
-            "line": 2,
-            "note": "Compares cap share price against discount share price to identify the active conversion trigger."
-          },
-          {
-            "line": 3,
-            "note": "Generates sensitivity matrix demonstrating that at or above $7.5M pre-money, the valuation cap dominates."
+            "note": "Defines the function `evaluate_cap_sensitivity`."
           }
         ],
         "tryIt": "Change base_shares to 12,000,000 to simulate a larger pre-financing option pool and observe the lower resulting cap price per share.",
         "check": {
           "question": "Given a convertible note with a $6,000,000 valuation cap and a 20% discount rate, at what Series A pre-money valuation does the valuation cap exactly equal the discounted share price (the crossover inflection point)?",
           "options": [
-            "$7,500,000 pre-money valuation (calculated as Valuation Cap / (1 - Discount Rate)).",
-            "$6,000,000 pre-money valuation (equal to the face value of the valuation cap).",
             "$12,000,000 pre-money valuation (double the valuation cap).",
-            "$4,800,000 pre-money valuation (calculated as Valuation Cap * (1 - Discount Rate))."
+            "$7,500,000 pre-money valuation (calculated as Valuation Cap / (1 - Discount Rate)).",
+            "$4,800,000 pre-money valuation (calculated as Valuation Cap * (1 - Discount Rate)).",
+            "$6,000,000 pre-money valuation (equal to the face value of the valuation cap)."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The crossover occurs when Cap Price equals Discount Price: Cap / Shares = (Pre-Money / Shares) * (1 - Discount). Solving for Pre-Money yields Cap / (1 - Discount) = $6M / 0.8 = $7.5M.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The crossover occurs when Cap Price equals Discount Price: Cap / Shares = (Pre-Money / Shares) * (1 - Discount). Solving for Pre-Money yields Cap / (1 - Discount) = $6M / 0.8 = $7.5M."
         }
       },
@@ -7122,7 +6954,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "say": [
           "We now advance to Part 3: Simple vs Compound Interest Accrual on Convertible Promissory Notes. A critical yet frequently overlooked element of convertible debt instruments is the contractual treatment of interest. Because convertible notes are legally classified as debt securities rather than equity, they carry a mandatory interest rate, typically ranging from five to eight percent per annum in standard venture markets, designed to comply with statutory usury limits and tax regulations regarding imputed interest under the Internal Revenue Code Section 7872 and Section 56(2)(viib) of the Income Tax Act.",
           "However, unlike traditional commercial bank loans or corporate debentures, convertible notes virtually never require the startup to disburse cash interest payments on a monthly or quarterly basis. Forcing an early-stage startup with limited cash runway to service monthly debt interest would accelerate insolvency and defeat the entire purpose of equity-oriented venture development. Instead, contractual interest is structured as deferred capitalized interest: it accrues silently on the corporate ledger from the date of note issuance until the closing of the qualified equity financing, at which point the entire accumulated interest balance is added to the principal balance and converts into preferred stock.",
-          "The pivotal economic and mathematical question is whether the note purchase agreement prescribes Simple Interest or Compound Interest. Under a Simple Interest regime, interest accrues solely on the original principal balance. The mathematical formulation is: Interest equals Principal multiplied by the Annual Interest Rate multiplied by Time in years, calculated on an Actual divided by 365 or 360-day day-count convention. For a one-million-dollar convertible note carrying an eight percent simple interest rate that converts after eighteen months, the total accrued interest is exactly one hundred twenty thousand dollars, producing an aggregate convertible claim of one million one hundred twenty thousand dollars. This linear interest trajectory preserves predictable capitalization forecasts for founders because debt obligations do not compound upon themselves during development milestones.",
+          "The pivotal economic and mathematical question is whether the note purchase agreement prescribes Simple Interest or Compound Interest. Under a Simple Interest regime, interest accrues solely on the original principal balance. The mathematical formulation is: Interest equals Principal multiplied by the Annual Interest Rate multiplied by Time in years, calculated on an Actual divided by 365 or 360-day-count convention. For a one-million-dollar convertible note carrying an eight percent simple interest rate that converts after eighteen months, the total accrued interest is exactly one hundred twenty thousand dollars, producing an aggregate convertible claim of one million one hundred twenty thousand dollars. This linear interest trajectory preserves predictable capitalization forecasts for founders because debt obligations do not compound upon themselves during development milestones.",
           "Conversely, under a Compound Interest regime, interest accrued in each compounding period is added to the principal balance for the calculation of subsequent interest. If the agreement stipulates monthly compounding, the effective annual interest yield increases significantly. Using the compound interest formula: Total Amount equals Principal multiplied by one plus the annual rate divided by twelve, raised to the power of twelve multiplied by years. Over eighteen months, compounding increases the total claim by thousands of dollars. While seemingly minor on a single fifty-thousand-dollar angel check, when an enterprise raises three million dollars across multi-year seed extensions, compounding interest creates hundreds of thousands of dollars of phantom debt that converts into substantial additional equity dilution for the founders. This compounding burden penalizes founders for taking the necessary time to build durable intellectual property and operational infrastructure.",
           "Furthermore, the tax implications of accrued interest require meticulous corporate accounting. Under accrual accounting standards (GAAP ASC 470 and Ind AS 32), the startup must recognize accrued interest expense on its income statement throughout the holding period, even though zero cash changes hands. If the note is held across fiscal year-ends, the corporation must maintain rigorous deferred tax asset schedules and issue Form 1099-INT or TDS withholding certificates where statutory tax codes mandate withholding on convertible debt interest accruals prior to conversion. Failing to account for these statutory tax withholdings can create material contingent liabilities during institutional legal due diligence.",
           "In Part 3, we develop a comprehensive Seed Debt Simple vs Compound Interest Accrual Simulator in Python. We will model exact calendar day-count conventions, compare simple versus monthly compounding trajectories over variable holding durations, and quantify the exact dollar surplus transferred to noteholders upon equity conversion. Understanding this quantitative delta allows entrepreneurs to reject aggressive compounding clauses during term sheet negotiation and safeguard common shareholder ownership."
@@ -7132,16 +6964,12 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Principal: $1,000,000.00 @ 8.0% over 547 days\nSimple Interest Accrued:   $119,890.41 -> Total: $1,119,890.41\nCompound Interest Accrued: $126,924.84 -> Total: $1,126,924.84\nInvestor Surplus via Compounding: $7,034.43\n",
         "codeNotes": [
           {
-            "line": 1,
-            "note": "Calculates exact day elapsed fraction between note execution and Series A closing."
-          },
-          {
-            "line": 2,
-            "note": "Computes both Simple Interest (I = P*r*t) and Monthly Compounded Interest (A = P*(1+r/12)^(12*t))."
-          },
-          {
             "line": 3,
-            "note": "Outputs the financial difference, demonstrating how compounding transfers thousands in additional equity value."
+            "note": "Defines the function `calculate_note_interest`."
+          },
+          {
+            "line": 18,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase annual_rate to 0.12 (12%) and extend holding duration to 3 years to see the compounding delta widen substantially.",
@@ -7175,29 +7003,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Defines NoteConversionHurdle class capturing QEF capital hurdle and debt maturity date."
+            "note": "Defines the class `NoteConversionHurdle`."
           },
           {
-            "line": 2,
-            "note": "Evaluates round proceeds against the threshold and evaluates whether maturity remedies are triggered."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates sub-QEF round triggering voluntary option vs Series A triggering mandatory automatic conversion."
+            "line": 31,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set current_date to '2026-03-01' (past maturity_date) on Round 1 and observe how the action shifts to MATURITY_REMEDY_TRIGGERED.",
         "check": {
           "question": "What is the primary corporate governance purpose of establishing a high capital hurdle (e.g., $1,000,000+) in a Qualified Equity Financing (QEF) definition?",
           "options": [
-            "To prevent founders from forcing noteholders to convert their senior debt into illiquid equity based on an unverified, token equity round raised at an artificial vanity valuation.",
+            "To mandate that the startup immediately pay cash bonuses to all corporate officers.",
             "To ensure that only foreign sovereign wealth funds are allowed to invest in the Series A round.",
             "To force all convertible noteholders to surrender 50% of their investment as a penalty.",
-            "To mandate that the startup immediately pay cash bonuses to all corporate officers."
+            "To prevent founders from forcing noteholders to convert their senior debt into illiquid equity based on an unverified, token equity round raised at an artificial vanity valuation."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "The QEF hurdle ensures that automatic conversion only occurs when an arm's-length institutional lead investor has rigorously priced and validated the company's equity value with substantial new capital.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "The QEF hurdle ensures that automatic conversion only occurs when an arm's-length institutional lead investor has rigorously priced and validated the company's equity value with substantial new capital."
         }
       },
@@ -7217,29 +7041,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Audits a portfolio of three stacked convertible notes, calculating total note conversion shares at Series A closing."
+            "note": "Defines the function `audit_note_stacking_dilution`."
           },
           {
-            "line": 2,
-            "note": "Calculates post-financing capitalization including Series A new shares, deriving exact retained ownership percentages."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates how uncoordinated note stacking crushes founder equity down to 54.47%, triggering governance distress alerts."
+            "line": 34,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Add a fourth $1.0M note at a $5.0M cap to stacked_notes and verify that founder ownership plunges below the critical 51% majority threshold.",
         "check": {
           "question": "How does the 'Note Stacking Nightmare' anti-pattern destroy founder common equity at Series A closing?",
           "options": [
-            "By issuing multiple tranches of uncoordinated convertible notes with low valuation caps that convert simultaneously at steep discounts, forcing common founders to absorb massive cumulative dilution prior to lead investor entry.",
             "By legally converting all founder common shares into non-voting debt liabilities.",
             "By requiring founders to personally repay noteholder principal out of their private personal savings accounts.",
+            "By issuing multiple tranches of uncoordinated convertible notes with low valuation caps that convert simultaneously at steep discounts, forcing common founders to absorb massive cumulative dilution prior to lead investor entry.",
             "By automatically dissolving the corporate charter under Delaware General Corporation Law."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Uncoordinated note stacking causes multiple debt tranches to convert at steep discounts simultaneously, shifting substantial equity to early noteholders and diluting founders far beyond initial expectations.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Uncoordinated note stacking causes multiple debt tranches to convert at steep discounts simultaneously, shifting substantial equity to early noteholders and diluting founders far beyond initial expectations."
         }
       }
@@ -7284,30 +7104,26 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Post-Money SAFE Ownership Invariants:\n-------------------------------------------------------\nAngel Syndicate      | Check: $500,000.00 | Cap: $5.0M -> 10.00%\nVenture Seed Fund    | Check: $1,000,000.00 | Cap: $10.0M -> 10.00%\nStrategic Partner    | Check: $250,000.00 | Cap: $5.0M ->  5.00%\n-------------------------------------------------------\nTotal SAFE Investor Ownership: 25.00%\nCommon Founder Retained Pre-Series A: 75.00%\n",
         "codeNotes": [
           {
-            "line": 1,
-            "note": "Defines PostMoneySAFE dataclass with exact ownership_percentage property (investment / post_money_cap)."
+            "line": 4,
+            "note": "Defines the class `PostMoneySAFE`."
           },
           {
-            "line": 2,
-            "note": "Instantiates a portfolio of three seed SAFEs with caps of $5M, $10M, and $5M."
-          },
-          {
-            "line": 3,
-            "note": "Calculates exact aggregate investor ownership (25.0%) and founder retained pre-Series A equity (75.0%)."
+            "line": 19,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase Venture Seed Fund check to 2000000.0 on a 10000000.0 cap and observe how total SAFE ownership expands to 35.0%.",
         "check": {
           "question": "What is the primary mathematical and strategic advantage of the Y Combinator Post-Money SAFE compared to legacy pre-money convertible instruments?",
           "options": [
-            "It freezes and guarantees the investor's exact percentage ownership upfront (Investment / Post-Money Cap), eliminating the uncoordinated dilution ambush for founders and earlier investors.",
-            "It legally obligates the startup to repay the entire investment with 15% annual cash interest after 12 months.",
             "It automatically transfers voting control of the board of directors to angel investors upon signing.",
-            "It exempts the startup from filing corporate income tax returns in Delaware and California."
+            "It exempts the startup from filing corporate income tax returns in Delaware and California.",
+            "It legally obligates the startup to repay the entire investment with 15% annual cash interest after 12 months.",
+            "It freezes and guarantees the investor's exact percentage ownership upfront (Investment / Post-Money Cap), eliminating the uncoordinated dilution ambush for founders and earlier investors."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Post-money SAFEs fix the investor's ownership fraction immediately upon check clearance, removing dilution ambiguity and preventing the pre-money SAFE stacking trap.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Post-money SAFEs fix the investor's ownership fraction immediately upon check clearance, removing dilution ambiguity and preventing the pre-money SAFE stacking trap."
         }
       },
@@ -7327,15 +7143,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements evaluate_safe_conversion comparing Cap Price, Discount Price, and Combined minimum logic."
+            "note": "Defines the function `evaluate_safe_conversion`."
           },
           {
-            "line": 2,
-            "note": "Evaluates three SAFE templates against a benchmark $2.50 Series A share price."
-          },
-          {
-            "line": 3,
-            "note": "Proves that the Combined SAFE activates the $0.80 Cap Price rather than the $2.00 Discount Price, maximizing investor shares."
+            "line": 30,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Lower Series A benchmark price to $0.90 per share and observe how the Combined SAFE flips to activate the Discount Price ($0.72) instead of the Cap Price ($0.80).",
@@ -7369,29 +7181,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Calculates exact pro-rata check amount and shares purchased based on target ownership percentage and round size."
+            "note": "Defines the function `calculate_pro_rata_rights`."
           },
           {
-            "line": 2,
-            "note": "Configures syndicate investor portfolio distinguishing Major Investors from minor angel scouts."
-          },
-          {
-            "line": 3,
-            "note": "Enforces major investor eligibility gate, allocating $1.05M in total pro-rata capacity across qualified funds."
+            "line": 15,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Change Angel Scout is_major status to True and calculate the additional pro-rata capital absorbed from the round.",
         "check": {
           "question": "Why do incoming institutional Series A lead venture firms frequently object to 'Super-Pro-Rata' rights previously granted to seed investors?",
           "options": [
+            "Because seed investors are legally forbidden from investing in subsequent priced equity rounds.",
             "Because super-pro-rata rights allow seed funds to purchase a larger share of Series A than their pro-rata holding, starving the lead VC of their mandatory 20% to 25% ownership target.",
             "Because super-pro-rata rights make it illegal for the company to issue employee stock options.",
-            "Because super-pro-rata rights require the company to pay annual cash dividends to seed investors.",
-            "Because seed investors are legally forbidden from investing in subsequent priced equity rounds."
+            "Because super-pro-rata rights require the company to pay annual cash dividends to seed investors."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Super-pro-rata rights cannibalize the incoming lead investor's ownership allocation, creating structural term sheet friction that can kill the financing round.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Super-pro-rata rights cannibalize the incoming lead investor's ownership allocation, creating structural term sheet friction that can kill the financing round."
         }
       },
@@ -7411,29 +7219,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_multi_safe_stack calculating cumulative SAFE percentage ownership and resulting diluted shares."
+            "note": "Defines the function `simulate_multi_safe_stack`."
           },
           {
-            "line": 2,
-            "note": "Ingests three sequential rolling close SAFE tranches ($250k, $750k, $1.2M) at varying valuation caps."
-          },
-          {
-            "line": 3,
-            "note": "Outputs precise cumulative SAFE equity (32.08%) and proves founder common retention drops to 67.92% pre-Series A."
+            "line": 27,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Add a fourth tranche of $800,000 at an $8M cap and inspect how founder retention is squeezed below 60%.",
         "check": {
           "question": "In a post-money SAFE regime with multiple stacked tranches, who absorbs all the dilution caused by issuing subsequent SAFEs?",
           "options": [
-            "Existing common shareholders (the founders and employee option pool), because earlier post-money SAFE holders are contractually insulated from dilution by subsequent SAFEs.",
             "The incoming Series A lead venture capital firm, who must absorb all seed dilution in the post-money.",
             "The Delaware Secretary of State through statutory equity indemnity pools.",
+            "Existing common shareholders (the founders and employee option pool), because earlier post-money SAFE holders are contractually insulated from dilution by subsequent SAFEs.",
             "All SAFEs absorb dilution equally in proportion to their investment size."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Post-money SAFEs lock investor percentages against the post-money cap, meaning every new SAFE tranche dilutes common founders exclusively.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Post-money SAFEs lock investor percentages against the post-money cap, meaning every new SAFE tranche dilutes common founders exclusively."
         }
       },
@@ -7453,29 +7257,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements audit_safe_option_pool_wipeout modeling pre-money option pool absorption alongside post-money SAFEs."
+            "note": "Defines the function `audit_safe_option_pool_wipeout`."
           },
           {
-            "line": 2,
-            "note": "Simulates a 30% SAFE stack combined with a 25% Series A lead and a 15% post-financing unallocated option pool."
-          },
-          {
-            "line": 3,
-            "note": "Diagnoses critical governance wipeout, revealing founder equity collapses to exactly 30.0% and triggering control alerts."
+            "line": 25,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Adjust post_pool_pct to 8.0% and safe_pct to 20.0% to observe how founder retention recovers to 47.0%, restoring governance stability.",
         "check": {
           "question": "How does the 'Post-Money SAFE Option Pool Wipeout' anti-pattern plunge founders into minority equity ownership?",
           "options": [
-            "By combining stacked post-money SAFEs with an institutional Series A requirement that an expanded option pool be created entirely out of pre-money common equity, forcing founders to absorb 100% of both seed and option dilution.",
+            "By allowing angel investors to seize company assets through mechanics' liens without court approval.",
             "By legally converting all founder common shares into promissory debt notes with mandatory 20% interest.",
             "By forcing founders to sell their shares to the company at par value of one cent per share.",
-            "By allowing angel investors to seize company assets through mechanics' liens without court approval."
+            "By combining stacked post-money SAFEs with an institutional Series A requirement that an expanded option pool be created entirely out of pre-money common equity, forcing founders to absorb 100% of both seed and option dilution."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "When pre-money option pool expansions and insulated post-money SAFEs collide, common founders absorb the entirety of both dilution sources, frequently crushing founder equity below 35%.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "When pre-money option pool expansions and insulated post-money SAFEs collide, common founders absorb the entirety of both dilution sources, frequently crushing founder equity below 35%."
         }
       }
@@ -7520,16 +7320,12 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "Institutional Capitalization Breakdown:\n--------------------------------------------------\nIssued & Outstanding Shares: 11,000,000 (78.6%)\nEmployee Granted Options:     1,500,000 (10.7%)\nUnallocated Option Pool:      1,500,000 (10.7%)\n--------------------------------------------------\nFully Diluted Capitalization: 14,000,000 shares\nAuthorized Share Headroom:    6,000,000 shares remaining\n",
         "codeNotes": [
           {
-            "line": 1,
-            "note": "Defines CapitalizationStructure dataclass with fully diluted capitalization and authorized headroom properties."
+            "line": 4,
+            "note": "Defines the class `CapitalizationStructure`."
           },
           {
-            "line": 2,
-            "note": "Instantiates a complete corporate structure with 20M authorized, 11M issued, and 3M in option reserves."
-          },
-          {
-            "line": 3,
-            "note": "Outputs institutional breakdown proving fully diluted shares (14.0M) forms the definitive pricing denominator."
+            "line": 34,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase unallocated_option_pool to 3,000,000 and calculate the resulting impact on fully diluted capitalization and remaining authorized headroom.",
@@ -7563,29 +7359,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_option_pool_shuffle comparing Pre-Money vs Post-Money pool expansion algebra."
+            "note": "Defines the function `simulate_option_pool_shuffle`."
           },
           {
-            "line": 2,
-            "note": "Executes benchmark $10M Series A on a $40M pre-money valuation with a 15% target unallocated option pool."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that the pre-money shuffle reduces founder retention by 3.0%, shifting $1.5M in enterprise value to the VC."
+            "line": 37,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Reduce target_pool_pct to 0.08 (8%) to model a rightsized hiring plan and inspect the recovery in founder retained equity.",
         "check": {
           "question": "How does the 'Pre-Money Option Pool Shuffle' economically transfer value from startup founders to the incoming venture capital firm?",
           "options": [
-            "By creating the unallocated option pool entirely out of pre-money common equity, which lowers the effective share price paid by the VC and forces founders to absorb 100% of the dilution.",
             "By legally converting founder common shares into preferred shares with zero voting rights.",
             "By requiring the startup to pay cash dividends to the venture capital firm during the first 12 months.",
-            "By transferring the corporate intellectual property ownership to the venture capital firm."
+            "By transferring the corporate intellectual property ownership to the venture capital firm.",
+            "By creating the unallocated option pool entirely out of pre-money common equity, which lowers the effective share price paid by the VC and forces founders to absorb 100% of the dilution."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Expanding the option pool pre-money lowers the share price paid by the investor, forcing existing common founders to absorb all the dilution needed for future employee equity.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Expanding the option pool pre-money lowers the share price paid by the investor, forcing existing common founders to absorb all the dilution needed for future employee equity."
         }
       },
@@ -7605,29 +7397,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models standard 4-year vesting with a 1-year cliff and calculates tax consequences under 83(b) election vs default taxation."
+            "note": "Defines the function `calculate_vesting_trajectory`."
           },
           {
-            "line": 2,
-            "note": "Simulates a founder with 5,000,000 shares at Month 36, evaluating tax liability at a $5.00 fair market value."
-          },
-          {
-            "line": 3,
-            "note": "Proves that filing an 83(b) election saves the founder over $6.9M in cash income tax liabilities on illiquid private stock."
+            "line": 27,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set months_elapsed to 9 (before the cliff) and observe how vested shares drop to zero and unvested shares equal 100%.",
         "check": {
           "question": "What is the catastrophic financial consequence for a startup founder who fails to file an Internal Revenue Code Section 83(b) election within 30 days of receiving restricted stock?",
           "options": [
-            "They incur massive ordinary income tax liabilities on the fair market value of their shares as they vest over 4 years, potentially owing millions in cash taxes on illiquid stock.",
             "Their stock is automatically forfeited and transferred to the Delaware state treasury.",
             "They are legally disqualified from serving as a corporate director or officer in the United States.",
+            "They incur massive ordinary income tax liabilities on the fair market value of their shares as they vest over 4 years, potentially owing millions in cash taxes on illiquid stock.",
             "The corporate charter is automatically revoked by the Internal Revenue Service."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Failing to file an 83(b) election subjects each vesting tranche to ordinary income tax based on the stock's appreciated value on each vesting date rather than its nominal grant price.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Failing to file an 83(b) election subjects each vesting tranche to ordinary income tax based on the stock's appreciated value on each vesting date rather than its nominal grant price."
         }
       },
@@ -7647,29 +7435,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements solve_series_a_circular_cap_table utilizing iterative convergence to resolve circular share pricing."
+            "note": "Defines the function `solve_series_a_circular_cap_table`."
           },
           {
-            "line": 2,
-            "note": "Ingests two converting seed SAFEs alongside an $8M Series A new cash investment and a 12% target option pool."
-          },
-          {
-            "line": 3,
-            "note": "Converges in under 10 iterations to an exact $1.4111 share price, fully reconciling all share issuances with zero discrepancy."
+            "line": 48,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase target_pool_pct to 0.15 and observe how the iterative solver converges to a lower share price to accommodate the larger pool.",
         "check": {
           "question": "Why does modeling a Series A capitalization table with converting SAFEs and pre-money option pools create a circular reference in spreadsheet software?",
           "options": [
+            "Because convertible SAFEs do not convert into shares until an Initial Public Offering.",
             "Because the Series A share price depends on fully diluted shares, but the number of shares issued to converting SAFEs and option pools depends on the Series A share price.",
             "Because Microsoft Excel prohibits using formulas with more than three shareholders.",
-            "Because venture capital firms legally require cap tables to contain intentional circular calculation errors.",
-            "Because convertible SAFEs do not convert into shares until an Initial Public Offering."
+            "Because venture capital firms legally require cap tables to contain intentional circular calculation errors."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The circularity arises because share price and converting share counts are mutually dependent variables that must be resolved through simultaneous algebra or iterative numerical solvers.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The circularity arises because share price and converting share counts are mutually dependent variables that must be resolved through simultaneous algebra or iterative numerical solvers."
         }
       },
@@ -7689,15 +7473,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements audit_dead_equity_drag comparing unvested founder resignation with and without a reverse vesting agreement."
+            "note": "Defines the function `audit_dead_equity_drag`."
           },
           {
-            "line": 2,
-            "note": "Simulates a 50/50 founder split where Co-Founder B resigns at Month 10."
-          },
-          {
-            "line": 3,
-            "note": "Proves that without vesting, dead equity sits at a fatal 50.0% (uninvestable), whereas reverse vesting repurchases all 5M unvested shares at par."
+            "line": 29,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set b_months_tenure to 24 in good_case to observe that Co-Founder B legitimately retains 50% of their grant (2.5M shares) while 2.5M are repurchased.",
@@ -7757,29 +7537,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_1x_non_participating_waterfall evaluating whether preferred converts to common or exercises 1x preference."
+            "note": "Defines the function `simulate_1x_non_participating_waterfall`."
           },
           {
-            "line": 2,
-            "note": "Simulates a $5M investment for 25% ownership across exits from $4M to $40M."
-          },
-          {
-            "line": 3,
-            "note": "Proves that above the $20M break-even valuation, the investor converts to common, unlocking $10M at a $40M exit."
+            "line": 28,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase ownership_pct to 33.33% and observe how the break-even valuation decreases from $20M down to $15M.",
         "check": {
           "question": "Under a 1x Non-Participating Preferred Stock structure, what election does the investor make upon an enterprise acquisition?",
           "options": [
+            "The investor receives 10% annual cash dividends paid by the acquiring firm.",
             "The investor elects either to receive their 1x original investment back as a senior preference OR to convert into common stock and share pro-rata in total proceeds, whichever yields the higher payout.",
             "The investor always receives double their money back plus 50% of all common equity.",
-            "The investor is legally required to forgive all investment capital and accept zero proceeds.",
-            "The investor receives 10% annual cash dividends paid by the acquiring firm."
+            "The investor is legally required to forgive all investment capital and accept zero proceeds."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Non-participating preferred forces a strict either/or choice: take the senior capital protection floor or convert to common equity for upside appreciation.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Non-participating preferred forces a strict either/or choice: take the senior capital protection floor or convert to common equity for upside appreciation."
         }
       },
@@ -7799,29 +7575,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements compare_participating_waterfalls evaluating Non-Participating, Full Participating, and Capped Participating structures."
+            "note": "Defines the function `compare_participating_waterfalls`."
           },
           {
-            "line": 2,
-            "note": "Demonstrates that at a $30M exit, full participation extracts an extra $6.0M from founders, cutting common proceeds to $14.0M."
-          },
-          {
-            "line": 3,
-            "note": "Verifies that a 2.0x participation cap restricts investor extraction and protects $10.0M for common shareholders."
+            "line": 31,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set cap_multiple to 1.5x and calculate the additional millions preserved for common founders during mid-market exits.",
         "check": {
           "question": "Why is 'Full Participating Preferred Stock' considered predatory and vehemently opposed by experienced startup founders?",
           "options": [
-            "Because it allows the investor to 'double-dip' by receiving their 1x preference back off the top and then participating pro-rata in remaining proceeds, extracting massive wealth from common founders on moderate exits.",
+            "Because it requires the CEO to personally guarantee all company lease liabilities.",
             "Because it automatically triggers corporate dissolution under Delaware General Corporation Law.",
-            "Because participating preferred shares cannot be sold to institutional secondary funds.",
-            "Because it requires the CEO to personally guarantee all company lease liabilities."
+            "Because it allows the investor to 'double-dip' by receiving their 1x preference back off the top and then participating pro-rata in remaining proceeds, extracting massive wealth from common founders on moderate exits.",
+            "Because participating preferred shares cannot be sold to institutional secondary funds."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Full participation allows preferred investors to take their capital back first and then take a pro-rata cut of remaining funds, heavily penalizing common founders.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Full participation allows preferred investors to take their capital back first and then take a pro-rata cut of remaining funds, heavily penalizing common founders."
         }
       },
@@ -7841,29 +7613,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models Pari Passu vs Tiered Seniority waterfalls when exit proceeds ($12M) are insufficient to cover total preferences ($20M)."
+            "note": "Defines the function `simulate_seniority_stacks`."
           },
           {
-            "line": 2,
-            "note": "Configures Series A ($5M pref) and Series B ($15M pref)."
-          },
-          {
-            "line": 3,
-            "note": "Proves that under tiered seniority, Series B absorbs all $12M leaving $0 for Series A, whereas pari passu grants Series A $3.0M."
+            "line": 36,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase exit_val to $22M and observe how both Series A and Series B are paid in full and the remaining $2M flows to Common.",
         "check": {
           "question": "What is the primary difference between Pari Passu Seniority and Tiered (Last In, First Out) Seniority in preferred liquidation waterfalls?",
           "options": [
-            "Under Pari Passu, all preferred classes share available exit proceeds pro-rata if proceeds are insufficient; under Tiered Seniority, the latest round is paid 100% of its preference before earlier rounds receive anything.",
             "Under Pari Passu, common stockholders are paid before preferred investors.",
             "Under Tiered Seniority, seed investors are guaranteed 5x returns in all acquisition scenarios.",
-            "Pari Passu applies only to foreign corporations operating under English common law."
+            "Pari Passu applies only to foreign corporations operating under English common law.",
+            "Under Pari Passu, all preferred classes share available exit proceeds pro-rata if proceeds are insufficient; under Tiered Seniority, the latest round is paid 100% of its preference before earlier rounds receive anything."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Pari passu treats all preferred rounds on equal footing pro-rata, whereas tiered seniority gives later growth rounds absolute priority over earlier seed rounds.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Pari passu treats all preferred rounds on equal footing pro-rata, whereas tiered seniority gives later growth rounds absolute priority over earlier seed rounds."
         }
       },
@@ -7883,15 +7651,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_management_carveout carving out an executive bonus pool before preference distributions."
+            "note": "Defines the function `simulate_management_carveout`."
           },
           {
-            "line": 2,
-            "note": "Evaluates a $25M distressed sale burdened by $30M in preferred liquidation preferences."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that a 15% carve-out secures $3.75M for the executive team while preferred investors still recover $21.25M (70.8%)."
+            "line": 22,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Adjust carveout_pct to 20% and analyze the trade-off between executive incentive retention and preferred investor recovery.",
@@ -7925,29 +7689,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Audits a three-tier preferred stack ($10M Series A, $15M Series B, $15M Series C) totaling $40M in liquidation hurdles."
-          },
-          {
-            "line": 2,
-            "note": "Iterates across acquisitions from $20M to $75M, identifying the exact boundary where common stock is wiped out."
-          },
-          {
-            "line": 3,
-            "note": "Proves that at $35M, despite a massive headline sale, common stockholders receive exactly $0.00."
+            "note": "Defines the function `audit_zero_dollar_wipeout`."
           }
         ],
         "tryIt": "Add a $10M Series D round to the stack and observe how the zero-dollar wipeout threshold expands to $50M.",
         "check": {
           "question": "How does the 'Zero-Dollar Common Wipeout' anti-pattern occur during an apparently successful corporate acquisition?",
           "options": [
-            "By raising excessive venture capital that creates a liquidation preference hurdle larger than the eventual acquisition price, causing 100% of exit proceeds to be paid to investors while common founders receive zero.",
-            "By accidentally selling common stock to unauthorized foreign shell corporations.",
             "By failing to pay quarterly franchise taxes to the state of incorporation.",
-            "By allowing corporate officers to convert their common shares into unsecured bonds."
+            "By raising excessive venture capital that creates a liquidation preference hurdle larger than the eventual acquisition price, causing 100% of exit proceeds to be paid to investors while common founders receive zero.",
+            "By allowing corporate officers to convert their common shares into unsecured bonds.",
+            "By accidentally selling common stock to unauthorized foreign shell corporations."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "When the liquidation preference stack exceeds the exit price, senior preferred claims consume all proceeds, leaving common shareholders completely uncompensated.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "When the liquidation preference stack exceeds the exit price, senior preferred claims consume all proceeds, leaving common shareholders completely uncompensated."
         }
       }
@@ -7993,29 +7749,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_seed_phase modeling simple interest accrual alongside post-money SAFE equity dilution."
+            "note": "Defines the function `simulate_seed_phase`."
           },
           {
-            "line": 2,
-            "note": "Calculates $45k accrued interest on $500k note (18 months @ 6%) and locks 10% SAFE equity on a $10M cap."
-          },
-          {
-            "line": 3,
-            "note": "Verifies founder equity adjusts from 100% to 90.0% post-SAFE, providing clean baseline metrics for Series A."
+            "line": 26,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase safe_investment to $1.5M on the $10M cap and inspect how founder retained equity adjusts to 85.0%.",
         "check": {
           "question": "How do convertible promissory notes and post-money SAFEs interact mathematically when held concurrently during the seed phase?",
           "options": [
-            "Both instruments dilute common founder equity concurrently, while post-money SAFEs remain insulated from debt dilution and debt notes accrue senior interest claims.",
             "Convertible notes automatically cancel post-money SAFEs upon signing.",
             "Post-money SAFEs pay monthly cash interest to noteholders.",
+            "Both instruments dilute common founder equity concurrently, while post-money SAFEs remain insulated from debt dilution and debt notes accrue senior interest claims.",
             "The Delaware Secretary of State seizes 50% of the company's common stock."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Both instruments draw equity from the common founder allocation, with notes accumulating interest and SAFEs maintaining their fixed post-money percentage.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Both instruments draw equity from the common founder allocation, with notes accumulating interest and SAFEs maintaining their fixed post-money percentage."
         }
       },
@@ -8035,29 +7787,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements solve_series_a_simultaneous using numerical convergence to resolve note conversions and pre-money pools."
+            "note": "Defines the function `solve_series_a_simultaneous`."
           },
           {
-            "line": 2,
-            "note": "Ingests $10M Series A cash at $35M pre-money with 12% target post-financing option pool."
-          },
-          {
-            "line": 3,
-            "note": "Converges to $2.0298 share price, issuing 4.9M Series A shares and proving founders retain 50.8% majority control."
+            "line": 56,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase pool_pct to 0.15 (15%) and observe how founder retention drops from 50.8% down to 48.2%, crossing below majority control.",
         "check": {
           "question": "Why does sizing an unallocated option pool in the pre-money valuation require a simultaneous algebraic solver?",
           "options": [
-            "Because the required pool share count depends on total post-financing shares, which depends on new Series A shares, which depends on share price, which depends on the pre-money pool size.",
-            "Because corporate securities law mandates using quantum computing for all Series A rounds.",
             "Because venture capital firms refuse to invest in companies that use standard arithmetic.",
-            "Because option pool shares must be divided equally among all registered voters in Delaware."
+            "Because the required pool share count depends on total post-financing shares, which depends on new Series A shares, which depends on share price, which depends on the pre-money pool size.",
+            "Because option pool shares must be divided equally among all registered voters in Delaware.",
+            "Because corporate securities law mandates using quantum computing for all Series A rounds."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The mutual dependency between share price, converting seed shares, and option pool sizing creates an algebraic circularity that requires iterative or simultaneous resolution.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The mutual dependency between share price, converting seed shares, and option pool sizing creates an algebraic circularity that requires iterative or simultaneous resolution."
         }
       },
@@ -8077,15 +7825,11 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models Series B growth round ($30M at $120M pre-money) and establishes tiered liquidation seniority."
+            "note": "Defines the function `simulate_series_b_growth`."
           },
           {
-            "line": 2,
-            "note": "Calculates new Series B shares (4.9M) and expands post-money capitalization to 24.6M shares."
-          },
-          {
-            "line": 3,
-            "note": "Establishes total liquidation preference stack of $41.55M with Series B senior to Series A and Seed."
+            "line": 35,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Increase series_b_cash to $40M and calculate the expanded liquidation preference hurdle.",
@@ -8119,29 +7863,25 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Implements simulate_exit_waterfall evaluating management carve-outs, tiered seniority payouts, and voluntary common conversion."
+            "note": "Defines the function `simulate_exit_waterfall`."
           },
           {
-            "line": 2,
-            "note": "Configures 5 diverse exit scenarios ($20M distressed, $50M recap, $100M trade sale, $250M PE buyout, $600M IPO)."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that at $100M Series A converts, and at $250M+ all preferred converts, unlocking over $101M for founders."
+            "line": 52,
+            "note": "Starts printing the results you see in the output panel."
           }
         ],
         "tryIt": "Set exit_valuation to $150M and evaluate whether Series B elects to convert to common equity or take its $30M preference.",
         "check": {
           "question": "In a $250,000,000 private equity buyout, why do all preferred investors voluntarily convert their shares into common stock?",
           "options": [
-            "Because their pro-rata share of common proceeds significantly exceeds their original liquidation preferences, maximizing their financial return.",
+            "Because common founders possess statutory drag-along rights that eliminate preferred preferences.",
             "Because corporate law legally forces all preferred shares to be cancelled upon reaching $100,000,000.",
             "Because preferred investors are prohibited by the IRS from receiving cash distributions in a buyout.",
-            "Because common founders possess statutory drag-along rights that eliminate preferred preferences."
+            "Because their pro-rata share of common proceeds significantly exceeds their original liquidation preferences, maximizing their financial return."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "When pro-rata common value exceeds liquidation preference, rational preferred investors always convert to common stock to capture their share of the upside.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "When pro-rata common value exceeds liquidation preference, rational preferred investors always convert to common stock to capture their share of the upside."
         }
       },
@@ -8160,30 +7900,22 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "======================================================================\n* PINIT CAREER OS - MILESTONE 7 CAPSTONE CONTROL TOWER AUDIT *\n======================================================================\n[PASSED] INVARIANT 1: Cap Table Parity (Common + Seed + SerA + SerB + Pool == Total)\n         Telemetry: 100.00% Fully Diluted Reconciled\n[PASSED] INVARIANT 2: Seed Debt Interest Capitalization (18-Month Simple Accrual)\n         Telemetry: $45,000 Accrued Interest Capitalized\n[PASSED] INVARIANT 3: YC Post-Money SAFE Ownership Invariance (10% Upfront Floor)\n         Telemetry: 10.00% Equity Allocation Verified\n[PASSED] INVARIANT 4: Pre-Money Option Pool Sizing (12% Target Post-Financing)\n         Telemetry: 12.00% Unallocated ESOP Preserved\n[PASSED] INVARIANT 5: Tiered Liquidation Seniority (Series B Senior to Series A)\n         Telemetry: Senior Preference Stack Enforced\n[PASSED] INVARIANT 6: Founder Governance Floor (>= 50% SerA, >= 35% SerB Retention)\n         Telemetry: 40.63% Post-Series B Founder Retained\n----------------------------------------------------------------------\nCryptographic Audit Digest: SHA-256:ba44ff3fb15c0f77dfdf2d6e1420a620\nAudit Status: 100% NOMINAL VERIFIED\nCertification: MILESTONE_7_VENTURE_FINANCING_CAPSTONE_CERTIFIED\n======================================================================\n",
         "codeNotes": [
           {
-            "line": 1,
-            "note": "Executes 6-point verification sweep inspecting cap table parity, debt interest capitalization, SAFE invariance, and founder floors."
-          },
-          {
-            "line": 2,
-            "note": "Computes SHA-256 cryptographic audit digest and validates 100% nominal pass across all corporate governance invariants."
-          },
-          {
             "line": 3,
-            "note": "Officially confers MILESTONE_7_VENTURE_FINANCING_CAPSTONE_CERTIFIED nominal."
+            "note": "Defines the function `run_milestone_7_control_tower`."
           }
         ],
         "tryIt": "Modify Invariant 6 status to False to observe how the Control Tower halts execution and triggers a CRITICAL GOVERNANCE FAILURE alert.",
         "check": {
           "question": "What is the primary corporate governance objective of executing an autonomous telemetry audit suite across a 4-round venture capitalization model?",
           "options": [
-            "To deterministically verify that all 6 corporate invariants (cap table parity, debt capitalization, SAFE invariance, pool sizing, seniority stacking, and founder floors) hold true with zero discrepancy.",
+            "To legally transfer all founder voting shares into offshore blind trusts.",
             "To generate automatic marketing emails to retail investors on social media.",
-            "To bypass Delaware franchise tax filings and avoid corporate audits.",
-            "To legally transfer all founder voting shares into offshore blind trusts."
+            "To deterministically verify that all 6 corporate invariants (cap table parity, debt capitalization, SAFE invariance, pool sizing, seniority stacking, and founder floors) hold true with zero discrepancy.",
+            "To bypass Delaware franchise tax filings and avoid corporate audits."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Automated telemetry audits ensure mathematical and legal integrity across multi-round capitalizations, preventing fatal dilution errors and governance disputes.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Automated telemetry audits ensure mathematical and legal integrity across multi-round capitalizations, preventing fatal dilution errors and governance disputes."
         }
       }
@@ -8229,29 +7961,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Calculates monthly interest for the IO phase and level annuity payments for the amortization phase."
-          },
-          {
-            "line": 2,
-            "note": "Computes total interest, total principal amortization, and the 4% terminal back-end fee."
-          },
-          {
-            "line": 3,
-            "note": "Outputs the complete debt service cash flow breakdown, revealing a 4.5x step-up in monthly cash outflow."
+            "note": "Defines the function `simulate_venture_debt_amortization`."
           }
         ],
         "tryIt": "Modify annual_rate to 0.12 (12%) and calculate how total finance charges expand across the 42-month facility.",
         "check": {
           "question": "What is the primary operational cash flow consequence when a venture debt facility transitions from the interest-only period into principal amortization?",
           "options": [
-            "Monthly debt service cash payments sharply increase because the company must pay both accrued interest and a monthly slice of principal amortization.",
+            "The startup's valuation is automatically marked down by fifty percent by the SEC.",
             "The lender immediately forgives the outstanding loan principal in exchange for common stock.",
             "Interest payments cease entirely and the company pays only zero-interest principal installments.",
-            "The startup's valuation is automatically marked down by fifty percent by the SEC."
+            "Monthly debt service cash payments sharply increase because the company must pay both accrued interest and a monthly slice of principal amortization."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Transitioning from interest-only to amortization adds monthly principal repayments to monthly interest, sharply increasing cash burn.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Transitioning from interest-only to amortization adds monthly principal repayments to monthly interest, sharply increasing cash burn."
         }
       },
@@ -8273,15 +7997,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Calculates the warrant dollar allocation ($400k) and determines total warrant shares issued (160,000 shares)."
-          },
-          {
-            "line": 2,
-            "note": "Implements cashless net exercise algebra deducting the strike price directly from gross fair market value."
-          },
-          {
-            "line": 3,
-            "note": "Displays comparative cash vs cashless exercise payouts and computes the effective equity cost percentage."
+            "note": "Defines the function `calculate_warrant_coverage_dilution`."
           }
         ],
         "tryIt": "Increase exit_share_price to $50.00 and evaluate how the lender's cashless net equity proceeds double.",
@@ -8318,29 +8034,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Calculates minimum liquidity cash requirements based on trailing monthly burn and flags covenant breaches."
-          },
-          {
-            "line": 2,
-            "note": "Implements an 80% borrowing base against eligible accounts receivable capped by total facility size."
-          },
-          {
-            "line": 3,
-            "note": "Outputs real-time covenant telemetry and available credit capacity."
+            "note": "Defines the function `monitor_financial_covenants`."
           }
         ],
         "tryIt": "Increase monthly_burn to $350,000 and verify how the liquidity covenant trips into an ALERT: DEFAULT status.",
         "check": {
           "question": "What is the primary corporate purpose of a Minimum Cash Liquidity Covenant in a venture debt facility?",
           "options": [
-            "To ensure that if the startup approaches financial distress, sufficient liquid cash remains in the bank for the lender to sweep and recover outstanding debt principal.",
-            "To force founders to distribute quarterly cash dividends to preferred equity shareholders.",
             "To guarantee that employees receive annual bonus payments regardless of company performance.",
-            "To prevent the company from opening international sales offices."
+            "To ensure that if the startup approaches financial distress, sufficient liquid cash remains in the bank for the lender to sweep and recover outstanding debt principal.",
+            "To prevent the company from opening international sales offices.",
+            "To force founders to distribute quarterly cash dividends to preferred equity shareholders."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Minimum cash covenants establish a liquidity floor ensuring the lender can recover loan principal before the company exhausts all cash.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Minimum cash covenants establish a liquidity floor ensuring the lender can recover loan principal before the company exhausts all cash."
         }
       },
@@ -8363,29 +8071,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models tangible asset liquidation recoveries ($1.5M) against a $5.0M senior secured debt claim."
-          },
-          {
-            "line": 2,
-            "note": "Compares recovery outcomes under a Direct IP Security Lien vs an IP Negative Pledge."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that under a Negative Pledge, the startup preserves 100% of its proprietary IP sovereignty ($8.0M value)."
+            "note": "Defines the function `model_ip_collateral_recovery`."
           }
         ],
         "tryIt": "Toggle has_ip_direct_lien to True to observe how the lender forecloses on $3.5M of proprietary IP code.",
         "check": {
           "question": "Why do venture-backed technology founders fiercely insist on an 'IP Negative Pledge' rather than granting a 'Direct IP Security Interest'?",
           "options": [
-            "An IP Negative Pledge contractually promises not to encumber IP to third parties while preventing the lender from foreclosing on and seizing proprietary source code upon loan default.",
             "An IP Negative Pledge exempts the startup from paying corporate state and federal income taxes.",
             "An IP Negative Pledge allows the lender to automatically sell patent assets to foreign entities without shareholder consent.",
+            "An IP Negative Pledge contractually promises not to encumber IP to third parties while preventing the lender from foreclosing on and seizing proprietary source code upon loan default.",
             "An IP Negative Pledge converts the loan into common stock after 36 months."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Under a negative pledge, the lender cannot seize or auction the company's core software code upon default, preserving tech sovereignty.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Under a negative pledge, the lender cannot seize or auction the company's core software code upon default, preserving tech sovereignty."
         }
       },
@@ -8407,29 +8107,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Simulates the Venture Debt Death Spiral tracking monthly operating burn combined with principal amortization."
-          },
-          {
-            "line": 2,
-            "note": "Models $2.0M cash, $250k operating burn, $155k debt service, and an $800k cash floor covenant."
-          },
-          {
-            "line": 3,
-            "note": "Pinpoints exact covenant breach at Month 3, demonstrating how lender DACA cash sweeps trigger terminal corporate insolvency."
+            "note": "Defines the function `simulate_venture_debt_death_spiral`."
           }
         ],
         "tryIt": "Increase starting_cash to $3.5M and determine how many additional months the company survives before covenant breach.",
         "check": {
           "question": "How does the 'Venture Debt Death Spiral' anti-pattern wipe out common founder equity during market downturns?",
           "options": [
-            "The expiration of interest-only periods spikes monthly debt service just as revenue slows, causing cash to breach minimum liquidity covenants, triggering debt acceleration and lender cash sweeps that prevent equity bridge financing.",
-            "By legally converting all common stock into non-voting debt debentures.",
             "By forcing founders to personally pay lender legal fees out of private bank accounts.",
-            "By automatically dissolving the Delaware corporate charter without court review."
+            "By automatically dissolving the Delaware corporate charter without court review.",
+            "By legally converting all common stock into non-voting debt debentures.",
+            "The expiration of interest-only periods spikes monthly debt service just as revenue slows, causing cash to breach minimum liquidity covenants, triggering debt acceleration and lender cash sweeps that prevent equity bridge financing."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Amortization spikes and revenue misses cause liquidity covenant breaches, prompting lenders to accelerate debt and sweep cash accounts, wiping out common equity.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Amortization spikes and revenue misses cause liquidity covenant breaches, prompting lenders to accelerate debt and sweep cash accounts, wiping out common equity."
         }
       }
@@ -8476,15 +8168,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes the majority threshold of disinterested directors and tests DGCL Section 144(a)(1) compliance."
-          },
-          {
-            "line": 2,
-            "note": "Determines whether the transaction is protected by the Business Judgment Rule or subjected to Entire Fairness review."
-          },
-          {
-            "line": 3,
-            "note": "Outputs director personal civil liability exposure based on conflict cleansing."
+            "note": "Defines the function `evaluate_dgcl_144_safe_harbor`."
           }
         ],
         "tryIt": "Increase interested_directors to 3 and observe how the safe harbor fails, exposing directors to breach of loyalty claims.",
@@ -8520,29 +8204,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Calculates vote percentages across common and preferred stockholder classes."
-          },
-          {
-            "line": 2,
-            "note": "Applies NVCA protective covenants requiring separate preferred class consent for major corporate actions."
-          },
-          {
-            "line": 3,
-            "note": "Confirms that an action lacking preferred class consent is legally ultra vires under DGCL 242(b)(2)."
+            "note": "Defines the function `check_protective_provisions_gateway`."
           }
         ],
         "tryIt": "Increase preferred_votes_for to 1,500,000 shares (75%) and verify that the debt facility is legally ratified.",
         "check": {
           "question": "What occurs when a startup board attempts to execute a major corporate acquisition that is rejected by a majority of Preferred Stockholders holding standard NVCA protective provisions?",
           "options": [
-            "The transaction is legally blocked because the Preferred Stock class veto operates independently of common shareholder vote totals.",
-            "The transaction automatically proceeds because common shareholders hold seventy percent of total voting power.",
             "The Delaware Court of Chancery automatically fires all Preferred Stock directors.",
-            "The transaction converts into a federal government loan."
+            "The transaction converts into a federal government loan.",
+            "The transaction automatically proceeds because common shareholders hold seventy percent of total voting power.",
+            "The transaction is legally blocked because the Preferred Stock class veto operates independently of common shareholder vote totals."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Protective provisions establish an independent class veto that prevents major actions without separate preferred shareholder consent.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Protective provisions establish an independent class veto that prevents major actions without separate preferred shareholder consent."
         }
       },
@@ -8564,29 +8240,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Configures a 2-2-1 board voting structure (2 Founders, 2 Investors, 1 Independent)."
-          },
-          {
-            "line": 2,
-            "note": "Detects a 2-to-2 deadlock between founders and investors and verifies the Independent Director swing vote."
-          },
-          {
-            "line": 3,
-            "note": "Confirms that the resolution satisfies Delaware DGCL 141 quorum and majority vote requirements."
+            "note": "Defines the function `simulate_boardroom_deadlock`."
           }
         ],
         "tryIt": "Set independent_vote to False and observe how the contested corporate pivot resolution is officially defeated.",
         "check": {
           "question": "Why do institutional venture capital term sheets mandate a '2-2-1' board composition structure upon Series A closing?",
           "options": [
-            "To prevent boardroom deadlocks between common founder directors and preferred VC directors by establishing a mutually agreed Independent Director as a neutral tie-breaking swing vote.",
             "To ensure that venture capital investors hold absolute majority control over all hiring and firing decisions.",
             "To comply with federal labor laws requiring union representatives on tech startup boards.",
+            "To prevent boardroom deadlocks between common founder directors and preferred VC directors by establishing a mutually agreed Independent Director as a neutral tie-breaking swing vote.",
             "To eliminate all founder voting rights after initial equity funding."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "A 2-2-1 board balances founder and investor representation, relying on an independent director to resolve split 2-2 deadlocks.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "A 2-2-1 board balances founder and investor representation, relying on an independent director to resolve split 2-2 deadlocks."
         }
       },
@@ -8608,29 +8276,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Verifies whether M&A approval meets the NVCA drag-along threshold (Board + 60% Common + 60% Preferred)."
-          },
-          {
-            "line": 2,
-            "note": "Models the contractual compulsion of 14 dissenting minority shareholders to sell their equity."
-          },
-          {
-            "line": 3,
-            "note": "Confirms that statutory appraisal rights under DGCL Section 262 are contractually extinguished."
+            "note": "Defines the function `execute_drag_along_enforcement`."
           }
         ],
         "tryIt": "Reduce common_in_favor_pct to 55.0% and observe how the drag along fails leaving the transaction exposed.",
         "check": {
           "question": "What is the primary corporate purpose of an express waiver of appraisal rights within an institutional drag-along agreement?",
           "options": [
-            "To prevent dissenting minority shareholders from filing statutory appraisal petitions in Delaware Chancery Court under DGCL 262 to demand judicial fair value cash payouts that disrupt M&A exits.",
-            "To allow founders to secretly divert acquisition proceeds to offshore shell accounts.",
             "To eliminate all income tax liabilities associated with capital gains on stock sales.",
-            "To automatically transfer minority shares to the state of Delaware."
+            "To prevent dissenting minority shareholders from filing statutory appraisal petitions in Delaware Chancery Court under DGCL 262 to demand judicial fair value cash payouts that disrupt M&A exits.",
+            "To automatically transfer minority shares to the state of Delaware.",
+            "To allow founders to secretly divert acquisition proceeds to offshore shell accounts."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Waiving appraisal rights under DGCL 262 prevents holdout minority shareholders from suing for judicial share appraisal during mergers.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Waiving appraisal rights under DGCL 262 prevents holdout minority shareholders from suing for judicial share appraisal during mergers."
         }
       },
@@ -8652,15 +8312,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models a $40M distressed exit waterfall where a $2M MIP and $38M preferred liquidation preference wipe out common stock to $0."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates whether the transaction satisfies Delaware's Entire Fairness standard via special committee and minority vote cleansing."
-          },
-          {
-            "line": 3,
-            "note": "Flags a critical fiduciary outage exposing conflicted venture directors to personal civil damages under Trados."
+            "note": "Defines the function `simulate_trados_entire_fairness_audit`."
           }
         ],
         "tryIt": "Observe how Trados fiduciary liability is successfully cleansed by toggling independent committee processes.",
@@ -8720,29 +8372,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models the pre-money option pool shuffle algebra and computes the true effective pre-money valuation ($34.0M)."
-          },
-          {
-            "line": 2,
-            "note": "Quantifies the -14.29% stealth dilution penalty imposed on founders through pre-money pool creation."
-          },
-          {
-            "line": 3,
-            "note": "Displays fully diluted share allocations and post-money ownership percentages."
+            "note": "Defines the function `simulate_option_pool_shuffle`."
           }
         ],
         "tryIt": "Increase target_pool_pct to 0.18 and observe how founder ownership is reduced by increasing pool reserves.",
         "check": {
           "question": "Who absorbs the equity dilution when an unallocated employee option pool is created inside the pre-money valuation during a venture capital financing round?",
           "options": [
+            "The dilution is split equally between founders, new investors, and bank lenders.",
             "One hundred percent of the option pool dilution is absorbed entirely by existing common stockholders (founders and early investors) prior to closing.",
             "The incoming venture capital investors absorb seventy percent of the dilution.",
-            "The option pool dilution is paid by the state government through tax credits.",
-            "The dilution is split equally between founders, new investors, and bank lenders."
+            "The option pool dilution is paid by the state government through tax credits."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "A pre-money option pool expansion forces existing shareholders to absorb 100% of the dilution, lowering the effective share price.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "A pre-money option pool expansion forces existing shareholders to absorb 100% of the dilution, lowering the effective share price."
         }
       },
@@ -8763,29 +8407,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes immediate $40 upfront tax under an 83(b) election and establishes long-term capital gains tax at exit."
-          },
-          {
-            "line": 2,
-            "note": "Models default Section 83(a) taxation where taxes are incurred annually as shares appreciate across 4-year vesting."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that filing an 83(b) election saves millions in cumulative taxes, maximizing net proceeds."
+            "note": "Defines the function `calculate_83b_tax_optimization`."
           }
         ],
         "tryIt": "Observe how ordinary income taxes surge when elections are omitted by setting filed_83b to False.",
         "check": {
           "question": "What is the non-negotiable statutory deadline for filing an IRC Section 83(b) election with the IRS following the receipt of restricted stock?",
           "options": [
-            "Exactly thirty calendar days from the date of the stock grant, which cannot be extended or cured under any circumstances.",
-            "Ninety days from the end of the corporate fiscal year.",
             "By April 15 of the calendar year following the grant.",
-            "At any time prior to the company's initial public offering."
+            "At any time prior to the company's initial public offering.",
+            "Exactly thirty calendar days from the date of the stock grant, which cannot be extended or cured under any circumstances.",
+            "Ninety days from the end of the corporate fiscal year."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "IRC Section 83(b) strictly mandates filing within 30 days of the grant date; missing the deadline permanently forfeits the election.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "IRC Section 83(b) strictly mandates filing within 30 days of the grant date; missing the deadline permanently forfeits the election."
         }
       },
@@ -8807,29 +8443,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Analyzes employee tender requests ($3.2M demand) against a $2.0M liquidity budget, calculating a 62.5% scale-back."
-          },
-          {
-            "line": 2,
-            "note": "Distributes $2.0M in pro-rata liquidity across founders, executives, and tenured engineering staff."
-          },
-          {
-            "line": 3,
-            "note": "Allocates secondary share purchases between the investor secondary ROFR (60%) and company treasury buyback (40%)."
+            "note": "Defines the function `simulate_secondary_tender_offer`."
           }
         ],
         "tryIt": "Calculate expanded liquidity proceeds when tender budgets are increased to $3,500,000.",
         "check": {
           "question": "What is the primary corporate governance purpose of enforcing a Right of First Refusal (ROFR) on private company stock transfers?",
           "options": [
-            "To prevent unsolicited transfers of private shares to predatory competitors or activist investors by granting the company and major investors the right to purchase the shares first.",
             "To automatically dissolve employee stock options upon any secondary sale.",
             "To mandate that all stock sales must be approved by the federal government.",
-            "To force founders to forfeit fifty percent of their stock proceeds to charity."
+            "To force founders to forfeit fifty percent of their stock proceeds to charity.",
+            "To prevent unsolicited transfers of private shares to predatory competitors or activist investors by granting the company and major investors the right to purchase the shares first."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "A ROFR protocol ensures the company and existing investors can purchase selling shares, keeping private cap tables tightly controlled.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "A ROFR protocol ensures the company and existing investors can purchase selling shares, keeping private cap tables tightly controlled."
         }
       },
@@ -8851,15 +8479,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Compares standard cash exercise ($100k out-of-pocket) against total $1.0M gross market value."
-          },
-          {
-            "line": 2,
-            "note": "Executes cashless net exercise algebra, calculating that 5,000 shares are withheld to pay the $100k strike price."
-          },
-          {
-            "line": 3,
-            "note": "Issues 45,000 net shares ($900k value) to the employee with zero out-of-pocket cash requirements."
+            "note": "Defines the function `calculate_cashless_net_exercise`."
           }
         ],
         "tryIt": "Observe how net exercise shares decline when fair market values drop by reducing current_fmv to $5.00.",
@@ -8895,29 +8515,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models an employee exercising 100k ISOs at a $10.00 409A FMV, generating a $990k AMT spread and a $277.2k cash tax bill."
-          },
-          {
-            "line": 2,
-            "note": "Simulates a 95% valuation crash to $0.50/share, reducing share value to $50k while the IRS retains the $277.2k cash tax."
-          },
-          {
-            "line": 3,
-            "note": "Quantifies a net personal loss of -$237,200.00, confirming a terminal personal financial outage."
+            "note": "Defines the function `simulate_illiquid_amt_tax_trap`."
           }
         ],
         "tryIt": "Observe the total tax loss when private startup valuations crash by running the simulation.",
         "check": {
           "question": "What is the primary cause of the 'Illiquid AMT Tax Trap' anti-pattern for startup employees exercising Incentive Stock Options (ISOs)?",
           "options": [
-            "Employees must pay immediate cash Alternative Minimum Tax (AMT) to the IRS based on the paper spread of private illiquid stock, and if the company subsequent crashes, the IRS does not refund the taxes paid on depreciated stock.",
             "The startup board of directors is legally allowed to confiscate employee bank accounts.",
+            "Employees must pay immediate cash Alternative Minimum Tax (AMT) to the IRS based on the paper spread of private illiquid stock, and if the company subsequent crashes, the IRS does not refund the taxes paid on depreciated stock.",
             "The state of Delaware imposes a mandatory wealth tax on all stock option holders.",
             "The SEC bans employees from exercising options after a Series B round."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "AMT is assessed on the paper spread at exercise; if private stock later crashes, the employee cannot recover the cash taxes paid.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "AMT is assessed on the paper spread at exercise; if private stock later crashes, the employee cannot recover the cash taxes paid."
         }
       }
@@ -8965,29 +8577,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Compares financial VC offer against strategic CVC offer using weighted financial and synergy scoring."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates valuation multiples, ownership dilution, and contractual encumbrance penalties."
-          },
-          {
-            "line": 3,
-            "note": "Confirms optimal syndication strategy: Lead Financial VC with CVC minority participation."
+            "note": "Defines the function `evaluate_cvc_vs_financial_vc`."
           }
         ],
         "tryIt": "Increase strategic_weight to 0.70 and evaluate changed syndicate rankings when strategic weight is increased.",
         "check": {
           "question": "What is the primary structural difference between Corporate Venture Capital (CVC) funds and traditional Financial Venture Capital (VC) firms?",
           "options": [
-            "Financial VCs operate with a singular fiduciary mandate to maximize cash returns (IRR) for external LPs, whereas CVCs operate with a dual mandate balancing financial returns with corporate strategic objectives.",
             "CVC funds are prohibited by federal law from investing in privately held companies.",
             "Financial VCs are owned entirely by the United States government.",
+            "Financial VCs operate with a singular fiduciary mandate to maximize cash returns (IRR) for external LPs, whereas CVCs operate with a dual mandate balancing financial returns with corporate strategic objectives.",
             "CVC funds invest exclusively in physical manufacturing equipment rather than equity."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Financial VCs focus purely on financial IRR, while CVCs balance financial returns with strategic benefits for their corporate parents.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Financial VCs focus purely on financial IRR, while CVCs balance financial returns with strategic benefits for their corporate parents."
         }
       },
@@ -9010,29 +8614,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes revenue trajectories with and without an enterprise Most-Favored Nation pricing clause."
-          },
-          {
-            "line": 2,
-            "note": "Models retroactive contract repricing on a 10,000-unit CVC account triggered by a 30% new customer discount."
-          },
-          {
-            "line": 3,
-            "note": "Flags -$1.5M in annual margin destruction, proving the critical hazard of unconstrained MFN covenants."
+            "note": "Defines the function `simulate_mfn_pricing_compression`."
           }
         ],
         "tryIt": "Increase new_deal_discount_pct to 0.40 to observe how revenue leakage expands when tier discounts are increased.",
         "check": {
           "question": "Why is an unconstrained Most-Favored Nation (MFN) pricing clause in a commercial sidecar agreement hazardous for a SaaS startup?",
           "options": [
-            "Any commercial discount offered to win a new enterprise customer automatically and retroactively reduces prices across the corporate investor's entire contract volume, destroying operating margins.",
-            "An MFN clause legally converts all software licenses into non-voting debt debentures.",
             "An MFN clause forces the startup to relocate its corporate headquarters overseas.",
-            "An MFN clause requires the startup to pay seventy percent of revenues to the SEC."
+            "Any commercial discount offered to win a new enterprise customer automatically and retroactively reduces prices across the corporate investor's entire contract volume, destroying operating margins.",
+            "An MFN clause requires the startup to pay seventy percent of revenues to the SEC.",
+            "An MFN clause legally converts all software licenses into non-voting debt debentures."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "MFN clauses create systemic price compression because any lower price given to win a deal cascades across the corporate partner's volume.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "MFN clauses create systemic price compression because any lower price given to win a deal cascades across the corporate partner's volume."
         }
       },
@@ -9054,15 +8650,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Simulates M&A auction clearing values under an M&A ROFR vs an M&A Right of First Notice (ROFN)."
-          },
-          {
-            "line": 2,
-            "note": "Quantifies the -35% chilling discount caused by a corporate ROFR, reducing exit value from $100M to $65M."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that a clean ROFN preserves robust competitive bidding, capturing a $105M exit valuation."
+            "note": "Defines the function `simulate_ma_rofr_chilling_effect`."
           }
         ],
         "tryIt": "Toggle cvc_has_rofr to False to observe how competitive bidding tension restores when rights are waived.",
@@ -9099,29 +8687,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Scans board agenda sections and automatically redacts confidential proprietary code and competitor win-loss pipelines."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates observer classification and clean-team certifications under trade secret protection standards."
-          },
-          {
-            "line": 3,
-            "note": "Confirms zero IP contamination risk when executive session trade secret redactions are enforced."
+            "note": "Defines the function `filter_board_packet_ip_firewall`."
           }
         ],
         "tryIt": "Observe how redaction filters sanitize sensitive commercial telemetry by setting clean_team_certified to True.",
         "check": {
           "question": "How do technology startup boards defend against 'Intellectual Property Contamination' when accommodating Corporate Venture Capital board observers?",
           "options": [
-            "By enforcing Clean-Team protocols that exclude operational business-unit executives and using Executive Sessions to redact sensitive source code architectures and product roadmaps.",
+            "By granting the corporate observer full ownership of all company patents.",
             "By requiring corporate observers to sign non-compete agreements that ban them from ever working in the tech industry.",
             "By deleting all source code repositories prior to every board meeting.",
-            "By granting the corporate observer full ownership of all company patents."
+            "By enforcing Clean-Team protocols that exclude operational business-unit executives and using Executive Sessions to redact sensitive source code architectures and product roadmaps."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Clean-team rules and executive session redactions prevent sensitive technical and commercial IP from leaking to competing corporate units.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Clean-team rules and executive session redactions prevent sensitive technical and commercial IP from leaking to competing corporate units."
         }
       },
@@ -9144,29 +8724,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Simulates runway exhaustion under an exclusive corporate partnership where market friction accelerates quarterly cash burn."
-          },
-          {
-            "line": 2,
-            "note": "Pinpoints the terminal outage where competing M&A bidders are chilled, enabling the predator to execute a $3M distressed fire-sale buyout."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that without exclusivity and ROFR encumbrances, the enterprise achieves a $60M competitive exit."
+            "note": "Defines the function `simulate_corporate_predator_outage`."
           }
         ],
         "tryIt": "Observe how eliminating exclusivity restores acquisition exit optionality by setting has_exclusivity to False.",
         "check": {
           "question": "How does the 'Corporate Predator Encumbrance Outage' anti-pattern destroy enterprise venture sovereignty?",
           "options": [
-            "Category exclusivity restricts sales while an M&A ROFR chills outside acquisition offers, starving the startup of revenue and outside capital until the corporate partner executes a distressed fire-sale buyout.",
             "By legally converting all preferred equity into high-yield municipal bonds.",
             "By forcing founders to personally pay federal corporate income taxes out of private savings.",
+            "Category exclusivity restricts sales while an M&A ROFR chills outside acquisition offers, starving the startup of revenue and outside capital until the corporate partner executes a distressed fire-sale buyout.",
             "By automatically canceling all employee stock options without notice."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Exclusivity caps revenue while ROFR blocks third-party exits, driving the startup into insolvency where the corporate predator buys it cheaply.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Exclusivity caps revenue while ROFR blocks third-party exits, driving the startup into insolvency where the corporate predator buys it cheaply."
         }
       }
@@ -9214,29 +8786,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Initializes the multi-instrument capitalization model tracking Common, Series A, Series B, ESOP, Warrants, and CVC equity."
-          },
-          {
-            "line": 2,
-            "note": "Generates the fully diluted capitalization schedule totaling 21,160,000 shares."
-          },
-          {
-            "line": 3,
-            "note": "Summarizes facility parameters for debt, 2-2-1 board governance, ESOP, and strategic CVC alliances."
+            "note": "Defines the function `initialize_milestone_8_capital_engine`."
           }
         ],
         "tryIt": "Simulate the complete multi instrument capital architecture by executing the model.",
         "check": {
           "question": "What is the primary corporate governance advantage of deploying an integrated multi-instrument capital architecture in a growth-stage venture?",
           "options": [
-            "It harmonizes senior debt covenants, preferred board vetoes, employee equity incentives, and corporate partner rights into a unified computational framework, preventing contractual conflicts and unexpected insolvency.",
-            "It allows founders to unilaterally eliminate all preferred investor liquidation preferences.",
             "It exempts the company from filing annual corporate tax returns with the IRS.",
-            "It legally dissolves all employee stock options upon any debt draw."
+            "It legally dissolves all employee stock options upon any debt draw.",
+            "It harmonizes senior debt covenants, preferred board vetoes, employee equity incentives, and corporate partner rights into a unified computational framework, preventing contractual conflicts and unexpected insolvency.",
+            "It allows founders to unilaterally eliminate all preferred investor liquidation preferences."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "An integrated architecture ensures that senior debt, preferred equity, employee options, and strategic alliances operate harmoniously without conflict.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "An integrated architecture ensures that senior debt, preferred equity, employee options, and strategic alliances operate harmoniously without conflict."
         }
       },
@@ -9259,29 +8823,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes monthly debt service for IO ($41.6k) and level amortization ($188.7k), tracking cash burn step-up."
-          },
-          {
-            "line": 2,
-            "note": "Implements cashless net exercise algebra on $400k warrant coverage, issuing 144,000 net shares at a $25 exit price."
-          },
-          {
-            "line": 3,
-            "note": "Displays total debt-plus-equity financial yield delivered to the senior venture lender."
+            "note": "Defines the function `simulate_milestone_8_debt_and_warrants`."
           }
         ],
         "tryIt": "Increase monthly burn to observe covenant alert alarms and debt service expansion.",
         "check": {
           "question": "How are warrant shares settled under a cashless net exercise provision when a venture-backed enterprise exits at a 10x multiple?",
           "options": [
-            "The company withholds a number of warrant shares equal to the aggregate strike price and issues the net remaining shares directly to the lender without requiring any cash payment.",
             "The lender is required to wire cash for the entire enterprise valuation.",
+            "The company withholds a number of warrant shares equal to the aggregate strike price and issues the net remaining shares directly to the lender without requiring any cash payment.",
             "The warrants are automatically cancelled and converted into corporate charitable donations.",
             "The common founders are forced to pay the lender's tax bill in cash."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Cashless net exercise settles the strike price using market share value, delivering net equity to the lender with zero cash required.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Cashless net exercise settles the strike price using market share value, delivering net equity to the lender with zero cash required."
         }
       },
@@ -9304,15 +8860,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models 2-2-1 board voting, resolving a 2-2 founder vs investor split via the Independent Director swing vote."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates NVCA drag-along supermajority compliance across Common (68%) and Preferred (82%) classes."
-          },
-          {
-            "line": 3,
-            "note": "Confirms that statutory appraisal rights under DGCL Section 262 are legally waived and extinguished."
+            "note": "Defines the function `simulate_milestone_8_governance_engine`."
           }
         ],
         "tryIt": "Simulate the independent director casting vote to break the tie by setting independent_vote to False.",
@@ -9349,29 +8897,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes $2.4M in founder equity value saved by rightsizing the pre-money option pool from 15% to 9%."
-          },
-          {
-            "line": 2,
-            "note": "Executes a $5.0M secondary tender offer, liquidating 500,000 common shares at $10.00/share."
-          },
-          {
-            "line": 3,
-            "note": "Allocates secondary absorption between the company treasury ROFR (40%) and investor secondary ROFR (60%)."
+            "note": "Defines the function `simulate_milestone_8_esop_and_secondary`."
           }
         ],
         "tryIt": "Calculate founder dilution savings from empirical pool budgeting by adjusting empirical_pool_pct to 0.12.",
         "check": {
           "question": "How does constructing an empirical 18-month hiring budget benefit startup founders during Series A option pool negotiations?",
           "options": [
-            "It mathematically proves that the startup requires a smaller unallocated option pool (e.g., 9% instead of 15%), saving founders millions of dollars in unnecessary pre-money equity dilution.",
+            "It eliminates all vesting requirements for executive employees.",
             "It allows founders to avoid paying federal and state payroll taxes.",
             "It automatically doubles the company's annual recurring revenue.",
-            "It eliminates all vesting requirements for executive employees."
+            "It mathematically proves that the startup requires a smaller unallocated option pool (e.g., 9% instead of 15%), saving founders millions of dollars in unnecessary pre-money equity dilution."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Empirical hiring budgets replace arbitrary 15% investor pool demands with granular data, preserving millions in founder equity.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Empirical hiring budgets replace arbitrary 15% investor pool demands with granular data, preserving millions in founder equity."
         }
       },
@@ -9394,30 +8934,22 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "output": "======================================================================\n* PINIT CAREER OS - MILESTONE 8 CAPSTONE CONTROL TOWER AUDIT *\n======================================================================\n[PASSED] INVARIANT 1: Venture Debt Amortization & Fee Invariance (10% APR, 12M IO)\n         Telemetry: $41.6k IO / $188.7k Amort Reconciled\n[PASSED] INVARIANT 2: Warrant Cashless Exercise Dilution Parity (8% Coverage)\n         Telemetry: 144,000 Net Shares / $3.6M Equity Reconciled\n[PASSED] INVARIANT 3: Delaware DGCL 141 & 144 Boardroom Governance (2-2-1 Structure)\n         Telemetry: Independent Swing Vote Resolved Deadlock\n[PASSED] INVARIANT 4: NVCA Drag-Along & DGCL 262 Appraisal Extinguishment\n         Telemetry: 68% Common + 82% Preferred Enforced\n[PASSED] INVARIANT 5: ESOP 83(b) Tax Optimization & Secondary Tender Parity\n         Telemetry: $2.4M Founder Equity Saved + $5.0M Liquidity\n[PASSED] INVARIANT 6: Corporate Venture Capital (CVC) IP Clean-Team Firewall\n         Telemetry: Zero Trade Secret Contamination Confirmed\n----------------------------------------------------------------------\nCryptographic Audit Digest: SHA-256:8c375379472da9e90c7a899e8a73348a\nAudit Status: 100% NOMINAL VERIFIED\nCertification: MILESTONE_8_VENTURE_DEBT_GOVERNANCE_CERTIFIED\n======================================================================\n",
         "codeNotes": [
           {
-            "line": 1,
-            "note": "Executes 6-point verification sweep inspecting debt amortization, warrant math, board governance, drag-along, ESOP, and CVC firewalls."
-          },
-          {
-            "line": 2,
-            "note": "Computes SHA-256 cryptographic audit digest confirming 100% nominal pass across all corporate invariants."
-          },
-          {
             "line": 3,
-            "note": "Officially confers MILESTONE_8_VENTURE_DEBT_GOVERNANCE_CERTIFIED credential."
+            "note": "Defines the function `run_milestone_8_control_tower`."
           }
         ],
         "tryIt": "Execute the milestone capstone audit suite to verify all invariants by running the verification script.",
         "check": {
           "question": "What is the primary operational objective of executing the Milestone 8 Capstone Control Tower verification sweep?",
           "options": [
-            "To deterministically verify that all 6 corporate invariants (debt amortization, warrant math, DGCL 141/144 governance, NVCA drag-along, ESOP parity, and CVC IP firewalls) hold true with zero discrepancy.",
             "To file automated marketing press releases with financial news agencies.",
             "To legally transfer corporate ownership to offshore holding entities.",
+            "To deterministically verify that all 6 corporate invariants (debt amortization, warrant math, DGCL 141/144 governance, NVCA drag-along, ESOP parity, and CVC IP firewalls) hold true with zero discrepancy.",
             "To automatically dissolve all minority shareholder voting rights."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "The Control Tower executes an automated 6-point audit verifying that debt, equity, governance, and tax invariants match institutional standards.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "The Control Tower executes an automated 6-point audit verifying that debt, equity, governance, and tax invariants match institutional standards."
         }
       }
@@ -9464,29 +8996,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models comparative scoring across Delaware C-Corp and Singapore Pte Ltd based on VC access, legal depth, and tax friction."
-          },
-          {
-            "line": 2,
-            "note": "Displays composite jurisdictional scores weighted across venture capital requirements and geographic customer profiles."
-          },
-          {
-            "line": 3,
-            "note": "Recommends Delaware C-Corp for US dual-listing and global VC syndication."
+            "note": "Defines the function `evaluate_flip_jurisdictions`."
           }
         ],
         "tryIt": "Evaluate jurisdiction scores when institutional weight parameters are shifted by increasing tax_weight to 0.60.",
         "check": {
           "question": "What is the primary corporate finance catalyst that drives international technology startups to execute a cross-border corporate flip into Delaware or Singapore?",
           "options": [
+            "Flipping into Delaware automatically dissolves all debt obligations owed to banks.",
             "Global institutional venture capital firms operate under LP fiduciary mandates that restrict direct investments in emerging market operating entities, requiring a standardized Delaware or Singapore holding company.",
             "Delaware law exempts technology companies from having to pay software engineers any wages.",
-            "A corporate flip allows founders to avoid paying federal and state payroll taxes forever.",
-            "Flipping into Delaware automatically dissolves all debt obligations owed to banks."
+            "A corporate flip allows founders to avoid paying federal and state payroll taxes forever."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Institutional VC limited partnership agreements frequently mandate investing into Delaware or Singapore entities with established corporate legal predictability.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Institutional VC limited partnership agreements frequently mandate investing into Delaware or Singapore entities with established corporate legal predictability."
         }
       },
@@ -9507,29 +9031,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Configures a 1-to-1 mirror equity swap for 8,200,000 domestic operating shares valued at $0.15 Rule 11UA FMV."
-          },
-          {
-            "line": 2,
-            "note": "Verifies exact ownership continuity across Founders, Angels, and the ESOP Pool Trust."
-          },
-          {
-            "line": 3,
-            "note": "Confirms compliance under Indian Companies Act Section 62 and RBI FDI Automatic Route guidelines."
+            "note": "Defines the function `simulate_cross_border_share_swap`."
           }
         ],
         "tryIt": "Model mirror capitalization tables to calculate cross border share parity across additional stakeholders.",
         "check": {
           "question": "Why is exact 'Mirror Capitalization Table Alignment' mandatory when executing a cross-border share swap during an offshore corporate flip?",
           "options": [
-            "The offshore holding company must issue shares in exact economic proportions and classes identical to the domestic operating company to prevent taxable value transfers between shareholders under tax laws.",
-            "Mirror alignment allows founders to secretly double their personal share count without investor knowledge.",
             "Mirror alignment exempts the company from having a board of directors.",
-            "Mirror alignment converts all preferred equity into common stock automatically."
+            "Mirror alignment converts all preferred equity into common stock automatically.",
+            "The offshore holding company must issue shares in exact economic proportions and classes identical to the domestic operating company to prevent taxable value transfers between shareholders under tax laws.",
+            "Mirror alignment allows founders to secretly double their personal share count without investor knowledge."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Any deviation from proportional mirror ownership creates taxable deemed gifts or capital gains among shareholders under tax statutes.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Any deviation from proportional mirror ownership creates taxable deemed gifts or capital gains among shareholders under tax statutes."
         }
       },
@@ -9551,29 +9067,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Evaluates statutory Substantial Value criteria: Indian asset value > INR 10 Crore ($100M floor) and >= 50% of total TopCo value."
-          },
-          {
-            "line": 2,
-            "note": "Calculates 23.92% effective capital gains tax under Indian Section 112 on a INR 50M offshore share sale."
-          },
-          {
-            "line": 3,
-            "note": "Pinpoints that building non-Indian assets above 51% successfully defeats the indirect transfer test."
+            "note": "Defines the function `analyze_section_9_indirect_transfer`."
           }
         ],
         "tryIt": "Evaluate indirect transfer exposure when international asset ratios shift by increasing non-Indian assets.",
         "check": {
           "question": "Under Section 9(1)(i) of the Indian Income Tax Act, when are shares of an offshore foreign holding company deemed to derive substantial value from Indian assets?",
           "options": [
-            "When Indian operating assets exceed INR 10 Crore (INR 100,000,000) and represent at least fifty percent (50%) of the total asset value of the offshore holding company on the valuation date.",
             "Whenever the offshore company hires an Indian software engineer.",
             "Whenever the offshore company generates more than $10,000 in global revenues.",
-            "Only if the company's corporate headquarters is physically located in New Delhi."
+            "Only if the company's corporate headquarters is physically located in New Delhi.",
+            "When Indian operating assets exceed INR 10 Crore (INR 100,000,000) and represent at least fifty percent (50%) of the total asset value of the offshore holding company on the valuation date."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Section 9(1)(i) applies the dual test: asset value exceeding INR 10 Crore and representing >= 50% of total assets on the valuation date.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Section 9(1)(i) applies the dual test: asset value exceeding INR 10 Crore and representing >= 50% of total assets on the valuation date."
         }
       },
@@ -9595,15 +9103,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Audits individual founder share acquisitions against the statutory $250,000 annual LRS limit."
-          },
-          {
-            "line": 2,
-            "note": "Models corporate ODI commitments against the 400% audited net worth ceiling under the 2022 FEMA Rules."
-          },
-          {
-            "line": 3,
-            "note": "Confirms structural compliance with the two-layer subsidiary limit and logs mandatory Form FC reporting."
+            "note": "Defines the function `evaluate_rbi_odi_and_lrs_limits`."
           }
         ],
         "tryIt": "Check regulatory limits to verify overseas direct investment compliance by modifying remittance values.",
@@ -9639,29 +9139,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Evaluates regulatory enforcement under FEMA Section 13 (300% statutory penalty) versus voluntary Section 15 compounding."
-          },
-          {
-            "line": 2,
-            "note": "Models voluntary RBI compounding charging a 3% nominal fee ($1.5M INR), immunizing directors from prosecution."
-          },
-          {
-            "line": 3,
-            "note": "Simulates severe statutory enforcement: INR 150M penalty (3x) + INR 2.7M daily fines, triggering bank account freeze orders."
+            "note": "Defines the function `simulate_round_tripping_fema_penalties`."
           }
         ],
         "tryIt": "Observe regulatory penalties when foreign exchange rules are violated by setting settled_via_compounding to False.",
         "check": {
           "question": "What is the primary statutory consequence under FEMA Section 13 when a technology startup executes an unauthorized cross-border share swap without RBI approval?",
           "options": [
-            "The central bank and regulatory authorities can impose penalties up to three hundred percent (300%) of the transaction value, assess compounding daily fines, and freeze corporate operating bank accounts.",
-            "The company is automatically awarded an emergency venture capital grant from the World Bank.",
             "The Delaware Secretary of State automatically dissolves all foreign subsidiaries.",
-            "The company is exempt from paying corporate taxes for ten years."
+            "The central bank and regulatory authorities can impose penalties up to three hundred percent (300%) of the transaction value, assess compounding daily fines, and freeze corporate operating bank accounts.",
+            "The company is exempt from paying corporate taxes for ten years.",
+            "The company is automatically awarded an emergency venture capital grant from the World Bank."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "FEMA Section 13 authorizes penalties up to three times (300%) the quantifiable transaction value and freezing of corporate bank accounts.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "FEMA Section 13 authorizes penalties up to three times (300%) the quantifiable transaction value and freezing of corporate bank accounts."
         }
       }
@@ -9707,15 +9199,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes lower quartile (11.4%), median (13.0%), and upper quartile (16.0%) across 12 comparable software peers."
-          },
-          {
-            "line": 2,
-            "note": "Validates that the subsidiary's 14.0% cost-plus markup falls comfortably within the interquartile range."
-          },
-          {
-            "line": 3,
-            "note": "Confirms low discretionary audit risk under the OECD arm's length standard."
+            "note": "Defines the function `benchmark_tnmm_interquartile_range`."
           }
         ],
         "tryIt": "Evaluate comparable operating margin ranges across software service peers by adjusting peer margin values.",
@@ -9751,29 +9235,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Calculates fully loaded operating cost base ($2.5M) across engineering salaries, benefits, lease, and tooling."
-          },
-          {
-            "line": 2,
-            "note": "Applies certified 15% arm's length markup (+$375k), generating a $2.875M intercompany invoice to TopCo."
-          },
-          {
-            "line": 3,
-            "note": "Computes local subsidiary corporate tax liability ($93.75k) and retained profit after tax."
+            "note": "Defines the function `generate_cost_plus_intercompany_invoice`."
           }
         ],
         "tryIt": "Adjust markup percentages to calculate changed intercompany invoices by setting arm_length_markup_pct to 0.17.",
         "check": {
           "question": "Why are captive R&D operating subsidiaries in technology startups compensated under a 'Cost-Plus' invoicing model rather than sharing in global software licensing revenues?",
           "options": [
-            "Because the subsidiary operates as a low-risk contract service provider that does not own the intellectual property or bear entrepreneurial market risk, requiring predictable compensation on operating costs plus an arm's length markup.",
+            "Because cost-plus invoicing eliminates the need to pay corporate taxes in any jurisdiction.",
             "Because international law prohibits subsidiaries from opening commercial bank accounts.",
             "Because software engineers are legally classified as government contractors.",
-            "Because cost-plus invoicing eliminates the need to pay corporate taxes in any jurisdiction."
+            "Because the subsidiary operates as a low-risk contract service provider that does not own the intellectual property or bear entrepreneurial market risk, requiring predictable compensation on operating costs plus an arm's length markup."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Low-risk contract service providers bear no entrepreneurial risk, making cost-plus the standard transfer pricing methodology.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Low-risk contract service providers bear no entrepreneurial risk, making cost-plus the standard transfer pricing methodology."
         }
       },
@@ -9795,29 +9271,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Evaluates multinational group turnover (INR 250 Cr) against the statutory Master File (INR 500 Cr) and CbCR (INR 6,400 Cr) thresholds."
-          },
-          {
-            "line": 2,
-            "note": "Flags that Local File documentation is mandatory, while Form 3CEAA Master File is exempt due to sub-500 Cr turnover."
-          },
-          {
-            "line": 3,
-            "note": "Logs the November 30 statutory filing deadline and Section 271AA non-compliance penalties."
+            "note": "Defines the function `evaluate_beps_action13_documentation`."
           }
         ],
         "tryIt": "Check corporate turnover thresholds to determine required filing tiers by increasing consolidated_turnover_inr to 6000000000.",
         "check": {
           "question": "Under the OECD BEPS Action 13 three-tier documentation framework, what is the primary corporate purpose of the 'Local File'?",
           "options": [
-            "To provide a detailed, jurisdiction-specific compliance dossier documenting related-party transactions, functional and risk analyses, and economic benchmarking studies proving that intercompany pricing satisfies the arm's length standard.",
+            "To publish trade secret software source code on open-source repositories.",
             "To file trademark applications with local municipal governments.",
-            "To list personal bank accounts of all startup employees.",
-            "To publish trade secret software source code on open-source repositories."
+            "To provide a detailed, jurisdiction-specific compliance dossier documenting related-party transactions, functional and risk analyses, and economic benchmarking studies proving that intercompany pricing satisfies the arm's length standard.",
+            "To list personal bank accounts of all startup employees."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "The Local File provides localized transactional, functional, and economic benchmarking evidence substantiating arm's length transfer pricing.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "The Local File provides localized transactional, functional, and economic benchmarking evidence substantiating arm's length transfer pricing."
         }
       },
@@ -9839,29 +9307,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Compares Indian domestic statutory withholding tax (21.84%) against Singapore-India DTAA treaty rates (10.0%)."
-          },
-          {
-            "line": 2,
-            "note": "Verifies TRC and Form 10F documentation, confirming that bilateral treaty eligibility is fully established."
-          },
-          {
-            "line": 3,
-            "note": "Calculates $118,400.00 in net treasury cash savings achieved on a $1.0M cross-border technical service payment."
+            "note": "Defines the function `optimize_dtaa_withholding_tax`."
           }
         ],
         "tryIt": "Compare statutory withholding tax rates against treaty relief levels by changing treaty_jurisdiction to USA.",
         "check": {
           "question": "What documentation must a foreign corporate entity furnish to claim beneficial reduced withholding tax rates under a bilateral Double Tax Avoidance Agreement (DTAA)?",
           "options": [
-            "A valid Tax Residency Certificate (TRC) issued by its home tax authority, a completed electronic Form 10F, an Indian Permanent Account Number (PAN), and confirmation of no domestic permanent establishment.",
             "A personal letter of recommendation from an international diplomat.",
+            "A valid Tax Residency Certificate (TRC) issued by its home tax authority, a completed electronic Form 10F, an Indian Permanent Account Number (PAN), and confirmation of no domestic permanent establishment.",
             "A commercial credit rating report from an American credit bureau.",
             "A copy of the founder's university diploma."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Section 90(4) strictly mandates a Tax Residency Certificate (TRC) and Form 10F as statutory prerequisites for claiming DTAA treaty relief.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Section 90(4) strictly mandates a Tax Residency Certificate (TRC) and Form 10F as statutory prerequisites for claiming DTAA treaty relief."
         }
       },
@@ -9873,7 +9333,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "The disaster typically unfolds during a statutory transfer pricing audit conducted by domestic revenue authorities. Suppose a Delaware holding company establishes an Indian operating subsidiary employing two hundred elite software engineers who build the startup's entire proprietary AI software platform. The Delaware parent pays the Indian subsidiary a bare-bones cost-plus five percent (5%) service markup, while the Delaware parent books one hundred million dollars in global enterprise customer revenue, paying minimal taxes.",
           "During the transfer pricing audit, the revenue department's Transfer Pricing Officer (TPO) rejects the subsidiary's benchmarking study and rejects its characterization as a 'low-risk captive service provider'. Performing a detailed Functional, Asset, and Risk (FAR) analysis, the tax authority discovers that the senior software architects and technology decision-makers reside physically in India, meaning that key Value Creation and Significant People Functions (SPFs) are performed by the domestic subsidiary. Invoking OECD BEPS Actions 8-10 on aligning transfer pricing outcomes with value creation, the tax authority Recharacterizes the subsidiary as a Full-Fledged Entrepreneur and Co-Owner of the software intellectual property.",
           "The financial consequence of transfer pricing recharacterization is devastating. The tax officer attributes forty percent of the group's global hundred-million-dollar software revenue ($40 million) directly to the domestic subsidiary, assessing retroactive corporate income taxes at thirty percent ($12 million tax adjustment) across four open fiscal years ($48 million total tax demand). Furthermore, under Section 270A of the Income Tax Act, the revenue authority imposes mandatory statutory underreporting penalties of up to two hundred percent (200%) of the tax demand, accompanied by compounding interest under Section 234B and Section 234C.",
-          "To make matters worse, the Delaware parent cannot automatically deduct the foreign tax assessment against its US tax returns without initiating a protracted, multi-year Mutual Agreement Procedure (MAP) under the bilateral tax treaty. The startup is trapped in a crippling Double Taxation Trap, facing massive cash tax liens and bank garnishments that freeze enterprise liquidity and destroy venture valuation. In extreme situations, the domestic tax department issues immediate freezing orders against the subsidiary's operational bank accounts, paralyzing payroll and forcing the venture into involuntary insolvency. Even if the holding company attempts to inject emergency emergency equity capital to unfreeze accounts, foreign exchange regulatory approvals can delay remittances for months.",
+          "To make matters worse, the Delaware parent cannot automatically deduct the foreign tax assessment against its US tax returns without initiating a protracted, multi-year Mutual Agreement Procedure (MAP) under the bilateral tax treaty. The startup is trapped in a crippling Double Taxation Trap, facing massive cash tax liens and bank garnishments that freeze enterprise liquidity and destroy venture valuation. In extreme situations, the domestic tax department issues immediate freezing orders against the subsidiary's operational bank accounts, paralyzing payroll and forcing the venture into involuntary insolvency. Even if the holding company attempts to inject emergency equity capital to unfreeze accounts, foreign exchange regulatory approvals can delay remittances for months.",
           "To defend against the Transfer Pricing Recharacterization Outage, sovereign technology ventures enforce four strict Transfer Pricing Safeguards. First, maintain contemporaneous, audit-ready Local Files and certified economic benchmarking studies that anchor markups within the interquartile range (typically 12% to 15%). Second, align contractual characterizations with physical reality: ensure that key entrepreneurial product executives, patent inventorship decisions, and commercial customer contract risks are genuinely managed by the offshore parent. Third, opt into statutory Safe Harbour Rules whenever eligible to achieve complete audit immunity. Fourth, in large multi-jurisdictional structures, secure an Advance Pricing Agreement (APA) with tax authorities to lock in binding transfer pricing methodologies for five years.",
           "In Part 5, we engineer an Anti-Pattern Transfer Pricing Audit & Profit Recharacterization Simulator in Python. We will model the compounding destructive interaction between rejected cost-plus markups, entrepreneurial profit reallocations, statutory 200% Section 270A penalties, and cross-border double taxation friction, providing corporate officers with an indispensable diagnostic defense against international transfer pricing collapse."
         ],
@@ -9883,15 +9343,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models declared low-risk transfer pricing ($5.0M cost base + 8% markup = $400k profit, $100k tax paid)."
-          },
-          {
-            "line": 2,
-            "note": "Simulates TPO recharacterization allocating 30% of $50M global revenue ($15M attributed, $2.5M incremental tax demand)."
-          },
-          {
-            "line": 3,
-            "note": "Calculates 200% Section 270A penalty ($5.0M), resulting in a staggering $7.5M immediate tax lien and double taxation outage."
+            "note": "Defines the function `simulate_transfer_pricing_recharacterization_outage`."
           }
         ],
         "tryIt": "Observe compounding tax penalties when transfer markups are challenged by increasing audited_attribution_pct to 0.40.",
@@ -9951,29 +9403,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Filters cap table for qualifying US Shareholders owning >=10% voting power or equity value."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates whether aggregate US Shareholder voting power (55.0%) exceeds the statutory 50% threshold."
-          },
-          {
-            "line": 3,
-            "note": "Flags Controlled Foreign Corporation (CFC) status and mandates current Subpart F flow-through taxation."
+            "note": "Defines the function `evaluate_cfc_status`."
           }
         ],
         "tryIt": "Evaluate corporate voting power to test controlled foreign corporation status by adjusting voting percentages in the cap table.",
         "check": {
           "question": "Under IRC Section 957(a) and Section 951(b), when is a foreign company classified as a Controlled Foreign Corporation (CFC)?",
           "options": [
-            "When more than fifty percent (50%) of its total combined voting power or stock value is owned by United States Shareholders who each own ten percent (10%) or more of the company.",
-            "When it operates an office in a country that is not recognized by the United Nations.",
             "When it employs more than five hundred software developers in Europe.",
-            "When its foreign exchange bank accounts hold more than one million British pounds."
+            "When its foreign exchange bank accounts hold more than one million British pounds.",
+            "When it operates an office in a country that is not recognized by the United Nations.",
+            "When more than fifty percent (50%) of its total combined voting power or stock value is owned by United States Shareholders who each own ten percent (10%) or more of the company."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Section 957(a) defines a CFC as a foreign corporation where qualifying 10% US Shareholders own more than 50% of vote or value.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Section 957(a) defines a CFC as a foreign corporation where qualifying 10% US Shareholders own more than 50% of vote or value."
         }
       },
@@ -9995,15 +9439,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes CFC Net Tested Income ($10.0M) by subtracting allocable deductions from gross revenue."
-          },
-          {
-            "line": 2,
-            "note": "Calculates average quarterly ADS basis ($111.25k QBAI) and the 10% routine tangible return ($11.125k)."
-          },
-          {
-            "line": 3,
-            "note": "Computes Net GILTI Inclusion ($9.988M), demonstrating that 99.89% of software profits are exposed to GILTI."
+            "note": "Defines the function `calculate_gilti_tested_income_and_qbai`."
           }
         ],
         "tryIt": "Model qualified business asset investments to calculate routine asset yields by adjusting quarterly asset bases.",
@@ -10039,29 +9475,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models 50% Section 250 deduction and applies the statutory 80% haircut to foreign corporate taxes paid ($1.36M FTC)."
-          },
-          {
-            "line": 2,
-            "note": "Computes Section 78 gross-up tax base ($11.36M) and net corporate taxable income ($5.68M)."
-          },
-          {
-            "line": 3,
-            "note": "Confirms that paying 17% foreign tax exceeds the 13.125% breakeven threshold, reducing residual US tax to exactly zero."
+            "note": "Defines the function `optimize_section_250_and_ftc`."
           }
         ],
         "tryIt": "Adjust foreign tax rates to observe residual domestic corporate tax liability by changing foreign_effective_tax_rate to 0.10.",
         "check": {
           "question": "What is the significance of the '13.125% Breakeven Foreign Tax Rate' in United States GILTI corporate tax planning?",
           "options": [
-            "If a foreign CFC pays an effective corporate tax rate of at least 13.125%, the eighty-percent deemed paid foreign tax credit under Section 960 completely absorbs the 10.5% effective US corporate tax, resulting in zero residual US GILTI tax.",
             "It represents the maximum interest rate a foreign subsidiary can charge on intercompany promissory notes.",
+            "If a foreign CFC pays an effective corporate tax rate of at least 13.125%, the eighty-percent deemed paid foreign tax credit under Section 960 completely absorbs the 10.5% effective US corporate tax, resulting in zero residual US GILTI tax.",
             "It is the mandatory dividend distribution percentage required by the European Central Bank.",
             "It is the minimum employee turnover rate allowed before corporate tax deductions are forfeited."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Because 80% of 13.125% equals 10.5%, the deemed paid FTC exactly offsets the 10.5% effective US tax rate on GILTI.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Because 80% of 13.125% equals 10.5%, the deemed paid FTC exactly offsets the 10.5% effective US tax rate on GILTI."
         }
       },
@@ -10083,29 +9511,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Evaluates physical office days (45), host board meetings (1), and employee contract authority under Article 5."
-          },
-          {
-            "line": 2,
-            "note": "Confirms that without local contracting authority or fixed place of business, no PE is triggered."
-          },
-          {
-            "line": 3,
-            "note": "Confirms zero host country tax demand ($0.00), shielding $5.0M attributable profits under bilateral tax treaties."
+            "note": "Defines the function `audit_permanent_establishment_nexus`."
           }
         ],
         "tryIt": "Evaluate employee contracting authority to calculate local nexus liabilities by setting sales_authority_delegated to True.",
         "check": {
           "question": "How does a Dependent Agent Permanent Establishment (DAPE) under Article 5(5) expose an offshore holding company to foreign corporate taxes?",
           "options": [
-            "If domestic subsidiary employees habitually conclude customer contracts on behalf of the offshore holding company, the offshore company is deemed to have a local taxable presence, subjecting profits to foreign corporate taxes up to 40% plus surcharges.",
-            "By automatically converting the company into a charitable non-profit organization.",
             "By requiring all senior executives to enlist in the foreign nation's armed forces.",
-            "By revoking the holding company's corporate charter in its home state."
+            "By revoking the holding company's corporate charter in its home state.",
+            "If domestic subsidiary employees habitually conclude customer contracts on behalf of the offshore holding company, the offshore company is deemed to have a local taxable presence, subjecting profits to foreign corporate taxes up to 40% plus surcharges.",
+            "By automatically converting the company into a charitable non-profit organization."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Article 5(5) establishes a taxable DAPE nexus if local agents habitually conclude or lead to conclusion of contracts for the foreign principal.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Article 5(5) establishes a taxable DAPE nexus if local agents habitually conclude or lead to conclusion of contracts for the foreign principal."
         }
       },
@@ -10127,29 +9547,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models unprotected individual founder scenario: 40.8% ordinary tax rate, zero Sec 250 deduction, and zero FTC ($2.04M tax bill)."
-          },
-          {
-            "line": 2,
-            "note": "Simulates Section 962 protective election: applies 21% corporate rate and 80% FTC, completely eliminating the tax bill ($0.00)."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates that filing a timely Section 962 election preserves $2.04M in founder cash liquidity."
+            "note": "Defines the function `simulate_phantom_gilti_outage`."
           }
         ],
         "tryIt": "Compare individual versus corporate ownership to assess Section 962 relief by testing different shareholder parameters.",
         "check": {
           "question": "How does a timely Section 962 Protective Election rescue an individual United States founder from a catastrophic Phantom GILTI Tax Outage?",
           "options": [
-            "It permits the individual to elect to be taxed on their GILTI inclusion at domestic corporate rates (21%) and claim the Section 960 deemed paid foreign tax credit, neutralizing the phantom cash tax liability.",
-            "It allows the founder to legally renounce their United States citizenship with zero exit taxes.",
             "It forces the foreign government to wire emergency cash refunds to the founder's personal account.",
-            "It eliminates all requirement to file annual tax returns with the Internal Revenue Service."
+            "It eliminates all requirement to file annual tax returns with the Internal Revenue Service.",
+            "It allows the founder to legally renounce their United States citizenship with zero exit taxes.",
+            "It permits the individual to elect to be taxed on their GILTI inclusion at domestic corporate rates (21%) and claim the Section 960 deemed paid foreign tax credit, neutralizing the phantom cash tax liability."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Section 962 allows individual US shareholders to elect corporate tax treatment and claim deemed paid foreign tax credits on CFC inclusions.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Section 962 allows individual US shareholders to elect corporate tax treatment and claim deemed paid foreign tax credits on CFC inclusions."
         }
       }
@@ -10196,29 +9608,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes IDC shares ($6.8M parent / $1.2M sub) based on an 85% Reasonably Anticipated Benefits (RAB) ratio."
-          },
-          {
-            "line": 2,
-            "note": "Calculates $500,000 annual Platform Contribution Transaction (PCT) buy-in payment amortized over 5 years."
-          },
-          {
-            "line": 3,
-            "note": "Confirms compliance under Treasury Regulation Section 1.482-7."
+            "note": "Defines the function `calculate_csa_cost_sharing_and_pct`."
           }
         ],
         "tryIt": "Model reasonably anticipated benefit shares to calculate research cost splits by adjusting rab_share_parent.",
         "check": {
           "question": "What is the primary commercial benefit of a Cost Sharing Arrangement (CSA) under Treasury Regulation Section 1.482-7?",
           "options": [
-            "Participating entities fund development costs in proportion to anticipated benefits, becoming economic co-owners of resulting intangibles and eliminating ongoing cross-border royalty friction.",
-            "It allows companies to register patents without disclosing software algorithms.",
             "It exempts companies from paying employee salaries during the development phase.",
-            "It automatically transfers all intellectual property to public domain foundations."
+            "It automatically transfers all intellectual property to public domain foundations.",
+            "Participating entities fund development costs in proportion to anticipated benefits, becoming economic co-owners of resulting intangibles and eliminating ongoing cross-border royalty friction.",
+            "It allows companies to register patents without disclosing software algorithms."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "A CSA enables joint economic ownership based on RAB shares, eliminating intercompany royalty payments upon commercialization.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "A CSA enables joint economic ownership based on RAB shares, eliminating intercompany royalty payments upon commercialization."
         }
       },
@@ -10241,29 +9645,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Weights the 5 DEMPE pillars (Development 30%, Enhancement 20%, Maintenance 15%, Protection 15%, Exploitation 20%)."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates institutional scores, yielding 52.5 points for parent and 47.5 points for subsidiary."
-          },
-          {
-            "line": 3,
-            "note": "Determines an arm's length profit split allocating 52.50% to parent and 47.50% to subsidiary."
+            "note": "Defines the function `evaluate_oecd_dempe_functions`."
           }
         ],
         "tryIt": "Score significant people functions across jurisdictions to test DEMPE compliance by adjusting pillar scores.",
         "check": {
           "question": "Under the OECD BEPS DEMPE framework, why is holding legal title to a patent in a tax haven insufficient to retain intangible profits?",
           "options": [
-            "Because economic profits must be allocated to the jurisdictions where people actually perform, manage, and control the Development, Enhancement, Maintenance, Protection, and Exploitation functions.",
-            "Because tax havens do not maintain physical courthouses to resolve corporate disputes.",
             "Because international law requires all patents to be written in Latin.",
-            "Because offshore shell companies are prohibited from opening email accounts."
+            "Because economic profits must be allocated to the jurisdictions where people actually perform, manage, and control the Development, Enhancement, Maintenance, Protection, and Exploitation functions.",
+            "Because offshore shell companies are prohibited from opening email accounts.",
+            "Because tax havens do not maintain physical courthouses to resolve corporate disputes."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "DEMPE rules mandate that profits from intangibles must align with economic substance and significant people functions.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "DEMPE rules mandate that profits from intangibles must align with economic substance and significant people functions."
         }
       },
@@ -10286,15 +9682,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Applies the OECD modified nexus formula with statutory 30% uplift ($5.2M uplifted qualifying spend)."
-          },
-          {
-            "line": 2,
-            "note": "Determines an 86.67% nexus ratio on $15.0M eligible IP revenue, qualifying $13.0M for the 5% concessionary rate."
-          },
-          {
-            "line": 3,
-            "note": "Computes $1.29M in total annual corporate cash tax savings compared to the standard 17% rate."
+            "note": "Defines the function `calculate_patent_box_modified_nexus`."
           }
         ],
         "tryIt": "Calculate modified nexus ratios to determine qualifying patent box tax savings by adjusting in-house and outsourced expenditures.",
@@ -10331,29 +9719,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models 5-year cash flow projections discounted at 22% WACC plus 4% terminal growth ($6.94M enterprise DCF value)."
-          },
-          {
-            "line": 2,
-            "note": "Treats internal software cost of acquisition as zero under Section 45, computing $6.94M in taxable capital gains."
-          },
-          {
-            "line": 3,
-            "note": "Calculates $1.62M in immediate long-term capital gains exit tax liability at an effective 23.3% rate."
+            "note": "Defines the function `calculate_ip_transfer_dcf_and_capital_gains`."
           }
         ],
         "tryIt": "Model discounted cash flows to calculate domestic capital gains exit taxes by modifying projected cash flows.",
         "check": {
           "question": "Why does transferring pre-existing software code from an Indian operating company to a foreign holding company trigger capital gains exit tax?",
           "options": [
-            "Because Section 9(1)(i) and Section 45 classify the assignment of domestic intangible assets to a non-resident as a taxable transfer, taxing the fair market value determined under Rule 11UA at capital gains rates.",
+            "Because foreign holding companies must pay import duties on digital downloads.",
             "Because software source code is legally treated as physical real estate.",
             "Because the Indian central bank prohibits foreign ownership of technology companies.",
-            "Because foreign holding companies must pay import duties on digital downloads."
+            "Because Section 9(1)(i) and Section 45 classify the assignment of domestic intangible assets to a non-resident as a taxable transfer, taxing the fair market value determined under Rule 11UA at capital gains rates."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "Section 45 taxes the transfer of capital assets at certified fair market value under Rule 11UA, treating internal code cost basis as zero.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "Section 45 taxes the transfer of capital assets at certified fair market value under Rule 11UA, treating internal code cost basis as zero."
         }
       },
@@ -10377,29 +9757,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Simulates TPO audit adjustment reconstructing software valuation from $10k to $20.0M ($4.66M tax demand)."
-          },
-          {
-            "line": 2,
-            "note": "Applies mandatory 200% Section 270A penalty ($9.31M) and compounding interest ($1.68M)."
-          },
-          {
-            "line": 3,
-            "note": "Calculates a catastrophic $15.65M immediate tax lien, freezing operational bank accounts and creating an existential outage."
+            "note": "Defines the function `simulate_unperfected_ip_migration_outage`."
           }
         ],
         "tryIt": "Simulate transfer pricing officer audits to quantify exit tax penalty exposure by modifying audited valuation amounts.",
         "check": {
           "question": "What is the primary corporate defense against an Unperfected IP Migration Exit Tax Outage under Section 92CA?",
           "options": [
-            "Execute Cost Sharing Arrangements at earliest inception, commission contemporaneous Rule 11UA Merchant Banker DCF valuation reports, and avoid transferring pre-existing IP at arbitrary nominal prices.",
             "Delete all git commit history and claim the software was created by anonymous volunteers.",
             "Reincorporate the business as an unregistered general partnership.",
+            "Execute Cost Sharing Arrangements at earliest inception, commission contemporaneous Rule 11UA Merchant Banker DCF valuation reports, and avoid transferring pre-existing IP at arbitrary nominal prices.",
             "Refuse to answer statutory communications from revenue authorities."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Early CSAs, certified Rule 11UA valuations, and robust transfer pricing documentation prevent discretionary retroactive TPO assessments.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Early CSAs, certified Rule 11UA valuations, and robust transfer pricing documentation prevent discretionary retroactive TPO assessments."
         }
       }
@@ -10446,29 +9818,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models downstream equity capitalization ($20M Delaware TopCo to $15M Singapore MidCo to $5M Indian OpCo)."
-          },
-          {
-            "line": 2,
-            "note": "Applies bilateral DTAA 5.0% withholding tax on a $3.0M dividend, yielding $2.85M net cash to TopCo."
-          },
-          {
-            "line": 3,
-            "note": "Confirms compliance under FEMA ODI regulations and bilateral tax treaties."
+            "note": "Defines the function `model_tri_jurisdiction_holding_topology`."
           }
         ],
         "tryIt": "Evaluate capital allocation across holding tiers to calculate net cash yields by modifying capital flows.",
         "check": {
           "question": "What is the primary corporate governance advantage of the Tri-Jurisdictional Holding Topology (Delaware-Singapore-India)?",
           "options": [
-            "It separates American venture fundraising and governance (Delaware) from regional commercial operations and IP exploitation (Singapore), while maintaining dedicated technical engineering services in India under bilateral tax treaties.",
-            "It eliminates the legal requirement to maintain corporate bank accounts in any country.",
             "It grants founders diplomatic immunity from international commercial contract law.",
-            "It requires all software engineering code to be approved by the United Nations."
+            "It separates American venture fundraising and governance (Delaware) from regional commercial operations and IP exploitation (Singapore), while maintaining dedicated technical engineering services in India under bilateral tax treaties.",
+            "It requires all software engineering code to be approved by the United Nations.",
+            "It eliminates the legal requirement to maintain corporate bank accounts in any country."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The tri-jurisdictional model aligns Silicon Valley governance with Singapore regional commercial IP hubs and Indian technical R&D.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The tri-jurisdictional model aligns Silicon Valley governance with Singapore regional commercial IP hubs and Indian technical R&D."
         }
       },
@@ -10491,29 +9855,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Aggregates $1.65M in direct operating costs and segregates $250k in zero-markup pass-through compute costs."
-          },
-          {
-            "line": 2,
-            "note": "Applies certified 17.0% CBDT Safe Harbour markup (+$280.5k), generating a $2.18M intercompany invoice."
-          },
-          {
-            "line": 3,
-            "note": "Computes Indian OpCo corporate tax provision ($70.6k) and confirms complete audit immunity."
+            "note": "Defines the function `generate_cbdt_safe_harbour_invoicing_matrix`."
           }
         ],
         "tryIt": "Model line item department expenses to compute compliant transfer invoices by adjusting operating expense entries.",
         "check": {
           "question": "Why is declaring a seventeen percent (17%) operating markup under Indian CBDT Safe Harbour Rules advantageous for a captive software subsidiary?",
           "options": [
-            "The tax department is legally mandated to accept the declared transfer price without discretionary transfer pricing adjustments, eliminating audit disputes and litigation expenses for transactions up to INR 100 Crore.",
             "It exempts the company from paying salaries to software developers.",
             "It allows the company to invoice customers without issuing legal tax receipts.",
+            "The tax department is legally mandated to accept the declared transfer price without discretionary transfer pricing adjustments, eliminating audit disputes and litigation expenses for transactions up to INR 100 Crore.",
             "It automatically converts all operating debt into non-taxable government grants."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "CBDT Safe Harbour Rules provide statutory immunity from transfer pricing audit adjustments for qualifying entities.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "CBDT Safe Harbour Rules provide statutory immunity from transfer pricing audit adjustments for qualifying entities."
         }
       },
@@ -10536,29 +9892,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Models $8.0M tested income, $500k QBAI (NDTIR $50k), generating a $7.95M net GILTI inclusion."
-          },
-          {
-            "line": 2,
-            "note": "Computes 80% deemed paid FTC ($1.088M) on 17% foreign tax, applies Section 78 gross-up, and 50% Sec 250 deduction."
-          },
-          {
-            "line": 3,
-            "note": "Confirms that paying 17% foreign tax exceeds 13.125%, reducing net residual US corporate tax to exactly zero."
+            "note": "Defines the function `optimize_gilti_and_foreign_tax_credits`."
           }
         ],
         "tryIt": "Adjust foreign income and tax rates to evaluate residual domestic tax impacts by testing different tested income values.",
         "check": {
           "question": "How does the '13.125% Breakeven Foreign Tax Rate' protect an American corporate parent from residual GILTI tax liabilities under IRC Section 951A?",
           "options": [
-            "Because the eighty-percent deemed paid foreign tax credit under Section 960 on a 13.125% foreign tax rate exactly offsets the ten point five percent effective US corporate tax on GILTI, resulting in zero residual federal tax.",
+            "It exempts foreign subsidiaries from filing local corporate tax returns.",
             "It allows the parent company to borrow money from the Federal Reserve at zero percent interest.",
             "It automatically eliminates state corporate income taxes across all fifty states.",
-            "It exempts foreign subsidiaries from filing local corporate tax returns."
+            "Because the eighty-percent deemed paid foreign tax credit under Section 960 on a 13.125% foreign tax rate exactly offsets the ten point five percent effective US corporate tax on GILTI, resulting in zero residual federal tax."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "80% of 13.125% equals 10.5%, perfectly neutralizing the 10.5% effective US corporate tax rate on GILTI inclusions.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "80% of 13.125% equals 10.5%, perfectly neutralizing the 10.5% effective US corporate tax rate on GILTI inclusions."
         }
       },
@@ -10581,15 +9929,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Splits $6.0M pooled IDC ($4.5M TopCo / $1.5M MidCo) according to 75/25 Reasonably Anticipated Benefits (RAB) shares."
-          },
-          {
-            "line": 2,
-            "note": "Allocates $14.0M residual intangible profit using RPSM based on weighted DEMPE scores (70% TopCo / 30% MidCo)."
-          },
-          {
-            "line": 3,
-            "note": "Confirms compliance under OECD BEPS Actions 8-10 and Treasury Regulation Section 1.482-7."
+            "note": "Defines the function `allocate_dempe_cost_sharing_and_residual_profits`."
           }
         ],
         "tryIt": "Adjust DEMPE functional scores to observe changed enterprise profit splits by modifying dempe_topco_score.",
@@ -10650,14 +9990,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of the Milestone 9 Capstone Enterprise Control Tower?",
           "options": [
+            "To automatically dissolve foreign operating subsidiaries at the end of each fiscal year.",
             "To programmatically verify all five subsystems of the cross-border corporate architecture—holding topology, transfer pricing, GILTI credits, DEMPE cost-sharing, and anti-pattern defenses—ensuring institutional-grade legal and tax resilience.",
             "To file trademark applications with international sports federations.",
-            "To publish proprietary software source code on open bulletin boards.",
-            "To automatically dissolve foreign operating subsidiaries at the end of each fiscal year."
+            "To publish proprietary software source code on open bulletin boards."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "The Control Tower programmatically certifies the legal, regulatory, and tax integrity of the complete cross-border enterprise architecture.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "The Control Tower programmatically certifies the legal, regulatory, and tax integrity of the complete cross-border enterprise architecture."
         }
       }
@@ -10704,15 +10044,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes fully loaded GTM expenditure ($3.0M) across advertising, sales payroll, CRM tooling, and facilities."
-          },
-          {
-            "line": 2,
-            "note": "Calculates $12,000.00 Blended CAC across 250 total accounts and isolates $13,000.00 Paid CAC across 150 paid accounts."
-          },
-          {
-            "line": 3,
-            "note": "Identifies 8.33% blended distortion, preventing underreporting of customer acquisition costs."
+            "note": "Defines the function `calculate_fully_loaded_and_paid_cac`."
           }
         ],
         "tryIt": "Evaluate acquisition expenses across paid and organic channels by adjusting paid_customers_acquired and ad_spend.",
@@ -10748,29 +10080,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Computes Net Dollar Retention (113.00%) from $10M starting ARR with $2.5M expansion and $1.2M contraction/churn."
-          },
-          {
-            "line": 2,
-            "note": "Evaluates 5-year discounted enterprise LTV ($187.3k) factoring 78% gross margin, 10% discount rate, and NDR compounding."
-          },
-          {
-            "line": 3,
-            "note": "Flags negative net churn status, confirming that cohort revenue expands organically over time."
+            "note": "Defines the function `calculate_enterprise_ltv_and_ndr`."
           }
         ],
         "tryIt": "Model cohort retention curves to evaluate discounted LTV by adjusting expansion_arr and churned_arr.",
         "check": {
           "question": "What does a Net Dollar Retention (NDR) rate exceeding one hundred percent (100%) signify for an enterprise software company?",
           "options": [
-            "It indicates 'Negative Net Churn', meaning that expansion revenue from existing customer accounts outpaces contraction and cancellations, causing cohort revenue to grow organically over time without new sales.",
             "It indicates that the company has failed to pay corporate income taxes for twelve months.",
             "It means that the company has lost one hundred percent of its customers to competitors.",
-            "It indicates that software source code has suffered catastrophic memory leaks."
+            "It indicates that software source code has suffered catastrophic memory leaks.",
+            "It indicates 'Negative Net Churn', meaning that expansion revenue from existing customer accounts outpaces contraction and cancellations, causing cohort revenue to grow organically over time without new sales."
           ],
-          "answer": 0,
+          "answer": 3,
           "why": "NDR > 100% represents negative net churn, where upsells and expansions exceed churn, creating organic cohort growth.",
-          "answerIndex": 0,
+          "answerIndex": 3,
           "explanation": "NDR > 100% represents negative net churn, where upsells and expansions exceed churn, creating organic cohort growth."
         }
       },
@@ -10793,29 +10117,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Calculates 15.00-month CAC Payback on an $18,000 fully loaded CAC and $1,200 monthly gross profit contribution."
-          },
-          {
-            "line": 2,
-            "note": "Computes 1.25x SaaS Magic Number ($2.5M Net New ARR / $2.0M prior Qtr S&M spend), signaling high sales efficiency."
-          },
-          {
-            "line": 3,
-            "note": "Computes 1.25x Bessemer Efficiency Score, confirming strong capital conversion velocity."
+            "note": "Defines the function `calculate_cac_payback_and_magic_number`."
           }
         ],
         "tryIt": "Calculate payback periods across customer tiers by modifying fully_loaded_cac and mrr_per_customer.",
         "check": {
           "question": "How is the 'SaaS Magic Number' calculated, and what does a value exceeding 1.0x indicate to growth-stage venture investors?",
           "options": [
-            "It is calculated as Net New ARR divided by Previous Quarter Sales and Marketing Spend; a value over 1.0x indicates exceptional capital efficiency, signaling that the venture should aggressively accelerate sales hiring.",
-            "It is calculated as Total Assets divided by Founder Stock Options; a value over 1.0x indicates impending bankruptcy.",
             "It is calculated by multiplying gross revenue by employee headcounts to evaluate office space.",
-            "It is the ratio of software bug reports to resolved customer support tickets."
+            "It is the ratio of software bug reports to resolved customer support tickets.",
+            "It is calculated as Net New ARR divided by Previous Quarter Sales and Marketing Spend; a value over 1.0x indicates exceptional capital efficiency, signaling that the venture should aggressively accelerate sales hiring.",
+            "It is calculated as Total Assets divided by Founder Stock Options; a value over 1.0x indicates impending bankruptcy."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "Magic Number = Net New ARR / Prior Qtr S&M spend; values >= 1.0x demonstrate outstanding sales efficiency justifying expansion.",
-          "answerIndex": 0,
+          "answerIndex": 2,
           "explanation": "Magic Number = Net New ARR / Prior Qtr S&M spend; values >= 1.0x demonstrate outstanding sales efficiency justifying expansion."
         }
       },
@@ -10839,29 +10155,21 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Expands a $25,000 initial land ARR to $90,000 in Year 3 ARR (3.60x multiple) across seats, modules, and API usage."
-          },
-          {
-            "line": 2,
-            "note": "Models $12,000 expansion sales cost against $65,000 expansion ARR, yielding an efficient $0.18 expansion CAC per dollar."
-          },
-          {
-            "line": 3,
-            "note": "Demonstrates 5.42x operating leverage on expansion revenue compared to initial customer land acquisition."
+            "note": "Defines the function `model_land_and_expand_account_tiers`."
           }
         ],
         "tryIt": "Model expansion trajectories by adjusting seat_growth_pct and module_upsell_arr.",
         "check": {
           "question": "Why is customer expansion revenue substantially more capital efficient than new logo acquisition in enterprise SaaS?",
           "options": [
-            "Expanding existing accounts eliminates cold outbound marketing costs, leverages pre-existing vendor approvals, and incurs lower sales commissions, resulting in an expansion CAC that is 70% to 80% lower than new-logo CAC.",
-            "Because enterprise customers are legally barred from canceling software subscriptions after year one.",
             "Because expansion revenue is exempt from state and federal corporate income taxation.",
-            "Because software developers work without compensation when building product upsells."
+            "Expanding existing accounts eliminates cold outbound marketing costs, leverages pre-existing vendor approvals, and incurs lower sales commissions, resulting in an expansion CAC that is 70% to 80% lower than new-logo CAC.",
+            "Because software developers work without compensation when building product upsells.",
+            "Because enterprise customers are legally barred from canceling software subscriptions after year one."
           ],
-          "answer": 0,
+          "answer": 1,
           "why": "Expansion CAC is 70-80% cheaper than new-logo acquisition because trust, security vetting, and master service contracts are already in place.",
-          "answerIndex": 0,
+          "answerIndex": 1,
           "explanation": "Expansion CAC is 70-80% cheaper than new-logo acquisition because trust, security vetting, and master service contracts are already in place."
         }
       },
@@ -10884,15 +10192,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "codeNotes": [
           {
             "line": 1,
-            "note": "Highlights the deceptive gap between reported $3,571 Blended CAC and true $5,000 Marginal Paid CAC."
-          },
-          {
-            "line": 2,
-            "note": "Models $2,000 annual gross profit and 45% churn, yielding an expected customer LTV of only $4,444.44."
-          },
-          {
-            "line": 3,
-            "note": "Calculates a net loss of $555.56 on every paid customer, demonstrating that rapid scaling is destroying venture cash."
+            "note": "Defines the function `simulate_blended_cac_growth_trap`."
           }
         ],
         "tryIt": "Simulate paid acquisition saturation by increasing paid_ad_spend and evaluating resulting unit losses.",
@@ -10971,14 +10271,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does annual upfront subscription billing create negative working capital and cash flow leverage for enterprise software companies?",
           "options": [
-            "Customers wire cash twelve months in advance, creating deferred revenue liabilities and liquid float that funds operations before services are delivered.",
-            "Annual upfront billing eliminates all current liabilities from the corporate balance sheet, driving working capital to zero.",
             "Cash collected from annual contracts is immediately recognized as GAAP revenue on day one, bypassing deferred revenue accounts.",
-            "Upfront billing increases Days Sales Outstanding to over three hundred days, maximizing credit receivables on the asset ledger."
+            "Upfront billing increases Days Sales Outstanding to over three hundred days, maximizing credit receivables on the asset ledger.",
+            "Annual upfront billing eliminates all current liabilities from the corporate balance sheet, driving working capital to zero.",
+            "Customers wire cash twelve months in advance, creating deferred revenue liabilities and liquid float that funds operations before services are delivered."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Annual upfront subscription billing enables customers to wire cash twelve months in advance, establishing a deferred revenue liability and providing non-dilutive liquid float that finances operations months before delivery obligations are satisfied.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -11067,14 +10367,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does a significant escalation in Days Sales Outstanding (DSO) from 35 days to 75 days indicate to growth-equity investors during financial due diligence?",
           "options": [
-            "Customers are delaying invoice payments, disputing delivery milestones, or experiencing liquidity stress, trapping cash in uncollected receivables.",
-            "The enterprise has successfully transitioned all enterprise customers to annual upfront cash collections.",
             "Operating cash flow is expanding rapidly because receivables are legally classified as liquid cash equivalents.",
-            "Sales productivity has improved because account executives are granting unlimited trade credit without management approval."
+            "Customers are delaying invoice payments, disputing delivery milestones, or experiencing liquidity stress, trapping cash in uncollected receivables.",
+            "Sales productivity has improved because account executives are granting unlimited trade credit without management approval.",
+            "The enterprise has successfully transitioned all enterprise customers to annual upfront cash collections."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "An escalating DSO indicates that customer payments are delayed, invoices are disputed, or clients are facing cash flow distress, trapping vital liquidity in uncollected accounts receivable and threatening corporate runway.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -11115,14 +10415,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is the Bessemer Burn Multiple calculated, and what does a score of 1.2x signify for a Series B technology company?",
           "options": [
-            "Net Cash Burn divided by Net New ARR; a 1.2x score is rated Good, meaning the company burns $1.20 of cash to generate $1.00 of new recurring annual revenue.",
             "Total Operating Expenses divided by Gross Profit; a 1.2x score indicates that the company is insolvent and losing money on every customer.",
             "Customer Acquisition Cost divided by Monthly Recurring Revenue; a 1.2x score means customer payback takes exactly 1.2 months.",
+            "Net Cash Burn divided by Net New ARR; a 1.2x score is rated Good, meaning the company burns $1.20 of cash to generate $1.00 of new recurring annual revenue.",
             "Enterprise Valuation divided by Total Venture Capital Raised; a 1.2x score indicates extreme shareholder dilution."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "The Bessemer Burn Multiple divides Net Cash Burn by Net New ARR. A score of 1.2x falls into the 'Good' efficiency category (1.0x to 1.5x), indicating that the company consumes $1.20 of cash for each $1.00 of net new recurring revenue added.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -11132,7 +10432,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "We arrive at Part 5: Anti-Pattern Defense: The Phantom Revenue Accrual Outage & Working Capital Insolvency. In growth-stage corporate finance, few disasters are more heartbreaking or legally perilous than the Phantom Revenue Accrual Outage. This existential operational catastrophe occurs when executive leadership and finance teams celebrate massive top-line revenue bookings and accrual accounting revenue while blinding themselves to the reality that cash collections have stalled, resulting in catastrophic working capital insolvency while the income statement appears profitable.",
           "The anatomy of this corporate collapse typically unfolds through three deceptive phases. Phase One begins with aggressive go-to-market expansion. Under intense pressure from Series A investors to hit a twenty-million-dollar ARR target for Series B, the sales leadership begins signing high-value enterprise contracts with customized payment terms, non-standard delivery milestones, and extended payment schedules. Account Executives close multi-year contracts where customers agree to pay significant sums, but payments are made contingent upon complex software integrations, custom security audits, or municipal certifications.",
           "Phase Two is the Accrual Illusion. Eager to report record performance, the corporate finance department books these contracts immediately as recognized revenue, logging substantial accounts receivable on the balance sheet. On the monthly board deck, GAAP revenue and ARR graphs trend steeply upward, delighting the board of directors. Management ramps up hiring, signs long-term office leases, and expands engineering teams based on projected revenue. However, beneath the surface, cash is not flowing. The enterprise customers refuse to wire funds, citing incomplete integrations, unresolved bugs, or extended procurement reviews.",
-          "Phase Three is the Liquidity Crash. Accounts receivable aging explodes: within six months, seventy percent of outstanding invoices are trapped in the 90+ day bucket. Simultaneously, suppliers, cloud infrastructure providers, and payroll vendors demand immediate cash settlement. The company's liquid treasury balance dwindles rapidly. When the controller finally approaches the bank to draw on a credit line, the bank conducts an emergency audit, discovers that the receivables are contested and uncollectible under ASC 606, and freezes all credit facilities. The startup runs out of cash, triggering an emergency emergency recapitalization or sudden liquidation.",
+          "Phase Three is the Liquidity Crash. Accounts receivable aging explodes: within six months, seventy percent of outstanding invoices are trapped in the 90+ day bucket. Simultaneously, suppliers, cloud infrastructure providers, and payroll vendors demand immediate cash settlement. The company's liquid treasury balance dwindles rapidly. When the controller finally approaches the bank to draw on a credit line, the bank conducts an emergency audit, discovers that the receivables are contested and uncollectible under ASC 606, and freezes all credit facilities. The startup runs out of cash, triggering an emergency recapitalization or sudden liquidation.",
           "Surviving and preventing the Phantom Revenue Accrual Outage requires establishing strict Institutional Internal Controls. First, corporate governance must enforce complete separation between Sales Bookings, Recognized Revenue, and Cash Collections. Sales commissions must never be paid on uncollected bookings; commissions should be disbursed only after customer cash has cleared the corporate bank account. Second, the enterprise must mandate rigorous ASC 606 contract reviews by an independent revenue committee, prohibiting revenue recognition on contracts with contingent delivery clauses until all performance obligations are fully satisfied.",
           "Third, the finance organization must establish automated Credit Stop Limits. If an enterprise customer crosses forty-five days past due without an approved payment plan, automated software provisioning systems must throttle non-essential services, and account executives must halt further onboarding until past invoices are settled. Furthermore, the board of directors must monitor the Cash Conversion Reconciliation: directly comparing GAAP Net Income against Operating Cash Flow in every single board meeting. If operating cash flow diverges negatively from GAAP revenue for two consecutive quarters, the board must mandate an immediate forensic audit.",
           "Finally, corporate boards must mandate an Independent Audit Committee Review of all multi-element contracts exceeding five hundred thousand dollars. In high-growth startups, founders and sales leaders often exert immense pressure on junior accounting staff to interpret ASC 606 aggressively to demonstrate growth momentum before venture fundraising rounds. An independent audit committee—composed of experienced external finance directors and outside legal counsel—provides an uncompromised institutional check against internal corporate optimism. By institutionalizing regular forensic reconciliations and independent contract audits, the venture erects impenetrable defenses against phantom revenue collapses, preserving shareholder equity and long-term corporate viability.",
@@ -11163,14 +10463,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance control to prevent the Phantom Revenue Accrual Outage in growth-stage technology ventures?",
           "options": [
-            "Enforce strict separation between Bookings, Recognized Revenue, and Cash Collections, disburse sales commissions only on cash collected, and prohibit revenue recognition on contingent contracts.",
+            "Replace ASC 606 revenue recognition standards with cash-basis tax accounting to eliminate deferred revenue liabilities.",
             "Permit account executives to recognize 100% of multi-year contract values immediately upon signing verbal letters of intent.",
             "Eliminate accounts receivable aging schedules and write off all uncollected invoices at the end of each calendar year.",
-            "Replace ASC 606 revenue recognition standards with cash-basis tax accounting to eliminate deferred revenue liabilities."
+            "Enforce strict separation between Bookings, Recognized Revenue, and Cash Collections, disburse sales commissions only on cash collected, and prohibit revenue recognition on contingent contracts."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "To prevent phantom revenue accrual outages, governance must mandate strict separation between bookings, revenue, and cash collections, disburse sales commissions only upon cleared cash, and enforce ASC 606 compliance by prohibiting revenue recognition on contracts with contingent delivery terms.",
-          "answer": 0
+          "answer": 3
         }
       }
     ],
@@ -11237,14 +10537,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary economic difference between standard Pro-Rata rights and Super Pro-Rata rights in growth-stage venture syndicates?",
           "options": [
-            "Standard pro-rata permits an investor to maintain their exact ownership percentage, while super pro-rata permits them to purchase a higher percentage of the round, crowding out new leads or diluting founders.",
-            "Standard pro-rata requires an investor to double their capital commitment in every round, while super pro-rata eliminates all investment obligations.",
             "Super pro-rata converts preferred shares into common debt instruments upon round completion, eliminating equity voting rights.",
-            "Standard pro-rata applies only to seed rounds, while super pro-rata is strictly reserved for initial public offerings."
+            "Standard pro-rata applies only to seed rounds, while super pro-rata is strictly reserved for initial public offerings.",
+            "Standard pro-rata permits an investor to maintain their exact ownership percentage, while super pro-rata permits them to purchase a higher percentage of the round, crowding out new leads or diluting founders.",
+            "Standard pro-rata requires an investor to double their capital commitment in every round, while super pro-rata eliminates all investment obligations."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Standard pro-rata allows an existing investor to maintain their existing ownership percentage, whereas super pro-rata allows them to take an expanded allocation (e.g., 1.5x to 2.0x pro-rata), which can crowd out the incoming lead investor or cause unbudgeted founder dilution.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -11285,14 +10585,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the contractual consequence of a Pay-to-Play provision on an existing Series A preferred investor who refuses to fund their pro-rata share in a qualified down-round?",
           "options": [
+            "The investor is prohibited from trading any public stocks for a period of five years under federal securities laws.",
             "Their preferred shares are involuntarily converted to common stock (or shadow preferred), forfeiting their senior liquidation preference and protective voting rights.",
             "The company is legally forced to repurchase their shares at original cost plus an eighteen percent compounding annual interest penalty.",
-            "Their preferred shares receive a double liquidation preference to compensate them for not participating in the new round.",
-            "The investor is prohibited from trading any public stocks for a period of five years under federal securities laws."
+            "Their preferred shares receive a double liquidation preference to compensate them for not participating in the new round."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Under a pay-to-play provision, an investor who fails to contribute their pro-rata share in a qualified round has their preferred shares converted into common stock or shadow preferred, stripping away liquidation preferences, anti-dilution rights, and board seats.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -11381,14 +10681,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a $25M exit where total preferred liquidation preferences equal $33M, how does a Tiered Seniority structure impact Series Seed and Common shareholders compared to Pari Passu?",
           "options": [
-            "Tiered seniority pays Series B first and Series A second, leaving Series Seed and Common with zero dollars; Pari Passu shares recovery pro-rata across all preferred series.",
+            "Tiered seniority forces the acquiring company to pay double the purchase price to satisfy unsatisfied liquidation preferences.",
             "Tiered seniority guarantees that common shareholders receive fifty percent of all exit proceeds before preferred investors receive a single dollar.",
             "Pari passu eliminates all preferred rights and distributes the entire twenty-five million dollars equally among all individual shareholders.",
-            "Tiered seniority forces the acquiring company to pay double the purchase price to satisfy unsatisfied liquidation preferences."
+            "Tiered seniority pays Series B first and Series A second, leaving Series Seed and Common with zero dollars; Pari Passu shares recovery pro-rata across all preferred series."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under tiered seniority, senior series (Series B) are paid in full first, leaving earlier series (Seed) and common shareholders completely empty-handed if proceeds are insufficient; pari passu distributes proceeds pro-rata across all preferred tranches.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -11430,14 +10730,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance mechanism used to restore talent retention and rescue an enterprise from a Down-Round Death Spiral?",
           "options": [
-            "Implement a Management Incentive Plan (MIP) carve-out off the top of exit proceeds and execute a recapitalization restructuring that resets the capitalization table.",
+            "File for Chapter 7 liquidating bankruptcy and transfer all software intellectual property to the state treasury.",
             "Enforce full-ratchet anti-dilution to the maximum legal extent and terminate all founding executives immediately.",
-            "Convert all employee stock options into non-voting municipal bonds with thirty-year maturity horizons.",
-            "File for Chapter 7 liquidating bankruptcy and transfer all software intellectual property to the state treasury."
+            "Implement a Management Incentive Plan (MIP) carve-out off the top of exit proceeds and execute a recapitalization restructuring that resets the capitalization table.",
+            "Convert all employee stock options into non-voting municipal bonds with thirty-year maturity horizons."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "To stop talent flight in a down-round washout, boards establish a Management Incentive Plan (MIP) carving out 10%–15% of exit proceeds for key management and execute a recapitalization restructuring to reset employee incentives.",
-          "answer": 0
+          "answer": 2
         }
       }
     ],
@@ -11504,14 +10804,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Value-Based Pricing superior to Cost-Plus or simplistic Per-Seat pricing in enterprise software commercialization?",
           "options": [
+            "It legally prohibits enterprise clients from ever terminating their software subscription agreements.",
             "It aligns commercial pricing directly with the economic surplus created for the customer, capturing maximum value and expanding revenue as customer usage scales.",
             "It ensures that software is priced strictly five percent above cloud hosting and server depreciation costs.",
-            "It guarantees that every enterprise customer pays the exact same monthly fee regardless of size or usage.",
-            "It legally prohibits enterprise clients from ever terminating their software subscription agreements."
+            "It guarantees that every enterprise customer pays the exact same monthly fee regardless of size or usage."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Value-based pricing captures the economic surplus generated for the customer and scales alongside their business operations, whereas cost-plus underprices software and per-seat pricing penalizes efficiency.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -11553,14 +10853,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 830 and institutional treasury best practices, how does an enterprise software company protect international billing margins against foreign currency depreciation?",
           "options": [
-            "Incorporate contractual FX collar corridors with reset thresholds into master agreements, and execute currency forward contracts to lock in baseline conversion rates.",
-            "Require all international enterprise clients to pay exclusively in physical gold bullion delivered to corporate headquarters.",
             "Recognize foreign currency losses as intangible marketing assets on the corporate balance sheet.",
-            "Eliminate international invoicing and conduct all global transactions through unregulated peer-to-peer crypto tokens."
+            "Eliminate international invoicing and conduct all global transactions through unregulated peer-to-peer crypto tokens.",
+            "Incorporate contractual FX collar corridors with reset thresholds into master agreements, and execute currency forward contracts to lock in baseline conversion rates.",
+            "Require all international enterprise clients to pay exclusively in physical gold bullion delivered to corporate headquarters."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "To neutralize foreign exchange risk, enterprises incorporate contractual FX collar corridors in agreements and execute financial forward contracts to lock in predictable cash conversions under ASC 830.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -11601,14 +10901,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the maximum allowed unplanned downtime per month for an enterprise software product guaranteeing 99.9% (Three Nines) availability in its commercial SLA?",
           "options": [
-            "Approximately 43.8 minutes of unplanned downtime per month (8.76 hours per year).",
-            "Exactly 14.5 hours of unplanned downtime per month.",
             "Zero seconds of unplanned downtime under any circumstances.",
-            "Up to five full business days per calendar quarter."
+            "Up to five full business days per calendar quarter.",
+            "Exactly 14.5 hours of unplanned downtime per month.",
+            "Approximately 43.8 minutes of unplanned downtime per month (8.76 hours per year)."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "99.9% availability allows a maximum of 43.8 minutes of unplanned downtime per month (8.76 hours per year); four nines (99.99%) allows only 4.38 minutes per month.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -11699,14 +10999,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural and governance defense against the Custom Enterprise Feature Bloat Trap in high-growth SaaS ventures?",
           "options": [
-            "Enforce strict API-first extensibility, establish an Architecture Review Board with veto power over bespoke forks, and require custom workflows to be built externally via APIs.",
             "Accept all custom customer code requests and hire contractors to manage separate single-tenant branches for each enterprise client.",
+            "Enforce strict API-first extensibility, establish an Architecture Review Board with veto power over bespoke forks, and require custom workflows to be built externally via APIs.",
             "Eliminate all enterprise security features and force Fortune 500 clients to use entry-level consumer software.",
             "Shut down cloud operations and transition the entire company to on-premises shrink-wrapped CD-ROM software."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "To prevent custom code forks and maintenance quagmires, companies enforce API-first extensibility architectures and mandate Architecture Review Board approvals, ensuring core multi-tenant codebase integrity.",
-          "answer": 0
+          "answer": 1
         }
       }
     ],
@@ -11745,7 +11045,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "To model this capital structure with institutional precision, corporate finance teams calculate the Pre-Money Share Price by dividing agreed pre-money valuation by fully diluted pre-money shares. Fully diluted shares must comprehensively include all outstanding common stock, preferred shares on an as-converted basis, vested and unvested stock options, outstanding warrants, and unallocated option pool reserves. Modeling this capitalization hierarchy enables founders to anticipate exact post-closing dilution, evaluate voting power shifts, and maintain compliance with Delaware corporate governance standards.",
           "Furthermore, enterprise capital architecture requires establishing unified voting agreements and drag-along covenants. In multi-series capitalization structures, requiring separate class votes for every corporate transaction creates severe administrative gridlock and empowers minority shareholders to hold the company hostage during subsequent acquisitions. Crafting a unified preferred voting threshold—where a simple majority of preferred shares voting together as a single class can approve subsequent equity rounds or corporate reorganizations—preserves transactional flexibility and aligns syndicate interests.",
           "In addition, corporate boards must govern Information Rights, Board Observer seats, and Registration Rights across preferred classes. Series B investors require comprehensive covenants, including monthly management accounts delivered within thirty days of month-end, quarterly board packages with updated 409A valuations, and demand registration rights for future initial public offerings. Ensuring that investor governance rights are properly harmonized prevents operational friction while providing institutional growth partners with the transparency necessary for public market readiness.",
-          "Moreover, enterprise founders must evaluate the impact of Drag-Along Rights and Major Investor Thresholds during Series B syndicate assembly. Take a moment to compare how a novice approaches Unified Growth-Stage Capital Structure & Multi-Series Cap Table Architecture versus how a seasoned specialist handles it. A novice looks only at the final output number, whereas a specialist inspects how Series interacts with Architecture, checks whether Capstone remains within expected operating bounds, and verifies the fallback behavior when Scaling hits an extreme edge case. That habit of checking both the happy path and the boundary condition is what turns textbook knowledge into reliable professional judgment.",
+          "Moreover, enterprise founders must evaluate the impact of Drag-Along Rights and Major Investor Thresholds during Series B syndicate assembly.",
           "In Part 1, we build a Unified Growth-Stage Capital Structure & Multi-Series Cap Table Engine in Python. We will model multi-class capitalization ledgers across Common, Seed, Series A, and Series B tranches, compute exact post-closing ownership percentages, evaluate unallocated option pool dilution impact, resolve super pro-rata allocation conflicts, and calculate post-round voting control distributions."
         ],
         "example": "A major international airport expansion where municipal authority bonds, commercial airline equity stakes, and federal infrastructure grants form a layered capital stack illustrates multi-series capital structures.",
@@ -11773,14 +11073,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a growth-stage Series B round, why do institutional lead investors insist that unallocated option pool refreshes be created entirely out of pre-money shares?",
           "options": [
-            "It forces the existing founders and early shareholders to bear one hundred percent of the option pool dilution, insulating the new investor from immediate equity dilution.",
-            "It eliminates the need for Delaware corporate franchise tax filings during the subsequent fiscal year.",
             "It converts employee stock options into cash dividend warrants payable every calendar quarter.",
-            "It legally prohibits existing venture investors from ever exercising their pro-rata rights in subsequent rounds."
+            "It legally prohibits existing venture investors from ever exercising their pro-rata rights in subsequent rounds.",
+            "It eliminates the need for Delaware corporate franchise tax filings during the subsequent fiscal year.",
+            "It forces the existing founders and early shareholders to bear one hundred percent of the option pool dilution, insulating the new investor from immediate equity dilution."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Requiring option pool refreshes out of pre-money shares ensures that existing shareholders bear all the dilution prior to investment, effectively reducing the true pre-money valuation paid by incoming investors.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -11792,10 +11092,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "To govern global billing operations, finance teams construct a Multi-Currency Deferred Revenue Waterfall Matrix. The waterfall models monthly recognized revenue across each geographic cohort, factoring in foreign exchange spot conversions, contractually negotiated FX collar corridors (+/- 10%), and financial currency forward hedges under ASC Topic 815. Under forward hedge accounting, locked exchange rates protect operating income from foreign currency devaluations, ensuring that multi-million-dollar international contracts translate into predictable domestic reporting currency cash flows.",
           "Simultaneously, corporate controllers must manage the capitalization and amortization of contract acquisition costs under ASC Subtopic 340-40. Sales commissions disbursed to go-to-market teams upon contract signing cannot be expensed immediately on the income statement; instead, they are capitalized on the balance sheet as Deferred Contract Costs and amortized systematically over the estimated customer benefit period (typically three to five years). Capitalizing sales commissions aligns expenses directly with multi-year recognized revenue, preventing artificial margin collapse during periods of rapid sales hiring.",
           "Furthermore, the multi-currency billing matrix must account for international indirect taxation, including European Value-Added Tax (VAT), Australian and Singaporean Goods and Services Tax (GST), and cross-border withholding tax treaties. Integrating automated tax determination engines directly into billing workflows ensures compliance with international fiscal authorities, prevents cross-border banking holds, and protects enterprise net operating margins from statutory penalties.",
-          "In addition, enterprise treasury teams establish multi-currency treasury accounts with international banking partners such as HSBC, J.P. Morgan, or Citibank. Take a moment to compare how a novice approaches ASC 606 Deferred Revenue Waterfall & Multi-Currency Billing Matrix versus how a seasoned specialist handles it. A novice looks only at the final output number, whereas a specialist inspects how Capstone interacts with Growth, checks whether Scaling remains within expected operating bounds, and verifies the fallback behavior when Finance hits an extreme edge case. That habit of checking both the happy path and the boundary condition is what turns textbook knowledge into reliable professional judgment.",
-          "One common pitfall when implementing ASC 606 Deferred Revenue Waterfall & Multi-Currency Billing Matrix is treating Growth as a static constant rather than a dynamic input that must be re-verified as conditions evolve. Whenever Scaling or Finance changes, teams should immediately re-run their baseline checks on international to confirm that the original decision rule still holds. Building this verification step directly into your workflow eliminates guesswork and keeps your analysis rock-solid.",
+          "In addition, enterprise treasury teams establish multi-currency treasury accounts with international banking partners such as HSBC, J.P. Morgan, or Citibank.",
           "Furthermore, corporate controllers must manage Contract Asset versus Contract Liability Netting on the balance sheet under ASC 606. When a customer executes a multi-year enterprise contract with unbilled milestone receivables, finance teams must assess contract-level netting, preventing artificial inflation of both gross assets and gross liabilities. Transparent balance sheet presentation of deferred revenue contract liabilities provides audit firms and growth investors with an uncompromised view of prepaid customer obligations.",
-          "In Part 2, we build a Global ASC 606 Revenue Waterfall & Multi-Currency Billing Matrix in Python. We will model enterprise contracts across USD, EUR, GBP, JPY, and SGD, generate a multi-quarter deferred revenue amortization waterfall, calculate capitalized sales commission amortization under ASC 340-40, evaluate currency forward hedge protections, and produce consolidated balance sheet reconciliation statements. Before moving on from ASC 606 Deferred Revenue Waterfall & Multi-Currency Billing Matrix to the concept check below, mentally trace what happens if the primary input to Currency doubles or drops by half. Seeing how Billing absorbs that shock—and how Milestone and Comprehensive surface the resulting variance—gives you an intuitive feel for the model's sensitivity. That intuition will serve you both in hands-on troubleshooting and in high-stakes technical interviews."
+          "In Part 2, we build a Global ASC 606 Revenue Waterfall & Multi-Currency Billing Matrix in Python. We will model enterprise contracts across USD, EUR, GBP, JPY, and SGD, generate a multi-quarter deferred revenue amortization waterfall, calculate capitalized sales commission amortization under ASC 340-40, evaluate currency forward hedge protections, and produce consolidated balance sheet reconciliation statements."
         ],
         "example": "An international satellite telecommunications consortium leasing bandwidth to global broadcast networks with multi-year upfront payments and currency forward hedges illustrates global revenue waterfalls.",
         "code": "# Day 50 Part 2: Global ASC 606 Revenue Waterfall & Multi-Currency Engine\ndef model_global_revenue_waterfall(contracts, months_horizon=6):\n    # contracts: list of {client, currency, total_val, term_months, is_hedged, forward_rate, spot_rate}\n    waterfall_usd = [0.0] * (months_horizon + 1)\n    \n    for c in contracts:\n        term = c[\"term_months\"]\n        monthly_local = c[\"total_val\"] / term\n        rate = c[\"forward_rate\"] if c[\"is_hedged\"] else c[\"spot_rate\"]\n        monthly_usd = monthly_local / rate\n        \n        for m in range(1, min(term + 1, months_horizon + 1)):\n            waterfall_usd[m] += monthly_usd\n            \n    return waterfall_usd\n\ncontracts_ledger = [\n    {\"client\": \"US Health Corp\", \"currency\": \"USD\", \"total_val\": 480000.0, \"term_months\": 12, \"is_hedged\": False, \"forward_rate\": 1.0, \"spot_rate\": 1.0},\n    {\"client\": \"Euro Logistics SE\", \"currency\": \"EUR\", \"total_val\": 600000.0, \"term_months\": 12, \"is_hedged\": True, \"forward_rate\": 0.94, \"spot_rate\": 1.00},\n    {\"client\": \"UK FinTech Ltd\", \"currency\": \"GBP\", \"total_val\": 360000.0, \"term_months\": 12, \"is_hedged\": True, \"forward_rate\": 0.79, \"spot_rate\": 0.84},\n    {\"client\": \"Tokyo Data KK\", \"currency\": \"JPY\", \"total_val\": 90000000.0, \"term_months\": 12, \"is_hedged\": False, \"forward_rate\": 150.0, \"spot_rate\": 160.0}\n]\n\nwaterfall = model_global_revenue_waterfall(contracts_ledger, months_horizon=6)\n\n# ASC 340-40 Capitalized Sales Commission Amortization ($120k total commissions amortized over 36 months)\nmonthly_commission_amort = 120000.0 / 36.0\n\nprint(\"[GLOBAL ASC 606 REVENUE WATERFALL & MULTI-CURRENCY MATRIX]\")\nprint(\"Month | Recognized Revenue (USD) | Capitalized Comm. Amort | Net Margin Contribution\")\nfor m in range(1, 7):\n    rev = waterfall[m]\n    net_contrib = rev - monthly_commission_amort\n    print(\"M{:02d}  | ${:23,.2f} | ${:22,.2f} | ${:22,.2f}\".format(\n        m, rev, monthly_commission_amort, net_contrib\n    ))\nprint(\"-\" * 75)\nprint(\"H1 Consolidated Recognized Revenue: ${:,.2f}\".format(sum(waterfall[1:7])))\nprint(\"ASC 340-40 Monthly Capitalized Amortization: ${:,.2f}\".format(monthly_commission_amort))\n",
@@ -11841,9 +11140,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Concurrently, the down-round term sheet deploys Pay-to-Play Provisions to enforce syndicate participation. Under a pay-to-play covenant, existing preferred investors must contribute their pro-rata share of rescue capital; if an investor refuses to participate, their preferred shares are involuntarily reclassified into common stock or shadow preferred stock. This reclassification strips away senior liquidation preferences, forfeits anti-dilution price protections, and neutralizes specialized board voting rights, penalizing passive free-riders and concentrating corporate control in participating investors.",
           "Furthermore, growth-stage capital structures must navigate Liquidation Preference Seniority Stacks. In a down-round or distressed scenario, new investors typically demand Senior Tiered Liquidation Preferences (Series B senior to Series A, Series A senior to Seed), often combined with participating preferred multiples. If the company subsequently executes a modest exit, senior preference stacks can consume one hundred percent of transaction proceeds. Founders must model conversion tipping points where preferred holders convert voluntarily to common stock, ensuring that executive leadership evaluates strategic acquisition proposals with complete visibility into common equity recovery.",
           "Under Delaware corporate law, executing defensive down-rounds and pay-to-play restructurings demands scrupulous adherence to fiduciary duties. Under the entire fairness standard articulated in Benchmark Capital v. Vague, boards composed of participating venture directors must prove fair dealing and fair price. Implementing an independent Special Committee of disinterested directors and securing a formal third-party fairness opinion provides an essential shield against shareholder derivative litigation during recapitalizations.",
-          "As you review the code and worked example for Series B Anti-Dilution, Pay-to-Play & Down-Round Dilution Solver, notice how each variable represents a concrete operational lever rather than an abstract formula. When Finance shifts relative to commercial, the immediate ripple effect appears in drydock and ultimately reshapes capital. Keeping that cause-and-effect chain clear in your mind makes it much easier to explain your conclusions to stakeholders who need clear, plain-language justification.",
-          "Before moving on from Series B Anti-Dilution, Pay-to-Play & Down-Round Dilution Solver to the concept check below, mentally trace what happens if the primary input to commercial doubles or drops by half. Seeing how drydock absorbs that shock—and how capital and shipping surface the resulting variance—gives you an intuitive feel for the model's sensitivity. That intuition will serve you both in hands-on troubleshooting and in high-stakes technical interviews.",
-          "In Part 3, we build a Comprehensive Down-Round Anti-Dilution & Pay-to-Play Solver in Python. We will model down-round valuations, compute conversion price adjustments across Broad-Based Weighted Average and Full Ratchet formulas, execute automated pay-to-play preferred-to-common conversions, strip liquidation preferences from non-participating syndicate members, and recalculate post-restructuring cap table ownership. Let us connect Series B Anti-Dilution, Pay-to-Play & Down-Round Dilution Solver directly to day-to-day practice: A commercial maritime drydock restructuring capital during a shipping downturn by compelling vessel owners to contribute rescue capital or f, the most important discipline is verifying the underlying assumptions before acting on the headline figure. Broad-based weighted average accounts for both the price reduction and the number of shares issued relative to total capitalization, cushioning the dilution impact compared to the predatory reset of full ratchet, which is why experienced practitioners always document both the primary calculation and the boundary conditions surrounding Milestone and Scaling. Why does this distinction matter so much when working through Series B Anti-Dilution, Pay-to-Play & Down-Round Dilution Solver? Because in real-world engagements, small misconfigurations in Comprehensive or Growth rarely announce themselves with an obvious crash; instead, they quietly skew Scaling until an independent reconciliation exposes the gap. By stepping through the logic of Finance methodically and confirming each intermediate threshold, you build a repeatable habit that holds up under executive and regulatory scrutiny."
+          "In Part 3, we build a Comprehensive Down-Round Anti-Dilution & Pay-to-Play Solver in Python. We will model down-round valuations, compute conversion price adjustments across Broad-Based Weighted Average and Full Ratchet formulas, execute automated pay-to-play preferred-to-common conversions, strip liquidation preferences from non-participating syndicate members, and recalculate post-restructuring cap table ownership. In day-to-day practice: A commercial maritime drydock restructuring capital during a shipping downturn by compelling vessel owners to contribute rescue capital or f, the most important discipline is verifying the underlying assumptions before acting on the headline figure. Broad-based weighted average accounts for both the price reduction and the number of shares issued relative to total capitalization, cushioning the dilution impact compared to the predatory reset of full ratchet, which is why experienced practitioners always document both the primary calculation and the boundary conditions surrounding Milestone and Scaling."
         ],
         "example": "A commercial maritime drydock restructuring capital during a shipping downturn by compelling vessel owners to contribute rescue capital or forfeit priority dock slots illustrates pay-to-play covenants.",
         "code": "# Day 50 Part 3: Down-Round Anti-Dilution & Pay-to-Play Solver\ndef solve_down_round_and_pay_to_play(pre_shares_fd, old_cp, down_price, new_money, syndicate):\n    # 1. Broad-Based Weighted Average Conversion Price Adjustment:\n    # CP2 = CP1 * (A + B) / (A + C)\n    A = pre_shares_fd\n    B = new_money / old_cp\n    C = new_money / down_price\n    cp_adjusted = old_cp * ((A + B) / (A + C))\n    \n    # 2. Pay-to-Play Preferred Reclassification:\n    reclassified_syndicate = []\n    total_retained_pref = 0.0\n    total_common_converted = 0\n    \n    for inv in syndicate:\n        shares = inv[\"preferred_shares\"]\n        pref_val = inv[\"liquidation_pref\"]\n        participates = inv[\"participates\"]\n        \n        if participates:\n            # Participated: Retain preferred stock with adjusted lower conversion price\n            status = \"Preferred Retained (Adjusted CP)\"\n            converted_shares = shares * (old_cp / cp_adjusted)\n            total_retained_pref += pref_val\n        else:\n            # Defaulted: Converted to common, liquidation preference stripped to zero\n            status = \"PENALTY: Converted to Common (Pref $0)\"\n            converted_shares = shares  # 1:1 common conversion\n            total_common_converted += shares\n            \n        reclassified_syndicate.append({\n            \"investor\": inv[\"name\"],\n            \"status\": status,\n            \"pref_dollars\": pref_val if participates else 0.0,\n            \"post_round_shares\": converted_shares\n        })\n        \n    return cp_adjusted, reclassified_syndicate, total_retained_pref, total_common_converted\n\nsyndicate = [\n    {\"name\": \"Lead Fund Alpha\", \"preferred_shares\": 1500000, \"liquidation_pref\": 15000000.0, \"participates\": True},\n    {\"name\": \"Growth Partner Beta\", \"preferred_shares\": 1000000, \"liquidation_pref\": 10000000.0, \"participates\": True},\n    {\"name\": \"Passive Syndicate Gamma\", \"preferred_shares\": 800000, \"liquidation_pref\": 8000000.0, \"participates\": False}\n]\n\ncp_new, audit_syn, ret_pref, conv_comm = solve_down_round_and_pay_to_play(\n    pre_shares_fd=10000000,\n    old_cp=10.00,\n    down_price=5.00,\n    new_money=10000000.0,\n    syndicate=syndicate\n)\n\nprint(\"[DOWN-ROUND ANTI-DILUTION & PAY-TO-PLAY SOLVER]\")\nprint(\"Original CP: $10.00 | Down-Round Price: $5.00 | Adjusted Broad-Based CP: ${:.2f}\".format(cp_new))\nprint(\"-\" * 75)\nfor s in audit_syn:\n    print(\"{:24s} | {:38s}\".format(s[\"investor\"], s[\"status\"]))\n    print(\"  Active Pref: ${:10,.2f} | Converted Common Shares: {:10,.0f}\".format(\n        s[\"pref_dollars\"], s[\"post_round_shares\"]\n    ))\nprint(\"-\" * 75)\nprint(\"Total Retained Preferred Liquidation Stack: ${:,.2f}\".format(ret_pref))\nprint(\"Defaulted Preferred Converted to Common:    {:,.0f} shares\".format(conv_comm))\n",
@@ -11870,14 +11167,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary benefit of Broad-Based Weighted Average Anti-Dilution over Full Ratchet Anti-Dilution for founding teams during an unavoidable down-round?",
           "options": [
+            "Broad-based weighted average forces the incoming investors to purchase all common shares at a twenty percent premium.",
             "Broad-based weighted average factors in the size and magnitude of the new round relative to total capitalization, producing an equitable price adjustment that prevents severe founder washout.",
             "Broad-based weighted average guarantees that common stock prices will triple within six months of closing.",
-            "Broad-based weighted average eliminates all income tax liabilities for both company and employees.",
-            "Broad-based weighted average forces the incoming investors to purchase all common shares at a twenty percent premium."
+            "Broad-based weighted average eliminates all income tax liabilities for both company and employees."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Broad-based weighted average accounts for both the price reduction and the number of shares issued relative to total capitalization, cushioning the dilution impact compared to the predatory reset of full ratchet.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -11888,11 +11185,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Enterprise SLAs define availability commitments across standardized thresholds, typically Three Nines (99.9% uptime, allowing 43.8 minutes of monthly downtime) or Four Nines (99.99% uptime, allowing only 4.38 minutes of monthly downtime). When unplanned cloud outages breach contractual thresholds, customer agreements mandate tiered Service Credit Penalties—ranging from ten to fifty percent of monthly billing fees. Under ASC 606 Variable Consideration rules, finance controllers must estimate service credit liabilities, record refund liability reserves on the balance sheet, and constrain recognized revenue accordingly, preventing revenue overstatements during operational disruptions.",
           "Simultaneously, the commercial engine scales through Indirect Channel Partnerships. Global System Integrators (Accenture, Deloitte) drive enterprise co-sell motions; Value-Added Resellers distribute software in regional markets at wholesale discounts (15% to 30%); and Cloud Hyperscalers (AWS, Azure Marketplaces) facilitate committed cloud budget drawdowns with transaction fees between one and three percent. Navigating channel accounting requires strict adherence to ASC 606 Principal versus Agent criteria: if the software enterprise controls the cloud platform and user provisioning, revenue must be recognized on a Gross basis with partner margins expensed under sales and marketing; if the partner acts as an agent, revenue must be recognized Net.",
           "Integrating SLA reliability metrics with channel partner economics provides executive leadership with a holistic view of net commercial cash conversion. An enterprise may report spectacular gross bookings across international reseller channels, but if cloud infrastructure outages trigger massive SLA penalties and reseller commissions compress wholesale cash margins, true operating liquidity will deteriorate. Corporate finance teams must model net realized cash flows after factoring in partner revenue shares, cloud marketplace transaction fees, and operational service credit reserves.",
-          "As you review the code and worked example for Enterprise SLA Performance & Channel Partner Revenue Waterfall, notice how each variable represents a concrete operational lever rather than an abstract formula. When Engine shifts relative to pipeline, the immediate ripple effect appears in balancing and ultimately reshapes monitoring. Keeping that cause-and-effect chain clear in your mind makes it much easier to explain your conclusions to stakeholders who need clear, plain-language justification.",
-          "Before moving on from Enterprise SLA Performance & Channel Partner Revenue Waterfall to the concept check below, mentally trace what happens if the primary input to pipeline doubles or drops by half. Seeing how balancing absorbs that shock—and how monitoring and uptime surface the resulting variance—gives you an intuitive feel for the model's sensitivity. That intuition will serve you both in hands-on troubleshooting and in high-stakes technical interviews.",
-          "Why does this distinction matter so much when working through Enterprise SLA Performance & Channel Partner Revenue Waterfall? Because in real-world engagements, small misconfigurations in balancing or monitoring rarely announce themselves with an obvious crash; instead, they quietly skew uptime until an independent reconciliation exposes the gap. By stepping through the logic of rebates methodically and confirming each intermediate threshold, you build a repeatable habit that holds up under executive and regulatory scrutiny.",
           "Moreover, indirect channel operations require automated Partner Relationship Management (PRM) systems synchronized with corporate CRM platforms. Automating deal registration approvals, pipeline stage tracking, and joint co-sell commission splits eliminates friction between direct sales reps and external channel architects. Real-time visibility into channel partner pipeline velocity ensures predictable quarterly bookings and solidifies global partner trust.",
-          "In Part 4, we build an Enterprise SLA Performance & Channel Partner Economics Engine in Python. We will model platform uptime telemetry across multi-region cloud fleets, compute tiered SLA service credit penalties, evaluate gross versus net reseller margins across GSI, VAR, and AWS Marketplace channels under ASC 606, and determine net cleared cash flow contributions. Take a moment to compare how a novice approaches Enterprise SLA Performance & Channel Partner Revenue Waterfall versus how a seasoned specialist handles it. A novice looks only at the final output number, whereas a specialist inspects how Milestone interacts with Capstone, checks whether Growth remains within expected operating bounds, and verifies the fallback behavior when Scaling hits an extreme edge case. That habit of checking both the happy path and the boundary condition is what turns textbook knowledge into reliable professional judgment. As you review the code and worked example for Enterprise SLA Performance & Channel Partner Revenue Waterfall, notice how each variable represents a concrete operational lever rather than an abstract formula. When Comprehensive shifts relative to Growth, the immediate ripple effect appears in Scaling and ultimately reshapes Engine. Keeping that cause-and-effect chain clear in your mind makes it much easier to explain your conclusions to stakeholders who need clear, plain-language justification."
+          "In Part 4, we build an Enterprise SLA Performance & Channel Partner Economics Engine in Python. We will model platform uptime telemetry across multi-region cloud fleets, compute tiered SLA service credit penalties, evaluate gross versus net reseller margins across GSI, VAR, and AWS Marketplace channels under ASC 606, and determine net cleared cash flow contributions."
         ],
         "example": "An intercontinental oil pipeline network balancing valve monitoring software uptime penalty rebates with regional distribution distributor margins illustrates integrated SLA and channel partner economics.",
         "code": "# Day 50 Part 4: Enterprise SLA & Channel Economics Integration Engine\ndef evaluate_integrated_sla_and_channels(deals, monthly_outage_minutes, monthly_sub_base):\n    # SLA calculation: 43,200 mins in month, 240 mins scheduled maintenance\n    net_avail = 43200 - 240\n    actual_uptime = (net_avail - monthly_outage_minutes) / net_avail * 100.0\n    \n    if actual_uptime >= 99.90:\n        sla_penalty_pct = 0.0\n    elif actual_uptime >= 99.50:\n        sla_penalty_pct = 0.10\n    elif actual_uptime >= 99.00:\n        sla_penalty_pct = 0.25\n    else:\n        sla_penalty_pct = 0.50\n        \n    sla_credit_dollars = monthly_sub_base * sla_penalty_pct\n    \n    # Channel Partner Economics:\n    total_gross_rev = 0.0\n    total_partner_fees = 0.0\n    total_cleared_cash = 0.0\n    \n    deal_results = []\n    for d in deals:\n        list_price = d[\"list_price\"]\n        disc = list_price * d[\"partner_margin_pct\"]\n        mkt_fee = list_price * d[\"marketplace_fee_pct\"]\n        cash_in = list_price - disc - mkt_fee\n        \n        total_gross_rev += list_price\n        total_partner_fees += (disc + mkt_fee)\n        total_cleared_cash += cash_in\n        \n        deal_results.append({\n            \"deal\": d[\"deal_id\"],\n            \"channel\": d[\"channel\"],\n            \"gross\": list_price,\n            \"net_cash\": cash_in\n        })\n        \n    net_operating_cash = total_cleared_cash - sla_credit_dollars\n    \n    return actual_uptime, sla_credit_dollars, total_gross_rev, total_cleared_cash, net_operating_cash\n\ndeals_data = [\n    {\"deal_id\": \"DEAL-01\", \"channel\": \"Direct Enterprise\", \"list_price\": 200000.0, \"partner_margin_pct\": 0.0, \"marketplace_fee_pct\": 0.0},\n    {\"deal_id\": \"DEAL-02\", \"channel\": \"AWS Marketplace\", \"list_price\": 350000.0, \"partner_margin_pct\": 0.0, \"marketplace_fee_pct\": 0.03},\n    {\"deal_id\": \"DEAL-03\", \"channel\": \"Accenture GSI Partner\", \"list_price\": 500000.0, \"partner_margin_pct\": 0.20, \"marketplace_fee_pct\": 0.0}\n]\n\nuptime, sla_credit, gross_rev, cleared_cash, net_cash = evaluate_integrated_sla_and_channels(\n    deals=deals_data,\n    monthly_outage_minutes=85,  # 85 mins outage -> 99.80% uptime (Tier 1 breach: 10% credit)\n    monthly_sub_base=87500.0\n)\n\nprint(\"[ENTERPRISE SLA & CHANNEL PARTNER REVENUE ENGINE]\")\nprint(\"Platform Monthly Uptime: {:.3f}% (85 mins outage) | SLA Credit Applied: ${:,.2f}\".format(\n    uptime, sla_credit\n))\nprint(\"-\" * 75)\nprint(\"Total Channel Deal Volume (List Price): ${:,.2f}\".format(gross_rev))\nprint(\"Wholesale Cleared Cash Collections:     ${:,.2f}\".format(cleared_cash))\nprint(\"Net Operating Cash Realized (After SLA):${:,.2f}\".format(net_cash))\n",
@@ -11919,14 +11213,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under ASC 606, why must estimated Service Level Agreement (SLA) penalty credits be accounted for as Variable Consideration when recognizing monthly enterprise revenue?",
           "options": [
-            "They represent potential contractual price concessions that constrain recognized revenue, requiring finance controllers to record a refund liability until service performance is verified.",
+            "They must be deducted directly from founding shareholder equity on a dollar-for-dollar basis.",
             "They are treated as voluntary charitable donations that are tax-deductible on state corporate filings.",
-            "They are classified as long-term debt liabilities bearing eight percent compounding annual interest.",
-            "They must be deducted directly from founding shareholder equity on a dollar-for-dollar basis."
+            "They represent potential contractual price concessions that constrain recognized revenue, requiring finance controllers to record a refund liability until service performance is verified.",
+            "They are classified as long-term debt liabilities bearing eight percent compounding annual interest."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "SLA service credits constitute variable consideration under ASC 606, requiring the enterprise to constrain recognized revenue and establish refund liabilities to reflect probable customer price concessions.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -11938,10 +11232,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "Audit 3: Down-Round Washout & Management Incentive Plan (MIP) Defense. The audit simulates severe valuation drawdowns, ensuring that a contractual 15% MIP carve-out pool protects executive and engineering equity from senior liquidation preferences, halting key talent flight. Audit 4: Multi-Tenant Architecture & Technical Debt Integrity. The system audits engineering resource allocation, ensuring that senior architects are not diverted to bespoke single-tenant customer forks and verifying that API-first extensibility preserves core platform maintenance margins.",
           "Audit 5: Rule of 40 & Bessemer Burn Multiple Compliance. The control tower computes annual ARR growth rates, Free Cash Flow margins, and quarterly Burn Multiples, certifying that the enterprise generates sustainable, capital-efficient growth that justifies institutional Series B and Series C valuation multiples. Executing this comprehensive five-point verification suite ensures that executive leadership and the board of directors operate with complete operational clarity, safeguarding corporate runway and enterprise value.",
           "Establishing this institutional control tower transforms a chaotic, high-growth technology startup into a disciplined enterprise machine capable of enduring macroeconomic turbulence and scaling smoothly toward an initial public offering. By uniting capitalization table structuring, ASC 606 revenue recognition, multi-currency treasury hedging, SLA operational excellence, and partner ecosystem economics, founders erect an unshakeable foundation for enduring global impact.",
-          "Before moving on from Anti-Pattern Defense & Milestone 10 Control Tower Verification Suite to the concept check below, mentally trace what happens if the primary input to control doubles or drops by half. Seeing how running absorbs that shock—and how flight and telemetry surface the resulting variance—gives you an intuitive feel for the model's sensitivity. That intuition will serve you both in hands-on troubleshooting and in high-stakes technical interviews.",
-          "Why does this distinction matter so much when working through Anti-Pattern Defense & Milestone 10 Control Tower Verification Suite? Because in real-world engagements, small misconfigurations in running or flight rarely announce themselves with an obvious crash; instead, they quietly skew telemetry until an independent reconciliation exposes the gap. By stepping through the logic of propulsion methodically and confirming each intermediate threshold, you build a repeatable habit that holds up under executive and regulatory scrutiny.",
           "In addition, corporate boards must institutionalize Monthly Executive Growth Dashboards tracking these five core pillars in real time. Presenting unified telemetry across unit economics, cash collections, cap table stability, multi-tenant engineering integrity, and capital efficiency empowers executive leadership to identify operational friction early. Operating with this level of institutional governance transforms growth-stage ventures into world-class market leaders prepared for public listing.",
-          "In Part 5, we execute the Milestone 10 Capstone Control Tower Verification Suite in Python. We will ingest complete enterprise financial and operational telemetry, run automated compliance diagnostics across all five growth-stage pillars, verify zero invariant violations, and generate the formal Milestone 10 Institutional Certification Report. Take a moment to compare how a novice approaches Anti-Pattern Defense & Milestone 10 Control Tower Verification Suite versus how a seasoned specialist handles it. A novice looks only at the final output number, whereas a specialist inspects how Tower interacts with Verification, checks whether Capstone remains within expected operating bounds, and verifies the fallback behavior when Growth hits an extreme edge case. That habit of checking both the happy path and the boundary condition is what turns textbook knowledge into reliable professional judgment. As you review the code and worked example for Anti-Pattern Defense & Milestone 10 Control Tower Verification Suite, notice how each variable represents a concrete operational lever rather than an abstract formula. When Suite shifts relative to Capstone, the immediate ripple effect appears in Growth and ultimately reshapes Scaling. Keeping that cause-and-effect chain clear in your mind makes it much easier to explain your conclusions to stakeholders who need clear, plain-language justification."
+          "In Part 5, we execute the Milestone 10 Capstone Control Tower Verification Suite in Python. We will ingest complete enterprise financial and operational telemetry, run automated compliance diagnostics across all five growth-stage pillars, verify zero invariant violations, and generate the formal Milestone 10 Institutional Certification Report."
         ],
         "example": "An aerospace launch control center running automated pre-flight diagnostic telemetry across propulsion, thermal shielding, and guidance before orbital liftoff illustrates the Milestone 10 Control Tower.",
         "code": "# Day 50 Part 5: Anti-Pattern Defense: Milestone 10 Capstone Control Tower Suite\ndef run_milestone10_control_tower():\n    print(\"[STARTING MILESTONE 10 CAPSTONE CONTROL TOWER VERIFICATION]\")\n    print(\"Executing 5-Point Institutional Growth Stage Diagnostic Audit...\")\n    print(\"-\" * 75)\n    \n    tests_passed = 0\n    total_tests = 5\n    \n    # Audit 1: Paid CAC vs Blended CAC Margin Health (Day 46 Defense)\n    blended_cac = 800.0\n    paid_cac = 1200.0\n    cac_ratio = paid_cac / blended_cac\n    assert cac_ratio < 2.5, \"Audit 1 Failure: Paid CAC is decoupling unsustainably from Blended CAC!\"\n    print(\"[PASS] Audit 1: Paid CAC ($1,200) vs Blended CAC ($800) Ratio = 1.50x (Healthy <= 2.0x)\")\n    tests_passed += 1\n    \n    # Audit 2: Cash Collection-to-Revenue Ratio & ASC 606 Solvency (Day 47 Defense)\n    gaap_recognized_rev = 1200000.0\n    cleared_cash_collected = 1080000.0\n    cash_collection_ratio = cleared_cash_collected / gaap_recognized_rev\n    assert cash_collection_ratio >= 0.85, \"Audit 2 Failure: Phantom revenue accrual detected!\"\n    print(\"[PASS] Audit 2: Cash-to-Revenue Collection Ratio = {:.1f}% (Benchmark >= 85.0%)\".format(cash_collection_ratio * 100))\n    tests_passed += 1\n    \n    # Audit 3: Down-Round Washout & MIP Carve-Out Safety (Day 48 Defense)\n    exit_valuation = 25000000.0\n    mip_carve_out_pct = 0.15\n    mip_dollars = exit_valuation * mip_carve_out_pct\n    assert mip_dollars == 3750000.0, \"Audit 3 Failure: MIP carve-out pool calculation error!\"\n    print(\"[PASS] Audit 3: 15% Management Incentive Plan (MIP) Guarantees ${:,.2f} to Key Talent\".format(mip_dollars))\n    tests_passed += 1\n    \n    # Audit 4: Multi-Tenant Architecture & Technical Debt Integrity (Day 49 Defense)\n    total_engineering_headcount = 50\n    custom_fork_engineers = 2\n    fork_ratio = custom_fork_engineers / total_engineering_headcount\n    assert fork_ratio <= 0.05, \"Audit 4 Failure: Engineering capacity diverted into bespoke forks!\"\n    print(\"[PASS] Audit 4: Multi-Tenant Platform Integrity Certified (Bespoke Fork Drain = 4.0% <= 5.0%)\")\n    tests_passed += 1\n    \n    # Audit 5: Rule of 40 & Burn Multiple Growth Efficiency (Day 46-50 Unified)\n    yoy_arr_growth_pct = 65.0\n    fcf_margin_pct = -18.0\n    rule_of_40 = yoy_arr_growth_pct + fcf_margin_pct\n    burn_multiple = 1.25\n    assert rule_of_40 >= 40.0, \"Audit 5 Failure: Rule of 40 score below 40%!\"\n    assert burn_multiple <= 1.50, \"Audit 5 Failure: Burn multiple exceeds Good threshold!\"\n    print(\"[PASS] Audit 5: Rule of 40 Score = {:.1f}% (>= 40.0%) | Burn Multiple = {:.2f}x (Good 1.0-1.5x)\".format(\n        rule_of_40, burn_multiple\n    ))\n    tests_passed += 1\n    \n    print(\"-\" * 75)\n    print(\"MILESTONE 10 CONTROL TOWER AUDIT: {}/{} TESTS PASSED (100% OPERATIONAL INTEGRITY)\".format(\n        tests_passed, total_tests\n    ))\n    print(\"INSTITUTIONAL CERTIFICATION: Enterprise is fully primed for Block 11 IPO Readiness!\")\n\nrun_milestone10_control_tower()\n",
@@ -11972,14 +11264,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the five core diagnostic checks verified by the Milestone 10 Capstone Growth Control Tower Suite?",
           "options": [
-            "Marginal Paid vs Blended CAC health, Cash-to-Revenue collection ratio (>=85%), MIP carve-out equity protection (15%), Multi-tenant platform integrity (<=5% fork drain), and Rule of 40 / Burn Multiple efficiency.",
             "Relying solely on static hardcoded defaults for Anti-Pattern without reconciling Defense against live boundary conditions.",
             "Coupling Anti-Pattern directly to unvalidated external state while disabling Milestone across Defense transitions.",
-            "Daily stock trading volume, cryptocurrency treasury holdings, municipal bond yields, and commercial bank credit ratings."
+            "Daily stock trading volume, cryptocurrency treasury holdings, municipal bond yields, and commercial bank credit ratings.",
+            "Marginal Paid vs Blended CAC health, Cash-to-Revenue collection ratio (>=85%), MIP carve-out equity protection (15%), Multi-tenant platform integrity (<=5% fork drain), and Rule of 40 / Burn Multiple efficiency."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "The Milestone 10 Control Tower systematically verifies CAC marginal efficiency, cash collection solvency (>=85%), MIP talent retention safety, multi-tenant engineering integrity, and capital efficiency (Rule of 40 and Burn Multiple <= 1.5x).",
-          "answer": 0
+          "answer": 3
         }
       }
     ],
@@ -12094,14 +11386,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the regulatory definition of a Material Weakness in Internal Financial Controls over Financial Reporting (ICFR) under SOX Section 404 and Companies Act 2013?",
           "options": [
-            "A deficiency, or combination of deficiencies, such that there is a reasonable possibility that a material misstatement of the financial statements will not be prevented or detected on a timely basis.",
-            "A minor typographical error in an informal internal marketing department presentation slide deck.",
             "Any quarterly business travel expense claim that exceeds the company's standard meal per-diem by ten dollars.",
-            "A hardware failure in a non-financial developer sandbox laptop that causes twenty minutes of test downtime."
+            "A hardware failure in a non-financial developer sandbox laptop that causes twenty minutes of test downtime.",
+            "A minor typographical error in an informal internal marketing department presentation slide deck.",
+            "A deficiency, or combination of deficiencies, such that there is a reasonable possibility that a material misstatement of the financial statements will not be prevented or detected on a timely basis."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "A material weakness is a severe deficiency (or combination of deficiencies) in internal controls creating a reasonable possibility that a material financial misstatement will not be prevented or detected on a timely basis.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -12142,14 +11434,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI LODR Regulation 23, what special voting rule applies when a material Related Party Transaction is submitted to shareholders for approval?",
           "options": [
-            "All related parties, including promoters and interested shareholders, are legally barred from voting on the resolution, leaving approval entirely to disinterested public minority shareholders.",
+            "The transaction is automatically approved without a vote if the company has been profitable for two consecutive years.",
             "The promoter is granted double voting power to ensure the strategic commercial transaction passes unanimously.",
-            "Only foreign institutional investors with over one billion dollars in assets under management may cast ballots.",
-            "The transaction is automatically approved without a vote if the company has been profitable for two consecutive years."
+            "All related parties, including promoters and interested shareholders, are legally barred from voting on the resolution, leaving approval entirely to disinterested public minority shareholders.",
+            "Only foreign institutional investors with over one billion dollars in assets under management may cast ballots."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Under SEBI LODR Regulation 23, all related parties are strictly prohibited from voting on resolutions approving material related party transactions, ensuring uncompromised approval by disinterested public minority shareholders.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -12190,14 +11482,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI LODR Regulation 17, what is the mandatory board independence ratio if the Chairman of the Board of Directors is an executive promoter or founder?",
           "options": [
-            "At least fifty percent (50%) of the total board of directors must consist of Independent Directors.",
             "Exactly ten percent of the board must consist of independent directors.",
+            "At least fifty percent (50%) of the total board of directors must consist of Independent Directors.",
             "Zero independent directors are required as long as the founder owns more than fifty percent of the company's equity.",
             "One hundred percent of the board must consist of active executive employees."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Under SEBI LODR Regulation 17, if the Chairperson of the Board is an executive director or promoter, at least 50% of the board must comprise independent directors to ensure unbiased governance.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -12314,14 +11606,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary statutory difference between a Draft Red Herring Prospectus (DRHP) and a Red Herring Prospectus (RHP) under SEBI ICDR Regulations?",
           "options": [
-            "The DRHP contains complete operational and legal disclosures but omits the issue price and price band, whereas the RHP includes the floor and cap price band for book-building.",
             "The DRHP is a secret document that is never made public, while the RHP is printed in consumer fashion magazines.",
+            "The DRHP contains complete operational and legal disclosures but omits the issue price and price band, whereas the RHP includes the floor and cap price band for book-building.",
             "The DRHP is prepared only by commercial banks, while the RHP is drafted by individual retail stock investors.",
             "The DRHP eliminates all risk factors, while the RHP adds back criminal litigation records."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "A DRHP omits the price and price band to facilitate regulatory review, while the RHP introduces the price band (Floor Price and Cap Price) to initiate the public book-building bidding process.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -12363,14 +11655,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Schedule VI and the Bespeaks Caution legal doctrine, what standard must Risk Factor disclosures satisfy in a public offering prospectus?",
           "options": [
-            "They must be specifically tailored to the issuer's business, quantify concrete financial exposures, and avoid generic boilerplate language to provide genuine legal protection.",
             "They must guarantee that investors will never lose money under any macroeconomic circumstances.",
             "They must be printed in invisible cryptographic watermark ink that can only be read under ultraviolet light.",
+            "They must be specifically tailored to the issuer's business, quantify concrete financial exposures, and avoid generic boilerplate language to provide genuine legal protection.",
             "They must be limited to exactly one single generic paragraph stating that all business investments carry risk."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Under SEBI regulations and the Bespeaks Caution doctrine, risk factors must be tailored specifically to the company, quantify exposures, and provide meaningful cautionary context to shield forward-looking disclosures.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -12411,14 +11703,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulations, what is the maximum statutory percentage of Fresh Issue proceeds that an enterprise may allocate to General Corporate Purposes (GCP)?",
           "options": [
-            "Maximum twenty-five percent (25%) of the total fresh issue proceeds.",
-            "Exactly seventy-five percent of total gross proceeds.",
             "One hundred percent, allowing promoters complete discretionary spending freedom.",
-            "Zero percent; every single rupee must be spent exclusively on physical factory machinery."
+            "Zero percent; every single rupee must be spent exclusively on physical factory machinery.",
+            "Exactly seventy-five percent of total gross proceeds.",
+            "Maximum twenty-five percent (25%) of the total fresh issue proceeds."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "SEBI ICDR regulations strictly cap General Corporate Purposes (GCP) at 25% of the fresh issue proceeds to ensure that primary capital raised from public investors is deployed into specific, identified productive assets.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -12509,14 +11801,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance remedy if an issuing enterprise discovers an undisclosed material operational development after filing its Draft Red Herring Prospectus?",
           "options": [
-            "Immediately convene the Due Diligence Committee, notify merchant bankers, and issue a formal public Addendum / Corrigendum in national financial daily newspapers.",
             "Quietly delete all internal emails mentioning the event and instruct customer support staff to deny everything.",
+            "Immediately convene the Due Diligence Committee, notify merchant bankers, and issue a formal public Addendum / Corrigendum in national financial daily newspapers.",
             "Transfer all corporate assets to an offshore shell entity in an unregulated tax haven.",
             "Proceed with the IPO as scheduled without mentioning the event, hoping public investors do not notice."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "If a material development occurs post-filing, the issuer must immediately issue a public Addendum or Corrigendum in national financial dailies, updating the disclosure and insulating directors from securities fraud liability.",
-          "answer": 0
+          "answer": 1
         }
       }
     ],
@@ -12583,14 +11875,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulation 29, what is the statutory restriction on the Price Band established for a book-built public offering?",
           "options": [
-            "The Cap Price cannot exceed one hundred twenty percent (120%) of the Floor Price, imposing a strict twenty percent collar constraint.",
-            "The Cap Price must be exactly five times the Floor Price to maximize promoter valuation.",
             "The Floor Price must be set to zero rupees to encourage unlimited speculative bidding.",
-            "The price band must be determined exclusively by a public online poll conducted on social media platforms."
+            "The price band must be determined exclusively by a public online poll conducted on social media platforms.",
+            "The Cap Price cannot exceed one hundred twenty percent (120%) of the Floor Price, imposing a strict twenty percent collar constraint.",
+            "The Cap Price must be exactly five times the Floor Price to maximize promoter valuation."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "SEBI ICDR regulations mandate that the Cap Price of a price band cannot exceed 120% of the Floor Price (a 20% maximum spread) to prevent predatory pricing and ensure genuine price discovery.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -12632,14 +11924,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the statutory lock-in periods applicable to Anchor Investors in an Indian public offering under amended SEBI ICDR Regulations?",
           "options": [
+            "Anchors are locked in for exactly five business days, after which they must transfer shares to retail investors.",
             "Fifty percent (50%) of the anchor shares are locked in for thirty days, and the remaining fifty percent are locked in for ninety days following allotment.",
             "Zero lock-in applies; anchors may sell all shares within one minute of market listing.",
-            "One hundred percent of anchor shares are locked in permanently for twenty-five years.",
-            "Anchors are locked in for exactly five business days, after which they must transfer shares to retail investors."
+            "One hundred percent of anchor shares are locked in permanently for twenty-five years."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "To deter short-term flipping and stabilize secondary trading, SEBI mandates staggered lock-ins for anchor investors: 50% of allocated shares for 30 days and the remaining 50% for 90 days post-allotment.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -12730,14 +12022,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulation 115, what is the maximum percentage of the total issue size that a Stabilizing Agent may borrow under a Green Shoe Option, and where must net stabilization profits be transferred?",
           "options": [
-            "Maximum fifteen percent (15%) of the total issue size; all net cash profits from stabilization must be transferred to the Investor Education and Protection Fund (IEPF).",
+            "Five percent of the issue size; all profits must be spent on corporate billboard advertisements.",
             "Fifty percent of the issue size; all profits are kept by the merchant bankers as underwriting bonuses.",
             "One hundred percent of the issue size; profits are distributed as cash dividends to founding executives.",
-            "Five percent of the issue size; all profits must be spent on corporate billboard advertisements."
+            "Maximum fifteen percent (15%) of the total issue size; all net cash profits from stabilization must be transferred to the Investor Education and Protection Fund (IEPF)."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "SEBI Regulation 115 caps Green Shoe borrowing at 15% of the total issue size, and mandates that any net cash surplus resulting from stabilization purchases below the issue price must be transferred to the government IEPF.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -12779,14 +12071,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary corporate governance and pricing discipline required to prevent an Over-Priced Broken IPO on listing day?",
           "options": [
-            "Price the offering at a disciplined 15% to 20% discount to intrinsic peer valuation to leave money on the table for secondary buyers, and curate a high-quality fundamental anchor book.",
-            "Price the shares at five hundred times revenue and prohibit all secondary market trading for ten years.",
             "Instruct the stock exchange to suspend trading whenever the stock price falls by more than one percent.",
-            "Eliminate all public retail investors and sell the entire company to a single offshore hedge fund."
+            "Eliminate all public retail investors and sell the entire company to a single offshore hedge fund.",
+            "Price the offering at a disciplined 15% to 20% discount to intrinsic peer valuation to leave money on the table for secondary buyers, and curate a high-quality fundamental anchor book.",
+            "Price the shares at five hundred times revenue and prohibit all secondary market trading for ten years."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "To prevent broken listings, issuers must maintain pricing discipline—leaving a 15%–20% discount on the table to reward public investors—and anchor the offering with long-term fundamental institutions.",
-          "answer": 0
+          "answer": 2
         }
       }
     ],
@@ -12855,14 +12147,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 33 of SEBI LODR, what is the statutory deadline for a listed company to submit its unaudited quarterly financial results accompanied by a Limited Review Report to recognized stock exchanges?",
           "options": [
-            "Within forty-five calendar days from the end of the quarter, accompanied by an auditor Limited Review Report.",
-            "Within thirty calendar days from the end of the quarter, without requiring any independent auditor review.",
             "Within sixty calendar days from the end of the quarter, solely for standalone financial statements.",
-            "Within ninety calendar days from the end of the quarter, following approval by the annual general meeting."
+            "Within ninety calendar days from the end of the quarter, following approval by the annual general meeting.",
+            "Within thirty calendar days from the end of the quarter, without requiring any independent auditor review.",
+            "Within forty-five calendar days from the end of the quarter, accompanied by an auditor Limited Review Report."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under Regulation 33(3) of the SEBI LODR Regulations 2015, listed entities must submit their standalone and consolidated unaudited quarterly financial results to recognized stock exchanges within forty-five days from the end of each quarter (accompanied by a Limited Review Report). For the final quarter, companies are granted sixty days to submit comprehensive audited annual financial statements.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -12953,14 +12245,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the 2023 amendments to SEBI LODR Regulation 30, how is the quantitative materiality threshold for disclosing non-deemed corporate events determined?",
           "options": [
-            "The lower of 2% of turnover, 2% of net worth, or 5% of the 3-year average absolute profit/loss after tax.",
-            "A flat monetary threshold of ten crore rupees across all listed companies regardless of size.",
             "The higher of 10% of revenue or 15% of EBITDA as determined by the statutory auditor.",
-            "Solely based on the subjective discretion of the Managing Director without quantitative criteria."
+            "The lower of 2% of turnover, 2% of net worth, or 5% of the 3-year average absolute profit/loss after tax.",
+            "Solely based on the subjective discretion of the Managing Director without quantitative criteria.",
+            "A flat monetary threshold of ten crore rupees across all listed companies regardless of size."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Under the 2023 amendment to SEBI LODR Regulation 30, an event or information is considered material if its value or expected financial impact exceeds the lower of: (1) 2% of turnover, (2) 2% of net worth, or (3) 5% of the three-year average absolute profit or loss after tax.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -13002,14 +12294,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI LODR Regulation 46, what are the statutory filing deadlines for a listed company regarding quarterly earnings call audio recordings and verbatim transcripts?",
           "options": [
-            "Audio recordings within twenty-four hours, and verbatim written transcripts within five working days of the call.",
-            "Both audio and transcripts must be submitted within forty-eight hours of the call.",
             "Audio recordings within seven days, with transcripts optional upon request by institutional shareholders.",
-            "Audio recordings within thirty days, and transcripts filed only with the annual statutory report."
+            "Audio recordings within thirty days, and transcripts filed only with the annual statutory report.",
+            "Audio recordings within twenty-four hours, and verbatim written transcripts within five working days of the call.",
+            "Both audio and transcripts must be submitted within forty-eight hours of the call."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Under Regulation 46(2)(oa) of SEBI LODR, listed entities must make available the audio/video recordings on their website and to stock exchanges within twenty-four hours, and upload the verbatim transcript within five working days of the conclusion of the investor conference call.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -13051,14 +12343,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 15G of the SEBI Act 1992, what is the maximum statutory financial penalty that can be levied for insider trading violations?",
           "options": [
-            "Twenty-five crore rupees or three times the amount of profits made out of insider trading, whichever is higher.",
-            "A fixed fine of one crore rupees regardless of the quantum of illegal profits generated.",
             "Ten percent of the company's total annual turnover with zero individual executive liability.",
-            "Five crore rupees or two times the profits made, whichever is lower."
+            "Five crore rupees or two times the profits made, whichever is lower.",
+            "A fixed fine of one crore rupees regardless of the quantum of illegal profits generated.",
+            "Twenty-five crore rupees or three times the amount of profits made out of insider trading, whichever is higher."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under Section 15G of the SEBI Act 1992, any insider who deals in securities on the basis of UPSI or communicates UPSI is liable to a penalty of twenty-five crore rupees or three times the amount of profits made out of insider trading, whichever is higher.",
-          "answer": 0
+          "answer": 3
         }
       }
     ],
@@ -13178,14 +12470,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulations, what is the statutory ceiling on General Corporate Purposes (GCP) as a percentage of fresh issue proceeds?",
           "options": [
-            "Maximum twenty-five percent (25%) of the total fresh issue proceeds.",
-            "Maximum fifty percent (50%) of total gross proceeds including the Offer for Sale.",
             "Zero percent, as all fresh capital must be deployed into debt prepayment.",
-            "Up to eighty percent at the sole discretion of the Board Running Lead Managers."
+            "Up to eighty percent at the sole discretion of the Board Running Lead Managers.",
+            "Maximum fifty percent (50%) of total gross proceeds including the Offer for Sale.",
+            "Maximum twenty-five percent (25%) of the total fresh issue proceeds."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under Regulation 7(2) of the SEBI ICDR Regulations 2018, the amount earmarked for General Corporate Purposes (GCP) in the draft offer document cannot exceed twenty-five percent (25%) of the amount raised by the issuer through the fresh issue.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -13228,14 +12520,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory reservation requirement for Domestic Mutual Funds within the Anchor Investor tranche under SEBI ICDR Regulations?",
           "options": [
-            "At least one-third (33.33%) of the anchor allocation must be reserved exclusively for domestic mutual funds.",
-            "Exactly ten percent of the anchor allocation must be reserved for foreign portfolio investors.",
             "Fifty percent of the entire public issue must be given to domestic banks.",
-            "Zero reservation, as anchor shares are allocated purely on a first-come, first-served basis."
+            "Zero reservation, as anchor shares are allocated purely on a first-come, first-served basis.",
+            "At least one-third (33.33%) of the anchor allocation must be reserved exclusively for domestic mutual funds.",
+            "Exactly ten percent of the anchor allocation must be reserved for foreign portfolio investors."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Under Schedule XIII of the SEBI ICDR Regulations 2018, at least one-third (33.33%) of the anchor investor allocation must be reserved exclusively for domestic mutual funds, ensuring domestic retail savings participate in institutional anchor allocations.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -13244,12 +12536,12 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "say": [
           "We now advance to Part 4: Green Shoe Option (GSO) 30-Day Secondary Price Stabilization Engine. The first thirty calendar days following a public listing represent a critical period of secondary market price discovery. If macroeconomic volatility, institutional profit-taking, or speculative short-sellers assault the stock, selling volume can overwhelm organic buyer demand, driving the trading price below the public issue price and inflicting devastating financial losses on retail allottees.",
           "To insulate the stock against post-listing collapse, issuers implement the Green Shoe Option (GSO), codified under Regulation 115 of the SEBI ICDR Regulations. Prior to the IPO, the designated merchant banker—the Stabilizing Agent—enters into a formal Share Lending Agreement with the company promoters. The stabilizing agent is legally permitted to borrow up to a statutory maximum of fifteen percent (15%) of the total issue size from pre-issue shareholders.",
-          "These excess cash proceeds are not remitted to the corporate treasury; they are deposited into a dedicated, segregated GSO Bank Account maintained by the stabilizing agent. This structure creates a synthetic short position for the underwriting syndicate, backed by one hundred percent cash reserves. Let us connect Green Shoe Option (GSO) 30-Day Secondary Price Stabilization directly to day-to-day practice: Consider a Central Bank Foreign Exchange Currency Stabilization Reserve: when speculative downward currency pressure threatens exchange stab, the most important discipline is verifying the underlying assumptions before acting on the headline figure. Under Regulation 115 of SEBI ICDR Regulations, the stabilizing agent may borrow up to a statutory maximum of fifteen percent (15%) of the total issue size from promoters, and all net financial gains arising from secondary stabilization operations must be remitted to the government's Investor Education and Protection Fund (IEPF), which is why experienced practitioners always document both the primary calculation and the boundary conditions surrounding Governance and Currency.",
+          "These excess cash proceeds are not remitted to the corporate treasury; they are deposited into a dedicated, segregated GSO Bank Account maintained by the stabilizing agent. This structure creates a synthetic short position for the underwriting syndicate, backed by one hundred percent cash reserves. In day-to-day practice: Consider a Central Bank Foreign Exchange Currency Stabilization Reserve: when speculative downward currency pressure threatens exchange stab, the most important discipline is verifying the underlying assumptions before acting on the headline figure. Under Regulation 115 of SEBI ICDR Regulations, the stabilizing agent may borrow up to a statutory maximum of fifteen percent (15%) of the total issue size from promoters, and all net financial gains arising from secondary stabilization operations must be remitted to the government's Investor Education and Protection Fund (IEPF), which is why experienced practitioners always document both the primary calculation and the boundary conditions surrounding Governance and Currency.",
           "If the stock trades at a premium to the issue price in secondary trading, the market is robust; the stabilizing agent takes zero action, and the company issues fresh primary shares to repay the borrowed promoter shares. However, if selling pressure pushes the stock price BELOW the issue price, the stabilizing agent intervenes decisively! The agent enters the open market and executes secondary market buybacks using the cash stored in the GSO account.",
           "By continuously buying shares whenever the stock trades below the issue price, the stabilizing agent establishes an institutional price floor, absorbing panic selling and stabilizing market valuation. Once thirty calendar days elapse, the purchased shares are returned to the promoters to extinguish the stock loan. Any financial surplus generated—the difference between the issue price collected and the lower secondary buyback prices paid—cannot be retained by the company or bankers. Under statutory corporate law, all net stabilization profits must be transferred directly to the government's Investor Education and Protection Fund (IEPF).",
           "Furthermore, the stabilizing agent must submit daily transaction reports to stock exchange surveillance departments, detailing every share purchased, acquisition prices, and remaining cash balances. Operating with audited transparency reassures public capital markets that secondary market liquidity is backed by regulated stabilization reserves.",
           "In addition, enterprise finance teams must verify that share lending transactions are exempt from capital gains taxation under Section 47 of the Indian Income Tax Act. Ensuring full statutory tax compliance protects promoters from unintended tax liabilities during stabilization.",
-          "Furthermore, the Stabilizing Agent must adhere to rigid daily reporting covenants with stock exchange surveillance departments. Under SEBI ICDR Regulation 115, the agent must submit daily transaction logs detailing every single share purchased in the secondary market, the exact execution price, the broker identification number, and the remaining cash balance in the GSO bank account. Let us connect Green Shoe Option (GSO) 30-Day Secondary Price Stabilization directly to day-to-day practice: Consider a Central Bank Foreign Exchange Currency Stabilization Reserve: when speculative downward currency pressure threatens exchange stab, the most important discipline is verifying the underlying assumptions before acting on the headline figure. Under Regulation 115 of SEBI ICDR Regulations, the stabilizing agent may borrow up to a statutory maximum of fifteen percent (15%) of the total issue size from promoters, and all net financial gains arising from secondary stabilization operations must be remitted to the government's Investor Education and Protection Fund (IEPF), which is why experienced practitioners always document both the primary calculation and the boundary conditions surrounding Currency and threatens.",
+          "Furthermore, the Stabilizing Agent must adhere to rigid daily reporting covenants with stock exchange surveillance departments. Under SEBI ICDR Regulation 115, the agent must submit daily transaction logs detailing every single share purchased in the secondary market, the exact execution price, the broker identification number, and the remaining cash balance in the GSO bank account. In day-to-day practice: Consider a Central Bank Foreign Exchange Currency Stabilization Reserve: when speculative downward currency pressure threatens exchange stab, the most important discipline is verifying the underlying assumptions before acting on the headline figure. Under Regulation 115 of SEBI ICDR Regulations, the stabilizing agent may borrow up to a statutory maximum of fifteen percent (15%) of the total issue size from promoters, and all net financial gains arising from secondary stabilization operations must be remitted to the government's Investor Education and Protection Fund (IEPF), which is why experienced practitioners always document both the primary calculation and the boundary conditions surrounding Currency and threatens.",
           "In addition, corporate finance teams must verify the statutory tax status of share lending transactions under Section 47 of the Indian Income Tax Act. Under Indian tax law, the transfer of capital assets under a formal SEBI Green Shoe share lending agreement is explicitly exempt from capital gains taxation. Ensuring full tax covenant compliance shields company promoters and venture backers from unexpected tax liabilities upon the lending and subsequent return of borrowed shares.",
           "In Part 4, we build an Enterprise Green Shoe Option (GSO) Secondary Price Stabilization Simulator in Python. We will model 15% share lending mechanics, simulate 30-day post-listing secondary trading volatility scenarios, execute automated stabilizing agent open-market buybacks below the issue price, calculate promoter share redelivery schedules, and compute mandatory surplus transfers to the IEPF."
         ],
@@ -13278,14 +12570,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 115 of SEBI ICDR, what is the maximum percentage of shares that an issuer may borrow from promoters for a Green Shoe Option, and what happens to any net financial surplus generated from stabilization?",
           "options": [
-            "Maximum fifteen percent (15%) of the total issue size; all net cash surplus must be transferred directly to the Investor Education and Protection Fund (IEPF).",
-            "Up to fifty percent of the issue size; all cash profits are retained by the merchant bankers as underwriting fees.",
             "Maximum five percent of the issue size; all profits are distributed as dividends to corporate promoters.",
-            "Twenty percent of the issue size; all profits are credited to the company's General Corporate Purposes reserve."
+            "Maximum fifteen percent (15%) of the total issue size; all net cash surplus must be transferred directly to the Investor Education and Protection Fund (IEPF).",
+            "Twenty percent of the issue size; all profits are credited to the company's General Corporate Purposes reserve.",
+            "Up to fifty percent of the issue size; all cash profits are retained by the merchant bankers as underwriting fees."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Under Regulation 115 of SEBI ICDR Regulations, the stabilizing agent may borrow up to a statutory maximum of fifteen percent (15%) of the total issue size from promoters, and all net financial gains arising from secondary stabilization operations must be remitted to the government's Investor Education and Protection Fund (IEPF).",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -13405,14 +12697,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEC Rule 13e-4, what is the mandatory minimum duration that a company-sponsored tender offer must remain open to eligible security holders?",
           "options": [
-            "A minimum of twenty business days from the date the tender offer is formally commenced.",
             "Exactly five business days to prevent secondary market speculative price swings.",
+            "A minimum of twenty business days from the date the tender offer is formally commenced.",
             "Forty-eight hours, matching public market quarterly earnings announcement windows.",
             "Ninety calendar days, subject to unanimous approval by the board of directors."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Under SEC Rule 13e-4(f)(1)(i) of the Securities Exchange Act of 1934, an issuer tender offer must remain open for a minimum of twenty business days from the date the offer is first published, sent, or given to security holders, ensuring adequate time for informed decision-making.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -13453,14 +12745,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a secondary employee stock transaction involving option exercise, how is the spread between the exercise strike price and the prevailing 409A Fair Market Value taxed under US and Indian tax regulations?",
           "options": [
-            "As ordinary wage compensation subject to mandatory employer payroll and perquisite tax withholding.",
-            "As tax-free return of capital with zero statutory reporting obligations.",
             "Exclusively as long-term capital gains regardless of the holding duration.",
-            "As corporate dividend distribution deducted directly from company retained earnings."
+            "As corporate dividend distribution deducted directly from company retained earnings.",
+            "As ordinary wage compensation subject to mandatory employer payroll and perquisite tax withholding.",
+            "As tax-free return of capital with zero statutory reporting obligations."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "The spread between the option exercise strike price and the prevailing Fair Market Value (409A FMV) is classified as ordinary wage compensation (Perquisite Tax in India under Section 17(2)), subject to mandatory employer payroll tax withholding at top marginal rates.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -13502,14 +12794,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational purpose of a Right of First Refusal (ROFR) in a venture-backed technology company's capitalization agreements?",
           "options": [
-            "To empower the company and existing investors to match any third-party purchase offer and prevent unauthorized equity transfers.",
+            "To grant junior engineers veto authority over executive compensation agreements.",
             "To force all employees to sell their shares at a mandatory fifty percent discount to founders.",
             "To automatically dissolve the company's option pool upon completion of a Series B financing round.",
-            "To grant junior engineers veto authority over executive compensation agreements."
+            "To empower the company and existing investors to match any third-party purchase offer and prevent unauthorized equity transfers."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "A Right of First Refusal (ROFR) grants the company (Primary ROFR) and existing major investors (Secondary ROFR) the contractual right to purchase shares offered by a selling shareholder on identical terms to a bona fide third-party offer, protecting capitalization table integrity.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -13600,14 +12892,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary existential risk to a venture-backed startup when employees sell shares in unsanctioned secondary direct trades at high market valuations?",
           "options": [
-            "409A Valuation Contagion, where independent appraisers ratchet up the common stock strike price, crippling future talent recruitment.",
-            "An immediate compulsory liquidation of all company assets by bankruptcy courts.",
             "Automatic conversion of all preferred venture capital stock into common equity.",
-            "Forced delisting of the company from state corporate registries without right of appeal."
+            "409A Valuation Contagion, where independent appraisers ratchet up the common stock strike price, crippling future talent recruitment.",
+            "Forced delisting of the company from state corporate registries without right of appeal.",
+            "An immediate compulsory liquidation of all company assets by bankruptcy courts."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "When unsanctioned secondary trades occur at aggressive valuations, independent appraisers must incorporate those market data points into annual 409A appraisals, eliminating the common stock discount and inflating the exercise strike price for future employee option grants, which cripples recruitment.",
-          "answer": 0
+          "answer": 1
         }
       }
     ],
@@ -13675,14 +12967,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the US Foreign Sovereign Immunities Act (FSIA), why must a private technology company require sovereign wealth funds to execute an express waiver of sovereign immunity?",
           "options": [
-            "To ensure that commercial investment contracts, voting covenants, and escrow liabilities remain legally enforceable in neutral arbitration.",
             "To automatically transfer ownership of the sovereign nation's state assets to corporate founders.",
             "To eliminate all corporate income tax obligations across all operating jurisdictions.",
+            "To ensure that commercial investment contracts, voting covenants, and escrow liabilities remain legally enforceable in neutral arbitration.",
             "To allow the startup's executive management to issue sovereign government bonds."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Without an express, irrevocable waiver of sovereign immunity under the FSIA, foreign state-owned sovereign wealth funds enjoy statutory immunity from the jurisdiction of foreign courts and arbitral bodies, rendering commercial contracts and representations unenforceable.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -13724,14 +13016,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence to common shareholders and founders when a Downside IPO Ratchet is triggered during a public offering?",
           "options": [
+            "The public stock exchange cancels the IPO and freezes all secondary trading indefinitely.",
             "The company must issue additional bonus shares to the crossover investor at zero cost, inflicting severe dilution on common shareholders.",
             "The company is immediately forced into involuntary Chapter 11 bankruptcy liquidation.",
-            "The crossover investor's preferred stock is permanently converted into non-voting debt.",
-            "The public stock exchange cancels the IPO and freezes all secondary trading indefinitely."
+            "The crossover investor's preferred stock is permanently converted into non-voting debt."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "A Downside IPO Ratchet is a contractual anti-dilution mechanism that obligates the company to issue additional bonus shares to crossover investors at zero cost if the public offering price is lower than the mezzanine purchase price, causing severe dilution to common shareholders and founders.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -13822,14 +13114,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under standard NVCA Board Observer Agreements, under what circumstances may a company's board of directors legally exclude a strategic corporate investor's observer from a board meeting?",
           "options": [
-            "When deliberations involve proprietary competitor-sensitive IP, pricing secrets, or M&A discussions involving the observer's parent company.",
             "Only if the observer fails to arrive in formal business attire at the board meeting.",
             "Solely during discussions concerning the selection of corporate catering vendors.",
-            "Under zero circumstances, as board observers possess absolute statutory rights to attend all executive sessions."
+            "Under zero circumstances, as board observers possess absolute statutory rights to attend all executive sessions.",
+            "When deliberations involve proprietary competitor-sensitive IP, pricing secrets, or M&A discussions involving the observer's parent company."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under standard NVCA agreements, the board of directors retains the contractual right to exclude board observers from any portion of a meeting or withhold materials if the discussion involves competitive commercial topics, sensitive trade secrets, or M&A transactions where the observer's parent company is a potential bidder or competitor.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -13871,14 +13163,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the recommended governance practice for founders when negotiating late-stage mezzanine rounds to avoid the Crossover Ratchet Trap?",
           "options": [
-            "Insist on hard ratchet collar caps (limiting maximum dilution) or accept a lower headline valuation rather than granting uncapped downside protections.",
+            "Eliminate all independent directors from the board and transfer corporate governance to foreign banks.",
             "Grant uncapped ratchets unconditionally to achieve the highest possible press release valuation.",
-            "Pledge founders' personal residential real estate as collateral to guarantee crossover fund IRRs.",
-            "Eliminate all independent directors from the board and transfer corporate governance to foreign banks."
+            "Insist on hard ratchet collar caps (limiting maximum dilution) or accept a lower headline valuation rather than granting uncapped downside protections.",
+            "Pledge founders' personal residential real estate as collateral to guarantee crossover fund IRRs."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Founders must insist on hard caps on any ratchet dilution (limiting maximum bonus shares) or negotiate a realistic lower headline valuation without ratchets, rather than granting uncapped downside ratchets that can wipe out common shareholders in a market downturn.",
-          "answer": 0
+          "answer": 2
         }
       }
     ],
@@ -13946,14 +13238,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 3(1) and Regulation 7(1) of the SEBI SAST Regulations 2011, what voting share threshold triggers a mandatory open offer, and what is the minimum statutory offer size?",
           "options": [
-            "Acquiring 25% or more of voting rights triggers an open offer for at least 26% of the target company's total voting capital.",
+            "Acquiring 5% of voting rights triggers an immediate delisting of the company.",
             "Acquiring 50% of voting rights triggers an open offer for exactly 10% of total shares.",
             "Acquiring 15% of voting rights triggers an open offer for 51% of total shares.",
-            "Acquiring 5% of voting rights triggers an immediate delisting of the company."
+            "Acquiring 25% or more of voting rights triggers an open offer for at least 26% of the target company's total voting capital."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under Regulation 3(1) of SEBI SAST Regulations 2011, acquiring shares or voting rights entitling an acquirer to 25% or more triggers a mandatory open offer. Under Regulation 7(1), the open offer must be for at least 26% of the target's total voting capital.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -14044,14 +13336,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In corporate takeover defense, what is the operational mechanism of a 'White Knight' strategy?",
           "options": [
-            "Inviting a friendly, strategic suitor to make a competing counter-offer at a superior price to defeat an unsolicited hostile raider.",
-            "Filing for involuntary corporate dissolution to destroy shareholder equity.",
             "Purchasing corporate bonds of the hostile bidder to force bankruptcy.",
-            "Dismissing all independent directors and operating without a board of directors."
+            "Inviting a friendly, strategic suitor to make a competing counter-offer at a superior price to defeat an unsolicited hostile raider.",
+            "Dismissing all independent directors and operating without a board of directors.",
+            "Filing for involuntary corporate dissolution to destroy shareholder equity."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "A White Knight defense involves the target company's board soliciting a friendly strategic or financial suitor (the White Knight) to make a competing acquisition offer at a higher price or with superior terms to rescue the target from an unsolicited hostile takeover.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -14093,14 +13385,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 230(6) of the Indian Companies Act 2013, what dual statutory voting thresholds must be achieved to approve a court-sanctioned Scheme of Arrangement?",
           "options": [
-            "A majority in number (over 50% headcount) representing at least seventy-five percent (75%) in value of creditors and shareholders voting.",
             "A simple majority of fifty-one percent of shares present and voting.",
             "Unanimous one hundred percent written consent from all registered shareholders.",
+            "A majority in number (over 50% headcount) representing at least seventy-five percent (75%) in value of creditors and shareholders voting.",
             "Approval solely by the board of directors without requiring shareholder or creditor meetings."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Under Section 230(6) of the Companies Act 2013, a scheme must be approved by a majority in number representing three-fourths (75%) in value of the creditors or class of creditors, or members or class of members, present and voting.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -14142,14 +13434,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 15H of the SEBI Act 1992, what is the maximum statutory penalty that can be imposed for failure to make a mandatory public open offer upon crossing takeover thresholds?",
           "options": [
-            "Twenty-five crore rupees or three times the amount of profits made out of the failure, whichever is higher.",
+            "Five crore rupees or one-half of the value of shares acquired, whichever is lower.",
             "A fixed administrative fine of ten lakh rupees with zero executive disqualification.",
             "Ten percent of the company's historical net profit as determined by internal auditors.",
-            "Five crore rupees or one-half of the value of shares acquired, whichever is lower."
+            "Twenty-five crore rupees or three times the amount of profits made out of the failure, whichever is higher."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under Section 15H of the SEBI Act 1992, any person who fails to make a public announcement to acquire shares or make an open offer as required by regulations is liable to a penalty of twenty-five crore rupees or three times the amount of profits made out of such failure, whichever is higher.",
-          "answer": 0
+          "answer": 3
         }
       }
     ],
@@ -14267,14 +13559,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 68 of the Indian Companies Act 2013, what is the statutory ceiling on the quantum of shares a company may buy back in any financial year?",
           "options": [
-            "Maximum twenty-five percent (25%) of the aggregate of paid-up capital and free reserves of the company.",
-            "Up to fifty percent of total annual gross revenue.",
             "Zero percent, as share repurchases are prohibited for listed entities.",
-            "Up to seventy-five percent subject to approval by debt debenture holders."
+            "Up to seventy-five percent subject to approval by debt debenture holders.",
+            "Up to fifty percent of total annual gross revenue.",
+            "Maximum twenty-five percent (25%) of the aggregate of paid-up capital and free reserves of the company."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under Section 68(2)(c) of the Companies Act 2013, the buy-back of equity shares in any financial year cannot exceed twenty-five percent of the total paid-up equity capital and free reserves of the company.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -14316,14 +13608,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 197 of the Indian Companies Act 2013, what is the maximum total managerial remuneration payable by a public company to its directors in any financial year?",
           "options": [
-            "Maximum eleven percent (11.0%) of the net profits of the company computed under Section 198.",
+            "Up to fifty percent of EBITDA at the sole discretion of the Chairman.",
             "Maximum twenty-five percent of gross revenue.",
-            "A fixed ceiling of five crore rupees regardless of company profitability.",
-            "Up to fifty percent of EBITDA at the sole discretion of the Chairman."
+            "Maximum eleven percent (11.0%) of the net profits of the company computed under Section 198.",
+            "A fixed ceiling of five crore rupees regardless of company profitability."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Under Section 197(1) of the Companies Act 2013, the total managerial remuneration payable by a public company to its directors in any financial year cannot exceed eleven percent (11%) of the net profits of that company for that financial year computed in the manner laid down in Section 198.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -14365,14 +13657,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 135 of the Indian Companies Act 2013, what is the mandatory statutory Corporate Social Responsibility (CSR) expenditure requirement for eligible companies?",
           "options": [
+            "A voluntary donation determined solely by independent directors.",
             "At least two percent (2.0%) of the average net profits of the company made during the three immediately preceding financial years.",
             "One percent of total annual gross revenue.",
-            "Five percent of paid-up equity share capital.",
-            "A voluntary donation determined solely by independent directors."
+            "Five percent of paid-up equity share capital."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Under Section 135(5) of the Companies Act 2013, the board of every qualifying company must ensure that the company spends, in every financial year, at least two percent (2%) of the average net profits of the company made during the three immediately preceding financial years in pursuance of its CSR policy.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -14538,14 +13830,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulation 29, what is the statutory restriction on the Price Band established by an issuer in a book-built initial public offering?",
           "options": [
-            "The Cap Price cannot exceed one hundred twenty percent (120%) of the Floor Price.",
-            "The Cap Price can be set at any level provided it is approved by independent directors.",
             "The Floor Price must be set at zero with unlimited upward bidding.",
-            "The Price Band must be fixed at exactly ten rupees across all public offerings."
+            "The Price Band must be fixed at exactly ten rupees across all public offerings.",
+            "The Cap Price can be set at any level provided it is approved by independent directors.",
+            "The Cap Price cannot exceed one hundred twenty percent (120%) of the Floor Price."
           ],
-          "answerIndex": 0,
+          "answerIndex": 3,
           "why": "Under Regulation 29 of the SEBI ICDR Regulations 2018, the cap price cannot exceed one hundred twenty percent (120%) of the floor price, establishing a rigid twenty percent collar constraint to prevent price distortion.",
-          "answer": 0
+          "answer": 3
         }
       },
       {
@@ -14586,14 +13878,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 3(1) of the SEBI SAST Regulations 2011, what is the mandatory trigger for making a public announcement of an open offer?",
           "options": [
-            "Acquiring shares or voting rights entitling the acquirer and PACs to 25% or more of voting rights in the target company.",
-            "Acquiring five percent of voting shares in any calendar quarter.",
             "Purchasing more than ten crore rupees worth of shares on electronic stock exchanges.",
-            "Securing one board observer seat without voting rights."
+            "Securing one board observer seat without voting rights.",
+            "Acquiring shares or voting rights entitling the acquirer and PACs to 25% or more of voting rights in the target company.",
+            "Acquiring five percent of voting shares in any calendar quarter."
           ],
-          "answerIndex": 0,
+          "answerIndex": 2,
           "why": "Under Regulation 3(1) of the SEBI SAST Regulations 2011, acquiring shares or voting rights entitling an acquirer together with Persons Acting in Concert (PAC) to exercise twenty-five percent (25%) or more of voting rights triggers a mandatory public open offer.",
-          "answer": 0
+          "answer": 2
         }
       },
       {
@@ -14636,14 +13928,14 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 68 and Section 197 of the Indian Companies Act 2013, what are the statutory ceilings governing share buyback quantum and total managerial remuneration, respectively?",
           "options": [
-            "Buybacks are capped at 25% of paid-up capital and free reserves; managerial remuneration is capped at 11% of net profits.",
-            "Buybacks are capped at 50% of revenue; managerial remuneration is capped at 25% of EBITDA.",
             "Buybacks are capped at 10% of total assets; remuneration is capped at one crore rupees.",
-            "Both buybacks and managerial remuneration are entirely unregulated."
+            "Buybacks are capped at 25% of paid-up capital and free reserves; managerial remuneration is capped at 11% of net profits.",
+            "Both buybacks and managerial remuneration are entirely unregulated.",
+            "Buybacks are capped at 50% of revenue; managerial remuneration is capped at 25% of EBITDA."
           ],
-          "answerIndex": 0,
+          "answerIndex": 1,
           "why": "Under Section 68(2)(c) of the Companies Act 2013, share buybacks cannot exceed twenty-five percent of paid-up capital and free reserves. Under Section 197(1), total managerial remuneration cannot exceed eleven percent of net profits.",
-          "answer": 0
+          "answer": 1
         }
       },
       {
@@ -14719,9 +14011,3 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
   }
 ];
 
-// --- VERIFIED DAY REPLACEMENTS (claude_sandbox/expand): bcom_ent ---
-import { BCOM_ENT_LONG_LESSONS_FIXED_DAYS as _BCOM_ENT_LONG_LESSONS_FIXED_DAYS } from './bcomEntLongLessonsPatches';
-for (let _i = 0; _i < BCOM_ENT_LONG_LESSONS.length; _i++) {
-  const _fixed = _BCOM_ENT_LONG_LESSONS_FIXED_DAYS[BCOM_ENT_LONG_LESSONS[_i].day];
-  if (_fixed) (BCOM_ENT_LONG_LESSONS as unknown as import("./longLessonTypes").LongLesson[])[_i] = _fixed;
-}
