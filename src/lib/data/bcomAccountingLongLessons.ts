@@ -7229,7 +7229,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 115 replaced the legacy risks-and-rewards model with the control framework: revenue is recognized when control of promised goods or services is transferred to the customer.",
           "explanation": "Ind AS 115 replaced the legacy risks-and-rewards model with the control framework: revenue is recognized when control of promised goods or services is transferred to the customer."
-        }
+        },
+        "example": "Meena orders a sofa from a furniture showroom and pays Rs 30,000 upfront, but the sofa sits in the showroom godown for a week. Who carries the risk of damage is a muddy question. The cleaner question is who controls it. The showroom books its revenue only when the sofa is handed over and Meena can use it and decide what happens to it."
       },
       {
         "part": 2,
@@ -7256,7 +7257,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Under Ind AS 115.27, a good or service is distinct if it is: (1) capable of being distinct (customer benefits on its own), and (2) distinct within the context of the contract (separately identifiable).",
           "explanation": "Under Ind AS 115.27, a good or service is distinct if it is: (1) capable of being distinct (customer benefits on its own), and (2) distinct within the context of the contract (separately identifiable)."
-        }
+        },
+        "example": "A kirana owner packs a festival hamper with rice, cooking oil and sugar for Rs 900. Each item could be bought on its own from the shelf, and none of them is changed by being in the box, so the shop treats them as separate promises. A wedding decorator, by contrast, builds one custom stage out of many parts. The parts only matter together, so that whole job is a single promise."
       },
       {
         "part": 3,
@@ -7283,7 +7285,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Step 4 of Ind AS 115 mandates allocating transaction price in proportion to relative Standalone Selling Prices (SSP). Total SSP = $120k. Hardware = 60/120 * 96k = $48k; Cloud = 40/120 * 96k = $32k; Installation = 20/120 * 96k = $16k.",
           "explanation": "Step 4 of Ind AS 115 mandates allocating transaction price in proportion to relative Standalone Selling Prices (SSP). Total SSP = $120k. Hardware = 60/120 * 96k = $48k; Cloud = 40/120 * 96k = $32k; Installation = 20/120 * 96k = $16k."
-        }
+        },
+        "example": "An appliance shop sells a washing machine for Rs 30,000, installation for Rs 3,000 and a two-year service plan for Rs 6,000. A customer buys all three for a bundle price of Rs 35,100, a 10 percent discount on Rs 39,000. The shop splits the discount in proportion to the normal prices, so the machine gets Rs 27,000, installation Rs 2,700 and the service plan Rs 5,400."
       },
       {
         "part": 4,
@@ -7311,7 +7314,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Under Ind AS 115.91, incremental costs of obtaining a contract that would not have been incurred if the contract had not been obtained (such as sales commissions) must be capitalized and amortized systematically.",
           "explanation": "Under Ind AS 115.91, incremental costs of obtaining a contract that would not have been incurred if the contract had not been obtained (such as sales commissions) must be capitalized and amortized systematically."
-        }
+        },
+        "example": "A yoga studio sells a twelve-month membership for Rs 12,000, and the studio earns it as classes are delivered, about Rs 1,000 every month. The agent who brought the member in was paid Rs 600, and that commission only exists because the sale happened. So the studio spreads the Rs 600 over the same twelve months, Rs 50 each month, instead of charging it all at once."
       },
       {
         "part": 5,
@@ -7338,7 +7342,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "A receivable is an unconditional right to consideration, where only the passage of time is required before payment is due. A contract asset is an entity's right to consideration conditioned on future performance.",
           "explanation": "A receivable is an unconditional right to consideration, where only the passage of time is required before payment is due. A contract asset is an entity's right to consideration conditioned on future performance."
-        }
+        },
+        "example": "A painter agrees to paint a house for Rs 40,000, and the owner will pay only after inspecting the whole job. Once the walls are finished, the painter has earned something, but the right to be paid still depends on passing inspection, so it is a contract asset. After approval, only the passing of the fifteen payment days remains, and the amount becomes an ordinary receivable."
       }
     ],
     "summary": [
@@ -7395,7 +7400,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 116 eliminated the dual operating/finance lease model for lessees, establishing a single model where lessees must capitalize ROU assets and lease liabilities for virtually all leases.",
           "explanation": "Ind AS 116 eliminated the dual operating/finance lease model for lessees, establishing a single model where lessees must capitalize ROU assets and lease liabilities for virtually all leases."
-        }
+        },
+        "example": "Rajesh rents a shop for Rs 20,000 a month for five years. In the old style of accounting, only the monthly rent showed up and the shop itself stayed invisible on the books. Under the single lessee model, his books also show the right to use the shop for five years and a matching promise to pay the rent, much like a shop he had bought with a loan."
       },
       {
         "part": 2,
@@ -7422,7 +7428,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Under Ind AS 116.26, the lease liability is initially measured at the present value of future lease payments discounted at the rate implicit in the lease or the lessee's incremental borrowing rate (IBR).",
           "explanation": "Under Ind AS 116.26, the lease liability is initially measured at the present value of future lease payments discounted at the rate implicit in the lease or the lessee's incremental borrowing rate (IBR)."
-        }
+        },
+        "example": "A tailor takes a sewing machine on lease and promises Rs 10,000 at the end of each of three years. Her bank would lend to her at 10 percent, so she discounts each payment at that rate. About Rs 9,091 plus Rs 8,264 plus Rs 7,513 comes to roughly Rs 24,869. That is what she records, not the Rs 30,000 she will pay in total."
       },
       {
         "part": 3,
@@ -7450,7 +7457,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Front-loading occurs because initial interest expense (on the large opening liability balance) plus constant straight-line ROU depreciation creates a total P&L charge exceeding old straight-line operating rent.",
           "explanation": "Front-loading occurs because initial interest expense (on the large opening liability balance) plus constant straight-line ROU depreciation creates a total P&L charge exceeding old straight-line operating rent."
-        }
+        },
+        "example": "Take the tailor's machine lease again, recorded at about Rs 24,869. In year one, 10 percent interest on that balance is about Rs 2,487, and straight-line depreciation over three years is about Rs 8,290. Together that is roughly Rs 10,777, more than the Rs 10,000 rent. By year three the interest has shrunk and the charge falls to about Rs 9,199, so the cost is heavier at the start."
       },
       {
         "part": 4,
@@ -7476,7 +7484,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Former rental expenses are removed from operating costs and reclassified as depreciation and interest (below EBITDA), expanding EBITDA. Cash payments shift from operating outflows to financing outflows.",
           "explanation": "Former rental expenses are removed from operating costs and reclassified as depreciation and interest (below EBITDA), expanding EBITDA. Cash payments shift from operating outflows to financing outflows."
-        }
+        },
+        "example": "A small bakery used to show its shop rent of Rs 1,20,000 as an operating cost. Under the new lease rules, that rent is split into depreciation of Rs 90,000 and interest of Rs 30,000, both counted below EBITDA, so EBITDA looks Rs 1,20,000 higher although the same cash goes out. A six-month stall rental, however, can usually stay as simple rent."
       },
       {
         "part": 5,
@@ -7502,7 +7511,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "If the transfer does not satisfy Ind AS 115 control transfer criteria, it is not a sale. The seller-lessee continues to recognize the asset and records cash received as a financial liability (collateralized loan).",
           "explanation": "If the transfer does not satisfy Ind AS 115 control transfer criteria, it is not a sale. The seller-lessee continues to recognize the asset and records cash received as a financial liability (collateralized loan)."
-        }
+        },
+        "example": "A farmer sells his tractor to a moneylender for Rs 5,00,000 and takes it straight back on rent, with the right to buy it back at the same price whenever he wants. The moneylender never really gets control of the tractor. So the farmer cannot call it a sale. He keeps the tractor on his books and records the Rs 5,00,000 as a loan."
       }
     ],
     "summary": [
@@ -7558,7 +7568,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 113.9 defines fair value as an exit price: the price received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date.",
           "explanation": "Ind AS 113.9 defines fair value as an exit price: the price received to sell an asset or paid to transfer a liability in an orderly transaction between market participants at the measurement date."
-        }
+        },
+        "example": "Suresh bought an old scooter for Rs 80,000. Today a normal buyer would pay about Rs 45,000 in an ordinary, unhurried sale, while a panicked seller might get only Rs 30,000. Fair value is the Rs 45,000 figure. It is the price he would receive to sell it now, not what he paid and not a distress price."
       },
       {
         "part": 2,
@@ -7587,7 +7598,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Transport costs adjust fair value because location is an attribute of the asset. Transaction costs are specific to the transaction, not a characteristic of the asset, and are therefore not deducted in measuring fair value.",
           "explanation": "Transport costs adjust fair value because location is an attribute of the asset. Transaction costs are specific to the transaction, not a characteristic of the asset, and are therefore not deducted in measuring fair value."
-        }
+        },
+        "example": "A wheat farmer can sell at the big mandi in his district, where most local wheat is traded, at Rs 2,200 per quintal. A distant mandi quotes Rs 2,260. He uses the busy mandi as his main market. Transport of Rs 20 per quintal reduces the value to Rs 2,180, but the broker's commission of Rs 30 is not deducted."
       },
       {
         "part": 3,
@@ -7614,7 +7626,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Under Ind AS 113.28, highest and best use must be: (1) physically possible, (2) legally permissible, and (3) financially feasible.",
           "explanation": "Under Ind AS 113.28, highest and best use must be: (1) physically possible, (2) legally permissible, and (3) financially feasible."
-        }
+        },
+        "example": "A plot owner on the edge of town dreams of building a shopping mall. But the local zoning allows only homes, so the mall is not legally permitted. Flats are possible, allowed and profitable, so the plot should be valued as a site for flats. The best use must be possible, permitted and make financial sense, all three together."
       },
       {
         "part": 4,
@@ -7641,7 +7654,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Level 1 inputs are unadjusted quoted prices in active markets for identical assets or liabilities accessible at the measurement date (e.g., listed equities on liquid exchanges).",
           "explanation": "Level 1 inputs are unadjusted quoted prices in active markets for identical assets or liabilities accessible at the measurement date (e.g., listed equities on liquid exchanges)."
-        }
+        },
+        "example": "A sugar trader holds listed company shares valued at today's exchange price, which anyone can check, so that is the most reliable level. A used truck valued by comparing similar trucks, with small adjustments, sits in the middle. A stake in a friend's unlisted workshop valued from the trader's own forecasts is the least certain. A shaky borrower's debt is also valued with its own credit risk in mind."
       },
       {
         "part": 5,
@@ -7668,7 +7682,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 113 establishes that if a Principal Market exists (the market with greatest volume and activity), fair value must be measured using the principal market price, regardless of prices in other markets.",
           "explanation": "Ind AS 113 establishes that if a Principal Market exists (the market with greatest volume and activity), fair value must be measured using the principal market price, regardless of prices in other markets."
-        }
+        },
+        "example": "A jeweller values her gold coins at Rs 6,000 per gram, the rate in the town bullion market where most gold changes hands. A faraway market shows Rs 6,050, but she does not use it. For her unlisted shop investment, the notes also say that if growth falls by one percentage point, the value falls by Rs 2,00,000."
       }
     ],
     "summary": [
@@ -7726,7 +7741,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "The 2008 financial crisis demonstrated that waiting for an incurred loss event before recognizing impairment delayed provisions until it was too late. Ind AS 109 introduced the forward-looking Expected Credit Loss model.",
           "explanation": "The 2008 financial crisis demonstrated that waiting for an incurred loss event before recognizing impairment delayed provisions until it was too late. Ind AS 109 introduced the forward-looking Expected Credit Loss model."
-        }
+        },
+        "example": "A kirana owner gives credit to neighbours. In the old way, he made a provision only after someone failed to pay. Now he looks ahead. His past records show about 3 percent of credit sales go unpaid, and a weak harvest makes it riskier. So on Rs 2,00,000 of credit sales he sets aside Rs 6,000 in advance."
       },
       {
         "part": 2,
@@ -7755,7 +7771,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Under Ind AS 109.4.1.2, a financial asset is measured at amortized cost if: (1) it is held within a Hold to Collect business model, and (2) contractual cash flows represent solely payments of principal and interest (SPPI).",
           "explanation": "Under Ind AS 109.4.1.2, a financial asset is measured at amortized cost if: (1) it is held within a Hold to Collect business model, and (2) contractual cash flows represent solely payments of principal and interest (SPPI)."
-        }
+        },
+        "example": "Ramesh lends Rs 50,000 to his cousin at 8 percent simple interest and plans to collect it over three years, so he is holding it to collect. The payments are only principal and interest, so it counts at amortised cost. A chit scheme whose payout swings with the gold price would not pass that test, however safe it looks."
       },
       {
         "part": 3,
@@ -7784,7 +7801,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "In Stages 1 and 2, interest is calculated on the Gross Carrying Amount. Once an asset becomes credit-impaired (Stage 3), interest revenue must be calculated on the Net Carrying Amount (Gross less Loss Allowance).",
           "explanation": "In Stages 1 and 2, interest is calculated on the Gross Carrying Amount. Once an asset becomes credit-impaired (Stage 3), interest revenue must be calculated on the Net Carrying Amount (Gross less Loss Allowance)."
-        }
+        },
+        "example": "A lender gives a shop owner Rs 1,00,000 at 10 percent. While the shop is doing fine, only the next twelve months of expected loss are provided. Once payments slip, the provision covers the whole life of the loan. When the loan has defaulted and Rs 30,000 is set aside, interest is earned on Rs 70,000, which is Rs 7,000, not Rs 10,000."
       },
       {
         "part": 4,
@@ -7812,7 +7830,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "For trade receivables without a significant financing component, the simplified approach mandates measuring the loss allowance at an amount equal to lifetime expected credit losses from Day 1, eliminating Stage 1 tracking.",
           "explanation": "For trade receivables without a significant financing component, the simplified approach mandates measuring the loss allowance at an amount equal to lifetime expected credit losses from Day 1, eliminating Stage 1 tracking."
-        }
+        },
+        "example": "A school-book wholesaler has Rs 5,00,000 owed by shops. From years of records, about 2 percent never gets paid. Under the simplified approach he sets aside Rs 10,000 at once, without tracking whether each shop got riskier. Separately, a farmer who locks in a selling price for his crop in advance is protecting himself from a price fall, which is the idea of hedging."
       },
       {
         "part": 5,
@@ -7841,7 +7860,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Because Loan 2 is 45 DPD (exceeding 30 DPD), it has experienced a Significant Increase in Credit Risk (Stage 2). Lifetime ECL applies: $500,000 * 12% * 45% = $27,000.",
           "explanation": "Because Loan 2 is 45 DPD (exceeding 30 DPD), it has experienced a Significant Increase in Credit Risk (Stage 2). Lifetime ECL applies: $500,000 * 12% * 45% = $27,000."
-        }
+        },
+        "example": "A cooperative society lends Rs 5,00,000 to a dairy, and the dairy's payments are now 45 days late. That is a clear rise in credit risk, so the provision covers the whole life of the loan. The chance of default is 12 percent and the share lost if it defaults is 45 percent, so the provision is 5,00,000 times 12 percent times 45 percent, which is Rs 27,000."
       }
     ],
     "summary": [
@@ -7899,7 +7919,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "The Financial Controller is the ultimate steward of financial reporting integrity, ensuring that complex converged standards (Ind AS 115, 116, 113, 109) are implemented with mathematical and statutory precision.",
           "explanation": "The Financial Controller is the ultimate steward of financial reporting integrity, ensuring that complex converged standards (Ind AS 115, 116, 113, 109) are implemented with mathematical and statutory precision."
-        }
+        },
+        "example": "A cooperative sugar mill has lease contracts, sale agreements, share-based pay and loans, all under different rules. Its chief accountant is the person who must make sure each rule is applied correctly and that the final numbers can be trusted. Like a head cashier who signs off the day's cash, she answers for the reliability of the whole report."
       },
       {
         "part": 2,
@@ -7927,7 +7948,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Hardware receives 75/125 * 100k = $60,000 (recognized at point in time). Cloud receives 50/125 * 100k = $40,000 (recognized over 24 months, so 12 months in Year 1 = $20,000). Total Year 1 revenue = $80,000.",
           "explanation": "Hardware receives 75/125 * 100k = $60,000 (recognized at point in time). Cloud receives 50/125 * 100k = $40,000 (recognized over 24 months, so 12 months in Year 1 = $20,000). Total Year 1 revenue = $80,000."
-        }
+        },
+        "example": "A shop sells a solar water heater for Rs 1,00,000 including two years of service. Priced separately, the heater is Rs 75,000 and the service Rs 50,000, so the price splits 60,000 and 40,000. The heater is revenue at delivery. The service is earned at Rs 20,000 a year. After year one, revenue is Rs 80,000, and the remaining Rs 20,000 is still a contract liability."
       },
       {
         "part": 3,
@@ -7956,7 +7978,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Initial lease liability = PV of 5 payments of $120k at 7% = $492,023.69. Initial ROU Asset = Initial liability ($492,023.69) + initial direct costs ($25,000) = $517,023.69.",
           "explanation": "Initial lease liability = PV of 5 payments of $120k at 7% = $492,023.69. Initial ROU Asset = Initial liability ($492,023.69) + initial direct costs ($25,000) = $517,023.69."
-        }
+        },
+        "example": "A transport operator leases a truck, paying Rs 1,00,000 at the end of each year for five years, and her borrowing rate is 7 percent. The present value of those payments is about Rs 4,10,020, so that becomes the lease liability. She also spends Rs 20,000 on arranging the lease, so the right-of-use asset is recorded at about Rs 4,30,020."
       },
       {
         "part": 4,
@@ -7984,7 +8007,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Covenant breaches signify a Significant Increase in Credit Risk (SICR), moving the loan into Stage 2. Lifetime ECL applies: $2,000,000 * 8.5% PD * 40% LGD = $68,000.",
           "explanation": "Covenant breaches signify a Significant Increase in Credit Risk (SICR), moving the loan into Stage 2. Lifetime ECL applies: $2,000,000 * 8.5% PD * 40% LGD = $68,000."
-        }
+        },
+        "example": "A lender gave Rs 20,00,000 to a rice mill that then broke the loan conditions, a clear signal of higher risk. The chance of default is 8.5 percent and the share lost if it defaults is 40 percent, so the provision is 20,00,000 times 8.5 percent times 40 percent, which is Rs 68,000. Valuing an unlisted mill separately would need the buyer's own cash forecasts."
       },
       {
         "part": 5,
@@ -8013,7 +8037,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "The Milestone 7 Capstone engine validates all assertions across revenue, leases, fair value, and credit impairment, concluding with ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS.",
           "explanation": "The Milestone 7 Capstone engine validates all assertions across revenue, leases, fair value, and credit impairment, concluding with ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS."
-        }
+        },
+        "example": "At month end a shopkeeper checks four things before signing his books: the cash in the drawer, the stock count, what customers owe and what he owes on rent. Only when all four agree with the records does he sign. A year-end sign-off across revenue, leases, fair value and credit losses works the same way: every check must pass together."
       }
     ],
     "summary": [
@@ -8071,7 +8096,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 102 requires equity-settled share-based payments to be measured at grant-date fair value and recognized as an expense over the vesting period, crediting equity directly.",
           "explanation": "Ind AS 102 requires equity-settled share-based payments to be measured at grant-date fair value and recognized as an expense over the vesting period, crediting equity directly."
-        }
+        },
+        "example": "A startup owner promises each employee 1,000 share options worth Rs 50 each on the grant date, vesting after four years of service. The total, Rs 50,000 per employee, is charged as an expense over the four years, Rs 12,500 a year, with the other side going into equity. No cash leaves the company, but the staff time is still a cost."
       },
       {
         "part": 2,
@@ -8099,7 +8125,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Non-market vesting conditions are not factored into the grant-date fair value per option. Instead, the entity trues up the estimate of the number of instruments expected to vest at each reporting date.",
           "explanation": "Non-market vesting conditions are not factored into the grant-date fair value per option. Instead, the entity trues up the estimate of the number of instruments expected to vest at each reporting date."
-        }
+        },
+        "example": "A firm grants 100 employees 1,000 options each, each valued at Rs 50 on the grant date. At first it expects 90 employees to stay, so it plans a cost of 90,000 options times Rs 50, which is Rs 45,00,000. When only 80 are expected to stay, the cost falls to Rs 40,00,000. The Rs 50 value stays fixed; only the headcount is adjusted."
       },
       {
         "part": 3,
@@ -8128,7 +8155,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Under Ind AS 102 (IG11), each tranche in a graded vesting scheme represents an independent service agreement and must be expensed separately over its specific vesting duration.",
           "explanation": "Under Ind AS 102 (IG11), each tranche in a graded vesting scheme represents an independent service agreement and must be expensed separately over its specific vesting duration."
-        }
+        },
+        "example": "A company gives a manager 900 options worth Rs 30 each, with 300 vesting at the end of each of the next three years. Each tranche is worth Rs 9,000 and is expensed over its own period. Year one is Rs 9,000 plus Rs 4,500 plus Rs 3,000, which is Rs 16,500. Year two is Rs 7,500 and year three is Rs 3,000, so the cost is heavier at the start."
       },
       {
         "part": 4,
@@ -8156,7 +8184,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Cash-settled share-based payments create a legal obligation to disburse cash, mandating liability classification and continuous fair value remeasurement at every balance sheet date through P&L.",
           "explanation": "Cash-settled share-based payments create a legal obligation to disburse cash, mandating liability classification and continuous fair value remeasurement at every balance sheet date through P&L."
-        }
+        },
+        "example": "A manager gets 1,000 stock appreciation rights, paid in cash after two years. At the end of year one each right is worth Rs 20, so the company records half of 1,000 times Rs 20, which is Rs 10,000, as a liability. At the end of year two each right is worth Rs 35, so the liability becomes Rs 35,000 and year two adds Rs 25,000."
       },
       {
         "part": 5,
@@ -8184,7 +8213,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "The Ind AS 102 engine validates all calculations across equity ESOPs, graded vesting, and cash SARs, culminating in IND_AS_102_SHARE_BASED_PAYMENTS_PASS.",
           "explanation": "The Ind AS 102 engine validates all calculations across equity ESOPs, graded vesting, and cash SARs, culminating in IND_AS_102_SHARE_BASED_PAYMENTS_PASS."
-        }
+        },
+        "example": "A school board checks three kinds of answer sheets against a marking key before certifying the results. If the sheets for all three kinds match the key, the result is signed. Share-based payment checks work the same way: the equity grants, the graded tranches and the cash appreciation rights are each tested against figures worked out by hand before sign-off."
       }
     ],
     "summary": [
@@ -8242,7 +8272,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The Balance Sheet Liability Method computes deferred tax by comparing carrying amounts against tax bases, capturing all temporary differences including those that bypass P&L through OCI or equity.",
           "explanation": "The Balance Sheet Liability Method computes deferred tax by comparing carrying amounts against tax bases, capturing all temporary differences including those that bypass P&L through OCI or equity."
-        }
+        },
+        "example": "A shop pays income tax on the profit the tax office actually accepts this year, which is current tax. Now it buys a machine for Rs 1,00,000. In year one, accounts depreciate it by Rs 20,000 but tax allows Rs 30,000. The machine is worth Rs 80,000 in the books and Rs 70,000 for tax. At an assumed 25 percent rate, the Rs 10,000 gap means Rs 2,500 of tax comes later."
       },
       {
         "part": 2,
@@ -8269,7 +8300,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "The tax base of a liability is its carrying amount less any future tax deductions ($150,000 - $150,000 = $0.00).",
           "explanation": "The tax base of a liability is its carrying amount less any future tax deductions ($150,000 - $150,000 = $0.00)."
-        }
+        },
+        "example": "A shop books a Rs 1,50,000 provision for future warranty repairs, but the tax office allows the deduction only when the repairs are actually paid. The liability's tax base is its book amount, Rs 1,50,000, minus the Rs 1,50,000 that will be deductible later, which is zero. That gap of Rs 1,50,000 is a temporary difference that will reduce tax in future years."
       },
       {
         "part": 3,
@@ -8296,7 +8328,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 12 Paragraph 24 restricts DTA recognition to the extent that it is probable (>50% likelihood) that sufficient future taxable profit will exist to absorb the tax deduction.",
           "explanation": "Ind AS 12 Paragraph 24 restricts DTA recognition to the extent that it is probable (>50% likelihood) that sufficient future taxable profit will exist to absorb the tax deduction."
-        }
+        },
+        "example": "A bakery books Rs 2,00,000 as a provision for doubtful dues, but the tax office allows it only when debts are actually written off. At an assumed 25 percent rate, that is a possible Rs 50,000 tax saving later. The bakery records it as an asset only if it will probably earn enough taxable profit in future to use it. If it keeps making losses, it should not."
       },
       {
         "part": 4,
@@ -8324,7 +8357,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Section 115BAA specifies a 22% base corporate tax rate. Applying the mandatory 10% surcharge yields 24.2%, and adding the 4% health & education cess yields the exact effective rate of 25.168%.",
           "explanation": "Section 115BAA specifies a 22% base corporate tax rate. Applying the mandatory 10% surcharge yields 24.2%, and adding the 4% health & education cess yields the exact effective rate of 25.168%."
-        }
+        },
+        "example": "A company earns taxable profit of Rs 10,00,000 and chooses the lower corporate rate. Tax at 22 percent is Rs 2,20,000. A 10 percent surcharge adds Rs 22,000, making Rs 2,42,000. Then a 4 percent cess on that adds Rs 9,680, so the total is Rs 2,51,680, which is exactly 25.168 percent of the profit."
       },
       {
         "part": 5,
@@ -8352,7 +8386,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The Ind AS 12 engine validates all temporary differences, gross DTL/DTA, and net liability classification, concluding with IND_AS_12_INCOME_TAXES_DTA_DTL_PASS.",
           "explanation": "The Ind AS 12 engine validates all temporary differences, gross DTL/DTA, and net liability classification, concluding with IND_AS_12_INCOME_TAXES_DTA_DTL_PASS."
-        }
+        },
+        "example": "An accountant for a landlord keeps two columns for every property, the book value and the tax value, and notes every gap. She adds up the gaps that will raise future tax and the gaps that will cut it. If the first comes to Rs 40,000 and the second to Rs 25,000, and both relate to the same tax office, she shows just a net Rs 15,000 liability."
       }
     ],
     "summary": [
@@ -8410,7 +8445,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 33 Paragraph 14 mandates that the contractual amount of cumulative preference dividends for the period is deducted from profit or loss, regardless of whether it has been declared.",
           "explanation": "Ind AS 33 Paragraph 14 mandates that the contractual amount of cumulative preference dividends for the period is deducted from profit or loss, regardless of whether it has been declared."
-        }
+        },
+        "example": "A small company earns a profit of Rs 10,00,000 and has cumulative preference shares carrying a dividend of Rs 1,00,000 that the board has not yet declared. The dividend is still taken off, because it is owed by contract. Equity holders are left with Rs 9,00,000, and with 1,00,000 shares, earnings per share is Rs 9."
       },
       {
         "part": 2,
@@ -8438,7 +8474,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Because bonus issues and share splits alter the number of shares without bringing in new resources, Ind AS 33 requires retrospective adjustment across all current and comparative periods.",
           "explanation": "Because bonus issues and share splits alter the number of shares without bringing in new resources, Ind AS 33 requires retrospective adjustment across all current and comparative periods."
-        }
+        },
+        "example": "A company has 1,00,000 shares and on 1 October gives a bonus of one share for every five held, adding 20,000 shares with no new money coming in. Because owners gained nothing real, it counts as if those shares always existed. Profit of Rs 6,00,000 over 1,20,000 shares is Rs 5, and last year's Rs 5,00,000 profit is restated to about Rs 4.17 per share."
       },
       {
         "part": 3,
@@ -8468,7 +8505,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 33 prohibits the inclusion of anti-dilutive potential shares in Diluted EPS, ensuring that the financial statements only portray potential dilution (downside risk) to shareholders.",
           "explanation": "Ind AS 33 prohibits the inclusion of anti-dilutive potential shares in Diluted EPS, ensuring that the financial statements only portray potential dilution (downside risk) to shareholders."
-        }
+        },
+        "example": "A company earns Rs 5,00,000 on 1,00,000 shares, so earnings per share is Rs 5. It has a convertible loan whose after-tax interest is Rs 3,00,000, and it could turn into 50,000 shares. That works out to Rs 6 per extra share, which is higher than Rs 5. Including it would make the figure look better, not worse, so the loan is left out of the diluted figure."
       },
       {
         "part": 4,
@@ -8497,7 +8535,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The Treasury Stock Method assumes option proceeds are used to repurchase shares at the prevailing average market price, adding only the net incremental shares: Options * (1 - Strike/MarketPrice).",
           "explanation": "The Treasury Stock Method assumes option proceeds are used to repurchase shares at the prevailing average market price, adding only the net incremental shares: Options * (1 - Strike/MarketPrice)."
-        }
+        },
+        "example": "Staff have the right to buy 10,000 shares at Rs 60 each while the shares trade at an average of Rs 100. Pretend the Rs 6,00,000 they would pay is used to buy back 6,000 shares at Rs 100. The company issues 10,000 and buys back 6,000, so only 4,000 extra shares are added to the count."
       },
       {
         "part": 5,
@@ -8525,7 +8564,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "The Ind AS 33 engine validates all calculations across basic EPS, options treasury stock adjustments, and if-converted debt, culminating in IND_AS_33_EARNINGS_PER_SHARE_PASS.",
           "explanation": "The Ind AS 33 engine validates all calculations across basic EPS, options treasury stock adjustments, and if-converted debt, culminating in IND_AS_33_EARNINGS_PER_SHARE_PASS."
-        }
+        },
+        "example": "A weights-and-measures inspector places standard 1 kg, 5 kg and 10 kg weights on a shop's scale before stamping it as fair. If every known weight reads right, the scale is trusted. The earnings-per-share checks work the same way: basic figures, option adjustments and convertible debt are tested with known answers before the calculation is signed off."
       }
     ],
     "summary": [
@@ -8580,7 +8620,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Provisions meet the definition of a liability and are recognized on the balance sheet when an outflow is probable (>50%) and reliably estimable. Contingent liabilities are possible obligations (<50%) disclosed only in notes.",
           "explanation": "Provisions meet the definition of a liability and are recognized on the balance sheet when an outflow is probable (>50%) and reliably estimable. Contingent liabilities are possible obligations (<50%) disclosed only in notes."
-        }
+        },
+        "example": "A shop is sued by a customer for Rs 80,000. If its lawyer thinks losing is more likely than not and the amount can be estimated, the shop sets aside a provision. If losing is only possible and not likely, a note in the accounts is enough. And it cannot stash extra provisions in a good year just to release them in a lean one."
       },
       {
         "part": 2,
@@ -8608,7 +8649,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 37 explicitly prohibits provisioning for future operating or maintenance costs because no present obligation exists from a past event; the entity can avoid the cost through future operational decisions.",
           "explanation": "Ind AS 37 explicitly prohibits provisioning for future operating or maintenance costs because no present obligation exists from a past event; the entity can avoid the cost through future operational decisions."
-        }
+        },
+        "example": "A factory plans to repaint its building next year at Rs 2,00,000. No provision is made, because the factory can avoid the cost by deciding not to paint. Now suppose a chemical leak ruined a neighbour's field last month and the factory must pay. There is a past event, payment is probable and the amount can be estimated, so a provision is made."
       },
       {
         "part": 3,
@@ -8635,7 +8677,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Under Ind AS 37 Paragraph 60, the increase in a provision due to the passage of time is recognized strictly as a Finance Cost (interest expense) in profit or loss.",
           "explanation": "Under Ind AS 37 Paragraph 60, the increase in a provision due to the passage of time is recognized strictly as a Finance Cost (interest expense) in profit or loss."
-        }
+        },
+        "example": "A quarry owner must restore the land in three years at a cost of Rs 1,33,100. With a 10 percent discount rate, the provision today is Rs 1,00,000. As time passes, the figure grows toward Rs 1,33,100. In year one the increase is Rs 10,000, and it is treated as a finance cost in profit or loss, like interest."
       },
       {
         "part": 4,
@@ -8664,7 +8707,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 37 Paragraph 80 restricts restructuring provisions to direct expenditures necessarily entailed by the restructuring (severance, lease penalties), strictly excluding retraining, relocation, or future operating losses.",
           "explanation": "Ind AS 37 Paragraph 80 restricts restructuring provisions to direct expenditures necessarily entailed by the restructuring (severance, lease penalties), strictly excluding retraining, relocation, or future operating losses."
-        }
+        },
+        "example": "A factory closes a branch and announces a detailed plan to the staff, so workers expect the closure. It can provide for severance of Rs 3,00,000 and a lease penalty of Rs 50,000, a total of Rs 3,50,000. It cannot include Rs 1,00,000 for retraining the remaining staff or the losses it expects while winding down, because these are costs of running the business later."
       },
       {
         "part": 5,
@@ -8692,7 +8736,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "The Ind AS 37 engine validates all calculations across decommissioning unwinding, restructuring qualifying boundaries, and tripartite legal claim classification, concluding with IND_AS_37_PROVISIONS_CONTINGENCIES_PASS.",
           "explanation": "The Ind AS 37 engine validates all calculations across decommissioning unwinding, restructuring qualifying boundaries, and tripartite legal claim classification, concluding with IND_AS_37_PROVISIONS_CONTINGENCIES_PASS."
-        }
+        },
+        "example": "An accountant sorts legal claim files into three trays. The first is for claims likely to be lost, which get a provision. The second is for claims possible but unlikely, which get only a note. The third is for remote claims, which are ignored. She also checks one worked figure, like the quarry restoration cost brought back to today's value."
       }
     ],
     "summary": [
@@ -8748,7 +8793,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "The Chief Accounting Officer is responsible for synthesizing Ind AS 102, Ind AS 12, Ind AS 33, and Ind AS 37 into an integrated, statutory-compliant financial reporting architecture.",
           "explanation": "The Chief Accounting Officer is responsible for synthesizing Ind AS 102, Ind AS 12, Ind AS 33, and Ind AS 37 into an integrated, statutory-compliant financial reporting architecture."
-        }
+        },
+        "example": "At a hospital group, the head accountant must pull together staff option plans, deferred tax, earnings per share and legal claims into one report that follows the rules. If the option cost is wrong or a claim is placed in the wrong tray, the total story becomes unreliable. His job is to make these four parts fit as a single honest picture."
       },
       {
         "part": 2,
@@ -8775,7 +8821,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Effective pool = 120,000 * 0.95 = 114,000 options. Total pool = 114,000 * $20 = $2,280,000. Year 1 expense = $2,280,000 / 4 = $570,000.00.",
           "explanation": "Effective pool = 120,000 * 0.95 = 114,000 options. Total pool = 114,000 * $20 = $2,280,000. Year 1 expense = $2,280,000 / 4 = $570,000.00."
-        }
+        },
+        "example": "A garment factory grants 12,000 options and expects 95 percent of staff to stay, so 11,400 options will vest. Each is worth Rs 20 on the grant date, which makes the total cost Rs 2,28,000. Vesting takes four years, so the first-year expense is Rs 2,28,000 divided by four, which is Rs 57,000."
       },
       {
         "part": 3,
@@ -8802,7 +8849,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Gross DTL = $900k * 25.168% = $226,512. Gross DTA = $750k * 25.168% = $188,760. Net position = DTL of $37,752.00 presented under Non-Current Liabilities.",
           "explanation": "Gross DTL = $900k * 25.168% = $226,512. Gross DTA = $750k * 25.168% = $188,760. Net position = DTL of $37,752.00 presented under Non-Current Liabilities."
-        }
+        },
+        "example": "A factory's books show taxable gaps of Rs 90,000 that will raise tax later and deductible gaps of Rs 75,000 that will reduce it. At the 25.168 percent rate, the liability is about Rs 22,651 and the asset is about Rs 18,876. Since both relate to the same tax authority, the factory shows the net, about Rs 3,775, as a non-current liability."
       },
       {
         "part": 4,
@@ -8828,7 +8876,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Basic EPS = $6M / 1.2M = $5.00. Diluted EPS = ($6M + $179,596.80) / (1.2M + 50k + 150k) = $6,179,596.80 / 1.4M = $4.41.",
           "explanation": "Basic EPS = $6M / 1.2M = $5.00. Diluted EPS = ($6M + $179,596.80) / (1.2M + 50k + 150k) = $6,179,596.80 / 1.4M = $4.41."
-        }
+        },
+        "example": "A company earns Rs 6,00,000 with 1,20,000 shares, so basic earnings per share is Rs 5. It also has convertible debentures with after-tax interest of Rs 18,000, convertible into 6,000 shares. That adds Rs 3 per extra share, below Rs 5, so it dilutes. Diluted earnings are Rs 6,18,000 over 1,26,000 shares, about Rs 4.90 per share."
       },
       {
         "part": 5,
@@ -8856,7 +8905,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "The Milestone 8 Capstone engine validates all assertions across ESOPs, deferred taxes, diluted EPS, and provisions, concluding with CORPORATE_TAX_EQUITY_CAPITAL_SUITE_PASS.",
           "explanation": "The Milestone 8 Capstone engine validates all assertions across ESOPs, deferred taxes, diluted EPS, and provisions, concluding with CORPORATE_TAX_EQUITY_CAPITAL_SUITE_PASS."
-        }
+        },
+        "example": "A building contractor hands over a house only after a final checklist covering four items: wiring, plumbing, painting and the water connection. If one item fails, the handover waits. The capital reporting sign-off works the same way: share-based pay, deferred tax, diluted earnings and provisions must each pass before the whole set is cleared."
       }
     ],
     "summary": [
@@ -8914,7 +8964,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 103 mandates the Acquisition Method for all business combinations (except common control transactions which follow Appendix C pooling of interests).",
           "explanation": "Ind AS 103 mandates the Acquisition Method for all business combinations (except common control transactions which follow Appendix C pooling of interests)."
-        }
+        },
+        "example": "Ramesh buys Suresh's bakery. He lists everything he is getting, the oven, stock and shop lease, at today's values, and whatever he pays above the list is goodwill. Two brothers who merge their separate shops under one family are different. Because nobody outside the family really takes over, they simply carry the books over at existing values."
       },
       {
         "part": 2,
@@ -8941,7 +8992,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 103 Paragraph 53 explicitly requires acquisition-related professional and advisory costs to be expensed in Profit & Loss when incurred.",
           "explanation": "Ind AS 103 Paragraph 53 explicitly requires acquisition-related professional and advisory costs to be expensed in Profit & Loss when incurred."
-        }
+        },
+        "example": "Priya buys a dairy shop for Rs 10,00,000. She also pays a broker and a lawyer Rs 50,000 for helping with the deal. The Rs 10,00,000 is the price of the business, but the Rs 50,000 fees are charged to profit and loss when they occur. They are not part of the price paid, so they do not increase the goodwill."
       },
       {
         "part": 3,
@@ -8967,7 +9019,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "In a share acquisition, the tax base remains at historical tax cost while accounting carrying amount increases to fair value, creating a taxable temporary difference requiring a DTL under Ind AS 12.",
           "explanation": "In a share acquisition, the tax base remains at historical tax cost while accounting carrying amount increases to fair value, creating a taxable temporary difference requiring a DTL under Ind AS 12."
-        }
+        },
+        "example": "A buyer acquires a company by taking its shares. The company owns land recorded at Rs 5,00,000 but now worth Rs 8,00,000. The tax office still sees the old Rs 5,00,000 as the land's cost. That Rs 3,00,000 gap means tax of Rs 75,000 at an assumed 25 percent rate, and recording this liability raises the goodwill the buyer shows."
       },
       {
         "part": 4,
@@ -8993,7 +9046,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 103 contains a carve-out requiring Gain on Bargain Purchase to be recognized in OCI and accumulated in Equity as Capital Reserve (after reassessing all asset values).",
           "explanation": "Ind AS 103 contains a carve-out requiring Gain on Bargain Purchase to be recognized in OCI and accumulated in Equity as Capital Reserve (after reassessing all asset values)."
-        }
+        },
+        "example": "A buyer pays Rs 8,00,000 for 80 percent of a tailoring unit whose net assets are worth Rs 9,00,000. The remaining 20 percent held by others is Rs 1,80,000. Goodwill is Rs 8,00,000 plus Rs 1,80,000 minus Rs 9,00,000, which is Rs 80,000. Had he paid just Rs 6,00,000, the Rs 1,20,000 gain goes to a capital reserve after rechecking the values."
       },
       {
         "part": 5,
@@ -9022,7 +9076,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Under the proportionate share method, Goodwill = $14,500,000 + $2,478,924.80 - $12,394,624.00 = $4,584,300.80.",
           "explanation": "Under the proportionate share method, Goodwill = $14,500,000 + $2,478,924.80 - $12,394,624.00 = $4,584,300.80."
-        }
+        },
+        "example": "A buyer pays Rs 7,00,000 for 70 percent of a printing press whose assets are worth Rs 8,00,000 after fair values. The other 30 percent, Rs 2,40,000, is shown as outside ownership. Goodwill is Rs 7,00,000 plus Rs 2,40,000 minus Rs 8,00,000, which is Rs 1,40,000. After the deal, the press's items are added line by line to the buyer's books and the cash paid leaves them."
       }
     ],
     "summary": [
@@ -9078,7 +9133,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 110 Paragraph 7 establishes three mandatory cumulative elements: power over relevant activities, variable returns exposure, and the ability to use power to affect returns.",
           "explanation": "Ind AS 110 Paragraph 7 establishes three mandatory cumulative elements: power over relevant activities, variable returns exposure, and the ability to use power to affect returns."
-        }
+        },
+        "example": "A dairy owner holds 30 percent of an ice-cream parlour. He also has the right to appoint all managers who set prices and run daily work, and he shares in the profits. That means power, exposure to returns and the ability to use the power to affect those returns, so he controls it. A friend with 40 percent but no say does not."
       },
       {
         "part": 2,
@@ -9105,7 +9161,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 110 and Schedule III mandate that NCI be presented within total Equity on the balance sheet, explicitly segregated from parent equity.",
           "explanation": "Ind AS 110 and Schedule III mandate that NCI be presented within total Equity on the balance sheet, explicitly segregated from parent equity."
-        }
+        },
+        "example": "A parent firm pays Rs 4,00,000 for 80 percent of a subsidiary whose equity is Rs 5,00,000. When the group books are combined, the Rs 4,00,000 investment is removed against the parent's 80 percent of that equity. The remaining Rs 1,00,000 belongs to outside owners and is shown inside the group's equity as non-controlling interest."
       },
       {
         "part": 3,
@@ -9132,7 +9189,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "In a downstream sale, the parent earned the profit; therefore, the elimination is charged 100% against parent profit, leaving NCI unaffected.",
           "explanation": "In a downstream sale, the parent earned the profit; therefore, the elimination is charged 100% against parent profit, leaving NCI unaffected."
-        }
+        },
+        "example": "A flour mill sells goods costing Rs 80,000 to its own bakery subsidiary for Rs 1,00,000, and the bakery still holds all of it at year end. From the group's view, nothing has been sold outside. So the Rs 20,000 profit is removed. As the mill earned it, the entire cut falls on the parent's profit, and outside owners of the bakery are unaffected."
       },
       {
         "part": 4,
@@ -9158,7 +9216,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Because the transaction was downstream, Zenith's profit of $3M is unaffected by inventory elimination. NCI share = 20% * $3M = $600,000.00.",
           "explanation": "Because the transaction was downstream, Zenith's profit of $3M is unaffected by inventory elimination. NCI share = 20% * $3M = $600,000.00."
-        }
+        },
+        "example": "A parent owns 80 percent of a bakery that earns Rs 3,00,000. Outside owners hold the other 20 percent, so their share is Rs 60,000. The parent earlier sold flour to the bakery, but that downstream profit elimination touches only the parent. Any dividend the bakery pays to the parent is just money moving from one group pocket to another."
       },
       {
         "part": 5,
@@ -9186,7 +9245,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The consolidation engine successfully validates all line-by-line aggregations, eliminations, and profit attributions, emitting IND_AS_110_CONSOLIDATION_ELIMINATIONS_PASS.",
           "explanation": "The consolidation engine successfully validates all line-by-line aggregations, eliminations, and profit attributions, emitting IND_AS_110_CONSOLIDATION_ELIMINATIONS_PASS."
-        }
+        },
+        "example": "In a family budget, father gives son Rs 2,000 pocket money. When the family adds up its total income, it does not count that Rs 2,000 twice, as it only moved between members. Group accounts do the same: sales, loans and dividends inside the group are cancelled, and the totals show only dealings with outsiders."
       }
     ],
     "summary": [
@@ -9243,7 +9303,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 111 Paragraph 7 establishes that joint control exists only when decisions about relevant activities require the unanimous consent of the parties sharing control.",
           "explanation": "Ind AS 111 Paragraph 7 establishes that joint control exists only when decisions about relevant activities require the unanimous consent of the parties sharing control."
-        }
+        },
+        "example": "Three brothers run a tent house together. Any big decision, such as buying a new stage set, needs all three to agree, and bank cheques need all three signatures. That unanimous consent is joint control. If two of three could decide and push the third aside, there would be no joint control in the arrangement."
       },
       {
         "part": 2,
@@ -9272,7 +9333,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Under Ind AS 111 Paragraph 20, a joint operator directly recognizes its share of assets, liabilities, revenues, and expenses in its financial statements.",
           "explanation": "Under Ind AS 111 Paragraph 20, a joint operator directly recognizes its share of assets, liabilities, revenues, and expenses in its financial statements."
-        }
+        },
+        "example": "Two friends run a juice cart together. The cart cost Rs 40,000, sales were Rs 60,000 and expenses Rs 20,000. Because each directly owns and uses half, each records Rs 20,000 of the cart, Rs 30,000 of sales and Rs 10,000 of expenses in their own books. This is how a joint operator accounts for it."
       },
       {
         "part": 3,
@@ -9299,7 +9361,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Under Ind AS 28, dividends received represent a return of capital and reduce the carrying amount of the investment, preventing double-counting of accrued earnings.",
           "explanation": "Under Ind AS 28, dividends received represent a return of capital and reduce the carrying amount of the investment, preventing double-counting of accrued earnings."
-        }
+        },
+        "example": "An investor puts Rs 3,00,000 into 30 percent of a cafe company. The cafe earns Rs 1,00,000, so the investor adds her Rs 30,000 share and the investment shows Rs 3,30,000. Then the cafe pays Rs 20,000 in dividends, and her share, Rs 6,000, is cut from the investment, giving Rs 3,24,000, because the dividend is cash returned, not new profit."
       },
       {
         "part": 4,
@@ -9326,7 +9389,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Under Ind AS 28 Paragraph 28, unrealized intercompany profits are eliminated only to the extent of the investor's interest in the associate ($100k * 30% = $30,000).",
           "explanation": "Under Ind AS 28 Paragraph 28, unrealized intercompany profits are eliminated only to the extent of the investor's interest in the associate ($100k * 30% = $30,000)."
-        }
+        },
+        "example": "A tractor maker owns 30 percent of a dealer and sells it goods at a Rs 1,00,000 profit that the dealer has not yet resold. The maker removes only its own share of that unsold profit, 30 percent of Rs 1,00,000, which is Rs 30,000. The rest is considered earned through a sale to outside owners of the dealer."
       },
       {
         "part": 5,
@@ -9353,7 +9417,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "The Joint Arrangements & Equity Method Engine verifies all joint operation allocations, equity method adjustments, and unrealized profit eliminations, emitting IND_AS_111_JOINT_ARRANGEMENTS_EQUITY_METHOD_PASS.",
           "explanation": "The Joint Arrangements & Equity Method Engine verifies all joint operation allocations, equity method adjustments, and unrealized profit eliminations, emitting IND_AS_111_JOINT_ARRANGEMENTS_EQUITY_METHOD_PASS."
-        }
+        },
+        "example": "Three flatmates share a monthly bill of Rs 12,000 under an agreed split of 50, 30 and 20 percent. Each checks that their share is right, Rs 6,000, Rs 3,600 and Rs 2,400, and that the total adds back to Rs 12,000. Joint arrangement checks follow the same habit: shares of each operation, equity-method adjustments and removed unsold profits are verified."
       }
     ],
     "summary": [
@@ -9409,7 +9474,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 112 Paragraph 1 mandates comprehensive disclosures enabling users to evaluate the nature of, risks associated with, and financial effects of interests in other entities.",
           "explanation": "Ind AS 112 Paragraph 1 mandates comprehensive disclosures enabling users to evaluate the nature of, risks associated with, and financial effects of interests in other entities."
-        }
+        },
+        "example": "A banker looking at a family business wants to know what else the family has a stake in. The notes should tell her about a cousin's firm, a partnership and a trust, and how much risk each carries. That is the reason for disclosure rules on interests in other entities: readers can judge the nature of these interests, the risks and the financial effects."
       },
       {
         "part": 2,
@@ -9436,7 +9502,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 112 Paragraph 13 requires disclosing significant restrictions so investors can assess whether cash held by subsidiaries is freely accessible to the parent.",
           "explanation": "Ind AS 112 Paragraph 13 requires disclosing significant restrictions so investors can assess whether cash held by subsidiaries is freely accessible to the parent."
-        }
+        },
+        "example": "A parent shows Rs 10,00,000 of cash in a foreign subsidiary in its group accounts. But local rules block sending that money home. So the group looks rich in cash, but the parent cannot actually use it. The accounts must mention that restriction so that investors can judge how freely the group's cash can be reached."
       },
       {
         "part": 3,
@@ -9464,7 +9531,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 112 Paragraph B14 requires a formal reconciliation between the net assets in the summarized financial information of the associate and the carrying amount of the interest.",
           "explanation": "Ind AS 112 Paragraph B14 requires a formal reconciliation between the net assets in the summarized financial information of the associate and the carrying amount of the interest."
-        }
+        },
+        "example": "An investor owns 30 percent of an associate whose summarised net assets are Rs 10,00,000. Her share is Rs 3,00,000. She paid extra, so she also has goodwill of Rs 50,000, and the investment's carrying amount is Rs 3,50,000. The notes show this step-by-step bridge, so a reader can see how the associate's figures lead to her balance sheet figure."
       },
       {
         "part": 4,
@@ -9492,7 +9560,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Under Ind AS 112 Paragraph 29, Maximum Exposure to Loss is the sum of the carrying amount of assets held ($2M) plus contractually committed financial guarantees ($3M) = $5,000,000.00.",
           "explanation": "Under Ind AS 112 Paragraph 29, Maximum Exposure to Loss is the sum of the carrying amount of assets held ($2M) plus contractually committed financial guarantees ($3M) = $5,000,000.00."
-        }
+        },
+        "example": "A trader supports a small lending pool run by a trust. He holds Rs 2,00,000 of the pool's notes and has promised to cover Rs 3,00,000 of its borrowing if borrowers default. His worst-case loss is Rs 2,00,000 plus Rs 3,00,000, which is Rs 5,00,000. That maximum exposure is the figure the notes must show."
       },
       {
         "part": 5,
@@ -9521,7 +9590,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "The Group Disclosures Engine validates all material NCI schedules, associate reconciliations, and structured entity exposures, concluding with IND_AS_112_GROUP_DISCLOSURES_SUITE_PASS.",
           "explanation": "The Group Disclosures Engine validates all material NCI schedules, associate reconciliations, and structured entity exposures, concluding with IND_AS_112_GROUP_DISCLOSURES_SUITE_PASS."
-        }
+        },
+        "example": "A school prepares its annual report and works through a checklist before the principal signs: subsidiaries, associates, joint ventures and trusts. Each tick means the right schedule exists and the figures tally. Group disclosure sign-off works the same way, confirming the outside-owner schedules, the reconciliations and the maximum loss figures are all in place."
       }
     ],
     "summary": [
@@ -9577,7 +9647,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "The Group CFO is responsible for orchestrating Ind AS 103, Ind AS 110, Ind AS 111, Ind AS 28, and Ind AS 112 into an integrated, statutory-compliant group reporting architecture.",
           "explanation": "The Group CFO is responsible for orchestrating Ind AS 103, Ind AS 110, Ind AS 111, Ind AS 28, and Ind AS 112 into an integrated, statutory-compliant group reporting architecture."
-        }
+        },
+        "example": "The head of a large joint-family business has to run the purchase of a rival, a combined set of accounts, a shared venture and the disclosures. If any part is handled by different rules, the final numbers will not fit together. His job is to make sure all of them follow the same story from start to finish."
       },
       {
         "part": 2,
@@ -9604,7 +9675,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Under the proportionate share method, Goodwill = $14,500,000 + $2,478,924.80 - $12,394,624.00 = $4,584,300.80.",
           "explanation": "Under the proportionate share method, Goodwill = $14,500,000 + $2,478,924.80 - $12,394,624.00 = $4,584,300.80."
-        }
+        },
+        "example": "A buyer pays Rs 12,00,000 for 75 percent of a local pharmacy whose net assets are worth Rs 14,00,000 at fair value. The other 25 percent is Rs 3,50,000. Goodwill is Rs 12,00,000 plus Rs 3,50,000 minus Rs 14,00,000, which is Rs 1,50,000. This is the figure that goes into the group balance sheet."
       },
       {
         "part": 3,
@@ -9630,7 +9702,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Consolidated revenue = $70M - $4M = $66M. Consolidated net profit = $8.5M + $3M - $250k = $11,250,000.00 ($10.65M parent, $600k NCI).",
           "explanation": "Consolidated revenue = $70M - $4M = $66M. Consolidated net profit = $8.5M + $3M - $250k = $11,250,000.00 ($10.65M parent, $600k NCI)."
-        }
+        },
+        "example": "A parent with Rs 50 lakh of sales owns a subsidiary with Rs 20 lakh of sales, and Rs 4 lakh was sold between them, so group sales are Rs 66 lakh. Profit is Rs 8,50,000 plus Rs 3,00,000 minus Rs 25,000 unsold profit, which is Rs 11,25,000. Outside owners of the subsidiary get 20 percent of Rs 3,00,000, which is Rs 60,000, and the parent's owners get Rs 10,65,000."
       },
       {
         "part": 4,
@@ -9656,7 +9729,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Quantum carrying value = $4.5M + $510k + $60k - $300k = $4,770,000.00. Trust max loss exposure = $2M debt + $3M guarantee = $5,000,000.00.",
           "explanation": "Quantum carrying value = $4.5M + $510k + $60k - $300k = $4,770,000.00. Trust max loss exposure = $2M debt + $3M guarantee = $5,000,000.00."
-        }
+        },
+        "example": "An investor puts Rs 4,50,000 into a cold-storage firm. Its share of profit is Rs 51,000 and its share of a revaluation gain is Rs 6,000, but it receives Rs 30,000 in dividends. The investment's carrying amount is Rs 4,50,000 plus Rs 51,000 plus Rs 6,000 minus Rs 30,000, which is Rs 4,77,000."
       },
       {
         "part": 5,
@@ -9683,7 +9757,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "The Milestone 9 Capstone engine validates all assertions across M&A, group consolidations, joint partnerships, and disclosures, concluding with GROUP_CONSOLIDATION_MA_SUITE_PASS.",
           "explanation": "The Milestone 9 Capstone engine validates all assertions across M&A, group consolidations, joint partnerships, and disclosures, concluding with GROUP_CONSOLIDATION_MA_SUITE_PASS."
-        }
+        },
+        "example": "At the end of a wedding, the planner sits with the family and goes through four vendor bills: catering, decoration, music and venue. Everything is cross-checked with the advance paid and nothing is left open. The ninth milestone does the same for a group: the purchase, the consolidation, the shared ventures and the disclosures must each tally before the books are signed."
       }
     ],
     "summary": [
@@ -9742,7 +9817,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The Defensive Interval Ratio measures quick assets divided by daily cash operating expenses, quantifying the number of days the firm can sustain operations without new cash inflows.",
           "explanation": "The Defensive Interval Ratio measures quick assets divided by daily cash operating expenses, quantifying the number of days the firm can sustain operations without new cash inflows."
-        }
+        },
+        "example": "A small hotel holds Rs 3,00,000 in cash and money owed by regular guests, and spends Rs 5,000 in cash every day on staff, food and power. Dividing the one by the other, it can run for 60 days even if no new money comes in. That number of days is the defensive interval, and it tells the owner how long the hotel could survive a sudden slump."
       },
       {
         "part": 2,
@@ -9770,7 +9846,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Interest expense is tax-deductible, but loan principal must be repaid out of after-tax cash flows. Therefore, principal must be grossed up by (1 - t) to determine the pre-tax EBIT needed to service it.",
           "explanation": "Interest expense is tax-deductible, but loan principal must be repaid out of after-tax cash flows. Therefore, principal must be grossed up by (1 - t) to determine the pre-tax EBIT needed to service it."
-        }
+        },
+        "example": "An auto-rickshaw fleet owner earns Rs 4,00,000 before interest and tax and pays Rs 40,000 interest. He also repays Rs 1,00,000 of loan principal, but that comes out of money already taxed. At an assumed 25 percent tax, he needs Rs 1,33,333 before tax to pay it. So his cover is Rs 4,00,000 divided by Rs 1,73,333, about 2.3 times."
       },
       {
         "part": 3,
@@ -9797,7 +9874,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "A negative Cash Conversion Cycle (DIO + DSO < DPO) means the enterprise receives cash from customers before paying suppliers, generating interest-free operational float.",
           "explanation": "A negative Cash Conversion Cycle (DIO + DSO < DPO) means the enterprise receives cash from customers before paying suppliers, generating interest-free operational float."
-        }
+        },
+        "example": "A sweet shop buys milk on ten days of credit, sells out within three days and takes cash from customers on the spot. The cash conversion cycle is three days of stock plus zero days of dues minus ten days of supplier credit, which is minus seven. The shop collects from customers a week before paying the dairy, so it uses the supplier's money free of interest."
       },
       {
         "part": 4,
@@ -9825,7 +9903,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Under amended Schedule III, any ratio change exceeding 25% as compared to the immediately preceding financial year requires mandatory disclosure of reasons in the notes.",
           "explanation": "Under amended Schedule III, any ratio change exceeding 25% as compared to the immediately preceding financial year requires mandatory disclosure of reasons in the notes."
-        }
+        },
+        "example": "A hardware store had a current ratio of 2.0 last year and 1.4 this year. The fall is 0.6 on 2.0, a 30 percent change. Since that is more than 25 percent against the previous year, the notes must explain why, whether from a big loan taken or a stock buildup. A change of 20 percent would not need that explanation."
       },
       {
         "part": 5,
@@ -9852,7 +9931,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Apex Engineering exhibits EBIT / Interest = $24M / $4M = 6.0x, and CCC = 91.2 (DIO) + 48.7 (DSO) - 60.8 (DPO) = 79.1 days.",
           "explanation": "Apex Engineering exhibits EBIT / Interest = $24M / $4M = 6.0x, and CCC = 91.2 (DIO) + 48.7 (DSO) - 60.8 (DPO) = 79.1 days."
-        }
+        },
+        "example": "A shop earns Rs 6,00,000 before interest and tax and pays Rs 1,00,000 interest, so its interest cover is 6 times. Its stock stays on shelves for 90 days, customers pay in 50 days and suppliers wait 60 days. The cash cycle is 90 plus 50 minus 60, which is 80 days. Both numbers are read together to judge the shop's health."
       }
     ],
     "summary": [
@@ -9908,7 +9988,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "The 3-stage DuPont model decomposes ROE into Net Profit Margin (profitability), Asset Turnover (efficiency), and Equity Multiplier (leverage).",
           "explanation": "The 3-stage DuPont model decomposes ROE into Net Profit Margin (profitability), Asset Turnover (efficiency), and Equity Multiplier (leverage)."
-        }
+        },
+        "example": "Anita runs a shop with Rs 10,00,000 of sales and Rs 1,00,000 profit, so the margin is 10 percent. Her assets are Rs 5,00,000, so every rupee of assets produces Rs 2 of sales. The owner put in only Rs 2,50,000 of the Rs 5,00,000 assets, so assets are twice equity. Multiplying 10 percent by 2 by 2 gives a return on equity of 40 percent."
       },
       {
         "part": 2,
@@ -9935,7 +10016,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Interest Burden equals EBT / EBIT (or 1 - Interest/EBIT), quantifying the fraction of operating income retained after paying financing costs.",
           "explanation": "Interest Burden equals EBT / EBIT (or 1 - Interest/EBIT), quantifying the fraction of operating income retained after paying financing costs."
-        }
+        },
+        "example": "A shop has sales of Rs 10,00,000 and operating profit of Rs 1,60,000, an operating margin of 16 percent. After Rs 40,000 interest, the pre-tax profit is Rs 1,20,000, so interest takes a quarter, leaving a burden of 0.75. Tax of 25 percent leaves Rs 90,000, another 0.75. Multiplying 0.16 by 0.75 by 0.75 gives 9 percent, the net margin."
       },
       {
         "part": 3,
@@ -9964,7 +10046,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Share buybacks shrink book equity, artificially inflating ROE. ROIC evaluates NOPAT relative to total invested capital, preventing buyback-induced distortions.",
           "explanation": "Share buybacks shrink book equity, artificially inflating ROE. ROIC evaluates NOPAT relative to total invested capital, preventing buyback-induced distortions."
-        }
+        },
+        "example": "A family firm has Rs 10,00,000 of capital and earns Rs 1,00,000, a return of 10 percent. One partner withdraws Rs 5,00,000, and the shop earns the same Rs 1,00,000 as before. The return on the owners' money doubles to 20 percent, but the business is no better. Return on invested capital, which looks at the trading profit against all capital, does not jump in this way."
       },
       {
         "part": 4,
@@ -9992,7 +10075,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Positive EVA occurs when NOPAT exceeds the capital charge (Invested Capital * WACC), meaning ROIC > WACC and true economic wealth is created.",
           "explanation": "Positive EVA occurs when NOPAT exceeds the capital charge (Invested Capital * WACC), meaning ROIC > WACC and true economic wealth is created."
-        }
+        },
+        "example": "A bus owner has Rs 10,00,000 invested and his cost of capital is 10 percent, so the capital charge is Rs 1,00,000. His buses earn Rs 1,40,000 after tax from operations, which is a 14 percent return. Economic value added is Rs 1,40,000 minus Rs 1,00,000, which is Rs 40,000. Because he earns more than his capital costs, he has truly created wealth."
       },
       {
         "part": 5,
@@ -10018,7 +10102,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Apex Engineering exhibits ROE = 12.47% * 0.9677 * 2.0667 = 24.94%, and EVA = $17,959,680 NOPAT - $10,810,000 Capital Charge = $7,149,680.00.",
           "explanation": "Apex Engineering exhibits ROE = 12.47% * 0.9677 * 2.0667 = 24.94%, and EVA = $17,959,680 NOPAT - $10,810,000 Capital Charge = $7,149,680.00."
-        }
+        },
+        "example": "A shopkeeper checks his return on equity two ways. First, margin 10 percent times sales per rupee of assets 1.5 times assets per rupee of equity 2 gives 30 percent. Second, on Rs 4,00,000 of assets, sales are Rs 6,00,000, profit Rs 60,000, and equity Rs 2,00,000, so profit over equity is also 30 percent. Both methods agree, which is the point."
       }
     ],
     "summary": [
@@ -10075,7 +10160,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "DOL equals Contribution / EBIT (% change in EBIT / % change in Sales), quantifying how fixed operating overhead acts as an operational multiplier.",
           "explanation": "DOL equals Contribution / EBIT (% change in EBIT / % change in Sales), quantifying how fixed operating overhead acts as an operational multiplier."
-        }
+        },
+        "example": "A tea stall has sales of Rs 5,00,000, variable costs of Rs 3,00,000 and fixed costs of Rs 1,00,000. Contribution is Rs 2,00,000 and operating profit Rs 1,00,000, so the degree of operating leverage is 2. If sales rise 10 percent, contribution rises by Rs 20,000 and profit climbs to Rs 1,20,000, a 20 percent rise. Fixed costs work as a multiplier."
       },
       {
         "part": 2,
@@ -10104,7 +10190,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Unlike debt interest, preference dividends are not tax-deductible. Therefore, the pre-tax EBIT needed to pay them is Preference Dividends / (1 - t).",
           "explanation": "Unlike debt interest, preference dividends are not tax-deductible. Therefore, the pre-tax EBIT needed to pay them is Preference Dividends / (1 - t)."
-        }
+        },
+        "example": "A small firm raised money from a friend through preference shares paying Rs 75,000 a year. Unlike loan interest, that dividend is not tax-deductible. At 25 percent tax, the firm needs Rs 75,000 divided by 0.75, which is Rs 1,00,000 of profit before tax just to pay it. Loan interest would have been cheaper in tax terms."
       },
       {
         "part": 3,
@@ -10133,7 +10220,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The Law of Inverse Leverage dictates that because DCL = DOL * DFL, firms with high operating leverage must keep financial leverage low to prevent extreme earnings volatility.",
           "explanation": "The Law of Inverse Leverage dictates that because DCL = DOL * DFL, firms with high operating leverage must keep financial leverage low to prevent extreme earnings volatility."
-        }
+        },
+        "example": "A restaurant has heavy rent and kitchen costs, so its operating leverage is 3, and it has also borrowed heavily, with financial leverage of 2. Combined, that is 6. A 10 percent fall in sales could cut earnings per share by 60 percent. That is why a business with high fixed costs should keep its borrowing low."
       },
       {
         "part": 4,
@@ -10161,7 +10249,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Edward Altman established that a Z-Score > 2.99 indicates the Safe Zone, 1.81 to 2.99 is the Grey Zone, and < 1.81 indicates high distress probability.",
           "explanation": "Edward Altman established that a Z-Score > 2.99 indicates the Safe Zone, 1.81 to 2.99 is the Grey Zone, and < 1.81 indicates high distress probability."
-        }
+        },
+        "example": "A partner is deciding between taking a loan with Rs 20,000 yearly interest and keeping 5,000 shares, or bringing in new owners to have 10,000 shares. Ignoring tax, at profit of Rs 40,000 both options give Rs 4 per share. Above that, the loan wins; below it, new owners are better. Separately, a Z-score above 2.99 means safe, and below 1.81 means distress."
       },
       {
         "part": 5,
@@ -10187,7 +10276,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Titan Manufacturing exhibits DCL = 1.60 * 1.25 = 2.00x, and Altman Z-Score = 3.92, placing the enterprise in the Safe Zone.",
           "explanation": "Titan Manufacturing exhibits DCL = 1.60 * 1.25 = 2.00x, and Altman Z-Score = 3.92, placing the enterprise in the Safe Zone."
-        }
+        },
+        "example": "A school report card marks scores above 2.99 as safe, 1.81 to 2.99 as grey and below 1.81 as distress. A manufacturer with a Z-score of 3.92 falls in the safe band. Its operating leverage of 1.6 times financial leverage of 1.25 gives a combined 2.0, so a 10 percent change in sales moves earnings by about 20 percent."
       }
     ],
     "summary": [
@@ -10244,7 +10334,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "A Cash Flow Realism ratio below 0.80 signals that reported profits are not converting into cash, warning auditors of potential aggressive accruals or channel stuffing.",
           "explanation": "A Cash Flow Realism ratio below 0.80 signals that reported profits are not converting into cash, warning auditors of potential aggressive accruals or channel stuffing."
-        }
+        },
+        "example": "A shop reports a profit of Rs 5,00,000, but its cash from operations is only Rs 3,00,000, a ratio of 0.60. That is below 0.80, so alarm bells ring. The gap came from selling heavily on credit to distributors who have not yet paid. Profit that never turns into cash is exactly what auditors want to look into."
       },
       {
         "part": 2,
@@ -10272,7 +10363,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Sloan proved that cash flows have high persistence, while accruals have low persistence because non-cash estimates and timing differences eventually reverse.",
           "explanation": "Sloan proved that cash flows have high persistence, while accruals have low persistence because non-cash estimates and timing differences eventually reverse."
-        }
+        },
+        "example": "Two shops each report Rs 1,00,000 profit. The first was paid in cash. The second was mostly goods sent on credit that customers have not paid for. Next year, the first shop's profit tends to repeat, while the second shop's profit shrinks as some dues turn bad. That is why cash flows last longer than accruals."
       },
       {
         "part": 3,
@@ -10298,7 +10390,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Beneish established that an M-Score > -1.78 signals a high risk of earnings manipulation, while M <= -1.78 indicates low risk.",
           "explanation": "Beneish established that an M-Score > -1.78 signals a high risk of earnings manipulation, while M <= -1.78 indicates low risk."
-        }
+        },
+        "example": "A bank manager notices that a trader's dues from customers have grown 40 percent while sales rose only 5 percent. That is one warning sign. The Beneish score combines eight such signs into one number. If it is above minus 1.78, the books deserve a closer look. A score of minus 2.09, being lower, points to low risk."
       },
       {
         "part": 4,
@@ -10324,7 +10417,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Under Section 143(12), an auditor discovering fraud of INR 1 crore or more must report it to the Central Government (MCA) via Form ADT-4 within 60 days.",
           "explanation": "Under Section 143(12), an auditor discovering fraud of INR 1 crore or more must report it to the Central Government (MCA) via Form ADT-4 within 60 days."
-        }
+        },
+        "example": "An auditor finds that a store manager has been quietly diverting stock worth Rs 1.5 crore. Because the amount is Rs 1 crore or more, the auditor must report the fraud to the Central Government through Form ADT-4 within 60 days. A small theft of Rs 10,000 would be handled differently, inside the company."
       },
       {
         "part": 5,
@@ -10350,7 +10444,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Veritas exhibits an Accrual Ratio of -$3.0336M / $117M = -2.59%, and Beneish M-Score = -2.09, confirming Low Risk.",
           "explanation": "Veritas exhibits an Accrual Ratio of -$3.0336M / $117M = -2.59%, and Beneish M-Score = -2.09, confirming Low Risk."
-        }
+        },
+        "example": "A company reports profit of Rs 9,00,000 but cash from operations of Rs 12,00,000, so the difference is minus Rs 3,00,000. On average assets of Rs 1.2 crore, that is minus 2.5 percent. A negative accrual ratio means cash is higher than profit, which is a good sign. Combined with a low manipulation score, it suggests low risk."
       }
     ],
     "summary": [
@@ -10405,7 +10500,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "The executive mandate is to synthesize liquidity, solvency, DuPont decomposition, leverage, and forensic fraud models into a unified corporate diagnostic architecture.",
           "explanation": "The executive mandate is to synthesize liquidity, solvency, DuPont decomposition, leverage, and forensic fraud models into a unified corporate diagnostic architecture."
-        }
+        },
+        "example": "A family doctor does not decide a diagnosis from one test alone. She reads the blood report, the X-ray and the ECG together to form one view. The chief finance officer and forensic auditor do the same, reading liquidity, solvency, returns, leverage and fraud signs together to understand how the company is really doing."
       },
       {
         "part": 2,
@@ -10431,7 +10527,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Module 1 confirms Current Ratio = 2.0:1, tax-adjusted DSCR = 3.0x, and CCC = 91.2 + 48.7 - 60.8 = 79.1 days.",
           "explanation": "Module 1 confirms Current Ratio = 2.0:1, tax-adjusted DSCR = 3.0x, and CCC = 91.2 + 48.7 - 60.8 = 79.1 days."
-        }
+        },
+        "example": "A textile unit has current assets of Rs 4,00,000 against current liabilities of Rs 2,00,000, a current ratio of 2 to 1. It earns Rs 9,00,000 before debt payments and owes Rs 1,00,000 interest and Rs 1,50,000 principal. At an assumed 25 percent tax, the principal needs Rs 2,00,000 before tax. Total claims are Rs 3,00,000, so cover is 3 times."
       },
       {
         "part": 3,
@@ -10457,7 +10554,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Module 2 confirms 5-Stage ROE = 24.94%, ROIC = 19.11% vs WACC 11.5%, and EVA = $17,959,680 - $10,810,000 = $7,149,680.00.",
           "explanation": "Module 2 confirms 5-Stage ROE = 24.94%, ROIC = 19.11% vs WACC 11.5%, and EVA = $17,959,680 - $10,810,000 = $7,149,680.00."
-        }
+        },
+        "example": "A poultry farm has Rs 20,00,000 of capital and earns Rs 3,60,000 after tax from operations, an 18 percent return. Its cost of capital is 12 percent, which means a capital charge of Rs 2,40,000. Economic value added is Rs 1,20,000. Since 18 percent is higher than 12 percent, the farm creates wealth beyond what its funds cost."
       },
       {
         "part": 4,
@@ -10483,7 +10581,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Module 3 and 4 confirm DCL = 1.60 * 1.25 = 2.00x, Altman Z-Score = 3.92 (Safe Zone), and Beneish M-Score = -2.09 (Low Risk).",
           "explanation": "Module 3 and 4 confirm DCL = 1.60 * 1.25 = 2.00x, Altman Z-Score = 3.92 (Safe Zone), and Beneish M-Score = -2.09 (Low Risk)."
-        }
+        },
+        "example": "A bank officer closes a loan file with three entries. First, the combined leverage is 2.0, so a 10 percent sales change moves earnings 20 percent. Second, the Z-score is 3.92, in the safe zone. Third, the manipulation score is minus 2.09, low risk. Only when all three point the same way does the officer recommend the loan."
       },
       {
         "part": 5,
@@ -10510,7 +10609,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "The Milestone 10 Capstone suite concludes execution by confirming CORPORATE_FINANCIAL_DIAGNOSTICS_SUITE_PASS.",
           "explanation": "The Milestone 10 Capstone suite concludes execution by confirming CORPORATE_FINANCIAL_DIAGNOSTICS_SUITE_PASS."
-        }
+        },
+        "example": "Before a pilot takes off, she runs a full checklist covering fuel, engines, controls and weather, and nothing is skipped. The tenth milestone is like that. Liquidity, returns, leverage and fraud checks each have to be confirmed before the corporate diagnostic work is signed and the block is complete."
       }
     ],
     "summary": [
@@ -10569,7 +10669,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 36 mandates annual impairment testing for goodwill, indefinite-life intangible assets, and intangible assets not yet available for use, regardless of indicators.",
           "explanation": "Ind AS 36 mandates annual impairment testing for goodwill, indefinite-life intangible assets, and intangible assets not yet available for use, regardless of indicators."
-        }
+        },
+        "example": "A mill owner paid Rs 2,00,000 above the value of a rival's assets when he bought the business, and that extra is goodwill. The law requires him to test it every year, even when the business looks healthy. For other assets, he tests only when a warning sign appears. A group of assets earning cash together, like one bus route, is tested as a unit."
       },
       {
         "part": 2,
@@ -10597,7 +10698,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Under Ind AS 36.18, Recoverable Amount is strictly defined as the higher of Fair Value Less Costs of Disposal (FVLCOD) and Value in Use (VIU).",
           "explanation": "Under Ind AS 36.18, Recoverable Amount is strictly defined as the higher of Fair Value Less Costs of Disposal (FVLCOD) and Value in Use (VIU)."
-        }
+        },
+        "example": "A printing press has a book value of Rs 10,00,000. It could be sold for Rs 7,00,000 less Rs 50,000 selling costs, which is Rs 6,50,000. Using it will earn cash worth Rs 8,00,000 in today's money. Recoverable amount is the higher figure, Rs 8,00,000, so the impairment loss is Rs 2,00,000."
       },
       {
         "part": 3,
@@ -10623,7 +10725,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 36.104 establishes that impairment losses must first reduce goodwill carrying amount, and any remaining loss is allocated pro-rata to other non-goodwill assets.",
           "explanation": "Ind AS 36.104 establishes that impairment losses must first reduce goodwill carrying amount, and any remaining loss is allocated pro-rata to other non-goodwill assets."
-        }
+        },
+        "example": "A sweets factory unit carries goodwill of Rs 4,00,000, machinery of Rs 6,00,000 and a building of Rs 10,00,000, a total of Rs 20,00,000. It is only worth Rs 14,00,000, so the loss is Rs 6,00,000. Goodwill is written off first, Rs 4,00,000. The remaining Rs 2,00,000 is shared by size: Rs 75,000 to machinery and Rs 1,25,000 to the building."
       },
       {
         "part": 4,
@@ -10650,7 +10753,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 36.124 explicitly prohibits the reversal of an impairment loss recognized for goodwill under any circumstances, because any subsequent recovery represents internally generated goodwill.",
           "explanation": "Ind AS 36.124 explicitly prohibits the reversal of an impairment loss recognized for goodwill under any circumstances, because any subsequent recovery represents internally generated goodwill."
-        }
+        },
+        "example": "A machine is written down in value from Rs 6,00,000 to Rs 4,00,000 after impairment, with four years of life left. From then on, depreciation is Rs 1,00,000 a year rather than Rs 1,50,000. If the business recovers later, the loss on such a machine may be reversed, but goodwill cannot, since later recovery is the business's own homegrown value."
       },
       {
         "part": 5,
@@ -10676,7 +10780,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The simulation engine verifies all CGU impairment assertions and concludes by emitting IND_AS_36_ASSET_IMPAIRMENT_PASS.",
           "explanation": "The simulation engine verifies all CGU impairment assertions and concludes by emitting IND_AS_36_ASSET_IMPAIRMENT_PASS."
-        }
+        },
+        "example": "A surveyor values a flat for a bank and does not just stamp it. She checks the title papers, the area, the age and the market rates, and only when each claim holds does she sign her certificate. The impairment checks work similarly: each statement on units, recoverable amount and write-down order is verified before audit certification."
       }
     ],
     "summary": [
@@ -10733,7 +10838,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 38.12 establishes that an intangible asset is identifiable if it is separable OR arises from contractual or other legal rights.",
           "explanation": "Ind AS 38.12 establishes that an intangible asset is identifiable if it is separable OR arises from contractual or other legal rights."
-        }
+        },
+        "example": "A bakery owns a recipe book it could sell separately, so that is identifiable. A taxi owner has a route permit from the government, which gives him a legal right, so that is also identifiable, even if the permit cannot be sold. The skill of the bakery's best cook cannot be controlled or owned, and is not an asset."
       },
       {
         "part": 2,
@@ -10759,7 +10865,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 38.54 explicitly requires that expenditure on research must be expensed in profit or loss when incurred; no intangible asset arising from research can be recognized.",
           "explanation": "Ind AS 38.54 explicitly requires that expenditure on research must be expensed in profit or loss when incurred; no intangible asset arising from research can be recognized."
-        }
+        },
+        "example": "An agriculture firm spends Rs 3,00,000 testing which seed varieties might perform better. That is research and is expensed as it occurs. Later, it picks a variety, shows it can finish and sell it, and spends Rs 5,00,000 on final development. As the conditions are met, those Rs 5,00,000 are recorded as an intangible asset."
       },
       {
         "part": 3,
@@ -10785,7 +10892,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 38.107-108 establishes that intangibles with indefinite useful lives are NOT amortized, but must be tested for impairment at least annually under Ind AS 36.",
           "explanation": "Ind AS 38.107-108 establishes that intangibles with indefinite useful lives are NOT amortized, but must be tested for impairment at least annually under Ind AS 36."
-        }
+        },
+        "example": "A taxi operator buys a ten-year route licence for Rs 5,00,000. With a fixed life, he writes it off at Rs 50,000 each year. A trademark bought for a famous snack with no foreseeable end to its life is not written off, but is tested for impairment at least once a year to confirm it is still worth its book value."
       },
       {
         "part": 4,
@@ -10812,7 +10920,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 38.63 prohibits the recognition of internally generated brands, mastheads, publishing titles, and customer lists because they cannot be distinguished from the cost of developing the business as a whole.",
           "explanation": "Ind AS 38.63 prohibits the recognition of internally generated brands, mastheads, publishing titles, and customer lists because they cannot be distinguished from the cost of developing the business as a whole."
-        }
+        },
+        "example": "A sweet shop builds a loved name over twenty years through advertising and good service. None of this may be recorded as an asset, because it cannot be separated from the cost of running the business. If another sweet maker pays Rs 2,00,000 to buy a brand from its owner, that purchase can be recorded as an intangible asset."
       },
       {
         "part": 5,
@@ -10839,7 +10948,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "The simulation engine verifies all Ind AS 38 R&D, PIRATE, and amortization assertions and concludes by emitting IND_AS_38_INTANGIBLE_ASSETS_PASS.",
           "explanation": "The simulation engine verifies all Ind AS 38 R&D, PIRATE, and amortization assertions and concludes by emitting IND_AS_38_INTANGIBLE_ASSETS_PASS."
-        }
+        },
+        "example": "A quality inspector at a pickle factory tests each batch on sourness, salt and sealing. Only when all three pass is the batch certified. The same is done for intangible assets: research spending, the conditions for capitalising development and the write-off over useful life are each tested before the day is completed."
       }
     ],
     "summary": [
@@ -10894,7 +11004,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 113 defines fair value as an exit price, and establishes that the price in the principal market must be used whenever an active principal market exists.",
           "explanation": "Ind AS 113 defines fair value as an exit price, and establishes that the price in the principal market must be used whenever an active principal market exists."
-        }
+        },
+        "example": "A fisherman can sell his catch at the big harbour market where most fish is traded at Rs 300 per kg, or at a small jetty that offers Rs 320 but sees little trade. He must use the harbour price, since that is where the market is deepest. Fair value is the price received to sell, not what he hopes for."
       },
       {
         "part": 2,
@@ -10921,7 +11032,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 113.28 requires that the highest and best use of a non-financial asset must be physically possible, legally permissible, and financially feasible.",
           "explanation": "Ind AS 113.28 requires that the highest and best use of a non-financial asset must be physically possible, legally permissible, and financially feasible."
-        }
+        },
+        "example": "A shopkeeper's old building is used as a shop, but a builder would pay more for it as a site for flats. Flats are physically possible, allowed by zoning and profitable. A cinema, however, would cost more to build than it earns. So the best use for valuing the building is flats, and not the cinema."
       },
       {
         "part": 3,
@@ -10948,7 +11060,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Under Ind AS 113, the Income Approach converts future amounts (cash flows, earnings) into a single discounted present value using DCF or option pricing techniques.",
           "explanation": "Under Ind AS 113, the Income Approach converts future amounts (cash flows, earnings) into a single discounted present value using DCF or option pricing techniques."
-        }
+        },
+        "example": "To value a flat, a valuer can look at similar flats sold nearby, which is the market approach. She can add up the present value of the rent the flat is expected to earn, which is the income approach. Or she can ask what it would cost to rebuild it, less wear and tear, which is the cost approach."
       },
       {
         "part": 4,
@@ -10976,7 +11089,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Level 1 inputs are strictly unadjusted quoted prices in active markets for identical assets or liabilities that the entity can access at measurement date.",
           "explanation": "Level 1 inputs are strictly unadjusted quoted prices in active markets for identical assets or liabilities that the entity can access at measurement date."
-        }
+        },
+        "example": "A sugar mill holds some listed shares priced on the exchange, which is the most reliable level. It holds a loan valued from interest rates seen in the market, a middle level. It also holds a stake in an unlisted partner firm valued from its own estimates, the least certain level, which requires more detailed notes."
       },
       {
         "part": 5,
@@ -11003,7 +11117,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "The simulation engine verifies all fair value hierarchy tiers and concludes by emitting IND_AS_113_FAIR_VALUE_MEASUREMENT_PASS.",
           "explanation": "The simulation engine verifies all fair value hierarchy tiers and concludes by emitting IND_AS_113_FAIR_VALUE_MEASUREMENT_PASS."
-        }
+        },
+        "example": "A cashier counts the day's notes in three trays, one for each denomination, and tallies each tray before adding them. Fair value levels work similarly. Listed prices, observable inputs and own estimates are separated and checked, and each group is tallied, before the footnote is signed."
       }
     ],
     "summary": [
@@ -11059,7 +11174,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Ind AS 105.6-8 requires that the asset/disposal group must be available for immediate sale in its present condition and its sale must be highly probable within 12 months.",
           "explanation": "Ind AS 105.6-8 requires that the asset/disposal group must be available for immediate sale in its present condition and its sale must be highly probable within 12 months."
-        }
+        },
+        "example": "A farmer decides to sell his old tractor. It can be sold right now in its present condition, a buyer has been lined up, and the sale is very likely to close within a year. That makes it held for sale. If the tractor needed major repairs before any buyer would take it, it would not be available for immediate sale."
       },
       {
         "part": 2,
@@ -11088,7 +11204,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Ind AS 105.15 prescribes measurement at the lower of carrying amount and fair value less costs to sell (FVLCTS).",
           "explanation": "Ind AS 105.15 prescribes measurement at the lower of carrying amount and fair value less costs to sell (FVLCTS)."
-        }
+        },
+        "example": "A machine has a book value of Rs 5,00,000. Its fair value is Rs 4,50,000 and selling costs are Rs 20,000, so fair value less costs to sell is Rs 4,30,000. It is held for sale, so it is shown at the lower figure, Rs 4,30,000, and the Rs 70,000 difference is written down as a loss."
       },
       {
         "part": 3,
@@ -11116,7 +11233,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Ind AS 105.25 strictly mandates that an entity shall not depreciate or amortize a non-current asset while classified as held for sale.",
           "explanation": "Ind AS 105.25 strictly mandates that an entity shall not depreciate or amortize a non-current asset while classified as held for sale."
-        }
+        },
+        "example": "A printing press that was depreciating at Rs 60,000 a year is now held for sale. From that day, depreciation stops, because the press will be sold, not used up. If the buyer pulls out and the owner decides to keep it, the press goes back to being a normal asset and the normal rules apply again."
       },
       {
         "part": 4,
@@ -11144,7 +11262,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Ind AS 105.33 requires presentation of a single line item on the face of the P&L representing the total post-tax result of discontinued operations.",
           "explanation": "Ind AS 105.33 requires presentation of a single line item on the face of the P&L representing the total post-tax result of discontinued operations."
-        }
+        },
+        "example": "A group closes its transport branch. Instead of scattering the branch's sales and costs across different lines, it shows one line. The branch had revenue of Rs 8,00,000 and costs of Rs 9,50,000, a loss of Rs 1,50,000. After a tax benefit of 25 percent, Rs 37,500, the single line shows a loss of Rs 1,12,500."
       },
       {
         "part": 5,
@@ -11170,7 +11289,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "The simulation engine verifies all held-for-sale measurement and discontinued operation assertions and concludes by emitting IND_AS_105_HELD_FOR_SALE_DISCONTINUED_PASS.",
           "explanation": "The simulation engine verifies all held-for-sale measurement and discontinued operation assertions and concludes by emitting IND_AS_105_HELD_FOR_SALE_DISCONTINUED_PASS."
-        }
+        },
+        "example": "A family selling its house packs boxes and writes sold on those meant for the buyer, keeping them apart from boxes that stay with the family. In a balance sheet, assets and liabilities of a unit held for sale are kept separate in the same way, so readers can see which part of the business is leaving."
       }
     ],
     "summary": [
@@ -11225,7 +11345,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The executive mandate is to synthesize Ind AS 36, 38, 113, and 105 into an integrated, fully reconciled valuation and statutory reporting architecture.",
           "explanation": "The executive mandate is to synthesize Ind AS 36, 38, 113, and 105 into an integrated, fully reconciled valuation and statutory reporting architecture."
-        }
+        },
+        "example": "Before a bank approves a large loan to a group, the finance head and the valuer must tell one consistent story. The impairment of assets, the intangible assets, fair values and the unit held for sale must all use the same facts and values. If one report shows a unit as valuable while another shows it as sold, the bank will notice."
       },
       {
         "part": 2,
@@ -11251,7 +11372,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Module 1 confirms Recoverable Amount = $32,864,199.21 based on VIU, Goodwill write-down = $4,000,000.00 (100%), and Total Impairment Loss = $11,135,800.79.",
           "explanation": "Module 1 confirms Recoverable Amount = $32,864,199.21 based on VIU, Goodwill write-down = $4,000,000.00 (100%), and Total Impairment Loss = $11,135,800.79."
-        }
+        },
+        "example": "A cash-generating unit has a carrying amount of Rs 16,00,000 including goodwill of Rs 3,00,000. It will earn Rs 5,00,000 a year for three years, which at 10 percent is worth about Rs 12,43,426. Selling it would give only Rs 11,00,000. The higher figure is recoverable, so the loss is Rs 3,56,574, with all Rs 3,00,000 of goodwill written off first."
       },
       {
         "part": 3,
@@ -11278,7 +11400,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Module 2 confirms Capitalized Development = $24,000,000.00, Year 1 Amortization (6 months) = $1,500,000.00, Patent Carrying = $22,500,000.00, plus Brand ($8.0M) = $30,500,000.00 Total Intangibles.",
           "explanation": "Module 2 confirms Capitalized Development = $24,000,000.00, Year 1 Amortization (6 months) = $1,500,000.00, Patent Carrying = $22,500,000.00, plus Brand ($8.0M) = $30,500,000.00 Total Intangibles."
-        }
+        },
+        "example": "A medicine maker spends Rs 2,40,000 developing a product that meets the conditions for capitalising, with an eight-year life starting mid-year. Amortisation is Rs 30,000 a year, so six months is Rs 15,000, leaving Rs 2,25,000. A brand bought from another firm for Rs 80,000 is added, so the intangibles total Rs 3,05,000."
       },
       {
         "part": 4,
@@ -11304,7 +11427,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Modules 3 and 4 confirm Total Fair Value Portfolio = $52,050,000.00 and Single-Line Discontinued Operations Post-Tax Result = -$1,122,480.00 (net of 25.168% tax benefit).",
           "explanation": "Modules 3 and 4 confirm Total Fair Value Portfolio = $52,050,000.00 and Single-Line Discontinued Operations Post-Tax Result = -$1,122,480.00 (net of 25.168% tax benefit)."
-        }
+        },
+        "example": "A group's assets are valued at three levels: listed shares of Rs 5,00,000, loans valued from market rates of Rs 3,00,000, and an unlisted stake of Rs 2,00,000, making Rs 10,00,000. A closing branch lost Rs 1,50,000 before tax. After a tax benefit of 25.168 percent, Rs 37,752, the single discontinued line is a loss of Rs 1,12,248."
       },
       {
         "part": 5,
@@ -11332,7 +11456,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "The Milestone 11 Capstone concludes execution by emitting CORPORATE_ASSET_VALUATION_IMPAIRMENT_SUITE_PASS.",
           "explanation": "The Milestone 11 Capstone concludes execution by emitting CORPORATE_ASSET_VALUATION_IMPAIRMENT_SUITE_PASS."
-        }
+        },
+        "example": "A shopkeeper does the annual stock-taking before his bank reviews his loan, counting stock, valuing old goods and listing what he plans to sell. Everything has to agree with his books. The eleventh milestone is the same for a company, as impairment, intangibles, fair values and held-for-sale items are each confirmed before the audit sign-off."
       }
     ],
     "summary": [
@@ -11391,7 +11516,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Verified answer under Ind AS standard: Balance Sheet, Statement of Profit & Loss (with OCI), SOCIE, Statement of Cash Flows, and Notes",
           "explanation": "Verified answer under Ind AS standard: Balance Sheet, Statement of Profit & Loss (with OCI), SOCIE, Statement of Cash Flows, and Notes"
-        }
+        },
+        "example": "A tuition teacher gives each family a yearly report covering five things: what is owned and owed, the income and expenses, what changed in savings, how cash moved and notes explaining it all. A complete set of financial statements does the same, with a balance sheet, profit and loss with other comprehensive income, equity changes, cash flows and notes."
       },
       {
         "part": 2,
@@ -11420,7 +11546,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Verified answer under Ind AS standard: It is classified as a Current Asset because it will be realized within the entity's normal operating cycle",
           "explanation": "Verified answer under Ind AS standard: It is classified as a Current Asset because it will be realized within the entity's normal operating cycle"
-        }
+        },
+        "example": "A rice mill buys paddy, stores it, mills it, sells it and collects payment, and the whole cycle takes about fourteen months. Its stock of paddy is therefore a current asset, as it will turn into cash within the normal operating cycle, even though that is longer than twelve months. The cycle, not the calendar, sets the classification."
       },
       {
         "part": 3,
@@ -11448,7 +11575,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Verified answer under Ind AS standard: Remeasurements of defined benefit pension plans (Ind AS 19) and equity instruments at FVTOCI (Ind AS 109)",
           "explanation": "Verified answer under Ind AS standard: Remeasurements of defined benefit pension plans (Ind AS 19) and equity instruments at FVTOCI (Ind AS 109)"
-        }
+        },
+        "example": "A trading business holds shares for the long term, bought at Rs 1,00,000 and now worth Rs 1,20,000, and has chosen to track them through other comprehensive income. The Rs 20,000 gain bypasses profit and sits in that bucket, and is never moved to profit later. Other items, like certain hedges, may later move into profit."
       },
       {
         "part": 4,
@@ -11478,7 +11606,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Verified answer under Ind AS standard: To reconcile opening and closing balances of equity, disclosing TCI, retrospective restatements, and owner transactions",
           "explanation": "Verified answer under Ind AS standard: To reconcile opening and closing balances of equity, disclosing TCI, retrospective restatements, and owner transactions"
-        }
+        },
+        "example": "A company starts the year with equity of Rs 10,00,000. It earns Rs 2,00,000 profit, has a Rs 20,000 gain in other comprehensive income, pays Rs 50,000 dividend and issues new shares for Rs 1,00,000. Closing equity is Rs 10,00,000 plus Rs 2,00,000 plus Rs 20,000 minus Rs 50,000 plus Rs 1,00,000, which is Rs 12,70,000. The statement of changes in equity shows each step."
       },
       {
         "part": 5,
@@ -11508,7 +11637,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Verified answer under Ind AS standard: IND_AS_1_PRESENTATION_TAXONOMY_PASS",
           "explanation": "Verified answer under Ind AS standard: IND_AS_1_PRESENTATION_TAXONOMY_PASS"
-        }
+        },
+        "example": "A grocer's closing sheet shows total assets of Rs 12,70,000. They must equal what the owners hold, Rs 8,70,000, plus what is owed to others, Rs 4,00,000. When both sides match, the sheet is reconciled. If they differ by even a rupee, something is missing and the statements cannot be signed."
       }
     ],
     "summary": [
@@ -11566,7 +11696,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Verified answer under Ind AS standard: A short-term, highly liquid investment readily convertible to known amounts of cash with insignificant risk of value changes (typically 3 months or less maturity)",
           "explanation": "Verified answer under Ind AS standard: A short-term, highly liquid investment readily convertible to known amounts of cash with insignificant risk of value changes (typically 3 months or less maturity)"
-        }
+        },
+        "example": "Rekha keeps a wallet note, a few coins and a two-month bank deposit that she can turn into cash any time. In the cash flow statement all three count as cash, since the deposit matures within three months. A three-year deposit does not count and is shown as an investing activity, as it is money put away for returns."
       },
       {
         "part": 2,
@@ -11596,7 +11727,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Verified answer under Ind AS standard: Because depreciation is a non-cash expense that reduced accounting profit without involving an outflow of cash",
           "explanation": "Verified answer under Ind AS standard: Because depreciation is a non-cash expense that reduced accounting profit without involving an outflow of cash"
-        }
+        },
+        "example": "A printing press reports a profit of Rs 1,00,000, which includes Rs 20,000 of depreciation, a cost that needed no cash. Its customer dues rose by Rs 30,000 and its supplier dues rose by Rs 10,000. Cash from operations is Rs 1,00,000 plus Rs 20,000 minus Rs 30,000 plus Rs 10,000, which is Rs 1,00,000."
       },
       {
         "part": 3,
@@ -11625,7 +11757,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Verified answer under Ind AS standard: They must be excluded from the Statement of Cash Flows and disclosed in the notes",
           "explanation": "Verified answer under Ind AS standard: They must be excluded from the Statement of Cash Flows and disclosed in the notes"
-        }
+        },
+        "example": "A farmer buys a pump for Rs 5,00,000 and the dealer finances the entire amount, so no cash moves at all. Because no cash changed hands, the deal does not appear in the cash flow statement. It is still important, so the notes describe it, and readers can see how the farm acquired the asset."
       },
       {
         "part": 4,
@@ -11654,7 +11787,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Verified answer under Ind AS standard: To reconcile opening and closing debt carrying amounts, disclosing both financing cash flows and non-cash changes",
           "explanation": "Verified answer under Ind AS standard: To reconcile opening and closing debt carrying amounts, disclosing both financing cash flows and non-cash changes"
-        }
+        },
+        "example": "A transport operator starts the year with a loan of Rs 10,00,000. She borrows another Rs 3,00,000 in cash, repays Rs 2,00,000 and has Rs 20,000 of unpaid interest added to the loan. The closing loan is Rs 10,00,000 plus Rs 3,00,000 minus Rs 2,00,000 plus Rs 20,000, which is Rs 11,20,000, and the roll-forward shows the cash and non-cash changes."
       },
       {
         "part": 5,
@@ -11684,7 +11818,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Verified answer under Ind AS standard: IND_AS_7_CASH_FLOW_STATEMENT_PASS",
           "explanation": "Verified answer under Ind AS standard: IND_AS_7_CASH_FLOW_STATEMENT_PASS"
-        }
+        },
+        "example": "A cashier starts the evening with Rs 40,000, receives Rs 2,60,000 and pays out Rs 2,10,000. By calculation she should have Rs 90,000. She counts the drawer, and the cash is exactly Rs 90,000. A cash flow statement is checked the same way, as its closing cash must match the cash in the balance sheet."
       }
     ],
     "summary": [
@@ -11742,7 +11877,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Verified answer under Ind AS standard: Accounting Policies, Changes in Accounting Estimates, and Prior Period Errors",
           "explanation": "Verified answer under Ind AS standard: Accounting Policies, Changes in Accounting Estimates, and Prior Period Errors"
-        }
+        },
+        "example": "A shop changes how it values stock (a policy), decides a machine will last longer than first thought (an estimate) and finds it missed a purchase invoice from last year (an error). Each one is handled differently under the standard on accounting policies, estimates and errors, even though all three change the numbers."
       },
       {
         "part": 2,
@@ -11771,7 +11907,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Verified answer under Ind AS standard: Retrospectively, adjusting opening equity for the earliest prior period presented and restating comparative figures",
           "explanation": "Verified answer under Ind AS standard: Retrospectively, adjusting opening equity for the earliest prior period presented and restating comparative figures"
-        }
+        },
+        "example": "A shop moves from first-in, first-out to weighted average for stock. Had it always used the new method, last year's closing stock would have been Rs 20,000 lower. It restates last year's figures and adjusts opening equity as if the new policy had always been used, rather than changing only this year's profit."
       },
       {
         "part": 3,
@@ -11799,7 +11936,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Verified answer under Ind AS standard: Prospectively, recognizing the adjustment in profit or loss in the current and future periods without restating prior periods",
           "explanation": "Verified answer under Ind AS standard: Prospectively, recognizing the adjustment in profit or loss in the current and future periods without restating prior periods"
-        }
+        },
+        "example": "A machine bought for Rs 1,00,000 was expected to last ten years, so depreciation was Rs 10,000 a year. After four years it has a book value of Rs 60,000, and the owner now thinks it will last only three more years. New depreciation is Rs 60,000 divided by three, which is Rs 20,000 a year. Past years stay untouched."
       },
       {
         "part": 4,
@@ -11827,7 +11965,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Verified answer under Ind AS standard: Retrospectively, restating prior period comparative figures and adjusting opening Retained Earnings",
           "explanation": "Verified answer under Ind AS standard: Retrospectively, restating prior period comparative figures and adjusting opening Retained Earnings"
-        }
+        },
+        "example": "A shop finds it never recorded a Rs 30,000 purchase invoice last year, so last year's profit was overstated. The shop does not hide this in this year's profit. It restates last year's comparative figures and adjusts the opening retained earnings, as if the mistake had never happened."
       },
       {
         "part": 5,
@@ -11856,7 +11995,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Verified answer under Ind AS standard: IND_AS_8_POLICIES_ESTIMATES_ERRORS_PASS",
           "explanation": "Verified answer under Ind AS standard: IND_AS_8_POLICIES_ESTIMATES_ERRORS_PASS"
-        }
+        },
+        "example": "An accountant keeps three folders with different stamps. A changed rule gets a stamp to restate everything as if it was always so. A new estimate gets a stamp to apply from now on. A past mistake gets a stamp to restate and fix the opening balance. Sorting each item to the right folder is the whole skill."
       }
     ],
     "summary": [
@@ -11914,7 +12054,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Verified answer under Ind AS standard: Between the end of the reporting period and the date when financial statements are approved for issue by the Board of Directors",
           "explanation": "Verified answer under Ind AS standard: Between the end of the reporting period and the date when financial statements are approved for issue by the Board of Directors"
-        }
+        },
+        "example": "A company closes its books on 31 March, and the Board approves the accounts on 20 May, about seven weeks later. Everything that happens between those two dates is treated as an event after the reporting period. Whatever happens after 20 May belongs to the next year, and does not affect these accounts."
       },
       {
         "part": 2,
@@ -11942,7 +12083,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Verified answer under Ind AS standard: The settlement of a court case confirming a present obligation existed at the reporting date, or bankruptcy of a major customer confirming pre-existing insolvency",
           "explanation": "Verified answer under Ind AS standard: The settlement of a court case confirming a present obligation existed at the reporting date, or bankruptcy of a major customer confirming pre-existing insolvency"
-        }
+        },
+        "example": "A wholesaler is owed Rs 80,000 by a customer on 31 March. On 15 April the customer is declared bankrupt. The trouble existed at year end, so the wholesaler adjusts its books to write off the debt. The April news is only confirming a condition that was already there."
       },
       {
         "part": 3,
@@ -11970,7 +12112,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Verified answer under Ind AS standard: They shall NOT be recognized as a liability at the reporting date, but must be disclosed in the notes",
           "explanation": "Verified answer under Ind AS standard: They shall NOT be recognized as a liability at the reporting date, but must be disclosed in the notes"
-        }
+        },
+        "example": "On 10 April, after the year-end, a fire damages a company's godown. The godown was intact on 31 March, so the accounts are not changed, but a note describes the event. Similarly, if the Board proposes a dividend of Rs 1,00,000 in May, it is not a liability at 31 March and appears only in the notes."
       },
       {
         "part": 4,
@@ -12000,7 +12143,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Verified answer under Ind AS standard: Financial statements shall NOT be prepared on a going concern basis if management determines after the reporting period that it intends to liquidate or has no realistic alternative",
           "explanation": "Verified answer under Ind AS standard: Financial statements shall NOT be prepared on a going concern basis if management determines after the reporting period that it intends to liquidate or has no realistic alternative"
-        }
+        },
+        "example": "A bakery's owner learns in May that its lease will not be renewed and decides to close in June. Even for a March year-end, its accounts cannot assume the bakery will carry on. The decision to cease trading, made after the reporting period, changes the whole basis, so stock and equipment are valued as for a sell-off."
       },
       {
         "part": 5,
@@ -12030,7 +12174,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Verified answer under Ind AS standard: IND_AS_10_EVENTS_AFTER_REPORTING_PASS",
           "explanation": "Verified answer under Ind AS standard: IND_AS_10_EVENTS_AFTER_REPORTING_PASS"
-        }
+        },
+        "example": "A shopkeeper keeps a notice board in the year-end notebook for things that happened after the books closed. One note reads that on 10 April a fire damaged the godown, with a loss estimated at Rs 2,00,000. The date, the nature and the estimated amount are all there, and readers can see what happened without the numbers changing."
       }
     ],
     "summary": [
@@ -12088,7 +12233,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Verified answer under Ind AS standard: To synthesize all 60 days of curriculum across Ind AS 1, 7, 8, 10, diagnostics, asset valuation, and group consolidation into a unified, auditable annual reporting close",
           "explanation": "Verified answer under Ind AS standard: To synthesize all 60 days of curriculum across Ind AS 1, 7, 8, 10, diagnostics, asset valuation, and group consolidation into a unified, auditable annual reporting close"
-        }
+        },
+        "example": "At a big wedding, the head chef makes sure the starters, the main course and the sweets all reach the table together and in the right order. The group controller does the same for sixty days of learning, bringing presentation, cash flows, policy changes and later events into one set of accounts the audit partner can sign."
       },
       {
         "part": 2,
@@ -12118,7 +12264,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 3,
           "why": "Verified answer under Ind AS standard: Total Assets = $124,000,000.00; Total Comprehensive Income (TCI) = $16,566,400.00",
           "explanation": "Verified answer under Ind AS standard: Total Assets = $124,000,000.00; Total Comprehensive Income (TCI) = $16,566,400.00"
-        }
+        },
+        "example": "A trader puts together his statements. Assets are Rs 6,00,000 plus Rs 4,40,000 plus Rs 2,00,000, which is Rs 12,40,000. Profit is Rs 1,50,000 and other comprehensive income is Rs 15,000, so total comprehensive income is Rs 1,65,000. These two headline numbers go onto the statements and must agree with the detailed schedules behind them."
       },
       {
         "part": 3,
@@ -12148,7 +12295,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 2,
           "why": "Verified answer under Ind AS standard: Operating Cash Flow (CFO) = $20,666,400.00; Closing Cash = $10,000,000.00",
           "explanation": "Verified answer under Ind AS standard: Operating Cash Flow (CFO) = $20,666,400.00; Closing Cash = $10,000,000.00"
-        }
+        },
+        "example": "A transport firm starts with Rs 4,00,000 in cash. Operations bring in Rs 6,00,000, buying vehicles takes out Rs 3,00,000, and new borrowing brings in Rs 3,00,000. Closing cash is Rs 4,00,000 plus Rs 6,00,000 minus Rs 3,00,000 plus Rs 3,00,000, which is Rs 10,00,000. The statement of cash flows must end at exactly this figure."
       },
       {
         "part": 4,
@@ -12176,7 +12324,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 1,
           "why": "Verified answer under Ind AS standard: Prior Error Retained Earnings Restatement = -$1,122,480.00; Pre-Tax Adjusting Events = -$2,800,000.00",
           "explanation": "Verified answer under Ind AS standard: Prior Error Retained Earnings Restatement = -$1,122,480.00; Pre-Tax Adjusting Events = -$2,800,000.00"
-        }
+        },
+        "example": "A wholesaler has two adjusting events after the year-end: a customer who went bankrupt owing Rs 1,80,000 and a court settlement of Rs 1,00,000, a total of Rs 2,80,000 to be booked in the old year. It also finds a Rs 1,50,000 expense missed last year, which means restating the opening retained earnings, and not this year's profit."
       },
       {
         "part": 5,
@@ -12206,7 +12355,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answerIndex": 0,
           "why": "Verified answer under Ind AS standard: GLOBAL_FINANCIAL_CONTROLLER_ACCREDITATION_PASS",
           "explanation": "Verified answer under Ind AS standard: GLOBAL_FINANCIAL_CONTROLLER_ACCREDITATION_PASS"
-        }
+        },
+        "example": "A learner driver practises for weeks on turns, parking, reversing and hill starts. On test day she must perform all of them in one drive, and the examiner signs her licence only when every one passes. The final milestone is the same, as everything learned over sixty days must hold together before the graduation certificate is signed."
       }
     ],
     "summary": [

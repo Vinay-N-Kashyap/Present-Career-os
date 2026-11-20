@@ -3266,7 +3266,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "WACC = 0.60 * 15% + 0.40 * [10% * (1 - 0.25)] = 9.0% + 3.0% = 12.00%. PV = 60,000/1.12 + 60,000/1.2544 = 101,403.06. NPV = 101,403.06 - 100,000 = +$1,403.06.",
           "answerIndex": 0,
           "explanation": "WACC = 0.60 * 15% + 0.40 * [10% * (1 - 0.25)] = 9.0% + 3.0% = 12.00%. PV = 60,000/1.12 + 60,000/1.2544 = 101,403.06. NPV = 101,403.06 - 100,000 = +$1,403.06."
-        }
+        },
+        "example": "A bakery owner plans a new oven costing Rs 5,00,000. Half comes from her own savings, which she expects to earn 14%, and half from a loan at 10% with a 20% tax saving, so the loan really costs 8%. Her average cost of funds is 7% plus 4%, which is 11%. The oven brings Rs 1,80,000 a year for three years. Discounted at 11%, that is only about Rs 4.4 lakh, so the oven falls short."
       },
       {
         "title": "Capital Equipment Replacement & Equivalent Annual Cost (EAC)",
@@ -3311,7 +3312,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Net Outlay = 80,000 - 10,000 = $70,000. PV of savings ($30k/yr * 3.7908) = $113,723.60. NPV = 113,723.60 - 70,000 = +$43,723.60 (Replace).",
           "answerIndex": 3,
           "explanation": "Net Outlay = 80,000 - 10,000 = $70,000. PV of savings ($30k/yr * 3.7908) = $113,723.60. NPV = 113,723.60 - 70,000 = +$43,723.60 (Replace)."
-        }
+        },
+        "example": "A tailor must choose between two sewing machines. One costs Rs 30,000 and lasts three years, the other costs Rs 54,000 and lasts six. Ignoring interest for simplicity, the first costs Rs 10,000 per year of use and the second Rs 9,000. Equivalent annual cost does this properly, with interest included, so machines of different lives can be compared fairly, year against year, instead of by sticker price."
       },
       {
         "title": "EBIT-EPS Indifference Point & Financial Financing Plans",
@@ -3356,7 +3358,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "When expected EBIT ($150,000) exceeds the indifference point ($100,000), financial leverage magnifies EPS, making debt financing more accretive to equity shareholders.",
           "answerIndex": 2,
           "explanation": "When expected EBIT ($150,000) exceeds the indifference point ($100,000), financial leverage magnifies EPS, making debt financing more accretive to equity shareholders."
-        }
+        },
+        "example": "A shopkeeper needs Rs 5,00,000 and can either take in a partner who gets half the profit, or borrow and pay Rs 50,000 yearly interest. If profit before interest is Rs 1,00,000, both routes leave him Rs 50,000, so he is indifferent. If profit is Rs 1,50,000, the partner route leaves him Rs 75,000 but the loan leaves Rs 1,00,000. Above the crossover point, borrowing is better."
       },
       {
         "title": "Multi-Project Capital Rationing Matrix & Boundary Analysis",
@@ -3401,7 +3404,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Proposal CAP-04 produces a negative Net Present Value (-$9,000) and a Profitability Index below 1.0 (0.85x), representing destruction of economic capital.",
           "answerIndex": 1,
           "explanation": "Proposal CAP-04 produces a negative Net Present Value (-$9,000) and a Profitability Index below 1.0 (0.85x), representing destruction of economic capital."
-        }
+        },
+        "example": "A farmer has Rs 10 lakh to spend. A tractor costs 4 lakh and adds 1.2 lakh of value, a pump costs 3 lakh and adds 1.35 lakh, a cold store costs 5 lakh and adds 1 lakh. All three together need 12 lakh, so he must choose. The pump and tractor use 7 lakh and add 2.55 lakh, the best combination. Spending limits force ranking by value created per rupee."
       },
       {
         "title": "⭐ Milestone 3 Capstone: Integrated Capital Budgeting & Valuation Suite",
@@ -3450,7 +3454,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Integrating WACC hurdle rates with DCF valuation and capital rationing guarantees the corporation deploys capital exclusively to wealth-maximizing projects that exceed market financing costs.",
           "answerIndex": 0,
           "explanation": "Integrating WACC hurdle rates with DCF valuation and capital rationing guarantees the corporation deploys capital exclusively to wealth-maximizing projects that exceed market financing costs."
-        }
+        },
+        "example": "A dairy cooperative wants to build a chilling plant. First it works out what its money costs, mixing members' savings and a bank loan. Then it discounts the plant's expected milk income at that cost. Finally, with only a fixed amount available this year, it ranks the plant against other proposals and funds those creating the most value. Each step feeds the next, so one decision rests on all three."
       }
     ],
     "summary": [
@@ -3523,7 +3528,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Degree of Operating Leverage (DOL) = Contribution / EBIT = $3,000,000 / $1,000,000 = 3.0x. Therefore, % Delta EBIT = DOL * % Delta Sales = 3.0x * 15% = 45.0% expansion in EBIT.",
           "answerIndex": 1,
           "explanation": "Degree of Operating Leverage (DOL) = Contribution / EBIT = $3,000,000 / $1,000,000 = 3.0x. Therefore, % Delta EBIT = DOL * % Delta Sales = 3.0x * 15% = 45.0% expansion in EBIT."
-        }
+        },
+        "example": "Two shops earn the same profit today, but one has high rent and salaried staff, the other pays mostly per sale. Shop A has fixed costs of Rs 60,000 a month and contribution of Rs 1,00,000, so profit is Rs 40,000 and operating leverage is 2.5. If sales rise 10%, contribution becomes Rs 1,10,000 and profit Rs 50,000, up 25%. Fixed costs magnify the swing both ways."
       },
       {
         "title": "Financial Leverage: Fixed Financing Costs & DFL Mechanics",
@@ -3570,7 +3576,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "DFL = EBIT / (EBIT - Interest) = $600,000 / ($600,000 - $200,000) = $600,000 / $400,000 = 1.50x. Therefore, % Delta EPS = DFL * % Delta EBIT = 1.50x * 10% = 15.0% expansion in EPS.",
           "answerIndex": 2,
           "explanation": "DFL = EBIT / (EBIT - Interest) = $600,000 / ($600,000 - $200,000) = $600,000 / $400,000 = 1.50x. Therefore, % Delta EPS = DFL * % Delta EBIT = 1.50x * 10% = 15.0% expansion in EPS."
-        }
+        },
+        "example": "A shop earns Rs 60,000 a month before paying Rs 20,000 loan interest, leaving Rs 40,000. Its financial leverage is 60,000 divided by 40,000, which is 1.5. When earnings rise 20% to Rs 72,000, the interest stays the same, so the owner keeps Rs 52,000, a rise of 30%. Had earnings fallen 20%, the owner's share would have dropped 30% as well."
       },
       {
         "title": "Combined Leverage: Total Risk Exposure & DCL Synthesis",
@@ -3624,7 +3631,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Degree of Combined Leverage (DCL) = DOL * DFL = 2.50x * 1.60x = 4.00x. Therefore, % Delta EPS = DCL * % Delta Sales = 4.00x * (-8%) = -32.0% contraction in EPS.",
           "answerIndex": 3,
           "explanation": "Degree of Combined Leverage (DCL) = DOL * DFL = 2.50x * 1.60x = 4.00x. Therefore, % Delta EPS = DCL * % Delta Sales = 4.00x * (-8%) = -32.0% contraction in EPS."
-        }
+        },
+        "example": "A single-screen cinema has heavy fixed costs like rent and projector staff, giving operating leverage of 2. It also repays a construction loan, giving financial leverage of 1.5. Multiplied, combined leverage is 3. If ticket sales fall 10%, the owner's earnings fall about 30%. The two kinds of fixed burden compound, so total risk is much larger than either alone."
       },
       {
         "title": "EBIT-EPS Indifference Analysis: Debt vs Equity Financing",
@@ -3669,7 +3677,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "EBIT* = (N1 * I2 - N2 * I1) / (N1 - N2) = (100,000 * $80,000 - 60,000 * 0) / (100,000 - 60,000) = $8,000,000,000 / 40,000 = $200,000. Since expected EBIT ($250,000) exceeds the $200,000 indifference threshold, Plan B (debt plan) produces higher EPS.",
           "answerIndex": 0,
           "explanation": "EBIT* = (N1 * I2 - N2 * I1) / (N1 - N2) = (100,000 * $80,000 - 60,000 * 0) / (100,000 - 60,000) = $8,000,000,000 / 40,000 = $200,000. Since expected EBIT ($250,000) exceeds the $200,000 indifference threshold, Plan B (debt plan) produces higher EPS."
-        }
+        },
+        "example": "A hotel owner holds 100 shares and needs Rs 8 lakh. Plan A issues 100 new shares. Plan B borrows, with Rs 60,000 interest. At profit before interest of Rs 1,20,000, plan A gives Rs 600 per share and plan B also Rs 600. At Rs 1,80,000, plan A gives Rs 900 and plan B Rs 1,200. Past the crossover, borrowing rewards owners; below it, issuing shares is safer."
       },
       {
         "title": "Enterprise Leverage Governance & Risk Management Suite",
@@ -3714,7 +3723,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Since DCL = DOL * DFL, to reduce DCL from 7.00x to the 4.00x ceiling when DOL is 3.50x, DFL must be brought down to 4.00 / 3.50 = 1.14x. This is achieved by de-leveraging the capital structure (paying down debt or substituting debt with equity).",
           "answerIndex": 1,
           "explanation": "Since DCL = DOL * DFL, to reduce DCL from 7.00x to the 4.00x ceiling when DOL is 3.50x, DFL must be brought down to 4.00 / 3.50 = 1.14x. This is achieved by de-leveraging the capital structure (paying down debt or substituting debt with equity)."
-        }
+        },
+        "example": "A transport firm's board sets a ceiling: combined leverage must not exceed 4. Its trucks and depots give operating leverage of 2.5. Since combined leverage is operating times financial leverage, financial leverage must stay at or below 1.6, because 2.5 times 1.6 is exactly 4. If it currently sits higher, the firm must repay some truck loans before it expands."
       }
     ],
     "summary": [
@@ -3787,7 +3797,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Unit Contribution = $200 - $80 = $120. P/V Ratio = Unit Contribution / Price = $120 / $200 = 0.60 or 60.0%. Additional Contribution = Delta Sales * P/V Ratio = $500,000 * 60% = $300,000.",
           "answerIndex": 2,
           "explanation": "Unit Contribution = $200 - $80 = $120. P/V Ratio = Unit Contribution / Price = $120 / $200 = 0.60 or 60.0%. Additional Contribution = Delta Sales * P/V Ratio = $500,000 * 60% = $300,000."
-        }
+        },
+        "example": "A juice stall sells a glass for Rs 30. Fruit and cup cost Rs 12, so each glass contributes Rs 18, which is 60% of the price. Rent for the day is Rs 900, so the stall needs 50 glasses just to cover it. After that, every extra glass adds Rs 18 to profit. Ten more glasses mean Rs 180 more, because the fixed rent is already paid."
       },
       {
         "title": "Break-Even Point (BEP) Formulation: Physical Units & Value",
@@ -3832,7 +3843,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Unit Contribution = $75 - $25 = $50. BEP (Units) = Fixed Costs / Unit Contribution = $1,500,000 / $50 = 30,000 units. BEP (Value) = 30,000 units * $75 = $2,250,000 (or $1,500,000 / (50/75) = $2,250,000).",
           "answerIndex": 1,
           "explanation": "Unit Contribution = $75 - $25 = $50. BEP (Units) = Fixed Costs / Unit Contribution = $1,500,000 / $50 = 30,000 units. BEP (Value) = 30,000 units * $75 = $2,250,000 (or $1,500,000 / (50/75) = $2,250,000)."
-        }
+        },
+        "example": "A tailor pays Rs 24,000 a month for shop rent, a helper and electricity. A blouse sells for Rs 400 and costs Rs 150 in cloth and thread, leaving Rs 250 per piece. Dividing 24,000 by 250 gives 96 blouses, which is Rs 38,400 of sales. At 95 blouses she loses a little, at 96 she breaks even, and every blouse after that is profit."
       },
       {
         "title": "Margin of Safety (MOS): Cushion Analysis & Profit Formulation",
@@ -3885,7 +3897,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "MOS (Value) = Actual Sales - Break-Even Sales = $2,000,000 - $1,200,000 = $800,000 (40% MOS). Operating Profit = MOS (Value) * P/V Ratio = $800,000 * 35% = $280,000.",
           "answerIndex": 0,
           "explanation": "MOS (Value) = Actual Sales - Break-Even Sales = $2,000,000 - $1,200,000 = $800,000 (40% MOS). Operating Profit = MOS (Value) * P/V Ratio = $800,000 * 35% = $280,000."
-        }
+        },
+        "example": "A cycle repair shop needs Rs 40,000 of sales a month to break even, and actually sells Rs 50,000. The gap of Rs 10,000 is the margin of safety, 20% of sales. If half of each sale is contribution, that gap converts to Rs 5,000 of profit. Sales could drop 20% before the owner hits a loss, a useful cushion to know before taking on a new rent."
       },
       {
         "title": "Target Profit Volume Planning & Tax-Adjusted Sales Models",
@@ -3927,7 +3940,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Target Pre-Tax Profit = $200,000 / (1 - 0.20) = $250,000. Unit Contribution = $50 - $30 = $20. Required Sales Units = (Fixed Costs + Pre-Tax Profit) / Unit Contribution = ($600,000 + $250,000) / $20 = $850,000 / $20 = 42,500 units.",
           "answerIndex": 3,
           "explanation": "Target Pre-Tax Profit = $200,000 / (1 - 0.20) = $250,000. Unit Contribution = $50 - $30 = $20. Required Sales Units = (Fixed Costs + Pre-Tax Profit) / Unit Contribution = ($600,000 + $250,000) / $20 = $850,000 / $20 = 42,500 units."
-        }
+        },
+        "example": "A bakery owner wants Rs 40,000 of profit after tax each month, and tax takes 20%. So he needs Rs 50,000 before tax, because 50,000 times 0.8 is 40,000. Fixed costs are Rs 30,000 and each loaf contributes Rs 10. He needs 80,000 divided by 10, which is 8,000 loaves. Forgetting the tax step would have left him 2,000 loaves short."
       },
       {
         "title": "Enterprise CVP Multi-Product Break-Even & Governance Suite",
@@ -3976,7 +3990,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Weighted Average P/V Ratio = (60% * 50%) + (40% * 25%) = 30.0% + 10.0% = 40.0%. Composite Break-Even Revenue = Fixed Costs / Weighted P/V Ratio = $800,000 / 0.40 = $2,000,000.",
           "answerIndex": 2,
           "explanation": "Weighted Average P/V Ratio = (60% * 50%) + (40% * 25%) = 30.0% + 10.0% = 40.0%. Composite Break-Even Revenue = Fixed Costs / Weighted P/V Ratio = $800,000 / 0.40 = $2,000,000."
-        }
+        },
+        "example": "A sweet shop earns 70% of sales from sweets with a 40% contribution ratio, and 30% from snacks with 20%. The blended ratio is 28% plus 6%, which is 34%. With monthly fixed costs of Rs 68,000, break-even sales are 68,000 divided by 0.34, which is Rs 2,00,000. If customers shift toward low-margin snacks, the blend falls and break-even sales rise."
       }
     ],
     "summary": [
@@ -4054,7 +4069,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Cash Conversion Cycle (CCC) = DIO + DSO - DPO = 60 days + 40 days - 45 days = 55 days. The firm must externally finance 55 days of operating expenditures.",
           "answerIndex": 3,
           "explanation": "Cash Conversion Cycle (CCC) = DIO + DSO - DPO = 60 days + 40 days - 45 days = 55 days. The firm must externally finance 55 days of operating expenditures."
-        }
+        },
+        "example": "A wholesaler's goods sit in the godown for 30 days. Customers then pay after 20 days, but she pays her own supplier after 25. So her cash is tied up for 30 plus 20 minus 25, which is 25 days. For those 25 days she must fund the business from her own pocket or an overdraft. Shortening the gap frees cash without any new sales."
       },
       {
         "title": "Working Capital Financing Policies: Hedging, Conservative & Aggressive",
@@ -4104,7 +4120,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "The Conservative Financing Policy relies heavily on long-term debt and equity to finance all fixed assets, all permanent current assets, and a portion of temporary current assets. This cushions against refinancing shocks but incurs higher interest costs.",
           "answerIndex": 0,
           "explanation": "The Conservative Financing Policy relies heavily on long-term debt and equity to finance all fixed assets, all permanent current assets, and a portion of temporary current assets. This cushions against refinancing shocks but incurs higher interest costs."
-        }
+        },
+        "example": "A farmer's seed store and tools are needed all year, while harvest labour is needed only for two months. Sensible practice is a long loan for the permanent need and a short loan for the seasonal peak, matching each need to its funding period. A conservative farmer takes a long loan for both and pays interest on idle money. An aggressive one uses short loans for everything and risks a crunch."
       },
       {
         "title": "Quarterly Cash Budgeting & Rolling Liquidity Schedules",
@@ -4149,7 +4166,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Preliminary Cash = $40,000 + ($120,000 - $150,000) = $40,000 - $30,000 = $10,000. To restore the required $25,000 minimum cash buffer, Overdraft Required = $25,000 - $10,000 = $15,000. The closing cash balance is restored to $25,000.",
           "answerIndex": 1,
           "explanation": "Preliminary Cash = $40,000 + ($120,000 - $150,000) = $40,000 - $30,000 = $10,000. To restore the required $25,000 minimum cash buffer, Overdraft Required = $25,000 - $10,000 = $15,000. The closing cash balance is restored to $25,000."
-        }
+        },
+        "example": "A school uniform shop starts June with Rs 20,000 in hand. It expects to collect Rs 50,000 from parents and pay Rs 65,000 for fabric and wages, leaving Rs 5,000. The owner wants at least Rs 15,000 in cash, so she needs a Rs 10,000 overdraft. The profit may look healthy on paper, but this month-by-month plan shows when money is short."
       },
       {
         "title": "Receivables Management: Credit Terms & Bad Debt Optimization",
@@ -4195,7 +4213,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Annualized Cost of Forgoing Cash Discount = [Discount % / (100 - Discount %)] * [365 / (Credit Period - Discount Period)] = (2 / 98) * (365 / 20) = 0.020408 * 18.25 = 37.24%.",
           "answerIndex": 2,
           "explanation": "Annualized Cost of Forgoing Cash Discount = [Discount % / (100 - Discount %)] * [365 / (Credit Period - Discount Period)] = (2 / 98) * (365 / 20) = 0.020408 * 18.25 = 37.24%."
-        }
+        },
+        "example": "A hardware wholesaler offers terms of 2/10 net 30: pay Rs 98,000 within 10 days or the full Rs 1,00,000 in 30 days. Skipping the discount means paying Rs 2,000 extra for 20 extra days on Rs 98,000, about 2.04%. Repeated over a year that is roughly 37%. A shop that borrows at 15% to take the discount comes out well ahead."
       },
       {
         "title": "Enterprise Working Capital Liquidity & Treasury Control Tower",
@@ -4244,7 +4263,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Current Ratio = Current Assets / Current Liabilities = $6,000,000 / $3,000,000 = 2.00x. Quick Ratio = (Current Assets - Inventories) / Current Liabilities = ($6,000,000 - $2,400,000) / $3,000,000 = $3,600,000 / $3,000,000 = 1.20x.",
           "answerIndex": 3,
           "explanation": "Current Ratio = Current Assets / Current Liabilities = $6,000,000 / $3,000,000 = 2.00x. Quick Ratio = (Current Assets - Inventories) / Current Liabilities = ($6,000,000 - $2,400,000) / $3,000,000 = $3,600,000 / $3,000,000 = 1.20x."
-        }
+        },
+        "example": "A hardware shop has Rs 6 lakh of current assets and Rs 3 lakh of current liabilities, so its current ratio is a comfortable 2. But Rs 4 lakh of those assets is unsold stock. Leave it out and Rs 2 lakh remains against Rs 3 lakh owed, a quick ratio of about 0.67. The shop looks safe but could struggle if suppliers demanded payment this week."
       }
     ],
     "summary": [
@@ -4316,7 +4336,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Under the NOI approach, overall WACC (Ko) is constant and determined strictly by business risk. As cheaper debt is added, financial risk increases for equity holders, driving Ke upward by Ke = Ko + (Ko - Kd)*(D/E), neutralizing any overall financing benefit.",
           "answerIndex": 0,
           "explanation": "Under the NOI approach, overall WACC (Ko) is constant and determined strictly by business risk. As cheaper debt is added, financial risk increases for equity holders, driving Ke upward by Ke = Ko + (Ko - Kd)*(D/E), neutralizing any overall financing benefit."
-        }
+        },
+        "example": "A shopkeeper starts adding borrowed money from a relative at a low rate. One view says the cheap loan lowers his average cost of money, so the business becomes more valuable. The other view says as borrowing rises, his own capital becomes riskier and he demands a higher return, cancelling the saving, so average cost stays the same. Those are the two competing approaches."
       },
       {
         "title": "Modigliani-Miller (MM) Theorem: Irrelevance & Arbitrage (No Taxes)",
@@ -4362,7 +4383,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "MM Proposition I proves that personal borrowing (homemade leverage) allows investors to replicate corporate leverage. If a levered firm is overpriced relative to an unlevered firm, investors sell the levered shares, borrow on personal account, and buy the unlevered shares, driving prices into equilibrium (VL = VU).",
           "answerIndex": 3,
           "explanation": "MM Proposition I proves that personal borrowing (homemade leverage) allows investors to replicate corporate leverage. If a levered firm is overpriced relative to an unlevered firm, investors sell the levered shares, borrow on personal account, and buy the unlevered shares, driving prices into equilibrium (VL = VU)."
-        }
+        },
+        "example": "Two identical kiosks make the same profit. One is owned with a bank loan, the other debt-free, yet the loan-financed one is priced higher. A smart investor buys the cheaper debt-free kiosk and borrows personally to mimic the loan. Many doing this push prices together. So in a world without taxes, how a business is financed does not change its overall value."
       },
       {
         "title": "Modigliani-Miller with Corporate Taxes: Tax Shield Value & WACC Decline",
@@ -4411,7 +4433,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Under MM Proposition I with corporate taxes: VL = VU + (Tc * Debt) = $10,000,000 + (0.30 * $4,000,000) = $10,000,000 + $1,200,000 = $11,200,000.",
           "answerIndex": 2,
           "explanation": "Under MM Proposition I with corporate taxes: VL = VU + (Tc * Debt) = $10,000,000 + (0.30 * $4,000,000) = $10,000,000 + $1,200,000 = $11,200,000."
-        }
+        },
+        "example": "A debt-free workshop is worth Rs 20 lakh. The owner borrows Rs 5 lakh and pays interest, which the taxman allows as a deduction. At a 30% tax rate, permanent debt of 5 lakh is worth 1.5 lakh in tax savings. The levered workshop is therefore worth 21.5 lakh. The gain comes only from tax, not from borrowing itself."
       },
       {
         "title": "Static Trade-Off Theory: Tax Shields vs Financial Distress Costs",
@@ -4456,7 +4479,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Under the Static Trade-Off Theory, optimal capital structure is achieved at the inflection point where the marginal benefit of debt tax shields is exactly offset by the marginal increase in expected bankruptcy/distress costs.",
           "answerIndex": 1,
           "explanation": "Under the Static Trade-Off Theory, optimal capital structure is achieved at the inflection point where the marginal benefit of debt tax shields is exactly offset by the marginal increase in expected bankruptcy/distress costs."
-        }
+        },
+        "example": "A restaurant owner finds that loan interest cuts his tax bill, so he borrows more. But each extra loan makes missed repayments more likely, and suppliers, staff and customers grow nervous. Past a point, the cost of possible trouble outweighs the tax saving. The best borrowing level is the middle one where one more rupee of debt gains and loses the same."
       },
       {
         "title": "Enterprise Capital Structure Governance & Valuation Suite",
@@ -4501,7 +4525,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Annual Interest = Debt * Interest Rate = $12,000,000 * 7% = $840,000. Interest Coverage Ratio (ICR) = EBIT / Interest = $5,000,000 / $840,000 = 5.95x.",
           "answerIndex": 0,
           "explanation": "Annual Interest = Debt * Interest Rate = $12,000,000 * 7% = $840,000. Interest Coverage Ratio (ICR) = EBIT / Interest = $5,000,000 / $840,000 = 5.95x."
-        }
+        },
+        "example": "A taxi fleet owner earns Rs 12 lakh before interest and has Rs 50 lakh of loans at 8%. Yearly interest is Rs 4 lakh. Earnings cover interest three times, an interest coverage of 3. A banker looks at this ratio before agreeing to lend more, because it shows how large a fall in earnings the owner can absorb before missing a payment."
       }
     ],
     "summary": [
@@ -4570,7 +4595,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Under Walter's model: P = [D + (r / Ke)*(E - D)] / Ke = [$2 + (0.12 / 0.10)*($8 - $2)] / 0.10 = [$2 + 1.2 * $6] / 0.10 = [$2 + $7.20] / 0.10 = $9.20 / 0.10 = $92.00 per share.",
           "answerIndex": 0,
           "explanation": "Under Walter's model: P = [D + (r / Ke)*(E - D)] / Ke = [$2 + (0.12 / 0.10)*($8 - $2)] / 0.10 = [$2 + 1.2 * $6] / 0.10 = [$2 + $7.20] / 0.10 = $9.20 / 0.10 = $92.00 per share."
-        }
+        },
+        "example": "A shareholder holds a share where profit per share is Rs 10, and the firm can reinvest at 15% while shareholders could earn 10% elsewhere. If it pays Rs 4 and keeps Rs 6, the share is worth about Rs 130. If it pays out all Rs 10, the share is worth Rs 100. When the firm earns more than shareholders could elsewhere, keeping profit helps them."
       },
       {
         "title": "Gordon's Model: Bird-in-the-Hand Theory & Retention Growth (g = b * r)",
@@ -4615,7 +4641,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Retention growth rate g = b * r = 0.40 * 0.15 = 0.06 or 6.0%. Next year dividend D1 = E1 * (1 - b) = $10 * (1 - 0.40) = $6.00. Intrinsic Share Price P0 = D1 / (Ke - g) = $6.00 / (0.10 - 0.06) = $6.00 / 0.04 = $150.00 per share.",
           "answerIndex": 3,
           "explanation": "Retention growth rate g = b * r = 0.40 * 0.15 = 0.06 or 6.0%. Next year dividend D1 = E1 * (1 - b) = $10 * (1 - 0.40) = $6.00. Intrinsic Share Price P0 = D1 / (Ke - g) = $6.00 / (0.10 - 0.06) = $6.00 / 0.04 = $150.00 per share."
-        }
+        },
+        "example": "A farmer keeps 40% of each year's income and buys more land that returns 15%. His growth rate is 0.40 times 15%, which is 6% a year. His relatives would rather get cash now than wait for bigger harvests, since a rupee in the hand feels safer than a promised future one. That preference is why this model says a higher payout can make a share more valuable."
       },
       {
         "title": "Modigliani-Miller (MM) Dividend Irrelevance Theorem & Share Arbitrage",
@@ -4660,7 +4687,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Under the Modigliani-Miller pricing theorem: P1 = P0 * (1 + Ke) - D1 = $100 * (1 + 0.10) - $4.00 = $110.00 - $4.00 = $106.00 per share.",
           "answerIndex": 2,
           "explanation": "Under the Modigliani-Miller pricing theorem: P1 = P0 * (1 + Ke) - D1 = $100 * (1 + 0.10) - $4.00 = $110.00 - $4.00 = $106.00 per share."
-        }
+        },
+        "example": "A share is worth Rs 200 and investors want a 10% return, so it should reach Rs 220 in a year. If the company pays a Rs 10 dividend, the share drops to Rs 210, and the holder has Rs 210 plus Rs 10, still Rs 220. A holder who wants cash without a dividend can sell a few shares. So the split between cash and price changes nothing."
       },
       {
         "title": "Share Repurchases (Buybacks) vs Cash Dividends: Wealth Equivalence & Tax Signaling",
@@ -4709,7 +4737,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Shares repurchased = $1,500,000 / $75.00 = 20,000 shares. Remaining shares = 1,000,000 - 20,000 = 980,000 shares. New EPS = $5,000,000 / 980,000 = $5.102 (a 2.04% accretion in EPS).",
           "answerIndex": 1,
           "explanation": "Shares repurchased = $1,500,000 / $75.00 = 20,000 shares. Remaining shares = 1,000,000 - 20,000 = 980,000 shares. New EPS = $5,000,000 / 980,000 = $5.102 (a 2.04% accretion in EPS)."
-        }
+        },
+        "example": "A family company has 5,00,000 shares and earns Rs 25,00,000, so profit per share is Rs 5. It spends Rs 10,00,000 buying back its own shares at Rs 50 each, which retires 20,000 of them. Profit is now shared among 4,80,000 shares, so each earns about Rs 5.21. Remaining owners now own a larger slice of the same business."
       },
       {
         "title": "Enterprise Dividend Policy Master Optimization & Governance Suite",
@@ -4758,7 +4787,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "why": "Target DPS = Target Payout * Current EPS = 40% * $8.00 = $3.20. Under Lintner's model: Recommended DPS = Last DPS + c * (Target DPS - Last DPS) = $2.00 + 0.30 * ($3.20 - $2.00) = $2.00 + 0.30 * $1.20 = $2.00 + $0.36 = $2.36 per share.",
           "answerIndex": 0,
           "explanation": "Target DPS = Target Payout * Current EPS = 40% * $8.00 = $3.20. Under Lintner's model: Recommended DPS = Last DPS + c * (Target DPS - Last DPS) = $2.00 + 0.30 * ($3.20 - $2.00) = $2.00 + 0.30 * $1.20 = $2.00 + $0.36 = $2.36 per share."
-        }
+        },
+        "example": "An employer who raises wages gradually follows a similar rule to a cautious company. Last year the firm paid Rs 2 a share. This year's earnings are Rs 8 and the target is 40% payout, which is Rs 3.20. With an adjustment speed of 0.5, it moves halfway: 2 plus 0.5 times 1.20, which is Rs 2.60. Shareholders see smooth, steady increases rather than jumps."
       }
     ],
     "summary": [

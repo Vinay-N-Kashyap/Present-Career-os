@@ -3602,7 +3602,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Under a normal distribution, the cumulative distribution function approaches 1.0 asymptotically, meaning Z-scores and required safety stock surge exponentially to infinity as service levels approach 100%."
-        }
+        },
+        "example": "A sweet shop sells about 200 laddoos a day, give or take 20. To avoid running out on 90 percent of days, the owner keeps roughly 26 extra, since 1.28 times 20 is about 26. For 99 percent of days he needs 47 extra. For 99.9 percent, about 62. Every small step closer to never running out costs more and more stock, and perfect certainty would need an endless pile of laddoos."
       },
       {
         "title": "Stochastic Lead-Time Variance: The Combined Variance Theorem & Risk Amplification",
@@ -3631,7 +3632,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "The Law of Total Variance weights lead-time variance by (d_bar)^2, whereas demand variance is weighted only by L_bar. For any business with significant daily demand, (d_bar)^2 dwarfs L_bar."
-        }
+        },
+        "example": "A medicine shop sells 50 strips of a painkiller a day. The supplier usually delivers in four days, but sometimes in two and sometimes in seven. Demand shifting by a few strips on any day is minor. But one extra day of delay means 50 more strips sold from the shelf. That is why the shop owner worries more about the supplier's unreliable delivery than about his customers' habits."
       },
       {
         "title": "Continuous Review (s, Q) & Reorder Point (ROP) Policy Dynamics",
@@ -3660,7 +3662,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Inventory Position accounts for pipeline stock (On-Order). If an ERP triggers orders based on physical On-Hand stock alone, it will continuously reorder every day while waiting for shipments, flooding the warehouse."
-        }
+        },
+        "example": "A tea stall owner reorders milk when stock falls to 20 litres. This morning the fridge held 18 litres, but a 30 litre order was already on its way. If he looked only at the fridge, he would order again every hour and drown in milk by evening. So he counts what is in the fridge plus what is coming, and decides only on that total."
       },
       {
         "title": "Unit Shortage Economics & The Normal Loss Function G(Z)",
@@ -3688,7 +3691,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Fill Rate = 1 - (EUS / Q). When batch size Q is large relative to Expected Units Short (EUS), even if 10% of cycles experience a minor stockout, the unsatisfied units represent less than 1% of total demand."
-        }
+        },
+        "example": "A bakery bakes 500 loaves per batch. In 4 of 10 batches it ran out early and missed 5 customers' loaves each time. That is 20 missed loaves out of 5,000, so 99.6 percent of demand was still met. Four stockout days sounds alarming, but the share of customers actually served stays very high because each shortage was tiny compared with the batch size."
       },
       {
         "title": "Simulating Dynamic Inventory Queuing & Stockout Costs in Python",
@@ -3717,7 +3721,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Backorders create stockout penalty expenses and must be cleared immediately upon shipment arrival, reducing the available inventory to fulfill subsequent daily customer orders."
-        }
+        },
+        "example": "A gas cylinder dealer runs out on Monday, and 6 customers ask for refills anyway. He writes their names down as pending orders. When the truck brings 40 cylinders on Wednesday, the first 6 go straight to those waiting customers, leaving only 34 for new buyers. The unpaid promises eat into fresh stock, and the delay itself costs him goodwill."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -3771,7 +3776,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Annual Dollar Usage (ADU = D * C) measures total annual monetary throughput. Sorting descending allows identifying the vital few Class A items accounting for ~80% of total portfolio value."
-        }
+        },
+        "example": "A kirana store stocks 400 items and earns 30 lakh rupees a year from sales. When the owner lists items from highest yearly sales to lowest, he finds just 60 items bring in 24 lakh, which is 80 percent. Rice, oil, milk and sugar sit at the top. Those few items deserve his daily attention, while the long tail of the other 340 needs only light checking."
       },
       {
         "title": "XYZ Volatility Matrix: Demand Coefficient of Variation (CV) & Predictability Thresholds",
@@ -3798,7 +3804,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Standard deviation scales with demand volume. A high-volume SKU can have a large standard deviation but tiny relative volatility, while a low-volume SKU has a small standard deviation but massive relative volatility. CV normalizes by the mean."
-        }
+        },
+        "example": "A grocer sells about 1,000 kg of rice a week, give or take 100, so the swing is only 10 percent of sales. Saffron sells about 10 grams a week, give or take 5, a swing of 50 percent. Rice has the bigger raw swing, yet saffron is far harder to predict. Comparing swing to average sales, not the raw number, shows which item is truly erratic."
       },
       {
         "title": "The 9-Box Multi-Dimensional ABC/XYZ Governance Matrix",
@@ -3827,7 +3834,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Cell AZ items are expensive to hold and subject to erratic demand. Automated stocking risks massive capital lockup and obsolescence; MTO and strict controls prevent speculative overstocking."
-        }
+        },
+        "example": "A jeweller makes bridal necklaces that cost lakhs and sell unpredictably. Stocking many of them would lock up huge money, and unsold designs go out of fashion. So he makes them only when a customer orders. Meanwhile plain silver coins, cheap and steady sellers, he reorders automatically. Matching the rule to both value and predictability protects his cash."
       },
       {
         "title": "Differential Service Level Optimization Across the SKU Matrix",
@@ -3855,7 +3863,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "A blanket policy wastes massive capital hoarding buffer stock on erratic, expensive items (AZ/BZ). Differential policies trim safety stock on lumpy items and boost reliability on high-volume items, freeing cash."
-        }
+        },
+        "example": "A hospital pharmacy used to keep a 99 percent availability target for every single item. Life-saving insulin deserves that, and the pharmacy keeps it. But for bandages and cough lozenges, 90 percent is enough, because a substitute is always at hand. Trimming the safety stock on low-risk items frees cash that now buys more reliable supply of the medicines that truly matter."
       },
       {
         "title": "Building an Enterprise ABC/XYZ Matrix Engine from First Principles",
@@ -3884,7 +3893,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Cell CZ items generate tiny financial returns while consuming high administrative and warehouse tracking effort. Best practice is SKU pruning, MOQ enforcement, or phasing them out."
-        }
+        },
+        "example": "A hardware shop carries 300 odd types of screws and fittings. About 120 of them sell only a few times a year and together earn maybe 5,000 rupees of profit, yet they take shelf space and hours of counting. The owner drops 80 of them, orders the rest only on request, and demands a minimum order from suppliers. The shop becomes tidier and no poorer."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -3938,7 +3948,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The standard percentage change formula produces conflicting elasticity values depending on which point is used as the base. The Midpoint Arc formula averages endpoints, creating mathematical symmetry."
-        }
+        },
+        "example": "A vegetable seller changes the price of tomatoes from 40 to 50 rupees per kilo, and sales fall from 100 to 80 kilos. Starting from 40, the price rose 25 percent; starting from 50, it fell 20 percent, so the answer depends on where you begin. Using the average of both ends, price rose 10 on 45, about 22 percent, and sales fell 20 on 90, also 22 percent. Elasticity is one clean number."
       },
       {
         "title": "Linear Demand Calibration & Total Revenue Curve Geometry",
@@ -3965,7 +3976,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Total Revenue TR(P) = alpha*P - beta*P^2. Setting the derivative alpha - 2*beta*P = 0 yields P* = alpha / (2*beta). At this price, point elasticity is exactly -1.0."
-        }
+        },
+        "example": "A small theatre finds that tickets sold equal 1,000 minus five times the price in rupees. At 60 rupees it sells 700 tickets and earns 42,000. At 100 rupees it sells 500 and earns 50,000. At 140 rupees it sells 300 and earns only 42,000 again. Revenue climbs, peaks at 100 rupees, then falls. That peak is exactly where elasticity equals minus one."
       },
       {
         "title": "Profit Maximization vs Revenue Maximization: Marginal Cost Integration",
@@ -3992,7 +4004,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "In linear demand systems, P_{pi}^* = P_{rev}^* + (MC / 2). When MC > 0, producing additional units costs money, so the firm optimally charges a higher price and produces fewer units to maximize profit."
-        }
+        },
+        "example": "The same theatre pays 40 rupees per ticket in costs. At the revenue-peak price of 100 rupees, it sells 500 tickets and makes 60 times 500, which is 30,000 profit. At 120 rupees it sells 400 and makes 80 times 400, which is 32,000. Because each extra ticket costs money, the profit-best price sits above the revenue-best price, by half the unit cost."
       },
       {
         "title": "Cross-Price Elasticity (XED), Income Elasticity (YED) & Multi-Product Cannibalization",
@@ -4021,7 +4034,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Positive XED means quantity of A and price of B move in the same direction. When B's price drops, demand for A drops as buyers substitute into B, causing cannibalization."
-        }
+        },
+        "example": "A college canteen sells tea at 10 rupees and coffee at 20. When the manager cuts coffee to 15 rupees, coffee sales rise, but tea sales drop from 200 cups to 170 because some tea drinkers switch. That is cannibalization between close substitutes. The manager must judge the discount by the combined effect on both drinks, not by coffee sales alone."
       },
       {
         "title": "Building a Dynamic Pricing & Revenue Optimization Engine in Python",
@@ -4052,7 +4066,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Unconstrained mathematical models might recommend prices below variable cost if demand slopes are distorted. Operational cost floors guarantee positive unit economics and prevent capital destruction."
-        }
+        },
+        "example": "A sweet shop uses a pricing tool that suggests selling a festive box at 180 rupees to move more stock. But the box costs 200 rupees to make, so every sale loses 20 rupees. The owner adds a rule that no price may fall below cost. The tool still hunts for the best price, but only among prices that cannot lose money."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -4108,7 +4123,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Last-touch attribution gives 100% of credit to the final interaction, creating severe bias toward bottom-of-funnel retargeting and branded search, leading to under-investment in brand discovery."
-        }
+        },
+        "example": "A new gym owner asks members how they found him. Most say, I searched online and clicked. But earlier they had seen a hoarding and heard from a friend. If he credits only the last click, he may scrap the hoarding. That final-touch habit over-rewards the last step and ignores the earlier steps that made the member ready to sign up."
       },
       {
         "title": "Probabilistic Attribution via First-Order Markov Chains",
@@ -4136,7 +4152,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "The first-order Markov property states that conditional on the current state, future transitions are independent of past states: P(S_{t+1}|S_t, S_{t-1},...) = P(S_{t+1}|S_t)."
-        }
+        },
+        "example": "Think of a person walking in a mall. If she is in the food court, there is a 40 percent chance she goes to the cinema next, 20 percent to the shops, and 40 percent she leaves. That chance depends only on where she stands now, not on how she reached the food court. Customer journeys across advertising channels are modelled the same way."
       },
       {
         "title": "The Removal Effect Algorithm & Marginal Channel Value",
@@ -4165,7 +4182,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The Removal Effect simulates what fraction of conversions disappear when a channel is removed from the network (RE = 1 - P(Conv_{-k})/P(Conv)), quantifying true marginal causal contribution."
-        }
+        },
+        "example": "A cricket team wins 60 percent of its matches. Remove the opening batter from the lineup in a simulation, and the win chance falls to 42 percent. The loss of 18 points out of 60 means 30 percent of the winning came through him. Marketing does the same with channels: take one out, see how many sales vanish, and that share is its true value."
       },
       {
         "title": "Comparison with Cooperative Game Theory: Shapley Value Attribution",
@@ -4194,7 +4212,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The Shapley value scales as O(2^K) because it must evaluate every possible channel subset. For 25 channels, 2^25 = 33.5 million coalitions must be evaluated, making it intractable compared to Markov chains."
-        }
+        },
+        "example": "A coach wants to share credit fairly among 11 players by testing every possible group that could take the field. That is 2,048 groups, which is manageable. With 25 players, the groups number over 33 million, far too many to test one by one. Fair credit sharing among advertising channels has the same problem: it is accurate but grows explosively as channels increase."
       },
       {
         "title": "Building an End-to-End Markov Multi-Touch Attribution Engine in Python",
@@ -4224,7 +4243,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Positive variance means Markov attribution weight is higher than Last-Touch weight. The channel was an essential contributor to conversions that Last-Touch was failing to credit."
-        }
+        },
+        "example": "A coaching institute runs a WhatsApp group where parents get tips. Few parents enrol straight from it, so last-click credit gives it just 8 percent of admissions. But when the model removes the group from the journey, 15 percent of admissions disappear. The difference shows the group quietly helped many parents decide, even though it was rarely the final step."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -4279,7 +4299,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Upfront CAC drains cash immediately. The payback period measures how many months of gross profit are required to break even on that cash outflow, governing corporate cash burn."
-        }
+        },
+        "example": "A gym charges 1,000 rupees a month and keeps 60 percent as gross profit, so 600 rupees per member per month. It spends 3,000 rupees on ads to win one new member. That cash goes out on day one. At 600 a month, the member repays it in 5 months. Until then the owner must fund the gap from his own pocket."
       },
       {
         "title": "Mathematical Modeling of Customer Lifetime Value (CLV)",
@@ -4308,7 +4329,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "The naive formula assumes money has no time value. The DCF formula adds discount rate d to the denominator (1 + d - r), discounting distant cash flows and reflecting true present value."
-        }
+        },
+        "example": "A mobile recharge shop earns 200 rupees profit a month from a loyal customer, and 90 percent of such customers stay each month. The simple lifetime value is 200 divided by 0.10, which is 2,000 rupees. But a rupee next year is worth less than a rupee today. Counting a one percent monthly discount, the value is 200 divided by 0.11, about 1,818 rupees."
       },
       {
         "title": "Cohort Analytics: Net Revenue Retention (NRR) & Expansion Economics",
@@ -4337,7 +4359,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "NRR > 100% demonstrates Negative Net Churn: customer account expansion outpaces churn and contraction, compounding cohort revenue organically over time."
-        }
+        },
+        "example": "A tiffin service has 100 offices paying 1,000 rupees a month each, so 100,000 in total. Over the year 10 offices leave, costing 10,000, but the remaining offices order extra meals worth 15,000 more. The same group now pays 105,000, so retention is 105 percent. The existing customers alone grew revenue without a single new sale."
       },
       {
         "title": "Enterprise Unit Economics Benchmarks: The Rule of 40 & Magic Number",
@@ -4366,7 +4389,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "A Magic Number >= 0.75 indicates highly efficient sales acquisition, signaling that the company should aggressively expand sales and marketing capital to capture market share."
-        }
+        },
+        "example": "A coaching centre spent 10 lakh rupees on advertising and sales staff last quarter. Over the following months its yearly fee income rose by 8 lakh. Each rupee spent on selling bought 80 paise of yearly revenue. That is a healthy return, so the owner decides it is worth spending more on selling, until the return starts to fall."
       },
       {
         "title": "Building a Comprehensive Customer Unit Economics & CLV Simulation Model in Python",
@@ -4397,7 +4421,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Aggregate revenue can rise even as customer retention collapses if high ad spend brings in new users. Cohort analysis isolates vintages to reveal true underlying retention and expansion economics."
-        }
+        },
+        "example": "A gym had 200 January joiners and 300 March joiners. After three months, 140 of the January group were still paying, which is 70 percent, but only 150 of the March group, which is 50 percent. Total membership still grew because new joiners kept coming. Looking at each joining month separately shows retention is quietly getting worse."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -4451,7 +4476,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Rearranging Little's Law yields W = L / lambda. When WIP (L) expands while throughput capacity (lambda) remains constant, cycle time W must increase linearly, inflating lead times."
-        }
+        },
+        "example": "A bank branch serves about 10 customers an hour. On a quiet day, 5 are inside at any time, so each stays about 30 minutes. On a rush day, 15 are inside, and since the counters still serve 10 per hour, each stays 90 minutes. The service speed did not change, but more people in the building meant a much longer wait for everyone."
       },
       {
         "title": "Bottleneck Identification & The Theory of Constraints (TOC)",
@@ -4480,7 +4506,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Total output is bounded strictly by the bottleneck: min(C_1,..., C_N). Running non-bottlenecks faster than the bottleneck cannot increase output; it only piles up un-processable WIP."
-        }
+        },
+        "example": "A garment unit cuts 100 pieces an hour, stitches 40 an hour, and packs 80 an hour. Total output cannot exceed 40 an hour, because stitching is the slowest step. If the manager hurries the cutters, a heap of cut cloth just builds up before the stitchers. Only adding stitching capacity raises what leaves the factory."
       },
       {
         "title": "The Bullwhip Effect: Information Distortion & Variance Amplification",
@@ -4509,7 +4536,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "OVR > 1.0 proves variance amplification (the Bullwhip Effect): upstream order volatility exceeds downstream consumer demand volatility due to batching, rationing, and signal distortion."
-        }
+        },
+        "example": "A shopkeeper sees milk packet sales rise from 100 to 110 a day and orders 150 to be safe. The distributor sees the jump to 150 and, also wanting a cushion, orders 250 from the dairy. A small 10 percent rise at the counter becomes a big surge upstream. Each step adds its own safety margin, so swings get bigger the further you go from the customer."
       },
       {
         "title": "CPFR & Information Transparency: Shared POS Telemetry",
@@ -4539,7 +4567,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "CPFR shares raw Point-of-Sale (POS) data across all echelons, ensuring manufacturers schedule production against true end-consumer pull rather than distorted, batched intermediary purchase orders."
-        }
+        },
+        "example": "A biscuit maker receives orders from distributors in lumps of 5,000 cartons once a month, while shops actually sell about 1,200 cartons a week. By seeing the shops' daily sales directly, the maker can plan production to match steady real purchases rather than lumpy orders, and everyone along the chain holds less stock."
       },
       {
         "title": "Building a Comprehensive Supply Chain Value Stream Engine in Python",
@@ -4571,7 +4600,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Value stream analytics diagnoses bottlenecks, purges wasteful WIP via Little's Law, and aligns multi-tier supply chains to collapse lead times and eliminate bullwhip variance."
-        }
+        },
+        "example": "A tailor's shop takes 10 days to deliver a suit, yet the actual stitching work adds up to only a day. The other 9 days, the cloth waits in piles between cutting, stitching and pressing. Drawing the whole journey on paper makes the waiting visible. Cutting the piles and moving work in smaller batches shortens delivery without anyone working faster."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -4626,7 +4656,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Inventory assets are held at cost on the balance sheet. Using revenue (which includes gross margin) would artificially understate true inventory dwell time."
-        }
+        },
+        "example": "A shop holds stock that cost 40,000 rupees. Its monthly cost of goods sold is 80,000 and monthly sales are 100,000. Dividing stock by cost of goods sold gives 15 days of stock. Using sales instead would give only 12 days, because sales include profit while the stock was recorded at cost. Mixing the two would make the stock look faster-moving than it is."
       },
       {
         "title": "The Cash Conversion Cycle (CCC): Mathematical Formulation & Balance Sheet Mechanics",
@@ -4654,7 +4685,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Positive CCC means the firm pays suppliers before collecting customer receivables. During this gap, the company's cash is trapped, requiring bank lines or working capital buffers."
-        }
+        },
+        "example": "A wholesaler's goods sit in the godown for 30 days, customers take 45 days to pay, and the wholesaler pays his own suppliers after 25 days. So he pays out cash 50 days before receiving it back, since 30 plus 45 minus 25 is 50. Those 50 days must be financed by a bank loan or his own savings, which costs him interest."
       },
       {
         "title": "The Phenomenon of Negative Cash Conversion Cycles: The Float Engine",
@@ -4683,7 +4715,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Under negative CCC (DPO > DIO + DSO), the firm collects customer cash well before paying vendors. This creates a massive pool of permanent float that finances operations interest-free."
-        }
+        },
+        "example": "A supermarket sells its goods in about 10 days, and customers pay at the counter on the spot. It pays its suppliers only after 40 days. So for 30 days it holds money that belongs to suppliers and can use it, for example, to open another shop. Growth is financed by suppliers' credit instead of borrowed cash."
       },
       {
         "title": "Quantifying Operational Cash Drag & Cost of Capital Drag",
@@ -4712,7 +4745,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "EVA = NOPAT - (Invested Capital * WACC). Releasing working capital reduces Invested Capital, permanently lowering the capital charge and increasing residual economic profit."
-        }
+        },
+        "example": "A garage has 10 lakh rupees tied up in spare parts and pays 12 percent a year on its loan. By removing slow parts and cutting stock by 2 lakh, it saves 24,000 rupees of interest every year, with no change in prices or sales. Money stuck in shelves and unpaid bills carries a quiet yearly cost."
       },
       {
         "title": "Building an Enterprise Working Capital & Cash Conversion Cycle Simulation Engine in Python",
@@ -4746,7 +4780,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "GAAP accounting records revenue and profit when earned, not when cash is received. Tracking CCC reveals whether cash conversion is keeping pace with sales or accumulating dangerous cash drag."
-        }
+        },
+        "example": "A furniture shop sells 5 lakh rupees of sofas this month, all on credit with 60 days to pay. The books show a healthy profit, yet the bank balance is almost empty and the shop struggles to pay rent and wages. Profit is earned when the sale is made, but cash arrives only later, so tracking the days it takes to collect is essential."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -4802,7 +4837,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "A constraint is binding when the optimal solution uses 100% of the available resource (slack = 0). It acts as an active ceiling that limits further objective improvement."
-        }
+        },
+        "example": "A bakery has 40 oven hours and 100 kilos of flour. The best plan uses all 40 oven hours but only 80 kilos of flour. The oven is the binding limit, since it is fully used and blocks more profit. The flour has 20 kilos left over, so it is not holding the bakery back at all."
       },
       {
         "title": "Convex Polyhedral Geometry & The Fundamental Theorem of Linear Programming",
@@ -4831,7 +4867,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "The theorem proves the optimum must occur at an extreme point (vertex). This enables algorithms like Simplex to search only among corner points rather than the infinite interior."
-        }
+        },
+        "example": "A farmer has 10 acres. Wheat earns 30,000 rupees an acre, rice 20,000, and water allows at most 6 acres of rice. All wheat earns 3,00,000. Four acres of wheat and six of rice earns 2,40,000. Because profit changes steadily as the mix changes, the best answer always sits at a corner of the options, so there is no need to test every in-between mix."
       },
       {
         "title": "The Simplex Algorithm & Tableau Pivot Dynamics",
@@ -4860,7 +4897,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The Minimum Ratio Test theta = min(b_i / a_{ik}) guarantees that the pivot moves only as far as the nearest constraint boundary, preventing decision variables from becoming negative."
-        }
+        },
+        "example": "A carpenter has 60 units of wood and 40 hours of labour. Each chair needs 5 units of wood and 4 hours. Wood allows 12 chairs, labour allows 10. He can make only 10, because the first limit to run out stops him. Going to 12 would need 8 more hours of labour that do not exist, so the method always stops at the nearest limit."
       },
       {
         "title": "Duality Theory, Shadow Prices & Post-Optimality Sensitivity Analysis",
@@ -4889,7 +4927,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The shadow price y_i* = d(Z*)/d(b_i) measures the exact marginal gain in profit per unit of added capacity. It establishes the upper bound on what management should pay to expand that resource."
-        }
+        },
+        "example": "A factory finds that one extra hour of machine time adds 150 rupees of profit. A neighbour offers machine hours at 100 rupees an hour. Renting is worth it, since each hour gains 50 rupees. At 200 rupees an hour it would not be worth it. That 150 rupees is the most the factory should pay for one more hour."
       },
       {
         "title": "Building an Enterprise Linear Programming Simplex Engine in Python",
@@ -4922,7 +4961,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "A positive shadow price indicates that every unit increase in bottleneck capacity directly expands top-line contribution margin, guiding targeted capital expenditure."
-        }
+        },
+        "example": "A packing unit finds that each extra hour of its sealing machine adds 90 rupees of profit. A second machine would add 40 hours a week, so 3,600 rupees weekly. At a price of 2 lakh rupees, it pays back in about 56 weeks. The owner now knows exactly which purchase to prioritise instead of buying equipment at random."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -4978,7 +5018,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Minimax Regret computes the regret matrix R_{ij} = max_k(X_{kj}) - X_{ij} and selects the decision that minimizes the worst-case regret across all possible future states."
-        }
+        },
+        "example": "A stall owner must decide how much ice cream to stock for a festival. A small stock earns 20,000 rupees if turnout is low and 30,000 if high. A large stock earns 5,000 if low and 60,000 if high. Regret of small stock is at worst 30,000; regret of large stock is at worst 15,000. Choosing the smaller worst regret, he stocks large."
       },
       {
         "title": "Decision Trees & Backward Induction (The Rollback Method)",
@@ -5006,7 +5047,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "The rollback method calculates EMV at chance nodes (sum of prob * value) and chooses the maximizing action at decision nodes (max EMV), working backward from leaves to root."
-        }
+        },
+        "example": "A farmer can plant hybrid seed or traditional seed. Traditional gives 2.5 lakh rupees surely. Hybrid gives 5 lakh with a 60 percent chance of good rain and 1 lakh otherwise. Hybrid is worth 0.6 times 5 plus 0.4 times 1, which is 3.4 lakh. Working backward from the outcomes to the first choice, he picks hybrid."
       },
       {
         "title": "Expected Value of Perfect Information (EVPI) & Imperfect Information (EVSI)",
@@ -5035,7 +5077,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "EVPI measures the difference between clairvoyant decision-making and standard base expected value. No survey (even 100% accurate) can be worth more than EVPI."
-        }
+        },
+        "example": "Our farmer wonders what a perfect rain forecast is worth. With it, he plants hybrid when rain is good, getting 5 lakh, and traditional when it is bad, getting 2.5 lakh. That averages 0.6 times 5 plus 0.4 times 2.5, which is 4 lakh, against 3.4 without it. So no forecaster, however accurate, is worth paying more than 60,000 rupees."
       },
       {
         "title": "Risk Tolerance, Utility Theory & Certainty Equivalents",
@@ -5063,7 +5106,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The Certainty Equivalent CE satisfies U(CE) = E[U(X)]. It is the certain dollar payout that yields the same utility as the risky gamble, quantifying risk-averse willingness to trade upside for safety."
-        }
+        },
+        "example": "A shopkeeper is offered a coin flip: 10,000 rupees if heads and nothing if tails. The average is 5,000. Yet he says he would happily take a sure 3,500 instead. For him, 3,500 for certain feels equal to the gamble. That sure amount is his certainty equivalent, and the gap from 5,000 shows how much he dislikes risk."
       },
       {
         "title": "Building an Enterprise Decision Tree & EVPI Analytical Engine in Python",
@@ -5093,7 +5137,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "The Master Strategic Decision Suite unifies expected monetary values, the economic value of information (EVPI), and risk-adjusted Certainty Equivalents into an unassailable executive decision system."
-        }
+        },
+        "example": "A family plans to open a second shop. The average outcome of the plan comes to 4 lakh rupees. A market survey could tell them whether the area is good, but it can never be worth more than 50,000. And since they dislike losing savings, a sure 3 lakh feels equal to the risky plan. They look at all three numbers together before deciding."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -5149,7 +5194,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Predictive analytics projects future trends and demand distributions, while prescriptive analytics optimizes decision variables (production schedules, inventory buffers) under mathematical constraints."
-        }
+        },
+        "example": "A hospital looks at last month's records and sees 300 admissions, which describes what happened. It then estimates 340 admissions next month because of seasonal flu, which predicts what may happen. Finally it decides how many nurses to roster on each shift within budget, which tells it what to do. All three steps together make a complete decision system."
       },
       {
         "title": "Automated Time Series Cleansing, Stationarity Transformations & Holt-Winters Forecasting",
@@ -5178,7 +5224,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Holt-Winters updates level (alpha), trend (beta), and seasonality (gamma) via three coupled recursive exponential smoothing equations."
-        }
+        },
+        "example": "An ice cream seller sells about 100 cones a day in winter. Sales also grow by roughly 2 cones a day each month, and summer adds an extra 40 cones. To forecast July, he needs the base level, the steady growth, and the seasonal bump, each updated as new days come in. Recent days count more than old ones, so the forecast adapts."
       },
       {
         "title": "Dynamic Safety Stock & Multi-Echelon Reorder Point Optimization under Lead-Time Variance",
@@ -5207,7 +5254,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "In the law of total variance, Var(DL) = E[L]Var(d) + (E[d])^2Var(L). Unreliable lead times scale with the square of daily sales, creating severe stockout exposure."
-        }
+        },
+        "example": "A paint dealer sells 20 tins a day and the supplier usually delivers in 5 days, but sometimes takes 9. A delay of 4 extra days means 80 more tins sold from the shelf. That is a far bigger risk than a slightly busy day at the counter. So the dealer keeps a larger cushion for supplier delays and sets the reorder point accordingly."
       },
       {
         "title": "Prescriptive Linear Programming Production Mix with Dual Shadow Price Capital Budgeting",
@@ -5236,7 +5284,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Dual shadow prices (y_i = dZ/db_i) quantify the marginal economic value of relaxing a binding capacity constraint, providing exact capital budgeting thresholds."
-        }
+        },
+        "example": "A furniture workshop finds that one extra hour on its polishing bench adds 120 rupees to profit. A polisher can be hired at 80 rupees an hour. Each hired hour nets 40 rupees, so it is worth hiring until the bench stops being the bottleneck. The shadow price turns a vague wish for more capacity into a clear purchase limit."
       },
       {
         "title": "Executive Boardroom Decision Tree Rollback, EVPI Analysis & Milestone 2 Audit Certification",
@@ -5265,7 +5314,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The capstone suite synthesizes descriptive, predictive, and prescriptive analytics into an unassailable executive decision system with formal EVPI and risk-adjusted Certainty Equivalents."
-        }
+        },
+        "example": "At a dairy cooperative's board meeting, the options sit on one page. The new chilling plant averages 18 lakh rupees against 12 lakh for the old plan. A market study could be worth at most 2 lakh, so a 5 lakh quote is rejected at once. The board decides with numbers laid out side by side, not on a loud opinion."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -5319,7 +5369,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "ERM optimizes training loss without penalty (min R_emp), while SRM adds a regularization term (R_emp + lambda * Omega) to balance training fit and model complexity."
-        }
+        },
+        "example": "A tuition teacher notices one student memorised the answers to the last five years' question papers. She scores 98 on those papers, but only 55 on a fresh paper. Another student learned the concepts, scoring 80 on both. Judging by old papers alone rewards memorising. A fair method adds a penalty for needless complexity, so the simpler learner wins on new questions."
       },
       {
         "title": "The Bias-Variance Decomposition: Mathematical Physics of Prediction Error",
@@ -5348,7 +5399,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Irreducible error sigma^2 is the variance of the error term epsilon inherent in the physical process. It cannot be reduced by collecting more data or building more complex algorithms."
-        }
+        },
+        "example": "A delivery company predicts how long each parcel will take. Even with years of records and the best method, a sudden accident or a rain shower can add or remove ten minutes at random. No amount of extra data will predict that. This leftover randomness is the floor under every forecast, and chasing it with a more complicated model only memorises noise."
       },
       {
         "title": "The Deadly Sins of Enterprise Data Science: Data Leakage & Snooping",
@@ -5376,7 +5428,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Preprocessing on the entire dataset leaks distribution parameters and ground-truth target values from test data into training data, invalidating cross-validation."
-        }
+        },
+        "example": "A coaching class gives a mock test, but by mistake half the questions are copied from the real exam. Students score very high and everyone celebrates. On exam day the scores drop sharply because the real paper held new questions too. In the same way, if the test data quietly seeps into training, results look wonderful and then fail on real use."
       },
       {
         "title": "Industrial Cross-Validation: K-Fold, Stratification & Rolling-Origin Backtesting",
@@ -5403,7 +5456,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Stratified K-Fold preserves the target class distribution across all folds, ensuring minority classes (such as rare fraud or defaults) are represented consistently."
-        }
+        },
+        "example": "A hospital has 1,000 patient records, of which only 20 show a rare disease. If the records are split randomly into 5 groups, one group might get none of them. Splitting with care, each group receives exactly 4 rare cases. Every test round then sees the rare disease, which makes the check honest."
       },
       {
         "title": "Building an Enterprise Machine Learning Pipeline Validator in Python",
@@ -5432,7 +5486,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "A PSI >= 0.25 indicates substantial distribution shift between training and serving, warning that predictions are unreliable and triggering automated retraining."
-        }
+        },
+        "example": "A uniform supplier decides sizes using last year's students, mostly aged 10 to 12. This year the school admitted many 14 year olds. The supplier compares the old and new age mix and sees a large shift. Because the usual guess about sizes no longer fits the new pupils, he stops trusting last year's plan and measures again."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -5488,7 +5543,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "When p > n, X^T X is singular and non-invertible, creating an underdetermined system with infinite interpolating solutions and unbounded prediction variance."
-        }
+        },
+        "example": "A shop owner has 30 weeks of sales data and 50 possible reasons: weather, cricket matches, festivals, rival offers and more. With more reasons than weeks, many completely different stories fit the data perfectly, so none can be trusted. The owner needs a method that restrains the reasons and avoids a story that merely memorises thirty weeks."
       },
       {
         "title": "Ridge Regression (L2 Regularization): Tikhonov Regularization & Smooth Shrinkage Physics",
@@ -5517,7 +5573,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "If eigenvalues of X^T X are lambda_i >= 0, the eigenvalues of (X^T X + lambda * I) are lambda_i + lambda > 0, guaranteeing strict positive-definiteness and invertibility."
-        }
+        },
+        "example": "A landlord predicts rent from number of rooms and floor area, which move together. Fitted freely, the numbers become silly: plus 9,000 rupees per extra room and minus 4,000 per extra square metre. A gentle penalty pulls both toward modest values, say 2,500 and 1,200, so the predictions stay sensible even when the inputs overlap."
       },
       {
         "title": "Lasso Regression (L1 Regularization): Sparsity Geometry & Karush-Kuhn-Tucker (KKT) Conditions",
@@ -5546,7 +5603,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The corners of the L1 diamond sit directly on the coordinate axes where beta_j = 0. Loss contours intersect these vertices, producing exact mathematical sparsity."
-        }
+        },
+        "example": "A teacher lists 30 habits that might affect marks. She finds only four really matter: study hours, attendance, sleep and practice papers. A method that pushes unhelpful factors exactly to zero leaves her with those four and strikes off the other 26. Like packing a bag with a weight limit, only useful items make the cut."
       },
       {
         "title": "ElasticNet: Balancing L1 Sparsity & L2 Grouping in Correlated Business Covariates",
@@ -5575,7 +5633,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "ElasticNet's strictly convex L2 penalty encourages grouped feature selection, preventing the unstable arbitrary dropping of collinear variables seen in pure Lasso."
-        }
+        },
+        "example": "A restaurant tracks two nearly identical signals: lunch orders and tiffin orders, which rise and fall together. A strict selection method might keep lunch orders this month and tiffin orders next month, flipping at random. A blended method keeps both and shares the credit between them, so the manager gets a steady, believable story month after month."
       },
       {
         "title": "Building an Enterprise High-Dimensional ElasticNet Predictor in Python",
@@ -5605,7 +5664,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "ElasticNet provides both automated variable selection and stable coefficient grouping, ensuring regulatory compliance and auditability under SR 11-7."
-        }
+        },
+        "example": "A bank must explain to an auditor why its loan model approves some customers and rejects others. The final model keeps eight factors, such as income stability and repayment record, each with a steady weight from month to month. Because the weights do not jump around, the auditor can follow the reasoning and the bank can defend each decision."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -5660,7 +5720,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "For binary classification, Gini = 1 - p_0^2 - p_1^2 = 2 * p_0 * p_1. When p_0 = 1, Gini = 0 (pure); when p_0 = 0.5, Gini = 0.5 (maximum impurity)."
-        }
+        },
+        "example": "A fruit seller has a basket of 10 mangoes, 5 ripe and 5 raw. It is as mixed as it can be, with a mix score of 0.5. He asks, is it soft? The soft group has 4 ripe and 1 raw, the firm group has 1 ripe and 4 raw. Each group scores 0.32, much purer, so that question is a good split."
       },
       {
         "title": "The Instability of Single Trees: High Variance, Overfitting & Cost-Complexity Pruning",
@@ -5689,7 +5750,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Cost-complexity pruning penalizes tree size via alpha * |T|. Larger alpha values prune more leaves, preventing complex overfitted trees."
-        }
+        },
+        "example": "A loan officer builds a rulebook of 200 very specific rules from last year's cases. It fits those cases perfectly, but a new applicant matches none of the rules properly and the book gives silly answers. Cutting the book back to the 10 broadest rules loses a little accuracy on old cases but works far better on new ones."
       },
       {
         "title": "Bootstrap Aggregation (Bagging): Mathematical Proof of Variance Reduction",
@@ -5718,7 +5780,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "As B -> infinity, (1 - rho)/B -> 0, leaving rho * sigma^2. The lower the correlation rho between trees, the lower the ensemble variance."
-        }
+        },
+        "example": "Ten friends each guess the weight of a watermelon, and each guess is off by about 2 kilos. Averaging independent guesses cuts the error to roughly 0.6 kilo. But if the friends whisper to one another and copy answers, the average stays close to a 2 kilo error. The more independent the guessers, the more the averaging helps."
       },
       {
         "title": "Random Forests & Feature Randomization: Slashing Tree Correlation rho & OOB Estimation",
@@ -5747,7 +5810,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "lim_{n -> inf} (1 - 1/n)^n = 1/e approx 0.3679. Each tree naturally omits ~36.8% of the data, which serves as an unbiased internal validation set."
-        }
+        },
+        "example": "A teacher makes practice sets by drawing 100 questions at random, with repeats allowed, from a bank of 100. In a typical set, about 37 of the bank's questions never appear. Those untouched questions become a free test for that set. A forest of trees uses the same trick, scoring each tree on the records it never saw."
       },
       {
         "title": "Building an Enterprise Random Forest Classifier with OOB Scoring in Python",
@@ -5776,7 +5840,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "MDI quantifies the cumulative impurity reduction attributed to each feature across all trees, satisfying adverse action and explainability requirements under FCRA and SR 11-7."
-        }
+        },
+        "example": "A bank must tell a rejected applicant the main reasons. Its forest reports how much each factor helped the trees separate good payers from bad ones: repayment history counted most, then income stability, then existing loans. The manager reads those reasons to the customer in plain words, which keeps the process fair and open to review."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -5832,7 +5897,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Gradient boosting minimizes loss via gradient descent in function space. Each new tree fits the negative gradient vector of the loss function evaluated at current predictions."
-        }
+        },
+        "example": "A student takes a mock test and loses marks mostly in geometry. Next, she studies only the geometry mistakes and tests again. Now algebra is the weak spot, so she works on that. Each round targets what the previous rounds still got wrong, and together the small corrections add up. Boosting builds models the same way."
       },
       {
         "title": "The Mathematics of XGBoost: Second-Order Taylor Loss & Exact Split Gain",
@@ -5861,7 +5927,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "By setting the derivative of the second-order Taylor objective to zero, w_j^* = - G_j / (H_j + lambda). The Hessian provides Newton-Raphson curvature scaling."
-        }
+        },
+        "example": "Imagine walking downhill in fog. The slope tells you the direction. How quickly the slope itself is changing tells you how big a step is safe: on a flattening path you can stride, on a sharply curving one you must go carefully. Using both pieces of information helps the model take sensible steps without overshooting the bottom."
       },
       {
         "title": "LightGBM Architectural Innovations: Histogram Binning, GOSS & Leaf-Wise Growth",
@@ -5889,7 +5956,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Histogram binning discretizes features into K bins, scanning O(K) histogram bins rather than sorting O(n) continuous observations, speeding up training by 8x-15x."
-        }
+        },
+        "example": "A teacher has 10,000 answer sheets and wants to find the best marks cut-off. Sorting every exact score is slow. Instead, she drops them into ten buckets of ten marks each and checks only ten dividing lines. The answer is almost the same and the work is hugely faster, which is why grouping values into bins speeds up learning."
       },
       {
         "title": "CatBoost & High-Cardinality Categoricals: Target Encoding without Leakage",
@@ -5917,7 +5985,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "CatBoost permutes the dataset and computes target statistics strictly from historical observations preceding observation i in the random ordering, eliminating target leakage."
-        }
+        },
+        "example": "A shop wants to predict whether a customer from a given locality will return. It uses the return rate of earlier customers from that locality, never including the customer being predicted or anyone who came later. If the customer's own result sneaked into the average, the prediction would look brilliant and be useless on real new customers."
       },
       {
         "title": "Building an Enterprise Gradient Boosted Residual Machine in Python",
@@ -5947,7 +6016,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Early stopping monitors validation loss across iterations, terminating training when generalization loss ceases to improve and preventing over-boosted noise memorization."
-        }
+        },
+        "example": "A student revises each evening and checks her progress with a mock test. Scores rise for two weeks, then stay flat for three sessions while she keeps studying until midnight. Beyond that point she is just memorising the practice papers. She stops there, because further effort no longer helps her on new questions."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -6002,7 +6072,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Business costs are asymmetric. In churn, losing a customer (FN) costs far more than a discount (FP). The optimal threshold p* must be shifted significantly downward."
-        }
+        },
+        "example": "A phone shop knows a lost customer costs it 4,000 rupees, while a retention offer costs 200 rupees. If it waits until a customer is at least 50 percent likely to leave, it misses almost everyone. Since 5 percent of 4,000 is already 200, calling anyone above a 5 percent chance makes sense. The right cut-off follows the costs, not habit."
       },
       {
         "title": "The Mathematical Derivation of the Profit-Maximizing Threshold p*",
@@ -6031,7 +6102,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Equating E[Action] = E[Inaction] yields p * gamma * CLV - C = - p * CLV ==> p * (1 + gamma) * CLV = C ==> p* = C / [(1 + gamma) * CLV]."
-        }
+        },
+        "example": "A shop's call costs 50 rupees, and a kept customer is worth 2,000. If a call saves a leaver, the call pays for itself whenever the chance of leaving is above 50 divided by 2,000, which is 2.5 percent. The break-even chance is simply the cost of acting divided by the value at stake, adjusted for how often the action backfires."
       },
       {
         "title": "Expected Value Framework & Cost-Utility Curves: Beyond ROC-AUC",
@@ -6059,7 +6131,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "ROC-AUC is scale-invariant and cost-blind. Profit curves translate model rankings into monetary dollars (CLV vs campaign cost), identifying the profit-maximizing threshold."
-        }
+        },
+        "example": "A loan recovery team can call 5,000 customers. The first 2,000 calls bring in 3 lakh rupees more than they cost. The next 3,000 calls cost more than they bring back. Two lists may rank customers equally well, but what matters is the point where adding more calls stops adding money. A profit curve shows that point; ranking scores alone cannot."
       },
       {
         "title": "Uplift Modeling & Causal Machine Learning: Targeting the 'Persuadables'",
@@ -6089,7 +6162,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Sleeping Dogs have positive uplift tau(x) > 0, meaning the marketing intervention increases their churn probability compared to leaving them in peace."
-        }
+        },
+        "example": "A gym emails 100 lapsed members. Ten renew because of the email. Sixty would have renewed anyway. Twenty never come back, whatever it does. And ten cancel because the email reminded them they were still paying. Only the first ten are worth emailing. The sixty cost money for nothing, and the last ten are harmed by the message."
       },
       {
         "title": "Building an Enterprise Profit-Maximizing Churn & Retention Suite in Python (Milestone 7 Capstone)",
@@ -6119,7 +6193,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The Master Retention Intelligence Suite synthesizes machine learning predictions, asymmetric cost matrices, and causal uplift targeting into an unassailable profit-maximizing retention engine."
-        }
+        },
+        "example": "A telecom shop has 10,000 customers and knows 1,200 may leave. Its model ranks them by risk, the costs say calling each one costs 50 rupees, and the lift test shows which customers are actually moved by a call. Combining all three, the team calls only the group where a call changes the outcome profitably, leaving the rest alone."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -6173,7 +6248,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Monotonic coarse binning linearizes the relationship between the feature and log-odds, isolates outliers, ensures statistical significance across categories, and guarantees explainable adverse action notices required by banking regulators."
-        }
+        },
+        "example": "A bank groups loan applicants by age. Default rates fall steadily from 12 percent for age 21 to 30, to 8, then 5 and 4 percent for older bands. The bands are made so the pattern only moves one way, with no zigzags. A smooth, sensible pattern is easy to explain to a regulator and does not react to random blips in small groups."
       },
       {
         "part": 2,
@@ -6200,7 +6276,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "In credit risk analytics, an IV >= 0.50 indicates either target data leakage (using information that occurs after the default event) or extreme overfitting. It must be audited before production deployment."
-        }
+        },
+        "example": "A bank clerk finds that one factor predicts default almost perfectly: whether a recovery notice was issued. It sounds like a miracle, but the notice is sent after a customer defaults. The factor uses information from the future. A predictive strength that is too good to be true is a signal to check for leakage, not a reason to celebrate."
       },
       {
         "part": 3,
@@ -6227,7 +6304,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "By definition of Points to Double Odds, PDO = Factor * ln(2). Thus, the scaling Factor is calculated as Factor = PDO / ln(2)."
-        }
+        },
+        "example": "A bank designs its credit score so that 600 points means good payers outnumber bad ones 30 to 1, and every 20 points doubles those odds. So 620 means 60 to 1, and 640 means 120 to 1. A loan officer can look at a score and immediately know how much safer one customer is than another."
       },
       {
         "part": 4,
@@ -6254,7 +6332,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Expected Loss is PD * LGD * EAD. Because EL is predictable and priced into loan spreads, banks cover it via credit loss reserves (provisions), holding regulatory capital against Unexpected Loss (UL)."
-        }
+        },
+        "example": "A bank gives 1,000 loans of 2 lakh rupees each. The chance of default is 3 percent, and on default it loses 40 percent of the loan. The expected loss per loan is 0.03 times 0.4 times 2 lakh, which is 2,400 rupees, so 24 lakh across all loans. The bank prices this into the interest rate and keeps reserves for it."
       },
       {
         "part": 5,
@@ -6281,7 +6360,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "A PSI >= 0.25 represents significant population drift. Regulators mandate model recalibration or redevelopment and interim underwriting policy tightening."
-        }
+        },
+        "example": "A scorecard was built when 70 percent of applicants were salaried and 30 percent were gig workers. Now the mix is 40 percent salaried and 60 percent gig workers. The bank compares the old and new mix and finds a big shift. Because the people applying are no longer like those the scorecard learned from, it needs a fresh review."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -6504,7 +6584,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "A sparse Dirichlet prior (alpha < 1.0) concentrates document-topic probability near the simplex vertices, ensuring each document is assigned to a few distinct, interpretable topics."
-        }
+        },
+        "example": "A restaurant reads 5,000 reviews. Each review usually talks about one or two things, such as food or service, rather than every topic at once. A model told to expect this does better at finding clean themes. Assuming that most reviews focus on very few topics reflects how people really write."
       },
       {
         "part": 2,
@@ -6531,7 +6612,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "In Collapsed Gibbs sampling, integrating out the continuous Dirichlet parameters theta and phi allows the algorithm to update discrete topic assignments using simple integer counts."
-        }
+        },
+        "example": "A college club coordinator wants to sort 500 feedback slips into themes. She starts by assigning slips at random, then looks at one slip at a time and moves it to the theme where similar slips cluster. After many rounds the groups settle. The method fixes one piece at a time, using everything else as a guide."
       },
       {
         "part": 3,
@@ -6559,7 +6641,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Chang et al. proved that perplexity measures statistical prediction rather than semantic clarity. Coherence metrics like C_v and U_Mass directly quantify semantic interpretability."
-        }
+        },
+        "example": "A chain tries splitting its reviews into 5 topics. Topic one has the words delivery, late, courier, packet, which clearly belong together. Topic two has delivery, price, smile, blue, which make no sense together. A good count of topics is the one where the top words of every group read like a single meaningful subject."
       },
       {
         "part": 4,
@@ -6587,7 +6670,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "c-TF-IDF treats each cluster as a unified document, comparing term frequency within the cluster to overall corpus prevalence to identify uniquely descriptive keywords."
-        }
+        },
+        "example": "A store groups customer comments into clusters. In the refund cluster, the word refund appears 40 times in every 100 words, while in the rest of the comments it appears only twice. Treating the whole cluster as one document and comparing it with everything else reveals the words that truly define it."
       },
       {
         "part": 5,
@@ -6615,7 +6699,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "A Z-score >= 3.0 indicates that topic prevalence has surged by more than three standard deviations above baseline, signaling an anomalous operational crisis."
-        }
+        },
+        "example": "A hotel normally gets about 10 complaints a day about air conditioning, give or take 2. One day it gets 18. That is 4 steps of normal variation above the usual level, far beyond what chance explains. The manager sends a technician at once rather than waiting for the monthly report."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -6669,7 +6754,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "In retail e-commerce, the catalog changes much more slowly than users, and item similarity matrices are smaller and more stable, enabling offline pre-computation and sub-millisecond serving."
-        }
+        },
+        "example": "Asha and Ravi both loved books A and B at a small library, and Ravi also loved book C. The librarian suggests C to Asha. The library has far fewer books than readers, and the books change slowly, so measuring how alike two books are works well. The closeness of tastes is measured by comparing their ratings."
       },
       {
         "part": 2,
@@ -6696,7 +6782,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "In implicit feedback, zero interactions provide baseline (weak) negative information. Setting c_{u,i} = 1.0 ensures the model penalizes unobserved items mildly without treating them as confirmed dislikes."
-        }
+        },
+        "example": "A library records how often each reader borrows each book. A reader who borrows a book five times clearly likes it. A book never borrowed does not mean it is disliked, because the reader may simply never have seen it. So the model treats missing borrowing as weak evidence and frequent borrowing as strong evidence."
       },
       {
         "part": 3,
@@ -6724,7 +6811,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Holding item factors fixed decouples the objective into independent ridge regression updates. The invariant term Y^T Y is precomputed once per epoch, bypassing the O(M*N) bottleneck."
-        }
+        },
+        "example": "A tailor tries to guess each customer's taste and each fabric's style. He fixes the fabric styles and adjusts every customer's taste to fit best. Then he fixes the customers and adjusts the fabrics. Going back and forth, each step is simple, and the guesses settle down into a good match without solving everything at once."
       },
       {
         "part": 4,
@@ -6752,7 +6840,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "In production e-commerce, recommendations are presented as Top-K ranked lists. Ranking metrics like NDCG@K and MAP@K directly measure position-discounted list quality."
-        }
+        },
+        "example": "A bookshop puts only 5 books on the display near the counter. What counts is whether the customer's favourite appears among those 5 and how high it sits. A favourite at the first position is better than one at the fifth. And if the display shows only bestsellers, new readers never find unusual books."
       },
       {
         "part": 5,
@@ -6780,7 +6869,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "UCB1 adds an exploration bonus proportional to parameter uncertainty, ensuring new items receive enough traffic to evaluate their true conversion rate while directing the bulk of traffic to winning items."
-        }
+        },
+        "example": "A food court has a new dosa stall with no reviews. The manager decides to send a small share of diners to it, say 20 of every 200, to learn how good it is. Without that deliberate sampling, the new stall never gets customers and is never judged. Giving unknown options a fair trial is how new items get discovered."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -7006,7 +7096,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Isolation Forests exploit the fact that outliers reside in sparse regions of the feature space, allowing random partitioning cuts to isolate them with very short path lengths."
-        }
+        },
+        "example": "At a wedding of 1,000 guests, one person wears a bright orange suit while everyone else wears pastel colours. A single question, are you in orange, picks him out. Ordinary guests need many questions to be told apart. Fraud works the same way: unusual transactions are few and different, so they are separated quickly."
       },
       {
         "part": 2,
@@ -7034,7 +7125,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "LOF compares an instance's local reachability density to that of its neighbors, making it sensitive to local deviations in multi-density environments."
-        }
+        },
+        "example": "In a crowded city street, standing 2 metres from the nearest person is normal. A farmhouse 50 metres from its neighbours in a village of scattered farms is also normal for that area. But a house 50 metres away from a tight cluster of homes looks odd. Whether something is an outlier depends on how crowded its own neighbourhood is."
       },
       {
         "part": 3,
@@ -7062,7 +7154,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Botnets test stolen cards with identical low-dollar charges at high speed. Zero cent entropy combined with high velocity creates an extreme multi-dimensional anomaly signature."
-        }
+        },
+        "example": "A fraud team notices 40 payments of exactly 10 rupees, from 40 different cards, within two minutes, all from one device. Real shoppers pay different amounts at varied speeds. Identical amounts at high speed is a pattern with no variety at all, and it shows a bot testing stolen cards."
       },
       {
         "part": 4,
@@ -7090,7 +7183,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "EVT models the parametric tail using the Generalized Pareto Distribution, allowing risk systems to dynamically set thresholds for a precise false alarm probability as traffic shifts."
-        }
+        },
+        "example": "A river town sets its embankment height. The average monthly rainfall suggests a 1 metre rise, but the real danger is the rare extreme flood. Engineers study only the biggest floods of the past to see how far the worst ones climb. In the same way, a fraud system sets its alert line from the extreme end of past cases, not the average."
       },
       {
         "part": 5,
@@ -7118,7 +7212,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Deduplication aggregates related alerts into a single dossier, and Top-K prioritization caps review queues at human investigator capacity, preventing critical attacks from being buried in false alarms."
-        }
+        },
+        "example": "A bank's fraud system raises 500 alerts a day, but has only 3 investigators who can handle 60 each, so 180. After merging repeat alerts about the same account, there are 220 distinct cases. The team still cannot do all of them, so it reviews the 180 riskiest ones first. Without this, the team would be drowned and start ignoring alarms."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -7172,7 +7267,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Active subscribers are right-censored: their true tenure is strictly greater than their current observation time. Treating current tenure as final artificially truncates customer lifespans."
-        }
+        },
+        "example": "A gym has 100 members. Sixty have left after an average of 8 months. Forty are still active, having been members for 6 months so far. If the owner averages only the people who left, he will say 8 months. But the 40 active members will stay longer, so the true average is higher. Ignoring them gives a falsely short lifetime."
       },
       {
         "part": 2,
@@ -7200,7 +7296,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Kaplan-Meier includes censored individuals in the at-risk denominator n_i up until they are censored, ensuring full utilization of partial survival data without bias."
-        }
+        },
+        "example": "A gym starts with 100 members. In month one, 10 leave, so 90 percent remain. In month two, 80 are still being watched, because 10 have not yet been observed that long, and 8 of them leave, so 90 percent of those survive. Overall 0.9 times 0.9 gives 81 percent. Members not yet fully observed still count while they are watched."
       },
       {
         "part": 3,
@@ -7227,7 +7324,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The Hazard Ratio is calculated as exp(beta). For beta = +0.4055, HR = exp(0.4055) = 1.50, representing a 50% increase in instantaneous churn hazard per additional bug ticket."
-        }
+        },
+        "example": "A delivery subscription service finds that customers who get late deliveries have a hazard ratio of 1.5. At any moment, they are 50 percent more likely to cancel than other customers. If normally 4 in 100 cancel in a month, late deliveries push it to about 6 in 100. It is a steady multiplier on the usual cancellation rate."
       },
       {
         "part": 4,
@@ -7255,7 +7353,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Under proportional hazards, Schoenfeld residuals must be uncorrelated with time. A significant correlation indicates that the hazard ratio varies over time, violating the proportional hazards assumption."
-        }
+        },
+        "example": "A magazine finds that subscribers who joined with a discount cancel twice as fast in the first month. But after six months, they cancel at the same rate as everyone else. So the discount effect is not one steady multiplier through time. The simple model would be misleading here, and a check on the leftover patterns over time exposes this."
       },
       {
         "part": 5,
@@ -7283,7 +7382,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Integrating S(t) discounts expected future cash flows by empirical survival probability and the time value of money, reflecting true non-constant tenure hazard rates."
-        }
+        },
+        "example": "A magazine earns 200 rupees profit a month from a subscriber. The chance a subscriber is still there is 0.9 in month one, 0.81 in month two and 0.73 in month three. Expected profit over three months is 200 times 2.44, about 488 rupees. Weighting each month by the chance the customer is still there gives a realistic lifetime value."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -7337,7 +7437,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "A linear objective function achieves its extrema at the boundaries of a convex polyhedral set, specifically at the extreme corner points (vertices)."
-        }
+        },
+        "example": "A tailor has 40 hours. A shirt takes 2 hours and earns 300 rupees; trousers take 4 hours and earn 500. All shirts bring 20 times 300, which is 6,000. All trousers bring 10 times 500, which is 5,000. A mix of 10 shirts and 5 trousers earns 5,500. The best plan sits at an extreme corner, not in the middle."
       },
       {
         "part": 2,
@@ -7363,7 +7464,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "The Minimum Ratio Test ensures that the entering variable increases only up to the point where the first basic variable hits zero, preventing negative resource values and maintaining feasibility."
-        }
+        },
+        "example": "A box maker has 120 sheets of board and 30 stickers. Each box needs 3 sheets and 1 sticker. Sheets allow 40 boxes, stickers allow only 30. The plan stops at 30, where the first resource runs out. The method moves from one corner plan to a better one, always stopping at the nearest limit."
       },
       {
         "part": 3,
@@ -7390,7 +7492,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Strong Duality guarantees that maximum profit equals minimum resource valuation at optimality, establishing complete economic consistency between product revenue and asset value."
-        }
+        },
+        "example": "A bakery owner finds that her best production plan earns 50,000 rupees a month. A neighbour offers to rent all her oven time and flour. The lowest rent she would agree to is exactly 50,000, because at that price renting and baking are equal for her. At the best plan, the value of the product and the value of the resources match."
       },
       {
         "part": 4,
@@ -7418,7 +7521,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The shadow price ($75/hr) exceeds the overtime cost ($50/hr), generating a positive net margin of $25/hr. Over 40 hours, this yields $25 * 40 = +$1,000 in net profit."
-        }
+        },
+        "example": "A printing press has one bottleneck machine, and an extra hour on it adds 75 rupees to profit. Overtime costs 50 rupees an hour. So each overtime hour nets 25 rupees, and 40 hours bring 1,000 rupees. The shadow price tells the owner how much an extra hour is worth, so he knows what overtime he can afford."
       },
       {
         "part": 5,
@@ -7446,7 +7550,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "When demand exceeds supply, introducing a dummy source with stockout penalty costs enables the model to allocate scarce capacity to the highest-priority, highest-margin demand centers."
-        }
+        },
+        "example": "Two godowns have 300 and 200 bags of grain, but three shops want 600 bags in total, so 100 bags are short. The planner adds an imaginary third godown that supplies the missing 100 bags at a penalty cost. The model then decides which shop should go short in the cheapest way, instead of failing with no answer."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -8363,7 +8468,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Little's Law (L = lambda * W) is a universal queuing theorem that relates average queue inventory to throughput rate and dwell time, holding independent of probability distributions."
-        }
+        },
+        "example": "A hospital OPD sees 12 new patients arrive per hour, and on average 6 sit in the waiting room. Dividing, each patient waits 6 divided by 12, which is half an hour. This holds whatever the pattern of arrivals. If the waiting room grows to 12 patients with the same flow, the wait doubles to a full hour."
       },
       {
         "part": 2,
@@ -8391,7 +8497,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Next-event advancement jumps the clock directly to the next scheduled event in the min-heap event list, avoiding redundant calculations during idle periods."
-        }
+        },
+        "example": "A simulation of a bank queue only notes the moments that matter: a customer arrives at 10:00, a teller finishes at 10:03, the next customer arrives at 10:07. Instead of ticking forward second by second, the clock jumps straight to 10:03 and then 10:07. Skipping the dead time makes the simulation quick and tidy."
       },
       {
         "part": 3,
@@ -8419,7 +8526,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Steady-state formulas assume infinite time to equilibrate. When arrival bursts hit, transient backlogs accumulate rapidly and take hours to clear, requiring dynamic discrete-event simulation."
-        }
+        },
+        "example": "A railway booking office has 3 counters, each serving 20 people an hour, so 60 an hour. At 9 am, 90 people an hour arrive for one hour, leaving 30 stuck in a line. Afterwards only 40 arrive per hour, so the counters clear 20 an hour of the backlog, taking another hour and a half. The queue outlasts the rush itself."
       },
       {
         "part": 4,
@@ -8447,7 +8555,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Queuing delay is governed by the non-linear hyperbolic factor rho / (1 - rho). Operating above 90% utilization causes queues to explode exponentially, destroying operational stability."
-        }
+        },
+        "example": "An airline had 5 check-in counters at 72 percent busy. It cut one to save wages, pushing the rest to 90 percent busy. Waiting time grows as busyness divided by what is left over. At 72 percent that is about 2.6; at 90 percent it is 9. A small saving in staff made queues more than three times longer."
       },
       {
         "part": 5,
@@ -8476,7 +8585,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Breaking the Coffman circular wait condition through hierarchical resource acquisition or timeout reneging ensures that entities never become permanently deadlocked waiting for shared resources."
-        }
+        },
+        "example": "Two cooks in a kitchen each pick up one tool. One holds the pan and waits for the ladle; the other holds the ladle and waits for the pan. Neither can proceed. The fix is a house rule: always take the pan first. With a fixed order, the circular waiting cannot happen, and the kitchen keeps moving."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -8530,7 +8640,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Emergence is the defining property of complex adaptive systems: local micro-interactions produce macro patterns that cannot be predicted by summing isolated individual behaviors."
-        }
+        },
+        "example": "At a cricket stadium, a wave sweeps around the stands. No one planned it. Each person follows a simple rule: stand up when your neighbour stands, then sit. The big pattern comes from small local actions. Markets behave the same way, which is why simulating many simple agents can show outcomes nobody designed."
       },
       {
         "part": 2,
@@ -8559,7 +8670,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Unconstrained undercutting rules create a classic prisoner's dilemma race-to-the-bottom when bots react to each other autonomously without margin floors or cooperative signaling."
-        }
+        },
+        "example": "Two chai stalls face each other. Chai costs 8 rupees to make and sells for 15. Each stall cuts its price by one rupee whenever the other does. After seven rounds of cutting, both sell at 8 rupees and make nothing. Each cut looked smart on its own, but together they destroyed all the profit."
       },
       {
         "part": 3,
@@ -8587,7 +8699,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Winning market share with negative-margin pricing accelerates cash depletion: the more units sold below full cost, the faster the firm burns through cash reserves and enters insolvency."
-        }
+        },
+        "example": "A stall sells chai at 18 rupees while it costs 20 rupees to make. At 100 cups a day, it loses 200 rupees. When the lower price attracts 300 cups, the loss rises to 600. Winning more customers by selling below cost does not help; it only drains the cash faster."
       },
       {
         "part": 4,
@@ -8615,7 +8728,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "High feedback gain with synchronous activation creates artificial cyclical oscillations. Applying exponential damping, velocity limits, and asynchronous scheduling restores realistic stability."
-        }
+        },
+        "example": "When you adjust a bathroom shower tap, a big turn makes the water scalding, then a big turn back makes it freezing, and you keep swinging. Small, gentle corrections settle at the right temperature quickly. A price simulation behaves like this: if each seller reacts too strongly and all at once, prices swing wildly instead of settling."
       },
       {
         "part": 5,
@@ -8643,7 +8757,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Axelrod's Tit-for-Tat principles (nice, retaliatory, forgiving, transparent) combined with hard margin floors establish stable pricing equilibria and eliminate ruinous negative-margin volume."
-        }
+        },
+        "example": "Two shopkeepers agree on a simple habit. If one cuts price, the other matches it once. When the first restores the price, the other restores too. And neither goes below cost, ever. Because the rules are clear, friendly and firm, no price war starts, and both keep their margins."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -8697,7 +8812,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Naive differences equal True ATT plus Selection Bias. When high-income or high-engagement users self-select into treatment, selection bias vastly inflates the apparent effect."
-        }
+        },
+        "example": "A shop gives a loyalty card, and card holders spend 5,000 rupees a month against 3,000 for others. But before joining, those same members already spent 4,500. The card's real effect is about 500, not 2,000. The remaining 1,500 comes from the fact that big spenders were the ones who chose to join."
       },
       {
         "part": 2,
@@ -8725,7 +8841,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Examining pre-treatment baseline spend showed that enrolled cardholders were already spending vastly more before the program existed, proving the spend difference was driven by selection bias."
-        }
+        },
+        "example": "A bank notices that holders of its premium card spend 60,000 rupees a month against 25,000 for others, and boasts that the card doubles spending. But before getting the card, those customers already spent 55,000. The card changed little. Wealthy, active customers simply chose the card, so comparing the groups after the fact misleads."
       },
       {
         "part": 3,
@@ -8754,7 +8871,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Rosenbaum and Rubin proved that conditioning on the 1D propensity score balances all multi-dimensional covariates X, reducing complex multi-variable matching to a single dimension."
-        }
+        },
+        "example": "To judge a coaching programme, a researcher cannot compare students who joined and those who did not, because they differ in many ways. So for each joined student she finds a twin who did not join, similar in age, school marks and family income. Comparing these matched twins gives a fairer picture of the programme's effect."
       },
       {
         "part": 4,
@@ -8782,7 +8900,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Positivity mandates 0 < e(X) < 1. Extreme propensity scores divide by near-zero, creating massive weights that introduce catastrophic variance into IPW causal estimates."
-        }
+        },
+        "example": "A survey is answered by 1 in 10 young people but most older people. To fix the balance, each young response counts 10 times. That works. But if only 1 in 1,000 youths answered, one response would count for 1,000, and one odd person could swing the whole result. Extreme weights make the answer unstable."
       },
       {
         "part": 5,
@@ -8810,7 +8929,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Rosenbaum's Gamma measures the odds ratio by which an unobserved confounder could influence treatment selection. A high critical Gamma indicates robust resistance to hidden bias."
-        }
+        },
+        "example": "A study says students who attend tuition score higher. A critic says motivated students might be the ones who join. The researcher asks how strong a hidden factor like motivation would need to be to erase the result. If it would need to triple the odds of joining, the finding is fairly sturdy."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -8864,7 +8984,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "High baseline churn risk correlates with low usage. Contacting inactive subscribers wakes 'Sleeping Dogs' who had forgotten about their monthly billing, driving negative incremental value."
-        }
+        },
+        "example": "A magazine sends a renewal reminder to all subscribers. Active readers renew anyway, and a few forgetful ones renew because of it. But a subscriber who barely reads is reminded that money is leaving his account, and he cancels. Not everyone responds the same way, so treating all customers alike can backfire."
       },
       {
         "part": 2,
@@ -8892,7 +9013,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "A randomized control holdout group provides the true uncontacted counterfactual Y(0). Observing 78% renewal in controls vs 57% in treated proves the campaign caused cancellations."
-        }
+        },
+        "example": "A magazine reminds 1,000 inactive subscribers and leaves another 1,000 alone as a comparison group. Among those reminded, 570 renew; among those left alone, 780 do. The reminder cost 210 renewals per 1,000. Without the untouched comparison group, the team would never have learned that the campaign was harmful."
       },
       {
         "part": 3,
@@ -8920,7 +9042,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "In balanced A/B trials, E[Z|X] = 0.5 + 0.5*tau(x). Predicting P(Z=1|X) mathematically recovers the individual treatment effect tau(x) = 2*P(Z=1|X) - 1."
-        }
+        },
+        "example": "To find a driver's weight, you weigh the truck with him and without him, each time on a different scale that can be off by 20 kilos. Subtracting the two readings magnifies those errors. Estimating the effect of a campaign by two separate predictions, with and without, suffers the same problem, so a method aimed directly at the difference can be better."
       },
       {
         "part": 4,
@@ -8948,7 +9071,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "A downward slope on a Qini curve signals negative marginal treatment effects. Expanding outreach beyond the peak targets Sleeping Dogs, causing net incremental gains to drop."
-        }
+        },
+        "example": "A company calls customers in order from most to least likely to be persuaded. The first 400 calls bring 120 extra sales. The next 300 add 10 more. The last 300 turn away 30 customers. The total peaks at 130 extra sales after 700 calls and ends at 100. Stopping at the peak saves effort and avoids harm."
       },
       {
         "part": 5,
@@ -8976,7 +9100,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The breakeven threshold is tau_hat >= C / V. If predicted uplift is less than C / V, expected gross incremental revenue is less than contact cost, generating negative ROI."
-        }
+        },
+        "example": "A reminder costs 20 rupees to send, and a renewal is worth 400. The reminder is worth sending only if it raises the chance of renewal by at least 20 divided by 400, which is 5 percentage points. For customers where the predicted gain is only 2 points, the message costs more than it brings."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -9030,7 +9155,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Univariate ratios miss cross-dimensional distress (e.g. high liquidity masking operating losses). Multi-discriminant analysis models the joint covariance of five financial dimensions simultaneously."
-        }
+        },
+        "example": "A supplier shop has plenty of cash in hand, so a single liquidity check looks healthy. But it loses money on its operations and has borrowed heavily. One ratio alone hides the trouble. Combining several ratios into one score, like a health check with many tests, reveals that the firm is in distress even though its cash looks good."
       },
       {
         "part": 2,
@@ -9059,7 +9185,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Examining working capital and retained earnings revealed that the supplier was funding revenue growth with predatory debt, driving the Altman Z-score below 1.0 eighteen months before default."
-        }
+        },
+        "example": "A spice trader buys from a supplier whose sales rose by 40 percent, yet the supplier kept no retained profit and doubled its debt to pay for growth. When its lenders pulled back, it collapsed, leaving the trader with a month of advance payments lost. A glance at the supplier's balance sheet would have warned him."
       },
       {
         "part": 3,
@@ -9087,7 +9214,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Ohlson's logistic formulation outputs a true calibrated probability of default P(Default) required for Basel Risk-Weighted Asset calculations, avoiding MDA's strict normality assumptions."
-        }
+        },
+        "example": "A bank wants to say, this borrower has a 4 percent chance of default, not just a good or bad label. A calibrated probability lets it work out reserves: with 1,000 such loans, about 40 may default. Regulators ask banks for such probabilities, because reserves depend on actual numbers rather than labels."
       },
       {
         "part": 4,
@@ -9116,7 +9244,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "The decision threshold is -1.78. Scores greater than -1.78 (e.g. -1.18) provide empirical evidence of aggressive revenue recognition, capitalized expenses, and uncollected accruals."
-        }
+        },
+        "example": "A shop's sales rose 10 percent, but the money owed by customers rose 60 percent. That gap suggests sales may be recorded early or to customers who will never pay. A score built from such warning signs flags the books for a closer look when it crosses a set limit. It is a signal for investigation, not proof."
       },
       {
         "part": 5,
@@ -9145,7 +9274,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The Z+O+M triad covers the complete risk landscape: Altman Z detects insolvency, Ohlson O calculates calibrated default probabilities, and Beneish M exposes accounting fraud and manipulated earnings."
-        }
+        },
+        "example": "A doctor does a blood test, an ECG and an X-ray, because each catches problems the others miss. A lender does the same with three checks: one for distress, one for default probability, and one for manipulated accounts. Together they cover the main ways a customer can go wrong, and none of the three alone is enough."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -9199,7 +9329,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "The Balanced Scorecard connects leading operational and customer drivers with lagging financial outcomes, providing a multi-perspective causal map rather than backward-looking financial accounting alone."
-        }
+        },
+        "example": "A hospital watches not only its profit but also patient satisfaction, waiting times and staff training. Training nurses today leads to fewer errors next year, which leads to happier patients and better finances later. The scorecard links these early drivers to the final money results, so managers see the whole chain instead of only the last link."
       },
       {
         "part": 2,
@@ -9228,7 +9359,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Unconstrained AHT incentivized agents to game the metric by disconnecting complex technical calls just before the 3-minute threshold, meeting the speed target while devastating customer retention."
-        }
+        },
+        "example": "A call centre rewards agents for keeping calls under four minutes on average. Agents learn to hang up on difficult calls at 3 minutes 50 seconds. The average looks wonderful, yet customers call back angrily and complaints rise. The measure was met, but the real purpose of helping customers was lost."
       },
       {
         "part": 3,
@@ -9256,7 +9388,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The Cobra Effect is the canonical example of Goodhart's Law: setting a target (dead cobra bounty) incentivized people to breed cobras to maximize compensation, worsening the underlying problem."
-        }
+        },
+        "example": "A school pays teachers a bonus based on the pass percentage. Some teachers quietly stop weak students from sitting the exam, and the pass rate soars while real learning falls. When a measure becomes the target, people chase the number itself. That is the lesson of this idea."
       },
       {
         "part": 4,
@@ -9284,7 +9417,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Metric duality pairs an accelerator (speed, volume, acquisition) with an antagonistic brake (quality, risk, margin), neutralizing the incentive to game volume at the expense of enterprise value."
-        }
+        },
+        "example": "A delivery company sets a target of 25 deliveries an hour for riders. If that is the only target, riders rush and break parcels. So the company pairs it with a ceiling of 2 percent damage complaints. One measure pushes speed up and the other holds quality, so neither can be gamed alone."
       },
       {
         "part": 5,
@@ -9312,7 +9446,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Real-time gaming detection monitors divergence between paired metrics: an accelerator surging while its antagonistic brake collapses is the definitive mathematical signature of metric gaming."
-        }
+        },
+        "example": "A sales team's volume jumps 40 percent in a month, which looks great. But refunds triple in the same month. A monitor that watches paired numbers raises an alarm when one soars while its partner collapses. The pair together suggests people may be pushing sales that customers return."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -9367,7 +9502,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Leading with the Answer First (BLUF) respects executive cognitive capacity, establishing the commercial decision context immediately so that executives can evaluate supporting proofs strategically."
-        }
+        },
+        "example": "A manager has five minutes with the managing director. She begins: close the Pune shop, it loses 2 lakh rupees a month. Then she gives three short reasons. The director grasps the decision at once and can ask questions. Starting with the answer respects a busy listener's attention, and the reasons follow in support."
       },
       {
         "part": 2,
@@ -9395,7 +9531,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Chronological bottom-up technical presentations exhaust executive cognitive capacity before the commercial value proposition is revealed, leading to disengagement and cancelled initiatives."
-        }
+        },
+        "example": "A contractor presents a society project beginning with 20 minutes on cement brands and site preparation. Only at the end does he mention that it would save the society 30 lakh rupees. By then the chairperson has already left to take a call. Starting with the saving, then the proof, would have kept the room."
       },
       {
         "part": 3,
@@ -9423,7 +9560,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Tufte's Data-Ink Ratio maximizes non-redundant data communication while eliminating decorative chartjunk (3D effects, dark grids, redundant labels), reducing executive cognitive fatigue."
-        }
+        },
+        "example": "A shop owner shows monthly sales as 3D pillars with dark gridlines and a shadow behind each. Another shows a plain line with the highest and lowest months marked. The second is easier to read because every mark carries information. Remove decoration that tells the viewer nothing, and the real message stands out."
       },
       {
         "part": 4,
@@ -9452,7 +9590,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The three-step protocol acknowledges the board member's valid skepticism, translates 2SLS instrumental variables into plain business terms, and cites diagnostic proofs (F > 10, E-value) to establish credibility."
-        }
+        },
+        "example": "A board member snaps, your numbers look cooked. A good answer has three steps. First, acknowledge: that is a fair concern. Then explain in everyday words: we compared shops of the same size, one with the new method and one without. Then show the evidence. It calms the room and keeps the focus on the facts."
       },
       {
         "part": 5,
@@ -9480,7 +9619,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "A board-ready brief synthesizes Minto top-down clarity, DCF capital return metrics (NPV, IRR, Payback), scenario stress-testing, and high data-ink visualization to provide fiduciary certainty."
-        }
+        },
+        "example": "A transport firm wants to buy a van for 8 lakh rupees that saves 2.4 lakh a year, so it pays back in about 3.3 years. If savings are lower, say 1.6 lakh, payback stretches to 5 years. A board brief that shows both, plus a recommendation on page one, lets directors decide with their eyes open."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -9534,7 +9674,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Differential privacy provides a mathematically proven bound against arbitrary side-channel or auxiliary reconstruction attacks regardless of external data, unlike heuristic syntactic k-anonymity."
-        }
+        },
+        "example": "A class survey asks, did you copy in the test? Each student tosses a coin in secret: heads, answer honestly; tails, answer randomly. The teacher can still estimate the overall copying rate, but no single answer proves anything about a particular student. Adding deliberate noise protects individuals even from clever guessing."
       },
       {
         "part": 2,
@@ -9564,7 +9705,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "High-dimensional algorithms reconstruct protected traits through correlated proxies (e.g. zip codes). Removing protected attributes does not prevent discriminatory disparate impact."
-        }
+        },
+        "example": "A company hires delivery staff and removes gender from its form, but still uses the home pin code. In some cities, pin codes are closely linked to community. So the program still treats groups differently without ever seeing the protected detail. Removing the sensitive column is not enough when other columns act as stand-ins."
       },
       {
         "part": 3,
@@ -9592,7 +9734,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "The Impossibility Theorem proves that when base rates differ, satisfying Demographic Parity, Equalized Odds, and Predictive Parity simultaneously is mathematically contradictory."
-        }
+        },
+        "example": "A test finds 90 percent of sick people and wrongly flags 10 percent of healthy ones. In village A, 200 of 1,000 are sick: 180 are caught and 80 healthy are wrongly flagged, so 69 percent of flags are right. In village B, only 50 of 1,000 are sick: 45 caught, 95 wrongly flagged, so just 32 percent of flags are right. Equal tests still give unequal results."
       },
       {
         "part": 4,
@@ -9621,7 +9764,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Decoupling decision thresholds counteracts proxy-induced downward score compression for protected groups, restoring Disparate Impact above 80% with minimal profit loss."
-        }
+        },
+        "example": "In a scholarship test, one group's scores are pulled down by 5 marks because the question style is unfamiliar to them. With a single cut-off of 60, far fewer of them qualify. Setting the cut-off at 55 for that group brings selection rates back in line. Adjusting thresholds can correct a distortion built into the scores."
       },
       {
         "part": 5,
@@ -9649,7 +9793,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The privacy budget ledger bounds cumulative privacy loss under differential privacy composition theorems, blocking queries once epsilon is depleted to prevent reconstruction attacks."
-        }
+        },
+        "example": "A research office gives analysts a privacy budget of 1.0 for a dataset. Each question uses up 0.1, and every answer reveals a little about individuals. After 10 questions, the budget is gone and further queries are blocked. Like a prepaid data pack, the total privacy loss is capped, whatever combination of questions is asked."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -9703,7 +9848,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Family-Wise Error Rate is 1 - (1 - alpha)^m. For m=50 at alpha=0.05, 1 - 0.95^50 = 92.3%, guaranteeing false positive discoveries on noise."
-        }
+        },
+        "example": "A shop owner tests 50 small changes, like bag colour, music and counter layout, each with a 5 percent chance of looking like a winner by pure luck. The chance that at least one looks like a winner by luck alone is 1 minus 0.95 to the power 50, about 92 percent. Test many ideas and a fluke is almost certain."
       },
       {
         "part": 2,
@@ -9732,7 +9878,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Testing 60 hypotheses at alpha=0.05 expects 60*0.05 = 3 false positives by pure chance. Benjamini-Hochberg would have set the cutoff at p < 0.00083, rejecting all flukes."
-        }
+        },
+        "example": "A cafe owner tries 60 menu tweaks and launches the 4 that looked significant at the usual 5 percent level. By chance alone, 60 tests would throw up about 3 false winners. So most of those 4 were probably luck. The cafe spent heavily and sales did not budge."
       },
       {
         "part": 3,
@@ -9760,7 +9907,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "FWER bounds P(V >= 1) which severely damages statistical power in high-dimensional tests. FDR bounds E[V/R], allowing real discoveries while guaranteeing low false positive proportions."
-        }
+        },
+        "example": "A team runs 5 tests with p-values of 0.004, 0.012, 0.03, 0.2 and 0.6. It sorts them and compares each with a rising bar of 0.01, 0.02, 0.03, 0.04 and 0.05. The first three pass; the fourth fails. So three discoveries are declared. The weakest evidence faces the strictest bar, which controls the share of false findings."
       },
       {
         "part": 4,
@@ -9789,7 +9937,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Continuous peeking without alpha spending functions inflates false positive error rates from 5% to 30%+, capturing random noise fluctuations as false 'wins'."
-        }
+        },
+        "example": "A tea stall tests two sugar levels and checks sales every evening. On day five, level A is ahead, so the owner stops the test and declares it the winner. Had he waited, the gap would have vanished. Looking repeatedly and stopping when it looks good turns a fair 5 percent chance of error into a much larger one."
       },
       {
         "part": 5,
@@ -9818,7 +9967,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "The BH controller applies ascending thresholds (i/m)*q across sorted p-values, confirming true breakthroughs while rejecting spurious noise flukes."
-        }
+        },
+        "example": "A marketing team runs 20 tests and 6 look promising. The controller sorts them by strength and applies an ascending bar. Four clear it and two fail. The team launches the four, accepting that a small share may be false, rather than throwing away all results to avoid every possible mistake."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -9872,7 +10022,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Conditioning on the dependent variable (omitting zero-damage flights) biased the estimated temperature slope toward zero. Including all flights revealed a 98%+ failure probability at 31 deg F."
-        }
+        },
+        "example": "To check whether rain causes accidents, someone looks only at days when accidents occurred. The many rainy days with no accident are left out. The record then shows accidents on all sorts of weather and hides the real link. Leaving out the cases where nothing went wrong hides how risky the condition truly is."
       },
       {
         "part": 2,
@@ -9901,7 +10052,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "With symmetric model error, sellers accept overpriced offers and reject underpriced offers. The algorithm selectively acquires the most overpriced inventory, compounding losses in a slowing market."
-        }
+        },
+        "example": "Twenty students guess the number of coins in a jar, each a bit high or low. The jar goes to the highest bidder, and the highest bidder is usually the one who guessed too high. The winner pays more than the jar is worth. A pricing program that buys houses at its own estimated price falls into the same trap."
       },
       {
         "part": 3,
@@ -9930,7 +10082,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Inferring intimate personal states without user consent violates contextual integrity, generating severe public outrage despite high model accuracy."
-        }
+        },
+        "example": "A grocer notices that a young customer buys certain items and starts mailing her baby-product coupons. Her father opens the mail. The grocer used ordinary purchase records, yet the customer never agreed to have such a private fact guessed and announced. Even accurate predictions can feel like a violation when used out of context."
       },
       {
         "part": 4,
@@ -9958,7 +10111,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "SR 11-7 requires complete structural and organizational independence between model developers and model validators to prevent commercial conflicts of interest."
-        }
+        },
+        "example": "In a school, a student marks her own answer sheet. She would probably pass herself. Instead, a different teacher checks it. A bank follows the same principle: the team that builds a risk model should not be the team that checks it. Independent validation prevents friendliness, or fear of the boss, from hiding problems."
       },
       {
         "part": 5,
@@ -9986,7 +10140,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "A surge in acceptance velocity signals that the model is overpaying, triggering the Winner's Curse. Automated circuit breakers freeze capital and increase bid-shading discounts."
-        }
+        },
+        "example": "A house-buying system usually has 20 offers accepted per day. One day, 60 sellers accept. That surge suggests the system is offering too much and sellers are happily taking the bargain. Like a home circuit breaker, an automatic pause stops further buying until humans check the prices."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -10042,7 +10197,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Decoupling analytical decision systems from transactional execution guarantees that model failures, retraining runs, or pipeline latency spikes cannot bring down production customer services."
-        }
+        },
+        "example": "A restaurant keeps its billing counter running even when the manager's planning spreadsheet crashes. Orders keep flowing, and the planning can be fixed later. A business should keep its everyday transaction systems apart from its analysis systems in the same way, so one failing never stops sales."
       },
       {
         "part": 2,
@@ -10072,7 +10228,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Without a centralized semantic layer and formal data contracts, different business units define KPIs differently, leading to massive discrepancies between sales bookings and GAAP accounting revenue."
-        }
+        },
+        "example": "Sales says an active customer is anyone who has ever bought; finance counts only those who bought in the last 90 days. One report shows 12,000 active customers, the other 7,500. The company has paid for years of data storage, yet managers argue about whose number is right. Without agreed definitions, data volume brings confusion, not clarity."
       },
       {
         "part": 3,
@@ -10101,7 +10258,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Data Contracts enforce code-governed schema structures, types, and quality SLAs at the boundary between producers and consumers, eliminating downstream pipeline breakage."
-        }
+        },
+        "example": "A tiffin supplier and an office sign a simple agreement: four compartments, delivered by 12:30, hot. If the supplier fails, it is clear who must fix it. Data teams do the same: the team producing data promises a shape and quality, and the team using it depends on that promise instead of guessing."
       },
       {
         "part": 4,
@@ -10130,7 +10288,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "CFOs evaluate capital allocation based on financial returns. Demonstrating positive NPV, high IRR, and rapid cash payback proves that the analytics transformation creates substantial shareholder value."
-        }
+        },
+        "example": "A finance head hears an analytics proposal. It costs 10 lakh rupees and is expected to save 4 lakh a year, so it pays back in 2.5 years. She approves because the numbers are in her language. A proposal about clever models without a cost and a return would not have passed."
       },
       {
         "part": 5,
@@ -10159,7 +10318,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "A codified semantic layer establishes unambiguous mathematical formulas and authoritative department ownership for every KPI, preventing conflicting definitions across divisions."
-        }
+        },
+        "example": "In a cricket match, one official scorer decides what counts as a run, and the scoreboard shows that number to everyone. Nobody argues about it halfway through. A company needs the same for its key numbers: one agreed definition and one named owner for each, so every department reads the same score."
       }
     ],
     "coursePrefix": "bcom_ana",
@@ -10214,7 +10374,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Decoupling analytical scoring and optimization from transactional production databases via asynchronous event-driven streaming ensures that heavy analytical queries, retraining cycles, or model failures cannot exhaust operational database connection pools or interrupt revenue-generating transactional services."
-        }
+        },
+        "example": "In a hospital, patient registration must work instantly at the counter. Head office reports are prepared from a copy of the data updated in the evening. If a heavy report ran on the live system, the counter would slow down. Keeping analysis away from daily operations keeps both running smoothly."
       },
       {
         "part": 2,
@@ -10243,7 +10404,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Independent departmental optimization optimizes local objective functions while ignoring cross-departmental coupling and physical constraints. When marketing creates demand spikes that exceed logistics fulfillment capacity, the resulting emergency expedited freight, overtime, and stockout costs easily overwhelm promotional gross margins."
-        }
+        },
+        "example": "In a household, father buys vegetables in bulk because the per-kilo price is lower, mother cooks only what she needs, and the fridge overflows. Half the vegetables rot. Each person did the sensible thing for their own task, yet the family wasted money. Departments optimising separately can fail the whole company the same way."
       },
       {
         "part": 3,
@@ -10272,7 +10434,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "In observational data, prices and sales volumes are simultaneously determined by market demand shocks, causing endogeneity bias in OLS. A valid supply-side instrument (such as tariffs or fuel costs) shifts the supply curve exogenously without affecting consumer demand preferences, allowing 2SLS to trace out the true demand elasticity curve."
-        }
+        },
+        "example": "An umbrella seller raises prices on rainy days and sells more umbrellas. A naive reader concludes that higher prices increase sales. In fact, rain pushed both the price and the demand up. When price and sales are both driven by the same hidden shock, you need a method that separates the shock from the price effect."
       },
       {
         "part": 4,
@@ -10301,7 +10464,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "The Four-Fifths (80%) Rule states that a selection rate for any demographic race, sex, or ethnic group which is less than four-fifths (80%) of the rate for the group with the highest selection rate is legally regarded as prima facie evidence of disparate impact discrimination."
-        }
+        },
+        "example": "A company hires 60 percent of male applicants but only 42 percent of female applicants. Dividing 42 by 60 gives 70 percent, which is below the four-fifths line of 80 percent. That ratio flags a possible problem that the company must investigate and explain. It is a quick screening rule, not a final verdict."
       },
       {
         "part": 5,
@@ -10330,7 +10494,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "The Minto Pyramid Principle requires 'Answer First' because C-suite decision makers read top-down under intense time pressure. Leading with the core conclusion and financial impact anchors the audience's attention and allows them to follow the supporting deductive logic with total clarity."
-        }
+        },
+        "example": "A student faces a viva with five minutes per examiner. She opens with her conclusion: the Pune shop should close, saving two lakh rupees a month. Then she gives her three reasons. The examiner knows where she is heading and can test her reasoning. Starting with the answer suits busy people reading from the top down."
       }
     ],
     "coursePrefix": "bcom_ana",

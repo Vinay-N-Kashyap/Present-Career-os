@@ -12649,7 +12649,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "The container staging yard decouples two fundamentally incompatible operational cadences: the discontinuous, massive batch surges of container ships (which unload thousands of containers over a single day) and the continuous, low-volume flow of highway trucks and intermodal freight trains."
-        }
+        },
+        "example": "Picture a wholesale vegetable market. Trucks arrive at the gate, unload at the dock, crates wait in a holding yard, and some leave by wagon from the railway siding. If the gate clerk is slow, trucks queue on the road even while the dock sits empty. A container port works the same way. Quay, yard, gate and rail must move at a similar pace, because the slowest link decides how fast goods really get out."
       },
       {
         "title": "Berth Allocation Problem (BAP) and Quay Crane Scheduling Problem (QCSP): Combinatorial Formulations",
@@ -12676,7 +12677,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 2,
           "answerIndex": 2,
           "why": "Quay cranes are massive gantry structures mounted on a single linear rail track along the edge of the wharf. Because they share one rail line, they cannot physically cross or pass one another, meaning their relative spatial order along the quay is an absolute mathematical non-crossing constraint in the QCSP."
-        }
+        },
+        "example": "A tyre workshop has two bays and four mechanics. Three vans are booked at nine: one needs four hours of work, two need one hour each. Put the big job in bay one and both small ones in bay two, and the small vans are done by eleven while the big one finishes at one. Adding a mechanic to the big job shortens it. Berth planning is this same puzzle with ships and cranes."
       },
       {
         "title": "Yard Crane Dispatching and Container Stacking Strategies: Marshaling, Housekeeping Moves, and Dwell-Time Optimization",
@@ -12703,7 +12705,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 3,
           "answerIndex": 3,
           "why": "Because containers are stacked up to six tiers high with only top-access, retrieving a specific buried container requires the yard crane to pick up and move all containers stacked above it to adjacent slots. These reshuffles waste crane operating hours, consume energy, and cause long vehicle delays."
-        }
+        },
+        "example": "A grain godown stacks rice sacks four high. A buyer's truck needs sacks from the bottom of a stack, so workers must lift three sacks off, fetch the ones needed, then put the three back. That is six moves that earned nothing. Had tomorrow's dispatch been stacked on top, there would be none. Yard planners place containers by departure order and try to cut the days each box waits."
       },
       {
         "title": "Automated Terminal Technologies: Automated Guided Vehicles (AGVs), OCR Gate Portals, and Digital Terminal Operating Systems (TOS)",
@@ -12730,7 +12733,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 0,
           "answerIndex": 0,
           "why": "Automated Stacking Cranes (ASCs) operate within strictly fenced and electronically interlocked yard blocks where human entry is prohibited. This physical separation of heavy automated equipment from human workers eradicates workplace accidents while laser anti-sway systems deliver rapid, millimeter-precise container handling."
-        }
+        },
+        "example": "A shopping mall parking lot reads number plates with cameras. The barrier lifts by itself, no ticket is handed over, and the system records entry time and calculates the fee at exit. A clerk who once took a minute per car is no longer needed at the gate. Container terminals do something similar, with cameras reading box numbers and software telling driverless vehicles exactly where to go."
       },
       {
         "title": "Port Berth & Crane Scheduling Simulator: Turnaround Time Minimization and Congestion Queue Modeling",
@@ -12758,7 +12762,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "answer": 1,
           "answerIndex": 1,
           "why": "Quay cranes operate on a single shared rail track along the vessel. As more cranes are packed along a single ship, mandatory physical safety clearance buffers between cranes restrict operational flexibility, and simultaneous moves across adjacent bays create spatial interference, reducing marginal crane efficiency."
-        }
+        },
+        "example": "Before a college canteen buys a second serving counter, the manager sketches the lunch rush on paper. Students arrive in waves, each counter serves one every twenty seconds, and she counts how long the longest queue gets. Trying it on paper costs nothing, while a wrong purchase costs a lot. A port simulator does the same for ships and cranes before real vessels are scheduled."
       }
     ],
     "projectStep": {

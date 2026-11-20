@@ -12548,7 +12548,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "An NCLT-sanctioned scheme under Section 230-232, upon filing of Form INC-28 with the ROC, operates in rem. It has statutory force and binds all classes of creditors, shareholders (including non-consenting and dissenting minorities), and the company itself.",
           "answerIndex": 2,
           "why": "An NCLT-sanctioned scheme under Section 230-232, upon filing of Form INC-28 with the ROC, operates in rem. It has statutory force and binds all classes of creditors, shareholders (including non-consenting and dissenting minorities), and the company itself."
-        }
+        },
+        "example": "Think of a village cooperative dairy that wants to reorganise: the members vote, a court-like authority approves the plan, and the plan is then registered. After that, even the member who stayed away from the meeting, or voted against it, is bound by the new arrangement. The approved plan applies to everyone concerned, which is why such schemes must go through a formal, supervised process before registration."
       },
       {
         "part": 2,
@@ -12577,7 +12578,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Section 230(6) explicitly mandates a dual majority: (1) a numerical majority (more than 50% of the headcount) representing (2) at least three-fourths (75%) in monetary value of the stakeholders present and voting.",
           "answerIndex": 1,
           "why": "Section 230(6) explicitly mandates a dual majority: (1) a numerical majority (more than 50% of the headcount) representing (2) at least three-fourths (75%) in monetary value of the stakeholders present and voting."
-        }
+        },
+        "example": "A housing society votes on a repair fund. Twelve owners attend; seven vote yes. Seven is more than half the heads, but if those seven own small flats worth only 60 percent of the total value among those present, the proposal still fails, because three-fourths by value is needed too. Both tests must pass together: enough people, and enough value behind them. Passing only one is not enough."
       },
       {
         "part": 3,
@@ -12607,7 +12609,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Under Section 50B, the capital gain on a slump sale equals the lump-sum consideration minus the net worth of the undertaking. Net worth is book assets (excluding revaluation reserves) minus liabilities. Indexation is statutorily disallowed.",
           "answerIndex": 0,
           "why": "Under Section 50B, the capital gain on a slump sale equals the lump-sum consideration minus the net worth of the undertaking. Net worth is book assets (excluding revaluation reserves) minus liabilities. Indexation is statutorily disallowed."
-        }
+        },
+        "example": "A family splits its business. In one case, the textile shop is divided into a new company with its assets and debts moving across by a court-approved plan. In another, the family simply sells the whole shop as one lump for a single price. For a lump-sale, the profit is the price minus the shop's net worth. If the price is 50 lakh and net worth is 30 lakh, the gain is 20 lakh."
       },
       {
         "part": 4,
@@ -12637,7 +12640,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "The 2018 RBI Cross Border Merger Regulations establish that any inbound or outbound merger complying with prescribed parameters (FDI caps, pricing guidelines, ECB rules, overseas investment norms) is deemed to have prior RBI approval under Section 234.",
           "answerIndex": 3,
           "why": "The 2018 RBI Cross Border Merger Regulations establish that any inbound or outbound merger complying with prescribed parameters (FDI caps, pricing guidelines, ECB rules, overseas investment norms) is deemed to have prior RBI approval under Section 234."
-        }
+        },
+        "example": "Suppose a family-owned dairy in Gujarat wants to merge with a cousin's dairy that is based abroad. Before, this was awkward because the rules did not clearly allow it. Now there is a route, but the money moving across the border must follow the central bank's rules on how much foreign money may come in and at what price. The route works only when every step fits those prescribed limits."
       },
       {
         "part": 5,
@@ -12664,7 +12668,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Section 232(5) of the Companies Act 2013 strictly stipulates that a certified copy of the order must be filed with the ROC within 30 days of receipt in Form INC-28 to bring the scheme into legal effect.",
           "answerIndex": 2,
           "why": "Section 232(5) of the Companies Act 2013 strictly stipulates that a certified copy of the order must be filed with the ROC within 30 days of receipt in Form INC-28 to bring the scheme into legal effect."
-        }
+        },
+        "example": "Once the tribunal signs its final order approving a restructuring, the company cannot simply carry on. It must file a certified copy of that order with the Registrar within 30 days. A student who gets a degree certificate must submit it to the university within a fixed time, or the admission is not recorded. Similarly, the plan becomes effective only after the filing is done on time."
       }
     ],
     "recap": "In Day 55 (Day 55: Milestone 11 Capstone: Enterprise ESG, Governance & Regulatory Compliance Simulator), you mastered foundational workflows and verified deterministic execution outputs. Today in Day 56 (Transnational Corporate Restructuring, Schemes of Arrangement (Sections 230-232) & Cross-Border Mergers), we build directly on that foundation by mastering Corporate Restructuring Foundations, Compromises & Arrangements under Section 230 and The Section 230(6) Dual-Majority Threshold & Sectoral Regulatory Scrutiny.",
@@ -12720,7 +12725,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Secondary sanctions target non-US persons without a US jurisdictional nexus. Penalties include cutting off the foreign entity from US financial markets, blocking US Dollar correspondent banking, and designating the entity as an SDN.",
           "answerIndex": 1,
           "why": "Secondary sanctions target non-US persons without a US jurisdictional nexus. Penalties include cutting off the foreign entity from US financial markets, blocking US Dollar correspondent banking, and designating the entity as an SDN."
-        }
+        },
+        "example": "A small exporter in Surat buys cloth from a foreign supplier through an American bank account. The bank refuses to process the payment because the supplier's owner appears on a list of blocked persons kept by a US authority. The exporter has no office in the US, yet the dollar payment cannot happen. Dealing with a listed party, even from far away, can cut a business off from dollar banking."
       },
       {
         "part": 2,
@@ -12748,7 +12754,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "FATF High-Risk Jurisdictions (Blacklist) face active countermeasures from global states. Jurisdictions under Increased Monitoring (Grey List) have committed to resolving strategic deficiencies and are monitored without external countermeasures.",
           "answerIndex": 2,
           "why": "FATF High-Risk Jurisdictions (Blacklist) face active countermeasures from global states. Jurisdictions under Increased Monitoring (Grey List) have committed to resolving strategic deficiencies and are monitored without external countermeasures."
-        }
+        },
+        "example": "A school can be placed on a watch list by an examination board, which means it is still allowed to function but must fix its problems under review. A school on the stricter list may face active action from other boards. In the same way, a country on the grey list is under increased monitoring while it fixes its weaknesses, whereas one on the blacklist faces countermeasures from other states."
       },
       {
         "part": 3,
@@ -12777,7 +12784,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "The 2023 Amendment Rules lowered the UBO identification threshold for companies from 25% down to 10%, drastically tightening client due diligence to combat opaque multi-layered corporate shell structures.",
           "answerIndex": 3,
           "why": "The 2023 Amendment Rules lowered the UBO identification threshold for companies from 25% down to 10%, drastically tightening client due diligence to combat opaque multi-layered corporate shell structures."
-        }
+        },
+        "example": "A jeweller in Jaipur gets an order from a company that looks like it belongs to a single person. The law requires him to find out who actually owns or controls the company. Earlier he only had to look for owners of 25 percent or more. Now the line is 10 percent. A buyer holding 12 percent through layers of other companies would have been missed before, but is caught now."
       },
       {
         "part": 4,
@@ -12806,7 +12814,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Section 32A provides that once a resolution plan is approved and management changes to non-related parties, the corporate debtor ceases to be liable for pre-CIRP offenses and no action can be taken against its property for past crimes.",
           "answerIndex": 0,
           "why": "Section 32A provides that once a resolution plan is approved and management changes to non-related parties, the corporate debtor ceases to be liable for pre-CIRP offenses and no action can be taken against its property for past crimes."
-        }
+        },
+        "example": "A merchant is suspected of earning money by illegal means, and an officer temporarily freezes his shop and car while the matter is checked. The freeze does not decide guilt; it stops the property being sold off. Later, when a new owner takes over a failed business through a court-approved plan and has no links to the old management, the business is protected from old offences."
       },
       {
         "part": 5,
@@ -12833,7 +12842,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Under the PMLA Rules, a Reporting Entity must furnish an STR to the Director, FIU-IND, within 7 working days of arriving at the suspicion that a transaction is connected to proceeds of crime or financing of terrorism.",
           "answerIndex": 1,
           "why": "Under the PMLA Rules, a Reporting Entity must furnish an STR to the Director, FIU-IND, within 7 working days of arriving at the suspicion that a transaction is connected to proceeds of crime or financing of terrorism."
-        }
+        },
+        "example": "A bank teller notices an account in a small shop owner's name suddenly receiving large cash deposits in many small amounts. After forming a suspicion, she must report it quickly, not wait for proof. Within 7 working days of reaching that suspicion, the bank sends a report to the central unit. The idea is a prompt alert, even when nobody is yet sure whether anything is wrong."
       }
     ],
     "recap": "In Day 56 (Transnational Corporate Restructuring, Schemes of Arrangement (Sections 230-232) & Cross-Border Mergers), you mastered foundational workflows and verified deterministic execution outputs. Today in Day 57 (Global Sanctions Compliance, OFAC, FATF AML Architecture & Transnational Financial Crime Prevention), we build directly on that foundation by mastering US OFAC Sanctions Architecture, SDN Lists & Secondary Sanctions Exposure and FATF 40 Recommendations, Mutual Evaluations & Blacklist vs Grey List Dynamics.",
@@ -12889,7 +12899,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "ISDS fundamentally alters public international law by granting private foreign investors jus standi to directly sue sovereign host governments before international arbitral tribunals without needing home-state diplomatic espousal.",
           "answerIndex": 0,
           "why": "ISDS fundamentally alters public international law by granting private foreign investors jus standi to directly sue sovereign host governments before international arbitral tribunals without needing home-state diplomatic espousal."
-        }
+        },
+        "example": "A farmer from another country sets up a small farm in India after both governments sign a friendly agreement. If the local officer cancels his permit unfairly, the agreement lets him bring the dispute before a neutral panel of arbitrators, not only the local court. It gives a private investor the right to face a government directly, which a normal person usually cannot do against a state."
       },
       {
         "part": 2,
@@ -12917,7 +12928,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Following the White Industries award where the investor borrowed an 'effective means of asserting claims' clause from the India-Kuwait BIT, India eliminated the MFN clause in its 2016 Model BIT to prevent treaty shopping.",
           "answerIndex": 3,
           "why": "Following the White Industries award where the investor borrowed an 'effective means of asserting claims' clause from the India-Kuwait BIT, India eliminated the MFN clause in its 2016 Model BIT to prevent treaty shopping."
-        }
+        },
+        "example": "After one country lost a dispute with a foreign investor because of a clause borrowed from another treaty, it rewrote its model agreement. Think of a club that, after a member used an old rule to claim special privileges, cancels that rule from its rulebook for all new members. India's newer model removed the most-favoured-nation clause, so future investors cannot borrow better terms from other treaties."
       },
       {
         "part": 3,
@@ -12945,7 +12957,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Section 44 mandates that a foreign award under the New York Convention must arise from a commercial relationship and be made in a reciprocating territory officially gazetted by the Central Government.",
           "answerIndex": 2,
           "why": "Section 44 mandates that a foreign award under the New York Convention must arise from a commercial relationship and be made in a reciprocating territory officially gazetted by the Central Government."
-        }
+        },
+        "example": "A trader in Mumbai wins an arbitration award against a supplier abroad and now wants to collect in India. The Indian court first checks that the case was a commercial one and that the award came from a country officially notified as a partner. Only then does it consider the limited reasons for refusing. It does not reopen the whole dispute; it simply checks if the paperwork qualifies."
       },
       {
         "part": 4,
@@ -12975,7 +12988,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Shri Lal Mahal and the 2015 amendments to Section 48 firmly established that patent illegality is not a ground to refuse enforcement of a foreign award. Merits review is explicitly barred by Explanation 2 to Section 48(2)(b).",
           "answerIndex": 1,
           "why": "Shri Lal Mahal and the 2015 amendments to Section 48 firmly established that patent illegality is not a ground to refuse enforcement of a foreign award. Merits review is explicitly barred by Explanation 2 to Section 48(2)(b)."
-        }
+        },
+        "example": "A cricket umpire's decision is reviewed by a third umpire only for clear technical faults, like a no-ball, not for whether he could have judged the bounce differently. In the same spirit, an Indian court asked to enforce a foreign award does not reconsider who was right. It cannot refuse just because the award looks legally mistaken on the merits. Only narrow grounds such as public policy remain."
       },
       {
         "part": 5,
@@ -13003,7 +13017,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Under the restrictive theory of sovereign immunity, property used for commercial activity (acta jure gestionis) is subject to execution, whereas diplomatic and military properties (acta jure imperii) are protected by absolute immunity.",
           "answerIndex": 0,
           "why": "Under the restrictive theory of sovereign immunity, property used for commercial activity (acta jure gestionis) is subject to execution, whereas diplomatic and military properties (acta jure imperii) are protected by absolute immunity."
-        }
+        },
+        "example": "A tenant lives in a rented shop owned by a foreign embassy. If the embassy runs a bakery there, a court can order the embassy's bakery income to be seized to pay an unpaid supplier. But the ambassador's residence or the embassy's official office cannot be touched. Property used for ordinary business can be attached, while property used for official state purposes is protected."
       }
     ],
     "recap": "In Day 57 (Global Sanctions Compliance, OFAC, FATF AML Architecture & Transnational Financial Crime Prevention), you mastered foundational workflows and verified deterministic execution outputs. Today in Day 58 (Investor-State Dispute Settlement (ISDS), Bilateral Investment Treaties (BITs) & Enforcement of Foreign Awards), we build directly on that foundation by mastering Bilateral Investment Treaties (BITs) & Substantive Standards of Investor Protection and India's 2016 Model BIT, White Industries Precedent & Retrospective Tax Awards.",
@@ -13058,7 +13073,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "In India, directors cannot unilaterally issue dilutive shares to defeat a bidder without shareholder approval. Section 62 mandates preemptive rights to all existing shareholders, precluding US-style poison pills.",
           "answerIndex": 3,
           "why": "In India, directors cannot unilaterally issue dilutive shares to defeat a bidder without shareholder approval. Section 62 mandates preemptive rights to all existing shareholders, precluding US-style poison pills."
-        }
+        },
+        "example": "A family-owned mill is being eyed by a rival who wants to buy it without the family's consent. The family cannot just print and give new shares to friends to dilute the rival, because existing shareholders must get the first right to any new shares. In India the usual tricks of defence from abroad are limited, so shareholders decide the mill's future, not the directors alone."
       },
       {
         "part": 2,
@@ -13087,7 +13103,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Regulation 3(1) establishes that an acquirer whose aggregate holding reaches or exceeds 25% of voting rights must make a mandatory public open offer to the shareholders of the target company.",
           "answerIndex": 0,
           "why": "Regulation 3(1) establishes that an acquirer whose aggregate holding reaches or exceeds 25% of voting rights must make a mandatory public open offer to the shareholders of the target company."
-        }
+        },
+        "example": "A shopper buys shares in a popular company bit by bit. The moment he reaches 25 percent of the voting rights, he must make an offer to buy shares from the public too. After that, he may add only a small slice, up to 5 percent a year, without a fresh offer. And if two friends secretly buy together, their holdings are added up, so splitting purchases does not dodge the 25 percent line."
       },
       {
         "part": 3,
@@ -13116,7 +13133,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Regulation 7(1) mandates an open offer size of at least 26% of the target company's total voting capital, enabling the acquirer to reach at least 51% combined majority control.",
           "answerIndex": 1,
           "why": "Regulation 7(1) mandates an open offer size of at least 26% of the target company's total voting capital, enabling the acquirer to reach at least 51% combined majority control."
-        }
+        },
+        "example": "Say a buyer crosses the line and must make a public offer for at least 26 percent of the company. If an offer must be worth 10,00,000 rupees, a deposit is kept with a neutral party first: 25 percent of the first 5,00,000 is 1,25,000, plus 10 percent of the remaining 5,00,000 is 50,000. The deposit is therefore 1,75,000, which proves the buyer can pay."
       },
       {
         "part": 4,
@@ -13144,7 +13162,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Regulation 20(1) allows any third party to launch a competitive offer within 15 working days from the date of the detailed public statement made by the initial acquirer.",
           "answerIndex": 2,
           "why": "Regulation 20(1) allows any third party to launch a competitive offer within 15 working days from the date of the detailed public statement made by the initial acquirer."
-        }
+        },
+        "example": "When a rival tries to buy a family cooperative's mill, the mill's managers cannot start blocking the bid in secret. They stay neutral and let owners decide. But a friendly third party can step in with a better offer, within 15 working days of the first bidder's public announcement. That competing bidder is the white knight, and the shareholders then choose between the two bids."
       },
       {
         "part": 5,
@@ -13173,7 +13192,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Regulation 17 stipulates 25% of the consideration up to INR 500 Crores (125 Cr) and 10% on the excess over INR 500 Crores (54 Cr), giving an exact escrow requirement of INR 179 Crores.",
           "answerIndex": 3,
           "why": "Regulation 17 stipulates 25% of the consideration up to INR 500 Crores (125 Cr) and 10% on the excess over INR 500 Crores (54 Cr), giving an exact escrow requirement of INR 179 Crores."
-        }
+        },
+        "example": "A cooperative bank buys out a society's public members, so very few outsiders hold shares any more. The rules say a listed company must keep a minimum share held by the public, so after the buyer wins, it may have to delist or rebuild the public share. Breaking these rules can attract penalties from the market regulator, so the process needs careful planning."
       }
     ],
     "recap": "In Day 58 (Investor-State Dispute Settlement (ISDS), Bilateral Investment Treaties (BITs) & Enforcement of Foreign Awards), you mastered foundational workflows and verified deterministic execution outputs. Today in Day 59 (Hostile Takeovers, Corporate Defense Mechanisms & SEBI Takeover Code (SAST) Regulations 2011), we build directly on that foundation by mastering Corporate Control Contests, Hostile Takeovers & Comparative Defense Arsenals and SEBI SAST Regulations 2011: The 25% Initial Trigger & 5% Creeping Acquisition Rules.",
@@ -13227,7 +13247,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "The General Counsel serves as the chief legal strategist, harmonizing complex regulatory regimes (takeover codes, sanctions, restructuring, and arbitral enforcement) to protect corporate integrity and shareholder value.",
           "answerIndex": 3,
           "why": "The General Counsel serves as the chief legal strategist, harmonizing complex regulatory regimes (takeover codes, sanctions, restructuring, and arbitral enforcement) to protect corporate integrity and shareholder value."
-        }
+        },
+        "example": "A general counsel is like the head of a hospital's casualty ward during a bus accident. Many injured people arrive at once: one needs surgery, another needs a blood test, a third needs paperwork. She cannot treat just one while ignoring the rest. Similarly, a company's chief legal officer must handle a takeover bid, a sanctions alert, a restructuring and an award at the same time."
       },
       {
         "part": 2,
@@ -13255,7 +13276,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Regulation 17 mandates 25% of consideration up to INR 500 Crores (125 Cr) and 10% on the excess over INR 500 Crores (1,060 Cr * 10% = 106 Cr), resulting in an exact escrow requirement of INR 231 Crores.",
           "answerIndex": 0,
           "why": "Regulation 17 mandates 25% of consideration up to INR 500 Crores (125 Cr) and 10% on the excess over INR 500 Crores (1,060 Cr * 10% = 106 Cr), resulting in an exact escrow requirement of INR 231 Crores."
-        }
+        },
+        "example": "A buyer picks up 27.5 percent of a company's voting shares, past the 25 percent line, so he must announce an open offer. The offer price comes to 15.6 lakh. The deposit is 25 percent of the first 5 lakh, which is 1.25 lakh, plus 10 percent of the remaining 10.6 lakh, which is 1.06 lakh. Total deposit is 2.31 lakh. Meanwhile, the board must stay neutral while a rival may bid."
       },
       {
         "part": 3,
@@ -13283,7 +13305,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "Under the 2023 PMLA Amendment Rules, any beneficial owner holding 10% or more ownership or control must be identified. An 18.5% UBO in a sanctioned/FATF Blacklist nation mandates an immediate STR to FIU-IND and transaction freeze.",
           "answerIndex": 1,
           "why": "Under the 2023 PMLA Amendment Rules, any beneficial owner holding 10% or more ownership or control must be identified. An 18.5% UBO in a sanctioned/FATF Blacklist nation mandates an immediate STR to FIU-IND and transaction freeze."
-        }
+        },
+        "example": "A bank discovers that a client's supplier is owned 18.5 percent by a person from a country on the blacklist. Since the owner holds more than 10 percent, the bank must identify him and treat him as a beneficial owner. It is like a college hostel finding that a visitor's host is a banned person; the warden must immediately file a report rather than wait for later checks."
       },
       {
         "part": 4,
@@ -13310,7 +13333,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "The Supreme Court in Shri Lal Mahal and the 2015 amendments to Section 48 established that patent illegality applies solely to domestic arbitrations under Section 34, and merits review of foreign awards is strictly prohibited.",
           "answerIndex": 2,
           "why": "The Supreme Court in Shri Lal Mahal and the 2015 amendments to Section 48 established that patent illegality applies solely to domestic arbitrations under Section 34, and merits review of foreign awards is strictly prohibited."
-        }
+        },
+        "example": "A company wants to separate its dairy division into a new firm, and also wants to collect an award in its favour from a foreign tribunal. The restructuring needs the proper approval route, while the award is enforced in India with limited review. The Indian court does not reopen who was right. Two jobs run side by side, each by its own rules, and a good legal head keeps both on track."
       },
       {
         "part": 5,
@@ -13339,7 +13363,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "explanation": "The Day 60 Milestone 12 Capstone engine executes all statutory assertions across takeovers, sanctions, restructuring, and arbitral enforcement, concluding with TRANSNATIONAL_GENERAL_COUNSEL_MASTER_PASS.",
           "answerIndex": 3,
           "why": "The Day 60 Milestone 12 Capstone engine executes all statutory assertions across takeovers, sanctions, restructuring, and arbitral enforcement, concluding with TRANSNATIONAL_GENERAL_COUNSEL_MASTER_PASS."
-        }
+        },
+        "example": "At the end of a 60-day cooking course, the final exam asks a student to prepare a full thali with rice, dal, sabzi, roti and sweet, all on time. Nobody learns anything new; the test is whether every skill works together. The last simulator does the same for law: it runs takeover, sanctions, restructuring and award rules in one go, and each check must pass for the exercise to be complete."
       }
     ],
     "recap": "In Day 59 (Hostile Takeovers, Corporate Defense Mechanisms & SEBI Takeover Code (SAST) Regulations 2011), you mastered foundational workflows and verified deterministic execution outputs. Today in Day 60 (Milestone 12 Grand Master Capstone: Transnational General Counsel Boardroom Crisis Simulator), we build directly on that foundation by mastering The Strategic Role of the Transnational General Counsel & Multi-Front Crisis Architecture and Neutralizing the Hostile Raid: SEBI SAST Triggers, Regulation 17 Escrow & White Knights.",
