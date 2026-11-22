@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import { AVATARS, type GdAvatar } from '../constants';
-import { GD_COMMON_RULES } from '@/lib/group-discussion/gdTurnEngine';
+import { GD_COMMON_RULES, computePeerGazeTarget } from '@/lib/group-discussion/gdTurnEngine';
 import type { GdTurnPhase } from '../hooks/useGdOrchestrator';
 import GdAudioVisualizer from './GdAudioVisualizer';
 
@@ -119,6 +119,19 @@ export default function GdMeetGrid({
   // Dynamic compact grid layout so 4 participants (You + Host + Avatar 1 + Avatar 2) look huge & crisp!
   const totalTiles = invitedAvatars.length + 1;
   const gridCols = totalTiles <= 4 ? 2 : 3;
+  const gridRows = Math.ceil(totalTiles / gridCols);
+
+  // Determine which tile index currently holds the floor so all silent avatars turn to look at the speaker:
+  // Tile 0 = You (Participant); Tiles 1..N = invitedAvatars[idx]
+  const activeSpeakerAvatarIdx = activeSpeakingAvatar
+    ? invitedAvatars.findIndex(id => AVATARS.find(a => a.id === id)?.name === activeSpeakingAvatar)
+    : -1;
+  const speakerTileIndex =
+    activeSpeakerAvatarIdx >= 0
+      ? activeSpeakerAvatarIdx + 1
+      : isUserTurn
+        ? 0
+        : -1;
 
   if (connecting) {
     return (
@@ -149,7 +162,7 @@ export default function GdMeetGrid({
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }} className="animate-fade-in">
+    <div className="gd-call-stage-col animate-fade-in">
       {/* Compact Header Bar: Live Status + Countdown + Rules + Settings Gear */}
       <div
         style={{
@@ -161,7 +174,8 @@ export default function GdMeetGrid({
           background: 'var(--bg2)',
           border: '1px solid var(--border)',
           borderRadius: 16,
-          padding: '9px 14px',
+          padding: '8px 14px',
+          flexShrink: 0,
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
@@ -388,7 +402,7 @@ export default function GdMeetGrid({
       )}
 
       {/* Live Turn Control Flow Stepper: Host -> User -> Avatar 1 -> Avatar 2 -> User */}
-      <div className="gd-turn-flow-bar">
+      <div className="gd-turn-flow-bar" style={{ flexShrink: 0 }}>
         {flowSteps.map((s, i) => {
           const isActive =
             turnPhase === s.id || (turnPhase === 'host_time_check' && s.id === 'host_intro');
@@ -419,7 +433,7 @@ export default function GdMeetGrid({
         className="gd-call-grid-container gd-live-participants"
         style={{
           gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`,
-          gridTemplateRows: totalTiles <= 4 ? 'repeat(2, minmax(0, 1fr))' : undefined,
+          gridTemplateRows: `repeat(${gridRows}, minmax(0, 1fr))`,
         }}
       >
         {/* User / Candidate Seat */}
@@ -508,13 +522,15 @@ export default function GdMeetGrid({
         </div>
 
         {/* Invited Panel Avatars */}
-        {invitedAvatars.map(id => {
+        {invitedAvatars.map((id, avatarIdx) => {
           const avatar = AVATARS.find(a => a.id === id);
           if (!avatar) return null;
           const isSpeaking = activeSpeakingAvatar === avatar.name;
           const isHost = id === hostId;
           const isAvatarA = currentAvatarARoleId === id && !isHost;
           const isAvatarB = currentAvatarBRoleId === id && !isHost;
+          const myTileIndex = avatarIdx + 1;
+          const peerLookTarget = computePeerGazeTarget(myTileIndex, speakerTileIndex, gridCols);
 
           return (
             <div
@@ -586,10 +602,8 @@ export default function GdMeetGrid({
               <div
                 style={{
                   width: '100%',
-                  flex: 1,
-                  height: totalTiles <= 4 ? 190 : 140,
-                  minHeight: 110,
-                  maxHeight: totalTiles <= 4 ? 190 : 140,
+                  flex: '1 1 0%',
+                  minHeight: 82,
                   position: 'relative',
                   overflow: 'hidden',
                   borderRadius: '12px 12px 0 0',
@@ -603,6 +617,10 @@ export default function GdMeetGrid({
                   animState={isSpeaking ? 'talking' : 'idle'}
                   zoom={1.55}
                   visible={true}
+                  followMouse={false}
+                  strictLipSync={true}
+                  multiAvatarMode={true}
+                  lookTarget={peerLookTarget}
                 />
               </div>
 
@@ -640,7 +658,7 @@ export default function GdMeetGrid({
       </div>
 
       {/* Bottom Action Bar */}
-      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', flexShrink: 0 }}>
         {isUserTurn && (
           <button
             type="button"

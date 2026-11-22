@@ -238,8 +238,14 @@ export class VRoidAvatarEngine {
   eyeTargetOffset = new THREE.Vector2(0, 0);
   eyeCurrentOffset = new THREE.Vector2(0, 0);
 
-  // Gaze & Cursor Tracking Controller (Active on Dashboard, Missions, Onboarding; Inactive in Story Mode & Lesson details)
+  // Gaze & Cursor Tracking Controller (Active on Dashboard, Missions, Onboarding; Inactive in Story Mode, Lesson details & GD Boardroom)
   gazeTrackingEnabled = true;
+  /** When true (GD multi-avatar room), ONLY `animState === 'talking'` drives lip sync — never global audio visemes. */
+  strictLipSync = false;
+  /** When true (GD multi-avatar room), enforces thermal-safe 1x DPR, low-power WebGL preference, and 10 FPS idle throttling. */
+  multiAvatarMode = false;
+  /** Optional explicit normalized peer gaze target `{ x: [-1, 1], y: [-1, 1] }` so listening avatars face the active speaker. */
+  peerLookTarget: { x: number; y: number } | null = null;
   mouseNormalized = new THREE.Vector2(0, 0);
   mouseTargetOffset = new THREE.Vector2(0, 0);
   private onMouseMoveHandler?: (e: MouseEvent) => void;
@@ -259,15 +265,45 @@ export class VRoidAvatarEngine {
 
   /**
    * Dynamically toggles interactive gaze tracking.
-   * Scoped strictly: enabled in floating avatar & missions, disabled in story mode & teaching details.
+   * Scoped strictly: enabled in floating avatar & missions, disabled in story mode, teaching details & GD room.
    */
   setGazeTracking(enabled: boolean) {
     this.gazeTrackingEnabled = enabled;
     if (!enabled) {
-      // Smoothly reset target offsets back to neutral forward pose
       this.mouseNormalized.set(0, 0);
     }
-    console.log(`[VRoidAvatarEngine] Gaze tracking mode updated: ${enabled ? 'ENABLED' : 'DISABLED'}`);
+  }
+
+  /** Enables strict speaker-only lip sync (used in multi-avatar GD rooms). */
+  setStrictLipSync(enabled: boolean) {
+    this.strictLipSync = enabled;
+  }
+
+  /** Enables thermal-safe multi-avatar mode (low-power WebGL, DPR 1, 10 FPS idle / 30 FPS speaking). */
+  setMultiAvatarMode(enabled: boolean) {
+    this.multiAvatarMode = enabled;
+    if (enabled) {
+      this.maxPixelRatio = 1;
+      this.currentPixelRatio = 1;
+      this.isLowPowerDevice = true;
+      // Already locked to lowest fillrate/low-power profile; disable watchdog so intentional 10 FPS idle doesn't log false warnings
+      this.hasDownscaledForPerf = true;
+      if (this.renderer) {
+        this.renderer.setPixelRatio(1);
+      }
+    }
+  }
+
+  /** Sets a peer-directed head/eye gaze target so non-speaking GD avatars naturally look at whoever is talking. */
+  setPeerLookTarget(target: { x: number; y: number } | null) {
+    if (!target) {
+      this.peerLookTarget = null;
+      return;
+    }
+    this.peerLookTarget = {
+      x: THREE.MathUtils.clamp(target.x, -1, 1),
+      y: THREE.MathUtils.clamp(target.y, -1, 1),
+    };
   }
 
   init(canvas: HTMLCanvasElement, teacherId: string) {
@@ -281,10 +317,10 @@ export class VRoidAvatarEngine {
 
     this.updateCanvasBounds();
 
-    // Attach global mousemove listener for subtle natural eye and head gaze parallax
+    // Attach global mousemove listener ONLY when mouse gaze tracking is active
     this.onMouseMoveHandler = (e: MouseEvent) => {
-      this.lastUserInteractionTimestamp = typeof performance !== 'undefined' ? performance.now() : Date.now();
       if (!this.gazeTrackingEnabled || this.disposed) return;
+      this.lastUserInteractionTimestamp = typeof performance !== 'undefined' ? performance.now() : Date.now();
       let nx = (e.clientX / window.innerWidth) * 2 - 1;
       let ny = -((e.clientY / window.innerHeight) * 2 - 1);
 
@@ -302,11 +338,10 @@ export class VRoidAvatarEngine {
       this.mouseNormalized.set(nx, ny);
     };
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && this.gazeTrackingEnabled) {
       window.addEventListener('mousemove', this.onMouseMoveHandler, { passive: true });
       this.onScrollHandler = () => this.updateCanvasBounds();
       window.addEventListener('scroll', this.onScrollHandler, { passive: true });
-      console.log('[VRoidAvatarEngine] Gaze tracking mouse listener initialized successfully.');
     }
 
     // Attach WebGL context lifecycle listeners to prevent GPU state crashes
@@ -362,16 +397,15 @@ export class VRoidAvatarEngine {
       (/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) ||
         (typeof window !== 'undefined' && window.innerWidth < 768));
 
-    this.isLowPowerDevice = isMobileDevice || hasLowCpu || hasLowRam;
+    this.isLowPowerDevice = this.multiAvatarMode || isMobileDevice || hasLowCpu || hasLowRam;
 
     try {
       this.renderer = new THREE.WebGLRenderer({
         canvas,
-        // MSAA is expensive on mobile GPUs and barely perceptible at these
-        // canvas sizes. Keep it for desktop where it is effectively free.
-        antialias: !isMobileDevice,
+        // Disable MSAA in multi-avatar boardroom & mobile modes to prevent GPU overheating
+        antialias: !isMobileDevice && !this.multiAvatarMode,
         alpha: true,
-        powerPreference: 'high-performance',
+        powerPreference: this.multiAvatarMode ? 'low-power' : 'high-performance',
       });
     } catch (e1) {
       try {
@@ -382,9 +416,9 @@ export class VRoidAvatarEngine {
       }
     }
 
-    // Clamp pixel ratio to 1.5 so high-DPI (Retina/4K) screens do not render 4× pixels unnecessarily
-    this.maxPixelRatio = 1.5;
-    this.currentPixelRatio = Math.min(window.devicePixelRatio, 1.5);
+    // Clamp pixel ratio: 1.0 in multi-avatar GD grid (4x GPU savings), 1.5 in solo studio
+    this.maxPixelRatio = this.multiAvatarMode ? 1 : 1.5;
+    this.currentPixelRatio = Math.min(window.devicePixelRatio || 1, this.maxPixelRatio);
     this.renderer.setPixelRatio(this.currentPixelRatio);
     console.log(
       `[VRoidAvatarEngine] Renderer configured — mobile: ${isMobileDevice}, ` +
@@ -584,9 +618,31 @@ export class VRoidAvatarEngine {
         return lower.includes('right') || lower.includes('_r') || lower.endsWith('.r') || lower.includes('r_');
       };
 
+      const isSecondarySpringBone = (rawName: string): boolean => {
+        const lower = rawName.toLowerCase();
+        return (
+          lower.startsWith('j_sec_') ||
+          lower.includes('_sec_') ||
+          lower.includes('hair') ||
+          lower.includes('tops') ||
+          lower.includes('skirt') ||
+          lower.includes('coat') ||
+          lower.includes('bust') ||
+          lower.includes('cloth') ||
+          lower.includes('ribbon') ||
+          lower.includes('sleeve') ||
+          lower.includes('collar') ||
+          lower.endsWith('_end')
+        );
+      };
+
       candidateBones.forEach(obj => {
         const name = (obj.name || '').toLowerCase();
-        if (name.includes('head') && !name.includes('hair')) this.head = obj;
+        // Never allow secondary clothing/hair spring-bones (e.g. J_Sec_L_TopsUpperArmOutside_01)
+        // to overwrite primary humanoid J_Bip_* skeleton bones (fixes Mr. Anish T-pose bug).
+        if (isSecondarySpringBone(name)) return;
+
+        if (name.includes('head')) this.head = obj;
         if (name.includes('neck')) this.neck = obj;
         if (name.includes('spine') || name.includes('upperchest') || name.includes('chest')) this.spine = obj;
         if (name.includes('hip') || name.includes('pelvis') || name.includes('root') || name === 'hips') this.hips = obj;
@@ -1029,6 +1085,8 @@ export class VRoidAvatarEngine {
    */
   private markReady(source: string) {
     if (this.ready) return;
+    // Apply natural rest pose IMMEDIATELY before marking ready/rendering so zero T-pose frame ever flashes
+    this.applyRestPose();
     this.ready = true;
     console.log(`[VRoidAvatarEngine] Avatar ready (source: ${source}). Bones bound, isVRM=${this.isVRM}.`);
     if (this.onReady) {
@@ -1058,9 +1116,13 @@ export class VRoidAvatarEngine {
     // throttle rendering to 20 FPS (50ms interval) to drop GPU load by up to 66%.
     // Ramp up to 60 FPS (16.6ms) only when talking, gesturing, or interacting.
     const now = typeof performance !== 'undefined' ? performance.now() : Date.now();
-    const isInteracting = (now - this.lastUserInteractionTimestamp) < 2000;
+    const isInteracting = this.gazeTrackingEnabled && (now - this.lastUserInteractionTimestamp) < 2000;
     const isTalkingOrAnimating = this.animState !== 'idle';
-    const targetFps = (isTalkingOrAnimating || isInteracting) ? 60 : 20;
+    // In multi-avatar GD rooms, run only the active speaker smoothly (30 FPS) and throttle silent
+    // listening avatars to 10 FPS — cutting multi-canvas GPU load by ~75% to prevent overheating.
+    const targetFps = this.multiAvatarMode
+      ? (isTalkingOrAnimating ? 30 : 10)
+      : ((isTalkingOrAnimating || isInteracting) ? 60 : 20);
     const minFrameIntervalMs = 1000 / targetFps;
 
     if (this.lastRenderTimestamp > 0 && (now - this.lastRenderTimestamp) < (minFrameIntervalMs - 1.5)) {
@@ -1217,7 +1279,19 @@ export class VRoidAvatarEngine {
       let targetNeckY = 0;
 
       if (s === 'idle' || s === 'talking') {
-        if (this.gazeTrackingEnabled) {
+        if (this.peerLookTarget) {
+          // Peer-to-peer speaker gaze (GD room): smoothly turn head & neck toward whoever is speaking
+          this.mouseTargetOffset.x = THREE.MathUtils.damp(this.mouseTargetOffset.x, this.peerLookTarget.x, 5.5, dt);
+          this.mouseTargetOffset.y = THREE.MathUtils.damp(this.mouseTargetOffset.y, this.peerLookTarget.y, 5.5, dt);
+
+          const gazeYaw = this.mouseTargetOffset.x * 0.34 * tiltAmp;
+          const gazePitch = -this.mouseTargetOffset.y * 0.14 * tiltAmp;
+
+          targetHeadY = swayY * 0.4 + gazeYaw + Math.sin(et * 0.13) * 0.015 * tiltAmp;
+          targetHeadX = basePitch + Math.sin(et * 0.11) * 0.01 * tiltAmp + gazePitch;
+          targetHeadZ = -this.mouseTargetOffset.x * 0.03 * tiltAmp + Math.sin(et * 0.08) * 0.005 * tiltAmp;
+          targetNeckY = gazeYaw * 0.42 + Math.sin(et * 0.13) * 0.006;
+        } else if (this.gazeTrackingEnabled) {
           // Smoothly interpolate mouse target offset with organic damping
           this.mouseTargetOffset.x = THREE.MathUtils.damp(this.mouseTargetOffset.x, this.mouseNormalized.x, 6, dt);
           this.mouseTargetOffset.y = THREE.MathUtils.damp(this.mouseTargetOffset.y, this.mouseNormalized.y, 6, dt);
@@ -1299,8 +1373,13 @@ export class VRoidAvatarEngine {
       }
     }
 
-    // Saccadic eye movement + gaze tracking when active
-    if (this.gazeTrackingEnabled && (this.animState === 'idle' || this.animState === 'talking')) {
+    // Saccadic eye movement + speaker-directed or cursor gaze tracking when active
+    if (this.peerLookTarget && (this.animState === 'idle' || this.animState === 'talking')) {
+      this.eyeTargetOffset.set(
+        this.mouseTargetOffset.x * 0.45,
+        this.mouseTargetOffset.y * 0.32
+      );
+    } else if (this.gazeTrackingEnabled && (this.animState === 'idle' || this.animState === 'talking')) {
       this.eyeTargetOffset.set(
         this.mouseTargetOffset.x * 0.38,
         this.mouseTargetOffset.y * 0.28
@@ -1484,8 +1563,10 @@ export class VRoidAvatarEngine {
     }
 
     // Priority 1: Check Rig-Aware Viseme Timeline (Exact phoneme-to-morph articulation)
-    const activeViseme = getAvatarActiveSpeechClass();
-    const isSpeakingActive = isTalking || Boolean(activeViseme);
+    // In strictLipSync mode (multi-avatar GD room), ONLY the actively speaking avatar (`animState === 'talking'`)
+    // may read global speech visemes or animate its mouth — all silent listeners keep mouths smoothly closed.
+    const activeViseme = (!this.strictLipSync || isTalking) ? getAvatarActiveSpeechClass() : null;
+    const isSpeakingActive = this.strictLipSync ? isTalking : (isTalking || Boolean(activeViseme));
     if (isSpeakingActive && activeViseme) {
       const weights = mapSpeechClassToVRoidMorphs(activeViseme.speechClass, activeViseme.weight);
       const targets: Record<string, number> = {
@@ -1656,8 +1737,8 @@ export class VRoidAvatarEngine {
     // If the watchdog has already downscaled for performance we honour its
     // decision rather than silently undoing it.
     if (!this.hasDownscaledForPerf) {
-      const cap = this.isLowPowerDevice ? 1.5 : this.maxPixelRatio;
-      const nextRatio = Math.min(window.devicePixelRatio, cap);
+      const cap = this.multiAvatarMode ? 1 : (this.isLowPowerDevice ? 1.5 : this.maxPixelRatio);
+      const nextRatio = Math.min(window.devicePixelRatio || 1, cap);
       if (Math.abs(nextRatio - this.currentPixelRatio) > 0.01) {
         this.currentPixelRatio = nextRatio;
         this.renderer.setPixelRatio(nextRatio);

@@ -9,9 +9,27 @@ interface Props {
   zoom?: number;
   visible?: boolean;
   paused?: boolean;
+  /** Disable mouse cursor tracking (e.g. inside multi-avatar GD rooms so avatars look at speakers, not the cursor). */
+  followMouse?: boolean;
+  /** Normalized peer gaze vector `{ x: [-1, 1], y: [-1, 1] }` so listening avatars turn toward whoever is speaking. */
+  lookTarget?: { x: number; y: number } | null;
+  /** Strictly restrict lip-sync animation to `animState === 'talking'` only (prevents all GD avatars moving lips together). */
+  strictLipSync?: boolean;
+  /** Thermal-safe multi-avatar mode (low-power WebGL, 1x pixel ratio, 10 FPS idle / 30 FPS speaking). */
+  multiAvatarMode?: boolean;
 }
 
-export default function VRoidInterviewAvatar({ teacherId = 'sneha', animState = 'idle', zoom = 1.6, visible = true, paused = false }: Props) {
+export default function VRoidInterviewAvatar({
+  teacherId = 'sneha',
+  animState = 'idle',
+  zoom = 1.6,
+  visible = true,
+  paused = false,
+  followMouse = true,
+  lookTarget = null,
+  strictLipSync = false,
+  multiAvatarMode = false,
+}: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<VRoidAvatarEngine | null>(null);
   const [hasWebGLError, setHasWebGLError] = useState(false);
@@ -54,13 +72,17 @@ export default function VRoidInterviewAvatar({ teacherId = 'sneha', animState = 
     canvas.addEventListener('webglcontextlost', handleContextLost, false);
 
     scene.paused = paused || !visible;
+    scene.setGazeTracking(followMouse);
+    scene.setStrictLipSync(strictLipSync);
+    scene.setMultiAvatarMode(multiAvatarMode);
+    scene.setPeerLookTarget(lookTarget);
     try {
       scene.init(canvas, teacherId);
       scene.setState(animState);
       if (scene.camera) {
         scene.camera.position.z = zoom;
       }
-      if (typeof window !== 'undefined') {
+      if (typeof window !== 'undefined' && !multiAvatarMode) {
         (window as any).interviewAvatarScene = scene;
         window.dispatchEvent(new CustomEvent('pinit_vroid_active', { detail: { active: true } }));
       }
@@ -84,7 +106,7 @@ export default function VRoidInterviewAvatar({ teacherId = 'sneha', animState = 
       canvas.removeEventListener('webglcontextlost', handleContextLost);
       ro.disconnect();
       scene.dispose();
-      if (typeof window !== 'undefined') {
+      if (typeof window !== 'undefined' && !multiAvatarMode) {
         if ((window as any).interviewAvatarScene === scene) {
           delete (window as any).interviewAvatarScene;
         }
@@ -99,6 +121,34 @@ export default function VRoidInterviewAvatar({ teacherId = 'sneha', animState = 
       sceneRef.current.setState(animState);
     }
   }, [animState]);
+
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setGazeTracking(followMouse);
+    }
+  }, [followMouse]);
+
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setStrictLipSync(strictLipSync);
+    }
+  }, [strictLipSync]);
+
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setMultiAvatarMode(multiAvatarMode);
+    }
+  }, [multiAvatarMode]);
+
+  const lookX = lookTarget?.x ?? null;
+  const lookY = lookTarget?.y ?? null;
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setPeerLookTarget(
+        lookX !== null && lookY !== null ? { x: lookX, y: lookY } : null
+      );
+    }
+  }, [lookX, lookY]);
 
   useEffect(() => {
     if (sceneRef.current && sceneRef.current.camera) {

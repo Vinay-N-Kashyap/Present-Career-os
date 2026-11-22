@@ -601,8 +601,8 @@ Return ONLY valid JSON matching this schema:
       }
     }
 
-    // Automatically add successful interview (score >= 50%, not eliminated) to Portfolio & Resume
-    if (gated.user?.id && isSuccessfulInterviewForCareerSync(finalEvaluation.score, { eliminated: isEliminated })) {
+    // Automatically add successful recorded interview (score >= 50%, not eliminated) to Portfolio & Resume
+    if (recorded && gated.user?.id && isSuccessfulInterviewForCareerSync(finalEvaluation.score, { eliminated: isEliminated })) {
       try {
         const admin = getSupabaseAdmin();
         const syncRes = await syncSuccessfulInterviewToPortfolioAndResume(admin, {
@@ -623,8 +623,8 @@ Return ONLY valid JSON matching this schema:
       }
     }
 
-    // Award +3 Trust Score for genuine interview completion (range 0-100, default 50)
-    if (gated.user?.id) {
+    // Award +3 Trust Score for genuine recorded interview completion (range 0-100, default 50)
+    if (recorded && gated.user?.id) {
       try {
         const admin = getSupabaseAdmin();
         const { data: userProfile } = await admin

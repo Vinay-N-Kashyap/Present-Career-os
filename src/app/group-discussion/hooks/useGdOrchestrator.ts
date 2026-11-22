@@ -337,10 +337,8 @@ export function useGdOrchestrator({
     setSelectedHistorySession(prev => (prev?.id === id ? null : prev));
   }, []);
 
-  // Auto-scroll transcript
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages, liveTranscript]);
+  // Internal transcript auto-scroll is handled inside GdTranscriptDrawer's scrollContainerRef
+  // so outer viewport / 3D avatar grid is NEVER dragged down by scrollIntoView().
 
   // Cleanup on unmount
   useEffect(() => {
@@ -679,6 +677,9 @@ export function useGdOrchestrator({
 
         // 2. IMMEDIATELY prefetch AVATAR 2 (DIPLOMAT) on Dedicated Groq API Key 2 (`slot: 'b'`)
         //    in parallel while Avatar 1 is speaking -> ZERO perceived delay between Avatar 1 and Avatar 2!
+        const candidateLabel = user?.name?.trim() || 'Candidate';
+        const fallbackDiplomatReply = `Honestly, you both nailed half the picture—your angle pushes us forward, while ${avatarA.name} keeps us honest about hidden trade-offs. Starting with a small, practical trial bridges both—${candidateLabel}, you have the floor.`;
+
         avatarBPromiseRef.current = fetchBotTurn({
           roleType: 'avatar_b',
           slot: 'b',
@@ -687,7 +688,7 @@ export function useGdOrchestrator({
           lastChallengerName: avatarA.name,
           lastChallengerText: resultA.reply,
         }).catch(() => ({
-          reply: `Both views add value here: your focus sets clear intent while ${avatarA.name}'s challenge guards against blind spots. Combining a small pilot with clear guardrails bridges both—Candidate, you have the floor.`,
+          reply: fallbackDiplomatReply,
           keySlot: 'key_2' as const,
         }));
 
@@ -710,6 +711,9 @@ export function useGdOrchestrator({
             } else {
               resultB = await avatarBPromiseRef.current;
             }
+          } catch (errB) {
+            console.warn('[GD Orchestrator] Avatar 2 fetch failed, recovering smoothly:', errB);
+            resultB = { reply: fallbackDiplomatReply, keySlot: 'key_2' };
           } finally {
             setLoading(false);
             avatarBPromiseRef.current = null;
@@ -752,14 +756,14 @@ export function useGdOrchestrator({
         openUserFloor();
       }
     },
-    [resolveActivePair, fetchBotTurn, appendMessage, speakWithAvatar, runWithBetweenTalkWarning, openUserFloor]
+    [resolveActivePair, fetchBotTurn, appendMessage, speakWithAvatar, runWithBetweenTalkWarning, openUserFloor, user?.name]
   );
 
   // Submit User's actual spoken or typed contribution (NEVER fabricates fake text!)
   const submitUserContribution = useCallback(
     (rawContent: string) => {
       const content = rawContent.trim();
-      if (!content || sessionEndedRef.current || loadingRef.current) return;
+      if (!content || sessionEndedRef.current || loadingRef.current || !isUserTurnRef.current) return;
 
       clearSilenceTimer();
       stopMicHardware();

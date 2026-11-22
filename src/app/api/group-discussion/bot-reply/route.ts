@@ -9,11 +9,79 @@ import {
 } from '@/lib/group-discussion/gdTurnEngine';
 
 export const dynamic = 'force-dynamic';
+export const maxDuration = 25;
 
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const GD_MODELS = ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'] as const;
+const OPENROUTER_ENDPOINT = 'https://openrouter.ai/api/v1/chat/completions';
+// Strictly non-reasoning conversational models (no <think> blocks) for crisp, low-latency spoken replies
+const GD_GROQ_MODELS = [
+  'llama-3.3-70b-versatile',
+  'llama-3.1-8b-instant',
+  'meta-llama/llama-4-scout-17b-16e-instruct',
+] as const;
+const GD_GEMINI_MODELS = ['gemini-2.0-flash', 'gemini-2.5-flash'] as const;
+const GD_OPENROUTER_MODELS = [
+  'meta-llama/llama-3.1-8b-instruct:free',
+  'google/gemma-3-12b-it:free',
+] as const;
+
+const TOTAL_LLM_DEADLINE_MS = 8200;
+const PER_ATTEMPT_TIMEOUT_MS = 2600;
+const USER_RATE_WINDOW_MS = 60_000;
+const USER_RATE_MAX_REQUESTS = 24;
+
+// Bounded module-level circuit breaker & per-user burst limiter (zero unbounded memory growth)
+const providerCooldownUntil = new Map<string, number>();
+const userRequestBuckets = new Map<string, { count: number; resetAt: number }>();
+
+function isCoolingDown(bucketKey: string, now: number): boolean {
+  const until = providerCooldownUntil.get(bucketKey);
+  if (!until) return false;
+  if (now >= until) {
+    providerCooldownUntil.delete(bucketKey);
+    return false;
+  }
+  return true;
+}
+
+function markCooldown(bucketKey: string, durationMs: number, now: number): void {
+  if (providerCooldownUntil.size > 200) {
+    providerCooldownUntil.clear();
+  }
+  providerCooldownUntil.set(bucketKey, now + durationMs);
+}
+
+function checkUserBurstLimit(userId: string): boolean {
+  const now = Date.now();
+  if (userRequestBuckets.size > 5000) {
+    for (const [uid, entry] of userRequestBuckets.entries()) {
+      if (now >= entry.resetAt) userRequestBuckets.delete(uid);
+    }
+    if (userRequestBuckets.size > 5000) userRequestBuckets.clear();
+  }
+  const existing = userRequestBuckets.get(userId);
+  if (!existing || now >= existing.resetAt) {
+    userRequestBuckets.set(userId, { count: 1, resetAt: now + USER_RATE_WINDOW_MS });
+    return true;
+  }
+  if (existing.count >= USER_RATE_MAX_REQUESTS) {
+    return false;
+  }
+  existing.count += 1;
+  return true;
+}
 
 export type GdKeySlot = 'a' | 'b';
+
+function isUsableApiKey(raw?: string): boolean {
+  const k = (raw || '').trim();
+  if (!k || k.length < 10) return false;
+  const lower = k.toLowerCase();
+  if (lower.startsWith('your_') || lower.includes('changeme') || lower.includes('placeholder') || lower.startsWith('<')) {
+    return false;
+  }
+  return true;
+}
 
 /**
  * Dedicated dual-key pool resolver:
@@ -29,7 +97,7 @@ export function resolveGroqKeysForGdSlot(
     (raw || '')
       .split(',')
       .map(s => s.trim())
-      .filter(Boolean);
+      .filter(isUsableApiKey);
 
   const sharedPool = splitKeys(env.GROQ_API_KEYS);
   const slotDedicated =
@@ -68,21 +136,46 @@ export function resolveGroqKeysForGdSlot(
   };
 }
 
-async function callGroq(
+export function resolveGdFailoverKeys(
+  env: Record<string, string | undefined> = process.env
+): { geminiKey: string | null; openRouterKey: string | null } {
+  const geminiCandidate = env.GEMINI_API_KEY || env.GOOGLE_API_KEY || env.GOOGLE_AI_KEY || '';
+  const openRouterCandidate = env.OPENROUTER_API_KEY || '';
+  return {
+    geminiKey: isUsableApiKey(geminiCandidate) ? geminiCandidate.trim() : null,
+    openRouterKey: isUsableApiKey(openRouterCandidate) ? openRouterCandidate.trim() : null,
+  };
+}
+
+async function callGdLlmWithFailover(
   slot: GdKeySlot,
   system: string,
   messages: Array<{ role: 'user' | 'assistant'; content: string }>
-): Promise<{ text: string; keySlot: 'key_1' | 'key_2'; model: string }> {
+): Promise<{ text: string; keySlot: 'key_1' | 'key_2'; model: string; provider: 'groq' | 'gemini' | 'openrouter' }> {
   const { keys, keySlotLabel } = resolveGroqKeysForGdSlot(slot);
-  if (keys.length === 0) throw new Error('NO_GROQ_KEY');
+  const { geminiKey, openRouterKey } = resolveGdFailoverKeys();
+  const trimmedHistory = messages.slice(-8);
+  const temperature = slot === 'a' ? 0.72 : 0.62;
+  const deadline = Date.now() + TOTAL_LLM_DEADLINE_MS;
 
-  let lastError: Error = new Error('GROQ_EMPTY_RESPONSE');
+  const remainingTimeout = () => Math.min(PER_ATTEMPT_TIMEOUT_MS, deadline - Date.now());
 
-  // Try dedicated slot key first across fast models before falling back to backup keys
-  for (const key of keys) {
-    for (const model of GD_MODELS) {
+  let lastError: Error = new Error('NO_LLM_PROVIDER_AVAILABLE');
+
+  // 1. Primary: Dedicated Groq key pool across fast conversational models with circuit breaker & deadline cap
+  for (const key of keys.slice(0, 2)) {
+    const keyTag = `groq_key:${key.slice(-6)}`;
+    if (isCoolingDown(keyTag, Date.now())) continue;
+
+    for (const model of GD_GROQ_MODELS) {
+      const budget = remainingTimeout();
+      if (budget < 700) break;
+
+      const modelTag = `${keyTag}:${model}`;
+      if (isCoolingDown(modelTag, Date.now())) continue;
+
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 6500);
+      const timeout = setTimeout(() => controller.abort(), budget);
       try {
         const res = await fetch(GROQ_ENDPOINT, {
           method: 'POST',
@@ -94,16 +187,22 @@ async function callGroq(
             model,
             messages: [
               { role: 'system', content: system },
-              ...messages.slice(-8),
+              ...trimmedHistory,
             ],
-            temperature: slot === 'a' ? 0.55 : 0.45,
-            max_tokens: 130,
+            temperature,
+            max_tokens: 150,
           }),
           signal: controller.signal,
         });
         clearTimeout(timeout);
 
+        if (res.status === 401 || res.status === 403) {
+          markCooldown(keyTag, 300_000, Date.now());
+          lastError = new Error(`GROQ_AUTH_${res.status}`);
+          break; // Invalid key: skip all remaining models on this key immediately
+        }
         if (res.status === 429 || res.status === 503) {
+          markCooldown(modelTag, 25_000, Date.now());
           lastError = new Error(`GROQ_RATE_LIMIT_${res.status}`);
           continue;
         }
@@ -115,15 +214,137 @@ async function callGroq(
         const data = await res.json();
         const text = (data?.choices?.[0]?.message?.content || '').trim();
         if (text) {
-          return { text, keySlot: keySlotLabel, model };
+          return { text, keySlot: keySlotLabel, model, provider: 'groq' };
         }
       } catch (err) {
         clearTimeout(timeout);
         lastError = err instanceof Error ? err : new Error('GROQ_FETCH_ERROR');
       }
     }
+    if (deadline - Date.now() < 1500) break;
   }
 
+  // 2. Failover A: Google Gemini Flash (runs with guaranteed time budget even if Groq is throttled)
+  if (geminiKey && remainingTimeout() >= 700) {
+    const transcriptBlock = trimmedHistory
+      .map(m => `${m.role === 'user' ? 'Candidate' : 'Panelist'}: ${m.content}`)
+      .join('\n');
+
+    for (const gemModel of GD_GEMINI_MODELS) {
+      const budget = remainingTimeout();
+      if (budget < 700) break;
+
+      const gemTag = `gemini:${gemModel}`;
+      if (isCoolingDown(gemTag, Date.now())) continue;
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), budget);
+      try {
+        const res = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${gemModel}:generateContent?key=${geminiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              systemInstruction: { parts: [{ text: system }] },
+              contents: [
+                {
+                  role: 'user',
+                  parts: [
+                    {
+                      text: `Live Group Discussion Transcript so far:\n${transcriptBlock}\n\nRespond naturally right now in 2 to 3 spoken sentences (30-50 words):`,
+                    },
+                  ],
+                },
+              ],
+              generationConfig: {
+                temperature,
+                maxOutputTokens: 160,
+              },
+            }),
+            signal: controller.signal,
+          }
+        );
+        clearTimeout(timeout);
+
+        if (res.status === 429 || res.status === 503) {
+          markCooldown(gemTag, 25_000, Date.now());
+          lastError = new Error(`GEMINI_RATE_LIMIT_${res.status}`);
+          continue;
+        }
+        if (!res.ok) {
+          lastError = new Error(`GEMINI_HTTP_${res.status}`);
+          continue;
+        }
+
+        const data = await res.json();
+        const text = (data?.candidates?.[0]?.content?.parts?.[0]?.text || '').trim();
+        if (text) {
+          return { text, keySlot: keySlotLabel, model: gemModel, provider: 'gemini' };
+        }
+      } catch (err) {
+        clearTimeout(timeout);
+        lastError = err instanceof Error ? err : new Error('GEMINI_FETCH_ERROR');
+      }
+    }
+  }
+
+  // 3. Failover B: OpenRouter free conversational models
+  if (openRouterKey && remainingTimeout() >= 700) {
+    for (const orModel of GD_OPENROUTER_MODELS) {
+      const budget = remainingTimeout();
+      if (budget < 700) break;
+
+      const orTag = `openrouter:${orModel}`;
+      if (isCoolingDown(orTag, Date.now())) continue;
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), budget);
+      try {
+        const res = await fetch(OPENROUTER_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${openRouterKey}`,
+            'HTTP-Referer': 'https://present-career-os.vercel.app',
+            'X-Title': 'PinIT Career OS GD Room',
+          },
+          body: JSON.stringify({
+            model: orModel,
+            messages: [
+              { role: 'system', content: system },
+              ...trimmedHistory,
+            ],
+            temperature,
+            max_tokens: 150,
+          }),
+          signal: controller.signal,
+        });
+        clearTimeout(timeout);
+
+        if (res.status === 429 || res.status === 503) {
+          markCooldown(orTag, 25_000, Date.now());
+          lastError = new Error(`OPENROUTER_RATE_LIMIT_${res.status}`);
+          continue;
+        }
+        if (!res.ok) {
+          lastError = new Error(`OPENROUTER_HTTP_${res.status}`);
+          continue;
+        }
+
+        const data = await res.json();
+        const text = (data?.choices?.[0]?.message?.content || '').trim();
+        if (text) {
+          return { text, keySlot: keySlotLabel, model: orModel, provider: 'openrouter' };
+        }
+      } catch (err) {
+        clearTimeout(timeout);
+        lastError = err instanceof Error ? err : new Error('OPENROUTER_FETCH_ERROR');
+      }
+    }
+  }
+
+  console.warn(`[GD Bot Reply API] All LLM providers failed for slot=${slot}:`, lastError.message);
   throw lastError;
 }
 
@@ -132,6 +353,13 @@ export async function POST(req: NextRequest) {
     const auth = await requireUserFromRequest(req);
     if (auth.error) {
       return auth.error;
+    }
+
+    if (auth.user?.id && !checkUserBurstLimit(auth.user.id)) {
+      return NextResponse.json(
+        { error: 'RATE_LIMITED', message: 'Slow down a moment before sending the next GD turn.' },
+        { status: 429 }
+      );
     }
 
     const body = await req.json();
@@ -200,6 +428,7 @@ export async function POST(req: NextRequest) {
 
     let usedKeySlot: 'key_1' | 'key_2' = slot === 'b' ? 'key_2' : 'key_1';
     let usedModel = 'deterministic-fallback';
+    let usedProvider: 'groq' | 'gemini' | 'openrouter' | 'fallback' = 'fallback';
 
     const result = await executeGdTurn(
       {
@@ -215,9 +444,10 @@ export async function POST(req: NextRequest) {
         lastChallengerText,
       },
       async (system, messages) => {
-        const res = await callGroq(slot, system, messages);
+        const res = await callGdLlmWithFailover(slot, system, messages);
         usedKeySlot = res.keySlot;
         usedModel = res.model;
+        usedProvider = res.provider;
         return res.text;
       }
     );
@@ -231,13 +461,15 @@ export async function POST(req: NextRequest) {
       usedFallback: result.usedFallback,
       keySlot: usedKeySlot,
       model: usedModel,
+      provider: result.usedFallback ? 'fallback' : usedProvider,
     });
   } catch (err) {
     console.error('[GD Bot Reply API] error:', err);
     return NextResponse.json({
-      reply: 'That raises a fair question, though the real bottleneck shows up once costs and customer habits collide. Balancing speed with clear accountability will make this far stronger—what trade-off would you accept first?',
+      reply: 'Fair point, though the real test is what happens once teams hit tight deadlines and real customers. If we keep it simple, which single trade-off matters most to you here?',
       usedFallback: true,
       keySlot: 'key_1',
+      provider: 'fallback',
     });
   }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import type { GdMessage, GdTurnPhase } from '../hooks/useGdOrchestrator';
 
 export type GdChatMessage = GdMessage;
@@ -57,6 +57,15 @@ export default function GdTranscriptDrawer({
   onExportTranscript,
   bottomRef,
 }: GdTranscriptDrawerProps) {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll ONLY the internal transcript container — NEVER scrollIntoView() the outer browser viewport!
+  useEffect(() => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
+    el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+  }, [messages.length, liveTranscript, loading]);
+
   const phaseStatusText =
     turnPhase === 'host_intro'
       ? 'Host is explaining the topic & room rules...'
@@ -133,8 +142,8 @@ export default function GdTranscriptDrawer({
         </div>
       </div>
 
-      {/* Message Stream */}
-      <div className="gd-chat-messages-scroll">
+      {/* Message Stream (Strictly internal scroll — never pushes outer viewport) */}
+      <div ref={scrollContainerRef} className="gd-chat-messages-scroll">
         {messages.map((m, idx) => {
           const isUser = isUserMessage(m);
           const isTimeCheck = m.tag === 'time_check';
@@ -229,7 +238,7 @@ export default function GdTranscriptDrawer({
       </div>
 
       {/* Bottom Controls & Creative Starter Chips */}
-      <div style={{ borderTop: '1px solid var(--border)', background: 'var(--bg3)', padding: 10 }}>
+      <div style={{ borderTop: '1px solid var(--border)', background: 'var(--bg3)', padding: 10, flexShrink: 0 }}>
         {/* Suggested idea cue */}
         {suggestedHelperText && (
           <div
