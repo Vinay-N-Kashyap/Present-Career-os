@@ -15,7 +15,11 @@ import {
   DEFENSE_TOTAL_QUESTIONS,
   evaluateDefenseTurnPass,
   evaluateRound4AnswerAccuracy,
+  formatCountdownMMSS,
   getFallbackDefenseQuestion,
+  getRound1RemainingSeconds,
+  isRound1TimeExpired,
+  ROUND1_MAX_DURATION_SECONDS,
   startRoundDefense,
 } from '../src/lib/interview/roundDefenseEngine';
 import { computeDeterministicEvaluation } from '../src/app/interview/interviewEvaluator';
@@ -528,4 +532,34 @@ test('Weekly XP Tiers & Resume/Portfolio Career Sync Invariants (Tech & B.Com)',
   assert.match(mergedTwice.skills.professional, /Tally Prime/);
   assert.match(mergedTwice.skills.professional, /Ind AS 115/);
   assert.equal((mergedTwice.skills.professional.match(/DSCR/g) || []).length, 1, 'Skills must deduplicate cleanly');
+});
+
+test('Round 1 enforces strict 4-minute (240s) completion limit with live countdown and auto-advance to Round 2', () => {
+  assert.equal(ROUND1_MAX_DURATION_SECONDS, 240);
+  assert.equal(getRound1RemainingSeconds(0), 240);
+  assert.equal(getRound1RemainingSeconds(180), 60);
+  assert.equal(getRound1RemainingSeconds(240), 0);
+  assert.equal(getRound1RemainingSeconds(300), 0);
+  assert.equal(isRound1TimeExpired(239), false);
+  assert.equal(isRound1TimeExpired(240), true);
+  assert.equal(formatCountdownMMSS(240), '04:00');
+  assert.equal(formatCountdownMMSS(65), '01:05');
+  assert.equal(formatCountdownMMSS(0), '00:00');
+
+  const pageSrc = fs.readFileSync(path.join(ROOT, 'src/app/interview/page.tsx'), 'utf8');
+  const r1Src = fs.readFileSync(path.join(ROOT, 'src/app/interview/components/Round1Behavioral.tsx'), 'utf8');
+  assert.ok(pageSrc.includes('isRound1TimeExpired(round1ElapsedSeconds)'), 'Interview page must auto-advance Round 1 at 4:00');
+  assert.ok(pageSrc.includes('round1RemainingSeconds={getRound1RemainingSeconds(round1ElapsedSeconds)}'), 'Interview page must pass live Round 1 countdown');
+  assert.ok(r1Src.includes('data-testid="round1-countdown-pill"'), 'Round 1 UI must display live countdown pill');
+
+  // Verify Weekly XP end-to-end persistence & live UI sync (DB weekly_xp + live Groq eval models + AuthContext sync)
+  const xpGrantSrc = fs.readFileSync(path.join(ROOT, 'src/lib/server/xpGrant.ts'), 'utf8');
+  const evalSrc = fs.readFileSync(path.join(ROOT, 'src/app/api/interview/evaluate/route.ts'), 'utf8');
+  const progressSrc = fs.readFileSync(path.join(ROOT, 'src/lib/context/UserProgressContext.tsx'), 'utf8');
+  const authSrc = fs.readFileSync(path.join(ROOT, 'src/lib/context/AuthContext.tsx'), 'utf8');
+  assert.ok(xpGrantSrc.includes('weekly_xp: nextWeekly'), 'grantXp must increment users.weekly_xp even if older DB RPC only updates xp_total');
+  assert.ok(evalSrc.includes("'qwen/qwen3.8-27b'") && !evalSrc.includes("'llama-3.3-70b-versatile'"), 'Interview evaluate route must use live Groq models');
+  assert.ok(evalSrc.includes('newWeeklyXp'), 'Interview evaluate route must return newWeeklyXp');
+  assert.ok(progressSrc.includes("new CustomEvent('pinit:user_profile_updated'") && progressSrc.includes('weekly_xp: nextWeekly'), 'applyServerXp must broadcast weekly_xp update');
+  assert.ok(authSrc.includes('patch.weekly_xp = detail.weekly_xp'), 'AuthContext must apply live weekly_xp updates for Vault & Leaderboard');
 });

@@ -63,7 +63,7 @@ export interface UserProgressContextType {
   xp: number;
   addXp: (amount: number, reason: string) => void | Promise<void>;
   /** Show XP the server already granted for a verified activity (newXp = the server's new total). */
-  applyServerXp: (newXp: number | undefined, amount: number, reason: string) => void;
+  applyServerXp: (newXp: number | undefined, amount: number, reason: string, newWeeklyXp?: number) => void;
   missionStreak: number;
   missionOnlyStreak: number;
   careerScore: number;
@@ -540,24 +540,36 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
   }, [userId]);
 
   /** The server granted XP (it checked the activity itself): show its total, not a local guess. */
-  const applyServerXp = useCallback((newXp: number | undefined, amount: number, reason: string) => {
+  const applyServerXp = useCallback((newXp: number | undefined, amount: number, reason: string, newWeeklyXp?: number) => {
     if (typeof newXp === 'number' && Number.isFinite(newXp)) {
       setXpState(newXp);
       save(keys.xp, newXp);
     }
     if (amount > 0) {
-      const curWeekly = Number((user as any)?.weekly_xp ?? (user as any)?.weeklyXp ?? xp ?? 0);
+      const curWeekly = Number((user as any)?.weekly_xp ?? (user as any)?.weeklyXp ?? 0);
+      const nextWeekly = typeof newWeeklyXp === 'number' && Number.isFinite(newWeeklyXp)
+        ? newWeeklyXp
+        : curWeekly + amount;
       recordMetricLedgerEntry(userId, {
         metric: 'weekly_xp',
         feature: 'experience',
         action: reason || 'XP Reward',
         delta: amount,
         previousValue: curWeekly,
-        valueAfter: curWeekly + amount,
+        valueAfter: nextWeekly,
       });
-      toast.success(`+${amount} XP Earned 🌟`, reason);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('pinit:user_profile_updated', {
+          detail: {
+            user_id: userId,
+            ...(typeof newXp === 'number' && Number.isFinite(newXp) ? { xp_total: newXp } : {}),
+            weekly_xp: nextWeekly,
+          },
+        }));
+      }
+      toast.success(`+${amount} Weekly XP Earned 🌟`, reason);
     }
-  }, [keys.xp, save, userId, user, xp]);
+  }, [keys.xp, save, userId, user]);
 
   // Small practice activities the browser reports (max 50 XP each, 500 a day, decided by the
   // server). Signed-in students only see XP once the server has saved it.

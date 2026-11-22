@@ -13,11 +13,11 @@ export const maxDuration = 25;
 
 const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
 const OPENROUTER_ENDPOINT = 'https://openrouter.ai/api/v1/chat/completions';
-// Strictly non-reasoning conversational models (no <think> blocks) for crisp, low-latency spoken replies
+// Live-verified active Groq chat models (llama-3.3-70b-versatile & llama-3.1-8b-instant return 404 on current Groq accounts)
 const GD_GROQ_MODELS = [
-  'llama-3.3-70b-versatile',
-  'llama-3.1-8b-instant',
-  'meta-llama/llama-4-scout-17b-16e-instruct',
+  'qwen/qwen3.8-27b',
+  'openai/gpt-oss-20b',
+  'openai/gpt-oss-120b',
 ] as const;
 const GD_GEMINI_MODELS = ['gemini-2.0-flash', 'gemini-2.5-flash'] as const;
 const GD_OPENROUTER_MODELS = [
@@ -117,6 +117,7 @@ export function resolveGroqKeysForGdSlot(
 
   const fallbackPool = [
     ...splitKeys(env.GROQ_API_KEY),
+    ...splitKeys(env.NEXT_PUBLIC_GROQ_API_KEY),
     ...sharedPool,
   ];
 
@@ -176,6 +177,21 @@ async function callGdLlmWithFailover(
 
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), budget);
+      const isGptOss = model.startsWith('openai/gpt-oss');
+      const groqPayload: Record<string, unknown> = {
+        model,
+        messages: [
+          { role: 'system', content: system },
+          ...trimmedHistory,
+        ],
+        temperature,
+        // gpt-oss models consume internal reasoning tokens before emitting content; reasoning_effort:'low' + 450 cap prevents empty content
+        max_tokens: isGptOss ? 450 : 120,
+      };
+      if (isGptOss) {
+        groqPayload.reasoning_effort = 'low';
+      }
+
       try {
         const res = await fetch(GROQ_ENDPOINT, {
           method: 'POST',
@@ -183,15 +199,7 @@ async function callGdLlmWithFailover(
             'Content-Type': 'application/json',
             Authorization: `Bearer ${key}`,
           },
-          body: JSON.stringify({
-            model,
-            messages: [
-              { role: 'system', content: system },
-              ...trimmedHistory,
-            ],
-            temperature,
-            max_tokens: 150,
-          }),
+          body: JSON.stringify(groqPayload),
           signal: controller.signal,
         });
         clearTimeout(timeout);
@@ -200,6 +208,11 @@ async function callGdLlmWithFailover(
           markCooldown(keyTag, 300_000, Date.now());
           lastError = new Error(`GROQ_AUTH_${res.status}`);
           break; // Invalid key: skip all remaining models on this key immediately
+        }
+        if (res.status === 404) {
+          markCooldown(modelTag, 600_000, Date.now());
+          lastError = new Error(`GROQ_MODEL_NOT_FOUND_${model}`);
+          continue;
         }
         if (res.status === 429 || res.status === 503) {
           markCooldown(modelTag, 25_000, Date.now());
@@ -252,7 +265,7 @@ async function callGdLlmWithFailover(
                   role: 'user',
                   parts: [
                     {
-                      text: `Live Group Discussion Transcript so far:\n${transcriptBlock}\n\nRespond naturally right now in 2 to 3 spoken sentences (30-50 words):`,
+                      text: `Live Group Discussion Transcript so far:\n${transcriptBlock}\n\nRespond naturally right now in 1 to 2 crisp spoken sentences (20-34 words max, fits within 3 lines, zero filler):`,
                     },
                   ],
                 },

@@ -14,6 +14,7 @@ import {
   hostOneMinuteWarningScript,
   clampSpeech,
   detectDirectQuestion,
+  detectSolutionRequest,
   detectUserConfusionOrMeta,
   computePeerGazeTarget,
   executeGdTurn,
@@ -316,5 +317,52 @@ describe('Group Discussion Overhaul — Complete Invariant & Realism Audit', () 
       evalRoute.includes('if (recorded && gated.user?.id && isSuccessfulInterviewForCareerSync'),
       'Portfolio/Resume sync must require server-recorded live session'
     );
+  });
+
+  it('14. GD uses live active Groq models, stays strictly <= 3 lines (~<=40 words), and gives concrete solutions on demand', async () => {
+    const botRoute = fs.readFileSync(path.resolve('src/app/api/group-discussion/bot-reply/route.ts'), 'utf8');
+    assert.ok(botRoute.includes("'qwen/qwen3.8-27b'"), 'Must use live qwen/qwen3.8-27b model');
+    assert.ok(botRoute.includes("'openai/gpt-oss-20b'"), 'Must include live openai/gpt-oss-20b backup');
+    assert.ok(botRoute.includes("reasoning_effort = 'low'"), 'gpt-oss backup must set reasoning_effort low to avoid empty content');
+    assert.ok(!botRoute.includes("'llama-3.3-70b-versatile'"), 'Must not waste calls on 404 retired llama-3.3-70b-versatile');
+
+    assert.equal(detectSolutionRequest('then what is the solution'), true);
+    assert.equal(detectSolutionRequest('okay how are we doing it'), true);
+    assert.equal(detectSolutionRequest('I need a proper solution towards it'), true);
+
+    const offlineLlm = async () => { throw new Error('Offline'); };
+    const solA = await executeGdTurn(
+      {
+        roleType: 'avatar_a',
+        mentorId: 'vikram',
+        topic: 'Will AI Coding Agents Replace Junior Developers or Supercharge Them?',
+        domain: 'technical',
+        difficulty: 'hard',
+        candidateName: 'Vinay',
+        history: [{ role: 'user', content: 'then what is the solution' }],
+      },
+      offlineLlm
+    );
+    assert.ok(solA.wordCount <= 40, `GD reply must fit within 3 lines (<=40 words), got ${solA.wordCount}: "${solA.reply}"`);
+    assert.ok(!solA.reply.toLowerCase().includes('your point about'), 'Must never parrot raw speech fragments');
+
+    const solB = await executeGdTurn(
+      {
+        roleType: 'avatar_b',
+        mentorId: 'sneha',
+        topic: 'Will AI Coding Agents Replace Junior Developers or Supercharge Them?',
+        domain: 'technical',
+        difficulty: 'medium',
+        candidateName: 'Vinay',
+        lastChallengerName: 'Mr. Vikram',
+        history: [
+          { role: 'user', content: 'then what is the solution' },
+          { role: 'assistant', sender: 'Mr. Vikram', content: solA.reply },
+        ],
+      },
+      offlineLlm
+    );
+    assert.ok(solB.wordCount <= 40, `GD Diplomat reply must fit within 3 lines (<=40 words), got ${solB.wordCount}: "${solB.reply}"`);
+    assert.ok(solB.reply.includes('Vinay, you have the floor'), 'Must return floor to candidate');
   });
 });

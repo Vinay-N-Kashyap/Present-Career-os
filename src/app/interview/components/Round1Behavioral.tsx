@@ -4,6 +4,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import type { AnimState } from '@/components/avatar/VRoidAvatarEngine';
 import { SKIP_TURN_REGEX } from '@/lib/interview/postInterviewInsights';
+import { formatCountdownMMSS } from '@/lib/interview/roundDefenseEngine';
 import { AssistModeDrawer } from './AssistModeDrawer';
 
 const VRoidInterviewAvatar = dynamic(
@@ -67,6 +68,8 @@ export interface Round1BehavioralProps {
   customProgressText?: string;
   hideRoundControls?: boolean;
   footerResultNode?: React.ReactNode;
+  /** Remaining seconds in Round 1's 4-minute (240s) time budget. */
+  round1RemainingSeconds?: number;
 }
 
 export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
@@ -111,6 +114,7 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
   customProgressText,
   hideRoundControls = false,
   footerResultNode,
+  round1RemainingSeconds,
 }) => {
   const userResponseCount = React.useMemo(() => {
     return messages.filter(m => m.role === 'user' && !SKIP_TURN_REGEX.test(m.content.trim())).length;
@@ -218,6 +222,41 @@ export const Round1Behavioral: React.FC<Round1BehavioralProps> = ({
           </div>
           {!hideRoundControls && (
             <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+              {typeof round1RemainingSeconds === 'number' && (
+                <span
+                  data-testid="round1-countdown-pill"
+                  title="Round 1 completes automatically at 4:00"
+                  style={{
+                    padding: '4px 8px',
+                    borderRadius: 6,
+                    fontSize: 11,
+                    fontWeight: 900,
+                    fontFamily: 'var(--font-mono)',
+                    background:
+                      round1RemainingSeconds <= 20
+                        ? 'rgba(239,68,68,0.18)'
+                        : round1RemainingSeconds <= 60
+                          ? 'rgba(245,158,11,0.18)'
+                          : 'rgba(20,184,166,0.14)',
+                    border: `1px solid ${
+                      round1RemainingSeconds <= 20
+                        ? '#ef4444'
+                        : round1RemainingSeconds <= 60
+                          ? '#f59e0b'
+                          : 'var(--teal)'
+                    }`,
+                    color:
+                      round1RemainingSeconds <= 20
+                        ? '#fca5a5'
+                        : round1RemainingSeconds <= 60
+                          ? '#fcd34d'
+                          : 'var(--teal)',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  ⏱️ {formatCountdownMMSS(round1RemainingSeconds)}
+                </span>
+              )}
               {canProceed ? (
                 <button onClick={onProceed} className="iv-btn-primary" style={{ borderRadius: 6, padding: '5px 10px', fontSize: 11 }}>
                   {domainStream === 'non_tech' ? 'Continue to case study ➔' : 'Continue to coding ➔'}

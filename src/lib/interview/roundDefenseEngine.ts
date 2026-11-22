@@ -30,6 +30,25 @@ export const ROUND4_EARLY_PASS_QUESTIONS = 3;
 export const ROUND4_STANDARD_QUESTIONS = 4;
 export const ROUND4_MAX_QUESTIONS = 5;
 
+/** Round 1 (Behavioral & Background Intro) hard time cap: must complete within 4 minutes (240 seconds). */
+export const ROUND1_MAX_DURATION_SECONDS = 240;
+
+export function getRound1RemainingSeconds(elapsedInRound1Seconds: number): number {
+  const safeElapsed = Number.isFinite(elapsedInRound1Seconds) ? Math.max(0, Math.floor(elapsedInRound1Seconds)) : 0;
+  return Math.max(0, ROUND1_MAX_DURATION_SECONDS - safeElapsed);
+}
+
+export function isRound1TimeExpired(elapsedInRound1Seconds: number): boolean {
+  return getRound1RemainingSeconds(elapsedInRound1Seconds) <= 0;
+}
+
+export function formatCountdownMMSS(totalSeconds: number): string {
+  const clamped = Math.max(0, Math.floor(Number.isFinite(totalSeconds) ? totalSeconds : 0));
+  const mins = Math.floor(clamped / 60);
+  const secs = clamped % 60;
+  return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
 export type DefenseRoundType = 'code' | 'case' | 'architecture' | 'workflow';
 
 export type DefenseQuestionVerdict = 'pending' | 'passed' | 'failed';

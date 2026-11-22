@@ -22,6 +22,9 @@ import {
   evaluateDefenseTurnPass,
   evaluateRound4AnswerAccuracy,
   getFallbackDefenseQuestion,
+  getRound1RemainingSeconds,
+  isRound1TimeExpired,
+  ROUND1_MAX_DURATION_SECONDS,
   startRoundDefense,
   type DefenseRoundType,
   type RoundDefenseState,
@@ -293,8 +296,12 @@ export default function InterviewPage() {
     return chosen;
   }, []);
 
-  // Elapsed Session Timer & Tab Inactivity Sync (pauses when browser tab is hidden/blurred)
+  // Elapsed Session Timer & Round 1 4-Minute Hard Cap (pauses when browser tab is hidden/blurred)
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
+  const [round1ElapsedSeconds, setRound1ElapsedSeconds] = useState(0);
+  const round1OneMinWarnedRef = useRef(false);
+  const round1AutoAdvancedRef = useRef(false);
+  const proceedToNextStageRef = useRef<((next: Stage) => Promise<void>) | null>(null);
   const [tabSwitchCount, setTabSwitchCount] = useState(0);
   const [isTabInactive, setIsTabInactive] = useState(false);
   const tabVisibleRef = useRef(true);
@@ -331,11 +338,42 @@ export default function InterviewPage() {
   useEffect(() => {
     if (isInterviewActive && activeStage !== 'results') {
       const interval = setInterval(() => {
-        if (tabVisibleRef.current) setElapsedSeconds(prev => prev + 1);
+        if (tabVisibleRef.current) {
+          setElapsedSeconds(prev => prev + 1);
+          if (activeStage === 'round1_behavioral') {
+            setRound1ElapsedSeconds(prev => prev + 1);
+          }
+        }
       }, 1000);
       return () => clearInterval(interval);
     }
   }, [isInterviewActive, activeStage]);
+
+  // Enforce Round 1 4-minute (240s) hard completion limit with 1-minute warning & clean auto-advance to Round 2
+  useEffect(() => {
+    if (!isInterviewActive || activeStage !== 'round1_behavioral') return;
+    const remaining = getRound1RemainingSeconds(round1ElapsedSeconds);
+
+    if (remaining <= 60 && remaining > 0 && !round1OneMinWarnedRef.current) {
+      round1OneMinWarnedRef.current = true;
+      toast.warning(
+        '⏱️ 1 Minute Left in Round 1',
+        'Wrap up your intro—Round 1 advances automatically to Round 2 at 4:00.'
+      );
+    }
+
+    if (isRound1TimeExpired(round1ElapsedSeconds) && !round1AutoAdvancedRef.current) {
+      round1AutoAdvancedRef.current = true;
+      stopSpeaking();
+      toast.info(
+        '⏱️ Round 1 Complete (4:00 Limit)',
+        'Moving directly to Round 2 now.'
+      );
+      if (proceedToNextStageRef.current) {
+        void proceedToNextStageRef.current('round2_coding');
+      }
+    }
+  }, [isInterviewActive, activeStage, round1ElapsedSeconds]);
 
   // Fullscreen Auto-Hide Sidebars & Gaming Mode Synchronization
   useEffect(() => {
@@ -818,6 +856,13 @@ export default function InterviewPage() {
       }
     }
     setElapsedSeconds(activeSessionDraft.elapsedSeconds || 0);
+    setRound1ElapsedSeconds(
+      activeSessionDraft.activeStage === 'round1_behavioral'
+        ? Math.min(ROUND1_MAX_DURATION_SECONDS - 10, Math.max(0, activeSessionDraft.elapsedSeconds || 0))
+        : 0
+    );
+    round1OneMinWarnedRef.current = (activeSessionDraft.elapsedSeconds || 0) >= ROUND1_MAX_DURATION_SECONDS - 60;
+    round1AutoAdvancedRef.current = false;
     setTabSwitchCount(activeSessionDraft.tabSwitchCount || 0);
     const resumedId = activeSessionDraft.liveSessionId ?? null;
     setLiveSessionId(resumedId);
@@ -965,6 +1010,9 @@ export default function InterviewPage() {
     setCodeSubmitted(false);
     setTerminalLogs([]);
     setElapsedSeconds(0);
+    setRound1ElapsedSeconds(0);
+    round1OneMinWarnedRef.current = false;
+    round1AutoAdvancedRef.current = false;
     setTabSwitchCount(0);
     setEyeContactScore(null);
     setStarStep(0);
@@ -1153,6 +1201,7 @@ export default function InterviewPage() {
       stageTransitionRef.current = false;
     }
   };
+  proceedToNextStageRef.current = proceedToNextStage;
 
   const buildCurrentArtifactSummary = (stageTarget: Stage): string => {
     if (stageTarget === 'round2_coding') {
@@ -1890,6 +1939,7 @@ export default function InterviewPage() {
           weeklyXpAwarded: data.weeklyXpAwarded ?? data.xpAwarded ?? 0,
           weeklyXpTierLabel: data.weeklyXpTierLabel,
           newXp: data.newXp,
+          newWeeklyXp: data.newWeeklyXp,
           portfolioSynced: Boolean(data.portfolioSynced),
           resumeSynced: Boolean(data.resumeSynced),
           perRoundScores: data.evaluation.perRoundScores || evalResult.perRoundScores,
@@ -1950,7 +2000,8 @@ export default function InterviewPage() {
       applyServerXp(
         resultObj.newXp,
         resultObj.xpAwarded,
-        `AI Interview (${resultObj.score}% · ${resultObj.weeklyXpTierLabel || 'Weekly XP'})`
+        `AI Interview (${resultObj.score}% · ${resultObj.weeklyXpTierLabel || 'Weekly XP'})`,
+        resultObj.newWeeklyXp
       );
     }
     if (resultObj.portfolioSynced || resultObj.resumeSynced) {
@@ -2289,7 +2340,8 @@ export default function InterviewPage() {
               lastInterviewerSpeech={lastInterviewerSpeech}
               onProceed={() => proceedToNextStage('round2_coding')}
               onSkipRound={handleSkipRound}
-              canProceed={hasSubstantiveRound1}
+              canProceed={hasSubstantiveRound1 || isRound1TimeExpired(round1ElapsedSeconds)}
+              round1RemainingSeconds={getRound1RemainingSeconds(round1ElapsedSeconds)}
               isSendingInterviewMessage={isSendingInterviewMessage}
               fillerWordCount={fillerWordCount}
               messages={messages}

@@ -813,10 +813,9 @@ RULES:
     }
     const openRouterKey = process.env.OPENROUTER_API_KEY;
     const GROQ_MODELS = Array.from(new Set([
-      'llama-3.3-70b-versatile',
       process.env.GROQ_MODEL || 'qwen/qwen3.8-27b',
       'openai/gpt-oss-20b',
-      'openai/gpt-oss-120b'
+      'openai/gpt-oss-120b',
     ]));
 
     let reply = '';

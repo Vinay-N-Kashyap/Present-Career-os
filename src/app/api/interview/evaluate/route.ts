@@ -263,10 +263,17 @@ Return ONLY valid JSON matching this schema:
 
     const groqKeysStr = process.env.GROQ_API_KEYS || '';
     const groqKeys = groqKeysStr.split(',').map(k => k.trim()).filter(Boolean);
-    const singleGroqKey = process.env.GROQ_API_KEY;
-    if (singleGroqKey && !groqKeys.includes(singleGroqKey)) {
-      groqKeys.push(singleGroqKey);
+    for (const candidateKey of [process.env.GROQ_API_KEY, process.env.NEXT_PUBLIC_GROQ_API_KEY]) {
+      const clean = (candidateKey || '').trim();
+      if (clean && !groqKeys.includes(clean)) {
+        groqKeys.push(clean);
+      }
     }
+    const EVAL_GROQ_MODELS = Array.from(new Set([
+      process.env.GROQ_MODEL || 'qwen/qwen3.8-27b',
+      'openai/gpt-oss-20b',
+      'openai/gpt-oss-120b',
+    ]));
     const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || process.env.GOOGLE_AI_KEY;
     const openRouterKey = process.env.OPENROUTER_API_KEY;
 
@@ -274,43 +281,50 @@ Return ONLY valid JSON matching this schema:
 
     const candidateTranscriptPrompt = formatTranscriptForEvaluation(formatted);
 
-    // 1. Attempt Groq Multi-Key Rotation Pool
+    // 1. Attempt Groq Multi-Key & Live Active Model Pool (llama-3.3-70b-versatile returns 404 on current Groq accounts)
     for (const key of groqKeys) {
-      try {
-        console.log(`[Interview Evaluate API] Attempting Groq evaluation with key ending in ...${key.slice(-4)}`);
-        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${key}`,
-          },
-          body: JSON.stringify({
-            model: 'llama-3.3-70b-versatile',
+      for (const model of EVAL_GROQ_MODELS) {
+        try {
+          console.log(`[Interview Evaluate API] Attempting Groq evaluation with ${model} and key ending in ...${key.slice(-4)}`);
+          const isGptOss = model.startsWith('openai/gpt-oss');
+          const groqBody: Record<string, unknown> = {
+            model,
             response_format: { type: 'json_object' },
             messages: [
               { role: 'system', content: systemPrompt },
               { role: 'user', content: `Candidate Transcript:\n\n${candidateTranscriptPrompt}` },
             ],
-            max_tokens: 1400,
+            max_tokens: isGptOss ? 2200 : 1400,
             temperature: 0.2,
-          }),
-          signal: AbortSignal.timeout(15000),
-        });
-        if (res.ok) {
-          const data = await res.json();
-          const raw = (data.choices?.[0]?.message?.content || '').trim();
-          const parsed = extractJsonObject(raw);
-          if (parsed) {
-            rawParsedEval = parsed;
-            console.log('[Interview Evaluate API] Groq evaluation successfully parsed');
-            break;
+          };
+          if (isGptOss) groqBody.reasoning_effort = 'low';
+
+          const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${key}`,
+            },
+            body: JSON.stringify(groqBody),
+            signal: AbortSignal.timeout(12000),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            const raw = (data.choices?.[0]?.message?.content || '').trim();
+            const parsed = extractJsonObject(raw);
+            if (parsed) {
+              rawParsedEval = parsed;
+              console.log(`[Interview Evaluate API] Groq evaluation successfully parsed via ${model}`);
+              break;
+            }
+          } else {
+            console.warn(`[Interview Evaluate API] Groq model ${model} returned status: ${res.status}`);
           }
-        } else {
-          console.warn(`[Interview Evaluate API] Groq key returned status: ${res.status}`);
+        } catch (e: any) {
+          console.warn(`[Interview Evaluate API] Groq evaluation error (${model}):`, e?.message);
         }
-      } catch (e: any) {
-        console.warn('[Interview Evaluate API] Groq evaluation request error/timeout:', e?.message);
       }
+      if (rawParsedEval) break;
     }
 
     // 2. Fallback to Gemini Flash if Groq pool is exhausted
@@ -577,6 +591,7 @@ Return ONLY valid JSON matching this schema:
     const weeklyXpTier = calculateInterviewWeeklyXp(finalEvaluation.score, { eliminated: isEliminated });
     let xpAwarded = 0;
     let newXp: number | undefined;
+    let newWeeklyXp: number | undefined;
     let portfolioSynced = false;
     let resumeSynced = false;
 
@@ -584,7 +599,7 @@ Return ONLY valid JSON matching this schema:
       try {
         const admin = getSupabaseAdmin();
         const today = await todaysXp(admin, gated.user.id, '[interview]');
-        if (today && today.count < INTERVIEW_XP_LEDGER_CAP_PER_DAY) {
+        if (!today || today.count < INTERVIEW_XP_LEDGER_CAP_PER_DAY) {
           const grant = await grantXp(
             admin,
             gated.user.id,
@@ -594,6 +609,7 @@ Return ONLY valid JSON matching this schema:
           if (grant.ok) {
             xpAwarded = weeklyXpTier.xp;
             newXp = grant.newXp;
+            newWeeklyXp = grant.newWeeklyXp;
           }
         }
       } catch (xpErr: unknown) {
@@ -658,6 +674,7 @@ Return ONLY valid JSON matching this schema:
       weeklyXpAwarded: xpAwarded,
       weeklyXpTierLabel: weeklyXpTier.tierLabel,
       newXp,
+      newWeeklyXp,
       portfolioSynced,
       resumeSynced,
       recorded,

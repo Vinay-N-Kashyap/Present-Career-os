@@ -57,9 +57,9 @@ export interface GdPersonaVoice {
   openerStyle: string;
 }
 
-/** Target speech budget: 2 to 3.5 visual lines (~28-54 words, 2-3 simple sentences). */
-export const GD_TARGET_WORDS_MIN = 24;
-export const GD_TARGET_WORDS_MAX = 54;
+/** Target GD speech budget: strictly <= 3 visual lines (~18-36 words, 1-2 razor-sharp sentences, zero filler). */
+export const GD_TARGET_WORDS_MIN = 16;
+export const GD_TARGET_WORDS_MAX = 36;
 
 /** Common real-world Group Discussion rules displayed in the room & explained by the Host. */
 export const GD_COMMON_RULES: GdCommonRule[] = [
@@ -288,55 +288,20 @@ export function detectUserConfusionOrMeta(text: string): boolean {
 }
 
 /**
- * Extracts a clean, human-readable concept phrase ONLY when the utterance has genuine topic substance.
- * Never splices introductions ("myself Vinay"), broken contractions ("didn"), or robotic boilerplate ("respectfully challenge").
+ * Detects when the candidate is explicitly asking for a concrete solution or action plan
+ * (e.g. "what is the solution?", "how are we doing it?", "first let us analyze the problem").
  */
-function extractCleanTopicConcept(text: string): string | null {
-  let clean = (text || '').replace(/\s+/g, ' ').trim();
-  if (!clean) return null;
-
-  // Strip common spoken introductions & filler openings before inspecting topic words
-  clean = clean
-    .replace(/^(hi|hello|hey)(\s+there|\s+everyone|\s+guys)?[\s,.-]*/i, '')
-    .replace(/\b(myself|my name is|i am|i'm)\s+[a-z]+\b[\s,.-]*/gi, ' ')
-    .replace(/\bi(?:'m|\s+am)\s+going\s+to\s+(explain|talk\s+about|say)\b/gi, ' ')
-    .replace(/\b(i\s+respectfully\s+challenge|i\s+see\s+merit\s+in\s+both\s+sides)\b/gi, ' ')
-    .replace(/\bwhat\s+do\s+you\s+(guys\s+)?think(\s+about\s+it)?\b/gi, ' ')
-    .trim();
-
-  if (!clean) return null;
-
-  // Normalize common voice STT slips so fallbacks never repeat garbled speech
-  clean = clean
-    .replace(/\bwife coding\b/gi, 'vibe coding')
-    .replace(/\bfully relay on\b/gi, 'fully rely on')
-    .replace(/\byei ai\b/gi, 'AI');
-
-  const stopwords = new Set([
-    'that', 'this', 'with', 'from', 'they', 'them', 'have', 'been', 'will', 'would',
-    'could', 'should', 'about', 'there', 'their', 'what', 'when', 'where', 'which',
-    'while', 'think', 'believe', 'really', 'just', 'like', 'also', 'very', 'more',
-    'most', 'some', 'into', 'over', 'than', 'then', 'only', 'make', 'need', 'want',
-    'because', 'your', 'ours', 'here', 'well', 'good', 'great', 'point', 'agree',
-    'okay', 'still', 'found', 'sorry', 'didn', 'dont', 'cant', 'cannot', 'going',
-    'explain', 'understand', 'present', 'situation', 'speaking', 'direct', 'feel',
-    'respectfully', 'challenge', 'take', 'side', 'sides', 'both', 'merit', 'myself',
-    'guys', 'actually', 'basically', 'thing', 'things', 'something', 'anything',
-  ]);
-
-  const words = clean
-    .replace(/[^a-zA-Z0-9\s-]/g, ' ')
-    .split(/\s+/)
-    .filter(w => w.length >= 4 && !stopwords.has(w.toLowerCase()));
-
-  // Require at least 2 genuine domain words; otherwise return null so the template reads naturally
-  if (words.length < 2) return null;
-  return words.slice(0, 3).join(' ').toLowerCase();
+export function detectSolutionRequest(text: string): boolean {
+  const trimmed = (text || '').trim().toLowerCase();
+  if (!trimmed) return false;
+  return /\b(what(?:'s| is) the solution|need a solution|proper solution|for solutions?|how (?:are we|do we|can we|should we) (?:do|doing|fix|solve|handle)|what(?:'s| is) the fix|analyze the problem|understand the problem|what the problem is)\b/i.test(
+    trimmed
+  );
 }
 
 /**
- * Sentence-aware speech clamp: keeps avatar responses between 2 and 3.5 visual lines
- * (~24-54 words, 2-3 clean, complete sentences) without EVER slicing mid-sentence.
+ * Sentence-aware GD speech clamp: strictly keeps avatar turns within 3 visual lines
+ * (~18-36 words, 1-2 crisp complete sentences) without EVER slicing mid-sentence.
  */
 export function clampSpeech(raw: string): string {
   const cleaned = raw
@@ -351,36 +316,37 @@ export function clampSpeech(raw: string): string {
 
   if (!cleaned) return '';
 
-  // Split into complete sentences while preserving terminal punctuation
-  const sentences = cleaned
-    .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
-    ?.map(s => s.trim())
-    .filter(Boolean) || [cleaned];
+  // Split into complete sentences while protecting honorifics (Mr., Ms., Dr., e.g., vs.) from false sentence breaks
+  const protectedText = cleaned.replace(/\b(Mr|Ms|Mrs|Dr|Prof|Sr|Jr|vs|e\.g|i\.e)\./gi, '$1\u0001');
+  const sentences = (
+    protectedText
+      .match(/[^.!?]+[.!?]+|[^.!?]+$/g)
+      ?.map(s => s.replace(/\u0001/g, '.').trim())
+      .filter(Boolean) || [cleaned]
+  );
 
   const selected: string[] = [];
   let totalWords = 0;
 
   for (const sentence of sentences) {
     const sWords = sentence.split(/\s+/).filter(Boolean).length;
-    // Allow up to 3 sentences and stay within ~54 words (<= 3.5 lines)
-    if (selected.length >= 3) break;
-    if (selected.length >= 2 && totalWords + sWords > GD_TARGET_WORDS_MAX) break;
-    if (selected.length === 1 && totalWords + sWords > GD_TARGET_WORDS_MAX + 8) break;
+    // Strictly cap at 2 crisp sentences so every GD bubble stays <= 3 lines
+    if (selected.length >= 2) break;
+    if (selected.length >= 1 && totalWords + sWords > GD_TARGET_WORDS_MAX + 4) break;
 
     selected.push(sentence);
     totalWords += sWords;
-    if (totalWords >= GD_TARGET_WORDS_MAX - 6 && selected.length >= 2) break;
+    if (totalWords >= GD_TARGET_WORDS_MAX - 2) break;
   }
 
   let result = selected.join(' ').trim();
   const finalWords = result.split(/\s+/).filter(Boolean);
 
-  // Guard for a single run-on sentence exceeding hard word cap
+  // Hard word-budget guard for a single run-on sentence
   if (finalWords.length > GD_TARGET_WORDS_MAX + 4) {
     const slice = finalWords.slice(0, GD_TARGET_WORDS_MAX).join(' ');
-    // Prefer trimming to last comma/semicolon/dash clause boundary so it sounds natural
     const clauseIdx = Math.max(slice.lastIndexOf(','), slice.lastIndexOf(';'), slice.lastIndexOf('—'));
-    const cleanCut = clauseIdx > slice.length * 0.65 ? slice.slice(0, clauseIdx) : slice;
+    const cleanCut = clauseIdx > slice.length * 0.6 ? slice.slice(0, clauseIdx) : slice;
     result = `${cleanCut.replace(/[,;:\-—\s]+$/, '')}.`;
   }
 
@@ -392,8 +358,8 @@ export function clampSpeech(raw: string): string {
 }
 
 /**
- * Host opening intro script: welcomes the panel, introduces the topic & objective,
- * explains the common GD room rules concisely, and hands the floor to the Candidate.
+ * Host opening intro script: crisp, energetic boardroom welcome, topic & objective,
+ * concise room rules, 5m/1m checks, and immediate handoff to the Candidate.
  */
 export function hostIntroScript(
   hostName: string,
@@ -402,37 +368,34 @@ export function hostIntroScript(
   durationMinutes: number
 ): string {
   const safeObj = objective?.trim()
-    ? ` Our goal is to ${objective.trim().replace(/\.$/, '')}.`
+    ? ` Goal: ${objective.trim().replace(/\.$/, '')}.`
     : '';
   const timeNote = durationMinutes > 5
-    ? ' I will step in between turns at 5 minutes left and 1 minute left.'
-    : ' I will give a quick 1-minute warning before wrap-up.';
+    ? ' I will check in at 5 minutes left and 1 minute left.'
+    : ' I will give a quick 1-minute warning.';
 
   return (
-    `Welcome everyone, I am ${hostName}, your GD Host for today's ${durationMinutes} minutes discussion on "${roomName}".${safeObj} ` +
-    `Quick room rules: speak one at a time, keep points crisp and respectful, challenge ideas not people, and answer questions directly.${timeNote} ` +
-    `Our loop is simple: you speak first, our Challenger will test your view, our Diplomat will balance both sides, and then the floor comes right back to you. ` +
-    `Candidate, you have the floor to open.`
+    `Welcome! I am ${hostName}, hosting today's ${durationMinutes} minutes GD on "${roomName}".${safeObj} ` +
+    `Rules: keep points crisp, challenge ideas not people, and answer directly.${timeNote} ` +
+    `You open, our Challenger pushes back, our Diplomat bridges both—Candidate, you have the floor.`
   );
 }
 
 /**
- * Host 5-minute remaining interruption (fires between talks when 5 minutes are left).
+ * Host 5-minute remaining interruption (crisp 1-2 lines).
  */
 export function hostFiveMinuteWarningScript(hostName: string, topic: string): string {
   return (
-    `Quick time check from ${hostName}: we have 5 minutes remaining in our discussion on "${topic}". ` +
-    `Let's sharpen our examples and start narrowing toward practical solutions as we continue.`
+    `Time check from ${hostName}: 5 minutes remaining on "${topic}". Let's sharpen real examples and lock in solutions.`
   );
 }
 
 /**
- * Host 1-minute remaining interruption (fires between talks when 1 minute is left).
+ * Host 1-minute remaining interruption (crisp 1-2 lines).
  */
 export function hostOneMinuteWarningScript(hostName: string, topic: string): string {
   return (
-    `Final time check from ${hostName}: only 1 minute remaining for "${topic}". ` +
-    `Let's deliver crisp closing takeaways so the panel wraps with a clear conclusion.`
+    `Final call from ${hostName}: 1 minute remaining on "${topic}". Give us your sharpest closing takeaway.`
   );
 }
 
@@ -461,40 +424,46 @@ function systemPrompt(req: GdTurnRequest): string {
   const candidate = req.candidateName?.trim() || 'Candidate';
   const lastUserMsg = [...req.history].reverse().find(m => m.role === 'user')?.content || '';
   const userAskedQuestion = detectDirectQuestion(lastUserMsg);
-  const userConfusedOrMeta = detectUserConfusionOrMeta(lastUserMsg);
+  const userWantsSolution = detectSolutionRequest(lastUserMsg);
+  const userConfusedOrMeta = !userWantsSolution && detectUserConfusionOrMeta(lastUserMsg);
 
   const lengthRule =
-    'LENGTH RULE (STRICT): Write EXACTLY 2 to 3 short, natural spoken sentences (28 to 50 words total, fitting 2 to 3.5 lines). ' +
-    'NO bullet lists, NO markdown, NO robotic speaker prefixes, NO textbook jargon walls.';
+    'STRICT 3-LINE LIMIT: Write ONLY 1 to 2 razor-sharp spoken sentences (20 to 35 words MAX). ' +
+    'CUT ALL FILLER! Never waste words on "I get where you\'re coming from", "Fair take, yet", "On the topic of", or "I see merit in both sides". ' +
+    'NO markdown, NO bullets, NO speaker prefixes.';
 
   const humanConversationRule =
-    'HUMAN CONVERSATION RULE (CRITICAL): Sound like a real, sharp colleague talking across a table—use natural contractions ("I get where you\'re coming from", "Fair point, though...", "Honestly...", "Hold on..."). ' +
-    'NEVER repeat stiff templates like "I respectfully challenge your take on..." or "I see merit in both sides". ' +
-    'VOICE STT GRACE: The candidate is speaking live via microphone—silently understand minor speech-to-text slips (e.g., "wife coding" = "vibe coding", "yei AI" = "AI") without mocking or parroting garbled phrases.';
+    'ENERGY & REALISM RULE (CRITICAL): Sound like a real, charismatic, high-energy colleague in a sharp boardroom debate—professional, friendly, yet unapologetically direct and aggressive on weak logic. ' +
+    'Jump straight into the meat with concrete real-world examples (debugging live outages, code reviews, hiring tests, real ROI). ' +
+    'VOICE STT GRACE: Silently understand live mic slips (e.g. "wife coding" / "buy code" = "vibe coding", "unlies" = "analyze") without repeating garbled words.';
+
+  const solutionRule = userWantsSolution
+    ? ` SOLUTION RULE (ACTIVE): ${candidate} explicitly asked for a concrete solution or problem breakdown. STOP giving abstract philosophy—pitch ONE specific, realistic, actionable solution right now in plain English, then ask if they would actually run it!`
+    : '';
 
   const confusionRule = userConfusedOrMeta
-    ? ` CLARIFY & SIMPLIFY RULE (ACTIVE): ${candidate} just signaled confusion, said it felt too complex/robotic, or gave a very brief reply. Drop all corporate jargon immediately! React warmly like a helpful human teammate, explain one super-simple everyday angle of "${req.topic}" in plain English, and ask an easy, friendly follow-up question.`
+    ? ` CLARIFY RULE (ACTIVE): ${candidate} felt lost. Drop jargon completely, state one crisp everyday example of "${req.topic}" in 1 short sentence, and ask a simple direct question.`
     : '';
 
   const truthfulnessRule =
     'ZERO HALLUCINATION RULE (STRICT): Reference ONLY what the user or panelists ACTUALLY said in the transcript. ' +
     'Never invent statistics, fake quotes, or claim the user said something they did not say.' +
     (userAskedQuestion
-      ? ' DIRECT QUESTION RULE: The user just asked a question—you MUST directly answer their question clearly in your very first sentence before adding your point!'
+      ? ' DIRECT QUESTION RULE: The user just asked a question—answer it directly in your very first sentence!'
       : '');
 
   if (req.roleType === 'avatar_a') {
     const intensity =
       req.difficulty === 'hard'
-        ? 'Push back directly and boldly like a real debater—challenge their main assumption with one concrete, everyday counter-example.'
+        ? 'Hit their assumption head-on with friendly fire—be sharp, bold, and aggressive on ideas using one undeniable real-world counter-example.'
         : req.difficulty === 'easy'
-          ? 'Keep it warm, relaxed, and friendly—gently question one blind spot using a super relatable example.'
-          : 'Be lively, conversational, and genuinely engaging—test the biggest real-world trade-off in their point like a sharp peer.';
+          ? 'Stay upbeat and friendly while sharply poking one clear hole in their logic with a concrete example.'
+          : 'Be professional, warm, and aggressively sharp on ideas—challenge their weak spot directly with a punchy real-world counter-example.';
 
     return [
-      `You are ${displayName}, acting as AVATAR 1 (THE CHALLENGER) in a live human Group Discussion on "${req.topic}" (${req.domain} domain).`,
-      `YOUR UNIQUE VOICE: ${persona.signatureStyle} You naturally ${persona.challengerAngle}.`,
-      `ROLE MISSION: React directly to ${candidate}'s latest message as a real person would. ${intensity}${confusionRule}`,
+      `You are ${displayName}, AVATAR 1 (THE CHALLENGER) in a fast, lively Group Discussion on "${req.topic}" (${req.domain} domain).`,
+      `VOICE: ${persona.signatureStyle} You naturally ${persona.challengerAngle}.`,
+      `MISSION: React straight to ${candidate}'s latest point. ${intensity}${solutionRule}${confusionRule}`,
       humanConversationRule,
       truthfulnessRule,
       lengthRule,
@@ -504,9 +473,9 @@ function systemPrompt(req: GdTurnRequest): string {
   if (req.roleType === 'avatar_b') {
     const challengerLabel = req.lastChallengerName || 'Avatar 1';
     return [
-      `You are ${displayName}, acting as AVATAR 2 (THE DIPLOMAT) in a live human Group Discussion on "${req.topic}" (${req.domain} domain).`,
-      `YOUR UNIQUE VOICE: ${persona.signatureStyle} You naturally ${persona.diplomatAngle}.`,
-      `ROLE MISSION: Speak naturally to acknowledge BOTH ${candidate}'s view AND ${challengerLabel}'s counter-argument. Bridge both sides with one practical everyday middle ground, then invite ${candidate} back in naturally.${confusionRule}`,
+      `You are ${displayName}, AVATAR 2 (THE DIPLOMAT) in a fast, lively Group Discussion on "${req.topic}" (${req.domain} domain).`,
+      `VOICE: ${persona.signatureStyle} You naturally ${persona.diplomatAngle}.`,
+      `MISSION: In 2 tight sentences, connect BOTH ${candidate}'s view AND ${challengerLabel}'s counter-argument into ONE concrete, practical middle-ground move, then pass the floor back to ${candidate}.${solutionRule}${confusionRule}`,
       humanConversationRule,
       truthfulnessRule,
       lengthRule,
@@ -524,80 +493,99 @@ function systemPrompt(req: GdTurnRequest): string {
 function generateUtterance(req: GdTurnRequest): string {
   const candidate = req.candidateName?.trim() || 'Candidate';
   const lastUser = [...req.history].reverse().find(m => m.role === 'user')?.content || '';
-  const userAskedQuestion = detectDirectQuestion(lastUser);
-  const userConfusedOrMeta = detectUserConfusionOrMeta(lastUser);
-  const cleanConcept = extractCleanTopicConcept(lastUser);
+  const userWantsSolution = detectSolutionRequest(lastUser);
+  const userConfusedOrMeta = !userWantsSolution && detectUserConfusionOrMeta(lastUser);
   const userTurnCount = req.history.filter(m => m.role === 'user').length;
   const variant = userTurnCount % 4;
-  const shortTopic = req.topic.length > 72 ? `${req.topic.slice(0, 69).trim()}...` : req.topic;
   const challengerLabel = req.lastChallengerName || 'my colleague';
 
-  // Warm, plain-English human response whenever user is confused, finds it complex, or gives a tiny reply
-  if (userConfusedOrMeta) {
+  // Concrete, domain-specific real-world solutions (zero generic buzzword loops!)
+  const concreteSolution =
+    req.domain === 'commerce'
+      ? 'run a 30-day pilot with hard margin caps and weekly audit sign-offs'
+      : req.domain === 'sales'
+        ? 'split-test on 10% of inbound leads and measure 60-day retention before scaling'
+        : req.domain === 'business'
+          ? 'ship a 2-week paid pilot with strict unit-economics gates before full rollout'
+          : 'ban unreviewed AI merges and make juniors debug broken code live in PR reviews';
+
+  // 1. User explicitly asked for a solution or problem breakdown -> give concrete, crisp 2-line answers!
+  if (userWantsSolution) {
     if (req.roleType === 'avatar_a') {
-      const resetVariants = [
-        `No worries at all—let's keep it super simple and drop the heavy terms! My main challenge on "${shortTopic}" is the practical risk that shortcuts hurt people when real problems show up. In plain terms, do you think that's a real worry?`,
-        `Totally fair—let's talk like normal people here! Take "${shortTopic}": the real challenge is whether quick wins hide a bigger risk later on. How do you see it playing out for someone starting out today?`,
-        `Haha, fair call—let's keep it casual and clear! With "${shortTopic}", I'd gently challenge the hype because the biggest flaw usually shows up under everyday pressure. What's your honest first reaction to that?`,
-        `My bad if that sounded stiff—let's zoom out! On "${shortTopic}", the tricky challenge is balancing speed with not losing core skills, which is a real risk. Which side feels closer to what you've actually seen?`,
+      const solChallenger = [
+        `Fair—here's the real fix: ${concreteSolution}. The challenge is teams skip enforcement when deadlines hit, which creates massive risk. Would you enforce that rule?`,
+        `Simple solution: ${concreteSolution}. My challenge is most leaders chase speed and accept that hidden flaw anyway—how do we keep them disciplined?`,
+        `Let's get concrete: ${concreteSolution}. That directly tackles the core risk, though the challenge is convincing managers to slow down day one—agreed?`,
+        `Here's a practical move: ${concreteSolution}. Without that guardrail, the biggest flaw hits in production—do you think that actually solves it?`,
       ];
-      return clampSpeech(resetVariants[variant]);
+      return clampSpeech(solChallenger[variant]);
     }
 
     if (req.roleType === 'avatar_b') {
-      const bridgeResetVariants = [
-        `That makes complete sense—let's keep it relaxed and everyday. ${challengerLabel} just means we shouldn't skip the basics while chasing speed, and we want your real take too. ${candidate}, you have the floor—what's one simple example that comes to mind?`,
-        `I hear you, no need to overcomplicate this! ${challengerLabel} raised a simple caution about hidden downsides, while you can keep us grounded in reality. ${candidate}, you have the floor whenever you're ready to share your take.`,
-        `Fair enough—let's speak plainly! Building on ${challengerLabel}'s point, the easiest way to think about "${shortTopic}" is asking who actually wins or loses day to day. ${candidate}, you have the floor—which side would you pick?`,
-        `Totally understandable, let's reset the tone! ${challengerLabel} is pointing out what could go wrong, while there's also real upside if people adapt smartly. ${candidate}, you have the floor to share what feels right to you.`,
+      const solDiplomat = [
+        `${challengerLabel}'s concrete fix works—${concreteSolution}—while keeping the speed you want. ${candidate}, you have the floor: would you add or change one step?`,
+        `That nails the action plan: pair ${challengerLabel}'s guardrail with clear weekly metrics so everyone sees real progress. ${candidate}, you have the floor.`,
+        `Good pivot to solutions! Blending your focus with ${challengerLabel}'s rule gives teams a clear playbook tomorrow morning—${candidate}, you have the floor.`,
+        `Now we're talking real execution: ${challengerLabel}'s check stops silent failures while keeping teams fast. ${candidate}, you have the floor to refine it.`,
       ];
-      return clampSpeech(bridgeResetVariants[variant]);
+      return clampSpeech(solDiplomat[variant]);
     }
   }
 
-  if (req.roleType === 'avatar_a') {
-    const pointRef = cleanConcept ? `your point about ${cleanConcept}` : 'that angle';
-
-    if (userAskedQuestion) {
-      const qaVariants = [
-        `Good question—honestly, I'd challenge ${pointRef} because the real risk shows up the moment teams hit messy edge cases in production. Speed feels awesome on day one, until someone has to debug what broke.`,
-        `To answer you straight: I'd challenge relying too heavily on ${pointRef} since there's a real flaw when budgets or deadlines tighten. When something fails under pressure, who actually owns fixing it?`,
-        `Fair question! My pushback—and the big challenge with ${pointRef}—is the hidden risk of over-dependence over time. Short-term convenience can quietly weaken the exact fundamentals teams rely on later.`,
-        `Honestly, I'd challenge ${pointRef} here because real-world rollout exposes a flaw that sounds tiny at first. Once you scale past a small demo, operational risk catches up fast—how would you guard against that?`,
+  // 2. User signaled confusion or robotic feel -> ultra-short plain-English reset (<= 3 lines!)
+  if (userConfusedOrMeta) {
+    if (req.roleType === 'avatar_a') {
+      const resetA = [
+        `Let's keep it super real: the core challenge is quick shortcuts create a huge risk when something breaks live. Would you trust an untested shortcut?`,
+        `Fair call—plain English! My challenge is simple: fast tools hide a real flaw when people stop learning the fundamentals. Do you see that happening?`,
+        `Let's drop the jargon: speed is great, yet the real risk is nobody knows how to fix failures later. Which side are you backing?`,
+        `Good reset! Here's my blunt challenge: chasing instant output without deep skill is a ticking risk. How should beginners train instead?`,
       ];
-      return clampSpeech(qaVariants[variant]);
+      return clampSpeech(resetA[variant]);
     }
 
+    if (req.roleType === 'avatar_b') {
+      const resetB = [
+        `Super simple: ${challengerLabel} wants strong fundamentals, while fast tools still help when guided right. ${candidate}, you have the floor—what's your honest take?`,
+        `Keeping it direct: ${challengerLabel} flagged the real trap, and we can fix it with hands-on mentorship. ${candidate}, you have the floor.`,
+        `Let's stay practical: pair ${challengerLabel}'s caution with real guided practice so beginners actually level up. ${candidate}, you have the floor.`,
+        `Totally clear now: use fast tools for drafts, then apply ${challengerLabel}'s check to master the core logic. ${candidate}, you have the floor.`,
+      ];
+      return clampSpeech(resetB[variant]);
+    }
+  }
+
+  // 3. Standard high-energy, <= 3-line debate turn (zero ugly word-splicing!)
+  if (req.roleType === 'avatar_a') {
     const domainRisk =
       req.domain === 'commerce'
-        ? 'cash-flow pressure and compliance risk'
+        ? 'margin bleed and audit risk'
         : req.domain === 'sales'
-          ? 'customer trust and churn risk'
+          ? 'buyer trust and churn risk'
           : req.domain === 'business'
-            ? 'unit economics and execution risk'
-            : 'real-world reliability and skill-gap risk';
+            ? 'cash burn and execution risk'
+            : 'production outages and skill-gap risk';
 
-    const challengerVariants = [
-      `I get where you're coming from, though I'd challenge ${pointRef} because it underestimates ${domainRisk}. Things look smooth in theory, but what happens the first time a real crisis hits?`,
-      `Fair take, yet I have to challenge ${pointRef} on "${shortTopic}"—there's a hidden flaw once ${domainRisk} kicks in. If we move that fast without guardrails, won't the team end up paying for it later?`,
-      `Interesting view, honestly, but let me challenge ${pointRef} from the other side. Ignoring ${domainRisk} sounds fine early on, until small mistakes snowball—how would you handle that downside?`,
-      `I hear you, though here's my challenge to ${pointRef}: once real-world pressure arrives, ${domainRisk} becomes the make-or-break flaw. Wouldn't a more cautious approach save us bigger headaches?`,
+    const punchyA = [
+      `Hold on—I have to challenge that because moving fast without guardrails triggers ${domainRisk} under real pressure. How do you stop that flaw?`,
+      `I have to challenge that sharply: that assumption underestimates ${domainRisk} when real users hit production. What is your safety net against that flaw?`,
+      `Strong take, yet here's my challenge: ignoring ${domainRisk} is the exact flaw that breaks teams at scale. Why not ${concreteSolution} instead?`,
+      `Let me challenge that head-on—speed alone creates huge ${domainRisk} once messy edge cases arrive. Wouldn't strict review gates stop that flaw?`,
     ];
-    return clampSpeech(challengerVariants[variant]);
+    return clampSpeech(punchyA[variant]);
   }
 
   if (req.roleType === 'avatar_b') {
-    const pointRef = cleanConcept ? `your point on ${cleanConcept}` : 'your point';
-    const diplomatVariants = [
-      `Honestly, you both nailed half the puzzle—${pointRef} captures the real upside, while ${challengerLabel} is right to watch out for hidden fallout. Starting with a small, guided trial gives us the best of both worlds—${candidate}, you have the floor.`,
-      `I like where this is going: ${pointRef} pushes us forward, and ${challengerLabel}'s pushback keeps us honest about real-world limits. Pairing fast adoption with clear human check-ins bridges both views—${candidate}, you have the floor.`,
-      `Both of you make solid sense here—${pointRef} shows why change is unavoidable, while ${challengerLabel} reminds us not to skip the basics. Blending both into a simple two-step plan feels realistic—${candidate}, you have the floor.`,
-      `You're both closer than it sounds: ${pointRef} highlights what's already happening on the ground, and ${challengerLabel} flags the exact trap to avoid. Combining speed with real accountability solves both—${candidate}, you have the floor.`,
+    const punchyB = [
+      `Your speed keeps teams sharp, while ${challengerLabel} stops costly blowups. Solution: ${concreteSolution}—${candidate}, you have the floor.`,
+      `Let's blend your momentum with ${challengerLabel}'s discipline and ${concreteSolution}. Would you ship that plan—${candidate}, you have the floor.`,
+      `Keep your speed, adopt ${challengerLabel}'s guardrail, and measure real outcomes weekly. What metric would you track first—${candidate}, you have the floor.`,
+      `Smart middle ground: pair your view with ${challengerLabel}'s warning inside a small tracked pilot. Where would you start—${candidate}, you have the floor.`,
     ];
-    return clampSpeech(diplomatVariants[variant]);
+    return clampSpeech(punchyB[variant]);
   }
 
-  return clampSpeech(`Let's keep "${shortTopic}" grounded and practical. ${candidate}, you have the floor.`);
+  return clampSpeech(`Let's keep this sharp and solution-focused. ${candidate}, you have the floor.`);
 }
 
 export type LlmCaller = (
@@ -629,7 +617,7 @@ export async function executeGdTurn(
     reply = '';
   }
 
-  if (!reply || reply.split(/\s+/).length < 10) {
+  if (!reply || reply.split(/\s+/).length < 6) {
     reply = generateUtterance(req);
     usedFallback = true;
   }

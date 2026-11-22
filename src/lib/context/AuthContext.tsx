@@ -987,6 +987,43 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (sbUser) await loadProfile(sbUser);
   };
 
+  // Keep live user telemetry (weekly_xp, xp_total, trust_score, arena_elo) synced across Vault/Dashboard/Leaderboard immediately
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onProfilePatch = (ev: Event) => {
+      const detail = (ev as CustomEvent)?.detail;
+      if (!detail || typeof detail !== 'object') return;
+      setUser(prev => {
+        if (!prev) return prev;
+        if (detail.user_id && detail.user_id !== prev.id) return prev;
+        const patch: Record<string, unknown> = {};
+        if (typeof detail.weekly_xp === 'number') {
+          patch.weekly_xp = detail.weekly_xp;
+          patch.weeklyXp = detail.weekly_xp;
+        }
+        if (typeof detail.xp_total === 'number') {
+          patch.xp_total = detail.xp_total;
+          patch.xp = detail.xp_total;
+        }
+        if (typeof detail.trust_score === 'number') {
+          patch.trust_score = detail.trust_score;
+          patch.trustScore = detail.trust_score;
+        }
+        if (typeof detail.weekly_arena_points === 'number') {
+          patch.weekly_arena_points = detail.weekly_arena_points;
+          patch.arenaPoints = detail.weekly_arena_points;
+        }
+        if (typeof detail.arena_elo === 'number') {
+          patch.arena_elo = detail.arena_elo;
+        }
+        if (Object.keys(patch).length === 0) return prev;
+        return { ...prev, ...patch };
+      });
+    };
+    window.addEventListener('pinit:user_profile_updated', onProfilePatch as EventListener);
+    return () => window.removeEventListener('pinit:user_profile_updated', onProfilePatch as EventListener);
+  }, []);
+
   return (
     <Ctx.Provider value={{ user, loading, login, signup, logout, refresh, loginWithVaultSession }}>
       {children}
