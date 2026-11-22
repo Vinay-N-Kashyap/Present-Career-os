@@ -1,5 +1,10 @@
 // TTS Library & Audio Engine (WebSpeech Native API + Persona Vocal Signatures)
-import { synthesizeVoice, CURRENT_RENDER_TIER } from "./smartVoiceRouter";
+import {
+  synthesizeVoice,
+  CURRENT_RENDER_TIER,
+  isNeuralVoiceTemporarilyUnavailable,
+  isVoiceFallbackSignal,
+} from "./smartVoiceRouter";
 import { sanitizeForSpeech, SANITIZER_VERSION } from "./sanitizeLLM";
 import {
   splitIntoSentences,
@@ -251,6 +256,26 @@ export function selectNaturalGenderedVoice<T extends { name: string; lang: strin
   return best;
 }
 
+/**
+ * Calibrates WebSpeech playback rate to a crisp, natural ~1.25x conversational pace
+ * (removing stacked persona multipliers that made Chrome Google / Microsoft Natural voices rush at ~1.5x).
+ */
+export function resolveWebSpeechRate(
+  voiceName?: string,
+  difficulty?: 'easy' | 'normal' | 'hard',
+  speedMultiplier = 1.0
+): number {
+  const isGoogleVoice = /google/i.test(voiceName || '');
+  const base = isGoogleVoice
+    ? (difficulty === 'easy' ? 0.90 : difficulty === 'hard' ? 0.97 : 0.94)
+    : (difficulty === 'easy' ? 0.92 : difficulty === 'hard' ? 1.01 : 0.97);
+  const safeMult = Math.max(0.85, Math.min(1.15, Number.isFinite(speedMultiplier) ? speedMultiplier : 1.0));
+  const raw = base * safeMult;
+  const minRate = isGoogleVoice ? 0.84 : 0.86;
+  const maxRate = isGoogleVoice ? 1.02 : 1.04;
+  return Number(Math.max(minRate, Math.min(maxRate, raw)).toFixed(2));
+}
+
 function fallbackWebSpeech(
   cleanText: string,
   teacherId: string,
@@ -328,11 +353,10 @@ function fallbackWebSpeech(
       utterance.lang = teacherId.trim();
     }
 
-    const vocalPersona = PERSONA_VOCAL_MATRIX[teacherId.toLowerCase()] || { pitch: isMale ? 0.94 : 1.04, rateMultiplier: 1.02 };
+    const vocalPersona = PERSONA_VOCAL_MATRIX[teacherId.toLowerCase()] || { pitch: isMale ? 0.94 : 1.04, rateMultiplier: 1.0 };
 
-    // Keep rate & pitch inside natural human range (prevents robotic chipmunk distortion)
-    const rawRate = (difficulty === 'easy' ? 0.98 : difficulty === 'hard' ? 1.08 : 1.02) * speedMultiplier * Math.min(1.06, vocalPersona.rateMultiplier);
-    utterance.rate = Math.max(0.92, Math.min(1.12, rawRate));
+    // Keep rate & pitch inside natural ~1.25x conversational range (never rushed 1.5x or chipmunk)
+    utterance.rate = resolveWebSpeechRate(voice?.name, difficulty, speedMultiplier);
     utterance.pitch = Math.max(0.88, Math.min(1.08, isMale ? Math.min(0.98, vocalPersona.pitch) : Math.max(1.0, vocalPersona.pitch)));
 
     if (speechId === currentSpeechId) {
@@ -375,8 +399,8 @@ function fallbackWebSpeech(
 }
 
 export async function generateTTSAudio(text: string, teacherId: string, vibe = 'neutral', difficulty?: 'easy' | 'normal' | 'hard', speedMultiplier = 1.0): Promise<{ buffer: Float32Array; sampleRate: number }> {
-  const baseSpeed = difficulty === 'easy' ? 0.95 : difficulty === 'hard' ? 1.3 : 1.1;
-  const targetSpeed = baseSpeed * speedMultiplier;
+  const baseSpeed = difficulty === 'easy' ? 0.95 : difficulty === 'hard' ? 1.08 : 1.02;
+  const targetSpeed = Math.max(0.88, Math.min(1.12, baseSpeed * speedMultiplier));
   const voice = KOKORO_VOICE_MAP[teacherId.toLowerCase()] || 'af_bella';
 
   try {
@@ -394,11 +418,11 @@ export async function generateTTSAudio(text: string, teacherId: string, vibe = '
     return { buffer, sampleRate: audioBuf.sampleRate };
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
-    // In browser sessions synthesizeVoice already tried /api/tts; don't double-call a rejected 503
-    if (typeof window !== 'undefined' && /VOICE_BACKEND_DEGRADED_GTTS|TTS HTTP 503/i.test(msg)) {
+    // In browser sessions synthesizeVoice already tried /api/tts; don't double-call on fallback or 503
+    if (isVoiceFallbackSignal(err) || (typeof window !== 'undefined' && /VOICE_BACKEND_DEGRADED_GTTS|TTS HTTP 503/i.test(msg))) {
       throw err;
     }
-    console.warn('[PinIT TTS] Primary synthesizeVoice failed in generateTTSAudio, attempting /api/tts proxy fallback:', err);
+    console.debug('[PinIT TTS] Primary synthesizeVoice failed in generateTTSAudio, attempting /api/tts proxy fallback:', msg);
     const response = await fetch('/api/tts', {
       method: 'POST',
       headers: {
@@ -412,8 +436,8 @@ export async function generateTTSAudio(text: string, teacherId: string, vibe = '
         emotion: vibe,
       }),
     });
-    if (!response.ok) {
-      throw new Error(`TTS fallback returned status ${response.status}`);
+    if (!response.ok || response.headers.get('X-Voice-Fallback') === 'browser-natural' || (response.headers.get('Content-Type') || '').includes('application/json')) {
+      throw new Error(`TTS fallback unavailable (${response.status})`);
     }
     const arrayBuffer = await response.arrayBuffer();
     const ctx = getAudioContext();
@@ -589,10 +613,12 @@ export async function speakWithAvatar(
 
   const allowWebSpeech = options?.allowWebSpeechFallback !== false;
   const isNonEnglishLocale = /^[a-z]{2}-[a-z]{2}$/i.test((teacherId || '').trim()) && !/^en-/i.test((teacherId || '').trim());
+  const skipCloudForCooldown = !options?.bypassCache && isNeuralVoiceTemporarilyUnavailable();
 
   // Attempt Smart Hybrid Voice Router with Sentence Streaming for multi-sentence paragraphs
-  if (useNeural && !isNonEnglishLocale) {
+  if (useNeural && !isNonEnglishLocale && !skipCloudForCooldown) {
     const voice = KOKORO_VOICE_MAP[teacherId.toLowerCase()] || 'af_bella';
+    const neuralSpeed = Number(Math.max(0.88, Math.min(1.08, speedMultiplier)).toFixed(2));
     const sentences = options?.singleShot ? [spokenText] : splitIntoSentences(spokenText);
 
     if (sentences.length > 1) {
@@ -617,7 +643,7 @@ export async function speakWithAvatar(
             sentences,
             {
               voice,
-              speed: speedMultiplier,
+              speed: neuralSpeed,
               bypassCache: options?.bypassCache,
               minDurationMs
             },
@@ -658,7 +684,9 @@ export async function speakWithAvatar(
           clearTimeout(streamDeadlineTimer);
           streamDeadlineTimer = null;
         }
-        console.debug('[PinIT Voice] Streaming audio queue fallback:', streamErr instanceof Error ? streamErr.message : streamErr);
+        if (!isVoiceFallbackSignal(streamErr)) {
+          console.debug('[PinIT Voice] Streaming audio queue fallback:', streamErr instanceof Error ? streamErr.message : streamErr);
+        }
         if (allowWebSpeech && mySpeechId === currentSpeechId) {
           // If earlier sentences already played neurally, speak ONLY the remaining unplayed tail (zero duplicate speech!)
           const remainingText = streamStarted
@@ -725,7 +753,7 @@ export async function speakWithAvatar(
       const result = await synthesizeVoice({
         text: spokenText,
         voice,
-        speed: speedMultiplier,
+        speed: neuralSpeed,
         bypassCache: options?.bypassCache
       });
       // WebSpeech already took over; the synthesized audio stays cached for next time.
@@ -775,7 +803,9 @@ export async function speakWithAvatar(
     } catch (err) {
       if (handedToWebSpeech) return;
       clearStartDeadline();
-      console.warn('[PinIT Voice] Neural TTS unavailable, executing gendered natural fallback:', err);
+      if (!isVoiceFallbackSignal(err)) {
+        console.debug('[PinIT Voice] Neural TTS unavailable, using gendered natural voice:', err instanceof Error ? err.message : err);
+      }
       if (mySpeechId === currentSpeechId) {
         if (allowWebSpeech) {
           fallbackWebSpeech(
@@ -819,21 +849,26 @@ export async function speakWithAvatar(
 
 export async function preloadTTS(text?: string, teacherId: string = 'priya', speedMultiplier = 1.0) {
   if (typeof window === 'undefined' || !text) return;
+  // Skip background preloading while cloud voice is on browser-natural cooldown (prevents AbortError & 503 console storms)
+  if (isNeuralVoiceTemporarilyUnavailable()) return;
   const sanitized = sanitizeForSpeech(text);
   if (!sanitized) return;
 
   try {
     const voice = KOKORO_VOICE_MAP[teacherId.toLowerCase()] || 'af_bella';
+    const neuralSpeed = Number(Math.max(0.88, Math.min(1.08, speedMultiplier)).toFixed(2));
     // Same text transform and speed as speakWithAvatar's single-request path,
     // so the cache key matches what is actually spoken.
     await synthesizeVoice({
       text: enhanceTextIntonation(sanitized),
       voice,
-      speed: speedMultiplier
+      speed: neuralSpeed
     });
-    console.log(`[PinIT Preloader] ⚡ Successfully preloaded Render audio into IndexedDB for "${sanitized.slice(0, 30)}..."`);
+    console.debug(`[PinIT Preloader] Preloaded neural audio into IndexedDB for "${sanitized.slice(0, 30)}..."`);
   } catch (err) {
-    console.warn('[PinIT Preloader] Audio preload deferred:', err);
+    if (!isVoiceFallbackSignal(err) && (err as { name?: string })?.name !== 'AbortError') {
+      console.debug('[PinIT Preloader] Audio preload deferred:', err instanceof Error ? err.message : err);
+    }
   }
 }
 

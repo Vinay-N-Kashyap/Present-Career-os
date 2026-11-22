@@ -277,7 +277,7 @@ export function detectUserConfusionOrMeta(text: string): boolean {
   if (!trimmed) return true;
 
   const confusionPattern =
-    /\b(didn'?t get|don'?t get|don'?t understand|can'?t understand|cannot understand|not understanding|confused|too complex|bit complex|very complex|complicated|too direct|speaking with.*ai|talking to.*ai|like an? ai|sound.*robotic|want to skip|skip this|let'?s skip|gotila|gottilla|gothilla|pardon|come again|say that again|simpler|plain english|in simple)\b/i;
+    /\b(didn'?t get|don'?t get|don'?t know|do not know|no idea|not sure|please explain|explain (?:the |this |what)|what(?:'s| is) the situation|wait what|don'?t understand|can'?t understand|cannot understand|not understanding|confused|too complex|bit complex|very complex|complicated|too direct|speaking with.*ai|talking to.*ai|like an? ai|sound.*robotic|want to skip|skip this|let'?s skip|gotila|gottilla|gothilla|pardon|come again|say that again|simpler|plain english|in simple)\b/i;
   if (confusionPattern.test(trimmed)) return true;
 
   // Ultra-short non-substantive filler replies (1-2 words like "ok", "yes", "hmm", "sorry", "gotila")
@@ -288,15 +288,92 @@ export function detectUserConfusionOrMeta(text: string): boolean {
 }
 
 /**
- * Detects when the candidate is explicitly asking for a concrete solution or action plan
- * (e.g. "what is the solution?", "how are we doing it?", "first let us analyze the problem").
+ * Detects when the candidate is explicitly asking for a concrete solution, action plan, or solution clarification
+ * (e.g. "what is the solution?", "is there any solutions you can offer", "what I didn't get the solution", "how are we doing it?").
  */
 export function detectSolutionRequest(text: string): boolean {
   const trimmed = (text || '').trim().toLowerCase();
   if (!trimmed) return false;
-  return /\b(what(?:'s| is) the solution|need a solution|proper solution|for solutions?|how (?:are we|do we|can we|should we) (?:do|doing|fix|solve|handle)|what(?:'s| is) the fix|analyze the problem|understand the problem|what the problem is)\b/i.test(
+  return /\b(what(?:'s| is) the solution|need a solution|proper solution|any solutions?|offer (?:a )?solutions?|give (?:me |us )?(?:a )?solutions?|explain the solution|didn'?t get the solution|don'?t get the solution|for solutions?|how (?:are we|do we|can we|should we) (?:do|doing|fix|solve|handle)|what(?:'s| is) the fix|analyze the problem|understand the problem|what the problem is)\b/i.test(
     trimmed
   );
+}
+
+const STOP_WORDS = new Set([
+  'the', 'and', 'for', 'that', 'this', 'with', 'from', 'your', 'have', 'just', 'like', 'into',
+  'when', 'what', 'where', 'which', 'would', 'could', 'should', 'about', 'there', 'their', 'they',
+  'them', 'then', 'than', 'only', 'also', 'been', 'will', 'does', 'dont', 'cant', 'wont', 'youre',
+  'theyre', 'thats', 'heres', 'candidate', 'floor', 'really', 'actually', 'think',
+]);
+
+function normalizeWords(text: string): string[] {
+  return (text || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+/**
+ * Detects host-intro echoes, mid-sentence truncated fragments, or repetitive paraphrasing/copying
+ * of recent panelist turns (e.g. repeating "super-fast calculator" or "trainee chef" across turns).
+ */
+export function isRepetitiveOrBrokenGdReply(
+  reply: string,
+  recentPanelistTexts: string[],
+  roleType: GdRoleType = 'avatar_a'
+): boolean {
+  const trimmed = (reply || '').trim();
+  if (!trimmed) return true;
+
+  const words = normalizeWords(trimmed);
+  if (words.length < 8) return true;
+
+  // Reject Host intro echo by non-host panelists
+  if (roleType !== 'host' && (/^welcome!\s+i am\b/i.test(trimmed) || /hosting today'?s \d+ minutes? gd/i.test(trimmed))) {
+    return true;
+  }
+
+  // Reject obvious mid-clause truncated fragments (e.g. "or just make you.", "as a super-fast.")
+  const trailingFragment = /\b(?:a|an|the|to|of|for|with|and|or|but|just|very|really|super|super-fast|make you|makes you|into|onto|from|about|because|while|when|if|that|which|who)\s*[.!?]$/i;
+  if (trailingFragment.test(trimmed)) {
+    return true;
+  }
+
+  // Build 4-grams and content-word sets for recent panelist turns
+  const reply4Grams = new Set<string>();
+  for (let i = 0; i <= words.length - 4; i++) {
+    reply4Grams.add(words.slice(i, i + 4).join(' '));
+  }
+  const replyContent = new Set(words.filter(w => w.length >= 4 && !STOP_WORDS.has(w)));
+
+  for (const prev of recentPanelistTexts.slice(-6)) {
+    const prevWords = normalizeWords(prev);
+    if (prevWords.length < 4) continue;
+
+    // 1. Any verbatim 4-word phrase copied from a recent panelist turn (except "you have the floor")
+    for (let i = 0; i <= prevWords.length - 4; i++) {
+      const gram = prevWords.slice(i, i + 4).join(' ');
+      if (gram === 'you have the floor' || gram === 'have the floor to') continue;
+      if (reply4Grams.has(gram)) {
+        return true;
+      }
+    }
+
+    // 2. High content-word overlap (>= 50% of reply's unique meaningful words already in one prior turn)
+    if (replyContent.size >= 4) {
+      const prevContent = new Set(prevWords.filter(w => w.length >= 4 && !STOP_WORDS.has(w)));
+      let overlap = 0;
+      for (const w of replyContent) {
+        if (prevContent.has(w)) overlap += 1;
+      }
+      if (overlap / replyContent.size >= 0.5) {
+        return true;
+      }
+    }
+  }
+
+  return false;
 }
 
 /**
@@ -352,6 +429,12 @@ export function clampSpeech(raw: string): string {
 
   if (!/[.!?]$/.test(result)) {
     result = `${result}.`;
+  }
+
+  // Strip unbalanced double quotes left behind by truncated quotations
+  const quoteCount = (result.match(/"/g) || []).length;
+  if (quoteCount % 2 === 1) {
+    result = result.replace(/"/g, '').replace(/\s+/g, ' ').trim();
   }
 
   return result;
@@ -433,16 +516,16 @@ function systemPrompt(req: GdTurnRequest): string {
     'NO markdown, NO bullets, NO speaker prefixes.';
 
   const humanConversationRule =
-    'ENERGY & REALISM RULE (CRITICAL): Sound like a real, charismatic, high-energy colleague in a sharp boardroom debate—professional, friendly, yet unapologetically direct and aggressive on weak logic. ' +
-    'Jump straight into the meat with concrete real-world examples (debugging live outages, code reviews, hiring tests, real ROI). ' +
+    'ENERGY & REALISM RULE (CRITICAL): Sound like a sharp, charismatic, real-world colleague in a live boardroom debate—professional, warm, and bold when challenging IDEAS, NEVER insulting or belittling the candidate (never call them a liability, red flag, or budget killer). ' +
+    'ANTI-REPETITION RULE (CRITICAL): NEVER repeat, echo, or paraphrase any analogy, phrase, or intro already spoken in the transcript—bring a brand-new angle, real metric, or fresh example every single turn. ' +
     'VOICE STT GRACE: Silently understand live mic slips (e.g. "wife coding" / "buy code" = "vibe coding", "unlies" = "analyze") without repeating garbled words.';
 
   const solutionRule = userWantsSolution
-    ? ` SOLUTION RULE (ACTIVE): ${candidate} explicitly asked for a concrete solution or problem breakdown. STOP giving abstract philosophy—pitch ONE specific, realistic, actionable solution right now in plain English, then ask if they would actually run it!`
+    ? ` SOLUTION RULE (ACTIVE): ${candidate} asked for a clear, concrete solution or did not understand the previous solution. Explain ONE simple, step-by-step practical fix in plain everyday English (zero buzzwords) that has NOT been pitched yet, then ask if they agree with it.`
     : '';
 
   const confusionRule = userConfusedOrMeta
-    ? ` CLARIFY RULE (ACTIVE): ${candidate} felt lost. Drop jargon completely, state one crisp everyday example of "${req.topic}" in 1 short sentence, and ask a simple direct question.`
+    ? ` CLARIFY RULE (ACTIVE): ${candidate} said they are unsure or confused. Stay encouraging and helpful—NEVER scold them. Explain one fresh everyday side of "${req.topic}" in 1 plain-English sentence (different from every prior example) and give them two simple choices to pick between.`
     : '';
 
   const truthfulnessRule =
@@ -472,10 +555,13 @@ function systemPrompt(req: GdTurnRequest): string {
 
   if (req.roleType === 'avatar_b') {
     const challengerLabel = req.lastChallengerName || 'Avatar 1';
+    const challengerQuote = req.lastChallengerText
+      ? ` (${challengerLabel} just said: "${req.lastChallengerText.slice(0, 180)}")`
+      : '';
     return [
       `You are ${displayName}, AVATAR 2 (THE DIPLOMAT) in a fast, lively Group Discussion on "${req.topic}" (${req.domain} domain).`,
       `VOICE: ${persona.signatureStyle} You naturally ${persona.diplomatAngle}.`,
-      `MISSION: In 2 tight sentences, connect BOTH ${candidate}'s view AND ${challengerLabel}'s counter-argument into ONE concrete, practical middle-ground move, then pass the floor back to ${candidate}.${solutionRule}${confusionRule}`,
+      `MISSION: In 2 tight complete sentences, connect BOTH ${candidate}'s view AND ${challengerLabel}'s counter-argument${challengerQuote} into ONE fresh, practical middle-ground step (NEVER echo ${challengerLabel}'s words!), then pass the floor back to ${candidate}.${solutionRule}${confusionRule}`,
       humanConversationRule,
       truthfulnessRule,
       lengthRule,
@@ -490,7 +576,17 @@ function systemPrompt(req: GdTurnRequest): string {
   ].join('\n');
 }
 
-function generateUtterance(req: GdTurnRequest): string {
+function pickNonRepeatingVariant(candidates: string[], startIndex: number, recentPanelistTexts: string[], roleType: GdRoleType): string {
+  for (let offset = 0; offset < candidates.length; offset++) {
+    const clamped = clampSpeech(candidates[(startIndex + offset) % candidates.length]);
+    if (!isRepetitiveOrBrokenGdReply(clamped, recentPanelistTexts, roleType)) {
+      return clamped;
+    }
+  }
+  return clampSpeech(candidates[startIndex % candidates.length]);
+}
+
+function generateUtterance(req: GdTurnRequest, recentPanelistTexts: string[] = []): string {
   const candidate = req.candidateName?.trim() || 'Candidate';
   const lastUser = [...req.history].reverse().find(m => m.role === 'user')?.content || '';
   const userWantsSolution = detectSolutionRequest(lastUser);
@@ -499,90 +595,111 @@ function generateUtterance(req: GdTurnRequest): string {
   const variant = userTurnCount % 4;
   const challengerLabel = req.lastChallengerName || 'my colleague';
 
-  // Concrete, domain-specific real-world solutions (zero generic buzzword loops!)
-  const concreteSolution =
+  // Concrete, domain-specific real-world solutions (varied per turn so fallback never repeats!)
+  const solutionPool =
     req.domain === 'commerce'
-      ? 'run a 30-day pilot with hard margin caps and weekly audit sign-offs'
+      ? [
+          'run a 30-day pilot with hard margin caps and weekly audit sign-offs',
+          'require dual finance approval on any automated pricing change above 5%',
+          'track real gross margin per order weekly instead of chasing top-line volume',
+          'train analysts to audit AI financial forecasts against raw ledger entries every Friday',
+        ]
       : req.domain === 'sales'
-        ? 'split-test on 10% of inbound leads and measure 60-day retention before scaling'
+        ? [
+            'split-test on 10% of inbound leads and measure 60-day retention before scaling',
+            'let AI draft outreach while reps personalize discovery calls and pricing negotiation',
+            'grade reps on qualified pipeline conversion instead of raw email volume',
+            'pair every junior SDR with a senior closer for weekly live call reviews',
+          ]
         : req.domain === 'business'
-          ? 'ship a 2-week paid pilot with strict unit-economics gates before full rollout'
-          : 'ban unreviewed AI merges and make juniors debug broken code live in PR reviews';
+          ? [
+              'ship a 2-week paid pilot with strict unit-economics gates before full rollout',
+              'tie every team automation target to customer satisfaction and defect rate',
+              'run a small shadow cohort first to measure true time saved versus rework cost',
+              'require a clear rollback plan before replacing any manual approval workflow',
+            ]
+          : [
+              'require every junior to explain every line of AI-assisted code live in PR review',
+              'hire juniors via live debugging tests on broken apps instead of memorized syntax',
+              'spend month one pairing juniors on real production bug triage before greenfield features',
+              'gate AI merges behind automated integration tests and a senior architecture sign-off',
+            ];
+  const concreteSolution = solutionPool[userTurnCount % solutionPool.length];
 
-  // 1. User explicitly asked for a solution or problem breakdown -> give concrete, crisp 2-line answers!
+  // 1. User explicitly asked for a solution or problem breakdown -> give crystal-clear, step-by-step plain English!
   if (userWantsSolution) {
     if (req.roleType === 'avatar_a') {
       const solChallenger = [
-        `Fair—here's the real fix: ${concreteSolution}. The challenge is teams skip enforcement when deadlines hit, which creates massive risk. Would you enforce that rule?`,
-        `Simple solution: ${concreteSolution}. My challenge is most leaders chase speed and accept that hidden flaw anyway—how do we keep them disciplined?`,
-        `Let's get concrete: ${concreteSolution}. That directly tackles the core risk, though the challenge is convincing managers to slow down day one—agreed?`,
-        `Here's a practical move: ${concreteSolution}. Without that guardrail, the biggest flaw hits in production—do you think that actually solves it?`,
+        `Simple fix: ${concreteSolution}. The real catch is busy managers skip that discipline before deadlines—would you enforce it strictly?`,
+        `Here is one clear move: ${concreteSolution}. Still, teams chasing fast shipping often bypass reviews—how would you keep quality non-negotiable?`,
+        `Plain-English solution: ${concreteSolution}. My pushback is onboarding takes extra senior hours upfront—do you think that investment pays off?`,
+        `Practical playbook: ${concreteSolution}. Without measuring defect rates alongside speed, shortcuts creep back in—would you track bugs or speed first?`,
       ];
-      return clampSpeech(solChallenger[variant]);
+      return pickNonRepeatingVariant(solChallenger, variant, recentPanelistTexts, 'avatar_a');
     }
 
     if (req.roleType === 'avatar_b') {
       const solDiplomat = [
-        `${challengerLabel}'s concrete fix works—${concreteSolution}—while keeping the speed you want. ${candidate}, you have the floor: would you add or change one step?`,
-        `That nails the action plan: pair ${challengerLabel}'s guardrail with clear weekly metrics so everyone sees real progress. ${candidate}, you have the floor.`,
-        `Good pivot to solutions! Blending your focus with ${challengerLabel}'s rule gives teams a clear playbook tomorrow morning—${candidate}, you have the floor.`,
-        `Now we're talking real execution: ${challengerLabel}'s check stops silent failures while keeping teams fast. ${candidate}, you have the floor to refine it.`,
+        `${challengerLabel}'s move—${concreteSolution}—keeps speed high without sacrificing fundamentals. ${candidate}, you have the floor: would you add one guardrail?`,
+        `Easy to run: adopt ${challengerLabel}'s rule for 30 days and measure bug rates weekly. ${candidate}, you have the floor—does that feel realistic?`,
+        `That makes it concrete: combine fast AI drafting with ${challengerLabel}'s hands-on check so newcomers actually learn. ${candidate}, you have the floor.`,
+        `Clear next step: test ${challengerLabel}'s safeguard with one small starter squad before scaling company-wide. ${candidate}, you have the floor.`,
       ];
-      return clampSpeech(solDiplomat[variant]);
+      return pickNonRepeatingVariant(solDiplomat, variant, recentPanelistTexts, 'avatar_b');
     }
   }
 
-  // 2. User signaled confusion or robotic feel -> ultra-short plain-English reset (<= 3 lines!)
+  // 2. User signaled confusion / "I don't know" -> warm, plain-English concrete coaching with 2 easy sides to pick!
   if (userConfusedOrMeta) {
     if (req.roleType === 'avatar_a') {
       const resetA = [
-        `Let's keep it super real: the core challenge is quick shortcuts create a huge risk when something breaks live. Would you trust an untested shortcut?`,
-        `Fair call—plain English! My challenge is simple: fast tools hide a real flaw when people stop learning the fundamentals. Do you see that happening?`,
-        `Let's drop the jargon: speed is great, yet the real risk is nobody knows how to fix failures later. Which side are you backing?`,
-        `Good reset! Here's my blunt challenge: chasing instant output without deep skill is a ticking risk. How should beginners train instead?`,
+        `No stress—here is the plain version: AI writes starter work in seconds, yet teams still need humans who can spot hidden mistakes. Should colleges teach debugging first or coding speed first?`,
+        `Totally fair—let's make it concrete: if a fresher uses AI to build an app in an hour, can they fix it when a real customer hits a crash? Which side feels truer to you?`,
+        `Easy breakdown: one side says companies will hire fewer freshers because AI handles routine work; the other says AI turns freshers into faster builders. Which outcome do you expect?`,
+        `Let's keep it everyday: think of learning math after calculators arrived—do beginners become weaker without basics, or stronger by tackling harder problems? What is your gut take?`,
       ];
-      return clampSpeech(resetA[variant]);
+      return pickNonRepeatingVariant(resetA, variant, recentPanelistTexts, 'avatar_a');
     }
 
     if (req.roleType === 'avatar_b') {
       const resetB = [
-        `Super simple: ${challengerLabel} wants strong fundamentals, while fast tools still help when guided right. ${candidate}, you have the floor—what's your honest take?`,
-        `Keeping it direct: ${challengerLabel} flagged the real trap, and we can fix it with hands-on mentorship. ${candidate}, you have the floor.`,
-        `Let's stay practical: pair ${challengerLabel}'s caution with real guided practice so beginners actually level up. ${candidate}, you have the floor.`,
-        `Totally clear now: use fast tools for drafts, then apply ${challengerLabel}'s check to master the core logic. ${candidate}, you have the floor.`,
+        `To bridge ${challengerLabel}'s question simply: AI handles repetitive drafts while juniors learn architecture and problem-solving earlier. ${candidate}, you have the floor—would you back speed or fundamentals?`,
+        `Building on ${challengerLabel}'s plain example, companies can keep hiring freshers by training them to verify and improve AI output. ${candidate}, you have the floor—does that sound fair?`,
+        `Both sides are clear now: ${challengerLabel} flags the risk of skipping basics, while guided AI practice can accelerate growth. ${candidate}, you have the floor for your honest view.`,
+        `Here is the middle path from ${challengerLabel}'s point: let newcomers use AI openly, then test whether they can explain and fix the result. ${candidate}, you have the floor.`,
       ];
-      return clampSpeech(resetB[variant]);
+      return pickNonRepeatingVariant(resetB, variant, recentPanelistTexts, 'avatar_b');
     }
   }
 
-  // 3. Standard high-energy, <= 3-line debate turn (zero ugly word-splicing!)
+  // 3. Standard high-energy, <= 3-line debate turn (sharp on ideas, respectful to candidate, zero repetition!)
   if (req.roleType === 'avatar_a') {
     const domainRisk =
       req.domain === 'commerce'
-        ? 'margin bleed and audit risk'
+        ? 'margin bleed and audit failures'
         : req.domain === 'sales'
-          ? 'buyer trust and churn risk'
+          ? 'buyer trust and high churn'
           : req.domain === 'business'
-            ? 'cash burn and execution risk'
-            : 'production outages and skill-gap risk';
+            ? 'cash burn and execution drift'
+            : 'production outages and shallow debugging skills';
 
     const punchyA = [
-      `Hold on—I have to challenge that because moving fast without guardrails triggers ${domainRisk} under real pressure. How do you stop that flaw?`,
-      `I have to challenge that sharply: that assumption underestimates ${domainRisk} when real users hit production. What is your safety net against that flaw?`,
-      `Strong take, yet here's my challenge: ignoring ${domainRisk} is the exact flaw that breaks teams at scale. Why not ${concreteSolution} instead?`,
-      `Let me challenge that head-on—speed alone creates huge ${domainRisk} once messy edge cases arrive. Wouldn't strict review gates stop that flaw?`,
+      `I have to push back there—moving faster without ownership triggers ${domainRisk} under real customer load. How would you prevent that?`,
+      `Sharp idea, yet speed alone hides ${domainRisk} until messy edge cases hit live users. What guardrail makes that approach safe?`,
+      `Here is the trade-off I see: chasing instant output increases ${domainRisk} at scale. Why not ${concreteSolution} from day one?`,
+      `Interesting angle, though teams often underestimate ${domainRisk} once real deadlines collide. Which single metric proves your approach works?`,
     ];
-    return clampSpeech(punchyA[variant]);
+    return pickNonRepeatingVariant(punchyA, variant, recentPanelistTexts, 'avatar_a');
   }
 
   if (req.roleType === 'avatar_b') {
     const punchyB = [
-      `Your speed keeps teams sharp, while ${challengerLabel} stops costly blowups. Solution: ${concreteSolution}—${candidate}, you have the floor.`,
-      `Let's blend your momentum with ${challengerLabel}'s discipline and ${concreteSolution}. Would you ship that plan—${candidate}, you have the floor.`,
-      `Keep your speed, adopt ${challengerLabel}'s guardrail, and measure real outcomes weekly. What metric would you track first—${candidate}, you have the floor.`,
-      `Smart middle ground: pair your view with ${challengerLabel}'s warning inside a small tracked pilot. Where would you start—${candidate}, you have the floor.`,
+      `Combining your speed with ${challengerLabel}'s caution works if we ${concreteSolution}. ${candidate}, you have the floor—what metric would you track?`,
+      `Your momentum paired with ${challengerLabel}'s accountability points to a clean two-week pilot with clear error caps. ${candidate}, you have the floor.`,
+      `Keep the productivity upside you highlighted while applying ${challengerLabel}'s quality check every sprint. Where would you start—${candidate}, you have the floor.`,
+      `Smart middle ground: pair your optimism with ${challengerLabel}'s discipline inside one measurable starter team. ${candidate}, you have the floor.`,
     ];
-    return clampSpeech(punchyB[variant]);
+    return pickNonRepeatingVariant(punchyB, variant, recentPanelistTexts, 'avatar_b');
   }
 
   return clampSpeech(`Let's keep this sharp and solution-focused. ${candidate}, you have the floor.`);
@@ -593,32 +710,103 @@ export type LlmCaller = (
   messages: Array<{ role: 'user' | 'assistant'; content: string }>
 ) => Promise<string>;
 
+/**
+ * Formats the live GD history into a single clean `role: 'user'` prompt turn.
+ * Prevents trailing `role: 'assistant'` chat-template echo bugs on Qwen3 / GPT-OSS / OpenRouter
+ * where Avatar 2 accidentally copied Host's intro or Avatar 1's exact sentence.
+ */
+export function buildGdUserTurnPrompt(req: GdTurnRequest, retryAntiCopy = false): string {
+  const displayName = gdDisplayName(req.mentorId);
+  const candidate = req.candidateName?.trim() || 'Candidate';
+  const roleLabel =
+    req.roleType === 'avatar_a'
+      ? 'Avatar 1 (Challenger)'
+      : req.roleType === 'avatar_b'
+        ? 'Avatar 2 (Diplomat)'
+        : 'Host';
+
+  const recentLines = req.history.slice(-8).map(m => {
+    const label = m.role === 'user' ? candidate : (m.sender || 'Panelist');
+    return `[${label}]: ${m.content}`;
+  });
+
+  const lastUserMsg = [...req.history].reverse().find(m => m.role === 'user')?.content || '';
+  const userWantsSolution = detectSolutionRequest(lastUserMsg);
+  const userConfusedOrMeta = !userWantsSolution && detectUserConfusionOrMeta(lastUserMsg);
+  const transcriptBlock =
+    recentLines.length > 0
+      ? recentLines.join('\n')
+      : `[${candidate}]: Let's begin the discussion on "${req.topic}".`;
+
+  const challengerNote =
+    req.roleType === 'avatar_b' && req.lastChallengerText
+      ? `\nJust now ${req.lastChallengerName || 'Avatar 1'} said: "${req.lastChallengerText}"`
+      : '';
+
+  const modeHint = userWantsSolution
+    ? `\nMODE: ${candidate} asked for a clear solution—give ONE simple, concrete, plain-English step and ask ${candidate} directly.`
+    : userConfusedOrMeta
+      ? `\nMODE: ${candidate} asked for clarification—stay warm and encouraging (zero scolding or insults), explain simply with one fresh everyday angle, and invite ${candidate} directly.`
+      : req.roleType === 'avatar_b'
+        ? `\nMODE: Bridge BOTH ${candidate} and ${req.lastChallengerName || 'Avatar 1'} into one practical middle ground and hand the floor back to ${candidate}.`
+        : '';
+
+  const retryNote = retryAntiCopy
+    ? '\nCRITICAL RETRY: Your previous draft repeated an earlier speaker or got cut off. Write a COMPLETELY ORIGINAL, complete 2-sentence response with a brand-new angle or concrete example.'
+    : '';
+
+  return [
+    `LIVE BOARDROOM TRANSCRIPT (Topic: "${req.topic}"):`,
+    transcriptBlock,
+    '',
+    `Latest from ${candidate}: "${lastUserMsg || req.topic}"${challengerNote}${modeHint}`,
+    `Now speak ONLY as ${displayName} (${roleLabel}) in 2 crisp, complete spoken sentences (20-34 words total). Do NOT copy or paraphrase any prior panelist's phrasing or analogy.${retryNote}`,
+  ].join('\n');
+}
+
 export async function executeGdTurn(
   req: GdTurnRequest,
   callLlm: LlmCaller
 ): Promise<GdTurnResult> {
   const sys = systemPrompt(req);
-  const recent = req.history.slice(-8).map(m => ({
-    role: m.role,
-    content: m.sender ? `${m.sender}: ${m.content}` : m.content,
-  }));
-
-  if (recent.length === 0) {
-    recent.push({ role: 'user', content: `Let's begin the discussion on "${req.topic}".` });
+  const recentPanelistTexts = req.history
+    .filter(m => m.role === 'assistant')
+    .slice(-6)
+    .map(m => m.content);
+  if (req.lastChallengerText && !recentPanelistTexts.includes(req.lastChallengerText)) {
+    recentPanelistTexts.push(req.lastChallengerText);
   }
 
   let reply = '';
   let usedFallback = false;
+  let llmFailed = false;
 
+  // Attempt 1 with single clean `role: 'user'` transcript turn (eliminates trailing-assistant echo bug)
   try {
-    const raw = await callLlm(sys, recent);
+    const raw = await callLlm(sys, [{ role: 'user', content: buildGdUserTurnPrompt(req, false) }]);
     reply = clampSpeech(raw);
   } catch {
     reply = '';
+    llmFailed = true;
+  }
+
+  // Anti-repetition & broken-fragment guard: retry ONCE only if LLM succeeded but echoed or got cut off
+  if (!llmFailed && (!reply || isRepetitiveOrBrokenGdReply(reply, recentPanelistTexts, req.roleType))) {
+    try {
+      const rawRetry = await callLlm(sys, [{ role: 'user', content: buildGdUserTurnPrompt(req, true) }]);
+      const retryClean = clampSpeech(rawRetry);
+      if (retryClean && !isRepetitiveOrBrokenGdReply(retryClean, recentPanelistTexts, req.roleType)) {
+        reply = retryClean;
+      } else {
+        reply = '';
+      }
+    } catch {
+      reply = '';
+    }
   }
 
   if (!reply || reply.split(/\s+/).length < 6) {
-    reply = generateUtterance(req);
+    reply = generateUtterance(req, recentPanelistTexts);
     usedFallback = true;
   }
 

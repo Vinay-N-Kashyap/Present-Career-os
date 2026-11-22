@@ -170,6 +170,25 @@ function getBackendUrl(): string {
 
 const CDN_URL = process.env.NEXT_PUBLIC_CDN_VOICE_URL || '';
 
+function browserNaturalFallbackResponse(reason: string, message: string, retryAfterMs = 60_000) {
+  return NextResponse.json(
+    {
+      fallback: true,
+      reason,
+      message,
+      retryAfterMs,
+    },
+    {
+      status: 200,
+      headers: {
+        'X-Voice-Fallback': 'browser-natural',
+        'X-Voice-Engine': 'browser-natural',
+        'Cache-Control': 'no-store',
+      },
+    }
+  );
+}
+
 export async function POST(req: NextRequest) {
   try {
     const authHeader = req.headers.get('authorization') || req.headers.get('Authorization');
@@ -246,12 +265,10 @@ export async function POST(req: NextRequest) {
 
     // Tier 2: Self-hosted Render Kokoro-82M v1.0 INT8 Neural TTS
     if (Date.now() < renderDegradedCooldownUntil && !bypassCache) {
-      return NextResponse.json(
-        {
-          error: 'VOICE_BACKEND_DEGRADED_GTTS',
-          message: 'Render voice service is on legacy gTTS cooldown; redeploy voice-service with Kokoro v1.0 INT8 or accept Groq Orpheus terms.',
-        },
-        { status: 503 }
+      return browserNaturalFallbackResponse(
+        'VOICE_BACKEND_DEGRADED_GTTS',
+        'Using natural gendered browser voice while Render voice service upgrades to Kokoro v1.0 INT8 or Groq Orpheus terms are accepted.',
+        60_000
       );
     }
 
@@ -272,17 +289,20 @@ export async function POST(req: NextRequest) {
         context,
         bypass_cache: bypassCache,
       }),
-      signal: AbortSignal.timeout(22000),
+      // Keep well under client 14s abort so cold-booting Render returns a clean 200 fallback instead of browser AbortError
+      signal: AbortSignal.timeout(7500),
     });
 
     const roundtripMs = Date.now() - ttsStart;
 
     if (!backendRes.ok) {
       const errText = await backendRes.text();
-      console.error(`[/api/tts] Backend returned error status ${backendRes.status} (${roundtripMs}ms):`, errText.slice(0, 300));
-      return NextResponse.json(
-        { error: `Voice backend error: ${backendRes.status}`, details: errText.slice(0, 180) },
-        { status: backendRes.status },
+      console.warn(`[/api/tts] Backend status ${backendRes.status} (${roundtripMs}ms):`, errText.slice(0, 180));
+      renderDegradedCooldownUntil = Date.now() + 30_000;
+      return browserNaturalFallbackResponse(
+        `VOICE_BACKEND_HTTP_${backendRes.status}`,
+        'Using natural gendered browser voice while cloud voice service recovers.',
+        30_000
       );
     }
 
@@ -296,13 +316,11 @@ export async function POST(req: NextRequest) {
     // Reject degraded genderless gTTS output from an older Render deploy so male avatars NEVER speak in robotic female gTTS!
     if (isDegradedGenderlessGtts(audioBuffer, rawEngineHeader, contentType)) {
       renderDegradedCooldownUntil = Date.now() + 60_000;
-      console.warn(`[/api/tts] Detected degraded genderless gTTS response from Render (voice=${voice}, male=${maleRequested}). Rejecting for 60s to protect neural gender fidelity.`);
-      return NextResponse.json(
-        {
-          error: 'VOICE_BACKEND_DEGRADED_GTTS',
-          message: 'Render voice service is running legacy gTTS fallback; redeploy voice-service with Kokoro v1.0 INT8 or accept Groq Orpheus terms.',
-        },
-        { status: 503 }
+      console.warn(`[/api/tts] Detected legacy genderless gTTS response from Render (voice=${voice}, male=${maleRequested}). Switching cleanly to browser-natural for 60s.`);
+      return browserNaturalFallbackResponse(
+        'VOICE_BACKEND_DEGRADED_GTTS',
+        'Render voice service is running legacy gTTS fallback; redeploy voice-service with Kokoro v1.0 INT8 or accept Groq Orpheus terms.',
+        60_000
       );
     }
     renderDegradedCooldownUntil = 0;
@@ -331,10 +349,12 @@ export async function POST(req: NextRequest) {
     });
   } catch (err: any) {
     const isTimeout = err?.name === 'TimeoutError' || err?.name === 'AbortError';
-    console.error(`[/api/tts] Proxy Execution Failure (${isTimeout ? 'TIMEOUT' : 'ERROR'}):`, err?.message || err);
-    return NextResponse.json(
-      { error: isTimeout ? 'Voice server cold-start timeout' : (err.message || 'Internal error') },
-      { status: isTimeout ? 408 : 500 },
+    console.warn(`[/api/tts] Switching cleanly to browser-natural (${isTimeout ? 'WARMING_TIMEOUT' : 'TRANSIENT_ERROR'}):`, err?.message || err);
+    renderDegradedCooldownUntil = Date.now() + 30_000;
+    return browserNaturalFallbackResponse(
+      isTimeout ? 'VOICE_BACKEND_WARMING' : 'VOICE_BACKEND_UNAVAILABLE',
+      isTimeout ? 'Cloud voice server is waking up; using natural browser voice for 30s.' : 'Using natural browser voice while cloud voice recovers.',
+      30_000
     );
   }
 }

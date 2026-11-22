@@ -16,6 +16,8 @@ import {
   detectDirectQuestion,
   detectSolutionRequest,
   detectUserConfusionOrMeta,
+  isRepetitiveOrBrokenGdReply,
+  buildGdUserTurnPrompt,
   computePeerGazeTarget,
   executeGdTurn,
 } from '../src/lib/group-discussion/gdTurnEngine';
@@ -364,5 +366,79 @@ describe('Group Discussion Overhaul — Complete Invariant & Realism Audit', () 
     );
     assert.ok(solB.wordCount <= 40, `GD Diplomat reply must fit within 3 lines (<=40 words), got ${solB.wordCount}: "${solB.reply}"`);
     assert.ok(solB.reply.includes('Vinay, you have the floor'), 'Must return floor to candidate');
+  });
+
+  it('15. GD eliminates trailing-assistant echoes, repeated analogies, mid-sentence chops, and harsh insults', async () => {
+    // 1. Solution requests like "is there any solutions you can offer" & "what I didn't get the solution" must trigger solution mode
+    assert.equal(detectSolutionRequest('is there any solutions you can offer for me'), true);
+    assert.equal(detectSolutionRequest("what I didn't get the solution"), true);
+
+    // 2. Anti-repetition & broken-fragment detector catches exact failure cases from live transcript
+    const priorPanel = [
+      'Think of AI as a super-fast calculator for your code. Does it do your job, or just make you faster?',
+      'Think of it like a trainee chef: AI preps the ingredients, but if you cannot taste-test the soup, you serve poison.',
+    ];
+    assert.equal(
+      isRepetitiveOrBrokenGdReply('Welcome! I am Mr. Akash, hosting today\'s 10 minutes GD on "Will AI Replace Juniors?".', priorPanel, 'avatar_b'),
+      true,
+      'Must reject Host intro echo by Avatar 2'
+    );
+    assert.equal(
+      isRepetitiveOrBrokenGdReply('Think of AI as a super-fast calculator for your code. Does it do your job, or just make you.', priorPanel, 'avatar_b'),
+      true,
+      'Must reject copied & truncated calculator line'
+    );
+    assert.equal(
+      isRepetitiveOrBrokenGdReply('Think of AI as a super-fast.', priorPanel, 'avatar_b'),
+      true,
+      'Must reject short truncated fragment'
+    );
+    assert.equal(
+      isRepetitiveOrBrokenGdReply('Imagine a trainee chef where AI preps ingredients and you must taste-test the soup.', priorPanel, 'avatar_a'),
+      true,
+      'Must reject repeated trainee-chef paraphrase'
+    );
+    assert.equal(
+      isRepetitiveOrBrokenGdReply('Hiring tests should make juniors debug a broken payment checkout live instead of memorizing textbook syntax.', priorPanel, 'avatar_a'),
+      false,
+      'Must allow fresh concrete original point'
+    );
+
+    // 3. Single clean `role: user` transcript prompt prevents trailing-assistant continuation bug
+    let capturedMessages: Array<{ role: 'user' | 'assistant'; content: string }> = [];
+    let callCount = 0;
+    const echoingThenFreshLlm = async (_sys: string, msgs: Array<{ role: 'user' | 'assistant'; content: string }>) => {
+      capturedMessages = msgs;
+      callCount += 1;
+      if (callCount === 1) {
+        // Simulate model echoing Avatar 1 verbatim -> must be rejected and retried!
+        return 'Think of AI as a super-fast calculator for your code. Does it do your job, or just make you.';
+      }
+      return 'Pairing AI speed with weekly live code walkthroughs ensures freshers master real debugging. Dev, you have the floor—would you enforce that in week one?';
+    };
+
+    const res = await executeGdTurn(
+      {
+        roleType: 'avatar_b',
+        mentorId: 'divya',
+        topic: 'Will AI Coding Agents Replace Junior Developers or Supercharge Them?',
+        domain: 'technical',
+        difficulty: 'medium',
+        candidateName: 'Dev',
+        lastChallengerName: 'Mr. Anish',
+        lastChallengerText: 'Think of AI as a super-fast calculator for your code. Does it do your job, or just make you faster?',
+        history: [
+          { role: 'assistant', sender: 'Mr. Akash', content: 'Welcome! I am Mr. Akash, hosting today\'s 10 minutes GD.' },
+          { role: 'user', content: 'wait what' },
+          { role: 'assistant', sender: 'Mr. Anish', content: 'Think of AI as a super-fast calculator for your code. Does it do your job, or just make you faster?' },
+        ],
+      },
+      echoingThenFreshLlm
+    );
+
+    assert.equal(capturedMessages[capturedMessages.length - 1]?.role, 'user', 'Last message sent to LLM must ALWAYS be role=user');
+    assert.equal(callCount, 2, 'Echoed draft must trigger automatic anti-copy retry');
+    assert.ok(res.reply.includes('weekly live code walkthroughs'), `Expected fresh retried reply, got: "${res.reply}"`);
+    assert.ok(buildGdUserTurnPrompt({ roleType: 'avatar_b', mentorId: 'divya', topic: 'AI', domain: 'technical', difficulty: 'medium', history: [], lastChallengerName: 'Mr. Anish', lastChallengerText: 'Test claim' }).includes('Test claim'));
   });
 });

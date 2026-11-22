@@ -203,7 +203,7 @@ class NeuralTTSEngine:
             except Exception as e:
                 logger.error(f"Failed to download Kokoro v1.0 voices: {e}")
 
-    async def generate_audio_async(self, text: str, voice: str = "priya", speed: float = 1.1) -> tuple[bytes, float, list[dict]]:
+    async def generate_audio_async(self, text: str, voice: str = "priya", speed: float = 1.0) -> tuple[bytes, float, list[dict]]:
         """Synthesizes speech using Kokoro-82M v1.0 INT8 ONNX Neural Engine with strict Male/Female gender fidelity."""
         t_start = time.time()
 
@@ -327,7 +327,7 @@ class NeuralTTSEngine:
                 edge_voice = "en-US-AvaNeural"
 
         import edge_tts
-        communicate = edge_tts.Communicate(text, edge_voice, rate="+12%")
+        communicate = edge_tts.Communicate(text, edge_voice, rate="+5%")
         buffer = io.BytesIO()
         async for chunk in communicate.stream():
             if chunk["type"] == "audio":
@@ -337,7 +337,7 @@ class NeuralTTSEngine:
         visemes = generate_estimated_visemes(text, duration_sec)
         return wav_bytes, duration_sec, visemes
 
-    def generate_audio(self, text: str, voice: str = "priya", speed: float = 1.1) -> tuple[bytes, float, list[dict]]:
+    def generate_audio(self, text: str, voice: str = "priya", speed: float = 1.0) -> tuple[bytes, float, list[dict]]:
         try:
             loop = asyncio.get_event_loop()
             if loop.is_running():

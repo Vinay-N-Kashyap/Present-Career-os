@@ -21,7 +21,8 @@ import {
 import { computeVoiceCacheKey } from '../src/lib/voiceCacheDB';
 import { normalizeTtsEndpoint, healthUrlFromTts } from '../src/lib/smartVoiceRouter';
 import { isMaleVoiceId, resolveOrpheusVoice, isDegradedGenderlessGtts } from '../src/app/api/tts/route';
-import { isMalePersona, selectNaturalGenderedVoice } from '../src/lib/tts';
+import { isMalePersona, selectNaturalGenderedVoice, resolveWebSpeechRate } from '../src/lib/tts';
+import { VoiceFallbackSignal, isVoiceFallbackSignal } from '../src/lib/smartVoiceRouter';
 
 describe('Avatar Voice Reliability & Rig-Aware Articulation Test Suite', () => {
 
@@ -413,6 +414,27 @@ describe('Avatar Voice Reliability & Rig-Aware Articulation Test Suite', () => {
       assert.ok(!/^\s*gTTS\b/mi.test(reqs), 'requirements.txt must not install robotic genderless gTTS');
       assert.ok(audioRouterPy.includes('"karthic": "am_adam"'), 'audio_router.py must use valid Kokoro voice am_adam for karthic');
       assert.ok(audioRouterPy.includes('"akash": "bm_lewis"'), 'audio_router.py must include male persona akash');
+    });
+  });
+
+  describe('12. Calibrated ~1.25x Speech Speed & Zero-Error Graceful Fallback Signaling', () => {
+    it('should calibrate WebSpeech playback rates calmly (~1.25x feel, never rushed 1.5x)', () => {
+      const googleRate = resolveWebSpeechRate('Google US English', 'normal', 1.0);
+      const msRate = resolveWebSpeechRate('Microsoft Aria Online (Natural) - English (United States)', 'normal', 1.0);
+      const gdRate = resolveWebSpeechRate('Google UK English Male', 'normal', 1.03);
+      assert.ok(googleRate >= 0.90 && googleRate <= 0.96, `Expected calm Google rate 0.90-0.96, got ${googleRate}`);
+      assert.ok(msRate >= 0.94 && msRate <= 1.00, `Expected calm Microsoft rate 0.94-1.00, got ${msRate}`);
+      assert.ok(gdRate <= 1.02, `GD rate must stay capped <= 1.02, got ${gdRate}`);
+    });
+
+    it('should use HTTP 200 X-Voice-Fallback: browser-natural and silent VoiceFallbackSignal instead of 503 console storms', () => {
+      const sig = new VoiceFallbackSignal('VOICE_BACKEND_DEGRADED_GTTS');
+      assert.strictEqual(isVoiceFallbackSignal(sig), true);
+      assert.strictEqual(isVoiceFallbackSignal(new Error('regular')), false);
+
+      const routeCode = fs.readFileSync(path.join(__dirname, '..', 'src', 'app', 'api', 'tts', 'route.ts'), 'utf-8');
+      assert.ok(routeCode.includes("'X-Voice-Fallback': 'browser-natural'"), '/api/tts must return graceful 200 X-Voice-Fallback header');
+      assert.ok(!routeCode.includes('{ status: 503 }'), '/api/tts must not emit browser-red 503 network errors on graceful fallback');
     });
   });
 });

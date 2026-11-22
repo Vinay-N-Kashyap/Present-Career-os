@@ -1164,7 +1164,7 @@ export class VRoidAvatarEngine {
           if (this.renderer) this.renderer.setPixelRatio(this.currentPixelRatio);
           this.isLowPowerDevice = true;
           this.hasDownscaledForPerf = true;
-          console.warn(
+          console.debug(
             `[VRoidAvatarEngine] Performance watchdog Tier 2: avg frame time ${avgFrameMs.toFixed(1)}ms. ` +
             `Reduced pixel ratio to ${this.currentPixelRatio.toFixed(2)} and activated low-power mode.`
           );
@@ -1172,12 +1172,12 @@ export class VRoidAvatarEngine {
           this.currentPixelRatio = Math.max(1, this.currentPixelRatio - 0.5);
           if (this.renderer) this.renderer.setPixelRatio(this.currentPixelRatio);
           this.hasDownscaledForPerf = true;
-          console.warn(
+          console.debug(
             `[VRoidAvatarEngine] Performance watchdog Tier 1: avg frame time ${avgFrameMs.toFixed(1)}ms. ` +
             `Reduced pixel ratio to ${this.currentPixelRatio.toFixed(2)} to restore smoothness.`
           );
         } else {
-          console.log(
+          console.debug(
             `[VRoidAvatarEngine] Performance watchdog: avg frame time ${avgFrameMs.toFixed(1)}ms — within budget.`
           );
           this.hasDownscaledForPerf = true;

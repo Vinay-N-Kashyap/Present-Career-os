@@ -178,6 +178,7 @@ async function callGdLlmWithFailover(
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), budget);
       const isGptOss = model.startsWith('openai/gpt-oss');
+      const isQwen3 = model.startsWith('qwen/qwen3');
       const groqPayload: Record<string, unknown> = {
         model,
         messages: [
@@ -185,11 +186,13 @@ async function callGdLlmWithFailover(
           ...trimmedHistory,
         ],
         temperature,
-        // gpt-oss models consume internal reasoning tokens before emitting content; reasoning_effort:'low' + 450 cap prevents empty content
-        max_tokens: isGptOss ? 450 : 120,
+        // gpt-oss & qwen3 need adequate token headroom so replies NEVER truncate mid-sentence
+        max_tokens: isGptOss ? 450 : 300,
       };
       if (isGptOss) {
         groqPayload.reasoning_effort = 'low';
+      } else if (isQwen3) {
+        groqPayload.reasoning_effort = 'none';
       }
 
       try {

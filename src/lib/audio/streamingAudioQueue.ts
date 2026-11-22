@@ -7,7 +7,7 @@
 // 4. Deterministic Hard Interruption (AbortController + Buffer Drain)
 
 import { sanitizeForSpeech } from '../sanitizeLLM';
-import { synthesizeVoice } from '../smartVoiceRouter';
+import { synthesizeVoice, isVoiceFallbackSignal } from '../smartVoiceRouter';
 import { SpeechClass, VisemeEvent } from '../avatar/visemeTypes';
 
 export const TTS_STREAMING_VERSION = 'v1.0';
@@ -206,6 +206,7 @@ export class SentenceAudioQueuePlayer {
     // Track how many sentences were actually scheduled on the AudioContext timeline
     let totalScheduled = 0;
     let completedSentencesCount = 0;
+    let gracefulFallbackError: Error | null = null;
 
     // Helper: check if all scheduled sentences have finished (or if all chunks are done)
     const checkAllDone = () => {
@@ -215,7 +216,7 @@ export class SentenceAudioQueuePlayer {
         if (totalScheduled === 0) {
           // Zero sentences were successfully decoded or scheduled
           this.isPlaying = false;
-          callbacks?.onError?.(new Error('No sentence chunks successfully synthesized or decoded'));
+          callbacks?.onError?.(gracefulFallbackError || new Error('No sentence chunks successfully synthesized or decoded'));
           return;
         }
         if (completedSentencesCount >= totalScheduled) {
@@ -250,10 +251,15 @@ export class SentenceAudioQueuePlayer {
         decodedBuffers[index] = audioBuf;
         chunkVisemes[index] = res.visemes;
       } catch (err: any) {
+        if (isVoiceFallbackSignal(err)) {
+          gracefulFallbackError = err;
+          decodedBuffers[index] = false;
+          return;
+        }
         const msg = String(err?.message || '');
         const isNonRetryable = /VOICE_BACKEND_DEGRADED_GTTS|TTS HTTP 503|TTS HTTP 400|TTS HTTP 401/i.test(msg);
         if (!this.isCancelled) {
-          console.warn(`[SentenceAudioQueuePlayer] Error fetching chunk #${index} (attempt ${attempt + 1}/${MAX_CHUNK_RETRIES + 1}):`, msg);
+          console.debug(`[SentenceAudioQueuePlayer] Chunk #${index} fallback (attempt ${attempt + 1}/${MAX_CHUNK_RETRIES + 1}):`, msg);
         }
         if (!isNonRetryable && attempt < MAX_CHUNK_RETRIES && !this.isCancelled && playId === this.currentPlayId) {
           await new Promise(r => setTimeout(r, 200 * Math.pow(2, attempt)));
@@ -294,11 +300,12 @@ export class SentenceAudioQueuePlayer {
         nextChunkToSchedule++;
 
         if (buf === false) {
-          // CRITICAL RELIABILITY FIX: Never silently drop content or play out of order.
-          // Pause queue, notify error callback, and cleanly terminate this playback session.
-          console.error(`[SentenceAudioQueuePlayer] Chunk #${idx} failed after retries. Halting playback to prevent content loss.`);
+          // Cleanly hand off to browser-natural fallback without console.error spam when /api/tts signals graceful fallback
+          if (!gracefulFallbackError) {
+            console.debug(`[SentenceAudioQueuePlayer] Chunk #${idx} unavailable after retries; handing off to natural fallback.`);
+          }
           this.isPlaying = false;
-          callbacks?.onError?.(new Error(`Sentence #${idx + 1} failed to load. Playback paused.`));
+          callbacks?.onError?.(gracefulFallbackError || new Error(`Sentence #${idx + 1} failed to load. Playback paused.`));
           this.stopAll();
           return;
         }
