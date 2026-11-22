@@ -20,6 +20,8 @@ import {
 } from '../src/lib/audio/streamingAudioQueue';
 import { computeVoiceCacheKey } from '../src/lib/voiceCacheDB';
 import { normalizeTtsEndpoint, healthUrlFromTts } from '../src/lib/smartVoiceRouter';
+import { isMaleVoiceId, resolveOrpheusVoice, isDegradedGenderlessGtts } from '../src/app/api/tts/route';
+import { isMalePersona, selectNaturalGenderedVoice } from '../src/lib/tts';
 
 describe('Avatar Voice Reliability & Rig-Aware Articulation Test Suite', () => {
 
@@ -317,6 +319,100 @@ describe('Avatar Voice Reliability & Rig-Aware Articulation Test Suite', () => {
         healthUrlFromTts('https://pinit-voice-service.onrender.com/'),
         'https://pinit-voice-service.onrender.com/api/v1/health'
       );
+    });
+  });
+
+  describe('10. Strict Gender-Accurate Neural Voice Mapping & Degraded gTTS Guard', () => {
+    const femaleAvatars = ['priya', 'sneha', 'neha', 'divya', 'aisha', 'maya', 'shalini', 'af_heart', 'af_sarah', 'af_bella', 'af_nicole', 'af_sky', 'bf_emma', 'bf_isabella'];
+    const maleAvatars = ['anish', 'akash', 'rohan', 'vikram', 'aditya', 'rajesh', 'abhijit', 'kashyap', 'karthic', 'am_liam', 'am_fenrir', 'am_adam', 'bm_lewis', 'bm_george'];
+    const femaleOrpheus = new Set(['autumn', 'diana', 'hannah']);
+    const maleOrpheus = new Set(['daniel', 'austin', 'troy']);
+
+    it('should map every female avatar to a female Orpheus voice and every male avatar to a male Orpheus voice', () => {
+      for (const id of femaleAvatars) {
+        assert.strictEqual(isMaleVoiceId(id), false, `Expected ${id} to be female`);
+        assert.strictEqual(isMalePersona(id), false, `Expected persona ${id} to be female`);
+        const orpheus = resolveOrpheusVoice(id);
+        assert.ok(femaleOrpheus.has(orpheus), `Female ${id} mapped to non-female Orpheus voice: ${orpheus}`);
+      }
+      for (const id of maleAvatars) {
+        assert.strictEqual(isMaleVoiceId(id), true, `Expected ${id} to be male`);
+        assert.strictEqual(isMalePersona(id), true, `Expected persona ${id} to be male`);
+        const orpheus = resolveOrpheusVoice(id);
+        assert.ok(maleOrpheus.has(orpheus), `Male ${id} mapped to non-male Orpheus voice: ${orpheus}`);
+      }
+    });
+
+    it('should detect and reject legacy genderless Render gTTS responses while allowing genuine Kokoro WAV', () => {
+      // Legacy Render container returns MPEG-2 0xFF 0xF3 MP3 mislabeled as audio/wav with no X-Voice-Engine header
+      const degradedBytes = new Uint8Array([0xff, 0xf3, 0x44, 0xc4, 0x00, 0x00]).buffer;
+      assert.strictEqual(isDegradedGenderlessGtts(degradedBytes, null, 'audio/wav'), true);
+
+      // Genuine Kokoro v1.0 INT8 RIFF WAV with engine header must pass
+      const riffWav = new Uint8Array([0x52, 0x49, 0x46, 0x46, 0x24, 0x00]).buffer;
+      assert.strictEqual(isDegradedGenderlessGtts(riffWav, 'kokoro-v1.0-int8', 'audio/wav'), false);
+      assert.strictEqual(isDegradedGenderlessGtts(degradedBytes, 'edge-tts', 'audio/mpeg'), false);
+    });
+
+    it('should rank Natural/Neural OS voices ahead of robotic SAPI voices with zero substring gender bugs', () => {
+      const mockVoices = [
+        { name: 'Microsoft David - English (United States)', lang: 'en-US' },
+        { name: 'Microsoft Zira - English (United States)', lang: 'en-US' },
+        { name: 'Microsoft Aria Online (Natural) - English (United States)', lang: 'en-US' },
+        { name: 'Microsoft Liam Online (Natural) - English (Canada)', lang: 'en-CA' },
+        { name: 'Microsoft Guy Online (Natural) - English (United States)', lang: 'en-US' },
+        { name: 'Google UK English Female (American Accent)', lang: 'en-GB' },
+      ];
+
+      const priyaVoice = selectNaturalGenderedVoice(mockVoices, 'priya');
+      assert.strictEqual(priyaVoice?.name, 'Microsoft Aria Online (Natural) - English (United States)');
+
+      const rohanVoice = selectNaturalGenderedVoice(mockVoices, 'rohan');
+      assert.strictEqual(rohanVoice?.name, 'Microsoft Guy Online (Natural) - English (United States)');
+
+      // Edge case: "Canada" contains "ana", must still be chosen for male when it is the only natural male voice
+      const canadaOnly = [
+        { name: 'Microsoft Zira - English (United States)', lang: 'en-US' },
+        { name: 'Microsoft Liam Online (Natural) - English (Canada)', lang: 'en-CA' },
+      ];
+      const akashVoice = selectNaturalGenderedVoice(canadaOnly, 'akash');
+      assert.strictEqual(akashVoice?.name, 'Microsoft Liam Online (Natural) - English (Canada)');
+
+      // Non-English BCP-47 locale support (e.g. JapaneseScriptLessonView passes 'ja-JP')
+      const multiLangVoices = [
+        { name: 'Microsoft Aria Online (Natural) - English (United States)', lang: 'en-US' },
+        { name: 'Microsoft Nanami Online (Natural) - Japanese (Japan)', lang: 'ja-JP' },
+      ];
+      const jpVoice = selectNaturalGenderedVoice(multiLangVoices, 'ja-JP');
+      assert.strictEqual(jpVoice?.name, 'Microsoft Nanami Online (Natural) - Japanese (Japan)');
+    });
+  });
+
+  describe('11. Self-Hosted Render Kokoro v1.0 INT8 Voice Service Invariants', () => {
+    it('should bake Kokoro v1.0 INT8 + voices-v1.0.bin + native libs + dynamic $PORT into Dockerfile', () => {
+      const dockerfile = fs.readFileSync(path.join(__dirname, '..', 'voice-service', 'Dockerfile'), 'utf-8');
+      assert.ok(dockerfile.includes('libsndfile1'), 'Dockerfile must install libsndfile1');
+      assert.ok(dockerfile.includes('espeak-ng'), 'Dockerfile must install espeak-ng');
+      assert.ok(dockerfile.includes('kokoro-v1.0.int8.onnx'), 'Dockerfile must bake quantized kokoro-v1.0.int8.onnx');
+      assert.ok(dockerfile.includes('voices-v1.0.bin'), 'Dockerfile must bake voices-v1.0.bin');
+      assert.ok(dockerfile.includes('${PORT:-3005}'), 'Dockerfile CMD must bind dynamic Render $PORT');
+    });
+
+    it('should configure kokoro_engine.py, settings.py, requirements.txt & audio_router.py for v1.0 INT8 with zero gTTS', () => {
+      const enginePy = fs.readFileSync(path.join(__dirname, '..', 'voice-service', 'core', 'kokoro_engine.py'), 'utf-8');
+      const settingsPy = fs.readFileSync(path.join(__dirname, '..', 'voice-service', 'config', 'settings.py'), 'utf-8');
+      const reqs = fs.readFileSync(path.join(__dirname, '..', 'voice-service', 'requirements.txt'), 'utf-8');
+      const audioRouterPy = fs.readFileSync(path.join(__dirname, '..', 'backend', 'app', 'services', 'audio_router.py'), 'utf-8');
+      assert.ok(enginePy.includes('kokoro-v1.0.int8.onnx'), 'kokoro_engine.py must default to kokoro-v1.0.int8.onnx');
+      assert.ok(enginePy.includes('voices-v1.0.bin'), 'kokoro_engine.py must default to voices-v1.0.bin');
+      assert.ok(enginePy.includes('"akash": "bm_lewis"'), 'kokoro_engine.py must map male persona akash');
+      assert.ok(enginePy.includes('"priya": "af_heart"'), 'kokoro_engine.py must map female persona priya');
+      assert.ok(settingsPy.includes('kokoro-v1.0.int8.onnx'), 'settings.py must default to kokoro-v1.0.int8.onnx');
+      assert.ok(reqs.includes('kokoro-onnx>=0.6.0'), 'requirements.txt must require kokoro-onnx>=0.6.0 for v1.0 INT8');
+      assert.ok(reqs.includes('onnxruntime>=1.20.1'), 'requirements.txt must require onnxruntime>=1.20.1');
+      assert.ok(!/^\s*gTTS\b/mi.test(reqs), 'requirements.txt must not install robotic genderless gTTS');
+      assert.ok(audioRouterPy.includes('"karthic": "am_adam"'), 'audio_router.py must use valid Kokoro voice am_adam for karthic');
+      assert.ok(audioRouterPy.includes('"akash": "bm_lewis"'), 'audio_router.py must include male persona akash');
     });
   });
 });

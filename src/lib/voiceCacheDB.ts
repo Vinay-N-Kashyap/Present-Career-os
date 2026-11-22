@@ -16,8 +16,8 @@ export const DB_NAME    = 'PinIT_VoiceCacheDB';
 const DB_VERSION        = 2; // bumped from 1 because store name changed
 export const STORE_NAME = 'audio_blobs';
 
-/** Must stay in sync with backend hash_service.py payload prefix. */
-const MODEL_VERSION = 'pinit_v2';
+/** Must stay in sync with backend hash_service.py payload prefix. Bumped to v3 to evict legacy genderless gTTS blobs. */
+const MODEL_VERSION = 'pinit_v3';
 
 export interface CachedAudioEntry {
   cacheKey:    string;

@@ -53,6 +53,7 @@ let isServerWarming = false;
 let isServerWarm = false;
 let isCloudDisabled = false;
 let lastWarmAt = 0;
+let proxyDegradedCooldownUntil = 0;
 let activeWakePromise: Promise<boolean> | null = null;
 const inFlightCloudRequests = new Map<string, Promise<{ audioBuffer: ArrayBuffer; durationSec: number; engine?: string; visemes?: VisemeEvent[] }>>();
 
@@ -175,7 +176,42 @@ export async function synthesizeVoice(
     console.log(`[SmartVoiceRouter] Bypassing IndexedDB & Server cache for fresh TTS generation.`);
   }
 
-  // Wake free-tier instance before synthesis (blocks until warm or timeout)
+  // In browser sessions, route through same-origin /api/tts FIRST (unlocks instant Groq Orpheus
+  // with 0ms cold start + Render Kokoro v1.0 INT8 with gender-fidelity guard & zero CORS overhead).
+  // Do NOT block 25s waiting on Render cold-start health ping before trying /api/tts!
+  if (typeof window !== "undefined" && !options.apiEndpoint) {
+    if (!options.bypassCache && Date.now() < proxyDegradedCooldownUntil) {
+      throw new Error('TTS HTTP 503: VOICE_BACKEND_DEGRADED_GTTS (client cooldown)');
+    }
+    try {
+      const proxyResult = await fetchCloudFastAPI("/api/tts", text, voice, speed, options.bypassCache);
+      proxyDegradedCooldownUntil = 0;
+      const latencyMs = Math.round(performance.now() - startTime);
+      if (!options.bypassCache && proxyResult.audioBuffer && proxyResult.audioBuffer.byteLength > 800) {
+        await voiceCacheDB.saveAudio(cacheKey, text, voice, speed, proxyResult.audioBuffer, proxyResult.visemes);
+      }
+      notifyVoiceStatus('neural_ready');
+      return {
+        audioBuffer: proxyResult.audioBuffer,
+        source: "CLOUD_FASTAPI",
+        latencyMs,
+        durationSec: proxyResult.durationSec,
+        cacheKey,
+        engine: proxyResult.engine,
+        visemes: proxyResult.visemes,
+      };
+    } catch (proxyErr) {
+      const errMsg = proxyErr instanceof Error ? proxyErr.message : String(proxyErr);
+      if (/VOICE_BACKEND_DEGRADED_GTTS/i.test(errMsg)) {
+        // Brief 45s client cooldown so demo turns fall back in 0ms while auto-rechecking once Render/Groq activates
+        proxyDegradedCooldownUntil = Date.now() + 45_000;
+      }
+      console.warn('[SmartVoiceRouter] /api/tts neural router unavailable, falling back:', errMsg);
+      throw proxyErr;
+    }
+  }
+
+  // Wake free-tier instance before direct synthesis (non-browser or explicit apiEndpoint)
   if (CURRENT_RENDER_TIER === "free") {
     await pingRenderServer(true);
   } else {
@@ -225,14 +261,18 @@ async function fetchCloudFastAPI(
   }
 
   const cloudPromise = (async () => {
-    const targetUrl = normalizeTtsEndpoint(
-      endpoint && endpoint.startsWith("http")
-        ? endpoint
-        : DEFAULT_CLOUD_ENDPOINT
-    );
+    const isSameOriginProxy = endpoint.startsWith("/");
+    const targetUrl = isSameOriginProxy
+      ? endpoint
+      : normalizeTtsEndpoint(
+          endpoint && endpoint.startsWith("http")
+            ? endpoint
+            : DEFAULT_CLOUD_ENDPOINT
+        );
 
-    const timeoutMs =
-      CURRENT_RENDER_TIER === "free" ? FREE_TIER_TIMEOUT_MS : PREMIUM_TIMEOUT_MS;
+    const timeoutMs = isSameOriginProxy
+      ? 14_000
+      : (CURRENT_RENDER_TIER === "free" ? FREE_TIER_TIMEOUT_MS : PREMIUM_TIMEOUT_MS);
 
     const attempt = async (url: string) => {
       const controller = new AbortController();
@@ -293,7 +333,8 @@ async function fetchCloudFastAPI(
     try {
       return await attempt(targetUrl);
     } catch (primaryErr: any) {
-      if (isCloudDisabled) {
+      // Never retry a same-origin /api/tts 503 (e.g. degraded gTTS rejected) against the broken direct Render URL!
+      if (isSameOriginProxy || isCloudDisabled) {
         throw primaryErr;
       }
       console.warn("[SmartVoiceRouter] Primary TTS attempt failed:", primaryErr?.message || primaryErr, "Retrying with warm ping...");

@@ -22,11 +22,14 @@ async def generate_tts(req: TTSRequest):
         latency_ms = (time.time() - t0) * 1000
 
         import json
+        is_mp3 = wav_bytes.startswith((b'\xff\xfb', b'\xff\xf3', b'\xff\xf2', b'ID3'))
+        actual_engine = "edge-tts" if is_mp3 else ("kokoro-v1.0-int8" if engine.kokoro is not None else "edge-tts")
         headers = {
             "X-Audio-Duration": f"{duration:.2f}",
             "X-Inference-Latency-MS": f"{latency_ms:.1f}",
             "X-Cache-Status": "BYPASS" if req.bypass_cache else "SYNTHESIZED",
-            "X-Voice-Engine": "kokoro-onnx" if engine.kokoro is not None else "edge-tts",
+            "X-Voice-Engine": actual_engine,
+            "X-Engine": actual_engine,
             "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0" if req.bypass_cache else "public, max-age=86400"
         }
         if visemes:
@@ -34,7 +37,7 @@ async def generate_tts(req: TTSRequest):
 
         return Response(
             content=wav_bytes,
-            media_type="audio/mpeg" if wav_bytes.startswith(b'\xff\xfb') or wav_bytes.startswith(b'ID3') else "audio/wav",
+            media_type="audio/mpeg" if is_mp3 else "audio/wav",
             headers=headers
         )
     except Exception as e:

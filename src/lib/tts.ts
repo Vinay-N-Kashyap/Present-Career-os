@@ -163,6 +163,94 @@ export function getCleanCacheKey(text: string): string {
   return `${SANITIZER_VERSION}::${clean}`;
 }
 
+const MALE_PERSONA_IDS = new Set([
+  'anish', 'akash', 'rohan', 'vikram', 'aditya', 'rajesh', 'abhijit', 'kashyap', 'karthic', 'mentor_male',
+]);
+
+export function isMalePersona(teacherId: string): boolean {
+  const id = (teacherId || '').trim().toLowerCase();
+  return MALE_PERSONA_IDS.has(id) || id.startsWith('am_') || id.startsWith('bm_');
+}
+
+/**
+ * Selects the most natural, strictly gender-matched browser SpeechSynthesisVoice.
+ * Ranks Microsoft Online (Natural) / Neural and Google voices ahead of legacy robotic SAPI voices.
+ */
+export function selectNaturalGenderedVoice<T extends { name: string; lang: string }>(
+  voices: T[],
+  teacherId: string
+): T | undefined {
+  if (!Array.isArray(voices) || voices.length === 0) return undefined;
+  const trimmedId = (teacherId || '').trim();
+  const localeMatch = trimmedId.match(/^([a-z]{2})-[a-z]{2}$/i);
+  if (localeMatch && localeMatch[1].toLowerCase() !== 'en') {
+    const targetPrefix = localeMatch[1].toLowerCase();
+    const localeVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith(targetPrefix));
+    if (localeVoices.length > 0) {
+      const natural = localeVoices.find(v => /natural|neural|online|google/i.test(v.name || ''));
+      return natural || localeVoices[0];
+    }
+  }
+  const wantMale = isMalePersona(teacherId);
+  const enVoices = voices.filter(v => (v.lang || '').toLowerCase().startsWith('en'));
+  const pool = enVoices.length > 0 ? enVoices : voices;
+
+  const maleTokens = [
+    'guy', 'ryan', 'prabhat', 'andrew', 'brian', 'steffan', 'christopher', 'eric', 'roger', 'george',
+    'daniel', 'alex', 'thomas', 'mark', 'david', 'ravi', 'james', 'liam', 'uk english male', 'male',
+  ];
+  const femaleTokens = [
+    'aria', 'jenny', 'neerja', 'ava', 'emma', 'sonia', 'libby', 'michelle', 'ana', 'samantha', 'karen',
+    'moira', 'tessa', 'victoria', 'zira', 'heera', 'hazel', 'susan', 'uk english female', 'us english', 'female',
+  ];
+
+  const matchesAny = (lowerName: string, tokens: string[]) =>
+    tokens.some(tok => {
+      const escaped = tok.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const re = new RegExp(`\\b${escaped}\\b`, 'i');
+      if (tok === 'male') return re.test(lowerName) && !/\bfemale\b/i.test(lowerName);
+      return re.test(lowerName);
+    });
+
+  const scoreVoice = (v: T): number => {
+    const n = (v.name || '').toLowerCase();
+    const isNatural = n.includes('natural') || n.includes('neural') || n.includes('online');
+    const isGoogle = n.includes('google');
+    const isLegacyRobotic = n.includes('zira') || n.includes('david') || n.includes('espeak');
+
+    const looksMale = matchesAny(n, maleTokens);
+    const looksFemale = matchesAny(n, femaleTokens);
+
+    let score = 0;
+    if (wantMale) {
+      if (looksMale) score += 100;
+      else if (looksFemale) score -= 120;
+    } else {
+      if (looksFemale) score += 100;
+      else if (looksMale) score -= 120;
+    }
+
+    if (isNatural) score += 50;
+    else if (isGoogle) score += 30;
+    if (isLegacyRobotic) score -= 25;
+    if ((v.lang || '').toLowerCase() === 'en-in' || (v.lang || '').toLowerCase() === 'en-us' || (v.lang || '').toLowerCase() === 'en-gb') {
+      score += 5;
+    }
+    return score;
+  };
+
+  let best = pool[0];
+  let bestScore = scoreVoice(best);
+  for (let i = 1; i < pool.length; i++) {
+    const sc = scoreVoice(pool[i]);
+    if (sc > bestScore) {
+      best = pool[i];
+      bestScore = sc;
+    }
+  }
+  return best;
+}
+
 function fallbackWebSpeech(
   cleanText: string,
   teacherId: string,
@@ -190,11 +278,14 @@ function fallbackWebSpeech(
 
   const utterance = new SpeechSynthesisUtterance(cleanText);
   let maxDurationTimer: any = null;
+  let startWatchdog: any = null;
+  let started = false;
   let ended = false;
 
   const cleanupAndEnd = () => {
     if (ended) return;
     ended = true;
+    if (startWatchdog) clearTimeout(startWatchdog);
     if (maxDurationTimer) clearTimeout(maxDurationTimer);
     // Superseded or stopped: cancel() here would kill the NEWER utterance (Chrome
     // fires this utterance's 'interrupted' error asynchronously), and onEnd would
@@ -205,7 +296,12 @@ function fallbackWebSpeech(
   };
 
   utterance.onstart = () => {
-    if (speechId === currentSpeechId) {
+    if (startWatchdog) {
+      clearTimeout(startWatchdog);
+      startWatchdog = null;
+    }
+    if (!started && speechId === currentSpeechId) {
+      started = true;
       onStart();
       maxDurationTimer = setTimeout(() => {
         cleanupAndEnd();
@@ -222,27 +318,22 @@ function fallbackWebSpeech(
   const speak = () => {
     if (speechId !== currentSpeechId) return;
     const voices = window.speechSynthesis.getVoices();
-    const isFemale = !['anish', 'akash', 'rohan', 'vikram', 'aditya', 'rajesh', 'abhijit', 'kashyap', 'karthic'].includes(teacherId.toLowerCase());
-    
-    let voice = voices.find(v => 
-      v.lang.startsWith('en') && 
-      (isFemale ? v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('zira') || v.name.toLowerCase().includes('samantha') || v.name.toLowerCase().includes('google us') : 
-                 v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('david') || v.name.toLowerCase().includes('google uk'))
-    );
-
-    if (!voice) {
-      voice = voices.find(v => v.lang.startsWith('en'));
-    }
+    const isMale = isMalePersona(teacherId);
+    const voice = selectNaturalGenderedVoice(voices, teacherId);
 
     if (voice) {
       utterance.voice = voice;
     }
+    if (/^[a-z]{2}-[a-z]{2}$/i.test((teacherId || '').trim())) {
+      utterance.lang = teacherId.trim();
+    }
 
-    const vocalPersona = PERSONA_VOCAL_MATRIX[teacherId.toLowerCase()] || { pitch: isFemale ? 1.1 : 0.95, rateMultiplier: 1.15 };
+    const vocalPersona = PERSONA_VOCAL_MATRIX[teacherId.toLowerCase()] || { pitch: isMale ? 0.94 : 1.04, rateMultiplier: 1.02 };
 
-    let targetRate = (difficulty === 'easy' ? 1.05 : difficulty === 'hard' ? 1.35 : 1.18) * speedMultiplier * vocalPersona.rateMultiplier;
-    utterance.rate = targetRate;
-    utterance.pitch = vocalPersona.pitch;
+    // Keep rate & pitch inside natural human range (prevents robotic chipmunk distortion)
+    const rawRate = (difficulty === 'easy' ? 0.98 : difficulty === 'hard' ? 1.08 : 1.02) * speedMultiplier * Math.min(1.06, vocalPersona.rateMultiplier);
+    utterance.rate = Math.max(0.92, Math.min(1.12, rawRate));
+    utterance.pitch = Math.max(0.88, Math.min(1.08, isMale ? Math.min(0.98, vocalPersona.pitch) : Math.max(1.0, vocalPersona.pitch)));
 
     if (speechId === currentSpeechId) {
       try {
@@ -252,6 +343,15 @@ function fallbackWebSpeech(
         if (speechId === currentSpeechId) {
           try { window.speechSynthesis.resume(); } catch {}
           window.speechSynthesis.speak(utterance);
+          // Prevent deadlocks if Chrome SpeechSynthesis drops onstart silently
+          startWatchdog = setTimeout(() => {
+            if (!started && !ended && speechId === currentSpeechId) {
+              started = true;
+              onStart();
+              const estMs = Math.min(maxDurationMs, Math.max(2000, cleanText.length * 65));
+              maxDurationTimer = setTimeout(() => cleanupAndEnd(), estMs);
+            }
+          }, 2500);
         }
       }, 30);
     }
@@ -293,6 +393,11 @@ export async function generateTTSAudio(text: string, teacherId: string, vibe = '
     const buffer = audioBuf.getChannelData(0);
     return { buffer, sampleRate: audioBuf.sampleRate };
   } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    // In browser sessions synthesizeVoice already tried /api/tts; don't double-call a rejected 503
+    if (typeof window !== 'undefined' && /VOICE_BACKEND_DEGRADED_GTTS|TTS HTTP 503/i.test(msg)) {
+      throw err;
+    }
     console.warn('[PinIT TTS] Primary synthesizeVoice failed in generateTTSAudio, attempting /api/tts proxy fallback:', err);
     const response = await fetch('/api/tts', {
       method: 'POST',
@@ -482,15 +587,20 @@ export async function speakWithAvatar(
     safeOnEnd();
   };
 
+  const allowWebSpeech = options?.allowWebSpeechFallback !== false;
+  const isNonEnglishLocale = /^[a-z]{2}-[a-z]{2}$/i.test((teacherId || '').trim()) && !/^en-/i.test((teacherId || '').trim());
+
   // Attempt Smart Hybrid Voice Router with Sentence Streaming for multi-sentence paragraphs
-  if (useNeural) {
+  if (useNeural && !isNonEnglishLocale) {
     const voice = KOKORO_VOICE_MAP[teacherId.toLowerCase()] || 'af_bella';
     const sentences = options?.singleShot ? [spokenText] : splitIntoSentences(spokenText);
 
     if (sentences.length > 1) {
       const startedAt = Date.now();
       let streamSucceeded = false;
-      const streamDeadlineMs = options?.startDeadlineMs ?? (CURRENT_RENDER_TIER === 'free' ? 35_000 : 15_000);
+      let streamStarted = false;
+      let lastStartedSentenceIdx = -1;
+      const streamDeadlineMs = options?.startDeadlineMs ?? (CURRENT_RENDER_TIER === 'free' ? 6_500 : 5_000);
       let streamDeadlineTimer: any = null;
 
       try {
@@ -517,7 +627,11 @@ export async function speakWithAvatar(
                   clearTimeout(streamDeadlineTimer);
                   streamDeadlineTimer = null;
                 }
+                streamStarted = true;
                 onStart();
+              },
+              onSentenceStart: (idx) => {
+                lastStartedSentenceIdx = Math.max(lastStartedSentenceIdx, idx);
               },
               onEnd: () => {
                 if (streamDeadlineTimer) {
@@ -545,20 +659,27 @@ export async function speakWithAvatar(
           streamDeadlineTimer = null;
         }
         console.debug('[PinIT Voice] Streaming audio queue fallback:', streamErr instanceof Error ? streamErr.message : streamErr);
-        if (options?.allowWebSpeechFallback && mySpeechId === currentSpeechId) {
+        if (allowWebSpeech && mySpeechId === currentSpeechId) {
+          // If earlier sentences already played neurally, speak ONLY the remaining unplayed tail (zero duplicate speech!)
+          const remainingText = streamStarted
+            ? sentences.slice(lastStartedSentenceIdx + 1).join(' ').trim()
+            : cleanSpeechText;
+          if (!remainingText) {
+            finishAfterFloor(startedAt);
+            return;
+          }
           fallbackWebSpeech(
-            cleanSpeechText,
+            remainingText,
             teacherId,
-            onStart,
+            streamStarted ? () => {} : onStart,
             () => finishAfterFloor(Date.now()),
-            detectVibe(cleanSpeechText),
+            detectVibe(remainingText),
             mySpeechId,
             difficulty,
             speedMultiplier,
             dynamicMaxDurationMs
           );
         } else {
-          // Protected humanoid identity: never blurt out surprise robotic voices
           if (mySpeechId === currentSpeechId) {
             safeOnEnd();
           }
@@ -569,14 +690,14 @@ export async function speakWithAvatar(
 
     let handedToWebSpeech = false;
     let startDeadlineTimer: ReturnType<typeof setTimeout> | null = null;
-    const startDeadlineMs = options?.startDeadlineMs ?? (CURRENT_RENDER_TIER === 'free' ? 35_000 : 15_000);
+    const startDeadlineMs = options?.startDeadlineMs ?? (CURRENT_RENDER_TIER === 'free' ? 6_500 : 5_000);
     if (startDeadlineMs > 0) {
       startDeadlineTimer = setTimeout(() => {
         startDeadlineTimer = null;
         if (mySpeechId !== currentSpeechId) return;
-        if (options?.allowWebSpeechFallback) {
+        if (allowWebSpeech) {
           handedToWebSpeech = true;
-          console.debug(`[PinIT Voice] Neural audio not ready after ${startDeadlineMs}ms, speaking with WebSpeech fallback.`);
+          console.debug(`[PinIT Voice] Neural audio not ready after ${startDeadlineMs}ms, speaking with gendered natural fallback.`);
           fallbackWebSpeech(
             cleanSpeechText,
             teacherId,
@@ -589,7 +710,7 @@ export async function speakWithAvatar(
             dynamicMaxDurationMs
           );
         } else {
-          console.debug(`[PinIT Voice] Neural audio not ready after ${startDeadlineMs}ms. Maintaining avatar persona.`);
+          console.debug(`[PinIT Voice] Neural audio not ready after ${startDeadlineMs}ms. Maintaining silent mode.`);
         }
       }, startDeadlineMs);
     }
@@ -654,9 +775,9 @@ export async function speakWithAvatar(
     } catch (err) {
       if (handedToWebSpeech) return;
       clearStartDeadline();
-      console.warn('[PinIT Voice] Neural TTS unavailable, executing instant WebSpeech fallback:', err);
+      console.warn('[PinIT Voice] Neural TTS unavailable, executing gendered natural fallback:', err);
       if (mySpeechId === currentSpeechId) {
-        if (options?.allowWebSpeechFallback) {
+        if (allowWebSpeech) {
           fallbackWebSpeech(
             cleanSpeechText,
             teacherId,
@@ -669,7 +790,6 @@ export async function speakWithAvatar(
             dynamicMaxDurationMs
           );
         } else {
-          // Protected humanoid persona: never blurt out surprise robotic voices
           safeOnEnd();
         }
       }
@@ -677,9 +797,9 @@ export async function speakWithAvatar(
     }
   }
 
-  // Fallback to WebSpeech if neural synthesis was bypassed or disabled
+  // Fallback to gendered WebSpeech if neural synthesis was bypassed or disabled
   if (mySpeechId === currentSpeechId) {
-    if (options?.allowWebSpeechFallback) {
+    if (allowWebSpeech) {
       fallbackWebSpeech(
       cleanSpeechText,
       teacherId,

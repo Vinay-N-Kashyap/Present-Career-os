@@ -250,10 +250,12 @@ export class SentenceAudioQueuePlayer {
         decodedBuffers[index] = audioBuf;
         chunkVisemes[index] = res.visemes;
       } catch (err: any) {
+        const msg = String(err?.message || '');
+        const isNonRetryable = /VOICE_BACKEND_DEGRADED_GTTS|TTS HTTP 503|TTS HTTP 400|TTS HTTP 401/i.test(msg);
         if (!this.isCancelled) {
-          console.warn(`[SentenceAudioQueuePlayer] Error fetching chunk #${index} (attempt ${attempt + 1}/${MAX_CHUNK_RETRIES + 1}):`, err?.message);
+          console.warn(`[SentenceAudioQueuePlayer] Error fetching chunk #${index} (attempt ${attempt + 1}/${MAX_CHUNK_RETRIES + 1}):`, msg);
         }
-        if (attempt < MAX_CHUNK_RETRIES && !this.isCancelled && playId === this.currentPlayId) {
+        if (!isNonRetryable && attempt < MAX_CHUNK_RETRIES && !this.isCancelled && playId === this.currentPlayId) {
           await new Promise(r => setTimeout(r, 200 * Math.pow(2, attempt)));
           return fetchChunk(index, attempt + 1);
         }

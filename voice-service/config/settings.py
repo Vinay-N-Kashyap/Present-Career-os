@@ -12,9 +12,9 @@ class Settings(BaseSettings):
     
     # Model & Audio Settings
     MODEL_DIR: str = os.path.join(os.path.dirname(os.path.dirname(__file__)), "models")
-    DEFAULT_MODEL_NAME: str = "kokoro-v0_19.onnx"
+    DEFAULT_MODEL_NAME: str = "kokoro-v1.0.int8.onnx"
     SAMPLE_RATE: int = 24000
-    DEFAULT_VOICE: str = "af_bella"
+    DEFAULT_VOICE: str = "af_heart"
     DEFAULT_SPEED: float = 1.0
     
     # Storage & Cache Settings
