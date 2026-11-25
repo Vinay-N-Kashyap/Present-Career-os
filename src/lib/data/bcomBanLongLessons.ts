@@ -629,8 +629,8 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a commercial bank holds fixed-rate commercial loans funded by short-term floating-rate wholesale deposits, which derivative position should treasury ALM execute to hedge against rising interest rates?",
           "options": [
-            "Sell out-of-the-money equity put options on bank stock.",
-            "Buy physical gold futures contracts on COMEX.",
+            "Sell an Interest Rate Floor on the loan book.",
+            "Buy a Cross-Currency Basis Swap on deposits.",
             "Pay-Floating, Receive-Fixed Interest Rate Swap.",
             "Pay-Fixed, Receive-Floating Interest Rate Swap."
           ],
@@ -2153,9 +2153,9 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under modern bank regulatory frameworks (such as the CFPB's original Qualified Mortgage rule under Dodd-Frank), what is the maximum permissible Back-End Debt-to-Income (DTI) ratio for a prime qualified residential mortgage?",
           "options": [
-            "15.0% of gross monthly income.",
-            "100.0% of gross monthly income.",
-            "75.0% of gross monthly income.",
+            "36.0% of gross monthly income.",
+            "28.0% of gross monthly income.",
+            "50.0% of gross monthly income.",
             "43.0% of gross monthly income."
           ],
           "answer": 3,
@@ -3359,9 +3359,9 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Delaware corporate law, what is the typical percentage range for a Target Breakup Fee that courts consider reasonable and non-coercive to shareholders?",
           "options": [
-            "15.0% to 25.0% of transaction equity value.",
-            "50.0% of the target company's total annual sales.",
-            "Zero; breakup fees are strictly illegal in all circumstances.",
+            "8.0% to 10.0% of transaction equity value.",
+            "5.0% to 7.0% of transaction equity value.",
+            "0.5% to 1.0% of transaction equity value.",
             "2.0% to 4.0% of transaction equity value."
           ],
           "answer": 3,
@@ -3408,10 +3408,10 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What historic Delaware corporate law precedent established that corporate directors can be held personally liable for gross negligence if they approve an M&A merger without conducting informed financial due diligence such as a Fairness Opinion?",
           "options": [
-            "Miranda v. Arizona (1966).",
-            "Brown v. Board of Education (1954).",
+            "Revlon, Inc. v. MacAndrews & Forbes Holdings (1986).",
+            "Unocal Corp. v. Mesa Petroleum Co. (1985).",
             "Smith v. Van Gorkom (1985).",
-            "Marbury v. Madison (1803)."
+            "Weinberger v. UOP, Inc. (1983)."
           ],
           "answer": 2,
           "why": "Smith v. Van Gorkom held the Trans Union board personally liable for hastily approving an LBO without an independent valuation, cementing the necessity of Fairness Opinions.",
@@ -5570,9 +5570,9 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "How does the Partnership for Carbon Accounting Financials (PCAF) calculate a bank's attribution factor for corporate loans?",
           "options": [
             "By dividing the outstanding loan balance by the borrower's Enterprise Value Including Cash (EVIC).",
-            "By counting the total number of trees planted on the borrower's corporate headquarters lawn.",
-            "By measuring the physical weight of paper loan contracts in kilograms.",
-            "By dividing the bank's stock price by the borrower's annual sales revenue."
+            "By dividing the outstanding loan balance by the borrower's total annual revenue.",
+            "By dividing the outstanding loan balance by the borrower's total book value of assets.",
+            "By dividing the borrower's Enterprise Value Including Cash by the outstanding loan balance."
           ],
           "answer": 0,
           "why": "PCAF defines the corporate loan attribution factor as Outstanding Loan Balance divided by Enterprise Value Including Cash (EVIC), reflecting the bank's proportional capital share."
@@ -10041,9 +10041,9 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Foreign Exchange Management (Overseas Investment) Rules 2022, what is the statutory ceiling for Total Financial Commitment by an eligible Indian Entity in an overseas joint venture or wholly owned subsidiary under the Automatic Route?",
           "options": [
             "Up to 400 percent of the Indian Entity's audited Net Worth as per the last audited balance sheet.",
-            "Up to 100 percent of the Indian Entity's paid-up share capital only.",
-            "A fixed statutory ceiling of USD 50,000,000 per financial year regardless of net worth.",
-            "Up to 200 percent of the Indian Entity's annual EBITDA over the preceding three fiscal years."
+            "Up to 200 percent of the Indian Entity's audited Net Worth as per the last audited balance sheet.",
+            "Up to 100 percent of the Indian Entity's audited Net Worth as per the last audited balance sheet.",
+            "Up to 400 percent of the Indian Entity's annual turnover as per the last audited statement."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10067,9 +10067,9 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the standard statutory all-in-cost ceiling spread permitted by the Reserve Bank of India for Foreign Currency denominated External Commercial Borrowings (ECBs) over the benchmark Alternative Reference Rate (e.g., SOFR)?",
           "options": [
-            "1,000 basis points (10.00 percent) per annum fixed spread regardless of currency.",
-            "300 basis points (3.00 percent) per annum over the domestic repo rate.",
-            "250 basis points (2.50 percent) per annum over US Treasury yields.",
+            "300 basis points (3.00 percent) per annum over the prevailing benchmark ARR.",
+            "400 basis points (4.00 percent) per annum over the prevailing benchmark ARR.",
+            "600 basis points (6.00 percent) per annum over the prevailing benchmark ARR.",
             "500 basis points (5.00 percent) per annum over the prevailing benchmark ARR."
           ],
           "answer": 3,
@@ -10372,10 +10372,10 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the classical Altman Z-Score model for manufacturing corporations, what are the exact boundary thresholds defining the 'Grey Zone' where financial health is questionable?",
           "options": [
-            "A Z-Score between negative 1.50 and positive 0.50.",
-            "A Z-Score between 0.00 and 1.00.",
+            "A Z-Score between 0.50 and 1.80.",
+            "A Z-Score between 3.00 and 4.50.",
             "A Z-Score between 1.81 and 2.99.",
-            "A Z-Score between 5.00 and 7.50."
+            "A Z-Score between 1.20 and 2.40."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10737,9 +10737,9 @@ export const BCOM_BAN_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the permanent aggregate Output Floor percentage established under Basel IV for banks utilizing internal models, relative to the revised Standardized Approach?",
           "options": [
-            "100.0 percent of total derivative notional volumes.",
-            "25.0 percent of annual gross interest revenue.",
-            "50.0 percent of total on-balance sheet liabilities.",
+            "60.0 percent of total standardized risk-weighted assets.",
+            "80.0 percent of total standardized risk-weighted assets.",
+            "50.0 percent of total standardized risk-weighted assets.",
             "72.5 percent of total standardized risk-weighted assets."
           ],
           "answer": 3,

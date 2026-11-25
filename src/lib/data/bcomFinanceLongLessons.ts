@@ -155,8 +155,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical equation for Terminal Value under the Gordon Growth Model in enterprise DCF valuation?",
           "options": [
-            "Terminal Value = Revenue * 10",
-            "Terminal Value = Total Assets minus Depreciation",
+            "Terminal Value = Final FCFF / (WACC + g)",
+            "Terminal Value = (Final FCFF * (1 + WACC)) / (WACC - g)",
             "Terminal Value = Final FCFF * (WACC - g) / (1 + g)",
             "Terminal Value = (Final FCFF * (1 + g)) / (WACC - g)"
           ],
@@ -744,9 +744,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is positive convexity considered an exceptionally desirable mathematical property for corporate treasury bond holdings?",
           "options": [
-            "Convexity eliminates the payment of federal capital gains taxes upon maturity redemption.",
-            "Convexity converts fixed-rate coupon payments into floating-rate SOFR distributions automatically.",
-            "Convexity guarantees that the bond issuer will never default under any macroeconomic credit event.",
+            "Convexity makes bond prices move by the same amount whether rates rise or fall equally.",
+            "Convexity ensures a bond's price rises more when rates rise than when rates fall.",
+            "Convexity measures how long the investor must wait before receiving the full principal back.",
             "Convexity accelerates price gains when rates fall while cushioning price losses when rates rise."
           ],
           "answer": 3,
@@ -794,10 +794,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Pure Expectations Hypothesis of the term structure, what do forward interest rates imply about future spot rates?",
           "options": [
-            "Forward rates are fixed policy benchmarks determined directly by the Bank for International Settlements.",
-            "Forward rates reflect the mandatory underwriting commission charged by primary dealer investment banks.",
+            "Forward rates represent the extra premium investors demand for holding longer maturity bonds over short ones.",
+            "Forward rates reflect today's spot rate on the shortest maturity extended unchanged into every future period.",
             "Forward rates represent the financial market's unbiased consensus expectation of future short-term spot interest rates.",
-            "Forward rates indicate the maximum statutory rate of inflation permitted by international monetary treaties."
+            "Forward rates are determined only by separate supply and demand within each maturity segment of the bond market."
           ],
           "answer": 2,
           "why": "The Pure Expectations Hypothesis posits that forward rates equal the market's expected future spot rates, ensuring that multi-year investments yield the same expected return as rolling 1-year instruments.",
@@ -843,10 +843,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "If a corporate borrower's CDS spread widens while its recovery rate expectation remains constant at 40%, what does this mathematically prove about market expectations?",
           "options": [
-            "The company has issued additional equity shares that diluted existing stockholders.",
+            "The market-implied probability of default has fallen while the recovery rate remains at 40 percent.",
             "The market-implied hazard rate and cumulative probability of bankruptcy default have both increased.",
-            "The Federal Reserve has cut interest rates to stimulate the broader national economy.",
-            "The corporate debt has been reclassified from subordinated mezzanine notes into senior secured term loans."
+            "The market-implied recovery rate has risen sharply while the default probability remained unchanged.",
+            "The company's risk-free benchmark rate has risen while its credit risk premium has stayed unchanged."
           ],
           "answer": 1,
           "why": "The hazard rate is directly proportional to the CDS spread divided by loss given default; widening spreads directly translate into higher implied default probabilities.",
@@ -1244,7 +1244,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the fundamental bond pricing equation P = sum[C/(1+y)^t] + M/(1+y)^n, what does the first term represent?",
           "options": [
             "The future accumulated terminal value of reinvested interest payments",
-            "The total credit default insurance premium paid to rating agencies",
+            "The accrued interest owed to the seller between the last coupon date and the settlement date",
             "The present value of an ordinary annuity composed of periodic coupon cash flows",
             "The clean market price after subtracting statutory accrued interest"
           ],
@@ -1337,9 +1337,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the Dirty Price (Invoice Price) paid by an institutional buyer when settling a secondary market bond trade?",
           "options": [
             "The quoted Clean Price plus Accrued Interest earned by the seller up to settlement",
-            "The Clean Price minus underwriting fees and custody insurance surcharges",
-            "The face value discounted by the statutory tax withholding rate",
-            "The Clean Price multiplied by the corporate debt-to-equity ratio"
+            "The quoted Clean Price minus the Accrued Interest earned by the seller up to settlement",
+            "The quoted Clean Price plus the next full coupon payment due after the settlement date",
+            "The face value plus the Accrued Interest earned by the seller up to settlement"
           ],
           "answer": 0,
           "why": "The Dirty Price or actual settlement invoice price equals the quoted Clean Price plus Accrued Interest earned by the seller during their holding period.",
@@ -1382,8 +1382,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary investment risk is completely eliminated by holding a zero-coupon bond to maturity compared to a coupon-paying bond?",
           "options": [
-            "Purchasing Power Inflation Risk, because face values automatically double with CPI",
-            "Foreign Currency Exchange Risk, because all zero-coupon debt is denominated in SDRs",
+            "Default Risk, because zero-coupon bonds are always backed by the central government treasury",
+            "Inflation Risk, because the fixed redemption value is protected against rising consumer prices",
             "Price Volatility Risk, because zero-coupon bond prices never change prior to maturity",
             "Reinvestment Risk, because there are no intermediate coupon cash flows to reinvest"
           ],
@@ -1597,9 +1597,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the standard market YTM approximation formula deviate slightly from the exact numerical YTM solver, particularly for deep-discount bonds?",
           "options": [
-            "Market dealers deliberately inflate approximation formulas to collect bid-ask spreads",
-            "The approximation formula assumes coupons are paid in gold bullion rather than fiat currency",
-            "The numerical solver includes statutory capital gains tax withholdings",
+            "The approximation formula ignores coupon payments and uses only the face value and the price",
+            "The approximation formula discounts every cash flow at the coupon rate instead of the market yield",
+            "The approximation formula assumes the bond is held for exactly one year regardless of maturity",
             "Straight-line capital gain amortization ignores the compounding time value of money"
           ],
           "answer": 3,
@@ -1691,10 +1691,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What macroeconomic signal is historically indicated when the 10-Year minus 2-Year Treasury yield spread becomes negative (an inverted yield curve)?",
           "options": [
-            "An immediate statutory ban on corporate dividend payments",
+            "A confirmed indicator that inflation will accelerate over the next decade",
             "A leading indicator of an impending macroeconomic recession",
-            "A mandatory 50% increase in corporate income tax rates",
-            "A guaranteed surge in consumer durable goods spending and hypergrowth"
+            "A signal that long-term corporate borrowing costs are about to fall below government yields",
+            "A reliable indicator of an imminent expansion in business investment and credit growth"
           ],
           "answer": 1,
           "why": "An inverted yield curve, where short-term interest rates exceed long-term yields, has historically been one of the most reliable leading predictors of an upcoming economic recession.",
@@ -1858,10 +1858,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is positive bond convexity considered highly desirable by institutional bond portfolio managers?",
           "options": [
-            "It eliminates all counterparty credit default risk permanently",
-            "It guarantees that corporate debt can never be downgraded below investment grade",
+            "It makes bond prices fall more sharply when yields rise than they gain when yields fall",
+            "It measures the weighted average time until a bond's cash flows are received",
             "It accelerates price gains when yields fall and dampens price declines when yields rise",
-            "It exempts bond coupon distributions from corporate income tax under Section 10"
+            "It fixes a bond's price so that it does not change when market yields move"
           ],
           "answer": 2,
           "why": "Because the convexity adjustment term (1/2)*C*(Delta y)^2 is always positive, convexity acts as an asymmetric cushion: amplifying upside capital gains when rates fall and mitigating capital losses when rates rise.",
@@ -1951,9 +1951,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary condition required to immunize a bond portfolio against interest rate risk for a specific liability horizon?",
           "options": [
             "Setting portfolio Macaulay Duration equal to the investment liability horizon",
-            "Investing 100% of all assets exclusively in overnight Treasury repurchase agreements",
-            "Purchasing credit default swaps on every commercial bank counterparty",
-            "Ensuring that coupon rates on all held bonds exceed 15% annually"
+            "Setting portfolio Modified Duration equal to zero regardless of the liability horizon",
+            "Holding only bonds whose maturity is longer than the liability horizon by at least five years",
+            "Concentrating the portfolio in the highest-yielding bonds available at every maturity"
           ],
           "answer": 0,
           "why": "Classical duration immunization requires setting the Macaulay Duration of the asset portfolio equal to the target investment liability horizon, balancing price risk and reinvestment risk.",
@@ -2025,8 +2025,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "An enterprise capital expenditure project requires an initial outlay of $100,000 and generates cash inflows of $40,000, $50,000, and $60,000 over 3 years at a 10% cost of capital. What is its NPV and decision?",
           "options": [
             "NPV = -$15,200.00; Reject the project because it destroys capital",
-            "NPV = +$50,000.00; Undetermined until depreciation tax shields are added",
-            "NPV = $0.00; Break-even project requiring board deadlock arbitration",
+            "NPV = +$50,000.00; Accept the project because total undiscounted inflows exceed the outlay",
+            "NPV = $0.00; Indifferent, because the inflows equal the outlay once discounted",
             "NPV = +$22,764.84; Accept the project as it maximizes shareholder wealth"
           ],
           "answer": 3,
@@ -2075,9 +2075,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why must non-cash depreciation expense be added back to NOPAT when calculating Free Cash Flow to Firm (FCFF) for capital budgeting?",
           "options": [
             "Depreciation is an accounting allocation of historical cost, not a current cash outflow",
-            "Depreciation is legally required to be converted into physical gold reserves",
-            "Depreciation violates corporate charter rules if reported on cash ledgers",
-            "The Internal Revenue Service refunds all recorded depreciation expenses in cash"
+            "Depreciation is a cash payment to lenders that must be reversed in the working capital schedule",
+            "Depreciation is a financing cost that has already been captured in the cost of capital",
+            "Depreciation is an operating cash outflow that the NOPAT figure has not yet deducted"
           ],
           "answer": 0,
           "why": "Depreciation represents a non-cash expense subtracted on accrual income statements; adding it back recovers the actual cash generated by operations while preserving its tax shield benefit.",
@@ -2121,10 +2121,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What fundamental property of Net Present Value guarantees that evaluating a multi-project capital expenditure budget yields the exact same total wealth addition as evaluating each project independently?",
           "options": [
-            "The Modigliani-Miller Proposition III dividend irrelevance theorem",
+            "The Capital Rationing Principle: NPV(A + B) = NPV(A) x NPV(B)",
             "The Value Additivity Principle: NPV(A + B) = NPV(A) + NPV(B)",
-            "The Continuous Compounding Annuity Due identity",
-            "The Law of One Price for sovereign credit default swaps"
+            "The Profitability Index Principle: PI(A + B) = PI(A) + PI(B)",
+            "The IRR Additivity Principle: IRR(A + B) = IRR(A) + IRR(B)"
           ],
           "answer": 1,
           "why": "Because NPV is calculated using linear discounting summation, it possesses the Value Additivity property: the NPV of a portfolio of projects equals the exact sum of the individual project NPVs.",
@@ -2288,7 +2288,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "An investment project requires an initial outlay of $10,000 and generates cash inflows of $6,000 in Year 1 and $6,000 in Year 2. Against a 10% hurdle rate, what is its solved IRR and decision?",
           "options": [
             "IRR is 8.50%; Reject the project because it fails the cost of capital test",
-            "IRR is undefined because cash flows are identical in both years",
+            "IRR is 12.00%; Accept the project because total inflows exceed the outlay",
             "IRR is 20.00%; Reject the project because payback period is too long",
             "IRR is about 13.07%; Accept, since IRR exceeds the 10% hurdle"
           ],
@@ -2338,9 +2338,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What does the horizontal x-intercept on a Net Present Value Profile graph represent?",
           "options": [
             "The Internal Rate of Return (IRR), where the project's NPV is exactly zero",
-            "The firm's marginal corporate income tax withholding bracket",
-            "The date on which the original capital outlay was disbursed",
-            "The maximum dividend yield payable to common equity shareholders"
+            "The payback period, where cumulative undiscounted cash flow is exactly zero",
+            "The firm's weighted average cost of capital, where project NPV is at its maximum",
+            "The undiscounted sum of all cash flows, where the discount rate is exactly zero"
           ],
           "answer": 0,
           "why": "The horizontal x-intercept of an NPV profile curve is the discount rate that drives Net Present Value to exactly zero, which is by definition the project's Internal Rate of Return (IRR).",
@@ -2431,10 +2431,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under capital rationing with a fixed budget ceiling, why is the Profitability Index (PI) superior to absolute NPV for initial project ranking?",
           "options": [
-            "It guarantees that capital expenditures are fully tax-deductible in Year 1",
-            "It converts debt obligations into non-voting preferred equity",
+            "It measures the total absolute dollar wealth created by each project regardless of its size",
+            "It measures the time taken to recover the initial outlay from undiscounted cash flows",
             "It measures present value generated per dollar of scarce capital invested",
-            "It eliminates all need to calculate cash flows or discount rates"
+            "It measures the annual percentage return that makes each project's NPV exactly zero"
           ],
           "answer": 2,
           "why": "Profitability Index (PV of Inflows / Outlay) measures the efficiency or value density per dollar of capital committed, ensuring the firm allocates scarce capital to the highest-yielding opportunities.",
@@ -4498,7 +4498,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Conservative Financing Policy (Prioritizes liquidity buffers and long-term funding over interest cost minimization)",
             "Aggressive Financing Policy (Utilizes short-term commercial debt to finance permanent operating assets)",
             "Hedging / Maturity Matching Policy (Matches debt maturity strictly with asset holding horizons)",
-            "Zero Working Capital Policy (Eliminates all current assets through just-in-time logistics)"
+            "Restrictive Financing Policy (Holds minimal current assets and finances them with trade credit alone)"
           ],
           "answer": 0,
           "why": "The Conservative Financing Policy relies heavily on long-term debt and equity to finance all fixed assets, all permanent current assets, and a portion of temporary current assets. This cushions against refinancing shocks but incurs higher interest costs.",
@@ -5773,9 +5773,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the DCF sensitivity matrix, what happens to intrinsic share price when WACC drops from 10.0% to 9.0% at a constant 2.5% perpetual terminal growth rate?",
           "options": [
-            "Intrinsic share price remains unchanged because terminal value is independent of discount rates",
+            "Intrinsic share price rises only marginally from $19.92 to $20.15 per share (+1.2% expansion)",
             "Intrinsic share price falls from $19.92 to $16.89 per share",
-            "Intrinsic share price declines because lower WACC reduces the cost of capital shield",
+            "Intrinsic share price expands from $19.92 to $21.05 per share (+5.7% expansion)",
             "Intrinsic share price expands from $19.92 to $23.66 per share (+18.8% expansion)"
           ],
           "answer": 3,
@@ -5897,7 +5897,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which of the following risks can be eliminated or substantially minimized through broad cross-industry portfolio diversification?",
           "options": [
             "Geopolitical sovereign default risk that triggers simultaneous liquidations across all domestic asset classes",
-            "Unsystematic idiosyncratic risk arising from firm-specific operational events such as localized factory strikes or management departures",
+            "Unsystematic risk arising from firm-specific events such as localized factory strikes or management departures",
             "Systematic market risk arising from central bank interest rate hikes and nationwide economic recessions",
             "Purchasing power risk caused by systemic double-digit currency inflation across the domestic macroeconomy"
           ],
@@ -6033,9 +6033,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Markowitz mean-variance criterion, why is a portfolio located on the lower branch of the opportunity set (below the MVP) deemed 'inefficient'?",
           "options": [
             "There exists another portfolio on the upper branch that offers a strictly higher expected return for the exact same or lower level of risk",
-            "The portfolio violates legal securities regulations by holding negative cash weights in sovereign government bonds",
+            "The portfolio carries a higher standard deviation than every individual asset it contains, for any given return",
             "The portfolio generates an arithmetic expected return that is mathematically lower than the risk-free rate of return",
-            "The correlation coefficient between the constituent assets collapses to zero along the lower branch"
+            "The portfolio's weights sum to more than 100 percent, so it cannot be held without borrowing at the risk-free rate"
           ],
           "answer": 0,
           "why": "A portfolio is inefficient if it is dominated under mean-variance rules—meaning another portfolio exists that achieves higher expected return with the same or lower risk. The entire segment below the MVP is dominated by points on the upper efficient branch.",
@@ -6207,8 +6207,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the CAPM Security Market Line, what represents the slope of the line?",
           "options": [
             "The risk-free rate of return Rf",
-            "The individual asset's standard deviation sigma_i",
-            "The ratio of systematic risk to unsystematic risk",
+            "The asset's beta coefficient relative to the market portfolio",
+            "The market's total expected return E(Rm) before deducting the risk-free rate",
             "The market risk premium [E(Rm) - Rf]"
           ],
           "answer": 3,
@@ -7242,7 +7242,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Transaction Exposure, because it involves a committed, contractual future cash flow denominated in a foreign currency",
             "Translation Exposure, because it involves translating annual financial statements for foreign regulatory filings",
             "Economic Exposure, because the exchange rate will permanently alter domestic consumer demand curves",
-            "Credit Default Exposure, because foreign exchange fluctuations automatically trigger corporate bankruptcy"
+            "Sovereign Exposure, because it arises when a foreign government changes its credit rating on external debt"
           ],
           "answer": 0,
           "why": "Committed, open contractual transactions (such as foreign-currency trade receivables or payables awaiting settlement) represent Transaction Exposure because exchange rate swings directly alter the actual domestic cash collected upon settlement.",
@@ -7379,7 +7379,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Purchase a 1-year foreign currency call option on an organized derivative exchange",
             "Borrow the present value of the foreign receivable from a foreign money market bank today",
             "Wait until maturity date and sell the receivable at the future spot price",
-            "Invest additional domestic cash in a foreign equity index mutual fund"
+            "Sell the foreign currency receivable forward at today's agreed 1-year forward rate"
           ],
           "answer": 1,
           "why": "To hedge a foreign receivable via MMH, the firm borrows the present value of the receivable in the foreign currency today, converts to domestic currency at the spot rate, and uses the customer's payment at maturity to extinguish the foreign loan.",
@@ -7545,9 +7545,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What behavioral finance phenomenon describes an investor who hastily sells a stock that gained 10% to lock in a gain, but refuses to sell a stock down 30% because they hope it will recover to their purchase price?",
           "options": [
             "The Disposition Effect, driven by loss aversion and reference-dependent utility",
-            "The Law of One Price, driven by perfect market arbitrage",
-            "Semi-strong market efficiency, reflecting immediate fundamental price adjustments",
-            "Covered Interest Rate Parity, driven by sovereign bond yield differentials"
+            "Overconfidence Bias, driven by overestimating the accuracy of one's own forecasts",
+            "Herd Behaviour, driven by copying the trades of other market participants",
+            "Recency Bias, driven by extrapolating the latest quarter's returns into the future"
           ],
           "answer": 0,
           "why": "The Disposition Effect is the documented behavioral bias where investors realize gains prematurely (seeking certainty in gains) while holding losing positions excessively long (risk-seeking in losses to avoid admitting an actualized loss).",
@@ -7927,7 +7927,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Sharpe Ratio = 0.7563 and Jensen's Alpha = +3.06% (+306 bps of genuine managerial skill)",
             "Sharpe Ratio = 0.3810 and Jensen's Alpha = 0.00% (tracking the market passively)",
             "Sharpe Ratio = 1.5000 and Jensen's Alpha = -2.00% (underperforming the benchmark)",
-            "Sharpe Ratio = 0.5000 and Jensen's Alpha = +10.00% (unrealistic extrapolation)"
+            "Sharpe Ratio = 0.9100 and Jensen's Alpha = +1.06% (modest outperformance of the benchmark)"
           ],
           "answer": 0,
           "why": "Sharpe Ratio = (10.20% - 4.50%) / 7.54% = 0.7563. Beta = 0.92 x 7.54% / 10.5% = 0.6603, so CAPM required return = 4.5% + 0.6603 x 4.0% = 7.14%. Jensen's Alpha = 10.20% - 7.14% = +3.06% (+306 bps).",
@@ -8036,10 +8036,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the mid-year convention apply discounting exponents of 0.5, 1.5, 2.5 rather than full integer years?",
           "options": [
-            "Tax authorities mandate discounting at the exact end of every second calendar quarter",
-            "Mid-year discounting reduces enterprise value to create an artificial margin of safety",
+            "Debt is assumed to be repaid halfway through each forecast year, which lowers the interest expense in the model",
+            "Discounting at half-year exponents lowers the WACC applied to each cash flow by exactly half",
             "Cash flows occur continuously throughout the operating year rather than in a lump sum on December 31",
-            "Working capital adjustments cancel out the second half of annual operating cash flows"
+            "Revenue is recognised only in the second half of each year after customer contracts are renewed"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8155,10 +8155,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What status token confirms successful execution of the Day 31 Advanced DCF Valuation Engine?",
           "options": [
-            "VALUATION_MULTIPLE_OUT_OF_BOUNDS",
-            "DISCOUNT_RATE_CONVERGENCE_ERROR",
+            "ADVANCED_DCF_VALUATION_ENGINE_PASS",
+            "DCF_ADVANCED_VALUATION_ENGINE_OK",
             "DCF_ADVANCED_VALUATION_ENGINE_PASS",
-            "DCF_VALUATION_HALT_REJECTED"
+            "DCF_VALUATION_ENGINE_ADVANCED_PASSED"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8334,9 +8334,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What confirmation token verifies the complete execution of the Day 32 LBO Tranche Waterfall engine?",
           "options": [
-            "LBO_DEBT_COVENANT_BREACH",
-            "SPONSOR_RETURN_BELOW_HURDLE",
-            "WATERFALL_INSOLVENCY_EXCEPTION",
+            "LBO_WATERFALL_TRANCHE_PASS",
+            "LBO_TRANCHE_WATERFALL_OK",
+            "LBO_DEBT_WATERFALL_PASS",
             "LBO_TRANCHE_WATERFALL_PASS"
           ],
           "answer": 3,
@@ -8394,8 +8394,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why does writing up identifiable assets in a taxable stock acquisition create a Deferred Tax Liability (DTL)?",
           "options": [
             "Book depreciation exceeds tax-deductible depreciation, creating a future accounting tax obligation",
-            "The acquiring firm is required to prepay all corporate taxes five years in advance",
-            "Tax authorities levy immediate penalty excise taxes on asset appraisal revaluations",
+            "The target's net operating losses are written up and must be repaid to the tax authority over time",
+            "Writing up assets raises the acquirer's taxable income immediately, payable in the year of closing",
             "Goodwill must be matched dollar-for-dollar with a corresponding tax liability"
           ],
           "answer": 0,
@@ -8454,9 +8454,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the after-tax cost of deploying corporate cash reserves to fund an acquisition?",
           "options": [
             "Zero, because cash reserves carry no interest expense on the income statement",
-            "Acquirer Weighted Average Cost of Capital * Prime Lending Rate",
+            "Acquirer Cost of Equity * (1 - Corporate Marginal Tax Rate)",
             "Foregone Cash Interest Rate * (1 - Corporate Marginal Tax Rate)",
-            "Target Company Dividend Yield / Acquirer Stock Price"
+            "Foregone Cash Interest Rate / (1 - Corporate Marginal Tax Rate)"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8484,10 +8484,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are break-even synergies in an M&A accretion/dilution financial model?",
           "options": [
-            "The total integration expenses incurred to decommission redundant server infrastructure",
+            "The maximum synergies the acquirer can expect once integration is fully completed",
             "The minimum operational synergies required to ensure the acquisition does not dilute standalone EPS",
-            "The exact dollar threshold where the transaction triggers antitrust regulatory challenges",
-            "The amount of equity that must be issued to achieve a fifty percent voting majority"
+            "The minimum synergies required to repay all acquisition debt within the first five years",
+            "The additional synergies required to make the transaction accretive to the target's shareholders"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8515,9 +8515,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What status token confirms that the Day 33 M&A Accretion/Dilution engine executed successfully?",
           "options": [
             "MNA_ACCRETION_DILUTION_SUITE_PASS",
-            "MNA_EPS_DILUTION_CRITICAL_HALT",
-            "ANTITRUST_REGULATORY_REJECTION",
-            "GOODWILL_IMPAIRMENT_TRIGGERED"
+            "MNA_ACCRETION_DILUTION_ENGINE_PASS",
+            "MNA_DILUTION_ACCRETION_SUITE_PASS",
+            "MNA_ACCRETION_DILUTION_SUITE_OK"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8633,9 +8633,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Weighted Average Cost of Capital (WACC) exhibit a classic U-shaped curve across leverage levels?",
           "options": [
-            "Equity risk premiums decline continuously as companies add high-yield debt to their balance sheet",
-            "Corporate tax rates drop to zero once debt exceeds fifty percent of enterprise capital",
-            "The Federal Reserve artificially caps borrowing costs for all corporations carrying BBB ratings",
+            "Cheaper debt keeps lowering WACC at every leverage level, so the minimum occurs at the highest debt ratio",
+            "Cost of debt rises steadily from the first dollar borrowed, so WACC increases at every leverage level",
+            "WACC rises initially as costly debt replaces equity, then falls once the firm's credit rating improves",
             "Tax benefits lower WACC initially, but excessive debt triggers escalating distress costs and spreads that drive WACC up"
           ],
           "answer": 3,
@@ -8693,10 +8693,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What verification token confirms successful execution of the Day 34 Capital Structure Optimization Engine?",
           "options": [
-            "CAPITAL_STRUCTURE_OPTIMIZATION_FAILED",
+            "WACC_CAPITAL_STRUCTURE_OPTIMAL_PASS",
             "WACC_OPTIMAL_CAPITAL_STRUCTURE_PASS",
-            "EXCESSIVE_LEVERAGE_COVENANT_BREACH",
-            "HAMADA_EQUATION_CONVERGENCE_ERROR"
+            "CAPITAL_STRUCTURE_WACC_OPTIMIZATION_PASS",
+            "WACC_OPTIMAL_CAPITAL_STRUCTURE_OK"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8935,9 +8935,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must zero-coupon spot rates be bootstrapped from coupon bonds rather than using par yields directly for cash flow discounting?",
           "options": [
-            "The Federal Reserve only publishes interest rates for 30-year maturity instruments",
-            "Zero-coupon spot rates ignore corporate income taxes and inflation adjustments",
-            "Par yields are legally prohibited from being quoted on institutional trading screens",
+            "Par yields are quoted for annual coupons only and cannot be applied to semi-annual bonds",
+            "Spot rates are derived from the central bank policy rate rather than from traded bond prices",
+            "Par yields apply a single discount rate to every cash flow, which always overstates the bond price",
             "Coupon bonds deliver intermediate cash payments exposed to different maturity discount rates across time"
           ],
           "answer": 3,
@@ -8997,10 +8997,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does positive convexity benefit a bondholder under both rising and falling interest rate regimes?",
           "options": [
-            "Convexity eliminates the need to pay capital gains taxes upon bond redemption",
+            "Convexity makes the price change identical for equal rises and falls in yields",
             "Convexity cushions price drops when yields rise and magnifies price gains when yields fall",
-            "Convexity guarantees that the bond will never be downgraded below investment grade",
-            "Convexity increases the semi-annual coupon payment when inflation expands"
+            "Convexity measures the weighted average time until the bond's cash flows are received",
+            "Convexity lengthens a bond's maturity automatically whenever yields rise"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9028,10 +9028,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the Dollar Value of an 01 (DV01) measure on a trading desk?",
           "options": [
-            "The total management fee paid to lead underwriters on a sovereign bond issuance",
-            "The annualized default probability of a single-B speculative grade corporate debtor",
+            "The percentage change in a bond's price for a one percent change in its coupon rate",
+            "The dollar amount of coupon income earned each year on a one-basis-point position in the bond",
             "The dollar price change in a bond portfolio resulting from a one-basis-point (0.01%) shift in yield",
-            "The maximum legal limit on foreign currency wire transfers across international borders"
+            "The dollar price change of a bond portfolio when its credit rating moves by one notch"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9059,9 +9059,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What status token confirms that the Day 36 Yield Curve Bootstrapping Engine executed successfully?",
           "options": [
-            "DURATION_MISMATCH_EXCEPTION",
-            "YIELD_CURVE_INVERSION_ERROR",
-            "BOOTSTRAP_CONVERGENCE_FAILED",
+            "YIELD_CURVE_BOOTSTRAPPING_PASS",
+            "BOOTSTRAP_YIELD_CURVE_PASS",
+            "YIELD_CURVE_BOOTSTRAP_OK",
             "YIELD_CURVE_BOOTSTRAP_PASS"
           ],
           "answer": 3,
@@ -9120,9 +9120,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the fundamental operational difference between an Incurrence Covenant and a Maintenance Covenant?",
           "options": [
             "Incurrence covenants are tested only upon taking a discrete action (e.g. debt issuance); maintenance covenants are tested quarterly",
-            "Maintenance covenants apply only to equity holders, while incurrence covenants govern trade creditors",
-            "Incurrence covenants are enforced by commercial banks, while maintenance covenants are monitored by rating agencies",
-            "There is no operational difference; both terms are used interchangeably in bond indentures"
+            "Incurrence covenants are tested every quarter regardless of company actions; maintenance covenants are tested only upon new debt issuance",
+            "Incurrence covenants restrict only dividend payments, while maintenance covenants restrict only new borrowing",
+            "Maintenance covenants are tested only after a default has occurred; incurrence covenants are tested annually"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9150,9 +9150,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 50% Consolidated Net Income (CNI) Restricted Payments builder basket function in high-yield debt?",
           "options": [
-            "It caps corporate executive compensation at 50% of annual net income during recessionary periods",
-            "It requires the borrower to maintain 50% of its cash balances in gold-backed commercial paper",
-            "It forces the company to distribute 50% of all operating earnings to bondholders as bonus interest",
+            "It permits dividends and buybacks up to 50% of annual revenue, irrespective of past profits and equity proceeds",
+            "It requires the borrower to retain 50% of consolidated net income as cash on the balance sheet at all times",
+            "It lets the company pay unlimited dividends once 50% of its debt has been repaid ahead of schedule",
             "It permits dividends and share buybacks only up to 50% of cumulative post-issuance profits plus equity proceeds"
           ],
           "answer": 3,
@@ -9211,10 +9211,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What market condition characterizes a Negative CDS-Cash Basis?",
           "options": [
-            "The CDS spread is trading below zero percent per annum",
+            "The CDS spread exceeds the cash bond credit spread (Z-spread)",
             "The cash bond credit spread (Z-spread) exceeds the credit default swap spread",
-            "The corporate borrower has defaulted on both bank debt and senior notes",
-            "The central bank has lowered the discount rate to negative fifty basis points"
+            "The CDS spread has widened sharply because default is expected within the next year",
+            "The cash bond yield is lower than the risk-free benchmark rate"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9244,9 +9244,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What status token confirms that the Day 37 Credit Default Swap Engine executed successfully?",
           "options": [
             "CREDIT_DEFAULT_SWAP_PRICING_PASS",
-            "CREDIT_RATING_DOWNGRADE_HALT",
-            "COVENANT_BREACH_ACCELERATION",
-            "HAZARD_RATE_CALCULATION_ERROR"
+            "CDS_CREDIT_PRICING_ENGINE_PASS",
+            "CREDIT_DEFAULT_SWAP_VALUATION_PASS",
+            "CREDIT_DEFAULT_SWAP_PRICING_OK"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9305,7 +9305,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "12.0% of total gross offering proceeds",
             "7.0% of total gross offering proceeds",
-            "Zero upfront fee, with compensation paid exclusively in common stock warrants",
+            "3.0% of total gross offering proceeds",
             "1.5% of total gross offering proceeds"
           ],
           "answer": 1,
@@ -9336,7 +9336,7 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "50% Management Fee and 50% Underwriting Fee",
             "10% Management Fee, 80% Underwriting Fee, and 10% Selling Concession",
             "20% Management Fee, 20% Underwriting Fee, and 60% Selling Concession",
-            "100% Selling Concession with zero management compensation"
+            "40% Management Fee, 40% Underwriting Fee, and 20% Selling Concession"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9364,9 +9364,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the 15% Green Shoe Overallotment Option protect underwriters in secondary market trading?",
           "options": [
-            "The option forces pre-IPO founders to buy back stock if secondary prices drop below the offer price",
-            "The option guarantees that the stock will be included in the S&P 500 within thirty days of listing",
-            "The option exempts the underwriting syndicate from filing audited financial statements with the SEC",
+            "The syndicate opens trading short 85% of the deal, covering the position only through open-market purchases",
+            "The syndicate sells exactly 100% of the deal and must absorb any unsold shares at the offer price in a cold market",
+            "The syndicate opens trading long 115% of the deal, selling the excess shares into the market if prices rise",
             "The syndicate opens trading short 115% of the deal, covering via issuer option if hot or market purchases if cold"
           ],
           "answer": 3,
@@ -9395,9 +9395,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under SEC Regulation M Rule 104, what activity are underwriters legally permitted to conduct to stabilize a broken IPO?",
           "options": [
             "Place stabilizing bids in the open market at or below the original offer price to support secondary trading",
-            "Prohibit retail investors from selling shares during the first thirty days of public trading",
-            "Artificially falsify trading volume numbers reported to the financial press",
-            "Require short sellers to pay a ten percent penalty fee directly to the issuing corporation"
+            "Place stabilizing bids above the original offer price to lift the stock above its opening level",
+            "Purchase shares from retail investors at a premium to the offer price, funded by the issuer",
+            "Short sell additional shares in the open market to support the secondary price of the broken IPO"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9425,10 +9425,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What confirmation token verifies the complete execution of the Day 38 Equity Capital Markets Engine?",
           "options": [
-            "UNDERWRITING_DISCOUNT_BREACH",
+            "ECM_IPO_UNDERWRITING_SYNDICATE_PASS",
             "ECM_IPO_SYNDICATE_UNDERWRITING_PASS",
-            "IPO_SYNDICATE_ALLOCATION_FAILED",
-            "GREEN_SHOE_EXERCISE_ERROR"
+            "ECM_SYNDICATE_IPO_ALLOCATION_PASS",
+            "ECM_IPO_SYNDICATE_UNDERWRITING_OK"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9485,10 +9485,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Covered Interest Rate Parity (CIRP), why does a foreign currency trade at a forward premium?",
           "options": [
-            "Commercial bank clearinghouses enforce minimum forward trading markups on foreign currencies",
-            "Foreign interest rates exceed domestic interest rates by more than five percent",
+            "Foreign nominal interest rates exceed domestic nominal interest rates",
+            "Foreign inflation is higher than domestic inflation over the same period",
             "Domestic nominal interest rates exceed foreign nominal interest rates",
-            "The central bank of the foreign nation is actively pursuing quantitative easing"
+            "The foreign currency's spot rate is expected to depreciate against the domestic currency"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9515,10 +9515,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of a Multilateral Intercompany FX Netting System?",
           "options": [
-            "Require all international subsidiaries to convert their accounting records into physical gold reserves",
+            "Settle every intercompany invoice gross in full, so each subsidiary hedges its own transactions separately",
             "Aggregate cross-border subsidiary invoices into a central matrix and settle only net debtor/creditor balances",
-            "Prohibit foreign subsidiaries from importing components manufactured in other sovereign nations",
-            "Eliminate all corporate income tax liabilities across foreign operating jurisdictions"
+            "Shift all FX exposure from the parent to the subsidiaries by invoicing them in local currency",
+            "Reduce the group's consolidated tax liability by redirecting profits to low-tax subsidiaries"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9547,9 +9547,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In a plain-vanilla fixed-for-floating Interest Rate Swap (IRS), what principal cash flows are exchanged between counterparties?",
           "options": [
             "No principal is exchanged; counterparties settle only net interest payment differentials on the notional amount",
-            "100% of the notional principal is wired back and forth at the conclusion of every calendar month",
-            "The fixed payer delivers sovereign bonds, while the floating payer delivers commercial paper",
-            "Principal is exchanged only if the benchmark reference rate drops below zero percent"
+            "The full notional principal is exchanged at the start and returned at maturity, as in a currency swap",
+            "The fixed payer lends the notional principal to the floating payer for the life of the swap",
+            "The notional principal is exchanged only if either counterparty terminates the swap early"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9576,9 +9576,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does an In-House Bank (IHB) reduce external commercial banking costs for a multinational conglomerate?",
           "options": [
-            "The in-house bank guarantees that foreign subsidiaries never experience operational inventory shortages",
-            "The in-house bank issues its own sovereign fiat currency recognized by international central banks",
-            "The in-house bank eliminates the requirement to comply with local corporate labor laws",
+            "The in-house bank lends the parent's surplus cash to external banks at higher interest rates",
+            "The in-house bank underwrites every subsidiary's external loans, lowering their credit spreads automatically",
+            "The in-house bank converts all intercompany balances into equity so that no settlement is required",
             "Subsidiaries settle transactions through internal ledger book transfers, completely bypassing external bank wire rails"
           ],
           "answer": 3,
@@ -9607,10 +9607,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What status token confirms that the Day 39 Global Treasury Engine executed successfully?",
           "options": [
-            "CIRP_ARBITRAGE_VIOLATION_HALT",
-            "SWAP_RESET_VALUATION_EXCEPTION",
+            "GLOBAL_TREASURY_NETTING_SWAP_PASS",
+            "GLOBAL_TREASURY_SWAP_ENGINE_PASS",
             "GLOBAL_TREASURY_SWAP_NETTING_PASS",
-            "TREASURY_NETTING_IMBALANCE_ERROR"
+            "GLOBAL_TREASURY_SWAP_NETTING_OK"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9667,10 +9667,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an integrated global capital markets program, how do sovereign spot curves interact with corporate bond syndication?",
           "options": [
-            "Sovereign spot curves guarantee that corporate high-yield bonds will never trade at a discount to par",
-            "Sovereign spot curves dictate the maximum retail share allocation in an initial public offering",
+            "Sovereign spot curves set corporate bond coupons equal to the government yield at the same maturity",
+            "Sovereign spot curves determine the corporate issuer's credit rating and covenant package",
             "The sovereign spot curve establishes the default-free benchmark upon which corporate credit spreads are layered",
-            "Sovereign spot curves replace the need to conduct financial audit due diligence on the corporate borrower"
+            "Sovereign spot curves are used only for government securities and have no role in corporate bond pricing"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9698,10 +9698,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does combining primary equity issuance with cross-currency interest rate swaps enhance global corporate resilience?",
           "options": [
-            "Cross-currency swaps allow the corporation to repurchase all common equity shares at zero cost",
+            "Cross-currency swaps convert the equity issuance proceeds into debt, which raises leverage",
             "Primary equity reduces leverage, while cross-currency swaps eliminate foreign exchange risk on international debt",
-            "Primary equity automatically converts all fixed-rate bonds into sovereign Treasury bills",
-            "Primary equity guarantees that foreign governments cannot levy local corporate income taxes"
+            "Primary equity eliminates foreign exchange risk, while cross-currency swaps reduce leverage on the balance sheet",
+            "Primary equity raises the rate on existing debt, while cross-currency swaps lock in the equity price"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9730,9 +9730,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary benefit of maintaining an active Restricted Payments builder basket in a high-yield capital structure?",
           "options": [
             "Protects creditor interests by restricting shareholder distributions to cumulative generated earnings",
-            "Mandates that the Chief Financial Officer invest all corporate liquidity in speculative foreign currencies",
-            "Exempts the issuing company from filing quarterly financial statements on SEC Form 10-Q",
-            "Eliminates the requirement to service semi-annual interest coupon obligations during recessions"
+            "Allows management to distribute unlimited dividends so long as the credit rating remains investment grade",
+            "Forces the issuer to prepay bond principal whenever consolidated net income increases",
+            "Requires the issuer to hold cash reserves equal to the next two years of interest payments"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9761,9 +9761,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does multilateral intercompany netting improve consolidated return on capital for a multinational enterprise?",
           "options": [
-            "Converts all intercompany payables into non-voting convertible preferred stock",
-            "Artificially inflates reported gross revenue on the consolidated corporate income statement",
-            "Allows subsidiaries to avoid paying statutory corporate income taxes in their home jurisdictions",
+            "Raises consolidated return by increasing gross intercompany invoice volumes settled in cash",
+            "Converts foreign exchange gains into permanent equity, increasing the book value of the parent",
+            "Defers foreign exchange losses into future periods so that reported group profit appears higher",
             "Compresses gross transaction volume, slashing foreign exchange spread friction and bank transfer fees"
           ],
           "answer": 3,
@@ -9847,10 +9847,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Basel III and the Fundamental Review of the Trading Book (FRTB), what coherent risk metric replaces traditional 99% Value at Risk (VaR)?",
           "options": [
-            "99.9% Linear Delta Approximation without tail expectations",
+            "99.0% Value at Risk calibrated to normal market conditions",
             "97.5% Expected Shortfall (CVaR) calibrated to stressed market conditions",
-            "90.0% Historical Moving Average Volatility without scaling",
-            "95.0% Standardized Semi-Variance with zero correlation offsets"
+            "97.5% Value at Risk calibrated to current market conditions",
+            "99.9% Expected Shortfall calibrated to current market conditions"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9878,10 +9878,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Basel III and the Fundamental Review of the Trading Book (FRTB), what coherent risk metric replaces traditional 99% Value at Risk (VaR)?",
           "options": [
-            "90.0% Historical Moving Average Volatility without scaling",
-            "95.0% Standardized Semi-Variance with zero correlation offsets",
+            "97.5% Value at Risk calibrated to current market conditions",
+            "99.9% Expected Shortfall calibrated to current market conditions",
             "97.5% Expected Shortfall (CVaR) calibrated to stressed market conditions",
-            "99.9% Linear Delta Approximation without tail expectations"
+            "99.0% Value at Risk calibrated to normal market conditions"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9909,9 +9909,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Basel III and the Fundamental Review of the Trading Book (FRTB), what coherent risk metric replaces traditional 99% Value at Risk (VaR)?",
           "options": [
-            "95.0% Standardized Semi-Variance with zero correlation offsets",
-            "99.9% Linear Delta Approximation without tail expectations",
-            "90.0% Historical Moving Average Volatility without scaling",
+            "99.9% Expected Shortfall calibrated to current market conditions",
+            "99.0% Value at Risk calibrated to normal market conditions",
+            "97.5% Value at Risk calibrated to current market conditions",
             "97.5% Expected Shortfall (CVaR) calibrated to stressed market conditions"
           ],
           "answer": 3,
@@ -9941,9 +9941,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Basel III and the Fundamental Review of the Trading Book (FRTB), what coherent risk metric replaces traditional 99% Value at Risk (VaR)?",
           "options": [
             "97.5% Expected Shortfall (CVaR) calibrated to stressed market conditions",
-            "90.0% Historical Moving Average Volatility without scaling",
-            "95.0% Standardized Semi-Variance with zero correlation offsets",
-            "99.9% Linear Delta Approximation without tail expectations"
+            "97.5% Value at Risk calibrated to current market conditions",
+            "99.9% Expected Shortfall calibrated to current market conditions",
+            "99.0% Value at Risk calibrated to normal market conditions"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9972,10 +9972,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Basel III and the Fundamental Review of the Trading Book (FRTB), what coherent risk metric replaces traditional 99% Value at Risk (VaR)?",
           "options": [
-            "90.0% Historical Moving Average Volatility without scaling",
+            "97.5% Value at Risk calibrated to current market conditions",
             "97.5% Expected Shortfall (CVaR) calibrated to stressed market conditions",
-            "95.0% Standardized Semi-Variance with zero correlation offsets",
-            "99.9% Linear Delta Approximation without tail expectations"
+            "99.9% Expected Shortfall calibrated to current market conditions",
+            "99.0% Value at Risk calibrated to normal market conditions"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10028,9 +10028,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is the underlying stock alone mathematically insufficient to neutralize Gamma and Vega in an options portfolio?",
           "options": [
             "Underlying stock has a linear price relationship, meaning its Gamma and Vega are identically zero",
-            "Underlying stock has infinite Vega that destabilizes option pricing equations",
-            "Underlying stock Delta is non-linear and fluctuates randomly across expiration dates",
-            "Underlying stock is prohibited by SEC regulations from serving as an options hedge"
+            "Underlying stock has a fixed Vega that is always too small to offset the Vega of long options",
+            "Underlying stock Delta changes with volatility, so it cannot hedge Delta even for a single option",
+            "Underlying stock hedges Gamma but not Vega, because its price is unaffected by volatility"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10058,9 +10058,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the underlying stock alone mathematically insufficient to neutralize Gamma and Vega in an options portfolio?",
           "options": [
-            "Underlying stock has infinite Vega that destabilizes option pricing equations",
-            "Underlying stock Delta is non-linear and fluctuates randomly across expiration dates",
-            "Underlying stock is prohibited by SEC regulations from serving as an options hedge",
+            "Underlying stock has a fixed Vega that is always too small to offset the Vega of long options",
+            "Underlying stock Delta changes with volatility, so it cannot hedge Delta even for a single option",
+            "Underlying stock hedges Gamma but not Vega, because its price is unaffected by volatility",
             "Underlying stock has a linear price relationship, meaning its Gamma and Vega are identically zero"
           ],
           "answer": 3,
@@ -10089,10 +10089,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the underlying stock alone mathematically insufficient to neutralize Gamma and Vega in an options portfolio?",
           "options": [
-            "Underlying stock has infinite Vega that destabilizes option pricing equations",
-            "Underlying stock Delta is non-linear and fluctuates randomly across expiration dates",
+            "Underlying stock has a fixed Vega that is always too small to offset the Vega of long options",
+            "Underlying stock Delta changes with volatility, so it cannot hedge Delta even for a single option",
             "Underlying stock has a linear price relationship, meaning its Gamma and Vega are identically zero",
-            "Underlying stock is prohibited by SEC regulations from serving as an options hedge"
+            "Underlying stock hedges Gamma but not Vega, because its price is unaffected by volatility"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10120,10 +10120,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the underlying stock alone mathematically insufficient to neutralize Gamma and Vega in an options portfolio?",
           "options": [
-            "Underlying stock has infinite Vega that destabilizes option pricing equations",
+            "Underlying stock has a fixed Vega that is always too small to offset the Vega of long options",
             "Underlying stock has a linear price relationship, meaning its Gamma and Vega are identically zero",
-            "Underlying stock Delta is non-linear and fluctuates randomly across expiration dates",
-            "Underlying stock is prohibited by SEC regulations from serving as an options hedge"
+            "Underlying stock Delta changes with volatility, so it cannot hedge Delta even for a single option",
+            "Underlying stock hedges Gamma but not Vega, because its price is unaffected by volatility"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10153,9 +10153,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is the underlying stock alone mathematically insufficient to neutralize Gamma and Vega in an options portfolio?",
           "options": [
             "Underlying stock has a linear price relationship, meaning its Gamma and Vega are identically zero",
-            "Underlying stock has infinite Vega that destabilizes option pricing equations",
-            "Underlying stock Delta is non-linear and fluctuates randomly across expiration dates",
-            "Underlying stock is prohibited by SEC regulations from serving as an options hedge"
+            "Underlying stock has a fixed Vega that is always too small to offset the Vega of long options",
+            "Underlying stock Delta changes with volatility, so it cannot hedge Delta even for a single option",
+            "Underlying stock hedges Gamma but not Vega, because its price is unaffected by volatility"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10207,9 +10207,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Merton (1974) structural credit framework, how is corporate equity mathematically conceptualized?",
           "options": [
-            "As a perpetual annuity on corporate EBITDA discounted at the weighted average cost of capital",
-            "As a synthetic forward contract on sovereign Treasury bills plus a constant credit spread",
-            "As an uncollateralized credit default swap written against the central bank",
+            "As a European put option on total firm assets with strike price equal to the face value of debt",
+            "As a European call option on the market value of debt with strike price equal to total firm assets",
+            "As a risk-free zero-coupon bond combined with a short position in a put option on total firm assets",
             "As a European call option on total firm assets with strike price equal to the face value of debt"
           ],
           "answer": 3,
@@ -10240,9 +10240,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Merton (1974) structural credit framework, how is corporate equity mathematically conceptualized?",
           "options": [
             "As a European call option on total firm assets with strike price equal to the face value of debt",
-            "As a perpetual annuity on corporate EBITDA discounted at the weighted average cost of capital",
-            "As a synthetic forward contract on sovereign Treasury bills plus a constant credit spread",
-            "As an uncollateralized credit default swap written against the central bank"
+            "As a European put option on total firm assets with strike price equal to the face value of debt",
+            "As a European call option on the market value of debt with strike price equal to total firm assets",
+            "As a risk-free zero-coupon bond combined with a short position in a put option on total firm assets"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10271,10 +10271,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Merton (1974) structural credit framework, how is corporate equity mathematically conceptualized?",
           "options": [
-            "As a perpetual annuity on corporate EBITDA discounted at the weighted average cost of capital",
+            "As a European put option on total firm assets with strike price equal to the face value of debt",
             "As a European call option on total firm assets with strike price equal to the face value of debt",
-            "As a synthetic forward contract on sovereign Treasury bills plus a constant credit spread",
-            "As an uncollateralized credit default swap written against the central bank"
+            "As a European call option on the market value of debt with strike price equal to total firm assets",
+            "As a risk-free zero-coupon bond combined with a short position in a put option on total firm assets"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10303,10 +10303,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Merton (1974) structural credit framework, how is corporate equity mathematically conceptualized?",
           "options": [
-            "As a perpetual annuity on corporate EBITDA discounted at the weighted average cost of capital",
-            "As a synthetic forward contract on sovereign Treasury bills plus a constant credit spread",
+            "As a European put option on total firm assets with strike price equal to the face value of debt",
+            "As a European call option on the market value of debt with strike price equal to total firm assets",
             "As a European call option on total firm assets with strike price equal to the face value of debt",
-            "As an uncollateralized credit default swap written against the central bank"
+            "As a risk-free zero-coupon bond combined with a short position in a put option on total firm assets"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10337,9 +10337,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Merton (1974) structural credit framework, how is corporate equity mathematically conceptualized?",
           "options": [
-            "As a perpetual annuity on corporate EBITDA discounted at the weighted average cost of capital",
-            "As a synthetic forward contract on sovereign Treasury bills plus a constant credit spread",
-            "As an uncollateralized credit default swap written against the central bank",
+            "As a European put option on total firm assets with strike price equal to the face value of debt",
+            "As a European call option on the market value of debt with strike price equal to total firm assets",
+            "As a risk-free zero-coupon bond combined with a short position in a put option on total firm assets",
             "As a European call option on total firm assets with strike price equal to the face value of debt"
           ],
           "answer": 3,
@@ -10765,9 +10765,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is an institutional bullet Term Loan B (TLB) characterized by nominal 1% annual amortization highly advantageous for private equity sponsors?",
           "options": [
             "It minimizes mandatory annual debt service, freeing maximum cash flow for discretionary debt paydown and growth",
-            "It completely eliminates all interest payment obligations until terminal exit maturity",
-            "It automatically converts debt principal into non-voting preferred equity upon covenant breach",
-            "It permanently exempts the borrowing corporation from all federal and state tax filings"
+            "It lets the sponsor skip interest payments in years when EBITDA declines without triggering a default",
+            "It gives lenders a first-priority claim on the sponsor's other portfolio companies if the loan defaults",
+            "It forces the borrower to prepay the whole loan through an annual cash sweep of all excess free cash flow"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10796,9 +10796,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an institutional bullet Term Loan B (TLB) characterized by nominal 1% annual amortization highly advantageous for private equity sponsors?",
           "options": [
-            "It completely eliminates all interest payment obligations until terminal exit maturity",
-            "It automatically converts debt principal into non-voting preferred equity upon covenant breach",
-            "It permanently exempts the borrowing corporation from all federal and state tax filings",
+            "It lets the sponsor skip interest payments in years when EBITDA declines without triggering a default",
+            "It gives lenders a first-priority claim on the sponsor's other portfolio companies if the loan defaults",
+            "It forces the borrower to prepay the whole loan through an annual cash sweep of all excess free cash flow",
             "It minimizes mandatory annual debt service, freeing maximum cash flow for discretionary debt paydown and growth"
           ],
           "answer": 3,
@@ -10828,10 +10828,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an institutional bullet Term Loan B (TLB) characterized by nominal 1% annual amortization highly advantageous for private equity sponsors?",
           "options": [
-            "It automatically converts debt principal into non-voting preferred equity upon covenant breach",
-            "It permanently exempts the borrowing corporation from all federal and state tax filings",
+            "It gives lenders a first-priority claim on the sponsor's other portfolio companies if the loan defaults",
+            "It forces the borrower to prepay the whole loan through an annual cash sweep of all excess free cash flow",
             "It minimizes mandatory annual debt service, freeing maximum cash flow for discretionary debt paydown and growth",
-            "It completely eliminates all interest payment obligations until terminal exit maturity"
+            "It lets the sponsor skip interest payments in years when EBITDA declines without triggering a default"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10860,10 +10860,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is an institutional bullet Term Loan B (TLB) characterized by nominal 1% annual amortization highly advantageous for private equity sponsors?",
           "options": [
-            "It permanently exempts the borrowing corporation from all federal and state tax filings",
+            "It forces the borrower to prepay the whole loan through an annual cash sweep of all excess free cash flow",
             "It minimizes mandatory annual debt service, freeing maximum cash flow for discretionary debt paydown and growth",
-            "It completely eliminates all interest payment obligations until terminal exit maturity",
-            "It automatically converts debt principal into non-voting preferred equity upon covenant breach"
+            "It lets the sponsor skip interest payments in years when EBITDA declines without triggering a default",
+            "It gives lenders a first-priority claim on the sponsor's other portfolio companies if the loan defaults"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10895,9 +10895,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is an institutional bullet Term Loan B (TLB) characterized by nominal 1% annual amortization highly advantageous for private equity sponsors?",
           "options": [
             "It minimizes mandatory annual debt service, freeing maximum cash flow for discretionary debt paydown and growth",
-            "It completely eliminates all interest payment obligations until terminal exit maturity",
-            "It automatically converts debt principal into non-voting preferred equity upon covenant breach",
-            "It permanently exempts the borrowing corporation from all federal and state tax filings"
+            "It lets the sponsor skip interest payments in years when EBITDA declines without triggering a default",
+            "It gives lenders a first-priority claim on the sponsor's other portfolio companies if the loan defaults",
+            "It forces the borrower to prepay the whole loan through an annual cash sweep of all excess free cash flow"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10951,9 +10951,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a standard LBO credit agreement Excess Cash Flow (ECF) sweep covenant, what triggers the contractual step-down in the sweep percentage?",
           "options": [
-            "The private equity sponsor executing a dividend recapitalization without lender consent",
-            "Benchmark Federal Reserve SOFR interest rates falling below zero point fifty percent",
-            "The portfolio company acquiring an unrated foreign subsidiary in an emerging market",
+            "The portfolio company failing to meet its minimum Interest Coverage Ratio covenant",
+            "The portfolio company increasing its annual capital expenditures above the budgeted level",
+            "The sponsor reducing its equity ownership of the portfolio company below a specified percentage",
             "The portfolio company achieving lower specified Total Debt-to-EBITDA leverage threshold tiers"
           ],
           "answer": 3,
@@ -10985,9 +10985,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under a standard LBO credit agreement Excess Cash Flow (ECF) sweep covenant, what triggers the contractual step-down in the sweep percentage?",
           "options": [
             "The portfolio company achieving lower specified Total Debt-to-EBITDA leverage threshold tiers",
-            "The private equity sponsor executing a dividend recapitalization without lender consent",
-            "Benchmark Federal Reserve SOFR interest rates falling below zero point fifty percent",
-            "The portfolio company acquiring an unrated foreign subsidiary in an emerging market"
+            "The portfolio company failing to meet its minimum Interest Coverage Ratio covenant",
+            "The portfolio company increasing its annual capital expenditures above the budgeted level",
+            "The sponsor reducing its equity ownership of the portfolio company below a specified percentage"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11017,10 +11017,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a standard LBO credit agreement Excess Cash Flow (ECF) sweep covenant, what triggers the contractual step-down in the sweep percentage?",
           "options": [
-            "Benchmark Federal Reserve SOFR interest rates falling below zero point fifty percent",
+            "The portfolio company increasing its annual capital expenditures above the budgeted level",
             "The portfolio company achieving lower specified Total Debt-to-EBITDA leverage threshold tiers",
-            "The portfolio company acquiring an unrated foreign subsidiary in an emerging market",
-            "The private equity sponsor executing a dividend recapitalization without lender consent"
+            "The sponsor reducing its equity ownership of the portfolio company below a specified percentage",
+            "The portfolio company failing to meet its minimum Interest Coverage Ratio covenant"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11050,10 +11050,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a standard LBO credit agreement Excess Cash Flow (ECF) sweep covenant, what triggers the contractual step-down in the sweep percentage?",
           "options": [
-            "Benchmark Federal Reserve SOFR interest rates falling below zero point fifty percent",
-            "The portfolio company acquiring an unrated foreign subsidiary in an emerging market",
+            "The portfolio company increasing its annual capital expenditures above the budgeted level",
+            "The sponsor reducing its equity ownership of the portfolio company below a specified percentage",
             "The portfolio company achieving lower specified Total Debt-to-EBITDA leverage threshold tiers",
-            "The private equity sponsor executing a dividend recapitalization without lender consent"
+            "The portfolio company failing to meet its minimum Interest Coverage Ratio covenant"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11084,9 +11084,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a standard LBO credit agreement Excess Cash Flow (ECF) sweep covenant, what triggers the contractual step-down in the sweep percentage?",
           "options": [
-            "The portfolio company acquiring an unrated foreign subsidiary in an emerging market",
-            "The private equity sponsor executing a dividend recapitalization without lender consent",
-            "Benchmark Federal Reserve SOFR interest rates falling below zero point fifty percent",
+            "The sponsor reducing its equity ownership of the portfolio company below a specified percentage",
+            "The portfolio company failing to meet its minimum Interest Coverage Ratio covenant",
+            "The portfolio company increasing its annual capital expenditures above the budgeted level",
             "The portfolio company achieving lower specified Total Debt-to-EBITDA leverage threshold tiers"
           ],
           "answer": 3,
@@ -11139,10 +11139,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a DuPont-style LBO value creation attribution bridge, what three mutually exclusive pillars explain total equity gain from entry to exit?",
           "options": [
-            "Management Salary Reductions, Tax Audit Recoveries, and Accounts Payable Stretches",
-            "Inflation Adjustments, Foreign Exchange Translation Gains, and Derivative Trading Profits",
+            "Dividend Recapitalization Proceeds, Management Fee Savings, and Tax Shield Utilization",
+            "Revenue Growth, Operating Margin Expansion, and Interest Rate Reductions on Refinancing",
             "Operational EBITDA Growth, Valuation Multiple Expansion or Contraction, and Debt Paydown / Deleveraging",
-            "Working Capital Write-Downs, Goodwill Impairments, and Restructuring Advisory Fees"
+            "Asset Sales, Sponsor Monitoring Fees, and Tax Shield from Goodwill Amortization"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11170,10 +11170,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a DuPont-style LBO value creation attribution bridge, what three mutually exclusive pillars explain total equity gain from entry to exit?",
           "options": [
-            "Management Salary Reductions, Tax Audit Recoveries, and Accounts Payable Stretches",
+            "Dividend Recapitalization Proceeds, Management Fee Savings, and Tax Shield Utilization",
             "Operational EBITDA Growth, Valuation Multiple Expansion or Contraction, and Debt Paydown / Deleveraging",
-            "Inflation Adjustments, Foreign Exchange Translation Gains, and Derivative Trading Profits",
-            "Working Capital Write-Downs, Goodwill Impairments, and Restructuring Advisory Fees"
+            "Revenue Growth, Operating Margin Expansion, and Interest Rate Reductions on Refinancing",
+            "Asset Sales, Sponsor Monitoring Fees, and Tax Shield from Goodwill Amortization"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11205,9 +11205,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In a DuPont-style LBO value creation attribution bridge, what three mutually exclusive pillars explain total equity gain from entry to exit?",
           "options": [
             "Operational EBITDA Growth, Valuation Multiple Expansion or Contraction, and Debt Paydown / Deleveraging",
-            "Inflation Adjustments, Foreign Exchange Translation Gains, and Derivative Trading Profits",
-            "Working Capital Write-Downs, Goodwill Impairments, and Restructuring Advisory Fees",
-            "Management Salary Reductions, Tax Audit Recoveries, and Accounts Payable Stretches"
+            "Revenue Growth, Operating Margin Expansion, and Interest Rate Reductions on Refinancing",
+            "Asset Sales, Sponsor Monitoring Fees, and Tax Shield from Goodwill Amortization",
+            "Dividend Recapitalization Proceeds, Management Fee Savings, and Tax Shield Utilization"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11237,9 +11237,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a DuPont-style LBO value creation attribution bridge, what three mutually exclusive pillars explain total equity gain from entry to exit?",
           "options": [
-            "Working Capital Write-Downs, Goodwill Impairments, and Restructuring Advisory Fees",
-            "Management Salary Reductions, Tax Audit Recoveries, and Accounts Payable Stretches",
-            "Inflation Adjustments, Foreign Exchange Translation Gains, and Derivative Trading Profits",
+            "Asset Sales, Sponsor Monitoring Fees, and Tax Shield from Goodwill Amortization",
+            "Dividend Recapitalization Proceeds, Management Fee Savings, and Tax Shield Utilization",
+            "Revenue Growth, Operating Margin Expansion, and Interest Rate Reductions on Refinancing",
             "Operational EBITDA Growth, Valuation Multiple Expansion or Contraction, and Debt Paydown / Deleveraging"
           ],
           "answer": 3,
@@ -11272,10 +11272,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a DuPont-style LBO value creation attribution bridge, what three mutually exclusive pillars explain total equity gain from entry to exit?",
           "options": [
-            "Management Salary Reductions, Tax Audit Recoveries, and Accounts Payable Stretches",
-            "Inflation Adjustments, Foreign Exchange Translation Gains, and Derivative Trading Profits",
+            "Dividend Recapitalization Proceeds, Management Fee Savings, and Tax Shield Utilization",
+            "Revenue Growth, Operating Margin Expansion, and Interest Rate Reductions on Refinancing",
             "Operational EBITDA Growth, Valuation Multiple Expansion or Contraction, and Debt Paydown / Deleveraging",
-            "Working Capital Write-Downs, Goodwill Impairments, and Restructuring Advisory Fees"
+            "Asset Sales, Sponsor Monitoring Fees, and Tax Shield from Goodwill Amortization"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11744,10 +11744,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why did Norway establish a strict statutory prohibition preventing the Government Pension Fund Global from investing in Norwegian domestic assets?",
           "options": [
-            "To satisfy the European Central Bank regulatory constraints regarding non-euro foreign currency reserve holding requirements.",
-            "Because the Norwegian domestic stock market has zero liquidity and cannot process institutional equity order transactions.",
-            "Because Norwegian domestic corporate law prohibits public entities from holding voting shares in private companies.",
-            "To eliminate macroeconomic covariance and prevent the fund from overheating the domestic economy and exacerbating Dutch disease."
+            "To prevent foreign governments from gaining influence over Norwegian listed companies through the fund",
+            "Because domestic Norwegian assets earn lower returns than foreign assets in every market environment",
+            "Because the fund's mandate requires it to hold only government bonds and never any domestic equities",
+            "To eliminate macroeconomic covariance and stop the fund from overheating the domestic economy via Dutch disease"
           ],
           "answer": 3,
           "why": "Investing overseas eliminates domestic covariance, preventing oil windfalls from inflating the domestic currency, driving inflation, and decimating domestic industries.",
@@ -11775,10 +11775,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary economic incentive for a sovereign wealth fund to negotiate direct co-investment rights alongside a private equity sponsor in a mega-buyout?",
           "options": [
-            "To assume full unlimited legal liability for the operational safety violations of the portfolio operating company.",
-            "To guarantee that the target company debt will be automatically refinanced by the sovereign central bank at zero interest.",
-            "To invest large tranches of capital with zero management fees and zero carried interest, dramatically increasing net compounded returns.",
-            "To convert the target private company into an official sovereign state-owned utility enterprise within forty-eight hours."
+            "To gain full operational control of the target company without paying any purchase premium to existing shareholders",
+            "To obtain a sovereign guarantee on the target company's acquisition debt from the host government's treasury",
+            "To invest large tranches of capital with zero management fees and zero carried interest, increasing net compounded returns",
+            "To receive a priority claim on the target's cash flows ahead of the sponsor's own invested capital"
           ],
           "answer": 2,
           "why": "Direct co-investments eliminate the traditional 'two and twenty' fee structure on the co-invested portion, significantly enhancing net portfolio IRR.",
@@ -11837,9 +11837,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What mathematical criterion ensures that a sovereign wealth fund preserves its real purchasing power perpetually across generations?",
           "options": [
             "Annual fiscal spending drawdowns must not exceed the long-term expected real compound rate of return of the portfolio.",
-            "All investment assets must be held exclusively in physical gold bullion stored within sovereign domestic borders.",
-            "The fund must maintain an asset allocation consisting of ninety percent cash and ten percent short-term debt.",
-            "Annual management fees paid to external private equity managers must equal at least five percent of total fund AUM."
+            "Annual fiscal drawdowns must equal the portfolio's total return in the previous year, including unrealised gains",
+            "The fund must hold only assets whose market value never declines in any single calendar year",
+            "Fiscal drawdowns must equal the long-term expected nominal rate of return of the portfolio, ignoring inflation"
           ],
           "answer": 0,
           "why": "Under the permanent income hypothesis and endowment spending rules, restricting drawdowns to the long-term real rate of return preserves the real purchasing power of the principal perpetually.",
@@ -11895,10 +11895,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the defining legal characteristic of a non-recourse project finance debt facility?",
           "options": [
-            "The borrower is exempt from all corporate income taxation, municipal environmental regulations, and local labor statutes.",
-            "Lenders have recourse solely to the cash flows and assets of the dedicated project SPV, with zero claim on the sponsors' parent balance sheets.",
-            "The project debt is fully guaranteed by the World Bank and is immune from financial default under any commercial scenario.",
-            "Sponsors are legally prohibited from contributing any equity capital and must finance one hundred percent of the project via short-term debt."
+            "Lenders have full recourse to the sponsors' parent balance sheets if the project cash flows prove insufficient",
+            "Lenders have recourse only to the project SPV's cash flows and assets, with no claim on the sponsors' parent balance sheets",
+            "The project debt is guaranteed by the host government and cannot be restructured under any circumstances",
+            "The project must be financed entirely by sponsor equity, with lenders providing only working capital lines"
           ],
           "answer": 1,
           "why": "Non-recourse debt restricts creditor recovery strictly to the SPV assets and revenues, legally shielding parent sponsors from project liabilities.",
@@ -11926,10 +11926,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an availability-based Power Purchase Agreement (PPA), why is the capacity payment considered the primary credit anchor for project finance lenders?",
           "options": [
-            "Because it requires the project company to sell shares on the public stock exchange whenever wholesale electricity prices decline.",
-            "Because it transfers all legal ownership of the physical generators to the commercial bank lending syndicate immediately upon signing.",
-            "Because it guarantees fixed payments sufficient to service debt and fixed operating costs as long as the facility is operational, regardless of actual power dispatched.",
-            "Because it forces the local government to eliminate all sales taxes on industrial consumer goods manufactured within the region."
+            "Because it varies with the volume of electricity dispatched, so lenders share in the project's merchant price upside",
+            "Because it is paid by the lenders to the project company to fund any construction cost overruns that arise",
+            "Because it provides fixed payments covering debt service and fixed operating costs while the plant is available, whatever power is dispatched",
+            "Because it is a one-time upfront grant from the offtaker that repays the project's entire senior debt at financial close"
           ],
           "answer": 2,
           "why": "Availability payments guarantee debt service coverage based on plant readiness, completely eliminating market demand and dispatch volume risk for lenders.",
@@ -11956,10 +11956,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence for equity sponsors if an infrastructure SPV DSCR falls below the agreed 'distribution lock-up' covenant threshold?",
           "options": [
-            "The sponsors are legally mandated to forfeit their parent corporate operating licenses to the banking regulatory authority.",
-            "The project debt is immediately converted into common equity shares of the host country central bank.",
-            "The EPC contractor is granted ownership of the project company and can fire all technical operational staff.",
-            "All cash dividend distributions to equity sponsors are strictly frozen and trapped inside project reserve accounts until coverage is restored."
+            "The sponsors must immediately inject additional equity equal to the full amount of outstanding senior debt",
+            "The senior lenders must cancel all undrawn commitments and refund the sponsors' equity contributions",
+            "The EPC contractor must repay the liquidated damages it received during construction to the project company",
+            "All cash dividends to equity sponsors are frozen and trapped in project reserve accounts until coverage is restored"
           ],
           "answer": 3,
           "why": "A distribution lock-up traps project surplus cash within the SPV, blocking dividend payments to sponsors to protect senior debt service.",
@@ -11987,10 +11987,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an IFC A/B Loan structure, what is the primary structural mechanism that shields commercial 'B Loan' participants from sovereign foreign exchange moratoria?",
           "options": [
-            "The IFC acts as the sole lender of record for both tranches, extending its de facto preferred creditor status and sovereign immunity to B Loan participants.",
-            "The host government converts all commercial loans into local sovereign gold reserves deposited in commercial bank vaults.",
-            "The commercial banks obtain full equity ownership of the host nation central bank and can print domestic currency at will.",
-            "The World Bank legally requires the host country to dissolve its domestic judicial system and transfer governance to international lawyers."
+            "The IFC is the sole lender of record for both tranches, extending its preferred creditor status to B Loan participants",
+            "Commercial participants receive a separate central bank undertaking covering all repayments in hard currency, issued by the host nation",
+            "Each B Loan participant lends directly to the borrower under its own separate agreement, with no IFC involvement at all",
+            "The IFC lends only the B tranche, while the commercial banks fund the A tranche and carry their own sovereign immunity"
           ],
           "answer": 0,
           "why": "Because the IFC is the lender of record, the B loan benefits from the IFC preferred creditor status, shielding commercial lenders from currency transfer moratoria.",
@@ -12019,8 +12019,8 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "By dividing total initial debt equally across all loan periods regardless of seasonal cash flows.",
             "By dividing CFADS by the target DSCR to determine total debt service, and subtracting that period interest expense.",
-            "By multiplying the project annual gross revenue by the sovereign corporate income tax rate.",
-            "By randomly adjusting principal payments based on the daily price of crude oil futures."
+            "By dividing the project's annual gross revenue by the target DSCR, ignoring operating costs",
+            "By setting each period's principal equal to that period's interest expense multiplied by the DSCR"
           ],
           "answer": 1,
           "why": "Sculpting establishes total debt service as CFADS divided by target DSCR, with principal repayment being the residual after deducting periodic interest.",
@@ -12076,10 +12076,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do institutional investors, such as defined-benefit pension funds and sovereign endowments, prioritize core infrastructure investments during inflationary regimes?",
           "options": [
-            "Because natural monopolies can eliminate all operating expenses by firing all maintenance engineers without regulatory penalty.",
-            "Because infrastructure assets are entirely traded in physical gold bullion rather than fiat sovereign currencies.",
-            "Because concession agreements and regulatory tariffs explicitly incorporate automatic CPI/RPI indexation, protecting real cash flows.",
-            "Because infrastructure companies are legally exempted from paying interest on their corporate bank debt during inflation."
+            "Because infrastructure revenues are mostly short-term spot contracts that reprice daily with commodity prices",
+            "Because infrastructure assets carry no debt, so rising interest rates during inflation cannot affect their cash flows",
+            "Because concession agreements and regulatory tariffs incorporate automatic CPI/RPI indexation, protecting real cash flows",
+            "Because infrastructure operating costs are fixed by law and so cannot rise when general inflation accelerates"
           ],
           "answer": 2,
           "why": "Contractual and regulatory CPI/RPI indexation guarantees that tariffs rise automatically with inflation, immunizing real investor cash flows.",
@@ -12106,10 +12106,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Regulated Asset Base (RAB) building block framework, why does an infrastructure utility seek to accelerate regulator-approved capital expenditures (Capex)?",
           "options": [
-            "Because expanding physical Capex automatically exempts the utility from all environmental and municipal safety inspections.",
+            "Because approved Capex is expensed immediately against revenue, which lowers the taxes the utility must pay",
             "Approved Capex is added directly to the RAB, expanding the asset base upon which the utility earns its legally guaranteed allowed rate of return.",
-            "Because regulatory accounting mandates that all Capex must be immediately expensed as an operating loss to wipe out public taxes.",
-            "Because Capex is classified as a direct cash grant from the central bank that does not require any debt or equity financing."
+            "Because regulators allow the utility to earn its allowed return on all Capex, including spending the regulator has not approved",
+            "Because Capex reduces the RAB, which lowers the depreciation charge and raises the utility's allowed rate of return"
           ],
           "answer": 1,
           "why": "Capex expands the Regulated Asset Base, which directly increases the allowable Return on Capital (RAB * Allowed WACC) in future regulatory periods.",
@@ -12138,9 +12138,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary financial mechanism through which a YieldCo can become paralyzed and unable to grow its dividend per share?",
           "options": [
             "If its public share price falls, driving its dividend yield above asset cash flow yields, making new equity issuance non-accretive.",
-            "If the sovereign central bank requires all solar panels to be replaced by steam-driven coal generators within thirty days.",
-            "If the parent sponsor files an intellectual property patent dispute regarding the corporate company logo colors.",
-            "If public shareholders vote to convert all corporate equity shares into zero-coupon perpetual municipal debt instruments."
+            "If the parent sponsor sells its remaining stake, causing the YieldCo's contracted cash flows to be cancelled",
+            "If its cash available for distribution rises above forecasts, forcing it to pay out dividends it cannot sustain",
+            "If its long-term power contracts are all repriced upward, which lowers its cash available for distribution"
           ],
           "answer": 0,
           "why": "When a YieldCo dividend yield spikes above target acquisition yields, issuing equity becomes dilutive to CAFD per share, halting the drop-down growth model.",
@@ -12168,10 +12168,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is applying the standard Gordon Growth perpetuity formula (FCF * (1 + g) / (WACC - g)) fundamentally flawed when valuing a thirty-year BOT highway concession?",
           "options": [
-            "Because the Gordon Growth formula was outlawed by the International Accounting Standards Board for all commercial corporations.",
-            "Because highway asphalt permanently evaporates after fifteen years of operation due to solar ultraviolet radiation.",
-            "Because commercial toll roads are legally prohibited from collecting payments in national fiat currency during the final five years.",
-            "Because ownership of the highway reverts to the government at year thirty for zero consideration, meaning terminal value cash flows post-concession are zero."
+            "Because toll revenues fall to zero in year fifteen once the highway is fully depreciated for tax purposes",
+            "Because the concessionaire must hand a fixed share of toll revenues to lenders in perpetuity, so growth is negative",
+            "Because the Gordon Growth formula applies only to firms with no debt, whereas highway concessions are always highly leveraged",
+            "Because ownership of the highway reverts to the government at year thirty for no consideration, so post-concession terminal value is zero"
           ],
           "answer": 3,
           "why": "Concession rights revert to the host government upon expiration; assuming cash flows continue in perpetuity severely overvalues the asset.",
@@ -12199,10 +12199,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a YieldCo CAFD waterfall, how are Incentive Distribution Rights (IDRs) structured to benefit the parent sponsor corporation?",
           "options": [
-            "They convert all public limited partner shares into non-voting preferred debt certificates upon market downturns.",
-            "They allow the sponsor to seize physical wind turbines and relocate them to international corporate headquarters without investor consent.",
+            "They give public limited partners a priority claim on cash distributions ahead of the sponsor until project debt is repaid",
+            "They entitle the sponsor to a fixed percentage of distributions that stays constant regardless of dividend per share growth",
             "They grant the sponsor an increasing percentage of incremental cash distributions as dividend per share surpasses predetermined hurdle thresholds.",
-            "They mandate that the sponsor receive one hundred percent of gross electricity revenues before any project debt interest is paid."
+            "They allow the sponsor to convert its distribution rights into additional public shares at a discount whenever the share price rises"
           ],
           "answer": 2,
           "why": "IDRs incentivize sponsors to grow the dividend by rewarding them with a tiered, escalating share (up to 50%) of incremental distributions above hurdle thresholds.",
@@ -12290,9 +12290,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary economic driver that creates a 'greenium' (yield discount) on primary green bond issuances?",
           "options": [
             "A severe supply-demand imbalance where massive institutional ESG fund mandates compete for a limited supply of verified green debt.",
-            "A mandatory international regulation requiring central banks to cancel all debts owed by certified green corporations.",
-            "An automatic exemption from corporate income tax granted to any company that purchases green bond certificates.",
-            "The fact that green bonds are backed by physical land ownership in sovereign national wildlife preserves."
+            "Green bonds carry a government pledge to repay principal, which lowers their credit risk below that of conventional bonds",
+            "Issuers of green bonds are given lower statutory corporate tax rates, which they pass on to investors as a lower coupon",
+            "Green bond proceeds are held in escrow until maturity, which eliminates all reinvestment risk for investors"
           ],
           "answer": 0,
           "why": "Massive capital inflows into dedicated ESG funds against scarce certified supply allow underwriters to price green bonds at lower yields (the greenium).",
@@ -12320,10 +12320,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does a 'two-way margin ratchet' function in an institutional Sustainability-Linked Loan (SLL)?",
           "options": [
-            "The commercial bank lending syndicate can seize control of corporate board voting seats whenever local carbon prices decline.",
+            "The interest margin increases whenever the borrower achieves its sustainability targets, rewarding the lenders for extra monitoring",
             "The interest margin decreases if the borrower achieves predefined sustainability targets and increases if the borrower misses those targets.",
-            "The loan balance is automatically halved if the borrower plants one million trees in the host country capital city.",
-            "The interest rate fluctuates randomly based on daily changes in ocean surface water temperatures."
+            "The margin is fixed for the life of the loan, and only the loan maturity changes with sustainability performance",
+            "The interest margin steps down only once, at the first sustainability test, and can never rise afterward"
           ],
           "answer": 1,
           "why": "A two-way margin ratchet adjusts the borrowing margin down for target achievement (reward) and up for target failure (penalty).",
@@ -12380,9 +12380,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a sustainable finance treasury model, what is the net economic impact on corporate cash flow if an industrial issuer misses its annual SLL sustainability performance target?",
           "options": [
-            "The host government revokes the corporation commercial business license and halts all municipal water deliveries.",
-            "The commercial bank syndicate immediately takes legal ownership of all corporate executive pension funds.",
-            "The company common stock is automatically delisted from all international public securities exchanges.",
+            "The loan is accelerated and becomes immediately repayable in full, forcing the issuer to refinance at market rates",
+            "The lenders take a permanent equity stake in the issuer equal to the remaining loan balance",
+            "The loan margin is unchanged, but the issuer must publish an additional sustainability report with no cash effect",
             "The loan borrowing margin ratchets up by the agreed penalty spread, increasing cash interest expense on the credit facility."
           ],
           "answer": 3,
@@ -12441,9 +12441,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Milestone Eleven Capstone transaction, what is the strategic role of incorporating an IFC A/B Loan structure into the multi-billion-dollar project debt package?",
           "options": [
             "To extend IFC preferred creditor status to commercial lenders, shielding them from sovereign currency transfer moratoria.",
-            "To force the sovereign government to surrender its national currency and adopt the U.S. dollar as legal tender.",
-            "To eliminate all legal requirements for environmental impact assessments and local building permits.",
-            "To guarantee that all construction workers are paid exclusively in equity shares of the sovereign wealth fund."
+            "To convert the project's debt into local currency liabilities so that all foreign exchange risk passes to the lenders",
+            "To replace the senior lenders' security package with an unsecured promise from the project sponsors",
+            "To give the IFC an equity stake in the project company in place of interest on its A loan"
           ],
           "answer": 0,
           "why": "The IFC A/B loan structure extends multilateral preferred creditor protection to commercial lenders, mitigating sovereign transfer and convertibility risk.",
@@ -12503,10 +12503,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the infrastructure syndicate choose to segment transmission grid assets into a Regulated Asset Base (RAB) utility rather than placing them in the merchant market?",
           "options": [
-            "Because placing assets in a RAB utility automatically cancels all outstanding bank loans owed by the infrastructure sponsors.",
-            "Because regulated utilities are legally exempt from paying corporate income taxes and local property taxes in perpetuity.",
-            "Because the RAB framework provides legally guaranteed, inflation-indexed returns on all approved capital investments, eliminating volume and merchant price risk.",
-            "Because the regulator permits utility executives to personally set electricity prices at whatever level they desire without public oversight."
+            "Because the RAB framework earns merchant prices set by daily wholesale auctions, giving the syndicate unlimited price upside",
+            "Because regulators pay the utility a return only on assets financed with equity and never on debt-funded assets",
+            "Because the RAB framework gives inflation-indexed returns on approved capital investments, removing volume and merchant price risk",
+            "Because the RAB framework assures returns on all spending, including unapproved capital investments, with no regulatory review"
           ],
           "answer": 2,
           "why": "RAB frameworks eliminate market demand risk by granting a legally guaranteed allowed rate of return on all approved capital expenditures.",
@@ -12653,10 +12653,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do quantitative factor portfolio managers systematically pair Value and Momentum factors within multi-factor investment strategies?",
           "options": [
-            "Because international securities regulations mandate that any fund holding value stocks must hold an identical dollar amount in momentum stocks.",
-            "Because combining the two factors eliminates the need to pay any corporate brokerage transaction commissions or custodial fees.",
-            "Because Value and Momentum exhibit a strong negative correlation, providing powerful cross-factor diversification and smoothing portfolio returns.",
-            "Because value stocks automatically convert into momentum stocks on the final calendar day of each corporate fiscal quarter."
+            "Because both factors perform best at the same point of the economic cycle, which concentrates and amplifies returns",
+            "Because Value and Momentum are the only two factors that still earn a positive premium after transaction costs",
+            "Because Value and Momentum are strongly negatively correlated, giving cross-factor diversification and smoother portfolio returns",
+            "Because Value stocks always have the highest Momentum scores, so holding one automatically provides exposure to the other"
           ],
           "answer": 2,
           "why": "Value and Momentum are historically negatively correlated; combining them creates an optimal multi-factor engine that dampens cyclical drawdown volatility.",
@@ -12684,10 +12684,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational risk when hundreds of quantitative asset managers simultaneously deploy capital into identical crowded factor portfolios?",
           "options": [
-            "The underlying corporations are legally required to merge into a single multinational conglomerate within twenty-four hours.",
-            "The Federal Reserve automatically cancels all corporate patents owned by companies held in smart beta exchange-traded funds.",
-            "Stock exchanges permanently halt trading on all equities that possess a positive book-to-market valuation ratio.",
-            "A sudden margin call or de-leveraging event can trigger cascading fire-sale liquidations, causing a rapid multi-factor quantitative meltdown."
+            "The factors become perfectly correlated with the market, which permanently eliminates their expected premium",
+            "Companies in the factor portfolios are forced to cut dividends to meet the managers' redemption requests",
+            "Exchanges suspend trading in factor-tilted stocks whenever managers' holdings exceed five percent of the float",
+            "A sudden margin call or de-leveraging can trigger cascading fire-sale liquidations and a rapid multi-factor quant meltdown"
           ],
           "answer": 3,
           "why": "Factor crowding creates systemic liquidity risk: forced liquidation by one major player triggers cascading losses across all funds sharing identical factor exposures.",
@@ -12716,9 +12716,9 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the critical econometric distinction between 'correlation' and 'cointegration' in statistical arbitrage pairs trading?",
           "options": [
             "Correlation measures co-movement of returns over time, whereas cointegration proves that a stationary, mean-reverting linear spread exists between prices.",
-            "Correlation applies only to government bonds, while cointegration applies exclusively to physical agricultural commodities.",
-            "Cointegration guarantees that both companies will always report identical quarterly earnings per share in perpetuity.",
-            "Correlation requires algorithmic trading systems, whereas cointegration can only be calculated manually using physical ledger paper."
+            "Correlation measures the long-run equilibrium between price levels, whereas cointegration measures only short-term co-movement of returns",
+            "Cointegration is required only for pairs in different sectors, whereas correlation is required for pairs in the same sector",
+            "Correlation can be estimated from price levels, whereas cointegration can be estimated only from earnings forecasts"
           ],
           "answer": 0,
           "why": "Correlation measures co-movement which can be spurious; cointegration proves that a linear combination of prices is stationary and mean-reverting.",
@@ -12896,10 +12896,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do commercial real estate lenders enforce a minimum 'Debt Yield' (NOI / Loan Amount) constraint when sizing commercial mortgages?",
           "options": [
-            "Because it guarantees that the borrower will achieve a twenty percent return on equity regardless of economic recessions.",
-            "Because it requires the municipal city council to eliminate all local commercial property taxes during the loan tenure.",
-            "Because it allows the commercial bank to automatically seize the personal residential homes of all corporate office tenants.",
-            "Because it measures the lender cash-on-cash return upon foreclosure, remaining completely immune to volatile and subjective property market cap rate swings."
+            "Because it measures the borrower's leverage using the property's appraised value, which lenders consider more reliable than income",
+            "Because it equals the property's cap rate, which lenders use to set the loan's interest rate",
+            "Because it measures how well the property's NOI covers the loan's annual debt service payments",
+            "Because it measures the lender's cash-on-cash return upon foreclosure, immune to volatile property cap rate swings"
           ],
           "answer": 3,
           "why": "Debt yield relies purely on actual property cash NOI relative to debt quantum, providing an objective lending constraint independent of volatile market valuations.",
@@ -13078,10 +13078,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What was the primary regulatory rationale for the SEC eliminating the forward-looking statement safe harbor protection for De-SPAC transactions?",
           "options": [
-            "To force all private companies to operate exclusively within the geographic borders of the District of Columbia.",
-            "To mandate that all public equity shares must be printed on physical parchment paper using specialized anti-counterfeiting ink.",
-            "To hold de-SPAC mergers to the same legal liability standards as traditional IPOs, preventing speculative and misleading multi-year financial projections.",
-            "To prevent international foreign sovereign wealth funds from ever purchasing shares in public technology corporations."
+            "To allow SPAC sponsors to issue projections only after the merger has closed and the shares trade publicly",
+            "To require SPACs to hold investor cash in trust for a longer period before any acquisition can be announced",
+            "To hold de-SPAC mergers to the same liability standards as traditional IPOs, curbing misleading multi-year projections",
+            "To prevent SPAC sponsors from receiving any founder shares or warrants in the combined public company"
           ],
           "answer": 2,
           "why": "The SEC eliminated the safe harbor to treat de-SPAC mergers like traditional IPOs, holding sponsors accountable for speculative forward projections.",
@@ -13107,10 +13107,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a De-SPAC transaction facing high public redemptions (e.g. 90%), why do institutional PIPE investors almost universally demand that the sponsor forfeit or restructure a portion of its 20% promote?",
           "options": [
-            "Because stock exchanges mandate that blank-check sponsors must hold zero equity shares after merger completion.",
-            "Because federal securities law requires all private equity sponsors to donate their equity to charity during economic downturns.",
-            "Because PIPE investors are legally prohibited from holding shares in companies that have corporate board directors.",
-            "To prevent the sponsor from receiving excessive equity ownership relative to the diminished cash actually delivered to the company."
+            "Because stock exchange rules require sponsors to give up all their founder shares once any redemptions occur",
+            "Because PIPE investors want the sponsor's promote converted into debt that ranks ahead of their own investment",
+            "Because PIPE investors are owed a fixed return only if the sponsor's promote is paid out in cash",
+            "To prevent the sponsor from keeping excessive equity relative to the diminished cash actually delivered to the company"
           ],
           "answer": 3,
           "why": "High redemptions diminish delivered cash, making the fixed 20% promote unacceptably dilutive; PIPE investors demand promote concessions to align capital incentives.",
@@ -13166,10 +13166,10 @@ export const BCOM_FINANCE_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core economic premise of the 'Original Sin' hypothesis in international sovereign finance?",
           "options": [
-            "Developing nations are unable to borrow in their own domestic currencies on international markets, creating a dangerous foreign currency mismatch.",
-            "Sovereign governments are legally prohibited from ever collecting taxes on commercial retail sales transactions.",
-            "Central banks must surrender all physical gold reserves to international arbitral tribunals upon sovereign credit downgrades.",
-            "International commercial banks are forbidden from purchasing debt securities issued by sovereign ministries of finance."
+            "Developing nations cannot borrow in their own currencies on international markets, creating a dangerous foreign currency mismatch",
+            "Developing nations can borrow abroad only through the IMF and are barred from issuing bonds to private investors",
+            "Sovereign borrowers must pledge their foreign exchange reserves as collateral for all external bonds they issue",
+            "Developing nations always default on foreign debt because their governments lack the legal power to tax residents"
           ],
           "answer": 0,
           "why": "Original sin refers to the structural condition where emerging economies cannot borrow abroad in local currency, exposing them to catastrophic FX debt shocks.",

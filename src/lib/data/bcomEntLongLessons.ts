@@ -1131,10 +1131,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Clayton Christensen's Jobs-to-be-Done framework, which three core job dimensions must an enterprise value proposition address to achieve durable customer resonance?",
           "options": [
-            "Marketing jobs, Sales jobs, and Accounting jobs",
-            "Hardware jobs, Software jobs, and Network jobs",
+            "Functional jobs, Operational jobs, and Financial jobs",
+            "Functional jobs, Technical jobs, and Cultural jobs",
             "Functional jobs, Social jobs, and Emotional jobs",
-            "Patent jobs, Legal jobs, and Tax jobs"
+            "Emotional jobs, Procedural jobs, and Regulatory jobs"
           ],
           "answer": 2,
           "why": "A robust value proposition satisfies the customer's functional execution, social perception among peers/executives, and emotional state of security.",
@@ -1228,7 +1228,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Unexpected Gains",
             "Required Gains",
             "Expected Gains",
-            "Historical Gains"
+            "Desired Gains"
           ],
           "answer": 0,
           "why": "Unexpected gains represent visionary innovations that customers did not know were possible, creating transformative competitive moats and pricing power.",
@@ -1441,10 +1441,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the five canonical channel phases defined by Alexander Osterwalder in the Business Model Canvas?",
           "options": [
-            "Impressions, Clicks, Add-to-Cart, Checkout, and Returns.",
-            "Brainstorming, Prototyping, Manufacturing, Warehousing, and Retail.",
+            "Awareness, Consideration, Purchase, Loyalty, and Advocacy",
+            "Discovery, Evaluation, Negotiation, Contract, and Renewal",
             "Awareness, Evaluation, Purchase, Delivery, and After-Sales.",
-            "Prospecting, Cold Calling, Invoicing, Shipping, and Collections."
+            "Awareness, Interest, Desire, Action, and Satisfaction"
           ],
           "answer": 2,
           "why": "Alexander Osterwalder explicitly defines the five channel phases as Awareness, Evaluation, Purchase, Delivery, and After-Sales.",
@@ -1538,9 +1538,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What are the two mandatory venture capital unit economics benchmarks for sustainable customer acquisition?",
           "options": [
             "LTV/CAC ratio >= 3.0x and CAC Payback Period <= 12 months.",
-            "LTV/CAC ratio <= 1.0x and CAC Payback Period >= 36 months.",
-            "Blended CAC equal to exactly $0 with zero marketing expenditure allowed.",
-            "Gross profit margin below 20% with unlimited churn rates."
+            "LTV/CAC ratio >= 1.0x and CAC Payback Period <= 24 months.",
+            "LTV/CAC ratio >= 3.0x and CAC Payback Period <= 36 months.",
+            "LTV/CAC ratio >= 5.0x and CAC Payback Period <= 6 months."
           ],
           "answer": 0,
           "why": "Venture investors mandate an LTV/CAC ratio >= 3.0x to ensure capital efficiency, and a CAC payback period <= 12 months to avoid working capital insolvency.",
@@ -1709,9 +1709,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three core activity archetypes identified by Alexander Osterwalder in the Business Model Canvas?",
           "options": [
-            "Advertising, Direct Mail, and Cold Outreach.",
-            "Accounting, Human Resources, and Corporate Legal.",
-            "Purchasing, Warehousing, and Retail Cashiering.",
+            "Design, Distribution, and Customer Support.",
+            "Production, Marketing, and Financial Planning.",
+            "Research, Production, and Procurement.",
             "Production, Problem-Solving, and Platform/Network."
           ],
           "answer": 3,
@@ -1757,10 +1757,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic management term for an alliance where direct competitors collaborate in pre-competitive domains while competing in commercial markets?",
           "options": [
-            "Hostile Takeover.",
-            "Vertical Disintegration.",
+            "Strategic Outsourcing.",
+            "Vertical Integration.",
             "Co-opetition.",
-            "Monopolistic Collusion."
+            "Horizontal Merger."
           ],
           "answer": 2,
           "why": "Co-opetition (Brandenburger & Nalebuff) describes the strategic phenomenon where direct competitors cooperate to create value and expand market size while competing for market share.",
@@ -2293,10 +2293,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the four strategic actions that comprise the ERRC Grid in W. Chan Kim and Renée Mauborgne's Blue Ocean Strategy?",
           "options": [
-            "Enforce, Regulate, Restrict, and Control.",
+            "Eliminate, Reduce, Retain, and Compete.",
             "Eliminate, Reduce, Raise, and Create.",
-            "Equity, Revenue, Return, and Capital.",
-            "Expand, Retain, Recruit, and Consolidate."
+            "Explore, Refine, Replicate, and Commit.",
+            "Enhance, Replace, Reinvest, and Create."
           ],
           "answer": 1,
           "why": "The Blue Ocean ERRC Grid demands asking: Which factors to Eliminate, Reduce below standards, Raise above standards, and Create anew.",
@@ -2849,9 +2849,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under a typical bad-leaver clause, at what price are the departing holder's vested shares repurchased?",
           "options": [
             "At the lower of cost or fair market value.",
-            "At the highest valuation achieved in any funding round.",
-            "At double fair market value.",
-            "They are never repurchased."
+            "At fair market value as determined at the last funding round.",
+            "At the original cost paid by the departing holder regardless of fair market value.",
+            "At the higher of cost or fair market value."
           ],
           "answer": 0,
           "why": "Bad-leaver clauses typically repurchase vested shares at the lower of original cost and fair market value, creating a strong deterrent against damaging departures.",
@@ -3263,9 +3263,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "If throughput is fixed, what is the only way to reduce average lead time according to Little's Law?",
           "options": [
             "Reduce the amount of work in progress.",
-            "Increase the amount of work in progress.",
-            "Add more approvals.",
-            "Ignore the queue."
+            "Increase the batch size of each work item released to the process.",
+            "Add buffer stages between process steps so queues can absorb variation.",
+            "Raise the utilization of each resource toward 100 percent."
           ],
           "answer": 0,
           "why": "Lead time = WIP / throughput, so with throughput fixed, lowering WIP is the only way to lower lead time.",
@@ -4658,10 +4658,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the two primary unit economics benchmarks required for institutional venture capital investment?",
           "options": [
-            "A viral K-factor of 0.50 combined with high digital ad spend.",
+            "LTV/CAC ratio of at least 1.0x and CAC payback period of 24 months or less.",
             "LTV/CAC ratio of at least 3.0x and CAC payback period of 12 months or less.",
-            "Gross margins below 30% and net churn exceeding 20%.",
-            "Sales velocity exceeding $100M monthly regardless of acquisition cost."
+            "LTV/CAC ratio of at least 3.0x and CAC payback period of 36 months or less.",
+            "LTV/CAC ratio of at least 5.0x and CAC payback period of 6 months or less."
           ],
           "answer": 1,
           "why": "Institutional venture capital mandates that Customer Lifetime Value must be at least 3x Customer Acquisition Cost (LTV/CAC >= 3.0x) and upfront acquisition cash must be recovered within 12 months or less to ensure capital-efficient, compounding growth.",
@@ -10360,7 +10360,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Cash collected from annual contracts is immediately recognized as GAAP revenue on day one, bypassing deferred revenue accounts.",
             "Upfront billing increases Days Sales Outstanding to over three hundred days, maximizing credit receivables on the asset ledger.",
-            "Annual upfront billing eliminates all current liabilities from the corporate balance sheet, driving working capital to zero.",
+            "Annual upfront billing lowers Days Sales Outstanding to zero, which converts deferred revenue into immediate net income on day one.",
             "Customers wire cash twelve months in advance, creating deferred revenue liabilities and liquid float that funds operations before services are delivered."
           ],
           "answerIndex": 3,
@@ -10502,10 +10502,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is the Bessemer Burn Multiple calculated, and what does a score of 1.2x signify for a Series B technology company?",
           "options": [
-            "Total Operating Expenses divided by Gross Profit; a 1.2x score indicates that the company is insolvent and losing money on every customer.",
-            "Customer Acquisition Cost divided by Monthly Recurring Revenue; a 1.2x score means customer payback takes exactly 1.2 months.",
+            "Total Operating Expenses divided by Gross Profit; a 1.2x score indicates that operating costs consume more than all of the gross profit.",
+            "Customer Acquisition Cost divided by Monthly Recurring Revenue; a 1.2x score means that customer payback takes about 1.2 months of revenue.",
             "Net Cash Burn divided by Net New ARR; a 1.2x score is rated Good, meaning the company burns $1.20 of cash to generate $1.00 of new recurring annual revenue.",
-            "Enterprise Valuation divided by Total Venture Capital Raised; a 1.2x score indicates extreme shareholder dilution."
+            "Enterprise Valuation divided by Total Venture Capital Raised; a 1.2x score indicates extreme shareholder dilution for the founders."
           ],
           "answerIndex": 2,
           "why": "The Bessemer Burn Multiple divides Net Cash Burn by Net New ARR. A score of 1.2x falls into the 'Good' efficiency category (1.0x to 1.5x), indicating that the company consumes $1.20 of cash for each $1.00 of net new recurring revenue added.",
@@ -10768,9 +10768,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a $25M exit where total preferred liquidation preferences equal $33M, how does a Tiered Seniority structure impact Series Seed and Common shareholders compared to Pari Passu?",
           "options": [
-            "Tiered seniority forces the acquiring company to pay double the purchase price to satisfy unsatisfied liquidation preferences.",
-            "Tiered seniority guarantees that common shareholders receive fifty percent of all exit proceeds before preferred investors receive a single dollar.",
-            "Pari passu eliminates all preferred rights and distributes the entire twenty-five million dollars equally among all individual shareholders.",
+            "Tiered seniority pays Series Seed first and Series B last, so that Seed recovers its full preference while Common receives whatever remainder is left.",
+            "Tiered seniority splits the exit proceeds pro-rata across all preferred series, while Pari Passu pays the most senior series first in full.",
+            "Pari Passu pays Series B first and Series A second, leaving Series Seed and Common with zero dollars; Tiered seniority shares recovery pro-rata across series.",
             "Tiered seniority pays Series B first and Series A second, leaving Series Seed and Common with zero dollars; Pari Passu shares recovery pro-rata across all preferred series."
           ],
           "answerIndex": 3,
@@ -11575,10 +11575,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI LODR Regulation 17, what is the mandatory board independence ratio if the Chairman of the Board of Directors is an executive promoter or founder?",
           "options": [
-            "Exactly ten percent of the board must consist of independent directors.",
+            "At least one-third (33%) of the total board must consist of Independent Directors.",
             "At least fifty percent (50%) of the total board of directors must consist of Independent Directors.",
-            "Zero independent directors are required as long as the founder owns more than fifty percent of the company's equity.",
-            "One hundred percent of the board must consist of active executive employees."
+            "At least twenty-five percent (25%) of the board must consist of Independent Directors.",
+            "At least seventy-five percent (75%) of the board must consist of Independent Directors."
           ],
           "answerIndex": 1,
           "why": "Under SEBI LODR Regulation 17, if the Chairperson of the Board is an executive director or promoter, at least 50% of the board must comprise independent directors to ensure unbiased governance.",
@@ -11796,9 +11796,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulations, what is the maximum statutory percentage of Fresh Issue proceeds that an enterprise may allocate to General Corporate Purposes (GCP)?",
           "options": [
-            "One hundred percent, allowing promoters complete discretionary spending freedom.",
-            "Zero percent; every single rupee must be spent exclusively on physical factory machinery.",
-            "Exactly seventy-five percent of total gross proceeds.",
+            "Maximum fifty percent (50%) of the total fresh issue proceeds.",
+            "Maximum fifteen percent (15%) of the total fresh issue proceeds.",
+            "Maximum thirty-five percent (35%) of the total gross proceeds including the Offer for Sale.",
             "Maximum twenty-five percent (25%) of the total fresh issue proceeds."
           ],
           "answerIndex": 3,
@@ -12241,8 +12241,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Regulation 33 of SEBI LODR, what is the statutory deadline for a listed company to submit its unaudited quarterly financial results accompanied by a Limited Review Report to recognized stock exchanges?",
           "options": [
             "Within sixty calendar days from the end of the quarter, solely for standalone financial statements.",
-            "Within ninety calendar days from the end of the quarter, following approval by the annual general meeting.",
-            "Within thirty calendar days from the end of the quarter, without requiring any independent auditor review.",
+            "Within sixty calendar days from the end of the quarter, accompanied by an auditor Limited Review Report.",
+            "Within thirty calendar days from the end of the quarter, accompanied by an auditor Limited Review Report.",
             "Within forty-five calendar days from the end of the quarter, accompanied by an auditor Limited Review Report."
           ],
           "answerIndex": 3,
@@ -12290,9 +12290,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Clause 4 of Schedule B of the SEBI PIT Regulations, what is the mandatory statutory duration for the closure of the Trading Window around quarterly financial results?",
           "options": [
             "From the end of every financial quarter until exactly forty-eight hours after the declaration of financial results to stock exchanges.",
-            "From seven days prior to the board meeting until twelve hours following the conclusion of the board meeting.",
-            "Only on the day of the board meeting, reopening immediately upon market opening the following morning.",
-            "From the first day of the following quarter until thirty days after the filing of the annual report."
+            "From seven days prior to the board meeting until twelve hours following the conclusion of the board meeting, covering only that single meeting.",
+            "From the first day of the quarter until twenty-four hours after the board meeting that approves the financial results.",
+            "From the first day of the following quarter until thirty days after the filing of the annual report with the registrar."
           ],
           "answerIndex": 0,
           "why": "Under Clause 4 of Schedule B of the SEBI PIT Regulations, the trading window must be closed from the end of every quarter (March 31, June 30, September 30, December 31) until forty-eight hours after the financial results are declared and made generally available to the public on stock exchange portals.",
@@ -12340,7 +12340,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "The higher of 10% of revenue or 15% of EBITDA as determined by the statutory auditor.",
             "The lower of 2% of turnover, 2% of net worth, or 5% of the 3-year average absolute profit/loss after tax.",
-            "Solely based on the subjective discretion of the Managing Director without quantitative criteria.",
+            "The lower of 5% of turnover, 5% of net worth, or 10% of the 3-year average absolute profit/loss after tax.",
             "A flat monetary threshold of ten crore rupees across all listed companies regardless of size."
           ],
           "answerIndex": 1,
@@ -12514,9 +12514,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Schedule VI of SEBI ICDR Regulations, what is the mandatory financial restatement track record required for an issuer filing a public offering prospectus?",
           "options": [
             "Three complete financial years of restated financial statements under uniform Indian Accounting Standards (Ind AS).",
-            "One single fiscal quarter of audited financial statements with zero restatement adjustments.",
-            "Ten consecutive years of audited balance sheets prepared solely under cash-basis accounting.",
-            "Five years of unaudited management accounting forecasts without independent auditor certification."
+            "Two complete financial years of audited financial statements prepared under Indian GAAP without any restatement.",
+            "Five complete financial years of restated financial statements prepared under mixed accounting standards.",
+            "Three complete financial years of unaudited management accounts certified by the directors of the issuer."
           ],
           "answerIndex": 0,
           "why": "Under Schedule VI of the SEBI ICDR Regulations 2018, an issuer must include restated financial statements (balance sheet, profit and loss, cash flows, and notes) for each of the preceding three financial years immediately preceding the filing of the draft offer document, prepared under uniform Ind AS standards.",
@@ -12563,8 +12563,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulations, what is the statutory ceiling on General Corporate Purposes (GCP) as a percentage of fresh issue proceeds?",
           "options": [
-            "Zero percent, as all fresh capital must be deployed into debt prepayment.",
-            "Up to eighty percent at the sole discretion of the Board Running Lead Managers.",
+            "Maximum ten percent (10%) of the total fresh issue proceeds.",
+            "Maximum thirty percent (30%) of the total fresh issue proceeds.",
             "Maximum fifty percent (50%) of total gross proceeds including the Offer for Sale.",
             "Maximum twenty-five percent (25%) of the total fresh issue proceeds."
           ],
@@ -12613,10 +12613,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory reservation requirement for Domestic Mutual Funds within the Anchor Investor tranche under SEBI ICDR Regulations?",
           "options": [
-            "Fifty percent of the entire public issue must be given to domestic banks.",
-            "Zero reservation, as anchor shares are allocated purely on a first-come, first-served basis.",
+            "At least one-half (50%) of the anchor allocation must be reserved exclusively for domestic mutual funds.",
+            "At least one-third (33.33%) of the anchor allocation must be reserved exclusively for foreign portfolio investors.",
             "At least one-third (33.33%) of the anchor allocation must be reserved exclusively for domestic mutual funds.",
-            "Exactly ten percent of the anchor allocation must be reserved for foreign portfolio investors."
+            "At least ten percent (10%) of the anchor allocation must be reserved exclusively for domestic mutual funds."
           ],
           "answerIndex": 2,
           "why": "Under Schedule XIII of the SEBI ICDR Regulations 2018, at least one-third (33.33%) of the anchor investor allocation must be reserved exclusively for domestic mutual funds, ensuring domestic retail savings participate in institutional anchor allocations.",
@@ -12790,10 +12790,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEC Rule 13e-4, what is the mandatory minimum duration that a company-sponsored tender offer must remain open to eligible security holders?",
           "options": [
-            "Exactly five business days to prevent secondary market speculative price swings.",
+            "A minimum of ten business days from the date the tender offer is formally commenced.",
             "A minimum of twenty business days from the date the tender offer is formally commenced.",
-            "Forty-eight hours, matching public market quarterly earnings announcement windows.",
-            "Ninety calendar days, subject to unanimous approval by the board of directors."
+            "A minimum of thirty business days from the date the tender offer is formally commenced.",
+            "A minimum of five business days from the date the tender offer is formally commenced."
           ],
           "answerIndex": 1,
           "why": "Under SEC Rule 13e-4(f)(1)(i) of the Securities Exchange Act of 1934, an issuer tender offer must remain open for a minimum of twenty business days from the date the offer is first published, sent, or given to security holders, ensuring adequate time for informed decision-making.",
@@ -12838,10 +12838,10 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a secondary employee stock transaction involving option exercise, how is the spread between the exercise strike price and the prevailing 409A Fair Market Value taxed under US and Indian tax regulations?",
           "options": [
-            "Exclusively as long-term capital gains regardless of the holding duration.",
-            "As corporate dividend distribution deducted directly from company retained earnings.",
+            "As long-term capital gains at the concessional rate, regardless of how long the shares are held after exercise.",
+            "As business income of the employer, taxed only in the hands of the company issuing the options.",
             "As ordinary wage compensation subject to mandatory employer payroll and perquisite tax withholding.",
-            "As tax-free return of capital with zero statutory reporting obligations."
+            "As exempt perquisite income when the shares are held for at least twelve months after exercise."
           ],
           "answerIndex": 2,
           "why": "The spread between the option exercise strike price and the prevailing Fair Market Value (409A FMV) is classified as ordinary wage compensation (Perquisite Tax in India under Section 17(2)), subject to mandatory employer payroll tax withholding at top marginal rates.",
@@ -12937,9 +12937,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under FEMA Non-Debt Instruments regulations, within what statutory timeframe must Form FC-TRS be filed with the Reserve Bank of India following a cross-border equity transfer?",
           "options": [
             "Within sixty calendar days from the date of receipt or transfer of funds.",
-            "Within twenty-four hours of board approval of the share transfer.",
-            "Solely at the end of the financial year during annual income tax return filing.",
-            "Within one hundred eighty calendar days, provided the transaction value is under five crore rupees."
+            "Within thirty calendar days from the date of receipt or transfer of funds.",
+            "Within ninety calendar days from the date of receipt or transfer of funds.",
+            "Within one hundred eighty calendar days from the date of receipt or transfer of funds."
           ],
           "answerIndex": 0,
           "why": "Under Regulation 20(R) of the FEMA Non-Debt Instruments Regulations, Form FC-TRS must be submitted through an Authorized Dealer Category-I bank within sixty calendar days from the date of receipt or transfer of the transaction consideration.",
@@ -13381,7 +13381,7 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Up to five percent (5.0%) gross voting rights in any single financial year.",
             "Up to ten percent (10.0%) provided shares are purchased solely through off-market transfers.",
-            "Zero percent, as any subsequent share purchase triggers a mandatory open offer.",
+            "Up to two percent (2.0%) gross voting rights in any single financial year.",
             "Up to fifteen percent (15.0%) subject to approval by the audit committee."
           ],
           "answerIndex": 0,
@@ -13528,8 +13528,8 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 15H of the SEBI Act 1992, what is the maximum statutory penalty that can be imposed for failure to make a mandatory public open offer upon crossing takeover thresholds?",
           "options": [
             "Five crore rupees or one-half of the value of shares acquired, whichever is lower.",
-            "A fixed administrative fine of ten lakh rupees with zero executive disqualification.",
-            "Ten percent of the company's historical net profit as determined by internal auditors.",
+            "Twenty-five crore rupees or three times the profits made out of the failure, whichever is lower.",
+            "Ten crore rupees or one-half of the value of the shares acquired, whichever is higher.",
             "Twenty-five crore rupees or three times the amount of profits made out of the failure, whichever is higher."
           ],
           "answerIndex": 3,
@@ -13923,9 +13923,9 @@ export const BCOM_ENT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under SEBI ICDR Regulation 29, what is the statutory restriction on the Price Band established by an issuer in a book-built initial public offering?",
           "options": [
-            "The Floor Price must be set at zero with unlimited upward bidding.",
-            "The Price Band must be fixed at exactly ten rupees across all public offerings.",
-            "The Cap Price can be set at any level provided it is approved by independent directors.",
+            "The Cap Price cannot exceed one hundred fifty percent (150%) of the Floor Price.",
+            "The Cap Price cannot exceed one hundred ten percent (110%) of the Floor Price.",
+            "The Cap Price cannot exceed one hundred thirty percent (130%) of the Floor Price.",
             "The Cap Price cannot exceed one hundred twenty percent (120%) of the Floor Price."
           ],
           "answerIndex": 3,

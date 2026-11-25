@@ -7068,9 +7068,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three core pillars of the United Nations Guiding Principles on Business and Human Rights (UNGPs)?",
           "options": [
-            "Territorialism, Sovereign Immunity, and Universal Disgorgement",
-            "Patent Licensing, Trademark Registration, and Trade Secret Concealment",
-            "Capital Formation, Hostile Acquisition, and Shareholder Liquidation",
+            "State Duty to Regulate, Corporate Duty to Disclose, and Right to Compensation",
+            "Corporate Duty to Protect, State Responsibility to Respect, and Access to Remedy",
+            "State Duty to Protect, Corporate Responsibility to Report, and Access to Arbitration",
             "State Duty to Protect, Corporate Responsibility to Respect, and Access to Remedy"
           ],
           "answerIndex": 3,
@@ -7787,7 +7787,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 149(4) of the Companies Act 2013, what is the mandatory proportion of independent directors for a listed public enterprise with 11 total directors?",
           "options": [
-            "Exactly 2 independent directors, because unlisted public company rules apply to mid-cap listed entities",
+            "At least 2 independent directors, because the minimum of two applies to all listed companies regardless of board size",
             "At least 4 independent directors, because 1/3 of 11 (3.67) must be rounded up to the next integer",
             "At least 5 independent directors, because SEBI LODR always requires 50 percent independent representation",
             "At least 3 independent directors, because 1/3 of 11 (3.67) rounds down to the nearest lower integer"
@@ -7815,10 +7815,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 149(6)(e) of the Companies Act 2013, what is the maximum percentage of gross turnover that a legal or consulting firm may derive from a company without disqualifying its partners from serving as independent directors of that company?",
           "options": [
-            "Two percent (2%) of the gross turnover of the client enterprise",
-            "Twenty-five percent (25%) of the total billable hours of the specific partner",
+            "Twenty percent (20%) of the gross turnover of the professional legal or consulting firm",
+            "Ten percent (10%) of the net profit of the professional legal or consulting firm",
             "Ten percent (10%) of the gross turnover of the professional legal or consulting firm",
-            "Five percent (5%) of the net profit before tax of the client enterprise"
+            "Five percent (5%) of the gross turnover of the professional legal or consulting firm"
           ],
           "answerIndex": 2,
           "why": "Section 149(6)(e)(ii) provides that an individual cannot be an independent director if they are a partner or employee of a legal or consulting firm that has had transactions with the company amounting to 10% or more of the gross turnover of such firm in any of the three preceding financial years.",
@@ -7843,9 +7843,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Schedule IV Part VII of the Companies Act 2013, which of the following is an absolute statutory requirement regarding the separate meeting of independent directors?",
           "options": [
-            "It is strictly optional for unlisted public companies with paid-up capital below one hundred crore rupees",
-            "It must be presided over by the Managing Director to ensure operational accuracy of financial disclosures",
-            "It must be attended by the statutory auditor to formally record the minutes of the internal audit review",
+            "It must be held at least once a year, with the Chairperson and executive directors present to review company performance",
+            "It must be held at least twice a year with the Managing Director presiding over the discussion",
+            "It must be held at least once a year with the statutory auditor and CFO attending to record the minutes",
             "It must be held at least once a year without the presence of non-independent directors or members of management"
           ],
           "answerIndex": 3,
@@ -7956,9 +7956,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 177(2) of the Companies Act 2013, what are the mandatory statutory composition requirements for an Audit Committee?",
           "options": [
             "A minimum of three directors with independent directors forming a majority, and a majority including the Chairperson having financial literacy",
-            "A minimum of two directors comprising only whole-time executive directors who have completed five years of corporate tenure and financial training",
-            "At least five directors with the Chief Financial Officer serving as the voting permanent chairperson of the committee",
-            "Exactly four directors appointed exclusively by the institutional lenders holding the largest secured debentures of the company"
+            "A minimum of three directors, all of whom must be independent non-executive directors with formal financial training and five years of audit experience",
+            "A minimum of two directors with independent directors forming a majority and the Chief Financial Officer serving as the permanent chairperson",
+            "A minimum of three directors with executive directors forming a majority and the Managing Director serving as the chairperson of the committee"
           ],
           "answerIndex": 0,
           "why": "Section 177(2) of the Companies Act 2013 explicitly dictates that the Audit Committee shall consist of a minimum of three directors with independent directors forming a majority, and the majority of members, including its Chairperson, must possess the ability to read and understand financial statements.",
@@ -7983,9 +7983,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 178(1) of the Companies Act 2013, can the Chairperson of the company serve as the Chairperson of the Nomination and Remuneration Committee?",
           "options": [
-            "No, the Chairperson of the company is strictly prohibited from even attending NRC meetings as an observer",
-            "Yes, the Chairperson of the company is statutorily compelled to chair the NRC to ensure board alignment",
-            "Yes, provided the appointment is approved by unanimous consent of the institutional debenture trustees",
+            "No, the Chairperson of the company cannot be a member of the NRC in any capacity, as the committee must be entirely independent",
+            "Yes, the Chairperson of the company may chair the NRC provided a majority of the committee members are independent directors",
+            "Yes, provided the Chairperson is a non-executive director and the Board approves the appointment by resolution",
             "No, the Chairperson of the company may be appointed as a member of the NRC, but shall not chair such committee"
           ],
           "answerIndex": 3,
@@ -8043,7 +8043,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Indefinitely until the entire excess expenditure balance is fully amortized",
             "Up to the immediately succeeding three financial years",
             "Strictly in the immediate next financial year only, after which any remaining balance lapses",
-            "Up to seven financial years, matching statutory income tax loss carry-forward rules"
+            "Up to the immediately succeeding five financial years"
           ],
           "answerIndex": 1,
           "why": "Section 135(5) third proviso explicitly establishes that if the company spends an amount in excess of the requirements, such company may set off such excess amount against the requirement to spend under this sub-section for such number of succeeding financial years and in such manner, as may be prescribed (prescribed as up to 3 succeeding financial years under Rule 7(3)).",
@@ -8069,9 +8069,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why must Corporate Social Responsibility (CSR) expenditure under Section 135 be calculated on Section 198 net profit rather than book Profit Before Tax (PBT)?",
           "options": [
             "Because Section 198 excludes capital gains, share premiums, and inter-corporate dividends to reflect genuine operational earnings",
-            "Because Section 198 automatically doubles the statutory corporate tax rate for listed commercial entities",
-            "Because book Profit Before Tax is strictly confidential and cannot be published in the annual financial report",
-            "Because the Ministry of Corporate Affairs mandates that CSR spending must be derived exclusively from employee payroll withholdings"
+            "Because Section 198 adds back depreciation and income-tax provisions to arrive at a higher distributable profit figure",
+            "Because Section 198 includes capital gains and share premiums so that the CSR base reflects the total gains of the year",
+            "Because book Profit Before Tax is computed after deducting CSR spending, which would make the calculation circular"
           ],
           "answerIndex": 0,
           "why": "Section 135(5) read with Section 198 requires net profit to be calculated in accordance with the provisions of Section 198, which excludes extraordinary capital receipts (like capital gains and share premia) and overseas earnings to arrive at the true operational commercial profit.",
@@ -8152,8 +8152,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Regulation 23(1) of SEBI LODR, what is the statutory materiality threshold that triggers mandatory prior shareholder approval for a Related Party Transaction?",
           "options": [
             "A transaction exceeding one thousand crore rupees or ten percent (10%) of annual consolidated turnover, whichever is lower",
-            "Any transaction exceeding twenty-five crore rupees regardless of company turnover, net worth or asset base",
-            "Exclusively transactions that exceed fifty percent (50%) of the total issued and paid-up equity share capital",
+            "A transaction exceeding one thousand crore rupees or ten percent (10%) of annual consolidated turnover, whichever is higher",
+            "A transaction exceeding five hundred crore rupees or five percent (5%) of annual consolidated turnover, whichever is lower",
             "A transaction exceeding five hundred crore rupees or twenty percent (20%) of the book net worth, whichever is higher"
           ],
           "answerIndex": 0,
@@ -8211,9 +8211,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the fourth proviso to Section 188(1) of the Companies Act 2013, under what specific statutory condition is a Related Party Transaction exempt from board and shareholder prior approvals?",
           "options": [
             "If the monetary value of the contract is less than ten crore rupees and is paid only via banking channels",
-            "Exclusively when the related party is a wholly owned subsidiary registered in an offshore tax haven jurisdiction",
+            "If the transaction is approved by the audit committee alone, without any board or shareholder consideration",
             "If the transaction is entered into by the company in its ordinary course of business and is conducted on an arm's-length basis",
-            "If the transaction has been orally ratified by the independent directors during an informal conference call"
+            "If the transaction is disclosed in the Directors Report of the following financial year after it has been executed"
           ],
           "answerIndex": 2,
           "why": "Section 188(1) fourth proviso explicitly provides that nothing in this sub-section shall apply to any transactions entered into by the company in its ordinary course of business other than transactions which are not on an arm's length basis.",
@@ -8241,7 +8241,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Before the filing of the next annual return with the Registrar of Companies in Form MGT-7",
             "Within six months, provided the transaction was executed during the second half of the financial year",
-            "Within thirty calendar days from the conclusion of the statutory financial audit",
+            "Within six months from the date of the next general meeting of the company",
             "Within three months from the date on which such contract or arrangement was entered into"
           ],
           "answerIndex": 3,
@@ -8322,10 +8322,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 174(1) of the Companies Act 2013, what is the general statutory quorum required for a meeting of the Board of Directors?",
           "options": [
-            "One-fourth of the total strength, excluding all women directors and non-resident directors",
+            "One-fourth of its total strength, or two directors, whichever is higher, with any fraction rounded off as one",
             "One-third of its total strength, or two directors, whichever is higher, with any fraction rounded off as one",
-            "A simple majority of fifty-one percent of all equity shareholders present in person",
-            "Exactly three directors, provided all three hold professional degrees in law or finance"
+            "One-half of its total strength, or three directors, whichever is higher, with any fraction rounded off as one",
+            "One-third of its total strength, or three directors, whichever is lower, with any fraction ignored"
           ],
           "answerIndex": 1,
           "why": "Section 174(1) provides that the quorum for a meeting of the Board of Directors of a company shall be one-third of its total strength or two directors, whichever is higher, and any fraction contained in that one-third shall be rounded off as one.",
@@ -8352,9 +8352,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 175(1) proviso of the Companies Act 2013, what proportion of directors is required to compel that a resolution under circulation must be decided at a formal meeting of the Board?",
           "options": [
             "Not less than one-third (1/3) of the total number of directors of the company for the time being",
-            "A unanimous petition signed by all independent directors holding office",
-            "At least fifty-one percent of all non-executive directors who attended the prior meeting",
-            "A single director who has served on the board for more than ten consecutive years"
+            "Not less than one-half (1/2) of the total number of directors of the company for the time being",
+            "Any two independent directors holding office at the time the resolution is circulated",
+            "A majority of the directors present in India at the time the resolution is circulated"
           ],
           "answerIndex": 0,
           "why": "Section 175(1) proviso explicitly dictates that where not less than one-third of the total number of directors of the company for the time being require that any resolution under circulation must be decided at a meeting, the Chairperson shall put the resolution to be decided at a meeting of the Board.",
@@ -8495,10 +8495,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 135 read with Section 198 of the Companies Act 2013, why must extraordinary capital gains be excluded from the net profit base when computing mandatory CSR obligations?",
           "options": [
-            "Because the CSR Committee is prohibited from spending funds derived from tangible industrial real estate",
-            "Because all capital gains must be deposited into the Consolidated Fund of India within forty-eight hours of sale",
+            "Because capital gains are taxable only in the hands of shareholders and are never recorded in the books of the company",
+            "Because Section 198 excludes recurring operating revenue and counts only extraordinary gains from asset sales",
             "Because Section 198 isolates recurring operational earnings and expressly excludes capital gains from asset sales and share premia",
-            "Because capital gains are subject to international customs tariffs that exempt them from corporate governance rules"
+            "Because capital gains are reported separately in the Cash Flow Statement and so cannot form part of net profit"
           ],
           "answerIndex": 2,
           "why": "Section 198 expressly dictates the computation of net profit for managerial remuneration and CSR, requiring the exclusion of capital profits, capital gains, and premiums realized on share issues to reflect true recurring operational performance.",
@@ -8527,8 +8527,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under SEBI LODR Regulation 23, what is the mandatory voting rule when a listed company seeks shareholder approval for a material Related Party Transaction?",
           "options": [
             "The promoter group can vote their full equity stake, provided the resolution is passed by a 75 percent supermajority of votes",
-            "Voting is restricted exclusively to foreign portfolio investors and state-owned commercial banks holding shares",
-            "No shareholder vote is permitted, and the transaction must be referred directly to the High Court for judicial sanction",
+            "Only independent directors may vote, and the resolution needs a simple majority of those directors present",
+            "Only the promoter group may vote on the resolution, which requires approval by a two-thirds majority in value",
             "All related parties are legally barred from voting, and the resolution must be approved by a majority of the minority public shareholders"
           ],
           "answerIndex": 3,
@@ -8672,8 +8672,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 7 of the Insolvency and Bankruptcy Code 2016, as interpreted by the Supreme Court in Innoventive Industries, what must the Adjudicating Authority ascertain to admit a financial creditor application?",
           "options": [
-            "That the promoters have formally consented in writing to surrender managerial control",
-            "That the corporate debtor has zero tangible assets remaining on its audited balance sheet",
+            "That the net worth of the corporate debtor has been fully eroded by accumulated losses",
+            "That the total debt of the debtor exceeds the value of all its tangible assets per the latest audited balance sheet",
             "That the financial creditor has exhausted all recovery proceedings before the Debt Recovery Tribunal (DRT)",
             "Merely that a financial debt exists and that a default exceeding the statutory threshold has occurred"
           ],
@@ -8733,7 +8733,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Only if the Committee of Creditors passes a special resolution by ninety percent majority extending the shield",
             "No, the moratorium explicitly does not apply to a surety in a contract of guarantee to a corporate debtor",
             "Yes, all recovery actions against personal guarantors are automatically stayed for three hundred and thirty days",
-            "Yes, but only if the personal guarantor is a senior citizen or non-resident Indian"
+            "Yes, but only where the personal surety was furnished by the promoters of the corporate debtor"
           ],
           "answerIndex": 1,
           "why": "Section 14(3)(b) expressly excludes a surety in a contract of guarantee to a corporate debtor from the scope of the moratorium, allowing creditors to enforce guarantees against promoters during CIRP as confirmed in SBI v. V. Ramakrishnan.",
@@ -8760,9 +8760,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 65 of the Insolvency and Bankruptcy Code 2016, what is the statutory penalty if an operational creditor initiates CIRP fraudulently or with malicious intent for purposes other than resolution?",
           "options": [
             "A personal monetary penalty of not less than one lakh rupees, which may extend up to one crore rupees",
-            "Mandatory five years of corporate disqualification across all recognised stock exchanges in India",
-            "Automatic forfeiture of all intellectual property rights and patents belonging to the creditor",
-            "A formal reprimand issued in the local gazette by the tribunal without any financial consequences"
+            "A personal monetary penalty of not less than ten thousand rupees, which may extend up to one lakh rupees",
+            "A personal monetary penalty of not less than one crore rupees, which may extend up to ten crore rupees",
+            "Imprisonment of up to six months for the creditor and its officers, with no monetary penalty"
           ],
           "answerIndex": 0,
           "why": "Section 65(1) provides that if any person initiates the insolvency resolution process fraudulently or with malicious intent for any purpose other than resolution of insolvency, the Adjudicating Authority may impose a penalty of not less than one lakh rupees, but which may extend to one crore rupees.",
@@ -8815,9 +8815,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 17 of the Insolvency and Bankruptcy Code 2016, what happens to the powers of the Board of Directors upon the appointment of an Interim Resolution Professional?",
           "options": [
-            "The Board is automatically dissolved and all directors are barred from entering company premises",
+            "The Board is replaced by the Committee of Creditors, which appoints new directors from among the financial creditors",
             "The Board continues to manage all commercial banking operations while the IRP acts as an advisory observer",
-            "The Board shares joint executive veto power with the IRP over all transactions exceeding ten lakh rupees",
+            "The Board keeps managing the company but needs prior approval of the IRP for transactions above a monetary limit",
             "The powers of the Board of Directors stand suspended by operation of law and vest exclusively in the IRP"
           ],
           "answerIndex": 3,
@@ -8848,7 +8848,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Within three days of appointment",
             "Within fourteen days of appointment",
             "Within thirty days of appointment",
-            "Within forty-eight hours of board approval"
+            "Within seven days of appointment"
           ],
           "answerIndex": 0,
           "why": "Regulation 6(1) of the IBBI CIRP Regulations mandates that the interim resolution professional shall make a public announcement within three days from their appointment.",
@@ -8938,7 +8938,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the first proviso to Section 21(2) of the Insolvency and Bankruptcy Code 2016, what is the statutory status of a financial creditor who is a related party of the corporate debtor?",
           "options": [
             "They may vote on all ordinary resolutions but cannot vote on Section 28 special resolution matters",
-            "They automatically assume the position of CoC Chairman if they hold the largest financial exposure",
+            "They may attend meetings as observers and vote only on resolutions relating to repayment of their own debt",
             "They are granted fifty percent of standard voting rights subject to approval by the Resolution Professional",
             "They shall not have any right of representation, participation, or voting in a meeting of the Committee of Creditors"
           ],
@@ -8994,8 +8994,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 5(28) read with Section 21 of the Insolvency and Bankruptcy Code 2016, how is a financial creditor's voting share in the Committee of Creditors determined?",
           "options": [
-            "In proportion to the market value of pledged collateral held by each creditor under registered mortgages",
-            "By seniority of initial credit facility disbursement across commercial banking syndicates",
+            "In proportion to the amount of debt in default alone, excluding any financial debt not yet due",
+            "In proportion to the value of financial debt secured by a charge on the debtor assets, with unsecured creditors excluded",
             "In proportion to the financial debt owed to such creditor as a percentage of the total admitted financial debt",
             "By equal division where every financial creditor possesses exactly one vote regardless of debt exposure"
           ],
@@ -9058,8 +9058,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Such action shall be void ab initio and have zero legal effect",
             "The action remains legally valid but the RP must pay a nominal fine of ten thousand rupees",
-            "The action is automatically ratified if sixty days elapse without formal objection",
-            "The action is referred to the High Court for discretionary administrative regularization"
+            "The action remains valid if the Adjudicating Authority later approves it on application by the Resolution Professional",
+            "The action stays valid but may be set aside on application by any single dissenting financial creditor"
           ],
           "answerIndex": 0,
           "why": "Section 28(4) unequivocally provides that where the resolution professional takes any action under subsection (1) without the prior approval of the committee of creditors, such action shall be void.",
@@ -9089,7 +9089,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Financial creditors representing at least sixty-six percent of the voting shares",
             "Financial creditors representing at least fifty-one percent of total voting debt",
-            "A minimum of two commercial banks regardless of their voting share percentage",
+            "A minimum of three financial creditors regardless of their voting share percentage",
             "Financial creditors representing at least thirty-three percent of the voting shares"
           ],
           "answerIndex": 3,
@@ -9205,10 +9205,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's ruling in ArcelorMittal India v. Satish Kumar Gupta, how can a prospective resolution applicant disqualified under Section 29A(c) for holding a one-year NPA account purge its ineligibility?",
           "options": [
-            "By depositing ten percent of the liquidation value in an escrow account with the High Court",
-            "By resigning directorships and transferring shares to immediate relatives forty-eight hours prior to bidding",
+            "By paying ten percent of the overdue amount into an escrow account before submitting the resolution plan",
+            "By obtaining a written waiver of the overdue amounts from the Committee of Creditors",
             "By paying off all overdue loan balances, interest, and charges before submitting the resolution plan",
-            "By obtaining a non-objection certificate from seventy-five percent of operational trade creditors"
+            "By restructuring the overdue loan with the lending bank after submission of the resolution plan"
           ],
           "answerIndex": 2,
           "why": "Under the proviso to Section 29A(c), a person is eligible to submit a plan if they make payment of all overdue amounts with interest and charges relating to the non-performing asset account before submission of the resolution plan, as confirmed in ArcelorMittal.",
@@ -9298,10 +9298,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 29A(j) of the Insolvency and Bankruptcy Code 2016 as interpreted in ArcelorMittal, what must the Resolution Professional do if forensic investigation reveals that an SPV applicant is secretly funded or controlled by a defaulting promoter?",
           "options": [
-            "Refer the plan to the local chamber of commerce for non-binding commercial arbitration",
+            "Allow the plan to proceed but require the SPV to undertake that the promoter will not exercise board control",
             "Disqualify the applicant, reject the resolution plan, forfeit the earnest money deposit, and report the finding to the NCLT",
-            "Permit the promoter to assume forty-nine percent non-voting equity upon resolution completion",
-            "Allow the plan to proceed if the promoter pays an additional five percent management surcharge to the bank consortium"
+            "Permit the SPV to continue only after the defaulting promoter reduces its funding share below twenty-six percent",
+            "Refer the matter to the Committee of Creditors for a vote to waive the disqualification"
           ],
           "answerIndex": 1,
           "why": "Under Section 29A(j) and ArcelorMittal, any connected person or back-door conduit acting on behalf of an ineligible person is disqualified; the RP is legally bound to reject the resolution plan and forfeit the bid security.",
@@ -9387,8 +9387,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Supreme Court's ruling in Phoenix ARC v. Spade Financial Services, what is the legal effect if a related party financial creditor assigns its debt to an ostensibly third-party entity immediately prior to CIRP initiation to gain CoC voting rights?",
           "options": [
-            "The corporate debtor is automatically liquidated under Section 33 for shareholder fraud",
-            "The assignee acquires full voting rights provided the assignment deed was registered with the local sub-registrar",
+            "The assignment is valid and the assignee gains full voting rights as an unrelated financial creditor",
+            "The assignee votes only on resolutions that do not concern the original claim of the related party",
             "The assignment is treated as collusive and fraudulent; the assignee remains disqualified from CoC voting under Section 21(2)",
             "The assignee is granted twenty-five percent voting rights subject to approval by the Resolution Professional"
           ],
@@ -9751,9 +9751,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the crucial legal distinction between Procedural Coordination and Substantive Consolidation in group corporate insolvency?",
           "options": [
             "Procedural coordination streamlines hearing logistics while keeping balance sheets separate, whereas substantive consolidation pools all assets and liabilities into a single estate",
-            "Procedural coordination applies only to foreign companies, while substantive consolidation applies only to domestic private limited enterprises",
-            "Procedural coordination requires one hundred percent approval of trade unions, while substantive consolidation requires zero creditor approval",
-            "Procedural coordination is executed exclusively by commercial banks, while substantive consolidation is executed by municipal corporations"
+            "Procedural coordination merges the assets and liabilities of all group companies into a single estate, whereas substantive consolidation merely aligns hearing dates and schedules",
+            "Procedural coordination requires the group debtors to be liquidated together, whereas substantive consolidation applies only during a resolution process",
+            "Procedural coordination applies only to domestic group companies, whereas substantive consolidation applies only to foreign group companies"
           ],
           "answerIndex": 0,
           "why": "Procedural coordination is an administrative measure that preserves separate legal entities and claims registers, whereas substantive consolidation collapses legal boundaries, pooling assets, extinguishing inter-company debt, and creating a single claims pool.",
@@ -9988,10 +9988,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a PIRP Swiss Challenge auction under Section 54K(10) of the IBC and Regulation 48, what happens when a third-party resolution applicant submits a plan that is 'significantly better' than the Base Resolution Plan?",
           "options": [
-            "The corporate debtor is instantly evicted and liquidated without further proceedings",
+            "The third-party plan is automatically approved because the Committee of Creditors must accept any better plan",
             "The corporate debtor is given a statutory right to match or improve upon the competing plan through iterative bidding",
-            "The third-party applicant is immediately granted ownership without any vote by the Committee of Creditors",
-            "The competing applicant must pay fifty percent of its bid amount to the Insolvency and Bankruptcy Board of India"
+            "The Base Resolution Plan is cancelled and the corporate debtor is moved into liquidation immediately",
+            "The corporate debtor must withdraw, and the third-party applicant receives a fixed exclusivity period of ninety days"
           ],
           "answerIndex": 1,
           "why": "Section 54K(10) gives the corporate debtor the opportunity to improve its Base Resolution Plan to match or beat a competing plan that has been determined to be significantly better by the CoC.",
@@ -10108,10 +10108,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the IBBI Fast-Track Regulations, within how many days of appointment must the Resolution Professional submit the Information Memorandum to the Committee of Creditors?",
           "options": [
-            "Within forty-eight hours of filing the petition",
-            "Within one hundred and eighty days of appointment",
+            "Within seven days of appointment",
+            "Within forty-five days of appointment",
             "Within twenty-one days of appointment",
-            "Within ninety days of the first financial year end"
+            "Within ninety days of appointment"
           ],
           "answerIndex": 2,
           "why": "Regulation 35 of the Fast Track Regulations mandates that the Resolution Professional must submit the Information Memorandum to members of the CoC within 21 days of appointment.",
@@ -10881,9 +10881,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What key legal milestone is certified upon running the masterclass cross-border insolvency engine?",
           "options": [
             "FOREIGN_PROCEEDING_CLASSIFIER_AND_HOTCHPOT_PASS certifying FMP classification, Article 20 stays, and Article 32 parity",
-            "AUTOMATIC_DEBT_CANCELLATION_PASS wiping out all cross-border debt liabilities without creditor voting",
-            "EXECUTIVE_SOVEREIGN_IMMUNITY_PASS granting the corporate debtor immunity from all foreign judicial scrutiny",
-            "FOREIGN_EXCHANGE_ARBITRAGE_PASS allowing preferential repatriation of capital without central bank reporting"
+            "CROSS_BORDER_COMI_RECOGNITION_PASS certifying COMI determination, Article 15 recognition, and Article 21 relief",
+            "MODEL_LAW_ESTABLISHMENT_CLASSIFIER_PASS certifying Article 2(f) establishment tests and Article 17 recognition",
+            "MULTI_JURISDICTION_CLAIMS_PARITY_PASS certifying plenary proceedings, claim filing, and hotchpot rules"
           ],
           "answer": 0,
           "explanation": "The engine verifies COMI vs Establishment, applies Article 20/21 stays, and enforces Article 32 Hotchpot equalization, certifying FOREIGN_PROCEEDING_CLASSIFIER_AND_HOTCHPOT_PASS.",
@@ -11765,9 +11765,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Regulation 34(2)(f) of the SEBI LODR Regulations, which entities are legally mandated to submit a Business Responsibility and Sustainability Report (BRSR)?",
           "options": [
-            "Only public sector banking institutions holding sovereign government guarantees",
-            "All private limited companies incorporated within the last twelve months",
-            "Foreign non-governmental organizations operating charitable trusts in India",
+            "The top 100 listed entities on Indian stock exchanges by market capitalization",
+            "All listed entities with a paid-up capital exceeding one hundred crore rupees",
+            "The top 500 listed entities by revenue, along with all unlisted public companies",
             "The top 1,000 listed entities on Indian stock exchanges by market capitalization"
           ],
           "answer": 3,
@@ -11954,9 +11954,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What key milestone certification is awarded upon executing the Day 51 production ESG engine?",
           "options": [
-            "VOLUNTARY_CARBON_ARBITRAGE_PASS allowing trading of uncertified carbon offsets without regulatory oversight",
-            "AUTOMATIC_POLLUTION_EXEMPTION_PASS shielding industrial factories from state pollution board inspections",
-            "UNCONDITIONAL_MARKET_CAPITALIZATION_PASS exempting listed issuers from SEBI LODR disclosures",
+            "CARBON_INTENSITY_REPORTING_PASS verifying GHG intensity and energy consumption disclosures only",
+            "SEBI_BRSR_LEAN_DISCLOSURE_PASS verifying Board ESG governance and anti-greenwashing hygiene without value-chain data",
+            "ESG_RATING_PROVIDER_COMPLIANCE_PASS verifying third-party rating assurance and water circularity disclosures",
             "SEBI_BRSR_CORE_COMPLIANCE_PASS verifying GHG intensity, water circularity, anti-greenwashing hygiene, and Board ESG governance"
           ],
           "answer": 3,
@@ -13067,9 +13067,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 230 of the Companies Act 2013, what is the legal effect of an NCLT order sanctioning a Scheme of Arrangement once filed with the ROC?",
           "options": [
             "It operates merely as an inter-party contract binding only those creditors and shareholders who affirmatively cast votes in favor",
-            "It can be unilaterally repudiated by the Board of Directors within 60 days if commercial market conditions deteriorate",
+            "It becomes binding only after each creditor class and member class separately registers its consent with the Registrar of Companies",
             "It operates as a judgment in rem, legally binding the company, all creditors, all shareholders (including dissenters), and statutory authorities",
-            "It requires secondary ratification by a two-thirds majority of the High Court before becoming operational"
+            "It binds only the transferee company and those members and creditors who attended the NCLT-convened meeting"
           ],
           "answer": 2,
           "explanation": "An NCLT-sanctioned scheme under Section 230-232, upon filing of Form INC-28 with the ROC, operates in rem. It has statutory force and binds all classes of creditors, shareholders (including non-consenting and dissenting minorities), and the company itself.",
@@ -13129,8 +13129,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Lump sum consideration minus Net Worth (book assets excluding revaluation reserves minus liabilities transferred), with no indexation benefit",
             "Fair market value of individual assets minus their original historical acquisition cost, indexed for inflation",
-            "Net accounting profit of the enterprise multiplied by the corporate tax rate of 22% with full MAT credit offset",
-            "It is completely tax-exempt provided the entire sale consideration is reinvested in rural electrification bonds within 6 months"
+            "Lump sum consideration minus net worth, with indexation benefit applied to the net worth for the period of holding",
+            "Sale consideration minus the book value of cash and bank balances transferred, taxed as business income at normal company rates"
           ],
           "answer": 0,
           "explanation": "Under Section 50B, the capital gain on a slump sale equals the lump-sum consideration minus the net worth of the undertaking. Net worth is book assets (excluding revaluation reserves) minus liabilities. Indexation is statutorily disallowed.",
@@ -13159,8 +13159,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Foreign Exchange Management (Cross Border Merger) Regulations 2018, when is a cross-border merger granted 'deemed approval' by the Reserve Bank of India?",
           "options": [
             "Whenever the National Company Law Tribunal grants an unconditional sanction order regardless of foreign exchange compliance",
-            "Deemed approval is unconstitutional; every cross-border merger requires a specific physical sanction letter from the RBI Governor",
-            "Only when the transaction value is less than $10 million and involves a company incorporated in a SAARC member nation",
+            "Deemed approval applies only when the foreign company is the transferee, regardless of whether RBI pricing guidelines are met",
+            "Only when the merger is approved by three-fourths of the shareholders of the Indian company, regardless of FEMA compliance",
             "When the merger strictly adheres to RBI pricing guidelines, FDI sectoral caps, overseas investment rules, and ECB frameworks"
           ],
           "answer": 3,
@@ -13186,10 +13186,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Within how many days from the receipt of the certified copy of the NCLT sanction order must a company file Form INC-28 with the Registrar of Companies under Section 232(5)?",
           "options": [
-            "There is no statutory deadline; filing can occur at any time prior to the subsequent Annual General Meeting",
-            "Within 60 days from the date the board of directors convenes to review the order",
+            "Within 7 days from the date of receipt of the certified copy of the order",
+            "Within 60 days from the date of receipt of the certified copy of the order",
             "Within 30 days from the date of receipt of the certified copy of the order",
-            "Within 90 days from the end of the financial quarter in which the order was pronounced"
+            "Within 90 days from the date of receipt of the certified copy of the order"
           ],
           "answer": 2,
           "explanation": "Section 232(5) of the Companies Act 2013 strictly stipulates that a certified copy of the order must be filed with the ROC within 30 days of receipt in Form INC-28 to bring the scheme into legal effect.",
@@ -13243,10 +13243,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational consequence for a foreign non-US corporation of violating US Secondary Sanctions under statutes like CAATSA?",
           "options": [
-            "The foreign corporation is merely required to publish a formal public apology in the US Federal Register within 90 days",
+            "The foreign corporation is required only to pay a monetary fine to the US Treasury, with no effect on its access to US banking and dollar clearing",
             "The foreign corporation may be completely excluded from the US banking system and designated as an SDN itself, losing access to global US Dollar clearing",
-            "The foreign corporation is subjected to an automatic 2% surcharge on domestic corporate income tax filed in its home country",
-            "Secondary sanctions apply only to sovereign governments and have zero legal or operational application to private corporate entities"
+            "The foreign corporation loses its right to export goods to the United States but can still clear US Dollar payments through correspondent banks",
+            "Secondary sanctions apply only to US-incorporated corporations and have no legal or operational application to foreign corporate entities"
           ],
           "answer": 1,
           "explanation": "Secondary sanctions target non-US persons without a US jurisdictional nexus. Penalties include cutting off the foreign entity from US financial markets, blocking US Dollar correspondent banking, and designating the entity as an SDN.",
@@ -13302,7 +13302,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Prevention of Money Laundering (Maintenance of Records) Amendment Rules 2023, what is the ownership threshold for determining the Ultimate Beneficial Owner (UBO) of a corporate client?",
           "options": [
-            "Any shareholding exceeding INR 1 Crore in fair market value regardless of percentage ownership",
+            "More than 15% of the equity share capital or any entitlement to profits of the company",
             "25% or more of the equity share capital, as originally enacted under the 2005 rules",
             "51% controlling majority interest as defined under the Companies Act subsidiary definition",
             "10% or more of ownership of or entitlement to capital, profits, or voting rights of the company"
@@ -13335,7 +13335,7 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "The corporate debtor and its assets enjoy absolute immunity from historical prosecution and attachment, provided management changes to non-related parties",
             "The Enforcement Directorate retains paramount rights to auction the attached properties and remit proceeds to the Consolidated Fund of India",
             "The resolution applicant must pay a 50% penalty to the Ministry of Finance to release the attached assets",
-            "The NCLT is prohibited from approving any resolution plan if the ED has initiated any investigation within the preceding 3 years"
+            "The attachment continues until the resolution applicant obtains a separate release order from the Special Court under the PMLA"
           ],
           "answer": 0,
           "explanation": "Section 32A provides that once a resolution plan is approved and management changes to non-related parties, the corporate debtor ceases to be liable for pre-CIRP offenses and no action can be taken against its property for past crimes.",
@@ -13362,8 +13362,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Within 30 calendar days from the close of the financial month in which the transaction was booked",
             "Within 7 working days of arriving at the conclusion that a transaction or series of transactions is suspicious",
-            "Within 24 hours of the client opening an account, prior to executing any financial transaction",
-            "Filing is discretionary and only required if formal notice is served by the Reserve Bank of India"
+            "Within 24 hours of arriving at the conclusion that a transaction or series of transactions is suspicious",
+            "Within 30 working days of arriving at the conclusion that a transaction or series of transactions is suspicious"
           ],
           "answer": 1,
           "explanation": "Under the PMLA Rules, a Reporting Entity must furnish an STR to the Director, FIU-IND, within 7 working days of arriving at the suspicion that a transaction is connected to proceeds of crime or financing of terrorism.",
@@ -13418,9 +13418,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the legal effect of the Investor-State Dispute Settlement (ISDS) mechanism in modern international investment agreements?",
           "options": [
             "It grants direct legal standing to a private foreign investor to initiate binding international arbitration against a sovereign host state",
-            "It mandates that all disputes must be decided exclusively by the domestic high court of the host nation without appeal",
-            "It requires the United Nations General Assembly to vote by a two-thirds majority before an arbitral tribunal can be constituted",
-            "It restricts foreign investors from seeking monetary damages, limiting relief solely to diplomatic apologies"
+            "It requires the investor to exhaust all remedies in the domestic courts of the host state for ten years before arbitration is available",
+            "It requires the home state of the investor to bring the claim on the investor behalf through diplomatic protection only",
+            "It limits arbitral tribunals to issuing non-binding recommendations that the host state may accept or reject"
           ],
           "answer": 0,
           "explanation": "ISDS fundamentally alters public international law by granting private foreign investors jus standi to directly sue sovereign host governments before international arbitral tribunals without needing home-state diplomatic espousal.",
@@ -13623,8 +13623,8 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "25% or more of the voting rights in the target company",
             "15% of the total issued share capital, as provided under the repealed 1997 code",
-            "51% simple controlling majority of the board of directors",
-            "75% of the non-promoter public shareholding"
+            "20% or more of the voting rights in the target company",
+            "49% of the voting rights without any change in management control"
           ],
           "answer": 0,
           "explanation": "Regulation 3(1) establishes that an acquirer whose aggregate holding reaches or exceeds 25% of voting rights must make a mandatory public open offer to the shareholders of the target company.",
@@ -13651,10 +13651,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory minimum size of a public open offer under Regulation 7(1) of the SEBI SAST Regulations 2011?",
           "options": [
-            "Exactly 10% of the book value of fixed assets as certified by statutory auditors",
+            "At least 15% of the total voting share capital of the target company",
             "At least 26% of the total voting share capital of the target company",
-            "At least 51% of the free float equity shares held by retail investors",
-            "100% of all outstanding shares, requiring complete privatization"
+            "At least 51% of the total voting share capital of the target company",
+            "At least 20% of the shares held by public shareholders"
           ],
           "answer": 1,
           "explanation": "Regulation 7(1) mandates an open offer size of at least 26% of the target company's total voting capital, enabling the acquirer to reach at least 51% combined majority control.",
@@ -13680,10 +13680,10 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Within how many working days from the detailed public statement of an original hostile offer can a White Knight launch a competitive counter-offer under Regulation 20?",
           "options": [
-            "There is no deadline; counter-offers can be made at any point prior to final share allotment",
-            "Within 30 calendar days from the opening date of the tendering period",
+            "Within 7 working days from the date of the detailed public statement",
+            "Within 30 working days from the date of the detailed public statement",
             "Within 15 working days from the date of the detailed public statement",
-            "Within 60 business days from the end of the preceding financial quarter"
+            "Within 45 working days from the date of the detailed public statement"
           ],
           "answer": 2,
           "explanation": "Regulation 20(1) allows any third party to launch a competitive offer within 15 working days from the date of the detailed public statement made by the initial acquirer.",
@@ -13795,9 +13795,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "For a mandatory open offer of INR 1,560 Crores under Regulation 7(1), what is the exact escrow deposit required under Regulation 17 of the SEBI SAST Regulations?",
           "options": [
             "INR 231 Crores (25% on the first INR 500 Cr = 125 Cr + 10% on the remaining INR 1,060 Cr = 106 Cr)",
-            "INR 156 Crores representing a flat 10% on the entire open offer consideration",
-            "INR 390 Crores representing a flat 25% across the entire transaction value",
-            "Zero escrow deposit is required if the hostile raider is incorporated in an OECD member nation"
+            "INR 156 Crores representing a flat 10% on the entire open offer consideration of INR 1,560 Crores",
+            "INR 390 Crores representing a flat 25% across the entire open offer consideration of INR 1,560 Crores",
+            "INR 312 Crores representing a flat 20% on the entire open offer consideration of INR 1,560 Crores"
           ],
           "answer": 0,
           "explanation": "Regulation 17 mandates 25% of consideration up to INR 500 Crores (125 Cr) and 10% on the excess over INR 500 Crores (1,060 Cr * 10% = 106 Cr), resulting in an exact escrow requirement of INR 231 Crores.",
@@ -13881,9 +13881,9 @@ export const BCOM_LAW_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final status string emitted by the Transnational General Counsel Boardroom Crisis Simulator upon verifying all legal assertions?",
           "options": [
-            "NCLT_SCHEME_OF_ARRANGEMENT_REJECTED_ERROR",
-            "SANCTIONS_ENFORCEMENT_TERMINATED_UNKNOWN",
-            "CORPORATE_TAKEOVER_DEFENSE_ABORTED_FAIL",
+            "TRANSNATIONAL_COUNSEL_CRISIS_SUITE_COMPLETE",
+            "BOARDROOM_CRISIS_SIMULATOR_VERIFIED_OK",
+            "GENERAL_COUNSEL_LEGAL_ASSERTIONS_RECONCILED",
             "TRANSNATIONAL_GENERAL_COUNSEL_MASTER_PASS"
           ],
           "answer": 3,

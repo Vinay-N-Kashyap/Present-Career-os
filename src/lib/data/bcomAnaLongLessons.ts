@@ -564,10 +564,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the DuPont Identity, what two factors multiply together to constitute Return on Assets (ROA)?",
           "options": [
-            "Inventory Turnover multiplied by Debt-to-Equity Ratio",
-            "Operating Income multiplied by Tax Rate",
+            "Net Profit Margin multiplied by Equity Multiplier",
+            "Net Profit Margin multiplied by Inventory Turnover",
             "Net Profit Margin multiplied by Asset Turnover",
-            "Gross Margin multiplied by Current Ratio"
+            "Gross Margin multiplied by Total Asset Turnover"
           ],
           "answer": 2,
           "why": "Return on Assets equals (Net Income / Revenue) * (Revenue / Total Assets) = Net Income / Total Assets, quantifying how effectively assets generate net profit independently of financing."
@@ -671,8 +671,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Annual ordering costs are equal to annual carrying costs",
             "Annual ordering costs are exactly double annual carrying costs",
-            "Annual carrying costs are zero",
-            "Annual ordering costs equal total annual revenue"
+            "Annual carrying costs are exactly double annual ordering costs",
+            "Annual ordering costs equal the annual purchase cost of the inventory"
           ],
           "answer": 0,
           "why": "At the mathematical minimum of the total inventory cost function, the marginal decrease in ordering cost equals the marginal increase in holding cost, making the two cost components equal."
@@ -933,10 +933,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the classical Altman Z-Score model, what score boundary delineates the Distress Zone indicating high bankruptcy probability?",
           "options": [
-            "A Z-Score exactly equal to 10.0",
+            "A Z-Score between 1.81 and 2.99",
             "A Z-Score between 2.0 and 3.0",
             "A Z-Score below 1.81",
-            "A Z-Score above 5.0"
+            "A Z-Score above 2.99"
           ],
           "answer": 2,
           "why": "Firms scoring Z < 1.81 fall into the Distress Zone, where the model signals a markedly higher risk of default and bankruptcy filing in the following years."
@@ -1984,10 +1984,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Ordinary Least Squares (Linear Probability Model) mathematically invalid for modeling corporate loan default probabilities?",
           "options": [
-            "OLS models cannot be estimated when the sample size exceeds one thousand observations.",
+            "OLS cannot be estimated when the dependent variable has only two outcomes because the matrix is singular",
             "OLS can predict default probabilities below zero or above one and severely violates homoskedasticity.",
-            "OLS always produces identical parameter estimates to logistic regression regardless of sample size.",
-            "OLS requires categorical independent variables and cannot process continuous financial metrics."
+            "OLS assumes the default outcome follows a Poisson distribution, which does not hold for loan data",
+            "OLS produces biased coefficient signs because default probabilities are bounded by regulation"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -2013,10 +2013,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what mathematical condition does an odds ratio approximately equal the relative risk ratio?",
           "options": [
-            "When the sample size in the training dataset is exactly equal to the validation dataset.",
-            "When the independent explanatory variables follow a perfectly uniform distribution.",
+            "When the sample size is large enough that the logistic coefficient becomes statistically significant",
+            "When the predictor variables are measured on a standardized scale with a mean of zero",
             "When the baseline probability of the outcome is very low (the rare event assumption).",
-            "When the estimated logistic slope coefficient beta is strictly greater than five."
+            "When the baseline probability of the outcome is close to 0.5 (a balanced classification)"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2044,7 +2044,7 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "p* = 0.50 (50%), because binary classifiers always default to equal probability.",
             "p* = 0.90 (90%), calculated as 180 / 200.",
-            "p* = 0.00 (0%), because all risk must be eliminated regardless of cost.",
+            "p* = 0.20 (20%), calculated as 20 / 100.",
             "p* = 0.10 (10%), calculated as 20 / (20 + 180)."
           ],
           "answer": 3,
@@ -2073,9 +2073,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is the Precision-Recall curve preferred over the ROC curve when evaluating rare fraud detection models?",
           "options": [
             "Precision-Recall excludes True Negatives, preventing huge non-fraud volumes from masking false alarms.",
-            "Precision-Recall curves can only be computed when the sample size is under one hundred rows.",
-            "ROC curves cannot be drawn if the classifier uses non-linear sigmoid activation functions.",
-            "Precision-Recall metrics always produce a higher numerical score than ROC-AUC."
+            "Precision-Recall includes True Negatives on both axes, so it rewards models that predict the majority class",
+            "ROC curves cannot be computed when classes are imbalanced because the false positive rate is undefined",
+            "Precision-Recall curves are insensitive to the classification threshold, whereas ROC curves require one"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2102,10 +2102,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Basel regulatory framework, how is Expected Credit Loss (ECL) calculated for commercial loan portfolios?",
           "options": [
-            "ECL is calculated by dividing total company assets by annual gross operating revenue.",
+            "ECL = Probability of Default (PD) * Loss Given Default (LGD), without the Exposure at Default term.",
             "ECL = Exposure at Default (EAD) * Probability of Default (PD) * Loss Given Default (LGD).",
-            "ECL equals the arithmetic mean of all historical non-performing loan balances.",
-            "ECL is strictly determined by national central bank interest rate benchmarks without firm-level data."
+            "ECL = Exposure at Default (EAD) * Loss Given Default (LGD) divided by Probability of Default (PD).",
+            "ECL = Probability of Default (PD) + Loss Given Default (LGD) + Exposure at Default (EAD)."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -2161,9 +2161,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is the Recency score inverted (lower elapsed days assigned a higher score) during RFM quantile binning?",
           "options": [
             "Because recent buyers exhibit significantly higher engagement and re-conversion likelihood than dormant buyers.",
-            "Because computer memory systems cannot store negative time integers during matrix multiplication.",
-            "Because older customers are legally excluded from marketing databases under international privacy statutes.",
-            "Because Recency must always equal Monetary spend multiplied by Frequency."
+            "Because a long gap since the last purchase indicates the customer is more loyal and likely to purchase soon.",
+            "Because the quantile binning function requires every RFM dimension to be sorted in the same ascending direction.",
+            "Because Recency is measured in days while Frequency and Monetary use counts and currency, so it must be reversed to match units."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2190,8 +2190,8 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary advantage of the K-Means++ initialization algorithm over uniform random initialization?",
           "options": [
-            "It converts non-convex data manifolds into linear hyperplanes before clustering.",
-            "It eliminates the need to calculate Euclidean distances during the expectation step.",
+            "It randomly reassigns outlier points to the nearest cluster after each iteration to stabilize convergence.",
+            "It eliminates the need to recompute centroids during the maximization step of each iteration.",
             "It automatically identifies the optimal number of clusters k without human validation.",
             "It spreads initial centroids far apart based on squared distance, preventing poor local minima traps."
           ],
@@ -2251,10 +2251,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does Mahalanobis distance provide superior clustering fidelity over Euclidean distance when features exhibit high multicollinearity?",
           "options": [
-            "It replaces iterative clustering algorithms with a single closed-form matrix determinant.",
+            "It scales each feature to unit variance independently while ignoring correlations between features.",
             "It incorporates the inverse covariance matrix, decorrelating variables and normalizing directional variance.",
-            "It automatically removes all negative numbers from the customer transaction database.",
-            "It guarantees that every customer segment contains an identical number of observations."
+            "It replaces missing feature values with the cluster mean before computing the distances.",
+            "It measures the angle between customer vectors instead of the distance between them."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -2372,9 +2372,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why can Gross Retention Rate (GRR) never exceed 100%, whereas Net Retention Rate (NRR) frequently exceeds 100%?",
           "options": [
             "GRR strictly excludes expansion revenue and only deducts contraction and churn, whereas NRR includes expansion.",
-            "GRR is calculated using calendar months, whereas NRR can only be calculated across fiscal years.",
-            "GRR requires categorical independent variables, while NRR requires continuous Gaussian variables.",
-            "GRR is subject to statutory caps mandated by international securities accounting regulations."
+            "GRR includes expansion revenue but caps the contribution of any single customer at its starting value.",
+            "GRR is calculated only on new customers acquired during the period, whereas NRR covers the entire customer base.",
+            "GRR deducts only churned customers and ignores contraction, which caps its value at the starting revenue."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -2463,9 +2463,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the critical distinction between Logo Churn and Revenue Churn in subscription analytics?",
           "options": [
-            "Logo Churn applies only to consumer brands with registered trademarks, while Revenue Churn applies to software.",
-            "Logo Churn is reported on the income statement, while Revenue Churn is reported on the cash flow statement.",
-            "Logo Churn must always equal exactly one minus the Net Retention Rate.",
+            "Logo Churn counts lost dollar volume from existing customers; Revenue Churn counts lost customer accounts.",
+            "Logo Churn includes downgrades by customers who remain; Revenue Churn includes only cancelled accounts.",
+            "Logo Churn is measured monthly and Revenue Churn annually, but both count customer accounts.",
             "Logo Churn measures the percentage of lost customer accounts; Revenue Churn measures the lost dollar volume."
           ],
           "answer": 3,
@@ -2520,10 +2520,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the geometric interpretation of an eigenvector and eigenvalue in Principal Component Analysis?",
           "options": [
-            "The eigenvector is a boolean flag indicating whether the dataset contains missing null records.",
+            "The eigenvector defines the number of principal components to retain; the eigenvalue defines the direction of each axis.",
             "The eigenvalue determines the number of clusters to use in downstream K-Means algorithms.",
             "The eigenvector defines the directional axis of variance; the eigenvalue measures the magnitude of variance along that axis.",
-            "The eigenvector represents the sample mean; the eigenvalue represents the median transaction frequency."
+            "The eigenvector is the weight of each observation; the eigenvalue is the weight of each feature in the covariance matrix."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2550,9 +2550,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statistical correlation between two distinct principal components derived from the same dataset?",
           "options": [
-            "One point zero, because all principal components are derived from the same underlying covariance matrix.",
+            "Positive and equal to the ratio of their eigenvalues, because both are derived from the same covariance matrix.",
             "Exactly zero, because principal component eigenvectors are constrained to be mathematically orthogonal.",
-            "Negative zero point five, reflecting the trade-off in explained variance.",
+            "Negative and equal to the difference in their explained variance ratios, reflecting a trade-off.",
             "Equal to the Pearson correlation between the two highest-variance raw variables."
           ],
           "answer": 1,
@@ -2701,10 +2701,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is Edward Tufte's primary rule regarding the Data-Ink Ratio in executive visualizations?",
           "options": [
-            "Fill all white space on the dashboard with secondary decorative organizational logos.",
+            "Maximize the Data-Ink Ratio by adding gridlines, borders, and shading so that every chart area is clearly delineated.",
             "Maximize the Data-Ink Ratio by erasing non-data ink, redundant ink, and decorative chartjunk.",
-            "Ensure that every visualization contains at least eight distinct high-saturation primary colors.",
-            "Always render financial time series using three-dimensional perspective drop-shadows."
+            "Minimize the Data-Ink Ratio so that decorative elements guide the eye toward the most important metric.",
+            "Use three-dimensional effects only on the most important series to attract executive attention."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -2939,10 +2939,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which three mathematical conditions must hold for a time series to be considered weakly stationary?",
           "options": [
-            "Monotonically increasing median, zero stochastic residuals, and infinite sample length.",
+            "Constant mean over time, variance that increases with lag, and autocovariance that depends on the calendar date.",
             "Zero average growth rate, zero seasonal variation, and a normally distributed probability density.",
             "Constant mean over time, constant finite variance over time, and autocovariance that depends only on lag distance.",
-            "Positive slope coefficient, negative intercept term, and an R-squared value greater than ninety percent."
+            "Constant mean over time, finite skewness, and autocorrelation that equals zero at every lag."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -2968,10 +2968,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the Null Hypothesis (H0) in the Augmented Dickey-Fuller (ADF) test?",
           "options": [
-            "The time series exhibits perfect multi-collinearity with the market index.",
+            "The time series has no unit root (phi < 1) and is stationary.",
             "The time series contains a unit root (phi = 1) and is non-stationary.",
             "The time series has zero autocorrelation across all lags.",
-            "The regression residuals follow a Cauchy probability distribution."
+            "The time series is trend-stationary around a deterministic linear trend."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3110,10 +3110,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the theoretical signature of a pure Moving Average MA(q) process in an Autocorrelation Function (ACF) plot?",
           "options": [
-            "The ACF alternates between exactly +1.0 and -1.0 across all lags.",
+            "The ACF cuts off sharply to zero after lag 1 regardless of the value of q.",
             "The ACF cuts off sharply to zero for all lags greater than q.",
-            "The ACF forms a bell-shaped normal Gaussian distribution.",
-            "The ACF tails off exponentially toward infinity."
+            "The ACF shows a significant spike only at multiples of the seasonal period.",
+            "The ACF tails off exponentially toward zero without a sharp cutoff."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -3226,10 +3226,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What does the integration parameter d represent in an ARIMA(p, d, q) model?",
           "options": [
-            "The discount interest rate applied to future corporate cash flows.",
-            "The number of parallel CPU threads utilized during matrix inversion.",
+            "The number of lagged forecast errors included in the moving-average component.",
+            "The number of lagged observations included as autoregressive terms.",
             "The number of times the raw series must be differenced to achieve covariance stationarity.",
-            "The total number of explanatory regression variables included in the model."
+            "The seasonal period length, expressed as the number of observations per cycle."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -3772,10 +3772,10 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the combined variance formula Var(DDLT) = L_bar * sigma_d^2 + (d_bar)^2 * sigma_L^2, why does lead-time variance have such a disproportionate impact on safety stock?",
           "options": [
-            "Because daily demand variance is discounted by the annual cost of capital holding rate.",
+            "Because lead-time variance is multiplied by the average lead time L_bar, which is typically larger than average daily demand.",
             "Because lead-time variance is multiplied by the square of average daily demand (d_bar)^2, creating a massive numerical multiplier.",
-            "Because supplier replenishment lead times follow an exponential distribution rather than a Gaussian distribution.",
-            "Because the Z-score for lead-time variance is double the Z-score applied to customer demand volatility."
+            "Because lead-time variance is multiplied by the demand variance sigma_d^2 rather than the squared average demand.",
+            "Because the service factor Z is applied to lead-time variance twice in the combined formula."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -5364,9 +5364,9 @@ export const BCOM_ANA_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the additive Holt-Winters Triple Exponential Smoothing model, what roles do the three smoothing parameters (alpha, beta, gamma) perform?",
           "options": [
-            "Alpha computes corporate taxes, beta calculates stock beta, and gamma measures inventory shrinkage.",
-            "Alpha maximizes regression residuals, beta computes standard deviation, and gamma estimates market share.",
-            "Alpha minimizes carrying cost, beta sets reorder points, and gamma solves linear constraints.",
+            "Alpha updates the seasonal indices, beta updates the baseline level, and gamma updates the linear trend growth rate.",
+            "Alpha updates the linear trend growth rate, beta updates the baseline level, and gamma updates the seasonal indices.",
+            "Alpha updates the baseline level, beta updates the seasonal indices, and gamma updates the linear trend growth rate.",
             "Alpha updates the baseline level, beta updates the linear trend growth rate, and gamma updates seasonal cyclic indices."
           ],
           "answer": 3,

@@ -128,10 +128,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is product license utilization rate given high weight (35%+) in enterprise health score algorithms?",
           "options": [
-            "Because low utilization automatically revokes the customer software license mid-contract.",
-            "Because high utilization legally prohibits customers from talking to rival sales representatives.",
+            "Because low utilization lowers the vendor's own server costs and therefore the renewal price offered to the customer.",
+            "Because high utilization ensures the customer will expand to additional modules without a sales conversation.",
             "Unused licenses are a strong early predictor of contraction or non-renewal when the contract comes up for renewal.",
-            "Because cloud providers charge license fees based solely on customer employee headcounts."
+            "Because utilization is easiest to measure from billing records, and measurability alone determines the weight."
           ],
           "answerIndex": 2,
           "explanation": "When enterprise buyers notice at contract renewal that only 35% of their paid licenses are being used, their procurement department will immediately demand a 65% seat reduction, causing severe ARR contraction.",
@@ -507,10 +507,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the sales pipeline velocity equation V = (N * W * L) / T, which change will result in the highest percentage increase in velocity?",
           "options": [
-            "Increasing sales rep travel entertainment expense budgets without changing win rates",
+            "Increasing the average deal value by 10% while holding other variables constant",
             "Decreasing average sales cycle length T by 20% while holding other variables constant",
-            "Extending customer contract terms from 12 months to 24 months without changing ACV",
-            "Decreasing the number of qualified opportunities N by 20%"
+            "Increasing the win rate by 10% while holding other variables constant",
+            "Increasing the number of qualified opportunities N by 15% while holding other variables constant"
           ],
           "answer": 1,
           "why": "Because T is in the denominator, reducing sales cycle length T by 20% increases velocity by 25% (1 / 0.80 = 1.25), accelerating revenue generation through the funnel.",
@@ -1684,10 +1684,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of operational metrics is required for an enterprise outbound organization to achieve OUTBOUND_CADENCE_ENGINE_CERTIFIED_NOMINAL accreditation?",
           "options": [
-            "Sending at least 100,000 cold emails daily regardless of bounce rates or spam complaints",
+            "Deliverability health score >= 70.0, monthly meetings booked per SDR >= 3.0, and outbound reply rate >= 2.0%",
             "Deliverability health score >= 90.0, monthly meetings booked per SDR >= 8.0, and outbound reply rate >= 5.0%",
-            "Eliminating all phone outreach in favor of automated AI direct messaging bots",
-            "Guaranteeing that 100% of cold prospects sign annual software contracts on the first call"
+            "Deliverability health score >= 95.0, monthly meetings booked per SDR >= 15.0, and outbound reply rate >= 10.0%",
+            "Deliverability health score >= 80.0, monthly meetings booked per SDR >= 8.0, and outbound reply rate >= 3.0%"
           ],
           "answer": 1,
           "why": "Institutional certification demands verified technical deliverability (>=90), robust rep meeting productivity (>=8/month), and demonstrated copy resonance (>=5% reply rate).",
@@ -2504,9 +2504,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Breadth-Depth-Frequency (BDF) telemetry framework, why is reliance on lagging indicators such as contract cancellation notices fatal to Customer Success operations?",
           "options": [
             "By the time a customer submits a formal cancellation notice, the decision was made months earlier, resulting in less than a 10% salvage rate",
-            "Lagging indicators are illegal to store in modern enterprise customer relationship management platforms under SOC 2 rules",
-            "Customer contract cancellations can only be processed after an account has experienced thirty consecutive days of zero server logins",
-            "Software engineering teams refuse to review customer feedback unless it is accompanied by active product telemetry logs"
+            "Lagging indicators measure product usage too narrowly, so they cannot be combined with support and sentiment data in the health score",
+            "Cancellation notices are only recorded after finance closes the quarter, so the revenue loss is not visible for months",
+            "Lagging indicators are collected by the finance team rather than Customer Success, so CSMs never have access to them"
           ],
           "answer": 0,
           "why": "Lagging indicators only confirm losses after the fact; leading indicators detect disengagement 90-120 days in advance when customer success playbooks can still reverse the trajectory.",
@@ -2547,9 +2547,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is 'Support Silence' considered one of the most dangerous leading indicators of enterprise customer churn?",
           "options": [
-            "Zero support tickets causes the customer's IT firewall to automatically block incoming SaaS telemetry webhooks",
-            "Customer support software automatically marks accounts as cancelled if no tickets are submitted within fourteen days",
-            "Enterprise support contracts legally expire if customer representatives do not log at least one monthly inquiry",
+            "It indicates that the customer is fully satisfied and no longer needs a CSM, so the account can move to low-touch coverage",
+            "It shows the customer product is stable, which is why the support experience score is automatically set to its maximum",
+            "It reflects a seasonal slowdown in usage that normally recovers within thirty days without any CSM intervention",
             "It indicates that the customer has emotionally surrendered, ceased attempting to resolve issues, and is quietly preparing to evaluate competitors"
           ],
           "answer": 3,
@@ -2635,10 +2635,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational advantage of having automated Churn Rescue Playbooks over allowing CSMs to improvise responses to red flags?",
           "options": [
-            "Customer success software platforms offer a 50% discount on software licenses if standardized playbooks are enabled",
+            "Playbooks let the CSM skip internal approvals and escalations by using a single standard email template for every red flag raised",
             "Playbooks guarantee standardized, time-bound, cross-functional execution within 24 hours rather than erratic, delayed individual reactions",
-            "Automated playbooks completely eliminate the requirement for human Customer Success Managers to speak with clients",
-            "Playbooks automatically debit the customer's bank account for renewal fees before they have the opportunity to cancel"
+            "Playbooks replace health scoring because each account receives the same standard outreach regardless of its risk signals or tier",
+            "Playbooks raise the number of at-risk accounts saved because the scripted actions are accepted by customers without further discussion"
           ],
           "answer": 1,
           "why": "Standardized playbooks eliminate panic and delay, enforcing clear 24-hour SLAs, executive sponsorship, and proven multi-step recovery protocols.",
@@ -2680,9 +2680,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the standard weighting distribution of the Composite Customer Health Score (CHS) across its four pillars?",
           "options": [
             "35% Product Usage Telemetry, 25% Support Experience & Sentiment, 20% NPS Customer Advocacy, 20% Executive Engagement",
-            "25% Equal Weighting across all four components regardless of enterprise customer tier or contract size",
-            "80% Product Logins and 20% Account Executive intuition notes without support ticket data",
-            "50% Financial Invoicing History and 50% Sales Representative commission quota attainment"
+            "40% Product Usage Telemetry, 30% Support Experience & Sentiment, 20% NPS Customer Advocacy, 10% Executive Engagement",
+            "25% Product Usage Telemetry, 35% Support Experience & Sentiment, 20% NPS Customer Advocacy, 20% Executive Engagement",
+            "35% Product Usage Telemetry, 25% Financial Payment History, 20% NPS Customer Advocacy, 20% Contract Length"
           ],
           "answer": 0,
           "why": "Usage telemetry is the primary leading indicator (35%), followed by support sentiment (25%), NPS loyalty (20%), and executive engagement (20%).",
@@ -2748,10 +2748,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why can Gross Revenue Retention (GRR) never mathematically exceed 100.0%, whereas Net Revenue Retention (NRR) can?",
           "options": [
-            "Software licensing algorithms automatically reboot billing systems if GRR is calculated higher than starting contract value",
+            "NRR strictly measures retained revenue without allowing expansion or upsells, while GRR incorporates customer expansion ARR",
             "GRR strictly measures retained revenue without allowing expansion or upsells, while NRR incorporates customer expansion ARR",
-            "GRR is only measured over thirty-day windows, whereas NRR is measured over perpetual ten-year macroeconomic cycles",
-            "International Financial Reporting Standards (IFRS) make it illegal to report GRR above 100% under threat of felony audit fines"
+            "GRR is measured on new-logo customers only, whereas NRR is measured on the entire installed customer base",
+            "GRR subtracts churned and contracted revenue, while NRR adds only new-logo ARR to the starting revenue base"
           ],
           "answer": 1,
           "why": "GRR isolates retention by excluding expansion ARR from existing accounts; NRR includes upsells and cross-sells, allowing it to compound beyond 100%.",
@@ -2837,9 +2837,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following represents an example of 'Tier Migration' account expansion in enterprise SaaS packaging?",
           "options": [
-            "A customer paying an additional invoice due to processing 10 million extra API queries during Black Friday",
-            "A customer receiving a 10% price discount in exchange for signing a five-year contract commitment",
-            "A customer purchasing fifty additional user licenses for their European sales engineering division",
+            "A customer paying an additional usage invoice because it processed 10 million extra API queries during a Black Friday sales peak",
+            "A customer receiving a 10% price discount in exchange for signing a five-year contract commitment with the vendor",
+            "A customer purchasing fifty additional user licenses for the European sales engineering division of its company",
             "A customer upgrading from Professional to Enterprise tier to access Single Sign-On (SAML/Okta) and advanced security audit logging"
           ],
           "answer": 3,
@@ -3086,9 +3086,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "According to foundational CEB/Gartner research, what percentage of customers who experience high operational effort become actively disloyal?",
           "options": [
             "96% of customers experiencing high effort become actively disloyal, compared to only 9% who experience low effort",
-            "Exactly 50% of customers churn, balanced evenly between pricing objections and software bugs",
-            "Less than 5% of customers care about operational effort if the vendor offers periodic holiday gift baskets",
-            "Effort has no statistical correlation with customer retention in enterprise business-to-business markets"
+            "58% of customers experiencing high effort become actively disloyal, compared to 31% who experience low effort",
+            "22% of customers experiencing high effort become actively disloyal, compared to only 9% who experience low effort",
+            "96% of customers experiencing low effort become actively disloyal, compared to only 9% who experience high effort"
           ],
           "answer": 0,
           "why": "96% of customers experiencing high effort become disloyal; reducing friction is vastly more predictive of retention than trying to delight customers.",
@@ -3176,10 +3176,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic purpose of linking positive NPS Promoters directly to Customer Advisory Boards (CABs) and peer reviews?",
           "options": [
-            "To legally prohibit promoters from ever contacting competing software sales representatives",
-            "To charge promoters a 20% premium fee for the privilege of being included in marketing case studies",
+            "To collect early renewal payments from promoters at a discounted rate before their contracts expire",
+            "To replace the customer success manager with the advisory board for day-to-day support issues",
             "To monetize high customer sentiment into brand advocacy, social proof, and organic referral sales pipeline",
-            "To automatically transfer the customer's customer success manager to the new accounts sales team"
+            "To identify detractors and route their complaints to the engineering team for bug fixes"
           ],
           "answer": 2,
           "why": "Promoters are natural brand advocates; funneling them into Customer Advisory Boards, reviews, and case studies accelerates sales pipeline and brand equity.",
@@ -3284,9 +3284,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the standard industry ARR portfolio capacity benchmark for a dedicated Enterprise Customer Success Manager managing high-touch accounts?",
           "options": [
             "$1.5M to $2.0M in ARR across 15 to 25 enterprise accounts",
-            "$10.0M to $15.0M in ARR across 500 small business accounts",
-            "$250,000 in ARR across 2 accounts with daily on-site visits",
-            "There is no standard benchmark; CSMs are assigned accounts solely based on physical office proximity"
+            "$5.0M to $8.0M in ARR across 80 to 100 mid-market accounts",
+            "$500,000 to $750,000 in ARR across 4 to 6 enterprise accounts",
+            "$3.0M to $4.0M in ARR across 40 to 60 enterprise accounts"
           ],
           "answer": 0,
           "why": "Standard enterprise high-touch capacity is $1.5M - $2.0M ARR per CSM across 15-25 accounts, balancing deep relationship coverage with cost efficiency.",
@@ -3766,9 +3766,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What primary action should an automated CRM deduplication engine execute when an incoming form submission matches an existing contact's normalized email address?",
           "options": [
             "Reject the submission and dispatch an automated bounce error email to the prospect",
-            "Create a duplicate Lead record and assign it to a different sales rep to foster internal competition",
+            "Create a new Lead record and flag it for a manual duplicate review at the end of the month",
             "Merge the new form data into the existing contact record, preserving account history and ownership",
-            "Delete the existing contact record and replace it entirely with the new incoming submission"
+            "Overwrite the existing contact field values with the new submission and reset ownership to the default queue"
           ],
           "answer": 2,
           "why": "Merging incoming form data into the existing contact record maintains pristine database hygiene, avoids internal rep collisions, and preserves historical activity context.",
@@ -3913,10 +3913,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of operational metrics is synthesized by the Master RevOps CRM Control Tower to confer enterprise architectural certification?",
           "options": [
-            "Color themes of sales dashboards, total emails sent per day, and mouse cursor speed",
+            "Pipeline coverage ratio, average deal size, quota attainment, and sales cycle length",
             "Relational schema integrity, deduplication hygiene, stage-gated validation compliance, and contact data freshness",
-            "Total social media followers, office lease square footage, and software stock prices",
-            "Treating RevOps and Architecture as interchangeable constants rather than verifying Hygiene at each step."
+            "Lead response time, email open rates, advertising spend efficiency, and website traffic volume for the marketing team",
+            "Forecast accuracy, win rate, customer acquisition cost, and sales representative headcount growth across the fiscal year"
           ],
           "answer": 1,
           "why": "The Master RevOps CRM Control Tower synthesizes relational schema integrity, deduplication hygiene, validation compliance, and data freshness to ensure enterprise-grade revenue platform reliability.",
@@ -4408,10 +4408,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What CRM authorization status is unlocked when an Account Executive passes all certified pitch and objection handling roleplay exams above 85%?",
           "options": [
-            "PROVISIONAL_INTERN_UNPAID_STATUS",
-            "REASSIGN_TO_ENABLEMENT_SANDBOX_RETRAIN",
+            "PROVISIONAL_ENTERPRISE_PIPELINE_ACCESS_PENDING_REVIEW",
+            "AUTHORIZED_TO_HANDLE_MID_MARKET_PIPELINE",
             "AUTHORIZED_TO_HANDLE_ENTERPRISE_PIPELINE",
-            "PERMANENT_REPRESENTATIVE_EXEMPT_FROM_ALL_QUOTAS"
+            "AUTHORIZED_TO_HANDLE_STRATEGIC_ACCOUNTS_ONLY"
           ],
           "answer": 2,
           "why": "Passing certification exams verifies commercial readiness and unlocks the status AUTHORIZED_TO_HANDLE_ENTERPRISE_PIPELINE.",
@@ -4460,9 +4460,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of operational metrics is synthesized by the Master Sales Enablement & Competitive Intelligence Control Tower to confer operational certification?",
           "options": [
-            "Number of zoom meeting invitations declined, average commute duration, and keyboard typing speed",
-            "Bypassing Competitive during initial execution and deferring Sales validation until post-processing completes.",
-            "Total marketing email unsubscribes, laptop battery health, and company ping pong tournament results",
+            "Pipeline coverage ratio, average deal size, quota attainment, and sales cycle length",
+            "Sales rep quota attainment, CRM data completeness, forecast accuracy, and lead response time across the entire sales organization",
+            "Product demo completion rate, marketing qualified lead volume, average discount rate, and customer renewal rate for the quarter",
             "Sales rep roleplay certification rate, competitive win rate, architectural landmine success rate, and LAER objection adherence"
           ],
           "answer": 3,
@@ -4534,9 +4534,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the industry standard Quota-to-OTE ratio benchmark for enterprise SaaS sales compensation plans, and what direct compensation percentage does it yield?",
           "options": [
             "4x to 5x Quota-to-OTE ratio yielding 20% to 25% direct comp expense",
-            "1x to 2x Quota-to-OTE ratio yielding 50% to 100% direct comp expense",
-            "15x to 20x Quota-to-OTE ratio yielding 5% direct comp expense",
-            "There is no standard ratio; reps are paid purely in office merchandise"
+            "2x to 3x Quota-to-OTE ratio yielding 33% to 50% direct comp expense",
+            "8x to 10x Quota-to-OTE ratio yielding 10% to 12% direct comp expense",
+            "4x to 5x Quota-to-OTE ratio yielding 40% to 50% direct comp expense"
           ],
           "answer": 0,
           "why": "The standard SaaS benchmark is 4x to 5x Quota-to-OTE, dedicating 20% to 25% of top-line revenue to direct sales compensation.",
@@ -4681,10 +4681,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the full form acronym definition of a SPIFF incentive bonus in sales operations?",
           "options": [
-            "STANDARD_PIPELINE_INTERNAL_FORECAST_FACTOR",
+            "SALES_PERFORMANCE_INCENTIVE_FORECAST",
             "SALES_PERFORMANCE_INCENTIVE_FUND",
-            "SPECIAL_PRODUCT_INSTALLATION_FEE_FORMULA",
-            "SALES_PARTNER_INTERNET_FORWARDING_FRAMEWORK"
+            "SPECIAL_PIPELINE_INCENTIVE_FEE_FORMULA",
+            "STANDARD_PERFORMANCE_INCENTIVE_FACTOR"
           ],
           "answer": 1,
           "why": "SPIFF stands for Sales Performance Incentive Fund, providing targeted cash bonuses for specific short-term sales milestones.",
@@ -4911,10 +4911,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What inspection status is assigned to an opportunity possessing both a verified Mutual Action Plan and an agreed next calendar meeting?",
           "options": [
-            "PROVISIONAL_INBOUND_UNQUALIFIED_LEAD",
+            "DEAL_QUALIFIED_AWAITING_MUTUAL_ACTION_PLAN",
             "DEAL_AT_RISK_LACKS_CONCRETE_NEXT_STEP",
             "DEAL_VERIFIED_STRONG_CLOSE_PROBABILITY",
-            "CLOSED_LOST_DUE_TO_PROCUREMENT_ERROR"
+            "DEAL_VERIFIED_PENDING_PROCUREMENT_REVIEW"
           ],
           "answer": 2,
           "why": "Possessing both a verified signed MAP and a scheduled calendar meeting confirms DEAL_VERIFIED_STRONG_CLOSE_PROBABILITY.",
@@ -5086,8 +5086,8 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the optimal range of target named accounts allocated to a full-time enterprise Account Executive to maintain balanced prospecting capacity without territory starvation or neglect?",
           "options": [
             "5 to 20 target accounts",
-            "500 to 1,000 target accounts",
-            "Unlimited unassigned accounts based on first-come-first-served claiming",
+            "200 to 300 target accounts",
+            "300 to 500 target accounts",
             "50 to 150 target accounts"
           ],
           "answer": 3,
@@ -5133,9 +5133,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which firmographic revenue threshold typically defines a Tier 1 Strategic Enterprise account in enterprise B2B sales segmentation?",
           "options": [
             "Annual revenue exceeding $100,000,000",
-            "Annual revenue under $1,000,000",
-            "Any company with an active LinkedIn company page",
-            "Annual revenue strictly between $500,000 and $2,000,000"
+            "Annual revenue between $10,000,000 and $50,000,000",
+            "Annual revenue between $50,000,000 and $100,000,000",
+            "Annual revenue between $1,000,000 and $10,000,000"
           ],
           "answer": 0,
           "why": "Tier 1 Strategic Enterprise accounts are defined by enterprise scale, typically commanding annual corporate revenues exceeding $100,000,000.",
@@ -5180,10 +5180,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial revenue responsibility of an Account Executive operating in a specialized Hunter capacity?",
           "options": [
-            "Resolving tier-1 helpdesk support tickets and bug reports",
+            "Expanding existing accounts through cross-sell and upsell of additional modules",
             "New customer logo acquisition and first-contract revenue closing",
-            "Annual renewal invoice reconciliation and customer collection calls",
-            "Organizing company holiday parties and internal social events"
+            "Annual renewal negotiation and churn prevention for existing accounts",
+            "Onboarding new customers and managing product adoption after signature"
           ],
           "answer": 1,
           "why": "Hunters (Account Executives) are 100% dedicated to acquiring new customer logos and closing new first-contract ARR.",
@@ -5399,10 +5399,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the guaranteed dollar margin earned by a certified VAR partner upon closing a registered $100,000 deal with an approved 20% channel discount?",
           "options": [
-            "$1,000.00",
+            "$2,000.00",
             "$20,000.00",
             "$80,000.00",
-            "$0.00 (Partners are compensated only in vendor branded t-shirts)"
+            "$100,000.00"
           ],
           "answer": 1,
           "why": "A 20% channel margin on a $100,000 enterprise software contract yields exactly $20,000.00 in guaranteed partner margin ($100,000 * 0.20 = $20,000).",
@@ -5448,9 +5448,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What strategic GTM action is triggered when cryptographic Crossbeam account mapping identifies 75 overlapping target enterprise accounts with an ecosystem partner?",
           "options": [
             "HIGH_CO_SELLING_POTENTIAL_LAUNCH_JOINT_CAMPAIGN",
-            "BLOCK_ALL_PARTNER_EMAILS_IN_FIREWALL",
+            "MODERATE_OVERLAP_SCHEDULE_QUARTERLY_PARTNER_REVIEW",
             "INSUFFICIENT_OVERLAP_MAINTAIN_PASSIVE_LISTING",
-            "IMMEDIATE_TERMINATION_OF_PARTNER_AGREEMENT"
+            "LOW_OVERLAP_DEPRIORITIZE_PARTNER_PROGRAM_ENTRY"
           ],
           "answer": 0,
           "why": "Identifying 75 shared enterprise accounts surpasses the 50-account threshold, activating HIGH_CO_SELLING_POTENTIAL_LAUNCH_JOINT_CAMPAIGN.",
@@ -5496,9 +5496,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In an objective PRM channel conflict dispute arbitration, which evidence item carries the highest weighting in proving legitimate commercial value creation?",
           "options": [
-            "The partner that has the largest corporate logo on their website",
-            "A handwritten sticky note claiming 'I called them first'",
-            "Whichever sales rep takes the channel manager out to the most expensive lunch",
+            "The total historical revenue of the partner with the vendor across all prior fiscal years",
+            "A verbal claim by the partner manager that the lead originated from a partner webinar",
+            "An email thread showing an introduction message sent before the vendor first call",
             "A signed customer Mutual Action Plan (MAP) and verified C-level technical meetings"
           ],
           "answer": 3,
@@ -5665,8 +5665,8 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the industry benchmark for maximum acceptable legal redline turnaround time in high-velocity enterprise B2B sales?",
           "options": [
-            "90 days",
-            "5 business hours per month",
+            "30 days",
+            "5 business days",
             "48 hours",
             "14 business days"
           ],
@@ -5977,10 +5977,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How many days in advance of contract expiration should a Customer Success team formally initiate executive renewal and expansion commitments?",
           "options": [
-            "In the final 5 days of the contract",
-            "Exactly 30 days prior",
+            "In the final five days before the contract expires",
+            "Exactly 60 days prior to the contract expiration date",
             "At least 90 days in advance of expiration",
-            "Only after the customer submits a cancellation ticket"
+            "At least 45 days in advance of expiration"
           ],
           "answer": 2,
           "why": "Enforcing a 90-day renewal lock-in protocol prevents budget reallocation, immunizes the account against procurement freezes, and ensures smooth legal execution.",
@@ -6246,7 +6246,7 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "INFOSEC_SECURITY_GATEWAY_BLOCKED",
             "CONTRACT_EXPEDITED_READY_FOR_ESIGNATURE",
             "LEGAL_BOTTLENECK_REDLINE_SLA_VIOLATED",
-            "Indefinite legal suspension"
+            "CONTRACT_PENDING_SECURITY_REVIEW_HOLD_FOR_ESCALATION"
           ],
           "answer": 1,
           "why": "Satisfying sub-48-hour redline turnarounds, verified InfoSec certifications, and approved commercial terms advances the contract directly into DocuSign e-signature execution.",
@@ -6678,7 +6678,7 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "4% to 7%",
             "54%",
             "15%",
-            "100%"
+            "27%"
           ],
           "answer": 1,
           "why": "CEB research revealed that Challengers represent 54% of all top-performing enterprise sales closers, whereas Relationship Builders represent under 7%.",
@@ -7029,9 +7029,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the maximum recommended average discount rate leakage ceiling for disciplined enterprise SaaS sales operations?",
           "options": [
             "Up to 35.0% at rep discretion",
-            "Greater than 50.0%",
+            "Less than or equal to 20.0% at manager discretion",
             "Less than or equal to 10.0%",
-            "Exactly 0.0% with zero exceptions ever permitted"
+            "Less than or equal to 25.0% across the portfolio"
           ],
           "answer": 2,
           "why": "A ceiling of <= 10.0% provides sufficient commercial flexibility for value trading while preventing catastrophic gross margin dilution.",
@@ -7075,10 +7075,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under a standard enterprise discount authority governance matrix, who must approve a requested sales discount of 15%?",
           "options": [
-            "The Account Executive on their own discretion",
+            "The Sales Manager",
             "The VP of Sales",
-            "The junior SDR who booked the meeting",
-            "No approval is required"
+            "The Account Executive alone",
+            "The Chief Executive Officer"
           ],
           "answer": 1,
           "why": "Discounts between 10.1% and 20.0% exceed AE discretion and strictly require approval from the VP of Sales paired with contractual concessions.",
@@ -7608,9 +7608,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the maximum allowable sales representative talk ratio ceiling enforced under Capstone Subsystem 4 conversational intelligence monitoring?",
           "options": [
             "Less than or equal to 45.0%",
-            "Greater than 85.0%",
-            "Exactly 100.0% with zero customer speaking time",
-            "No ceiling is monitored"
+            "Less than or equal to 65.0%",
+            "Less than or equal to 30.0%",
+            "Greater than or equal to 60.0%"
           ],
           "answer": 0,
           "why": "High-performing sales reps practice active listening, keeping their talk ratio <= 45.0% (benchmark 40.0%) to uncover unconsidered customer needs.",
@@ -10463,9 +10463,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary architectural purpose of applying exponential half-life decay functions to customer activity metrics?",
           "options": [
             "To reduce database storage requirements by automatically deleting customer records that have been inactive for more than fourteen days.",
-            "To convert non-linear server log timestamps into standardized Greenwich Mean Time format across distributed global clusters.",
+            "To normalize usage metrics across customers of different sizes so that large and small accounts can be compared on one common scale in dashboards",
             "To prevent high historical usage during onboarding from masking recent disengagement, ensuring recent activity is weighted exponentially higher than past actions.",
-            "To artificially inflate customer health scores so that enterprise sales teams can meet their quarterly customer expansion quotas."
+            "To smooth out weekly usage spikes by averaging the activity of the entire customer base into one portfolio-level health score"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10562,9 +10562,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why must automated customer health playbook webhooks incorporate idempotency keys and HMAC-SHA256 signatures?",
           "options": [
             "To prevent duplicate emergency alert tasks in downstream systems upon network retries and verify the authenticity and integrity of the webhook payload.",
-            "To automatically compress the JSON payload into gzip format so that mobile device networks can render the notifications without latency.",
-            "To bypass firewall rules in external customer resource management software without requiring user authentication credentials.",
-            "To allow customers to unsubscribe from automated health alert emails in compliance with international CAN-SPAM statutory guidelines."
+            "To encrypt the entire webhook payload so that the customer data cannot be read by intermediate network proxies or load balancers on the route",
+            "To ensure that webhook events are delivered in strict chronological order even when the network drops packets or reorders requests",
+            "To throttle the number of alerts sent per hour so downstream ticketing systems are not overloaded by the automated health engine"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10964,9 +10964,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why does the EnterpriseWhitespaceEngine require an account to pass the Expansion Qualification Gate (CHS >= 75 and Utilization >= 85%) before passing upsell leads to sales?",
           "options": [
             "Attempting aggressive upsell pitches to customers experiencing onboarding friction or low adoption damages executive trust and increases churn risk.",
-            "Sales compensation plans forbid paying sales commissions on accounts that have not achieved maximum user login capacity.",
-            "Software billing systems cannot technically process add-on module invoices if license utilization is below eighty-five percent.",
-            "Enterprise software licenses must be physically exhausted before additional software keys can be generated."
+            "Upsell conversations are only permitted once the customer has completed a full annual renewal cycle with the vendor",
+            "The whitespace model cannot estimate expansion potential accurately for accounts whose contract value is below the median ARR",
+            "Sales leaders prefer to prioritize accounts with the highest recent usage growth over accounts with high absolute utilization"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11049,10 +11049,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mathematical reconciliation formula that ensures general-ledger integrity in the Annual ARR Cohort Waterfall?",
           "options": [
-            "Ending Total ARR = Beginning ARR * (1 + NRR Percentage) - Operating Expenses.",
-            "Ending Total ARR = New Logo ARR + (Expansion ARR * Gross Margin Percentage).",
+            "Ending Total ARR = Beginning ARR + New Logo ARR + Expansion ARR + Contraction ARR + Churned ARR.",
+            "Ending Total ARR = Beginning ARR + New Logo ARR - Expansion ARR - Contraction ARR - Churned ARR.",
             "Ending Total ARR = Beginning ARR + New Logo ARR + Expansion ARR - Contraction ARR - Churned ARR.",
-            "Ending Total ARR = Retained ARR + Accounts Receivable Collections - Deferred Tax Liabilities."
+            "Ending Total ARR = Beginning ARR + New Logo ARR + Expansion ARR - Churned ARR, with contraction excluded."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11095,9 +11095,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the ApexNrrOptimizationEngine simulation, why is the contractual escalation gain suspended for Account Beacon Health?",
           "options": [
-            "The license utilization rate reached 100%, preventing further revenue additions to the account.",
-            "Beacon Health operates as a non-profit organization and is legally exempt from annual CPI price adjustments.",
-            "The contract term exceeded 36 months, requiring an explicit board resolution to execute price increases.",
+            "The account has an open executive escalation that requires the CSM to approve every price change manually.",
+            "Beacon Health recently signed a multi-year renewal, which locks the price until the next fiscal year begins.",
+            "Net revenue retention for Beacon Health exceeded the 120% target, so further price escalations are blocked.",
             "Its customer health score is 44.0 (below the critical threshold of 50.0), triggering the automated escalation suspension override."
           ],
           "answer": 3,
@@ -11251,9 +11251,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why must the Realized ROI Ledger decompose economic benefits into verifiable categories like labor efficiency, revenue velocity, and legacy tool elimination?",
           "options": [
             "Enterprise CFOs and finance teams scrutinize renewal budgets against hard economic returns, requiring defensible mathematical proof of delivered value.",
-            "Credit rating agencies require software vendors to publish client ROI ledgers in annual 10-K financial filings.",
-            "Software pricing regulations mandate that annual subscription prices must be pegged directly to verified customer labor savings.",
-            "Customer success managers are legally required to provide certified accounting ledgers before requesting customer Net Promoter Score ratings."
+            "Customers expect CSMs to document usage statistics by feature so that renewal pricing can be recalculated from the number of licenses.",
+            "Sales commission plans for CSMs are calculated from the number of ROI categories documented per account at each quarterly business review.",
+            "Product teams use the ledger categories to prioritize the engineering roadmap and release schedule for the following quarter."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11601,9 +11601,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the SubsystemNrrAndWhitespace module, what criteria must an account satisfy before its whitespace expansion opportunities are marked as qualified?",
           "options": [
             "Customer Health Score must be >= 75.0 (Healthy tier) and seat license utilization must be at least 85.0%.",
-            "The customer must agree to pay an additional twenty-five thousand dollar consulting onboarding fee.",
-            "The contract must have been active for at least twenty-four consecutive billing cycles.",
-            "The Chief Revenue Officer must personally sign an internal approval memorandum."
+            "Customer Health Score must be >= 60.0 (Neutral tier) and seat license utilization must be at least 70.0%.",
+            "Customer Health Score must be >= 75.0 (Healthy tier), with no requirement on seat license utilization.",
+            "Seat license utilization must be at least 85.0%, with no requirement on the Customer Health Score."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -14618,10 +14618,10 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary architectural advantage of replacing point-to-point SaaS integrations with a Hub-and-Spoke data architecture?",
           "options": [
-            "It converts relational database tables into uncompressed static CSV files stored on local laptop drives.",
-            "It guarantees that third-party vendors will reduce their per-seat subscription pricing by fifty percent.",
+            "It stores a full copy of every connected system data inside each spoke application to speed up local queries.",
+            "It lets each team build and maintain its own direct connections, removing the need for a shared data schema.",
             "It centralizes schema definitions, simplifies authentication governance, and prevents cascading sync failures across APIs.",
-            "It allows sales representatives to access enterprise databases without providing credentials or two-factor authentication."
+            "It eliminates data mapping because every application automatically uses identical field names."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -14664,9 +14664,9 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does a 100% linear sales capacity model without ramp and attainment buffers almost always fail in enterprise B2B software?",
           "options": [
-            "Because corporate accounting standards (ASC 606) prohibit recognizing revenue from first-year account executives.",
-            "Because CRM software will not allow newly created sales rep user accounts to create deals until six months after provisioning.",
-            "Because enterprise customers refuse to purchase software from sales representatives who have been at the company for less than three years.",
+            "Because the model assumes that prospects stay in the pipeline for the same number of days regardless of deal size or segment.",
+            "Because the model double counts renewal bookings from existing customers as new business capacity in each territory.",
+            "Because the model ignores territory size and account mix, so reps in large territories cannot reach the capacity assumed per seat.",
             "Because newly hired reps take multiple quarters to ramp to full productivity and actual team-wide quota attainment averages below 80%."
           ],
           "answer": 3,
@@ -14938,7 +14938,7 @@ export const BCOM_SCRM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Strict Opt-In: Outreach is prohibited unless the natural person has provided prior, affirmative, and unambiguous consent.",
             "Strict Opt-Out: Companies may email any European citizen until they click an unsubscribe link.",
             "Universal Freedom: Business-to-business communications are completely exempt from all European privacy laws.",
-            "Quota Based: Sales representatives may email up to five hundred contacts per day before requiring consent."
+            "Soft Opt-In: Companies may email any prospect whose address was bought from a list broker, if a postal address is included."
           ],
           "answer": 0,
           "answerIndex": 0,

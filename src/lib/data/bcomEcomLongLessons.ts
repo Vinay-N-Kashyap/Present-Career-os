@@ -2566,10 +2566,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational objective of the Enterprise Logistics Control Tower in digital commerce?",
           "options": [
-            "To force customers to pay their whole credit card bill in full before they are allowed to place any order.",
-            "To paint all delivery trucks the same color so the carrier fleet looks uniform to customers.",
+            "To route every order through manual approval by the finance team before the warehouse is allowed to pick any items",
+            "To standardize the packaging and branding of all outgoing parcels so they look the same across every carrier",
             "To give centralized, real-time command over carrier delivery SLAs, first-attempt rates, COD RTO suppression and carrier invoice audits.",
-            "Applying unverified default parameters in Enterprise Logistics Control Tower & Milestone Logistics Certification (Option 3) without validating boundary constraints or reconciling state transitions."
+            "To provide a monthly retrospective report of carrier invoices and delivery exceptions after each quarter has closed"
           ],
           "answer": 2,
           "why": "The logistics control tower manages carrier SLAs, mitigates costly RTO returns, and audits billing accuracy to protect customer experience and operating profit."
@@ -3237,10 +3237,10 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Google Core Web Vitals standards, what is the maximum allowable Largest Contentful Paint (LCP) threshold to achieve a 'Good' rating and avoid search ranking penalties?",
           "options": [
-            "10.0 seconds",
+            "4.0 seconds",
             "2.5 seconds",
-            "5.5 seconds",
-            "0.1 seconds"
+            "1.5 seconds",
+            "3.5 seconds"
           ],
           "answer": 1,
           "why": "Google benchmarks LCP under 2.5 seconds as 'Good', between 2.5 and 4.0 seconds as 'Needs Improvement', and greater than 4.0 seconds as 'Poor' with associated SEO penalties."
@@ -4702,9 +4702,9 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the 2024 Google and Yahoo sender guidelines, what is the maximum permissible spam complaint rate before an e-commerce domain faces inbox blocking or spam junking?",
           "options": [
-            "Spam complaints are never tracked by email providers",
-            "50.0% of all messages sent in a month",
-            "5.0% of all messages sent in a month",
+            "Strictly below 3.0% of all messages sent in a month",
+            "Strictly below 1.0% (ideally below 0.50%)",
+            "Strictly below 0.03% (ideally below 0.01%)",
             "Strictly below 0.30% (ideally below 0.10%)"
           ],
           "answer": 3,
@@ -7357,9 +7357,9 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What does the MACH acronym represent in enterprise software architecture?",
           "options": [
             "Microservices, API-First, Cloud-Native SaaS, and Headless presentation architecture",
-            "Monolithic Applications, Computer Hardware, Automated Marketing, and Hardcoded databases",
-            "Mobile Applications, Cryptographic Hashing, Asynchronous Networks, and Mainframe computing",
-            "Monthly Accounting, Payment Auditing, Credit Card reconciliation, and Human resource management"
+            "Modular Architecture, Application Hosting, Centralized Messaging, and Hybrid databases",
+            "Monolithic, API-First, Cloud-Native SaaS, and Headless presentation architecture",
+            "Microservices, Authentication, Caching, and Hosting infrastructure"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7802,9 +7802,9 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is the client-generated Idempotency-Key header mandatory for safe payment and checkout API operations?",
           "options": [
             "It lets clients safely retry timed-out requests without duplicate card charges or duplicate order creation",
-            "It converts all customer credit card points into frequent flyer airline miles automatically",
-            "It encrypts the customer's home address using public-key cryptography to prevent mail couriers from delivering packages",
-            "Because banking regulations mandate that all digital transactions must be signed by three separate bank managers"
+            "It encrypts the card number in transit so that intermediaries on the network cannot read the payment details",
+            "It authenticates the merchant to the payment gateway by using a public key certificate on every call",
+            "It limits each customer to a single checkout attempt per day in order to prevent payment fraud on the store"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9806,9 +9806,9 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What primary business metrics justify enterprise investment in a real-time Post-Purchase Operations Command Tower?",
           "options": [
-            "Applying unverified default parameters in Post-Purchase Operations Command Tower & CSAT Performance Governance (Option 3) without validating boundary constraints or reconciling state transitions.",
-            "Preventing customers from tracking packages after payment authorization settles",
-            "The ability to re-route customer shipments to random addresses on April Fools Day",
+            "High click-through rates on retargeted ads, strong organic search rankings, and rapid growth of paid social impressions across all marketing channels used",
+            "Lower website hosting costs, higher server uptime percentages, and faster page load speeds across mobile devices and tablets for shoppers",
+            "Increased promotional email open rates, higher cart abandonment recovery, and growth in loyalty program signups across the whole quarter for the brand",
             "High on-time delivery rates (97%+), automated carrier refund recovery, superior CSAT scores (4.8/5.0), and massive deflection of costly WISMO customer support inquiries"
           ],
           "answer": 3,
@@ -10289,9 +10289,9 @@ export const BCOM_ECOM_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What happens when an enterprise purchase requisition amount exceeds the remaining budget of its allocated cost center?",
           "options": [
             "The approval engine halts order progress with a Budget Breach rejection or freeze until formal budgetary reallocation is authorized",
-            "The commerce engine automatically charges the difference to the purchasing employee's personal bank account",
-            "The system arbitrarily reduces product quantities to match the remaining budget without notifying the buyer",
-            "The order is converted into a retail coupon code and dispatched anonymously via public email"
+            "The commerce engine automatically approves the order and records the excess as an overspend variance for later review",
+            "The system silently splits the requisition into smaller orders that fit within the remaining budget of the cost center",
+            "The order is routed to the supplier immediately and the cost center is charged in the following fiscal period"
           ],
           "answer": 0,
           "answerIndex": 0,

@@ -67,8 +67,8 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to Benford's Law, what is the expected probability of the number 1 appearing as the first leading digit in natural financial ledgers?",
           "options": [
-            "Approximately 50.0% because positive numbers begin with 1.",
-            "Zero percent because accounting ledgers always round to even numbers.",
+            "Approximately 17.6% (log10(1 + 1/2) = log10(1.5) = 0.17609)",
+            "Approximately 4.6% (log10(1 + 1/9) = log10(10/9) = 0.04576)",
             "Exactly 11.1% (1 out of 9 digits).",
             "Approximately 30.1% (log10(1 + 1/1) = log10(2) ≈ 0.30103)."
           ],
@@ -167,9 +167,9 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the required time horizon when an external auditor conducts a statutory Going Concern assessment under ISA 570?",
           "options": [
             "At least 12 months from the date of the financial statements.",
-            "Exactly 30 calendar days from the date on which fieldwork concludes.",
-            "A rolling ten-year forecast of overall macroeconomic conditions.",
-            "Until the end of the next national political election cycle."
+            "At least 6 months from the date of the financial statements.",
+            "At least 24 months from the date of the financial statements.",
+            "Exactly 12 months from the date on which the auditor's report is signed."
           ],
           "answerIndex": 0,
           "explanation": "Under ISA 570 and US auditing standards, the going concern evaluation period covers at least 12 months from the balance sheet date, assessing whether the company possesses sufficient operating cash flow and credit facilities to meet upcoming debt obligations.",
@@ -1298,9 +1298,9 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory maximum time limit permitted under SA 230 and SQC 1 for completing the assembly of the final audit file after the date of the auditor's report?",
           "options": [
-            "Prior to the company's next quarterly earnings filing date",
+            "Within 180 days after the date of the auditor's report",
             "There is no statutory time limit provided papers are archived before the next annual audit",
-            "Strictly within 15 calendar days from the conclusion of fieldwork",
+            "Strictly within 15 calendar days after the date of the auditor's report",
             "Ordinarily not more than 60 days after the date of the auditor's report"
           ],
           "answerIndex": 3,
@@ -1471,9 +1471,9 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under SA 450, what action must the statutory auditor take if total uncorrected misstatements accumulated on the SUAD exceed overall materiality and management refuses to adjust the financial statements?",
           "options": [
             "The auditor must modify the statutory audit opinion (issue a Qualified or Adverse opinion) in accordance with SA 705",
-            "The auditor must post the journal entries into the client's accounting software directly, bypassing management",
+            "The auditor must resign immediately from the engagement without issuing any audit report",
             "The auditor is permitted to increase materiality retroactively to make the errors disappear from the schedule",
-            "The auditor must file an immediate civil lawsuit in the High Court against the Chief Accountant personally"
+            "The auditor must issue an unmodified opinion with an Emphasis of Matter paragraph describing the misstatements"
           ],
           "answerIndex": 0,
           "why": "SA 450 Paragraph 11 establishes that if management refuses to correct misstatements communicated by the auditor, and the uncorrected misstatements are material individually or in aggregate, the auditor shall modify the opinion in the auditor's report in accordance with SA 705.",
@@ -2624,10 +2624,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 16, what is the mandatory statutory accounting treatment for day-to-day servicing, maintenance, and routine repairs of Property, Plant and Equipment?",
           "options": [
-            "They must be capitalized into the carrying value of the asset and depreciated over 30 years",
-            "They can be capitalized into intangible goodwill and reviewed annually for impairment",
+            "They must be capitalized into the carrying value of the asset and depreciated over its useful life",
+            "They must be recorded as a provision on the balance sheet and released over the following five years",
             "They must be recognized in profit or loss as incurred as repairs and maintenance expense",
-            "They are deducted directly from corporate paid-up equity share capital in the year the costs arise"
+            "They must be recognized in other comprehensive income and recycled to profit or loss when the asset is sold"
           ],
           "answerIndex": 2,
           "why": "Ind AS 16 Paragraph 12 explicitly establishes that an entity does not recognize in the carrying amount of an item of PPE the costs of day-to-day servicing (repairs and maintenance); these costs are recognized in profit or loss as incurred.",
@@ -3538,10 +3538,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the minimum future period that management and the statutory auditor must evaluate when assessing the going concern assumption under SA 570 (Revised)?",
           "options": [
-            "Until the end of the next calendar month only",
+            "At least 3 months from the date of the financial statements",
             "At least 12 months from the date of the financial statements",
-            "Three months from the date of the annual general meeting",
-            "Exactly five years into the future based on unapproved strategic visions"
+            "At least 6 months from the date of the auditor's report",
+            "At least 24 months from the date of the financial statements"
           ],
           "answerIndex": 1,
           "why": "SA 570 Paragraph 13 mandates that the assessment period must cover at least 12 months from the date of the financial statements.",
@@ -3748,10 +3748,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory audit opinion required under SA 580 Paragraph 20 if management refuses to provide written representations confirming that it has fulfilled its responsibility for the preparation of the financial statements?",
           "options": [
-            "The auditor shall ask the company's receptionist to sign the representation letter instead",
+            "The auditor shall accept verbal assurances from management and proceed with an unmodified opinion",
             "The auditor shall issue an unmodified clean opinion with an Emphasis of Matter paragraph",
             "The auditor shall disclaim an opinion on the financial statements in accordance with SA 705",
-            "The auditor shall issue a qualified opinion and deduct 10% from the reported net profit"
+            "The auditor shall issue an adverse opinion on the financial statements in accordance with SA 705"
           ],
           "answerIndex": 2,
           "why": "SA 580 Paragraph 20 explicitly mandates that the auditor shall disclaim an opinion on the financial statements if management refuses to provide the basic written representations on its responsibilities.",
@@ -5028,9 +5028,9 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the NIST Cybersecurity Framework (CSF 2.0), what are the six core functions that an auditor evaluates during a cyber resilience audit?",
           "options": [
             "Govern, Identify, Protect, Detect, Respond, and Recover",
-            "Download, Install, Play, Delete, Format, and Reboot",
-            "Debit, Credit, Balance, Ledger, Voucher, and Journal",
-            "Tax, Audit, Penalty, Appeal, Scrutiny, and Assessment"
+            "Identify, Protect, Detect, Respond, Recover, and Review",
+            "Plan, Do, Check, Act, Monitor, and Report",
+            "Govern, Assess, Protect, Monitor, Respond, and Restore"
           ],
           "answerIndex": 0,
           "why": "NIST CSF 2.0 officially codifies six core functions: Govern, Identify, Protect, Detect, Respond, and Recover.",
@@ -5401,10 +5401,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 45 of the Indian Evidence Act, what is the primary role of an expert witness's written forensic report in court?",
           "options": [
-            "To apply the unverified default settings of the forensic software without validating its boundary limits or reconciling its results.",
-            "To automatically convict the accused on the strength of the report, without any trial, cross-examination or further evidence",
+            "To summarize the forensic findings for the audit committee in non-technical language rather than for use in court proceedings",
+            "To act as an advocate for the party that engaged the expert and present only the facts that favor that party in court",
             "To provide an objective, scientifically sound, and impartial analysis of technical facts to assist the court in reaching a just determination",
-            "To advertise the audit firm's accounting and forensic services to other prospective clients who may need similar investigation support"
+            "To replace the testimony of the investigating officer and the oral evidence of all other witnesses at the trial"
           ],
           "answerIndex": 2,
           "why": "Section 45 explicitly recognizes expert opinion as an objective aid to the court in understanding specialized technical, scientific, or financial facts.",
@@ -5495,9 +5495,9 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory statutory assembly deadline for the final audit file under SA 230 and SQC 1?",
           "options": [
-            "On the day before the company files for bankruptcy",
-            "There is no assembly deadline; working papers can be gathered whenever NFRA sends a notice",
-            "Within three calendar years after the AGM",
+            "Within 30 days after the date of the auditor's report",
+            "Within 90 days after the date of the auditor's report",
+            "Within 180 days after the end of the financial year",
             "Not more than 60 days after the date of the auditor's report"
           ],
           "answerIndex": 3,
@@ -5591,7 +5591,7 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Functional reporting directly to the Board's Audit Committee with administrative reporting to the Chief Executive Officer (CEO)",
             "Direct reporting solely to the Chief Financial Officer (CFO) for both audit charter approval and compensation",
             "Direct reporting solely to the Chief Operating Officer (COO) with annual informal briefings to external statutory auditors",
-            "Dual reporting to the Head of Human Resources and the Chief Procurement Officer to facilitate administrative payroll processing"
+            "Functional reporting to the Chief Executive Officer (CEO) with administrative reporting to the Chief Financial Officer (CFO)"
           ],
           "answerIndex": 0,
           "why": "Functional reporting to the Audit Committee guarantees uncompromised independence, charter approval, and investigation authority without management interference, while administrative reporting to the CEO ensures day-to-day operational support.",
@@ -5648,7 +5648,7 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the CERT-In Cyber Security Directions (April 2022) and Ind AS 37, what are the respective statutory reporting deadline and financial accounting treatment for an unrecovered Rs 25 Crore SWIFT wire fraud?",
           "options": [
-            "Informal email reporting to CERT-In at annual general meeting, treating the diverted funds as an advance to vendors under current assets",
+            "Reporting to CERT-In within 24 hours of the next board meeting, and recognizing the diverted funds as a contingent asset",
             "Reporting to CERT-In within 30 business days along with quarterly income tax filings, with zero balance sheet provision if insurance claims are pending",
             "Mandatory reporting to CERT-In within strictly 6 hours of incident detection, and recognizing a provision of Rs 25 Crore as an expense under Ind AS 37",
             "Reporting to CERT-In within 72 hours under European GDPR timelines, and deferring the Rs 25 Crore loss as an intangible asset over 5 years"
@@ -9572,7 +9572,7 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "The phrases 'material weakness' and 'fraud risk'.",
             "The phrases 'critical audit matter' and 'qualified opinion'.",
             "The phrases 'substantial doubt' and 'going concern'.",
-            "The phrases 'bankruptcy liquidation' and 'court receivership'."
+            "The phrases 'significant deficiency' and 'internal control'."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9656,7 +9656,7 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under PCAOB AS 2805.09 and ISA 580.15, as of what exact date must the written Management Representation Letter be dated?",
           "options": [
-            "As of the date the client files its tax return with the tax authorities.",
+            "As of the date the financial statements are authorized for issue by the board of directors",
             "As of the balance sheet date (e.g., December 31).",
             "As of the date of the independent auditor's report.",
             "As of the first day of audit planning fieldwork."
@@ -10424,10 +10424,10 @@ export const BCOM_AUD_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under what circumstance is the auditor's communication of Critical Audit Matters (CAMs) strictly prohibited in the independent auditor's report under PCAOB AS 3101.12?",
           "options": [
-            "When the audit firm has served the client for more than five consecutive years.",
-            "When the financial statements are prepared under International Financial Reporting Standards.",
+            "When the audit firm has issued a Going Concern emphasis paragraph in the same report",
+            "When the matter relates to the valuation of goodwill and other intangible assets",
             "When the auditor expresses an Adverse Opinion or a Disclaimer of Opinion on the financial statements.",
-            "When the Board Audit Committee requests that CAMs be withheld."
+            "When the matter was communicated to the Audit Committee but later resolved by management"
           ],
           "answer": 2,
           "answerIndex": 2,

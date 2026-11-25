@@ -61,10 +61,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What mathematical relationship holds true between annual ordering cost and annual holding cost at the optimal EOQ batch size?",
           "options": [
-            "Annual holding cost is zero",
+            "Annual holding cost is exactly twice the annual ordering cost",
             "Annual ordering cost exactly equals annual holding cost",
-            "Annual ordering cost is 10 times higher than holding cost",
-            "Annual ordering cost is always exactly twice the annual holding cost"
+            "Annual ordering cost is exactly four times the annual holding cost",
+            "Annual ordering cost equals the annual purchase cost of the goods"
           ],
           "answer": 1,
           "why": "The EOQ model finds the minimum of the convex total cost curve, which occurs precisely at the geometric intersection where annual ordering cost equals annual holding cost."
@@ -324,10 +324,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three core component ratios multiplied together to calculate Overall Equipment Effectiveness (OEE)?",
           "options": [
-            "Revenue, Profit Margin, and Return on Equity",
+            "Availability, Throughput, and Yield",
             "Availability, Performance, and Quality",
-            "Electricity Cost, Labor Wages, and Depreciation",
-            "Inventory Turnover, Order Cycle Time, and Shipping Distance"
+            "Utilization, Efficiency, and Quality",
+            "Availability, Performance, and Scrap Cost"
           ],
           "answer": 1,
           "why": "OEE = Availability (uptime) * Performance (speed efficiency) * Quality (first-pass good units yield).",
@@ -6876,10 +6876,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In supply chain risk modeling, what does an HHI (Herfindahl-Hirschman Index) score exceeding 5,000 indicate regarding a commodity's supply base?",
           "options": [
-            "Zero inventory carrying costs and zero supplier lead time",
-            "Automatic compliance with ISO 9001 and ISO 14001 standards",
+            "A highly competitive supply base with many interchangeable suppliers",
+            "Moderate concentration that requires only annual supplier audits",
             "Dangerous supply base concentration with severe single-source vulnerability",
-            "Perfect multi-tier diversification and complete antifragility"
+            "Low concentration, which signals strong bargaining power for the buyer"
           ],
           "answer": 2,
           "why": "An HHI above 2,500 indicates high concentration, and above 5,000 represents extreme concentration dominated by a single supplier, exposing the enterprise to catastrophic disruption.",
@@ -7008,9 +7008,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "According to the Simchi-Levi resilience framework, what condition must be satisfied for a supply chain node to be classified as fully resilient against disruption?",
           "options": [
-            "The enterprise must maintain 10 years of safety stock in third-party warehouses",
-            "The component must be sourced exclusively from a single offshore supplier",
-            "Time-to-Recover must be exactly zero seconds",
+            "Time-to-Recover (TTR) must be at least twice the Time-to-Survive (TTS)",
+            "Time-to-Survive (TTS) must be less than or equal to Time-to-Recover (TTR)",
+            "Time-to-Recover (TTR) must be shorter than the quoted supplier lead time",
             "Time-to-Survive (TTS) must be greater than or equal to Time-to-Recover (TTR)"
           ],
           "answer": 3,
@@ -7054,10 +7054,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Supply Chain Resilience Index formula (SCRI = 0.5 * DualSource + 0.3 * BufferScore + 0.2 * Nearshore), what is the minimum composite score required for an enterprise to be certified as resilient?",
           "options": [
-            "33.3 points out of 100.0",
+            "65.0 points out of 100.0",
             "50.0 points out of 100.0",
             "80.0 points out of 100.0",
-            "100.0 points exactly with zero deviations"
+            "90.0 points out of 100.0"
           ],
           "answer": 2,
           "why": "Under enterprise resilience governance standards, an SCRI score of 80.0 or greater is the established threshold required to classify a multi-tier supply chain as de-risked and resilient.",
@@ -7125,9 +7125,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Greenhouse Gas Protocol Corporate Value Chain Standard, what percentage of an enterprise's total carbon footprint typically originates within Scope 3 emissions?",
           "options": [
-            "Exactly 50% split with Scope 1",
-            "Zero emissions, because Scope 3 emissions are legally exempt from carbon accounting",
-            "Less than 5% of emissions",
+            "Roughly 40% to 50% of total enterprise emissions",
+            "Roughly 20% to 30% of total enterprise emissions",
+            "Less than 10% of total enterprise emissions",
             "75% to 90% of total enterprise emissions"
           ],
           "answer": 3,
@@ -7170,8 +7170,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the European Union Deforestation Regulation (EUDR), what is the statutory cutoff date after which products grown on deforested land are permanently prohibited from entry into the EU?",
           "options": [
             "December 31, 2020",
-            "January 1, 2000",
-            "July 4, 2025",
+            "December 31, 2018",
+            "June 29, 2023",
             "December 31, 2015"
           ],
           "answer": 0,
@@ -7216,7 +7216,7 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Copper, Nickel, Lithium, and Cobalt",
             "Tantalum, Tin, Tungsten, and Gold",
             "Steel, Aluminum, Plastic, and Carbon Fiber",
-            "Titanium, Tellurium, Terbium, and Germanium"
+            "Tantalum, Tin, Tungsten, and Silver"
           ],
           "answer": 1,
           "why": "The 3TG conflict minerals explicitly covered by Dodd-Frank 1502 and EU Regulation 2017/821 are Tantalum, Tin, Tungsten, and Gold.",
@@ -7378,8 +7378,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "False Negative (Type II Error): Passing a defective part to the customer as conforming",
             "False Positive (Type I Error): Flagging a conforming part for manual reinspection",
-            "A camera lens requiring routine dust cleaning after 500 hours of continuous operation",
-            "Saving image logs to an encrypted on-premises edge database"
+            "Flagging a conforming part for scrap instead of rework, which increases material cost",
+            "A slow inspection cycle time that reduces line throughput by several percent"
           ],
           "answer": 0,
           "why": "A False Negative means a defective unit escapes inspection and reaches customer assembly lines or end consumers, risking catastrophic failure, warranty liabilities, and safety recalls.",
@@ -7561,7 +7561,7 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "90.0 points",
             "75.0 points",
             "50.0 points",
-            "100.0 points exactly with zero tolerance"
+            "85.0 points"
           ],
           "answer": 0,
           "why": "A score of 90.0 or higher is the established benchmark required to achieve TIER_1_AUTONOMOUS_AI_OPERATIONS_ACTIVE accreditation.",
@@ -7878,10 +7878,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In stochastic inventory theory, why does lead time variability often contribute more to safety stock requirements than demand variability?",
           "options": [
-            "Because lead time is always measured in years while demand is measured in seconds",
+            "Because safety stock is calculated from lead time alone and demand variability is excluded from the formula",
             "Because lead time variance is amplified by the squared mean demand in the compound variance equation",
-            "Because supplier lead time is legally required to remain constant under commercial contract law",
-            "Because lead time variance only affects carrying costs and has zero impact on stockout probability"
+            "Because demand variability is divided by lead time and therefore matters less once lead time is fixed",
+            "Because lead time variability only affects ordering cost and has no impact on stockout probability"
           ],
           "answer": 1,
           "why": "In the compound variance formula Var(LTD) = L*Var(D) + (Mean(D))^2 * Var(L), the variance of lead time is multiplied by the squared mean demand, meaning high-volume items experience severe risk amplification from freight transit jitter.",
@@ -9449,8 +9449,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "When the measurement procedure is physically destructive, preventing multiple operators from testing the identical workpiece.",
             "When the measurement system consists of a non-contact coordinate measuring machine operating in a cleanroom.",
-            "When all operators exhibit identical measurement technique and zero appraiser variance across shifts.",
-            "When the manufacturing process has a capability index exceeding two point zero under six sigma standards."
+            "When operators measure parts at different temperatures across three consecutive production shifts",
+            "When the measurement system consists of a handheld digital caliper with a resolution of 0.01 mm"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9533,8 +9533,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the minimum acceptable threshold for the Number of Distinct Data Categories (ndc) required by AIAG standards for a measurement system to be used in statistical process control?",
           "options": [
-            "An ndc value equal to 0, proving that all measurement noise has been eliminated from the manufacturing facility.",
-            "An ndc value of exactly 1, certifying that the measurement tool operates as a basic binary go/no-go sensor.",
+            "An ndc value of 3 or greater, ensuring the gauge can separate parts into only high, medium, and low coarse bins",
+            "An ndc value of 10 or greater, ensuring the gauge can resolve every individual difference between operators and shifts",
             "An ndc value of 5 or greater, ensuring the gauge can distinguish subtle process shifts across non-overlapping confidence intervals.",
             "An ndc value between 2 and 4, confirming that the process can be divided into coarse high and low bins."
           ],
@@ -9644,10 +9644,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the traditional One-Factor-at-a-Time (OFAT) experimental methodology fundamentally inferior to orthogonal factorial design in industrial process optimization?",
           "options": [
-            "OFAT automatically generates Resolution V fractional designs without requiring defining relations.",
-            "OFAT eliminates all random experimental error by holding ambient factory temperature at absolute zero.",
+            "OFAT confounds the main effect of every factor with experimental error, so no factor effect can be estimated",
+            "OFAT requires fewer runs but produces biased main effects because factors are held at their low levels",
             "OFAT is unable to detect factor interactions and requires far more experimental runs to explore a multi-dimensional parameter space.",
-            "OFAT maximizes the Taguchi Signal-to-Noise ratio by converting all continuous factors into binary attributes."
+            "OFAT cannot be used with continuous factors and is restricted to attribute data such as pass or fail counts"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9688,10 +9688,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is the interaction column for two factors (such as AB) constructed in a two-level full factorial experimental matrix?",
           "options": [
-            "By running Frank Yates's algorithm in reverse order to invert the variance components.",
+            "By adding the algebraic signs of factor A and factor B element-wise and keeping the sum in each design row",
             "By multiplying the algebraic signs (+1 and -1) of factor A and factor B element-wise across each design row.",
-            "By adding the physical engineering units of factor A and factor B together for each trial.",
-            "By dividing the grand sample mean by the number of distinct replication trials."
+            "By subtracting the average response at the low level of factor A from the average at the high level of factor B",
+            "By repeating the column of factor A and shifting it down one row for each added factor"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11693,7 +11693,7 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary operational rationale for keeping the demand plan strictly 'unconstrained' during Step Two of the monthly S&OP cadence?",
           "options": [
             "To ensure manufacturing plants immediately build maximum inventory regardless of warehouse storage limitations or working capital restrictions.",
-            "To allow commercial sales representatives to inflate bonus compensations by submitting unverified aspirational targets without operational audit.",
+            "To let the finance team set the demand plan equal to the budget so that the supply plan is never reopened",
             "To eliminate the need for subsequent supply capacity evaluations by forcing operations to fulfill all commercial requests unconditionally.",
             "To capture true market demand without distortion from plant constraints, allowing leadership to evaluate the economic feasibility of capacity additions."
           ],
@@ -11721,9 +11721,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary function of Forecast Value-Add (FVA) analysis within the S&OP demand consensus process?",
           "options": [
             "To quantitatively evaluate whether human manual adjustments to statistical baseline forecasts actually improved accuracy or introduced detrimental error.",
-            "To calculate the total retail gross margin generated by marketing promotional campaigns across regional distribution channels.",
-            "To measure the financial bonus compensation owed to demand planning analysts based on total shipment volumes fulfilled.",
-            "To enforce automatic discounts on distributor invoices when actual retail sales fall below seasonal trend projections."
+            "To measure the cost of holding excess finished goods inventory that is created when sales forecasts exceed actual customer demand",
+            "To calculate the safety stock needed to cover the forecast error at each regional distribution center in the network",
+            "To compare the forecast accuracy of different suppliers by reviewing their delivery performance against the purchase orders"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11805,8 +11805,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary operational purpose of establishing 'firm time fences' within the Master Production Schedule following Executive S&OP sign-off?",
           "options": [
             "To let sales continuously re-prioritize the near-term schedule as new customer orders arrive.",
-            "To prevent corporate finance from auditing manufacturing conversion costs or verifying inventory asset valuations.",
-            "To eliminate all future supplier purchase orders and force the plant to consume only existing safety stocks.",
+            "To fix the supplier delivery dates for the next twelve months so that no purchase order can be revised by the purchasing team",
+            "To freeze the quarterly financial budget so that production managers cannot request any additional plant capacity from finance",
             "To freeze the immediate 30-day production schedule, preventing disruptive commercial changes and bullwhip nervousness on the shop floor."
           ],
           "answer": 3,
@@ -11913,10 +11913,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Drum-Buffer-Rope (DBR) methodology, what is the specific operational function of the 'Rope'?",
           "options": [
-            "It calculates the annual compound interest on corporate equipment leasing debts for financial accounting disclosure.",
-            "It physically secures heavy machinery to concrete foundations to dampen structural vibration during high-speed milling.",
+            "It places a time buffer of protective inventory in front of the bottleneck constraint to absorb disruptions and keep the resource running",
+            "It sets the production pace of the whole factory from the schedule of the bottleneck resource, which is the role of the Drum in DBR",
             "It tethers raw material release at the front of the factory to the exact processing rate of the bottleneck constraint, preventing WIP accumulation.",
-            "It serves as a manual pull-cord on assembly lines that automatically shuts down the entire factory whenever a minor defect is detected."
+            "It moves finished goods from the final operation to the shipping dock in order to keep the shipping buffer filled with completed orders"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11941,10 +11941,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A production order currently in the heat-treatment queue has 6 days remaining until its promised customer ship date, but requires 8 days of total remaining processing and transit time. What is its Critical Ratio (CR), and what does it indicate to the shop-floor dispatcher?",
           "options": [
-            "CR = -2.0; the job has already been canceled by the customer due to contractual non-performance.",
+            "CR = 1.33; the job is ahead of schedule and can be deferred behind other jobs that have a lower ratio value",
             "CR = 0.75; the job is behind schedule and must be given high dispatch priority to prevent customer delivery failure.",
-            "CR = 48.0; the job is perfectly balanced and requires zero supervisory monitoring.",
-            "CR = 1.33; the job is ahead of schedule and should be set aside in storage until next month."
+            "CR = 6.0; the job is exactly on schedule and should be released to the work center at its current queue position",
+            "CR = 2.0; the job has twice the slack that it needs and should therefore be moved to the front of the dispatch queue"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12050,10 +12050,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A production plant has a net available working time of 27,000 seconds per shift after deducting planned breaks and meetings. Customer demand is 450 finished units per shift. What is the plant's Takt Time?",
           "options": [
-            "300 seconds per unit; Takt Time is calculated by multiplying total plant employment by scrap defect rates.",
+            "30 seconds per unit; a completed product must emerge from the line every half minute",
             "120 seconds per unit; the plant can build products at half speed and store the remainder in finished-goods inventory.",
             "60 seconds per unit; a completed product must emerge from the line exactly every one minute.",
-            "16.67 units per second; machines must operate at supersonic velocities to satisfy distributor quotas."
+            "90 seconds per unit; a completed product must emerge from the line every ninety seconds"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12078,9 +12078,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "A medical device manufacturing line has a total Value-Added Time (VAT) of 45 minutes across all fabrication steps. Due to staging queues, quality quarantine holds, and batching delays, the total Production Lead Time (PLT) is 15 business days (120 operating hours). What is the Process Cycle Efficiency (PCE) of this line?",
           "options": [
-            "15.0%; PCE is calculated by dividing total business days by number of assembly workers.",
+            "6.25%; the line is value-added for roughly one-sixteenth of its total production lead time on the floor",
             "37.5%; the line operates at world-class Lean Six Sigma benchmark levels.",
-            "100%; every minute spent inside the factory is legally certified as value-added under GMP guidelines.",
+            "62.5%; the line is value-added for most of its total production lead time on the floor",
             "0.625%; over 99.3% of total manufacturing lead time is non-value-added waiting and stagnation."
           ],
           "answer": 3,
@@ -12187,10 +12187,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the three definitive target conditions established by the Japan Institute of Plant Maintenance as the ultimate goal of Total Productive Maintenance (TPM)?",
           "options": [
-            "Zero Overtime Hours, Zero Raw Material Deliveries, and Zero Scrap Accounting Audits.",
-            "Zero Capital Expenditure, Zero Automation Robots, and Zero Maintenance Mechanics.",
+            "Zero Breakdowns, Zero Defects, and Zero Overtime",
+            "Zero Downtime, Zero Waste, and Zero Inventory",
             "Zero Breakdowns, Zero Defects, and Zero Accidents.",
-            "Zero Customer Returns, Zero Preventive Maintenance Costs, and Zero Factory Inspections."
+            "Zero Breakdowns, Zero Changeovers, and Zero Customer Returns"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12218,7 +12218,7 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "95.00%; OEE is determined solely by the final quality inspection yield.",
             "71.25%; Availability is 87.5%, Performance is 85.71%, and Quality is 95.0%.",
             "83.33%; OEE is calculated by dividing total parts produced by planned shift minutes.",
-            "45.00%; OEE is calculated by subtracting scrap count from total available hours."
+            "87.50%; OEE equals availability alone, since breakdowns are the largest loss"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12548,9 +12548,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Incoterms 2020 rule CIF (Cost, Insurance and Freight), at what exact physical point does the legal risk of cargo damage or loss transfer from the seller to the buyer?",
           "options": [
             "At the port of origin, the moment the goods are loaded on board the vessel, even though the seller pays freight and insurance to the destination port.",
-            "At the destination port warehouse, the moment the import customs clearance declaration is officially approved by customs officials.",
-            "At the buyer's final retail distribution center, once the shipping pallets have been completely unloaded and scanned into the warehouse WMS.",
-            "At the seller's factory gate, the moment the raw materials are first blended in the manufacturing batch mixer."
+            "At the destination port, the moment the vessel is unloaded and the goods are placed on the quay, after the seller has paid for freight and insurance",
+            "At the buyer warehouse door, the moment the goods are delivered by the final carrier after import customs clearance has been completed",
+            "At the destination port, once the buyer pays the import duties and the goods are formally released by customs to the consignee"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12684,10 +12684,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the international customs legal doctrine of 'Informed Compliance,' who bears the ultimate legal liability for accurate tariff classification, valuation, and duty payment on imported goods?",
           "options": [
-            "The individual forklift truck driver who unloaded the container from the vessel at the destination seaport terminal.",
-            "The World Customs Organization headquarters in Brussels, which guarantees all international customs entries.",
+            "The licensed customs broker who prepared and electronically transmitted the entry on behalf of the importer of record",
+            "The foreign exporter who invoiced the goods, as the party that is responsible for classification and customs valuation",
             "The Importer of Record (IOR), who is legally responsible for entry accuracy even if a licensed customs broker prepared the filing.",
-            "The third-party international cargo insurance underwriter who issued the marine transit policy."
+            "The ocean carrier that transported the container to the destination and issued the bill of lading for the shipment"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12741,9 +12741,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "A footwear brand provides $500,000 worth of specialized aluminum shoe sole molds free of charge to its contract manufacturing factory in Vietnam. When the finished shoes are imported, how must this 'Customs Assist' be handled under the WTO Customs Valuation Agreement?",
           "options": [
             "The value of the tooling molds must be legally apportioned and added to the dutiable customs value of the imported shoes.",
-            "The tooling molds are completely exempt from customs oversight because they were manufactured outside the country of assembly.",
-            "The importer can subtract the cost of the molds from the factory invoice price to reduce import tariff liabilities.",
-            "The molds must be physically destroyed at the foreign port before the shoes are loaded onto the vessel."
+            "The tooling molds are exempt from customs value because the factory never paid the brand for them",
+            "The importer can subtract the cost of the molds from the factory invoice price to reduce import tariff liabilities",
+            "The molds are valued separately, and duty is charged on them only when the factory returns them to the brand"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -13072,10 +13072,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In a UN specification packaging marking such as 'UN 1A1/Y1.8/200/24', what does the letter 'Y' indicate regarding the authorized Packing Groups for that container?",
           "options": [
-            "The packaging is only authorized to carry organic yellow corn oil for animal livestock feed.",
-            "The packaging is certified exclusively for high-hazard Packing Group I military explosives.",
+            "The packaging is tested and certified to carry substances assigned to Packing Group I, Packing Group II, and Packing Group III",
+            "The packaging is certified only for Packing Group III substances of minor danger",
             "The packaging is tested and legally certified to carry substances assigned to Packing Group II and Packing Group III.",
-            "The packaging must be physically recycled within exactly twenty-four calendar hours after filling."
+            "The packaging is certified for Packing Group I and Packing Group II substances only"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -13240,10 +13240,10 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "An imported consignment has an invoice price of $850,000, but the buyer provided $45,000 in foreign engineering assists and owes $25,000 in patent royalties as a condition of sale. What is the legally adjusted Dutiable Customs Value under the WTO Transaction Value method?",
           "options": [
-            "$850,000; customs authorities are legally restricted to looking solely at the face value of the commercial invoice.",
+            "$875,000; only the $25,000 royalties are added, while the engineering assists are excluded",
             "$920,000; statutory assists ($45,000) and condition-of-sale royalties ($25,000) must be legally added to the invoice price.",
-            "$780,000; the importer can deduct royalties and assists from the invoice price to lower customs tax obligations.",
-            "$1,770,000; customs values are calculated by doubling the commercial invoice price and adding insurance tariffs."
+            "$780,000; the importer can deduct royalties and assists from the invoice price to lower customs tax obligations",
+            "$895,000; only the $45,000 engineering assists are added, as royalties are excluded from customs value"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -13571,9 +13571,9 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which communication protocol architecture combines lightweight publish/subscribe transport with structured binary Protobuf payloads to stream industrial IoT telemetry into a factory digital twin?",
           "options": [
-            "File Transfer Protocol (FTP) batch transfers executed at midnight.",
-            "Hypertext Transfer Protocol (HTTP 1.1) with raw XML polling.",
-            "Simple Mail Transfer Protocol (SMTP) with base64 encoded attachments.",
+            "MQTT with JSON text payloads over TCP/IP, polled every ten seconds by the digital twin",
+            "HTTP/2 REST with Protobuf payloads using request-response polling over TCP/IP",
+            "OPC UA client-server sessions with XML encoded payloads over TCP/IP",
             "MQTT with Sparkplug B specification over TCP/IP."
           ],
           "answer": 3,
@@ -13705,8 +13705,8 @@ export const BCOM_OPS_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Greenhouse Gas (GHG) Protocol, how are emissions resulting from the generation of off-site purchased electricity consumed in a manufacturing plant classified?",
           "options": [
             "Scope 1 Direct Emissions, because the machinery consuming the electricity is owned by the plant.",
-            "Scope 3 Category 5 Waste Generated in Operations.",
-            "Non-reportable baseline emissions excluded from statutory carbon audits.",
+            "Scope 3 Category 1 Purchased Goods and Services, because the electricity is bought from an external utility",
+            "Scope 2 Indirect GHG Emissions, requiring only location-based accounting using the national grid average",
             "Scope 2 Indirect GHG Emissions, requiring both location-based and market-based accounting."
           ],
           "answer": 3,

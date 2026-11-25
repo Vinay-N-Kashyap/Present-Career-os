@@ -513,10 +513,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why do programmatic ad exchanges enforce strict 100-millisecond timeout budgets for Demand-Side Platform (DSP) bid responses?",
           "options": [
-            "To allow publishers to manually inspect and approve every individual advertisement before display.",
-            "Because optical internet cables lose electrical charge if data flows for longer than 100 milliseconds.",
+            "To ensure the DSP can recalculate and update its bid price for each ad slot after the page has finished loading",
+            "To keep exchange servers from running out of storage capacity when too many bid logs are saved for each auction",
             "To protect consumer webpage load performance and core rendering latency from slow downstream bidding servers.",
-            "Because the Federal Trade Commission legally requires all online transactions to terminate in two-digit milliseconds."
+            "To ensure every advertiser pays the same clearing price for an impression regardless of how fast its bidding server is"
           ],
           "answer": 2,
           "why": "Web browsers cannot pause user navigation while waiting for external bidding servers; strict 100ms latency SLAs prevent ads from freezing browser rendering engines.",
@@ -615,9 +615,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under official Media Rating Council (MRC) guidelines, what constitutes a viewable display ad impression?",
           "options": [
             "At least 50% of the creative pixels must appear in the active viewport for at least one continuous second.",
-            "The user must click the ad and stay on the landing page for at least five minutes.",
-            "The advertisement must occupy 100% of the screen and play background audio automatically.",
-            "The ad server must log an HTTP 200 response when the banner file is requested."
+            "All of the creative pixels must appear in the viewport for at least five continuous seconds",
+            "At least 50% of the creative pixels must appear in the active viewport for at least thirty continuous seconds",
+            "At least 25% of the creative pixels must appear in the active viewport for at least one continuous second"
           ],
           "answer": 0,
           "why": "The MRC display viewability standard requires a minimum of 50% of the ad unit pixels to be in the browser viewport for a minimum of 1 continuous second.",
@@ -784,9 +784,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is Incremental ROAS (iROAS) derived from Geo-Lift experiments superior to platform-reported ROAS in Facebook Ads Manager or Google Ads?",
           "options": [
-            "Because the Federal Reserve requires all corporate revenue to be audited via matched-market experiments.",
-            "Because ad networks charge lower CPM fees to advertisers who use the term iROAS in contract negotiations.",
-            "Because it measures click-through rates across desktop monitors rather than mobile smartphones.",
+            "Because it counts every conversion that occurred after a user clicked or viewed any ad, which gives a larger and more complete revenue total",
+            "Because it uses last-click attribution inside the ad platform to credit conversions to the final channel the user touched",
+            "Because it measures the average click-through rate of ad creatives rather than the revenue those ads generated",
             "It isolates true causal revenue by subtracting the synthetic baseline that would have occurred organically without ad exposure."
           ],
           "answer": 3,
@@ -1525,10 +1525,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Google Ads Generalized Second-Price (GSP) auction rules, how is an advertiser's actual clearing CPC calculated?",
           "options": [
-            "Actual CPC = Competitor Bid minus your total monthly organic traffic.",
-            "Actual CPC = A fixed flat rate of $10.00 mandated by credit card networks.",
+            "Actual CPC = Your Maximum Bid, since the winning advertiser pays its full bid in the auction",
+            "Actual CPC = (Your Ad Rank / Next Competitor Quality Score) + $0.01",
             "Actual CPC = (Ad Rank of Next Competitor / Your Quality Score) + $0.01.",
-            "Actual CPC = Your Maximum Bid multiplied by current inflation rates."
+            "Actual CPC = Your Maximum Bid divided by the number of competing advertisers in the auction"
           ],
           "answer": 2,
           "why": "Google's GSP auction charges the exact minimum price needed to beat the competitor directly below you: (Next Ad Rank / Your Quality Score) + $0.01."
@@ -1560,10 +1560,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which three algorithmic components directly determine a keyword's Quality Score in Google Ads?",
           "options": [
-            "Social Media Follower Count, Instagram Likes, YouTube Subscribers, and Brand Mentions.",
+            "Expected Click-Through Rate (eCTR), Maximum CPC Bid, and Daily Budget",
             "Expected Click-Through Rate (eCTR), Ad Relevance, and Landing Page Experience.",
-            "Number of Office Locations, Employee Count, CEO Net Worth, and Revenue.",
-            "Monthly Ad Budget, Credit Card Limit, Domain Age, and Hosting Cost."
+            "Ad Relevance, Keyword Match Type, and Account Spend History",
+            "Landing Page Experience, Conversion Value, and Competitor Bid Level"
           ],
           "answer": 1,
           "why": "Google Ads Quality Score is evaluated strictly across Expected CTR, Ad Relevance, and Landing Page Experience on a 1-to-10 scale."
@@ -1727,9 +1727,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Meta's ad auction, what are the three primary components of the Total Value formula?",
           "options": [
-            "Monthly Credit Card Balance, Bank Name, Wire Transfer Speed, and Loan Rate.",
-            "Page Likes, Company Stock Price, Office Location, and Staff Count.",
-            "Number of Hashtags, Font Size, Image Resolution, and Caption Length.",
+            "Advertiser Bid, Ad Frequency Cap, and Creative Budget",
+            "Estimated Action Rate (eAR), Page Likes, and Campaign Daily Budget",
+            "Advertiser Bid, Estimated Action Rate (eAR), and Cost Per Mille (CPM) Floor",
             "Advertiser Bid, Estimated Action Rate (eAR), and User Value (Ad Quality)."
           ],
           "answer": 3,
@@ -1763,9 +1763,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the universal financial formula for calculating Break-Even ROAS (Return on Ad Spend)?",
           "options": [
             "BE_ROAS = 1 / Gross Margin %.",
-            "BE_ROAS = Ad Spend multiplied by total website visitors.",
-            "BE_ROAS = Total Revenue divided by employee payroll.",
-            "BE_ROAS = A fixed benchmark of 300% across all business models."
+            "BE_ROAS = Gross Margin % / Average Order Value",
+            "BE_ROAS = 1 - Gross Margin %",
+            "BE_ROAS = Cost of Goods Sold / Total Revenue"
           ],
           "answer": 0,
           "why": "Break-even ROAS is calculated as 1 / Gross Margin %. For a 40% margin, BE_ROAS is 1 / 0.40 = 2.50x (250%)."
@@ -3355,9 +3355,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "How does GA4 determine that a user session qualifies as an 'Engaged Session'?",
           "options": [
             "The user must spend at least 10 seconds, view 2 or more pages/screens, or trigger a conversion event.",
-            "The user must click on at least five distinct interactive buttons on the homepage.",
-            "The session must originate from an authenticated user who logged in via OAuth.",
-            "The session must generate at least $100 in completed e-commerce purchase revenue."
+            "The user must scroll to at least 90% of the page depth and view at least one video",
+            "The user must spend at least 30 seconds, view 5 or more pages/screens, and trigger a conversion event",
+            "The user must trigger at least one click event and return to the site within seven days"
           ],
           "answer": 0,
           "why": "GA4 defines an engaged session as lasting 10+ seconds, having 2+ page/screen views, or completing a conversion event.",
@@ -3396,9 +3396,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is the SQL UNNEST function essential when querying GA4 export tables in BigQuery?",
           "options": [
-            "Because BigQuery automatically encrypts raw telemetry unless unnested with an administrative key.",
-            "Because UNNEST reduces the total physical storage cost of BigQuery tables by 90%.",
-            "Because GA4 export tables do not support standard SQL WHERE clauses without UNNEST.",
+            "Because UNNEST joins the GA4 events table to the users table so that sessions can be attributed to a logged-in customer",
+            "Because UNNEST converts the event timestamp from microseconds into the local time zone of the property",
+            "Because UNNEST removes duplicate events that were exported to BigQuery during the intraday streaming process",
             "Because event parameters are stored in repeated RECORD arrays rather than static flat columns."
           ],
           "answer": 3,
@@ -3438,10 +3438,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary operational distinction between an Open Funnel and a Closed Funnel in GA4 Explorations?",
           "options": [
-            "An open funnel operates in real-time, whereas a closed funnel experiences a 48-hour processing lag.",
+            "In an open funnel, users can enter only at Step 1; in a closed funnel, users can enter at any step",
             "In an open funnel, anonymous visitors are included; in a closed funnel, only logged-in users appear.",
             "In an open funnel, users can enter at any step; in a closed funnel, users must enter at Step 1.",
-            "An open funnel requires BigQuery export, while a closed funnel is restricted to the GA4 UI."
+            "An open funnel shows only the first two steps, while a closed funnel shows all steps up to the final conversion"
           ],
           "answer": 2,
           "why": "Open funnels allow users to join the funnel at any step, whereas closed funnels enforce strict entry at Step 1.",
@@ -3523,9 +3523,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary benefit of hosting server-side GTM on Google Cloud Run for enterprise GA4 deployments?",
           "options": [
             "It establishes a first-party data collection proxy that bypasses ad-blockers, extends cookie lifetimes, and secures PII.",
-            "It eliminates the need to pay for Google BigQuery storage by compressing all historical events into static CSV files.",
-            "It automatically generates viral video ad scripts using generative AI without human intervention.",
-            "It allows marketers to bypass all European privacy and GDPR regulations with complete legal immunity."
+            "It moves tag firing into the visitor browser, which speeds up page rendering by running all vendor tags client-side",
+            "It stores the raw events permanently in Cloud Run, so a separate GA4 property is no longer required for reporting",
+            "It sets third-party cookies on a Google-owned domain so that browsers treat all of the tags as trusted"
           ],
           "answer": 0,
           "why": "Server-side GTM acts as a first-party proxy, reducing browser JavaScript load, mitigating ad-blockers and ITP cookie degradation, and centralizing PII redaction.",
@@ -3591,9 +3591,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary vulnerability of relying exclusively on Last-Touch attribution?",
           "options": [
-            "It causes Google Analytics to permanently double-count all paid search conversions.",
-            "It violates European GDPR data protection regulations regarding cookie retention.",
-            "It requires specialized quantum computing hardware to calculate transactional credit.",
+            "It assigns equal credit to every touchpoint, so middle touches are overvalued compared with the final click",
+            "It systematically overvalues display and video channels that start the customer journey with the first touch",
+            "It cannot be calculated unless the customer has logged in on at least three different devices",
             "It systematically undervalues top-of-funnel awareness channels that introduce new prospects to the brand."
           ],
           "answer": 3,
@@ -3867,10 +3867,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic definition of the 'Aha! Moment' in user activation engineering?",
           "options": [
-            "The timestamp when a customer submits a support ticket inquiring about technical features.",
+            "The point at which the user completes the account registration form and verifies an email address",
             "The specific milestone where the user first experiences the core utility and value of the product.",
-            "The instant the user inputs their payment information into an annual billing form.",
-            "The moment an automated email newsletter is successfully delivered to the user's inbox."
+            "The moment the user first sees the pricing page or the annual billing options",
+            "The first time the user receives an onboarding email series after signing up for the product"
           ],
           "answer": 1,
           "why": "The Aha! moment represents the pivotal threshold where a user personally experiences the core transformative value of the solution, establishing emotional and operational buy-in.",
@@ -3909,9 +3909,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What mathematical pattern in a cohort retention curve confirms that a product has achieved Product-Market Fit?",
           "options": [
             "The curve flattens out parallel to the x-axis, demonstrating that a stable percentage of users retain indefinitely.",
-            "The curve slopes downward at a steep 45-degree angle, showing steady customer turnover.",
-            "The curve fluctuates wildly between 0% and 100% every weekend based on consumer shopping habits.",
-            "The curve reaches 100% retention for all users across the first 365 days of onboarding."
+            "The curve declines steadily toward 0% without leveling off, showing continuous cohort churn over time",
+            "The curve shows a sharp drop in the first week and then continues to fall at the same rate in later weeks",
+            "The curve starts at 100% and falls to 50% in the first month, then repeats the same fall every month"
           ],
           "answer": 0,
           "why": "A retention curve that flattens asymptotically demonstrates that a core group of users consistently derive value and do not churn, confirming Product-Market Fit.",
@@ -4142,9 +4142,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why is it essential to bid on one's own trademarked brand terms in Apple Search Ads?",
           "options": [
-            "To allow the app to be installed automatically on a device without any user confirmation step.",
-            "To eliminate all sales tax obligations that are associated with in-app digital purchases.",
-            "Because Apple will permanently remove the app from the store if it does not spend at least $1,000 on brand ads.",
+            "To qualify the app for automatic placement in the Today tab of the App Store without editorial review",
+            "To reduce the cost-per-tap of generic competitor-keyword campaigns by sharing the same Quality Score",
+            "Because Apple requires a minimum brand-term bid before an app can appear in organic App Store search results",
             "To prevent aggressive competitors from conquesting your high-intent searchers and capturing 90%+ Share of Voice."
           ],
           "answer": 3,
@@ -4223,10 +4223,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the strategic synergy between App Store Optimization (ASO) and Apple Search Ads (ASA)?",
           "options": [
-            "ASA ensures that competitors will be legally barred from displaying banner ads on third-party websites and apps.",
+            "ASA results replace organic keyword rankings, so metadata optimization becomes unnecessary after the first month",
             "Strong organic ASO relevancy increases ASA Quality Score, which decreases cost-per-tap and expands ad impression share.",
-            "Running ASA campaigns completely eliminates the need for regular software updates or app bug fixes.",
-            "ASO allows developers to publish mobile apps without ever paying Apple's annual developer program fee."
+            "Running ASA campaigns lowers organic search rank because Apple penalizes apps that buy ads",
+            "ASO controls which competitors can bid on an app brand terms, which sets the cost-per-tap in ASA"
           ],
           "answer": 1,
           "why": "Apple's ad auction evaluates relevance; well-optimized ASO metadata increases tap-through rates and relevance scores, allowing the app to win auction impressions at lower CPT clearing prices.",
@@ -4377,9 +4377,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary commercial impact of achieving an Organic Viral Multiplier of 1.724x in Tier 3?",
           "options": [
-            "It prevents prospective customers from unsubscribing from marketing SMS messages.",
-            "It allows the enterprise to cease publishing privacy policy disclosures on its website.",
-            "It forces mobile app store reviewers to approve updates in less than two minutes.",
+            "It recruits 7,240 additional free customers, raising blended CAC from $37.70 to $65.00",
+            "It recruits 1,724 additional free customers, lowering blended CAC from $65.00 to $52.10",
+            "It recruits 7,240 additional paid customers, leaving blended CAC unchanged at $65.00",
             "It recruits 7,240 additional free customers, lowering blended CAC from $65.00 to $37.70."
           ],
           "answer": 3,
@@ -4600,9 +4600,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the recommended industry benchmark frequency cap for daily e-commerce retargeting campaigns?",
           "options": [
             "3 impressions per user per day to balance brand recall with consumer fatigue prevention.",
-            "50 impressions per user per day to secure brand dominance in the market at all costs.",
-            "1 impression per user per month to minimize ad server processing costs.",
-            "Unlimited impressions until the user either purchases or simply closes their browser window."
+            "10 impressions per user per day to keep the brand in front of shoppers who have not yet purchased",
+            "1 impression per user per week to minimize ad server costs",
+            "20 impressions per user per day during the first three days after a product page visit"
           ],
           "answer": 0,
           "why": "A frequency cap of 3 impressions per user per day provides optimal brand recall while preventing banner blindness, negative brand sentiment, and wasted ad spend."
@@ -4669,10 +4669,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which set of capabilities characterizes an enterprise-grade retargeting architecture?",
           "options": [
-            "Serving the same static banner ad 30 times a day to all past website visitors regardless of their purchase history or intent.",
+            "Serving the same static banner creative to all past website visitors with a single fixed bid for 90 days",
             "Relying exclusively on unsegmented 365-day website visitor lists with only manual monthly bidding adjustments by media buyers.",
             "Real-time catalog SKU synchronization, audience recency bid decay, strict frequency capping, and automated creative refresh triggers.",
-            "Disabling all retargeting pixels to rely solely on upper-funnel TV, radio and billboard advertising campaigns."
+            "Syncing catalog SKUs once a week and extending audience recency windows to 180 days to scale reach"
           ],
           "answer": 2,
           "why": "Enterprise retargeting combines real-time catalog feeds, intent recency segmentation, frequency capping to prevent ad fatigue, and automated creative rotation."
@@ -6590,10 +6590,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What minimum z-score is required in an A/B split test to achieve 95% statistical significance (alpha = 0.05)?",
           "options": [
-            "Exactly 0.00, meaning both variations performed identically.",
-            "A z-score of 50.0.",
+            "At least 1.28 (two-tailed test at alpha = 0.20)",
+            "At least 2.58 (two-tailed test at alpha = 0.01)",
             "At least 1.96 (two-tailed test at alpha = 0.05).",
-            "Z-scores are not used in modern digital marketing experimentation."
+            "At least 3.00 (two-tailed test at alpha = 0.05)"
           ],
           "answer": 2,
           "why": "A standard two-tailed hypothesis test requires a z-score of 1.96 or greater to achieve statistical significance at the 95% confidence level (p < 0.05)."
@@ -6940,7 +6940,7 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "When the marketing channel with the highest historical Average ROAS receives 100% of the entire corporate budget.",
             "When every marketing channel receives an exactly equal dollar amount regardless of saturation or audience capacity.",
-            "When total advertising spend exactly equals net corporate profit before interest and taxes.",
+            "When the Average ROAS across all active channels is exactly equalized, regardless of how saturated each channel is",
             "When the Marginal Return on Ad Spend (mROAS) across all active, unconstrained marketing channels is exactly equalized."
           ],
           "answer": 3,
@@ -8300,10 +8300,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the core architectural difference between legacy third-party cookie tracking and the Google Chrome Privacy Sandbox?",
           "options": [
-            "Privacy Sandbox eliminates all digital advertising on the web and replaces commercial ads with government-sponsored public service announcements.",
+            "Privacy Sandbox keeps third-party cookies in the browser but limits their lifetime to 24 hours and shares them only with the publishers of sites",
             "Privacy Sandbox keeps raw browsing history strictly on the client device and exposes only noise-injected, aggregated, or interest-based APIs to ad-tech networks.",
-            "Privacy Sandbox requires all web users to purchase a monthly subscription to browse websites without being shown randomized banner advertisements.",
-            "Privacy Sandbox encrypts all third-party cookies using AES-256 and stores them in Google's cloud servers for real-time querying by ad networks."
+            "Privacy Sandbox moves all ad targeting to the server side, where ad networks receive raw browsing histories only in a hashed form",
+            "Privacy Sandbox replaces cookies with persistent device fingerprints that the browser shares with advertisers after the user gives consent"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8358,9 +8358,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Protected Audience API (PAAPI), why must winning advertisements be rendered inside a Fenced Frame rather than a standard iframe?",
           "options": [
-            "Because standard iframes cannot display images or video files formatted in high-definition WebP or AVIF formats.",
-            "To automatically force the user's browser to execute payments without requiring interactive checkout confirmation.",
-            "Because Fenced Frames allow the ad creative to directly inspect the user's personal browser bookmarks and saved passwords.",
+            "Because standard iframes cannot be rendered on web pages that serve ads through a real-time auction rather than through a direct deal",
+            "To let the advertiser creative read the content of the publisher page so that the ad can match the topics of the surrounding article",
+            "To speed up creative rendering by sharing the cached resources and stored scripts of the publisher page with the ad creative",
             "To strictly block cross-boundary communication between the ad creative and the host publisher page, preventing user identity correlation."
           ],
           "answer": 3,
@@ -8417,10 +8417,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What are the two new mandatory consent signals introduced by Google Consent Mode v2 to comply with the European Digital Markets Act (DMA)?",
           "options": [
-            "device_identifier_access and session_recording_optin.",
+            "ad_storage and analytics_storage",
             "ad_user_data and ad_personalization.",
-            "cookie_expiration_override and browser_storage_unrestricted.",
-            "user_tracking_allowed and cross_site_fingerprint."
+            "ad_user_data and functionality_storage",
+            "ad_personalization and security_storage"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9739,10 +9739,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In Generalized First-Price Auctions, what is the mathematical objective function maximized by a DSP's machine learning bid shading algorithm?",
           "options": [
-            "Consumer Internet Connection Speed: E[Speed(b)] = Download_Mbps / Ping_Ms",
+            "Expected Win Probability: E[Win(b)] = P(Win | b), maximized by bidding the highest possible price",
             "Expected Economic Surplus: E[Surplus(b)] = (Valuation - b) * P(Win | b)",
-            "Total Web Server Disk Space: E[Disk(b)] = CPU_Speed * Ram_GB",
-            "Publisher Net Revenue: E[Rev(b)] = Floor * Page_Views"
+            "Expected Publisher Revenue: E[Rev(b)] = b * P(Win | b)",
+            "Expected Total Spend: E[Spend(b)] = b * Impressions_Won"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11045,9 +11045,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How is an advertiser's optimal base CPC bid calculated when targeting a specific ACoS on retail media networks?",
           "options": [
-            "Optimal CPC = Total website traffic divided by monthly warehouse rent.",
-            "Optimal CPC = Highest competitor bid plus five dollars flat fee.",
-            "Optimal CPC = Number of product reviews multiplied by star rating.",
+            "Optimal CPC = Target ACoS / (Average Order Value * Conversion Rate)",
+            "Optimal CPC = Average Order Value / (Target ACoS * Conversion Rate)",
+            "Optimal CPC = Target ACoS * Conversion Rate / Average Order Value",
             "Optimal CPC = Target ACoS * Average Order Value (AOV) * Conversion Rate (CVR)."
           ],
           "answer": 3,
@@ -11170,9 +11170,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is algorithmic bid shading strictly mandatory for enterprise brands advertising on Walmart Connect compared to legacy second-price exchanges?",
           "options": [
             "Because Walmart Connect utilizes a pure first-price auction where winners pay their exact submitted bid, making unshaded valuation bidding cause severe margin erosion",
-            "Because Walmart forbids automated bidding scripts unless bid shading discounts are permanently hardcoded into third-party DSP API connectors",
-            "Because first-price auctions automatically charge advertisers double their valuation bid whenever impression win rates exceed fifty percent",
-            "Because bid shading is an inventory management technique that prevents physical retail stores from running out of shelf stock during promotional events"
+            "Because Walmart Connect uses a second-price auction, so bid shading is needed to raise bids up to the competitive clearing price of each impression",
+            "Because Walmart Connect requires each bid to be at least double the product gross margin, which makes shading a mandatory compliance step for brands",
+            "Because bid shading is a catalog technique that groups similar products into one ad group in order to reduce the total number of bids submitted"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11289,9 +11289,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In an integrated retail media control tower, why must the inventory safety gate execute before the first-price bid optimization solver?",
           "options": [
             "To immediately halt bidding and avoid incinerating ad spend on products that cannot be shipped or have lost the Buy Box, regardless of bid optimality",
-            "Because computing bid shading equations consumes excessive server memory that crashes the inventory database if run simultaneously",
-            "Because retail ad exchanges legally require all advertisers to submit inventory levels as an encrypted parameter inside every HTTP auction bid",
-            "To ensure that out-of-stock products receive priority ad delivery so that suppliers can liquidate remaining back-orders faster"
+            "Because the inventory safety gate needs the optimal bid output of the solver as an input in order to decide whether a product is in stock",
+            "To ensure the bid solver can raise bids on low-stock products so that they sell out faster before the next replenishment shipment arrives",
+            "Because the solver and the gate share a single database lock, so the solver must finish first in order to release that lock safely"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11410,10 +11410,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why must an in-store Dynamic Creative Optimization (DCO) engine incorporate real-time on-shelf inventory feeds before selecting an ad creative?",
           "options": [
-            "To comply with federal regulations requiring all digital television displays to shut down whenever grocery inventory falls below thirty percent",
+            "To ensure that the store screens show the lowest-priced items first so that customers can easily compare promotions across the whole aisle",
             "To avoid displaying advertisements for items that are physically out-of-stock on store shelves, which frustrates shoppers and burns ad spend without sales conversion",
-            "Because physical store screens are legally prohibited from displaying commercial branding unless a certified inventory auditor is standing directly in front of the screen",
-            "Because retail media ad servers automatically disconnect from electrical power if an ad airs for a product with less than ten cases in the distribution center"
+            "Because in-store ad creatives must be refreshed every hour in order to match the current staffing levels and opening hours of the store",
+            "To rank creatives by the highest-margin product first so that the profit per screen impression is maximized, regardless of stock levels"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11471,9 +11471,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What architectural benefit does local edge execution provide for in-store retail media DOOH playlist orchestrators?",
           "options": [
-            "It automatically prints paper discount coupons from the back of the television screen whenever footfall increases",
-            "It enables store managers to broadcast live cable television sporting events on commercial advertising screens without paying licensing fees",
-            "It permanently eliminates the need for physical electricity by converting radio waves into battery power",
+            "It automatically updates the electronic price tags on shelves whenever footfall increases in the aisle where the screen is placed",
+            "It lets screens fetch every playlist update from the cloud in real time, which removes the need for any local storage or caching on the device",
+            "It replaces automatic proof-of-play logging with manual sign-offs by the store manager for each ad broadcast on the screens",
             "It allows screens to continue rendering dynamic playlists and caching proof-of-play logs locally even if store internet connectivity experiences downtime"
           ],
           "answer": 3,
@@ -11532,10 +11532,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What makes retail media offline closed-loop attribution fundamentally more reliable than traditional digital ad network offline attribution?",
           "options": [
-            "It automatically disables the physical store's automatic doors if an unverified shopper attempts to leave with purchased merchandise",
-            "It transmits confidential consumer banking passwords directly to advertising agencies via unencrypted cellular SMS text messages",
+            "It relies on modeled panel estimates of in-store shopper behavior that are extrapolated from a small sample of stores to all stores",
+            "It uses mobile GPS location pings near the store to estimate whether a person who saw an ad later made a purchase in the store",
             "It uses deterministic first-party loyalty card numbers and verified POS checkout scanner logs rather than speculative panel models or mobile GPS estimates",
-            "It requires in-store shoppers to sign notarized legal affidavits confirming they watched a digital commercial before paying for groceries"
+            "It uses third-party cookies matched to online checkout events and extends them to physical store visits by statistical probability"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11749,10 +11749,10 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does the Tier 2 Killswitch Gateway immediately pause campaigns when Buy Box ownership is lost to a third-party reseller?",
           "options": [
-            "Because losing the Buy Box causes automated search algorithms to delete all historical product reviews permanently",
-            "Because retail ad servers physically disconnect electricity to the entire corporate office if an ad runs without the Buy Box",
+            "Because losing the Buy Box causes the retailer to suspend the seller account of the brand until the reseller has been removed from the listing",
+            "Because ad auctions raise the bid floors on a listing when the Buy Box is lost, which makes every impression unprofitable for the brand",
             "To prevent paying for expensive ad clicks that direct shoppers to an unauthorized reseller who captures the sale and dilutes brand profitability",
-            "To comply with federal regulations requiring all third-party marketplace resellers to pay sixty percent corporate tax rates"
+            "To protect the organic search rank of the listing, which the retailer lowers for the brand while a reseller holds the Buy Box"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11810,9 +11810,9 @@ export const BCOM_DMKT_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Why is causal Difference-in-Differences (DiD) matched-market modeling essential for calculating true retail media iROAS?",
           "options": [
             "Because it establishes an empirical counterfactual baseline using unexposed control markets, separating true incremental sales from organic brand cannibalization",
-            "Because retail media networks legally require all financial returns to be calculated using differential calculus to verify computer server speeds",
-            "Because it eliminates the need to pay for advertising by deducting marketing expenditures directly from the store's property taxes",
-            "Because Difference-in-Differences models automatically double the advertiser's organic search rank on competing e-commerce platforms"
+            "Because retail media networks require financial returns to be reported from platform last-click data in order to meet audit standards",
+            "Because it removes the need for control markets by comparing ad-exposed customers with their own earlier purchases in the same market",
+            "Because it assigns the full sales lift in exposed markets to the advertising and ignores any organic baseline trends in sales data"
           ],
           "answer": 0,
           "answerIndex": 0,

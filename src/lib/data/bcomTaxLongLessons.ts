@@ -1211,10 +1211,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 7(1)(a) of the CGST Act, which of the following is an absolute prerequisite for an activity to constitute a standard taxable supply?",
           "options": [
-            "The transaction must involve an export of goods outside the territorial waters of the country.",
-            "The payment must be received exclusively through sovereign central bank digital currency.",
+            "The supply must be made to a registered recipient who is eligible to claim input tax credit on it.",
+            "The activity must generate a net profit for the supplier in the financial year in which it is made.",
             "The activity must be made for a consideration by a person in the course or furtherance of business.",
-            "The transaction must be certified by an independent statutory chartered accountant before invoice generation."
+            "The supplier must have issued a tax invoice before delivering the goods or rendering the service."
           ],
           "answerIndex": 2,
           "why": "Section 7(1)(a) mandates that the supply must be for a consideration and in the course or furtherance of business. Transactions lacking consideration fall outside Section 7(1)(a) unless specifically captured under Schedule I.",
@@ -1242,7 +1242,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Gifts given by an employer to an employee worth a total of INR 25,000 during a financial year.",
             "Transfer of goods between distinct establishments (branches) of the same company having separate GSTINs.",
             "Disposal of personal residential furniture where no input tax credit was ever claimed.",
-            "Personal household services rendered by a mother to her children without payment."
+            "Transfer of goods between two units of the same company that share a single GSTIN within one State."
           ],
           "answerIndex": 1,
           "why": "Entry 2 of Schedule I specifically designates supplies between distinct persons (different branch registrations of the same enterprise under Section 25) as deemed supplies even when made without consideration.",
@@ -1293,7 +1293,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 8(b) of the CGST Act, how is a Mixed Supply consisting of goods attracting divergent rates of 5%, 12%, and 28% supplied for a single price taxed?",
           "options": [
-            "The entire bundle is deemed non-taxable because individual consideration is not segregated.",
+            "The entire supply is taxed at the lowest rate of 5% applicable to any item in the bundle.",
             "The supply is taxed at the weighted mathematical average rate of the items.",
             "Each item is taxed separately by demanding a post-hoc breakdown of the single price.",
             "The entire supply is taxed at the highest rate of 28%."
@@ -1433,8 +1433,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 13(3) of the CGST Act, what is the statutory deadline after which Time of Supply crystallizes for services taxed under the Reverse Charge Mechanism if payment has not yet been made?",
           "options": [
-            "The 180th day following the date of filing the annual GSTR-9 return.",
-            "The date on which the supplier sends a formal legal demand notice.",
+            "The 61st day immediately following the date of receipt of the services by the recipient.",
+            "The last date of the month following the month in which the supplier issues the invoice.",
             "The 31st day immediately following the date of invoice issued by the supplier.",
             "The 61st day immediately following the date of invoice issued by the supplier."
           ],
@@ -1489,10 +1489,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the second proviso to Rule 28 of the CGST Rules, what valuation is legally accepted for supplies between distinct or related persons if the recipient is eligible for full Input Tax Credit?",
           "options": [
-            "The mandatory Rule 30 cost-plus-10% valuation benchmark must be enforced by a statutory auditor.",
+            "The cost of production or manufacture of such goods, increased by 10% as the notional profit margin.",
             "The value declared in the invoice is conclusively deemed to be the open market value.",
-            "The highest market price recorded on a recognized national commodities exchange in the last 30 days.",
-            "The historical book value of the asset depreciated at standard straight-line rates."
+            "The lowest value at which the same goods were supplied to an unrelated person in the preceding financial year.",
+            "The residual value of the asset after depreciation at the rates prescribed in the Companies Act schedule."
           ],
           "answerIndex": 1,
           "why": "The second proviso to Rule 28 explicitly provides that where the recipient is eligible for full input tax credit, the value declared in the invoice shall be deemed to be the open market value of the goods or services.",
@@ -1549,9 +1549,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 16(2)(aa) of the CGST Act, what is the mandatory requirement before an enterprise can claim Input Tax Credit on an inward invoice?",
           "options": [
             "The invoice details must be furnished by the supplier in GSTR-1 and auto-populated in the recipient's Form GSTR-2B.",
-            "The recipient must obtain a written clearance certificate signed by the State Tax Commissioner.",
-            "The recipient must hold physical inventory in its warehouse for a minimum seasoning period of 90 days.",
-            "The supplier must deposit 10% of the invoice value into an escrow account maintained with the GST Network."
+            "The invoice must be reported by the supplier only in the annual return GSTR-9 before the recipient claims the credit.",
+            "The recipient must have physically received the goods and recorded them in a stock register for 30 days.",
+            "The recipient must pay the full invoice value in cash to the supplier before the end of the same tax period."
           ],
           "answerIndex": 0,
           "why": "Section 16(2)(aa) explicitly conditions ITC eligibility on the supplier reporting the invoice in their outward statement (GSTR-1) and communicating it to the recipient in Form GSTR-2B.",
@@ -1577,9 +1577,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the second proviso to Section 16(2) of the CGST Act, what is the consequence if a buyer fails to pay the supplier the invoice value plus tax within 180 days?",
           "options": [
-            "The supplier is fined 50% of the invoice value for failing to initiate legal collection proceedings.",
+            "The supplier must reverse the output tax already paid on that invoice, along with interest, in the next return.",
             "The Input Tax Credit is permanently canceled and can never be reclaimed even if full payment is made later.",
-            "The buyer's corporate GST registration is automatically suspended for a 6-month cooling period.",
+            "The buyer must pay a penalty of 10% of the tax amount, and the credit is reduced to 90% of the original claim.",
             "The availed Input Tax Credit must be added to the buyer's output tax liability along with statutory interest."
           ],
           "answerIndex": 3,
@@ -1606,9 +1606,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 17(5)(a) of the CGST Act, when is Input Tax Credit permitted on a passenger motor vehicle having a seating capacity of 5 persons?",
           "options": [
             "Whenever the vehicle is utilized by executive board members to attend strategic corporate client meetings.",
-            "Whenever the vehicle is branded with the enterprise's corporate marketing logo and public relations contact info.",
+            "Whenever the vehicle is purchased on finance and the instalments are paid in full during the same financial year.",
             "Only when the vehicle is used for further taxable supply of vehicles, passenger transportation services, or driving instruction.",
-            "Only if the vehicle was purchased during the final fiscal quarter to reduce taxable corporate profits."
+            "Whenever the vehicle is used for transporting the company's employees to and from the business premises."
           ],
           "answerIndex": 2,
           "why": "Section 17(5)(a) strictly restricts ITC on motor vehicles with seating capacity <= 13 persons to three specific commercial use cases: resale, transportation of passengers, or driving school training.",
@@ -1634,10 +1634,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 17(5)(b) of the CGST Act, when is an employer permitted to claim Input Tax Credit on outdoor catering and employee health insurance?",
           "options": [
-            "Whenever the employer's net profit margin exceeds 15% of annual gross consolidated turnover.",
+            "Whenever the employer is registered under the regular scheme and the expenditure is booked as a business expense.",
             "When it is obligatory for the employer to provide such goods or services under any law for the time being in force.",
-            "Only if the services are procured from a vendor located in an Export Processing Special Economic Zone.",
-            "When the expenditure is approved by the corporate compensation committee in the annual proxy filing."
+            "Only if the employee consuming the service is a director or key managerial person of the employer.",
+            "When the employer recovers the cost from the employee through a salary deduction treated as a perquisite."
           ],
           "answerIndex": 1,
           "why": "The proviso to Section 17(5)(b) explicitly permits ITC on food, catering, and insurance where the provision of such goods or services is mandatory for an employer under any statutory law.",
@@ -1666,7 +1666,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "60 months (5 years) from the date of the invoice.",
             "36 months (3 years) based on standard corporate IT equipment life.",
             "120 months (10 years) aligned with statutory factory depreciation.",
-            "Indefinitely until the asset is physically scrapped or sold on open auction."
+            "48 months (4 years) from the date on which the capital goods are first put to use."
           ],
           "answerIndex": 0,
           "why": "Rule 43(1)(c) explicitly mandates that the useful life of capital goods shall be taken as five years (60 months) from the date of the invoice.",
@@ -1977,10 +1977,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 88A of the CGST Rules, what is the mandatory statutory condition regarding the utilization of Integrated Tax (IGST) credit?",
           "options": [
-            "Integrated Tax credit can never be used to discharge Central Tax liability due to federal separation of powers.",
-            "Integrated Tax credit can only be utilized against State Tax after obtaining prior written approval from the GST Council.",
+            "Integrated Tax credit can be used to discharge only Integrated Tax liability, and any balance is carried forward.",
+            "Integrated Tax credit must first be used against State Tax liability and only then against Central Tax liability.",
             "Input tax credit on account of Integrated Tax must be completely exhausted before utilizing Central Tax or State Tax credit.",
-            "Integrated Tax credit must be apportioned in an exact 50:50 ratio between CGST and SGST liabilities with zero discretionary flexibility."
+            "Central Tax and State Tax credit must be completely exhausted before any Integrated Tax credit can be utilized."
           ],
           "answerIndex": 2,
           "why": "Rule 88A explicitly mandates that input tax credit on account of integrated tax shall first be utilized towards integrated tax, and the amount remaining, if any, may be utilized towards central tax and state tax in any order, provided that the integrated tax credit is completely exhausted before utilizing CGST/SGST credit.",
@@ -2005,9 +2005,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal consequence of filing Form GSTR-3B with an under-reporting of outward tax liability?",
           "options": [
-            "The taxpayer is automatically granted a 180-day grace period under the second proviso to Section 16(2).",
-            "The tax department automatically converts the unpaid balance into a 10-year sovereign infrastructure bond.",
-            "The return can be revised at any time within 3 years without interest upon filing an administrative affidavit.",
+            "The shortfall attracts a flat penalty of 10% of the tax short-reported, with no interest liability under Section 50.",
+            "The shortfall attracts interest under Section 50 at 12% per annum from the date of filing until actual payment.",
+            "The return can be revised within the same tax period without interest, on payment of a late fee under Section 47.",
             "The shortfall attracts interest under Section 50 at 18% per annum from the due date until actual payment."
           ],
           "answerIndex": 3,
@@ -2065,9 +2065,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 29 of the Income Tax Act, how must income chargeable under the head 'Profits and Gains of Business or Profession' be computed?",
           "options": [
             "In accordance with the specific statutory deduction and disallowance provisions contained in Sections 30 to 43D.",
-            "Strictly on the basis of gross commercial turnover reported in the audited Directors' Report.",
-            "By adopting the net profit reported under GAAP with zero mandatory tax adjustments.",
-            "Exclusively through a cash-basis single-entry bookkeeping ledger certified by a bank manager."
+            "Strictly on the basis of cash receipts and payments of the year, ignoring accrued income and expenses.",
+            "By adopting the net profit reported under Ind AS with only the adjustments listed in Section 115JB.",
+            "On gross receipts at the presumptive rates prescribed under Section 44AD irrespective of the books of account."
           ],
           "answerIndex": 0,
           "why": "Section 29 explicitly mandates that profits and gains of business or profession shall be computed in accordance with the provisions set forth in Sections 30 to 43D of the Income Tax Act.",
@@ -2093,9 +2093,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the second proviso to Section 32(1)(ii) of the Income Tax Act, what is the statutory consequence if an asset acquired during the year is put to use for less than 180 days?",
           "options": [
-            "No depreciation is allowed in the current year, and the entire deduction is permanently forfeited.",
-            "The asset must be depreciated under straight-line accounting rather than block of assets.",
-            "The asset cost must be treated as a revenue business expense deductible under Section 37.",
+            "Full depreciation is allowed for the year, as long as the asset was acquired before the end of the financial year.",
+            "Depreciation is disallowed in the current year but carried forward and added to the opening WDV of the block.",
+            "Depreciation is restricted to 25% of the prescribed rate and the balance is allowed in the next year.",
             "Depreciation is restricted to 50% of the prescribed statutory rate for that financial year."
           ],
           "answerIndex": 3,
@@ -2124,9 +2124,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 36(1)(va) read with the Supreme Court ruling in Checkmate Services, what is the tax treatment of employee contributions to Provident Fund deposited by the employer after the due date prescribed under the PF Act?",
           "options": [
             "The deduction is allowed as long as the payment is made before filing the corporate income tax return under Section 139(1).",
-            "The deduction is permitted subject to payment of a nominal 1% administrative fee to the Ministry of Labour.",
+            "The deduction is permitted if the delay is shorter than 30 days and the employer pays interest on the late deposit.",
             "The deduction is permanently disallowed, and the amount is treated as taxable corporate income under Section 2(24)(x).",
-            "The contribution is converted into a deferred tax asset depreciable over 5 years."
+            "The deduction is allowed in the year of actual payment, rather than the year in which the contribution was collected."
           ],
           "answerIndex": 2,
           "why": "The Supreme Court in Checkmate Services conclusively established that Section 43B relaxation does NOT apply to employee contributions under Section 36(1)(va); any late deposit beyond the PF Act due date is permanently disallowed and taxed as income.",
@@ -2153,7 +2153,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Explanation 2 to Section 37(1) of the Income Tax Act, what is the statutory tax treatment of expenditure incurred on Corporate Social Responsibility (CSR) activities under Section 135 of the Companies Act 2013?",
           "options": [
-            "It can be offset against corporate tax liabilities up to a maximum cap of INR 50 Lakhs.",
+            "It is allowed as a deduction up to 2% of the average net profit of the preceding three years.",
             "It is statutorily deemed NOT to be an expenditure incurred for the purposes of business and is 100% disallowed.",
             "It is eligible for a 150% weighted statutory deduction as an incentive for social upliftment.",
             "It is treated as a deductible charitable donation under Section 80G subject to a 10% ceiling."
@@ -2184,9 +2184,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 43B of the Income Tax Act, by when must accrued statutory taxes and bank interest be paid to remain deductible in the previous year of incurrence?",
           "options": [
             "On or before the due date for furnishing the return of income under Section 139(1).",
-            "Before the statutory annual general meeting of shareholders under Section 96 Companies Act.",
+            "On or before the date of filing the tax audit report under Section 44AB, i.e. 30 September following the year.",
             "Strictly on or before March 31 of the relevant financial year with zero exceptions.",
-            "Within 180 days from the date the statutory audit report is signed by the chartered accountant."
+            "Within 60 days from the end of the financial year in which the liability accrued."
           ],
           "answerIndex": 0,
           "why": "The first proviso to Section 43B explicitly provides that any sum referred to in clauses (a) to (g) shall be deductible if actually paid by the assessee on or before the due date applicable in his case for furnishing the return of income under Section 139(1).",
@@ -2243,10 +2243,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 115JB of the Income Tax Act, when does a corporate taxpayer become legally obligated to pay Minimum Alternate Tax (MAT)?",
           "options": [
-            "Only in financial years where the company declares a cash dividend payout ratio exceeding 50% of net earnings.",
+            "Whenever the tax payable on total taxable income under normal provisions is less than 15% of that taxable income.",
             "Whenever the tax payable on total taxable income computed under normal provisions is less than 15% of its adjusted Book Profit.",
-            "Whenever the company's gross export turnover falls below the prescribed threshold set by the Foreign Trade Policy.",
-            "Exclusively when an independent forensic chartered accountant issues an adverse audit qualification."
+            "Whenever the tax payable on total income under normal provisions exceeds 15% of the company's adjusted Book Profit.",
+            "Only when the company claims depreciation under Section 32 in excess of the depreciation charged in its books."
           ],
           "answerIndex": 1,
           "why": "Section 115JB(1) explicitly provides that where the income tax payable on total income under normal provisions is less than fifteen percent of its book profit, such book profit shall be deemed to be total income and tax shall be paid on that basis.",
@@ -2272,10 +2272,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Explanation 1 to Section 115JB(2) of the Income Tax Act, which of the following accounting debits must be ADDED BACK to net profit to compute Book Profit for MAT?",
           "options": [
-            "Actual bonuses paid to factory employees on or before the due date.",
-            "Electricity and power utility bills incurred during commercial manufacturing.",
+            "Amount withdrawn from reserves and credited to the profit and loss account.",
+            "Depreciation attributable to the revaluation of assets.",
             "Deferred tax debits and provisions for unascertained liabilities.",
-            "Routine repairs and maintenance expensed on plant and machinery."
+            "Income exempt under Section 10 and credited in the books of account."
           ],
           "answerIndex": 2,
           "why": "Explanation 1 to Section 115JB(2) explicitly mandates the addback of deferred tax debits (clause h) and amounts set aside to meet unascertained contingent liabilities (clause c).",
@@ -2334,8 +2334,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Up to 15 assessment years immediately succeeding the assessment year in which credit was generated.",
             "Up to 8 assessment years, identical to the business loss carryforward rules under Section 72.",
-            "Indefinitely until fully absorbed against future corporate dividend distributions.",
-            "Only up to 5 assessment years under revised international accounting convergence standards."
+            "Up to 10 assessment years immediately succeeding the assessment year in which credit was generated.",
+            "Only up to 7 assessment years immediately succeeding the assessment year in which credit arose."
           ],
           "answerIndex": 0,
           "why": "Section 115JAA(3A) explicitly provides that the amount of tax credit determined shall be carried forward to be set off up to fifteen assessment years immediately succeeding the assessment year in which such credit becomes allowable.",
@@ -2362,10 +2362,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 115JB(2C) of the Income Tax Act, over how many successive financial years must the net Ind AS transition amount be spread for Book Profit calculation?",
           "options": [
-            "It must be recognized immediately as a lump sum in the initial convergence financial year.",
+            "Two successive financial years starting from the convergence year (one-half each year).",
             "Five successive financial years starting from the convergence year (one-fifth each year).",
-            "Three successive financial years starting from the date of the first Ind AS audit.",
-            "Ten successive financial years aligned with standard goodwill amortization schedules."
+            "Three successive financial years starting from the convergence year (one-third each year).",
+            "Ten successive financial years starting from the convergence year (one-tenth each year)."
           ],
           "answerIndex": 1,
           "why": "Section 115JB(2C) explicitly provides that the transition amount shall be adjusted in book profit in five equal installments (one-fifth each year) starting from the year of convergence.",
@@ -2482,8 +2482,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What happens to accumulated, unutilized Minimum Alternate Tax (MAT) credit under Section 115JAA when a domestic company exercises the option to be taxed under Section 115BAA?",
           "options": [
             "The unutilized MAT credit cannot be set off and must be permanently written off as an asset impairment.",
-            "The MAT credit is automatically refunded in cash by the Central Board of Direct Taxes.",
-            "The MAT credit is converted into non-voting equity shares held in sovereign wealth funds.",
+            "The MAT credit is carried forward and set off against the 22% tax liability only after five years have elapsed.",
+            "The unutilised MAT credit is converted into advance tax and adjusted against the next two years' instalments.",
             "The credit continues to be set off at an accelerated rate of 50% per annum against the 22% tax liability."
           ],
           "answerIndex": 0,
@@ -2512,8 +2512,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 115BAB of the Income Tax Act, what is the maximum permissible percentage of previously used (second-hand) domestic plant and machinery that a new manufacturing company can utilize?",
           "options": [
             "Zero percent: absolutely all plant and machinery must be brand new with zero exceptions.",
-            "Up to 35% if the industrial undertaking is located in an economically backward district.",
-            "Not exceeding 50% of total assets, provided it is certified by a government valuer.",
+            "Not exceeding 10% of the total value of plant and machinery used by the company.",
+            "Not exceeding 40% of the total value of plant and machinery, if certified by a government valuer.",
             "Not exceeding 20% of the total value of plant and machinery used by the company."
           ],
           "answerIndex": 3,
@@ -2541,10 +2541,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the primary financial risk of a corporation filing Form 10-IC to adopt Section 115BAA when it holds substantial accumulated MAT credit balances?",
           "options": [
-            "The company must re-value all physical plant and machinery at historic liquidation scrap values.",
-            "The company is immediately assessed with a mandatory 50% surtax on all prior year capital gains.",
+            "The company loses the right to claim depreciation under Section 32 on any asset it already owns.",
+            "The company must pay minimum alternate tax at 15% of book profit in addition to the 22% tax.",
             "The unutilized MAT credit asset is legally extinguished and cannot be set off against the 25.168% tax liability.",
-            "The company's corporate bank accounts are placed in escrow until the Ministry of Corporate Affairs approves the filing."
+            "The company must pay surcharge at 25% rather than 10% on the tax computed under the option."
           ],
           "answerIndex": 2,
           "why": "Filing Form 10-IC irrevocably locks the company into Section 115BAA, legally terminating its ability to utilize Section 115JAA MAT credits, forcing an immediate balance sheet write-off.",
@@ -2600,9 +2600,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 50 of the Income Tax Act, how are capital gains arising from the transfer of depreciable assets belonging to a block of assets categorized?",
           "options": [
-            "As Long-Term Capital Gains if the underlying asset was held for more than 36 months.",
-            "As exempt business income, provided the proceeds are reinvested in agricultural land.",
-            "As an offset against future Section 80JJAA employment deduction entitlements.",
+            "As Long-Term Capital Gains if the underlying asset was held for more than 24 months, with indexation.",
+            "As Long-Term Capital Gains with indexation benefit, if the sale value exceeds the opening WDV of the block.",
+            "As exempt capital gains where the sale proceeds are used to purchase new assets of the same block.",
             "Conclusively as Short-Term Capital Gains, regardless of the period of holding."
           ],
           "answerIndex": 3,
@@ -2629,9 +2629,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 50B of the Income Tax Act governing Slump Sales, what is the statutory treatment regarding indexation benefits for long-term undertakings?",
           "options": [
             "Indexation benefits under the second proviso to Section 48 are strictly forbidden and not allowed.",
-            "Indexation is allowed on physical buildings but prohibited on trade receivables.",
-            "Indexation is permitted using the Wholesale Price Index rather than the Cost Inflation Index.",
-            "Indexation is doubled as an M&A corporate restructuring incentive."
+            "Indexation is allowed on the net worth of the undertaking using the Cost Inflation Index.",
+            "Indexation is allowed only if the undertaking was held for more than 60 months before the sale.",
+            "Indexation is allowed on the cost of acquisition of each individual asset, which are summed to compute net worth."
           ],
           "answerIndex": 0,
           "why": "Section 50B(2) explicitly provides that the benefit of indexation under the second proviso to Section 48 shall NOT be available in the case of a slump sale.",
@@ -2685,10 +2685,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 50CA of the Income Tax Act read with Rule 11UA, how must the Fair Market Value of unquoted equity shares be determined when the company holds immovable property?",
           "options": [
-            "The shares must be valued strictly at their par face value certified by the company secretary.",
-            "The value must be determined by taking 50% of the company's gross annual revenue.",
+            "The shares must be valued at book value per share as shown in the latest audited balance sheet.",
+            "The value must be determined by capitalizing the company's average profit of the preceding three years.",
             "The immovable property must be valued at its Stamp Duty Value rather than its historical accounting book value.",
-            "The immovable property is completely ignored, and only cash and bank balances are counted."
+            "The immovable property must be valued at its cost of acquisition adjusted by the Cost Inflation Index."
           ],
           "answerIndex": 2,
           "why": "Rule 11UA(1)(c)(b) specifically mandates that in computing the fair market value of unquoted equity shares, the value of any immovable property shall be adopted as the stamp duty value assessed by the government valuation authority.",
@@ -2807,9 +2807,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In computing Book Profit under Section 115JB, why is depreciation attributable to revaluation of assets excluded from the depreciation deduction?",
           "options": [
-            "Because revaluation depreciation is deductible exclusively against capital gains under Section 50.",
-            "Because the Companies Act 2013 strictly prohibits companies from ever revaluing physical assets.",
-            "Because revaluation surplus is statutorily treated as taxable dividend income under Section 2(22).",
+            "Because revaluation depreciation is allowed as a deduction only in the year in which the asset is sold.",
+            "Because depreciation on revalued assets is already allowed as a deduction under Section 32 of the Income Tax Act.",
+            "Because the revaluation reserve is treated as taxable income of the company in the year of revaluation.",
             "To prevent companies from artificially inflating book deductions by writing up asset values without actual cash expenditure."
           ],
           "answerIndex": 3,
@@ -2991,7 +2991,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "A contract distributor buys finished goods from its overseas AE at $500/unit and resells to Indian retailers at $600/unit. Independent distributors earn a 25% gross margin on resale. Under RPM, what is the Arm's Length purchase price and resulting adjustment?",
           "options": [
             "ALP is $625 ($500 * 1.25); a downward adjustment reducing Indian taxable profit is claimed",
-            "ALP is $400 ($500 - $100); a flat 20% penalty is automatically levied on gross revenue",
+            "ALP is $400 ($600 - $200); a downward adjustment of $100 per unit is claimed.",
             "ALP is $450 ($600 - 25%); excess purchase price of $50/unit is added back to taxable income",
             "ALP is $500 ($600 - 16.6%); zero transfer pricing adjustment is required"
           ],
@@ -3052,9 +3052,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "When does the Arithmetic Mean with +/-3% tolerance band apply instead of the 35th-65th percentile Range Concept under Section 92C and Rule 10CA?",
           "options": [
             "When the dataset of comparable uncontrolled entities contains fewer than 6 entries",
-            "When the transaction involves wholesale trading of agricultural commodities",
+            "When the transaction is a loan between AEs priced with reference to an overseas benchmark rate",
             "When the taxpayer has entered into an active Advance Pricing Agreement (APA)",
-            "When the enterprise is registered as an export unit under Section 10AA"
+            "When the taxpayer's operating margin is more than 3% below the median of the comparables"
           ],
           "answerIndex": 0,
           "why": "Rule 10CA(1) explicitly provides that the range concept applies only when there are at least 6 comparable entities; if there are fewer than 6, the arithmetic mean under Section 92C(2) applies.",
@@ -3391,8 +3391,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "30% of the expenditure is disallowed in the current year and carried forward",
             "100% of the expenditure is disallowed as a deduction in computing corporate business income",
-            "A flat penalty of 10% is deducted from the company's next GST return",
-            "The expense remains deductible, but the foreign vendor is blacklisted"
+            "50% of the expenditure is disallowed in the year of payment and the balance is allowed in the next year",
+            "The expense remains deductible, but interest at 1% per month is levied on the tax not deducted"
           ],
           "answerIndex": 1,
           "why": "Section 40(a)(i) mandates a 100% disallowance of payments made to non-residents if tax is not deducted or not paid before the return filing deadline.",
@@ -3513,9 +3513,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the primary legal consequence under Article 7 of a DTAA if a foreign enterprise is determined to have a Permanent Establishment (PE) in India?",
           "options": [
             "The business profits of the foreign enterprise attributable to that PE become directly taxable in India",
-            "The foreign enterprise is immediately required to incorporate an Indian subsidiary company",
+            "The foreign enterprise is taxed in India on its gross receipts from India at a flat rate without deduction for expenses",
             "All worldwide profits of the foreign parent become taxable in India regardless of economic source",
-            "The enterprise is permanently disqualified from claiming foreign tax credits in its home country"
+            "The foreign enterprise must obtain a fresh tax residency certificate from the Indian tax authorities each year"
           ],
           "answerIndex": 0,
           "why": "Article 7(1) of standard DTAAs establishes that if a foreign enterprise carries on business through a PE in the source state, so much of its business profits as are attributable to that PE may be taxed in the source state.",
@@ -3607,8 +3607,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Aggregate transaction value exceeding Rs 10 Crore OR active Indian user count exceeding 1,000,000",
             "Aggregate transaction value exceeding Rs 2 Crore OR active Indian user count exceeding 300,000",
-            "Export turnover exceeding Rs 5 Crore OR data download volume exceeding 50 Terabytes",
-            "Physical server hosting in India for more than 6 consecutive months"
+            "Aggregate transaction value exceeding Rs 5 Crore OR active Indian user count exceeding 500,000",
+            "Aggregate transaction value exceeding Rs 1 Crore OR active Indian user count exceeding 100,000"
           ],
           "answerIndex": 1,
           "why": "Rule 11UD explicitly establishes the twin alternative thresholds for SEP: (a) payments in respect of transactions exceeding Rs 2 Crore, or (b) digital user interaction with more than 300,000 Indian users.",
@@ -3636,9 +3636,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under OECD Pillar One Amount A, what percentage of residual profit above the 10% profitability threshold is reallocated to market jurisdictions for in-scope multinationals?",
           "options": [
             "25% of residual profit exceeding the 10% margin threshold",
-            "15% flat on total worldwide net income",
-            "50% of gross international royalties and technical fees",
-            "10% of total commercial revenues earned in developing economies"
+            "25% of the entire profit of the group, with no 10% profitability threshold",
+            "15% of residual profit exceeding the 10% margin threshold",
+            "50% of residual profit exceeding the 10% margin threshold"
           ],
           "answerIndex": 0,
           "why": "OECD Pillar One Amount A specifically allocates 25% of residual profit (profits in excess of 10% of revenue) to eligible market jurisdictions.",
@@ -4074,10 +4074,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What foundational legal doctrine was established by the Supreme Court of India in the landmark Kelvinator of India Ltd. case regarding reassessment under Section 147?",
           "options": [
-            "Reassessment orders cannot be appealed before the Income Tax Appellate Tribunal at all",
-            "The tax department is prohibited from conducting search and seizure operations on companies",
+            "Reassessment can be initiated only after the original assessment order has been set aside by the Tribunal",
+            "Reassessment is valid only if the assessee has first been given a refund of tax for that year",
             "Reassessment cannot be initiated on the basis of a mere 'change of opinion' without fresh tangible material",
-            "Assessing Officers have unlimited discretionary power to reopen any past assessment within twenty years"
+            "Assessing Officers may reopen an assessment on a mere change of opinion if the amount involved exceeds Rs 50 Lakh"
           ],
           "answerIndex": 2,
           "why": "The Supreme Court in Kelvinator of India Ltd. held that reassessment cannot be justified on a mere change of opinion; the Assessing Officer must possess tangible fresh material demonstrating that income escaped assessment.",
@@ -4107,9 +4107,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory time window that an Assessing Officer must grant to a taxpayer to respond to a Show Cause Notice issued under Section 148A(b)?",
           "options": [
-            "Indefinite period, until all inquiries are completed by the officer",
+            "Not less than 14 days and not more than 60 days",
             "Not less than 7 days and not more than 30 days",
-            "Exactly 3 business days from the date of the notice",
+            "Not less than 3 days and not more than 7 days",
             "Not less than 60 days and not more than 90 days"
           ],
           "answerIndex": 1,
@@ -4296,10 +4296,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the first proviso to Section 254(2A), what mandatory condition must an appellant satisfy for the ITAT to grant an order staying recovery of tax demand?",
           "options": [
-            "The assessee must obtain a personal guarantee from the Chief Financial Officer of the company",
-            "The assessee must agree to waive all claims for interest on any eventual refunds of tax",
+            "The assessee must furnish a bank guarantee for the entire amount of the disputed demand",
+            "The assessee must have paid at least 5% of the disputed demand and filed the appeal within 30 days",
             "The assessee must deposit not less than 20% of the disputed tax demand or furnish adequate security",
-            "The assessee must deposit 100% of the disputed demand into a separate escrow account"
+            "The assessee must deposit 50% of the disputed demand with the Assessing Officer"
           ],
           "answerIndex": 2,
           "why": "The first proviso to Section 254(2A) strictly provides that the ITAT may grant a stay only if the assessee deposits not less than twenty percent of the amount of tax, interest, or penalty, or furnishes security in respect thereof.",
@@ -4453,8 +4453,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "50% of the tax payable on the under-reported income",
             "200% of the tax payable on the under-reported income",
-            "10% of total commercial turnover",
-            "A flat penalty of Rs 10 Lakh regardless of income"
+            "An amount equal to the full tax payable on the under-reported income",
+            "25% of the tax payable on the under-reported income"
           ],
           "answerIndex": 0,
           "why": "Section 270A(7) explicitly prescribes that the penalty for under-reporting of income shall be a sum equal to fifty percent of the amount of tax payable on under-reported income.",
@@ -4704,9 +4704,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the monthly interest rate charged under Section 220(2) of the Income Tax Act on unpaid tax demands during the pendency of appeals?",
           "options": [
-            "Two percent (2%) quarterly",
+            "One and a half percent (1.5%) for every month or part of a month",
             "One percent (1%) for every month or part of a month",
-            "Zero interest if an appeal is pending before the CIT(Appeals)",
+            "Two percent (2%) per annum from the date of the demand notice",
             "Half percent (0.5%) per month"
           ],
           "answerIndex": 1,
@@ -4868,7 +4868,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "50% of the payment value is disallowed",
             "30% of the payment value is disallowed",
-            "Zero disallowance if the contractor has an active GSTIN",
+            "15% of the payment value is disallowed",
             "100% of the payment value is disallowed"
           ],
           "answerIndex": 1,
@@ -5085,8 +5085,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the turnover threshold for mandatory filing of the self-certified Form GSTR-9C reconciliation statement, and who certifies it following Finance Act 2021 amendments?",
           "options": [
             "Aggregate turnover exceeding Rs 2 Crore; certified exclusively by a Cost Accountant",
-            "Aggregate turnover exceeding Rs 50 Crore; certified by the Comptroller and Auditor General",
-            "All registered entities regardless of turnover; certified by a tax inspector",
+            "Aggregate turnover exceeding Rs 10 Crore; certified by a practising Chartered Accountant",
+            "Aggregate turnover exceeding Rs 2 Crore; certified by the jurisdictional Assessing Officer",
             "Aggregate turnover exceeding Rs 5 Crore; self-certified by the taxpayer/authorized corporate signatory"
           ],
           "answerIndex": 3,
@@ -5308,8 +5308,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Penalty equal to 50% of the value of the goods",
             "Penalty equal to 200% of the tax payable on such goods",
-            "A flat penalty of Rs 25,000",
-            "Zero penalty if the goods are perishable agricultural produce"
+            "A flat penalty of Rs 25,000 on the goods and conveyance",
+            "Penalty equal to the full tax payable on such goods"
           ],
           "answerIndex": 1,
           "why": "Section 129(1)(a) as amended by Finance Act 2021 prescribes a mandatory penalty equal to two hundred percent (200%) of the tax payable on such goods.",
@@ -6020,10 +6020,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 115JAA of the Income-tax Act, what is the statutory time limit for carrying forward unutilized MAT credit, and what is the maximum credit that can be set off in a given year?",
           "options": [
-            "3 consecutive assessment years; set-off can only be applied against capital gains from listed securities.",
-            "8 consecutive assessment years; set-off is capped at exactly one hundred percent of total accounting operating revenue.",
+            "10 consecutive assessment years; set-off is capped at the excess of MAT liability over the Normal Tax Payable for that year.",
+            "8 consecutive assessment years; set-off is capped at the excess of MAT liability over the Normal Tax Payable for that year.",
             "15 consecutive assessment years; set-off is capped at the excess of Normal Tax Payable over the MAT liability calculated for that year.",
-            "Perpetual carryforward without expiration; set-off is determined by the Assessing Officer during faceless scrutiny."
+            "15 consecutive assessment years; set-off is capped at 50% of the MAT paid in the year the credit arose."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -6048,9 +6048,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What happens to accumulated MAT credit (Section 115JAA) when a domestic corporation elects to be taxed under the concessional corporate tax regime of Section 115BAA?",
           "options": [
-            "The MAT credit is refunded in cash to the corporate bank account within thirty days of election.",
-            "The MAT credit can be set off against future payroll tax withholding liabilities under Section 192.",
-            "The MAT credit is automatically transferred to international subsidiaries located in Singapore.",
+            "The MAT credit is carried forward and set off against the Section 115BAA tax liability over the next five assessment years.",
+            "The MAT credit is retained but can be set off only against capital gains tax payable under the concessional regime.",
+            "The MAT credit is converted into advance tax credit and adjusted against the first three instalments after the election.",
             "The accumulated MAT credit is permanently forfeited and cannot be set off against tax liabilities under Section 115BAA."
           ],
           "answer": 3,
@@ -6210,9 +6210,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Explanation 2A to Section 9(1)(i) of the Income-tax Act, what are the statutory thresholds that establish a 'Significant Economic Presence' (SEP) for a non-resident in India?",
           "options": [
             "Transaction value exceeding Rs 2 Crore from Indian transactions, OR systematic engagement with 300,000 or more users in India.",
-            "Maintaining an owned physical corporate headquarters with at least one thousand full-time employees in New Delhi.",
-            "Operating a listed public corporation on the Bombay Stock Exchange with fifty percent promoter shareholding.",
-            "Exporting physical manufactured hardware across Indian maritime customs ports exceeding fifty crore rupees."
+            "Transaction value exceeding Rs 10 Crore from Indian transactions, OR systematic engagement with 1,000,000 or more users in India.",
+            "Transaction value exceeding Rs 2 Crore from Indian transactions, AND maintaining a server physically located in India.",
+            "Transaction value exceeding Rs 50 Lakh from Indian transactions, OR systematic engagement with 100,000 or more users in India."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6288,8 +6288,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 92CC(9A) of the Income-tax Act, for how many assessment years can the 'Rollback Provision' of an Advance Pricing Agreement (APA) be applied retroactively?",
           "options": [
-            "Indefinitely for all open assessment years since corporate incorporation.",
-            "Only one (1) preceding assessment year, provided a ten percent surcharge penalty is paid.",
+            "Up to two (2) assessment years immediately preceding the first prospective year covered by the APA.",
+            "Only one (1) assessment year immediately preceding the first prospective year covered by the APA.",
             "Up to four (4) assessment years immediately preceding the first prospective year covered by the APA.",
             "Up to eight (8) assessment years, matching the statutory business loss carryforward window."
           ],
@@ -6315,9 +6315,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 10TD of the Income-tax Rules, what is the prescribed Safe Harbour operating profit margin on operating costs (OP/OC) for an Indian software development service provider with transaction value up to Rs 100 Crore?",
           "options": [
-            "Thirty percent (30%) on gross revenue.",
-            "Ten percent (10%) on pre-tax accounting EBITDA.",
-            "Zero percent (0%), as software development is completely exempt from transfer pricing rules.",
+            "Twenty-two percent (22%) on operating expenses.",
+            "Ten percent (10%) on operating expenses.",
+            "Twenty-five percent (25%) on operating expenses.",
             "Seventeen percent (17%) on operating expenses."
           ],
           "answer": 3,
@@ -6371,10 +6371,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 286 of the Income-tax Act, what is the consolidated global group revenue threshold that mandates the filing of a Country-by-Country Report (CbCR - Form 3CEAD)?",
           "options": [
-            "Consolidated group revenue exceeding fifty crore rupees in the current assessment year.",
+            "Group revenue above Rs 640 Crore (about 75 million euros) in the preceding accounting year.",
             "Group revenue above Rs 6,400 Crore (about 750 million euros) in the preceding accounting year.",
-            "Total domestic sales turnover exceeding one thousand crore rupees within territorial India.",
-            "Total shareholder market capitalization exceeding ten billion US dollars on public stock exchanges."
+            "Group revenue above Rs 3,200 Crore (about 375 million euros) in the current accounting year.",
+            "Group revenue above Rs 12,800 Crore (about 1.5 billion euros) in the preceding accounting year."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -6507,9 +6507,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 144C of the Income-tax Act, what is the statutory deadline for an eligible assessee to file objections in Form 35A before the Dispute Resolution Panel (DRP) upon receiving a Draft Assessment Order?",
           "options": [
-            "Within one year from the end of the relevant assessment year.",
-            "There is no statutory deadline; objections can be filed anytime prior to corporate liquidation.",
-            "Within sixty (60) days, extendable by six months at the discretion of the local municipal commissioner.",
+            "Within sixty (60) days of the receipt of the draft assessment order by the assessee.",
+            "Within fifteen (15) days of the receipt of the draft assessment order by the assessee.",
+            "Within ninety (90) days of the end of the month in which the draft assessment order is passed.",
             "Within thirty (30) days of the receipt of the draft assessment order by the assessee."
           ],
           "answer": 3,
@@ -6607,9 +6607,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 17(2) of the CGST Act, how are zero-rated supplies treated when determining the eligibility of Input Tax Credit for apportionment?",
           "options": [
-            "Zero-rated supplies require prior sanction from the GST Council before any input tax credit can be provisionally availed.",
+            "Zero-rated supplies are ignored in the turnover ratio, so credit is apportioned only between taxable and exempt supplies.",
             "Zero-rated supplies are treated as wholly exempt supplies, requiring mandatory pro-rata credit reversal under Rule 42.",
-            "Zero-rated supplies are capped at a flat twenty percent credit allowance regardless of inward procurement invoices.",
+            "Zero-rated supplies are treated as non-business supplies, requiring a flat five percent reversal of the common credit.",
             "Zero-rated supplies are treated on par with taxable supplies, allowing full preservation and attribution of Input Tax Credit without reversal."
           ],
           "answer": 3,
@@ -6652,9 +6652,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the statutory formula under Rule 42 of the CGST Rules, what does the variable D2 represent and how is it quantified?",
           "options": [
             "It represents the credit attributable to non-business purposes, determined at a flat five percent of the common credit C2.",
-            "It represents the credit attributable to zero-rated exports, determined at ten percent of total turnover F.",
-            "It represents the credit blocked under Section 17(5), determined by independent chartered accountant certification.",
-            "It represents the annual interest penalty levied under Section 50 at eighteen percent per annum."
+            "It represents the credit attributable to exempt supplies, determined as the ratio of exempt turnover E to total turnover F.",
+            "It represents the credit attributable to inputs used exclusively for taxable supplies, determined by invoice-wise tracing.",
+            "It represents the credit blocked under Section 17(5), determined at ten percent of the common credit C2."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -6698,7 +6698,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "One hundred and twenty months (ten years) for heavy industrial machinery.",
             "Sixty months (five years) from the date of the inward invoice.",
-            "Twenty-four months (two years) subject to annual chartered accountant certification.",
+            "Forty-eight months (four years) from the date on which the capital goods are first put to use.",
             "Thirty-six months (three years) based on company law depreciation tables."
           ],
           "answer": 1,
@@ -6948,10 +6948,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 89(4) of the CGST Rules, how is the 'Turnover of zero-rated supply of goods' capped for the purpose of computing maximum export refund?",
           "options": [
-            "It is capped at the maximum credit limit sanctioned by the Directorate General of Foreign Trade.",
-            "It is capped at the lower of actual export value or the historical average of previous three years' exports.",
+            "It is capped at the lower of actual export value or the value of like goods supplied domestically in the same tax period.",
+            "It is capped at the lower of actual export value or twice the value of like goods domestically supplied.",
             "It is capped at the lower of actual export value or 1.5 times the value of like goods domestically supplied.",
-            "It is capped at exactly eighty percent of the free-on-board (FOB) customs shipping bill value."
+            "It is capped at the higher of actual export value or 1.5 times the value of like goods domestically supplied."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7040,9 +7040,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What happens if the total statutory refund amount calculated under Rules 89(4) and 89(5) exceeds the balance in the Electronic Credit Ledger at the time of filing Form GST RFD-01?",
           "options": [
             "The sanctioned cash refund is strictly restricted and capped to the available balance in the Electronic Credit Ledger.",
-            "The government automatically prints paper currency notes to settle the uncredited formula differential.",
-            "The entire refund application is canceled and converted into criminal penalty proceedings.",
-            "The excess refund is deposited directly into the personal bank accounts of company directors."
+            "The excess is carried forward and paid automatically in cash from the Electronic Cash Ledger of the following month.",
+            "The refund application is rejected in full, and the taxpayer must refile after the credit ledger balance is topped up.",
+            "The excess is refunded in cash from the Electronic Cash Ledger, treating the credit ledger shortfall as an overpayment."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -7155,10 +7155,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the First Proviso to Rule 28 of the CGST Rules, what valuation option is available to a supplier transferring goods to a distinct person who intends to resell them as such?",
           "options": [
-            "The supplier is exempted from issuing a tax invoice under Schedule I.",
-            "The supplier must obtain an advance valuation certificate from the Commissioner of Central Tax.",
+            "The supplier may value the goods at one hundred and ten percent of the recipient's price to unrelated customers.",
+            "The supplier may value the goods at the lowest price charged to any customer in the preceding financial year.",
             "The supplier may value the goods at ninety percent of the recipient's price to unrelated customers.",
-            "The supplier must value the goods at exactly one hundred and ten percent of manufacturing cost."
+            "The supplier may value the goods at ninety percent of the recipient's cost of acquisition."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7200,9 +7200,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Second Proviso to Rule 28 of the CGST Rules, under what specific circumstance is the value declared in the invoice deemed to be the open market value?",
           "options": [
-            "Where the invoice value exceeds one hundred crore rupees.",
-            "Where the supplier is a publicly listed enterprise on a recognized stock exchange.",
-            "Where the transaction is approved by the National Anti-Profiteering Authority.",
+            "Where the recipient distinct person is not registered under GST and cannot claim input tax credit.",
+            "Where the supplier is eligible for full Input Tax Credit on the inputs used to make the supply.",
+            "Where the goods supplied are exported outside India to the distinct person.",
             "Where the recipient distinct person is eligible for full Input Tax Credit."
           ],
           "answer": 3,
@@ -7410,10 +7410,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Can an electronic commerce operator pay its Section 9(5) deemed output tax liability by utilizing its accumulated Input Tax Credit (ITC)?",
           "options": [
-            "No, but the liability can be waived entirely by submitting an annual application to the GST Council.",
-            "No, Section 9(5) tax liability must be discharged COMPULSORILY IN CASH through the Electronic Cash Ledger as clarified by Circular 167/23/2021-GST.",
+            "No, because the liability can be discharged only by the supplier of the goods and not by the operator.",
+            "No, Section 9(5) tax must be paid in cash through the Electronic Cash Ledger, as clarified by Circular 167/23/2021-GST.",
             "Yes, Section 49 permits universal set-off of any output tax liability using available electronic credit ledger balances.",
-            "Yes, provided the platform pays an additional five percent administrative surcharge to the Central Board of Indirect Taxes."
+            "Yes, but only up to fifty percent of the liability, with the balance discharged in cash from the ledger."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -7457,8 +7457,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under Section 14 of the IGST Act, how is integrated tax collected on cross-border OIDAR services supplied to Non-Taxable Online Recipients (NTOR)?",
           "options": [
             "The overseas supplier is mandatorily liable to register under the simplified registration scheme and pay IGST on forward charge basis.",
-            "The Indian resident consumers are required to file monthly import returns at local customs stations.",
-            "The tax is collected by the Reserve Bank of India as a direct deduction on all foreign credit card payments.",
+            "The Indian recipient is liable to pay tax under reverse charge in every case, and the overseas supplier has no obligation.",
+            "The tax is collected by the payment gateway through TCS at one percent of the value of the supply.",
             "Cross-border OIDAR services supplied to individuals are completely exempt from integrated goods and services tax."
           ],
           "answer": 0,
@@ -7808,10 +7808,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final certification status string emitted by the EnterpriseGSTCommandTower upon successfully verifying all statutory and mathematical indirect tax assertions?",
           "options": [
-            "GST_REVERSAL_CALCULATION_DISCREPANCY_ERROR",
-            "DEPARTMENTAL_SCN_RECOVERY_ORDER_PENDING",
+            "ENTERPRISE_GST_INDIRECT_TAX_MASTER_PASS",
+            "ENTERPRISE_INDIRECT_TAX_MASTER_OK",
             "ENTERPRISE_INDIRECT_TAX_MASTER_PASS",
-            "INDIRECT_TAX_AUDIT_SANCTION_REJECTED_FAIL"
+            "INDIRECT_TAX_ENTERPRISE_MASTER_PASS"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7874,10 +7874,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory purpose of filing a Yellow Bill of Entry (Into-Bond) under Section 59, and what security is required?",
           "options": [
-            "It provides an irrevocable permanent exemption from all customs duties and IGST regardless of whether goods are ever consumed.",
-            "It allows immediate unconditional release of cargo into the domestic retail market without customs inspection or officer assessment.",
-            "It permits the importer to deposit goods into a bonded warehouse without immediate duty payment upon executing a bond for thrice the assessed duty amount.",
-            "It serves exclusively as an export shipping document for transferring domestic raw materials to foreign vessels."
+            "It provides a temporary exemption from IGST only, while basic customs duty is payable immediately on filing the bill of entry.",
+            "It allows release of the cargo for home consumption upon payment of duty by the importer within thirty days of clearance.",
+            "It permits the importer to deposit goods into a bonded warehouse without immediate duty payment upon executing a bond for thrice the duty.",
+            "It serves as the document used to claim drawback of duties paid on imported inputs that are later re-exported."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -7899,9 +7899,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Schedule III Entry 8(c) of the CGST Act, how are High Seas Sales treated for GST purposes, and how is the customs assessable value established?",
           "options": [
-            "High Seas Sales are treated as domestic intra-state supplies subject to mandatory CGST and SGST deductions at source.",
+            "High Seas Sales are taxable supplies of goods subject to IGST at the time of sale, and customs value is the first seller's invoice value.",
             "High Seas Sales attract standard eighteen percent GST on the invoice, and customs duty is calculated solely on the original overseas manufacturer invoice.",
-            "High Seas Sales are deemed illegal under the Foreign Trade Policy, requiring confiscation of cargo and forfeiture of the Bill of Lading.",
+            "High Seas Sales are exempt supplies under a notification, and customs value is the average of the first and final sale prices.",
             "High Seas Sales are statutory non-supplies (neither goods nor services), and customs assessable value is based on the final HSS price paid by the buyer."
           ],
           "answer": 3,
@@ -7926,9 +7926,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the statutory significance of the Let Export Order (LEO) under Section 51 of the Customs Act, 1962?",
           "options": [
             "It is the statutory order made by the proper customs officer permitting the clearance and physical loading of export goods onto the conveyance.",
-            "It is an order issued by the maritime port authority impounding the vessel for unpaid demurrage and pilotage charges.",
-            "It represents a temporary detention notice issued by the Directorate of Revenue Intelligence prohibiting foreign trade.",
-            "It is an internal commercial invoice generated by the freight forwarder confirming bill of lading booking."
+            "It is the order of the proper customs officer permitting clearance of imported goods for home consumption after payment of duty.",
+            "It is the declaration filed by the exporter describing the goods, value and quantity before they reach the port.",
+            "It is the certificate issued by the shipping line confirming that the export cargo has been loaded on the vessel."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8007,9 +8007,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the legal status of Section Notes and Chapter Notes in the First Schedule to the Customs Tariff Act, 1975, as established in Wood Craft Products?",
           "options": [
             "They possess binding statutory force enacted by Parliament, superseding dictionary definitions and general commercial trade parlance.",
-            "They represent non-binding administrative guidance notes that customs appraisers are free to disregard at their discretion.",
-            "They serve merely as historical preambles with zero judicial weight in classification disputes before appellate tribunals.",
-            "They apply exclusively to passenger baggage under Chapter 98 and have no application to commercial containerized freight."
+            "They are explanatory notes issued by the WCO that Indian customs authorities may follow only when the Tariff is silent.",
+            "They are interpretive aids binding only on customs officers, but not on importers or appellate authorities.",
+            "They apply only to the Second Schedule export duty entries and not to the First Schedule import tariff."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8032,9 +8032,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under General Rule of Interpretation 3 (GRI 3), what is the correct statutory sequence for classifying composite goods or retail sets classifiable under multiple headings?",
           "options": [
-            "GRI 3(c) highest tariff rate heading first, then GRI 3(a) lowest rate, followed by discretionary administrative choice.",
-            "Immediate split of invoice value equally across all competing headings regardless of product composition or functionality.",
-            "Direct application of GRI 4 akin goods classification, bypassing specific and essential character rules entirely.",
+            "GRI 3(b) essential character first, then GRI 3(a) most specific description, and finally GRI 3(c) heading occurring last in numerical order.",
+            "GRI 3(c) heading occurring last in numerical order first, then GRI 3(a) most specific description, and finally GRI 3(b) essential character.",
+            "GRI 3(a) most specific description first, then GRI 3(c) heading occurring last in numerical order, and finally GRI 3(b) essential character.",
             "GRI 3(a) most specific description first, then GRI 3(b) essential character, and finally GRI 3(c) heading occurring last in numerical order."
           ],
           "answer": 3,
@@ -8058,10 +8058,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Rule 10 of the Customs Valuation Rules, 2007, which item is explicitly EXCLUDED from being added to the transaction value, and what is the statutory ceiling on air freight?",
           "options": [
-            "Design and engineering work done outside India is excluded, and ocean freight is capped at one percent.",
-            "Royalties payable as a condition of sale are excluded, and insurance is capped at ten percent of invoice price.",
+            "Royalties payable as a condition of sale are excluded, and air freight is capped at twenty percent of FOB value.",
+            "Buying commissions are added to the value, and air freight is capped at twenty percent of the FOB value.",
             "Buying commissions are excluded from additions, and air freight is capped at twenty percent of the Free on Board (FOB) value.",
-            "Selling commissions are excluded from additions, and air freight has no ceiling and must always be fifty percent of CIF."
+            "Selling commissions are excluded from additions, and air freight is capped at fifty percent of the CIF value."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8113,10 +8113,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the automated CustomsClassificationValuationEngine handle unstated marine insurance and air freight caps under Rule 10(2)?",
           "options": [
-            "It computes unstated insurance at exactly 1.125 percent of FOB value and enforces a statutory cap of twenty percent of FOB value on air freight.",
-            "It defaults unstated insurance to zero percent and permits air freight to be charged at up to eighty percent of CIF invoice value.",
-            "It estimates insurance at ten percent of CIF and deducts air freight entirely from the assessable value as an export subsidy.",
-            "It pauses assessment and requires physical bank guarantees equal to one hundred percent of commercial invoice value."
+            "It computes unstated insurance at 1.125 percent of FOB value and caps air freight at twenty percent of FOB value.",
+            "It defaults unstated insurance to zero percent and caps air freight at twenty percent of CIF invoice value.",
+            "It computes unstated insurance at five percent of FOB value and caps air freight at ten percent of FOB value.",
+            "It computes unstated insurance at exactly 1.125 percent of FOB value and applies no ceiling on air freight added to the value."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8168,8 +8168,8 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What fundamental principle of statutory interpretation was established by the Constitutional Bench of the Supreme Court in Dilip Kumar and Company regarding customs exemption notifications?",
           "options": [
             "Any ambiguity in an exemption notification must always be resolved in favor of the assessee to promote international trade.",
-            "Customs exemption notifications have no legal effect unless re-ratified every ninety days by the World Trade Organization.",
-            "Exemption notifications automatically apply retroactively to all imports cleared in the preceding ten financial years.",
+            "Exemption notifications are read literally, but any ambiguity is resolved by the Commissioner on a case-by-case basis.",
+            "Exemption notifications must be construed strictly, but ambiguity is resolved in favor of the assessee if the importer acted in good faith.",
             "Exemption notifications must be strictly construed, and any ambiguity in eligibility must be resolved in favor of the Revenue."
           ],
           "answer": 3,
@@ -8247,10 +8247,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the maximum percentage of customs duty refunded as drawback under Section 74(1) for unused imported goods re-exported within statutory timelines, and what limitation is imposed by Section 76(1)(a)?",
           "options": [
-            "Fifty percent drawback is refunded, and drawback is prohibited if goods were imported from Commonwealth nations.",
-            "Seventy-five percent drawback is refunded, and claims are allowed only if the exporter waives all input tax credits under GST.",
+            "Ninety-eight percent drawback on unused goods, and none if the goods were imported by a registered exporter.",
+            "Seventy-five percent drawback on unused goods, and none if the market price exceeds the drawback claimed.",
             "Ninety-eight percent drawback on unused goods, and none if the market price is less than the drawback claimed.",
-            "One hundred percent drawback is refunded, with an additional ten percent cash bonus awarded for all maritime shipments."
+            "A refund of duty on unused goods without any deduction, and none if the goods are re-exported after thirty days."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8276,9 +8276,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "How does the CustomsDutyRemissionMOOWREngine compute the duty liability under Section 22 when imported goods suffer physical damage?",
           "options": [
-            "It imposes a flat fifty percent penalty on the invoice price and cancels all input tax credit entitlements.",
-            "It requires the importer to pay double the duty and claim a refund from the overseas exporter via commercial arbitration.",
-            "It ignores the damage and demands full payment unless the vessel captain personally signs an admission of negligence.",
+            "It imposes full duty on the pre-damage value and refunds only the damaged portion after the importer claims from the insurer.",
+            "It charges duty on the damaged value alone, ignoring the ratio between the damaged and undamaged values.",
+            "It exempts the goods entirely from customs duty when the damage is certified by the master of the vessel.",
             "It multiplies the normal duty liability by the ratio of damaged value to undamaged value, proportionately reducing the tax burden."
           ],
           "answer": 3,
@@ -8609,10 +8609,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final compliance accreditation string generated by the EnterpriseCustomsBondedCommandTower upon successful validation of all customs, MOOWR, and export incentive modules?",
           "options": [
-            "CUSTOMS_IMPORT_INSPECTION_FAILED_AUDIT",
+            "ENTERPRISE_CUSTOMS_BONDED_MASTER_OK",
             "ENTERPRISE_CUSTOMS_BONDED_MASTER_PASS",
-            "SECTION_65_MOOWR_BOND_FORFEITED_PENALTY",
-            "DGFT_EXPORT_OBLIGATION_DEFAULT_RECOVERY"
+            "ENTERPRISE_BONDED_CUSTOMS_MASTER_PASS",
+            "CUSTOMS_BONDED_ENTERPRISE_MASTER_PASS"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8664,9 +8664,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the statutory limitation period for issuing an intimation under Section 143(1) of the Income-tax Act, 1961, following recent amendments?",
           "options": [
             "Nine months from the end of the financial year in which the return of income is made.",
-            "Three years from the end of the assessment year in which income was earned.",
-            "Thirty days from the date the return is electronically uploaded on the portal.",
-            "Five years from the date of the primary Board of Directors meeting."
+            "Twelve months from the end of the financial year in which the return of income is made.",
+            "Six months from the end of the financial year in which the return of income is made.",
+            "Three years from the end of the financial year in which the return of income is made."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8689,9 +8689,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory time limit for serving a scrutiny notice under Section 143(2) of the Income-tax Act, and what is the legal consequence of late service?",
           "options": [
-            "Within twelve months from the date of advance tax installment; late service requires permission from the local police commissioner.",
-            "Within three years from the end of the relevant assessment year; late service can be regularized by paying a nominal administrative fine.",
-            "Within thirty days of the company's annual general meeting; late service merely shifts the burden of proof to the assessee.",
+            "Within twelve months from the end of the financial year in which the return is furnished; late service renders the assessment void ab initio.",
+            "Within three months from the end of the financial year in which the return is furnished; late service can be regularized by paying a nominal fine.",
+            "Within six months from the end of the financial year in which the return is furnished; late service merely shifts the burden of proof to the assessee.",
             "Within three months from the end of the financial year in which the return is furnished; late service renders the entire assessment void ab initio."
           ],
           "answer": 3,
@@ -8715,10 +8715,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What core legal principle governs the Assessing Officer's power when executing a Best Judgment Assessment under Section 144, as established in Laxminarayan Badridas and Velukutty?",
           "options": [
-            "The assessment automatically confiscates one hundred percent of the taxpayer's gross assets and transfers them to the national consolidated fund.",
-            "The officer must obtain unanimous approval from the Parliament of India before estimating any business gross profit margin.",
-            "The estimate must be an honest, rational, and fair assessment based on available material with an intelligible nexus, rather than an arbitrary or punitive guess.",
-            "The officer has unbridled absolute discretion to multiply the taxpayer's reported turnover by any arbitrary integer without providing reasons."
+            "The officer may estimate income on any basis he considers appropriate, and the estimate cannot be questioned by appellate authorities.",
+            "The officer must apply a fixed percentage of turnover prescribed by the CBDT as the gross profit margin for every taxpayer.",
+            "The estimate must be an honest, rational and fair assessment based on available material, not an arbitrary or punitive guess.",
+            "The officer must accept the returned income unless the books of account are proved fraudulent beyond any doubt."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8742,10 +8742,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What procedural requirement was established by the Supreme Court in Sahara India (Firm) prior to directing a special audit under Section 142(2A)?",
           "options": [
-            "The Assessing Officer must arrest the managing director of the company and seize all personal banking passbooks.",
+            "The Assessing Officer must obtain prior approval of the Chief Commissioner, and no hearing is required to be given to the assessee.",
             "The Assessing Officer must afford the assessee a reasonable opportunity of being heard because a special audit entails civil consequences.",
-            "The company must voluntarily liquidate its foreign subsidiaries before an independent accountant can be appointed.",
-            "The special audit direction must be published in three national newspapers forty-eight hours prior to issuance."
+            "The special audit may be directed only after the assessee has been found guilty in prosecution proceedings.",
+            "The special audit report must be accepted by the officer as binding without any independent examination of the facts."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -8879,10 +8879,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory monetary threshold of escaped income required to issue a reassessment notice beyond three years but within ten years under Section 149(1)(b)?",
           "options": [
-            "Ten lakh rupees across a block of five financial years.",
+            "Ten lakh rupees or more for the relevant assessment year.",
             "Fifty lakh rupees or more for the relevant assessment year.",
-            "One crore rupees including all associated interest and penalties.",
-            "Twenty-five lakh rupees of gross turnover."
+            "One crore rupees or more for the relevant assessment year.",
+            "Twenty-five lakh rupees or more across the block of assessment years."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9011,10 +9011,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What legal principle was established by the Supreme Court in CIT v. S. Khader Khan Son (2013) regarding statements recorded during a Section 133A survey?",
           "options": [
-            "Survey statements carry higher evidentiary weight than audited annual financial statements.",
+            "Survey statements are conclusive evidence and bind the assessee even if later retracted with an explanation.",
             "Statements under Section 133A are not on oath and cannot form the sole evidentiary basis for additions without corroboration.",
-            "Statements under Section 133A are unchallengeable confessions resulting in automatic summary conviction.",
-            "Statements must be recorded before a Judicial Magistrate within twenty-four hours to be valid."
+            "Statements under Section 133A are recorded on oath and can be used as the sole basis for additions without corroboration.",
+            "Statements recorded during a survey are admissible only if confirmed by the Commissioner within fifteen days."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9039,9 +9039,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What three cumulative legal ingredients must an assessee substantiate under Section 68 to prevent a cash credit from being treated as unexplained income?",
           "options": [
             "Identity of the creditor, creditworthiness of the creditor, and genuineness of the transaction.",
-            "Physical presence of the creditor, payment of cash, and execution of a handwritten receipt.",
-            "Approval from the local municipal council, banking solvency certificate, and police clearance.",
-            "Filing of a trademark application, submission of GST return, and corporate seal attestation."
+            "Identity of the creditor, payment by cash, and repayment of the amount within the same financial year.",
+            "Creditworthiness of the creditor, filing of the creditor's balance sheet, and approval of the Registrar of Companies.",
+            "Genuineness of the transaction, registration of the creditor under GST, and an independent valuation certificate."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9199,9 +9199,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the legal consequence when an assessee files a timely Form 68 under Section 270AA, pays the demanded tax, waives appeal, and the penalty was initiated for under-reporting (not misreporting)?",
           "options": [
-            "The case is automatically transferred to the National Investigation Agency for inquiry.",
-            "The assessee must pay an additional twenty percent compounding fee to the CBDT.",
-            "The Assessing Officer retains discretionary authority to reject the application without stating reasons.",
+            "The assessee must pay a compounding fee of ten percent of the tax demanded to the Chief Commissioner.",
+            "The assessee is granted immunity from penalty but remains liable to prosecution under Section 276C.",
+            "The Assessing Officer may reduce the penalty to twenty-five percent at his discretion.",
             "The Assessing Officer is statutorily mandated to grant immunity from penalty and prosecution."
           ],
           "answer": 3,
@@ -9254,7 +9254,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "The penalty remains payable but is deferred for three subsequent financial years.",
             "The under-reporting penalty is completely waived (reduced to zero) by mandatory operation of law.",
             "The under-reporting penalty is converted into a mandatory twenty-five percent administrative fee.",
-            "The under-reporting penalty is escalated to two hundred percent due to failure to appeal."
+            "The under-reporting penalty is reduced to ten percent of the tax on the under-reported income."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9306,9 +9306,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What four concurrent tax enforcement proceedings confront Apex Industrial Technologies Ltd. (AITL) in this Milestone Capstone simulation?",
           "options": [
-            "Customs warehouse seizure, GST registration cancellation, provident fund raid, and foreign exchange confiscation.",
-            "Municipal property tax auction, stamp duty adjudication, labor union arbitration, and patent infringement inquiry.",
-            "Bankruptcy liquidation petition, antitrust merger blocking, environmental clearance revocation, and SEBI delisting order.",
+            "Section 144B faceless scrutiny, Section 148A reassessment, Section 133A survey retraction, and Section 271C penalty defense.",
+            "Section 143(1) intimation, Section 148A reassessment, Section 133A survey retraction, and Section 270A penalty defense.",
+            "Section 144B faceless scrutiny, Section 148A reassessment, Section 132 search seizure, and Section 270A penalty defense.",
             "Section 144B faceless scrutiny, Section 148A reassessment, Section 133A survey retraction, and Section 270A penalty defense."
           ],
           "answer": 3,
@@ -9414,9 +9414,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What master accreditation code is awarded upon successfully executing the EnterpriseTaxDisputeSimulator in this Milestone 10 Capstone?",
           "options": [
-            "CUSTOMS_BROKER_PROVISIONAL_BADGE",
-            "BASIC_ACCOUNTING_CLERK_CERTIFICATE",
-            "ARBITRARY_TAX_PENALTY_DECREE",
+            "ENTERPRISE_TAX_DISPUTE_MASTER_OK",
+            "ENTERPRISE_DISPUTE_TAX_MASTER_PASS",
+            "TAX_DISPUTE_ENTERPRISE_MASTER_PASS",
             "ENTERPRISE_TAX_DISPUTE_MASTER_PASS"
           ],
           "answer": 3,
@@ -9470,9 +9470,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the statutory limitation period for filing an electronic appeal in Form 35 before the Commissioner of Income-tax (Appeals) under Section 249(2)?",
           "options": [
             "Thirty days from the date of service of the notice of demand for the assessment or penalty.",
-            "Sixty days from the date of passing of the internal assessment order.",
-            "One hundred and twenty days from the end of the financial year in which the return was filed.",
-            "Ninety days from the date of filing the rectification application under Section 154."
+            "Sixty days from the date of service of the notice of demand for the assessment or penalty.",
+            "Ninety days from the date of service of the notice of demand for the assessment or penalty.",
+            "Fifteen days from the date of service of the notice of demand for the assessment or penalty."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9496,9 +9496,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Section 249(4)(a), what statutory tax payment condition must be satisfied before an appeal filed by an assessee who furnished a return can be admitted by the CIT(Appeals)?",
           "options": [
-            "The assessee must deposit fifty percent of the total disputed additions in an escrow account.",
-            "The assessee must pay all future advance tax installments for the subsequent three financial years.",
-            "The assessee must obtain a bank guarantee covering one hundred percent of penalties.",
+            "The assessee must have deposited twenty percent of the disputed demand before the appeal is admitted.",
+            "The assessee must have paid the tax on the income assessed in excess of the returned income, including penalties.",
+            "The assessee must have paid all advance tax instalments due for the subsequent financial year.",
             "The assessee must have paid the full tax due on the income returned by them (admitted tax liability)."
           ],
           "answer": 3,
@@ -9576,9 +9576,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In our FirstAppellateComplianceEngine, what happens if an appeal is filed with an admitted tax deficit under Section 249(4)?",
           "options": [
             "The appeal cannot be legally admitted by the CIT(Appeals), resulting in immediate dismissal at the threshold.",
-            "The CIT(Appeals) automatically grants a two-year extension to pay the admitted tax.",
-            "The admitted tax is converted into a twenty-year government loan with five percent interest.",
-            "The case is referred to the Central Board of Direct Taxes for administrative condonation."
+            "The CIT(Appeals) admits the appeal conditionally and directs the assessee to pay the admitted tax within thirty days.",
+            "The appeal is admitted, but the CIT(Appeals) must decide it within three months without hearing the assessee.",
+            "The appeal is converted into a revision petition before the Principal Commissioner of Income-tax."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9658,10 +9658,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory limitation period for filing objections in Form 35A before the Dispute Resolution Panel under Section 144C(2)?",
           "options": [
-            "Within forty-five days of obtaining board of directors approval.",
-            "Within sixty days of the end of the financial year in which the draft order was forwarded.",
+            "Within sixty days of the date of receipt of the draft assessment order by the eligible assessee.",
+            "Within fifteen days of the date of receipt of the draft assessment order by the eligible assessee.",
             "Within thirty days of the date of receipt of the draft assessment order by the eligible assessee.",
-            "Within ninety days from the date of the Transfer Pricing Officer's preliminary hearing."
+            "Within ninety days of the date of receipt of the draft assessment order by the eligible assessee."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9821,10 +9821,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory limitation period and form for filing a Memorandum of Cross-Objections before the ITAT under Section 253(4)?",
           "options": [
-            "Within sixty days of the draft assessment order, filed in Form 35 with a ten-thousand-rupee fee.",
+            "Within sixty days of receipt of notice of appeal, filed in Form No. 36 with the prescribed filing fee.",
             "Within thirty days of receipt of notice of appeal from the ITAT, filed in Form No. 36A with zero filing fee.",
-            "Within ninety days of the financial year end, filed in Form 3CEB with the Central Board of Direct Taxes.",
-            "Within forty-five days of the board meeting, filed as a High Court writ petition under Article 226."
+            "Within thirty days of the assessment order, filed in Form No. 35 with the Commissioner of Income-tax (Appeals).",
+            "Within ninety days of receipt of notice of appeal, filed in Form No. 36A with a nominal filing fee."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9875,9 +9875,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory limitation period for filing a Miscellaneous Application for rectification of mistake under Section 254(2)?",
           "options": [
-            "Within one year from the end of the financial year in which tax was deducted.",
-            "Within four years from the date of filing the original Form 36 appeal.",
-            "Within sixty days from the date of receiving the draft assessment order.",
+            "Within one year from the end of the month in which the order was passed by the ITAT.",
+            "Within four years from the end of the month in which the order was passed by the ITAT.",
+            "Within sixty days from the date on which the order was passed by the ITAT.",
             "Within six months from the end of the month in which the order was passed by the ITAT."
           ],
           "answer": 3,
@@ -10036,10 +10036,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the landmark Supreme Court doctrine in Whirlpool Corporation, what are the established exceptions where an Article 226 writ petition is maintainable despite the availability of an alternative statutory remedy?",
           "options": [
-            "Only when the Assessing Officer is an IRS officer of less than five years of administrative service.",
-            "Only if the assessee has first deposited fifty per cent of the disputed tax demand with the High Court Registry.",
+            "Only when the Assessing Officer has passed the order after the expiry of the statutory limitation period.",
+            "Only if the assessee has already filed an appeal before the CIT(Appeals) that has been pending for over one year.",
             "Breach of fundamental rights, violation of natural justice, total lack of jurisdiction, or challenging statutory vires.",
-            "Whenever the disputed tax liability exceeds ten per cent of the company's gross annual turnover."
+            "Only where the disputed tax demand exceeds the net worth of the assessee company."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10143,9 +10143,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory limitation for NeFAC to pass the final assessment order under Section 144C(13) upon receiving DRP directions on June 25, 2024?",
           "options": [
-            "Within sixty days from the end of the financial year, expiring in May 2025.",
-            "Within thirty days of receiving written confirmation from the Central Board of Direct Taxes.",
-            "Within six months from the date of the DRP directions, expiring in December 2024.",
+            "Within two months from the end of June 2024, expiring on August 31, 2024.",
+            "Within three months from the end of June 2024, expiring on September 30, 2024.",
+            "Within nine months from the end of June 2024, expiring on March 31, 2025.",
             "Within one month from the end of June 2024, expiring on July 31, 2024."
           ],
           "answer": 3,
@@ -10171,10 +10171,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory statutory deposit required under the first proviso to Section 254(2A) for the ITAT to grant a stay of demand on APTL's INR 9.85 Crore liability?",
           "options": [
-            "Ten per cent (10%) plus a bank guarantee for the entire remaining sum.",
-            "Zero deposit, because all ITAT stay petitions are granted unconditionally.",
+            "Ten per cent (10%) of the disputed demand, amounting to exactly INR 0.99 Crores.",
+            "Twenty-five per cent (25%) of the disputed demand, amounting to exactly INR 2.46 Crores.",
             "Twenty per cent (20%) of the disputed demand, amounting to exactly INR 1.97 Crores.",
-            "Fifty per cent (50%) of the base corporate tax liability."
+            "Fifty per cent (50%) of the disputed demand, amounting to exactly INR 4.93 Crores."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10227,9 +10227,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the final master accreditation issued by EnterpriseAppellateDefenseSimulator upon full multi-tier victory for APTL?",
           "options": [
             "ENTERPRISE_TAX_APPELLATE_MASTER_PASS",
-            "PROVISIONAL_AUDIT_CLEARANCE_CERTIFICATE",
-            "TAX_EVASION_SETTLEMENT_NOTICE",
-            "CIVIL_COURT_CONTEMPT_DECREE"
+            "ENTERPRISE_TAX_APPELLATE_MASTER_OK",
+            "ENTERPRISE_APPELLATE_TAX_MASTER_PASS",
+            "TAX_APPELLATE_ENTERPRISE_MASTER_PASS"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10388,10 +10388,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In GAARRiskAssessmentEngine, what statutory condition causes an arrangement to be declared an Impermissible Avoidance Arrangement (IAA) under Section 96?",
           "options": [
-            "The company fails to hold four quarterly meetings of its board of directors.",
+            "Obtaining a tax benefit is the main purpose OR at least one tainted element test is satisfied.",
             "Obtaining a tax benefit is the main purpose AND at least one tainted element test is satisfied.",
-            "The corporate tax liability is less than the net accounting profit before depreciation.",
-            "The company's statutory auditors issue a qualified audit report on internal financial controls."
+            "The arrangement results in a tax benefit exceeding Rs 3 Crore in the year, irrespective of its purpose.",
+            "At least one tainted element test is satisfied, even if obtaining a tax benefit is not the main purpose."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10444,10 +10444,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the consolidated annual revenue threshold that brings a multinational enterprise group within the mandatory scope of the OECD Pillar Two GloBE Rules?",
           "options": [
-            "Domestic sales turnover exceeding one hundred crore rupees in the current financial year.",
-            "Total market capitalization exceeding five billion US dollars on a recognized stock exchange.",
+            "Consolidated group revenues of EUR 750 Million or more in at least one of the four preceding fiscal years.",
+            "Consolidated group revenues of EUR 500 Million or more in at least two of the four preceding fiscal years.",
             "Consolidated group revenues of EUR 750 Million or more in at least two of the four preceding fiscal years.",
-            "Net export earnings exceeding fifty million euros in any single calendar year."
+            "Consolidated group revenues of EUR 1,500 Million or more in at least two of the four preceding fiscal years."
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10472,10 +10472,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under the Top-Down Approach of the Income Inclusion Rule (IIR), which entity possesses the primary statutory obligation to pay top-up tax on low-taxed foreign income?",
           "options": [
-            "The lowest-tier operating subsidiary located in a developing country.",
+            "Each constituent entity located in the low-tax jurisdiction, which pays the top-up tax directly to its local authority.",
             "The Ultimate Parent Entity (UPE) of the multinational group in its home tax jurisdiction.",
-            "The commercial retail customer purchasing goods from the multinational.",
-            "The international commercial bank holding the group's treasury deposits."
+            "The intermediate parent entity located in the jurisdiction with the highest statutory tax rate in the group.",
+            "The permanent establishment of the group with the largest share of consolidated revenue."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10501,9 +10501,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the statutory order of jurisdictional priority for collecting Pillar Two top-up tax between QDMTT, IIR, and UTPR?",
           "options": [
             "QDMTT takes first priority, followed by IIR, with UTPR serving as the final residual backstop.",
-            "UTPR takes first priority, followed by QDMTT, with IIR applying only to charitable trusts.",
-            "IIR takes first priority, completely extinguishing the right of source countries to levy domestic taxes.",
-            "The three taxes are pooled and distributed equally among all member nations of the United Nations."
+            "IIR takes first priority, followed by QDMTT, with UTPR serving as the final residual backstop.",
+            "QDMTT takes first priority, followed by UTPR, with IIR serving as the final residual backstop.",
+            "UTPR takes first priority, followed by IIR, with QDMTT serving as the final residual backstop."
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10610,7 +10610,7 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "One hundred per cent (100%) of all voting shareholders.",
             "Not less than fifty-one per cent (51%) of ordinary equity shares.",
-            "A simple majority of the registered debenture holders.",
+            "Not less than nine-tenths (90%) in value of the shares.",
             "Not less than three-fourths (75%) in value of the shares."
           ],
           "answer": 3,
@@ -10855,10 +10855,10 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory obligation imposed on registered persons under Section 171(1) of the CGST Act?",
           "options": [
-            "Enterprises must maintain a uniform twenty-five per cent gross profit margin across all commercial products.",
+            "Enterprises must pass on only tax rate reductions, and are not required to pass on the benefit of input tax credit.",
             "Any reduction in tax rate or benefit of input tax credit must be passed on to recipients via commensurate price reductions.",
-            "Companies must donate five per cent of their net profits to the Central Goods and Services Tax Council.",
-            "All retail prices must be approved annually by the local municipal collector."
+            "Any reduction in tax rate must be passed on to recipients through a refund of the tax paid to the Government.",
+            "Enterprises must display the tax-inclusive and tax-exclusive price on every invoice, but need not reduce prices."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11048,9 +11048,9 @@ export const BCOM_TAX_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What supreme course accreditation credential is awarded upon successfully executing GlobalTaxDirectorCTOSimulator in this Day 60 Grand Master Capstone?",
           "options": [
             "GLOBAL_TAX_DIRECTOR_GRAND_MASTER_PASS",
-            "BASIC_ACCOUNTS_ASSISTANT_CERTIFICATE",
-            "JUNIOR_BOOKKEEPER_PROVISIONAL_BADGE",
-            "COMMERCIAL_TAX_DEFAULT_SUMMONS"
+            "GLOBAL_TAX_DIRECTOR_GRAND_MASTER_OK",
+            "GLOBAL_TAX_GRAND_MASTER_DIRECTOR_PASS",
+            "GRAND_MASTER_GLOBAL_TAX_DIRECTOR_PASS"
           ],
           "answer": 0,
           "answerIndex": 0,

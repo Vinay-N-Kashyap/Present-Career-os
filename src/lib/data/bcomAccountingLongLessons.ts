@@ -128,7 +128,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is Net Book Value (NBV) on a corporate balance sheet regarding fixed assets?",
           "options": [
             "The replacement cost required to purchase an equivalent new asset at current market prices.",
-            "Gross asset cost multiplied by the statutory corporate income tax rate.",
+            "Gross asset cost minus the estimated residual (salvage) value only",
             "Gross historical acquisition cost of the asset minus its total accumulated depreciation.",
             "The current liquidation value of the asset if sold at public auction today."
           ],
@@ -248,10 +248,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Why does ASC 830 mandate that foreign currency translation adjustments (CTA) bypass the operating Income Statement and get booked directly into AOCI equity?",
           "options": [
-            "Because the Cumulative Translation Adjustment is an operating expense incurred exclusively during central bank interest rate revisions.",
+            "Because the CTA is a realized cash loss from currency conversion that must first be offset against the parent's retained earnings at each year end.",
             "Because translation gains and losses represent unrealized balance sheet paper adjustments from exchange rate drift rather than completed cash transactions.",
-            "Because foreign subsidiaries are prohibited from reporting commercial profits to parent company shareholders.",
-            "Because GAAP requires all international corporate earnings to be settled in gold reserves before income recognition."
+            "Because translation adjustments are deferred as a liability on the balance sheet until the foreign subsidiary pays a dividend to the parent company.",
+            "Because translation differences arise only on intercompany loans between group entities and are therefore reported as a financing activity."
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -312,9 +312,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under US GAAP ASC 350, once a corporate goodwill impairment loss is formally recognized on the Income Statement, can it ever be reversed in future fiscal periods?",
           "options": [
-            "Yes, goodwill impairments can be reversed if approved by a majority vote of common shareholders at the annual general meeting.",
-            "No, unless the acquired reporting unit changes its sovereign legal jurisdiction within twelve months.",
-            "Yes, goodwill impairments must be reversed automatically if the reporting unit generates positive net cash flow for two consecutive years.",
+            "Yes, impairments can be reversed up to the original loss if the reporting unit's fair value later recovers above its carrying amount.",
+            "Yes, but only in the same fiscal year it was recognized, if the fair value estimate is later revised upward.",
+            "No, unless the reporting unit is sold within twelve months, in which case the write-down is reversed through the Income Statement.",
             "No, goodwill impairment write-downs are permanent and cannot be reversed under US GAAP in subsequent reporting periods under any circumstances."
           ],
           "answer": 3,
@@ -682,9 +682,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Which of the following scenarios constitutes a Level 2 fair value measurement under ASC 820?",
           "options": [
             "A corporate bond valued via matrix pricing using published Treasury yields plus observable credit rating spreads for peer issues",
-            "Apple Inc. common stock shares trading on NASDAQ evaluated at the closing price of the measurement date",
-            "A private startup venture stake valued solely using internal executive financial projections discounted at 25%",
-            "Physical cash held in commercial bank escrow accounts verified via direct confirmation letters"
+            "Common stock shares of a large listed company trading on a major exchange, evaluated at the closing price on the measurement date",
+            "A private startup venture stake valued solely using internal executive financial projections discounted at a 25% rate",
+            "A bank deposit receipt held in a commercial escrow account and verified through direct bank confirmation letters"
           ],
           "answer": 0,
           "why": "Under ASC 820, Level 2 inputs are observable market-corroborated parameters such as published yield curves and peer credit spreads applied to matrix pricing models, unlike Level 1 (quoted identical market) or Level 3 (unobservable internal assumptions).",
@@ -753,10 +753,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In accounting for convertible debt with bifurcated equity under ASC 470 / IAS 32, how is the equity component initially measured?",
           "options": [
-            "As 50% of the total cash proceeds received from investors regardless of interest rates",
+            "As the fair value of the conversion option alone, measured by the Black-Scholes model at the issue date and fixed for the term",
             "By recording the entire cash proceeds as a liability and booking equity only when bondholders actually convert",
             "As the residual difference between total issue proceeds and the fair value of the host debt liability discounted at straight market debt yields",
-            "By valuing the conversion option via Black-Scholes and multiplying by the total number of common shares authorized in corporate bylaws"
+            "As the difference between the bond's face value and the total coupon interest payable to bondholders over the full term"
           ],
           "answer": 2,
           "why": "Under the bifurcation framework, the host liability is measured first as the present value of contractual cash flows at straight debt yields, and the entire residual proceeds are allocated to the equity conversion feature.",
@@ -1225,9 +1225,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the accounting nature of a Bank Overdraft balance in the enterprise Cash Book and Balance Sheet?",
           "options": [
             "A credit balance in the Cash Book representing a current liability owed to the bank.",
-            "A debit balance in the Cash Book representing an intangible commercial asset.",
-            "An off-balance-sheet contingent liability that requires no journal entry until formal loan default.",
-            "A permanent equity reserve created by retained earnings capitalization."
+            "A debit balance in the Cash Book representing a current asset held with the bank.",
+            "A credit balance in the Cash Book netted against sales revenue in the Profit and Loss Account.",
+            "A contingent liability disclosed only in the notes until the bank formally demands repayment."
           ],
           "answer": 0,
           "why": "A bank overdraft occurs when withdrawals exceed deposits, resulting in a credit balance in the Cash Book bank column and presenting as a Current Liability on the Balance Sheet.",
@@ -2580,8 +2580,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under International Accounting Standard (IAS) 2 and AS 2, how must Closing Inventory be valued for financial statement presentation?",
           "options": [
             "At original historical cost regardless of physical damage or technological obsolescence.",
-            "At discounted cash flow liquidation value under distressed liquidation conditions.",
-            "At the highest potential future selling price projected by marketing directors.",
+            "At net realizable value for every item, even when NRV is above cost",
+            "At current replacement cost on the balance sheet date, whether higher or lower than cost",
             "At the Lower of Cost or Net Realizable Value (NRV), calculated on an item-by-item basis."
           ],
           "answer": 3,
@@ -3986,10 +3986,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the mandatory HSN digit reporting threshold for enterprise taxpayers with annual aggregate turnover exceeding ₹5 Crores?",
           "options": [
-            "Optional 2-digit HSN code only upon customer request",
+            "Minimum 4-digit HSN code on B2B invoices only, with exports exempt",
             "Minimum 6-digit HSN code on all B2B and export invoices",
-            "No HSN code required as long as description is in English",
-            "12-digit international barcode standard"
+            "Minimum 8-digit HSN code on all invoices including B2C retail sales",
+            "Minimum 2-digit HSN code on all B2B and export invoices"
           ],
           "answer": 1,
           "why": "Under statutory tax invoice guidelines, taxpayers with turnover exceeding ₹5 Crores must report minimum 6-digit HSN codes on all B2B invoices.",
@@ -4266,10 +4266,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory useful life assigned to capital goods for calculating monthly common credit reversals under Rule 43?",
           "options": [
-            "Indefinite useful life with no monthly apportionment",
+            "Precisely 36 Months (3 Years) from the invoice date",
             "Precisely 60 Months (5 Years) from the invoice date",
-            "120 Months based on straight-line accounting depreciation",
-            "12 Months from the date of trial production"
+            "Precisely 120 Months (10 Years) from the invoice date",
+            "Precisely 12 Months (1 Year) from the invoice date"
           ],
           "answer": 1,
           "why": "Rule 43 statutorily establishes the useful life of all capital goods as exactly 60 months from the date of the invoice.",
@@ -5728,9 +5728,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the maximum statutory deduction permitted under Section 24(b) for interest paid on housing loans for self-occupied properties in the Old Regime?",
           "options": [
             "Up to ₹2,00,000 per fiscal year",
-            "Unlimited deduction with no ceiling",
-            "Flat ₹50,000 only",
-            "Housing loan interest is completely non-deductible under Indian tax law"
+            "Up to ₹3,00,000 per fiscal year",
+            "Up to ₹1,50,000 per fiscal year",
+            "Up to ₹50,000 per fiscal year"
           ],
           "answer": 0,
           "why": "Section 24(b) permits a deduction of up to ₹2,00,000 per financial year for interest payable on housing loans borrowed for self-occupied property.",
@@ -5980,10 +5980,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the statutory holding period threshold for listed equity shares to qualify as a Long-Term Capital Asset under the Income Tax Act?",
           "options": [
-            "Held for at least 7 years under corporate charter rules",
+            "Held for more than 24 months from the date of acquisition",
             "Held for more than 36 months regardless of listing status",
             "Held for more than 12 months from the date of acquisition",
-            "Held for exactly 5 fiscal quarters"
+            "Held for more than 6 months from the date of acquisition"
           ],
           "answer": 2,
           "why": "Under Section 2(42A), listed equity shares and equity-oriented mutual fund units qualify as long-term capital assets if held for more than 12 months.",
@@ -6618,7 +6618,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Cash Flow from Investing Activities (CFI) as a capital expenditure cash outflow",
             "Cash Flow from Operating Activities (CFO) as a direct material purchase of the period",
             "Cash Flow from Financing Activities (CFF) as a long-term borrowing transaction",
-            "It is excluded from the Cash Flow Statement because it is a non-cash accounting entry"
+            "Disclosed only in the notes as a supplementary item outside the three activity classifications"
           ],
           "answer": 0,
           "why": "Acquisition of fixed assets and long-term capital investments is classified as an Investing Activity (CFI) cash outflow under AS-3.",
@@ -7049,8 +7049,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "Write off the cost of the 20 missing units as an extraordinary loss on disposal of fixed assets",
             "Block payment for the excess 20 units and ask the vendor for a credit note or issue a debit note for the unreceived units",
-            "Pay the full invoice immediately and charge the difference to miscellaneous factory overheads without notifying procurement",
-            "Amend the warehouse Goods Receipt Note post-facto to reflect 200 units so the ERP matching engine passes"
+            "Pay the full invoice and recover the 20-unit difference by reducing the price on the vendor's next purchase order",
+            "Pay for 180 units and book the disputed 20 units as an advance to the vendor without raising a debit note"
           ],
           "answer": 1,
           "why": "Standard accounts payable internal control mandates putting the payment on hold and issuing a debit note or demanding an official supplier credit note for the shortfall (20 units), ensuring corporate cash is only disbursed for verified physical receipts.",
@@ -7615,7 +7615,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "In proportion to relative standalone selling prices: Hardware $48,000 (50%), Cloud $32,000 (33.33%), Installation $16,000 (16.67%)",
             "Hardware receives its full $60,000 SSP, and the remaining $36,000 is split equally between Cloud and Installation",
-            "The entire $24,000 discount is deducted solely from the Cloud SaaS platform because software has zero marginal cost",
+            "The entire $24,000 discount is allocated to Installation because it is satisfied last; Hardware and Cloud stay at full SSP",
             "The transaction price is divided equally into three equal portions of $32,000 each regardless of individual value"
           ],
           "answer": 0,
@@ -7642,8 +7642,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 115, how must an entity account for sales commissions paid to sales representatives to secure a 3-year commercial contract?",
           "options": [
-            "Deduct directly from the retained earnings reserve on the balance sheet without touching the income statement",
-            "Charge the full amount to the customer as an unbilled statutory administrative fee",
+            "Record it as a reduction of contract revenue on the signing date, like a rebate paid to the customer",
+            "Capitalize it as an asset but amortize it over the first year only, regardless of the 3-year term",
             "Expense immediately in full as operating selling expenses in the month the contract is signed",
             "Capitalize as an asset (incremental cost of obtaining a contract) and amortize over the contract performance period"
           ],
@@ -7954,10 +7954,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three cumulative criteria must be satisfied to establish the 'Highest and Best Use' (HBU) of a non-financial asset under Ind AS 113?",
           "options": [
-            "Insured by an accredited underwriter, held for over 10 years, and yielding a positive ROI",
-            "Nominated by the statutory auditor, registered with the municipal corporation, and debt-free",
+            "Physically possible, legally permissible, and currently in use by the owner",
+            "Legally permissible, financially feasible, and identical to the asset's present use",
             "Physically possible, legally permissible, and financially feasible",
-            "Technologically automated, tax-free, and approved by the board of directors"
+            "Physically possible, financially feasible, and approved by the statutory auditor"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8159,9 +8159,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "Under the Simplified Approach of Ind AS 109.5.5.15, how is impairment measured for trade receivables without a significant financing component?",
           "options": [
             "At an amount equal to Lifetime Expected Credit Losses from Day 1, typically using an aging provision matrix",
-            "At 12-month ECL for the first 10 years, transitioning to lifetime ECL only upon formal court winding-up",
-            "Impairment is prohibited; trade receivables are carried at nominal face value forever",
-            "At a flat 50% write-down immediately upon issuing the commercial sales invoice"
+            "At 12-month ECL on initial recognition, moving to lifetime ECL only after a significant increase in credit risk is identified",
+            "At incurred losses only, recognized in the books once a customer has actually defaulted on a specific invoice",
+            "At fair value through profit or loss each period, with no separate loss allowance or provision matrix"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8309,7 +8309,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "$517,023.69 (Initial Lease Liability PV of $492,023.69 + $25,000 initial direct costs)",
             "$600,000 representing the undiscounted sum of 5 annual lease payments",
             "$120,000 representing the first year's contractual rent installment",
-            "Zero, because commercial leases are kept completely off-balance-sheet"
+            "$492,023.69, the initial lease liability alone, excluding the $25,000 direct costs"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8365,10 +8365,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Enterprise Financial Controller Suite upon verifying all financial invariants?",
           "options": [
-            "FINANCIAL_STATEMENTS_RESTATEMENT_REQUIRED",
-            "IND_AS_COMPLIANCE_TERMINATED_UNKNOWN",
+            "ENTERPRISE_CONTROLLER_IND_AS_SUITE_COMPLETE",
+            "FINANCIAL_CONTROLLERSHIP_SUITE_VERIFIED",
             "ENTERPRISE_CONTROLLER_IND_AS_SUITE_PASS",
-            "CONVERGED_ACCOUNTING_AUDIT_REJECTED_FAIL"
+            "ENTERPRISE_FINANCIAL_STATEMENTS_SUITE_OK"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -8541,9 +8541,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the terminal confirmation string emitted by the Ind AS 102 simulation engine upon verifying all mathematical and statutory assertions?",
           "options": [
-            "SHARE_BASED_RESERVE_DISCREPANCY_ERROR",
-            "INTRINSIC_VALUE_METHOD_TERMINATED",
-            "ESOP_VALUATION_REJECTED_AUDIT_FAIL",
+            "IND_AS_102_SHARE_BASED_RESERVE_RECONCILED",
+            "ESOP_VALUATION_SUITE_VERIFIED_OK",
+            "SHARE_BASED_PAYMENTS_ENGINE_COMPLETE",
             "IND_AS_102_SHARE_BASED_PAYMENTS_PASS"
           ],
           "answer": 3,
@@ -8715,9 +8715,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the terminal confirmation string emitted by the Ind AS 12 simulation engine upon verifying all balance sheet temporary difference assertions?",
           "options": [
             "IND_AS_12_INCOME_TAXES_DTA_DTL_PASS",
-            "DEFERRED_TAX_CALCULATION_REJECTED_AUDIT_ERROR",
-            "BALANCE_SHEET_LIABILITY_MISMATCH_FAIL",
-            "INCOME_TAX_RECONCILIATION_ABORTED"
+            "DEFERRED_TAX_BALANCE_SHEET_RECONCILED_OK",
+            "IND_AS_12_TEMPORARY_DIFFERENCES_VERIFIED",
+            "INCOME_TAXES_DTA_DTL_ENGINE_COMPLETE"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -8892,10 +8892,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the terminal confirmation string emitted by the Ind AS 33 simulation engine upon verifying all basic and diluted EPS assertions?",
           "options": [
-            "ANTI_DILUTIVE_FILTERING_EXCEPTION",
+            "IND_AS_33_DILUTED_EPS_VERIFIED_OK",
             "IND_AS_33_EARNINGS_PER_SHARE_PASS",
-            "DILUTED_EPS_CALCULATION_ABORTED_AUDIT_ERROR",
-            "TREASURY_STOCK_PROCEEDS_MISMATCH_FAIL"
+            "BASIC_AND_DILUTED_EPS_ENGINE_COMPLETE",
+            "EARNINGS_PER_SHARE_TREASURY_METHOD_RECONCILED"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -9035,8 +9035,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Which of the following costs can be legally included in a restructuring provision under Ind AS 37?",
           "options": [
-            "Anticipated future operational losses up to the closure date",
-            "Marketing campaigns to promote the remaining corporate divisions",
+            "Anticipated future operating losses expected to be incurred up to the planned closure date",
+            "Marketing campaigns intended to promote the remaining corporate divisions after the restructuring",
             "Future retraining costs of retained employees and IT software infrastructure upgrades",
             "Direct employee redundancy severance packages and contractual lease termination penalties"
           ],
@@ -9064,10 +9064,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the terminal confirmation string emitted by the Ind AS 37 simulation engine upon verifying all provisioning and restructuring assertions?",
           "options": [
-            "RESTRUCTURING_PROVISION_DISALLOWED_FAIL",
-            "DECOMMISSIONING_DISCOUNT_MISMATCH_ERROR",
+            "IND_AS_37_PROVISIONS_ENGINE_COMPLETE",
+            "RESTRUCTURING_AND_DECOMMISSIONING_VERIFIED_OK",
             "IND_AS_37_PROVISIONS_CONTINGENCIES_PASS",
-            "CONTINGENT_LIABILITY_AUDIT_EXCEPTION"
+            "CONTINGENT_LIABILITY_CLASSIFICATION_RECONCILED"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9233,10 +9233,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Corporate Tax, Equity & Capital Reporting Suite upon verifying all assertions?",
           "options": [
-            "CAPITAL_STRUCTURE_SIMULATION_AUDIT_FAIL",
-            "DEFERRED_TAX_AND_DILUTION_REJECTED",
+            "CORPORATE_TAX_EQUITY_SUITE_VERIFIED_OK",
+            "CAPITAL_REPORTING_SUITE_COMPLETE",
             "CORPORATE_TAX_EQUITY_CAPITAL_SUITE_PASS",
-            "IND_AS_CAPSTONE_TERMINATED_UNKNOWN"
+            "DEFERRED_TAX_DILUTION_PROVISIONS_RECONCILED"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -9546,7 +9546,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "$250,000.00 equal to the inventory unrealized profit",
             "$600,000.00 (20% of Zenith's $3,000,000 net profit)",
-            "Zero, because minority shareholders do not share in profits",
+            "$750,000.00 (20% of Zenith's profit grossed up for the unrealized inventory profit)",
             "$2,250,000.00 (20% of total group consolidated profit)"
           ],
           "answer": 1,
@@ -9574,9 +9574,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the final confirmation string emitted by the Consolidated Financial Statements Engine?",
           "options": [
             "IND_AS_110_CONSOLIDATION_ELIMINATIONS_PASS",
-            "CONSOLIDATION_FAILED_RECIPROCAL_IMBALANCE",
-            "NCI_ATTRIBUTION_ERROR_REJECTED",
-            "GROUP_REPORTING_TERMINATED_UNKNOWN"
+            "IND_AS_110_CONSOLIDATION_RECONCILED_OK",
+            "NCI_ATTRIBUTION_ENGINE_COMPLETE",
+            "GROUP_FINANCIAL_STATEMENTS_VERIFIED"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -9745,9 +9745,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Joint Arrangements & Equity Method Engine?",
           "options": [
-            "JOINT_OPERATION_REVENUE_REJECTED",
-            "PARTNERSHIP_AUDIT_TERMINATED_UNKNOWN",
-            "EQUITY_METHOD_FAILED_UNBALANCED_CARRYING_VALUE",
+            "IND_AS_111_JOINT_OPERATION_RECONCILED_COMPLETE",
+            "JOINT_ARRANGEMENTS_SUITE_ENGINE_COMPLETE",
+            "EQUITY_METHOD_CARRYING_VALUE_RECONCILED",
             "IND_AS_111_JOINT_ARRANGEMENTS_EQUITY_METHOD_PASS"
           ],
           "answer": 3,
@@ -9918,10 +9918,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Group Disclosures Engine?",
           "options": [
-            "DISCLOSURE_VALIDATION_FAILED_RECONCILIATION_ERROR",
-            "STRUCTURED_ENTITY_EXPOSURE_REJECTED",
+            "IND_AS_112_DISCLOSURES_RECONCILED_OK",
+            "GROUP_DISCLOSURES_ENGINE_COMPLETE",
             "IND_AS_112_GROUP_DISCLOSURES_SUITE_PASS",
-            "GROUP_TRANSPARENCY_TERMINATED_UNKNOWN"
+            "STRUCTURED_ENTITY_EXPOSURE_VERIFIED"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10006,7 +10006,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "In the Phoenix-Zenith acquisition ($14.5M consideration, $12,394,624 net assets, 20% NCI), what is the proportionate goodwill recognized?",
           "options": [
             "$2,105,376.00 based on unadjusted book values",
-            "Zero, because the transaction was a common control transfer",
+            "$2,478,924.80, the non-controlling interest's proportionate share of net assets only",
             "$4,584,300.80 ($14.5M + $2,478,924.80 - $12,394,624.00)",
             "$5,605,376.00 based on full goodwill"
           ],
@@ -10066,7 +10066,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "Quantum Associate Carrying Value = $4,980,000.00; Structured Entity Max Loss Exposure = $5,000,000.00",
             "Quantum Associate Carrying Value = $4,500,000.00; Structured Entity Max Loss Exposure = $50,000,000.00",
             "Quantum Associate Carrying Value = $4,800,000.00; Structured Entity Max Loss Exposure = $2,000,000.00",
-            "Quantum Associate Carrying Value = Zero; Structured Entity Max Loss Exposure = Zero"
+            "Quantum Associate Carrying Value = $5,200,000.00; Structured Entity Max Loss Exposure = $3,000,000.00"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -10093,10 +10093,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Multi-National Enterprise Group Consolidation & M&A Suite upon verifying all assertions?",
           "options": [
-            "PPA_AND_EQUITY_METHOD_REJECTED",
+            "GROUP_CONSOLIDATION_SUITE_VERIFIED_OK",
             "GROUP_CONSOLIDATION_MA_SUITE_PASS",
-            "IND_AS_CAPSTONE_TERMINATED_UNKNOWN",
-            "CONSOLIDATION_SIMULATION_AUDIT_FAIL"
+            "PPA_AND_EQUITY_METHOD_ENGINE_COMPLETE",
+            "MA_CONSOLIDATION_SUITE_RECONCILED"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10438,7 +10438,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Apex Engineering case study, what are the verified values for 3-Stage DuPont ROE and Economic Value Added (EVA)?",
           "options": [
-            "3-Stage DuPont ROE = 35.00%; Economic Value Added (EVA) = Zero",
+            "3-Stage DuPont ROE = 35.00%; Economic Value Added (EVA) = $3,210,000.00",
             "3-Stage DuPont ROE = 12.47%; Economic Value Added (EVA) = $17,959,680.00",
             "3-Stage DuPont ROE = 19.11%; Economic Value Added (EVA) = $10,810,000.00",
             "3-Stage DuPont ROE = 24.94%; Economic Value Added (EVA) = $7,149,680.00"
@@ -10587,7 +10587,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "A Z-Score between 1.81 and 2.99",
             "A Z-Score less than 1.81",
-            "A Z-Score equal to exactly zero",
+            "A Z-Score strictly greater than 1.81, provided interest coverage exceeds 3x",
             "A Z-Score strictly greater than 2.99"
           ],
           "answer": 3,
@@ -10780,9 +10780,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "In the Veritas Technologies case study, what are the verified values for the Accrual Ratio and Beneish M-Score?",
           "options": [
-            "Accrual Ratio = 0.00%; Beneish M-Score = 0.00 (Indeterminate Risk)",
+            "Accrual Ratio = +6.30%; Beneish M-Score = -2.45 (Low Risk (Unlikely Manipulator))",
             "Accrual Ratio = -2.59%; Beneish M-Score = -2.09 (Low Risk (Unlikely Manipulator))",
-            "Accrual Ratio = -15.00%; Beneish M-Score = -4.84 (Zero Risk)",
+            "Accrual Ratio = -8.40%; Beneish M-Score = -3.10 (Low Risk (Unlikely Manipulator))",
             "Accrual Ratio = +12.50%; Beneish M-Score = -1.50 (High Risk (Likely Manipulator))"
           ],
           "answer": 1,
@@ -10893,7 +10893,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "5-Stage ROE = 12.47%; ROIC = 11.50%; Economic Value Added (EVA) = $17,959,680.00",
             "5-Stage ROE = 24.94%; ROIC = 19.11%; Economic Value Added (EVA) = $7,149,680.00",
             "5-Stage ROE = 20.00%; ROIC = 24.94%; Economic Value Added (EVA) = $10,810,000.00",
-            "5-Stage ROE = 35.00%; ROIC = 8.00%; Economic Value Added (EVA) = Zero"
+            "5-Stage ROE = 35.00%; ROIC = 8.00%; Economic Value Added (EVA) = $3,210,000.00"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -10920,7 +10920,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "DCL = 4.00x; Altman Z-Score = 5.00 (Safe Zone); Beneish M-Score = -4.84 (Zero Risk)",
             "DCL = 1.60x; Altman Z-Score = 1.81 (Grey Zone); Beneish M-Score = -1.50 (High Risk (Likely Manipulator))",
             "DCL = 2.00x; Altman Z-Score = 3.92 (Safe Zone); Beneish M-Score = -2.09 (Low Risk (Unlikely Manipulator))",
-            "DCL = 1.25x; Altman Z-Score = 1.20 (Distress Zone); Beneish M-Score = 0.00 (Indeterminate)"
+            "DCL = 1.25x; Altman Z-Score = 1.20 (Distress Zone); Beneish M-Score = -3.10 (Low Risk (Unlikely Manipulator))"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -10945,9 +10945,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Corporate Financial Diagnostics & Forensic Audit Suite upon verifying all assertions?",
           "options": [
-            "LEVERAGE_AND_FORENSICS_TERMINATED",
-            "IND_AS_CAPSTONE_UNKNOWN_EXCEPTION",
-            "CORPORATE_DIAGNOSTICS_FAILED_AUDIT",
+            "CORPORATE_DIAGNOSTICS_SUITE_VERIFIED_OK",
+            "FINANCIAL_FORENSIC_AUDIT_SUITE_COMPLETE",
+            "LEVERAGE_AND_FORENSICS_SUITE_RECONCILED",
             "CORPORATE_FINANCIAL_DIAGNOSTICS_SUITE_PASS"
           ],
           "answer": 3,
@@ -11089,10 +11089,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 36.124, what is the statutory rule regarding the reversal of an impairment loss previously recognized for Goodwill?",
           "options": [
-            "Goodwill impairment can be reversed with prior approval of the Board Audit Committee",
+            "Goodwill impairment can be reversed up to the original loss when the recoverable amount later exceeds carrying amount",
             "An impairment loss recognized for goodwill shall NOT be reversed in any subsequent period under any circumstances",
             "Goodwill impairment must be automatically reversed after 3 consecutive profitable financial years",
-            "Goodwill impairment may be reversed whenever market interest rates fall by more than 100 basis points"
+            "Goodwill impairment may be reversed only in the same financial year in which it was recognized"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11117,9 +11117,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the final confirmation string emitted by the Enterprise Ind AS 36 Impairment Engine upon verifying all calculations and reconciliations?",
           "options": [
             "IND_AS_36_ASSET_IMPAIRMENT_PASS",
-            "IND_AS_36_IMPAIRMENT_FAILED",
-            "RECOVERABLE_AMOUNT_CALCULATION_ERROR",
-            "GOODWILL_REVERSAL_PROHIBITED_HALT"
+            "IND_AS_36_IMPAIRMENT_ENGINE_COMPLETE",
+            "RECOVERABLE_AMOUNT_RECONCILED_OK",
+            "CGU_WATERFALL_WRITE_DOWN_VERIFIED"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11258,8 +11258,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "They shall NOT be recognized as intangible assets under any circumstances",
             "They may be recognized if valued by an independent merchant banker",
-            "They can be capitalized up to 50% of market advertising expenditures",
-            "They are recognized directly in Other Comprehensive Income (OCI)"
+            "They may be recognized if the entity can reliably measure their cost through a one-time valuation",
+            "They can be capitalized once they have operated for three consecutive profitable years"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -11284,10 +11284,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Enterprise Ind AS 38 Intangibles Engine upon verifying all R&D and amortization assertions?",
           "options": [
-            "INTANGIBLE_AMORTIZATION_OVERFLOW",
+            "IND_AS_38_INTANGIBLES_ENGINE_COMPLETE",
             "IND_AS_38_INTANGIBLE_ASSETS_PASS",
-            "IND_AS_38_RND_CAPITALIZATION_FAILED",
-            "PIRATE_CRITERIA_VERIFICATION_ERROR"
+            "RND_CAPITALIZATION_RECONCILED_OK",
+            "AMORTIZATION_SCHEDULE_VERIFIED"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11368,10 +11368,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What three cumulative criteria must an alternative use satisfy to be established as the Highest and Best Use (HBU) of a non-financial asset?",
           "options": [
-            "It must have zero conversion costs, government ownership, and guaranteed export subsidies",
+            "It must have zero conversion costs, existing market demand, and be currently in use by the owner",
             "It must be physically possible, legally permissible, and financially feasible",
-            "It must be approved by the tax department, insured against earthquakes, and fully depreciated",
-            "It must be identical to competitor usage, liquid within 24 hours, and paid in foreign currency"
+            "It must be physically possible, legally permissible, and approved by the statutory auditor",
+            "It must be legally permissible, financially feasible, and identical to the asset's present use"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -11453,10 +11453,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Enterprise Ind AS 113 Fair Value Engine upon verifying all hierarchy and portfolio reconciliations?",
           "options": [
-            "LEVEL3_DISCLOSURE_INCOMPLETE_HALT",
-            "FAIR_VALUE_HIERARCHY_RECONCILIATION_ERROR",
+            "IND_AS_113_FAIR_VALUE_ENGINE_COMPLETE",
+            "FAIR_VALUE_HIERARCHY_RECONCILED_OK",
             "IND_AS_113_FAIR_VALUE_MEASUREMENT_PASS",
-            "HBU_VALUATION_PREMISE_FAILED"
+            "HBU_VALUATION_PREMISE_VERIFIED"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -11625,9 +11625,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Enterprise Ind AS 105 Engine upon verifying all measurement and single-line P&L assertions?",
           "options": [
-            "DISPOSAL_GROUP_ALLOCATION_FAILED",
-            "SINGLE_LINE_PNL_RECONCILIATION_EXCEPTION",
-            "IND_AS_105_MEASUREMENT_ERROR_HALT",
+            "IND_AS_105_HELD_FOR_SALE_RECONCILED_OK",
+            "DISPOSAL_GROUP_ENGINE_COMPLETE",
+            "SINGLE_LINE_PNL_CARVE_OUT_VERIFIED",
             "IND_AS_105_HELD_FOR_SALE_DISCONTINUED_PASS"
           ],
           "answer": 3,
@@ -11860,10 +11860,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "Under Ind AS 1.10, what are the five components that comprise a complete set of financial statements?",
           "options": [
-            "Balance Sheet, Bank Passbook, GST Returns, Tax Audit Report, and Board Minutes",
+            "Balance Sheet, Statement of Profit & Loss (with OCI), Trial Balance, Statement of Cash Flows, and Notes",
             "Balance Sheet, Statement of Profit & Loss (with OCI), SOCIE, Statement of Cash Flows, and Notes",
             "Trial Balance, Cash Book, Sales Day Book, Petty Cash Ledger, and Purchase Register",
-            "Stock Register, Fixed Asset Register, Depreciation Schedule, and Payroll Summary"
+            "Balance Sheet, Statement of Profit & Loss, SOCIE, Directors' Report, and Auditor's Report"
           ],
           "answer": 1,
           "answerIndex": 1,
@@ -12103,8 +12103,8 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "options": [
             "They must be excluded from the Statement of Cash Flows and disclosed in the notes",
             "They must be reported as cash receipts under operating activities",
-            "They must be added to cash balances as physical bank currency",
-            "They are strictly prohibited from being disclosed anywhere in the financial statements"
+            "They must be reported as financing cash inflows at the fair value of the asset leased",
+            "They must be included in investing activities at the asset's original cost"
           ],
           "answer": 0,
           "answerIndex": 0,
@@ -12162,10 +12162,10 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
         "check": {
           "question": "What is the final confirmation string emitted by the Enterprise Ind AS 7 Cash Flow Engine upon verifying all cash flow reconciliations?",
           "options": [
-            "OPERATING_CASH_FLOW_CALCULATION_ERROR",
-            "IND_AS_7_FINANCING_UNRECONCILED",
+            "IND_AS_7_CASH_FLOW_ENGINE_COMPLETE",
+            "OPERATING_CASH_FLOW_RECONCILED_OK",
             "IND_AS_7_CASH_FLOW_STATEMENT_PASS",
-            "CASH_FLOW_DISCREPANCY_HALT"
+            "FINANCING_ACTIVITIES_VERIFIED"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12459,7 +12459,7 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
             "They must be recognized as an operating expense in the Statement of Profit and Loss",
             "They must be recorded as an immediate current liability on the balance sheet at the reporting date",
             "They shall NOT be recognized as a liability at the reporting date, but must be disclosed in the notes",
-            "They are deducted directly from cash and cash equivalents on the balance sheet"
+            "They are adjusted against opening retained earnings of the next financial year without any note disclosure"
           ],
           "answer": 2,
           "answerIndex": 2,
@@ -12519,9 +12519,9 @@ export const BCOM_ACCOUNTING_LONG_LESSONS: ReadonlyArray<LongLesson> = [
           "question": "What is the final confirmation string emitted by the Enterprise Ind AS 10 Engine upon verifying all adjusting and non-adjusting calculations?",
           "options": [
             "IND_AS_10_EVENTS_AFTER_REPORTING_PASS",
-            "ADJUSTING_EVENT_CALCULATION_ERROR",
-            "NON_ADJUSTING_DISCLOSURE_FAILED",
-            "GOING_CONCERN_EXCEPTION_HALT"
+            "IND_AS_10_EVENTS_ENGINE_COMPLETE",
+            "ADJUSTING_EVENTS_RECONCILED_OK",
+            "NON_ADJUSTING_DISCLOSURE_VERIFIED"
           ],
           "answer": 0,
           "answerIndex": 0,
