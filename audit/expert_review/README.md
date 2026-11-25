@@ -15,3 +15,6 @@ One checklist per course; tick an item if it is correct, otherwise write the cor
 | 4 | Other eight courses | bcom_*_checklist.md | subject-matter expert | 40 each |
 
 Tax and law first: rules and thresholds there change most often (Finance Acts, 2024-2025 amendments) and a wrong statement can mislead a student in practice.
+
+## AI pre-screen (2026-11-26) - start here for tax and law
+`bcom_tax_prescreen.md` and `bcom_law_prescreen.md` list the claims an AI check (with web sources) marked likely wrong or unsure. Reviewers can start with those; nothing in the lessons was changed. Course-wide point for tax: the Income-tax Act, 2025 replaced the 1961 Act from 1 Apr 2026, so 1961 section numbers throughout the tax course need a decision (keep with a note, or renumber).
