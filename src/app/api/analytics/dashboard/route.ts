@@ -77,11 +77,12 @@ export async function GET(req: NextRequest) {
         const primarySelect = await admin
           .from('users')
           .select(
-            'ats_score, career_dna_score, trust_score, recruiter_visibility, mission_streak, career_readiness, completed_missions, completed_quests, arena_elo, arena_wins, arena_losses, weekly_xp, xp_total, weekly_arena_points, league_tier, league_joined_at, pins, bonus_pins, target_role, onboarding_answers'
+            'ats_score, career_dna_score, trust_score, recruiter_visibility, mission_streak, career_readiness, completed_missions, completed_quests, arena_elo, arena_wins, arena_losses, weekly_xp, xp_total, weekly_arena_points, league_tier, league_joined_at, last_league_eval, pins, bonus_pins, target_role, onboarding_answers'
           )
           .eq('id', studentId)
           .maybeSingle();
 
+        let hasLastLeagueEvalField = false;
         if (primarySelect.error) {
           console.warn('[analytics/dashboard] Full users select failed, falling back to core columns:', primarySelect.error.message);
           const fallbackSelect = await admin
@@ -92,6 +93,7 @@ export async function GET(req: NextRequest) {
           userRow = fallbackSelect.data || null;
         } else {
           userRow = primarySelect.data || null;
+          hasLastLeagueEvalField = Boolean(userRow && Object.prototype.hasOwnProperty.call(userRow, 'last_league_eval'));
         }
 
         if (userRow) {
@@ -118,6 +120,10 @@ export async function GET(req: NextRequest) {
               userId: studentId,
               storedWeeklyXp: weeklyXp,
               storedArenaPoints: weeklyArenaPoints,
+              storedTotalXp: careerXp,
+              lastLeagueEval: userRow.last_league_eval ?? null,
+              hasLastLeagueEvalField,
+              arenaWins,
             });
             weeklyXp = reconciledLeague.weeklyXp;
             weeklyArenaPoints = reconciledLeague.arenaPoints;

@@ -5,7 +5,7 @@ import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
 import { generateDynamicStudentRoadmap } from '@/lib/data/roadmapFuser';
 import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 import { collectUserRoadmapEvidence, type UserRoadmapEvidence } from '@/lib/roadmap/userEvidenceContext';
-import { getRoadmapCourseIds } from '@/lib/roadmap/roadmapCourses';
+import { resolveGoalPrimaryCourse, selectRelevantCourseIds } from '@/lib/roadmap/roadmapCourseSelector';
 
 export const maxDuration = 30;
 
@@ -15,64 +15,6 @@ function stripThinkingAndFences(raw: string): string {
     .replace(/^[\s\S]*?```(?:json)?/i, '')
     .replace(/```[\s\S]*$/, '')
     .trim();
-}
-
-/**
- * Deterministically ranks COURSES_REGISTRY matches against the user's goal, resume/vault
- * skills, projects, and declared weak areas/gaps when LLM selection is absent or offline.
- */
-function selectEvidenceDrivenCourseIds(
-  primaryCourseId: string,
-  durationDays: number,
-  goal: string,
-  evidence: UserRoadmapEvidence | null
-): string[] {
-  const maxCourses = Math.max(1, Math.min(6, Math.round(Math.max(30, durationDays) / 30)));
-  const canonicalIds = getRoadmapCourseIds(primaryCourseId, durationDays);
-  if (!evidence) return canonicalIds.slice(0, maxCourses);
-
-  const gapText = [...evidence.weakAreas, ...evidence.interviewGaps, goal].join(' ').toLowerCase();
-  const provenSet = new Set(evidence.provenSkills.map((s) => s.toLowerCase()));
-
-  const scored = COURSES_REGISTRY.map((course) => {
-    const cAny = course as any;
-    const courseSkills: string[] = Array.isArray(cAny.skills) ? cAny.skills : [];
-    const courseCat = String(cAny.category || '');
-    const haystack = `${course.title} ${course.desc} ${courseSkills.join(' ')} ${courseCat}`.toLowerCase();
-    let score = 0;
-
-    if (course.id === primaryCourseId) score += 25;
-    if (canonicalIds.includes(course.id)) score += 12;
-
-    // Strong boost for courses covering declared weak areas, interview gaps, and explicit goal
-    for (const token of gapText.split(/[^a-z0-9+#]+/).filter((t) => t.length >= 3)) {
-      if (haystack.includes(token)) score += 6;
-    }
-
-    // Moderate boost for extending projects/skills already present on resume
-    for (const skill of [...evidence.claimedSkills, ...evidence.provenSkills]) {
-      const s = skill.toLowerCase();
-      if (s.length >= 2 && haystack.includes(s)) {
-        score += provenSet.has(s) ? 2 : 4;
-      }
-    }
-
-    return { id: course.id, score };
-  }).sort((a, b) => b.score - a.score);
-
-  const chosen: string[] = [];
-  for (const item of scored) {
-    if (item.score <= 0 && chosen.length > 0) break;
-    if (!chosen.includes(item.id)) chosen.push(item.id);
-    if (chosen.length >= maxCourses) break;
-  }
-
-  // Top up with canonical path if fewer than maxCourses matched strongly
-  for (const cid of canonicalIds) {
-    if (chosen.length >= maxCourses) break;
-    if (!chosen.includes(cid)) chosen.push(cid);
-  }
-  return chosen.slice(0, maxCourses);
 }
 
 async function callRoadmapAi(systemPrompt: string, userPrompt: string): Promise<string | null> {
@@ -141,24 +83,6 @@ async function callRoadmapAi(systemPrompt: string, userPrompt: string): Promise<
   return null;
 }
 
-function resolveGoalAlignedCourse(requestedCourseId: string, goalText: string) {
-  const explicit = COURSES_REGISTRY.find((c) => c.id === requestedCourseId);
-  const lower = goalText.toLowerCase();
-  if (!lower) return explicit || COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js') || COURSES_REGISTRY[0];
-
-  if (/\b(?:python\s*ai|ai\s*engineer|machine\s*learning|ml|llm|generative)\b/i.test(lower)) {
-    return COURSES_REGISTRY.find((c) => c.id === 'course-ai-python') || explicit || COURSES_REGISTRY[0];
-  }
-  if (/\b(?:full[\s-]?stack|react|node|web\s*dev|frontend|backend)\b/i.test(lower)) {
-    // Prefer Full-Stack JS unless user explicitly asks for Python Backend or Java
-    if (/\bpython\b/i.test(lower) && !/\bfull[\s-]?stack\b/i.test(lower)) {
-      return COURSES_REGISTRY.find((c) => c.id === 'course-python-backend') || explicit || COURSES_REGISTRY[0];
-    }
-    return COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js') || explicit || COURSES_REGISTRY[0];
-  }
-  return explicit || COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js') || COURSES_REGISTRY[0];
-}
-
 export async function POST(req: Request) {
   try {
     const ip = getClientIp(req);
@@ -195,8 +119,9 @@ export async function POST(req: Request) {
       admin = getSupabaseAdmin();
     } catch {}
 
+    const includeResume = useResumeAndVault !== false;
     let evidence: UserRoadmapEvidence | null = null;
-    if (useResumeAndVault !== false) {
+    if (includeResume) {
       // Read pre-indexed Vault metadata first (~50ms); only download+OCR Storage PDF if no skills exist yet, with strict 2.5s budget
       evidence = await collectUserRoadmapEvidence(admin, userId, { parseStorageResume: false });
       if (
@@ -214,14 +139,20 @@ export async function POST(req: Request) {
 
     const resolvedGoal =
       String(goal || '').trim() ||
-      evidence?.careerGoal ||
-      evidence?.targetRole ||
+      (includeResume ? (evidence?.careerGoal || evidence?.targetRole) : '') ||
       'Full-Stack Software Engineer';
 
-    const matchedCourse = resolveGoalAlignedCourse(courseId, resolvedGoal);
+    const matchedCourse = resolveGoalPrimaryCourse(courseId, resolvedGoal);
 
-    const maxCourses = Math.max(1, Math.min(6, Math.round(Math.max(30, Number(durationDays) || 30) / 30)));
-    let selectedCourseIds = selectEvidenceDrivenCourseIds(matchedCourse.id, Number(durationDays) || 30, resolvedGoal, evidence);
+    const parsedDurationDays = Math.max(30, Number(durationDays) || 30);
+    const maxCourses = Math.max(1, Math.min(12, Math.round(parsedDurationDays / 30)));
+    let selectedCourseIds = selectRelevantCourseIds({
+      primaryCourseId: matchedCourse.id,
+      durationDays: parsedDurationDays,
+      goal: resolvedGoal,
+      evidence,
+      useResumeAndVault: includeResume,
+    });
 
     // Build base modules first (always executable quests from COURSES_REGISTRY)
     let baseModules = generateDynamicStudentRoadmap({
@@ -229,12 +160,12 @@ export async function POST(req: Request) {
       qt2,
       archetype,
       goal: resolvedGoal,
-      courseId: matchedCourse.id,
-      durationDays,
+      courseId: selectedCourseIds[0] || matchedCourse.id,
+      durationDays: parsedDurationDays,
       dailyPace,
       selectedCourseIds,
-      evidence,
-      weakAreas: evidence ? [...evidence.weakAreas, ...evidence.interviewGaps] : undefined,
+      evidence: includeResume ? evidence : null,
+      weakAreas: includeResume && evidence ? [...evidence.weakAreas, ...evidence.interviewGaps] : undefined,
     });
 
     let source: 'llm' | 'curated_template' = 'curated_template';
@@ -248,13 +179,13 @@ export async function POST(req: Request) {
       }
     ).join('\n');
 
-    const userContextBlock = evidence?.rawSummary
-      ? `STUDENT EVIDENCE FROM VAULT, RESUME & PROFILE:\n${evidence.rawSummary}`
-      : `Student Target Goal: ${resolvedGoal}\nTrack: ${matchedCourse.title}\nArchetype: ${archetype}`;
+    const userContextBlock = includeResume && evidence?.rawSummary
+      ? `STUDENT EVIDENCE FROM VAULT, RESUME & PROFILE:\n${evidence.rawSummary}\nCRITICAL RULE: NEVER put beginner syntax courses in Stage 1 for skills already present on the resume. Prioritize their Target Gaps FIRST.`
+      : `Student Target Goal (Goal-Only Mode — ignore any resume/vault docs): ${resolvedGoal}\nTrack: ${matchedCourse.title}`;
 
     const aiRaw = await callRoadmapAi(
       'You are a Principal Curriculum Architect. Output ONLY valid JSON matching the requested schema.',
-      `Design a personalized ${durationDays}-day roadmap for this student.
+      `Design a personalized ${parsedDurationDays}-day roadmap for this student.
 ${userContextBlock}
 Target Career Goal: "${resolvedGoal}"
 Daily Pace: ${dailyPace} quests/day | QT1: ${qt1}/100 | QT2: ${qt2}/100
@@ -262,7 +193,7 @@ Daily Pace: ${dailyPace} quests/day | QT1: ${qt1}/100 | QT2: ${qt2}/100
 AVAILABLE AUTHORITATIVE COURSES (you MUST only pick IDs from this exact list, up to ${maxCourses} course IDs):
 ${catalogDigest}
 
-CURRENT BASE STAGES:
+CURRENT BASE STAGES (already prioritized for Target Gaps & Goal):
 ${baseModules.map((m, i) => `${i + 1}. [${m.courseId}] ${m.title}`).join('\n')}
 
 Return ONLY valid JSON object:
@@ -272,12 +203,15 @@ Return ONLY valid JSON object:
     {
       "index": 1,
       "tailoredTitle": "Concise personalized stage title referencing actual skill focus",
-      "tailoredDesc": "1-2 crisp sentences connecting this stage to their resume/projects/gaps",
-      "whyThisStage": "Brief reason referencing their resume, vault proof, or detected skill gap"
+      "tailoredDesc": "1-2 crisp sentences connecting this stage to their goal or detected gaps",
+      "whyThisStage": "Brief reason referencing their goal, or (if enabled) their resume/detected gap"
     }
   ]
 }`
     );
+
+    const hasTargetGaps = Boolean(includeResume && evidence && (evidence.weakAreas.length > 0 || evidence.interviewGaps.length > 0));
+    const deterministicFirstCourse = selectedCourseIds[0];
 
     if (aiRaw) {
       try {
@@ -289,8 +223,17 @@ Return ONLY valid JSON object:
               .slice(0, maxCourses)
           : [];
 
+        // Keep gap-first Stage 1 course pinned when Target Gaps exist so Stage 1 never regresses to redundant intro syntax
+        const aiFirstIsRedundant = Boolean(
+          hasTargetGaps &&
+          validAiCourses.length > 0 &&
+          deterministicFirstCourse &&
+          validAiCourses[0] !== deterministicFirstCourse &&
+          ['course-fullstack-js', 'course-react-web', 'course-java-logic', 'course-python-backend'].includes(validAiCourses[0])
+        );
+
         // If AI chose a different valid set of courses from COURSES_REGISTRY, rebuild modules cleanly so quests match!
-        if (validAiCourses.length > 0 && validAiCourses.join(',') !== selectedCourseIds.join(',')) {
+        if (!aiFirstIsRedundant && validAiCourses.length > 0 && validAiCourses.join(',') !== selectedCourseIds.join(',')) {
           selectedCourseIds = validAiCourses;
           baseModules = generateDynamicStudentRoadmap({
             qt1,
@@ -298,11 +241,11 @@ Return ONLY valid JSON object:
             archetype,
             goal: resolvedGoal,
             courseId: validAiCourses[0],
-            durationDays,
+            durationDays: parsedDurationDays,
             dailyPace,
             selectedCourseIds: validAiCourses,
-            evidence,
-            weakAreas: evidence ? [...evidence.weakAreas, ...evidence.interviewGaps] : undefined,
+            evidence: includeResume ? evidence : null,
+            weakAreas: includeResume && evidence ? [...evidence.weakAreas, ...evidence.interviewGaps] : undefined,
           });
         }
 
@@ -316,7 +259,7 @@ Return ONLY valid JSON object:
                 title: String(match.tailoredTitle),
                 desc: match.tailoredDesc ? String(match.tailoredDesc) : m.desc,
                 whyThisStage: match.whyThisStage ? String(match.whyThisStage) : m.whyThisStage,
-                knowledgeAdaptationTag: evidence?.resumeTitle
+                knowledgeAdaptationTag: includeResume && evidence?.resumeTitle
                   ? `Tailored to Resume ("${evidence.resumeTitle}") & ${resolvedGoal}`
                   : `AI Customized for: ${resolvedGoal}`,
               };
@@ -330,13 +273,23 @@ Return ONLY valid JSON object:
       }
     }
 
-    const evidenceSummary = {
-      resumeTitle: evidence?.resumeTitle || null,
-      vaultDocsCount: evidence?.vaultDocsCount || 0,
-      provenSkills: (evidence?.provenSkills || []).slice(0, 8),
-      targetGaps: Array.from(new Set([...(evidence?.weakAreas || []), ...(evidence?.interviewGaps || [])])).slice(0, 8),
-      selectedCourseIds,
-    };
+    const evidenceSummary = includeResume
+      ? {
+          usedResume: true,
+          resumeTitle: evidence?.resumeTitle || null,
+          vaultDocsCount: evidence?.vaultDocsCount || 0,
+          provenSkills: (evidence?.provenSkills || []).slice(0, 8),
+          targetGaps: Array.from(new Set([...(evidence?.weakAreas || []), ...(evidence?.interviewGaps || [])])).slice(0, 8),
+          selectedCourseIds,
+        }
+      : {
+          usedResume: false,
+          resumeTitle: null,
+          vaultDocsCount: 0,
+          provenSkills: [],
+          targetGaps: [],
+          selectedCourseIds,
+        };
 
     // Persist personalized roadmap metadata cross-device into users.onboarding_answers when DB is available
     if (admin) {
@@ -353,7 +306,7 @@ Return ONLY valid JSON object:
               onboarding_answers: {
                 ...ob,
                 roadmap_modules: personalizedModules,
-                roadmap_evidence_summary: evidenceSummary,
+                ...(includeResume ? { roadmap_evidence_summary: evidenceSummary } : {}),
               },
             })
             .eq('id', userId);
@@ -364,8 +317,9 @@ Return ONLY valid JSON object:
             id: extraId,
             goal: resolvedGoal,
             courseId: selectedCourseIds[0] || matchedCourse.id,
-            durationDays,
+            durationDays: parsedDurationDays,
             dailyPace,
+            usedResume: includeResume,
             evidenceSummary,
           };
           const nextExtras = idx >= 0

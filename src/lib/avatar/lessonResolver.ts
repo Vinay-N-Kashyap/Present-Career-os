@@ -244,6 +244,26 @@ const TRACK_DEFAULT_COURSE: Record<string, string> = {
   iot_embedded: 'course-iot-embedded',
 };
 
+function computeCourseCurrentDay(entry: CourseIndexEntry, completed: string[], completedSet: Set<string>): { completedCount: number; currentDay: number } {
+  const prefixDot = `${entry.prefix}-`;
+  let completedCount = 0;
+  let maxCompletedDay = 0;
+  for (const qId of completed) {
+    if (qId.startsWith(prefixDot)) {
+      completedCount += 1;
+      const parsed = parseQuestId(qId);
+      if (parsed && parsed.dayNum > maxCompletedDay) maxCompletedDay = parsed.dayNum;
+    }
+  }
+  const incompleteDayQuest = entry.allQuestDays.find((q) => !completedSet.has(q.questId));
+  const currentDay = incompleteDayQuest
+    ? incompleteDayQuest.dayNum
+    : maxCompletedDay > 0
+      ? Math.min(60, maxCompletedDay)
+      : 1;
+  return { completedCount, currentDay };
+}
+
 function inferActiveCourseAndCurrentDay(
   index: CourseIndexEntry[],
   opts: {
@@ -251,16 +271,22 @@ function inferActiveCourseAndCurrentDay(
     completedQuests?: string[];
     enrolledTrack?: string;
   }
-): { activeCourse: CourseIndexEntry | null; currentDay: number } {
+): {
+  activeCourse: CourseIndexEntry | null;
+  currentDay: number;
+  progressedCourse: CourseIndexEntry | null;
+  progressedCurrentDay: number;
+} {
   const completed = Array.isArray(opts.completedQuests) ? opts.completedQuests : [];
   const completedSet = new Set(completed);
 
-  let activeCourse: CourseIndexEntry | null = opts.activeCourseId
+  const viewedCourse: CourseIndexEntry | null = opts.activeCourseId
     ? index.find((e) => e.courseId === opts.activeCourseId) || null
     : null;
 
-  // Infer active course from student's actual completed quests when not explicitly supplied
-  if (!activeCourse && completed.length > 0) {
+  let progressedCourse: CourseIndexEntry | null = null;
+  let progressedCurrentDay = 1;
+  if (completed.length > 0) {
     let bestCount = 0;
     let bestMaxDay = 0;
     for (const entry of index) {
@@ -277,9 +303,26 @@ function inferActiveCourseAndCurrentDay(
       if (count > bestCount || (count === bestCount && count > 0 && maxDay > bestMaxDay)) {
         bestCount = count;
         bestMaxDay = maxDay;
-        activeCourse = entry;
+        progressedCourse = entry;
       }
     }
+    if (progressedCourse) {
+      progressedCurrentDay = computeCourseCurrentDay(progressedCourse, completed, completedSet).currentDay;
+    }
+  }
+
+  let activeCourse = viewedCourse;
+  if (viewedCourse && progressedCourse && viewedCourse.courseId !== progressedCourse.courseId) {
+    const viewedStats = computeCourseCurrentDay(viewedCourse, completed, completedSet);
+    // If currently open tab/roadmap has ZERO completed quests while student has real completed progress elsewhere,
+    // prefer the actually-progressed course so "previous day" never resolves to an untouched course's Day 1.
+    if (viewedStats.completedCount === 0) {
+      activeCourse = progressedCourse;
+    }
+  }
+
+  if (!activeCourse && progressedCourse) {
+    activeCourse = progressedCourse;
   }
 
   if (!activeCourse && opts.enrolledTrack) {
@@ -290,27 +333,65 @@ function inferActiveCourseAndCurrentDay(
   }
 
   if (!activeCourse) {
-    return { activeCourse: null, currentDay: 1 };
+    return { activeCourse: null, currentDay: 1, progressedCourse, progressedCurrentDay };
   }
 
-  // Determine the student's current day: first day whose lecture or tasks aren't all completed
-  let currentDay = 1;
-  const incompleteDayQuest = activeCourse.allQuestDays.find((q) => !completedSet.has(q.questId));
-  if (incompleteDayQuest) {
-    currentDay = incompleteDayQuest.dayNum;
-  } else if (completedSet.size > 0) {
-    let maxCompletedDay = 1;
-    const prefixDot = `${activeCourse.prefix}-`;
-    for (const qId of completed) {
-      if (qId.startsWith(prefixDot)) {
-        const parsed = parseQuestId(qId);
-        if (parsed && parsed.dayNum > maxCompletedDay) maxCompletedDay = parsed.dayNum;
-      }
+  const currentDay = computeCourseCurrentDay(activeCourse, completed, completedSet).currentDay;
+  return { activeCourse, currentDay, progressedCourse, progressedCurrentDay };
+}
+
+const TOPIC_STOP_WORDS = new Set([
+  'i', 'do', 'dont', 'did', 'not', 'understand', 'explain', 'teach', 'me', 'please', 'help',
+  'with', 'what', 'is', 'are', 'how', 'does', 'the', 'a', 'an', 'in', 'of', 'for',
+  'to', 'about', 'can', 'you', 'u', 'so', 'start', 'open', 'launch', 'lesson', 'day', 'topic',
+  'previous', 'prev', 'last', 'yesterday', 'again', 'repeat', 'restart', 'confused', 'stuck',
+  'this', 'that', 'hey', 'priya', 'ms', 'mr', 'sir', 'maam', 'get',
+]);
+
+function extractTopicTokens(lowerMessage: string, excludeCourseAliases?: string[]): string[] {
+  const stopWords = new Set(TOPIC_STOP_WORDS);
+  for (const alias of excludeCourseAliases || []) {
+    for (const word of alias.toLowerCase().split(/\s+/)) {
+      if (word.length >= 2) stopWords.add(word);
     }
-    currentDay = Math.min(60, maxCompletedDay);
   }
+  return lowerMessage
+    .replace(/[^a-z0-9+#\s]/g, ' ')
+    .split(/\s+/)
+    .filter((t) => t.length >= 3 && !stopWords.has(t));
+}
 
-  return { activeCourse, currentDay };
+function tokenMatchesText(tok: string, textLower: string): boolean {
+  if (!tok || !textLower) return false;
+  const stem = tok.endsWith('s') && tok.length > 4 ? tok.slice(0, -1) : tok;
+  const escaped = stem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`\\b${escaped}`, 'i').test(textLower);
+}
+
+function findMatchingPartInLesson(lesson: LongLesson, topicTokens: string[]): number {
+  if (!topicTokens.length || !Array.isArray(lesson.parts)) return -1;
+  let bestPart = -1;
+  let bestHits = 0;
+  for (let i = 0; i < lesson.parts.length; i += 1) {
+    const part = lesson.parts[i];
+    const partText = `${part?.title || ''} ${normalizeSay(part?.say).join(' ')} ${part?.example || ''}`.toLowerCase();
+    let hits = 0;
+    for (const tok of topicTokens) {
+      if (tokenMatchesText(tok, partText)) hits += 1;
+    }
+    if (hits > bestHits) {
+      bestHits = hits;
+      bestPart = i;
+    }
+  }
+  return bestHits > 0 ? bestPart : -1;
+}
+
+function lessonMatchesTopics(lesson: LongLesson, topicTokens: string[]): boolean {
+  if (!topicTokens.length) return true;
+  if (findMatchingPartInLesson(lesson, topicTokens) >= 0) return true;
+  const headerText = `${lesson.title || ''} ${lesson.goal || ''} ${Array.isArray(lesson.summary) ? lesson.summary.join(' ') : ''}`.toLowerCase();
+  return topicTokens.some((tok) => tokenMatchesText(tok, headerText));
 }
 
 function findTopicMatch(
@@ -322,23 +403,7 @@ function findTopicMatch(
     currentDay?: number;
   } = {}
 ): { entry: CourseIndexEntry; lecture: CourseIndexEntry['lectures'][number] } | null {
-  const stopWords = new Set([
-    'i', 'do', 'dont', 'did', 'not', 'understand', 'explain', 'teach', 'me', 'please', 'help',
-    'with', 'what', 'is', 'are', 'how', 'does', 'the', 'a', 'an', 'in', 'of', 'for',
-    'to', 'about', 'can', 'you', 'u', 'so', 'start', 'open', 'launch', 'lesson', 'day', 'topic',
-    'previous', 'prev', 'last', 'yesterday', 'again', 'repeat', 'restart', 'confused', 'stuck',
-    'this', 'that', 'hey', 'priya', 'ms', 'mr', 'sir', 'maam', 'get',
-  ]);
-  for (const alias of opts.excludeCourseAliases || []) {
-    for (const word of alias.toLowerCase().split(/\s+/)) {
-      if (word.length >= 2) stopWords.add(word);
-    }
-  }
-
-  const tokens = lowerMessage
-    .replace(/[^a-z0-9+#\s]/g, ' ')
-    .split(/\s+/)
-    .filter((t) => t.length >= 3 && !stopWords.has(t));
+  const tokens = extractTopicTokens(lowerMessage, opts.excludeCourseAliases);
 
   if (tokens.length === 0) return null;
 
@@ -553,8 +618,35 @@ export async function resolveLessonRequest(
 
   if (!targetEntry || !targetLecture) return null;
 
-  const lesson = await getLongLessonServer(targetEntry.prefix, targetLecture.dayNum);
+  let lesson = await getLongLessonServer(targetEntry.prefix, targetLecture.dayNum);
   if (!lesson) return null;
+
+  // Topic-aware verification: if no course was explicitly named AND the student asked about a specific topic
+  // (e.g. "previous day topic comment"), verify the candidate LongLesson actually covers it;
+  // otherwise check their progressed course's introductory/recent days & real LongLessons!
+  const topicTokens = extractTopicTokens(lower, matchedCourse?.aliases);
+  if (!matchedCourse && topicTokens.length > 0 && !lessonMatchesTopics(lesson, topicTokens)) {
+    const searchEntries = Array.from(
+      new Set([inferred.progressedCourse, targetEntry, index.find((e) => e.courseId === 'course-python-backend')].filter((x): x is CourseIndexEntry => Boolean(x)))
+    );
+    let foundMatch: { entry: CourseIndexEntry; lecture: CourseIndexEntry['lectures'][number]; loaded: LongLesson } | null = null;
+    for (const se of searchEntries) {
+      const scanDays = se.lectures.slice(0, Math.min(8, inferred.currentDay + 2));
+      for (const lec of scanDays) {
+        const candidate = await getLongLessonServer(se.prefix, lec.dayNum);
+        if (candidate && lessonMatchesTopics(candidate, topicTokens)) {
+          foundMatch = { entry: se, lecture: lec, loaded: candidate };
+          break;
+        }
+      }
+      if (foundMatch) break;
+    }
+    if (foundMatch) {
+      targetEntry = foundMatch.entry;
+      targetLecture = foundMatch.lecture;
+      lesson = foundMatch.loaded;
+    }
+  }
 
   const totalParts = Math.max(1, lesson.parts?.length || 1);
   const leadingLaunch = /^\s*(?:please\s+)?(?:start|open|launch|go\s+to|take\s+me\s+to|begin)\b/i.test(lower);
@@ -565,7 +657,8 @@ export async function resolveLessonRequest(
     !explicitStartPhrase;
   const wantsLaunch = (leadingLaunch || explicitStartPhrase) && !pureExplanationOnly;
   const intent: ResolvedLessonAction['intent'] = wantsLaunch ? 'launch' : 'teach';
-  const partIndex = 0;
+  const matchedPartIdx = topicTokens.length > 0 ? findMatchingPartInLesson(lesson, topicTokens) : -1;
+  const partIndex = matchedPartIdx >= 0 ? matchedPartIdx : 0;
 
   const digest = buildPartDigest(lesson, partIndex, intent, targetEntry.courseTitle, targetLecture.dayNum);
   const launchUrl = `/quests/lesson?questId=${encodeURIComponent(targetLecture.questId)}&teacherId=${encodeURIComponent(teacherId)}`;

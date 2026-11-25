@@ -8,12 +8,13 @@ import { toast } from '@/lib/store/useAppStore';
 import {
   ExtraRoadmap,
   LearningPathMode,
-  extraRoadmapMode
+  extraRoadmapMode,
+  formatCompactDuration,
+  formatDurationLabel,
 } from '@/lib/quests/extraRoadmaps';
 import {
   Quest,
   Module,
-  QUEST_S_CURVE_PATH,
   playPopSound
 } from './useQuestProgression';
 
@@ -68,78 +69,270 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
   activeSubTab,
   router
 }) => {
+  const [expandedStages, setExpandedStages] = React.useState<Record<string, boolean>>({});
+  const [focusedStageIdx, setFocusedStageIdx] = React.useState<number | null>(null);
+
   const activeExtra = learningPathMode.startsWith('extra:')
     ? extraRoadmaps.find(rm => extraRoadmapMode(rm.id) === learningPathMode) || null
     : null;
   const activeEvidence = activeExtra?.evidenceSummary || (onboardingAnswers as any)?.roadmap_evidence_summary || null;
+  const isResumePersonalized = Boolean(
+    activeExtra?.usedResume !== false &&
+    activeEvidence?.usedResume !== false &&
+    (activeEvidence?.resumeTitle || (activeEvidence?.provenSkills?.length > 0) || (activeEvidence?.targetGaps?.length > 0))
+  );
+
+  const totalDurationDays = Math.max(
+    30,
+    activeExtra?.durationDays ||
+      trajectory?.targetTotalDays ||
+      (modules.length > 0 && typeof (modules[modules.length - 1] as any)?.endDay === 'number'
+        ? Number((modules[modules.length - 1] as any).endDay)
+        : modules.length * 7) ||
+      30
+  );
+
+  const stageItems = React.useMemo(() => {
+    if (activeSubTab === 'custom_roadmap' && modules && modules.length > 0) {
+      let dayCursor = 1;
+      const totalQ = Math.max(1, modules.reduce((s, m) => s + (m.quests?.length || 0), 0));
+      return modules.map((m: any, idx) => {
+        const qs = m.quests || [];
+        const cleared = qs.filter((q: Quest) => completedQuests.includes(q.id)).length;
+        const pct = Math.min(100, Math.round((cleared / Math.max(1, qs.length)) * 100));
+        const isCompleted = qs.length > 0 && cleared === qs.length;
+        const explicitStart = typeof m.startDay === 'number' ? m.startDay : null;
+        const explicitEnd = typeof m.endDay === 'number' ? m.endDay : null;
+        const estSpan = idx === modules.length - 1
+          ? Math.max(1, totalDurationDays - dayCursor + 1)
+          : Math.max(1, Math.round((qs.length / totalQ) * totalDurationDays));
+        const startDay = explicitStart ?? dayCursor;
+        const endDay = explicitEnd ?? Math.min(totalDurationDays, startDay + estSpan - 1);
+        dayCursor = endDay + 1;
+        return {
+          key: m.id,
+          anchorId: `stage-card-${m.id}`,
+          courseId: m.courseId || activeCourseId || COURSES_REGISTRY[0]?.id,
+          title: (m.title || `Stage ${idx + 1}`).replace(/^Phase\s*\d+:\s*/i, '').trim() || m.title,
+          shortLabel: (m.courseTitle || m.title || `Stage ${idx + 1}`).replace(/^Phase\s*\d+:\s*/i, '').trim(),
+          desc: m.desc || '',
+          whyThisStage: m.whyThisStage || '',
+          difficulty: m.difficulty || 'Intermediate',
+          startDay,
+          endDay,
+          estimatedWeeks: m.estimatedWeeks || Math.max(1, Math.round((endDay - startDay + 1) / 7)),
+          cleared,
+          total: qs.length,
+          pct,
+          isCompleted,
+          quests: qs,
+        };
+      });
+    }
+
+    const nodes = trajectory?.nodes || [];
+    let dayCursor = 1;
+    return nodes.map((node, idx) => {
+      const nodeCourse = COURSES_REGISTRY.find(c => c.id === node.courseId) || COURSES_REGISTRY[0];
+      const qs = nodeCourse?.quests || [];
+      const cleared = qs.filter(q => completedQuests.includes(q.id)).length;
+      const pct = Math.min(100, Math.round((cleared / Math.max(1, qs.length)) * 100));
+      const span = Math.max(7, node.estimatedDays || 15);
+      const startDay = dayCursor;
+      const endDay = startDay + span - 1;
+      dayCursor = endDay + 1;
+      return {
+        key: node.nodeId,
+        anchorId: `node-card-${node.nodeId}`,
+        courseId: node.courseId,
+        title: node.title,
+        shortLabel: node.title,
+        desc: node.shortDesc || '',
+        whyThisStage: node.careerImpact || '',
+        difficulty: idx === 0 ? 'Foundational' : idx >= 2 ? 'Advanced' : 'Intermediate',
+        startDay,
+        endDay,
+        estimatedWeeks: Math.max(1, Math.round(span / 7)),
+        cleared,
+        total: qs.length || 30,
+        pct,
+        isCompleted: pct === 100 && qs.length > 0,
+        quests: qs,
+        node,
+      };
+    });
+  }, [activeSubTab, modules, trajectory, completedQuests, COURSES_REGISTRY, activeCourseId, totalDurationDays]);
+
+  const activeStageIdxComputed = React.useMemo(() => {
+    const firstIncomplete = stageItems.findIndex((s) => !s.isCompleted);
+    if (firstIncomplete >= 0) return firstIncomplete;
+    return Math.max(0, stageItems.length - 1);
+  }, [stageItems]);
+
+  const overallClearedCount = stageItems.reduce((sum, s) => sum + s.cleared, 0);
+  const overallTotalCount = Math.max(1, stageItems.reduce((sum, s) => sum + s.total, 0));
+  const overallPct = Math.min(100, Math.round((overallClearedCount / overallTotalCount) * 100));
+
+  const targetFinishLabel = React.useMemo(() => {
+    const dt = new Date(Date.now() + totalDurationDays * 86400000);
+    return dt.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  }, [totalDurationDays]);
+
+  const scrollToStage = (item: typeof stageItems[number], idx: number) => {
+    playPopSound();
+    setFocusedStageIdx(idx);
+    if (item.courseId) setActiveCourseId(item.courseId);
+    if (typeof document !== 'undefined') {
+      const el = document.getElementById(item.anchorId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  };
+
+  const STEP_ACCENTS = ['#10b981', '#6366f1', '#06b6d4', '#f59e0b', '#ec4899', '#8b5cf6', '#3b82f6', '#14b8a6'];
 
   return (
     <>
-      {/* ── MODE 2: Dynamic Goal-Based Snake Roadmap Path ───────────────── */}
+      {/* ── MODE 2: Executive Dynamic Career Roadmap & Interactive Timeline ── */}
       <div
         data-testid="quest-path-view-root"
         className="animate-fade-in"
         id="quest-roadmap-chart-section"
       >
-        
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
-          <div>
+        {/* Top Command Header */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            marginBottom: 18,
+            flexWrap: 'wrap',
+            gap: 16,
+            padding: '20px 24px',
+            borderRadius: 20,
+            background: 'linear-gradient(135deg, rgba(16,185,129,0.08), rgba(99,102,241,0.08))',
+            border: '1px solid var(--border)',
+          }}
+        >
+          <div style={{ flex: '1 1 380px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap', marginBottom: 8 }}>
+              <span
+                data-testid="roadmap-duration-badge"
+                style={{
+                  fontSize: 11.5,
+                  fontWeight: 900,
+                  padding: '4px 10px',
+                  borderRadius: 999,
+                  background: 'rgba(16,185,129,0.16)',
+                  border: '1px solid rgba(16,185,129,0.35)',
+                  color: '#34d399',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                {formatDurationLabel(totalDurationDays)}
+              </span>
+              <span
+                style={{
+                  fontSize: 11.5,
+                  fontWeight: 800,
+                  padding: '4px 10px',
+                  borderRadius: 999,
+                  background: isResumePersonalized ? 'rgba(99,102,241,0.18)' : 'rgba(148,163,184,0.14)',
+                  border: `1px solid ${isResumePersonalized ? 'rgba(99,102,241,0.35)' : 'var(--border)'}`,
+                  color: isResumePersonalized ? '#a5b4fc' : 'var(--t2)',
+                }}
+              >
+                {isResumePersonalized ? 'Resume + Gap Personalized' : 'Goal-Aligned Curriculum'}
+              </span>
+              <span
+                style={{
+                  fontSize: 11.5,
+                  fontWeight: 800,
+                  padding: '4px 10px',
+                  borderRadius: 999,
+                  background: 'var(--bg3)',
+                  border: '1px solid var(--border)',
+                  color: 'var(--t2)',
+                  fontFamily: 'var(--font-mono)',
+                }}
+              >
+                {overallClearedCount} / {overallTotalCount} Quests ({overallPct}%)
+              </span>
+            </div>
+
             <h2
               data-testid="quest-roadmap-title"
-              style={{ fontSize: 22, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)', letterSpacing: '-0.3px' }}
+              style={{ fontSize: 22, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)', letterSpacing: '-0.3px', margin: 0 }}
             >
               Dynamic Career Roadmap ({activeExtra?.goal || COURSES_REGISTRY.find(c => c.id === activeCourseId)?.title.split('(')[0].trim() || onboardingAnswers?.role || trajectory.roleTitle})
             </h2>
-            <p style={{ fontSize: 14.5, color: 'var(--t3)', marginTop: 4 }}>
-              Sequential milestone nodes. Single-click any node to launch its quests.
+            <p style={{ fontSize: 13.5, color: 'var(--t3)', margin: '6px 0 0 0' }}>
+              Click any timeline phase or stage card to launch calibrated lessons, coding labs, and milestone tests.
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              data-testid="btn-open-custom-roadmap"
+              onClick={() => {
+                playPopSound();
+                setShowRoadmapModal(true);
+              }}
+              style={{
+                padding: '10px 18px',
+                borderRadius: 12,
+                border: 'none',
+                background: 'linear-gradient(135deg, #10b981, #059669)',
+                color: '#ffffff',
+                fontSize: 13,
+                fontWeight: 900,
+                cursor: 'pointer',
+                boxShadow: '0 6px 18px rgba(16,185,129,0.28)',
+              }}
+            >
+              + New Custom Roadmap
+            </button>
             <button
               type="button"
               data-testid="btn-view-detailed-journey"
               onClick={() => setShowFullJourneyModal(true)}
               style={{
-                padding: '8px 16px',
+                padding: '10px 16px',
                 borderRadius: 12,
-                border: '1.5px solid var(--success)',
-                background: 'rgba(var(--success-rgb),0.15)',
-                color: 'var(--success)',
+                border: '1.5px solid rgba(16,185,129,0.45)',
+                background: 'rgba(16,185,129,0.12)',
+                color: '#34d399',
                 fontSize: 13,
-                fontWeight: 900,
+                fontWeight: 800,
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 6,
-                boxShadow: '0 4px 14px rgba(var(--success-rgb),0.2)',
-                transition: 'all 0.2s'
               }}
             >
               View Entire Detailed Journey ➔
             </button>
-            <span style={{ fontSize: 12, background: 'rgba(var(--success-deep-rgb),0.1)', color: 'var(--green)', padding: '6px 12px', borderRadius: 20, fontWeight: 700 }}>
-              ✓ Single-Click Active Node Execution
-            </span>
           </div>
         </div>
 
-        {/* 🔀 DUAL LEARNING MODE SWITCHER */}
+        {/* Clean Saved Roadmap Tab Bar */}
         {activeSubTab === 'custom_roadmap' && (
           <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            padding: '10px 16px',
-            borderRadius: 20,
-            background: 'var(--bg3)',
-            border: '1.5px solid var(--border)',
-            marginBottom: 24,
+            padding: '10px 14px',
+            borderRadius: 16,
+            background: 'var(--bg2)',
+            border: '1px solid var(--border)',
+            marginBottom: 18,
             flexWrap: 'wrap',
-            gap: 12,
-            boxShadow: 'var(--shadow-md)'
+            gap: 10,
           }}>
-            <div role="tablist" aria-label="Learning roadmaps" style={{ display: 'flex', gap: 8, flexWrap: 'nowrap', alignItems: 'center', overflowX: 'auto', paddingBottom: 4, maxWidth: '100%' }}>
+            <div role="tablist" aria-label="Learning roadmaps" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', maxWidth: '100%' }}>
               <button
                 type="button"
                 role="tab"
@@ -150,26 +343,22 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                   if (fusedCourseId) setActiveCourseId(fusedCourseId);
                 }}
                 style={{
-                  padding: '10px 18px',
-                  borderRadius: '12px 12px 0 0',
-                  border: `1.5px solid ${learningPathMode === 'fused_roadmap' ? 'var(--success)' : 'rgba(255,255,255,0.08)'}`,
-                  borderBottom: learningPathMode === 'fused_roadmap' ? '1.5px solid transparent' : '1.5px solid rgba(255,255,255,0.08)',
-                  background: learningPathMode === 'fused_roadmap' ? 'linear-gradient(135deg, rgba(var(--success-rgb),0.25), rgba(var(--success-deep-rgb),0.15))' : 'var(--bg2)',
-                  color: learningPathMode === 'fused_roadmap' ? 'var(--success-bright)' : 'var(--t2)',
-                  fontSize: 14.5,
-                  fontWeight: 900,
+                  padding: '8px 14px',
+                  borderRadius: 10,
+                  border: `1.5px solid ${learningPathMode === 'fused_roadmap' ? '#10b981' : 'var(--border)'}`,
+                  background: learningPathMode === 'fused_roadmap' ? 'rgba(16,185,129,0.16)' : 'var(--bg3)',
+                  color: learningPathMode === 'fused_roadmap' ? '#34d399' : 'var(--t2)',
+                  fontSize: 13.5,
+                  fontWeight: 800,
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 8,
-                  flexShrink: 0,
-                  boxShadow: learningPathMode === 'fused_roadmap' ? '0 4px 16px rgba(var(--success-rgb),0.25)' : 'none',
-                  transition: 'all 0.2s ease'
                 }}
               >
                 <span>Fused Career Trajectory</span>
-                <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(var(--success-rgb),0.25)', padding: '2px 7px', borderRadius: 6, color: 'var(--success)' }}>
-                  Roadmap 1
+                <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.22)', padding: '2px 7px', borderRadius: 6, color: '#34d399' }}>
+                  Primary
                 </span>
               </button>
 
@@ -192,25 +381,33 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                         closeExtraRoadmap(rm.id);
                       }
                     }}
-                    title={`${rm.goal} · close with × or middle-click`}
+                    title={`${rm.goal} · ${formatDurationLabel(rm.durationDays)} · close with ×`}
                     style={{
-                      padding: '8px 8px 8px 16px',
-                      borderRadius: '12px 12px 0 0',
-                      border: `1.5px solid ${isOn ? 'var(--warning)' : 'rgba(255,255,255,0.08)'}`,
-                      background: isOn ? 'linear-gradient(135deg, rgba(var(--warning-rgb),0.28), rgba(var(--warning-rgb),0.16))' : 'var(--bg2)',
-                      color: isOn ? 'var(--warning-bright)' : 'var(--t2)',
-                      fontSize: 14.5,
-                      fontWeight: 900,
+                      padding: '7px 8px 7px 14px',
+                      borderRadius: 10,
+                      border: `1.5px solid ${isOn ? '#f59e0b' : 'var(--border)'}`,
+                      background: isOn ? 'rgba(245,158,11,0.16)' : 'var(--bg3)',
+                      color: isOn ? '#fbbf24' : 'var(--t2)',
+                      fontSize: 13.5,
+                      fontWeight: 800,
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 6,
-                      flexShrink: 0,
-                      boxShadow: isOn ? '0 4px 16px rgba(var(--warning-rgb),0.25)' : 'none',
-                      maxWidth: 220
+                      gap: 7,
                     }}
                   >
                     <span style={{ whiteSpace: 'nowrap' }}>Roadmap {rm.number}</span>
+                    <span style={{
+                      fontSize: 10.5,
+                      fontWeight: 900,
+                      fontFamily: 'var(--font-mono)',
+                      padding: '2px 6px',
+                      borderRadius: 5,
+                      background: isOn ? 'rgba(245,158,11,0.22)' : 'rgba(255,255,255,0.06)',
+                      color: isOn ? '#fcd34d' : 'var(--t3)',
+                    }}>
+                      {formatCompactDuration(rm.durationDays)}
+                    </span>
                     <button
                       type="button"
                       aria-label={`Close Roadmap ${rm.number}`}
@@ -224,13 +421,12 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                         height: 20,
                         borderRadius: 6,
                         border: 'none',
-                        background: isOn ? 'rgba(0,0,0,0.25)' : 'rgba(255,255,255,0.06)',
+                        background: isOn ? 'rgba(0,0,0,0.28)' : 'rgba(255,255,255,0.06)',
                         color: isOn ? '#fff' : 'var(--t3)',
                         cursor: 'pointer',
-                        fontSize: 14.5,
+                        fontSize: 14,
                         lineHeight: '20px',
                         padding: 0,
-                        flexShrink: 0
                       }}
                     >
                       ×
@@ -241,22 +437,21 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
 
               <button
                 type="button"
-                title="New roadmap"
+                title="Create new custom roadmap"
                 onClick={() => {
                   playPopSound();
                   setShowRoadmapModal(true);
                 }}
                 style={{
-                  width: 36,
-                  height: 36,
+                  width: 34,
+                  height: 34,
                   borderRadius: 10,
-                  border: '1.5px dashed rgba(var(--success-rgb),0.45)',
-                  background: 'rgba(var(--success-rgb),0.08)',
-                  color: 'var(--success-bright)',
-                  fontSize: 22,
+                  border: '1.5px dashed rgba(16,185,129,0.5)',
+                  background: 'rgba(16,185,129,0.08)',
+                  color: '#34d399',
+                  fontSize: 20,
                   fontWeight: 800,
                   cursor: 'pointer',
-                  flexShrink: 0,
                   lineHeight: 1
                 }}
               >
@@ -266,389 +461,239 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
           </div>
         )}
 
-        {/* ── 40% / 60% SIDE-BY-SIDE SPLIT VIEW LAYOUT ─────────────────── */}
-        <div style={{ display: 'grid', gridTemplateColumns: '38% 60%', gap: '2%', marginTop: 24, alignItems: 'flex-start' }}>
-
-          {/* ── LEFT COLUMN (40% Width): Visual Horizontal / Winding Roadmap Chart ── */}
-          <div className="glass-card-premium" style={{
-            padding: '24px 20px',
-            borderRadius: 24,
-            border: '1px solid var(--border)',
-            background: 'var(--bg2)',
-            position: 'relative',
-            boxShadow: 'var(--shadow-lg)'
-          }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-              <div>
-                <h3 style={{ fontSize: 17.5, fontWeight: 900, color: 'var(--t1)', margin: 0, fontFamily: 'var(--font-display)' }}>
-                  Visual Roadmap Chart
-                </h3>
+        {/* Interactive Horizontal Phase Timeline Strip */}
+        {stageItems.length > 0 && (
+          <div
+            data-testid="roadmap-timeline-strip"
+            style={{
+              padding: '18px 20px',
+              borderRadius: 20,
+              background: 'var(--bg2)',
+              border: '1px solid var(--border)',
+              marginBottom: 22,
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 10 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <span style={{ fontSize: 12, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.07em', color: '#34d399' }}>
+                  Execution Timeline
+                </span>
+                <span style={{ fontSize: 12.5, fontWeight: 700, color: 'var(--t2)' }}>
+                  Day 1 → Day {totalDurationDays} ({stageItems.length} Phases)
+                </span>
               </div>
-              <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(var(--success-rgb),0.15)', color: 'var(--green)', padding: '3px 10px', borderRadius: 20 }}>
-                Interactive Flow
+              <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+                Est. Target Finish: <strong style={{ color: 'var(--t1)' }}>{targetFinishLabel}</strong>
+              </div>
+            </div>
+
+            {/* Overall Progress Rail */}
+            <div style={{ position: 'relative', height: 8, borderRadius: 999, background: 'var(--bg3)', overflow: 'hidden', marginBottom: 14, border: '1px solid var(--border)' }}>
+              <div
+                style={{
+                  width: `${Math.max(overallPct > 0 ? overallPct : 3, 0)}%`,
+                  height: '100%',
+                  borderRadius: 999,
+                  background: 'linear-gradient(90deg, #10b981, #06b6d4, #6366f1)',
+                  transition: 'width 0.4s ease',
+                }}
+              />
+            </div>
+
+            {/* Clickable Phase Timeline Stops */}
+            <div style={{ display: 'flex', gap: 10, overflowX: 'auto', paddingBottom: 4 }}>
+              {stageItems.map((item, idx) => {
+                const accent = STEP_ACCENTS[idx % STEP_ACCENTS.length];
+                const isActive = (focusedStageIdx ?? activeStageIdxComputed) === idx;
+                return (
+                  <button
+                    key={item.key || `tl-${idx}`}
+                    type="button"
+                    onClick={() => scrollToStage(item, idx)}
+                    style={{
+                      flex: '1 0 155px',
+                      minWidth: 155,
+                      maxWidth: 230,
+                      textAlign: 'left',
+                      padding: '10px 12px',
+                      borderRadius: 12,
+                      border: `1.5px solid ${item.isCompleted ? '#10b981' : isActive ? accent : 'var(--border)'}`,
+                      background: isActive ? `${accent}18` : 'var(--bg3)',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 4,
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6 }}>
+                      <span style={{ fontSize: 10.5, fontWeight: 900, fontFamily: 'var(--font-mono)', color: item.isCompleted ? '#10b981' : accent }}>
+                        Day {item.startDay}–{item.endDay}
+                      </span>
+                      <span style={{
+                        fontSize: 9.5,
+                        fontWeight: 900,
+                        padding: '1px 6px',
+                        borderRadius: 4,
+                        background: item.isCompleted ? 'rgba(16,185,129,0.2)' : isActive ? `${accent}26` : 'rgba(255,255,255,0.06)',
+                        color: item.isCompleted ? '#34d399' : isActive ? '#ffffff' : 'var(--t3)',
+                      }}>
+                        {item.isCompleted ? 'DONE' : isActive ? 'ACTIVE' : `${item.pct}%`}
+                      </span>
+                    </div>
+                    <div style={{
+                      fontSize: 12.5,
+                      fontWeight: 800,
+                      color: 'var(--t1)',
+                      lineHeight: 1.3,
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden',
+                    }}>
+                      {idx + 1}. {item.shortLabel}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* ── 32% / 68% CLEAN EXECUTIVE TIMELINE + STAGE WORKSPACE ── */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(260px, 32%) minmax(0, 1fr)', gap: 22, marginTop: 12, alignItems: 'start' }}>
+
+          {/* ── LEFT COLUMN (32%): Sticky Milestone Progress Spine ── */}
+          <div
+            className="glass-card-premium"
+            style={{
+              padding: '20px 18px',
+              borderRadius: 22,
+              border: '1px solid var(--border)',
+              background: 'var(--bg2)',
+              position: 'sticky',
+              top: 18,
+              boxShadow: 'var(--shadow-md)',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <div>
+                <h3 style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', margin: 0, fontFamily: 'var(--font-display)' }}>
+                  Milestone Map
+                </h3>
+                <span style={{ fontSize: 11.5, color: 'var(--t3)' }}>
+                  {stageItems.length} structured phases · {totalDurationDays} days
+                </span>
+              </div>
+              <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.14)', color: '#34d399', padding: '3px 9px', borderRadius: 999 }}>
+                Live Flow
               </span>
             </div>
 
-            {/* ── PIXEL-PERFECT PURE CSS/SVG S-CURVE ROADMAP FRAMEWORK ── */}
-            <div style={{ position: 'relative', width: '100%', minHeight: 780, padding: '20px 10px 40px 10px', overflow: 'hidden' }}>
-              
-              {/* 🎨 BACKGROUND CONTINUOUS SVG S-CURVE ROAD TRACK */}
-              <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }} viewBox="0 0 320 780" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="scurveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="var(--danger)" />
-                    <stop offset="14%" stopColor="var(--warning)" />
-                    <stop offset="28%" stopColor="var(--success)" />
-                    <stop offset="42%" stopColor="var(--accent-cyan)" />
-                    <stop offset="56%" stopColor="var(--info)" />
-                    <stop offset="70%" stopColor="var(--reward)" />
-                    <stop offset="84%" stopColor="#ec4899" />
-                    <stop offset="100%" stopColor="var(--warning)" />
-                  </linearGradient>
-                </defs>
-
-                {/* Outer Thick Road Shadow / Border */}
-                <path
-                  d={QUEST_S_CURVE_PATH}
-                  fill="none"
-                  stroke="rgba(0,0,0,0.15)"
-                  strokeWidth="34"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-
-                {/* Main Colored Road Surface */}
-                <path
-                  d={QUEST_S_CURVE_PATH}
-                  fill="none"
-                  stroke="url(#scurveGradient)"
-                  strokeWidth="24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-
-                {/* Dashed White Center Line — MUST use the same path as the road */}
-                <path
-                  d={QUEST_S_CURVE_PATH}
-                  fill="none"
-                  stroke="#ffffff"
-                  strokeWidth="2.5"
-                  strokeDasharray="10 9"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  opacity="0.85"
-                  vectorEffect="non-scaling-stroke"
-                />
-              </svg>
-
-              {/* 🏁 TOP-LEFT STARTING AVATAR NODE */}
-              <div style={{ position: 'absolute', top: 12, left: 24, zIndex: 4, display: 'flex', alignItems: 'center', gap: 8 }}>
-                <div style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: '50%',
-                  background: 'var(--danger)',
-                  border: '4px solid #ffffff',
-                  boxShadow: '0 4px 12px rgba(var(--danger-rgb),0.4)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 22
-                }}>
-                  
-                </div>
-                <span style={{ fontSize: 12, fontWeight: 900, color: 'var(--danger)', background: 'rgba(255,255,255,0.9)', padding: '4px 10px', borderRadius: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-                  START
-                </span>
-              </div>
-
-              {/* 🏃‍♂️ ANIMATED AVATAR TRACK RUNNER & ROAD NODES */}
-              {(() => {
-                const WAYPOINTS = [
-                  { step: 1, top: 95, alignRight: true, color: 'var(--danger)' },
-                  { step: 2, top: 175, alignRight: false, color: 'var(--warning)' },
-                  { step: 3, top: 255, alignRight: true, color: 'var(--success)' },
-                  { step: 4, top: 335, alignRight: false, color: 'var(--accent-cyan)' },
-                  { step: 5, top: 415, alignRight: true, color: 'var(--info)' },
-                  { step: 6, top: 495, alignRight: false, color: 'var(--reward)' },
-                  { step: 7, top: 575, alignRight: true, color: '#ec4899' },
-                  { step: 8, top: 655, alignRight: false, color: 'var(--warning)' },
-                ];
-
-                const activeCourseObj = COURSES_REGISTRY.find(c => c.id === activeCourseId) || COURSES_REGISTRY[0];
-                const isPersonalizedModules = Boolean(activeExtra || (modules && modules.some((m: any) => Boolean(m?.whyThisStage))));
-                const displayNodes: TrajectoryNode[] = (!isPersonalizedModules && trajectory?.nodes && trajectory.nodes.length > 1)
-                  ? trajectory.nodes.slice(0, 8)
-                  : (modules && modules.length > 0
-                      ? modules.slice(0, 8).map((m: any, i: number) => ({
-                          nodeId: m.id,
-                          courseId: m.courseId || activeCourseId || activeCourseObj.id,
-                          title: m.title.replace(/^.*—\s*Stage\s*\d+:\s*/i, '').trim() || m.title,
-                          shortDesc: m.whyThisStage || m.desc,
-                          icon: `S${i + 1}`,
-                          skillsLearned: Array.isArray(m.skillsAddressed) ? m.skillsAddressed : [],
-                          careerImpact: '+15% Mastery',
-                          estimatedDays: (m.estimatedWeeks || 1) * 7,
-                        }))
-                      : [activeCourseObj].map((c, idx) => ({
-                          nodeId: c.id,
-                          courseId: c.id,
-                          title: c.title,
-                          shortDesc: c.desc,
-                          icon: `N${idx + 1}`,
-                          skillsLearned: [],
-                          careerImpact: '+25% Career Impact',
-                          estimatedDays: 30,
-                        }))
-                    );
-
-                const activeStepIdx = displayNodes.findIndex((node) => {
-                  return node.courseId === activeCourseId || (node.nodeId && node.nodeId.includes(activeCourseId || ''));
-                });
-                const currentIdx = activeStepIdx >= 0 ? activeStepIdx : 0;
-                const currentWaypoint = WAYPOINTS[Math.min(currentIdx, WAYPOINTS.length - 1)];
-                const posX = currentWaypoint.alignRight ? 270 : 60;
-                const posY = currentWaypoint.top - 20;
-
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+              {stageItems.map((item, idx) => {
+                const accent = STEP_ACCENTS[idx % STEP_ACCENTS.length];
+                const isSelected = (focusedStageIdx ?? activeStageIdxComputed) === idx;
+                const isPrevPending = idx > 0 && !stageItems[idx - 1].isCompleted && stageItems[idx - 1].total > 0;
                 return (
-                  <>
-                    <div style={{
-                      position: 'absolute',
-                      left: posX - 18,
-                      top: posY - 28,
-                      zIndex: 10,
-                      pointerEvents: 'none',
-                      transition: 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                  <button
+                    key={item.key || `tl-${idx}`}
+                    type="button"
+                    onClick={() => scrollToStage(item, idx)}
+                    style={{
                       display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center'
-                    }}>
-                      <div style={{
-                        fontSize: 9.5,
-                        fontWeight: 900,
-                        background: currentWaypoint.color,
-                        color: 'var(--text)',
-                        padding: '2px 7px',
-                        borderRadius: 10,
-                        boxShadow: `0 4px 12px ${currentWaypoint.color}66`,
-                        whiteSpace: 'nowrap',
-                        marginBottom: 2
-                      }}>
-                        YOU ARE HERE
-                      </div>
-                      <div style={{
-                        width: 36,
-                        height: 36,
+                      alignItems: 'flex-start',
+                      gap: 12,
+                      width: '100%',
+                      textAlign: 'left',
+                      padding: '11px 12px',
+                      borderRadius: 14,
+                      border: `1.5px solid ${isSelected ? accent : item.isCompleted ? 'rgba(16,185,129,0.4)' : 'var(--border)'}`,
+                      background: isSelected ? `linear-gradient(135deg, ${accent}1a, var(--bg3))` : 'var(--bg3)',
+                      cursor: 'pointer',
+                      opacity: isPrevPending && !isSelected ? 0.72 : 1,
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: 34,
+                        height: 34,
                         borderRadius: '50%',
-                        background: 'var(--text)',
-                        border: `3px solid ${currentWaypoint.color}`,
-                        boxShadow: `0 0 0 4px ${currentWaypoint.color}33, 0 6px 16px ${currentWaypoint.color}88`,
+                        flexShrink: 0,
+                        background: item.isCompleted ? '#10b981' : isSelected ? accent : 'var(--bg2)',
+                        border: `2px solid ${item.isCompleted ? '#34d399' : accent}`,
+                        color: item.isCompleted || isSelected ? '#ffffff' : 'var(--t1)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: 17.5
+                        fontSize: 13,
+                        fontWeight: 900,
+                        fontFamily: 'var(--font-mono)',
+                      }}
+                    >
+                      {item.isCompleted ? '✓' : idx + 1}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6, marginBottom: 3 }}>
+                        <span style={{ fontSize: 10.5, fontWeight: 800, color: item.isCompleted ? '#34d399' : accent, fontFamily: 'var(--font-mono)' }}>
+                          DAYS {item.startDay}–{item.endDay}
+                        </span>
+                        <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+                          {item.cleared}/{item.total}
+                        </span>
+                      </div>
+                      <div style={{
+                        fontSize: 13,
+                        fontWeight: 800,
+                        color: 'var(--t1)',
+                        lineHeight: 1.35,
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
                       }}>
-                        
+                        {item.title}
+                      </div>
+                      <div style={{ height: 4, borderRadius: 999, background: 'rgba(255,255,255,0.06)', marginTop: 7, overflow: 'hidden' }}>
+                        <div style={{ width: `${item.pct}%`, height: '100%', background: item.isCompleted ? '#10b981' : accent }} />
                       </div>
                     </div>
-
-                    {/* 🛣️ DYNAMIC NODES ON S-CURVE */}
-                    {displayNodes.map((node, idx) => {
-                      const waypoint = WAYPOINTS[Math.min(idx, WAYPOINTS.length - 1)];
-                      const itemColor = waypoint.color;
-                      const nodeCourse = COURSES_REGISTRY.find(c => c.id === node.courseId);
-                      const nodeQuests = nodeCourse?.quests || [];
-                      const clearedCount = nodeQuests.filter(q => completedQuests.includes(q.id)).length;
-                      const isFullyCompleted = nodeQuests.length > 0 && clearedCount === nodeQuests.length;
-                      const isCurrentStep = idx === currentIdx;
-
-                      return (
-                        <div
-                          key={node.nodeId || `step-${idx}`}
-                          onClick={() => {
-                            playPopSound();
-                            if (node.courseId) {
-                              setActiveCourseId(node.courseId);
-                            }
-                            const el = document.getElementById(`node-card-${node.nodeId}`) || document.getElementById(`module-${node.nodeId}`);
-                            if (el) {
-                              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                              el.style.transition = 'all 0.3s ease';
-                              el.style.boxShadow = `0 0 25px ${itemColor}88`;
-                              setTimeout(() => {
-                                el.style.boxShadow = '';
-                              }, 1200);
-                            }
-                          }}
-                          className="card-hover"
-                          style={{
-                            position: 'absolute',
-                            top: waypoint.top,
-                            left: waypoint.alignRight ? undefined : 30,
-                            right: waypoint.alignRight ? 30 : undefined,
-                            display: 'flex',
-                            flexDirection: waypoint.alignRight ? 'row' : 'row-reverse',
-                            alignItems: 'center',
-                            gap: 12,
-                            zIndex: isCurrentStep ? 5 : 3,
-                            cursor: 'pointer',
-                            transition: 'all 0.3s ease'
-                          }}
-                        >
-                          {/* Circle Step Badge ON Road Curve */}
-                          <div style={{
-                            width: 48,
-                            height: 48,
-                            borderRadius: '50%',
-                            background: isFullyCompleted ? 'linear-gradient(135deg, var(--success), var(--success-deep))' : 'var(--text)',
-                            border: `4px solid ${isFullyCompleted ? 'var(--success-bright)' : itemColor}`,
-                            boxShadow: isCurrentStep
-                              ? `0 0 0 6px ${itemColor}33, 0 0 24px ${itemColor}aa`
-                              : isFullyCompleted
-                              ? '0 0 16px rgba(var(--success-rgb),0.5)'
-                              : `0 4px 14px ${itemColor}55`,
-                            transform: isCurrentStep ? 'scale(1.12)' : 'scale(1)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: isFullyCompleted ? '#ffffff' : '#1e293b',
-                            fontWeight: 900,
-                            fontSize: isFullyCompleted ? 22 : 21,
-                            flexShrink: 0,
-                            transition: 'all 0.3s ease'
-                          }}>
-                            {isFullyCompleted ? '✓' : (node.icon || '•')}
-                          </div>
-
-                          {/* Crisp Horizontal White Pill Card */}
-                          <div style={{
-                            background: 'rgba(255,255,255,0.95)',
-                            padding: '8px 14px',
-                            borderRadius: waypoint.alignRight ? '0 12px 12px 0' : '12px 0 0 12px',
-                            boxShadow: isCurrentStep
-                              ? `0 0 16px ${itemColor}44, 0 4px 14px rgba(0,0,0,0.12)`
-                              : '0 4px 14px rgba(0,0,0,0.08)',
-                            borderTop: isCurrentStep ? `1px solid ${itemColor}44` : 'none',
-                            borderRight: isCurrentStep ? `1px solid ${itemColor}44` : 'none',
-                            borderBottom: isCurrentStep ? `1px solid ${itemColor}44` : 'none',
-                            borderLeft: `4px solid ${isFullyCompleted ? 'var(--success)' : itemColor}`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 8,
-                            maxWidth: 220,
-                            transition: 'all 0.3s ease'
-                          }}>
-                            <span style={{ fontSize: 11, fontWeight: 900, color: isFullyCompleted ? 'var(--success)' : itemColor, textTransform: 'uppercase', flexShrink: 0 }}>
-                              Step {idx + 1}
-                            </span>
-                            <span style={{ fontSize: 12.5, fontWeight: 800, color: '#1e293b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                              {node.title}
-                            </span>
-                            {isCurrentStep && (
-                              <span style={{ fontSize: 9.5, fontWeight: 900, background: `${itemColor}22`, color: itemColor, padding: '2px 5px', borderRadius: 4, textTransform: 'uppercase', flexShrink: 0 }}>
-                                ACTIVE
-                              </span>
-                            )}
-                            {isFullyCompleted && (
-                              <span style={{ fontSize: 9.5, fontWeight: 900, background: 'rgba(var(--success-rgb),0.2)', color: 'var(--success)', padding: '2px 5px', borderRadius: 4, textTransform: 'uppercase', flexShrink: 0 }}>
-                                CLEARED
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </>
+                  </button>
                 );
-              })()}
-
-              {/* 🏆 BOTTOM-RIGHT CELEBRATION GOAL NODE */}
-              <div style={{ position: 'absolute', bottom: 10, right: 20, zIndex: 4, display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ fontSize: 12, fontWeight: 900, color: 'var(--warning)', background: 'rgba(255,255,255,0.9)', padding: '4px 10px', borderRadius: 20, boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-                  CAREER GOAL REACHED
-                </span>
-                <div style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: '50%',
-                  background: 'var(--warning)',
-                  border: '4px solid #ffffff',
-                  boxShadow: '0 4px 12px rgba(var(--warning-rgb),0.5)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 22
-                }}>
-                  ✓
-                </div>
-              </div>
-
+              })}
             </div>
           </div>
 
-          {/* ── RIGHT COLUMN (60% Width): Detailed Quest Stage Execution Cards ── */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+          {/* ── RIGHT COLUMN (68%): Detailed Stage Cards & Calibrated Quests ── */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
 
-            {/* 🎓 Authoritative Curriculum Progression Banner */}
-            <div style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid var(--border)',
-              borderRadius: 14,
-              padding: '10px 16px',
-              marginBottom: -6
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <span style={{ fontSize: 11, fontWeight: 900, color: 'var(--accent)', background: 'rgba(var(--accent-rgb, 99, 102, 241), 0.12)', padding: '2px 6px', borderRadius: 4 }}>GATE</span>
-                <div>
-                  <div style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--t1)' }}>
-                    Authoritative Curriculum Progression
-                  </div>
-                  <div style={{ fontSize: 11, color: 'var(--t3)' }}>
-                    Stages unlock sequentially as you complete and verify prerequisite quests.
-                  </div>
-                </div>
-              </div>
-              <span style={{
-                fontSize: 11.5,
-                fontWeight: 800,
-                padding: '4px 10px',
-                borderRadius: 8,
-                background: 'rgba(var(--accent-rgb, 99, 102, 241), 0.1)',
-                border: '1px solid rgba(var(--accent-rgb, 99, 102, 241), 0.25)',
-                color: 'var(--accent)',
-              }}>
-                Prerequisites Enforced
-              </span>
-            </div>
-            
-            {(activeEvidence?.resumeTitle || (activeEvidence?.provenSkills?.length > 0) || (activeEvidence?.targetGaps?.length > 0)) && (
+            {isResumePersonalized && activeEvidence && (
               <div
                 data-testid="roadmap-personalization-banner"
                 style={{
-                  padding: '12px 16px',
-                  borderRadius: 14,
-                  background: 'rgba(16, 185, 129, 0.08)',
-                  border: '1px solid rgba(16, 185, 129, 0.28)',
+                  padding: '13px 16px',
+                  borderRadius: 16,
+                  background: 'rgba(16, 185, 129, 0.09)',
+                  border: '1px solid rgba(16, 185, 129, 0.3)',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: 4,
+                  gap: 6,
                   fontSize: 12.5,
                   color: 'var(--t2)',
                 }}
               >
-                <div style={{ fontWeight: 800, color: 'var(--success)' }}>
-                  Personalized From Your Resume, Vault &amp; Profile
+                <div style={{ fontWeight: 900, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.04em', fontSize: 11.5 }}>
+                  Personalized From Your Resume, Vault &amp; Target Gaps
                 </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14 }}>
                   {activeEvidence.resumeTitle && <span>Resume: <strong style={{ color: 'var(--t1)' }}>{activeEvidence.resumeTitle}</strong></span>}
                   {Array.isArray(activeEvidence.provenSkills) && activeEvidence.provenSkills.length > 0 && (
-                    <span>Verified Skills: <strong style={{ color: 'var(--t1)' }}>{activeEvidence.provenSkills.slice(0, 5).join(', ')}</strong></span>
+                    <span>Proven Skills: <strong style={{ color: 'var(--t1)' }}>{activeEvidence.provenSkills.slice(0, 6).join(', ')}</strong></span>
                   )}
                   {Array.isArray(activeEvidence.targetGaps) && activeEvidence.targetGaps.length > 0 && (
-                    <span>Targeting Gaps: <strong style={{ color: '#f59e0b' }}>{activeEvidence.targetGaps.slice(0, 4).join(', ')}</strong></span>
+                    <span>Target Gaps Prioritized: <strong style={{ color: '#fbbf24' }}>{activeEvidence.targetGaps.slice(0, 5).join(', ')}</strong></span>
                   )}
                 </div>
               </div>
@@ -656,156 +701,143 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
 
             {activeSubTab === 'custom_roadmap' ? (
               modules && modules.length > 0 ? (
-                modules.map((mod, idx) => {
-                const stageQuests = mod.quests || [];
-                const stageCompletedCount = stageQuests.filter(q => completedQuests.includes(q.id)).length;
-                const stageProgressPct = Math.min(100, Math.round((stageCompletedCount / Math.max(1, stageQuests.length)) * 100));
-                const isStageCompleted = stageCompletedCount === stageQuests.length && stageQuests.length > 0;
-                const isLocked = idx > 0 && (() => {
-                  const prevMod = modules[idx - 1];
-                  const prevQuests = prevMod?.quests || [];
-                  const prevCleared = prevQuests.filter(q => completedQuests.includes(q.id)).length;
-                  return prevCleared < prevQuests.length && prevQuests.length > 0;
-                })();
-                const nextQuestInStage = stageQuests.find(q => !completedQuests.includes(q.id)) || stageQuests[0];
-                const stepColors = ['var(--accent)', 'var(--teal)', 'var(--purple)', 'var(--blue)', 'var(--success)', 'var(--warning)', 'var(--reward)', '#ec4899'];
-                const currentColor = stepColors[idx % stepColors.length];
+                stageItems.map((item, idx) => {
+                  const mod = modules[idx] as any;
+                  const stageQuests: Quest[] = item.quests || [];
+                  const isStageCompleted = item.isCompleted;
+                  const isLocked = idx > 0 && !stageItems[idx - 1].isCompleted && stageItems[idx - 1].total > 0;
+                  const nextQuestInStage = stageQuests.find(q => !completedQuests.includes(q.id)) || stageQuests[0];
+                  const currentColor = STEP_ACCENTS[idx % STEP_ACCENTS.length];
+                  const isExpanded = Boolean(expandedStages[item.key]);
+                  const nextIdx = stageQuests.findIndex(q => !completedQuests.includes(q.id));
+                  const windowStart = nextIdx > 2 ? Math.max(0, nextIdx - 1) : 0;
+                  const visibleQuests = isExpanded
+                    ? stageQuests
+                    : stageQuests.slice(windowStart, windowStart + 6);
 
-                return (
-                  <div id={`stage-card-${mod.id}`} key={mod.id} style={{ position: 'relative' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 16, position: 'relative' }}>
-                      {/* Step Circle Badge */}
-                      <div style={{
-                        width: 64,
-                        height: 64,
-                        borderRadius: '50%',
-                        background: `linear-gradient(135deg, ${currentColor}, var(--bg3))`,
-                        border: `3px solid ${currentColor}`,
-                        boxShadow: `0 0 20px ${currentColor}55`,
+                  return (
+                    <div
+                      id={item.anchorId}
+                      key={item.key}
+                      onClick={() => {
+                        if (isLocked) {
+                          toast.warning('Prerequisite Stage Locked', 'Please complete the previous stage quests before advancing to this stage.');
+                          return;
+                        }
+                        if (isStageCompleted) {
+                          toast.warning('Milestone Completed 🔒', 'All classes in this milestone have been completed. Previous classes cannot be re-accessed.');
+                          return;
+                        }
+                        if (nextQuestInStage) {
+                          handleLaunchQuest(nextQuestInStage, item.courseId || 'course-fullstack-js');
+                        }
+                      }}
+                      className={`glass-card-premium ${isLocked ? '' : 'card-hover'}`}
+                      style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'var(--text)',
-                        fontWeight: 900,
-                        flexShrink: 0,
-                        zIndex: 2
-                      }}>
-                        <span style={{ fontSize: 9.5, textTransform: 'uppercase', opacity: 0.9 }}>Stage</span>
-                        <span style={{ fontSize: 20, lineHeight: 1.1 }}>{idx + 1}</span>
-                      </div>
-
-                      {/* Main Stage Card */}
-                      <div
-                        onClick={() => {
-                          if (isLocked) {
-                            toast.warning('Prerequisite Stage Locked', 'Please complete the previous stage quests before advancing to this stage.');
-                            return;
-                          }
-                          if (isStageCompleted) {
-                            toast.warning('Stage Completed', 'All classes in this stage have been completed. Previous classes cannot be re-accessed.');
-                            return;
-                          }
-                          if (nextQuestInStage) {
-                            handleLaunchQuest(nextQuestInStage, (mod as any).courseId || activeCourseId || 'course-java-logic');
-                          }
-                        }}
-                        className={`glass-card-premium ${isLocked ? '' : 'card-hover'}`}
-                        style={{
-                          flex: 1,
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: 14,
-                          padding: '20px 24px',
-                          borderRadius: 22,
-                          border: isStageCompleted 
-                            ? '1px solid var(--green)' 
-                            : !isLocked 
-                            ? `2px solid ${currentColor}` 
+                        gap: 14,
+                        padding: '20px 22px',
+                        borderRadius: 20,
+                        border: isStageCompleted
+                          ? '1.5px solid #10b981'
+                          : !isLocked
+                            ? `1.5px solid ${currentColor}`
                             : '1px solid var(--border)',
-                          background: !isLocked 
-                            ? `linear-gradient(135deg, ${currentColor}10, var(--bg2))` 
-                            : 'var(--bg2)',
-                          boxShadow: !isLocked ? `0 0 24px ${currentColor}22` : 'none',
-                          cursor: isLocked ? 'not-allowed' : 'pointer',
-                          opacity: isLocked ? 0.6 : 1
-                        }}
-                      >
-                        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                            <div style={{
-                              width: 44,
-                              height: 44,
-                              borderRadius: 14,
-                              background: isStageCompleted ? 'rgba(var(--success-deep-rgb),0.15)' : `${currentColor}22`,
-                              border: `1px solid ${isStageCompleted ? 'var(--green)' : currentColor}`,
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              fontSize: 22,
-                              flexShrink: 0
-                            }}>
-                              {isStageCompleted ? '✓' : isLocked ? 'L' : `${idx + 1}`}
-                            </div>
-                            <div>
-                              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                                <span style={{ fontSize: 10.5, fontWeight: 800, background: `${currentColor}22`, color: currentColor, padding: '2px 7px', borderRadius: 5, border: `1px solid ${currentColor}44` }}>
-                                  STAGE {idx + 1}
-                                </span>
-                                <span style={{ fontSize: 10.5, fontWeight: 900, background: 'rgba(255,255,255,0.06)', color: 'var(--t2)', padding: '2px 7px', borderRadius: 5, border: '1px solid var(--border)' }}>
-                                  {mod.difficulty || 'Beginner'} · ~{mod.estimatedWeeks || 1}w
-                                </span>
-                                <h3 style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>
-                                  {mod.title.replace(/^.*—\s*Stage\s*\d+:\s*/i, '').trim() || mod.title}
-                                </h3>
-                              </div>
-                              <p style={{ fontSize: 13, color: 'var(--t3)', marginTop: 4, marginBottom: 0, lineHeight: 1.35 }}>
-                                {mod.desc}
-                              </p>
-                              {(mod as any).whyThisStage && (
-                                <div style={{ fontSize: 11.5, color: 'var(--success)', fontWeight: 700, marginTop: 5 }}>
-                                  {(mod as any).whyThisStage}
-                                </div>
-                              )}
-                            </div>
+                        background: !isLocked
+                          ? `linear-gradient(135deg, ${currentColor}12, var(--bg2))`
+                          : 'var(--bg2)',
+                        cursor: isLocked ? 'not-allowed' : 'pointer',
+                        opacity: isLocked ? 0.65 : 1,
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
+                        <div style={{ flex: '1 1 320px' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 6 }}>
+                            <span style={{ fontSize: 10.5, fontWeight: 900, background: `${currentColor}24`, color: currentColor, padding: '3px 8px', borderRadius: 6, border: `1px solid ${currentColor}44` }}>
+                              STAGE {idx + 1}
+                            </span>
+                            <span style={{ fontSize: 10.5, fontWeight: 800, fontFamily: 'var(--font-mono)', background: 'rgba(255,255,255,0.06)', color: 'var(--t2)', padding: '3px 8px', borderRadius: 6, border: '1px solid var(--border)' }}>
+                              Days {item.startDay}–{item.endDay} (~{item.estimatedWeeks}w)
+                            </span>
+                            <span style={{ fontSize: 10.5, fontWeight: 800, background: 'var(--bg3)', color: 'var(--t3)', padding: '3px 8px', borderRadius: 6 }}>
+                              {item.difficulty}
+                            </span>
                           </div>
-
-                          {/* Action Gauge & Button */}
-                          <div style={{ minWidth: 140, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6, marginLeft: 'auto' }}>
-                            <div style={{ fontSize: 12.5, fontWeight: 800, color: isStageCompleted ? 'var(--green)' : currentColor, fontFamily: 'var(--font-mono)' }}>
-                              {stageCompletedCount} / {stageQuests.length} Cleared ({stageProgressPct}%)
+                          <h3 style={{ fontSize: 17.5, fontWeight: 900, color: 'var(--t1)', margin: 0, lineHeight: 1.3 }}>
+                            {item.title}
+                          </h3>
+                          <p style={{ fontSize: 13, color: 'var(--t3)', margin: '6px 0 0 0', lineHeight: 1.45 }}>
+                            {item.desc}
+                          </p>
+                          {mod?.whyThisStage && (
+                            <div style={{ fontSize: 12, color: '#34d399', fontWeight: 700, marginTop: 6 }}>
+                              {mod.whyThisStage}
                             </div>
-                            <div style={{ width: 120, height: 5, background: 'var(--bg3)', borderRadius: 3, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                              <div style={{ width: `${stageProgressPct}%`, height: '100%', background: isStageCompleted ? 'var(--green)' : currentColor }} />
-                            </div>
-                            <button
-                              style={{
-                                marginTop: 4,
-                                background: isStageCompleted ? 'rgba(var(--success-deep-rgb),0.1)' : isLocked ? 'var(--bg3)' : `linear-gradient(135deg, ${currentColor}, var(--success-deep))`,
-                                border: isStageCompleted ? '1px solid var(--green)' : 'none',
-                                color: isStageCompleted ? 'var(--green)' : isLocked ? 'var(--t4)' : 'var(--text)',
-                                padding: '6px 14px',
-                                borderRadius: 9,
-                                fontSize: 12,
-                                fontWeight: 800,
-                                cursor: isLocked ? 'not-allowed' : 'pointer'
-                              }}
-                            >
-                              {isStageCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Continue Stage ➔'}
-                            </button>
-                          </div>
+                          )}
                         </div>
 
-                        {/* Quests Pill Chips */}
-                        {stageQuests.length > 0 && (
-                          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', paddingTop: 6, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                            {stageQuests.map((q, qIdx) => {
+                        <div style={{ minWidth: 155, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6, marginLeft: 'auto' }}>
+                          <div style={{ fontSize: 12.5, fontWeight: 800, color: isStageCompleted ? '#10b981' : currentColor, fontFamily: 'var(--font-mono)' }}>
+                            {item.cleared} / {item.total} Cleared ({item.pct}%)
+                          </div>
+                          <div style={{ width: 136, height: 6, background: 'var(--bg3)', borderRadius: 999, overflow: 'hidden', border: '1px solid var(--border)' }}>
+                            <div style={{ width: `${item.pct}%`, height: '100%', background: isStageCompleted ? '#10b981' : currentColor }} />
+                          </div>
+                          <button
+                            type="button"
+                            style={{
+                              marginTop: 4,
+                              background: isStageCompleted ? 'rgba(16,185,129,0.12)' : isLocked ? 'var(--bg3)' : `linear-gradient(135deg, ${currentColor}, #059669)`,
+                              border: isStageCompleted ? '1px solid #10b981' : 'none',
+                              color: isStageCompleted ? '#34d399' : isLocked ? 'var(--t4)' : '#ffffff',
+                              padding: '7px 14px',
+                              borderRadius: 10,
+                              fontSize: 12.5,
+                              fontWeight: 800,
+                              cursor: isLocked ? 'not-allowed' : 'pointer',
+                            }}
+                          >
+                            {isStageCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Continue Stage ➔'}
+                          </button>
+                        </div>
+                      </div>
+
+                      {stageQuests.length > 0 && (
+                        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 12 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+                            <span style={{ fontSize: 11.5, fontWeight: 800, color: 'var(--t3)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                              Calibrated Quests ({visibleQuests.length} of {stageQuests.length} shown)
+                            </span>
+                            {stageQuests.length > 6 && (
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setExpandedStages((prev) => ({ ...prev, [item.key]: !prev[item.key] }));
+                                }}
+                                style={{
+                                  background: 'none',
+                                  border: 'none',
+                                  color: currentColor,
+                                  fontSize: 12,
+                                  fontWeight: 800,
+                                  cursor: 'pointer',
+                                  padding: '2px 6px',
+                                }}
+                              >
+                                {isExpanded ? 'Show Compact View' : `Show All ${stageQuests.length} Quests ▾`}
+                              </button>
+                            )}
+                          </div>
+                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(230px, 1fr))', gap: 8 }}>
+                            {visibleQuests.map((q) => {
+                              const realIdx = stageQuests.findIndex((sq) => sq.id === q.id);
                               const isQDone = completedQuests.includes(q.id);
                               const isExam = q.category === 'exam' || q.type === 'interactive' || q.id.includes('exam');
                               const isCode = q.type === 'coding';
-                              const catIcon = isExam ? 'TEST' : isCode ? 'CODE' : 'CORE';
-                              const catLabel = isExam ? 'Exam' : isCode ? 'Coding' : 'Learn';
-                              const isPrevQuestDone = qIdx === 0 || completedQuests.includes(stageQuests[qIdx - 1].id);
+                              const catLabel = isExam ? 'EXAM' : isCode ? 'CODE' : 'LEARN';
+                              const isPrevQuestDone = realIdx <= 0 || completedQuests.includes(stageQuests[realIdx - 1].id);
                               const isQuestLocked = isLocked || (!isQDone && !isPrevQuestDone);
                               return (
                                 <button
@@ -818,70 +850,75 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                                       if (isLocked) {
                                         toast.warning('Prerequisite Stage Locked', 'Complete previous stage quests first.');
                                       } else {
-                                        const prevQ = stageQuests[qIdx - 1];
+                                        const prevQ = stageQuests[realIdx - 1];
                                         toast.warning('Prerequisite Quest Locked', `Complete "${prevQ?.title || 'previous quest'}" first.`);
                                       }
                                       return;
                                     }
-                                    handleLaunchQuest(q, (mod as any).courseId || activeCourseId || 'course-java-logic');
-                                  }}
-                                  style={{
-                                    fontSize: 12,
-                                    fontWeight: 700,
-                                    background: isQDone ? 'rgba(var(--success-rgb), 0.15)' : isQuestLocked ? 'var(--bg2)' : 'var(--bg3)',
-                                    border: `1px solid ${isQDone ? 'var(--green)' : isQuestLocked ? 'rgba(255,255,255,0.05)' : 'var(--border)'}`,
-                                    color: isQDone ? 'var(--green)' : isQuestLocked ? 'var(--t4)' : 'var(--t1)',
-                                    padding: '5px 12px',
-                                    borderRadius: 10,
-                                    cursor: isQuestLocked ? 'not-allowed' : 'pointer',
-                                    opacity: isQuestLocked ? 0.6 : 1,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: 6,
-                                    transition: 'all 0.15s ease'
+                                    handleLaunchQuest(q, item.courseId || 'course-fullstack-js');
                                   }}
                                   className={isQuestLocked ? '' : 'card-hover'}
+                                  style={{
+                                    textAlign: 'left',
+                                    fontSize: 12.5,
+                                    fontWeight: 700,
+                                    background: isQDone ? 'rgba(16,185,129,0.14)' : isQuestLocked ? 'var(--bg3)' : 'rgba(15,23,42,0.55)',
+                                    border: `1px solid ${isQDone ? '#10b981' : isQuestLocked ? 'rgba(255,255,255,0.05)' : 'var(--border)'}`,
+                                    color: isQDone ? '#34d399' : isQuestLocked ? 'var(--t4)' : 'var(--t1)',
+                                    padding: '9px 11px',
+                                    borderRadius: 10,
+                                    cursor: isQuestLocked ? 'not-allowed' : 'pointer',
+                                    opacity: isQuestLocked ? 0.65 : 1,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: 8,
+                                  }}
                                 >
-                                  <span>{isQDone ? '✓' : isQuestLocked ? '•' : catIcon}</span>
-                                  <span style={{ fontSize: 11, opacity: 0.8, textTransform: 'uppercase' }}>[{catLabel}]</span>
-                                  <span>{q.title.replace(/^Day \d+[:\s-]*/i, '').replace(/Challenge:?\s*/i, '').replace(/Assignment:?\s*/i, '').slice(0, 36)}</span>
+                                  <span style={{
+                                    fontSize: 10,
+                                    fontWeight: 900,
+                                    padding: '2px 6px',
+                                    borderRadius: 5,
+                                    background: isQDone ? 'rgba(16,185,129,0.22)' : 'rgba(255,255,255,0.07)',
+                                    color: isQDone ? '#34d399' : isCode ? '#38bdf8' : isExam ? '#fbbf24' : '#a5b4fc',
+                                    flexShrink: 0,
+                                  }}>
+                                    {isQDone ? 'DONE' : catLabel}
+                                  </span>
+                                  <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                    {q.title.replace(/^Day \d+[:\s-]*/i, '').replace(/Challenge:?\s*/i, '').replace(/Assignment:?\s*/i, '')}
+                                  </span>
                                 </button>
                               );
                             })}
                           </div>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                );
-              })
+                  );
+                })
+              ) : (
+                <div style={{
+                  textAlign: 'center',
+                  padding: '48px 24px',
+                  background: 'rgba(255, 255, 255, 0.02)',
+                  border: '1.5px dashed var(--border)',
+                  borderRadius: 20,
+                }}>
+                  <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--t1)' }}>Personalized Roadmap Initializing</h3>
+                  <p style={{ fontSize: 14.5, color: 'var(--t3)', maxWidth: 440, margin: '8px auto 20px', lineHeight: 1.5 }}>
+                    We are crafting your stage-by-stage learning path tailored to your target goal and timeline.
+                  </p>
+                  <button
+                    onClick={() => { if (typeof window !== 'undefined') window.location.reload(); }}
+                    className="btn-primary"
+                    style={{ padding: '10px 20px', borderRadius: 10, fontSize: 13, fontWeight: 700 }}
+                  >
+                    Synchronize Roadmap
+                  </button>
+                </div>
+              )
             ) : (
-              <div style={{
-                textAlign: 'center',
-                padding: '48px 24px',
-                background: 'rgba(255, 255, 255, 0.02)',
-                border: '1.5px dashed var(--border)',
-                borderRadius: 20,
-                margin: '20px 0'
-              }}>
-                
-                <h3 style={{ fontSize: 20, fontWeight: 800, color: 'var(--t1)' }}>Personalized Roadmap Initializing</h3>
-                <p style={{ fontSize: 14.5, color: 'var(--t3)', maxWidth: 440, margin: '8px auto 20px', lineHeight: 1.5 }}>
-                  We are crafting your stage-by-stage learning path tailored to your archetype and career goals.
-                </p>
-                <button
-                  onClick={() => {
-                    if (typeof window !== 'undefined') {
-                      window.location.reload();
-                    }
-                  }}
-                  className="btn-primary"
-                  style={{ padding: '10px 20px', borderRadius: 10, fontSize: 13, fontWeight: 700 }}
-                >
-                  Synchronize Roadmap
-                </button>
-              </div>
-            )) : (
               trajectory.nodes.map((node, idx) => {
                 const nodeCourse = COURSES_REGISTRY.find(c => c.id === node.courseId) || COURSES_REGISTRY[0];
                 const nodeQuests = nodeCourse?.quests || [];
@@ -889,33 +926,21 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                 const nodeProgressPct = Math.min(100, Math.round((nodeCompletedCount / Math.max(1, nodeQuests.length)) * 100));
                 const isNodeCompleted = nodeProgressPct === 100;
                 const isCurrentActiveNode = node.courseId === activeCourseId;
-                const isLocked = idx > 0 && (
-                  (() => {
-                    const prevNode = trajectory.nodes[idx - 1];
-                    const prevCourse = COURSES_REGISTRY.find(c => c.id === prevNode.courseId);
-                    const prevQuests = prevCourse?.quests || [];
-                    const prevCleared = prevQuests.filter(q => completedQuests.includes(q.id)).length;
-                    return prevCleared < prevQuests.length && prevQuests.length > 0;
-                  })()
-                );
-
+                const isLocked = idx > 0 && (() => {
+                  const prevNode = trajectory.nodes[idx - 1];
+                  const prevCourse = COURSES_REGISTRY.find(c => c.id === prevNode.courseId);
+                  const prevQuests = prevCourse?.quests || [];
+                  const prevCleared = prevQuests.filter(q => completedQuests.includes(q.id)).length;
+                  return prevCleared < prevQuests.length && prevQuests.length > 0;
+                })();
                 const nextQuestInNode = nodeQuests.find(q => !completedQuests.includes(q.id)) || nodeQuests[0];
-                const stepColors = ['var(--accent)', 'var(--teal)', 'var(--purple)', 'var(--blue)', 'var(--success)', 'var(--warning)', 'var(--reward)', '#ec4899'];
-                const currentColor = stepColors[idx % stepColors.length];
+                const currentColor = STEP_ACCENTS[idx % STEP_ACCENTS.length];
+                const itemMeta = stageItems[idx];
 
                 return (
-                  <div id={`node-card-${node.nodeId}`} key={node.nodeId} style={{ position: 'relative' }}>
-                    
-                    {/* Readiness Gate Checkpoint Banner before Node */}
+                  <div id={`node-card-${node.nodeId || idx}`} key={node.nodeId || `node-${idx}`} style={{ position: 'relative' }}>
                     {node.gate && (
-                      <div
-                        onClick={() => setActiveGateModalNode(node)}
-                        style={{
-                          marginBottom: 12,
-                          display: 'flex',
-                          justifyContent: 'flex-end'
-                        }}
-                      >
+                      <div onClick={() => setActiveGateModalNode(node)} style={{ marginBottom: 10, display: 'flex', justifyContent: 'flex-end' }}>
                         <div style={{
                           padding: '7px 14px',
                           background: 'rgba(var(--warning-rgb),0.08)',
@@ -940,164 +965,90 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                       </div>
                     )}
 
-                    {/* Detailed Stage Execution Card */}
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: 16,
-                      position: 'relative'
-                    }}>
-                      {/* Step Circle Badge on Card */}
-                      <div style={{
-                        width: 64,
-                        height: 64,
-                        borderRadius: '50%',
-                        background: `linear-gradient(135deg, ${currentColor}, var(--bg3))`,
-                        border: `3px solid ${currentColor}`,
-                        boxShadow: `0 0 20px ${currentColor}55`,
+                    <div
+                      onClick={() => {
+                        if (isLocked) {
+                          toast.warning('Prerequisite Stage Locked', 'Please complete the previous stage quests before advancing to this stage.');
+                          return;
+                        }
+                        if (isNodeCompleted) {
+                          toast.warning('Milestone Completed 🔒', 'All classes in this milestone have been completed. Previous classes cannot be re-accessed.');
+                          return;
+                        }
+                        if (nextQuestInNode) {
+                          handleLaunchQuest(nextQuestInNode, node.courseId);
+                        }
+                      }}
+                      className={`glass-card-premium ${isLocked ? '' : 'card-hover'}`}
+                      style={{
                         display: 'flex',
-                        flexDirection: 'column',
                         alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'var(--text)',
-                        fontWeight: 900,
-                        flexShrink: 0,
-                        zIndex: 2
-                      }}>
-                        <span style={{ fontSize: 9.5, textTransform: 'uppercase', opacity: 0.9 }}>Step</span>
-                        <span style={{ fontSize: 20, lineHeight: 1.1 }}>{idx + 1}</span>
+                        justifyContent: 'space-between',
+                        gap: 18,
+                        flexWrap: 'wrap',
+                        padding: '20px 22px',
+                        borderRadius: 20,
+                        border: isCurrentActiveNode ? `1.5px solid ${currentColor}` : isNodeCompleted ? '1.5px solid #10b981' : '1px solid var(--border)',
+                        background: isCurrentActiveNode ? `linear-gradient(135deg, ${currentColor}14, var(--bg2))` : 'var(--bg2)',
+                        cursor: isLocked ? 'not-allowed' : 'pointer',
+                        opacity: isLocked ? 0.65 : 1,
+                      }}
+                    >
+                      <div style={{ flex: '1 1 320px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap', marginBottom: 6 }}>
+                          <span style={{ fontSize: 10.5, fontWeight: 900, background: `${currentColor}22`, color: currentColor, padding: '3px 8px', borderRadius: 6 }}>
+                            STAGE {idx + 1}
+                          </span>
+                          {itemMeta && (
+                            <span style={{ fontSize: 10.5, fontWeight: 800, fontFamily: 'var(--font-mono)', background: 'rgba(255,255,255,0.06)', color: 'var(--t2)', padding: '3px 8px', borderRadius: 6 }}>
+                              Days {itemMeta.startDay}–{itemMeta.endDay}
+                            </span>
+                          )}
+                          <span style={{ fontSize: 10.5, fontWeight: 800, background: 'rgba(16,185,129,0.12)', color: '#34d399', padding: '3px 8px', borderRadius: 6 }}>
+                            {node.careerImpact}
+                          </span>
+                        </div>
+                        <h3 style={{ fontSize: 17, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>{node.title}</h3>
+                        <p style={{ fontSize: 13, color: 'var(--t3)', margin: '6px 0 8px 0', lineHeight: 1.4 }}>{node.shortDesc}</p>
+                        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                          {node.skillsLearned.map(skill => (
+                            <span key={skill} style={{ fontSize: 11, background: 'var(--bg3)', border: '1px solid var(--border)', padding: '2px 8px', borderRadius: 6, color: 'var(--t2)', fontWeight: 600 }}>
+                              ✓ {skill}
+                            </span>
+                          ))}
+                        </div>
                       </div>
 
-                      {/* Main Interactive Stage Card */}
-                      <div
-                        onClick={() => {
-                          if (isLocked) {
-                            toast.warning('Prerequisite Stage Locked', 'Please complete the previous stage quests before advancing to this stage.');
-                            return;
-                          }
-                          if (isNodeCompleted) {
-                            toast.warning('Milestone Completed 🔒', 'All classes in this milestone have been completed. Previous classes cannot be re-accessed.');
-                            return;
-                          }
-                          if (nextQuestInNode) {
-                            handleLaunchQuest(nextQuestInNode, node.courseId);
-                          }
-                        }}
-                        className={`glass-card-premium ${isLocked ? '' : 'card-hover'}`}
-                        style={{
-                          flex: 1,
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: 18,
-                          padding: '20px 24px',
-                          borderRadius: 22,
-                          border: isCurrentActiveNode 
-                            ? `2px solid ${currentColor}` 
-                            : isNodeCompleted 
-                            ? '1px solid var(--green)' 
-                            : '1px solid var(--border)',
-                          background: isCurrentActiveNode 
-                            ? `linear-gradient(135deg, ${currentColor}15, var(--bg2))` 
-                            : 'var(--bg2)',
-                          boxShadow: isCurrentActiveNode ? `0 0 24px ${currentColor}33` : 'none',
-                          cursor: isLocked ? 'not-allowed' : 'pointer',
-                          opacity: isLocked ? 0.6 : 1
-                        }}
-                      >
-                        {/* Icon Avatar */}
-                        <div style={{
-                          width: 48,
-                          height: 48,
-                          borderRadius: 14,
-                          background: isNodeCompleted ? 'rgba(var(--success-deep-rgb),0.15)' : `${currentColor}22`,
-                          border: `1px solid ${isNodeCompleted ? 'var(--green)' : currentColor}`,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontSize: 24,
-                          flexShrink: 0
-                        }}>
-                          {isNodeCompleted ? '✓' : isLocked ? 'L' : (node.icon || '•')}
+                      <div style={{ minWidth: 150, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
+                        <div style={{ fontSize: 12.5, fontWeight: 800, color: isNodeCompleted ? '#10b981' : currentColor, fontFamily: 'var(--font-mono)' }}>
+                          {nodeCompletedCount} / {nodeQuests.length || 30} Cleared ({nodeProgressPct}%)
                         </div>
-
-                        {/* Info Text */}
-                        <div style={{ flex: 1 }}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                            <span style={{ fontSize: 10.5, fontWeight: 800, background: `${currentColor}22`, color: currentColor, padding: '2px 7px', borderRadius: 5, border: `1px solid ${currentColor}44` }}>
-                              STAGE {idx + 1}
-                            </span>
-                            {(() => {
-                              const getLevelBadge = (i: number) => {
-                                if (i === 0) return { label: 'Level 0: Zero Basics', color: 'var(--success)' };
-                                if (i === 1) return { label: 'Level 1: Foundations', color: 'var(--accent-cyan)' };
-                                if (i === 2) return { label: 'Level 2: Core Engineering', color: 'var(--info)' };
-                                return { label: 'Level 3: Pro Mastery', color: '#ec4899' };
-                              };
-                              const badge = getLevelBadge(idx);
-                              return (
-                                <span style={{ fontSize: 10.5, fontWeight: 900, background: `${badge.color}15`, color: badge.color, padding: '2px 7px', borderRadius: 5, border: `1px solid ${badge.color}33` }}>
-                                  {badge.label}
-                                </span>
-                              );
-                            })()}
-                            <h3 style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>{node.title}</h3>
-                            <span style={{ fontSize: 10.5, fontWeight: 800, background: 'rgba(var(--success-deep-rgb),0.1)', color: 'var(--green)', padding: '2px 7px', borderRadius: 5 }}>
-                              {node.careerImpact}
-                            </span>
-                          </div>
-
-                          <p style={{ fontSize: 13, color: 'var(--t3)', marginTop: 4, marginBottom: 6, lineHeight: 1.35 }}>
-                            {node.shortDesc}
-                          </p>
-
-                          {/* Skills Learned Badges */}
-                          <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
-                            {node.skillsLearned.map(skill => (
-                              <span key={skill} style={{ fontSize: 11, background: 'var(--bg3)', border: '1px solid var(--border)', padding: '2px 7px', borderRadius: 5, color: 'var(--t2)', fontWeight: 600 }}>
-                                ✓ {skill}
-                              </span>
-                            ))}
-                          </div>
+                        <div style={{ width: 130, height: 6, background: 'var(--bg3)', borderRadius: 999, overflow: 'hidden', border: '1px solid var(--border)' }}>
+                          <div style={{ width: `${nodeProgressPct}%`, height: '100%', background: isNodeCompleted ? '#10b981' : currentColor }} />
                         </div>
-
-                        {/* Action Gauge & Button */}
-                        <div style={{ minWidth: 140, textAlign: 'right', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 6 }}>
-                          <div style={{ fontSize: 12.5, fontWeight: 800, color: isNodeCompleted ? 'var(--green)' : currentColor, fontFamily: 'var(--font-mono)' }}>
-                            {nodeCompletedCount} / {nodeQuests.length || 30} Cleared ({nodeProgressPct}%)
-                          </div>
-
-                          <div style={{ width: 120, height: 5, background: 'var(--bg3)', borderRadius: 3, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                            <div style={{ width: `${nodeProgressPct}%`, height: '100%', background: isNodeCompleted ? 'var(--green)' : currentColor }} />
-                          </div>
-
-                          <button
-                            style={{
-                              marginTop: 4,
-                              background: isNodeCompleted ? 'rgba(var(--success-deep-rgb),0.1)' : isLocked ? 'var(--bg3)' : `linear-gradient(135deg, ${currentColor}, var(--success-deep))`,
-                              border: isNodeCompleted ? '1px solid var(--green)' : 'none',
-                              color: isNodeCompleted ? 'var(--green)' : isLocked ? 'var(--t4)' : 'var(--text)',
-                              padding: '6px 14px',
-                              borderRadius: 9,
-                              fontSize: 12,
-                              fontWeight: 800,
-                              cursor: isLocked ? 'not-allowed' : 'pointer'
-                            }}
-                          >
-                            {isNodeCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Continue Quest ➔'}
-                          </button>
-                        </div>
-
+                        <button
+                          type="button"
+                          style={{
+                            marginTop: 4,
+                            background: isNodeCompleted ? 'rgba(16,185,129,0.12)' : isLocked ? 'var(--bg3)' : `linear-gradient(135deg, ${currentColor}, #059669)`,
+                            border: isNodeCompleted ? '1px solid #10b981' : 'none',
+                            color: isNodeCompleted ? '#34d399' : isLocked ? 'var(--t4)' : '#ffffff',
+                            padding: '7px 14px',
+                            borderRadius: 10,
+                            fontSize: 12.5,
+                            fontWeight: 800,
+                            cursor: isLocked ? 'not-allowed' : 'pointer',
+                          }}
+                        >
+                          {isNodeCompleted ? 'Completed ✓' : isLocked ? 'Locked' : 'Continue Quest ➔'}
+                        </button>
                       </div>
                     </div>
-
                   </div>
                 );
               })
             )}
-
-
           </div>
-
         </div>
       </div>
 

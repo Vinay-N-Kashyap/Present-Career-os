@@ -553,10 +553,19 @@ export function useQuestProgression() {
     try {
       const ownRole = typeof onboardingAnswers?.role === 'string' ? onboardingAnswers.role.trim() : '';
       const finalGoal = customGoal.trim() || ownRole || config.role;
+      const includeResume = opts?.useResumeAndVault !== false;
 
       let dynamicModules;
       let resolvedCourseId = config.courseId;
-      let evidenceSummary: ExtraRoadmap['evidenceSummary'] = undefined;
+      let evidenceSummary: ExtraRoadmap['evidenceSummary'] = includeResume
+        ? undefined
+        : {
+            usedResume: false,
+            resumeTitle: null,
+            vaultDocsCount: 0,
+            provenSkills: [],
+            targetGaps: [],
+          };
       try {
         const headers: Record<string, string> = { 'Content-Type': 'application/json' };
         try {
@@ -577,7 +586,7 @@ export function useQuestProgression() {
             archetype: onboardingAnswers?.mindset_archetype || 'Pattern Hunter',
             qt1: onboardingAnswers?.qt1_score ?? 40,
             qt2: onboardingAnswers?.qt2_score ?? 40,
-            useResumeAndVault: opts?.useResumeAndVault !== false,
+            useResumeAndVault: includeResume,
             extraId,
           }),
         });
@@ -591,7 +600,10 @@ export function useQuestProgression() {
             resolvedCourseId = data.courseId;
           }
           if (data.evidenceSummary && typeof data.evidenceSummary === 'object') {
-            evidenceSummary = data.evidenceSummary;
+            evidenceSummary = {
+              ...data.evidenceSummary,
+              usedResume: includeResume && data.evidenceSummary.usedResume !== false,
+            };
           }
         }
       } catch {
@@ -600,6 +612,9 @@ export function useQuestProgression() {
 
       if (!dynamicModules || !Array.isArray(dynamicModules)) {
         const { generateDynamicStudentRoadmap } = await import('@/lib/data/roadmapFuser');
+        const { resolveGoalPrimaryCourse } = await import('@/lib/roadmap/roadmapCourseSelector');
+        const goalCourse = resolveGoalPrimaryCourse(resolvedCourseId, finalGoal);
+        resolvedCourseId = goalCourse.id;
         dynamicModules = generateDynamicStudentRoadmap({
           qt1: onboardingAnswers?.qt1_score ?? 40,
           qt2: onboardingAnswers?.qt2_score ?? 40,
@@ -607,7 +622,9 @@ export function useQuestProgression() {
           goal: finalGoal,
           courseId: resolvedCourseId,
           durationDays: selectedDuration,
-          dailyPace: selectedPace
+          dailyPace: selectedPace,
+          evidence: null,
+          weakAreas: undefined,
         });
       }
 
@@ -622,6 +639,7 @@ export function useQuestProgression() {
         dailyPace: selectedPace,
         track: selectedTrack,
         createdAt: Date.now(),
+        usedResume: includeResume,
         ...(evidenceSummary ? { evidenceSummary } : {}),
       };
       const nextExtras = [...extraRoadmaps, extra];
@@ -793,7 +811,7 @@ export function useQuestProgression() {
     }
 
     if (activeExtraId) {
-      const extraSaved = readExtraModules(effectiveUserId, activeExtraId);
+      const extraSaved = readExtraModules(effectiveUserId, activeExtraId, COURSES_REGISTRY);
       if (extraSaved) {
         setModules(extraSaved as Module[]);
         if (!roadmapGenerated) setRoadmapGenerated(true);
@@ -801,6 +819,7 @@ export function useQuestProgression() {
       }
       const extraMeta = extraRoadmaps.find(rm => rm.id === activeExtraId);
       if (extraMeta) {
+        const useSavedGaps = extraMeta.usedResume !== false && extraMeta.evidenceSummary?.usedResume !== false;
         const fallback = generateDynamicStudentRoadmap({
           courseId: extraMeta.courseId,
           goal: extraMeta.goal,
@@ -810,7 +829,7 @@ export function useQuestProgression() {
           durationDays: extraMeta.durationDays,
           dailyPace: extraMeta.dailyPace,
           selectedCourseIds: extraMeta.evidenceSummary?.selectedCourseIds,
-          weakAreas: extraMeta.evidenceSummary?.targetGaps,
+          weakAreas: useSavedGaps ? extraMeta.evidenceSummary?.targetGaps : undefined,
         });
         setModules(fallback as unknown as Module[]);
         if (!roadmapGenerated) setRoadmapGenerated(true);

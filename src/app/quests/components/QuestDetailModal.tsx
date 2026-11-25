@@ -572,15 +572,10 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
     : `${monthsCount} ${monthsCount === 1 ? 'Month' : 'Months'}`;
 
   const effectiveGoalText = (customGoal || evidencePreview?.targetRole || '').trim();
-  const goalTrackKey = (trackKeyForGoal(effectiveGoalText) || selectedTrack || '').toLowerCase();
-  const trackMatchedCourse = (goalTrackKey.includes('ai') || goalTrackKey.includes('ml'))
-    ? COURSES_REGISTRY.find((c) => c.id === 'course-ai-python')?.title
-    : goalTrackKey.includes('full')
-      ? COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js')?.title
-      : (goalTrackKey.includes('python') || goalTrackKey.includes('backend'))
-        ? COURSES_REGISTRY.find((c) => c.id === 'course-python-backend')?.title
-        : undefined;
-  const displayTrackTitle = trackMatchedCourse || activeCourseTitle;
+  void activeCourseTitle;
+  void effectiveGoalText;
+  void selectedTrack;
+  void COURSES_REGISTRY;
 
   return (
     <div
@@ -595,8 +590,8 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
       }}
     >
       <div style={{
-        maxWidth: 600, width: '100%', maxHeight: '86vh',
-        borderRadius: 24, padding: '22px 24px',
+        maxWidth: 780, width: '100%', maxHeight: '88vh',
+        borderRadius: 24, padding: '24px 28px',
         position: 'relative', display: 'flex', flexDirection: 'column', overflow: 'hidden'
       }} className="animate-modal-pop glass-card-premium">
         
@@ -643,83 +638,82 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
         ) : (
           <>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: 1, minHeight: 0, overflowY: 'auto', paddingRight: 4 }}>
-              <div style={{
-                padding: '10px 14px',
-                borderRadius: 14,
-                background: 'var(--bg3)',
-                border: '1px solid var(--border)',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-                gap: 10,
-                fontSize: 12.5,
-                fontWeight: 800
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: 'var(--t4)' }}>QT1 Knowledge:</span>
-                  <span style={{ color: 'var(--success)' }}>{qt1}/100</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: 'var(--t4)' }}>Mindset:</span>
-                  <span style={{ color: 'var(--purple)' }}>{archetype}</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ color: 'var(--t4)' }}>Target Track:</span>
-                  <span style={{ color: 'var(--t1)' }}>{displayTrackTitle}</span>
-                </div>
-              </div>
-
               {/* Resume, Vault Documents & Profile Evidence Sync Panel */}
               <div
                 data-testid="roadmap-evidence-preview"
                 style={{
-                  padding: '12px 15px',
+                  padding: '14px 16px',
                   borderRadius: 14,
-                  background: useResumeAndVault ? 'rgba(99,102,241,0.08)' : 'var(--bg3)',
-                  border: `1px solid ${useResumeAndVault ? 'rgba(99,102,241,0.32)' : 'var(--border)'}`,
+                  background: useResumeAndVault ? 'rgba(99,102,241,0.09)' : 'var(--bg3)',
+                  border: `1.5px solid ${useResumeAndVault ? 'rgba(99,102,241,0.36)' : 'var(--border)'}`,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: 6,
+                  gap: 8,
+                  transition: 'all 0.2s ease',
                 }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--t1)' }}>
+                  <span style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)' }}>
                     Personalize From Your Resume, Vault Documents &amp; Profile
                   </span>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700, color: 'var(--success)', cursor: 'pointer' }}>
-                    <input
-                      type="checkbox"
-                      checked={useResumeAndVault}
-                      onChange={(e) => setUseResumeAndVault(e.target.checked)}
-                    />
-                    Enable Personalization
-                  </label>
+                  <span style={{
+                    fontSize: 11,
+                    fontWeight: 800,
+                    padding: '2px 8px',
+                    borderRadius: 6,
+                    background: useResumeAndVault ? 'rgba(16,185,129,0.16)' : 'rgba(148,163,184,0.15)',
+                    color: useResumeAndVault ? 'var(--success)' : 'var(--t3)',
+                  }}>
+                    {useResumeAndVault ? 'Resume & Gaps Active' : 'Goal-Only Mode (Resume Ignored)'}
+                  </span>
                 </div>
                 {loadingPreview ? (
-                  <div style={{ fontSize: 12, color: 'var(--t3)' }}>Scanning your Proof Vault resume &amp; profile...</div>
-                ) : evidencePreview ? (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 12, color: 'var(--t2)' }}>
-                    <div>
-                      <strong style={{ color: 'var(--t1)' }}>Resume:</strong>{' '}
-                      {evidencePreview.resumeTitle ? `${evidencePreview.resumeTitle} (${evidencePreview.vaultDocsCount || 1} Vault doc(s))` : 'No resume uploaded in Vault yet (using profile)'}
-                    </div>
-                    {(evidencePreview.provenSkills?.length || evidencePreview.claimedSkills?.length) ? (
+                  <div style={{ fontSize: 12.5, color: 'var(--t3)' }}>Scanning your Proof Vault resume &amp; profile...</div>
+                ) : (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 12.5, color: 'var(--t2)' }}>
+                    <label
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 10,
+                        padding: '8px 10px',
+                        borderRadius: 10,
+                        background: useResumeAndVault ? 'rgba(15, 23, 42, 0.45)' : 'rgba(15, 23, 42, 0.25)',
+                        border: `1px solid ${useResumeAndVault ? 'rgba(99,102,241,0.35)' : 'var(--border)'}`,
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <input
+                        data-testid="checkbox-use-resume"
+                        type="checkbox"
+                        checked={useResumeAndVault}
+                        onChange={(e) => setUseResumeAndVault(e.target.checked)}
+                        style={{ width: 17, height: 17, accentColor: 'var(--success)', cursor: 'pointer', flexShrink: 0 }}
+                      />
+                      <span style={{ color: 'var(--t1)', fontWeight: 700, lineHeight: 1.35 }}>
+                        <strong style={{ color: useResumeAndVault ? 'var(--t1)' : 'var(--t3)' }}>Resume:</strong>{' '}
+                        {evidencePreview?.resumeTitle
+                          ? `${evidencePreview.resumeTitle} (${evidencePreview.vaultDocsCount || 1} Vault doc(s))`
+                          : 'Use Proof Vault resume & profile documents if available'}
+                        <span style={{ display: 'block', fontSize: 11, fontWeight: 600, color: 'var(--t3)', marginTop: 1 }}>
+                          {useResumeAndVault
+                            ? 'Checked — roadmap prioritizes your target gaps & avoids repeating proven basics. Uncheck to ignore resume.'
+                            : 'Unchecked — your resume and Vault documents will be completely ignored.'}
+                        </span>
+                      </span>
+                    </label>
+                    {useResumeAndVault && evidencePreview && (evidencePreview.provenSkills?.length || evidencePreview.claimedSkills?.length) ? (
                       <div>
                         <strong style={{ color: 'var(--t1)' }}>Skills Detected:</strong>{' '}
                         {[...(evidencePreview.provenSkills || []), ...(evidencePreview.claimedSkills || [])].slice(0, 6).join(', ')}
                       </div>
                     ) : null}
-                    {evidencePreview.weakAreas && evidencePreview.weakAreas.length > 0 ? (
+                    {useResumeAndVault && evidencePreview?.weakAreas && evidencePreview.weakAreas.length > 0 ? (
                       <div>
                         <strong style={{ color: '#f59e0b' }}>Target Gaps:</strong>{' '}
                         {evidencePreview.weakAreas.slice(0, 5).join(', ')}
                       </div>
                     ) : null}
-                  </div>
-                ) : (
-                  <div style={{ fontSize: 12, color: 'var(--t3)' }}>
-                    Automatically incorporates your Vault resume, skills, and interview gaps.
                   </div>
                 )}
               </div>

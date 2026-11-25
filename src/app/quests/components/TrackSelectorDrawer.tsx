@@ -842,8 +842,8 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
         </div>
       )}
 
-      {/* ── SUB-TAB 2 VIEW: CUSTOM ROADMAP HEADER ── */}
-      {activeSubTab === 'custom_roadmap' && (
+      {/* ── SUB-TAB 2 VIEW: CUSTOM ROADMAP HEADER (Hidden per UX declutter; action moved cleanly into QuestPathView) ── */}
+      {false && activeSubTab === 'custom_roadmap' && (
         <div style={{
           marginBottom: 18,
           padding: '16px 20px',
@@ -944,8 +944,8 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
         </div>
       )}
 
-      {/* ── MULTI-ROADMAP SWITCHER BAR (Max 3 Concurrent Tracks). Not on the certificate tab, which has its own course. ── */}
-      {activeSubTab !== 'language' && activeSubTab !== 'certification_passport' && (() => {
+      {/* ── MULTI-ROADMAP SWITCHER BAR (Shown on Standalone only; hidden on Custom Roadmap to declutter frontend) ── */}
+      {activeSubTab !== 'language' && activeSubTab !== 'certification_passport' && activeSubTab !== 'custom_roadmap' && (() => {
         const myActiveCourseIds = Array.from(new Set([activeCourseId, ...activeCourseIds].filter(Boolean))) as string[];
         const count = myActiveCourseIds.length;
 

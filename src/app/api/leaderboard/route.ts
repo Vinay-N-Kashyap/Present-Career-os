@@ -166,11 +166,28 @@ export async function GET(req: Request) {
     let currentUserStats: { weeklyXp: number; arenaPoints: number; arenaElo: number } | null = null;
     if (currentUserId && admin) {
       try {
-        const { data: userProfile, error: userProfileError } = await admin
+        let userProfile: any = null;
+        let userProfileError: any = null;
+        let hasLastLeagueEvalField = false;
+
+        const primaryRes = await admin
           .from('users')
-          .select('league_tier, league_joined_at, xp_total, weekly_xp, weekly_arena_points, arena_elo, arena_wins')
+          .select('league_tier, league_joined_at, xp_total, weekly_xp, weekly_arena_points, arena_elo, arena_wins, last_league_eval')
           .eq('id', currentUserId)
           .maybeSingle();
+
+        if (primaryRes.error) {
+          const fallbackRes = await admin
+            .from('users')
+            .select('league_tier, league_joined_at, xp_total, weekly_xp, weekly_arena_points, arena_elo, arena_wins')
+            .eq('id', currentUserId)
+            .maybeSingle();
+          userProfile = fallbackRes.data;
+          userProfileError = fallbackRes.error;
+        } else {
+          userProfile = primaryRes.data;
+          hasLastLeagueEvalField = Boolean(userProfile && Object.prototype.hasOwnProperty.call(userProfile, 'last_league_eval'));
+        }
 
         if (userProfileError) {
           console.warn("[Leaderboard] Could not confirm current user's league membership:", userProfileError.message);
@@ -188,6 +205,10 @@ export async function GET(req: Request) {
             userId: currentUserId,
             storedWeeklyXp: Math.max(0, Number(userProfile?.weekly_xp) || 0),
             storedArenaPoints: Math.max(0, Number(userProfile?.weekly_arena_points) || 0),
+            storedTotalXp: currentUserTotalXp,
+            lastLeagueEval: userProfile?.last_league_eval ?? null,
+            hasLastLeagueEvalField,
+            arenaWins: Math.max(0, Number(userProfile?.arena_wins) || 0),
           });
           currentUserStats = {
             weeklyXp: reconciledStats.weeklyXp,

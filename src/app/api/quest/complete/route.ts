@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { requireUserFromRequest, getBearerToken, getAuthoritativeSupabaseClient } from '@/lib/server/requireAuth';
+import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { questNeedsPassReceipt } from '@/lib/courses/gradeTest';
 import { verifyPassReceipt } from '@/lib/server/passReceipt';
@@ -19,7 +20,12 @@ export async function POST(req: Request) {
 
     const userId = gated.user.id;
     const token = getBearerToken(req);
-    const supabase = getAuthoritativeSupabaseClient(token);
+    let supabase: any;
+    try {
+      supabase = getSupabaseAdmin();
+    } catch {
+      supabase = getAuthoritativeSupabaseClient(token);
+    }
 
     const body = await req.json().catch(() => ({}));
     const rawQuestId = typeof body?.questId === 'string' ? body.questId.trim() : '';
@@ -155,6 +161,16 @@ export async function POST(req: Request) {
 
     if (updateErr) {
       return NextResponse.json({ error: updateErr.message }, { status: 500 });
+    }
+
+    if (!xpCreditedByRpc && safeXp > 0) {
+      try {
+        await supabase.from('xp_ledger').insert({
+          user_id: userId,
+          amount: safeXp,
+          reason: `quest:${questId}`,
+        });
+      } catch {}
     }
 
     return NextResponse.json({

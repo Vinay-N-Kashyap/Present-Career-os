@@ -109,7 +109,7 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
       ? body.careerContext.activeCourseId
       : (typeof body.careerContext?.courseId === 'string' ? body.careerContext.courseId : undefined);
 
-    if ((!resolvedActiveCourseId || !completedQuestsList) && gated.user?.id) {
+    if ((!resolvedActiveCourseId || !completedQuestsList || completedQuestsList.length === 0) && gated.user?.id) {
       try {
         const token = getBearerToken(req);
         const supabase = getAuthoritativeSupabaseClient(token);
@@ -117,7 +117,7 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
           supabase.from('users').select('completed_quests, onboarding_answers').eq('id', gated.user.id).maybeSingle(),
           supabase.from('user_crash_enrollments').select('track').eq('user_id', gated.user.id).order('updated_at', { ascending: false }).limit(1).maybeSingle(),
         ]);
-        if (!completedQuestsList && Array.isArray(uRow?.completed_quests)) {
+        if ((!completedQuestsList || completedQuestsList.length === 0) && Array.isArray(uRow?.completed_quests)) {
           completedQuestsList = uRow.completed_quests;
         }
         const ob = (uRow?.onboarding_answers || {}) as Record<string, any>;

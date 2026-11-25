@@ -27,6 +27,14 @@ import {
   getCurrentSprintStartMonday1AmIst,
   reconcileUserWeeklyLeaguePoints,
 } from '../src/lib/leagues/reconcileWeeklyLeaguePoints';
+import {
+  compactModulesForStorage,
+  rehydrateExtraModules,
+  formatCompactDuration,
+  formatDurationLabel,
+} from '../src/lib/quests/extraRoadmaps';
+import { selectRelevantCourseIds } from '../src/lib/roadmap/roadmapCourseSelector';
+import { COURSES_REGISTRY } from '../src/lib/data/coursesData';
 
 const ROOT = process.cwd();
 
@@ -366,10 +374,10 @@ test('Production Fix 2 & 3: Custom Roadmap avoids Storage OCR timeout, aligns go
   const genSrc = fs.readFileSync(path.join(ROOT, 'src/app/api/quests/roadmap/generate/route.ts'), 'utf8');
   assert.ok(genSrc.includes('export const maxDuration = 30'), 'Roadmap route must export maxDuration = 30 for Vercel');
   assert.ok(genSrc.includes('parseStorageResume: false'), 'Roadmap route must check indexed vault metadata first before Storage OCR');
-  assert.ok(genSrc.includes('resolveGoalAlignedCourse'), 'Roadmap route must align course to career goal instead of stale java-logic default');
+  assert.ok(genSrc.includes('resolveGoalPrimaryCourse'), 'Roadmap route must align course to career goal instead of stale java-logic default');
 
   const modalSrc = fs.readFileSync(path.join(ROOT, 'src/app/quests/components/QuestDetailModal.tsx'), 'utf8');
-  assert.ok(modalSrc.includes("maxHeight: '86vh'"), 'CustomRoadmapModal must bound height to 86vh');
+  assert.ok(modalSrc.includes("maxHeight: '88vh'"), 'CustomRoadmapModal must bound height to 88vh');
   assert.ok(modalSrc.includes("overflowY: 'auto'"), 'CustomRoadmapModal body must scroll vertically');
   assert.ok(modalSrc.includes('zIndex: 1300'), 'CustomRoadmapModal must sit above bottom Mentor floating bar');
   assert.ok(modalSrc.includes("monthsCount === 1 ? 'Month' : 'Months'"), 'CustomRoadmapModal must render singular "1 Month" grammar');
@@ -397,6 +405,15 @@ test('Production Fix 4: Self-healing weekly League Points reconciles xp_ledger +
           select: () => chain,
           eq: () => chain,
           gte: () => Promise.resolve({ data: [{ settlement: { arenaPointsAwarded: 50 } }] }),
+        };
+        return chain;
+      }
+      if (table === 'arena_rooms') {
+        const chain: any = {
+          select: () => chain,
+          eq: () => chain,
+          gte: () => chain,
+          or: () => Promise.resolve({ data: [] }),
         };
         return chain;
       }
@@ -432,4 +449,158 @@ test('Production Fix 4: Self-healing weekly League Points reconciles xp_ledger +
   assert.ok(lbRouteSrc.includes('reconcileUserWeeklyLeaguePoints'));
   assert.ok(dashRouteSrc.includes('reconcileUserWeeklyLeaguePoints'));
   assert.ok(lbPageSrc.includes('+ Arena'));
+});
+
+test('All-6-Tasks Audit: Task 1 (Resume opt-out, wider modal, declutter), Task 2 (365-day compact storage), Task 3 (Gap-first courses), Task 4 (Timeline UI), Task 5 (Ms. Priya topic/course), Task 6 (Pre-reset + PvP Arena heal)', async () => {
+  // Task 1: Modal width, checkbox beside Resume, Img 2/5 removal & backend strict opt-out
+  const modalSrc = fs.readFileSync(path.join(ROOT, 'src/app/quests/components/QuestDetailModal.tsx'), 'utf8');
+  assert.ok(modalSrc.includes('maxWidth: 780'), 'CustomRoadmapModal must use wider maxWidth: 780');
+  assert.ok(modalSrc.includes('data-testid="checkbox-use-resume"'), 'Checkbox must sit cleanly beside Resume row');
+  assert.equal(modalSrc.includes('QT1 Knowledge:'), false, 'Img 2 QT1/Mindset/Target Track card must be removed');
+
+  const drawerSrc = fs.readFileSync(path.join(ROOT, 'src/app/quests/components/TrackSelectorDrawer.tsx'), 'utf8');
+  assert.ok(drawerSrc.includes("activeSubTab !== 'custom_roadmap'"), 'Img 5 My Active Roadmaps switcher bar must be hidden on custom_roadmap');
+
+  // Task 2: 365-day storage compaction + duration formatters + 12-course scaling
+  const genSrc = fs.readFileSync(path.join(ROOT, 'src/app/api/quests/roadmap/generate/route.ts'), 'utf8');
+  assert.ok(genSrc.includes('Math.min(12,'), '365-day roadmaps must scale up to 12 courses');
+  assert.equal(formatDurationLabel(365), '365 Days (1 Year)');
+  assert.equal(formatDurationLabel(90), '90 Days (3 Months)');
+  assert.equal(formatCompactDuration(180), '180d');
+
+  const large365 = generateDynamicStudentRoadmap({
+    courseId: 'course-fullstack-js',
+    goal: 'Full Stack Engineer',
+    durationDays: 365,
+    dailyPace: 3,
+    selectedCourseIds: COURSES_REGISTRY.slice(0, 12).map((c) => c.id),
+  });
+  const fullSizeBytes = JSON.stringify(large365).length;
+  const compact = compactModulesForStorage(large365);
+  const compactSizeBytes = JSON.stringify(compact).length;
+  assert.ok(compactSizeBytes < 120000 && compactSizeBytes < fullSizeBytes / 10, `365-day compacted storage must stay <120KB & >10x smaller (full=${fullSizeBytes}, compact=${compactSizeBytes})`);
+  const rehydrated = rehydrateExtraModules(compact, COURSES_REGISTRY);
+  assert.ok(rehydrated && rehydrated.length === large365.length && rehydrated[0].quests.length > 0, '365-day modules must rehydrate cleanly');
+  assert.equal(large365[0].startDay, 1);
+  assert.equal(large365[large365.length - 1].endDay, 365);
+
+  // Task 3: Resume skills + Target Gaps prioritize gap-closing courses instead of redundant Full-Stack JS syntax
+  const gapFirstCourses = selectRelevantCourseIds({
+    primaryCourseId: 'course-fullstack-js',
+    durationDays: 90,
+    goal: 'Full Stack Engineer',
+    useResumeAndVault: true,
+    evidence: {
+      userId: 'u-1',
+      displayName: 'Vinay N',
+      targetRole: 'Full Stack Engineer',
+      careerGoal: 'Full Stack Engineer',
+      education: '',
+      department: '',
+      semester: '',
+      resumeTitle: 'Vinay N Resume',
+      hasResumeInVault: true,
+      vaultDocsCount: 1,
+      verifiedDocsCount: 1,
+      provenSkills: ['Python', 'JavaScript', 'SQL', 'C++', 'React.js', 'Next.js'],
+      claimedSkills: [],
+      weakAreas: ['System Design Basics', 'DSA - Trees & Graphs', 'STAR Behavioral Interviews'],
+      interviewGaps: [],
+      projects: [],
+      certifications: [],
+      completedQuests: [],
+      vaultDocsSummary: [],
+      rawSummary: '',
+    },
+  });
+  assert.equal(gapFirstCourses.length, 3);
+  assert.notEqual(gapFirstCourses[0], 'course-fullstack-js', 'Stage 1 must NOT repeat redundant JavaScript basics');
+  assert.ok(gapFirstCourses.includes('course-distributed-sys') || gapFirstCourses.includes('course-sre-web'));
+  assert.ok(gapFirstCourses.includes('course-dsa-optim') || gapFirstCourses.includes('course-dsa-python'));
+  assert.ok(gapFirstCourses.includes('course-softskills-communication'));
+
+  // Opting out of resume ignores all gaps & resume skills strictly
+  const goalOnlyCourses = selectRelevantCourseIds({
+    primaryCourseId: 'course-fullstack-js',
+    durationDays: 30,
+    goal: 'Full Stack Engineer',
+    useResumeAndVault: false,
+    evidence: null,
+  });
+  assert.equal(goalOnlyCourses[0], 'course-fullstack-js');
+
+  // Task 4: Timeline strip & clean stage UI
+  const pathSrc = fs.readFileSync(path.join(ROOT, 'src/app/quests/components/QuestPathView.tsx'), 'utf8');
+  assert.ok(pathSrc.includes('data-testid="roadmap-timeline-strip"'));
+  assert.ok(pathSrc.includes('data-testid="roadmap-duration-badge"'));
+
+  // Task 5: Ms. Priya resolves "previous day topic comment" to Python Day 1 even while viewing Business Management tab
+  const bizVsPython = await resolveLessonRequest('i did not understand previous day topic comment so can u start lesson', {
+    teacherId: 'priya',
+    activeCourseId: 'course-entrepreneurship-biz-mgmt',
+    completedQuests: ['python-lecture1-day-1', 'python-practice1-day-1', 'python-lecture1-day-2'],
+    enrolledTrack: 'sde_fullstack',
+  });
+  assert.ok(bizVsPython, 'Must resolve relative comment lesson');
+  assert.equal(bizVsPython.lessonAction.courseId, 'course-python-backend', 'Must NOT launch untouched Business Management Day 1');
+  assert.equal(bizVsPython.lessonAction.dayNum, 1);
+  assert.equal(bizVsPython.lessonAction.questId, 'python-lecture1-day-1');
+  assert.equal(bizVsPython.lessonAction.autoLaunch, true);
+
+  // Task 6: Pre-reset account (last_league_eval: null) + PvP arena_rooms heals dev=200 -> 670 XP + Arena points
+  let healedUserUpdate: any = null;
+  const preResetAdmin = {
+    from(table: string) {
+      if (table === 'xp_ledger' || table === 'arena_solo_matches') {
+        const c: any = { select: () => c, eq: () => c, gte: () => Promise.resolve({ data: [] }) };
+        return c;
+      }
+      if (table === 'arena_rooms') {
+        const c: any = {
+          select: () => c,
+          eq: () => c,
+          gte: () => c,
+          or: () => Promise.resolve({ data: [{ host_id: 'dev-1', guest_id: 'bot', host_arena_points_award: 40, guest_arena_points_award: 10 }] }),
+        };
+        return c;
+      }
+      if (table === 'users') {
+        return {
+          update(payload: any) {
+            healedUserUpdate = payload;
+            return { eq: () => Promise.resolve({ error: null }) };
+          },
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    },
+  };
+  const preResetResult = await reconcileUserWeeklyLeaguePoints(preResetAdmin, {
+    userId: 'dev-1',
+    storedWeeklyXp: 200,
+    storedArenaPoints: 0,
+    storedTotalXp: 670,
+    lastLeagueEval: null,
+    hasLastLeagueEvalField: true,
+    arenaWins: 1,
+    now: new Date('2026-11-25T11:00:00.000Z'),
+  });
+  assert.equal(preResetResult.healed, true);
+  assert.equal(preResetResult.weeklyXp, 670);
+  assert.equal(preResetResult.arenaPoints, 40);
+  assert.equal(preResetResult.leaguePoints, 710);
+  assert.equal(healedUserUpdate?.weekly_xp, 670);
+  assert.equal(healedUserUpdate?.weekly_arena_points, 40);
+
+  // Post-reset account (last_league_eval set) does NOT inherit lifetime xp_total
+  const postResetResult = await reconcileUserWeeklyLeaguePoints(null, {
+    userId: 'dev-2',
+    storedWeeklyXp: 50,
+    storedArenaPoints: 0,
+    storedTotalXp: 1200,
+    lastLeagueEval: '2026-11-23T01:00:00.000Z',
+    hasLastLeagueEvalField: true,
+  });
+  assert.equal(postResetResult.weeklyXp, 50);
+  assert.equal(postResetResult.healed, false);
 });

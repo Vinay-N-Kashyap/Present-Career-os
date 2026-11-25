@@ -5,6 +5,7 @@ import { MasteryState } from '../pathway/competencySchema';
 import { parseQuestId } from './curriculumEnricher';
 import { parseTestQuestId } from './blockTests';
 import { getRoadmapCourseIds } from '../roadmap/roadmapCourses';
+import { matchCourseGapLabels } from '../roadmap/roadmapCourseSelector';
 import {
   CompleteDiagnosticProfile,
   DetectedTradeoff,
@@ -35,10 +36,13 @@ export interface DynamicRoadmapModule {
   id: string;
   /** The course this module's lessons come from. */
   courseId?: string;
+  courseTitle?: string;
   title: string;
   desc: string;
   difficulty: string;
   estimatedWeeks: number;
+  startDay?: number;
+  endDay?: number;
   personalizedPaceTag: string;
   knowledgeAdaptationTag: string;
   tradeoffInterventions?: string[];
@@ -48,6 +52,7 @@ export interface DynamicRoadmapModule {
   diagnosticNotice?: string;
   whyThisStage?: string;
   skillsAddressed?: string[];
+  targetedGaps?: string[];
   quests: (CourseQuest & {
     fastTracked?: boolean;
     reinforcementNeeded?: boolean;
@@ -241,28 +246,30 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
 
       const cSkillsRaw = (course as any).skills;
       const skillsForCourse: string[] = Array.isArray(cSkillsRaw) ? cSkillsRaw.slice(0, 5).map(String) : [];
-      const matchingGaps = combinedWeakAreas.filter((w) =>
-        `${course.title} ${course.desc} ${skillsForCourse.join(' ')}`.toLowerCase().includes(w.toLowerCase())
-      );
+      const matchingGaps = combinedWeakAreas.length > 0
+        ? matchCourseGapLabels(course, combinedWeakAreas)
+        : [];
       const alreadyKnownHere = skillsForCourse.filter((s: string) => verifiedSkillsSet.has(s.toLowerCase()));
       const whyParts: string[] = [];
-      if (matchingGaps.length > 0) whyParts.push(`Targets your gap(s): ${matchingGaps.join(', ')}`);
+      if (matchingGaps.length > 0) whyParts.push(`Closes Target Gap: ${matchingGaps.join(', ')}`);
       if (params.evidence?.resumeTitle) whyParts.push(`Aligned with "${params.evidence.resumeTitle}"`);
-      if (alreadyKnownHere.length > 0) whyParts.push(`Builds beyond your existing ${alreadyKnownHere.slice(0, 2).join(', ')} foundation`);
+      if (alreadyKnownHere.length > 0) whyParts.push(`Advances past your existing ${alreadyKnownHere.slice(0, 2).join(', ')} baseline`);
 
       modules.push({
         id: `${course.id}-dynamic-mod-${moduleCount}`,
         courseId: course.id,
+        courseTitle: cleanCourseTitle,
         title: `Phase ${moduleCount}: ${cleanCourseTitle} — ${milestoneTheme}`,
-        desc: `${isMixedGoal ? '🔀 Fused Goal Trajectory: ' : ''}${milestoneTheme} covering ${chunk.length} calibrated quests${questRangeSummary}. Tailored for ${targetRole} (${archetype} archetype with QT1: ${qt1}/100 & QT2: ${qt2}/100).`,
+        desc: `${isMixedGoal ? 'Fused Goal Trajectory: ' : ''}${milestoneTheme} covering ${chunk.length} calibrated quests${questRangeSummary}. Tailored for ${targetRole}.`,
         difficulty: isHighKnowledge ? 'Advanced' : isLowKnowledge ? 'Foundational' : 'Intermediate',
         estimatedWeeks: Math.max(1, Math.ceil(chunk.length / (effectivePace * 7))),
-        personalizedPaceTag: allocationsTag || (isMixedGoal ? `🎯 Target Goal: ${targetRole}` : mindsetTag),
+        personalizedPaceTag: allocationsTag || (isMixedGoal ? `Target Goal: ${targetRole}` : mindsetTag),
         knowledgeAdaptationTag: knowledgeTag,
         tradeoffInterventions: tradeoffInterventions.length > 0 ? tradeoffInterventions : undefined,
         allocationsTag,
-        whyThisStage: whyParts.length > 0 ? whyParts.join(' • ') : `Calibrated core stage for ${targetRole}`,
+        whyThisStage: whyParts.length > 0 ? whyParts.join(' • ') : `Calibrated stage for ${targetRole}`,
         skillsAddressed: skillsForCourse,
+        targetedGaps: matchingGaps,
         isPreliminaryRoadmap,
         diagnosticNotice,
         quests: chunk
@@ -270,6 +277,24 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
       moduleCount++;
     }
   }
+
+  // Assign exact timeline day ranges (Day 1 -> Day N) matching requested durationDays
+  const totalTargetDays = Math.max(30, Number(durationDays) || 30);
+  const totalQuestsAcross = Math.max(1, modules.reduce((sum, m) => sum + m.quests.length, 0));
+  let dayCursor = 1;
+  for (let i = 0; i < modules.length; i++) {
+    const m = modules[i];
+    const remainingDays = totalTargetDays - dayCursor + 1;
+    const remainingModules = modules.length - i;
+    const span = i === modules.length - 1
+      ? Math.max(1, remainingDays)
+      : Math.max(1, Math.min(remainingDays - (remainingModules - 1), Math.round((m.quests.length / totalQuestsAcross) * totalTargetDays)));
+    m.startDay = dayCursor;
+    m.endDay = Math.min(totalTargetDays, dayCursor + span - 1);
+    m.estimatedWeeks = Math.max(1, Math.round(span / 7));
+    dayCursor = m.endDay + 1;
+  }
+
   return modules;
 }
 
