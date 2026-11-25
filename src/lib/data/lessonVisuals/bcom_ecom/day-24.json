@@ -10,11 +10,11 @@
       "codeHash": "d9852e584844f211d053de8da2554cde69165851aac8e4200548a1427eafd480",
       "spec": {
         "template": "funnel",
-        "title": "B2B vs B2C Commerce Dynamics: Complex Corp... — Conversion Funnel",
+        "title": "B2B vs B2C Commerce Dynamics: Complex — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "ee3b71a6397ae338d0aeeb51fb3f5b36dce96b3fb93e1871c6078efbf2fb032b",
       "spec": {
         "template": "funnel",
-        "title": "Custom Contract Pricing, Volume Tier Price... — Conversion Funnel",
+        "title": "Custom Contract Pricing, Volume Tier Price Breaks, MOQ & Customer-Specific Catalogs — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "b50d5b04ceeb0228655c3d7dbbbdc0918ccd89ab3d4c287db36bccb34ff837d1",
       "spec": {
         "template": "funnel",
-        "title": "B2B Trade Credit & Payment Terms: Net 30/6... — Conversion Funnel",
+        "title": "B2B Trade Credit & Payment Terms: Net — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,OK total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "f75a6c4bc39168030ce44501fa3dbb63078ad89d550fa60a91180a2c830f78c5",
       "spec": {
         "template": "funnel",
-        "title": "PunchOut Catalogs, e-Procurement Systems (... — Conversion Funnel",
+        "title": "PunchOut Catalogs, e-Procurement Systems (Ariba, Coupa), cXML/EDI Data Interchange — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "b85a1794c81ab90066aba6ca1e1c863bd1eece2a7c7fc59884a909ed4ab3f040",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise B2B Wholesale Commerce Command ... — Conversion Funnel",
+        "title": "Enterprise B2B Wholesale Commerce Command Gateway & B2BEI — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

@@ -10,7 +10,7 @@
       "codeHash": "b0acec980bc1cea8c9b8dcc392e610c2ee2d183c27504a4c8d2bbd5090d0a29c",
       "spec": {
         "template": "workflow",
-        "title": "Foundations of ISO 9001:2015 QMS & The High-L... — Operational Workflow",
+        "title": "Foundations of ISO 9001:2015 QMS & The High-Level Annex SL Framework — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Foundations of ISO 9001:2015 QMS & The High-L... — Operational Workflow",
+        "title": "Foundations of ISO 9001:2015 QMS & The High-Level Annex SL Framework — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Foundations of ISO 9001:2015 QMS & The H...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Foundations of ISO 9001:2015 QMS",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "969bd5176f37383a31f5c4f696b99ac148dd3724133a55edc6581dc8cb234138",
       "spec": {
         "template": "workflow",
-        "title": "The Closed-Loop Plan-Do-Check-Act (PDCA) Cont... — Operational Workflow",
+        "title": "The Closed-Loop Plan-Do-Check-Act (PDCA) Continuous Improvement Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "The Closed-Loop Plan-Do-Check-Act (PDCA) Cont... — Operational Workflow",
+        "title": "The Closed-Loop Plan-Do-Check-Act (PDCA) Continuous Improvement Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize The Closed-Loop Plan-Do-Check-Act (PDCA)...",
+            "caption": "Stage 1 (Demand Forecast): Initialize The Closed-Loop Plan-Do-Check-Act",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "749811b92840e10953869f9df72717ef276ad459b6e9ccdd55e3e13eafa2be4f",
       "spec": {
         "template": "workflow",
-        "title": "Two-Stage External Certification Audits: Stag... — Operational Workflow",
+        "title": "Two-Stage External Certification Audits: Stage 1 Readiness & Stage 2 — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Two-Stage External Certification Audits: Stag... — Operational Workflow",
+        "title": "Two-Stage External Certification Audits: Stage 1 Readiness & Stage 2 — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Two-Stage External Certification Audits:...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Two-Stage External Certification",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "6b55b1beeb029e185022c0fcb3793c680b6b6ea7b5fc41357c87405cc6571378",
       "spec": {
         "template": "workflow",
-        "title": "Root Cause Analysis (RCA) & 8D / 5-Why Correc... — Operational Workflow",
+        "title": "Root Cause Analysis (RCA) & 8D / 5-Why Corrective Action — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1060,7 +1060,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize Root Cause Analysis (RCA) &.",
+            "caption": "Stage one (Demand Forecast): Initialize Root Cause Analysis (RCA).",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Root Cause Analysis (RCA) & 8D / 5-Why Correc... — Operational Workflow",
+        "title": "Root Cause Analysis (RCA) & 8D / 5-Why Corrective Action — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Root Cause Analysis (RCA) & 8D / 5-Why C...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Root Cause Analysis (RCA) & 8D / 5-Why",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "c72cf04156c6d69cab48c4ee3574b115b597342729e1f7be94c8a67f6c5dd383",
       "spec": {
         "template": "workflow",
-        "title": "Executive Synthesis: The Master ISO 9001 QMS ... — Operational Workflow",
+        "title": "Executive Synthesis: The Master ISO 9001 — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Executive Synthesis: The Master ISO 9001 QMS ... — Operational Workflow",
+        "title": "Executive Synthesis: The Master ISO 9001 — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Executive Synthesis: The Master ISO 9001...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Executive Synthesis: The Master ISO",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

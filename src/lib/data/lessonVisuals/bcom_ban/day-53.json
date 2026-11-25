@@ -8,7 +8,7 @@
       "codeHash": "2211dd0e4526b270bf29feda36a4bff311ec4ec308aeaae6fac9559e974b004e",
       "spec": {
         "template": "funnel",
-        "title": "CLO Structural Mechanics: The Collater... — Structured Credit Operations",
+        "title": "CLO Structural Mechanics — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "79b880efacfa54bc6380ce1aba72befac2782e6df17e38c20f13bea856b20916",
       "spec": {
         "template": "funnel",
-        "title": "Collateral Portfolio Quality Metrics: ... — Structured Credit Operations",
+        "title": "Collateral Portfolio Quality Metrics: WARF, WAS, WAC & Moody's — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "1bdb0b2aeac5e9636d9730c972daedf9595199e4c1ee3098eed30430e81c5fc8",
       "spec": {
         "template": "funnel",
-        "title": "Capital Tranche Anatomy: From Senior A... — Structured Credit Operations",
+        "title": "Capital Tranche Anatomy: From Senior — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "da99049935f1bf18b785c8e0fd78ed7f6936080928d3f2309b2176e3c6af5798",
       "spec": {
         "template": "funnel",
-        "title": "Par Value Coverage Tests: Overcollater... — Structured Credit Operations",
+        "title": "Par Value Coverage Tests: Overcollateralization (OC) & Interest — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "164bb814b8195771c2a101265ab0b85e6d0906c398c877b34c9ad5487626806c",
       "spec": {
         "template": "funnel",
-        "title": "Industrial CLO Lab: Collateral Cash Fl... — Structured Credit Operations",
+        "title": "Industrial CLO Lab: Collateral Cash — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",

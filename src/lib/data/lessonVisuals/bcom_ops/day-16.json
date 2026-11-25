@@ -10,7 +10,7 @@
       "codeHash": "fbedfa7e5853884c5b742e40e08f15320f781927c90a4f8641130b74d78103bb",
       "spec": {
         "template": "workflow",
-        "title": "Strategic Sourcing Lifecycle & Kraljic 2x2 Ma... — Operational Workflow",
+        "title": "Strategic Sourcing Lifecycle & Kraljic 2x2 Matrix Portfolio — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -40,7 +40,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize Strategic Sourcing Lifecycle &.",
+            "caption": "Stage one (Demand Forecast): Initialize Strategic Sourcing Lifecycle.",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Strategic Sourcing Lifecycle & Kraljic 2x2 Ma... — Operational Workflow",
+        "title": "Strategic Sourcing Lifecycle & Kraljic 2x2 Matrix Portfolio — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Strategic Sourcing Lifecycle & Kraljic 2...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Strategic Sourcing Lifecycle & Kraljic",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "147b4f1f841744a69d219943c238e46b640da5b3270847b45c7cc77252403302",
       "spec": {
         "template": "workflow",
-        "title": "Total Cost of Ownership (TCO) vs Purchase Pri... — Operational Workflow",
+        "title": "Total Cost of Ownership (TCO) vs Purchase Price Lifecycle Economics — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Total Cost of Ownership (TCO) vs Purchase Pri... — Operational Workflow",
+        "title": "Total Cost of Ownership (TCO) vs Purchase Price Lifecycle Economics — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Total Cost of Ownership (TCO) vs Purchas...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Total Cost of Ownership (TCO)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "85f0b12f9c37bd0a05fcbd82ba659e55f8f4008d4d2010b1c4557d52ecb4b79d",
       "spec": {
         "template": "workflow",
-        "title": "Supplier Pre-Qualification, Evaluation & Anal... — Operational Workflow",
+        "title": "Supplier Pre-Qualification, Evaluation & Analytical Hierarchy Process — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Supplier Pre-Qualification, Evaluation & Anal... — Operational Workflow",
+        "title": "Supplier Pre-Qualification, Evaluation & Analytical Hierarchy Process — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Supplier Pre-Qualification, Evaluation &...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Supplier Pre-Qualification, Evaluation",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "f4de9ddb778e39c90d660729ae3786e035685bbb58a110ef9376d874cad47854",
       "spec": {
         "template": "workflow",
-        "title": "Dual-Sourcing vs Single-Sourcing Risk Modelin... — Operational Workflow",
+        "title": "Dual-Sourcing vs Single-Sourcing Risk Modeling & Disruption — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Dual-Sourcing vs Single-Sourcing Risk Modelin... — Operational Workflow",
+        "title": "Dual-Sourcing vs Single-Sourcing Risk Modeling & Disruption — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Dual-Sourcing vs Single-Sourcing Risk Mo...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Dual-Sourcing vs Single-Sourcing Risk",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "6a000d119e713b6072efa7e29c17ca6aacdbdf55dd2eaf290b39d747376e5c31",
       "spec": {
         "template": "workflow",
-        "title": "Strategic Procurement Architecture & Enterpri... — Operational Workflow",
+        "title": "Strategic Procurement Architecture & Enterprise Sourcing Governance — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Strategic Procurement Architecture & Enterpri... — Operational Workflow",
+        "title": "Strategic Procurement Architecture & Enterprise Sourcing Governance — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Strategic Procurement Architecture & Ent...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Strategic Procurement Architecture",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

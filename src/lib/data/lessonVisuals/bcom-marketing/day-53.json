@@ -8,7 +8,7 @@
       "codeHash": "27ffb545cdf190a91abc4b8cd6370211c1697b3703205f83fefa05cf290489fe",
       "spec": {
         "template": "funnel",
-        "title": "Causal Machine Learning & Uplift Model... \u2014 Conversion Funnel",
+        "title": "Causal Machine Learning & Uplift Modeling: The Four-Quadrant Matrix — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "a379c754babe539f62d02c6267a29cb47f1f1a298bc0600a96a061b6aff0d59d",
       "spec": {
         "template": "funnel",
-        "title": "Uplift Modeling Architectures: T-Learn... \u2014 Conversion Funnel",
+        "title": "Uplift Modeling Architectures: T-Learner, X-Learner & Qini Curves — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "49b39f9c1d9fe5eae9155def1af1f19b7f51514c2c7ee938b60d0927dfe1f38f",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Churn Prediction & Surviva... \u2014 Conversion Funnel",
+        "title": "Algorithmic Churn Prediction & Survival Ensembles: Cox & DeepSurv — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "f38689bc3db6c75779919a34cdcb1b19202652b13a8793f9dd24917f1596d34b",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Intervention Policy Optimizati... \u2014 Conversion Funnel",
+        "title": "Dynamic Intervention Policy Optimization & Incremental LTV Lift — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "c1a88d25209a761ebb251f0b0be2f2f44b647bb3cac914867529c798044d4e39",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Uplift Modeling & Campaign... \u2014 Conversion Funnel",
+        "title": "Algorithmic Uplift Modeling & Campaign Optimization Simulator — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

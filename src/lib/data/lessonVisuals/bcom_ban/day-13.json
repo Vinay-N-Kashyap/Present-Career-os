@@ -10,11 +10,11 @@
       "codeHash": "facda231799d39491b24d66dfd0177bf203e00cc650586afe0588fc5053aa786",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The M&A Advisory Mandate: Buy-Side vs Sell... — General Ledger Verification",
+        "title": "The M&A Advisory Mandate: Buy-Side — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The M&A.",
+            "caption": "Open primary facility debit entry for The M&A Advisory Mandate.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 70500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 84600,
@@ -139,11 +139,11 @@
       "codeHash": "659e83a6c75b7c7d8dc78c81016780fa195d8464ad8cc455ae42fb2048ce9974",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Valuation Football Field: DCF, Trading... — General Ledger Verification",
+        "title": "The Valuation Football Field: DCF, Trading Multiples & Precedent Transactions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Valuation.",
+            "caption": "Open primary facility debit entry for The Valuation Football Field.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 71750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 86100,
@@ -268,11 +268,11 @@
       "codeHash": "ce9e3694f4ad4995ed23f661a1c8b135086a4e60991f4331cd73015ba4a1e349",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Transaction Architecture: Consideration Mi... — General Ledger Verification",
+        "title": "Transaction Architecture: Consideration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Transaction.",
+            "caption": "Open primary facility debit entry for Transaction Architecture.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 73000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 87600,
@@ -397,11 +397,11 @@
       "codeHash": "8bee661f90bede9612de7c8437f783285aac19ba5916d88d4a7033cce6c2faf0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Fiduciary Deal Protections: Breakup Fees, ... — General Ledger Verification",
+        "title": "Fiduciary Deal Protections: Breakup — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Fiduciary Deal.",
+            "caption": "Open primary facility debit entry for Fiduciary Deal Protections.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 74250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 89100,
@@ -526,11 +526,11 @@
       "codeHash": "12327d337c697bbca66a5ae6461898c9e2e08cb0ebecc09fef54f122f038032c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synthesis, Boardroom Governance & The Fair... — General Ledger Verification",
+        "title": "Synthesis, Boardroom Governance & The Fairness Opinion Dossier — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Synthesis.",
+            "caption": "Open primary facility debit entry for Synthesis.",
             "title": "Day 13 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 75500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 13 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 90600,

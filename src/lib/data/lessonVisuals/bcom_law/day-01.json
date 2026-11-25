@@ -10,11 +10,11 @@
       "codeHash": "c31649544858e3b8685dbf94d4b6687b0ec67b7c23845c4938f8d27ea0a38bac",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Commercial Contract Invariants & Liquidated D... — General Ledger Verification",
+        "title": "Commercial Contract Invariants & Liquidated Damages Validity — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Commercial Contract Invariants ...",
+            "caption": "Open primary debit entry for Commercial Contract Invariants.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Commercial Contract Invariants & Liquidated D... — General Ledger Verification",
+        "title": "Commercial Contract Invariants & Liquidated Damages Validity — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2650) for Commercial Contract Invariants ...",
+            "caption": "Step 1: Open primary debit entry (2650) for Commercial Contract Invariants.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -264,11 +264,11 @@
       "codeHash": "c8a6d62634dc4aae51df41c0d19b874e1bd4d342f96e01f4e3d243ee89ed0862",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Legal Personality & Piercing the Co... — General Ledger Verification",
+        "title": "Corporate Legal Personality & Piercing the Corporate Veil — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Corporate Legal Personality & P...",
+            "caption": "Open primary debit entry for Corporate Legal Personality.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Corporate Legal Personality & Piercing the Co... — General Ledger Verification",
+        "title": "Corporate Legal Personality & Piercing the Corporate Veil — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2850) for Corporate Legal Personality & P...",
+            "caption": "Step 1: Open primary debit entry (2850) for Corporate Legal Personality.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -518,11 +518,11 @@
       "codeHash": "19e3f144e389bac0992eca1eda57d2d08bd3b1bf9bddf48204c91c460eabc202",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Director Fiduciary Duties & The Business Judg... — General Ledger Verification",
+        "title": "Director Fiduciary Duties & The Business Judgment Rule — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Director Fiduciary Duties & The...",
+            "caption": "Open primary debit entry for Director Fiduciary Duties.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Director Fiduciary Duties & The Business Judg... — General Ledger Verification",
+        "title": "Director Fiduciary Duties & The Business Judgment Rule — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3050) for Director Fiduciary Duties & The...",
+            "caption": "Step 1: Open primary debit entry (3050) for Director Fiduciary Duties.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -772,11 +772,11 @@
       "codeHash": "d251b7b6508bd4f2183ae772d9d8e3cfedb3826cd58bdfa5494389db73b8193f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Securities Law & Rule 10b-5 Insider Trading C... — General Ledger Verification",
+        "title": "Securities Law & Rule 10b-5 Insider Trading Compliance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Securities Law & Rule tenb-five.",
+            "caption": "Open primary debit entry for Securities Law & Rule tenb-five.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Securities Law & Rule 10b-5 Insider Trading C... — General Ledger Verification",
+        "title": "Securities Law & Rule 10b-5 Insider Trading Compliance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Securities Law & Rule 10b-5 Ins...",
+            "caption": "Step 1: Open primary debit entry (3250) for Securities Law.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -1026,11 +1026,11 @@
       "codeHash": "4a1aa6a105b7f7d8c60171e6d542682f553b76ccb2058d02ccb7bdfeb0cd84ff",
       "spec": {
         "template": "ledger-sheet",
-        "title": "M&A Deal Governance & Antitrust Concentration... — General Ledger Verification",
+        "title": "M&A Deal Governance & Antitrust Concentration (HHI Index) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for M&A Deal Governance & Antitrust...",
+            "caption": "Open primary debit entry for M&A Deal Governance.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "M&A Deal Governance & Antitrust Concentration... — General Ledger Verification",
+        "title": "M&A Deal Governance & Antitrust Concentration (HHI Index) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for M&A Deal Governance & Antitrust...",
+            "caption": "Step 1: Open primary debit entry (3450) for M&A Deal Governance.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,

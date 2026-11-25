@@ -10,11 +10,11 @@
       "codeHash": "4befd0e2ed3770907c9081f2ecdb4808e1bc9425f4acd25f5216ae3faca078d9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Counterparty Trust Deficits &... — General Ledger Verification",
+        "title": "Cross-Border Counterparty Trust Deficits & The Letter of Credit Triad — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59400,
@@ -139,11 +139,11 @@
       "codeHash": "db2e7a115b8097b6797c4d26ded47d988a5e6bb233865f2e7f2150241f5a29be",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Doctrine of Strict Compliance & ICC UC... — General Ledger Verification",
+        "title": "The Doctrine of Strict Compliance & ICC UCP 600 Documentary — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Doctrine.",
+            "caption": "Open primary facility debit entry for The Doctrine of Strict Compliance.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 50750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 60900,
@@ -268,11 +268,11 @@
       "codeHash": "1b503592b2318af958acc43e128bf362317032d179ae697556aec73d1ede57fe",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Usance Bills, Banker's Acceptances & Forfa... — General Ledger Verification",
+        "title": "Usance Bills, Banker's Acceptances & Forfaiting Discounting Mechanics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Usance Bills.",
+            "caption": "Open primary facility debit entry for Usance Bills.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52000,
@@ -397,11 +397,11 @@
       "codeHash": "72f91678d9884be3da17d904039dc8410467870a2fb3c95383cd49fcfc86cf4b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Independent Bank Guarantees, Standby LCs (... — General Ledger Verification",
+        "title": "Independent Bank Guarantees, Standby LCs (SBLC) & ICC URDG 758 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Independent.",
+            "caption": "Open primary facility debit entry for Independent Bank Guarantees.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63900,
@@ -526,11 +526,11 @@
       "codeHash": "11f909f0488cbe303eb097e93ae0c1772d569be912cb385aa9d9f45ea7a86538",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synthesis, Post-Mortem & Trade Finance Ris... — General Ledger Verification",
+        "title": "Synthesis, Post-Mortem & Trade Finance Risk Governance Checklist — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Synthesis.",
+            "caption": "Open primary facility debit entry for Synthesis.",
             "title": "Day 7 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 7 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65400,

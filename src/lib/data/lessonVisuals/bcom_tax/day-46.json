@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Summary Processing under Section 143(1): Cent... — General Ledger Verification",
+        "title": "Summary Processing under Section 143(1): Centralized Processing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Summary Processing und (Zeta Alpha).",
+            "caption": "Open primary debit entry for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9400,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Summary Processing und (Alpha).",
+            "caption": "Record secondary accrual adjustment for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Summary Processing und (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Summary Processing und (Alpha).",
+            "caption": "Verify double-entry trial balance for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -134,11 +134,11 @@
       "partTitle": "Summary Processing under Section 143(1): Centralized Processing Centre & Prima Facie Adjustments",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Summary Processing under Section 143(1): Cent... — General Ledger Verification",
+        "title": "Summary Processing under Section 143(1): Centralized Processing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Summary Processing und (Zeta Alpha).",
+            "caption": "Open primary debit entry for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9400,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Summary Processing und (Alpha).",
+            "caption": "Record secondary accrual adjustment for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Summary Processing und (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Summary Processing und (Alpha).",
+            "caption": "Verify double-entry trial balance for Summary Processing under Section 143(1).",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11280,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Scrutiny Assessment under Section 143(3) & Fa... — General Ledger Verification",
+        "title": "Scrutiny Assessment under Section 143(3) & Faceless Assessment Scheme — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Scrutiny Assessment un (Zeta Beta).",
+            "caption": "Open primary debit entry for Scrutiny Assessment under Section 143(3).",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9600,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Scrutiny Assessment un (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Scrutiny Assessment un (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Scrutiny Assessment under Section 143(3).",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Scrutiny Assessment un (Beta).",
+            "caption": "Verify double-entry trial balance for Scrutiny Assessment under Section 143(3).",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -389,11 +389,11 @@
       "partTitle": "Scrutiny Assessment under Section 143(3) & Faceless Assessment Scheme under Section 144B",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Scrutiny Assessment under Section 143(3) & Fa... — General Ledger Verification",
+        "title": "Scrutiny Assessment under Section 143(3) & Faceless Assessment Scheme — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Scrutiny Assessment un (Zeta Beta).",
+            "caption": "Open primary debit entry for Scrutiny Assessment under Section 143(3).",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9600,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Scrutiny Assessment un (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Scrutiny Assessment un (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Scrutiny Assessment under Section 143(3).",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Scrutiny Assessment un (Beta).",
+            "caption": "Verify double-entry trial balance for Scrutiny Assessment under Section 143(3).",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11520,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Best Judgment Assessment under Section 144 & ... — General Ledger Verification",
+        "title": "Best Judgment Assessment under Section 144 & Protective Assessments — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Best Judgment Assessme (Zeta Gamma).",
+            "caption": "Open primary debit entry for Best Judgment Assessment under Section 144.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9800,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Best Judgment Assessme (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11760,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Best Judgment Assessme (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Best Judgment Assessment under Section 144.",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11760,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Best Judgment Assessme (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11760,
@@ -644,11 +644,11 @@
       "partTitle": "Best Judgment Assessment under Section 144 & Protective Assessments Jurisprudence",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Best Judgment Assessment under Section 144 & ... — General Ledger Verification",
+        "title": "Best Judgment Assessment under Section 144 & Protective Assessments — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Best Judgment Assessme (Zeta Gamma).",
+            "caption": "Open primary debit entry for Best Judgment Assessment under Section 144.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9800,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Best Judgment Assessme (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11760,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Best Judgment Assessme (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Best Judgment Assessment under Section 144.",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11760,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Best Judgment Assessme (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11760,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Special Audit under Section 142(2A): Complexi... — General Ledger Verification",
+        "title": "Special Audit under Section 142(2A): Complexity, Forensic Inventory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Special Audit under Se (Zeta Delta).",
+            "caption": "Open primary debit entry for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10000,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Special Audit under Se (Delta).",
+            "caption": "Record secondary accrual adjustment for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Special Audit under Se (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Special Audit under Se (Delta).",
+            "caption": "Verify double-entry trial balance for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -899,11 +899,11 @@
       "partTitle": "Special Audit under Section 142(2A): Complexity, Forensic Inventory & Limitation Exclusions",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Special Audit under Section 142(2A): Complexi... — General Ledger Verification",
+        "title": "Special Audit under Section 142(2A): Complexity, Forensic Inventory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Special Audit under Se (Zeta Delta).",
+            "caption": "Open primary debit entry for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10000,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Special Audit under Se (Delta).",
+            "caption": "Record secondary accrual adjustment for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Special Audit under Se (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Special Audit under Se (Delta).",
+            "caption": "Verify double-entry trial balance for Special Audit under Section 142(2A).",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12000,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Direct Tax As... — General Ledger Verification",
+        "title": "Production Python Architecture: Direct Tax — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Zeta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10200,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Direct Tax Assessment & Scrutiny Response Simulator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Direct Tax As... — General Ledger Verification",
+        "title": "Production Python Architecture: Direct Tax — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Zeta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10200,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 46 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Zeta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 46 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12240,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 46 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12240,

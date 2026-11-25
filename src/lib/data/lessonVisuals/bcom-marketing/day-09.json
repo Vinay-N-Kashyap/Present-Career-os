@@ -10,11 +10,11 @@
       "codeHash": "47082101bf0e891525ade092c7a1b5f1fe09f9269332946546e2d23a0c5b4df0",
       "spec": {
         "template": "funnel",
-        "title": "Kotler's 3 Value Levels: Core Need, Actual... — Conversion Funnel",
+        "title": "Kotler's 3 Value Levels: Core Need — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "a84b9928139f7838f343fdde4f199b70e0526a4eef95f4cd73a139ac891eac54",
       "spec": {
         "template": "funnel",
-        "title": "The Product Mix Grid: Width, Length, Depth... — Conversion Funnel",
+        "title": "The Product Mix Grid: Width, Length — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "9d814e81ebdc2a97719c5391d55dfa3f6675295bdf7e88c886394c46948362fa",
       "spec": {
         "template": "funnel",
-        "title": "Line Stretching Mechanics: Upward Prestige... — Conversion Funnel",
+        "title": "Line Stretching Mechanics: Upward — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,OK total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "823f684e1c3ee5ca23803e7362caa2736782e2e591c407b6da52f195c0908faf",
       "spec": {
         "template": "funnel",
-        "title": "SKU Cannibalization Calculus & Margin Eros... — Conversion Funnel",
+        "title": "SKU Cannibalization Calculus & Margin Erosion Boundary Analysis — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "7b9efd3c155641867afe88d186bf2d696610a97446ac60338b5d046cfb478da5",
       "spec": {
         "template": "funnel",
-        "title": "Production Post-Mortem & Product Line Rati... — Conversion Funnel",
+        "title": "Production Post-Mortem & Product Line Rationalization Synthesis — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

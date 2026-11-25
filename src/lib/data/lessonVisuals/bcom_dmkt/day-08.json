@@ -10,7 +10,7 @@
       "codeHash": "e9161cc9bfc2f158f6b4aa2d14bc003c2a774f47ea11fdd0dc9d7fb2a772da55",
       "spec": {
         "template": "funnel",
-        "title": "Meta Ad Auction Total Value Formula & Bidd... — Conversion Funnel",
+        "title": "Meta Ad Auction Total Value Formula & Bidding Economics — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "2c891355dedaaa1d0ffe0b207682e978cb659fcf0fc06a239330556465165b95",
       "spec": {
         "template": "funnel",
-        "title": "Break-Even ROAS & Contribution Margin Mech... — Conversion Funnel",
+        "title": "Break-Even ROAS & Contribution Margin Mechanics — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "a1adc8f3cb74777f0613c7ad2400ad436bffc06d7ccf809ce022520ddff3ef33",
       "spec": {
         "template": "funnel",
-        "title": "Auction Overlap, Audience Saturation & Cre... — Conversion Funnel",
+        "title": "Auction Overlap, Audience Saturation & Creative Fatigue Monitoring — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "6f9e9bc438b31039604dd4f41ce0d0dbaf5ec90ef4e97035e921eb84742a8827",
       "spec": {
         "template": "funnel",
-        "title": "Budget Optimization Architectures: ABO vs ... — Conversion Funnel",
+        "title": "Budget Optimization Architectures: ABO vs CBO Pacing & Algorithmic Scaling — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "46a75665154eacff25b804f8a5855ac3dbd15ec09b30e3dabfde378b406aece6",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Paid Social Command Gateway & S... — Conversion Funnel",
+        "title": "Enterprise Paid Social Command Gateway & Social Media Director — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

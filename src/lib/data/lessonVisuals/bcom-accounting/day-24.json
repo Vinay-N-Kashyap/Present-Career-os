@@ -10,11 +10,11 @@
       "codeHash": "acf5970ad6c30af0ff836c9c547e9716936d7a4e1d2b1080954600129651aa78",
       "spec": {
         "template": "ledger-sheet",
-        "title": "TDS Statutory Machinery & TAN/PAN Validati... — General Ledger Verification",
+        "title": "TDS Statutory Machinery & TAN/PAN Validation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for TDS Statutory.",
+            "caption": "Open primary facility debit entry for TDS Statutory Machinery.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 130800,
@@ -139,11 +139,11 @@
       "codeHash": "6dfd80fba22c9d043b9b11eaa9f2090fef3ffbebf2090d0dd4526e767bdeeb3c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Core Withholding Sections: 194C, 194J, 194... — General Ledger Verification",
+        "title": "Core Withholding Sections: 194C, 194J — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Core.",
+            "caption": "Open primary facility debit entry for Core Withholding Sections.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132300,
@@ -268,11 +268,11 @@
       "codeHash": "b4638492455e5100f509c6f5f832cb2946aba252c58312d71103d5ed7bad3744",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 206AA Penal Provisions & Non-PAN H... — General Ledger Verification",
+        "title": "Section 206AA Penal Provisions & Non-PAN Higher Withholding — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Section AA.",
+            "caption": "Open primary facility debit entry for Section 206AA Penal Provisions.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 111500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 133800,
@@ -397,11 +397,11 @@
       "codeHash": "2c8371d51fc6e9ae379fec72deee5fd42399997e83d95b775846bb853cbe04cc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Quarterly Form 26Q Compilation, Challan 28... — General Ledger Verification",
+        "title": "Quarterly Form 26Q Compilation, Challan 281 & Sec 201(1A) Interest — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Quarterly Form.",
+            "caption": "Open primary facility debit entry for Quarterly Form 26Q Compilation.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 112750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 135300,
@@ -526,11 +526,11 @@
       "codeHash": "05df8f1ae4c219091c23f3def514ba5b7edcc714ed06c3bd9021ad253640a7d5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Form 26AS / AIS Cross-Reconciliation & Con... — General Ledger Verification",
+        "title": "Form 26AS / AIS Cross-Reconciliation & Controller Withholding Audit — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Form AS / AIS.",
+            "caption": "Open primary facility debit entry for Form 26AS / AIS Cross-Reconciliation.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 114000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 136800,

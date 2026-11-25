@@ -8,7 +8,7 @@
       "codeHash": "a19534b846c4984979c72f7c085768ad61f0eabbd09b6288a1a57ba3f15c1900",
       "spec": {
         "template": "bars",
-        "title": "Unit Economics Foundations: ARPU, Gros... \u2014 Operations Evaluation",
+        "title": "Unit Economics Foundations: ARPU, Gross Margin & Customer Acquisition Cost (CAC) — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "26d30a1cce88b72c0b299c7d23b875cb1fe01f71d1eb457373ee114cf3e442d1",
       "spec": {
         "template": "bars",
-        "title": "Mathematical Modeling of Customer Life... \u2014 Operations Evaluation",
+        "title": "Mathematical Modeling of Customer Lifetime Value (CLV) — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "aa49f157129a1f0a1f5a8fbe9278a4673d5f0254bbcc4a23d5595a8b30529511",
       "spec": {
         "template": "bars",
-        "title": "Cohort Analytics: Net Revenue Retentio... \u2014 Operations Evaluation",
+        "title": "Cohort Analytics: Net Revenue — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "9335c248f337d60a1d2d05bcec66e7787ffa27e3a779b0146c829e04ce197d84",
       "spec": {
         "template": "bars",
-        "title": "Enterprise Unit Economics Benchmarks: ... \u2014 Operations Evaluation",
+        "title": "Enterprise Unit Economics Benchmarks: The Rule of 40 & Magic Number — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "e609fee5ac22ef868a5b665bcd8a7460758b28bfc86d989a73041df8ee18ec9e",
       "spec": {
         "template": "bars",
-        "title": "Building a Comprehensive Customer Unit... \u2014 Operations Evaluation",
+        "title": "Building a Comprehensive Customer Unit Economics & CLV Simulation — Operations Evaluation",
         "steps": [
           {
             "at": "intro",

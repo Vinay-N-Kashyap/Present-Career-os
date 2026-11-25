@@ -8,7 +8,7 @@
       "codeHash": "ba357c685e34b85c488300d9bdf890e480565f466f2dd4cbcb60be2e7a57abae",
       "spec": {
         "template": "funnel",
-        "title": "Marketing Operations (MOps) Evolution,... \u2014 Conversion Funnel",
+        "title": "Marketing Operations (MOps) Evolution, Governance & MarTech Law — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "9e465f2f102eb1a72ddf94d2e2f6d1ee36f47f6c0e2bcc3c486c690f1762e6d6",
       "spec": {
         "template": "funnel",
-        "title": "Agile Marketing Frameworks: Scrum, Kan... \u2014 Conversion Funnel",
+        "title": "Agile Marketing Frameworks: Scrum — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "8ed4e37f2393c3483f6f8bcfc1ef94f78158f443ac5ac9b47f369315c434332d",
       "spec": {
         "template": "funnel",
-        "title": "Creative Operations, Digital Asset Man... \u2014 Conversion Funnel",
+        "title": "Creative Operations, Digital Asset Management (DAM) & Brand Asset — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "4a3ac23c29d453120b5fd1628b12e887d5be6b0a751c74433def20cb09e8db53",
       "spec": {
         "template": "funnel",
-        "title": "Budget Allocation Governance, Zero-Bas... \u2014 Conversion Funnel",
+        "title": "Budget Allocation Governance, Zero-Based Budgeting (ZBB) & Marketing — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "6895fb30619583a11cb971b6bb4cfad34f3f9018467ba0c5dca874d2109d5720",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Agile Sprint Velocity & MO... \u2014 Conversion Funnel",
+        "title": "Algorithmic Agile Sprint Velocity & MOps Resource Allocation Simulator — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

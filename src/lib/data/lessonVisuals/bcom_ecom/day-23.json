@@ -10,7 +10,7 @@
       "codeHash": "bc8519dc31f6cc28188385f086383b8ec201ec97be0191ab66d5b07ad89682c6",
       "spec": {
         "template": "funnel",
-        "title": "Social Commerce Architectures: In-App Nati... — Conversion Funnel",
+        "title": "Social Commerce Architectures: In-App — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "f1f1a043ae077c1feb097574b0476a5788e2d7e7079c4f644160d4860b1ab9e4",
       "spec": {
         "template": "funnel",
-        "title": "Creator & Influencer Affiliate Economics: ... — Conversion Funnel",
+        "title": "Creator & Influencer Affiliate Economics: Commission Structures (CPA vs RevShare), First-Touch — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "a09ef370a628281495de1cd78208ed0d49e8174b4fcd8fe4e09326278f7151d4",
       "spec": {
         "template": "funnel",
-        "title": "Livestream Shopping Mechanics: Real-Time F... — Conversion Funnel",
+        "title": "Livestream Shopping Mechanics: Real-Time — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "97d496310b07c48b0a860b1fcc1cae63cd81d85aeb0ca72e0edb7bed3367db2f",
       "spec": {
         "template": "funnel",
-        "title": "User-Generated Content (UGC), Video Review... — Conversion Funnel",
+        "title": "User-Generated Content (UGC), Video Reviews, Social Proof Syndication — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "89a890de3c785fd26ecda532b17c3b1e8513b9194d98fdf3abce529907cf3efb",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Social Commerce & Creator Growt... — Conversion Funnel",
+        "title": "Enterprise Social Commerce & Creator Growth Gateway & SCEI Certification — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

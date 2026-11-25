@@ -8,7 +8,7 @@
       "codeHash": "10edb21f12cd45e73858e7c4825a4cbdeb11bc059599cc68b645c425fe4beaa7",
       "spec": {
         "template": "funnel",
-        "title": "Inbound Lead Fragmentation & The Id... - RevOps Funnel",
+        "title": "Inbound Lead Fragmentation & The Identity Resolution Problem - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "aa5ff3c1bc5ed4b63badc68026e31f944a41077908754dd79fcd5245cdd5aa8b",
       "spec": {
         "template": "funnel",
-        "title": "String Similarity Algorithms: Leven... - RevOps Funnel",
+        "title": "String Similarity Algorithms: Levenshtein vs Jaro-Winkler Distance - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "919f8ef872a2d993d350a098890ba7786643e406d91ce81d277f4e7cb79d0d75",
       "spec": {
         "template": "funnel",
-        "title": "The Account Stealing War Forensic A... - RevOps Funnel",
+        "title": "The Account Stealing War Forensic Audit ($2.2M Collision) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "a16c45cb5aa59f2471f0c8dee37aa7eb2ca44b112312cc631b7b618aa6a5de8a",
       "spec": {
         "template": "funnel",
-        "title": "Deterministic Routing DAGs & Round-... - RevOps Funnel",
+        "title": "Deterministic Routing DAGs & Round-Robin Load Balancing - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "82f3877f7ede417d75f01c803c8963f5e5688bbedd82260c792a700bccb2c2e2",
       "spec": {
         "template": "funnel",
-        "title": "Building the Enterprise Lead-to-Acc... - RevOps Funnel",
+        "title": "Building the Enterprise Lead-to-Account Matching & Routing Engine - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "ff62ef5bf46a0ec656fc1d3d7f86925794fb5d872388130ce4bafc761221fef4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Revlon Moment: Breakup of the Company ... — General Ledger Verification",
+        "title": "The Revlon Moment: Breakup — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Revlon.",
+            "caption": "Open primary facility debit entry for The Revlon Moment.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 102000,
@@ -139,11 +139,11 @@
       "codeHash": "4e83f3aff7e2c6a6f69da5bce3f537197f7f7450575c1523c59413b9d5914cd4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Deal Protection Invariants: No-Shops vs. G... — General Ledger Verification",
+        "title": "Deal Protection Invariants: No-Shops — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Deal.",
+            "caption": "Open primary facility debit entry for Deal Protection Invariants.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 103250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 123900,
@@ -268,11 +268,11 @@
       "codeHash": "b2967bb3ba033018342f6c1c97df0d2eb6b1914fd6970544d1b98c8525d5353b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Termination Fees (Breakup Fees) & Market P... — General Ledger Verification",
+        "title": "Termination Fees (Breakup Fees) & Market Practice: The 3.5% Benchmark — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 104500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 125400,
@@ -397,11 +397,11 @@
       "codeHash": "9b69a1133a81b9bd1bf06e88ef1397410340ff9edd685742935e26994e559c92",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Information Rights, Match Rights & DGCL § ... — General Ledger Verification",
+        "title": "Information Rights, Match Rights & DGCL § 146 Force-the-Vote Covenants — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Information.",
+            "caption": "Open primary facility debit entry for Information Rights.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 126900,
@@ -526,11 +526,11 @@
       "codeHash": "ab0ad9a59f61a2f5b28461370a8a0c481baacbfcf03348548ab898b7fa9ba750",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Post-Closing Judicial Cleansing: The Corwi... — General Ledger Verification",
+        "title": "Post-Closing Judicial Cleansing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Post-Closing.",
+            "caption": "Open primary facility debit entry for Post-Closing Judicial Cleansing.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 107000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 128400,

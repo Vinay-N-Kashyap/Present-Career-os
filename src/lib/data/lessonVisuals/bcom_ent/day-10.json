@@ -10,11 +10,11 @@
       "codeHash": "331822a92a5b84c7e9ee46315356f3ae43f8d3e98207c81828278fb210031d25",
       "spec": {
         "template": "funnel",
-        "title": "The 9-Block Unified Architecture & Cross-B - Venture Pipeline",
+        "title": "The 9-Block Unified Architecture & Cross-Block Feedback Loops - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "The 9-Block Unified Architecture & Cross-B - Venture Pipeline",
+        "title": "The 9-Block Unified Architecture & Cross-Block Feedback Loops - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "dacfef5da7010009743c5809cd9717c911e6ee03b2bd46a10d17f15bb2c7f181",
       "spec": {
         "template": "funnel",
-        "title": "Business Model Stress-Testing & Macroecono - Venture Pipeline",
+        "title": "Business Model Stress-Testing & Macroeconomic Shock Simulation - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Business Model Stress-Testing & Macroecono - Venture Pipeline",
+        "title": "Business Model Stress-Testing & Macroeconomic Shock Simulation - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "ab2033526501fe42c800f758784b668cf8fddbdb08e008281295d2fd67d22545",
       "spec": {
         "template": "funnel",
-        "title": "Business Model Innovation & Strategic Shif - Venture Pipeline",
+        "title": "Business Model Innovation & Strategic Shift Archetypes - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Business Model Innovation & Strategic Shif - Venture Pipeline",
+        "title": "Business Model Innovation & Strategic Shift Archetypes - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "2656006b659297ca6f81a5b4aded937e889eb32fcf7ffd409a198571817ae277",
       "spec": {
         "template": "funnel",
-        "title": "Institutional Venture Capital Investment C - Venture Pipeline",
+        "title": "Institutional Venture Capital Investment Committee Defense Memo - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Institutional Venture Capital Investment C - Venture Pipeline",
+        "title": "Institutional Venture Capital Investment Committee Defense Memo - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "d1f00b911d5e080fa1929167500f65fd5f40390ac6f8d2f5e81d1720c5a7986b",
       "spec": {
         "template": "funnel",
-        "title": "Master Sovereign Business Model Canvas Eng - Venture Pipeline",
+        "title": "Master Sovereign Business Model Canvas Engine & Milestone 2 Capstone - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Sovereign Business Model Canvas Eng - Venture Pipeline",
+        "title": "Master Sovereign Business Model Canvas Engine & Milestone 2 Capstone - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {

@@ -10,11 +10,11 @@
       "codeHash": "f03f9030fd29c07cf02367e6bbf5d8d61b5c0dd671727a114b91559c3979290e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Core Banking Architecture: Next-Gen Cloud-... — General Ledger Verification",
+        "title": "Core Banking Architecture: Next-Gen — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Core.",
+            "caption": "Open primary facility debit entry for Core Banking Architecture.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 91500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 109800,
@@ -139,11 +139,11 @@
       "codeHash": "b99082581a1951fabaaf8a6ed6d1bb935d019a4dc96a2950dc23a985fc95b68f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "ISO 20022 Universal Financial Industry Mes... — General Ledger Verification",
+        "title": "ISO 20022 Universal Financial Industry Message Scheme: XML/JSON PACS.008, PAIN & CAMT Standards — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for ISO multiple.",
+            "caption": "Open primary facility debit entry for ISO multiple.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 92750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 111300,
@@ -268,11 +268,11 @@
       "codeHash": "ea05e0933b8d2ee919720105fab0cf5be2ab80ca1674ada0e294c0c632ca26b5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Open Banking & Payment Services Directive ... — General Ledger Verification",
+        "title": "Open Banking & Payment Services Directive (PSD2/PSD3): OAuth 2.0 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Open Banking &.",
+            "caption": "Open primary facility debit entry for Open Banking.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 94000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 112800,
@@ -397,11 +397,11 @@
       "codeHash": "731d4618c433d1ec4d1bd920b84e940229345b9fdca058f33ea947185bbaf304",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Instant Payment Rails & Embedded Finance: ... — General Ledger Verification",
+        "title": "Instant Payment Rails & Embedded Finance: UPI, FedNow & BaaS — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Instant.",
+            "caption": "Open primary facility debit entry for Instant Payment Rails & Embedded Finance.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 95250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 114300,
@@ -526,11 +526,11 @@
       "codeHash": "ecba259d96caeb9444dee315fd35bc60652f387c161aef1523a27b43a337d05a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cyber Resilience & Fraud Telemetry: FFIEC ... — General Ledger Verification",
+        "title": "Cyber Resilience & Fraud Telemetry: FFIEC — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Cyber.",
+            "caption": "Open primary facility debit entry for Cyber Resilience & Fraud Telemetry.",
             "title": "Day 19 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 96500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 19 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 115800,

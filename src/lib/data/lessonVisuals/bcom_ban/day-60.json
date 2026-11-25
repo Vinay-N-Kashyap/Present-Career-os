@@ -8,7 +8,7 @@
       "codeHash": "5b08367268a812700e3e89448b75ca9c0d7e6a177ec8227e1ad87495b9815a3e",
       "spec": {
         "template": "funnel",
-        "title": "Strategic Enterprise Banking Command: ... \u2014 Central Banking & Solvency",
+        "title": "Strategic Enterprise Banking Command: The Five Pillars of Modern — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "aa4320272c8bcc87853bb225d13e5662b81baae99281a319118d11cc31bf08c0",
       "spec": {
         "template": "funnel",
-        "title": "Central Bank Operations & Sovereign Tr... \u2014 Central Banking & Solvency",
+        "title": "Central Bank Operations & Sovereign Treasury Command: LAF Corridor — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "3ea424f30ca46134d2259aabd28e4beb0362271afe3278f6a25aa3883d0b405a",
       "spec": {
         "template": "funnel",
-        "title": "Open Banking & Digital Public Infrastr... \u2014 Central Banking & Solvency",
+        "title": "Open Banking & Digital Public Infrastructure Command: Account — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "c007c38b9c93c75f196eb368a50c16a2996b38ebe34d9bc7cabde040367d6b26",
       "spec": {
         "template": "funnel",
-        "title": "Climate Risk & ESG Solvency Command: N... \u2014 Central Banking & Solvency",
+        "title": "Climate Risk & ESG Solvency Command: NGFS Macroeconomic Stress — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "f230feb72cc098b4670b1e9bbef205f623aae53826a1d86144cc1a389458d7c2",
       "spec": {
         "template": "funnel",
-        "title": "Grand Master Milestone 12 Enterprise W... \u2014 Central Banking & Solvency",
+        "title": "Grand Master Milestone 12 Enterprise War Room Simulator: The Ultimate — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",

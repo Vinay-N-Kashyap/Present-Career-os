@@ -10,11 +10,11 @@
       "codeHash": "84b9457a9e8343250d49f133fe2b96f9f20b175dbdd421b298947b509d9a7107",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Board Oversight Fiduciary Duties & The Carema... — General Ledger Verification",
+        "title": "Board Oversight Fiduciary Duties & The Caremark / Marchand Standard — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Board Oversight Fiduciary Dutie...",
+            "caption": "Open primary debit entry for Board Oversight Fiduciary Duties.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Board Oversight Fiduciary Duties & The Carema... — General Ledger Verification",
+        "title": "Board Oversight Fiduciary Duties & The Caremark / Marchand Standard — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3100) for Board Oversight Fiduciary Dutie...",
+            "caption": "Step 1: Open primary debit entry (3100) for Board Oversight Fiduciary Duties.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -264,11 +264,11 @@
       "codeHash": "6c866195f986a1e4d7a645a96c225ebeddc754ae4e68cd8f7a68376c92944473",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Shareholder Activism, Schedule 13D Filings & ... — General Ledger Verification",
+        "title": "Shareholder Activism, Schedule 13D Filings & Universal Proxy Contests — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Shareholder Activism, Schedule ...",
+            "caption": "Open primary debit entry for Shareholder Activism.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Shareholder Activism, Schedule 13D Filings & ... — General Ledger Verification",
+        "title": "Shareholder Activism, Schedule 13D Filings & Universal Proxy Contests — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3300) for Shareholder Activism, Schedule ...",
+            "caption": "Step 1: Open primary debit entry (3300) for Shareholder Activism.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -518,11 +518,11 @@
       "codeHash": "90f20b834d0b06a5711ca4b3e77788e8c07201728c52fc261c9bef5b7cfbaaf0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "SEC Rule 10b5-1 Executive Trading Plans & Man... — General Ledger Verification",
+        "title": "SEC Rule 10b5-1 Executive Trading Plans & Mandatory Cooling-Off — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for SEC Rule tenbfive-one Executive.",
+            "caption": "Open primary debit entry for SEC Rule tenbfive-one Executive.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "SEC Rule 10b5-1 Executive Trading Plans & Man... — General Ledger Verification",
+        "title": "SEC Rule 10b5-1 Executive Trading Plans & Mandatory Cooling-Off — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3500) for SEC Rule 10b5-1 Executive Tradi...",
+            "caption": "Step 1: Open primary debit entry (3500).",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -772,11 +772,11 @@
       "codeHash": "246808a7b015186d994b593ac1a689bbb5921a403fedaedfef4c43441e24b615",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Regulation Fair Disclosure (Reg FD) & Selecti... — General Ledger Verification",
+        "title": "Regulation Fair Disclosure (Reg FD) & Selective Disclosure Compliance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Regulation Fair Disclosure (Reg...",
+            "caption": "Open primary debit entry for Regulation Fair Disclosure.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Regulation Fair Disclosure (Reg FD) & Selecti... — General Ledger Verification",
+        "title": "Regulation Fair Disclosure (Reg FD) & Selective Disclosure Compliance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3700) for Regulation Fair Disclosure (Reg...",
+            "caption": "Step 1: Open primary debit entry (3700) for Regulation Fair Disclosure.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -1026,11 +1026,11 @@
       "codeHash": "9f69a89e9baf0d095a46d4cde44c4494ff1e9e8303bf4ef7ee8e86b1933ac98e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Internal Investigations, Upjohn War... — General Ledger Verification",
+        "title": "Corporate Internal Investigations, Upjohn Warnings & Attorney-Client — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Corporate Internal Investigatio...",
+            "caption": "Open primary debit entry for Corporate Internal Investigations.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Corporate Internal Investigations, Upjohn War... — General Ledger Verification",
+        "title": "Corporate Internal Investigations, Upjohn Warnings & Attorney-Client — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3900) for Corporate Internal Investigatio...",
+            "caption": "Step 1: Open primary debit entry (3900) for Corporate Internal Investigations.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,

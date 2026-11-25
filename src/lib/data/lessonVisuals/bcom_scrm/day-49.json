@@ -8,7 +8,7 @@
       "codeHash": "6e0892a7281716d529d5b7585f8a6a0034241de724b700539bada8309d3531a9",
       "spec": {
         "template": "funnel",
-        "title": "Immutable Audit Trail Architecture:... - RevOps Funnel",
+        "title": "Immutable Audit Trail Architecture: Event Sourcing, Append-Only - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "7f53b128b9b7b7d15ef18667ee039b7bea5872903311c748cfc0031b338b9dbd",
       "spec": {
         "template": "funnel",
-        "title": "Change Data Capture (CDC) Mechanics... - RevOps Funnel",
+        "title": "Change Data Capture (CDC) Mechanics: Database Transaction Logs, WAL Tailing & Debezium - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "57ea977ce72840143c0ab5322c385dce782f0fae87802209bc0aaa7067e026cf",
       "spec": {
         "template": "funnel",
-        "title": "Regulatory Compliance Engineering: ... - RevOps Funnel",
+        "title": "Regulatory Compliance Engineering: GDPR Article 17 (Right to Erasure), PII Pseudonymization - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "6cd2fdf767e4ecc76390faf28f77940bf1b1316f3080e62c0f7f71ba9c14a8ea",
       "spec": {
         "template": "funnel",
-        "title": "Forensic Anomaly Detection: Bulk Da... - RevOps Funnel",
+        "title": "Forensic Anomaly Detection: Bulk - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "fbae3e530a0e47ffc8d3da956ceb920b10a263e4b4faafa0307457eed5f255a3",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Soverei... - RevOps Funnel",
+        "title": "Full Python Implementation: Sovereign RevOps Audit Ledger - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "c7d59af7065e1823a875054795f74b8b6e09f52e414504ff0709c8ff8e8d6dc4",
       "spec": {
         "template": "funnel",
-        "title": "Ad Auction Mechanics & Generalized Second-Pri... — Conversion Pipeline",
+        "title": "Ad Auction Mechanics & Generalized Second-Price (GSP) Pricing — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,7 +168,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Ad Auction Mechanics & Generalized Second-Pri... — Conversion Pipeline",
+        "title": "Ad Auction Mechanics & Generalized Second-Price (GSP) Pricing — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -330,11 +330,11 @@
       "codeHash": "190b45a0f1e987413189ad04fea237ac3901599877b4b4833ad47544cd79f0f7",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Touch Attribution Modeling & Omnichanne... — Conversion Pipeline",
+        "title": "Multi-Touch Attribution Modeling & Omnichannel Journeys — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Multi-Touch Attribution Modeling & Omnichanne... — Conversion Pipeline",
+        "title": "Multi-Touch Attribution Modeling & Omnichannel Journeys — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -650,11 +650,11 @@
       "codeHash": "a6f1b28aefe018a2d7c7d66ca651024f8eb1935f15b5043e373adcef807754c1",
       "spec": {
         "template": "funnel",
-        "title": "Paid Media Unit Economics: ROAS, Blended CAC ... — Conversion Pipeline",
+        "title": "Paid Media Unit Economics: ROAS, Blended — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,7 +808,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Paid Media Unit Economics: ROAS, Blended CAC ... — Conversion Pipeline",
+        "title": "Paid Media Unit Economics: ROAS, Blended — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -970,11 +970,11 @@
       "codeHash": "10a24115f7120df5a3b43050880f99682c00f342c882ee8bcb4107b211a17273",
       "spec": {
         "template": "funnel",
-        "title": "A/B Testing Statistical Rigor & Two-Proportio... — Conversion Pipeline",
+        "title": "A/B Testing Statistical Rigor & Two-Proportion Hypothesis Testing — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "A/B Testing Statistical Rigor & Two-Proportio... — Conversion Pipeline",
+        "title": "A/B Testing Statistical Rigor & Two-Proportion Hypothesis Testing — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1290,11 +1290,11 @@
       "codeHash": "511e5053b1866e3c3c99c9ef89b74e3cc4ea27b834610cadaf20b466f7818671",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Search Discovery & PageRank Link ... — Conversion Pipeline",
+        "title": "Algorithmic Search Discovery & PageRank Link Graph Topology — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,7 +1448,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Algorithmic Search Discovery & PageRank Link ... — Conversion Pipeline",
+        "title": "Algorithmic Search Discovery & PageRank Link Graph Topology — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

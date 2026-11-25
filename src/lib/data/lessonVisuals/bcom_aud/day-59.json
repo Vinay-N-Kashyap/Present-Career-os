@@ -8,7 +8,7 @@
       "codeHash": "8da2edb7f99e031927c7b1bf6cf5abaacc120ce567369fcf1269831d225c7bf5",
       "spec": {
         "template": "funnel",
-        "title": "The Statutory Doctrine of Post-Issuanc... — Assurance Review",
+        "title": "The Statutory Doctrine of Post-Issuance Discovery (PCAOB AS 2905 & ISA 560) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "2dcaa64efac682f3e1d8d68d1091b1ad0d76cc0bcc0b62601809634493994e99",
       "spec": {
         "template": "funnel",
-        "title": "The Two Pathways: Big R Restatements v... — Assurance Review",
+        "title": "The Two Pathways: Big R Restatements — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "761f4594888cb99f968a483c8deece7f87f14d05f8cf4ca5ed16a9966b95f075",
       "spec": {
         "template": "funnel",
-        "title": "Management Cooperation vs. Refusal: Th... — Assurance Review",
+        "title": "Management Cooperation vs. Refusal: The Auditor's Nuclear — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "41b5382deaf8686357f1c2b4183513c27882fc12cb6d8f8dcdc25ac9a952f3c6",
       "spec": {
         "template": "funnel",
-        "title": "Restatement Audit Architecture: Re-Aud... — Assurance Review",
+        "title": "Restatement Audit Architecture: Re-Auditing, Dual-Dating & AS 2820 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "ebd621f0ea44d2999d4b1b08a35e45111a3e5dfc4407595dd51399c3cfd56eea",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Restatement D... — Assurance Review",
+        "title": "Comprehensive Enterprise Restatement Decision Engine & SEC Form 8-K Simulator — Assurance Review",
         "steps": [
           {
             "at": "intro",

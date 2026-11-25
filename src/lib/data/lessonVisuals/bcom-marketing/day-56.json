@@ -8,7 +8,7 @@
       "codeHash": "5362470be609794128f21f86af2dbe480e5bb12b02027aaf2c8b1093ea422057",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Foundation Models, Paramete... \u2014 Conversion Funnel",
+        "title": "Enterprise Foundation Models, Parameter-Efficient Fine-Tuning — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "0fac7cd18186010a6ac30295da00cea7d4cc9d1baca13f363a8e8f228e183d83",
       "spec": {
         "template": "funnel",
-        "title": "Synthetic Personas, In Silico Focus Gr... \u2014 Conversion Funnel",
+        "title": "Synthetic Personas, In Silico Focus Groups & Agentic Consumer — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "926b2159b211c78050b5e3dc4fb0e2004b90b677e08efcbc6c003b257232fa55",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Dynamic Creative Optimizat... \u2014 Conversion Funnel",
+        "title": "Algorithmic Dynamic Creative Optimization (DCO) & Contextual — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "44ce11e98b145cc8e67fbb391c9dfd9db6689c1a1e827726936e349c080cc860",
       "spec": {
         "template": "funnel",
-        "title": "Legal, Ethical & Intellectual Property... \u2014 Conversion Funnel",
+        "title": "Legal, Ethical & Intellectual Property Governance of Generative — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "40a70d4d61b1e8130614c65cb84a0f69b129b70387f2da9925f251b387dd16cd",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic DCO & Contextual Multi-Arm... \u2014 Conversion Funnel",
+        "title": "Algorithmic DCO & Contextual Multi-Armed Bandit Marketing Engine — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

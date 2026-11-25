@@ -65,11 +65,11 @@
       "codeHash": "2742a76fd5c4982d22363fb64b12a8e8d15044223c2163e00976dffc35a12b45",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: Dynamic Retargeting & Frequency Cappi... — Conversion Pipeline",
+        "title": "Tier 1: Dynamic Retargeting & Frequency — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (sixteen,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -107,7 +107,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -145,7 +145,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -183,7 +183,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -223,7 +223,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 1: Dynamic Retargeting & Frequency Cappi... — Conversion Pipeline",
+        "title": "Tier 1: Dynamic Retargeting & Frequency — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -385,11 +385,11 @@
       "codeHash": "6c551a5909bbe9418775e55d7f16da666f664096cc4b67f56b4d9aab9c2f115c",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Institutional Unit Economics & LTV:CA... — Conversion Pipeline",
+        "title": "Tier 2: Institutional Unit Economics — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (sixteen,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -503,7 +503,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -543,7 +543,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 2: Institutional Unit Economics & LTV:CA... — Conversion Pipeline",
+        "title": "Tier 2: Institutional Unit Economics — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -705,11 +705,11 @@
       "codeHash": "1cd383e0983ba4bff8da2c5c8d0c0246facd561416e6f6066751d4c1ea7fb1e4",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Conversational Commerce & WhatsApp Au... — Conversion Pipeline",
+        "title": "Tier 3: Conversational Commerce & WhatsApp — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (sixteen,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -747,7 +747,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -785,7 +785,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -823,7 +823,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -863,7 +863,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 3: Conversational Commerce & WhatsApp Au... — Conversion Pipeline",
+        "title": "Tier 3: Conversational Commerce & WhatsApp — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1025,11 +1025,11 @@
       "codeHash": "79595b875e49c44c104b1293156308101196a33480e0aa229dda9866444900a7",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: Econometric MMM & Geo-Lift Incrementa... — Conversion Pipeline",
+        "title": "Tier 4: Econometric MMM & Geo-Lift — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (sixteen,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1067,7 +1067,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1105,7 +1105,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1143,7 +1143,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1183,7 +1183,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 4: Econometric MMM & Geo-Lift Incrementa... — Conversion Pipeline",
+        "title": "Tier 4: Econometric MMM & Geo-Lift — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1345,11 +1345,11 @@
       "codeHash": "ea9ddd9cc24d848a1ec5fa338e4ce8f4f226dc358305d0edb555f79f49cce600",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Chief Growth Officer (CGO) & Economet... — Conversion Pipeline",
+        "title": "Tier 5: Chief Growth Officer (CGO) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (sixteen,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1387,7 +1387,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1425,7 +1425,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (two,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1463,7 +1463,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1503,7 +1503,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 5: Chief Growth Officer (CGO) & Economet... — Conversion Pipeline",
+        "title": "Tier 5: Chief Growth Officer (CGO) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

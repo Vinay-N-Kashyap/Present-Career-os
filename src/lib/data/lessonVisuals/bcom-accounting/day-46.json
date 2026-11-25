@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Liquidity Architecture & Defen... — Ledger Verification",
+        "title": "Corporate Liquidity Architecture & Defensive Interval Metrics — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 44005000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Long-Term Solvency, Debt Structure & DSC... — Ledger Verification",
+        "title": "Long-Term Solvency, Debt Structure & DSCR Gross-Up Mechanics — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 44010000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Operational Efficiency, Velocity & the C... — Ledger Verification",
+        "title": "Operational Efficiency, Velocity & the Cash Conversion Cycle (CCC) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 44015000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mandatory Schedule III Disclosures & CAR... — Ledger Verification",
+        "title": "Mandatory Schedule III Disclosures & CARO 2020 Audit Verification — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 44020000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Python Ratio Diagnostics Engine Executio... — Ledger Verification",
+        "title": "Python Ratio Diagnostics Engine Execution & Controllership — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 46 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 44025000,

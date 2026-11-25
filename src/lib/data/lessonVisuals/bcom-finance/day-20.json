@@ -10,11 +10,11 @@
       "codeHash": "09bbac3aaa97b9e2f7022d7484f096c698695bdcca2fe2e693b96c12afb7838d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Walter's Dividend Valuation Model: Interna... — General Ledger Verification",
+        "title": "Walter's Dividend Valuation Model: Internal Return vs Cost of Capital — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Walter's.",
+            "caption": "Open primary facility debit entry for Walter's Dividend Valuation Model.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 95000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 114000,
@@ -139,11 +139,11 @@
       "codeHash": "d7a8ef630cf564927698fcf7df0d9d38702bc9a61aeb71312179642ef0f0ffa5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Gordon's Model: Bird-in-the-Hand Theory & ... — General Ledger Verification",
+        "title": "Gordon's Model: Bird-in-the-Hand Theory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Gordon's.",
+            "caption": "Open primary facility debit entry for Gordon's Model.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 96250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 115500,
@@ -268,11 +268,11 @@
       "codeHash": "c551139c6fbbefbc4bbc15885a59ced23f0f332df43517aa8580a46a42139805",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Modigliani-Miller (MM) Dividend Irrelevanc... — General Ledger Verification",
+        "title": "Modigliani-Miller (MM) Dividend Irrelevance Theorem & Share Arbitrage — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 97500,
@@ -397,11 +397,11 @@
       "codeHash": "0f220caaf55bbd5c9a1e7ceeedfd455d943261748d631692e7cc1a893bf0f6f8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Share Repurchases (Buybacks) vs Cash Divid... — General Ledger Verification",
+        "title": "Share Repurchases (Buybacks) vs Cash Dividends: Wealth Equivalence — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Share.",
+            "caption": "Open primary facility debit entry for Share Repurchases.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 98750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 118500,
@@ -526,11 +526,11 @@
       "codeHash": "3e6a56acb94c5f1f927951b48862ae434ebed8162d5d061ead9d64de0a2ba280",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Dividend Policy Master Optimiza... — General Ledger Verification",
+        "title": "Enterprise Dividend Policy Master Optimization & Governance Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($one hundred,multiple) for Enterprise.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 100000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 120000,

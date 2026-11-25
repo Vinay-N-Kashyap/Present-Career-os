@@ -8,7 +8,7 @@
       "codeHash": "48bff6b5c989c7544ce00654c01e2bce769bdb385cf7c14d6568c1dfe7d903bc",
       "spec": {
         "template": "bars",
-        "title": "Streaming Event Foundations: Event Tim... - Learning Evaluation",
+        "title": "Streaming Event Foundations: Event - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "6a7955f986cf6663e54c9be27b2c25abe219950b27bc08ce0473e1f1b66483e2",
       "spec": {
         "template": "bars",
-        "title": "Distributed Log Architecture: Apache K... - Learning Evaluation",
+        "title": "Distributed Log Architecture: Apache - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "a2a355736b965e84595873a59b2f74852543a5328e0dc5a2b14bfb04651b0000",
       "spec": {
         "template": "bars",
-        "title": "Stateful Stream Processing & Complex E... - Learning Evaluation",
+        "title": "Stateful Stream Processing & Complex Event Processing (CEP) with Flink - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "eb23e546dc19dbd414d4c7974617f20efb136d81e8182f45078ac01b522e20f7",
       "spec": {
         "template": "bars",
-        "title": "The Enterprise Feature Store: Dual-Sto... - Learning Evaluation",
+        "title": "The Enterprise Feature Store: Dual-Storage Engine (Redis & BigQuery) - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "f424352e664fb85f29d2a32d9ccff4cc47c0d23c3dbff3ac17c3261ca2cc6bdc",
       "spec": {
         "template": "bars",
-        "title": "Production Streaming Outage Forensics ... - Learning Evaluation",
+        "title": "Production Streaming Outage Forensics & Dynamic Surge Pricing Incident - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

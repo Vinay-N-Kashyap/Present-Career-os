@@ -10,11 +10,11 @@
       "codeHash": "b0a2b6dbb95ff9aa50485ca70dabcdea30d8a582ed269849f6c7005f588e599b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 10(b) & Rule 10b-5: The Six Elemen... — General Ledger Verification",
+        "title": "Section 10(b) & Rule 10b-5: The Six — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Section ten(b).",
+            "caption": "Open primary facility debit entry for Section ten(b).",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 74000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 88800,
@@ -139,11 +139,11 @@
       "codeHash": "59212b7cf8c93646b62877eaf2143758b5b7d9e491e0c9d8fad2d24cd8460a88",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Fraud-on-the-Market Presumption & Hallibur... — General Ledger Verification",
+        "title": "Fraud-on-the-Market Presumption & Halliburton II Price Impact Rebuttal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 75250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 90300,
@@ -268,11 +268,11 @@
       "codeHash": "ce4bce43ecd2afefe875af88a0c9db353e12697b822d42ecf10480f74012e84f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "PSLRA Heightened Scienter Pleading Standar... — General Ledger Verification",
+        "title": "PSLRA Heightened Scienter Pleading Standards & The Tellabs Invariant — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for PSLRA.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 76500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 91800,
@@ -397,11 +397,11 @@
       "codeHash": "29d4ab7dc7caec12c87081647c809de11ea8f7dd8d62966deed408714ca63f6c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forward-Looking Statements & The PSLRA Sta... — General Ledger Verification",
+        "title": "Forward-Looking Statements & The PSLRA Statutory Safe Harbor — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 77750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 93300,
@@ -526,11 +526,11 @@
       "codeHash": "dbf2735252114effab277dd9af7a66edf7cc1b60e9cd423a3e56f32dbf823c57",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Loss Causation & The Dura Pharmaceuticals ... — General Ledger Verification",
+        "title": "Loss Causation & The Dura Pharmaceuticals Econometric Defense — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Loss Causation.",
+            "caption": "Open primary facility debit entry for Loss Causation.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 79000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 94800,

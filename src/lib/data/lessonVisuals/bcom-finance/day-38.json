@@ -10,11 +10,11 @@
       "codeHash": "06a623e9f248837b9c8a2c5a98b374f9705e07a204a83a0e3d7559cf57dba9d8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Equity Capital Markets (ECM) Syndicate S — General Ledger Verification",
+        "title": "Equity Capital Markets (ECM) Syndicate Structure & The S-1 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Equity Capital Markets (ECM) S.",
+            "caption": "Open primary capital facility balance for Equity Capital Markets.",
             "title": "Day 38 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 138000,
@@ -139,11 +139,11 @@
       "codeHash": "06a623e9f248837b9c8a2c5a98b374f9705e07a204a83a0e3d7559cf57dba9d8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Book-Building Mechanics, Indications of  — General Ledger Verification",
+        "title": "Book-Building Mechanics, Indications of Interest (IOI) & Offer Price — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Book-Building Mechanics, Indic.",
+            "caption": "Open primary capital facility balance for Book-Building Mechanics.",
             "title": "Day 38 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 138250,
@@ -268,11 +268,11 @@
       "codeHash": "06a623e9f248837b9c8a2c5a98b374f9705e07a204a83a0e3d7559cf57dba9d8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Underwriting Economics: The 7% Gross Spr — General Ledger Verification",
+        "title": "Underwriting Economics: The 7% Gross Spread, Selling Concessions — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Underwriting Economics: The.",
+            "caption": "Open primary capital facility balance for Underwriting Economics.",
             "title": "Day 38 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 138500,
@@ -397,11 +397,11 @@
       "codeHash": "06a623e9f248837b9c8a2c5a98b374f9705e07a204a83a0e3d7559cf57dba9d8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Green Shoe Overallotment Option & SE — General Ledger Verification",
+        "title": "The Green Shoe Overallotment Option & SEC Rule 104 Price — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for The Green Shoe Overallotment O.",
+            "caption": "Open primary capital facility balance for The Green Shoe Overallotment Option.",
             "title": "Day 38 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 138750,
@@ -526,11 +526,11 @@
       "codeHash": "06a623e9f248837b9c8a2c5a98b374f9705e07a204a83a0e3d7559cf57dba9d8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "IPO Underpricing Anomalies, Secondary Tr — General Ledger Verification",
+        "title": "IPO Underpricing Anomalies, Secondary Trading Pop & Algorithmic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for IPO Underpricing Anomalies, Se.",
+            "caption": "Open primary capital facility balance for IPO Underpricing Anomalies.",
             "title": "Day 38 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 139000,

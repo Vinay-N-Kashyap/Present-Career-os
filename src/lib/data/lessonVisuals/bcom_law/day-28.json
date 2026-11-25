@@ -10,11 +10,11 @@
       "codeHash": "cbf97eadaf65086f301c1e98e60689f385f6af51c8efb4ce39380af2ed69f7f4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Transnational Corporate Human Rights & Env... — General Ledger Verification",
+        "title": "Transnational Corporate Human Rights & Environmental Due Diligence — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Transnational.",
+            "caption": "Open primary facility debit entry for Transnational Corporate Human Rights.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147600,
@@ -139,11 +139,11 @@
       "codeHash": "bbf8702486111e977d0e3bedb4cd1da417ef12df624e2bdcd8e0036c75b1d9c2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The German Supply Chain Due Diligence Act ... — General Ledger Verification",
+        "title": "The German Supply Chain Due Diligence Act (LkSG) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The German.",
+            "caption": "Open primary facility debit entry for The German Supply Chain Due Diligence Act.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149100,
@@ -268,11 +268,11 @@
       "codeHash": "de1fc772cdc88e34d3916058faed6e084abf588d30251b44f9af662640596d9d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The EU Corporate Sustainability Due Dilige... — General Ledger Verification",
+        "title": "The EU Corporate Sustainability Due Diligence Directive (CSDDD / CS3D) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The EU.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 125500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 150600,
@@ -397,11 +397,11 @@
       "codeHash": "872badc1a922740bccd11664102ff183ae432decd6213d653fd1a094422762f3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Contractual Cascading Clauses & Audit Veri... — General Ledger Verification",
+        "title": "Contractual Cascading Clauses & Audit Verification Protocols — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Contractual.",
+            "caption": "Open primary facility debit entry for Contractual Cascading Clauses.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 126750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 152100,
@@ -526,11 +526,11 @@
       "codeHash": "3229f2e5adfddfd1655dad9a09c83aa66cc08225f2e0c2c4e29a171adfcaa19f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Global Supply Chain ESG Due Diligence Simu... — General Ledger Verification",
+        "title": "Global Supply Chain ESG Due Diligence Simulation Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($one-twenty-eight,multiple) for Global.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 28 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 128000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 28 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 153600,

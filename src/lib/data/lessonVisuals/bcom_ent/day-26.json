@@ -10,11 +10,11 @@
       "codeHash": "5518e56ff42b082fd1232a12b8eaa80fb0a31913cf3f6e2fa80f3895dcd8647a",
       "spec": {
         "template": "funnel",
-        "title": "Foreign Market Selection & Entry Mode Ar - Sovereign Funnel",
+        "title": "Foreign Market Selection & Entry Mode Architecture - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (twenty,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (nine,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Foreign Market Selection & Entry Mode Ar - Sovereign Funnel",
+        "title": "Foreign Market Selection & Entry Mode Architecture - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (twenty,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -210,7 +210,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (nine,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,11 +330,11 @@
       "codeHash": "a150df2ceead7e368bb7b5fab1d94b93f736f89bea1d000bf413aec9cc182eed",
       "spec": {
         "template": "funnel",
-        "title": "CAGE Distance Framework & Cross-Border F - Sovereign Funnel",
+        "title": "CAGE Distance Framework & Cross-Border Friction Index - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (eleven,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -488,11 +488,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "CAGE Distance Framework & Cross-Border F - Sovereign Funnel",
+        "title": "CAGE Distance Framework & Cross-Border Friction Index - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -530,7 +530,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (eleven,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "5a48e0c3c8909d88d8afb7f1329010fe260943136834841abbcec6b699a5fa76",
       "spec": {
         "template": "funnel",
-        "title": "OECD Transfer Pricing & Arm's Length Pri - Sovereign Funnel",
+        "title": "OECD Transfer Pricing & Arm's Length Principle (ALP) - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "OECD Transfer Pricing & Arm's Length Pri - Sovereign Funnel",
+        "title": "OECD Transfer Pricing & Arm's Length Principle (ALP) - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,11 +970,11 @@
       "codeHash": "43e1e6febab3edd0b01ee3da2a5d2d3fbb31626f75a983f4c6cb6573a4e853ab",
       "spec": {
         "template": "funnel",
-        "title": "Currency Hedging Architecture: FX Forwar - Sovereign Funnel",
+        "title": "Currency Hedging Architecture: FX Forwards & Option Collars - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1128,11 +1128,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Currency Hedging Architecture: FX Forwar - Sovereign Funnel",
+        "title": "Currency Hedging Architecture: FX Forwards & Option Collars - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "cf4dde8e81d5422ce34be123428185b74fb7ce5fdf8e3aff49a2f053d0b258f6",
       "spec": {
         "template": "funnel",
-        "title": "Global Tax Optimization, Pillar Two & So - Sovereign Funnel",
+        "title": "Global Tax Optimization, Pillar Two & Sovereign Compliance - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (multiple,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (ten,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Global Tax Optimization, Pillar Two & So - Sovereign Funnel",
+        "title": "Global Tax Optimization, Pillar Two & Sovereign Compliance - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1490,7 +1490,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (multiple,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (ten,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {

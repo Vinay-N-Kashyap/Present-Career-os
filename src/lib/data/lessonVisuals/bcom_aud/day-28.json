@@ -10,11 +10,11 @@
       "codeHash": "e67ba01c41309ad7b67fd9d9753d6c4bbb885e1d9db5608f1b958e758c223c71",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Continuous Auditing Architecture & 100% General Le — Forensic Assurance Ledger",
+        "title": "Continuous Auditing Architecture & 100% General Ledger Population — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 28 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 28 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3160000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Continuous Auditing.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 28 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3160000,
@@ -141,11 +141,11 @@
       "codeHash": "792ee0c32036db744604accdda71c6e441fb615f8a4d15166b36444181034ee0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Unsupervised Machine Learning & Isolation Forests  — Forensic Assurance Ledger",
+        "title": "Unsupervised Machine Learning & Isolation Forests in Audit Anomaly — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 28 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2875000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 28 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3197500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Unsupervised Machine.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 28 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3197500,
@@ -272,11 +272,11 @@
       "codeHash": "535b172acb2968f4ff0d5190c3e19ed32ba99b8f4ae9474ffb7ff263d07a87fb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Auditing Artificial Intelligence Systems & Algorit — Forensic Assurance Ledger",
+        "title": "Auditing Artificial Intelligence Systems & Algorithms: AI Governance — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for Auditing.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 28 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2900000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 28 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3235000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Auditing Artificial.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 28 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3235000,
@@ -407,7 +407,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for Automated.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 28 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2925000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 28 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3272500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Automated Audit.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 28 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3272500,
@@ -534,11 +534,11 @@
       "codeHash": "6e02c649d5139374e989ed5098f3b14759ef50e7a4c00c4e8946afe32dafdb1c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive AI & Analytics Audit Dossier & Techn — Forensic Assurance Ledger",
+        "title": "Comprehensive AI & Analytics Audit Dossier & Technical Validation — Forensic Assurance Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic evidence and audit recovery ledger (multiple) for.",
+            "caption": "Open forensic evidence and audit recovery ledger.",
             "title": "Day 28 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / asset freezing entry (multiple) under.",
+            "caption": "Record forensic adjustment / asset freezing entry.",
             "title": "Day 28 Forensic Assurance Ledger — Evidentiary Adjustment",
             "isBalanced": true,
             "totalDebit": 3310000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Comprehensive AI &.",
+            "caption": "Execute simulated enterprise forensic case study for Comprehensive AI.",
             "title": "Day 28 Forensic Assurance Ledger — Substantive Investigation",
             "isBalanced": true,
             "totalDebit": 3310000,

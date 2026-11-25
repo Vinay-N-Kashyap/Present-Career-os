@@ -10,7 +10,7 @@
       "codeHash": "22619725bceff4f62a6c0ceb22281b8df318cb4dddb6a1e2ab2ffb019d6099e9",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: Topic Clusters, Pillar Pages & Goo... — Conversion Funnel",
+        "title": "Tier 1: Topic Clusters, Pillar Pages — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "267e987b8701733fd0c2d299fe31989e203e5aee6e294459c13ade8925bccb5c",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Google Ads GSP Search Auction & Qu... — Conversion Funnel",
+        "title": "Tier 2: Google Ads GSP Search Auction — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,7 +334,7 @@
       "codeHash": "b4d9fafa2d64b37890e308e39a0b2f872f0f59835a98300b3cfbca7328f6d9b8",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Meta Paid Social Total Value Aucti... — Conversion Funnel",
+        "title": "Tier 3: Meta Paid Social Total Value — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,11 +496,11 @@
       "codeHash": "31fa7219fb45a2241fb538e25dc51722ee444487e9690c836ff121e53616d910",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: First-Party CDP Audience Segmentat... — Conversion Funnel",
+        "title": "Tier 4: First-Party CDP Audience — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "cce7dc49d97402fb2136c25fb03c5847937b91d237bed64d97126b9171b0c6fa",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Milestone 2 Master Defense & Perfo... — Conversion Funnel",
+        "title": "Tier 5: Milestone 2 Master Defense — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

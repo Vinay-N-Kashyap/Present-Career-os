@@ -8,7 +8,7 @@
       "codeHash": "056f33f4a50ad2d80379a97ddc50a0b23ca3eec2078d1beea9fcd9ddebd63cec",
       "spec": {
         "template": "bars",
-        "title": "RFM Quantile Architecture & Behavioral... \u2014 Quantitative Evaluation",
+        "title": "RFM Quantile Architecture & Behavioral Scoring Systems — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "9e2f55f9b1d9bc80e2f7da8f43b4f1e9f51f48e748f703a32a93d58caec0541a",
       "spec": {
         "template": "bars",
-        "title": "K-Means Clustering Mechanics & Lloyd's... \u2014 Quantitative Evaluation",
+        "title": "K-Means Clustering Mechanics & Lloyd's Partitioning Physics — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "be29782d8123ca7025b931b2000247b1431861ea254805af7aed5c914fe4e79f",
       "spec": {
         "template": "bars",
-        "title": "Cluster Validation Diagnostics: Elbow ... \u2014 Quantitative Evaluation",
+        "title": "Cluster Validation Diagnostics: Elbow — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "001f1e37a251d24040b05cf489706ee4ec9d5adfcdf1a47fd860e3fb7b15b339",
       "spec": {
         "template": "bars",
-        "title": "Feature Scaling Distortions, Outlier S... \u2014 Quantitative Evaluation",
+        "title": "Feature Scaling Distortions, Outlier Shielding & Mahalanobis Distances — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "5fb5b6738477ea395fdc4c2267a481e568bd70d8d6fbbf8865ae8b1a8d4a2c5c",
       "spec": {
         "template": "bars",
-        "title": "Customer Portfolio Capital Allocation ... \u2014 Quantitative Evaluation",
+        "title": "Customer Portfolio Capital Allocation & Strategic Intervention — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",

@@ -10,7 +10,7 @@
       "codeHash": "d91d2077f1dc08632b4fee01aba29d4139c0c2840c79f49da98603cdb5a2a0ac",
       "spec": {
         "template": "workflow",
-        "title": "Control Tower Architecture: Unified Strategic... — Operational Workflow",
+        "title": "Control Tower Architecture: Unified — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Control Tower Architecture: Unified Strategic... — Operational Workflow",
+        "title": "Control Tower Architecture: Unified — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Control Tower Architecture: Unified Stra...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Control Tower Architecture: Unified",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "cc3b89400fa411189386ad5195d90d13cb3904664defc6c0d7f44fc348995b9b",
       "spec": {
         "template": "workflow",
-        "title": "Dynamic Spend Portfolio Optimizer & Multi-Cri... — Operational Workflow",
+        "title": "Dynamic Spend Portfolio Optimizer & Multi-Criteria AHP Supplier — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Dynamic Spend Portfolio Optimizer & Multi-Cri... — Operational Workflow",
+        "title": "Dynamic Spend Portfolio Optimizer & Multi-Criteria AHP Supplier — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Dynamic Spend Portfolio Optimizer & Mult...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Dynamic Spend Portfolio Optimizer",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "5dbe00129f32e19f143cf68a0713f7c3c76db3dd9dfdf05095ab24557c6ba743",
       "spec": {
         "template": "workflow",
-        "title": "Cross-Border Total Landed Cost (TLC) & Incote... — Operational Workflow",
+        "title": "Cross-Border Total Landed Cost (TLC) & Incoterms 2020 Multi-Modal — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Cross-Border Total Landed Cost (TLC) & Incote... — Operational Workflow",
+        "title": "Cross-Border Total Landed Cost (TLC) & Incoterms 2020 Multi-Modal — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Cross-Border Total Landed Cost (TLC) & I...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Cross-Border Total Landed Cost (TLC)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "77846b902b902e152683ff6290a26ac58b61a4c4497180a23e442f7aad8eb778",
       "spec": {
         "template": "workflow",
-        "title": "Real-Time Balanced Scorecard, 8D CAPA & Altma... — Operational Workflow",
+        "title": "Real-Time Balanced Scorecard, 8D CAPA & Altman Z-Score Insolvency — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Real-Time Balanced Scorecard, 8D CAPA & Altma... — Operational Workflow",
+        "title": "Real-Time Balanced Scorecard, 8D CAPA & Altman Z-Score Insolvency — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time Balanced Scorecard, 8D CAPA & ...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time Balanced Scorecard, 8D CAPA",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "fc994100a8a21835a91b12b88991f429d4b1f7a9829e9b8b924abd605ea8d73a",
       "spec": {
         "template": "workflow",
-        "title": "Master 5-Gate Governance Verification Engine ... — Operational Workflow",
+        "title": "Master 5-Gate Governance Verification Engine & CSCO Strategic — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Master 5-Gate Governance Verification Engine ... — Operational Workflow",
+        "title": "Master 5-Gate Governance Verification Engine & CSCO Strategic — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Master 5-Gate Governance Verification En...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Master 5-Gate Governance Verification",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

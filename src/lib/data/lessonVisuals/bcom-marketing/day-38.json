@@ -8,7 +8,7 @@
       "codeHash": "15b63ce13460cc4f2168e413ed62cb3be48f7e3139b43dceb7ecbb57679ac6f7",
       "spec": {
         "template": "funnel",
-        "title": "Service-Dominant Logic (S-D Logic) & The \u2014 Conversion Funnel",
+        "title": "Service-Dominant Logic (S-D Logic) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "d09df645198993bbb8b4641bde397940e0c1fbe2527bc5b6969e4094f23e1119",
       "spec": {
         "template": "funnel",
-        "title": "The Extended 7Ps Services Marketing Mix  \u2014 Conversion Funnel",
+        "title": "The Extended 7Ps Services Marketing Mix — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "d3d8f5cd4fb6b81b925beb5408d954f03325d7b6a049d74af7181cd973d37e2e",
       "spec": {
         "template": "funnel",
-        "title": "Parasuraman, Zeithaml & Berry's SERVQUAL \u2014 Conversion Funnel",
+        "title": "Parasuraman, Zeithaml & Berry's SERVQUAL — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "a025ee415aff77f36cc770eb93d7ff6e253bf0472e50fd5a39c7e46f52b9f8d0",
       "spec": {
         "template": "funnel",
-        "title": "Service Blueprinting Architecture & Fail \u2014 Conversion Funnel",
+        "title": "Service Blueprinting Architecture & Fail — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "3010d21251f61c81a9631917e1057f233dd07f524fbab1e158f76cfa0bbccbfa",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic SERVQUAL Gap Audit & Critica \u2014 Conversion Funnel",
+        "title": "Algorithmic SERVQUAL Gap Audit & Critical Incident Failure Rate — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

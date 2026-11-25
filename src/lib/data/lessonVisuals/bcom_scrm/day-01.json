@@ -10,11 +10,11 @@
       "codeHash": "dcd1426485f414a138f0d292c1b63b3b4d87de0762928f7fbced6571d65b1294",
       "spec": {
         "template": "funnel",
-        "title": "B2B Pipeline Physics & Weighted Stage Forecas... \u2014 Conversion Pipeline",
+        "title": "B2B Pipeline Physics & Weighted Stage Forecasting — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "B2B Pipeline Physics & Weighted Stage Forecas... \u2014 Conversion Pipeline",
+        "title": "B2B Pipeline Physics & Weighted Stage Forecasting — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -210,7 +210,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -286,7 +286,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -330,11 +330,11 @@
       "codeHash": "e7943e7b119d92577501ec185c77eb5919e7c273b078edcc390b89cedd34a2f1",
       "spec": {
         "template": "funnel",
-        "title": "LTV to CAC Unit Economics & The CAC Payback P... \u2014 Conversion Pipeline",
+        "title": "LTV to CAC Unit Economics & The CAC Payback Period — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,11 +488,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "LTV to CAC Unit Economics & The CAC Payback P... \u2014 Conversion Pipeline",
+        "title": "LTV to CAC Unit Economics & The CAC Payback Period — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -530,7 +530,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -606,7 +606,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "e423620f6e2332e26fa05f1d2fa5abcac04cfff0b416b75c6fa6964810ba6399",
       "spec": {
         "template": "funnel",
-        "title": "Net Revenue Churn & Expansion Dynamics (Negat... \u2014 Conversion Pipeline",
+        "title": "Net Revenue Churn & Expansion Dynamics (Negative Churn) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Net Revenue Churn & Expansion Dynamics (Negat... \u2014 Conversion Pipeline",
+        "title": "Net Revenue Churn & Expansion Dynamics (Negative Churn) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -850,7 +850,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -926,7 +926,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -970,11 +970,11 @@
       "codeHash": "87b52f23c91a1b4afbde89d0e8570d3936c5b436ad0fd235a2f3715ca24f8e65",
       "spec": {
         "template": "funnel",
-        "title": "Predictive Account Health Scoring & Churn Ris... \u2014 Conversion Pipeline",
+        "title": "Predictive Account Health Scoring & Churn Risk Classification — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,11 +1128,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Predictive Account Health Scoring & Churn Ris... \u2014 Conversion Pipeline",
+        "title": "Predictive Account Health Scoring & Churn Risk Classification — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1170,7 +1170,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "555209f0a123e4126b887e30e4d651f6b6887624c75efc83101d18006de63626",
       "spec": {
         "template": "funnel",
-        "title": "Net Promoter Score (NPS) & Customer Advocacy ... \u2014 Conversion Pipeline",
+        "title": "Net Promoter Score (NPS) & Customer Advocacy Analytics — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Net Promoter Score (NPS) & Customer Advocacy ... \u2014 Conversion Pipeline",
+        "title": "Net Promoter Score (NPS) & Customer Advocacy Analytics — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1490,7 +1490,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1566,7 +1566,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {

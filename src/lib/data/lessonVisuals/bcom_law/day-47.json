@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 1: Foreign Main vs. Foreign Non-Main ... — Cross-Border Workflow",
+        "title": "Part 1: Foreign Main vs. Foreign — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part one: Foreign Main vs. Foreign Non-M...",
+            "caption": "Stage one: Initialize Part one: Foreign Main vs. Foreign",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 2: Article 2(f) Establishment Verific... — Cross-Border Workflow",
+        "title": "Part 2: Article 2(f) Establishment — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part two: Article two(f) Establishment Ver...",
+            "caption": "Stage one: Initialize Part two: Article two(f) Establishment",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 3: Section 234/235 Bilateral Treaties... — Cross-Border Workflow",
+        "title": "Part 3: Section 234/235 Bilateral — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 4: Article 32 Hotchpot Equalization &... — Cross-Border Workflow",
+        "title": "Part 4: Article 32 Hotchpot Equalization — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part four: Article thirty-two Hotchpot Equalizati...",
+            "caption": "Stage one: Initialize Part four: Article thirty-two Hotchpot",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 5: Production Cross-Border Foreign Pr... — Cross-Border Workflow",
+        "title": "Part 5: Production Cross-Border Foreign — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part five: Production Cross-Border Foreig...",
+            "caption": "Stage one: Initialize Part five: Production Cross-Border",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

@@ -8,7 +8,7 @@
       "codeHash": "1e9fd9a1bf2a42bc93dadceb09a7d9301a988b5d60d7210aa1f2235e6128454e",
       "spec": {
         "template": "funnel",
-        "title": "Milestone Architecture: Unifying In... - RevOps Funnel",
+        "title": "Milestone Architecture: Unifying - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "91927ead9cf639237c87d71168ecb41aae42da4b942ac5697febe93fb46b6109",
       "spec": {
         "template": "funnel",
-        "title": "Autonomous Cross-Platform Synchroni... - RevOps Funnel",
+        "title": "Autonomous Cross-Platform Synchronization & Conflict Resolution - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "9811cec94c8af82658cd982af2910def523f9e8f117a306ccedd5e4e85fda496",
       "spec": {
         "template": "funnel",
-        "title": "Analytical Data Warehouse Operation... - RevOps Funnel",
+        "title": "Analytical Data Warehouse Operationalization & PQA Routing Validation - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "067ea418e0aa2e953f5b5a0ea83108891651e8eff7a7234655de4f1aa2c107a7",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Layered Access Governance & D... - RevOps Funnel",
+        "title": "Multi-Layered Access Governance & Dynamic ABAC Policy Enforcement - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "17cf541dcf4d192c8caf34ea4ad9fa325b1ceb166c37a04eef0be2445d29d66a",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: The Ape... - RevOps Funnel",
+        "title": "Full Python Implementation - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

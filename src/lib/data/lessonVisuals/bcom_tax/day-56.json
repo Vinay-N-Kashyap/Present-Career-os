@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Statutory Architecture of GAAR: Chapter X... — General Ledger Verification",
+        "title": "The Statutory Architecture of GAAR: Chapter — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Statutory Architec (Pi Alpha).",
+            "caption": "Open primary debit entry for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10900,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Statutory Architec (Alpha).",
+            "caption": "Record secondary accrual adjustment for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Statutory Architec (Pi).",
+            "caption": "Reconcile sub-ledger balances for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Statutory Architec (Alpha).",
+            "caption": "Verify double-entry trial balance for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -134,11 +134,11 @@
       "partTitle": "The Statutory Architecture of GAAR: Chapter X-A, Section 95 & The Main Purpose Threshold",
       "filled": {
         "template": "ledger-sheet",
-        "title": "The Statutory Architecture of GAAR: Chapter X... — General Ledger Verification",
+        "title": "The Statutory Architecture of GAAR: Chapter — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Statutory Architec (Pi Alpha).",
+            "caption": "Open primary debit entry for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10900,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Statutory Architec (Alpha).",
+            "caption": "Record secondary accrual adjustment for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Statutory Architec (Pi).",
+            "caption": "Reconcile sub-ledger balances for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Statutory Architec (Alpha).",
+            "caption": "Verify double-entry trial balance for The Statutory Architecture of GAAR.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13080,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Four Tainted Element Tests & Lack of Comm... — General Ledger Verification",
+        "title": "The Four Tainted Element Tests & Lack of Commercial Substance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Four Tainted Eleme (Pi Beta).",
+            "caption": "Open primary debit entry for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Four Tainted Eleme (Beta).",
+            "caption": "Record secondary accrual adjustment for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Four Tainted Eleme (Pi).",
+            "caption": "Reconcile sub-ledger balances for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Four Tainted Eleme (Beta).",
+            "caption": "Verify double-entry trial balance for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -389,11 +389,11 @@
       "partTitle": "The Four Tainted Element Tests & Lack of Commercial Substance under Section 96 and 97",
       "filled": {
         "template": "ledger-sheet",
-        "title": "The Four Tainted Element Tests & Lack of Comm... — General Ledger Verification",
+        "title": "The Four Tainted Element Tests & Lack of Commercial Substance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Four Tainted Eleme (Pi Beta).",
+            "caption": "Open primary debit entry for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11100,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Four Tainted Eleme (Beta).",
+            "caption": "Record secondary accrual adjustment for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Four Tainted Eleme (Pi).",
+            "caption": "Reconcile sub-ledger balances for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Four Tainted Eleme (Beta).",
+            "caption": "Verify double-entry trial balance for The Four Tainted Element Tests.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13320,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Consequences of GAAR under Section 98 & The I... — General Ledger Verification",
+        "title": "Consequences of GAAR under Section 98 & The Interplay between GAAR, SAAR and DTAAs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Consequences of GAAR u (Pi Gamma).",
+            "caption": "Open primary debit entry for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11300,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Consequences of GAAR u (Gamma).",
+            "caption": "Record secondary accrual adjustment for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13560,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Consequences of GAAR u (Pi).",
+            "caption": "Reconcile sub-ledger balances for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13560,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Consequences of GAAR u (Gamma).",
+            "caption": "Verify double-entry trial balance for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13560,
@@ -644,11 +644,11 @@
       "partTitle": "Consequences of GAAR under Section 98 & The Interplay between GAAR, SAAR and DTAAs",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Consequences of GAAR under Section 98 & The I... — General Ledger Verification",
+        "title": "Consequences of GAAR under Section 98 & The Interplay between GAAR, SAAR and DTAAs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Consequences of GAAR u (Pi Gamma).",
+            "caption": "Open primary debit entry for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11300,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Consequences of GAAR u (Gamma).",
+            "caption": "Record secondary accrual adjustment for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13560,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Consequences of GAAR u (Pi).",
+            "caption": "Reconcile sub-ledger balances for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13560,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Consequences of GAAR u (Gamma).",
+            "caption": "Verify double-entry trial balance for Consequences of GAAR under Section 98.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13560,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Procedural Safeguards & The Statutory Approvi... — General Ledger Verification",
+        "title": "Procedural Safeguards & The Statutory Approving Panel Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Procedural Safeguards (Pi Delta).",
+            "caption": "Open primary debit entry for Procedural Safeguards.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11500,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Procedural Safeguards (Delta).",
+            "caption": "Record secondary accrual adjustment for Procedural Safeguards.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Procedural Safeguards (Pi).",
+            "caption": "Reconcile sub-ledger balances for Procedural Safeguards.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Procedural Safeguards (Delta).",
+            "caption": "Verify double-entry trial balance for Procedural Safeguards.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -899,11 +899,11 @@
       "partTitle": "Procedural Safeguards & The Statutory Approving Panel Architecture under Section 144BA",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Procedural Safeguards & The Statutory Approvi... — General Ledger Verification",
+        "title": "Procedural Safeguards & The Statutory Approving Panel Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Procedural Safeguards (Pi Delta).",
+            "caption": "Open primary debit entry for Procedural Safeguards.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11500,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Procedural Safeguards (Delta).",
+            "caption": "Record secondary accrual adjustment for Procedural Safeguards.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Procedural Safeguards (Pi).",
+            "caption": "Reconcile sub-ledger balances for Procedural Safeguards.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Procedural Safeguards (Delta).",
+            "caption": "Verify double-entry trial balance for Procedural Safeguards.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13800,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Enterprise GA... — General Ledger Verification",
+        "title": "Production Python Architecture: Enterprise — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Pi Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Pi).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Enterprise GAAR Risk Assessment & Approving Panel Simulator",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Enterprise GA... — General Ledger Verification",
+        "title": "Production Python Architecture: Enterprise — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Pi Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 56 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 56 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Pi).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 56 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 14040,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 56 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 14040,

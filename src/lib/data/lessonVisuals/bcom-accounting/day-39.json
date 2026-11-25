@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Elimination of 'Big Bath' Reserving, The... — Ledger Verification",
+        "title": "Elimination of 'Big Bath' Reserving, The Tripartite Framework — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Elimination.",
+            "caption": "Open primary Ind AS ledger posting for Elimination of 'Big Bath' Reserving.",
             "title": "Day 39 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 413350,
@@ -41,7 +41,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($thirty-two,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 39 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 446018,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Three Mandatory Recognition Criteria... — Ledger Verification",
+        "title": "The Three Mandatory Recognition Criteria, Past Obligating Events — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for The Three.",
+            "caption": "Open primary Ind AS ledger posting for The Three Mandatory Recognition Criteria.",
             "title": "Day 39 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 418350,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($thirty-two,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 39 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 451018,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Measurement Principles: Best Estimate, P... — Ledger Verification",
+        "title": "Measurement Principles: Best Estimate — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Measurement.",
+            "caption": "Open primary Ind AS ledger posting for Measurement Principles.",
             "title": "Day 39 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 423350,
@@ -301,7 +301,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($thirty-two,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 39 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 456018,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Restructuring Provisions: Detailed Forma... — Ledger Verification",
+        "title": "Restructuring Provisions: Detailed — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Restructuring.",
+            "caption": "Open primary Ind AS ledger posting for Restructuring Provisions.",
             "title": "Day 39 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 428350,
@@ -431,7 +431,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($thirty-two,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 39 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 461018,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Python Provisions Engine Execution, Trip... — Ledger Verification",
+        "title": "Python Provisions Engine Execution, Tripartite Classification & Ind — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Python.",
+            "caption": "Open primary Ind AS ledger posting for Python Provisions Engine Execution.",
             "title": "Day 39 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 433350,
@@ -561,7 +561,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($thirty-two,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 39 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 466018,

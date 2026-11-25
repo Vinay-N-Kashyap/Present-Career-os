@@ -10,11 +10,11 @@
       "codeHash": "bfbfd88b589e078eab801c36d16f0d5b843c5690986d09591d6af0075fe2fc6e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The WACC Equation & Capital Structure Weig... — General Ledger Verification",
+        "title": "The WACC Equation & Capital Structure Weighting Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The WACC.",
+            "caption": "Open primary facility debit entry for The WACC Equation.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 74000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 88800,
@@ -139,11 +139,11 @@
       "codeHash": "9e60bf2205e59baf3a6e778f86c9b1e7e4a7b3c5cff2617a3b948a027b8c8348",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Market Value vs Book Value Weighting Schem... — General Ledger Verification",
+        "title": "Market Value vs Book Value Weighting Schemes — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Market Value.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 75250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 90300,
@@ -268,11 +268,11 @@
       "codeHash": "2ca11c56b38d30fbee12bf08501835b833c2affc243b5d46ee2f11c723ac83dc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "WACC as Project Hurdle Rate & Divisional R... — General Ledger Verification",
+        "title": "WACC as Project Hurdle Rate & Divisional Risk Adjustments — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for WACC as.",
+            "caption": "Open primary facility debit entry for WACC as Project Hurdle Rate.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 76500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 91800,
@@ -397,11 +397,11 @@
       "codeHash": "fb8a7e0b760bfd3df946ab632940eee45f876f1825d6e3201e81e4e48be84439",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Structure Optimization: WACC Minim... — General Ledger Verification",
+        "title": "Capital Structure Optimization: WACC Minimization & Value Maximization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capital.",
+            "caption": "Open primary facility debit entry for Capital Structure Optimization.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 77750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 93300,
@@ -526,11 +526,11 @@
       "codeHash": "183dd4de5e9e2f990ca536ea549313d54d906e48cc7787adc522ecce532a0e49",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Corporate Hurdle Rate & Capital... — General Ledger Verification",
+        "title": "Enterprise Corporate Hurdle Rate & Capital Allocation Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Corporate Hurdle Rate.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 79000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 94800,

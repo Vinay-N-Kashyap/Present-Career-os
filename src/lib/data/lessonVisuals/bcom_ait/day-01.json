@@ -10,7 +10,7 @@
       "codeHash": "cfbb203fae5dbb50e8809b881ffa2bba87285b294764eaa103431ed94555b5a1",
       "spec": {
         "template": "tree-graph",
-        "title": "Robotic Process Automation (RPA) vs Cognitive... — Enterprise AI Decision Graph",
+        "title": "Robotic Process Automation (RPA) vs Cognitive AI Agents — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Robotic Process Automation (RPA...",
+            "caption": "Ingest enterprise Context Query for Robotic Process Automation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Robotic Process Automation (RPA) vs Cognitive... — Enterprise AI Decision Graph",
+        "title": "Robotic Process Automation (RPA) vs Cognitive AI Agents — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Robotic Process Automation (RPA...",
+            "caption": "Step 1: Ingest enterprise Context Query for Robotic Process Automation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "b319920b7ed2da67a4cb5f9f5c3fb9ad2fe9a3e754466ca94a5c39922c6f87c6",
       "spec": {
         "template": "tree-graph",
-        "title": "Intelligent Document Processing (IDP) & OCR P... — Enterprise AI Decision Graph",
+        "title": "Intelligent Document Processing (IDP) & OCR Pipelines — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Intelligent Document Processing...",
+            "caption": "Ingest enterprise Context Query for Intelligent Document Processing.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Intelligent Document Processing (IDP) & OCR P... — Enterprise AI Decision Graph",
+        "title": "Intelligent Document Processing (IDP) & OCR Pipelines — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Intelligent Document Processing...",
+            "caption": "Step 1: Ingest enterprise Context Query for Intelligent Document Processing.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Process Mining & ERP Event Log ...",
+            "caption": "Ingest enterprise Context Query for Process Mining & ERP Event Log Discovery",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Process Mining & ERP Event Log ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Process Mining.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "ee2de1ea0d3ccec7f9133d5c9779cf8efe522d26c55198925c6ff848b453c67b",
       "spec": {
         "template": "tree-graph",
-        "title": "Automation Economics: FTE Savings, TCO & ROI ... — Enterprise AI Decision Graph",
+        "title": "Automation Economics: FTE Savings, TCO & ROI Hurdle Rates — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Automation Economics: FTE Savin...",
+            "caption": "Ingest enterprise Context Query for Automation Economics: FTE",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Automation Economics: FTE Savings, TCO & ROI ... — Enterprise AI Decision Graph",
+        "title": "Automation Economics: FTE Savings, TCO & ROI Hurdle Rates — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Automation Economics: FTE Savin...",
+            "caption": "Step 1: Ingest enterprise Context Query for Automation Economics: FTE",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "319c74c5c84501794e35b99b810f7c12c55cd765c5134b5bc1ccad1ba6d1e6ed",
       "spec": {
         "template": "tree-graph",
-        "title": "Enterprise AI Governance, Model Risk & Compli... — Enterprise AI Decision Graph",
+        "title": "Enterprise AI Governance, Model Risk & Compliance Frameworks — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Enterprise AI Governance, Model...",
+            "caption": "Ingest enterprise Context Query for Enterprise AI Governance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Enterprise AI Governance, Model Risk & Compli... — Enterprise AI Decision Graph",
+        "title": "Enterprise AI Governance, Model Risk & Compliance Frameworks — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Enterprise AI Governance, Model...",
+            "caption": "Step 1: Ingest enterprise Context Query for Enterprise AI Governance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

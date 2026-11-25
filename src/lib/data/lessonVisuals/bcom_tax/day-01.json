@@ -10,11 +10,11 @@
       "codeHash": "100aa3ed941821b435a407dd046dd9cea920bf70272ec55c52cd9250ab5440d2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Effective Tax Rate & Deferred Tax Invariants ... — General Ledger Verification",
+        "title": "Effective Tax Rate & Deferred Tax Invariants (DTA / DTL) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Effective Tax Rate & Deferred T...",
+            "caption": "Open primary debit entry for Effective Tax Rate.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3180,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Effective Tax Rate & Deferred Tax Invariants ... — General Ledger Verification",
+        "title": "Effective Tax Rate & Deferred Tax Invariants (DTA / DTL) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2650) for Effective Tax Rate & Deferred T...",
+            "caption": "Step 1: Open primary debit entry (2650) for Effective Tax Rate.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2650,
@@ -264,11 +264,11 @@
       "codeHash": "ef2d673cae73525a27e85bcd14d02c8dfb5421abc74beb1c8a032d993b473302",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Debt Tax Shield & Modigliani-Miller Value Cre... — General Ledger Verification",
+        "title": "Debt Tax Shield & Modigliani-Miller Value Creation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Debt Tax Shield & Modigliani-Mi...",
+            "caption": "Open primary debit entry for Debt Tax Shield & Modigliani-Miller Value Creation",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3420,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Debt Tax Shield & Modigliani-Miller Value Cre... — General Ledger Verification",
+        "title": "Debt Tax Shield & Modigliani-Miller Value Creation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2850) for Debt Tax Shield & Modigliani-Mi...",
+            "caption": "Step 1: Open primary debit entry (2850) for Debt Tax Shield.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2850,
@@ -518,11 +518,11 @@
       "codeHash": "1c13f623bf4c539530f86b5a04e38c648c8932fe6ab3c9413b69a9278065d5a5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Transfer Pricing & OECD Arm's Length Standard... — General Ledger Verification",
+        "title": "Transfer Pricing & OECD Arm's Length Standard (TNMM) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Transfer Pricing & OECD Arm's L...",
+            "caption": "Open primary debit entry for Transfer Pricing.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3660,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Transfer Pricing & OECD Arm's Length Standard... — General Ledger Verification",
+        "title": "Transfer Pricing & OECD Arm's Length Standard (TNMM) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3050) for Transfer Pricing & OECD Arm's L...",
+            "caption": "Step 1: Open primary debit entry (3050) for Transfer Pricing.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3050,
@@ -772,11 +772,11 @@
       "codeHash": "5401a43dbb577389ef282c1de2b457e36e4be4c441b54eedbcde75215dc95999",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Net Operating Loss (NOL) Carryforwards & Sect... — General Ledger Verification",
+        "title": "Net Operating Loss (NOL) Carryforwards & Section 382 Limitations — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Net Operating Loss (NOL) Carryf...",
+            "caption": "Open primary debit entry for Net Operating Loss.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Net Operating Loss (NOL) Carryforwards & Sect... — General Ledger Verification",
+        "title": "Net Operating Loss (NOL) Carryforwards & Section 382 Limitations — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Net Operating Loss (NOL) Carryf...",
+            "caption": "Step 1: Open primary debit entry (3250) for Net Operating Loss.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -1026,11 +1026,11 @@
       "codeHash": "35d058f99b30caba3b8b8a649dcd84753c1beb72cb8ddeb37129f19e68b6a755",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Value-Added Tax (VAT) / GST & Input Tax Credi... — General Ledger Verification",
+        "title": "Value-Added Tax (VAT) / GST & Input Tax Credit (ITC) Chains — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Value-Added Tax (VAT) / GST & I...",
+            "caption": "Open primary debit entry for Value-Added Tax.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 1 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 1 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Value-Added Tax (VAT) / GST & Input Tax Credi... — General Ledger Verification",
+        "title": "Value-Added Tax (VAT) / GST & Input Tax Credit (ITC) Chains — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for Value-Added Tax (VAT) / GST & I...",
+            "caption": "Step 1: Open primary debit entry (3450) for Value-Added Tax.",
             "title": "Day 1 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,

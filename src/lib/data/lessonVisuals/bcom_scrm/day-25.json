@@ -10,11 +10,11 @@
       "codeHash": "c04d855dbb5f5fa5c87c0e46f3c0ea7495752254478d1c08c7c926d38b09d594",
       "spec": {
         "template": "funnel",
-        "title": "Global Commercial Territory & Capacity Arc - RevOps Funnel",
+        "title": "Global Commercial Territory & Capacity Architecture Synthesis - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Global Commercial Territory & Capacity Arc - RevOps Funnel",
+        "title": "Global Commercial Territory & Capacity Architecture Synthesis - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "80474a5d4acc6fffa0409fc175be2b022312edad713ca9c85024020aa4e623ce",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Contract Governance, Redline Ve - RevOps Funnel",
+        "title": "Enterprise Contract Governance, Redline Velocity & InfoSec Compliance - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Enterprise Contract Governance, Redline Ve - RevOps Funnel",
+        "title": "Enterprise Contract Governance, Redline Velocity & InfoSec Compliance - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "036167ad84ce05cfd3c9dac2ae8c8e36dfcd42cfd1c1a13e45016df77f9d3921",
       "spec": {
         "template": "funnel",
-        "title": "Executive Business Reviews, Value Realizat - RevOps Funnel",
+        "title": "Executive Business Reviews, Value Realization & Expansion Engineering - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Executive Business Reviews, Value Realizat - RevOps Funnel",
+        "title": "Executive Business Reviews, Value Realization & Expansion Engineering - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1286,15 +1286,15 @@
       }
     },
     {
-      "partTitle": "\ud83c\udfc6 Grand Capstone: The Global Commercial Operations & Ecosystem Governance Control Tower",
+      "partTitle": "🏆 Grand Capstone: The Global Commercial Operations & Ecosystem Governance Control Tower",
       "codeHash": "ce7f5456941cd38cf6e781729675b34e8cad82c5a6a6faf0d35c4611dc1e50fe",
       "spec": {
         "template": "funnel",
-        "title": "\ud83c\udfc6 Grand Capstone: The Global Commercial Op - RevOps Funnel",
+        "title": "🏆 Grand Capstone: The Global Commercial Operations & Ecosystem - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "\ud83c\udfc6 Grand Capstone: The Global Commercial Op - RevOps Funnel",
+        "title": "🏆 Grand Capstone: The Global Commercial Operations & Ecosystem - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {

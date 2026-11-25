@@ -10,11 +10,11 @@
       "codeHash": "e0221ac4b33c87fece8f9869cb43432299522b8222f4f12ecefe5d599581e937",
       "spec": {
         "template": "funnel",
-        "title": "The Enterprise MarTech Fragmentation Crisi... — Conversion Funnel",
+        "title": "The Enterprise MarTech Fragmentation Crisis & The Point-Solution Silo — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "4ebe857bd9bd19a7e8bf2e71f2cae8308bffb8bf0cc81e054ecb1fa786922abd",
       "spec": {
         "template": "funnel",
-        "title": "The Grand Central Dispatch Terminal: Conce... — Conversion Funnel",
+        "title": "The Grand Central Dispatch Terminal: Conceptualizing Omnichannel — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "6a441610acf5b6561c0be8c05ad18615cfdfa54fe4da5f6058c5b712a0b66476",
       "spec": {
         "template": "funnel",
-        "title": "MarTech Stack Topology, Deterministic Iden... — Conversion Funnel",
+        "title": "MarTech Stack Topology, Deterministic Identity Resolution — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "b7966f80308e9956de3ef420fb806a7311be7c41c5385cda97482877d8a64a53",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Simulator: Enterprise Customer... — Conversion Funnel",
+        "title": "Interactive Simulator: Enterprise — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "65f1bd30d5d9d3558075d4f46d6cef9dc2b68daf2c674bd87a018315af51c17c",
       "spec": {
         "template": "funnel",
-        "title": "Architectural Invariants, Production Post-... — Conversion Funnel",
+        "title": "Architectural Invariants, Production — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

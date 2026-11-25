@@ -8,7 +8,7 @@
       "codeHash": "f7c64964aff1c1050c5dcd8a1d66cac6b91be63909c07602f73c37fd7f6bcb95",
       "spec": {
         "template": "bars",
-        "title": "The Mechanics of Safety Stock: Demand ... \u2014 Operations Evaluation",
+        "title": "The Mechanics of Safety Stock: Demand — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "15af3c3aaeb975d1b0febaf7e6707bc301aad285a74effe1ba8ea9fae0d2b3d9",
       "spec": {
         "template": "bars",
-        "title": "Stochastic Lead-Time Variance: The Com... \u2014 Operations Evaluation",
+        "title": "Stochastic Lead-Time Variance — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "a275bec265378bd3a83fa0b270a9ed7ab18434f6f46d10227f672d582368a941",
       "spec": {
         "template": "bars",
-        "title": "Continuous Review (s, Q) & Reorder Poi... \u2014 Operations Evaluation",
+        "title": "Continuous Review (s, Q) & Reorder Point (ROP) Policy Dynamics — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "f95d347608227ca1e97f1fc6fa1f27435cb61f9f05a233fad4eee8dbffe5d721",
       "spec": {
         "template": "bars",
-        "title": "Unit Shortage Economics & The Normal L... \u2014 Operations Evaluation",
+        "title": "Unit Shortage Economics & The Normal Loss Function G(Z) — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "df5414b420dc791cdc224c00b9d1c181e51f7f5bd7b5febff8afc0efc35df255",
       "spec": {
         "template": "bars",
-        "title": "Simulating Dynamic Inventory Queuing &... \u2014 Operations Evaluation",
+        "title": "Simulating Dynamic Inventory Queuing & Stockout Costs in Python — Operations Evaluation",
         "steps": [
           {
             "at": "intro",

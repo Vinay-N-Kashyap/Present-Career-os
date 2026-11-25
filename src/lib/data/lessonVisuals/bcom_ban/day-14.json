@@ -10,11 +10,11 @@
       "codeHash": "14b3953ea37eab60dc5cf9ce72b00d6c854cf4d8c4286944418407f5750b460e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Securitization Mandate: Transforming I... — General Ledger Verification",
+        "title": "The Securitization Mandate: Transforming — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The.",
+            "caption": "Open primary facility debit entry for The Securitization Mandate.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 74000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 88800,
@@ -139,11 +139,11 @@
       "codeHash": "f0de46370b4344e39d433a8b79d8c89c60b146d666221793040b3e2dc1f72ebc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Structure Engineering: Subordinati... — General Ledger Verification",
+        "title": "Capital Structure Engineering: Subordination, Tranching & Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capital.",
+            "caption": "Open primary facility debit entry for Capital Structure Engineering.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 75250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 90300,
@@ -268,11 +268,11 @@
       "codeHash": "4435187f6dda7ac7f2b09307531364921bb3f36837f699982535fc94081740f5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cash Flow Physics: Sequential Pay vs Pro-R... — General Ledger Verification",
+        "title": "Cash Flow Physics: Sequential Pay — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Cash Flow.",
+            "caption": "Open primary facility debit entry for Cash Flow Physics.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 76500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 91800,
@@ -397,11 +397,11 @@
       "codeHash": "23b04413d8da15f7f5409fb4558e294cd88d9621d37a9c2f7ed33ef889140485",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Post-Crisis Regulatory Governance: Risk Re... — General Ledger Verification",
+        "title": "Post-Crisis Regulatory Governance: Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Post-Crisis.",
+            "caption": "Open primary facility debit entry for Post-Crisis Regulatory Governance.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 77750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 93300,
@@ -526,11 +526,11 @@
       "codeHash": "6370f7469c14642876bb0daa729135d88e887ddbbe5d04a38f231e2236e1c153",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synthesis, Credit Rating Agency Auditing &... — General Ledger Verification",
+        "title": "Synthesis, Credit Rating Agency Auditing & The Structured Finance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Synthesis.",
+            "caption": "Open primary facility debit entry for Synthesis.",
             "title": "Day 14 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 79000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 14 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 94800,

@@ -8,7 +8,7 @@
       "codeHash": "760473e96e3bf965f0d398f88243dcd2edb8e19465748da1dab6a9c619b00023",
       "spec": {
         "template": "bars",
-        "title": "Time Series Anatomy: Secular Trend, Cy... \u2014 Temporal Evaluation",
+        "title": "Time Series Anatomy: Secular Trend — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "d67bda58cba9345aa9d5cf1b291a126c4f8bf5b06d018d2817328eb15e61a0bc",
       "spec": {
         "template": "bars",
-        "title": "Additive vs Multiplicative Decompositi... \u2014 Temporal Evaluation",
+        "title": "Additive vs Multiplicative Decomposition Physics & Moving Median — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "bc92d9205bbc059e76003a32b8349abff69a75d9eb5b27b79d49cda6cbea932d",
       "spec": {
         "template": "bars",
-        "title": "Weak Stationarity: Constant Mean, Fini... \u2014 Temporal Evaluation",
+        "title": "Weak Stationarity: Constant Mean — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "d6e0ce06c810e2ff9d6f816754fd3adec69e2b35c9a83d445e64f1f31da197b7",
       "spec": {
         "template": "bars",
-        "title": "Unit Roots, Random Walks & The Augment... \u2014 Temporal Evaluation",
+        "title": "Unit Roots, Random Walks & The Augmented Dickey-Fuller (ADF) — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "f9c81f05f554cfab44d178f3bfc162b797ed040212771aad32d9c07179b75fd6",
       "spec": {
         "template": "bars",
-        "title": "Trend Stationary vs Difference Station... \u2014 Temporal Evaluation",
+        "title": "Trend Stationary vs Difference Stationary Series: First-Differencing — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",

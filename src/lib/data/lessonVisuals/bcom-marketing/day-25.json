@@ -10,7 +10,7 @@
       "codeHash": "d11fdf8ce5454b17350302c84d6c05c26999b6b95e3c1059271cbc8e81e56c9a",
       "spec": {
         "template": "funnel",
-        "title": "Architectural Synthesis: The 5-Tier Global... — Conversion Funnel",
+        "title": "Architectural Synthesis: The 5-Tier — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "aef62da59d1f2df4cf8a3150ddf4a50dc9bcbb30782babb0440b1680dadc7cbb",
       "spec": {
         "template": "funnel",
-        "title": "Global Governance, International Legal Tre... — Conversion Funnel",
+        "title": "Global Governance, International Legal Treaties & Sovereign — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,7 +334,7 @@
       "codeHash": "ef10ac2c9fec1b662ef0f6e354ee06d66d718100c142c627c6f6c4691cb399c8",
       "spec": {
         "template": "funnel",
-        "title": "Global Supply Chain Logistics & Cross-Bord... — Conversion Funnel",
+        "title": "Global Supply Chain Logistics & Cross-Border Customs Engineering — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,11 +496,11 @@
       "codeHash": "fe09e0e6214730e579356db92b2cf50e0db8d5cf190678dcec61cbcc0663d882",
       "spec": {
         "template": "funnel",
-        "title": "Capstone Engineering Code: The Cross-Borde... — Conversion Funnel",
+        "title": "Capstone Engineering Code — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "37798a4f74a1d4d6f125c337500062faa00e33626fd2815d9bdd9edc1b7ac75c",
       "spec": {
         "template": "funnel",
-        "title": "Executive Global Dossier Defense & Board o... — Conversion Funnel",
+        "title": "Executive Global Dossier Defense & Board of Directors Review — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

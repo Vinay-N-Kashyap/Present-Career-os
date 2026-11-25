@@ -10,11 +10,11 @@
       "codeHash": "4619ce44271ed83c263b45ec7ee16863d3ae37d7e639891ed7e0491c9a062126",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Secondary Adjustments Mechanics & Repatriation Man — International Tax Ledger",
+        "title": "Secondary Adjustments Mechanics & Repatriation Mandate (Section 92CE) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Secondary.",
+            "caption": "Open primary international tax / TP ledger for Secondary Adjustments Mechanics.",
             "title": "Day 17 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 790000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 17 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 885000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Secondary Adjustments.",
+            "caption": "Execute simulated cross-border case study for Secondary Adjustments Mechanics.",
             "title": "Day 17 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 885000,
@@ -141,11 +141,11 @@
       "codeHash": "9e0aa372d5e3beb9a059c6bd174804388236ec496978afb4f3e1bcde28cc3d65",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Option to Pay Additional Tax under Section 92CE(2A — International Tax Ledger",
+        "title": "Option to Pay Additional Tax under Section 92CE(2A) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Option to Pay.",
+            "caption": "Open primary international tax / TP ledger.",
             "title": "Day 17 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 800000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 17 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 900000,
@@ -272,11 +272,11 @@
       "codeHash": "0c0d24e3c5581466db67c984988fda0ed6d0a51bc88569cf30db0d5846663e02",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Thin Capitalisation & Interest Limitation Rules (S — International Tax Ledger",
+        "title": "Thin Capitalisation & Interest Limitation Rules (Section 94B) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Thin.",
+            "caption": "Open primary international tax / TP ledger for Thin Capitalisation.",
             "title": "Day 17 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 810000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 17 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 915000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Thin Capitalisation &.",
+            "caption": "Execute simulated cross-border case study for Thin Capitalisation.",
             "title": "Day 17 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 915000,
@@ -403,11 +403,11 @@
       "codeHash": "c58a2a155fd309a656801cbe4f78f715ce8302db490b41c3a0cff9e4f420f86d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "General Anti-Avoidance Rule (GAAR) Framework (Chap — International Tax Ledger",
+        "title": "General Anti-Avoidance Rule (GAAR) Framework (Chapter X-A, Sec 95-102) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for General.",
+            "caption": "Open primary international tax / TP ledger for General Anti-Avoidance Rule.",
             "title": "Day 17 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 820000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 17 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 930000,
@@ -534,11 +534,11 @@
       "codeHash": "fbc77fbaebf86dce281c40e357d90bcdb5877f7495b70031c5855e808427f41c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "GAAR vs SAAR & Approving Panel Governance (Sec 100 — International Tax Ledger",
+        "title": "GAAR vs SAAR & Approving Panel Governance (Sec 100 & Sec 144BA) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for GAAR vs SAAR &.",
+            "caption": "Open primary international tax / TP ledger for GAAR vs SAAR.",
             "title": "Day 17 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 830000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 17 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 945000,

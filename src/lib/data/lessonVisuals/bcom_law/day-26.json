@@ -10,11 +10,11 @@
       "codeHash": "5d0e3ee36b2d6592497714b97c27bf895cdea41b54aa782a76fbe32dc3fed0d6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The UNCITRAL Model Law & Center of Main In... — General Ledger Verification",
+        "title": "The UNCITRAL Model Law & Center of Main Interests (COMI) Determination — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The UNCITRAL.",
+            "caption": "Open primary facility debit entry for The UNCITRAL Model Law.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 116000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 139200,
@@ -139,11 +139,11 @@
       "codeHash": "5758ffd75ea68acf80d0a18d8aea3fa4c7ae08fafeba6776b5318358b4c7de9a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Chapter 15 Recognition: Foreign Main vs No... — General Ledger Verification",
+        "title": "Chapter 15 Recognition: Foreign Main — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Chapter.",
+            "caption": "Open primary facility debit entry for Chapter 15 Recognition.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 117250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 140700,
@@ -268,11 +268,11 @@
       "codeHash": "583a8570ddcc1cf39813ef2c88bf67c8a51a9d98ea5b92965d7f40100b2af8b8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Asset Marshalling, Concurrent... — General Ledger Verification",
+        "title": "Cross-Border Asset Marshalling, Concurrent Proceedings & The Hotchpot — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 118500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 142200,
@@ -397,11 +397,11 @@
       "codeHash": "ce3278b189fc92546e6b2f565b8378148b34ef29b51233b0c7dd542cad5a2fe9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Section 1506 Public Policy Exception &... — General Ledger Verification",
+        "title": "The Section 1506 Public Policy Exception & Due Process Protection — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Section.",
+            "caption": "Open primary facility debit entry for The Section 1506 Public Policy Exception.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143700,
@@ -526,11 +526,11 @@
       "codeHash": "fceaeda92d54cae4db5646b5d1310e87d382996e795a89877ebe70d732784590",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Cross-Border Insolvency Simulat... — General Ledger Verification",
+        "title": "Enterprise Cross-Border Insolvency Simulation: Multi-Jurisdictional — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Enterprise.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 121000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 145200,

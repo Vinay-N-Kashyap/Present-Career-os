@@ -8,7 +8,7 @@
       "codeHash": "844c955fc6281c7e5de0fa87da179a34ad2143332172b0667f30decce3e563e8",
       "spec": {
         "template": "bars",
-        "title": "The Physics of Waiting Lines: Kendall'... - Learning Evaluation",
+        "title": "The Physics of Waiting Lines: Kendall's Notation & Little's Law - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "6214434a6c4c656a19bc32c00171fc99178899bc75cff045f8f28a93cf071713",
       "spec": {
         "template": "bars",
-        "title": "Discrete-Event Simulation Architecture... - Learning Evaluation",
+        "title": "Discrete-Event Simulation Architecture: The Event Calendar & Clock - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "6efc8f1c0f9b17f6f6739bc0fe638d2f644bde43658201dde78fd0e5d870bc63",
       "spec": {
         "template": "bars",
-        "title": "Multi-Server Queuing & Non-Stationary ... - Learning Evaluation",
+        "title": "Multi-Server Queuing & Non-Stationary Arrival Surges (M(t)/M/c) - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "75585fafe59eb6af211920f61db189533d1731a8fac5caca4e7d5aaee36e2382",
       "spec": {
         "template": "bars",
-        "title": "Enterprise Bottleneck Forensics: The A... - Learning Evaluation",
+        "title": "Enterprise Bottleneck Forensics - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "f0a84e5a3146e35d94499584d32eb6614b0fd568ebdb8670aa33c4f8e47bbe9a",
       "spec": {
         "template": "bars",
-        "title": "Production Simulation Deadlocks & Reso... - Learning Evaluation",
+        "title": "Production Simulation Deadlocks & Resource Allocation Optimization - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

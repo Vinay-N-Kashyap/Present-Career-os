@@ -10,11 +10,11 @@
       "codeHash": "758d7beed7fbe62a75f4af0c5c52aa7c697ac55f0285f8a318941fed9ba62c11",
       "spec": {
         "template": "funnel",
-        "title": "Beachhead Market Selection & Multi-Facto - Venture Pipeline",
+        "title": "Beachhead Market Selection & Multi-Factor Scoring Matrix - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Beachhead Market Selection & Multi-Facto - Venture Pipeline",
+        "title": "Beachhead Market Selection & Multi-Factor Scoring Matrix - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -286,7 +286,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "d1f49e5365633166ba4417551c8a18c08c6efc153f9da58b8c5c96ab66a389b9",
       "spec": {
         "template": "funnel",
-        "title": "Crossing the Chasm & Geoffrey Moore's Wh - Venture Pipeline",
+        "title": "Crossing the Chasm & Geoffrey Moore's Whole Product Architecture - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Crossing the Chasm & Geoffrey Moore's Wh - Venture Pipeline",
+        "title": "Crossing the Chasm & Geoffrey Moore's Whole Product Architecture - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -606,7 +606,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "ce52e42e0abecd9d776f11ab16e30d8ec6e8fbb3c4d53ffc9b2ae8398508598a",
       "spec": {
         "template": "funnel",
-        "title": "Viral Loop Mechanics, K-Factor Dynamics  - Venture Pipeline",
+        "title": "Viral Loop Mechanics, K-Factor Dynamics - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Viral Loop Mechanics, K-Factor Dynamics  - Venture Pipeline",
+        "title": "Viral Loop Mechanics, K-Factor Dynamics - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -926,7 +926,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "30f07914ff1aeeb14f8e18168aaaf8f9615c554d1a28f82f223856ecbc1eb1d6",
       "spec": {
         "template": "funnel",
-        "title": "Customer Acquisition Economics & Paid Ch - Venture Pipeline",
+        "title": "Customer Acquisition Economics & Paid Channel Saturation Curves - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Customer Acquisition Economics & Paid Ch - Venture Pipeline",
+        "title": "Customer Acquisition Economics & Paid Channel Saturation Curves - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "448dc562fa523ce270f0bceb230492002307c26b32bf8e6b1da595faa81107d5",
       "spec": {
         "template": "funnel",
-        "title": "Master Go-To-Market Control Tower & Sove - Venture Pipeline",
+        "title": "Master Go-To-Market Control Tower & Sovereign GTM Accreditation - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (one,multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Go-To-Market Control Tower & Sove - Venture Pipeline",
+        "title": "Master Go-To-Market Control Tower & Sovereign GTM Accreditation - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1566,7 +1566,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (one,multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {

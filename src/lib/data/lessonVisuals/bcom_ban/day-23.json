@@ -10,11 +10,11 @@
       "codeHash": "d63d1bb5b15423b8e96846be6df27ed6bc60de199391861e1e812372d0de9665",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Foundations of Shariah Banking & Prohibiti... — General Ledger Verification",
+        "title": "Foundations of Shariah Banking & Prohibitions (Riba, Gharar & Maysir) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 126600,
@@ -139,11 +139,11 @@
       "codeHash": "1da63f27978a379a2d13f928a526bdf0c741fbb342ee19300cae2cdf9c521499",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Murabaha (Cost-Plus Sale) & Commodity Mura... — General Ledger Verification",
+        "title": "Murabaha (Cost-Plus Sale) & Commodity Murabaha (Tawarruq) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Murabaha.",
+            "caption": "Open primary facility debit entry for Murabaha.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 106750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 128100,
@@ -268,11 +268,11 @@
       "codeHash": "6dd525a8fa05d02ffceb8b5690951f16e02d17388aae0e257fc97327c2c5133b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ijara Muntahia Bittamleek & Diminishing Mu... — General Ledger Verification",
+        "title": "Ijara Muntahia Bittamleek & Diminishing Musharakah (Home Financing) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Ijara Muntahia.",
+            "caption": "Open primary facility debit entry for Ijara Muntahia Bittamleek.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 108000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 129600,
@@ -397,11 +397,11 @@
       "codeHash": "1dc392f76614940c6618c23636b20f72303f74e06c4becf41cd67ce79b697886",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Sukuk (Islamic Bonds) & Asset-Backed Secur... — General Ledger Verification",
+        "title": "Sukuk (Islamic Bonds) & Asset-Backed Securitization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Sukuk (Islamic.",
+            "caption": "Open primary facility debit entry for Sukuk.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 131100,
@@ -526,11 +526,11 @@
       "codeHash": "8eecf4953e8845284820c581f6ec861239a2f31170fcc26c84141719aa3a1656",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mudarabah & Musharakah Profit-Loss Sharing... — General Ledger Verification",
+        "title": "Mudarabah & Musharakah Profit-Loss Sharing (PLS) & Shariah Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Mudarabah.",
+            "caption": "Open primary facility debit entry for Mudarabah.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132600,

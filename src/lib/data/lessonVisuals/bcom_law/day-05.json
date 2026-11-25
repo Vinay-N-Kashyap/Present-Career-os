@@ -10,11 +10,11 @@
       "codeHash": "a0b4740584eefad0e5ed2a90c40dfd621771b3e7d4ca3cf9d3bfadd4cab60724",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Chapter 11 Petition, Automatic Stay & Debtor-... — General Ledger Verification",
+        "title": "Chapter 11 Petition, Automatic Stay & Debtor-in-Possession (DIP) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Chapter eleven Petition.",
+            "caption": "Open primary debit entry for Chapter eleven Petition.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Chapter 11 Petition, Automatic Stay & Debtor-... — General Ledger Verification",
+        "title": "Chapter 11 Petition, Automatic Stay & Debtor-in-Possession (DIP) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Chapter 11 Petition, Automatic ...",
+            "caption": "Step 1: Open primary debit entry (3250) for Chapter 11 Petition.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -264,11 +264,11 @@
       "codeHash": "8b34b88c6f28c160df7c65330d190bd7aea43c7ce9e577aaf0a5091769c4ab4f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 363 Asset Sales (\"Free and Clear\") vs... — General Ledger Verification",
+        "title": "Section 363 Asset Sales (\"Free and Clear\") vs Reorganization Plans — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Section multiple Asset Sales.",
+            "caption": "Open primary debit entry for Section multiple Asset Sales.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Section 363 Asset Sales (\"Free and Clear\") vs... — General Ledger Verification",
+        "title": "Section 363 Asset Sales (\"Free and Clear\") vs Reorganization Plans — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for Section 363 Asset Sales (\"Free ...",
+            "caption": "Step 1: Open primary debit entry (3450) for Section 363 Asset Sales.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -518,11 +518,11 @@
       "codeHash": "60348aca22e861e34c7b3cf5fd923f5a1e5ba348f39d710b32cee4dab856e940",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Confirmation Plan, Class Voting & The Absolut... — General Ledger Verification",
+        "title": "Confirmation Plan, Class Voting & The Absolute Priority Rule Cramdown — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Confirmation Plan, Class Voting...",
+            "caption": "Open primary debit entry for Confirmation Plan.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Confirmation Plan, Class Voting & The Absolut... — General Ledger Verification",
+        "title": "Confirmation Plan, Class Voting & The Absolute Priority Rule Cramdown — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3650) for Confirmation Plan, Class Voting...",
+            "caption": "Step 1: Open primary debit entry (3650) for Confirmation Plan.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -772,11 +772,11 @@
       "codeHash": "1b39b616de44de7374fded4a4ed2b25fab3451e9887ffd9529282a5003aaa3b5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Fiduciary Duties in the \"Zone of Insolvency\" ... — General Ledger Verification",
+        "title": "Fiduciary Duties in the \"Zone of Insolvency\" & Fraudulent Conveyances — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Fiduciary Duties in the \"Zone o...",
+            "caption": "Open primary debit entry for Fiduciary Duties in the \"Zone of Insolvency\".",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Fiduciary Duties in the \"Zone of Insolvency\" ... — General Ledger Verification",
+        "title": "Fiduciary Duties in the \"Zone of Insolvency\" & Fraudulent Conveyances — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3850) for Fiduciary Duties in the \"Zone o...",
+            "caption": "Step 1: Open primary debit entry (3850).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -1026,11 +1026,11 @@
       "codeHash": "7f77adee63c065296cd8a2ce7215b1ae1d6ec5fdd24a9c58c9a74fbd92f732bc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Boardroom Defense & General Counsel ... — General Ledger Verification",
+        "title": "Capstone Boardroom Defense & General Counsel Restructuring — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Capstone Boardroom Defense & Ge...",
+            "caption": "Open primary debit entry for Capstone Boardroom Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Capstone Boardroom Defense & General Counsel ... — General Ledger Verification",
+        "title": "Capstone Boardroom Defense & General Counsel Restructuring — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (4050) for Capstone Boardroom Defense & Ge...",
+            "caption": "Step 1: Open primary debit entry (4050) for Capstone Boardroom Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,

@@ -162,7 +162,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Repeatability (Equipment Variation) vs.  Funnel",
+        "title": "Repeatability (Equipment Variation) vs. Funnel",
         "steps": [
           {
             "at": "intro",
@@ -313,7 +313,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Two-Way ANOVA Decomposition: Estimating  Funnel",
+        "title": "Two-Way ANOVA Decomposition: Estimating Funnel",
         "steps": [
           {
             "at": "intro",

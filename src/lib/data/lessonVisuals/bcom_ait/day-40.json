@@ -10,7 +10,7 @@
       "codeHash": "4daaa1bc95ec9a1252a85b73fb3eb20d19d1df00e3bff7c81584314581523ddd",
       "spec": {
         "template": "tree-graph",
-        "title": "Architecture of the Enterprise Fiduciary Know... — Enterprise AI Decision Graph",
+        "title": "Architecture of the Enterprise Fiduciary Knowledge Mesh — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Architecture of the Enterprise ...",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Architecture of the Enterprise Fiduciary Know... — Enterprise AI Decision Graph",
+        "title": "Architecture of the Enterprise Fiduciary Knowledge Mesh — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Architecture of the Enterprise ...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "1f6f273be11442da3cdd7631df05f478d488e722ca3f3cecf72cf030aa17bc93",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 1: Automated Cross-Border Statutory Re... — Enterprise AI Decision Graph",
+        "title": "Module 1: Automated Cross-Border Statutory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module one: Automated Cross-Borde...",
+            "caption": "Ingest enterprise Context Query for Module one: Automated",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 1: Automated Cross-Border Statutory Re... — Enterprise AI Decision Graph",
+        "title": "Module 1: Automated Cross-Border Statutory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 1: Automated Cross-Borde...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 1: Automated",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "6b7160d86eb18c7c2e8f42bb465549eaaed7631e7684cd3b1106506dadb4e106",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 2: Multi-Hop Supply Chain Due Diligenc... — Enterprise AI Decision Graph",
+        "title": "Module 2: Multi-Hop Supply Chain Due — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module two: Multi-Hop Supply Chai...",
+            "caption": "Ingest enterprise Context Query for Module two: Multi-Hop Supply",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 2: Multi-Hop Supply Chain Due Diligenc... — Enterprise AI Decision Graph",
+        "title": "Module 2: Multi-Hop Supply Chain Due — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 2: Multi-Hop Supply Chai...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 2: Multi-Hop Supply",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "873ef556c305ab1e332fcf4c1b10edaca4b0211d39d39fcb4339ac1762957be0",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 3: Fiduciary RAG Triad Firewall & Auto... — Enterprise AI Decision Graph",
+        "title": "Module 3: Fiduciary RAG Triad Firewall — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module three: Fiduciary RAG Triad F...",
+            "caption": "Ingest enterprise Context Query for Module three: Fiduciary RAG Triad",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 3: Fiduciary RAG Triad Firewall & Auto... — Enterprise AI Decision Graph",
+        "title": "Module 3: Fiduciary RAG Triad Firewall — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Fiduciary RAG Triad F...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Fiduciary RAG Triad",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "30e65e1057f864969315575888d2f23558f25a8fe65a1758c8d50c8f6ea1f187",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Boardroom Fiduciar... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Boardroom — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The Boar...",
+            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Boardroom Fiduciar... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Boardroom — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The Boar...",
+            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

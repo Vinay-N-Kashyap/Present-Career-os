@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (twenty,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (nine,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -172,7 +172,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (twenty,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -210,7 +210,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (nine,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,11 +330,11 @@
       "codeHash": "cd91de55f333f00fb54d1fe52d462588823318b9e0bd8def21cb9e5a14ab56e7",
       "spec": {
         "template": "funnel",
-        "title": "Cap Table Restructuring, Public Float &  - Sovereign Funnel",
+        "title": "Cap Table Restructuring, Public Float - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (eleven,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -488,11 +488,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Cap Table Restructuring, Public Float &  - Sovereign Funnel",
+        "title": "Cap Table Restructuring, Public Float - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -530,7 +530,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (eleven,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "591e91ebb67895e533c20dce2ed4054d3a5e5f2d824e1da325473a70d142a9f3",
       "spec": {
         "template": "funnel",
-        "title": "First-Day Trading Dynamics: The IPO Pop  - Sovereign Funnel",
+        "title": "First-Day Trading Dynamics: The IPO Pop - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "First-Day Trading Dynamics: The IPO Pop  - Sovereign Funnel",
+        "title": "First-Day Trading Dynamics: The IPO Pop - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,11 +970,11 @@
       "codeHash": "ab3878205a0018e3caf356d47d7501fc6c77e3d7b24f0198c72e3b489242d680",
       "spec": {
         "template": "funnel",
-        "title": "SEC Form S-1 Registration, MD&A Disclosu - Sovereign Funnel",
+        "title": "SEC Form S-1 Registration, MD&A Disclosures & Risk Factors - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1128,11 +1128,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "SEC Form S-1 Registration, MD&A Disclosu - Sovereign Funnel",
+        "title": "SEC Form S-1 Registration, MD&A Disclosures & Risk Factors - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "e7341ec323d3b7a54f06b155fd30891daf3826d78d2ceda4193dce3961976d48",
       "spec": {
         "template": "funnel",
-        "title": "Master Public Markets Governance, Roadsh - Sovereign Funnel",
+        "title": "Master Public Markets Governance, Roadshow & Control Tower - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (multiple,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (ten,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Public Markets Governance, Roadsh - Sovereign Funnel",
+        "title": "Master Public Markets Governance, Roadshow & Control Tower - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1490,7 +1490,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (multiple,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (ten,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {

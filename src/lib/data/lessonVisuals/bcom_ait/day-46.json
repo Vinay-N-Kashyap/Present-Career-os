@@ -10,7 +10,7 @@
       "codeHash": "c1600b26c7f12ae71619b7e3904b506d291fd3530517f384af8e287c2dbf96f8",
       "spec": {
         "template": "tree-graph",
-        "title": "The High-Concurrency LLM Serving Bottleneck: ... — Enterprise AI Decision Graph",
+        "title": "The High-Concurrency LLM Serving Bottleneck: Static vs Continuous — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The High-Concurrency LLM Servin...",
+            "caption": "Ingest enterprise Context Query for The High-Concurrency LLM Serving Bottleneck.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The High-Concurrency LLM Serving Bottleneck: ... — Enterprise AI Decision Graph",
+        "title": "The High-Concurrency LLM Serving Bottleneck: Static vs Continuous — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The High-Concurrency LLM Servin...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "cfc8ee89dde1970861b86da8e25ae4e2be0951ec021fa0acda91471954643773",
       "spec": {
         "template": "tree-graph",
-        "title": "PagedAttention Architecture: Virtual Memory P... — Enterprise AI Decision Graph",
+        "title": "PagedAttention Architecture: Virtual Memory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for PagedAttention Architecture: Vi...",
+            "caption": "Ingest enterprise Context Query for PagedAttention Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "PagedAttention Architecture: Virtual Memory P... — Enterprise AI Decision Graph",
+        "title": "PagedAttention Architecture: Virtual Memory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for PagedAttention Architecture: Vi...",
+            "caption": "Step 1: Ingest enterprise Context Query for PagedAttention Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "4c3173135ef0b15aaec51472e5d8b841cfb880c0a2dd783f61b12823b0b2e899",
       "spec": {
         "template": "tree-graph",
-        "title": "KV Cache Compression, Multi-Query Attention (... — Enterprise AI Decision Graph",
+        "title": "KV Cache Compression, Multi-Query Attention (MQA) & Grouped-Query — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for KV Cache Compression, Multi-Que...",
+            "caption": "Ingest enterprise Context Query for KV Cache Compression.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "KV Cache Compression, Multi-Query Attention (... — Enterprise AI Decision Graph",
+        "title": "KV Cache Compression, Multi-Query Attention (MQA) & Grouped-Query — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for KV Cache Compression, Multi-Que...",
+            "caption": "Step 1: Ingest enterprise Context Query for KV Cache Compression.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "26d762f4bd0a7a0a3a47912640fd6cb1518e374ceb4c9e6e80fc4098f79c900c",
       "spec": {
         "template": "tree-graph",
-        "title": "Chunked Prefill & Prefix Caching for Multi-Tu... — Enterprise AI Decision Graph",
+        "title": "Chunked Prefill & Prefix Caching for Multi-Turn Enterprise — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Chunked Prefill & Prefix Cachin...",
+            "caption": "Ingest enterprise Context Query for Chunked Prefill.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Chunked Prefill & Prefix Caching for Multi-Tu... — Enterprise AI Decision Graph",
+        "title": "Chunked Prefill & Prefix Caching for Multi-Turn Enterprise — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Chunked Prefill & Prefix Cachin...",
+            "caption": "Step 1: Ingest enterprise Context Query for Chunked Prefill.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "56a2939ed78c55b14dd61ab9e6b0c702621e1a00af1f5cd8c700a2b2c796b3c0",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

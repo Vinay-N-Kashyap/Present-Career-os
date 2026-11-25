@@ -10,11 +10,11 @@
       "codeHash": "5ff616b5a9ad4e0be678751410b8f3f764d79465f9568c5bab30a4560e68123e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The New York Convention of 1958 & The Glob... — General Ledger Verification",
+        "title": "The New York Convention of 1958 & The Global Arbitration Regime — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The New.",
+            "caption": "Open primary facility debit entry for The New York Convention of 1958.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143400,
@@ -139,11 +139,11 @@
       "codeHash": "00eb20e411bb278b9baa830a729ff78cb7cf33080997b654d0fc6e5e89707ffa",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Drafting Institutional Arbitration Clauses... — General Ledger Verification",
+        "title": "Drafting Institutional Arbitration Clauses: Seat, Governing Law — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Drafting.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 120750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 144900,
@@ -268,11 +268,11 @@
       "codeHash": "cc35c6067ea240acc9498f6f8d3f0a45d8e9612b5319eb69f6e5fe45455259ec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tribunal Jurisdiction: Separability & Komp... — General Ledger Verification",
+        "title": "Tribunal Jurisdiction: Separability — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tribunal.",
+            "caption": "Open primary facility debit entry for Tribunal Jurisdiction.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 122000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 146400,
@@ -397,11 +397,11 @@
       "codeHash": "a77d8dff67a56f0e3081328e031c26d1a44b5d8854f952a78fc4521c7e2a51ca",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Grounds for Refusal under Article V of the... — General Ledger Verification",
+        "title": "Grounds for Refusal under Article V of the New York Convention — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Grounds for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147900,
@@ -526,11 +526,11 @@
       "codeHash": "40831b1fc1f861e2e8a65f4692a1dfa7ed6de0d14a21fc5abe12d8428bfb463a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Sovereign International Commercial Arbitra... — General Ledger Verification",
+        "title": "Sovereign International Commercial Arbitration Simulation Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Sovereign.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149400,

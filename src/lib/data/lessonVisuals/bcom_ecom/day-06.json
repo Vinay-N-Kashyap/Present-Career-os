@@ -10,11 +10,11 @@
       "codeHash": "3dbe11a217c2e994dbf428be9b0b61c8ef0268006c78d65161012962dca427bf",
       "spec": {
         "template": "funnel",
-        "title": "Frictionless 1-Page vs Multi-Step Checkout... — Conversion Funnel",
+        "title": "Frictionless 1-Page vs Multi-Step Checkout Dynamics & Cart Drop-Off — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "2bb64552414a9b61e3f255ec35b25cb5bd9620c4eb39e00844bdc5009a26b399",
       "spec": {
         "template": "funnel",
-        "title": "Payment Gateway Economics: Merchant Discou... — Conversion Funnel",
+        "title": "Payment Gateway Economics: Merchant — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "0f7f829d8476665b071bf6a0abe32c1e3c2d88e4c855cb317106050ceee1e5da",
       "spec": {
         "template": "funnel",
-        "title": "3D Secure 2.0 (3DS2) Authentication & Fric... — Conversion Funnel",
+        "title": "3D Secure 2.0 (3DS2) Authentication & Frictionless Risk-Based — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "328beefc1bcace0c05ca0af0c71ccc82847c7f8747bf8164c1f6127d26eb6f7b",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Python Simulation: Multi-Gatew... — Conversion Funnel",
+        "title": "Interactive Python Simulation: Multi-Gateway Smart Routing & Failover — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "f1c5530d7f3ba61985b2863492f96f85eacde5d99873d0a064cc5ef0e30095d1",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Checkout Optimization & Product... — Conversion Funnel",
+        "title": "Enterprise Checkout Optimization & Production Payment Operations — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

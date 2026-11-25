@@ -10,7 +10,7 @@
       "codeHash": "faa3e140150e7eae8f7db7eb975469c98ff5c418d2a704f6f16957159070b798",
       "spec": {
         "template": "tree-graph",
-        "title": "Autonomous Multi-Agent Swarm Orchestration & ... — Enterprise AI Decision Graph",
+        "title": "Autonomous Multi-Agent Swarm Orchestration & Stateful Tool Handoffs — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Autonomous Multi-Agent Swarm Or...",
+            "caption": "Ingest enterprise Context Query for Autonomous Multi-Agent Swarm Orchestration.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Autonomous Multi-Agent Swarm Orchestration & ... — Enterprise AI Decision Graph",
+        "title": "Autonomous Multi-Agent Swarm Orchestration & Stateful Tool Handoffs — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Autonomous Multi-Agent Swarm Or...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "10696ec3c62b3701e9ea25da341fe3869e0b4ca7d91729eb3f582c50d9039b82",
       "spec": {
         "template": "tree-graph",
-        "title": "Multimodal Document Intelligence & Cross-Ling... — Enterprise AI Decision Graph",
+        "title": "Multimodal Document Intelligence & Cross-Lingual Ledger Normalization — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Multimodal Document Intelligenc...",
+            "caption": "Ingest enterprise Context Query for Multimodal Document Intelligence.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Multimodal Document Intelligence & Cross-Ling... — Enterprise AI Decision Graph",
+        "title": "Multimodal Document Intelligence & Cross-Lingual Ledger Normalization — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Multimodal Document Intelligenc...",
+            "caption": "Step 1: Ingest enterprise Context Query for Multimodal Document Intelligence.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "e7f144a4e4a8289291b48acb2f77c50ad7b5250f48b78db9414d11909f1c97be",
       "spec": {
         "template": "tree-graph",
-        "title": "Algorithmic Model Drift Telemetry: Population... — Enterprise AI Decision Graph",
+        "title": "Algorithmic Model Drift Telemetry: Population — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Algorithmic Model Drift Telemet...",
+            "caption": "Ingest enterprise Context Query for Algorithmic Model Drift Telemetry.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Algorithmic Model Drift Telemetry: Population... — Enterprise AI Decision Graph",
+        "title": "Algorithmic Model Drift Telemetry: Population — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Algorithmic Model Drift Telemet...",
+            "caption": "Step 1: Ingest enterprise Context Query for Algorithmic Model Drift Telemetry.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "747355fb590b2c0296f65376b1fbb3b421da90907d322fd08423c69f5edea263",
       "spec": {
         "template": "tree-graph",
-        "title": "Dynamic Human-in-the-Loop (HITL) Exception Ro... — Enterprise AI Decision Graph",
+        "title": "Dynamic Human-in-the-Loop (HITL) Exception Routing & Uncertainty — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Dynamic Human-in-the-Loop (HITL...",
+            "caption": "Ingest enterprise Context Query for Dynamic Human-in-the-Loop.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Dynamic Human-in-the-Loop (HITL) Exception Ro... — Enterprise AI Decision Graph",
+        "title": "Dynamic Human-in-the-Loop (HITL) Exception Routing & Uncertainty — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Human-in-the-Loop (HITL...",
+            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Human-in-the-Loop.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "be11b9c0b8e09e5686dcdf1ce68ca1a8508fe04f64749e0b597cd7e1029c6bab",
       "spec": {
         "template": "tree-graph",
-        "title": "Capstone Verification: End-to-End Enterprise ... — Enterprise AI Decision Graph",
+        "title": "Capstone Verification: End-to-End — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Capstone Verification: End-to-E...",
+            "caption": "Ingest enterprise Context Query for Capstone Verification.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Capstone Verification: End-to-End Enterprise ... — Enterprise AI Decision Graph",
+        "title": "Capstone Verification: End-to-End — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Capstone Verification: End-to-E...",
+            "caption": "Step 1: Ingest enterprise Context Query for Capstone Verification.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

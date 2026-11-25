@@ -8,7 +8,7 @@
       "codeHash": "283d3a04b6384fb1a41025579b4da2ba4e62cc4a0ec47ff495dbc00ee3a485f9",
       "spec": {
         "template": "funnel",
-        "title": "The PLS Paradigm: Bridging Self-Ser... - RevOps Funnel",
+        "title": "The PLS Paradigm: Bridging - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "0ccfdfdbe37712fa43cd0a878cba8eb92ea032ec2df85e4b3fe69cc437906d1e",
       "spec": {
         "template": "funnel",
-        "title": "Formulating the Product-Qualified L... - RevOps Funnel",
+        "title": "Formulating the Product-Qualified Lead (PQL) Scoring Algorithm - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "97d63f805045bf2016d8eede5e070cf8169ed719937e2e47166405407e2d3024",
       "spec": {
         "template": "funnel",
-        "title": "The Blind AE Spamming Active Users ... - RevOps Funnel",
+        "title": "The Blind AE Spamming Active Users Forensic Audit ($1.4M Disaster) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "49d8f5598e4ebbdd62366864d42edfc166e4a4139b809642f48a6d40fad740b3",
       "spec": {
         "template": "funnel",
-        "title": "Reverse ETL Architecture: Syncing P... - RevOps Funnel",
+        "title": "Reverse ETL Architecture: Syncing - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "11dfe55b2b4ea0422967e60c35f57f53eff3f231a9e6d3ed8970b40768bbec79",
       "spec": {
         "template": "funnel",
-        "title": "Building the Real-Time PQL Scoring ... - RevOps Funnel",
+        "title": "Building the Real-Time PQL Scoring & Telemetry Reverse ETL Engine - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

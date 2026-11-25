@@ -10,11 +10,11 @@
       "codeHash": "0f6357904c60983f9f06d3627549f2758071a4af5d0dddcecea43fac93f57bab",
       "spec": {
         "template": "ledger-sheet",
-        "title": "First Appellate Stage: Appeal before CIT(Appeals)  — Tax Controversy Ledger",
+        "title": "First Appellate Stage: Appeal before CIT(Appeals) under Section 246A — Tax Controversy Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for First.",
+            "caption": "Open primary tax demand / controversy ledger for First Appellate Stage.",
             "title": "Day 23 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1125000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 23 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1235000,
@@ -141,11 +141,11 @@
       "codeHash": "747d08e3cfca64ee1c07565e03d1200ae4c3cefe2f5b8efbc0aeec2a4181c171",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Second Appellate Stage: Income Tax Appellate Tribu — Tax Controversy Ledger",
+        "title": "Second Appellate Stage: Income Tax Appellate Tribunal (ITAT) (Sec 253 & 254) — Tax Controversy Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Second.",
+            "caption": "Open primary tax demand / controversy ledger for Second Appellate Stage.",
             "title": "Day 23 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1137500,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 23 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1253500,
@@ -272,11 +272,11 @@
       "codeHash": "0bf63e5a8a68e6a30dd7e0eca6c6f3469c67554a4d493c221240916666077b88",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Substantial Question of Law before High Court & Su — Tax Controversy Ledger",
+        "title": "Substantial Question of Law before High Court & Supreme Court (Sec 260A & 261) — Tax Controversy Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Substantial.",
+            "caption": "Open primary tax demand / controversy ledger.",
             "title": "Day 23 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1150000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 23 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1272000,
@@ -403,11 +403,11 @@
       "codeHash": "7d548146a2d438880b957d26655a1adcf60c4520c104178e6c75f419fb1f1d69",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Revision of Orders: Suo-Moto Revision under Sectio — Tax Controversy Ledger",
+        "title": "Revision of Orders: Suo-Moto Revision under Section 263 vs Section 264 — Tax Controversy Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Revision of.",
+            "caption": "Open primary tax demand / controversy ledger for Revision of Orders.",
             "title": "Day 23 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1162500,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 23 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1290500,
@@ -534,11 +534,11 @@
       "codeHash": "1e1ae7087e8dfdfdc0fee541c4a9055daf03d5e7a042ae044923a1d616aa7ae6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dispute Resolution Panel (DRP) Mechanism for MNEs  — Tax Controversy Ledger",
+        "title": "Dispute Resolution Panel (DRP) Mechanism for MNEs — Tax Controversy Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary tax demand / controversy ledger (multiple) for Dispute.",
+            "caption": "Open primary tax demand / controversy ledger for Dispute Resolution Panel.",
             "title": "Day 23 Tax Controversy Ledger — Demand Recognition",
             "isBalanced": true,
             "totalDebit": 1175000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record appellate deposit / stay adjustment (multiple) under applicable.",
+            "caption": "Record appellate deposit / stay adjustment.",
             "title": "Day 23 Tax Controversy Ledger — Statutory Deposit",
             "isBalanced": true,
             "totalDebit": 1309000,

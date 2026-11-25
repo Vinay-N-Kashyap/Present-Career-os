@@ -10,11 +10,11 @@
       "codeHash": "29223f41ea9c35e8c36b6822f954900fa01ba857bbbdd7458a27beff12fededc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Corporate Opportunities Doctrine & Gut... — General Ledger Verification",
+        "title": "The Corporate Opportunities Doctrine & Guth v. Loft Invariants — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Corporate Opportunities Doctrine.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 84500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 101400,
@@ -139,11 +139,11 @@
       "codeHash": "f23446460dee38abb3c1a0be3c68e726da458580460f6a3b2afb23ac6521f8ce",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Self-Dealing & Interested Director Transac... — General Ledger Verification",
+        "title": "Self-Dealing & Interested Director Transactions: Common Law to Modern — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Self-Dealing &.",
+            "caption": "Open primary facility debit entry for Self-Dealing.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 85750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 102900,
@@ -268,11 +268,11 @@
       "codeHash": "252c369d4e2a30442dc97add82cde566c53f9e444d81b1ad6c7147e859a14ce1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "DGCL § 144 Safe Harbors: Cleansing Interes... — General Ledger Verification",
+        "title": "DGCL § 144 Safe Harbors: Cleansing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for DGCL §.",
+            "caption": "Open primary facility debit entry for DGCL § 144 Safe Harbors.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 87000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 104400,
@@ -397,11 +397,11 @@
       "codeHash": "d3085174d82f6e23acabe032d5267fa7da88b6057f5230f80f637c0c19fd1ad6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Special Board Committees & Independent Dir... — General Ledger Verification",
+        "title": "Special Board Committees & Independent Director Deliberations — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Special Board.",
+            "caption": "Open primary facility debit entry for Special Board Committees.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 88250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 105900,
@@ -526,11 +526,11 @@
       "codeHash": "94f94f3d6d4a1b0455db7331d308907ac25e618c92495be98d968c1d54dc6dc0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Remedies for Breach of Loyalty: Disgorgeme... — General Ledger Verification",
+        "title": "Remedies for Breach of Loyalty: Disgorgement of Profits, Constructive — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Remedies.",
+            "caption": "Open primary facility debit entry for Remedies for Breach of Loyalty.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 89500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 107400,

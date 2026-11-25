@@ -8,7 +8,7 @@
       "codeHash": "9910551f92cd802921973ec6430c61a6f8de036224a7a96a6d06801c696cb5f5",
       "spec": {
         "template": "funnel",
-        "title": "War Room Briefing: The Enterprise Audi... — Assurance Review",
+        "title": "War Room Briefing: The Enterprise — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "a9b53f70d8b177a3db2b20d0c371b2ceeff1b53eb85518d2d8ef39b1d0f38428",
       "spec": {
         "template": "funnel",
-        "title": "Concluding Analytics, Ratios & Subsequ... — Assurance Review",
+        "title": "Concluding Analytics, Ratios & Subsequent Events Execution — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "283af76131cb5a0484bf08e70e8d0b976f17065eef11ac9aff684ba9604e53e1",
       "spec": {
         "template": "funnel",
-        "title": "Litigation, Claims & Legal Inquiries E... — Assurance Review",
+        "title": "Litigation, Claims & Legal Inquiries Execution under AS 2505 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "09c26d2e4854a2bb099469bd14bbd9d9b721752106090b3afa26c86f1f98e9f9",
       "spec": {
         "template": "funnel",
-        "title": "Going Concern Stress Testing, Mitigati... — Assurance Review",
+        "title": "Going Concern Stress Testing, Mitigating Plans & Report Phrasing — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "ed19d28eaaf2f7e2e3eea9f82a44ccd2501d05ba5132efba5769dc27332502de",
       "spec": {
         "template": "funnel",
-        "title": "War Room Master Simulator: Representat... — Assurance Review",
+        "title": "War Room Master Simulator: Representations, Governance Defense & EQR Clearance — Assurance Review",
         "steps": [
           {
             "at": "intro",

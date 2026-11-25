@@ -10,7 +10,7 @@
       "codeHash": "4c119ce4827a004a13e7f0452638e5a3975dc4b52b4599f69de2f772b2f33433",
       "spec": {
         "template": "funnel",
-        "title": "The Algorithmic Attention Economy & The Co... — Conversion Funnel",
+        "title": "The Algorithmic Attention Economy & The Collapse of Vanity Follower — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "8c5dc2d96b518cf73d4272badb333bbcfa7f7c4916e53fdf06d9d4443c91eb67",
       "spec": {
         "template": "funnel",
-        "title": "The High-Stakes Stock Exchange for Human A... — Conversion Funnel",
+        "title": "The High-Stakes Stock Exchange for Human — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "8ab51e93be39ce2bcad01ca9af3087185f2061447835ff391d34064fc5d5dfca",
       "spec": {
         "template": "funnel",
-        "title": "Recommendation Engine Mathematics, Influen... — Conversion Funnel",
+        "title": "Recommendation Engine Mathematics, Influencer Unit Economics & Viral — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "a6b18b679287e213034897e1e0509d86fbd565795762999bad2f446e4977159a",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Simulator: Viral Loop Growth &... — Conversion Funnel",
+        "title": "Interactive Simulator: Viral Loop Growth — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "28d76517d25af367a9c2466982e1fc11a516c05873c38c33fdfc03ca7f5b758f",
       "spec": {
         "template": "funnel",
-        "title": "Influencer Governance Invariants, Producti... — Conversion Funnel",
+        "title": "Influencer Governance Invariants, Production Post-Mortems — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

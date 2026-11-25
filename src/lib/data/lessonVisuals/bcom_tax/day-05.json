@@ -10,11 +10,11 @@
       "codeHash": "b2e8307c1c8bcab79b91ae26fcbb409ded98ba7e4c8e75f51c5d5c7e44857bca",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Multi-Jurisdictional Tax Footprint... — General Ledger Verification",
+        "title": "Enterprise Multi-Jurisdictional Tax Footprint & Effective Tax Rate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Enterprise Multi-Jurisdictional...",
+            "caption": "Open primary debit entry for Enterprise Multi-Jurisdictional Tax Footprint.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Multi-Jurisdictional Tax Footprint... — General Ledger Verification",
+        "title": "Enterprise Multi-Jurisdictional Tax Footprint & Effective Tax Rate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Enterprise Multi-Jurisdictional...",
+            "caption": "Step 1: Open primary debit entry (3250).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -264,11 +264,11 @@
       "codeHash": "fb9709e74d289e3b3304c653e12a6a0bc186d93300064a450120af7baef881c1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "OECD Pillar Two Global Minimum Tax Top-Up & S... — General Ledger Verification",
+        "title": "OECD Pillar Two Global Minimum Tax Top-Up & Substance-Based Carve-Out — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for OECD Pillar Two Global Minimum ...",
+            "caption": "Open primary debit entry for OECD Pillar Two Global Minimum Tax Top-Up.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "OECD Pillar Two Global Minimum Tax Top-Up & S... — General Ledger Verification",
+        "title": "OECD Pillar Two Global Minimum Tax Top-Up & Substance-Based Carve-Out — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for OECD Pillar Two Global Minimum ...",
+            "caption": "Step 1: Open primary debit entry (3450).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -518,11 +518,11 @@
       "codeHash": "9cbfc8a1fa0ea6e6dba9d3e488c80481da408b857deb21d3ce73b153cf2569d1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Transfer Pricing RPSM Apportionment & Section... — General Ledger Verification",
+        "title": "Transfer Pricing RPSM Apportionment & Section 163(j) Thin — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Transfer Pricing RPSM Apportion...",
+            "caption": "Open primary debit entry for Transfer Pricing RPSM Apportionment.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Transfer Pricing RPSM Apportionment & Section... — General Ledger Verification",
+        "title": "Transfer Pricing RPSM Apportionment & Section 163(j) Thin — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3650) for Transfer Pricing RPSM Apportion...",
+            "caption": "Step 1: Open primary debit entry (3650) for Transfer Pricing RPSM Apportionment.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -772,11 +772,11 @@
       "codeHash": "0b3e366d6db16fb67903ca04cc4241217ae3fb049c2609e1dea4909f9c52c65a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Supply Chain Indirect Tax, RCM N... — General Ledger Verification",
+        "title": "Cross-Border Supply Chain Indirect Tax, RCM Netting & WTO Customs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Cross-Border Supply Chain Indir...",
+            "caption": "Open primary debit entry for Cross-Border Supply Chain Indirect Tax.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Supply Chain Indirect Tax, RCM N... — General Ledger Verification",
+        "title": "Cross-Border Supply Chain Indirect Tax, RCM Netting & WTO Customs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3850) for Cross-Border Supply Chain Indir...",
+            "caption": "Step 1: Open primary debit entry (3850).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -1026,11 +1026,11 @@
       "codeHash": "bcd3b5d597f0bab47828ba83b1a4cbb2dd582ec51f6ac5e1fc835601eea52012",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Boardroom Defense & Chief Tax Office... — General Ledger Verification",
+        "title": "Capstone Boardroom Defense & Chief Tax Officer (CTO) Global Strategy — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Capstone Boardroom Defense & Ch...",
+            "caption": "Open primary debit entry for Capstone Boardroom Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Capstone Boardroom Defense & Chief Tax Office... — General Ledger Verification",
+        "title": "Capstone Boardroom Defense & Chief Tax Officer (CTO) Global Strategy — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (4050) for Capstone Boardroom Defense & Ch...",
+            "caption": "Step 1: Open primary debit entry (4050) for Capstone Boardroom Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,

@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Institutional Hierarchy & The Final Fact-Find... — General Ledger Verification",
+        "title": "Institutional Hierarchy & The Final Fact-Finding Authority Doctrine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Institutional Hierarch (Nu Alpha).",
+            "caption": "Open primary debit entry for Institutional Hierarchy.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10450,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Institutional Hierarch (Alpha).",
+            "caption": "Record secondary accrual adjustment for Institutional Hierarchy.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Institutional Hierarch (Nu).",
+            "caption": "Reconcile sub-ledger balances for Institutional Hierarchy.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Institutional Hierarch (Alpha).",
+            "caption": "Verify double-entry trial balance for Institutional Hierarchy.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -134,11 +134,11 @@
       "partTitle": "Institutional Hierarchy & The Final Fact-Finding Authority Doctrine under Section 252 & 253",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Institutional Hierarchy & The Final Fact-Find... — General Ledger Verification",
+        "title": "Institutional Hierarchy & The Final Fact-Finding Authority Doctrine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Institutional Hierarch (Nu Alpha).",
+            "caption": "Open primary debit entry for Institutional Hierarchy.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10450,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Institutional Hierarch (Alpha).",
+            "caption": "Record secondary accrual adjustment for Institutional Hierarchy.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Institutional Hierarch (Nu).",
+            "caption": "Reconcile sub-ledger balances for Institutional Hierarchy.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Institutional Hierarch (Alpha).",
+            "caption": "Verify double-entry trial balance for Institutional Hierarchy.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12540,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Form 36 Mechanics, Timelines & Cross-Objectio... — General Ledger Verification",
+        "title": "Form 36 Mechanics, Timelines & Cross-Objections Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Form Mechanics Timelin (Nu Beta).",
+            "caption": "Open primary debit entry for Form 36 Mechanics.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10650,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Form Mechanics Timelin (Beta).",
+            "caption": "Record secondary accrual adjustment for Form 36 Mechanics.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Form Mechanics Timelin (Nu).",
+            "caption": "Reconcile sub-ledger balances for Form 36 Mechanics.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Form Mechanics Timelin (Beta).",
+            "caption": "Verify double-entry trial balance for Form 36 Mechanics.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -389,11 +389,11 @@
       "partTitle": "Form 36 Mechanics, Timelines & Cross-Objections Architecture under Section 253(4)",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Form 36 Mechanics, Timelines & Cross-Objectio... — General Ledger Verification",
+        "title": "Form 36 Mechanics, Timelines & Cross-Objections Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Form Mechanics Timelin (Nu Beta).",
+            "caption": "Open primary debit entry for Form 36 Mechanics.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10650,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Form Mechanics Timelin (Beta).",
+            "caption": "Record secondary accrual adjustment for Form 36 Mechanics.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Form Mechanics Timelin (Nu).",
+            "caption": "Reconcile sub-ledger balances for Form 36 Mechanics.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Form Mechanics Timelin (Beta).",
+            "caption": "Verify double-entry trial balance for Form 36 Mechanics.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12780,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Stay of Demand Jurisprudence under Section 25... — General Ledger Verification",
+        "title": "Stay of Demand Jurisprudence under Section 254(2A) & The 20% — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Stay of Demand Jurispr (Nu Gamma).",
+            "caption": "Open primary debit entry for Stay of Demand Jurisprudence under Section 254(2A).",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10850,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Stay of Demand Jurispr (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13020,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Stay of Demand Jurispr (Nu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13020,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Stay of Demand Jurispr (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13020,
@@ -644,11 +644,11 @@
       "partTitle": "Stay of Demand Jurisprudence under Section 254(2A) & The 20% Mandatory Deposit Regime",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Stay of Demand Jurisprudence under Section 25... — General Ledger Verification",
+        "title": "Stay of Demand Jurisprudence under Section 254(2A) & The 20% — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Stay of Demand Jurispr (Nu Gamma).",
+            "caption": "Open primary debit entry for Stay of Demand Jurisprudence under Section 254(2A).",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10850,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Stay of Demand Jurispr (Gamma).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13020,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Stay of Demand Jurispr (Nu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13020,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Stay of Demand Jurispr (Gamma).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13020,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Rectification of Mistake Apparent from the Re... — General Ledger Verification",
+        "title": "Rectification of Mistake Apparent from the Record under Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Rectification of Mista (Nu Delta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11050,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Rectification of Mista (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13260,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Rectification of Mista (Nu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13260,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Rectification of Mista (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13260,
@@ -899,11 +899,11 @@
       "partTitle": "Rectification of Mistake Apparent from the Record under Section 254(2) & Miscellaneous Applications",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Rectification of Mistake Apparent from the Re... — General Ledger Verification",
+        "title": "Rectification of Mistake Apparent from the Record under Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Rectification of Mista (Nu Delta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11050,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Rectification of Mista (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13260,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Rectification of Mista (Nu).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13260,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Rectification of Mista (Delta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13260,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: ITAT Appeal &... — General Ledger Verification",
+        "title": "Production Python Architecture: ITAT Appeal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Nu Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11250,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13500,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Nu).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13500,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13500,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: ITAT Appeal & Stay of Demand Litigation Engine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: ITAT Appeal &... — General Ledger Verification",
+        "title": "Production Python Architecture: ITAT Appeal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Nu Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 11250,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 53 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 13500,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Nu).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 53 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 13500,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 53 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 13500,

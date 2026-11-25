@@ -10,11 +10,11 @@
       "codeHash": "78f0f9c0aa61fcc530b9a781111daecba6ded4d0768ed55ef0232fa08f3a697b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Nature of Accounting Estimates & Estimation Uncert — Forensic Audit Ledger",
+        "title": "Nature of Accounting Estimates & Estimation Uncertainty: SA 540 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Nature of.",
+            "caption": "Open forensic assurance verification ledger for Nature of Accounting Estimates.",
             "title": "Day 16 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1590000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1775000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Nature of Accounting.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1775000,
@@ -145,7 +145,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Substantive.",
+            "caption": "Open forensic assurance verification ledger for Substantive Approaches.",
             "title": "Day 16 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1610000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1804500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Substantive.",
+            "caption": "Execute simulated enterprise forensic case study for Substantive Approaches.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1804500,
@@ -272,11 +272,11 @@
       "codeHash": "9964602328ade574ec6e0333de3c14903721a22e009866261881789ac80e261a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Indicators of Management Bias & Retrospective Revi — Forensic Audit Ledger",
+        "title": "Indicators of Management Bias & Retrospective Review: SA 540 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Indicators of.",
+            "caption": "Open forensic assurance verification ledger for Indicators of Management Bias.",
             "title": "Day 16 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1630000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1834000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Indicators of.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1834000,
@@ -403,11 +403,11 @@
       "codeHash": "de8cf13777a35f881caaa1132ebd647fe0d2acfe97646fbee31f0e5b53da4e82",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Auditing Fair Value Measurements & Hierarchy: Ind  — Forensic Audit Ledger",
+        "title": "Auditing Fair Value Measurements & Hierarchy: Ind AS 113 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Auditing Fair.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 16 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1650000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1863500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Auditing Fair Value.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1863500,
@@ -538,7 +538,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Using the Work.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 16 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1670000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record substantive adjustment / governance entry (multiple) under.",
+            "caption": "Record substantive adjustment / governance entry.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1893000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Using the Work of an.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 16 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1893000,

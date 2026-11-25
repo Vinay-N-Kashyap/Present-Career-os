@@ -8,7 +8,7 @@
       "codeHash": "5f7dbe35395492b7eaeef677a5413ead8df1ee4791a5aa426ee93fbe58508b38",
       "spec": {
         "template": "bars",
-        "title": "AutoRegressive Integrated Moving Avera... \u2014 Temporal Evaluation",
+        "title": "AutoRegressive Integrated Moving Average (ARIMA(p,d,q)) Structural — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "e17478366e6c5afcd3f9bedbce67cdbfd2d93fd474c7186314bbfff8f6751e53",
       "spec": {
         "template": "bars",
-        "title": "Seasonal Multiplicative Formulations (... \u2014 Temporal Evaluation",
+        "title": "Seasonal Multiplicative Formulations (SARIMA(p,d,q)(P,D,Q)[s]) — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "c9047cd6ddfc099936fc225883bc5cdc4b9a51d311630252f1552fd01d3547f5",
       "spec": {
         "template": "bars",
-        "title": "Information Criteria Selection: Akaike... \u2014 Temporal Evaluation",
+        "title": "Information Criteria Selection: Akaike — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "1940071cdeed5165729190c8387cf2a769c4b6c78f83b94179f522ef7b72e1cc",
       "spec": {
         "template": "bars",
-        "title": "Maximum Likelihood Estimation (MLE) vs... \u2014 Temporal Evaluation",
+        "title": "Maximum Likelihood Estimation (MLE) vs Conditional Least Squares — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "9aaa4ab5cfcc201fb5576a4ccc203470ebdf807f41c87c663f1f3dca783ee25e",
       "spec": {
         "template": "bars",
-        "title": "Automated Grid Search Selection Algori... \u2014 Temporal Evaluation",
+        "title": "Automated Grid Search Selection Algorithm & Overfitting Guardrails — Temporal Evaluation",
         "steps": [
           {
             "at": "intro",

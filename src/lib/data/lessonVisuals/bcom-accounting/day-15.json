@@ -10,11 +10,11 @@
       "codeHash": "ba37649fe3d945b79c5f08f9406537cd0951fc0ad8b034a9764a2969247b2f72",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive Period-End Adjusting Journal... — General Ledger Verification",
+        "title": "Comprehensive Period-End Adjusting Journal Entries — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 77500,
@@ -139,11 +139,11 @@
       "codeHash": "a80f6ea1d8f14d0ae69152c731cacfe45bbf5983bc0e220057a7c35f68aca09b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Integrated Trading and Profit & Loss State... — General Ledger Verification",
+        "title": "Integrated Trading and Profit & Loss Statement Synthesis — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Integrated.",
+            "caption": "Open primary facility debit entry for Integrated Trading and Profit.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 78750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 15 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 94500,
@@ -268,11 +268,11 @@
       "codeHash": "1bfc0a70869ee2d49667976012dabc00965e97b0f12ded0d982637f408de60d7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Final Marshalled Balance Sheet Synthesis &... — General Ledger Verification",
+        "title": "Final Marshalled Balance Sheet Synthesis & Equation Equilibrium Check — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Final.",
+            "caption": "Open primary facility debit entry for Final Marshalled Balance Sheet Synthesis.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 80000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 15 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 96000,
@@ -397,11 +397,11 @@
       "codeHash": "55832f9b5b9b37c2cca8b5885a1f4126c2cc137106405db07a8cc7a06a8cfebe",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Post-Closing Trial Balance Extraction & No... — General Ledger Verification",
+        "title": "Post-Closing Trial Balance Extraction & Nominal Accounts Clearing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Post-Closing.",
+            "caption": "Open primary facility debit entry for Post-Closing Trial Balance Extraction.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 81250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 15 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 97500,
@@ -526,11 +526,11 @@
       "codeHash": "7455b7220cc9808242b3d17ab40a73aca97553ccdaa27cb947cb4d795a222ff5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Financial Statement Analysis Dashboard & C... — General Ledger Verification",
+        "title": "Financial Statement Analysis Dashboard & Controller Accreditation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Financial.",
+            "caption": "Open primary facility debit entry for Financial Statement Analysis Dashboard.",
             "title": "Day 15 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 82500,

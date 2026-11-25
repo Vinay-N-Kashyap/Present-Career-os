@@ -10,11 +10,11 @@
       "codeHash": "884cfe85ad2a26085da89921375812b761822ad3898f0eb24fd6aee89e798ae5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Credit Derivatives & Single-Name Credit De... — General Ledger Verification",
+        "title": "Credit Derivatives & Single-Name Credit Default Swaps (CDS) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Credit.",
+            "caption": "Open primary facility debit entry for Credit Derivatives.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143400,
@@ -139,11 +139,11 @@
       "codeHash": "43828d98c8ecd135e35dea3ab95913f3edf46fde9eaf95924071f09cd5d371d4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Standardized Credit Default Swap Indices (... — General Ledger Verification",
+        "title": "Standardized Credit Default Swap Indices (CDX & iTraxx) & Tranche — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Standardized.",
+            "caption": "Open primary facility debit entry for Standardized Credit Default Swap Indices.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 120750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 144900,
@@ -268,11 +268,11 @@
       "codeHash": "c37154d111d29a3fdf6c388bc32a9f9df6b7f7e1f2dd53642bfe01a916caa478",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Gaussian Copula & Portfolio Default Correl... — General Ledger Verification",
+        "title": "Gaussian Copula & Portfolio Default Correlation Modeling — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Gaussian.",
+            "caption": "Open primary facility debit entry for Gaussian Copula.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 122000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 146400,
@@ -397,11 +397,11 @@
       "codeHash": "245b8ad5a9b250892abf66fe7c88e5bf8aaa56483fc18344b3ebe76f629d0e71",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Counterparty Credit Risk: Credit Valuation... — General Ledger Verification",
+        "title": "Counterparty Credit Risk: Credit — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Counterparty.",
+            "caption": "Open primary facility debit entry for Counterparty Credit Risk.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 123250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 147900,
@@ -526,11 +526,11 @@
       "codeHash": "1ca23b805734951687d67d9c853f64ebf35a4b5427d4724564959bb0b795f618",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Active Credit Portfolio Management (ACPM) ... — General Ledger Verification",
+        "title": "Active Credit Portfolio Management (ACPM) & Synthetic Securitization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Active.",
+            "caption": "Open primary facility debit entry for Active Credit Portfolio Management.",
             "title": "Day 27 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 27 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 149400,

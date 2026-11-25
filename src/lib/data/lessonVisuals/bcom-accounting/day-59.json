@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ind AS 10 Constitutional Framework, Temp... — Ledger Verification",
+        "title": "Ind AS 10 Constitutional Framework, Temporal Anchoring — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($two,multiple,multiple) for Ind AS.",
+            "caption": "Open primary Ind AS ledger posting for Ind AS 10 Constitutional Framework.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2805000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Adjusting Events: Statutory Conditions, ... — Ledger Verification",
+        "title": "Adjusting Events: Statutory — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($two,multiple,multiple) for Adjusting.",
+            "caption": "Open primary Ind AS ledger posting for Adjusting Events.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2810000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Non-Adjusting Events: Disclosure Require... — Ledger Verification",
+        "title": "Non-Adjusting Events: Disclosure — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($two,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2815000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Going Concern Overriding Exception &... — Ledger Verification",
+        "title": "The Going Concern Overriding Exception & Statutory Audit Invariants — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($two,multiple,multiple) for The Going.",
+            "caption": "Open primary Ind AS ledger posting for The Going Concern Overriding Exception.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2820000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Ind AS 10 Platform, Footnote ... — Ledger Verification",
+        "title": "Enterprise Ind AS 10 Platform, Footnote Disclosure Modeling & Day 59 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($two,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 59 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2825000,

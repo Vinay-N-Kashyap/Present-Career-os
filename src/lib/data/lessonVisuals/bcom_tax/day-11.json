@@ -14,7 +14,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Profits and Gains.",
+            "caption": "Open primary taxable assessment ledger for Profits and Gains of Business.",
             "title": "Day 11 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 515000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 11 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 590000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Profits and Gains of.",
+            "caption": "Execute simulated computational case study for Profits and Gains of Business.",
             "title": "Day 11 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 590000,
@@ -141,11 +141,11 @@
       "codeHash": "d44bdaf431a8bffb5095721cd055c39d685e47c42bdcb5600ce88f7e8fad7a40",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Block of Assets & Depreciation Calculus: Section 3 — Tax Ledger Verification",
+        "title": "Block of Assets & Depreciation Calculus: Section 32 Rules — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Block of Assets &.",
+            "caption": "Open primary taxable assessment ledger for Block of Assets.",
             "title": "Day 11 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 522500,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 11 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 601000,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Block of Assets &.",
+            "caption": "Execute simulated computational case study for Block of Assets.",
             "title": "Day 11 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 601000,
@@ -272,11 +272,11 @@
       "codeHash": "490110741fee78a169cbc2aa8d790f22aa6a14c78284490f05c58f4440013803",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Specific Business Deductions: Sections 35, 36 & Sc — Tax Ledger Verification",
+        "title": "Specific Business Deductions: Sections 35, 36 & Scientific Research — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Specific Business.",
+            "caption": "Open primary taxable assessment ledger for Specific Business Deductions.",
             "title": "Day 11 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 530000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 11 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 612000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Specific Business.",
+            "caption": "Execute simulated computational case study for Specific Business Deductions.",
             "title": "Day 11 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 612000,
@@ -403,11 +403,11 @@
       "codeHash": "019b2e2b76f053983c9f16a0b853cf635587e0acd5d963541cc461b1c7cb3a3b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The General Deductions Catch-All: Section 37(1) In — Tax Ledger Verification",
+        "title": "The General Deductions Catch-All: Section 37(1) Invariants — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for The General.",
+            "caption": "Open primary taxable assessment ledger for The General Deductions Catch-All.",
             "title": "Day 11 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 537500,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 11 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 623000,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for The General Deductions.",
+            "caption": "Execute simulated computational case study for The General Deductions Catch-All.",
             "title": "Day 11 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 623000,
@@ -534,11 +534,11 @@
       "codeHash": "8b742b1a3fc6803708515ebcc57760ad5237c9bf76af40341dd15b00b6325158",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Payment Invariants: Section 43B Actual P — Tax Ledger Verification",
+        "title": "Statutory Payment Invariants: Section 43B Actual Payment Rules & Form — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Statutory Payment.",
+            "caption": "Open primary taxable assessment ledger for Statutory Payment Invariants.",
             "title": "Day 11 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 545000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 11 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 634000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Statutory Payment.",
+            "caption": "Execute simulated computational case study for Statutory Payment Invariants.",
             "title": "Day 11 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 634000,

@@ -10,11 +10,11 @@
       "codeHash": "39d8abac927c8165d2a0cd9fd6ec43a63943fc1c3ec5c93cef9ff78c504a7a83",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Multi-Asset Balance Sheet & Basel ... — General Ledger Verification",
+        "title": "Enterprise Multi-Asset Balance Sheet & Basel III RWA Aggregation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Enterprise Multi-Asset Balance ...",
+            "caption": "Open primary debit entry for Enterprise Multi-Asset Balance Sheet.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Multi-Asset Balance Sheet & Basel ... — General Ledger Verification",
+        "title": "Enterprise Multi-Asset Balance Sheet & Basel III RWA Aggregation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Enterprise Multi-Asset Balance ...",
+            "caption": "Step 1: Open primary debit entry (3250).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -264,11 +264,11 @@
       "codeHash": "f7e9d24398514ca8b642488e8350a8d6135a1b2ae99def374d6e890637a0d8fa",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Federal Reserve CCAR Severely Adverse Macroec... — General Ledger Verification",
+        "title": "Federal Reserve CCAR Severely Adverse Macroeconomic Credit Migration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Federal Reserve CCAR Severely A...",
+            "caption": "Open primary debit entry.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Federal Reserve CCAR Severely Adverse Macroec... — General Ledger Verification",
+        "title": "Federal Reserve CCAR Severely Adverse Macroeconomic Credit Migration — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for Federal Reserve CCAR Severely A...",
+            "caption": "Step 1: Open primary debit entry (3450).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -518,11 +518,11 @@
       "codeHash": "c6c29b8bc9565f9770cca87d1e423f05fa79c87452a34918b942fe1e5d01eb9e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Net Interest Income (NII) Compression, Yield ... — General Ledger Verification",
+        "title": "Net Interest Income (NII) Compression, Yield Curve Inversion — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Net Interest Income (NII) Compr...",
+            "caption": "Open primary debit entry for Net Interest Income.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Net Interest Income (NII) Compression, Yield ... — General Ledger Verification",
+        "title": "Net Interest Income (NII) Compression, Yield Curve Inversion — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3650) for Net Interest Income (NII) Compr...",
+            "caption": "Step 1: Open primary debit entry (3650) for Net Interest Income.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -772,11 +772,11 @@
       "codeHash": "4d18e7229a75937aa7cc729e14c01d0ceafca05e37838c8260bd207fb2cdcbd2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dynamic Capital Buffers, CoCo Bond Contingent... — General Ledger Verification",
+        "title": "Dynamic Capital Buffers, CoCo Bond Contingent Write-Down & Capital — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Dynamic Capital Buffers, CoCo B...",
+            "caption": "Open primary debit entry for Dynamic Capital Buffers.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Dynamic Capital Buffers, CoCo Bond Contingent... — General Ledger Verification",
+        "title": "Dynamic Capital Buffers, CoCo Bond Contingent Write-Down & Capital — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3850) for Dynamic Capital Buffers, CoCo B...",
+            "caption": "Step 1: Open primary debit entry (3850) for Dynamic Capital Buffers.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -1026,11 +1026,11 @@
       "codeHash": "a0ac79c9492610a8013616d7634d861b940e47c6832718f22295e29c9720e4cd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Supervisory Defense & Boardroom CCAR... — General Ledger Verification",
+        "title": "Capstone Supervisory Defense & Boardroom CCAR Certification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Capstone Supervisory Defense & ...",
+            "caption": "Open primary debit entry for Capstone Supervisory Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Capstone Supervisory Defense & Boardroom CCAR... — General Ledger Verification",
+        "title": "Capstone Supervisory Defense & Boardroom CCAR Certification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (4050) for Capstone Supervisory Defense & ...",
+            "caption": "Step 1: Open primary debit entry (4050) for Capstone Supervisory Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,

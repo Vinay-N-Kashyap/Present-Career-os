@@ -10,11 +10,11 @@
       "codeHash": "dcd0ea6f42e4d1b1b11e30bb2df25e0c85ffdd01b3122ebdc75d18dd23096d6f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Chief Banking Officer (CBO) & Treasury... — General Ledger Verification",
+        "title": "The Chief Banking Officer (CBO) & Treasury Executive Mandate — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Chief.",
+            "caption": "Open primary facility debit entry for The Chief Banking Officer.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72000,
@@ -139,11 +139,11 @@
       "codeHash": "b806f2baf3acd7919762a631a556b6460ea52066cb20a270d8283469b294fc31",
       "spec": {
         "template": "ledger-sheet",
-        "title": "5-Tier Banking Architecture: From Loan Syn... — General Ledger Verification",
+        "title": "5-Tier Banking Architecture: From Loan — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for five-Tier.",
+            "caption": "Open primary facility debit entry for five-Tier.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73500,
@@ -268,11 +268,11 @@
       "codeHash": "2498ad714e1e48dbbd175d116b6bd499e3ec2d6bc84f35d1f6138cefc00252f6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Quantitative Banking Invariants & Asset-Li... — General Ledger Verification",
+        "title": "Quantitative Banking Invariants & Asset-Liability Optimization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 62500,
@@ -397,11 +397,11 @@
       "codeHash": "d2cbb4d8110e3f49f3cac3da5741b1d61179a023528ca23cf09685a79269656d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capstone Simulation: The Autonomous Bank T... — General Ledger Verification",
+        "title": "Capstone Simulation: The Autonomous Bank — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capstone.",
+            "caption": "Open primary facility debit entry for Capstone Simulation.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 63750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 76500,
@@ -526,11 +526,11 @@
       "codeHash": "a2ee89f6ab7377d70f6d5108473e33fe8d65a3eb6009e56920ae279fe1b4c131",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Boardroom Governance Defense Dossier & Exe... — General Ledger Verification",
+        "title": "Boardroom Governance Defense Dossier & Executive Banking Masterclass — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Boardroom.",
+            "caption": "Open primary facility debit entry for Boardroom Governance Defense Dossier.",
             "title": "Day 10 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 65000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 10 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 78000,

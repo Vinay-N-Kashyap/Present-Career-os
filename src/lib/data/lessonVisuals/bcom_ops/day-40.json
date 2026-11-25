@@ -313,7 +313,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "RealTime WIP Control  Littles La Funnel",
+        "title": "RealTime WIP Control Littles La Funnel",
         "steps": [
           {
             "at": "intro",
@@ -464,7 +464,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Automated Rescheduling  Stochast Funnel",
+        "title": "Automated Rescheduling Stochast Funnel",
         "steps": [
           {
             "at": "intro",

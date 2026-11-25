@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ind AS 113 Framework, Exit Price Invaria... — Ledger Verification",
+        "title": "Ind AS 113 Framework, Exit Price Invariant & Principal vs Most — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for Ind.",
+            "caption": "Open primary Ind AS ledger posting for Ind AS 113 Framework.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52055000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Highest and Best Use (HBU) for Non-Finan... — Ledger Verification",
+        "title": "Highest and Best Use (HBU) for Non-Financial Assets: Physical, Legal — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52060000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Three Valuation Techniques: Market A... — Ledger Verification",
+        "title": "The Three Valuation Techniques: Market — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for The.",
+            "caption": "Open primary Ind AS ledger posting for The Three Valuation Techniques.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52065000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Three-Tier Fair Value Hierarchy (Lev... — Ledger Verification",
+        "title": "The Three-Tier Fair Value Hierarchy (Levels 1, 2, and 3) & Mandatory — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for The.",
+            "caption": "Open primary Ind AS ledger posting for The Three-Tier Fair Value Hierarchy.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52070000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Ind AS 113 Software Engine, S... — Ledger Verification",
+        "title": "Enterprise Ind AS 113 Software Engine, Statutory Footnote Modeling — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 53 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52075000,

@@ -10,11 +10,11 @@
       "codeHash": "096e8849e97210a56d3b2b358ca399b26bd5b5a2a24f00f178da3a1b2e259ad1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Constitutional Framework & The Dual GST Ar... — General Ledger Verification",
+        "title": "Constitutional Framework & The Dual GST Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Constitutional.",
+            "caption": "Open primary facility debit entry for Constitutional Framework.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 88000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 105600,
@@ -139,11 +139,11 @@
       "codeHash": "fdf5ada0e423d9e5aa1160ec3310a76a2a837aec85546df21b372b44fbaf7d9c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Place of Supply (POS) Determination Rules... — General Ledger Verification",
+        "title": "Place of Supply (POS) Determination Rules — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Place of.",
+            "caption": "Open primary facility debit entry for Place of Supply (POS) Determination Rules.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 89250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 107100,
@@ -268,11 +268,11 @@
       "codeHash": "a6800b8a5504055b477930fd2d5dfe32b854d701949601d5fadb18ce546b48f0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "HSN/SAC Classifications & Multi-Tier Tax S... — General Ledger Verification",
+        "title": "HSN/SAC Classifications & Multi-Tier Tax Slabs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for HSN/SAC.",
+            "caption": "Open primary facility debit entry for HSN/SAC Classifications.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 90500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 108600,
@@ -397,11 +397,11 @@
       "codeHash": "1d19e9afe6ffabf405790f09a5bc8dd67bf9dfd7052420f4e6079bb3e50d86ec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Statutory Tax Invoice Requirements & Rule ... — General Ledger Verification",
+        "title": "Statutory Tax Invoice Requirements & Rule 48(4) e-Invoicing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Statutory Tax.",
+            "caption": "Open primary facility debit entry for Statutory Tax Invoice Requirements.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 91750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 110100,
@@ -526,11 +526,11 @@
       "codeHash": "32261dd698a8a629e125ec882948dfaa3d8789ee2961b134cae65722ba9ab1a0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive Tax Invoice Pipeline & Gener... — General Ledger Verification",
+        "title": "Comprehensive Tax Invoice Pipeline & General Ledger Tax Accounting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Comprehensive.",
+            "caption": "Open primary facility debit entry for Comprehensive Tax Invoice Pipeline.",
             "title": "Day 18 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 93000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 18 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 111600,

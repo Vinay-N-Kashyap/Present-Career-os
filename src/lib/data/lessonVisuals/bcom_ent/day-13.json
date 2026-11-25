@@ -10,11 +10,11 @@
       "codeHash": "033afd3a0d2209315a4f90c541c3da5387062d4b0d90d889e7009b833815a7b1",
       "spec": {
         "template": "funnel",
-        "title": "OKR Fundamentals: Objectives, Key Result - Venture Pipeline",
+        "title": "OKR Fundamentals: Objectives, Key Results & the Measured Move from - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "OKR Fundamentals: Objectives, Key Result - Venture Pipeline",
+        "title": "OKR Fundamentals: Objectives, Key Results & the Measured Move from - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (ten,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -286,7 +286,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "bc1389ab167882d19a42db994353c45218853668c41e473985f8b1447bb03468",
       "spec": {
         "template": "funnel",
-        "title": "Writing Key Results That Matter: Outcome - Venture Pipeline",
+        "title": "Writing Key Results That Matter: Outcomes versus Outputs - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Writing Key Results That Matter: Outcome - Venture Pipeline",
+        "title": "Writing Key Results That Matter: Outcomes versus Outputs - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -606,7 +606,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "2ef3062cb0d3dbf462e48989e07af0fb4765f2d53aefb8843a15ff9c7b87eb1d",
       "spec": {
         "template": "funnel",
-        "title": "Scoring, Committed versus Aspirational O - Venture Pipeline",
+        "title": "Scoring, Committed versus Aspirational OKRs & the 0.7 Rule - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Scoring, Committed versus Aspirational O - Venture Pipeline",
+        "title": "Scoring, Committed versus Aspirational OKRs & the 0.7 Rule - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (eight,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -926,7 +926,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "d8badc707347d7c41a7236a1d06d8fa1fdc166ac19adec321974a657eb4cd065",
       "spec": {
         "template": "funnel",
-        "title": "Alignment, Cascading & Focus: Keeping OK - Venture Pipeline",
+        "title": "Alignment, Cascading & Focus: Keeping OKRs From Becoming a Wish List - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Alignment, Cascading & Focus: Keeping OK - Venture Pipeline",
+        "title": "Alignment, Cascading & Focus: Keeping OKRs From Becoming a Wish List - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (one,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "ed55dc1d18d500dff0d0f4b232bb5cffc2bdc6729029a004b9bb174d2536fc42",
       "spec": {
         "template": "funnel",
-        "title": "OKR System Health Control Tower: Focus,  - Venture Pipeline",
+        "title": "OKR System Health Control Tower: Focus - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (one,multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "OKR System Health Control Tower: Focus,  - Venture Pipeline",
+        "title": "OKR System Health Control Tower: Focus - Venture Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Venture commercial reach (multiple,multiple prospects).",
+            "caption": "Venture commercial reach.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Channel evaluation converts (two,multiple opportunities).",
+            "caption": "Channel evaluation converts.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1566,7 +1566,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed contracts expand LTV (one,multiple accounts).",
+            "caption": "Closed contracts expand LTV.",
             "activeStageId": "final",
             "stages": [
               {

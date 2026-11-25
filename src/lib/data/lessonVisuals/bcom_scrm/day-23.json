@@ -10,11 +10,11 @@
       "codeHash": "14bb997eef84af009dc712278b2d626b77112865b9e0a9fd0ae2cebd305ee190",
       "spec": {
         "template": "funnel",
-        "title": "The Enterprise Contract Hierarchy: MSA, SO - RevOps Funnel",
+        "title": "The Enterprise Contract Hierarchy: MSA, SOW, Order Form & DPA Architecture - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "The Enterprise Contract Hierarchy: MSA, SO - RevOps Funnel",
+        "title": "The Enterprise Contract Hierarchy: MSA, SOW, Order Form & DPA Architecture - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "b2a91d826c896006e76251828a6e4bb821a2910ae55b3c540646f70fdcf29720",
       "spec": {
         "template": "funnel",
-        "title": "Legal Redline Velocity: The Sub-48-Hour Tu - RevOps Funnel",
+        "title": "Legal Redline Velocity: The Sub-48-Hour Turnaround SLA & Fallback - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Legal Redline Velocity: The Sub-48-Hour Tu - RevOps Funnel",
+        "title": "Legal Redline Velocity: The Sub-48-Hour Turnaround SLA & Fallback - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "679a9c474d4f03da252803b448d5be8d7b9fe5602bc8413f0425b996b2f31f2c",
       "spec": {
         "template": "funnel",
-        "title": "InfoSec Fast-Tracking: Standardized Securi - RevOps Funnel",
+        "title": "InfoSec Fast-Tracking: Standardized Security Packages & Compliance - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "InfoSec Fast-Tracking: Standardized Securi - RevOps Funnel",
+        "title": "InfoSec Fast-Tracking: Standardized Security Packages & Compliance - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "3a393852f7e7e112338d26dcfdae30f151acf4b097c4ea99fb5192f6171de595",
       "spec": {
         "template": "funnel",
-        "title": "Commercial Negotiations: Payment Terms, Pr - RevOps Funnel",
+        "title": "Commercial Negotiations: Payment Terms, Price Escalation & Clawback - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Commercial Negotiations: Payment Terms, Pr - RevOps Funnel",
+        "title": "Commercial Negotiations: Payment Terms, Price Escalation & Clawback - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "7307c18c06399eb588770319fe0ea8670844f0375953dd6d0e88900304719f53",
       "spec": {
         "template": "funnel",
-        "title": "Master Enterprise Contract Lifecycle & Gov - RevOps Funnel",
+        "title": "Master Enterprise Contract Lifecycle & Governance Control Tower - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Enterprise Contract Lifecycle & Gov - RevOps Funnel",
+        "title": "Master Enterprise Contract Lifecycle & Governance Control Tower - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {

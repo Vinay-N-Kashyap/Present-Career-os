@@ -8,7 +8,7 @@
       "codeHash": "ce33041fd634085894d62a9c975372f5d44bd1ab34be7549da122a617595152b",
       "spec": {
         "template": "funnel",
-        "title": "The Institutional Money Market Archite... — Treasury Risk Operations",
+        "title": "The Institutional Money Market Architecture: Segments, Participants — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "db760bc00f7b5a154a72e291892fe2f2cf81f4245fdd8347096758918339e17f",
       "spec": {
         "template": "funnel",
-        "title": "Uncollateralized Inter-Bank Borrowing:... — Treasury Risk Operations",
+        "title": "Uncollateralized Inter-Bank Borrowing: Call, Notice & Term Money — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "3804f9aa7a2b8db45f2f798762d405a840aca2a8fa45b760a87e532030780b30",
       "spec": {
         "template": "funnel",
-        "title": "Short-Term Wholesale Debt: Commercial ... — Treasury Risk Operations",
+        "title": "Short-Term Wholesale Debt: Commercial — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "c329e0e772b5c849b416a477ce9472b04bb8a8c2820b12f639d1b1f0031c92a6",
       "spec": {
         "template": "funnel",
-        "title": "Collateralized Repo Markets: Bilateral... — Treasury Risk Operations",
+        "title": "Collateralized Repo Markets: Bilateral — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "775c122da055cc1a958943233e39c2ccdf4f21cff7c04fdc929bb2977e2b3e7d",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Money Market ... — Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Money Market Funding & Liquidity Arbitrage — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

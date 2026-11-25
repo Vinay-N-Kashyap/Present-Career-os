@@ -8,7 +8,7 @@
       "codeHash": "957e2940ecbb30055b04ad62ca7a7060ef36865278f17508950fba5b6e83ce71",
       "spec": {
         "template": "funnel",
-        "title": "Pricing Models Architecture: Flat, ... - RevOps Funnel",
+        "title": "Pricing Models Architecture: Flat - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "28a18b7b30187c8f025d4273c2bd82fda7cd144f1df58e9fcae5592aa2f89d43",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Currency Normalization, FX He... - RevOps Funnel",
+        "title": "Multi-Currency Normalization, FX Hedging & Purchasing Power Parity - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "5344bec11813226f0aa7c46ed9fa55e7cbbaa2deaf3410fee60e18bd7228d98b",
       "spec": {
         "template": "funnel",
-        "title": "The $1.2M Currency Arbitrage & Runa... - RevOps Funnel",
+        "title": "The $1.2M Currency Arbitrage & Runaway Over-Discounting Incident - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "c670581cc9bf0137db8ed8eb2ac2071bce12470e3ebf89dbb07ecd8bd93d8c19",
       "spec": {
         "template": "funnel",
-        "title": "Discount Matrix Governance & Delega... - RevOps Funnel",
+        "title": "Discount Matrix Governance & Delegation of Authority (DoA) Thresholds - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "d2d3df2b23841f684dcfbf6400780f13608a6a3ed27f59c4edcdc5850e3448bb",
       "spec": {
         "template": "funnel",
-        "title": "Building the Production Enterprise ... - RevOps Funnel",
+        "title": "Building the Production Enterprise Dynamic Pricing & Currency Engine - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

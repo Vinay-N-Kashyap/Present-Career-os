@@ -10,7 +10,7 @@
       "codeHash": "78c0eec36b12aeb2fe4b8d4af6c3ec657481e55eaf8cb4582e181a1562dec286",
       "spec": {
         "template": "workflow",
-        "title": "Warehouse Robotics Taxonomy: AGVs (Magnetic/L... — Operational Workflow",
+        "title": "Warehouse Robotics Taxonomy: AGVs — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Warehouse Robotics Taxonomy: AGVs (Magnetic/L... — Operational Workflow",
+        "title": "Warehouse Robotics Taxonomy: AGVs — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Warehouse Robotics Taxonomy: AGVs (Magne...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Warehouse Robotics Taxonomy: AGVs",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "ca4d1aefe8d29d66acbc3c735934243fd4f0c31bf1d52f7af6fab07b74959fda",
       "spec": {
         "template": "workflow",
-        "title": "Automated Storage and Retrieval Systems (AS/R... — Operational Workflow",
+        "title": "Automated Storage and Retrieval Systems (AS/RS): Unit-Load, Mini-Load — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Automated Storage and Retrieval Systems (AS/R... — Operational Workflow",
+        "title": "Automated Storage and Retrieval Systems (AS/RS): Unit-Load, Mini-Load — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Automated Storage and Retrieval Systems ...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Automated Storage and Retrieval",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "cf709238f7cf1fdff1126e8d189bef664f9d4b347d7e0ca24f88c5545497fa8f",
       "spec": {
         "template": "workflow",
-        "title": "Multi-Agent Fleet Pathfinding: A* Search, Tim... — Operational Workflow",
+        "title": "Multi-Agent Fleet Pathfinding: A* Search — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Multi-Agent Fleet Pathfinding: A* Search, Tim... — Operational Workflow",
+        "title": "Multi-Agent Fleet Pathfinding: A* Search — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Multi-Agent Fleet Pathfinding: A* Search...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Multi-Agent Fleet Pathfinding: A*",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "29df359a642d60685a08f3d9d1068f8c0dd916ec05d5bf0ead4ffbc66a77c1b1",
       "spec": {
         "template": "workflow",
-        "title": "Goods-to-Person (G2P) Order Picking Optimizat... — Operational Workflow",
+        "title": "Goods-to-Person (G2P) Order Picking Optimization & Ergonomic Station — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Goods-to-Person (G2P) Order Picking Optimizat... — Operational Workflow",
+        "title": "Goods-to-Person (G2P) Order Picking Optimization & Ergonomic Station — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Goods-to-Person (G2P) Order Picking Opti...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Goods-to-Person (G2P) Order Picking",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "66a5ad4f55e61e81b0cc338e3abe105cf48c7f01693ce7192cb06930c2c2f53f",
       "spec": {
         "template": "workflow",
-        "title": "Autonomous Robotic Fulfillment Center Master ... — Operational Workflow",
+        "title": "Autonomous Robotic Fulfillment Center Master Orchestrator — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Autonomous Robotic Fulfillment Center Master ... — Operational Workflow",
+        "title": "Autonomous Robotic Fulfillment Center Master Orchestrator — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Autonomous Robotic Fulfillment Center Ma...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Autonomous Robotic Fulfillment Center",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

@@ -10,11 +10,11 @@
       "codeHash": "dfd5ae84123ed1d4af70f7363f9d9e214789ead11b6ea7a92a44dc67dbfcfaec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 1: Board Fiduciary Governance, Carema... — General Ledger Verification",
+        "title": "Tier 1: Board Fiduciary Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier one.",
+            "caption": "Open primary facility debit entry for Tier one.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 95000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 114000,
@@ -139,11 +139,11 @@
       "codeHash": "c315a1837113d908678640f35e24c5531d0535cdd640e503ebdafe885fc96317",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 2: Conflict Cleansing, DGCL § 144 Saf... — General Ledger Verification",
+        "title": "Tier 2: Conflict Cleansing, DGCL § 144 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier two.",
+            "caption": "Open primary facility debit entry for Tier two.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 96250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 115500,
@@ -268,11 +268,11 @@
       "codeHash": "d7848fc92d4c464ee9ff6da7946e51ce6cbcf2c2ba5cd7e7308ed49184c2a987",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 3: Shareholder Derivative Defense & Z... — General Ledger Verification",
+        "title": "Tier 3: Shareholder Derivative Defense — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Tier.",
+            "caption": "Open primary facility debit entry for Shareholder Derivative Defense.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 97500,
@@ -397,11 +397,11 @@
       "codeHash": "fbc3af52d48aa31f9cd03c9375543ec88716d4f5629348ed30abe77799cd0799",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 4: Shareholder Democracy, Universal P... — General Ledger Verification",
+        "title": "Tier 4: Shareholder Democracy, Universal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier four.",
+            "caption": "Open primary facility debit entry for Tier four.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 98750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 118500,
@@ -526,11 +526,11 @@
       "codeHash": "df3e0eb07c97d0dfe12048e97f4bd3afeef103e1f39359ea8680200907b57759",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 5: Master Command Boardroom General C... — General Ledger Verification",
+        "title": "Tier 5: Master Command Boardroom General — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($one hundred,multiple) for Tier five.",
+            "caption": "Open primary facility debit entry for Tier five.",
             "title": "Day 20 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 100000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 20 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 120000,

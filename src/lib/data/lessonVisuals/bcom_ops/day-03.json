@@ -10,7 +10,7 @@
       "codeHash": "1d381a6dafcb913b758294a56bf338c61e95d24f7d7654df01f180149c774cf9",
       "spec": {
         "template": "workflow",
-        "title": "Lean Six Sigma DMAIC & Process Capability Ind... — Operational Workflow",
+        "title": "Lean Six Sigma DMAIC & Process Capability Indices (Cp, Cpk) — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Lean Six Sigma DMAIC & Process Capability Ind... — Operational Workflow",
+        "title": "Lean Six Sigma DMAIC & Process Capability Indices (Cp, Cpk) — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Lean Six Sigma DMAIC & Process Capabi...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Lean Six Sigma DMAIC & Process",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "0024b679f90ac68e22a91d39f1802014a910ecd996661763529bad03e575f8fe",
       "spec": {
         "template": "workflow",
-        "title": "Statistical Process Control (SPC): Shewhart X... — Operational Workflow",
+        "title": "Statistical Process Control (SPC): Shewhart — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Statistical Process Control (SPC): Shewhart X... — Operational Workflow",
+        "title": "Statistical Process Control (SPC): Shewhart — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Statistical Process Control (SPC): Sh...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Statistical Process Control (SPC): Sh",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "6e7f5bb877ee1fdbb2eb0cf4160d4f2fcd001d896837bfd462279c9d0e384f67",
       "spec": {
         "template": "workflow",
-        "title": "Attribute Quality Control: p-Chart & Western ... — Operational Workflow",
+        "title": "Attribute Quality Control: p-Chart — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Attribute Quality Control: p-Chart & Western ... — Operational Workflow",
+        "title": "Attribute Quality Control: p-Chart — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Attribute Quality Control: p-Chart & ...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Attribute Quality Control: p-Chart",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "0ad8a9be8dd074cbcd6111e9569a5d0eb0d8b1ccb301e9c4964d61d1745b12a1",
       "spec": {
         "template": "workflow",
-        "title": "Measurement System Analysis (MSA) & Gage Repe... — Operational Workflow",
+        "title": "Measurement System Analysis (MSA) & Gage Repeatability — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Measurement System Analysis (MSA) & Gage Repe... — Operational Workflow",
+        "title": "Measurement System Analysis (MSA) & Gage Repeatability — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Measurement System Analysis (MSA) & G...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Measurement System Analysis (MSA)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "5c960e0cdede49f94841e1b5ef8b2648e2ca401693d96d92d93ac75b1f1fa244",
       "spec": {
         "template": "workflow",
-        "title": "Cost of Quality (CoQ) Analytics & PAF Economi... — Operational Workflow",
+        "title": "Cost of Quality (CoQ) Analytics & PAF Economic Optimization Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1400,7 +1400,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize Cost of Quality (CoQ) Analytics &.",
+            "caption": "Stage one (Demand Forecast): Initialize Cost of Quality (CoQ) Analytics.",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Cost of Quality (CoQ) Analytics & PAF Economi... — Operational Workflow",
+        "title": "Cost of Quality (CoQ) Analytics & PAF Economic Optimization Engine — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Cost of Quality (CoQ) Analytics & PAF...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Cost of Quality (CoQ) Analytics",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

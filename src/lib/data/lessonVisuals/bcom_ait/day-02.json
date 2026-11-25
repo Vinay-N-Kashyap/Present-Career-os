@@ -10,7 +10,7 @@
       "codeHash": "b701810fe7284bc30592147a323acc2878aedefcf412af5f8b1a698defdcf106",
       "spec": {
         "template": "tree-graph",
-        "title": "Enterprise Vector Embeddings & RAG Semantic C... — Enterprise AI Decision Graph",
+        "title": "Enterprise Vector Embeddings & RAG Semantic Chunking — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Enterprise Vector Embeddings & ...",
+            "caption": "Ingest enterprise Context Query for Enterprise Vector Embeddings.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Enterprise Vector Embeddings & RAG Semantic C... — Enterprise AI Decision Graph",
+        "title": "Enterprise Vector Embeddings & RAG Semantic Chunking — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Enterprise Vector Embeddings & ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Enterprise Vector Embeddings.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "ef618fb8be3ca112943721b1f12eb1308f2f00071d3686bb65f0424ea419e3c6",
       "spec": {
         "template": "tree-graph",
-        "title": "Automated LLM Guardrails: PII Redaction & Pro... — Enterprise AI Decision Graph",
+        "title": "Automated LLM Guardrails: PII Redaction — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Automated LLM Guardrails: PII R...",
+            "caption": "Ingest enterprise Context Query for Automated LLM Guardrails: PII",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Automated LLM Guardrails: PII Redaction & Pro... — Enterprise AI Decision Graph",
+        "title": "Automated LLM Guardrails: PII Redaction — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Automated LLM Guardrails: PII R...",
+            "caption": "Step 1: Ingest enterprise Context Query for Automated LLM Guardrails: PII",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Hallucination Evaluation & The ...",
+            "caption": "Ingest enterprise Context Query for Hallucination Evaluation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Hallucination Evaluation & The ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Hallucination Evaluation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Shadow Deployment & Canary Roll...",
+            "caption": "Ingest enterprise Context Query for Shadow Deployment.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Shadow Deployment & Canary Roll...",
+            "caption": "Step 1: Ingest enterprise Context Query for Shadow Deployment.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "3d57c39d1c9b5347354db98845015f23111317999efa0b57ab39f171f223a53b",
       "spec": {
         "template": "tree-graph",
-        "title": "Enterprise Model Risk Governance & Regulatory... — Enterprise AI Decision Graph",
+        "title": "Enterprise Model Risk Governance & Regulatory Risk Tiering — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Enterprise Model Risk Governanc...",
+            "caption": "Ingest enterprise Context Query for Enterprise Model Risk Governance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Enterprise Model Risk Governance & Regulatory... — Enterprise AI Decision Graph",
+        "title": "Enterprise Model Risk Governance & Regulatory Risk Tiering — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Enterprise Model Risk Governanc...",
+            "caption": "Step 1: Ingest enterprise Context Query for Enterprise Model Risk Governance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

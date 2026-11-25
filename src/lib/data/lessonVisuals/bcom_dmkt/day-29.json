@@ -65,11 +65,11 @@
       "codeHash": "7fa770215b9b0e0a9f8c77a2fc77b2ec23bd5b44f77a0de7c4f7ca5c6b6548c2",
       "spec": {
         "template": "funnel",
-        "title": "Full-Funnel Growth Architecture: TOFU, MOFU, ... — Conversion Pipeline",
+        "title": "Full-Funnel Growth Architecture: TOFU, MOFU, and BOFU Alignment — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -107,7 +107,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -145,7 +145,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -183,7 +183,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -223,7 +223,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Full-Funnel Growth Architecture: TOFU, MOFU, ... — Conversion Pipeline",
+        "title": "Full-Funnel Growth Architecture: TOFU, MOFU, and BOFU Alignment — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -385,11 +385,11 @@
       "codeHash": "ddb59d78902fec542292776ca2a2edcc7e981f356bcf4ea8a83ac83be12cc1dd",
       "spec": {
         "template": "funnel",
-        "title": "Cross-Channel Audience Synchronization & Nega... — Conversion Pipeline",
+        "title": "Cross-Channel Audience Synchronization & Negative Suppression — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -503,7 +503,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -543,7 +543,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Cross-Channel Audience Synchronization & Nega... — Conversion Pipeline",
+        "title": "Cross-Channel Audience Synchronization & Negative Suppression — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -705,11 +705,11 @@
       "codeHash": "f4cb96c7f0e82639bb3c784255a7e7586b6c17a1e6c6822d274a14068e87dbe4",
       "spec": {
         "template": "funnel",
-        "title": "Omnichannel Attribution Reconciliation: MTA v... — Conversion Pipeline",
+        "title": "Omnichannel Attribution Reconciliation: MTA vs MMM — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -747,7 +747,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -785,7 +785,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -823,7 +823,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -863,7 +863,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Omnichannel Attribution Reconciliation: MTA v... — Conversion Pipeline",
+        "title": "Omnichannel Attribution Reconciliation: MTA vs MMM — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1029,7 +1029,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1067,7 +1067,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1105,7 +1105,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1143,7 +1143,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1345,11 +1345,11 @@
       "codeHash": "b8d6bdcf01bf6205b997331f9943a4c550819bec9a69a6fe692980978575d6d8",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Full-Funnel Growth Orchestration G... — Conversion Pipeline",
+        "title": "Enterprise Full-Funnel Growth Orchestration Gateway — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1387,7 +1387,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1425,7 +1425,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1463,7 +1463,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1503,7 +1503,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Enterprise Full-Funnel Growth Orchestration G... — Conversion Pipeline",
+        "title": "Enterprise Full-Funnel Growth Orchestration Gateway — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

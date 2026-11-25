@@ -8,7 +8,7 @@
       "codeHash": "05d703194b997cbdec32f1289366d32034d1ce6c7e19c1ab1e6079755e1c3dbc",
       "spec": {
         "template": "bars",
-        "title": "Sigmoid Mechanics, Logit Link Function... \u2014 Quantitative Evaluation",
+        "title": "Sigmoid Mechanics, Logit Link Function & Maximum Likelihood Estimation — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "f11a61ec001df35e3c0f232c49ab7c9760702734b8658b67ff6d5b100cd2bb67",
       "spec": {
         "template": "bars",
-        "title": "Odds Ratios, Multiplicative Risk & Exp... \u2014 Quantitative Evaluation",
+        "title": "Odds Ratios, Multiplicative Risk & Exponentiated Coefficients — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "0f578ad182b4de92bbc797bdfb9839ba01fc43f8955ee824eacb0523b84bfc38",
       "spec": {
         "template": "bars",
-        "title": "Classification Thresholds, Confusion M... \u2014 Quantitative Evaluation",
+        "title": "Classification Thresholds, Confusion Matrix & Asymmetric Cost — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "105b4c8ff52c291f0c28a9e51ee91034e9a209bc38ff8eacd5249384b00efa24",
       "spec": {
         "template": "bars",
-        "title": "ROC Curves, AUC Invariants & Precision... \u2014 Quantitative Evaluation",
+        "title": "ROC Curves, AUC Invariants & Precision-Recall Trade-offs in Severe — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "263a40581346016721a403e7ad3c3a49083cfc4d457c5e550942d0f00910c2ec",
       "spec": {
         "template": "bars",
-        "title": "Corporate Credit Scoring Engine, Board... \u2014 Quantitative Evaluation",
+        "title": "Corporate Credit Scoring Engine, Boardroom Governance & Diagnostic — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",

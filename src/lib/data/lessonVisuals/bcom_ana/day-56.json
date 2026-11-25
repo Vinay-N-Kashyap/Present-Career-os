@@ -8,7 +8,7 @@
       "codeHash": "5c9c90e18b6c49fe695f90998b2f8bde4dd91c12255af3b2650d6b5afa8a6b4a",
       "spec": {
         "template": "bars",
-        "title": "Mathematical Foundations of Differenti... - Strategic Decision Evaluation",
+        "title": "Mathematical Foundations of Differential Privacy & Data Anonymization - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "2f92f9ca222819eeb3d12d426f9c7fee33fd2438155aa72bcf318c4abe3b64b0",
       "spec": {
         "template": "bars",
-        "title": "The $85M Algorithmic Bias Class-Action... - Strategic Decision Evaluation",
+        "title": "The $85M Algorithmic Bias Class-Action Forensic Audit - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "a284d233299669165503e77f0058962133853713b14bc4a2f9207557f6c63d3e",
       "spec": {
         "template": "bars",
-        "title": "Algorithmic Fairness Econometrics: Dis... - Strategic Decision Evaluation",
+        "title": "Algorithmic Fairness Econometrics: Disparate Impact & Equalized Odds - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "fc913303da9d3b014a5cebdb22ebfb6e7b7b5f11985754275bf43e841f1a9813",
       "spec": {
         "template": "bars",
-        "title": "Algorithmic Debiasing & Fairness-Const... - Strategic Decision Evaluation",
+        "title": "Algorithmic Debiasing & Fairness-Constrained Threshold Optimization - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "d6436a668c8de455da5def3d2924a36be91223e0fa008c7985013760be0de4ff",
       "spec": {
         "template": "bars",
-        "title": "Production Algorithmic Governance & Pr... - Strategic Decision Evaluation",
+        "title": "Production Algorithmic Governance & Privacy Compliance Platform - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",

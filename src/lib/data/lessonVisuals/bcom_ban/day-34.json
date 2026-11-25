@@ -8,7 +8,7 @@
       "codeHash": "36e1c50e9c3aa6dcd03ce1cbcb27ad4fa5f41b261fac4d24fe23b16448106b9c",
       "spec": {
         "template": "funnel",
-        "title": "The Architecture of Project Finance: N... — Credit Underwriting Review",
+        "title": "The Architecture of Project Finance: Non-Recourse Debt, SPV Ring-Fencing & The Project — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "959a78346ccfe2de1612445c1ac1d10ac0d6eeaaf9b9982c2dad1ddf45b29f4a",
       "spec": {
         "template": "funnel",
-        "title": "Concession Models & Revenue Risk Alloc... — Credit Underwriting Review",
+        "title": "Concession Models & Revenue Risk Allocation: BOT, BOOT, Annuity — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "ab7a70522124fa7d661f307c16dcc8570acd775aa411b9e59b57793b5e63063f",
       "spec": {
         "template": "funnel",
-        "title": "Quantitative Debt Sizing Metrics: DSCR... — Credit Underwriting Review",
+        "title": "Quantitative Debt Sizing Metrics: DSCR, LLCR, PLCR & Debt Sculpting Mechanics — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "a2dc9cb8dd1c3e418561abcc02637ea7ca41c50cb6e3825bfae3a8e07ec68779",
       "spec": {
         "template": "funnel",
-        "title": "Managing Construction Risks: COD Delay... — Credit Underwriting Review",
+        "title": "Managing Construction Risks: COD Delays, Cost Overrun Undertakings & EPC Liquidated Damages — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "03737d6abd5b70b792abb11ed802518c454ee5544a51fc89c7aa4a232b06697b",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Project Finan... — Credit Underwriting Review",
+        "title": "Comprehensive Enterprise Project Finance & Infrastructure Debt Sizing — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",

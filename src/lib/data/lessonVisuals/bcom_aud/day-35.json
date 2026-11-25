@@ -8,7 +8,7 @@
       "codeHash": "d22937f530d32a5e44dfa525d41839c2e0b12ad63ea24d7130c934bad92d016f",
       "spec": {
         "template": "funnel",
-        "title": "Capstone Briefing: The $10B Enterprise... \u2014 Assurance Review",
+        "title": "Capstone Briefing: The $10B — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "4da56ca426daf012da9a946ad0a56fd24ac9d0dee1bb9a2dee97cff372ee3ee8",
       "spec": {
         "template": "funnel",
-        "title": "Integrated Risk Assessment, Inherent R... \u2014 Assurance Review",
+        "title": "Integrated Risk Assessment, Inherent Risk Spectrum & IT Environment — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "58a7720dcc8f858e82b1f62475e7ea808dabb30f970ae31623f7857893d75448",
       "spec": {
         "template": "funnel",
-        "title": "Calibrating Overall Materiality, Perfo... \u2014 Assurance Review",
+        "title": "Calibrating Overall Materiality, Performance Materiality & SUM Thresholds (ISA 320 / ISA 450) — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "f580517595b63d5c6d409b4fb8450d47d0925df8ce9ea96d7f9e9466c1b76e20",
       "spec": {
         "template": "funnel",
-        "title": "Substantive Testing, Fraud Investigati... \u2014 Assurance Review",
+        "title": "Substantive Testing, Fraud Investigation & Management Override — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "a3729687d3ed2b118afe7d6875d7e121a8d6577bae64b2d6b98b9969162d7644",
       "spec": {
         "template": "funnel",
-        "title": "Executive Audit Committee Defense, Opi... \u2014 Assurance Review",
+        "title": "Executive Audit Committee Defense, Opinion Formulation & Capstone — Assurance Review",
         "steps": [
           {
             "at": "intro",

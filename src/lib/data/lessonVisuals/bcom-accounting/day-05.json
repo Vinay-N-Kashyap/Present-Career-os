@@ -10,11 +10,11 @@
       "codeHash": "2d5bb33ff6f9f580664bba1b2ca81179597e3a7bb8cd762e8ed0a6708e806922",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multi-Entity Enterprise Consolidation & Inter... — General Ledger Verification",
+        "title": "Multi-Entity Enterprise Consolidation & Intercompany Elimination (ASC 810 / IFRS 10) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Multi-Entity Enterprise Consoli...",
+            "caption": "Open primary debit entry for Multi-Entity Enterprise Consolidation.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Multi-Entity Enterprise Consolidation & Inter... — General Ledger Verification",
+        "title": "Multi-Entity Enterprise Consolidation & Intercompany Elimination (ASC 810 / IFRS 10) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Multi-Entity Enterprise Consoli...",
+            "caption": "Step 1: Open primary debit entry (3250).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -264,11 +264,11 @@
       "codeHash": "ca9d6ae1777fdf8769ae720d70d04fbcc3cf463cd0ca50e54d36be0e08f03b03",
       "spec": {
         "template": "ledger-sheet",
-        "title": "ASC 230 Statement of Cash Flows Reconstructio... — General Ledger Verification",
+        "title": "ASC 230 Statement of Cash Flows Reconstruction (Operating Indirect Method) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for ASC multiple Statement of Cash.",
+            "caption": "Open primary debit entry for ASC multiple Statement of Cash.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "ASC 230 Statement of Cash Flows Reconstructio... — General Ledger Verification",
+        "title": "ASC 230 Statement of Cash Flows Reconstruction (Operating Indirect Method) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for ASC 230 Statement of Cash Flows...",
+            "caption": "Step 1: Open primary debit entry (3450).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -518,11 +518,11 @@
       "codeHash": "08fc7e6ad82c9e524ce602ef69492891b19f5d88ad9b83144563ab04ae461184",
       "spec": {
         "template": "ledger-sheet",
-        "title": "ASC 740 Income Tax Accounting: Temporary vs P... — General Ledger Verification",
+        "title": "ASC 740 Income Tax Accounting: Temporary — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for ASC multiple Income Tax.",
+            "caption": "Open primary debit entry for ASC multiple Income Tax.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "ASC 740 Income Tax Accounting: Temporary vs P... — General Ledger Verification",
+        "title": "ASC 740 Income Tax Accounting: Temporary — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3650) for ASC 740 Income Tax Accounting: ...",
+            "caption": "Step 1: Open primary debit entry (3650) for ASC 740 Income Tax Accounting:",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -772,11 +772,11 @@
       "codeHash": "61e9377721251b02fef2c044c6be467e54ac34c6e4625aff4a1315390b9d1a25",
       "spec": {
         "template": "ledger-sheet",
-        "title": "SEC Regulation G Non-GAAP Adjusted EBITDA Rec... — General Ledger Verification",
+        "title": "SEC Regulation G Non-GAAP Adjusted EBITDA Reconciliation & Footnote — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for SEC Regulation G Non-GAAP Adjus...",
+            "caption": "Open primary debit entry.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "SEC Regulation G Non-GAAP Adjusted EBITDA Rec... — General Ledger Verification",
+        "title": "SEC Regulation G Non-GAAP Adjusted EBITDA Reconciliation & Footnote — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3850) for SEC Regulation G Non-GAAP Adjus...",
+            "caption": "Step 1: Open primary debit entry (3850).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -1026,11 +1026,11 @@
       "codeHash": "3908cfeaa342c818700c6149fd7f2712adfb0c816b993915787b9187376682ca",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Capstone Defense: The Global Fina... — General Ledger Verification",
+        "title": "Milestone 1 Capstone Defense: The Global — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Milestone one Capstone Defense.",
+            "caption": "Open primary debit entry for Milestone one Capstone Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Capstone Defense: The Global Fina... — General Ledger Verification",
+        "title": "Milestone 1 Capstone Defense: The Global — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (4050) for Milestone 1 Capstone Defense: T...",
+            "caption": "Step 1: Open primary debit entry (4050) for Milestone 1 Capstone Defense.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,

@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Foundations of Fair Value Measurement: E... — Ledger Verification",
+        "title": "Foundations of Fair Value Measurement: Exit Price, Orderly — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,not-found) for Foundations.",
+            "caption": "Open primary Ind AS ledger posting for Foundations of Fair Value Measurement.",
             "title": "Day 33 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 596404,
@@ -41,7 +41,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($eleven,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 33 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 608232,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Market Selection Mechanics: Principal Ma... — Ledger Verification",
+        "title": "Market Selection Mechanics: Principal — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,not-found) for Market.",
+            "caption": "Open primary Ind AS ledger posting for Market Selection Mechanics.",
             "title": "Day 33 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 601404,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($eleven,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 33 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 613232,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Highest and Best Use (HBU) for Non-Finan... — Ledger Verification",
+        "title": "Highest and Best Use (HBU) for Non-Financial Assets & The Three — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,not-found) for Highest and.",
+            "caption": "Open primary Ind AS ledger posting for Highest and Best Use.",
             "title": "Day 33 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 606404,
@@ -301,7 +301,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($eleven,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 33 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 618232,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Three-Level Fair Value Hierarchy (Le... — Ledger Verification",
+        "title": "The Three-Level Fair Value Hierarchy (Levels 1, 2, and 3) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,not-found) for The.",
+            "caption": "Open primary Ind AS ledger posting for The Three-Level Fair Value Hierarchy.",
             "title": "Day 33 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 611404,
@@ -431,7 +431,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($eleven,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 33 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 623232,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Fair Value Disclosures, Level 3 Sensitiv... — Ledger Verification",
+        "title": "Fair Value Disclosures, Level 3 Sensitivity Analysis & Ind AS 113 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,not-found) for Fair Value.",
+            "caption": "Open primary Ind AS ledger posting for Fair Value Disclosures.",
             "title": "Day 33 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 616404,
@@ -561,7 +561,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($eleven,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 33 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 628232,

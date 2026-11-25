@@ -10,12 +10,12 @@
       "codeHash": "e7e59614d74433e7c51f17495fa4a1958a17fe31dd7309f5f1c3441211ae99f0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Strategic Foundations, Deal Architecture \u2014 General Ledger Verification",
+        "title": "Strategic Foundations, Deal Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Strategic Foundations, Deal Ar.",
-            "title": "Day 33 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Strategic Foundations.",
+            "title": "Day 33 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 133000,
             "totalCredit": 133000,
@@ -41,7 +41,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 33 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 33 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 159600,
             "totalCredit": 159600,
@@ -72,7 +72,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 33 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 33 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 159600,
             "totalCredit": 159600,
@@ -103,7 +103,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 33 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 33 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 159600,
             "totalCredit": 159600,
@@ -139,12 +139,12 @@
       "codeHash": "e7e59614d74433e7c51f17495fa4a1958a17fe31dd7309f5f1c3441211ae99f0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Purchase Price Allocation (PPA), Asset W \u2014 General Ledger Verification",
+        "title": "Purchase Price Allocation (PPA), Asset Write-Ups & Deferred Tax — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Open primary capital facility balance for Purchase Price Allocation (PPA.",
-            "title": "Day 33 Ledger \u2014 Initial Facility Allocation",
+            "title": "Day 33 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 133250,
             "totalCredit": 133250,
@@ -170,7 +170,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 33 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 33 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 159900,
             "totalCredit": 159900,
@@ -201,7 +201,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 33 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 33 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 159900,
             "totalCredit": 159900,
@@ -232,7 +232,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 33 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 33 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 159900,
             "totalCredit": 159900,
@@ -268,12 +268,12 @@
       "codeHash": "e7e59614d74433e7c51f17495fa4a1958a17fe31dd7309f5f1c3441211ae99f0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Financing Costs, Foregone Cash Yields &  \u2014 General Ledger Verification",
+        "title": "Financing Costs, Foregone Cash Yields & New Debt Amortization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
             "caption": "Open primary capital facility balance for Financing Costs, Foregone Cash.",
-            "title": "Day 33 Ledger \u2014 Initial Facility Allocation",
+            "title": "Day 33 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 133500,
             "totalCredit": 133500,
@@ -299,7 +299,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 33 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 33 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 160200,
             "totalCredit": 160200,
@@ -330,7 +330,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 33 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 33 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 160200,
             "totalCredit": 160200,
@@ -361,7 +361,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 33 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 33 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 160200,
             "totalCredit": 160200,
@@ -397,12 +397,12 @@
       "codeHash": "e7e59614d74433e7c51f17495fa4a1958a17fe31dd7309f5f1c3441211ae99f0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Synergy Quantification, Integration Amor \u2014 General Ledger Verification",
+        "title": "Synergy Quantification, Integration Amortization & Income Statement — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Synergy Quantification, Integr.",
-            "title": "Day 33 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Synergy Quantification.",
+            "title": "Day 33 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 133750,
             "totalCredit": 133750,
@@ -428,7 +428,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 33 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 33 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 160500,
             "totalCredit": 160500,
@@ -459,7 +459,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 33 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 33 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 160500,
             "totalCredit": 160500,
@@ -490,7 +490,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 33 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 33 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 160500,
             "totalCredit": 160500,
@@ -526,12 +526,12 @@
       "codeHash": "e7e59614d74433e7c51f17495fa4a1958a17fe31dd7309f5f1c3441211ae99f0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Accretion/Dilution Metrics, Break-Even S \u2014 General Ledger Verification",
+        "title": "Accretion/Dilution Metrics, Break-Even Synergies & Engine Verification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary capital facility balance for Accretion/Dilution Metrics, Br.",
-            "title": "Day 33 Ledger \u2014 Initial Facility Allocation",
+            "caption": "Open primary capital facility balance for Accretion/Dilution Metrics.",
+            "title": "Day 33 Ledger — Initial Facility Allocation",
             "isBalanced": true,
             "totalDebit": 134000,
             "totalCredit": 134000,
@@ -557,7 +557,7 @@
           {
             "at": "say1",
             "caption": "Record secondary interest accrual and transaction fee adjustment.",
-            "title": "Day 33 Ledger \u2014 Transaction Accrual Adjustment",
+            "title": "Day 33 Ledger — Transaction Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 160800,
             "totalCredit": 160800,
@@ -588,7 +588,7 @@
           {
             "at": "example",
             "caption": "Audit balance sheet covenant thresholds and collateral allocations.",
-            "title": "Day 33 Ledger \u2014 Credit Covenant Alignment",
+            "title": "Day 33 Ledger — Credit Covenant Alignment",
             "isBalanced": true,
             "totalDebit": 160800,
             "totalCredit": 160800,
@@ -619,7 +619,7 @@
           {
             "at": "tryIt",
             "caption": "Execute real time general ledger reconciliation and final balanced sign off.",
-            "title": "Day 33 Ledger \u2014 Balanced Sign Off",
+            "title": "Day 33 Ledger — Balanced Sign Off",
             "isBalanced": true,
             "totalDebit": 160800,
             "totalCredit": 160800,

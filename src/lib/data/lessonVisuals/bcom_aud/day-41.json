@@ -8,7 +8,7 @@
       "codeHash": "55881f9aa0182bad8bcfaedebae581c313f90d5c243728e3fc3198150c8cf18e",
       "spec": {
         "template": "funnel",
-        "title": "The Fiduciary & Regulatory Architectur... \u2014 Assurance Review",
+        "title": "The Fiduciary & Regulatory Architecture of Modern Corporate Governance — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "6dcc9025bce1b76c6b6ac54a6f3b248a4632c24d33ff3b777d74a6b7091a0502",
       "spec": {
         "template": "funnel",
-        "title": "The Sarbanes-Oxley Act of 2002: Sectio... \u2014 Assurance Review",
+        "title": "The Sarbanes-Oxley Act of 2002: Sections 302 & 404 Statutory Mechanics — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "16fd2f558dd055ccbd9df1639903c70c0521bcaf7dece0d1c4ec6a47dae2f5ed",
       "spec": {
         "template": "funnel",
-        "title": "The Board Audit Committee: Composition... \u2014 Assurance Review",
+        "title": "The Board Audit Committee: Composition — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "f443633868a8fb7f0be95c87813ab98c00c4d2f8c3dab4cc9c3468fb0f87bc02",
       "spec": {
         "template": "funnel",
-        "title": "Internal Audit vs External Audit: The ... \u2014 Assurance Review",
+        "title": "Internal Audit vs External Audit — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "58470b86afab5b0ab48c0c6257c60f73623f8e97aba12bba2363f9634fa1dc71",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Corporate Governance & S... \u2014 Assurance Review",
+        "title": "Comprehensive Corporate Governance & SOX Regulatory Compliance — Assurance Review",
         "steps": [
           {
             "at": "intro",

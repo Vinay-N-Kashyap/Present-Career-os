@@ -10,7 +10,7 @@
       "codeHash": "f1b4d9eb8c59e512de0c5cb4247fcc53b1d81ac372e07d6d2175e31320c254cb",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: GA4 Event Telemetry & BigQuery Str... — Conversion Funnel",
+        "title": "Tier 1: GA4 Event Telemetry & BigQuery — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "f133f3ab96468e54c2d050ef343761eaa2b608f4c66ce93f9f40d48a9376fff5",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Algorithmic Multi-Touch Attributio... — Conversion Funnel",
+        "title": "Tier 2: Algorithmic Multi-Touch — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,7 +334,7 @@
       "codeHash": "af45e696bd492cff29a6157d5dfc83cbdf0f1635c2ac96c3adca7709e2fb15c4",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Pirate Metrics Flywheel & Viral Lo... — Conversion Funnel",
+        "title": "Tier 3: Pirate Metrics Flywheel & Viral — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,11 +496,11 @@
       "codeHash": "6f082f23388e1c0361e80704e2397ca0e7cefd0db4307427b0d4230d3572ca3c",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: Mobile App Acquisition & SKAdNetwo... — Conversion Funnel",
+        "title": "Tier 4: Mobile App Acquisition — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "a1cdeb5e5dc2f53039d34a7dc3771c469e150505ba88f0d97e0fd562077e010b",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Consolidated Milestone 4 Growth Co... — Conversion Funnel",
+        "title": "Tier 5: Consolidated Milestone 4 Growth — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

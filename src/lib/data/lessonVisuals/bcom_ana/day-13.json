@@ -8,7 +8,7 @@
       "codeHash": "4d0123d1afcea141d80e0be4b627626d88a7fc01ce746f97ff2dda626c28ec5d",
       "spec": {
         "template": "bars",
-        "title": "Triangle Cohort Matrices & Longitudina... \u2014 Quantitative Evaluation",
+        "title": "Triangle Cohort Matrices & Longitudinal Retention Physics — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "a6ec8ce0e34ccdc972be84769d8c616b9e529b5240de5619e812948b7deaa31b",
       "spec": {
         "template": "bars",
-        "title": "Gross Retention Rate (GRR) vs Net Rete... \u2014 Quantitative Evaluation",
+        "title": "Gross Retention Rate (GRR) vs Net Retention Rate (NRR) Compounding Dynamics — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "0426e727fc5bfab06f20c4b2031984726ea2bdfac025282e6e5c7c9799664191",
       "spec": {
         "template": "bars",
-        "title": "Hazard Functions, Kaplan-Meier Surviva... \u2014 Quantitative Evaluation",
+        "title": "Hazard Functions, Kaplan-Meier Survival Analysis & Churn Velocity — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "30e969c01b7fc161f913c940ac6d785379a490e02985e756eccbb7ff60e64bec",
       "spec": {
         "template": "bars",
-        "title": "Negative Churn Economics, Account Expa... \u2014 Quantitative Evaluation",
+        "title": "Negative Churn Economics, Account Expansion & Cohort Decay Anomalies — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "b31302921d73caf757b49f816fef87412519cced51f72cddd245ba5fad4938ba",
       "spec": {
         "template": "bars",
-        "title": "Boardroom Retention Scorecards & Execu... \u2014 Quantitative Evaluation",
+        "title": "Boardroom Retention Scorecards & Executive Churn Mitigation Playbooks — Quantitative Evaluation",
         "steps": [
           {
             "at": "intro",

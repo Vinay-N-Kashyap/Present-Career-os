@@ -10,11 +10,11 @@
       "codeHash": "836e7a52a3b248b6ebcda5df1e983d2b5ef381f3fe4fce4df4f4f47e19191b48",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Foundations of Portfolio Theory: Risk, Ret... — General Ledger Verification",
+        "title": "Foundations of Portfolio Theory: Risk — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 126600,
@@ -139,11 +139,11 @@
       "codeHash": "69767ec95e5dc2a81aff17470b5068a2ed19633065fad10d53d1f1142c237555",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Two-Asset Portfolio Return & Covariance Dy... — General Ledger Verification",
+        "title": "Two-Asset Portfolio Return & Covariance Dynamics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Two-Asset.",
+            "caption": "Open primary facility debit entry for Two-Asset Portfolio Return.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 106750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 128100,
@@ -268,11 +268,11 @@
       "codeHash": "e35bbef065b100480d45192c97b0e72bc01e695e4d1b4c94f2aeb54545b83bec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mathematical Derivation of the Minimum Var... — General Ledger Verification",
+        "title": "Mathematical Derivation of the Minimum Variance Portfolio (MVP) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Mathematical.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 108000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 129600,
@@ -397,11 +397,11 @@
       "codeHash": "975d7267b65d110d0c522c540a93e0a7a425eee98fff7362aec7a69605db8087",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Generating the Markowitz Efficient Frontie... — General Ledger Verification",
+        "title": "Generating the Markowitz Efficient Frontier & Opportunity Set — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Generating the.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 131100,
@@ -526,11 +526,11 @@
       "codeHash": "eba85421f36501b767fce5579b5c6fddb05359b86e90356569280dd30a342955",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multi-Asset Covariance Matrix Formulation ... — General Ledger Verification",
+        "title": "Multi-Asset Covariance Matrix Formulation & Optimal Capital Allocation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 23 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,one hundred).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 23 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132600,

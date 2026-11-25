@@ -8,7 +8,7 @@
       "codeHash": "153def03261399954cf00cc6194cb3a2a8299e363484ed5e5bfd8c611557e256",
       "spec": {
         "template": "funnel",
-        "title": "Sovereign Debt Management & The Primar... \u2014 Central Banking & Solvency",
+        "title": "Sovereign Debt Management & The Primary Dealer (PD) System — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "be248e6274f9531c0fe2f34765f7117116752ff5ac0b5a3c9b449cc59b03404e",
       "spec": {
         "template": "funnel",
-        "title": "G-Sec Auction Mechanics: Uniform Price... \u2014 Central Banking & Solvency",
+        "title": "G-Sec Auction Mechanics: Uniform — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "dce9f9858c60480afaa30b7488892dff639df5f624d547fb51130329aa3e902e",
       "spec": {
         "template": "funnel",
-        "title": "STRIPS (Separate Trading of Registered... \u2014 Central Banking & Solvency",
+        "title": "STRIPS (Separate Trading of Registered Interest and Principal of Securities) Mechanics — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "01fedd9b270d8f7d5db28a1282cba8b490ac715ba29cf1134a80de96e8d2ad73",
       "spec": {
         "template": "funnel",
-        "title": "Sovereign Yield Curve Construction: Pa... \u2014 Central Banking & Solvency",
+        "title": "Sovereign Yield Curve Construction: Par, Spot & Forward Curves — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "00a527f1ad29bc6b629391097570381c1ed55950b1307c550abd0f28c9598355",
       "spec": {
         "template": "funnel",
-        "title": "Industrial Sovereign Treasury Lab: G-S... \u2014 Central Banking & Solvency",
+        "title": "Industrial Sovereign Treasury Lab: G-Sec Primary Auction Underwriting — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",

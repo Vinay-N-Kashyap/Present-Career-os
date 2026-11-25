@@ -10,11 +10,11 @@
       "codeHash": "8c149bfe99c638c414fe5ba19782ca1f8d28bea935acd154c7d67464ee3c5dbf",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trading Account Architecture: Cost of Good... — General Ledger Verification",
+        "title": "Trading Account Architecture: Cost — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Trading.",
+            "caption": "Open primary facility debit entry for Trading Account Architecture.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 67000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 80400,
@@ -139,11 +139,11 @@
       "codeHash": "20180672bdf35f2de900f794c6fe1d7176700793189daffc25ba807c671f1247",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Expense Classification Architecture: Direc... — General Ledger Verification",
+        "title": "Expense Classification Architecture: Direct Expenses vs Indirect — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Expense.",
+            "caption": "Open primary facility debit entry for Expense Classification Architecture.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 68250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 81900,
@@ -268,11 +268,11 @@
       "codeHash": "c54d0e204d493572845958d0e07bed66ab3fbe13c7bdf960e7b7ed0a8a050a33",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Closing Inventory Valuation: The Prudence ... — General Ledger Verification",
+        "title": "Closing Inventory Valuation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Closing.",
+            "caption": "Open primary facility debit entry for Closing Inventory Valuation.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 69500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 83400,
@@ -397,11 +397,11 @@
       "codeHash": "503097ed22fc0f2e58728918b18d3bc8f63660c0de508fbb1ffe6939885b5318",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Inventory Shrinkage Dynamics: Normal Spoil... — General Ledger Verification",
+        "title": "Inventory Shrinkage Dynamics: Normal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Inventory.",
+            "caption": "Open primary facility debit entry for Inventory Shrinkage Dynamics.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 70750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 84900,
@@ -526,11 +526,11 @@
       "codeHash": "577caf2046b1b3570f5ce6864656cfc6ec63288b721c7685c5552003af93d670",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Manufacturing Account: Prime Cost, Wor... — General Ledger Verification",
+        "title": "The Manufacturing Account: Prime Cost — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The.",
+            "caption": "Open primary facility debit entry for The Manufacturing Account.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 72000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 86400,

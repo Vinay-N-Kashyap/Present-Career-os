@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "US OFAC Sanctions Architecture, SDN Lists ... Compliance Workflow",
+        "title": "US OFAC Sanctions Architecture, SDN Lists & Secondary Sanctions — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize US OFAC Sanctions Architecture, SDN Li...",
+            "caption": "Stage one: Initialize US OFAC Sanctions Architecture, SDN",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "FATF 40 Recommendations, Mutual Evaluation... Compliance Workflow",
+        "title": "FATF 40 Recommendations, Mutual Evaluations & Blacklist vs Grey List — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize FATF multiple Recommendations, Mutual Evalua...",
+            "caption": "Stage one: Initialize FATF multiple Recommendations, Mutual",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "PMLA 2002 Framework, Section 12 Reporting ... Compliance Workflow",
+        "title": "PMLA 2002 Framework, Section 12 Reporting Entities & the 2023 UBO 10% — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize PMLA multiple Framework, Section twelve Report...",
+            "caption": "Stage one: Initialize PMLA multiple Framework, Section twelve",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "ED Provisional Attachment Powers & Section... Compliance Workflow",
+        "title": "ED Provisional Attachment Powers & Section 32A IBC Clean Slate — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize ED Provisional Attachment Powers & Sec...",
+            "caption": "Stage one: Initialize ED Provisional Attachment Powers",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "FIU-IND Suspicious Transaction Reporting (... Compliance Workflow",
+        "title": "FIU-IND Suspicious Transaction Reporting (STR) & Automated Sanctions — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize FIU-IND Suspicious Transaction Reporti...",
+            "caption": "Stage one: Initialize FIU-IND Suspicious Transaction",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

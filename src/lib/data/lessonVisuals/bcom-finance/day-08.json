@@ -10,11 +10,11 @@
       "codeHash": "929415ab99214abed0810313cd6b6eaf2e1d390fe7d3eb97afd6fd7c90a3cfe9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Macaulay Duration: Cash Flow Timing & Econ... — General Ledger Verification",
+        "title": "Macaulay Duration: Cash Flow Timing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Macaulay.",
+            "caption": "Open primary facility debit entry for Macaulay Duration.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 53000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 63600,
@@ -139,11 +139,11 @@
       "codeHash": "e4b67da7a7f77985c6d04e14a786d7d689f72c386364c472a67377bc6371827f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Modified Duration: Percentage Price Sensit... — General Ledger Verification",
+        "title": "Modified Duration: Percentage Price — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Modified.",
+            "caption": "Open primary facility debit entry for Modified Duration.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 54250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($ten,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 65100,
@@ -268,11 +268,11 @@
       "codeHash": "2ab11aef43c8b12a3d85ae206ad8808b19c264329d909f8b3d6fff5cd3915d13",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bond Convexity: Curvature Correction & Tay... — General Ledger Verification",
+        "title": "Bond Convexity: Curvature Correction — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Bond.",
+            "caption": "Open primary facility debit entry for Bond Convexity.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 55500,
@@ -397,11 +397,11 @@
       "codeHash": "3b78dba4ac205215f87fb6c1fd72add1c7fd9083598d16fa73787d79ef7eb077",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bond Price Sensitivity Percentage Estimato... — General Ledger Verification",
+        "title": "Bond Price Sensitivity Percentage Estimator & BPS Shifts — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Bond Price.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 68100,
@@ -526,11 +526,11 @@
       "codeHash": "e9c2c90fd1499fb350c674e9a050350a71c91bd6d9c4de6b1b2e8203557837e4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Duration Immunization & Asset-Liability Ma... — General Ledger Verification",
+        "title": "Duration Immunization & Asset-Liability Management (ALM) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Duration.",
+            "caption": "Open primary facility debit entry for Duration Immunization.",
             "title": "Day 8 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 58000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 8 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69600,

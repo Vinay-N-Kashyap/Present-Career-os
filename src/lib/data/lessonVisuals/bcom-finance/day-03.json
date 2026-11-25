@@ -10,11 +10,11 @@
       "codeHash": "dc7c1701f11280ca873df7044d62a4a2145dc95a54fc3faca62a665ea7d2f9e2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multi-Stage DCF Modeling, Free Cash Flow to F... — General Ledger Verification",
+        "title": "Multi-Stage DCF Modeling, Free Cash Flow to Firm (FCFF) & Gordon — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Multi-Stage DCF Modeling, Free ...",
+            "caption": "Open primary debit entry for Multi-Stage DCF Modeling.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3540,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Multi-Stage DCF Modeling, Free Cash Flow to F... — General Ledger Verification",
+        "title": "Multi-Stage DCF Modeling, Free Cash Flow to Firm (FCFF) & Gordon — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (2950) for Multi-Stage DCF Modeling, Free ...",
+            "caption": "Step 1: Open primary debit entry (2950) for Multi-Stage DCF Modeling.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 2950,
@@ -264,11 +264,11 @@
       "codeHash": "241bebc6d9b596ea269e18e80d09eea8776eb40992408d8c475ad5737e63be73",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Beta Unlevering and Relevering via the Hamada... — General Ledger Verification",
+        "title": "Beta Unlevering and Relevering via the Hamada Equation (Operating vs Financial Risk) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Beta Unlevering and Relevering ...",
+            "caption": "Open primary debit entry.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3780,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Beta Unlevering and Relevering via the Hamada... — General Ledger Verification",
+        "title": "Beta Unlevering and Relevering via the Hamada Equation (Operating vs Financial Risk) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3150) for Beta Unlevering and Relevering ...",
+            "caption": "Step 1: Open primary debit entry (3150).",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3150,
@@ -518,11 +518,11 @@
       "codeHash": "15aa1d35594d0507262dc658655d21c7ec8c29b23d9022ea45bb24ee8c276265",
       "spec": {
         "template": "ledger-sheet",
-        "title": "WACC Matrix & Two-Way Valuation Sensitivity S... — General Ledger Verification",
+        "title": "WACC Matrix & Two-Way Valuation Sensitivity Surface — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for WACC Matrix & Two-Way Valuation...",
+            "caption": "Open primary debit entry for WACC Matrix & Two-Way Valuation Sensitivity Surface",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4020,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "WACC Matrix & Two-Way Valuation Sensitivity S... — General Ledger Verification",
+        "title": "WACC Matrix & Two-Way Valuation Sensitivity Surface — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3350) for WACC Matrix & Two-Way Valuation...",
+            "caption": "Step 1: Open primary debit entry (3350) for WACC Matrix.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3350,
@@ -772,11 +772,11 @@
       "codeHash": "a28b42000972f39f86aff54d0b26beca094b6426842a81165af966879cdaaa31",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Leveraged Buyout (LBO) Debt Waterfall & Cash ... — General Ledger Verification",
+        "title": "Leveraged Buyout (LBO) Debt Waterfall & Cash Sweep Amortization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Leveraged Buyout (LBO) Debt Wat...",
+            "caption": "Open primary debit entry for Leveraged Buyout.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4260,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Leveraged Buyout (LBO) Debt Waterfall & Cash ... — General Ledger Verification",
+        "title": "Leveraged Buyout (LBO) Debt Waterfall & Cash Sweep Amortization — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3550) for Leveraged Buyout (LBO) Debt Wat...",
+            "caption": "Step 1: Open primary debit entry (3550) for Leveraged Buyout.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3550,
@@ -1026,11 +1026,11 @@
       "codeHash": "ee7a982450801bdc0563e3bd817f3086367f389dbfc655e98ecc4cc444bf2239",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Valuation Synthesis & Equity Value... — General Ledger Verification",
+        "title": "Enterprise Valuation Synthesis & Equity Value Bridge — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Enterprise Valuation Synthesis ...",
+            "caption": "Open primary debit entry for Enterprise Valuation Synthesis.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 3 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 3 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4500,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Valuation Synthesis & Equity Value... — General Ledger Verification",
+        "title": "Enterprise Valuation Synthesis & Equity Value Bridge — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3750) for Enterprise Valuation Synthesis ...",
+            "caption": "Step 1: Open primary debit entry (3750) for Enterprise Valuation Synthesis.",
             "title": "Day 3 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3750,

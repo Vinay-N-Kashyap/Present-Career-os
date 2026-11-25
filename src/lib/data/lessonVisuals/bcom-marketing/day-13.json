@@ -10,7 +10,7 @@
       "codeHash": "d52c6975bfc8d09c454f2cfa9f6c0379126fa3bc9e741ec82b46bcd54ebe647d",
       "spec": {
         "template": "funnel",
-        "title": "Market-Skimming vs Market-Penetration: Str... — Conversion Funnel",
+        "title": "Market-Skimming vs Market-Penetration: Strategic Postures for New — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "2c6a8218b8befadec062388c37af364ef880ad58c62f0216503d794a81953fcf",
       "spec": {
         "template": "funnel",
-        "title": "Product-Mix Pricing: Two-Part Tariffs, Cap... — Conversion Funnel",
+        "title": "Product-Mix Pricing: Two-Part Tariffs — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "fd0305956abdfb808ef9f01b0c59b681ff8002a8c998634b26aaf165dc54c8b7",
       "spec": {
         "template": "funnel",
-        "title": "Bundling Economics: Stigler's Theorem, Pur... — Conversion Funnel",
+        "title": "Bundling Economics: Stigler's Theorem — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "c02fa1b2b6b339444867f9c93eb24c2ebd9da508ac24b3cac33a914bb697c2f3",
       "spec": {
         "template": "funnel",
-        "title": "Psychological Pricing Heuristics: Decoy Ef... — Conversion Funnel",
+        "title": "Psychological Pricing Heuristics: Decoy — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "ff909d0d3f5e5a2ebdbd80fca5c52eda3d1c88376d4833cfd3b9a50c5d7018c2",
       "spec": {
         "template": "funnel",
-        "title": "Promotional Price Discrimination & Robinso... — Conversion Funnel",
+        "title": "Promotional Price Discrimination & Robinson-Patman Act Compliance — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

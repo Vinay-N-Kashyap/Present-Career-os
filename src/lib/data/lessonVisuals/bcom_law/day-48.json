@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 1: Article 21 Discretionary Relief & ... — Cross-Border Workflow",
+        "title": "Part 1: Article 21 Discretionary Relief — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part one: Article multiple Discretionary Relie...",
+            "caption": "Stage one: Initialize Part one: Article multiple Discretionary",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 2: Extraterritorial Discovery, Asset ... — Cross-Border Workflow",
+        "title": "Part 2: Extraterritorial Discovery — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part two: Extraterritorial Discovery, As...",
+            "caption": "Stage one: Initialize Part two: Extraterritorial Discovery",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 3: Cross-Border Anti-Suit Injunctions... — Cross-Border Workflow",
+        "title": "Part 3: Cross-Border Anti-Suit — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part three: Cross-Border Anti-Suit Injunct...",
+            "caption": "Stage one: Initialize Part three: Cross-Border Anti-Suit",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 4: Article 6 Public Policy (Ordre Pub... — Cross-Border Workflow",
+        "title": "Part 4: Article 6 Public Policy (Ordre Public) Narrow Exception — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part four: Article six Public Policy (Ordre...",
+            "caption": "Stage one: Initialize Part four: Article six Public Policy",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 5: Production Cross-Border Asset Reco... — Cross-Border Workflow",
+        "title": "Part 5: Production Cross-Border Asset — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part five: Production Cross-Border Asset ...",
+            "caption": "Stage one: Initialize Part five: Production Cross-Border",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

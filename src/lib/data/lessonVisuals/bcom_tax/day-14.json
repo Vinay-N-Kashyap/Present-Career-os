@@ -10,11 +10,11 @@
       "codeHash": "944a14341e5857989393b3189cdb6d1673695857454a6658e0797366de8d53b5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Depreciable Asset Dynamics: Section 50 Deemed Shor — Tax Ledger Verification",
+        "title": "Depreciable Asset Dynamics: Section 50 Deemed Short-Term Capital — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Depreciable Asset.",
+            "caption": "Open primary taxable assessment ledger for Depreciable Asset Dynamics.",
             "title": "Day 14 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 560000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 14 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 635000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Depreciable Asset.",
+            "caption": "Execute simulated computational case study for Depreciable Asset Dynamics.",
             "title": "Day 14 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 635000,
@@ -141,11 +141,11 @@
       "codeHash": "7ea31d9383db8b6581c7f336125c5fbf390db22de9e12ff3cd1a5149a1a4d631",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Slump Sale Architecture: Section 50B Invariants &  — Tax Ledger Verification",
+        "title": "Slump Sale Architecture: Section 50B Invariants & Rule 11UAE Net — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Slump Sale.",
+            "caption": "Open primary taxable assessment ledger for Slump Sale Architecture.",
             "title": "Day 14 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 567500,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 14 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 646000,
@@ -272,11 +272,11 @@
       "codeHash": "cb6fa5c1a7f3514237d0f76e5c8a63f2b5e7d026820928ab452fb6b995407c92",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Real Estate Full Value: Section 50C Deeming Fictio — Tax Ledger Verification",
+        "title": "Real Estate Full Value: Section 50C Deeming Fiction & The 10% Safe — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Real Estate Full.",
+            "caption": "Open primary taxable assessment ledger for Real Estate Full Value.",
             "title": "Day 14 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 575000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 14 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 657000,
@@ -403,11 +403,11 @@
       "codeHash": "de24454c7add125ddae5e2ae9daa6360bde2d8cfa547fdff5cabe2b3f7faec37",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Unquoted Shares Valuation: Section 50CA & Rule 11U — Tax Ledger Verification",
+        "title": "Unquoted Shares Valuation: Section 50CA & Rule 11UA Fair Market Value — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Unquoted Shares.",
+            "caption": "Open primary taxable assessment ledger for Unquoted Shares Valuation.",
             "title": "Day 14 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 582500,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 14 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 668000,
@@ -534,11 +534,11 @@
       "codeHash": "6f665fd3a4b3b33e391dc1f5d47ab85aff3b08e9651b43795b611312a10643ec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Corporate Share Buyback Taxation: Section 115QA vs — Tax Ledger Verification",
+        "title": "Corporate Share Buyback Taxation: Section 115QA — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Corporate Share.",
+            "caption": "Open primary taxable assessment ledger for Corporate Share Buyback Taxation.",
             "title": "Day 14 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 590000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 14 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 679000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Corporate Share Buyback.",
+            "caption": "Execute simulated computational case study for Corporate Share Buyback Taxation.",
             "title": "Day 14 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 679000,

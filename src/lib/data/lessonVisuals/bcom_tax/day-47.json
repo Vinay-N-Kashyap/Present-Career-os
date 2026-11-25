@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Reconstructed Section 147 Regime: Shift f... — General Ledger Verification",
+        "title": "The Reconstructed Section 147 Regime: Shift — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Reconstructed Sect (Eta Alpha).",
+            "caption": "Open primary debit entry for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9550,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Reconstructed Sect (Alpha).",
+            "caption": "Record secondary accrual adjustment for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11460,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Reconstructed Sect (Eta).",
+            "caption": "Reconcile sub-ledger balances for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11460,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Reconstructed Sect (Alpha).",
+            "caption": "Verify double-entry trial balance for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11460,
@@ -134,11 +134,11 @@
       "partTitle": "The Reconstructed Section 147 Regime: Shift from 'Reason to Believe' to 'Information Suggesting Escapement'",
       "filled": {
         "template": "ledger-sheet",
-        "title": "The Reconstructed Section 147 Regime: Shift f... — General Ledger Verification",
+        "title": "The Reconstructed Section 147 Regime: Shift — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for The Reconstructed Sect (Eta Alpha).",
+            "caption": "Open primary debit entry for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9550,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for The Reconstructed Sect (Alpha).",
+            "caption": "Record secondary accrual adjustment for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11460,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for The Reconstructed Sect (Eta).",
+            "caption": "Reconcile sub-ledger balances for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11460,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for The Reconstructed Sect (Alpha).",
+            "caption": "Verify double-entry trial balance for The Reconstructed Section 147 Regime.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11460,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mandatory Section 148A Preliminary Inquiry Ar... — General Ledger Verification",
+        "title": "Mandatory Section 148A Preliminary Inquiry Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Mandatory Section A Pr (Eta Beta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9750,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Mandatory Section A Pr (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Mandatory Section A Pr (Eta).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Mandatory Section A Pr (Beta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -389,11 +389,11 @@
       "partTitle": "Mandatory Section 148A Preliminary Inquiry Architecture & The Landmark Ashish Agarwal Ruling",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Mandatory Section 148A Preliminary Inquiry Ar... — General Ledger Verification",
+        "title": "Mandatory Section 148A Preliminary Inquiry Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Mandatory Section A Pr (Eta Beta).",
+            "caption": "Open primary debit entry.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9750,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Mandatory Section A Pr (Beta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Mandatory Section A Pr (Eta).",
+            "caption": "Reconcile sub-ledger balances.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Mandatory Section A Pr (Beta).",
+            "caption": "Verify double-entry trial balance.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11700,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Limitation Periods under Section 149 & The Fi... — General Ledger Verification",
+        "title": "Limitation Periods under Section 149 & The Fifty-Lakh-Rupee Asset — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Limitation Periods und (Eta Gamma).",
+            "caption": "Open primary debit entry for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9950,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Limitation Periods und (Gamma).",
+            "caption": "Record secondary accrual adjustment for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11940,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Limitation Periods und (Eta).",
+            "caption": "Reconcile sub-ledger balances for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11940,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Limitation Periods und (Gamma).",
+            "caption": "Verify double-entry trial balance for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11940,
@@ -644,11 +644,11 @@
       "partTitle": "Limitation Periods under Section 149 & The Fifty-Lakh-Rupee Asset Threshold",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Limitation Periods under Section 149 & The Fi... — General Ledger Verification",
+        "title": "Limitation Periods under Section 149 & The Fifty-Lakh-Rupee Asset — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Limitation Periods und (Eta Gamma).",
+            "caption": "Open primary debit entry for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9950,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Limitation Periods und (Gamma).",
+            "caption": "Record secondary accrual adjustment for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11940,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Limitation Periods und (Eta).",
+            "caption": "Reconcile sub-ledger balances for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11940,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Limitation Periods und (Gamma).",
+            "caption": "Verify double-entry trial balance for Limitation Periods under Section 149.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11940,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 151 Specified Authority Protocols, Ju... — General Ledger Verification",
+        "title": "Section 151 Specified Authority Protocols, Jurisdictional Writs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section Specified Auth (Eta Delta).",
+            "caption": "Open primary debit entry for Section 151 Specified Authority Protocols.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10150,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section Specified Auth (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section Specified Auth (Eta).",
+            "caption": "Reconcile sub-ledger balances for Section 151 Specified Authority Protocols.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section Specified Auth (Delta).",
+            "caption": "Verify double-entry trial balance for Section 151 Specified Authority Protocols.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -899,11 +899,11 @@
       "partTitle": "Section 151 Specified Authority Protocols, Jurisdictional Writs & Section 153(2) Limitation",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Section 151 Specified Authority Protocols, Ju... — General Ledger Verification",
+        "title": "Section 151 Specified Authority Protocols, Jurisdictional Writs — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Section Specified Auth (Eta Delta).",
+            "caption": "Open primary debit entry for Section 151 Specified Authority Protocols.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10150,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Section Specified Auth (Delta).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Section Specified Auth (Eta).",
+            "caption": "Reconcile sub-ledger balances for Section 151 Specified Authority Protocols.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Section Specified Auth (Delta).",
+            "caption": "Verify double-entry trial balance for Section 151 Specified Authority Protocols.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12180,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Section 148A ... — General Ledger Verification",
+        "title": "Production Python Architecture: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Eta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10350,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Eta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Section 148A Inquiry & Limitation Engine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Section 148A ... — General Ledger Verification",
+        "title": "Production Python Architecture: Section — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Eta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 47 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 10350,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 47 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Eta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 47 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 12420,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 47 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 12420,

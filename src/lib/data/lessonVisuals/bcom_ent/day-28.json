@@ -10,11 +10,11 @@
       "codeHash": "dc1a3eb2817a5b3982c5126b23eb9ea561f8986d7c64c56859e1bc931e488c51",
       "spec": {
         "template": "funnel",
-        "title": "Quality of Earnings (QoE) & EBITDA Norma - Sovereign Funnel",
+        "title": "Quality of Earnings (QoE) & EBITDA Normalization - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (twenty,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (nine,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Quality of Earnings (QoE) & EBITDA Norma - Sovereign Funnel",
+        "title": "Quality of Earnings (QoE) & EBITDA Normalization - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (twenty,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -210,7 +210,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (nine,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,11 +330,11 @@
       "codeHash": "6a41353a50e5f9a0bbbeab6996e82c51cbca7f37ed9e92aff60c1a8e6d23ef78",
       "spec": {
         "template": "funnel",
-        "title": "Leveraged Buyout (LBO) Debt Sizing & Tra - Sovereign Funnel",
+        "title": "Leveraged Buyout (LBO) Debt Sizing & Tranche Architecture - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (eleven,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -488,11 +488,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Leveraged Buyout (LBO) Debt Sizing & Tra - Sovereign Funnel",
+        "title": "Leveraged Buyout (LBO) Debt Sizing & Tranche Architecture - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -530,7 +530,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (eleven,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "1ab83c669c097eb2f5da76db6dbe0ef8a9e51849ae14245d8e34ae3754065113",
       "spec": {
         "template": "funnel",
-        "title": "LBO Returns Engine: MOIC, IRR & Cash Pay - Sovereign Funnel",
+        "title": "LBO Returns Engine: MOIC, IRR & Cash Paydown Waterfall - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "LBO Returns Engine: MOIC, IRR & Cash Pay - Sovereign Funnel",
+        "title": "LBO Returns Engine: MOIC, IRR & Cash Paydown Waterfall - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (three,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,11 +970,11 @@
       "codeHash": "f2c83cc55df6d253f4443715dfc4f66519e5d38ccdce9cba50231f2e7b2bdc6a",
       "spec": {
         "template": "funnel",
-        "title": "Industry Rollup Synergies & Multiple Arb - Sovereign Funnel",
+        "title": "Industry Rollup Synergies & Multiple Arbitrage Economics - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1128,11 +1128,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Industry Rollup Synergies & Multiple Arb - Sovereign Funnel",
+        "title": "Industry Rollup Synergies & Multiple Arbitrage Economics - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "c289b4806c77fb63f046f3238dc880b934835a06df3ebb7bbc3b71fd2e111040",
       "spec": {
         "template": "funnel",
-        "title": "Master M&A Integration, Due Diligence &  - Sovereign Funnel",
+        "title": "Master M&A Integration, Due Diligence - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (multiple,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (ten,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master M&A Integration, Due Diligence &  - Sovereign Funnel",
+        "title": "Master M&A Integration, Due Diligence - Sovereign Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Global pipeline evaluation (multiple,multiple prospects).",
+            "caption": "Global pipeline evaluation.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1490,7 +1490,7 @@
           },
           {
             "at": "say1",
-            "caption": "Rigorous screening qualifies multiple.zero% of targets (multiple,multiple).",
+            "caption": "Rigorous screening qualifies multiple.zero% of targets.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Quantitative valuation confirms (ten,multiple high-conviction positions).",
+            "caption": "Quantitative valuation confirms.",
             "activeStageId": "target",
             "stages": [
               {

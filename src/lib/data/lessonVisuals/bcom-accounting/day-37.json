@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Current Tax vs Deferred Tax & The Shift ... — Ledger Verification",
+        "title": "Current Tax vs Deferred Tax & The Shift to the Balance Sheet — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Current Tax.",
+            "caption": "Open primary Ind AS ledger posting for Current Tax vs Deferred Tax.",
             "title": "Day 37 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 42752,
@@ -41,7 +41,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 37 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 57752,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Tax Base Concept, Asset vs Liability... — Ledger Verification",
+        "title": "The Tax Base Concept, Asset vs Liability Formulations & Initial — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for The Tax Base.",
+            "caption": "Open primary Ind AS ledger posting for The Tax Base Concept.",
             "title": "Day 37 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 47752,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 37 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 62752,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Taxable vs Deductible Temporary Differen... — Ledger Verification",
+        "title": "Taxable vs Deductible Temporary Differences & The DTA Probability — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Taxable vs.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 37 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 52752,
@@ -301,7 +301,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 37 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 67752,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Substantively Enacted Tax Rates (Section... — Ledger Verification",
+        "title": "Substantively Enacted Tax Rates (Section 115BAA), MAT Credits — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Substantively.",
+            "caption": "Open primary Ind AS ledger posting for Substantively Enacted Tax Rates.",
             "title": "Day 37 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 57752,
@@ -431,7 +431,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 37 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 72752,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Python Deferred Tax Engine Execution & I... — Ledger Verification",
+        "title": "Python Deferred Tax Engine Execution & Ind AS 12 Balance Sheet — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Python.",
+            "caption": "Open primary Ind AS ledger posting for Python Deferred Tax Engine Execution.",
             "title": "Day 37 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 62752,
@@ -561,7 +561,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 37 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 77752,

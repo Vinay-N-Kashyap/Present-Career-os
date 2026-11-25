@@ -10,11 +10,11 @@
       "codeHash": "a1219c3640bcd152bf2ac068363be58b6005bbe2924d65e5198278fd1de2f60d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Transition from Total Risk to Systemat... — General Ledger Verification",
+        "title": "The Transition from Total Risk to Systematic Risk & Beta Derivation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Transition.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 130800,
@@ -139,11 +139,11 @@
       "codeHash": "dc3ba872c318a3e04ab949860fb876ec37a07e77c1e35322f1d8e8137c185019",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Security Market Line (SML) & CAPM Pric... — General Ledger Verification",
+        "title": "The Security Market Line (SML) & CAPM Pricing Equation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Security.",
+            "caption": "Open primary facility debit entry for The Security Market Line.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132300,
@@ -268,11 +268,11 @@
       "codeHash": "2caa6b620952a317189188680708fdb919053590d6a0c64514db885e31ac8a83",
       "spec": {
         "template": "ledger-sheet",
-        "title": "SML Pricing Discrepancies & Jensen's Alpha... — General Ledger Verification",
+        "title": "SML Pricing Discrepancies & Jensen's Alpha Identification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for SML.",
+            "caption": "Open primary facility debit entry for SML Pricing Discrepancies.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 111500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 133800,
@@ -397,11 +397,11 @@
       "codeHash": "a8377ec0ecf4f56b0d45531f81f0dd0e364b2e0c3954ab352b24d0bd1245d61b",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Portfolio Beta Aggregation & Synthetic Hed... — General Ledger Verification",
+        "title": "Portfolio Beta Aggregation & Synthetic Hedging Strategies — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Portfolio Beta.",
+            "caption": "Open primary facility debit entry for Portfolio Beta Aggregation.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 112750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 135300,
@@ -526,11 +526,11 @@
       "codeHash": "9e44f041231afd9ae8245c5519fd10c1ab4f8f819cd04a30d67e2286bb64e5ff",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Market Line (CML) vs Security Mark... — General Ledger Verification",
+        "title": "Capital Market Line (CML) vs Security Market Line (SML) & Model — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Capital Market.",
+            "caption": "Open primary facility debit entry for Capital Market Line.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 114000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 136800,

@@ -10,7 +10,7 @@
       "codeHash": "f5005f5b2de072aec808181d9f73f8770bd1b3340c667d83c136c0c5a0e4ee03",
       "spec": {
         "template": "tree-graph",
-        "title": "Agent Communication Language (ACL), FIPA Stan... — Enterprise AI Decision Graph",
+        "title": "Agent Communication Language (ACL), FIPA Standards & Performatives — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Agent Communication Language (A...",
+            "caption": "Ingest enterprise Context Query for Agent Communication Language.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Agent Communication Language (ACL), FIPA Stan... — Enterprise AI Decision Graph",
+        "title": "Agent Communication Language (ACL), FIPA Standards & Performatives — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Agent Communication Language (A...",
+            "caption": "Step 1: Ingest enterprise Context Query for Agent Communication Language.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "4162f2824f27af17419efe6d085b49c6b28a3f069d6757ef4c6c54509bba4d85",
       "spec": {
         "template": "tree-graph",
-        "title": "Asynchronous Message Queues, Mailboxes & Even... — Enterprise AI Decision Graph",
+        "title": "Asynchronous Message Queues, Mailboxes & Event-Driven Agent — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Asynchronous Message Queues, Ma...",
+            "caption": "Ingest enterprise Context Query for Asynchronous Message Queues.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Asynchronous Message Queues, Mailboxes & Even... — Enterprise AI Decision Graph",
+        "title": "Asynchronous Message Queues, Mailboxes & Event-Driven Agent — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Asynchronous Message Queues, Ma...",
+            "caption": "Step 1: Ingest enterprise Context Query for Asynchronous Message Queues.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "71ef201825465a0c83110c1eaba94ca04e528c3eea86f5812db4a898b7ef0409",
       "spec": {
         "template": "tree-graph",
-        "title": "Blackboard Architecture: Shared Memory, Worki... — Enterprise AI Decision Graph",
+        "title": "Blackboard Architecture: Shared Memory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Blackboard Architecture: Shared...",
+            "caption": "Ingest enterprise Context Query for Blackboard Architecture: Shared",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Blackboard Architecture: Shared Memory, Worki... — Enterprise AI Decision Graph",
+        "title": "Blackboard Architecture: Shared Memory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Blackboard Architecture: Shared...",
+            "caption": "Step 1: Ingest enterprise Context Query for Blackboard Architecture: Shared",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "cc73e6452505ad9a1f6bfad64b7ceb2c347809f13b1802feb9ba525cb0efd760",
       "spec": {
         "template": "tree-graph",
-        "title": "Concurrency Control, Deadlock Prevention & Ra... — Enterprise AI Decision Graph",
+        "title": "Concurrency Control, Deadlock Prevention & Race Condition Mitigation — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Concurrency Control, Deadlock P...",
+            "caption": "Ingest enterprise Context Query for Concurrency Control.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Concurrency Control, Deadlock Prevention & Ra... — Enterprise AI Decision Graph",
+        "title": "Concurrency Control, Deadlock Prevention & Race Condition Mitigation — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Concurrency Control, Deadlock P...",
+            "caption": "Step 1: Ingest enterprise Context Query for Concurrency Control.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "5bbebc1d4456fb86881aa0c9db88c38f199ad03d020d38d12ecb7d15c8507365",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a High-Throug... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a High-Throug... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

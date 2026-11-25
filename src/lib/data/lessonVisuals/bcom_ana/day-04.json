@@ -10,11 +10,11 @@
       "codeHash": "8e806642962a935a754d55f73a7e1e9ca092e951ee8c004b656589a0af5773b5",
       "spec": {
         "template": "bars",
-        "title": "Cash Conversion Cycle (CCC) & Operating Cash ... — Quantitative KPI Distribution",
+        "title": "Cash Conversion Cycle (CCC) & Operating Cash Flow Dynamics — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Cash Conversion Cycle (CCC) & Opera...",
+            "caption": "Baseline KPI cohort metrics for Cash Conversion Cycle.",
             "max": 100,
             "bars": [
               {
@@ -95,7 +95,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Cash Conversion Cycle (CCC)...",
+            "caption": "Commit audited analytical dashboard for Cash Conversion Cycle.",
             "max": 100,
             "bars": [
               {
@@ -124,11 +124,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Cash Conversion Cycle (CCC) & Operating Cash ... — Quantitative KPI Distribution",
+        "title": "Cash Conversion Cycle (CCC) & Operating Cash Flow Dynamics — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Cash Conversion Cycle (CCC) & Opera...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Cash Conversion Cycle.",
             "max": 100,
             "bars": [
               {
@@ -209,7 +209,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Cash Conversion Cycle (CCC)...",
+            "caption": "Step 4: Commit audited analytical dashboard for Cash Conversion Cycle.",
             "max": 100,
             "bars": [
               {
@@ -242,11 +242,11 @@
       "codeHash": "60f0ccbb0b12e0933fd766d12a862dcf4785f0877a9e30a9f14033a9713553ab",
       "spec": {
         "template": "bars",
-        "title": "Economic Order Quantity (EOQ) & Total Invento... — Quantitative KPI Distribution",
+        "title": "Economic Order Quantity (EOQ) & Total Inventory Cost Minimization — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Economic Order Quantity (EOQ) & Tot...",
+            "caption": "Baseline KPI cohort metrics for Economic Order Quantity.",
             "max": 100,
             "bars": [
               {
@@ -327,7 +327,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Economic Order Quantity (EO...",
+            "caption": "Commit audited analytical dashboard for Economic Order Quantity.",
             "max": 100,
             "bars": [
               {
@@ -356,11 +356,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Economic Order Quantity (EOQ) & Total Invento... — Quantitative KPI Distribution",
+        "title": "Economic Order Quantity (EOQ) & Total Inventory Cost Minimization — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Economic Order Quantity (EOQ) & Tot...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Economic Order Quantity.",
             "max": 100,
             "bars": [
               {
@@ -441,7 +441,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Economic Order Quantity (EO...",
+            "caption": "Step 4: Commit audited analytical dashboard for Economic Order Quantity.",
             "max": 100,
             "bars": [
               {
@@ -474,11 +474,11 @@
       "codeHash": "4e163729f1d5389e6c22da861c5f0ce369bfb7f39eee8594eaa7fe8b3e2681b2",
       "spec": {
         "template": "bars",
-        "title": "Stochastic Demand Reorder Points (ROP) & Safe... — Quantitative KPI Distribution",
+        "title": "Stochastic Demand Reorder Points (ROP) & Safety Stock Sizing — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Stochastic Demand Reorder Points (R...",
+            "caption": "Baseline KPI cohort metrics for Stochastic Demand Reorder Points.",
             "max": 100,
             "bars": [
               {
@@ -559,7 +559,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Stochastic Demand Reorder P...",
+            "caption": "Commit audited analytical dashboard for Stochastic Demand Reorder Points.",
             "max": 100,
             "bars": [
               {
@@ -588,11 +588,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Stochastic Demand Reorder Points (ROP) & Safe... — Quantitative KPI Distribution",
+        "title": "Stochastic Demand Reorder Points (ROP) & Safety Stock Sizing — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Stochastic Demand Reorder Points (R...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Stochastic Demand Reorder Points.",
             "max": 100,
             "bars": [
               {
@@ -673,7 +673,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Stochastic Demand Reorder P...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -706,11 +706,11 @@
       "codeHash": "fe1626cbee3aab5098f49b38d2d371d8eb88793c87f394a9c4bacc2046d3cfae",
       "spec": {
         "template": "bars",
-        "title": "Accounts Receivable Aging Matrix & Expected C... — Quantitative KPI Distribution",
+        "title": "Accounts Receivable Aging Matrix & Expected Credit Loss (ECL) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Accounts Receivable Aging Matrix & ...",
+            "caption": "Baseline KPI cohort metrics for Accounts Receivable Aging Matrix.",
             "max": 100,
             "bars": [
               {
@@ -791,7 +791,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Accounts Receivable Aging M...",
+            "caption": "Commit audited analytical dashboard for Accounts Receivable Aging Matrix.",
             "max": 100,
             "bars": [
               {
@@ -820,11 +820,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Accounts Receivable Aging Matrix & Expected C... — Quantitative KPI Distribution",
+        "title": "Accounts Receivable Aging Matrix & Expected Credit Loss (ECL) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Accounts Receivable Aging Matrix & ...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Accounts Receivable Aging Matrix.",
             "max": 100,
             "bars": [
               {
@@ -905,7 +905,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Accounts Receivable Aging M...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -938,11 +938,11 @@
       "codeHash": "6cb8aa215d0966a7dafb1486796fb0007d0238102ce8813e62fc4480b988afcb",
       "spec": {
         "template": "bars",
-        "title": "Working Capital Liquidity Stress Testing & Ca... — Quantitative KPI Distribution",
+        "title": "Working Capital Liquidity Stress Testing & Cash Burn Runway Simulation — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Working Capital Liquidity Stress Te...",
+            "caption": "Baseline KPI cohort metrics for Working Capital Liquidity Stress Testing.",
             "max": 100,
             "bars": [
               {
@@ -1023,7 +1023,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Working Capital Liquidity S...",
+            "caption": "Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {
@@ -1052,11 +1052,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Working Capital Liquidity Stress Testing & Ca... — Quantitative KPI Distribution",
+        "title": "Working Capital Liquidity Stress Testing & Cash Burn Runway Simulation — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Working Capital Liquidity Stress Te...",
+            "caption": "Step 1: Baseline KPI cohort metrics.",
             "max": 100,
             "bars": [
               {
@@ -1137,7 +1137,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Working Capital Liquidity S...",
+            "caption": "Step 4: Commit audited analytical dashboard.",
             "max": 100,
             "bars": [
               {

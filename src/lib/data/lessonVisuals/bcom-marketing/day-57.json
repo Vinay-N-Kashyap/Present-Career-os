@@ -8,7 +8,7 @@
       "codeHash": "5e1d2c85ef617895afbd3d7a8c7da3c7dd686d9b4af277edeed91b6cab186905",
       "spec": {
         "template": "funnel",
-        "title": "Tokenized Loyalty Architectures: Utili... \u2014 Conversion Funnel",
+        "title": "Tokenized Loyalty Architectures: Utility Tokens, Non-Fungible Brand — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "1652435d722e18d3317c8efbae2265eccf75c2a6004c61f3f13b0bfb801c3f7d",
       "spec": {
         "template": "funnel",
-        "title": "Decentralized Autonomous Brand Communi... \u2014 Conversion Funnel",
+        "title": "Decentralized Autonomous Brand Communities (DAOs) & Quadratic Voting — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "ab74828b2075a057dde616e0a570568f25e421e2c99063cbba5e65131f2fbef1",
       "spec": {
         "template": "funnel",
-        "title": "Zero-Knowledge Proofs (ZKP) in Consume... \u2014 Conversion Funnel",
+        "title": "Zero-Knowledge Proofs (ZKP) in Consumer Privacy: zk-SNARKs — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "85e0822d533347560bdb9d3d63a1122462100041fc6a4f7991c514e07738273f",
       "spec": {
         "template": "funnel",
-        "title": "Interoperable Brand Identity & Composa... \u2014 Conversion Funnel",
+        "title": "Interoperable Brand Identity & Composable Consumer Equity — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "e4bc93d9520de2ee742fa31469a1ce8aa78b72902fc5fbf1dbfedd651cdd993c",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Tokenized Loyalty & Quadra... \u2014 Conversion Funnel",
+        "title": "Algorithmic Tokenized Loyalty & Quadratic Governance Voting Simulator — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

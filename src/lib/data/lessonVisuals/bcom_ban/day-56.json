@@ -8,7 +8,7 @@
       "codeHash": "0f285ff23fe453c9a11a102300936e2f46a1a47f07301994b2fd8b519fece6ff",
       "spec": {
         "template": "funnel",
-        "title": "Central Bank Operating Framework: The ... — Central Banking & Solvency",
+        "title": "Central Bank Operating Framework — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "230e10ab106a2d7417f8fb5a0ca5e770387cd1f81946b64522cf013befbf5774",
       "spec": {
         "template": "funnel",
-        "title": "Liquidity Adjustment Facility (LAF) Op... — Central Banking & Solvency",
+        "title": "Liquidity Adjustment Facility (LAF) Operations: Repo, Reverse Repo — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "cc717ff551537d36915e225499e56c23c07bf6bee3327d4377c4b9c61c27d39c",
       "spec": {
         "template": "funnel",
-        "title": "Open Market Operations (OMO) & Long-Te... — Central Banking & Solvency",
+        "title": "Open Market Operations (OMO) & Long-Term Repo Operations: Balance — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "85d7d3edad139af0a55aa7ff92ea0bf6a05b0f0e69574f3cc1d4199370affdb7",
       "spec": {
         "template": "funnel",
-        "title": "Marginal Standing Facility (MSF) & Len... — Central Banking & Solvency",
+        "title": "Marginal Standing Facility (MSF) & Lender of Last Resort Protocols — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "7a459ae1a4117fa881f105093792eb9761e161801854947e6cb68407d835fe5d",
       "spec": {
         "template": "funnel",
-        "title": "Industrial Central Banking Lab: Dynami... — Central Banking & Solvency",
+        "title": "Industrial Central Banking Lab: Dynamic Treasury Liquidity Desk — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",

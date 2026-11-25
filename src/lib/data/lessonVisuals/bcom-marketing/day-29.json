@@ -10,11 +10,11 @@
       "codeHash": "4fc9af87aeb1a48c2188df0c04a00bd3ee57032d7ea7f627f87729be5d82b289",
       "spec": {
         "template": "funnel",
-        "title": "The Last-Touch Attribution Blindspot & Dem... — Conversion Funnel",
+        "title": "The Last-Touch Attribution Blindspot & Demand Creation vs Demand — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "3c4cb641b778495dbd986f7aace99aa4531f28ea67873a82daf6e466af37fac7",
       "spec": {
         "template": "funnel",
-        "title": "The Hospital Intensive Care Patient Monito... — Conversion Funnel",
+        "title": "The Hospital Intensive Care Patient Monitoring Unit & Proactive Churn — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "23dd507c3c4d87f6316046b05741458649311dbf030c7d61092d7713aa2842c0",
       "spec": {
         "template": "funnel",
-        "title": "Triangular Cohort Retention Grids, Econome... — Conversion Funnel",
+        "title": "Triangular Cohort Retention Grids, Econometric MMM Adstock & Geo-Lift — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,OK total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "ebf6b8a9a7aee28e60cbba627cb0f346c23fd4160357c1c8f9dcfe81441cde82",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Simulator: Econometric MMM Ads... — Conversion Funnel",
+        "title": "Interactive Simulator: Econometric MMM Adstock Saturation & Cohort Churn Engine — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "e2adc08b014625c06a0d642106679accb0ea1d54b1f3bde446ebf48b3cd99cc7",
       "spec": {
         "template": "funnel",
-        "title": "Analytics Governance Invariants, Productio... — Conversion Funnel",
+        "title": "Analytics Governance Invariants, Production Post-Mortems & Diagnostic — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

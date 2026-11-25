@@ -10,7 +10,7 @@
       "codeHash": "52afd8d63c904bac89130488e87c8e320432e19b35154925c6f512691321c909",
       "spec": {
         "template": "tree-graph",
-        "title": "Tier 1: Enterprise No-Code Application G... — Enterprise AI Decision Graph",
+        "title": "Tier 1: Enterprise No-Code Application — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -134,7 +134,7 @@
       "codeHash": "bad0cad366925eccf4211d0a61ba97e493c168407c9f3dbd633bb828202f6f70",
       "spec": {
         "template": "tree-graph",
-        "title": "Tier 2: Multi-Agent Swarm Consensus & Bl... — Enterprise AI Decision Graph",
+        "title": "Tier 2: Multi-Agent Swarm Consensus — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -258,7 +258,7 @@
       "codeHash": "69686c3b1dfb69a0896acde3cf7ac39996465aec47a18ce059ea0280dd81894b",
       "spec": {
         "template": "tree-graph",
-        "title": "Tier 3: Cloud AI FinOps Governance & Sub... — Enterprise AI Decision Graph",
+        "title": "Tier 3: Cloud AI FinOps Governance — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -382,7 +382,7 @@
       "codeHash": "03df32b3be4cddf0a60e294f27a2533ca14ad40c32582c165c094f842a0ea97e",
       "spec": {
         "template": "tree-graph",
-        "title": "Tier 4: Modern Data Lakehouse, Delta ACI... — Enterprise AI Decision Graph",
+        "title": "Tier 4: Modern Data Lakehouse, Delta — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -506,7 +506,7 @@
       "codeHash": "943aa86597f95c54b9541f1c26c3d8ccdcf7cdad529283a0389fecf7a910ead2",
       "spec": {
         "template": "tree-graph",
-        "title": "Milestone 2 Grand Capstone Defense: Ente... — Enterprise AI Decision Graph",
+        "title": "Milestone 2 Grand Capstone Defense: Enterprise Cognitive Operating — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",

@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Strategic Role of the Chief Accounting O... — Ledger Verification",
+        "title": "Strategic Role of the Chief Accounting Officer & Capital Structure — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for Strategic.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 40 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6184597,
@@ -41,7 +41,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 40 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6834597,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 1: Enterprise Share-Based Compens... — Ledger Verification",
+        "title": "Module 1: Enterprise Share-Based — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for Module.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 40 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6189597,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 40 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6839597,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 2: Balance Sheet Deferred Tax Eng... — Ledger Verification",
+        "title": "Module 2: Balance Sheet Deferred Tax — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for Module.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 40 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6194597,
@@ -301,7 +301,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 40 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6844597,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Modules 3 & 4: Capital Structure Dilutio... — Ledger Verification",
+        "title": "Modules 3 & 4: Capital Structure — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for Modules.",
+            "caption": "Open primary Ind AS ledger posting for Modules 3 & 4.",
             "title": "Day 40 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6199597,
@@ -431,7 +431,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 40 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6849597,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Grand Milestone 8 Capstone Execution... — Ledger Verification",
+        "title": "The Grand Milestone 8 Capstone Execution & Capital Reporting — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for The Grand.",
+            "caption": "Open primary Ind AS ledger posting for The Grand Milestone 8 Capstone Execution.",
             "title": "Day 40 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6204597,
@@ -561,7 +561,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 40 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6854597,

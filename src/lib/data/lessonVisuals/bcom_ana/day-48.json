@@ -8,7 +8,7 @@
       "codeHash": "236fa8b6610b41a3a0a13a94bdaafbd5d563b1a08965b52ecc90456e0c0c403e",
       "spec": {
         "template": "bars",
-        "title": "The Discreteness Imperative: Formulati... - Learning Evaluation",
+        "title": "The Discreteness Imperative: Formulating Mixed-Integer Programs (MILP) - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "6548c82536d70245c7bb66a61f7fa0f0a6f994bec59def4eced0cf488c2f9d59",
       "spec": {
         "template": "bars",
-        "title": "The Branch-and-Bound Algorithm & Tree ... - Learning Evaluation",
+        "title": "The Branch-and-Bound Algorithm & Tree Pruning Mechanics - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "8dbb80bfca585cea5c6061097c93b1b9993b0116a913a20516c3f869728a65d9",
       "spec": {
         "template": "bars",
-        "title": "Cutting Plane Algorithms & The Gomory ... - Learning Evaluation",
+        "title": "Cutting Plane Algorithms & The Gomory Fractional Cut - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "bc57e780b2d9984ece518efdfbbd047afe7e7eb67e54f6d4bee755f51111a760",
       "spec": {
         "template": "bars",
-        "title": "Enterprise Warehouse Location & Fleet ... - Learning Evaluation",
+        "title": "Enterprise Warehouse Location & Fleet Routing Optimization - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "d4fc3fe7f112192fbcfe01679e83fb3a8fbfaf0c234287ddc77d5f40ed5554ab",
       "spec": {
         "template": "bars",
-        "title": "Mitigating Combinatorial Hardness: War... - Learning Evaluation",
+        "title": "Mitigating Combinatorial Hardness: Warm-Starts & MIP Gap Tolerance - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

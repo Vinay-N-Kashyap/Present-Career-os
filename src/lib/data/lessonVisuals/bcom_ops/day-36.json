@@ -162,7 +162,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Hotelling's T^2 Statistic Formulation &  Execution Funnel",
+        "title": "Hotelling's T^2 Statistic Formulation & Execution Funnel",
         "steps": [
           {
             "at": "intro",
@@ -464,7 +464,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Multivariate EWMA (MEWMA) & Small-Shift  Execution Funnel",
+        "title": "Multivariate EWMA (MEWMA) & Small-Shift Execution Funnel",
         "steps": [
           {
             "at": "intro",

@@ -10,7 +10,7 @@
       "codeHash": "b3a1ca7ad1f0f2ecb04efcbdee526e1d7a2ea96d8f5489b732022b6a376a3e12",
       "spec": {
         "template": "tree-graph",
-        "title": "Automated RAG Governance: Moving Beyond Quali... — Enterprise AI Decision Graph",
+        "title": "Automated RAG Governance: Moving Beyond — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Automated RAG Governance: Movin...",
+            "caption": "Ingest enterprise Context Query for Automated RAG Governance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Automated RAG Governance: Moving Beyond Quali... — Enterprise AI Decision Graph",
+        "title": "Automated RAG Governance: Moving Beyond — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Automated RAG Governance: Movin...",
+            "caption": "Step 1: Ingest enterprise Context Query for Automated RAG Governance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "c49eba49ca485699c8a9336d29d4c82be4b4d6e7a75af5d39af09f6ff306bb70",
       "spec": {
         "template": "tree-graph",
-        "title": "Metric 1: Context Relevance & Retrieval Noise... — Enterprise AI Decision Graph",
+        "title": "Metric 1: Context Relevance & Retrieval — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Metric one: Context Relevance & R...",
+            "caption": "Ingest enterprise Context Query for Metric one: Context Relevance",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Metric 1: Context Relevance & Retrieval Noise... — Enterprise AI Decision Graph",
+        "title": "Metric 1: Context Relevance & Retrieval — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Metric 1: Context Relevance & R...",
+            "caption": "Step 1: Ingest enterprise Context Query for Metric 1: Context Relevance",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "9caba2df98440c4bd89f116c99101fc6f344eaff34e8b947f4e3f3cd2198a352",
       "spec": {
         "template": "tree-graph",
-        "title": "Metric 2 & 3: Groundedness (Faithfulness) & A... — Enterprise AI Decision Graph",
+        "title": "Metric 2 & 3: Groundedness (Faithfulness) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Metric 2 & 3: Groundedness (Faithfulness) & A... — Enterprise AI Decision Graph",
+        "title": "Metric 2 & 3: Groundedness (Faithfulness) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Metric 2 & 3: Groundedness (Fai...",
+            "caption": "Step 1: Ingest enterprise Context Query for Metric 2 & 3: Groundedness",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "4cb18d798c54ec95e9d26e9c436ba160ba581638bd7281b86640ace594c0a67f",
       "spec": {
         "template": "tree-graph",
-        "title": "Self-Corrective RAG (CRAG) & Adaptive Query T... — Enterprise AI Decision Graph",
+        "title": "Self-Corrective RAG (CRAG) & Adaptive Query Transformation Loops — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Self-Corrective RAG (CRAG) & Ad...",
+            "caption": "Ingest enterprise Context Query for Self-Corrective RAG.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Self-Corrective RAG (CRAG) & Adaptive Query T... — Enterprise AI Decision Graph",
+        "title": "Self-Corrective RAG (CRAG) & Adaptive Query Transformation Loops — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Self-Corrective RAG (CRAG) & Ad...",
+            "caption": "Step 1: Ingest enterprise Context Query for Self-Corrective RAG.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "2d42cc9a9f7cb21b25088ec8fb6cff40d216d707d03a9bdd028bf822b7f66ed1",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Industrial... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query for Building an Industrial RAG Triad Governance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Industrial... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

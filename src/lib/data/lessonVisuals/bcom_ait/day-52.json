@@ -10,7 +10,7 @@
       "codeHash": "3dfcf0f81bb58704348884633993ed9c214dfb260f217334944c452e9263c6f7",
       "spec": {
         "template": "tree-graph",
-        "title": "Output Security Architecture: Non-Determinist... — Enterprise AI Decision Graph",
+        "title": "Output Security Architecture: Non-Deterministic LLMs Meets — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Output Security Architecture: N...",
+            "caption": "Ingest enterprise Context Query for Output Security Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Output Security Architecture: Non-Determinist... — Enterprise AI Decision Graph",
+        "title": "Output Security Architecture: Non-Deterministic LLMs Meets — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Output Security Architecture: N...",
+            "caption": "Step 1: Ingest enterprise Context Query for Output Security Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "e6e2768fd96eaaccebba4eb2791d01f58e5976c4428136fe07b946e92994bca2",
       "spec": {
         "template": "tree-graph",
-        "title": "Guardrail Orchestration Engines: NeMo Guardra... — Enterprise AI Decision Graph",
+        "title": "Guardrail Orchestration Engines: NeMo — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Guardrail Orchestration Engines...",
+            "caption": "Ingest enterprise Context Query for Guardrail Orchestration Engines.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Guardrail Orchestration Engines: NeMo Guardra... — Enterprise AI Decision Graph",
+        "title": "Guardrail Orchestration Engines: NeMo — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Guardrail Orchestration Engines...",
+            "caption": "Step 1: Ingest enterprise Context Query for Guardrail Orchestration Engines.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "fbf55c0e4785fb812d502b830605903c95f9370b2d95a41af1f1a4f56e7b7f78",
       "spec": {
         "template": "tree-graph",
-        "title": "High-Speed PII Anonymization & Cryptographic ... — Enterprise AI Decision Graph",
+        "title": "High-Speed PII Anonymization & Cryptographic Pseudonymization — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for High-Speed PII Anonymization & ...",
+            "caption": "Ingest enterprise Context Query for High-Speed PII Anonymization.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "High-Speed PII Anonymization & Cryptographic ... — Enterprise AI Decision Graph",
+        "title": "High-Speed PII Anonymization & Cryptographic Pseudonymization — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for High-Speed PII Anonymization & ...",
+            "caption": "Step 1: Ingest enterprise Context Query for High-Speed PII Anonymization.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "3ea0da6d450c4c1bda243c15f483d911191e92a65d77f62b2cddae480c65b326",
       "spec": {
         "template": "tree-graph",
-        "title": "Structured Output Conformance & Hallucination... — Enterprise AI Decision Graph",
+        "title": "Structured Output Conformance & Hallucination Prevention: JSON Schema — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Structured Output Conformance &...",
+            "caption": "Ingest enterprise Context Query for Structured Output Conformance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Structured Output Conformance & Hallucination... — Enterprise AI Decision Graph",
+        "title": "Structured Output Conformance & Hallucination Prevention: JSON Schema — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Structured Output Conformance &...",
+            "caption": "Step 1: Ingest enterprise Context Query for Structured Output Conformance.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "6e8b5fd43dac88f6b2bcaaee8e733f5ff13f1fbf083a344568cceff40d4b8984",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

@@ -10,7 +10,7 @@
       "codeHash": "0fa878f8d8349371fbd8f0569d08a2db9ce263e1b07e458dc95471530ae29035",
       "spec": {
         "template": "workflow",
-        "title": "Control Tower Architecture: Unified Omnichann... — Operational Workflow",
+        "title": "Control Tower Architecture: Unified — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Control Tower Architecture: Unified Omnichann... — Operational Workflow",
+        "title": "Control Tower Architecture: Unified — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Control Tower Architecture: Unified Omni...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Control Tower Architecture: Unified",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "e11911bf3c90ae7b5eb5f533b93242919e22a5f3fa4bc2199d8ca9ed892edfdd",
       "spec": {
         "template": "workflow",
-        "title": "Multi-Echelon Omnichannel Sourcing & Split-Sh... — Operational Workflow",
+        "title": "Multi-Echelon Omnichannel Sourcing & Split-Shipment Dynamic — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Multi-Echelon Omnichannel Sourcing & Split-Sh... — Operational Workflow",
+        "title": "Multi-Echelon Omnichannel Sourcing & Split-Shipment Dynamic — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Multi-Echelon Omnichannel Sourcing & Spl...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Multi-Echelon Omnichannel Sourcing",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "aa699d79c3b4bb4360023378f8b247ce17f6ff9f3b74a94cff173e17b740dbda",
       "spec": {
         "template": "workflow",
-        "title": "Cold Chain Thermal Breach Telemetry & Active ... — Operational Workflow",
+        "title": "Cold Chain Thermal Breach Telemetry & Active Sensor Triage Subsystem — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Cold Chain Thermal Breach Telemetry & Active ... — Operational Workflow",
+        "title": "Cold Chain Thermal Breach Telemetry & Active Sensor Triage Subsystem — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Cold Chain Thermal Breach Telemetry & Ac...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Cold Chain Thermal Breach Telemetry",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "995dd19dc0f86e85adb7baf04ada541c196284e4a8cb916aab046262ef56e938",
       "spec": {
         "template": "workflow",
-        "title": "Closed-Loop Reverse Logistics Triage, Remanuf... — Operational Workflow",
+        "title": "Closed-Loop Reverse Logistics Triage, Remanufacturing & EPR Credit — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Closed-Loop Reverse Logistics Triage, Remanuf... — Operational Workflow",
+        "title": "Closed-Loop Reverse Logistics Triage, Remanufacturing & EPR Credit — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Closed-Loop Reverse Logistics Triage, Re...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Closed-Loop Reverse Logistics Triage",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "a2bd612d428700a36a9ec7283145ef5bba5eb055d6623c737d2cf74d1cfae660",
       "spec": {
         "template": "workflow",
-        "title": "Master Milestone 3 Capstone Verification Engi... — Operational Workflow",
+        "title": "Master Milestone 3 Capstone Verification Engine & Executive — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Master Milestone 3 Capstone Verification Engi... — Operational Workflow",
+        "title": "Master Milestone 3 Capstone Verification Engine & Executive — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Master Milestone 3 Capstone Verification...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Master Milestone 3 Capstone",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

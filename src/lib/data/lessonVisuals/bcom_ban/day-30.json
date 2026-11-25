@@ -10,11 +10,11 @@
       "codeHash": "789e820bccea715b578513e3907341e215a6a2af21b0a07b222e7b2ba0e81640",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 1: Commercial & Wholesale Banking Ope... — General Ledger Verification",
+        "title": "Tier 1: Commercial & Wholesale Banking — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier one.",
+            "caption": "Open primary facility debit entry for Tier one.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 130000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 156000,
@@ -139,11 +139,11 @@
       "codeHash": "5fb0d72ab13ee392f2fdf483a42462b85437a1630fdbda133d1f26f1b6028f42",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 2: Investment Banking & Global Capita... — General Ledger Verification",
+        "title": "Tier 2: Investment Banking & Global — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier two.",
+            "caption": "Open primary facility debit entry for Tier two.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 131250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 157500,
@@ -268,11 +268,11 @@
       "codeHash": "cfb1b9cd865906fc12d36a393aba21f176a2eeca511e20a22259f0b8873ffcdf",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 3: Enterprise Risk, Basel IV & Quanti... — General Ledger Verification",
+        "title": "Tier 3: Enterprise Risk, Basel IV & Quantitative Derivative Hedging Command — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Tier.",
+            "caption": "Open primary facility debit entry for Enterprise Risk.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 132500,
@@ -397,11 +397,11 @@
       "codeHash": "e1650f7ed195c94bddbe0c5b209b23d9ff3cba041ed2268969f3d386c0703e65",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 4: Next-Gen FinTech, Inclusion, ESG &... — General Ledger Verification",
+        "title": "Tier 4: Next-Gen FinTech, Inclusion, ESG & Sovereign Digital Rails Command — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier four.",
+            "caption": "Open primary facility debit entry for Tier four.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 133750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 160500,
@@ -526,11 +526,11 @@
       "codeHash": "1f1917c4afe2c300b125d3b5bc97cd83d362821f95e3d136712f31fc0f445ee8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 5: Grand Master Milestone 6 Final Cap... — General Ledger Verification",
+        "title": "Tier 5: Grand Master Milestone 6 Final — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier five.",
+            "caption": "Open primary facility debit entry for Tier five.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 135000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 162000,

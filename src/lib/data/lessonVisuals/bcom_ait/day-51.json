@@ -10,7 +10,7 @@
       "codeHash": "e8fecc2871c75f6b64bfc46606959e4bf7c37565f131d03dc94478081bb02f0e",
       "spec": {
         "template": "tree-graph",
-        "title": "The Threat Landscape: Direct Jailbreaks, Role... — Enterprise AI Decision Graph",
+        "title": "The Threat Landscape: Direct Jailbreaks — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for The Threat Landscape: Direct Ja...",
+            "caption": "Ingest enterprise Context Query for The Threat Landscape: Direct",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "The Threat Landscape: Direct Jailbreaks, Role... — Enterprise AI Decision Graph",
+        "title": "The Threat Landscape: Direct Jailbreaks — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for The Threat Landscape: Direct Ja...",
+            "caption": "Step 1: Ingest enterprise Context Query for The Threat Landscape: Direct",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "169a848358c1bb98ffbc0a1f9363524c97c86202b2910d57243a38b8e17a36ed",
       "spec": {
         "template": "tree-graph",
-        "title": "Indirect Prompt Injection: Weaponized Externa... — Enterprise AI Decision Graph",
+        "title": "Indirect Prompt Injection: Weaponized — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Indirect Prompt Injection: Weap...",
+            "caption": "Ingest enterprise Context Query for Indirect Prompt Injection.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Indirect Prompt Injection: Weaponized Externa... — Enterprise AI Decision Graph",
+        "title": "Indirect Prompt Injection: Weaponized — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Indirect Prompt Injection: Weap...",
+            "caption": "Step 1: Ingest enterprise Context Query for Indirect Prompt Injection.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "1722afa9700355454e105c4ee8331492d0fa917bf6ab67a393a145a0e7399c04",
       "spec": {
         "template": "tree-graph",
-        "title": "Multi-Modal & ASCII Smuggling Attacks: Unicod... — Enterprise AI Decision Graph",
+        "title": "Multi-Modal & ASCII Smuggling Attacks: Unicode Homoglyphs, Zero-Width — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Multi-Modal & ASCII Smuggling A...",
+            "caption": "Ingest enterprise Context Query for Multi-Modal.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Multi-Modal & ASCII Smuggling Attacks: Unicod... — Enterprise AI Decision Graph",
+        "title": "Multi-Modal & ASCII Smuggling Attacks: Unicode Homoglyphs, Zero-Width — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Multi-Modal & ASCII Smuggling A...",
+            "caption": "Step 1: Ingest enterprise Context Query for Multi-Modal.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "58e323fbcc690dd44f5b718bc00df3779adead8bdc8160b045b435ec163860b1",
       "spec": {
         "template": "tree-graph",
-        "title": "Automated Red Teaming (ART) & Continuous Adve... — Enterprise AI Decision Graph",
+        "title": "Automated Red Teaming (ART) & Continuous Adversarial Probing: GCG (Greedy Coordinate Gradient) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Automated Red Teaming (ART) & C...",
+            "caption": "Ingest enterprise Context Query for Automated Red Teaming.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Automated Red Teaming (ART) & Continuous Adve... — Enterprise AI Decision Graph",
+        "title": "Automated Red Teaming (ART) & Continuous Adversarial Probing: GCG (Greedy Coordinate Gradient) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Automated Red Teaming (ART) & C...",
+            "caption": "Step 1: Ingest enterprise Context Query for Automated Red Teaming.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "76ebc881c9d05a4de0ce1786fc94f352737f60744e123b17386c9e491cdfbee9",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

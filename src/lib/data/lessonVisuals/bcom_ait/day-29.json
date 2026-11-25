@@ -10,7 +10,7 @@
       "codeHash": "cd1898d2767c818e9ef70052aa812ef3abd96f916e48832399a068b8a480736d",
       "spec": {
         "template": "tree-graph",
-        "title": "Fiduciary Duty of Care and Loyalty: Boar... — Enterprise AI Decision Graph",
+        "title": "Fiduciary Duty of Care and Loyalty: Boardroom Liability in Autonomous — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -134,7 +134,7 @@
       "codeHash": "67da66290f1546d0a1b5515908d815ea5b4de61d2c125a74f6c87beed9792386",
       "spec": {
         "template": "tree-graph",
-        "title": "Board Audit Committee Charters: Model Au... — Enterprise AI Decision Graph",
+        "title": "Board Audit Committee Charters: Model — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -258,7 +258,7 @@
       "codeHash": "7b884bbcd17fb923f11e2459dbba79926801166266690658cd270958deb249f4",
       "spec": {
         "template": "tree-graph",
-        "title": "Corporate AI Ethics Charters: Values-to-... — Enterprise AI Decision Graph",
+        "title": "Corporate AI Ethics Charters: Values-to — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -382,7 +382,7 @@
       "codeHash": "86ed4c1e820ae03064cc9085071d1f90e05ebd8923b5321695bd2716b6c9108d",
       "spec": {
         "template": "tree-graph",
-        "title": "Board Escalation Thresholds, Circuit Bre... — Enterprise AI Decision Graph",
+        "title": "Board Escalation Thresholds, Circuit Breakers & Emergency — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -506,7 +506,7 @@
       "codeHash": "4ee62ba763fa2b5795f270305913333ae283a1d05be568588ba6d994ebc38f15",
       "spec": {
         "template": "tree-graph",
-        "title": "Synthesis & Capstone Bridge: The Unified... — Enterprise AI Decision Graph",
+        "title": "Synthesis & Capstone Bridge — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",

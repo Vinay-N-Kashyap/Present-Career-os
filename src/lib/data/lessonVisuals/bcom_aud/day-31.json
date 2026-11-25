@@ -8,7 +8,7 @@
       "codeHash": "fcb0b0fbc1cb454bad0896ac41f3eec8728d028946973deceff5e4616b954bc8",
       "spec": {
         "template": "funnel",
-        "title": "Regulatory Architecture of ISA 315 & P... \u2014 Assurance Review",
+        "title": "Regulatory Architecture of ISA 315 & PCAOB AS 2110: Inherent Risk — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "25fbf560ec3759318985f970c689d8435203b1153f44f2526c62ffe177131729",
       "spec": {
         "template": "funnel",
-        "title": "IT Environment & General IT Controls (... \u2014 Assurance Review",
+        "title": "IT Environment & General IT Controls (GITCs): Automated Logic — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "b6043c4ece000b14f7f539f1d510575a1cb3a9945e3ecacd617cfcbcadfc4a65",
       "spec": {
         "template": "funnel",
-        "title": "Significant Risks, Relevant Assertions... \u2014 Assurance Review",
+        "title": "Significant Risks, Relevant Assertions & Financial Statement Level — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "bb3d3dfd92ddd0369d98a3836e96179a0dbf256ac114557600aa44d687a215bc",
       "spec": {
         "template": "funnel",
-        "title": "Business Model Risk Decomposition: Mac... \u2014 Assurance Review",
+        "title": "Business Model Risk Decomposition: Macro Pressures, Complex Financing — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "7438469bce431a30559b871150b9c9f2f81dbd2a216f95101ac2db8640df01fe",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Inherent Risk Scoring & Fi... \u2014 Assurance Review",
+        "title": "Algorithmic Inherent Risk Scoring & Financial Statement Level RoMM — Assurance Review",
         "steps": [
           {
             "at": "intro",

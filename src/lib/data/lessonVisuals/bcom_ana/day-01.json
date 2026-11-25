@@ -10,11 +10,11 @@
       "codeHash": "cfa54353f71f4df034653fb4d7a186df257f3a4b7f54ca5ad8d6dd3aaa7eb4a0",
       "spec": {
         "template": "bars",
-        "title": "Business Decision Intelligence & Normative Op... — Quantitative KPI Distribution",
+        "title": "Business Decision Intelligence & Normative Optimization Models — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Business Decision Intelligence & No...",
+            "caption": "Baseline KPI cohort metrics for Business Decision Intelligence.",
             "max": 100,
             "bars": [
               {
@@ -95,7 +95,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Business Decision Intellige...",
+            "caption": "Commit audited analytical dashboard for Business Decision Intelligence.",
             "max": 100,
             "bars": [
               {
@@ -124,11 +124,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Business Decision Intelligence & Normative Op... — Quantitative KPI Distribution",
+        "title": "Business Decision Intelligence & Normative Optimization Models — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Business Decision Intelligence & No...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Business Decision Intelligence.",
             "max": 100,
             "bars": [
               {
@@ -209,7 +209,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Business Decision Intellige...",
+            "caption": "Step 4: Commit audited analytical dashboard for Business Decision Intelligence.",
             "max": 100,
             "bars": [
               {
@@ -246,7 +246,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Linear Programming & Simplex Convex...",
+            "caption": "Baseline KPI cohort metrics for Linear Programming & Simplex Convex Geometry",
             "max": 100,
             "bars": [
               {
@@ -327,7 +327,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Linear Programming & Simple...",
+            "caption": "Commit audited analytical dashboard for Linear Programming.",
             "max": 100,
             "bars": [
               {
@@ -360,7 +360,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Linear Programming & Simplex Convex...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Linear Programming.",
             "max": 100,
             "bars": [
               {
@@ -441,7 +441,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Linear Programming & Simple...",
+            "caption": "Step 4: Commit audited analytical dashboard for Linear Programming.",
             "max": 100,
             "bars": [
               {
@@ -474,11 +474,11 @@
       "codeHash": "f4e062e05ac83bbfbfdba0b36613d9c5dd0302c5d885e5ae725e78dedc523a4f",
       "spec": {
         "template": "bars",
-        "title": "Shadow Prices, Dual Variables & Marginal Oppo... — Quantitative KPI Distribution",
+        "title": "Shadow Prices, Dual Variables & Marginal Opportunity Cost — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Shadow Prices, Dual Variables & Mar...",
+            "caption": "Baseline KPI cohort metrics for Shadow Prices.",
             "max": 100,
             "bars": [
               {
@@ -559,7 +559,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Shadow Prices, Dual Variabl...",
+            "caption": "Commit audited analytical dashboard for Shadow Prices.",
             "max": 100,
             "bars": [
               {
@@ -588,11 +588,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Shadow Prices, Dual Variables & Marginal Oppo... — Quantitative KPI Distribution",
+        "title": "Shadow Prices, Dual Variables & Marginal Opportunity Cost — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Shadow Prices, Dual Variables & Mar...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Shadow Prices.",
             "max": 100,
             "bars": [
               {
@@ -673,7 +673,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Shadow Prices, Dual Variabl...",
+            "caption": "Step 4: Commit audited analytical dashboard for Shadow Prices.",
             "max": 100,
             "bars": [
               {
@@ -706,11 +706,11 @@
       "codeHash": "0ab0ef4465ee537b8cded3588c4dcc27f7916e069fc8d31cf0e9f7db4139d917",
       "spec": {
         "template": "bars",
-        "title": "Cohort Retention Analytics & Triangular Lifet... — Quantitative KPI Distribution",
+        "title": "Cohort Retention Analytics & Triangular Lifetime Value (LTV) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Cohort Retention Analytics & Triang...",
+            "caption": "Baseline KPI cohort metrics for Cohort Retention Analytics.",
             "max": 100,
             "bars": [
               {
@@ -791,7 +791,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Cohort Retention Analytics ...",
+            "caption": "Commit audited analytical dashboard for Cohort Retention Analytics.",
             "max": 100,
             "bars": [
               {
@@ -820,11 +820,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Cohort Retention Analytics & Triangular Lifet... — Quantitative KPI Distribution",
+        "title": "Cohort Retention Analytics & Triangular Lifetime Value (LTV) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Cohort Retention Analytics & Triang...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Cohort Retention Analytics.",
             "max": 100,
             "bars": [
               {
@@ -905,7 +905,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Cohort Retention Analytics ...",
+            "caption": "Step 4: Commit audited analytical dashboard for Cohort Retention Analytics.",
             "max": 100,
             "bars": [
               {
@@ -938,11 +938,11 @@
       "codeHash": "e29af689c77a2a74fe4708e7472106228d7fbd922fbad38540650cc2d32c2411",
       "spec": {
         "template": "bars",
-        "title": "Monte Carlo Capital Budgeting & Value at Risk... — Quantitative KPI Distribution",
+        "title": "Monte Carlo Capital Budgeting & Value at Risk (VaR) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Baseline KPI cohort metrics for Monte Carlo Capital Budgeting & Val...",
+            "caption": "Baseline KPI cohort metrics for Monte Carlo Capital Budgeting.",
             "max": 100,
             "bars": [
               {
@@ -1023,7 +1023,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Commit audited analytical dashboard for Monte Carlo Capital Budgeti...",
+            "caption": "Commit audited analytical dashboard for Monte Carlo Capital Budgeting.",
             "max": 100,
             "bars": [
               {
@@ -1052,11 +1052,11 @@
       },
       "filled": {
         "template": "bars",
-        "title": "Monte Carlo Capital Budgeting & Value at Risk... — Quantitative KPI Distribution",
+        "title": "Monte Carlo Capital Budgeting & Value at Risk (VaR) — Quantitative KPI Distribution",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Baseline KPI cohort metrics for Monte Carlo Capital Budgeting & Val...",
+            "caption": "Step 1: Baseline KPI cohort metrics for Monte Carlo Capital Budgeting.",
             "max": 100,
             "bars": [
               {
@@ -1137,7 +1137,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Step 4: Commit audited analytical dashboard for Monte Carlo Capital Budgeti...",
+            "caption": "Step 4: Commit audited analytical dashboard for Monte Carlo Capital Budgeting.",
             "max": 100,
             "bars": [
               {

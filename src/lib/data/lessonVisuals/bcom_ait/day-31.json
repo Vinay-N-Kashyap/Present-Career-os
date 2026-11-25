@@ -10,7 +10,7 @@
       "codeHash": "76aee870886ce4a0125589242e7de7637952cd6d687d020655f502f517058070",
       "spec": {
         "template": "tree-graph",
-        "title": "Hierarchical Multi-Agent Paradigm & Centraliz... — Enterprise AI Decision Graph",
+        "title": "Hierarchical Multi-Agent Paradigm & Centralized Coordinator — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Hierarchical Multi-Agent Paradi...",
+            "caption": "Ingest enterprise Context Query for Hierarchical Multi-Agent Paradigm.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Hierarchical Multi-Agent Paradigm & Centraliz... — Enterprise AI Decision Graph",
+        "title": "Hierarchical Multi-Agent Paradigm & Centralized Coordinator — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Hierarchical Multi-Agent Paradi...",
+            "caption": "Step 1: Ingest enterprise Context Query for Hierarchical Multi-Agent Paradigm.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "140b4bc06233084db93a282e707ab6b2f8a14573e48ebd77072a74085df01373",
       "spec": {
         "template": "tree-graph",
-        "title": "Task Decomposition Mechanics: Breaking Monoli... — Enterprise AI Decision Graph",
+        "title": "Task Decomposition Mechanics: Breaking — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Task Decomposition Mechanics: B...",
+            "caption": "Ingest enterprise Context Query for Task Decomposition Mechanics.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Task Decomposition Mechanics: Breaking Monoli... — Enterprise AI Decision Graph",
+        "title": "Task Decomposition Mechanics: Breaking — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Task Decomposition Mechanics: B...",
+            "caption": "Step 1: Ingest enterprise Context Query for Task Decomposition Mechanics.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "b7fe0bf8adc7c07c81430364686a27adf5e5c69f09883bd498c7d1a51268430f",
       "spec": {
         "template": "tree-graph",
-        "title": "Worker Specialization & Role-Based Agent Pers... — Enterprise AI Decision Graph",
+        "title": "Worker Specialization & Role-Based Agent Personas (Domain Boundaries & Capabilities) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Worker Specialization & Role-Ba...",
+            "caption": "Ingest enterprise Context Query for Worker Specialization.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Worker Specialization & Role-Based Agent Pers... — Enterprise AI Decision Graph",
+        "title": "Worker Specialization & Role-Based Agent Personas (Domain Boundaries & Capabilities) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Worker Specialization & Role-Ba...",
+            "caption": "Step 1: Ingest enterprise Context Query for Worker Specialization.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "f119b2eff7603d215645dd06df598774a405a229f8e21ad53c1cddb3b811867c",
       "spec": {
         "template": "tree-graph",
-        "title": "Dynamic Supervisor State Machines & Failure R... — Enterprise AI Decision Graph",
+        "title": "Dynamic Supervisor State Machines & Failure Recovery Routing — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Dynamic Supervisor State Machin...",
+            "caption": "Ingest enterprise Context Query for Dynamic Supervisor State Machines.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Dynamic Supervisor State Machines & Failure R... — Enterprise AI Decision Graph",
+        "title": "Dynamic Supervisor State Machines & Failure Recovery Routing — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Supervisor State Machin...",
+            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Supervisor State Machines.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "9000ce76839904791f3a7751b8fe322b32015a4ebea828d90660a1ad5d46c670",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an End-to-End... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: Building...",
+            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: Building",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an End-to-End... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: Building...",
+            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: Building",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

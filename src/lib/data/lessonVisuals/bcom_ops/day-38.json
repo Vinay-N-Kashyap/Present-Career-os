@@ -162,7 +162,7 @@
       "filled": {},
       "spec": {
         "template": "funnel",
-        "title": "Two-Level Full Factorial Designs (2^k):  Funnel",
+        "title": "Two-Level Full Factorial Designs (2^k): Funnel",
         "steps": [
           {
             "at": "intro",

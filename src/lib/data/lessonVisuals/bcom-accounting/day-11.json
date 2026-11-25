@@ -10,11 +10,11 @@
       "codeHash": "e3cc7c0acfb530101d8ce97c3d75771be9a5f8dba878e3ac0704db53c866bee8",
       "spec": {
         "template": "ledger-sheet",
-        "title": "SLM vs WDV Depreciation Mathematical Mecha... — General Ledger Verification",
+        "title": "SLM vs WDV Depreciation Mathematical Mechanics & Dual-Schedule — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for SLM vs WDV.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 63500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 76200,
@@ -139,11 +139,11 @@
       "codeHash": "e1c45601cfb5c487653e4a5ee9e8d71d822ac9b6233b0585d5434d0cda6e8b43",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Provision for Depreciation Account Archite... — General Ledger Verification",
+        "title": "Provision for Depreciation Account — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($sixty-four,multiple) for Provision.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 64750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 77700,
@@ -268,11 +268,11 @@
       "codeHash": "e024f77dad00eab513f66a8cad1337b668beca4e6f4e4cd9fcfaf3e20202c611",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Asset Disposal Account Architecture & Real... — General Ledger Verification",
+        "title": "Asset Disposal Account Architecture & Realized Capital Gain/Loss — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Asset Disposal.",
+            "caption": "Open primary facility debit entry for Asset Disposal Account Architecture.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 66000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 79200,
@@ -397,11 +397,11 @@
       "codeHash": "12b1c305136afee9468f330c71cf8b1e43ad119bd8e585933e0369a721f80ce0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Component Depreciation & Prospective Usefu... — General Ledger Verification",
+        "title": "Component Depreciation & Prospective Useful Life Revision (IAS 16 & Ind AS 16) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Component.",
+            "caption": "Open primary facility debit entry for Component Depreciation.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 67250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 80700,
@@ -526,11 +526,11 @@
       "codeHash": "97c04a071fb91399850b24f50917af13d509310c46f2a0c2ccb1570d34c56cb9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tax Depreciation vs Book Depreciation: Acc... — General Ledger Verification",
+        "title": "Tax Depreciation vs Book Depreciation: Accelerated WDV & Deferred Tax — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Tax.",
+            "caption": "Open primary facility debit entry for Tax Depreciation vs Book Depreciation.",
             "title": "Day 11 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 68500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 11 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 82200,

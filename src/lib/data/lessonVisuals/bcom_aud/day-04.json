@@ -10,11 +10,11 @@
       "codeHash": "a3f254b3788a9480e060c64a5fa4b8c02772afcd3990283178eeee8d9a2a008e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Bitstream Disk Imaging, Write Blocke... — General Ledger Verification",
+        "title": "Forensic Bitstream Disk Imaging, Write Blockers & Cryptographic Chain — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Forensic Bitstream Disk Imaging...",
+            "caption": "Open primary debit entry for Forensic Bitstream Disk Imaging.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Forensic Bitstream Disk Imaging, Write Blocke... — General Ledger Verification",
+        "title": "Forensic Bitstream Disk Imaging, Write Blockers & Cryptographic Chain — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3100) for Forensic Bitstream Disk Imaging...",
+            "caption": "Step 1: Open primary debit entry (3100) for Forensic Bitstream Disk Imaging.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -264,11 +264,11 @@
       "codeHash": "7e44780d23ac392bf3d2b7c511432447c1ae2269d0145729629507367ca37580",
       "spec": {
         "template": "ledger-sheet",
-        "title": "E-Discovery Reference Model (EDRM): Boolean C... — General Ledger Verification",
+        "title": "E-Discovery Reference Model (EDRM): Boolean — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for E-Discovery Reference Model (ED...",
+            "caption": "Open primary debit entry for E-Discovery Reference Model.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "E-Discovery Reference Model (EDRM): Boolean C... — General Ledger Verification",
+        "title": "E-Discovery Reference Model (EDRM): Boolean — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3300) for E-Discovery Reference Model (ED...",
+            "caption": "Step 1: Open primary debit entry (3300) for E-Discovery Reference Model.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -518,11 +518,11 @@
       "codeHash": "726d2bd062b4055b103601889cd481ad6bf66f517e3875c92946b3177acc1288",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Volatile RAM Memory Dump Analysis & Uncommitt... — General Ledger Verification",
+        "title": "Volatile RAM Memory Dump Analysis & Uncommitted Transaction Carving — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Volatile RAM Memory Dump Analys...",
+            "caption": "Open primary debit entry for Volatile RAM Memory Dump Analysis.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Volatile RAM Memory Dump Analysis & Uncommitt... — General Ledger Verification",
+        "title": "Volatile RAM Memory Dump Analysis & Uncommitted Transaction Carving — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3500) for Volatile RAM Memory Dump Analys...",
+            "caption": "Step 1: Open primary debit entry (3500) for Volatile RAM Memory Dump Analysis.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -772,11 +772,11 @@
       "codeHash": "53242be0710a36d92901ffac41582862e790f8aff79bcbc5d24af01756c7aca6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Email Thread Reconstruction, Metadata Header ... — General Ledger Verification",
+        "title": "Email Thread Reconstruction, Metadata Header Analysis & Custodian — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Email Thread Reconstruction, Me...",
+            "caption": "Open primary debit entry for Email Thread Reconstruction.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Email Thread Reconstruction, Metadata Header ... — General Ledger Verification",
+        "title": "Email Thread Reconstruction, Metadata Header Analysis & Custodian — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3700) for Email Thread Reconstruction, Me...",
+            "caption": "Step 1: Open primary debit entry (3700) for Email Thread Reconstruction.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -1026,11 +1026,11 @@
       "codeHash": "3ea905eb63a79a77ad50b47b587f464641399050e8213ada109707b75ba8bcb5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Anti-Forensics Detection: Timestomping & Secu... — General Ledger Verification",
+        "title": "Anti-Forensics Detection: Timestomping — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Anti-Forensics Detection: Times...",
+            "caption": "Open primary debit entry for Anti-Forensics Detection.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Anti-Forensics Detection: Timestomping & Secu... — General Ledger Verification",
+        "title": "Anti-Forensics Detection: Timestomping — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3900) for Anti-Forensics Detection: Times...",
+            "caption": "Step 1: Open primary debit entry (3900) for Anti-Forensics Detection.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,

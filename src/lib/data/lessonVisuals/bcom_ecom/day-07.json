@@ -10,11 +10,11 @@
       "codeHash": "6cb31de251729ae37cd17916d87836d6333279983ae5cf0b2dd3c5fa24c30f76",
       "spec": {
         "template": "funnel",
-        "title": "Distributed Order Management Systems (DOMS... — Conversion Funnel",
+        "title": "Distributed Order Management Systems (DOMS) & The 6-Stage Fulfillment — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "e3385b6306c157eb4b2cbd33e53ebe8213f75161a0b20b79edcb5657d704cdbc",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Warehouse Inventory Allocation & Dis... — Conversion Funnel",
+        "title": "Multi-Warehouse Inventory Allocation & Distributed Routing — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "f264d3fd008ba56e9c063d6d4611eefca9898e9af20f09085f22b5c3a1a65831",
       "spec": {
         "template": "funnel",
-        "title": "Split Shipment Economics, Package Consolid... — Conversion Funnel",
+        "title": "Split Shipment Economics, Package Consolidation & Customer Experience — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "c10b296afd3601aa85ea87f22f07798a24c7e8b651e1e4f8c3831ffb176bf79f",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Python Simulation: Distributed... — Conversion Funnel",
+        "title": "Interactive Python Simulation: Distributed — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "715fff42f4fb86ddbbeaa53a74b975d6daa6607132b288ca2cc91226373eb36e",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Order Management Governance & P... — Conversion Funnel",
+        "title": "Enterprise Order Management Governance & Production OMS Command — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

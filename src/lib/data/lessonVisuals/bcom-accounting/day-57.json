@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ind AS 7 Scope, Cash Equivalents Definit... — Ledger Verification",
+        "title": "Ind AS 7 Scope, Cash Equivalents Definition & Three Operational — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($twenty,multiple,bad-request) for Ind.",
+            "caption": "Open primary Ind AS ledger posting for Ind AS 7 Scope.",
             "title": "Day 57 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 20671400,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Operating Cash Flows: Direct Method vs I... — Ledger Verification",
+        "title": "Operating Cash Flows: Direct Method — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($twenty,multiple,bad-request) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 57 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 20676400,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Investing & Financing Cash Flows, Intere... — Ledger Verification",
+        "title": "Investing & Financing Cash Flows, Interest/Dividend Classification — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($twenty,multiple,bad-request) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 57 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 20681400,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Financing Liabilities Roll-Forward Discl... — Ledger Verification",
+        "title": "Financing Liabilities Roll-Forward Disclosure Requirement (Ind AS 7.44A-44E) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($twenty,multiple,bad-request) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 57 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 20686400,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Ind AS 7 Cash Flow Platform, ... — Ledger Verification",
+        "title": "Enterprise Ind AS 7 Cash Flow Platform, Verification & Day 57 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($twenty,multiple,bad-request) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 57 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 20691400,

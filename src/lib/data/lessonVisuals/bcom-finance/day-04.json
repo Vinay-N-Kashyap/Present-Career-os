@@ -10,11 +10,11 @@
       "codeHash": "9826409613b37aab43170e7e529b93323c8e3d590dccd37dca3db269205542d6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bond Pricing, Yield to Maturity (YTM) & Newto... — General Ledger Verification",
+        "title": "Bond Pricing, Yield to Maturity (YTM) & Newton-Raphson Solver — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Bond Pricing, Yield to Maturity...",
+            "caption": "Open primary debit entry for Bond Pricing.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Bond Pricing, Yield to Maturity (YTM) & Newto... — General Ledger Verification",
+        "title": "Bond Pricing, Yield to Maturity (YTM) & Newton-Raphson Solver — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3100) for Bond Pricing, Yield to Maturity...",
+            "caption": "Step 1: Open primary debit entry (3100) for Bond Pricing.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -264,11 +264,11 @@
       "codeHash": "3e854f62fb71c8ac9c0914695e02f7817a4c51242fb9326e443dbcc8fa8015dd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Macaulay Duration, Modified Duration & Convex... — General Ledger Verification",
+        "title": "Macaulay Duration, Modified Duration & Convexity Price Approximation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Macaulay Duration, Modified Dur...",
+            "caption": "Open primary debit entry for Macaulay Duration.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Macaulay Duration, Modified Duration & Convex... — General Ledger Verification",
+        "title": "Macaulay Duration, Modified Duration & Convexity Price Approximation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3300) for Macaulay Duration, Modified Dur...",
+            "caption": "Step 1: Open primary debit entry (3300) for Macaulay Duration.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -518,11 +518,11 @@
       "codeHash": "bad4a3a5efcdba5dce83541151731b9265bf225d6375809427fcdff2338cb3fd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Zero-Coupon Spot Rate Bootstrapping & Forward... — General Ledger Verification",
+        "title": "Zero-Coupon Spot Rate Bootstrapping & Forward Rates Curve Analytics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Zero-Coupon Spot Rate Bootstrap...",
+            "caption": "Open primary debit entry for Zero-Coupon Spot Rate Bootstrapping.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Zero-Coupon Spot Rate Bootstrapping & Forward... — General Ledger Verification",
+        "title": "Zero-Coupon Spot Rate Bootstrapping & Forward Rates Curve Analytics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3500) for Zero-Coupon Spot Rate Bootstrap...",
+            "caption": "Step 1: Open primary debit entry (3500) for Zero-Coupon Spot Rate Bootstrapping.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -772,11 +772,11 @@
       "codeHash": "7eda40b76aaf9c112bf82d66670f09c015ace8d57e2cf00e033cd0b5b2155401",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Credit Default Swaps (CDS) & Implied Default ... — General Ledger Verification",
+        "title": "Credit Default Swaps (CDS) & Implied Default Probability Modeling — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Credit Default Swaps (CDS) & Im...",
+            "caption": "Open primary debit entry for Credit Default Swaps.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Credit Default Swaps (CDS) & Implied Default ... — General Ledger Verification",
+        "title": "Credit Default Swaps (CDS) & Implied Default Probability Modeling — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3700) for Credit Default Swaps (CDS) & Im...",
+            "caption": "Step 1: Open primary debit entry (3700) for Credit Default Swaps.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -1026,11 +1026,11 @@
       "codeHash": "07c48369537f53b0ae89da389f41564dc69a64d68f46a193776e523c917dec5d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Black-Scholes-Merton Options Pricing & Corpor... — General Ledger Verification",
+        "title": "Black-Scholes-Merton Options Pricing & Corporate Treasury Collar — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Black-Scholes-Merton Options Pr...",
+            "caption": "Open primary debit entry for Black-Scholes-Merton Options Pricing.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Black-Scholes-Merton Options Pricing & Corpor... — General Ledger Verification",
+        "title": "Black-Scholes-Merton Options Pricing & Corporate Treasury Collar — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3900) for Black-Scholes-Merton Options Pr...",
+            "caption": "Step 1: Open primary debit entry (3900).",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,

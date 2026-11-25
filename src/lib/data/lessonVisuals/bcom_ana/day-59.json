@@ -8,7 +8,7 @@
       "codeHash": "96c04e1a12c71d07d0e28d353caae898b29f0a3f99230820915197800df36e7b",
       "spec": {
         "template": "bars",
-        "title": "Institutional Enterprise Architecture ... - Strategic Decision Evaluation",
+        "title": "Institutional Enterprise Architecture RFC Methodology & The 5-Layer - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "616fc27d822711a9beccfcac4e3b594fbae3ce3889022e445ec7411c8e77e9c0",
       "spec": {
         "template": "bars",
-        "title": "The Fractured $45M Corporate Data Lake... - Strategic Decision Evaluation",
+        "title": "The Fractured $45M Corporate Data Lake Waste Forensic Audit - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "05f064f50276db1ffe3092a1bac8a7f3cdf97b64ab1629df74e2567b458fa48a",
       "spec": {
         "template": "bars",
-        "title": "Organizational Topologies & Data Mesh ... - Strategic Decision Evaluation",
+        "title": "Organizational Topologies & Data Mesh with Federated Governance - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "b3c5b5a6e13fc69556ebadf91d15c0b622607b52bb2dbd8fa92541a398db621a",
       "spec": {
         "template": "bars",
-        "title": "Multi-Year Capital Allocation & Decisi... - Strategic Decision Evaluation",
+        "title": "Multi-Year Capital Allocation & Decision Intelligence ROI Modeling - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "7a3c0bba74e827a1c1c3ab2f1e1edb2738addc75255a2c5013cf187d5db1ffe8",
       "spec": {
         "template": "bars",
-        "title": "Building a Production CAO Decision Arc... - Strategic Decision Evaluation",
+        "title": "Building a Production CAO Decision Architecture & RFC Platform - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",

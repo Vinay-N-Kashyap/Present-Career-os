@@ -8,7 +8,7 @@
       "codeHash": "36a93ac0ef351ca6a62ede73aa75866c77d428c9cbe19c4f108dff9457ab5491",
       "spec": {
         "template": "bars",
-        "title": "Primal Formulation & Polyhedral Geomet... - Learning Evaluation",
+        "title": "Primal Formulation & Polyhedral Geometry of Linear Programs - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "891aa3f6b5b4de4eb5d2b5d18e7ffcc89702cfc313e37c456d2cd63b272ab45f",
       "spec": {
         "template": "bars",
-        "title": "The Simplex Algorithm & Tableau Pivot ... - Learning Evaluation",
+        "title": "The Simplex Algorithm & Tableau Pivot Mechanics - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "f810787da7568b9212f6dcbdfa16a9bf4bb58b9ba3a34d88014a2ce1187d4cb6",
       "spec": {
         "template": "bars",
-        "title": "Duality Theory & The Strong Duality Th... - Learning Evaluation",
+        "title": "Duality Theory & The Strong Duality Theorem - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "99c585304076f538687739a9e9f402dac145e9459a4a106b80f349ea6774d025",
       "spec": {
         "template": "bars",
-        "title": "Shadow Prices & Marginal Economic Valu... - Learning Evaluation",
+        "title": "Shadow Prices & Marginal Economic Value of Bottlenecks - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "95fc9c453d8ff6c9b67f6e0c39705ebe74fc52342b910ad7b2b0f94d1ed4a42b",
       "spec": {
         "template": "bars",
-        "title": "Enterprise Multi-Facility Supply Chain... - Learning Evaluation",
+        "title": "Enterprise Multi-Facility Supply Chain & Transportation Optimization - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

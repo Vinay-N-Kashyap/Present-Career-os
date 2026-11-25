@@ -10,11 +10,11 @@
       "codeHash": "62952e2bcc1a0ce91bc0e3ea7101de5da70076983be0bf1bc340ef1b34143e97",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Characteristics of Fraud & The Fraud Triangle: SA  — Forensic Audit Ledger",
+        "title": "Characteristics of Fraud & The Fraud Triangle: SA 240 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 11 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1290000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1455000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Characteristics of.",
+            "caption": "Execute simulated enterprise forensic case study for Characteristics of Fraud.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1455000,
@@ -141,11 +141,11 @@
       "codeHash": "525cb3b352d381ad8ce1c5cc0ae164e49b735e86a030611efad67d0fe2ae2b57",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Management Override of Controls & Journal Entry Te — Forensic Audit Ledger",
+        "title": "Management Override of Controls & Journal Entry Testing (JET): SA 240 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Management.",
+            "caption": "Open forensic assurance verification ledger for Management Override of Controls.",
             "title": "Day 11 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1310000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1484500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Management Override.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1484500,
@@ -272,11 +272,11 @@
       "codeHash": "a2b24b8e7b7352a39b0e8de092adde3c3430eadff28fe51a64e91a5387774b23",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Review of Accounting Estimates for Bias & The Bene — Forensic Audit Ledger",
+        "title": "Review of Accounting Estimates for Bias & The Beneish M-Score: SA 240 — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Review of.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 11 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1330000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1514000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Review of Accounting.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1514000,
@@ -403,11 +403,11 @@
       "codeHash": "71176d909e6786b9dff314d185f57f74d659f9f8e450691a3d1b5f3d61072e48",
       "spec": {
         "template": "ledger-sheet",
-        "title": "First-Digit Benford's Law Chi-Square Fraud Analyti — Forensic Audit Ledger",
+        "title": "First-Digit Benford's Law Chi-Square Fraud Analytics: Forensic — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for First-Digit.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 11 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1350000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1543500,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for First-Digit.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1543500,
@@ -534,11 +534,11 @@
       "codeHash": "0ca0feb3d320297885e1329acf4299256db88a8f5d278f94541e82881750f9e3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Whistleblower Investigation Protocol & Co — Forensic Audit Ledger",
+        "title": "Forensic Whistleblower Investigation Protocol & Conflict of Interest — Forensic Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open forensic assurance verification ledger (multiple) for Forensic.",
+            "caption": "Open forensic assurance verification ledger.",
             "title": "Day 11 Forensic Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1370000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record forensic adjustment / impairment entry (multiple) under applicable.",
+            "caption": "Record forensic adjustment / impairment entry.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Adjustment",
             "isBalanced": true,
             "totalDebit": 1573000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise forensic case study for Forensic.",
+            "caption": "Execute simulated enterprise forensic case study.",
             "title": "Day 11 Forensic Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1573000,

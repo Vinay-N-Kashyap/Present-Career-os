@@ -7,11 +7,11 @@
       "partIndex": 0,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Foreign Trade Policy (FTP 2023) Architecture,... — General Ledger Verification",
+        "title": "Foreign Trade Policy (FTP 2023) Architecture, DGFT & SION Framework — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Foreign Trade Policy F (Delta Alpha).",
+            "caption": "Open primary debit entry for Foreign Trade Policy.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9100,
@@ -37,7 +37,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Foreign Trade Policy F (Alpha).",
+            "caption": "Record secondary accrual adjustment for Foreign Trade Policy.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10920,
@@ -68,7 +68,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Foreign Trade Policy F (Delta).",
+            "caption": "Reconcile sub-ledger balances for Foreign Trade Policy.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10920,
@@ -99,7 +99,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Foreign Trade Policy F (Alpha).",
+            "caption": "Verify double-entry trial balance for Foreign Trade Policy.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10920,
@@ -134,11 +134,11 @@
       "partTitle": "Foreign Trade Policy (FTP 2023) Architecture, DGFT & SION Framework",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Foreign Trade Policy (FTP 2023) Architecture,... — General Ledger Verification",
+        "title": "Foreign Trade Policy (FTP 2023) Architecture, DGFT & SION Framework — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Foreign Trade Policy F (Delta Alpha).",
+            "caption": "Open primary debit entry for Foreign Trade Policy.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9100,
@@ -164,7 +164,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Foreign Trade Policy F (Alpha).",
+            "caption": "Record secondary accrual adjustment for Foreign Trade Policy.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 10920,
@@ -195,7 +195,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Foreign Trade Policy F (Delta).",
+            "caption": "Reconcile sub-ledger balances for Foreign Trade Policy.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 10920,
@@ -226,7 +226,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Foreign Trade Policy F (Alpha).",
+            "caption": "Verify double-entry trial balance for Foreign Trade Policy.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 10920,
@@ -262,11 +262,11 @@
       "partIndex": 1,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Advance Authorization & Duty Free Import Auth... — General Ledger Verification",
+        "title": "Advance Authorization & Duty Free Import Authorisation (DFIA) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Advance Authorization (Delta Beta).",
+            "caption": "Open primary debit entry for Advance Authorization.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9300,
@@ -292,7 +292,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Advance Authorization (Beta).",
+            "caption": "Record secondary accrual adjustment for Advance Authorization.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11160,
@@ -323,7 +323,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Advance Authorization (Delta).",
+            "caption": "Reconcile sub-ledger balances for Advance Authorization.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11160,
@@ -354,7 +354,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Advance Authorization (Beta).",
+            "caption": "Verify double-entry trial balance for Advance Authorization.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11160,
@@ -389,11 +389,11 @@
       "partTitle": "Advance Authorization & Duty Free Import Authorisation (DFIA) Mechanics",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Advance Authorization & Duty Free Import Auth... — General Ledger Verification",
+        "title": "Advance Authorization & Duty Free Import Authorisation (DFIA) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Advance Authorization (Delta Beta).",
+            "caption": "Open primary debit entry for Advance Authorization.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9300,
@@ -419,7 +419,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Advance Authorization (Beta).",
+            "caption": "Record secondary accrual adjustment for Advance Authorization.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11160,
@@ -450,7 +450,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Advance Authorization (Delta).",
+            "caption": "Reconcile sub-ledger balances for Advance Authorization.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11160,
@@ -481,7 +481,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Advance Authorization (Beta).",
+            "caption": "Verify double-entry trial balance for Advance Authorization.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11160,
@@ -517,11 +517,11 @@
       "partIndex": 2,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Export Promotion Capital Goods (EPCG) Scheme:... — General Ledger Verification",
+        "title": "Export Promotion Capital Goods (EPCG) Scheme: Concessional Import — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Export Promotion Capit (Delta Gamma).",
+            "caption": "Open primary debit entry for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9500,
@@ -547,7 +547,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Export Promotion Capit (Gamma).",
+            "caption": "Record secondary accrual adjustment for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -578,7 +578,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Export Promotion Capit (Delta).",
+            "caption": "Reconcile sub-ledger balances for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -609,7 +609,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Export Promotion Capit (Gamma).",
+            "caption": "Verify double-entry trial balance for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -644,11 +644,11 @@
       "partTitle": "Export Promotion Capital Goods (EPCG) Scheme: Concessional Import & Export Obligation Architecture",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Export Promotion Capital Goods (EPCG) Scheme:... — General Ledger Verification",
+        "title": "Export Promotion Capital Goods (EPCG) Scheme: Concessional Import — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Export Promotion Capit (Delta Gamma).",
+            "caption": "Open primary debit entry for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9500,
@@ -674,7 +674,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Export Promotion Capit (Gamma).",
+            "caption": "Record secondary accrual adjustment for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -705,7 +705,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Export Promotion Capit (Delta).",
+            "caption": "Reconcile sub-ledger balances for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -736,7 +736,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Export Promotion Capit (Gamma).",
+            "caption": "Verify double-entry trial balance for Export Promotion Capital Goods.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11400,
@@ -772,11 +772,11 @@
       "partIndex": 3,
       "spec": {
         "template": "ledger-sheet",
-        "title": "RoDTEP & RoSCTL Schemes: WTO-Compliant Rebate... — General Ledger Verification",
+        "title": "RoDTEP & RoSCTL Schemes: WTO-Compliant — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for RoDTEP RoSCTL Schemes (Delta Delta).",
+            "caption": "Open primary debit entry for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9700,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for RoDTEP RoSCTL Schemes (Delta).",
+            "caption": "Record secondary accrual adjustment for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11640,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for RoDTEP RoSCTL Schemes (Delta).",
+            "caption": "Reconcile sub-ledger balances for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11640,
@@ -864,7 +864,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for RoDTEP RoSCTL Schemes (Delta).",
+            "caption": "Verify double-entry trial balance for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11640,
@@ -899,11 +899,11 @@
       "partTitle": "RoDTEP & RoSCTL Schemes: WTO-Compliant Rebate Framework & Electronic Scrips",
       "filled": {
         "template": "ledger-sheet",
-        "title": "RoDTEP & RoSCTL Schemes: WTO-Compliant Rebate... — General Ledger Verification",
+        "title": "RoDTEP & RoSCTL Schemes: WTO-Compliant — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for RoDTEP RoSCTL Schemes (Delta Delta).",
+            "caption": "Open primary debit entry for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9700,
@@ -929,7 +929,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for RoDTEP RoSCTL Schemes (Delta).",
+            "caption": "Record secondary accrual adjustment for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11640,
@@ -960,7 +960,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for RoDTEP RoSCTL Schemes (Delta).",
+            "caption": "Reconcile sub-ledger balances for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11640,
@@ -991,7 +991,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for RoDTEP RoSCTL Schemes (Delta).",
+            "caption": "Verify double-entry trial balance for RoDTEP RoSCTL Schemes.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11640,
@@ -1027,11 +1027,11 @@
       "partIndex": 4,
       "spec": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "title": "Production Python Architecture: Deterministic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Delta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9900,
@@ -1057,7 +1057,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11880,
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Delta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11880,
@@ -1119,7 +1119,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11880,
@@ -1154,11 +1154,11 @@
       "partTitle": "Production Python Architecture: Deterministic Export Incentive & EPCG Monitoring Engine",
       "filled": {
         "template": "ledger-sheet",
-        "title": "Production Python Architecture: Deterministic... — General Ledger Verification",
+        "title": "Production Python Architecture: Deterministic — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry for Production Python Arch (Delta Epsilon).",
+            "caption": "Open primary debit entry for Production Python Architecture.",
             "title": "Day 44 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 9900,
@@ -1184,7 +1184,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment for Production Python Arch (Epsilon).",
+            "caption": "Record secondary accrual adjustment for Production Python Architecture.",
             "title": "Day 44 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 11880,
@@ -1215,7 +1215,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances for Production Python Arch (Delta).",
+            "caption": "Reconcile sub-ledger balances for Production Python Architecture.",
             "title": "Day 44 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 11880,
@@ -1246,7 +1246,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Verify double-entry trial balance for Production Python Arch (Epsilon).",
+            "caption": "Verify double-entry trial balance for Production Python Architecture.",
             "title": "Day 44 Journal — Audited Trial Balance",
             "isBalanced": true,
             "totalDebit": 11880,

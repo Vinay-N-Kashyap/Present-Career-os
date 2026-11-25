@@ -8,7 +8,7 @@
       "codeHash": "a3c23c4888e958df5cec4a61760ef16c9c4ea4f5aafca97c81be7853001df931",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Onboarding Topology: Mil... - RevOps Funnel",
+        "title": "Enterprise Onboarding Topology: Milestones, SOW Deliverables - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "c09534a5db57227fe94190c215d28f61b081814a7c689d1aadcd3e2be2a4435c",
       "spec": {
         "template": "funnel",
-        "title": "Customer Journey State Machines: On... - RevOps Funnel",
+        "title": "Customer Journey State Machines: Onboarding, Adoption, Value - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "ab9680841a04a9ccc9e02208163af33a4b1200eb4e5a018adb7b885bdb987f7a",
       "spec": {
         "template": "funnel",
-        "title": "Executive Business Reviews (EBR / Q... - RevOps Funnel",
+        "title": "Executive Business Reviews (EBR / QBR) & Value Realization ROI Ledgers - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "a11a57973977fddf9162d2d6f10890d804b7c3a83aff9ddb7eed3284d5afe4ef",
       "spec": {
         "template": "funnel",
-        "title": "Automated CS Playbook Dispatching: ... - RevOps Funnel",
+        "title": "Automated CS Playbook Dispatching: Stalled Onboarding & At-Risk - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "4fd2ef1a816371f60a4e2ac6971385fd0ed751ed57ee24b050d86f777b484f92",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Soverei... - RevOps Funnel",
+        "title": "Full Python Implementation: Sovereign Customer Journey State Machine - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

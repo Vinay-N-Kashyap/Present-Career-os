@@ -10,7 +10,7 @@
       "codeHash": "5c6896fc18382fc399f3a6d0f13ab1cd8d5a8b6c9fd8b68bff92c553b809931b",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 1: Neural Demand Forecasting, Hie... — Enterprise AI Decision Graph",
+        "title": "Pillar 1: Neural Demand Forecasting — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -134,7 +134,7 @@
       "codeHash": "68a1e11f86b185f3e0b064f64379b70fbbedc7133dc0d9079e47405b225e4c48",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 2: Multi-Echelon Safety Stock Opt... — Enterprise AI Decision Graph",
+        "title": "Pillar 2: Multi-Echelon Safety Stock — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -258,7 +258,7 @@
       "codeHash": "a2b4c44f39513224fb3a8c853f7f032cce81bbf0896387b379a4ae9146a49784",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 3: Autonomous Fleet Dispatch, 2-O... — Enterprise AI Decision Graph",
+        "title": "Pillar 3: Autonomous Fleet Dispatch — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -382,7 +382,7 @@
       "codeHash": "0c6aeb5f3661acfad80de08af01ac52aff0413ebc4854b05c2dd8c84d8caf5e7",
       "spec": {
         "template": "tree-graph",
-        "title": "Pillar 4: Cognitive Sourcing, Contract R... — Enterprise AI Decision Graph",
+        "title": "Pillar 4: Cognitive Sourcing, Contract — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -506,7 +506,7 @@
       "codeHash": "909cd985a394ee0df0c24537286110a5812b6a674ffe928ed0317d8e3ed49cc9",
       "spec": {
         "template": "tree-graph",
-        "title": "Grand Capstone Synthesis: The 100/100 Au... — Enterprise AI Decision Graph",
+        "title": "Grand Capstone Synthesis: The 100/100 — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",

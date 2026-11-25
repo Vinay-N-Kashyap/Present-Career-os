@@ -10,11 +10,11 @@
       "codeHash": "7113b102a9fba6c14757877513ba9cbc0eaab943b530247cb240f4d28b756023",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Pre-Tax vs Effective After-Tax Cost of Deb... — General Ledger Verification",
+        "title": "Pre-Tax vs Effective After-Tax Cost of Debt Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Pre-Tax vs.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 67000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 80400,
@@ -139,11 +139,11 @@
       "codeHash": "e014df0d93ee3ed3d882cb7a8f67a7fabab34261702a6f635e62f0848d0e46b0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Corporate Interest Tax Shield: Annual ... — General Ledger Verification",
+        "title": "The Corporate Interest Tax Shield: Annual — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The Corporate.",
+            "caption": "Open primary facility debit entry for The Corporate Interest Tax Shield.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 68250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 81900,
@@ -268,11 +268,11 @@
       "codeHash": "3bfa9e634261389ebab8bada7954bece5edb8d55d92ddc86a21ecf0b100bda51",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Flotation Costs: Underwriting Fees & Net I... — General Ledger Verification",
+        "title": "Flotation Costs: Underwriting Fees & Net — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Flotation.",
+            "caption": "Open primary facility debit entry for Flotation Costs.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 69500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 83400,
@@ -397,11 +397,11 @@
       "codeHash": "1637527cda40ce26128f58d9ad80dd1f59626138478728d0ad7e30227ce2b337",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Redeemable Debentures: YTM Approximation &... — General Ledger Verification",
+        "title": "Redeemable Debentures: YTM Approximation — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Redeemable.",
+            "caption": "Open primary facility debit entry for Redeemable Debentures.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 70750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 84900,
@@ -526,11 +526,11 @@
       "codeHash": "2a927b0a7a256282237d26f55b382f275282e1fe6f06645a748242c243994c1a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Debt Capital Structure & Tax Sh... — General Ledger Verification",
+        "title": "Enterprise Debt Capital Structure & Tax Shield Master Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Debt Capital Structure.",
             "title": "Day 12 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 72000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 12 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 86400,

@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Strategic Principles of Earnings Quality... — Ledger Verification",
+        "title": "Strategic Principles of Earnings Quality & Cash Flow Realism — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 18005000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Richard Sloan's Accrual Anomaly & Earnin... — Ledger Verification",
+        "title": "Richard Sloan's Accrual Anomaly & Earnings Persistence Modeling — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 18010000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Messod Beneish's 8-Variable M-Score Fore... — Ledger Verification",
+        "title": "Messod Beneish's 8-Variable M-Score Forensic Architecture — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 18015000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Auditing Standards, NFRA Inspec... — Ledger Verification",
+        "title": "Forensic Auditing Standards, NFRA Inspections & CARO 2020 Fraud — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 18020000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Python Forensic Suite Execution & Qualit... — Ledger Verification",
+        "title": "Python Forensic Suite Execution & Quality Certification — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 49 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 18025000,

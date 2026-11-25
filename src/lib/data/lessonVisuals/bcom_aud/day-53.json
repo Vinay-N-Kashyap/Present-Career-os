@@ -8,7 +8,7 @@
       "codeHash": "62965672ac8948d341f05f72b542f6e0ba8ed634f44cc73a1d590dd5f9cf023a",
       "spec": {
         "template": "funnel",
-        "title": "The Statutory Going Concern Framework ... — Assurance Review",
+        "title": "The Statutory Going Concern Framework under ISA 570 & ASC 205-40 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "41698c8d93057fbd92fc112470dac270cf390f8d8a168b789b26f584fc53a502",
       "spec": {
         "template": "funnel",
-        "title": "Auditing Negative Financial Indicators... — Assurance Review",
+        "title": "Auditing Negative Financial Indicators & Operational Warning Signals — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "5935be95ffaeb2ae1ba1c1e072132334c167b02e20d5daa9b9c75f0c9f847706",
       "spec": {
         "template": "funnel",
-        "title": "Evaluating Management's Mitigating Pla... — Assurance Review",
+        "title": "Evaluating Management's Mitigating Plans under ASC 205-40-50 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "11a15f461ee5a8549f1da8f57aabd93d71ba1091765ccbb7f4cf289702f9b248",
       "spec": {
         "template": "funnel",
-        "title": "Audit Reporting Architecture: Explanat... — Assurance Review",
+        "title": "Audit Reporting Architecture: Explanatory Paragraphs vs. Modified — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "f9f2b466cb80209210bc78ccf6d71e64e9263231c6ab15a62a168967a419fce4",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Going Concern Liquidity ... — Assurance Review",
+        "title": "Comprehensive Going Concern Liquidity Stress & Survival Simulator — Assurance Review",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "281f3bb0c5aba84497ce30ca45763b14e1f751c46daf8dd5a58bf5d04101449d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Two-Tier CBDC Architecture & Central Bank ... — General Ledger Verification",
+        "title": "Two-Tier CBDC Architecture & Central Bank Balance Sheet Mechanics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Two-Tier CBDC.",
+            "caption": "Open primary facility debit entry for Two-Tier CBDC Architecture.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 109000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 130800,
@@ -139,11 +139,11 @@
       "codeHash": "7daff9180ad7af01de5032fc8eba902150fed90d3c733d71707f1c4d9490024f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cross-Border Multi-CBDC Platforms & Projec... — General Ledger Verification",
+        "title": "Cross-Border Multi-CBDC Platforms & Project mBridge — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cross-Border.",
+            "caption": "Open primary facility debit entry for Cross-Border Multi-CBDC Platforms.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 132300,
@@ -268,11 +268,11 @@
       "codeHash": "7b9c3d4d9086d4f8fee6f6435c5c4db9e43a252f1973bd04ae020e694cd4a24a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Programmable Money, Conditional Smart Cont... — General Ledger Verification",
+        "title": "Programmable Money, Conditional Smart Contracts & Algorithmic Escrows — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 111500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 133800,
@@ -397,11 +397,11 @@
       "codeHash": "f1843ae3d6045160e89660d25c820a061465cf302c64ef1dd52d248ee5a7837f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dual-Offline Digital Cash Rails & Cryptogr... — General Ledger Verification",
+        "title": "Dual-Offline Digital Cash Rails & Cryptographic Double-Spending — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Dual-Offline.",
+            "caption": "Open primary facility debit entry for Dual-Offline Digital Cash Rails.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 112750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 135300,
@@ -526,11 +526,11 @@
       "codeHash": "637cb602510554b8276c2f15eb74ed36cd828947923d925fe6b234d132c85769",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Commercial Bank Disintermediation Defense ... — General Ledger Verification",
+        "title": "Commercial Bank Disintermediation Defense & Holding Caps — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Commercial.",
+            "caption": "Open primary facility debit entry for Commercial Bank Disintermediation Defense.",
             "title": "Day 24 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 114000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 24 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 136800,

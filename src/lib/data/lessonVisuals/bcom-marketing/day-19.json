@@ -10,11 +10,11 @@
       "codeHash": "2acffa2d9c6edaad219c6c4235dbc9552160094aff467099af2478faf15aaf8a",
       "spec": {
         "template": "funnel",
-        "title": "Precision Direct Marketing: Customer Datab... — Conversion Funnel",
+        "title": "Precision Direct Marketing: Customer — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "718a55a76e3270c443b5c8bfc58a47897ab353e12e603f439b231d240791ba2a",
       "spec": {
         "template": "funnel",
-        "title": "Email Deliverability Infrastructure, Autom... — Conversion Funnel",
+        "title": "Email Deliverability Infrastructure, Automated Cadences & Retention — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "5f39bcd9b8a663b6e53b81dc3ab414b9699c25141c74145ad4d7b1879a1a1715",
       "spec": {
         "template": "funnel",
-        "title": "B2B Lead Qualification & Pipeline Physics:... — Conversion Funnel",
+        "title": "B2B Lead Qualification & Pipeline Physics: BANT vs MEDDIC — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,OK total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "749673d0bff4cbf89cac0bc02405d17562c124cf3e2faaa66c8443060c9e3723",
       "spec": {
         "template": "funnel",
-        "title": "Interactive Code Simulation: Algorithmic P... — Conversion Funnel",
+        "title": "Interactive Code Simulation: Algorithmic — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,7 +658,7 @@
       "codeHash": "f1b65d9369dc5bf5c3d6f2534b2f1feec0fa0667b35591933c92c2f8dea63bbc",
       "spec": {
         "template": "funnel",
-        "title": "Account-Based Marketing (ABM) Architecture... — Conversion Funnel",
+        "title": "Account-Based Marketing (ABM) Architecture & Enterprise Buying Centers — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

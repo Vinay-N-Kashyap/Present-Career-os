@@ -10,7 +10,7 @@
       "codeHash": "076c0157f61a58e000e9001d9e0a98b340b9a2ff894015f8f30c8924c2466bcb",
       "spec": {
         "template": "tree-graph",
-        "title": "Content-Based Filtering & Item Feature Cosine... — Enterprise AI Decision Graph",
+        "title": "Content-Based Filtering & Item Feature Cosine Similarity — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Content-Based Filtering & Item ...",
+            "caption": "Ingest enterprise Context Query for Content-Based Filtering.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Content-Based Filtering & Item Feature Cosine... — Enterprise AI Decision Graph",
+        "title": "Content-Based Filtering & Item Feature Cosine Similarity — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Content-Based Filtering & Item ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Content-Based Filtering.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "13b0930b4431b64b73fc239c190c938ab4ca64e2c65dae46924e9e570e6bd5fa",
       "spec": {
         "template": "tree-graph",
-        "title": "User-Based Collaborative Filtering & Pearson ... — Enterprise AI Decision Graph",
+        "title": "User-Based Collaborative Filtering & Pearson Correlation Neighborhoods — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for User-Based Collaborative Filter...",
+            "caption": "Ingest enterprise Context Query for User-Based Collaborative Filtering.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "User-Based Collaborative Filtering & Pearson ... — Enterprise AI Decision Graph",
+        "title": "User-Based Collaborative Filtering & Pearson Correlation Neighborhoods — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for User-Based Collaborative Filter...",
+            "caption": "Step 1: Ingest enterprise Context Query for User-Based Collaborative Filtering.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "7a9ca20010006de70e6f713a1a616852cf7aa41644896e6d0153386acdadc51e",
       "spec": {
         "template": "tree-graph",
-        "title": "Matrix Factorization (SVD / ALS) & Scalable L... — Enterprise AI Decision Graph",
+        "title": "Matrix Factorization (SVD / ALS) & Scalable Latent Embedding — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Matrix Factorization (SVD / ALS...",
+            "caption": "Ingest enterprise Context Query for Matrix Factorization.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Matrix Factorization (SVD / ALS) & Scalable L... — Enterprise AI Decision Graph",
+        "title": "Matrix Factorization (SVD / ALS) & Scalable Latent Embedding — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Matrix Factorization (SVD / ALS...",
+            "caption": "Step 1: Ingest enterprise Context Query for Matrix Factorization.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "96d145aa5bc2b14a83e5649805f7c8c74fd6ca11bc0109ca16658bc502931741",
       "spec": {
         "template": "tree-graph",
-        "title": "Customer Lifetime Value (CLV) & Multi-Armed B... — Enterprise AI Decision Graph",
+        "title": "Customer Lifetime Value (CLV) & Multi-Armed Bandit (MAB UCB1) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Customer Lifetime Value (CLV) &...",
+            "caption": "Ingest enterprise Context Query for Customer Lifetime Value.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Customer Lifetime Value (CLV) & Multi-Armed B... — Enterprise AI Decision Graph",
+        "title": "Customer Lifetime Value (CLV) & Multi-Armed Bandit (MAB UCB1) — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Customer Lifetime Value (CLV) &...",
+            "caption": "Step 1: Ingest enterprise Context Query for Customer Lifetime Value.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "e3d2c365ba0efb2c041b04760b194677a586f91b6bd598cb45850c6ac1708388",
       "spec": {
         "template": "tree-graph",
-        "title": "Next-Best-Action (NBA) Decision Engine & Mult... — Enterprise AI Decision Graph",
+        "title": "Next-Best-Action (NBA) Decision Engine & Multi-Criteria Commercial — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Next-Best-Action (NBA) Decision...",
+            "caption": "Ingest enterprise Context Query for Next-Best-Action.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Next-Best-Action (NBA) Decision Engine & Mult... — Enterprise AI Decision Graph",
+        "title": "Next-Best-Action (NBA) Decision Engine & Multi-Criteria Commercial — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Next-Best-Action (NBA) Decision...",
+            "caption": "Step 1: Ingest enterprise Context Query for Next-Best-Action.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

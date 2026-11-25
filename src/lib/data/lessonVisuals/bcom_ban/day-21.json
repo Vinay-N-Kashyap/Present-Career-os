@@ -10,11 +10,11 @@
       "codeHash": "a5e40459d0bd65851f9860d34d6eec8e4ba4475015dbad394a0f641e8e266b5a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Microfinance Institutions (MFI) & The Join... — General Ledger Verification",
+        "title": "Microfinance Institutions (MFI) & The Joint Liability Group (JLG) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 98500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 118200,
@@ -139,11 +139,11 @@
       "codeHash": "6cf1156f8ac79f9992b14c785071f7c5cec1ce8d0ea2cd7d988b528c957ce1f2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Priority Sector Lending (PSL) & Regulatory... — General Ledger Verification",
+        "title": "Priority Sector Lending (PSL) & Regulatory Lending Targets — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Priority.",
+            "caption": "Open primary facility debit entry for Priority Sector Lending.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 99750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 119700,
@@ -268,11 +268,11 @@
       "codeHash": "3a850dbc0074312aeea7a78801f54d06c48683dfbf91541e410409b67a33e5a7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Digital Identity, e-KYC & Aadhaar / eID Ve... — General Ledger Verification",
+        "title": "Digital Identity, e-KYC & Aadhaar / eID Verification Rails — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Digital.",
+            "caption": "Open primary facility debit entry for Digital Identity.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 101000,
@@ -397,11 +397,11 @@
       "codeHash": "ea15934e14c39783f57e0c2413fb22c8c7f3d60d74fc0ce9be1ccd916e825f2c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cash Flow-Based Micro-Underwriting & Alter... — General Ledger Verification",
+        "title": "Cash Flow-Based Micro-Underwriting & Alternative Credit Scoring — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cash.",
+            "caption": "Open primary facility debit entry for Cash Flow-Based Micro-Underwriting.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 102250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 122700,
@@ -526,11 +526,11 @@
       "codeHash": "008823aeb408e0657f14e01dd11c8d6bd9d13f99808d348ab59879fc857e98ec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Customer Protection & Fair Lending Practic... — General Ledger Verification",
+        "title": "Customer Protection & Fair Lending Practices under Responsible — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Customer.",
+            "caption": "Open primary facility debit entry for Customer Protection.",
             "title": "Day 21 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 103500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 21 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 124200,

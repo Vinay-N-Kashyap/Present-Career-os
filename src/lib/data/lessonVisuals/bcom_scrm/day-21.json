@@ -10,11 +10,11 @@
       "codeHash": "d8d7fd4cde019341d002bd44e88ae8230dcade9f620c5b5e3539aa5eab1b178f",
       "spec": {
         "template": "funnel",
-        "title": "TAM-Balanced Territory Carving: Mathematic - RevOps Funnel",
+        "title": "TAM-Balanced Territory Carving: Mathematical Equipartition & Gini - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "TAM-Balanced Territory Carving: Mathematic - RevOps Funnel",
+        "title": "TAM-Balanced Territory Carving: Mathematical Equipartition & Gini - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "4f4e09555620624667792480601ae8c47228aab06a85d8eb71d59df5b145b263",
       "spec": {
         "template": "funnel",
-        "title": "ICP Tiering & Account Segmentation: Enterp - RevOps Funnel",
+        "title": "ICP Tiering & Account Segmentation: Enterprise TAM Stratification - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "ICP Tiering & Account Segmentation: Enterp - RevOps Funnel",
+        "title": "ICP Tiering & Account Segmentation: Enterprise TAM Stratification - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "69bed7b386eff6eabdd3a9675af5eec5c494014f6834924a493fa7119689f153",
       "spec": {
         "template": "funnel",
-        "title": "Hunter (AE) vs Farmer (AM/CSM) Specializat - RevOps Funnel",
+        "title": "Hunter (AE) vs Farmer (AM/CSM) Specialization & Sales Pod Mechanics - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Hunter (AE) vs Farmer (AM/CSM) Specializat - RevOps Funnel",
+        "title": "Hunter (AE) vs Farmer (AM/CSM) Specialization & Sales Pod Mechanics - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "ece08409301930f1ef7d1c938527efefb1752634740aa1f3368b60400b36b919",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Account Rebalancing & Rules of Eng - RevOps Funnel",
+        "title": "Dynamic Account Rebalancing & Rules of Engagement (ROE) Governance - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Dynamic Account Rebalancing & Rules of Eng - RevOps Funnel",
+        "title": "Dynamic Account Rebalancing & Rules of Engagement (ROE) Governance - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "5a7df91c1a466a963701580ec555cb9b61f8f4688788d0579c9f5e778919324f",
       "spec": {
         "template": "funnel",
-        "title": "Master Territory Design & Capacity Allocat - RevOps Funnel",
+        "title": "Master Territory Design & Capacity Allocation Control Tower - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Territory Design & Capacity Allocat - RevOps Funnel",
+        "title": "Master Territory Design & Capacity Allocation Control Tower - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {

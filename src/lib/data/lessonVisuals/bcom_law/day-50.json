@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 1: Capstone System Architecture: Mult... — Cross-Border Workflow",
+        "title": "Part 1: Capstone System Architecture: Multinational Enterprise — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part one: Capstone System Architecture: ...",
+            "caption": "Stage one: Initialize Part one: Capstone System Architecture:",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 2: Algorithmic COMI Rebuttal & Worldw... — Cross-Border Workflow",
+        "title": "Part 2: Algorithmic COMI Rebuttal — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part two: Algorithmic COMI Rebuttal & Wo...",
+            "caption": "Stage one: Initialize Part two: Algorithmic COMI Rebuttal",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 3: Extraterritorial Avoidance Clawbac... — Cross-Border Workflow",
+        "title": "Part 3: Extraterritorial Avoidance — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part three: Extraterritorial Avoidance Cla...",
+            "caption": "Stage one: Initialize Part three: Extraterritorial Avoidance",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 4: Multi-Currency Claims Reconciliati... — Cross-Border Workflow",
+        "title": "Part 4: Multi-Currency Claims — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part four: Multi-Currency Claims Reconcil...",
+            "caption": "Stage one: Initialize Part four: Multi-Currency Claims",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 5: Milestone 10 Capstone: Global Cros... — Cross-Border Workflow",
+        "title": "Part 5: Milestone 10 Capstone: Global — Cross-Border Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part five: Milestone ten Capstone: Global ...",
+            "caption": "Stage one: Initialize Part five: Milestone ten Capstone: Global",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

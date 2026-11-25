@@ -10,11 +10,11 @@
       "codeHash": "4b26c9f3fa558ef57513ad1378d9d25280de81d49031caecc5d92dae1d6ff9d7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Triangulated Enterprise Valuation: Multi-Stag... — General Ledger Verification",
+        "title": "Triangulated Enterprise Valuation: Multi-Stage DCF, Trading Comps — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Triangulated Enterprise Valuati...",
+            "caption": "Open primary debit entry for Triangulated Enterprise Valuation.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Triangulated Enterprise Valuation: Multi-Stag... — General Ledger Verification",
+        "title": "Triangulated Enterprise Valuation: Multi-Stage DCF, Trading Comps — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3250) for Triangulated Enterprise Valuati...",
+            "caption": "Step 1: Open primary debit entry (3250) for Triangulated Enterprise Valuation.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3250,
@@ -264,11 +264,11 @@
       "codeHash": "a4a4a312ee2baad24aea4ae9587fb33a85f099af7064257638cae1412e0b2997",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trade-Off Capital Structure & Dynamic WACC Mi... — General Ledger Verification",
+        "title": "Trade-Off Capital Structure & Dynamic WACC Minimization Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Trade-Off Capital Structure & D...",
+            "caption": "Open primary debit entry for Trade-Off Capital Structure.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4140,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Trade-Off Capital Structure & Dynamic WACC Mi... — General Ledger Verification",
+        "title": "Trade-Off Capital Structure & Dynamic WACC Minimization Engine — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3450) for Trade-Off Capital Structure & D...",
+            "caption": "Step 1: Open primary debit entry (3450) for Trade-Off Capital Structure.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3450,
@@ -518,11 +518,11 @@
       "codeHash": "3e967e9d4dbf304b099fe8a762e68ce31d827faaa3d33479c5028ada9712a0e3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Multi-Tranche Debt Capitalization & Covenant ... — General Ledger Verification",
+        "title": "Multi-Tranche Debt Capitalization & Covenant Headroom Stress Testing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Multi-Tranche Debt Capitalizati...",
+            "caption": "Open primary debit entry for Multi-Tranche Debt Capitalization.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4380,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Multi-Tranche Debt Capitalization & Covenant ... — General Ledger Verification",
+        "title": "Multi-Tranche Debt Capitalization & Covenant Headroom Stress Testing — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3650) for Multi-Tranche Debt Capitalizati...",
+            "caption": "Step 1: Open primary debit entry (3650) for Multi-Tranche Debt Capitalization.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3650,
@@ -772,11 +772,11 @@
       "codeHash": "09cd2edd88af64ce187b8e5d2d4232d43ac311684dda93182010bf132807505a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Treasury Cross-Asset Risk Hedging:... — General Ledger Verification",
+        "title": "Enterprise Treasury Cross-Asset Risk Hedging: IRS & FX Forwards — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Enterprise Treasury Cross-Asset...",
+            "caption": "Open primary debit entry for Enterprise Treasury Cross-Asset Risk Hedging.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4620,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Enterprise Treasury Cross-Asset Risk Hedging:... — General Ledger Verification",
+        "title": "Enterprise Treasury Cross-Asset Risk Hedging: IRS & FX Forwards — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3850) for Enterprise Treasury Cross-Asset...",
+            "caption": "Step 1: Open primary debit entry (3850).",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3850,
@@ -1026,11 +1026,11 @@
       "codeHash": "7c087ad3338b4b93ca78da73a5e99e6a25436d621f9625c29e82d83e5d19eff2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Capstone Synthesis: Boardroom Str... — General Ledger Verification",
+        "title": "Milestone 1 Capstone Synthesis: Boardroom — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Milestone one Capstone.",
+            "caption": "Open primary debit entry for Milestone one Capstone.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 5 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 5 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4860,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Milestone 1 Capstone Synthesis: Boardroom Str... — General Ledger Verification",
+        "title": "Milestone 1 Capstone Synthesis: Boardroom — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (4050) for Milestone 1 Capstone Synthesis:...",
+            "caption": "Step 1: Open primary debit entry (4050) for Milestone 1 Capstone Synthesis.",
             "title": "Day 5 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 4050,

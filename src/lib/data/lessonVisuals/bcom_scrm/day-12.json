@@ -10,11 +10,11 @@
       "codeHash": "004797f53b8e01b59fa98e4856f09f646b7cfd5eab5f32248de0953494d7d117",
       "spec": {
         "template": "funnel",
-        "title": "The SaaS Compounding Law: Gross Revenue Re \u2014 Retention Pipeline",
+        "title": "The SaaS Compounding Law: Gross Revenue Retention (GRR) vs Net — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (ten,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "The SaaS Compounding Law: Gross Revenue Re \u2014 Retention Pipeline",
+        "title": "The SaaS Compounding Law: Gross Revenue Retention (GRR) vs Net — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (ten,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "af547ce113e38fc314035299ee794b3e5a603805c8c962bdbd409d158848865a",
       "spec": {
         "template": "funnel",
-        "title": "Cohort Retention Waterfalls & Churn Amorti \u2014 Retention Pipeline",
+        "title": "Cohort Retention Waterfalls & Churn Amortization Accounting — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Cohort Retention Waterfalls & Churn Amorti \u2014 Retention Pipeline",
+        "title": "Cohort Retention Waterfalls & Churn Amortization Accounting — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "719377da17b69e33ddfd0092525e494355425db3ce11733986d952d1577adada",
       "spec": {
         "template": "funnel",
-        "title": "Account Expansion Economics: Seat Upsellin \u2014 Retention Pipeline",
+        "title": "Account Expansion Economics: Seat Upselling, Tier Migration — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (eight,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Account Expansion Economics: Seat Upsellin \u2014 Retention Pipeline",
+        "title": "Account Expansion Economics: Seat Upselling, Tier Migration — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (eight,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "9431abad8881b48e341d6715bd60eac833b12c8dd152428eee947003ab212848",
       "spec": {
         "template": "funnel",
-        "title": "Contract Renewal Governance: Auto-Renewal  \u2014 Retention Pipeline",
+        "title": "Contract Renewal Governance: Auto-Renewal Windows & Multi-Year — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Contract Renewal Governance: Auto-Renewal  \u2014 Retention Pipeline",
+        "title": "Contract Renewal Governance: Auto-Renewal Windows & Multi-Year — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "52772ca3aa9b051514c2fb64203923b2c38d9cf91b6415bc57f576a03fe8cd7b",
       "spec": {
         "template": "funnel",
-        "title": "Master Net Revenue Retention (NRR) & Reten \u2014 Retention Pipeline",
+        "title": "Master Net Revenue Retention (NRR) & Retention Compounding Engine — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (multiple,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Net Revenue Retention (NRR) & Reten \u2014 Retention Pipeline",
+        "title": "Master Net Revenue Retention (NRR) & Retention Compounding Engine — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (multiple,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {

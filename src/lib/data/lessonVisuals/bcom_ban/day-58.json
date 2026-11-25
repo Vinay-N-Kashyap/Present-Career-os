@@ -8,7 +8,7 @@
       "codeHash": "9066ebee99c49e6c074f0b94090edab5e2bc48f1379a4d31769f074c340bcabc",
       "spec": {
         "template": "funnel",
-        "title": "The Open Banking Revolution & Regulato... \u2014 Central Banking & Solvency",
+        "title": "The Open Banking Revolution & Regulatory Frameworks: PSD2, CDR & Digital Public Infrastructure — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "d63a9b0c49c60f8a43a770b040ff532053c9bf67cf9a6062e00674590a40334c",
       "spec": {
         "template": "funnel",
-        "title": "Electronic Consent Architecture: Granu... \u2014 Central Banking & Solvency",
+        "title": "Electronic Consent Architecture: Granular Consent Artifacts — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "03592e3535f8aa5e02d3aedf90e579b46b4ea03f2e7585ecc4bd310be2a5b2bc",
       "spec": {
         "template": "funnel",
-        "title": "API Banking Architecture & FAPI Securi... \u2014 Central Banking & Solvency",
+        "title": "API Banking Architecture & FAPI Security: OAuth 2.0, mTLS — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "da45f8b6bb700cda58fcc12c10c75c83f172b123a971116652982ef19d1c683b",
       "spec": {
         "template": "funnel",
-        "title": "Digital Cash Flow Credit Underwriting:... \u2014 Central Banking & Solvency",
+        "title": "Digital Cash Flow Credit Underwriting: Bank Statement Analytics — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "bdacb9073e3c0a9bb14f57af90d70d86f0d91e549abd2373600ccb342d6410cb",
       "spec": {
         "template": "funnel",
-        "title": "Industrial Open Banking Lab: End-to-En... \u2014 Central Banking & Solvency",
+        "title": "Industrial Open Banking Lab: End-to-End Account Aggregator Pipeline — Central Banking & Solvency",
         "steps": [
           {
             "at": "intro",

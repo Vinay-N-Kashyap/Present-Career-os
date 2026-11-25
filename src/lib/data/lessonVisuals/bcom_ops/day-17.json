@@ -10,7 +10,7 @@
       "codeHash": "f7c81c46acbc3b508545ceaaf2a75cbb8f4154973d8e12d0926d9c15e811e4a0",
       "spec": {
         "template": "workflow",
-        "title": "ICC Incoterms 2020 Rules & Risk Transfer Boun... — Operational Workflow",
+        "title": "ICC Incoterms 2020 Rules & Risk Transfer Boundaries Across Multimodal — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -40,7 +40,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize ICC Incoterms multiple Rules &.",
+            "caption": "Stage one (Demand Forecast): Initialize ICC Incoterms multiple Rules.",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "ICC Incoterms 2020 Rules & Risk Transfer Boun... — Operational Workflow",
+        "title": "ICC Incoterms 2020 Rules & Risk Transfer Boundaries Across Multimodal — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize ICC Incoterms 2020 Rules & Risk Transfer...",
+            "caption": "Stage 1 (Demand Forecast): Initialize ICC Incoterms 2020 Rules & Risk",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "7282520f43ec27e81657f76e29e233aae9bd45ed6b38bfdaf0a3e019a0a70994",
       "spec": {
         "template": "workflow",
-        "title": "Multimodal Bill of Lading (B/L), Sea Waybills... — Operational Workflow",
+        "title": "Multimodal Bill of Lading (B/L), Sea Waybills & Documentary Letters — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Multimodal Bill of Lading (B/L), Sea Waybills... — Operational Workflow",
+        "title": "Multimodal Bill of Lading (B/L), Sea Waybills & Documentary Letters — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Multimodal Bill of Lading (B/L), Sea Way...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Multimodal Bill of Lading (B/L), Sea",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "5f62d515ea9e74f617faed2fa77834519373c2b4ee8b8c9682adeb27d19d0ac3",
       "spec": {
         "template": "workflow",
-        "title": "Customs Valuation, Sovereign Tariffs, Rules o... — Operational Workflow",
+        "title": "Customs Valuation, Sovereign Tariffs, Rules of Origin & Anti-Dumping — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Customs Valuation, Sovereign Tariffs, Rules o... — Operational Workflow",
+        "title": "Customs Valuation, Sovereign Tariffs, Rules of Origin & Anti-Dumping — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Customs Valuation, Sovereign Tariffs, Ru...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Customs Valuation, Sovereign Tariffs",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "ceb382cc46247e8e6c884cb3a48e4fd3fa2c33f739b3dd1c8bdf91d8f184e749",
       "spec": {
         "template": "workflow",
-        "title": "Marine Cargo Insurance, General Average & Dem... — Operational Workflow",
+        "title": "Marine Cargo Insurance, General Average & Demurrage / Detention — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Marine Cargo Insurance, General Average & Dem... — Operational Workflow",
+        "title": "Marine Cargo Insurance, General Average & Demurrage / Detention — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Marine Cargo Insurance, General Average ...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Marine Cargo Insurance, General",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "a2a94fa3602a1e3380ff82b0faa17282c763b6d081b92992fea706a2be9057ba",
       "spec": {
         "template": "workflow",
-        "title": "Comprehensive Total Landed Cost (TLC) Calculu... — Operational Workflow",
+        "title": "Comprehensive Total Landed Cost (TLC) Calculus & Strategic Trade — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Comprehensive Total Landed Cost (TLC) Calculu... — Operational Workflow",
+        "title": "Comprehensive Total Landed Cost (TLC) Calculus & Strategic Trade — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Comprehensive Total Landed Cost (TLC) Ca...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Comprehensive Total Landed Cost (TLC)",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

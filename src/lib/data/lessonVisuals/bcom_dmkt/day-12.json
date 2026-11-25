@@ -10,11 +10,11 @@
       "codeHash": "c0b343f40dd5921483a1c3e713d9fa787e0c4b8eee85f0c9616a2665fc517bc3",
       "spec": {
         "template": "funnel",
-        "title": "Email Infrastructure & Authentication Prot... — Conversion Funnel",
+        "title": "Email Infrastructure & Authentication Protocols: SPF DNS Records — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "bf2dd1bbcd9a6af35bb5d9dc53e026dc22f5bd7d604e7b6e0a740ad4cddd75d3",
       "spec": {
         "template": "funnel",
-        "title": "Inbox Placement & Sender Reputation: IP Wa... — Conversion Funnel",
+        "title": "Inbox Placement & Sender Reputation: IP Warm-Up Schedules, Spam Traps & Engagement Scoring — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "65a5c7aad5c99f8affa4dc4c22b3a99106c83d7a5c2bf8b57aedc2ce60fcbf58",
       "spec": {
         "template": "funnel",
-        "title": "List Hygiene & Churn Management: Hard vs S... — Conversion Funnel",
+        "title": "List Hygiene & Churn Management: Hard — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "38a7e4ac8b6044faa9fec60337a690ce8dc876bd17c6d347fa140c921e76ab77",
       "spec": {
         "template": "funnel",
-        "title": "Brand Indicators for Message Identificatio... — Conversion Funnel",
+        "title": "Brand Indicators for Message — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "67989bb19812713e473f1b3b74c8c2ea520f7cdb0a12bcac45f79e38aced941d",
       "spec": {
         "template": "funnel",
-        "title": "APEX Email Deliverability & Reputation Con... — Conversion Funnel",
+        "title": "APEX Email Deliverability & Reputation Control Gateway — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

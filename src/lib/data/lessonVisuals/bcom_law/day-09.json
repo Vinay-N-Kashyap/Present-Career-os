@@ -10,11 +10,11 @@
       "codeHash": "55e5dda2b06500a410ed799a5b26b9cf218106853c4c641a7721c53fcd0f3ab6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Idea-Expression Dichotomy & The Abstra... — General Ledger Verification",
+        "title": "The Idea-Expression Dichotomy & The Abstraction-Filtration-Comparison — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for The.",
+            "caption": "Open primary facility debit entry for The Idea-Expression Dichotomy.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 67800,
@@ -139,11 +139,11 @@
       "codeHash": "aa569e0f55219c493daac600e6d982c55aea2c137250218f822ff0c5d31e4a75",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Work-Made-for-Hire Doctrine & IP Assignmen... — General Ledger Verification",
+        "title": "Work-Made-for-Hire Doctrine & IP Assignment Invariants (CCNV v. Reid) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 57750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69300,
@@ -268,11 +268,11 @@
       "codeHash": "d9445f53777959e40b06254877099cae4408f2ce9f7f9e4f32dfdc3cfdbc6948",
       "spec": {
         "template": "ledger-sheet",
-        "title": "DMCA Safe Harbors, Notice-and-Takedown & S... — General Ledger Verification",
+        "title": "DMCA Safe Harbors, Notice-and-Takedown & Secondary Infringement — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for DMCA Safe.",
+            "caption": "Open primary facility debit entry for DMCA Safe Harbors.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 59000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 70800,
@@ -397,11 +397,11 @@
       "codeHash": "2764b85473be742c0cd7dbc31d482409fbb17dbe5095f3d5377bf1e2e1e923bc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Open-Source Software Licensing (GPL vs Per... — General Ledger Verification",
+        "title": "Open-Source Software Licensing (GPL vs Permissive) & Fair Use (Google v. Oracle) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Open-Source.",
+            "caption": "Open primary facility debit entry for Open-Source Software Licensing.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72300,
@@ -526,11 +526,11 @@
       "codeHash": "353db9035bab4f89cf8c3fe4bcc582220563f32ef4f3aff67fce41ff06e5989c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Copyright Damages Architecture: Statutory ... — General Ledger Verification",
+        "title": "Copyright Damages Architecture: Statutory — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Copyright.",
+            "caption": "Open primary facility debit entry for Copyright Damages Architecture.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73800,

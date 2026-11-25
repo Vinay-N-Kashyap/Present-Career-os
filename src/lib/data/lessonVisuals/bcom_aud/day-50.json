@@ -8,7 +8,7 @@
       "codeHash": "c02401ec5fa69a0e5c08f7af2bfe2ce84334935acd341ed9a17b157f4e366825",
       "spec": {
         "template": "funnel",
-        "title": "War Room Briefing: The Multi-Cycle Sub... — Assurance Review",
+        "title": "War Room Briefing: The Multi-Cycle — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "f8f798fe3365bb2feaa44048be7206567322d7b01298e0cb9ee511a5da37db22",
       "spec": {
         "template": "funnel",
-        "title": "Cycle 1 Execution: Revenue, Contract A... — Assurance Review",
+        "title": "Cycle 1 Execution: Revenue, Contract — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "1b51a360e3f5778205c83ae855c7fa35f8b0f19215fd302630ffe6fc5ccbc562",
       "spec": {
         "template": "funnel",
-        "title": "Cycle 2 Execution: Procurement, Accoun... — Assurance Review",
+        "title": "Cycle 2 Execution: Procurement — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "0a4b807fe3d82247e77e0a847a392356fa6abad81d598c963a984a932b63c9b1",
       "spec": {
         "template": "funnel",
-        "title": "Cycles 3 & 4 Execution: Inventory, Fix... — Assurance Review",
+        "title": "Cycles 3 & 4 Execution: Inventory — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "27bb909daaaf323bb3ee9f04c1cb8fd70775e01c969685b99ac8fac6c213b1b0",
       "spec": {
         "template": "funnel",
-        "title": "War Room Master Simulator: The Multi-C... — Assurance Review",
+        "title": "War Room Master Simulator — Assurance Review",
         "steps": [
           {
             "at": "intro",

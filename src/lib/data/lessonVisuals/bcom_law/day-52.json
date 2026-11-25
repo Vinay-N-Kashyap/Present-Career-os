@@ -11,7 +11,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 1: Section 135(1) CSR Applicability &... — Compliance Workflow",
+        "title": "Part 1: Section 135(1) CSR Applicability — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -41,7 +41,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part one: Section multiple(one) CSR Applicabili...",
+            "caption": "Stage one: Initialize Part one: Section multiple(one) CSR",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -72,7 +72,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 2: Section 198 Adjusted Net Profits &... — Compliance Workflow",
+        "title": "Part 2: Section 198 Adjusted Net Profits — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -102,7 +102,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part two: Section multiple Adjusted Net Profi...",
+            "caption": "Stage one: Initialize Part two: Section multiple Adjusted Net",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -133,7 +133,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 3: Schedule VII Permitted Activities ... — Compliance Workflow",
+        "title": "Part 3: Schedule VII Permitted — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -163,7 +163,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part three: Schedule VII Permitted Activit...",
+            "caption": "Stage one: Initialize Part three: Schedule VII Permitted",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -194,7 +194,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 4: Unspent CSR Funds & Section 135(7)... — Compliance Workflow",
+        "title": "Part 4: Unspent CSR Funds & Section — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -224,7 +224,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part four: Unspent CSR Funds & Section multiple...",
+            "caption": "Stage one: Initialize Part four: Unspent CSR Funds & Section",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },
@@ -255,7 +255,7 @@
       "filled": {},
       "spec": {
         "template": "workflow",
-        "title": "Part 5: Production Section 135 CSR Complia... — Compliance Workflow",
+        "title": "Part 5: Production Section 135 CSR Compliance & S.198 Net Profit Master Engine — Compliance Workflow",
         "stages": [
           {
             "id": "s1",
@@ -285,7 +285,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one: Initialize Part five: Production Section multiple CSR Com...",
+            "caption": "Stage one: Initialize Part five: Production Section multiple CSR",
             "activeStageId": "s1",
             "statusBadge": "INGRESS"
           },

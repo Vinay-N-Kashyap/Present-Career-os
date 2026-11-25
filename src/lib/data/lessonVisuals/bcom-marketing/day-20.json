@@ -10,7 +10,7 @@
       "codeHash": "e6f83b591c47058f5913a37c0a7e70273ed242bff993ceee2e38e958c8bf791c",
       "spec": {
         "template": "funnel",
-        "title": "Architectural Synthesis: The 5-Tier IMC St... — Conversion Funnel",
+        "title": "Architectural Synthesis: The 5-Tier IMC Strategic Command Platform — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -172,11 +172,11 @@
       "codeHash": "b4b17bf598bb1654d55aacbeb3992d578e0b3aba931645a182860483807444c3",
       "spec": {
         "template": "funnel",
-        "title": "Cross-Functional Agency Governance, Briefi... — Conversion Funnel",
+        "title": "Cross-Functional Agency Governance, Briefing Protocols & Non-Working — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,7 +334,7 @@
       "codeHash": "6da76f27b22b5586798fc3fda8ee8f426c55edcaa4ca5c2318d57d5de7cb0272",
       "spec": {
         "template": "funnel",
-        "title": "Advanced Media Mix Modeling (MMM) vs Multi... — Conversion Funnel",
+        "title": "Advanced Media Mix Modeling (MMM) vs Multi-Touch Attribution (MTA) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -496,11 +496,11 @@
       "codeHash": "8d7fe919285b4eb489cd1d0a65b08ea74293d2d062d119a2cae883cf65570e00",
       "spec": {
         "template": "funnel",
-        "title": "Capstone Engineering Code: The Enterprise ... — Conversion Funnel",
+        "title": "Capstone Engineering Code — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "64139a389df847b37625dd159c0b7f307334998f53a936015790739bbd4b0ba7",
       "spec": {
         "template": "funnel",
-        "title": "Executive Campaign Defense & Boardroom Gov... — Conversion Funnel",
+        "title": "Executive Campaign Defense & Boardroom Governance Protocol — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

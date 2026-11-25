@@ -8,7 +8,7 @@
       "codeHash": "c2f060ad453894a4bf967b06123700157dc8547f3b99669eb73fbf959069999d",
       "spec": {
         "template": "funnel",
-        "title": "Statistical vs Non-Statistical Samplin... \u2014 Assurance Review",
+        "title": "Statistical vs Non-Statistical Sampling & Sampling Risk under ISA 530 — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "829ccb5bec6f1b8f18aec37a7140d7e163bbf3eb5e0d0bde09a30f8748d7dd86",
       "spec": {
         "template": "funnel",
-        "title": "Monetary Unit Sampling (MUS) / PPS: Sa... \u2014 Assurance Review",
+        "title": "Monetary Unit Sampling (MUS) / PPS: Sampling Intervals & Upper Error — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "1a9be16e41898d7c826ba761a481cab703624b6c446abfb4a6813f68286b7794",
       "spec": {
         "template": "funnel",
-        "title": "Classical Variables Sampling: Mean-per... \u2014 Assurance Review",
+        "title": "Classical Variables Sampling: Mean-per — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "42ea52f86142bc6fd52d5ca3e519166a98c93dc57e0f0ca6a004bdcd7e22aeda",
       "spec": {
         "template": "funnel",
-        "title": "Projecting Misstatements across Popula... \u2014 Assurance Review",
+        "title": "Projecting Misstatements across Populations & Evaluating Tolerable — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "07ad163d020200f8dbf61d840325eaf77910fa66ad9b3d7e7e0e14951f8293d5",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Monetary Unit Sampling (... \u2014 Assurance Review",
+        "title": "Comprehensive Monetary Unit Sampling (MUS) & Statistical Projection — Assurance Review",
         "steps": [
           {
             "at": "intro",

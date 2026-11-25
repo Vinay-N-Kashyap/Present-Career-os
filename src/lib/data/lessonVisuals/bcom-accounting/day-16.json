@@ -10,11 +10,11 @@
       "codeHash": "8134bb34a9009cba2f547eca1a8372f66762f41f701fef9c402b0299142ef8f1",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Company Master Creation & Book Beginning S... — General Ledger Verification",
+        "title": "Company Master Creation & Book Beginning Setup — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Company Master.",
+            "caption": "Open primary facility debit entry for Company Master Creation.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 81000,
@@ -139,11 +139,11 @@
       "codeHash": "2d37a636527a666d4ce968f4bc400f3fcc012963beae815e6a6ad173dc424a34",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The 28 Pre-Defined Groups Architecture (15... — General Ledger Verification",
+        "title": "The 28 Pre-Defined Groups Architecture (15 Primary + 13 Secondary) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for The multiple.",
+            "caption": "Open primary facility debit entry for The multiple.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 82250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 98700,
@@ -268,11 +268,11 @@
       "codeHash": "a10aad792291cc510c9259359ae5ad56e3a9ee311403b9baf2e4c56dd0de74d9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ledger Master Creation & Group Mapping Pro... — General Ledger Verification",
+        "title": "Ledger Master Creation & Group Mapping Protocol — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Ledger.",
+            "caption": "Open primary facility debit entry for Ledger Master Creation.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 83500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 100200,
@@ -397,11 +397,11 @@
       "codeHash": "960b1b003f016373093d70a8042d5137a113467ced644b1def086039cf39cc58",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Cost Center & Cost Category Multi-Dimensio... — General Ledger Verification",
+        "title": "Cost Center & Cost Category Multi-Dimensional Accounting — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Cost Center &.",
+            "caption": "Open primary facility debit entry for Cost Center.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 84750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 101700,
@@ -526,11 +526,11 @@
       "codeHash": "5350bf7ec38ff155011cdd416c186f23514b7e78aabd22b694e49e519a58468c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Automated Chart of Accounts Extraction & A... — General Ledger Verification",
+        "title": "Automated Chart of Accounts Extraction & Audit Trail Verification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Automated.",
+            "caption": "Open primary facility debit entry for Automated Chart of Accounts Extraction.",
             "title": "Day 16 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 86000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 16 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 103200,

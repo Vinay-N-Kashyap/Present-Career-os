@@ -10,7 +10,7 @@
       "codeHash": "e5a096c34b2514e5fcb7cb610ce2cee08940c20909f0d54407cfb1e032b3c07a",
       "spec": {
         "template": "tree-graph",
-        "title": "Domain Instruction Tuning Architecture: Bridg... — Enterprise AI Decision Graph",
+        "title": "Domain Instruction Tuning Architecture: Bridging General Intelligence — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Domain Instruction Tuning Archi...",
+            "caption": "Ingest enterprise Context Query for Domain Instruction Tuning Architecture.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Domain Instruction Tuning Architecture: Bridg... — Enterprise AI Decision Graph",
+        "title": "Domain Instruction Tuning Architecture: Bridging General Intelligence — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Domain Instruction Tuning Archi...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "0cbde38e3087132e2feb7bdd1bde31e5c74d44e99cfd0bfd4af065be1879885f",
       "spec": {
         "template": "tree-graph",
-        "title": "Domain 1: Financial Bookkeeping & LedgerCore ... — Enterprise AI Decision Graph",
+        "title": "Domain 1: Financial Bookkeeping — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Domain one: Financial Bookkeeping...",
+            "caption": "Ingest enterprise Context Query for Domain one: Financial",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Domain 1: Financial Bookkeeping & LedgerCore ... — Enterprise AI Decision Graph",
+        "title": "Domain 1: Financial Bookkeeping — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Domain 1: Financial Bookkeeping...",
+            "caption": "Step 1: Ingest enterprise Context Query for Domain 1: Financial",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "f569d9c094f2aeeecd3fceb522772574dc7191319c4d385f04b2ac2367ba6775",
       "spec": {
         "template": "tree-graph",
-        "title": "Domain 2: Statutory Audit Procedures & Workpa... — Enterprise AI Decision Graph",
+        "title": "Domain 2: Statutory Audit Procedures — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Domain two: Statutory Audit Proce...",
+            "caption": "Ingest enterprise Context Query for Domain two: Statutory Audit",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Domain 2: Statutory Audit Procedures & Workpa... — Enterprise AI Decision Graph",
+        "title": "Domain 2: Statutory Audit Procedures — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Domain 2: Statutory Audit Proce...",
+            "caption": "Step 1: Ingest enterprise Context Query for Domain 2: Statutory Audit",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "bfc59b052b20d4cf25cc5ecb0c318be2188318a6a02f6c31b4e1b85c755f38db",
       "spec": {
         "template": "tree-graph",
-        "title": "Domain 3: Corporate Law, Contractual Covenant... — Enterprise AI Decision Graph",
+        "title": "Domain 3: Corporate Law, Contractual — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Domain three: Corporate Law, Contra...",
+            "caption": "Ingest enterprise Context Query for Domain three: Corporate Law",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Domain 3: Corporate Law, Contractual Covenant... — Enterprise AI Decision Graph",
+        "title": "Domain 3: Corporate Law, Contractual — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Domain 3: Corporate Law, Contra...",
+            "caption": "Step 1: Ingest enterprise Context Query for Domain 3: Corporate Law",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "3e92a5db7ce4ea43b86ae3ddfd7e388e140fa26ce045f1c24d74d347e6131fed",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a Tri-Domain ... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building a Tri-Domain ... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

@@ -10,7 +10,7 @@
       "codeHash": "bc90d2cb739235531aea10ea4b8aa88ea912213ada053ae9facc98c7cb7776a8",
       "spec": {
         "template": "tree-graph",
-        "title": "Architecture of the Air-Gapped Sovereign Ente... — Enterprise AI Decision Graph",
+        "title": "Architecture of the Air-Gapped Sovereign Enterprise SLM Appliance — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Architecture of the Air-Gapped ...",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Architecture of the Air-Gapped Sovereign Ente... — Enterprise AI Decision Graph",
+        "title": "Architecture of the Air-Gapped Sovereign Enterprise SLM Appliance — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Architecture of the Air-Gapped ...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "6611263347a141238a70d72434f9edddc60a9d057ee73ee8517d4aa17059f2e5",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 1: On-Premise Sovereign Financial Reco... — Enterprise AI Decision Graph",
+        "title": "Module 1: On-Premise Sovereign Financial — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module one: On-Premise Sovereign ...",
+            "caption": "Ingest enterprise Context Query for Module one: On-Premise",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 1: On-Premise Sovereign Financial Reco... — Enterprise AI Decision Graph",
+        "title": "Module 1: On-Premise Sovereign Financial — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 1: On-Premise Sovereign ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 1: On-Premise",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "2edd8856495d59bee9cf54e0d2df62ce258dcfaea2a94e93b8714180ef2b7674",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 2: Air-Gapped Legal Contract Complianc... — Enterprise AI Decision Graph",
+        "title": "Module 2: Air-Gapped Legal Contract — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -542,7 +542,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module two: Air-Gapped Legal Cont...",
+            "caption": "Ingest enterprise Context Query for Module two: Air-Gapped Legal",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 2: Air-Gapped Legal Contract Complianc... — Enterprise AI Decision Graph",
+        "title": "Module 2: Air-Gapped Legal Contract — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 2: Air-Gapped Legal Cont...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 2: Air-Gapped Legal",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "c1607b6260031713bb432b63ee1076e2b6e1cb135c58866259fc73a2c834825c",
       "spec": {
         "template": "tree-graph",
-        "title": "Module 3: Sovereign Real-Time Audit Verificat... — Enterprise AI Decision Graph",
+        "title": "Module 3: Sovereign Real-Time Audit — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Module three: Sovereign Real-Time A...",
+            "caption": "Ingest enterprise Context Query for Module three: Sovereign Real-Time",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Module 3: Sovereign Real-Time Audit Verificat... — Enterprise AI Decision Graph",
+        "title": "Module 3: Sovereign Real-Time Audit — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Sovereign Real-Time A...",
+            "caption": "Step 1: Ingest enterprise Context Query for Module 3: Sovereign Real-Time",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "b5fc15f4927fa813b4c2a23c5495123490cc6dfeb776a6ffe324971fa4c77a4c",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Sovereign Enterpri... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Sovereign — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The Sove...",
+            "caption": "Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: The Sovereign Enterpri... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: The Sovereign — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The Sove...",
+            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis: The",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

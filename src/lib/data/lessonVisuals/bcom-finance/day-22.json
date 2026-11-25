@@ -10,11 +10,11 @@
       "codeHash": "23a76f30a4be9cf834941447520e5a3ad7ca4f04d119a6253e10175963df138a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Unlevered Free Cash Flow to Firm (FCFF) Pi... — General Ledger Verification",
+        "title": "Unlevered Free Cash Flow to Firm (FCFF) Pipeline Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Unlevered Free.",
+            "caption": "Open primary facility debit entry for Unlevered Free Cash Flow to Firm.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 102000,
@@ -139,11 +139,11 @@
       "codeHash": "6b66c29bdfcb50dc32cbcf6fafa067dcc1221481c01d2b093bf0f2739268b860",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Terminal Value (TV) & The Enterprise-to-Eq... — General Ledger Verification",
+        "title": "Terminal Value (TV) & The Enterprise-to-Equity Value Bridge — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Terminal Value.",
+            "caption": "Open primary facility debit entry for Terminal Value.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 103250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 123900,
@@ -268,11 +268,11 @@
       "codeHash": "8a408e6db3e3d962f9d68c981955015e011c248adae61aa40450f321d469fc0c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Relative Valuation Multiples: P/E, EV/EBIT... — General Ledger Verification",
+        "title": "Relative Valuation Multiples: P/E, EV/EBITDA & Benchmark Comps — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Relative.",
+            "caption": "Open primary facility debit entry for Relative Valuation Multiples.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 104500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twenty,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 125400,
@@ -397,11 +397,11 @@
       "codeHash": "a790c353613b44a1f5be597b029845a3e6f0a839fdb81879d8ee89c04c456a0d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Valuation Triangulation: Football Field Ch... — General Ledger Verification",
+        "title": "Valuation Triangulation: Football Field — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Valuation.",
+            "caption": "Open primary facility debit entry for Valuation Triangulation.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 126900,
@@ -526,11 +526,11 @@
       "codeHash": "c9155b2a27d2a200db4203466c03c24423141cd8b87b99b417e6b5d1091a449f",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Equity Valuation & Investment R... — General Ledger Verification",
+        "title": "Enterprise Equity Valuation & Investment Research Master Suite — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Enterprise.",
+            "caption": "Open primary facility debit entry for Enterprise Equity Valuation.",
             "title": "Day 22 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 107000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 22 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 128400,

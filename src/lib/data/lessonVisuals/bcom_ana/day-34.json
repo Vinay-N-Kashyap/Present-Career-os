@@ -8,7 +8,7 @@
       "codeHash": "f7fb33b6448e68d9db4968dc01661fb65d7f0285540d8a9cb896a27e66282d82",
       "spec": {
         "template": "bars",
-        "title": "Sequential Residual Boosting & Gradien... — Learning Evaluation",
+        "title": "Sequential Residual Boosting & Gradient Descent in Function Space — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "8124c5a49e569d4bd13837f82d9ce1f9dca8caee320e3cc9793c50a0288f4ca7",
       "spec": {
         "template": "bars",
-        "title": "The Mathematics of XGBoost: Second-Ord... — Learning Evaluation",
+        "title": "The Mathematics of XGBoost: Second-Order Taylor Loss & Exact Split — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "37a60532bc53cd8d9ce0318b01bda8f537284cc3a8c4c181a75155b74445c085",
       "spec": {
         "template": "bars",
-        "title": "LightGBM Architectural Innovations: Hi... — Learning Evaluation",
+        "title": "LightGBM Architectural Innovations: Histogram Binning, GOSS & Leaf-Wise Growth — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "ab1e3a131d24242d0e1df663602d6bdfbff53f6aef253f6c075e715e8db245f9",
       "spec": {
         "template": "bars",
-        "title": "CatBoost & High-Cardinality Categorica... — Learning Evaluation",
+        "title": "CatBoost & High-Cardinality Categoricals: Target Encoding without — Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "83dcd9449fb1846694c77f8c481dea6232ffc61e05b2657f26f25e2e88aec49e",
       "spec": {
         "template": "bars",
-        "title": "Building an Enterprise Gradient Booste... — Learning Evaluation",
+        "title": "Building an Enterprise Gradient Boosted Residual Machine in Python — Learning Evaluation",
         "steps": [
           {
             "at": "intro",

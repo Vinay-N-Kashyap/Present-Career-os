@@ -10,11 +10,11 @@
       "codeHash": "209ad9ed4e5249c3ad5cead225572a3d7a3487800d2f01a4e187eee8b9772d88",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Transnational Corporate Architecture: BEPS... — General Ledger Verification",
+        "title": "Transnational Corporate Architecture: BEPS 2.0, Economic Substance & Veils — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Transnational.",
+            "caption": "Open primary facility debit entry for Transnational Corporate Architecture.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 130000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 156000,
@@ -139,11 +139,11 @@
       "codeHash": "e543a82dec52403d3524e1b84850c25ea6270feb38a4c7ef9ced7580c27861ed",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Transnational Takeover Defense & Dual-List... — General Ledger Verification",
+        "title": "Transnational Takeover Defense & Dual-Listed Company (DLC) Governance — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Transnational.",
+            "caption": "Open primary facility debit entry for Transnational Takeover Defense.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 131250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 157500,
@@ -268,11 +268,11 @@
       "codeHash": "c19285ae66abd4ab60a2e3872c2b780d302f912bc62d482864a2860fe0ca840d",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Global Economic Sanctions & Export Control... — General Ledger Verification",
+        "title": "Global Economic Sanctions & Export Controls: The OFAC 50% Rule — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Global.",
+            "caption": "Open primary facility debit entry for Global Economic Sanctions.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 132500,
@@ -397,11 +397,11 @@
       "codeHash": "b5d7c9b5fbfc61f42685e0f503ac54de3b23851a3ee907256fd9fecb38a9c2cd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Investor-State Dispute Settlement (ISDS) &... — General Ledger Verification",
+        "title": "Investor-State Dispute Settlement (ISDS) & Bilateral Investment — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Investor-State.",
+            "caption": "Open primary facility debit entry for Investor-State Dispute Settlement.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 133750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 160500,
@@ -526,11 +526,11 @@
       "codeHash": "c4c01149ed97c245bba2c440f61f53ffb13303b62be2d9a3aa0f56edb136961c",
       "spec": {
         "template": "ledger-sheet",
-        "title": "🏆 Grand Final Boardroom Defense: Sovereign... — General Ledger Verification",
+        "title": "🏆 Grand Final Boardroom Defense: Sovereign — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for 🏆 Grand Final.",
+            "caption": "Open primary facility debit entry for 🏆 Grand Final Boardroom Defense.",
             "title": "Day 30 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 135000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 30 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 162000,

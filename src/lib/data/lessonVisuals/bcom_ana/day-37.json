@@ -8,7 +8,7 @@
       "codeHash": "41b5de9565ae361f464df03dcdda4cb3a9e2faafed5605ea69ddbc69327734a3",
       "spec": {
         "template": "bars",
-        "title": "The Unstructured Enterprise: Tokenizat... - Learning Evaluation",
+        "title": "The Unstructured Enterprise: Tokenization, N-Grams & Mathematical - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "53466d565a321330d188e89b6bb1ec294b4aa573cf2fec3a25a0a72d2dd9d5cb",
       "spec": {
         "template": "bars",
-        "title": "Lexicon-Based Sentiment Mining & The M... - Learning Evaluation",
+        "title": "Lexicon-Based Sentiment Mining & The Mechanics of VADER - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "4e3f637c37da507d964dcff363366a28720f41215d44921116e9d60ea4a71ded",
       "spec": {
         "template": "bars",
-        "title": "Domain-Specific Language Pitfalls & Tr... - Learning Evaluation",
+        "title": "Domain-Specific Language Pitfalls & Transformer Architectures - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "e11aeeb5573f5418284cad79f09cf5e804cacf1d059d0a5aa948bd4a08b8bd62",
       "spec": {
         "template": "bars",
-        "title": "End-to-End Enterprise Support Ticket C... - Learning Evaluation",
+        "title": "End-to-End Enterprise Support Ticket Categorization & Multi-Class - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "b45b073b1d217898f8abbd5f7a58d617dc367b758f000551ad3c464a1c0dccae",
       "spec": {
         "template": "bars",
-        "title": "Computational Throughput, Batch Infere... - Learning Evaluation",
+        "title": "Computational Throughput, Batch Inference & Mitigating Tokenizer/GPU Bottlenecks - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

@@ -65,11 +65,11 @@
       "codeHash": "1244000bf2f800238c10f2b7516c2bd3027cd145d297bd98e8f22b3890191b59",
       "spec": {
         "template": "funnel",
-        "title": "Tier 1: SEO, Content Architecture & Quality S... — Conversion Pipeline",
+        "title": "Tier 1: SEO, Content Architecture & Quality — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,server-error prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -107,7 +107,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -145,7 +145,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -183,7 +183,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -223,7 +223,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 1: SEO, Content Architecture & Quality S... — Conversion Pipeline",
+        "title": "Tier 1: SEO, Content Architecture & Quality — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -385,11 +385,11 @@
       "codeHash": "55bcd206f6bf197bd6a7b3967a6cc3240f24cf15e272a2a56716328e58ad0fa5",
       "spec": {
         "template": "funnel",
-        "title": "Tier 2: Performance Paid Media, Bidding & Loo... — Conversion Pipeline",
+        "title": "Tier 2: Performance Paid Media, Bidding — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,server-error prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -503,7 +503,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -543,7 +543,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 2: Performance Paid Media, Bidding & Loo... — Conversion Pipeline",
+        "title": "Tier 2: Performance Paid Media, Bidding — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -705,11 +705,11 @@
       "codeHash": "2c2491c80445a6e912ebcd8eeeb00818660a1c675e8987bfbc3e0c28ed33a631",
       "spec": {
         "template": "funnel",
-        "title": "Tier 3: Lifecycle Automation, Email Deliverab... — Conversion Pipeline",
+        "title": "Tier 3: Lifecycle Automation, Email — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,server-error prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -747,7 +747,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -785,7 +785,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -823,7 +823,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -863,7 +863,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 3: Lifecycle Automation, Email Deliverab... — Conversion Pipeline",
+        "title": "Tier 3: Lifecycle Automation, Email — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1025,11 +1025,11 @@
       "codeHash": "a7abe6b5a355403b962ee81700ad456c875d0735ea0e26ee194be8d20bd702c5",
       "spec": {
         "template": "funnel",
-        "title": "Tier 4: GA4 Analytics, Algorithmic Attributio... — Conversion Pipeline",
+        "title": "Tier 4: GA4 Analytics, Algorithmic — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,server-error prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1067,7 +1067,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1105,7 +1105,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1143,7 +1143,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1183,7 +1183,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 4: GA4 Analytics, Algorithmic Attributio... — Conversion Pipeline",
+        "title": "Tier 4: GA4 Analytics, Algorithmic — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1345,11 +1345,11 @@
       "codeHash": "5db34259ad40a920a711aaa0376fee2a371e243569e64f498c8ecc78d68305a3",
       "spec": {
         "template": "funnel",
-        "title": "Tier 5: Sovereign CMO & CGO Boardroom Defense... — Conversion Pipeline",
+        "title": "Tier 5: Sovereign CMO & CGO Boardroom — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (multiple,server-error prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1387,7 +1387,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (seven,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1425,7 +1425,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (three,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1463,7 +1463,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (one,multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1503,7 +1503,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Tier 5: Sovereign CMO & CGO Boardroom Defense... — Conversion Pipeline",
+        "title": "Tier 5: Sovereign CMO & CGO Boardroom — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

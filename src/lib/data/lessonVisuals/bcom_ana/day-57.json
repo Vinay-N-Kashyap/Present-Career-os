@@ -8,7 +8,7 @@
       "codeHash": "53eece1ba2411efe9a5f807d455664b269d2f0e443b77afb2a3fa4edd958fd84",
       "spec": {
         "template": "bars",
-        "title": "Multiple Hypothesis Testing Mathematic... - Strategic Decision Evaluation",
+        "title": "Multiple Hypothesis Testing Mathematics & The Family-Wise Error Rate - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "8638ad8b9d61168940fcba536bdc221a6065409b6f8ed7dba8222d6a0155b52d",
       "spec": {
         "template": "bars",
-        "title": "The Flawed Growth Hack $4M Campaign Fl... - Strategic Decision Evaluation",
+        "title": "The Flawed Growth Hack $4M Campaign Flop Forensic Audit - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "db4088a0f5db831287396b505af689b38d46ef251b36f4022b92a8c6311bf492",
       "spec": {
         "template": "bars",
-        "title": "Benjamini-Hochberg Step-Up Procedure &... - Strategic Decision Evaluation",
+        "title": "Benjamini-Hochberg Step-Up Procedure & False Discovery Rate Control - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "7e827fc75feb48abaf28b421c627cc395e74395b24f5cc075faa1a49c9f85647",
       "spec": {
         "template": "bars",
-        "title": "The Anatomy of P-Hacking: Peeking, Sub... - Strategic Decision Evaluation",
+        "title": "The Anatomy of P-Hacking: Peeking - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "b3b6f1685f6513b94c12205ffda803fc6cb7ba1763628d0f3b59ab7d31c65fa9",
       "spec": {
         "template": "bars",
-        "title": "Enterprise Experimentation Validation ... - Strategic Decision Evaluation",
+        "title": "Enterprise Experimentation Validation & False Discovery Controller - Strategic Decision Evaluation",
         "steps": [
           {
             "at": "intro",

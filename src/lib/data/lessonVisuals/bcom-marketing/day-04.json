@@ -10,11 +10,11 @@
       "codeHash": "c037a64d644661acb6b45dc25aa67b370918e706d6d3f476076c4417ab11333c",
       "spec": {
         "template": "funnel",
-        "title": "The 5-Step Marketing Research Process & Cochr... — Conversion Pipeline",
+        "title": "The 5-Step Marketing Research Process & Cochran Sample Size Calculus — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,7 +168,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "The 5-Step Marketing Research Process & Cochr... — Conversion Pipeline",
+        "title": "The 5-Step Marketing Research Process & Cochran Sample Size Calculus — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -330,11 +330,11 @@
       "codeHash": "c268ebf425c55fc6c7274d952acedf89b8572840731ea1cbf965265cf97df256",
       "spec": {
         "template": "funnel",
-        "title": "Survey Instrument Engineering: Likert Scales ... — Conversion Pipeline",
+        "title": "Survey Instrument Engineering: Likert — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Survey Instrument Engineering: Likert Scales ... — Conversion Pipeline",
+        "title": "Survey Instrument Engineering: Likert — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -650,11 +650,11 @@
       "codeHash": "9f55063bbab6f5a51b5312135c495336df9f692f76d8979c6cd823fc69909271",
       "spec": {
         "template": "funnel",
-        "title": "Quantitative Demand Forecasting: Moving Avera... — Conversion Pipeline",
+        "title": "Quantitative Demand Forecasting: Moving — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,7 +808,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Quantitative Demand Forecasting: Moving Avera... — Conversion Pipeline",
+        "title": "Quantitative Demand Forecasting: Moving — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -970,11 +970,11 @@
       "codeHash": "540e675a28a015970fc53cbe0f3f1c504e433215bcbb2fd2f699d338653931c7",
       "spec": {
         "template": "funnel",
-        "title": "Market Sizing Geometry: Total Addressable Mar... — Conversion Pipeline",
+        "title": "Market Sizing Geometry: Total Addressable — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Market Sizing Geometry: Total Addressable Mar... — Conversion Pipeline",
+        "title": "Market Sizing Geometry: Total Addressable — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1290,11 +1290,11 @@
       "codeHash": "4fb504b9dac623d67f71dfe98d1d4be6eaa1db36bf3d7d6fa7ade43cbfab0be4",
       "spec": {
         "template": "funnel",
-        "title": "The Delphi Method & Multi-Round Expert Consen... — Conversion Pipeline",
+        "title": "The Delphi Method & Multi-Round Expert Consensus Synthesis — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (eleven,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,7 +1448,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "The Delphi Method & Multi-Round Expert Consen... — Conversion Pipeline",
+        "title": "The Delphi Method & Multi-Round Expert Consensus Synthesis — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

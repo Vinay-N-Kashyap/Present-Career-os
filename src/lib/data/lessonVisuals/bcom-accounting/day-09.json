@@ -10,11 +10,11 @@
       "codeHash": "98ab32e5eda4799057ca899bf4d1ad6f210e04679964153b95e9deec6870c64a",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Trial Balance Architecture: Extraction of ... — General Ledger Verification",
+        "title": "Trial Balance Architecture: Extraction — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Trial.",
+            "caption": "Open primary facility debit entry for Trial Balance Architecture.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 56500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 67800,
@@ -139,11 +139,11 @@
       "codeHash": "f1682020e160ce9cd6e29ead3aebe7f42950de487bc14a2a5e7d542ea2d3fb74",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Taxonomy of Accounting Errors: Disclosed v... — General Ledger Verification",
+        "title": "Taxonomy of Accounting Errors: Disclosed — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Taxonomy of.",
+            "caption": "Open primary facility debit entry for Taxonomy of Accounting Errors.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 57750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 69300,
@@ -268,11 +268,11 @@
       "codeHash": "5ac2ced204454cb3c54de082e119f0f41c0f026d60612e89d8eead67d046b753",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Checksum Analysis: Transposition,... — General Ledger Verification",
+        "title": "Forensic Checksum Analysis: Transposition — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Forensic.",
+            "caption": "Open primary facility debit entry for Forensic Checksum Analysis.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 59000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($eleven,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 70800,
@@ -397,11 +397,11 @@
       "codeHash": "d2f7223be6ac990537da022c204d0a0b89815028b4a752ab3c0fbba04be329be",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Compilation Methodologies: Gross Totals Me... — General Ledger Verification",
+        "title": "Compilation Methodologies: Gross Totals — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Compilation.",
+            "caption": "Open primary facility debit entry for Compilation Methodologies.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 60250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 72300,
@@ -526,11 +526,11 @@
       "codeHash": "f0951cba8b3da81e81a08702b58537df7c5d97a0a6ae0d493ea35f48caa39172",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Pre-Closing Diagnostic Control Tower & Sta... — General Ledger Verification",
+        "title": "Pre-Closing Diagnostic Control Tower & Statutory Audit Handoff — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 9 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 61500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($twelve,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 9 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 73800,

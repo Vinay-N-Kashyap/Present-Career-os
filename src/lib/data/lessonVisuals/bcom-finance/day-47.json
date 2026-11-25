@@ -349,25 +349,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Alpha Alpha) — RhoBeta Alpha Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Alpha Beta) — RhoBeta Alpha Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Alpha Gamma) — RhoBeta Alpha Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Alpha Delta) — RhoBeta Alpha Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -402,25 +402,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Alpha Alpha) — RhoBeta Alpha Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Alpha Beta) — RhoBeta Alpha Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Alpha Gamma) — RhoBeta Alpha Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Alpha Delta) — RhoBeta Alpha Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -459,25 +459,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Beta Alpha) — RhoBeta Beta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Beta Beta) — RhoBeta Beta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Beta Gamma) — RhoBeta Beta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Beta Delta) — RhoBeta Beta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -512,25 +512,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Beta Alpha) — RhoBeta Beta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Beta Beta) — RhoBeta Beta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Beta Gamma) — RhoBeta Beta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Beta Delta) — RhoBeta Beta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -569,25 +569,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Gamma Alpha) — RhoBeta Gamma Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Gamma Beta) — RhoBeta Gamma Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Gamma Gamma) — RhoBeta Gamma Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Gamma Delta) — RhoBeta Gamma Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -622,25 +622,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Gamma Alpha) — RhoBeta Gamma Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Gamma Beta) — RhoBeta Gamma Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Gamma Gamma) — RhoBeta Gamma Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Gamma Delta) — RhoBeta Gamma Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -679,25 +679,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Delta Alpha) — RhoBeta Delta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Delta Beta) — RhoBeta Delta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Delta Gamma) — RhoBeta Delta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Delta Delta) — RhoBeta Delta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -732,25 +732,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Delta Alpha) — RhoBeta Delta Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Delta Beta) — RhoBeta Delta Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Delta Gamma) — RhoBeta Delta Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Delta Delta) — RhoBeta Delta Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }
@@ -789,25 +789,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Epsilon Alpha) — RhoBeta Epsilon Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Epsilon Beta) — RhoBeta Epsilon Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Epsilon Gamma) — RhoBeta Epsilon Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Epsilon Delta) — RhoBeta Epsilon Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       },
@@ -842,25 +842,25 @@
             "id": "intro",
             "label": "Transaction Structuring",
             "description": "Establish purchase price multiples and capital tranches.",
-            "caption": "Establish purchase price multiples and capital tranches (Epsilon Alpha) — RhoBeta Epsilon Alpha."
+            "caption": "Establish purchase price multiples and capital tranches."
           },
           {
             "id": "say1",
             "label": "Waterfall Execution",
             "description": "Model cash flow generation and debt paydown trajectories.",
-            "caption": "Model cash flow generation and debt paydown trajectories (Epsilon Beta) — RhoBeta Epsilon Beta."
+            "caption": "Model cash flow generation and debt paydown trajectories."
           },
           {
             "id": "example",
             "label": "Returns Decomposition",
             "description": "Decompose equity gains across operational and financial drivers.",
-            "caption": "Decompose equity gains across operational and financial drivers (Epsilon Gamma) — RhoBeta Epsilon Gamma."
+            "caption": "Decompose equity gains across operational and financial drivers."
           },
           {
             "id": "tryIt",
             "label": "Committee Verification",
             "description": "Verify debt covenant compliance and emit cryptographic pass token.",
-            "caption": "Verify debt covenant compliance and emit cryptographic pass token (Epsilon Delta) — RhoBeta Epsilon Delta."
+            "caption": "Verify debt covenant compliance and emit cryptographic pass token."
           }
         ]
       }

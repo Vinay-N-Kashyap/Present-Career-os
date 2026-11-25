@@ -10,11 +10,11 @@
       "codeHash": "dfa6c03acde5557984f2cfd465f754d9348b149620418c9479de78b490048c12",
       "spec": {
         "template": "funnel",
-        "title": "Google Ads Search Auction Mechanics & Gene... — Conversion Funnel",
+        "title": "Google Ads Search Auction Mechanics & Generalized Second-Price (GSP) — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -172,11 +172,11 @@
       "codeHash": "bf9b83a24469e75791c8ba20f539268d9c29543ad760fc008dc8ee5def76e21a",
       "spec": {
         "template": "funnel",
-        "title": "Quality Score Deconstruction & Ad Relevanc... — Conversion Funnel",
+        "title": "Quality Score Deconstruction & Ad Relevance Optimization — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (twenty,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -334,11 +334,11 @@
       "codeHash": "6e2681ee51622c4663a28350fbe654b765b47ea3f5da157a73bb02e1597407d0",
       "spec": {
         "template": "funnel",
-        "title": "Search Query Mining, Negative Match Sculpt... — Conversion Funnel",
+        "title": "Search Query Mining, Negative Match Sculpting & Waste Elimination — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -496,11 +496,11 @@
       "codeHash": "aeff698cf7599c118a8db043ac1fcfeb2e303337dcea943818aeedb46011a6e8",
       "spec": {
         "template": "funnel",
-        "title": "Dynamic Bid Adjustments: Geo, Device & Day... — Conversion Funnel",
+        "title": "Dynamic Bid Adjustments: Geo, Device — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -658,11 +658,11 @@
       "codeHash": "7359404c7b4fe7e79f7c6f479763f864838922e98afdb4b7d6cb75d4acd23c2f",
       "spec": {
         "template": "funnel",
-        "title": "Enterprise Search Engine Marketing (SEM) G... — Conversion Funnel",
+        "title": "Enterprise Search Engine Marketing (SEM) Gateway & Director — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel reach baseline (multiple,multiple total audience entities).",
+            "caption": "Top-of-funnel reach baseline.",
             "activeStageId": "top",
             "stages": [
               {

@@ -10,11 +10,11 @@
       "codeHash": "754e79b464c8f8f83dc5303a0a23cbe4afee35a6f89c79d0e9e4e13276db6372",
       "spec": {
         "template": "funnel",
-        "title": "Real-Time Bidding (RTB) & OpenRTB 2.5 Bid Str... — Conversion Pipeline",
+        "title": "Real-Time Bidding (RTB) & OpenRTB 2.5 Bid Stream Protocols — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -52,7 +52,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -128,7 +128,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -168,7 +168,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Real-Time Bidding (RTB) & OpenRTB 2.5 Bid Str... — Conversion Pipeline",
+        "title": "Real-Time Bidding (RTB) & OpenRTB 2.5 Bid Stream Protocols — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -330,11 +330,11 @@
       "codeHash": "603ca71f915daf7a29aa430cb51314a9db4fc3d60613eb374ac7200ca4aa9158",
       "spec": {
         "template": "funnel",
-        "title": "First-Price Auction Clearing & Supply-Path Op... — Conversion Pipeline",
+        "title": "First-Price Auction Clearing & Supply-Path Optimization (SPO) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -372,7 +372,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -448,7 +448,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "First-Price Auction Clearing & Supply-Path Op... — Conversion Pipeline",
+        "title": "First-Price Auction Clearing & Supply-Path Optimization (SPO) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -650,11 +650,11 @@
       "codeHash": "a681d4a660aa1db8dddd408112608d4530e42077be7aa75f56ab45033e9f654c",
       "spec": {
         "template": "funnel",
-        "title": "MRC Viewability Standards & Attention Economi... — Conversion Pipeline",
+        "title": "MRC Viewability Standards & Attention Economics (vCPM) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -692,7 +692,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -768,7 +768,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -808,7 +808,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "MRC Viewability Standards & Attention Economi... — Conversion Pipeline",
+        "title": "MRC Viewability Standards & Attention Economics (vCPM) — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -970,11 +970,11 @@
       "codeHash": "912d574910591793367d9e241fd232ed76b14502f9208d1c2a0277b4d948cde9",
       "spec": {
         "template": "funnel",
-        "title": "Ad Fraud Detection: Bot Traffic, Domain Spoof... — Conversion Pipeline",
+        "title": "Ad Fraud Detection: Bot Traffic, Domain — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1012,7 +1012,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1088,7 +1088,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Ad Fraud Detection: Bot Traffic, Domain Spoof... — Conversion Pipeline",
+        "title": "Ad Fraud Detection: Bot Traffic, Domain — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1290,11 +1290,11 @@
       "codeHash": "6bb727ef0f1d329ea3c12e108ba27bece8c05b8b61573c5d8a2a18d578fe2372",
       "spec": {
         "template": "funnel",
-        "title": "Programmatic Ad Exchange & DSP Bidding Contro... — Conversion Pipeline",
+        "title": "Programmatic Ad Exchange & DSP Bidding Control Tower — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Top-of-funnel acquisition baseline (ten,multiple prospects).",
+            "caption": "Top-of-funnel acquisition baseline.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1332,7 +1332,7 @@
           },
           {
             "at": "say1",
-            "caption": "Qualification filter retains multiple% high-intent cohort (four,multiple).",
+            "caption": "Qualification filter retains multiple% high-intent cohort.",
             "activeStageId": "qual",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Active pipeline evaluation stage (one,multiple engaged accounts).",
+            "caption": "Active pipeline evaluation stage.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1408,7 +1408,7 @@
           },
           {
             "at": "tryIt",
-            "caption": "Closed-won & retained customer cohort verified (multiple).",
+            "caption": "Closed-won & retained customer cohort verified.",
             "activeStageId": "final",
             "stages": [
               {
@@ -1448,7 +1448,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Programmatic Ad Exchange & DSP Bidding Contro... — Conversion Pipeline",
+        "title": "Programmatic Ad Exchange & DSP Bidding Control Tower — Conversion Pipeline",
         "steps": [
           {
             "at": "intro",

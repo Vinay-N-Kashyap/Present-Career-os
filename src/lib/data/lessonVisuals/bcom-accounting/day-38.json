@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Capital Market Mandate of EPS, SEBI LODR... — Ledger Verification",
+        "title": "Capital Market Mandate of EPS, SEBI LODR Disclosure & Numerator — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for Capital.",
+            "caption": "Open primary Ind AS ledger posting for Capital Market Mandate of EPS.",
             "title": "Day 38 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6005000,
@@ -41,7 +41,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 38 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6184597,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Denominator Architecture: WANOS Calculat... — Ledger Verification",
+        "title": "Denominator Architecture: WANOS — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 38 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6010000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 38 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6189597,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Dilution Mechanics, Potential Ordinary S... — Ledger Verification",
+        "title": "Dilution Mechanics, Potential Ordinary Shares & The Anti-Dilution — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for Dilution.",
+            "caption": "Open primary Ind AS ledger posting for Dilution Mechanics.",
             "title": "Day 38 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6015000,
@@ -301,7 +301,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 38 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6194597,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Treasury Stock Method for Options & ... — Ledger Verification",
+        "title": "The Treasury Stock Method for Options — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for The.",
+            "caption": "Open primary Ind AS ledger posting for The Treasury Stock Method for Options.",
             "title": "Day 38 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6020000,
@@ -431,7 +431,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 38 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6199597,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Python EPS Engine Execution, Dilution Ve... — Ledger Verification",
+        "title": "Python EPS Engine Execution, Dilution Verification & Ind AS 33 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($six,multiple,multiple) for Python.",
+            "caption": "Open primary Ind AS ledger posting for Python EPS Engine Execution.",
             "title": "Day 38 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 6025000,
@@ -561,7 +561,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($multiple,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 38 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 6204597,

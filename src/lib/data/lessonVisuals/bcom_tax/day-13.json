@@ -10,11 +10,11 @@
       "codeHash": "2f915285fc96dd31fc80d6545587cdef8a6082ec4a7695d38b7eb9780a2503b0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The 2019 Corporate Tax Revolution: Section 115BAA  — Tax Ledger Verification",
+        "title": "The 2019 Corporate Tax Revolution: Section 115BAA Architecture — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for The multiple.",
+            "caption": "Open primary taxable assessment ledger for The multiple.",
             "title": "Day 13 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 545000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 13 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 620000,
@@ -141,11 +141,11 @@
       "codeHash": "25038a255796518c60fab5358a5a146af9ade367eb4b8bea4d87d910740fc7f3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Statutory Bargain: Forfeited Deductions & Inel — Tax Ledger Verification",
+        "title": "The Statutory Bargain: Forfeited Deductions & Ineligible Incentives — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for The Statutory.",
+            "caption": "Open primary taxable assessment ledger for The Statutory Bargain.",
             "title": "Day 13 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 552500,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 13 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 631000,
@@ -272,11 +272,11 @@
       "codeHash": "d6093b6115d69ad74292dc6aef04477e38c28e896fcd789389f7e8409d0d48a2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Irrevocable Election & Complete MAT Immunity u — Tax Ledger Verification",
+        "title": "The Irrevocable Election & Complete MAT Immunity under Section — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for The Irrevocable.",
+            "caption": "Open primary taxable assessment ledger for The Irrevocable Election.",
             "title": "Day 13 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 560000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 13 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 642000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for The Irrevocable Election &.",
+            "caption": "Execute simulated computational case study for The Irrevocable Election.",
             "title": "Day 13 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 642000,
@@ -403,11 +403,11 @@
       "codeHash": "ab973a63781c6572ae6fcb1c675fd30f0bb3cf57d83a52e8ff859c9b72b5cc87",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Section 115BAB: The Ultra-Concessional 15% Manufac — Tax Ledger Verification",
+        "title": "Section 115BAB: The Ultra-Concessional 15% Manufacturing Paradigm — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Section BAB: The.",
+            "caption": "Open primary taxable assessment ledger for Section 115BAB.",
             "title": "Day 13 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 567500,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 13 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 653000,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Section BAB: The.",
+            "caption": "Execute simulated computational case study for Section 115BAB.",
             "title": "Day 13 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 653000,
@@ -534,11 +534,11 @@
       "codeHash": "dbd93cb792b87b9840a7b41354628d1910142a710008320d2e8d9d557956ceab",
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Strategic Crossover Framework: Old Regime vs S — Tax Ledger Verification",
+        "title": "The Strategic Crossover Framework: Old Regime vs Section 115BAA — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for The Strategic.",
+            "caption": "Open primary taxable assessment ledger for The Strategic Crossover Framework.",
             "title": "Day 13 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 575000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 13 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 664000,
@@ -596,7 +596,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for The Strategic Crossover.",
+            "caption": "Execute simulated computational case study.",
             "title": "Day 13 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 664000,

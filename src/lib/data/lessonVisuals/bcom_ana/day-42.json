@@ -8,7 +8,7 @@
       "codeHash": "73ea2b608034baaa1c94afb55ae48705c5280feb4c82bbdb3ea9ff7d616620e9",
       "spec": {
         "template": "bars",
-        "title": "Time-to-Event Physics & The Mathematic... - Learning Evaluation",
+        "title": "Time-to-Event Physics & The Mathematics of Right-Censoring - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "3765331ec2cd7ee8b4a6fce7fbcc1cdbee7a5c492d2cc27c4d4288c6e6ad6d3c",
       "spec": {
         "template": "bars",
-        "title": "The Kaplan-Meier Product-Limit Estimat... - Learning Evaluation",
+        "title": "The Kaplan-Meier Product-Limit Estimator & Median Customer Lifetime - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "6552387ba814a0986fbc898a67132861a94f443f8e1923565f4fc0e70f520e70",
       "spec": {
         "template": "bars",
-        "title": "Cox Proportional Hazards Model & Covar... - Learning Evaluation",
+        "title": "Cox Proportional Hazards Model & Covariate Hazard Ratios - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "23834eb8d6c5683f9e48c54fa11587da90f1aa2535314af55ee94db0c531f831",
       "spec": {
         "template": "bars",
-        "title": "Diagnosing Non-Proportional Hazards vi... - Learning Evaluation",
+        "title": "Diagnosing Non-Proportional Hazards via Schoenfeld Residuals - Learning Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "76d554caf2ecca19666a628e3a2d1c6d72cf631850f1518f59c3e94f30a9c678",
       "spec": {
         "template": "bars",
-        "title": "Production Customer Lifetime Value (CL... - Learning Evaluation",
+        "title": "Production Customer Lifetime Value (CLV) Forecasting & Retention - Learning Evaluation",
         "steps": [
           {
             "at": "intro",

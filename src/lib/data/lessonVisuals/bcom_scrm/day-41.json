@@ -8,7 +8,7 @@
       "codeHash": "b8afcc8ca173b41cb63c3abe7f745e0b390068286176eb00f4b1156baae85549",
       "spec": {
         "template": "funnel",
-        "title": "Telemetry Ingestion, Leading Churn ... - RevOps Funnel",
+        "title": "Telemetry Ingestion, Leading Churn Indicators & Dimensional Factor - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "8f2323d9dead947b3138c1d50d68631fbd46f459b492338b97b3e3ccc2b2d0f6",
       "spec": {
         "template": "funnel",
-        "title": "Temporal Recency Exponential Decay ... - RevOps Funnel",
+        "title": "Temporal Recency Exponential Decay Curves & Inactivity Half-Lives - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "35771889bbbdc1702f711b984486afdf7cb7d2a2928c90eef049ee549e99842a",
       "spec": {
         "template": "funnel",
-        "title": "Composite Metric Formulation & Acco... - RevOps Funnel",
+        "title": "Composite Metric Formulation & Account Risk Classification Thresholds - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "959f196a0638360b1165fbb3a45fc0eeb05407737d97b32e9c2eb83cf46924c6",
       "spec": {
         "template": "funnel",
-        "title": "Automated Intervention Triggers & C... - RevOps Funnel",
+        "title": "Automated Intervention Triggers & CS Playbook Webhook Synchronization - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "5b0316c1478c75a951176fd313b1b7d7a59e603a87f1f07d4b947ce5f61e8891",
       "spec": {
         "template": "funnel",
-        "title": "Full Python Implementation: Composi... - RevOps Funnel",
+        "title": "Full Python Implementation: Composite Health Scoring & Churn Hazard - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

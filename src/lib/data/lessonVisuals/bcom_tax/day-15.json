@@ -10,11 +10,11 @@
       "codeHash": "f12632f04c122331ab709f613ae9b5abb1d118e6c129b9fece5a5ecdcb78dba0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Comprehensive PGBP Income Engine: P&L Reconciliati — Tax Ledger Verification",
+        "title": "Comprehensive PGBP Income Engine: P&L Reconciliations & Statutory — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Comprehensive PGBP.",
+            "caption": "Open primary taxable assessment ledger for Comprehensive PGBP Income Engine.",
             "title": "Day 15 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 575000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 15 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 650000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Comprehensive PGBP Income.",
+            "caption": "Execute simulated computational case study for Comprehensive PGBP Income Engine.",
             "title": "Day 15 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 650000,
@@ -145,7 +145,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Comprehensive Book.",
+            "caption": "Open primary taxable assessment ledger for Comprehensive Book Profit Synthesis.",
             "title": "Day 15 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 582500,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 15 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 661000,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Comprehensive Book Profit.",
+            "caption": "Execute simulated computational case study.",
             "title": "Day 15 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 661000,
@@ -276,7 +276,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Dual-Track Tax.",
+            "caption": "Open primary taxable assessment ledger for Dual-Track Tax Confrontation.",
             "title": "Day 15 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 590000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 15 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 672000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Dual-Track Tax.",
+            "caption": "Execute simulated computational case study for Dual-Track Tax Confrontation.",
             "title": "Day 15 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 672000,
@@ -403,11 +403,11 @@
       "codeHash": "3891a85b38552372d74ccab373abadd058f83535c00550d64b98387fa73b84c2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Concessional Regime Assessment: Section 115BAA Eva — Tax Ledger Verification",
+        "title": "Concessional Regime Assessment: Section 115BAA Evaluation & MAT Credit Forfeiture — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Concessional Regime.",
+            "caption": "Open primary taxable assessment ledger for Concessional Regime Assessment.",
             "title": "Day 15 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 597500,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 15 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 683000,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated computational case study for Concessional Regime.",
+            "caption": "Execute simulated computational case study for Concessional Regime Assessment.",
             "title": "Day 15 Tax Ledger — Audit Verification",
             "isBalanced": true,
             "totalDebit": 683000,
@@ -534,11 +534,11 @@
       "codeHash": "8eaf43c1d955b1efbb8ff87c3e2eafba4820b21114a81288bdacc90892291c14",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Grand Milestone Cockpit: Multi-Year NPV Decision M — Tax Ledger Verification",
+        "title": "Grand Milestone Cockpit: Multi-Year NPV Decision Matrix & Controller — Tax Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary taxable assessment ledger (multiple) for Grand Milestone.",
+            "caption": "Open primary taxable assessment ledger for Grand Milestone Cockpit.",
             "title": "Day 15 Tax Ledger — Initial Assessment",
             "isBalanced": true,
             "totalDebit": 605000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / tax shield (multiple) under applicable.",
+            "caption": "Record statutory adjustment / tax shield.",
             "title": "Day 15 Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 694000,

@@ -10,11 +10,11 @@
       "codeHash": "0ed9887890401f84b9d8f27dc2af9c14a7b2938f47835e335b9950715efb94cb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Standard Accounting Voucher Keybindings (F... — General Ledger Verification",
+        "title": "Standard Accounting Voucher Keybindings (F4 to F9) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Standard.",
+            "caption": "Open primary facility debit entry for Standard Accounting Voucher Keybindings.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 84500,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($sixteen,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 101400,
@@ -139,11 +139,11 @@
       "codeHash": "c2b3a00625a33d1a8b8c362c76ee6085bf0fd9e00a2ea098a198d53e10891cf0",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Voucher Entry Modes: As-Voucher vs Account... — General Ledger Verification",
+        "title": "Voucher Entry Modes: As-Voucher — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Voucher Entry.",
+            "caption": "Open primary facility debit entry for Voucher Entry Modes.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 85750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 102900,
@@ -268,11 +268,11 @@
       "codeHash": "bfce5fbd3a0b3324c6b97542d2f5c640cbd69e8b77a24d8d67e145d6c6c2cd47",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Bill-Wise Details & Accounts Receivable Ag... — General Ledger Verification",
+        "title": "Bill-Wise Details & Accounts Receivable Aging Pipeline — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Bill-Wise.",
+            "caption": "Open primary facility debit entry for Bill-Wise Details.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 87000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,bad-request).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 104400,
@@ -397,11 +397,11 @@
       "codeHash": "59626fc33de2e844911ebaa5be006ae35192b18ef6a007f6541ea1480d06a637",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Post-Dated, Optional & Reversing Journal V... — General Ledger Verification",
+        "title": "Post-Dated, Optional & Reversing Journal Vouchers — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Post-Dated.",
+            "caption": "Open primary facility debit entry for Post-Dated.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 88250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 105900,
@@ -526,11 +526,11 @@
       "codeHash": "8e1dd255a3c0d07007f92f0d32805b0bfb01049d4a56fa87794da100187ad4a4",
       "spec": {
         "template": "ledger-sheet",
-        "title": "General Ledger Posting Integration & Real-... — General Ledger Verification",
+        "title": "General Ledger Posting Integration & Real-Time Daybook Extraction — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for General.",
+            "caption": "Open primary facility debit entry for General Ledger Posting Integration.",
             "title": "Day 17 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 89500,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 17 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 107400,

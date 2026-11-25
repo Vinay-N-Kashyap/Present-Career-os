@@ -10,11 +10,11 @@
       "codeHash": "260d9b125b7a45a6a34895164ebaf568db729802cb8f128aff30f785663ebd61",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Foundations of Financial Derivatives & For... — General Ledger Verification",
+        "title": "Foundations of Financial Derivatives & Forward Contracts — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Foundations of.",
+            "caption": "Open primary facility debit entry for Foundations of Financial Derivatives.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 116000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 139200,
@@ -139,11 +139,11 @@
       "codeHash": "3a4688c3220b73277cc8a37dff97032ce9413ae3268b8fc2be4c39bbc565f5d3",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Futures Contracts, Daily Settlement & Inst... — General Ledger Verification",
+        "title": "Futures Contracts, Daily Settlement & Institutional Hedging Mechanics — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Futures.",
+            "caption": "Open primary facility debit entry for Futures Contracts.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 117250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 140700,
@@ -268,11 +268,11 @@
       "codeHash": "83b51d3a0b9250b4662cd09741d118961dac1358de04ff666151c18dae0826be",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Options Contracts: Payoff Profiles, Put-Ca... — General Ledger Verification",
+        "title": "Options Contracts: Payoff Profiles — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Options.",
+            "caption": "Open primary facility debit entry for Options Contracts.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 118500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 142200,
@@ -397,11 +397,11 @@
       "codeHash": "b3f93c68174d40765ba1c36e5138eb2857252d6c39348fc02cc31407b0bbea1e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Interest Rate Swaps (IRS) & Corporate Debt... — General Ledger Verification",
+        "title": "Interest Rate Swaps (IRS) & Corporate Debt Liability Hedging — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Interest Rate.",
+            "caption": "Open primary facility debit entry for Interest Rate Swaps.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 119750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 143700,
@@ -526,11 +526,11 @@
       "codeHash": "917cba471c33e1b88712a3471d6163963f8d4ce4444244606638829b0a2b3bc9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Integrated Enterprise Risk Management: Pro... — General Ledger Verification",
+        "title": "Integrated Enterprise Risk Management: Protective Puts & Options — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Integrated.",
+            "caption": "Open primary facility debit entry for Integrated Enterprise Risk Management.",
             "title": "Day 26 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 121000,
@@ -556,7 +556,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,OK).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 26 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 145200,

@@ -8,7 +8,7 @@
       "codeHash": "74f330389677af502f02235a4deedeb2d26d628d7ded410b1811c3fe61ec5435",
       "spec": {
         "template": "funnel",
-        "title": "Global Foreign Exchange Market Archite... — Treasury Risk Operations",
+        "title": "Global Foreign Exchange Market Architecture, Settlement Dates & FEDAI — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "e8ce6f7164da10c14cd4374d16ee444cfda9e0ed3cc9d02854b5333773dccdfb",
       "spec": {
         "template": "funnel",
-        "title": "Two-Way Dealer Price Quotations, Bid-A... — Treasury Risk Operations",
+        "title": "Two-Way Dealer Price Quotations, Bid-Ask Spreads & FEDAI Merchant — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "62805584ad952d498a43b819a575dbf7058928228190671b49a6c4e51c633c83",
       "spec": {
         "template": "funnel",
-        "title": "Cross-Currency Rates & Triangular Arbi... — Treasury Risk Operations",
+        "title": "Cross-Currency Rates & Triangular Arbitrage Mechanics — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "531b61e5d18ec43756f97ea62b2a5b4004c24379a8fdb3c769a5ad624aec38a2",
       "spec": {
         "template": "funnel",
-        "title": "Forward Exchange Rates, Swap Points & ... — Treasury Risk Operations",
+        "title": "Forward Exchange Rates, Swap Points & Covered Interest Parity (CIP) — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "c4f58fae5aa3217658a5b0e41244807ccc930a168c6aed21be3090c9796f00aa",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Forex Dealing... — Treasury Risk Operations",
+        "title": "Comprehensive Enterprise Forex Dealing Room Command & Exposure Risk — Treasury Risk Operations",
         "steps": [
           {
             "at": "intro",

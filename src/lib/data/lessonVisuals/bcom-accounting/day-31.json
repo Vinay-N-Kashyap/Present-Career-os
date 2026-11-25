@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Evolution of Revenue Accounting: The Shi... — Ledger Verification",
+        "title": "Evolution of Revenue Accounting — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Evolution of.",
+            "caption": "Open primary Ind AS ledger posting for Evolution of Revenue Accounting.",
             "title": "Day 31 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 105000,
@@ -41,7 +41,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($twenty,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 31 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 125000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Identifying Distinct Performance Obligat... — Ledger Verification",
+        "title": "Identifying Distinct Performance Obligations & Calculating — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Identifying.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 31 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 110000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($twenty,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 31 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 130000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Allocating Transaction Price via Relativ... — Ledger Verification",
+        "title": "Allocating Transaction Price via Relative Standalone Selling Prices — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Allocating.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 31 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 115000,
@@ -301,7 +301,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($twenty,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 31 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 135000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Over-Time vs Point-in-Time Satisfaction ... — Ledger Verification",
+        "title": "Over-Time vs Point-in-Time Satisfaction of Performance Obligations — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Over-Time vs.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 31 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 120000,
@@ -431,7 +431,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($twenty,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 31 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 140000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Balance Sheet Presentation, Contract Ass... — Ledger Verification",
+        "title": "Balance Sheet Presentation, Contract Assets/Liabilities & Ind AS 115 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple) for Balance Sheet.",
+            "caption": "Open primary Ind AS ledger posting for Balance Sheet Presentation.",
             "title": "Day 31 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 125000,
@@ -561,7 +561,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary valuation & amortization accrual ($twenty,multiple).",
+            "caption": "Record secondary valuation & amortization accrual.",
             "title": "Day 31 Journal — Accrual / Amortization Adjustment",
             "isBalanced": true,
             "totalDebit": 145000,

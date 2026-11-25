@@ -10,11 +10,11 @@
       "codeHash": "781162ab451ec41fd844131ba93ff9603e9ef43f0666d0445dafbbca58a84495",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Companies Act Statutory Audit Powers, Duties & Dut — Statutory Audit Ledger",
+        "title": "Companies Act Statutory Audit Powers, Duties & Duty to Report Fraud — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for.",
+            "caption": "Open statutory audit assurance verification ledger.",
             "title": "Day 9 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1065000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 9 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1210000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise audit case study for Companies Act Statutory.",
+            "caption": "Execute simulated enterprise audit case study.",
             "title": "Day 9 Statutory Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1210000,
@@ -145,7 +145,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for.",
+            "caption": "Open statutory audit assurance verification ledger.",
             "title": "Day 9 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1083000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 9 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1236500,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated enterprise audit case study for Companies (Auditor's.",
+            "caption": "Execute simulated enterprise audit case study for Companies.",
             "title": "Day 9 Statutory Assurance Ledger — Substantive Audit",
             "isBalanced": true,
             "totalDebit": 1236500,
@@ -272,11 +272,11 @@
       "codeHash": "03e8e599aea5acaff84f1fd565d4b5394ef78da9f7c5c9057f683f843727a1fe",
       "spec": {
         "template": "ledger-sheet",
-        "title": "CARO 2020: Loans, Investments, Guarantees & Deposi — Statutory Audit Ledger",
+        "title": "CARO 2020: Loans, Investments, Guarantees & Deposits (Clauses iii, iv & v) — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for CARO.",
+            "caption": "Open statutory audit assurance verification ledger for CARO 2020.",
             "title": "Day 9 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1101000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 9 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1263000,
@@ -403,11 +403,11 @@
       "codeHash": "c661d3443b96e8300686c3fa7926c909f4f64d2e826485d8ec9f53fe5dda5350",
       "spec": {
         "template": "ledger-sheet",
-        "title": "CARO 2020: Statutory Dues, Unrecorded Income, Defa — Statutory Audit Ledger",
+        "title": "CARO 2020: Statutory Dues, Unrecorded Income, Defaults & Fund — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for CARO.",
+            "caption": "Open statutory audit assurance verification ledger for CARO 2020.",
             "title": "Day 9 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1119000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 9 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1289500,
@@ -534,11 +534,11 @@
       "codeHash": "56b13d4d83a2922a055b2a821b1043aa8f89aa448267a419c2906bbf4d6be2e6",
       "spec": {
         "template": "ledger-sheet",
-        "title": "CARO 2020: Fraud, Whistleblower, Nidhi, Internal A — Statutory Audit Ledger",
+        "title": "CARO 2020: Fraud, Whistleblower, Nidhi, Internal Audit & Cash Losses — Statutory Audit Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open statutory audit assurance verification ledger (multiple) for CARO.",
+            "caption": "Open statutory audit assurance verification ledger for CARO 2020.",
             "title": "Day 9 Statutory Assurance Ledger — Initial Posting",
             "isBalanced": true,
             "totalDebit": 1137000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / sampling precision entry (multiple) under.",
+            "caption": "Record statutory adjustment / sampling precision entry.",
             "title": "Day 9 Statutory Assurance Ledger — Precision Adjustment",
             "isBalanced": true,
             "totalDebit": 1316000,

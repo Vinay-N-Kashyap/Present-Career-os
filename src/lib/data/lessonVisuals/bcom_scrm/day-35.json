@@ -8,7 +8,7 @@
       "codeHash": "b1c8e355a432ae34067284916bbb1ecde4da0283d3be5f3cead0b7b0f9fc7096",
       "spec": {
         "template": "funnel",
-        "title": "ApexCRM Enterprise Architecture: Un... - RevOps Funnel",
+        "title": "ApexCRM Enterprise Architecture: Unified GTM System Specification - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "93892a5ca31ab36a2ee1bc21535a7caff9881b2e278599e2aee2ab9ebeb273b0",
       "spec": {
         "template": "funnel",
-        "title": "The $14M Split-Brain Sales Collapse... - RevOps Funnel",
+        "title": "The $14M Split-Brain Sales Collapse Forensic Audit - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "b4e75a9ef1bffc7c5675c59f2e4b3d3cb69b77328ffcac155b9749d42f6ab350",
       "spec": {
         "template": "funnel",
-        "title": "Full-Stack Lead Lifecycle Simulatio... - RevOps Funnel",
+        "title": "Full-Stack Lead Lifecycle Simulation: From Anonymous Webhook - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "0bc62a52e3bb92c1f7226af89e9be091a9bbbd542a69b3b9b77f2af087ff922c",
       "spec": {
         "template": "funnel",
-        "title": "Audit Trail, Data Governance & CRM ... - RevOps Funnel",
+        "title": "Audit Trail, Data Governance & CRM Reliability Invariants - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "9b7c672817f31398e55637174599d9ec6cb2f307690e1341b5e5fc82c10745d3",
       "spec": {
         "template": "funnel",
-        "title": "Senior Executive Evaluation Gate: T... - RevOps Funnel",
+        "title": "Senior Executive Evaluation Gate: The ApexCRM Master Certification - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

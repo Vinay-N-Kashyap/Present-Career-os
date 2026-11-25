@@ -8,7 +8,7 @@
       "codeHash": "e92f96d388db4b839b33fa9184d96621baa85573a1e9debcd49bdca4e2c81e29",
       "spec": {
         "template": "funnel",
-        "title": "Harry Brignull Dark Patterns Typology ... \u2014 Conversion Funnel",
+        "title": "Harry Brignull Dark Patterns Typology & Federal Trade Commission — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "8d7493cf200f355faaab0b0bbf238a0945baba4e4bde7d8a5df10e51e59aa0dd",
       "spec": {
         "template": "funnel",
-        "title": "GDPR, CCPA/CPRA Consumer Rights, Conse... \u2014 Conversion Funnel",
+        "title": "GDPR, CCPA/CPRA Consumer Rights, Consent Architectures & Global — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "707e2d91dbb1658cac3665bbc99226b0f68beae82e4918d89eef214bf7282186",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Transparency, Biased Recom... \u2014 Conversion Funnel",
+        "title": "Algorithmic Transparency, Biased Recommendation Auditing & AI Marketing Ethics — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "5391faac4bed585f548b2d96578f8d189b9067f267795eafe043b7efe1f218af",
       "spec": {
         "template": "funnel",
-        "title": "Privacy-Enhancing Technologies (PETs),... \u2014 Conversion Funnel",
+        "title": "Privacy-Enhancing Technologies (PETs), Data Clean Rooms — Conversion Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "2daaae34ac37ffe23297afcc6687b65ea56c9fcd84079002a892d78b8dfe42a1",
       "spec": {
         "template": "funnel",
-        "title": "Algorithmic Privacy Compliance & Dark ... \u2014 Conversion Funnel",
+        "title": "Algorithmic Privacy Compliance & Dark Pattern Detection Simulator — Conversion Funnel",
         "steps": [
           {
             "at": "intro",

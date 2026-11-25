@@ -8,7 +8,7 @@
       "codeHash": "1849da0fb5ce588a992ae6dfffb9c8f07c27ca1fc67ea51b82719a8bb6205ebc",
       "spec": {
         "template": "funnel",
-        "title": "Multi-Lender Credit Framework: Sole Ba... — Credit Underwriting Review",
+        "title": "Multi-Lender Credit Framework: Sole — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "9d55be4f139e220645d41cc59464bdd07e6ff799b7e23abcec6ab3f6e237c5c7",
       "spec": {
         "template": "funnel",
-        "title": "The Legal Architecture of Security Sha... — Credit Underwriting Review",
+        "title": "The Legal Architecture of Security Sharing: Pari-Passu Charges — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "93d5d6881e0ad0268d2c3bc4dc35a0b14591eef6c402a2b60319a8877e20739a",
       "spec": {
         "template": "funnel",
-        "title": "Escrow Accounts & Trust & Retention Ac... — Credit Underwriting Review",
+        "title": "Escrow Accounts & Trust & Retention Accounts (TRA): Cash Flow — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "6094d02a95a08f6eecf53d1bdc6edf5653aba542bf139146462623fb49b206ab",
       "spec": {
         "template": "funnel",
-        "title": "Credit Monitoring & Early Distress Gov... — Credit Underwriting Review",
+        "title": "Credit Monitoring & Early Distress Governance: Joint Lenders Forum — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "afd063dec1c01cf27f28e4d57d64df3c801e764d634a4263246863ea8475753e",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise Consortium Cr... — Credit Underwriting Review",
+        "title": "Comprehensive Enterprise Consortium Credit & TRA Cash Waterfall — Credit Underwriting Review",
         "steps": [
           {
             "at": "intro",

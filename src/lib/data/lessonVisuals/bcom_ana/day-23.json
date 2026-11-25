@@ -8,7 +8,7 @@
       "codeHash": "b8e5a5706681cc1fc0aa9b8e194003baf54ae1c9e9fb4ecc6ad3d45b38c176a2",
       "spec": {
         "template": "bars",
-        "title": "Price Elasticity of Demand (PED): Micr... \u2014 Operations Evaluation",
+        "title": "Price Elasticity of Demand (PED): Microeconomic Foundations — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "319c717e2ef368645cf824c472c09e40da69ef0a6481dec75b27456d87ec4504",
       "spec": {
         "template": "bars",
-        "title": "Linear Demand Calibration & Total Reve... \u2014 Operations Evaluation",
+        "title": "Linear Demand Calibration & Total Revenue Curve Geometry — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "a04b2640297c200d637c9973384e75a4be5eb1e91484f4bc47a741c4e21fe100",
       "spec": {
         "template": "bars",
-        "title": "Profit Maximization vs Revenue Maximiz... \u2014 Operations Evaluation",
+        "title": "Profit Maximization vs Revenue Maximization: Marginal Cost Integration — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "1fe1702c91dc9b299c5882b0365babe0893ac2e8762d6517c0ee01458f08646f",
       "spec": {
         "template": "bars",
-        "title": "Cross-Price Elasticity (XED), Income E... \u2014 Operations Evaluation",
+        "title": "Cross-Price Elasticity (XED), Income Elasticity (YED) & Multi-Product — Operations Evaluation",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "2a0fdc240d8b8919ad672125897ca68bb37a80f9994923535adffecf4898949e",
       "spec": {
         "template": "bars",
-        "title": "Building a Dynamic Pricing & Revenue O... \u2014 Operations Evaluation",
+        "title": "Building a Dynamic Pricing & Revenue Optimization Engine in Python — Operations Evaluation",
         "steps": [
           {
             "at": "intro",

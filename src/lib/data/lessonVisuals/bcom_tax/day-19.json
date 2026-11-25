@@ -10,11 +10,11 @@
       "codeHash": "ad1e1cdf9b0499a167a2f19b923c3eb6930b2896b77fe6a72808d9dbbeed2dcf",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Permanent Establishment Typologies: Fixed Place, S — International Tax Ledger",
+        "title": "Permanent Establishment Typologies: Fixed Place, Service & Agency PE (Article 5) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Permanent.",
+            "caption": "Open primary international tax / TP ledger.",
             "title": "Day 19 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 830000,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 19 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 925000,
@@ -72,7 +72,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Permanent Establishment.",
+            "caption": "Execute simulated cross-border case study.",
             "title": "Day 19 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 925000,
@@ -141,11 +141,11 @@
       "codeHash": "547434eb15e69475436978765dad0d1820c8877fb00e9c9468ded7f623bb61b7",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Attribution of Profits to PE & FAR Analysis (Rule  — International Tax Ledger",
+        "title": "Attribution of Profits to PE & FAR Analysis (Rule 10(iii) & Rule 10B) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Attribution of.",
+            "caption": "Open primary international tax / TP ledger for Attribution of Profits to PE.",
             "title": "Day 19 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 840000,
@@ -171,7 +171,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 19 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 940000,
@@ -203,7 +203,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Attribution of Profits to.",
+            "caption": "Execute simulated cross-border case study for Attribution of Profits to PE.",
             "title": "Day 19 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 940000,
@@ -272,11 +272,11 @@
       "codeHash": "666da861c9c8de670b80b3871f522663630dea29c370f09d5f2303d5fff8caa2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Digital Economy Taxation & Equalisation Levy Archi — International Tax Ledger",
+        "title": "Digital Economy Taxation & Equalisation Levy Architecture — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Digital Economy.",
+            "caption": "Open primary international tax / TP ledger for Digital Economy Taxation.",
             "title": "Day 19 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 850000,
@@ -302,7 +302,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 19 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 955000,
@@ -334,7 +334,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Digital Economy Taxation &.",
+            "caption": "Execute simulated cross-border case study for Digital Economy Taxation.",
             "title": "Day 19 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 955000,
@@ -403,11 +403,11 @@
       "codeHash": "b296bc279cb73e9c9b96eaf7415ee72aef7816662690300c8af62c24938a68f9",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Significant Economic Presence (SEP) Nexus under Se — International Tax Ledger",
+        "title": "Significant Economic Presence (SEP) Nexus under Section 9(1)(i) — International Tax Ledger",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for Significant.",
+            "caption": "Open primary international tax / TP ledger for Significant Economic Presence.",
             "title": "Day 19 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 860000,
@@ -433,7 +433,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 19 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 970000,
@@ -465,7 +465,7 @@
           },
           {
             "at": "example",
-            "caption": "Execute simulated cross-border case study for Significant Economic.",
+            "caption": "Execute simulated cross-border case study for Significant Economic Presence.",
             "title": "Day 19 International Tax Ledger — Simulation Audit",
             "isBalanced": true,
             "totalDebit": 970000,
@@ -538,7 +538,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary international tax / TP ledger (multiple) for OECD Pillar One.",
+            "caption": "Open primary international tax / TP ledger for OECD Pillar One.",
             "title": "Day 19 International Tax Ledger — Initial Recognition",
             "isBalanced": true,
             "totalDebit": 870000,
@@ -564,7 +564,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record statutory adjustment / DTAA relief (multiple) under applicable.",
+            "caption": "Record statutory adjustment / DTAA relief.",
             "title": "Day 19 International Tax Ledger — Statutory Adjustment",
             "isBalanced": true,
             "totalDebit": 985000,

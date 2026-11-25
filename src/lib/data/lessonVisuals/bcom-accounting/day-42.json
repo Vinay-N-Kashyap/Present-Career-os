@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "The Control Principle & Scope of Consoli... — Ledger Verification",
+        "title": "The Control Principle & Scope of Consolidated Financial Statements — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for The.",
+            "caption": "Open primary Ind AS ledger posting for The Control Principle.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 66005000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Mechanics of Consolidation & Acquisition... — Ledger Verification",
+        "title": "Mechanics of Consolidation & Acquisition Elimination Entries — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 66010000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Elimination of Intra-Group Transactions ... — Ledger Verification",
+        "title": "Elimination of Intra-Group Transactions & Unrealized Inventory Profits — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 66015000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Intercompany Financing, Dividends & Prof... — Ledger Verification",
+        "title": "Intercompany Financing, Dividends & Profit Attribution to NCI — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 66020000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Executing the Python Consolidation Suite... — Ledger Verification",
+        "title": "Executing the Python Consolidation Suite & Group Financial Statement — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 42 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 66025000,

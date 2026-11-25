@@ -10,7 +10,7 @@
       "codeHash": "f25041de362fd46b043f66bf669d2245bc2e7d89412f8a33b2a60957f90ce58a",
       "spec": {
         "template": "workflow",
-        "title": "Architecture of the Autonomous Smart Factory:... — Operational Workflow",
+        "title": "Architecture of the Autonomous Smart Factory: Cyber-Physical — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -178,7 +178,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Architecture of the Autonomous Smart Factory:... — Operational Workflow",
+        "title": "Architecture of the Autonomous Smart Factory: Cyber-Physical — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -208,7 +208,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Architecture of the Autonomous Smart Fac...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Architecture of the Autonomous Smart",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -350,7 +350,7 @@
       "codeHash": "86904cdbd9038cee5084db800ba9baa20a5e5885513d42d547e294ed061d6950",
       "spec": {
         "template": "workflow",
-        "title": "Real-Time IoT Sensor Telematics & Blockchain ... — Operational Workflow",
+        "title": "Real-Time IoT Sensor Telematics & Blockchain Provenance Escrow Gateway — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -380,7 +380,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage one (Demand Forecast): Initialize Real-Time IoT Sensor Telematics &.",
+            "caption": "Stage one (Demand Forecast): Initialize Real-Time IoT Sensor Telematics.",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -518,7 +518,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Real-Time IoT Sensor Telematics & Blockchain ... — Operational Workflow",
+        "title": "Real-Time IoT Sensor Telematics & Blockchain Provenance Escrow Gateway — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -548,7 +548,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time IoT Sensor Telematics & Blockc...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time IoT Sensor Telematics",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -690,7 +690,7 @@
       "codeHash": "68943a8fcc6094499fa9809373b98b446be0f68625c57745223578e8c24cc6dd",
       "spec": {
         "template": "workflow",
-        "title": "Autonomous Fleet Dispatching, AS/RS Throughpu... — Operational Workflow",
+        "title": "Autonomous Fleet Dispatching, AS/RS Throughput & Multi-Agent AMRs — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -858,7 +858,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Autonomous Fleet Dispatching, AS/RS Throughpu... — Operational Workflow",
+        "title": "Autonomous Fleet Dispatching, AS/RS Throughput & Multi-Agent AMRs — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -888,7 +888,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Autonomous Fleet Dispatching, AS/RS Thro...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Autonomous Fleet Dispatching, AS/RS",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1030,7 +1030,7 @@
       "codeHash": "936cf10bc01b510ca6ddb08c4699fc76298d713b9447f8594add2e3a5114dfc0",
       "spec": {
         "template": "workflow",
-        "title": "Real-Time Digital Twin Simulation, Anomaly Di... — Operational Workflow",
+        "title": "Real-Time Digital Twin Simulation, Anomaly Divergence & Stress — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1198,7 +1198,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Real-Time Digital Twin Simulation, Anomaly Di... — Operational Workflow",
+        "title": "Real-Time Digital Twin Simulation, Anomaly Divergence & Stress — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1228,7 +1228,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time Digital Twin Simulation, Anoma...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Real-Time Digital Twin Simulation",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",
@@ -1370,7 +1370,7 @@
       "codeHash": "90123afab265dee6da2b6cc226385fc0e8ab550c143f0a940c5d96f8d8d414ec",
       "spec": {
         "template": "workflow",
-        "title": "Milestone 5 Grand Capstone: Master Autonomous... — Operational Workflow",
+        "title": "Milestone 5 Grand Capstone: Master — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1538,7 +1538,7 @@
       },
       "filled": {
         "template": "workflow",
-        "title": "Milestone 5 Grand Capstone: Master Autonomous... — Operational Workflow",
+        "title": "Milestone 5 Grand Capstone: Master — Operational Workflow",
         "stages": [
           {
             "id": "s1",
@@ -1568,7 +1568,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Stage 1 (Demand Forecast): Initialize Milestone 5 Grand Capstone: Master Auton...",
+            "caption": "Stage 1 (Demand Forecast): Initialize Milestone 5 Grand Capstone: Master",
             "activeStageId": "s1",
             "statusBadge": "INGRESS",
             "throughput": "100% Ready",

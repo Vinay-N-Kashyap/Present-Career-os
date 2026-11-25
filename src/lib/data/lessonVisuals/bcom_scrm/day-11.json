@@ -10,11 +10,11 @@
       "codeHash": "501e46b8dac06692d8cf62a0e221ace84e7499e583d525d8bfc2e486d1e0e0b3",
       "spec": {
         "template": "funnel",
-        "title": "Multidimensional Health Telemetry: Feature \u2014 Retention Pipeline",
+        "title": "Multidimensional Health Telemetry: Feature — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (ten,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Multidimensional Health Telemetry: Feature \u2014 Retention Pipeline",
+        "title": "Multidimensional Health Telemetry: Feature — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (ten,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "4a51c41fa74413fdd4b23b3d3102e7ea6c11cb1083e926a2883476c1f86a28fa",
       "spec": {
         "template": "funnel",
-        "title": "Operational Support Sentiment: Ticket Velo \u2014 Retention Pipeline",
+        "title": "Operational Support Sentiment: Ticket Velocity, CSAT Trends & SLA Escalations — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Operational Support Sentiment: Ticket Velo \u2014 Retention Pipeline",
+        "title": "Operational Support Sentiment: Ticket Velocity, CSAT Trends & SLA Escalations — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "1191fdfe5adfd572f41307dd9770641c3aec8328bb6680137bd57ad150dd567e",
       "spec": {
         "template": "funnel",
-        "title": "Executive Stakeholder Sponsorship & Champi \u2014 Retention Pipeline",
+        "title": "Executive Stakeholder Sponsorship & Champion Flight Risk Alerts — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (eight,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Executive Stakeholder Sponsorship & Champi \u2014 Retention Pipeline",
+        "title": "Executive Stakeholder Sponsorship & Champion Flight Risk Alerts — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (eight,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "a9d63d4249f3203af9fae5bc903d830dc4abde0d8a8d46ce179581085af4bb35",
       "spec": {
         "template": "funnel",
-        "title": "Red Flag Early Warning Triggers & Automate \u2014 Retention Pipeline",
+        "title": "Red Flag Early Warning Triggers & Automated Churn Rescue Playbooks — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Red Flag Early Warning Triggers & Automate \u2014 Retention Pipeline",
+        "title": "Red Flag Early Warning Triggers & Automated Churn Rescue Playbooks — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (one,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "061b9b826321f1eeb833a1303b2c90f4b7cb922687811f3419d8fe38b5ea0532",
       "spec": {
         "template": "funnel",
-        "title": "Master Customer Health Score (CHS) & Churn \u2014 Retention Pipeline",
+        "title": "Master Customer Health Score (CHS) & Churn — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (multiple,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Customer Health Score (CHS) & Churn \u2014 Retention Pipeline",
+        "title": "Master Customer Health Score (CHS) & Churn — Retention Pipeline",
         "steps": [
           {
             "at": "intro",
-            "caption": "Portfolio account base (multiple,multiple accounts).",
+            "caption": "Portfolio account base.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Targeted whitespace cross-sell campaigns (two,multiple accounts).",
+            "caption": "Targeted whitespace cross-sell campaigns.",
             "activeStageId": "target",
             "stages": [
               {

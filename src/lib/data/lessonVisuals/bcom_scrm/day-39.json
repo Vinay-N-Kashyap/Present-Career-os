@@ -8,7 +8,7 @@
       "codeHash": "85d75061295d946c162dd63329fd9bf8e897938cff5a7573d0602d4a97ab1e66",
       "spec": {
         "template": "funnel",
-        "title": "The Quote-to-Cash (Q2C) Lifecycle &... - RevOps Funnel",
+        "title": "The Quote-to-Cash (Q2C) Lifecycle & Downstream Entity Modeling - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -170,7 +170,7 @@
       "codeHash": "657e1e19cbd15c47830efac7c921c7456be7e056bd529aa12bfa52dd9b64c078",
       "spec": {
         "template": "funnel",
-        "title": "ERP & Billing Synchronization: Webh... - RevOps Funnel",
+        "title": "ERP & Billing Synchronization: Webhooks, Idempotency & Data - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -332,7 +332,7 @@
       "codeHash": "3e62ee546150994bb45cbd3890f8f25def74916098ee853e14d65f3a5d59c772",
       "spec": {
         "template": "funnel",
-        "title": "The $8.5M Restatement & Premature R... - RevOps Funnel",
+        "title": "The $8.5M Restatement & Premature Revenue Recognition Disaster (ASC 606) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -494,7 +494,7 @@
       "codeHash": "a44b5dd6f7038b761a317124d41ba7337fcd3531aac3a8247900325c446a0a38",
       "spec": {
         "template": "funnel",
-        "title": "ASC 606 / IFRS 15 Five-Step Revenue... - RevOps Funnel",
+        "title": "ASC 606 / IFRS 15 Five-Step Revenue Recognition Schedules & Waterfalls - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -656,7 +656,7 @@
       "codeHash": "3dd2cd3ddf9da735896c808936841bf275ce998e704239da0638fa0877752b54",
       "spec": {
         "template": "funnel",
-        "title": "Building the Production Enterprise ... - RevOps Funnel",
+        "title": "Building the Production Enterprise Q2C & ASC 606 Revenue Platform - RevOps Funnel",
         "steps": [
           {
             "at": "intro",

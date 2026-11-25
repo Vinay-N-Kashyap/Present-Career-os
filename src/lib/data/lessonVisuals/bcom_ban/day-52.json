@@ -8,7 +8,7 @@
       "codeHash": "95abb1d75b2885eabafcf9f24eb14484e1b82ac049e2e90d59de80e0ec16175a",
       "spec": {
         "template": "funnel",
-        "title": "The Securitization Architecture: Origi... — Structured Credit Operations",
+        "title": "The Securitization Architecture: Originators, Bankruptcy-Remote SPVs — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -110,7 +110,7 @@
       "codeHash": "d76c492a73e9a530b0bdec4ebcdf60cc8d51b1869ca8d93d8aec71ada60e19fc",
       "spec": {
         "template": "funnel",
-        "title": "True Sale Legal Criteria & Bankruptcy ... — Structured Credit Operations",
+        "title": "True Sale Legal Criteria & Bankruptcy Remoteness: Asset Isolation — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -212,7 +212,7 @@
       "codeHash": "98fa65e296ff166ddff2396b30d3c351673cbc5706e0328914372d44ab6f3d9c",
       "spec": {
         "template": "funnel",
-        "title": "Credit Enhancement Mechanisms: Interna... — Structured Credit Operations",
+        "title": "Credit Enhancement Mechanisms: Internal Subordination — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -314,7 +314,7 @@
       "codeHash": "719f210d498636ee217397de82e77047fa2d846948f0b53c0428946d08d705b3",
       "spec": {
         "template": "funnel",
-        "title": "Cash Flow Waterfall Engineering: Seque... — Structured Credit Operations",
+        "title": "Cash Flow Waterfall Engineering: Sequential Pay vs Pro-Rata — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",
@@ -416,7 +416,7 @@
       "codeHash": "fbf86ebcfa79f739f6faa9127a7b963991eaf0cd6fd381f5eb98520a5d530d42",
       "spec": {
         "template": "funnel",
-        "title": "Industrial Securitization Lab: Multi-P... — Structured Credit Operations",
+        "title": "Industrial Securitization Lab: Multi-Period Loan Pool Waterfall — Structured Credit Operations",
         "steps": [
           {
             "at": "intro",

@@ -10,11 +10,11 @@
       "codeHash": "9ca1d54eb27a166f67b8d34f21d31d64736915026ed0a9695c9e714fc68f3536",
       "spec": {
         "template": "funnel",
-        "title": "DNS Authentication Mechanics: The Cryptogr - RevOps Funnel",
+        "title": "DNS Authentication Mechanics: The Cryptographic SPF, DKIM & DMARC - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -90,7 +90,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -168,11 +168,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "DNS Authentication Mechanics: The Cryptogr - RevOps Funnel",
+        "title": "DNS Authentication Mechanics: The Cryptographic SPF, DKIM & DMARC - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (ten,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -248,7 +248,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -330,7 +330,7 @@
       "codeHash": "c6ceb746f9461f5368d27314b216a548bd679dfd6289ce29e2339cd7d5a92af6",
       "spec": {
         "template": "funnel",
-        "title": "Secondary Domain Topologies & Custom Track - RevOps Funnel",
+        "title": "Secondary Domain Topologies & Custom Tracking Domain Isolation - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -410,7 +410,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -488,7 +488,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Secondary Domain Topologies & Custom Track - RevOps Funnel",
+        "title": "Secondary Domain Topologies & Custom Tracking Domain Isolation - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -568,7 +568,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -650,11 +650,11 @@
       "codeHash": "2c770e1f93a699e4fe461e4d80e4ada17f0953f4f7cb7c84f364b0db88119707",
       "spec": {
         "template": "funnel",
-        "title": "Automated Peer-to-Peer Inbox Warming Physi - RevOps Funnel",
+        "title": "Automated Peer-to-Peer Inbox Warming Physics: The 21-Day Ramp Cycle - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -730,7 +730,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -808,11 +808,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Automated Peer-to-Peer Inbox Warming Physi - RevOps Funnel",
+        "title": "Automated Peer-to-Peer Inbox Warming Physics: The 21-Day Ramp Cycle - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (eight,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -888,7 +888,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -970,7 +970,7 @@
       "codeHash": "19cf3d6886df5f288f57aa584bbb2247044584ef498b8949207a4e1030d34e93",
       "spec": {
         "template": "funnel",
-        "title": "Daily Sending Volume Caps & Spreader Archi - RevOps Funnel",
+        "title": "Daily Sending Volume Caps & Spreader Architecture (Max 50 Emails/Inbox/Day) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1050,7 +1050,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1128,7 +1128,7 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Daily Sending Volume Caps & Spreader Archi - RevOps Funnel",
+        "title": "Daily Sending Volume Caps & Spreader Architecture (Max 50 Emails/Inbox/Day) - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
@@ -1208,7 +1208,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (one,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1290,11 +1290,11 @@
       "codeHash": "277a49db93c58087d5a118f70c709adc34dabe7da0df08003767359d10e72bce",
       "spec": {
         "template": "funnel",
-        "title": "Master Deliverability & Infrastructure Gov - RevOps Funnel",
+        "title": "Master Deliverability & Infrastructure Governance Control Tower - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1370,7 +1370,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {
@@ -1448,11 +1448,11 @@
       },
       "filled": {
         "template": "funnel",
-        "title": "Master Deliverability & Infrastructure Gov - RevOps Funnel",
+        "title": "Master Deliverability & Infrastructure Governance Control Tower - RevOps Funnel",
         "steps": [
           {
             "at": "intro",
-            "caption": "Inbound commercial funnel (multiple,multiple accounts).",
+            "caption": "Inbound commercial funnel.",
             "activeStageId": "top",
             "stages": [
               {
@@ -1528,7 +1528,7 @@
           },
           {
             "at": "example",
-            "caption": "Ecosystem co-selling advances (two,multiple deals).",
+            "caption": "Ecosystem co-selling advances.",
             "activeStageId": "target",
             "stages": [
               {

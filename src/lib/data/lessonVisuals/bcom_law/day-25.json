@@ -10,11 +10,11 @@
       "codeHash": "407f6d92addaf1d6ff0d729bb97350329c903a9392772965efb0e2d507429d16",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 1: Hostile Takeover Defense, Unocal P... — General Ledger Verification",
+        "title": "Tier 1: Hostile Takeover Defense, Unocal — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Tier one.",
+            "caption": "Open primary facility debit entry for Tier one.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 112500,
@@ -139,11 +139,11 @@
       "codeHash": "b2300b1e043968de0e18bd91b7d5148f6791530a1d642d242bf173783f7894bd",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 2: Negotiated M&A Deal Protections, R... — General Ledger Verification",
+        "title": "Tier 2: Negotiated M&A Deal Protections — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier two.",
+            "caption": "Open primary facility debit entry for Tier two.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 113750,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 136500,
@@ -268,11 +268,11 @@
       "codeHash": "3e3bf4e132741b36fe63868598254477ee0de9de8372d7a518b46746caccfd07",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 3: Controlling Shareholder Buyouts & ... — General Ledger Verification",
+        "title": "Tier 3: Controlling Shareholder Buyouts — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier three.",
+            "caption": "Open primary facility debit entry for Tier three.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 115000,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 138000,
@@ -397,11 +397,11 @@
       "codeHash": "359fb768f6c06b690b6a1ad389a60c624f6795bf6ca02dd630e7a0d14b3a3d47",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 4: Regulatory Antitrust (HSR) Clearan... — General Ledger Verification",
+        "title": "Tier 4: Regulatory Antitrust (HSR) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Tier four.",
+            "caption": "Open primary facility debit entry for Tier four.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 116250,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($multiple,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 25 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 139500,
@@ -526,11 +526,11 @@
       "codeHash": "d7facf5e743d05eeda6c6371ca80cc7ab22bffb19fdbdac5f7acae2a38a60bc5",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Tier 5: Master Command Sovereign M&A Gener... — General Ledger Verification",
+        "title": "Tier 5: Master Command Sovereign M&A General Counsel Certification — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for Tier five.",
+            "caption": "Open primary facility debit entry for Tier five.",
             "title": "Day 25 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 117500,

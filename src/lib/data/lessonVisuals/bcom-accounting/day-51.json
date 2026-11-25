@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Ind AS 36 Scope, Impairment Indicators &... — Ledger Verification",
+        "title": "Ind AS 36 Scope, Impairment Indicators & Cash-Generating Unit (CGU) — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($thirty-two,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 32869199,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Recoverable Amount Architecture: Fair Va... — Ledger Verification",
+        "title": "Recoverable Amount Architecture: Fair — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($thirty-two,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 32874199,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Impairment Loss Recognition & Waterfall ... — Ledger Verification",
+        "title": "Impairment Loss Recognition & Waterfall Allocation: Goodwill — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($thirty-two,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 32879199,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Subsequent Accounting, Depreciation Reca... — Ledger Verification",
+        "title": "Subsequent Accounting, Depreciation Recalibration & Strict Reversal — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($thirty-two,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 32884199,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Enterprise Ind AS 36 Impairment Engine, ... — Ledger Verification",
+        "title": "Enterprise Ind AS 36 Impairment Engine, Financial Statement — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($thirty-two,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 51 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 32889199,

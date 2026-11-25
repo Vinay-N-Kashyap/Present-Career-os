@@ -8,7 +8,7 @@
       "codeHash": "000400e81a8bfb0821d67032d65e5ba94530e66f1c1b1892ca0bed9c64784f8f",
       "spec": {
         "template": "funnel",
-        "title": "The Three-Tier ICFR Deficiency Hierarc... \u2014 Assurance Review",
+        "title": "The Three-Tier ICFR Deficiency Hierarchy: Control Deficiency — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -126,7 +126,7 @@
       "codeHash": "3079b0ab859f1f33261fbf97956cb2ba0eb8a6f4cf4cf981fba4eb88da7aa655",
       "spec": {
         "template": "funnel",
-        "title": "Qualitative Factors, Prudent Official ... \u2014 Assurance Review",
+        "title": "Qualitative Factors, Prudent Official Standard & Rebuttable — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -244,7 +244,7 @@
       "codeHash": "f1c83ecd4750b807489ca175b8fc2f2c89f46fce1e0e66403530efbe0b73cb10",
       "spec": {
         "template": "funnel",
-        "title": "Compensating Controls Evaluation & Mul... \u2014 Assurance Review",
+        "title": "Compensating Controls Evaluation & Multi-Deficiency Aggregation — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -362,7 +362,7 @@
       "codeHash": "5c116339dee10862b60d879f1ce0848ae9fa5923c18112529d4efeac504c07bc",
       "spec": {
         "template": "funnel",
-        "title": "Control Deficiency Remediation Testing... \u2014 Assurance Review",
+        "title": "Control Deficiency Remediation Testing & The 'As-Of' Date — Assurance Review",
         "steps": [
           {
             "at": "intro",
@@ -480,7 +480,7 @@
       "codeHash": "0d788dc64136126b729ceff80f41841fdeb370da15eebf30aba1833664c925ae",
       "spec": {
         "template": "funnel",
-        "title": "Comprehensive Enterprise ICFR Deficien... \u2014 Assurance Review",
+        "title": "Comprehensive Enterprise ICFR Deficiency Severity & Remediation — Assurance Review",
         "steps": [
           {
             "at": "intro",

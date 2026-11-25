@@ -10,11 +10,11 @@
       "codeHash": "6ee1a5f2ae59d825e32cca2d6c4dfe5082c845ddee82ad53107bbce3e2e81970",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Patentable Subject Matter & The Alice/Mayo... — General Ledger Verification",
+        "title": "Patentable Subject Matter & The Alice/Mayo Two-Step Framework (35 USC § 101) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Patentable.",
+            "caption": "Open primary facility debit entry for Patentable Subject Matter.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 46000,
@@ -139,11 +139,11 @@
       "codeHash": "d19e34b89e93c448f465d70818dc80c21585043018231b5e2367751ff52a43fb",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Novelty & Prior Art Anticipation Invariant... — General Ledger Verification",
+        "title": "Novelty & Prior Art Anticipation Invariants (35 USC § 102) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Novelty &.",
+            "caption": "Open primary facility debit entry for Novelty.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 47250,
@@ -169,7 +169,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 56700,
@@ -268,11 +268,11 @@
       "codeHash": "1be72dcb6cf06a88c2b6b9b995720559dc86305bedd6ee4f9c2785943a09da54",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Non-Obviousness & The Graham v. John Deere... — General Ledger Verification",
+        "title": "Non-Obviousness & The Graham v. John Deere Framework (35 USC § 103) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,server-error) for.",
+            "caption": "Open primary facility debit entry.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 48500,
@@ -298,7 +298,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 58200,
@@ -397,11 +397,11 @@
       "codeHash": "5c135c7f1f53b66f4a81e454df33f55077bb9cf5c976ca6ef0e4e7a66092b5d2",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Patent Prosecution, Claim Drafting & Freed... — General Ledger Verification",
+        "title": "Patent Prosecution, Claim Drafting & Freedom-to-Operate (FTO) — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Patent.",
+            "caption": "Open primary facility debit entry for Patent Prosecution.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 49750,
@@ -427,7 +427,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary interest & fee accrual adjustment ($nine,multiple).",
+            "caption": "Record secondary interest & fee accrual adjustment.",
             "title": "Day 6 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 59700,
@@ -526,11 +526,11 @@
       "codeHash": "bbafae9508c59842723b92d0656829d051b871447eac953464613fd6ed052770",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Patent Litigation, Willful Infringement & ... — General Ledger Verification",
+        "title": "Patent Litigation, Willful Infringement & Treble Damages Architecture — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary facility debit entry ($multiple,multiple) for Patent.",
+            "caption": "Open primary facility debit entry for Patent Litigation.",
             "title": "Day 6 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 51000,

@@ -10,7 +10,7 @@
       "codeHash": "57fc45f3673335335ff1716c494da774e9a2f866e437dfdd7271ecf905652945",
       "spec": {
         "template": "tree-graph",
-        "title": "Full Fine-Tuning vs Parameter-Efficient Adapt... — Enterprise AI Decision Graph",
+        "title": "Full Fine-Tuning vs Parameter-Efficient Adaptation: Memory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -54,7 +54,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Full Fine-Tuning vs Parameter-E...",
+            "caption": "Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -130,7 +130,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Full Fine-Tuning vs Parameter-Efficient Adapt... — Enterprise AI Decision Graph",
+        "title": "Full Fine-Tuning vs Parameter-Efficient Adaptation: Memory — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -174,7 +174,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Full Fine-Tuning vs Parameter-E...",
+            "caption": "Step 1: Ingest enterprise Context Query.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -254,7 +254,7 @@
       "codeHash": "d637c4541594f54a4ca2922b63558b63561574d16be7bf3ba058144e9686eeeb",
       "spec": {
         "template": "tree-graph",
-        "title": "Low-Rank Adaptation (LoRA) Mathematical Mecha... — Enterprise AI Decision Graph",
+        "title": "Low-Rank Adaptation (LoRA) Mathematical Mechanics — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -298,7 +298,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Low-Rank Adaptation (LoRA) Math...",
+            "caption": "Ingest enterprise Context Query for Low-Rank Adaptation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -374,7 +374,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Low-Rank Adaptation (LoRA) Mathematical Mecha... — Enterprise AI Decision Graph",
+        "title": "Low-Rank Adaptation (LoRA) Mathematical Mechanics — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -418,7 +418,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Low-Rank Adaptation (LoRA) Math...",
+            "caption": "Step 1: Ingest enterprise Context Query for Low-Rank Adaptation.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -498,7 +498,7 @@
       "codeHash": "f37a7e7ebaffb7d1e89b61dba1f99ce0999308352484012ec2aaa65a28e0bbf9",
       "spec": {
         "template": "tree-graph",
-        "title": "QLoRA & 4-bit NormalFloat (NF4) Quantization ... — Enterprise AI Decision Graph",
+        "title": "QLoRA & 4-bit NormalFloat (NF4) Quantization Mechanics — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -618,7 +618,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "QLoRA & 4-bit NormalFloat (NF4) Quantization ... — Enterprise AI Decision Graph",
+        "title": "QLoRA & 4-bit NormalFloat (NF4) Quantization Mechanics — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -662,7 +662,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for QLoRA & 4-bit NormalFloat (NF4)...",
+            "caption": "Step 1: Ingest enterprise Context Query for QLoRA.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -742,7 +742,7 @@
       "codeHash": "20f3bf815a5fc5c9f501dc84b058fb6fe76188ef894b41e5e5eca2b680c59699",
       "spec": {
         "template": "tree-graph",
-        "title": "Dynamic Adapter Hot-Swapping & Multi-Tenant E... — Enterprise AI Decision Graph",
+        "title": "Dynamic Adapter Hot-Swapping & Multi-Tenant Enterprise Serving — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -786,7 +786,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Dynamic Adapter Hot-Swapping & ...",
+            "caption": "Ingest enterprise Context Query for Dynamic Adapter Hot-Swapping.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -862,7 +862,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Dynamic Adapter Hot-Swapping & Multi-Tenant E... — Enterprise AI Decision Graph",
+        "title": "Dynamic Adapter Hot-Swapping & Multi-Tenant Enterprise Serving — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -906,7 +906,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Adapter Hot-Swapping & ...",
+            "caption": "Step 1: Ingest enterprise Context Query for Dynamic Adapter Hot-Swapping.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -986,7 +986,7 @@
       "codeHash": "d2ba008defea45c55256c256d428e75b853bd34fceb6fc423f592babc9a192e6",
       "spec": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1030,7 +1030,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Ingest enterprise Context Query for Building an Enterprise PEFT.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"
@@ -1106,7 +1106,7 @@
       },
       "filled": {
         "template": "tree-graph",
-        "title": "Masterclass Synthesis: Building an Enterprise... — Enterprise AI Decision Graph",
+        "title": "Masterclass Synthesis: Building — Enterprise AI Decision Graph",
         "nodes": [
           {
             "id": "n1",
@@ -1150,7 +1150,7 @@
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Ingest enterprise Context Query for Masterclass Synthesis:.",
+            "caption": "Step 1: Ingest enterprise Context Query for Building an Enterprise PEFT.",
             "activeNodeId": "n1",
             "visitedNodeIds": [
               "n1"

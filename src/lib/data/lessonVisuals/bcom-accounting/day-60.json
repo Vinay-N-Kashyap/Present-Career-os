@@ -11,11 +11,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Executive Mandate of the Global Corporat... — Ledger Verification",
+        "title": "Executive Mandate of the Global Corporate Controller & Lead Statutory — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124005000,
@@ -141,11 +141,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 1: Comprehensive Financial Statem... — Ledger Verification",
+        "title": "Module 1: Comprehensive Financial — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124010000,
@@ -271,11 +271,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 2: Ind AS 7 Statement of Cash Flo... — Ledger Verification",
+        "title": "Module 2: Ind AS 7 Statement of Cash — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124015000,
@@ -401,11 +401,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Module 3 & Module 4: Ind AS 8 Retrospect... — Ledger Verification",
+        "title": "Module 3 & Module 4: Ind AS 8 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124020000,
@@ -531,11 +531,11 @@
       "filled": {},
       "spec": {
         "template": "ledger-sheet",
-        "title": "Grand Milestone 12 Verification, Statuto... — Ledger Verification",
+        "title": "Grand Milestone 12 Verification, Statutory Audit Sign-Off & Course 01 — Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary Ind AS ledger posting ($multiple,multiple,multiple) for.",
+            "caption": "Open primary Ind AS ledger posting.",
             "title": "Day 60 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 124025000,

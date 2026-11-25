@@ -10,11 +10,11 @@
       "codeHash": "d947f6a099fb2028a3ac15966852b869f48177b69103adf6ed18db8cf600e7ec",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Fintech Open Banking Architecture, PSD2 APIs ... — General Ledger Verification",
+        "title": "Fintech Open Banking Architecture, PSD2 APIs & OAuth 2.0 Scoped — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Fintech Open Banking Architectu...",
+            "caption": "Open primary debit entry for Fintech Open Banking Architecture.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -40,7 +40,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -71,7 +71,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3720,
@@ -135,11 +135,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Fintech Open Banking Architecture, PSD2 APIs ... — General Ledger Verification",
+        "title": "Fintech Open Banking Architecture, PSD2 APIs & OAuth 2.0 Scoped — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3100) for Fintech Open Banking Architectu...",
+            "caption": "Step 1: Open primary debit entry (3100) for Fintech Open Banking Architecture.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3100,
@@ -264,11 +264,11 @@
       "codeHash": "6cb19115a49f490a5637d49f8e3aa86fc0c3399f647c7e075f7d43bc57741f63",
       "spec": {
         "template": "ledger-sheet",
-        "title": "ISO 20022 Financial Messaging: pacs.008 Credi... — General Ledger Verification",
+        "title": "ISO 20022 Financial Messaging: pacs.008 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for ISO multiple Financial Messaging.",
+            "caption": "Open primary debit entry for ISO multiple Financial Messaging.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -294,7 +294,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -325,7 +325,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 3960,
@@ -389,11 +389,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "ISO 20022 Financial Messaging: pacs.008 Credi... — General Ledger Verification",
+        "title": "ISO 20022 Financial Messaging: pacs.008 — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3300) for ISO 20022 Financial Messaging: ...",
+            "caption": "Step 1: Open primary debit entry (3300) for ISO 20022 Financial Messaging:",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3300,
@@ -518,11 +518,11 @@
       "codeHash": "a938ac40b093f5d4d347cca4c08ee14b4d634e825b9c3bb98f58a5e9ccf527cc",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Anti-Money Laundering (AML) Rules Engine, Smu... — General Ledger Verification",
+        "title": "Anti-Money Laundering (AML) Rules Engine, Smurfing Detection & SAR Filing Escalations — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Anti-Money Laundering (AML) Rul...",
+            "caption": "Open primary debit entry for Anti-Money Laundering.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -548,7 +548,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -579,7 +579,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4200,
@@ -643,11 +643,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Anti-Money Laundering (AML) Rules Engine, Smu... — General Ledger Verification",
+        "title": "Anti-Money Laundering (AML) Rules Engine, Smurfing Detection & SAR Filing Escalations — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3500) for Anti-Money Laundering (AML) Rul...",
+            "caption": "Step 1: Open primary debit entry (3500) for Anti-Money Laundering.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3500,
@@ -772,11 +772,11 @@
       "codeHash": "d883a86a6a019ede9a6c5ea4c3d08f5dcf9ca7cd152bdaa920b5562c0d41f3aa",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Forensic Financial Auditing & Benford's Law F... — General Ledger Verification",
+        "title": "Forensic Financial Auditing & Benford's Law First-Digit Anomaly — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Forensic Financial Auditing & B...",
+            "caption": "Open primary debit entry for Forensic Financial Auditing.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -802,7 +802,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -833,7 +833,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4440,
@@ -897,11 +897,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Forensic Financial Auditing & Benford's Law F... — General Ledger Verification",
+        "title": "Forensic Financial Auditing & Benford's Law First-Digit Anomaly — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3700) for Forensic Financial Auditing & B...",
+            "caption": "Step 1: Open primary debit entry (3700) for Forensic Financial Auditing.",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3700,
@@ -1026,11 +1026,11 @@
       "codeHash": "770107cf327bbb8f2b38ad856dcbba192970aef764ae1ad321aff6678fb04e0e",
       "spec": {
         "template": "ledger-sheet",
-        "title": "Graph Fraud Analytics: Money Laundering Layer... — General Ledger Verification",
+        "title": "Graph Fraud Analytics: Money Laundering — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Open primary debit entry (multiple) for Graph Fraud Analytics: Money La...",
+            "caption": "Open primary debit entry for Graph Fraud Analytics: Money",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,
@@ -1056,7 +1056,7 @@
           },
           {
             "at": "say1",
-            "caption": "Record secondary accrual adjustment (multiple).",
+            "caption": "Record secondary accrual adjustment.",
             "title": "Day 4 Journal — Accrual Adjustment",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1087,7 +1087,7 @@
           },
           {
             "at": "example",
-            "caption": "Reconcile sub-ledger balances against control total (multiple).",
+            "caption": "Reconcile sub-ledger balances against control total.",
             "title": "Day 4 Journal — Reconciliation Check",
             "isBalanced": true,
             "totalDebit": 4680,
@@ -1151,11 +1151,11 @@
       },
       "filled": {
         "template": "ledger-sheet",
-        "title": "Graph Fraud Analytics: Money Laundering Layer... — General Ledger Verification",
+        "title": "Graph Fraud Analytics: Money Laundering — General Ledger Verification",
         "steps": [
           {
             "at": "intro",
-            "caption": "Step 1: Open primary debit entry (3900) for Graph Fraud Analytics: Money La...",
+            "caption": "Step 1: Open primary debit entry (3900) for Graph Fraud Analytics: Money",
             "title": "Day 4 Journal — Initial Posting",
             "isBalanced": true,
             "totalDebit": 3900,
