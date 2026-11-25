@@ -33,6 +33,10 @@ import {
   formatCompactDuration,
   formatDurationLabel,
 } from '../src/lib/quests/extraRoadmaps';
+import {
+  formatConciseStageDesc,
+  buildDynamicSCurveGeometry,
+} from '../src/app/quests/components/QuestPathView';
 import { selectRelevantCourseIds } from '../src/lib/roadmap/roadmapCourseSelector';
 import { COURSES_REGISTRY } from '../src/lib/data/coursesData';
 
@@ -603,4 +607,41 @@ test('All-6-Tasks Audit: Task 1 (Resume opt-out, wider modal, declutter), Task 2
   });
   assert.equal(postResetResult.weeklyXp, 50);
   assert.equal(postResetResult.healed, false);
+});
+
+test('QuestPathView UI polish: unified Command Deck, dynamic cartoon S-curve, concise stage text, Start button, and Activity badge fix', () => {
+  const verbose =
+    '🔀 Fused Goal Trajectory: Foundations, Core Syntax & Mental Models covering 95 calibrated quests (⚡ Fast-Track Jump: Day 1: Full-Stack Architecture → Day 31 Practice 2). Tailored for Full Stack Engineer (Pattern Hunter archetype with QT1: 40/100 & QT2: 40/100).';
+  const concise = formatConciseStageDesc(verbose, 95);
+  assert.ok(!concise.includes('🔀'), 'concise desc should strip fused trajectory emoji');
+  assert.ok(!concise.includes('Fused Goal Trajectory'), 'concise desc should strip verbose prefix');
+  assert.ok(!concise.includes('Fast-Track Jump'), 'concise desc should remove long parenthetical jump range');
+  assert.ok(!concise.includes('Pattern Hunter archetype'), 'concise desc should strip QT archetype suffix');
+  assert.ok(concise.length <= 130, `expected concise desc <= 130 chars, got ${concise.length}`);
+
+  const curve4 = buildDynamicSCurveGeometry(4);
+  const curve8 = buildDynamicSCurveGeometry(8);
+  assert.equal(curve4.waypoints.length, 4);
+  assert.equal(curve8.waypoints.length, 8);
+  assert.ok(curve8.svgHeight > curve4.svgHeight, 'SVG height should scale proportionally with stage count');
+  assert.ok(curve4.path.startsWith('M 52 34 C '), 'S-curve path should originate from GO badge');
+
+  const viewSrc = fs.readFileSync(
+    path.join(process.cwd(), 'src/app/quests/components/QuestPathView.tsx'),
+    'utf8'
+  );
+  assert.ok(viewSrc.includes('data-testid="roadmap-command-deck"'), 'top header, tabs, and timeline must live inside unified Command Deck');
+  assert.ok(viewSrc.includes('data-testid="visual-scurve-roadmap"'), 'enhanced cartoon S-curve roadmap container must exist');
+  assert.ok(viewSrc.includes('Start ➔'), 'stage CTA button should read Start ➔');
+  assert.ok(!viewSrc.includes('Continue Stage'), 'legacy Continue Stage button text must be removed');
+  assert.ok(!viewSrc.includes('Continue Quest'), 'legacy Continue Quest button text must be removed');
+  assert.ok(viewSrc.includes('minmax(290px, 1fr)'), 'calibrated quest cards should use enlarged 290px min grid');
+  assert.ok(viewSrc.includes('minWidth: 62'), 'activity history badge pill should prevent text overflow');
+  assert.ok(viewSrc.includes('fontSize: 10.5'), 'activity history badge font should fit cleanly inside pill');
+
+  const fuserSrc = fs.readFileSync(
+    path.join(process.cwd(), 'src/lib/data/roadmapFuser.ts'),
+    'utf8'
+  );
+  assert.ok(!fuserSrc.includes('🔀 Fused Goal Trajectory:'), 'roadmapFuser should emit concise stage descriptions');
 });
