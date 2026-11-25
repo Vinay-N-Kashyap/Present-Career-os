@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
-import { calculateLeaguePoints, getLeagueCutoffs } from '@/lib/leagues/leaguePoints';
+import { calculateLeaguePoints, getLeagueCutoffs, rankLeagueEntries } from '@/lib/leagues/leaguePoints';
+import { reconcileUserWeeklyLeaguePoints } from '@/lib/leagues/reconcileWeeklyLeaguePoints';
 
 export const dynamic = 'force-dynamic';
 
@@ -36,6 +37,7 @@ export interface GuildLeaderboardEntry {
   guildId: string;
   guildName: string;
   hackathonTitle: string;
+  finalScore: number | null;
   teamLeadName: string;
   membersCount: number;
   completedProjectsCount: number;
@@ -111,7 +113,9 @@ export async function GET(req: Request) {
       });
     }
 
-    // Identify current user if signed in (bearer token, headers, search params, or cookie fallback)
+    // Only a verified bearer session may identify a user in production. The
+    // leaderboard also accepts client-supplied IDs in explicitly enabled local
+    // test mode, but never uses those IDs to expose another profile's stats.
     let currentUserId: string | null = null;
     let authSource = 'anonymous';
     try {
@@ -122,7 +126,7 @@ export async function GET(req: Request) {
       }
     } catch {}
 
-    if (!currentUserId) {
+    if (!currentUserId && process.env.NODE_ENV !== 'production' && process.env.ALLOW_DEV_AUTH_BYPASS === 'true') {
       const headerUid = req.headers.get('x-user-id') || req.headers.get('x-pinit-user-id');
       const paramUid = url.searchParams.get('userId') || url.searchParams.get('user_id');
       if (headerUid && headerUid.trim()) {
@@ -155,22 +159,69 @@ export async function GET(req: Request) {
 
     // 1. Fetch current user's profile to know their current league
     let currentUserLeague: LeagueTier = 'browns';
-    let currentUserHasJoined = false;
+    // null means the membership lookup could not be confirmed; don't tell the
+    // client that a failed database read is proof the user has not joined.
+    let currentUserHasJoined: boolean | null = null;
     let currentUserTotalXp = 0;
+    let currentUserStats: { weeklyXp: number; arenaPoints: number; arenaElo: number } | null = null;
     if (currentUserId && admin) {
       try {
-        const { data: userProfile } = await admin
+        let userProfile: any = null;
+        let userProfileError: any = null;
+        let hasLastLeagueEvalField = false;
+
+        const primaryRes = await admin
           .from('users')
-          .select('league_tier, league_joined_at, xp_total')
+          .select('league_tier, league_joined_at, xp_total, weekly_xp, weekly_arena_points, arena_elo, arena_wins, last_league_eval')
           .eq('id', currentUserId)
           .maybeSingle();
 
-        currentUserHasJoined = Boolean(userProfile?.league_joined_at);
-        currentUserTotalXp = Number(userProfile?.xp_total) || 0;
-        if (userProfile?.league_tier && validLeagues.has(userProfile.league_tier.toLowerCase() as LeagueTier)) {
-          currentUserLeague = userProfile.league_tier.toLowerCase() as LeagueTier;
+        if (primaryRes.error) {
+          const fallbackRes = await admin
+            .from('users')
+            .select('league_tier, league_joined_at, xp_total, weekly_xp, weekly_arena_points, arena_elo, arena_wins')
+            .eq('id', currentUserId)
+            .maybeSingle();
+          userProfile = fallbackRes.data;
+          userProfileError = fallbackRes.error;
+        } else {
+          userProfile = primaryRes.data;
+          hasLastLeagueEvalField = Boolean(userProfile && Object.prototype.hasOwnProperty.call(userProfile, 'last_league_eval'));
         }
-      } catch {}
+
+        if (userProfileError) {
+          console.warn("[Leaderboard] Could not confirm current user's league membership:", userProfileError.message);
+        } else {
+          currentUserHasJoined = Boolean(userProfile?.league_joined_at);
+          const parsedTotalXp = Number(userProfile?.xp_total);
+          currentUserTotalXp = Number.isFinite(parsedTotalXp) ? Math.max(0, parsedTotalXp) : 0;
+          const storedElo = userProfile?.arena_elo === null || userProfile?.arena_elo === undefined
+            ? Number.NaN
+            : Number(userProfile.arena_elo);
+          const arenaElo = !Number.isFinite(storedElo) || storedElo < 0 || (storedElo === 1200 && !(Number(userProfile?.arena_wins) > 0))
+            ? 100
+            : storedElo;
+          const reconciledStats = await reconcileUserWeeklyLeaguePoints(admin, {
+            userId: currentUserId,
+            storedWeeklyXp: Math.max(0, Number(userProfile?.weekly_xp) || 0),
+            storedArenaPoints: Math.max(0, Number(userProfile?.weekly_arena_points) || 0),
+            storedTotalXp: currentUserTotalXp,
+            lastLeagueEval: userProfile?.last_league_eval ?? null,
+            hasLastLeagueEvalField,
+            arenaWins: Math.max(0, Number(userProfile?.arena_wins) || 0),
+          });
+          currentUserStats = {
+            weeklyXp: reconciledStats.weeklyXp,
+            arenaPoints: reconciledStats.arenaPoints,
+            arenaElo,
+          };
+          if (userProfile?.league_tier && validLeagues.has(userProfile.league_tier.toLowerCase() as LeagueTier)) {
+            currentUserLeague = userProfile.league_tier.toLowerCase() as LeagueTier;
+          }
+        }
+      } catch (error) {
+        console.warn('[Leaderboard] Current-user membership lookup failed:', error);
+      }
     }
 
     const activeLeague: LeagueTier = validLeagues.has(requestedLeague)
@@ -282,11 +333,11 @@ export async function GET(req: Request) {
       dbStatus: DB_CONFIGURED ? 'live_supabase' : 'mock_fallback',
     });
 
-    // 3. Verified Skills count lookup
+    // 3. Verified Skills count lookup (full scan only when ranking by verified_evidence; other modes hydrate visible top-100 below)
     const userIds = data.map(u => u.id);
     const verifiedCountsMap: Record<string, number> = {};
 
-    if (userIds.length > 0) {
+    if (mode === 'verified_evidence' && userIds.length > 0 && admin) {
       try {
         // Verified competencies live in student_competency_mastery (competency engine).
         for (let from = 0; from < userIds.length; from += 500) {
@@ -313,8 +364,12 @@ export async function GET(req: Request) {
       const demonstratedSkills = Array.isArray(p.completed_quests) ? p.completed_quests.length : 0;
       const defense = Math.min(100, Math.max(0, Number(p.ats_score) || 0));
       const totalXp = Math.max(0, Number(p.xp_total) || 0);
-      const weeklyXp = Math.max(0, Number(p.weekly_xp) || 0);
-      const arenaPoints = Math.max(0, Number(p.weekly_arena_points) || 0);
+      const weeklyXp = p.id === currentUserId && currentUserStats
+        ? Math.max(0, Number(p.weekly_xp) || 0, currentUserStats.weeklyXp)
+        : Math.max(0, Number(p.weekly_xp) || 0);
+      const arenaPoints = p.id === currentUserId && currentUserStats
+        ? Math.max(0, Number(p.weekly_arena_points) || 0, currentUserStats.arenaPoints)
+        : Math.max(0, Number(p.weekly_arena_points) || 0);
       const leaguePoints = calculateLeaguePoints(weeklyXp, arenaPoints);
       const trust = Number(p.trust_score) || 0;
 
@@ -431,15 +486,18 @@ export async function GET(req: Request) {
 
           let higherCount = 0;
           try {
-            const { data: rankedRows } = await admin
-              .from('users')
-              .select('id, weekly_xp, weekly_arena_points, xp_total')
-              .or('role.eq.student,role.eq.Student,role.eq.STUDENT,role.is.null')
-              .not('league_joined_at', 'is', null)
-              .or(`league_tier.eq.${activeLeague},league_tier.eq.${activeLeague.charAt(0).toUpperCase() + activeLeague.slice(1)}`)
-              .order('id', { ascending: true })
-              .limit(10000);
-            const ranked = (rankedRows || []).sort((a: any, b: any) =>
+            // Reuse the already-fetched league cohort when available instead of scanning 10k rows a second time
+            const sourceRows = (isLeagueRanking && data.length > 0)
+              ? data
+              : (await admin
+                  .from('users')
+                  .select('id, weekly_xp, weekly_arena_points, xp_total')
+                  .or('role.eq.student,role.eq.Student,role.eq.STUDENT,role.is.null')
+                  .not('league_joined_at', 'is', null)
+                  .or(`league_tier.eq.${activeLeague},league_tier.eq.${activeLeague.charAt(0).toUpperCase() + activeLeague.slice(1)}`)
+                  .order('id', { ascending: true })
+                  .limit(10000)).data;
+            const ranked = (sourceRows || []).sort((a: any, b: any) =>
               calculateLeaguePoints(Number(b.weekly_xp) || 0, Number(b.weekly_arena_points) || 0) -
                 calculateLeaguePoints(Number(a.weekly_xp) || 0, Number(a.weekly_arena_points) || 0) ||
               Math.max(0, Number(b.weekly_xp) || 0) - Math.max(0, Number(a.weekly_xp) || 0) ||
@@ -451,8 +509,12 @@ export async function GET(req: Request) {
           } catch {}
 
           const myRank = higherCount + 1;
-          const myWeeklyXp = Number(myProfile.weekly_xp) || 0;
-          const myArenaPoints = Number(myProfile.weekly_arena_points) || 0;
+          const myWeeklyXp = currentUserStats
+            ? Math.max(0, Number(myProfile.weekly_xp) || 0, currentUserStats.weeklyXp)
+            : Math.max(0, Number(myProfile.weekly_xp) || 0);
+          const myArenaPoints = currentUserStats
+            ? Math.max(0, Number(myProfile.weekly_arena_points) || 0, currentUserStats.arenaPoints)
+            : Math.max(0, Number(myProfile.weekly_arena_points) || 0);
           const myLeaguePoints = calculateLeaguePoints(myWeeklyXp, myArenaPoints);
           const myTotalXp = Number(myProfile.xp_total) || 0;
           const myDefense = Math.min(100, Math.max(0, Number(myProfile.ats_score) || 0));
@@ -493,6 +555,19 @@ export async function GET(req: Request) {
 
           if (!entries.some(e => e.studentId === currentUserEntry?.studentId)) {
             entries.push(currentUserEntry);
+
+            // A fallback member may be added after the cohort query (for
+            // example, when a profile row was briefly absent from a paged
+            // read). Re-sort the actual response cohort so the row order and
+            // displayed rank agree with its League Points.
+            const reconciledEntries = rankLeagueEntries(
+              entries,
+              activeLeague,
+              promotionCutoffRank,
+              demotionCutoffRank,
+            );
+            entries.splice(0, entries.length, ...reconciledEntries);
+            currentUserEntry = entries.find(entry => entry.studentId === currentUserId) || currentUserEntry;
           }
         }
       } catch (err) {
@@ -544,23 +619,28 @@ export async function GET(req: Request) {
 
     // 7. Guild Leaderboard: Query authentic student hackathon squads (zero mock data)
     let guilds: GuildLeaderboardEntry[] = [];
+    let guildsLoadError: string | null = null;
     if (admin) {
       try {
-        const { data: squadRows } = await admin
+        const { data: squadRows, error: squadError } = await admin
           .from('hackathon_squads')
           .select('id, name, hackathon_title, team_lead_student_id, status, milestones, final_score, created_at')
           .order('final_score', { ascending: false, nullsFirst: false })
+          .order('created_at', { ascending: true })
+          .order('id', { ascending: true })
           .limit(50);
+        if (squadError) throw squadError;
 
         if (squadRows && squadRows.length > 0) {
           // Fetch lead names
           const leadIds = Array.from(new Set(squadRows.map((s: any) => s.team_lead_student_id).filter(Boolean)));
           const leadNameMap = new Map<string, string>();
           if (leadIds.length > 0) {
-            const { data: leadUsers } = await admin
+            const { data: leadUsers, error: leadError } = await admin
               .from('users')
               .select('id, display_name')
               .in('id', leadIds);
+            if (leadError) throw leadError;
             if (leadUsers) {
               leadUsers.forEach((u: any) => {
                 leadNameMap.set(u.id, u.display_name || 'Student Lead');
@@ -571,27 +651,28 @@ export async function GET(req: Request) {
           // Fetch member counts from hackathon_squad_members if present
           const squadIds = squadRows.map((s: any) => s.id);
           const memberCountsMap = new Map<string, number>();
-          try {
-            const { data: memberRows } = await admin
-              .from('hackathon_squad_members')
-              .select('squad_id')
-              .in('squad_id', squadIds);
-            if (memberRows) {
-              memberRows.forEach((m: any) => {
-                memberCountsMap.set(m.squad_id, (memberCountsMap.get(m.squad_id) || 0) + 1);
-              });
-            }
-          } catch {}
+          const { data: memberRows, error: memberError } = await admin
+            .from('hackathon_squad_members')
+            .select('squad_id')
+            .in('squad_id', squadIds);
+          if (memberError) throw memberError;
+          if (memberRows) {
+            memberRows.forEach((m: any) => {
+              memberCountsMap.set(m.squad_id, (memberCountsMap.get(m.squad_id) || 0) + 1);
+            });
+          }
 
           guilds = squadRows.map((squad: any, idx: number) => {
             const milestones = Array.isArray(squad.milestones) ? squad.milestones : [];
             const completedMilestones = milestones.filter((m: any) => m.isCompleted).length;
-            const membersCount = memberCountsMap.get(squad.id) || (milestones.length > 0 ? 3 : 1);
+            const membersCount = memberCountsMap.get(squad.id) ?? 0;
+            const score = squad.final_score == null ? null : Number(squad.final_score);
             return {
               rank: idx + 1,
               guildId: squad.id,
               guildName: squad.name || `Squad ${squad.id}`,
               hackathonTitle: squad.hackathon_title || 'Engineering Sprint Challenge',
+              finalScore: score != null && Number.isFinite(score) ? score : null,
               teamLeadName: leadNameMap.get(squad.team_lead_student_id) || 'Student Lead',
               membersCount,
               completedProjectsCount: completedMilestones,
@@ -602,7 +683,10 @@ export async function GET(req: Request) {
       } catch (err) {
         console.warn('[Leaderboard] Failed to query hackathon squads:', err);
         guilds = [];
+        guildsLoadError = 'Could not load project squads. Please refresh and try again.';
       }
+    } else if (DB_CONFIGURED || process.env.NODE_ENV === 'production') {
+      guildsLoadError = 'Could not load project squads. Please refresh and try again.';
     }
 
     console.log('[LEADERBOARD_MIDDLEPOINT][Guild Squads]', {
@@ -610,12 +694,37 @@ export async function GET(req: Request) {
       topSquad: guilds[0]?.guildName ?? 'none',
     });
 
+    // Bound response payload to top 100 entries (+ caller if outside top 100) and hydrate verified counts only for visible entries
+    const top100 = entries.slice(0, 100);
+    const responseEntries = (currentUserEntry && !top100.some(e => e.studentId === currentUserEntry!.studentId))
+      ? [...top100, currentUserEntry]
+      : top100;
+
+    if (mode !== 'verified_evidence' && admin && responseEntries.length > 0) {
+      try {
+        const visibleIds = responseEntries.map(e => e.studentId);
+        const { data: masteryData } = await admin
+          .from('student_competency_mastery')
+          .select('student_id')
+          .in('student_id', visibleIds)
+          .eq('state', 'verified');
+        const visibleCounts: Record<string, number> = {};
+        masteryData?.forEach((row: { student_id: string }) => {
+          visibleCounts[row.student_id] = (visibleCounts[row.student_id] || 0) + 1;
+        });
+        responseEntries.forEach(entry => {
+          entry.verifiedSkillsCount = visibleCounts[entry.studentId] || 0;
+        });
+      } catch {}
+    }
+
     const executionTimeMs = Math.round(performance.now() - startTime);
     console.log('[LEADERBOARD_ENDPOINT][Dispatched]', {
       status: 200,
       mode,
       activeLeague,
       totalEntries: entries.length,
+      returnedEntries: responseEntries.length,
       guildsCount: guilds.length,
       latencyMs: executionTimeMs,
       timestamp: new Date().toISOString(),
@@ -626,10 +735,13 @@ export async function GET(req: Request) {
       mode,
       activeLeague,
       currentUserLeague,
+      currentUserId,
       currentUserHasJoined,
       currentUserTotalXp,
-      leaderboard: entries,
+      currentUserStats,
+      leaderboard: responseEntries,
       guilds,
+      guildsLoadError,
       totalCount: entries.length,
       currentUser: currentUserEntry,
       promotionCutoffRank,

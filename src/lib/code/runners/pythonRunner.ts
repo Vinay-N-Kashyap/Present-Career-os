@@ -87,93 +87,165 @@ async function getPyodide() {
 self.onmessage = async function(e) {
   const { id, type, payload } = e.data || {};
   if (type === 'RUN_PYTHON') {
+    let ns = null;
     try {
       const py = await getPyodide();
+      self.postMessage({ id, type: 'EXEC_START' });
       const { script, extractVars } = payload;
-      await py.runPythonAsync(script);
+      ns = py.globals.get('dict')();
+      ns.set('__name__', '__main__');
+      await py.runPythonAsync(script, { globals: ns });
       const results = {};
       if (Array.isArray(extractVars)) {
         for (const varName of extractVars) {
           try {
-            const val = py.globals.get(varName);
+            const val = ns.get(varName);
             results[varName] = val !== undefined && val !== null ? String(val) : '';
           } catch {}
         }
       }
-      self.postMessage({ id, success: true, results });
+      self.postMessage({ id, type: 'EXEC_RESULT', success: true, results });
     } catch (err) {
       const rawMsg = (err && err.message) ? String(err.message) : String(err);
       const lines = rawMsg.trim().split('\\n').map(l => l.trim()).filter(Boolean);
       const cleanErr = lines.length > 0 ? lines[lines.length - 1] : rawMsg;
-      self.postMessage({ id, success: false, error: cleanErr });
+      self.postMessage({ id, type: 'EXEC_RESULT', success: false, error: cleanErr });
+    } finally {
+      try { if (ns && typeof ns.destroy === 'function') ns.destroy(); } catch {}
     }
   }
 };
 `;
+
+const PYODIDE_BOOT_TIMEOUT_MS = 30000;
+let sharedPyodideWorker: Worker | null = null;
+let sharedWorkerBlobUrl: string | null = null;
+let workerQueue: Promise<void> = Promise.resolve();
+
+function resetSharedPyodideWorker() {
+  if (sharedPyodideWorker) {
+    try { sharedPyodideWorker.terminate(); } catch {}
+    sharedPyodideWorker = null;
+  }
+  if (sharedWorkerBlobUrl) {
+    try { URL.revokeObjectURL(sharedWorkerBlobUrl); } catch {}
+    sharedWorkerBlobUrl = null;
+  }
+}
+
+function getOrCreatePyodideWorker(): Worker {
+  if (sharedPyodideWorker) return sharedPyodideWorker;
+  const blob = new Blob(
+    [PYODIDE_WORKER_SOURCE.split('__PYODIDE_BASE__').join(pyodideBase())],
+    { type: 'application/javascript' }
+  );
+  sharedWorkerBlobUrl = URL.createObjectURL(blob);
+  sharedPyodideWorker = new Worker(sharedWorkerBlobUrl);
+  return sharedPyodideWorker;
+}
 
 function executeInBrowserWorker(
   script: string,
   extractVars: string[],
   timeoutMs: number
 ): Promise<{ success: boolean; results?: Record<string, string>; error?: string }> {
-  return new Promise((resolve) => {
-    if (typeof window === 'undefined' || typeof Worker === 'undefined') {
-      resolve({ success: false, error: 'Web Worker not supported in this environment.' });
-      return;
-    }
+  if (typeof window === 'undefined' || typeof Worker === 'undefined') {
+    return Promise.resolve({ success: false, error: 'Web Worker not supported in this environment.' });
+  }
 
-    let worker: Worker | null = null;
-    let timer: any = null;
-    let blobUrl: string | null = null;
+  const runTask = (): Promise<{ success: boolean; results?: Record<string, string>; error?: string }> =>
+    new Promise((resolve) => {
+      let timer: any = null;
+      let settled = false;
+      let worker: Worker | null = null;
+      const runId = 'run_' + Math.random().toString(36).slice(2);
 
-    const cleanup = () => {
-      if (timer) {
-        clearTimeout(timer);
-        timer = null;
-      }
-      if (worker) {
-        worker.terminate();
-        worker = null;
-      }
-      if (blobUrl) {
-        URL.revokeObjectURL(blobUrl);
-        blobUrl = null;
-      }
-    };
+      const clearTimer = () => {
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
+      };
 
-    try {
-      const blob = new Blob([PYODIDE_WORKER_SOURCE.split('__PYODIDE_BASE__').join(pyodideBase())], { type: 'application/javascript' });
-      blobUrl = URL.createObjectURL(blob);
-      worker = new Worker(blobUrl);
+      const finish = (
+        result: { success: boolean; results?: Record<string, string>; error?: string },
+        terminateWorker: boolean
+      ) => {
+        if (settled) return;
+        settled = true;
+        clearTimer();
+        if (worker) {
+          worker.onmessage = null;
+          worker.onerror = null;
+        }
+        if (terminateWorker) {
+          resetSharedPyodideWorker();
+        }
+        resolve(result);
+      };
 
-      timer = setTimeout(() => {
-        cleanup();
-        resolve({
-          success: false,
-          error: `Execution Timeout: Code execution exceeded ${timeoutMs}ms limit (infinite loop detected).`
+      try {
+        worker = getOrCreatePyodideWorker();
+
+        // Phase 1: Generous boot timeout while Pyodide WASM (~13.7 MB) downloads & initializes.
+        // The strict execution timeout (timeoutMs) starts ONLY after EXEC_START is received.
+        timer = setTimeout(() => {
+          finish(
+            {
+              success: false,
+              error: `Python runtime (Pyodide WASM) failed to initialize within ${Math.round(PYODIDE_BOOT_TIMEOUT_MS / 1000)}s. Please check your network and retry.`
+            },
+            true
+          );
+        }, PYODIDE_BOOT_TIMEOUT_MS);
+
+        worker.onmessage = (e) => {
+          const msg = e.data || {};
+          if (msg.id !== runId) return;
+
+          if (msg.type === 'EXEC_START') {
+            // Pyodide is ready; now enforce the strict student-code execution timeout.
+            clearTimer();
+            timer = setTimeout(() => {
+              finish(
+                {
+                  success: false,
+                  error: `Execution Timeout: Code execution exceeded ${timeoutMs}ms limit (infinite loop detected).`
+                },
+                true
+              );
+            }, timeoutMs);
+            return;
+          }
+
+          finish(
+            {
+              success: Boolean(msg.success),
+              results: msg.results,
+              error: msg.error
+            },
+            false
+          );
+        };
+
+        worker.onerror = (err) => {
+          finish({ success: false, error: err.message || 'Pyodide Worker Error' }, true);
+        };
+
+        worker.postMessage({
+          id: runId,
+          type: 'RUN_PYTHON',
+          payload: { script, extractVars }
         });
-      }, timeoutMs);
+      } catch (err: any) {
+        finish({ success: false, error: err?.message || 'Worker initialization failed' }, true);
+      }
+    });
 
-      worker.onmessage = (e) => {
-        cleanup();
-        resolve(e.data || { success: false, error: 'Empty worker response' });
-      };
-
-      worker.onerror = (err) => {
-        cleanup();
-        resolve({ success: false, error: err.message || 'Pyodide Worker Error' });
-      };
-
-      worker.postMessage({
-        id: 'run_' + Math.random().toString(36).slice(2),
-        type: 'RUN_PYTHON',
-        payload: { script, extractVars }
-      });
-    } catch (err: any) {
-      cleanup();
-      resolve({ success: false, error: err?.message || 'Worker initialization failed' });
-    }
-  });
+  // Serialize executions on the shared warm worker so concurrent calls never collide.
+  const resultPromise = workerQueue.then(runTask, runTask);
+  workerQueue = resultPromise.then(() => undefined, () => undefined);
+  return resultPromise;
 }
 
 let cachedPythonBin: string | null = null;
@@ -293,22 +365,35 @@ export async function runPythonScript(
   return executeInNode(script, extractVars, timeoutMs);
 }
 
+function normalizePythonLiteralsToJson(raw: string): string {
+  return raw
+    .replace(/\bTrue\b/g, 'true')
+    .replace(/\bFalse\b/g, 'false')
+    .replace(/\bNone\b/g, 'null')
+    .replace(/'([^'\\]*(?:\\.[^'\\]*)*)'/g, (_, inner) => JSON.stringify(inner));
+}
+
 function parseInputArgs(raw: string): unknown[] {
   const trimmed = (raw || '').trim();
   if (!trimmed) return [];
-  if (trimmed.startsWith('(') && trimmed.endsWith(')')) {
+
+  const candidates = [trimmed, normalizePythonLiteralsToJson(trimmed)];
+  for (const cand of candidates) {
+    if (cand.startsWith('(') && cand.endsWith(')')) {
+      try {
+        const parsed = JSON.parse('[' + cand.slice(1, -1) + ']');
+        if (Array.isArray(parsed)) return parsed;
+      } catch {}
+    }
     try {
-      return JSON.parse('[' + trimmed.slice(1, -1) + ']');
+      const wrapped = JSON.parse('[' + cand + ']');
+      if (Array.isArray(wrapped)) return wrapped;
+    } catch {}
+    try {
+      const parsed = JSON.parse(cand);
+      return Array.isArray(parsed) ? [parsed] : [parsed];
     } catch {}
   }
-  try {
-    const wrapped = JSON.parse('[' + trimmed + ']');
-    if (Array.isArray(wrapped)) return wrapped;
-  } catch {}
-  try {
-    const parsed = JSON.parse(trimmed);
-    return Array.isArray(parsed) ? [parsed] : [parsed];
-  } catch {}
   return [trimmed];
 }
 
@@ -475,20 +560,52 @@ _stderr_log = sys.stderr.getvalue()
     const tc = testCases[i];
     const tcStart = Date.now();
     const args = parseInputArgs(tc.input);
-    const argStr = args.map(a => JSON.stringify(a)).join(', ');
+    const serializedArgsJson = JSON.stringify(JSON.stringify(args));
+    const safeTargetFnJson = JSON.stringify(fnName);
 
     const pythonExecutionScript = `
-import sys, io, json
+import sys, io, json, re, types, traceback
 sys.stdout = io.StringIO()
 sys.stderr = io.StringIO()
+def _pinit_excepthook(exc_type, exc_value, exc_tb):
+    _t = getattr(sys, '__stderr__', None)
+    if _t:
+        _t.write(''.join(traceback.format_exception(exc_type, exc_value, exc_tb)))
+        _t.flush()
+sys.excepthook = _pinit_excepthook
 
 ${code}
 
-if '${fnName}' not in locals() and '${fnName}' not in globals():
-    raise NameError("Function '${fnName}' was not defined in the Python solution.")
+_target_name = ${safeTargetFnJson}
+_ns = dict(globals())
+_ns.update(locals())
 
-_fn = globals().get('${fnName}') or locals().get('${fnName}')
-_res = _fn(${argStr})
+def _to_snake(_s):
+    return re.sub(r'([a-z0-9])([A-Z])', r'\\1_\\2', _s).lower()
+
+def _to_camel(_s):
+    _parts = [p for p in _s.split('_') if p]
+    return _parts[0] + ''.join(p[:1].upper() + p[1:] for p in _parts[1:]) if _parts else _s
+
+_fn = _ns.get(_target_name)
+if not callable(_fn):
+    for _alt in (_to_snake(_target_name), _to_camel(_target_name)):
+        if callable(_ns.get(_alt)):
+            _fn = _ns.get(_alt)
+            break
+if not callable(_fn) and _target_name == 'solution':
+    _user_fns = [
+        _v for _k, _v in _ns.items()
+        if isinstance(_v, types.FunctionType) and not _k.startswith('_') and _k not in ('_to_snake', '_to_camel')
+    ]
+    if len(_user_fns) == 1:
+        _fn = _user_fns[0]
+
+if not callable(_fn):
+    raise NameError(f"Function '{_target_name}' was not defined in the Python solution.")
+
+_args = json.loads(${serializedArgsJson})
+_res = _fn(*_args)
 
 if isinstance(_res, str):
     _out = _res
@@ -508,7 +625,14 @@ _stderr_log = sys.stderr.getvalue()
     if (isTimeout) anyTimeout = true;
 
     if (!res.success) {
-      terminalLogs.push(`[RUNTIME ERROR] Test ${i + 1}: ${res.error}`);
+      const cleanError = (res.error || '')
+        .replace(/^PythonError:\s*/i, '')
+        .split('\n')
+        .map(s => s.trim())
+        .filter(Boolean)
+        .slice(-2)
+        .join(' ') || 'Runtime Exception';
+      terminalLogs.push(`❌ Test ${i + 1} Failed: ${cleanError}`);
       testOutcomes.push({
         index: i + 1,
         testCaseName: tc.name || `Test Case ${i + 1}`,
@@ -528,9 +652,9 @@ _stderr_log = sys.stderr.getvalue()
 
     if (isPassed) {
       passedCount++;
-      terminalLogs.push(`[TEST SUITE] Test ${i + 1} (${tc.name || tc.input}): PASSED -> Output: ${pyOut} (${duration}ms)`);
+      terminalLogs.push(`✅ Test ${i + 1} Passed (${tc.name || tc.input}): Output ${pyOut}`);
     } else {
-      terminalLogs.push(`[FAIL] Test ${i + 1} (${tc.name || tc.input}): FAILED. Expected: ${tc.output}, Received: ${pyOut}`);
+      terminalLogs.push(`❌ Test ${i + 1} Failed (${tc.name || tc.input}): Expected ${tc.output}, but received ${pyOut}`);
     }
 
     if (stdoutLog) terminalLogs.push(`  stdout: ${stdoutLog}`);

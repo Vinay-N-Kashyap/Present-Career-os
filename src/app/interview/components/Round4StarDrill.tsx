@@ -3,6 +3,8 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import type { AnimState } from '@/components/avatar/VRoidAvatarEngine';
+import type { Round4CompletionState } from '@/lib/interview/roundDefenseEngine';
+import { AssistModeDrawer } from './AssistModeDrawer';
 
 const VRoidInterviewAvatar = dynamic(
   () => import('@/components/avatar/VRoidInterviewAvatar'),
@@ -10,6 +12,7 @@ const VRoidInterviewAvatar = dynamic(
 );
 
 export interface Round4StarDrillProps {
+  domainStream?: 'tech' | 'non_tech';
   activeTeacher: { id: string; name: string; emoji: string; title: string };
   animState: AnimState;
   showCameraPreview: boolean;
@@ -18,13 +21,19 @@ export interface Round4StarDrillProps {
   wpmScore: number | null;
   lastInterviewerSpeech: string;
   finishInterview: () => void;
+  onSkipRound?: () => void;
   canFinishInterview: boolean;
   isSendingInterviewMessage?: boolean;
   manualTextInput: string;
   setManualTextInput: (val: string) => void;
   onSendMessage: (text: string) => void;
   starStep?: number;
+  starCoverage?: { hasS: boolean; hasT: boolean; hasA: boolean; hasR: boolean; count: number };
+  round4State?: Round4CompletionState | null;
   messages?: any[];
+  messagesEndRef?: React.RefObject<HTMLDivElement>;
+  activeTopicName?: string;
+  difficulty?: string;
   isAssistModeActive?: boolean;
   setIsAssistModeActive?: (val: boolean) => void;
   assistData?: any;
@@ -35,9 +44,22 @@ export interface Round4StarDrillProps {
   setAssistScriptLevel?: (lvl: 'standard' | 'advanced') => void;
   fetchAssistScript?: (q: string, lvl?: 'standard' | 'advanced') => void;
   liveSpeechTranscript?: string;
+  speakWithAvatarRaw?: (
+    text: string,
+    teacherId: string,
+    onStart: () => void,
+    onEnd: () => void,
+    allowMicRestart: boolean,
+    isAssistScript: boolean,
+    diff: string
+  ) => void;
+  setAnimState?: (state: 'idle' | 'talking' | 'thinking') => void;
+  isDockedUnderCam?: boolean;
+  onToggleDock?: () => void;
 }
 
 export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
+  domainStream = 'tech',
   activeTeacher,
   animState,
   showCameraPreview,
@@ -46,13 +68,19 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
   wpmScore,
   lastInterviewerSpeech,
   finishInterview,
+  onSkipRound,
   canFinishInterview,
   isSendingInterviewMessage = false,
   manualTextInput,
   setManualTextInput,
   onSendMessage,
   starStep = 0,
+  starCoverage,
+  round4State,
   messages = [],
+  messagesEndRef,
+  activeTopicName = 'Software Engineering',
+  difficulty = 'medium',
   isAssistModeActive = false,
   setIsAssistModeActive,
   assistData,
@@ -63,83 +91,213 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
   setAssistScriptLevel,
   fetchAssistScript,
   liveSpeechTranscript = '',
+  speakWithAvatarRaw,
+  setAnimState,
+  isDockedUnderCam = false,
+  onToggleDock,
 }) => {
-  const spokenWordSet = React.useMemo(() => {
-    return new Set(liveSpeechTranscript.toLowerCase().replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter(Boolean));
-  }, [liveSpeechTranscript]);
+  const assistNode = isAssistModeActive ? (
+    <AssistModeDrawer
+      compact
+      isScoredStage={true}
+      isCodingRound={false}
+      activeStage="round4_star"
+      activeTopicName={activeTopicName}
+      questionText={lastInterviewerSpeech}
+      isDockedUnderCam={isDockedUnderCam}
+      onToggleDock={onToggleDock}
+      isAssistModeActive={isAssistModeActive}
+      setIsAssistModeActive={setIsAssistModeActive || (() => {})}
+      assistScriptLevel={assistScriptLevel}
+      setAssistScriptLevel={setAssistScriptLevel || (() => {})}
+      assistTab={assistTab}
+      setAssistTab={setAssistTab || (() => {})}
+      isFetchingAssist={isFetchingAssist}
+      assistData={assistData ?? null}
+      liveSpeechTranscript={liveSpeechTranscript}
+      messages={messages as any}
+      activeTeacher={activeTeacher as any}
+      difficulty={difficulty}
+      fetchAssistScript={fetchAssistScript || (() => {})}
+      speakWithAvatarRaw={speakWithAvatarRaw}
+      setAnimState={setAnimState}
+    />
+  ) : null;
+
+  const recentMessages = Array.isArray(messages) ? messages.slice(-12) : [];
+
   return (
-    <div className="iv-round4-layout" style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
-      <div className="iv-round4-avatar" style={{ width: '85%', height: 480, background: 'var(--bg3)', borderRadius: 20, border: '1px solid var(--border)', overflow: 'hidden', position: 'relative', boxShadow: 'var(--shadow-lg)' }}>
+    <div
+      className="iv-round-layout iv-round4-layout iv-stage-viewport"
+      style={{ display: 'grid', gridTemplateColumns: '5.5fr 4.5fr', gap: 16, alignItems: 'stretch' }}
+    >
+      {/* Left Column: 3D Avatar + Webcam PiP + Eye-Level Docked Assist */}
+      <div className="iv-round4-avatar iv-avatar-stage">
         <VRoidInterviewAvatar teacherId={activeTeacher.id} animState={animState} zoom={1.6} />
 
-        {/* Floating Candidate Camera PiP Preview (IV-UX-03: Live Eye Contact & Vocal Pace HUD) */}
+        {/* Eye-Level Docked Teleprompter Overlay */}
+        {isDockedUnderCam && assistNode && (
+          <div style={{ position: 'absolute', top: showCameraPreview ? 132 : 16, right: 14, width: 330, maxWidth: 'calc(100% - 28px)', zIndex: 18 }}>
+            {assistNode}
+          </div>
+        )}
+
+        {/* Floating Candidate Camera PiP Preview (Mirrored Self-View + Compact Eye Contact & Pace HUD) */}
         {showCameraPreview && (
-          <div style={{
-            position: 'absolute', top: 14, right: 14, width: 140, height: 105,
-            borderRadius: 12, overflow: 'hidden', border: '2px solid var(--accent)',
-            boxShadow: '0 4px 16px rgba(0,0,0,0.6)', background: '#000', zIndex: 20
-          }}>
-            <video ref={videoPreviewRef} autoPlay muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div style={{
-              position: 'absolute', bottom: 3, left: 3, right: 3,
-              background: 'rgba(0,0,0,0.78)', backdropFilter: 'blur(4px)',
-              borderRadius: 6, padding: '2px 6px', fontSize: 9.5, color: 'var(--text)',
-              display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 800
-            }}>
-              <span style={{ color: eyeContactScore !== null ? (eyeContactScore >= 60 ? 'var(--success-bright)' : 'var(--warning-bright)') : 'var(--text-muted)' }}>
-                {eyeContactScore !== null ? (eyeContactScore >= 60 ? 'Presence: Centered' : 'Presence: Adjust Angle') : 'Detecting...'}
+          <div className="iv-pip-frame">
+            <video
+              ref={videoPreviewRef}
+              autoPlay
+              muted
+              playsInline
+              style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scaleX(-1)' }}
+            />
+            <div className="iv-pip-hud">
+              <span style={{ color: eyeContactScore !== null ? (eyeContactScore >= 60 ? 'var(--success-bright)' : 'var(--warning-bright)') : '#cbd5e1', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                📷 {eyeContactScore !== null ? (eyeContactScore >= 60 ? 'Centered' : 'Adjust') : 'Scanning'}
               </span>
               <span style={{
                 color: wpmScore !== null
                   ? (wpmScore >= 115 && wpmScore <= 165 ? 'var(--success-bright)' : wpmScore > 165 ? 'var(--warning-bright)' : 'var(--info-bright)')
-                  : 'var(--text-muted)'
+                  : '#cbd5e1',
+                flexShrink: 0
               }}>
-                {wpmScore !== null ? `${wpmScore} WPM ${wpmScore > 165 ? '(Fast)' : wpmScore >= 115 ? '(Optimal)' : '(Paced)'}` : 'Mic Inactive'}
+                {wpmScore !== null ? `${wpmScore} WPM` : 'Mic Ready'}
               </span>
             </div>
           </div>
         )}
 
-        <div style={{ position: 'absolute', bottom: 16, left: '5%', right: '5%', background: 'rgba(0,0,0,0.80)', backdropFilter: 'blur(8px)', padding: '10px 16px', borderRadius: 12, color: 'var(--text)', fontSize: 14, lineHeight: 1.4, textAlign: 'center', border: '1px solid rgba(255,255,255,0.1)' }}>
+        <div className="iv-subtitle-bar" style={{ textAlign: 'center' }}>
           <strong>{activeTeacher.name}:</strong> {lastInterviewerSpeech}
         </div>
       </div>
 
-      <div className="iv-round4-content" style={{ width: '85%', display: 'flex', flexDirection: 'column', gap: 10 }}>
+      {/* Right Column: STAR Stepper, Transcript Stream, Unified Assist & Input */}
+      <div
+        className="iv-panel iv-chat-stage iv-round4-content"
+        style={{
+          padding: '10px 14px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 6,
+          height: '100%',
+          minHeight: 0,
+          overflow: 'hidden'
+        }}
+      >
+        <div style={{ borderBottom: '1px solid var(--border)', paddingBottom: 6, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+              <span style={{ fontSize: 10.5, fontWeight: 800, color: 'var(--accent-mid)' }}>ROUND 4 OF 4</span>
+              {round4State && (
+                <span
+                  data-testid="round4-question-limit-pill"
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 800,
+                    padding: '1px 7px',
+                    borderRadius: 999,
+                    fontFamily: 'var(--font-mono)',
+                    background: round4State.completed ? 'rgba(34, 197, 94, 0.16)' : 'rgba(99, 102, 241, 0.14)',
+                    border: round4State.completed ? '1px solid rgba(34, 197, 94, 0.4)' : '1px solid rgba(129, 140, 248, 0.35)',
+                    color: round4State.completed ? 'var(--green-mid)' : 'var(--accent-mid)',
+                  }}
+                >
+                  {round4State.completed
+                    ? `✅ Interview Done (${round4State.answeredCount}Q)`
+                    : `Q${round4State.questionsAsked}/${round4State.maxQuestions} · ${round4State.accurateCount}/${round4State.earlyPassTarget} Accurate`}
+                </span>
+              )}
+            </div>
+            <h2 style={{ fontSize: 13.5, fontWeight: 900, margin: 0, color: 'var(--t1)' }}>
+              {domainStream === 'non_tech' ? 'Partner & CFO STAR Deep Dive' : 'Executive STAR Deep Dive'}
+            </h2>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
+            <button
+              onClick={finishInterview}
+              disabled={!canFinishInterview || isSendingInterviewMessage}
+              className={canFinishInterview ? 'iv-btn-primary' : undefined}
+              style={{
+                background: canFinishInterview ? undefined : 'var(--bg3)',
+                border: canFinishInterview ? undefined : '1px solid var(--border)',
+                color: canFinishInterview ? '#ffffff' : 'var(--t3)',
+                borderRadius: 8,
+                padding: '6px 12px',
+                fontSize: 11.5,
+                fontWeight: 900,
+                cursor: canFinishInterview ? 'pointer' : 'not-allowed',
+                flexShrink: 0
+              }}
+            >
+              {round4State?.completed
+                ? 'View Final Scorecard ➔'
+                : canFinishInterview
+                ? 'Complete interview ➔'
+                : (starStep >= 4 || (starCoverage?.count ?? 0) >= 3)
+                ? 'Waiting for interviewer…'
+                : `Q${round4State?.questionsAsked ?? (starStep + 1)} of 4–5 (3/3 wraps early)`}
+            </button>
+            {!canFinishInterview && onSkipRound && (
+              <button
+                type="button"
+                data-testid="round4-skip-round-btn"
+                onClick={onSkipRound}
+                title="Skip Round 4 and finish the interview immediately (recorded as skipped)"
+                style={{
+                  background: 'var(--bg3)',
+                  border: '1px solid var(--border)',
+                  color: 'var(--t2)',
+                  borderRadius: 8,
+                  padding: '6px 10px',
+                  fontSize: 11.5,
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                ⏭ Skip &amp; Finish
+              </button>
+            )}
+          </div>
+        </div>
+
         {/* 🌟 S-T-A-R Assessment Progression Stepper */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: 8,
+          gap: 4,
           background: 'var(--bg3)',
-          padding: '8px 12px',
-          borderRadius: 12,
-          border: '1px solid var(--border)'
+          padding: '4px 6px',
+          borderRadius: 10,
+          border: '1px solid var(--border)',
+          flexShrink: 0
         }}>
           {[
-            { key: 'S', label: 'Situation', desc: 'Context & Challenge' },
-            { key: 'T', label: 'Task', desc: 'Your Role / Target' },
-            { key: 'A', label: 'Action', desc: 'Execution & Decisions' },
-            { key: 'R', label: 'Result', desc: 'Quantifiable Impact' },
+            { key: 'S', label: 'Situation', desc: 'Context & Challenge', detected: starCoverage?.hasS },
+            { key: 'T', label: 'Task', desc: 'Your Role / Target', detected: starCoverage?.hasT },
+            { key: 'A', label: 'Action', desc: 'Execution & Decisions', detected: starCoverage?.hasA },
+            { key: 'R', label: 'Result', desc: 'Quantifiable Impact', detected: starCoverage?.hasR },
           ].map((step, idx) => {
-            const isCompleted = starStep >= 4 || idx < starStep;
-            const isCurrent = starStep < 4 && idx === starStep;
+            const isCompleted = starStep >= 4 || idx < starStep || Boolean(step.detected);
+            const isCurrent = !isCompleted && starStep < 4 && idx === starStep;
             return (
               <div
                 key={step.key}
                 data-testid={`star-step-${step.key.toLowerCase()}`}
                 style={{
-                  padding: '6px 8px',
-                  borderRadius: 8,
+                  padding: '4px 5px',
+                  borderRadius: 6,
                   background: isCurrent ? 'var(--accent-light)' : isCompleted ? 'rgba(var(--success-rgb), 0.12)' : 'transparent',
                   border: isCurrent ? '1.5px solid var(--accent)' : isCompleted ? '1px solid var(--success)' : '1px solid transparent',
                   textAlign: 'center'
                 }}
               >
-                <div style={{ fontSize: 12, fontWeight: 900, color: isCurrent ? 'var(--accent)' : isCompleted ? 'var(--success-bright)' : 'var(--t3)' }}>
+                <div style={{ fontSize: 10.5, fontWeight: 900, color: isCurrent ? 'var(--accent)' : isCompleted ? 'var(--success-bright)' : 'var(--t3)' }}>
                   {isCompleted ? '✅ ' : isCurrent ? '👉 ' : ''}{step.key} — {step.label}
                 </div>
-                <div style={{ fontSize: 10.5, color: isCurrent ? 'var(--t1)' : 'var(--t3)', marginTop: 2 }}>
+                <div style={{ fontSize: 9.5, color: isCurrent ? 'var(--t1)' : 'var(--t3)', marginTop: 1 }}>
                   {step.desc}
                 </div>
               </div>
@@ -151,34 +309,67 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
         <div
           data-testid="star-coaching-pill"
           style={{
-            fontSize: 11.5,
-            padding: '6px 12px',
-            borderRadius: 8,
+            fontSize: 10.5,
+            padding: '4px 8px',
+            borderRadius: 6,
             background: starStep >= 4 ? 'rgba(34, 197, 94, 0.1)' : 'rgba(168, 85, 247, 0.08)',
             border: starStep >= 4 ? '1px solid rgba(34, 197, 94, 0.3)' : '1px solid rgba(168, 85, 247, 0.25)',
             color: starStep >= 4 ? 'var(--success-bright)' : 'var(--accent)',
             fontWeight: 700,
             display: 'flex',
             alignItems: 'center',
-            gap: 6
+            gap: 6,
+            flexShrink: 0
           }}
         >
           {starStep === 0
-            ? 'Focus: Set the business & technical context, system scale, and primary constraints.'
+            ? (domainStream === 'non_tech'
+                ? 'Focus: Frame the commercial, audit, or financial context, balance-sheet stakes, and regulatory constraints.'
+                : 'Focus: Set the business & technical context, system scale, and primary constraints.')
             : starStep === 1
-            ? 'Focus: Define your exact engineering responsibility, milestone targets, and success criteria.'
+            ? (domainStream === 'non_tech'
+                ? 'Focus: Define your exact analytical ownership, compliance/credit targets, and stakeholder expectations.'
+                : 'Focus: Define your exact engineering responsibility, milestone targets, and success criteria.')
             : starStep === 2
-            ? 'Focus: Explain the concrete technical actions, trade-offs, architecture choices, and teamwork.'
+            ? (domainStream === 'non_tech'
+                ? 'Focus: Explain the concrete accounting, tax, credit, or financial actions, controls, and trade-offs you drove.'
+                : 'Focus: Explain the concrete technical actions, trade-offs, architecture choices, and teamwork.')
             : starStep === 3
-            ? 'Focus: Quantify measurable impact — latency drops, uptime gains, revenue unlocked, or error reductions.'
+            ? (domainStream === 'non_tech'
+                ? 'Focus: Quantify measurable business impact — margin bps, ₹ cash flow protected, DSO reduction, or audit sign-off.'
+                : 'Focus: Quantify measurable impact — latency drops, uptime gains, revenue unlocked, or error reductions.')
             : 'All 4 STAR quadrants completed! Submit your defense to review your scorecard.'}
         </div>
 
-        <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-          <button onClick={finishInterview} disabled={!canFinishInterview || isSendingInterviewMessage} style={{ background: canFinishInterview ? 'var(--accent)' : 'var(--bg3)', border: 'none', color: canFinishInterview ? 'var(--text)' : 'var(--t3)', borderRadius: 12, padding: '12px 18px', fontSize: 14, fontWeight: 900, cursor: canFinishInterview ? 'pointer' : 'not-allowed' }}>
-            {canFinishInterview ? 'Complete interview ➔' : starStep >= 4 ? 'Waiting for interviewer…' : `Answer ${Math.max(0, 4 - starStep)} more STAR question${4 - starStep === 1 ? '' : 's'}`}
-          </button>
+        {/* Scrollable Round 4 Conversation Stream */}
+        <div
+          className="scroll-container"
+          data-testid="round4-transcript-stream"
+          style={{ flex: '1 1 0%', minHeight: 0, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 6, paddingRight: 4 }}
+        >
+          {recentMessages.map((m, i) => (
+            <div key={i} style={{ alignSelf: m.role === 'user' ? 'flex-end' : 'flex-start', maxWidth: '88%' }}>
+              <div
+                className={m.role === 'user' ? 'iv-chat-user' : 'iv-chat-assistant'}
+                style={{ padding: '6px 10px', borderRadius: 10, fontSize: 11.5, lineHeight: 1.4 }}
+              >
+                {m.content}
+              </div>
+            </div>
+          ))}
+          {isSendingInterviewMessage && (
+            <div className="iv-typing-bubble" data-testid="round4-typing-indicator">
+              <span>{activeTeacher.name} is evaluating your STAR defense</span>
+              <span className="iv-typing-dots" aria-hidden="true"><span /><span /><span /></span>
+            </div>
+          )}
+          {messagesEndRef && <div ref={messagesEndRef} />}
         </div>
+
+        {/* 🎯 Unified Assist Mode Teleprompter (Inline when not docked under camera) */}
+        {!isDockedUnderCam && assistNode && (
+          <div style={{ flexShrink: 0 }}>{assistNode}</div>
+        )}
 
         {/* ⌨️ Direct Typed STAR Response Fallback */}
         <form
@@ -190,12 +381,12 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
             console.log('[Interview] ⌨️ Candidate submitted typed STAR response:', textToSend);
             onSendMessage(textToSend);
           }}
-          style={{ display: 'flex', gap: 6 }}
+          style={{ display: 'flex', gap: 6, flexShrink: 0 }}
         >
           <input
             type="text"
             value={manualTextInput}
-            disabled={isSendingInterviewMessage}
+            disabled={isSendingInterviewMessage || Boolean(round4State?.completed)}
             onChange={(e) => setManualTextInput(e.target.value)}
             onKeyDown={(e) => {
               if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
@@ -207,27 +398,27 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
                 onSendMessage(textToSend);
               }
             }}
-            placeholder="Or type your STAR response (Situation, Task, Action, Result)... (Enter or Ctrl+↵ to send)"
+            placeholder={round4State?.completed ? 'Interview complete — finalizing your scorecard…' : 'Or type your STAR response (Situation, Task, Action, Result)... (Enter or Ctrl+↵ to send)'}
             style={{
               flex: 1,
-              padding: '10px 14px',
+              padding: '9px 12px',
               borderRadius: 10,
               border: '1px solid var(--border)',
               background: 'var(--bg3)',
               color: 'var(--t1)',
-              fontSize: 13
+              fontSize: 12.5
             }}
           />
           <button
             type="submit"
             disabled={!manualTextInput.trim() || isSendingInterviewMessage}
             style={{
-              padding: '10px 18px',
+              padding: '9px 16px',
               borderRadius: 10,
               border: 'none',
               background: manualTextInput.trim() ? 'var(--accent)' : 'var(--bg2)',
-              color: manualTextInput.trim() ? 'var(--text)' : 'var(--t3)',
-              fontSize: 13,
+              color: manualTextInput.trim() ? '#ffffff' : 'var(--t3)',
+              fontSize: 12.5,
               fontWeight: 800,
               cursor: manualTextInput.trim() ? 'pointer' : 'default'
             }}
@@ -235,200 +426,6 @@ export const Round4StarDrill: React.FC<Round4StarDrillProps> = ({
             {isSendingInterviewMessage ? 'Thinking…' : 'Send ➔'}
           </button>
         </form>
-
-        {/* 🎯 Assist Mode AI Teleprompter Card (Placed Directly Below Response Input for Round 4) */}
-        {isAssistModeActive && (
-          <div style={{
-            marginTop: 4,
-            padding: '12px 14px',
-            borderRadius: 14,
-            background: 'linear-gradient(135deg, rgba(30, 27, 75, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%)',
-            border: '1.5px solid var(--reward)',
-            boxShadow: '0 4px 16px rgba(var(--reward-rgb), 0.25)',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 8
-          }}>
-            {/* Header with Title & Level Selector */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ fontSize: 15.5 }}>🎯</span>
-                <span style={{ fontSize: 12.5, fontWeight: 900, color: 'var(--reward-bright)' }}>AI Teleprompter Script (STAR Answer)</span>
-                <span style={{
-                  fontSize: 10,
-                  padding: '1px 5px',
-                  borderRadius: 4,
-                  background: 'rgba(var(--reward-rgb), 0.2)',
-                  color: 'var(--reward-bright)',
-                  fontWeight: 800
-                }}>
-                  🔒 Avatar cannot see this
-                </span>
-              </div>
-
-              <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-                {setAssistScriptLevel && (
-                  <button
-                    onClick={() => {
-                      const nextLvl = assistScriptLevel === 'standard' ? 'advanced' : 'standard';
-                      setAssistScriptLevel(nextLvl);
-                      if (fetchAssistScript) fetchAssistScript(lastInterviewerSpeech, nextLvl);
-                    }}
-                    style={{
-                      background: 'rgba(var(--reward-rgb),0.15)',
-                      border: '1px solid var(--reward)',
-                      color: 'var(--reward-bright)',
-                      borderRadius: 6,
-                      padding: '2px 6px',
-                      fontSize: 10.5,
-                      fontWeight: 800,
-                      cursor: 'pointer'
-                    }}
-                  >
-                    {assistScriptLevel === 'standard' ? '⚡ Beginner' : '🔥 Executive'}
-                  </button>
-                )}
-                {assistData?.script && (
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(assistData.script);
-                    }}
-                    style={{
-                      background: 'rgba(255,255,255,0.1)',
-                      border: 'none',
-                      color: 'var(--text)',
-                      borderRadius: 6,
-                      padding: '2px 6px',
-                      fontSize: 10.5,
-                      fontWeight: 800,
-                      cursor: 'pointer'
-                    }}
-                  >
-                    Copy
-                  </button>
-                )}
-                {setIsAssistModeActive && (
-                  <button
-                    onClick={() => setIsAssistModeActive(false)}
-                    style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: 12, cursor: 'pointer', padding: '0 2px' }}
-                    title="Close Assist Mode"
-                  >
-                    ✕
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* Tab Selectors */}
-            {setAssistTab && (
-              <div style={{ display: 'flex', gap: 4 }}>
-                {(['script', 'bullets', 'delivery'] as const).map(tabKey => (
-                  <button
-                    key={tabKey}
-                    onClick={() => setAssistTab(tabKey)}
-                    style={{
-                      flex: 1,
-                      padding: '3px 6px',
-                      borderRadius: 5,
-                      fontSize: 11,
-                      fontWeight: 800,
-                      background: assistTab === tabKey ? 'var(--reward)' : 'rgba(255,255,255,0.06)',
-                      color: assistTab === tabKey ? '#000' : 'var(--text-muted)',
-                      border: 'none',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    {tabKey === 'script' ? '📝 Read Aloud' : tabKey === 'bullets' ? '🎯 Key Points' : '🗣️ Pacing'}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Tab Body */}
-            {isFetchingAssist ? (
-              <div style={{ padding: '8px 0', textAlign: 'center', color: 'var(--reward-bright)', fontSize: 12, fontStyle: 'italic' }}>
-                Crafting spoken STAR answer for this question...
-              </div>
-            ) : assistData ? (
-              <div>
-                {assistTab === 'script' && (
-                  <div style={{ background: 'rgba(0,0,0,0.45)', borderRadius: 8, padding: '8px 10px', border: '1px solid rgba(var(--reward-rgb),0.2)' }}>
-                    <div style={{ fontSize: 13, lineHeight: 1.5, color: 'var(--text)', maxHeight: 120, overflowY: 'auto' }}>
-                      &ldquo;
-                      {(assistData.script || '').split(' ').map((word: string, wIdx: number) => {
-                        const clean = word.toLowerCase().replace(/[^a-z0-9]/g, '');
-                        const isMatched = clean.length > 0 && spokenWordSet.has(clean);
-                        return (
-                          <span
-                            key={wIdx}
-                            style={{
-                              color: isMatched ? 'var(--success-bright)' : 'var(--text)',
-                              fontWeight: isMatched ? 800 : 400,
-                              textShadow: isMatched ? '0 0 8px rgba(var(--success-rgb),0.8)' : 'none',
-                              transition: 'all 0.15s ease'
-                            }}
-                          >
-                            {word}{' '}
-                          </span>
-                        );
-                      })}
-                      &rdquo;
-                    </div>
-                    <div style={{ marginTop: 6, display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 10.5, color: 'var(--reward-bright)' }}>
-                      <span>🎙️ {liveSpeechTranscript ? '🟢 Spoken words glow green in real time' : 'Read aloud into mic to answer'}</span>
-                      <span>{assistData.deliveryGuide?.pacing || '~125 WPM'}</span>
-                    </div>
-                  </div>
-                )}
-
-                {assistTab === 'bullets' && (
-                  <div style={{ background: 'rgba(0,0,0,0.45)', borderRadius: 8, padding: '8px 10px', maxHeight: 110, overflowY: 'auto' }}>
-                    <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, lineHeight: 1.5, color: 'var(--text)' }}>
-                      {(assistData.bulletPoints || []).map((pt: string, idx: number) => (
-                        <li key={idx} style={{ marginBottom: 2 }}>{pt}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {assistTab === 'delivery' && (
-                  <div style={{ background: 'rgba(0,0,0,0.45)', borderRadius: 8, padding: '8px 10px', fontSize: 12, display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    <div><strong>Tone:</strong> {assistData.deliveryGuide?.tone || 'Confident and structured'}</div>
-                    <div style={{ display: 'flex', gap: 4, flexWrap: 'wrap', alignItems: 'center' }}>
-                      <strong>Key words:</strong>
-                      {(assistData.deliveryGuide?.emphasisWords || []).map((w: string, i: number) => (
-                        <span key={i} style={{ background: 'rgba(var(--reward-rgb),0.3)', color: '#e9d5ff', padding: '1px 5px', borderRadius: 4, fontSize: 10.5 }}>
-                          {w}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '4px 0' }}>
-                <span style={{ fontSize: 12, color: 'var(--t3)' }}>No STAR script generated yet.</span>
-                {fetchAssistScript && (
-                  <button
-                    onClick={() => fetchAssistScript(lastInterviewerSpeech, assistScriptLevel)}
-                    style={{
-                      background: 'var(--reward)',
-                      border: 'none',
-                      color: '#000',
-                      borderRadius: 6,
-                      padding: '4px 10px',
-                      fontSize: 11,
-                      fontWeight: 800,
-                      cursor: 'pointer'
-                    }}
-                  >
-                    Generate STAR Script ➔
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
-        )}
       </div>
     </div>
   );

@@ -18,9 +18,9 @@ interface StudentDashboardShellProps {
 export default function StudentDashboardShell({ student }: StudentDashboardShellProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'courses' | 'exams' | 'attendance'>('overview');
 
-  const displayName = student?.name || 'Rahul Sharma';
-  const atsScore = student?.atsScore || 88;
-  const pinsBalance = student?.pinsBalance || 140;
+  const displayName = student?.name || 'Student';
+  const atsScore = student?.atsScore ?? 0;
+  const pinsBalance = student?.pinsBalance ?? 0;
 
   return (
     <div style={{
@@ -113,22 +113,22 @@ export default function StudentDashboardShell({ student }: StudentDashboardShell
 
               {/* Quick Action Cards */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
-                <div style={{ padding: 20, borderRadius: 12, border: '1px solid var(--border)', background: '#fff' }}>
+                <div style={{ padding: 20, borderRadius: 12, border: '1px solid var(--border)', background: 'var(--bg1, #fff)' }}>
                   <div style={{ fontSize: 14.5, color: 'var(--text-dim)' }}>ATS Resume Score</div>
                   <div style={{ fontSize: 31, fontWeight: 800, color: '#2563eb', margin: '4px 0 0' }}>{atsScore}%</div>
-                  <div style={{ fontSize: 13, color: 'var(--success)', marginTop: 4 }}>High match for AI roles</div>
+                  <div style={{ fontSize: 13, color: 'var(--success)', marginTop: 4 }}>{atsScore >= 75 ? 'High match for target roles' : 'Upload resume to calibrate'}</div>
                 </div>
 
-                <div style={{ padding: 20, borderRadius: 12, border: '1px solid var(--border)', background: '#fff' }}>
+                <div style={{ padding: 20, borderRadius: 12, border: '1px solid var(--border)', background: 'var(--bg1, #fff)' }}>
                   <div style={{ fontSize: 14.5, color: 'var(--text-dim)' }}>Pending Assessments</div>
-                  <div style={{ fontSize: 31, fontWeight: 800, color: 'var(--warning)', margin: '4px 0 0' }}>1 Test</div>
-                  <div style={{ fontSize: 13, color: 'var(--warning)', marginTop: 4 }}>Due in 3 days</div>
+                  <div style={{ fontSize: 31, fontWeight: 800, color: 'var(--warning)', margin: '4px 0 0' }}>0 Tests</div>
+                  <div style={{ fontSize: 13, color: 'var(--t3)', marginTop: 4 }}>Open Online Exams to check schedule</div>
                 </div>
 
-                <div style={{ padding: 20, borderRadius: 12, border: '1px solid var(--border)', background: '#fff' }}>
+                <div style={{ padding: 20, borderRadius: 12, border: '1px solid var(--border)', background: 'var(--bg1, #fff)' }}>
                   <div style={{ fontSize: 14.5, color: 'var(--text-dim)' }}>Attendance Average</div>
-                  <div style={{ fontSize: 31, fontWeight: 800, color: 'var(--success)', margin: '4px 0 0' }}>91.2%</div>
-                  <div style={{ fontSize: 13, color: 'var(--success)', marginTop: 4 }}>All criteria met</div>
+                  <div style={{ fontSize: 31, fontWeight: 800, color: 'var(--success)', margin: '4px 0 0' }}>--</div>
+                  <div style={{ fontSize: 13, color: 'var(--t3)', marginTop: 4 }}>75% minimum requirement</div>
                 </div>
               </div>
             </div>

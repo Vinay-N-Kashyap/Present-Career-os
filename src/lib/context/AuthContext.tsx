@@ -114,6 +114,18 @@ const COLUMN_MAP: Record<string, string> = {
   career_dna_archetype: 'careerDnaArchetype',
   xp_total: 'xpTotal',
   xp_level: 'xpLevel',
+  weekly_xp: 'weeklyXp',
+  weekly_arena_points: 'weeklyArenaPoints',
+  arena_elo: 'arenaElo',
+  arena_wins: 'arenaWins',
+  arena_losses: 'arenaLosses',
+  league_tier: 'leagueTier',
+  league_joined_at: 'leagueJoinedAt',
+  bonus_pins: 'bonusPins',
+  subscription_tier: 'subscriptionTier',
+  subscription_status: 'subscriptionStatus',
+  subscription_expires_at: 'subscriptionExpiresAt',
+  last_pin_reset: 'lastPinReset',
   missions_completed: 'missionsCompleted',
   interviews_done: 'interviewsDone',
   vault_count: 'vaultCount',
@@ -220,6 +232,24 @@ function sbUserToAppUser(sbUser: SbUser, profile: Record<string, unknown> | null
     mission_streak:    (profile?.missionStreak as number | undefined) ?? (profile?.mission_streak as number | undefined) ?? 0,
     onboardingStep:    (profile?.onboardingStep as number | undefined) ?? (profile?.onboarding_step as number | undefined) ?? 1,
     onboarding_step:   (profile?.onboardingStep as number | undefined) ?? (profile?.onboarding_step as number | undefined) ?? 1,
+    careerReadiness:   (profile?.careerReadiness as number | undefined) ?? (profile?.career_readiness as number | undefined) ?? 0,
+    career_readiness:  (profile?.careerReadiness as number | undefined) ?? (profile?.career_readiness as number | undefined) ?? 0,
+    xpTotal:           (profile?.xpTotal as number | undefined) ?? (profile?.xp_total as number | undefined) ?? 0,
+    xp_total:          (profile?.xpTotal as number | undefined) ?? (profile?.xp_total as number | undefined) ?? 0,
+    weeklyXp:          (profile?.weeklyXp as number | undefined) ?? (profile?.weekly_xp as number | undefined) ?? 0,
+    weekly_xp:         (profile?.weeklyXp as number | undefined) ?? (profile?.weekly_xp as number | undefined) ?? 0,
+    weeklyArenaPoints: (profile?.weeklyArenaPoints as number | undefined) ?? (profile?.weekly_arena_points as number | undefined) ?? 0,
+    weekly_arena_points: (profile?.weeklyArenaPoints as number | undefined) ?? (profile?.weekly_arena_points as number | undefined) ?? 0,
+    arenaElo:          (profile?.arenaElo as number | undefined) ?? (profile?.arena_elo as number | undefined) ?? 100,
+    arena_elo:         (profile?.arenaElo as number | undefined) ?? (profile?.arena_elo as number | undefined) ?? 100,
+    arenaWins:         (profile?.arenaWins as number | undefined) ?? (profile?.arena_wins as number | undefined) ?? 0,
+    arena_wins:        (profile?.arenaWins as number | undefined) ?? (profile?.arena_wins as number | undefined) ?? 0,
+    arenaLosses:       (profile?.arenaLosses as number | undefined) ?? (profile?.arena_losses as number | undefined) ?? 0,
+    arena_losses:      (profile?.arenaLosses as number | undefined) ?? (profile?.arena_losses as number | undefined) ?? 0,
+    leagueTier:        (profile?.leagueTier as string | undefined) ?? (profile?.league_tier as string | undefined) ?? 'browns',
+    league_tier:       (profile?.leagueTier as string | undefined) ?? (profile?.league_tier as string | undefined) ?? 'browns',
+    leagueJoinedAt:    (profile?.leagueJoinedAt as string | null | undefined) ?? (profile?.league_joined_at as string | null | undefined) ?? null,
+    league_joined_at:  (profile?.leagueJoinedAt as string | null | undefined) ?? (profile?.league_joined_at as string | null | undefined) ?? null,
     roadmapGenerated:  Boolean(profile?.roadmapGenerated ?? profile?.roadmap_generated),
     roadmap_generated: Boolean(profile?.roadmapGenerated ?? profile?.roadmap_generated),
     resumeGenerated:   Boolean(profile?.resumeGenerated ?? profile?.resume_generated),
@@ -986,6 +1016,68 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const sbUser = session?.user;
     if (sbUser) await loadProfile(sbUser);
   };
+
+  // Keep live user telemetry (weekly_xp, xp_total, trust_score, arena_elo) synced across Vault/Dashboard/Leaderboard immediately
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onProfilePatch = (ev: Event) => {
+      const detail = (ev as CustomEvent)?.detail;
+      if (!detail || typeof detail !== 'object') return;
+      setUser(prev => {
+        if (!prev) return prev;
+        if (detail.user_id && detail.user_id !== prev.id) return prev;
+        const patch: Record<string, unknown> = {};
+        if (typeof detail.weekly_xp === 'number') {
+          patch.weekly_xp = detail.weekly_xp;
+          patch.weeklyXp = detail.weekly_xp;
+        }
+        if (typeof detail.xp_total === 'number') {
+          patch.xp_total = detail.xp_total;
+          patch.xp = detail.xp_total;
+        }
+        if (typeof detail.trust_score === 'number') {
+          patch.trust_score = detail.trust_score;
+          patch.trustScore = detail.trust_score;
+        }
+        if (typeof detail.weekly_arena_points === 'number') {
+          patch.weekly_arena_points = detail.weekly_arena_points;
+          patch.arenaPoints = detail.weekly_arena_points;
+        }
+        if (typeof detail.arena_elo === 'number') {
+          patch.arena_elo = detail.arena_elo;
+          patch.arenaElo = detail.arena_elo;
+        }
+        if (typeof detail.arena_wins === 'number') {
+          patch.arena_wins = detail.arena_wins;
+          patch.arenaWins = detail.arena_wins;
+        }
+        if (typeof detail.arena_losses === 'number') {
+          patch.arena_losses = detail.arena_losses;
+          patch.arenaLosses = detail.arena_losses;
+        }
+        if (typeof detail.career_dna_score === 'number') {
+          patch.career_dna_score = detail.career_dna_score;
+          patch.careerDnaScore = detail.career_dna_score;
+        }
+        if (typeof detail.career_readiness === 'number') {
+          patch.career_readiness = detail.career_readiness;
+          patch.careerReadiness = detail.career_readiness;
+        }
+        if (typeof detail.ats_score === 'number') {
+          patch.ats_score = detail.ats_score;
+          patch.atsScore = detail.ats_score;
+        }
+        if (typeof detail.league_tier === 'string') {
+          patch.league_tier = detail.league_tier;
+          patch.leagueTier = detail.league_tier;
+        }
+        if (Object.keys(patch).length === 0) return prev;
+        return { ...prev, ...patch };
+      });
+    };
+    window.addEventListener('pinit:user_profile_updated', onProfilePatch as EventListener);
+    return () => window.removeEventListener('pinit:user_profile_updated', onProfilePatch as EventListener);
+  }, []);
 
   return (
     <Ctx.Provider value={{ user, loading, login, signup, logout, refresh, loginWithVaultSession }}>

@@ -1,11 +1,13 @@
 'use client';
 
-import { Suspense, useCallback, useEffect, useState } from 'react';
+import { Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { parseTestQuestId } from '@/lib/data/blockTests';
+import { getCrashPlanById } from '@/lib/data/crashPlansData';
+import { getCrashCourseCurriculum } from '@/lib/courses/crashCourseProgress';
 import { stopSpeaking } from '@/lib/tts';
 import { useAuth } from '@/lib/context/AuthContext';
 import { useCareerOS } from '@/lib/context/CareerOSContext';
@@ -33,7 +35,9 @@ export const TEACHER_METADATA: Record<string, Teacher> = {
   kashyap: { name: 'Kashyap Sir', avatar: '👩‍🎨', color: 'rgba(var(--info-rgb),  0.1)', accent: 'var(--accent)', role: 'Staff Systems Architect' },
   karthic: { name: 'Karthic Sir "Nega"', avatar: '👨‍🏫', color: 'rgba(var(--warning-rgb),  0.1)', accent: 'var(--amber)', role: 'Algorithmic Lead Tutor' },
   maya: { name: 'Ms. Maya', avatar: '👩‍💼', color: 'rgba(var(--danger-rgb),  0.1)', accent: 'var(--coral)', role: 'Principal Security Auditor' },
-  divya: { name: 'Ms. Divya', avatar: '👨‍💼', color: 'rgba(var(--success-rgb),  0.1)', accent: 'var(--green)', role: 'Lead UX Engineer' }
+  divya: { name: 'Ms. Divya', avatar: '👨‍💼', color: 'rgba(var(--success-rgb),  0.1)', accent: 'var(--green)', role: 'Lead UX Engineer' },
+  priya: { name: 'Ms. Priya', avatar: '👩‍🎓', color: 'rgba(var(--info-rgb),  0.1)', accent: 'var(--accent)', role: 'AI Career Mentor & Personal Tutor' },
+  anish: { name: 'Mr. Anish', avatar: '🎙️', color: 'rgba(var(--warning-rgb),  0.1)', accent: 'var(--amber)', role: 'Principal Systems Mentor' },
 };
 
 export function resolveTeacher(teacherId?: string): Teacher {
@@ -479,6 +483,15 @@ function LessonPageRouter() {
     };
   }
 
+  const getReturnUrl = () => {
+    const fromTabParam = searchParams.get('fromTab');
+    const savedSubTab = typeof window !== 'undefined' ? (localStorage.getItem(`pinit_${userId}_quests_subtab`) || localStorage.getItem('pinit_guest_quests_subtab')) : null;
+    const targetTab = fromTabParam === 'certification' || fromTabParam === 'certification_passport' || savedSubTab === 'certification_passport'
+      ? 'certification'
+      : (fromTabParam || 'custom_roadmap');
+    return `/quests?tab=${targetTab}`;
+  };
+
   // Guard only on completely missing questId
   if (!questData) {
     return (
@@ -504,7 +517,7 @@ function LessonPageRouter() {
           data-testid="btn-unregistered-return"
           onClick={() => {
             if (typeof window !== 'undefined') {
-              window.location.assign('/quests?tab=custom_roadmap');
+              window.location.assign(getReturnUrl());
             }
           }}
           className="btn-primary"
@@ -524,6 +537,7 @@ function LessonPageRouter() {
 
   // Guard against accessing completed previous classes (Feature 1: user cant access previous classes)
   const allowCompletedBypass = searchParams.get('allowCompletedBypass') === 'true';
+  const strictLockCompleted = searchParams.get('strictLockCompleted') === 'true';
   let allCompletedQuests = [...completedQuests];
   if (typeof window !== 'undefined') {
     try {
@@ -537,7 +551,7 @@ function LessonPageRouter() {
     } catch {}
   }
   const isClassAlreadyCompleted = Boolean(questId && allCompletedQuests.includes(questId));
-  if (isClassAlreadyCompleted && !allowCompletedBypass) {
+  if (isClassAlreadyCompleted && !allowCompletedBypass && strictLockCompleted) {
     return (
       <div
         data-testid="quest-already-completed-locked"
@@ -565,7 +579,7 @@ function LessonPageRouter() {
           data-testid="btn-completed-return"
           onClick={() => {
             if (typeof window !== 'undefined') {
-              window.location.assign('/quests?tab=custom_roadmap');
+              window.location.assign(getReturnUrl());
             }
           }}
           className="btn-primary"
@@ -607,6 +621,15 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
     return new URLSearchParams(window.location.search).get('questId') || '';
   }, [questId]);
 
+  const getReturnUrl = useCallback(() => {
+    const fromTabParam = searchParams.get('fromTab');
+    const savedSubTab = typeof window !== 'undefined' ? (localStorage.getItem(`pinit_${user?.id || 'guest'}_quests_subtab`) || localStorage.getItem('pinit_guest_quests_subtab')) : null;
+    const targetTab = fromTabParam === 'certification' || fromTabParam === 'certification_passport' || savedSubTab === 'certification_passport'
+      ? 'certification'
+      : (fromTabParam || 'custom_roadmap');
+    return `/quests?tab=${targetTab}`;
+  }, [searchParams, user?.id]);
+
   const finishLessonAndReturn = useCallback(() => {
     if (state.returningRef.current) return;
     state.returningRef.current = true;
@@ -621,13 +644,13 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
     }
     toast.success('Stage Completed!', 'Heading back to the quest roadmap.');
     stopSpeaking();
-    const targetUrl = '/quests?tab=custom_roadmap';
+    const targetUrl = getReturnUrl();
     if (router && typeof router.push === 'function') {
       router.push(targetUrl);
     } else {
       window.location.assign(targetUrl);
     }
-  }, [resolveQuestId, addCompletedQuest, state.returningRef, router, isTestMode]);
+  }, [resolveQuestId, addCompletedQuest, state.returningRef, router, isTestMode, getReturnUrl]);
 
   const engine = useLessonEngine({
     questId,
@@ -639,6 +662,102 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
     finishLessonAndReturn,
     isTestMode,
   });
+
+  const nextQuest = useMemo<{ id: string; title: string; isExam?: boolean } | null>(() => {
+    const currentId = resolveQuestId() || questId;
+    if (!currentId) return null;
+
+    // 1. Try active enrolled crash course curriculum
+    if (typeof window !== 'undefined') {
+      try {
+        const rawEnrollment = localStorage.getItem('pinit_active_crash_enrollment');
+        if (rawEnrollment) {
+          const enr = JSON.parse(rawEnrollment);
+          if (enr && enr.planId && enr.track) {
+            const plan = getCrashPlanById(enr.planId);
+            if (plan) {
+              const curriculum = getCrashCourseCurriculum(plan, enr.track, COURSES_REGISTRY);
+              const idx = curriculum.findIndex(item => item.questId === currentId);
+              if (idx >= 0 && idx < curriculum.length - 1) {
+                const nextItem = curriculum[idx + 1];
+                const authQ = getAuthoritativeQuest(nextItem.questId);
+                const regQ = COURSES_REGISTRY.flatMap(c => c.quests || []).find(q => q.id === nextItem.questId);
+                const title = authQ?.title || regQ?.title || nextItem.questId;
+                const isExam = Boolean(
+                  nextItem.questId.includes('-test-') ||
+                  nextItem.questId.includes('-exam-') ||
+                  isAuthoritativeExam(nextItem.questId)
+                );
+                return { id: nextItem.questId, title, isExam };
+              }
+            }
+          }
+        }
+      } catch {}
+    }
+
+    // 2. Fallback to COURSES_REGISTRY
+    for (let cIdx = 0; cIdx < COURSES_REGISTRY.length; cIdx++) {
+      const c = COURSES_REGISTRY[cIdx];
+      const qIdx = (c.quests || []).findIndex(q => q.id === currentId);
+      if (qIdx >= 0) {
+        if (qIdx < (c.quests || []).length - 1) {
+          const nextQ = c.quests[qIdx + 1];
+          const isExam = Boolean(
+            nextQ.id.includes('-test-') ||
+            nextQ.id.includes('-exam-') ||
+            isAuthoritativeExam(nextQ.id)
+          );
+          return { id: nextQ.id, title: nextQ.title, isExam };
+        } else if (cIdx < COURSES_REGISTRY.length - 1) {
+          const nextCourse = COURSES_REGISTRY[cIdx + 1];
+          if (nextCourse.quests && nextCourse.quests.length > 0) {
+            const nextQ = nextCourse.quests[0];
+            const isExam = Boolean(
+              nextQ.id.includes('-test-') ||
+              nextQ.id.includes('-exam-') ||
+              isAuthoritativeExam(nextQ.id)
+            );
+            return { id: nextQ.id, title: nextQ.title, isExam };
+          }
+        }
+      }
+    }
+
+    return null;
+  }, [questId, resolveQuestId]);
+
+  const [isStartingNext, setIsStartingNext] = useState(false);
+
+  const goToNextQuest = useCallback(() => {
+    if (!nextQuest || isStartingNext) return;
+    setIsStartingNext(true);
+
+    const id = resolveQuestId() || questId;
+    if (!isTestMode && id && !parseTestQuestId(id)) {
+      const authQuest = getAuthoritativeQuest(id);
+      const course = COURSES_REGISTRY.find(c => (c.quests || []).some(q => q.id === id));
+      const isExam = isAuthoritativeExam(id);
+      const xp = authQuest?.xp || 150;
+      addCompletedQuest(id, isExam, xp, course?.id);
+    }
+
+    stopSpeaking();
+
+    const fromTabParam = searchParams.get('fromTab');
+    const savedSubTab = typeof window !== 'undefined' ? (localStorage.getItem(`pinit_${user?.id || 'guest'}_quests_subtab`) || localStorage.getItem('pinit_guest_quests_subtab')) : null;
+    const targetTab = fromTabParam === 'certification' || fromTabParam === 'certification_passport' || savedSubTab === 'certification_passport'
+      ? 'certification'
+      : (fromTabParam || 'custom_roadmap');
+
+    const nextUrl = `/quests/lesson?questId=${nextQuest.id}&teacherId=${teacherId || 'kashyap'}&fromTab=${targetTab}`;
+
+    if (router && typeof router.push === 'function') {
+      router.push(nextUrl);
+    } else if (typeof window !== 'undefined') {
+      window.location.assign(nextUrl);
+    }
+  }, [nextQuest, isStartingNext, resolveQuestId, questId, isTestMode, addCompletedQuest, searchParams, user?.id, teacherId, router]);
 
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showFullscreenPill, setShowFullscreenPill] = useState(false);
@@ -819,10 +938,11 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
         className="classroom-return-btn"
         onClick={() => {
           stopSpeaking();
+          const targetUrl = getReturnUrl();
           if (router && typeof router.push === 'function') {
-            router.push('/quests?tab=custom_roadmap');
+            router.push(targetUrl);
           } else {
-            window.location.assign('/quests?tab=custom_roadmap');
+            window.location.assign(targetUrl);
           }
         }}
         style={{
@@ -979,6 +1099,9 @@ function LessonPageContent({ questId, questData, overrideUser, isTestMode = fals
         questId={questId}
         testRecord={engine.testRecord}
         onRetryTest={engine.onReviewLesson}
+        nextQuest={nextQuest}
+        onGoToNextQuest={goToNextQuest}
+        isStartingNext={isStartingNext}
       />
     </div>
   );

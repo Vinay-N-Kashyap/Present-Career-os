@@ -55,10 +55,10 @@ export async function submitMission(uid: string, missionId: string, data: Record
       });
   }
 
-  // Authoritatively update user trust_score and missions_completed in users table
+  // Authoritatively update user trust_score and missions_completed in users table (+3 trust reward)
   if (userProfile) {
     const nextCount = (userProfile.missions_completed || 0) + 1;
-    const nextTrust = Math.min(100, (userProfile.trust_score || 50) + trustReward);
+    const nextTrust = Math.min(100, (userProfile.trust_score || 50) + 3);
     await supabase
       .from('users')
       .update({
@@ -150,7 +150,7 @@ export async function persistQuestCompletion(
     const newXp = currentXp + (xpAmount || 15);
     const newWeeklyXp = currentWeeklyXp + (xpAmount || 15);
     const newMissions = currentMissions + 1;
-    const newTrust = Math.min(100, currentTrust + 2);
+    const newTrust = Math.min(100, currentTrust + 3);
 
     const { error: updateErr } = await supabase
       .from('users')
@@ -219,7 +219,15 @@ export async function spendPinsDB(
   uid: string,
   featureKey: string,
   itemId?: string
-): Promise<{ ok: boolean; newBalance?: number; newBonusBalance?: number; expiresAt?: number; reason?: string }> {
+): Promise<{
+  ok: boolean;
+  newBalance?: number;
+  newBonusBalance?: number;
+  expiresAt?: number;
+  reason?: string;
+  message?: string;
+  canRefillFromBonus?: boolean;
+}> {
   try {
     if (!IS_VALID_UUID(uid)) {
       // Guest/non-uuid path: optimistic local-only response (no server charge)
@@ -237,7 +245,12 @@ export async function spendPinsDB(
       return { ok: true, newBalance: data.newBalance, newBonusBalance: data.newBonusBalance, expiresAt: data.expiresAt };
     }
 
-    return { ok: false, reason: data.error || data.message || 'SPEND_FAILED' };
+    return {
+      ok: false,
+      reason: data.error || data.message || 'SPEND_FAILED',
+      message: typeof data.message === 'string' ? data.message : undefined,
+      canRefillFromBonus: Boolean(data.canRefillFromBonus),
+    };
   } catch (e: any) {
     console.error('[spendPinsDB] Unexpected error:', e.message);
     return { ok: false, reason: 'ERROR' };

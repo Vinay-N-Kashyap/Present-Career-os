@@ -52,6 +52,7 @@ export interface Quest {
 
 export interface Module {
   id: string;
+  courseId?: string;
   title: string;
   desc: string;
   difficulty: 'Beginner' | 'Intermediate' | 'Advanced';
@@ -453,6 +454,7 @@ export function useQuestProgression() {
   const extrasOwnerRef = useRef<string | null>(null);
   const fusedCourseRef = useRef<string | null>(null);
   const generatingLockRef = useRef(false);
+  const isLaunchingQuestRef = useRef(false);
 
   useEffect(() => {
     if (typeof window === 'undefined' || !userId) return;
@@ -539,23 +541,43 @@ export function useQuestProgression() {
   const [isGeneratingRoadmap, setIsGeneratingRoadmap] = useState(false);
   const [generationStep, setGenerationStep] = useState<number>(1);
 
-  const handleCreateCustomRoadmap = async () => {
+  const handleCreateCustomRoadmap = async (opts?: { useResumeAndVault?: boolean }) => {
     if (generatingLockRef.current || isGeneratingRoadmap) return;
     generatingLockRef.current = true;
     setIsGeneratingRoadmap(true);
     setGenerationStep(1);
 
     const config = TRACK_CONFIG[selectedTrack] || TRACK_CONFIG.ai;
+    const extraId = createExtraId();
 
     try {
       const ownRole = typeof onboardingAnswers?.role === 'string' ? onboardingAnswers.role.trim() : '';
       const finalGoal = customGoal.trim() || ownRole || config.role;
+      const includeResume = opts?.useResumeAndVault !== false;
 
       let dynamicModules;
+      let resolvedCourseId = config.courseId;
+      let evidenceSummary: ExtraRoadmap['evidenceSummary'] = includeResume
+        ? undefined
+        : {
+            usedResume: false,
+            resumeTitle: null,
+            vaultDocsCount: 0,
+            provenSkills: [],
+            targetGaps: [],
+          };
       try {
+        const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+        try {
+          const { supabase } = await import('@/lib/supabaseClient');
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.access_token) headers.Authorization = `Bearer ${session.access_token}`;
+        } catch {}
+
         const res = await fetch('/api/quests/roadmap/generate', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers,
+          signal: AbortSignal.timeout(12000),
           body: JSON.stringify({
             goal: finalGoal,
             courseId: config.courseId,
@@ -564,6 +586,8 @@ export function useQuestProgression() {
             archetype: onboardingAnswers?.mindset_archetype || 'Pattern Hunter',
             qt1: onboardingAnswers?.qt1_score ?? 40,
             qt2: onboardingAnswers?.qt2_score ?? 40,
+            useResumeAndVault: includeResume,
+            extraId,
           }),
         });
 
@@ -572,6 +596,15 @@ export function useQuestProgression() {
         if (res.ok) {
           const data = await res.json();
           dynamicModules = data.modules;
+          if (typeof data.courseId === 'string' && data.courseId) {
+            resolvedCourseId = data.courseId;
+          }
+          if (data.evidenceSummary && typeof data.evidenceSummary === 'object') {
+            evidenceSummary = {
+              ...data.evidenceSummary,
+              usedResume: includeResume && data.evidenceSummary.usedResume !== false,
+            };
+          }
         }
       } catch {
         // Fall back to local synthesis
@@ -579,29 +612,35 @@ export function useQuestProgression() {
 
       if (!dynamicModules || !Array.isArray(dynamicModules)) {
         const { generateDynamicStudentRoadmap } = await import('@/lib/data/roadmapFuser');
+        const { resolveGoalPrimaryCourse } = await import('@/lib/roadmap/roadmapCourseSelector');
+        const goalCourse = resolveGoalPrimaryCourse(resolvedCourseId, finalGoal);
+        resolvedCourseId = goalCourse.id;
         dynamicModules = generateDynamicStudentRoadmap({
           qt1: onboardingAnswers?.qt1_score ?? 40,
           qt2: onboardingAnswers?.qt2_score ?? 40,
           archetype: onboardingAnswers?.mindset_archetype || 'Pattern Hunter',
           goal: finalGoal,
-          courseId: config.courseId,
+          courseId: resolvedCourseId,
           durationDays: selectedDuration,
-          dailyPace: selectedPace
+          dailyPace: selectedPace,
+          evidence: null,
+          weakAreas: undefined,
         });
       }
 
       setGenerationStep(3);
 
-      const extraId = createExtraId();
       const extra: ExtraRoadmap = {
         id: extraId,
         number: nextRoadmapNumber(extraRoadmaps),
         goal: finalGoal,
-        courseId: config.courseId,
+        courseId: resolvedCourseId,
         durationDays: selectedDuration,
         dailyPace: selectedPace,
         track: selectedTrack,
-        createdAt: Date.now()
+        createdAt: Date.now(),
+        usedResume: includeResume,
+        ...(evidenceSummary ? { evidenceSummary } : {}),
       };
       const nextExtras = [...extraRoadmaps, extra];
       setExtraRoadmaps(nextExtras);
@@ -610,7 +649,7 @@ export function useQuestProgression() {
       writeExtraModules(userId, extraId, dynamicModules);
 
       setModules(dynamicModules as any);
-      setActiveCourseId(config.courseId);
+      setActiveCourseId(resolvedCourseId);
       setLearningPathMode(extraRoadmapMode(extraId));
       setRoadmapGenerated(true);
 
@@ -772,7 +811,7 @@ export function useQuestProgression() {
     }
 
     if (activeExtraId) {
-      const extraSaved = readExtraModules(effectiveUserId, activeExtraId);
+      const extraSaved = readExtraModules(effectiveUserId, activeExtraId, COURSES_REGISTRY);
       if (extraSaved) {
         setModules(extraSaved as Module[]);
         if (!roadmapGenerated) setRoadmapGenerated(true);
@@ -780,6 +819,7 @@ export function useQuestProgression() {
       }
       const extraMeta = extraRoadmaps.find(rm => rm.id === activeExtraId);
       if (extraMeta) {
+        const useSavedGaps = extraMeta.usedResume !== false && extraMeta.evidenceSummary?.usedResume !== false;
         const fallback = generateDynamicStudentRoadmap({
           courseId: extraMeta.courseId,
           goal: extraMeta.goal,
@@ -787,7 +827,9 @@ export function useQuestProgression() {
           qt2,
           archetype,
           durationDays: extraMeta.durationDays,
-          dailyPace: extraMeta.dailyPace
+          dailyPace: extraMeta.dailyPace,
+          selectedCourseIds: extraMeta.evidenceSummary?.selectedCourseIds,
+          weakAreas: useSavedGaps ? extraMeta.evidenceSummary?.targetGaps : undefined,
         });
         setModules(fallback as unknown as Module[]);
         if (!roadmapGenerated) setRoadmapGenerated(true);
@@ -874,7 +916,7 @@ export function useQuestProgression() {
     return new Date(ts).toDateString() === today && cid === activeCourseId;
   });
   const dailyCount = todayCompletions.length;
-  const isDailyLimitReached = dailyCount >= 3;
+  const isDailyLimitReached = false;
 
   const activeCourse = COURSES_REGISTRY.find(c => c.id === activeCourseId) || COURSES_REGISTRY[0];
   const allQuestsInModule = modules.flatMap(m => (m.quests || []));
@@ -913,43 +955,49 @@ export function useQuestProgression() {
   const daysRemaining = Math.max(1, Math.ceil(totalRoadmapDays * (1 - (activeCourseProgressPct / 100))));
 
   const handleLaunchQuest = async (quest: Quest, courseIdTarget?: string) => {
+    if (isLaunchingQuestRef.current) return;
+    isLaunchingQuestRef.current = true;
+    setTimeout(() => {
+      isLaunchingQuestRef.current = false;
+    }, 2000);
+
     if (courseIdTarget && courseIdTarget !== activeCourseId) {
       setActiveCourseId(courseIdTarget);
     }
 
     const isCompleted = completedQuests.includes(quest.id);
     if (isCompleted) {
-      toast.warning('Class Already Completed 🔒', 'You cannot access previous classes. Please continue with your next scheduled class.');
-      return;
+      if (typeof window !== 'undefined' && window.location.search.includes('strictLockCompleted=true')) {
+        toast.warning('Class Already Completed 🔒', 'You cannot access previous classes. Please continue with your next scheduled class.');
+        return;
+      }
     }
     const initiated = onboardingAnswers?.initiatedQuests || [];
     const isInitiated = initiated.includes(quest.id);
 
-    // Sequential progression gating: Quest N+1 requires Quest N completed, unless quest is already completed/reviewable
-    const allQuestsInCourse = modules.flatMap(m => m.quests || []);
+    // Sequential progression gating: in custom/personalized roadmaps check the active roadmap's modules order
+    // (so fast-tracked beginner quests do not falsely lock intermediate quests); otherwise check the full course.
+    const roadmapQuests = modules.flatMap(m => m.quests || []);
+    const targetCourse = courseIdTarget
+      ? COURSES_REGISTRY.find(c => c.id === courseIdTarget)
+      : COURSES_REGISTRY.find(c => (c.quests || []).some(q => q.id === quest.id));
+    const isCustomOrMultiCourse = learningPathMode.startsWith('extra:') || new Set(modules.map(m => m.courseId).filter(Boolean)).size > 1;
+    const allQuestsInCourse = (isCustomOrMultiCourse && roadmapQuests.some(q => q.id === quest.id))
+      ? roadmapQuests
+      : (targetCourse?.quests && targetCourse.quests.length > 0 ? (targetCourse.quests as Quest[]) : roadmapQuests);
     const questIdx = allQuestsInCourse.findIndex(q => q.id === quest.id);
     if (questIdx > 0 && !isCompleted) {
       const prevQuest = allQuestsInCourse[questIdx - 1];
       if (prevQuest && !completedQuests.includes(prevQuest.id)) {
         toast.warning('Prerequisite Locked', `Please complete "${prevQuest.title}" before starting this quest.`);
+        isLaunchingQuestRef.current = false;
         return;
       }
     }
 
     if (!isCompleted && !isInitiated) {
-      // Same rule as the server: 3 lessons or practice tasks a day, and up to 5 when the extra ones are tests.
-      const isTest = quest.category === 'exam';
-      if (isTest ? dailyCount >= 5 : isDailyLimitReached) {
-        toast.warning('Daily limit reached ⏳', isTest
-          ? 'You have finished 5 tasks today. Take this test tomorrow.'
-          : 'You have finished 3 tasks for this course today. Come back tomorrow, or take your test if one is open.');
-        return;
-      }
-
-      // Try unlocking via pins non-blockingly so new students can freely begin their enrolled roadmap
-      try {
-        await unlockItem(`quest:${quest.id}`, 'quest', `Initiated Quest: ${quest.title}`).catch(() => true);
-      } catch {}
+      // Non-blocking background unlock so student experiences zero latency and immediate launch
+      void unlockItem(`quest:${quest.id}`, 'quest', `Initiated Quest: ${quest.title}`).catch(() => true);
 
       const nextInitiated = [...initiated, quest.id];
       const nextAnswers = {
@@ -959,16 +1007,18 @@ export function useQuestProgression() {
       setOnboarding(nextAnswers, false);
     }
 
+    const targetTab = activeSubTab === 'certification_passport' ? 'certification' : activeSubTab;
+    const isLessonOrTest = quest.requiresAvatar || quest.type === 'lecture' || quest.type === 'interactive' || quest.id.includes('-test-');
 
-    if (quest.requiresAvatar || quest.type === 'lecture' || quest.type === 'interactive') {
+    if (isLessonOrTest) {
       const preferred = (typeof window !== 'undefined' ? localStorage.getItem('pinit_selected_teacher_id') || localStorage.getItem('pinit_preferred_teaching_avatar') : null) || (onboardingAnswers as any)?.selectedTeacherId;
       if (preferred && ['kashyap', 'karthic', 'maya', 'divya'].includes(preferred)) {
-        router.push(`/quests/lesson?questId=${quest.id}&teacherId=${preferred}`);
+        router.push(`/quests/lesson?questId=${quest.id}&teacherId=${preferred}&fromTab=${targetTab}`);
       } else {
-        router.push(`/quests/teacher-select?questId=${quest.id}`);
+        router.push(`/quests/teacher-select?questId=${quest.id}&fromTab=${targetTab}`);
       }
     } else {
-      router.push(`/quests/${quest.id}`);
+      router.push(`/quests/${quest.id}?fromTab=${targetTab}`);
     }
   };
 

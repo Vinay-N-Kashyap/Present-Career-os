@@ -1,10 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import type { ServerPriorityAction } from '@/lib/dashboard/dashboardMetrics';
 
 export interface ActionProfile {
+  user_id?: string;
   ats_score?: number;
+  has_resume_in_vault?: boolean;
   trust_score?: number;
   career_dna_score?: number;
   mission_streak?: number;
@@ -17,18 +20,24 @@ export interface ActionProfile {
   xp_total?: number;
   active_track?: 'sde' | 'iot' | string;
   target_role?: string;
+  server_actions?: ServerPriorityAction[];
 }
 
 interface Action {
+  id: string;
   icon: string;
   title: string;
   desc: string;
   href: string;
   cta: string;
+  xp: string;
   color: string;
   bg: string;
   border: string;
   urgency: number;
+  serverCompleted?: boolean;
+  completionReason?: string;
+  progressPct?: number;
 }
 
 function pickActions(profile: ActionProfile): Action[] {
@@ -37,25 +46,28 @@ function pickActions(profile: ActionProfile): Action[] {
   const streak = profile?.mission_streak || 0;
   const vault = profile?.vault_count || 0;
   const intDone = profile?.interviews_done || 0;
-  const trackName = profile?.active_track === 'iot' ? 'IoT Hardware' : 'SDE Software';
+  const trackName = profile?.target_role || (profile?.active_track === 'iot' ? 'IoT Hardware' : 'your target track');
 
   const candidates: Action[] = [
     // 1. Resume / ATS Optimization
     {
+      id: 'resume',
       icon: 'RESUME',
       color: '#6366f1',
       bg: 'rgba(99,102,241,0.12)',
       border: 'rgba(99,102,241,0.25)',
-      title: ats === 0 ? 'Optimize Resume' : `Resume Score (${ats}/100)`,
+      title: ats === 0 ? 'Optimize Resume' : `Resume Score: ${ats}`,
       desc: ats === 0
         ? `Upload your resume to map keyword gaps for ${trackName}.`
-        : `Close missing technical keywords to reach 80+ benchmark.`,
+        : `Close missing technical keywords to reach benchmark standing.`,
       href: '/career-builder',
-      cta: 'Open Resume Builder →',
+      cta: 'Open Resume Builder',
+      xp: '+50 XP',
       urgency: ats === 0 ? 95 : ats < 55 ? 75 : 10,
     },
     // 2. Mission Streak
     {
+      id: 'streak',
       icon: 'STREAK',
       color: '#f59e0b',
       bg: 'rgba(245,158,11,0.12)',
@@ -65,39 +77,45 @@ function pickActions(profile: ActionProfile): Action[] {
         ? 'Complete a 15-min daily mission to begin building your consistency record.'
         : `Complete today's quick sprint to keep your focus streak alive.`,
       href: '/missions',
-      cta: 'Launch Today’s Mission →',
+      cta: "Launch Today's Mission",
+      xp: '+35 XP',
       urgency: streak === 0 ? 90 : streak < 3 ? 60 : 15,
     },
     // 3. Trust Score
     {
+      id: 'trust',
       icon: 'TRUST',
       color: '#10b981',
       bg: 'rgba(16,185,129,0.12)',
       border: 'rgba(16,185,129,0.25)',
-      title: trust < 50 ? 'Boost Trust Quotient' : `Trust Score (${Math.round(trust)}/100)`,
+      title: trust < 50 ? 'Boost Trust Quotient' : `Trust Standing: ${Math.round(trust)}`,
       desc: trust < 50
         ? 'Verify a certificate or pass a quick coding quiz to build recruiter trust.'
-        : 'Institutional trust is verified. Add more credentials to maintain 90+ standing.',
+        : 'Institutional trust is active. Keep attendance clean to preserve 90+ standing.',
       href: '/trust',
-      cta: 'Verify Credentials →',
+      cta: 'Verify Credentials',
+      xp: '+40 XP',
       urgency: trust < 50 ? 88 : trust < 70 ? 45 : 8,
     },
     // 4. Mock Interviews
     {
+      id: 'mock',
       icon: 'MOCK',
       color: '#3b82f6',
       bg: 'rgba(59,130,246,0.12)',
       border: 'rgba(59,130,246,0.25)',
       title: intDone === 0 ? 'First AI Mock Round' : `Mock Practice (${intDone} Cleared)`,
       desc: intDone === 0
-        ? 'Practice a 10-minute technical interview with Priya to build confidence.'
+        ? 'Practice a 10-minute technical interview with Ms. Priya to calibrate confidence.'
         : 'Take an advanced system design or problem-solving mock round.',
       href: '/interview',
-      cta: 'Start Mock Interview →',
+      cta: 'Start Mock Interview',
+      xp: '+75 XP',
       urgency: intDone === 0 ? 82 : intDone < 3 ? 40 : 12,
     },
     // 5. Evidence Vault
     {
+      id: 'vault',
       icon: 'VAULT',
       color: '#a855f7',
       bg: 'rgba(168,85,247,0.12)',
@@ -107,11 +125,13 @@ function pickActions(profile: ActionProfile): Action[] {
         ? 'Store GitHub repos, degrees, or certifications in your tamper-proof Vault.'
         : 'Your vault credentials back your verified skill score.',
       href: '/vault',
-      cta: 'Open Vault →',
+      cta: 'Open Vault',
+      xp: '+60 XP',
       urgency: vault === 0 ? 84 : vault < 3 ? 50 : 15,
     },
     // 6. Group Discussion Boardroom
     {
+      id: 'debate',
       icon: 'DEBATE',
       color: '#14b8a6',
       bg: 'rgba(20,184,166,0.12)',
@@ -119,7 +139,8 @@ function pickActions(profile: ActionProfile): Action[] {
       title: 'AI Boardroom Debate',
       desc: 'Sharpen your technical communication and collaborative argumentation skills.',
       href: '/group-discussion',
-      cta: 'Enter Boardroom →',
+      cta: 'Enter Boardroom',
+      xp: '+45 XP',
       urgency: 25,
     },
   ];
@@ -143,13 +164,57 @@ export default function WhatToDoToday({
   style = {},
 }: WhatToDoTodayProps) {
   const safeProfile = profile || ({} as ActionProfile);
-  const actions = pickActions(safeProfile);
+  const actions: Action[] = Array.isArray(safeProfile.server_actions) && safeProfile.server_actions.length > 0
+    ? safeProfile.server_actions.slice(0, 3).map((sa, idx) => ({
+        id: sa.id,
+        icon: sa.icon,
+        title: sa.title,
+        desc: sa.desc,
+        href: sa.href,
+        cta: sa.cta,
+        xp: sa.xp,
+        color: sa.color,
+        bg: sa.bg,
+        border: sa.border,
+        urgency: 100 - idx,
+        serverCompleted: Boolean(sa.completed),
+        completionReason: sa.completionReason,
+        progressPct: sa.progressPct,
+      }))
+    : pickActions(safeProfile);
   const isVertical = layout === 'vertical';
-  const [completedItems, setCompletedItems] = useState<Record<number, boolean>>({ 0: true });
 
-  const toggleComplete = (idx: number) => {
-    setCompletedItems(prev => ({ ...prev, [idx]: !prev[idx] }));
+  // Honest baseline: 0 items pre-checked on initial render; server-verified actions override local state
+  const [completedItems, setCompletedItems] = useState<Record<string, boolean>>({});
+  const uidSegment = safeProfile.user_id ? `${safeProfile.user_id}_` : '';
+  const todayKey = typeof window !== 'undefined'
+    ? `pinit_daily_actions_${uidSegment}${new Date().toISOString().slice(0, 10)}`
+    : 'pinit_daily_actions';
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const saved = localStorage.getItem(todayKey);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed === 'object') setCompletedItems(parsed);
+      } else {
+        setCompletedItems({});
+      }
+    } catch {}
+  }, [todayKey]);
+
+  const toggleComplete = (actionId: string) => {
+    setCompletedItems(prev => {
+      const next = { ...prev, [actionId]: !prev[actionId] };
+      if (typeof window !== 'undefined') {
+        try { localStorage.setItem(todayKey, JSON.stringify(next)); } catch {}
+      }
+      return next;
+    });
   };
+
+  const doneCount = actions.filter(a => Boolean(a.serverCompleted || completedItems[a.id])).length;
 
   return (
     <div
@@ -167,48 +232,60 @@ export default function WhatToDoToday({
       }}
     >
       {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: isVertical ? 12 : 14 }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8, marginBottom: isVertical ? 14 : 16 }}>
         <div>
-          <div style={{ fontSize: 10.5, letterSpacing: '1px', textTransform: 'uppercase', color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontWeight: 800, marginBottom: 2 }}>
-            WHAT TO DO TODAY
-          </div>
+          <span className="db-label" style={{ marginBottom: 2 }}>WHAT TO DO TODAY</span>
           <Link
             href="/missions"
             style={{
-              fontSize: 14.5,
+              fontSize: 15,
               fontWeight: 800,
-              color: 'var(--t1)',
+              color: 'var(--dash-text, var(--t1))',
               fontFamily: 'var(--font-display)',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
               gap: 6,
               textDecoration: 'none',
             }}
           >
             <span>{isVertical ? '3 Priority Actions' : '3 concise actions personalized to your career progress'}</span>
-            <span style={{ color: 'var(--t3)', fontSize: 13 }}>&gt;</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" style={{ color: 'var(--t3)' }}>
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
           </Link>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ fontSize: 11, fontFamily: 'var(--font-mono)', fontWeight: 700, color: 'var(--accent)', background: 'rgba(99,102,241,0.1)', padding: '2px 8px', borderRadius: 6, border: '1px solid rgba(99,102,241,0.2)' }}>
-            60%
+          <span
+            data-testid="actions-done-pill"
+            className="db-tabular"
+            style={{
+              fontSize: 11,
+              fontWeight: 700,
+              color: doneCount === actions.length ? '#10b981' : 'var(--dash-subtext, var(--t2))',
+              background: doneCount === actions.length ? 'rgba(16,185,129,0.12)' : 'var(--dash-subtle-bg, var(--bg3))',
+              padding: '3px 9px',
+              borderRadius: 7,
+              border: `1px solid ${doneCount === actions.length ? 'rgba(16,185,129,0.32)' : 'var(--dash-inner-border, var(--border))'}`,
+            }}
+          >
+            {doneCount}/{actions.length} Done
           </span>
           <Link
             href="/missions"
+            className="db-tabular"
             style={{
               fontSize: 11.5,
               fontWeight: 700,
-              color: 'var(--accent)',
+              color: 'var(--accent-mid, var(--accent))',
               textDecoration: 'none',
-              fontFamily: 'var(--font-mono)',
               padding: '4px 10px',
-              borderRadius: 6,
-              background: 'rgba(99,102,241,0.08)',
-              border: '1px solid rgba(99,102,241,0.2)',
+              borderRadius: 7,
+              background: 'rgba(99,102,241,0.10)',
+              border: '1px solid rgba(99,102,241,0.24)',
               whiteSpace: 'nowrap',
             }}
           >
-            All missions →
+            All missions &rarr;
           </Link>
         </div>
       </div>
@@ -233,37 +310,47 @@ export default function WhatToDoToday({
         }
       >
         {actions.map((action, i) => {
-          const isDone = !!completedItems[i];
+          const isDone = Boolean(action.serverCompleted || completedItems[action.id]);
           return (
             <Link
-              key={action.href + i}
+              key={action.id + '-' + i}
               href={action.href}
               style={{ textDecoration: 'none', display: 'block', flex: isVertical ? 1 : undefined }}
               data-testid={`action-item-${isVertical ? 'vertical' : 'horizontal'}-${i}`}
             >
               <div
                 style={{
-                  background: isDone ? 'rgba(16, 185, 129, 0.05)' : 'var(--bg3)',
-                  border: `1.5px solid ${isDone ? 'rgba(16, 185, 129, 0.35)' : action.border}`,
+                  background: isDone ? 'rgba(16, 185, 129, 0.10)' : 'var(--dash-subtle-bg, var(--bg3))',
+                  border: `1px solid ${isDone ? 'rgba(16, 185, 129, 0.38)' : 'var(--dash-inner-border, var(--border))'}`,
                   borderRadius: 12,
-                  padding: isVertical ? '10px 14px' : '14px 16px',
+                  padding: isVertical ? '12px 15px' : '14px 16px',
                   cursor: 'pointer',
-                  transition: 'all 0.18s ease',
-                  borderLeft: `4px solid ${isDone ? '#10b981' : action.color}`,
+                  transition: 'transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease',
+                  borderLeft: `3.5px solid ${isDone ? '#10b981' : action.color}`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   gap: 12,
                   height: '100%',
                   boxSizing: 'border-box',
+                  boxShadow: isDone
+                    ? '0 4px 14px -2px rgba(16, 185, 129, 0.16)'
+                    : 'var(--hud-card-shadow, 0 2px 8px -1px rgba(0,0,0,0.05))',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = isVertical ? 'translateX(3px)' : 'translateY(-2px)';
+                  e.currentTarget.style.transform = isVertical ? 'translateX(4px)' : 'translateY(-2px)';
                   e.currentTarget.style.borderColor = isDone ? '#10b981' : action.color;
+                  e.currentTarget.style.boxShadow = isDone
+                    ? '0 8px 18px -4px rgba(16, 185, 129, 0.25)'
+                    : '0 8px 18px -4px rgba(99, 102, 241, 0.20)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.borderColor = isDone ? 'rgba(16, 185, 129, 0.35)' : action.border;
+                  e.currentTarget.style.borderColor = isDone ? 'rgba(16, 185, 129, 0.38)' : 'var(--dash-inner-border, var(--border))';
+                  e.currentTarget.style.borderLeftColor = isDone ? '#10b981' : action.color;
+                  e.currentTarget.style.boxShadow = isDone
+                    ? '0 4px 14px -2px rgba(16, 185, 129, 0.16)'
+                    : 'var(--hud-card-shadow, 0 2px 8px -1px rgba(0,0,0,0.05))';
                 }}
               >
                 {/* Left Checkbox */}
@@ -273,59 +360,115 @@ export default function WhatToDoToday({
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    toggleComplete(i);
+                    toggleComplete(action.id);
                   }}
                   style={{
                     width: 20,
                     height: 20,
-                    borderRadius: 5,
-                    border: `1.5px solid ${isDone ? '#10b981' : 'rgba(255,255,255,0.22)'}`,
-                    background: isDone ? 'rgba(16, 185, 129, 0.25)' : 'rgba(255,255,255,0.03)',
+                    borderRadius: 6,
+                    border: `1.5px solid ${isDone ? '#10b981' : 'var(--dash-border-strong, var(--border2))'}`,
+                    background: isDone ? 'rgba(16, 185, 129, 0.22)' : 'transparent',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
-                    fontSize: 12,
-                    fontWeight: 900,
                     color: '#10b981',
                     flexShrink: 0,
                     padding: 0,
+                    transition: 'all 0.15s ease',
                   }}
                 >
-                  {isDone ? '✓' : ''}
+                  {isDone ? (
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  ) : null}
                 </button>
 
                 {/* Center Content */}
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
-                    <span style={{ fontSize: 9.5, fontWeight: 900, color: action.color, background: action.bg, padding: '1px 5px', borderRadius: 4, fontFamily: 'var(--font-mono)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 3 }}>
+                    <span
+                      className="db-tabular"
+                      style={{
+                        fontSize: 9.5,
+                        fontWeight: 900,
+                        color: action.color,
+                        background: action.bg,
+                        padding: '1.5px 6px',
+                        borderRadius: 4,
+                        letterSpacing: '0.04em',
+                        flexShrink: 0,
+                      }}
+                    >
                       {action.icon}
                     </span>
-                    <span style={{ fontWeight: 800, fontSize: isVertical ? 12.5 : 13.5, color: isDone ? 'var(--t2)' : 'var(--t1)', textDecoration: isDone ? 'line-through' : 'none', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    <span
+                      style={{
+                        fontWeight: 800,
+                        fontSize: isVertical ? 13 : 13.5,
+                        color: isDone ? 'var(--dash-subtext, var(--t2))' : 'var(--dash-text, var(--t1))',
+                        textDecoration: isDone ? 'line-through' : 'none',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
                       {action.title}
                     </span>
                   </div>
                   <div
                     style={{
-                      fontSize: 11,
-                      color: 'var(--t3)',
+                      fontSize: 11.5,
+                      color: 'var(--dash-subtext, var(--t3))',
+                      lineHeight: 1.4,
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
                       overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
                     }}
                   >
                     {action.desc}
                   </div>
                 </div>
 
-                {/* Right Dual XP Badges */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexShrink: 0 }}>
-                  <span style={{ fontSize: 10, fontWeight: 800, fontFamily: 'var(--font-mono)', color: '#06b6d4', background: 'rgba(6,182,212,0.12)', border: '1px solid rgba(6,182,212,0.25)', padding: '2px 6px', borderRadius: 4 }}>
-                    +50 XP
+                {/* Right Single Contextual XP Reward or Server Verified Badge + Subtle Chevron */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+                  {action.completionReason ? (
+                    <span
+                      className="db-tabular"
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 700,
+                        color: isDone ? '#10b981' : 'var(--dash-subtext, var(--t2))',
+                        background: isDone ? 'rgba(16,185,129,0.14)' : 'rgba(99,102,241,0.10)',
+                        border: `1px solid ${isDone ? 'rgba(16,185,129,0.32)' : 'rgba(99,102,241,0.22)'}`,
+                        padding: '2px 6px',
+                        borderRadius: 6,
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {action.completionReason}
+                    </span>
+                  ) : null}
+                  <span
+                    className="db-tabular"
+                    style={{
+                      fontSize: 10.5,
+                      fontWeight: 800,
+                      color: isDone ? '#10b981' : '#06b6d4',
+                      background: isDone ? 'rgba(16,185,129,0.12)' : 'rgba(6,182,212,0.12)',
+                      border: `1px solid ${isDone ? 'rgba(16,185,129,0.3)' : 'rgba(6,182,212,0.26)'}`,
+                      padding: '2.5px 7px',
+                      borderRadius: 6,
+                      whiteSpace: 'nowrap',
+                    }}
+                  >
+                    {action.xp}
                   </span>
-                  <span style={{ fontSize: 10, fontWeight: 800, fontFamily: 'var(--font-mono)', color: '#f59e0b', background: 'rgba(245,158,11,0.12)', border: '1px solid rgba(245,158,11,0.25)', padding: '2px 6px', borderRadius: 4 }}>
-                    +100 XP
-                  </span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" style={{ color: 'var(--t3)', opacity: 0.7 }}>
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
                 </div>
               </div>
             </Link>

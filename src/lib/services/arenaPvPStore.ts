@@ -348,12 +348,14 @@ export interface ArenaRoom {
   guestNewElo?: number;
   hostArenaPointsAward?: number;
   guestArenaPointsAward?: number;
+  pinCharge?: { newBalance: number; newBonusBalance: number; totalBalance: number };
   hostPinsAward?: number;
   guestPinsAward?: number;
 }
 
 export interface QueueTicket {
   studentId: string;
+  userId?: string;
   studentName: string;
   studentAvatar?: string;
   difficulty: string;
@@ -377,11 +379,15 @@ interface ArenaRoomRow {
   host_id: string;
   host_name: string;
   host_avatar: string | null;
+  host_device_id: string | null;
+  host_language: string | null;
   host_ready: boolean | null;
   host_progress: ArenaPlayerProgress | null;
   guest_id: string | null;
   guest_name: string | null;
   guest_avatar: string | null;
+  guest_device_id: string | null;
+  guest_language: string | null;
   guest_ready: boolean | null;
   guest_progress: ArenaPlayerProgress | null;
   winner_id: string | null;
@@ -414,11 +420,24 @@ const inMemoryRooms = new Map<string, ArenaRoom>();
 const inMemoryCodes = new Map<string, { code: string; logs?: string }>();
 const inMemoryQueue: QueueTicket[] = [];
 const inMemoryMatches = new Map<string, string>(); // waiting studentId → room code (local fallback)
+const settlingRoomsInProcess = new Map<string, Promise<ArenaRoom>>();
 
 const QUEUE_TTL_MS = 60000;
 const difficultyFits = (a: string, b: string) => a === 'any' || b === 'any' || a === b;
 
 const MAX_CODE_CHARS = 50000;
+const UUID_PREFIX_RE = /^([0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})_/i;
+
+/**
+ * Strips per-device matchmaking suffixes (`<uuid>_<device8>`) so arena_rooms.host_id and guest_id
+ * always store the canonical authenticated user UUID expected by combatantSide() and settlement RPCs.
+ */
+export function extractCanonicalUserId(rawId: string): string {
+  const trimmed = (rawId || '').trim();
+  const match = trimmed.match(UUID_PREFIX_RE);
+  return match ? match[1] : trimmed;
+}
+
 const emptyProgress = (): ArenaPlayerProgress => ({ testsPassed: 0, totalTests: 5, score: 0, submitted: false, code: '', submissionAttempts: 0, failedAttempts: 0 });
 const normalizeCode = (roomCode: string) => roomCode.toUpperCase().trim();
 const clone = <T>(v: T): T => JSON.parse(JSON.stringify(v)) as T;
@@ -445,15 +464,17 @@ function rowToRoom(data: ArenaRoomRow): ArenaRoom {
     hostId: data.host_id,
     hostName: data.host_name,
     hostAvatar: data.host_avatar || '',
+    hostDeviceId: data.host_device_id || undefined,
     hostReady: Boolean(data.host_ready),
     hostProgress: hostProg,
-    hostLanguage: hostProg.language || 'typescript',
+    hostLanguage: data.host_language || hostProg.language || 'typescript',
     guestId: data.guest_id || undefined,
     guestName: data.guest_name || undefined,
     guestAvatar: data.guest_avatar || undefined,
+    guestDeviceId: data.guest_device_id || undefined,
     guestReady: Boolean(data.guest_ready),
     guestProgress: guestProg,
-    guestLanguage: guestProg.language || 'typescript',
+    guestLanguage: data.guest_language || guestProg.language || 'typescript',
     winnerId: data.winner_id || undefined,
     startedAt: data.started_at ? new Date(data.started_at).getTime() : undefined,
     endedAt: data.ended_at ? new Date(data.ended_at).getTime() : undefined,
@@ -517,6 +538,8 @@ export class ArenaPvPStore {
     difficulty?: 'basic' | 'intermediate' | 'advanced' | 'production';
     timeLimitSeconds?: number;
     roomCode?: string;
+    pinChargeUserId?: string;
+    requestId?: string;
   }): Promise<ArenaRoom> {
     const roomCode = params.roomCode || generateRoomCode();
     const now = Date.now();
@@ -556,8 +579,79 @@ export class ArenaPvPStore {
       createdAt: now,
     };
 
-    inMemoryRooms.set(roomCode, room);
+    if (params.pinChargeUserId) {
+      let result: any;
+      try {
+        const admin = getSupabaseAdmin();
+        // Enforce strict Current-Pins-only spending (never draw Arena PvP fee from bonus_pins)
+        // unless this requestId is already recorded as an idempotent replay.
+        const { data: existingReq } = await admin
+          .from('arena_room_create_requests')
+          .select('request_id')
+          .eq('request_id', params.requestId)
+          .maybeSingle();
 
+        if (!existingReq) {
+          const { data: wallet } = await admin
+            .from('users')
+            .select('pins')
+            .eq('id', params.pinChargeUserId)
+            .maybeSingle();
+          const currentPins = typeof wallet?.pins === 'number' ? Math.max(0, wallet.pins) : 0;
+          if (currentPins < 10) {
+            inMemoryRooms.delete(normalizeCode(room.roomCode));
+            throw new Error('INSUFFICIENT_PINS');
+          }
+        }
+
+        const { data, error } = await admin.rpc('create_arena_room_with_pin_fee', {
+          p_request_id: params.requestId,
+          p_user_id: params.pinChargeUserId,
+          p_room_code: room.roomCode,
+          p_host_name: room.hostName,
+          p_host_avatar: room.hostAvatar || null,
+          p_host_device_id: room.hostDeviceId || null,
+          p_host_language: room.hostLanguage || 'typescript',
+          p_problem_id: room.problemId,
+          p_difficulty: room.difficulty,
+          p_time_limit_seconds: room.timeLimitSeconds,
+          p_host_progress: room.hostProgress,
+          p_guest_progress: room.guestProgress,
+        });
+        if (error) throw new Error('ARENA_PIN_SERVICE_UNAVAILABLE');
+        result = data;
+      } catch (err) {
+        inMemoryRooms.delete(normalizeCode(room.roomCode));
+        throw err instanceof Error && (err.message.startsWith('ARENA_') || err.message === 'INSUFFICIENT_PINS')
+          ? err
+          : new Error('ARENA_PIN_SERVICE_UNAVAILABLE');
+      }
+
+      if (!result?.ok) {
+        inMemoryRooms.delete(normalizeCode(room.roomCode));
+        const reason = typeof result?.error === 'string' ? result.error : 'ARENA_PIN_SERVICE_UNAVAILABLE';
+        throw new Error(reason.startsWith('ARENA_') || reason === 'INSUFFICIENT_PINS' ? reason : 'ARENA_PIN_SERVICE_UNAVAILABLE');
+      }
+      if (!result.room || typeof result.room.room_code !== 'string') {
+        inMemoryRooms.delete(normalizeCode(room.roomCode));
+        throw new Error('ARENA_PIN_SERVICE_UNAVAILABLE');
+      }
+
+      const persistedRoom = rowToRoom(result.room as ArenaRoomRow);
+      persistedRoom.hostDeviceId = room.hostDeviceId;
+      persistedRoom.hostLanguage = room.hostLanguage;
+      persistedRoom.pinCharge = {
+        newBalance: Math.max(0, Number(result.newBalance) || 0),
+        newBonusBalance: Math.max(0, Number(result.newBonusBalance) || 0),
+        totalBalance: Math.max(0, Number(result.newBalance) || 0) + Math.max(0, Number(result.newBonusBalance) || 0),
+      };
+      inMemoryRooms.set(normalizeCode(persistedRoom.roomCode), persistedRoom);
+      return persistedRoom;
+    }
+
+    const persistenceRequired = process.env.NODE_ENV === 'production' || Boolean(
+      process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY
+    );
     try {
       const { error } = await getSupabaseAdmin().from('arena_rooms').insert({
         room_code: room.roomCode,
@@ -568,14 +662,25 @@ export class ArenaPvPStore {
         host_id: room.hostId,
         host_name: room.hostName,
         host_avatar: room.hostAvatar,
+          host_device_id: room.hostDeviceId || null,
+          host_language: room.hostLanguage || 'typescript',
         host_ready: room.hostReady,
         host_progress: room.hostProgress,
+          guest_device_id: room.guestDeviceId || null,
+          guest_language: room.guestLanguage || 'typescript',
         guest_ready: room.guestReady,
         guest_progress: room.guestProgress,
       });
-      if (error) console.warn('[ArenaPvPStore] arena_rooms insert failed:', error.message);
+      if (error) throw new Error(error.message || 'Database insert failed');
+      inMemoryRooms.set(roomCode, room);
     } catch (err) {
-      console.warn('[ArenaPvPStore] arena_rooms insert failed:', err);
+      if (persistenceRequired) {
+        inMemoryRooms.delete(roomCode);
+        console.error('[ArenaPvPStore] arena_rooms insert failed; refusing to create an in-memory-only room:', err);
+        throw new Error('ARENA_ROOM_PERSISTENCE_FAILED');
+      }
+      console.warn('[ArenaPvPStore] arena_rooms insert failed; using an in-memory room for local development:', err);
+      inMemoryRooms.set(roomCode, room);
     }
 
     return room;
@@ -619,6 +724,10 @@ export class ArenaPvPStore {
           guest_id: updated.guestId ?? null,
           guest_name: updated.guestName ?? null,
           guest_avatar: updated.guestAvatar ?? null,
+          host_device_id: updated.hostDeviceId ?? null,
+          host_language: updated.hostLanguage || 'typescript',
+          guest_device_id: updated.guestDeviceId ?? null,
+          guest_language: updated.guestLanguage || 'typescript',
           guest_ready: updated.guestReady,
           guest_progress: updated.guestProgress,
           winner_id: updated.winnerId ?? null,
@@ -664,7 +773,7 @@ export class ArenaPvPStore {
   }): Promise<{ success: boolean; room?: ArenaRoom; error?: string }> {
     console.log(`[ArenaPvPStore.joinRoom] Guest joining room: ${params.roomCode} | guestId: ${params.guestId} (${params.guestName}) | language: ${params.guestLanguage || 'typescript'}`);
     let failure: string | null = null;
-    let actualGuestId = params.guestId;
+    const actualGuestId = params.guestId;
 
     const room = await this.updateRoom(params.roomCode, (r) => {
       if (r.status === 'completed' || r.status === 'cancelled') { failure = 'This match has already concluded.'; return null; }
@@ -674,9 +783,12 @@ export class ArenaPvPStore {
         params.guestDeviceId && r.hostDeviceId && params.guestDeviceId !== r.hostDeviceId
       );
 
-      // If same user ID and same device, it is host re-entering
-      if (r.hostId === params.guestId && !isDifferentDevice) {
-        failure = null;
+      // One account cannot occupy both sides: the settlement RPC needs two
+      // distinct profiles or a player could farm rating and Arena Points.
+      if (r.hostId === params.guestId) {
+        if (isDifferentDevice) {
+          failure = 'You cannot join your own room. Ask another player to use the invite code.';
+        }
         return null;
       }
 
@@ -690,11 +802,6 @@ export class ArenaPvPStore {
       if (r.guestId && r.guestId !== params.guestId) {
         failure = 'This battle room is already full.';
         return null;
-      }
-
-      // If same user ID but DIFFERENT device, allocate distinct challenger ID
-      if (r.hostId === params.guestId && isDifferentDevice) {
-        actualGuestId = `${params.guestId}_challenger`;
       }
 
       r.guestId = actualGuestId;
@@ -806,9 +913,21 @@ export class ArenaPvPStore {
 
 
 
-    const hostId = room.hostId;
-    const guestId = room.guestId || 'guest';
+    const hostId = extractCanonicalUserId(room.hostId);
+    const guestId = room.guestId ? extractCanonicalUserId(room.guestId) : 'guest';
     console.log(`[ArenaPvPStore.settleMatch] Settling match ${room.roomCode} | Winner: ${room.winnerId} | Host: ${hostId} | Guest: ${guestId}`);
+
+    const normCode = normalizeCode(room.roomCode);
+    const existingSettlement = settlingRoomsInProcess.get(normCode);
+    if (existingSettlement) {
+      return existingSettlement;
+    }
+
+    const settleTask = (async (): Promise<ArenaRoom> => {
+    const cachedExisting = inMemoryRooms.get(normCode);
+    if (cachedExisting?.eloApplied) {
+      return cachedExisting;
+    }
     let hostElo = 100;
     let guestElo = 100;
 
@@ -856,7 +975,7 @@ export class ArenaPvPStore {
 
       guestElo,
 
-      winnerId: room.winnerId,
+      winnerId: extractCanonicalUserId(room.winnerId || 'draw'),
 
     });
 
@@ -894,9 +1013,11 @@ export class ArenaPvPStore {
 
       const admin = getSupabaseAdmin();
 
-      const isHostWin = room.winnerId === hostId;
+      const canonicalWinnerId = extractCanonicalUserId(room.winnerId || 'draw');
 
-      const isHostLoss = room.winnerId === guestId;
+      const isHostWin = canonicalWinnerId === hostId;
+
+      const isHostLoss = canonicalWinnerId === guestId;
 
 
 
@@ -925,9 +1046,9 @@ export class ArenaPvPStore {
 
       if (guestId && guestId !== 'guest') {
 
-        const isGuestWin = room.winnerId === guestId;
+        const isGuestWin = canonicalWinnerId === guestId;
 
-        const isGuestLoss = room.winnerId === hostId;
+        const isGuestLoss = canonicalWinnerId === hostId;
 
 
 
@@ -974,6 +1095,14 @@ export class ArenaPvPStore {
 
 
     return persistedRoom || room;
+    })();
+
+    settlingRoomsInProcess.set(normCode, settleTask);
+    try {
+      return await settleTask;
+    } finally {
+      settlingRoomsInProcess.delete(normCode);
+    }
 
   }
 
@@ -1012,8 +1141,11 @@ export class ArenaPvPStore {
 
     const perfectProblem = selectPerfectQuestion(host, guest, defaultProblemId, recentProblemIds);
 
+    const canonicalHostId = extractCanonicalUserId(host.userId || host.studentId);
+    const canonicalGuestId = extractCanonicalUserId(guest.userId || guest.studentId);
+
     const created = await this.createRoom({
-      hostId: host.studentId,
+      hostId: canonicalHostId,
       hostName: host.studentName,
       hostAvatar: host.studentAvatar,
       hostDeviceId: host.deviceId,
@@ -1027,7 +1159,7 @@ export class ArenaPvPStore {
     console.log(`[ArenaPvPStore.createMatchedRoom] Room created: ${created.roomCode} with 1-Perfect-Question: ${perfectProblem.id} (${perfectProblem.difficulty})`);
 
     return this.updateRoom(created.roomCode, (r) => {
-      r.guestId = guest.studentId;
+      r.guestId = canonicalGuestId;
       r.guestName = guest.studentName;
       r.guestAvatar = guest.studentAvatar;
       r.guestDeviceId = guest.deviceId;
@@ -1082,7 +1214,9 @@ export class ArenaPvPStore {
         .limit(10);
       if (waitErr) throw new Error(waitErr.message);
 
+      const myCanonicalUserId = extractCanonicalUserId(ticket.userId || ticket.studentId);
       for (const cand of (waitingData ?? []) as QueueRow[]) {
+        if (extractCanonicalUserId(cand.student_id) === myCanonicalUserId) continue;
         if (!difficultyFits(ticket.difficulty, cand.difficulty || 'any')) continue;
         const roomCode = generateRoomCode();
         const { data: claimed } = await queue()
@@ -1095,6 +1229,7 @@ export class ArenaPvPStore {
         const inMemHost = inMemoryQueue.find((t) => t.studentId === cand.student_id);
         const host: QueueTicket = {
           studentId: cand.student_id,
+          userId: inMemHost?.userId || extractCanonicalUserId(cand.student_id),
           studentName: cand.student_name,
           studentAvatar: cand.student_avatar || undefined,
           difficulty: cand.difficulty || 'any',
@@ -1179,8 +1314,12 @@ export class ArenaPvPStore {
     }
 
     const now = Date.now();
+    const myCanonicalId = extractCanonicalUserId(ticket.userId || ticket.studentId);
     const opponent = inMemoryQueue.find((t) =>
-      now - t.enqueuedAt < QUEUE_TTL_MS && t.studentId !== ticket.studentId && difficultyFits(ticket.difficulty, t.difficulty));
+      now - t.enqueuedAt < QUEUE_TTL_MS &&
+      t.studentId !== ticket.studentId &&
+      extractCanonicalUserId(t.userId || t.studentId) !== myCanonicalId &&
+      difficultyFits(ticket.difficulty, t.difficulty));
     if (opponent) {
       console.log(`[ArenaPvPStore.matchmakeLocally] Opponent found in local queue: ${opponent.studentId} for ${ticket.studentId}`);
       inMemoryQueue.splice(inMemoryQueue.indexOf(opponent), 1);

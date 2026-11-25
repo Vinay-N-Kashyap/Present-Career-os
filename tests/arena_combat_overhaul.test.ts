@@ -32,26 +32,56 @@ describe('Arena lobby, standings link, and scoring rules', () => {
       'Expected bottom combat telemetry dock to be purged per user order'
     );
 
-    // The Arena explains the score and links to the combined standings screen.
+    // The Arena keeps score details brief and links to the combined standings screen.
     assert.ok(
-      arenaContent.includes('data-testid="league-points-rules"'),
-      'Expected the League Points rules to be present'
+      arenaContent.includes('data-testid="arena-league-note"'),
+      'Expected the concise Arena standings note to be present'
     );
-    assert.ok(arenaContent.includes('League Points = Learning XP + Arena Points'));
     assert.ok(arenaContent.includes('href="/leaderboard?mode=global"'), 'Arena must open the global League Points board');
-    assert.ok(arenaContent.includes('Arena Points = half your pre-match ELO'));
-    assert.ok(arenaContent.includes('ELO never changes placement'));
+    assert.ok(arenaContent.includes('PvP wins add Arena Points to your League Points. AI practice never changes your competitive stats.'));
   });
 
   it('keeps private-room actions and removes the matchmaking queue card', () => {
     assert.ok(arenaContent.includes('<CompetitionNavigation active="arena"'), 'Arena and standings share the competition navigation');
-    assert.ok(arenaContent.includes('Create Private Room'), 'Create Private Room card must be present');
-    assert.ok(arenaContent.includes('Join via Code'), 'Join via Code card must be present');
+    assert.ok(arenaContent.includes('Challenge a friend'), 'Private battle card must be present');
+    assert.ok(arenaContent.includes('Join a battle'), 'Room-code join card must be present');
     assert.ok(!arenaContent.includes('Quick Duel'), 'Removed queue matchmaking card must stay absent');
     assert.ok(!arenaContent.includes('Instant Queue'), 'Removed instant-queue action must stay absent');
-    assert.ok(arenaContent.includes('PRIVATE INVITE'), 'Lobby Mode B micro-badge must be present');
-    assert.ok(arenaContent.includes('ENTER CODE'), 'Lobby Mode C micro-badge must be present');
+    assert.ok(arenaContent.includes('PRIVATE BATTLE'), 'Private-room micro-badge must be present');
+    assert.ok(arenaContent.includes('INVITE CODE'), 'Room-code micro-badge must be present');
     assert.ok(arenaContent.includes("background: 'var(--card)'"), 'Cards must use var(--card) for Light/Dark parity');
+  });
+
+  it('keeps AI practice reward-free and does not force the app into gaming mode', () => {
+    const appShell = fs.readFileSync(path.resolve('src/components/ui/AppShell.tsx'), 'utf8');
+    const codeWarsService = fs.readFileSync(path.resolve('src/lib/api/codeWarsApi.ts'), 'utf8');
+    const evaluateRoute = fs.readFileSync(path.resolve('src/app/api/code/evaluate/route.ts'), 'utf8');
+    const globalStyles = fs.readFileSync(path.resolve('src/styles/globals.css'), 'utf8');
+
+    assert.ok(arenaContent.includes('Turing AI Practice'), 'The lobby must identify the bot match as practice');
+    assert.ok(arenaContent.includes('Practice results never change your ELO, Arena Points, XP, or ranked stats.'));
+    assert.ok(arenaContent.includes('rewardEligible: Boolean(activeRoom)'), 'Only private PvP submissions can earn rewards');
+    assert.ok(arenaContent.includes('TURING AI PRACTICE · RATINGS UNCHANGED'));
+    assert.ok(arenaContent.includes("soloMatch ? 'ELO · NO CHANGE' : 'ELO RATING'"));
+    assert.ok(arenaContent.includes("soloMatch ? 'ARENA POINTS · NONE' : 'ARENA POINTS'"));
+    assert.ok(arenaContent.includes('10 Pin entry fee was charged when the match started'));
+
+    assert.ok(!arenaContent.includes('data-arena-active'));
+    assert.ok(!arenaContent.includes('pinit-arena-duel-toggle'));
+    assert.ok(!appShell.includes('isArenaDuelActive'));
+    assert.ok(!appShell.includes('pinit-arena-duel-toggle'));
+    assert.ok(!globalStyles.includes('data-arena-active'));
+    assert.ok(!arenaContent.includes('GAMING MODE ACTIVE · 100% IMMERSIVE'));
+    assert.ok(arenaContent.includes('rootAny.requestFullscreen'), 'Fullscreen remains available through the explicit user control');
+    assert.ok(arenaContent.includes('aria-pressed={isArenaFullscreen}'), 'The fullscreen control reflects the browser state');
+
+    assert.ok(codeWarsService.includes('rewardEligible?: boolean'));
+    assert.ok(codeWarsService.includes('if (passed) {'), 'Practice wins must remain wins in match history');
+    assert.ok(codeWarsService.includes('if (rewardEligible) {'), 'Practice passes must skip portfolio evidence');
+    assert.ok(evaluateRoute.includes(".from('arena_solo_matches')"));
+    assert.ok(evaluateRoute.includes("rewardEligible = false"), 'The server must deny rewards for bot matches and failed match verification');
+    assert.ok(evaluateRoute.includes('MATCH_PROBLEM_MISMATCH'), 'A client cannot evaluate a different challenge under a saved practice match');
+    assert.ok(evaluateRoute.includes('hasOwnProperty.call(CODEWARS_PROBLEM_REGISTRY'), 'Inherited property names must not pass problem validation');
   });
 
   it('hydrates real match history without reintroducing fake queue state', () => {
@@ -65,6 +95,31 @@ describe('Arena lobby, standings link, and scoring rules', () => {
       arenaContent.includes('fake_opponent') || arenaContent.includes('mock_matches'),
       false,
       'Zero fake/dummy data must be present'
+    );
+  });
+
+  it('never enters or exits browser fullscreen when a match starts or state changes', () => {
+    assert.ok(
+      !arenaContent.includes('pinit-arena-duel-toggle') && !arenaContent.includes('__pinitArenaDuelActive'),
+      'Arena match state must not control global gaming or focus mode'
+    );
+    assert.ok(
+      arenaContent.includes('requestFullscreen.call(rootAny)'),
+      'Fullscreen should only be requested from the explicit Arena control'
+    );
+    assert.ok(
+      !/useEffect\(\(\) => \{[\s\S]*?requestFullscreen[\s\S]*?\}, \[activeRoom, soloMatch\]\);/.test(arenaContent),
+      'A match-state effect must not request browser fullscreen'
+    );
+    assert.ok(
+      arenaContent.includes("title={isArenaFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}"),
+      'The player must retain a visible, intentional fullscreen control'
+    );
+    assert.ok(
+      arenaContent.includes('setIsArenaFullscreen(Boolean(document.fullscreenElement || docAny.webkitFullscreenElement))') &&
+      arenaContent.includes('aria-pressed={isArenaFullscreen}') &&
+      arenaContent.includes('webkitfullscreenchange'),
+      'The explicit fullscreen control must reflect actual browser fullscreen state'
     );
   });
 });

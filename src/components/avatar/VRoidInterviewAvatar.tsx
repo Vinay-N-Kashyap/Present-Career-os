@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { VRoidAvatarEngine, AnimState } from './VRoidAvatarEngine';
+import { VRoidAvatarEngine, AnimState, PERSONA_FAST_MODEL } from './VRoidAvatarEngine';
 
 interface Props {
   teacherId?: string;
@@ -9,9 +9,27 @@ interface Props {
   zoom?: number;
   visible?: boolean;
   paused?: boolean;
+  /** Disable mouse cursor tracking (e.g. inside multi-avatar GD rooms so avatars look at speakers, not the cursor). */
+  followMouse?: boolean;
+  /** Normalized peer gaze vector `{ x: [-1, 1], y: [-1, 1] }` so listening avatars turn toward whoever is speaking. */
+  lookTarget?: { x: number; y: number } | null;
+  /** Strictly restrict lip-sync animation to `animState === 'talking'` only (prevents all GD avatars moving lips together). */
+  strictLipSync?: boolean;
+  /** Thermal-safe multi-avatar mode (low-power WebGL, 1x pixel ratio, 10 FPS idle / 30 FPS speaking). */
+  multiAvatarMode?: boolean;
 }
 
-export default function VRoidInterviewAvatar({ teacherId = 'priya', animState = 'idle', zoom = 1.6, visible = true, paused = false }: Props) {
+export default function VRoidInterviewAvatar({
+  teacherId = 'sneha',
+  animState = 'idle',
+  zoom = 1.6,
+  visible = true,
+  paused = false,
+  followMouse = true,
+  lookTarget = null,
+  strictLipSync = false,
+  multiAvatarMode = false,
+}: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<VRoidAvatarEngine | null>(null);
   const [hasWebGLError, setHasWebGLError] = useState(false);
@@ -24,14 +42,22 @@ export default function VRoidInterviewAvatar({ teacherId = 'priya', animState = 
     const scene = new VRoidAvatarEngine();
     sceneRef.current = scene;
 
-    // 8-second safety timeout: degrades to 2D portrait fallback if GLB load stalls
+    // Adaptive safety timeout: allows full network fetch and GLTF parse for 17MB models (or procedural fallback)
     const safetyTimer = setTimeout(() => {
+      console.warn("[VRoid Avatar] Model load exceeded safety threshold. Falling back to 2D portrait.");
       setHasWebGLError(true);
       setIsLoading(false);
-    }, 3000);
+    }, 25000);
 
     scene.onReady = () => {
       clearTimeout(safetyTimer);
+      setIsLoading(false);
+    };
+
+    scene.onError = (err) => {
+      console.warn("[VRoid Avatar] Scene reported irrecoverable error, falling back to 2D portrait:", err);
+      clearTimeout(safetyTimer);
+      setHasWebGLError(true);
       setIsLoading(false);
     };
 
@@ -46,13 +72,17 @@ export default function VRoidInterviewAvatar({ teacherId = 'priya', animState = 
     canvas.addEventListener('webglcontextlost', handleContextLost, false);
 
     scene.paused = paused || !visible;
+    scene.setGazeTracking(followMouse);
+    scene.setStrictLipSync(strictLipSync);
+    scene.setMultiAvatarMode(multiAvatarMode);
+    scene.setPeerLookTarget(lookTarget);
     try {
       scene.init(canvas, teacherId);
       scene.setState(animState);
       if (scene.camera) {
         scene.camera.position.z = zoom;
       }
-      if (typeof window !== 'undefined') {
+      if (typeof window !== 'undefined' && !multiAvatarMode) {
         (window as any).interviewAvatarScene = scene;
         window.dispatchEvent(new CustomEvent('pinit_vroid_active', { detail: { active: true } }));
       }
@@ -76,7 +106,7 @@ export default function VRoidInterviewAvatar({ teacherId = 'priya', animState = 
       canvas.removeEventListener('webglcontextlost', handleContextLost);
       ro.disconnect();
       scene.dispose();
-      if (typeof window !== 'undefined') {
+      if (typeof window !== 'undefined' && !multiAvatarMode) {
         if ((window as any).interviewAvatarScene === scene) {
           delete (window as any).interviewAvatarScene;
         }
@@ -91,6 +121,34 @@ export default function VRoidInterviewAvatar({ teacherId = 'priya', animState = 
       sceneRef.current.setState(animState);
     }
   }, [animState]);
+
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setGazeTracking(followMouse);
+    }
+  }, [followMouse]);
+
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setStrictLipSync(strictLipSync);
+    }
+  }, [strictLipSync]);
+
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setMultiAvatarMode(multiAvatarMode);
+    }
+  }, [multiAvatarMode]);
+
+  const lookX = lookTarget?.x ?? null;
+  const lookY = lookTarget?.y ?? null;
+  useEffect(() => {
+    if (sceneRef.current) {
+      sceneRef.current.setPeerLookTarget(
+        lookX !== null && lookY !== null ? { x: lookX, y: lookY } : null
+      );
+    }
+  }, [lookX, lookY]);
 
   useEffect(() => {
     if (sceneRef.current && sceneRef.current.camera) {
@@ -184,12 +242,12 @@ export default function VRoidInterviewAvatar({ teacherId = 'priya', animState = 
   );
 }
 
-export function preloadAvatarGLB(teacherIds: string | string[] = ['priya']) {
+export function preloadAvatarGLB(teacherIds: string | string[] = ['sneha', 'rohan', 'vikram']) {
   if (typeof window === 'undefined') return;
 
-  const schedulePreload = (window as any).requestIdleCallback || ((cb: () => void) => setTimeout(cb, 1200));
+  const schedulePreload = (window as any).requestIdleCallback || ((cb: () => void) => setTimeout(cb, 800));
 
-  schedulePreload(() => {
+  schedulePreload(async () => {
     const nav = navigator as any;
     const conn = nav?.connection || nav?.mozConnection || nav?.webkitConnection;
     if (conn && (conn.saveData || conn.effectiveType === 'slow-2g' || conn.effectiveType === '2g' || conn.effectiveType === '3g')) {
@@ -197,11 +255,24 @@ export function preloadAvatarGLB(teacherIds: string | string[] = ['priya']) {
     }
 
     const list = Array.isArray(teacherIds) ? teacherIds : [teacherIds];
-    const primaryId = list[0];
-    if (!primaryId) return;
-
-    const charId = primaryId.toLowerCase().trim();
-    const url = `/avatar/${charId}.glb`;
-    fetch(url, { mode: 'cors' }).catch(() => {});
+    for (const id of list) {
+      if (!id) continue;
+      const charId = id.toLowerCase().trim();
+      const url = PERSONA_FAST_MODEL[charId] || `/avatar/${charId}.glb`;
+      try {
+        if ('caches' in window) {
+          const cache = await window.caches.open('pinit_avatar_v1');
+          const matched = await cache.match(url);
+          if (!matched) {
+            const res = await fetch(url, { mode: 'cors' });
+            if (res.ok) {
+              await cache.put(url, res.clone());
+            }
+          }
+        } else {
+          fetch(url, { mode: 'cors' }).catch(() => {});
+        }
+      } catch {}
+    }
   });
 }

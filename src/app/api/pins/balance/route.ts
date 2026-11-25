@@ -1,12 +1,15 @@
 import { NextResponse } from 'next/server';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
+import { DAILY_PIN_CAP, getNext1AmIst } from '@/lib/pins/pinWalletRules';
+import { ensureUserDailyPinReset } from '@/lib/pins/dailyPinReset';
 
 /**
  * [FIX-STAGE: wave1c-pins-balance-api]
  * GET /api/pins/balance
- * Authoritative Pin balance & transaction history endpoint consumed by usePinBalance().
- * Eliminates client-side 404 console errors and returns combined spendable + bonus vault pins.
+ * Authoritative Pin balance & transaction history endpoint.
+ * `pins` and `dailyPins` reflect Current Pins (strictly used for features, max 120/day).
+ * `bonusPins` reflects the unlimited Bonus Vault (used to refill Current Pins up to 120).
  */
 export async function GET(req: Request) {
   try {
@@ -18,6 +21,8 @@ export async function GET(req: Request) {
 
     const userId = gated.user.id;
     const admin = getSupabaseAdmin();
+    const lazyReset = await ensureUserDailyPinReset(admin, userId);
+
     const { data, error } = await admin
       .from('users')
       .select('pins, bonus_pins, pin_history, unlocked_items')
@@ -33,6 +38,8 @@ export async function GET(req: Request) {
           pins: 0,
           dailyPins: 0,
           bonusPins: 0,
+          totalPins: 0,
+          dailyCap: DAILY_PIN_CAP,
           transactions: [],
           unlockedItems: [],
           degraded: true,
@@ -51,26 +58,35 @@ export async function GET(req: Request) {
         pins: 0,
         dailyPins: 0,
         bonusPins: 0,
+        totalPins: 0,
+        dailyCap: DAILY_PIN_CAP,
         transactions: [],
         unlockedItems: [],
       });
     }
 
-    const dailyPins = typeof data.pins === 'number' && Number.isFinite(data.pins) ? data.pins : 0;
+    const dailyPins = typeof lazyReset?.pins === 'number' && lazyReset.resetApplied
+      ? lazyReset.pins
+      : (typeof data.pins === 'number' && Number.isFinite(data.pins) ? data.pins : 0);
     const bonusPins = typeof data.bonus_pins === 'number' && Number.isFinite(data.bonus_pins) ? data.bonus_pins : 0;
     const totalPins = dailyPins + bonusPins;
     const transactions = Array.isArray(data.pin_history) ? data.pin_history : [];
     const unlockedItems = Array.isArray(data.unlocked_items) ? data.unlocked_items : [];
 
     console.log(
-      `[PinIT][Fix:PinsBalanceAPI] Served balance user=${userId.slice(0, 8)}... pins=${totalPins} (daily=${dailyPins}, bonus=${bonusPins}, tx=${transactions.length})`
+      `[PinIT][Fix:PinsBalanceAPI] Served balance user=${userId.slice(0, 8)}... current=${dailyPins}/${DAILY_PIN_CAP} bonus=${bonusPins} total=${totalPins} tx=${transactions.length}`
     );
 
     return NextResponse.json({
       ok: true,
-      pins: totalPins,
+      pins: dailyPins,
       dailyPins,
       bonusPins,
+      totalPins,
+      dailyCap: DAILY_PIN_CAP,
+      eligibleForDailyReset: Boolean(lazyReset?.eligibleForDailyReset),
+      dailyResetApplied: Boolean(lazyReset?.resetApplied),
+      nextResetAt: getNext1AmIst().toISOString(),
       transactions,
       unlockedItems,
     });

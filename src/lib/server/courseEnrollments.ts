@@ -7,6 +7,7 @@
  * and is stored in public.user_crash_enrollments (never in the serverless filesystem).
  */
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { DAILY_PIN_CAP, splitCreditIntoWallets } from '@/lib/pins/pinWalletRules';
 
 export const COURSE_PLAN_PIN_COSTS: Record<string, number> = {
   'plan-1m-sprint': 500,
@@ -174,6 +175,18 @@ export async function findCourseEnrollmentByPayment(admin: SupabaseClient, userI
   return { enrollment: data ? toCourseEnrollment(data as EnrollmentRow) : null, error: null };
 }
 
+export async function pauseActiveCourseEnrollments(
+  admin: SupabaseClient,
+  userId: string,
+): Promise<{ error: string | null }> {
+  const { error } = await admin
+    .from(TABLE)
+    .update({ status: 'paused' })
+    .eq('user_id', userId)
+    .eq('status', 'active');
+  return { error: error ? error.message : null };
+}
+
 /** `duplicate` is true when a unique index rejected the row (concurrent double purchase). */
 export async function insertCourseEnrollment(
   admin: SupabaseClient,
@@ -190,15 +203,39 @@ export async function creditPins(
   amount: number,
   reason: string,
   source: string,
-): Promise<{ ok: boolean; newBalance: number | null }> {
-  const { data, error } = await admin.rpc('credit_pins', {
-    p_user_id: userId,
-    p_amount: amount,
-    p_reason: reason,
-    p_source: source,
-  });
-  if (error || !data?.ok) return { ok: false, newBalance: null };
-  return { ok: true, newBalance: typeof data.new_balance === 'number' ? data.new_balance : null };
+): Promise<{ ok: boolean; newBalance: number | null; newBonusBalance?: number | null }> {
+  const { data: profile, error: fetchErr } = await admin
+    .from('users')
+    .select('pins, bonus_pins, pin_history')
+    .eq('id', userId)
+    .maybeSingle();
+
+  if (fetchErr || !profile) return { ok: false, newBalance: null };
+
+  const currentPins = typeof profile.pins === 'number' ? profile.pins : 0;
+  const currentBonus = typeof profile.bonus_pins === 'number' ? profile.bonus_pins : 0;
+  const split = splitCreditIntoWallets(currentPins, currentBonus, amount, DAILY_PIN_CAP);
+  const history = Array.isArray(profile.pin_history) ? profile.pin_history : [];
+  const entry = {
+    id: `tx-${source}-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+    type: 'earn',
+    amount,
+    reason,
+    source,
+    timestamp: Date.now(),
+  };
+
+  const { error: updateErr } = await admin
+    .from('users')
+    .update({
+      pins: split.newPins,
+      bonus_pins: split.newBonus,
+      pin_history: [entry, ...history].slice(0, 100),
+    })
+    .eq('id', userId);
+
+  if (updateErr) return { ok: false, newBalance: null };
+  return { ok: true, newBalance: split.newPins, newBonusBalance: split.newBonus };
 }
 
 /** Best-effort passbook entry; balances are authoritative in the pins RPCs. */
@@ -233,6 +270,13 @@ export async function fulfilCardCoursePurchase(
   const existing = await findCourseEnrollmentByPayment(admin, input.userId, input.paymentId);
   if (existing.error) return { enrollment: null, rewardPinsCredited: 0, error: existing.error };
   if (existing.enrollment) return { enrollment: existing.enrollment, rewardPinsCredited: 0, error: null };
+
+  // Pause any prior active course enrollment (e.g. student switched tracks/programs)
+  // so the partial unique index uniq_active_crash_enrollment_per_plan never blocks a verified purchase.
+  const paused = await pauseActiveCourseEnrollments(admin, input.userId);
+  if (paused.error) {
+    return { enrollment: null, rewardPinsCredited: 0, error: paused.error };
+  }
 
   const enrollment = buildCourseEnrollment({ ...input, paymentMethod: 'razorpay' });
   const inserted = await insertCourseEnrollment(admin, enrollment);

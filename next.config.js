@@ -12,7 +12,7 @@
 const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'unsafe-eval' https://*.supabase.co https://checkout.razorpay.com https://*.razorpay.com https://cdn.jsdelivr.net",
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
   "font-src 'self' https://fonts.gstatic.com data:",
   "img-src 'self' data: blob: https://*.supabase.co https://api.dicebear.com https://avatars.githubusercontent.com https://images.unsplash.com",
   // Three.js GLTFLoader unpacks the textures inside each .glb into blob: URLs
@@ -47,7 +47,8 @@ const CSP = [
     'https://tessdata.projectnaptha.com',
     'https://*.projectnaptha.com',
   ].join(' '),
-  "frame-src 'self' https://api.razorpay.com https://checkout.razorpay.com https://*.razorpay.com",
+  "frame-src 'self' blob: https://*.supabase.co https://api.razorpay.com https://checkout.razorpay.com https://*.razorpay.com",
+  "object-src 'self' blob: https://*.supabase.co",
   "frame-ancestors 'self'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -77,6 +78,15 @@ try {
   }
 } catch (_e) {
   // Graceful fallback to Pyodide CDN in python-worker.js
+}
+
+try {
+  const pdfjsTarget = path.join(__dirname, 'public', 'pdfjs', 'pdfjs.mjs');
+  if (!fs.existsSync(pdfjsTarget)) {
+    execSync('node scripts/utils/copy-pdfjs.cjs', { stdio: 'inherit' });
+  }
+} catch (_e) {
+  // Handled gracefully by PdfCanvasViewer fallback
 }
 
 try {
@@ -123,11 +133,14 @@ const nextConfig = {
   },
 
   experimental: {
-    serverComponentsExternalPackages: ['esbuild', 'sharp', 'onnxruntime-node', 'pyodide'],
+    serverComponentsExternalPackages: ['esbuild', 'sharp', 'onnxruntime-node', 'pyodide', 'unpdf'],
     outputFileTracingIncludes: {
       '/api/visuals': ['./src/lib/data/lessonVisuals/**/*', './src/generated/longLessons/**/*'],
       '/api/lesson': ['./src/generated/longLessons/**/*'],
       '/api/quests/grade-test': ['./src/generated/longLessons/**/*'],
+      '/api/quests/verify': ['./node_modules/pyodide/**/*', './public/pyodide/**/*'],
+      '/api/vault/upload': ['./node_modules/unpdf/**/*'],
+      '/api/vault/defense-session': ['./node_modules/unpdf/**/*'],
     },
     outputFileTracingExcludes: {
       '*': [

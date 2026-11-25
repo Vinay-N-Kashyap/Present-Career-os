@@ -10,26 +10,99 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 export const MAX_XP_PER_CALL = 500;
 
 export type XpGrant =
-  | { ok: true; newXp: number; newLevel: number; amount: number }
+  | { ok: true; newXp: number; newWeeklyXp?: number; newLevel: number; amount: number }
   | { ok: false; error: string; message: string };
 
-interface IncrementResult { ok?: boolean; new_xp?: number; new_level?: number; reason?: string; message?: string }
+interface IncrementResult {
+  ok?: boolean;
+  new_xp?: number;
+  new_weekly_xp?: number;
+  new_level?: number;
+  reason?: string;
+  message?: string;
+}
 
 export async function grantXp(admin: SupabaseClient, userId: string, amount: number, reason: string): Promise<XpGrant> {
   if (!Number.isInteger(amount) || amount <= 0) return { ok: false, error: 'INVALID_XP_AMOUNT', message: 'Nothing to grant.' };
   let left = amount;
-  let last: { newXp: number; newLevel: number } | null = null;
+  let last: { newXp: number; newWeeklyXp?: number; newLevel: number } | null = null;
+  let rpcUpdatedWeekly = false;
+  let rpcFailed = false;
+
   while (left > 0) {
     const chunk = Math.min(left, MAX_XP_PER_CALL);
     const { data, error } = await admin.rpc('increment_xp', { p_user_id: userId, p_amount: chunk, p_reason: reason });
     const res = (data || {}) as IncrementResult;
     if (error || !res.ok) {
+      // If first chunk failed due to missing/older RPC, fall back to direct service-role update below
+      if (!last) {
+        rpcFailed = true;
+        break;
+      }
       return { ok: false, error: res.reason || 'XP_INCREMENT_FAILED', message: error?.message || res.message || 'XP could not be saved.' };
     }
-    last = { newXp: Number(res.new_xp) || 0, newLevel: Number(res.new_level) || 1 };
+    const weeklyFromRpc = typeof res.new_weekly_xp === 'number' && Number.isFinite(res.new_weekly_xp)
+      ? Number(res.new_weekly_xp)
+      : undefined;
+    if (weeklyFromRpc !== undefined) {
+      rpcUpdatedWeekly = true;
+    }
+    last = {
+      newXp: Number(res.new_xp) || 0,
+      newWeeklyXp: weeklyFromRpc,
+      newLevel: Number(res.new_level) || 1,
+    };
     left -= chunk;
   }
-  return { ok: true, amount, newXp: last!.newXp, newLevel: last!.newLevel };
+
+  // Fallback path if increment_xp RPC is unavailable on the target DB
+  if (rpcFailed) {
+    const { data: userRow, error: readErr } = await admin
+      .from('users')
+      .select('xp_total, weekly_xp')
+      .eq('id', userId)
+      .maybeSingle();
+    if (readErr || !userRow) {
+      return { ok: false, error: 'XP_INCREMENT_FAILED', message: readErr?.message || 'User record not found.' };
+    }
+    const nextXp = Math.max(0, Number(userRow.xp_total) || 0) + amount;
+    const nextWeeklyXp = Math.max(0, Number(userRow.weekly_xp) || 0) + amount;
+    const nextLevel = Math.max(1, Math.floor(Math.sqrt(nextXp / 100)) + 1);
+    const { error: updErr } = await admin
+      .from('users')
+      .update({ xp_total: nextXp, xp_level: nextLevel, weekly_xp: nextWeeklyXp })
+      .eq('id', userId);
+    if (updErr) {
+      return { ok: false, error: 'XP_UPDATE_FAILED', message: updErr.message };
+    }
+    try {
+      await admin.from('xp_ledger').insert({ user_id: userId, amount, reason });
+    } catch {}
+    return { ok: true, amount, newXp: nextXp, newWeeklyXp: nextWeeklyXp, newLevel: nextLevel };
+  }
+
+  // Critical fix: older Supabase `increment_xp` RPCs (20260913) ONLY update `xp_total` and NOT `weekly_xp`!
+  // If the RPC did not return `new_weekly_xp`, explicitly increment `users.weekly_xp` so Vault & Leaderboard stay in sync.
+  let finalWeeklyXp = last?.newWeeklyXp;
+  if (!rpcUpdatedWeekly) {
+    try {
+      const { data: uRow } = await admin
+        .from('users')
+        .select('weekly_xp')
+        .eq('id', userId)
+        .maybeSingle();
+      const nextWeekly = Math.max(0, Number(uRow?.weekly_xp) || 0) + amount;
+      const { error: wkErr } = await admin
+        .from('users')
+        .update({ weekly_xp: nextWeekly })
+        .eq('id', userId);
+      if (!wkErr) {
+        finalWeeklyXp = nextWeekly;
+      }
+    } catch {}
+  }
+
+  return { ok: true, amount, newXp: last!.newXp, newWeeklyXp: finalWeeklyXp, newLevel: last!.newLevel };
 }
 
 function startOfUtcDay(): string {

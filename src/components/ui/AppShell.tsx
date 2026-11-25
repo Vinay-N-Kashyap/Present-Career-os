@@ -15,7 +15,7 @@ import { HomeTab, ExamsTab, ResultsTab, NotesTab, NotificationsTab, ContactTab }
 import { ToastProvider } from '@/lib/context/ToastContext';
 import { useBatches } from '@/lib/context/BatchContext';
 import PublicEffectsShell from '@/components/effects/PublicEffectsShell';
-import { AppSidebar, RIGHT_NAV, isPathActive } from '@/components/ui/AppSidebar';
+import { AppSidebar, RIGHT_NAV, RIGHT_NAV_SVG_ICONS, isPathActive } from '@/components/ui/AppSidebar';
 import { AppHeader } from '@/components/ui/AppHeader';
 import { GlobalAvatar } from '@/components/ui/GlobalAvatar';
 
@@ -33,7 +33,7 @@ const ExamStartModal = dynamic(
 const PAGE_TITLES: Record<string, string> = {
   '/dashboard':     'Home',          '/resume':        'Resume & ATS',
   '/career-builder': 'Career Builder',
-  '/mirror':        'Mirror',
+  '/mirror':        'Digital Studio',
   '/career-assets': 'Career Assets', '/career-dna':   'Career DNA',    '/trust':         'Trust Score',
   '/career-twin':   'Career Twin',   '/missions':      'Daily Missions',
   '/learn':         'Learn',         '/exam':          'Exams',
@@ -53,12 +53,13 @@ const PAGE_TITLES: Record<string, string> = {
   '/pricing':       'Pins & Plans',  '/profile':       'Profile',
   '/notifications': 'Notifications', '/leaderboard':   'Arena & Leaderboard',
   '/applications':  'My Applications',
-  '/pins':          'Pins & Wallet',
+  '/pins':          'Pins & Shop',
   '/quests':        'Quests & Courses',
   '/arena':         'Arena & Leaderboard',
   '/projects':      'Projects',
   '/innovation-hub':'Innovation Hub',
   '/attention-span': 'Attention Span',
+  '/shop':          'Pins & Shop',
   '/qr-confirm':    'Confirm QR Login',
   '/onboarding':    'Setup',         '/qr-login':      'QR Login',
   '/reset-password':'Reset Password',
@@ -140,7 +141,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const [liteUiMode, setLiteUiMode] = useState(false);
   const [isGdCall, setIsGdCall] = useState(false);
   const [isRoleplayParamActive, setIsRoleplayParamActive] = useState(false);
-  const [isArenaDuelActive, setIsArenaDuelActive] = useState(false);
+  const [isInterviewActiveState, setIsInterviewActiveState] = useState(false);
   const [activeTourRoute, setActiveTourRoute] = useState<string | null>(null);
   const [activeTourTabKey, setActiveTourTabKey] = useState<string | null>(null);
 
@@ -305,20 +306,20 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       const activeRoleplay = window.location.pathname.startsWith('/missions') && isRoleplay;
       setIsRoleplayParamActive(activeRoleplay);
 
-      const isDuel = e?.detail !== undefined && e.detail.isArenaDuel !== undefined
-        ? Boolean(e.detail.isArenaDuel)
-        : (Boolean((window as any).__pinitArenaDuelActive) || (window.location.pathname.startsWith('/arena') && window.location.search.includes('duel=true')));
-      const activeDuel = window.location.pathname.startsWith('/arena') && isDuel;
-      setIsArenaDuelActive(activeDuel);
+      const isInterview = e?.detail !== undefined && e.detail.active !== undefined
+        ? Boolean(e.detail.active)
+        : (Boolean((window as any).__pinitInterviewActive) || (typeof document !== 'undefined' && document.body.getAttribute('data-interview-active') === 'true'));
+      const activeInterview = window.location.pathname.startsWith('/interview') && isInterview;
+      setIsInterviewActiveState(activeInterview);
     };
     checkCallAndRoleplay();
     window.addEventListener('popstate', checkCallAndRoleplay);
     window.addEventListener('pinit-roleplay-toggle', checkCallAndRoleplay);
-    window.addEventListener('pinit-arena-duel-toggle', checkCallAndRoleplay);
+    window.addEventListener('pinit-interview-toggle', checkCallAndRoleplay);
     return () => {
       window.removeEventListener('popstate', checkCallAndRoleplay);
       window.removeEventListener('pinit-roleplay-toggle', checkCallAndRoleplay);
-      window.removeEventListener('pinit-arena-duel-toggle', checkCallAndRoleplay);
+      window.removeEventListener('pinit-interview-toggle', checkCallAndRoleplay);
     };
   }, [pathname, searchParams]);
 
@@ -355,7 +356,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   const isLessonOrDetail = cleanPath.startsWith('/quests/') && cleanPath !== '/quests';
   const isGroupDiscussionCall = isGdCall;
   const isRoleplayActive = isRoleplayParamActive;
-  const effectiveFocusMode = focusMode || isLessonOrDetail || isGroupDiscussionCall || isRoleplayActive || isArenaDuelActive;
+  const effectiveFocusMode = focusMode || isLessonOrDetail || isGroupDiscussionCall || isRoleplayActive || isInterviewActiveState;
 
   useEffect(() => {
     if (typeof window !== 'undefined' && user) {
@@ -452,7 +453,10 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         localStorage.setItem('pinit_connected_college', connectedName);
       }
       setShowConnectCollegeModal(false);
-      toast.success(`Successfully connected to ${connectedName}! Right sidebar unlocked.`);
+      setActiveAcademicTab('home');
+      setRightCollapsed(false);
+      setCollapsed(true);
+      toast.success(`Successfully connected to ${connectedName}! College dashboard unlocked.`);
     } catch (err: any) {
       setCollegeError(err?.message || 'Connection failed. Please try again.');
     } finally {
@@ -482,72 +486,103 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     if (typeof window === 'undefined') return;
     let lastShiftSpaceTime = 0;
 
+    const isFullscreen = () => {
+      const docAny = document as any;
+      return Boolean(document.fullscreenElement || docAny.webkitFullscreenElement);
+    };
+
     const handleFullscreenChange = () => {
-      const active = Boolean(document.fullscreenElement || (document as any).webkitFullscreenElement);
-      if (active) {
-        setShowGamingPill(true);
-        const timer = setTimeout(() => setShowGamingPill(false), 3000);
-        return () => clearTimeout(timer);
-      } else {
-        setShowGamingPill(false);
+      // The HUD reflects the actual browser state. Do not hide it on a timer
+      // while fullscreen is still active.
+      setShowGamingPill(isFullscreen());
+    };
+
+    const isEditableTarget = (element: Element | null): boolean => {
+      const editableSelector = [
+        'input',
+        'textarea',
+        'select',
+        '[contenteditable=""]',
+        '[contenteditable="true"]',
+        '[role="textbox"]',
+        '.monaco-editor',
+        '.cm-editor',
+        '.CodeMirror',
+        '.ace_editor',
+        'iframe',
+      ].join(',');
+
+      let current = element;
+      while (current) {
+        if (current.matches(editableSelector) || (current as HTMLElement).isContentEditable) return true;
+        const root = current.getRootNode();
+        current = root instanceof ShadowRoot ? root.host : current.parentElement;
       }
+      return false;
     };
 
     const handleGlobalKeyDown = async (e: KeyboardEvent) => {
-      // Shift + twice Spacebar -> Toggle Fullscreen Gaming Mode
-      if (e.shiftKey && (e.code === 'Space' || e.key === ' ')) {
-        const target = e.target as HTMLElement | null;
-        const isInputField = target && (
-          target.tagName === 'INPUT' ||
-          target.tagName === 'TEXTAREA' ||
-          Boolean(target.isContentEditable) ||
-          target.closest('.monaco-editor') !== null
-        );
-        if (!isInputField) {
-          const now = Date.now();
-          if (now - lastShiftSpaceTime < 700) {
-            e.preventDefault();
-            lastShiftSpaceTime = 0;
-            try {
-              const docAny = document as any;
-              const elAny = document.documentElement as any;
-              if (document.fullscreenElement || docAny.webkitFullscreenElement) {
-                if (document.exitFullscreen) {
-                  await document.exitFullscreen();
-                } else if (docAny.webkitExitFullscreen) {
-                  await docAny.webkitExitFullscreen();
-                }
-              } else {
-                if (elAny.requestFullscreen) {
-                  await elAny.requestFullscreen();
-                } else if (elAny.webkitRequestFullscreen) {
-                  await elAny.webkitRequestFullscreen();
-                } else if (elAny.mozRequestFullScreen) {
-                  await elAny.mozRequestFullScreen();
-                }
+      // Arena has its own explicit Fullscreen button. Disable this global
+      // shortcut on Arena so typing or editor key repeat cannot toggle it.
+      const isArenaRoute = window.location.pathname === '/arena' || window.location.pathname.startsWith('/arena/');
+      const eventTarget = e.target instanceof Element ? e.target : null;
+      const focusTarget = document.activeElement instanceof Element ? document.activeElement : null;
+      const isShortcutPress =
+        !isArenaRoute &&
+        e.shiftKey &&
+        !e.ctrlKey &&
+        !e.altKey &&
+        !e.metaKey &&
+        e.code === 'Space' &&
+        !e.repeat &&
+        !isEditableTarget(eventTarget) &&
+        !isEditableTarget(focusTarget);
+
+      if (isShortcutPress) {
+        e.preventDefault();
+        const now = Date.now();
+        if (now - lastShiftSpaceTime < 700) {
+          lastShiftSpaceTime = 0;
+          try {
+            const docAny = document as any;
+            const elAny = document.documentElement as any;
+            if (isFullscreen()) {
+              if (document.exitFullscreen) {
+                await document.exitFullscreen();
+              } else if (docAny.webkitExitFullscreen) {
+                await docAny.webkitExitFullscreen();
               }
-            } catch (_err) {
-              setShowGamingPill(true);
-              setTimeout(() => setShowGamingPill(false), 3000);
+            } else if (elAny.requestFullscreen) {
+              await elAny.requestFullscreen();
+            } else if (elAny.webkitRequestFullscreen) {
+              await elAny.webkitRequestFullscreen();
+            } else if (elAny.mozRequestFullScreen) {
+              await elAny.mozRequestFullScreen();
             }
-          } else {
-            lastShiftSpaceTime = now;
+          } catch {
+            // Fullscreenchange remains the source of truth if the browser
+            // rejects the request.
+            handleFullscreenChange();
           }
+        } else {
+          lastShiftSpaceTime = now;
         }
+      } else if (lastShiftSpaceTime) {
+        lastShiftSpaceTime = 0;
       }
 
-      // Escape to exit fullscreen if active
-      if (e.code === 'Escape' || e.key === 'Escape') {
+      // Escape to exit fullscreen if active.
+      if ((e.code === 'Escape' || e.key === 'Escape') && isFullscreen()) {
         const docAny = document as any;
-        if (document.fullscreenElement || docAny.webkitFullscreenElement) {
-          if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-          } else if (docAny.webkitExitFullscreen) {
-            docAny.webkitExitFullscreen();
-          }
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        } else if (docAny.webkitExitFullscreen) {
+          docAny.webkitExitFullscreen();
         }
       }
     };
+
+    handleFullscreenChange();
 
     window.addEventListener('keydown', handleGlobalKeyDown);
     document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -596,7 +631,9 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         '/opportunities', '/applications', '/placement', '/internships', '/verify',
         '/pins',
         // Innovation Hub & Collaborative Squads
-        '/innovation-hub', '/innovation'
+        '/innovation-hub', '/innovation',
+        // Item Shop
+        '/shop'
       ];
       const isAllowedTab = allowedStudentTabs.some(tab => pathname === tab || pathname.startsWith(tab + '/'));
       if (!isAllowedTab) {
@@ -696,6 +733,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         setMobileOpen={setMobileOpen}
         toggleLeftSidebar={toggleLeftSidebar}
         activeTourRoute={activeTourRoute}
+        activeTourTabKey={activeTourTabKey}
         setActiveAcademicTab={setActiveAcademicTab}
         activeAcademicTab={activeAcademicTab}
         currentSearch={searchParams?.toString() || ''}
@@ -714,7 +752,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <AppHeader
           isLessonOrDetail={isLessonOrDetail}
           isGroupDiscussionCall={isGroupDiscussionCall}
-          isRoleplayActive={isRoleplayActive || isArenaDuelActive}
+          isRoleplayActive={isRoleplayActive || isInterviewActiveState}
           effectiveFocusMode={effectiveFocusMode}
           toggleFocusMode={toggleFocusMode}
           mobileOpen={mobileOpen}
@@ -732,15 +770,23 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           wsConnected={wsConnected}
           unread={unread}
           userId={user?.id}
+          toggleRightSidebar={toggleRightSidebar}
+          isRightSidebarOpen={!rightCollapsed}
+          isCollegeConnected={isCollegeConnected}
+          activeTourTabKey={activeTourTabKey}
+          onOpenConnectCollege={() => {
+            setCollegeError('');
+            setShowConnectCollegeModal(true);
+          }}
         />
 
         {/* Content */}
         <main 
           className="page-content animate-fade-in"
           style={{
-            padding: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive) ? '0px' : (isGroupDiscussionCall ? '16px' : (effectiveFocusMode ? '32px 48px' : undefined)),
-            maxWidth: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive) ? '100%' : (isGroupDiscussionCall ? '95%' : (effectiveFocusMode ? 960 : '100%')),
-            margin: (isLessonOrDetail || isRoleplayActive || isArenaDuelActive) ? '0' : (isGroupDiscussionCall ? '0 auto' : (effectiveFocusMode ? '0 auto' : '0')),
+            padding: (isLessonOrDetail || isRoleplayActive || isInterviewActiveState) ? '0px' : (isGroupDiscussionCall ? '16px' : (effectiveFocusMode ? '32px 48px' : undefined)),
+            maxWidth: (isLessonOrDetail || isRoleplayActive || isInterviewActiveState) ? '100%' : (isGroupDiscussionCall ? '95%' : (effectiveFocusMode ? 960 : '100%')),
+            margin: (isLessonOrDetail || isRoleplayActive || isInterviewActiveState) ? '0' : (isGroupDiscussionCall ? '0 auto' : (effectiveFocusMode ? '0 auto' : '0')),
             width: '100%',
             transition: 'padding 0.25s, max-width 0.25s'
           }}
@@ -785,17 +831,17 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </main>
       </div>
 
-      {/* Right Sidebar - hidden on all Quest routes so Quest workspace has 100% full screen space */}
-      {isStudent && !effectiveFocusMode && !cleanPath.startsWith('/quests') && isCollegeConnected && (
+      {/* Right Sidebar - completely invisible by default; toggled on demand via Circle 'A' beside Settings Gear */}
+      {isStudent && !effectiveFocusMode && !cleanPath.startsWith('/quests') && isCollegeConnected && !rightCollapsed && (
         <aside
-          className={`sidebar right-sidebar${rightCollapsed ? ' collapsed' : ''}`}
+          className="sidebar right-sidebar"
           style={{
-            width: rightCollapsed ? 'var(--sidebar-collapsed-w, 64px)' : 'var(--sidebar-right-w, 228px)',
+            width: 'var(--sidebar-right-w, 240px)',
             background: 'radial-gradient(ellipse 180% 60% at 100% 0%, rgba(168, 85, 247, 0.16) 0%, transparent 65%), linear-gradient(270deg, transparent 0%, transparent 90%, rgba(168, 85, 247, 0.08) 100%), linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, color-mix(in srgb, var(--bg-sidebar) 94%, transparent) 100%)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
             borderLeft: '1.5px solid rgba(99, 102, 241, 0.18)',
-            transition: 'width 0.25s cubic-bezier(0.4, 0, 0.2, 1), border 0.25s',
+            transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
             overflow: 'hidden',
             display: 'flex',
             flexDirection: 'column',
@@ -806,73 +852,101 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
             zIndex: 10
           }}
         >
-          {/* Header */}
-          {!rightCollapsed ? (
-            <div style={{ padding: '16px 14px 12px', borderBottom: '1px solid var(--border)' }}>
+          {/* Header with Close ✕ */}
+          <div style={{ padding: '14px 14px 12px', borderBottom: '1px solid var(--border)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+            <div>
               <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--t1)' }}>{institutionName}</div>
               <div style={{ fontSize: 11, color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.5px', textTransform: 'uppercase' }}>Services &amp; Life</div>
             </div>
-          ) : (
-            <div style={{ padding: '16px 0 12px', borderBottom: '1px solid var(--border)', textAlign: 'center', fontSize: 13, fontWeight: 900, color: 'var(--accent)' }}>
-              {institutionInitials}
-            </div>
-          )}
+            <button
+              type="button"
+              onClick={() => toggleRightSidebar(true)}
+              aria-label="Close Academic Tabs"
+              title="Close Academic Tabs"
+              style={{
+                width: 26,
+                height: 26,
+                borderRadius: 6,
+                background: 'var(--bg3)',
+                border: '1px solid var(--border)',
+                color: 'var(--t2)',
+                fontSize: 13,
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: 0,
+                lineHeight: 1,
+                flexShrink: 0,
+              }}
+            >
+              ✕
+            </button>
+          </div>
 
           {/* Student Info Card */}
-          {!rightCollapsed ? (
-            <div style={{ padding: '14px', borderBottom: '1px solid var(--border)', background: 'linear-gradient(135deg, var(--accent-light), var(--bg2))', textAlign: 'center' }}>
-              <div style={{ width: 50, height: 50, borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), var(--purple))', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 8px', fontSize: 22, color: 'white', border: '2px solid var(--bg-sidebar)', boxShadow: '0 2px 10px color-mix(in srgb, var(--accent) 20%, transparent)', overflow: 'hidden' }}>
-                👤
-              </div>
-              {(() => {
-                const rawDisp = typeof user?.displayName === 'string' ? user.displayName : (typeof user?.name === 'string' ? user.name : '');
-                const rawReal = (user as any)?.fullName || (user as any)?.full_name || (user as any)?.candidateName || (user as any)?.onboardingAnswers?.candidateName || (user as any)?.onboardingAnswers?.fullName;
-                const realName = typeof rawReal === 'string' ? rawReal : '';
-                const studentName = (rawDisp && !rawDisp.startsWith('usr_') && rawDisp.toLowerCase() !== 'student') ? rawDisp : (realName || rawDisp || 'Student');
-                const rawUName = typeof user?.username === 'string' ? user.username : '';
-                const pinitId = (user as any)?.pinitId || (user as any)?.pinit_id || (user as any)?.registerNumber || (user as any)?.register_number || '';
-                const handleOrRoll = (rawUName && !rawUName.startsWith('usr_')) ? rawUName : (user?.registerNumber || (typeof user?.email === 'string' ? user.email.split('@')[0] : ''));
-                return (
-                  <>
-                    <div style={{ fontSize: 14.5, fontWeight: 700, marginBottom: 2, color: 'var(--t1)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{studentName}</div>
-                    {pinitId && typeof pinitId === 'string' && pinitId.startsWith('PIN-') ? (
-                      <div style={{ fontSize: 10.5, color: 'var(--accent)', marginBottom: 6, fontFamily: 'var(--font-mono)', fontWeight: 800, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', letterSpacing: '0.5px' }}>
-                        {pinitId}
-                      </div>
-                    ) : handleOrRoll ? (
-                      <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 6, fontFamily: 'var(--font-mono)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{handleOrRoll}</div>
-                    ) : null}
-                  </>
-                );
-              })()}
-              {(() => {
-                const batchName = (user as any)?.batch || 'General Batch';
-                const rawColor = colorMap[batchName] || 'var(--brand)';
-                const safeColor = typeof rawColor === 'string' && rawColor.startsWith('#') ? rawColor : 'var(--brand)';
-                return (
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: `${safeColor}18`, border: `1px solid ${safeColor}33`, borderRadius: 20, padding: '3px 10px' }}>
-                    <span style={{ width: 6, height: 6, borderRadius: '50%', background: safeColor, display: 'inline-block' }} />
-                    <span style={{ fontSize: 12, fontWeight: 700, color: safeColor }}>{batchName}</span>
+          <div style={{ padding: '14px 14px 16px', borderBottom: '1px solid var(--border)', background: 'linear-gradient(135deg, var(--accent-light), var(--bg2))', textAlign: 'center', flexShrink: 0 }}>
+            {(() => {
+              const rawDisp = typeof user?.displayName === 'string' ? user.displayName : (typeof user?.name === 'string' ? user.name : '');
+              const rawReal = (user as any)?.fullName || (user as any)?.full_name || (user as any)?.candidateName || (user as any)?.onboardingAnswers?.candidateName || (user as any)?.onboardingAnswers?.fullName;
+              const realName = typeof rawReal === 'string' ? rawReal : '';
+              const studentName = (rawDisp && !rawDisp.startsWith('usr_') && rawDisp.toLowerCase() !== 'student') ? rawDisp : (realName || rawDisp || 'Student');
+              const avatarInitial = (studentName.trim()[0] || 'S').toUpperCase();
+              const rawUName = typeof user?.username === 'string' ? user.username : '';
+              const pinitId = (user as any)?.pinitId || (user as any)?.pinit_id || (user as any)?.registerNumber || (user as any)?.register_number || '';
+              const handleOrRoll = (rawUName && !rawUName.startsWith('usr_')) ? rawUName : (user?.registerNumber || (typeof user?.email === 'string' ? user.email.split('@')[0] : ''));
+              return (
+                <>
+                  <div style={{ width: 50, height: 50, borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), var(--purple))', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 8px', fontSize: 19, fontWeight: 900, fontFamily: 'var(--font-display), sans-serif', color: '#ffffff', border: '2px solid var(--bg-sidebar)', boxShadow: '0 2px 10px color-mix(in srgb, var(--accent) 20%, transparent)', overflow: 'hidden' }}>
+                    {avatarInitial}
                   </div>
-                );
-              })()}
-            </div>
-          ) : (
-            <div style={{ padding: '14px 0', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'center' }}>
-              <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'linear-gradient(135deg, var(--accent), var(--purple))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 15.5, color: 'white', boxShadow: '0 2px 8px color-mix(in srgb, var(--accent) 18%, transparent)' }}>
-                👤
-              </div>
-            </div>
-          )}
+                  <div style={{ fontSize: 14.5, fontWeight: 700, marginBottom: 2, color: 'var(--t1)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{studentName}</div>
+                  {pinitId && typeof pinitId === 'string' && pinitId.startsWith('PIN-') ? (
+                    <div style={{ fontSize: 10.5, color: 'var(--accent)', marginBottom: 6, fontFamily: 'var(--font-mono)', fontWeight: 800, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', letterSpacing: '0.5px' }}>
+                      {pinitId}
+                    </div>
+                  ) : handleOrRoll ? (
+                    <div style={{ fontSize: 11, color: 'var(--t3)', marginBottom: 6, fontFamily: 'var(--font-mono)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{handleOrRoll}</div>
+                  ) : null}
+                </>
+              );
+            })()}
+            {(() => {
+              const batchName = (user as any)?.batch || 'General Batch';
+              const rawColor = colorMap[batchName] || 'var(--brand)';
+              const safeColor = typeof rawColor === 'string' && rawColor.startsWith('#') ? rawColor : 'var(--brand)';
+              return (
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: `${safeColor}18`, border: `1px solid ${safeColor}33`, borderRadius: 20, padding: '3px 10px' }}>
+                  <span style={{ width: 6, height: 6, borderRadius: '50%', background: safeColor, display: 'inline-block' }} />
+                  <span style={{ fontSize: 12, fontWeight: 700, color: safeColor }}>{batchName}</span>
+                </div>
+              );
+            })()}
+          </div>
 
-          {/* Navigation Links */}
-          <nav style={{ flex: 1, padding: '8px 7px', display: 'flex', flexDirection: 'column', gap: 2, overflowY: 'auto' }}>
+          {/* Navigation Links (Unified LeftSidebar Vector SVG + .nav-item Tab Representation) */}
+          <nav
+            className="sidebar-nav"
+            style={{
+              flex: 1,
+              minHeight: 0,
+              padding: '10px 10px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 4,
+              overflowY: 'auto',
+            }}
+          >
             {RIGHT_NAV.map(item => {
               const active = item.href ? isPathActive(pathname, item.href) : activeAcademicTab === item.id;
               const isTourSpotlight = activeTourTabKey === 'academic-sidebar';
+              const navIcon = RIGHT_NAV_SVG_ICONS[item.id] || item.icon;
               return (
                 <button
                   key={item.id}
+                  type="button"
+                  data-testid={`right-nav-${item.id}`}
+                  className={`nav-item${active ? ' active' : ''}${isTourSpotlight ? ' pinit-tour-spotlight' : ''}`}
                   onClick={() => {
                     if (item.href) {
                       setActiveAcademicTab(null);
@@ -888,108 +962,92 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
                       url.searchParams.set('tab', item.id);
                       window.history.pushState({}, '', url.toString());
                     }
-                    toggleRightSidebar(false);
                   }}
                   style={{
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: rightCollapsed ? 'center' : 'flex-start',
-                    gap: rightCollapsed ? 0 : 9,
-                    padding: '9px 10px',
-                    background: isTourSpotlight ? 'rgba(var(--brand-rgb), 0.18)' : (active ? 'rgba(37,99,235,0.08)' : 'transparent'),
-                    border: isTourSpotlight ? '1.5px solid var(--accent)' : '1px solid transparent',
-                    borderColor: isTourSpotlight ? 'var(--accent)' : (active ? 'rgba(37,99,235,0.15)' : 'transparent'),
-                    borderRadius: 9,
-                    cursor: 'pointer',
-                    color: isTourSpotlight ? '#fff' : (active ? '#1d4ed8' : 'var(--t2)'),
-                    fontWeight: (active || isTourSpotlight) ? 700 : 500,
-                    fontSize: 14.5,
-                    transition: 'all 0.15s',
-                    outline: 'none',
-                    textAlign: 'left',
                     flexShrink: 0,
-                    boxShadow: isTourSpotlight ? '0 0 16px rgba(var(--brand-rgb), 0.5)' : undefined,
+                    padding: '9px 12px',
+                    gap: 10,
+                    margin: 0,
+                    minHeight: 38,
+                    ...(isTourSpotlight ? {
+                      background: 'var(--accent-light)',
+                      border: '1.5px solid var(--accent)',
+                      boxShadow: '0 0 16px rgba(99, 102, 241, 0.35)',
+                      transform: 'scale(1.01)',
+                      transition: 'all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      zIndex: 5,
+                    } : {}),
                   }}
                   title={item.label}
+                  aria-label={item.label}
                 >
-                  <span style={{ fontSize: 17.5, flexShrink: 0, transform: isTourSpotlight ? 'scale(1.15)' : undefined }}>{item.icon}</span>
-                  {!rightCollapsed && <span>{item.label}</span>}
+                  <span
+                    className="nav-icon"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: 22,
+                      height: 22,
+                      flexShrink: 0,
+                      ...(isTourSpotlight ? { transform: 'scale(1.16)', color: 'var(--accent)', transition: 'transform 0.25s' } : {}),
+                    }}
+                  >
+                    {navIcon}
+                  </span>
+                  <span
+                    style={{
+                      flex: 1,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap',
+                      fontWeight: isTourSpotlight ? 800 : undefined,
+                      color: isTourSpotlight ? 'var(--accent)' : undefined,
+                    }}
+                  >
+                    {item.label}
+                  </span>
                 </button>
               );
             })}
           </nav>
 
-          {/* Sidebar Collapse Toggle Button */}
-          <div style={{ padding: '8px 7px', borderTop: '1px solid var(--border)' }}>
+          {/* Sidebar Close Button */}
+          <div style={{ padding: '10px 10px 12px', borderTop: '1px solid var(--border)', flexShrink: 0 }}>
             <button
-              onClick={() => toggleRightSidebar()}
+              onClick={() => toggleRightSidebar(true)}
+              title="Close Academic Tabs"
               style={{
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '9px 10px',
+                gap: 6,
+                padding: '9px 12px',
                 background: 'var(--bg3)',
                 border: '1px solid var(--border)',
                 borderRadius: 9,
                 cursor: 'pointer',
-                color: 'var(--t3)',
-                fontSize: 15.5,
+                color: 'var(--t2)',
+                fontSize: 13.5,
+                fontWeight: 700,
                 outline: 'none'
               }}
             >
-              {rightCollapsed ? '‹' : '›'}
+              <span>✕</span> Close Academic Tabs
             </button>
           </div>
         </aside>
       )}
 
-      {/* Task 4: Circular Campus Academic Trigger when not connected to college */}
-      {isStudent && !effectiveFocusMode && !cleanPath.startsWith('/quests') && !isCollegeConnected && (
-        <button
-          type="button"
-          className="campus-academic-circle-btn"
-          title="Campus Academic — Connect to College"
-          aria-label="Connect to College"
-          onClick={() => {
-            setCollegeError('');
-            setShowConnectCollegeModal(true);
-          }}
-          style={{
-            position: 'fixed',
-            right: 14,
-            top: 72,
-            width: 48,
-            height: 48,
-            borderRadius: '50%',
-            background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)',
-            border: '2px solid rgba(255, 255, 255, 0.25)',
-            boxShadow: '0 4px 18px rgba(99, 102, 241, 0.45), 0 0 12px rgba(168, 85, 247, 0.35)',
-            color: '#ffffff',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            zIndex: 90,
-            transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
-            padding: 0,
-            outline: 'none',
-          }}
-        >
-          <span style={{ fontSize: 16, lineHeight: 1 }}>🏛️</span>
-          <span style={{ fontSize: 8.5, fontWeight: 900, letterSpacing: '0.5px', marginTop: 1, textTransform: 'uppercase' }}>CA</span>
-        </button>
-      )}
-
-      {isStudent && !isLandingPage && !isLessonOrDetail && !effectiveFocusMode && !isRoleplayActive && !isArenaDuelActive && (
+      {isStudent && !isLandingPage && !isLessonOrDetail && !effectiveFocusMode && !isRoleplayActive && !isInterviewActiveState && (
         <GlobalAvatar
           user={user}
           profile={profile}
           refreshProfile={refreshProfile}
           onOpenRightSidebar={() => toggleRightSidebar(false)}
           onExpandLeftNav={() => toggleLeftSidebar(false)}
+          onCollapseLeftNav={() => toggleLeftSidebar(true)}
           isRightSidebarOpen={!rightCollapsed}
           isLeftSidebarOpen={!collapsed}
           onTourSlideChange={(route, tabKey) => {
@@ -1110,7 +1168,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       {showGamingPill && (
         <div style={{
           position: 'fixed',
-          top: 20,
+          bottom: 24,
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 999999,
@@ -1130,7 +1188,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
           letterSpacing: '0.02em',
         }}>
           <span>🎮</span>
-          <span>Gaming Mode Active · Press Shift + Space twice or Esc to exit</span>
+          <span>Fullscreen active · Press Esc to exit</span>
         </div>
       )}
 

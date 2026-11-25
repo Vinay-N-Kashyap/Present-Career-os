@@ -28,9 +28,10 @@ KOKORO_VOICE_MAP: dict[str, str] = {
     # Mentors
     "priya": "af_heart",
     "anish": "am_liam",
+    "akash": "bm_lewis",
     # Teachers
     "kashyap": "am_fenrir",
-    "karthic": "am_karthic",
+    "karthic": "am_adam",
     "maya": "bf_emma",
     "divya": "af_nicole",
     # Legacy

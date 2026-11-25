@@ -8,6 +8,7 @@ import { createClient } from '@supabase/supabase-js';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
 import { getAuthoritativeQuest } from '@/lib/quests/questRegistry';
+import { grantXp } from '@/lib/server/xpGrant';
 
 // STAGE 1 FIX (§3.5 / §3.6 — Java completion authority):
 // Previously, after this route returned `allPassed: true`, the ONLY completion
@@ -42,13 +43,9 @@ async function persistJavaCompletionServerSide(uid: string, questId: string, xpA
     const current: string[] = profile.completed_quests || [];
     if (current.includes(questId)) return; // idempotent
     const newCompleted = [...current, questId];
-    const { data: award, error: awardError } = await admin.rpc('increment_xp', {
-      p_user_id: uid,
-      p_amount: xpAmount,
-      p_reason: `quest:${questId}`,
-    });
-    if (awardError || !award?.ok) {
-      console.warn('[run-java] XP award RPC failed:', awardError?.message || award?.reason);
+    const grant = await grantXp(admin, uid, xpAmount, `quest:${questId}`);
+    if (!grant.ok) {
+      console.warn('[run-java] grantXp failed:', grant.message);
       return;
     }
     const { error: updateErr } = await admin

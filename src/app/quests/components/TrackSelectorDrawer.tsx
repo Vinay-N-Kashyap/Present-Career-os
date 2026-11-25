@@ -152,10 +152,23 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
     return getTodaySummary(enrolledProgress, COURSES_REGISTRY, completedQuests, curriculum);
   }, [activeEnrollment, enrolledPlan, enrolledProgress, COURSES_REGISTRY, completedQuests]);
 
+  const [isStartingTodayQuest, setIsStartingTodayQuest] = React.useState(false);
+
   const continueCourse = () => {
-    const next = courseProgress.next;
+    if (isStartingTodayQuest) return;
+    setIsStartingTodayQuest(true);
+    setTimeout(() => {
+      setIsStartingTodayQuest(false);
+    }, 2500);
+
+    const progressToUse = enrolledProgress || courseProgress;
+    const next = progressToUse?.next;
     const quest = next
-      ? COURSES_REGISTRY.find((c) => c.id === next.courseId)?.quests.find((q) => q.id === next.questId)
+      ? (COURSES_REGISTRY.flatMap((c) => c.quests || []).find((q) => q.id === next.questId) || {
+          id: next.questId,
+          title: next.questId,
+          type: 'lecture',
+        })
       : undefined;
     if (next && quest && handleLaunchQuest) {
       handleLaunchQuest(quest as unknown as Quest, next.courseId);
@@ -456,6 +469,7 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
                   summary={todaySummary}
                   onStart={continueCourse}
                   onOpenProject={() => setShowCapstonePortal(true)}
+                  isStarting={isStartingTodayQuest}
                 />
               )}
 
@@ -489,9 +503,9 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
                 onOpenCapstonePortal={() => setShowCapstonePortal(true)}
-                onChangePlan={() => {
+                onChangePlan={async () => {
                   if (typeof window !== 'undefined' && window.confirm('Are you sure you want to view the course catalog and switch programs?')) {
-                    crashCourseEnrollmentService.clearEnrollment();
+                    await crashCourseEnrollmentService.pauseActiveEnrollment();
                     setActiveEnrollment(null);
                   }
                 }}
@@ -828,8 +842,8 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
         </div>
       )}
 
-      {/* ── SUB-TAB 2 VIEW: CUSTOM ROADMAP HEADER ── */}
-      {activeSubTab === 'custom_roadmap' && (
+      {/* ── SUB-TAB 2 VIEW: CUSTOM ROADMAP HEADER (Hidden per UX declutter; action moved cleanly into QuestPathView) ── */}
+      {false && activeSubTab === 'custom_roadmap' && (
         <div style={{
           marginBottom: 18,
           padding: '16px 20px',
@@ -930,8 +944,8 @@ export const TrackSelectorDrawer: React.FC<TrackSelectorDrawerProps> = ({
         </div>
       )}
 
-      {/* ── MULTI-ROADMAP SWITCHER BAR (Max 3 Concurrent Tracks). Not on the certificate tab, which has its own course. ── */}
-      {activeSubTab !== 'language' && activeSubTab !== 'certification_passport' && (() => {
+      {/* ── MULTI-ROADMAP SWITCHER BAR (Shown on Standalone only; hidden on Custom Roadmap to declutter frontend) ── */}
+      {activeSubTab !== 'language' && activeSubTab !== 'certification_passport' && activeSubTab !== 'custom_roadmap' && (() => {
         const myActiveCourseIds = Array.from(new Set([activeCourseId, ...activeCourseIds].filter(Boolean))) as string[];
         const count = myActiveCourseIds.length;
 

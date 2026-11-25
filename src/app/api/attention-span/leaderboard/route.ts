@@ -49,13 +49,24 @@ export async function POST(req: Request) {
     const userId = gated.user!.id;
     const ip = getClientIp(req);
 
-    // Rate-limit submissions to prevent script-driven score inflation
-    const rl = checkRateLimit(`attention_leaderboard_${userId}_${ip}`, { limit: 15, windowMs: 60_000 });
+    // Cooldown + hourly rate-limit to prevent automated score farming (1 submit per 25s, max 12/hr)
+    const cooldown = checkRateLimit(`attention_leaderboard_cd_${userId}`, { limit: 1, windowMs: 25_000 });
+    if (!cooldown.allowed) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error: 'Please complete a full game round before submitting another score.',
+          code: 'RATE_LIMIT_COOLDOWN',
+        },
+        { status: 429 }
+      );
+    }
+    const rl = checkRateLimit(`attention_leaderboard_${userId}_${ip}`, { limit: 12, windowMs: 3_600_000 });
     if (!rl.allowed) {
       return NextResponse.json(
         {
           ok: false,
-          error: 'Rate limit exceeded. Please wait before submitting more scores.',
+          error: 'Hourly submission limit reached. Please continue playing later.',
           code: 'RATE_LIMIT_EXCEEDED',
         },
         { status: 429 }
@@ -80,7 +91,8 @@ export async function POST(req: Request) {
 
     const result = await addAttentionAccuracy(userId, cleanDisplayName, earned);
     if (!result.ok) {
-      return NextResponse.json(result, { status: 400 });
+      const status = (result as { error?: string }).error === 'DAILY_ACCURACY_CAP_REACHED' ? 429 : 400;
+      return NextResponse.json(result, { status });
     }
 
     return NextResponse.json({

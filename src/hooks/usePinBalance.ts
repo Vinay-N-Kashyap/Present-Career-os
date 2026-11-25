@@ -7,6 +7,7 @@ import { spendPinsDB } from '@/lib/supabaseService';
 import { supabase } from '@/lib/supabaseClient';
 import { useAuth } from '@/lib/context/AuthContext';
 import { generateTxId } from '@/lib/utils/transactionId';
+import { canSpendFromCurrentPins, DAILY_PIN_CAP, splitCreditIntoWallets } from '@/lib/pins/pinWalletRules';
 
 export { generateTxId };
 
@@ -143,22 +144,50 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
     async function hydrateFromServer() {
       try {
         let authoritativeBalance: number | null = null;
+        let apiBonusPins: number | null = null;
+        let apiPinHistory: PinTransaction[] | null = null;
 
-        // 1. Attempt authoritative RPC first
-        const { data: rpcData, error: rpcErr } = await supabase.rpc('get_pin_balance', {
-          p_user_id: effectiveUserId,
-        });
+        // 0. Hit authoritative balance API first so 1:00 AM IST lazy reset runs for purchased-plan users
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.access_token) {
+            const res = await fetch('/api/pins/balance', {
+              headers: { Authorization: `Bearer ${session.access_token}` },
+              cache: 'no-store',
+            });
+            if (res.ok) {
+              const payload = await res.json();
+              if (payload?.ok && typeof payload.pins === 'number') {
+                authoritativeBalance = payload.pins;
+                if (typeof payload.bonusPins === 'number') apiBonusPins = payload.bonusPins;
+                if (Array.isArray(payload.transactions)) apiPinHistory = payload.transactions;
+              }
+            }
+          }
+        } catch {}
 
-        if (!rpcErr && typeof rpcData === 'number') {
-          authoritativeBalance = rpcData;
+        // 1. Attempt authoritative RPC if API route was skipped
+        if (authoritativeBalance === null) {
+          const { data: rpcData, error: rpcErr } = await supabase.rpc('get_pin_balance', {
+            p_user_id: effectiveUserId,
+          });
+
+          if (!rpcErr && typeof rpcData === 'number') {
+            authoritativeBalance = rpcData;
+          }
         }
 
-        // 2. Fetch history, bonus pins, and fallback balance from canonical users table
-        const { data: userData, error: userErr } = await supabase
-          .from('users')
-          .select('pins, pin_history, bonus_pins')
-          .eq('id', effectiveUserId)
-          .maybeSingle();
+        // 2. Fetch history, bonus pins, and fallback balance from canonical users table if needed
+        const needsUserTableRead = authoritativeBalance === null || apiBonusPins === null || apiPinHistory === null;
+        const userResult = needsUserTableRead
+          ? await supabase
+              .from('users')
+              .select('pins, pin_history, bonus_pins')
+              .eq('id', effectiveUserId)
+              .maybeSingle()
+          : { data: null, error: null };
+        const userData = userResult.data;
+        const userErr = userResult.error;
 
         if (authoritativeBalance === null && !userErr && userData && typeof userData.pins === 'number') {
           authoritativeBalance = userData.pins;
@@ -174,14 +203,16 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
           } catch {}
         }
 
-        if (userData && typeof userData.bonus_pins === 'number' && isMounted) {
-          setBonusPinsState(userData.bonus_pins);
+        const resolvedBonus = apiBonusPins ?? (userData && typeof userData.bonus_pins === 'number' ? userData.bonus_pins : null);
+        if (resolvedBonus !== null && isMounted) {
+          setBonusPinsState(resolvedBonus);
         }
 
-        if (userData && Array.isArray(userData.pin_history) && isMounted) {
+        const resolvedHistory = apiPinHistory ?? (userData && Array.isArray(userData.pin_history) ? userData.pin_history : null);
+        if (resolvedHistory && isMounted) {
           setPinHistoryState(prev => {
             const map = new Map<string, PinTransaction>();
-            for (const tx of userData.pin_history) {
+            for (const tx of resolvedHistory) {
               if (tx && tx.id) map.set(tx.id, tx);
             }
             for (const tx of prev) {
@@ -276,8 +307,12 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
 
     api.post('/api/pins/earn', { source, amount, reason }).catch(() => {});
 
-    // Optimistically update React state only
-    setPinsState(prev => prev + amount);
+    // Optimistically split credit: fill Current Pins up to 120 cap first, overflow to Bonus Vault
+    const split = splitCreditIntoWallets(pins, bonusPins, amount, DAILY_PIN_CAP);
+    setPinsState(split.newPins);
+    if (split.toBonus > 0) {
+      setBonusPinsState(split.newBonus);
+    }
 
     const tx: PinTransaction = {
       id: generateTxId('tx'),
@@ -289,19 +324,23 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
     };
     setPinHistoryState(prev => [tx, ...prev].slice(0, 100));
     toast.success(`+${amount} Pins Credited ⚡`, reason ?? `${source.replace(/_/g, ' ')} completed`);
-  }, []);
+  }, [pins, bonusPins]);
 
   const canAfford = useCallback((featureKey: string): boolean => {
     const cost = PIN_COSTS[featureKey]?.cost ?? 0;
-    return (pins + bonusPins) >= cost;
-  }, [pins, bonusPins]);
+    return canSpendFromCurrentPins(pins, cost);
+  }, [pins]);
 
   const spendPins = useCallback(async (featureKey: string, itemId?: string, customReason?: string): Promise<boolean> => {
     const meta = PIN_COSTS[featureKey];
     if (!meta) return true;
-    const totalAvailable = pins + bonusPins;
-    if (totalAvailable < meta.cost) {
-      toast.error(`Insufficient Pins 📌`, `Need ${meta.cost} pins for ${meta.label}. Basic plan students receive 120 pins daily at 1:00 AM IST, or top up at ₹1 = 10 pins.`);
+
+    // STRICT RULE: Every feature usage deducts strictly from Current Pins (`pins`), NEVER Bonus Vault (`bonusPins`).
+    if (!canSpendFromCurrentPins(pins, meta.cost)) {
+      const msg = bonusPins > 0
+        ? `Need ${meta.cost} Current Pins for ${meta.label} (you have ${pins}/${DAILY_PIN_CAP}). Refill Current Pins from your ${bonusPins.toLocaleString()} Bonus Vault pins first.`
+        : `Need ${meta.cost} Current Pins for ${meta.label} (you have ${pins}/${DAILY_PIN_CAP}). Daily pins reset to ${DAILY_PIN_CAP} at 1:00 AM IST or buy pins.`;
+      toast.error(`Insufficient Current Pins 📌`, msg);
       return false;
     }
 
@@ -309,7 +348,12 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
       try {
         const result = await spendPinsDB(effectiveUserId, featureKey, itemId);
         if (!result.ok) {
-          toast.error(`Pins Out of Sync 🔄`, result.reason === 'INSUFFICIENT_PINS' ? 'Insufficient pins in authoritative balance.' : 'Failed to deduct pins on server.');
+          toast.error(
+            `Insufficient Current Pins 📌`,
+            result.message || (result.reason === 'INSUFFICIENT_PINS'
+              ? 'Insufficient Current Pins in authoritative balance. Refill from Bonus Vault or top up.'
+              : 'Failed to deduct pins on server.')
+          );
           return false;
         }
         if (typeof result.newBalance === 'number') {
@@ -326,14 +370,8 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
         return false;
       }
     } else {
-      if (pins >= meta.cost) {
-        setPinsState(prev => Math.max(0, prev - meta.cost));
-      } else {
-        const fromDaily = pins;
-        const fromBonus = meta.cost - fromDaily;
-        setPinsState(0);
-        setBonusPinsState(prev => Math.max(0, prev - fromBonus));
-      }
+      // Guest fallback: deduct strictly from Current Pins only, never Bonus Vault
+      setPinsState(prev => Math.max(0, prev - meta.cost));
     }
 
     const tx: PinTransaction = {

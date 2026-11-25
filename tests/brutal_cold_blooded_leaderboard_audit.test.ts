@@ -5,9 +5,11 @@ import path from 'path';
 
 const ROOT = process.cwd();
 const leaderboardPagePath = path.join(ROOT, 'src/app/leaderboard/page.tsx');
+const competitionStylesPath = path.join(ROOT, 'src/app/competition-experience.module.css');
 const leaderboardRoutePath = path.join(ROOT, 'src/app/api/leaderboard/route.ts');
 
 const leaderboardPage = fs.readFileSync(leaderboardPagePath, 'utf8');
+const competitionStyles = fs.readFileSync(competitionStylesPath, 'utf8');
 const leaderboardRoute = fs.readFileSync(leaderboardRoutePath, 'utf8');
 const competitionNavigation = fs.readFileSync(path.join(ROOT, 'src/components/competition/CompetitionNavigation.tsx'), 'utf8');
 
@@ -40,8 +42,8 @@ test('BRUTAL VECTOR 1: Zero mock squads & zero hardcoded demo data in backend an
 
   // Verify frontend empty state with action link
   assert.ok(
-    leaderboardPage.includes('No Active Student Guild Squads This Sprint'),
-    'Frontend must display empty state when guilds.length === 0'
+    leaderboardPage.includes('No Project Squads Found'),
+    'Frontend must display an honest empty state when there are no project squads'
   );
   assert.ok(
     leaderboardPage.includes('href="/projects"'),
@@ -69,11 +71,14 @@ test('BRUTAL VECTOR 2: Space reclamation, HUD elevation, and ~25% compact sizing
     'Cockpit Telemetry HUD must be present with test ID'
   );
   assert.ok(
-    leaderboardPage.includes("padding: '12px 18px'"),
-    'Cockpit HUD must have compact padding: 12px 18px'
+    leaderboardPage.includes('className={styles.leagueCockpit}') &&
+      competitionStyles.includes('.leagueCockpit {') &&
+      competitionStyles.includes('padding: 17px clamp(17px, 2.1vw, 27px)') &&
+      competitionStyles.includes('@media (max-width: 980px)'),
+    'Cockpit HUD must use the shared compact spacing and responsive layout'
   );
   assert.ok(
-    leaderboardPage.includes('fontSize: 20'),
+    competitionStyles.includes('.leagueRankNumber { color: var(--warning, #d97706); font-size: 20px;'),
     'Rank display font must be scaled down to 20px'
   );
   // 3. Dynamic Circles housed inside HUD per Task 1
@@ -103,14 +108,12 @@ test('BRUTAL VECTOR 3: Anti-unranked logic, Supabase league persistence & active
     'handleJoinLeague must fire pinit:user_profile_updated event'
   );
 
-  // 2. Multi-channel user identification in API
+  // 2. Verified user identity in production; client ID hints stay test-only
   assert.ok(
-    leaderboardRoute.includes("req.headers.get('x-user-id')"),
-    'API must read x-user-id header'
-  );
-  assert.ok(
-    leaderboardRoute.includes("url.searchParams.get('userId')"),
-    'API must read userId query parameter'
+    leaderboardRoute.includes("process.env.NODE_ENV !== 'production' && process.env.ALLOW_DEV_AUTH_BYPASS === 'true'") &&
+      leaderboardRoute.includes("req.headers.get('x-user-id')") &&
+      leaderboardRoute.includes("url.searchParams.get('userId')"),
+    'API may use client ID hints only in explicitly enabled non-production test mode'
   );
 
   // 3. Off-cohort user appended to entries and returned in payload
@@ -125,8 +128,8 @@ test('BRUTAL VECTOR 3: Anti-unranked logic, Supabase league persistence & active
 
   // 4. Reactive client hydration and search integrity
   assert.ok(
-    leaderboardPage.includes('setServerCurrentUser(data.currentUser);'),
-    'Frontend must record server-computed currentUser'
+    leaderboardPage.includes('setServerCurrentUser(responseCurrentUser);'),
+    'Frontend must record the rank-reconciled server current user'
   );
   assert.ok(
     leaderboardPage.includes('setJoinedLeague(true);'),

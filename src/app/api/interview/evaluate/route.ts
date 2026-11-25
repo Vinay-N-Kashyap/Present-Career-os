@@ -7,6 +7,13 @@ import { z } from 'zod';
 import { createEvaluationSignature, createTopicEvaluationSignature } from '@/lib/interview/evaluationSignature';
 import { completeActiveLiveInterview } from '@/lib/interview/activeSessionRegistry';
 import { loadActiveLiveSession, markLiveSessionEvaluated, transcriptForModel, type LiveSession } from '@/lib/interview/liveSession';
+import { extractJsonObject } from '@/lib/interview/jsonExtract';
+import {
+  buildQuestionBenchmarks,
+  extractDefendedTechStack,
+  isTrivialOrNonSubstantiveAnswer,
+  SKIP_TURN_REGEX
+} from '@/lib/interview/postInterviewInsights';
 
 const InterviewEvaluateSchema = z.object({
   type: z.string().optional(),
@@ -22,6 +29,10 @@ const InterviewEvaluateSchema = z.object({
   explanation: z.string().optional(),
   transcript: z.string().optional(),
   currentStage: z.string().optional(),
+  companyContext: z.string().optional(),
+  jdContext: z.string().optional(),
+  selectedLang: z.string().optional(),
+  eliminatedInRound: z.number().optional(),
 }).passthrough();
 import {
   calculateRoleWeightedScore,
@@ -37,10 +48,14 @@ import { evaluateSystemTopology } from '@/lib/interview/systemDesignEvaluator';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { grantXp, todaysXp } from '@/lib/server/xpGrant';
 import { normalizeAnswerQuality } from '@/lib/interview/evaluationQuality';
+import {
+  calculateInterviewWeeklyXp,
+  isSuccessfulInterviewForCareerSync,
+  syncSuccessfulInterviewToPortfolioAndResume,
+} from '@/lib/interview/interviewRewards';
 
-/** XP for a passed interview, granted here (never by the browser), for at most this many passes a day. */
-const INTERVIEW_PASS_XP = 150;
-const INTERVIEW_XP_PER_DAY = 3;
+/** Max server-verified interview XP awards per day (chunked 500-XP ledger rows). */
+const INTERVIEW_XP_LEDGER_CAP_PER_DAY = 6;
 
 /**
  * Expands evaluation context to 35,000 chars while preserving both
@@ -107,11 +122,14 @@ export async function POST(req: Request) {
           ? Math.min(1.0, matchedComponents.length / Math.min(4, uniqueNodeTerms.length))
           : 0.6;
 
-        // 2. Architectural reasoning and causal justification clauses
+        // 2. Domain-aware reasoning and causal justification clauses
         const justificationPhrases = [
           'because', 'in order to', 'trade-off', 'tradeoff', 'mitigate',
           'alleviate', 'bottleneck', 'redundancy', 'failover', 'throughput',
-          'consistency', 'latency', 'decouple', 'prevent', 'handles'
+          'consistency', 'latency', 'decouple', 'prevent', 'handles',
+          // Business / Commerce justification vocabulary
+          'margin', 'conversion', 'retention', 'fulfillment', 'working capital',
+          'cac', 'ltv', 'cash flow', 'audit', 'compliance', 'sla', 'inventory'
         ];
         const matchedJustifications = justificationPhrases.filter(p => lowerDefense.includes(p));
 
@@ -127,16 +145,32 @@ export async function POST(req: Request) {
         dynamicComms = Math.min(95, Math.max(45, 50 + reasoningScore + alignmentScore + articulationScore));
       }
 
+      const isNonTechEval = domainStream === 'non_tech';
+      const domainMetrics = isNonTechEval
+        ? [
+            { key: 'workflow', label: 'Workflow Logic', score: sysEval.score },
+            { key: 'growth', label: 'Growth Leverage', score: sysEval.scalabilityRating },
+            { key: 'continuity', label: 'Ops Continuity', score: sysEval.reliabilityRating },
+            { key: 'defense', label: 'Defense Clarity', score: dynamicComms },
+          ]
+        : [
+            { key: 'topology', label: 'Architecture', score: sysEval.score },
+            { key: 'scalability', label: 'Scalability', score: sysEval.scalabilityRating },
+            { key: 'reliability', label: 'Reliability', score: sysEval.reliabilityRating },
+            { key: 'defense', label: 'Defense Clarity', score: dynamicComms },
+          ];
+
       return NextResponse.json({
         evaluation: {
           score: sysEval.score,
           verdict: sysEval.grade,
-          readiness: `${sysEval.grade} Architecture`,
+          readiness: `${sysEval.grade} ${isNonTechEval ? 'Business Workflow' : 'Architecture'}`,
           summary: sysEval.summary,
           strengths: sysEval.strengths,
           weaknesses: sysEval.bottlenecks,
           improvements: sysEval.recommendations.join(' • '),
           spokenFeedback: sysEval.spokenFeedback,
+          metrics: domainMetrics,
           radar: {
             logic: sysEval.score,
             systems: sysEval.score,
@@ -180,7 +214,7 @@ export async function POST(req: Request) {
 
     const systemPrompt = `You are a fair, evidence-led interview assessor evaluating a candidate for "${roleConfig.roleName}" (${stream} stream).
 Role Rubric Focus: ${roleConfig.rubricFocus}
-
+${typeof body.companyContext === 'string' && body.companyContext.trim() ? `\nCompany Hiring Standards:\n${body.companyContext.trim().slice(0, 1000)}\n` : ''}${typeof body.jdContext === 'string' && body.jdContext.trim() ? `\nTarget Job Description Context:\n${body.jdContext.trim().slice(0, 1000)}\n` : ''}
 Assess every CANDIDATE response against the immediately preceding INTERVIEWER question, then summarize performance across the complete transcript. Evaluate these 5 performance dimensions (0-100 scale):
 1. logic (algorithmic rigor, analytical logic, quantitative thinking)
 2. systems (architecture, scalability, workflow design, structural trade-offs)
@@ -218,6 +252,9 @@ Return ONLY valid JSON matching this schema:
       {"dimension": "questionRelevance|answerAccuracy|reasoningDepth|conclusionQuality", "quote": "exact short candidate quote", "assessment": "what this quote demonstrates"}
     ]
   },
+  "question_breakdown": [
+    {"question": "short question summary", "candidate_answer": "brief summary of what candidate answered", "ideal_answer": "concise 10/10 benchmark answer", "score": <0-100>, "feedback": "specific improvement note", "missed_concepts": ["concept1"]}
+  ],
   "strengths": ["string", "string"],
   "weaknesses": ["string"],
   "improvement_tips": ["string", "string"],
@@ -225,54 +262,108 @@ Return ONLY valid JSON matching this schema:
 }`;
 
     const groqKeysStr = process.env.GROQ_API_KEYS || '';
-    let groqKeys = groqKeysStr.split(',').map(k => k.trim()).filter(Boolean);
-    const singleGroqKey = process.env.GROQ_API_KEY;
-    if (singleGroqKey && !groqKeys.includes(singleGroqKey)) {
-      groqKeys.push(singleGroqKey);
+    const groqKeys = groqKeysStr.split(',').map(k => k.trim()).filter(Boolean);
+    for (const candidateKey of [process.env.GROQ_API_KEY, process.env.NEXT_PUBLIC_GROQ_API_KEY]) {
+      const clean = (candidateKey || '').trim();
+      if (clean && !groqKeys.includes(clean)) {
+        groqKeys.push(clean);
+      }
     }
+    const EVAL_GROQ_MODELS = Array.from(new Set([
+      process.env.GROQ_MODEL || 'qwen/qwen3.8-27b',
+      'openai/gpt-oss-20b',
+      'openai/gpt-oss-120b',
+    ]));
+    const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || process.env.GOOGLE_AI_KEY;
     const openRouterKey = process.env.OPENROUTER_API_KEY;
 
     let rawParsedEval: any = null;
 
     const candidateTranscriptPrompt = formatTranscriptForEvaluation(formatted);
 
-    // 1. Attempt Groq Multi-Key Rotation Pool
+    // 1. Attempt Groq Multi-Key & Live Active Model Pool (llama-3.3-70b-versatile returns 404 on current Groq accounts)
     for (const key of groqKeys) {
-      try {
-        console.log(`[Interview Evaluate API] Attempting Groq evaluation with key ending in ...${key.slice(-4)}`);
-        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${key}`,
-          },
-          body: JSON.stringify({
-            model: 'llama-3.3-70b-versatile',
+      for (const model of EVAL_GROQ_MODELS) {
+        try {
+          console.log(`[Interview Evaluate API] Attempting Groq evaluation with ${model} and key ending in ...${key.slice(-4)}`);
+          const isGptOss = model.startsWith('openai/gpt-oss');
+          const groqBody: Record<string, unknown> = {
+            model,
+            response_format: { type: 'json_object' },
             messages: [
               { role: 'system', content: systemPrompt },
               { role: 'user', content: `Candidate Transcript:\n\n${candidateTranscriptPrompt}` },
             ],
-            max_tokens: 800,
+            max_tokens: isGptOss ? 2200 : 1400,
             temperature: 0.2,
+          };
+          if (isGptOss) groqBody.reasoning_effort = 'low';
+
+          const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${key}`,
+            },
+            body: JSON.stringify(groqBody),
+            signal: AbortSignal.timeout(12000),
+          });
+          if (res.ok) {
+            const data = await res.json();
+            const raw = (data.choices?.[0]?.message?.content || '').trim();
+            const parsed = extractJsonObject(raw);
+            if (parsed) {
+              rawParsedEval = parsed;
+              console.log(`[Interview Evaluate API] Groq evaluation successfully parsed via ${model}`);
+              break;
+            }
+          } else {
+            console.warn(`[Interview Evaluate API] Groq model ${model} returned status: ${res.status}`);
+          }
+        } catch (e: any) {
+          console.warn(`[Interview Evaluate API] Groq evaluation error (${model}):`, e?.message);
+        }
+      }
+      if (rawParsedEval) break;
+    }
+
+    // 2. Fallback to Gemini Flash if Groq pool is exhausted
+    if (!rawParsedEval && geminiKey) {
+      try {
+        console.log('[Interview Evaluate API] Falling back to Gemini Flash evaluation...');
+        const gemRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [
+              {
+                role: 'user',
+                parts: [{ text: `${systemPrompt}\n\nCandidate Transcript:\n\n${candidateTranscriptPrompt}\n\nReturn ONLY the JSON object.` }]
+              }
+            ],
+            generationConfig: {
+              temperature: 0.2,
+              maxOutputTokens: 1600,
+              responseMimeType: 'application/json'
+            }
           }),
           signal: AbortSignal.timeout(15000),
         });
-        if (res.ok) {
-          const data = await res.json();
-          const raw = (data.choices?.[0]?.message?.content || '').trim();
-          const cleanJsonStr = raw.replace(/```json|```/g, '').trim();
-          rawParsedEval = JSON.parse(cleanJsonStr);
-          console.log('[Interview Evaluate API] Groq evaluation successfully parsed');
-          break;
-        } else {
-          console.warn(`[Interview Evaluate API] Groq key returned status: ${res.status}`);
+        if (gemRes.ok) {
+          const gemData = await gemRes.json();
+          const raw = (gemData?.candidates?.[0]?.content?.parts?.[0]?.text || '').trim();
+          const parsed = extractJsonObject(raw);
+          if (parsed) {
+            rawParsedEval = parsed;
+            console.log('[Interview Evaluate API] Gemini evaluation successfully parsed');
+          }
         }
       } catch (e: any) {
-        console.warn('[Interview Evaluate API] Groq evaluation request error/timeout:', e?.message);
+        console.warn('[Interview Evaluate API] Gemini evaluation request error/timeout:', e?.message);
       }
     }
 
-    // 2. Fallback to OpenRouter if Groq pool is exhausted
+    // 3. Fallback to OpenRouter if Groq & Gemini are exhausted
     if (!rawParsedEval && openRouterKey) {
       try {
         console.log('[Interview Evaluate API] Falling back to OpenRouter evaluation...');
@@ -296,9 +387,11 @@ Return ONLY valid JSON matching this schema:
         if (res.ok) {
           const data = await res.json();
           const raw = (data.choices?.[0]?.message?.content || '').trim();
-          const cleanJsonStr = raw.replace(/```json|```/g, '').trim();
-          rawParsedEval = JSON.parse(cleanJsonStr);
-          console.log('[Interview Evaluate API] OpenRouter evaluation successfully parsed');
+          const parsed = extractJsonObject(raw);
+          if (parsed) {
+            rawParsedEval = parsed;
+            console.log('[Interview Evaluate API] OpenRouter evaluation successfully parsed');
+          }
         }
       } catch (e: any) {
         console.warn('[Interview Evaluate API] OpenRouter evaluation request error/timeout:', e?.message);
@@ -340,26 +433,85 @@ Return ONLY valid JSON matching this schema:
     const candidateAnswers = (scoredHistory || [])
       .filter((turn: any) => turn?.role !== 'assistant')
       .map((turn: any) => String(turn?.content || ''));
-    const answerQuality = normalizeAnswerQuality(rawParsedEval.answer_quality, candidateAnswers);
+    const nonSkipAnswers = candidateAnswers.filter(a => a.trim().length > 0 && !SKIP_TURN_REGEX.test(a.trim()));
+    const substantiveAnswers = nonSkipAnswers.filter(a => !isTrivialOrNonSubstantiveAnswer(a));
+    const hasTopologyNodes = Array.isArray(topology?.nodes) && topology.nodes.length > 0;
+    const hasSubmittedCoding = typeof codingScore === 'number' && codingScore > 0;
+    const hasZeroRealEvidence = substantiveAnswers.length === 0 && !hasTopologyNodes && !hasSubmittedCoding;
 
-    const extractedDimensions = {
-      logic: clampScore(sanitizedEvaluation.logic, 65),
-      systems: clampScore(sanitizedEvaluation.systems, 65),
-      comms: clampScore(sanitizedEvaluation.comms, 70),
-      // A recorded interview is judged on the code it recorded (via the evaluator), never on a pass
-      // count the page reports.
-      solving: clampScore(sanitizedEvaluation.solving ?? (live ? undefined : codingScore), 65),
-      star: clampScore(sanitizedEvaluation.star, 65),
-    };
+    const answerQuality = hasZeroRealEvidence
+      ? undefined
+      : normalizeAnswerQuality(rawParsedEval.answer_quality, candidateAnswers);
+
+    const rawLogic = clampScore(sanitizedEvaluation.logic, 0);
+    const rawSystems = hasTopologyNodes ? clampScore(sanitizedEvaluation.systems, 0) : 0;
+    const rawComms = nonSkipAnswers.length > 0 ? clampScore(sanitizedEvaluation.comms, 0) : 0;
+    const rawSolving = hasSubmittedCoding || substantiveAnswers.length > 0
+      ? clampScore(sanitizedEvaluation.solving ?? (live ? undefined : codingScore), 0)
+      : 0;
+    const rawStar = substantiveAnswers.length > 0 ? clampScore(sanitizedEvaluation.star, 0) : 0;
+
+    // Anti-inflation guard: never let an LLM award 40-65% when the candidate gave 0 substantive answers
+    const trivialCap = nonSkipAnswers.length > 0 ? 5 : 0;
+    const extractedDimensions = hasZeroRealEvidence
+      ? {
+          logic: Math.min(rawLogic, trivialCap),
+          systems: 0,
+          comms: Math.min(rawComms, trivialCap),
+          solving: 0,
+          star: 0,
+        }
+      : {
+          logic: rawLogic,
+          systems: rawSystems,
+          comms: rawComms,
+          solving: rawSolving,
+          star: rawStar,
+        };
 
     // Deterministic Role-Weighted Score Calculation (Authority: Code, not LLM)
     const scoringResult = calculateRoleWeightedScore(extractedDimensions, roleKey);
 
-    // Persona-Tailored Pedagogical Coaching (Purely advisory; does NOT alter score)
-    const personaCoaching = generatePersonaCoaching(archetype, scoringResult.sanitizedDimensions, roleKey);
+    // Persona-Tailored Pedagogical Coaching (Purely advisory; never fabricate archetype praise when unattempted)
+    const rawPersonaCoaching = generatePersonaCoaching(archetype, scoringResult.sanitizedDimensions, roleKey);
+    const personaCoaching = hasZeroRealEvidence
+      ? {
+          personaSummary: 'Insufficient interview evidence recorded to generate personalized archetype insights yet.',
+          coachingTips: [
+            'Answer at least Round 1 with concrete project examples, decisions, and measurable results.',
+            'Complete Round 2 and Round 3 before submitting so the panel can evaluate real technical or business work.',
+            'Use the STAR structure (Situation, Task, Action, Result) in Round 4.'
+          ],
+          tailoredStrengths: [],
+          growthArea: 'Complete the interview rounds with substantive answers to receive tailored coaching.',
+        }
+      : rawPersonaCoaching;
 
     // Telemetry Practice Diagnostics (Defect 090: Persisted to DB)
     const telemetryDiagnostics = generateTelemetryDiagnostics(telemetry);
+
+    const deterministicBreakdown = buildQuestionBenchmarks(scoredHistory, topic, stream);
+    const llmBreakdownRaw = Array.isArray(rawParsedEval.question_breakdown) ? rawParsedEval.question_breakdown : [];
+    const questionBreakdown = llmBreakdownRaw.length > 0 && !hasZeroRealEvidence
+      ? llmBreakdownRaw.slice(0, 8).map((q: any, idx: number) => ({
+          index: idx + 1,
+          round: deterministicBreakdown[idx]?.round ?? 1,
+          question: sanitizeLLMOutput(String(q?.question || deterministicBreakdown[idx]?.question || `Question ${idx + 1}`)),
+          candidateAnswer: sanitizeLLMOutput(String(q?.candidate_answer || deterministicBreakdown[idx]?.candidateAnswer || '')),
+          idealAnswer: sanitizeLLMOutput(String(q?.ideal_answer || deterministicBreakdown[idx]?.idealAnswer || '')),
+          score: clampScore(q?.score, deterministicBreakdown[idx]?.score ?? 0),
+          feedback: sanitizeLLMOutput(String(q?.feedback || deterministicBreakdown[idx]?.feedback || '')),
+          missedConcepts: Array.isArray(q?.missed_concepts)
+            ? q.missed_concepts.map((c: unknown) => sanitizeLLMOutput(String(c))).filter(Boolean).slice(0, 5)
+            : (deterministicBreakdown[idx]?.missedConcepts || [])
+        }))
+      : deterministicBreakdown;
+    const defendedTechStack = extractDefendedTechStack(
+      scoredHistory,
+      typeof body.selectedLang === 'string' ? body.selectedLang : undefined,
+      topology,
+      hasSubmittedCoding
+    );
 
     const finalEvaluation = {
       verdict: scoringResult.verdict,
@@ -375,19 +527,28 @@ Return ONLY valid JSON matching this schema:
       strategic_thinking: scoringResult.sanitizedDimensions.systems,
       communication_score: scoringResult.sanitizedDimensions.comms,
       star_alignment: scoringResult.sanitizedDimensions.star,
-      summary: sanitizedEvaluation.summary || `${scoringResult.verdict} performance in ${roleConfig.roleName} interview.`,
+      summary: hasZeroRealEvidence
+        ? `No substantive answers were completed for ${roleConfig.roleName}. Complete at least one round with real explanations to generate a full hiring assessment.`
+        : (sanitizedEvaluation.summary || `${scoringResult.verdict} performance in ${roleConfig.roleName} interview.`),
       answerQuality,
-      strengths: Array.isArray(sanitizedEvaluation.strengths) && sanitizedEvaluation.strengths.length > 0
-        ? sanitizedEvaluation.strengths
-        : personaCoaching.tailoredStrengths,
+      questionBreakdown,
+      defendedTechStack,
+      strengths: hasZeroRealEvidence
+        ? []
+        : (Array.isArray(sanitizedEvaluation.strengths) && sanitizedEvaluation.strengths.length > 0
+            ? sanitizedEvaluation.strengths
+            : (scoringResult.overallScore >= 40 ? personaCoaching.tailoredStrengths : [])),
       weaknesses: Array.isArray(sanitizedEvaluation.weaknesses) && sanitizedEvaluation.weaknesses.length > 0
         ? sanitizedEvaluation.weaknesses
-        : ['Elaborate further on quantifiable technical impact.'],
-      improvements: Array.isArray(sanitizedEvaluation.improvement_tips)
-        ? sanitizedEvaluation.improvement_tips.join(' • ')
-        : (sanitizedEvaluation.improvements || personaCoaching.coachingTips.join(' • ')),
+        : ['Provide concrete examples, analytical reasoning, and measurable outcomes across rounds.'],
+      improvements: hasZeroRealEvidence
+        ? personaCoaching.coachingTips.join(' • ')
+        : (Array.isArray(sanitizedEvaluation.improvement_tips)
+            ? sanitizedEvaluation.improvement_tips.join(' • ')
+            : (sanitizedEvaluation.improvements || personaCoaching.coachingTips.join(' • '))),
       coaching: personaCoaching,
       telemetryDiagnostics,
+      hasRealEvidence: !hasZeroRealEvidence,
     };
 
     // Persist completed evaluation and telemetry diagnostics to database (Defect 090)
@@ -426,21 +587,79 @@ Return ONLY valid JSON matching this schema:
     const evaluationToken = recorded && gated.user?.id
       ? createEvaluationSignature(gated.user.id, finalEvaluation.score, finalEvaluation.verdict)
       : undefined;
+    const isEliminated = Boolean(body.eliminatedInRound);
+    const weeklyXpTier = calculateInterviewWeeklyXp(finalEvaluation.score, { eliminated: isEliminated });
     let xpAwarded = 0;
     let newXp: number | undefined;
-    if (recorded && gated.user?.id && (finalEvaluation.verdict === 'Hire' || finalEvaluation.verdict === 'Conditional Hire')) {
+    let newWeeklyXp: number | undefined;
+    let portfolioSynced = false;
+    let resumeSynced = false;
+
+    if (recorded && gated.user?.id && weeklyXpTier.xp > 0) {
       try {
         const admin = getSupabaseAdmin();
         const today = await todaysXp(admin, gated.user.id, '[interview]');
-        if (today && today.count < INTERVIEW_XP_PER_DAY) {
-          const grant = await grantXp(admin, gated.user.id, INTERVIEW_PASS_XP, `[interview] Passed AI interview: ${String(topic).slice(0, 120)}`);
+        if (!today || today.count < INTERVIEW_XP_LEDGER_CAP_PER_DAY) {
+          const grant = await grantXp(
+            admin,
+            gated.user.id,
+            weeklyXpTier.xp,
+            `[interview] ${weeklyXpTier.tierLabel} (${finalEvaluation.score}%): ${String(topic).slice(0, 100)}`
+          );
           if (grant.ok) {
-            xpAwarded = INTERVIEW_PASS_XP;
+            xpAwarded = weeklyXpTier.xp;
             newXp = grant.newXp;
+            newWeeklyXp = grant.newWeeklyXp;
           }
         }
       } catch (xpErr: unknown) {
-        console.warn('[Interview Evaluate] XP grant failed:', xpErr instanceof Error ? xpErr.message : xpErr);
+        console.warn('[Interview Evaluate] Weekly XP grant failed:', xpErr instanceof Error ? xpErr.message : xpErr);
+      }
+    }
+
+    // Automatically add successful recorded interview (score >= 50%, not eliminated) to Portfolio & Resume
+    if (recorded && gated.user?.id && isSuccessfulInterviewForCareerSync(finalEvaluation.score, { eliminated: isEliminated })) {
+      try {
+        const admin = getSupabaseAdmin();
+        const syncRes = await syncSuccessfulInterviewToPortfolioAndResume(admin, {
+          userId: gated.user.id,
+          sessionId: String(body.liveSessionId || `iv_${Date.now()}`),
+          topic: String(topic || roleConfig.roleName),
+          roleName: roleConfig.roleName,
+          domainStream: body.domainStream === 'non_tech' ? 'non_tech' : 'tech',
+          score: finalEvaluation.score,
+          verdict: finalEvaluation.verdict,
+          defendedSkills: Array.isArray(finalEvaluation.defendedTechStack) ? finalEvaluation.defendedTechStack : [],
+          summary: finalEvaluation.summary,
+        });
+        portfolioSynced = syncRes.portfolioSynced;
+        resumeSynced = syncRes.resumeSynced;
+      } catch (syncErr: unknown) {
+        console.warn('[Interview Evaluate] Portfolio/Resume sync warning:', syncErr);
+      }
+    }
+
+    // Award +3 Trust Score ONLY for genuine non-eliminated recorded interviews meeting the 35% floor (range 0-100, default 50)
+    let newTrustScore: number | undefined;
+    if (recorded && gated.user?.id && !isEliminated && finalEvaluation.score >= 35) {
+      try {
+        const admin = getSupabaseAdmin();
+        const { data: userProfile } = await admin
+          .from('users')
+          .select('trust_score')
+          .eq('id', gated.user.id)
+          .maybeSingle();
+
+        const currentTrust = typeof userProfile?.trust_score === 'number' ? userProfile.trust_score : 50;
+        const nextTrust = Math.min(100, currentTrust + 3);
+
+        await admin
+          .from('users')
+          .update({ trust_score: nextTrust })
+          .eq('id', gated.user.id);
+        newTrustScore = nextTrust;
+      } catch (trustErr) {
+        console.warn('[Interview Evaluate] Trust award warning:', trustErr);
       }
     }
 
@@ -454,7 +673,13 @@ Return ONLY valid JSON matching this schema:
       evaluationToken,
       topicEvaluationToken,
       xpAwarded,
+      weeklyXpAwarded: xpAwarded,
+      weeklyXpTierLabel: weeklyXpTier.tierLabel,
       newXp,
+      newWeeklyXp,
+      newTrustScore,
+      portfolioSynced,
+      resumeSynced,
       recorded,
       success: true,
     });

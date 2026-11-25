@@ -21,7 +21,8 @@ export interface FinanceContextType {
     ai_confidence_score?: number;
     proof_url?: string;
   }) => void;
-  updateVaultItem: (id: string, updates: Partial<VaultItem>) => void;
+  updateVaultItem: (id: string, updates: Partial<VaultItem>, opts?: { skipTrustMutation?: boolean }) => void;
+  removeVaultItem: (id: string) => void | Promise<void>;
   pins: number;
   setPins: (pins: number) => void;
   bonusPins: number;
@@ -111,6 +112,7 @@ export function FinanceProvider({ children }: { children: React.ReactNode }) {
     setVaultItems,
     addVaultItem,
     updateVaultItem,
+    removeVaultItem,
   } = useVault({
     userId,
     onAddXp: () => {},
@@ -147,6 +149,7 @@ export function FinanceProvider({ children }: { children: React.ReactNode }) {
     setVaultItems,
     addVaultItem,
     updateVaultItem,
+    removeVaultItem,
     pins,
     setPins,
     bonusPins: bonusPins || 0,
@@ -171,6 +174,7 @@ export function FinanceProvider({ children }: { children: React.ReactNode }) {
     setVaultItems,
     addVaultItem,
     updateVaultItem,
+    removeVaultItem,
     pins,
     setPins,
     bonusPins,

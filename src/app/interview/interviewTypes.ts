@@ -41,6 +41,49 @@ export interface InterviewSessionRecord {
   improvements: string;
   topology?: any;
   evaluationToken?: string;
+  targetCompany?: string;
+  defendedTechStack?: string[];
+  questionBreakdown?: any[];
+  answerQuality?: any;
+}
+
+/**
+ * Classifies an interview verdict string into visual tone without false-positives on "No Hire".
+ */
+export function getVerdictTone(verdict?: string | null): 'positive' | 'conditional' | 'negative' {
+  const v = String(verdict || '').trim().toLowerCase();
+  if (!v) return 'negative';
+  if (v.includes('no hire') || v.includes('not ready') || v.includes('needs') || v.includes('fail') || v.includes('unverified') || v.includes('eliminat') || v.includes('did not advance')) {
+    return 'negative';
+  }
+  if (v.includes('conditional') || v.includes('borderline') || v.includes('lean')) {
+    return 'conditional';
+  }
+  if (v.includes('hire') || v.includes('pass') || v.includes('strong') || v.includes('excellent')) {
+    return 'positive';
+  }
+  return 'negative';
+}
+
+export function formatReadinessBadge(readiness?: string | null): { label: string; tone: 'positive' | 'conditional' | 'negative' } {
+  const raw = String(readiness || '').trim();
+  const lower = raw.toLowerCase();
+  if (lower.includes('did not advance') || lower.includes('eliminat')) {
+    return { label: raw || 'Did Not Advance', tone: 'negative' };
+  }
+  if (lower === 'strong' || lower.includes('strong hire')) {
+    return { label: 'Strong Hire Ready', tone: 'positive' };
+  }
+  if (lower === 'ready' || (lower.includes('ready') && !lower.includes('not'))) {
+    return { label: raw === 'ready' ? 'Interview Ready' : raw, tone: 'positive' };
+  }
+  if (lower === 'developing' || lower.includes('developing')) {
+    return { label: 'Developing Readiness', tone: 'conditional' };
+  }
+  if (lower === 'not_ready' || lower.includes('not ready')) {
+    return { label: 'Not Ready Yet', tone: 'negative' };
+  }
+  return { label: raw.replace(/_/g, ' '), tone: 'conditional' };
 }
 
 export interface ActiveInterviewDraft {
@@ -64,6 +107,8 @@ export interface ActiveInterviewDraft {
   /** The server's record of this interview (interview_live_sessions), to continue it after a reload. */
   liveSessionId?: string | null;
   tabSwitchCount?: number;
+  targetCompany?: string;
+  round4StartMsgIndex?: number;
   timestamp: number;
 }
 
@@ -79,7 +124,7 @@ export const formatStageLabel = (stage: Stage): string => {
 };
 
 export const AVATAR_POOL: AvatarTeacher[] = [
-  { id: 'priya', name: 'Ms. Priya', title: 'HR & Talent Acquisition Director', emoji: '👩‍💼' },
+  { id: 'sneha', name: 'Ms. Sneha', title: 'HR & Talent Acquisition Director', emoji: '👩‍💼' },
   { id: 'rohan', name: 'Mr. Rohan', title: 'Senior Technical & Applied Evaluator', emoji: '👨‍💻' },
   { id: 'vikram', name: 'Mr. Vikram', title: 'Commerce, Finance & Systems Evaluator', emoji: '👨‍⚖️' },
   { id: 'aisha', name: 'Ms. Aisha', title: 'Executive STAR & Case Evaluator', emoji: '👩‍🏫' }

@@ -53,8 +53,37 @@ let isServerWarming = false;
 let isServerWarm = false;
 let isCloudDisabled = false;
 let lastWarmAt = 0;
+let proxyDegradedCooldownUntil = 0;
 let activeWakePromise: Promise<boolean> | null = null;
 const inFlightCloudRequests = new Map<string, Promise<{ audioBuffer: ArrayBuffer; durationSec: number; engine?: string; visemes?: VisemeEvent[] }>>();
+
+/**
+ * Clean non-error control signal indicating /api/tts gracefully routed to natural browser speech.
+ * Prevents DevTools red errors, stack trace overhead, and pointless chunk retries.
+ */
+export class VoiceFallbackSignal extends Error {
+  readonly isGracefulFallback = true;
+  readonly reason: string;
+  constructor(reason = 'browser-natural') {
+    super(`VOICE_FALLBACK:${reason}`);
+    this.name = 'VoiceFallbackSignal';
+    this.reason = reason;
+  }
+}
+
+export function isVoiceFallbackSignal(err: unknown): boolean {
+  if (!err || typeof err !== 'object') return false;
+  return (err as { isGracefulFallback?: boolean; name?: string }).isGracefulFallback === true
+    || (err as { name?: string }).name === 'VoiceFallbackSignal';
+}
+
+export function isNeuralVoiceTemporarilyUnavailable(): boolean {
+  return Date.now() < proxyDegradedCooldownUntil;
+}
+
+export function setNeuralVoiceFallbackCooldown(ms = 60_000): void {
+  proxyDegradedCooldownUntil = Date.now() + Math.max(5_000, ms);
+}
 
 /** Free-tier Render sleeps after ~15m inactivity — cold instance boot takes 15-25s. */
 const FREE_TIER_TIMEOUT_MS = 25_000;
@@ -101,10 +130,15 @@ export async function pingRenderServer(waitForWarm = false): Promise<boolean> {
       return false;
     };
 
-    // Try standard CORS ping first, silent no-cors fallback if container is booting
-    let ok = await tryPing("cors");
-    if (!ok && !isCloudDisabled) {
+    // Silent background heartbeat uses no-cors directly so Chrome never logs red CORS errors while Render sleeps
+    let ok = false;
+    if (!waitForWarm) {
       ok = await tryPing("no-cors");
+    } else {
+      ok = await tryPing("cors");
+      if (!ok && !isCloudDisabled) {
+        ok = await tryPing("no-cors");
+      }
     }
 
     if (!ok) {
@@ -175,7 +209,51 @@ export async function synthesizeVoice(
     console.log(`[SmartVoiceRouter] Bypassing IndexedDB & Server cache for fresh TTS generation.`);
   }
 
-  // Wake free-tier instance before synthesis (blocks until warm or timeout)
+  // In browser sessions, route through same-origin /api/tts FIRST (unlocks instant Groq Orpheus
+  // with 0ms cold start + Render Kokoro v1.0 INT8 with gender-fidelity guard & zero CORS overhead).
+  // Do NOT block 25s waiting on Render cold-start health ping before trying /api/tts!
+  if (typeof window !== "undefined" && !options.apiEndpoint) {
+    if (!options.bypassCache && isNeuralVoiceTemporarilyUnavailable()) {
+      throw new VoiceFallbackSignal('cooldown');
+    }
+    try {
+      const proxyResult = await fetchCloudFastAPI("/api/tts", text, voice, speed, options.bypassCache);
+      proxyDegradedCooldownUntil = 0;
+      const latencyMs = Math.round(performance.now() - startTime);
+      if (!options.bypassCache && proxyResult.audioBuffer && proxyResult.audioBuffer.byteLength > 800) {
+        await voiceCacheDB.saveAudio(cacheKey, text, voice, speed, proxyResult.audioBuffer, proxyResult.visemes);
+      }
+      notifyVoiceStatus('neural_ready');
+      return {
+        audioBuffer: proxyResult.audioBuffer,
+        source: "CLOUD_FASTAPI",
+        latencyMs,
+        durationSec: proxyResult.durationSec,
+        cacheKey,
+        engine: proxyResult.engine,
+        visemes: proxyResult.visemes,
+      };
+    } catch (proxyErr) {
+      if (isVoiceFallbackSignal(proxyErr)) {
+        throw proxyErr;
+      }
+      const errMsg = proxyErr instanceof Error ? proxyErr.message : String(proxyErr);
+      if (/VOICE_BACKEND_DEGRADED_GTTS/i.test(errMsg)) {
+        setNeuralVoiceFallbackCooldown(60_000);
+        notifyVoiceStatus('fallback');
+        throw new VoiceFallbackSignal('VOICE_BACKEND_DEGRADED_GTTS');
+      }
+      if ((proxyErr as { name?: string })?.name === 'AbortError' || /abort|timeout/i.test(errMsg)) {
+        setNeuralVoiceFallbackCooldown(30_000);
+        notifyVoiceStatus('fallback');
+        throw new VoiceFallbackSignal('timeout');
+      }
+      console.debug('[SmartVoiceRouter] /api/tts unavailable, using browser natural voice:', errMsg);
+      throw new VoiceFallbackSignal('unavailable');
+    }
+  }
+
+  // Wake free-tier instance before direct synthesis (non-browser or explicit apiEndpoint)
   if (CURRENT_RENDER_TIER === "free") {
     await pingRenderServer(true);
   } else {
@@ -225,14 +303,18 @@ async function fetchCloudFastAPI(
   }
 
   const cloudPromise = (async () => {
-    const targetUrl = normalizeTtsEndpoint(
-      endpoint && endpoint.startsWith("http")
-        ? endpoint
-        : DEFAULT_CLOUD_ENDPOINT
-    );
+    const isSameOriginProxy = endpoint.startsWith("/");
+    const targetUrl = isSameOriginProxy
+      ? endpoint
+      : normalizeTtsEndpoint(
+          endpoint && endpoint.startsWith("http")
+            ? endpoint
+            : DEFAULT_CLOUD_ENDPOINT
+        );
 
-    const timeoutMs =
-      CURRENT_RENDER_TIER === "free" ? FREE_TIER_TIMEOUT_MS : PREMIUM_TIMEOUT_MS;
+    const timeoutMs = isSameOriginProxy
+      ? 14_000
+      : (CURRENT_RENDER_TIER === "free" ? FREE_TIER_TIMEOUT_MS : PREMIUM_TIMEOUT_MS);
 
     const attempt = async (url: string) => {
       const controller = new AbortController();
@@ -251,9 +333,25 @@ async function fetchCloudFastAPI(
           signal: controller.signal,
         });
         clearTimeout(timer);
+        const fallbackHeader = response.headers.get("X-Voice-Fallback");
+        const respType = (response.headers.get("Content-Type") || "").toLowerCase();
+        if (fallbackHeader === "browser-natural" || (isSameOriginProxy && respType.includes("application/json"))) {
+          let reason = "browser-natural";
+          let retryAfterMs = 60_000;
+          try {
+            const payload = await response.json();
+            if (payload?.reason) reason = String(payload.reason);
+            if (typeof payload?.retryAfterMs === "number" && payload.retryAfterMs >= 5_000) {
+              retryAfterMs = payload.retryAfterMs;
+            }
+          } catch {}
+          setNeuralVoiceFallbackCooldown(retryAfterMs);
+          notifyVoiceStatus("fallback");
+          throw new VoiceFallbackSignal(reason);
+        }
         if (!response.ok) {
           const errText = await response.text().catch(() => "");
-          console.error(`[SmartVoiceRouter] TTS HTTP ${response.status} Error:`, errText.slice(0, 200));
+          console.debug(`[SmartVoiceRouter] TTS HTTP ${response.status}:`, errText.slice(0, 160));
           throw new Error(`TTS HTTP ${response.status}: ${errText.slice(0, 180)}`);
         }
         const durationHeader =
@@ -293,7 +391,8 @@ async function fetchCloudFastAPI(
     try {
       return await attempt(targetUrl);
     } catch (primaryErr: any) {
-      if (isCloudDisabled) {
+      // Never retry a same-origin /api/tts 503 (e.g. degraded gTTS rejected) against the broken direct Render URL!
+      if (isSameOriginProxy || isCloudDisabled) {
         throw primaryErr;
       }
       console.warn("[SmartVoiceRouter] Primary TTS attempt failed:", primaryErr?.message || primaryErr, "Retrying with warm ping...");

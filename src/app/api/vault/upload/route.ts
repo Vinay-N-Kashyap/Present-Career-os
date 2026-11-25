@@ -28,12 +28,15 @@
 
 import { NextResponse } from 'next/server';
 import { requireUserFromRequest, getBearerToken, getAuthoritativeSupabaseClient } from '@/lib/server/requireAuth';
+import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
 import { validateDocumentSecurity } from '@/lib/ats/documentGateway';
-import { extractDocumentEvidence } from '@/lib/ats/pdfTextExtractor';
+import { isReadableDocumentText } from '@/lib/ats/pdfTextExtractor';
 import { groundAndValidateEvidence } from '@/lib/ats/factCheckValidator';
 import { bridgeAtsToCompetencyGraph } from '@/lib/pathway/atsCompetencyBridge';
 import { auditResumeATS } from '@/lib/ats/atsScreener';
+import { analyzeVaultFileBufferWithGroq } from '@/lib/vault/groqDocumentAnalyzer';
+import { extractSkillsFast } from '@/lib/vault/vaultDefenseEngine';
 import {
   classifyDocumentCategory,
   checkNameSimilarity,
@@ -87,6 +90,8 @@ export async function POST(req: Request) {
     }
     const targetCategory = (formData.get('category') as string) || '';
     const primaryName = (formData.get('primaryName') as string) || '';
+    const auditorName = (formData.get('auditorName') as string) || 'Mr. Akash';
+    const headerGroqKey = req.headers.get('x-groq-api-key') || (formData.get('groqKey') as string | null);
 
     if (!file) {
       console.error(`❌ [STAGE 1/12 - Validation Error]: No file buffer found in multipart payload.`);
@@ -106,19 +111,30 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: securityGate.error || 'Document rejected by security gateway.' }, { status: 400 });
     }
 
-    // STAGE 3 & 4: Multi-Path Native Extraction & SHA-256 Fingerprint
-    console.log(`📄 [STAGE 3/12 - Native Stream Extractor]: Routing to ${securityGate.fileFormat} parser...`);
-    const extraction = extractDocumentEvidence(fileBuffer, securityGate.fileFormat);
-    const rawText = extraction.rawText || '';
-    console.log(`🔑 [STAGE 4/12 - Evidence Fingerprint]: Document SHA-256 = ${extraction.documentHash} (Extracted ${rawText.length} clean characters)`);
+    // STAGE 3 & 4: Multi-Path Native Extraction + Groq AI Vision/Text Intelligence
+    console.log(`📄 [STAGE 3/12 - Native + Groq AI Extractor]: Routing ${securityGate.fileFormat} parser + Groq reader...`);
+    const { extraction, groqAnalysis, effectiveRawText } = await analyzeVaultFileBufferWithGroq(
+      fileBuffer,
+      fileName,
+      securityGate.mimeType,
+      {
+        auditorName,
+        customGroqKey: headerGroqKey,
+      }
+    );
+    const rawText = effectiveRawText || extraction.rawText || '';
+    const effectiveConfidence = groqAnalysis
+      ? Math.max(extraction.extractionConfidence, 0.92)
+      : extraction.extractionConfidence;
+    console.log(`🔑 [STAGE 4/12 - Evidence Fingerprint]: Document SHA-256 = ${extraction.documentHash} (Extracted ${rawText.length} clean chars, Groq=${groqAnalysis?.source || 'none'})`);
 
-    // Honest Refusal: Immediately reject unreadable files rather than scoring phantom metadata
-    if (rawText.trim().length < 30 || extraction.extractionConfidence < 0.2 || extraction.error) {
+    // Honest Refusal: Immediately reject truly unreadable/garbled files when neither PDF.js/native parser nor Groq Vision could read content
+    if (!isReadableDocumentText(rawText) && !groqAnalysis) {
       console.warn(`🛑 [STAGE 4/12 - Extraction Refusal]: Document contains unreadable content (${rawText.length} chars, confidence ${extraction.extractionConfidence}).`);
       return NextResponse.json(
         {
           error: 'UNREADABLE_DOCUMENT',
-          message: 'We could not read this document. Please ensure your file contains selectable text and is not an encrypted, flattened, or unreadable document.'
+          message: 'We could not read readable text from this file. Please upload a non-encrypted PDF, DOCX, TXT, or clear PNG/JPG image of your resume or certificate.'
         },
         { status: 422 }
       );
@@ -130,24 +146,49 @@ export async function POST(req: Request) {
       'resume', 'achievement', 'certification', 'internship', 'other'
     ]);
     const validTargetCat = VALID_CATEGORIES.has(targetCategory) ? (targetCategory as VaultCategory) : null;
-    const category: VaultCategory = validTargetCat || classifyDocumentCategory(fileName, rawText);
+    const groqCat =
+      groqAnalysis?.documentType && VALID_CATEGORIES.has(groqAnalysis.documentType)
+        ? (groqAnalysis.documentType as VaultCategory)
+        : null;
+    const category: VaultCategory = validTargetCat || groqCat || classifyDocumentCategory(fileName, rawText);
     console.log(`🏷️ [STAGE 5/12 - Category Classifier]: Classified document as category = "${category}"`);
 
-    // STAGE 6, 7 & 8: Contextual Grounding & Deterministic Fact Validation
+    // STAGE 6, 7 & 8: Contextual Grounding & Deterministic Fact Validation + Groq Deep Skill Merge
     console.log(`⚖️ [STAGE 7/12 - Fact Grounder]: Grounding entities directly into immutable evidence text...`);
     const validatedGraph = groundAndValidateEvidence(
-      rawText,
+      rawText || `${fileName} ${groqAnalysis?.skills.join(', ') || ''}`,
       fileName,
       extraction.documentHash,
-      extraction.extractionMethod,
-      extraction.extractionConfidence,
+      groqAnalysis?.source === 'groq-vision' || groqAnalysis?.source === 'gemini-vision'
+        ? 'OCR_VISION'
+        : extraction.extractionMethod,
+      effectiveConfidence,
       category
     );
 
-    const detectedName = validatedGraph.candidateName;
-    const institution = validatedGraph.institution || 'Academic Institution';
+    const detectedName =
+      validatedGraph.candidateName && validatedGraph.candidateName !== 'Candidate'
+        ? validatedGraph.candidateName
+        : groqAnalysis?.candidateName || 'Candidate';
+    const institution =
+      validatedGraph.institution && validatedGraph.institution !== 'Academic Institution'
+        ? validatedGraph.institution
+        : groqAnalysis?.institution || 'Academic Institution';
     const scoreOrGpa = validatedGraph.scoreOrGpa || (category === '10th' ? '10th Marksheet' : category === '12th_puc' ? '12th/PUC Certificate' : 'Academic Credential');
-    const skills = validatedGraph.documentSupportedSkills;
+
+    // Merge Groq-extracted real skills (primary) with grounded & dictionary skills from real extracted text
+    const mergedSkillMap = new Map<string, string>();
+    for (const sk of [
+      ...(groqAnalysis?.skills || []),
+      ...(validatedGraph.documentSupportedSkills || []),
+      ...extractSkillsFast(rawText),
+    ]) {
+      const clean = String(sk || '').trim();
+      if (clean && !mergedSkillMap.has(clean.toLowerCase())) {
+        mergedSkillMap.set(clean.toLowerCase(), clean);
+      }
+    }
+    const skills = Array.from(mergedSkillMap.values()).slice(0, 18);
 
     console.log(`📊 [STAGE 8/12 - Grounded Entity Summary]:\n   - Name: "${detectedName}"\n   - Institution: "${institution}"\n   - Score/Grade: "${scoreOrGpa}"\n   - Document-Supported Skills (${skills.length}): [${skills.join(', ')}]\n   - Projects Grounded (${validatedGraph.projects.length}): [${validatedGraph.projects.map(p => p.title).join(', ')}]`);
 
@@ -199,12 +240,26 @@ export async function POST(req: Request) {
     const storagePath = `vault/${userId}/${category}/${sanitizedFileName}`;
 
     try {
-      const { data: uploadData, error: uploadError } = await supabase.storage
+      const admin = getSupabaseAdmin();
+      const storageClient = admin || supabase;
+      const uploadBytes = new Uint8Array(fileBuffer.buffer, fileBuffer.byteOffset, fileBuffer.byteLength);
+      let { data: uploadData, error: uploadError } = await storageClient.storage
         .from('resumes')
-        .upload(storagePath, fileBuffer, {
+        .upload(storagePath, uploadBytes, {
           contentType: securityGate.mimeType,
           upsert: true
         });
+
+      if ((uploadError || !uploadData) && admin) {
+        const retry = await supabase.storage
+          .from('resumes')
+          .upload(storagePath, uploadBytes, {
+            contentType: securityGate.mimeType,
+            upsert: true
+          });
+        uploadData = retry.data;
+        uploadError = retry.error;
+      }
 
       if (uploadError || !uploadData) {
         console.error(`❌ [STAGE 11/12 - Storage Upload Failed]:`, uploadError);
@@ -215,12 +270,12 @@ export async function POST(req: Request) {
       }
 
       // Private bucket: create a signed URL (7 days) rather than an unauthenticated 403 public URL
-      const { data: signedData } = await supabase.storage
+      const { data: signedData } = await storageClient.storage
         .from('resumes')
         .createSignedUrl(storagePath, 60 * 60 * 24 * 7);
 
       storageUrl = signedData?.signedUrl || storagePath;
-      console.log(`✅ [STAGE 11/12 - Storage Signed URL Generated]: ${storagePath}`);
+      console.log(`✅ [STAGE 11/12 - Storage Signed URL Generated]: ${storagePath} (${uploadBytes.byteLength} bytes)`);
     } catch (storageErr: any) {
       console.error(`❌ [STAGE 11/12 - Storage Upload Exception]:`, storageErr);
       return NextResponse.json(
@@ -267,7 +322,13 @@ export async function POST(req: Request) {
       'other': 'Supporting Document'
     };
 
-    const title = categoryTitles[category] || `${fileName} (${category})`;
+    const cleanBaseFileName = fileName.replace(/\.[^/.]+$/, '').replace(/[_-]+/g, ' ').trim();
+    const title =
+      (groqAnalysis?.documentTitle && groqAnalysis.documentTitle.length >= 4
+        ? groqAnalysis.documentTitle
+        : category === 'other' && cleanBaseFileName.length >= 3
+        ? cleanBaseFileName
+        : categoryTitles[category]) || `${fileName} (${category})`;
     const description = `Uploaded to Candidate Secure Vault (${scoreOrGpa}). Organization: ${institution}. Storage: ${storagePath}`;
 
     let dbId = `vault_${Date.now()}`;
@@ -297,6 +358,15 @@ export async function POST(req: Request) {
     if (dbResult?.id) {
       dbId = dbResult.id;
       console.log(`✅ [STAGE 12/12 - Database Record Inserted]: DB Row ID = "${dbId}"`);
+    }
+
+    // Persist computed ATS score onto public.users when a resume is uploaded so Dashboard/Priority cards reflect it immediately
+    if (category === 'resume' && typeof atsScore === 'number' && atsScore > 0) {
+      try {
+        const { data: uRow } = await supabase.from('users').select('ats_score').eq('id', userId).maybeSingle();
+        const bestAts = Math.min(100, Math.max(Number(uRow?.ats_score) || 0, Math.round(atsScore)));
+        await supabase.from('users').update({ ats_score: bestAts }).eq('id', userId);
+      } catch {}
     }
 
     const slotPayload: VaultDocumentSlot = {
@@ -329,6 +399,17 @@ export async function POST(req: Request) {
       ok: true,
       data: slotPayload,
       document: slotPayload,
+      aiAnalysis: {
+        source: groqAnalysis?.source || 'fallback',
+        documentTitle: title,
+        documentType: itemTypeMap[category] || 'other',
+        skills,
+        projects: groqAnalysis?.projects || [],
+        certifications: groqAnalysis?.certifications || [],
+        summary: groqAnalysis?.summary || '',
+        rawTextExcerpt: (groqAnalysis?.rawTextExcerpt || rawText || '').slice(0, 4500),
+        defenseQuestions: groqAnalysis?.defenseQuestions || [],
+      },
       provenance: validatedGraph.provenanceRecords,
       executionTimeMs: totalDurationMs,
       message: `Successfully grounded and processed ${fileName}`

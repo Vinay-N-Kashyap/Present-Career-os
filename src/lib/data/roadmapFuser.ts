@@ -5,11 +5,13 @@ import { MasteryState } from '../pathway/competencySchema';
 import { parseQuestId } from './curriculumEnricher';
 import { parseTestQuestId } from './blockTests';
 import { getRoadmapCourseIds } from '../roadmap/roadmapCourses';
+import { matchCourseGapLabels } from '../roadmap/roadmapCourseSelector';
 import {
   CompleteDiagnosticProfile,
   DetectedTradeoff,
   RoadmapStrategyResult
 } from '../onboarding/diagnosticEngine';
+import type { UserRoadmapEvidence } from '../roadmap/userEvidenceContext';
 
 export interface DynamicRoadmapParams {
   qt1?: number; // Technical Knowledge Score (0-100)
@@ -26,16 +28,21 @@ export interface DynamicRoadmapParams {
   tradeoffs?: DetectedTradeoff[];
   roadmapStrategy?: RoadmapStrategyResult;
   weakAreas?: string[];
+  selectedCourseIds?: string[]; // AI/evidence-selected course sequence from COURSES_REGISTRY
+  evidence?: UserRoadmapEvidence | null; // Resume, Vault & Profile personalization context
 }
 
 export interface DynamicRoadmapModule {
   id: string;
   /** The course this module's lessons come from. */
   courseId?: string;
+  courseTitle?: string;
   title: string;
   desc: string;
   difficulty: string;
   estimatedWeeks: number;
+  startDay?: number;
+  endDay?: number;
   personalizedPaceTag: string;
   knowledgeAdaptationTag: string;
   tradeoffInterventions?: string[];
@@ -43,6 +50,9 @@ export interface DynamicRoadmapModule {
   associatedCompetencyIds?: string[];
   isPreliminaryRoadmap?: boolean;
   diagnosticNotice?: string;
+  whyThisStage?: string;
+  skillsAddressed?: string[];
+  targetedGaps?: string[];
   quests: (CourseQuest & {
     fastTracked?: boolean;
     reinforcementNeeded?: boolean;
@@ -79,11 +89,26 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
     dailyPace = 3
   } = params;
 
-  // 1. Resolve the roadmap's courses (main course + career path + foundations, by duration)
+  // 1. Resolve the roadmap's courses (preferring evidence-selected courses when valid, else canonical path by duration)
   const courseObj = COURSES_REGISTRY.find(c => c.id === courseId) || COURSES_REGISTRY[0];
-  const roadmapCourses = getRoadmapCourseIds(courseObj.id, durationDays)
+  const explicitIds = Array.isArray(params.selectedCourseIds)
+    ? params.selectedCourseIds.filter((id) => COURSES_REGISTRY.some((c) => c.id === id))
+    : [];
+  const candidateCourseIds = explicitIds.length > 0
+    ? explicitIds
+    : getRoadmapCourseIds(courseObj.id, durationDays);
+  const roadmapCourses = candidateCourseIds
     .map((id) => COURSES_REGISTRY.find((c) => c.id === id))
     .filter((c): c is (typeof COURSES_REGISTRY)[number] => Boolean(c));
+  const combinedWeakAreas = Array.from(new Set([
+    ...(Array.isArray(params.weakAreas) ? params.weakAreas : []),
+    ...(params.evidence?.weakAreas || []),
+    ...(params.evidence?.interviewGaps || []),
+  ])).slice(0, 10);
+  const verifiedSkillsSet = new Set(
+    [...(params.evidence?.provenSkills || []), ...(params.evidence?.claimedSkills || [])].map((s) => s.toLowerCase())
+  );
+  const completedQuestSet = new Set(params.evidence?.completedQuests || []);
   const seenQuestIds = new Set<string>();
   const rawQuests: Array<CourseQuest & { sourceCourseId: string }> = [];
   for (const course of roadmapCourses) {
@@ -159,13 +184,15 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
     };
   });
 
-  // Fast-Track Compression: For high QT1 (>=75), compress early basic syntax quests (indices 1-4) into 1 accelerated quest
-  if (isHighKnowledge && adaptedQuests.length > 5) {
+  // Fast-Track Compression: For high QT1 (>=75) or verified resume skills on intro concepts, compress early basics (indices 1-4)
+  const hasResumeProof = Boolean(params.evidence?.provenSkills?.length && params.evidence.provenSkills.length >= 2);
+  if ((isHighKnowledge || hasResumeProof) && adaptedQuests.length > 5 && !completedQuestSet.has(adaptedQuests[0]?.id)) {
+    const fastTrackLabel = isHighKnowledge ? `high QT1 (${qt1}/100)` : `your verified Vault/Resume skills`;
     adaptedQuests = [
       {
         ...adaptedQuests[0],
         title: `⚡ Fast-Track Jump: ${adaptedQuests[0].title.replace('Learning: ', '')} (Basics Compressed)`,
-        desc: `Compressed 5-in-1 basic syntax summary for high QT1 (${qt1}/100) score. Jumping directly to your present skill level!`,
+        desc: `Compressed 5-in-1 basic syntax summary based on ${fastTrackLabel}. Jumping directly to intermediate mastery!`,
         fastTracked: true
       },
       ...adaptedQuests.slice(5)
@@ -217,17 +244,32 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
         ? ` (${firstQuestTitle} → ${lastQuestTitle})`
         : (firstQuestTitle ? ` (${firstQuestTitle})` : '');
 
+      const cSkillsRaw = (course as any).skills;
+      const skillsForCourse: string[] = Array.isArray(cSkillsRaw) ? cSkillsRaw.slice(0, 5).map(String) : [];
+      const matchingGaps = combinedWeakAreas.length > 0
+        ? matchCourseGapLabels(course, combinedWeakAreas)
+        : [];
+      const alreadyKnownHere = skillsForCourse.filter((s: string) => verifiedSkillsSet.has(s.toLowerCase()));
+      const whyParts: string[] = [];
+      if (matchingGaps.length > 0) whyParts.push(`Closes Target Gap: ${matchingGaps.join(', ')}`);
+      if (params.evidence?.resumeTitle) whyParts.push(`Aligned with "${params.evidence.resumeTitle}"`);
+      if (alreadyKnownHere.length > 0) whyParts.push(`Advances past your existing ${alreadyKnownHere.slice(0, 2).join(', ')} baseline`);
+
       modules.push({
         id: `${course.id}-dynamic-mod-${moduleCount}`,
         courseId: course.id,
+        courseTitle: cleanCourseTitle,
         title: `Phase ${moduleCount}: ${cleanCourseTitle} — ${milestoneTheme}`,
-        desc: `${isMixedGoal ? '🔀 Fused Goal Trajectory: ' : ''}${milestoneTheme} covering ${chunk.length} calibrated quests${questRangeSummary}. Tailored for ${targetRole} (${archetype} archetype with QT1: ${qt1}/100 & QT2: ${qt2}/100).`,
+        desc: `${isMixedGoal ? 'Fused Goal Trajectory: ' : ''}${milestoneTheme} covering ${chunk.length} calibrated quests${questRangeSummary}. Tailored for ${targetRole}.`,
         difficulty: isHighKnowledge ? 'Advanced' : isLowKnowledge ? 'Foundational' : 'Intermediate',
         estimatedWeeks: Math.max(1, Math.ceil(chunk.length / (effectivePace * 7))),
-        personalizedPaceTag: allocationsTag || (isMixedGoal ? `🎯 Target Goal: ${targetRole}` : mindsetTag),
+        personalizedPaceTag: allocationsTag || (isMixedGoal ? `Target Goal: ${targetRole}` : mindsetTag),
         knowledgeAdaptationTag: knowledgeTag,
         tradeoffInterventions: tradeoffInterventions.length > 0 ? tradeoffInterventions : undefined,
         allocationsTag,
+        whyThisStage: whyParts.length > 0 ? whyParts.join(' • ') : `Calibrated stage for ${targetRole}`,
+        skillsAddressed: skillsForCourse,
+        targetedGaps: matchingGaps,
         isPreliminaryRoadmap,
         diagnosticNotice,
         quests: chunk
@@ -235,6 +277,24 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
       moduleCount++;
     }
   }
+
+  // Assign exact timeline day ranges (Day 1 -> Day N) matching requested durationDays
+  const totalTargetDays = Math.max(30, Number(durationDays) || 30);
+  const totalQuestsAcross = Math.max(1, modules.reduce((sum, m) => sum + m.quests.length, 0));
+  let dayCursor = 1;
+  for (let i = 0; i < modules.length; i++) {
+    const m = modules[i];
+    const remainingDays = totalTargetDays - dayCursor + 1;
+    const remainingModules = modules.length - i;
+    const span = i === modules.length - 1
+      ? Math.max(1, remainingDays)
+      : Math.max(1, Math.min(remainingDays - (remainingModules - 1), Math.round((m.quests.length / totalQuestsAcross) * totalTargetDays)));
+    m.startDay = dayCursor;
+    m.endDay = Math.min(totalTargetDays, dayCursor + span - 1);
+    m.estimatedWeeks = Math.max(1, Math.round(span / 7));
+    dayCursor = m.endDay + 1;
+  }
+
   return modules;
 }
 

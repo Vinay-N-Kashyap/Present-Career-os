@@ -10,14 +10,25 @@ import {
   codeSubmissionTurn,
   loadActiveLiveSession,
   stageMarker,
-  transcriptForModel,
+  transcriptForStage,
   type LiveSession,
 } from '@/lib/interview/liveSession';
+import {
+  evaluateDefenseTurnPass,
+  evaluateRound4AnswerAccuracy,
+  getFallbackDefenseQuestion,
+  type DefenseRoundType,
+} from '@/lib/interview/roundDefenseEngine';
 
 // Comprehensive Interviewer Persona Roster matching all frontend 3D VRoid Avatars
 const INTERVIEWERS_MAP: Record<string, { name: string; role: string; nature: string }> = {
+  sneha: {
+    name: 'Ms. Sneha',
+    role: 'HR & Talent Acquisition Director',
+    nature: 'You are an insightful, warm, but incisive HR Director. You focus on leadership, cultural adaptability, situational conflict resolution, and the STAR framework (Situation, Task, Action, Result).'
+  },
   priya: {
-    name: 'Ms. Priya',
+    name: 'Ms. Sneha', // Priya is platform mentor only; legacy interview calls map to Sneha
     role: 'HR & Talent Acquisition Director',
     nature: 'You are an insightful, warm, but incisive HR Director. You focus on leadership, cultural adaptability, situational conflict resolution, and the STAR framework (Situation, Task, Action, Result).'
   },
@@ -25,6 +36,11 @@ const INTERVIEWERS_MAP: Record<string, { name: string; role: string; nature: str
     name: 'Mr. Rohan',
     role: 'Lead Software Architect & Tech Lead',
     nature: 'You are a pragmatic, seasoned software architect. You probe deep into clean code, algorithmic efficiency, time/space complexity, error handling, and modular component design.'
+  },
+  akash: {
+    name: 'Mr. Akash',
+    role: 'Senior Adversarial Credential & Skill Auditor',
+    nature: 'You are ruthless, skeptical, uncompromising, and brutal in verification questioning. Candidates claim skills on resumes and certificates — your job is to expose bluffs vs real hands-on depth by demanding exact internal mechanisms, failure modes, edge cases, and quantitative trade-offs with zero tolerance for fluff.'
   },
   vikram: {
     name: 'Mr. Vikram',
@@ -76,11 +92,6 @@ const INTERVIEWERS_MAP: Record<string, { name: string; role: string; nature: str
     role: 'Operations & Supply Chain Director',
     nature: 'You focus on inventory models, unit economics, logistics bottlenecks, and ERP/data modeling.'
   },
-  sneha: {
-    name: 'Ms. Sneha',
-    role: 'People Operations & Talent Lead',
-    nature: 'You focus on talent retention, employee lifecycle metrics, recruitment funnels, and organizational health.'
-  },
   abhijit: {
     name: 'Mr. Abhijit',
     role: 'Quantitative Finance & Economics Specialist',
@@ -95,22 +106,127 @@ interface FallbackContext {
   history: Array<{ role: string; content: string }>;
   difficulty: string;
   interviewerName: string;
+  stream?: 'tech' | 'non_tech';
 }
 
-function extractCandidateKeyContext(text: string): { phrase: string; keyTerm: string; type: 'tech' | 'action' | 'metric' | 'general' } {
-  const clean = text.replace(/```[\s\S]*?```/g, '').replace(/[^\w\s.,%'-]/g, ' ').trim();
-  if (!clean || clean.length < 5) return { phrase: 'your initial approach', keyTerm: 'approach', type: 'general' };
+export interface CandidateTurnAnalysis {
+  intent: 'skip' | 'stuck' | 'greeting' | 'intro' | 'vague' | 'substantive' | 'readiness' | 'clarification' | 'coaching_request' | 'no_experience' | 'language_barrier';
+  subject: string;
+  keyTerm: string;
+}
 
-  // Check for metrics or scale: e.g. "40%", "10x", "500ms", "3 team members", "millions of users"
-  const metricMatch = clean.match(/(\d+%\s*(?:latency\s*(?:drop|reduction|increase)?|improvement|reduction|increase|drop)|10x|5x|\d+\s*(?:ms|seconds|minutes|hours|users|req\/s|rps|nodes|servers|instances))/i);
-  if (metricMatch) {
-    return { phrase: `achieving ${metricMatch[1]}`, keyTerm: metricMatch[1], type: 'metric' };
+export function scopeHistoryToStage<T extends { role: string; content: string }>(
+  history: T[],
+  stage?: string
+): T[] {
+  if (!Array.isArray(history) || history.length === 0) return [];
+  if (stage !== 'round2_coding' && stage !== 'round3_systems') return history;
+
+  const markerRe = stage === 'round2_coding'
+    ? /Welcome to Round 2\b|\[Round 2:|\[Entering Round 2/i
+    : /Welcome to Round 3\b|\[Round 3:|\[Entering Round 3/i;
+
+  for (let i = history.length - 1; i >= 0; i--) {
+    if (markerRe.test(String(history[i]?.content || ''))) {
+      return history.slice(i);
+    }
   }
 
-  // Common high-value technical keywords & domains
+  const hasEarlierRoundContext = history.some((m) =>
+    /Corporate Interview!|Welcome to your interview\.|Welcome to Round 1\b|Welcome to Round 2\b|\[Round 1:|\[Round 2:/i.test(String(m?.content || ''))
+  );
+  return hasEarlierRoundContext ? history.slice(-1) : history;
+}
+
+export function stripInterviewerSignoff(text: string): string {
+  return text
+    .replace(/^(?:(?:Ms\.|Mr\.|Dr\.)\s*[A-Za-z]+|Interviewer)\s*:\s*/i, '')
+    .replace(/\s*[—~–-]\s*(?:(?:Ms\.|Mr\.|Dr\.)\s*)?[A-Za-z]+(?:\s*\(.*?\))?\s*$/i, '')
+    .replace(/\s*—\s*[^.!?]+$/i, '')
+    .trim();
+}
+
+export function extractCandidateKeyContext(text: string): { phrase: string; keyTerm: string; type: 'tech' | 'action' | 'metric' | 'general' } {
+  const analysis = analyzeCandidateTurn(text, 'your work');
+  return {
+    phrase: analysis.subject,
+    keyTerm: analysis.keyTerm,
+    type: analysis.intent === 'substantive' ? 'tech' : 'general'
+  };
+}
+
+export function analyzeCandidateTurn(text: string, subTopic: string): CandidateTurnAnalysis {
+  const clean = text.replace(/```[\s\S]*?```/g, '').replace(/[^\w\s.,%'-]/g, ' ').trim();
+  const lower = clean.toLowerCase();
+
+  // 1. Check for explicit skip
+  if (/^(?:\[Candidate skipped question\]|I would like to skip\b|skip\b|let'?s move on\b|next question\b)/i.test(lower)) {
+    return { intent: 'skip', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 2. Check for language barrier, communication mismatch, or deep incomprehension
+  if (
+    /\b(?:telugu|hindi|tamil|kannada|malayalam|bengali|marathi|gujarati)\b/i.test(lower) ||
+    /\b(?:can'?t\s+understand|cannot\s+understand|what\s+are\s+you\s+saying|what\s+you\s+are\s+saying|don'?t\s+understand\s+english|speak\s+in\s+telugu|speak\s+in\s+hindi|wait\s+what\s+what|wait\s+what|can\s+not\s+understand|unable\s+to\s+understand|not\s+understanding)\b/i.test(lower)
+  ) {
+    return { intent: 'language_barrier', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 3. Check for candidate stating lack of experience / non-tech background / no projects / just attending
+  if (
+    /\b(?:have\s+not\s+done|haven'?t\s+done|never\s+done|haven'?t\s+tried|have\s+not\s+tried|don'?t\s+have\s+any\s+tried|not\s+done\s+anything|not\s+a\s+(?:software|developer|engineer|coder|programmer)|not\s+an\s+engineer|no\s+(?:software\s+)?course|no\s+(?:technical\s+)?project|no\s+practical\s+experience|no\s+coding\s+experience|just\s+attending\s+(?:interview|the\s+interview|right\s+now)|not\s+from\s+(?:cs|it|computer|tech)\s+background|zero\s+experience|not\s+done\s+any\s+course)\b/i.test(lower)
+  ) {
+    return { intent: 'no_experience', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 4. Check for candidate uncertainty, confusion, or "I don't know"
+  if (
+    /\b(don'?t know|do not know|no idea|not sure|not certain|never worked with|haven'?t worked|unclear|stuck|lost|what to do|cannot say|can'?t answer|not familiar|blanking)\b/i.test(lower) ||
+    /^(?:i don'?t know|no idea|not sure|dunno|idk|nothing)[.!]?$/i.test(lower)
+  ) {
+    return { intent: 'stuck', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 3. Check for candidate readiness / start intent (e.g. "ok im ready", "i am ready", "let's start", "ready")
+  if (
+    /\b(?:i'?m\s+ready|im\s+ready|we\s+are\s+ready|ready\s+to\s+start|ready\s+now|let'?s\s+start|let'?s\s+begin|let'?s\s+go|all\s+set|start\s+interview|yes\s+ready)\b/i.test(lower) ||
+    /^(?:ready|ok\s+ready|yes|start|begin)[.!]?$/i.test(lower)
+  ) {
+    return { intent: 'readiness', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 4. Check for clarification requests (e.g. "can u explain in depth", "could you clarify", "what do you mean?")
+  if (
+    /\b(?:can\s+(?:you|u)\s+(?:explain|exaplin|elaborate|clarify|rephrase|repeat)|(?:explain|exaplin)\s+(?:in\s+depth|more|further)|what\s+do\s+you\s+mean|what\s+does\s+that\s+mean|could\s+you\s+(?:clarify|explain|exaplin|elaborate)|did\s+not\s+understand|didn'?t\s+understand|please\s+(?:explain|exaplin)|elaborate\s+please)\b/i.test(lower)
+  ) {
+    return { intent: 'clarification', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 5. Check for coaching / answer guidance requests (e.g. "how to answer", "how should i answer", "what should i say")
+  if (
+    /\b(?:how\s+to\s+answer|how\s+should\s+i\s+answer|how\s+do\s+i\s+answer|what\s+should\s+i\s+say|how\s+to\s+respond|give\s+me\s+an\s+example|what\s+format|how\s+to\s+structure)\b/i.test(lower)
+  ) {
+    return { intent: 'coaching_request', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 6. Check for bare greetings without substance (e.g. "hi", "hello", "ok hi", "hey", "namaste", "hi there", "hi priya", "hello sir")
+  if (
+    /^(?:ok\s+)?(?:hi|hello|hey|greetings|good\s+(?:morning|afternoon|evening)|namaste|hola|yo|sup)(?:\s+(?:there|sir|ma'?am|team|everyone|all|[a-z]+))?[.!]?$/i.test(lower) ||
+    (/^(?:ok\s+)?(?:hi|hello|hey)\b/i.test(lower) && clean.split(/\s+/).length <= 2)
+  ) {
+    return { intent: 'greeting', subject: subTopic, keyTerm: subTopic };
+  }
+
+  // 7. Metric match: e.g. "40%", "10x", "500ms", "3 team members", "millions of users"
+  const metricMatch = clean.match(/(\d+%\s*(?:latency\s*(?:drop|reduction|increase)?|improvement|reduction|increase|drop)?|10x|5x|\d+\s*(?:ms|seconds|minutes|hours|users|req\/s|rps|nodes|servers|instances))/i);
+  if (metricMatch) {
+    return { intent: 'substantive', subject: metricMatch[1].trim(), keyTerm: metricMatch[1].trim() };
+  }
+
+  // 10. Common high-value technical & business keywords (matched with strict word boundaries)
   const techKeywords = [
     'redis', 'kafka', 'postgresql', 'postgres', 'mongodb', 'mysql', 'docker', 'kubernetes',
-    'k8s', 'microservices', 'monolith', 'graphql', 'rest api', 'websocket', 'websockets',
+    'k8s', 'microservices', 'monolith', 'graphql', 'rest api', 'api', 'websocket', 'websockets',
     'caching', 'indexes', 'indexing', 'sharding', 'replication', 'concurrency', 'race condition',
     'deadlock', 'mutex', 'thread pool', 'event loop', 'async/await', 'load balancer', 'nginx',
     'react', 'next.js', 'nextjs', 'typescript', 'python', 'golang', 'java', 'spring boot',
@@ -121,101 +237,279 @@ function extractCandidateKeyContext(text: string): { phrase: string; keyTerm: st
     'turnover', 'compliance', 'audit', 'taxation', 'statutory', 'reconciliation', 'ledger'
   ];
 
-  const lower = clean.toLowerCase();
+  let matchedTech: string | null = null;
   for (const tk of techKeywords) {
-    if (lower.includes(tk)) {
-      return { phrase: `leveraging ${tk}`, keyTerm: tk, type: 'tech' };
+    const escaped = tk.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(?:^|[^a-z0-9])${escaped}(?:s|es)?(?:[^a-z0-9]|$)`, 'i');
+    if (regex.test(lower)) {
+      matchedTech = tk;
+      break;
     }
   }
 
-  // Extract substantive action/problem clauses
-  const actionMatch = clean.match(/(?:migrat|refactor|optimiz|debugg|deploy|resolv|implement|architect|scal|build|handl|manag|tackl)\w*\s+(?:the\s+)?[\w\s]{4,30}/i);
+  // 11. Broad self-introduction check (greeting or background introduction)
+  const isIntroGreeting = /\b(?:my name is\b|i am a\b|i'm a\b|i am full stack\b|i'm full stack\b|as a software\b|fresher\b|recent graduate\b|student\b)/i.test(lower);
+  if (isIntroGreeting) {
+    return {
+      intent: 'intro',
+      subject: matchedTech || subTopic,
+      keyTerm: matchedTech || subTopic
+    };
+  }
+
+  if (matchedTech) {
+    return { intent: 'substantive', subject: matchedTech, keyTerm: matchedTech };
+  }
+
+  // 12. Extract substantive action/problem clauses
+  const actionMatch = clean.match(/(?:migrat|refactor|optimiz|debugg|deploy|resolv|implement|architect|scal|build|handl|manag|tackl)\w*\s+(?:the\s+)?[\w\s]{3,24}/i);
   if (actionMatch) {
     const rawPhrase = actionMatch[0].trim().replace(/\s+/g, ' ');
     const parts = rawPhrase.split(/\s+/);
-    return { phrase: rawPhrase, keyTerm: parts.slice(-2).join(' '), type: 'action' };
+    return { intent: 'substantive', subject: rawPhrase, keyTerm: parts.slice(-2).join(' ') };
   }
 
-  // Meaningful non-filler words
-  const words = clean.split(/\s+/).filter(w => !/^(i|we|my|the|a|an|in|on|at|to|for|of|with|and|or|so|but|that|this|it|is|was|are|were|been|have|has|had|do|did|would|could|should|can|will|just|really|basically|like|you|know)$/i.test(w));
-  if (words.length >= 2) {
-    const snippet = words.slice(0, 4).join(' ');
-    return { phrase: `focusing on ${snippet}`, keyTerm: snippet, type: 'general' };
+  // 13. Meaningful substantive response check (only if 8+ words and contains verbs/substance)
+  const words = clean.split(/\s+/).filter(w => !/^(i|we|my|the|a|an|in|on|at|to|for|of|with|and|or|so|but|that|this|it|is|was|are|were|been|have|has|had|do|did|doing|done|does|would|could|should|can|will|just|really|basically|like|you|know|there|here|then|some|all|our|don'?t|dont|not|what|who|when|where|why|how|scenario|approach|hi|hello|hey|yes|no|ok|okay|anything|everything|course|courses|project|projects|something|saying|attending|interview|date|till|right|now|can't|cannot|understand)$/i.test(w));
+  if (words.length >= 6) {
+    return { intent: 'substantive', subject: subTopic, keyTerm: subTopic };
   }
 
-  return { phrase: clean.slice(0, 30), keyTerm: clean.slice(0, 20), type: 'general' };
+  return { intent: 'vague', subject: subTopic, keyTerm: subTopic };
 }
 
 export function generateProgressiveFallbackQuestion(ctx: FallbackContext): string {
-  const { stage, subTopic, history, difficulty, interviewerName } = ctx;
+  const { stage, subTopic, history, interviewerName, stream = 'tech' } = ctx;
 
   const userTurns = (history || []).filter(m => m.role === 'user');
   const lastUserTurn = userTurns[userTurns.length - 1]?.content || '';
   const turnCount = userTurns.length;
+  const analysis = analyzeCandidateTurn(lastUserTurn, subTopic);
 
-  // First turn: warm welcome & initial background question
-  if (turnCount <= 1 && (!lastUserTurn || lastUserTurn.length < 15)) {
+  // 1. Candidate signaled readiness to start (e.g. "ok im ready", "ready", "let's start")
+  if (analysis.intent === 'readiness') {
+    return `Great, let's dive right in! To get started, please walk me through your background and tell me about one recent project you worked on in ${subTopic}.`;
+  }
+
+  // 2. Candidate asked for clarification or depth (e.g. "can u explain in depth", "what do you mean?")
+  if (analysis.intent === 'clarification') {
+    return `Of course! To put it simply: think of a real project or hands-on task you worked on in ${subTopic}. What was the primary challenge you navigated, and what specific steps did you take to deliver the outcome?`;
+  }
+
+  // 3. Candidate asked for guidance on how to answer (e.g. "how to answer", "what should i say")
+  if (analysis.intent === 'coaching_request') {
+    return `A solid framework is the STAR method: describe the Situation, the Task you owned, the Action you took, and the Result. Feel free to choose any project, internship, or practical coursework in ${subTopic}.`;
+  }
+
+  // First turn: warm welcome & initial background question (only turn that includes self-intro)
+  if (turnCount <= 1 && (!lastUserTurn || lastUserTurn.length < 15) && analysis.intent !== 'substantive' && analysis.intent !== 'language_barrier' && analysis.intent !== 'no_experience' && analysis.intent !== 'stuck') {
     return `Welcome to your interview. I am ${interviewerName}. To get started, could you walk me through your background and your hands-on experience with ${subTopic}?`;
   }
 
-  const { phrase, keyTerm } = extractCandidateKeyContext(lastUserTurn);
+  // 1. Candidate is stuck or explicitly says "I don't know" — never praise or fake success!
+  if (analysis.intent === 'stuck') {
+    if (stage === 'round1_behavioral') {
+      const stuckPivots = [
+        `That's completely fine—interviews often touch on unfamiliar ground. Let's take a step back: think of a project or task in ${subTopic} where you felt confident. What was the core problem you solved?`,
+        `No worries at all, let's look at this from a different angle. When you run into a scenario where you're not sure how to proceed, what is your systematic process for investigating and finding a path forward?`,
+        `Understood—let's pivot. In your recent experience with ${subTopic}, what has been the most satisfying technical challenge you successfully resolved?`
+      ];
+      return stuckPivots[turnCount % stuckPivots.length];
+    }
 
-  // Active listening reflection openers
-  const reflectionOpeners = [
-    `I see your point regarding ${phrase}.`,
-    `You made an insightful observation around ${phrase}.`,
-    `Focusing on ${phrase} is a very pragmatic decision for ${subTopic}.`,
-    `I appreciate how you tackled ${phrase}.`,
-    `That is a solid direction regarding ${phrase}.`
-  ];
-  const opener = reflectionOpeners[turnCount % reflectionOpeners.length];
+    if (stage === 'round2_coding') {
+      const stuckCodingPivots = [
+        `That is completely alright—let's break it down into smaller steps. What would be the simplest baseline or brute-force approach you can think of, even if it's not optimal?`,
+        `No problem at all. Looking at the requirements for ${subTopic}, what is the very first boundary condition or input validation check you would write?`,
+        `Take your time. If you trace a small sample input with 2 or 3 elements by hand, what pattern or intermediate state emerges?`
+      ];
+      return stuckCodingPivots[turnCount % stuckCodingPivots.length];
+    }
 
-  // Stage-specific contextual follow-up questions
+    if (stage === 'round3_systems') {
+      const stuckSystemsPivots = [
+        `No problem at all—system design is fundamentally about exploring trade-offs. If we start with the simplest single-service architecture for ${subTopic}, where would the first bottleneck appear as traffic grows?`,
+        `That's completely fine. Which part of the architecture do you feel most comfortable discussing first—the client request ingress, the service logic, or the storage layer?`,
+        `Understood. Let's simplify: suppose you have 1,000 active users and one database. What simple caching or indexing strategy would you add first to keep latency low?`
+      ];
+      return stuckSystemsPivots[turnCount % stuckSystemsPivots.length];
+    }
+
+    // round4_star
+    const stuckStarPivots = [
+      `Understood, let's pivot to a different angle. Can you describe a situation where you had to learn a new tool or technology under a tight deadline to deliver results?`,
+      `That's completely fine. Tell me about a scenario where you collaborated closely with a teammate or stakeholder to resolve a challenging roadblock.`,
+      `No problem. Looking back across your projects, what is one achievement in ${subTopic} that you are most proud of?`
+    ];
+    return stuckStarPivots[turnCount % stuckStarPivots.length];
+  }
+
+  // 2. Candidate gave a bare greeting without substance (e.g. "hi", "hello", "ok hi")
+  if (analysis.intent === 'greeting') {
+    if (turnCount <= 1) {
+      return `Welcome to your interview. I am ${interviewerName}. To get started, could you walk me through your background and your hands-on experience with ${subTopic}?`;
+    }
+    if (turnCount === 2) {
+      return `Hello! To help us get underway, please share an overview of your background, your education, or any recent projects you've worked on in ${subTopic}.`;
+    }
+    return `Whenever you're ready, feel free to introduce yourself or describe any practical experience or coursework you've done in ${subTopic} so we can begin.`;
+  }
+
+  // 6. Candidate gave a broad introductory greeting or project summary
+  if (analysis.intent === 'intro') {
+    if (analysis.keyTerm && analysis.keyTerm !== subTopic) {
+      return `Thanks for walking me through your background! You mentioned working with ${analysis.keyTerm} in your recent work. Could you dive into one specific project where you leveraged ${analysis.keyTerm}, explaining the core problem and your contribution?`;
+    }
+    return `Great to have you here! Diving into your hands-on experience with ${subTopic}, could you highlight one specific project you worked on, the core problem it addressed, and your direct contribution?`;
+  }
+
+  // 7. Candidate honestly stated no experience / not a developer / no projects / just attending
+  if (analysis.intent === 'no_experience') {
+    if (stage === 'round3_systems') {
+      return stream === 'non_tech'
+        ? `No worries at all—let's keep the workflow practical. Look at the canvas on the left: try placing two blocks (such as Customer Intake and Fulfillment), connect them, and tell me what could slow that handoff down.`
+        : `No worries at all—we don't need prior production experience to start designing. Look at the whiteboard on the left: try placing Client App, API Gateway, and Postgres DB, connect them, and tell me where traffic flows first.`;
+    }
+    if (stage === 'round2_coding') {
+      return `No problem at all—let's break the active challenge into one small step. Forget syntax for a moment: in plain English, what steps would you take to solve the prompt shown on the left?`;
+    }
+    const noExpPivots = [
+      `Thank you for being upfront about that. Since you haven't worked on software or technical projects yet, could you share what your educational background is and what field or role you are aiming for?`,
+      `I appreciate your honesty—everyone starts somewhere. Tell me a bit about your studies or any non-technical coursework, problem-solving activities, or personal interests you've pursued so far.`,
+      `That is completely fine. What originally motivated you to attend this interview today, and what specific skills or subjects are you most excited to learn?`
+    ];
+    return noExpPivots[turnCount % noExpPivots.length];
+  }
+
+  // 8. Candidate expressed language barrier, incomprehension, or deep confusion
+  if (analysis.intent === 'language_barrier') {
+    if (stage === 'round3_systems') {
+      return `Sorry if that sounded unclear! In simple words: please add a Client block and a Database block on the whiteboard on the left, then click Evaluate Architecture.`;
+    }
+    if (stage === 'round2_coding') {
+      return `Sorry for the confusion! Let's make this simple: read the short problem at the top left and try writing your first step, or click Hints if you need a clue.`;
+    }
+    const langPivots = [
+      `I apologize if my phrasing was complicated. Let's keep it very simple: could you tell me your name, what you studied in college, and what kind of job you are looking for?`,
+      `No worries at all, let's take it slow and simple. In plain words, what are the subjects or areas that you feel most comfortable talking about?`,
+      `I hear you—let's reset. Tell me simply: what is your educational background and what degree did you complete?`
+    ];
+    return langPivots[turnCount % langPivots.length];
+  }
+
+  // 9. Candidate gave an extremely brief or vague answer
+  if (analysis.intent === 'vague') {
+    const vaguePivots = [
+      `Understood. Could you expand a bit more on that? Specifically, what was your personal responsibility and the primary challenge you navigated for ${subTopic}?`,
+      `Got it. Could you share a bit more detail on that? For example, what tools or methods did you use, and what was the outcome?`,
+      `Thanks for sharing. To help me understand better, could you walk me through one specific example of how you approached that?`
+    ];
+    return vaguePivots[turnCount % vaguePivots.length];
+  }
+
+  // 10. Candidate explicitly skipped
+  if (analysis.intent === 'skip') {
+    if (stage === 'round3_systems') {
+      return `Understood—if you'd like to skip this round completely, click the Skip Round button at the top right of the canvas panel to move straight to Round 4. Otherwise, feel free to place any two components to start.`;
+    }
+    if (stage === 'round2_coding') {
+      return `Understood—you can click the Skip Challenge button at the top right of the problem panel anytime to move directly to Round 3, or share your initial approach if you'd like to try.`;
+    }
+    if (stage === 'round4_star') {
+      return `Understood—you can click the Skip & Finish button at the top right whenever you'd like to end the interview and view your scorecard, or we can pivot to another project example.`;
+    }
+    return `Understood—we'll note the skip. You can click Skip Round at the top right to jump to Round 2 anytime, or share another area of ${subTopic} you feel comfortable discussing.`;
+  }
+
+  // 11. Candidate provided substantive response with technical / metric / action details
+  const { keyTerm } = analysis;
+  const opener = (keyTerm && keyTerm !== subTopic)
+    ? `Regarding your experience with ${keyTerm}:`
+    : [
+        `Understood—thanks for walking through that scenario.`,
+        `That provides helpful context on your approach.`,
+        `Thanks for sharing that overview.`,
+        `That gives good context on your background.`
+      ][turnCount % 4];
+
+  // Stage-specific contextual follow-up questions (Natural spoken dialogue — no robotic sign-offs)
   if (stage === 'round1_behavioral') {
     const behavioralFollowUps = [
       `When navigating that, what was the most significant roadblock or cross-functional disagreement you encountered, and how did you resolve it?`,
-      `Looking back at that scenario, what is one key technical or process trade-off you would approach differently today?`,
-      `Under tight deadline pressure, how did you balance technical excellence against shipping speed while driving that forward?`,
+      `Looking back at that scenario, what is one key ${stream === 'non_tech' ? 'strategic or stakeholder' : 'technical or process'} trade-off you would approach differently today?`,
+      `Under tight deadline pressure, how did you balance ${stream === 'non_tech' ? 'analytical rigor against commercial urgency' : 'technical excellence against shipping speed'} while driving that forward?`,
       `What measurable signal or feedback confirmed to you and your team that this decision was a success?`
     ];
     const question = behavioralFollowUps[turnCount % behavioralFollowUps.length];
-    return `${opener} ${question} — ${interviewerName}`;
+    return `${opener} ${question}`;
   }
 
   if (stage === 'round2_coding') {
-    const codingFollowUps = [
-      `Given that approach with ${keyTerm}, what is the exact time and space complexity, and where could memory usage spike under large inputs?`,
-      `How does your implementation handle critical boundary conditions, such as null/empty inputs, duplicate records, or extreme numerical ranges?`,
-      `If multiple concurrent threads or API requests hit this logic simultaneously, what race condition or state corruption risks arise, and how would you safeguard against them?`,
-      `How would you structure unit tests to thoroughly verify the correctness and failure modes of that logic before shipping to production?`
-    ];
+    const codingFollowUps = stream === 'non_tech'
+      ? [
+          `Looking closely at your numbers around ${keyTerm}, what sensitivity assumptions or downside scenarios would flip your recommendation?`,
+          `How do you validate data integrity and edge-case anomalies before presenting these ${subTopic} calculations to executive leadership?`,
+          `If acquisition costs rose 25% or margins compressed unexpectedly, how would your model adapt to protect ROI?`,
+          `Which single KPI in this analysis is the strongest leading indicator of execution risk?`
+        ]
+      : [
+          `Given that approach with ${keyTerm}, what is the exact time and space complexity, and where could memory usage spike under large inputs?`,
+          `How does your implementation handle critical boundary conditions, such as null/empty inputs, duplicate records, or extreme numerical ranges?`,
+          `If multiple concurrent threads or API requests hit this logic simultaneously, what race condition or state corruption risks arise, and how would you safeguard against them?`,
+          `How would you structure unit tests to thoroughly verify the correctness and failure modes of that logic before shipping to production?`
+        ];
     const question = codingFollowUps[turnCount % codingFollowUps.length];
-    return `${opener} ${question} — ${interviewerName}`;
+    return `${opener} ${question}`;
   }
 
   if (stage === 'round3_systems') {
-    const systemsFollowUps = [
-      `Looking at the role of ${keyTerm} in your architecture, how does the system behave if that specific component experiences a sudden crash or network partition during peak load?`,
-      `Where do you foresee the primary throughput or IO bottleneck in that data path, and how would caching or asynchronous queuing alleviate it?`,
-      `How do you enforce idempotency and maintain data consistency across distributed boundaries if an operation fails midway?`,
-      `What telemetry metrics, error budgets, and health check signals would you establish to monitor that tier in real time?`
-    ];
+    const systemsFollowUps = stream === 'non_tech'
+      ? [
+          `In your workflow around ${keyTerm}, where is the steepest conversion drop-off or operational bottleneck, and what experiment would you run first?`,
+          `How do you align incentives across finance, operations, and customer support when scaling that ${subTopic} loop?`,
+          `What leading KPI dashboard and escalation thresholds would alert you before churn or margin leakage compounds?`,
+          `If budget were cut by 30% tomorrow, which stage of that workflow would you defend and which would you automate?`
+        ]
+      : [
+          `Looking at the role of ${keyTerm} in your architecture, how does the system behave if that specific component experiences a sudden crash or network partition during peak load?`,
+          `Where do you foresee the primary throughput or IO bottleneck in that data path, and how would caching or asynchronous queuing alleviate it?`,
+          `How do you enforce idempotency and maintain data consistency across distributed boundaries if an operation fails midway?`,
+          `What telemetry metrics, error budgets, and health check signals would you establish to monitor that tier in real time?`
+        ];
     const question = systemsFollowUps[turnCount % systemsFollowUps.length];
-    return `${opener} ${question} — ${interviewerName}`;
+    return `${opener} ${question}`;
   }
 
   if (stage === 'round4_star') {
     const starFollowUps = [
-      `How does your choice around ${keyTerm} directly drive the overall system SLAs and measurable business impact?`,
+      `How does your choice around ${keyTerm} directly drive the overall ${stream === 'non_tech' ? 'business KPIs' : 'system SLAs'} and measurable business impact?`,
       `What empirical metrics or benchmarks did you monitor to demonstrate that your solution achieved its intended goal?`,
-      `If a principal architect or executive challenged that architectural trade-off, what quantitative data and counter-arguments would you present?`,
-      `Which part of your implementation or system design would you revisit first if traffic grew by a factor of 10x?`
+      `If a ${stream === 'non_tech' ? 'VP or CFO' : 'principal architect or executive'} challenged that trade-off, what quantitative data and counter-arguments would you present?`,
+      `Which part of your execution or design would you revisit first if demand grew by a factor of 10x?`
     ];
     const question = starFollowUps[turnCount % starFollowUps.length];
-    return `${opener} ${question} — ${interviewerName}`;
+    return `${opener} ${question}`;
   }
 
-  return `${opener} Could you elaborate on the key trade-offs and decisions you made for ${subTopic}? — ${interviewerName}`;
+  if (stage === 'vault_defense') {
+    const assistantCount = history.filter((h) => h.role === 'assistant').length;
+    const lastUserMsg = [...history].reverse().find((h) => h.role === 'user')?.content || '';
+    const isUnsure = /\b(don'?t know|idk|no idea|not sure|sorry|nothing|skip|pass)\b/i.test(lastUserMsg);
+    if (assistantCount === 0) {
+      return `I just reviewed ${subTopic}. Pick the strongest skill or project you listed there and walk me through what you actually built and how it works under the hood.`;
+    }
+    if (isUnsure) {
+      return `Alright, noted — you couldn't back up that point. Let's try something else from ${subTopic}: pick one real project or tool you actually used yourself and explain a concrete bug or challenge you solved.`;
+    }
+    const defenseFollowUps = [
+      `Interesting point on ${keyTerm}. What broke in practice when you worked with it, and what exact change fixed it?`,
+      `Okay, let's test the depth of that claim in ${subTopic} — what trade-off did you make there, and how did you verify it actually worked?`,
+      `Before we wrap up this verification, walk me through one edge case or real limitation in what you just described.`
+    ];
+    return defenseFollowUps[turnCount % defenseFollowUps.length];
+  }
+
+  return `${opener} Could you elaborate on the key trade-offs and decisions you made for ${subTopic}?`;
 }
 
 export async function POST(req: Request) {
@@ -249,10 +543,46 @@ export async function POST(req: Request) {
       difficulty,
       customTopic,
       domainStream,
-      domainSubTopic
+      domainSubTopic,
+      jdContext,
+      companyContext,
+      topologyContext,
+      vaultContext,
+      totalDefenseTurns,
+      defenseMode
     } = body;
 
-    const selectedInterviewer = INTERVIEWERS_MAP[interviewerId] || INTERVIEWERS_MAP.vikram;
+    const activeDefense: {
+      phase: 'start' | 'answer';
+      questionNumber: number;
+      totalQuestions: number;
+      roundType: DefenseRoundType;
+      artifactSummary?: string;
+    } | null =
+      defenseMode && (defenseMode.phase === 'start' || defenseMode.phase === 'answer')
+        ? {
+            phase: defenseMode.phase,
+            questionNumber: Math.max(1, Math.min(5, Number(defenseMode.questionNumber) || 1)),
+            totalQuestions: Math.max(1, Math.min(5, Number(defenseMode.totalQuestions) || 5)),
+            roundType: (['code', 'case', 'architecture', 'workflow'].includes(defenseMode.roundType)
+              ? defenseMode.roundType
+              : stage === 'round3_systems'
+              ? (domainStream === 'non_tech' ? 'workflow' : 'architecture')
+              : (domainStream === 'non_tech' ? 'case' : 'code')) as DefenseRoundType,
+            artifactSummary: typeof defenseMode.artifactSummary === 'string'
+              ? defenseMode.artifactSummary.trim().slice(0, 1800)
+              : undefined,
+          }
+        : null;
+
+    const selectedInterviewer =
+      stage === 'vault_defense' && interviewerId === 'priya'
+        ? {
+            name: 'Ms. Priya',
+            role: 'Lead Credential & Skill Integrity Auditor',
+            nature: 'You are sharp, direct, skeptical, and conversational during credential verification. Candidates claim skills and projects on resumes and certificates — your job is to have a real, probing, human-sounding technical conversation to verify whether they truly built or mastered what they listed.'
+          }
+        : INTERVIEWERS_MAP[interviewerId] || INTERVIEWERS_MAP.vikram;
 
     // Recorded interview: the server's record is the conversation (the browser's history is not
     // used), and the topic is the one the interview was started with.
@@ -279,7 +609,7 @@ export async function POST(req: Request) {
 
     const stream = live ? live.domain_stream : (domainStream === 'non_tech' ? 'non_tech' : 'tech');
     const topicSource = live ? live.topic : (customTopic || domainSubTopic || (stream === 'non_tech' ? 'Finance & Strategy' : 'Software Engineering'));
-    const subTopic = String(topicSource).toUpperCase();
+    const subTopic = String(topicSource).trim();
 
     // Round changes, skipped questions and code submissions happen on the page; the record notes them.
     if (live && (body.event === 'stage' || body.event === 'skip' || body.event === 'code')) {
@@ -299,8 +629,8 @@ export async function POST(req: Request) {
     }
     const liveUserTurn = live ? clampTurn('user', message, stage) : null;
     const effectiveHistory: Array<{ role: string; content: string }> = live
-      ? [...transcriptForModel(live), ...(liveUserTurn ? [{ role: 'user', content: liveUserTurn.content }] : [])]
-      : (Array.isArray(history) ? history : []);
+      ? [...transcriptForStage(live, stage), ...(liveUserTurn ? [{ role: 'user', content: liveUserTurn.content }] : [])]
+      : scopeHistoryToStage(Array.isArray(history) ? history : [], stage);
 
         console.log(`[Interview Chat API] Authenticated User: ${gated.user.id} | Interviewer: ${selectedInterviewer.name} (${interviewerId}) | Stage: ${stage} | Topic: ${subTopic}`);
     if (gated.user?.id) {
@@ -318,33 +648,112 @@ export async function POST(req: Request) {
     }
 
     // 3. Build Topic Context
-    let topicPrompt = `The candidate is being interviewed for [${subTopic}] in the [${stream === 'non_tech' ? 'Non-Tech / Corporate / Business' : 'Tech / Software / Systems'}] stream.`;
+    let topicPrompt = stream === 'non_tech'
+      ? `The candidate is being interviewed for [${subTopic}] in the [B.Com / Commerce, Accounting, Finance & Corporate Strategy] stream. Conduct this like a realistic India + Global corporate hiring panel (Big-4 Deloitte/EY/PwC/KPMG, Tier-1 Banks like HDFC/ICICI/Goldman Sachs, or Global MNC Finance/Commercial teams). Anchor questions in real-world commerce concepts (Ind AS / IFRS, Golden Rules of Accounting, P&L vs Cash Flow, Balance Sheet solvency, GST / ITC / TDS compliance, Credit Appraisal, Working Capital, or Commercial Unit Economics) — NEVER ask software coding questions.`
+      : `The candidate is being interviewed for [${subTopic}] in the [Tech / Software / Systems] stream.`;
     const topicFocus = live ? live.topic : (typeof customTopic === 'string' ? customTopic.trim() : '');
     if (topicFocus) {
-      topicPrompt += ` Topic Focus: "${topicFocus}". Align all questions and technical drill-downs strictly to this domain.`;
+      topicPrompt += ` Topic Focus: "${topicFocus}". Align all questions and domain drill-downs strictly to this domain.`;
+    }
+    if (typeof companyContext === 'string' && companyContext.trim()) {
+      topicPrompt += `\n${companyContext.trim().slice(0, 1200)}`;
+    }
+    if (typeof jdContext === 'string' && jdContext.trim()) {
+      topicPrompt += `\n${jdContext.trim().slice(0, 1200)}`;
     }
 
     // 4. Build Stage-Specific Context
+    const topologySummary = typeof topologyContext === 'string' && topologyContext.trim()
+      ? topologyContext.trim().slice(0, 600)
+      : 'Empty whiteboard (0 nodes placed yet)';
     let stageContext = '';
-    if (stage === 'round1_behavioral') {
+    if (activeDefense) {
+      const { phase, questionNumber, totalQuestions, roundType, artifactSummary } = activeDefense;
+      const artifactLabel =
+        roundType === 'code' ? 'submitted code' :
+        roundType === 'case' ? 'submitted B.Com case study (journal/red-flag call, financial ratios, and board recommendation)' :
+        roundType === 'workflow' ? 'submitted business & financial control workflow canvas' :
+        'submitted system architecture diagram';
+      const artifactBlock = artifactSummary ? `\nCANDIDATE SUBMITTED ARTIFACT:\n${artifactSummary}\n` : '';
+      if (phase === 'start') {
+        stageContext = `5-QUESTION PANEL CROSS-EXAMINATION (QUESTION 1 OF ${totalQuestions}) ON CANDIDATE'S ${artifactLabel.toUpperCase()}:${artifactBlock}
+STRICT RULES:
+- Acknowledge submission in 1 brief clause and ask Question 1 of ${totalQuestions} strictly grounded in a specific detail from the candidate's ${artifactLabel} above.
+- Do NOT ask generic background questions. Keep to 2-3 crisp spoken sentences.`;
+      } else if (questionNumber < totalQuestions) {
+        const nextQ = questionNumber + 1;
+        stageContext = `5-QUESTION PANEL CROSS-EXAMINATION (GRADING ANSWER ${questionNumber} OF ${totalQuestions}, ASKING QUESTION ${nextQ} OF ${totalQuestions}) ON CANDIDATE'S ${artifactLabel.toUpperCase()}:${artifactBlock}
+STRICT RULES:
+1. Critically evaluate the candidate's LAST reply to Question ${questionNumber}:
+   - Append [[DEFENSE_GRADE:PASS]] ONLY if they gave a genuine, accurate, on-topic explanation demonstrating real understanding of their ${artifactLabel}.
+   - Append [[DEFENSE_GRADE:FAIL]] if they said "I don't know", skipped, gave a bare greeting, gave an empty/vague non-answer, or gave a clearly incorrect/contradictory answer.
+2. React concisely in 1 short sentence, then immediately ask Question ${nextQ} of ${totalQuestions} testing a DIFFERENT angle of their ${artifactLabel} (do NOT repeat earlier questions).
+3. Keep spoken prose under 3 sentences and place the [[DEFENSE_GRADE:PASS]] or [[DEFENSE_GRADE:FAIL]] marker at the very end.`;
+      } else {
+        stageContext = `5-QUESTION PANEL CROSS-EXAMINATION (FINAL ANSWER ${totalQuestions} OF ${totalQuestions}) ON CANDIDATE'S ${artifactLabel.toUpperCase()}:${artifactBlock}
+STRICT RULES:
+1. Evaluate the candidate's LAST reply to Question ${totalQuestions}:
+   - Append [[DEFENSE_GRADE:PASS]] ONLY if they gave a genuine, accurate, on-topic explanation.
+   - Append [[DEFENSE_GRADE:FAIL]] if they said "I don't know", skipped, evaded, or answered incorrectly.
+2. Give a crisp 1-sentence closing acknowledgment of their final answer (do NOT ask a 6th question).
+3. Place [[DEFENSE_GRADE:PASS]] or [[DEFENSE_GRADE:FAIL]] at the very end.`;
+      }
+    } else if (stage === 'round1_behavioral') {
       const historyLength = effectiveHistory.length;
       if (historyLength <= 1) {
-        stageContext = `This is Round 1 (Behavioral & Background). Acknowledge the candidate warmly, introduce yourself briefly as ${selectedInterviewer.name}, and ask them to introduce their background and experience with ${subTopic}. Keep under 3 sentences.`;
+        stageContext = stream === 'non_tech'
+          ? `This is Round 1 (B.Com / Corporate Commerce HR & Fundamentals Screening). Acknowledge the candidate warmly as ${selectedInterviewer.name}, and invite them to introduce their commerce background, academic/internship exposure, and one accounting, finance, audit, or business area they know best in ${subTopic}. Keep under 3 sentences.`
+          : `This is Round 1 (Behavioral & Background). Acknowledge the candidate warmly, introduce yourself briefly as ${selectedInterviewer.name}, and ask them to introduce their background and experience with ${subTopic}. Keep under 3 sentences.`;
       } else {
-        stageContext = `This is Round 1 (Behavioral). Listen to the candidate's last answer. Acknowledge one specific detail they mentioned, then ask a structured behavioral or background follow-up question related to ${subTopic}. Keep under 3 sentences.`;
+        stageContext = stream === 'non_tech'
+          ? `This is Round 1 (B.Com / Corporate Commerce Screening). Listen closely to the candidate's last reply. If they merely said "hi" or gave a vague greeting, politely re-ask them to introduce their commerce background and practical exposure. Otherwise acknowledge one specific detail and ask a realistic Indian/Global B.Com screening question for ${subTopic} (e.g., practical application of Golden Rules/Ind AS/IFRS, difference between profit and cash flow, GST/audit controls, bank credit assessment, or commercial KPIs). Keep under 3 sentences.`
+          : `This is Round 1 (Behavioral). Listen to the candidate's last answer. If the candidate merely says "hi", "hello", or gives a vague greeting, do NOT praise them or pretend they made a decision; instead, politely re-ask them to introduce themselves and highlight one project or practical experience in ${subTopic}. If they gave a substantive response, acknowledge one specific detail they mentioned, then ask a structured behavioral or background follow-up question related to ${subTopic}. Keep under 3 sentences.`;
       }
     } else if (stage === 'round2_coding') {
       stageContext = reviewDecision
-        ? `This is the final code-review decision for Round 2. Assess the candidate's code and their explanation in the conversation. If both meet the bar, briefly acknowledge why and append exactly [[ROUND_VERDICT:PASS]]. If the reasoning or implementation has a substantive gap, briefly explain it and append exactly [[ROUND_VERDICT:RETRY]]. Do not ask another question. Never include the marker in spoken prose.`
-        : `This is Round 2 (Technical Assessment & Problem Solving). Review the submitted code when available and ask exactly one focused question about its logic, complexity, edge cases, or trade-offs. If they ask for hints, provide a conceptual clue without giving away code or the complete solution. Keep under 3 sentences.`;
+        ? `This is the final review decision for Round 2. STRICT STAGE LOCK: Assess ONLY the candidate's Round 2 solution and explanation. If both meet the bar, briefly acknowledge why and append exactly [[ROUND_VERDICT:PASS]]. If the reasoning or implementation has a substantive gap, briefly explain it and append exactly [[ROUND_VERDICT:RETRY]]. Do not ask another question. Never include the marker in spoken prose.`
+        : stream === 'non_tech'
+        ? `This is Round 2 (Live B.Com Corporate Case Desk). STRICT STAGE LOCK: Stay 100% focused on the active financial statements, accounting/audit red flag, rectification journal entry, financial ratios, and executive verdict. NEVER ask software coding questions or revert to Round 1 college bio. Keep under 3 sentences.`
+        : `This is Round 2 (Technical Assessment & Problem Solving). STRICT STAGE LOCK: Stay 100% focused on the active Round 2 challenge, algorithm/logic, complexity, edge cases, or implementation. NEVER revert to Round 1 background, college degree, or generic introductory trivia. Review submitted code when available and ask one focused question; if asked for hints, give a conceptual clue without giving away the solution. Keep under 3 sentences.`;
     } else if (stage === 'round3_systems') {
       if (stream === 'non_tech') {
-        stageContext = `This is Round 3 (Business Workflow Canvas). Ask about the conversion funnel, monetization loops, and bottleneck mitigations in their strategy for ${subTopic}. Keep under 3 sentences.`;
+        stageContext = `This is Round 3 (B.Com Finance & Business Control Workflow Canvas). STRICT STAGE LOCK: Stay 100% focused on real-world corporate workflow design (Order-to-Cash, Procure-to-Pay, GST/Audit compliance, Credit Underwriting, Treasury Reconciliation, or Commercial Growth Funnel) for ${subTopic}. NEVER ask software coding or Round 1 background questions. Current Canvas State: ${topologySummary}. If the canvas is empty, guide the candidate to place 3-4 workflow stages and click Evaluate Workflow; otherwise probe one concrete control, bottleneck, or margin trade-off. Keep under 3 sentences.`;
       } else {
-        stageContext = `This is Round 3 (System Architecture Canvas). Ask the candidate about failure modes, load balancing, caching consistency, and database scaling trade-offs in ${subTopic}. Keep under 3 sentences.`;
+        stageContext = `This is Round 3 (System Architecture Canvas). STRICT STAGE LOCK: Stay 100% focused on system architecture design for ${subTopic} (components, request flow, load balancing, caching, databases, queues, failure modes, and scaling). NEVER ask Round 1 personal background/degree questions or basic language syntax trivia (like Python lists vs tuples or intro web frameworks). Current Whiteboard State: ${topologySummary}. If the whiteboard is empty, guide the candidate to place 2-3 core blocks (such as Client App, API Gateway, Database) and explain how traffic flows; otherwise probe one concrete architectural trade-off or failure mode. Keep under 3 sentences.`;
       }
     } else if (stage === 'round4_star') {
-      stageContext = `This is Round 4 (Executive Deep Dive). Use the candidate's actual earlier-round background, submitted code, and architecture choices from the conversation. Ask one probing question that connects at least two rounds—for example, why they chose that implementation, how it fits the system they designed, what trade-off it creates, and how they would measure its impact. Avoid generic STAR prompts when specific project evidence is present. Keep under 3 sentences.`;
+      const starGradeRule =
+        ' Also critically grade the candidate\'s LAST reply for full STAR accuracy (concrete action + domain reasoning + measurable impact): append [[STAR_GRADE:PASS]] ONLY if their last reply was genuinely accurate, substantive, and on-topic, or [[STAR_GRADE:FAIL]] if it was vague, off-topic, skipped, or "I don\'t know". Place the marker at the very end.';
+      stageContext = stream === 'non_tech'
+        ? `This is Round 4 (Partner / CFO / Executive STAR Deep Dive for B.Com / Commerce). Connect the candidate's earlier-round case study, workflow design, and commercial judgment. Probe realistic boardroom dilemmas (e.g., defending an audit qualification under client pressure, handling a credit covenant breach, or resolving a working-capital crunch) using concrete Situation, Task, Action, and quantified Result evidence. Keep under 3 sentences.${starGradeRule}`
+        : `This is Round 4 (Executive Deep Dive). Use the candidate's actual earlier-round background, submitted code, and architecture choices from the conversation. Ask one probing question that connects at least two rounds—for example, why they chose that implementation, how it fits the system they designed, what trade-off it creates, and how they would measure its impact. Avoid generic STAR prompts when specific project evidence is present. Keep under 3 sentences.${starGradeRule}`;
+    } else if (stage === 'vault_defense') {
+      const assistantTurns = effectiveHistory.filter((m) => m.role === 'assistant').length;
+      const expectedVaultTurns = Math.max(3, Math.min(8, Number(totalDefenseTurns) || 6));
+      const docDetails = typeof vaultContext === 'string' && vaultContext.trim()
+        ? vaultContext.trim().slice(0, 4800)
+        : `Document: ${subTopic}`;
+      if (assistantTurns === 0) {
+        stageContext = `ACTUAL UPLOADED RESUME / CERTIFICATE CONTENT TO AUDIT:
+${docDetails}
+
+OPENING TURN (EXCHANGE 1 OF ${expectedVaultTurns}):
+- Your ONLY job is to verify whether THIS uploaded resume or certificate is genuine and accurate, or fake/exaggerated across ${expectedVaultTurns} thorough resume-grounded questions.
+- Pick ONE specific, concrete project, internship, skill, tool, or certification explicitly written in the document above — quote its EXACT name from the document.
+- Ask ONE sharp, direct, natural question testing whether the candidate truly built or mastered that exact item (2-3 spoken sentences max).
+- NEVER ask generic "tell me about yourself" or "walk me through your background" questions.
+- NEVER ask about "System Design" or "Problem Solving" unless those exact words are written in the document above.`;
+      } else {
+        stageContext = `ACTUAL UPLOADED RESUME / CERTIFICATE CONTENT TO AUDIT:
+${docDetails}
+
+LIVE REACTIVE FOLLOW-UP (EXCHANGE ${assistantTurns + 1} OF ${expectedVaultTurns}):
+- Read the candidate's LAST reply AND earlier exchanges carefully, and respond like a real human senior auditor verifying their uploaded resume/certificate (2-3 crisp spoken sentences max).
+- BREADTH REQUIREMENT: Across these ${expectedVaultTurns} questions, systematically audit DIFFERENT items from the document (different projects, internships, backend stack, frontend/UI stack, database/cloud, certifications, or core tools) — NEVER repeat a project or skill you already grilled in an earlier turn unless the candidate specifically pivoted to it.
+- If the candidate said "I don't know", "sorry", "nothing", gave vague filler, or evaded the question: acknowledge it candidly ("Alright, noted — you couldn't back up that claim."), then immediately pivot to a DIFFERENT specific project, internship, skill, or certification explicitly written in the document above and ask a concrete verification question about it.
+- If the candidate gave a real technical or domain answer: briefly acknowledge one specific detail they got right, then test a DIFFERENT named project, internship, skill, or edge case from their document above so you cover the breadth of their resume.
+- Stay 100% anchored to what is actually written in the uploaded document above.`;
+      }
     }
 
     // 5. Telemetry Context (Advisory)
@@ -358,18 +767,44 @@ export async function POST(req: Request) {
       telemetryContext = `[Diagnostic Signal: ${parts.join(', ')}]. Maintain crisp verbal engagement.`;
     }
 
-    const systemPrompt = `You are ${selectedInterviewer.name}, ${selectedInterviewer.role}. ${selectedInterviewer.nature}.
+    const systemPrompt = stage === 'vault_defense'
+      ? `You are ${selectedInterviewer.name}, ${selectedInterviewer.role}. ${selectedInterviewer.nature}
+${stageContext}
+${telemetryContext}
+STRICT AUDIT RULES:
+1. Speak in first person as ${selectedInterviewer.name} in natural, direct spoken dialogue (2-3 sentences max, no markdown bullets, no numbered lists, no "Question 1 of 3:" headers, and NEVER append a sign-off like "— ${selectedInterviewer.name}").
+2. Every single question MUST directly reference a real project, internship, skill, tool, course, or certification written in the ACTUAL UPLOADED DOCUMENT above.
+3. NEVER give generic mock-interview prompts like "walk me through your background" or "use the STAR method" or "click Skip Round".
+4. If the candidate says "I don't know" or gives a vague bluff, call it out calmly and test another specific claim from their document.
+5. Never reveal answers or coach the candidate — you are auditing whether their uploaded credential is authentic.`
+      : `You are ${selectedInterviewer.name}, ${selectedInterviewer.role}. ${selectedInterviewer.nature}.
 ${difficultyPrompt}
 ${topicPrompt}
 ${stageContext}
 ${telemetryContext}
 RULES:
-1. Speak in first person as ${selectedInterviewer.name}.
-2. ${reviewDecision ? 'For the final code-review decision, provide a concise verdict and use the required marker; do not ask a question.' : 'Ask exactly ONE clear, concise question per turn.'}
-3. Never give the complete code or answer away.
-4. Keep response under 3 sentences max for spoken voice clarity.`;
+1. Speak in first person as ${selectedInterviewer.name} in natural spoken dialogue (no markdown bullets, no numbered lists, and NEVER append a sign-off or your name like '— ${selectedInterviewer.name}').
+2. ${
+  activeDefense && activeDefense.phase === 'answer' && activeDefense.questionNumber >= activeDefense.totalQuestions
+    ? 'For this final defense turn, acknowledge briefly and append [[DEFENSE_GRADE:PASS]] or [[DEFENSE_GRADE:FAIL]]; do NOT ask another question.'
+    : reviewDecision
+    ? 'For the final code-review decision, provide a concise verdict and use the required marker; do not ask a question.'
+    : 'Ask exactly ONE sharp, non-repetitive follow-up question per turn that directly reacts to what the candidate just said.'
+}
+3. If the candidate says "I don't know", expresses confusion, or feels stuck, NEVER pretend they gave an answer or praise them for not knowing. Supportively acknowledge it ("No problem at all—let's look at this from a different angle...") and guide them with a simpler stepping-stone question strictly inside the CURRENT stage (${stage || 'round1_behavioral'}) — NEVER drift back into Round 1 college background or unrelated syntax trivia during Round 2 or Round 3.
+4. If the candidate gives a broad introductory greeting without project specifics, warmly acknowledge them and ask for one specific project, the technical problem it solved, and their direct contribution.
+5. If the candidate gives a vague or high-level claim, press politely for a concrete number, trade-off, or failure mode. If they explicitly ask to skip a question or skip the current round/canvas, NEVER say they cannot skip it — politely acknowledge and let them know they can click the "Skip Round" button at the top right of the round panel anytime to move directly to the next round.
+6. Never give the complete code or answer away.
+7. Keep response under 3 sentences max for natural spoken voice pacing.
+8. If the candidate repeats a bare greeting (like "hi" or "hello") or says they do not know what to do, NEVER hallucinate that they made a technical decision or praise "your initial approach". Politely invite them to introduce their background or project experience in ${subTopic}.
+9. If the candidate indicates readiness (e.g. "ok im ready", "ready to start"), welcome them enthusiastically and invite them directly to walk through their background and a key project in ${subTopic}.
+10. If the candidate asks for clarification or asks to explain in depth (e.g. "can you explain in depth", "what do you mean?"), explain the question in simpler, practical terms. NEVER treat their question as a project name or technical approach.
+11. If the candidate asks how to answer (e.g. "how to answer", "what should I say?"), briefly guide them to use the STAR method (Situation, Task, Action, Result).
+12. NEVER parrot back raw candidate phrasing into templates like "You made an insightful observation around [candidate's words]". Always sound like a natural, empathetic, professional corporate hiring manager.
+13. If the candidate states they have no software experience, have not done projects/courses, are not a software developer, or are attending without prior technical preparation: NEVER praise them for a "practical perspective" or ask how they balanced shipping speed. Acknowledge with genuine warmth and empathy; in Round 1 ask about their actual educational background or interests, whereas in Round 2/3 keep the stepping-stone prompt focused on solving a tiny piece of the current round's problem or placing 2 blocks on the architecture canvas.
+14. If the candidate expresses language confusion or a communication barrier (e.g. mentions Telugu, Hindi, can't understand, or asks what you mean): NEVER hallucinate that this was a technical choice. Respond in very simple, reassuring, plain English, apologizing for any confusion, and ask a very simple opening question about their college or interests.`;
 
-    // 6. Multi-Key Rotation Pool & Provider Failover
+    // 6. Multi-Key & Multi-Model Rotation Pool & Provider Failover
     const groqKeysStr = process.env.GROQ_API_KEYS || '';
     let groqKeys = groqKeysStr.split(',').map(k => k.trim()).filter(Boolean);
     const singleGroqKey = process.env.GROQ_API_KEY;
@@ -377,6 +812,11 @@ RULES:
       groqKeys.push(singleGroqKey);
     }
     const openRouterKey = process.env.OPENROUTER_API_KEY;
+    const GROQ_MODELS = Array.from(new Set([
+      process.env.GROQ_MODEL || 'qwen/qwen3.8-27b',
+      'openai/gpt-oss-20b',
+      'openai/gpt-oss-120b',
+    ]));
 
     let reply = '';
     const formattedHistory = effectiveHistory.map((h) => ({ role: h.role === 'assistant' ? 'assistant' : 'user', content: String(h.content || '') }));
@@ -386,90 +826,92 @@ RULES:
 
     // 7. If client requested SSE streaming, attempt streaming Groq inference
     if (wantsStream) {
-      for (const key of groqKeys) {
-        try {
-          console.log(`[Interview Chat API] Attempting streaming Groq inference with key ending in ...${key.slice(-4)}`);
-          const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${key}`
-            },
-            body: JSON.stringify({
-              model: 'llama-3.1-8b-instant',
-              messages: [
-                { role: 'system', content: systemPrompt },
-                ...formattedHistory
-              ],
-              max_tokens: 280,
-              temperature: 0.7,
-              stream: true
-            }),
-            signal: AbortSignal.timeout(3500)
-          });
+      streamLoop: for (const key of groqKeys) {
+        for (const model of GROQ_MODELS) {
+          try {
+            console.log(`[Interview Chat API] Attempting streaming Groq inference with model ${model} and key ending in ...${key.slice(-4)}`);
+            const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${key}`
+              },
+              body: JSON.stringify({
+                model,
+                messages: [
+                  { role: 'system', content: systemPrompt },
+                  ...formattedHistory
+                ],
+                max_tokens: 280,
+                temperature: 0.7,
+                stream: true
+              }),
+              signal: AbortSignal.timeout(6000)
+            });
 
-          if (res.ok && res.body) {
-            console.log('[Interview Chat API] Streaming Groq connection established');
-            const encoder = new TextEncoder();
-            const decoder = new TextDecoder();
-            const groqReader = res.body.getReader();
+            if (res.ok && res.body) {
+              console.log(`[Interview Chat API] Streaming Groq connection established with model ${model}`);
+              const encoder = new TextEncoder();
+              const decoder = new TextDecoder();
+              const groqReader = res.body.getReader();
 
-            const streamResponse = new ReadableStream({
-              async start(controller) {
-                let buffer = '';
-                try {
-                  while (true) {
-                    const { done, value } = await groqReader.read();
-                    if (done) break;
-                    buffer += decoder.decode(value, { stream: true });
-                    const lines = buffer.split('\n');
-                    buffer = lines.pop() || '';
+              const streamResponse = new ReadableStream({
+                async start(controller) {
+                  let buffer = '';
+                  try {
+                    while (true) {
+                      const { done, value } = await groqReader.read();
+                      if (done) break;
+                      buffer += decoder.decode(value, { stream: true });
+                      const lines = buffer.split('\n');
+                      buffer = lines.pop() || '';
 
-                    for (const line of lines) {
-                      const trimmed = line.trim();
-                      if (!trimmed || trimmed.startsWith(':')) continue;
-                      if (trimmed === 'data: [DONE]') {
-                        controller.enqueue(encoder.encode('data: [DONE]\n\n'));
-                        controller.close();
-                        return;
-                      }
-                      if (trimmed.startsWith('data: ')) {
-                        try {
-                          const json = JSON.parse(trimmed.slice(6));
-                          const token = json.choices?.[0]?.delta?.content;
-                          if (token) {
-                            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ token })}\n\n`));
+                      for (const line of lines) {
+                        const trimmed = line.trim();
+                        if (!trimmed || trimmed.startsWith(':')) continue;
+                        if (trimmed === 'data: [DONE]') {
+                          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+                          controller.close();
+                          return;
+                        }
+                        if (trimmed.startsWith('data: ')) {
+                          try {
+                            const json = JSON.parse(trimmed.slice(6));
+                            const token = json.choices?.[0]?.delta?.content;
+                            if (token) {
+                              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ token })}\n\n`));
+                            }
+                          } catch {
+                            // Ignore parse error on partial chunks
                           }
-                        } catch {
-                          // Ignore parse error on partial chunks
                         }
                       }
                     }
+                    controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+                    controller.close();
+                  } catch (streamErr) {
+                    controller.error(streamErr);
                   }
-                  controller.enqueue(encoder.encode('data: [DONE]\n\n'));
-                  controller.close();
-                } catch (streamErr) {
-                  controller.error(streamErr);
                 }
-              }
-            });
+              });
 
-            return new Response(streamResponse, {
-              headers: {
-                'Content-Type': 'text/event-stream; charset=utf-8',
-                'Cache-Control': 'no-cache, no-transform',
-                'Connection': 'keep-alive',
-                'X-Accel-Buffering': 'no'
-              }
-            });
+              return new Response(streamResponse, {
+                headers: {
+                  'Content-Type': 'text/event-stream; charset=utf-8',
+                  'Cache-Control': 'no-cache, no-transform',
+                  'Connection': 'keep-alive',
+                  'X-Accel-Buffering': 'no'
+                }
+              });
+            }
+          } catch (streamAttemptErr: any) {
+            console.warn(`[Interview Chat API] Groq streaming key/model failed (${model}):`, streamAttemptErr?.message);
           }
-        } catch (streamAttemptErr: any) {
-          console.warn('[Interview Chat API] Groq streaming key failed:', streamAttemptErr?.message);
         }
       }
 
       // If streaming Groq was offline, stream the deterministic fallback
-      const fallback = generateProgressiveFallbackQuestion({ stage: stage || 'round1_behavioral', subTopic, history: formattedHistory, difficulty: difficulty || 'normal', interviewerName: selectedInterviewer.name });
+      const fallback = generateProgressiveFallbackQuestion({ stage: stage || 'round1_behavioral', subTopic, history: formattedHistory, difficulty: difficulty || 'normal', interviewerName: selectedInterviewer.name, stream });
       const encoder = new TextEncoder();
       const fallbackStream = new ReadableStream({
         start(controller) {
@@ -487,49 +929,52 @@ RULES:
       });
     }
 
-    // Attempt Groq Multi-Key Pool with ultra-fast 8B conversational model and 3.5s timeout (Non-Streaming JSON)
+    // Attempt Groq Multi-Key & Multi-Model Pool with 6s timeout (Non-Streaming JSON)
     for (const key of groqKeys) {
-      try {
-        console.log(`[Interview Chat API] Attempting Groq inference with key ending in ...${key.slice(-4)}`);
-        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${key}`
-          },
-          body: JSON.stringify({
-            model: 'llama-3.1-8b-instant',
-            messages: [
-              { role: 'system', content: systemPrompt },
-              ...formattedHistory
-            ],
-            max_tokens: 280,
-            temperature: 0.7
-          }),
-          signal: AbortSignal.timeout(3500)
-        });
+      for (const model of GROQ_MODELS) {
+        try {
+          console.log(`[Interview Chat API] Attempting Groq inference with model ${model} and key ending in ...${key.slice(-4)}`);
+          const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${key}`
+            },
+            body: JSON.stringify({
+              model,
+              messages: [
+                { role: 'system', content: systemPrompt },
+                ...formattedHistory
+              ],
+              max_tokens: 280,
+              temperature: 0.7
+            }),
+            signal: AbortSignal.timeout(6000)
+          });
 
-        if (res.ok) {
-          const data = await res.json();
-          reply = (data.choices?.[0]?.message?.content || '').trim();
-          if (reply) {
-            console.log(`[Interview Chat API] Groq inference successful (${reply.length} chars)`);
-            break;
+          if (res.ok) {
+            const data = await res.json();
+            reply = (data.choices?.[0]?.message?.content || '').trim();
+            if (reply) {
+              console.log(`[Interview Chat API] Groq inference successful via ${model} (${reply.length} chars)`);
+              break;
+            }
+          } else {
+            console.warn(`[Interview Chat API] Groq model ${model} returned status: ${res.status}`);
           }
-        } else {
-          console.warn(`[Interview Chat API] Groq key returned status: ${res.status}`);
+        } catch (err: any) {
+          console.warn(`[Interview Chat API] Groq request failed for model ${model}:`, err?.message);
         }
-      } catch (err: any) {
-        console.warn(`[Interview Chat API] Groq request failed for key:`, err?.message);
       }
+      if (reply) break;
     }
 
     // Fallback to Google Gemini API if Groq pool is exhausted
-    const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || process.env.GOOGLE_AI_KEY;
     if (!reply && geminiKey) {
       try {
         console.log('[Interview Chat API] Falling back to Gemini inference...');
-        const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`, {
+        const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiKey}`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -544,7 +989,7 @@ RULES:
               temperature: 0.7
             }
           }),
-          signal: AbortSignal.timeout(3500)
+          signal: AbortSignal.timeout(6000)
         });
         if (geminiRes.ok) {
           const gemData = await geminiRes.json();
@@ -595,17 +1040,55 @@ RULES:
     // Deterministic fallback if all external LLMs are offline
     if (!reply) {
       console.warn('[Interview Chat API] External LLMs unavailable, using contextual deterministic fallback');
-      if (reviewDecision) {
+      if (activeDefense) {
+        if (activeDefense.phase === 'start') {
+          reply = getFallbackDefenseQuestion({
+            roundType: activeDefense.roundType,
+            questionNumber: 1,
+            topic: subTopic,
+            artifactHint: activeDefense.artifactSummary?.slice(0, 80),
+          });
+        } else {
+          const finalAnswer = [...formattedHistory].reverse().find(turn => turn.role === 'user')?.content || '';
+          const gradeCheck = evaluateDefenseTurnPass(finalAnswer, null);
+          const tag = gradeCheck.passed ? '[[DEFENSE_GRADE:PASS]]' : '[[DEFENSE_GRADE:FAIL]]';
+          if (activeDefense.questionNumber < activeDefense.totalQuestions) {
+            const nextQ = getFallbackDefenseQuestion({
+              roundType: activeDefense.roundType,
+              questionNumber: activeDefense.questionNumber + 1,
+              topic: subTopic,
+              artifactHint: activeDefense.artifactSummary?.slice(0, 80),
+            });
+            const ack = gradeCheck.passed
+              ? 'Noted—clear reasoning on that point.'
+              : 'Noted—that did not fully address the question.';
+            reply = `${ack} ${nextQ} ${tag}`;
+          } else {
+            reply = `${gradeCheck.passed ? 'Thank you for explaining that final point.' : 'Noted—that final explanation fell short of the panel bar.'} ${tag}`;
+          }
+        }
+      } else if (reviewDecision) {
         const finalAnswer = [...formattedHistory].reverse().find(turn => turn.role === 'user')?.content || '';
         const answer = finalAnswer.toLowerCase();
-        const hasReasoning = ['because', 'complexity', 'edge case', 'trade-off', 'tradeoff', 'test', 'memory', 'time'].some(term => answer.includes(term));
+        const hasReasoning = ['because', 'complexity', 'edge case', 'trade-off', 'tradeoff', 'test', 'memory', 'time', 'margin', 'ratio', 'audit', 'cash flow', 'covenant'].some(term => answer.includes(term));
         const passes = finalAnswer.trim().split(/\s+/).length >= 18 && hasReasoning;
         reply = passes
-          ? `Your explanation connects the implementation to its complexity or edge cases. That meets the review bar. [[ROUND_VERDICT:PASS]]`
-          : `I need a clearer explanation of the reasoning behind your implementation and how it handles complexity or edge cases. [[ROUND_VERDICT:RETRY]]`;
+          ? `Your explanation connects the solution to its core trade-offs and edge cases. That meets the review bar. [[ROUND_VERDICT:PASS]]`
+          : `I need a clearer explanation of the reasoning behind your solution and how it handles key trade-offs or edge cases. [[ROUND_VERDICT:RETRY]]`;
       } else {
-        reply = generateProgressiveFallbackQuestion({ stage: stage || 'round1_behavioral', subTopic, history: formattedHistory, difficulty: difficulty || 'normal', interviewerName: selectedInterviewer.name });
+        reply = generateProgressiveFallbackQuestion({ stage: stage || 'round1_behavioral', subTopic, history: formattedHistory, difficulty: difficulty || 'normal', interviewerName: selectedInterviewer.name, stream });
       }
+    }
+
+    let defenseGrade: 'PASS' | 'FAIL' | undefined = undefined;
+    if (activeDefense && activeDefense.phase === 'answer') {
+      const gradeMatch = reply.match(/\[\[DEFENSE_GRADE:(PASS|FAIL)\]\]/i);
+      const rawLlmGrade: 'PASS' | 'FAIL' | null = gradeMatch
+        ? (gradeMatch[1].toUpperCase() === 'PASS' ? 'PASS' : 'FAIL')
+        : null;
+      const lastCandidateMsg = [...formattedHistory].reverse().find(turn => turn.role === 'user')?.content || String(message || '');
+      const hybrid = evaluateDefenseTurnPass(lastCandidateMsg, rawLlmGrade);
+      defenseGrade = hybrid.passed ? 'PASS' : 'FAIL';
     }
 
     let roundVerdict: 'PASS' | 'RETRY' | undefined = undefined;
@@ -614,21 +1097,39 @@ RULES:
       if (verdictMatch) {
         roundVerdict = verdictMatch[1].toUpperCase() === 'PASS' ? 'PASS' : 'RETRY';
       } else {
-        // Robust semantic fallback if LLM omitted the exact bracket tag
+        // Word-boundary + negation-aware fallback when LLM omits the exact bracket tag
         const lowerReply = reply.toLowerCase();
-        const positiveKeywords = ['looks good', 'meets the bar', 'well explained', 'good explanation', 'solid approach', 'approved', 'pass', 'correctly addressed', 'optimal', 'great job', 'excellent'];
-        const negativeKeywords = ['retry', 'please explain again', 'does not address', 'missed', 'substantive gap', 'unclear', 'insufficient'];
-        const isPositive = positiveKeywords.some(p => lowerReply.includes(p));
-        const isNegative = negativeKeywords.some(p => lowerReply.includes(p));
+        const negatedPositivePattern = /\b(?:not|never|no|doesn'?t|does not|did not|didn'?t|won'?t|will not|cannot|can'?t|failed to)\s+(?:\w+\s+){0,2}(?:looks? good|meets? the bar|well explained|good explanation|solid approach|approved|correctly addressed|optimal|great job|excellent|pass|sufficient)\b/gi;
+        const hasNegatedPositive = negatedPositivePattern.test(lowerReply);
+        const scrubbedForPositive = lowerReply.replace(negatedPositivePattern, '');
+        const isPositive = /\b(looks good|meets the bar|well explained|good explanation|solid approach|approved|correctly addressed|optimal|great job|excellent|pass)\b/i.test(scrubbedForPositive);
+        const scrubbedPositiveNegations = lowerReply.replace(/\b(?:no|not|never|didn'?t|zero)\s+(?:substantive\s+gaps?|gaps?|missed|unclear|issues?)\b/gi, '');
+        const isNegative = hasNegatedPositive || /\b(retry|explain again|does not address|substantive gap|unclear|insufficient|incomplete|missed)\b/i.test(scrubbedPositiveNegations);
         roundVerdict = (isPositive && !isNegative) ? 'PASS' : 'RETRY';
       }
     }
-    const sanitizedReply = sanitizeLLMOutput(reviewDecision ? reply.replace(/\[\[ROUND_VERDICT:(PASS|RETRY)\]\]/i, '').trim() : reply);
+    let starGrade: 'PASS' | 'FAIL' | undefined = undefined;
+    if (stage === 'round4_star') {
+      const starMatch = reply.match(/\[\[STAR_GRADE:(PASS|FAIL)\]\]/i);
+      const rawStarGrade: 'PASS' | 'FAIL' | null = starMatch
+        ? (starMatch[1].toUpperCase() === 'PASS' ? 'PASS' : 'FAIL')
+        : null;
+      const lastCandidateMsg = [...formattedHistory].reverse().find(turn => turn.role === 'user')?.content || String(message || '');
+      const hybridStar = evaluateRound4AnswerAccuracy(lastCandidateMsg, rawStarGrade);
+      starGrade = hybridStar.accurate ? 'PASS' : 'FAIL';
+    }
+
+    const strippedMarkers = reply
+      .replace(/\[\[ROUND_VERDICT:(PASS|RETRY)\]\]/gi, '')
+      .replace(/\[\[DEFENSE_GRADE:(PASS|FAIL)\]\]/gi, '')
+      .replace(/\[\[STAR_GRADE:(PASS|FAIL)\]\]/gi, '')
+      .trim();
+    const sanitizedReply = stripInterviewerSignoff(sanitizeLLMOutput(strippedMarkers));
     if (live) {
       await recordTurns([liveUserTurn, clampTurn('assistant', sanitizedReply, stage)]);
-      return NextResponse.json({ reply: sanitizedReply, recorded: true, roundVerdict });
+      return NextResponse.json({ reply: sanitizedReply, recorded: true, roundVerdict, defenseGrade, starGrade });
     }
-    return NextResponse.json({ reply: sanitizedReply, roundVerdict });
+    return NextResponse.json({ reply: sanitizedReply, roundVerdict, defenseGrade, starGrade });
 
   } catch (err: any) {
     console.error('[Interview Chat API Critical Error]:', err);

@@ -1,10 +1,10 @@
 'use client';
 
 // Gamified daily missions, quest tracker, and 3D Role-Play Persona Evolution Simulator
-import { Suspense } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useCareerOS } from '@/lib/context/CareerOSContext';
 import { useAuth } from '@/lib/context/AuthContext';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { stopSpeaking } from '@/lib/tts';
 import MissionsHistoryTab from '@/components/missions/MissionsHistoryTab';
 import { useMissionsState } from './hooks/useMissionsState';
@@ -15,9 +15,11 @@ import MissionsStreakPanel from './components/MissionsStreakPanel';
 import MissionsLinguaLabWrapper from './components/MissionsLinguaLabWrapper';
 import MissionsEvolveBanner from './components/MissionsEvolveBanner';
 import MissionsConclusionDetail from './components/MissionsConclusionDetail';
+import { preloadAvatarGLB } from '@/components/avatar/VRoidInterviewAvatar';
 
 function MissionsPageInner() {
   const cOS = useCareerOS();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const { user, refresh } = useAuth();
   const state = useMissionsState(cOS.onboardingAnswers?.role || 'Software Developer');
@@ -64,6 +66,62 @@ function MissionsPageInner() {
     refresh,
     searchParams,
   });
+
+  // Voice action deep-link: `/missions?roleplay=true`
+  // Safely auto-starts immediately if already unlocked (0 Pins), otherwise opens a ready-to-confirm
+  // launch modal so Pins are never spent silently.
+  const [showRoleplayLaunchModal, setShowRoleplayLaunchModal] = useState(false);
+  const roleplayAutoHandledRef = useRef(false);
+  const userDismissedRoleplayRef = useRef(false);
+  const initiateRoleplayRef = useRef(initiateRoleplay);
+  initiateRoleplayRef.current = initiateRoleplay;
+
+  useEffect(() => {
+    preloadAvatarGLB(['rohan', 'priya', 'rajesh', 'sneha', 'abhijit']);
+  }, []);
+
+  useEffect(() => {
+    // If candidate explicitly dismissed or aborted the mindset simulation session, never auto-start
+    if (
+      userDismissedRoleplayRef.current ||
+      (typeof window !== 'undefined' && (window as any).__pinitMissionsUserAborted)
+    ) {
+      return;
+    }
+
+    const wantsRoleplay = searchParams?.get('roleplay') === 'true';
+    if (!wantsRoleplay) {
+      return;
+    }
+    if (roleplayActive || roleplayAutoHandledRef.current) return;
+    roleplayAutoHandledRef.current = true;
+
+    // Preserve incoming tab (e.g. ?tab=history&roleplay=true -> preserve history tab)
+    const urlTab = searchParams?.get('tab');
+    if (urlTab === 'history' || urlTab === 'language' || urlTab === 'evolve') {
+      setActiveTab(urlTab);
+    } else {
+      setActiveTab('evolve');
+    }
+
+    if (typeof window !== 'undefined') {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('roleplay');
+        const cleanUrl = url.pathname + (url.search ? url.search : '');
+        window.history.replaceState({}, '', cleanUrl);
+        if (router && typeof router.replace === 'function') {
+          router.replace(cleanUrl);
+        }
+      } catch {}
+    }
+
+    if (cOS.isItemUnlocked?.('mission:roleplay')) {
+      void initiateRoleplayRef.current();
+    } else {
+      setShowRoleplayLaunchModal(true);
+    }
+  }, [searchParams, roleplayActive, setActiveTab, cOS, router]);
 
   const {
     missionOnlyStreak,
@@ -351,6 +409,106 @@ function MissionsPageInner() {
           hasCompletedAnyMission={hasCompletedAnyMission}
         />
       </div>
+      )}
+
+      {showRoleplayLaunchModal && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Confirm Daily Mission Roleplay Launch"
+          data-testid="missions-voice-launch-modal"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1200,
+            background: 'rgba(2, 6, 23, 0.72)',
+            backdropFilter: 'blur(6px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 20,
+          }}
+          onClick={() => setShowRoleplayLaunchModal(false)}
+        >
+          <div
+            style={{
+              width: '100%',
+              maxWidth: 460,
+              background: theme.bgCard,
+              border: '1.5px solid rgba(168,85,247,0.45)',
+              borderRadius: 20,
+              padding: 26,
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.45)',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 12 }}>
+              <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--purple)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                🎙️ Voice Launch Ready
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  userDismissedRoleplayRef.current = true;
+                  if (typeof window !== 'undefined') (window as any).__pinitMissionsUserAborted = true;
+                  setShowRoleplayLaunchModal(false);
+                }}
+                aria-label="Close modal"
+                style={{ background: 'none', border: 'none', color: theme.tSecondary, fontSize: 18, cursor: 'pointer' }}
+              >
+                ✕
+              </button>
+            </div>
+            <h3 style={{ margin: '0 0 8px', fontSize: 20, fontWeight: 900, color: theme.tPrimary }}>
+              Start Daily Mission Roleplay?
+            </h3>
+            <p style={{ margin: '0 0 18px', fontSize: 13.5, lineHeight: 1.55, color: theme.tSecondary }}>
+              Your Mindset Persona Simulator is calibrated for <strong>{onboardingAnswers?.role || 'Software Developer'}</strong>. Confirm to unlock your 30-minute roleplay session (Pins balance: <strong>{cOS.pins ?? 0}</strong>).
+            </p>
+            <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>
+              <button
+                type="button"
+                onClick={() => {
+                  userDismissedRoleplayRef.current = true;
+                  if (typeof window !== 'undefined') (window as any).__pinitMissionsUserAborted = true;
+                  setShowRoleplayLaunchModal(false);
+                }}
+                style={{
+                  padding: '10px 16px',
+                  borderRadius: 10,
+                  border: `1px solid ${theme.border}`,
+                  background: theme.bgInside,
+                  color: theme.tSecondary,
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                data-testid="missions-voice-confirm-launch-btn"
+                disabled={roleplayLoading || isUnlocking}
+                onClick={() => {
+                  userDismissedRoleplayRef.current = false;
+                  if (typeof window !== 'undefined') (window as any).__pinitMissionsUserAborted = false;
+                  roleplayAutoHandledRef.current = true;
+                  setShowRoleplayLaunchModal(false);
+                  void initiateRoleplay();
+                }}
+                className="btn-primary"
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 10,
+                  fontWeight: 800,
+                  cursor: roleplayLoading || isUnlocking ? 'not-allowed' : 'pointer',
+                }}
+              >
+                {roleplayLoading || isUnlocking ? '⚡ Launching...' : '⚡ Launch Simulator'}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

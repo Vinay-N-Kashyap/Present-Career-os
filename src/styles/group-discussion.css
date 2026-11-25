@@ -99,6 +99,42 @@
   gap: 10px;
 }
 
+.gd-domain-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 720px) {
+  .gd-domain-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gd-turn-flow-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 7px 12px;
+}
+
+.gd-flow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  transition: all 0.2s ease;
+}
+
+.gd-flow-pill.active {
+  box-shadow: 0 0 12px rgba(20, 184, 166, 0.25);
+}
+
 .gd-select-btn {
   padding: 12px;
   border-radius: 12px;
@@ -120,14 +156,40 @@
 .gd-call-layout {
   display: grid;
   grid-template-columns: 7fr 3fr;
-  gap: 16px;
+  gap: 14px;
   width: 100%;
-  min-height: calc(100vh - 100px);
+  height: calc(100vh - 122px);
+  max-height: calc(100vh - 122px);
+  min-height: 540px;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.gd-call-stage-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
   .gd-call-layout {
     grid-template-columns: 1fr;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .gd-call-stage-col {
+    height: auto;
+    overflow: visible;
+  }
+
+  .gd-chat-panel {
+    height: 480px;
+    max-height: 70vh;
   }
 }
 
@@ -195,16 +257,19 @@
 .gd-call-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, minmax(0, 1fr));
   gap: 10px;
   background: #090d16;
-  border-radius: 24px;
-  padding: 14px;
-  height: calc(100vh - 200px);
-  min-height: 560px;
+  border-radius: 20px;
+  padding: 12px;
+  flex: 1 1 0%;
+  min-height: 0;
+  height: auto;
   border: 1.5px solid var(--border);
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
 }
 
 .gd-live-participants {
@@ -214,16 +279,16 @@
 
 /* Participant Avatar Cards */
 .gd-participant-card {
-  border-radius: 16px;
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   overflow: hidden;
   height: 100%;
-  min-height: 155px;
+  min-height: 132px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
@@ -265,28 +330,33 @@
 .gd-chat-panel {
   background: var(--bg2);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   height: 100%;
-  min-height: 560px;
+  max-height: 100%;
+  min-height: 0;
   box-shadow: var(--shadow-md);
 }
 
 .gd-chat-header {
-  padding: 14px 18px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--border);
   background: var(--bg3);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .gd-chat-messages-scroll {
-  flex: 1;
-  padding: 16px;
+  flex: 1 1 0%;
+  min-height: 0;
+  padding: 14px;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
   gap: 12px;

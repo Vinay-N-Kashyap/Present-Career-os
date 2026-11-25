@@ -29,7 +29,7 @@ describe('BRUTAL VALIDATION — STUDENT LEFT SIDEBAR (Perspectives 3, 4, 5)', ()
       
       const primarySection = STUDENT_NAV[0];
       assert.equal(primarySection.section, 'PinIT Career OS', 'Primary section name must match PinIT branding');
-      assert.ok(primarySection.items.length >= 9, 'Student must have at least 9 core workspace items');
+      assert.ok(primarySection.items.length >= 8, 'Student must have at least 8 core workspace items');
     });
 
     it('every STUDENT_NAV item has valid, non-empty, well-formed properties', () => {
@@ -57,16 +57,13 @@ describe('BRUTAL VALIDATION — STUDENT LEFT SIDEBAR (Perspectives 3, 4, 5)', ()
     it('contains all required student flagship routes in exact canonical order', () => {
       const expectedRoutes = [
         { href: '/dashboard', label: 'Dashboard' },
-        { href: '/quests', label: 'Quests & Courses' },
+        { href: '/quests', label: 'Courses' },
         { href: '/missions', label: 'Daily Missions' },
-        { href: '/arena', label: 'Arena & Leaderboard' },
         { href: '/projects', label: 'Projects' },
         { href: '/innovation-hub', label: 'Innovation Hub' },
         { href: '/interview', label: 'AI Interview' },
-        { href: '/mirror', label: 'Mirror' },
+        { href: '/mirror', label: 'Digital Studio' },
         { href: '/attention-span', label: 'Attention Span' },
-        { href: '/vault', label: 'Proof Vault' },
-        { href: '/shop', label: 'Item Shop' },
       ];
 
       const actualLeaves = STUDENT_NAV[0].items.filter((item): item is NavLeaf => !isGroup(item));
@@ -80,7 +77,7 @@ describe('BRUTAL VALIDATION — STUDENT LEFT SIDEBAR (Perspectives 3, 4, 5)', ()
     });
 
     it('BOTTOM_NAV contains required secondary student utilities', () => {
-      const expectedFooterRoutes = ['/friends', '/pins', '/notifications', '/profile'];
+      const expectedFooterRoutes = ['/friends', '/arena', '/notifications', '/profile'];
       for (const route of expectedFooterRoutes) {
         const found = BOTTOM_NAV.find(b => b.href === route);
         assert.ok(found, `BOTTOM_NAV must contain ${route}`);
@@ -258,10 +255,10 @@ describe('BRUTAL VALIDATION — FULL SSR RENDERING OF APPSIDEBAR', () => {
     // Active state highlighting on /dashboard
     assert.ok(html.includes('active'), 'Active class must be rendered for current route');
 
-    // Footer items
+    // Footer items & Unified Shop link
     assert.ok(html.includes('href="/friends"'), 'Friends link must be in student footer');
-    assert.ok(html.includes('href="/pins"'), 'Pins & Wallet link must be in student footer');
-    assert.ok(html.includes('350'), 'Safe pins count must be displayed');
+    assert.ok(html.includes('href="/arena"'), 'Relocated Arena link must be in student footer');
+    assert.ok(!html.includes('href="/shop"'), 'Pins & Shop tab removed from student sidebar per Task 2');
     assert.ok(html.includes('Aarav Patel'), 'Student display name must be rendered');
     assert.ok(html.includes('student') && html.includes('Profile'), 'Role badge must be rendered');
 
@@ -295,7 +292,7 @@ describe('BRUTAL VALIDATION — FULL SSR RENDERING OF APPSIDEBAR', () => {
     assert.ok(html.includes('open'), 'Sidebar must have open class for mobile drawer');
     assert.ok(html.includes('aria-label="Close navigation menu"'), 'Must render mobile close button');
     // Labels must still be rendered because mobileOpen takes precedence over collapsed
-    assert.ok(html.includes('Quests &amp; Courses') || html.includes('Quests & Courses'), 'Labels must be rendered in mobile drawer');
+    assert.ok(html.includes('Courses'), 'Labels must be rendered in mobile drawer');
   });
 
   it('renders unread notifications badge properly (3 vs 9+)', () => {
@@ -352,7 +349,7 @@ describe('Perspective 6: All 15 Student Route Modules Exist and Export Valid Com
     { name: 'Notifications', path: '../src/app/notifications/page' },
     { name: 'Profile', path: '../src/app/profile/page' },
     { name: 'Career Builder', path: '../src/app/career-builder/page' },
-    { name: 'Mirror', path: '../src/app/mirror/page' },
+    { name: 'Digital Studio', path: '../src/app/mirror/page' },
   ];
 
   for (const route of routes) {

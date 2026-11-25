@@ -41,7 +41,7 @@ const CSP = [
   "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' 'unsafe-eval' https://*.supabase.co https://checkout.razorpay.com https://*.razorpay.com https://cdn.jsdelivr.net",
 
   // styles + fonts (unchanged)
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net",
   "font-src 'self' https://fonts.gstatic.com data:",
 
   // images (unchanged)
@@ -80,11 +80,11 @@ const CSP = [
     'https://api.groq.com',
   ].join(' '),
 
-  // ── UPDATED frame-src ──────────────────────────────────────────
-  // Added: https://checkout.razorpay.com (Razorpay checkout iframe)
-  // Added: https://*.razorpay.com (wildcard for all razorpay subdomains)
-  // Kept:  https://api.razorpay.com
-  "frame-src 'self' https://api.razorpay.com https://checkout.razorpay.com https://*.razorpay.com",
+  // ── UPDATED frame-src & object-src ──────────────────────────────
+  // Added: blob: and https://*.supabase.co for in-app Proof Vault PDF/document preview,
+  // plus Razorpay checkout iframe origins.
+  "frame-src 'self' blob: https://*.supabase.co https://api.razorpay.com https://checkout.razorpay.com https://*.razorpay.com",
+  "object-src 'self' blob: https://*.supabase.co",
 
   // remaining directives (unchanged)
   "frame-ancestors 'self'",
@@ -117,6 +117,7 @@ export async function middleware(request: NextRequest) {
     path.startsWith('/brand') ||
     path.startsWith('/draco') ||
     path.startsWith('/esbuild') ||
+    path.startsWith('/pdfjs') ||
     path.startsWith('/pyodide') ||
     path.startsWith('/sandbox') ||
     path.startsWith('/sql') ||
@@ -286,6 +287,6 @@ export const config = {
      * - static directories: avatar, audio, brand, draco, esbuild, pyodide, sandbox, sql
      * - static file extensions: svg, png, jpg, jpeg, gif, webp, ico, glb, gltf, wasm, bin, mp3, wav, mp4, webm, woff, woff2, ttf, eot
      */
-    '/((?!_next/static|_next/image|favicon.ico|avatar/|audio/|brand/|draco/|esbuild/|pyodide/|sandbox/|sql/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|glb|gltf|wasm|bin|mp3|wav|mp4|webm|woff|woff2|ttf|eot)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|avatar/|audio/|brand/|draco/|esbuild/|pdfjs/|pyodide/|sandbox/|sql/|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico|glb|gltf|wasm|bin|mp3|wav|mp4|webm|woff|woff2|ttf|eot)$).*)',
   ],
 };

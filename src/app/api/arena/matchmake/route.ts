@@ -41,6 +41,7 @@ export async function POST(req: NextRequest) {
 
     const result = await ArenaPvPStore.matchmake({
       studentId: queueStudentId,
+      userId: auth.user.id,
       studentName: studentName.slice(0, 60),
       studentAvatar: typeof studentAvatar === 'string' ? studentAvatar.slice(0, 500) : undefined,
       difficulty: typeof difficulty === 'string' && difficulty ? difficulty : 'any',

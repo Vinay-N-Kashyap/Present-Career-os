@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect, useRef, Suspense, useCallback } from 'react';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useCareerOS } from '@/lib/context/CareerOSContext';
 import { useAuth } from '@/lib/context/AuthContext';
@@ -28,6 +28,10 @@ import {
   createCombatEvent,
 } from '@/lib/arena/codeWarRules';
 import CompetitionNavigation from '@/components/competition/CompetitionNavigation';
+import { isConfirmedLeagueMembershipCacheValue } from '@/lib/competition/leagueMembershipSnapshot';
+import { recordCheatingIncident } from '@/lib/trust/trustEngine';
+import { recordMetricLedgerEntry } from '@/lib/telemetry/metricsLedger';
+import styles from '../competition-experience.module.css';
 
 const MonacoEditor = dynamic(
   () => import('@monaco-editor/react').then(mod => mod.default),
@@ -41,6 +45,14 @@ const MonacoEditor = dynamic(
   }
 );
 
+function createArenaRequestId(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, char => {
+    const random = Math.floor(Math.random() * 16);
+    return (char === 'x' ? random : (random & 0x3) | 0x8).toString(16);
+  });
+}
+
 function ArenaContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -49,15 +61,44 @@ function ArenaContent() {
   const roomQueryCode = searchParams?.get('room');
 
   const { user, refresh } = useAuth();
-  const studentId = user?.id || 'student_' + Math.random().toString(36).substring(2, 8);
+  const guestStudentIdRef = useRef<string | null>(null);
+  if (!guestStudentIdRef.current) {
+    guestStudentIdRef.current = `student_${Math.random().toString(36).slice(2, 8)}`;
+  }
+  const studentId = user?.id || guestStudentIdRef.current;
+  const [combatantDeviceId, setCombatantDeviceId] = useState('');
   const studentName = (user as any)?.full_name || (user as any)?.name || 'Combatant';
   const studentAvatar = (user as any)?.avatar_url || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80';
   
   const cOS = useCareerOS();
   const { xp = 0, pins = 0 } = cOS || {};
 
+  useEffect(() => {
+    setCombatantDeviceId(ArenaPvPService.getDeviceId());
+  }, []);
+
   // Live ELO state with instant cache hydration (Baseline 100)
   const [liveElo, setLiveElo] = useState<number | null>(null);
+  const [arenaStanding, setArenaStanding] = useState<{
+    userId: string | null;
+    rank: number | null;
+    league: string;
+    weeklyXp: number;
+    weeklyArenaPoints: number;
+    careerXp: number;
+    joined: boolean;
+  }>({ userId: null, rank: null, league: 'browns', weeklyXp: 0, weeklyArenaPoints: 0, careerXp: 0, joined: false });
+
+  useEffect(() => {
+    if (!user?.id || typeof window === 'undefined') return;
+    try {
+      const cachedMembership = localStorage.getItem(`pinit_joined_league_${user.id}`);
+      if (!isConfirmedLeagueMembershipCacheValue(cachedMembership)) return;
+      setArenaStanding(previous => previous.userId === user.id && previous.joined
+        ? previous
+        : { ...previous, userId: user.id, joined: true });
+    } catch {}
+  }, [user?.id]);
   const [cachedElo, setCachedElo] = useState<number>(() => {
     if (typeof window !== 'undefined') {
       const saved = Number(localStorage.getItem(`pinit_user_elo_${studentId}`));
@@ -79,16 +120,11 @@ function ArenaContent() {
 
   const eloRating = liveElo ?? (sanitizedUserElo ?? cachedElo);
 
-  // Auto-heal legacy 1200 database rows in Supabase
-  useEffect(() => {
-    if (user?.id && (user as any)?.arena_elo === 1200 && !(user as any)?.arena_wins) {
-      Promise.resolve(supabase.from('users').update({ arena_elo: 100 }).eq('id', user.id)).catch(() => {});
-    }
-  }, [user]);
-
   // Synchronize dynamic profile events across tabs and contexts
   useEffect(() => {
     const handleProfileUpdate = (e: any) => {
+      const eventUserId = typeof e?.detail?.user_id === 'string' ? e.detail.user_id : null;
+      if (eventUserId && eventUserId !== user?.id) return;
       const incomingElo = typeof e?.detail?.arena_elo === 'number'
         ? e.detail.arena_elo
         : (typeof e?.detail?.elo === 'number' ? e.detail.elo : null);
@@ -100,7 +136,7 @@ function ArenaContent() {
       window.addEventListener('pinit:user_profile_updated', handleProfileUpdate as EventListener);
       return () => window.removeEventListener('pinit:user_profile_updated', handleProfileUpdate as EventListener);
     }
-  }, []);
+  }, [user?.id]);
 
   // Solo Sparring Match Settlement Reward State
   const [soloReward, setSoloReward] = useState<{
@@ -172,7 +208,10 @@ function ArenaContent() {
   const [activeRoom, setActiveRoom] = useState<ArenaRoom | null>(null);
   const [roomInputCode, setRoomInputCode] = useState<string>('');
   const [isCreatingRoom, setIsCreatingRoom] = useState<boolean>(false);
+  const roomCreateRequestIdRef = useRef<string | null>(null);
+  const soloStartRequestRef = useRef<{ requestId: string; problemId: string } | null>(null);
   const [isJoiningRoom, setIsJoiningRoom] = useState<boolean>(false);
+  const [isStartingSolo, setIsStartingSolo] = useState<boolean>(false);
   const [roomError, setRoomError] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState<boolean>(false);
 
@@ -184,9 +223,42 @@ function ArenaContent() {
   const [soloSettlementRetry, setSoloSettlementRetry] = useState(0);
   const soloSettlementAttemptsRef = useRef(0);
 
+  // Voice action deep-link: `/arena?autostart=duel`
+  // Opens a ready-to-confirm 1v1 Code Wars modal showing the 10-Pin entry fee (never silently spends Pins).
+  const [showVoiceDuelModal, setShowVoiceDuelModal] = useState(false);
+  const autostartDuelHandledRef = useRef(false);
+  useEffect(() => {
+    const autostart = searchParams?.get('autostart');
+    if (autostart !== 'duel') {
+      autostartDuelHandledRef.current = false;
+      return;
+    }
+    if (activeRoom || soloMatch || autostartDuelHandledRef.current) return;
+    autostartDuelHandledRef.current = true;
+    setActiveTab('code_wars');
+    setShowVoiceDuelModal(true);
+
+    if (typeof window !== 'undefined') {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.delete('autostart');
+        window.history.replaceState({}, '', url.pathname + (url.search ? url.search : ''));
+      } catch {}
+    }
+  }, [searchParams, activeRoom, soloMatch]);
+
   // In-battle state
-  const [language, setLanguage] = useState<'typescript' | 'python' | 'java'>('typescript');
+  const [language, setLanguage] = useState<'typescript' | 'python' | 'java'>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(`pinit_arena_language_${studentId}`);
+      if (saved === 'typescript' || saved === 'python' || saved === 'java') return saved;
+    }
+    return 'typescript';
+  });
   const [code, setCode] = useState<string>('');
+  const codeDraftsRef = useRef<Record<string, string>>({});
+  const [isAnswerPadOpen, setIsAnswerPadOpen] = useState(false);
+  const [answerScratchpad, setAnswerScratchpad] = useState('');
   const [timeRemaining, setTimeRemaining] = useState<number>(600);
   const [isRunningTests, setIsRunningTests] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -213,7 +285,139 @@ function ArenaContent() {
   const [showBattleReport, setShowBattleReport] = useState<boolean>(false);
   const [isStrategyExpanded, setIsStrategyExpanded] = useState<boolean>(true);
   const [copiedField, setCopiedField] = useState<string | null>(null);
+  const [isArenaFullscreen, setIsArenaFullscreen] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  useEffect(() => {
+    const syncFullscreenState = () => {
+      const docAny = document as any;
+      setIsArenaFullscreen(Boolean(document.fullscreenElement || docAny.webkitFullscreenElement));
+    };
+    syncFullscreenState();
+    document.addEventListener('fullscreenchange', syncFullscreenState);
+    document.addEventListener('webkitfullscreenchange', syncFullscreenState);
+    return () => {
+      document.removeEventListener('fullscreenchange', syncFullscreenState);
+      document.removeEventListener('webkitfullscreenchange', syncFullscreenState);
+    };
+  }, []);
+
+  // Anti-Cheating Guardian: Proctor active Arena battles against tab switching
+  useEffect(() => {
+    const isBattleRunning = Boolean(activeRoom || soloMatch) && timeRemaining > 0 && !testResult?.passed;
+    if (!isBattleRunning) return;
+
+    const handleVisibilityChange = () => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'hidden') {
+        const battleId = activeRoom?.id || soloMatch?.id || 'arena_battle';
+        recordCheatingIncident(user?.id, `arena_${battleId}`, 'arena', 'arena_tab_switch').catch(() => {});
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [activeRoom, soloMatch, timeRemaining, testResult, user?.id]);
+
+  useEffect(() => {
+    if (!user?.id) {
+      setArenaStanding({ userId: null, rank: null, league: 'browns', weeklyXp: 0, weeklyArenaPoints: 0, careerXp: Math.max(0, Number(xp) || 0), joined: false });
+      return;
+    }
+
+    let cancelled = false;
+    let inFlight = false;
+    const loadStanding = async () => {
+      if (inFlight) return;
+      inFlight = true;
+      try {
+        const params = new URLSearchParams({ mode: 'global', userId: user.id });
+        const headers: Record<string, string> = { 'x-user-id': user.id };
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.access_token) headers.Authorization = `Bearer ${session.access_token}`;
+        } catch {}
+
+        const response = await fetch(`/api/leaderboard?${params.toString()}`, { headers, cache: 'no-store' });
+        if (!response.ok) return;
+        const data = await response.json();
+        if (cancelled || !data?.ok || data.currentUserId !== user.id) return;
+
+        const stats = data.currentUserStats || {};
+        const standingElo = Number(data.currentUser?.eloRating ?? stats.arenaElo);
+        if (Number.isFinite(standingElo) && standingElo > 0) setLiveElo(standingElo);
+
+        setArenaStanding(previous => {
+          const sameAccount = previous.userId === user.id;
+          const joined = Boolean(data.currentUserHasJoined || (sameAccount && previous.joined) || (user as any)?.league_joined_at);
+          const serverRank = Number(data.currentUser?.rank);
+          return {
+            userId: user.id,
+            rank: joined
+              ? (data.currentUserHasJoined && Number.isFinite(serverRank) ? serverRank : sameAccount ? previous.rank : null)
+              : null,
+            league: typeof data.currentUserLeague === 'string' ? data.currentUserLeague : 'browns',
+            weeklyXp: Math.max(0, Number(stats.weeklyXp ?? data.currentUser?.weeklyXp) || 0),
+            weeklyArenaPoints: Math.max(0, Number(stats.arenaPoints ?? data.currentUser?.arenaPoints) || 0),
+            careerXp: Math.max(0, Number(data.currentUserTotalXp) || Number(xp) || 0),
+            joined,
+          };
+        });
+      } catch {
+        // Keep the fast local profile values visible if the standings endpoint is unavailable.
+      } finally {
+        inFlight = false;
+      }
+    };
+
+    const refreshWhenVisible = () => {
+      if (document.visibilityState === 'visible') void loadStanding();
+    };
+    const handleProfileUpdate = (event: Event) => {
+      const detail = (event as CustomEvent<Record<string, unknown>>).detail || {};
+      if (typeof detail.user_id === 'string' && detail.user_id !== user.id) return;
+      const updatedElo = typeof detail.arena_elo === 'number'
+        ? detail.arena_elo
+        : typeof detail.elo === 'number' ? detail.elo : null;
+      const updatedWeeklyXp = typeof detail.weekly_xp === 'number'
+        ? detail.weekly_xp
+        : typeof detail.weeklyXp === 'number' ? detail.weeklyXp : null;
+      const updatedCareerXp = typeof detail.xp_total === 'number'
+        ? detail.xp_total
+        : typeof detail.totalXp === 'number' ? detail.totalXp : typeof detail.xp === 'number' ? detail.xp : null;
+      const updatedArenaPoints = typeof detail.weekly_arena_points === 'number'
+        ? detail.weekly_arena_points
+        : typeof detail.arenaPoints === 'number' ? detail.arenaPoints : null;
+      const confirmedJoin = typeof detail.league_joined_at === 'string' && detail.league_joined_at.length > 0;
+
+      if (updatedElo !== null && Number.isFinite(updatedElo)) setLiveElo(updatedElo);
+      if ((updatedWeeklyXp !== null && Number.isFinite(updatedWeeklyXp)) || (updatedCareerXp !== null && Number.isFinite(updatedCareerXp)) || (updatedArenaPoints !== null && Number.isFinite(updatedArenaPoints)) || confirmedJoin) {
+        setArenaStanding(previous => ({
+          ...previous,
+          userId: user.id,
+          weeklyXp: updatedWeeklyXp !== null && Number.isFinite(updatedWeeklyXp) ? Math.max(0, updatedWeeklyXp) : previous.weeklyXp,
+          weeklyArenaPoints: updatedArenaPoints !== null && Number.isFinite(updatedArenaPoints) ? Math.max(0, updatedArenaPoints) : previous.weeklyArenaPoints,
+          careerXp: updatedCareerXp !== null && Number.isFinite(updatedCareerXp) ? Math.max(0, updatedCareerXp) : previous.careerXp,
+          joined: confirmedJoin || (previous.userId === user.id && previous.joined),
+        }));
+      }
+      refreshWhenVisible();
+    };
+
+    void loadStanding();
+    const timer = window.setInterval(refreshWhenVisible, 30_000);
+    window.addEventListener('focus', refreshWhenVisible);
+    window.addEventListener('pinit:user_profile_updated', handleProfileUpdate as EventListener);
+    document.addEventListener('visibilitychange', refreshWhenVisible);
+    return () => {
+      cancelled = true;
+      window.clearInterval(timer);
+      window.removeEventListener('focus', refreshWhenVisible);
+      window.removeEventListener('pinit:user_profile_updated', handleProfileUpdate as EventListener);
+      document.removeEventListener('visibilitychange', refreshWhenVisible);
+    };
+  }, [user?.id, xp, soloReward?.newElo, activeRoom?.eloApplied]);
 
   // Detect Light/Dark theme changes for Monaco & UI precision
   useEffect(() => {
@@ -237,26 +441,64 @@ function ArenaContent() {
     }
   };
 
-  const isGameActive = activeRoom?.status === 'in_progress' || soloMatch?.status === 'active';
-
-  // Game Mode: Vanish sidebars and topbars during active combat
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      if (isGameActive) {
-        document.body.setAttribute('data-arena-active', 'true');
-      } else {
-        document.body.removeAttribute('data-arena-active');
-      }
-    }
-    return () => {
-      if (typeof document !== 'undefined') {
-        document.body.removeAttribute('data-arena-active');
-      }
-    };
-  }, [isGameActive]);
-
   // Determine current active problem
   const activeProblem = problems.find(p => p.id === (activeRoom?.problemId || soloMatch?.problemId || (selectedProblemId !== 'auto' ? selectedProblemId : ''))) || problems[0];
+
+  const handleLanguageChange = (nextLanguage: 'typescript' | 'python' | 'java') => {
+    if (nextLanguage === language) return;
+    if (activeProblem) codeDraftsRef.current[`${activeProblem.id}:${language}`] = code;
+    setLanguage(nextLanguage);
+    try {
+      localStorage.setItem(`pinit_arena_language_${studentId}`, nextLanguage);
+    } catch {}
+  };
+
+  const handleEditorCodeChange = (nextCode: string) => {
+    setCode(nextCode);
+    if (activeProblem) codeDraftsRef.current[`${activeProblem.id}:${language}`] = nextCode;
+  };
+
+  const resetEditorCode = () => {
+    if (!activeProblem) return;
+    const starter = activeProblem.starterCode[language] || activeProblem.starterCode.typescript || '';
+    codeDraftsRef.current[`${activeProblem.id}:${language}`] = starter;
+    setCode(starter);
+  };
+
+  const copyScratchpad = async () => {
+    if (!answerScratchpad.trim()) {
+      toast.error('Nothing to copy', 'Add or paste an answer into the temporary pad first.');
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(answerScratchpad);
+      toast.success('Answer copied', 'The temporary answer is ready to paste.');
+    } catch {
+      toast.error('Could not copy answer', 'Allow clipboard access, then try again.');
+    }
+  };
+
+  const copyEditorAnswer = async () => {
+    if (!code.trim()) {
+      toast.error('Nothing to copy', 'The editor is empty.');
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(code);
+      toast.success('Editor answer copied', 'Your current code is on the clipboard.');
+    } catch {
+      toast.error('Could not copy answer', 'Allow clipboard access, then try again.');
+    }
+  };
+
+  const useScratchpadInEditor = () => {
+    if (!answerScratchpad.trim()) {
+      toast.error('Answer pad is empty', 'Paste or write code in the temporary pad first.');
+      return;
+    }
+    handleEditorCodeChange(answerScratchpad);
+    toast.success('Answer moved to editor', 'Run the tests when you are ready.');
+  };
 
   // Latest versions of handlers used inside effects. They are recreated on every render; reading them
   // through refs keeps the effects below from restarting on each render (assigned after their definitions).
@@ -355,28 +597,12 @@ function ArenaContent() {
     }
   }, [activeRoom?.events, studentId]);
 
-  // Synchronize player editor language to active room slot when entering match
-  useEffect(() => {
-    if (!activeRoom) return;
-    const isHost = activeRoom.hostId === studentId;
-    const isGuest = activeRoom.guestId === studentId || activeRoom.guestId === `${studentId}_challenger`;
-    const targetSlotLang = isHost
-      ? activeRoom.hostLanguage
-      : isGuest
-      ? activeRoom.guestLanguage
-      : undefined;
-
-    if (targetSlotLang && (targetSlotLang === 'python' || targetSlotLang === 'typescript' || targetSlotLang === 'java')) {
-      if (language !== targetSlotLang) {
-        setLanguage(targetSlotLang as 'python' | 'typescript' | 'java');
-      }
-    }
-  }, [activeRoom, activeRoom?.hostId, activeRoom?.guestId, activeRoom?.hostLanguage, activeRoom?.guestLanguage, studentId, language]);
-
   // Load starter code on problem or language change
   useEffect(() => {
     if (activeProblem && activeProblem.starterCode) {
-      setCode(activeProblem.starterCode[language] || activeProblem.starterCode.typescript || '// Write solution here');
+      const draftKey = `${activeProblem.id}:${language}`;
+      const savedDraft = codeDraftsRef.current[draftKey];
+      setCode(savedDraft ?? activeProblem.starterCode[language] ?? activeProblem.starterCode.typescript ?? '// Write solution here');
     }
   }, [activeProblem, language]);
 
@@ -428,13 +654,21 @@ function ArenaContent() {
 
   // Handle Create Room
   const handleCreateRoom = async () => {
+    if (isCreatingRoom) return;
+    setIsCreatingRoom(true);
+    setRoomError(null);
+
+    const hasPersistentWallet = Boolean(user?.id && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(user.id));
+    if (!hasPersistentWallet) {
+      setRoomError('Sign in to spend Pins and create a battle room. You can still join an invite.');
+      setIsCreatingRoom(false);
+      return;
+    }
+
     try {
-      if (cOS?.spendPins) {
-        const ok = await cOS.spendPins('code_arena', undefined, 'Create Battle Room');
-        if (!ok) return;
+      if (!roomCreateRequestIdRef.current) {
+        roomCreateRequestIdRef.current = createArenaRequestId();
       }
-      setIsCreatingRoom(true);
-      setRoomError(null);
 
       const studentCompletedQuests: string[] = (Array.isArray(cOS?.completedQuests) && cOS.completedQuests.length > 0)
         ? cOS.completedQuests
@@ -452,15 +686,23 @@ function ArenaContent() {
         problemId: selectedProblemId || 'auto',
         difficulty: studentKnowledge.recommendedDifficulty as 'basic' | 'intermediate' | 'advanced',
         timeLimitSeconds: selectedTimeLimit,
+        requestId: roomCreateRequestIdRef.current,
         completedQuests: studentCompletedQuests,
         recentProblemIds: Array.from(solvedProblemIds),
       });
+
+      if (room.pinCharge) {
+        cOS?.setPins?.(room.pinCharge.newBalance);
+        cOS?.setBonusPins?.(room.pinCharge.newBonusBalance);
+      }
+
+      roomCreateRequestIdRef.current = null;
       setActiveRoom(room);
       setTimeRemaining(room.timeLimitSeconds);
-      setIsCreatingRoom(false);
     } catch (err: any) {
-      setIsCreatingRoom(false);
       setRoomError(err.message || 'Failed to create room');
+    } finally {
+      setIsCreatingRoom(false);
     }
   };
 
@@ -523,6 +765,7 @@ function ArenaContent() {
         language,
         timeSpentSeconds: (activeRoom?.timeLimitSeconds || 600) - timeRemaining,
         problemId: activeProblem.id,
+        rewardEligible: Boolean(activeRoom),
       });
       setTestResult(result);
 
@@ -601,6 +844,7 @@ function ArenaContent() {
         language,
         timeSpentSeconds: (activeRoom?.timeLimitSeconds || 600) - timeRemaining,
         problemId: activeProblem.id,
+        rewardEligible: Boolean(activeRoom),
       });
       setTestResult(result);
 
@@ -642,20 +886,6 @@ function ArenaContent() {
         }
       } else if (soloMatch) {
         setSoloMatch(prev => prev ? { ...prev, status: result.passed ? 'victory' : 'defeat' } : null);
-        if (result.passed) {
-          const isFirstClear = !solvedProblemIds.has(activeProblem.id);
-          if (isFirstClear) {
-            triggerPinStream({ count: 12 });
-            if (result.xpAwarded && cOS?.applyServerXp) cOS.applyServerXp(result.newXp, result.xpAwarded, 'Code Wars Victory (First Clear)');
-            setSolvedProblemIds(prev => {
-              const next = new Set(prev).add(activeProblem.id);
-              try {
-                localStorage.setItem(`pinit_arena_solved_${studentId}`, JSON.stringify(Array.from(next)));
-              } catch {}
-              return next;
-            });
-          }
-        }
       }
     } catch (err: any) {
       toast.error('Submission Error', err.message || 'Could not submit solution.');
@@ -695,28 +925,87 @@ function ArenaContent() {
 
   // Start Solo Sparring against Turing AI with Knowledge Affinity Calibration
   const handleStartSoloSparring = async (overrideDifficulty?: 'basic' | 'intermediate' | 'advanced') => {
+    if (isStartingSolo) return;
+    setIsStartingSolo(true);
     setSoloReward(null);
+    const hasPersistentWallet = Boolean(user?.id && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(user.id));
+    if (!hasPersistentWallet && cOS?.canAfford && !cOS.canAfford('code_arena')) {
+      toast.error('Insufficient Pins', 'You need 10 Pins to start AI practice.');
+      setIsStartingSolo(false);
+      return;
+    }
     const targetDiff = overrideDifficulty || (studentKnowledge.recommendedDifficulty as any) || 'basic';
     const candidateProblems = problems.filter(p => p.difficulty === targetDiff);
     const unvisited = candidateProblems.filter(p => !solvedProblemIds.has(p.id));
     const pool = unvisited.length > 0 ? unvisited : candidateProblems;
-    const chosenProblem = pool.length > 0
+    const newlyChosenProblem = pool.length > 0
       ? pool[Math.floor(Math.random() * pool.length)]
       : problems[0];
 
-    setSelectedProblemId(chosenProblem.id);
+    const pendingStorageKey = `pinit_arena_solo_start_${studentId}`;
+    let pendingStart = soloStartRequestRef.current;
+    if (!pendingStart && hasPersistentWallet) {
+      try {
+        const saved = JSON.parse(localStorage.getItem(pendingStorageKey) || 'null');
+        if (
+          saved &&
+          typeof saved.requestId === 'string' &&
+          /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(saved.requestId) &&
+          typeof saved.problemId === 'string' &&
+          problems.some(problem => problem.id === saved.problemId)
+        ) {
+          pendingStart = { requestId: saved.requestId, problemId: saved.problemId };
+        } else if (saved) {
+          localStorage.removeItem(pendingStorageKey);
+        }
+      } catch {
+        try { localStorage.removeItem(pendingStorageKey); } catch {}
+      }
+    }
+    const requestedProblem = pendingStart
+      ? problems.find(problem => problem.id === pendingStart?.problemId) || newlyChosenProblem
+      : newlyChosenProblem;
+    pendingStart = pendingStart || { requestId: createArenaRequestId(), problemId: requestedProblem.id };
+    soloStartRequestRef.current = pendingStart;
+    if (hasPersistentWallet) {
+      try { localStorage.setItem(pendingStorageKey, JSON.stringify(pendingStart)); } catch {}
+    }
+    setSelectedProblemId(requestedProblem.id);
+
     try {
-      const serverMatch = await ArenaPvPService.startSoloMatch(chosenProblem.id);
-      const match = CodeWarsApiService.startMatch(studentId, chosenProblem.id, '1v1_duel');
+      const serverMatch = await ArenaPvPService.startSoloMatch(requestedProblem.id, pendingStart.requestId);
+      const matchProblem = problems.find(problem => problem.id === serverMatch.problemId) || requestedProblem;
+      if (serverMatch.persisted) {
+        if (typeof serverMatch.newBalance === 'number') cOS?.setPins?.(serverMatch.newBalance);
+        if (typeof serverMatch.newBonusBalance === 'number') cOS?.setBonusPins?.(serverMatch.newBonusBalance);
+      } else {
+        const charged = cOS?.spendPins
+          ? await cOS.spendPins('code_arena', undefined, 'Start AI Practice Match')
+          : false;
+        if (!charged) throw new Error('You need 10 Pins to start AI practice.');
+      }
+      const match = CodeWarsApiService.startMatch(studentId, matchProblem.id, '1v1_duel');
       match.id = serverMatch.matchId;
       match.startedAt = Date.parse(serverMatch.startedAt) || Date.now();
+      const deadline = Date.parse(serverMatch.deadlineAt);
+      const remainingSeconds = Number.isFinite(deadline)
+        ? Math.max(0, Math.ceil((deadline - Date.now()) / 1000))
+        : matchProblem.timeLimitSeconds;
+      if (remainingSeconds === 0) match.status = 'timeout';
       soloSettledRef.current = null;
       soloSettlementAttemptsRef.current = 0;
       setSoloMatch(match);
-      setTimeRemaining(chosenProblem.timeLimitSeconds);
+      setSelectedProblemId(matchProblem.id);
+      setTimeRemaining(remainingSeconds);
       setTestResult(null);
+      soloStartRequestRef.current = null;
+      if (hasPersistentWallet) {
+        try { localStorage.removeItem(pendingStorageKey); } catch {}
+      }
     } catch (err) {
       toast.error('Arena unavailable', err instanceof Error ? err.message : 'Could not start a sparring match.');
+    } finally {
+      setIsStartingSolo(false);
     }
   };
 
@@ -737,8 +1026,10 @@ function ArenaContent() {
   };
 
   // Derived state for PvP HUD
-  const isHost = activeRoom?.hostId === studentId;
-  const isGuest = activeRoom?.guestId === studentId;
+  const onHostDevice = Boolean(activeRoom && combatantDeviceId && activeRoom.hostDeviceId === combatantDeviceId);
+  const onGuestDevice = Boolean(activeRoom && combatantDeviceId && activeRoom.guestDeviceId === combatantDeviceId);
+  const isHost = Boolean(activeRoom && (onHostDevice || (!onGuestDevice && activeRoom.hostId === studentId)));
+  const isGuest = Boolean(activeRoom && (onGuestDevice || (!onHostDevice && (activeRoom.guestId === studentId || activeRoom.guestId === `${studentId}_challenger`))));
   const myProgress = isHost ? activeRoom?.hostProgress : activeRoom?.guestProgress;
   const opponentProgress = isHost ? activeRoom?.guestProgress : activeRoom?.hostProgress;
   const opponentName = isHost ? (activeRoom?.guestName || 'Waiting for challenger...') : activeRoom?.hostName;
@@ -747,7 +1038,18 @@ function ArenaContent() {
   const isOpponentReady = isHost ? activeRoom?.guestReady : activeRoom?.hostReady;
 
   const isMatchOver = Boolean((activeRoom && activeRoom.status === 'completed') || (soloMatch && soloMatch.status !== 'active'));
-  const didIWin = activeRoom ? activeRoom.winnerId === studentId : soloMatch?.status === 'victory';
+  const didIWin = activeRoom
+    ? isHost ? activeRoom.winnerId === activeRoom.hostId : isGuest && activeRoom.winnerId === activeRoom.guestId
+    : soloMatch?.status === 'victory';
+  const didIDraw = activeRoom?.winnerId === 'draw';
+  const currentCareerXp = Math.max(0, Number(arenaStanding.careerXp) || 0, Number(xp) || 0);
+  const arenaLeagueLabel = `${arenaStanding.league.charAt(0).toUpperCase()}${arenaStanding.league.slice(1)} League`;
+  const arenaRankLabel = arenaStanding.joined
+    ? arenaStanding.rank ? `#${arenaStanding.rank}` : 'Syncing'
+    : 'Unranked';
+  const arenaRankCaption = arenaStanding.joined
+    ? arenaStanding.rank ? arenaLeagueLabel : 'Updating your League Points position'
+    : currentCareerXp >= 100 ? 'Join Browns to start your sprint' : 'Reach 100 Career XP to qualify';
 
   // Audio Fanfare & Report on Match Conclusion
   const matchOverSoundPlayedRef = useRef<boolean>(false);
@@ -756,7 +1058,7 @@ function ArenaContent() {
       matchOverSoundPlayedRef.current = true;
       if (didIWin) {
         BattleAudio.playVictory();
-      } else {
+      } else if (!didIDraw) {
         BattleAudio.playDefeat();
       }
       setShowBattleReport(true);
@@ -764,7 +1066,7 @@ function ArenaContent() {
     if (!isMatchOver) {
       matchOverSoundPlayedRef.current = false;
     }
-  }, [isMatchOver, didIWin]);
+  }, [isMatchOver, didIWin, didIDraw]);
 
   // Synchronize recentMatches on match completion
   useEffect(() => {
@@ -793,10 +1095,42 @@ function ArenaContent() {
       if (typeof window !== 'undefined') {
         const currentArenaPoints = Number((user as any)?.weekly_arena_points) || 0;
         const addArenaPoints = typeof myArenaPointsAward === 'number' && myArenaPointsAward > 0 ? myArenaPointsAward : 0;
+        const eloDelta = (isHost ? (activeRoom.hostEloDelta ?? 0) : (activeRoom.guestEloDelta ?? 0)) || 0;
+        const prevElo = myNewElo - eloDelta;
+        const didWin = activeRoom.winnerId === studentId;
+        recordMetricLedgerEntry(studentId, {
+          metric: 'arena_elo',
+          feature: 'arena',
+          action: didWin ? `1v1 Arena Victory (${activeRoom.roomCode})` : `1v1 Arena Match (${activeRoom.roomCode})`,
+          delta: eloDelta,
+          previousValue: prevElo,
+          valueAfter: myNewElo,
+          mentalityTag: 'Pattern Hunter',
+        });
+        if (addArenaPoints > 0) {
+          recordMetricLedgerEntry(studentId, {
+            metric: 'arena_league_points',
+            feature: 'arena',
+            action: `1v1 Arena League Points (${activeRoom.roomCode})`,
+            delta: addArenaPoints,
+            previousValue: currentArenaPoints,
+            valueAfter: currentArenaPoints + addArenaPoints,
+          });
+        }
+        recordMetricLedgerEntry(studentId, {
+          metric: 'mentality',
+          feature: 'arena',
+          action: didWin ? 'Tactical Combat Win · Pattern Hunter' : 'Arena Resilience · Stabilizer',
+          delta: didWin ? 6 : 2,
+          previousValue: 0,
+          valueAfter: didWin ? 6 : 2,
+          mentalityTag: didWin ? 'Pattern Hunter' : 'Stabilizer',
+        });
         window.dispatchEvent(new CustomEvent('pinit:user_profile_updated', {
           detail: {
             arena_elo: myNewElo,
             elo: myNewElo,
+            user_id: studentId,
             weekly_arena_points: currentArenaPoints + addArenaPoints,
             arenaPoints: currentArenaPoints + addArenaPoints,
           }
@@ -834,10 +1168,42 @@ function ArenaContent() {
         } catch {}
         if (typeof window !== 'undefined') {
           const currentArenaPoints = Number((user as any)?.weekly_arena_points) || 0;
+          const eloDelta = Number(data.eloDelta) || 0;
+          const newEloNum = Number(data.newElo) || 100;
+          const addPts = Number(data.arenaPointsAwarded) || 0;
+          recordMetricLedgerEntry(studentId, {
+            metric: 'arena_elo',
+            feature: 'arena',
+            action: isWin ? `Solo Arena Victory (${soloMatch.problemId || 'Challenge'})` : `Solo Arena Attempt`,
+            delta: eloDelta,
+            previousValue: newEloNum - eloDelta,
+            valueAfter: newEloNum,
+            mentalityTag: 'Pattern Hunter',
+          });
+          if (addPts > 0) {
+            recordMetricLedgerEntry(studentId, {
+              metric: 'arena_league_points',
+              feature: 'arena',
+              action: `Solo Arena League Reward`,
+              delta: addPts,
+              previousValue: currentArenaPoints,
+              valueAfter: currentArenaPoints + addPts,
+            });
+          }
+          recordMetricLedgerEntry(studentId, {
+            metric: 'mentality',
+            feature: 'arena',
+            action: isWin ? 'Algorithmic Pattern Victory · Pattern Hunter' : 'Sparring Persistence · Stabilizer',
+            delta: isWin ? 5 : 2,
+            previousValue: 0,
+            valueAfter: isWin ? 5 : 2,
+            mentalityTag: isWin ? 'Pattern Hunter' : 'Stabilizer',
+          });
           window.dispatchEvent(new CustomEvent('pinit:user_profile_updated', {
             detail: {
               arena_elo: data.newElo,
               elo: data.newElo,
+              user_id: studentId,
               weekly_arena_points: data.newArenaPoints ?? (currentArenaPoints + (data.arenaPointsAwarded || 0)),
               arenaPoints: data.newArenaPoints ?? (currentArenaPoints + (data.arenaPointsAwarded || 0)),
             }
@@ -856,42 +1222,16 @@ function ArenaContent() {
       });
   }, [isMatchOver, soloMatch, code, language, studentId, cOS, refresh, soloSettlementRetry, user]);
 
-  // Synchronize 1v1 Arena Code War battle status with AppShell Gaming / Focus Mode
+  // Keep Arena's own focus layout local to this page; starting a match must not
+  // switch the whole application into focus or fullscreen gaming mode.
   const inDuel = Boolean(((activeRoom && activeRoom.status !== 'waiting') || soloMatch) && !isMatchOver);
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const active = Boolean((activeRoom && activeRoom.status !== 'waiting') || soloMatch);
-      (window as any).__pinitArenaDuelActive = active;
-      window.dispatchEvent(new CustomEvent('pinit-arena-duel-toggle', { detail: { isArenaDuel: active } }));
-
-      if (active) {
-        if (!document.fullscreenElement) {
-          document.documentElement.requestFullscreen().catch(() => {});
-        }
-      } else {
-        if (document.fullscreenElement) {
-          document.exitFullscreen().catch(() => {});
-        }
-      }
-    }
-    return () => {
-      if (typeof window !== 'undefined') {
-        (window as any).__pinitArenaDuelActive = false;
-        window.dispatchEvent(new CustomEvent('pinit-arena-duel-toggle', { detail: { isArenaDuel: false } }));
-        if (document.fullscreenElement) {
-          document.exitFullscreen().catch(() => {});
-        }
-      }
-    };
-  }, [activeRoom, soloMatch]);
-
   return (
-    <div style={{
-      maxWidth: inDuel ? '100%' : 1380,
+    <div className={inDuel ? undefined : styles.competitionPage} style={{
+      maxWidth: inDuel ? '100%' : undefined,
       margin: '0 auto',
       minHeight: inDuel ? '100vh' : '85vh',
-      padding: inDuel ? '12px 20px 32px' : '0 0 40px',
+      padding: inDuel ? '12px 20px 32px' : undefined,
       transition: 'all 0.25s ease'
     }}>
       <CompetitionNavigation active="arena" hidden={inDuel} />
@@ -902,30 +1242,68 @@ function ArenaContent() {
           {/* STATE 1: LOBBY (No active battle or room) */}
           {!activeRoom && !soloMatch && (
             <div>
-              {/* Heading: Choose your battle (Image 1 Style) */}
-              <div style={{ marginBottom: 18 }}>
-                <h2 style={{ fontSize: 20, fontWeight: 800, color: 'var(--t1)', margin: 0, letterSpacing: '-0.3px' }}>
-                  Choose your battle
-                </h2>
+              <section data-testid="arena-ranked-hero" className={styles.arenaHero}>
+                <div className={styles.arenaHeroContent}>
+                  <div className={styles.eyebrow}>
+                    <span className={styles.liveDot} />
+                    Turing AI Practice <span aria-hidden="true" style={{ color: 'var(--t3)' }}>·</span> Training Arena
+                  </div>
+                  <h1 className={styles.heroTitle}>
+                    Practice the challenge. Keep your rating.
+                  </h1>
+                  <p className={styles.heroDescription}>
+                    Solve a timed coding challenge against the Turing benchmark. Practice results never change your ELO, Arena Points, XP, or ranked stats.
+                  </p>
+                  <div className={styles.heroActions}>
+                    <span className={styles.detailPill}>
+                      10 Pins · charged at start
+                    </span>
+                    <span className={styles.detailPill}>
+                      No rating impact
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => void handleStartSoloSparring()}
+                      disabled={isStartingSolo}
+                      className={styles.primaryAction}
+                    >
+                      {isStartingSolo ? 'PREPARING PRACTICE…' : 'START AI PRACTICE'} <span aria-hidden="true">↗</span><span style={{ opacity: .82 }}>· 10 PINS</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div aria-hidden="true" className={styles.arenaVisual}>
+                  <div className={`${styles.arenaRing} ${styles.arenaRingOne}`} />
+                  <div className={`${styles.arenaRing} ${styles.arenaRingTwo}`} />
+                  <div className={`${styles.arenaRing} ${styles.arenaRingThree}`} />
+                  <div className={styles.arenaCenter}>VS</div>
+                </div>
+              </section>
+
+              <div data-testid="arena-summary-cards" className={styles.arenaMetrics}>
+                {[
+                  { label: 'Your rank', value: arenaRankLabel, detail: arenaRankCaption, color: '#22d3ee' },
+                  { label: 'Arena ELO', value: String(liveElo ?? sanitizedUserElo ?? cachedElo), detail: 'Match rating', color: '#a78bfa' },
+                  { label: 'Weekly XP', value: `${arenaStanding.weeklyXp.toLocaleString()} XP`, detail: 'Learning XP this sprint', color: '#10b981' },
+                  arenaStanding.joined
+                    ? { label: 'Arena Points', value: arenaStanding.weeklyArenaPoints.toLocaleString(), detail: 'This sprint · counts toward League Points', color: '#fbbf24' }
+                    : { label: 'Entry goal', value: `${Math.min(100, currentCareerXp)} / 100`, detail: 'Career XP to qualify', color: '#fbbf24' },
+                ].map(card => (
+                  <div key={card.label} className={styles.metricCard}>
+                    <span aria-hidden="true" className={styles.metricAccent} style={{ background: card.color }} />
+                    <div className={styles.metricLabel}>{card.label}</div>
+                    <div key={card.value} className={`${styles.metricValue} ${styles.metricValueChanged}`} aria-live="polite" aria-atomic="true">{card.value}</div>
+                    <div className={styles.metricCaption}>{card.detail}</div>
+                  </div>
+                ))}
               </div>
 
               {/* Top Quick Actions Grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20, marginBottom: 28 }}>
+              <div className={styles.arenaActionGrid}>
                 
                 {
                 /* Mode B: Create Private Room */}
-                <div style={{
-                  padding: '28px 24px',
-                  borderRadius: 20,
-                  background: 'var(--card)',
-                  backdropFilter: 'blur(16px)',
-                  border: '1px solid var(--border)',
-                  boxShadow: 'var(--shadow-md, 0 4px 20px rgba(0,0,0,0.06))',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: 280
-                }}>
+                <div className={styles.arenaActionCard}>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
                       <span style={{
@@ -942,32 +1320,23 @@ function ArenaContent() {
                         borderRadius: 20
                       }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#10b981', boxShadow: '0 0 6px #10b981' }} />
-                        PRIVATE INVITE
+                        PRIVATE BATTLE
                       </span>
                     </div>
-                    <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--t1)', marginBottom: 8 }}>
-                      Create Private Room
+                    <h3 className={styles.actionTitle}>
+                      Challenge a friend
                     </h3>
-                    <p style={{ fontSize: 14.5, color: 'var(--t2)', lineHeight: 1.5, marginBottom: 16 }}>
-                      Host a private duel, choose problem difficulty &amp; time limit, and share an invite code/link with friends.
+                    <p className={styles.actionDescription}>
+                      Set the challenge, create a private room, then share a one-time invite with your rival.
                     </p>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 16 }}>
+                    <div className={styles.actionControls}>
                       <div>
-                        <label style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 600, display: 'block', marginBottom: 4 }}>Challenge Caliber</label>
+                        <label className={styles.actionFieldLabel}>Challenge Caliber</label>
                         <select
                           value={selectedProblemId}
                           onChange={e => setSelectedProblemId(e.target.value)}
-                          style={{
-                            width: '100%',
-                            padding: '8px 10px',
-                            borderRadius: 8,
-                            background: 'var(--bg3)',
-                            border: '1px solid var(--border)',
-                            color: 'var(--t1)',
-                            fontSize: 13,
-                            fontWeight: 600
-                          }}
+                          className={styles.actionField}
                         >
                           <option value="auto">🎯 Auto-Calibrated (Shared Knowledge Edge)</option>
                           <option value="tier_basic">🟢 Novice Foundations (Days 1–15)</option>
@@ -977,20 +1346,11 @@ function ArenaContent() {
                       </div>
 
                       <div>
-                        <label style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 600, display: 'block', marginBottom: 4 }}>Time Limit</label>
+                        <label className={styles.actionFieldLabel}>Time Limit</label>
                         <select
                           value={selectedTimeLimit}
                           onChange={e => setSelectedTimeLimit(Number(e.target.value))}
-                          style={{
-                            width: '100%',
-                            padding: '8px 10px',
-                            borderRadius: 8,
-                            background: 'var(--bg3)',
-                            border: '1px solid var(--border)',
-                            color: 'var(--t1)',
-                            fontSize: 13,
-                            fontWeight: 600
-                          }}
+                          className={styles.actionField}
                         >
                           <option value={300}>5 Minutes</option>
                           <option value={600}>10 Minutes</option>
@@ -1003,40 +1363,14 @@ function ArenaContent() {
                   <button
                     onClick={handleCreateRoom}
                     disabled={isCreatingRoom}
-                    style={{
-                      width: '100%',
-                      padding: '12px',
-                      borderRadius: 10,
-                      background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-                      color: '#fff',
-                      fontWeight: 700,
-                      fontSize: 15.5,
-                      border: 'none',
-                      cursor: isCreatingRoom ? 'not-allowed' : 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: 8,
-                      boxShadow: '0 4px 12px rgba(16, 185, 129, 0.35)'
-                    }}
+                    className={`${styles.actionButton} ${styles.createRoomButton}`}
                   >
                     {isCreatingRoom ? 'Generating Room...' : 'Create Room & Invite (10 Pins)'}
                   </button>
                 </div>
 
                 {/* Mode C: Join Room via Code */}
-                <div style={{
-                  padding: '28px 24px',
-                  borderRadius: 20,
-                  background: 'var(--card)',
-                  backdropFilter: 'blur(16px)',
-                  border: '1px solid var(--border)',
-                  boxShadow: 'var(--shadow-md, 0 4px 20px rgba(0,0,0,0.06))',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: 280
-                }}>
+                <div className={styles.arenaActionCard}>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
                       <span style={{
@@ -1053,36 +1387,24 @@ function ArenaContent() {
                         borderRadius: 20
                       }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ec4899', boxShadow: '0 0 6px #ec4899' }} />
-                        ENTER CODE
+                        INVITE CODE
                       </span>
                     </div>
-                    <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--t1)', marginBottom: 8 }}>
-                      Join via Code
+                    <h3 className={styles.actionTitle}>
+                      Join a battle
                     </h3>
-                    <p style={{ fontSize: 14.5, color: 'var(--t2)', lineHeight: 1.5, marginBottom: 16 }}>
-                      Have an invite code from a friend? Enter it below to immediately jump into their battle lobby.
+                    <p className={styles.actionDescription}>
+                      Got a room code from a friend? Enter it here to join their lobby.
                     </p>
 
-                    <div style={{ marginBottom: 16 }}>
+                    <div className={styles.actionControls} style={{ gridTemplateColumns: '1fr', marginBottom: 16 }}>
                       <input
                         type="text"
                         value={roomInputCode}
                         onChange={e => setRoomInputCode(e.target.value.toUpperCase())}
-                        placeholder="6-digit PIN (e.g. ARENA-8F2A)"
+                        placeholder="ARENA-8F2A"
                         maxLength={12}
-                        style={{
-                          width: '100%',
-                          padding: '12px 14px',
-                          borderRadius: 10,
-                          background: 'var(--bg3)',
-                          border: '1px solid var(--border)',
-                          color: 'var(--t1)',
-                          fontSize: 16.5,
-                          fontWeight: 700,
-                          textAlign: 'center',
-                          letterSpacing: '2px',
-                          fontFamily: 'monospace'
-                        }}
+                        className={styles.roomCodeField}
                       />
                     </div>
                   </div>
@@ -1090,23 +1412,7 @@ function ArenaContent() {
                   <button
                     onClick={() => handleJoinRoom()}
                     disabled={isJoiningRoom || !roomInputCode.trim()}
-                    style={{
-                      width: '100%',
-                      padding: '12px',
-                      borderRadius: 10,
-                      background: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)',
-                      color: '#fff',
-                      fontWeight: 700,
-                      fontSize: 15.5,
-                      border: 'none',
-                      cursor: isJoiningRoom || !roomInputCode.trim() ? 'not-allowed' : 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: 8,
-                      opacity: !roomInputCode.trim() ? 0.6 : 1,
-                      boxShadow: '0 4px 12px rgba(236, 72, 153, 0.35)'
-                    }}
+                    className={`${styles.actionButton} ${styles.joinRoomButton}`}
                   >
                     {isJoiningRoom ? 'Connecting...' : 'Join Battle Room'}
                   </button>
@@ -1132,89 +1438,12 @@ function ArenaContent() {
                 </div>
               )}
 
-              {/* Task 14: Knowledge Calibration Banner */}
-              <div style={{
-                marginTop: 24,
-                marginBottom: 20,
-                padding: '16px 20px',
-                borderRadius: 14,
-                background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(168, 85, 247, 0.12) 100%)',
-                border: '1px solid rgba(99, 102, 241, 0.25)',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                flexWrap: 'wrap',
-                gap: 12,
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <div style={{ fontSize: 28 }}>🎯</div>
-                  <div>
-                    <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--t1)' }}>
-                      Knowledge-Calibrated Arena: <span style={{ color: '#818cf8' }}>{studentKnowledge.tierLabel}</span>
-                    </div>
-                    <div style={{ fontSize: 13, color: 'var(--t3)', marginTop: 2 }}>
-                      Knowledge Score: <strong style={{ color: 'var(--t2)' }}>{studentKnowledge.score}/100</strong> (Quests: {studentKnowledge.questMasteryScore}/35 · Elo: {studentKnowledge.eloMasteryScore}/30 · Diagnostic: {studentKnowledge.diagnosticScore}/20 · Activity: {studentKnowledge.consistencyScore}/15)
-                    </div>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, padding: '4px 10px', borderRadius: 8, background: '#10b981', color: '#fff', textTransform: 'uppercase' }}>
-                    Calibrated: {studentKnowledge.recommendedDifficulty}
-                  </span>
-                </div>
-              </div>
-
-              <div
-                data-testid="league-points-rules"
-                style={{
-                  marginTop: 28,
-                  padding: '22px 24px',
-                  borderRadius: 20,
-                  background: 'linear-gradient(135deg, var(--card), var(--bg2))',
-                  border: '1px solid var(--border)',
-                  boxShadow: 'var(--shadow-md, 0 4px 20px rgba(0,0,0,0.06))',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap', marginBottom: 18 }}>
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                    <div style={{ width: 42, height: 42, borderRadius: 13, display: 'grid', placeItems: 'center', background: 'var(--accent-light)', fontSize: 21, flexShrink: 0 }}>🏁</div>
-                    <div>
-                      <h3 style={{ fontSize: 19, fontWeight: 850, color: 'var(--t1)', margin: 0 }}>One score decides your league rank</h3>
-                      <p style={{ fontSize: 13.5, color: 'var(--t2)', margin: '5px 0 0', lineHeight: 1.5 }}>
-                        <strong style={{ color: 'var(--t1)' }}>League Points = Learning XP + Arena Points.</strong> Both count equally during this sprint.
-                      </p>
-                    </div>
-                  </div>
-                  <Link
-                    href="/leaderboard?mode=global"
-                    style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '9px 14px', borderRadius: 10, background: 'var(--accent-light)', border: '1px solid var(--accent)', color: 'var(--accent-hover, var(--brand-bright, #4f46e5))', fontSize: 13, fontWeight: 800, textDecoration: 'none', whiteSpace: 'nowrap' }}
-                  >
-                    View standings →
-                  </Link>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: 10 }}>
-                  <div style={{ padding: '13px 14px', borderRadius: 13, background: 'var(--bg2)', border: '1px solid var(--border)' }}>
-                    <div style={{ fontSize: 11, fontWeight: 850, color: 'var(--t3)', textTransform: 'uppercase', letterSpacing: '.06em' }}>Learn</div>
-                    <div style={{ marginTop: 5, color: 'var(--t1)', fontSize: 13, lineHeight: 1.45 }}>Career Learning XP adds to League Points one for one.</div>
-                  </div>
-                  <div style={{ padding: '13px 14px', borderRadius: 13, background: 'var(--bg2)', border: '1px solid var(--border)' }}>
-                    <div style={{ fontSize: 11, fontWeight: 850, color: '#059669', textTransform: 'uppercase', letterSpacing: '.06em' }}>Win in Arena</div>
-                    <div style={{ marginTop: 5, color: 'var(--t1)', fontSize: 13, lineHeight: 1.45 }}>Arena Points = half your pre-match ELO, rounded, up to 250. ELO 200 → 100 points; ELO 500 → 250.</div>
-                  </div>
-                  <div style={{ padding: '13px 14px', borderRadius: 13, background: 'var(--bg2)', border: '1px solid var(--border)' }}>
-                    <div style={{ fontSize: 11, fontWeight: 850, color: '#4f46e5', textTransform: 'uppercase', letterSpacing: '.06em' }}>Keep ELO separate</div>
-                    <div style={{ marginTop: 5, color: 'var(--t1)', fontSize: 13, lineHeight: 1.45 }}>ELO starts at 100 and persists between sprints. A win adds 20; a loss removes 20, down to 0.</div>
-                  </div>
-                  <div style={{ padding: '13px 14px', borderRadius: 13, background: 'var(--bg2)', border: '1px solid var(--border)' }}>
-                    <div style={{ fontSize: 11, fontWeight: 850, color: '#d97706', textTransform: 'uppercase', letterSpacing: '.06em' }}>Move by rank</div>
-                    <div style={{ marginTop: 5, color: 'var(--t1)', fontSize: 13, lineHeight: 1.45 }}>At sprint reset, the top 10% move up. The bottom 10% move down when a division has at least 10 players; Browns and Ruby are the league edges. ELO never changes placement.</div>
-                  </div>
-                </div>
-                <div style={{ marginTop: 12, fontSize: 12, color: 'var(--t3)' }}>
-                  Join Browns after reaching 100 lifetime Career XP. Your ELO rating is not reset when the sprint ends.
-                </div>
-              </div>
+              <p data-testid="arena-league-note" className={styles.arenaLeagueLink}>
+                PvP wins add Arena Points to your League Points. AI practice never changes your competitive stats.{' '}
+                <Link href="/leaderboard?mode=global" style={{ color: 'var(--accent)', fontWeight: 800, textDecoration: 'none' }}>
+                  View League Points standings →
+                </Link>
+              </p>
             </div>
           )}
 
@@ -1482,20 +1711,25 @@ function ArenaContent() {
                       boxShadow: '0 0 12px rgba(99,102,241,0.2)',
                     }}
                   >
-                    🎮 GAMING MODE ACTIVE · 100% IMMERSIVE
+                    {soloMatch ? 'TURING AI PRACTICE · RATINGS UNCHANGED' : 'LIVE PvP DUEL'}
                   </span>
 
                   <button
                     type="button"
                     onClick={() => {
                       if (typeof document !== 'undefined') {
-                        if (!document.fullscreenElement) {
-                          document.documentElement.requestFullscreen().catch(() => {});
+                        const docAny = document as any;
+                        if (document.fullscreenElement || docAny.webkitFullscreenElement) {
+                          const exitFullscreen = document.exitFullscreen || docAny.webkitExitFullscreen;
+                          if (exitFullscreen) Promise.resolve(exitFullscreen.call(document)).catch(() => {});
                         } else {
-                          document.exitFullscreen().catch(() => {});
+                          const rootAny = document.documentElement as any;
+                          const requestFullscreen = rootAny.requestFullscreen || rootAny.webkitRequestFullscreen;
+                          if (requestFullscreen) Promise.resolve(requestFullscreen.call(rootAny)).catch(() => {});
                         }
                       }
                     }}
+                    aria-pressed={isArenaFullscreen}
                     style={{
                       padding: '5px 12px',
                       borderRadius: 8,
@@ -1509,9 +1743,9 @@ function ArenaContent() {
                       alignItems: 'center',
                       gap: 6
                     }}
-                    title="Toggle Fullscreen"
+                    title={isArenaFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
                   >
-                    ⛶ Fullscreen
+                    {isArenaFullscreen ? '⛶ Exit Fullscreen' : '⛶ Fullscreen'}
                   </button>
 
                   <button
@@ -2013,7 +2247,8 @@ function ArenaContent() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                       <select
                         value={language}
-                        onChange={e => setLanguage(e.target.value as any)}
+                        aria-label="Programming language"
+                        onChange={e => handleLanguageChange(e.target.value as 'typescript' | 'python' | 'java')}
                         style={{
                           padding: '6px 12px',
                           borderRadius: 8,
@@ -2031,7 +2266,7 @@ function ArenaContent() {
                       </select>
 
                       <button
-                        onClick={() => setCode(activeProblem.starterCode[language] || activeProblem.starterCode.typescript || '')}
+                        onClick={resetEditorCode}
                         title="Reset code template"
                         style={{
                           padding: '6px 12px',
@@ -2055,7 +2290,7 @@ function ArenaContent() {
                       language={language === 'python' ? 'python' : language === 'java' ? 'java' : 'typescript'}
                       theme={theme === 'light' ? 'vs' : 'vs-dark'}
                       value={code}
-                      onChange={(val) => setCode(val || '')}
+                      onChange={(val) => handleEditorCodeChange(val || '')}
                       options={{
                         fontSize: 14,
                         minimap: { enabled: false },
@@ -2066,6 +2301,39 @@ function ArenaContent() {
                       }}
                     />
                   </div>
+
+                  <section
+                    aria-label="Temporary answer pad"
+                    style={{ borderTop: '1px solid var(--border)', background: theme === 'light' ? 'rgba(0,0,0,0.015)' : 'rgba(255,255,255,0.015)' }}
+                  >
+                    <button
+                      type="button"
+                      aria-expanded={isAnswerPadOpen}
+                      onClick={() => setIsAnswerPadOpen(open => !open)}
+                      style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 16px', background: 'transparent', border: 0, color: 'var(--t1)', fontSize: 12.5, fontWeight: 800, cursor: 'pointer' }}
+                    >
+                      <span>Temporary answer pad <span style={{ color: 'var(--t3)', fontWeight: 500 }}>· paste or draft code, then move it to the editor</span></span>
+                      <span aria-hidden="true">{isAnswerPadOpen ? '−' : '+'}</span>
+                    </button>
+                    {isAnswerPadOpen && (
+                      <div style={{ padding: '0 14px 12px' }}>
+                        <textarea
+                          aria-label="Temporary answer text"
+                          value={answerScratchpad}
+                          onChange={event => setAnswerScratchpad(event.target.value)}
+                          placeholder={`Paste or draft a ${language === 'python' ? 'Python' : language === 'java' ? 'Java' : 'TypeScript'} answer here…`}
+                          spellCheck={false}
+                          style={{ width: '100%', minHeight: 110, resize: 'vertical', padding: 12, borderRadius: 10, border: '1px solid var(--border)', background: 'var(--bg)', color: 'var(--t1)', fontFamily: "'JetBrains Mono', Consolas, Monaco, monospace", fontSize: 12.5, lineHeight: 1.5 }}
+                        />
+                        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: 8, marginTop: 8 }}>
+                          <button type="button" onClick={() => setAnswerScratchpad('')} style={{ padding: '7px 10px', borderRadius: 8, border: '1px solid var(--border)', background: 'transparent', color: 'var(--t2)', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>Clear pad</button>
+                          <button type="button" onClick={() => void copyEditorAnswer()} style={{ padding: '7px 10px', borderRadius: 8, border: '1px solid var(--border)', background: 'transparent', color: 'var(--t2)', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>Copy editor code</button>
+                          <button type="button" onClick={() => void copyScratchpad()} style={{ padding: '7px 10px', borderRadius: 8, border: '1px solid var(--border)', background: 'transparent', color: 'var(--t2)', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>Copy pad</button>
+                          <button type="button" onClick={useScratchpadInEditor} style={{ padding: '7px 11px', borderRadius: 8, border: '1px solid rgba(56,189,248,.45)', background: 'rgba(56,189,248,.12)', color: '#38bdf8', fontSize: 12, fontWeight: 800, cursor: 'pointer' }}>Use in editor</button>
+                        </div>
+                      </div>
+                    )}
+                  </section>
 
                   {/* Inline Test Output Drawer */}
                   {testResult && (
@@ -2199,17 +2467,17 @@ function ArenaContent() {
                     padding: 32,
                     borderRadius: 20,
                     background: 'var(--bg2)',
-                    border: didIWin ? '2px solid #10b981' : '2px solid #ef4444',
+                    border: didIDraw ? '2px solid #818cf8' : didIWin ? '2px solid #10b981' : '2px solid #ef4444',
                     textAlign: 'center',
-                    boxShadow: didIWin ? '0 0 50px rgba(16, 185, 129, 0.3)' : '0 0 50px rgba(239, 68, 68, 0.3)',
+                    boxShadow: didIDraw ? '0 0 50px rgba(129, 140, 248, 0.22)' : didIWin ? '0 0 50px rgba(16, 185, 129, 0.3)' : '0 0 50px rgba(239, 68, 68, 0.3)',
                     animation: 'goldImpactShockwave 0.5s ease'
                   }}>
                     <div style={{ fontSize: 61.5, marginBottom: 12 }}>
-                      {didIWin ? '✓' : '✗'}
+                      {didIDraw ? '＝' : didIWin ? '✓' : '✗'}
                     </div>
 
-                    <h2 style={{ fontSize: 31, fontWeight: 800, color: didIWin ? '#34d399' : '#f87171', margin: '0 0 8px' }}>
-                      {didIWin ? 'VICTORY!' : 'DEFEAT'}
+                    <h2 style={{ fontSize: 31, fontWeight: 800, color: didIDraw ? '#a5b4fc' : didIWin ? '#34d399' : '#f87171', margin: '0 0 8px' }}>
+                      {didIDraw ? 'DRAW' : didIWin ? 'VICTORY!' : 'DEFEAT'}
                     </h2>
 
                     <div style={{
@@ -2223,11 +2491,15 @@ function ArenaContent() {
                       fontWeight: 700,
                       marginBottom: 12
                     }}>
-                      ⚔️ Decision: {activeRoom?.tieBreakerReason || (didIWin ? 'Flawless Test Suite Clear' : 'Match Concluded')}
+                      {didIDraw ? '🤝' : '⚔️'} Decision: {activeRoom?.tieBreakerReason || (didIDraw ? 'The match ended evenly' : didIWin ? 'Flawless Test Suite Clear' : 'Match Concluded')}
                     </div>
 
                     <p style={{ color: 'var(--t2)', fontSize: 15.5, margin: '0 0 20px' }}>
-                      {didIWin
+                      {soloMatch
+                        ? 'Practice result only. The 10 Pin entry fee was charged when the match started; ELO, Arena Points, XP, and ranked win/loss stats stay unchanged.'
+                        : didIDraw
+                        ? 'The match ended level. Your Arena ELO and Arena Points stay unchanged.'
+                        : didIWin
                         ? 'Sensational performance! You conquered the algorithmic duel under official Arena rules.'
                         : "Hard-fought match. Review your test logs, inspect your rival's approach, and run it back."}
                     </p>
@@ -2259,9 +2531,10 @@ function ArenaContent() {
                       marginBottom: 24
                     }}>
                       <div>
-                        <div style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 600 }}>ELO RATING</div>
-                        <div style={{ fontSize: 20, fontWeight: 800, color: didIWin ? '#34d399' : '#f87171' }}>
+                        <div style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 600 }}>{soloMatch ? 'ELO · NO CHANGE' : 'ELO RATING'}</div>
+                        <div style={{ fontSize: 20, fontWeight: 800, color: soloMatch ? '#38bdf8' : didIDraw ? '#a5b4fc' : didIWin ? '#34d399' : '#f87171' }}>
                           {(() => {
+                            if (soloMatch) return '+0';
                             if (activeRoom) {
                               const delta = isHost ? (activeRoom as any)?.hostEloDelta : (activeRoom as any)?.guestEloDelta;
                               if (typeof delta === 'number') {
@@ -2271,17 +2544,21 @@ function ArenaContent() {
                             if (soloReward) {
                               return soloReward.eloDelta >= 0 ? `+${soloReward.eloDelta}` : `${soloReward.eloDelta}`;
                             }
-                            return didIWin ? '+20' : '-20';
+                            return didIDraw ? '+0' : didIWin ? '+20' : '-20';
                           })()}
                         </div>
                         <div style={{ fontSize: 11, color: 'var(--t3)', marginTop: 2 }}>
-                          {soloReward?.newElo ? `New Rating: ${soloReward.newElo}` : (activeRoom ? `Rating: ${isHost ? (activeRoom as any)?.hostNewElo || 120 : (activeRoom as any)?.guestNewElo || 80}` : (didIWin ? 'New: 120' : 'New: 80'))}
+                          {soloMatch
+                            ? `Rating remains ${soloReward?.newElo ?? liveElo ?? sanitizedUserElo ?? cachedElo}`
+                            : activeRoom
+                              ? `Rating: ${isHost ? (activeRoom as any)?.hostNewElo ?? liveElo ?? sanitizedUserElo ?? 100 : (activeRoom as any)?.guestNewElo ?? liveElo ?? sanitizedUserElo ?? 100}`
+                              : `New: ${liveElo ?? sanitizedUserElo ?? 100}`}
                         </div>
                       </div>
                       <div>
-                        <div style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 600 }}>ARENA POINTS</div>
+                        <div style={{ fontSize: 12, color: 'var(--t3)', fontWeight: 600 }}>{soloMatch ? 'ARENA POINTS · NONE' : 'ARENA POINTS'}</div>
                         <div style={{ fontSize: 20, fontWeight: 800, color: 'var(--t1)' }}>
-                          +{(() => {
+                          +{soloMatch ? 0 : (() => {
                             if (activeRoom) {
                               const awardPoints = isHost ? (activeRoom as any)?.hostArenaPointsAward : (activeRoom as any)?.guestArenaPointsAward;
                               if (typeof awardPoints === 'number') return awardPoints;
@@ -2437,17 +2714,17 @@ function ArenaContent() {
             </div>
 
             <p style={{ color: 'var(--t2)', fontSize: 14, lineHeight: 1.5, marginBottom: 20 }}>
-              Match outcomes are resolved by the Arena. ELO and Arena Points follow the same rules in private duels and solo sparring.
+              Private PvP matches affect ELO and Arena Points. Turing AI practice costs 10 Pins when it starts and never changes your ratings, XP, or ranked stats.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 24 }}>
               <div style={{ padding: 14, borderRadius: 12, background: 'var(--bg3)', border: '1px solid var(--border)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                   <span style={{ fontSize: 16 }}>⚡</span>
-                  <strong style={{ color: '#f59e0b', fontSize: 14.5 }}>Rule 1: Win and rating rewards</strong>
+                  <strong style={{ color: '#f59e0b', fontSize: 14.5 }}>Rule 1: Private PvP ratings and rewards</strong>
                 </div>
                 <div style={{ fontSize: 13, color: 'var(--t2)', lineHeight: 1.4 }}>
-                  The first combatant to pass all test cases wins. A win adds <strong>20 ELO</strong> and awards <strong>half of pre-match ELO as Arena Points</strong>, rounded and capped at 250. A loss removes up to 20 ELO and awards no Arena Points; a draw changes neither.
+                  In a private PvP match, the first combatant to pass all test cases wins. A win adds <strong>20 ELO</strong> and awards <strong>half of pre-match ELO as Arena Points</strong>, rounded and capped at 250. A loss removes up to 20 ELO and awards no Arena Points; a draw changes neither. These rating rules never apply to Turing AI practice.
                 </div>
               </div>
 
@@ -2518,6 +2795,97 @@ function ArenaContent() {
             >
               Understood — Return to Arena
             </button>
+          </div>
+        </div>
+      )}
+
+      {showVoiceDuelModal && !activeRoom && !soloMatch && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Confirm 1v1 Arena Duel Launch"
+          data-testid="arena-voice-duel-modal"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 1200,
+            background: 'rgba(2, 6, 23, 0.76)',
+            backdropFilter: 'blur(6px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 20,
+          }}
+          onClick={() => setShowVoiceDuelModal(false)}
+        >
+          <div
+            style={{
+              width: '100%',
+              maxWidth: 460,
+              background: 'var(--bg2)',
+              border: '1.5px solid rgba(99, 102, 241, 0.5)',
+              borderRadius: 20,
+              padding: 26,
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.45)',
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 10 }}>
+              <span style={{ fontSize: 12, fontWeight: 800, color: '#818cf8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                🎙️ Voice Launch Ready
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowVoiceDuelModal(false)}
+                aria-label="Close modal"
+                style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 18, cursor: 'pointer' }}
+              >
+                ✕
+              </button>
+            </div>
+            <h3 style={{ margin: '0 0 8px', fontSize: 20, fontWeight: 900, color: 'var(--t1)' }}>
+              Enter Rated 1v1 Code Wars Duel?
+            </h3>
+            <p style={{ margin: '0 0 18px', fontSize: 13.5, lineHeight: 1.55, color: 'var(--t2)' }}>
+              Difficulty calibrated to <strong>{studentKnowledge.recommendedDifficulty || 'basic'}</strong> (ELO {eloRating}). Entry stake is <strong>10 Pins</strong> (your balance: <strong>{pins} Pins</strong>).
+            </p>
+            <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end' }}>
+              <button
+                type="button"
+                onClick={() => setShowVoiceDuelModal(false)}
+                style={{
+                  padding: '10px 16px',
+                  borderRadius: 10,
+                  border: '1px solid var(--border)',
+                  background: 'var(--bg3)',
+                  color: 'var(--t2)',
+                  fontWeight: 700,
+                  cursor: 'pointer',
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                data-testid="arena-voice-confirm-duel-btn"
+                disabled={isStartingSolo}
+                onClick={() => {
+                  setShowVoiceDuelModal(false);
+                  void handleStartSoloSparring();
+                }}
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 10,
+                  border: 'none',
+                  background: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)',
+                  color: '#fff',
+                  fontWeight: 800,
+                  cursor: isStartingSolo ? 'not-allowed' : 'pointer',
+                }}
+              >
+                {isStartingSolo ? 'PREPARING MATCH…' : '⚔️ Enter the Ring (10 Pins)'}
+              </button>
+            </div>
           </div>
         </div>
       )}

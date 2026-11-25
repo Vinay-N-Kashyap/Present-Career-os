@@ -5,6 +5,7 @@ import { supabase } from '@/lib/supabaseClient';
 import { toast } from '@/lib/store/useAppStore';
 import { generateTxId } from '@/lib/utils/transactionId';
 import { api } from '@/lib/api/client';
+import { applyTrustReward, applyVaultRejectionPenalty } from '@/lib/trust/trustEngine';
 
 export interface VaultItem {
   id: string;
@@ -137,42 +138,48 @@ export function useVault(options: UseVaultOptions = {}) {
     }
   }, [vaultItems, userId, saveVault]);
 
-  const updateVaultItem = useCallback((id: string, updates: Partial<VaultItem>) => {
+  const updateVaultItem = useCallback((id: string, updates: Partial<VaultItem>, opts?: { skipTrustMutation?: boolean }) => {
     const updated = vaultItems.map(item => {
       if (item.id !== id) return item;
       const merged = { ...item, ...updates };
-      if (updates.verified && !item.verified) {
-        toast.success('✓ Proof Verified', `"${item.title}" is officially verified!`);
-        if (onAddXp) onAddXp(20, 'Proof Verified');
-        // Gameplay earn disabled: pins strictly granted via purchase & bonus
+      if (!opts?.skipTrustMutation) {
+        if (updates.verified && !item.verified) {
+          toast.success('✓ Proof Verified', `"${item.title}" is officially verified!`);
+          if (onAddXp) onAddXp(20, 'Proof Verified');
+          // Grant +5 Trust Score for verified authentic document
+          applyTrustReward(userId, 'vault_verified').catch(() => {});
+        } else if (updates.verified === false && item.verified === true) {
+          // Deduct -5 Trust Score for unverified/rejected document
+          applyVaultRejectionPenalty(userId).catch(() => {});
+        }
       }
       return merged;
     });
     saveVault(updated);
-  }, [vaultItems, onAddXp, onEarnPins, saveVault]);
+  }, [vaultItems, onAddXp, onEarnPins, saveVault, userId]);
 
-  const removeVaultItem = useCallback((id: string) => {
+  const removeVaultItem = useCallback(async (id: string) => {
     const itemToDelete = vaultItems.find(item => item.id === id);
     const updated = vaultItems.filter(item => item.id !== id);
     saveVault(updated);
     toast.info('Item Removed', 'Vault item deleted.');
 
     if (userId && userId !== 'guest') {
-      api.post('/api/vault/delete', {
-        documentId: id,
-        storageUrl: (itemToDelete as any)?.storage_url || (itemToDelete as any)?.storageUrl,
-      }).catch((err) => {
+      try {
+        await api.post('/api/vault/delete', {
+          documentId: id,
+          storageUrl: (itemToDelete as any)?.storage_url || (itemToDelete as any)?.storageUrl,
+        });
+      } catch (err) {
         console.warn('Failed to purge vault document file via /api/vault/delete, attempting fallback delete:', err);
-        supabase
+        const { error } = await supabase
           .from('vault_items')
           .delete()
-          .eq('id', id)
-          .then(({ error }) => {
-            if (error) {
-              console.error('Failed to delete vault item from Supabase:', error.message);
-            }
-          });
-      });
+          .eq('id', id);
+        if (error) {
+          console.error('Failed to delete vault item from Supabase:', error.message);
+        }
+      }
     }
   }, [vaultItems, userId, saveVault]);
 

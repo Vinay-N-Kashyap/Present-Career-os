@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server';
 import { requireUserFromRequest, getBearerToken, getAuthoritativeSupabaseClient } from '@/lib/server/requireAuth';
+import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { getAuthoritativeQuest, isAuthoritativeExam } from '@/lib/quests/questRegistry';
 import { questNeedsPassReceipt } from '@/lib/courses/gradeTest';
 import { verifyPassReceipt } from '@/lib/server/passReceipt';
+import { DAILY_PIN_CAP, splitCreditIntoWallets } from '@/lib/pins/pinWalletRules';
 
 /**
  * POST /api/quest/complete
@@ -18,7 +20,12 @@ export async function POST(req: Request) {
 
     const userId = gated.user.id;
     const token = getBearerToken(req);
-    const supabase = getAuthoritativeSupabaseClient(token);
+    let supabase: any;
+    try {
+      supabase = getSupabaseAdmin();
+    } catch {
+      supabase = getAuthoritativeSupabaseClient(token);
+    }
 
     const body = await req.json().catch(() => ({}));
     const rawQuestId = typeof body?.questId === 'string' ? body.questId.trim() : '';
@@ -57,7 +64,7 @@ export async function POST(req: Request) {
     // Step 1: Fetch user profile
     const { data: profile, error: fetchErr } = await supabase
       .from('users')
-      .select('id, completed_quests, xp_total, weekly_xp, onboarding_answers, pins')
+      .select('id, completed_quests, xp_total, weekly_xp, onboarding_answers, pins, bonus_pins')
       .eq('id', userId)
       .single();
 
@@ -72,12 +79,12 @@ export async function POST(req: Request) {
         alreadyCompleted: true,
         completedQuests: currentCompleted,
         xpTotal: profile.xp_total || 0,
+        weeklyXp: profile.weekly_xp || 0,
         pinsTotal: profile.pins || 0,
       });
     }
 
-    // Step 2: Enforce global daily limit (DEF-074)
-    // Non-exam quests capped at 3/day; exams capped at 5/day to prevent infinite bypass
+    // Step 2: Record progress timestamps without artificial daily limit (students can progress at their own pace)
     const answers = profile.onboarding_answers || {};
     const timestamps: string[] = Array.isArray(answers.completedQuestsTimestamps)
       ? answers.completedQuestsTimestamps
@@ -90,24 +97,20 @@ export async function POST(req: Request) {
       return new Date(ts).toDateString() === today;
     });
 
-    const maxDailyAllowed = isExam ? 5 : 3;
-    if (todayCompletions.length >= maxDailyAllowed) {
-      return NextResponse.json(
-        {
-          error: `Daily Limit Reached: Maximum of ${maxDailyAllowed} completions per calendar day allowed across all courses.`,
-          dailyCompletionsCount: todayCompletions.length,
-          maxAllowed: maxDailyAllowed,
-        },
-        { status: 429 }
-      );
-    }
-
-    // Step 3: Atomic write with clamped XP and Pins
+    // Step 3: Atomic write with clamped XP and Pins (fill Current Pins up to 120 cap, overflow to Bonus Vault)
     const safePins = registeredQuest.pins || (isExam ? 6 : 5);
     let nextXp = (profile.xp_total || 0) + safeXp;
     let nextWeeklyXp = (profile.weekly_xp || 0) + safeXp;
-    let nextPins = (profile.pins || 0) + safePins;
+    const pinSplit = splitCreditIntoWallets(
+      typeof profile.pins === 'number' ? profile.pins : 0,
+      typeof profile.bonus_pins === 'number' ? profile.bonus_pins : 0,
+      safePins,
+      DAILY_PIN_CAP
+    );
+    const nextPins = pinSplit.newPins;
+    const nextBonusPins = pinSplit.newBonus;
     let xpCreditedByRpc = false;
+    let weeklyCreditedByRpc = false;
 
     // Try authoritative increment_xp RPC first if available
     try {
@@ -118,23 +121,11 @@ export async function POST(req: Request) {
       });
       if (!rpcErr && rpcRes?.ok) {
         if (typeof rpcRes.new_xp === 'number') nextXp = rpcRes.new_xp;
-        if (typeof rpcRes.new_weekly_xp === 'number') nextWeeklyXp = rpcRes.new_weekly_xp;
+        if (typeof rpcRes.new_weekly_xp === 'number') {
+          nextWeeklyXp = rpcRes.new_weekly_xp;
+          weeklyCreditedByRpc = true;
+        }
         xpCreditedByRpc = true;
-      }
-    } catch {
-      // Graceful fallback to direct calculation
-    }
-
-    // Try authoritative credit_pins RPC if available
-    try {
-      const { data: rpcPins, error: rpcPinsErr } = await supabase.rpc('credit_pins', {
-        p_user_id: userId,
-        p_amount: safePins,
-        p_reason: `quest:${questId}`,
-        p_source: isExam ? 'exam_pass' : 'mission_complete',
-      });
-      if (!rpcPinsErr && rpcPins?.ok && typeof rpcPins.new_balance === 'number') {
-        nextPins = rpcPins.new_balance;
       }
     } catch {
       // Graceful fallback to direct calculation
@@ -151,12 +142,15 @@ export async function POST(req: Request) {
     const userUpdate: Record<string, unknown> = {
       completed_quests: nextCompleted,
       pins: nextPins,
+      bonus_pins: nextBonusPins,
       onboarding_answers: nextAnswers,
     };
-    // increment_xp is atomic and already wrote these columns. Rewriting the
-    // values read before the RPC could erase XP earned by a concurrent request.
+    // Older increment_xp RPCs (20260913) only update xp_total and NOT weekly_xp.
+    // Always sync weekly_xp whenever the RPC did not return new_weekly_xp.
     if (!xpCreditedByRpc) {
       userUpdate.xp_total = nextXp;
+    }
+    if (!weeklyCreditedByRpc) {
       userUpdate.weekly_xp = nextWeeklyXp;
     }
 
@@ -167,6 +161,16 @@ export async function POST(req: Request) {
 
     if (updateErr) {
       return NextResponse.json({ error: updateErr.message }, { status: 500 });
+    }
+
+    if (!xpCreditedByRpc && safeXp > 0) {
+      try {
+        await supabase.from('xp_ledger').insert({
+          user_id: userId,
+          amount: safeXp,
+          reason: `quest:${questId}`,
+        });
+      } catch {}
     }
 
     return NextResponse.json({
