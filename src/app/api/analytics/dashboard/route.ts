@@ -2,27 +2,35 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 
+export const dynamic = 'force-dynamic';
+
+function getNextMonday1AmIstIso(): string {
+  const now = new Date();
+  const istOffsetMs = 5.5 * 60 * 60 * 1000;
+  const nowIst = new Date(now.getTime() + istOffsetMs);
+  const day = nowIst.getUTCDay();
+  const hour = nowIst.getUTCHours();
+  let daysUntilMonday = (1 - day + 7) % 7;
+  if (daysUntilMonday === 0 && hour >= 1) daysUntilMonday = 7;
+  const nextMondayIst = new Date(nowIst);
+  nextMondayIst.setUTCDate(nowIst.getUTCDate() + daysUntilMonday);
+  nextMondayIst.setUTCHours(1, 0, 0, 0);
+  return new Date(nextMondayIst.getTime() - istOffsetMs).toISOString();
+}
+
 export async function GET(req: NextRequest) {
   try {
-    let studentId: string | null = null;
-    try {
-      const gated = await requireUserFromRequest(req);
-      if (gated && gated.user) {
-        studentId = gated.user.id;
-      }
-    } catch {}
-
-    if (!studentId) {
-      studentId = req.cookies.get('pinit_uid')?.value || null;
+    const gated = await requireUserFromRequest(req);
+    if (gated.error || !gated.user?.id) {
+      return gated.error || NextResponse.json({ ok: false, error: 'UNAUTHORIZED' }, { status: 401 });
     }
-
+    const studentId = gated.user.id;
     const admin = getSupabaseAdmin();
 
-    // Honest baseline stats - No fake 78/82/88/85% placeholders
     let atsScore = 0;
     let careerDnaScore = 0;
-    let trustScore = 0;
-    let recruiterVisibility = 100; // Default public
+    let trustScore = 50;
+    let recruiterVisibility = 100;
     let missionStreak = 0;
     let careerReadiness = 0;
     let missionsCompleted = 0;
@@ -35,27 +43,84 @@ export async function GET(req: NextRequest) {
     let goldCount = 0;
     let silverCount = 0;
     let interviewsTotal = 0;
+    let arenaElo = 100;
+    let arenaWins = 0;
+    let arenaLosses = 0;
+    let weeklyXp = 0;
+    let careerXp = 0;
+    let weeklyArenaPoints = 0;
+    let leagueTier = 'browns';
+    let leagueJoined = false;
+    let leagueRank: number | null = null;
+    let pins = 0;
+    let bonusPins = 0;
+    let completedQuestsCount = 0;
 
-    if (studentId && admin) {
+    if (admin) {
       try {
         const { data: userRow } = await admin
           .from('users')
-          .select('ats_score, career_dna_score, trust_score, recruiter_visibility, mission_streak, career_readiness, completed_missions, completed_quests')
+          .select(
+            'ats_score, career_dna_score, trust_score, recruiter_visibility, mission_streak, career_readiness, completed_missions, completed_quests, arena_elo, arena_wins, arena_losses, weekly_xp, xp_total, weekly_arena_points, league_tier, league_joined_at, pins, bonus_pins'
+          )
           .eq('id', studentId)
           .maybeSingle();
 
         if (userRow) {
-          atsScore = Number(userRow.ats_score) || 0;
-          careerDnaScore = Number(userRow.career_dna_score) || 0;
-          trustScore = Number(userRow.trust_score) || 0;
+          atsScore = Math.min(100, Math.max(0, Number(userRow.ats_score) || 0));
+          careerDnaScore = Math.min(100, Math.max(0, Number(userRow.career_dna_score) || 0));
+          trustScore = typeof userRow.trust_score === 'number' && Number.isFinite(userRow.trust_score)
+            ? Math.min(100, Math.max(0, Math.round(userRow.trust_score)))
+            : 50;
           recruiterVisibility = userRow.recruiter_visibility !== undefined && userRow.recruiter_visibility !== null
             ? Number(userRow.recruiter_visibility)
             : 100;
-          missionStreak = Number(userRow.mission_streak) || 0;
-          careerReadiness = Number(userRow.career_readiness) || 0;
+          missionStreak = Math.max(0, Number(userRow.mission_streak) || 0);
+          careerReadiness = Math.min(100, Math.max(0, Number(userRow.career_readiness) || 0));
+          arenaWins = Math.max(0, Number(userRow.arena_wins) || 0);
+          arenaLosses = Math.max(0, Number(userRow.arena_losses) || 0);
+          const rawElo = Number(userRow.arena_elo);
+          const isLegacy1200 = rawElo === 1200 && arenaWins === 0;
+          arenaElo = Number.isFinite(rawElo) && rawElo >= 0 && !isLegacy1200 ? Math.round(rawElo) : 100;
+          weeklyXp = Math.max(0, Math.round(Number(userRow.weekly_xp) || 0));
+          careerXp = Math.max(0, Math.round(Number(userRow.xp_total) || 0));
+          weeklyArenaPoints = Math.max(0, Math.round(Number(userRow.weekly_arena_points) || 0));
+          leagueTier = typeof userRow.league_tier === 'string' && userRow.league_tier.trim()
+            ? userRow.league_tier.trim().toLowerCase()
+            : 'browns';
+          leagueJoined = Boolean(userRow.league_joined_at);
+          pins = Math.max(0, Math.round(Number(userRow.pins) || 0));
+          bonusPins = Math.max(0, Math.round(Number(userRow.bonus_pins) || 0));
+          completedQuestsCount = Array.isArray(userRow.completed_quests) ? userRow.completed_quests.length : 0;
+
+          if (leagueJoined) {
+            try {
+              const titleTier = `${leagueTier.charAt(0).toUpperCase()}${leagueTier.slice(1)}`;
+              const myPoints = weeklyXp + weeklyArenaPoints;
+              const { data: tierPeers } = await admin
+                .from('users')
+                .select('id, weekly_xp, weekly_arena_points, xp_total')
+                .not('league_joined_at', 'is', null)
+                .in('league_tier', [leagueTier, titleTier, leagueTier.toUpperCase()])
+                .limit(2000);
+              if (Array.isArray(tierPeers) && tierPeers.length > 0) {
+                const ahead = tierPeers.filter((peer: any) => {
+                  if (peer.id === studentId) return false;
+                  const pWeekly = Math.max(0, Number(peer.weekly_xp) || 0);
+                  const pArena = Math.max(0, Number(peer.weekly_arena_points) || 0);
+                  const pPts = pWeekly + pArena;
+                  if (pPts !== myPoints) return pPts > myPoints;
+                  if (pWeekly !== weeklyXp) return pWeekly > weeklyXp;
+                  const pTotal = Math.max(0, Number(peer.xp_total) || 0);
+                  if (pTotal !== careerXp) return pTotal > careerXp;
+                  return String(peer.id).localeCompare(studentId) < 0;
+                }).length;
+                leagueRank = ahead + 1;
+              }
+            } catch {}
+          }
         }
 
-        // Real Daily Missions lookup
         const { data: missionRows } = await admin
           .from('missions')
           .select('id, status')
@@ -71,7 +136,6 @@ export async function GET(req: NextRequest) {
           missionsTotal = userRow.completed_missions.length;
         }
 
-        // Real Exam Results lookup
         const { data: examRows } = await admin
           .from('campus_exam_results')
           .select('score, passed')
@@ -86,7 +150,6 @@ export async function GET(req: NextRequest) {
           passRate = examRows.filter((e: any) => e.passed).length / examsTotal;
         }
 
-        // Real Interview Submissions lookup
         const { count: ivCount } = await admin
           .from('interview_sessions')
           .select('id', { count: 'exact', head: true })
@@ -99,20 +162,38 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    // Build authentic score history
-    const hasAnyScore = atsScore > 0 || careerDnaScore > 0 || trustScore > 0;
-    const scoreHistory = hasAnyScore ? [
-      { date: 'Initial', ats: Math.max(0, Math.round(atsScore * 0.4)), dna: Math.max(0, Math.round(careerDnaScore * 0.5)), trust: Math.max(0, Math.round(trustScore * 0.6)) },
-      { date: 'Progress', ats: Math.max(0, Math.round(atsScore * 0.8)), dna: Math.max(0, Math.round(careerDnaScore * 0.85)), trust: Math.max(0, Math.round(trustScore * 0.9)) },
-      { date: 'Current', ats: atsScore, dna: careerDnaScore, trust: trustScore },
-    ] : [
-      { date: 'Day 1', ats: 0, dna: 0, trust: 0 },
-      { date: 'Day 2', ats: 0, dna: 0, trust: 0 },
-      { date: 'Today', ats: 0, dna: 0, trust: 0 },
-    ];
+    const effectiveCareerScore = Math.min(100, Math.max(careerReadiness, careerDnaScore, atsScore));
+
+    // Only report real recorded snapshots (no synthetic 0.4x / 0.8x fabrication)
+    const scoreHistory = (atsScore > 0 || careerDnaScore > 0 || trustScore > 0)
+      ? [{ date: 'Current', ats: atsScore, dna: careerDnaScore, trust: trustScore }]
+      : [{ date: 'Today', ats: 0, dna: 0, trust: trustScore }];
 
     const payload = {
       ok: true,
+      telemetry: {
+        trustScore,
+        careerScore: effectiveCareerScore,
+        careerDnaScore,
+        atsScore,
+        arenaElo,
+        arenaWins,
+        arenaLosses,
+        matchesPlayed: arenaWins + arenaLosses,
+        weeklyXp,
+        careerXp,
+        weeklyArenaPoints,
+        league: leagueTier,
+        rank: leagueRank,
+        joined: leagueJoined,
+        sprintEndsAt: getNextMonday1AmIstIso(),
+        missionStreak,
+        pins,
+        bonusPins,
+        interviewsTotal,
+        completedQuestsCount,
+        completedMissionsCount: missionsCompleted,
+      },
       scores: {
         ats_score: atsScore,
         career_dna_score: careerDnaScore,
@@ -141,7 +222,9 @@ export async function GET(req: NextRequest) {
       score_history: scoreHistory,
     };
 
-    return NextResponse.json(payload);
+    return NextResponse.json(payload, {
+      headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' },
+    });
   } catch (err: any) {
     return NextResponse.json(
       {

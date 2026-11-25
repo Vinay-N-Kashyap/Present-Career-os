@@ -167,13 +167,13 @@ export default function DashboardBentoGrid({
     return () => clearInterval(timer);
   }, []);
 
-  // Honest Dynamic Arena Standing synced to /api/leaderboard + user profile
+  // Honest Dynamic Arena Standing synced to /api/analytics/dashboard + user profile
   const arenaStanding = useMemo(() => {
     const wins = Number((user as any)?.arena_wins ?? 0);
     const rawUserElo = liveArena?.elo ?? (user as any)?.arena_elo ?? (user as any)?.elo ?? (user as any)?.rating ?? 100;
-    const sanitizedElo = rawUserElo === 1200 && wins === 0 ? 100 : Math.max(100, Math.round(rawUserElo));
+    const sanitizedElo = rawUserElo === 1200 && wins === 0 ? 100 : Math.max(0, Math.round(rawUserElo));
     const matchesPlayed = liveArena?.matchesPlayed ?? Number((user as any)?.arena_matches ?? 0);
-    const joined = Boolean(liveArena?.joined || matchesPlayed > 0 || sanitizedElo > 100);
+    const joined = Boolean(liveArena?.joined || matchesPlayed > 0 || (sanitizedElo > 0 && sanitizedElo !== 100));
 
     if (joined) {
       const leagueName = formatLeagueTitle(liveArena?.league || (user as any)?.league_tier);

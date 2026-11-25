@@ -172,6 +172,21 @@ export function getLocalTrustScore(userId?: string | null, profileFallback?: num
 }
 
 /**
+ * Overwrites stale browser/in-memory Trust Score with the authoritative DB score.
+ */
+export function syncAuthoritativeTrustScore(userId: string | null | undefined, dbScore: number): number {
+  const clamped = Math.max(TRUST_CONSTANTS.MIN_SCORE, Math.min(TRUST_CONSTANTS.MAX_SCORE, Math.round(dbScore)));
+  const safeId = userId || 'guest';
+  inMemoryTrustScores.set(safeId, clamped);
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem(getTrustStorageKey(userId), String(clamped));
+    } catch {}
+  }
+  return clamped;
+}
+
+/**
  * Persist trust score locally and sync to Supabase if authenticated.
  */
 export async function persistTrustScore(

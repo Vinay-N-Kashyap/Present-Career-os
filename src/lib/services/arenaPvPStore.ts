@@ -355,6 +355,7 @@ export interface ArenaRoom {
 
 export interface QueueTicket {
   studentId: string;
+  userId?: string;
   studentName: string;
   studentAvatar?: string;
   difficulty: string;
@@ -419,11 +420,24 @@ const inMemoryRooms = new Map<string, ArenaRoom>();
 const inMemoryCodes = new Map<string, { code: string; logs?: string }>();
 const inMemoryQueue: QueueTicket[] = [];
 const inMemoryMatches = new Map<string, string>(); // waiting studentId → room code (local fallback)
+const settlingRoomsInProcess = new Map<string, Promise<ArenaRoom>>();
 
 const QUEUE_TTL_MS = 60000;
 const difficultyFits = (a: string, b: string) => a === 'any' || b === 'any' || a === b;
 
 const MAX_CODE_CHARS = 50000;
+const UUID_PREFIX_RE = /^([0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12})_/i;
+
+/**
+ * Strips per-device matchmaking suffixes (`<uuid>_<device8>`) so arena_rooms.host_id and guest_id
+ * always store the canonical authenticated user UUID expected by combatantSide() and settlement RPCs.
+ */
+export function extractCanonicalUserId(rawId: string): string {
+  const trimmed = (rawId || '').trim();
+  const match = trimmed.match(UUID_PREFIX_RE);
+  return match ? match[1] : trimmed;
+}
+
 const emptyProgress = (): ArenaPlayerProgress => ({ testsPassed: 0, totalTests: 5, score: 0, submitted: false, code: '', submissionAttempts: 0, failedAttempts: 0 });
 const normalizeCode = (roomCode: string) => roomCode.toUpperCase().trim();
 const clone = <T>(v: T): T => JSON.parse(JSON.stringify(v)) as T;
@@ -899,9 +913,21 @@ export class ArenaPvPStore {
 
 
 
-    const hostId = room.hostId;
-    const guestId = room.guestId || 'guest';
+    const hostId = extractCanonicalUserId(room.hostId);
+    const guestId = room.guestId ? extractCanonicalUserId(room.guestId) : 'guest';
     console.log(`[ArenaPvPStore.settleMatch] Settling match ${room.roomCode} | Winner: ${room.winnerId} | Host: ${hostId} | Guest: ${guestId}`);
+
+    const normCode = normalizeCode(room.roomCode);
+    const existingSettlement = settlingRoomsInProcess.get(normCode);
+    if (existingSettlement) {
+      return existingSettlement;
+    }
+
+    const settleTask = (async (): Promise<ArenaRoom> => {
+    const cachedExisting = inMemoryRooms.get(normCode);
+    if (cachedExisting?.eloApplied) {
+      return cachedExisting;
+    }
     let hostElo = 100;
     let guestElo = 100;
 
@@ -949,7 +975,7 @@ export class ArenaPvPStore {
 
       guestElo,
 
-      winnerId: room.winnerId,
+      winnerId: extractCanonicalUserId(room.winnerId || 'draw'),
 
     });
 
@@ -1067,6 +1093,14 @@ export class ArenaPvPStore {
 
 
     return persistedRoom || room;
+    })();
+
+    settlingRoomsInProcess.set(normCode, settleTask);
+    try {
+      return await settleTask;
+    } finally {
+      settlingRoomsInProcess.delete(normCode);
+    }
 
   }
 
@@ -1105,8 +1139,11 @@ export class ArenaPvPStore {
 
     const perfectProblem = selectPerfectQuestion(host, guest, defaultProblemId, recentProblemIds);
 
+    const canonicalHostId = extractCanonicalUserId(host.userId || host.studentId);
+    const canonicalGuestId = extractCanonicalUserId(guest.userId || guest.studentId);
+
     const created = await this.createRoom({
-      hostId: host.studentId,
+      hostId: canonicalHostId,
       hostName: host.studentName,
       hostAvatar: host.studentAvatar,
       hostDeviceId: host.deviceId,
@@ -1120,7 +1157,7 @@ export class ArenaPvPStore {
     console.log(`[ArenaPvPStore.createMatchedRoom] Room created: ${created.roomCode} with 1-Perfect-Question: ${perfectProblem.id} (${perfectProblem.difficulty})`);
 
     return this.updateRoom(created.roomCode, (r) => {
-      r.guestId = guest.studentId;
+      r.guestId = canonicalGuestId;
       r.guestName = guest.studentName;
       r.guestAvatar = guest.studentAvatar;
       r.guestDeviceId = guest.deviceId;
@@ -1175,7 +1212,9 @@ export class ArenaPvPStore {
         .limit(10);
       if (waitErr) throw new Error(waitErr.message);
 
+      const myCanonicalUserId = extractCanonicalUserId(ticket.userId || ticket.studentId);
       for (const cand of (waitingData ?? []) as QueueRow[]) {
+        if (extractCanonicalUserId(cand.student_id) === myCanonicalUserId) continue;
         if (!difficultyFits(ticket.difficulty, cand.difficulty || 'any')) continue;
         const roomCode = generateRoomCode();
         const { data: claimed } = await queue()
@@ -1188,6 +1227,7 @@ export class ArenaPvPStore {
         const inMemHost = inMemoryQueue.find((t) => t.studentId === cand.student_id);
         const host: QueueTicket = {
           studentId: cand.student_id,
+          userId: inMemHost?.userId || extractCanonicalUserId(cand.student_id),
           studentName: cand.student_name,
           studentAvatar: cand.student_avatar || undefined,
           difficulty: cand.difficulty || 'any',
@@ -1272,8 +1312,12 @@ export class ArenaPvPStore {
     }
 
     const now = Date.now();
+    const myCanonicalId = extractCanonicalUserId(ticket.userId || ticket.studentId);
     const opponent = inMemoryQueue.find((t) =>
-      now - t.enqueuedAt < QUEUE_TTL_MS && t.studentId !== ticket.studentId && difficultyFits(ticket.difficulty, t.difficulty));
+      now - t.enqueuedAt < QUEUE_TTL_MS &&
+      t.studentId !== ticket.studentId &&
+      extractCanonicalUserId(t.userId || t.studentId) !== myCanonicalId &&
+      difficultyFits(ticket.difficulty, t.difficulty));
     if (opponent) {
       console.log(`[ArenaPvPStore.matchmakeLocally] Opponent found in local queue: ${opponent.studentId} for ${ticket.studentId}`);
       inMemoryQueue.splice(inMemoryQueue.indexOf(opponent), 1);

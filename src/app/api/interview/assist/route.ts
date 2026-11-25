@@ -549,67 +549,33 @@ RULES:
 
     let parsedResult: any = null;
 
-    // A. Attempt Groq Multi-Key Pool with ultra-fast 8B model
-    for (const key of groqKeys) {
-      try {
-        console.log(`[Interview Assist API] Attempting Groq 8B inference with key ending in ...${key.slice(-4)}`);
-        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${key}`
-          },
-          body: JSON.stringify({
-            model: 'llama-3.1-8b-instant',
+    // A. Attempt Groq Multi-Key Pool across live active models (llama-3.1-8b-instant & llama-3.3-70b-versatile are retired 404s)
+    const GROQ_ASSIST_MODELS = ['qwen/qwen3.8-27b', 'openai/gpt-oss-20b', 'openai/gpt-oss-120b'] as const;
+    for (const model of GROQ_ASSIST_MODELS) {
+      for (const key of groqKeys) {
+        try {
+          console.log(`[Interview Assist API] Attempting Groq ${model} inference with key ending in ...${key.slice(-4)}`);
+          const isGptOss = model.startsWith('openai/gpt-oss');
+          const payload: Record<string, unknown> = {
+            model,
             response_format: { type: 'json_object' },
             messages: [
               { role: 'system', content: systemPrompt },
               { role: 'user', content: `Generate the interview response script for question: "${cleanQuestion || 'Tell me about yourself.'}"` }
             ],
-            max_tokens: 550,
+            max_tokens: 650,
             temperature: 0.3
-          }),
-          signal: AbortSignal.timeout(4000)
-        });
+          };
+          if (isGptOss) payload.reasoning_effort = 'low';
+          else payload.reasoning_effort = 'none';
 
-        if (res.ok) {
-          const data = await res.json();
-          const raw = (data.choices?.[0]?.message?.content || '').trim();
-          const extracted = extractJsonObject(raw);
-          if (extracted?.script) {
-            parsedResult = extracted;
-            console.log('[Interview Assist API] Groq 8B script generated successfully');
-            break;
-          }
-        } else {
-          console.warn(`[Interview Assist API] Groq 8B key returned status: ${res.status}`);
-        }
-      } catch (err: any) {
-        console.warn('[Interview Assist API] Groq 8B attempt failed:', err?.message);
-      }
-    }
-
-    // B. Attempt Groq 70B if 8B failed
-    if (!parsedResult && groqKeys.length > 0) {
-      for (const key of groqKeys) {
-        try {
-          console.log('[Interview Assist API] Attempting Groq 70B fallback...');
           const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
               Authorization: `Bearer ${key}`
             },
-            body: JSON.stringify({
-              model: 'llama-3.3-70b-versatile',
-              response_format: { type: 'json_object' },
-              messages: [
-                { role: 'system', content: systemPrompt },
-                { role: 'user', content: `Generate the interview response script for question: "${cleanQuestion || 'Tell me about yourself.'}"` }
-              ],
-              max_tokens: 550,
-              temperature: 0.3
-            }),
+            body: JSON.stringify(payload),
             signal: AbortSignal.timeout(4500)
           });
 
@@ -619,14 +585,17 @@ RULES:
             const extracted = extractJsonObject(raw);
             if (extracted?.script) {
               parsedResult = extracted;
-              console.log('[Interview Assist API] Groq 70B script generated successfully');
+              console.log(`[Interview Assist API] Groq ${model} script generated successfully`);
               break;
             }
+          } else {
+            console.warn(`[Interview Assist API] Groq ${model} key returned status: ${res.status}`);
           }
         } catch (err: any) {
-          console.warn('[Interview Assist API] Groq 70B attempt failed:', err?.message);
+          console.warn(`[Interview Assist API] Groq ${model} attempt failed:`, err?.message);
         }
       }
+      if (parsedResult) break;
     }
 
     // C. Attempt Gemini Flash Failover

@@ -192,6 +192,9 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
     )) {
       return NextResponse.json({ error: 'BOTH_PLAYERS_NOT_READY' }, { status: 409 });
     }
+    if (action === 'forfeit' && (current.status !== 'in_progress' || !current.guestId)) {
+      return NextResponse.json({ error: 'MATCH_NOT_IN_PROGRESS' }, { status: 409 });
+    }
 
     // The server clock decides the deadline. A late submit, timeout callback, or progress update
     // first closes the room and then returns its authoritative final state.
@@ -361,6 +364,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
           room.tieBreakerReason = resolution.winReason;
         }
       } else if (action === 'forfeit') {
+        if (room.status !== 'in_progress' || !room.guestId) return null;
         console.log(`[ArenaRoom POST] Forfeit in ${roomCode} by ${playerId}`);
         room.status = 'completed';
         room.winnerId = isHost ? room.guestId : room.hostId;

@@ -2004,6 +2004,14 @@ export default function InterviewPage() {
         resultObj.newWeeklyXp
       );
     }
+    if (typeof resultObj.newTrustScore === 'number' && typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('pinit:user_profile_updated', {
+        detail: {
+          user_id: user?.id,
+          trust_score: resultObj.newTrustScore,
+        },
+      }));
+    }
     if (resultObj.portfolioSynced || resultObj.resumeSynced) {
       const syncedTargets = [
         resultObj.portfolioSynced ? 'Portfolio' : null,

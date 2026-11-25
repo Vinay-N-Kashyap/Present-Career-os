@@ -16,6 +16,7 @@ import { DynamicRoleReadiness, StudentSkillProfile } from '@/lib/pathway/compete
 import { PathwayApiService } from '@/lib/api/pathwayApi';
 import { fetchIndependentProjectsFromDb } from '@/lib/api/independentProjectsApi';
 import { crashCourseEnrollmentService, CrashCourseEnrollment } from '@/lib/services/crashCourseEnrollmentService';
+import { syncAuthoritativeTrustScore } from '@/lib/trust/trustEngine';
 import type { Project } from '@/lib/data/projectData';
 
 export interface LiveArenaTelemetry {
@@ -193,6 +194,17 @@ export default function DashboardPage() {
     sprintEndsAt: null,
     joined: false,
   });
+  const [liveTelemetry,        setLiveTelemetry]        = useState<{
+    trustScore: number | null;
+    careerScore: number | null;
+    dnaScore: number | null;
+    interviewsTotal: number | null;
+  }>({
+    trustScore: null,
+    careerScore: null,
+    dnaScore: null,
+    interviewsTotal: null,
+  });
 
   // ── Mount guard ────────────────────────────────────────────────────────────
   useEffect(() => { setMounted(true); }, []);
@@ -230,65 +242,106 @@ export default function DashboardPage() {
     if (!user?.id) return;
     void loadDashboardTelemetry();
 
+    let lastFocusSync = 0;
     const handleRefresh = () => {
       if (active) void loadDashboardTelemetry();
     };
+    const handleVisibilityRefresh = () => {
+      if (typeof document !== 'undefined' && document.hidden) return;
+      const now = Date.now();
+      if (now - lastFocusSync < 15_000) return;
+      lastFocusSync = now;
+      if (active) void loadDashboardTelemetry();
+    };
     window.addEventListener('pinit:enrollment_updated', handleRefresh);
-    window.addEventListener('focus', handleRefresh);
+    document.addEventListener('visibilitychange', handleVisibilityRefresh);
     return () => {
       active = false;
       window.removeEventListener('pinit:enrollment_updated', handleRefresh);
-      window.removeEventListener('focus', handleRefresh);
+      document.removeEventListener('visibilitychange', handleVisibilityRefresh);
     };
   }, [user?.id, completedQuests, roadmapGenerated, loadDashboardTelemetry]);
 
-  // ── Load real Arena ELO & standing from /api/leaderboard + live profile events ─
+  // ── Load real live telemetry (Trust, Career, ELO, Weekly EXP) from /api/analytics/dashboard ─
+  const activeUserId = user?.id;
   useEffect(() => {
-    if (!user?.id) return;
+    if (!activeUserId) return;
     let cancelled = false;
     let inFlight = false;
+    let lastLoadedAt = 0;
 
     const loadArenaStanding = async () => {
       if (inFlight) return;
       inFlight = true;
       try {
-        const params = new URLSearchParams({ mode: 'global', userId: user.id });
-        const headers: Record<string, string> = { 'x-user-id': user.id };
+        const headers: Record<string, string> = {};
         try {
           const { data: { session } } = await supabase.auth.getSession();
           if (session?.access_token) headers.Authorization = `Bearer ${session.access_token}`;
         } catch {}
 
-        const response = await fetch(`/api/leaderboard?${params.toString()}`, { headers, cache: 'no-store' });
+        const response = await fetch('/api/analytics/dashboard', { headers, cache: 'no-store' });
         if (!response.ok) return;
         const data = await response.json();
-        if (cancelled || !data?.ok) return;
+        if (cancelled || !data?.ok || !data?.telemetry) return;
 
-        const rawElo = Number(data.currentUser?.eloRating);
-        const arenaWins = Number((user as any)?.arena_wins ?? 0);
-        const sanitizedElo = Number.isFinite(rawElo) && rawElo > 0
-          ? (rawElo === 1200 && arenaWins === 0 ? 100 : Math.round(rawElo))
+        lastLoadedAt = Date.now();
+        const t = data.telemetry;
+        const sanitizedElo = typeof t.arenaElo === 'number' && Number.isFinite(t.arenaElo) && t.arenaElo >= 0
+          ? Math.round(t.arenaElo)
+          : null;
+        const weeklyXpVal = typeof t.weeklyXp === 'number' && Number.isFinite(t.weeklyXp)
+          ? Math.max(0, Math.round(t.weeklyXp))
+          : null;
+        const careerXpVal = typeof t.careerXp === 'number' && Number.isFinite(t.careerXp)
+          ? Math.max(0, Math.round(t.careerXp))
+          : null;
+        const trustVal = typeof t.trustScore === 'number' && Number.isFinite(t.trustScore)
+          ? syncAuthoritativeTrustScore(activeUserId, t.trustScore)
           : null;
 
-        const weeklyXp = Number(data.currentUser?.weeklyXp);
-        const totalXp = Number(data.currentUserTotalXp ?? data.currentUser?.totalXp);
-        const joined = Boolean(data.currentUserHasJoined);
-        const parsedRank = joined && Number.isFinite(Number(data.currentUser?.rank))
-          ? Number(data.currentUser.rank)
-          : null;
+        if (sanitizedElo !== null && typeof window !== 'undefined') {
+          try {
+            localStorage.setItem(`pinit_user_elo_${activeUserId}`, String(sanitizedElo));
+          } catch {}
+        }
 
         setLiveArena({
           elo: sanitizedElo,
-          rank: parsedRank,
-          league: typeof data.currentUserLeague === 'string' ? data.currentUserLeague : null,
-          weeklyXp: Number.isFinite(weeklyXp) ? Math.max(0, Math.round(weeklyXp)) : null,
-          careerXp: Number.isFinite(totalXp) ? Math.max(0, Math.round(totalXp)) : null,
-          matchesPlayed: Number((user as any)?.arena_matches ?? (joined ? arenaWins : 0)),
-          sprintEndsAt: typeof data.sprintEndsAt === 'string' ? data.sprintEndsAt : null,
-          joined,
+          rank: typeof t.rank === 'number' ? t.rank : null,
+          league: typeof t.league === 'string' ? t.league : null,
+          weeklyXp: weeklyXpVal,
+          careerXp: careerXpVal,
+          matchesPlayed: Number(t.matchesPlayed) || 0,
+          sprintEndsAt: typeof t.sprintEndsAt === 'string' ? t.sprintEndsAt : null,
+          joined: Boolean(t.joined),
         });
+
+        setLiveTelemetry({
+          trustScore: trustVal,
+          careerScore: typeof t.careerScore === 'number' ? Math.min(100, Math.max(0, Math.round(t.careerScore))) : null,
+          dnaScore: typeof t.careerDnaScore === 'number' ? Math.min(100, Math.max(0, Math.round(t.careerDnaScore))) : null,
+          interviewsTotal: typeof t.interviewsTotal === 'number' ? t.interviewsTotal : null,
+        });
+
+        if (typeof window !== 'undefined') {
+          window.dispatchEvent(
+            new CustomEvent('pinit:user_profile_updated', {
+              detail: {
+                source: 'dashboard_sync',
+                user_id: activeUserId,
+                ...(trustVal !== null ? { trust_score: trustVal } : {}),
+                ...(sanitizedElo !== null ? { arena_elo: sanitizedElo } : {}),
+                ...(weeklyXpVal !== null ? { weekly_xp: weeklyXpVal } : {}),
+                ...(careerXpVal !== null ? { xp_total: careerXpVal } : {}),
+                ...(typeof t.league === 'string' ? { league_tier: t.league } : {}),
+                ...(typeof t.careerDnaScore === 'number' ? { career_dna_score: t.careerDnaScore } : {}),
+              },
+            })
+          );
+        }
       } catch {
-        // Keep fast local fallbacks visible when offline or unconfigured
+        // Keep fast local fallbacks visible when offline
       } finally {
         inFlight = false;
       }
@@ -296,6 +349,7 @@ export default function DashboardPage() {
 
     const handleProfileUpdate = (event: Event) => {
       const detail = (event as CustomEvent<Record<string, unknown>>).detail || {};
+      if (detail.source === 'dashboard_sync') return;
       const updatedElo = typeof detail.arena_elo === 'number'
         ? detail.arena_elo
         : (typeof detail.elo === 'number' ? detail.elo : null);
@@ -305,6 +359,7 @@ export default function DashboardPage() {
       const updatedCareerXp = typeof detail.xp_total === 'number'
         ? detail.xp_total
         : (typeof detail.xp === 'number' ? detail.xp : null);
+      const updatedTrust = typeof detail.trust_score === 'number' ? detail.trust_score : null;
 
       setLiveArena(prev => ({
         ...prev,
@@ -312,18 +367,28 @@ export default function DashboardPage() {
         weeklyXp: updatedWeeklyXp !== null && Number.isFinite(updatedWeeklyXp) ? Math.max(0, Math.round(updatedWeeklyXp)) : prev.weeklyXp,
         careerXp: updatedCareerXp !== null && Number.isFinite(updatedCareerXp) ? Math.max(0, Math.round(updatedCareerXp)) : prev.careerXp,
       }));
+      if (updatedTrust !== null && Number.isFinite(updatedTrust)) {
+        const syncedTrust = syncAuthoritativeTrustScore(activeUserId, updatedTrust);
+        setLiveTelemetry(prev => ({ ...prev, trustScore: syncedTrust }));
+      }
+      void loadArenaStanding();
+    };
+
+    const handleVisibilityRefresh = () => {
+      if (typeof document !== 'undefined' && document.hidden) return;
+      if (Date.now() - lastLoadedAt < 15_000) return;
       void loadArenaStanding();
     };
 
     void loadArenaStanding();
     window.addEventListener('pinit:user_profile_updated', handleProfileUpdate as EventListener);
-    window.addEventListener('focus', loadArenaStanding);
+    document.addEventListener('visibilitychange', handleVisibilityRefresh);
     return () => {
       cancelled = true;
       window.removeEventListener('pinit:user_profile_updated', handleProfileUpdate as EventListener);
-      window.removeEventListener('focus', loadArenaStanding);
+      document.removeEventListener('visibilitychange', handleVisibilityRefresh);
     };
-  }, [user]);
+  }, [activeUserId]);
 
   // ── Role-based redirect ────────────────────────────────────────────────────
   useEffect(() => {
@@ -437,28 +502,37 @@ export default function DashboardPage() {
     );
   }, [hasChosenTrack, user, onboardingAnswers, activeEnrollment]);
 
+  const effectiveTrustScore = liveTelemetry.trustScore ?? trustScore;
+  const effectiveCareerScore = liveTelemetry.careerScore !== null
+    ? Math.max(liveTelemetry.careerScore, careerScore)
+    : careerScore;
+  const effectiveDnaScore = liveTelemetry.dnaScore !== null
+    ? Math.max(liveTelemetry.dnaScore, dnaScore)
+    : dnaScore;
+
   // Profile for WhatToDoToday (memoized to prevent redundant downstream re-renders)
   const memoizedProfileForActions = useMemo(() => {
     return {
       ats_score:            Number((user as any)?.atsScore ?? (user as any)?.ats_score ?? 0),
-      trust_score:          cOS.trustScore > 0 ? cOS.trustScore : Number((user as any)?.trustScore ?? (user as any)?.trust_score ?? 0),
-      career_dna_score:     cOS.dnaScore > 0 ? cOS.dnaScore : (cOS.careerScore ?? 0),
+      trust_score:          effectiveTrustScore > 0 ? effectiveTrustScore : Number((user as any)?.trustScore ?? (user as any)?.trust_score ?? 0),
+      career_dna_score:     effectiveDnaScore > 0 ? effectiveDnaScore : effectiveCareerScore,
       mission_streak:       cOS.missionStreak || 0,
       missions_completed:   (cOS.completedMissions || []).length,
       recruiter_visibility: Number((user as any)?.recruiterVisibility ?? (user as any)?.recruiter_visibility ?? 0),
       vault_count:          (cOS.vaultItems || []).length,
-      interviews_done:      Number((user as any)?.interviewsDone ?? (user as any)?.interviews_done ?? 0),
+      interviews_done:      liveTelemetry.interviewsTotal ?? Number((user as any)?.interviewsDone ?? (user as any)?.interviews_done ?? 0),
       weak_areas:           ((user as any)?.weakAreas as string[] | undefined) ?? ((user as any)?.weak_areas as string[] | undefined) ?? [],
       skill_tags:           ((user as any)?.skillTags as string[] | undefined) ?? ((user as any)?.skill_tags as string[] | undefined) ?? [],
-      xp_total:             cOS.xp || liveArena.careerXp || Number((user as any)?.xpTotal ?? (user as any)?.xp ?? 0),
+      xp_total:             liveArena.careerXp ?? (cOS.xp || Number((user as any)?.xpTotal ?? (user as any)?.xp ?? 0)),
       active_track:         activeTrack,
       target_role:          activeTrackTitle || undefined,
     };
   }, [
     user,
-    cOS.trustScore,
-    cOS.dnaScore,
-    cOS.careerScore,
+    effectiveTrustScore,
+    effectiveDnaScore,
+    effectiveCareerScore,
+    liveTelemetry.interviewsTotal,
     cOS.missionStreak,
     cOS.completedMissions,
     cOS.vaultItems,
@@ -523,8 +597,9 @@ export default function DashboardPage() {
       {/* 1. Hero HUD: Hologram + Dynamic Greeting + 4 Real-Time KPIs */}
       <DashboardHeaderHUD
         user={user}
-        careerScore={careerScore}
-        trustScore={trustScore}
+        careerScore={effectiveCareerScore}
+        trustScore={effectiveTrustScore}
+        hasLiveTelemetry={liveTelemetry.trustScore !== null}
         xp={cOS.xp}
         onboardingAnswers={onboardingAnswers}
         activeTrack={activeTrack}
@@ -541,8 +616,8 @@ export default function DashboardPage() {
 
       {/* 3. Bento Grid: Priority Actions, Socratic Radar, Growth Track, Arena, Vault, Projects, Mistakes */}
       <DashboardBentoGrid
-        careerScore={careerScore}
-        dnaScore={dnaScore}
+        careerScore={effectiveCareerScore}
+        dnaScore={effectiveDnaScore}
         activeTrack={activeTrack}
         activeStageIndex={activeStageIndex}
         learningMistakes={cOS.onboardingAnswers?.learning_mistakes || []}

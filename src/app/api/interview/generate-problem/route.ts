@@ -264,43 +264,52 @@ Return ONLY valid JSON matching this schema:
 
     let parsedResult: any = null;
 
-    for (const key of groqKeys) {
-      try {
-        console.log(`[Dynamic Problem API] Attempting LLM problem generation with Groq key ending in ...${key.slice(-4)}`);
-        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${key}`
-          },
-          body: JSON.stringify({
-            model: 'llama-3.3-70b-versatile',
+    const GROQ_PROBLEM_MODELS = ['qwen/qwen3.8-27b', 'openai/gpt-oss-20b'] as const;
+    for (const model of GROQ_PROBLEM_MODELS) {
+      for (const key of groqKeys) {
+        try {
+          console.log(`[Dynamic Problem API] Attempting LLM problem generation (${model}) with Groq key ending in ...${key.slice(-4)}`);
+          const isGptOss = model.startsWith('openai/gpt-oss');
+          const payload: Record<string, unknown> = {
+            model,
             response_format: { type: 'json_object' },
             messages: [
               { role: 'system', content: systemPrompt },
               { role: 'user', content: `Generate a fresh variation ${variation + 1} challenge boilerplate and test cases for: "${topic}"` }
             ],
-            max_tokens: 850,
+            max_tokens: 950,
             temperature: 0.2
-          }),
-          signal: AbortSignal.timeout(8000)
-        });
+          };
+          if (isGptOss) payload.reasoning_effort = 'low';
+          else payload.reasoning_effort = 'none';
 
-        if (res.ok) {
-          const data = await res.json();
-          const raw = (data.choices?.[0]?.message?.content || '').trim();
-          const extracted = extractJsonObject(raw);
-          if (extracted?.title && extracted?.starterCode) {
-            parsedResult = extracted;
-            console.log('[Dynamic Problem API] Groq dynamic problem generated successfully');
-            break;
+          const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${key}`
+            },
+            body: JSON.stringify(payload),
+            signal: AbortSignal.timeout(8000)
+          });
+
+          if (res.ok) {
+            const data = await res.json();
+            const raw = (data.choices?.[0]?.message?.content || '').trim();
+            const extracted = extractJsonObject(raw);
+            if (extracted?.title && extracted?.starterCode) {
+              parsedResult = extracted;
+              console.log(`[Dynamic Problem API] Groq ${model} dynamic problem generated successfully`);
+              break;
+            }
+          } else {
+            console.warn(`[Dynamic Problem API] Groq ${model} key returned status: ${res.status}`);
           }
-        } else {
-          console.warn(`[Dynamic Problem API] Groq key returned status: ${res.status}`);
+        } catch (err: any) {
+          console.warn(`[Dynamic Problem API] Groq ${model} attempt failed:`, err?.message);
         }
-      } catch (err: any) {
-        console.warn('[Dynamic Problem API] Groq attempt failed:', err?.message);
       }
+      if (parsedResult) break;
     }
 
     // Failover to Gemini Flash if Groq is unavailable

@@ -306,11 +306,11 @@ export async function GET(req: Request) {
       dbStatus: DB_CONFIGURED ? 'live_supabase' : 'mock_fallback',
     });
 
-    // 3. Verified Skills count lookup
+    // 3. Verified Skills count lookup (full scan only when ranking by verified_evidence; other modes hydrate visible top-100 below)
     const userIds = data.map(u => u.id);
     const verifiedCountsMap: Record<string, number> = {};
 
-    if (userIds.length > 0) {
+    if (mode === 'verified_evidence' && userIds.length > 0 && admin) {
       try {
         // Verified competencies live in student_competency_mastery (competency engine).
         for (let from = 0; from < userIds.length; from += 500) {
@@ -455,15 +455,18 @@ export async function GET(req: Request) {
 
           let higherCount = 0;
           try {
-            const { data: rankedRows } = await admin
-              .from('users')
-              .select('id, weekly_xp, weekly_arena_points, xp_total')
-              .or('role.eq.student,role.eq.Student,role.eq.STUDENT,role.is.null')
-              .not('league_joined_at', 'is', null)
-              .or(`league_tier.eq.${activeLeague},league_tier.eq.${activeLeague.charAt(0).toUpperCase() + activeLeague.slice(1)}`)
-              .order('id', { ascending: true })
-              .limit(10000);
-            const ranked = (rankedRows || []).sort((a: any, b: any) =>
+            // Reuse the already-fetched league cohort when available instead of scanning 10k rows a second time
+            const sourceRows = (isLeagueRanking && data.length > 0)
+              ? data
+              : (await admin
+                  .from('users')
+                  .select('id, weekly_xp, weekly_arena_points, xp_total')
+                  .or('role.eq.student,role.eq.Student,role.eq.STUDENT,role.is.null')
+                  .not('league_joined_at', 'is', null)
+                  .or(`league_tier.eq.${activeLeague},league_tier.eq.${activeLeague.charAt(0).toUpperCase() + activeLeague.slice(1)}`)
+                  .order('id', { ascending: true })
+                  .limit(10000)).data;
+            const ranked = (sourceRows || []).sort((a: any, b: any) =>
               calculateLeaguePoints(Number(b.weekly_xp) || 0, Number(b.weekly_arena_points) || 0) -
                 calculateLeaguePoints(Number(a.weekly_xp) || 0, Number(a.weekly_arena_points) || 0) ||
               Math.max(0, Number(b.weekly_xp) || 0) - Math.max(0, Number(a.weekly_xp) || 0) ||
@@ -656,12 +659,37 @@ export async function GET(req: Request) {
       topSquad: guilds[0]?.guildName ?? 'none',
     });
 
+    // Bound response payload to top 100 entries (+ caller if outside top 100) and hydrate verified counts only for visible entries
+    const top100 = entries.slice(0, 100);
+    const responseEntries = (currentUserEntry && !top100.some(e => e.studentId === currentUserEntry!.studentId))
+      ? [...top100, currentUserEntry]
+      : top100;
+
+    if (mode !== 'verified_evidence' && admin && responseEntries.length > 0) {
+      try {
+        const visibleIds = responseEntries.map(e => e.studentId);
+        const { data: masteryData } = await admin
+          .from('student_competency_mastery')
+          .select('student_id')
+          .in('student_id', visibleIds)
+          .eq('state', 'verified');
+        const visibleCounts: Record<string, number> = {};
+        masteryData?.forEach((row: { student_id: string }) => {
+          visibleCounts[row.student_id] = (visibleCounts[row.student_id] || 0) + 1;
+        });
+        responseEntries.forEach(entry => {
+          entry.verifiedSkillsCount = visibleCounts[entry.studentId] || 0;
+        });
+      } catch {}
+    }
+
     const executionTimeMs = Math.round(performance.now() - startTime);
     console.log('[LEADERBOARD_ENDPOINT][Dispatched]', {
       status: 200,
       mode,
       activeLeague,
       totalEntries: entries.length,
+      returnedEntries: responseEntries.length,
       guildsCount: guilds.length,
       latencyMs: executionTimeMs,
       timestamp: new Date().toISOString(),
@@ -676,7 +704,7 @@ export async function GET(req: Request) {
       currentUserHasJoined,
       currentUserTotalXp,
       currentUserStats,
-      leaderboard: entries,
+      leaderboard: responseEntries,
       guilds,
       guildsLoadError,
       totalCount: entries.length,

@@ -173,6 +173,7 @@ interface Props {
   user: any;
   careerScore?: number;
   trustScore?: number;
+  hasLiveTelemetry?: boolean;
   xp?: number;
   onboardingAnswers?: any;
   activeTrack: 'sde' | 'iot';
@@ -188,6 +189,7 @@ export default function DashboardHeaderHUD({
   user,
   careerScore = 0,
   trustScore = 0,
+  hasLiveTelemetry = false,
   xp = 0,
   activeTrack,
   onboardingAnswers,
@@ -273,14 +275,16 @@ export default function DashboardHeaderHUD({
   }, [firstName, user?.id, hasChosenTrack, trackTitle]);
 
   // ── Dynamic & Honest Telemetry Baseline ────────────────────────────────────
-  // 1. Trust Score: default 50 (range 0 to 100). +3 for mission/lesson/exam/interview, -2 for cheating (max once per session)
+  // 1. Trust Score: authoritative DB snapshot wins over stale browser cache; default 50 (range 0 to 100).
   const dynamicTrust = useMemo(() => {
+    if (hasLiveTelemetry && typeof trustScore === 'number' && Number.isFinite(trustScore)) {
+      return Math.min(100, Math.max(0, Math.round(trustScore)));
+    }
     const profileTrust = (user as any)?.trustScore ?? (user as any)?.trust_score;
-    // If profile has legacy seed of 40 and local score not set, normalize to baseline 50
     const normalizedProfile = (profileTrust === 40 || profileTrust === 0) ? null : profileTrust;
     const candidateProp = (trustScore > 0 && trustScore !== 40) ? trustScore : null;
     return getLocalTrustScore(user?.id, candidateProp ?? normalizedProfile ?? TRUST_CONSTANTS.DEFAULT_SCORE);
-  }, [trustScore, user]);
+  }, [hasLiveTelemetry, trustScore, user]);
 
   // 2. Career Score: default 0 (student has not chosen/completed any course yet)
   const dynamicCareer = useMemo(() => {
@@ -296,11 +300,11 @@ export default function DashboardHeaderHUD({
   // 3. Arena ELO: default 100 (synced dynamically with liveArena, profile & local cache)
   const dynamicElo = useMemo(() => {
     const wins = Number((user as any)?.arena_wins ?? 0);
-    if (typeof liveArena?.elo === 'number' && Number.isFinite(liveArena.elo) && liveArena.elo > 0) {
+    if (typeof liveArena?.elo === 'number' && Number.isFinite(liveArena.elo) && liveArena.elo >= 0) {
       return Math.round(liveArena.elo);
     }
     const arenaEloVal = (user as any)?.arena_elo;
-    if (typeof arenaEloVal === 'number' && Number.isFinite(arenaEloVal) && arenaEloVal > 0) {
+    if (typeof arenaEloVal === 'number' && Number.isFinite(arenaEloVal) && arenaEloVal >= 0) {
       if (!(arenaEloVal === 1200 && wins === 0)) return Math.round(arenaEloVal);
     }
     const legacyElo = (user as any)?.elo ?? (user as any)?.rating;
@@ -310,16 +314,16 @@ export default function DashboardHeaderHUD({
     if (typeof window !== 'undefined' && user?.id) {
       try {
         const saved = Number(localStorage.getItem(`pinit_user_elo_${user.id}`));
-        if (Number.isFinite(saved) && saved > 0 && saved !== 1200) return Math.round(saved);
+        if (Number.isFinite(saved) && saved >= 0 && saved !== 1200) return Math.round(saved);
       } catch {}
     }
     return 100; // Honest baseline: 100
   }, [liveArena?.elo, user]);
 
-  // 4. Weekly EXP: default 0 (synced with liveArena & CareerOS XP)
+  // 4. Weekly EXP: default 0 (liveArena weeklyXp is authoritative, including 0 after weekly reset)
   const dynamicWeeklyExp = useMemo(() => {
-    if (typeof liveArena?.weeklyXp === 'number' && liveArena.weeklyXp > 0) {
-      return Math.round(liveArena.weeklyXp);
+    if (typeof liveArena?.weeklyXp === 'number' && Number.isFinite(liveArena.weeklyXp)) {
+      return Math.max(0, Math.round(liveArena.weeklyXp));
     }
     const profileWeekly = (user as any)?.weekly_xp ?? (user as any)?.weeklyXp;
     if (typeof profileWeekly === 'number' && profileWeekly > 0) {

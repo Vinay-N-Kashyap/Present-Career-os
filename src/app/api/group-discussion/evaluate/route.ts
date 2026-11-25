@@ -25,42 +25,87 @@ function getGroqEvalPool(): string[] {
   return Array.from(new Set([...shared, ...keysA, ...keysB]));
 }
 
-async function callGroqEvalJson(systemPrompt: string, userPrompt: string): Promise<string> {
-  const keys = getGroqEvalPool();
-  if (keys.length === 0) throw new Error('NO_GROQ_KEY');
+const GD_EVAL_GROQ_MODELS = ['qwen/qwen3.8-27b', 'openai/gpt-oss-20b', 'openai/gpt-oss-120b'] as const;
+const GD_EVAL_GEMINI_MODELS = ['gemini-2.0-flash', 'gemini-2.5-flash'] as const;
 
-  for (const key of keys) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 9000);
-    try {
-      const res = await fetch(GROQ_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${key}`,
-        },
-        body: JSON.stringify({
-          model: 'llama-3.3-70b-versatile',
+async function callGdEvalJson(systemPrompt: string, userPrompt: string): Promise<string> {
+  const keys = getGroqEvalPool();
+
+  for (const model of GD_EVAL_GROQ_MODELS) {
+    for (const key of keys.slice(0, 2)) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000);
+      try {
+        const isGptOss = model.startsWith('openai/gpt-oss');
+        const payload: Record<string, unknown> = {
+          model,
           messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt },
           ],
           temperature: 0.35,
-          max_tokens: 550,
+          max_tokens: 650,
           response_format: { type: 'json_object' },
-        }),
-        signal: controller.signal,
-      });
-      clearTimeout(timeout);
-      if (!res.ok) continue;
-      const data = await res.json();
-      const text = (data?.choices?.[0]?.message?.content || '').trim();
-      if (text) return text;
-    } catch {
-      clearTimeout(timeout);
+        };
+        if (isGptOss) payload.reasoning_effort = 'low';
+        else payload.reasoning_effort = 'none';
+
+        const res = await fetch(GROQ_ENDPOINT, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${key}`,
+          },
+          body: JSON.stringify(payload),
+          signal: controller.signal,
+        });
+        clearTimeout(timeout);
+        if (!res.ok) continue;
+        const data = await res.json();
+        const text = (data?.choices?.[0]?.message?.content || '').trim();
+        if (text) return text;
+      } catch {
+        clearTimeout(timeout);
+      }
     }
   }
-  throw new Error('GROQ_EVAL_UNAVAILABLE');
+
+  // Failover to Google Gemini Flash if Groq pool is exhausted
+  const geminiKey = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || process.env.GOOGLE_AI_KEY || '').trim();
+  if (geminiKey && !geminiKey.toLowerCase().startsWith('your_')) {
+    for (const gemModel of GD_EVAL_GEMINI_MODELS) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 5000);
+      try {
+        const res = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${gemModel}:generateContent?key=${geminiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              systemInstruction: { parts: [{ text: systemPrompt }] },
+              contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
+              generationConfig: {
+                temperature: 0.35,
+                maxOutputTokens: 650,
+                responseMimeType: 'application/json',
+              },
+            }),
+            signal: controller.signal,
+          }
+        );
+        clearTimeout(timeout);
+        if (!res.ok) continue;
+        const data = await res.json();
+        const text = (data?.candidates?.[0]?.content?.parts?.[0]?.text || '').trim();
+        if (text) return text;
+      } catch {
+        clearTimeout(timeout);
+      }
+    }
+  }
+
+  throw new Error('GD_EVAL_LLM_UNAVAILABLE');
 }
 
 function isCandidateMessage(m: RawTranscriptItem): boolean {
@@ -217,7 +262,7 @@ Respond ONLY in valid JSON with this exact schema:
 }`;
 
     try {
-      const text = await callGroqEvalJson(systemPrompt, `Transcript:\n${formattedTranscript}`);
+      const text = await callGdEvalJson(systemPrompt, `Transcript:\n${formattedTranscript}`);
       const parsed = JSON.parse(text.replace(/```json/g, '').replace(/```/g, '').trim());
       const fallback = buildDeterministicGdEvaluation(concept, domain, userMessages);
       const score = Number.isFinite(Number(parsed.score))

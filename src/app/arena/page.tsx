@@ -120,13 +120,6 @@ function ArenaContent() {
 
   const eloRating = liveElo ?? (sanitizedUserElo ?? cachedElo);
 
-  // Auto-heal legacy 1200 database rows in Supabase
-  useEffect(() => {
-    if (user?.id && (user as any)?.arena_elo === 1200 && !(user as any)?.arena_wins) {
-      Promise.resolve(supabase.from('users').update({ arena_elo: 100 }).eq('id', user.id)).catch(() => {});
-    }
-  }, [user]);
-
   // Synchronize dynamic profile events across tabs and contexts
   useEffect(() => {
     const handleProfileUpdate = (e: any) => {

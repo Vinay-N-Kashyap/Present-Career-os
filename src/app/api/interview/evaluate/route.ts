@@ -639,8 +639,9 @@ Return ONLY valid JSON matching this schema:
       }
     }
 
-    // Award +3 Trust Score for genuine recorded interview completion (range 0-100, default 50)
-    if (recorded && gated.user?.id) {
+    // Award +3 Trust Score ONLY for genuine non-eliminated recorded interviews meeting the 35% floor (range 0-100, default 50)
+    let newTrustScore: number | undefined;
+    if (recorded && gated.user?.id && !isEliminated && finalEvaluation.score >= 35) {
       try {
         const admin = getSupabaseAdmin();
         const { data: userProfile } = await admin
@@ -650,12 +651,13 @@ Return ONLY valid JSON matching this schema:
           .maybeSingle();
 
         const currentTrust = typeof userProfile?.trust_score === 'number' ? userProfile.trust_score : 50;
-        const newTrust = Math.min(100, currentTrust + 3);
+        const nextTrust = Math.min(100, currentTrust + 3);
 
         await admin
           .from('users')
-          .update({ trust_score: newTrust })
+          .update({ trust_score: nextTrust })
           .eq('id', gated.user.id);
+        newTrustScore = nextTrust;
       } catch (trustErr) {
         console.warn('[Interview Evaluate] Trust award warning:', trustErr);
       }
@@ -675,6 +677,7 @@ Return ONLY valid JSON matching this schema:
       weeklyXpTierLabel: weeklyXpTier.tierLabel,
       newXp,
       newWeeklyXp,
+      newTrustScore,
       portfolioSynced,
       resumeSynced,
       recorded,

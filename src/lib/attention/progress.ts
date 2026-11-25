@@ -97,6 +97,9 @@ export async function getAttentionLeaderboard(userId: string) {
   return { ok: true as const, leaders, userRank: rankOf(leaders, userId) };
 }
 
+export const DAILY_ATTENTION_ACCURACY_CAP = 600;
+const dailyAccuracyEarnedMemory = new Map<string, number>();
+
 export async function addAttentionAccuracy(
   userId: string,
   displayName: string,
@@ -104,14 +107,29 @@ export async function addAttentionAccuracy(
 ) {
   if (!userId) return { ok: false as const, error: 'NO_USER', message: 'Not signed in.', leaders: [], userRank: 0 };
 
-  const earned = Number(accuracyEarned);
-  if (!Number.isFinite(earned) || earned < 0) {
+  const rawEarned = Number(accuracyEarned);
+  if (!Number.isFinite(rawEarned) || rawEarned < 0) {
     return { ok: false as const, error: 'INVALID_SCORE', message: 'accuracyEarned must be a non-negative number.', leaders: [], userRank: 0 };
   }
+  const earned = Math.min(100, Math.round(rawEarned));
 
   const cleanName = sanitizeDisplayName(displayName);
   const now = new Date().toISOString();
+  const todayKey = now.slice(0, 10);
+  const memKey = `${userId}:${todayKey}`;
+  const memUsedToday = dailyAccuracyEarnedMemory.get(memKey) || 0;
+  if (memUsedToday >= DAILY_ATTENTION_ACCURACY_CAP) {
+    return {
+      ok: false as const,
+      error: 'DAILY_ACCURACY_CAP_REACHED',
+      message: `Daily focus accuracy cap (${DAILY_ATTENTION_ACCURACY_CAP} pts) reached.`,
+      leaders: [],
+      userRank: 0,
+    };
+  }
+
   let updatedTotal = earned;
+  let updatedDailyLogs: Record<string, any> | undefined;
 
   const isPostgresReady = await tableExists(TABLE);
   if (isPostgresReady) {
@@ -119,21 +137,41 @@ export async function addAttentionAccuracy(
       const client = await getCampusSupabaseClient();
       const { data: existing } = await client
         .from(TABLE)
-        .select('total_accuracy')
+        .select('total_accuracy, daily_logs')
         .eq('user_id', userId)
         .maybeSingle();
 
-      updatedTotal = (Number(existing?.total_accuracy) || 0) + earned;
+      const existingLogs = (existing?.daily_logs && typeof existing.daily_logs === 'object') ? { ...existing.daily_logs } : {};
+      const persistedToday = Math.max(memUsedToday, Number(existingLogs[todayKey]?.accuracyEarned) || 0);
+      if (persistedToday >= DAILY_ATTENTION_ACCURACY_CAP) {
+        dailyAccuracyEarnedMemory.set(memKey, persistedToday);
+        return {
+          ok: false as const,
+          error: 'DAILY_ACCURACY_CAP_REACHED',
+          message: `Daily focus accuracy cap (${DAILY_ATTENTION_ACCURACY_CAP} pts) reached.`,
+          leaders: [],
+          userRank: 0,
+        };
+      }
+      const allowedEarned = Math.min(earned, DAILY_ATTENTION_ACCURACY_CAP - persistedToday);
+      updatedTotal = (Number(existing?.total_accuracy) || 0) + allowedEarned;
+      updatedDailyLogs = {
+        ...existingLogs,
+        [todayKey]: { ...(existingLogs[todayKey] || {}), accuracyEarned: persistedToday + allowedEarned },
+      };
 
       const { error } = await client.from(TABLE).upsert({
         user_id: userId,
         display_name: cleanName,
         total_accuracy: updatedTotal,
+        daily_logs: updatedDailyLogs,
         updated_at: now,
       }, { onConflict: 'user_id' });
 
       if (error) throw error;
+      dailyAccuracyEarnedMemory.set(memKey, persistedToday + allowedEarned);
     } catch {
+      updatedDailyLogs = undefined;
       // Fallback to local
     }
   }
@@ -142,16 +180,37 @@ export async function addAttentionAccuracy(
   const local = await readLocalAttentionRecords();
   const existingIdx = local.findIndex(r => r.user_id === userId);
   if (existingIdx >= 0) {
-    updatedTotal = Math.max(updatedTotal, (local[existingIdx].total_accuracy || 0) + earned);
+    const localUsed = Math.max(memUsedToday, Number(local[existingIdx].daily_logs?.[todayKey]?.accuracyEarned) || 0);
+    if (!updatedDailyLogs && localUsed >= DAILY_ATTENTION_ACCURACY_CAP) {
+      dailyAccuracyEarnedMemory.set(memKey, localUsed);
+      return {
+        ok: false as const,
+        error: 'DAILY_ACCURACY_CAP_REACHED',
+        message: `Daily focus accuracy cap (${DAILY_ATTENTION_ACCURACY_CAP} pts) reached.`,
+        leaders: [],
+        userRank: 0,
+      };
+    }
+    const delta = updatedDailyLogs ? 0 : Math.min(earned, DAILY_ATTENTION_ACCURACY_CAP - localUsed);
+    if (!updatedDailyLogs) {
+      dailyAccuracyEarnedMemory.set(memKey, localUsed + delta);
+    }
+    updatedTotal = Math.max(updatedTotal, (local[existingIdx].total_accuracy || 0) + delta);
     local[existingIdx].total_accuracy = updatedTotal;
     local[existingIdx].display_name = cleanName;
+    local[existingIdx].daily_logs = updatedDailyLogs || {
+      ...(local[existingIdx].daily_logs || {}),
+      [todayKey]: { ...(local[existingIdx].daily_logs?.[todayKey] || {}), accuracyEarned: localUsed + delta },
+    };
     local[existingIdx].updated_at = now;
   } else {
+    const cappedFirst = Math.min(earned, DAILY_ATTENTION_ACCURACY_CAP);
+    dailyAccuracyEarnedMemory.set(memKey, cappedFirst);
     local.push({
       user_id: userId,
       display_name: cleanName,
       total_accuracy: updatedTotal,
-      daily_logs: {},
+      daily_logs: updatedDailyLogs || { [todayKey]: { accuracyEarned: cappedFirst } },
       monthly_summaries: {},
       updated_at: now,
     });
