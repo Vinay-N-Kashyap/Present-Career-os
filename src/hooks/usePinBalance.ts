@@ -144,22 +144,50 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
     async function hydrateFromServer() {
       try {
         let authoritativeBalance: number | null = null;
+        let apiBonusPins: number | null = null;
+        let apiPinHistory: PinTransaction[] | null = null;
 
-        // 1. Attempt authoritative RPC first
-        const { data: rpcData, error: rpcErr } = await supabase.rpc('get_pin_balance', {
-          p_user_id: effectiveUserId,
-        });
+        // 0. Hit authoritative balance API first so 1:00 AM IST lazy reset runs for purchased-plan users
+        try {
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.access_token) {
+            const res = await fetch('/api/pins/balance', {
+              headers: { Authorization: `Bearer ${session.access_token}` },
+              cache: 'no-store',
+            });
+            if (res.ok) {
+              const payload = await res.json();
+              if (payload?.ok && typeof payload.pins === 'number') {
+                authoritativeBalance = payload.pins;
+                if (typeof payload.bonusPins === 'number') apiBonusPins = payload.bonusPins;
+                if (Array.isArray(payload.transactions)) apiPinHistory = payload.transactions;
+              }
+            }
+          }
+        } catch {}
 
-        if (!rpcErr && typeof rpcData === 'number') {
-          authoritativeBalance = rpcData;
+        // 1. Attempt authoritative RPC if API route was skipped
+        if (authoritativeBalance === null) {
+          const { data: rpcData, error: rpcErr } = await supabase.rpc('get_pin_balance', {
+            p_user_id: effectiveUserId,
+          });
+
+          if (!rpcErr && typeof rpcData === 'number') {
+            authoritativeBalance = rpcData;
+          }
         }
 
-        // 2. Fetch history, bonus pins, and fallback balance from canonical users table
-        const { data: userData, error: userErr } = await supabase
-          .from('users')
-          .select('pins, pin_history, bonus_pins')
-          .eq('id', effectiveUserId)
-          .maybeSingle();
+        // 2. Fetch history, bonus pins, and fallback balance from canonical users table if needed
+        const needsUserTableRead = authoritativeBalance === null || apiBonusPins === null || apiPinHistory === null;
+        const userResult = needsUserTableRead
+          ? await supabase
+              .from('users')
+              .select('pins, pin_history, bonus_pins')
+              .eq('id', effectiveUserId)
+              .maybeSingle()
+          : { data: null, error: null };
+        const userData = userResult.data;
+        const userErr = userResult.error;
 
         if (authoritativeBalance === null && !userErr && userData && typeof userData.pins === 'number') {
           authoritativeBalance = userData.pins;
@@ -175,14 +203,16 @@ export function usePinBalance(options: UsePinBalanceOptions = {}) {
           } catch {}
         }
 
-        if (userData && typeof userData.bonus_pins === 'number' && isMounted) {
-          setBonusPinsState(userData.bonus_pins);
+        const resolvedBonus = apiBonusPins ?? (userData && typeof userData.bonus_pins === 'number' ? userData.bonus_pins : null);
+        if (resolvedBonus !== null && isMounted) {
+          setBonusPinsState(resolvedBonus);
         }
 
-        if (userData && Array.isArray(userData.pin_history) && isMounted) {
+        const resolvedHistory = apiPinHistory ?? (userData && Array.isArray(userData.pin_history) ? userData.pin_history : null);
+        if (resolvedHistory && isMounted) {
           setPinHistoryState(prev => {
             const map = new Map<string, PinTransaction>();
-            for (const tx of userData.pin_history) {
+            for (const tx of resolvedHistory) {
               if (tx && tx.id) map.set(tx.id, tx);
             }
             for (const tx of prev) {

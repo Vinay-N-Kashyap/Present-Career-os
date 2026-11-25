@@ -1,5 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
+import { ensureUserDailyPinReset } from '@/lib/pins/dailyPinReset';
+import {
+  computeDashboardPriorityActions,
+  computeDashboardRadarMetrics,
+  isTodayIst,
+} from '@/lib/dashboard/dashboardMetrics';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 
 export const dynamic = 'force-dynamic';
@@ -55,16 +61,37 @@ export async function GET(req: NextRequest) {
     let pins = 0;
     let bonusPins = 0;
     let completedQuestsCount = 0;
+    let completedQuestsList: string[] = [];
+    let targetRole = '';
+    let completedQuestsTimestamps: string[] = [];
+    let completedMissionsTimestamps: string[] = [];
+    let lastStreakDate = '';
+    let radarMetricsPayload: ReturnType<typeof computeDashboardRadarMetrics> | null = null;
+    let priorityActionsPayload: ReturnType<typeof computeDashboardPriorityActions> | null = null;
+    let hasResumeInVaultFlag = false;
 
     if (admin) {
       try {
-        const { data: userRow } = await admin
+        let userRow: any = null;
+        const primarySelect = await admin
           .from('users')
           .select(
-            'ats_score, career_dna_score, trust_score, recruiter_visibility, mission_streak, career_readiness, completed_missions, completed_quests, arena_elo, arena_wins, arena_losses, weekly_xp, xp_total, weekly_arena_points, league_tier, league_joined_at, pins, bonus_pins'
+            'ats_score, career_dna_score, trust_score, recruiter_visibility, mission_streak, career_readiness, completed_missions, completed_quests, arena_elo, arena_wins, arena_losses, weekly_xp, xp_total, weekly_arena_points, league_tier, league_joined_at, pins, bonus_pins, target_role, onboarding_answers'
           )
           .eq('id', studentId)
           .maybeSingle();
+
+        if (primarySelect.error) {
+          console.warn('[analytics/dashboard] Full users select failed, falling back to core columns:', primarySelect.error.message);
+          const fallbackSelect = await admin
+            .from('users')
+            .select('ats_score, career_dna_score, trust_score, mission_streak, career_readiness, completed_quests, arena_elo, arena_wins, weekly_xp, xp_total, weekly_arena_points, league_tier, league_joined_at, pins, bonus_pins')
+            .eq('id', studentId)
+            .maybeSingle();
+          userRow = fallbackSelect.data || null;
+        } else {
+          userRow = primarySelect.data || null;
+        }
 
         if (userRow) {
           atsScore = Math.min(100, Math.max(0, Number(userRow.ats_score) || 0));
@@ -91,7 +118,20 @@ export async function GET(req: NextRequest) {
           leagueJoined = Boolean(userRow.league_joined_at);
           pins = Math.max(0, Math.round(Number(userRow.pins) || 0));
           bonusPins = Math.max(0, Math.round(Number(userRow.bonus_pins) || 0));
-          completedQuestsCount = Array.isArray(userRow.completed_quests) ? userRow.completed_quests.length : 0;
+          try {
+            const lazyReset = await ensureUserDailyPinReset(admin, studentId);
+            if (lazyReset?.resetApplied) {
+              pins = lazyReset.pins;
+            }
+          } catch {}
+          completedQuestsList = Array.isArray(userRow.completed_quests) ? userRow.completed_quests : [];
+          completedQuestsCount = completedQuestsList.length;
+          targetRole = typeof userRow.target_role === 'string' ? userRow.target_role : '';
+          const ob = (userRow.onboarding_answers || {}) as Record<string, any>;
+          if (!targetRole && typeof ob.role === 'string') targetRole = ob.role;
+          completedQuestsTimestamps = Array.isArray(ob.completedQuestsTimestamps) ? ob.completedQuestsTimestamps : [];
+          completedMissionsTimestamps = Array.isArray(ob.completedMissionsTimestamps) ? ob.completedMissionsTimestamps : [];
+          lastStreakDate = typeof ob.last_streak_date === 'string' ? ob.last_streak_date : '';
 
           if (leagueJoined) {
             try {
@@ -150,17 +190,143 @@ export async function GET(req: NextRequest) {
           passRate = examRows.filter((e: any) => e.passed).length / examsTotal;
         }
 
-        const { count: ivCount } = await admin
-          .from('interview_sessions')
-          .select('id', { count: 'exact', head: true })
-          .eq('user_id', studentId);
-        if (typeof ivCount === 'number') {
-          interviewsTotal = ivCount;
-        }
+        const [
+          ivRes,
+          gdRes,
+          vaultRes,
+          resumeRes,
+          masteryRes,
+          soloRes,
+        ] = await Promise.allSettled([
+          admin
+            .from('interview_sessions')
+            .select('id, status, overall_score, completed_at, created_at')
+            .eq('user_id', studentId)
+            .limit(100),
+          admin
+            .from('gd_sessions')
+            .select('id, overall_score, created_at')
+            .eq('user_id', studentId)
+            .limit(100),
+          admin
+            .from('vault_items')
+            .select('id, item_type, verified, ai_confidence_score')
+            .eq('user_id', studentId)
+            .limit(100),
+          admin
+            .from('resumes')
+            .select('id, ats_score')
+            .eq('user_id', studentId)
+            .limit(20),
+          admin
+            .from('student_competency_mastery')
+            .select('competency_id, composite_score')
+            .eq('student_id', studentId)
+            .eq('state', 'verified')
+            .limit(200),
+          admin
+            .from('arena_solo_matches')
+            .select('id, passed, status')
+            .eq('user_id', studentId)
+            .limit(100),
+        ]);
+
+        const ivRows = ivRes.status === 'fulfilled' && Array.isArray(ivRes.value?.data) ? ivRes.value.data : [];
+        const completedIvs = ivRows.filter((r: any) => r.status === 'completed' || (typeof r.overall_score === 'number' && r.overall_score > 0));
+        interviewsTotal = completedIvs.length;
+        const completedInterviewScores = completedIvs
+          .map((r: any) => Number(r.overall_score))
+          .filter((n: number) => Number.isFinite(n) && n > 0);
+        const completedInterviewToday = completedIvs.some((r: any) => isTodayIst(r.completed_at || r.created_at));
+
+        const gdRows = gdRes.status === 'fulfilled' && Array.isArray(gdRes.value?.data) ? gdRes.value.data : [];
+        const completedGdScores = gdRows
+          .map((r: any) => Number(r.overall_score))
+          .filter((n: number) => Number.isFinite(n) && n > 0);
+
+        const vaultRows = vaultRes.status === 'fulfilled' && Array.isArray(vaultRes.value?.data) ? vaultRes.value.data : [];
+        const resumeRows = resumeRes.status === 'fulfilled' && Array.isArray(resumeRes.value?.data) ? resumeRes.value.data : [];
+        const verifiedVaultCount = vaultRows.filter((v: any) => Boolean(v.verified)).length;
+        const resumeInVault = vaultRows.filter((v: any) => String(v.item_type || '').toLowerCase() === 'resume');
+        const hasResumeInVault = resumeInVault.length > 0 || resumeRows.length > 0;
+        const hasVerifiedResume = resumeInVault.some((v: any) => Boolean(v.verified));
+        const maxResumeTableAts = resumeRows.reduce((m: number, r: any) => Math.max(m, Number(r.ats_score) || 0), 0);
+        if (maxResumeTableAts > atsScore) atsScore = Math.min(100, Math.round(maxResumeTableAts));
+
+        const verifiedCompetencies = masteryRes.status === 'fulfilled' && Array.isArray(masteryRes.value?.data)
+          ? masteryRes.value.data
+          : [];
+        const soloRows = soloRes.status === 'fulfilled' && Array.isArray(soloRes.value?.data) ? soloRes.value.data : [];
+        const soloPassedCount = soloRows.filter((s: any) => Boolean(s.passed)).length;
+
+        const computedRadar = computeDashboardRadarMetrics({
+          targetRole,
+          completedQuests: completedQuestsList,
+          arenaWins,
+          soloPassedCount,
+          examsAvg,
+          atsScore,
+          hasResumeInVault,
+          vaultTotalCount: vaultRows.length,
+          vaultVerifiedCount: verifiedVaultCount,
+          completedInterviewScores,
+          completedGdScores,
+          verifiedCompetencies,
+          missionStreak,
+        });
+
+        const completedQuestToday = completedQuestsTimestamps.some((ts) => isTodayIst(ts));
+        const completedMissionToday = completedMissionsTimestamps.some((ts) => isTodayIst(ts)) || isTodayIst(lastStreakDate);
+
+        const computedActions = computeDashboardPriorityActions({
+          targetRole,
+          atsScore,
+          hasResumeInVault,
+          hasVerifiedResume,
+          trustScore,
+          missionStreak,
+          completedMissionToday,
+          completedQuestToday,
+          completedInterviewToday,
+          radar: computedRadar,
+        });
+
+        (globalThis as any).__tmpDashExtra = undefined;
+        radarMetricsPayload = computedRadar;
+        priorityActionsPayload = computedActions;
+        hasResumeInVaultFlag = hasResumeInVault;
       } catch (err) {
         console.warn('[Analytics Dashboard Route] DB lookup notice:', err);
       }
     }
+
+    const fallbackRadar = radarMetricsPayload ?? computeDashboardRadarMetrics({
+      targetRole,
+      completedQuests: completedQuestsList,
+      arenaWins,
+      soloPassedCount: 0,
+      examsAvg,
+      atsScore,
+      hasResumeInVault: false,
+      vaultTotalCount: 0,
+      vaultVerifiedCount: 0,
+      completedInterviewScores: [],
+      completedGdScores: [],
+      verifiedCompetencies: [],
+      missionStreak,
+    });
+    const fallbackActions = priorityActionsPayload ?? computeDashboardPriorityActions({
+      targetRole,
+      atsScore,
+      hasResumeInVault: false,
+      hasVerifiedResume: false,
+      trustScore,
+      missionStreak,
+      completedMissionToday: false,
+      completedQuestToday: false,
+      completedInterviewToday: false,
+      radar: fallbackRadar,
+    });
 
     const effectiveCareerScore = Math.min(100, Math.max(careerReadiness, careerDnaScore, atsScore));
 
@@ -176,6 +342,7 @@ export async function GET(req: NextRequest) {
         careerScore: effectiveCareerScore,
         careerDnaScore,
         atsScore,
+        hasResumeInVault: hasResumeInVaultFlag,
         arenaElo,
         arenaWins,
         arenaLosses,
@@ -183,6 +350,7 @@ export async function GET(req: NextRequest) {
         weeklyXp,
         careerXp,
         weeklyArenaPoints,
+        leaguePoints: weeklyXp + weeklyArenaPoints,
         league: leagueTier,
         rank: leagueRank,
         joined: leagueJoined,
@@ -194,6 +362,8 @@ export async function GET(req: NextRequest) {
         completedQuestsCount,
         completedMissionsCount: missionsCompleted,
       },
+      radarMetrics: fallbackRadar,
+      priorityActions: fallbackActions,
       scores: {
         ats_score: atsScore,
         career_dna_score: careerDnaScore,

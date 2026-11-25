@@ -13,6 +13,7 @@ import CareerCourseProgressBar from '@/components/student/dashboard/CareerCourse
 import DashboardBentoGrid      from '@/components/student/dashboard/DashboardBentoGrid';
 import DashboardTrajectoryMap  from '@/components/student/dashboard/DashboardTrajectoryMap';
 import { DynamicRoleReadiness, StudentSkillProfile } from '@/lib/pathway/competencySchema';
+import type { RadarMetricsSummary, ServerPriorityAction } from '@/lib/dashboard/dashboardMetrics';
 import { PathwayApiService } from '@/lib/api/pathwayApi';
 import { fetchIndependentProjectsFromDb } from '@/lib/api/independentProjectsApi';
 import { crashCourseEnrollmentService, CrashCourseEnrollment } from '@/lib/services/crashCourseEnrollmentService';
@@ -199,11 +200,21 @@ export default function DashboardPage() {
     careerScore: number | null;
     dnaScore: number | null;
     interviewsTotal: number | null;
+    atsScore: number | null;
+    hasResumeInVault: boolean;
+    missionStreak: number | null;
+    radarMetrics: RadarMetricsSummary | null;
+    priorityActions: ServerPriorityAction[] | null;
   }>({
     trustScore: null,
     careerScore: null,
     dnaScore: null,
     interviewsTotal: null,
+    atsScore: null,
+    hasResumeInVault: false,
+    missionStreak: null,
+    radarMetrics: null,
+    priorityActions: null,
   });
 
   // ── Mount guard ────────────────────────────────────────────────────────────
@@ -322,6 +333,11 @@ export default function DashboardPage() {
           careerScore: typeof t.careerScore === 'number' ? Math.min(100, Math.max(0, Math.round(t.careerScore))) : null,
           dnaScore: typeof t.careerDnaScore === 'number' ? Math.min(100, Math.max(0, Math.round(t.careerDnaScore))) : null,
           interviewsTotal: typeof t.interviewsTotal === 'number' ? t.interviewsTotal : null,
+          atsScore: typeof t.atsScore === 'number' ? Math.min(100, Math.max(0, Math.round(t.atsScore))) : null,
+          hasResumeInVault: Boolean(t.hasResumeInVault),
+          missionStreak: typeof t.missionStreak === 'number' ? Math.max(0, Math.round(t.missionStreak)) : null,
+          radarMetrics: data.radarMetrics ?? null,
+          priorityActions: Array.isArray(data.priorityActions) ? data.priorityActions : null,
         });
 
         if (typeof window !== 'undefined') {
@@ -333,6 +349,7 @@ export default function DashboardPage() {
                 ...(trustVal !== null ? { trust_score: trustVal } : {}),
                 ...(sanitizedElo !== null ? { arena_elo: sanitizedElo } : {}),
                 ...(weeklyXpVal !== null ? { weekly_xp: weeklyXpVal } : {}),
+                ...(typeof t.weeklyArenaPoints === 'number' ? { weekly_arena_points: Math.max(0, Math.round(t.weeklyArenaPoints)) } : {}),
                 ...(careerXpVal !== null ? { xp_total: careerXpVal } : {}),
                 ...(typeof t.league === 'string' ? { league_tier: t.league } : {}),
                 ...(typeof t.careerDnaScore === 'number' ? { career_dna_score: t.careerDnaScore } : {}),
@@ -512,11 +529,18 @@ export default function DashboardPage() {
 
   // Profile for WhatToDoToday (memoized to prevent redundant downstream re-renders)
   const memoizedProfileForActions = useMemo(() => {
+    const resolvedAts = liveTelemetry.atsScore ?? Number((user as any)?.atsScore ?? (user as any)?.ats_score ?? 0);
+    const resolvedStreak = liveTelemetry.missionStreak ?? (cOS.missionStreak || 0);
+    const vaultHasResume = liveTelemetry.hasResumeInVault || (cOS.vaultItems || []).some(
+      (item: any) => String(item?.item_type || item?.category || '').toLowerCase() === 'resume'
+    );
     return {
-      ats_score:            Number((user as any)?.atsScore ?? (user as any)?.ats_score ?? 0),
+      user_id:              user?.id,
+      ats_score:            resolvedAts,
+      has_resume_in_vault:  vaultHasResume,
       trust_score:          effectiveTrustScore > 0 ? effectiveTrustScore : Number((user as any)?.trustScore ?? (user as any)?.trust_score ?? 0),
       career_dna_score:     effectiveDnaScore > 0 ? effectiveDnaScore : effectiveCareerScore,
-      mission_streak:       cOS.missionStreak || 0,
+      mission_streak:       resolvedStreak,
       missions_completed:   (cOS.completedMissions || []).length,
       recruiter_visibility: Number((user as any)?.recruiterVisibility ?? (user as any)?.recruiter_visibility ?? 0),
       vault_count:          (cOS.vaultItems || []).length,
@@ -526,13 +550,14 @@ export default function DashboardPage() {
       xp_total:             liveArena.careerXp ?? (cOS.xp || Number((user as any)?.xpTotal ?? (user as any)?.xp ?? 0)),
       active_track:         activeTrack,
       target_role:          activeTrackTitle || undefined,
+      server_actions:       liveTelemetry.priorityActions ?? undefined,
     };
   }, [
     user,
     effectiveTrustScore,
     effectiveDnaScore,
     effectiveCareerScore,
-    liveTelemetry.interviewsTotal,
+    liveTelemetry,
     cOS.missionStreak,
     cOS.completedMissions,
     cOS.vaultItems,
@@ -627,6 +652,7 @@ export default function DashboardPage() {
         activeEnrollment={activeEnrollment}
         skillProfile={skillProfile}
         roleReadiness={roleReadiness}
+        radarMetrics={liveTelemetry.radarMetrics}
       />
 
       {/* 4. Trajectory Map (Roadmap generator + Track explorer) */}

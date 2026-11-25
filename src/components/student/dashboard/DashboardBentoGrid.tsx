@@ -11,6 +11,7 @@ import {
   computeHonestProjectProgress,
 } from '@/lib/projects/savedProjects';
 import { DynamicRoleReadiness, StudentSkillProfile } from '@/lib/pathway/competencySchema';
+import type { RadarMetricsSummary } from '@/lib/dashboard/dashboardMetrics';
 import type { Project } from '@/lib/data/projectData';
 
 const EVO_STAGES = [
@@ -46,6 +47,7 @@ interface Props {
   activeEnrollment?: { planId?: string; track?: string } | null;
   skillProfile?: StudentSkillProfile | null;
   roleReadiness?: DynamicRoleReadiness | null;
+  radarMetrics?: RadarMetricsSummary | null;
 }
 
 function formatLeagueTitle(rawLeague: string | null | undefined): string {
@@ -74,10 +76,12 @@ export default function DashboardBentoGrid({
   activeEnrollment,
   skillProfile,
   roleReadiness,
+  radarMetrics,
 }: Props) {
   const { user } = useAuth();
   const cOS = useCareerOS();
   const [hoveredAxis, setHoveredAxis] = useState<number | null>(null);
+  const [selectedAxisKey, setSelectedAxisKey] = useState<string | null>(null);
   const accentRgb = activeTrack === 'iot' ? '20,184,166' : '99,102,241';
   const accentVar = activeTrack === 'iot' ? 'var(--teal-mid, #14b8a6)' : 'var(--accent, #6366f1)';
 
@@ -89,43 +93,116 @@ export default function DashboardBentoGrid({
     (user as any)?.target_role
   );
 
-  // Authentic 5-Axis Competencies Radar computation (0 across all axes until real work is verified)
+  // Authentic 5-Axis Competencies Radar (uses authoritative backend radarMetrics when available)
   const radarAxes = useMemo(() => {
+    if (radarMetrics && Array.isArray(radarMetrics.axes) && radarMetrics.axes.length === 5) {
+      const upperKeyMap: Record<string, string> = {
+        coding: 'CODING',
+        arch: 'ARCH',
+        data: 'DATA',
+        socratic: 'SOCRATIC',
+        iot: 'IoT',
+      };
+      return radarMetrics.axes.map((a) => ({
+        key: upperKeyMap[a.key] || a.key.toUpperCase(),
+        rawKey: a.key,
+        label: a.label,
+        plainLabel: a.plainLabel,
+        score: Math.min(100, Math.max(0, Math.round(a.score))),
+        level: a.level,
+        evidenceSummary: a.evidenceSummary,
+        nextActionLabel: a.nextActionLabel,
+        nextActionHref: a.nextActionHref,
+      }));
+    }
+
     const completedCount = cOS?.completedQuests?.length || 0;
     const vaultCount = cOS?.vaultItems?.length || 0;
     const verifiedSkills = skillProfile?.verified?.length || 0;
     const demoSkills = skillProfile?.demonstrated?.length || 0;
-    const interviewsDone = Number(actionProfile?.interviews_done || 0);
-    const hasActivity = careerScore > 0 || dnaScore > 0 || completedCount > 0 || vaultCount > 0 || verifiedSkills > 0 || demoSkills > 0 || interviewsDone > 0;
+    const hasActivity = careerScore > 0 || dnaScore > 0 || completedCount > 0 || vaultCount > 0 || verifiedSkills > 0 || demoSkills > 0;
 
-    const codingScore = careerScore > 0
-      ? Math.min(100, Math.round(careerScore))
-      : Math.min(100, completedCount * 15 + verifiedSkills * 12);
-
-    const archScore = hasActivity
-      ? Math.min(100, Math.round((careerScore * 0.65) + (dnaScore * 0.25) + (demoSkills * 6) + (vaultCount * 10)))
-      : 0;
-
-    const dataScore = dnaScore > 0
-      ? Math.min(100, Math.round(dnaScore))
-      : Math.min(100, completedCount * 10 + verifiedSkills * 8);
-
-    const socraticScore = hasActivity
-      ? Math.min(100, Math.round((interviewsDone * 20) + (careerScore * 0.5) + (cOS?.trustScore && careerScore > 0 ? cOS.trustScore * 0.3 : 0)))
-      : 0;
-
-    const iotScore = activeTrack === 'iot'
-      ? Math.min(100, Math.round(careerScore > 0 ? careerScore : completedCount * 14))
-      : Math.min(100, Math.round(careerScore * 0.5));
+    const codingScore = Math.min(100, completedCount * 6 + verifiedSkills * 12);
+    const archScore = hasActivity ? Math.min(100, verifiedSkills * 8 + demoSkills * 5 + vaultCount * 10) : 0;
+    const dataScore = Math.min(100, completedCount * 4 + verifiedSkills * 8);
+    const socraticScore = 0; // Requires scored interviews, GD rounds, or verified oral Vault defense
+    const iotScore = activeTrack === 'iot' ? Math.min(100, completedCount * 10) : 0;
 
     return [
-      { key: 'CODING', label: 'Coding', score: codingScore },
-      { key: 'ARCH', label: 'Arch', score: archScore },
-      { key: 'DATA', label: 'Data', score: dataScore },
-      { key: 'SOCRATIC', label: 'Socratic', score: socraticScore },
-      { key: 'IoT', label: 'IoT', score: iotScore },
+      {
+        key: 'CODING',
+        rawKey: 'coding',
+        label: 'Coding',
+        plainLabel: 'Coding & Problem Solving',
+        score: codingScore,
+        level: codingScore > 0 ? 'Developing' : 'Not Started',
+        evidenceSummary: codingScore > 0 ? `${completedCount} quest(s), ${verifiedSkills} verified skill(s)` : 'Complete coding quests or Arena matches to build this score',
+        nextActionLabel: 'Enter Arena',
+        nextActionHref: '/arena',
+      },
+      {
+        key: 'ARCH',
+        rawKey: 'arch',
+        label: 'Arch',
+        plainLabel: 'System Design & Proof Vault',
+        score: archScore,
+        level: archScore > 0 ? 'Developing' : 'Not Started',
+        evidenceSummary: archScore > 0 ? `${vaultCount} Vault asset(s) uploaded` : 'Upload & verify resumes or projects in Proof Vault',
+        nextActionLabel: 'Open Vault',
+        nextActionHref: '/vault',
+      },
+      {
+        key: 'DATA',
+        rawKey: 'data',
+        label: 'Data',
+        plainLabel: 'Data, SQL & Applied AI',
+        score: dataScore,
+        level: dataScore > 0 ? 'Developing' : 'Not Started',
+        evidenceSummary: dataScore > 0 ? `${completedCount} technical quest(s)` : 'Practice SQL, Data, or Python AI modules',
+        nextActionLabel: 'Open Quests',
+        nextActionHref: '/quests',
+      },
+      {
+        key: 'SOCRATIC',
+        rawKey: 'socratic',
+        label: 'Socratic',
+        plainLabel: 'Interviews & Verbal Defense',
+        score: socraticScore,
+        level: 'Not Started',
+        evidenceSummary: 'Complete scored AI Interviews, GD rounds, or Vault oral defenses',
+        nextActionLabel: 'Start Interview',
+        nextActionHref: '/interview',
+      },
+      {
+        key: 'IoT',
+        rawKey: 'iot',
+        label: 'IoT',
+        plainLabel: 'IoT & Embedded Systems',
+        score: iotScore,
+        level: iotScore > 0 ? 'Developing' : 'Not Started',
+        evidenceSummary: activeTrack === 'iot' ? 'IoT hardware & edge telemetry mastery' : 'Optional for SDE tracks — 0 IoT quests taken',
+        nextActionLabel: 'Explore Quests',
+        nextActionHref: '/quests',
+      },
     ];
-  }, [careerScore, dnaScore, activeTrack, cOS?.completedQuests?.length, cOS?.vaultItems?.length, cOS?.trustScore, skillProfile, actionProfile?.interviews_done]);
+  }, [radarMetrics, careerScore, dnaScore, activeTrack, cOS?.completedQuests?.length, cOS?.vaultItems?.length, skillProfile]);
+
+  const activeInspectIndex = useMemo(() => {
+    if (hoveredAxis !== null && radarAxes[hoveredAxis]) return hoveredAxis;
+    if (selectedAxisKey) {
+      const found = radarAxes.findIndex((a) => a.key === selectedAxisKey || a.rawKey === selectedAxisKey);
+      if (found >= 0) return found;
+    }
+    const weakestIdx = radarMetrics?.weakestAxis
+      ? radarAxes.findIndex((a) => a.rawKey === radarMetrics.weakestAxis)
+      : -1;
+    return weakestIdx >= 0 ? weakestIdx : 0;
+  }, [hoveredAxis, selectedAxisKey, radarAxes, radarMetrics?.weakestAxis]);
+
+  const inspectedAxis = radarAxes[activeInspectIndex] || radarAxes[0];
+  const radarOverallPct = radarMetrics
+    ? Math.max(0, Math.min(100, Math.round(radarMetrics.overallScore)))
+    : Math.round(radarAxes.slice(0, 4).reduce((s, a) => s + a.score, 0) / 4);
 
   // Authentic trigonometric radar polygon calculation (Center 60,60, R=46)
   const radarGeometry = useMemo(() => {
@@ -275,14 +352,14 @@ export default function DashboardBentoGrid({
                 style={{
                   fontSize: 11,
                   fontWeight: 700,
-                  color: careerScore > 0 ? accentVar : 'var(--dash-subtext)',
-                  background: careerScore > 0 ? `rgba(${accentRgb},0.12)` : 'var(--dash-subtle-bg)',
+                  color: radarOverallPct > 0 ? accentVar : 'var(--dash-subtext)',
+                  background: radarOverallPct > 0 ? `rgba(${accentRgb},0.12)` : 'var(--dash-subtle-bg)',
                   padding: '3px 8px',
                   borderRadius: 6,
-                  border: `1px solid ${careerScore > 0 ? `rgba(${accentRgb},0.25)` : 'var(--dash-inner-border)'}`,
+                  border: `1px solid ${radarOverallPct > 0 ? `rgba(${accentRgb},0.25)` : 'var(--dash-inner-border)'}`,
                 }}
               >
-                {careerScore > 0 ? `${Math.round(careerScore)}%` : 'Baseline'}
+                {radarOverallPct > 0 ? `${radarOverallPct}% Avg` : 'Baseline'}
               </span>
               <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 11.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
                 <span style={{ width: 7, height: 7, borderRadius: 2, background: hasChosenTrack ? accentVar : 'var(--t3)' }} />
@@ -324,18 +401,19 @@ export default function DashboardBentoGrid({
                   key={idx}
                   cx={pt.x}
                   cy={pt.y}
-                  r={hoveredAxis === idx ? 3.5 : 2.1}
-                  fill={hoveredAxis === idx ? '#06b6d4' : accentVar}
+                  r={activeInspectIndex === idx ? 3.5 : 2.1}
+                  fill={activeInspectIndex === idx ? '#06b6d4' : accentVar}
                   stroke="var(--dash-card, #0f1524)"
                   strokeWidth="0.9"
-                  style={{ transition: 'all 0.2s ease' }}
+                  style={{ transition: 'all 0.2s ease', cursor: 'pointer' }}
+                  onClick={() => radarAxes[idx] && setSelectedAxisKey(radarAxes[idx].key)}
                 />
               ))}
-              <text x="60" y="6" fill={hoveredAxis === 0 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle">CODING</text>
-              <text x="112" y="44" fill={hoveredAxis === 1 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle">ARCH</text>
-              <text x="97" y="114" fill={hoveredAxis === 2 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle">DATA</text>
-              <text x="23" y="114" fill={hoveredAxis === 3 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle">SOCRATIC</text>
-              <text x="8" y="44" fill={hoveredAxis === 4 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle">IoT</text>
+              <text x="60" y="6" fill={activeInspectIndex === 0 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle" style={{ cursor: 'pointer' }} onClick={() => setSelectedAxisKey('CODING')}>CODING</text>
+              <text x="112" y="44" fill={activeInspectIndex === 1 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle" style={{ cursor: 'pointer' }} onClick={() => setSelectedAxisKey('ARCH')}>ARCH</text>
+              <text x="97" y="114" fill={activeInspectIndex === 2 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle" style={{ cursor: 'pointer' }} onClick={() => setSelectedAxisKey('DATA')}>DATA</text>
+              <text x="23" y="114" fill={activeInspectIndex === 3 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle" style={{ cursor: 'pointer' }} onClick={() => setSelectedAxisKey('SOCRATIC')}>SOCRATIC</text>
+              <text x="8" y="44" fill={activeInspectIndex === 4 ? accentVar : 'var(--dash-radar-label, #94a3b8)'} fontSize="6.5" fontWeight="800" fontFamily="var(--font-mono)" textAnchor="middle" style={{ cursor: 'pointer' }} onClick={() => setSelectedAxisKey('IoT')}>IoT</text>
             </svg>
           </div>
 
@@ -351,27 +429,92 @@ export default function DashboardBentoGrid({
               borderTop: '1px solid var(--dash-inner-border, var(--border))',
             }}
           >
-            {radarAxes.map((axis, idx) => (
-              <div
-                key={axis.key}
-                onMouseEnter={() => setHoveredAxis(idx)}
-                onMouseLeave={() => setHoveredAxis(null)}
-                style={{
-                  textAlign: 'center',
-                  padding: '5px 4px',
-                  borderRadius: 8,
-                  background: hoveredAxis === idx ? 'rgba(99,102,241,0.12)' : 'transparent',
-                  cursor: 'default',
-                  transition: 'background 0.15s ease',
-                }}
-              >
-                <div style={{ fontSize: 10, color: 'var(--t3)', fontWeight: 600 }}>{axis.label}</div>
-                <div className="db-tabular" style={{ fontSize: 12.5, fontWeight: 800, color: hoveredAxis === idx ? accentVar : 'var(--dash-text, var(--t1))', marginTop: 1 }}>
-                  {axis.score}
+            {radarAxes.map((axis, idx) => {
+              const isSelected = activeInspectIndex === idx;
+              return (
+                <button
+                  type="button"
+                  key={axis.key}
+                  onMouseEnter={() => setHoveredAxis(idx)}
+                  onMouseLeave={() => setHoveredAxis(null)}
+                  onClick={() => setSelectedAxisKey(axis.key)}
+                  style={{
+                    textAlign: 'center',
+                    padding: '6px 4px',
+                    borderRadius: 8,
+                    border: isSelected ? `1px solid rgba(${accentRgb},0.4)` : '1px solid transparent',
+                    background: isSelected ? `rgba(${accentRgb},0.12)` : 'transparent',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                  }}
+                >
+                  <div style={{ fontSize: 10, color: isSelected ? accentVar : 'var(--t3)', fontWeight: 700 }}>{axis.label}</div>
+                  <div className="db-tabular" style={{ fontSize: 12.5, fontWeight: 800, color: isSelected ? accentVar : 'var(--dash-text, var(--t1))', marginTop: 1 }}>
+                    {axis.score}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Plain-English Skill Inspector & Action CTA */}
+          {inspectedAxis && (
+            <div
+              data-testid="radar-axis-inspector"
+              style={{
+                marginTop: 10,
+                padding: '10px 12px',
+                borderRadius: 10,
+                background: 'var(--dash-subtle-bg, var(--bg3))',
+                border: '1px solid var(--dash-inner-border, var(--border))',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: 10,
+                flexWrap: 'wrap',
+              }}
+            >
+              <div style={{ minWidth: 0, flex: '1 1 200px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: 12, fontWeight: 800, color: 'var(--dash-text, var(--t1))' }}>
+                    {inspectedAxis.plainLabel}
+                  </span>
+                  <span
+                    className="db-tabular"
+                    style={{
+                      fontSize: 10,
+                      fontWeight: 700,
+                      padding: '1px 6px',
+                      borderRadius: 4,
+                      background: `rgba(${accentRgb},0.14)`,
+                      color: accentVar,
+                    }}
+                  >
+                    {inspectedAxis.score}/100 ({inspectedAxis.level})
+                  </span>
+                </div>
+                <div style={{ fontSize: 11, color: 'var(--dash-subtext, var(--t3))', marginTop: 3, lineHeight: 1.4 }}>
+                  {inspectedAxis.evidenceSummary}
                 </div>
               </div>
-            ))}
-          </div>
+              <Link
+                href={inspectedAxis.nextActionHref}
+                style={{
+                  fontSize: 11,
+                  fontWeight: 700,
+                  color: accentVar,
+                  background: `rgba(${accentRgb},0.12)`,
+                  border: `1px solid rgba(${accentRgb},0.28)`,
+                  padding: '6px 10px',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {inspectedAxis.nextActionLabel} &rarr;
+              </Link>
+            </div>
+          )}
         </div>
       </div>
 

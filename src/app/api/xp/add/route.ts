@@ -162,31 +162,22 @@ export async function POST(req: Request) {
 
     const finalReason = `${CLIENT_REASON_PREFIX}:${actionType || 'general'}] ${reason}`;
 
-    const { data: rpcRes, error: rpcErr } = await admin.rpc('increment_xp', {
-      p_user_id: userId,
-      p_amount: amount,
-      p_reason: finalReason,
-    });
+    const { grantXp } = await import('@/lib/server/xpGrant');
+    const grant = await grantXp(admin, userId, amount, finalReason);
 
-    if (rpcErr) {
-      console.error('[XP Add] increment_xp RPC error:', rpcErr.message);
+    if (!grant.ok) {
+      console.error('[XP Add] grantXp failed:', grant.error, grant.message);
       return NextResponse.json(
-        { ok: false, error: 'RPC_FAILED', message: rpcErr.message },
-        { status: 500 }
-      );
-    }
-
-    if (!rpcRes?.ok) {
-      return NextResponse.json(
-        { ok: false, error: rpcRes?.reason || 'XP_INCREMENT_REJECTED', message: rpcRes?.message || 'XP increment rejected.' },
-        { status: 400 }
+        { ok: false, error: grant.error, message: grant.message },
+        { status: grant.error === 'INVALID_XP_AMOUNT' ? 400 : 500 }
       );
     }
 
     return NextResponse.json({
       ok: true,
-      newXp: rpcRes.new_xp,
-      newLevel: rpcRes.new_level,
+      newXp: grant.newXp,
+      newWeeklyXp: grant.newWeeklyXp,
+      newLevel: grant.newLevel,
       amountAdded: amount,
       reason,
     });

@@ -21,6 +21,7 @@ export async function POST(req: Request) {
       lessonId,
       xpAwarded: xpResult.ok ? 15 : 0,
       newXp: xpResult.ok ? xpResult.newXp : undefined,
+      newWeeklyXp: xpResult.ok ? xpResult.newWeeklyXp : undefined,
       pinsAwarded: 5,
     });
   } catch (err: any) {

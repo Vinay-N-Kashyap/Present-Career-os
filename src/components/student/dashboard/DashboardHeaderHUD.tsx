@@ -320,24 +320,17 @@ export default function DashboardHeaderHUD({
     return 100; // Honest baseline: 100
   }, [liveArena?.elo, user]);
 
-  // 4. Weekly EXP: default 0 (liveArena weeklyXp is authoritative, including 0 after weekly reset)
+  // 4. Weekly EXP: default 0 (strictly weekly_xp; never fall back to lifetime career xp_total)
   const dynamicWeeklyExp = useMemo(() => {
     if (typeof liveArena?.weeklyXp === 'number' && Number.isFinite(liveArena.weeklyXp)) {
       return Math.max(0, Math.round(liveArena.weeklyXp));
     }
     const profileWeekly = (user as any)?.weekly_xp ?? (user as any)?.weeklyXp;
-    if (typeof profileWeekly === 'number' && profileWeekly > 0) {
+    if (typeof profileWeekly === 'number' && Number.isFinite(profileWeekly) && profileWeekly >= 0) {
       return Math.round(profileWeekly);
     }
-    if (typeof xp === 'number' && xp > 0) {
-      return Math.round(xp);
-    }
-    const totalXpVal = (user as any)?.xpTotal ?? (user as any)?.xp;
-    if (typeof totalXpVal === 'number' && totalXpVal > 0) {
-      return Math.round(totalXpVal);
-    }
     return 0; // Honest baseline: 0
-  }, [liveArena?.weeklyXp, user, xp]);
+  }, [liveArena?.weeklyXp, user]);
 
   return (
     <div

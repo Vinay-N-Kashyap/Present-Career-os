@@ -35,7 +35,9 @@ export const TEACHER_METADATA: Record<string, Teacher> = {
   kashyap: { name: 'Kashyap Sir', avatar: '👩‍🎨', color: 'rgba(var(--info-rgb),  0.1)', accent: 'var(--accent)', role: 'Staff Systems Architect' },
   karthic: { name: 'Karthic Sir "Nega"', avatar: '👨‍🏫', color: 'rgba(var(--warning-rgb),  0.1)', accent: 'var(--amber)', role: 'Algorithmic Lead Tutor' },
   maya: { name: 'Ms. Maya', avatar: '👩‍💼', color: 'rgba(var(--danger-rgb),  0.1)', accent: 'var(--coral)', role: 'Principal Security Auditor' },
-  divya: { name: 'Ms. Divya', avatar: '👨‍💼', color: 'rgba(var(--success-rgb),  0.1)', accent: 'var(--green)', role: 'Lead UX Engineer' }
+  divya: { name: 'Ms. Divya', avatar: '👨‍💼', color: 'rgba(var(--success-rgb),  0.1)', accent: 'var(--green)', role: 'Lead UX Engineer' },
+  priya: { name: 'Ms. Priya', avatar: '👩‍🎓', color: 'rgba(var(--info-rgb),  0.1)', accent: 'var(--accent)', role: 'AI Career Mentor & Personal Tutor' },
+  anish: { name: 'Mr. Anish', avatar: '🎙️', color: 'rgba(var(--warning-rgb),  0.1)', accent: 'var(--amber)', role: 'Principal Systems Mentor' },
 };
 
 export function resolveTeacher(teacherId?: string): Teacher {

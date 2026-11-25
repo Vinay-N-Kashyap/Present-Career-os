@@ -10,6 +10,7 @@ import {
   DetectedTradeoff,
   RoadmapStrategyResult
 } from '../onboarding/diagnosticEngine';
+import type { UserRoadmapEvidence } from '../roadmap/userEvidenceContext';
 
 export interface DynamicRoadmapParams {
   qt1?: number; // Technical Knowledge Score (0-100)
@@ -26,6 +27,8 @@ export interface DynamicRoadmapParams {
   tradeoffs?: DetectedTradeoff[];
   roadmapStrategy?: RoadmapStrategyResult;
   weakAreas?: string[];
+  selectedCourseIds?: string[]; // AI/evidence-selected course sequence from COURSES_REGISTRY
+  evidence?: UserRoadmapEvidence | null; // Resume, Vault & Profile personalization context
 }
 
 export interface DynamicRoadmapModule {
@@ -43,6 +46,8 @@ export interface DynamicRoadmapModule {
   associatedCompetencyIds?: string[];
   isPreliminaryRoadmap?: boolean;
   diagnosticNotice?: string;
+  whyThisStage?: string;
+  skillsAddressed?: string[];
   quests: (CourseQuest & {
     fastTracked?: boolean;
     reinforcementNeeded?: boolean;
@@ -79,11 +84,26 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
     dailyPace = 3
   } = params;
 
-  // 1. Resolve the roadmap's courses (main course + career path + foundations, by duration)
+  // 1. Resolve the roadmap's courses (preferring evidence-selected courses when valid, else canonical path by duration)
   const courseObj = COURSES_REGISTRY.find(c => c.id === courseId) || COURSES_REGISTRY[0];
-  const roadmapCourses = getRoadmapCourseIds(courseObj.id, durationDays)
+  const explicitIds = Array.isArray(params.selectedCourseIds)
+    ? params.selectedCourseIds.filter((id) => COURSES_REGISTRY.some((c) => c.id === id))
+    : [];
+  const candidateCourseIds = explicitIds.length > 0
+    ? explicitIds
+    : getRoadmapCourseIds(courseObj.id, durationDays);
+  const roadmapCourses = candidateCourseIds
     .map((id) => COURSES_REGISTRY.find((c) => c.id === id))
     .filter((c): c is (typeof COURSES_REGISTRY)[number] => Boolean(c));
+  const combinedWeakAreas = Array.from(new Set([
+    ...(Array.isArray(params.weakAreas) ? params.weakAreas : []),
+    ...(params.evidence?.weakAreas || []),
+    ...(params.evidence?.interviewGaps || []),
+  ])).slice(0, 10);
+  const verifiedSkillsSet = new Set(
+    [...(params.evidence?.provenSkills || []), ...(params.evidence?.claimedSkills || [])].map((s) => s.toLowerCase())
+  );
+  const completedQuestSet = new Set(params.evidence?.completedQuests || []);
   const seenQuestIds = new Set<string>();
   const rawQuests: Array<CourseQuest & { sourceCourseId: string }> = [];
   for (const course of roadmapCourses) {
@@ -159,13 +179,15 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
     };
   });
 
-  // Fast-Track Compression: For high QT1 (>=75), compress early basic syntax quests (indices 1-4) into 1 accelerated quest
-  if (isHighKnowledge && adaptedQuests.length > 5) {
+  // Fast-Track Compression: For high QT1 (>=75) or verified resume skills on intro concepts, compress early basics (indices 1-4)
+  const hasResumeProof = Boolean(params.evidence?.provenSkills?.length && params.evidence.provenSkills.length >= 2);
+  if ((isHighKnowledge || hasResumeProof) && adaptedQuests.length > 5 && !completedQuestSet.has(adaptedQuests[0]?.id)) {
+    const fastTrackLabel = isHighKnowledge ? `high QT1 (${qt1}/100)` : `your verified Vault/Resume skills`;
     adaptedQuests = [
       {
         ...adaptedQuests[0],
         title: `⚡ Fast-Track Jump: ${adaptedQuests[0].title.replace('Learning: ', '')} (Basics Compressed)`,
-        desc: `Compressed 5-in-1 basic syntax summary for high QT1 (${qt1}/100) score. Jumping directly to your present skill level!`,
+        desc: `Compressed 5-in-1 basic syntax summary based on ${fastTrackLabel}. Jumping directly to intermediate mastery!`,
         fastTracked: true
       },
       ...adaptedQuests.slice(5)
@@ -217,6 +239,17 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
         ? ` (${firstQuestTitle} → ${lastQuestTitle})`
         : (firstQuestTitle ? ` (${firstQuestTitle})` : '');
 
+      const cSkillsRaw = (course as any).skills;
+      const skillsForCourse: string[] = Array.isArray(cSkillsRaw) ? cSkillsRaw.slice(0, 5).map(String) : [];
+      const matchingGaps = combinedWeakAreas.filter((w) =>
+        `${course.title} ${course.desc} ${skillsForCourse.join(' ')}`.toLowerCase().includes(w.toLowerCase())
+      );
+      const alreadyKnownHere = skillsForCourse.filter((s: string) => verifiedSkillsSet.has(s.toLowerCase()));
+      const whyParts: string[] = [];
+      if (matchingGaps.length > 0) whyParts.push(`Targets your gap(s): ${matchingGaps.join(', ')}`);
+      if (params.evidence?.resumeTitle) whyParts.push(`Aligned with "${params.evidence.resumeTitle}"`);
+      if (alreadyKnownHere.length > 0) whyParts.push(`Builds beyond your existing ${alreadyKnownHere.slice(0, 2).join(', ')} foundation`);
+
       modules.push({
         id: `${course.id}-dynamic-mod-${moduleCount}`,
         courseId: course.id,
@@ -228,6 +261,8 @@ export function generateDynamicStudentRoadmap(params: DynamicRoadmapParams): Dyn
         knowledgeAdaptationTag: knowledgeTag,
         tradeoffInterventions: tradeoffInterventions.length > 0 ? tradeoffInterventions : undefined,
         allocationsTag,
+        whyThisStage: whyParts.length > 0 ? whyParts.join(' • ') : `Calibrated core stage for ${targetRole}`,
+        skillsAddressed: skillsForCourse,
         isPreliminaryRoadmap,
         diagnosticNotice,
         quests: chunk

@@ -11,6 +11,8 @@
  * - Question & conversation exclusion guards to prevent accidental navigation mid-chat.
  */
 
+import { isSpecificLessonRequest } from '@/lib/avatar/lessonIntent';
+
 export interface RouteEntry {
   path: string;
   displayName: string;
@@ -351,6 +353,11 @@ export function matchNavigationIntent(
   };
 
   if (!rawTranscript || rawTranscript.trim().length < 2) return empty;
+
+  // Let specific day/course/topic lesson requests route through Ms. Priya's interactive lesson resolver
+  if (isSpecificLessonRequest(rawTranscript)) {
+    return empty;
+  }
 
   const text = rawTranscript.toLowerCase().replace(/[.,!?;:'"()]/g, ' ').replace(/\s+/g, ' ').trim();
   const strippedOfWake = text.replace(WAKE_AND_MENTOR_REGEX, ' ').replace(/\s+/g, ' ').trim();

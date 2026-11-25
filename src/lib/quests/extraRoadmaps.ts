@@ -1,3 +1,11 @@
+export interface ExtraRoadmapEvidenceSummary {
+  resumeTitle?: string | null;
+  vaultDocsCount?: number;
+  provenSkills?: string[];
+  targetGaps?: string[];
+  selectedCourseIds?: string[];
+}
+
 export interface ExtraRoadmap {
   id: string;
   number: number;
@@ -7,6 +15,7 @@ export interface ExtraRoadmap {
   dailyPace: number;
   track: string;
   createdAt: number;
+  evidenceSummary?: ExtraRoadmapEvidenceSummary;
 }
 
 export type LearningPathMode = 'fused_roadmap' | 'single_course' | `extra:${string}`;

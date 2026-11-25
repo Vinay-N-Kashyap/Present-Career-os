@@ -1013,9 +1013,11 @@ export class ArenaPvPStore {
 
       const admin = getSupabaseAdmin();
 
-      const isHostWin = room.winnerId === hostId;
+      const canonicalWinnerId = extractCanonicalUserId(room.winnerId || 'draw');
 
-      const isHostLoss = room.winnerId === guestId;
+      const isHostWin = canonicalWinnerId === hostId;
+
+      const isHostLoss = canonicalWinnerId === guestId;
 
 
 
@@ -1044,9 +1046,9 @@ export class ArenaPvPStore {
 
       if (guestId && guestId !== 'guest') {
 
-        const isGuestWin = room.winnerId === guestId;
+        const isGuestWin = canonicalWinnerId === guestId;
 
-        const isGuestLoss = room.winnerId === hostId;
+        const isGuestLoss = canonicalWinnerId === hostId;
 
 
 

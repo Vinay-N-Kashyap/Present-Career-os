@@ -487,9 +487,19 @@ export interface CustomRoadmapModalProps {
   qt1: number;
   archetype: string;
   activeCourseTitle: string;
-  onSubmit: () => void;
+  onSubmit: (opts?: { useResumeAndVault?: boolean }) => void;
   trajectory: CareerTrajectory;
   COURSES_REGISTRY: Course[];
+}
+
+interface RoadmapEvidencePreview {
+  targetRole?: string;
+  resumeTitle?: string | null;
+  hasResumeInVault?: boolean;
+  vaultDocsCount?: number;
+  provenSkills?: string[];
+  claimedSkills?: string[];
+  weakAreas?: string[];
 }
 
 export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
@@ -513,6 +523,38 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
   trajectory,
   COURSES_REGISTRY,
 }) => {
+  const [useResumeAndVault, setUseResumeAndVault] = React.useState(true);
+  const [evidencePreview, setEvidencePreview] = React.useState<RoadmapEvidencePreview | null>(null);
+  const [loadingPreview, setLoadingPreview] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!isOpen) return;
+    let active = true;
+    setLoadingPreview(true);
+    (async () => {
+      try {
+        const headers: Record<string, string> = {};
+        try {
+          const { supabase } = await import('@/lib/supabaseClient');
+          const { data: { session } } = await supabase.auth.getSession();
+          if (session?.access_token) headers.Authorization = `Bearer ${session.access_token}`;
+        } catch {}
+        const res = await fetch('/api/quests/roadmap/context', { headers, cache: 'no-store' });
+        if (res.ok && active) {
+          const data = await res.json();
+          if (data?.ok) {
+            setEvidencePreview(data);
+            if (!customGoal.trim() && data.targetRole) {
+              setCustomGoal(data.targetRole);
+            }
+          }
+        }
+      } catch {}
+      if (active) setLoadingPreview(false);
+    })();
+    return () => { active = false; };
+  }, [isOpen]);
+
   React.useEffect(() => {
     if (!isOpen || isGenerating || typeof window === 'undefined') return;
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -609,6 +651,60 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
                 <span style={{ color: 'var(--t4)' }}>Active Course:</span>
                 <span style={{ color: 'var(--t1)' }}>{activeCourseTitle}</span>
               </div>
+            </div>
+
+            {/* Resume, Vault Documents & Profile Evidence Sync Panel */}
+            <div
+              data-testid="roadmap-evidence-preview"
+              style={{
+                padding: '12px 15px',
+                borderRadius: 14,
+                background: useResumeAndVault ? 'rgba(99,102,241,0.08)' : 'var(--bg3)',
+                border: `1px solid ${useResumeAndVault ? 'rgba(99,102,241,0.32)' : 'var(--border)'}`,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 8,
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                <span style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--t1)' }}>
+                  Personalize From Your Resume, Vault Documents &amp; Profile
+                </span>
+                <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700, color: 'var(--success)', cursor: 'pointer' }}>
+                  <input
+                    type="checkbox"
+                    checked={useResumeAndVault}
+                    onChange={(e) => setUseResumeAndVault(e.target.checked)}
+                  />
+                  Enable Personalization
+                </label>
+              </div>
+              {loadingPreview ? (
+                <div style={{ fontSize: 12, color: 'var(--t3)' }}>Scanning your Proof Vault resume &amp; profile...</div>
+              ) : evidencePreview ? (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 12, color: 'var(--t2)' }}>
+                  <div>
+                    <strong style={{ color: 'var(--t1)' }}>Resume:</strong>{' '}
+                    {evidencePreview.resumeTitle ? `${evidencePreview.resumeTitle} (${evidencePreview.vaultDocsCount || 1} Vault doc(s))` : 'No resume uploaded in Vault yet (using profile)'}
+                  </div>
+                  {(evidencePreview.provenSkills?.length || evidencePreview.claimedSkills?.length) ? (
+                    <div>
+                      <strong style={{ color: 'var(--t1)' }}>Skills Detected:</strong>{' '}
+                      {[...(evidencePreview.provenSkills || []), ...(evidencePreview.claimedSkills || [])].slice(0, 6).join(', ')}
+                    </div>
+                  ) : null}
+                  {evidencePreview.weakAreas && evidencePreview.weakAreas.length > 0 ? (
+                    <div>
+                      <strong style={{ color: '#f59e0b' }}>Target Gaps:</strong>{' '}
+                      {evidencePreview.weakAreas.slice(0, 5).join(', ')}
+                    </div>
+                  ) : null}
+                </div>
+              ) : (
+                <div style={{ fontSize: 12, color: 'var(--t3)' }}>
+                  Automatically incorporates your Vault resume, skills, and interview gaps.
+                </div>
+              )}
             </div>
 
             <div style={{
@@ -708,7 +804,7 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
 
             <button
               data-testid="btn-generate-roadmap"
-              onClick={onSubmit}
+              onClick={() => onSubmit({ useResumeAndVault })}
               className="btn-emerald-glow"
               style={{
                 width: '100%',

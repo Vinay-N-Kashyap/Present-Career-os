@@ -360,6 +360,15 @@ export async function POST(req: Request) {
       console.log(`✅ [STAGE 12/12 - Database Record Inserted]: DB Row ID = "${dbId}"`);
     }
 
+    // Persist computed ATS score onto public.users when a resume is uploaded so Dashboard/Priority cards reflect it immediately
+    if (category === 'resume' && typeof atsScore === 'number' && atsScore > 0) {
+      try {
+        const { data: uRow } = await supabase.from('users').select('ats_score').eq('id', userId).maybeSingle();
+        const bestAts = Math.min(100, Math.max(Number(uRow?.ats_score) || 0, Math.round(atsScore)));
+        await supabase.from('users').update({ ats_score: bestAts }).eq('id', userId);
+      } catch {}
+    }
+
     const slotPayload: VaultDocumentSlot = {
       id: dbId,
       category,

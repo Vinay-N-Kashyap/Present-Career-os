@@ -9,7 +9,8 @@ import { completeStoryTour, isStoryTourPending, resetStoryTour } from '@/lib/sto
 import { StoryTourEngine, tourRoutePath } from '@/lib/storyTourEngine';
 import { matchBestAlternative, getGrammarVocabulary } from '@/components/avatar/hooks/useVoiceNavigation';
 import { useDraggablePanel } from '@/components/avatar/hooks/useDraggablePanel';
-import { isHyperActiveTrigger } from '@/lib/avatar/wakeWordParser';
+import { isHyperActiveTrigger, parseWakeWord } from '@/lib/avatar/wakeWordParser';
+import { isSpecificLessonRequest } from '@/lib/avatar/lessonIntent';
 import { isPriorityDiagnosticQuery, buildPriorityDiagnosticReport } from '@/lib/avatar/priorityBriefing';
 import { matchBestActionAlternative } from '@/lib/avatar/voiceActionRouter';
 import {
@@ -162,6 +163,7 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
   const [isCompactViewport, setIsCompactViewport] = useState(false);
   const [hyperActive, setHyperActive] = useState(false);
   const [hyperModeVariant, setHyperModeVariant] = useState<'conversational' | 'diagnostic'>('conversational');
+  const [pendingLessonPrompt, setPendingLessonPrompt] = useState<string | null>(null);
   const [isExitingHyperActive, setIsExitingHyperActive] = useState(false);
   const isExitingHyperActiveRef = useRef(false);
   const [hyperTransformOrigin, setHyperTransformOrigin] = useState<string>('50% 95%');
@@ -473,6 +475,16 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
         // Priority 1 — Executive Priority / Diagnostic / Mistakes Query (Task 4)
         if (hasWakeWord && allAlternatives.some((alt) => isPriorityDiagnosticQuery(alt))) {
           enterHyperActive('diagnostic');
+          return;
+        }
+
+        // Priority 1b — Specific Course Day / Topic Lesson Request for Ms. Priya
+        const specificLessonAlt = allAlternatives.find((alt) => isSpecificLessonRequest(alt));
+        if ((hasWakeWord || hasExplicitNavAction) && specificLessonAlt) {
+          const parsedLessonCmd = parseWakeWord(specificLessonAlt, teacherId);
+          const cleanCmd = (parsedLessonCmd.hasWakeWord && parsedLessonCmd.command ? parsedLessonCmd.command : specificLessonAlt).trim();
+          setPendingLessonPrompt(cleanCmd);
+          enterHyperActive('conversational');
           return;
         }
 
@@ -819,8 +831,10 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
       missionStreak: missionStreakVal,
       careerScore: careerScoreVal,
       xp: xpVal,
+      activeCourseId: cOS.activeCourseId,
+      completedQuests: cOS.completedQuests || [],
     }),
-    [profile, user, completedQuestsCount, completedMissionsCount, missionStreakVal, careerScoreVal, xpVal]
+    [profile, user, completedQuestsCount, completedMissionsCount, missionStreakVal, careerScoreVal, xpVal, cOS.activeCourseId, cOS.completedQuests]
   );
 
   const diagnosticReport = useMemo(() => {
@@ -1362,6 +1376,8 @@ export const GlobalAvatar: React.FC<GlobalAvatarProps> = ({
                   onExitHyperActive={() => exitHyperActive(false)}
                   gazeTracking={!pathname.startsWith('/quests/')}
                   speaking={isSpeaking}
+                  initialPrompt={pendingLessonPrompt}
+                  onInitialPromptConsumed={() => setPendingLessonPrompt(null)}
                 />
               </Suspense>
             </div>

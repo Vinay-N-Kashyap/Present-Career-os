@@ -275,18 +275,20 @@ export async function POST(req: Request) {
         DAILY_PIN_CAP
       );
 
-      await admin
+      const { error: subErr } = await admin
         .from('users')
         .update({
           subscription_tier: subTier,
           subscription_started_at: new Date(nowMs).toISOString(),
           subscription_expires_at: expiresAt,
           subscription_status: 'active',
-          has_purchased_plan: true,
           pins: subSplit.newPins,
           bonus_pins: subSplit.newBonus,
         })
         .eq('id', notesUid);
+      if (subErr) {
+        console.error('[Webhook] Failed to persist subscription update:', subErr.message);
+      }
     }
 
     // 4. Pin credit handling: fill Current Pins up to 120 daily cap first,

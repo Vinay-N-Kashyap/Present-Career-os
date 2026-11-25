@@ -9,6 +9,7 @@ import { buildHyperActiveFallbackReply } from '@/lib/avatar/hyperActivePersona';
 import { isNextTaskIntent, getAuthoritativeNextTask, StudentProgressSnapshot, CurriculumItem } from '@/lib/avatar/deterministicAdvisor';
 import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 import { mentorResponseCache } from '@/lib/avatar/responseCache';
+import { resolveLessonRequest, type LessonSessionRef } from '@/lib/avatar/lessonResolver';
 
 // Light phatic queries that can use a micro model or deterministic warm response
 export const LIGHT_QUERY_REGEX = /^(?:h(?:i|ello|ey)|thanks?|thank\s*you|ok(?:ay)?|yes|no|bye|good\s*(?:morning|evening|night)|sure|got\s*it|cool|nice|wow|great)\s*[.!?]*$/i;
@@ -27,6 +28,7 @@ interface MentorChatRequest {
   history?: Array<{ role: 'user' | 'assistant' | 'system'; content: string }>;
   stream?: boolean;
   hyperActive?: boolean;
+  lessonSession?: LessonSessionRef | null;
 }
 
 export async function POST(req: Request) {
@@ -97,6 +99,15 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
     const completedMissionsCount = Number(body.careerContext?.completedMissionsCount ?? 0);
     const missionStreak = Number(body.careerContext?.missionStreak ?? body.careerContext?.mission_streak ?? 0);
 
+    // Resolve any specific course/day/topic lesson tutoring or launch request BEFORE building prompt
+    const resolvedLesson = await resolveLessonRequest(userMessage, {
+      activeCourseId: typeof body.careerContext?.activeCourseId === 'string'
+        ? body.careerContext.activeCourseId
+        : (typeof body.careerContext?.courseId === 'string' ? body.careerContext.courseId : undefined),
+      teacherId: body.teacherId,
+      lessonSession: body.lessonSession || null,
+    });
+
     const systemPrompt = buildMentorSystemPrompt(
       {
         studentName,
@@ -106,6 +117,7 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
         atsScore,
         teacherId: body.teacherId,
         slideContextPrompt,
+        lessonContextPrompt: resolvedLesson?.promptDigest,
         hyperActive: isHyperActive,
         completedQuestsCount,
         completedMissionsCount,
@@ -192,14 +204,17 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
 
     const wantsStream = Boolean(body.stream) || Boolean(req.headers.get('accept')?.includes('text/event-stream'));
 
-    // Determine model tier: light phatic query vs full technical inquiry
-    const isLightQuery = LIGHT_QUERY_REGEX.test(userMessage);
-    const selectedModel = isHyperActive ? 'llama-3.1-8b-instant' : (isLightQuery ? 'llama-3.2-3b-preview' : 'llama-3.1-8b-instant');
-    const selectedMaxTokens = isHyperActive ? 240 : (isLightQuery ? 120 : 350);
+    // Determine live active Groq model tier & token budget (elevated when tutoring an active curriculum lesson)
+    const isLightQuery = !resolvedLesson && LIGHT_QUERY_REGEX.test(userMessage);
+    const groqModelCandidates = resolvedLesson
+      ? ['qwen/qwen3.8-27b', 'openai/gpt-oss-20b']
+      : (isHyperActive || isLightQuery ? ['qwen/qwen3.8-27b', 'openai/gpt-oss-20b'] : ['qwen/qwen3.8-27b', 'openai/gpt-oss-120b']);
+    const selectedModel = groqModelCandidates[0];
+    const selectedMaxTokens = resolvedLesson ? 550 : (isHyperActive ? 240 : (isLightQuery ? 120 : 350));
 
-    // In V2 Advisor mode: Check In-Memory LRU Response Cache (0ms, 0 tokens) — bypass in Hyper-Active for natural human replies
+    // In V2 Advisor mode: Check In-Memory LRU Response Cache (0ms, 0 tokens) — bypass in Hyper-Active or active lesson tutoring
     const cacheKey = mentorResponseCache.generateKey(userMessage, body.teacherId || 'priya', targetRole, questTitle);
-    const shouldBypassCache = isHyperActive || mentorResponseCache.shouldBypass({
+    const shouldBypassCache = isHyperActive || Boolean(resolvedLesson) || mentorResponseCache.shouldBypass({
       hasSlideContext: Boolean(body.currentSlide),
       hasCodeSnippet: Boolean(body.currentSlide?.codeSnippet),
       historyLength: history.length,
@@ -372,37 +387,50 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
 
     let llmResponse: string | null = null;
 
-    if (groqKeys.length > 0) {
+    // Immediate crisp response when student explicitly asked to open/launch a lesson
+    if (resolvedLesson?.lessonAction.autoLaunch) {
+      llmResponse = resolvedLesson.deterministicFallbackReply;
+    }
+
+    if (!llmResponse && groqKeys.length > 0) {
       for (const key of groqKeys) {
-        try {
-          const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${key}`
-            },
-            body: JSON.stringify({
-              model: selectedModel,
-              messages: [
-                { role: 'system', content: systemPrompt },
-                ...history,
-                { role: 'user', content: userMessage }
-              ],
-              max_tokens: selectedMaxTokens,
-              temperature: 0.7,
-              frequency_penalty: isHyperActive ? 0.6 : 0,
-              presence_penalty: isHyperActive ? 0.6 : 0,
-            }),
-            signal: AbortSignal.timeout(6000)
-          });
-          if (res.ok) {
-            const data = await res.json();
-            llmResponse = (data.choices?.[0]?.message?.content || '').trim();
-            if (llmResponse) break;
+        for (const modelName of groqModelCandidates) {
+          try {
+            const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${key}`
+              },
+              body: JSON.stringify({
+                model: modelName,
+                messages: [
+                  { role: 'system', content: systemPrompt },
+                  ...history,
+                  { role: 'user', content: userMessage }
+                ],
+                max_tokens: selectedMaxTokens,
+                temperature: resolvedLesson ? 0.5 : 0.7,
+                frequency_penalty: isHyperActive && !resolvedLesson ? 0.6 : 0,
+                presence_penalty: isHyperActive && !resolvedLesson ? 0.6 : 0,
+              }),
+              signal: AbortSignal.timeout(6000)
+            });
+            if (res.ok) {
+              const data = await res.json();
+              const rawContent = (data.choices?.[0]?.message?.content || '')
+                .replace(/<think>[\s\S]*?<\/think>/gi, '')
+                .trim();
+              if (rawContent) {
+                llmResponse = rawContent;
+                break;
+              }
+            }
+          } catch {
+            // cycle to next model/key
           }
-        } catch {
-          // cycle to next key or fallback
         }
+        if (llmResponse) break;
       }
     }
 
@@ -441,7 +469,9 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
     // Dynamic contextual fallback if LLM offline / absent API keys
     if (!llmResponse) {
       isSimulated = true;
-      if (isHyperActive) {
+      if (resolvedLesson) {
+        llmResponse = resolvedLesson.deterministicFallbackReply;
+      } else if (isHyperActive) {
         llmResponse = buildHyperActiveFallbackReply(
           userMessage,
           {
@@ -481,8 +511,8 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
       }
     }
 
-    // In Hyper-Active mode: Anti-Repetition & Anti-Looping Guardian
-    if (isHyperActive && llmResponse) {
+    // In Hyper-Active mode: Anti-Repetition & Anti-Looping Guardian (skipped when actively tutoring a curriculum lesson)
+    if (isHyperActive && !resolvedLesson && llmResponse) {
       const lastAssistantMsg = (history || [])
         .slice()
         .reverse()
@@ -519,6 +549,10 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
       ok: true,
       reply: cleanReply,
       simulated: isSimulated,
+      ...(resolvedLesson ? {
+        lessonAction: resolvedLesson.lessonAction,
+        lessonSession: resolvedLesson.updatedSession,
+      } : {}),
       context: {
         studentName,
         targetRole,

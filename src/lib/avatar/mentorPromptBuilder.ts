@@ -12,6 +12,7 @@ export interface BaseMentorContext {
   atsScore: number;
   teacherId?: string;
   slideContextPrompt?: string;
+  lessonContextPrompt?: string;
   hyperActive?: boolean;
   completedQuestsCount?: number;
   completedMissionsCount?: number;
@@ -26,6 +27,21 @@ export function buildMentorSystemPrompt(
   const teacherTag = base.teacherId ? ` (Persona: ${base.teacherId})` : '';
   const skillsText = base.missingSkills.length > 0 ? base.missingSkills.join(', ') : 'No critical gaps flagged yet';
   const slideText = base.slideContextPrompt || '';
+
+  // Interactive Lesson Tutor Mode: overrides Hyper-Active 30-word cap so Ms. Priya can genuinely teach any requested Day's lesson
+  if (base.lessonContextPrompt) {
+    return `You are Ms. Priya, an elite, patient, Socratic AI Teacher & Mentor at PinIT Career OS${teacherTag}.
+You are actively tutoring ${base.studentName} (Target Role: "${base.targetRole}") on a specific curriculum lesson right now.
+
+AUTHORITATIVE LESSON CONTENT:
+${base.lessonContextPrompt}
+
+TUTORING INSTRUCTIONS:
+1. Teach the requested concept directly from the AUTHORITATIVE LESSON CONTENT above—explain intuition first in plain, crystal-clear English, then walk through the example/code snippet if present.
+2. Keep your spoken explanation natural, encouraging, and voice-friendly (3 to 5 crisp sentences, roughly 60 to 130 words). Never invent facts not in the lesson.
+3. End with ONE short interactive check (e.g., ask them to predict output, say "next part" to continue, or invite them to click "Start Full Lesson" for the full interactive classroom).`;
+  }
+
   const hyperBlock = base.hyperActive
     ? buildHyperActivePromptDirective({
         studentName: base.studentName,

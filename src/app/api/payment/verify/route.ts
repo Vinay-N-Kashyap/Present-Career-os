@@ -202,18 +202,20 @@ export async function POST(req: Request) {
           sandboxToCurrent = subSplit.toCurrent;
           sandboxToBonus = subSplit.toBonus;
 
-          await admin
+          const { error: sandboxSubErr } = await admin
             .from('users')
             .update({
               subscription_tier: tier,
               subscription_started_at: new Date(nowMs).toISOString(),
               subscription_expires_at: expiresAt,
               subscription_status: 'active',
-              has_purchased_plan: true,
               pins: subSplit.newPins,
               bonus_pins: subSplit.newBonus,
             })
             .eq('id', gated.user!.id);
+          if (sandboxSubErr) {
+            console.error('[Payment] Failed to update sandbox subscription status:', sandboxSubErr.message);
+          }
         }
 
         // Fill Current Pins up to 120 daily cap first, and deposit all overflow into Bonus Vault (unlimited).
@@ -496,7 +498,6 @@ export async function POST(req: Request) {
           subscription_started_at: new Date(nowMs).toISOString(),
           subscription_expires_at: expiresAt,
           subscription_status: 'active',
-          has_purchased_plan: true,
           pins: nextDailyPins,
           bonus_pins: nextBonusPins,
         })

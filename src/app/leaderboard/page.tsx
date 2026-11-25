@@ -741,6 +741,12 @@ function LeaderboardContent() {
             </span>
           </div>
 
+          {currentUserEntry && (
+            <div style={{ marginTop: 2, fontSize: 11.5, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
+              Weekly EXP {(currentUserEntry.weeklyXp || 0).toLocaleString()} + Arena {(currentUserEntry.arenaPoints || 0).toLocaleString()} = {(currentUserEntry.leaguePoints || 0).toLocaleString()} League Points
+            </div>
+          )}
+
           <div style={{ marginTop: 4, display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
             {currentUserEntry?.zone === 'promotion' ? (
               <span className={`${styles.zoneLabel} ${styles.zonePromotion}`}>

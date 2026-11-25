@@ -6,6 +6,8 @@ import {
   computeBonusClaimToCurrent,
   computeDailyResetWallet,
   computeSubscriptionActivation,
+  getLatest1AmIst,
+  hasActivePurchasedPlan,
   spendFromCurrentPinsOnly,
   splitCreditIntoWallets,
 } from '../src/lib/pins/pinWalletRules';
@@ -13,15 +15,25 @@ import { POST as dailyPinResetPost } from '../src/app/api/cron/daily-pin-reset/r
 import { POST as claimBonusPost } from '../src/app/api/pins/claim-bonus/route';
 import { setSupabaseAdminForTests } from '../src/lib/server/supabaseAdmin';
 
-test('Task 1: 1:00 AM IST Daily Reset sets EVERY user Current Pins strictly to 120 and preserves Bonus Vault', () => {
-  // User with > 1000 legacy current pins resets strictly down to 120
-  assert.deepEqual(computeDailyResetWallet(1050, 400), { pins: 120, bonusPins: 400 });
-  // User with 0 current pins refills strictly up to 120
-  assert.deepEqual(computeDailyResetWallet(0, 0), { pins: 120, bonusPins: 0 });
-  // User with 119 current pins resets strictly to 120
-  assert.deepEqual(computeDailyResetWallet(119, 99999), { pins: 120, bonusPins: 99999 });
-  // Negative corrupt value normalizes cleanly
-  assert.deepEqual(computeDailyResetWallet(-25, 50), { pins: 120, bonusPins: 50 });
+test('Task 1: 1:00 AM IST Daily Reset resets purchased-plan users to 120, leaves non-plan users unchanged, and preserves Bonus Vault', () => {
+  // Purchased plan user with > 1000 legacy current pins resets strictly down to 120
+  assert.deepEqual(computeDailyResetWallet(1050, 400, DAILY_PIN_CAP, true), { pins: 120, bonusPins: 400 });
+  // Purchased plan user with 0 current pins refills strictly up to 120
+  assert.deepEqual(computeDailyResetWallet(0, 0, DAILY_PIN_CAP, true), { pins: 120, bonusPins: 0 });
+  // Purchased plan user with 95 current pins resets strictly to 120 (Bonus untouched)
+  assert.deepEqual(computeDailyResetWallet(95, 464, DAILY_PIN_CAP, true), { pins: 120, bonusPins: 464 });
+  // Free / no-plan user keeps current pins unchanged and Bonus untouched
+  assert.deepEqual(computeDailyResetWallet(50, 100, DAILY_PIN_CAP, false), { pins: 50, bonusPins: 100 });
+  assert.deepEqual(computeDailyResetWallet(0, 200, DAILY_PIN_CAP, false), { pins: 0, bonusPins: 200 });
+  // Plan eligibility checks active subscription + paid course enrollments
+  assert.equal(hasActivePurchasedPlan({ subscription_status: 'active', subscription_tier: 'pro', subscription_expires_at: new Date(Date.now() + 86_400_000).toISOString() }), true);
+  assert.equal(hasActivePurchasedPlan({ subscription_status: 'expired', subscription_tier: 'pro' }), false);
+  assert.equal(hasActivePurchasedPlan({ subscription_status: 'none', subscription_tier: 'free', hasPaidEnrollment: true }), true);
+  // IST 1:00 AM boundary check (19:30 UTC previous UTC day when time is 00:45 AM IST vs 01:15 AM IST)
+  const beforeResetIst = new Date('2026-11-25T19:15:00.000Z'); // 00:45 AM IST on Nov 26
+  const afterResetIst = new Date('2026-11-25T19:45:00.000Z');  // 01:15 AM IST on Nov 26
+  assert.equal(getLatest1AmIst(beforeResetIst).toISOString(), '2026-11-24T19:30:00.000Z');
+  assert.equal(getLatest1AmIst(afterResetIst).toISOString(), '2026-11-25T19:30:00.000Z');
 });
 
 test('Task 1: Purchase credits BOTH Current Pins (up to 120 cap) and unlimited Bonus Vault at once', () => {
@@ -154,20 +166,41 @@ test('Task 2: Every feature usage deducts STRICTLY from Current Pins, NEVER Bonu
   });
 });
 
-test('API: POST /api/cron/daily-pin-reset sets pins=120 for ALL users without touching bonus_pins', async () => {
+test('API: POST /api/cron/daily-pin-reset sets pins=120 ONLY for plan holders without touching bonus_pins', async () => {
   const prevSecret = process.env.CRON_SECRET;
   process.env.CRON_SECRET = 'test-cron-secret-120';
 
-  const updates: Array<Record<string, unknown>> = [];
+  const updates: Array<{ payload: Record<string, unknown>; ids?: string[] }> = [];
   setSupabaseAdminForTests({
-    from: () => ({
+    from: (table: string) => ({
+      select: () => {
+        if (table === 'users') {
+          return {
+            eq: async () => ({
+              data: [{ id: 'u1', subscription_status: 'active', subscription_tier: 'pro', subscription_expires_at: new Date(Date.now() + 86_400_000).toISOString() }],
+              error: null,
+            }),
+          };
+        }
+        if (table === 'user_crash_enrollments') {
+          return {
+            eq: async () => ({ data: [{ user_id: 'u2' }], error: null }),
+          };
+        }
+        return Promise.resolve({ data: [], error: null });
+      },
       update: (payload: Record<string, unknown>) => {
-        updates.push(payload);
+        const entry: { payload: Record<string, unknown>; ids?: string[] } = { payload };
+        updates.push(entry);
         const chain: any = {
           eq: () => chain,
           not: () => chain,
           lt: () => chain,
-          select: async () => ({ data: [{ id: 'u1' }, { id: 'u2' }], error: null }),
+          in: (_col: string, ids: string[]) => {
+            entry.ids = ids;
+            return chain;
+          },
+          select: async () => ({ data: entry.ids ? entry.ids.map(id => ({ id })) : [], error: null }),
         };
         return chain;
       },
@@ -191,11 +224,12 @@ test('API: POST /api/cron/daily-pin-reset sets pins=120 for ALL users without to
     assert.equal(body.resetUsersCount, 2);
     assert.equal(body.freeExpiredCount, 0);
 
-    // Verify the reset update wrote pins = 120 and NEVER touched bonus_pins
-    const pinUpdate = updates.find((u) => 'pins' in u);
+    // Verify the reset update wrote pins = 120 strictly for eligible plan holders and NEVER touched bonus_pins
+    const pinUpdate = updates.find((u) => 'pins' in u.payload);
     assert.ok(pinUpdate, 'Expected a pins update call');
-    assert.equal(pinUpdate.pins, 120);
-    assert.equal('bonus_pins' in pinUpdate, false, 'Cron reset must NEVER overwrite bonus_pins');
+    assert.equal(pinUpdate.payload.pins, 120);
+    assert.deepEqual(pinUpdate.ids, ['u1', 'u2']);
+    assert.equal('bonus_pins' in pinUpdate.payload, false, 'Cron reset must NEVER overwrite bonus_pins');
   } finally {
     setSupabaseAdminForTests(null);
     process.env.CRON_SECRET = prevSecret;

@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
-import { DAILY_PIN_CAP } from '@/lib/pins/pinWalletRules';
+import { DAILY_PIN_CAP, getNext1AmIst } from '@/lib/pins/pinWalletRules';
+import { ensureUserDailyPinReset } from '@/lib/pins/dailyPinReset';
 
 /**
  * [FIX-STAGE: wave1c-pins-balance-api]
@@ -20,6 +21,8 @@ export async function GET(req: Request) {
 
     const userId = gated.user.id;
     const admin = getSupabaseAdmin();
+    const lazyReset = await ensureUserDailyPinReset(admin, userId);
+
     const { data, error } = await admin
       .from('users')
       .select('pins, bonus_pins, pin_history, unlocked_items')
@@ -62,7 +65,9 @@ export async function GET(req: Request) {
       });
     }
 
-    const dailyPins = typeof data.pins === 'number' && Number.isFinite(data.pins) ? data.pins : 0;
+    const dailyPins = typeof lazyReset?.pins === 'number' && lazyReset.resetApplied
+      ? lazyReset.pins
+      : (typeof data.pins === 'number' && Number.isFinite(data.pins) ? data.pins : 0);
     const bonusPins = typeof data.bonus_pins === 'number' && Number.isFinite(data.bonus_pins) ? data.bonus_pins : 0;
     const totalPins = dailyPins + bonusPins;
     const transactions = Array.isArray(data.pin_history) ? data.pin_history : [];
@@ -79,6 +84,9 @@ export async function GET(req: Request) {
       bonusPins,
       totalPins,
       dailyCap: DAILY_PIN_CAP,
+      eligibleForDailyReset: Boolean(lazyReset?.eligibleForDailyReset),
+      dailyResetApplied: Boolean(lazyReset?.resetApplied),
+      nextResetAt: getNext1AmIst().toISOString(),
       transactions,
       unlockedItems,
     });

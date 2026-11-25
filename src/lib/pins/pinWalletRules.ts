@@ -21,6 +21,58 @@
 
 export const DAILY_PIN_CAP = 120;
 export const DAILY_RESET_HOUR_IST = 1;
+const IST_OFFSET_MS = 5.5 * 60 * 60 * 1000;
+
+/**
+ * Returns the most recent 1:00 AM IST boundary (19:30 UTC of the corresponding calendar day)
+ * that is <= `now`.
+ */
+export function getLatest1AmIst(now: Date = new Date()): Date {
+  const istMs = now.getTime() + IST_OFFSET_MS;
+  const ist = new Date(istMs);
+  const boundaryIst = new Date(Date.UTC(ist.getUTCFullYear(), ist.getUTCMonth(), ist.getUTCDate(), DAILY_RESET_HOUR_IST, 0, 0, 0));
+  if (ist.getUTCHours() < DAILY_RESET_HOUR_IST) {
+    boundaryIst.setUTCDate(boundaryIst.getUTCDate() - 1);
+  }
+  return new Date(boundaryIst.getTime() - IST_OFFSET_MS);
+}
+
+/**
+ * Returns the next upcoming 1:00 AM IST boundary strictly > `now`.
+ */
+export function getNext1AmIst(now: Date = new Date()): Date {
+  const latest = getLatest1AmIst(now);
+  return new Date(latest.getTime() + 24 * 60 * 60 * 1000);
+}
+
+export interface PlanEligibilityRecord {
+  subscription_status?: string | null;
+  subscription_tier?: string | null;
+  subscription_expires_at?: string | null;
+  hasPaidEnrollment?: boolean;
+  hasPaidPlanPayment?: boolean;
+}
+
+/**
+ * Determines whether a user qualifies for the 1:00 AM IST daily reset to 120 Current Pins:
+ * true if the user has an active purchased subscription OR an active course/crash plan purchase.
+ */
+export function hasActivePurchasedPlan(record: PlanEligibilityRecord | null | undefined, now: Date = new Date()): boolean {
+  if (!record) return false;
+  if (record.hasPaidEnrollment || record.hasPaidPlanPayment) return true;
+
+  const status = String(record.subscription_status || '').trim().toLowerCase();
+  const tier = String(record.subscription_tier || '').trim().toLowerCase();
+  const hasPaidTier = Boolean(tier && tier !== 'free' && tier !== 'none');
+
+  if (status === 'active' && hasPaidTier) {
+    if (!record.subscription_expires_at) return true;
+    const expiresMs = Date.parse(record.subscription_expires_at);
+    return Number.isFinite(expiresMs) ? expiresMs > now.getTime() : true;
+  }
+
+  return false;
+}
 
 function toNonNegativeInt(value: unknown): number {
   if (typeof value !== 'number' || !Number.isFinite(value)) return 0;
@@ -164,17 +216,27 @@ export function computeBonusClaimToCurrent(
 
 /**
  * Daily 1:00 AM IST reset:
- * EVERY user's Current Pins reset strictly to 120 (whether previously 0, 50, or 1000).
+ * - If user has purchased any active plan (`hasPurchasedPlan === true`): Current Pins reset strictly to 120.
+ * - Else (free / no plan): Current Pins remain unchanged.
  * Bonus Vault pins are never touched or capped.
  */
 export function computeDailyResetWallet(
-  _currentPins: number,
+  currentPins: number,
   currentBonus: number,
-  dailyCap: number = DAILY_PIN_CAP
+  dailyCap: number = DAILY_PIN_CAP,
+  hasPurchasedPlan: boolean = true
 ): { pins: number; bonusPins: number } {
+  const safeCurrent = toNonNegativeInt(currentPins);
+  const safeBonus = toNonNegativeInt(currentBonus);
+  if (!hasPurchasedPlan) {
+    return {
+      pins: safeCurrent,
+      bonusPins: safeBonus,
+    };
+  }
   return {
     pins: Math.max(0, Math.floor(dailyCap)),
-    bonusPins: toNonNegativeInt(currentBonus),
+    bonusPins: safeBonus,
   };
 }
 

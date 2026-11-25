@@ -128,11 +128,11 @@ export async function grantFirstClearXp(
   admin: SupabaseClient,
   userId: string,
   problemId: string
-): Promise<{ xpAwarded: number; newXp?: number }> {
+): Promise<{ xpAwarded: number; newXp?: number; newWeeklyXp?: number }> {
   const reason = `[arena] first clear: ${problemId}`;
   const already = await xpAlreadyGranted(admin, userId, reason);
   if (already !== false) return { xpAwarded: 0 };
   const amount = Math.min(500, Math.max(1, CodeWarsApiService.getAuthoritativeProblem(problemId)?.xpReward ?? 150));
   const grant = await grantXp(admin, userId, amount, reason);
-  return grant.ok ? { xpAwarded: amount, newXp: grant.newXp } : { xpAwarded: 0 };
+  return grant.ok ? { xpAwarded: amount, newXp: grant.newXp, newWeeklyXp: grant.newWeeklyXp } : { xpAwarded: 0 };
 }

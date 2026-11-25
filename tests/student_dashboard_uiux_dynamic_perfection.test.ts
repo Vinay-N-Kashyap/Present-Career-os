@@ -20,7 +20,7 @@ describe('STUDENT DASHBOARD: UI/UX SHADES, ALIGNMENT & REAL DYNAMIC DATA AUDIT',
   };
 
   it('1. Live data integration in dashboard/page.tsx (leaderboard, independent projects, enrollment)', () => {
-    assert.ok(files.page.includes('/api/leaderboard?'), 'Must fetch live leaderboard standing & ELO');
+    assert.ok(files.page.includes('/api/analytics/dashboard') || files.page.includes('/api/leaderboard?'), 'Must fetch live leaderboard standing & ELO');
     assert.ok(files.page.includes('fetchIndependentProjectsFromDb'), 'Must fetch independent projects from DB/cache');
     assert.ok(files.page.includes('crashCourseEnrollmentService.getActiveEnrollment()'), 'Must fetch active crash-course enrollment');
     assert.ok(files.page.includes('pinit:user_profile_updated'), 'Must listen to live profile/ELO updates');

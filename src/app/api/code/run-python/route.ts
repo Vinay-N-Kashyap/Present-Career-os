@@ -5,6 +5,7 @@ import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
 import { getAuthoritativeQuest } from '@/lib/quests/questRegistry';
 import { questNeedsPassReceipt } from '@/lib/courses/gradeTest';
 import { runPythonInSandbox } from '@/lib/server/pythonSandbox';
+import { grantXp } from '@/lib/server/xpGrant';
 
 function getSupabaseAdmin() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
@@ -26,13 +27,9 @@ async function persistPythonCompletionServerSide(uid: string, questId: string, x
     const current: string[] = profile.completed_quests || [];
     if (current.includes(questId)) return;
     const newCompleted = [...current, questId];
-    const { data: award, error: awardError } = await admin.rpc('increment_xp', {
-      p_user_id: uid,
-      p_amount: xpAmount,
-      p_reason: `quest:${questId}`,
-    });
-    if (awardError || !award?.ok) {
-      console.warn('[run-python] XP award RPC failed:', awardError?.message || award?.reason);
+    const grant = await grantXp(admin, uid, xpAmount, `quest:${questId}`);
+    if (!grant.ok) {
+      console.warn('[run-python] grantXp failed:', grant.message);
       return;
     }
     const { error: updateError } = await admin

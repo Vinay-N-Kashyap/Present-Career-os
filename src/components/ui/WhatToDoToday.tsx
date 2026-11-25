@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import type { ServerPriorityAction } from '@/lib/dashboard/dashboardMetrics';
 
 export interface ActionProfile {
+  user_id?: string;
   ats_score?: number;
+  has_resume_in_vault?: boolean;
   trust_score?: number;
   career_dna_score?: number;
   mission_streak?: number;
@@ -17,6 +20,7 @@ export interface ActionProfile {
   xp_total?: number;
   active_track?: 'sde' | 'iot' | string;
   target_role?: string;
+  server_actions?: ServerPriorityAction[];
 }
 
 interface Action {
@@ -31,6 +35,9 @@ interface Action {
   bg: string;
   border: string;
   urgency: number;
+  serverCompleted?: boolean;
+  completionReason?: string;
+  progressPct?: number;
 }
 
 function pickActions(profile: ActionProfile): Action[] {
@@ -157,13 +164,31 @@ export default function WhatToDoToday({
   style = {},
 }: WhatToDoTodayProps) {
   const safeProfile = profile || ({} as ActionProfile);
-  const actions = pickActions(safeProfile);
+  const actions: Action[] = Array.isArray(safeProfile.server_actions) && safeProfile.server_actions.length > 0
+    ? safeProfile.server_actions.slice(0, 3).map((sa, idx) => ({
+        id: sa.id,
+        icon: sa.icon,
+        title: sa.title,
+        desc: sa.desc,
+        href: sa.href,
+        cta: sa.cta,
+        xp: sa.xp,
+        color: sa.color,
+        bg: sa.bg,
+        border: sa.border,
+        urgency: 100 - idx,
+        serverCompleted: Boolean(sa.completed),
+        completionReason: sa.completionReason,
+        progressPct: sa.progressPct,
+      }))
+    : pickActions(safeProfile);
   const isVertical = layout === 'vertical';
 
-  // Honest baseline: 0 items pre-checked on initial render; persisted per day in localStorage
+  // Honest baseline: 0 items pre-checked on initial render; server-verified actions override local state
   const [completedItems, setCompletedItems] = useState<Record<string, boolean>>({});
+  const uidSegment = safeProfile.user_id ? `${safeProfile.user_id}_` : '';
   const todayKey = typeof window !== 'undefined'
-    ? `pinit_daily_actions_${new Date().toISOString().slice(0, 10)}`
+    ? `pinit_daily_actions_${uidSegment}${new Date().toISOString().slice(0, 10)}`
     : 'pinit_daily_actions';
 
   useEffect(() => {
@@ -173,6 +198,8 @@ export default function WhatToDoToday({
       if (saved) {
         const parsed = JSON.parse(saved);
         if (parsed && typeof parsed === 'object') setCompletedItems(parsed);
+      } else {
+        setCompletedItems({});
       }
     } catch {}
   }, [todayKey]);
@@ -187,7 +214,7 @@ export default function WhatToDoToday({
     });
   };
 
-  const doneCount = actions.filter(a => Boolean(completedItems[a.id])).length;
+  const doneCount = actions.filter(a => Boolean(a.serverCompleted || completedItems[a.id])).length;
 
   return (
     <div
@@ -283,7 +310,7 @@ export default function WhatToDoToday({
         }
       >
         {actions.map((action, i) => {
-          const isDone = Boolean(completedItems[action.id]);
+          const isDone = Boolean(action.serverCompleted || completedItems[action.id]);
           return (
             <Link
               key={action.id + '-' + i}
@@ -293,12 +320,12 @@ export default function WhatToDoToday({
             >
               <div
                 style={{
-                  background: isDone ? 'rgba(16, 185, 129, 0.08)' : 'var(--dash-subtle-bg, var(--bg3))',
-                  border: `1px solid ${isDone ? 'rgba(16, 185, 129, 0.35)' : 'var(--dash-inner-border, var(--border))'}`,
+                  background: isDone ? 'rgba(16, 185, 129, 0.10)' : 'var(--dash-subtle-bg, var(--bg3))',
+                  border: `1px solid ${isDone ? 'rgba(16, 185, 129, 0.38)' : 'var(--dash-inner-border, var(--border))'}`,
                   borderRadius: 12,
                   padding: isVertical ? '12px 15px' : '14px 16px',
                   cursor: 'pointer',
-                  transition: 'transform 0.18s ease, border-color 0.18s ease, background 0.18s ease',
+                  transition: 'transform 0.18s ease, border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease',
                   borderLeft: `3.5px solid ${isDone ? '#10b981' : action.color}`,
                   display: 'flex',
                   alignItems: 'center',
@@ -306,16 +333,24 @@ export default function WhatToDoToday({
                   gap: 12,
                   height: '100%',
                   boxSizing: 'border-box',
-                  boxShadow: 'var(--hud-card-shadow, 0 2px 8px -1px rgba(0,0,0,0.05))',
+                  boxShadow: isDone
+                    ? '0 4px 14px -2px rgba(16, 185, 129, 0.16)'
+                    : 'var(--hud-card-shadow, 0 2px 8px -1px rgba(0,0,0,0.05))',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = isVertical ? 'translateX(3px)' : 'translateY(-2px)';
+                  e.currentTarget.style.transform = isVertical ? 'translateX(4px)' : 'translateY(-2px)';
                   e.currentTarget.style.borderColor = isDone ? '#10b981' : action.color;
+                  e.currentTarget.style.boxShadow = isDone
+                    ? '0 8px 18px -4px rgba(16, 185, 129, 0.25)'
+                    : '0 8px 18px -4px rgba(99, 102, 241, 0.20)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.borderColor = isDone ? 'rgba(16, 185, 129, 0.35)' : 'var(--dash-inner-border, var(--border))';
+                  e.currentTarget.style.borderColor = isDone ? 'rgba(16, 185, 129, 0.38)' : 'var(--dash-inner-border, var(--border))';
                   e.currentTarget.style.borderLeftColor = isDone ? '#10b981' : action.color;
+                  e.currentTarget.style.boxShadow = isDone
+                    ? '0 4px 14px -2px rgba(16, 185, 129, 0.16)'
+                    : 'var(--hud-card-shadow, 0 2px 8px -1px rgba(0,0,0,0.05))';
                 }}
               >
                 {/* Left Checkbox */}
@@ -397,16 +432,33 @@ export default function WhatToDoToday({
                   </div>
                 </div>
 
-                {/* Right Single Contextual XP Reward + Subtle Chevron */}
+                {/* Right Single Contextual XP Reward or Server Verified Badge + Subtle Chevron */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+                  {action.completionReason ? (
+                    <span
+                      className="db-tabular"
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 700,
+                        color: isDone ? '#10b981' : 'var(--dash-subtext, var(--t2))',
+                        background: isDone ? 'rgba(16,185,129,0.14)' : 'rgba(99,102,241,0.10)',
+                        border: `1px solid ${isDone ? 'rgba(16,185,129,0.32)' : 'rgba(99,102,241,0.22)'}`,
+                        padding: '2px 6px',
+                        borderRadius: 6,
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {action.completionReason}
+                    </span>
+                  ) : null}
                   <span
                     className="db-tabular"
                     style={{
                       fontSize: 10.5,
                       fontWeight: 800,
-                      color: '#06b6d4',
-                      background: 'rgba(6,182,212,0.12)',
-                      border: '1px solid rgba(6,182,212,0.26)',
+                      color: isDone ? '#10b981' : '#06b6d4',
+                      background: isDone ? 'rgba(16,185,129,0.12)' : 'rgba(6,182,212,0.12)',
+                      border: `1px solid ${isDone ? 'rgba(16,185,129,0.3)' : 'rgba(6,182,212,0.26)'}`,
                       padding: '2.5px 7px',
                       borderRadius: 6,
                       whiteSpace: 'nowrap',

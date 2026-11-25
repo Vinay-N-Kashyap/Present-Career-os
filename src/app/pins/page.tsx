@@ -83,10 +83,14 @@ function formatDate(ts: number): string {
 
 function nextRefreshCountdown(): string {
   const now = new Date();
-  const next = new Date();
-  next.setHours(1, 0, 0, 0);
-  if (next <= now) next.setDate(next.getDate() + 1);
-  const diff = Math.floor((next.getTime() - now.getTime()) / 1000);
+  const istOffsetMs = 5.5 * 60 * 60 * 1000;
+  const nowIst = new Date(now.getTime() + istOffsetMs);
+  const nextIst = new Date(Date.UTC(nowIst.getUTCFullYear(), nowIst.getUTCMonth(), nowIst.getUTCDate(), 1, 0, 0, 0));
+  if (nextIst.getTime() <= nowIst.getTime()) {
+    nextIst.setUTCDate(nextIst.getUTCDate() + 1);
+  }
+  const nextUtcMs = nextIst.getTime() - istOffsetMs;
+  const diff = Math.max(0, Math.floor((nextUtcMs - now.getTime()) / 1000));
   return `${Math.floor(diff / 3600)}h ${Math.floor((diff % 3600) / 60)}m`;
 }
 

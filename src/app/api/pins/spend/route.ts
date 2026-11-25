@@ -4,6 +4,7 @@ import { validateBody } from '@/lib/server/validate';
 import { z } from 'zod';
 import { createClient } from '@supabase/supabase-js';
 import { DAILY_PIN_CAP, spendFromCurrentPinsOnly } from '@/lib/pins/pinWalletRules';
+import { ensureUserDailyPinReset } from '@/lib/pins/dailyPinReset';
 
 // Server-authoritative cost table — client cannot override these (1 Rs = 10 Pins Economy)
 const SERVER_PIN_COSTS: Record<string, number> = {
@@ -145,6 +146,9 @@ export async function POST(req: Request) {
     const admin = createClient(url, serviceKey, {
       auth: { persistSession: false, autoRefreshToken: false },
     });
+
+    // Trigger lazy 1:00 AM IST daily reset for purchased-plan users before spend check
+    await ensureUserDailyPinReset(admin, userId);
 
     // 1. Fetch user profile with current daily pins and bonus vault balance
     const { data: userProfile, error: profileErr } = await admin

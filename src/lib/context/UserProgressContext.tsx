@@ -584,8 +584,8 @@ export function UserProgressProvider({ children }: { children: React.ReactNode }
       return;
     }
     try {
-      const res = await api.post<{ ok: boolean; newXp?: number; amountAdded?: number }>('/api/xp/add', { amount, reason, actionType: 'general' });
-      applyServerXp(res?.newXp, res?.amountAdded ?? amount, reason);
+      const res = await api.post<{ ok: boolean; newXp?: number; newWeeklyXp?: number; amountAdded?: number }>('/api/xp/add', { amount, reason, actionType: 'general' });
+      applyServerXp(res?.newXp, res?.amountAdded ?? amount, reason, res?.newWeeklyXp);
     } catch (err: unknown) {
       // Resilient fallback for local dev / offline sessions
       setXpState(prev => {

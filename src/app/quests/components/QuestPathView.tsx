@@ -68,6 +68,11 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
   activeSubTab,
   router
 }) => {
+  const activeExtra = learningPathMode.startsWith('extra:')
+    ? extraRoadmaps.find(rm => extraRoadmapMode(rm.id) === learningPathMode) || null
+    : null;
+  const activeEvidence = activeExtra?.evidenceSummary || (onboardingAnswers as any)?.roadmap_evidence_summary || null;
+
   return (
     <>
       {/* ── MODE 2: Dynamic Goal-Based Snake Roadmap Path ───────────────── */}
@@ -77,13 +82,13 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
         id="quest-roadmap-chart-section"
       >
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28, flexWrap: 'wrap', gap: 12 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 12 }}>
           <div>
             <h2
               data-testid="quest-roadmap-title"
               style={{ fontSize: 22, fontWeight: 900, color: 'var(--t1)', fontFamily: 'var(--font-display)', letterSpacing: '-0.3px' }}
             >
-              Dynamic Career Roadmap ({COURSES_REGISTRY.find(c => c.id === activeCourseId)?.title.split('(')[0].trim() || onboardingAnswers?.role || trajectory.roleTitle})
+              Dynamic Career Roadmap ({activeExtra?.goal || COURSES_REGISTRY.find(c => c.id === activeCourseId)?.title.split('(')[0].trim() || onboardingAnswers?.role || trajectory.roleTitle})
             </h2>
             <p style={{ fontSize: 14.5, color: 'var(--t3)', marginTop: 4 }}>
               Sequential milestone nodes. Single-click any node to launch its quests.
@@ -371,16 +376,17 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                 ];
 
                 const activeCourseObj = COURSES_REGISTRY.find(c => c.id === activeCourseId) || COURSES_REGISTRY[0];
-                const displayNodes: TrajectoryNode[] = (trajectory?.nodes && trajectory.nodes.length > 1)
+                const isPersonalizedModules = Boolean(activeExtra || (modules && modules.some((m: any) => Boolean(m?.whyThisStage))));
+                const displayNodes: TrajectoryNode[] = (!isPersonalizedModules && trajectory?.nodes && trajectory.nodes.length > 1)
                   ? trajectory.nodes.slice(0, 8)
                   : (modules && modules.length > 0
-                      ? modules.slice(0, 8).map((m: Module, i: number) => ({
+                      ? modules.slice(0, 8).map((m: any, i: number) => ({
                           nodeId: m.id,
-                          courseId: activeCourseId || activeCourseObj.id,
+                          courseId: m.courseId || activeCourseId || activeCourseObj.id,
                           title: m.title.replace(/^.*—\s*Stage\s*\d+:\s*/i, '').trim() || m.title,
-                          shortDesc: m.desc,
+                          shortDesc: m.whyThisStage || m.desc,
                           icon: `S${i + 1}`,
-                          skillsLearned: [],
+                          skillsLearned: Array.isArray(m.skillsAddressed) ? m.skillsAddressed : [],
                           careerImpact: '+15% Mastery',
                           estimatedDays: (m.estimatedWeeks || 1) * 7,
                         }))
@@ -618,6 +624,36 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
               </span>
             </div>
             
+            {(activeEvidence?.resumeTitle || (activeEvidence?.provenSkills?.length > 0) || (activeEvidence?.targetGaps?.length > 0)) && (
+              <div
+                data-testid="roadmap-personalization-banner"
+                style={{
+                  padding: '12px 16px',
+                  borderRadius: 14,
+                  background: 'rgba(16, 185, 129, 0.08)',
+                  border: '1px solid rgba(16, 185, 129, 0.28)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 4,
+                  fontSize: 12.5,
+                  color: 'var(--t2)',
+                }}
+              >
+                <div style={{ fontWeight: 800, color: 'var(--success)' }}>
+                  Personalized From Your Resume, Vault &amp; Profile
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+                  {activeEvidence.resumeTitle && <span>Resume: <strong style={{ color: 'var(--t1)' }}>{activeEvidence.resumeTitle}</strong></span>}
+                  {Array.isArray(activeEvidence.provenSkills) && activeEvidence.provenSkills.length > 0 && (
+                    <span>Verified Skills: <strong style={{ color: 'var(--t1)' }}>{activeEvidence.provenSkills.slice(0, 5).join(', ')}</strong></span>
+                  )}
+                  {Array.isArray(activeEvidence.targetGaps) && activeEvidence.targetGaps.length > 0 && (
+                    <span>Targeting Gaps: <strong style={{ color: '#f59e0b' }}>{activeEvidence.targetGaps.slice(0, 4).join(', ')}</strong></span>
+                  )}
+                </div>
+              </div>
+            )}
+
             {activeSubTab === 'custom_roadmap' ? (
               modules && modules.length > 0 ? (
                 modules.map((mod, idx) => {
@@ -671,7 +707,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                             return;
                           }
                           if (nextQuestInStage) {
-                            handleLaunchQuest(nextQuestInStage, activeCourseId || 'course-java-logic');
+                            handleLaunchQuest(nextQuestInStage, (mod as any).courseId || activeCourseId || 'course-java-logic');
                           }
                         }}
                         className={`glass-card-premium ${isLocked ? '' : 'card-hover'}`}
@@ -726,6 +762,11 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                               <p style={{ fontSize: 13, color: 'var(--t3)', marginTop: 4, marginBottom: 0, lineHeight: 1.35 }}>
                                 {mod.desc}
                               </p>
+                              {(mod as any).whyThisStage && (
+                                <div style={{ fontSize: 11.5, color: 'var(--success)', fontWeight: 700, marginTop: 5 }}>
+                                  {(mod as any).whyThisStage}
+                                </div>
+                              )}
                             </div>
                           </div>
 
@@ -782,7 +823,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                                       }
                                       return;
                                     }
-                                    handleLaunchQuest(q, activeCourseId || 'course-java-logic');
+                                    handleLaunchQuest(q, (mod as any).courseId || activeCourseId || 'course-java-logic');
                                   }}
                                   style={{
                                     fontSize: 12,

@@ -104,6 +104,7 @@ export async function POST(req: Request) {
     const nextPins = pinSplit.newPins;
     const nextBonusPins = pinSplit.newBonus;
     let xpCreditedByRpc = false;
+    let weeklyCreditedByRpc = false;
 
     // Try authoritative increment_xp RPC first if available
     try {
@@ -114,7 +115,10 @@ export async function POST(req: Request) {
       });
       if (!rpcErr && rpcRes?.ok) {
         if (typeof rpcRes.new_xp === 'number') nextXp = rpcRes.new_xp;
-        if (typeof rpcRes.new_weekly_xp === 'number') nextWeeklyXp = rpcRes.new_weekly_xp;
+        if (typeof rpcRes.new_weekly_xp === 'number') {
+          nextWeeklyXp = rpcRes.new_weekly_xp;
+          weeklyCreditedByRpc = true;
+        }
         xpCreditedByRpc = true;
       }
     } catch {
@@ -135,10 +139,12 @@ export async function POST(req: Request) {
       bonus_pins: nextBonusPins,
       onboarding_answers: nextAnswers,
     };
-    // increment_xp is atomic and already wrote these columns. Rewriting the
-    // values read before the RPC could erase XP earned by a concurrent request.
+    // Older increment_xp RPCs (20260913) only update xp_total and NOT weekly_xp.
+    // Always sync weekly_xp whenever the RPC did not return new_weekly_xp.
     if (!xpCreditedByRpc) {
       userUpdate.xp_total = nextXp;
+    }
+    if (!weeklyCreditedByRpc) {
       userUpdate.weekly_xp = nextWeeklyXp;
     }
 

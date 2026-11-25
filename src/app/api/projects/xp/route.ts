@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     const amount = projectRewardAmount(authored);
     const grant = await grantXp(admin, userId, amount, reason);
     if (!grant.ok) return fail(503, grant.error, grant.message);
-    return NextResponse.json({ ok: true, xpAwarded: amount, newXp: grant.newXp, newLevel: grant.newLevel });
+    return NextResponse.json({ ok: true, xpAwarded: amount, newXp: grant.newXp, newWeeklyXp: grant.newWeeklyXp, newLevel: grant.newLevel });
   } catch (err: unknown) {
     console.error('[projects/xp] error:', err);
     return fail(500, 'XP_FAILED', 'Could not add the project XP. Please try again.');

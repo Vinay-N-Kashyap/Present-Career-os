@@ -17,6 +17,7 @@ import {
   collapseElongatedChars,
   phoneticKey,
 } from '@/components/avatar/hooks/useVoiceNavigation';
+import { isSpecificLessonRequest } from '@/lib/avatar/lessonIntent';
 
 export interface VoiceActionMatch {
   matched: boolean;
@@ -609,6 +610,11 @@ export function matchVoiceActionIntent(
   options?: { addressedMentor?: boolean }
 ): VoiceActionMatch {
   if (!rawTranscript || rawTranscript.trim().length < 3) {
+    return emptyMatch();
+  }
+
+  // Specific day/course/topic lesson requests (e.g., "start Python AI Day 1") belong to Ms. Priya's lesson resolver
+  if (isSpecificLessonRequest(rawTranscript)) {
     return emptyMatch();
   }
 
