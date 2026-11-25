@@ -7,6 +7,8 @@ import { COURSES_REGISTRY } from '@/lib/data/coursesData';
 import { collectUserRoadmapEvidence, type UserRoadmapEvidence } from '@/lib/roadmap/userEvidenceContext';
 import { getRoadmapCourseIds } from '@/lib/roadmap/roadmapCourses';
 
+export const maxDuration = 30;
+
 function stripThinkingAndFences(raw: string): string {
   return String(raw || '')
     .replace(/<think>[\s\S]*?<\/think>/gi, '')
@@ -79,34 +81,37 @@ async function callRoadmapAi(systemPrompt: string, userPrompt: string): Promise<
     ...(process.env.GROQ_API_KEY ? [process.env.GROQ_API_KEY.trim()] : []),
   ];
 
-  const groqModels = ['qwen/qwen3.8-27b', 'openai/gpt-oss-20b'];
-  for (const key of groqKeys) {
-    for (const model of groqModels) {
-      try {
-        const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${key}`,
-          },
-          body: JSON.stringify({
-            model,
-            messages: [
-              { role: 'system', content: systemPrompt },
-              { role: 'user', content: userPrompt },
-            ],
-            temperature: 0.35,
-            max_tokens: 1100,
-          }),
-          signal: AbortSignal.timeout(7000),
-        });
-        if (res.ok) {
-          const data = await res.json();
-          const content = data?.choices?.[0]?.message?.content;
-          if (typeof content === 'string' && content.trim()) return content;
-        }
-      } catch {}
-    }
+  // Try at most 2 fast Groq attempts (strict 4.5s timeout each) so Serverless never times out
+  const attempts: Array<{ key: string; model: string }> = [];
+  if (groqKeys[0]) attempts.push({ key: groqKeys[0], model: 'qwen/qwen3.8-27b' });
+  if (groqKeys[1]) attempts.push({ key: groqKeys[1], model: 'openai/gpt-oss-20b' });
+  else if (groqKeys[0]) attempts.push({ key: groqKeys[0], model: 'openai/gpt-oss-20b' });
+
+  for (const { key, model } of attempts) {
+    try {
+      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${key}`,
+        },
+        body: JSON.stringify({
+          model,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt },
+          ],
+          temperature: 0.35,
+          max_tokens: 1100,
+        }),
+        signal: AbortSignal.timeout(4500),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        const content = data?.choices?.[0]?.message?.content;
+        if (typeof content === 'string' && content.trim()) return content;
+      }
+    } catch {}
   }
 
   // Gemini Flash failover when Groq keys are unavailable
@@ -122,7 +127,7 @@ async function callRoadmapAi(systemPrompt: string, userPrompt: string): Promise<
             contents: [{ parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }] }],
             generationConfig: { temperature: 0.35, maxOutputTokens: 1100 },
           }),
-          signal: AbortSignal.timeout(7000),
+          signal: AbortSignal.timeout(4500),
         }
       );
       if (res.ok) {
@@ -134,6 +139,24 @@ async function callRoadmapAi(systemPrompt: string, userPrompt: string): Promise<
   }
 
   return null;
+}
+
+function resolveGoalAlignedCourse(requestedCourseId: string, goalText: string) {
+  const explicit = COURSES_REGISTRY.find((c) => c.id === requestedCourseId);
+  const lower = goalText.toLowerCase();
+  if (!lower) return explicit || COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js') || COURSES_REGISTRY[0];
+
+  if (/\b(?:python\s*ai|ai\s*engineer|machine\s*learning|ml|llm|generative)\b/i.test(lower)) {
+    return COURSES_REGISTRY.find((c) => c.id === 'course-ai-python') || explicit || COURSES_REGISTRY[0];
+  }
+  if (/\b(?:full[\s-]?stack|react|node|web\s*dev|frontend|backend)\b/i.test(lower)) {
+    // Prefer Full-Stack JS unless user explicitly asks for Python Backend or Java
+    if (/\bpython\b/i.test(lower) && !/\bfull[\s-]?stack\b/i.test(lower)) {
+      return COURSES_REGISTRY.find((c) => c.id === 'course-python-backend') || explicit || COURSES_REGISTRY[0];
+    }
+    return COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js') || explicit || COURSES_REGISTRY[0];
+  }
+  return explicit || COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js') || COURSES_REGISTRY[0];
 }
 
 export async function POST(req: Request) {
@@ -172,9 +195,22 @@ export async function POST(req: Request) {
       admin = getSupabaseAdmin();
     } catch {}
 
-    const evidence = useResumeAndVault !== false
-      ? await collectUserRoadmapEvidence(admin, userId, { parseStorageResume: true })
-      : null;
+    let evidence: UserRoadmapEvidence | null = null;
+    if (useResumeAndVault !== false) {
+      // Read pre-indexed Vault metadata first (~50ms); only download+OCR Storage PDF if no skills exist yet, with strict 2.5s budget
+      evidence = await collectUserRoadmapEvidence(admin, userId, { parseStorageResume: false });
+      if (
+        evidence?.hasResumeInVault &&
+        evidence.claimedSkills.length === 0 &&
+        evidence.provenSkills.length === 0
+      ) {
+        const ocrResult = await Promise.race([
+          collectUserRoadmapEvidence(admin, userId, { parseStorageResume: true }).catch(() => null),
+          new Promise<null>((resolve) => setTimeout(() => resolve(null), 2500)),
+        ]);
+        if (ocrResult) evidence = ocrResult;
+      }
+    }
 
     const resolvedGoal =
       String(goal || '').trim() ||
@@ -182,10 +218,7 @@ export async function POST(req: Request) {
       evidence?.targetRole ||
       'Full-Stack Software Engineer';
 
-    const matchedCourse =
-      COURSES_REGISTRY.find((c) => c.id === courseId) ||
-      COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js') ||
-      COURSES_REGISTRY[0];
+    const matchedCourse = resolveGoalAlignedCourse(courseId, resolvedGoal);
 
     const maxCourses = Math.max(1, Math.min(6, Math.round(Math.max(30, Number(durationDays) || 30) / 30)));
     let selectedCourseIds = selectEvidenceDrivenCourseIds(matchedCourse.id, Number(durationDays) || 30, resolvedGoal, evidence);

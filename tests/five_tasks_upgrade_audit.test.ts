@@ -23,6 +23,10 @@ import { resolveLessonRequest } from '../src/lib/avatar/lessonResolver';
 import { buildMentorSystemPrompt } from '../src/lib/avatar/mentorPromptBuilder';
 import { matchVoiceActionIntent } from '../src/lib/avatar/voiceActionRouter';
 import { matchNavigationIntent } from '../src/components/avatar/hooks/useVoiceNavigation';
+import {
+  getCurrentSprintStartMonday1AmIst,
+  reconcileUserWeeklyLeaguePoints,
+} from '../src/lib/leagues/reconcileWeeklyLeaguePoints';
 
 const ROOT = process.cwd();
 
@@ -304,4 +308,128 @@ test('Task 5: Ms. Priya resolves Python AI Day 1, SQL Day 3 & topic queries to r
   // 6. Classroom page recognizes Ms. Priya metadata
   const lessonPageSrc = fs.readFileSync(path.join(ROOT, 'src/app/quests/lesson/page.tsx'), 'utf8');
   assert.ok(lessonPageSrc.includes("priya: { name: 'Ms. Priya'"), 'TEACHER_METADATA must include priya for classroom rendering');
+});
+
+test('Production Fix 1: Ms. Priya resolves spoken Day 1, relative previous day & launch phrases to active Python Day 1', async () => {
+  // 1. Voice router must NOT hijack spoken Day 1 / relative previous-day topic questions
+  assert.equal(isSpecificLessonRequest("I didn't get Python day one so can you start again"), true);
+  assert.equal(isSpecificLessonRequest('i did not understand previous day topic comment so can u start lesson'), true);
+  assert.equal(matchVoiceActionIntent('i did not understand previous day topic comment so can u start lesson', { addressedMentor: true }).matched, false);
+  // Plain "start lesson" without course/day/topic must STILL match voiceActionRouter!
+  assert.equal(matchVoiceActionIntent('start lesson', { addressedMentor: true }).matched, true);
+
+  const devCompletedQuests = [
+    'python-lecture1-day-1',
+    'python-practice1-day-1',
+    'python-lecture1-day-2',
+  ];
+
+  // 2. Spoken "Python day one so can you start again" resolves to course-python-backend Day 1 (NOT Day 60!)
+  const pyDayOne = await resolveLessonRequest("I didn't get Python day one so can you start again", {
+    teacherId: 'priya',
+    completedQuests: devCompletedQuests,
+    enrolledTrack: 'sde_fullstack',
+  });
+  assert.ok(pyDayOne, 'Must resolve Python day one');
+  assert.equal(pyDayOne.lessonAction.courseId, 'course-python-backend');
+  assert.equal(pyDayOne.lessonAction.dayNum, 1);
+  assert.equal(pyDayOne.lessonAction.questId, 'python-lecture1-day-1');
+  assert.equal(pyDayOne.lessonAction.autoLaunch, true);
+
+  // 3. Relative "previous day topic comment so can u start lesson" resolves to active Python Day 1 (NOT fullstack-js!)
+  const prevDay = await resolveLessonRequest('i did not understand previous day topic comment so can u start lesson', {
+    teacherId: 'priya',
+    completedQuests: devCompletedQuests,
+    enrolledTrack: 'sde_fullstack',
+  });
+  assert.ok(prevDay, 'Must resolve previous day topic');
+  assert.equal(prevDay.lessonAction.courseId, 'course-python-backend');
+  assert.equal(prevDay.lessonAction.dayNum, 1);
+  assert.equal(prevDay.lessonAction.questId, 'python-lecture1-day-1');
+  assert.equal(prevDay.lessonAction.autoLaunch, true);
+
+  // 4. Prompt builder explicitly instructs Priya to revisit any Day 1 freely
+  const prompt = buildMentorSystemPrompt({
+    studentName: 'dev',
+    targetRole: 'Full Stack Engineer',
+    questTitle: pyDayOne.lessonAction.lessonTitle,
+    missingSkills: [],
+    atsScore: 72,
+    teacherId: 'priya',
+    hyperActive: true,
+    lessonContextPrompt: pyDayOne.promptDigest,
+  });
+  assert.ok(prompt.includes('revisit ANY requested Day (including Day 1'));
+});
+
+test('Production Fix 2 & 3: Custom Roadmap avoids Storage OCR timeout, aligns goal track & modal scrolls cleanly', () => {
+  const genSrc = fs.readFileSync(path.join(ROOT, 'src/app/api/quests/roadmap/generate/route.ts'), 'utf8');
+  assert.ok(genSrc.includes('export const maxDuration = 30'), 'Roadmap route must export maxDuration = 30 for Vercel');
+  assert.ok(genSrc.includes('parseStorageResume: false'), 'Roadmap route must check indexed vault metadata first before Storage OCR');
+  assert.ok(genSrc.includes('resolveGoalAlignedCourse'), 'Roadmap route must align course to career goal instead of stale java-logic default');
+
+  const modalSrc = fs.readFileSync(path.join(ROOT, 'src/app/quests/components/QuestDetailModal.tsx'), 'utf8');
+  assert.ok(modalSrc.includes("maxHeight: '86vh'"), 'CustomRoadmapModal must bound height to 86vh');
+  assert.ok(modalSrc.includes("overflowY: 'auto'"), 'CustomRoadmapModal body must scroll vertically');
+  assert.ok(modalSrc.includes('zIndex: 1300'), 'CustomRoadmapModal must sit above bottom Mentor floating bar');
+  assert.ok(modalSrc.includes("monthsCount === 1 ? 'Month' : 'Months'"), 'CustomRoadmapModal must render singular "1 Month" grammar');
+});
+
+test('Production Fix 4: Self-healing weekly League Points reconciles xp_ledger + arena_solo_matches and surfaces breakdown', async () => {
+  const fixedNow = new Date('2026-11-25T11:00:00.000Z'); // Wed Nov 25 16:30 IST
+  const sprintStart = getCurrentSprintStartMonday1AmIst(fixedNow);
+  // Mon Nov 23 2026 01:00 IST == Sun Nov 22 2026 19:30 UTC
+  assert.equal(sprintStart.toISOString(), '2026-11-22T19:30:00.000Z');
+
+  let updatedPayload: any = null;
+  const mockAdmin = {
+    from(table: string) {
+      if (table === 'xp_ledger') {
+        const chain: any = {
+          select: () => chain,
+          eq: () => chain,
+          gte: () => Promise.resolve({ data: [{ amount: 200 }, { amount: 470 }] }),
+        };
+        return chain;
+      }
+      if (table === 'arena_solo_matches') {
+        const chain: any = {
+          select: () => chain,
+          eq: () => chain,
+          gte: () => Promise.resolve({ data: [{ settlement: { arenaPointsAwarded: 50 } }] }),
+        };
+        return chain;
+      }
+      if (table === 'users') {
+        return {
+          update(payload: any) {
+            updatedPayload = payload;
+            return { eq: () => Promise.resolve({ error: null }) };
+          },
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    },
+  };
+
+  const healed = await reconcileUserWeeklyLeaguePoints(mockAdmin, {
+    userId: 'user-dev-1',
+    storedWeeklyXp: 200,
+    storedArenaPoints: 0,
+    now: fixedNow,
+  });
+
+  assert.equal(healed.healed, true);
+  assert.equal(healed.weeklyXp, 670);
+  assert.equal(healed.arenaPoints, 50);
+  assert.equal(healed.leaguePoints, 720);
+  assert.equal(updatedPayload?.weekly_xp, 670);
+  assert.equal(updatedPayload?.weekly_arena_points, 50);
+
+  const lbRouteSrc = fs.readFileSync(path.join(ROOT, 'src/app/api/leaderboard/route.ts'), 'utf8');
+  const dashRouteSrc = fs.readFileSync(path.join(ROOT, 'src/app/api/analytics/dashboard/route.ts'), 'utf8');
+  const lbPageSrc = fs.readFileSync(path.join(ROOT, 'src/app/leaderboard/page.tsx'), 'utf8');
+  assert.ok(lbRouteSrc.includes('reconcileUserWeeklyLeaguePoints'));
+  assert.ok(dashRouteSrc.includes('reconcileUserWeeklyLeaguePoints'));
+  assert.ok(lbPageSrc.includes('+ Arena'));
 });

@@ -568,6 +568,7 @@ export function useQuestProgression() {
         const res = await fetch('/api/quests/roadmap/generate', {
           method: 'POST',
           headers,
+          signal: AbortSignal.timeout(12000),
           body: JSON.stringify({
             goal: finalGoal,
             courseId: config.courseId,

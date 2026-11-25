@@ -99,13 +99,46 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
     const completedMissionsCount = Number(body.careerContext?.completedMissionsCount ?? 0);
     const missionStreak = Number(body.careerContext?.missionStreak ?? body.careerContext?.mission_streak ?? 0);
 
+    let completedQuestsList: string[] | undefined = Array.isArray(body.careerContext?.completedQuests)
+      ? body.careerContext.completedQuests
+      : undefined;
+    let enrolledTrack: string | undefined = typeof body.careerContext?.track === 'string'
+      ? body.careerContext.track
+      : undefined;
+    let resolvedActiveCourseId: string | undefined = typeof body.careerContext?.activeCourseId === 'string'
+      ? body.careerContext.activeCourseId
+      : (typeof body.careerContext?.courseId === 'string' ? body.careerContext.courseId : undefined);
+
+    if ((!resolvedActiveCourseId || !completedQuestsList) && gated.user?.id) {
+      try {
+        const token = getBearerToken(req);
+        const supabase = getAuthoritativeSupabaseClient(token);
+        const [{ data: uRow }, { data: crashRow }] = await Promise.all([
+          supabase.from('users').select('completed_quests, onboarding_answers').eq('id', gated.user.id).maybeSingle(),
+          supabase.from('user_crash_enrollments').select('track').eq('user_id', gated.user.id).order('updated_at', { ascending: false }).limit(1).maybeSingle(),
+        ]);
+        if (!completedQuestsList && Array.isArray(uRow?.completed_quests)) {
+          completedQuestsList = uRow.completed_quests;
+        }
+        const ob = (uRow?.onboarding_answers || {}) as Record<string, any>;
+        if (!resolvedActiveCourseId) {
+          resolvedActiveCourseId = ob.active_course || ob.selected_course || ob.courseId || undefined;
+        }
+        if (!enrolledTrack) {
+          enrolledTrack = (typeof crashRow?.track === 'string' && crashRow.track) || ob.track || undefined;
+        }
+      } catch {
+        // Non-fatal in offline/mock environments
+      }
+    }
+
     // Resolve any specific course/day/topic lesson tutoring or launch request BEFORE building prompt
     const resolvedLesson = await resolveLessonRequest(userMessage, {
-      activeCourseId: typeof body.careerContext?.activeCourseId === 'string'
-        ? body.careerContext.activeCourseId
-        : (typeof body.careerContext?.courseId === 'string' ? body.careerContext.courseId : undefined),
+      activeCourseId: resolvedActiveCourseId,
       teacherId: body.teacherId,
       lessonSession: body.lessonSession || null,
+      completedQuests: completedQuestsList,
+      enrolledTrack,
     });
 
     const systemPrompt = buildMentorSystemPrompt(
@@ -265,6 +298,24 @@ IMPORTANT: The student's question is about this specific slide! Explain the conc
     const openRouterKey = process.env.OPENROUTER_API_KEY;
 
     // Streaming Groq branch for sub-60ms TTFT
+    if (wantsStream && resolvedLesson?.lessonAction.autoLaunch) {
+      const encoder = new TextEncoder();
+      const launchStream = new ReadableStream({
+        start(controller) {
+          controller.enqueue(encoder.encode(`data: ${JSON.stringify({ token: resolvedLesson.deterministicFallbackReply })}\n\n`));
+          controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+          controller.close();
+        }
+      });
+      return new Response(launchStream, {
+        headers: {
+          'Content-Type': 'text/event-stream; charset=utf-8',
+          'Cache-Control': 'no-cache, no-transform',
+          'Connection': 'keep-alive',
+        }
+      });
+    }
+
     if (wantsStream) {
       if (groqKeys.length > 0) {
         for (const key of groqKeys) {

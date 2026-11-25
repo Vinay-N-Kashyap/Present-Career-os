@@ -41,6 +41,7 @@ interface CourseIndexEntry {
   courseTitle: string;
   prefix: string;
   aliases: string[];
+  allQuestDays: Array<{ questId: string; dayNum: number }>;
   lectures: Array<{
     dayNum: number;
     questId: string;
@@ -83,10 +84,14 @@ function getCatalogIndex(): CourseIndexEntry[] {
   const entries: CourseIndexEntry[] = [];
   for (const course of COURSES_REGISTRY as Course[]) {
     const lectures: CourseIndexEntry['lectures'] = [];
+    const allQuestDays: Array<{ questId: string; dayNum: number }> = [];
     let prefix = '';
 
     for (const q of course.quests || []) {
       const parsed = parseQuestId(q.id);
+      if (parsed) {
+        allQuestDays.push({ questId: q.id, dayNum: parsed.dayNum });
+      }
       if (parsed && /-lecture1-day-\d+$/i.test(q.id)) {
         if (!prefix) prefix = parsed.prefix;
         lectures.push({
@@ -117,6 +122,7 @@ function getCatalogIndex(): CourseIndexEntry[] {
       courseTitle: course.title,
       prefix,
       aliases,
+      allQuestDays,
       lectures,
     });
   }
@@ -155,23 +161,180 @@ function findMatchingCourse(lowerMessage: string, index: CourseIndexEntry[], act
   return best?.entry || null;
 }
 
-function extractDayNumber(lowerMessage: string): number | null {
-  const m = lowerMessage.match(/\b(?:day|lesson|module|session)\s*(?:#\s*)?([1-9]|[1-5]\d|60)\b/i);
-  if (m?.[1]) return Number(m[1]);
+const SPOKEN_ONES: Record<string, number> = {
+  zero: 0, one: 1, first: 1, two: 2, second: 2, three: 3, third: 3,
+  four: 4, fourth: 4, five: 5, fifth: 5, six: 6, sixth: 6,
+  seven: 7, seventh: 7, eight: 8, eighth: 8, nine: 9, ninth: 9,
+  ten: 10, tenth: 10, eleven: 11, eleventh: 11, twelve: 12, twelfth: 12,
+  thirteen: 13, thirteenth: 13, fourteen: 14, fourteenth: 14, fifteen: 15, fifteenth: 15,
+  sixteen: 16, sixteenth: 16, seventeen: 17, seventeenth: 17, eighteen: 18, eighteenth: 18,
+  nineteen: 19, nineteenth: 19,
+};
+
+const SPOKEN_TENS: Record<string, number> = {
+  twenty: 20, twentieth: 20,
+  thirty: 30, thirtieth: 30,
+  forty: 40, fortieth: 40,
+  fifty: 50, fiftieth: 50,
+  sixty: 60, sixtieth: 60,
+};
+
+function parseSpokenNumberToken(raw: string): number | null {
+  const clean = raw.toLowerCase().trim().replace(/(?:st|nd|rd|th)$/i, '');
+  if (/^\d+$/.test(clean)) {
+    const n = Number(clean);
+    return n >= 1 && n <= 60 ? n : null;
+  }
+  const parts = clean.split(/[\s-]+/).filter(Boolean);
+  if (parts.length === 1) {
+    if (parts[0] in SPOKEN_ONES) return SPOKEN_ONES[parts[0]] || null;
+    if (parts[0] in SPOKEN_TENS) return SPOKEN_TENS[parts[0]] || null;
+  } else if (parts.length === 2 && parts[0] in SPOKEN_TENS && parts[1] in SPOKEN_ONES) {
+    const sum = SPOKEN_TENS[parts[0]] + SPOKEN_ONES[parts[1]];
+    return sum >= 1 && sum <= 60 ? sum : null;
+  }
   return null;
+}
+
+const SPOKEN_DAY_WORDS_ALTERNATION =
+  '(?:twenty(?:[-\\s]+(?:one|two|three|four|five|six|seven|eight|nine|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth))?|thirty(?:[-\\s]+(?:one|two|three|four|five|six|seven|eight|nine|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth))?|forty(?:[-\\s]+(?:one|two|three|four|five|six|seven|eight|nine|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth))?|fifty(?:[-\\s]+(?:one|two|three|four|five|six|seven|eight|nine|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth))?|sixty|sixtieth|nineteen|nineteenth|eighteen|eighteenth|seventeen|seventeenth|sixteen|sixteenth|fifteen|fifteenth|fourteen|fourteenth|thirteen|thirteenth|twelve|twelfth|eleven|eleventh|ten|tenth|nine|ninth|eight|eighth|seven|seventh|six|sixth|five|fifth|four|fourth|three|third|two|second|one|first|(?:[1-9]|[1-5]\\d|60)(?:st|nd|rd|th)?)';
+
+function extractDayNumber(lowerMessage: string): number | null {
+  const afterUnit = lowerMessage.match(
+    new RegExp(`\\b(?:day|lesson|module|session)\\s*(?:#\\s*)?(${SPOKEN_DAY_WORDS_ALTERNATION})\\b`, 'i')
+  );
+  if (afterUnit?.[1]) {
+    const parsed = parseSpokenNumberToken(afterUnit[1]);
+    if (parsed !== null) return parsed;
+  }
+
+  const ordinalBeforeUnit = lowerMessage.match(
+    new RegExp(`\\b(${SPOKEN_DAY_WORDS_ALTERNATION})\\s+(?:day|lesson|module|session)\\b`, 'i')
+  );
+  if (ordinalBeforeUnit?.[1]) {
+    const parsed = parseSpokenNumberToken(ordinalBeforeUnit[1]);
+    if (parsed !== null) return parsed;
+  }
+
+  if (/\b(?:start\s+again|from\s+the\s+beginning|from\s+day\s+one)\b/i.test(lowerMessage)) {
+    return 1;
+  }
+  return null;
+}
+
+function extractRelativeDayOffset(lowerMessage: string): number | null {
+  if (/\b(?:previous\s+day|prev\s+day|yesterday'?s?\s+(?:lesson|topic|day)|last\s+day|last\s+lesson|earlier\s+day)\b/i.test(lowerMessage)) {
+    return -1;
+  }
+  if (/\b(?:today'?s?\s+(?:lesson|topic|day)|current\s+day)\b/i.test(lowerMessage)) {
+    return 0;
+  }
+  if (/\bnext\s+day\b/i.test(lowerMessage)) {
+    return 1;
+  }
+  return null;
+}
+
+const TRACK_DEFAULT_COURSE: Record<string, string> = {
+  sde_fullstack: 'course-python-backend',
+  sde: 'course-python-backend',
+  data_ai: 'course-ai-python',
+  bcom_acc: 'course-digital-accounting',
+  bcom_fin: 'course-finance-investment',
+  iot_embedded: 'course-iot-embedded',
+};
+
+function inferActiveCourseAndCurrentDay(
+  index: CourseIndexEntry[],
+  opts: {
+    activeCourseId?: string;
+    completedQuests?: string[];
+    enrolledTrack?: string;
+  }
+): { activeCourse: CourseIndexEntry | null; currentDay: number } {
+  const completed = Array.isArray(opts.completedQuests) ? opts.completedQuests : [];
+  const completedSet = new Set(completed);
+
+  let activeCourse: CourseIndexEntry | null = opts.activeCourseId
+    ? index.find((e) => e.courseId === opts.activeCourseId) || null
+    : null;
+
+  // Infer active course from student's actual completed quests when not explicitly supplied
+  if (!activeCourse && completed.length > 0) {
+    let bestCount = 0;
+    let bestMaxDay = 0;
+    for (const entry of index) {
+      let count = 0;
+      let maxDay = 0;
+      const prefixDot = `${entry.prefix}-`;
+      for (const qId of completed) {
+        if (qId.startsWith(prefixDot)) {
+          count += 1;
+          const parsed = parseQuestId(qId);
+          if (parsed && parsed.dayNum > maxDay) maxDay = parsed.dayNum;
+        }
+      }
+      if (count > bestCount || (count === bestCount && count > 0 && maxDay > bestMaxDay)) {
+        bestCount = count;
+        bestMaxDay = maxDay;
+        activeCourse = entry;
+      }
+    }
+  }
+
+  if (!activeCourse && opts.enrolledTrack) {
+    const mappedId = TRACK_DEFAULT_COURSE[opts.enrolledTrack.toLowerCase()];
+    if (mappedId) {
+      activeCourse = index.find((e) => e.courseId === mappedId) || null;
+    }
+  }
+
+  if (!activeCourse) {
+    return { activeCourse: null, currentDay: 1 };
+  }
+
+  // Determine the student's current day: first day whose lecture or tasks aren't all completed
+  let currentDay = 1;
+  const incompleteDayQuest = activeCourse.allQuestDays.find((q) => !completedSet.has(q.questId));
+  if (incompleteDayQuest) {
+    currentDay = incompleteDayQuest.dayNum;
+  } else if (completedSet.size > 0) {
+    let maxCompletedDay = 1;
+    const prefixDot = `${activeCourse.prefix}-`;
+    for (const qId of completed) {
+      if (qId.startsWith(prefixDot)) {
+        const parsed = parseQuestId(qId);
+        if (parsed && parsed.dayNum > maxCompletedDay) maxCompletedDay = parsed.dayNum;
+      }
+    }
+    currentDay = Math.min(60, maxCompletedDay);
+  }
+
+  return { activeCourse, currentDay };
 }
 
 function findTopicMatch(
   lowerMessage: string,
   index: CourseIndexEntry[],
-  preferredCourseId?: string
+  opts: {
+    preferredCourseId?: string;
+    excludeCourseAliases?: string[];
+    currentDay?: number;
+  } = {}
 ): { entry: CourseIndexEntry; lecture: CourseIndexEntry['lectures'][number] } | null {
   const stopWords = new Set([
-    'i', 'do', 'dont', 'not', 'understand', 'explain', 'teach', 'me', 'please', 'help',
+    'i', 'do', 'dont', 'did', 'not', 'understand', 'explain', 'teach', 'me', 'please', 'help',
     'with', 'what', 'is', 'are', 'how', 'does', 'the', 'a', 'an', 'in', 'of', 'for',
-    'to', 'about', 'can', 'you', 'start', 'open', 'launch', 'lesson', 'day', 'topic',
-    'confused', 'stuck', 'this', 'that', 'hey', 'priya', 'ms', 'mr', 'sir', 'maam',
+    'to', 'about', 'can', 'you', 'u', 'so', 'start', 'open', 'launch', 'lesson', 'day', 'topic',
+    'previous', 'prev', 'last', 'yesterday', 'again', 'repeat', 'restart', 'confused', 'stuck',
+    'this', 'that', 'hey', 'priya', 'ms', 'mr', 'sir', 'maam', 'get',
   ]);
+  for (const alias of opts.excludeCourseAliases || []) {
+    for (const word of alias.toLowerCase().split(/\s+/)) {
+      if (word.length >= 2) stopWords.add(word);
+    }
+  }
+
   const tokens = lowerMessage
     .replace(/[^a-z0-9+#\s]/g, ' ')
     .split(/\s+/)
@@ -179,11 +342,13 @@ function findTopicMatch(
 
   if (tokens.length === 0) return null;
 
+  const currentDay = Math.max(1, opts.currentDay || 2);
   let best: { entry: CourseIndexEntry; lecture: CourseIndexEntry['lectures'][number]; score: number } | null = null;
+  const asksCapstone = /\b(?:capstone|charter|architecture|platform|day\s*60)\b/i.test(lowerMessage);
 
   for (const entry of index) {
     const aliasBoost = entry.aliases.some((a) => new RegExp(`\\b${a.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i').test(lowerMessage)) ? 12 : 0;
-    const activeBoost = preferredCourseId && entry.courseId === preferredCourseId ? 5 : 0;
+    const activeBoost = opts.preferredCourseId && entry.courseId === opts.preferredCourseId ? 20 : 0;
 
     for (const lec of entry.lectures) {
       const titleLower = lec.title.toLowerCase();
@@ -195,8 +360,11 @@ function findTopicMatch(
         else if (bodyLower.includes(tok)) score += 4;
       }
       if (score === 0) continue;
-      const total = score + aliasBoost + activeBoost;
-      if (!best || total > best.score) {
+
+      const introProximityBoost = lec.dayNum <= Math.max(10, currentDay + 2) ? 6 : 0;
+      const capstonePenalty = !asksCapstone && lec.dayNum >= 58 ? -4 : 0;
+      const total = score + aliasBoost + activeBoost + introProximityBoost + capstonePenalty;
+      if (!best || total > best.score || (total === best.score && lec.dayNum < best.lecture.dayNum)) {
         best = { entry, lecture: lec, score: total };
       }
     }
@@ -270,6 +438,8 @@ export async function resolveLessonRequest(
     activeCourseId?: string;
     teacherId?: string;
     lessonSession?: LessonSessionRef | null;
+    completedQuests?: string[];
+    enrolledTrack?: string;
   } = {}
 ): Promise<LessonResolutionResult | null> {
   const lower = String(message || '').toLowerCase().trim();
@@ -325,31 +495,56 @@ export async function resolveLessonRequest(
     }
   }
 
-  // 2. Explicit day + course (or active course), OR pure topic search across all 55 courses
-  const matchedCourse = findMatchingCourse(lower, index, opts.activeCourseId);
+  // 2. Infer student's active course and current day from progress/track, then resolve explicit or relative day
+  const inferred = inferActiveCourseAndCurrentDay(index, {
+    activeCourseId: opts.activeCourseId,
+    completedQuests: opts.completedQuests,
+    enrolledTrack: opts.enrolledTrack,
+  });
+  const effectiveActiveCourseId = inferred.activeCourse?.courseId || opts.activeCourseId;
+  const matchedCourse = findMatchingCourse(lower, index, effectiveActiveCourseId);
   const explicitDay = extractDayNumber(lower);
+  const relativeDayOffset = explicitDay === null ? extractRelativeDayOffset(lower) : null;
 
   let targetEntry: CourseIndexEntry | null = null;
   let targetLecture: CourseIndexEntry['lectures'][number] | null = null;
 
-  if (matchedCourse && explicitDay !== null) {
+  const targetDayNum = explicitDay !== null
+    ? explicitDay
+    : relativeDayOffset !== null
+      ? Math.max(1, Math.min(60, inferred.currentDay + relativeDayOffset))
+      : null;
+
+  if (matchedCourse && targetDayNum !== null) {
     targetEntry = matchedCourse;
-    targetLecture = matchedCourse.lectures.find((l) => l.dayNum === explicitDay) || null;
-  } else if (!matchedCourse && explicitDay !== null && opts.activeCourseId) {
-    const activeEntry = index.find((e) => e.courseId === opts.activeCourseId) || null;
+    targetLecture = matchedCourse.lectures.find((l) => l.dayNum === targetDayNum) || null;
+  } else if (!matchedCourse && targetDayNum !== null && (inferred.activeCourse || effectiveActiveCourseId)) {
+    const activeEntry = inferred.activeCourse || index.find((e) => e.courseId === effectiveActiveCourseId) || null;
     if (activeEntry) {
       targetEntry = activeEntry;
-      targetLecture = activeEntry.lectures.find((l) => l.dayNum === explicitDay) || null;
+      targetLecture = activeEntry.lectures.find((l) => l.dayNum === targetDayNum) || null;
+    }
+  } else if (!matchedCourse && relativeDayOffset !== null) {
+    // No activeCourseId provided at all (e.g., fresh telemetry) -> default to Python Backend Day max(1, 2 + offset)
+    const fallbackEntry = index.find((e) => e.courseId === 'course-python-backend') || index[0] || null;
+    if (fallbackEntry) {
+      targetEntry = fallbackEntry;
+      const d = Math.max(1, Math.min(60, 2 + relativeDayOffset));
+      targetLecture = fallbackEntry.lectures.find((l) => l.dayNum === d) || fallbackEntry.lectures[0] || null;
     }
   }
 
   // Fall back to semantic keyword match across lectures if day wasn't specified (e.g. "I don't understand softmax")
   if (!targetLecture) {
-    const topicHit = findTopicMatch(lower, index, matchedCourse?.courseId || opts.activeCourseId);
+    const topicHit = findTopicMatch(lower, index, {
+      preferredCourseId: matchedCourse?.courseId || effectiveActiveCourseId,
+      excludeCourseAliases: matchedCourse?.aliases,
+      currentDay: inferred.currentDay,
+    });
     if (topicHit) {
       targetEntry = topicHit.entry;
       targetLecture = topicHit.lecture;
-    } else if (matchedCourse && /\b(?:don'?t\s+understand|explain|teach|start|open|launch|help)\b/i.test(lower)) {
+    } else if (matchedCourse && /\b(?:don'?t\s+understand|did\s+not\s+understand|didn'?t\s+understand|explain|teach|start|open|launch|help|restart)\b/i.test(lower)) {
       // Course named cleanly without day/topic -> start/explain Day 1
       targetEntry = matchedCourse;
       targetLecture = matchedCourse.lectures[0] || null;
@@ -362,9 +557,13 @@ export async function resolveLessonRequest(
   if (!lesson) return null;
 
   const totalParts = Math.max(1, lesson.parts?.length || 1);
-  const wantsLaunch =
-    /^\s*(?:please\s+)?(?:start|open|launch|go\s+to|take\s+me\s+to|begin)\b/i.test(lower) &&
-    !/\b(?:don'?t\s+understand|explain|teach|confused|help\s+me\s+understand|what\s+is|how)\b/i.test(lower);
+  const leadingLaunch = /^\s*(?:please\s+)?(?:start|open|launch|go\s+to|take\s+me\s+to|begin)\b/i.test(lower);
+  const explicitStartPhrase =
+    /\b(?:(?:can|could|will|would|please)\s+(?:you|u)\s+(?:please\s+)?(?:start|open|launch|reopen|restart|take\s+me\s+to|begin)|(?:so|now|just)\s+(?:can\s+(?:you|u)\s+)?(?:start|open|launch)|start\s+(?:this|that|the)\s+(?:lesson|class|day)|start\s+again)\b/i.test(lower);
+  const pureExplanationOnly =
+    /\b(?:don'?t\s+understand|explain|teach|confused|help\s+me\s+understand|what\s+is|what\s+are|how)\b/i.test(lower) &&
+    !explicitStartPhrase;
+  const wantsLaunch = (leadingLaunch || explicitStartPhrase) && !pureExplanationOnly;
   const intent: ResolvedLessonAction['intent'] = wantsLaunch ? 'launch' : 'teach';
   const partIndex = 0;
 

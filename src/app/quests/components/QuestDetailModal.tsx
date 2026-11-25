@@ -566,6 +566,22 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
 
   if (!isOpen) return null;
 
+  const monthsCount = Math.round((selectedDuration / 30) * 10) / 10;
+  const durationLabel = selectedDuration === 365
+    ? '1 Year'
+    : `${monthsCount} ${monthsCount === 1 ? 'Month' : 'Months'}`;
+
+  const effectiveGoalText = (customGoal || evidencePreview?.targetRole || '').trim();
+  const goalTrackKey = (trackKeyForGoal(effectiveGoalText) || selectedTrack || '').toLowerCase();
+  const trackMatchedCourse = (goalTrackKey.includes('ai') || goalTrackKey.includes('ml'))
+    ? COURSES_REGISTRY.find((c) => c.id === 'course-ai-python')?.title
+    : goalTrackKey.includes('full')
+      ? COURSES_REGISTRY.find((c) => c.id === 'course-fullstack-js')?.title
+      : (goalTrackKey.includes('python') || goalTrackKey.includes('backend'))
+        ? COURSES_REGISTRY.find((c) => c.id === 'course-python-backend')?.title
+        : undefined;
+  const displayTrackTitle = trackMatchedCourse || activeCourseTitle;
+
   return (
     <div
       data-testid="custom-roadmap-modal"
@@ -573,36 +589,36 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
       aria-modal="true"
       onClick={(e) => { if (!isGenerating && e.target === e.currentTarget) onClose(); }}
       style={{
-        position: 'fixed', inset: 0, zIndex: 1000,
-        background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(10px)',
-        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 20
+        position: 'fixed', inset: 0, zIndex: 1300,
+        background: 'rgba(0,0,0,0.82)', backdropFilter: 'blur(10px)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px 20px'
       }}
     >
       <div style={{
-        maxWidth: 580, width: '100%',
-        borderRadius: 24, padding: 32,
-        position: 'relative'
+        maxWidth: 600, width: '100%', maxHeight: '86vh',
+        borderRadius: 24, padding: '22px 24px',
+        position: 'relative', display: 'flex', flexDirection: 'column', overflow: 'hidden'
       }} className="animate-modal-pop glass-card-premium">
         
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14, flexShrink: 0 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ width: 40, height: 40, borderRadius: 12, background: 'rgba(var(--success-rgb),0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 12, background: 'rgba(var(--success-rgb),0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>
               ✨
             </div>
             <div>
-              <h3 style={{ fontSize: 20, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>
+              <h3 style={{ fontSize: 19, fontWeight: 900, color: 'var(--t1)', margin: 0 }}>
                 Configure Custom AI Roadmap
               </h3>
-              <div style={{ fontSize: 13, color: 'var(--t3)', marginTop: 2 }}>
+              <div style={{ fontSize: 12.5, color: 'var(--t3)', marginTop: 2 }}>
                 Opens as a new tab next to Standalone (Roadmap {nextRoadmapNumber(extraRoadmaps)}). Close extra tabs anytime.
               </div>
             </div>
           </div>
-          <button data-testid="btn-close-custom-roadmap" onClick={() => !isGenerating && onClose()} aria-label="Close custom roadmap configurator" style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 22, cursor: 'pointer' }}>✕</button>
+          <button data-testid="btn-close-custom-roadmap" onClick={() => !isGenerating && onClose()} aria-label="Close custom roadmap configurator" style={{ background: 'none', border: 'none', color: 'var(--t3)', fontSize: 22, cursor: 'pointer', flexShrink: 0 }}>✕</button>
         </div>
 
         {isGenerating ? (
-          <div data-testid="custom-roadmap-generating" style={{ padding: '30px 10px', textAlign: 'center' }}>
+          <div data-testid="custom-roadmap-generating" style={{ padding: '24px 10px', textAlign: 'center', overflowY: 'auto' }}>
             <div style={{ width: 60, height: 60, borderRadius: '50%', border: '4px solid rgba(var(--success-rgb),0.2)', borderTopColor: 'var(--success)', margin: '0 auto 20px auto', animation: 'spin 1s linear infinite' }} />
             
             <h4 style={{ fontSize: 17.5, fontWeight: 800, color: 'var(--t1)', marginBottom: 8 }}>
@@ -625,200 +641,203 @@ export const CustomRoadmapModal: React.FC<CustomRoadmapModalProps> = ({
             </div>
           </div>
         ) : (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-            <div style={{
-              padding: '12px 16px',
-              borderRadius: 14,
-              background: 'var(--bg3)',
-              border: '1px solid var(--border)',
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flexWrap: 'wrap',
-              gap: 10,
-              fontSize: 12.5,
-              fontWeight: 800
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ color: 'var(--t4)' }}>QT1 Knowledge:</span>
-                <span style={{ color: 'var(--success)' }}>{qt1}/100</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ color: 'var(--t4)' }}>Mindset:</span>
-                <span style={{ color: 'var(--purple)' }}>{archetype}</span>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ color: 'var(--t4)' }}>Active Course:</span>
-                <span style={{ color: 'var(--t1)' }}>{activeCourseTitle}</span>
-              </div>
-            </div>
-
-            {/* Resume, Vault Documents & Profile Evidence Sync Panel */}
-            <div
-              data-testid="roadmap-evidence-preview"
-              style={{
-                padding: '12px 15px',
+          <>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: 1, minHeight: 0, overflowY: 'auto', paddingRight: 4 }}>
+              <div style={{
+                padding: '10px 14px',
                 borderRadius: 14,
-                background: useResumeAndVault ? 'rgba(99,102,241,0.08)' : 'var(--bg3)',
-                border: `1px solid ${useResumeAndVault ? 'rgba(99,102,241,0.32)' : 'var(--border)'}`,
+                background: 'var(--bg3)',
+                border: '1px solid var(--border)',
                 display: 'flex',
-                flexDirection: 'column',
-                gap: 8,
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
-                <span style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--t1)' }}>
-                  Personalize From Your Resume, Vault Documents &amp; Profile
-                </span>
-                <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700, color: 'var(--success)', cursor: 'pointer' }}>
-                  <input
-                    type="checkbox"
-                    checked={useResumeAndVault}
-                    onChange={(e) => setUseResumeAndVault(e.target.checked)}
-                  />
-                  Enable Personalization
-                </label>
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: 10,
+                fontSize: 12.5,
+                fontWeight: 800
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ color: 'var(--t4)' }}>QT1 Knowledge:</span>
+                  <span style={{ color: 'var(--success)' }}>{qt1}/100</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ color: 'var(--t4)' }}>Mindset:</span>
+                  <span style={{ color: 'var(--purple)' }}>{archetype}</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ color: 'var(--t4)' }}>Target Track:</span>
+                  <span style={{ color: 'var(--t1)' }}>{displayTrackTitle}</span>
+                </div>
               </div>
-              {loadingPreview ? (
-                <div style={{ fontSize: 12, color: 'var(--t3)' }}>Scanning your Proof Vault resume &amp; profile...</div>
-              ) : evidencePreview ? (
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 12, color: 'var(--t2)' }}>
-                  <div>
-                    <strong style={{ color: 'var(--t1)' }}>Resume:</strong>{' '}
-                    {evidencePreview.resumeTitle ? `${evidencePreview.resumeTitle} (${evidencePreview.vaultDocsCount || 1} Vault doc(s))` : 'No resume uploaded in Vault yet (using profile)'}
+
+              {/* Resume, Vault Documents & Profile Evidence Sync Panel */}
+              <div
+                data-testid="roadmap-evidence-preview"
+                style={{
+                  padding: '12px 15px',
+                  borderRadius: 14,
+                  background: useResumeAndVault ? 'rgba(99,102,241,0.08)' : 'var(--bg3)',
+                  border: `1px solid ${useResumeAndVault ? 'rgba(99,102,241,0.32)' : 'var(--border)'}`,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 6,
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: 12.5, fontWeight: 800, color: 'var(--t1)' }}>
+                    Personalize From Your Resume, Vault Documents &amp; Profile
+                  </span>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 700, color: 'var(--success)', cursor: 'pointer' }}>
+                    <input
+                      type="checkbox"
+                      checked={useResumeAndVault}
+                      onChange={(e) => setUseResumeAndVault(e.target.checked)}
+                    />
+                    Enable Personalization
+                  </label>
+                </div>
+                {loadingPreview ? (
+                  <div style={{ fontSize: 12, color: 'var(--t3)' }}>Scanning your Proof Vault resume &amp; profile...</div>
+                ) : evidencePreview ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4, fontSize: 12, color: 'var(--t2)' }}>
+                    <div>
+                      <strong style={{ color: 'var(--t1)' }}>Resume:</strong>{' '}
+                      {evidencePreview.resumeTitle ? `${evidencePreview.resumeTitle} (${evidencePreview.vaultDocsCount || 1} Vault doc(s))` : 'No resume uploaded in Vault yet (using profile)'}
+                    </div>
+                    {(evidencePreview.provenSkills?.length || evidencePreview.claimedSkills?.length) ? (
+                      <div>
+                        <strong style={{ color: 'var(--t1)' }}>Skills Detected:</strong>{' '}
+                        {[...(evidencePreview.provenSkills || []), ...(evidencePreview.claimedSkills || [])].slice(0, 6).join(', ')}
+                      </div>
+                    ) : null}
+                    {evidencePreview.weakAreas && evidencePreview.weakAreas.length > 0 ? (
+                      <div>
+                        <strong style={{ color: '#f59e0b' }}>Target Gaps:</strong>{' '}
+                        {evidencePreview.weakAreas.slice(0, 5).join(', ')}
+                      </div>
+                    ) : null}
                   </div>
-                  {(evidencePreview.provenSkills?.length || evidencePreview.claimedSkills?.length) ? (
-                    <div>
-                      <strong style={{ color: 'var(--t1)' }}>Skills Detected:</strong>{' '}
-                      {[...(evidencePreview.provenSkills || []), ...(evidencePreview.claimedSkills || [])].slice(0, 6).join(', ')}
-                    </div>
-                  ) : null}
-                  {evidencePreview.weakAreas && evidencePreview.weakAreas.length > 0 ? (
-                    <div>
-                      <strong style={{ color: '#f59e0b' }}>Target Gaps:</strong>{' '}
-                      {evidencePreview.weakAreas.slice(0, 5).join(', ')}
-                    </div>
-                  ) : null}
+                ) : (
+                  <div style={{ fontSize: 12, color: 'var(--t3)' }}>
+                    Automatically incorporates your Vault resume, skills, and interview gaps.
+                  </div>
+                )}
+              </div>
+
+              <div style={{
+                padding: '14px 16px',
+                borderRadius: 16,
+                background: 'linear-gradient(135deg, rgba(var(--success-rgb),0.1), rgba(var(--brand-rgb),0.06))',
+                border: '2px solid var(--success)',
+                boxShadow: '0 4px 18px rgba(var(--success-rgb),0.15)'
+              }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6, gap: 8, flexWrap: 'wrap' }}>
+                  <label style={{ fontSize: 13.5, fontWeight: 900, color: 'var(--success)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Target Career Goal & Mixed Specialization (Editable)
+                  </label>
+                  <span style={{ fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 8, background: 'var(--success)', color: 'var(--text)' }}>
+                    ⭐ High-Priority Input
+                  </span>
                 </div>
-              ) : (
-                <div style={{ fontSize: 12, color: 'var(--t3)' }}>
-                  Automatically incorporates your Vault resume, skills, and interview gaps.
+                <p style={{ fontSize: 12, color: 'var(--t2)', marginBottom: 8, lineHeight: 1.4 }}>
+                  Type your specific career goal! Combine Tech + Non-Tech skills (e.g. <i>"Full-Stack Developer launching an E-Commerce Business"</i>).
+                </p>
+                <input
+                  data-testid="input-custom-goal"
+                  type="text"
+                  value={customGoal}
+                  onChange={e => {
+                    const val = e.target.value;
+                    setCustomGoal(val);
+                    // Same whole-word matching as onboarding ("email" is not AI, "syntax" is not tax).
+                    const track = trackKeyForGoal(val);
+                    if (track) setSelectedTrack(track);
+                  }}
+                  placeholder="e.g., Full-Stack AI Engineer launching an E-Commerce Business"
+                  style={{
+                    width: '100%',
+                    padding: '11px 14px',
+                    borderRadius: 10,
+                    border: '2px solid var(--success)',
+                    background: '#090d16',
+                    color: 'var(--text)',
+                    fontSize: 15,
+                    fontWeight: 800,
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.5)'
+                  }}
+                />
+              </div>
+
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, gap: 8, flexWrap: 'wrap' }}>
+                  <label style={{ fontSize: 13.5, fontWeight: 800, color: 'var(--text)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    Roadmap Duration (30 Days - 1 Year)
+                  </label>
+                  <span style={{ fontSize: 15, fontWeight: 900, color: 'var(--success-bright)', fontFamily: 'var(--font-mono)' }}>
+                    {selectedDuration} Days ({durationLabel})
+                  </span>
                 </div>
-              )}
+
+                <input
+                  data-testid="slider-roadmap-duration"
+                  type="range"
+                  min={30}
+                  max={365}
+                  step={5}
+                  value={selectedDuration}
+                  onChange={e => setSelectedDuration(Number(e.target.value))}
+                  style={{ width: '100%', accentColor: 'var(--success)', cursor: 'pointer', marginBottom: 10 }}
+                />
+
+                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                  {[
+                    { days: 30, label: '30 Days (1 Mo)' },
+                    { days: 60, label: '60 Days (2 Mo)' },
+                    { days: 90, label: '90 Days (1 Qtr)' },
+                    { days: 180, label: '180 Days (6 Mo)' },
+                    { days: 365, label: '365 Days (1 Year)' }
+                  ].map(p => (
+                    <button
+                      key={p.days}
+                      data-testid={`btn-duration-${p.days}`}
+                      onClick={() => setSelectedDuration(p.days)}
+                      style={{
+                        padding: '6px 12px',
+                        borderRadius: 8,
+                        border: `1.5px solid ${selectedDuration === p.days ? 'var(--success)' : 'rgba(255,255,255,0.12)'}`,
+                        background: selectedDuration === p.days ? 'rgba(var(--success-rgb),0.2)' : '#121824',
+                        color: selectedDuration === p.days ? 'var(--success-bright)' : '#e0e7ff',
+                        fontSize: 12.5,
+                        fontWeight: 800,
+                        cursor: 'pointer',
+                        transition: 'all 0.2s'
+                      }}
+                    >
+                      {p.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div style={{
-              padding: '16px',
-              borderRadius: 16,
-              background: 'linear-gradient(135deg, rgba(var(--success-rgb),0.1), rgba(var(--brand-rgb),0.06))',
-              border: '2px solid var(--success)',
-              boxShadow: '0 4px 18px rgba(var(--success-rgb),0.15)'
-            }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
-                <label style={{ fontSize: 14.5, fontWeight: 900, color: 'var(--success)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  Target Career Goal & Mixed Specialization (Editable)
-                </label>
-                <span style={{ fontSize: 11, fontWeight: 800, padding: '3px 8px', borderRadius: 8, background: 'var(--success)', color: 'var(--text)' }}>
-                  ⭐ High-Priority Input
-                </span>
-              </div>
-              <p style={{ fontSize: 12.5, color: 'var(--t2)', marginBottom: 10, lineHeight: 1.4 }}>
-                Type your specific career goal! Combine Tech + Non-Tech skills (e.g. <i>"Full-Stack Developer launching an E-Commerce Business"</i>).
-              </p>
-              <input
-                data-testid="input-custom-goal"
-                type="text"
-                value={customGoal}
-                onChange={e => {
-                  const val = e.target.value;
-                  setCustomGoal(val);
-                  // Same whole-word matching as onboarding ("email" is not AI, "syntax" is not tax).
-                  const track = trackKeyForGoal(val);
-                  if (track) setSelectedTrack(track);
-                }}
-                placeholder="e.g., Full-Stack AI Engineer launching an E-Commerce Business"
+            <div style={{ flexShrink: 0, marginTop: 14, paddingTop: 12, borderTop: '1px solid var(--border)' }}>
+              <button
+                data-testid="btn-generate-roadmap"
+                onClick={() => onSubmit({ useResumeAndVault })}
+                className="btn-emerald-glow"
                 style={{
                   width: '100%',
-                  padding: '12px 14px',
-                  borderRadius: 10,
-                  border: '2px solid var(--success)',
-                  background: '#090d16',
-                  color: 'var(--text)',
+                  padding: '13px 16px',
                   fontSize: 15,
-                  fontWeight: 800,
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.5)'
+                  fontWeight: 900,
+                  borderRadius: 14,
+                  cursor: 'pointer',
                 }}
-              />
+              >
+                Generate {selectedDuration}-Day AI Roadmap Now ➔
+              </button>
             </div>
-
-            <div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-                <label style={{ fontSize: 14, fontWeight: 800, color: 'var(--text)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                  Roadmap Duration (Min 30 Days - Max 1 Year)
-                </label>
-                <span style={{ fontSize: 15.5, fontWeight: 900, color: 'var(--success-bright)', fontFamily: 'var(--font-mono)' }}>
-                  {selectedDuration} Days ({selectedDuration === 365 ? '1 Year' : `${Math.round(selectedDuration / 30 * 10) / 10} Months`})
-                </span>
-              </div>
-
-              <input
-                data-testid="slider-roadmap-duration"
-                type="range"
-                min={30}
-                max={365}
-                step={5}
-                value={selectedDuration}
-                onChange={e => setSelectedDuration(Number(e.target.value))}
-                style={{ width: '100%', accentColor: 'var(--success)', cursor: 'pointer', marginBottom: 12 }}
-              />
-
-              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                {[
-                  { days: 30, label: '30 Days (1 Mo)' },
-                  { days: 60, label: '60 Days (2 Mo)' },
-                  { days: 90, label: '90 Days (1 Qtr)' },
-                  { days: 180, label: '180 Days (6 Mo)' },
-                  { days: 365, label: '365 Days (1 Year)' }
-                ].map(p => (
-                  <button
-                    key={p.days}
-                    data-testid={`btn-duration-${p.days}`}
-                    onClick={() => setSelectedDuration(p.days)}
-                    style={{
-                      padding: '6px 12px',
-                      borderRadius: 8,
-                      border: `1.5px solid ${selectedDuration === p.days ? 'var(--success)' : 'rgba(255,255,255,0.12)'}`,
-                      background: selectedDuration === p.days ? 'rgba(var(--success-rgb),0.2)' : '#121824',
-                      color: selectedDuration === p.days ? 'var(--success-bright)' : '#e0e7ff',
-                      fontSize: 12.5,
-                      fontWeight: 800,
-                      cursor: 'pointer',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    {p.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <button
-              data-testid="btn-generate-roadmap"
-              onClick={() => onSubmit({ useResumeAndVault })}
-              className="btn-emerald-glow"
-              style={{
-                width: '100%',
-                padding: '14px',
-                fontSize: 15.5,
-                fontWeight: 900,
-                borderRadius: 14,
-                cursor: 'pointer',
-                marginTop: 8
-              }}
-            >
-              Generate {selectedDuration}-Day AI Roadmap Now ➔
-            </button>
-          </div>
+          </>
         )}
       </div>
     </div>

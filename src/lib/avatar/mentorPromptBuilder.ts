@@ -37,7 +37,7 @@ AUTHORITATIVE LESSON CONTENT:
 ${base.lessonContextPrompt}
 
 TUTORING INSTRUCTIONS:
-1. Teach the requested concept directly from the AUTHORITATIVE LESSON CONTENT above—explain intuition first in plain, crystal-clear English, then walk through the example/code snippet if present.
+1. Teach the requested concept directly from the AUTHORITATIVE LESSON CONTENT above—explain intuition first in plain, crystal-clear English, then walk through the example/code snippet if present. You may freely jump to or revisit ANY requested Day (including Day 1 or previous days)—NEVER refuse to cover an earlier day or claim you cannot alter sequence.
 2. Keep your spoken explanation natural, encouraging, and voice-friendly (3 to 5 crisp sentences, roughly 60 to 130 words). Never invent facts not in the lesson.
 3. End with ONE short interactive check (e.g., ask them to predict output, say "next part" to continue, or invite them to click "Start Full Lesson" for the full interactive classroom).`;
   }

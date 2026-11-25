@@ -1565,10 +1565,13 @@ function LeaderboardContent() {
                             </div>
                           </td>
 
-                          {/* One score is shown: League Points */}
+                          {/* League Points with transparent XP + Arena breakdown */}
                           <td style={{ padding: '16px 20px', textAlign: 'right' }}>
-                            <span key={`points-${entry.leaguePoints || 0}`} className={styles.boardValue} style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 900, color: '#10b981' }}>
+                            <span key={`points-${entry.leaguePoints || 0}`} className={styles.boardValue} style={{ fontFamily: 'var(--font-mono)', fontSize: 16, fontWeight: 900, color: '#10b981', display: 'block' }}>
                               {(entry.leaguePoints || 0).toLocaleString()}
+                            </span>
+                            <span style={{ fontSize: 11, color: 'var(--t3)', fontFamily: 'var(--font-mono)', display: 'block', marginTop: 2 }}>
+                              XP {(entry.weeklyXp || 0).toLocaleString()} + Arena {(entry.arenaPoints || 0).toLocaleString()}
                             </span>
                           </td>
 

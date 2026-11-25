@@ -3,6 +3,7 @@ import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 import { checkRateLimit, getClientIp } from '@/lib/server/rateLimit';
 import { calculateLeaguePoints, getLeagueCutoffs, rankLeagueEntries } from '@/lib/leagues/leaguePoints';
+import { reconcileUserWeeklyLeaguePoints } from '@/lib/leagues/reconcileWeeklyLeaguePoints';
 
 export const dynamic = 'force-dynamic';
 
@@ -183,9 +184,14 @@ export async function GET(req: Request) {
           const arenaElo = !Number.isFinite(storedElo) || storedElo < 0 || (storedElo === 1200 && !(Number(userProfile?.arena_wins) > 0))
             ? 100
             : storedElo;
+          const reconciledStats = await reconcileUserWeeklyLeaguePoints(admin, {
+            userId: currentUserId,
+            storedWeeklyXp: Math.max(0, Number(userProfile?.weekly_xp) || 0),
+            storedArenaPoints: Math.max(0, Number(userProfile?.weekly_arena_points) || 0),
+          });
           currentUserStats = {
-            weeklyXp: Math.max(0, Number(userProfile?.weekly_xp) || 0),
-            arenaPoints: Math.max(0, Number(userProfile?.weekly_arena_points) || 0),
+            weeklyXp: reconciledStats.weeklyXp,
+            arenaPoints: reconciledStats.arenaPoints,
             arenaElo,
           };
           if (userProfile?.league_tier && validLeagues.has(userProfile.league_tier.toLowerCase() as LeagueTier)) {
@@ -337,8 +343,12 @@ export async function GET(req: Request) {
       const demonstratedSkills = Array.isArray(p.completed_quests) ? p.completed_quests.length : 0;
       const defense = Math.min(100, Math.max(0, Number(p.ats_score) || 0));
       const totalXp = Math.max(0, Number(p.xp_total) || 0);
-      const weeklyXp = Math.max(0, Number(p.weekly_xp) || 0);
-      const arenaPoints = Math.max(0, Number(p.weekly_arena_points) || 0);
+      const weeklyXp = p.id === currentUserId && currentUserStats
+        ? Math.max(0, Number(p.weekly_xp) || 0, currentUserStats.weeklyXp)
+        : Math.max(0, Number(p.weekly_xp) || 0);
+      const arenaPoints = p.id === currentUserId && currentUserStats
+        ? Math.max(0, Number(p.weekly_arena_points) || 0, currentUserStats.arenaPoints)
+        : Math.max(0, Number(p.weekly_arena_points) || 0);
       const leaguePoints = calculateLeaguePoints(weeklyXp, arenaPoints);
       const trust = Number(p.trust_score) || 0;
 
@@ -478,8 +488,12 @@ export async function GET(req: Request) {
           } catch {}
 
           const myRank = higherCount + 1;
-          const myWeeklyXp = Number(myProfile.weekly_xp) || 0;
-          const myArenaPoints = Number(myProfile.weekly_arena_points) || 0;
+          const myWeeklyXp = currentUserStats
+            ? Math.max(0, Number(myProfile.weekly_xp) || 0, currentUserStats.weeklyXp)
+            : Math.max(0, Number(myProfile.weekly_xp) || 0);
+          const myArenaPoints = currentUserStats
+            ? Math.max(0, Number(myProfile.weekly_arena_points) || 0, currentUserStats.arenaPoints)
+            : Math.max(0, Number(myProfile.weekly_arena_points) || 0);
           const myLeaguePoints = calculateLeaguePoints(myWeeklyXp, myArenaPoints);
           const myTotalXp = Number(myProfile.xp_total) || 0;
           const myDefense = Math.min(100, Math.max(0, Number(myProfile.ats_score) || 0));

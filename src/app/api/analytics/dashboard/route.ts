@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseAdmin } from '@/lib/server/supabaseAdmin';
 import { ensureUserDailyPinReset } from '@/lib/pins/dailyPinReset';
+import { reconcileUserWeeklyLeaguePoints } from '@/lib/leagues/reconcileWeeklyLeaguePoints';
 import {
   computeDashboardPriorityActions,
   computeDashboardRadarMetrics,
@@ -112,6 +113,15 @@ export async function GET(req: NextRequest) {
           weeklyXp = Math.max(0, Math.round(Number(userRow.weekly_xp) || 0));
           careerXp = Math.max(0, Math.round(Number(userRow.xp_total) || 0));
           weeklyArenaPoints = Math.max(0, Math.round(Number(userRow.weekly_arena_points) || 0));
+          try {
+            const reconciledLeague = await reconcileUserWeeklyLeaguePoints(admin, {
+              userId: studentId,
+              storedWeeklyXp: weeklyXp,
+              storedArenaPoints: weeklyArenaPoints,
+            });
+            weeklyXp = reconciledLeague.weeklyXp;
+            weeklyArenaPoints = reconciledLeague.arenaPoints;
+          } catch {}
           leagueTier = typeof userRow.league_tier === 'string' && userRow.league_tier.trim()
             ? userRow.league_tier.trim().toLowerCase()
             : 'browns';
