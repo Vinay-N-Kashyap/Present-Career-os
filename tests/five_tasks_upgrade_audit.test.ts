@@ -15,7 +15,11 @@ import { setSupabaseAdminForTests } from '../src/lib/server/supabaseAdmin';
 import {
   computeDashboardPriorityActions,
   computeDashboardRadarMetrics,
+  getIstDateKey,
+  PRIORITY_XP_MIN,
+  PRIORITY_XP_MAX,
 } from '../src/lib/dashboard/dashboardMetrics';
+import { awardDailyPriorityXp } from '../src/lib/dashboard/awardDailyPriorityXp';
 import { extractSafeUserStoragePath } from '../src/lib/roadmap/userEvidenceContext';
 import { generateDynamicStudentRoadmap } from '../src/lib/data/roadmapFuser';
 import { isSpecificLessonRequest, isLessonContinuationIntent } from '../src/lib/avatar/lessonIntent';
@@ -35,6 +39,7 @@ import {
 } from '../src/lib/quests/extraRoadmaps';
 import {
   formatConciseStageDesc,
+  formatRoadmapNodeLabel,
   buildDynamicSCurveGeometry,
 } from '../src/app/quests/components/QuestPathView';
 import { selectRelevantCourseIds } from '../src/lib/roadmap/roadmapCourseSelector';
@@ -199,8 +204,8 @@ test('Task 3: Radar & Priority Actions are evidence-driven (no inflated Socratic
   const socraticOne = oneInterviewRadar.axes.find((a) => a.key === 'socratic');
   assert.ok((socraticOne?.score || 0) > 15 && (socraticOne?.score || 0) < 40, 'Single scored interview should calibrate conservatively');
 
-  // Priority actions mark verified Vault resume as completed instead of showing static "Optimize Resume"
-  const actions = computeDashboardPriorityActions({
+  // Daily-rotating Priority Actions strictly use 10-15 Weekly EXP and reflect today's activity
+  const actionsDay1 = computeDashboardPriorityActions({
     targetRole: 'Full Stack Engineer',
     atsScore: 78,
     hasResumeInVault: true,
@@ -211,12 +216,16 @@ test('Task 3: Radar & Priority Actions are evidence-driven (no inflated Socratic
     completedQuestToday: false,
     completedInterviewToday: false,
     radar,
+    now: new Date('2026-11-26T06:00:00.000Z'),
   });
-  assert.equal(actions.length, 3);
-  assert.equal(actions[0].completed, true);
-  assert.ok(actions[0].title.includes('Resume'), 'Verified resume should appear as completed action');
-  assert.equal(actions[1].completed, true, 'Mission completed today should mark Daily Sprint completed');
-  assert.equal(actions[2].href, '/interview', 'Weakest active Socratic dimension should point directly to /interview');
+  assert.equal(actionsDay1.length, 3);
+  for (const act of actionsDay1) {
+    assert.ok(
+      Number.isInteger(act.xpAmount) && act.xpAmount >= PRIORITY_XP_MIN && act.xpAmount <= PRIORITY_XP_MAX,
+      `Priority ${act.id} XP (${act.xpAmount}) must be strictly between 10 and 15`
+    );
+    assert.ok(!/35 XP|40 XP|50 XP|75 XP/.test(act.xp), `Priority badge ${act.xp} must not use legacy high XP`);
+  }
 });
 
 test('Task 4: Evidence-driven Roadmap enforces Vault storage IDOR boundary and uses real executable quests & live Groq models', () => {
@@ -609,7 +618,7 @@ test('All-6-Tasks Audit: Task 1 (Resume opt-out, wider modal, declutter), Task 2
   assert.equal(postResetResult.healed, false);
 });
 
-test('QuestPathView UI polish: unified Command Deck, dynamic cartoon S-curve, concise stage text, Start button, and Activity badge fix', () => {
+test('QuestPathView UI polish: unified Command Deck, restored rainbow hairpin S-curve, concise stage text, Start button, and Activity badge fix', () => {
   const verbose =
     '🔀 Fused Goal Trajectory: Foundations, Core Syntax & Mental Models covering 95 calibrated quests (⚡ Fast-Track Jump: Day 1: Full-Stack Architecture → Day 31 Practice 2). Tailored for Full Stack Engineer (Pattern Hunter archetype with QT1: 40/100 & QT2: 40/100).';
   const concise = formatConciseStageDesc(verbose, 95);
@@ -619,19 +628,27 @@ test('QuestPathView UI polish: unified Command Deck, dynamic cartoon S-curve, co
   assert.ok(!concise.includes('Pattern Hunter archetype'), 'concise desc should strip QT archetype suffix');
   assert.ok(concise.length <= 130, `expected concise desc <= 130 chars, got ${concise.length}`);
 
+  const cleanLabel = formatRoadmapNodeLabel('Full-Stack JavaScript Engineering — Foundations, Core Syntax & Mental Models');
+  assert.equal(cleanLabel, 'Foundations, Core Syntax & Mental Models');
+
   const curve4 = buildDynamicSCurveGeometry(4);
   const curve8 = buildDynamicSCurveGeometry(8);
   assert.equal(curve4.waypoints.length, 4);
   assert.equal(curve8.waypoints.length, 8);
   assert.ok(curve8.svgHeight > curve4.svgHeight, 'SVG height should scale proportionally with stage count');
-  assert.ok(curve4.path.startsWith('M 52 34 C '), 'S-curve path should originate from GO badge');
+  assert.ok(curve4.path.startsWith('M 50,35 H 250'), 'Restored rainbow hairpin S-curve path must start from top horizontal rail');
+  assert.equal(curve4.waypoints[0].alignRight, true);
+  assert.equal(curve4.waypoints[1].alignRight, false);
 
   const viewSrc = fs.readFileSync(
     path.join(process.cwd(), 'src/app/quests/components/QuestPathView.tsx'),
     'utf8'
   );
   assert.ok(viewSrc.includes('data-testid="roadmap-command-deck"'), 'top header, tabs, and timeline must live inside unified Command Deck');
-  assert.ok(viewSrc.includes('data-testid="visual-scurve-roadmap"'), 'enhanced cartoon S-curve roadmap container must exist');
+  assert.ok(viewSrc.includes('data-testid="visual-scurve-roadmap"'), 'enhanced rainbow S-curve roadmap container must exist');
+  assert.ok(viewSrc.includes('id="scurveGradient"'), 'restored rainbow SVG gradient must be present');
+  assert.ok(viewSrc.includes('Interactive Flow'), 'restored Interactive Flow header badge must be present');
+  assert.ok(viewSrc.includes('YOU ARE HERE'), 'floating YOU ARE HERE runner indicator must be present');
   assert.ok(viewSrc.includes('Start ➔'), 'stage CTA button should read Start ➔');
   assert.ok(!viewSrc.includes('Continue Stage'), 'legacy Continue Stage button text must be removed');
   assert.ok(!viewSrc.includes('Continue Quest'), 'legacy Continue Quest button text must be removed');
@@ -644,4 +661,155 @@ test('QuestPathView UI polish: unified Command Deck, dynamic cartoon S-curve, co
     'utf8'
   );
   assert.ok(!fuserSrc.includes('🔀 Fused Goal Trajectory:'), 'roadmapFuser should emit concise stage descriptions');
+});
+
+test('Dashboard Priorities rotate daily across IST dates and idempotently grant 10-15 Weekly EXP', async () => {
+  const baseRadar = computeDashboardRadarMetrics({
+    targetRole: 'Full Stack Engineer',
+    completedQuests: ['q1'],
+    arenaWins: 0,
+    soloPassedCount: 0,
+    examsAvg: 0,
+    atsScore: 78,
+    hasResumeInVault: true,
+    vaultTotalCount: 1,
+    vaultVerifiedCount: 1,
+    completedInterviewScores: [],
+    completedGdScores: [],
+    verifiedCompetencies: [],
+    missionStreak: 2,
+  });
+
+  const dayA = new Date('2026-11-26T06:00:00.000Z');
+  const dayB = new Date('2026-11-27T06:00:00.000Z');
+  const dayC = new Date('2026-11-28T06:00:00.000Z');
+  assert.equal(getIstDateKey(dayA), '2026-11-26');
+  assert.equal(getIstDateKey(dayB), '2026-11-27');
+
+  const listA = computeDashboardPriorityActions({
+    targetRole: 'Full Stack Engineer',
+    atsScore: 78,
+    hasResumeInVault: true,
+    hasVerifiedResume: true,
+    trustScore: 48,
+    missionStreak: 2,
+    completedMissionToday: false,
+    completedQuestToday: false,
+    completedInterviewToday: false,
+    radar: baseRadar,
+    now: dayA,
+  });
+  const listB = computeDashboardPriorityActions({
+    targetRole: 'Full Stack Engineer',
+    atsScore: 78,
+    hasResumeInVault: true,
+    hasVerifiedResume: true,
+    trustScore: 48,
+    missionStreak: 2,
+    completedMissionToday: false,
+    completedQuestToday: false,
+    completedInterviewToday: false,
+    radar: baseRadar,
+    now: dayB,
+  });
+  const listC = computeDashboardPriorityActions({
+    targetRole: 'Full Stack Engineer',
+    atsScore: 78,
+    hasResumeInVault: true,
+    hasVerifiedResume: true,
+    trustScore: 48,
+    missionStreak: 2,
+    completedMissionToday: false,
+    completedQuestToday: false,
+    completedInterviewToday: false,
+    radar: baseRadar,
+    now: dayC,
+  });
+
+  assert.notDeepEqual(listA.map((a) => a.id), listB.map((a) => a.id), 'Priorities must rotate between consecutive IST days');
+  assert.notDeepEqual(listB.map((a) => a.id), listC.map((a) => a.id), 'Priorities must continue rotating on Day 3');
+
+  for (const act of [...listA, ...listB, ...listC]) {
+    assert.ok(act.xpAmount >= 10 && act.xpAmount <= 15, `Expected 10-15 XP, got ${act.xpAmount}`);
+  }
+
+  // Test server-side idempotent 10-15 Weekly EXP award + next-day rollover + 3/day cap
+  const ledgerRows: Array<{ user_id: string; amount: number; reason: string }> = [];
+  let userXpTotal = 100;
+  let userWeeklyXp = 40;
+  const mockAdmin = {
+    from(table: string) {
+      if (table === 'xp_ledger') {
+        const filters: { userId?: string; likePrefix?: string } = {};
+        const builder: any = {
+          select() { return builder; },
+          eq(col: string, val: string) {
+            if (col === 'user_id') filters.userId = val;
+            return builder;
+          },
+          like(_col: string, pattern: string) {
+            filters.likePrefix = pattern.replace(/%$/, '');
+            return builder;
+          },
+          then(resolve: any) {
+            const matched = ledgerRows.filter(
+              (r) =>
+                (!filters.userId || r.user_id === filters.userId) &&
+                (!filters.likePrefix || r.reason.startsWith(filters.likePrefix))
+            );
+            return resolve({ data: matched, error: null });
+          },
+          async insert(row: any) {
+            ledgerRows.push(row);
+            return { data: row, error: null };
+          },
+        };
+        return builder;
+      }
+      if (table === 'users') {
+        return {
+          select() { return this; },
+          eq() { return this; },
+          async maybeSingle() {
+            return { data: { xp_total: userXpTotal, weekly_xp: userWeeklyXp }, error: null };
+          },
+          update(patch: any) {
+            if (typeof patch.xp_total === 'number') userXpTotal = patch.xp_total;
+            if (typeof patch.weekly_xp === 'number') userWeeklyXp = patch.weekly_xp;
+            return { async eq() { return { error: null }; } };
+          },
+        };
+      }
+      throw new Error(`Unexpected table: ${table}`);
+    },
+    async rpc() {
+      return { data: null, error: { message: 'rpc mocked off to test direct ledger path' } };
+    },
+  };
+
+  const firstAward = await awardDailyPriorityXp(mockAdmin, 'u-1', 'daily_arena_duel', 'Play 1 Arena Duel', 15, '2026-11-26');
+  assert.equal(firstAward.awarded, true);
+  assert.equal(firstAward.xpAdded, 15);
+  assert.equal(userWeeklyXp, 55);
+
+  const duplicateSameDay = await awardDailyPriorityXp(mockAdmin, 'u-1', 'daily_arena_duel', 'Play 1 Arena Duel', 15, '2026-11-26');
+  assert.equal(duplicateSameDay.awarded, false);
+  assert.equal(duplicateSameDay.alreadyClaimed, true);
+  assert.equal(userWeeklyXp, 55);
+
+  // Fill remaining 2 slots for 2026-11-26, then verify 4th is capped
+  await awardDailyPriorityXp(mockAdmin, 'u-1', 'daily_quest_lesson', 'Complete 1 Lesson', 12, '2026-11-26');
+  await awardDailyPriorityXp(mockAdmin, 'u-1', 'daily_trust_verify', 'Boost Trust', 10, '2026-11-26');
+  assert.equal(userWeeklyXp, 77);
+
+  const fourthSameDay = await awardDailyPriorityXp(mockAdmin, 'u-1', 'daily_project_step', 'Project Step', 15, '2026-11-26');
+  assert.equal(fourthSameDay.awarded, false);
+  assert.equal(fourthSameDay.capReached, true);
+  assert.equal(userWeeklyXp, 77);
+
+  // Next IST day opens fresh awards
+  const nextDayAward = await awardDailyPriorityXp(mockAdmin, 'u-1', 'daily_arena_duel', 'Play 1 Arena Duel', 15, '2026-11-27');
+  assert.equal(nextDayAward.awarded, true);
+  assert.equal(nextDayAward.xpAdded, 15);
+  assert.equal(userWeeklyXp, 92);
 });

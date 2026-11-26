@@ -42,29 +42,54 @@ export function formatConciseStageDesc(rawDesc: string, questCount: number): str
   return text;
 }
 
+export function formatRoadmapNodeLabel(title: string): string {
+  const raw = String(title || '').trim();
+  if (!raw) return 'Milestone Stage';
+  const cleaned = raw.replace(/^Phase\s*\d+:\s*/i, '').trim();
+  const dashIdx = cleaned.indexOf('—');
+  if (dashIdx >= 0) {
+    const suffix = cleaned.slice(dashIdx + 1).trim();
+    if (suffix.length >= 4) return suffix;
+  }
+  return cleaned;
+}
+
 export function buildDynamicSCurveGeometry(nodeCount: number) {
   const safeCount = Math.max(1, Math.min(12, nodeCount));
-  const rowGap = 112;
-  const firstNodeY = 104;
-  const waypoints = Array.from({ length: safeCount }, (_, i) => ({
-    x: i % 2 === 0 ? 252 : 68,
-    y: firstNodeY + i * rowGap,
-    alignRight: i % 2 === 0,
-  }));
-  const last = waypoints[waypoints.length - 1];
-  const finishX = last.alignRight ? 234 : 86;
-  const finishY = last.y + 72;
-  const svgHeight = finishY + 46;
+  const rowGap = 80;
+  const firstRowY = 115;
+  const RAINBOW_COLORS = ['#ef4444', '#f59e0b', '#10b981', '#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#f97316'];
 
-  // Start badge at top-left (52, 34) curving into waypoint 0 (252, 104)
-  let d = `M 52 34 C 150 34, 252 46, ${waypoints[0].x} ${waypoints[0].y}`;
-  for (let i = 1; i < waypoints.length; i += 1) {
-    const prev = waypoints[i - 1];
-    const curr = waypoints[i];
-    const midY = (prev.y + curr.y) / 2;
-    d += ` C ${prev.x} ${midY}, ${curr.x} ${midY}, ${curr.x} ${curr.y}`;
+  let d = 'M 50,35 H 250';
+  const waypoints = Array.from({ length: safeCount }, (_, i) => {
+    const prevY = i === 0 ? 35 : firstRowY + (i - 1) * rowGap;
+    const rowY = firstRowY + i * rowGap;
+    const alignRight = i % 2 === 0;
+    if (alignRight) {
+      d += ` C 295,${prevY} 295,${rowY} 250,${rowY} H 60`;
+    } else {
+      d += ` C 15,${prevY} 15,${rowY} 60,${rowY} H 250`;
+    }
+    return {
+      x: alignRight ? 250 : 60,
+      y: rowY,
+      alignRight,
+      color: RAINBOW_COLORS[i % RAINBOW_COLORS.length],
+    };
+  });
+
+  const lastY = firstRowY + (safeCount - 1) * rowGap;
+  const finishY = lastY + 72;
+  const lastAlignRight = (safeCount - 1) % 2 === 0;
+  let finishX = 220;
+  if (lastAlignRight) {
+    d += ` C 15,${lastY} 15,${finishY} 60,${finishY} H 220`;
+    finishX = 220;
+  } else {
+    d += ` C 295,${lastY} 295,${finishY} 250,${finishY} H 100`;
+    finishX = 100;
   }
-  d += ` C ${last.x} ${last.y + 38}, ${finishX} ${last.y + 44}, ${finishX} ${finishY}`;
+  const svgHeight = finishY + 42;
 
   return { path: d, waypoints, finishX, finishY, svgHeight };
 }
@@ -147,19 +172,23 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
     if (activeSubTab === 'custom_roadmap' && modules && modules.length > 0) {
       let dayCursor = 1;
       const totalQ = Math.max(1, modules.reduce((s, m) => s + (m.quests?.length || 0), 0));
+      const lastModuleEnd = typeof (modules[modules.length - 1] as any)?.endDay === 'number'
+        ? Number((modules[modules.length - 1] as any).endDay)
+        : 0;
+      const useExplicitDays = lastModuleEnd > 0 && lastModuleEnd === totalDurationDays;
       return modules.map((m: any, idx) => {
         const qs = m.quests || [];
         const cleared = qs.filter((q: Quest) => completedQuests.includes(q.id)).length;
         const pct = Math.min(100, Math.round((cleared / Math.max(1, qs.length)) * 100));
         const isCompleted = qs.length > 0 && cleared === qs.length;
-        const explicitStart = typeof m.startDay === 'number' ? m.startDay : null;
-        const explicitEnd = typeof m.endDay === 'number' ? m.endDay : null;
+        const explicitStart = useExplicitDays && typeof m.startDay === 'number' ? m.startDay : null;
+        const explicitEnd = useExplicitDays && typeof m.endDay === 'number' ? m.endDay : null;
         const estSpan = idx === modules.length - 1
           ? Math.max(1, totalDurationDays - dayCursor + 1)
           : Math.max(1, Math.round((qs.length / totalQ) * totalDurationDays));
         const startDay = explicitStart ?? dayCursor;
-        const endDay = explicitEnd ?? Math.min(totalDurationDays, startDay + estSpan - 1);
-        dayCursor = endDay + 1;
+        const endDay = explicitEnd ?? (idx === modules.length - 1 ? totalDurationDays : Math.min(totalDurationDays, startDay + estSpan - 1));
+        dayCursor = Math.min(totalDurationDays, endDay + 1);
         return {
           key: m.id,
           anchorId: `stage-card-${m.id}`,
@@ -171,7 +200,7 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
           difficulty: m.difficulty || 'Intermediate',
           startDay,
           endDay,
-          estimatedWeeks: m.estimatedWeeks || Math.max(1, Math.round((endDay - startDay + 1) / 7)),
+          estimatedWeeks: Math.max(1, Math.round((endDay - startDay + 1) / 7)),
           cleared,
           total: qs.length,
           pct,
@@ -620,11 +649,12 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
         {/* ── 38% / 62% CREATIVE CARTOON S-CURVE ROADMAP + STAGE WORKSPACE ── */}
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(300px, 38%) minmax(0, 1fr)', gap: 22, marginTop: 12, alignItems: 'start' }}>
 
-          {/* ── LEFT COLUMN (38%): Enhanced Creative Cartoon S-Curve Roadmap ── */}
+          {/* ── LEFT COLUMN (38%): Restored & Enhanced Rainbow Hairpin S-Curve Roadmap ── */}
           {(() => {
             const visibleCurveStages = stageItems.slice(0, 12);
             const sCurve = buildDynamicSCurveGeometry(visibleCurveStages.length);
             const activeStageIdx = focusedStageIdx ?? activeStageIdxComputed;
+            const activeWp = sCurve.waypoints[Math.min(activeStageIdxComputed, Math.max(0, sCurve.waypoints.length - 1))];
             return (
               <div
                 data-testid="visual-scurve-roadmap"
@@ -633,244 +663,315 @@ export const QuestPathView: React.FC<QuestPathViewProps> = ({
                   padding: '20px 18px 22px 18px',
                   borderRadius: 22,
                   border: '1px solid var(--border)',
-                  background: 'linear-gradient(180deg, rgba(16,185,129,0.06) 0%, var(--bg2) 32%, rgba(99,102,241,0.05) 100%)',
+                  background: 'var(--bg2)',
                   position: 'sticky',
                   top: 18,
-                  boxShadow: 'var(--shadow-md)',
+                  boxShadow: 'var(--shadow-lg)',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 18 }}>
                   <div>
-                    <h3 style={{ fontSize: 16.5, fontWeight: 900, color: 'var(--t1)', margin: 0, fontFamily: 'var(--font-display)' }}>
+                    <h3 style={{ fontSize: 17.5, fontWeight: 900, color: 'var(--t1)', margin: 0, fontFamily: 'var(--font-display)' }}>
                       Visual Roadmap Chart
                     </h3>
                     <span style={{ fontSize: 11.5, color: 'var(--t3)' }}>
-                      {visibleCurveStages.length} winding milestones · {totalDurationDays} days
+                      {visibleCurveStages.length} milestones · {totalDurationDays} days
                     </span>
                   </div>
-                  <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.14)', color: '#34d399', padding: '3px 9px', borderRadius: 999 }}>
-                    Live S-Curve
+                  <span style={{ fontSize: 11, fontWeight: 800, background: 'rgba(16,185,129,0.15)', color: '#34d399', padding: '4px 11px', borderRadius: 20 }}>
+                    Interactive Flow
                   </span>
                 </div>
 
-                {visibleCurveStages.length > 0 && (
-                  <div style={{ position: 'relative', width: '100%', maxWidth: 340, margin: '0 auto', height: sCurve.svgHeight }}>
+                {visibleCurveStages.length > 0 && activeWp && (
+                  <div style={{ position: 'relative', width: '100%', maxWidth: 340, margin: '0 auto', height: sCurve.svgHeight, overflow: 'hidden' }}>
                     <svg
                       viewBox={`0 0 320 ${sCurve.svgHeight}`}
                       preserveAspectRatio="none"
                       aria-hidden="true"
-                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'visible', pointerEvents: 'none' }}
+                      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }}
                     >
                       <defs>
-                        <linearGradient id="cartoonSCurveRoadGrad" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="0%" stopColor="#10b981" />
-                          <stop offset="50%" stopColor="#06b6d4" />
-                          <stop offset="100%" stopColor="#6366f1" />
+                        <linearGradient id="scurveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" stopColor="#ef4444" />
+                          <stop offset="16%" stopColor="#f97316" />
+                          <stop offset="32%" stopColor="#f59e0b" />
+                          <stop offset="48%" stopColor="#10b981" />
+                          <stop offset="64%" stopColor="#06b6d4" />
+                          <stop offset="80%" stopColor="#3b82f6" />
+                          <stop offset="92%" stopColor="#8b5cf6" />
+                          <stop offset="100%" stopColor="#ec4899" />
                         </linearGradient>
                       </defs>
-                      {/* Soft ambient glow */}
+                      {/* Outer Thick Road Shadow / Border */}
                       <path
                         d={sCurve.path}
                         fill="none"
-                        stroke="rgba(16,185,129,0.16)"
+                        stroke="rgba(0,0,0,0.24)"
                         strokeWidth={34}
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
-                      {/* Dark cartoon curb border */}
+                      {/* Vibrant Rainbow Road Surface */}
                       <path
                         d={sCurve.path}
                         fill="none"
-                        stroke="#0b1120"
-                        strokeWidth={26}
+                        stroke="url(#scurveGradient)"
+                        strokeWidth={24}
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
-                      {/* Vibrant gradient cartoon road */}
+                      {/* Crisp Dashed White Center Line */}
                       <path
                         d={sCurve.path}
                         fill="none"
-                        stroke="url(#cartoonSCurveRoadGrad)"
-                        strokeWidth={18}
+                        stroke="#ffffff"
+                        strokeWidth={2.5}
+                        strokeDasharray="10 9"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                      />
-                      {/* White dashed center lane markings */}
-                      <path
-                        d={sCurve.path}
-                        fill="none"
-                        stroke="rgba(255,255,255,0.68)"
-                        strokeWidth={2.4}
-                        strokeDasharray="7 9"
-                        strokeLinecap="round"
+                        opacity={0.88}
+                        vectorEffect="non-scaling-stroke"
                       />
                     </svg>
 
-                    {/* GO / START badge at road origin */}
+                    {/* Top-Left Starting Node */}
                     <div
                       style={{
                         position: 'absolute',
-                        left: 6,
-                        top: 16,
-                        padding: '4px 10px',
-                        borderRadius: 999,
-                        background: 'linear-gradient(135deg, #10b981, #059669)',
-                        color: '#ffffff',
-                        fontSize: 10,
-                        fontWeight: 900,
-                        letterSpacing: '0.07em',
-                        boxShadow: '0 4px 12px rgba(16,185,129,0.45)',
-                        border: '2px solid #0b1120',
-                        zIndex: 3,
+                        top: 14,
+                        left: 16,
+                        zIndex: 4,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
                       }}
                     >
-                      GO · DAY 1
+                      <div
+                        style={{
+                          width: 42,
+                          height: 42,
+                          borderRadius: '50%',
+                          background: '#ef4444',
+                          border: '4px solid #ffffff',
+                          boxShadow: '0 4px 14px rgba(239,68,68,0.45)',
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: 12,
+                          fontWeight: 900,
+                          color: '#ef4444',
+                          background: 'rgba(255,255,255,0.96)',
+                          padding: '4px 11px',
+                          borderRadius: 20,
+                          boxShadow: '0 2px 8px rgba(0,0,0,0.16)',
+                        }}
+                      >
+                        START
+                      </span>
                     </div>
 
+                    {/* Floating Active Runner Marker Above Active Stage */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        left: activeWp.alignRight ? '78%' : '22%',
+                        top: activeWp.y - 54,
+                        transform: 'translateX(-50%)',
+                        zIndex: 10,
+                        pointerEvents: 'none',
+                        transition: 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: 9.5,
+                          fontWeight: 900,
+                          background: activeWp.color,
+                          color: '#ffffff',
+                          padding: '2px 8px',
+                          borderRadius: 10,
+                          boxShadow: `0 4px 12px ${activeWp.color}66`,
+                          whiteSpace: 'nowrap',
+                          marginBottom: 3,
+                        }}
+                      >
+                        YOU ARE HERE
+                      </div>
+                      <div
+                        style={{
+                          width: 30,
+                          height: 30,
+                          borderRadius: '50%',
+                          background: '#f8fafc',
+                          border: `3px solid ${activeWp.color}`,
+                          boxShadow: `0 0 0 4px ${activeWp.color}33, 0 6px 14px ${activeWp.color}88`,
+                        }}
+                      />
+                    </div>
+
+                    {/* Dynamic Milestones Anchored on Each Hairpin Horizontal Rail */}
                     {visibleCurveStages.map((item, idx) => {
                       const wp = sCurve.waypoints[idx];
-                      const accent = STEP_ACCENTS[idx % STEP_ACCENTS.length];
+                      const itemColor = wp.color;
                       const isSelected = activeStageIdx === idx;
                       const isCurrentTarget = activeStageIdxComputed === idx;
-                      const isPrevPending = idx > 0 && !visibleCurveStages[idx - 1].isCompleted && visibleCurveStages[idx - 1].total > 0;
-                      const topPct = (wp.y / sCurve.svgHeight) * 100;
-                      const leftPct = (wp.x / 320) * 100;
+                      const nodeTitle = formatRoadmapNodeLabel(item.title);
 
                       return (
-                        <React.Fragment key={item.key || `scurve-${idx}`}>
-                          {isCurrentTarget && (
-                            <div
-                              style={{
-                                position: 'absolute',
-                                left: `${leftPct}%`,
-                                top: `calc(${topPct}% - 34px)`,
-                                transform: 'translate(-50%, -50%)',
-                                padding: '2px 8px',
-                                borderRadius: 999,
-                                background: '#fbbf24',
-                                color: '#0b1120',
-                                fontSize: 9,
-                                fontWeight: 900,
-                                letterSpacing: '0.06em',
-                                whiteSpace: 'nowrap',
-                                boxShadow: '0 4px 12px rgba(251,191,36,0.5)',
-                                zIndex: 5,
-                              }}
-                            >
-                              YOU ARE HERE
-                            </div>
-                          )}
-
-                          {/* Cartoon circular milestone node dead-center on S-curve bend */}
-                          <button
-                            type="button"
-                            onClick={() => scrollToStage(item, idx)}
-                            title={`${item.title} (Days ${item.startDay}–${item.endDay})`}
+                        <div
+                          key={item.key || `scurve-${idx}`}
+                          onClick={() => scrollToStage(item, idx)}
+                          className="card-hover"
+                          title={`${item.title} (Days ${item.startDay}–${item.endDay})`}
+                          style={{
+                            position: 'absolute',
+                            top: wp.y,
+                            transform: 'translateY(-50%)',
+                            left: wp.alignRight ? undefined : 14,
+                            right: wp.alignRight ? 14 : undefined,
+                            display: 'flex',
+                            flexDirection: wp.alignRight ? 'row' : 'row-reverse',
+                            alignItems: 'center',
+                            gap: 0,
+                            zIndex: isSelected ? 6 : 4,
+                            cursor: 'pointer',
+                            maxWidth: 'calc(100% - 28px)',
+                          }}
+                        >
+                          {/* Circular Milestone S1..SN Node */}
+                          <div
                             style={{
-                              position: 'absolute',
-                              left: `${leftPct}%`,
-                              top: `${topPct}%`,
-                              transform: 'translate(-50%, -50%)',
-                              width: isSelected ? 46 : 40,
-                              height: isSelected ? 46 : 40,
+                              width: 42,
+                              height: 42,
                               borderRadius: '50%',
-                              background: item.isCompleted
-                                ? 'linear-gradient(135deg, #10b981, #059669)'
-                                : isSelected
-                                ? `linear-gradient(135deg, ${accent}, #0f172a)`
-                                : '#111827',
-                              border: `3px solid ${item.isCompleted ? '#6ee7b7' : isSelected ? '#ffffff' : accent}`,
-                              outline: '3px solid #0b1120',
-                              color: '#ffffff',
-                              fontSize: 12.5,
+                              background: item.isCompleted ? '#10b981' : '#f8fafc',
+                              border: `3.5px solid ${item.isCompleted ? '#10b981' : itemColor}`,
+                              color: item.isCompleted ? '#ffffff' : '#0f172a',
+                              fontSize: 13.5,
                               fontWeight: 900,
                               fontFamily: 'var(--font-mono)',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
-                              cursor: 'pointer',
+                              flexShrink: 0,
                               boxShadow: isSelected
-                                ? `0 0 0 5px ${accent}33, 0 8px 18px rgba(0,0,0,0.55)`
-                                : '0 6px 14px rgba(0,0,0,0.45)',
-                              transition: 'all 0.2s ease',
-                              zIndex: isSelected ? 4 : 3,
-                            }}
-                          >
-                            {item.isCompleted ? '✓' : `S${idx + 1}`}
-                          </button>
-
-                          {/* Readable frosted glass callout card opposite the road bend */}
-                          <button
-                            type="button"
-                            onClick={() => scrollToStage(item, idx)}
-                            style={{
-                              position: 'absolute',
-                              ...(wp.alignRight ? { left: 4 } : { right: 4 }),
-                              top: `${topPct}%`,
-                              transform: 'translateY(-50%)',
-                              width: '61%',
-                              textAlign: 'left',
-                              padding: '9px 11px',
-                              borderRadius: 13,
-                              border: `1.5px solid ${isSelected ? accent : item.isCompleted ? 'rgba(16,185,129,0.45)' : 'rgba(255,255,255,0.12)'}`,
-                              background: isSelected ? `linear-gradient(135deg, ${accent}24, rgba(11,17,32,0.92))` : 'rgba(11,17,32,0.88)',
-                              backdropFilter: 'blur(8px)',
-                              cursor: 'pointer',
-                              opacity: isPrevPending && !isSelected ? 0.78 : 1,
-                              boxShadow: isSelected ? `0 8px 20px ${accent}25` : '0 4px 12px rgba(0,0,0,0.32)',
-                              transition: 'all 0.2s ease',
+                                ? `0 0 0 4px ${itemColor}44, 0 6px 14px rgba(0,0,0,0.3)`
+                                : '0 4px 12px rgba(0,0,0,0.28)',
                               zIndex: 2,
                             }}
                           >
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 6, marginBottom: 3 }}>
-                              <span style={{ fontSize: 10, fontWeight: 900, color: item.isCompleted ? '#34d399' : accent, fontFamily: 'var(--font-mono)' }}>
-                                STEP {idx + 1} · D{item.startDay}–{item.endDay}
+                            {item.isCompleted ? '✓' : `S${idx + 1}`}
+                          </div>
+
+                          {/* Crisp Horizontal White Step Banner */}
+                          <div
+                            style={{
+                              background: 'rgba(255,255,255,0.96)',
+                              padding: '8px 12px',
+                              borderRadius: wp.alignRight ? '0 12px 12px 0' : '12px 0 0 12px',
+                              marginLeft: wp.alignRight ? -4 : 0,
+                              marginRight: wp.alignRight ? 0 : -4,
+                              boxShadow: isSelected
+                                ? `0 0 18px ${itemColor}55, 0 4px 14px rgba(0,0,0,0.2)`
+                                : '0 4px 14px rgba(0,0,0,0.16)',
+                              borderTop: isSelected ? `1.5px solid ${itemColor}` : 'none',
+                              borderBottom: isSelected ? `1.5px solid ${itemColor}` : 'none',
+                              borderRight: wp.alignRight ? (isSelected ? `1.5px solid ${itemColor}` : 'none') : `4px solid ${item.isCompleted ? '#10b981' : itemColor}`,
+                              borderLeft: wp.alignRight ? `4px solid ${item.isCompleted ? '#10b981' : itemColor}` : (isSelected ? `1.5px solid ${itemColor}` : 'none'),
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 7,
+                              maxWidth: 224,
+                              minWidth: 0,
+                              transition: 'all 0.25s ease',
+                            }}
+                          >
+                            <span
+                              style={{
+                                fontSize: 10.5,
+                                fontWeight: 900,
+                                color: item.isCompleted ? '#10b981' : itemColor,
+                                textTransform: 'uppercase',
+                                flexShrink: 0,
+                              }}
+                            >
+                              STEP {idx + 1}
+                            </span>
+                            <span
+                              style={{
+                                fontSize: 12,
+                                fontWeight: 800,
+                                color: '#1e293b',
+                                whiteSpace: 'nowrap',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                              }}
+                            >
+                              {nodeTitle}
+                            </span>
+                            {isCurrentTarget && !item.isCompleted && (
+                              <span
+                                style={{
+                                  fontSize: 9,
+                                  fontWeight: 900,
+                                  background: `${itemColor}22`,
+                                  color: itemColor,
+                                  padding: '2px 5px',
+                                  borderRadius: 4,
+                                  textTransform: 'uppercase',
+                                  flexShrink: 0,
+                                }}
+                              >
+                                ACTIVE
                               </span>
-                              <span style={{ fontSize: 10, fontWeight: 800, color: 'var(--t3)', fontFamily: 'var(--font-mono)' }}>
-                                {item.cleared}/{item.total}
+                            )}
+                            {item.isCompleted && (
+                              <span
+                                style={{
+                                  fontSize: 9,
+                                  fontWeight: 900,
+                                  background: 'rgba(16,185,129,0.18)',
+                                  color: '#059669',
+                                  padding: '2px 5px',
+                                  borderRadius: 4,
+                                  textTransform: 'uppercase',
+                                  flexShrink: 0,
+                                }}
+                              >
+                                CLEARED
                               </span>
-                            </div>
-                            <div style={{
-                              fontSize: 12,
-                              fontWeight: 800,
-                              color: '#f8fafc',
-                              lineHeight: 1.3,
-                              display: '-webkit-box',
-                              WebkitLineClamp: 2,
-                              WebkitBoxOrient: 'vertical',
-                              overflow: 'hidden',
-                            }}>
-                              {item.title}
-                            </div>
-                            <div style={{ height: 4, borderRadius: 999, background: 'rgba(255,255,255,0.08)', marginTop: 6, overflow: 'hidden' }}>
-                              <div style={{ width: `${item.pct}%`, height: '100%', background: item.isCompleted ? '#10b981' : accent }} />
-                            </div>
-                          </button>
-                        </React.Fragment>
+                            )}
+                          </div>
+                        </div>
                       );
                     })}
 
-                    {/* Finish badge anchored at exact road end */}
+                    {/* Clean Finish Node Anchored Right After Last Milestone */}
                     <div
                       style={{
                         position: 'absolute',
                         left: `${(sCurve.finishX / 320) * 100}%`,
                         top: `${(sCurve.finishY / sCurve.svgHeight) * 100}%`,
                         transform: 'translate(-50%, -50%)',
-                        padding: '6px 12px',
-                        borderRadius: 999,
-                        background: 'linear-gradient(135deg, #10b981, #6366f1)',
-                        color: '#ffffff',
-                        fontSize: 10,
+                        padding: '5px 12px',
+                        borderRadius: 20,
+                        background: 'rgba(255,255,255,0.96)',
+                        color: '#059669',
+                        fontSize: 10.5,
                         fontWeight: 900,
-                        letterSpacing: '0.06em',
+                        letterSpacing: '0.05em',
                         whiteSpace: 'nowrap',
-                        border: '2px solid #0b1120',
-                        boxShadow: '0 6px 16px rgba(16,185,129,0.4)',
-                        zIndex: 3,
+                        border: '2.5px solid #10b981',
+                        boxShadow: '0 4px 14px rgba(16,185,129,0.4)',
+                        zIndex: 4,
                       }}
                     >
-                      CAREER GOAL · DAY {totalDurationDays}
+                      GOAL · DAY {totalDurationDays}
                     </div>
                   </div>
                 )}

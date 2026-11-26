@@ -5,8 +5,10 @@ import { reconcileUserWeeklyLeaguePoints } from '@/lib/leagues/reconcileWeeklyLe
 import {
   computeDashboardPriorityActions,
   computeDashboardRadarMetrics,
+  getIstDateKey,
   isTodayIst,
 } from '@/lib/dashboard/dashboardMetrics';
+import { awardDailyPriorityXp } from '@/lib/dashboard/awardDailyPriorityXp';
 import { requireUserFromRequest } from '@/lib/server/requireAuth';
 
 export const dynamic = 'force-dynamic';
@@ -206,6 +208,8 @@ export async function GET(req: NextRequest) {
           passRate = examRows.filter((e: any) => e.passed).length / examsTotal;
         }
 
+        const dayKey = getIstDateKey();
+        const priorityLedgerPrefix = `[priority:${dayKey}:`;
         const [
           ivRes,
           gdRes,
@@ -213,6 +217,7 @@ export async function GET(req: NextRequest) {
           resumeRes,
           masteryRes,
           soloRes,
+          priorityLedgerRes,
         ] = await Promise.allSettled([
           admin
             .from('interview_sessions')
@@ -242,9 +247,15 @@ export async function GET(req: NextRequest) {
             .limit(200),
           admin
             .from('arena_solo_matches')
-            .select('id, passed, status')
+            .select('id, passed, status, created_at')
             .eq('user_id', studentId)
             .limit(100),
+          admin
+            .from('xp_ledger')
+            .select('reason')
+            .eq('user_id', studentId)
+            .like('reason', `${priorityLedgerPrefix}%`)
+            .limit(20),
         ]);
 
         const ivRows = ivRes.status === 'fulfilled' && Array.isArray(ivRes.value?.data) ? ivRes.value.data : [];
@@ -259,6 +270,7 @@ export async function GET(req: NextRequest) {
         const completedGdScores = gdRows
           .map((r: any) => Number(r.overall_score))
           .filter((n: number) => Number.isFinite(n) && n > 0);
+        const completedGdToday = gdRows.some((r: any) => isTodayIst(r.created_at));
 
         const vaultRows = vaultRes.status === 'fulfilled' && Array.isArray(vaultRes.value?.data) ? vaultRes.value.data : [];
         const resumeRows = resumeRes.status === 'fulfilled' && Array.isArray(resumeRes.value?.data) ? resumeRes.value.data : [];
@@ -274,6 +286,21 @@ export async function GET(req: NextRequest) {
           : [];
         const soloRows = soloRes.status === 'fulfilled' && Array.isArray(soloRes.value?.data) ? soloRes.value.data : [];
         const soloPassedCount = soloRows.filter((s: any) => Boolean(s.passed)).length;
+        const playedArenaToday = soloRows.some((s: any) => isTodayIst(s.created_at));
+
+        const priorityLedgerRows = priorityLedgerRes.status === 'fulfilled' && Array.isArray(priorityLedgerRes.value?.data)
+          ? priorityLedgerRes.value.data
+          : [];
+        const claimedPriorityIdsToday: string[] = [];
+        for (const row of priorityLedgerRows) {
+          const reason = typeof (row as any)?.reason === 'string' ? (row as any).reason : '';
+          if (reason.startsWith(priorityLedgerPrefix)) {
+            const closeIdx = reason.indexOf(']', priorityLedgerPrefix.length);
+            if (closeIdx > priorityLedgerPrefix.length) {
+              claimedPriorityIdsToday.push(reason.slice(priorityLedgerPrefix.length, closeIdx));
+            }
+          }
+        }
 
         const computedRadar = computeDashboardRadarMetrics({
           targetRole,
@@ -304,8 +331,44 @@ export async function GET(req: NextRequest) {
           completedMissionToday,
           completedQuestToday,
           completedInterviewToday,
+          playedArenaToday,
+          completedGdToday,
+          claimedPriorityIdsToday,
           radar: computedRadar,
         });
+
+        // Auto-grant 10-15 Weekly EXP when a daily priority is newly satisfied by real user activity today
+        for (const act of computedActions) {
+          if (act.completed && !act.rewardClaimed) {
+            try {
+              const award = await awardDailyPriorityXp(
+                admin,
+                studentId,
+                act.id,
+                act.title,
+                act.xpAmount,
+                dayKey
+              );
+              if (award.awarded) {
+                act.rewardClaimed = true;
+                act.xp = `+${award.xpAdded} XP Done`;
+                if (typeof award.newWeeklyXp === 'number') {
+                  weeklyXp = Math.max(weeklyXp, award.newWeeklyXp);
+                } else {
+                  weeklyXp += award.xpAdded;
+                }
+                if (typeof award.newXp === 'number') {
+                  careerXp = Math.max(careerXp, award.newXp);
+                } else {
+                  careerXp += award.xpAdded;
+                }
+              } else if (award.alreadyClaimed) {
+                act.rewardClaimed = true;
+                act.xp = `+${act.xpAmount} XP Done`;
+              }
+            } catch {}
+          }
+        }
 
         (globalThis as any).__tmpDashExtra = undefined;
         radarMetricsPayload = computedRadar;
