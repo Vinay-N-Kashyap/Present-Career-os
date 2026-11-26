@@ -63,3 +63,45 @@ Counts: likely-wrong items: 7 CONFIRMED-WRONG. Unsure items (20): 13 CONFIRMED-W
 - The 2026 HSR civil-penalty figure, and any later status of the 2025 HSR form rule.
 - Ackers v Saad [2010] FCA 1221 (removed): whether any authority supports the "independent agent is not human means" proposition.
 - Not on the list, but doubtful: Day 3 Part 2 ">= 24 months" MAE benchmark; Day 60 Part 4 Rubin v Iran (2018) described as "absolute immunity" for artifacts (the holding was that §1610(g) creates no freestanding exception to execution immunity); Day 33 Part 2 "contracts exceeding these limits without prior shareholder authorization are null and void ab initio".
+
+## Round 2 (2026-11-27): flagged leftovers and course-wide overclaim sweep
+
+Ops file: `claude_sandbox/expand/fix/bcom_law.expert2.ops.json` (46 edits + 1 recorded skip; `apply.js` dry run: 2 labs re-run, 0 problems). Counts: 5 CONFIRMED-WRONG of the 5 flagged items checked (item R4 needed no change); sweep: 21 more locations CONFIRMED-WRONG and fixed, 12 phrases checked and left as CORRECT.
+
+- R1. Day 3 Part 3, ">= 24 months" MAE duration benchmark: CONFIRMED-WRONG. Delaware sets no fixed period: in IBP and Hexion the duration is "measured in years rather than months", and Akorn found an MAE on about one year of decline. Source: In re IBP, 789 A.2d 14 (Del. Ch. 2001); Hexion v. Huntsman, 965 A.2d 715 (Del. Ch. 2008), https://law.justia.com/cases/delaware/court-of-chancery/2008/112500-1.html. FIXED: S1, S5, S8 and the code comment now call 24 months the lab's illustrative cut-off; the lab output is unchanged.
+- R2. Day 60 Part 4, Rubin v Iran "absolute immunity because not used commercially": CONFIRMED-WRONG. Rubin v. Islamic Republic of Iran, 583 U.S. 202 (2018) held that FSIA §1610(g) is not a freestanding basis for attaching a foreign state's property. Source: https://law.justia.com/cases/federal/us/583/16-534. FIXED. The follow-on "unambiguously ... subject to immediate attachment" wording was also softened to §1610(a).
+- R3. Day 33 Part 2, unapproved material RPTs "null and void ab initio": CONFIRMED-WRONG. LODR Reg 23 has no voidness rule; a breach is a listing-compliance violation. Under Companies Act s.188(3), an unapproved contract that is not ratified within 3 months is voidable at the option of the Board or the shareholders. FIXED.
+- R4. Day 47 Part 2 after the Ackers v Saad removal: CORRECT. The passage reads cleanly; it cites only Betcorp and frames the "human means" point as the lesson's reading of Article 2(f). NO CHANGE (recorded as a skip).
+- R5. Videocon "seven-pronged" (Day 42) vs "nine-factor" (Day 49): CONFIRMED-WRONG as presented. The NCLT Mumbai order of 8 Aug 2019 lists indicative factors, which SCC Online counts as 14. No verified source calls them a seven- or nine-factor test, and the NCLAT's role on consolidation is not verified. Source: https://www.scconline.com/blog/post/2021/01/09/sbi-v-videocon-case-doctrine-of-substantial-consolidation/ ; taxguru group-insolvency note. FIXED neutrally: both days now say the tribunal listed indicative factors that this lesson groups into seven (Day 42) or nine (Day 49). The NCLAT reference and the unverified list of later cases (Jaypee, Amrapali, Era Infra) were removed.
+- R6. Course-wide sweep of "absolute", "void ab initio", "irrebuttable" and "always" (128 hits; "irrebuttable" had none left). Each of the following was CONFIRMED-WRONG (overstated) and FIXED:
+  - Day 8 Part 2, DTSA whistleblower immunity: the immunity covers trade-secret liability only (18 U.S.C. §1833(b)).
+  - Day 11 Part 5 and Day 15 Part 3, Section 11 issuer liability: it is "virtually absolute" (Herman & MacLean v. Huddleston, 459 U.S. 375, 382 (1983)), and due diligence is a defense, not "complete immunity".
+  - Day 12 Part 1, "absolute burden": the burden is on the issuer (Ralston Purina, 346 U.S. 119, 126).
+  - Day 14 Part 4, PSLRA "absolute shield": it is subject to the §21E(b) exclusions (15 U.S.C. §78u-5(b)).
+  - Day 20 Part 4, "absolute" SOX/Dodd-Frank anti-retaliation: Dodd-Frank covers only those who report to the SEC (Digital Realty v. Somers, 583 U.S. 149 (2018)).
+  - Day 21 Part 3, "no hostile bidder has ever triggered a pill": false; Trilogy deliberately triggered Selectica's NOL pill (Versata v. Selectica, 5 A.3d 586 (Del. 2010)).
+  - Day 22 Part 2, Omnicare "void ab initio": the court's words are "invalid and unenforceable" (818 A.2d 914, 936).
+  - Day 28 Part 3 tryIt, due diligence as an "absolute defense".
+  - Day 32 Part 3, vigil mechanism "absolute confidentiality and statutory immunity": s.177(10) requires "adequate safeguards against victimisation".
+  - Day 33 Part 3, "absolute" related-party voting bar: there are s.188 proviso exceptions.
+  - Day 36 Part 1 and Day 40 Part 5, s.238 "absolute" and Innoventive "overrides all legislation": Innoventive (31 Aug 2017) held that the Code prevails over the inconsistent Maharashtra Relief Undertakings Act.
+  - Day 37 Part 5 and Day 38 Part 1, s.21(2) "absolute" disqualification: the second proviso exempts regulated lenders that became related parties only by converting debt into equity.
+  - Day 41 Part 4, s.14 "absolute shield": s.14(3) has exceptions.
+  - Day 53 Part 3, SEBI informant "absolute confidentiality and legal immunity": under PIT Reg 7H, SEBI may share information with other regulators, law enforcement and prosecutors and use it in proceedings; the identity is exempt under RTI s.8(1)(g),(h). Reg 7J (Void Agreements) and Reg 7I(3) sanctions were restated (sources: ca2013.com/pit-regulation-7h, /pit-regulation-7i).
+  - Day 54 Part 4, s.188(4) recovery "absolute": the text says "shall be open to the company to proceed". The unverified D&O insurance claim was removed.
+  - Day 55 Part 3, CSR spend via an unregistered entity "void ab initio", citing Salil Sabhlok and Ramana Dayaram Shetty: neither case is about CSR. Under CSR Rule 4 (Form CSR-1, from 1 Apr 2021) such spend simply does not count.
+  - Day 57 Part 4, s.32A "absolute immunity to the resolution applicant": the immunity belongs to the corporate debtor and is conditional. The correct quiz option was reworded and is still the correct option.
+  - Day 59 Part 4, Crown Jewel during an open offer "void ab initio" with s.164 disqualification: SAST Reg 26(2)(a) requires a special resolution by postal ballot, and a breach leads to SEBI enforcement.
+- Checked and left as CORRECT:
+  - terms of art: Absolute Priority Rule; absolute novelty
+  - US: Wal-Mart (product design "always" needs secondary meaning); DGCL "absolute majority of outstanding shares"; MFW committee's "absolute authority to say no"; Reg 506(b) ban on general solicitation
+  - Indian law: IBC s.28(4) ("such action shall be void"); s.149(6)(b) promoter bar; IRPC first priority under s.53(1)(a); s.59 no-default condition; Explanation 2 to s.48(2)(b)
+  - sovereign immunity of embassy, military and central-bank property
+
+## Still for a lawyer (round 2)
+- Day 34: "void ab initio" for s.179(3) matters passed by circulation, for meetings and for an unauthorised loan resolution. Check the correct consequence (invalid vs void vs voidable) and whether an NCLT can declare an AGM void under s.241-242.
+- Day 44 Part 1: fast-track CIRP "cannot under any circumstances exceed 135 days" and "75%" extension vote. Check the current s.56 text and whether the Essar Steel reasoning applies.
+- Day 28: CSDDD Article 29 civil liability and representative actions after the 2025-26 Omnibus simplification (not verified).
+- Day 42 Part 3: quiz says the Videocon order "extinguished all intra-group debts and cross-guarantees"; also the "Justice M.K. Shrawat" attribution (he was an NCLT member). Check against the order.
+- Exact wording of the s.188(1) proviso exempting companies in which 90% or more of members are relatives of promoters or related parties, and of PIT Reg 7J.
+- Day 23 Part 2 lab comment "Kahn v. Lynch ... ALWAYS Entire Fairness": should it mention the SB 21 §144(c) safe harbor?
