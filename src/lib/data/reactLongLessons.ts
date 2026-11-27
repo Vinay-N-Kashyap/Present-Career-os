@@ -629,11 +629,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "What is the primary architectural purpose of utilizing the TypeScript 'never' type in the default branch of a switch statement evaluating a discriminated union?",
           options: [
             "To instruct the V8 garbage collector to instantly delete the switch statement from call stacks.",
-            "To enforce compile-time exhaustiveness checking ensuring all discriminated variants are handled.",
+            "To allow the switch statement to accept floating-point numbers without implicit type coercions.",
             "To convert the switch statement into an asynchronous background promise executed by event loops.",
-            "To allow the switch statement to accept floating-point numbers without implicit type coercions."
+            "To enforce compile-time exhaustiveness checking ensuring all discriminated variants are handled."
           ],
-          answer: 1,
+          answer: 3,
           answerIndex: 1,
           why: "If all union variants are handled, the variable in the default branch is inferred as never. If a variant is missed, it has that unhandled type, causing an invalid assignment to never and failing the build.",
           explanation: "If all union variants are handled, the variable in the default branch is inferred as never. If a variant is missed, it has that unhandled type, causing an invalid assignment to never and failing the build."
@@ -900,12 +900,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "In functional architecture, what is the primary benefit of decomposing complex business logic into composable higher-order pipelines using utilities like pipe()?",
           options: [
-            "It eliminates asynchronous execution overhead by forcing the runtime engine to compile all piped functions into WebAssembly.",
             "It separates processing into focused, single-responsibility functions that can be tested in isolation and combined predictably.",
+            "It eliminates asynchronous execution overhead by forcing the runtime engine to compile all piped functions into WebAssembly.",
             "It bypasses standard V8 call stack size limits by executing all intermediate pipeline steps inside a shared background worker.",
             "It prevents downstream functions from receiving input arguments by enforcing strict private memory encryption between stages.",
           ],
-          answer: 1,
+          answer: 0,
           answerIndex: 1,
           why: "Functional composition chains small, focused, single-responsibility pure functions together in a clear, declarative sequence. Each stage can be independently unit tested, refactored, and reused across different pipelines without hidden state coupling.",
           explanation: "Functional composition chains small, focused, single-responsibility pure functions together in a clear, declarative sequence. Each stage can be independently unit tested, refactored, and reused across different pipelines without hidden state coupling."
@@ -1256,11 +1256,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "What is the primary architectural advantage of normalizing client-side application state into flat 'byId' entity tables?",
           options: [
             "It eliminates asynchronous request delays by caching relational server responses directly in client CPU registers.",
-            "It guarantees each entity has a single source of truth, preventing state desynchronization when entities update.",
             "It minimizes initial JavaScript bundle payload size by compressing entity names into single-character tokens.",
+            "It guarantees each entity has a single source of truth, preventing state desynchronization when entities update.",
             "It enables client frameworks to skip virtual DOM reconciliations entirely by bypassing React lifecycle methods.",
           ],
-          answer: 1,
+          answer: 2,
           answerIndex: 1,
           why: "Normalizing relational state into a single 'byId' lookup table ensures each entity exists in exactly one canonical location. When an entity is updated, all views referencing its identifier immediately reflect the fresh data without requiring complex recursive tree traversals or risking synchronization drift.",
           explanation: "Normalizing relational state into a single 'byId' lookup table ensures each entity exists in exactly one canonical location. When an entity is updated, all views referencing its identifier immediately reflect the fresh data without requiring complex recursive tree traversals or risking synchronization drift."
@@ -2068,11 +2068,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "Why is static Object.hasOwn(obj, prop) preferred over calling Object.prototype.hasOwnProperty on modern enterprise objects?",
           options: [
             "Object.hasOwn automatically clones the target property into a read-only frozen state before validation.",
-            "It functions reliably on objects with null prototypes and cannot be shadowed by overriding property keys.",
             "It performs an asynchronous deep scan across all prototype chains to verify recursive key inheritance.",
+            "It functions reliably on objects with null prototypes and cannot be shadowed by overriding property keys.",
             "Browser security policies restrict Object.prototype access to scripts originating from verified domains.",
           ],
-          answer: 1,
+          answer: 2,
           answerIndex: 1,
           why: "Calling obj.hasOwnProperty() directly fails if the object was created with Object.create(null) (since it has no prototype) or if the object defines its own property named 'hasOwnProperty'. Object.hasOwn() is a static ECMAScript 2022 method that safely checks own-property existence without relying on prototype delegation.",
           explanation: "Calling obj.hasOwnProperty() directly fails if the object was created with Object.create(null) (since it has no prototype) or if the object defines its own property named 'hasOwnProperty'. Object.hasOwn() is a static ECMAScript 2022 method that safely checks own-property existence without relying on prototype delegation."
@@ -2174,11 +2174,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "What is the primary architectural difference between ECMAScript Modules (ESM) and CommonJS (CJS) resolution?",
           options: [
             "CommonJS compiles asynchronously at build time, while ESM executes top-level module statements synchronously.",
-            "ESM separates parsing, instantiation, and evaluation into static phases, whereas CommonJS executes synchronously at runtime.",
-            "CommonJS evaluates exports inside background Web Workers, while ESM runs strictly within main thread execution.",
             "ESM requires dynamic runtime function wrappers around all files, while CommonJS enforces static file headers.",
+            "CommonJS evaluates exports inside background Web Workers, while ESM runs strictly within main thread execution.",
+            "ESM separates parsing, instantiation, and evaluation into static phases, whereas CommonJS executes synchronously at runtime.",
           ],
-          answer: 1,
+          answer: 3,
           answerIndex: 1,
           why: "ESM separates module processing into distinct static parsing, live binding instantiation, and evaluation phases before execution. In contrast, CommonJS executes synchronously at runtime whenever require() is called, evaluating code on demand.",
           explanation: "ESM separates module processing into distinct static parsing, live binding instantiation, and evaluation phases before execution. In contrast, CommonJS executes synchronously at runtime whenever require() is called, evaluating code on demand."
@@ -2797,12 +2797,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "Why does React StrictMode intentionally invoke component render functions twice in development mode?",
           options: [
-            "To benchmark component rendering speed and automatically apply memoization wrappers when computation thresholds exceed frame budgets.",
             "To expose accidental side effects and impure mutations in render logic so developers can ensure pure referential idempotence.",
+            "To benchmark component rendering speed and automatically apply memoization wrappers when computation thresholds exceed frame budgets.",
             "To pre-warm JavaScript engine JIT compilers so production builds execute with optimized inline caches and peak instruction pipelining.",
             "To verify that network requests dispatched during render phases handle duplicate server responses without triggering hydration errors."
 ],
-          answer: 1,
+          answer: 0,
           answerIndex: 1,
           why: "StrictMode double-invokes components in development so that any impure mutations or side effects in the render phase become immediately visible and fixable.",
           explanation: "StrictMode double-invokes components in development so that any impure mutations or side effects in the render phase become immediately visible and fixable."
@@ -4119,11 +4119,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "Why are Skeleton Screens preferred over centered spinning loaders in production enterprise web applications?",
           options: [
             "Skeleton screens run directly on hardware compositor threads whereas circular spinning loaders execute on the main thread.",
-            "Skeleton screens preserve layout geometry, eliminating Cumulative Layout Shift when asynchronous data replaces placeholders.",
+            "Modern browser engines disable hardware acceleration whenever circular canvas elements rotate continuously on the screen.",
             "Web Content Accessibility Guidelines strictly prohibit all CSS rotation keyframes and animated svg elements in UI views.",
-            "Modern browser engines disable hardware acceleration whenever circular canvas elements rotate continuously on the screen."
+            "Skeleton screens preserve layout geometry, eliminating Cumulative Layout Shift when asynchronous data replaces placeholders."
 ],
-          answer: 1,
+          answer: 3,
           answerIndex: 1,
           why: "Skeletons occupy the exact dimensions of upcoming content, preventing surrounding layout from shifting abruptly upon data arrival and improving Core Web Vitals.",
           explanation: "Spinners leave layout dimensions undefined, causing jarring shifts (high CLS) when data arrives. Skeletons reserve layout space and communicate loading context cleanly."
@@ -5385,11 +5385,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "How does Request ID Invalidation eliminate out-of-order race conditions in asynchronous form validation?",
           options: [
             "It forces all asynchronous network requests to execute synchronously on the browser main user interface thread.",
-            "It captures an auto-incrementing ID in closure and ignores the response if a subsequent validation has started.",
+            "It retries network requests with exponential backoff until responses arrive in strict sequential dispatch order.",
             "It instructs the backend server to prioritize incoming validation packets based on client timestamp headers.",
-            "It retries network requests with exponential backoff until responses arrive in strict sequential dispatch order."
+            "It captures an auto-incrementing ID in closure and ignores the response if a subsequent validation has started."
 ],
-          answer: 1,
+          answer: 3,
           answerIndex: 1,
           why: "If a faster subsequent request completes before a slow previous request, comparing IDs ensures stale delayed responses are discarded.",
           explanation: "Network latency is non-deterministic. By comparing the request's closure ID against the latest request cursor, stale asynchronous completions are discarded before corrupting component state."
@@ -6260,11 +6260,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "Why does React 18 Strict Mode intentionally execute effect setup and cleanup twice in development mode?",
           options: [
             "Because modern JavaScript engines require two consecutive compilation cycles to optimize hook closures.",
-            "To stress-test effect idempotency and verify that cleanup logic safely releases resources on remount.",
+            "To synchronize virtual DOM node trees across multiple parallel Web Worker execution threads in memory.",
             "To benchmark browser garbage collection latency and profile heap allocation limits across mount passes.",
-            "To synchronize virtual DOM node trees across multiple parallel Web Worker execution threads in memory."
+            "To stress-test effect idempotency and verify that cleanup logic safely releases resources on remount."
           ],
-          answer: 1,
+          answer: 3,
           answerIndex: 1,
           why: "Double-mounting exposes missing cleanups and non-idempotent code, preparing components for React 18 Reusable State.",
           explanation: "In React 18, components can be unmounted and remounted without losing state (Offscreen/Activity). StrictMode catches effects that fail to clean up resources in development."
@@ -6796,12 +6796,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "How does the Mutable Ref Bridge pattern allow an effect to read the latest state without triggering re-runs on state updates?",
           options: [
-            "Modifying ref.current detaches the effect callback from the React Fiber reconciliation tree during updates.",
             "A persistent ref stores the live value in its current property without altering ref identity or rendering.",
+            "Modifying ref.current detaches the effect callback from the React Fiber reconciliation tree during updates.",
             "Refs convert reactive state variables into immutable Symbols that bypass JavaScript garbage collection runs.",
             "The ref forces the effect to execute exclusively during the microtask queue flush before the paint cycle."
           ],
-          answer: 1,
+          answer: 0,
           answerIndex: 1,
           why: "The ref object identity remains constant, so reading ref.current inside the effect accesses the latest value without requiring the ref in the dependency array.",
           explanation: "Because mutating ref.current does not trigger renders or alter object identity, the effect can safely omit the volatile state from its dependencies while still reading its latest value."
@@ -7164,11 +7164,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "Why does React emit a console warning when useLayoutEffect is invoked during Server-Side Rendering (SSR)?",
           options: [
             "Server-side JavaScript runtimes disable closures to prevent cross-request session state leaks.",
-            "Servers lack a DOM and paint pipeline, so synchronous layout effects cannot execute in HTML.",
+            "Server rendering requires all lifecycle callbacks to be declared inside asynchronous wrappers.",
             "The HTTP transport protocol prohibits transmitting components containing synchronous hooks.",
-            "Server rendering requires all lifecycle callbacks to be declared inside asynchronous wrappers."
+            "Servers lack a DOM and paint pipeline, so synchronous layout effects cannot execute in HTML."
           ],
-          answer: 1,
+          answer: 3,
           answerIndex: 1,
           why: "Server environments only render static markup strings and do not have layout geometry or paint pipelines to execute layout effects against.",
           explanation: "useLayoutEffect requires a real DOM and paint pipeline to measure layout. Because servers generate static HTML, useLayoutEffect cannot execute on the server."
@@ -9342,11 +9342,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
                   "question": "In the React DevTools Profiler Flamegraph view, what does a gray hatched bar for a component indicate?",
                   "options": [
                             "The component encountered an unrecoverable runtime exception and was replaced by a root Error Boundary.",
-                            "The component was clean with no pending work and successfully bailed out of rendering during that commit.",
+                            "The component was flagged as deprecated by the React compiler due to legacy lifecycle hook usage patterns.",
                             "The component is currently awaiting an asynchronous network request suspended inside a Suspense boundary.",
-                            "The component was flagged as deprecated by the React compiler due to legacy lifecycle hook usage patterns."
+                            "The component was clean with no pending work and successfully bailed out of rendering during that commit."
                   ],
-                  "answer": 1,
+                  "answer": 3,
                   "answerIndex": 1,
                   "why": "Gray hatched bars represent components that skipped rendering due to successful Fiber bailouts.",
                   "explanation": "In the DevTools Profiler Flamegraph, colored bars indicate components that rendered, while gray hatched bars indicate clean components that bailed out."
@@ -9878,7 +9878,7 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
                             "Content hashes encrypt the JavaScript source code so that malicious browser extensions cannot inspect DOM nodes.",
                             "Browsers cache assets permanently without origin revalidation, while new releases generate unique cache-busting URLs.",
                             "Content hashes allow browsers to run scripts inside Web Worker threads without allocating memory on main threads.",
-                            "Immutable cache headers automatically convert client-side CSS styles into hardware-accelerated SVG sprite sheets"
+                            "Immutable cache headers automatically convert client-side CSS styles into hardware-accelerated SVG sprite sheets."
                   ],
                   "answer": 1,
                   "answerIndex": 1,
@@ -10026,11 +10026,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
                   "question": "What occurs under the hood when a component calls use(promise) on a Promise that is still pending resolution?",
                   "options": [
                             "The component halts the browser main thread synchronously using an active while loop until HTTP 200 OK completes.",
-                            "The component throws the pending Promise up the call stack, halting render until caught by ancestor Suspense.",
                             "React unmounts the browser window object and displays a native operating system level diagnostic alert dialog.",
+                            "The component throws the pending Promise up the call stack, halting render until caught by ancestor Suspense.",
                             "The component returns an invisible HTML iframe that executes the network request inside a background browser tab."
                   ],
-                  "answer": 1,
+                  "answer": 2,
                   "answerIndex": 1,
                   "why": "Pending promises are thrown during reconciliation, halting component execution until intercepted by Suspense.",
                   "explanation": "When use(promise) encounters a pending Promise, it throws the Promise up the Fiber tree. An ancestor Suspense boundary intercepts it, displays its fallback UI, and resumes rendering when the Promise resolves."
@@ -10128,7 +10128,7 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
                   "options": [
                             "React forces all network requests to bypass the HTTP protocol and read directly from local IndexedDB storage.",
                             "The JavaScript engine combines all REST endpoints into a single synchronous TCP socket connection at runtime.",
-                            "React delays the browser DOMContentLoaded event until every component on the page finishes fetching payloads",
+                            "React delays the browser DOMContentLoaded event until every component on the page finishes fetching payloads.",
                             "Data fetching is initiated in parallel at route loaders before rendering begins, resolving all data concurrently."
                   ],
                   "answer": 3,
@@ -10458,11 +10458,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
                   "question": "What is the primary architectural objective of nesting isolated Error Boundaries around individual dashboard widgets?",
                   "options": [
                             "To reduce the total JavaScript bundle size by splitting the component tree into separate browser memory zones.",
-                            "To prevent a single widget failure from crashing the entire page, keeping navigation and healthy widgets live.",
+                            "To force all component state updates to persist directly into the browser local IndexedDB storage data engine.",
                             "To allow Google Search bots to index client-side JavaScript without executing the V8 bytecode execution engine.",
-                            "To force all component state updates to persist directly into the browser local IndexedDB storage data engine."
+                            "To prevent a single widget failure from crashing the entire page, keeping navigation and healthy widgets live."
                   ],
-                  "answer": 1,
+                  "answer": 3,
                   "answerIndex": 1,
                   "why": "Localized boundaries isolate failures to specific UI widgets without taking down the entire application screen.",
                   "explanation": "By wrapping independent widgets in granular Error Boundaries, a crash in a non-critical widget renders a localized fallback card, keeping the global shell, navigation, and other widgets fully operational."
@@ -11127,12 +11127,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
                   "question": "Which statement correctly formalizes the mathematical difference between HTTP PUT and HTTP POST in REST systems?",
                   "options": [
-                            "POST is idempotent because it transmits payloads, whereas PUT is safe because it reads cached server headers.",
                             "PUT is idempotent because repeated requests leave state identical; POST is non-idempotent, creating resources.",
+                            "POST is idempotent because it transmits payloads, whereas PUT is safe because it reads cached server headers.",
                             "Both PUT and POST are strictly safe and idempotent methods according to standard RFC architectural protocol.",
                             "PUT can only execute partial modifications, while POST is strictly restricted to binary multipart file transfers."
                   ],
-                  "answer": 1,
+                  "answer": 0,
                   "answerIndex": 1,
                   "why": "PUT requests produce the same server state regardless of repetition; POST creates subordinate resources each time.",
                   "explanation": "Under RFC 7231, PUT is idempotent because N identical requests result in identical server resource state. POST is non-idempotent because multiple identical calls create multiple distinct records or transactions."
@@ -11587,11 +11587,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
                   "question": "Why does a composite B-Tree index on (userId, stage, createdAt DESC) eliminate sequential table scans?",
                   "options": [
                             "It stores all database table records in continuous browser local storage to bypass server relational query execution.",
-                            "It traverses balanced search nodes in logarithmic time to locate matching pointers without reading heap blocks on disk.",
+                            "It transforms relational SQL tables into flat JSON document collections that bypass operating system file descriptors.",
                             "It compiles relational schema foreign key constraints into binary WebAssembly modules that execute inside client RAM.",
-                            "It transforms relational SQL tables into flat JSON document collections that bypass operating system file descriptors."
+                            "It traverses balanced search nodes in logarithmic time to locate matching pointers without reading heap blocks on disk."
                   ],
-                  "answer": 1,
+                  "answer": 3,
                   "answerIndex": 1,
                   "why": "Traversing the B-Tree in logarithmic time jumps straight to matching row pointers without scanning table heap blocks.",
                   "explanation": "By indexing the exact filter and sort columns, the query engine navigates the on-disk B-Tree in logarithmic time to locate matching row pointers immediately, avoiding expensive sequential scans."
@@ -12030,11 +12030,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "What is the condition checked by React's workLoopConcurrent during the render phase?",
           options: [
             "while (workInProgress !== null && isCommitPhaseReady())",
-            "while (workInProgress !== null && !shouldYieldToHost())",
+            "while (workInProgress !== null && browserFrameIsActive())",
             "while (workInProgress !== null && hasPendingMicrotasks())",
-            "while (workInProgress !== null && browserFrameIsActive())"
+            "while (workInProgress !== null && !shouldYieldToHost())"
           ],
-          answer: 1,
+          answer: 3,
           why: "React concurrently iterates while work remains and the Scheduler indicates that the current time slice has not yet expired."
         }
       }
@@ -12422,11 +12422,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "In our simulation, why did ChildGrid successfully bail out during the second handleInput call?",
           options: [
             "Because the operating system ran out of heap memory and canceled the script execution.",
-            "Because deferredQuery had not yet updated, so ChildGrid props matched its cached state.",
+            "Because JavaScript event loop priority blocked microtasks during urgent character input.",
             "Because ChildGrid was unmounted and removed from the active component tree completely.",
-            "Because JavaScript event loop priority blocked microtasks during urgent character input."
+            "Because deferredQuery had not yet updated, so ChildGrid props matched its cached state."
           ],
-          answer: 1,
+          answer: 3,
           why: "During the urgent pass of the second keystroke, deferredQuery still held 'R', matching the cached props and triggering a 0ms bailout."
         }
       }
@@ -12624,11 +12624,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "What is the primary benefit of having a dedicated 'empty' state in a data grid state machine?",
           options: [
             "It permanently deletes vacant row records from the remote database schema automatically.",
-            "It prevents UI from flashing zero rows found messages while data is still actively loading.",
+            "It disables all interactive user input controls until new search queries are dispatched.",
             "It automatically converts empty string values into null pointers before SQL serialization.",
-            "It disables all interactive user input controls until new search queries are dispatched."
+            "It prevents UI from flashing zero rows found messages while data is still actively loading."
           ],
-          answer: 1,
+          answer: 3,
           why: "A discrete 'empty' state can only be entered after a completed query, preventing premature or misleading empty flashes."
         }
       }
@@ -12802,12 +12802,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "What threshold must interaction latency stay below to maintain a 60 FPS responsive user interface?",
           options: [
-            "Five milliseconds per frame is the strict upper bound for interaction latency.",
             "Interaction latency must stay strictly below sixteen milliseconds a frame.",
+            "Five milliseconds per frame is the strict upper bound for interaction latency.",
             "Thirty milliseconds per frame is the strict upper bound for interaction latency.",
             "Fifty milliseconds per frame is the strict upper bound for interaction latency."
           ],
-          answer: 1,
+          answer: 0,
           why: "To hit sixty frames per second, the entire render, layout, and commit budget must complete in under sixteen milliseconds."
         }
       }
@@ -13193,12 +13193,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "In a 31-bit bitmask scheduler, why does an expired TransitionLane execute before a non-expired DefaultLane, even though DefaultLane normally has higher priority?",
           options: [
-            "Because non-expired default lanes are discarded whenever higher transition tasks are registered.",
             "Because expired lanes are escalated to top urgency to prevent indefinite starvation of workloads.",
+            "Because non-expired default lanes are discarded whenever higher transition tasks are registered.",
             "Because transition lanes cannot be paused or yielded once their worker task thread has initiated.",
             "Because browser runtimes execute tasks according to standard lexicographical function sort orders."
           ],
-          answer: 1,
+          answer: 0,
           why: "When a background lane exceeds its starvation timeout, it is promoted into expiredLanes, giving it immediate precedence over non-expired normal lanes."
         }
       }
@@ -13655,12 +13655,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "Why does a 10,000-node visual graph require a decoupled priority architecture rather than a single synchronous render loop?",
           options: [
-            "Because synchronous loops force DOM nodes to bypass layout passes completely, creating unrecoverable memory fragmentation in the browser heap.",
             "Because running ten thousand node calculations in one call stack monopolizes the thread for over 150ms, blowing frame budgets and freezing UI.",
+            "Because synchronous loops force DOM nodes to bypass layout passes completely, creating unrecoverable memory fragmentation in the browser heap.",
             "Because modern browser runtimes abort all active script contexts whenever any single loop iteration accesses more than two thousand objects.",
             "Because the browser event loop permanently disables keyboard input listeners whenever an iteration task exceeds eighty microseconds in total."
           ],
-          answer: 1,
+          answer: 0,
           why: "Monolithic synchronous iteration over 10,000 items monopolizes the thread for hundreds of milliseconds, dropping multiple consecutive frames and freezing user input."
         }
       },
@@ -13798,12 +13798,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "What four core architectural pillars combine to make our 10,000-Node Visual Graph Filter maintain 60 FPS responsiveness?",
           options: [
-            "Overclocking client GPU render cycles, compiling JavaScript functions directly into WebAssembly modules, and disabling all browser security checks.",
             "Contiguous memory layouts, dual-priority scheduling (Sync vs Transition), cooperative 5ms macro-task slicing with preemption, and spatial culling.",
+            "Overclocking client GPU render cycles, compiling JavaScript functions directly into WebAssembly modules, and disabling all browser security checks.",
             "Deleting 9,900 nodes from the graph so only 100 nodes remain in memory, disabling user keyboard inputs, and rendering precomputed static bitmaps.",
             "Re-rendering the entire document object model tree every single millisecond using synchronous loops, bypassing the browser native compositor system."
           ],
-          answer: 1,
+          answer: 0,
           why: "The capstone achieves 60 FPS by pairing cache-efficient memory layouts with dual-priority scheduling, cooperative 5ms macro-task slicing with preemption, and spatial culling."
         }
       }
@@ -13859,12 +13859,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "What is the primary difference between traditional SSR and React Server Components regarding client bundle payloads?",
           options: [
-            "Traditional SSR eliminates all client JavaScript bundles completely, while Server Components stream full component source code for client execution.",
             "Server Components run exclusively on the server and emit serialized virtual trees, contributing zero kilobytes of component code to the client bundle.",
+            "Traditional SSR eliminates all client JavaScript bundles completely, while Server Components stream full component source code for client execution.",
             "Traditional SSR compiles all component closures into WebAssembly binaries on disk, whereas Server Components only execute inside active web workers.",
             "Server Components transpile server-side React hooks into static CSS style sheets, requiring client browser engines to execute layout recalculations."
           ],
-          answer: 1,
+          answer: 0,
           why: "RSC renders component trees on the server and streams serialized virtual DOM nodes, eliminating all component code and backend library dependencies from the client bundle."
         }
       },
@@ -14066,11 +14066,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
           question: "Why does traditional renderToString cause high TTFB when a page contains slow data dependencies?",
           options: [
             "Because modern browser layout engines refuse to parse HTML documents until all CSS stylesheets and web font assets are fully downloaded and decoded.",
-            "Because renderToString is a blocking call that must wait for all database queries and promises to resolve before flushing any initial HTML bytes.",
+            "Because the HTTP protocol permanently closes TCP sockets whenever a server-side component execution loop exceeds twenty-five microseconds in total.",
             "Because classical Node.js processes convert all component markup into compressed WebP images before transmitting network packets across the socket.",
-            "Because the HTTP protocol permanently closes TCP sockets whenever a server-side component execution loop exceeds twenty-five microseconds in total."
+            "Because renderToString is a blocking call that must wait for all database queries and promises to resolve before flushing any initial HTML bytes."
           ],
-          answer: 1,
+          answer: 3,
           why: "Monolithic renderToString blocks on the slowest database call, preventing the browser from receiving the HTML document head, stylesheets, or layouts."
         }
       },
@@ -14216,12 +14216,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         check: {
           question: "What are the four primary phases of the Streaming SSR pipeline?",
           options: [
-            "Static compilation of source files, minification of script assets, dead code elimination, and gzip payload compression before network socket dispatch.",
             "Early shell flush, asynchronous boundary registration, deferred out-of-order chunk streaming, and client DOM replacement via inline script execution.",
+            "Static compilation of source files, minification of script assets, dead code elimination, and gzip payload compression before network socket dispatch.",
             "DNS domain resolution, three-way TCP handshake negotiation, cryptographic TLS certificate verification, and initial document head parsing in memory.",
             "Synchronous component mounting, recursive state tree updates, unmounting obsolete DOM nodes, and dispatching client-side error recovery lifecycles."
           ],
-          answer: 1,
+          answer: 0,
           why: "Streaming SSR flushes the layout shell, resolves Suspense boundaries in parallel, streams HTML chunks as they finish, and swaps templates into the DOM."
         }
       }
@@ -14926,11 +14926,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "question": "What is State Tearing in Concurrent React applications?",
         "options": [
           "A memory leak occurring when unmounted components retain background event listener subscriptions, exhausting device memory over time.",
-          "A visual defect where components in one render pass display conflicting values because external state mutated during a concurrent yield.",
           "An unexpected fatal runtime exception thrown whenever an asynchronous fetch call rejects during client-side hydration reconciliation.",
+          "A visual defect where components in one render pass display conflicting values because external state mutated during a concurrent yield.",
           "A rendering artifact where CSS stylesheets fail to apply flexbox styles to dynamically generated table elements during window resizing."
         ],
-        "answer": 1,
+        "answer": 2,
         "why": "State tearing occurs when a mutable external store updates while React is yielding to the browser, causing different components to render conflicting data."
       }
     },
@@ -15424,12 +15424,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "check": {
         "question": "What is the primary architectural benefit of Webpack 5 Module Federation compared to legacy iframe or multi-SPA micro-frontend approaches?",
         "options": [
-          "It allows web applications to run entirely without client browser runtimes by offloading all JavaScript processing to distributed edge clouds.",
           "It enables independent applications to share runtime libraries dynamically in the browser, eliminating massive payload duplication across teams.",
+          "It allows web applications to run entirely without client browser runtimes by offloading all JavaScript processing to distributed edge clouds.",
           "It converts all React component functions into static WebAssembly binaries at compile time, eliminating client-side DOM reconciliation loops.",
           "It replaces client routing tables with hardware-accelerated operating system thread schedulers to synchronize view states across browser tabs."
         ],
-        "answer": 1,
+        "answer": 0,
         "why": "Module Federation enables independent builds to share common runtimes like React at execution time, eliminating duplicate bundle bloat."
       }
     },
@@ -15675,11 +15675,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "question": "What is the primary architectural difference between React Reconciler and React Renderer?",
         "options": [
           "Binary machine instructions are generated directly for target CPU architectures, whereas the Renderer manages runtime memory garbage collection.",
-          "The Reconciler manages the Fiber tree and computes abstract diffs, whereas the Renderer translates those instructions into platform-specific mutations.",
+          "Network socket protocols and database connection pools are managed in one layer, whereas the Renderer binds interactive pointer gestures to event handlers.",
           "JSX compiles into static HTML strings on cloud server instances, whereas the Renderer parses client CSS stylesheets inside browser views.",
-          "Network socket protocols and database connection pools are managed in one layer, whereas the Renderer binds interactive pointer gestures to event handlers."
+          "The Reconciler manages the Fiber tree and computes abstract diffs, whereas the Renderer translates those instructions into platform-specific mutations."
         ],
-        "answer": 1,
+        "answer": 3,
         "why": "React Reconciler manages the priority lanes, Fiber tree, and diffing calculations, while platform renderers execute mutations for specific targets like DOM or Native."
       }
     },
@@ -15854,11 +15854,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "question": "What core architectural advantage does React's component model provide when targeting custom non-DOM platforms?",
         "options": [
           "It forces client operating systems to allocate continuous physical hardware RAM blocks, eliminating the need for runtime memory garbage collection.",
-          "It enables complete reuse of declarative component logic, custom hooks, and concurrent state management across web, mobile, and terminal targets.",
           "It automatically translates all frontend JavaScript code into compiled Rust binaries, boosting raw numerical calculation performance by ten times.",
+          "It enables complete reuse of declarative component logic, custom hooks, and concurrent state management across web, mobile, and terminal targets.",
           "It replaces standard TCP network socket layers with direct satellite communication protocols to ensure zero-latency data transmission across apps."
         ],
-        "answer": 1,
+        "answer": 2,
         "why": "React's declarative component model and hooks decouple stateful business logic from UI rendering targets, allowing high code reuse across web, native, and terminal."
       }
     }
@@ -16102,12 +16102,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "check": {
         "question": "What constitutes Grade A+ production compliance in the Milestone 9 trading platform audit suite?",
         "options": [
-          "Overclocking client CPU processors above four gigahertz and maintaining continuous zero-latency database replication across active browser windows.",
           "Zero torn frames, render latency under five milliseconds, deterministic order state transitions, a single React runtime, and isolated CDN errors.",
+          "Overclocking client CPU processors above four gigahertz and maintaining continuous zero-latency database replication across active browser windows.",
           "Converting all user interface components into compiled C++ WebAssembly binaries and disabling client-side security checks across network sockets.",
           "Restricting platform access to local area networks and purging all client memory caches whenever a user switches focus to an external application."
         ],
-        "answer": 1,
+        "answer": 0,
         "why": "The Milestone 9 audit verifies zero state tears, sub-5ms render budgets, statechart order safety, singleton integrity, and isolated remote error boundaries."
       }
     }
@@ -16855,11 +16855,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "question": "Why is maintaining a Cumulative Layout Shift (CLS) of 0.00 critical when streaming dynamic holes into a static shell?",
         "options": [
           "Because any layout shift causes client operating system display servers to terminate active browser processes to avoid memory graphics crashes.",
-          "To prevent jarring visual jumps and unintended mis-clicks when streamed dynamic components replace fallback skeletons in the rendered layout.",
+          "To compress HTML response payloads with hardware gzip compression algorithms before transmitting them across distributed network socket lines.",
           "To force client hardware graphics cards to re-render the entire desktop operating system window interface using hardware accelerated shaders.",
-          "To compress HTML response payloads with hardware gzip compression algorithms before transmitting them across distributed network socket lines."
+          "To prevent jarring visual jumps and unintended mis-clicks when streamed dynamic components replace fallback skeletons in the rendered layout."
         ],
-        "answer": 1,
+        "answer": 3,
         "why": "Fallback skeletons must match the dimensions of resolved dynamic content so that streaming completion does not shift surrounding page content."
       }
     }
@@ -16914,12 +16914,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "check": {
         "question": "What is the primary architectural advantage of Server-Driven UI (SDUI) in enterprise applications?",
         "options": [
-          "It replaces client component styling with server-generated machine code binaries, bypassing browser layout trees completely.",
           "It decouples screen layouts, visual hierarchies, and component trees from native release cycles via declarative JSON schemas.",
+          "It replaces client component styling with server-generated machine code binaries, bypassing browser layout trees completely.",
           "It forces all state transitions to execute inside edge worker threads, eliminating all client-side memory storage buffers.",
           "It converts all interactive web elements into static pre-rendered SVG vector images, disabling client JavaScript processing."
         ],
-        "answer": 1,
+        "answer": 0,
         "why": "SDUI empowers backend services to dictate component layout, ordering, and attributes dynamically over JSON, eliminating client deployment bottlenecks."
       },
       "tryIt": "Add a third child widget to sduiTree with type 'AlertBanner' and verify tree depth and node counts."
@@ -17279,12 +17279,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "check": {
         "question": "Why must high-frequency market telemetry bypass standard React setState hooks during initial ingestion?",
         "options": [
-          "Because React disallows using numbers greater than one hundred thousand in component state objects across render passes.",
           "Because passing one hundred thousand updates per second into setState causes main-thread freezing and massive GC pauses.",
+          "Because React disallows using numbers greater than one hundred thousand in component state objects across render passes.",
           "Because standard WebSocket protocols are completely incompatible with React functional components in modern web browsers.",
           "Because state updates in React automatically delete previous quotes from local storage when memory allocations run out."
         ],
-        "answer": 1,
+        "answer": 0,
         "why": "Direct state updates at high frequency cause extreme memory allocations and GC pauses, stalling the browser main thread."
       }
     },
@@ -17407,12 +17407,12 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "check": {
         "question": "What primary engineering deficiency led to the $440M Knight Capital trading disaster in 2012?",
         "options": [
-          "The production server ran out of physical disk space due to excessive verbose log printing across active trading sockets.",
           "The lack of pre-trade risk governors, un-audited dead code paths, and absence of automated kill-switch circuit breakers.",
+          "The production server ran out of physical disk space due to excessive verbose log printing across active trading sockets.",
           "The React concurrent reconciler encountered an unhandled state tearing bug in legacy Internet Explorer browser engines.",
           "A CSS z-index stacking bug hidden beneath the trade execution button prevented manual order cancellations by operators."
         ],
-        "answer": 1,
+        "answer": 0,
         "why": "Knight Capital collapsed due to rogue dead code execution, absent automated pre-trade limits, and missing circuit breakers."
       }
     }
@@ -17660,11 +17660,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "question": "What is the primary architectural benefit of representing collaborative documents as recursive block trees?",
         "options": [
           "It converts all textual content into eight-bit ASCII characters to save physical storage space on cloud server disks.",
-          "It enables infinite structural nesting and atomic operational mutations over discrete, identifiable block entities.",
           "It forces all concurrent users to view documents exclusively in read-only mode while preventing live shared edits.",
+          "It enables infinite structural nesting and atomic operational mutations over discrete, identifiable block entities.",
           "It requires every document paragraph to compile into a standalone WebAssembly binary on local client mobile devices."
         ],
-        "answer": 1,
+        "answer": 2,
         "why": "Block trees decompose complex documents into discrete, identifiable nodes that support granular nesting and atomic real-time updates."
       }
     },
@@ -17857,11 +17857,11 @@ export const REACT_LONG_LESSONS: LongLesson[] = [
         "question": "What is the primary architectural purpose of authoring an enterprise Request for Comments (RFC)?",
         "options": [
           "To mandate that all existing web application codebases immediately migrate to raw native assembly code across all browser platforms.",
-          "To codify multi-tier system topologies, security boundaries, failure modes, and migration plans for architecture review board approval.",
           "To enforce that all client-side network fetch operations execute exclusively over unencrypted plain-text HTTP connections worldwide.",
+          "To codify multi-tier system topologies, security boundaries, failure modes, and migration plans for architecture review board approval.",
           "To replace all automated continuous integration pipelines with informal weekly stakeholder polls conducted over internal chat tools."
         ],
-        "answer": 1,
+        "answer": 2,
         "why": "RFCs formally codify system topologies, security boundaries, failure modes, and migration plans to align engineering leadership and governance."
       }
     },
