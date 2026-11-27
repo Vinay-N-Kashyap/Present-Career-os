@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Foundations & Mathematical Invariants",
+      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Foundations (evaluateDatabaseConnectionCore)",
       "codeHash": "9eb82e7710078f67fba04d8f2d3ef158e4570690404d4db665779db3c703347a",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Core Algorithm & State Representation",
+      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Core Algorithm (computeDatabaseThreshold)",
       "codeHash": "d16b30505018924cf5b3aede0d43730c189dfbe77972e9a4d3bd2fad712a84ed",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Throughput & Edge Cases (optimizeDatabasePipeline)",
       "codeHash": "b0f63687e3d8dd58318bf4b044445af23038439de3b8c1880de20fbd05498d0e",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Resilience & Recovery (validateDatabaseGuard)",
       "codeHash": "34683607c0a166ebd4a9b3336f756f42a0cfcbd1165a80fb7f02771b8a572b7f",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Production Telemetry & Verification Audit",
+      "partTitle": "Database Connection Pool Sizing, Queue Wait Timeouts & Read-Replica Lag Circuit Breaking — Telemetry & Audit (auditDatabaseTelemetry)",
       "codeHash": "e8e8cfbc672a78205aa7945b917f820884f9dc8e0c716eda3ad4647aba5f0890",
       "spec": {
         "template": "flow",

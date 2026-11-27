@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Exactly-Once Semantics (EOS) — Foundations & Mathematical Invariants",
+      "partTitle": "Exactly-Once Semantics (EOS) — Foundations (evaluateExactlyOnceCore)",
       "codeHash": "e4cdd74ec9c9b08b1928489425c928b56087111f4c3891e5bbc3ef0c0b32ab08",
       "spec": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Foundations & Mathematical Invariants",
+        "title": "Exactly-Once Semantics (EOS) — Foundations (evaluateExactlyOnceCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Foundations & Mathematical Invariants",
+        "title": "Exactly-Once Semantics (EOS) — Foundations (evaluateExactlyOnceCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Exactly-Once Semantics (EOS) — Core Algorithm & State Representation",
+      "partTitle": "Exactly-Once Semantics (EOS) — Core Algorithm (computeExactlyThreshold)",
       "codeHash": "f77cb48da618313a8a21c9f3ddf8dc029eace7dc2e47cd9cf8d78d959ee982ef",
       "spec": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Core Algorithm & State Representation",
+        "title": "Exactly-Once Semantics (EOS) — Core Algorithm (computeExactlyThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Core Algorithm & State Representation",
+        "title": "Exactly-Once Semantics (EOS) — Core Algorithm (computeExactlyThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Exactly-Once Semantics (EOS) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Exactly-Once Semantics (EOS) — Throughput & Edge Cases (optimizeExactlyPipeline)",
       "codeHash": "b85aca4b2e0d651105dc56da2096ee0796937ac72378209db4b7fb1f1d1d9aa8",
       "spec": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Throughput Optimization & Edge-Case Han",
+        "title": "Exactly-Once Semantics (EOS) — Throughput & Edge Cases (optimizeExactl",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Throughput Optimization & Edge-Case Han",
+        "title": "Exactly-Once Semantics (EOS) — Throughput & Edge Cases (optimizeExactl",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Exactly-Once Semantics (EOS) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Exactly-Once Semantics (EOS) — Resilience & Recovery (validateExactlyGuard)",
       "codeHash": "457e41685a8242d51f0a81fe7a56beec885f20ccd8837445606abec9f29905b7",
       "spec": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Resilience Guardrails & Failure Recover",
+        "title": "Exactly-Once Semantics (EOS) — Resilience & Recovery (validateExactlyG",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Resilience Guardrails & Failure Recover",
+        "title": "Exactly-Once Semantics (EOS) — Resilience & Recovery (validateExactlyG",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Exactly-Once Semantics (EOS) — Production Telemetry & Verification Audit",
+      "partTitle": "Exactly-Once Semantics (EOS) — Telemetry & Audit (auditExactlyTelemetry)",
       "codeHash": "1485f0997a09961ee5aeb6b6e42289497f8869839c04d31fd2348e4f77a59f68",
       "spec": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Production Telemetry & Verification Aud",
+        "title": "Exactly-Once Semantics (EOS) — Telemetry & Audit (auditExactlyTelemetr",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Exactly-Once Semantics (EOS) — Production Telemetry & Verification Aud",
+        "title": "Exactly-Once Semantics (EOS) — Telemetry & Audit (auditExactlyTelemetr",
         "nodes": [
           {
             "id": "input",

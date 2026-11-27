@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Foundations & Mathematical Invariants",
+      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Foundations (evaluateTokenBucketCore)",
       "codeHash": "133edeaf0da04966983b05b23dd7d967183563d348abc50362b515cb286f867a",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Core Algorithm & State Representation",
+      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Core Algorithm (computeTokenThreshold)",
       "codeHash": "68d795fb674e2a4fd488950de4f75eb2543ceb6608ad288b717e726ed3d63649",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Throughput & Edge Cases (optimizeTokenPipeline)",
       "codeHash": "d9ba5fd984451e22b91e06a01b75abf9261b68c992d73d5d9f4e2ab9f4c09066",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Resilience & Recovery (validateTokenGuard)",
       "codeHash": "8d1635377afbcc75b4e706c2d95a6d3d457069536a2aa98aefa3a42a6dcc9637",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Production Telemetry & Verification Audit",
+      "partTitle": "Token-Bucket & Leaky-Bucket Rate Limiters with Tenant Fairness Quotas — Telemetry & Audit (auditTokenTelemetry)",
       "codeHash": "bb986556e0a1d0c94f43f17d30f2164876d4b4cb5d628a3cda866a928596c6ae",
       "spec": {
         "template": "flow",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Real-Time Payment Fraud Pipeline — Foundations & Mathematical Invariants",
+      "partTitle": "Real-Time Payment Fraud Pipeline — Foundations (evaluateRealTimeCore)",
       "codeHash": "7dc492c40d8d663ac481dfa413709d69607a8db69dd8728cf058ae42adb73820",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Foundations & Mathematical Invarian",
+        "title": "Real-Time Payment Fraud Pipeline — Foundations (evaluateRealTimeCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Foundations & Mathematical Invarian",
+        "title": "Real-Time Payment Fraud Pipeline — Foundations (evaluateRealTimeCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Payment Fraud Pipeline — Core Algorithm & State Representation",
+      "partTitle": "Real-Time Payment Fraud Pipeline — Core Algorithm (computeRealThreshold)",
       "codeHash": "2991973a8ee45c11182711aef7ac6208f3cff163cc4d311ce0f0701419b719da",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Core Algorithm & State Representati",
+        "title": "Real-Time Payment Fraud Pipeline — Core Algorithm (computeRealThreshol",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Core Algorithm & State Representati",
+        "title": "Real-Time Payment Fraud Pipeline — Core Algorithm (computeRealThreshol",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Payment Fraud Pipeline — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Real-Time Payment Fraud Pipeline — Throughput & Edge Cases (optimizeRealPipeline)",
       "codeHash": "792893e3350903dc68ed2d405a373424e283badb6f2ce905fbdb8a805b091140",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Throughput Optimization & Edge-Case",
+        "title": "Real-Time Payment Fraud Pipeline — Throughput & Edge Cases (optimizeRe",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Throughput Optimization & Edge-Case",
+        "title": "Real-Time Payment Fraud Pipeline — Throughput & Edge Cases (optimizeRe",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Payment Fraud Pipeline — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Real-Time Payment Fraud Pipeline — Resilience & Recovery (validateRealGuard)",
       "codeHash": "5d2e49e4b87d4ed34ddc0ddd7b820813963377263475266b7166d90cff0a2d75",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Resilience Guardrails & Failure Rec",
+        "title": "Real-Time Payment Fraud Pipeline — Resilience & Recovery (validateReal",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Resilience Guardrails & Failure Rec",
+        "title": "Real-Time Payment Fraud Pipeline — Resilience & Recovery (validateReal",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Payment Fraud Pipeline — Production Telemetry & Verification Audit",
+      "partTitle": "Real-Time Payment Fraud Pipeline — Telemetry & Audit (auditRealTelemetry)",
       "codeHash": "78da7fa136bb3fb8ab19d86b0cc7bbc4388ce1f63bfa2dfb171bb135169c330c",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Production Telemetry & Verification",
+        "title": "Real-Time Payment Fraud Pipeline — Telemetry & Audit (auditRealTelemet",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Payment Fraud Pipeline — Production Telemetry & Verification",
+        "title": "Real-Time Payment Fraud Pipeline — Telemetry & Audit (auditRealTelemet",
         "nodes": [
           {
             "id": "input",

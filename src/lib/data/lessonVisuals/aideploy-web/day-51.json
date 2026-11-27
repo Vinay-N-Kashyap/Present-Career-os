@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Foundations & Mathematical Invariants",
+      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Foundations (evaluatePromptVersionCore)",
       "codeHash": "11301b58c06fcbb7dede1f1e4328819a8b3d46abbb7b29942b4ef619ce68841f",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Core Algorithm & State Representation",
+      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Core Algorithm (computePromptThreshold)",
       "codeHash": "da23bfb7b7dd258f05a7c175b405bf12ab59f743ad4870309f02e36099c5874f",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Throughput & Edge Cases (optimizePromptPipeline)",
       "codeHash": "9eb57be255e29b560d47d7c4039b26b6e59d6c387d4fb04aae87f1244be730ae",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Resilience & Recovery (validatePromptGuard)",
       "codeHash": "435531d6d61a4365824f10a18e28c6a88d5b53990055132bfef68a14ab7bd153",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Production Telemetry & Verification Audit",
+      "partTitle": "Prompt Version Control, Canary Traffic Splitting & Automated Regression Rollbacks — Telemetry & Audit (auditPromptTelemetry)",
       "codeHash": "183bc89c8e4c390adc5fffaa11ec3f171dcaadfc35b15cf10b71b94d7ae6cda5",
       "spec": {
         "template": "flow",

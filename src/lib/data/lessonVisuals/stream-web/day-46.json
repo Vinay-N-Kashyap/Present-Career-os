@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Schema Registry Compatibility Enforcement — Foundations & Mathematical Invariants",
+      "partTitle": "Schema Registry Compatibility Enforcement — Foundations (evaluateSchemaRegistryCore)",
       "codeHash": "8ecfe88ad2de663c1969ded86a5d964ee17d25ea0acb7ced97f92a259e0b36a8",
       "spec": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Foundations & Mathematical",
+        "title": "Schema Registry Compatibility Enforcement — Foundations (evaluateSchem",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Foundations & Mathematical",
+        "title": "Schema Registry Compatibility Enforcement — Foundations (evaluateSchem",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Schema Registry Compatibility Enforcement — Core Algorithm & State Representation",
+      "partTitle": "Schema Registry Compatibility Enforcement — Core Algorithm (computeSchemaThreshold)",
       "codeHash": "65e3bb10e990ea5c1c4251f94c9b422815ae024df89caae0e509b1641dee10ca",
       "spec": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Core Algorithm & State Rep",
+        "title": "Schema Registry Compatibility Enforcement — Core Algorithm (computeSch",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Core Algorithm & State Rep",
+        "title": "Schema Registry Compatibility Enforcement — Core Algorithm (computeSch",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Schema Registry Compatibility Enforcement — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Schema Registry Compatibility Enforcement — Throughput & Edge Cases (optimizeSchemaPipeline)",
       "codeHash": "1d3106ce24b0e2057081e587740980abca36ecbbf9c8d6ca11dda91a193dfc7c",
       "spec": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Throughput Optimization & ",
+        "title": "Schema Registry Compatibility Enforcement — Throughput & Edge Cases (o",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Throughput Optimization & ",
+        "title": "Schema Registry Compatibility Enforcement — Throughput & Edge Cases (o",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Schema Registry Compatibility Enforcement — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Schema Registry Compatibility Enforcement — Resilience & Recovery (validateSchemaGuard)",
       "codeHash": "64bdbaafdfdc41649140ac0730b5d9624829feb5d52b7910433fbfec87b0f168",
       "spec": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Resilience Guardrails & Fa",
+        "title": "Schema Registry Compatibility Enforcement — Resilience & Recovery (val",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Resilience Guardrails & Fa",
+        "title": "Schema Registry Compatibility Enforcement — Resilience & Recovery (val",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Schema Registry Compatibility Enforcement — Production Telemetry & Verification Audit",
+      "partTitle": "Schema Registry Compatibility Enforcement — Telemetry & Audit (auditSchemaTelemetry)",
       "codeHash": "1f1a85f26c66675b3e888546844c5c095f6169ea325081d550f13f71808b9b6c",
       "spec": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Production Telemetry & Ver",
+        "title": "Schema Registry Compatibility Enforcement — Telemetry & Audit (auditSc",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Schema Registry Compatibility Enforcement — Production Telemetry & Ver",
+        "title": "Schema Registry Compatibility Enforcement — Telemetry & Audit (auditSc",
         "nodes": [
           {
             "id": "input",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Complexity-Aware Model Router — Foundations & Mathematical Invariants",
+      "partTitle": "Complexity-Aware Model Router — Foundations (evaluateComplexityAwareCore)",
       "codeHash": "a8ba371e0b665a5c8542d5895a90556e10067a24ab1fd55f508f138a53aea0e2",
       "spec": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Foundations & Mathematical Invariants",
+        "title": "Complexity-Aware Model Router — Foundations (evaluateComplexityAwareCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Foundations & Mathematical Invariants",
+        "title": "Complexity-Aware Model Router — Foundations (evaluateComplexityAwareCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Complexity-Aware Model Router — Core Algorithm & State Representation",
+      "partTitle": "Complexity-Aware Model Router — Core Algorithm (computeComplexityThreshold)",
       "codeHash": "a7a95d621de4f258317b5dd1a9af2c7f943b5f842b8f4cc8436357469be6cfc7",
       "spec": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Core Algorithm & State Representation",
+        "title": "Complexity-Aware Model Router — Core Algorithm (computeComplexityThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Core Algorithm & State Representation",
+        "title": "Complexity-Aware Model Router — Core Algorithm (computeComplexityThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Complexity-Aware Model Router — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Complexity-Aware Model Router — Throughput & Edge Cases (optimizeComplexityPipeline)",
       "codeHash": "b7096896c7ea5aacefb26ddffcbdeb7fa535b11ba53d1156fdf83335b7987cb5",
       "spec": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Throughput Optimization & Edge-Case Ha",
+        "title": "Complexity-Aware Model Router — Throughput & Edge Cases (optimizeCompl",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Throughput Optimization & Edge-Case Ha",
+        "title": "Complexity-Aware Model Router — Throughput & Edge Cases (optimizeCompl",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Complexity-Aware Model Router — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Complexity-Aware Model Router — Resilience & Recovery (validateComplexityGuard)",
       "codeHash": "21ea274a24747f3b45b90391c084db957a762207d915d505fe902da8623f4401",
       "spec": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Resilience Guardrails & Failure Recove",
+        "title": "Complexity-Aware Model Router — Resilience & Recovery (validateComplex",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Resilience Guardrails & Failure Recove",
+        "title": "Complexity-Aware Model Router — Resilience & Recovery (validateComplex",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Complexity-Aware Model Router — Production Telemetry & Verification Audit",
+      "partTitle": "Complexity-Aware Model Router — Telemetry & Audit (auditComplexityTelemetry)",
       "codeHash": "d378fd98f0d1b807f4d8ba4ca87f86574382f2424bcc16ae7f0ddc73bb880320",
       "spec": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Production Telemetry & Verification Au",
+        "title": "Complexity-Aware Model Router — Telemetry & Audit (auditComplexityTele",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complexity-Aware Model Router — Production Telemetry & Verification Au",
+        "title": "Complexity-Aware Model Router — Telemetry & Audit (auditComplexityTele",
         "nodes": [
           {
             "id": "input",

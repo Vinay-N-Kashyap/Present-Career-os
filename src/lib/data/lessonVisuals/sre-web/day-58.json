@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Certificate & Secret Rotation Lifecycles — Foundations & Mathematical Invariants",
+      "partTitle": "Certificate & Secret Rotation Lifecycles — Foundations (evaluateCertificateSecretCore)",
       "codeHash": "02ed78d08de988a20383746436019c09138760badc6067e284442ccb797e2351",
       "spec": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Foundations & Mathematical ",
+        "title": "Certificate & Secret Rotation Lifecycles — Foundations (evaluateCertif",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Foundations & Mathematical ",
+        "title": "Certificate & Secret Rotation Lifecycles — Foundations (evaluateCertif",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Certificate & Secret Rotation Lifecycles — Core Algorithm & State Representation",
+      "partTitle": "Certificate & Secret Rotation Lifecycles — Core Algorithm (computeCertificateThreshold)",
       "codeHash": "4bbe3713c32bfadbc1b33066088a56c22b96ccf0e6481ca00c5f8923244556ca",
       "spec": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Core Algorithm & State Repr",
+        "title": "Certificate & Secret Rotation Lifecycles — Core Algorithm (computeCert",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Core Algorithm & State Repr",
+        "title": "Certificate & Secret Rotation Lifecycles — Core Algorithm (computeCert",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Certificate & Secret Rotation Lifecycles — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Certificate & Secret Rotation Lifecycles — Throughput & Edge Cases (optimizeCertificatePipeline)",
       "codeHash": "3128e12783302d39263da0b992c84e3bc8e4bce1db3f8425b0e4209680ca8bd3",
       "spec": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Throughput Optimization & E",
+        "title": "Certificate & Secret Rotation Lifecycles — Throughput & Edge Cases (op",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Throughput Optimization & E",
+        "title": "Certificate & Secret Rotation Lifecycles — Throughput & Edge Cases (op",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Certificate & Secret Rotation Lifecycles — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Certificate & Secret Rotation Lifecycles — Resilience & Recovery (validateCertificateGuard)",
       "codeHash": "2a9811b377102299d7605b8078f4bf05b66b2e0fcdd2fe0050dd9611553a35f4",
       "spec": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Resilience Guardrails & Fai",
+        "title": "Certificate & Secret Rotation Lifecycles — Resilience & Recovery (vali",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Resilience Guardrails & Fai",
+        "title": "Certificate & Secret Rotation Lifecycles — Resilience & Recovery (vali",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Certificate & Secret Rotation Lifecycles — Production Telemetry & Verification Audit",
+      "partTitle": "Certificate & Secret Rotation Lifecycles — Telemetry & Audit (auditCertificateTelemetry)",
       "codeHash": "5e361f6ed7c6358fa0bf4078480f80f43beff4fe16b28e951d051a0ccce34ce9",
       "spec": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Production Telemetry & Veri",
+        "title": "Certificate & Secret Rotation Lifecycles — Telemetry & Audit (auditCer",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Certificate & Secret Rotation Lifecycles — Production Telemetry & Veri",
+        "title": "Certificate & Secret Rotation Lifecycles — Telemetry & Audit (auditCer",
         "nodes": [
           {
             "id": "input",

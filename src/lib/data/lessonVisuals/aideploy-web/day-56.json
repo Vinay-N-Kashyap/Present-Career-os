@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Embedding & Concept Drift Telemetry — Foundations & Mathematical Invariants",
+      "partTitle": "Embedding & Concept Drift Telemetry — Foundations (evaluateEmbeddingConceptCore)",
       "codeHash": "301a6bf1cb5772717219a38e22996c512d14f7fafdf0bd5205234bec2d5cb459",
       "spec": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Foundations & Mathematical Invar",
+        "title": "Embedding & Concept Drift Telemetry — Foundations (evaluateEmbeddingCo",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Foundations & Mathematical Invar",
+        "title": "Embedding & Concept Drift Telemetry — Foundations (evaluateEmbeddingCo",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Embedding & Concept Drift Telemetry — Core Algorithm & State Representation",
+      "partTitle": "Embedding & Concept Drift Telemetry — Core Algorithm (computeEmbeddingThreshold)",
       "codeHash": "c09059225ca5b59a7551e51587c9039bd22228d8d5b1ccbfa087f10994f90625",
       "spec": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Core Algorithm & State Represent",
+        "title": "Embedding & Concept Drift Telemetry — Core Algorithm (computeEmbedding",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Core Algorithm & State Represent",
+        "title": "Embedding & Concept Drift Telemetry — Core Algorithm (computeEmbedding",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Embedding & Concept Drift Telemetry — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Embedding & Concept Drift Telemetry — Throughput & Edge Cases (optimizeEmbeddingPipeline)",
       "codeHash": "e8d397c2698c9d5e723201efdfaf42bac46ff69f17728f86473536b16035197a",
       "spec": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Throughput Optimization & Edge-C",
+        "title": "Embedding & Concept Drift Telemetry — Throughput & Edge Cases (optimiz",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Throughput Optimization & Edge-C",
+        "title": "Embedding & Concept Drift Telemetry — Throughput & Edge Cases (optimiz",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Embedding & Concept Drift Telemetry — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Embedding & Concept Drift Telemetry — Resilience & Recovery (validateEmbeddingGuard)",
       "codeHash": "aafe4e289948c8b1c9207ba491c01bbef66eb7e3314f88c3f7e8534e6b380a78",
       "spec": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Resilience Guardrails & Failure ",
+        "title": "Embedding & Concept Drift Telemetry — Resilience & Recovery (validateE",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Resilience Guardrails & Failure ",
+        "title": "Embedding & Concept Drift Telemetry — Resilience & Recovery (validateE",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Embedding & Concept Drift Telemetry — Production Telemetry & Verification Audit",
+      "partTitle": "Embedding & Concept Drift Telemetry — Telemetry & Audit (auditEmbeddingTelemetry)",
       "codeHash": "a7a999f409bf86680185939df331fd176398bfa57c6a1a16b540690f125cbff3",
       "spec": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Production Telemetry & Verificat",
+        "title": "Embedding & Concept Drift Telemetry — Telemetry & Audit (auditEmbeddin",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Embedding & Concept Drift Telemetry — Production Telemetry & Verificat",
+        "title": "Embedding & Concept Drift Telemetry — Telemetry & Audit (auditEmbeddin",
         "nodes": [
           {
             "id": "input",

@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 9 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 9 — Foundations (evaluateShuffleShardedCore)",
       "codeHash": "404c90e127aa4dba201ef4a2b5ffb2e5c305286b198cfd1b55cb6579e8fc0452",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 9 — Core Algorithm (computeShuffleThreshold)",
       "codeHash": "8a87d00de4a0a3cc17059616b2dedca9a3b020d732cfd61a39c3a30ef8e345dc",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 9 — Throughput & Edge Cases (optimizeShufflePipeline)",
       "codeHash": "f412bd3bc7c8f361c530fdbad76598f539e8be4ecf53b26bd8b6eb98f9859eef",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 9 — Resilience & Recovery (validateShuffleGuard)",
       "codeHash": "23dcb45395700de7276c4fa63145b6a2120670d70ab8ce9bec0e4d5a88733c13",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 9 — Telemetry & Audit (auditShuffleTelemetry)",
       "codeHash": "1508c889b8e2e2415edf0e4930d8fabe4b13554bc941283881c9be12959919fe",
       "spec": {
         "template": "flow",

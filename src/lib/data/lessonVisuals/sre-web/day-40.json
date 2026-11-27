@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 8 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 8 — Foundations (evaluateMetastableFailureCore)",
       "codeHash": "79cab73e265b0713e626175b458e28cb0166aecce7dcb5fba27db26b0a04d7cf",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 8 — Core Algorithm (computeMetastableThreshold)",
       "codeHash": "dc477ea822074cdfb5a4e25ca7f07f33d13971f1c1abbf37cda7b73f5d474a13",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 8 — Throughput & Edge Cases (optimizeMetastablePipeline)",
       "codeHash": "30794fbc852753b421d67ef6ee0c82789e30ccbea561cecad1f778ab736e407b",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 8 — Resilience & Recovery (validateMetastableGuard)",
       "codeHash": "a7eca9628e943885fa7e6f81beb70a60ca358afc454cf0acbd60fc96145058a0",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 8 — Telemetry & Audit (auditMetastableTelemetry)",
       "codeHash": "03c1eff7d8fc4294af8871ec73b41c28ba83632734265911d4f18eaf7f3132bc",
       "spec": {
         "template": "flow",

@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Foundations & Mathematical Invariants",
+      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Foundations (evaluateProducerBatchingCore)",
       "codeHash": "cd438a43967d334d5171c6a3e781bf113b8a82c69d967fc44400cbaacb6e759a",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Core Algorithm & State Representation",
+      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Core Algorithm (computeProducerThreshold)",
       "codeHash": "cfe0b1866bbe5e6ae6c689f3efb40a56af5debeb9649eca3c693f86cd1410e50",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Throughput & Edge Cases (optimizeProducerPipeline)",
       "codeHash": "d22e9d4120f7002abb767c4e10e129626741ff7c5154ef75b22453e2acecd826",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Resilience & Recovery (validateProducerGuard)",
       "codeHash": "e3171a962a269978c52caaa0e423ef5603f67851f9ea10a0f57e54f49dfca113",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Production Telemetry & Verification Audit",
+      "partTitle": "Producer Batching, Linger Latency vs Throughput Trade-Offs & Idempotent Sequence Numbers — Telemetry & Audit (auditProducerTelemetry)",
       "codeHash": "48fb1fe7b4e707f7ed3f47d1021d5b298b165a85e59bc9d01f565ff0c309de08",
       "spec": {
         "template": "flow",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "PII Tokenization Proxy — Foundations & Mathematical Invariants",
+      "partTitle": "PII Tokenization Proxy — Foundations (evaluatePiiTokenizationCore)",
       "codeHash": "aeb8ae6b5765b1ce1d294709b246df1d02cde172e76d5959e8d793415a0625c7",
       "spec": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Foundations & Mathematical Invariants",
+        "title": "PII Tokenization Proxy — Foundations (evaluatePiiTokenizationCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Foundations & Mathematical Invariants",
+        "title": "PII Tokenization Proxy — Foundations (evaluatePiiTokenizationCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "PII Tokenization Proxy — Core Algorithm & State Representation",
+      "partTitle": "PII Tokenization Proxy — Core Algorithm (computePiiThreshold)",
       "codeHash": "8f59e55242fe43ce7c74d1897b29cc34758cf2279fe0d7db820353e79b8f8b82",
       "spec": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Core Algorithm & State Representation",
+        "title": "PII Tokenization Proxy — Core Algorithm (computePiiThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Core Algorithm & State Representation",
+        "title": "PII Tokenization Proxy — Core Algorithm (computePiiThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "PII Tokenization Proxy — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "PII Tokenization Proxy — Throughput & Edge Cases (optimizePiiPipeline)",
       "codeHash": "725584b96ecd55c4db873457c698aa88d5619ceb2cd018005c922fcf363b2609",
       "spec": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Throughput Optimization & Edge-Case Handling",
+        "title": "PII Tokenization Proxy — Throughput & Edge Cases (optimizePiiPipeline)",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Throughput Optimization & Edge-Case Handling",
+        "title": "PII Tokenization Proxy — Throughput & Edge Cases (optimizePiiPipeline)",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "PII Tokenization Proxy — Resilience Guardrails & Failure Recovery",
+      "partTitle": "PII Tokenization Proxy — Resilience & Recovery (validatePiiGuard)",
       "codeHash": "76d42d1853eef13f0eb69518869cf551db90f54c87fa05f35b3e5f0d80b932f7",
       "spec": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Resilience Guardrails & Failure Recovery",
+        "title": "PII Tokenization Proxy — Resilience & Recovery (validatePiiGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Resilience Guardrails & Failure Recovery",
+        "title": "PII Tokenization Proxy — Resilience & Recovery (validatePiiGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "PII Tokenization Proxy — Production Telemetry & Verification Audit",
+      "partTitle": "PII Tokenization Proxy — Telemetry & Audit (auditPiiTelemetry)",
       "codeHash": "a0685114c8b0976bb85007bf9c191907c1bf5c3771d97670e0b515e216176e8d",
       "spec": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Production Telemetry & Verification Audit",
+        "title": "PII Tokenization Proxy — Telemetry & Audit (auditPiiTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "PII Tokenization Proxy — Production Telemetry & Verification Audit",
+        "title": "PII Tokenization Proxy — Telemetry & Audit (auditPiiTelemetry)",
         "nodes": [
           {
             "id": "input",

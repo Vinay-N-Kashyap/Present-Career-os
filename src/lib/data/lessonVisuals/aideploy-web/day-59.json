@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Foundations & Mathematical Invariants",
+      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Foundations (evaluateLoadTestingCore)",
       "codeHash": "0a23cec2957d301e948d6b0f903f7e998bc3c8931546eb37641671e65e3dbe65",
       "spec": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Foundations & Mathematic",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Foundations (evaluateLoa",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Foundations & Mathematic",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Foundations (evaluateLoa",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Core Algorithm & State Representation",
+      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Core Algorithm (computeLoadThreshold)",
       "codeHash": "3f805a7ab008de120e510009409f085c35a16e7e1b4dc46287ee10bb0d61b2af",
       "spec": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Core Algorithm & State R",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Core Algorithm (computeL",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Core Algorithm & State R",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Core Algorithm (computeL",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Throughput & Edge Cases (optimizeLoadPipeline)",
       "codeHash": "99a887b96f509296abb57bf9d3717a453f673d978fc697c86e5ecb78f550b96a",
       "spec": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Throughput Optimization ",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Throughput & Edge Cases ",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Throughput Optimization ",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Throughput & Edge Cases ",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Resilience & Recovery (validateLoadGuard)",
       "codeHash": "1b5c5f1938dc9d7d4a768f9fa40ba062c2c31ebd534b19ff29163490cdbce8b1",
       "spec": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Resilience Guardrails & ",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Resilience & Recovery (v",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Resilience Guardrails & ",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Resilience & Recovery (v",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Production Telemetry & Verification Audit",
+      "partTitle": "Load Testing & Chaos Injection for LLM APIs — Telemetry & Audit (auditLoadTelemetry)",
       "codeHash": "7fe93956298740b198b0d798b13d661e876e528387b7820a624e6ee4b2495d81",
       "spec": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Production Telemetry & V",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Telemetry & Audit (audit",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Load Testing & Chaos Injection for LLM APIs — Production Telemetry & V",
+        "title": "Load Testing & Chaos Injection for LLM APIs — Telemetry & Audit (audit",
         "nodes": [
           {
             "id": "input",

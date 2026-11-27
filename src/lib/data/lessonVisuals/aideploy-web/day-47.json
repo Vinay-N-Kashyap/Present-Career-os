@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Foundations & Mathematical Invariants",
+      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Foundations (evaluatePromptInjectionCore)",
       "codeHash": "dc0cd473add29c592037d36c3816c25971677cd89463ea895d73f20d159c2b94",
       "spec": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Foundations & Mathem",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Foundations (evaluat",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Foundations & Mathem",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Foundations (evaluat",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Core Algorithm & State Representation",
+      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Core Algorithm (computePromptThreshold)",
       "codeHash": "6bd910b65a3fa02fff8475e2c57fafec2568bc451b89ade32906bd9654f82d2a",
       "spec": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Core Algorithm & Sta",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Core Algorithm (comp",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Core Algorithm & Sta",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Core Algorithm (comp",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Throughput & Edge Cases (optimizePromptPipeline)",
       "codeHash": "7f27777c91673752abe591c7548163004785b451e6fb4043d4babc6839ed72d2",
       "spec": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Throughput Optimizat",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Throughput & Edge Ca",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Throughput Optimizat",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Throughput & Edge Ca",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Resilience & Recovery (validatePromptGuard)",
       "codeHash": "6e7db372fd4cc9df41798b1f8a84023c7390638f6b56e9ccbf9a32c1b9d6fc3b",
       "spec": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Resilience Guardrail",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Resilience & Recover",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Resilience Guardrail",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Resilience & Recover",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Production Telemetry & Verification Audit",
+      "partTitle": "Prompt Injection & Jailbreak Guardrail Pipeline — Telemetry & Audit (auditPromptTelemetry)",
       "codeHash": "8a443a293be25a28962b38b93e3913567b00d3562ed959fa9b6f33d2c3d9ca39",
       "spec": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Production Telemetry",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Telemetry & Audit (a",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Production Telemetry",
+        "title": "Prompt Injection & Jailbreak Guardrail Pipeline — Telemetry & Audit (a",
         "nodes": [
           {
             "id": "input",

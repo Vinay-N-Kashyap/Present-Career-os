@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Zero-Downtime Schema Migrations — Foundations & Mathematical Invariants",
+      "partTitle": "Zero-Downtime Schema Migrations — Foundations (evaluateZeroDowntimeCore)",
       "codeHash": "0052d7467a8620e7c73fe618c4f97c93788545336b709242e03e0a7e15a008bf",
       "spec": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Foundations & Mathematical Invariant",
+        "title": "Zero-Downtime Schema Migrations — Foundations (evaluateZeroDowntimeCor",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Foundations & Mathematical Invariant",
+        "title": "Zero-Downtime Schema Migrations — Foundations (evaluateZeroDowntimeCor",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Zero-Downtime Schema Migrations — Core Algorithm & State Representation",
+      "partTitle": "Zero-Downtime Schema Migrations — Core Algorithm (computeZeroThreshold)",
       "codeHash": "a22b4ed118cddb47fa699b4601cb76cf2e995285dd18e58582148b666a5c2178",
       "spec": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Core Algorithm & State Representatio",
+        "title": "Zero-Downtime Schema Migrations — Core Algorithm (computeZeroThreshold",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Core Algorithm & State Representatio",
+        "title": "Zero-Downtime Schema Migrations — Core Algorithm (computeZeroThreshold",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Zero-Downtime Schema Migrations — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Zero-Downtime Schema Migrations — Throughput & Edge Cases (optimizeZeroPipeline)",
       "codeHash": "e5f181bf7cf444ddc3133d7aff9705f42f06700b3395d53a29e12829abdf3e7e",
       "spec": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Throughput Optimization & Edge-Case ",
+        "title": "Zero-Downtime Schema Migrations — Throughput & Edge Cases (optimizeZer",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Throughput Optimization & Edge-Case ",
+        "title": "Zero-Downtime Schema Migrations — Throughput & Edge Cases (optimizeZer",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Zero-Downtime Schema Migrations — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Zero-Downtime Schema Migrations — Resilience & Recovery (validateZeroGuard)",
       "codeHash": "1c16373f75610f39ef138ad820be27c893ee7f5c19bd0ef205862bd85781a0ee",
       "spec": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Resilience Guardrails & Failure Reco",
+        "title": "Zero-Downtime Schema Migrations — Resilience & Recovery (validateZeroG",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Resilience Guardrails & Failure Reco",
+        "title": "Zero-Downtime Schema Migrations — Resilience & Recovery (validateZeroG",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Zero-Downtime Schema Migrations — Production Telemetry & Verification Audit",
+      "partTitle": "Zero-Downtime Schema Migrations — Telemetry & Audit (auditZeroTelemetry)",
       "codeHash": "49f8dfb57ff6bc2f6a13bc1dd93a0efcf913dfc9bc1f2155ee949904e7a75213",
       "spec": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Production Telemetry & Verification ",
+        "title": "Zero-Downtime Schema Migrations — Telemetry & Audit (auditZeroTelemetr",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Zero-Downtime Schema Migrations — Production Telemetry & Verification ",
+        "title": "Zero-Downtime Schema Migrations — Telemetry & Audit (auditZeroTelemetr",
         "nodes": [
           {
             "id": "input",

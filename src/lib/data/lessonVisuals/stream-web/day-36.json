@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Foundations & Mathematical Invariants",
+      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Foundations (evaluateEventTimeCore)",
       "codeHash": "1500fd9f4976d3260e0559cc97f6c8ac377dffd8ae01b62b824b7e1e73017afc",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Core Algorithm & State Representation",
+      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Core Algorithm (computeEventThreshold)",
       "codeHash": "7a3a03f67736e9a251e3057afaceea42b81d82b28f277f7d5d29847d8fb78587",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Throughput & Edge Cases (optimizeEventPipeline)",
       "codeHash": "f4565f18565e91d8549af09ad1a622dbdbfbc90121bb1508078114259c38755f",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Resilience & Recovery (validateEventGuard)",
       "codeHash": "a293cf05bb8ef1774a62e79e3efec13ebc943a3df9f3362238c72e1cd62185de",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Production Telemetry & Verification Audit",
+      "partTitle": "Event-Time vs Processing-Time Semantics & Bounded-Out-of-Orderness Watermark Generators — Telemetry & Audit (auditEventTelemetry)",
       "codeHash": "03d4254c9750d0ce83a4aac60f6ed612efe0c6fca29291179fcd392189c1c45b",
       "spec": {
         "template": "flow",

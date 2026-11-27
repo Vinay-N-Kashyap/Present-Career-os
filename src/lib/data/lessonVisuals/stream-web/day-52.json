@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Probabilistic Streaming Aggregations — Foundations & Mathematical Invariants",
+      "partTitle": "Probabilistic Streaming Aggregations — Foundations (evaluateProbabilisticStreamingCore)",
       "codeHash": "ae15de03fb0fc76055e7eca5ac72c3ac523fea48af138798a55c3edeb8fe128a",
       "spec": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Foundations & Mathematical Inva",
+        "title": "Probabilistic Streaming Aggregations — Foundations (evaluateProbabilis",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Foundations & Mathematical Inva",
+        "title": "Probabilistic Streaming Aggregations — Foundations (evaluateProbabilis",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Probabilistic Streaming Aggregations — Core Algorithm & State Representation",
+      "partTitle": "Probabilistic Streaming Aggregations — Core Algorithm (computeProbabilisticThreshold)",
       "codeHash": "0e7b9a2793eb8451859a25bd4d91fcb2776573c172f5ae2560066e3cec83476a",
       "spec": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Core Algorithm & State Represen",
+        "title": "Probabilistic Streaming Aggregations — Core Algorithm (computeProbabil",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Core Algorithm & State Represen",
+        "title": "Probabilistic Streaming Aggregations — Core Algorithm (computeProbabil",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Probabilistic Streaming Aggregations — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Probabilistic Streaming Aggregations — Throughput & Edge Cases (optimizeProbabilisticPipeline)",
       "codeHash": "46044aa4d93ef1af62db9d3033e39c4d7586d34c085d657a56a1f124e4a86781",
       "spec": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Throughput Optimization & Edge-",
+        "title": "Probabilistic Streaming Aggregations — Throughput & Edge Cases (optimi",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Throughput Optimization & Edge-",
+        "title": "Probabilistic Streaming Aggregations — Throughput & Edge Cases (optimi",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Probabilistic Streaming Aggregations — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Probabilistic Streaming Aggregations — Resilience & Recovery (validateProbabilisticGuard)",
       "codeHash": "02a1f5e5c2d5e20a7d247a7a8a350c1fd658b0336a113c8733bbaf5ab51610f1",
       "spec": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Resilience Guardrails & Failure",
+        "title": "Probabilistic Streaming Aggregations — Resilience & Recovery (validate",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Resilience Guardrails & Failure",
+        "title": "Probabilistic Streaming Aggregations — Resilience & Recovery (validate",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Probabilistic Streaming Aggregations — Production Telemetry & Verification Audit",
+      "partTitle": "Probabilistic Streaming Aggregations — Telemetry & Audit (auditProbabilisticTelemetry)",
       "codeHash": "5fcbed3226726a57c1ed4484a1078943a4072a4ee0298f6fdb6832f11ba9e68a",
       "spec": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Production Telemetry & Verifica",
+        "title": "Probabilistic Streaming Aggregations — Telemetry & Audit (auditProbabi",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Probabilistic Streaming Aggregations — Production Telemetry & Verifica",
+        "title": "Probabilistic Streaming Aggregations — Telemetry & Audit (auditProbabi",
         "nodes": [
           {
             "id": "input",

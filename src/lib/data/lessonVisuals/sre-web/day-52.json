@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Executable Runbooks — Foundations & Mathematical Invariants",
+      "partTitle": "Executable Runbooks — Foundations (evaluateExecutableRunbooksCore)",
       "codeHash": "ce3d0d91e50f1504e47a9a55ed38b3f9feef41bbec6f9403ef6af200837cfc76",
       "spec": {
         "template": "flow",
-        "title": "Executable Runbooks — Foundations & Mathematical Invariants",
+        "title": "Executable Runbooks — Foundations (evaluateExecutableRunbooksCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Executable Runbooks — Foundations & Mathematical Invariants",
+        "title": "Executable Runbooks — Foundations (evaluateExecutableRunbooksCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Executable Runbooks — Core Algorithm & State Representation",
+      "partTitle": "Executable Runbooks — Core Algorithm (computeExecutableThreshold)",
       "codeHash": "dba27596c4e92971f8937612b87dbac2378aacbe84549dcdd3413724360c9114",
       "spec": {
         "template": "flow",
-        "title": "Executable Runbooks — Core Algorithm & State Representation",
+        "title": "Executable Runbooks — Core Algorithm (computeExecutableThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Executable Runbooks — Core Algorithm & State Representation",
+        "title": "Executable Runbooks — Core Algorithm (computeExecutableThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Executable Runbooks — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Executable Runbooks — Throughput & Edge Cases (optimizeExecutablePipeline)",
       "codeHash": "2fe4c2b0f8fe2d9a34508ab396c97e2ec823d2593fa07112af9bdad3793b1573",
       "spec": {
         "template": "flow",
-        "title": "Executable Runbooks — Throughput Optimization & Edge-Case Handling",
+        "title": "Executable Runbooks — Throughput & Edge Cases (optimizeExecutablePipeline)",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Executable Runbooks — Throughput Optimization & Edge-Case Handling",
+        "title": "Executable Runbooks — Throughput & Edge Cases (optimizeExecutablePipeline)",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Executable Runbooks — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Executable Runbooks — Resilience & Recovery (validateExecutableGuard)",
       "codeHash": "3d84d5a257200ffd4df3d20da0558c3499e08d90efb84c7564b5c2401be16ee9",
       "spec": {
         "template": "flow",
-        "title": "Executable Runbooks — Resilience Guardrails & Failure Recovery",
+        "title": "Executable Runbooks — Resilience & Recovery (validateExecutableGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Executable Runbooks — Resilience Guardrails & Failure Recovery",
+        "title": "Executable Runbooks — Resilience & Recovery (validateExecutableGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Executable Runbooks — Production Telemetry & Verification Audit",
+      "partTitle": "Executable Runbooks — Telemetry & Audit (auditExecutableTelemetry)",
       "codeHash": "2948dfcf633dddd05e549888233088900b202b63ff767bb57e2926f953210c97",
       "spec": {
         "template": "flow",
-        "title": "Executable Runbooks — Production Telemetry & Verification Audit",
+        "title": "Executable Runbooks — Telemetry & Audit (auditExecutableTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Executable Runbooks — Production Telemetry & Verification Audit",
+        "title": "Executable Runbooks — Telemetry & Audit (auditExecutableTelemetry)",
         "nodes": [
           {
             "id": "input",

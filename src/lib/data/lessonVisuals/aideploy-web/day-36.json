@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Multi-Provider LLM Gateway — Foundations & Mathematical Invariants",
+      "partTitle": "Multi-Provider LLM Gateway — Foundations (evaluateMultiProviderCore)",
       "codeHash": "b6a774980c0f623d2ca4ee3f91200b13d456cdf06d5bc155ba7e29782d0466db",
       "spec": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Foundations & Mathematical Invariants",
+        "title": "Multi-Provider LLM Gateway — Foundations (evaluateMultiProviderCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Foundations & Mathematical Invariants",
+        "title": "Multi-Provider LLM Gateway — Foundations (evaluateMultiProviderCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Multi-Provider LLM Gateway — Core Algorithm & State Representation",
+      "partTitle": "Multi-Provider LLM Gateway — Core Algorithm (computeMultiThreshold)",
       "codeHash": "db158d52ebf7621c9774bc04e232742df9a23c94f0e400941e13c6ae60c44670",
       "spec": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Core Algorithm & State Representation",
+        "title": "Multi-Provider LLM Gateway — Core Algorithm (computeMultiThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Core Algorithm & State Representation",
+        "title": "Multi-Provider LLM Gateway — Core Algorithm (computeMultiThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Multi-Provider LLM Gateway — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Multi-Provider LLM Gateway — Throughput & Edge Cases (optimizeMultiPipeline)",
       "codeHash": "52490fde8ff95603687f243bd0b88dca5310d59b35d23542deff30a27d2c0aa9",
       "spec": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Throughput Optimization & Edge-Case Handl",
+        "title": "Multi-Provider LLM Gateway — Throughput & Edge Cases (optimizeMultiPip",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Throughput Optimization & Edge-Case Handl",
+        "title": "Multi-Provider LLM Gateway — Throughput & Edge Cases (optimizeMultiPip",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Multi-Provider LLM Gateway — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Multi-Provider LLM Gateway — Resilience & Recovery (validateMultiGuard)",
       "codeHash": "c19b39e8b8e9cfb53b488b759eae66800a374925de3ee4ae92af2f523274d61b",
       "spec": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Resilience Guardrails & Failure Recovery",
+        "title": "Multi-Provider LLM Gateway — Resilience & Recovery (validateMultiGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Resilience Guardrails & Failure Recovery",
+        "title": "Multi-Provider LLM Gateway — Resilience & Recovery (validateMultiGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Multi-Provider LLM Gateway — Production Telemetry & Verification Audit",
+      "partTitle": "Multi-Provider LLM Gateway — Telemetry & Audit (auditMultiTelemetry)",
       "codeHash": "25925d06dc70e59a286fdcb5512c1f9cd74c921b2e68a0e9c462790958e1dc82",
       "spec": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Production Telemetry & Verification Audit",
+        "title": "Multi-Provider LLM Gateway — Telemetry & Audit (auditMultiTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Provider LLM Gateway — Production Telemetry & Verification Audit",
+        "title": "Multi-Provider LLM Gateway — Telemetry & Audit (auditMultiTelemetry)",
         "nodes": [
           {
             "id": "input",

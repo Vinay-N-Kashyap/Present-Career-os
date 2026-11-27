@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 11 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 11 — Foundations (evaluateAutomatedRunbookCore)",
       "codeHash": "059607619f555c9475681081c1e563a8f25716e3b4f41c4efb3b33ebe54f5bae",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 11 — Core Algorithm (computeAutomatedThreshold)",
       "codeHash": "2bf4180e225a4226cae8f124edc1c934789104311efed450506f385d8b2ebf77",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 11 — Throughput & Edge Cases (optimizeAutomatedPipeline)",
       "codeHash": "c0a7c2ab1fc9a7de1e7eacc4bde5641d9d0b90d8b1ea528db54403bfea76cd2a",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 11 — Resilience & Recovery (validateAutomatedGuard)",
       "codeHash": "3babe3730ba4e6ea5cc684e7468ee05f63c72d81d9f1479216ab19866246395d",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 11 — Telemetry & Audit (auditAutomatedTelemetry)",
       "codeHash": "216b43f16ac28355e53d22f5e97f3e6779255bdad3b2a30c7fc689fe863c7f7e",
       "spec": {
         "template": "flow",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "RED & USE Telemetry Pipelines — Foundations & Mathematical Invariants",
+      "partTitle": "RED & USE Telemetry Pipelines — Foundations (evaluateRedUseCore)",
       "codeHash": "028e32f423a171a615b2f678fb2c5890ab11eed802e093b2773233e5a41ead7d",
       "spec": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Foundations & Mathematical Invariants",
+        "title": "RED & USE Telemetry Pipelines — Foundations (evaluateRedUseCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Foundations & Mathematical Invariants",
+        "title": "RED & USE Telemetry Pipelines — Foundations (evaluateRedUseCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "RED & USE Telemetry Pipelines — Core Algorithm & State Representation",
+      "partTitle": "RED & USE Telemetry Pipelines — Core Algorithm (computeRedThreshold)",
       "codeHash": "3911d4b55ef59e1a752eb6a56b742d766505fa418fe5ece676a28131a2ff37cb",
       "spec": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Core Algorithm & State Representation",
+        "title": "RED & USE Telemetry Pipelines — Core Algorithm (computeRedThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Core Algorithm & State Representation",
+        "title": "RED & USE Telemetry Pipelines — Core Algorithm (computeRedThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "RED & USE Telemetry Pipelines — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "RED & USE Telemetry Pipelines — Throughput & Edge Cases (optimizeRedPipeline)",
       "codeHash": "3e27e623579d023f19f5971c9541970e3030d44db022feaab69b246889bc335c",
       "spec": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Throughput Optimization & Edge-Case Ha",
+        "title": "RED & USE Telemetry Pipelines — Throughput & Edge Cases (optimizeRedPi",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Throughput Optimization & Edge-Case Ha",
+        "title": "RED & USE Telemetry Pipelines — Throughput & Edge Cases (optimizeRedPi",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "RED & USE Telemetry Pipelines — Resilience Guardrails & Failure Recovery",
+      "partTitle": "RED & USE Telemetry Pipelines — Resilience & Recovery (validateRedGuard)",
       "codeHash": "fa9f08afa906e9cefa0366fa6f317c09c2f96db51ae0a68f2c2385008eb19977",
       "spec": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Resilience Guardrails & Failure Recove",
+        "title": "RED & USE Telemetry Pipelines — Resilience & Recovery (validateRedGuar",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Resilience Guardrails & Failure Recove",
+        "title": "RED & USE Telemetry Pipelines — Resilience & Recovery (validateRedGuar",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "RED & USE Telemetry Pipelines — Production Telemetry & Verification Audit",
+      "partTitle": "RED & USE Telemetry Pipelines — Telemetry & Audit (auditRedTelemetry)",
       "codeHash": "1d2c3ef12973b51b05656396a90c4ab160e113328fa8f2e6ef9c466b86c107f6",
       "spec": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Production Telemetry & Verification Au",
+        "title": "RED & USE Telemetry Pipelines — Telemetry & Audit (auditRedTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "RED & USE Telemetry Pipelines — Production Telemetry & Verification Au",
+        "title": "RED & USE Telemetry Pipelines — Telemetry & Audit (auditRedTelemetry)",
         "nodes": [
           {
             "id": "input",

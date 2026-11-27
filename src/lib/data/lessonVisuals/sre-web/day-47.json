@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Foundations & Mathematical Invariants",
+      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Foundations (evaluateDistributedLockCore)",
       "codeHash": "5b93783f77ab7aa687a198ee6983b8a524038d8899710550c8d42f1205fed51c",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Core Algorithm & State Representation",
+      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Core Algorithm (computeDistributedThreshold)",
       "codeHash": "f8fb4f74281f8301aed0d65d7dddee1ccd943645c22747fcd720287300fa93a0",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Throughput & Edge Cases (optimizeDistributedPipeline)",
       "codeHash": "a4962ffcab4f8067b7ab5067220274d43fb16546c00d5e18d8bc73bf94ea4046",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Resilience & Recovery (validateDistributedGuard)",
       "codeHash": "9bf6577435e8a580e126da8b3a51289acdc4a2ae044d253eb61c0820ff55e854",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Production Telemetry & Verification Audit",
+      "partTitle": "Distributed Lock Leases, Fencing Tokens & Split-Brain Quorum Validation — Telemetry & Audit (auditDistributedTelemetry)",
       "codeHash": "a0985bb46c5a66a39b32bafae91460d2c6e135e5cc23c67f9565d2c148d24727",
       "spec": {
         "template": "flow",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Change Data Capture (CDC) — Foundations & Mathematical Invariants",
+      "partTitle": "Change Data Capture (CDC) — Foundations (evaluateChangeDataCore)",
       "codeHash": "bfa6a9944c3794fa6df7d0d7d2021d2844cd1f86815af818765a13f267030d2e",
       "spec": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Foundations & Mathematical Invariants",
+        "title": "Change Data Capture (CDC) — Foundations (evaluateChangeDataCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Foundations & Mathematical Invariants",
+        "title": "Change Data Capture (CDC) — Foundations (evaluateChangeDataCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Change Data Capture (CDC) — Core Algorithm & State Representation",
+      "partTitle": "Change Data Capture (CDC) — Core Algorithm (computeChangeThreshold)",
       "codeHash": "663e3fe31c87d3b5d93c918161cc665bf090c68c250f5a56c1caa57b27c84971",
       "spec": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Core Algorithm & State Representation",
+        "title": "Change Data Capture (CDC) — Core Algorithm (computeChangeThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Core Algorithm & State Representation",
+        "title": "Change Data Capture (CDC) — Core Algorithm (computeChangeThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Change Data Capture (CDC) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Change Data Capture (CDC) — Throughput & Edge Cases (optimizeChangePipeline)",
       "codeHash": "0de580bc522d1d34199840bf9e4a6ea0670df44116616948103410165b0557e5",
       "spec": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Throughput Optimization & Edge-Case Handli",
+        "title": "Change Data Capture (CDC) — Throughput & Edge Cases (optimizeChangePip",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Throughput Optimization & Edge-Case Handli",
+        "title": "Change Data Capture (CDC) — Throughput & Edge Cases (optimizeChangePip",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Change Data Capture (CDC) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Change Data Capture (CDC) — Resilience & Recovery (validateChangeGuard)",
       "codeHash": "7673de2c5c52cf573adb0d760b85bb14f1e24e7deec111e7cea3c84d0113ad48",
       "spec": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Resilience Guardrails & Failure Recovery",
+        "title": "Change Data Capture (CDC) — Resilience & Recovery (validateChangeGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Resilience Guardrails & Failure Recovery",
+        "title": "Change Data Capture (CDC) — Resilience & Recovery (validateChangeGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Change Data Capture (CDC) — Production Telemetry & Verification Audit",
+      "partTitle": "Change Data Capture (CDC) — Telemetry & Audit (auditChangeTelemetry)",
       "codeHash": "22baa33ec491612dec04d7c183592934dc17b82af5ea20c254c04c8280dcbc2d",
       "spec": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Production Telemetry & Verification Audit",
+        "title": "Change Data Capture (CDC) — Telemetry & Audit (auditChangeTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Change Data Capture (CDC) — Production Telemetry & Verification Audit",
+        "title": "Change Data Capture (CDC) — Telemetry & Audit (auditChangeTelemetry)",
         "nodes": [
           {
             "id": "input",

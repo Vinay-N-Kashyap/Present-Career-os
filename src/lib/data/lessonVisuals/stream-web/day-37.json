@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Foundations & Mathematical Invariants",
+      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Foundations (evaluateTumblingHoppingCore)",
       "codeHash": "5b32d4516e72c4f60f5109b3d395464c42865985d25ed004f53d187720a3fe36",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Core Algorithm & State Representation",
+      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Core Algorithm (computeTumblingThreshold)",
       "codeHash": "07ae213c11a6d742da167f8573f3ab07c02e11795f81629a3847f2e3e3b51ced",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Throughput & Edge Cases (optimizeTumblingPipeline)",
       "codeHash": "c8cb1a14c519d33b8fd58f7bbbbccc340963207aadd828d11f2517f0bfc03d21",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Resilience & Recovery (validateTumblingGuard)",
       "codeHash": "0d9922261966f37ef4a74dcf1974a0d05ec92806eadbe52d0178cabf3c003e49",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Production Telemetry & Verification Audit",
+      "partTitle": "Tumbling, Hopping (Sliding) & Session Windows with Dynamic Gap Merging — Telemetry & Audit (auditTumblingTelemetry)",
       "codeHash": "63726f3510aa064ae7bd76552baa440d7a94fc0ccd924f5d8fb44079c934a19f",
       "spec": {
         "template": "flow",

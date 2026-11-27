@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Foundations & Mathematical Invariants",
+      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Foundations (evaluateContinuousBatchingCore)",
       "codeHash": "7df462df04e2c3bd5d75d32c0e3e144c353a26d65c2d9f288c7bd119bc0ab621",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Core Algorithm & State Representation",
+      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Core Algorithm (computeContinuousThreshold)",
       "codeHash": "3c8dd11817c5abe6e4c8b0790b8b397a60aa6da72748adcddd24c4bc568de85e",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Throughput & Edge Cases (optimizeContinuousPipeline)",
       "codeHash": "f611448a2f473144b901428e563655b02dd19f24d329a973707a170e00761c8c",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Resilience & Recovery (validateContinuousGuard)",
       "codeHash": "8b1963bbd96eb766dfa9926ef63e891e0fd5b7c43e49ce1434331f10c419c0a3",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Production Telemetry & Verification Audit",
+      "partTitle": "Continuous Batching (Iteration-Level Scheduling) & PagedAttention KV-Block Allocators — Telemetry & Audit (auditContinuousTelemetry)",
       "codeHash": "d3dc7e0890a1ba2d28e5817fd5cd9c015794e0d43ffe6ba2106b57c9cc5997ac",
       "spec": {
         "template": "flow",

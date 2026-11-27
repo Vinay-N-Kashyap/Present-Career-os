@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Graceful Degradation Tiers — Foundations & Mathematical Invariants",
+      "partTitle": "Graceful Degradation Tiers — Foundations (evaluateGracefulDegradationCore)",
       "codeHash": "9a71321e4a55e12ed197b12ab26d658db4431cdbbdb7dbdeff699d2e78c17611",
       "spec": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Foundations & Mathematical Invariants",
+        "title": "Graceful Degradation Tiers — Foundations (evaluateGracefulDegradationCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Foundations & Mathematical Invariants",
+        "title": "Graceful Degradation Tiers — Foundations (evaluateGracefulDegradationCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Graceful Degradation Tiers — Core Algorithm & State Representation",
+      "partTitle": "Graceful Degradation Tiers — Core Algorithm (computeGracefulThreshold)",
       "codeHash": "a800f1b5e0425a4caa36d4efc1bbe98c40d5a42deabed707c3deec33d000be1b",
       "spec": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Core Algorithm & State Representation",
+        "title": "Graceful Degradation Tiers — Core Algorithm (computeGracefulThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Core Algorithm & State Representation",
+        "title": "Graceful Degradation Tiers — Core Algorithm (computeGracefulThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Graceful Degradation Tiers — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Graceful Degradation Tiers — Throughput & Edge Cases (optimizeGracefulPipeline)",
       "codeHash": "e50d0af328ce75640c431786018338a4ea9b8165dffd4bebe47205d2465e3f94",
       "spec": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Throughput Optimization & Edge-Case Handl",
+        "title": "Graceful Degradation Tiers — Throughput & Edge Cases (optimizeGraceful",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Throughput Optimization & Edge-Case Handl",
+        "title": "Graceful Degradation Tiers — Throughput & Edge Cases (optimizeGraceful",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Graceful Degradation Tiers — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Graceful Degradation Tiers — Resilience & Recovery (validateGracefulGuard)",
       "codeHash": "7a612ac14221fa394af8e7f6a160ffd9b93a82fd2ecf3fb6dabae70bd45ccf8e",
       "spec": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Resilience Guardrails & Failure Recovery",
+        "title": "Graceful Degradation Tiers — Resilience & Recovery (validateGracefulGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Resilience Guardrails & Failure Recovery",
+        "title": "Graceful Degradation Tiers — Resilience & Recovery (validateGracefulGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Graceful Degradation Tiers — Production Telemetry & Verification Audit",
+      "partTitle": "Graceful Degradation Tiers — Telemetry & Audit (auditGracefulTelemetry)",
       "codeHash": "611d3297972343d0810f5919efdc403e39ac5a4de55817dc68a68ffc84d4026c",
       "spec": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Production Telemetry & Verification Audit",
+        "title": "Graceful Degradation Tiers — Telemetry & Audit (auditGracefulTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Graceful Degradation Tiers — Production Telemetry & Verification Audit",
+        "title": "Graceful Degradation Tiers — Telemetry & Audit (auditGracefulTelemetry)",
         "nodes": [
           {
             "id": "input",

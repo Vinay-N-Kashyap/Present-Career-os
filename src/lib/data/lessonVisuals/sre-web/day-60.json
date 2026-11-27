@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 12 Capstone — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 12 Capstone — Foundations (evaluateAutonomousMultiCore)",
       "codeHash": "d6f11fe3691ec358ae2646d0299a7e676be63b17be06357d018e3ff9f80984f3",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 12 Capstone — Core Algorithm & State Representation",
+      "partTitle": "Milestone 12 Capstone — Core Algorithm (computeAutonomousThreshold)",
       "codeHash": "399c3b2bdcd0b449bac3371198975c2aa76e199838761ecd76cd390ceb0d393a",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 12 Capstone — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 12 Capstone — Throughput & Edge Cases (optimizeAutonomousPipeline)",
       "codeHash": "06850f156521034a583b4bb39b016b4970a312547c00441bdb36bea0be320e6b",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 12 Capstone — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 12 Capstone — Resilience & Recovery (validateAutonomousGuard)",
       "codeHash": "943051e236990498209de780578027d87347e8709f0d16ed33fefc93e51e47fc",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 12 Capstone — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 12 Capstone — Telemetry & Audit (auditAutonomousTelemetry)",
       "codeHash": "09f072bc55ed218cf0b3df8375f9b97e04f358b4b10ee15a866e295fed58abf9",
       "spec": {
         "template": "flow",

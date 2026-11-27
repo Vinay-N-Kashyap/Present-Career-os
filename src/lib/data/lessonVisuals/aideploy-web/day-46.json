@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Agentic Execution Runtime — Foundations & Mathematical Invariants",
+      "partTitle": "Agentic Execution Runtime — Foundations (evaluateAgenticExecutionCore)",
       "codeHash": "457f6b7721666d8358b617da5da9e6956daf8a83eef77d6c2f94cfb81b0f7851",
       "spec": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Foundations & Mathematical Invariants",
+        "title": "Agentic Execution Runtime — Foundations (evaluateAgenticExecutionCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Foundations & Mathematical Invariants",
+        "title": "Agentic Execution Runtime — Foundations (evaluateAgenticExecutionCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Agentic Execution Runtime — Core Algorithm & State Representation",
+      "partTitle": "Agentic Execution Runtime — Core Algorithm (computeAgenticThreshold)",
       "codeHash": "d5d36050060a4a6e8b3eb965cacfbc109510ef1dc3801460dcea2092728fe28d",
       "spec": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Core Algorithm & State Representation",
+        "title": "Agentic Execution Runtime — Core Algorithm (computeAgenticThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Core Algorithm & State Representation",
+        "title": "Agentic Execution Runtime — Core Algorithm (computeAgenticThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Agentic Execution Runtime — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Agentic Execution Runtime — Throughput & Edge Cases (optimizeAgenticPipeline)",
       "codeHash": "15dcdf7eeff30a14c152e11c4c838fbb7b499d95346e137c0a0285c835f13780",
       "spec": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Throughput Optimization & Edge-Case Handli",
+        "title": "Agentic Execution Runtime — Throughput & Edge Cases (optimizeAgenticPi",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Throughput Optimization & Edge-Case Handli",
+        "title": "Agentic Execution Runtime — Throughput & Edge Cases (optimizeAgenticPi",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Agentic Execution Runtime — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Agentic Execution Runtime — Resilience & Recovery (validateAgenticGuard)",
       "codeHash": "7407b8f346b9282ee34139fc9783aa105787800096ac0d4cf0e7b4d8ecae526d",
       "spec": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Resilience Guardrails & Failure Recovery",
+        "title": "Agentic Execution Runtime — Resilience & Recovery (validateAgenticGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Resilience Guardrails & Failure Recovery",
+        "title": "Agentic Execution Runtime — Resilience & Recovery (validateAgenticGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Agentic Execution Runtime — Production Telemetry & Verification Audit",
+      "partTitle": "Agentic Execution Runtime — Telemetry & Audit (auditAgenticTelemetry)",
       "codeHash": "d20d3800bd3b7c211b910c1813d9b818cc1a0c3c74695dc08b16378047d12c8e",
       "spec": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Production Telemetry & Verification Audit",
+        "title": "Agentic Execution Runtime — Telemetry & Audit (auditAgenticTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Agentic Execution Runtime — Production Telemetry & Verification Audit",
+        "title": "Agentic Execution Runtime — Telemetry & Audit (auditAgenticTelemetry)",
         "nodes": [
           {
             "id": "input",

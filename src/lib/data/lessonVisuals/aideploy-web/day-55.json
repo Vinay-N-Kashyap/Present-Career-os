@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 11 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 11 — Foundations (evaluateMultiLoraCore)",
       "codeHash": "27359506a76c1392f79ade48eda8a4995c4175ed71c1fd6a3b039b3c2e478c39",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 11 — Core Algorithm (computeMultiThreshold)",
       "codeHash": "41823bc16f644ff7f562aebea59c09dc78a682abdf34350070ae703304ad8bd7",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 11 — Throughput & Edge Cases (optimizeMultiPipeline)",
       "codeHash": "b626f69ff2d440e90870de243f798949d5cb8a5253617ee3f0ff01d162d80f8b",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 11 — Resilience & Recovery (validateMultiGuard)",
       "codeHash": "d4fd9a8789016ca5bb2ce575a8cb207602852c24536e27e402838ac591f7093b",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 11 — Telemetry & Audit (auditMultiTelemetry)",
       "codeHash": "ca8ee77654bc85886aaf40385fb3fec82dc95d71eca7c6f8687ff5ed3b1c81d2",
       "spec": {
         "template": "flow",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Cellular Architecture & Shuffle Sharding — Foundations & Mathematical Invariants",
+      "partTitle": "Cellular Architecture & Shuffle Sharding — Foundations (evaluateCellularArchitectureCore)",
       "codeHash": "33c03518b8a36c168439cbd87cfc87b742b247a04685c85bac09d79764f7129b",
       "spec": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Foundations & Mathematical ",
+        "title": "Cellular Architecture & Shuffle Sharding — Foundations (evaluateCellul",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Foundations & Mathematical ",
+        "title": "Cellular Architecture & Shuffle Sharding — Foundations (evaluateCellul",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Cellular Architecture & Shuffle Sharding — Core Algorithm & State Representation",
+      "partTitle": "Cellular Architecture & Shuffle Sharding — Core Algorithm (computeCellularThreshold)",
       "codeHash": "f1f238f2492738d36f1aa2904b435b17dd8b363fd176601d7684399b9beae864",
       "spec": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Core Algorithm & State Repr",
+        "title": "Cellular Architecture & Shuffle Sharding — Core Algorithm (computeCell",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Core Algorithm & State Repr",
+        "title": "Cellular Architecture & Shuffle Sharding — Core Algorithm (computeCell",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Cellular Architecture & Shuffle Sharding — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Cellular Architecture & Shuffle Sharding — Throughput & Edge Cases (optimizeCellularPipeline)",
       "codeHash": "47b67deabd42afd88e3e777c655231c393c38a45ab73ae7dc38cf18d2d3e8853",
       "spec": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Throughput Optimization & E",
+        "title": "Cellular Architecture & Shuffle Sharding — Throughput & Edge Cases (op",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Throughput Optimization & E",
+        "title": "Cellular Architecture & Shuffle Sharding — Throughput & Edge Cases (op",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Cellular Architecture & Shuffle Sharding — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Cellular Architecture & Shuffle Sharding — Resilience & Recovery (validateCellularGuard)",
       "codeHash": "e5cf14c2488d43b174691536f4bf6bf276dc45e14dec7de5aa73064575f93faa",
       "spec": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Resilience Guardrails & Fai",
+        "title": "Cellular Architecture & Shuffle Sharding — Resilience & Recovery (vali",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Resilience Guardrails & Fai",
+        "title": "Cellular Architecture & Shuffle Sharding — Resilience & Recovery (vali",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Cellular Architecture & Shuffle Sharding — Production Telemetry & Verification Audit",
+      "partTitle": "Cellular Architecture & Shuffle Sharding — Telemetry & Audit (auditCellularTelemetry)",
       "codeHash": "096e830b4bc7e85a9b9d2ff7a5cde42274e132f55c946796995e9bca6afb7934",
       "spec": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Production Telemetry & Veri",
+        "title": "Cellular Architecture & Shuffle Sharding — Telemetry & Audit (auditCel",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Cellular Architecture & Shuffle Sharding — Production Telemetry & Veri",
+        "title": "Cellular Architecture & Shuffle Sharding — Telemetry & Audit (auditCel",
         "nodes": [
           {
             "id": "input",

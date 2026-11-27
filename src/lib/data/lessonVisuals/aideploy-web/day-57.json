@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "High-Availability Vector Store Failover — Foundations & Mathematical Invariants",
+      "partTitle": "High-Availability Vector Store Failover — Foundations (evaluateHighAvailabilityCore)",
       "codeHash": "b60930fa66f0abde5683476da5dd0b9038c90a0a33905dd2b3717260d0aa7af2",
       "spec": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Foundations & Mathematical I",
+        "title": "High-Availability Vector Store Failover — Foundations (evaluateHighAva",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Foundations & Mathematical I",
+        "title": "High-Availability Vector Store Failover — Foundations (evaluateHighAva",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "High-Availability Vector Store Failover — Core Algorithm & State Representation",
+      "partTitle": "High-Availability Vector Store Failover — Core Algorithm (computeHighThreshold)",
       "codeHash": "686e451e644b7aaedcd7958859f99dd6ef1a419ca73d08e5e2bc32271a3db445",
       "spec": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Core Algorithm & State Repre",
+        "title": "High-Availability Vector Store Failover — Core Algorithm (computeHighT",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Core Algorithm & State Repre",
+        "title": "High-Availability Vector Store Failover — Core Algorithm (computeHighT",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "High-Availability Vector Store Failover — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "High-Availability Vector Store Failover — Throughput & Edge Cases (optimizeHighPipeline)",
       "codeHash": "164a69032fe7f3fe6eaf207c5502ed9e89d17bc4af9feabea5bb71bee1c24e6a",
       "spec": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Throughput Optimization & Ed",
+        "title": "High-Availability Vector Store Failover — Throughput & Edge Cases (opt",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Throughput Optimization & Ed",
+        "title": "High-Availability Vector Store Failover — Throughput & Edge Cases (opt",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "High-Availability Vector Store Failover — Resilience Guardrails & Failure Recovery",
+      "partTitle": "High-Availability Vector Store Failover — Resilience & Recovery (validateHighGuard)",
       "codeHash": "6d84b5cb389e3a4e37b531b01db375373c22d862f7ff31f782df7d0271916bdb",
       "spec": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Resilience Guardrails & Fail",
+        "title": "High-Availability Vector Store Failover — Resilience & Recovery (valid",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Resilience Guardrails & Fail",
+        "title": "High-Availability Vector Store Failover — Resilience & Recovery (valid",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "High-Availability Vector Store Failover — Production Telemetry & Verification Audit",
+      "partTitle": "High-Availability Vector Store Failover — Telemetry & Audit (auditHighTelemetry)",
       "codeHash": "47913754882f55de14b8596cc08720e1efd8414e943fb4087f13963679b48695",
       "spec": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Production Telemetry & Verif",
+        "title": "High-Availability Vector Store Failover — Telemetry & Audit (auditHigh",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Availability Vector Store Failover — Production Telemetry & Verif",
+        "title": "High-Availability Vector Store Failover — Telemetry & Audit (auditHigh",
         "nodes": [
           {
             "id": "input",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Tiered Storage Economics — Foundations & Mathematical Invariants",
+      "partTitle": "Tiered Storage Economics — Foundations (evaluateTieredStorageCore)",
       "codeHash": "bf6686e37cda045a310c215fa282d8c1014ab1e7c29fe588681e7ea7ca7315d7",
       "spec": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Foundations & Mathematical Invariants",
+        "title": "Tiered Storage Economics — Foundations (evaluateTieredStorageCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Foundations & Mathematical Invariants",
+        "title": "Tiered Storage Economics — Foundations (evaluateTieredStorageCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Tiered Storage Economics — Core Algorithm & State Representation",
+      "partTitle": "Tiered Storage Economics — Core Algorithm (computeTieredThreshold)",
       "codeHash": "af8e62195b7a09143fd855a81c068797d96e0d00525cdd352ab92ac8a4c4501a",
       "spec": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Core Algorithm & State Representation",
+        "title": "Tiered Storage Economics — Core Algorithm (computeTieredThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Core Algorithm & State Representation",
+        "title": "Tiered Storage Economics — Core Algorithm (computeTieredThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Tiered Storage Economics — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Tiered Storage Economics — Throughput & Edge Cases (optimizeTieredPipeline)",
       "codeHash": "306dea89640694460c63247df2310dfa6a550746e67d0a037470adb73567094e",
       "spec": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Throughput Optimization & Edge-Case Handlin",
+        "title": "Tiered Storage Economics — Throughput & Edge Cases (optimizeTieredPipe",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Throughput Optimization & Edge-Case Handlin",
+        "title": "Tiered Storage Economics — Throughput & Edge Cases (optimizeTieredPipe",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Tiered Storage Economics — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Tiered Storage Economics — Resilience & Recovery (validateTieredGuard)",
       "codeHash": "93952b2bbc32fdcdf48d972dc2f59adf013e43c56d289f2b2133528db181af99",
       "spec": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Resilience Guardrails & Failure Recovery",
+        "title": "Tiered Storage Economics — Resilience & Recovery (validateTieredGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Resilience Guardrails & Failure Recovery",
+        "title": "Tiered Storage Economics — Resilience & Recovery (validateTieredGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Tiered Storage Economics — Production Telemetry & Verification Audit",
+      "partTitle": "Tiered Storage Economics — Telemetry & Audit (auditTieredTelemetry)",
       "codeHash": "ad2adf643c2dc5f42bd77377752e06eb6a346572bb0698f3ec15b28128038e8a",
       "spec": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Production Telemetry & Verification Audit",
+        "title": "Tiered Storage Economics — Telemetry & Audit (auditTieredTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Tiered Storage Economics — Production Telemetry & Verification Audit",
+        "title": "Tiered Storage Economics — Telemetry & Audit (auditTieredTelemetry)",
         "nodes": [
           {
             "id": "input",

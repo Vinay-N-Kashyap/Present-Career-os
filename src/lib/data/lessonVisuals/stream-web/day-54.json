@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Multi-Region Geo-Replication — Foundations & Mathematical Invariants",
+      "partTitle": "Multi-Region Geo-Replication — Foundations (evaluateMultiRegionCore)",
       "codeHash": "f8314e311d5bb96f12421e13e8b62ce7b00c45b819c05e9d0823afa12544bb03",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Foundations & Mathematical Invariants",
+        "title": "Multi-Region Geo-Replication — Foundations (evaluateMultiRegionCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Foundations & Mathematical Invariants",
+        "title": "Multi-Region Geo-Replication — Foundations (evaluateMultiRegionCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Geo-Replication — Core Algorithm & State Representation",
+      "partTitle": "Multi-Region Geo-Replication — Core Algorithm (computeMultiThreshold)",
       "codeHash": "1184d7c38790f70a4752a45d5c48c688438238ea591906e7fa8e7a3e680ef7ca",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Core Algorithm & State Representation",
+        "title": "Multi-Region Geo-Replication — Core Algorithm (computeMultiThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Core Algorithm & State Representation",
+        "title": "Multi-Region Geo-Replication — Core Algorithm (computeMultiThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Geo-Replication — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Multi-Region Geo-Replication — Throughput & Edge Cases (optimizeMultiPipeline)",
       "codeHash": "ee1187dd7152029b67f437610dbfb5fa0b48ed3109596b93383b4e7fe6910a63",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Throughput Optimization & Edge-Case Han",
+        "title": "Multi-Region Geo-Replication — Throughput & Edge Cases (optimizeMultiP",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Throughput Optimization & Edge-Case Han",
+        "title": "Multi-Region Geo-Replication — Throughput & Edge Cases (optimizeMultiP",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Geo-Replication — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Multi-Region Geo-Replication — Resilience & Recovery (validateMultiGuard)",
       "codeHash": "a2ae6f97f1d1b43593194ed10a2ff54a65b420ea27f1171fdb9fb6b4f0a6ae69",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Resilience Guardrails & Failure Recover",
+        "title": "Multi-Region Geo-Replication — Resilience & Recovery (validateMultiGua",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Resilience Guardrails & Failure Recover",
+        "title": "Multi-Region Geo-Replication — Resilience & Recovery (validateMultiGua",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Geo-Replication — Production Telemetry & Verification Audit",
+      "partTitle": "Multi-Region Geo-Replication — Telemetry & Audit (auditMultiTelemetry)",
       "codeHash": "3cc48831c2fde32c6401cef9c5ba8d60de8285280da0f59194fce44bad44ff52",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Production Telemetry & Verification Aud",
+        "title": "Multi-Region Geo-Replication — Telemetry & Audit (auditMultiTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Geo-Replication — Production Telemetry & Verification Aud",
+        "title": "Multi-Region Geo-Replication — Telemetry & Audit (auditMultiTelemetry)",
         "nodes": [
           {
             "id": "input",

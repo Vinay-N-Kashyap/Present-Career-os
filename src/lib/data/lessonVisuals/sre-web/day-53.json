@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Foundations & Mathematical Invariants",
+      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Foundations (evaluateBlamelessPostmortemCore)",
       "codeHash": "183d37d3555c372bc4679f1ceebc42fa93a2f0a95cd95138fa8cdc2c4b609519",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Core Algorithm & State Representation",
+      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Core Algorithm (computeBlamelessThreshold)",
       "codeHash": "08a3b3572b826487ddeec90d5f71f7b904f1370423a3ea92dfffec3b253a533d",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Throughput & Edge Cases (optimizeBlamelessPipeline)",
       "codeHash": "2664f8bc81ddbea0a7ee062cabaa997a9181accf73e6dfc55e4e12d769083001",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Resilience & Recovery (validateBlamelessGuard)",
       "codeHash": "d9638253a8c0f668a96cc9e830deab03f704edb237e9f7206984b05b5efaae20",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Production Telemetry & Verification Audit",
+      "partTitle": "Blameless Postmortem Action-Item Tracking & Risk-Prioritized Reliability Backlogs — Telemetry & Audit (auditBlamelessTelemetry)",
       "codeHash": "26c542d76aae6c78799041e4a8cf4ad1e3ab7a34083f60b2da328b19deca9c19",
       "spec": {
         "template": "flow",

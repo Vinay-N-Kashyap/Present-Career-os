@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Prefix Caching (RadixAttention) — Foundations & Mathematical Invariants",
+      "partTitle": "Prefix Caching (RadixAttention) — Foundations (evaluatePrefixCachingCore)",
       "codeHash": "a0a26eccd348bd447f9edc08bbf4dcd93230ce36c158e49b907764dbb45f613d",
       "spec": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Foundations & Mathematical Invariant",
+        "title": "Prefix Caching (RadixAttention) — Foundations (evaluatePrefixCachingCo",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Foundations & Mathematical Invariant",
+        "title": "Prefix Caching (RadixAttention) — Foundations (evaluatePrefixCachingCo",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Prefix Caching (RadixAttention) — Core Algorithm & State Representation",
+      "partTitle": "Prefix Caching (RadixAttention) — Core Algorithm (computePrefixThreshold)",
       "codeHash": "63f1eaa610ae7b02f0bf7e2068c7a69752a294a2a6e63e03a1307926d8f61595",
       "spec": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Core Algorithm & State Representatio",
+        "title": "Prefix Caching (RadixAttention) — Core Algorithm (computePrefixThresho",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Core Algorithm & State Representatio",
+        "title": "Prefix Caching (RadixAttention) — Core Algorithm (computePrefixThresho",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Prefix Caching (RadixAttention) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Prefix Caching (RadixAttention) — Throughput & Edge Cases (optimizePrefixPipeline)",
       "codeHash": "1ba96b6c66bc0aa9fd1a4085f54024dc40623304eb71a71be6ef02bdd161274f",
       "spec": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Throughput Optimization & Edge-Case ",
+        "title": "Prefix Caching (RadixAttention) — Throughput & Edge Cases (optimizePre",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Throughput Optimization & Edge-Case ",
+        "title": "Prefix Caching (RadixAttention) — Throughput & Edge Cases (optimizePre",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Prefix Caching (RadixAttention) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Prefix Caching (RadixAttention) — Resilience & Recovery (validatePrefixGuard)",
       "codeHash": "03aeecb132d40670f7d399a27d25d7c226772b5be2f4efe5875ef5a5397df5a1",
       "spec": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Resilience Guardrails & Failure Reco",
+        "title": "Prefix Caching (RadixAttention) — Resilience & Recovery (validatePrefi",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Resilience Guardrails & Failure Reco",
+        "title": "Prefix Caching (RadixAttention) — Resilience & Recovery (validatePrefi",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Prefix Caching (RadixAttention) — Production Telemetry & Verification Audit",
+      "partTitle": "Prefix Caching (RadixAttention) — Telemetry & Audit (auditPrefixTelemetry)",
       "codeHash": "095048bd4d787716a4051f57e5cee4e8d04f377edcdaaeff80748a59552d9fb2",
       "spec": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Production Telemetry & Verification ",
+        "title": "Prefix Caching (RadixAttention) — Telemetry & Audit (auditPrefixTeleme",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Prefix Caching (RadixAttention) — Production Telemetry & Verification ",
+        "title": "Prefix Caching (RadixAttention) — Telemetry & Audit (auditPrefixTeleme",
         "nodes": [
           {
             "id": "input",

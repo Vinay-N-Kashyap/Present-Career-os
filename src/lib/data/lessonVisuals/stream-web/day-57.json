@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Log Compaction — Foundations & Mathematical Invariants",
+      "partTitle": "Log Compaction — Foundations (evaluateLogCompactionCore)",
       "codeHash": "8a5835792c0a7089b8ffea793d3a0fcb252b18c2da19a08bf04305fe2b687042",
       "spec": {
         "template": "flow",
-        "title": "Log Compaction — Foundations & Mathematical Invariants",
+        "title": "Log Compaction — Foundations (evaluateLogCompactionCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Log Compaction — Foundations & Mathematical Invariants",
+        "title": "Log Compaction — Foundations (evaluateLogCompactionCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Log Compaction — Core Algorithm & State Representation",
+      "partTitle": "Log Compaction — Core Algorithm (computeLogThreshold)",
       "codeHash": "c56a469ca3a8ed771c3ff4210fe48a9d9ce9430062eb586fe451db919104657a",
       "spec": {
         "template": "flow",
-        "title": "Log Compaction — Core Algorithm & State Representation",
+        "title": "Log Compaction — Core Algorithm (computeLogThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Log Compaction — Core Algorithm & State Representation",
+        "title": "Log Compaction — Core Algorithm (computeLogThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Log Compaction — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Log Compaction — Throughput & Edge Cases (optimizeLogPipeline)",
       "codeHash": "9ba4c663a4f6c52c680f226ef705c2b55c9e20d2383a9b96e85eed984b7582f5",
       "spec": {
         "template": "flow",
-        "title": "Log Compaction — Throughput Optimization & Edge-Case Handling",
+        "title": "Log Compaction — Throughput & Edge Cases (optimizeLogPipeline)",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Log Compaction — Throughput Optimization & Edge-Case Handling",
+        "title": "Log Compaction — Throughput & Edge Cases (optimizeLogPipeline)",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Log Compaction — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Log Compaction — Resilience & Recovery (validateLogGuard)",
       "codeHash": "d4937d1b0b3f8c334056429a7cf908c1ebe88398526b79b687760fd34571b441",
       "spec": {
         "template": "flow",
-        "title": "Log Compaction — Resilience Guardrails & Failure Recovery",
+        "title": "Log Compaction — Resilience & Recovery (validateLogGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Log Compaction — Resilience Guardrails & Failure Recovery",
+        "title": "Log Compaction — Resilience & Recovery (validateLogGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Log Compaction — Production Telemetry & Verification Audit",
+      "partTitle": "Log Compaction — Telemetry & Audit (auditLogTelemetry)",
       "codeHash": "2a71948d323eed7ad623fbba2de8bfe25e2be8a255d2b34de2906f34c0e69cc2",
       "spec": {
         "template": "flow",
-        "title": "Log Compaction — Production Telemetry & Verification Audit",
+        "title": "Log Compaction — Telemetry & Audit (auditLogTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Log Compaction — Production Telemetry & Verification Audit",
+        "title": "Log Compaction — Telemetry & Audit (auditLogTelemetry)",
         "nodes": [
           {
             "id": "input",

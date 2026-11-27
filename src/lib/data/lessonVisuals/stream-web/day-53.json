@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Real-Time Feature Store Materialization — Foundations & Mathematical Invariants",
+      "partTitle": "Real-Time Feature Store Materialization — Foundations (evaluateRealTimeCore)",
       "codeHash": "94d9aab39cf198e6101d71c29107a462532a710403ab265b8fa9b3b46e2b4c5b",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Foundations & Mathematical I",
+        "title": "Real-Time Feature Store Materialization — Foundations (evaluateRealTim",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Foundations & Mathematical I",
+        "title": "Real-Time Feature Store Materialization — Foundations (evaluateRealTim",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Feature Store Materialization — Core Algorithm & State Representation",
+      "partTitle": "Real-Time Feature Store Materialization — Core Algorithm (computeRealThreshold)",
       "codeHash": "2849c08b3fe991e215d156ee82f5ddb47ec6f6d166125a955bd0f67d45a2d44d",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Core Algorithm & State Repre",
+        "title": "Real-Time Feature Store Materialization — Core Algorithm (computeRealT",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Core Algorithm & State Repre",
+        "title": "Real-Time Feature Store Materialization — Core Algorithm (computeRealT",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Feature Store Materialization — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Real-Time Feature Store Materialization — Throughput & Edge Cases (optimizeRealPipeline)",
       "codeHash": "b1896c650c6c568a8efdf0a2db813177868d24fa8e4710da2b738c4c2fad0db2",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Throughput Optimization & Ed",
+        "title": "Real-Time Feature Store Materialization — Throughput & Edge Cases (opt",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Throughput Optimization & Ed",
+        "title": "Real-Time Feature Store Materialization — Throughput & Edge Cases (opt",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Feature Store Materialization — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Real-Time Feature Store Materialization — Resilience & Recovery (validateRealGuard)",
       "codeHash": "b4074ccf055e35dd637fd46720df0a13cbe77e5b81d58bf02145eda162b06543",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Resilience Guardrails & Fail",
+        "title": "Real-Time Feature Store Materialization — Resilience & Recovery (valid",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Resilience Guardrails & Fail",
+        "title": "Real-Time Feature Store Materialization — Resilience & Recovery (valid",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Real-Time Feature Store Materialization — Production Telemetry & Verification Audit",
+      "partTitle": "Real-Time Feature Store Materialization — Telemetry & Audit (auditRealTelemetry)",
       "codeHash": "0305e42916fe045b5e484bb2c86b5acf8e6f8fdb81057d7b72413c3bdb83fa71",
       "spec": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Production Telemetry & Verif",
+        "title": "Real-Time Feature Store Materialization — Telemetry & Audit (auditReal",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Real-Time Feature Store Materialization — Production Telemetry & Verif",
+        "title": "Real-Time Feature Store Materialization — Telemetry & Audit (auditReal",
         "nodes": [
           {
             "id": "input",

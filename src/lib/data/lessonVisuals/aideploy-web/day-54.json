@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Foundations & Mathematical Invariants",
+      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Foundations (evaluateLoraMultiCore)",
       "codeHash": "56bb431666e78a7d898c00cd3584ea7be0f3dde09cf1b2dd960332885990929e",
       "spec": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Foundations & Mathematical Invar",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Foundations (evaluateLoraMultiCo",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Foundations & Mathematical Invar",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Foundations (evaluateLoraMultiCo",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Core Algorithm & State Representation",
+      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Core Algorithm (computeLoraThreshold)",
       "codeHash": "5804bde05ed6a2004b21f63026dd837b418b907728ea60a95b2d94fc59d6149f",
       "spec": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Core Algorithm & State Represent",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Core Algorithm (computeLoraThres",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Core Algorithm & State Represent",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Core Algorithm (computeLoraThres",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Throughput & Edge Cases (optimizeLoraPipeline)",
       "codeHash": "de3a33224bd551fbf5d292d0552fadd1ef1993e092dc5c76fd90b035095f339e",
       "spec": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Throughput Optimization & Edge-C",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Throughput & Edge Cases (optimiz",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Throughput Optimization & Edge-C",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Throughput & Edge Cases (optimiz",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Resilience & Recovery (validateLoraGuard)",
       "codeHash": "cf3cd0eaf2d3450aef33dc8889992d011d275a73cc4acf707d6d00fe878f3789",
       "spec": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Resilience Guardrails & Failure ",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Resilience & Recovery (validateL",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Resilience Guardrails & Failure ",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Resilience & Recovery (validateL",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Production Telemetry & Verification Audit",
+      "partTitle": "LoRA Multi-Adapter Serving (S-LoRA) — Telemetry & Audit (auditLoraTelemetry)",
       "codeHash": "2fa7ecf4bb7b131c06b7ffe05c3e07dc41415c92b3bc3797edf6edba301482ba",
       "spec": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Production Telemetry & Verificat",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Telemetry & Audit (auditLoraTele",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Production Telemetry & Verificat",
+        "title": "LoRA Multi-Adapter Serving (S-LoRA) — Telemetry & Audit (auditLoraTele",
         "nodes": [
           {
             "id": "input",

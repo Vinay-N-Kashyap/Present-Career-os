@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "EU AI Act & SOC2 Compliance Logging — Foundations & Mathematical Invariants",
+      "partTitle": "EU AI Act & SOC2 Compliance Logging — Foundations (evaluateActSoc2Core)",
       "codeHash": "abeaf586ca89062b514cb57c11af9ae6c4413d391e16a0e6550c22b5841988ef",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "EU AI Act & SOC2 Compliance Logging — Core Algorithm & State Representation",
+      "partTitle": "EU AI Act & SOC2 Compliance Logging — Core Algorithm (computeActThreshold)",
       "codeHash": "4174fa94dafe838b958e47ab3c451ff78ea87dc6b471a3662cacbff4c1819733",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "EU AI Act & SOC2 Compliance Logging — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "EU AI Act & SOC2 Compliance Logging — Throughput & Edge Cases (optimizeActPipeline)",
       "codeHash": "62a054c1bfa40dbf054e4817de426978963f5c745f3b23ec40322d60f4a8f53f",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "EU AI Act & SOC2 Compliance Logging — Resilience Guardrails & Failure Recovery",
+      "partTitle": "EU AI Act & SOC2 Compliance Logging — Resilience & Recovery (validateActGuard)",
       "codeHash": "dc7f38e9a73ea8734c4cb59acc016f10738a8161a77c52f7d5776591df1bf3cc",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "EU AI Act & SOC2 Compliance Logging — Production Telemetry & Verification Audit",
+      "partTitle": "EU AI Act & SOC2 Compliance Logging — Telemetry & Audit (auditActTelemetry)",
       "codeHash": "81fac9d48d1a1a4e41e6747231546c153d49822bc752a81012373903b18a7152",
       "spec": {
         "template": "flow",

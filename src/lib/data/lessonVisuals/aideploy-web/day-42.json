@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "SSE Streaming Multiplexer — Foundations & Mathematical Invariants",
+      "partTitle": "SSE Streaming Multiplexer — Foundations (evaluateSseStreamingCore)",
       "codeHash": "5c2a76025913078143bbc32a10c14afc9164771467286691ca1dd76d7ddefc0a",
       "spec": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Foundations & Mathematical Invariants",
+        "title": "SSE Streaming Multiplexer — Foundations (evaluateSseStreamingCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Foundations & Mathematical Invariants",
+        "title": "SSE Streaming Multiplexer — Foundations (evaluateSseStreamingCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "SSE Streaming Multiplexer — Core Algorithm & State Representation",
+      "partTitle": "SSE Streaming Multiplexer — Core Algorithm (computeSseThreshold)",
       "codeHash": "bcd36aa61878420b5c956d3fdb7b10d5bab6fabd9a43b6e7ab85205dfd92461a",
       "spec": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Core Algorithm & State Representation",
+        "title": "SSE Streaming Multiplexer — Core Algorithm (computeSseThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Core Algorithm & State Representation",
+        "title": "SSE Streaming Multiplexer — Core Algorithm (computeSseThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "SSE Streaming Multiplexer — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "SSE Streaming Multiplexer — Throughput & Edge Cases (optimizeSsePipeline)",
       "codeHash": "b20a25b8535e74acbe1c98778acea21d0ca9d51109de5ef642b87069141be96c",
       "spec": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Throughput Optimization & Edge-Case Handli",
+        "title": "SSE Streaming Multiplexer — Throughput & Edge Cases (optimizeSsePipeli",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Throughput Optimization & Edge-Case Handli",
+        "title": "SSE Streaming Multiplexer — Throughput & Edge Cases (optimizeSsePipeli",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "SSE Streaming Multiplexer — Resilience Guardrails & Failure Recovery",
+      "partTitle": "SSE Streaming Multiplexer — Resilience & Recovery (validateSseGuard)",
       "codeHash": "f15ecd06560093e42fb62262535826029d22b6097afeaa8ca3b8624d72d9a06c",
       "spec": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Resilience Guardrails & Failure Recovery",
+        "title": "SSE Streaming Multiplexer — Resilience & Recovery (validateSseGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Resilience Guardrails & Failure Recovery",
+        "title": "SSE Streaming Multiplexer — Resilience & Recovery (validateSseGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "SSE Streaming Multiplexer — Production Telemetry & Verification Audit",
+      "partTitle": "SSE Streaming Multiplexer — Telemetry & Audit (auditSseTelemetry)",
       "codeHash": "cf4ca2ae04cbd9f56a610edfa96215a4e918b8b0d8cf632fd43520180c00c205",
       "spec": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Production Telemetry & Verification Audit",
+        "title": "SSE Streaming Multiplexer — Telemetry & Audit (auditSseTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "SSE Streaming Multiplexer — Production Telemetry & Verification Audit",
+        "title": "SSE Streaming Multiplexer — Telemetry & Audit (auditSseTelemetry)",
         "nodes": [
           {
             "id": "input",

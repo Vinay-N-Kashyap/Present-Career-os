@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Quantization Deployment Trade-Offs — Foundations & Mathematical Invariants",
+      "partTitle": "Quantization Deployment Trade-Offs — Foundations (evaluateQuantizationDeploymentCore)",
       "codeHash": "4a1c05ffaa64916364b72d8dd183efd2ebb8cdb91e05c316a974c63e64ce51dd",
       "spec": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Foundations & Mathematical Invari",
+        "title": "Quantization Deployment Trade-Offs — Foundations (evaluateQuantization",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Foundations & Mathematical Invari",
+        "title": "Quantization Deployment Trade-Offs — Foundations (evaluateQuantization",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Quantization Deployment Trade-Offs — Core Algorithm & State Representation",
+      "partTitle": "Quantization Deployment Trade-Offs — Core Algorithm (computeQuantizationThreshold)",
       "codeHash": "c69e45f8d4418afc73bbf11a5c962e089e41f4fa8013151ff6b0a40783677179",
       "spec": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Core Algorithm & State Representa",
+        "title": "Quantization Deployment Trade-Offs — Core Algorithm (computeQuantizati",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Core Algorithm & State Representa",
+        "title": "Quantization Deployment Trade-Offs — Core Algorithm (computeQuantizati",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Quantization Deployment Trade-Offs — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Quantization Deployment Trade-Offs — Throughput & Edge Cases (optimizeQuantizationPipeline)",
       "codeHash": "db546f5be07a17cef380e41ad0cc5becc7eeb094e915cb47c4198be0c8c478e1",
       "spec": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Throughput Optimization & Edge-Ca",
+        "title": "Quantization Deployment Trade-Offs — Throughput & Edge Cases (optimize",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Throughput Optimization & Edge-Ca",
+        "title": "Quantization Deployment Trade-Offs — Throughput & Edge Cases (optimize",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Quantization Deployment Trade-Offs — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Quantization Deployment Trade-Offs — Resilience & Recovery (validateQuantizationGuard)",
       "codeHash": "007fd1ce67c57cfa5908acf14fbbbaf9040d2fa8b26a61a02bbebb20ffe0e883",
       "spec": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Resilience Guardrails & Failure R",
+        "title": "Quantization Deployment Trade-Offs — Resilience & Recovery (validateQu",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Resilience Guardrails & Failure R",
+        "title": "Quantization Deployment Trade-Offs — Resilience & Recovery (validateQu",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Quantization Deployment Trade-Offs — Production Telemetry & Verification Audit",
+      "partTitle": "Quantization Deployment Trade-Offs — Telemetry & Audit (auditQuantizationTelemetry)",
       "codeHash": "15b416c6c552d45ba46e3c83035ee944f6a2abaa810282b407aecda8a60d48d2",
       "spec": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Production Telemetry & Verificati",
+        "title": "Quantization Deployment Trade-Offs — Telemetry & Audit (auditQuantizat",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Quantization Deployment Trade-Offs — Production Telemetry & Verificati",
+        "title": "Quantization Deployment Trade-Offs — Telemetry & Audit (auditQuantizat",
         "nodes": [
           {
             "id": "input",

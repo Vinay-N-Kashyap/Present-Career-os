@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "FinOps Cost Attribution Ledger — Foundations & Mathematical Invariants",
+      "partTitle": "FinOps Cost Attribution Ledger — Foundations (evaluateFinopsCostCore)",
       "codeHash": "e7d367db3003f454f4e4a982ace74fb65ecebf6cfe4673293979eff937fa0bdc",
       "spec": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Foundations & Mathematical Invariants",
+        "title": "FinOps Cost Attribution Ledger — Foundations (evaluateFinopsCostCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Foundations & Mathematical Invariants",
+        "title": "FinOps Cost Attribution Ledger — Foundations (evaluateFinopsCostCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "FinOps Cost Attribution Ledger — Core Algorithm & State Representation",
+      "partTitle": "FinOps Cost Attribution Ledger — Core Algorithm (computeFinopsThreshold)",
       "codeHash": "808e90f9cbdb7ab54e4821ccdb5d2634fefd58498ff5ce32af35b60939cd9e4a",
       "spec": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Core Algorithm & State Representation",
+        "title": "FinOps Cost Attribution Ledger — Core Algorithm (computeFinopsThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Core Algorithm & State Representation",
+        "title": "FinOps Cost Attribution Ledger — Core Algorithm (computeFinopsThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "FinOps Cost Attribution Ledger — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "FinOps Cost Attribution Ledger — Throughput & Edge Cases (optimizeFinopsPipeline)",
       "codeHash": "ecd4f24dd9900c5f4bff16607ff9ac6cd616434ef0c6bfce7354d16b93509d5d",
       "spec": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Throughput Optimization & Edge-Case H",
+        "title": "FinOps Cost Attribution Ledger — Throughput & Edge Cases (optimizeFino",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Throughput Optimization & Edge-Case H",
+        "title": "FinOps Cost Attribution Ledger — Throughput & Edge Cases (optimizeFino",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "FinOps Cost Attribution Ledger — Resilience Guardrails & Failure Recovery",
+      "partTitle": "FinOps Cost Attribution Ledger — Resilience & Recovery (validateFinopsGuard)",
       "codeHash": "d211b8511c86358d1d76293bc4aa0a822db60ae5ea908cbd506760266b3d6b21",
       "spec": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Resilience Guardrails & Failure Recov",
+        "title": "FinOps Cost Attribution Ledger — Resilience & Recovery (validateFinops",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Resilience Guardrails & Failure Recov",
+        "title": "FinOps Cost Attribution Ledger — Resilience & Recovery (validateFinops",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "FinOps Cost Attribution Ledger — Production Telemetry & Verification Audit",
+      "partTitle": "FinOps Cost Attribution Ledger — Telemetry & Audit (auditFinopsTelemetry)",
       "codeHash": "328a01899b136391e8262205126c2cbe4c9aea714d403d0268bfbe87370fc06e",
       "spec": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Production Telemetry & Verification A",
+        "title": "FinOps Cost Attribution Ledger — Telemetry & Audit (auditFinopsTelemet",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Cost Attribution Ledger — Production Telemetry & Verification A",
+        "title": "FinOps Cost Attribution Ledger — Telemetry & Audit (auditFinopsTelemet",
         "nodes": [
           {
             "id": "input",

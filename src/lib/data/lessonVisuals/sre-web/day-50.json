@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 10 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 10 — Foundations (evaluateChaosFaultCore)",
       "codeHash": "1abd4c1593e20f5b7f3e7d6e10db3767bd9cb11c09be7204b095d631376232e9",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 10 — Core Algorithm (computeChaosThreshold)",
       "codeHash": "02e277557eefe3389baadb8bfdf56389c8e42ac4dce5aca66838cc631af5d5c1",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 10 — Throughput & Edge Cases (optimizeChaosPipeline)",
       "codeHash": "78efb84afa7cbe9c437f0bc65237392b00504494e2739898f641065053f34b2b",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 10 — Resilience & Recovery (validateChaosGuard)",
       "codeHash": "7d35d29b99516ac12ff2015e91f9c618ffe0a9e8d15117c0be5d84265d7d9c66",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 10 — Telemetry & Audit (auditChaosTelemetry)",
       "codeHash": "12c59835685e40f7893af95fe908ecfc0eb674c9e069380afd491c3d3857b12f",
       "spec": {
         "template": "flow",

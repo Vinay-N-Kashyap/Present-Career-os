@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Structured Output Grammar Enforcement — Foundations & Mathematical Invariants",
+      "partTitle": "Structured Output Grammar Enforcement — Foundations (evaluateStructuredOutputCore)",
       "codeHash": "750aa5d9127eb19afc24b33624654491c868486df8341852d8845feb8340d563",
       "spec": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Foundations & Mathematical Inv",
+        "title": "Structured Output Grammar Enforcement — Foundations (evaluateStructure",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Foundations & Mathematical Inv",
+        "title": "Structured Output Grammar Enforcement — Foundations (evaluateStructure",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Structured Output Grammar Enforcement — Core Algorithm & State Representation",
+      "partTitle": "Structured Output Grammar Enforcement — Core Algorithm (computeStructuredThreshold)",
       "codeHash": "87baab0e0abe279837b7096be22fc0eb0b915cf4fc8550ce91854a8f11d8f605",
       "spec": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Core Algorithm & State Represe",
+        "title": "Structured Output Grammar Enforcement — Core Algorithm (computeStructu",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Core Algorithm & State Represe",
+        "title": "Structured Output Grammar Enforcement — Core Algorithm (computeStructu",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Structured Output Grammar Enforcement — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Structured Output Grammar Enforcement — Throughput & Edge Cases (optimizeStructuredPipeline)",
       "codeHash": "b1464732e70f62d2559036457475ccd28b7cfb8d2e09ff2143d1f8697fbe1ef5",
       "spec": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Throughput Optimization & Edge",
+        "title": "Structured Output Grammar Enforcement — Throughput & Edge Cases (optim",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Throughput Optimization & Edge",
+        "title": "Structured Output Grammar Enforcement — Throughput & Edge Cases (optim",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Structured Output Grammar Enforcement — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Structured Output Grammar Enforcement — Resilience & Recovery (validateStructuredGuard)",
       "codeHash": "9cbfec20a9b6f578882eeab554f53eb89bb161274136223464852a9134694fd2",
       "spec": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Resilience Guardrails & Failur",
+        "title": "Structured Output Grammar Enforcement — Resilience & Recovery (validat",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Resilience Guardrails & Failur",
+        "title": "Structured Output Grammar Enforcement — Resilience & Recovery (validat",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Structured Output Grammar Enforcement — Production Telemetry & Verification Audit",
+      "partTitle": "Structured Output Grammar Enforcement — Telemetry & Audit (auditStructuredTelemetry)",
       "codeHash": "7d9988dc7d16b3f9dd61e115bc0d2a42c1afd63725d4c11c3ee794f5893051bb",
       "spec": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Production Telemetry & Verific",
+        "title": "Structured Output Grammar Enforcement — Telemetry & Audit (auditStruct",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Structured Output Grammar Enforcement — Production Telemetry & Verific",
+        "title": "Structured Output Grammar Enforcement — Telemetry & Audit (auditStruct",
         "nodes": [
           {
             "id": "input",

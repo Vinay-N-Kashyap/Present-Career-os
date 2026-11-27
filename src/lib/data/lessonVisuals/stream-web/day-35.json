@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 7 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 7 — Foundations (evaluateSegmentedLogCore)",
       "codeHash": "929dece3bb2cd7540f60a92307e9f2c446ce8c80b4ac4085b7c00754e187322f",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 7 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 7 — Core Algorithm (computeSegmentedThreshold)",
       "codeHash": "f2db7c97228a7b21100d94b49d7e15975b5fdab6a42e928e887069bb37047f9c",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 7 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 7 — Throughput & Edge Cases (optimizeSegmentedPipeline)",
       "codeHash": "2adacc9cb67fce02d9aa57300d2510d563ed63c2c4a75f639fe0d3103ab07cf7",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 7 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 7 — Resilience & Recovery (validateSegmentedGuard)",
       "codeHash": "222c8073b15a2aeba8059510cd6e0552e1b392bf5d2e4ee24c3c0587d1c19229",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 7 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 7 — Telemetry & Audit (auditSegmentedTelemetry)",
       "codeHash": "76149e9297f67361d381b8bfa0a3ad143fa32cba03c699492ad21d7b1cb7e902",
       "spec": {
         "template": "flow",

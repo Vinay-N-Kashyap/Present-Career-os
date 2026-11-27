@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Complex Event Processing (CEP) — Foundations & Mathematical Invariants",
+      "partTitle": "Complex Event Processing (CEP) — Foundations (evaluateComplexEventCore)",
       "codeHash": "55ee52c6cbd4c92a870fb66ee62f900cbcc11c51788a5f027329dbd3c0e635ad",
       "spec": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Foundations & Mathematical Invariants",
+        "title": "Complex Event Processing (CEP) — Foundations (evaluateComplexEventCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Foundations & Mathematical Invariants",
+        "title": "Complex Event Processing (CEP) — Foundations (evaluateComplexEventCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Complex Event Processing (CEP) — Core Algorithm & State Representation",
+      "partTitle": "Complex Event Processing (CEP) — Core Algorithm (computeComplexThreshold)",
       "codeHash": "1f57f5536d66b1af3e5bb1b35a35bddfe54313cfee056ea36e4b786ff4479e10",
       "spec": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Core Algorithm & State Representation",
+        "title": "Complex Event Processing (CEP) — Core Algorithm (computeComplexThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Core Algorithm & State Representation",
+        "title": "Complex Event Processing (CEP) — Core Algorithm (computeComplexThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Complex Event Processing (CEP) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Complex Event Processing (CEP) — Throughput & Edge Cases (optimizeComplexPipeline)",
       "codeHash": "f3e92be9de39d17c8083ede8b2535930403d74c6b0c55d672e837b8333fb5cab",
       "spec": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Throughput Optimization & Edge-Case H",
+        "title": "Complex Event Processing (CEP) — Throughput & Edge Cases (optimizeComp",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Throughput Optimization & Edge-Case H",
+        "title": "Complex Event Processing (CEP) — Throughput & Edge Cases (optimizeComp",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Complex Event Processing (CEP) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Complex Event Processing (CEP) — Resilience & Recovery (validateComplexGuard)",
       "codeHash": "f1d06efc4b063d951728add85ae870b3950cd855bf94f574c6e5d7978292a143",
       "spec": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Resilience Guardrails & Failure Recov",
+        "title": "Complex Event Processing (CEP) — Resilience & Recovery (validateComple",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Resilience Guardrails & Failure Recov",
+        "title": "Complex Event Processing (CEP) — Resilience & Recovery (validateComple",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Complex Event Processing (CEP) — Production Telemetry & Verification Audit",
+      "partTitle": "Complex Event Processing (CEP) — Telemetry & Audit (auditComplexTelemetry)",
       "codeHash": "51a3fd64219477cdd559c24327d954a3a187c9b0c79ecabe780e0b5d9eaf4cdb",
       "spec": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Production Telemetry & Verification A",
+        "title": "Complex Event Processing (CEP) — Telemetry & Audit (auditComplexTeleme",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Complex Event Processing (CEP) — Production Telemetry & Verification A",
+        "title": "Complex Event Processing (CEP) — Telemetry & Audit (auditComplexTeleme",
         "nodes": [
           {
             "id": "input",

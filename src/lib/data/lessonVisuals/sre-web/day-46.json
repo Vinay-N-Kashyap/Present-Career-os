@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Chaos Engineering Injection Engine — Foundations & Mathematical Invariants",
+      "partTitle": "Chaos Engineering Injection Engine — Foundations (evaluateChaosEngineeringCore)",
       "codeHash": "94270b7940fa451ba7935dfe97a0c12b5e27c3899405f0a4b5b5a7a377cd64b4",
       "spec": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Foundations & Mathematical Invari",
+        "title": "Chaos Engineering Injection Engine — Foundations (evaluateChaosEnginee",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Foundations & Mathematical Invari",
+        "title": "Chaos Engineering Injection Engine — Foundations (evaluateChaosEnginee",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Chaos Engineering Injection Engine — Core Algorithm & State Representation",
+      "partTitle": "Chaos Engineering Injection Engine — Core Algorithm (computeChaosThreshold)",
       "codeHash": "6b20c890ba68bf16ae2ce2ae6ec10cdcd23f178af7ff66ebc14d00aa6e76a459",
       "spec": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Core Algorithm & State Representa",
+        "title": "Chaos Engineering Injection Engine — Core Algorithm (computeChaosThres",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Core Algorithm & State Representa",
+        "title": "Chaos Engineering Injection Engine — Core Algorithm (computeChaosThres",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Chaos Engineering Injection Engine — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Chaos Engineering Injection Engine — Throughput & Edge Cases (optimizeChaosPipeline)",
       "codeHash": "f7d7ac05bd8e69106c8b82f07dc798ddc6bdc5a968fc0ab127acb07961728c87",
       "spec": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Throughput Optimization & Edge-Ca",
+        "title": "Chaos Engineering Injection Engine — Throughput & Edge Cases (optimize",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Throughput Optimization & Edge-Ca",
+        "title": "Chaos Engineering Injection Engine — Throughput & Edge Cases (optimize",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Chaos Engineering Injection Engine — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Chaos Engineering Injection Engine — Resilience & Recovery (validateChaosGuard)",
       "codeHash": "143f00952b212eaf7ac4904e1ae2fa577a01f4f64c9c4dcfa0afbac73f296334",
       "spec": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Resilience Guardrails & Failure R",
+        "title": "Chaos Engineering Injection Engine — Resilience & Recovery (validateCh",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Resilience Guardrails & Failure R",
+        "title": "Chaos Engineering Injection Engine — Resilience & Recovery (validateCh",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Chaos Engineering Injection Engine — Production Telemetry & Verification Audit",
+      "partTitle": "Chaos Engineering Injection Engine — Telemetry & Audit (auditChaosTelemetry)",
       "codeHash": "fcab8e3e27a657745435934060d2e13d08781f966b7f3de4bf60a078ab996630",
       "spec": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Production Telemetry & Verificati",
+        "title": "Chaos Engineering Injection Engine — Telemetry & Audit (auditChaosTele",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Chaos Engineering Injection Engine — Production Telemetry & Verificati",
+        "title": "Chaos Engineering Injection Engine — Telemetry & Audit (auditChaosTele",
         "nodes": [
           {
             "id": "input",

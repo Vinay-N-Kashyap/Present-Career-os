@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 9 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 9 — Foundations (evaluateTemporalStreamCore)",
       "codeHash": "76a489096d3cef9929fbb4025bac494eb2a776b7c05e79814c5a269e6643f5bf",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 9 — Core Algorithm (computeTemporalThreshold)",
       "codeHash": "319d3a7eb3bb04bb986d8ca273ef83cf6fa4001265039a0cef0b4b1ecb36b4ae",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 9 — Throughput & Edge Cases (optimizeTemporalPipeline)",
       "codeHash": "d24b9bf5220aba583a8493a14436c0201f64c9a5d0dc24ea02193f94e401f050",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 9 — Resilience & Recovery (validateTemporalGuard)",
       "codeHash": "a219fe2a63be1ac503a50b9cde6364b7e22855010dbf24bcbd25eb59f3ac0ff3",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 9 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 9 — Telemetry & Audit (auditTemporalTelemetry)",
       "codeHash": "f13286c70959f5de572e6bb976aaf0be27b64945db6f5e23dd7e5fc45344ecae",
       "spec": {
         "template": "flow",

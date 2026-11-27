@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Hybrid Retrieval Pipeline — Foundations & Mathematical Invariants",
+      "partTitle": "Hybrid Retrieval Pipeline — Foundations (evaluateHybridRetrievalCore)",
       "codeHash": "71ed342ba83aa3a094741bed81f0f69f38cfbdeff3a33b4930b2000d52a28a6a",
       "spec": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Foundations & Mathematical Invariants",
+        "title": "Hybrid Retrieval Pipeline — Foundations (evaluateHybridRetrievalCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Foundations & Mathematical Invariants",
+        "title": "Hybrid Retrieval Pipeline — Foundations (evaluateHybridRetrievalCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Hybrid Retrieval Pipeline — Core Algorithm & State Representation",
+      "partTitle": "Hybrid Retrieval Pipeline — Core Algorithm (computeHybridThreshold)",
       "codeHash": "17b46931147ef45a3584bb61e1daaa2b519e3606df5392112503da26f2c4b71c",
       "spec": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Core Algorithm & State Representation",
+        "title": "Hybrid Retrieval Pipeline — Core Algorithm (computeHybridThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Core Algorithm & State Representation",
+        "title": "Hybrid Retrieval Pipeline — Core Algorithm (computeHybridThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Hybrid Retrieval Pipeline — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Hybrid Retrieval Pipeline — Throughput & Edge Cases (optimizeHybridPipeline)",
       "codeHash": "b8b7a4152ddeea231389ec931034f4eb29891bdc592183d9fbdeb74a9b440c04",
       "spec": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Throughput Optimization & Edge-Case Handli",
+        "title": "Hybrid Retrieval Pipeline — Throughput & Edge Cases (optimizeHybridPip",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Throughput Optimization & Edge-Case Handli",
+        "title": "Hybrid Retrieval Pipeline — Throughput & Edge Cases (optimizeHybridPip",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Hybrid Retrieval Pipeline — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Hybrid Retrieval Pipeline — Resilience & Recovery (validateHybridGuard)",
       "codeHash": "7073a82f6d9446386194ddb197412ba4d7271296cd7cb426757a66edadedd633",
       "spec": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Resilience Guardrails & Failure Recovery",
+        "title": "Hybrid Retrieval Pipeline — Resilience & Recovery (validateHybridGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Resilience Guardrails & Failure Recovery",
+        "title": "Hybrid Retrieval Pipeline — Resilience & Recovery (validateHybridGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Hybrid Retrieval Pipeline — Production Telemetry & Verification Audit",
+      "partTitle": "Hybrid Retrieval Pipeline — Telemetry & Audit (auditHybridTelemetry)",
       "codeHash": "3ef84e8fdd6057ad81d7ac354748485cfb4645234618bbb5adc43b812b2fcd8a",
       "spec": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Production Telemetry & Verification Audit",
+        "title": "Hybrid Retrieval Pipeline — Telemetry & Audit (auditHybridTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Hybrid Retrieval Pipeline — Production Telemetry & Verification Audit",
+        "title": "Hybrid Retrieval Pipeline — Telemetry & Audit (auditHybridTelemetry)",
         "nodes": [
           {
             "id": "input",

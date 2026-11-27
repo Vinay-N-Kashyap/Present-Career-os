@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Backpressure Propagation — Foundations & Mathematical Invariants",
+      "partTitle": "Backpressure Propagation — Foundations (evaluateBackpressurePropagationCore)",
       "codeHash": "e5f3d606fb9c1bc78ccf792043d0f4a685017694af1b6c23c8852da993132bb2",
       "spec": {
         "template": "flow",
-        "title": "Backpressure Propagation — Foundations & Mathematical Invariants",
+        "title": "Backpressure Propagation — Foundations (evaluateBackpressurePropagationCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Backpressure Propagation — Foundations & Mathematical Invariants",
+        "title": "Backpressure Propagation — Foundations (evaluateBackpressurePropagationCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Backpressure Propagation — Core Algorithm & State Representation",
+      "partTitle": "Backpressure Propagation — Core Algorithm (computeBackpressureThreshold)",
       "codeHash": "47994fbd30f95213b95107808ac0e3005b2566d5b27af7df2a5170bad7cd033f",
       "spec": {
         "template": "flow",
-        "title": "Backpressure Propagation — Core Algorithm & State Representation",
+        "title": "Backpressure Propagation — Core Algorithm (computeBackpressureThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Backpressure Propagation — Core Algorithm & State Representation",
+        "title": "Backpressure Propagation — Core Algorithm (computeBackpressureThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Backpressure Propagation — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Backpressure Propagation — Throughput & Edge Cases (optimizeBackpressurePipeline)",
       "codeHash": "7b91190156a047a3e3b57f3c071cbded550e60cc571089837769487086d99549",
       "spec": {
         "template": "flow",
-        "title": "Backpressure Propagation — Throughput Optimization & Edge-Case Handlin",
+        "title": "Backpressure Propagation — Throughput & Edge Cases (optimizeBackpressu",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Backpressure Propagation — Throughput Optimization & Edge-Case Handlin",
+        "title": "Backpressure Propagation — Throughput & Edge Cases (optimizeBackpressu",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Backpressure Propagation — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Backpressure Propagation — Resilience & Recovery (validateBackpressureGuard)",
       "codeHash": "8dede23f09e5b524999529c5557ea3690372a4f4ce57f01c72345530e4db1df2",
       "spec": {
         "template": "flow",
-        "title": "Backpressure Propagation — Resilience Guardrails & Failure Recovery",
+        "title": "Backpressure Propagation — Resilience & Recovery (validateBackpressureGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Backpressure Propagation — Resilience Guardrails & Failure Recovery",
+        "title": "Backpressure Propagation — Resilience & Recovery (validateBackpressureGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Backpressure Propagation — Production Telemetry & Verification Audit",
+      "partTitle": "Backpressure Propagation — Telemetry & Audit (auditBackpressureTelemetry)",
       "codeHash": "94ed87976b90fdab0a3032a81ca4ef92163425c7605abd481d21d213027b9534",
       "spec": {
         "template": "flow",
-        "title": "Backpressure Propagation — Production Telemetry & Verification Audit",
+        "title": "Backpressure Propagation — Telemetry & Audit (auditBackpressureTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Backpressure Propagation — Production Telemetry & Verification Audit",
+        "title": "Backpressure Propagation — Telemetry & Audit (auditBackpressureTelemetry)",
         "nodes": [
           {
             "id": "input",

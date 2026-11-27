@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Foundations & Mathematical Invariants",
+      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Foundations (evaluateDeterministicPartitionCore)",
       "codeHash": "ec4a130dbc411485bfa2737bec190c44d0674a4b96c4cf0fe196cc47adee24c2",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Core Algorithm & State Representation",
+      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Core Algorithm (computeDeterministicThreshold)",
       "codeHash": "e6a955e17334f5df08fb615e4d99b25d22d998bb92e64db687ce179b773daec6",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Throughput & Edge Cases (optimizeDeterministicPipeline)",
       "codeHash": "e1c20af70b8c7b35ee726155f494fdc54f137854a04bc9b2727e4208bcb29e38",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Resilience & Recovery (validateDeterministicGuard)",
       "codeHash": "39ed2ff4c6df01b68b19cbfc9ffa7f4d576ac8cfc8901d94a5527a9461126a74",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Production Telemetry & Verification Audit",
+      "partTitle": "Deterministic Partition Hashing (Murmur/FNV) & Hot-Key Salting Splitters — Telemetry & Audit (auditDeterministicTelemetry)",
       "codeHash": "5b8b5b2ce37f8026f3fb1d3add5535e3dbcd8020a39eb6a79ee08c52a096c80c",
       "spec": {
         "template": "flow",

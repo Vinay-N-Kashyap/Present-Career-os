@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Foundations & Mathematical Invariants",
+      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Foundations (evaluateMultiTenantCore)",
       "codeHash": "473b4f2a4e430cb687769dad0e2120a0427032fbbbfcb6cd8eabf53076bb487f",
       "spec": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Foundations & Mathematical I",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Foundations (evaluateMultiTe",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Foundations & Mathematical I",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Foundations (evaluateMultiTe",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Core Algorithm & State Representation",
+      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Core Algorithm (computeMultiThreshold)",
       "codeHash": "ea7b4691befcdfa05ecf06e248eb78d16c62a0bfc1d8cf56f99b3e5e745c820e",
       "spec": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Core Algorithm & State Repre",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Core Algorithm (computeMulti",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Core Algorithm & State Repre",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Core Algorithm (computeMulti",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Throughput & Edge Cases (optimizeMultiPipeline)",
       "codeHash": "471d246442be8b1cd0f649c9eb3f086afe63e96309c070cc760c4294a5ef4787",
       "spec": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Throughput Optimization & Ed",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Throughput & Edge Cases (opt",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Throughput Optimization & Ed",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Throughput & Edge Cases (opt",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Resilience & Recovery (validateMultiGuard)",
       "codeHash": "1a2e559e0f1f65d995f17baa2876995af2e29b9ef1b19ec314c256955412971a",
       "spec": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Resilience Guardrails & Fail",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Resilience & Recovery (valid",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Resilience Guardrails & Fail",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Resilience & Recovery (valid",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Production Telemetry & Verification Audit",
+      "partTitle": "Multi-Tenant Token Bucket Rate Limiting — Telemetry & Audit (auditMultiTelemetry)",
       "codeHash": "a7da58d8c6ad4eae48522bedaaf73f985de4d9c9a98c6f8beb47dc99a831e924",
       "spec": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Production Telemetry & Verif",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Telemetry & Audit (auditMult",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Tenant Token Bucket Rate Limiting — Production Telemetry & Verif",
+        "title": "Multi-Tenant Token Bucket Rate Limiting — Telemetry & Audit (auditMult",
         "nodes": [
           {
             "id": "input",

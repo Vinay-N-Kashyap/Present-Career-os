@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Multi-Region Active-Active Traffic Steering — Foundations & Mathematical Invariants",
+      "partTitle": "Multi-Region Active-Active Traffic Steering — Foundations (evaluateMultiRegionCore)",
       "codeHash": "65012cacced107b6f5e3ff8c2f886f601039b0da9760aa8e85683790ebdfd30a",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Foundations & Mathematic",
+        "title": "Multi-Region Active-Active Traffic Steering — Foundations (evaluateMul",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Foundations & Mathematic",
+        "title": "Multi-Region Active-Active Traffic Steering — Foundations (evaluateMul",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Active-Active Traffic Steering — Core Algorithm & State Representation",
+      "partTitle": "Multi-Region Active-Active Traffic Steering — Core Algorithm (computeMultiThreshold)",
       "codeHash": "fc78155c6b7b871a64c8fe47e7dd19d3b63f118d31e5d133c9b652296b3cdf92",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Core Algorithm & State R",
+        "title": "Multi-Region Active-Active Traffic Steering — Core Algorithm (computeM",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Core Algorithm & State R",
+        "title": "Multi-Region Active-Active Traffic Steering — Core Algorithm (computeM",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Active-Active Traffic Steering — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Multi-Region Active-Active Traffic Steering — Throughput & Edge Cases (optimizeMultiPipeline)",
       "codeHash": "4d6d95f4c094cc28211b5f59d90925bbd1fc1f64eece2648d2dbf620e152e289",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Throughput Optimization ",
+        "title": "Multi-Region Active-Active Traffic Steering — Throughput & Edge Cases ",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Throughput Optimization ",
+        "title": "Multi-Region Active-Active Traffic Steering — Throughput & Edge Cases ",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Active-Active Traffic Steering — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Multi-Region Active-Active Traffic Steering — Resilience & Recovery (validateMultiGuard)",
       "codeHash": "df328529a4f524e3afb02aaa71dab786445e4de49eb613a8d4a1f72038579803",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Resilience Guardrails & ",
+        "title": "Multi-Region Active-Active Traffic Steering — Resilience & Recovery (v",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Resilience Guardrails & ",
+        "title": "Multi-Region Active-Active Traffic Steering — Resilience & Recovery (v",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Multi-Region Active-Active Traffic Steering — Production Telemetry & Verification Audit",
+      "partTitle": "Multi-Region Active-Active Traffic Steering — Telemetry & Audit (auditMultiTelemetry)",
       "codeHash": "4e31fc6075240b3cccd1a5d906cd05f3a06714e025706094890d9a47ce162085",
       "spec": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Production Telemetry & V",
+        "title": "Multi-Region Active-Active Traffic Steering — Telemetry & Audit (audit",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Multi-Region Active-Active Traffic Steering — Production Telemetry & V",
+        "title": "Multi-Region Active-Active Traffic Steering — Telemetry & Audit (audit",
         "nodes": [
           {
             "id": "input",

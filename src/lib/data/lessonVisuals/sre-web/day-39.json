@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Retry Storms & Metastable Failures — Foundations & Mathematical Invariants",
+      "partTitle": "Retry Storms & Metastable Failures — Foundations (evaluateRetryStormsCore)",
       "codeHash": "008effff8444659fb8a7a4d8c610fb7f175cde30f61a77433f2b6e4370e0ca9b",
       "spec": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Foundations & Mathematical Invari",
+        "title": "Retry Storms & Metastable Failures — Foundations (evaluateRetryStormsC",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Foundations & Mathematical Invari",
+        "title": "Retry Storms & Metastable Failures — Foundations (evaluateRetryStormsC",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Retry Storms & Metastable Failures — Core Algorithm & State Representation",
+      "partTitle": "Retry Storms & Metastable Failures — Core Algorithm (computeRetryThreshold)",
       "codeHash": "66e6024734c7cbde946c1fecc1fc7f1913ebb84e28055edd447b2b9ea5644d38",
       "spec": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Core Algorithm & State Representa",
+        "title": "Retry Storms & Metastable Failures — Core Algorithm (computeRetryThres",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Core Algorithm & State Representa",
+        "title": "Retry Storms & Metastable Failures — Core Algorithm (computeRetryThres",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Retry Storms & Metastable Failures — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Retry Storms & Metastable Failures — Throughput & Edge Cases (optimizeRetryPipeline)",
       "codeHash": "bda97c2c5adc1edf924f7063c8a1ecbd2e699e82ab0ba5d1c20826af214525b2",
       "spec": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Throughput Optimization & Edge-Ca",
+        "title": "Retry Storms & Metastable Failures — Throughput & Edge Cases (optimize",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Throughput Optimization & Edge-Ca",
+        "title": "Retry Storms & Metastable Failures — Throughput & Edge Cases (optimize",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Retry Storms & Metastable Failures — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Retry Storms & Metastable Failures — Resilience & Recovery (validateRetryGuard)",
       "codeHash": "835e5e283ed71e1c96b18c00fcc8acb9f5f8f215f4d819e6682ffe3c1017ac8e",
       "spec": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Resilience Guardrails & Failure R",
+        "title": "Retry Storms & Metastable Failures — Resilience & Recovery (validateRe",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Resilience Guardrails & Failure R",
+        "title": "Retry Storms & Metastable Failures — Resilience & Recovery (validateRe",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Retry Storms & Metastable Failures — Production Telemetry & Verification Audit",
+      "partTitle": "Retry Storms & Metastable Failures — Telemetry & Audit (auditRetryTelemetry)",
       "codeHash": "fdc62bf82361348d97ad961f43465ce2c031a85d83a07a87cb7a0f9e804336fb",
       "spec": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Production Telemetry & Verificati",
+        "title": "Retry Storms & Metastable Failures — Telemetry & Audit (auditRetryTele",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Retry Storms & Metastable Failures — Production Telemetry & Verificati",
+        "title": "Retry Storms & Metastable Failures — Telemetry & Audit (auditRetryTele",
         "nodes": [
           {
             "id": "input",

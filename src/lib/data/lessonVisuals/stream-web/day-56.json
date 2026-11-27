@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Consumer Lag Telemetry — Foundations & Mathematical Invariants",
+      "partTitle": "Consumer Lag Telemetry — Foundations (evaluateConsumerLagCore)",
       "codeHash": "831f93d3d5c0719fb59958565647fd25d31b3a7b5346dfbcda93edcda7dde3d2",
       "spec": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Foundations & Mathematical Invariants",
+        "title": "Consumer Lag Telemetry — Foundations (evaluateConsumerLagCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Foundations & Mathematical Invariants",
+        "title": "Consumer Lag Telemetry — Foundations (evaluateConsumerLagCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Consumer Lag Telemetry — Core Algorithm & State Representation",
+      "partTitle": "Consumer Lag Telemetry — Core Algorithm (computeConsumerThreshold)",
       "codeHash": "59068b85360c520a5a657c141156cda9d2cda3e40247ef3b22b595c87d61412d",
       "spec": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Core Algorithm & State Representation",
+        "title": "Consumer Lag Telemetry — Core Algorithm (computeConsumerThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Core Algorithm & State Representation",
+        "title": "Consumer Lag Telemetry — Core Algorithm (computeConsumerThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Consumer Lag Telemetry — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Consumer Lag Telemetry — Throughput & Edge Cases (optimizeConsumerPipeline)",
       "codeHash": "fb8237ddace996fc5f3ff6805f35a4be3acbb86773bb7c0febda217c7b26e056",
       "spec": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Throughput Optimization & Edge-Case Handling",
+        "title": "Consumer Lag Telemetry — Throughput & Edge Cases (optimizeConsumerPipeline)",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Throughput Optimization & Edge-Case Handling",
+        "title": "Consumer Lag Telemetry — Throughput & Edge Cases (optimizeConsumerPipeline)",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Consumer Lag Telemetry — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Consumer Lag Telemetry — Resilience & Recovery (validateConsumerGuard)",
       "codeHash": "8ce0ac9c1077afe9ed8254aa57372cbda79f00f0859012aaf2c43a8c2cb17957",
       "spec": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Resilience Guardrails & Failure Recovery",
+        "title": "Consumer Lag Telemetry — Resilience & Recovery (validateConsumerGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Resilience Guardrails & Failure Recovery",
+        "title": "Consumer Lag Telemetry — Resilience & Recovery (validateConsumerGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Consumer Lag Telemetry — Production Telemetry & Verification Audit",
+      "partTitle": "Consumer Lag Telemetry — Telemetry & Audit (auditConsumerTelemetry)",
       "codeHash": "82534d91fd9bc7d6759c435e724db4f0a63761a5f6e662281bb72e8619dbd92d",
       "spec": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Production Telemetry & Verification Audit",
+        "title": "Consumer Lag Telemetry — Telemetry & Audit (auditConsumerTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Lag Telemetry — Production Telemetry & Verification Audit",
+        "title": "Consumer Lag Telemetry — Telemetry & Audit (auditConsumerTelemetry)",
         "nodes": [
           {
             "id": "input",

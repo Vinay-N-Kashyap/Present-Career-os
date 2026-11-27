@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 10 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 10 — Foundations (evaluateSchemaEvolutionCore)",
       "codeHash": "a926e4a8e43d95a18e376b58099cde14a52960f347c0ae83bda739b3537ab9fc",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 10 — Core Algorithm (computeSchemaThreshold)",
       "codeHash": "0bc921c2e3b2afdadfd72901a2f9948a0361734d4613a18bc550d408dec35755",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 10 — Throughput & Edge Cases (optimizeSchemaPipeline)",
       "codeHash": "9a5baac5df1bb93634c023e176f8fef59c130f16770f3084024fdf2c05eff058",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 10 — Resilience & Recovery (validateSchemaGuard)",
       "codeHash": "b87a16e57562c6b6ca39179e276e23c6ec0998a8a7d26092f32ce6e1628dc1ca",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 10 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 10 — Telemetry & Audit (auditSchemaTelemetry)",
       "codeHash": "c33f45a651558b79d8428434d944234ef821757ea5b26206eaa8eabe93cbd144",
       "spec": {
         "template": "flow",

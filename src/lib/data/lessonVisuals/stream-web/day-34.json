@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Consumer Group Rebalancing — Foundations & Mathematical Invariants",
+      "partTitle": "Consumer Group Rebalancing — Foundations (evaluateConsumerGroupCore)",
       "codeHash": "6b5e49b554afa6c710c7d118e6bf682016455cd5598cbbdfc4927e34f8a7e1b9",
       "spec": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Foundations & Mathematical Invariants",
+        "title": "Consumer Group Rebalancing — Foundations (evaluateConsumerGroupCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Foundations & Mathematical Invariants",
+        "title": "Consumer Group Rebalancing — Foundations (evaluateConsumerGroupCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Consumer Group Rebalancing — Core Algorithm & State Representation",
+      "partTitle": "Consumer Group Rebalancing — Core Algorithm (computeConsumerThreshold)",
       "codeHash": "874e95d451baf9ac0b88110232593d2eee35f326b44fd052acf10b464d4258df",
       "spec": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Core Algorithm & State Representation",
+        "title": "Consumer Group Rebalancing — Core Algorithm (computeConsumerThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Core Algorithm & State Representation",
+        "title": "Consumer Group Rebalancing — Core Algorithm (computeConsumerThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Consumer Group Rebalancing — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Consumer Group Rebalancing — Throughput & Edge Cases (optimizeConsumerPipeline)",
       "codeHash": "7d0ae97982371effd9db72624ded731fa8ded95a5fa2d802681e35dc6d6c76b7",
       "spec": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Throughput Optimization & Edge-Case Handl",
+        "title": "Consumer Group Rebalancing — Throughput & Edge Cases (optimizeConsumer",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Throughput Optimization & Edge-Case Handl",
+        "title": "Consumer Group Rebalancing — Throughput & Edge Cases (optimizeConsumer",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Consumer Group Rebalancing — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Consumer Group Rebalancing — Resilience & Recovery (validateConsumerGuard)",
       "codeHash": "fee421fab666236a710c7a817d261437483a2549ec8b13c19c65721fae4d6162",
       "spec": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Resilience Guardrails & Failure Recovery",
+        "title": "Consumer Group Rebalancing — Resilience & Recovery (validateConsumerGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Resilience Guardrails & Failure Recovery",
+        "title": "Consumer Group Rebalancing — Resilience & Recovery (validateConsumerGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Consumer Group Rebalancing — Production Telemetry & Verification Audit",
+      "partTitle": "Consumer Group Rebalancing — Telemetry & Audit (auditConsumerTelemetry)",
       "codeHash": "e820543136ddb138ee487f85d18a101532a3c8c3186c2ef8aa79a3444d97a330",
       "spec": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Production Telemetry & Verification Audit",
+        "title": "Consumer Group Rebalancing — Telemetry & Audit (auditConsumerTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Consumer Group Rebalancing — Production Telemetry & Verification Audit",
+        "title": "Consumer Group Rebalancing — Telemetry & Audit (auditConsumerTelemetry)",
         "nodes": [
           {
             "id": "input",

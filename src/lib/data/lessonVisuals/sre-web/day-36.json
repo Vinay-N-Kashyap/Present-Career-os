@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Adaptive Circuit Breakers — Foundations & Mathematical Invariants",
+      "partTitle": "Adaptive Circuit Breakers — Foundations (evaluateAdaptiveCircuitCore)",
       "codeHash": "70149afe9415d5d1f195ba3702d98d4eab64c7e06caa455288eee365ef536a15",
       "spec": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Foundations & Mathematical Invariants",
+        "title": "Adaptive Circuit Breakers — Foundations (evaluateAdaptiveCircuitCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Foundations & Mathematical Invariants",
+        "title": "Adaptive Circuit Breakers — Foundations (evaluateAdaptiveCircuitCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Adaptive Circuit Breakers — Core Algorithm & State Representation",
+      "partTitle": "Adaptive Circuit Breakers — Core Algorithm (computeAdaptiveThreshold)",
       "codeHash": "6f22530f50bc9928b29db277d353a5dea191ad3b297939145bd16daec82b3724",
       "spec": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Core Algorithm & State Representation",
+        "title": "Adaptive Circuit Breakers — Core Algorithm (computeAdaptiveThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Core Algorithm & State Representation",
+        "title": "Adaptive Circuit Breakers — Core Algorithm (computeAdaptiveThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Adaptive Circuit Breakers — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Adaptive Circuit Breakers — Throughput & Edge Cases (optimizeAdaptivePipeline)",
       "codeHash": "31dce32411baf6a14dedc3fdfac651712d5ca3925f0a918f50df9ae2e8942e76",
       "spec": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Throughput Optimization & Edge-Case Handli",
+        "title": "Adaptive Circuit Breakers — Throughput & Edge Cases (optimizeAdaptiveP",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Throughput Optimization & Edge-Case Handli",
+        "title": "Adaptive Circuit Breakers — Throughput & Edge Cases (optimizeAdaptiveP",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Adaptive Circuit Breakers — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Adaptive Circuit Breakers — Resilience & Recovery (validateAdaptiveGuard)",
       "codeHash": "801b7bcd1ca64a8190318b89bdebc25e238377ebe72a1b31b07e24842d107fb2",
       "spec": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Resilience Guardrails & Failure Recovery",
+        "title": "Adaptive Circuit Breakers — Resilience & Recovery (validateAdaptiveGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Resilience Guardrails & Failure Recovery",
+        "title": "Adaptive Circuit Breakers — Resilience & Recovery (validateAdaptiveGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Adaptive Circuit Breakers — Production Telemetry & Verification Audit",
+      "partTitle": "Adaptive Circuit Breakers — Telemetry & Audit (auditAdaptiveTelemetry)",
       "codeHash": "afb75a55e109a46c3f3e2f74b1078ce2e47926a7327dfd38730f10dd58ec2c1b",
       "spec": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Production Telemetry & Verification Audit",
+        "title": "Adaptive Circuit Breakers — Telemetry & Audit (auditAdaptiveTelemetry)",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Adaptive Circuit Breakers — Production Telemetry & Verification Audit",
+        "title": "Adaptive Circuit Breakers — Telemetry & Audit (auditAdaptiveTelemetry)",
         "nodes": [
           {
             "id": "input",

@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Foundations & Mathematical Invariants",
+      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Foundations (evaluateIdempotencyKeysCore)",
       "codeHash": "adcab2678b1b326194a1b88f379f8cd4015ac8d1c52753dee26d6efd00bb14ec",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Core Algorithm & State Representation",
+      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Core Algorithm (computeIdempotencyThreshold)",
       "codeHash": "0a4c86abcb69549ef29dbec254db8aab5630a7fd4b17d88011c4659427409b1d",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Throughput & Edge Cases (optimizeIdempotencyPipeline)",
       "codeHash": "fd4835b8d6b628e77c3d3a885cab4171e9e56b034e2419db69b9677864f421ec",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Resilience & Recovery (validateIdempotencyGuard)",
       "codeHash": "61e6fa17790dd6b859308f023ed8365f72872a6eacc2f1d071616d5f4efd3389",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Production Telemetry & Verification Audit",
+      "partTitle": "Idempotency Keys, At-Least-Once Webhook Deduplication & State Machine Locks — Telemetry & Audit (auditIdempotencyTelemetry)",
       "codeHash": "5f45154bc4c1d501842d3f4c974875a7dc9242102ed4a71cd08bcd709a8dd19c",
       "spec": {
         "template": "flow",

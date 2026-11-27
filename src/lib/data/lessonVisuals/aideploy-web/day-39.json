@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Foundations & Mathematical Invariants",
+      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Foundations (evaluateExactSemanticCore)",
       "codeHash": "36fb129c60451317dae01b156d0a75e2b00d584f02df883332168cad89e1ad23",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Core Algorithm & State Representation",
+      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Core Algorithm (computeExactThreshold)",
       "codeHash": "585b2f73b16e05ec8ff2dc0e0b4207a28f2929837fdeb24f974d5a6f3428dc29",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Throughput & Edge Cases (optimizeExactPipeline)",
       "codeHash": "a2e428452c46c285d94c061be9169e1c00bcdf29dc9dcde6bf918171cfb1f7db",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Resilience & Recovery (validateExactGuard)",
       "codeHash": "c922b4721276ffd402147965793347fd9f531913d44784aa87af32e63fdd8383",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Production Telemetry & Verification Audit",
+      "partTitle": "Exact & Semantic Response Caching with Embedding Thresholds & Tenant Isolation — Telemetry & Audit (auditExactTelemetry)",
       "codeHash": "23215da92e324eca15573b1e009b3a3dca7777e07c9a2e5048716757d3d48150",
       "spec": {
         "template": "flow",

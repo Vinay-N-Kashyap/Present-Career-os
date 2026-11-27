@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Temporal Versioned Table Joins — Foundations & Mathematical Invariants",
+      "partTitle": "Temporal Versioned Table Joins — Foundations (evaluateTemporalVersionedCore)",
       "codeHash": "675e9791b9bc9a9d9271f221cbf0749cfdc3b08dc5b2f901892b2239acf842d4",
       "spec": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Foundations & Mathematical Invariants",
+        "title": "Temporal Versioned Table Joins — Foundations (evaluateTemporalVersionedCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Foundations & Mathematical Invariants",
+        "title": "Temporal Versioned Table Joins — Foundations (evaluateTemporalVersionedCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Temporal Versioned Table Joins — Core Algorithm & State Representation",
+      "partTitle": "Temporal Versioned Table Joins — Core Algorithm (computeTemporalThreshold)",
       "codeHash": "0e158ff793eda92d3ace20866b2d8424d9e4a56306cddb454b4dad9d7e017bea",
       "spec": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Core Algorithm & State Representation",
+        "title": "Temporal Versioned Table Joins — Core Algorithm (computeTemporalThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Core Algorithm & State Representation",
+        "title": "Temporal Versioned Table Joins — Core Algorithm (computeTemporalThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Temporal Versioned Table Joins — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Temporal Versioned Table Joins — Throughput & Edge Cases (optimizeTemporalPipeline)",
       "codeHash": "5a129592daf4033c8eff30df10abb908a877acf613028daec546c26a566d7644",
       "spec": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Throughput Optimization & Edge-Case H",
+        "title": "Temporal Versioned Table Joins — Throughput & Edge Cases (optimizeTemp",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Throughput Optimization & Edge-Case H",
+        "title": "Temporal Versioned Table Joins — Throughput & Edge Cases (optimizeTemp",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Temporal Versioned Table Joins — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Temporal Versioned Table Joins — Resilience & Recovery (validateTemporalGuard)",
       "codeHash": "8fe2cb4ddee7e03c27d1146764cacc35a66438e1ddbde4ea30b87f41882ea21e",
       "spec": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Resilience Guardrails & Failure Recov",
+        "title": "Temporal Versioned Table Joins — Resilience & Recovery (validateTempor",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Resilience Guardrails & Failure Recov",
+        "title": "Temporal Versioned Table Joins — Resilience & Recovery (validateTempor",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Temporal Versioned Table Joins — Production Telemetry & Verification Audit",
+      "partTitle": "Temporal Versioned Table Joins — Telemetry & Audit (auditTemporalTelemetry)",
       "codeHash": "2d015c3a5ec18fe3fb4c69efbd89e0139e7045dc1b0decf9a016c796d8f4a2cf",
       "spec": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Production Telemetry & Verification A",
+        "title": "Temporal Versioned Table Joins — Telemetry & Audit (auditTemporalTelem",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Temporal Versioned Table Joins — Production Telemetry & Verification A",
+        "title": "Temporal Versioned Table Joins — Telemetry & Audit (auditTemporalTelem",
         "nodes": [
           {
             "id": "input",

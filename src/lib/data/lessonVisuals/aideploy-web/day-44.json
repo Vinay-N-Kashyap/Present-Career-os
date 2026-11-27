@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Citation Grounding Verifier — Foundations & Mathematical Invariants",
+      "partTitle": "Citation Grounding Verifier — Foundations (evaluateCitationGroundingCore)",
       "codeHash": "1ad567dabcc30264c753b229d4befb9d6946fdb0fe37dc006f85a1b105c1d7b6",
       "spec": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Foundations & Mathematical Invariants",
+        "title": "Citation Grounding Verifier — Foundations (evaluateCitationGroundingCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Foundations & Mathematical Invariants",
+        "title": "Citation Grounding Verifier — Foundations (evaluateCitationGroundingCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Citation Grounding Verifier — Core Algorithm & State Representation",
+      "partTitle": "Citation Grounding Verifier — Core Algorithm (computeCitationThreshold)",
       "codeHash": "96b70906ae7314d8f410ea127d971c0d1da3dd5466344ea38054d666b0750fa7",
       "spec": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Core Algorithm & State Representation",
+        "title": "Citation Grounding Verifier — Core Algorithm (computeCitationThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Core Algorithm & State Representation",
+        "title": "Citation Grounding Verifier — Core Algorithm (computeCitationThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Citation Grounding Verifier — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Citation Grounding Verifier — Throughput & Edge Cases (optimizeCitationPipeline)",
       "codeHash": "a091b50e9692ba08aa1d2ade2a6a9792ccefebe9808e9f85e8336af03d779f63",
       "spec": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Throughput Optimization & Edge-Case Hand",
+        "title": "Citation Grounding Verifier — Throughput & Edge Cases (optimizeCitatio",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Throughput Optimization & Edge-Case Hand",
+        "title": "Citation Grounding Verifier — Throughput & Edge Cases (optimizeCitatio",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Citation Grounding Verifier — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Citation Grounding Verifier — Resilience & Recovery (validateCitationGuard)",
       "codeHash": "214f76ab4e959b2a707788d713099e873ce512915a1598ae44111d769219b8e2",
       "spec": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Resilience Guardrails & Failure Recovery",
+        "title": "Citation Grounding Verifier — Resilience & Recovery (validateCitationGuard)",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Resilience Guardrails & Failure Recovery",
+        "title": "Citation Grounding Verifier — Resilience & Recovery (validateCitationGuard)",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Citation Grounding Verifier — Production Telemetry & Verification Audit",
+      "partTitle": "Citation Grounding Verifier — Telemetry & Audit (auditCitationTelemetry)",
       "codeHash": "9449deb4d9aca194c393074cd7bbab84f59fed4b0eebf7671949f768abe380eb",
       "spec": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Production Telemetry & Verification Audi",
+        "title": "Citation Grounding Verifier — Telemetry & Audit (auditCitationTelemetr",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Citation Grounding Verifier — Production Telemetry & Verification Audi",
+        "title": "Citation Grounding Verifier — Telemetry & Audit (auditCitationTelemetr",
         "nodes": [
           {
             "id": "input",

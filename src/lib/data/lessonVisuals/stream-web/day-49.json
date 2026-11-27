@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Foundations & Mathematical Invariants",
+      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Foundations (evaluateDeadLetterCore)",
       "codeHash": "2327de41693b1b6d28ade02b944f080273cd43e6885573d367df66f9b7134bed",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Core Algorithm & State Representation",
+      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Core Algorithm (computeDeadThreshold)",
       "codeHash": "5859b37b6935a1e361b0b40339a98fdb7362452d17bee95ed2204e5ecd4ab72f",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Throughput & Edge Cases (optimizeDeadPipeline)",
       "codeHash": "e33c896cd1db4cf10ef95cc34b01f2591c533c20d65c5aa77da11e46732eb896",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Resilience & Recovery (validateDeadGuard)",
       "codeHash": "ceb5cf5bbd83efe6472b9e8f6b077c2d8e610d78f0971c77897d6e73caab6e2d",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Production Telemetry & Verification Audit",
+      "partTitle": "Dead-Letter Queue (DLQ) Exponential Replay Tiers & Poison-Pill Quarantine — Telemetry & Audit (auditDeadTelemetry)",
       "codeHash": "1bb466defb1ab8d4a960caa356b5a2251bff4a2857e9508eda26a2123c52b743",
       "spec": {
         "template": "flow",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Append-Only Segmented Log Internals — Foundations & Mathematical Invariants",
+      "partTitle": "Append-Only Segmented Log Internals — Foundations (evaluateAppendOnlyCore)",
       "codeHash": "074cdbedbf3527afd04f86d10def4043c7b27cd0ba80eab033e955bbed0befeb",
       "spec": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Foundations & Mathematical Invar",
+        "title": "Append-Only Segmented Log Internals — Foundations (evaluateAppendOnlyC",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Foundations & Mathematical Invar",
+        "title": "Append-Only Segmented Log Internals — Foundations (evaluateAppendOnlyC",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Append-Only Segmented Log Internals — Core Algorithm & State Representation",
+      "partTitle": "Append-Only Segmented Log Internals — Core Algorithm (computeAppendThreshold)",
       "codeHash": "d4a63967b7f862fe43a358a02b916ee9c298c33830ca6050fc0cad13500894c7",
       "spec": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Core Algorithm & State Represent",
+        "title": "Append-Only Segmented Log Internals — Core Algorithm (computeAppendThr",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Core Algorithm & State Represent",
+        "title": "Append-Only Segmented Log Internals — Core Algorithm (computeAppendThr",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Append-Only Segmented Log Internals — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Append-Only Segmented Log Internals — Throughput & Edge Cases (optimizeAppendPipeline)",
       "codeHash": "ec6f0359e21ae4ba9cb40cc0faf1d05af161f9c6839a07a5a5ed16976aaaead0",
       "spec": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Throughput Optimization & Edge-C",
+        "title": "Append-Only Segmented Log Internals — Throughput & Edge Cases (optimiz",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Throughput Optimization & Edge-C",
+        "title": "Append-Only Segmented Log Internals — Throughput & Edge Cases (optimiz",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Append-Only Segmented Log Internals — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Append-Only Segmented Log Internals — Resilience & Recovery (validateAppendGuard)",
       "codeHash": "ee052d8ed449b676302604d51abfea2ee433e33d4ac8cd18dff24003d529b6de",
       "spec": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Resilience Guardrails & Failure ",
+        "title": "Append-Only Segmented Log Internals — Resilience & Recovery (validateA",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Resilience Guardrails & Failure ",
+        "title": "Append-Only Segmented Log Internals — Resilience & Recovery (validateA",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Append-Only Segmented Log Internals — Production Telemetry & Verification Audit",
+      "partTitle": "Append-Only Segmented Log Internals — Telemetry & Audit (auditAppendTelemetry)",
       "codeHash": "897903d870ddd05f9b2fbd3328182a0b0bcda3237e2537ef3357d77a6faf91ae",
       "spec": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Production Telemetry & Verificat",
+        "title": "Append-Only Segmented Log Internals — Telemetry & Audit (auditAppendTe",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Append-Only Segmented Log Internals — Production Telemetry & Verificat",
+        "title": "Append-Only Segmented Log Internals — Telemetry & Audit (auditAppendTe",
         "nodes": [
           {
             "id": "input",

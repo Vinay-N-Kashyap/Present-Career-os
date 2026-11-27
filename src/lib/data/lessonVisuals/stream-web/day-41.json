@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Interval Stream-Stream Joins — Foundations & Mathematical Invariants",
+      "partTitle": "Interval Stream-Stream Joins — Foundations (evaluateIntervalStreamCore)",
       "codeHash": "28568bbaeb5cc76bd8bc50a6c4fb829300f995aefd2fdafe6cbcb4c1086cb0cd",
       "spec": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Foundations & Mathematical Invariants",
+        "title": "Interval Stream-Stream Joins — Foundations (evaluateIntervalStreamCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Foundations & Mathematical Invariants",
+        "title": "Interval Stream-Stream Joins — Foundations (evaluateIntervalStreamCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Interval Stream-Stream Joins — Core Algorithm & State Representation",
+      "partTitle": "Interval Stream-Stream Joins — Core Algorithm (computeIntervalThreshold)",
       "codeHash": "ee1fd6001f710811a88ae5cfd091e80576889fe1e9fad77921e223f209a873b0",
       "spec": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Core Algorithm & State Representation",
+        "title": "Interval Stream-Stream Joins — Core Algorithm (computeIntervalThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Core Algorithm & State Representation",
+        "title": "Interval Stream-Stream Joins — Core Algorithm (computeIntervalThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Interval Stream-Stream Joins — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Interval Stream-Stream Joins — Throughput & Edge Cases (optimizeIntervalPipeline)",
       "codeHash": "10340cb60e579879a0feba54dbd519b7c37b327e60038c1b5b8d344f5787a099",
       "spec": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Throughput Optimization & Edge-Case Han",
+        "title": "Interval Stream-Stream Joins — Throughput & Edge Cases (optimizeInterv",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Throughput Optimization & Edge-Case Han",
+        "title": "Interval Stream-Stream Joins — Throughput & Edge Cases (optimizeInterv",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Interval Stream-Stream Joins — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Interval Stream-Stream Joins — Resilience & Recovery (validateIntervalGuard)",
       "codeHash": "9dfd312543ddeee229aecac23852ec2375a4b499a9930392b93c06219d1cd334",
       "spec": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Resilience Guardrails & Failure Recover",
+        "title": "Interval Stream-Stream Joins — Resilience & Recovery (validateInterval",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Resilience Guardrails & Failure Recover",
+        "title": "Interval Stream-Stream Joins — Resilience & Recovery (validateInterval",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Interval Stream-Stream Joins — Production Telemetry & Verification Audit",
+      "partTitle": "Interval Stream-Stream Joins — Telemetry & Audit (auditIntervalTelemetry)",
       "codeHash": "8f1a6c72ca59ad9b8522944a6a8da0a0cf27065e6beb26e87d02f9744ac51251",
       "spec": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Production Telemetry & Verification Aud",
+        "title": "Interval Stream-Stream Joins — Telemetry & Audit (auditIntervalTelemet",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Interval Stream-Stream Joins — Production Telemetry & Verification Aud",
+        "title": "Interval Stream-Stream Joins — Telemetry & Audit (auditIntervalTelemet",
         "nodes": [
           {
             "id": "input",

@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Foundations & Mathematical Invariants",
+      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Foundations (evaluateMultiWindowCore)",
       "codeHash": "b4e7661543d0fb0a26fc4e000399451e179b023f8e2ffb98a96dcfa5161c64ea",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Core Algorithm & State Representation",
+      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Core Algorithm (computeMultiThreshold)",
       "codeHash": "d02defc3bd94c67d678f54590ed7cb214149e71ec155de6206e6aeacb7c1e13e",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Throughput & Edge Cases (optimizeMultiPipeline)",
       "codeHash": "9308264a69b799db1ea3962dbd36d33bf0ab40055beef986d39f4b9884440f58",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Resilience & Recovery (validateMultiGuard)",
       "codeHash": "3c0b62941f307050cf42e577ccc6d562b60562d72ea7478bbb1a5ca08f75c59f",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Production Telemetry & Verification Audit",
+      "partTitle": "Multi-Window Multi-Burn-Rate SLO Alerting (Google SRE Workbook Fast/Slow Burn Math) — Telemetry & Audit (auditMultiTelemetry)",
       "codeHash": "9224a5dd2b2f1c83f508cdb37305676fa2d783f2bf9052e3c30a5453bbdfa4bb",
       "spec": {
         "template": "flow",

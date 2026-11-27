@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Automated Canary Analysis (ACA) — Foundations & Mathematical Invariants",
+      "partTitle": "Automated Canary Analysis (ACA) — Foundations (evaluateAutomatedCanaryCore)",
       "codeHash": "79df30432e68b169a70ba3cb74b18ec248ad560ee61431755ab0855d03166fbe",
       "spec": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Foundations & Mathematical Invariant",
+        "title": "Automated Canary Analysis (ACA) — Foundations (evaluateAutomatedCanary",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Foundations & Mathematical Invariant",
+        "title": "Automated Canary Analysis (ACA) — Foundations (evaluateAutomatedCanary",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Automated Canary Analysis (ACA) — Core Algorithm & State Representation",
+      "partTitle": "Automated Canary Analysis (ACA) — Core Algorithm (computeAutomatedThreshold)",
       "codeHash": "d22517c42a912689a9c994ac5464ece4ec7830640e3ce1125a61a0e6809eef75",
       "spec": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Core Algorithm & State Representatio",
+        "title": "Automated Canary Analysis (ACA) — Core Algorithm (computeAutomatedThre",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Core Algorithm & State Representatio",
+        "title": "Automated Canary Analysis (ACA) — Core Algorithm (computeAutomatedThre",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Automated Canary Analysis (ACA) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Automated Canary Analysis (ACA) — Throughput & Edge Cases (optimizeAutomatedPipeline)",
       "codeHash": "44e0ab95ba49604a6f5a5ea546bd6942871500200f5ebdab4ffbb9883828a791",
       "spec": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Throughput Optimization & Edge-Case ",
+        "title": "Automated Canary Analysis (ACA) — Throughput & Edge Cases (optimizeAut",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Throughput Optimization & Edge-Case ",
+        "title": "Automated Canary Analysis (ACA) — Throughput & Edge Cases (optimizeAut",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Automated Canary Analysis (ACA) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Automated Canary Analysis (ACA) — Resilience & Recovery (validateAutomatedGuard)",
       "codeHash": "17cbffb2271a2891a0dc7dbf6fbc98638fe89adabd47eee2dece0fe78b31c5e5",
       "spec": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Resilience Guardrails & Failure Reco",
+        "title": "Automated Canary Analysis (ACA) — Resilience & Recovery (validateAutom",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Resilience Guardrails & Failure Reco",
+        "title": "Automated Canary Analysis (ACA) — Resilience & Recovery (validateAutom",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Automated Canary Analysis (ACA) — Production Telemetry & Verification Audit",
+      "partTitle": "Automated Canary Analysis (ACA) — Telemetry & Audit (auditAutomatedTelemetry)",
       "codeHash": "e1ae85c146c9bb3be3ec2cb591d6fe759fdab715cc83231a45a2de59c444f2f1",
       "spec": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Production Telemetry & Verification ",
+        "title": "Automated Canary Analysis (ACA) — Telemetry & Audit (auditAutomatedTel",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Automated Canary Analysis (ACA) — Production Telemetry & Verification ",
+        "title": "Automated Canary Analysis (ACA) — Telemetry & Audit (auditAutomatedTel",
         "nodes": [
           {
             "id": "input",

@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Online Evaluation & Shadow Traffic Harness — Foundations & Mathematical Invariants",
+      "partTitle": "Online Evaluation & Shadow Traffic Harness — Foundations (evaluateOnlineEvaluationCore)",
       "codeHash": "da4922511cc8ef78af9831ecce94bfdae1a1b4e77a56181086b9d11fec768937",
       "spec": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Foundations & Mathematica",
+        "title": "Online Evaluation & Shadow Traffic Harness — Foundations (evaluateOnli",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Foundations & Mathematica",
+        "title": "Online Evaluation & Shadow Traffic Harness — Foundations (evaluateOnli",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Online Evaluation & Shadow Traffic Harness — Core Algorithm & State Representation",
+      "partTitle": "Online Evaluation & Shadow Traffic Harness — Core Algorithm (computeOnlineThreshold)",
       "codeHash": "03691097d78af792835e97126acc0d582bcc3aee229373d2187fa7da7ccfe088",
       "spec": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Core Algorithm & State Re",
+        "title": "Online Evaluation & Shadow Traffic Harness — Core Algorithm (computeOn",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Core Algorithm & State Re",
+        "title": "Online Evaluation & Shadow Traffic Harness — Core Algorithm (computeOn",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Online Evaluation & Shadow Traffic Harness — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Online Evaluation & Shadow Traffic Harness — Throughput & Edge Cases (optimizeOnlinePipeline)",
       "codeHash": "b2186fb32c98e854587e86c752fb8390e8f5f213476cf6a6fb47047b5152fd30",
       "spec": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Throughput Optimization &",
+        "title": "Online Evaluation & Shadow Traffic Harness — Throughput & Edge Cases (",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Throughput Optimization &",
+        "title": "Online Evaluation & Shadow Traffic Harness — Throughput & Edge Cases (",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Online Evaluation & Shadow Traffic Harness — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Online Evaluation & Shadow Traffic Harness — Resilience & Recovery (validateOnlineGuard)",
       "codeHash": "66a14b1cc4496a2a1621558aaf69431718548e91397d827e7e63f1568e17c3d6",
       "spec": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Resilience Guardrails & F",
+        "title": "Online Evaluation & Shadow Traffic Harness — Resilience & Recovery (va",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Resilience Guardrails & F",
+        "title": "Online Evaluation & Shadow Traffic Harness — Resilience & Recovery (va",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Online Evaluation & Shadow Traffic Harness — Production Telemetry & Verification Audit",
+      "partTitle": "Online Evaluation & Shadow Traffic Harness — Telemetry & Audit (auditOnlineTelemetry)",
       "codeHash": "6965c4777ead4f46727db224970d34bac72f17eda416739503c011e50b959c3e",
       "spec": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Production Telemetry & Ve",
+        "title": "Online Evaluation & Shadow Traffic Harness — Telemetry & Audit (auditO",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Online Evaluation & Shadow Traffic Harness — Production Telemetry & Ve",
+        "title": "Online Evaluation & Shadow Traffic Harness — Telemetry & Audit (auditO",
         "nodes": [
           {
             "id": "input",

@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 8 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 8 — Foundations (evaluateWatermarkWindowingCore)",
       "codeHash": "ab3a7ed712aca64ecd9ef993d9e4ce62c97c80cf4aefb7947e521b00965ef1b8",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 8 — Core Algorithm (computeWatermarkThreshold)",
       "codeHash": "1a2c978d18dc411f127c1d0ee1eaea50e38f9a3c25d779fbb20828cf05ff7f39",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 8 — Throughput & Edge Cases (optimizeWatermarkPipeline)",
       "codeHash": "45d3225d035d0de3ae2b897460a08b8461b90504cba87702f47d5d442ce5e539",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 8 — Resilience & Recovery (validateWatermarkGuard)",
       "codeHash": "e0e1d96e9bb000bad73d77df3920510c26fb34168e8f93d2b076ce260cf02092",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 8 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 8 — Telemetry & Audit (auditWatermarkTelemetry)",
       "codeHash": "e16103d2bb371c14f588aa45787c82696f7f1f136f7360cea5c9e67c80db2849",
       "spec": {
         "template": "flow",

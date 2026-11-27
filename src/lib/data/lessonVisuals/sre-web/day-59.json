@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "FinOps Reliability Trade-Offs — Foundations & Mathematical Invariants",
+      "partTitle": "FinOps Reliability Trade-Offs — Foundations (evaluateFinopsReliabilityCore)",
       "codeHash": "079320eef6a374f2e597c2a0362e75d181144448156d86b660699ec5e9ac9c77",
       "spec": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Foundations & Mathematical Invariants",
+        "title": "FinOps Reliability Trade-Offs — Foundations (evaluateFinopsReliabilityCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Foundations & Mathematical Invariants",
+        "title": "FinOps Reliability Trade-Offs — Foundations (evaluateFinopsReliabilityCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "FinOps Reliability Trade-Offs — Core Algorithm & State Representation",
+      "partTitle": "FinOps Reliability Trade-Offs — Core Algorithm (computeFinopsThreshold)",
       "codeHash": "3919c508ff9f3694814e1d9013c27cd1be800f5b2ee11a4bc184fd65c8dac0b6",
       "spec": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Core Algorithm & State Representation",
+        "title": "FinOps Reliability Trade-Offs — Core Algorithm (computeFinopsThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Core Algorithm & State Representation",
+        "title": "FinOps Reliability Trade-Offs — Core Algorithm (computeFinopsThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "FinOps Reliability Trade-Offs — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "FinOps Reliability Trade-Offs — Throughput & Edge Cases (optimizeFinopsPipeline)",
       "codeHash": "dbec549f842a6485a96c893d6d13e36a4e634b0a3439ac2454d92f3e8ba491df",
       "spec": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Throughput Optimization & Edge-Case Ha",
+        "title": "FinOps Reliability Trade-Offs — Throughput & Edge Cases (optimizeFinop",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Throughput Optimization & Edge-Case Ha",
+        "title": "FinOps Reliability Trade-Offs — Throughput & Edge Cases (optimizeFinop",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "FinOps Reliability Trade-Offs — Resilience Guardrails & Failure Recovery",
+      "partTitle": "FinOps Reliability Trade-Offs — Resilience & Recovery (validateFinopsGuard)",
       "codeHash": "16cf7cbbc0dd588c00f77b50a4f5a8dc0b322c8513a5bc6ca57fd847ce9ea2cf",
       "spec": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Resilience Guardrails & Failure Recove",
+        "title": "FinOps Reliability Trade-Offs — Resilience & Recovery (validateFinopsG",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Resilience Guardrails & Failure Recove",
+        "title": "FinOps Reliability Trade-Offs — Resilience & Recovery (validateFinopsG",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "FinOps Reliability Trade-Offs — Production Telemetry & Verification Audit",
+      "partTitle": "FinOps Reliability Trade-Offs — Telemetry & Audit (auditFinopsTelemetry)",
       "codeHash": "4cebdb7352eaa4b7c092dc0618259acaeae14c36de66c6b8a9f870fef9f8e9dc",
       "spec": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Production Telemetry & Verification Au",
+        "title": "FinOps Reliability Trade-Offs — Telemetry & Audit (auditFinopsTelemetr",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "FinOps Reliability Trade-Offs — Production Telemetry & Verification Au",
+        "title": "FinOps Reliability Trade-Offs — Telemetry & Audit (auditFinopsTelemetr",
         "nodes": [
           {
             "id": "input",

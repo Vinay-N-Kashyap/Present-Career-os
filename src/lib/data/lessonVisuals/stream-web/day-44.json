@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Foundations & Mathematical Invariants",
+      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Foundations (evaluateChandyLamportCore)",
       "codeHash": "122d028fc72bd4a65dccda722c74f8d5def9e16987592e108c58a028222e64ab",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Core Algorithm & State Representation",
+      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Core Algorithm (computeChandyThreshold)",
       "codeHash": "02dd5f8fbc2e4d2a1775c3c534e2c1518003b5ed50f71db54f96e751bcb1d406",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Throughput & Edge Cases (optimizeChandyPipeline)",
       "codeHash": "ef7d2a5d3f1d4d018a4ef1c419e3bed728a34809bdfdc2ecaaf63c57a2c6ba35",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Resilience & Recovery (validateChandyGuard)",
       "codeHash": "ce2fcf7cbd3023074b92fd4454eaff34b6eaf78af932bbd01e2c7f8992a6901a",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Production Telemetry & Verification Audit",
+      "partTitle": "Chandy-Lamport Distributed Asynchronous Snapshots & Barrier Alignment — Telemetry & Audit (auditChandyTelemetry)",
       "codeHash": "38e93b4451cba6824abe585091eade4b34fd4043fae535f19b6af8b33f968fbd",
       "spec": {
         "template": "flow",

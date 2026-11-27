@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Foundations & Mathematical Invariants",
+      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Foundations (evaluateHighCardinalityCore)",
       "codeHash": "24454014d8106ea7661613c014357bebaa3617121b79f14661e34d3f2812bf1b",
       "spec": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Foundations & Mathemat",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Foundations (evaluateH",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Foundations & Mathemat",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Foundations (evaluateH",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Core Algorithm & State Representation",
+      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Core Algorithm (computeHighThreshold)",
       "codeHash": "56218639295fe0264a598ab54a32afbf60fb04f0fc295f1f7b2283051661c414",
       "spec": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Core Algorithm & State",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Core Algorithm (comput",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Core Algorithm & State",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Core Algorithm (comput",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Throughput & Edge Cases (optimizeHighPipeline)",
       "codeHash": "edc3884c74fdaefe8e7cb15b20f088150690778dd4c2eb79eb702d1cdabdb6f4",
       "spec": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Throughput Optimizatio",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Throughput & Edge Case",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Throughput Optimizatio",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Throughput & Edge Case",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Resilience Guardrails & Failure Recovery",
+      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Resilience & Recovery (validateHighGuard)",
       "codeHash": "ce64cf6c55b6bde6a9c1c56b873b35ac2b072b8db502a8e0855128df44a69fb0",
       "spec": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Resilience Guardrails ",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Resilience & Recovery ",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Resilience Guardrails ",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Resilience & Recovery ",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Production Telemetry & Verification Audit",
+      "partTitle": "High-Cardinality OpenTelemetry Trace Sampling — Telemetry & Audit (auditHighTelemetry)",
       "codeHash": "b04b4c3d67352069f2acefee737a7ad6ce64966de32b44141811b18a76b55c94",
       "spec": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Production Telemetry &",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Telemetry & Audit (aud",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "High-Cardinality OpenTelemetry Trace Sampling — Production Telemetry &",
+        "title": "High-Cardinality OpenTelemetry Trace Sampling — Telemetry & Audit (aud",
         "nodes": [
           {
             "id": "input",

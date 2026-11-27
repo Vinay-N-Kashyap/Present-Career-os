@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Foundations & Mathematical Invariants",
+      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Foundations (evaluateLittleLawCore)",
       "codeHash": "ff0f6b9300e9d5f1a5cc5749f534cccee7e6fb8fdc88459dc856c04040fafbc0",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Core Algorithm & State Representation",
+      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Core Algorithm (computeLittleThreshold)",
       "codeHash": "5198d95bdfb9a68fcc4e28e925786ccee0a5b04567f917d89d45bad771da0cfa",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Throughput & Edge Cases (optimizeLittlePipeline)",
       "codeHash": "ae8e2c2864b1a6220f2f47e4c313e24faabc4487eef7ae2be86875a84b2fffad",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Resilience & Recovery (validateLittleGuard)",
       "codeHash": "c9a735a769509d7f4675447a61c72104df68cfed112983e1cf1018534a0f2737",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Production Telemetry & Verification Audit",
+      "partTitle": "Little's Law Concurrency Limiters & AIMD (Additive-Increase Multiplicative-Decrease) Backpressure — Telemetry & Audit (auditLittleTelemetry)",
       "codeHash": "69e3d62ae1c4df62b5f173ad1dc6abeb4bf5df252b08adccb5efb38526fe4fe9",
       "spec": {
         "template": "flow",

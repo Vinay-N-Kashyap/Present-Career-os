@@ -6,7 +6,7 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Milestone 11 — Foundations & Mathematical Invariants",
+      "partTitle": "Milestone 11 — Foundations (evaluateCepPatternCore)",
       "codeHash": "8866983f89ab4b938001ed50dd2025c040309a7607292f8dc4f1fcded868a3ae",
       "spec": {
         "template": "flow",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Core Algorithm & State Representation",
+      "partTitle": "Milestone 11 — Core Algorithm (computeCepThreshold)",
       "codeHash": "5e69e02c12e122912e83d4b1ebb7eb6c8754b2cd43cab521b3a5e42a8f5fd55c",
       "spec": {
         "template": "flow",
@@ -538,7 +538,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Milestone 11 — Throughput & Edge Cases (optimizeCepPipeline)",
       "codeHash": "4dd31847ee08c3555ca79f79a2bcbfbba1ec140a794ff51048641f7a32422f27",
       "spec": {
         "template": "flow",
@@ -804,7 +804,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Milestone 11 — Resilience & Recovery (validateCepGuard)",
       "codeHash": "470ebdebf509f6499233b98870c06392840e2dcd29526f77317b8e2f523249b8",
       "spec": {
         "template": "flow",
@@ -1070,7 +1070,7 @@
       }
     },
     {
-      "partTitle": "Milestone 11 — Production Telemetry & Verification Audit",
+      "partTitle": "Milestone 11 — Telemetry & Audit (auditCepTelemetry)",
       "codeHash": "b6394454af39941cc72cd143f1b1c8bda6d17acfd7fdc38ac4adf5e4a706b8f3",
       "spec": {
         "template": "flow",

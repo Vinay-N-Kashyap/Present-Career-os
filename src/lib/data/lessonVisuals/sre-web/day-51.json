@@ -6,11 +6,11 @@
   "model": "gate-v2-verified",
   "entries": [
     {
-      "partTitle": "Incident Command System (ICS) — Foundations & Mathematical Invariants",
+      "partTitle": "Incident Command System (ICS) — Foundations (evaluateIncidentCommandCore)",
       "codeHash": "d6ca59501b89ba4c113998b81be0e34450d68d43ef712f0640d000c4a158b52e",
       "spec": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Foundations & Mathematical Invariants",
+        "title": "Incident Command System (ICS) — Foundations (evaluateIncidentCommandCore)",
         "nodes": [
           {
             "id": "input",
@@ -141,7 +141,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Foundations & Mathematical Invariants",
+        "title": "Incident Command System (ICS) — Foundations (evaluateIncidentCommandCore)",
         "nodes": [
           {
             "id": "input",
@@ -272,11 +272,11 @@
       }
     },
     {
-      "partTitle": "Incident Command System (ICS) — Core Algorithm & State Representation",
+      "partTitle": "Incident Command System (ICS) — Core Algorithm (computeIncidentThreshold)",
       "codeHash": "3b208a57d23da4945323d9ba04161ab15e99f4e7b118d90cef22c090aaf02316",
       "spec": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Core Algorithm & State Representation",
+        "title": "Incident Command System (ICS) — Core Algorithm (computeIncidentThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -407,7 +407,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Core Algorithm & State Representation",
+        "title": "Incident Command System (ICS) — Core Algorithm (computeIncidentThreshold)",
         "nodes": [
           {
             "id": "input",
@@ -538,11 +538,11 @@
       }
     },
     {
-      "partTitle": "Incident Command System (ICS) — Throughput Optimization & Edge-Case Handling",
+      "partTitle": "Incident Command System (ICS) — Throughput & Edge Cases (optimizeIncidentPipeline)",
       "codeHash": "18d8214d6145e4fff3087f8755c28a1a0ed16d620cb461149b4d213732184d11",
       "spec": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Throughput Optimization & Edge-Case Ha",
+        "title": "Incident Command System (ICS) — Throughput & Edge Cases (optimizeIncid",
         "nodes": [
           {
             "id": "input",
@@ -673,7 +673,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Throughput Optimization & Edge-Case Ha",
+        "title": "Incident Command System (ICS) — Throughput & Edge Cases (optimizeIncid",
         "nodes": [
           {
             "id": "input",
@@ -804,11 +804,11 @@
       }
     },
     {
-      "partTitle": "Incident Command System (ICS) — Resilience Guardrails & Failure Recovery",
+      "partTitle": "Incident Command System (ICS) — Resilience & Recovery (validateIncidentGuard)",
       "codeHash": "7560b89c656e558bd5e0369555eb2c51918d343815093834c4466b0b6501067d",
       "spec": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Resilience Guardrails & Failure Recove",
+        "title": "Incident Command System (ICS) — Resilience & Recovery (validateInciden",
         "nodes": [
           {
             "id": "input",
@@ -939,7 +939,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Resilience Guardrails & Failure Recove",
+        "title": "Incident Command System (ICS) — Resilience & Recovery (validateInciden",
         "nodes": [
           {
             "id": "input",
@@ -1070,11 +1070,11 @@
       }
     },
     {
-      "partTitle": "Incident Command System (ICS) — Production Telemetry & Verification Audit",
+      "partTitle": "Incident Command System (ICS) — Telemetry & Audit (auditIncidentTelemetry)",
       "codeHash": "cb90299c5eed431b9216bc798ea64cd0e3dcb86e17d07cd2dc6eb5bec471cf4a",
       "spec": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Production Telemetry & Verification Au",
+        "title": "Incident Command System (ICS) — Telemetry & Audit (auditIncidentTeleme",
         "nodes": [
           {
             "id": "input",
@@ -1205,7 +1205,7 @@
       },
       "filled": {
         "template": "flow",
-        "title": "Incident Command System (ICS) — Production Telemetry & Verification Au",
+        "title": "Incident Command System (ICS) — Telemetry & Audit (auditIncidentTeleme",
         "nodes": [
           {
             "id": "input",
